@@ -1,0 +1,62 @@
+
+{
+  "name": "Safe Or Stolen - Phoenix Verification Service",
+  "short_name": "Safe Or Stolen",
+  "description": "Phoenix-based IMEI, Serial & VIN verification service for second-hand items",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "categories": ["security", "verification", "shopping"],
+  "lang": "en-US",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Verify Item",
+      "short_name": "Verify",
+      "description": "Quick verification of IMEI, Serial, or VIN numbers",
+      "url": "/?shortcut=verify",
+      "icons": [
+        {
+          "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Search History",
+      "short_name": "History",
+      "description": "View your verification history",
+      "url": "/search-history?shortcut=history",
+      "icons": [
+        {
+          "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+
+/**
+ * Helper functions for product categories and attributes
+ */
+
+// Helper functions for generating verification data
+export const determineCategory = (itemType: string): string => {
+  itemType = (itemType || '').toLowerCase();
+  
+  if (itemType.includes('imei') || itemType.includes('phone') || itemType.includes('smartphone')) {
+    return 'Electronics';
+  } else if (itemType.includes('vin') || itemType.includes('vehicle')) {
+    return 'Automotive';
+  } else if (itemType.includes('watch') || itemType.includes('jewelry') || itemType.includes('luxury')) {
+    return 'Fashion';
+  } else if (itemType.includes('laptop') || itemType.includes('computer')) {
+    return 'Computers';
+  } else if (itemType.includes('headphone') || itemType.includes('audio')) {
+    return 'Audio';
+  }
+  
+  // Default category
+  return 'Electronics';
+};
+
+export const determineIconType = (category: string): string => {
+  switch (category) {
+    case 'Electronics': return 'smartphone';
+    case 'Fashion': return 'watch';
+    case 'Audio': return 'headphones';
+    case 'Computers': return 'laptop';
+    default: return 'smartphone';
+  }
+};
+
+export const getImageForCategory = (category: string): string => {
+  switch (category) {
+    case 'Electronics':
+      return "https://images.unsplash.com/photo-1511707171634-5f897ff02ff9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+    case 'Fashion':
+      return "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+    case 'Audio':
+      return "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+    case 'Computers':
+      return "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+    case 'Automotive':
+      return "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+    default:
+      return "https://images.unsplash.com/photo-1511707171634-5f897ff02ff9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+  }
+};
+
+export const determineColor = (category: string): string => {
+  switch (category) {
+    case 'Electronics': return 'Midnight Black';
+    case 'Fashion': return 'Silver';
+    case 'Audio': return 'Red';
+    case 'Computers': return 'Space Gray';
+    case 'Automotive': return 'Metallic Blue';
+    default: return 'Black';
+  }
+};
+
+export const generateName = (itemType: string, category: string): string => {
+  if (itemType.includes('imei') || category === 'Electronics') {
+    return 'XS Pro Smartphone';
+  } else if (itemType.includes('vin') || category === 'Automotive') {
+    return 'Premium Sedan';
+  } else if (category === 'Fashion') {
+    return 'Ultra Timepiece';
+  } else if (category === 'Audio') {
+    return 'Sound Pro Headphones';
+  } else if (category === 'Computers') {
+    return 'UltraBook Pro';
+  }
+  return `Premium ${category} Item`;
+};

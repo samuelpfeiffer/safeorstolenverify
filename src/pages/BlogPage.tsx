@@ -1,0 +1,73 @@
+
+import { useParams } from 'react-router-dom';
+import { useBlogPosts } from '@/hooks/useBlogPosts';
+import { BlogList } from '@/components/blog/BlogList';
+import { BlogCategories } from '@/components/blog/BlogCategories';
+import { SEOHead } from '@/components/seo/SEOHead';
+
+const BlogPage = () => {
+  const { category } = useParams();
+  const { data: posts, isLoading, error } = useBlogPosts(undefined, category);
+
+  const pageTitle = category 
+    ? `${category.replace('-', ' ')} - Blog | Safe Or Stolen`
+    : 'Blog | Safe Or Stolen';
+  
+  const pageDescription = category
+    ? `Read our latest articles about ${category.replace('-', ' ')} and product verification.`
+    : 'Stay informed with the latest tips, guides, and news about product verification and safety.';
+
+  return (
+    <>
+      <SEOHead
+        title={pageTitle}
+        description={pageDescription}
+        canonical={category ? `/blog/category/${category}` : '/blog'}
+      />
+      
+      <div className="bg-sos text-white min-h-screen">
+        <div className="container mx-auto px-4 py-16">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-white mb-4">
+              {category ? `${category.replace('-', ' ')} Articles` : 'Our Blog'}
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              {category 
+                ? `Everything you need to know about ${category.replace('-', ' ')}`
+                : 'Stay informed with the latest tips, guides, and news about product verification and safety.'
+              }
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-3">
+              {isLoading ? (
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                  {[1, 2, 3, 4, 5, 6].map((i) => (
+                    <div key={i} className="bg-sos-dark/80 rounded-lg h-64 animate-pulse border border-sos-orange/20" />
+                  ))}
+                </div>
+              ) : error ? (
+                <div className="text-center py-12">
+                  <h3 className="text-lg font-medium text-white mb-2">Error loading posts</h3>
+                  <p className="text-gray-300">Please try again later.</p>
+                </div>
+              ) : (
+                <BlogList posts={posts || []} featured={!category} />
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <BlogCategories />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default BlogPage;
