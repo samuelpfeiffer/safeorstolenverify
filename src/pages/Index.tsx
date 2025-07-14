@@ -1,25 +1,11 @@
-
-import { lazy, Suspense } from 'react';
+import React, { useEffect } from 'react';
 import { SafeComponent } from '@/components/enhanced/SafeComponent';
-
-// Lazy load heavy components with fallbacks
-const Hero = lazy(() => import('@/components/Hero').catch(() => ({ 
-  default: () => <div className="min-h-screen bg-sos">Hero component unavailable</div> 
-})));
-const HowItWorks = lazy(() => import('@/components/HowItWorks').catch(() => ({ 
-  default: () => <div className="py-20 bg-sos">How It Works section unavailable</div> 
-})));
-const Features = lazy(() => import('@/components/Features').catch(() => ({ 
-  default: () => <div className="py-20 bg-sos">Features section unavailable</div> 
-})));
-const CTASection = lazy(() => import('@/components/CTASection').catch(() => ({ 
-  default: () => <div className="py-20 bg-sos">CTA section unavailable</div> 
-})));
-const Footer = lazy(() => import('@/components/Footer').catch(() => ({ 
-  default: () => <div className="py-10 bg-sos">Footer unavailable</div> 
-})));
+import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
+import Features from '@/components/Features';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ScrollRestoration } from '@/components/ScrollRestoration';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { SubscriptionStatus } from '@/components/subscription/SubscriptionStatus';
@@ -55,15 +41,6 @@ const Index = () => {
     createLocalBusinessSchema()
   ];
 
-  const ComponentFallback = ({ name }: { name: string }) => (
-    <div className="py-20 bg-sos flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sos-orange mx-auto mb-4"></div>
-        <p className="text-muted-foreground">Loading {name}...</p>
-      </div>
-    </div>
-  );
-
   return (
     <SafeComponent fallback={<div className="min-h-screen bg-sos">Page unavailable</div>}>
       <SEOHead
@@ -80,9 +57,7 @@ const Index = () => {
       <div className="bg-sos text-white min-h-screen">
         <ScrollRestoration />
         
-        <Suspense fallback={<ComponentFallback name="Hero" />}>
-          <Hero />
-        </Suspense>
+        <Hero />
         
         {/* Subscription Status Section */}
         <section className="py-12 bg-sos-dark/80 border-y border-sos-orange/20">
@@ -95,21 +70,13 @@ const Index = () => {
         
         {showVerificationResults && <VerifiedProduct />}
         
-        <Suspense fallback={<ComponentFallback name="How It Works" />}>
-          <HowItWorks />
-        </Suspense>
+        <HowItWorks />
         
-        <Suspense fallback={<ComponentFallback name="Features" />}>
-          <Features />
-        </Suspense>
+        <Features />
         
-        <Suspense fallback={<ComponentFallback name="Call to Action" />}>
-          <CTASection />
-        </Suspense>
+        <CTASection />
         
-        <Suspense fallback={<ComponentFallback name="Footer" />}>
-          <Footer />
-        </Suspense>
+        <Footer />
       </div>
     </SafeComponent>
   );
