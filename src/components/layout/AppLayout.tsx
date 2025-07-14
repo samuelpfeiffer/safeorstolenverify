@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Navigation } from '@/components/layout/Navigation';
+import TopNavigation from '@/components/TopNavigation';
 import { Footer } from '@/components/layout/Footer';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { OfflineIndicator } from '@/components/pwa/OfflineIndicator';
@@ -23,7 +23,7 @@ export const AppLayout: React.FC = () => {
       </div>
       
       {/* Navigation */}
-      <Navigation />
+      <TopNavigation />
       
       {/* Main Content */}
       <main className="flex-1">

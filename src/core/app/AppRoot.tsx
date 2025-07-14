@@ -1,18 +1,15 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
-
-import { SecurityProvider } from '@/core/providers/SecurityProvider';
-import { PerformanceProvider } from '@/core/providers/PerformanceProvider';
-import { PWAProvider } from '@/core/providers/PWAProvider';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { SecureAuthProvider } from '@/hooks/useSecureAuth';
+import { Suspense } from 'react';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -48,22 +45,16 @@ export const AppRoot: React.FC = () => {
         <QueryClientProvider client={queryClient}>
           <SecureAuthProvider>
             <ThemeProvider>
-              <SecurityProvider>
-                <SEOProvider>
-                  <PerformanceProvider>
-                    <PWAProvider>
-                      <Router>
-                        <div className="min-h-screen bg-sos text-white antialiased">
-                          <Suspense fallback={<AppLoadingScreen />}>
-                            <AppRoutes />
-                          </Suspense>
-                          <Toaster />
-                        </div>
-                      </Router>
-                    </PWAProvider>
-                  </PerformanceProvider>
-                </SEOProvider>
-              </SecurityProvider>
+              <SEOProvider>
+                <Router>
+                  <div className="min-h-screen bg-sos text-white antialiased">
+                    <Suspense fallback={<AppLoadingScreen />}>
+                      <AppRoutes />
+                    </Suspense>
+                    <Toaster />
+                  </div>
+                </Router>
+              </SEOProvider>
             </ThemeProvider>
           </SecureAuthProvider>
         </QueryClientProvider>

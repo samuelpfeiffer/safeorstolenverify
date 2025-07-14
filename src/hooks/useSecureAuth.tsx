@@ -3,7 +3,6 @@ import { AuthContextType } from "@/types/auth";
 import { useAuthState } from "./useAuthState";
 import { secureSignIn, secureSignUp, secureSignOut } from "@/utils/auth/secureAuthOperations";
 import { useToast } from "@/hooks/use-toast";
-import { AuthErrorBoundary } from "@/components/auth/AuthErrorBoundary";
 
 const SecureAuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -40,6 +39,11 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
         throw new Error(result.error.message);
       }
       
+      toast({
+        title: "Welcome back!",
+        description: "You have been signed in successfully.",
+      });
+      
       return result;
     } catch (error: any) {
       throw error;
@@ -71,7 +75,7 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
       } else if (result.data?.session) {
         toast({
           title: "Account created successfully!",
-          description: "Please complete the terms acceptance to finish registration.",
+          description: "Welcome to Safe or Stolen!",
         });
       }
       
@@ -119,21 +123,25 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
   return <SecureAuthContext.Provider value={value}>{children}</SecureAuthContext.Provider>;
 };
 
-// Main provider with error boundary
+// Main provider - simplified without error boundary nesting
 export const SecureAuthProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <AuthErrorBoundary>
-      <SecureAuthProviderInner>{children}</SecureAuthProviderInner>
-    </AuthErrorBoundary>
-  );
+  return <SecureAuthProviderInner>{children}</SecureAuthProviderInner>;
 };
 
 export const useSecureAuth = () => {
   const context = useContext(SecureAuthContext);
   if (context === undefined) {
-    const error = new Error("useSecureAuth must be used within a SecureAuthProvider");
-    console.error('Hook usage error:', error);
-    throw error;
+    console.error("useSecureAuth must be used within a SecureAuthProvider");
+    // Return a fallback auth state instead of throwing
+    return {
+      user: null,
+      session: null,
+      signIn: async () => ({ data: null, error: new Error("Auth not initialized") }),
+      signUp: async () => ({ data: null, error: new Error("Auth not initialized") }),
+      signOut: async () => {},
+      loading: false,
+      isAuthenticated: false,
+    };
   }
   return context;
 };

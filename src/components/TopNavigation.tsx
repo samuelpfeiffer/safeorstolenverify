@@ -44,6 +44,7 @@ const TopNavigation = () => {
 
   const navigationItems = [
     { label: 'Home', href: '/', icon: Home },
+    { label: 'Real-time Verify', href: '/real-time-verification', icon: Search },
     { label: 'About Problem', href: '/about-problem' },
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'Our Story', href: '/our-story' },
