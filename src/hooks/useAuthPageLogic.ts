@@ -11,6 +11,8 @@ export const useAuthPageLogic = () => {
   const { isAuthenticated, loading, user } = useSecureAuth();
   const { toast } = useToast();
   
+  console.log('🔐 AuthPageLogic state:', { isAuthenticated, loading, user: !!user });
+  
   const searchParams = new URLSearchParams(location.search);
   const initialMode = searchParams.get('tab') === 'register' ? 'signup' : 'signin';
   const isConfirmed = searchParams.get('confirmed') === 'true';
