@@ -1,28 +1,28 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
-import { CoreProviders } from '@/core/providers/CoreProviders';
-import { AppRoutes } from '@/core/routing/AppRoutes';
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+import { ThemeProvider } from '@/core/providers/ThemeProvider';
+import { AuthProvider } from '@/core/providers/AuthProvider';
+import HomePage from '@/pages/HomePage';
+import AuthPage from '@/pages/AuthPage';
+import DashboardPage from '@/pages/DashboardPage';
+import VerificationPage from '@/pages/VerificationPage';
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <CoreProviders>
-          <AppRoutes />
+    <ThemeProvider>
+      <AuthProvider>
+        <div className="min-h-screen bg-background">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/verify" element={<VerificationPage />} />
+          </Routes>
           <Toaster />
-        </CoreProviders>
-      </Router>
-    </QueryClientProvider>
+        </div>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
