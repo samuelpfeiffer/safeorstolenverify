@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '@/core/providers/AuthProvider';
+import { useAuthState } from '@/hooks/useAuthState';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, Search, CheckCircle, ArrowRight } from 'lucide-react';
 
 const HomePage = () => {
-  const { user, loading } = useAuth();
+  const { user, loading } = useAuthState();
 
   if (loading) {
     return (
