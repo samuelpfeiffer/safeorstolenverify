@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { useAuth } from '@/core/providers/AuthProvider';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Shield, ArrowLeft } from 'lucide-react';
 
 const signInSchema = z.object({
@@ -28,7 +28,7 @@ const AuthPage = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp } = useUnifiedAuth();
   const defaultTab = searchParams.get('tab') === 'signup' ? 'signup' : 'signin';
 
   const signInForm = useForm({
@@ -49,7 +49,7 @@ const AuthPage = () => {
       if (result.error) {
         toast({
           title: 'Sign In Failed',
-          description: result.error,
+          description: typeof result.error === 'string' ? result.error : result.error.message,
           variant: 'destructive',
         });
       } else {
@@ -78,7 +78,7 @@ const AuthPage = () => {
       if (result.error) {
         toast({
           title: 'Sign Up Failed',
-          description: result.error,
+          description: typeof result.error === 'string' ? result.error : result.error.message,
           variant: 'destructive',
         });
       } else {

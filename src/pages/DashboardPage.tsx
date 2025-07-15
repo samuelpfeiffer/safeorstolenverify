@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '@/core/providers/AuthProvider';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Shield, Search, History, Settings, LogOut, User } from 'lucide-react';
 
 const DashboardPage = () => {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading, signOut } = useUnifiedAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
