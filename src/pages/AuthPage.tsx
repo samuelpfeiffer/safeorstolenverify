@@ -8,8 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useToast } from '@/hooks/use-toast';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
 
 const signInSchema = z.object({
@@ -25,10 +24,8 @@ const signUpSchema = z.object({
 
 const AuthPage = () => {
   const [searchParams] = useSearchParams();
-  const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
   const navigate = useNavigate();
-  const { signIn, signUp } = useUnifiedAuth();
+  const { signIn, signUp, loading } = useAuth();
   const defaultTab = searchParams.get('tab') === 'signup' ? 'signup' : 'signin';
 
   const signInForm = useForm({
@@ -42,61 +39,20 @@ const AuthPage = () => {
   });
 
   const onSignIn = async (values: z.infer<typeof signInSchema>) => {
-    setLoading(true);
-    try {
-      const result = await signIn(values.email, values.password);
-      
-      if (result.error) {
-        toast({
-          title: 'Sign In Failed',
-          description: typeof result.error === 'string' ? result.error : result.error.message,
-          variant: 'destructive',
-        });
-      } else {
-        toast({
-          title: 'Welcome back!',
-          description: 'You have been signed in successfully.',
-        });
-        navigate('/dashboard');
-      }
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'An unexpected error occurred. Please try again.',
-        variant: 'destructive',
-      });
-    } finally {
-      setLoading(false);
+    const result = await signIn(values.email, values.password);
+    if (result.success) {
+      navigate('/dashboard');
     }
+    // Error handling is done inside the auth hook
   };
 
   const onSignUp = async (values: z.infer<typeof signUpSchema>) => {
-    setLoading(true);
-    try {
-      const result = await signUp(values.email, values.password, values.fullName);
-      
-      if (result.error) {
-        toast({
-          title: 'Sign Up Failed',
-          description: typeof result.error === 'string' ? result.error : result.error.message,
-          variant: 'destructive',
-        });
-      } else {
-        toast({
-          title: 'Account Created!',
-          description: 'Please check your email to verify your account.',
-        });
-        navigate('/dashboard');
-      }
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'An unexpected error occurred. Please try again.',
-        variant: 'destructive',
-      });
-    } finally {
-      setLoading(false);
+    const result = await signUp(values.email, values.password, values.fullName);
+    if (result.success) {
+      // Don't navigate immediately, let user handle email verification
+      signUpForm.reset();
     }
+    // Error handling is done inside the auth hook
   };
 
   return (

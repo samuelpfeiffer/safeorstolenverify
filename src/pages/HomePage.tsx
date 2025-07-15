@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuthState } from '@/hooks/useAuthState';
+import { useAuthState } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Shield } from 'lucide-react';
 import Hero from '@/components/Hero';

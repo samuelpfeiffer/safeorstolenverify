@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Shield, Search, History, Settings, LogOut, User } from 'lucide-react';
 
 const DashboardPage = () => {
-  const { user, loading, signOut } = useUnifiedAuth();
+  const { user, loading, signOut } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -67,7 +67,7 @@ const DashboardPage = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Welcome back!</h1>
           <p className="text-muted-foreground">
-            Hi {user.user_metadata?.full_name || user.email}, here's your verification dashboard.
+            Hi {user.fullName || user.email}, here's your verification dashboard.
           </p>
         </div>
 

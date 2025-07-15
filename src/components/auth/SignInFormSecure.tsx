@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useSecureAuth } from '@/hooks/useSecureAuth';
+import { useAuth } from '@/lib/auth';
 import { useSecureSignInForm, getMobileErrorMessage, SecureSignInFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -12,7 +12,7 @@ interface SignInFormSecureProps {
 }
 
 export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
-  const { signIn, loading: authLoading } = useSecureAuth();
+  const { signIn, loading: authLoading } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const isMobile = useIsMobile();
   const form = useSecureSignInForm({

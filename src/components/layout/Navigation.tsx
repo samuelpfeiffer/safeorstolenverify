@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -13,7 +13,8 @@ import { Menu, Search, Shield, User, Settings, LogOut, Crown, BarChart3 } from '
  * Responsive navigation with user authentication state
  */
 export const Navigation: React.FC = () => {
-  const { isAuthenticated, user, signOut } = useUnifiedAuth();
+  const { user, signOut } = useAuth();
+  const isAuthenticated = !!user;
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -124,7 +125,7 @@ export const Navigation: React.FC = () => {
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                       <Avatar className="h-8 w-8">
-                        <AvatarImage src={user?.user_metadata?.avatar_url} />
+                        <AvatarImage src={user?.avatar} />
                         <AvatarFallback className="bg-sos-orange text-white">
                           {user?.email?.charAt(0).toUpperCase()}
                         </AvatarFallback>
@@ -134,7 +135,7 @@ export const Navigation: React.FC = () => {
                   <DropdownMenuContent className="w-56 bg-sos-dark border-sos-orange/20" align="end">
                     <div className="flex items-center justify-start gap-2 p-2">
                       <div className="flex flex-col space-y-1 leading-none">
-                        <p className="font-medium text-white">{user?.user_metadata?.full_name || 'User'}</p>
+                        <p className="font-medium text-white">{user?.fullName || 'User'}</p>
                         <p className="w-[200px] truncate text-sm text-gray-400">{user?.email}</p>
                       </div>
                     </div>

@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
-import { SecureAuthProvider } from '@/hooks/useSecureAuth';
+import { AuthProvider } from '@/lib/auth';
 import { Suspense } from 'react';
 
 // Enhanced QueryClient configuration for enterprise performance
@@ -43,7 +43,7 @@ export const AppRoot: React.FC = () => {
     <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <SecureAuthProvider>
+          <AuthProvider>
             <ThemeProvider>
               <SEOProvider>
                 <Router>
@@ -56,7 +56,7 @@ export const AppRoot: React.FC = () => {
                 </Router>
               </SEOProvider>
             </ThemeProvider>
-          </SecureAuthProvider>
+          </AuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>

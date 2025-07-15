@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { TermsAcceptance } from '@/components/auth/TermsAcceptance';
-import { useSecureAuth } from '@/hooks/useSecureAuth';
+import { useAuth } from '@/lib/auth';
 import { useTermsAcceptance } from '@/hooks/useTermsAcceptance';
 import { useSecureSignUpForm, getMobileErrorMessage, SecureSignUpFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -18,7 +18,8 @@ interface SignUpFormSecureProps {
 type SignUpStep = 'form' | 'terms';
 
 export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
-  const { signUp, loading: authLoading, user, isAuthenticated } = useSecureAuth();
+  const { signUp, loading: authLoading, user } = useAuth();
+  const isAuthenticated = !!user;
   const { acceptTerms, isProcessing } = useTermsAcceptance();
   const [step, setStep] = useState<SignUpStep>('form');
   const [isLoading, setIsLoading] = useState(false);

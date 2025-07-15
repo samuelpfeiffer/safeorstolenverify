@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, User, LogOut, Search, Home, Shield, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -24,7 +24,8 @@ import {
 const TopNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { user, isAuthenticated, signOut } = useUnifiedAuth();
+  const { user, signOut } = useAuth();
+  const isAuthenticated = !!user;
   const navigate = useNavigate();
   const location = useLocation();
 

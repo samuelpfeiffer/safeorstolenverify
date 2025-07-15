@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Shield, Search, QrCode, ArrowLeft, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const VerificationPage = () => {
-  const { user } = useUnifiedAuth();
+  const { user } = useAuth();
   const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);

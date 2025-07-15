@@ -1,12 +1,16 @@
+// Compatibility layer for the new auth system
+// This provides backward compatibility for existing components
 
-// Unified auth hook that redirects to the secure auth implementation
-// This ensures consistency across the application and prevents provider conflicts
+import { useAuth, useIsAuthenticated } from '@/lib/auth';
 
-import { useSecureAuth, SecureAuthProvider } from './useSecureAuth';
+export const useUnifiedAuth = () => {
+  const auth = useAuth();
+  const isAuthenticated = useIsAuthenticated();
+  
+  return {
+    ...auth,
+    isAuthenticated,
+  };
+};
 
-// Export the unified auth system
-export const useUnifiedAuth = useSecureAuth;
-export const UnifiedAuthProvider = SecureAuthProvider;
-
-// Re-export types for consistency
-export type { AuthContextType } from '@/types/auth';
+export const useSecureAuth = useUnifiedAuth;

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { useSignInForm, SignInFormData } from '@/hooks/useFormValidation';
 
 interface SignInFormProps {
@@ -11,7 +11,7 @@ interface SignInFormProps {
 }
 
 export const SignInForm = ({ onSuccess }: SignInFormProps) => {
-  const { signIn, loading: authLoading } = useUnifiedAuth();
+  const { signIn, loading: authLoading } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const form = useSignInForm();
 
