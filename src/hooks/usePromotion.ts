@@ -40,7 +40,7 @@ export const usePromotion = () => {
               .insert({
                 id: user.id,
                 email: user.email,
-                full_name: user.user_metadata?.full_name || null,
+                full_name: user.fullName || null,
               });
             
             // Set default promotion data

@@ -63,7 +63,7 @@ const ProfilePage = () => {
                 <Calendar className="h-4 w-4 text-gray-500" />
                 <Input 
                   id="created" 
-                  value={user.created_at ? new Date(user.created_at).toLocaleDateString() : 'N/A'} 
+                  value={user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'} 
                   readOnly
                   disabled
                 />

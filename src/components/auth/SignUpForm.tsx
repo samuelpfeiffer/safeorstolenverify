@@ -26,11 +26,9 @@ export const SignUpForm = ({ onSuccess }: SignUpFormProps) => {
   // Check if user is already authenticated via OAuth
   useEffect(() => {
     if (isAuthenticated && user) {
-      const provider = user.app_metadata?.provider;
-      if (provider === 'google') {
-        console.log('OAuth user already authenticated, skipping signup form');
-        onSuccess?.();
-      }
+      // OAuth users are already authenticated, skip signup form
+      console.log('User already authenticated, skipping signup form');
+      onSuccess?.();
     }
   }, [isAuthenticated, user, onSuccess]);
 
@@ -42,15 +40,18 @@ export const SignUpForm = ({ onSuccess }: SignUpFormProps) => {
       // Create the account first
       const result = await signUp(data.email, data.password, data.fullName);
       
-      if (result.data?.user) {
-        // Store the user ID and form data for terms acceptance
-        setCreatedUserId(result.data.user.id);
-        setPendingSignUpData(data);
-        setStep('terms');
-        console.log('Account created, proceeding to terms acceptance');
+      if (result.success) {
+        // For the new auth system, we'll use the current user
+        if (user) {
+          setCreatedUserId(user.id);
+          setPendingSignUpData(data);
+          setStep('terms');
+          console.log('Account created, proceeding to terms acceptance');
+        } else {
+          console.log('Account creation pending email confirmation');
+        }
       } else {
-        console.log('Account creation pending email confirmation');
-        // For email confirmation flow, don't proceed to terms yet
+        console.log('Account creation failed or pending confirmation');
       }
       
     } catch (error) {
@@ -101,8 +102,8 @@ export const SignUpForm = ({ onSuccess }: SignUpFormProps) => {
 
   const currentlyLoading = isLoading || authLoading || isProcessing;
 
-  // Don't show signup form if user is already authenticated via OAuth
-  if (isAuthenticated && user?.app_metadata?.provider === 'google') {
+  // Don't show signup form if user is already authenticated
+  if (isAuthenticated && user) {
     return null;
   }
 
