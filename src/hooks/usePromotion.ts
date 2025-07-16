@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { supabase } from '@/integrations/supabase/client';
