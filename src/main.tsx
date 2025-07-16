@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
@@ -15,4 +15,8 @@ console.log('Root element found, creating React root...');
 const root = createRoot(container);
 
 console.log('Rendering App component...');
-root.render(<App />);
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
