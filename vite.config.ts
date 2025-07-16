@@ -8,11 +8,27 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    watch: {
+      usePolling: true,
+      interval: 2000,
+      ignored: [
+        '**/node_modules/**',
+        '**/dist/**', 
+        '**/.git/**',
+        '**/coverage/**',
+        '**/.nyc_output/**',
+        '**/build/**',
+        '**/tmp/**',
+        '**/.cache/**'
+      ]
+    },
+    fs: {
+      strict: false
+    }
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -34,5 +50,8 @@ export default defineConfig(({ mode }) => ({
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
     exclude: []
+  },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
   }
 }));
