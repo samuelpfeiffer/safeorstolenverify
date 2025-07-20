@@ -6,10 +6,11 @@ import { useAuth } from '@/lib/auth';
  * Provides a consistent interface for authentication across the app
  */
 export const useUnifiedAuth = () => {
-  const { user, loading, signOut, signIn, signUp } = useAuth();
+  const { user, session, loading, signOut, signIn, signUp } = useAuth();
   
   return {
     user,
+    session,
     loading,
     isAuthenticated: !!user,
     signOut,
