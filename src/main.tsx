@@ -1,7 +1,7 @@
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { AppRoot } from './core/app/AppRoot';
+import App from './App';
 import './index.css';
 
 console.log('Starting React application...');
@@ -15,9 +15,9 @@ if (!container) {
 console.log('Root element found, creating React root...');
 const root = createRoot(container);
 
-console.log('Rendering AppRoot component...');
+console.log('Rendering App component...');
 root.render(
   <StrictMode>
-    <AppRoot />
+    <App />
   </StrictMode>
 );
