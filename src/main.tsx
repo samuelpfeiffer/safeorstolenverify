@@ -1,27 +1,26 @@
 
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
+// Force cache bust and complete rebuild
+const VERSION = Date.now();
+console.log('App version:', VERSION);
 
-// Ultra minimal component with no external dependencies
-function MinimalApp() {
-  return React.createElement('div', {
-    style: {
-      minHeight: '100vh',
-      backgroundColor: '#000',
-      color: '#fff',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '2rem'
-    }
-  }, 'Safe or Stolen - Loading...');
-}
-
+// Direct DOM manipulation to bypass React entirely
 const container = document.getElementById('root');
-if (!container) {
-  throw new Error('Root element not found');
+if (container) {
+  container.innerHTML = `
+    <div style="
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui;
+      font-size: 2rem;
+    ">
+      Safe or Stolen - Site Loading... (v${VERSION})
+    </div>
+  `;
+  console.log('Site loaded with direct DOM manipulation');
+} else {
+  console.error('Root element not found');
 }
-
-const root = createRoot(container);
-root.render(React.createElement(MinimalApp));
