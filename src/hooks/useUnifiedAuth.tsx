@@ -1,16 +1,19 @@
-// Compatibility layer for the new auth system
-// This provides backward compatibility for existing components
 
-import { useAuth, useIsAuthenticated } from '@/lib/auth';
+import { useAuth } from '@/lib/auth';
 
+/**
+ * Unified Auth Hook
+ * Provides a consistent interface for authentication across the app
+ */
 export const useUnifiedAuth = () => {
-  const auth = useAuth();
-  const isAuthenticated = useIsAuthenticated();
+  const { user, loading, signOut, signIn, signUp } = useAuth();
   
   return {
-    ...auth,
-    isAuthenticated,
+    user,
+    loading,
+    isAuthenticated: !!user,
+    signOut,
+    signIn,
+    signUp,
   };
 };
-
-export const useSecureAuth = useUnifiedAuth;
