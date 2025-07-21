@@ -1,12 +1,11 @@
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
-import TopNavigation from '@/components/TopNavigation';
 import VerifiedProduct from '@/components/VerifiedProduct';
 
 const HomePage = () => {
@@ -16,9 +15,7 @@ const HomePage = () => {
   const isCached = searchParams.get('cached') === 'true';
 
   return (
-    <div className="min-h-screen bg-sos text-white">
-      <TopNavigation />
-      
+    <div className="min-h-screen">
       <Hero />
       
       {(verificationId || serialNumber) && (
