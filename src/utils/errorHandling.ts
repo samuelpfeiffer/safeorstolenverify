@@ -1,5 +1,5 @@
 
-import { UseToastReturn } from '@/hooks/use-toast';
+import { toast as toastFunction } from '@/hooks/use-toast';
 
 export interface SecureError {
   message: string;
@@ -23,7 +23,7 @@ export const createSecureError = (
 
 export const handleSecureError = (
   error: SecureError | Error,
-  toast: UseToastReturn['toast']
+  toast: typeof toastFunction
 ) => {
   console.error('Secure error:', error);
   

@@ -54,6 +54,8 @@ export const usePWA = () => {
     installPrompt,
     isInstalled,
     installApp,
-    canInstall: !!installPrompt
+    canInstall: !!installPrompt,
+    isInstallAvailable: !!installPrompt,
+    showInstallPrompt: installApp
   };
 };

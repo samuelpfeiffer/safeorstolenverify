@@ -6,9 +6,22 @@ export interface SubscriptionTier {
   features?: string[];
   popular?: boolean;
   stripePriceId?: string;
+  searchLimit?: number;
 }
 
 export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
+  free: {
+    name: 'Free',
+    price: 0,
+    interval: 'month',
+    searchLimit: 4,
+    features: [
+      '4 free verifications',
+      'Basic verification reports',
+      'Search history',
+      'Email support'
+    ]
+  },
   basic: {
     name: 'Basic',
     price: 999, // $9.99 in cents
@@ -48,6 +61,17 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     ],
     stripePriceId: 'price_enterprise_monthly'
   }
+};
+
+export const getSubscriptionPriceId = (tier: 'basic' | 'premium' | 'enterprise'): string => {
+  return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
+};
+
+export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
+  if (!tierName || !SUBSCRIPTION_TIERS[tierName]) {
+    return SUBSCRIPTION_TIERS.free;
+  }
+  return SUBSCRIPTION_TIERS[tierName];
 };
 
 export const formatPrice = (price: number): string => {

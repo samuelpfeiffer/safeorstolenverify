@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Hero } from '@/components/Hero';
-import { Features } from '@/components/Features';
-import { HowItWorks } from '@/components/HowItWorks';
-import { CTASection } from '@/components/CTASection';
-import { Footer } from '@/components/Footer';
-import { TopNavigation } from '@/components/TopNavigation';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
+import TopNavigation from '@/components/TopNavigation';
 import VerifiedProduct from '@/components/VerifiedProduct';
 
 const HomePage = () => {

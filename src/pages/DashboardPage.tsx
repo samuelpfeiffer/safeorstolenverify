@@ -147,7 +147,7 @@ const DashboardPage = () => {
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">
-            Welcome back, {user?.user_metadata?.full_name || user?.email}!
+            Welcome back, {user?.email}!
           </h1>
           <p className="text-muted-foreground">
             Manage your verifications and account settings.
