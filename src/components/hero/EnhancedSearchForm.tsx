@@ -211,7 +211,7 @@ export const EnhancedSearchForm: React.FC<EnhancedSearchFormProps> = ({ onOpenQr
         {/* Features showcase */}
         <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border/20">
           <div className="text-center">
-            <div className="text-sos-lime text-sm font-semibold">< 3sec</div>
+            <div className="text-sos-lime text-sm font-semibold">{"< 3sec"}</div>
             <div className="text-xs text-muted-foreground">Response Time</div>
           </div>
           <div className="text-center">
