@@ -12,8 +12,8 @@ export const AppLoadingScreen: React.FC = () => {
         {/* Logo */}
         <div className="relative">
           <img 
-            src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-            alt="Safe or Stolen" 
+            src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+            alt="Safe or Stolen"
             className="h-20 w-20 mx-auto animate-pulse"
           />
           <div className="absolute -inset-4 bg-sos-orange/20 rounded-full blur-xl animate-pulse"></div>

@@ -65,8 +65,8 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-                alt="Safe or Stolen" 
+                src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+                alt="Safe or Stolen"
                 className="h-8 w-8"
               />
               <span className="text-xl font-bold text-white">Safe or Stolen</span>

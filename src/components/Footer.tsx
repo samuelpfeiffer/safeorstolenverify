@@ -57,7 +57,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" alt="Safe or Stolen" className="h-12 w-12 filter drop-shadow-lg" />
+                <img src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" alt="Safe or Stolen" className="h-12 w-12 filter drop-shadow-lg" />
                 <div>
                   <div className="text-xl font-bold text-foreground">Safe or Stolen</div>
                   <div className="text-sm text-sos-orange">Verify the Legitimacy of 2nd-hand items</div>

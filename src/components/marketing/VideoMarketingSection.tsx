@@ -7,7 +7,7 @@ export const VideoMarketingSection = () => {
     {
       title: "The $13 Billion Problem Explained",
       description: "Understanding the scope of the stolen goods crisis and how it affects innocent consumers",
-      thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+      thumbnail: "/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png",
       duration: "3:45",
       category: "Problem Awareness"
     },
@@ -21,7 +21,7 @@ export const VideoMarketingSection = () => {
     {
       title: "Customer Success Stories",
       description: "Real users sharing how we've protected them from stolen goods",
-      thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+      thumbnail: "/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png",
       duration: "4:15",
       category: "Testimonials"
     }

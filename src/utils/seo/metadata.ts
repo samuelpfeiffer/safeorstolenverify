@@ -7,7 +7,7 @@ const SITE_CONFIG = {
   tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
   description: 'Real-time stolen goods verification platform protecting consumers and businesses from fraud',
   url: 'https://safeorstolen.com',
-  ogImage: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
+  ogImage: '/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png',
   twitterHandle: '@safeorstolen',
   author: 'Safe or Stolen Team',
   keywords: [

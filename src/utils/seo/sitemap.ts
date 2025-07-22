@@ -19,7 +19,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     priority: 1.0,
     images: [
       {
-        loc: 'https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
+        loc: 'https://safeorstolen.com/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png',
         caption: 'Safe Or Stolen Logo - Global IMEI, Serial & VIN Verification Service',
         title: 'Safe Or Stolen Global Verification Service'
       }

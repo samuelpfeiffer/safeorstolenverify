@@ -44,7 +44,7 @@ export const createOrganizationSchema = () => ({
     "@type": "ContactPoint",
     "telephone": "+1-800-SOS-CHECK",
     "contactType": "customer service",
-    "email": "support@safeorstolen.com"
+    "email": "info@safeorstolen.com"
   },
   "knowsAbout": [
     "Stolen goods verification",
@@ -135,7 +135,7 @@ export const createLocalBusinessSchema = () => ({
   "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
   "telephone": "+1-800-SOS-CHECK",
-  "email": "support@safeorstolen.com",
+  "email": "info@safeorstolen.com",
   "areaServed": "Worldwide",
   "serviceArea": {
     "@type": "GeoCircle",

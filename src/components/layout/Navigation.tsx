@@ -106,8 +106,8 @@ export const Navigation: React.FC = () => {
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-                  alt="Safe or Stolen" 
+                  src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+                  alt="Safe or Stolen"
                   className="h-8 w-8 filter drop-shadow-lg"
                 />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>

@@ -17,7 +17,7 @@ export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   description,
   keywords = "stolen goods verification, consumer protection, marketplace safety, fraud prevention, real-time verification, FasterCapital",
   canonical,
-  image = "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+  image = "/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png",
   type = 'website',
   additionalSchemas = []
 }) => {
