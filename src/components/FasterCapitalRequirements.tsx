@@ -117,7 +117,7 @@ export const FasterCapitalRequirements = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">FasterCapital</span> Requirements
+            <span className="text-gradient">FasterCapital</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
