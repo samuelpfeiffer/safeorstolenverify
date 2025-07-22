@@ -36,6 +36,20 @@ interface CreateStoreRequest {
   type?: 'live' | 'test';
 }
 
+interface ClaimSubmissionRequest {
+  claimtype: 'logged' | 'settled';
+  itemcategory: number;
+  serials: string[];
+  storeid: number;
+  itemdescription: string;
+  make: string;
+  model: string;
+  claimdate: string; // YYYY-MM-DD HH:MM:SS
+  claimreference: string;
+  claimitemnumber?: string;
+  claimnotes?: string;
+}
+
 export const useReciperoSetup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -222,11 +236,60 @@ export const useReciperoSetup = () => {
     }
   };
 
+  const submitClaim = async (claimData: ClaimSubmissionRequest): Promise<{transactionid: string} | null> => {
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('recipero-setup', {
+        body: {
+          action: 'submit_claim',
+          ...claimData
+        }
+      });
+
+      if (error) {
+        console.error('Claim submission error:', error);
+        toast({
+          title: "Claim Submission Failed",
+          description: error.message || "Unable to submit claim",
+          variant: "destructive",
+        });
+        return null;
+      }
+
+      if (!data.success) {
+        toast({
+          title: "Claim Submission Failed", 
+          description: data.error || "Unable to submit claim",
+          variant: "destructive",
+        });
+        return null;
+      }
+
+      toast({
+        title: "Claim Submitted",
+        description: `Claim submitted successfully. Transaction ID: ${data.result.transactionid}`,
+      });
+
+      return data.result;
+    } catch (error) {
+      console.error('Claim submission request failed:', error);
+      toast({
+        title: "Network Error",
+        description: "Unable to connect to Recipero API",
+        variant: "destructive",
+      });
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return {
     createBusinessUnit,
     createStore,
     listBusinessUnits,
     listStores,
+    submitClaim,
     isLoading
   };
 };
