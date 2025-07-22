@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
@@ -65,7 +66,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+                src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
                 alt="Safe or Stolen"
                 className="h-8 w-8"
               />

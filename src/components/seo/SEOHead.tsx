@@ -106,7 +106,7 @@ export const SEOHead = ({
       />
       <link 
         rel="preload" 
-        href="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png"
+        href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
         as="image"
       />
 
@@ -121,8 +121,8 @@ export const SEOHead = ({
       ))}
 
       {/* Favicon and App Icons */}
-      <link rel="icon" href="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" type="image/png" />
-      <link rel="apple-touch-icon" href="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" />
+      <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png" />
+      <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
 
       {/* Structured Data */}
       {structuredData && (

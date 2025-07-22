@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Loader2 } from 'lucide-react';
 
@@ -12,7 +13,7 @@ export const AppLoadingScreen: React.FC = () => {
         {/* Logo */}
         <div className="relative">
           <img 
-            src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+            src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
             alt="Safe or Stolen"
             className="h-20 w-20 mx-auto animate-pulse"
           />

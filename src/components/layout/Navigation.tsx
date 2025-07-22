@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
@@ -20,7 +21,7 @@ export const Navigation: React.FC = () => {
 
   const isAdmin = user?.email === 'admin@safeorstolen.com' || 
                   user?.email?.endsWith('@safeorstolen.com') ||
-                  user?.email === 'samandhisbigideas@gmail.com';
+                  user?.email === 'samuel@safeorstolen.com';
 
   // Handle scroll effect
   useEffect(() => {
@@ -33,7 +34,7 @@ export const Navigation: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'Verify', href: '/real-time-verification', icon: Search },
+    { name: 'Verify', href: '/real-time-verification', icon: Search },  
     { name: 'How It Works', href: '/how-it-works', icon: null },
     { name: 'Pricing', href: '/pricing', icon: null },
     { name: 'Contact', href: '/contact', icon: null },
@@ -106,7 +107,7 @@ export const Navigation: React.FC = () => {
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+                  src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
                   alt="Safe or Stolen"
                   className="h-8 w-8 filter drop-shadow-lg"
                 />

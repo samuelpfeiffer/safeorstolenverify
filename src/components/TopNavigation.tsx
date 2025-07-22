@@ -88,7 +88,7 @@ const TopNavigation = () => {
             >
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+                  src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
                   alt="Safe or Stolen"
                   className="h-10 w-10 filter drop-shadow-lg"
                 />

@@ -85,7 +85,7 @@ const Hero = () => {
             {/* Logo */}
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
+                src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
                 alt="Safe or Stolen"
                 className="h-20 w-20 md:h-24 md:w-24 mx-auto filter drop-shadow-lg" 
               />
