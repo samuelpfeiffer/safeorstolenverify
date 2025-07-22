@@ -86,8 +86,13 @@ export const FasterCapitalRequirements = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            We're proud to be accelerated by FasterCapital. Explore their comprehensive programs 
-            designed to help tech startups scale and raise funding globally.
+            We're proud to be accelerated by FasterCapital. Our partnership includes providing comprehensive 
+            startup documentation including pitch decks, cofounder contact information, business plans, 
+            financial models, video pitches, executive summaries, idea briefs, challenge descriptions, 
+            solution overviews, our founding story, marketing materials, LinkedIn profiles, professional 
+            photos, company logos, and team CVs. We maintain active communication, provide regular updates 
+            on team changes and product developments, and comply with all FasterCapital guidelines while 
+            showcasing our partnership across our website and social media profiles.
           </p>
 
           <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
