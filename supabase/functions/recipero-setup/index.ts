@@ -1,0 +1,283 @@
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.52.0'
+
+interface BusinessUnitRequest {
+  legalName: string;
+  reportName: string;
+}
+
+interface StoreRequest {
+  businessUnitId: number;
+  storeName: string;
+  address?: string;
+}
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
+
+Deno.serve(async (req) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    // Initialize Supabase client
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Get user from authorization header
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader) {
+      return new Response(
+        JSON.stringify({ error: 'Missing authorization header' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const { data: { user }, error: authError } = await supabase.auth.getUser(
+      authHeader.replace('Bearer ', '')
+    );
+
+    if (authError || !user) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid authentication' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Parse request body
+    const requestBody = await req.json();
+    const { action } = requestBody;
+
+    let result;
+
+    switch (action) {
+      case 'create_business_unit':
+        result = await createBusinessUnit(requestBody.legalName, requestBody.reportName);
+        break;
+      
+      case 'create_store':
+        result = await createStore(requestBody.businessUnitId, requestBody.storeName, requestBody.address);
+        break;
+      
+      case 'list_business_units':
+        result = await listBusinessUnits();
+        break;
+      
+      case 'list_stores':
+        result = await listStores(requestBody.businessUnitId);
+        break;
+      
+      default:
+        return new Response(
+          JSON.stringify({ error: 'Invalid action. Use: create_business_unit, create_store, list_business_units, or list_stores' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+    }
+
+    return new Response(
+      JSON.stringify({
+        success: true,
+        result: result
+      }),
+      { 
+        status: 200, 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      }
+    );
+
+  } catch (error) {
+    console.error('Recipero setup error:', error);
+    return new Response(
+      JSON.stringify({ 
+        success: false,
+        error: 'Internal server error',
+        details: error.message 
+      }),
+      { 
+        status: 500, 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+      }
+    );
+  }
+});
+
+async function createBusinessUnit(legalName: string, reportName: string) {
+  const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
+  const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
+  
+  if (!reciperoAccountId || !reciperoSecretKey) {
+    throw new Error('Recipero credentials not configured');
+  }
+
+  const requestBody = JSON.stringify({
+    legalName,
+    reportName
+  });
+
+  // Generate signature hash
+  const signatureData = reciperoSecretKey + requestBody;
+  const encoder = new TextEncoder();
+  const data = encoder.encode(signatureData);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const signatureHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  // Create Basic Auth credentials
+  const credentials = `${reciperoAccountId}:${signatureHash}`;
+  const encodedCredentials = btoa(credentials);
+
+  console.log('Creating business unit:', legalName);
+
+  const response = await fetch('https://api.recipero.com/business-units', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Basic ${encodedCredentials}`,
+      'Content-Type': 'application/json',
+    },
+    body: requestBody
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Business unit creation failed:', response.status, errorText);
+    throw new Error(`Failed to create business unit: ${response.status}`);
+  }
+
+  const result = await response.json();
+  console.log('Business unit created:', result);
+  return result;
+}
+
+async function createStore(businessUnitId: number, storeName: string, address?: string) {
+  const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
+  const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
+  
+  if (!reciperoAccountId || !reciperoSecretKey) {
+    throw new Error('Recipero credentials not configured');
+  }
+
+  const requestBody = JSON.stringify({
+    businessUnitId,
+    storeName,
+    address: address || ''
+  });
+
+  // Generate signature hash
+  const signatureData = reciperoSecretKey + requestBody;
+  const encoder = new TextEncoder();
+  const data = encoder.encode(signatureData);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const signatureHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  // Create Basic Auth credentials
+  const credentials = `${reciperoAccountId}:${signatureHash}`;
+  const encodedCredentials = btoa(credentials);
+
+  console.log('Creating store:', storeName, 'for business unit:', businessUnitId);
+
+  const response = await fetch('https://api.recipero.com/stores', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Basic ${encodedCredentials}`,
+      'Content-Type': 'application/json',
+    },
+    body: requestBody
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Store creation failed:', response.status, errorText);
+    throw new Error(`Failed to create store: ${response.status}`);
+  }
+
+  const result = await response.json();
+  console.log('Store created:', result);
+  return result;
+}
+
+async function listBusinessUnits() {
+  const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
+  const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
+  
+  if (!reciperoAccountId || !reciperoSecretKey) {
+    throw new Error('Recipero credentials not configured');
+  }
+
+  const requestBody = JSON.stringify({});
+
+  // Generate signature hash
+  const signatureData = reciperoSecretKey + requestBody;
+  const encoder = new TextEncoder();
+  const data = encoder.encode(signatureData);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const signatureHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  // Create Basic Auth credentials
+  const credentials = `${reciperoAccountId}:${signatureHash}`;
+  const encodedCredentials = btoa(credentials);
+
+  const response = await fetch('https://api.recipero.com/business-units', {
+    method: 'GET',
+    headers: {
+      'Authorization': `Basic ${encodedCredentials}`,
+    }
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Failed to list business units:', response.status, errorText);
+    throw new Error(`Failed to list business units: ${response.status}`);
+  }
+
+  const result = await response.json();
+  return result;
+}
+
+async function listStores(businessUnitId?: number) {
+  const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
+  const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
+  
+  if (!reciperoAccountId || !reciperoSecretKey) {
+    throw new Error('Recipero credentials not configured');
+  }
+
+  const url = businessUnitId 
+    ? `https://api.recipero.com/business-units/${businessUnitId}/stores`
+    : 'https://api.recipero.com/stores';
+
+  const requestBody = JSON.stringify({});
+
+  // Generate signature hash
+  const signatureData = reciperoSecretKey + requestBody;
+  const encoder = new TextEncoder();
+  const data = encoder.encode(signatureData);
+  const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const signatureHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  // Create Basic Auth credentials
+  const credentials = `${reciperoAccountId}:${signatureHash}`;
+  const encodedCredentials = btoa(credentials);
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Basic ${encodedCredentials}`,
+    }
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error('Failed to list stores:', response.status, errorText);
+    throw new Error(`Failed to list stores: ${response.status}`);
+  }
+
+  const result = await response.json();
+  return result;
+}

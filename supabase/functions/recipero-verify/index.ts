@@ -54,7 +54,7 @@ Deno.serve(async (req) => {
     }
 
     // Parse request body
-    const { serial_number, item_type, store_id = 1, claim_reference }: ReciperoRequest = await req.json();
+    const { serial_number, item_type, store_id, claim_reference }: ReciperoRequest = await req.json();
 
     if (!serial_number || serial_number.trim().length === 0) {
       return new Response(
@@ -63,7 +63,10 @@ Deno.serve(async (req) => {
       );
     }
 
-    console.log('Starting ClaimsCheck verification for:', serial_number);
+    // Use provided store_id or default from environment
+    const storeId = store_id || parseInt(Deno.env.get('RECIPERO_STORE_ID') || '1');
+
+    console.log('Starting ClaimsCheck verification for:', serial_number, 'using store ID:', storeId);
 
     // Check rate limits
     const rateLimitOk = await checkRateLimit(supabase, user.id);
@@ -75,7 +78,7 @@ Deno.serve(async (req) => {
     }
 
     // Perform serial number verification using Recipero ClaimsCheck API
-    const verificationResult = await verifySerial(serial_number, item_type, store_id, claim_reference);
+    const verificationResult = await verifySerial(serial_number, item_type, storeId, claim_reference);
 
     // Store result in verification_results table (existing table)
     const { data: storedResult, error: storeError } = await supabase
@@ -172,7 +175,7 @@ async function checkRateLimit(supabase: any, userId: string): Promise<boolean> {
 
   // Check daily free searches (limit to 3 per day)
   const { data: recentSearches } = await supabase
-    .from('property_verifications')
+    .from('verification_results')
     .select('id')
     .eq('user_id', userId)
     .gte('created_at', windowStart.toISOString());

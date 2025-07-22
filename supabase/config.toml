@@ -44,6 +44,9 @@ verify_jwt = true
 [functions.recipero-verify]
 verify_jwt = true
 
+[functions.recipero-setup]
+verify_jwt = true
+
 [functions.check-subscription]
 verify_jwt = true
 
