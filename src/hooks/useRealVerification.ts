@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { detectItemType } from '@/utils/itemTypeDetector';
+import { usePropertyVerification } from './usePropertyVerification';
 
 interface VerificationResult {
   id: string;
-  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
+  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error' | 'suspicious';
   confidence: number;
   source: string;
   details?: any;
@@ -16,8 +17,15 @@ interface VerificationResult {
 export const useRealVerification = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { verifyProperty, isLoading: isPropertyLoading } = usePropertyVerification();
 
   const verifyItem = async (serialNumber: string, itemType: string): Promise<VerificationResult | null> => {
+    // Handle property verification separately
+    if (itemType === 'property') {
+      const result = await verifyProperty(serialNumber);
+      return result;
+    }
+
     setIsLoading(true);
     try {
       console.log('Starting verification for:', serialNumber, itemType);
@@ -73,6 +81,6 @@ export const useRealVerification = () => {
 
   return {
     verifyItem,
-    isLoading
+    isLoading: isLoading || isPropertyLoading
   };
 };

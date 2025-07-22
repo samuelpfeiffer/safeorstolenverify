@@ -320,6 +320,48 @@ export type Database = {
         }
         Relationships: []
       }
+      property_verifications: {
+        Row: {
+          api_response: Json | null
+          confidence_score: number | null
+          created_at: string
+          data_retention_until: string | null
+          id: string
+          property_address: string
+          property_type: string | null
+          recipero_report_id: string | null
+          updated_at: string
+          user_id: string
+          verification_status: string
+        }
+        Insert: {
+          api_response?: Json | null
+          confidence_score?: number | null
+          created_at?: string
+          data_retention_until?: string | null
+          id?: string
+          property_address: string
+          property_type?: string | null
+          recipero_report_id?: string | null
+          updated_at?: string
+          user_id: string
+          verification_status?: string
+        }
+        Update: {
+          api_response?: Json | null
+          confidence_score?: number | null
+          created_at?: string
+          data_retention_until?: string | null
+          id?: string
+          property_address?: string
+          property_type?: string | null
+          recipero_report_id?: string | null
+          updated_at?: string
+          user_id?: string
+          verification_status?: string
+        }
+        Relationships: []
+      }
       purchases: {
         Row: {
           amount: number
@@ -426,6 +468,33 @@ export type Database = {
           },
         ]
       }
+      recipero_api_usage: {
+        Row: {
+          api_endpoint: string
+          created_at: string
+          id: string
+          request_count: number | null
+          reset_time: string
+          user_id: string
+        }
+        Insert: {
+          api_endpoint: string
+          created_at?: string
+          id?: string
+          request_count?: number | null
+          reset_time: string
+          user_id: string
+        }
+        Update: {
+          api_endpoint?: string
+          created_at?: string
+          id?: string
+          request_count?: number | null
+          reset_time?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       subscribers: {
         Row: {
           created_at: string
@@ -528,6 +597,8 @@ export type Database = {
           data_retention_until: string | null
           id: string
           item_type: string
+          property_address: string | null
+          recipero_report_id: string | null
           serial_number: string
           updated_at: string
           user_id: string
@@ -542,6 +613,8 @@ export type Database = {
           data_retention_until?: string | null
           id?: string
           item_type: string
+          property_address?: string | null
+          recipero_report_id?: string | null
           serial_number: string
           updated_at?: string
           user_id: string
@@ -556,6 +629,8 @@ export type Database = {
           data_retention_until?: string | null
           id?: string
           item_type?: string
+          property_address?: string | null
+          recipero_report_id?: string | null
           serial_number?: string
           updated_at?: string
           user_id?: string
