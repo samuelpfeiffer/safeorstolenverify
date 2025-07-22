@@ -1,12 +1,6 @@
 
 export const detectItemType = (serialNumber: string): string => {
   const cleaned = serialNumber.replace(/\s+/g, '').toUpperCase();
-  const original = serialNumber.trim();
-  
-  // Property address detection (check original input with spaces)
-  if (isPropertyAddress(original)) {
-    return 'property';
-  }
   
   // IMEI detection (15 digits)
   if (/^\d{15}$/.test(cleaned)) {
@@ -37,19 +31,6 @@ export const detectItemType = (serialNumber: string): string => {
   return 'electronics';
 };
 
-export const isPropertyAddress = (input: string): boolean => {
-  const cleanInput = input.trim().toLowerCase();
-  
-  // Check for common address patterns
-  const addressPatterns = [
-    /\d+\s+[a-z\s]+(street|st|avenue|ave|road|rd|drive|dr|lane|ln|boulevard|blvd|court|ct|place|pl|way|circle|cir|terrace|ter)/i,
-    /\d+\s+[a-z\s]+,\s*[a-z\s]+/i, // Street, City pattern
-    /[a-z\s]+\d+[a-z\s]*,/i, // City with numbers pattern
-  ];
-  
-  return addressPatterns.some(pattern => pattern.test(cleanInput));
-};
-
 export const getItemTypeDisplayName = (itemType: string): string => {
   const typeMap: Record<string, string> = {
     'smartphone': 'Mobile Phone',
@@ -59,8 +40,7 @@ export const getItemTypeDisplayName = (itemType: string): string => {
     'tablet': 'Tablet',
     'watch': 'Smart Watch',
     'gaming': 'Gaming Device',
-    'audio': 'Audio Device',
-    'property': 'Property'
+    'audio': 'Audio Device'
   };
   
   return typeMap[itemType.toLowerCase()] || 'Electronic Device';

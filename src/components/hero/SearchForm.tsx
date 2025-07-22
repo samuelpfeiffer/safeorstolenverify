@@ -121,7 +121,7 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
       <div className="flex gap-2 mb-4">
         <Input 
           type="text" 
-          placeholder="Enter IMEI, VIN, Serial Number, or Property Address" 
+          placeholder="Enter IMEI, VIN, or Serial Number" 
           value={serialNumber} 
           onChange={handleInputChange}
           onKeyPress={e => e.key === 'Enter' && handleSearch()} 

@@ -1,8 +1,10 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.52.0'
 
 interface ReciperoRequest {
-  property_address: string;
-  verification_type?: string;
+  serial_number: string;
+  item_type: string;
+  store_id?: number;
+  claim_reference?: string;
 }
 
 interface ReciperoResponse {
@@ -52,16 +54,16 @@ Deno.serve(async (req) => {
     }
 
     // Parse request body
-    const { property_address, verification_type = 'basic' }: ReciperoRequest = await req.json();
+    const { serial_number, item_type, store_id = 1, claim_reference }: ReciperoRequest = await req.json();
 
-    if (!property_address || property_address.trim().length === 0) {
+    if (!serial_number || serial_number.trim().length === 0) {
       return new Response(
-        JSON.stringify({ error: 'Property address is required' }),
+        JSON.stringify({ error: 'Serial number is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    console.log('Starting property verification for:', property_address);
+    console.log('Starting ClaimsCheck verification for:', serial_number);
 
     // Check rate limits
     const rateLimitOk = await checkRateLimit(supabase, user.id);
@@ -72,20 +74,21 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Perform property verification using Recipero API
-    const verificationResult = await verifyProperty(property_address, verification_type);
+    // Perform serial number verification using Recipero ClaimsCheck API
+    const verificationResult = await verifySerial(serial_number, item_type, store_id, claim_reference);
 
-    // Store result in database
+    // Store result in verification_results table (existing table)
     const { data: storedResult, error: storeError } = await supabase
-      .from('property_verifications')
+      .from('verification_results')
       .insert({
         user_id: user.id,
-        property_address: property_address.trim(),
-        property_type: verification_type,
+        serial_number: serial_number.trim(),
+        item_type: item_type,
         verification_status: verificationResult.status,
         confidence_score: verificationResult.confidence,
-        recipero_report_id: verificationResult.report_id,
-        api_response: verificationResult.details
+        api_source: 'Recipero ClaimsCheck',
+        api_response: verificationResult.details,
+        recipero_report_id: verificationResult.report_id
       })
       .select()
       .single();
@@ -99,7 +102,7 @@ Deno.serve(async (req) => {
     }
 
     // Update API usage tracking
-    await updateApiUsage(supabase, user.id, 'property-verification');
+    await updateApiUsage(supabase, user.id, 'claimscheck-search');
 
     return new Response(
       JSON.stringify({
@@ -114,7 +117,7 @@ Deno.serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('Property verification error:', error);
+    console.error('ClaimsCheck verification error:', error);
     return new Response(
       JSON.stringify({ 
         success: false,
@@ -177,20 +180,21 @@ async function checkRateLimit(supabase: any, userId: string): Promise<boolean> {
   return (recentSearches?.length || 0) < 3;
 }
 
-async function verifyProperty(address: string, verificationType: string): Promise<ReciperoResponse> {
+async function verifySerial(serialNumber: string, itemType: string, storeId: number, claimReference?: string): Promise<ReciperoResponse> {
   const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
   const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
   
   if (!reciperoAccountId || !reciperoSecretKey) {
     console.log('Recipero credentials not configured, using simulation');
-    return simulatePropertyVerification(address, verificationType);
+    return simulateSerialVerification(serialNumber, itemType);
   }
 
   try {
-    // Prepare request body
+    // Prepare request body according to Recipero ClaimsCheck API
     const requestBody = JSON.stringify({
-      address: address,
-      verification_type: verificationType
+      serial: serialNumber,
+      storeid: storeId,
+      claimreference: claimReference || false
     });
 
     // Generate signature hash according to Recipero's authentication method
@@ -205,10 +209,10 @@ async function verifyProperty(address: string, verificationType: string): Promis
     const credentials = `${reciperoAccountId}:${signatureHash}`;
     const encodedCredentials = btoa(credentials);
 
-    console.log('Making Recipero API call with proper authentication');
+    console.log('Making Recipero ClaimsCheck API call with proper authentication');
 
-    // Make API call to Recipero
-    const response = await fetch('https://api.recipero.com/v1/property/verify', {
+    // Make API call to Recipero ClaimsCheck endpoint
+    const response = await fetch('https://api.recipero.com/claimscheck/search', {
       method: 'POST',
       headers: {
         'Authorization': `Basic ${encodedCredentials}`,
@@ -225,115 +229,160 @@ async function verifyProperty(address: string, verificationType: string): Promis
     }
 
     const data = await response.json();
-    console.log('Recipero API response:', data);
+    console.log('Recipero ClaimsCheck API response:', data);
+    
+    // Parse the comprehensive response
+    const status = determineStatusFromClaimsCheck(data);
+    const confidence = calculateConfidence(data);
     
     return {
-      status: normalizeStatus(data.status),
-      confidence: data.confidence || 85,
-      source: 'Recipero Property Database',
+      status,
+      confidence,
+      source: 'Recipero ClaimsCheck Database',
       details: data,
-      message: data.message || getStatusMessage(data.status),
-      report_id: data.report_id
+      message: generateMessage(status, data),
+      report_id: `CC-${Date.now()}-${serialNumber.slice(-6)}`
     };
 
   } catch (error) {
-    console.error('Recipero API call failed:', error);
-    // Fallback to simulation if API fails
+    console.error('Recipero ClaimsCheck API call failed:', error);
     console.log('Falling back to simulation due to API error');
-    return simulatePropertyVerification(address, verificationType);
+    return simulateSerialVerification(serialNumber, itemType);
   }
 }
 
-function simulatePropertyVerification(address: string, verificationType: string): ReciperoResponse {
-  // Create deterministic hash from address for consistent results
-  const hash = address.split('').reduce((a, b) => {
-    a = ((a << 5) - a) + b.charCodeAt(0);
-    return a & a;
-  }, 0);
-  
-  const statusOptions = ['safe', 'suspicious', 'unknown'] as const;
-  const statusIndex = Math.abs(hash) % statusOptions.length;
-  const status = statusOptions[statusIndex];
-  
-  const confidence = 70 + (Math.abs(hash) % 30); // 70-99% confidence
-  
-  const reportId = `RPT-${Date.now()}-${Math.abs(hash).toString(36).toUpperCase()}`;
-  
-  const mockDetails = {
-    property_info: {
-      address: address,
-      property_type: verificationType,
-      last_updated: new Date().toISOString()
-    },
-    verification_sources: ['Property Registry', 'Court Records', 'Insurance Claims'],
-    risk_factors: status === 'suspicious' ? ['Previous insurance claims', 'Legal disputes'] : [],
-    recommendations: getRecommendations(status)
-  };
-
-  return {
-    status,
-    confidence,
-    source: 'Recipero Property Database (Simulated)',
-    details: mockDetails,
-    message: getStatusMessage(status),
-    report_id: reportId
-  };
-}
-
-function normalizeStatus(status: string): ReciperoResponse['status'] {
-  const normalizedStatus = status.toLowerCase();
-  
-  if (['safe', 'clean', 'clear', 'verified'].includes(normalizedStatus)) {
-    return 'safe';
-  }
-  if (['stolen', 'fraud', 'compromised'].includes(normalizedStatus)) {
+function determineStatusFromClaimsCheck(data: any): ReciperoResponse['status'] {
+  // Check stolen records
+  if (data.stolen && data.stolen.length > 0) {
     return 'stolen';
   }
-  if (['lost', 'missing'].includes(normalizedStatus)) {
+  
+  // Check loss records
+  if (data.loss && data.loss.length > 0) {
     return 'lost';
   }
-  if (['suspicious', 'flagged', 'disputed'].includes(normalizedStatus)) {
+  
+  // Check if currently blocked
+  if (data.blocklist && data.blocklist.blocked) {
+    return 'stolen';
+  }
+  
+  // Check CheckMEND status
+  if (data.checkmendstatus && data.checkmendstatus.result === 'red') {
     return 'suspicious';
   }
-  if (['error', 'failed'].includes(normalizedStatus)) {
-    return 'error';
+  
+  if (data.checkmendstatus && data.checkmendstatus.result === 'amber') {
+    return 'suspicious';
+  }
+  
+  // If found records exist but no stolen/loss records, it's safe
+  if (data.found && data.found.length > 0) {
+    return 'safe';
+  }
+  
+  // If ownership records exist and no issues found, it's safe
+  if (data.ownership && data.ownership.length > 0 && 
+      (!data.stolen || data.stolen.length === 0) && 
+      (!data.loss || data.loss.length === 0)) {
+    return 'safe';
   }
   
   return 'unknown';
 }
 
-function getStatusMessage(status: string): string {
+function calculateConfidence(data: any): number {
+  let confidence = 50; // Base confidence
+  
+  // Increase confidence based on data quality
+  if (data.serialdetails?.wellformedimei) confidence += 20;
+  if (data.checkmendlastsearched) confidence += 10;
+  if (data.ownership && data.ownership.length > 0) confidence += 15;
+  if (data.serialdetails?.modelinformation?.length > 0) confidence += 5;
+  
+  return Math.min(confidence, 95);
+}
+
+function generateMessage(status: ReciperoResponse['status'], data: any): string {
   switch (status) {
-    case 'safe':
-      return 'Property has a clean history with no reported issues.';
-    case 'suspicious':
-      return 'Property has some reported issues that require attention.';
     case 'stolen':
-      return 'Property has been reported as stolen or fraudulent.';
+      if (data.stolen?.length > 0) {
+        return `Device reported stolen. Reference: ${data.stolen[0].reference || 'N/A'}`;
+      }
+      if (data.blocklist?.blocked) {
+        return 'Device is currently blocked by network operators.';
+      }
+      return 'Device has been reported as stolen.';
+    
     case 'lost':
-      return 'Property has been reported as lost or missing.';
-    case 'unknown':
-      return 'Unable to determine property status from available records.';
-    case 'error':
-      return 'An error occurred during property verification.';
+      return data.loss?.length > 0 
+        ? `Device reported lost. Reference: ${data.loss[0].reference || 'N/A'}`
+        : 'Device has been reported as lost.';
+    
+    case 'suspicious':
+      if (data.checkmendstatus?.result === 'red') {
+        return 'Device flagged as high risk in CheckMEND database.';
+      }
+      return 'Device has suspicious indicators that require attention.';
+    
+    case 'safe':
+      return 'Device appears clean with no reported issues.';
+    
     default:
-      return 'Property verification completed.';
+      return 'Unable to determine device status from available records.';
   }
 }
 
-function getRecommendations(status: string): string[] {
-  switch (status) {
-    case 'safe':
-      return ['Property appears to have a clean history', 'Safe to proceed with transaction'];
-    case 'suspicious':
-      return ['Conduct additional due diligence', 'Verify property documentation', 'Consider legal consultation'];
-    case 'stolen':
-      return ['Do not proceed with transaction', 'Contact law enforcement', 'Verify with property owner'];
-    case 'lost':
-      return ['Verify current ownership status', 'Check for insurance claims', 'Contact relevant authorities'];
-    default:
-      return ['Conduct standard due diligence', 'Verify property documentation'];
-  }
+function simulateSerialVerification(serialNumber: string, itemType: string): ReciperoResponse {
+  // Create deterministic hash from serial for consistent results
+  const hash = serialNumber.split('').reduce((a, b) => {
+    a = ((a << 5) - a) + b.charCodeAt(0);
+    return a & a;
+  }, 0);
+  
+  const statusOptions = ['safe', 'stolen', 'suspicious', 'unknown'] as const;
+  const statusIndex = Math.abs(hash) % statusOptions.length;
+  const status = statusOptions[statusIndex];
+  
+  const confidence = 70 + (Math.abs(hash) % 30); // 70-99% confidence
+  
+  const reportId = `SIM-${Date.now()}-${Math.abs(hash).toString(36).toUpperCase()}`;
+  
+  // Simulate ClaimsCheck response structure
+  const mockDetails = {
+    serial: serialNumber,
+    serialdetails: {
+      wellformedimei: itemType === 'smartphone' && serialNumber.length === 15,
+      modelinformation: [{
+        manufacturer: itemType === 'smartphone' ? 'SAMSUNG' : 'UNKNOWN',
+        models: [{ name: 'SIMULATED DEVICE', colour: '', storage: '' }]
+      }]
+    },
+    checkmendstatus: {
+      result: status === 'suspicious' ? 'amber' : status === 'stolen' ? 'red' : 'green'
+    },
+    stolen: status === 'stolen' ? [{ 
+      identifier: serialNumber, 
+      datasource: 'SIMULATED',
+      reference: `REF-${Math.abs(hash).toString(36).toUpperCase()}`
+    }] : [],
+    loss: [],
+    ownership: status === 'safe' ? [{
+      datasource: 'SIMULATED',
+      make: 'SIMULATED',
+      model: 'DEVICE'
+    }] : [],
+    blocklist: { blocked: status === 'stolen' }
+  };
+
+  return {
+    status,
+    confidence,
+    source: 'Recipero ClaimsCheck (Simulated)',
+    details: mockDetails,
+    message: generateMessage(status, mockDetails),
+    report_id: reportId
+  };
 }
 
 async function updateApiUsage(supabase: any, userId: string, endpoint: string): Promise<void> {
@@ -342,15 +391,14 @@ async function updateApiUsage(supabase: any, userId: string, endpoint: string): 
 
   try {
     await supabase
-      .from('recipero_api_usage')
+      .from('api_usage_logs')
       .upsert({
         user_id: userId,
         api_endpoint: endpoint,
-        count: 1,
+        request_count: 1,
         reset_time: resetTime.toISOString()
       }, {
-        onConflict: 'user_id,api_endpoint',
-        update: { count: 'count + 1' }
+        onConflict: 'user_id,api_endpoint'
       });
   } catch (error) {
     console.error('Failed to update API usage:', error);
