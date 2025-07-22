@@ -65,7 +65,14 @@ export const FasterCapitalRequirements = () => {
     "Pitch Deck for your startup",
     "Contact information for each cofounder (phone, email, address)",
     "Idea brief about your startup concept (appears on website)",
-    "Challenge brief about the problem you're solving (appears on website)"
+    "Challenge brief about the problem you're solving (appears on website)",
+    "Solution brief about your proposed solution and impact (appears on website)",
+    "Our story section - how founders met and created the startup (appears on website)",
+    "Video marketing materials - presentations, screencasts, product demos (appears on website)",
+    "LinkedIn profile for each cofounder (appears on website)",
+    "High resolution photo for each cofounder (appears on website)",
+    "Startup logo 2000x2000 pixels (appears on website)",
+    "Mini CV for each cofounder and team member (appears on website)"
   ];
 
   const optionalRequirements = [
@@ -73,6 +80,15 @@ export const FasterCapitalRequirements = () => {
     "Financial operating model (preferably Excel format)",
     "Video pitch by one or more cofounders",
     "Executive Summary (one or two pages about the startup)"
+  ];
+
+  const additionalObligations = [
+    "Be prepared for startup presentations (in-person or online)",
+    "Update website to include FasterCapital as accelerator/incubator",
+    "Update social profiles (LinkedIn, Angel.co, Facebook) to mention FasterCapital",
+    "Respond promptly to all FasterCapital communications",
+    "Submit timely updates on team changes, product developments, and new materials",
+    "Comply with all FasterCapital guidelines and requirements"
   ];
 
   const compensation = [
@@ -168,7 +184,7 @@ export const FasterCapitalRequirements = () => {
         </div>
 
         {/* Requirements Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
           {/* Mandatory Requirements */}
           <Card className="bg-card/80 backdrop-blur-sm border-border/50">
             <CardHeader>
@@ -181,7 +197,7 @@ export const FasterCapitalRequirements = () => {
               <p className="text-muted-foreground text-sm mb-4">
                 Required documents and information for all applications.
               </p>
-              <div className="space-y-3">
+              <div className="space-y-3 max-h-80 overflow-y-auto">
                 {mandatoryRequirements.map((requirement, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-sos-orange mt-0.5 flex-shrink-0" />
@@ -192,6 +208,32 @@ export const FasterCapitalRequirements = () => {
             </CardContent>
           </Card>
 
+          {/* Additional Obligations */}
+          <Card className="bg-card/80 backdrop-blur-sm border-border/50">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <Users className="h-5 w-5 text-sos-lime" />
+                <span>Additional Obligations</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground text-sm mb-4">
+                Ongoing commitments during the acceleration program.
+              </p>
+              <div className="space-y-3">
+                {additionalObligations.map((obligation, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-sos-lime mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">{obligation}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Optional & Compensation Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
           {/* Optional Requirements */}
           <Card className="bg-card/80 backdrop-blur-sm border-border/50">
             <CardHeader>
