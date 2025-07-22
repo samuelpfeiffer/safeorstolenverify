@@ -178,32 +178,54 @@ async function checkRateLimit(supabase: any, userId: string): Promise<boolean> {
 }
 
 async function verifyProperty(address: string, verificationType: string): Promise<ReciperoResponse> {
-  const reciperoApiKey = Deno.env.get('RECIPERO_API_KEY');
+  const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
+  const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
   
-  if (!reciperoApiKey) {
-    // For now, return simulated results until API key is configured
+  if (!reciperoAccountId || !reciperoSecretKey) {
+    console.log('Recipero credentials not configured, using simulation');
     return simulatePropertyVerification(address, verificationType);
   }
 
   try {
+    // Prepare request body
+    const requestBody = JSON.stringify({
+      address: address,
+      verification_type: verificationType
+    });
+
+    // Generate signature hash according to Recipero's authentication method
+    const signatureData = reciperoSecretKey + requestBody;
+    const encoder = new TextEncoder();
+    const data = encoder.encode(signatureData);
+    const hashBuffer = await crypto.subtle.digest('SHA-1', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const signatureHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+    // Create Basic Auth credentials (AccountId:SignatureHash)
+    const credentials = `${reciperoAccountId}:${signatureHash}`;
+    const encodedCredentials = btoa(credentials);
+
+    console.log('Making Recipero API call with proper authentication');
+
     // Make API call to Recipero
     const response = await fetch('https://api.recipero.com/v1/property/verify', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${reciperoApiKey}`,
+        'Authorization': `Basic ${encodedCredentials}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        address: address,
-        verification_type: verificationType
-      })
+      body: requestBody
     });
 
     if (!response.ok) {
+      console.error(`Recipero API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('Error response:', errorText);
       throw new Error(`Recipero API error: ${response.status}`);
     }
 
     const data = await response.json();
+    console.log('Recipero API response:', data);
     
     return {
       status: normalizeStatus(data.status),
@@ -217,6 +239,7 @@ async function verifyProperty(address: string, verificationType: string): Promis
   } catch (error) {
     console.error('Recipero API call failed:', error);
     // Fallback to simulation if API fails
+    console.log('Falling back to simulation due to API error');
     return simulatePropertyVerification(address, verificationType);
   }
 }
