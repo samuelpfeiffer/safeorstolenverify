@@ -407,44 +407,100 @@ function simulateSerialVerification(serialNumber: string, itemType: string): Rec
   };
 }
 
-// Test identifiers for Recipero test environment
+// Test identifiers for Recipero test environment (from official documentation)
 function getTestResult(serialNumber: string): ReciperoResponse | null {
-  const testSerial = serialNumber.toUpperCase();
+  const testSerial = serialNumber.replace(/\s+/g, ''); // Remove spaces for comparison
   
-  // These would be the actual test identifiers provided by Recipero
-  // Update these based on the actual test data table they provide
-  const testIdentifiers: Record<string, ReciperoResponse['status']> = {
-    'TESTSERIAL001': 'safe',
-    'TESTSERIAL002': 'stolen', 
-    'TESTSERIAL003': 'lost',
-    'TESTSERIAL004': 'suspicious',
-    'TESTSERIAL005': 'unknown',
-    // Add more test identifiers as provided by Recipero
+  // Official Recipero test identifiers with expected results
+  const testIdentifiers: Record<string, {
+    result: ReciperoResponse['status'];
+    blocked?: boolean;
+    crime?: boolean;
+    assetwatch?: boolean;
+    fmipstatus?: string;
+    make?: string;
+    model?: string;
+  }> = {
+    // Clear results (safe)
+    '100000010000015': { result: 'safe', fmipstatus: 'notapplicable', make: 'RECIPERO', model: 'TEST MODEL' },
+    '357355090000321': { result: 'safe', fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE XR' },
+    '358567070000019': { result: 'safe', fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 6S' },
+    '358686090000013': { result: 'safe', fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 7' },
+    '358686090000542': { result: 'safe', fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 7' },
+    '358496090000017': { result: 'safe', fmipstatus: 'notapplicable', make: 'SAMSUNG', model: 'GALAXY NOTE 9' },
+    '358686090000179': { result: 'safe', fmipstatus: 'error', make: 'APPLE', model: 'IPHONE 7' },
+    
+    // Compromised results (stolen/suspicious)
+    '358686090000583': { result: 'lost', fmipstatus: 'lost', make: 'APPLE', model: 'IPHONE 7' },
+    '100000010000023': { result: 'stolen', blocked: true, fmipstatus: 'notapplicable', make: 'RECIPERO', model: 'TEST MODEL' },
+    '357355090000875': { result: 'stolen', blocked: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE XR' },
+    '012748000000992': { result: 'stolen', blocked: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 4' },
+    '012748000001008': { result: 'stolen', blocked: true, fmipstatus: 'lost', make: 'APPLE', model: 'IPHONE 4' },
+    '100000010000049': { result: 'stolen', crime: true, fmipstatus: 'notapplicable', make: 'RECIPERO', model: 'TEST MODEL' },
+    '352009060000911': { result: 'stolen', crime: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 5S' },
+    '358539050000053': { result: 'stolen', crime: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 5C' },
+    '355982080000011': { result: 'stolen', blocked: true, crime: true, fmipstatus: 'notapplicable', make: 'RECIPERO', model: 'TEST MODEL' },
+    '357995050000022': { result: 'stolen', blocked: true, crime: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 5C' },
+    '358539050000012': { result: 'stolen', crime: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 5C' },
+    '013709000000101': { result: 'stolen', crime: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 5' },
+    '358496090000033': { result: 'stolen', crime: true, fmipstatus: 'notapplicable', make: 'SAMSUNG', model: 'GALAXY NOTE 9' },
+    '357208090000017': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPHONE XS' },
+    '357208090000033': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPHONE XS' },
+    '355810080000014': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPAD PRO 12.9 (2017)' },
+    '355810080000022': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPAD PRO 12.9 (2017)' },
+    '358686090000005': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPHONE 7' },
+    '358686090000088': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPHONE 7' },
+    '358686090000054': { result: 'suspicious', fmipstatus: 'activated', make: 'APPLE', model: 'IPHONE 7' },
+    
+    // History results (devices with historical records)
+    '100000010000106': { result: 'safe', assetwatch: true, fmipstatus: 'notapplicable', make: 'RECIPERO', model: 'TEST MODEL' },
+    '355810080000063': { result: 'safe', assetwatch: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPAD PRO 12.9 (2017)' },
+    '358686090000161': { result: 'safe', assetwatch: true, fmipstatus: 'notactivated', make: 'APPLE', model: 'IPHONE 7' },
   };
 
-  const testStatus = testIdentifiers[testSerial];
-  if (!testStatus) {
+  const testData = testIdentifiers[testSerial];
+  if (!testData) {
     // Default for unknown test identifiers is 'compromised' (suspicious)
-    return createTestResult(serialNumber, 'suspicious', 'Unknown test identifier - showing as compromised (test environment)');
+    return createTestResult(serialNumber, 'suspicious', 'Unknown test identifier - showing as compromised (test environment)', {
+      make: 'UNKNOWN',
+      model: 'TEST DEVICE'
+    });
   }
 
-  return createTestResult(serialNumber, testStatus, `Test result for ${testSerial}`);
+  return createTestResult(serialNumber, testData.result, `Test result for ${testSerial}`, testData);
 }
 
-function createTestResult(serialNumber: string, status: ReciperoResponse['status'], message: string): ReciperoResponse {
+function createTestResult(
+  serialNumber: string, 
+  status: ReciperoResponse['status'], 
+  message: string, 
+  testData?: {
+    blocked?: boolean;
+    crime?: boolean;
+    assetwatch?: boolean;
+    fmipstatus?: string;
+    make?: string;
+    model?: string;
+  }
+): ReciperoResponse {
   const mockDetails = {
     serial: serialNumber,
     serialdetails: {
       wellformedimei: serialNumber.length === 15,
       modelinformation: [{
-        manufacturer: 'TEST',
-        models: [{ name: 'TEST DEVICE', colour: 'TEST', storage: 'TEST' }]
-      }]
+        manufacturer: testData?.make || 'TEST',
+        models: [{ 
+          name: testData?.model || 'TEST DEVICE', 
+          colour: 'TEST', 
+          storage: 'TEST' 
+        }]
+      }],
+      fmipstatus: testData?.fmipstatus || 'notapplicable'
     },
     checkmendstatus: {
       result: status === 'suspicious' ? 'red' : status === 'stolen' ? 'red' : 'green'
     },
-    stolen: status === 'stolen' ? [{ 
+    stolen: (status === 'stolen' || testData?.blocked || testData?.crime) ? [{ 
       identifier: serialNumber, 
       datasource: 'TEST',
       reference: 'TEST-REF-001'
@@ -456,10 +512,24 @@ function createTestResult(serialNumber: string, status: ReciperoResponse['status
     }] : [],
     ownership: status === 'safe' ? [{
       datasource: 'TEST',
-      make: 'TEST',
-      model: 'DEVICE'
+      make: testData?.make || 'TEST',
+      model: testData?.model || 'DEVICE'
     }] : [],
-    blocklist: { blocked: status === 'stolen' }
+    blocklist: { 
+      blocked: testData?.blocked || false,
+      history: testData?.blocked ? [{
+        eventtype: 'block',
+        recorddate: '2024-01-01',
+        reason: 'Test block',
+        network: 'Test Network',
+        notes: 'Test data'
+      }] : []
+    },
+    patriothistory: testData?.assetwatch ? [{
+      searchdate: '2024-01-01 10:00:00',
+      insurer: 'TEST INSURER',
+      contactnumber: '1234567890'
+    }] : []
   };
 
   return {
