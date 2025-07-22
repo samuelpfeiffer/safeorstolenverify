@@ -98,7 +98,7 @@ export const FasterCapitalRequirements = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-sos-dark to-sos relative overflow-hidden">
+    <section id="fastercapital-section" className="py-20 bg-gradient-to-br from-sos-dark to-sos relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />

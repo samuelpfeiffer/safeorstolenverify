@@ -46,6 +46,21 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
       >
         Our Story
       </Link>
+      <button 
+        onClick={() => {
+          closeMenu();
+          if (currentPath === "/") {
+            setTimeout(() => {
+              document.getElementById('fastercapital-section')?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          } else {
+            window.location.href = "/#fastercapital-section";
+          }
+        }}
+        className="py-2 text-white hover:text-sos-orange transition-colors text-left"
+      >
+        FasterCapital
+      </button>
       <Link 
         to="/for-brands" 
         onClick={closeMenu} 

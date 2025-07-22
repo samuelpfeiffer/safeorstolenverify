@@ -41,6 +41,18 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
       >
         Our Story
       </Link>
+      <button 
+        onClick={() => {
+          if (currentPath === "/") {
+            document.getElementById('fastercapital-section')?.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.location.href = "/#fastercapital-section";
+          }
+        }}
+        className="text-white hover:text-sos-orange transition-colors"
+      >
+        FasterCapital
+      </button>
       <Link 
         to="/for-brands" 
         className={cn("transition-colors", 
