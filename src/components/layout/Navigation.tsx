@@ -1,26 +1,15 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Menu, Search, Shield, User, Settings, LogOut, Crown, BarChart3, Home, ChevronDown } from 'lucide-react';
+import { Menu, Search, Shield, User, Settings, LogOut, Crown, Home, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
 
 /**
- * Main Application Navigation
- * Unified navigation with authentication state and enhanced features
+ * Simplified Main Application Navigation
  */
 export const Navigation: React.FC = () => {
   const { user, signOut } = useAuth();
@@ -55,18 +44,6 @@ export const Navigation: React.FC = () => {
     { name: 'User Management', href: '/admin/users', icon: User },
     { name: 'Security Center', href: '/admin/security', icon: Shield },
     { name: 'System Settings', href: '/admin/settings', icon: Settings },
-  ];
-
-  // FasterCapital Program Requirements
-  const fasterCapitalRequirements = [
-    { label: 'Raise Capital', href: '/fastercapital/raise-capital', description: 'Get funding from 155K+ angels and 50K+ VCs' },
-    { label: 'Tech Cofounder', href: '/fastercapital/tech-cofounder', description: 'Get technical cofounders for your startup' },
-    { label: 'Incubation', href: '/fastercapital/incubation', description: 'Join our 12-month acceleration program' },
-    { label: 'Mega Financing', href: '/fastercapital/mega-financing', description: 'Financing for $100M+ projects' },
-    { label: 'Business Plan', href: '/fastercapital/business-plan', description: 'Professional business plan development' },
-    { label: 'Pitch Deck', href: '/fastercapital/pitch-deck', description: 'Investor-ready pitch deck creation' },
-    { label: 'Financial Model', href: '/fastercapital/financial-model', description: 'Financial projections and modeling' },
-    { label: 'Market Research', href: '/fastercapital/market-research', description: 'Comprehensive market analysis' },
   ];
 
   const userMenuItems = isAuthenticated ? [
@@ -137,9 +114,6 @@ export const Navigation: React.FC = () => {
               </div>
               <div className="hidden sm:block">
                 <span className="text-xl font-bold text-white">Safe or Stolen</span>
-                <Badge variant="outline" className="border-sos-lime text-sos-lime text-xs ml-2">
-                  FasterCapital
-                </Badge>
               </div>
             </Link>
           </div>
@@ -151,56 +125,12 @@ export const Navigation: React.FC = () => {
                 {item.name}
               </NavLink>
             ))}
-            
-            {/* FasterCapital Requirements Menu */}
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white hover:bg-sos-orange/20 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/20">
-                    FasterCapital
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[400px] p-4 bg-sos-dark border-sos-orange/20">
-                      <div className="mb-3">
-                        <h4 className="text-sm font-medium text-sos-orange mb-1">Program Requirements</h4>
-                        <p className="text-xs text-gray-400">Choose the right program for your startup</p>
-                      </div>
-                      <div className="grid gap-2">
-                        {fasterCapitalRequirements.map((item) => (
-                          <NavigationMenuLink key={item.href} asChild>
-                            <Link
-                              to={item.href}
-                              className="w-full text-left p-3 rounded-lg hover:bg-sos-orange/10 transition-colors group"
-                            >
-                              <div className="text-sm font-medium text-gray-300 group-hover:text-white mb-1">
-                                {item.label}
-                              </div>
-                              <div className="text-xs text-gray-500 group-hover:text-gray-400">
-                                {item.description}
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
           </div>
 
           {/* User Menu */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
               <div className="hidden lg:flex items-center space-x-4">
-                {/* Admin Badge */}
-                {isAdmin && (
-                  <Badge className="bg-sos-orange text-white">
-                    <Crown className="h-3 w-3 mr-1" />
-                    Admin
-                  </Badge>
-                )}
-
                 {/* User Dropdown */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -290,26 +220,6 @@ export const Navigation: React.FC = () => {
                       {item.name}
                     </MobileNavLink>
                   ))}
-
-                  {/* FasterCapital Requirements in Mobile */}
-                  <div className="border-t border-sos-orange/20 pt-4 mt-4">
-                    <p className="text-gray-400 text-sm mb-3 px-4">FasterCapital Programs</p>
-                    {fasterCapitalRequirements.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className="w-full text-left px-4 py-3 rounded-xl hover:bg-sos-orange/10 transition-all block"
-                      >
-                        <div className="text-sm font-medium text-gray-300 hover:text-white mb-1">
-                          {item.label}
-                        </div>
-                        <div className="text-xs text-gray-500">
-                          {item.description}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
 
                   {isAuthenticated && isAdmin && (
                     <>

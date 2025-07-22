@@ -1,27 +1,18 @@
 
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { useRealVerification } from '@/hooks/useRealVerification';
-import { EnhancedSearchForm } from '@/components/hero/EnhancedSearchForm';
-import { HeroBackground } from '@/components/hero/HeroBackground';
-import { StatsTickerBar } from '@/components/hero/StatsTickerBar';
-import { TrustIndicators } from '@/components/hero/TrustIndicators';
+import { SimpleSearchForm } from '@/components/hero/SimpleSearchForm';
 import QrScanner from '@/components/hero/QrScanner';
-import HeroActionButtons from '@/components/hero/HeroActionButtons';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
-import { Badge } from '@/components/ui/badge';
-import { Shield, Sparkles } from 'lucide-react';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
-import { cn } from '@/lib/utils';
 
 const Hero = () => {
   const [isQrScannerOpen, setIsQrScannerOpen] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
-  const isMobile = useIsMobile();
   const { verifyItem } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
 
@@ -120,7 +111,7 @@ const Hero = () => {
                   Search form temporarily unavailable
                 </div>
               }>
-                <EnhancedSearchForm onOpenQrScanner={handleOpenQrScanner} />
+                <SimpleSearchForm onOpenQrScanner={handleOpenQrScanner} />
               </ErrorBoundary>
             </div>
 
