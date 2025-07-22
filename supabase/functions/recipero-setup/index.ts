@@ -7,8 +7,15 @@ interface BusinessUnitRequest {
 
 interface StoreRequest {
   businessUnitId: number;
-  storeName: string;
-  address?: string;
+  reportName: string;
+  legalName?: string;
+  city?: string;
+  county?: string;
+  state?: string;
+  zipcode?: string;
+  country?: string;
+  email?: string;
+  type?: 'live' | 'test';
 }
 
 const corsHeaders = {
@@ -60,7 +67,18 @@ Deno.serve(async (req) => {
         break;
       
       case 'create_store':
-        result = await createStore(requestBody.businessUnitId, requestBody.storeName, requestBody.address);
+        result = await createStore(
+          requestBody.businessUnitId, 
+          requestBody.reportName,
+          requestBody.legalName,
+          requestBody.city,
+          requestBody.county,
+          requestBody.state,
+          requestBody.zipcode,
+          requestBody.country,
+          requestBody.email,
+          requestBody.type
+        );
         break;
       
       case 'list_business_units':
@@ -152,7 +170,18 @@ async function createBusinessUnit(legalName: string, reportName: string) {
   return result;
 }
 
-async function createStore(businessUnitId: number, storeName: string, address?: string) {
+async function createStore(
+  businessUnitId: number, 
+  reportName: string,
+  legalName?: string,
+  city?: string,
+  county?: string,
+  state?: string,
+  zipcode?: string,
+  country?: string,
+  email?: string,
+  type: 'live' | 'test' = 'live'
+) {
   const reciperoAccountId = Deno.env.get('RECIPERO_ACCOUNT_ID');
   const reciperoSecretKey = Deno.env.get('RECIPERO_SECRET_KEY');
   
@@ -160,11 +189,22 @@ async function createStore(businessUnitId: number, storeName: string, address?: 
     throw new Error('Recipero credentials not configured');
   }
 
-  const requestBody = JSON.stringify({
-    businessUnitId,
-    storeName,
-    address: address || ''
-  });
+  // Build request body according to Recipero API spec
+  const requestBodyData: any = {
+    reportName,
+    type
+  };
+
+  // Add optional fields if provided
+  if (legalName) requestBodyData.legalName = legalName;
+  if (city) requestBodyData.city = city;
+  if (county) requestBodyData.county = county;
+  if (state) requestBodyData.state = state;
+  if (zipcode) requestBodyData.zipcode = zipcode;
+  if (country) requestBodyData.country = country;
+  if (email) requestBodyData.email = email;
+
+  const requestBody = JSON.stringify(requestBodyData);
 
   // Generate signature hash
   const signatureData = reciperoSecretKey + requestBody;
@@ -178,13 +218,15 @@ async function createStore(businessUnitId: number, storeName: string, address?: 
   const credentials = `${reciperoAccountId}:${signatureHash}`;
   const encodedCredentials = btoa(credentials);
 
-  console.log('Creating store:', storeName, 'for business unit:', businessUnitId);
+  console.log('Creating store:', reportName, 'for business unit:', businessUnitId);
 
-  const response = await fetch('https://api.recipero.com/stores', {
+  // Use the correct endpoint format: /business-units/{businessUnitId}/stores
+  const response = await fetch(`https://api.recipero.com/business-units/${businessUnitId}/stores`, {
     method: 'POST',
     headers: {
       'Authorization': `Basic ${encodedCredentials}`,
       'Content-Type': 'application/json',
+      'Accept': 'application/json'
     },
     body: requestBody
   });
@@ -192,11 +234,11 @@ async function createStore(businessUnitId: number, storeName: string, address?: 
   if (!response.ok) {
     const errorText = await response.text();
     console.error('Store creation failed:', response.status, errorText);
-    throw new Error(`Failed to create store: ${response.status}`);
+    throw new Error(`Failed to create store: ${response.status} - ${errorText}`);
   }
 
   const result = await response.json();
-  console.log('Store created:', result);
+  console.log('Store created successfully:', result);
   return result;
 }
 
