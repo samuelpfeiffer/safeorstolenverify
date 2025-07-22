@@ -5,6 +5,7 @@ interface ReciperoRequest {
   item_type: string;
   store_id?: number;
   claim_reference?: string;
+  use_test_store?: boolean;
 }
 
 interface ReciperoResponse {
@@ -54,7 +55,7 @@ Deno.serve(async (req) => {
     }
 
     // Parse request body
-    const { serial_number, item_type, store_id, claim_reference }: ReciperoRequest = await req.json();
+    const { serial_number, item_type, store_id, claim_reference, use_test_store }: ReciperoRequest = await req.json();
 
     if (!serial_number || serial_number.trim().length === 0) {
       return new Response(
@@ -63,10 +64,12 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Use provided store_id or default from environment
-    const storeId = store_id || parseInt(Deno.env.get('RECIPERO_STORE_ID') || '1');
+    // Use provided store_id, or default from environment (test vs live)
+    const storeId = store_id || getStoreId(use_test_store);
 
-    console.log('Starting ClaimsCheck verification for:', serial_number, 'using store ID:', storeId);
+    console.log('Starting ClaimsCheck verification for:', serial_number, 
+                'using store ID:', storeId, 
+                'environment:', use_test_store ? 'TEST' : 'LIVE');
 
     // Check rate limits
     const rateLimitOk = await checkRateLimit(supabase, user.id);
@@ -134,6 +137,16 @@ Deno.serve(async (req) => {
     );
   }
 });
+
+function getStoreId(useTestStore?: boolean): number {
+  if (useTestStore) {
+    const testStoreId = Deno.env.get('RECIPERO_TEST_STORE_ID');
+    return testStoreId ? parseInt(testStoreId) : 1;
+  } else {
+    const liveStoreId = Deno.env.get('RECIPERO_LIVE_STORE_ID') || Deno.env.get('RECIPERO_STORE_ID');
+    return liveStoreId ? parseInt(liveStoreId) : 1;
+  }
+}
 
 async function checkRateLimit(supabase: any, userId: string): Promise<boolean> {
   const now = new Date();
@@ -337,6 +350,12 @@ function generateMessage(status: ReciperoResponse['status'], data: any): string 
 }
 
 function simulateSerialVerification(serialNumber: string, itemType: string): ReciperoResponse {
+  // Check if this is a known test identifier that should return specific results
+  const testResult = getTestResult(serialNumber);
+  if (testResult) {
+    return testResult;
+  }
+
   // Create deterministic hash from serial for consistent results
   const hash = serialNumber.split('').reduce((a, b) => {
     a = ((a << 5) - a) + b.charCodeAt(0);
@@ -385,6 +404,71 @@ function simulateSerialVerification(serialNumber: string, itemType: string): Rec
     details: mockDetails,
     message: generateMessage(status, mockDetails),
     report_id: reportId
+  };
+}
+
+// Test identifiers for Recipero test environment
+function getTestResult(serialNumber: string): ReciperoResponse | null {
+  const testSerial = serialNumber.toUpperCase();
+  
+  // These would be the actual test identifiers provided by Recipero
+  // Update these based on the actual test data table they provide
+  const testIdentifiers: Record<string, ReciperoResponse['status']> = {
+    'TESTSERIAL001': 'safe',
+    'TESTSERIAL002': 'stolen', 
+    'TESTSERIAL003': 'lost',
+    'TESTSERIAL004': 'suspicious',
+    'TESTSERIAL005': 'unknown',
+    // Add more test identifiers as provided by Recipero
+  };
+
+  const testStatus = testIdentifiers[testSerial];
+  if (!testStatus) {
+    // Default for unknown test identifiers is 'compromised' (suspicious)
+    return createTestResult(serialNumber, 'suspicious', 'Unknown test identifier - showing as compromised (test environment)');
+  }
+
+  return createTestResult(serialNumber, testStatus, `Test result for ${testSerial}`);
+}
+
+function createTestResult(serialNumber: string, status: ReciperoResponse['status'], message: string): ReciperoResponse {
+  const mockDetails = {
+    serial: serialNumber,
+    serialdetails: {
+      wellformedimei: serialNumber.length === 15,
+      modelinformation: [{
+        manufacturer: 'TEST',
+        models: [{ name: 'TEST DEVICE', colour: 'TEST', storage: 'TEST' }]
+      }]
+    },
+    checkmendstatus: {
+      result: status === 'suspicious' ? 'red' : status === 'stolen' ? 'red' : 'green'
+    },
+    stolen: status === 'stolen' ? [{ 
+      identifier: serialNumber, 
+      datasource: 'TEST',
+      reference: 'TEST-REF-001'
+    }] : [],
+    loss: status === 'lost' ? [{
+      identifier: serialNumber,
+      datasource: 'TEST', 
+      reference: 'TEST-LOSS-001'
+    }] : [],
+    ownership: status === 'safe' ? [{
+      datasource: 'TEST',
+      make: 'TEST',
+      model: 'DEVICE'
+    }] : [],
+    blocklist: { blocked: status === 'stolen' }
+  };
+
+  return {
+    status,
+    confidence: 95, // High confidence for test data
+    source: 'Recipero ClaimsCheck (Test Environment)',
+    details: mockDetails,
+    message,
+    report_id: `TEST-${Date.now()}-${serialNumber.slice(-6)}`
   };
 }
 

@@ -82,16 +82,18 @@ export const useRealVerification = () => {
     return itemType === 'smartphone' || itemType === 'electronics' || itemType === 'laptop';
   };
 
-  const verifyWithRecipero = async (serialNumber: string, itemType: string): Promise<VerificationResult | null> => {
+  const verifyWithRecipero = async (serialNumber: string, itemType: string, useTestStore = false): Promise<VerificationResult | null> => {
     setIsLoading(true);
     try {
-      console.log('Starting Recipero ClaimsCheck verification for:', serialNumber, itemType);
+      console.log('Starting Recipero ClaimsCheck verification for:', serialNumber, itemType, 
+                  'environment:', useTestStore ? 'TEST' : 'LIVE');
       
       const { data, error } = await supabase.functions.invoke('recipero-verify', {
         body: {
           serial_number: serialNumber.trim(),
           item_type: itemType,
-          store_id: 1
+          store_id: 1,
+          use_test_store: useTestStore
         }
       });
 
