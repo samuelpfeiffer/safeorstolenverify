@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -81,9 +82,21 @@ export const FasterCapitalRequirements = () => {
             </Badge>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">FasterCapital</span>
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img 
+              src="https://fastercapital.com/assets/img/fc-logo-white.png" 
+              alt="FasterCapital Logo" 
+              className="h-12 w-auto"
+              onError={(e) => {
+                // Fallback to text if logo fails to load
+                e.currentTarget.style.display = 'none';
+                const fallback = document.createElement('span');
+                fallback.className = 'text-4xl font-bold text-gradient';
+                fallback.textContent = 'FasterCapital';
+                e.currentTarget.parentNode?.appendChild(fallback);
+              }}
+            />
+          </div>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             We're proud to be accelerated by FasterCapital. Our partnership includes providing comprehensive 

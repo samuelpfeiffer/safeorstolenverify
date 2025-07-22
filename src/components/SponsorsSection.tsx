@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
@@ -15,7 +16,7 @@ export const SponsorsSection = () => {
   const partners = [
     {
       name: 'FasterCapital',
-      logo: 'FC',
+      logo: 'https://fastercapital.com/assets/img/fc-logo-white.png',
       description: 'Startup Accelerator & VC Network',
       url: 'https://fastercapital.com',
       featured: true,
@@ -101,8 +102,20 @@ export const SponsorsSection = () => {
         <div className="mb-12">
           <Card className="bg-gradient-to-r from-blue-500/10 to-red-500/10 border-blue-500/20 p-8 text-center">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-red-500 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">FC</span>
+              <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center p-2">
+                <img 
+                  src="https://fastercapital.com/assets/img/fc-logo-white.png" 
+                  alt="FasterCapital Logo" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Fallback to text if logo fails to load
+                    e.currentTarget.style.display = 'none';
+                    const fallback = document.createElement('span');
+                    fallback.className = 'text-2xl font-bold text-white';
+                    fallback.textContent = 'FC';
+                    e.currentTarget.parentNode?.appendChild(fallback);
+                  }}
+                />
               </div>
               <div className="text-left">
                 <h3 className="text-2xl font-bold text-foreground">FasterCapital</h3>
@@ -130,7 +143,15 @@ export const SponsorsSection = () => {
           {partners.slice(1).map((partner, index) => (
             <Card key={index} className="bg-card/80 backdrop-blur-sm border-border/50 p-6 text-center hover:bg-card/90 transition-all">
               <div className={`w-12 h-12 ${partner.bgColor} rounded-lg flex items-center justify-center mx-auto mb-4`}>
-                <span className={`text-lg font-bold ${partner.color}`}>{partner.logo}</span>
+                {partner.logo.startsWith('http') ? (
+                  <img 
+                    src={partner.logo} 
+                    alt={`${partner.name} Logo`} 
+                    className="w-8 h-8 object-contain"
+                  />
+                ) : (
+                  <span className={`text-lg font-bold ${partner.color}`}>{partner.logo}</span>
+                )}
               </div>
               <h4 className="font-semibold mb-2">{partner.name}</h4>
               <p className="text-sm text-muted-foreground">{partner.description}</p>
