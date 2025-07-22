@@ -16,16 +16,25 @@ export const SponsorsSection = () => {
     {
       name: 'FasterCapital',
       logo: 'FC',
-      description: 'Startup Accelerator',
+      description: 'Startup Accelerator & VC Network',
       url: 'https://fastercapital.com',
       featured: true,
-      color: 'text-sos-orange',
-      bgColor: 'bg-sos-orange/10'
+      color: 'text-blue-500',
+      bgColor: 'bg-gradient-to-r from-blue-500/10 to-red-500/10',
+      logoColors: 'bg-gradient-to-r from-blue-500 to-red-500'
+    },
+    {
+      name: 'Lovable.dev',
+      logo: 'LV',
+      description: 'AI-Powered Development Platform',
+      url: 'https://lovable.dev',
+      color: 'text-purple-500',
+      bgColor: 'bg-purple-500/10'
     },
     {
       name: 'Supabase',
       logo: 'SB',
-      description: 'Database Platform',
+      description: 'Database & Backend Platform',
       url: 'https://supabase.com',
       color: 'text-green-400',
       bgColor: 'bg-green-400/10'
@@ -41,7 +50,7 @@ export const SponsorsSection = () => {
     {
       name: 'Vercel',
       logo: 'VC',
-      description: 'Cloud Platform',
+      description: 'Cloud Hosting Platform',
       url: 'https://vercel.com',
       color: 'text-white',
       bgColor: 'bg-white/10'
@@ -90,14 +99,14 @@ export const SponsorsSection = () => {
 
         {/* Featured Partner - FasterCapital */}
         <div className="mb-12">
-          <Card className="bg-gradient-to-r from-sos-orange/10 to-sos-lime/10 border-sos-orange/20 p-8 text-center">
+          <Card className="bg-gradient-to-r from-blue-500/10 to-red-500/10 border-blue-500/20 p-8 text-center">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-sos-orange/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-sos-orange">FC</span>
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-red-500 rounded-full flex items-center justify-center">
+                <span className="text-2xl font-bold text-white">FC</span>
               </div>
               <div className="text-left">
                 <h3 className="text-2xl font-bold text-foreground">FasterCapital</h3>
-                <p className="text-sos-orange font-semibold">Lead Accelerator Partner</p>
+                <p className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent font-semibold">Lead Accelerator Partner</p>
               </div>
             </div>
             <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
@@ -108,10 +117,10 @@ export const SponsorsSection = () => {
               href="https://fastercapital.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sos-orange hover:text-sos-orange/80 transition-colors font-semibold"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity font-semibold"
             >
               Learn more about FasterCapital
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="h-4 w-4 text-blue-500" />
             </a>
           </Card>
         </div>
