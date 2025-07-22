@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import { FasterCapitalRequirements } from '@/components/FasterCapitalRequirements';
+import { SponsorsSection } from '@/components/SponsorsSection';
 import CTASection from '@/components/CTASection';
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Hero />
       <Features />
       <FasterCapitalRequirements />
+      <SponsorsSection />
       <CTASection />
     </div>
   );
