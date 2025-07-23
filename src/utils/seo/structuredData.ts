@@ -38,7 +38,7 @@ export const createOrganizationSchema = () => ({
   },
   "sameAs": [
     "https://twitter.com/safeorstolen",
-    "https://linkedin.com/company/safeorstolen"
+    "https://www.linkedin.com/in/verifysafeorstolen"
   ],
   "contactPoint": {
     "@type": "ContactPoint",

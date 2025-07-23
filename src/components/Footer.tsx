@@ -92,7 +92,7 @@ const Footer = () => {
                 <a href="#" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
                   <Twitter className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
-                <a href="#" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
+                <a href="https://www.linkedin.com/in/verifysafeorstolen" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
                   <Linkedin className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
               </div>
