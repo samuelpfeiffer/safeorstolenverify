@@ -6,8 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Menu, Search, Shield, User, Settings, LogOut, Crown, Home, ChevronDown } from 'lucide-react';
+import { Menu, Search, Shield, User, Settings, LogOut, Crown, Home, ChevronDown, Building2, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 /**
  * Simplified Main Application Navigation
@@ -18,6 +19,7 @@ export const Navigation: React.FC = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   const isAdmin = user?.email === 'admin@safeorstolen.com' || 
                   user?.email?.endsWith('@safeorstolen.com') ||
@@ -35,8 +37,10 @@ export const Navigation: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Verify', href: '/real-time-verification', icon: Search },  
+    { name: 'About Problem', href: '/about-problem', icon: Shield },
     { name: 'How It Works', href: '/how-it-works', icon: null },
-    { name: 'Pricing', href: '/pricing', icon: null },
+    { name: 'Our Story', href: '/our-story', icon: null },
+    { name: 'For Business', href: '/for-brands', icon: Building2 },
     { name: 'Contact', href: '/contact', icon: null },
   ];
 
@@ -97,11 +101,14 @@ export const Navigation: React.FC = () => {
 
   return (
     <nav className={cn(
-      "bg-sos-dark/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50 transition-all duration-300",
+      "bg-sos/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50 transition-all duration-300",
       isScrolled && "shadow-lg"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className={cn(
+          "flex justify-between transition-all duration-300",
+          isMobile ? "h-14" : "h-16"
+        )}>
           {/* Logo and Brand */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 group">
@@ -109,18 +116,25 @@ export const Navigation: React.FC = () => {
                 <img 
                   src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
                   alt="Safe or Stolen"
-                  className="h-8 w-8 filter drop-shadow-lg"
+                  className={cn(
+                    "filter drop-shadow-lg",
+                    isMobile ? "h-6 w-6" : "h-8 w-8"
+                  )}
                 />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
               </div>
-              <div className="hidden sm:block">
-                <span className="text-xl font-bold text-white">Safe or Stolen</span>
+              <div className={cn(isMobile ? "hidden" : "hidden sm:block")}>
+                <span className={cn(
+                  "font-bold text-white",
+                  isMobile ? "text-lg" : "text-xl"
+                )}>Safe or Stolen</span>
+                <div className="text-xs text-sos-orange font-medium">Verify Before You Buy</div>
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => (
               <NavLink key={item.name} href={item.href}>
                 {item.name}
@@ -131,24 +145,27 @@ export const Navigation: React.FC = () => {
           {/* User Menu */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
-              <div className="hidden lg:flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-4">
                 {/* User Dropdown */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="flex items-center gap-2 text-gray-300 hover:text-white">
-                      <Avatar className="h-8 w-8">
+                      <Avatar className={cn(isMobile ? "h-6 w-6" : "h-8 w-8")}>
                         <AvatarImage src={user?.avatar} />
                         <AvatarFallback className="bg-sos-orange text-white">
                           {user?.email?.charAt(0).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
-                      <span className="text-sm font-medium">
+                      <span className={cn(
+                        "font-medium",
+                        isMobile ? "text-xs" : "text-sm"
+                      )}>
                         {user?.email?.split('@')[0]}
                       </span>
                       <ChevronDown className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56 bg-sos-dark border-sos-orange/20 z-50" align="end">
+                  <DropdownMenuContent className="w-56 bg-sos border-sos-orange/20 z-50" align="end">
                     <div className="flex items-center justify-start gap-2 p-2">
                       <div className="flex flex-col space-y-1 leading-none">
                         <p className="font-medium text-white">{user?.fullName || 'User'}</p>
@@ -189,7 +206,7 @@ export const Navigation: React.FC = () => {
                 </DropdownMenu>
               </div>
             ) : (
-              <div className="hidden lg:flex items-center space-x-3">
+              <div className="hidden md:flex items-center space-x-3">
                 <Button variant="ghost" asChild className="text-gray-300 hover:text-white">
                   <Link to="/auth">Sign In</Link>
                 </Button>
@@ -205,11 +222,11 @@ export const Navigation: React.FC = () => {
             {/* Mobile menu button */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" className="lg:hidden" size="icon">
-                  <Menu className="h-6 w-6" />
+                <Button variant="ghost" className="md:hidden" size={isMobile ? "sm" : "icon"}>
+                  <Menu className={cn(isMobile ? "h-5 w-5" : "h-6 w-6")} />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-sos-dark border-sos-orange/20 text-white">
+              <SheetContent side="right" className="bg-sos border-sos-orange/20 text-white w-[300px] sm:w-[350px]">
                 <div className="mt-6 space-y-2">
                   {navigation.map((item) => (
                     <MobileNavLink 

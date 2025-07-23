@@ -1,23 +1,23 @@
 
 /**
- * Mobile-friendly security headers configuration
+ * Mobile-optimized security headers configuration
  */
 export const SECURITY_HEADERS = {
-  // Very permissive CSP for mobile compatibility
+  // Mobile-optimized CSP with better compatibility
   'Content-Security-Policy': [
-    "default-src 'self' 'unsafe-inline' 'unsafe-eval' *",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' * blob: data:",
-    "style-src 'self' 'unsafe-inline' *",
-    "font-src 'self' * data:",
-    "img-src 'self' * data: blob:",
-    "connect-src 'self' * ws: wss:",
-    "frame-src 'self' *",
-    "object-src 'self'",
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.googletagmanager.com https://js.stripe.com blob: data:",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com data:",
+    "img-src 'self' data: https: blob:",
+    "connect-src 'self' https://*.supabase.co https://api.stripe.com https://www.google-analytics.com wss:",
+    "frame-src 'self' https://js.stripe.com",
+    "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self' *"
+    "form-action 'self'"
   ].join('; '),
   
-  // Mobile-friendly security headers
+  // Essential mobile-friendly security headers
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin'
 } as const;

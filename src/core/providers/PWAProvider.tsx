@@ -1,5 +1,6 @@
 import React, { useEffect, createContext, useContext, useState } from 'react';
 import { usePWA } from '@/hooks/usePWA';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PWAContextType {
   isInstallAvailable: boolean;
@@ -24,6 +25,18 @@ interface PWAProviderProps {
 
 export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
   const { isInstallAvailable, isInstalled, isOnline, showInstallPrompt } = usePWA();
+  const isMobile = useIsMobile();
+
+  // Enhanced mobile PWA experience
+  useEffect(() => {
+    if (isMobile && isInstallAvailable) {
+      // Show install prompt after a delay on mobile
+      const timer = setTimeout(() => {
+        console.log('PWA install available for mobile device');
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile, isInstallAvailable]);
 
   const value: PWAContextType = {
     isInstallAvailable,
