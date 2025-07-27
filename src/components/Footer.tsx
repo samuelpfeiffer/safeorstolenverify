@@ -1,9 +1,7 @@
-
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle } from 'lucide-react';
-
 const Footer = () => {
   const quickLinks = [{
     label: 'How It Works',
@@ -24,7 +22,6 @@ const Footer = () => {
     label: 'Contact Us',
     href: '/contact'
   }];
-
   const legalLinks = [{
     label: 'Privacy Policy',
     href: '/privacy-policy'
@@ -38,7 +35,6 @@ const Footer = () => {
     label: 'Cookie Policy',
     href: '/privacy-policy#cookies'
   }];
-
   const supportLinks = [{
     label: 'Help Center',
     href: '/contact'
@@ -52,11 +48,8 @@ const Footer = () => {
     label: 'Report Issue',
     href: '/contact'
   }];
-
   const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
-
-  return (
-    <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
+  return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
       <div className="container mx-auto container-padding">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -79,7 +72,7 @@ const Footer = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center gap-2 text-sm">
                   <Mail className="h-4 w-4 text-sos-orange" />
-                  <span className="text-muted-foreground">samuel@safeorstolen.com</span>
+                  <span className="text-muted-foreground">info@safeorstolen.com</span>
                 </div>
                 
                 <div className="flex items-center gap-2 text-sm">
@@ -102,14 +95,12 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold text-foreground mb-6">Quick Links</h3>
               <ul className="space-y-3">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
+                {quickLinks.map((link, index) => <li key={index}>
                     <Link to={link.href} className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
                       <span>{link.label}</span>
                       <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -117,25 +108,21 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold text-foreground mb-6">Support</h3>
               <ul className="space-y-3">
-                {supportLinks.map((link, index) => (
-                  <li key={index}>
+                {supportLinks.map((link, index) => <li key={index}>
                     <Link to={link.href} className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
                       <span>{link.label}</span>
                       <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
               
               <div className="mt-8">
                 <h4 className="text-sm font-semibold text-foreground mb-3">Trust & Security</h4>
                 <div className="space-y-2">
-                  {trustIndicators.map((indicator, index) => (
-                    <div key={index} className="flex items-center gap-2">
+                  {trustIndicators.map((indicator, index) => <div key={index} className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-sos-lime" />
                       <span className="text-xs text-muted-foreground">{indicator}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -144,14 +131,12 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-bold text-foreground mb-6">Legal</h3>
               <ul className="space-y-3 mb-8">
-                {legalLinks.map((link, index) => (
-                  <li key={index}>
+                {legalLinks.map((link, index) => <li key={index}>
                     <Link to={link.href} className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
                       <span>{link.label}</span>
                       <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
 
               <div className="card-enhanced p-4 border border-sos-lime/20 bg-card">
@@ -192,8 +177,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
