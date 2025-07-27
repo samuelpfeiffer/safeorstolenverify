@@ -91,11 +91,27 @@ const Hero = () => {
               />
             </div>
             
-            {/* Clean Headline */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-              Don't Get <span className="text-red-400">Scammed</span>
+            {/* FasterCapital Branding */}
+            <div className="mb-6">
+              <p className="text-lg text-white mb-2">Safe or Stolen</p>
+              <div className="flex items-center justify-center gap-2 text-sm text-gray-300">
+                <span>Accelerated by</span>
+                <a 
+                  href="https://fastercapital.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sos-orange hover:text-sos-orange/80 transition-colors font-semibold"
+                >
+                  FasterCapital
+                </a>
+              </div>
+            </div>
+            
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="text-red-400">SafeOrStolen</span>
               <br />
-              Verify Before You Buy
+              <span className="text-white">Verify Before You Buy</span>
             </h1>
             
             {/* Simple Subheadline */}
