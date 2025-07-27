@@ -88,21 +88,28 @@ const Hero = () => {
             
             {/* FasterCapital Branding */}
             <div className="mb-6">
-              <p className="text-lg text-white mb-2">
-            </p>
-              <div className="flex items-center justify-center gap-2 text-sm text-gray-300">
-                <span>Accelerated by</span>
-                <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer" className="text-sos-orange hover:text-sos-orange/80 transition-colors font-semibold">
-                  FasterCapital
+              <div className="flex items-center justify-center gap-3 text-sm">
+                <span className="text-gray-300">Accelerated By</span>
+                <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <img 
+                    src="/src/assets/fastercapital-logo.png" 
+                    alt="FasterCapital" 
+                    className="h-6 w-auto"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      const fallback = document.createElement('span');
+                      fallback.className = 'text-sos-orange font-semibold';
+                      fallback.textContent = 'FasterCapital';
+                      e.currentTarget.parentNode?.appendChild(fallback);
+                    }}
+                  />
                 </a>
               </div>
             </div>
             
             {/* Main Headline */}
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-red-400">Safe Or Stolen</span>
-              <br />
-              <span className="text-white">Verify Before You Buy</span>
+              <span className="text-red-400">SafeOrStolen</span>
             </h1>
             
             {/* Simple Subheadline */}
