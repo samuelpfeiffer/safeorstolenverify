@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Shield, Heart, ExternalLink, Twitter, Linkedin, Github } from 'lucide-react';
+import { FasterCapitalLogo } from '@/components/common/FasterCapitalLogo';
 
 /**
  * Application Footer
@@ -82,19 +83,11 @@ export const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 mb-4">
               <Badge variant="outline" className="border-sos-lime text-sos-lime">
                 <Shield className="h-3 w-3 mr-1" />
-                FasterCapital Accelerated
+                Accelerated
               </Badge>
             </div>
 
-            <a 
-              href="https://fastercapital.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-gray-400 hover:text-sos-lime transition-colors"
-            >
-              Powered by FasterCapital
-              <ExternalLink className="h-3 w-3 ml-1" />
-            </a>
+            <FasterCapitalLogo size="sm" />
           </div>
 
           {/* Footer Links */}

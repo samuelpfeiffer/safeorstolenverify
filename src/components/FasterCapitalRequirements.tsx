@@ -16,6 +16,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { FasterCapitalLogo } from '@/components/common/FasterCapitalLogo';
 
 export const FasterCapitalRequirements = () => {
   const navigate = useNavigate();
@@ -83,39 +84,21 @@ export const FasterCapitalRequirements = () => {
           </div>
           
           <div className="flex items-center justify-center gap-4 mb-6">
-            <img 
-              src="https://fastercapital.com/assets/img/fc-logo-white.png" 
-              alt="FasterCapital Logo" 
-              className="h-12 w-auto"
-              onError={(e) => {
-                // Fallback to text if logo fails to load
-                e.currentTarget.style.display = 'none';
-                const fallback = document.createElement('span');
-                fallback.className = 'text-4xl font-bold text-gradient';
-                fallback.textContent = 'FasterCapital';
-                e.currentTarget.parentNode?.appendChild(fallback);
-              }}
-            />
+            <FasterCapitalLogo size="lg" showLink={false} />
           </div>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            We're proud to be accelerated by FasterCapital. Our partnership includes providing comprehensive 
-            startup documentation including pitch decks, cofounder contact information, business plans, 
-            financial models, video pitches, executive summaries, idea briefs, challenge descriptions, 
-            solution overviews, our founding story, marketing materials, LinkedIn profiles, professional 
-            photos, company logos, and team CVs. We maintain active communication, provide regular updates 
-            on team changes and product developments, and comply with all FasterCapital guidelines while 
-            showcasing our partnership across our website and social media profiles.
+            Accelerated by FasterCapital in their 12-month program with access to 155K+ angels and 50K+ VCs.
           </p>
 
           <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
               <CheckCircle className="h-4 w-4 text-sos-lime" />
-              <span>Safe or Stolen is FasterCapital Accelerated</span>
+              <span>FasterCapital Accelerated</span>
             </div>
             <div className="flex items-center space-x-2">
               <CheckCircle className="h-4 w-4 text-sos-lime" />
-              <span>Currently in 12-month program</span>
+              <span>12-month program</span>
             </div>
           </div>
         </div>
@@ -172,8 +155,7 @@ export const FasterCapitalRequirements = () => {
             <CardContent className="py-12 px-8">
               <h3 className="text-2xl font-bold mb-4">Ready to Scale Your Tech Startup?</h3>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Follow Safe or Stolen's journey with FasterCapital and explore how their programs 
-                can help accelerate your startup's growth and funding opportunities.
+                Explore FasterCapital's programs to accelerate your startup's growth and funding opportunities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 

@@ -7,6 +7,7 @@ import QrScanner from '@/components/hero/QrScanner';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
+import { FasterCapitalLogo } from '@/components/common/FasterCapitalLogo';
 const Hero = () => {
   const [isQrScannerOpen, setIsQrScannerOpen] = useState(false);
   const navigate = useNavigate();
@@ -90,20 +91,7 @@ const Hero = () => {
             <div className="mb-6">
               <div className="flex items-center justify-center gap-3 text-sm">
                 <span className="text-gray-300">Accelerated By</span>
-                <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <img 
-                    src="/src/assets/fastercapital-logo.png" 
-                    alt="FasterCapital" 
-                    className="h-6 w-auto"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      const fallback = document.createElement('span');
-                      fallback.className = 'text-sos-orange font-semibold';
-                      fallback.textContent = 'FasterCapital';
-                      e.currentTarget.parentNode?.appendChild(fallback);
-                    }}
-                  />
-                </a>
+                <FasterCapitalLogo size="md" />
               </div>
             </div>
             
@@ -129,7 +117,7 @@ const Hero = () => {
 
             {/* Simple Trust Statement */}
             <p className="text-sm text-gray-400">
-              Trusted by 500K+ users • Featured by FasterCapital
+              Trusted by 500K+ users
             </p>
           </div>
         </div>

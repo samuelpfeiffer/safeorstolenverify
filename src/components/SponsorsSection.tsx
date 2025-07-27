@@ -11,6 +11,7 @@ import {
   CheckCircle,
   ExternalLink
 } from 'lucide-react';
+import { FasterCapitalLogo } from '@/components/common/FasterCapitalLogo';
 
 export const SponsorsSection = () => {
   const partners = [
@@ -103,38 +104,16 @@ export const SponsorsSection = () => {
           <Card className="bg-gradient-to-r from-blue-500/10 to-red-500/10 border-blue-500/20 p-8 text-center">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center p-2">
-                <img 
-                  src="https://fastercapital.com/assets/img/fc-logo-white.png" 
-                  alt="FasterCapital Logo" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    // Fallback to text if logo fails to load
-                    e.currentTarget.style.display = 'none';
-                    const fallback = document.createElement('span');
-                    fallback.className = 'text-2xl font-bold text-white';
-                    fallback.textContent = 'FC';
-                    e.currentTarget.parentNode?.appendChild(fallback);
-                  }}
-                />
+                <FasterCapitalLogo size="lg" showLink={false} />
               </div>
               <div className="text-left">
-                <h3 className="text-2xl font-bold text-foreground">FasterCapital</h3>
-                <p className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent font-semibold">Lead Accelerator Partner</p>
+                <h3 className="text-2xl font-bold text-foreground">Lead Accelerator Partner</h3>
               </div>
             </div>
             <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
-              Currently participating in the 12-month FasterCapital acceleration program, 
-              receiving mentorship, funding support, and access to their global network of 155K+ angels and 50K+ VCs.
+              Participating in the 12-month FasterCapital acceleration program with access to their global network of 155K+ angels and 50K+ VCs.
             </p>
-            <a 
-              href="https://fastercapital.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity font-semibold"
-            >
-              Learn more about FasterCapital
-              <ExternalLink className="h-4 w-4 text-blue-500" />
-            </a>
+            <FasterCapitalLogo showText />
           </Card>
         </div>
 
