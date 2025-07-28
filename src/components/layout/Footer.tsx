@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
               </Badge>
             </div>
 
-            <FasterCapitalLogo size="sm" />
+            <FasterCapitalLogo size="md" />
           </div>
 
           {/* Footer Links */}

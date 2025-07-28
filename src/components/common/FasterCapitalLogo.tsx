@@ -15,9 +15,9 @@ export const FasterCapitalLogo: React.FC<FasterCapitalLogoProps> = ({
   showText = false
 }) => {
   const sizeClasses = {
-    sm: 'h-4 w-auto',
-    md: 'h-6 w-auto', 
-    lg: 'h-12 w-auto'
+    sm: 'h-8 w-auto',
+    md: 'h-12 w-auto', 
+    lg: 'h-24 w-auto'
   };
 
   const logoElement = (

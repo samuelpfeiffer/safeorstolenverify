@@ -91,7 +91,7 @@ const Hero = () => {
             <div className="mb-6">
               <div className="flex items-center justify-center gap-3 text-sm">
                 <span className="text-gray-300">Accelerated By</span>
-                <FasterCapitalLogo size="md" />
+                <FasterCapitalLogo size="lg" />
               </div>
             </div>
             

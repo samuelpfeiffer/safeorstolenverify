@@ -113,7 +113,7 @@ export const SponsorsSection = () => {
             <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
               Participating in the 12-month FasterCapital acceleration program with access to their global network of 155K+ angels and 50K+ VCs.
             </p>
-            <FasterCapitalLogo showText />
+            <FasterCapitalLogo size="lg" showText />
           </Card>
         </div>
 
