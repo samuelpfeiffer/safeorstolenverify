@@ -107,12 +107,25 @@ const Hero = () => {
             </p>
             
             {/* Clean Search Form */}
-            <div className="mb-12">
+            <div className="mb-8">
               <ErrorBoundary fallback={<div className="text-center p-4 text-gray-500">
                   Search form temporarily unavailable
                 </div>}>
                 <SimpleSearchForm onOpenQrScanner={handleOpenQrScanner} />
               </ErrorBoundary>
+            </div>
+
+            {/* Firearms Search Link */}
+            <div className="mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <span className="text-gray-300">Looking for firearms?</span>
+                <button 
+                  onClick={() => navigate('/firearms-search')}
+                  className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+                >
+                  🔫 Search Stolen Firearms Database
+                </button>
+              </div>
             </div>
 
             {/* Simple Trust Statement */}
