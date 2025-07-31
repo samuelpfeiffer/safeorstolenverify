@@ -10,6 +10,8 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
 import { MobileOptimizer } from '@/components/mobile/MobileOptimizer';
+import { MobileInputOptimizer } from '@/components/mobile/MobileInputOptimizer';
+import { PWAProvider } from '@/core/providers/PWAProvider';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -44,19 +46,22 @@ export const AppRoot: React.FC = () => {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
-            <ThemeProvider>
-              <SEOProvider>
-                <Router>
-                  <div className="min-h-screen bg-sos text-white antialiased">
-                    <MobileOptimizer />
-                    <Suspense fallback={<AppLoadingScreen />}>
+            <PWAProvider>
+              <ThemeProvider>
+                <SEOProvider>
+                  <Router>
+                    <div className="min-h-screen bg-sos text-white antialiased">
+                      <MobileOptimizer />
+                      <MobileInputOptimizer />
+                      <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />
                     </Suspense>
                     <Toaster />
                   </div>
-                </Router>
-              </SEOProvider>
-            </ThemeProvider>
+                  </Router>
+                </SEOProvider>
+              </ThemeProvider>
+            </PWAProvider>
           </AuthProvider>
         </QueryClientProvider>
       </HelmetProvider>

@@ -8,6 +8,8 @@
   "background_color": "#1a1a1a",
   "theme_color": "#ff6b35",
   "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay", "standalone"],
   "categories": ["security", "verification", "shopping"],
   "lang": "en-US",
   "scope": "/",

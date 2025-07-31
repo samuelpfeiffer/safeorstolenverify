@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useMobilePerformance } from '@/hooks/useMobilePerformance';
 
 /**
  * Mobile-specific optimizations and configurations
  */
 export const MobileOptimizer = () => {
   const isMobile = useIsMobile();
+  useMobilePerformance();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

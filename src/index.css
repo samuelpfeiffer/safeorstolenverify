@@ -178,4 +178,17 @@
   .overscroll-contain {
     overscroll-behavior: contain;
   }
+
+  /* PWA safe areas for mobile devices with notches */
+  .safe-area-padding {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Better text selection on mobile */
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+  }
 }

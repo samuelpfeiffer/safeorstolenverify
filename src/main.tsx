@@ -10,15 +10,24 @@ pwaService.initDB().then(() => {
   pwaService.clearOldCache().catch(console.error);
 }).catch(console.error);
 
-// Register service worker for PWA capabilities
+// Register secure service worker for PWA capabilities
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('/sw-secure.js')
       .then((registration) => {
-        console.log('SW registered: ', registration);
+        console.log('Secure SW registered: ', registration);
+        
+        // Enhanced mobile performance
+        if ('connection' in navigator) {
+          const connection = (navigator as any).connection;
+          if (connection && (connection.effectiveType === '2g' || connection.effectiveType === 'slow-2g')) {
+            // Enable aggressive caching for slow connections
+            registration.update();
+          }
+        }
       })
       .catch((registrationError) => {
-        console.log('SW registration failed: ', registrationError);
+        console.log('Secure SW registration failed: ', registrationError);
       });
   });
 }
