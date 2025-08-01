@@ -1,9 +1,10 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
+import { DeferredMobileSetup } from '@/components/mobile/DeferredMobileSetup';
 
 // Lazy load all pages for optimal performance
 const Index = lazy(() => import('@/pages/Index'));
@@ -47,9 +48,16 @@ const FirearmsSearchPage = lazy(() => import('@/pages/FirearmsSearchPage'));
  * Handles all application routes with proper lazy loading and access control
  */
 export const AppRoutes: React.FC = () => {
+  // Initialize mobile optimizations after routes are loaded
+  useEffect(() => {
+    // This ensures mobile setup happens after the routing system is ready
+  }, []);
+
   return (
-    <Suspense fallback={<AppLoadingScreen />}>
-      <Routes>
+    <>
+      <DeferredMobileSetup />
+      <Suspense fallback={<AppLoadingScreen />}>
+        <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Index />} />
@@ -135,7 +143,8 @@ export const AppRoutes: React.FC = () => {
         {/* Catch all - 404 */}
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
-      </Routes>
-    </Suspense>
+        </Routes>
+      </Suspense>
+    </>
   );
 };

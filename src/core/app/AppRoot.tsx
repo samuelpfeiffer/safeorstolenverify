@@ -9,8 +9,6 @@ import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
-import { MobileOptimizer } from '@/components/mobile/MobileOptimizer';
-import { MobileInputOptimizer } from '@/components/mobile/MobileInputOptimizer';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 
 // Enhanced QueryClient configuration for enterprise performance
@@ -51,13 +49,11 @@ export const AppRoot: React.FC = () => {
                 <SEOProvider>
                   <Router>
                     <div className="min-h-screen bg-sos text-white antialiased">
-                      <MobileOptimizer />
-                      <MobileInputOptimizer />
                       <Suspense fallback={<AppLoadingScreen />}>
-                      <AppRoutes />
-                    </Suspense>
-                    <Toaster />
-                  </div>
+                        <AppRoutes />
+                      </Suspense>
+                      <Toaster />
+                    </div>
                   </Router>
                 </SEOProvider>
               </ThemeProvider>
