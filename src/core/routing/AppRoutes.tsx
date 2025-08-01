@@ -1,10 +1,10 @@
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
-import { DeferredMobileSetup } from '@/components/mobile/DeferredMobileSetup';
+import { SafeMobileSetup } from '@/components/mobile/SafeMobileSetup';
 
 // Lazy load all pages for optimal performance
 const Index = lazy(() => import('@/pages/Index'));
@@ -48,14 +48,9 @@ const FirearmsSearchPage = lazy(() => import('@/pages/FirearmsSearchPage'));
  * Handles all application routes with proper lazy loading and access control
  */
 export const AppRoutes: React.FC = () => {
-  // Initialize mobile optimizations after routes are loaded
-  useEffect(() => {
-    // This ensures mobile setup happens after the routing system is ready
-  }, []);
-
   return (
     <>
-      <DeferredMobileSetup />
+      <SafeMobileSetup />
       <Suspense fallback={<AppLoadingScreen />}>
         <Routes>
         {/* Public Routes */}
