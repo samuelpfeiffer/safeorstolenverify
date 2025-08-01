@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMobilePerformance } from '@/hooks/useMobilePerformance';
 
@@ -9,7 +9,7 @@ export const MobileOptimizer = () => {
   const isMobile = useIsMobile();
   useMobilePerformance();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (typeof window === 'undefined') return;
 
     // Mobile-specific viewport optimizations

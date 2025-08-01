@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 /**
@@ -8,7 +8,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 export const MobileInputOptimizer = () => {
   const isMobile = useIsMobile();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isMobile) return;
 
     // Optimize input behavior for mobile
