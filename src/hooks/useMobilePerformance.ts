@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useIsMobile } from './use-mobile';
 
 /**
@@ -7,7 +7,7 @@ import { useIsMobile } from './use-mobile';
 export const useMobilePerformance = () => {
   const isMobile = useIsMobile();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isMobile) return;
 
     // Optimize for mobile performance
@@ -55,7 +55,7 @@ export const useMobilePerformance = () => {
     };
   }, [isMobile]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isMobile) return;
 
     // Mobile-specific optimizations
