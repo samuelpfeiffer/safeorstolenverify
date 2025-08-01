@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 import { usePWA } from '@/hooks/usePWA';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -27,15 +27,32 @@ export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
   const { isInstallAvailable, isInstalled, isOnline, showInstallPrompt } = usePWA();
   const isMobile = useIsMobile();
 
-  // Enhanced mobile PWA experience
+  // Initialize mobile optimizations and PWA features
   useEffect(() => {
-    if (isMobile && isInstallAvailable) {
-      // Show install prompt after a delay on mobile
-      const timer = setTimeout(() => {
-        console.log('PWA install available for mobile device');
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
+    const initializeMobileOptimizations = async () => {
+      try {
+        // Initialize mobile optimizations after React context is established
+        if (isMobile) {
+          const { MobileSetupManager } = await import('@/utils/mobile/MobileSetupManager');
+          const mobileManager = MobileSetupManager.getInstance();
+          await mobileManager.initialize();
+        }
+
+        // Show install prompt after a delay on mobile
+        if (isMobile && isInstallAvailable) {
+          const timer = setTimeout(() => {
+            console.log('PWA install available for mobile device');
+          }, 3000);
+          return () => clearTimeout(timer);
+        }
+      } catch (error) {
+        console.warn('Mobile optimization initialization failed:', error);
+      }
+    };
+
+    // Delay initialization to ensure React providers are ready
+    const timer = setTimeout(initializeMobileOptimizations, 100);
+    return () => clearTimeout(timer);
   }, [isMobile, isInstallAvailable]);
 
   const value: PWAContextType = {

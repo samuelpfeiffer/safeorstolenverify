@@ -4,7 +4,7 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
-import { SafeMobileSetup } from '@/components/mobile/SafeMobileSetup';
+
 
 // Lazy load all pages for optimal performance
 const Index = lazy(() => import('@/pages/Index'));
@@ -49,9 +49,7 @@ const FirearmsSearchPage = lazy(() => import('@/pages/FirearmsSearchPage'));
  */
 export const AppRoutes: React.FC = () => {
   return (
-    <>
-      <SafeMobileSetup />
-      <Suspense fallback={<AppLoadingScreen />}>
+    <Suspense fallback={<AppLoadingScreen />}>
         <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
@@ -140,6 +138,5 @@ export const AppRoutes: React.FC = () => {
         <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </Suspense>
-    </>
   );
 };
