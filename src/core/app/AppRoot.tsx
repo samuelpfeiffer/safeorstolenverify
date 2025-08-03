@@ -10,6 +10,7 @@ import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
+import { SafeProviderWrapper } from '@/core/providers/SafeProviderWrapper';
 
 // Championship-grade QueryClient
 const queryClient = new QueryClient({
@@ -35,31 +36,47 @@ const queryClient = new QueryClient({
 });
 
 /**
- * CHAMPIONSHIP APPROOT VERSION 2.0
- * Built to eliminate ALL phantom component errors
- * Zero tolerance for React context issues
+ * CHAMPIONSHIP APPROOT VERSION 3.0
+ * Enhanced React readiness validation with dispatcher checks
  */
 export const AppRoot: React.FC = () => {
   const [isReactReady, setIsReactReady] = React.useState(false);
 
   React.useEffect(() => {
-    // Championship-level React context verification
-    const verifyReactContext = () => {
+    // Enhanced React context and dispatcher verification
+    const verifyReactReadiness = () => {
       try {
-        if (React && React.useState && React.useEffect && React.createElement) {
-          setIsReactReady(true);
-          console.log('✅ React context fully verified - Championship mode activated');
-          return true;
+        // Check React object and core hooks
+        if (!React || !React.useState || !React.useEffect || !React.createElement) {
+          throw new Error('React core functions missing');
         }
-        throw new Error('React context incomplete');
+
+        // Verify React dispatcher is ready (this is the key fix)
+        const dispatcher = (React as any).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED?.ReactCurrentDispatcher?.current;
+        if (!dispatcher) {
+          throw new Error('React dispatcher not ready');
+        }
+
+        // Test hook execution safety
+        const testState = React.useState(true);
+        if (!Array.isArray(testState) || testState.length !== 2) {
+          throw new Error('useState not functioning properly');
+        }
+
+        setIsReactReady(true);
+        console.log('✅ React fully ready - Enhanced mode activated');
+        return true;
       } catch (error) {
-        console.warn('⚠️ React context verification failed, retrying...', error);
-        setTimeout(verifyReactContext, 50);
+        console.warn('⚠️ React readiness check failed, retrying...', error);
+        setTimeout(verifyReactReadiness, 25);
         return false;
       }
     };
     
-    verifyReactContext();
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      verifyReactReadiness();
+    });
   }, []);
 
   if (!isReactReady) {
@@ -67,7 +84,7 @@ export const AppRoot: React.FC = () => {
       <div className="min-h-screen bg-sos flex items-center justify-center text-white">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sos-orange mx-auto mb-4"></div>
-          <p>Initializing Championship App...</p>
+          <p>Initializing React Context...</p>
         </div>
       </div>
     );
@@ -90,20 +107,24 @@ export const AppRoot: React.FC = () => {
     }>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <ThemeProvider>
-            <AuthProvider>
-              <SEOProvider>
-                <Router>
-                  <div className="min-h-screen bg-sos text-white antialiased">
-                    <React.Suspense fallback={<AppLoadingScreen />}>
-                      <AppRoutes />
-                    </React.Suspense>
-                    <Toaster />
-                  </div>
-                </Router>
-              </SEOProvider>
-            </AuthProvider>
-          </ThemeProvider>
+          <SafeProviderWrapper>
+            <ThemeProvider>
+              <SafeProviderWrapper>
+                <AuthProvider>
+                  <SEOProvider>
+                    <Router>
+                      <div className="min-h-screen bg-sos text-white antialiased">
+                        <React.Suspense fallback={<AppLoadingScreen />}>
+                          <AppRoutes />
+                        </React.Suspense>
+                        <Toaster />
+                      </div>
+                    </Router>
+                  </SEOProvider>
+                </AuthProvider>
+              </SafeProviderWrapper>
+            </ThemeProvider>
+          </SafeProviderWrapper>
         </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>

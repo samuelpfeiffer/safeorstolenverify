@@ -10,25 +10,52 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Safe localStorage access with fallback
+const getStoredTheme = (): Theme => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return (localStorage.getItem('theme') as Theme) || 'dark';
+    }
+  } catch (error) {
+    console.warn('localStorage access failed:', error);
+  }
+  return 'dark';
+};
+
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    return (localStorage.getItem('theme') as Theme) || 'dark';
-  });
-
+  // Initialize with safe default, update after mount
+  const [theme, setTheme] = useState<Theme>('dark');
   const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('dark');
+  const [isInitialized, setIsInitialized] = useState(false);
 
+  // Initialize theme from storage after mount
   useEffect(() => {
-    const root = window.document.documentElement;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    if (!isInitialized) {
+      const storedTheme = getStoredTheme();
+      setTheme(storedTheme);
+      setIsInitialized(true);
+    }
+  }, [isInitialized]);
+
+  // Apply theme changes
+  useEffect(() => {
+    if (!isInitialized) return;
     
-    const activeTheme = theme === 'system' ? systemTheme : theme;
-    setResolvedTheme(activeTheme);
-    
-    root.classList.remove('light', 'dark');
-    root.classList.add(activeTheme);
-    
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    try {
+      const root = window.document.documentElement;
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      
+      const activeTheme = theme === 'system' ? systemTheme : theme;
+      setResolvedTheme(activeTheme);
+      
+      root.classList.remove('light', 'dark');
+      root.classList.add(activeTheme);
+      
+      localStorage.setItem('theme', theme);
+    } catch (error) {
+      console.warn('Theme application failed:', error);
+    }
+  }, [theme, isInitialized]);
 
   const value = {
     theme,

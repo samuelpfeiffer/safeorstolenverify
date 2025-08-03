@@ -1,16 +1,26 @@
-// CHAMPIONSHIP CACHE BUSTING VERSION 2.0
+// CHAMPIONSHIP CACHE BUSTING VERSION 3.0 - ENHANCED REACT SAFETY
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
 // CRITICAL: Force cache invalidation
-console.log('🚀 CHAMPIONSHIP APP LOADING - Version 2.0');
+console.log('🚀 CHAMPIONSHIP APP LOADING - Version 3.0 Enhanced');
 
-// Verify React is available
-if (typeof React === 'undefined') {
-  throw new Error('React not available - critical failure');
-}
+// Enhanced React availability verification
+const verifyReactModule = () => {
+  if (typeof React === 'undefined') {
+    throw new Error('React module not available - critical failure');
+  }
+  
+  if (!React.useState || !React.useEffect || !React.createElement) {
+    throw new Error('React hooks not available - critical failure');
+  }
+  
+  console.log('✅ React module verified successfully');
+};
+
+verifyReactModule();
 
 // Initialize basic PWA features only
 const initializeBasicPWA = async () => {
