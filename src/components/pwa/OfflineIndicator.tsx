@@ -1,5 +1,5 @@
 
-import React from 'react';
+import * as React from 'react';
 import { Wifi, WifiOff } from 'lucide-react';
 import { usePWA } from '@/hooks/usePWA';
 import { cn } from '@/lib/utils';

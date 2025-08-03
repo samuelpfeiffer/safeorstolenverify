@@ -1,5 +1,4 @@
-
-import React from 'react';
+import * as React from 'react';
 
 export const usePWA = () => {
   const [isOnline, setIsOnline] = React.useState(navigator.onLine);
