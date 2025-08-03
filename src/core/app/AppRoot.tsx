@@ -36,59 +36,10 @@ const queryClient = new QueryClient({
 });
 
 /**
- * CHAMPIONSHIP APPROOT VERSION 3.0
- * Enhanced React readiness validation with dispatcher checks
+ * CHAMPIONSHIP APPROOT VERSION 4.0 - SIMPLIFIED
+ * Removed problematic React readiness checks that violated Rules of Hooks
  */
 export const AppRoot: React.FC = () => {
-  const [isReactReady, setIsReactReady] = React.useState(false);
-
-  React.useEffect(() => {
-    // Enhanced React context and dispatcher verification
-    const verifyReactReadiness = () => {
-      try {
-        // Check React object and core hooks
-        if (!React || !React.useState || !React.useEffect || !React.createElement) {
-          throw new Error('React core functions missing');
-        }
-
-        // Verify React dispatcher is ready (this is the key fix)
-        const dispatcher = (React as any).__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED?.ReactCurrentDispatcher?.current;
-        if (!dispatcher) {
-          throw new Error('React dispatcher not ready');
-        }
-
-        // Test hook execution safety
-        const testState = React.useState(true);
-        if (!Array.isArray(testState) || testState.length !== 2) {
-          throw new Error('useState not functioning properly');
-        }
-
-        setIsReactReady(true);
-        console.log('✅ React fully ready - Enhanced mode activated');
-        return true;
-      } catch (error) {
-        console.warn('⚠️ React readiness check failed, retrying...', error);
-        setTimeout(verifyReactReadiness, 25);
-        return false;
-      }
-    };
-    
-    // Use requestAnimationFrame to ensure DOM is ready
-    requestAnimationFrame(() => {
-      verifyReactReadiness();
-    });
-  }, []);
-
-  if (!isReactReady) {
-    return (
-      <div className="min-h-screen bg-sos flex items-center justify-center text-white">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-sos-orange mx-auto mb-4"></div>
-          <p>Initializing React Context...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <ErrorBoundary fallback={
