@@ -43,14 +43,23 @@ export const AppRoot: React.FC = () => {
   const [isReactReady, setIsReactReady] = React.useState(false);
 
   React.useEffect(() => {
-    // Verify React context with championship precision
-    if (typeof React.createElement === 'function' && typeof React.useEffect === 'function') {
-      setIsReactReady(true);
-      console.log('✅ React context verified - Championship mode activated');
-    } else {
-      console.error('❌ React context verification failed');
-      setTimeout(() => setIsReactReady(true), 100);
-    }
+    // Championship-level React context verification
+    const verifyReactContext = () => {
+      try {
+        if (React && React.useState && React.useEffect && React.createElement) {
+          setIsReactReady(true);
+          console.log('✅ React context fully verified - Championship mode activated');
+          return true;
+        }
+        throw new Error('React context incomplete');
+      } catch (error) {
+        console.warn('⚠️ React context verification failed, retrying...', error);
+        setTimeout(verifyReactContext, 50);
+        return false;
+      }
+    };
+    
+    verifyReactContext();
   }, []);
 
   if (!isReactReady) {
