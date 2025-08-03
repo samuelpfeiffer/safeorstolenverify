@@ -4,9 +4,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
+import { PWAErrorBoundary } from '@/components/error/PWAErrorBoundary';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
+import { ReactGuard } from '@/components/common/ReactGuard';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
 import { PWAProvider } from '@/core/providers/PWAProvider';
@@ -40,27 +42,31 @@ const queryClient = new QueryClient({
  */
 export const AppRoot: React.FC = () => {
   return (
-    <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider>
-            <AuthProvider>
-              <SEOProvider>
-                <PWAProvider>
-                  <Router>
-                    <div className="min-h-screen bg-sos text-white antialiased">
-                      <Suspense fallback={<AppLoadingScreen />}>
-                        <AppRoutes />
-                      </Suspense>
-                      <Toaster />
-                    </div>
-                  </Router>
-                </PWAProvider>
-              </SEOProvider>
-            </AuthProvider>
-          </ThemeProvider>
-        </QueryClientProvider>
-      </HelmetProvider>
-    </ErrorBoundary>
+    <ReactGuard>
+      <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <ThemeProvider>
+              <AuthProvider>
+                <SEOProvider>
+                  <PWAErrorBoundary>
+                    <PWAProvider>
+                      <Router>
+                        <div className="min-h-screen bg-sos text-white antialiased">
+                          <Suspense fallback={<AppLoadingScreen />}>
+                            <AppRoutes />
+                          </Suspense>
+                          <Toaster />
+                        </div>
+                      </Router>
+                    </PWAProvider>
+                  </PWAErrorBoundary>
+                </SEOProvider>
+              </AuthProvider>
+            </ThemeProvider>
+          </QueryClientProvider>
+        </HelmetProvider>
+      </ErrorBoundary>
+    </ReactGuard>
   );
 };

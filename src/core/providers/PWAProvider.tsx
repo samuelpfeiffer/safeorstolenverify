@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useEffect } from 'react';
+import React from 'react';
 import { usePWA } from '@/hooks/usePWA';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PWAContextType {
   isInstallAvailable: boolean;
@@ -9,10 +8,10 @@ interface PWAContextType {
   showInstallPrompt: () => Promise<boolean>;
 }
 
-const PWAContext = createContext<PWAContextType | undefined>(undefined);
+const PWAContext = React.createContext<PWAContextType | undefined>(undefined);
 
 export const usePWAContext = () => {
-  const context = useContext(PWAContext);
+  const context = React.useContext(PWAContext);
   if (!context) {
     throw new Error('usePWAContext must be used within PWAProvider');
   }
@@ -24,42 +23,56 @@ interface PWAProviderProps {
 }
 
 export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
-  const { isInstallAvailable, isInstalled, isOnline, showInstallPrompt } = usePWA();
-  const isMobile = useIsMobile();
+  const pwaHook = usePWA();
+  
+  // Guard against null hook result
+  if (!pwaHook) {
+    console.warn('PWA hook returned null, using fallback values');
+    const fallbackValue: PWAContextType = {
+      isInstallAvailable: false,
+      isInstalled: false,
+      isOnline: navigator?.onLine ?? true,
+      showInstallPrompt: async () => false,
+    };
+    
+    return (
+      <PWAContext.Provider value={fallbackValue}>
+        {children}
+      </PWAContext.Provider>
+    );
+  }
 
-  // Initialize mobile optimizations and PWA features
+  const { isInstallAvailable, isInstalled, isOnline, showInstallPrompt } = pwaHook;
+
+  // Simple mobile optimizations without dynamic imports
   React.useEffect(() => {
-    let cleanupFunction: (() => void) | undefined;
-
-    const initializeMobileOptimizations = async () => {
+    const applyBasicMobileOptimizations = () => {
       try {
-        // Initialize mobile optimizations after React context is established
-        if (isMobile) {
-          const { MobileSetupManager } = await import('@/utils/mobile/MobileSetupManager');
-          const mobileManager = MobileSetupManager.getInstance();
-          await mobileManager.initialize();
-        }
-
-        // Show install prompt after a delay on mobile
-        if (isMobile && isInstallAvailable) {
-          const timer = setTimeout(() => {
-            console.log('PWA install available for mobile device');
-          }, 3000);
-          cleanupFunction = () => clearTimeout(timer);
+        // Basic mobile viewport optimization
+        if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+          document.documentElement.style.setProperty('--mobile-optimized', '1');
+          
+          // Prevent zoom on double tap
+          const preventZoom = (e: TouchEvent) => {
+            if (e.touches.length > 1) {
+              e.preventDefault();
+            }
+          };
+          
+          document.addEventListener('touchstart', preventZoom, { passive: false });
+          
+          return () => {
+            document.removeEventListener('touchstart', preventZoom);
+          };
         }
       } catch (error) {
-        console.warn('Mobile optimization initialization failed:', error);
+        console.warn('Basic mobile optimization failed:', error);
       }
     };
 
-    // Delay initialization to ensure React providers are ready
-    const timer = setTimeout(initializeMobileOptimizations, 500);
-    
-    return () => {
-      clearTimeout(timer);
-      cleanupFunction?.();
-    };
-  }, [isMobile, isInstallAvailable]);
+    const cleanup = applyBasicMobileOptimizations();
+    return cleanup;
+  }, []);
 
   const value: PWAContextType = {
     isInstallAvailable,

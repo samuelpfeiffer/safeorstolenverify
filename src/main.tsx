@@ -5,10 +5,18 @@ import { AppRoot } from '@/core/app/AppRoot';
 import { pwaService } from '@/services/pwaService';
 import './index.css';
 
-// Initialize PWA service and clean old cache on startup
-pwaService.initDB().then(() => {
-  pwaService.clearOldCache().catch(console.error);
-}).catch(console.error);
+// Initialize PWA service with error handling
+const initializePWA = async () => {
+  try {
+    await pwaService.initDB();
+    await pwaService.clearOldCache();
+    console.log('PWA services initialized successfully');
+  } catch (error) {
+    console.warn('PWA service initialization failed, continuing without PWA features:', error);
+  }
+};
+
+initializePWA();
 
 // Register secure service worker for PWA capabilities
 if ('serviceWorker' in navigator) {

@@ -25,8 +25,7 @@ export default defineConfig(({ mode }) => ({
       'react-router-dom',
       '@tanstack/react-query',
       'react-helmet-async'
-    ],
-    exclude: ['@/utils/mobile/MobileSetupManager']
+    ]
   },
   define: {
     // Ensure React is available globally
