@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import * as React from 'react';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -8,7 +8,7 @@ interface ThemeContextType {
   resolvedTheme: 'dark' | 'light';
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined);
 
 // Safe localStorage access with fallback
 const getStoredTheme = (): Theme => {
@@ -24,12 +24,12 @@ const getStoredTheme = (): Theme => {
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Initialize with safe default, update after mount
-  const [theme, setTheme] = useState<Theme>('dark');
-  const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('dark');
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [theme, setTheme] = React.useState<Theme>('dark');
+  const [resolvedTheme, setResolvedTheme] = React.useState<'dark' | 'light'>('dark');
+  const [isInitialized, setIsInitialized] = React.useState(false);
 
   // Initialize theme from storage after mount
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isInitialized) {
       const storedTheme = getStoredTheme();
       setTheme(storedTheme);
@@ -38,7 +38,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, [isInitialized]);
 
   // Apply theme changes
-  useEffect(() => {
+  React.useEffect(() => {
     if (!isInitialized) return;
     
     try {
@@ -71,7 +71,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 };
 
 export const useTheme = () => {
-  const context = useContext(ThemeContext);
+  const context = React.useContext(ThemeContext);
   if (!context) {
     throw new Error('useTheme must be used within ThemeProvider');
   }
