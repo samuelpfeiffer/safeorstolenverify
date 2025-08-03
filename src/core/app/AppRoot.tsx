@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
-import { SimpleThemeProvider } from '@/core/providers/SimpleThemeProvider';
+
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
@@ -59,20 +59,18 @@ export const AppRoot: React.FC = () => {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <SafeProviderWrapper>
-            <SimpleThemeProvider>
-              <AuthProvider>
-                <SEOProvider>
-                  <Router>
-                    <div className="min-h-screen bg-sos text-white antialiased">
-                      <React.Suspense fallback={<AppLoadingScreen />}>
-                        <AppRoutes />
-                      </React.Suspense>
-                      <Toaster />
-                    </div>
-                  </Router>
-                </SEOProvider>
-              </AuthProvider>
-            </SimpleThemeProvider>
+            <AuthProvider>
+              <SEOProvider>
+                <Router>
+                  <div className="min-h-screen bg-sos text-white antialiased">
+                    <React.Suspense fallback={<AppLoadingScreen />}>
+                      <AppRoutes />
+                    </React.Suspense>
+                    <Toaster />
+                  </div>
+                </Router>
+              </SEOProvider>
+            </AuthProvider>
           </SafeProviderWrapper>
         </QueryClientProvider>
       </HelmetProvider>
