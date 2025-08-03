@@ -60,20 +60,18 @@ export const AppRoot: React.FC = () => {
         <QueryClientProvider client={queryClient}>
           <SafeProviderWrapper>
             <ThemeProvider>
-              <SafeProviderWrapper>
-                <AuthProvider>
-                  <SEOProvider>
-                    <Router>
-                      <div className="min-h-screen bg-sos text-white antialiased">
-                        <React.Suspense fallback={<AppLoadingScreen />}>
-                          <AppRoutes />
-                        </React.Suspense>
-                        <Toaster />
-                      </div>
-                    </Router>
-                  </SEOProvider>
-                </AuthProvider>
-              </SafeProviderWrapper>
+              <AuthProvider>
+                <SEOProvider>
+                  <Router>
+                    <div className="min-h-screen bg-sos text-white antialiased">
+                      <React.Suspense fallback={<AppLoadingScreen />}>
+                        <AppRoutes />
+                      </React.Suspense>
+                      <Toaster />
+                    </div>
+                  </Router>
+                </SEOProvider>
+              </AuthProvider>
             </ThemeProvider>
           </SafeProviderWrapper>
         </QueryClientProvider>
