@@ -28,7 +28,9 @@ export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
   const isMobile = useIsMobile();
 
   // Initialize mobile optimizations and PWA features
-  useEffect(() => {
+  React.useEffect(() => {
+    let cleanupFunction: (() => void) | undefined;
+
     const initializeMobileOptimizations = async () => {
       try {
         // Initialize mobile optimizations after React context is established
@@ -43,7 +45,7 @@ export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
           const timer = setTimeout(() => {
             console.log('PWA install available for mobile device');
           }, 3000);
-          return () => clearTimeout(timer);
+          cleanupFunction = () => clearTimeout(timer);
         }
       } catch (error) {
         console.warn('Mobile optimization initialization failed:', error);
@@ -51,8 +53,12 @@ export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
     };
 
     // Delay initialization to ensure React providers are ready
-    const timer = setTimeout(initializeMobileOptimizations, 100);
-    return () => clearTimeout(timer);
+    const timer = setTimeout(initializeMobileOptimizations, 500);
+    
+    return () => {
+      clearTimeout(timer);
+      cleanupFunction?.();
+    };
   }, [isMobile, isInstallAvailable]);
 
   const value: PWAContextType = {

@@ -43,10 +43,10 @@ export const AppRoot: React.FC = () => {
     <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <PWAProvider>
-              <ThemeProvider>
-                <SEOProvider>
+          <ThemeProvider>
+            <AuthProvider>
+              <SEOProvider>
+                <PWAProvider>
                   <Router>
                     <div className="min-h-screen bg-sos text-white antialiased">
                       <Suspense fallback={<AppLoadingScreen />}>
@@ -55,10 +55,10 @@ export const AppRoot: React.FC = () => {
                       <Toaster />
                     </div>
                   </Router>
-                </SEOProvider>
-              </ThemeProvider>
-            </PWAProvider>
-          </AuthProvider>
+                </PWAProvider>
+              </SEOProvider>
+            </AuthProvider>
+          </ThemeProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>

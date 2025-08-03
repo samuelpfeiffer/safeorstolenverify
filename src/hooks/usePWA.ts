@@ -1,12 +1,12 @@
 
-import { useState, useEffect } from 'react';
+import React from 'react';
 
 export const usePWA = () => {
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [installPrompt, setInstallPrompt] = useState<any>(null);
-  const [isInstalled, setIsInstalled] = useState(false);
+  const [isOnline, setIsOnline] = React.useState(navigator.onLine);
+  const [installPrompt, setInstallPrompt] = React.useState<any>(null);
+  const [isInstalled, setIsInstalled] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
     
