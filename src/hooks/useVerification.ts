@@ -5,8 +5,10 @@ import {
   generateVerificationData,
   determineStatus, 
   determineIconType, 
-  getIconForCategory 
+  getIconForCategory,
+  determineColor
 } from '@/utils/verification';
+import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
 export const useVerification = (initialSerialNumber?: string | null) => {
@@ -17,21 +19,54 @@ export const useVerification = (initialSerialNumber?: string | null) => {
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
 
-  // Load verification data from localStorage on component mount
+  // Load verification data from backend instead of localStorage
   useEffect(() => {
-    const searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '[]');
-    const savedReceipts = JSON.parse(localStorage.getItem('savedReceipts') || '[]');
-    
-    // Use search history and saved receipts to create real verification data
-    const verificationData = generateVerificationData(searchHistory, savedReceipts);
-    
-    setProducts(verificationData);
-    
-    if (verificationData.length > 0) {
-      setActiveProduct(verificationData[0]);
-    }
-    
-    setIsLoading(false);
+    const loadVerificationData = async () => {
+      setIsLoading(true);
+      try {
+        // Use actual backend verification results instead of localStorage
+        const { data, error } = await supabase
+          .from('verification_results')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(10);
+
+        if (error) {
+          console.error('Failed to load verification data:', error);
+          // Fallback to minimal demo data if no backend data
+          const fallbackData = generateVerificationData([], []);
+          setProducts(fallbackData);
+          setActiveProduct(fallbackData[0] || null);
+        } else {
+          // Transform backend data to ProductType format
+          const transformedData: ProductType[] = data.map(item => ({
+            id: item.id,
+            name: `${item.item_type} Verification`,
+            type: 'Verified',
+            category: item.item_type,
+            image: "https://images.unsplash.com/photo-1511707171634-5f897ff02ff9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            icon: getIconForCategory('smartphone'),
+            status: item.verification_status === 'verified' ? 'safe' : item.verification_status === 'stolen' ? 'stolen' : item.verification_status === 'lost' ? 'lost' : 'unknown',
+            serialNumber: item.serial_number,
+            verificationDate: item.verified_at,
+            color: determineColor(item.item_type)
+          }));
+
+          setProducts(transformedData);
+          setActiveProduct(transformedData[0] || null);
+        }
+      } catch (error) {
+        console.error('Error loading verification data:', error);
+        // Fallback to minimal demo data
+        const fallbackData = generateVerificationData([], []);
+        setProducts(fallbackData);
+        setActiveProduct(fallbackData[0] || null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadVerificationData();
   }, []);
 
   // Handle URL search parameters
@@ -67,7 +102,7 @@ export const useVerification = (initialSerialNumber?: string | null) => {
     }
   }, [initialSerialNumber, products]);
 
-  const generateReceipt = () => {
+  const generateReceipt = async () => {
     if (!activeProduct) return;
     
     setShowReceiptDialog(true);
@@ -85,10 +120,22 @@ export const useVerification = (initialSerialNumber?: string | null) => {
       color: activeProduct.color
     };
     
-    // Save to localStorage
-    const savedReceipts = JSON.parse(localStorage.getItem('savedReceipts') || '[]');
-    savedReceipts.unshift(receiptData);
-    localStorage.setItem('savedReceipts', JSON.stringify(savedReceipts));
+    // Save to database instead of localStorage
+    try {
+      const { error } = await supabase
+        .from('receipts')
+        .insert({
+          user_id: (await supabase.auth.getUser()).data.user?.id,
+          receipt_url: `data:application/json;base64,${btoa(JSON.stringify(receiptData))}`,
+          purchase_id: null, // No purchase associated with this receipt
+        });
+
+      if (error) {
+        console.error('Failed to save receipt:', error);
+      }
+    } catch (error) {
+      console.error('Error saving receipt:', error);
+    }
     
     toast({
       title: "Receipt Generated",

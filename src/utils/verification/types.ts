@@ -10,7 +10,7 @@ export interface ProductType {
   category: string;
   image: string;
   icon: React.ReactNode;
-  status: 'safe' | 'lost' | 'stolen';
+  status: 'safe' | 'lost' | 'stolen' | 'unknown';
   color?: string;
   serialNumber: string;
   verificationDate: string;
@@ -24,6 +24,6 @@ export interface ReceiptData {
   category: string;
   serialNumber: string;
   verificationDate: string;
-  status: 'safe' | 'lost' | 'stolen';
+  status: 'safe' | 'lost' | 'stolen' | 'unknown';
   color?: string;
 }
