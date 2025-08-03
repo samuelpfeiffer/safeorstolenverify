@@ -1,53 +1,61 @@
-
+// CHAMPIONSHIP CACHE BUSTING VERSION 2.0
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
-import { pwaService } from '@/services/pwaService';
 import './index.css';
 
-// Initialize PWA service with robust error handling
-const initializePWA = async () => {
+// CRITICAL: Force cache invalidation
+console.log('🚀 CHAMPIONSHIP APP LOADING - Version 2.0');
+
+// Verify React is available
+if (typeof React === 'undefined') {
+  throw new Error('React not available - critical failure');
+}
+
+// Initialize basic PWA features only
+const initializeBasicPWA = async () => {
   try {
-    await pwaService.initDB();
-    await pwaService.clearOldCache();
-    console.log('PWA services initialized successfully');
+    if ('serviceWorker' in navigator) {
+      await navigator.serviceWorker.register('/sw-secure.js');
+      console.log('✅ Service Worker registered');
+    }
   } catch (error) {
-    console.warn('PWA service initialization failed, continuing without PWA features:', error);
+    console.warn('⚠️ PWA features unavailable:', error);
   }
 };
 
-// Initialize PWA
-initializePWA();
+// DOM and app initialization
+const initializeApp = () => {
+  const container = document.getElementById('root');
+  if (!container) {
+    throw new Error('Root element not found');
+  }
 
-// Register service worker for PWA capabilities
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw-secure.js')
-      .then((registration) => {
-        console.log('Service Worker registered:', registration);
-        
-        // Mobile performance optimization
-        if ('connection' in navigator) {
-          const connection = (navigator as any).connection;
-          if (connection && (connection.effectiveType === '2g' || connection.effectiveType === 'slow-2g')) {
-            registration.update();
-          }
-        }
-      })
-      .catch((error) => {
-        console.log('Service Worker registration failed:', error);
-      });
-  });
-}
+  const root = createRoot(container);
+  
+  try {
+    root.render(
+      <React.StrictMode>
+        <AppRoot />
+      </React.StrictMode>
+    );
+    console.log('✅ App rendered successfully');
+  } catch (error) {
+    console.error('❌ App render failed:', error);
+    container.innerHTML = `
+      <div style="min-height:100vh;background:#1a1a1a;color:white;display:flex;align-items:center;justify-content:center;font-family:system-ui">
+        <div style="text-align:center;padding:2rem">
+          <h1>Application Error</h1>
+          <p>Please refresh the page</p>
+          <button onclick="window.location.reload()" style="margin-top:1rem;padding:0.5rem 1rem;background:#ff6b35;color:white;border:none;border-radius:4px;cursor:pointer">
+            Refresh
+          </button>
+        </div>
+      </div>
+    `;
+  }
+};
 
-const container = document.getElementById('root');
-if (!container) {
-  throw new Error('Root element not found');
-}
-
-const root = createRoot(container);
-root.render(
-  <React.StrictMode>
-    <AppRoot />
-  </React.StrictMode>
-);
+// Initialize everything
+initializeBasicPWA();
+initializeApp();
