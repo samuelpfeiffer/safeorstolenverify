@@ -24,8 +24,8 @@ export const MobileMenu = ({ currentPath, closeMenu, isOpen }: MobileMenuProps) 
       />
       
       {/* Mobile Menu */}
-      <div className="md:hidden bg-sos absolute top-full left-0 right-0 shadow-xl animate-fadeIn z-50 border-t border-sos-orange/20">
-        <div className="container mx-auto px-4 py-6 flex flex-col space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain">
+      <div className="md:hidden bg-sos absolute top-full left-0 right-0 shadow-lg animate-fadeIn z-50 border-t border-sos-orange/20">
+        <div className="container mx-auto px-4 py-4 flex flex-col space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="flex justify-center mb-2">
             <span className="text-xs font-semibold text-sos-orange">Verify Before You Buy</span>
           </div>
@@ -39,13 +39,12 @@ export const MobileMenu = ({ currentPath, closeMenu, isOpen }: MobileMenuProps) 
                     closeMenu();
                   }} 
                   variant="outline" 
-                  size="lg"
-                  className="border-sos-orange text-sos-orange hover:bg-sos-orange/10 w-full min-h-[48px]"
+                  className="border-sos-orange text-sos-orange hover:bg-sos-orange/10 w-full"
                 >
                   Logout
                 </Button>
                 <Link to="/search-history" className="w-full" onClick={closeMenu}>
-                  <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full min-h-[48px]">
+                  <Button className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full">
                     My Account
                   </Button>
                 </Link>
@@ -53,12 +52,12 @@ export const MobileMenu = ({ currentPath, closeMenu, isOpen }: MobileMenuProps) 
             ) : (
               <>
                 <Link to="/auth" className="w-full" onClick={closeMenu}>
-                  <Button variant="outline" size="lg" className="border-sos-orange text-sos-orange hover:bg-sos-orange/10 w-full min-h-[48px]">
+                  <Button variant="outline" className="border-sos-orange text-sos-orange hover:bg-sos-orange/10 w-full">
                     Login
                   </Button>
                 </Link>
                 <Link to="/auth?tab=register" className="w-full" onClick={closeMenu}>
-                  <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full min-h-[48px]">
+                  <Button className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full">
                     Sign Up
                   </Button>
                 </Link>

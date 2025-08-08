@@ -1,71 +1,36 @@
-// CHAMPIONSHIP CACHE BUSTING VERSION 3.0 - ENHANCED REACT SAFETY
-import * as React from 'react';
+
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
+import { pwaService } from '@/services/pwaService';
 import './index.css';
 
-// CRITICAL: Force cache invalidation
-console.log('🚀 CHAMPIONSHIP APP LOADING - Version 3.0 Enhanced');
+// Initialize PWA service and clean old cache on startup
+pwaService.initDB().then(() => {
+  pwaService.clearOldCache().catch(console.error);
+}).catch(console.error);
 
-// Enhanced React availability verification
-const verifyReactModule = () => {
-  if (typeof React === 'undefined') {
-    throw new Error('React module not available - critical failure');
-  }
-  
-  if (!React.useState || !React.useEffect || !React.createElement) {
-    throw new Error('React hooks not available - critical failure');
-  }
-  
-  console.log('✅ React module verified successfully');
-};
+// Register service worker for PWA capabilities
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration);
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
 
-verifyReactModule();
+const container = document.getElementById('root');
+if (!container) {
+  throw new Error('Root element not found');
+}
 
-// Initialize basic PWA features only
-const initializeBasicPWA = async () => {
-  try {
-    if ('serviceWorker' in navigator) {
-      await navigator.serviceWorker.register('/sw-secure.js');
-      console.log('✅ Service Worker registered');
-    }
-  } catch (error) {
-    console.warn('⚠️ PWA features unavailable:', error);
-  }
-};
-
-// DOM and app initialization
-const initializeApp = () => {
-  const container = document.getElementById('root');
-  if (!container) {
-    throw new Error('Root element not found');
-  }
-
-  const root = createRoot(container);
-  
-  try {
-    root.render(
-      <React.StrictMode>
-        <AppRoot />
-      </React.StrictMode>
-    );
-    console.log('✅ App rendered successfully');
-  } catch (error) {
-    console.error('❌ App render failed:', error);
-    container.innerHTML = `
-      <div style="min-height:100vh;background:#1a1a1a;color:white;display:flex;align-items:center;justify-content:center;font-family:system-ui">
-        <div style="text-align:center;padding:2rem">
-          <h1>Application Error</h1>
-          <p>Please refresh the page</p>
-          <button onclick="window.location.reload()" style="margin-top:1rem;padding:0.5rem 1rem;background:#ff6b35;color:white;border:none;border-radius:4px;cursor:pointer">
-            Refresh
-          </button>
-        </div>
-      </div>
-    `;
-  }
-};
-
-// Initialize everything
-initializeBasicPWA();
-initializeApp();
+const root = createRoot(container);
+root.render(
+  <React.StrictMode>
+    <AppRoot />
+  </React.StrictMode>
+);

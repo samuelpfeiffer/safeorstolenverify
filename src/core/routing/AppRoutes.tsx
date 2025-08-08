@@ -5,7 +5,6 @@ import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
 
-
 // Lazy load all pages for optimal performance
 const Index = lazy(() => import('@/pages/Index'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
@@ -41,7 +40,6 @@ const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounder
 
 // Real-time Verification
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
-const FirearmsSearchPage = lazy(() => import('@/pages/FirearmsSearchPage'));
 
 /**
  * Enterprise Application Routing
@@ -50,7 +48,7 @@ const FirearmsSearchPage = lazy(() => import('@/pages/FirearmsSearchPage'));
 export const AppRoutes: React.FC = () => {
   return (
     <Suspense fallback={<AppLoadingScreen />}>
-        <Routes>
+      <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Index />} />
@@ -79,9 +77,6 @@ export const AppRoutes: React.FC = () => {
           
           {/* Real-time Verification */}
           <Route path="real-time-verification" element={<RealTimeVerificationPage />} />
-          
-          {/* Firearms Search */}
-          <Route path="firearms-search" element={<FirearmsSearchPage />} />
           
           {/* Protected User Routes */}
           <Route path="verify" element={
@@ -136,7 +131,7 @@ export const AppRoutes: React.FC = () => {
         {/* Catch all - 404 */}
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
-        </Routes>
-      </Suspense>
+      </Routes>
+    </Suspense>
   );
 };

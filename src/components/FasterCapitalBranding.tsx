@@ -15,19 +15,7 @@ export const FasterCapitalBranding = () => {
         className="flex items-center gap-2 text-sos-orange hover:text-sos-orange/80 transition-colors group"
         title="FasterCapital - Accelerating our mission to fight the $13B stolen goods crisis"
       >
-        <img 
-          src="https://fastercapital.com/assets/img/fc-logo-white.png" 
-          alt="FasterCapital" 
-          className="h-5 w-auto"
-          onError={(e) => {
-            // Fallback to text if logo fails to load
-            e.currentTarget.style.display = 'none';
-            const fallback = document.createElement('strong');
-            fallback.className = 'font-semibold';
-            fallback.textContent = 'FasterCapital';
-            e.currentTarget.parentNode?.appendChild(fallback);
-          }}
-        />
+        <strong className="font-semibold">FasterCapital</strong>
         <ExternalLink className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
       </a>
     </div>

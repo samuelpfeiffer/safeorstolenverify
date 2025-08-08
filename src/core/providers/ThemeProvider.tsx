@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -8,54 +8,27 @@ interface ThemeContextType {
   resolvedTheme: 'dark' | 'light';
 }
 
-const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined);
-
-// Safe localStorage access with fallback
-const getStoredTheme = (): Theme => {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      return (localStorage.getItem('theme') as Theme) || 'dark';
-    }
-  } catch (error) {
-    console.warn('localStorage access failed:', error);
-  }
-  return 'dark';
-};
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Initialize with safe default, update after mount
-  const [theme, setTheme] = React.useState<Theme>('dark');
-  const [resolvedTheme, setResolvedTheme] = React.useState<'dark' | 'light'>('dark');
-  const [isInitialized, setIsInitialized] = React.useState(false);
+  const [theme, setTheme] = useState<Theme>(() => {
+    return (localStorage.getItem('theme') as Theme) || 'dark';
+  });
 
-  // Initialize theme from storage after mount
-  React.useEffect(() => {
-    if (!isInitialized) {
-      const storedTheme = getStoredTheme();
-      setTheme(storedTheme);
-      setIsInitialized(true);
-    }
-  }, [isInitialized]);
+  const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('dark');
 
-  // Apply theme changes
-  React.useEffect(() => {
-    if (!isInitialized) return;
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     
-    try {
-      const root = window.document.documentElement;
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      
-      const activeTheme = theme === 'system' ? systemTheme : theme;
-      setResolvedTheme(activeTheme);
-      
-      root.classList.remove('light', 'dark');
-      root.classList.add(activeTheme);
-      
-      localStorage.setItem('theme', theme);
-    } catch (error) {
-      console.warn('Theme application failed:', error);
-    }
-  }, [theme, isInitialized]);
+    const activeTheme = theme === 'system' ? systemTheme : theme;
+    setResolvedTheme(activeTheme);
+    
+    root.classList.remove('light', 'dark');
+    root.classList.add(activeTheme);
+    
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const value = {
     theme,
@@ -71,7 +44,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 };
 
 export const useTheme = () => {
-  const context = React.useContext(ThemeContext);
+  const context = useContext(ThemeContext);
   if (!context) {
     throw new Error('useTheme must be used within ThemeProvider');
   }

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -28,7 +28,7 @@ export interface AuthActions {
 
 export type AuthContextType = AuthState & AuthActions;
 
-const AuthContext = React.createContext<AuthContextType | null>(null);
+const AuthContext = createContext<AuthContextType | null>(null);
 
 const transformUser = (user: User | null): AuthUser | null => {
   if (!user) return null;
@@ -44,7 +44,7 @@ const transformUser = (user: User | null): AuthUser | null => {
 };
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = React.useState<AuthState>({
+  const [state, setState] = useState<AuthState>({
     user: null,
     session: null,
     loading: true,
@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   
   const { toast } = useToast();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let mounted = true;
 
     // Get initial session
@@ -295,7 +295,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useAuth(): AuthContextType {
-  const context = React.useContext(AuthContext);
+  const context = useContext(AuthContext);
   if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }

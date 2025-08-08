@@ -130,37 +130,6 @@
   }
 }
 
-/* Mobile optimizations */
-.mobile-optimized {
-  /* Improve touch scrolling */
-  -webkit-overflow-scrolling: touch;
-  /* Prevent bounce scrolling */
-  overscroll-behavior: contain;
-  /* Improve tap responsiveness */
-  touch-action: manipulation;
-}
-
-/* Better mobile button sizing */
-@media (max-width: 768px) {
-  button, .button, [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Improve touch targets for links */
-  a {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  /* Better mobile dropdown spacing */
-  .dropdown-menu-item {
-    padding: 12px 16px;
-    min-height: 44px;
-  }
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -168,27 +137,5 @@
   
   .text-pretty {
     text-wrap: pretty;
-  }
-  
-  /* Mobile-specific utilities */
-  .touch-pan-y {
-    touch-action: pan-y;
-  }
-  
-  .overscroll-contain {
-    overscroll-behavior: contain;
-  }
-
-  /* PWA safe areas for mobile devices with notches */
-  .safe-area-padding {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-
-  /* Better text selection on mobile */
-  ::selection {
-    background-color: hsl(var(--primary) / 0.3);
   }
 }

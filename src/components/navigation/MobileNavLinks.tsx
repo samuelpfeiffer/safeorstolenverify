@@ -13,8 +13,8 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
       <Link 
         to="/" 
         onClick={closeMenu} 
-        className={cn("py-3 px-2 transition-colors rounded-lg min-h-[44px] flex items-center", 
-          currentPath === "/" ? "text-sos-orange bg-sos-orange/10" : "text-white hover:text-sos-orange hover:bg-sos-orange/5"
+        className={cn("py-2 transition-colors", 
+          currentPath === "/" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         Home
@@ -22,8 +22,8 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
       <Link 
         to="/about-problem" 
         onClick={closeMenu} 
-        className={cn("py-3 px-2 transition-colors rounded-lg min-h-[44px] flex items-center", 
-          currentPath === "/about-problem" ? "text-sos-orange bg-sos-orange/10" : "text-white hover:text-sos-orange hover:bg-sos-orange/5"
+        className={cn("py-2 transition-colors", 
+          currentPath === "/about-problem" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         About the Problem
@@ -31,8 +31,8 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
       <Link 
         to="/how-it-works" 
         onClick={closeMenu} 
-        className={cn("py-3 px-2 transition-colors rounded-lg min-h-[44px] flex items-center", 
-          currentPath === "/how-it-works" ? "text-sos-orange bg-sos-orange/10" : "text-white hover:text-sos-orange hover:bg-sos-orange/5"
+        className={cn("py-2 transition-colors", 
+          currentPath === "/how-it-works" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         How It Works
@@ -40,32 +40,17 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
       <Link 
         to="/our-story" 
         onClick={closeMenu} 
-        className={cn("py-3 px-2 transition-colors rounded-lg min-h-[44px] flex items-center", 
-          currentPath === "/our-story" ? "text-sos-orange bg-sos-orange/10" : "text-white hover:text-sos-orange hover:bg-sos-orange/5"
+        className={cn("py-2 transition-colors", 
+          currentPath === "/our-story" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         Our Story
       </Link>
-      <button 
-        onClick={() => {
-          closeMenu();
-          if (currentPath === "/") {
-            setTimeout(() => {
-              document.getElementById('fastercapital-section')?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-          } else {
-            window.location.href = "/#fastercapital-section";
-          }
-        }}
-        className="py-3 px-2 text-white hover:text-sos-orange transition-colors text-left rounded-lg min-h-[44px] flex items-center hover:bg-sos-orange/5"
-      >
-        FasterCapital
-      </button>
       <Link 
         to="/for-brands" 
         onClick={closeMenu} 
-        className={cn("py-3 px-2 transition-colors rounded-lg min-h-[44px] flex items-center", 
-          currentPath === "/for-brands" ? "text-sos-orange bg-sos-orange/10" : "text-white hover:text-sos-orange hover:bg-sos-orange/5"
+        className={cn("py-2 transition-colors", 
+          currentPath === "/for-brands" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         For Business
@@ -73,8 +58,8 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
       <Link 
         to="/contact" 
         onClick={closeMenu} 
-        className={cn("py-3 px-2 transition-colors rounded-lg min-h-[44px] flex items-center", 
-          currentPath === "/contact" ? "text-sos-orange bg-sos-orange/10" : "text-white hover:text-sos-orange hover:bg-sos-orange/5"
+        className={cn("py-2 transition-colors", 
+          currentPath === "/contact" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         Contact

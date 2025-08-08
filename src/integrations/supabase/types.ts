@@ -14,95 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      alert_notifications: {
-        Row: {
-          alert_id: string | null
-          created_at: string
-          data: Json | null
-          id: string
-          message: string
-          notification_type: string
-          sent_at: string | null
-          status: string | null
-          title: string
-          user_id: string | null
-        }
-        Insert: {
-          alert_id?: string | null
-          created_at?: string
-          data?: Json | null
-          id?: string
-          message: string
-          notification_type: string
-          sent_at?: string | null
-          status?: string | null
-          title: string
-          user_id?: string | null
-        }
-        Update: {
-          alert_id?: string | null
-          created_at?: string
-          data?: Json | null
-          id?: string
-          message?: string
-          notification_type?: string
-          sent_at?: string | null
-          status?: string | null
-          title?: string
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "alert_notifications_alert_id_fkey"
-            columns: ["alert_id"]
-            isOneToOne: false
-            referencedRelation: "real_time_alerts"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      api_keys: {
-        Row: {
-          api_key: string
-          created_at: string
-          expires_at: string | null
-          id: string
-          is_active: boolean | null
-          key_name: string
-          permissions: Json | null
-          updated_at: string
-          usage_count: number | null
-          usage_limit: number | null
-          user_id: string | null
-        }
-        Insert: {
-          api_key: string
-          created_at?: string
-          expires_at?: string | null
-          id?: string
-          is_active?: boolean | null
-          key_name: string
-          permissions?: Json | null
-          updated_at?: string
-          usage_count?: number | null
-          usage_limit?: number | null
-          user_id?: string | null
-        }
-        Update: {
-          api_key?: string
-          created_at?: string
-          expires_at?: string | null
-          id?: string
-          is_active?: boolean | null
-          key_name?: string
-          permissions?: Json | null
-          updated_at?: string
-          usage_count?: number | null
-          usage_limit?: number | null
-          user_id?: string | null
-        }
-        Relationships: []
-      }
       api_usage_logs: {
         Row: {
           api_endpoint: string
@@ -346,230 +257,6 @@ export type Database = {
         }
         Relationships: []
       }
-      checkmend_api_usage: {
-        Row: {
-          api_endpoint: string
-          created_at: string
-          id: string
-          request_count: number | null
-          reset_time: string
-          user_id: string
-        }
-        Insert: {
-          api_endpoint: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time: string
-          user_id: string
-        }
-        Update: {
-          api_endpoint?: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      checkmend_verification_cache: {
-        Row: {
-          cache_key: string
-          created_at: string
-          expires_at: string
-          id: string
-          item_type: string
-          serial_number: string
-          updated_at: string
-          verification_data: Json
-        }
-        Insert: {
-          cache_key: string
-          created_at?: string
-          expires_at: string
-          id?: string
-          item_type: string
-          serial_number: string
-          updated_at?: string
-          verification_data: Json
-        }
-        Update: {
-          cache_key?: string
-          created_at?: string
-          expires_at?: string
-          id?: string
-          item_type?: string
-          serial_number?: string
-          updated_at?: string
-          verification_data?: Json
-        }
-        Relationships: []
-      }
-      checkout_sessions: {
-        Row: {
-          amount: number
-          created_at: string
-          currency: string | null
-          id: string
-          plan_name: string
-          status: string | null
-          stripe_price_id: string
-          stripe_session_id: string
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          amount: number
-          created_at?: string
-          currency?: string | null
-          id?: string
-          plan_name: string
-          status?: string | null
-          stripe_price_id: string
-          stripe_session_id: string
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          amount?: number
-          created_at?: string
-          currency?: string | null
-          id?: string
-          plan_name?: string
-          status?: string | null
-          stripe_price_id?: string
-          stripe_session_id?: string
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      customer_portal_sessions: {
-        Row: {
-          created_at: string
-          id: string
-          stripe_session_id: string
-          user_id: string | null
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          stripe_session_id: string
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          stripe_session_id?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      marketplace_integrations: {
-        Row: {
-          api_credentials: Json | null
-          created_at: string
-          id: string
-          last_sync_at: string | null
-          marketplace_name: string
-          status: string | null
-          sync_frequency: number | null
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          api_credentials?: Json | null
-          created_at?: string
-          id?: string
-          last_sync_at?: string | null
-          marketplace_name: string
-          status?: string | null
-          sync_frequency?: number | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          api_credentials?: Json | null
-          created_at?: string
-          id?: string
-          last_sync_at?: string | null
-          marketplace_name?: string
-          status?: string | null
-          sync_frequency?: number | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      marketplace_listings: {
-        Row: {
-          created_at: string
-          currency: string | null
-          description: string | null
-          external_listing_id: string
-          id: string
-          images: Json | null
-          integration_id: string | null
-          item_condition: string | null
-          location: string | null
-          marketplace_name: string
-          metadata: Json | null
-          price: number | null
-          risk_score: number | null
-          title: string
-          updated_at: string
-          user_id: string | null
-          verification_status: string | null
-        }
-        Insert: {
-          created_at?: string
-          currency?: string | null
-          description?: string | null
-          external_listing_id: string
-          id?: string
-          images?: Json | null
-          integration_id?: string | null
-          item_condition?: string | null
-          location?: string | null
-          marketplace_name: string
-          metadata?: Json | null
-          price?: number | null
-          risk_score?: number | null
-          title: string
-          updated_at?: string
-          user_id?: string | null
-          verification_status?: string | null
-        }
-        Update: {
-          created_at?: string
-          currency?: string | null
-          description?: string | null
-          external_listing_id?: string
-          id?: string
-          images?: Json | null
-          integration_id?: string | null
-          item_condition?: string | null
-          location?: string | null
-          marketplace_name?: string
-          metadata?: Json | null
-          price?: number | null
-          risk_score?: number | null
-          title?: string
-          updated_at?: string
-          user_id?: string | null
-          verification_status?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "marketplace_listings_integration_id_fkey"
-            columns: ["integration_id"]
-            isOneToOne: false
-            referencedRelation: "marketplace_integrations"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -630,48 +317,6 @@ export type Database = {
           id?: string
           total_winners?: number | null
           updated_at?: string
-        }
-        Relationships: []
-      }
-      property_verifications: {
-        Row: {
-          api_response: Json | null
-          confidence_score: number | null
-          created_at: string
-          data_retention_until: string | null
-          id: string
-          property_address: string
-          property_type: string | null
-          recipero_report_id: string | null
-          updated_at: string
-          user_id: string
-          verification_status: string
-        }
-        Insert: {
-          api_response?: Json | null
-          confidence_score?: number | null
-          created_at?: string
-          data_retention_until?: string | null
-          id?: string
-          property_address: string
-          property_type?: string | null
-          recipero_report_id?: string | null
-          updated_at?: string
-          user_id: string
-          verification_status?: string
-        }
-        Update: {
-          api_response?: Json | null
-          confidence_score?: number | null
-          created_at?: string
-          data_retention_until?: string | null
-          id?: string
-          property_address?: string
-          property_type?: string | null
-          recipero_report_id?: string | null
-          updated_at?: string
-          user_id?: string
-          verification_status?: string
         }
         Relationships: []
       }
@@ -749,45 +394,6 @@ export type Database = {
         }
         Relationships: []
       }
-      real_time_alerts: {
-        Row: {
-          alert_type: string
-          created_at: string
-          criteria: Json
-          id: string
-          is_active: boolean | null
-          last_triggered_at: string | null
-          notification_methods: Json | null
-          trigger_count: number | null
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          alert_type: string
-          created_at?: string
-          criteria: Json
-          id?: string
-          is_active?: boolean | null
-          last_triggered_at?: string | null
-          notification_methods?: Json | null
-          trigger_count?: number | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          alert_type?: string
-          created_at?: string
-          criteria?: Json
-          id?: string
-          is_active?: boolean | null
-          last_triggered_at?: string | null
-          notification_methods?: Json | null
-          trigger_count?: number | null
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
       receipts: {
         Row: {
           created_at: string
@@ -819,119 +425,6 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
-      }
-      recipero_api_usage: {
-        Row: {
-          api_endpoint: string
-          created_at: string
-          id: string
-          request_count: number | null
-          reset_time: string
-          user_id: string
-        }
-        Insert: {
-          api_endpoint: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time: string
-          user_id: string
-        }
-        Update: {
-          api_endpoint?: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      social_media_findings: {
-        Row: {
-          confidence_level: string | null
-          created_at: string
-          id: string
-          monitoring_id: string | null
-          platform: string
-          post_content: string | null
-          post_images: Json | null
-          post_url: string
-          similarity_score: number | null
-          status: string | null
-          user_id: string | null
-        }
-        Insert: {
-          confidence_level?: string | null
-          created_at?: string
-          id?: string
-          monitoring_id?: string | null
-          platform: string
-          post_content?: string | null
-          post_images?: Json | null
-          post_url: string
-          similarity_score?: number | null
-          status?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          confidence_level?: string | null
-          created_at?: string
-          id?: string
-          monitoring_id?: string | null
-          platform?: string
-          post_content?: string | null
-          post_images?: Json | null
-          post_url?: string
-          similarity_score?: number | null
-          status?: string | null
-          user_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "social_media_findings_monitoring_id_fkey"
-            columns: ["monitoring_id"]
-            isOneToOne: false
-            referencedRelation: "social_media_monitoring"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      social_media_monitoring: {
-        Row: {
-          created_at: string
-          findings_count: number | null
-          id: string
-          last_scan_at: string | null
-          monitoring_status: string | null
-          platform: string
-          search_terms: string[]
-          updated_at: string
-          user_id: string | null
-        }
-        Insert: {
-          created_at?: string
-          findings_count?: number | null
-          id?: string
-          last_scan_at?: string | null
-          monitoring_status?: string | null
-          platform: string
-          search_terms: string[]
-          updated_at?: string
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string
-          findings_count?: number | null
-          id?: string
-          last_scan_at?: string | null
-          monitoring_status?: string | null
-          platform?: string
-          search_terms?: string[]
-          updated_at?: string
-          user_id?: string | null
-        }
-        Relationships: []
       }
       subscribers: {
         Row: {
@@ -1030,20 +523,11 @@ export type Database = {
         Row: {
           api_response: Json | null
           api_source: string
-          checkmend_report_id: string | null
           confidence_score: number | null
           created_at: string
           data_retention_until: string | null
-          device_specifications: Json | null
-          due_diligence_data: Json | null
           id: string
-          insurance_history: Json | null
           item_type: string
-          network_status: Json | null
-          ownership_verification: Json | null
-          property_address: string | null
-          recipero_report_id: string | null
-          risk_assessment: Json | null
           serial_number: string
           updated_at: string
           user_id: string
@@ -1053,20 +537,11 @@ export type Database = {
         Insert: {
           api_response?: Json | null
           api_source: string
-          checkmend_report_id?: string | null
           confidence_score?: number | null
           created_at?: string
           data_retention_until?: string | null
-          device_specifications?: Json | null
-          due_diligence_data?: Json | null
           id?: string
-          insurance_history?: Json | null
           item_type: string
-          network_status?: Json | null
-          ownership_verification?: Json | null
-          property_address?: string | null
-          recipero_report_id?: string | null
-          risk_assessment?: Json | null
           serial_number: string
           updated_at?: string
           user_id: string
@@ -1076,20 +551,11 @@ export type Database = {
         Update: {
           api_response?: Json | null
           api_source?: string
-          checkmend_report_id?: string | null
           confidence_score?: number | null
           created_at?: string
           data_retention_until?: string | null
-          device_specifications?: Json | null
-          due_diligence_data?: Json | null
           id?: string
-          insurance_history?: Json | null
           item_type?: string
-          network_status?: Json | null
-          ownership_verification?: Json | null
-          property_address?: string | null
-          recipero_report_id?: string | null
-          risk_assessment?: Json | null
           serial_number?: string
           updated_at?: string
           user_id?: string
@@ -1130,10 +596,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      clean_expired_checkmend_cache: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never

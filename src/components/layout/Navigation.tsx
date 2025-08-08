@@ -3,15 +3,24 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { Menu, Search, Shield, User, Settings, LogOut, Crown, Home, ChevronDown, Building2, Users } from 'lucide-react';
+import { Menu, Search, Shield, User, Settings, LogOut, Crown, BarChart3, Home, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 /**
- * Simplified Main Application Navigation
+ * Main Application Navigation
+ * Unified navigation with authentication state and enhanced features
  */
 export const Navigation: React.FC = () => {
   const { user, signOut } = useAuth();
@@ -19,11 +28,10 @@ export const Navigation: React.FC = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const isMobile = useIsMobile();
 
   const isAdmin = user?.email === 'admin@safeorstolen.com' || 
                   user?.email?.endsWith('@safeorstolen.com') ||
-                  user?.email === 'samuel@safeorstolen.com';
+                  user?.email === 'samandhisbigideas@gmail.com';
 
   // Handle scroll effect
   useEffect(() => {
@@ -36,11 +44,9 @@ export const Navigation: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'Verify', href: '/real-time-verification', icon: Search },  
-    { name: 'About Problem', href: '/about-problem', icon: Shield },
+    { name: 'Verify', href: '/real-time-verification', icon: Search },
     { name: 'How It Works', href: '/how-it-works', icon: null },
-    { name: 'Our Story', href: '/our-story', icon: null },
-    { name: 'For Business', href: '/for-brands', icon: Building2 },
+    { name: 'Pricing', href: '/pricing', icon: null },
     { name: 'Contact', href: '/contact', icon: null },
   ];
 
@@ -49,6 +55,18 @@ export const Navigation: React.FC = () => {
     { name: 'User Management', href: '/admin/users', icon: User },
     { name: 'Security Center', href: '/admin/security', icon: Shield },
     { name: 'System Settings', href: '/admin/settings', icon: Settings },
+  ];
+
+  // FasterCapital Program Requirements
+  const fasterCapitalRequirements = [
+    { label: 'Raise Capital', href: '/fastercapital/raise-capital', description: 'Get funding from 155K+ angels and 50K+ VCs' },
+    { label: 'Tech Cofounder', href: '/fastercapital/tech-cofounder', description: 'Get technical cofounders for your startup' },
+    { label: 'Incubation', href: '/fastercapital/incubation', description: 'Join our 12-month acceleration program' },
+    { label: 'Mega Financing', href: '/fastercapital/mega-financing', description: 'Financing for $100M+ projects' },
+    { label: 'Business Plan', href: '/fastercapital/business-plan', description: 'Professional business plan development' },
+    { label: 'Pitch Deck', href: '/fastercapital/pitch-deck', description: 'Investor-ready pitch deck creation' },
+    { label: 'Financial Model', href: '/fastercapital/financial-model', description: 'Financial projections and modeling' },
+    { label: 'Market Research', href: '/fastercapital/market-research', description: 'Comprehensive market analysis' },
   ];
 
   const userMenuItems = isAuthenticated ? [
@@ -101,71 +119,105 @@ export const Navigation: React.FC = () => {
 
   return (
     <nav className={cn(
-      "bg-sos/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50 transition-all duration-300",
+      "bg-sos-dark/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50 transition-all duration-300",
       isScrolled && "shadow-lg"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={cn(
-          "flex justify-between transition-all duration-300",
-          isMobile ? "h-14" : "h-16"
-        )}>
+        <div className="flex justify-between h-16">
           {/* Logo and Brand */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
-                  alt="Safe or Stolen"
-                  className={cn(
-                    "filter drop-shadow-lg",
-                    isMobile ? "h-6 w-6" : "h-8 w-8"
-                  )}
+                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                  alt="Safe or Stolen" 
+                  className="h-8 w-8 filter drop-shadow-lg"
                 />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
               </div>
-              <div className={cn(isMobile ? "hidden" : "hidden sm:block")}>
-                <span className={cn(
-                  "font-bold text-white",
-                  isMobile ? "text-lg" : "text-xl"
-                )}>Safe or Stolen</span>
-                <div className="text-xs text-sos-orange font-medium">Verify Before You Buy</div>
+              <div className="hidden sm:block">
+                <span className="text-xl font-bold text-white">Safe or Stolen</span>
+                <Badge variant="outline" className="border-sos-lime text-sos-lime text-xs ml-2">
+                  FasterCapital
+                </Badge>
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <NavLink key={item.name} href={item.href}>
                 {item.name}
               </NavLink>
             ))}
+            
+            {/* FasterCapital Requirements Menu */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white hover:bg-sos-orange/20 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/20">
+                    FasterCapital
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[400px] p-4 bg-sos-dark border-sos-orange/20">
+                      <div className="mb-3">
+                        <h4 className="text-sm font-medium text-sos-orange mb-1">Program Requirements</h4>
+                        <p className="text-xs text-gray-400">Choose the right program for your startup</p>
+                      </div>
+                      <div className="grid gap-2">
+                        {fasterCapitalRequirements.map((item) => (
+                          <NavigationMenuLink key={item.href} asChild>
+                            <Link
+                              to={item.href}
+                              className="w-full text-left p-3 rounded-lg hover:bg-sos-orange/10 transition-colors group"
+                            >
+                              <div className="text-sm font-medium text-gray-300 group-hover:text-white mb-1">
+                                {item.label}
+                              </div>
+                              <div className="text-xs text-gray-500 group-hover:text-gray-400">
+                                {item.description}
+                              </div>
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* User Menu */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
-              <div className="hidden md:flex items-center space-x-4">
+              <div className="hidden lg:flex items-center space-x-4">
+                {/* Admin Badge */}
+                {isAdmin && (
+                  <Badge className="bg-sos-orange text-white">
+                    <Crown className="h-3 w-3 mr-1" />
+                    Admin
+                  </Badge>
+                )}
+
                 {/* User Dropdown */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="flex items-center gap-2 text-gray-300 hover:text-white">
-                      <Avatar className={cn(isMobile ? "h-6 w-6" : "h-8 w-8")}>
+                      <Avatar className="h-8 w-8">
                         <AvatarImage src={user?.avatar} />
                         <AvatarFallback className="bg-sos-orange text-white">
                           {user?.email?.charAt(0).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
-                      <span className={cn(
-                        "font-medium",
-                        isMobile ? "text-xs" : "text-sm"
-                      )}>
+                      <span className="text-sm font-medium">
                         {user?.email?.split('@')[0]}
                       </span>
                       <ChevronDown className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56 bg-sos border-sos-orange/20 z-50" align="end">
+                  <DropdownMenuContent className="w-56 bg-sos-dark border-sos-orange/20 z-50" align="end">
                     <div className="flex items-center justify-start gap-2 p-2">
                       <div className="flex flex-col space-y-1 leading-none">
                         <p className="font-medium text-white">{user?.fullName || 'User'}</p>
@@ -206,7 +258,7 @@ export const Navigation: React.FC = () => {
                 </DropdownMenu>
               </div>
             ) : (
-              <div className="hidden md:flex items-center space-x-3">
+              <div className="hidden lg:flex items-center space-x-3">
                 <Button variant="ghost" asChild className="text-gray-300 hover:text-white">
                   <Link to="/auth">Sign In</Link>
                 </Button>
@@ -222,11 +274,11 @@ export const Navigation: React.FC = () => {
             {/* Mobile menu button */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" className="md:hidden" size={isMobile ? "sm" : "icon"}>
-                  <Menu className={cn(isMobile ? "h-5 w-5" : "h-6 w-6")} />
+                <Button variant="ghost" className="lg:hidden" size="icon">
+                  <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-sos border-sos-orange/20 text-white w-[300px] sm:w-[350px]">
+              <SheetContent side="right" className="bg-sos-dark border-sos-orange/20 text-white">
                 <div className="mt-6 space-y-2">
                   {navigation.map((item) => (
                     <MobileNavLink 
@@ -238,6 +290,26 @@ export const Navigation: React.FC = () => {
                       {item.name}
                     </MobileNavLink>
                   ))}
+
+                  {/* FasterCapital Requirements in Mobile */}
+                  <div className="border-t border-sos-orange/20 pt-4 mt-4">
+                    <p className="text-gray-400 text-sm mb-3 px-4">FasterCapital Programs</p>
+                    {fasterCapitalRequirements.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="w-full text-left px-4 py-3 rounded-xl hover:bg-sos-orange/10 transition-all block"
+                      >
+                        <div className="text-sm font-medium text-gray-300 hover:text-white mb-1">
+                          {item.label}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {item.description}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
 
                   {isAuthenticated && isAdmin && (
                     <>
