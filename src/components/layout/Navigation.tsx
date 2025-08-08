@@ -44,8 +44,13 @@ export const Navigation: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'Verify', href: '/real-time-verification', icon: Search },
+    { name: 'Real-time Verify', href: '/real-time-verification', icon: Search },
+    { name: 'Verify Item', href: '/verify', icon: Search, protected: true },
+    { name: 'Dashboard', href: '/dashboard', icon: BarChart3, protected: true },
+    { name: 'About Problem', href: '/about-problem', icon: null },
     { name: 'How It Works', href: '/how-it-works', icon: null },
+    { name: 'Our Story', href: '/our-story', icon: null },
+    { name: 'For Business', href: '/for-brands', icon: null },
     { name: 'Pricing', href: '/pricing', icon: null },
     { name: 'Contact', href: '/contact', icon: null },
   ];
@@ -146,11 +151,14 @@ export const Navigation: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navigation.map((item) => (
-              <NavLink key={item.name} href={item.href}>
-                {item.name}
-              </NavLink>
-            ))}
+            {navigation.map((item) => {
+              if (item.protected && !isAuthenticated) return null;
+              return (
+                <NavLink key={item.name} href={item.href}>
+                  {item.name}
+                </NavLink>
+              );
+            })}
             
             {/* FasterCapital Requirements Menu */}
             <NavigationMenu>
@@ -280,16 +288,19 @@ export const Navigation: React.FC = () => {
               </SheetTrigger>
               <SheetContent side="right" className="bg-sos-dark border-sos-orange/20 text-white">
                 <div className="mt-6 space-y-2">
-                  {navigation.map((item) => (
-                    <MobileNavLink 
-                      key={item.name} 
-                      href={item.href} 
-                      icon={item.icon}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </MobileNavLink>
-                  ))}
+                  {navigation.map((item) => {
+                    if (item.protected && !isAuthenticated) return null;
+                    return (
+                      <MobileNavLink 
+                        key={item.name} 
+                        href={item.href} 
+                        icon={item.icon}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </MobileNavLink>
+                    );
+                  })}
 
                   {/* FasterCapital Requirements in Mobile */}
                   <div className="border-t border-sos-orange/20 pt-4 mt-4">
