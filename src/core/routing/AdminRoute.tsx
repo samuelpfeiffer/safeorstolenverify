@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle } from 'lucide-react';
@@ -14,8 +14,7 @@ interface AdminRouteProps {
  * Restricts access to admin-only pages
  */
 export const AdminRoute: React.FC<AdminRouteProps> = ({ children }) => {
-  const { user, loading } = useAuth();
-  const isAuthenticated = !!user;
+  const { isAuthenticated, loading, user } = useUnifiedAuth();
 
   if (loading) {
     return <AppLoadingScreen />;

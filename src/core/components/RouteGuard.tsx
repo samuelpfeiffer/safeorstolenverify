@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { AppLoadingFallback } from './AppLoadingFallback';
 
 interface RouteGuardProps {
@@ -16,8 +16,7 @@ export const RouteGuard: React.FC<RouteGuardProps> = ({
   requireAdmin = false,
   redirectTo
 }) => {
-  const { user, loading } = useAuth();
-  const isAuthenticated = !!user;
+  const { user, loading, isAuthenticated } = useUnifiedAuth();
   const location = useLocation();
 
   // Show loading while auth state is being determined
@@ -32,7 +31,7 @@ export const RouteGuard: React.FC<RouteGuardProps> = ({
   }
 
   // Check admin requirement
-  if (requireAdmin && user?.email !== 'admin@safeorstolen.com') {
+  if (requireAdmin && user?.user_metadata?.role !== 'admin') {
     return <Navigate to="/" replace />;
   }
 

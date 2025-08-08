@@ -1,120 +1,123 @@
 
 import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useToast } from '@/hooks/use-toast';
+import { useSubscription } from '@/hooks/useSubscription';
 
-export const useSearchLimits = () => {
-  const [remainingSearches, setRemainingSearches] = useState<number>(0);
-  const [hasReachedLimit, setHasReachedLimit] = useState<boolean>(false);
-  const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const { user } = useAuth();
+interface SearchLimits {
+  remainingSearches: number;
+  hasReachedLimit: boolean;
+  isSubscribed: boolean;
+  resetSearches: () => void;
+  consumeSearch: () => Promise<boolean>;
+}
+
+const STORAGE_KEY = 'totalSearchCount';
+
+export const useSearchLimits = (): SearchLimits => {
+  const { isAuthenticated, user } = useUnifiedAuth();
   const { toast } = useToast();
+  const { subscriptionData } = useSubscription();
+  const [searchCount, setSearchCount] = useState(0);
 
+  // Load total search count from localStorage on mount
   useEffect(() => {
-    if (user) {
-      checkUserLimits();
-    } else {
-      // Guest users have no searches
-      setRemainingSearches(0);
-      setHasReachedLimit(true);
-      setIsSubscribed(false);
-      setIsLoading(false);
-    }
-  }, [user]);
-
-  const checkUserLimits = async () => {
-    if (!user) return;
-
-    try {
-      setIsLoading(true);
-
-      // Check subscription status
-      const { data: subscription } = await supabase
-        .from('subscribers')
-        .select('subscribed, subscription_tier')
-        .eq('user_id', user.id)
-        .single();
-
-      if (subscription?.subscribed) {
-        setIsSubscribed(true);
-        setRemainingSearches(999); // Unlimited for subscribers
-        setHasReachedLimit(false);
-        return;
+    if (isAuthenticated && user?.id) {
+      const userKey = `${STORAGE_KEY}_${user.id}`;
+      const savedCount = localStorage.getItem(userKey);
+      if (savedCount) {
+        const parsedCount = parseInt(savedCount, 10);
+        if (!isNaN(parsedCount)) {
+          setSearchCount(parsedCount);
+        }
       }
-
-      // Check profile for promotion status
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('is_promotion_winner, promotion_searches_remaining, promotion_expires_at')
-        .eq('id', user.id)
-        .single();
-
-      if (profile?.is_promotion_winner && 
-          profile?.promotion_searches_remaining > 0 && 
-          profile?.promotion_expires_at && 
-          new Date(profile.promotion_expires_at) > new Date()) {
-        setRemainingSearches(profile.promotion_searches_remaining);
-        setHasReachedLimit(false);
-        return;
-      }
-
-      // Check free tier usage (4 searches total)
-      const { count } = await supabase
-        .from('verification_results')
-        .select('*', { count: 'exact', head: true })
-        .eq('user_id', user.id);
-
-      const used = count || 0;
-      const remaining = Math.max(0, 4 - used);
-      
-      setRemainingSearches(remaining);
-      setHasReachedLimit(remaining === 0);
-
-    } catch (error) {
-      console.error('Error checking user limits:', error);
-      setRemainingSearches(0);
-      setHasReachedLimit(true);
-    } finally {
-      setIsLoading(false);
     }
-  };
+  }, [isAuthenticated, user?.id]);
+
+  const isSubscribed = Boolean(subscriptionData?.subscribed);
+
+  // Determine search limits based on user status
+  let searchLimit: number;
+  let remainingSearches: number;
+
+  if (!isAuthenticated) {
+    // Non-authenticated users get no searches (require sign-in)
+    searchLimit = 0;
+    remainingSearches = 0;
+  } else if (isSubscribed) {
+    // Subscribed users get unlimited
+    searchLimit = Infinity;
+    remainingSearches = Infinity;
+  } else {
+    // Regular free users get 4 searches total (one-time, not daily)
+    searchLimit = 4;
+    remainingSearches = Math.max(0, searchLimit - searchCount);
+  }
+
+  const hasReachedLimit = !isAuthenticated || 
+                         (!isSubscribed && searchCount >= searchLimit);
 
   const consumeSearch = async (): Promise<boolean> => {
-    if (!user) {
+    if (!isAuthenticated || !user?.id) {
       toast({
-        title: "Sign In Required",
-        description: "Please sign in to verify items",
+        title: "Sign in required",
+        description: "You need to sign in to verify items. Sign up now to get 4 free searches!",
         variant: "destructive",
       });
       return false;
     }
 
     if (isSubscribed) {
-      return true; // Unlimited for subscribers
+      return true; // Unlimited searches for subscribers
     }
 
-    if (hasReachedLimit) {
+    // Regular free tier logic (4 total searches)
+    if (searchCount >= searchLimit) {
       toast({
-        title: "Search Limit Reached",
-        description: "Upgrade to continue verifying items",
+        title: "Free searches exhausted",
+        description: `You've used all ${searchLimit} free searches. Upgrade to a paid plan for unlimited searches!`,
         variant: "destructive",
       });
       return false;
     }
 
-    // Update remaining searches
-    await checkUserLimits();
-    return remainingSearches > 0;
+    const newCount = searchCount + 1;
+    setSearchCount(newCount);
+    
+    // Store per-user search count
+    const userKey = `${STORAGE_KEY}_${user.id}`;
+    localStorage.setItem(userKey, newCount.toString());
+
+    // Warn when approaching limit
+    if (newCount === searchLimit - 1) {
+      toast({
+        title: "Last free search!",
+        description: "This is your final free search. Upgrade for unlimited access!",
+      });
+    } else if (newCount === searchLimit) {
+      toast({
+        title: "Free searches exhausted",
+        description: "Upgrade now for unlimited searches and premium features!",
+        variant: "destructive",
+      });
+    }
+
+    return true;
+  };
+
+  const resetSearches = () => {
+    if (user?.id) {
+      setSearchCount(0);
+      const userKey = `${STORAGE_KEY}_${user.id}`;
+      localStorage.setItem(userKey, '0');
+    }
   };
 
   return {
-    remainingSearches,
+    remainingSearches: typeof remainingSearches === 'number' ? remainingSearches : 999,
     hasReachedLimit,
     isSubscribed,
-    isLoading,
+    resetSearches,
     consumeSearch,
-    refreshLimits: checkUserLimits
   };
 };

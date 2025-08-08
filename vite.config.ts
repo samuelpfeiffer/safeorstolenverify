@@ -11,23 +11,28 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
+    mode === 'development' &&
+    componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
+          'ui': ['@radix-ui/react-slot', '@radix-ui/react-toast']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+  },
   optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      'react-router-dom',
-      '@tanstack/react-query'
-    ],
-  },
-  define: {
-    // Ensure React is available globally
-    global: 'globalThis',
-  },
+    include: ['react', 'react-dom', 'react-router-dom'],
+    exclude: []
+  }
 }));

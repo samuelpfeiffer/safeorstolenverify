@@ -1,31 +1,45 @@
 
-import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/lib/auth';
-
-interface SearchHistoryItem {
-  id: string;
-  serial_number: string;
-  item_type: string;
-  created_at: string;
-  result?: any;
-}
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { detectItemType } from '@/utils/itemTypeDetector';
 
 export const useSearchHistory = () => {
-  const [searchHistory, setSearchHistory] = useState<SearchHistoryItem[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const { user } = useAuth();
+  const { user } = useUnifiedAuth();
 
-  useEffect(() => {
-    if (user) {
-      loadSearchHistory();
+  const addToSearchHistory = async (serialNumber: string) => {
+    if (!user) {
+      console.warn('User not authenticated, cannot save search history');
+      return { itemType: detectItemType(serialNumber), newSearch: null };
     }
-  }, [user]);
 
-  const loadSearchHistory = async () => {
-    if (!user) return;
+    const itemType = detectItemType(serialNumber);
+    
+    try {
+      const { data, error } = await supabase
+        .from('verification_searches')
+        .insert({
+          user_id: user.id,
+          serial_number: serialNumber.trim(),
+          item_type: itemType,
+        })
+        .select()
+        .single();
 
-    setIsLoading(true);
+      if (error) {
+        console.error('Error saving search history:', error);
+        return { itemType, newSearch: null };
+      }
+
+      return { itemType, newSearch: data };
+    } catch (error) {
+      console.error('Error saving search history:', error);
+      return { itemType, newSearch: null };
+    }
+  };
+
+  const getSearchHistory = async () => {
+    if (!user) return [];
+
     try {
       const { data, error } = await supabase
         .from('verification_searches')
@@ -35,46 +49,16 @@ export const useSearchHistory = () => {
         .limit(50);
 
       if (error) {
-        console.error('Error loading search history:', error);
-        return;
+        console.error('Error fetching search history:', error);
+        return [];
       }
 
-      setSearchHistory(data || []);
+      return data || [];
     } catch (error) {
-      console.error('Error loading search history:', error);
-    } finally {
-      setIsLoading(false);
+      console.error('Error fetching search history:', error);
+      return [];
     }
   };
 
-  const addToSearchHistory = async (serialNumber: string, itemType?: string) => {
-    if (!user) return;
-
-    try {
-      const { error } = await supabase
-        .from('verification_searches')
-        .insert({
-          user_id: user.id,
-          serial_number: serialNumber,
-          item_type: itemType || 'unknown'
-        });
-
-      if (error) {
-        console.error('Error adding to search history:', error);
-        return;
-      }
-
-      // Refresh history
-      await loadSearchHistory();
-    } catch (error) {
-      console.error('Error adding to search history:', error);
-    }
-  };
-
-  return {
-    searchHistory,
-    isLoading,
-    addToSearchHistory,
-    refreshHistory: loadSearchHistory
-  };
+  return { addToSearchHistory, getSearchHistory };
 };

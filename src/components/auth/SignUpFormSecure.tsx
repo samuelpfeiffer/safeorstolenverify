@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { TermsAcceptance } from '@/components/auth/TermsAcceptance';
-import { useAuth } from '@/lib/auth';
+import { useSecureAuth } from '@/hooks/useSecureAuth';
 import { useTermsAcceptance } from '@/hooks/useTermsAcceptance';
 import { useSecureSignUpForm, getMobileErrorMessage, SecureSignUpFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -17,8 +18,7 @@ interface SignUpFormSecureProps {
 type SignUpStep = 'form' | 'terms';
 
 export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
-  const { signUp, loading: authLoading, user } = useAuth();
-  const isAuthenticated = !!user;
+  const { signUp, loading: authLoading, user, isAuthenticated } = useSecureAuth();
   const { acceptTerms, isProcessing } = useTermsAcceptance();
   const [step, setStep] = useState<SignUpStep>('form');
   const [isLoading, setIsLoading] = useState(false);
@@ -35,9 +35,11 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
   // Check if user is already authenticated via OAuth
   useEffect(() => {
     if (isAuthenticated && user) {
-      // User is already authenticated, skip signup form
-      console.log('User already authenticated, skipping signup form');
-      onSuccess?.();
+      const provider = user.app_metadata?.provider;
+      if (provider === 'google') {
+        console.log('OAuth user already authenticated, skipping signup form');
+        onSuccess?.();
+      }
     }
   }, [isAuthenticated, user, onSuccess]);
 
@@ -48,18 +50,13 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
     try {
       const result = await signUp(data.email, data.password, data.fullName);
       
-      if (result.success) {
-        // For the new auth system, we'll use the current user
-        if (user) {
-          setCreatedUserId(user.id);
-          setPendingSignUpData(data);
-          setStep('terms');
-          console.log('Account created, proceeding to terms acceptance');
-        } else {
-          console.log('Account creation pending email confirmation');
-        }
+      if (result.data?.user) {
+        setCreatedUserId(result.data.user.id);
+        setPendingSignUpData(data);
+        setStep('terms');
+        console.log('Account created, proceeding to terms acceptance');
       } else {
-        console.log('Account creation failed or pending confirmation');
+        console.log('Account creation pending email confirmation');
       }
       
     } catch (error) {
@@ -104,8 +101,8 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
 
   const currentlyLoading = isLoading || authLoading || isProcessing;
 
-  // Don't show signup form if user is already authenticated
-  if (isAuthenticated && user) {
+  // Don't show signup form if user is already authenticated via OAuth
+  if (isAuthenticated && user?.app_metadata?.provider === 'google') {
     return null;
   }
 

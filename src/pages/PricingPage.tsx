@@ -3,14 +3,14 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
-import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
+import { useSecureAuth } from "@/hooks/useSecureAuth";
 import { useSecureStripe } from "@/utils/stripe/secureStripeOperations";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const PricingPage = () => {
-  const { isAuthenticated } = useUnifiedAuth();
+  const { isAuthenticated } = useSecureAuth();
   const { secureCreateCheckoutSession } = useSecureStripe();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
   const navigate = useNavigate();

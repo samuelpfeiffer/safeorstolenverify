@@ -1,61 +1,73 @@
 
 import { useState, useEffect } from 'react';
+import { pwaService } from '@/services/pwaService';
 
-export const usePWA = () => {
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [installPrompt, setInstallPrompt] = useState<any>(null);
+export interface PWAState {
+  isInstallAvailable: boolean;
+  isInstalled: boolean;
+  isOnline: boolean;
+  showInstallPrompt: () => Promise<boolean>;
+  performanceMetrics: any;
+}
+
+export const usePWA = (): PWAState => {
+  const [isInstallAvailable, setIsInstallAvailable] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [performanceMetrics, setPerformanceMetrics] = useState(null);
 
   useEffect(() => {
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-    
-    const handleBeforeInstallPrompt = (e: Event) => {
-      e.preventDefault();
-      setInstallPrompt(e);
+    // Initialize state
+    setIsInstallAvailable(pwaService.isInstallAvailable());
+    setIsInstalled(pwaService.isAppInstalled());
+    setIsOnline(pwaService.isOnline());
+
+    // Load performance metrics
+    pwaService.getPerformanceMetrics().then(setPerformanceMetrics);
+
+    // Event listeners
+    const handleInstallAvailable = () => {
+      setIsInstallAvailable(true);
     };
 
-    const handleAppInstalled = () => {
+    const handleInstallSuccess = () => {
       setIsInstalled(true);
-      setInstallPrompt(null);
+      setIsInstallAvailable(false);
     };
 
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('appinstalled', handleAppInstalled);
+    const handleOnlineStatus = (event: CustomEvent) => {
+      setIsOnline(event.detail.isOnline);
+    };
 
-    // Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      setIsInstalled(true);
-    }
+    const handleUpdateAvailable = () => {
+      console.log('PWA update available');
+      // Could show a toast notification here
+    };
+
+    // Add event listeners
+    window.addEventListener('pwa-install-available', handleInstallAvailable);
+    window.addEventListener('pwa-install-success', handleInstallSuccess);
+    window.addEventListener('pwa-online-status', handleOnlineStatus as EventListener);
+    window.addEventListener('pwa-update-available', handleUpdateAvailable);
 
     return () => {
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('appinstalled', handleAppInstalled);
+      // Cleanup event listeners
+      window.removeEventListener('pwa-install-available', handleInstallAvailable);
+      window.removeEventListener('pwa-install-success', handleInstallSuccess);
+      window.removeEventListener('pwa-online-status', handleOnlineStatus as EventListener);
+      window.removeEventListener('pwa-update-available', handleUpdateAvailable);
     };
   }, []);
 
-  const installApp = async () => {
-    if (!installPrompt) return false;
-
-    const result = await installPrompt.prompt();
-    if (result.outcome === 'accepted') {
-      setInstallPrompt(null);
-      return true;
-    }
-    return false;
+  const showInstallPrompt = async (): Promise<boolean> => {
+    return await pwaService.showInstallPrompt();
   };
 
   return {
-    isOnline,
-    installPrompt,
+    isInstallAvailable,
     isInstalled,
-    installApp,
-    canInstall: !!installPrompt,
-    isInstallAvailable: !!installPrompt,
-    showInstallPrompt: installApp
+    isOnline,
+    showInstallPrompt,
+    performanceMetrics
   };
 };

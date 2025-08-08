@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { useAuth } from '@/lib/auth';
+import { useSecureAuth } from '@/hooks/useSecureAuth';
 import { SecurityStatusIndicator } from '@/components/security/SecurityStatusIndicator';
 import { validateSecureContext, logSecurityEvent } from '@/utils/securityAudit';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,8 +12,7 @@ interface SecureAuthWrapperProps {
 }
 
 export const SecureAuthWrapper = ({ children, requireAuth = false }: SecureAuthWrapperProps) => {
-  const { user, loading } = useAuth();
-  const isAuthenticated = !!user;
+  const { isAuthenticated, user, loading } = useSecureAuth();
   const [secureContext, setSecureContext] = useState(true);
 
   useEffect(() => {

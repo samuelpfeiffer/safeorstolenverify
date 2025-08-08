@@ -1,6 +1,6 @@
 
 import { ReactNode } from 'react';
-import { AuthProvider } from '@/lib/auth';
+import { SecureAuthProvider } from '@/hooks/useSecureAuth';
 import { Toaster } from '@/components/ui/toaster';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthErrorBoundary } from '@/components/auth/AuthErrorBoundary';
@@ -22,10 +22,10 @@ export const AppWrapper = ({ children }: AppWrapperProps) => {
   return (
     <AuthErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <AuthProvider>
+        <SecureAuthProvider>
           {children}
           <Toaster />
-        </AuthProvider>
+        </SecureAuthProvider>
       </QueryClientProvider>
     </AuthErrorBoundary>
   );

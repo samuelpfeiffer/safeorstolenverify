@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useAuth } from '@/lib/auth';
+import { useSecureAuth } from '@/hooks/useSecureAuth';
 import { useSecureSignInForm, getMobileErrorMessage, SecureSignInFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -12,7 +12,7 @@ interface SignInFormSecureProps {
 }
 
 export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
-  const { signIn, loading: authLoading } = useAuth();
+  const { signIn, loading: authLoading } = useSecureAuth();
   const [isLoading, setIsLoading] = useState(false);
   const isMobile = useIsMobile();
   const form = useSecureSignInForm({
@@ -22,16 +22,13 @@ export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
   });
 
   const handleSignIn = async (data: SecureSignInFormData) => {
-    console.log('🔐 SignIn form submitted with email:', data.email);
     setIsLoading(true);
     try {
-      console.log('🔐 Calling signIn function...');
-      const result = await signIn(data.email, data.password);
-      console.log('🔐 SignIn result:', result);
+      await signIn(data.email, data.password);
       form.reset();
       onSuccess?.();
     } catch (error) {
-      console.error('🔐 Secure sign in failed:', error);
+      console.error('Secure sign in failed:', error);
     } finally {
       setIsLoading(false);
     }

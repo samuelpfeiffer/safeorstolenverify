@@ -1,4 +1,8 @@
 
+/**
+ * Type guard functions for verification status validation
+ */
+
 export type VerificationStatus = 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
 
 export const isValidVerificationStatus = (status: string): status is VerificationStatus => {
@@ -6,34 +10,26 @@ export const isValidVerificationStatus = (status: string): status is Verificatio
 };
 
 export const normalizeVerificationStatus = (status: string): VerificationStatus => {
-  const normalized = status.toLowerCase();
-  if (isValidVerificationStatus(normalized)) {
-    return normalized;
+  const normalizedStatus = status.toLowerCase().trim();
+  
+  if (isValidVerificationStatus(normalizedStatus)) {
+    return normalizedStatus;
   }
-  return 'unknown';
-};
-
-export interface VerificationResult {
-  id: string;
-  status: VerificationStatus;
-  confidence: number;
-  source: string;
-  details?: any;
-  message?: string;
-  verified_at: string;
-  serial_number: string;
-  item_type: string;
-}
-
-export const isVerificationResult = (obj: any): obj is VerificationResult => {
-  return (
-    obj &&
-    typeof obj.id === 'string' &&
-    isValidVerificationStatus(obj.status) &&
-    typeof obj.confidence === 'number' &&
-    typeof obj.source === 'string' &&
-    typeof obj.verified_at === 'string' &&
-    typeof obj.serial_number === 'string' &&
-    typeof obj.item_type === 'string'
-  );
+  
+  // Handle common variations and fallback to 'unknown'
+  switch (normalizedStatus) {
+    case 'reported_stolen':
+    case 'flagged':
+      return 'stolen';
+    case 'reported_lost':
+    case 'missing':
+      return 'lost';
+    case 'verified':
+    case 'clean':
+    case 'clear':
+      return 'safe';
+    default:
+      console.warn(`Unknown verification status: ${status}, defaulting to 'unknown'`);
+      return 'unknown';
+  }
 };

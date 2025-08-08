@@ -1,20 +1,8 @@
 
-import { useAuth } from '@/lib/auth';
+// Unified auth hook that redirects to the secure auth implementation
+// This ensures consistency across the application and prevents provider conflicts
 
-/**
- * Unified Auth Hook
- * Provides a consistent interface for authentication across the app
- */
-export const useUnifiedAuth = () => {
-  const { user, session, loading, signOut, signIn, signUp } = useAuth();
-  
-  return {
-    user,
-    session,
-    loading,
-    isAuthenticated: !!user,
-    signOut,
-    signIn,
-    signUp,
-  };
-};
+import { useSecureAuth, SecureAuthProvider } from './useSecureAuth';
+
+export const useUnifiedAuth = useSecureAuth;
+export const UnifiedAuthProvider = SecureAuthProvider;

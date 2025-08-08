@@ -34,13 +34,6 @@ const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('@/pages/TermsOfServicePage'));
 
-// FasterCapital Pages
-const RaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
-const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounderPage'));
-
-// Real-time Verification
-const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
-
 /**
  * Enterprise Application Routing
  * Handles all application routes with proper lazy loading and access control
@@ -70,13 +63,6 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-story" element={<OurStoryPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="terms-of-service" element={<TermsOfServicePage />} />
-          
-          {/* FasterCapital Routes */}
-          <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
-          <Route path="fastercapital/tech-cofounder" element={<TechCofounderPage />} />
-          
-          {/* Real-time Verification */}
-          <Route path="real-time-verification" element={<RealTimeVerificationPage />} />
           
           {/* Protected User Routes */}
           <Route path="verify" element={

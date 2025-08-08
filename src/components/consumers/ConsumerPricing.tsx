@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
-import { useAuth } from "@/lib/auth";
+import { useSecureAuth } from "@/hooks/useSecureAuth";
 import { useNavigate } from "react-router-dom";
 
 interface ConsumerPricingProps {
@@ -12,8 +12,7 @@ interface ConsumerPricingProps {
 }
 
 export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricingProps) => {
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
+  const { isAuthenticated } = useSecureAuth();
   const navigate = useNavigate();
 
   const handleFreeStart = () => {

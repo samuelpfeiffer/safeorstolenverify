@@ -1,62 +1,44 @@
 
-import { toast as toastFunction } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 export interface SecureError {
-  message: string;
-  code: string;
-  details?: string;
-  timestamp: number;
+  userMessage: string;
+  logMessage: string;
+  code?: string;
 }
 
 export const createSecureError = (
-  message: string,
-  details?: string,
-  code: string = 'GENERAL_ERROR'
+  userMessage: string,
+  actualError: any,
+  code?: string
 ): SecureError => {
   return {
-    message,
-    code,
-    details,
-    timestamp: Date.now()
+    userMessage,
+    logMessage: actualError?.message || String(actualError),
+    code
   };
 };
 
 export const handleSecureError = (
-  error: SecureError | Error,
-  toast: typeof toastFunction
-) => {
-  console.error('Secure error:', error);
-  
-  let message = 'An unexpected error occurred';
-  let description = 'Please try again later';
-  
-  if ('code' in error) {
-    message = error.message;
-    description = error.details || description;
-  } else if (error instanceof Error) {
-    message = error.message;
-  }
-  
+  error: SecureError,
+  toast: ReturnType<typeof useToast>['toast']
+): void => {
+  // Log the actual error for debugging (server-side in production)
+  console.error(`[${error.code || 'ERROR'}] ${error.logMessage}`);
+
+  // Show user-friendly message
   toast({
-    title: message,
-    description,
-    variant: "destructive",
+    title: "An error occurred",
+    description: error.userMessage,
+    variant: "destructive"
   });
 };
 
-export const logSecureEvent = (event: string, data?: any) => {
-  const logEntry = {
-    event,
-    data,
-    timestamp: new Date().toISOString(),
-    userAgent: navigator.userAgent,
-    url: window.location.href
-  };
-  
-  console.log('Security Event:', logEntry);
-  
-  // In production, send to monitoring service
-  if (process.env.NODE_ENV === 'production') {
-    // Send to monitoring service
-  }
-};
+export const SECURE_ERROR_MESSAGES = {
+  VERIFICATION_FAILED: "Unable to verify item. Please try again later.",
+  INVALID_INPUT: "Please check your input and try again.",
+  RATE_LIMIT_EXCEEDED: "Too many requests. Please wait before trying again.",
+  AUTHENTICATION_REQUIRED: "Please sign in to continue.",
+  NETWORK_ERROR: "Network error. Please check your connection.",
+  UNKNOWN_ERROR: "Something went wrong. Please try again."
+} as const;

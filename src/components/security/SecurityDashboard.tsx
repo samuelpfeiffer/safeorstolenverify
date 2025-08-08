@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/lib/auth';
+import { useSecureAuth } from '@/hooks/useSecureAuth';
 import { SecurityScoreCard } from './SecurityScoreCard';
 import { SecurityMetricsGrid } from './SecurityMetricsGrid';
 import { SecurityDashboardLoading } from './SecurityDashboardLoading';
@@ -15,7 +15,7 @@ interface SecurityMetrics {
 }
 
 export const SecurityDashboard = () => {
-  const { user } = useAuth();
+  const { user } = useSecureAuth();
   const [metrics, setMetrics] = useState<SecurityMetrics>({
     totalVerifications: 0,
     recentAuditLogs: 0,

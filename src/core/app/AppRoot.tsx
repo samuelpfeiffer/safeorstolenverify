@@ -4,11 +4,15 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
+
+import { SecurityProvider } from '@/core/providers/SecurityProvider';
+import { PerformanceProvider } from '@/core/providers/PerformanceProvider';
+import { PWAProvider } from '@/core/providers/PWAProvider';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
-import { AuthProvider } from '@/lib/auth';
+import { SecureAuthProvider } from '@/hooks/useSecureAuth';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -42,20 +46,26 @@ export const AppRoot: React.FC = () => {
     <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <AuthProvider>
+          <SecureAuthProvider>
             <ThemeProvider>
-              <SEOProvider>
-                <Router>
-                  <div className="min-h-screen bg-sos text-white antialiased">
-                    <Suspense fallback={<AppLoadingScreen />}>
-                      <AppRoutes />
-                    </Suspense>
-                    <Toaster />
-                  </div>
-                </Router>
-              </SEOProvider>
+              <SecurityProvider>
+                <SEOProvider>
+                  <PerformanceProvider>
+                    <PWAProvider>
+                      <Router>
+                        <div className="min-h-screen bg-sos text-white antialiased">
+                          <Suspense fallback={<AppLoadingScreen />}>
+                            <AppRoutes />
+                          </Suspense>
+                          <Toaster />
+                        </div>
+                      </Router>
+                    </PWAProvider>
+                  </PerformanceProvider>
+                </SEOProvider>
+              </SecurityProvider>
             </ThemeProvider>
-          </AuthProvider>
+          </SecureAuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>

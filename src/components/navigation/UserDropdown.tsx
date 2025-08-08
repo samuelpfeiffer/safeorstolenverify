@@ -10,12 +10,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 export const UserDropdown = () => {
   const navigate = useNavigate();
-  const { user, signOut } = useAuth();
-  const isAuthenticated = !!user;
+  const { user, signOut, isAuthenticated } = useUnifiedAuth();
   
   return (
     <DropdownMenu>
