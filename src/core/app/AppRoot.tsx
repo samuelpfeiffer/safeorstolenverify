@@ -6,7 +6,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { SecureAuthProvider } from '@/hooks/useSecureAuth';
+import { UnifiedAuthProvider } from '@/hooks/useUnifiedAuth';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,7 +35,7 @@ export const AppRoot: React.FC = () => {
     <ErrorBoundary>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <SecureAuthProvider>
+          <UnifiedAuthProvider>
             <Router>
               <div className="min-h-screen bg-sos text-white antialiased">
                 <Suspense fallback={<AppLoadingScreen />}>
@@ -44,7 +44,7 @@ export const AppRoot: React.FC = () => {
                 <Toaster />
               </div>
             </Router>
-          </SecureAuthProvider>
+          </UnifiedAuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>
