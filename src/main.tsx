@@ -31,6 +31,22 @@ if (typeof window !== 'undefined') {
     }
   });
   
+  // Ensure newest Service Worker takes control and notify app to reload
+  if ('serviceWorker' in navigator) {
+    // Listen for SW reload messages
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'SW_RELOAD') {
+        console.log('Service Worker requested reload');
+        window.location.reload();
+      }
+    });
+
+    // Trigger update check
+    navigator.serviceWorker.getRegistration().then((reg) => {
+      reg?.update().catch(() => {/* ignore */});
+    });
+  }
+  
   // Performance monitoring
   if ('performance' in window) {
     window.addEventListener('load', () => {
@@ -38,6 +54,7 @@ if (typeof window !== 'undefined') {
     });
   }
 }
+
 
 const rootElement = document.getElementById("root");
 

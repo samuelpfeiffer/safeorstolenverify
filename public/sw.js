@@ -1,7 +1,7 @@
 
-const CACHE_NAME = 'safe-or-stolen-v1.0.0';
-const STATIC_CACHE = 'static-v1.0.0';
-const DYNAMIC_CACHE = 'dynamic-v1.0.0';
+const CACHE_NAME = 'safe-or-stolen-v1.0.4';
+const STATIC_CACHE = 'static-v1.0.4';
+const DYNAMIC_CACHE = 'dynamic-v1.0.4';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -30,7 +30,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - clean up old caches and notify clients to reload
 self.addEventListener('activate', event => {
   console.log('SW: Activating service worker...');
   event.waitUntil(
@@ -45,9 +45,11 @@ self.addEventListener('activate', event => {
           })
         );
       })
-      .then(() => {
+      .then(async () => {
         console.log('SW: Service worker activated');
-        return self.clients.claim();
+        await self.clients.claim();
+        const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+        clients.forEach(client => client.postMessage({ type: 'SW_RELOAD' }));
       })
   );
 });
