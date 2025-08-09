@@ -1,101 +1,99 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { AuthContextType } from "@/types/auth";
-import { useAuthState } from "./useAuthState";
-import { secureSignIn, secureSignUp, secureSignOut } from "@/utils/auth/secureAuthOperations";
-import { toast } from "@/components/ui/sonner";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import type { AuthContextType, AuthResponse } from "@/types/auth";
+import { supabase } from "@/integrations/supabase/client";
 import { AuthErrorBoundary } from "@/components/auth/AuthErrorBoundary";
+import { toast } from "@/components/ui/sonner";
 
 const SecureAuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Inner provider that safely uses hooks
 const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) => {
-  const authState = useAuthState();
-  const { user, session, loading: authStateLoading, error: authError } = authState;
-  const [operationLoading, setOperationLoading] = useState<boolean>(false);
-  
+  const [user, setUser] = useState<AuthContextType["user"]>(null);
+  const [session, setSession] = useState<AuthContextType["session"]>(null);
+  const [loading, setLoading] = useState(true);
 
-  // Handle auth state errors
+  // Initialize auth: listener first, then getSession
   useEffect(() => {
-    if (authError) {
-      console.error('Auth state error:', authError);
-      toast.error("Authentication Error", {
-        description: authError,
-      });
-    }
-  }, [authError, toast]);
+    let isMounted = true;
 
-  const signIn = async (email: string, password: string) => {
-    try {
-      setOperationLoading(true);
-      const result = await secureSignIn(email, password);
-      
-      if (result.error) {
-        toast.error("Sign in failed", {
-          description: result.error.message,
-        });
-        throw new Error(result.error.message);
-      }
-      
-      return result;
-    } catch (error: any) {
-      throw error;
-    } finally {
-      setOperationLoading(false);
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!isMounted) return;
+      setSession(session);
+      setUser(session?.user ?? null);
+    });
+
+    supabase.auth.getSession()
+      .then(({ data: { session }, error }) => {
+        if (!isMounted) return;
+        setSession(session);
+        setUser(session?.user ?? null);
+        if (error) {
+          console.error("Error getting initial session:", error);
+        }
+      })
+      .finally(() => {
+        if (isMounted) setLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  const signIn: AuthContextType["signIn"] = async (email, password) => {
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      toast.error("Sign in failed", { description: error.message });
+    } else {
+      toast.success("Welcome back!", { description: data.user?.email ?? "Signed in" });
     }
+
+    const response: AuthResponse = {
+      data: { user: data.user ?? null, session: data.session ?? null },
+      error: error ? { message: error.message, status: (error as any).status } : undefined,
+    };
+    return response;
   };
 
-  const signUp = async (email: string, password: string, fullName: string) => {
-    try {
-      setOperationLoading(true);
-      const result = await secureSignUp(email, password, fullName);
-      
-      if (result.error) {
-        toast.error("Sign up failed", {
-          description: result.error.message,
-        });
-        throw new Error(result.error.message);
-      }
+  const signUp: AuthContextType["signUp"] = async (email, password, fullName) => {
+    const redirectUrl = `${window.location.origin}/`;
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: redirectUrl,
+        data: { full_name: fullName },
+      },
+    });
 
-      if (result.data?.user && !result.data?.session) {
-        toast("Check your email", {
-          description: "We've sent you a confirmation link. Please check your email and click the link to verify your account.",
-          duration: 10000,
-        });
-      } else if (result.data?.session) {
-        toast.success("Account created successfully!", {
-          description: "Please complete the terms acceptance to finish registration.",
-        });
-      }
-      
-      return result;
-    } catch (error: any) {
-      throw error;
-    } finally {
-      setOperationLoading(false);
+    if (error) {
+      toast.error("Sign up failed", { description: error.message });
+    } else if (data.user && !data.session) {
+      toast("Check your email", {
+        description: "We've sent you a confirmation link to verify your account.",
+      });
+    } else if (data.session) {
+      toast.success("Account created!", { description: "You're signed in." });
     }
+
+    const response: AuthResponse = {
+      data: { user: data.user ?? null, session: data.session ?? null },
+      error: error ? { message: error.message, status: (error as any).status } : undefined,
+    };
+    return response;
   };
 
-  const signOut = async () => {
-    try {
-      setOperationLoading(true);
-      await secureSignOut();
-      
-      toast("Signed out", {
-        description: "You have been successfully signed out.",
-      });
-    } catch (error: any) {
-      console.error("Unexpected error during secure sign out:", error);
-      toast.error("Sign out failed", {
-        description: "Unable to sign out. Please try again.",
-      });
-    } finally {
-      setOperationLoading(false);
+  const signOut: AuthContextType["signOut"] = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast.error("Sign out failed", { description: error.message });
+      return;
     }
+    toast("Signed out", { description: "You have been signed out." });
   };
 
-  const loading = authStateLoading || operationLoading;
-
-  const value = {
+  const value = useMemo<AuthContextType>(() => ({
     user,
     session,
     signIn,
@@ -103,12 +101,11 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
     signOut,
     loading,
     isAuthenticated: !!user,
-  };
+  }), [user, session, loading]);
 
   return <SecureAuthContext.Provider value={value}>{children}</SecureAuthContext.Provider>;
 };
 
-// Main provider with error boundary
 export const SecureAuthProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <AuthErrorBoundary>
@@ -119,10 +116,8 @@ export const SecureAuthProvider = ({ children }: { children: React.ReactNode }) 
 
 export const useSecureAuth = () => {
   const context = useContext(SecureAuthContext);
-  if (context === undefined) {
-    const error = new Error("useSecureAuth must be used within a SecureAuthProvider");
-    console.error('Hook usage error:', error);
-    throw error;
+  if (!context) {
+    throw new Error("useSecureAuth must be used within a SecureAuthProvider");
   }
   return context;
 };
