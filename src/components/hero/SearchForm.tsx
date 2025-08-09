@@ -133,7 +133,7 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
           onClick={onOpenQrScanner} 
           variant="outline" 
           size="icon" 
-          className="border-sos-lime hover:text-sos-lime-light bg-zinc-50 text-zinc-950"
+          className="border-white/20 bg-white/10 text-white hover:bg-white/20"
           disabled={isLoading || !isOnline}
         >
           <QrCode className="h-4 w-4" />
@@ -143,7 +143,7 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
       <Button 
         onClick={handleSearch} 
         size="lg" 
-        className="w-full hover:bg-sos-lime-light text-black font-semibold transition-all duration-300 bg-orange-500 hover:bg-orange-400"
+        className="w-full rounded-xl bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold transition-all duration-300 shadow-glow"
         disabled={isLoading}
       >
         {!isOnline ? (
@@ -154,7 +154,7 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
         ) : (
           <>
             <Search className="mr-2 h-5 w-5" />
-            {isLoading ? 'Verifying...' : 'Verify Now - Real Database Check'}
+            {isLoading ? 'Verifying...' : 'Verify Now'}
           </>
         )}
       </Button>

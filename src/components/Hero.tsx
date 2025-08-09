@@ -9,8 +9,8 @@ import QrScanner from '@/components/hero/QrScanner';
 import HeroActionButtons from '@/components/hero/HeroActionButtons';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
-import { Badge } from '@/components/ui/badge';
-import { Shield, CheckCircle, Star, Users } from 'lucide-react';
+
+import { Shield, CheckCircle, Star } from 'lucide-react';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { cn } from '@/lib/utils';
 
@@ -112,12 +112,12 @@ const Hero = () => {
         {/* Hero Content */}
         <div className="container mx-auto container-padding relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Trust Badge */}
+            {/* Accelerator Badge */}
             <div className="mb-8 flex justify-center animate-fadeIn">
-              <Badge variant="secondary" className="glass-effect text-sm font-medium px-6 py-3 border-sos-lime/20 bg-card">
-                <Users className="h-4 w-4 mr-2 text-sos-lime" />
-                Trusted by 500K+ Users Worldwide
-              </Badge>
+              <div className="px-6 py-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-white flex items-center gap-2 shadow-glow">
+                <span className="opacity-80">Accelerated by</span>
+                <span className="text-sos-lime font-semibold">FasterCapital</span>
+              </div>
             </div>
             
             {/* Logo */}
@@ -134,23 +134,17 @@ const Hero = () => {
             
             {/* Main Headline */}
             <h1 className={cn(
-              isMobile ? 'text-4xl' : 'text-5xl md:text-6xl lg:text-7xl',
-              'font-bold mb-8 animate-slideUp text-balance'
+              isMobile ? 'text-5xl' : 'text-6xl md:text-7xl lg:text-8xl',
+              'font-bold mb-6 animate-slideUp tracking-tight'
             )}>
-              <span className="text-white">Verify Before</span>{' '}
-              <span className="text-gradient">You Buy</span>
-              <br />
-              <span className="text-white">2nd-hand Item verification</span>
+              <span className="text-sos-orange">safeorstolen.com</span>
             </h1>
             
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto animate-slideUp text-pretty leading-relaxed" style={{
-              animationDelay: '0.2s'
-            }}>
-              Fighting the $13 billion stolen goods crisis with{' '}
-              <strong className="text-foreground">real-time database verification</strong>.{' '}
-              Protecting millions of innocent consumers from unknowingly purchasing stolen items.
-            </p>
+            <div className="mb-10 max-w-3xl mx-auto animate-slideUp" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg md:text-xl text-gray-300">Check if items are stolen before you purchase them.</p>
+              <p className="text-base md:text-lg mt-2"><span className="text-sos-lime">Real-time verification</span> in seconds.</p>
+            </div>
             
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center gap-8 mb-12 text-sm animate-slideUp" style={{
@@ -166,13 +160,21 @@ const Hero = () => {
             
             {/* Search Form */}
             <div className="mb-12">
-              <ErrorBoundary fallback={
-                <div className="text-center p-4 text-gray-500">
-                  Search form temporarily unavailable
+              <div className="relative mx-auto max-w-3xl rounded-2xl border border-white/10 bg-sos-dark/60 backdrop-blur-xl p-6 shadow-glow">
+                <ErrorBoundary fallback={
+                  <div className="text-center p-4 text-gray-500">
+                    Search form temporarily unavailable
+                  </div>
+                }>
+                  <SearchForm onOpenQrScanner={handleOpenQrScanner} />
+                </ErrorBoundary>
+                <div className="mt-6 pt-6 border-t border-white/10 text-center">
+                  <p className="text-sm text-gray-300 mb-3">Looking for firearms?</p>
+                  <a href="https://www.hotgunz.com/search" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                    <span className="inline-flex items-center rounded-lg bg-red-600/90 hover:bg-red-600 text-white px-4 py-2 text-sm transition-colors">Search Stolen Firearms Database</span>
+                  </a>
                 </div>
-              }>
-                <SearchForm onOpenQrScanner={handleOpenQrScanner} />
-              </ErrorBoundary>
+              </div>
             </div>
             
             {/* Action Buttons */}

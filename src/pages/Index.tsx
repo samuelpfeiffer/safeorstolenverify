@@ -15,9 +15,6 @@ const Features = lazy(() => import('@/components/Features').catch(() => ({
 const CTASection = lazy(() => import('@/components/CTASection').catch(() => ({ 
   default: () => <div className="py-20 bg-sos">CTA section unavailable</div> 
 })));
-const Footer = lazy(() => import('@/components/Footer').catch(() => ({ 
-  default: () => <div className="py-10 bg-sos">Footer unavailable</div> 
-})));
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ScrollRestoration } from '@/components/ScrollRestoration';
@@ -107,9 +104,6 @@ const Index = () => {
           <CTASection />
         </Suspense>
         
-        <Suspense fallback={<ComponentFallback name="Footer" />}>
-          <Footer />
-        </Suspense>
       </div>
     </SafeComponent>
   );
