@@ -12,7 +12,7 @@ export const secureSignIn = async (email: string, password: string): Promise<Aut
     console.log('=== Secure Sign In Attempt ===');
     
     // Rate limiting check
-    const canProceed = await checkRateLimit('verification');
+    const canProceed = await checkRateLimit('authentication');
     if (!canProceed) {
       return {
         data: { user: null, session: null },
@@ -87,7 +87,7 @@ export const secureSignUp = async (email: string, password: string, fullName: st
     console.log('=== Secure Sign Up Attempt ===');
     
     // Rate limiting check
-    const canProceed = await checkRateLimit('verification');
+    const canProceed = await checkRateLimit('authentication');
     if (!canProceed) {
       return {
         data: { user: null, session: null },
