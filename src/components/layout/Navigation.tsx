@@ -89,9 +89,10 @@ export const Navigation: React.FC = () => {
                 className="h-8 w-8"
               />
               <span className="text-xl font-bold text-white">Safe or Stolen</span>
-              <Badge variant="outline" className="border-sos-lime text-sos-lime text-xs">
-                FasterCapital
-              </Badge>
+              <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur text-xs text-white">
+                <span className="opacity-80 mr-1">Accelerated by</span>
+                <span className="bg-gradient-to-r from-fc-blue to-fc-red bg-clip-text text-transparent font-semibold">FasterCapital</span>
+              </span>
             </Link>
           </div>
 

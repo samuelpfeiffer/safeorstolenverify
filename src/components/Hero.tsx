@@ -116,7 +116,7 @@ const Hero = () => {
             <div className="mb-8 flex justify-center animate-fadeIn">
               <div className="px-6 py-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-white flex items-center gap-2 shadow-glow">
                 <span className="opacity-80">Accelerated by</span>
-                <span className="text-sos-lime font-semibold">FasterCapital</span>
+                <span className="bg-gradient-to-r from-fc-blue to-fc-red bg-clip-text text-transparent font-semibold">FasterCapital</span>
               </div>
             </div>
             
@@ -171,7 +171,7 @@ const Hero = () => {
                 <div className="mt-6 pt-6 border-t border-white/10 text-center">
                   <p className="text-sm text-gray-300 mb-3">Looking for firearms?</p>
                   <a href="https://www.hotgunz.com/search" target="_blank" rel="noopener noreferrer" className="inline-flex">
-                    <span className="inline-flex items-center rounded-lg bg-red-600/90 hover:bg-red-600 text-white px-4 py-2 text-sm transition-colors">Search Stolen Firearms Database</span>
+                    <span className="inline-flex items-center rounded-lg bg-fc-red/90 hover:bg-fc-red text-white px-4 py-2 text-sm transition-colors">Search Stolen Firearms Database</span>
                   </a>
                 </div>
               </div>
@@ -187,13 +187,12 @@ const Hero = () => {
             </ErrorBoundary>
             
             {/* Social Proof & FasterCapital */}
-            <div className="mt-16 animate-fadeIn" style={{
-              animationDelay: '0.5s'
-            }}>
+            <div className="mt-16 animate-fadeIn" style={{ animationDelay: '0.5s' }}>
               <p className="text-sm text-muted-foreground mb-6">Backed by leading accelerators & trusted by law enforcement agencies</p>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 opacity-60">
-                <div className="card-enhanced px-6 py-3">
-                  <span className="text-card-foreground font-medium">FasterCapital Accelerated</span>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 opacity-80">
+                <div className="card-enhanced px-6 py-3 inline-flex items-center gap-2">
+                  <span className="text-card-foreground font-medium">Accelerated by</span>
+                  <span className="bg-gradient-to-r from-fc-blue to-fc-red bg-clip-text text-transparent font-semibold">FasterCapital</span>
                 </div>
                 <div className="card-enhanced px-6 py-3">
                   <span className="text-card-foreground font-medium">Law Enforcement Verified</span>
