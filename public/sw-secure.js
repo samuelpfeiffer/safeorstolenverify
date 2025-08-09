@@ -1,7 +1,7 @@
 
-const CACHE_NAME = 'safe-or-stolen-secure-v1.0.4';
-const STATIC_CACHE = 'static-secure-v1.0.4';
-const DYNAMIC_CACHE = 'dynamic-secure-v1.0.4';
+const CACHE_NAME = 'safe-or-stolen-secure-v1.0.5';
+const STATIC_CACHE = 'static-secure-v1.0.5';
+const DYNAMIC_CACHE = 'dynamic-secure-v1.0.5';
 
 // Secure assets list with integrity checking
 const SECURE_ASSETS = [

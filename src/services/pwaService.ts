@@ -39,7 +39,7 @@ export class PWAService {
   private async registerServiceWorker(): Promise<void> {
     if ('serviceWorker' in navigator) {
       try {
-        const registration = await navigator.serviceWorker.register('/sw.js', {
+const registration = await navigator.serviceWorker.register('/sw.js?v=1.0.5', {
           scope: '/'
         });
         

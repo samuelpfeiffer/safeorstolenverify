@@ -1,7 +1,7 @@
 
-const CACHE_NAME = 'safe-or-stolen-v1.0.4';
-const STATIC_CACHE = 'static-v1.0.4';
-const DYNAMIC_CACHE = 'dynamic-v1.0.4';
+const CACHE_NAME = 'safe-or-stolen-v1.0.5';
+const STATIC_CACHE = 'static-v1.0.5';
+const DYNAMIC_CACHE = 'dynamic-v1.0.5';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
