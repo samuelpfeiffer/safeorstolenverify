@@ -1,6 +1,6 @@
 
 import { useState, useCallback, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useRealVerification } from '@/hooks/useRealVerification';
@@ -170,9 +170,9 @@ const Hero = () => {
                 </ErrorBoundary>
                 <div className="mt-6 pt-6 border-t border-white/10 text-center">
                   <p className="text-sm text-gray-300 mb-3">Looking for firearms?</p>
-                  <a href="https://www.hotgunz.com/search" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                  <Link to="/firearms" className="inline-flex">
                     <span className="inline-flex items-center rounded-lg bg-fc-red/90 hover:bg-fc-red text-white px-4 py-2 text-sm transition-colors">Search Stolen Firearms Database</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

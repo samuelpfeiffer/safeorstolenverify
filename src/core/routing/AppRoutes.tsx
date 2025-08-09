@@ -33,6 +33,7 @@ const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
 const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('@/pages/TermsOfServicePage'));
+const FirearmSearchPage = lazy(() => import('@/pages/FirearmSearchPage'));
 
 /**
  * Enterprise Application Routing
@@ -63,6 +64,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-story" element={<OurStoryPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="terms-of-service" element={<TermsOfServicePage />} />
+          <Route path="firearms" element={<FirearmSearchPage />} />
           
           {/* Protected User Routes */}
           <Route path="verify" element={

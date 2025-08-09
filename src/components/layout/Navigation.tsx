@@ -24,6 +24,7 @@ export const Navigation: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: null },
     { name: 'Verify Item', href: '/verify', icon: Search, protected: true },
+    { name: 'Firearms', href: '/firearms', icon: null },
     { name: 'Dashboard', href: '/dashboard', icon: BarChart3, protected: true },
     { name: 'Pricing', href: '/pricing', icon: null },
     { name: 'About', href: '/about', icon: null },
