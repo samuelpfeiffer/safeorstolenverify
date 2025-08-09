@@ -133,7 +133,7 @@ export const Navigation: React.FC = () => {
                       </Avatar>
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56 bg-sos-dark border-sos-orange/20" align="end">
+                  <DropdownMenuContent className="w-56 bg-popover text-popover-foreground border border-border z-50" align="end">
                     <div className="flex items-center justify-start gap-2 p-2">
                       <div className="flex flex-col space-y-1 leading-none">
                         <p className="font-medium text-white">{user?.user_metadata?.full_name || 'User'}</p>

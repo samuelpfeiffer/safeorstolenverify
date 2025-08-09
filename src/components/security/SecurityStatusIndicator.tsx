@@ -56,7 +56,15 @@ export const SecurityStatusIndicator = () => {
         return <AlertTriangle className="h-4 w-4" />;
     }
   };
-  return <Card className="bg-gray-800/50 border-gray-700">
-      
-    </Card>;
+  return (
+    <Card className="bg-popover/90 border-border shadow-lg">
+      <CardContent className="p-2">
+        <div className="flex items-center gap-2 text-sm">
+          <span className={cn(getStatusColor(), "flex items-center gap-1")}>{getStatusIcon()}</span>
+          <span className="text-popover-foreground/90">Security: {securityStatus === 'secure' ? 'Secure' : securityStatus === 'warning' ? 'Check connection' : 'Issue detected'}</span>
+          <Badge variant="secondary" className="ml-1 text-[10px]">HTTPS {checks.https ? 'OK' : 'Req'}</Badge>
+        </div>
+      </CardContent>
+    </Card>
+  );
 };
