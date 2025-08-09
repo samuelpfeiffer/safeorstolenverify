@@ -42,7 +42,7 @@ const Index = () => {
   }, []);
 
   // Show verification results when query parameter is present
-  const showVerificationResults = search.includes('serialNumber=');
+  const showVerificationResults = search.includes('serialNumber=') || search.includes('verificationId=');
 
   // Enhanced structured data with multiple schemas
   const structuredData = [
@@ -90,7 +90,11 @@ const Index = () => {
           </div>
         </section>
         
-        {showVerificationResults && <VerifiedProduct />}
+        {showVerificationResults && (
+          <section id="verification-results" className="scroll-mt-24">
+            <VerifiedProduct />
+          </section>
+        )}
         
         <Suspense fallback={<ComponentFallback name="How It Works" />}>
           <HowItWorks />

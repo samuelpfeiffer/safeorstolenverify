@@ -19,9 +19,9 @@ const FirearmSearchPage: React.FC = () => {
     const sn = cleanSerial(serialNumber);
     if (!sn) return;
 
-    const result = await verifyItem(sn, 'Serial Number');
+    const result = await verifyItem(sn, 'firearm');
     if (result?.id) {
-      navigate(`/?verificationId=${result.id}`);
+      navigate(`/?verificationId=${result.id}#verification-results`);
     } else {
       toast({ title: 'Verification failed', description: 'Please try again.', variant: 'destructive' });
     }
