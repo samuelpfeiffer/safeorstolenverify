@@ -46,10 +46,10 @@ export const Navigation: React.FC = () => {
     <Link
       to={href}
       onClick={onClick}
-      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+      className={`relative px-3 py-2 text-sm font-medium transition-colors after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-0.5 after:rounded after:bg-sos-orange after:origin-left after:scale-x-0 after:transition-transform hover:after:scale-x-100 ${
         isActiveRoute(href)
-          ? 'bg-sos-orange text-white'
-          : 'text-gray-300 hover:text-white hover:bg-sos-orange/20'
+          ? 'text-sos-orange after:scale-x-100'
+          : 'text-gray-300 hover:text-white'
       }`}
     >
       {children}
