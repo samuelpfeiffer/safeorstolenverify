@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { AuthContextType } from "@/types/auth";
 import { useAuthState } from "./useAuthState";
 import { secureSignIn, secureSignUp, secureSignOut } from "@/utils/auth/secureAuthOperations";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "@/components/ui/sonner";
 import { AuthErrorBoundary } from "@/components/auth/AuthErrorBoundary";
 
 const SecureAuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -12,16 +12,14 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
   const authState = useAuthState();
   const { user, session, loading: authStateLoading, error: authError } = authState;
   const [operationLoading, setOperationLoading] = useState<boolean>(false);
-  const { toast } = useToast();
+  
 
   // Handle auth state errors
   useEffect(() => {
     if (authError) {
       console.error('Auth state error:', authError);
-      toast({
-        title: "Authentication Error",
+      toast.error("Authentication Error", {
         description: authError,
-        variant: "destructive"
       });
     }
   }, [authError, toast]);
@@ -32,10 +30,8 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
       const result = await secureSignIn(email, password);
       
       if (result.error) {
-        toast({
-          title: "Sign in failed",
+        toast.error("Sign in failed", {
           description: result.error.message,
-          variant: "destructive"
         });
         throw new Error(result.error.message);
       }
@@ -54,23 +50,19 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
       const result = await secureSignUp(email, password, fullName);
       
       if (result.error) {
-        toast({
-          title: "Sign up failed",
+        toast.error("Sign up failed", {
           description: result.error.message,
-          variant: "destructive"
         });
         throw new Error(result.error.message);
       }
 
       if (result.data?.user && !result.data?.session) {
-        toast({
-          title: "Check your email",
+        toast("Check your email", {
           description: "We've sent you a confirmation link. Please check your email and click the link to verify your account.",
           duration: 10000,
         });
       } else if (result.data?.session) {
-        toast({
-          title: "Account created successfully!",
+        toast.success("Account created successfully!", {
           description: "Please complete the terms acceptance to finish registration.",
         });
       }
@@ -88,16 +80,13 @@ const SecureAuthProviderInner = ({ children }: { children: React.ReactNode }) =>
       setOperationLoading(true);
       await secureSignOut();
       
-      toast({
-        title: "Signed out",
+      toast("Signed out", {
         description: "You have been successfully signed out.",
       });
     } catch (error: any) {
       console.error("Unexpected error during secure sign out:", error);
-      toast({
-        title: "Sign out failed",
+      toast.error("Sign out failed", {
         description: "Unable to sign out. Please try again.",
-        variant: "destructive"
       });
     } finally {
       setOperationLoading(false);
