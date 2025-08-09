@@ -4,22 +4,15 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
-
-import { SecurityProvider } from '@/core/providers/SecurityProvider';
-import { PerformanceProvider } from '@/core/providers/PerformanceProvider';
-import { PWAProvider } from '@/core/providers/PWAProvider';
-import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { SEOProvider } from '@/core/providers/SEOProvider';
 import { SecureAuthProvider } from '@/hooks/useSecureAuth';
 
-// Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes
+      staleTime: 5 * 60 * 1000,
+      gcTime: 10 * 60 * 1000,
       retry: (failureCount, error: any) => {
         if (error?.status === 404) return false;
         return failureCount < 3;
@@ -37,34 +30,20 @@ const queryClient = new QueryClient({
   },
 });
 
-/**
- * Enterprise-grade App Root Component
- * Provides complete application infrastructure with security, performance, and reliability
- */
 export const AppRoot: React.FC = () => {
   return (
-    <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
+    <ErrorBoundary>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <SecureAuthProvider>
-            <ThemeProvider>
-              <SecurityProvider>
-                <SEOProvider>
-                  <PerformanceProvider>
-                    <PWAProvider>
-                      <Router>
-                        <div className="min-h-screen bg-sos text-white antialiased">
-                          <Suspense fallback={<AppLoadingScreen />}>
-                            <AppRoutes />
-                          </Suspense>
-                          <Toaster />
-                        </div>
-                      </Router>
-                    </PWAProvider>
-                  </PerformanceProvider>
-                </SEOProvider>
-              </SecurityProvider>
-            </ThemeProvider>
+            <Router>
+              <div className="min-h-screen bg-sos text-white antialiased">
+                <Suspense fallback={<AppLoadingScreen />}>
+                  <AppRoutes />
+                </Suspense>
+                <Toaster />
+              </div>
+            </Router>
           </SecureAuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
