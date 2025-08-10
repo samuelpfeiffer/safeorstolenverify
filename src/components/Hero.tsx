@@ -94,9 +94,8 @@ const Hero = () => {
               title="Accelerated by FasterCapital"
               aria-label="FasterCapital accelerator"
             >
+              <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">ACCELERATED BY</span>
               <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
-              <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">Accelerated by</span>
-              <span className="fc-gradient-text font-semibold text-xl md:text-2xl">FasterCapital</span>
             </a>
 
             {/* Domain Headline */}
