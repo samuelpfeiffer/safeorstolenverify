@@ -34,6 +34,22 @@ export class ErrorBoundary extends Component<Props, State> {
     this.setState({ hasError: false, error: undefined });
   };
 
+  handleHardReset = async () => {
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+      }
+      if ('caches' in window) {
+        const names = await caches.keys();
+        await Promise.all(names.map(n => caches.delete(n)));
+      }
+    } finally {
+      try { localStorage.setItem('sos_env_cleaned_v1', '1'); } catch {}
+      window.location.reload();
+    }
+  };
+
   render() {
     if (this.state.hasError) {
       if (this.props.fallback) {
@@ -57,10 +73,16 @@ export class ErrorBoundary extends Component<Props, State> {
                 {this.state.error.message}
               </div>
             )}
-            <Button onClick={this.handleRetry} variant="outline" className="w-full">
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Try Again
-            </Button>
+            <div className="grid gap-2">
+              <Button onClick={this.handleRetry} variant="outline" className="w-full">
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Try Again
+              </Button>
+              <Button onClick={this.handleHardReset} variant="destructive" className="w-full">
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Hard Reset (clear SW & caches)
+              </Button>
+            </div>
           </CardContent>
         </Card>
       );
