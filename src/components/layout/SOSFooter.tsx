@@ -35,7 +35,7 @@ export const SOSFooter: React.FC = () => {
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2d0d27ab5_image.png"
               alt="FasterCapital Logo"
-              className="w-10 h-10 object-contain"
+              className="w-14 h-14 object-contain"
               loading="lazy"
             />
           </div>

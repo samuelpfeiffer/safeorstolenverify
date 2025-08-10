@@ -94,7 +94,7 @@ const Hero = () => {
               title="Accelerated by FasterCapital"
               aria-label="FasterCapital accelerator"
             >
-              <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2d0d27ab5_image.png" alt="FasterCapital logo" className="h-6 w-6 object-contain" loading="lazy" />
+              <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2d0d27ab5_image.png" alt="FasterCapital logo" className="h-10 w-10 object-contain" loading="lazy" />
               <span className="text-sm uppercase tracking-wide">Accelerated By</span>
               <span className="font-semibold">FasterCapital</span>
             </a>
