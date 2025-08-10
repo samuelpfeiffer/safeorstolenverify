@@ -40,6 +40,7 @@ const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounder
 
 // Real-time Verification
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
+const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
 /**
  * Enterprise Application Routing
@@ -60,6 +61,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="blog" element={<BlogPage />} />
+          <Route path="blog/category/:category" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
           
           {/* New Routes */}
@@ -77,6 +79,7 @@ export const AppRoutes: React.FC = () => {
           
           {/* Real-time Verification */}
           <Route path="real-time-verification" element={<RealTimeVerificationPage />} />
+          <Route path="firearms-check" element={<FirearmsCheckPage />} />
           
           {/* Protected User Routes */}
           <Route path="verify" element={

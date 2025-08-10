@@ -34,6 +34,7 @@ export const Navigation: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Verify', href: '/real-time-verification', icon: Search },
+    { name: 'Blog', href: '/blog', icon: null },
     { name: 'How It Works', href: '/how-it-works', icon: null },
     { name: 'Pricing', href: '/pricing', icon: null },
     { name: 'Contact', href: '/contact', icon: null },

@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { LatestFromBlog } from '@/components/blog/LatestFromBlog';
+
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -32,8 +32,6 @@ const Index = () => {
         </Suspense>
       )}
 
-      {/* Blog preview */}
-      <LatestFromBlog />
     </div>
   );
 };

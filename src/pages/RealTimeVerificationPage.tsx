@@ -19,6 +19,8 @@ import {
 
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+import { useRealVerification } from '@/hooks/useRealVerification';
+import { detectItemType } from '@/utils/itemTypeDetector';
 
 const RealTimeVerificationPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -52,6 +54,8 @@ const RealTimeVerificationPage = () => {
     return () => clearTimeout(timer);
   }, [toast]);
 
+  const { verifyItem } = useRealVerification();
+
   const handleVerification = useCallback(async () => {
     if (!searchTerm.trim()) {
       toast({
@@ -63,51 +67,16 @@ const RealTimeVerificationPage = () => {
     }
 
     setIsVerifying(true);
-    
     try {
-      // Simulate real-time verification with multiple database checks
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Simulate database responses
-      const mockResult = {
-        id: Date.now(),
-        searchTerm,
-        status: Math.random() > 0.3 ? 'safe' : 'stolen',
-        confidence: Math.floor(Math.random() * 20) + 80,
-        sources: [
-          'FBI Stolen Property Database',
-          'NCIC Database',
-          'Insurance Fraud Database',
-          'Manufacturer Database',
-          'Retail Theft Database'
-        ],
-        timestamp: new Date().toISOString(),
-        details: {
-          brand: 'Apple',
-          model: 'iPhone 15 Pro',
-          color: 'Natural Titanium',
-          capacity: '256GB'
-        }
-      };
-
-      setVerificationResult(mockResult);
-      
-      toast({
-        title: mockResult.status === 'safe' ? "Item Verified Safe" : "⚠️ Stolen Item Detected",
-        description: `Checked across ${mockResult.sources.length} databases`,
-        variant: mockResult.status === 'safe' ? "default" : "destructive"
-      });
-      
-    } catch (error) {
-      toast({
-        title: "Verification Failed",
-        description: "Unable to verify item. Please try again.",
-        variant: "destructive"
-      });
+      const itemType = detectItemType(searchTerm) || 'generic';
+      const result = await verifyItem(searchTerm, itemType);
+      if (result) {
+        setVerificationResult({ ...result, searchTerm });
+      }
     } finally {
       setIsVerifying(false);
     }
-  }, [searchTerm, toast]);
+  }, [searchTerm, toast, verifyItem]);
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -128,7 +97,7 @@ const RealTimeVerificationPage = () => {
             <span className="text-gradient">Instant</span> Verification
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real-time verification across multiple law enforcement and insurance databases
+            Real-time verification using available sources based on item type
           </p>
         </div>
 
@@ -188,7 +157,9 @@ const RealTimeVerificationPage = () => {
           <Card className={`max-w-4xl mx-auto mb-12 ${
             verificationResult.status === 'safe' 
               ? 'border-sos-lime/50 bg-sos-lime/5' 
-              : 'border-red-500/50 bg-red-500/5'
+              : verificationResult.status === 'unknown'
+                ? 'border-sos-orange/50 bg-sos-orange/5'
+                : 'border-red-500/50 bg-red-500/5'
           }`}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -197,7 +168,7 @@ const RealTimeVerificationPage = () => {
                 ) : (
                   <AlertTriangle className="h-6 w-6 text-red-500" />
                 )}
-                {verificationResult.status === 'safe' ? 'Item Verified Safe' : 'Stolen Item Detected'}
+                {verificationResult.status === 'safe' ? 'Item Appears Legitimate' : verificationResult.status === 'unknown' ? 'Unable to Confirm' : 'Potentially Stolen'}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -206,36 +177,30 @@ const RealTimeVerificationPage = () => {
                   <h4 className="font-semibold mb-3">Search Details</h4>
                   <div className="space-y-2 text-sm">
                     <div>Query: <span className="font-mono">{verificationResult.searchTerm}</span></div>
-                    <div>Confidence: <span className="text-sos-lime">{verificationResult.confidence}%</span></div>
-                    <div>Timestamp: {new Date(verificationResult.timestamp).toLocaleString()}</div>
+                    {typeof verificationResult.confidence === 'number' && (
+                      <div>Confidence: <span className="text-sos-lime">{verificationResult.confidence}%</span></div>
+                    )}
+                    <div>Status: {verificationResult.status}</div>
+                    {verificationResult.source && (<div>Source: {verificationResult.source}</div>)}
                   </div>
                 </div>
-                
                 <div>
                   <h4 className="font-semibold mb-3">Item Details</h4>
                   <div className="space-y-2 text-sm">
-                    <div>Brand: {verificationResult.details.brand}</div>
-                    <div>Model: {verificationResult.details.model}</div>
-                    <div>Color: {verificationResult.details.color}</div>
-                    <div>Capacity: {verificationResult.details.capacity}</div>
+                    {verificationResult.details ? (
+                      Object.entries(verificationResult.details).slice(0,6).map(([k,v]: any, idx: number) => (
+                        <div key={idx}>{String(k)}: {typeof v === 'object' ? JSON.stringify(v) : String(v)}</div>
+                      ))
+                    ) : (
+                      <div className="text-muted-foreground">No additional details provided</div>
+                    )}
                   </div>
                 </div>
               </div>
-              
-              <div>
-                <h4 className="font-semibold mb-3 flex items-center gap-2">
-                  <Database className="h-4 w-4" />
-                  Database Sources Checked
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                  {verificationResult.sources.map((source: string, index: number) => (
-                    <div key={index} className="flex items-center gap-2 p-2 bg-card rounded border border-border">
-                      <CheckCircle className="h-4 w-4 text-sos-lime" />
-                      <span className="text-xs">{source}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+
+              {verificationResult.message && (
+                <div className="text-sm text-muted-foreground">{verificationResult.message}</div>
+              )}
             </CardContent>
           </Card>
         )}
@@ -245,9 +210,9 @@ const RealTimeVerificationPage = () => {
           <Card className="bg-card border-border text-center">
             <CardContent className="pt-6">
               <Clock className="h-12 w-12 text-sos-orange mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Sub-Second Response</h3>
+              <h3 className="font-semibold mb-2">Fast Responses</h3>
               <p className="text-sm text-muted-foreground">
-                Get verification results in under 1.3 seconds
+                Quickly get verification results depending on source availability
               </p>
             </CardContent>
           </Card>
@@ -255,9 +220,9 @@ const RealTimeVerificationPage = () => {
           <Card className="bg-card border-border text-center">
             <CardContent className="pt-6">
               <Database className="h-12 w-12 text-sos-lime mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Multiple Databases</h3>
+              <h3 className="font-semibold mb-2">Multiple Sources</h3>
               <p className="text-sm text-muted-foreground">
-                Checks 15+ law enforcement and insurance databases
+                Checks available sources based on the item type
               </p>
             </CardContent>
           </Card>
@@ -265,9 +230,9 @@ const RealTimeVerificationPage = () => {
           <Card className="bg-card border-border text-center">
             <CardContent className="pt-6">
               <Shield className="h-12 w-12 text-sos-orange mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">98.7% Accuracy</h3>
+              <h3 className="font-semibold mb-2">Confidence Scoring</h3>
               <p className="text-sm text-muted-foreground">
-                Industry-leading accuracy with comprehensive coverage
+                Includes a confidence score and message when available
               </p>
             </CardContent>
           </Card>
