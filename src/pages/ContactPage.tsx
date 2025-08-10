@@ -172,6 +172,7 @@ const ContactPage = () => {
         </div>
       </div>
       
+    </div>
   );
 };
 
