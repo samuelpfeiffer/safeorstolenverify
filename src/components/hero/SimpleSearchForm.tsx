@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { QrCode, Search, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
@@ -21,6 +22,7 @@ interface SimpleSearchFormProps {
 
 export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScanner }) => {
   const [serialNumber, setSerialNumber] = useState('');
+  const [selectedType, setSelectedType] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -88,7 +90,7 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
   };
 
   return (
-    <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-6 max-w-2xl mx-auto">
+    <Card className="bg-white/10 backdrop-blur-sm border-white/20 rounded-2xl p-6 md:p-8 max-w-2xl mx-auto shadow-xl">
       <div className="text-center mb-6">
         <Shield className="h-8 w-8 text-sos-orange mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-white mb-2">Verify Item</h3>
@@ -98,28 +100,45 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
       </div>
 
       <div className="space-y-4">
-        <div className="relative">
-          <Input 
-            type="text" 
-            placeholder="Enter IMEI, VIN, Serial Number..." 
-            value={serialNumber} 
-            onChange={handleInputChange}
-            onKeyPress={e => e.key === 'Enter' && handleSearch()} 
-            className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 h-12 pr-12"
-            disabled={isLoading}
-            maxLength={100}
-          />
-          <Button 
-            onClick={onOpenQrScanner} 
-            variant="ghost" 
-            size="sm"
-            className="absolute right-2 top-2 h-8 w-8 p-0 text-gray-400 hover:text-white"
-            disabled={isLoading}
-          >
-            <QrCode className="h-4 w-4" />
-          </Button>
+        {/* Type + Input */}
+        <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-3">
+          <Select value={selectedType} onValueChange={setSelectedType}>
+            <SelectTrigger className="h-12 bg-white/10 border-white/20 text-white">
+              <SelectValue placeholder="Select type" />
+            </SelectTrigger>
+            <SelectContent className="bg-sos-dark border-white/10 text-white">
+              <SelectItem value="imei">IMEI</SelectItem>
+              <SelectItem value="vin">VIN</SelectItem>
+              <SelectItem value="serial">Serial Number</SelectItem>
+              <SelectItem value="model">Model</SelectItem>
+              <SelectItem value="other">Other</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <div className="relative">
+            <Input 
+              type="text" 
+              placeholder="Enter IMEI, VIN, Serial Number..." 
+              value={serialNumber} 
+              onChange={handleInputChange}
+              onKeyPress={e => e.key === 'Enter' && handleSearch()} 
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 h-12 pr-12"
+              disabled={isLoading}
+              maxLength={100}
+            />
+            <Button 
+              onClick={onOpenQrScanner} 
+              variant="ghost" 
+              size="sm"
+              className="absolute right-2 top-2 h-8 w-8 p-0 text-gray-400 hover:text-white"
+              disabled={isLoading}
+            >
+              <QrCode className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
 
+        {/* Verify button */}
         <Button 
           onClick={handleSearch} 
           size="lg" 
@@ -142,6 +161,19 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
         <p className="text-xs text-gray-400 text-center">
           Real-time verification • Results in under 3 seconds
         </p>
+
+        {/* Divider and Firearms CTA */}
+        <div className="border-t border-white/10 my-4"></div>
+        <div className="text-center">
+          <p className="text-sm text-gray-300 mb-3">Looking for firearms?</p>
+          <Button
+            variant="destructive"
+            onClick={() => navigate('/real-time-verification?category=firearms')}
+            className="px-4"
+          >
+            Search Stolen Firearms Database
+          </Button>
+        </div>
       </div>
     </Card>
   );
