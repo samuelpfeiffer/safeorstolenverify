@@ -3,6 +3,7 @@ import React, { Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -12,6 +13,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <EnhancedSEOHead 
+        title="Safe or Stolen - Real-time Stolen Goods Verification"
+        description="Verify IMEI, VIN, or serial numbers in seconds. Protect your purchases with real-time stolen goods checks."
+        canonical="/"
+      />
       <Hero />
       
       {(verificationId || serialNumber) && (

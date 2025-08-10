@@ -47,7 +47,7 @@ export const SOSHeader: React.FC = () => {
             className="w-8 h-8 rounded-md"
           />
           <div className="hidden sm:block">
-            <h1 className="font-bold text-lg text-white leading-tight">safeorstolen.com</h1>
+            <div className="font-bold text-lg text-white leading-tight">safeorstolen.com</div>
             <p className="text-[10px] text-gray-400 -mt-0.5">Verify Before You Buy</p>
           </div>
         </Link>
