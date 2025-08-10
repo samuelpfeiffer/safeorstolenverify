@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
@@ -17,7 +18,7 @@ export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   description,
   keywords = "stolen goods verification, consumer protection, marketplace safety, fraud prevention, real-time verification, FasterCapital",
   canonical,
-  image = "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+  image = "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
   type = 'website',
   additionalSchemas = []
 }) => {

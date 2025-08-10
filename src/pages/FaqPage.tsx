@@ -1,7 +1,6 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 
 const FaqPage = () => {
   const faqs = [
@@ -74,12 +73,12 @@ const FaqPage = () => {
               <p className="text-gray-600 mb-4">
                 Can't find the answer you're looking for? Contact our support team.
               </p>
-              <Link 
-                to="/contact"
+              <a 
+                href="/contact" 
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-sos-orange text-white hover:bg-sos-orange/90 h-10 px-4 py-2"
               >
                 Contact Support
-              </Link>
+              </a>
             </CardContent>
           </Card>
         </div>

@@ -1,27 +1,30 @@
-// Minimal kill-switch Service Worker
-// Version bump to force update
-const VERSION = '1.0.6-kill';
 
-self.addEventListener('install', (event) => {
-  // Immediately activate this SW
-  self.skipWaiting();
+// Service Worker Disabled - Clear all caches
+console.log('SW: Service worker disabled, clearing all caches...');
+
+self.addEventListener('install', event => {
+  console.log('SW: Installing - clearing caches');
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          console.log('SW: Deleting cache:', cacheName);
+          return caches.delete(cacheName);
+        })
+      );
+    }).then(() => {
+      console.log('SW: All caches cleared');
+      return self.skipWaiting();
+    })
+  );
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil((async () => {
-    try {
-      const names = await caches.keys();
-      await Promise.all(names.map((n) => caches.delete(n)));
-    } catch (e) {
-      // ignore
-    }
-    await self.clients.claim();
-    const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
-    clients.forEach((client) => client.postMessage({ type: 'SW_RELOAD' }));
-  })());
+self.addEventListener('activate', event => {
+  console.log('SW: Activating - taking control');
+  event.waitUntil(self.clients.claim());
 });
 
-// Do not intercept any requests while PWA is disabled
-self.addEventListener('fetch', () => {
-  // No-op: let the network handle everything
+// Pass through all requests without caching
+self.addEventListener('fetch', event => {
+  event.respondWith(fetch(event.request));
 });

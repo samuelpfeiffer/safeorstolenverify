@@ -4,7 +4,7 @@ import { Shield, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { useSecureAuth } from '@/hooks/useSecureAuth';
+import { useAuth } from '@/lib/auth';
 
 interface SecurityCheck {
   name: string;
@@ -13,7 +13,8 @@ interface SecurityCheck {
 }
 
 export const SecurityReady = () => {
-  const { isAuthenticated } = useSecureAuth();
+  const { user } = useAuth();
+  const isAuthenticated = !!user;
   const [securityChecks, setSecurityChecks] = useState<SecurityCheck[]>([]);
 
   useEffect(() => {

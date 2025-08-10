@@ -1,15 +1,18 @@
 
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useSecureAuth } from '@/hooks/useSecureAuth';
+import { useAuth } from '@/lib/auth';
 import { trackPageView } from '@/utils/analytics';
 import { useToast } from '@/hooks/use-toast';
 
 export const useAuthPageLogic = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { isAuthenticated, loading, user } = useSecureAuth();
+  const { user, loading } = useAuth();
+  const isAuthenticated = !!user;
   const { toast } = useToast();
+  
+  console.log('🔐 AuthPageLogic state:', { isAuthenticated, loading, user: !!user });
   
   const searchParams = new URLSearchParams(location.search);
   const initialMode = searchParams.get('tab') === 'register' ? 'signup' : 'signin';

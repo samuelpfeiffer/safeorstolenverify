@@ -5,9 +5,26 @@
  * Initialize analytics
  */
 export const initAnalytics = () => {
-  // Disabled in Lovable preview to avoid external script side effects
-  if (typeof window !== 'undefined') {
-    console.log('Analytics disabled in preview environment');
+  if (typeof window !== 'undefined' && !window.dataLayer) {
+    // Create dataLayer array for Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() {
+      window.dataLayer.push(arguments);
+    };
+    
+    // Initialize with your Google Analytics measurement ID when you have one
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-XXXXXXXXXX'); // Replace with your Google Analytics ID when you have one
+    
+    // Enhanced ecommerce and SEO tracking
+    window.gtag('config', 'G-XXXXXXXXXX', {
+      send_page_view: true,
+      anonymize_ip: true,
+      allow_google_signals: true,
+      allow_ad_personalization_signals: false,
+    });
+    
+    console.log('Analytics initialized with enhanced SEO tracking');
   }
 };
 

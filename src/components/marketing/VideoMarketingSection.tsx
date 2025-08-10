@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Play, Shield, Users, TrendingUp } from 'lucide-react';
@@ -7,7 +8,7 @@ export const VideoMarketingSection = () => {
     {
       title: "The $13 Billion Problem Explained",
       description: "Understanding the scope of the stolen goods crisis and how it affects innocent consumers",
-      thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+      thumbnail: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
       duration: "3:45",
       category: "Problem Awareness"
     },
@@ -21,7 +22,7 @@ export const VideoMarketingSection = () => {
     {
       title: "Customer Success Stories",
       description: "Real users sharing how we've protected them from stolen goods",
-      thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+      thumbnail: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
       duration: "4:15",
       category: "Testimonials"
     }

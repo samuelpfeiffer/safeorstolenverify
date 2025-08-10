@@ -57,7 +57,7 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" alt="Safe or Stolen" className="h-12 w-12 filter drop-shadow-lg" />
+                <img src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" alt="Safe or Stolen" className="h-12 w-12 filter drop-shadow-lg" />
                 <div>
                   <div className="text-xl font-bold text-foreground">Safe or Stolen</div>
                   <div className="text-sm text-sos-orange">Verify the Legitimacy of 2nd-hand items</div>
@@ -85,11 +85,8 @@ const Footer = () => {
                 <a href="#" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
                   <Twitter className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
-                <a href="#" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
+                <a href="https://www.linkedin.com/in/verifysafeorstolen" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
                   <Linkedin className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
-                </a>
-                <a href="#" className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card">
-                  <Github className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
               </div>
             </div>

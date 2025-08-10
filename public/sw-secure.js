@@ -1,7 +1,7 @@
 
-const CACHE_NAME = 'safe-or-stolen-secure-v1.0.5';
-const STATIC_CACHE = 'static-secure-v1.0.5';
-const DYNAMIC_CACHE = 'dynamic-secure-v1.0.5';
+const CACHE_NAME = 'safe-or-stolen-secure-v1.0.1';
+const STATIC_CACHE = 'static-secure-v1.0.1';
+const DYNAMIC_CACHE = 'dynamic-secure-v1.0.1';
 
 // Secure assets list with integrity checking
 const SECURE_ASSETS = [
@@ -43,7 +43,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// Enhanced activate event with security cleanup and client reload
+// Enhanced activate event with security cleanup
 self.addEventListener('activate', event => {
   console.log('SW-Secure: Activating secure service worker...');
   event.waitUntil(
@@ -63,10 +63,8 @@ self.addEventListener('activate', event => {
       // Claim clients
       self.clients.claim()
     ])
-    .then(async () => {
+    .then(() => {
       console.log('SW-Secure: Secure service worker activated');
-      const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
-      clients.forEach(client => client.postMessage({ type: 'SW_RELOAD' }));
     })
   );
 });

@@ -1,40 +1,45 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-// import removed: AppLoadingScreen no longer used
+import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
 
-// Static imports for stability in preview environment
-import Index from '@/pages/Index';
-import AuthPage from '@/pages/AuthPage';
-import VerificationPage from '@/pages/VerificationPage';
-import DashboardPage from '@/pages/DashboardPage';
-import ProfilePage from '@/pages/ProfilePage';
-import SubscriptionPage from '@/pages/SubscriptionPage';
-import AnalyticsPage from '@/pages/AnalyticsPage';
-import AdminDashboard from '@/pages/admin/AdminDashboard';
-import UserManagement from '@/pages/admin/UserManagement';
-import SystemSettings from '@/pages/admin/SystemSettings';
-import SecurityCenter from '@/pages/admin/SecurityCenter';
-import PricingPage from '@/pages/PricingPage';
-import AboutPage from '@/pages/AboutPage';
-import ContactPage from '@/pages/ContactPage';
-import FaqPage from '@/pages/FaqPage';
-import TermsPage from '@/pages/TermsPage';
-import PrivacyPage from '@/pages/PrivacyPage';
-import BlogPage from '@/pages/BlogPage';
-import BlogPostPage from '@/pages/BlogPostPage';
-import NotFoundPage from '@/pages/NotFoundPage';
-import HowItWorksPage from '@/pages/HowItWorksPage';
-import ForConsumersPage from '@/pages/ForConsumersPage';
-import ForBrandsPage from '@/pages/ForBrandsPage';
-import AboutProblemPage from '@/pages/AboutProblemPage';
-import OurStoryPage from '@/pages/OurStoryPage';
-import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage';
-import TermsOfServicePage from '@/pages/TermsOfServicePage';
-import FirearmSearchPage from '@/pages/FirearmSearchPage';
-import DebugDiagnosticsPage from '@/pages/DebugDiagnosticsPage';
+// Lazy load all pages for optimal performance
+const Index = lazy(() => import('@/pages/Index'));
+const AuthPage = lazy(() => import('@/pages/AuthPage'));
+const VerificationPage = lazy(() => import('@/pages/VerificationPage'));
+const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
+const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
+const SubscriptionPage = lazy(() => import('@/pages/SubscriptionPage'));
+const AnalyticsPage = lazy(() => import('@/pages/AnalyticsPage'));
+const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
+const UserManagement = lazy(() => import('@/pages/admin/UserManagement'));
+const SystemSettings = lazy(() => import('@/pages/admin/SystemSettings'));
+const SecurityCenter = lazy(() => import('@/pages/admin/SecurityCenter'));
+const PricingPage = lazy(() => import('@/pages/PricingPage'));
+const AboutPage = lazy(() => import('@/pages/AboutPage'));
+const ContactPage = lazy(() => import('@/pages/ContactPage'));
+const FaqPage = lazy(() => import('@/pages/FaqPage'));
+const TermsPage = lazy(() => import('@/pages/TermsPage'));
+const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
+const BlogPage = lazy(() => import('@/pages/BlogPage'));
+const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
+const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
+const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
+const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
+const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
+const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
+const TermsOfServicePage = lazy(() => import('@/pages/TermsOfServicePage'));
+
+// FasterCapital Pages
+const RaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
+const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounderPage'));
+
+// Real-time Verification
+const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
 
 /**
  * Enterprise Application Routing
@@ -42,6 +47,7 @@ import DebugDiagnosticsPage from '@/pages/DebugDiagnosticsPage';
  */
 export const AppRoutes: React.FC = () => {
   return (
+    <Suspense fallback={<AppLoadingScreen />}>
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
@@ -64,8 +70,13 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-story" element={<OurStoryPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="terms-of-service" element={<TermsOfServicePage />} />
-          <Route path="firearms" element={<FirearmSearchPage />} />
-          <Route path="_debug/react" element={<DebugDiagnosticsPage />} />
+          
+          {/* FasterCapital Routes */}
+          <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
+          <Route path="fastercapital/tech-cofounder" element={<TechCofounderPage />} />
+          
+          {/* Real-time Verification */}
+          <Route path="real-time-verification" element={<RealTimeVerificationPage />} />
           
           {/* Protected User Routes */}
           <Route path="verify" element={
@@ -121,6 +132,6 @@ export const AppRoutes: React.FC = () => {
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
-    
+    </Suspense>
   );
 };

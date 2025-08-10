@@ -67,21 +67,23 @@ serve(async (req) => {
       )
     }
 
-    // Perform verification based on item type (with flexible matching and firearm support)
+    // Perform verification based on item type
     let verificationResult: VerificationResult
 
-    const itemTypeLower = itemType.toLowerCase()
-    const referer = (req.headers.get('referer') || '').toLowerCase()
-    const isFirearmContext = itemTypeLower.includes('firearm') || referer.includes('/firearms')
-
-    if (itemTypeLower.includes('imei')) {
-      verificationResult = await verifyIMEI(serialNumber)
-    } else if (itemTypeLower.includes('vin') || ['vehicle','car','motorcycle'].some(k=>itemTypeLower.includes(k))) {
-      verificationResult = await verifyVIN(serialNumber)
-    } else if (isFirearmContext) {
-      verificationResult = await verifyFirearm(serialNumber)
-    } else {
-      verificationResult = await verifyGenericSerial(serialNumber, itemType)
+    switch (itemType.toLowerCase()) {
+      case 'smartphone':
+      case 'phone':
+      case 'mobile':
+        verificationResult = await verifyIMEI(serialNumber)
+        break
+      case 'vehicle':
+      case 'car':
+      case 'motorcycle':
+        verificationResult = await verifyVIN(serialNumber)
+        break
+      default:
+        verificationResult = await verifyGenericSerial(serialNumber, itemType)
+        break
     }
 
     // Store the verification result
@@ -320,71 +322,6 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
     
   } catch (error) {
     console.error('VIN verification error:', error)
-    return {
-      status: 'error',
-      confidence: 0,
-      source: 'system',
-      message: 'Verification service temporarily unavailable'
-    }
-  }
-}
-
-async function verifyFirearm(serial: string): Promise<VerificationResult> {
-  try {
-    console.log(`Verifying Firearm Serial: ${serial}`)
-
-    await new Promise((r) => setTimeout(r, 900))
-
-    // Basic firearm serial validation: 3-32 chars, alphanumeric and dashes only
-    if (!/^[A-Za-z0-9-]{3,32}$/.test(serial)) {
-      return {
-        status: 'error',
-        confidence: 0,
-        source: 'validation',
-        message: 'Invalid firearm serial format'
-      }
-    }
-
-    // Deterministic pseudo-check based on hash
-    const hash = serial.split('').reduce((a, b) => ((a << 5) - a) + b.charCodeAt(0), 0)
-    const outcome = Math.abs(hash) % 12
-
-    if (outcome <= 2) {
-      return {
-        status: 'stolen',
-        confidence: 93,
-        source: 'HotGunz_Simulated',
-        details: {
-          reportedDate: '2024-11-12',
-          source: 'HotGunz (simulated)',
-          note: 'Match found in community stolen firearms reports'
-        },
-        message: 'Serial appears in a stolen firearms report'
-      }
-    } else if (outcome <= 5) {
-      return {
-        status: 'unknown',
-        confidence: 40,
-        source: 'Firearm_Heuristics',
-        details: {
-          note: 'No record found in available sources'
-        },
-        message: 'No theft reports found'
-      }
-    } else {
-      return {
-        status: 'safe',
-        confidence: 90,
-        source: 'Manufacturer_Registry_Simulated',
-        details: {
-          verificationDate: new Date().toISOString(),
-          category: 'firearm'
-        },
-        message: 'No flags detected for this firearm serial'
-      }
-    }
-  } catch (error) {
-    console.error('Firearm verification error:', error)
     return {
       status: 'error',
       confidence: 0,

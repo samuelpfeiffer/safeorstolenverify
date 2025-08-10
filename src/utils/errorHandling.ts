@@ -1,44 +1,62 @@
 
-import { useToast } from '@/hooks/use-toast';
+import { toast as toastFunction } from '@/hooks/use-toast';
 
 export interface SecureError {
-  userMessage: string;
-  logMessage: string;
-  code?: string;
+  message: string;
+  code: string;
+  details?: string;
+  timestamp: number;
 }
 
 export const createSecureError = (
-  userMessage: string,
-  actualError: any,
-  code?: string
+  message: string,
+  details?: string,
+  code: string = 'GENERAL_ERROR'
 ): SecureError => {
   return {
-    userMessage,
-    logMessage: actualError?.message || String(actualError),
-    code
+    message,
+    code,
+    details,
+    timestamp: Date.now()
   };
 };
 
 export const handleSecureError = (
-  error: SecureError,
-  toast: ReturnType<typeof useToast>['toast']
-): void => {
-  // Log the actual error for debugging (server-side in production)
-  console.error(`[${error.code || 'ERROR'}] ${error.logMessage}`);
-
-  // Show user-friendly message
+  error: SecureError | Error,
+  toast: typeof toastFunction
+) => {
+  console.error('Secure error:', error);
+  
+  let message = 'An unexpected error occurred';
+  let description = 'Please try again later';
+  
+  if ('code' in error) {
+    message = error.message;
+    description = error.details || description;
+  } else if (error instanceof Error) {
+    message = error.message;
+  }
+  
   toast({
-    title: "An error occurred",
-    description: error.userMessage,
-    variant: "destructive"
+    title: message,
+    description,
+    variant: "destructive",
   });
 };
 
-export const SECURE_ERROR_MESSAGES = {
-  VERIFICATION_FAILED: "Unable to verify item. Please try again later.",
-  INVALID_INPUT: "Please check your input and try again.",
-  RATE_LIMIT_EXCEEDED: "Too many requests. Please wait before trying again.",
-  AUTHENTICATION_REQUIRED: "Please sign in to continue.",
-  NETWORK_ERROR: "Network error. Please check your connection.",
-  UNKNOWN_ERROR: "Something went wrong. Please try again."
-} as const;
+export const logSecureEvent = (event: string, data?: any) => {
+  const logEntry = {
+    event,
+    data,
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent,
+    url: window.location.href
+  };
+  
+  console.log('Security Event:', logEntry);
+  
+  // In production, send to monitoring service
+  if (process.env.NODE_ENV === 'production') {
+    // Send to monitoring service
+  }
+};

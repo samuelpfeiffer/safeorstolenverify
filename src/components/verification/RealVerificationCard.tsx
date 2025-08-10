@@ -1,253 +1,209 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { 
-  Shield, 
   AlertTriangle, 
+  CheckCircle, 
   XCircle, 
-  HelpCircle, 
+  HelpCircle,
+  Shield,
   Clock,
   Database,
-  TrendingUp,
-  Download,
-  Share
+  Download
 } from 'lucide-react';
-import { format } from 'date-fns';
-import { type VerificationStatus } from '@/utils/typeGuards';
-
-interface VerificationResult {
-  id: string;
-  status: VerificationStatus;
-  confidence: number;
-  source: string;
-  details?: any;
-  message?: string;
-  verified_at: string;
-  serial_number: string;
-  item_type: string;
-}
+import { VerificationResult } from '@/utils/typeGuards';
+import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
+import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
 
 interface RealVerificationCardProps {
   verificationResult: VerificationResult;
 }
 
 const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps) => {
-  const getStatusIcon = (status: VerificationStatus) => {
+  const { generateReceipt, isGenerating } = useReceiptGenerator();
+
+  const getStatusInfo = (status: string) => {
     switch (status) {
       case 'safe':
-        return <Shield className="h-8 w-8 text-green-500" />;
+        return {
+          icon: CheckCircle,
+          color: 'text-green-600',
+          bgColor: 'bg-green-50 border-green-200',
+          badge: 'Safe to Purchase',
+          badgeVariant: 'default' as const,
+          title: 'Item Appears Safe',
+          description: 'No matches found in stolen goods databases. This item appears legitimate.'
+        };
       case 'stolen':
-        return <XCircle className="h-8 w-8 text-red-500" />;
+        return {
+          icon: XCircle,
+          color: 'text-red-600',
+          bgColor: 'bg-red-50 border-red-200',
+          badge: 'Reported Stolen',
+          badgeVariant: 'destructive' as const,
+          title: 'Item Reported Stolen',
+          description: 'This item matches entries in stolen goods databases. Avoid purchasing.'
+        };
       case 'lost':
-        return <AlertTriangle className="h-8 w-8 text-yellow-500" />;
+        return {
+          icon: AlertTriangle,
+          color: 'text-orange-600',
+          bgColor: 'bg-orange-50 border-orange-200',
+          badge: 'Reported Lost',
+          badgeVariant: 'secondary' as const,
+          title: 'Item Reported Lost',
+          description: 'This item has been reported as lost. Exercise caution.'
+        };
       case 'unknown':
-        return <HelpCircle className="h-8 w-8 text-gray-500" />;
-      case 'error':
-        return <XCircle className="h-8 w-8 text-red-500" />;
+        return {
+          icon: HelpCircle,
+          color: 'text-yellow-600',
+          bgColor: 'bg-yellow-50 border-yellow-200',
+          badge: 'Unable to Verify',
+          badgeVariant: 'outline' as const,
+          title: 'Verification Inconclusive',
+          description: 'Unable to determine status. Request additional documentation from seller.'
+        };
       default:
-        return <HelpCircle className="h-8 w-8 text-gray-500" />;
+        return {
+          icon: AlertTriangle,
+          color: 'text-gray-600',
+          bgColor: 'bg-gray-50 border-gray-200',
+          badge: 'Error',
+          badgeVariant: 'outline' as const,
+          title: 'Verification Error',
+          description: 'Unable to complete verification. Please try again.'
+        };
     }
   };
 
-  const getStatusColor = (status: VerificationStatus) => {
-    switch (status) {
-      case 'safe':
-        return 'bg-green-500/20 text-green-400 border-green-500/30';
-      case 'stolen':
-        return 'bg-red-500/20 text-red-400 border-red-500/30';
-      case 'lost':
-        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
-      case 'unknown':
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
-      case 'error':
-        return 'bg-red-500/20 text-red-400 border-red-500/30';
-      default:
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
-    }
-  };
+  const statusInfo = getStatusInfo(verificationResult.status);
+  const StatusIcon = statusInfo.icon;
+  const itemTypeDisplay = getItemTypeDisplayName(verificationResult.item_type);
 
-  const getConfidenceColor = (confidence: number) => {
-    if (confidence >= 80) return 'text-green-400';
-    if (confidence >= 60) return 'text-yellow-400';
-    return 'text-red-400';
-  };
-
-  const generateReport = () => {
-    const reportData = {
-      verificationId: verificationResult.id,
-      serialNumber: verificationResult.serial_number,
-      itemType: verificationResult.item_type,
-      status: verificationResult.status,
-      confidence: verificationResult.confidence,
-      source: verificationResult.source,
-      verifiedAt: verificationResult.verified_at,
-      message: verificationResult.message,
-      details: verificationResult.details
-    };
-
-    const dataStr = JSON.stringify(reportData, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    
-    const exportFileDefaultName = `verification-report-${verificationResult.serial_number}.json`;
-    
-    const linkElement = document.createElement('a');
-    linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', exportFileDefaultName);
-    linkElement.click();
-  };
-
-  const shareResult = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Verification Result',
-          text: `${verificationResult.item_type} verification: ${verificationResult.status.toUpperCase()}`,
-          url: window.location.href
-        });
-      } catch (error) {
-        console.log('Error sharing:', error);
-      }
-    } else {
-      // Fallback to copy URL
-      navigator.clipboard.writeText(window.location.href);
-    }
+  const handleGenerateReceipt = async () => {
+    await generateReceipt(
+      verificationResult.id, 
+      verificationResult.serial_number, 
+      verificationResult.item_type
+    );
   };
 
   return (
-    <Card className="bg-gray-900/50 backdrop-blur-lg border-gray-800">
-      <CardHeader>
-        <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {getStatusIcon(verificationResult.status)}
-            <div>
-              <h3 className="text-xl font-bold text-white">
-                {verificationResult.item_type} Verification
-              </h3>
-              <p className="text-sm text-gray-400">
-                Serial: {verificationResult.serial_number}
-              </p>
+    <div className="space-y-6">
+      <Card className={`${statusInfo.bgColor} border-2`}>
+        <CardHeader>
+          <div className="flex items-start justify-between">
+            <div className="flex items-center gap-3">
+              <StatusIcon className={`h-8 w-8 ${statusInfo.color}`} />
+              <div>
+                <CardTitle className={`text-xl ${statusInfo.color}`}>
+                  {statusInfo.title}
+                </CardTitle>
+                <p className="text-sm text-gray-600 mt-1">
+                  {statusInfo.description}
+                </p>
+              </div>
             </div>
+            <Badge variant={statusInfo.badgeVariant} className="text-sm">
+              {statusInfo.badge}
+            </Badge>
           </div>
-          <Badge className={getStatusColor(verificationResult.status)}>
-            {verificationResult.status.toUpperCase()}
-          </Badge>
-        </CardTitle>
-      </CardHeader>
-      
-      <CardContent className="space-y-6">
-        {/* Status Message */}
-        <div className="bg-gray-800/50 p-4 rounded-lg">
-          <p className="text-lg text-white font-medium">
-            {verificationResult.message}
-          </p>
-        </div>
-
-        {/* Verification Details Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="h-4 w-4 text-sos-orange" />
-                <span className="text-sm font-medium text-gray-300">Confidence Score</span>
+        </CardHeader>
+        
+        <CardContent className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Shield className="h-4 w-4" />
+                <span>Item Details</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 bg-gray-700 rounded-full h-2">
-                  <div 
-                    className={`h-2 rounded-full transition-all duration-500 ${
-                      verificationResult.confidence >= 80 ? 'bg-green-500' :
-                      verificationResult.confidence >= 60 ? 'bg-yellow-500' : 'bg-red-500'
-                    }`}
-                    style={{ width: `${verificationResult.confidence}%` }}
-                  ></div>
-                </div>
-                <span className={`font-bold ${getConfidenceColor(verificationResult.confidence)}`}>
-                  {verificationResult.confidence}%
-                </span>
+              <div className="pl-6 space-y-1">
+                <p><span className="font-medium">Serial:</span> {verificationResult.serial_number}</p>
+                <p><span className="font-medium">Type:</span> {itemTypeDisplay}</p>
               </div>
             </div>
-
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Database className="h-4 w-4 text-sos-orange" />
-                <span className="text-sm font-medium text-gray-300">Data Source</span>
+            
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Database className="h-4 w-4" />
+                <span>Verification Info</span>
               </div>
-              <p className="text-white font-medium">{verificationResult.source}</p>
+              <div className="pl-6 space-y-1">
+                <p><span className="font-medium">Source:</span> {verificationResult.source}</p>
+                <p><span className="font-medium">Confidence:</span> {verificationResult.confidence}%</p>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Clock className="h-4 w-4 text-sos-orange" />
-                <span className="text-sm font-medium text-gray-300">Verified At</span>
+          {verificationResult.details && (
+            <div className="border-t pt-4">
+              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                <Clock className="h-4 w-4" />
+                <span>Additional Details</span>
               </div>
-              <p className="text-white">
-                {format(new Date(verificationResult.verified_at), 'PPp')}
-              </p>
-            </div>
-
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Shield className="h-4 w-4 text-sos-orange" />
-                <span className="text-sm font-medium text-gray-300">Verification ID</span>
-              </div>
-              <p className="text-xs text-gray-400 font-mono">
-                {verificationResult.id}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Details */}
-        {verificationResult.details && Object.keys(verificationResult.details).length > 0 && (
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-3">Additional Information</h4>
-            <div className="bg-gray-800/30 p-4 rounded-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="pl-6 text-sm text-gray-700">
                 {Object.entries(verificationResult.details).map(([key, value]) => (
-                  <div key={key}>
-                    <span className="text-sm text-gray-400 capitalize">
-                      {key.replace(/([A-Z])/g, ' $1').toLowerCase()}:
-                    </span>
-                    <p className="text-white font-medium">
-                      {typeof value === 'object' ? JSON.stringify(value) : String(value)}
-                    </p>
-                  </div>
+                  <p key={key}>
+                    <span className="font-medium capitalize">{key.replace(/([A-Z])/g, ' $1')}:</span> {String(value)}
+                  </p>
                 ))}
               </div>
             </div>
+          )}
+
+          <div className="border-t pt-4 flex items-center justify-between">
+            <div className="text-sm text-gray-500">
+              Verified on {new Date(verificationResult.verified_at).toLocaleString()}
+            </div>
+            <Button 
+              onClick={handleGenerateReceipt}
+              disabled={isGenerating}
+              variant="outline"
+              size="sm"
+              className="gap-2"
+            >
+              <Download className="h-4 w-4" />
+              {isGenerating ? 'Generating...' : 'Generate Receipt'}
+            </Button>
           </div>
-        )}
+        </CardContent>
+      </Card>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-800">
-          <Button 
-            onClick={generateReport}
-            variant="outline" 
-            className="border-sos-orange text-sos-orange hover:bg-sos-orange hover:text-white"
-          >
-            <Download className="h-4 w-4 mr-2" />
-            Download Report
-          </Button>
-          
-          <Button 
-            onClick={shareResult}
-            variant="outline" 
-            className="border-gray-600 text-gray-300 hover:bg-gray-700"
-          >
-            <Share className="h-4 w-4 mr-2" />
-            Share Result
-          </Button>
-
-          <Button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-sos-orange hover:bg-sos-orange/90"
-          >
-            Verify Another Item
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+      {/* Recommendations based on status */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-lg">Recommendations</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {verificationResult.status === 'safe' && (
+            <div className="space-y-2">
+              <p className="text-green-700">✓ This item appears safe to purchase</p>
+              <p className="text-sm text-gray-600">However, always verify the seller's identity and request proof of ownership.</p>
+            </div>
+          )}
+          {verificationResult.status === 'stolen' && (
+            <div className="space-y-2">
+              <p className="text-red-700">⚠ Do not purchase this item</p>
+              <p className="text-sm text-gray-600">Consider reporting this listing to the platform and local authorities.</p>
+            </div>
+          )}
+          {verificationResult.status === 'lost' && (
+            <div className="space-y-2">
+              <p className="text-orange-700">⚠ Exercise extreme caution</p>
+              <p className="text-sm text-gray-600">This item has been reported lost. Contact the seller for proof of legitimate ownership.</p>
+            </div>
+          )}
+          {verificationResult.status === 'unknown' && (
+            <div className="space-y-2">
+              <p className="text-yellow-700">? Unable to verify status</p>
+              <p className="text-sm text-gray-600">Request additional documentation from the seller, including purchase receipts and warranty information.</p>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 

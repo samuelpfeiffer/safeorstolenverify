@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 
 interface ProtectedRouteProps {
@@ -16,7 +16,8 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   children, 
   requireSubscription = false 
 }) => {
-  const { isAuthenticated, loading, user } = useUnifiedAuth();
+  const { user, loading } = useAuth();
+  const isAuthenticated = !!user;
   const location = useLocation();
 
   if (loading) {
