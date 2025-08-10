@@ -14,10 +14,8 @@ import {
   Zap,
   Database,
   Wifi,
-  RefreshCw,
-  QrCode
+  RefreshCw
 } from 'lucide-react';
-import QrScanner from '@/components/hero/QrScanner';
 
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
@@ -30,8 +28,6 @@ const RealTimeVerificationPage = () => {
   const [verificationResult, setVerificationResult] = useState<any>(null);
   const [realtimeConnected, setRealtimeConnected] = useState(false);
   const { toast } = useToast();
-
-  const [isScannerOpen, setIsScannerOpen] = useState(false);
 
   const [showFirearmsWidget, setShowFirearmsWidget] = useState(false);
   const [hotgunzStyle, setHotgunzStyle] = useState<'style1'|'style2'|'style3'|'style4'>('style4');
@@ -134,15 +130,6 @@ const RealTimeVerificationPage = () => {
                 className="flex-1"
                 disabled={isVerifying}
               />
-              <Button
-                variant="outline"
-                onClick={() => setIsScannerOpen(true)}
-                disabled={isVerifying || !realtimeConnected}
-                className="border-sos-lime text-sos-lime hover:bg-sos-lime/10"
-                aria-label="Open camera scanner"
-              >
-                <QrCode className="h-4 w-4" />
-              </Button>
               <Button 
                 onClick={handleVerification}
                 disabled={isVerifying || !realtimeConnected}

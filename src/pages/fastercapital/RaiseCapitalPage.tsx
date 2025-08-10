@@ -38,8 +38,8 @@ const FasterCapitalRaiseCapitalPage = () => {
       <div className="container mx-auto container-padding py-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-6 bg-sos-orange/10 text-sos-orange border-sos-orange/20 inline-flex items-center gap-3 text-lg py-3 px-4">
-            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital logo" className="h-16 w-auto" />
+          <Badge variant="secondary" className="mb-6 bg-sos-orange/10 text-sos-orange border-sos-orange/20 inline-flex items-center gap-2">
+            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital logo" className="h-4 w-auto" />
             <span className="fc-gradient-text font-semibold">FasterCapital</span>
             <span>Program</span>
           </Badge>
@@ -120,11 +120,9 @@ const FasterCapitalRaiseCapitalPage = () => {
                 </div>
               </div>
               
-              <Button asChild className="w-full bg-sos-orange hover:bg-sos-orange/90">
-                <a href="https://fastercapital.com/raise-capital.html" target="_blank" rel="noopener noreferrer">
-                  <ArrowRight className="h-4 w-4 mr-2" />
-                  Apply to Raise Capital
-                </a>
+              <Button className="w-full bg-sos-orange hover:bg-sos-orange/90">
+                <ArrowRight className="h-4 w-4 mr-2" />
+                Apply to Raise Capital
               </Button>
             </CardContent>
           </Card>

@@ -1,83 +1,81 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { BrowserMultiFormatReader } from '@zxing/browser';
+import { Html5Qrcode } from 'html5-qrcode';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
- type QrScannerProps = {
+type QrScannerProps = {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   onScanSuccess: (decodedText: string) => void;
 };
 
 const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const qrScannerRef = useRef<HTMLDivElement>(null);
   const [scannerInitialized, setScannerInitialized] = useState(false);
-  const scannerRef = useRef<BrowserMultiFormatReader | null>(null);
-  const controlsRef = useRef<{ stop: () => void } | null>(null);
+  const scannerInstanceRef = useRef<Html5Qrcode | null>(null);
   const { toast } = useToast();
 
-  const startScanner = async () => {
-    if (scannerInitialized || !videoRef.current) return;
+  const startQrScanner = () => {
+    if (!qrScannerRef.current || scannerInitialized) return;
 
-    try {
-      const reader = new BrowserMultiFormatReader();
-      scannerRef.current = reader;
-
-      const controls = await reader.decodeFromVideoDevice(
-        undefined,
-        videoRef.current,
-        (result, err) => {
-          if (result) {
-            const text = result.getText();
-            if (text) {
-              onScanSuccess(text);
-              stopScanner();
-              onOpenChange(false);
-            }
-          }
-          // ignore frame errors to keep scanning
-        }
-      );
-      controlsRef.current = controls;
-
-      setScannerInitialized(true);
-    } catch (err) {
-      console.error('Scanner init error:', err);
+    const scanner = new Html5Qrcode("qr-scanner");
+    scannerInstanceRef.current = scanner;
+    
+    const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
+    
+    scanner.start(
+      { facingMode: "environment" },
+      qrConfig,
+      (decodedText) => {
+        // QR code successfully scanned
+        onScanSuccess(decodedText);
+        stopQrScanner();
+        onOpenChange(false);
+      },
+      (errorMessage) => {
+        console.log(`QR scan error: ${errorMessage}`);
+      }
+    ).catch((err) => {
+      console.error("QR scanner error:", err);
       toast({
-        title: 'Scanner Error',
-        description: 'Could not access your camera. Please check permissions.',
-        variant: 'destructive',
+        title: "Scanner Error",
+        description: "Could not access your camera. Please check permissions.",
+        variant: "destructive",
       });
       onOpenChange(false);
-    }
+    });
+    
+    setScannerInitialized(true);
   };
 
-  const stopScanner = () => {
-    try {
-      controlsRef.current?.stop();
-    } catch (err) {
-      console.error('Failed to stop scanner:', err);
-    } finally {
-      setScannerInitialized(false);
+  const stopQrScanner = () => {
+    if (scannerInstanceRef.current && scannerInstanceRef.current.isScanning) {
+      scannerInstanceRef.current.stop().then(() => {
+        setScannerInitialized(false);
+      }).catch(err => {
+        console.error("Failed to stop scanner:", err);
+      });
     }
   };
 
   useEffect(() => {
     if (isOpen) {
+      // Initialize scanner when dialog opens
       setTimeout(() => {
-        startScanner();
-      }, 300);
+        startQrScanner();
+      }, 500);
     } else {
-      stopScanner();
+      // Clean up scanner when dialog closes
+      stopQrScanner();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
+  // Clean up scanner on component unmount
   useEffect(() => {
     return () => {
-      stopScanner();
+      stopQrScanner();
     };
   }, []);
 
@@ -85,13 +83,11 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md bg-gray-900 border-gray-800">
         <DialogHeader>
-          <DialogTitle>Scan Code</DialogTitle>
+          <DialogTitle>Scan QR Code</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col items-center justify-center">
-          <div className="w-full h-[300px] bg-gray-100 overflow-hidden rounded-md">
-            <video ref={videoRef} className="w-full h-full object-cover" autoPlay muted playsInline />
-          </div>
-          <p className="text-sm text-muted-foreground mt-2">Position the code (QR or barcode) within the frame</p>
+          <div id="qr-scanner" ref={qrScannerRef} className="w-full h-[300px] bg-gray-100" />
+          <p className="text-sm text-muted-foreground mt-2">Position the QR code within the frame</p>
           <Button 
             onClick={() => onOpenChange(false)} 
             className="mt-4 w-full bg-sos-orange hover:bg-sos-orange/90"
