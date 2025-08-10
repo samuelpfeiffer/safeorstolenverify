@@ -1,3 +1,5 @@
+// PWA feature flag
+const PWA_ENABLED = false;
 
 export interface PWAInstallPrompt {
   prompt: () => Promise<void>;
@@ -29,10 +31,18 @@ export class PWAService {
   }
 
   private async init() {
-    await this.registerServiceWorker();
-    this.setupInstallPrompt();
-    this.checkIfInstalled();
-    this.setupOfflineDetection();
+    try {
+      if (PWA_ENABLED) {
+        await this.registerServiceWorker();
+        this.setupInstallPrompt();
+        this.checkIfInstalled();
+      } else {
+        await this.killServiceWorkersAndCaches();
+      }
+      this.setupOfflineDetection();
+    } catch (error) {
+      console.error('PWA: init error', error);
+    }
   }
 
   // Service Worker Registration
@@ -61,6 +71,27 @@ const registration = await navigator.serviceWorker.register('/sw.js?v=1.0.5', {
       } catch (error) {
         console.error('PWA: Service Worker registration failed:', error);
       }
+    }
+  }
+
+  private async killServiceWorkersAndCaches(): Promise<void> {
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+        console.log('PWA: Unregistered all service workers');
+      }
+      if ('caches' in window) {
+        const names = await caches.keys();
+        await Promise.all(names.map(n => caches.delete(n)));
+        console.log('PWA: Deleted all caches');
+      }
+    } catch (e) {
+      console.error('PWA: Error during SW/caches cleanup', e);
+    } finally {
+      this.serviceWorkerRegistration = null;
+      this.deferredPrompt = null;
+      this.isInstalled = false;
     }
   }
 

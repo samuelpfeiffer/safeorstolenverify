@@ -11,10 +11,31 @@ import { logReactEnvironment } from "./utils/reactDetection";
 if (typeof window !== 'undefined') {
   securityService.initialize();
   
+  // One-time reset handler (?reset=1)
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('reset') === '1') {
+    (async () => {
+      try {
+        if ('serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map(r => r.unregister()));
+        }
+        if ('caches' in window) {
+          const names = await caches.keys();
+          await Promise.all(names.map(n => caches.delete(n)));
+        }
+      } finally {
+        params.delete('reset');
+        const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+        window.history.replaceState({}, '', newUrl);
+        window.location.reload();
+      }
+    })();
+  }
+  
   // Log React environment for debugging
   console.log('🚀 Initializing rebuilt SOS app...');
   logReactEnvironment();
-  
   // Enhanced module loading error handling
   window.addEventListener('error', (event) => {
     if (event.message.includes('Loading chunk') || event.message.includes('dynamically imported module')) {
@@ -30,8 +51,9 @@ if (typeof window !== 'undefined') {
     }
   });
   
-  // Ensure newest Service Worker takes control and notify app to reload
-  if ('serviceWorker' in navigator) {
+  // Ensure newest Service Worker takes control and notify app to reload (disabled when PWA is off)
+  const PWA_ENABLED = false;
+  if (PWA_ENABLED && 'serviceWorker' in navigator) {
     // Listen for SW reload messages
     navigator.serviceWorker.addEventListener('message', (event) => {
       if (event.data && event.data.type === 'SW_RELOAD') {
