@@ -118,7 +118,7 @@ const Hero = () => {
               <Button
                 variant="destructive"
                 className="px-5"
-                onClick={() => navigate('/real-time-verification?category=firearms')}
+                onClick={() => navigate('/firearms-check')}
               >
                 Search Stolen Firearms Database
               </Button>

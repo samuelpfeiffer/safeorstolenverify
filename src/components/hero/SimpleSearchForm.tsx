@@ -162,18 +162,6 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
           Real-time verification • Results in under 3 seconds
         </p>
 
-        {/* Divider and Firearms CTA */}
-        <div className="border-t border-white/10 my-4"></div>
-        <div className="text-center">
-          <p className="text-sm text-gray-300 mb-3">Looking for firearms?</p>
-          <Button
-            variant="destructive"
-            onClick={() => navigate('/real-time-verification?category=firearms')}
-            className="px-4"
-          >
-            Search Stolen Firearms Database
-          </Button>
-        </div>
       </div>
     </Card>
   );
