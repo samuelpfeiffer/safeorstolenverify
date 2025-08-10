@@ -11,10 +11,22 @@ export const SponsorsStrip: React.FC = () => {
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-          {/* FasterCapital branding component */}
-          <div className="opacity-80 hover:opacity-100 transition-opacity" aria-label="FasterCapital accelerator">
-            <FasterCapitalBranding />
-          </div>
+          {/* FasterCapital */}
+          <a
+            href="https://fastercapital.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center"
+            aria-label="Visit FasterCapital"
+            title="FasterCapital"
+          >
+            <img
+              src="/images/partners/fastercapital-logo.png"
+              alt="FasterCapital official logo"
+              loading="lazy"
+              className="h-6 md:h-8 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
+            />
+          </a>
 
           {/* IMEI.info */}
           <a
