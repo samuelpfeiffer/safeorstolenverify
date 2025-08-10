@@ -13,12 +13,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { LogOut, User, Crown, Menu } from 'lucide-react';
-
+import { useSearchLimits } from '@/hooks/useSearchLimits';
 export const SOSHeader: React.FC = () => {
   const { user, signOut } = useAuth();
   const isAuthenticated = !!user;
   const location = useLocation();
-
+  const { remainingSearches, isSubscribed, isLoading } = useSearchLimits();
   const navigation = [
     { title: 'Home', href: '/' },
     { title: 'Verify', href: '/real-time-verification' },
@@ -91,6 +91,13 @@ export const SOSHeader: React.FC = () => {
                       <Badge variant="outline" className="text-xs border-sos-orange/30 text-gray-300">Plan</Badge>
                     </div>
                   </div>
+                  {/* Credits pill */}
+                  <Badge
+                    variant="outline"
+                    className="hidden md:inline-flex rounded-full border-sos-orange/30 bg-sos-orange/10 text-sos-orange text-[10px] px-2 py-0.5"
+                  >
+                    {isLoading ? 'credits' : (isSubscribed ? 'unlimited' : `${remainingSearches} credits`)}
+                  </Badge>
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 bg-sos-dark border-sos-orange/20" align="end" sideOffset={8}>
