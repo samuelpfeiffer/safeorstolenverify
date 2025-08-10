@@ -21,17 +21,17 @@ const TermsPage: React.FC = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Service</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Safe or Stolen provides product verification services to help users determine the authenticity of items. 
-                Our service includes:
-              </p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                <li>Serial number verification</li>
-                <li>Product authenticity checking</li>
-                <li>Database searches for stolen items</li>
-                <li>Verification history tracking</li>
-              </ul>
+            <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Service</h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Safe or Stolen provides product verification services to help users determine whether items are legitimate or stolen.
+              Our service includes:
+            </p>
+            <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+              <li>Serial number verification</li>
+              <li>Stolen status checking and legitimacy verification</li>
+              <li>Database searches for stolen items</li>
+              <li>Verification history tracking</li>
+            </ul>
             </section>
 
             <section>

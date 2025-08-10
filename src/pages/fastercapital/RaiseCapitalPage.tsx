@@ -38,9 +38,10 @@ const FasterCapitalRaiseCapitalPage = () => {
       <div className="container mx-auto container-padding py-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-6 bg-sos-orange/10 text-sos-orange border-sos-orange/20">
-            <Rocket className="h-4 w-4 mr-2" />
-            FasterCapital Program
+          <Badge variant="secondary" className="mb-6 bg-sos-orange/10 text-sos-orange border-sos-orange/20 inline-flex items-center gap-2">
+            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital logo" className="h-4 w-auto" />
+            <span className="fc-gradient-text font-semibold">FasterCapital</span>
+            <span>Program</span>
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Raise <span className="text-gradient">Capital</span>

@@ -41,7 +41,7 @@ const ForBrandsPage: React.FC = () => {
     {
       icon: Users,
       title: "Customer Trust",
-      description: "Build customer confidence by providing verification tools that ensure authentic purchases."
+      description: "Build customer confidence by providing verification tools that ensure legitimate purchases."
     },
     {
       icon: TrendingUp,

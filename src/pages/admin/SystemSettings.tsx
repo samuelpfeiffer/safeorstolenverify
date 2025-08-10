@@ -20,7 +20,7 @@ import {
 const SystemSettings: React.FC = () => {
   const [settings, setSettings] = useState({
     siteName: 'Safe or Stolen',
-    siteDescription: 'Verify the authenticity of your items',
+    siteDescription: 'Verify if items are legitimate or stolen',
     maxSearchesPerUser: 4,
     enableEmailNotifications: true,
     enableSMSNotifications: false,

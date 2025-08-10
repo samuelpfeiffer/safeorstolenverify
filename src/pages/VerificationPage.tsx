@@ -135,7 +135,7 @@ const VerificationPage = () => {
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold mb-4">Verify Item</h1>
             <p className="text-muted-foreground">
-              Enter item details to check against our databases of stolen goods and authenticity markers.
+              Enter item details to check against our databases of reported stolen goods and other verification sources.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ const VerificationPage = () => {
                 <div>
                   <h4 className="font-medium">Database Cross-Reference</h4>
                   <p className="text-sm text-muted-foreground">
-                    We check multiple databases of reported stolen goods and authenticity markers.
+                    We check multiple databases of reported stolen goods and other verification sources.
                   </p>
                 </div>
               </div>

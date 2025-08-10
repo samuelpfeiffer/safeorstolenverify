@@ -12,11 +12,12 @@ export const FasterCapitalBranding = () => {
         href="https://fastercapital.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 text-sos-orange hover:text-sos-orange/80 transition-colors group"
+        className="flex items-center gap-2 transition-colors group"
         title="FasterCapital accelerator"
         aria-label="Visit FasterCapital website"
       >
-        <strong className="font-semibold">FasterCapital</strong>
+        <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-5 w-auto" loading="lazy" />
+        <span className="fc-gradient-text font-semibold">FasterCapital</span>
         <ExternalLink className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
       </a>
     </div>

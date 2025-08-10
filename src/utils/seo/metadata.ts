@@ -14,7 +14,7 @@ const SITE_CONFIG = {
     'stolen goods verification',
     'secondhand marketplace safety', 
     'fraud prevention',
-    'item authentication',
+    'item legitimacy check',
     'consumer protection',
     'safe buying',
     'stolen property check',
@@ -75,7 +75,7 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
     description: 'Partner with us to protect your brand integrity and help customers verify the legitimacy of your products on the secondary market.',
     keywords: 'brand protection, manufacturer partnership, product verification, brand integrity, secondary market protection',
     ogTitle: 'For Brands: Protect Your Products in the Secondary Market',
-    ogDescription: 'Help customers verify your products and protect your brand from counterfeits and stolen goods.',
+    ogDescription: 'Help customers verify your products and protect your brand from stolen goods.',
     robotsDirectives: 'index, follow'
   },
 

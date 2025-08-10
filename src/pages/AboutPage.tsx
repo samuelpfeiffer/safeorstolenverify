@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Globe, Award, ArrowRight } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-sos text-white">
@@ -13,13 +13,14 @@ const AboutPage: React.FC = () => {
             About Safe or Stolen
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            We're on a mission to create a safer marketplace by providing instant, reliable verification 
-            of product authenticity. Protecting consumers from counterfeit goods, one scan at a time.
+            We're on a mission to make secondhand buying safer by telling you if an item is legitimate or stolen — instantly.
           </p>
-          <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
-            Get Started Today
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/real-time-verification">
+            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
+              Get Started Today
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -29,8 +30,7 @@ const AboutPage: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-white">Our Mission</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              To empower consumers and businesses with the tools they need to verify product authenticity 
-              and make informed purchasing decisions.
+              To empower consumers and businesses with tools to check if items are legitimate or stolen — and make informed decisions.
             </p>
           </div>
           
@@ -42,7 +42,7 @@ const AboutPage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">Protect Consumers</h3>
                 <p className="text-gray-300">
-                  Help consumers avoid counterfeit products and make confident purchases with reliable verification.
+                  Help consumers avoid stolen items and make confident purchases with reliable verification.
                 </p>
               </CardContent>
             </Card>
@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">Support Businesses</h3>
                 <p className="text-gray-300">
-                  Enable legitimate businesses to prove authenticity and build trust with their customers.
+                  Enable legitimate businesses to prove legitimacy and build trust with their customers.
                 </p>
               </CardContent>
             </Card>
@@ -83,16 +83,13 @@ const AboutPage: React.FC = () => {
           
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-gray-300 mb-6">
-              Safe or Stolen was born from a simple observation: in our digital age, it's becoming increasingly 
-              difficult to distinguish authentic products from counterfeits. With billions of dollars lost annually 
-              to counterfeit goods, we knew there had to be a better way.
+              Safe or Stolen was born from a simple observation: in our digital age, too many people unknowingly buy stolen goods.
+              With billions of dollars lost annually to theft and resale, we knew there had to be a better way.
             </p>
             
             <p className="text-lg text-gray-300 mb-6">
-              Our founders, experienced in both technology and commerce, recognized that the solution lay in 
-              creating an accessible, instant verification system that anyone could use. By leveraging cutting-edge 
-              technology and comprehensive databases, we've built a platform that puts the power of authentication 
-              in everyone's hands.
+              Our founders recognized the solution lay in creating an accessible, instant verification system anyone could use.
+              By leveraging cutting-edge technology and comprehensive databases, we've built a platform that helps determine if items are legitimate or stolen.
             </p>
             
             <p className="text-lg text-gray-300">
@@ -158,7 +155,7 @@ const AboutPage: React.FC = () => {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">Continuous Innovation</h3>
                 <p className="text-gray-300">
-                  We constantly evolve our technology and expand our database to stay ahead of counterfeiters.
+                  We constantly evolve our technology and expand our database to stay ahead of theft and fraud.
                 </p>
               </div>
             </div>
@@ -171,15 +168,19 @@ const AboutPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">Ready to Verify?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join thousands of users who trust Safe or Stolen for authentic product verification.
+            Join thousands of users who trust Safe or Stolen for legitimate item verification.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
-              Start Verifying Now
-            </Button>
-            <Button size="lg" variant="outline">
-              Contact Us
-            </Button>
+            <Link to="/verify">
+              <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
+                Start Verifying Now
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline">
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

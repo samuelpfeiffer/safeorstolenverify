@@ -42,6 +42,12 @@ const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounder
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
+// User history & receipts
+const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
+const ReceiptsPage = lazy(() => import('@/pages/ReceiptsPage'));
+const PurchaseHistoryPage = lazy(() => import('@/pages/PurchaseHistoryPage'));
+const SecuritySettingsPage = lazy(() => import('@/pages/SecuritySettingsPage'));
+
 /**
  * Enterprise Application Routing
  * Handles all application routes with proper lazy loading and access control
@@ -80,7 +86,7 @@ export const AppRoutes: React.FC = () => {
           {/* Real-time Verification */}
           <Route path="real-time-verification" element={<RealTimeVerificationPage />} />
           <Route path="firearms-check" element={<FirearmsCheckPage />} />
-          
+
           {/* Protected User Routes */}
           <Route path="verify" element={
             <ProtectedRoute>
@@ -105,6 +111,26 @@ export const AppRoutes: React.FC = () => {
           <Route path="analytics" element={
             <ProtectedRoute>
               <AnalyticsPage />
+            </ProtectedRoute>
+          } />
+          <Route path="search-history" element={
+            <ProtectedRoute>
+              <SearchHistoryPage />
+            </ProtectedRoute>
+          } />
+          <Route path="receipts" element={
+            <ProtectedRoute>
+              <ReceiptsPage />
+            </ProtectedRoute>
+          } />
+          <Route path="purchase-history" element={
+            <ProtectedRoute>
+              <PurchaseHistoryPage />
+            </ProtectedRoute>
+          } />
+          <Route path="security-settings" element={
+            <ProtectedRoute>
+              <SecuritySettingsPage />
             </ProtectedRoute>
           } />
           
@@ -133,6 +159,7 @@ export const AppRoutes: React.FC = () => {
 
         {/* Catch all - 404 */}
         <Route path="/404" element={<NotFoundPage />} />
+        <Route path="security" element={<Navigate to="/security-settings" replace />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </Suspense>

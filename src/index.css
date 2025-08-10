@@ -45,6 +45,11 @@
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 4% 18%;
     --sidebar-ring: 16 100% 50%;
+
+    /* Brand: FasterCapital */
+    --fc-blue: 214 84% 45%;
+    --fc-red: 0 72% 55%;
+    --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));
   }
 
   .dark {
@@ -99,6 +104,12 @@
 @layer components {
   .text-gradient {
     @apply bg-gradient-to-r from-sos-orange to-orange-400 bg-clip-text text-transparent;
+  }
+  .fc-gradient-text {
+    background-image: var(--fc-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
   .glass-effect {

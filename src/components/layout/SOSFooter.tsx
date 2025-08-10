@@ -26,15 +26,16 @@ export const SOSFooter: React.FC = () => {
                 href="https://fastercapital.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sos-orange hover:text-sos-orange/80 font-semibold transition-colors"
+                className="hover:text-sos-orange transition-colors"
                 title="FasterCapital - Accelerating our mission"
+                aria-label="Visit FasterCapital website"
               >
-                FasterCapital
+                <span className="fc-gradient-text font-semibold">FasterCapital</span>
               </a>
             </div>
             <img
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2d0d27ab5_image.png"
-              alt="FasterCapital Logo"
+              src="/images/partners/fastercapital-logo.png"
+              alt="FasterCapital official logo"
               className="w-14 h-14 object-contain"
               loading="lazy"
             />

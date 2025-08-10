@@ -26,7 +26,7 @@ const HowItWorksPage: React.FC = () => {
     {
       step: 3,
       title: "Security Verification",
-      description: "Advanced algorithms verify the authenticity and cross-reference multiple security databases.",
+      description: "Advanced algorithms verify legitimacy and cross-reference stolen goods databases.",
       icon: Shield,
       color: "text-sos-lime"
     },
