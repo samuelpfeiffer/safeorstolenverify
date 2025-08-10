@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
         canonical="/"
       />
       <Hero />
+      <SponsorsStrip />
       
       {(verificationId || serialNumber) && (
         <Suspense fallback={
