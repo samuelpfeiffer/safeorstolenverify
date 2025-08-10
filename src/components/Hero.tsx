@@ -18,7 +18,7 @@ const Hero = () => {
   const { toast } = useToast();
   const { verifyItem } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
-  const { remainingSearches, isSubscribed, isLoading: limitsLoading } = useSearchLimits();
+  const { remainingSearches, isSubscribed, isLoading: limitsLoading, consumeSearch } = useSearchLimits();
 
   const handleQrCodeSuccess = useCallback(async (decodedText: string) => {
     if (!decodedText?.trim()) {
@@ -33,6 +33,13 @@ const Hero = () => {
     try {
       const itemType = detectItemType(decodedText);
       const trimmedText = decodedText.trim();
+
+      // Check search limits
+      const canProceed = await consumeSearch();
+      if (!canProceed) {
+        setIsQrScannerOpen(false);
+        return;
+      }
 
       // Add to search history
       addToSearchHistory(trimmedText);
@@ -66,7 +73,7 @@ const Hero = () => {
         variant: "destructive"
       });
     }
-  }, [verifyItem, addToSearchHistory, navigate, toast]);
+  }, [verifyItem, addToSearchHistory, navigate, toast, consumeSearch]);
 
   const handleOpenQrScanner = useCallback(() => {
     setIsQrScannerOpen(true);

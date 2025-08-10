@@ -21,6 +21,7 @@ import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { useRealVerification } from '@/hooks/useRealVerification';
 import { detectItemType } from '@/utils/itemTypeDetector';
+import { useSearchLimits } from '@/hooks/useSearchLimits';
 
 const RealTimeVerificationPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,6 +29,7 @@ const RealTimeVerificationPage = () => {
   const [verificationResult, setVerificationResult] = useState<any>(null);
   const [realtimeConnected, setRealtimeConnected] = useState(false);
   const { toast } = useToast();
+  const { consumeSearch } = useSearchLimits();
 
   const [showFirearmsWidget, setShowFirearmsWidget] = useState(false);
   const [hotgunzStyle, setHotgunzStyle] = useState<'style1'|'style2'|'style3'|'style4'>('style4');
@@ -69,6 +71,10 @@ const RealTimeVerificationPage = () => {
     setIsVerifying(true);
     try {
       const itemType = detectItemType(searchTerm) || 'generic';
+
+      const canProceed = await consumeSearch();
+      if (!canProceed) return;
+
       const result = await verifyItem(searchTerm, itemType);
       if (result) {
         setVerificationResult({ ...result, searchTerm });
@@ -76,7 +82,7 @@ const RealTimeVerificationPage = () => {
     } finally {
       setIsVerifying(false);
     }
-  }, [searchTerm, toast, verifyItem]);
+  }, [searchTerm, toast, verifyItem, consumeSearch]);
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
