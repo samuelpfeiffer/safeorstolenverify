@@ -90,13 +90,13 @@ const Hero = () => {
               href="https://fastercapital.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
+              className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
               title="Accelerated by FasterCapital"
               aria-label="FasterCapital accelerator"
             >
-              <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-6 w-auto object-contain" loading="lazy" />
-              <span className="text-xs uppercase tracking-wide text-muted-foreground">Accelerated by</span>
-              <span className="fc-gradient-text font-semibold">FasterCapital</span>
+              <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
+              <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">Accelerated by</span>
+              <span className="fc-gradient-text font-semibold text-xl md:text-2xl">FasterCapital</span>
             </a>
 
             {/* Domain Headline */}
@@ -111,6 +111,14 @@ const Hero = () => {
               }>
                 <SimpleSearchForm onOpenQrScanner={handleOpenQrScanner} />
               </ErrorBoundary>
+            </div>
+
+            {/* Sign up notice for free searches */}
+            <div className="text-center -mt-2 mb-8">
+              <p className="text-sm md:text-base text-gray-300">
+                Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
+                <a href="/auth" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</a>.
+              </p>
             </div>
 
             {/* Extra actions below verify card */}
