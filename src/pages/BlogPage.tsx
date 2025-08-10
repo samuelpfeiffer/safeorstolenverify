@@ -2,7 +2,7 @@
 import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogList } from '@/components/blog/BlogList';
-import { BlogCategories } from '@/components/blog/BlogCategories';
+
 import { SEOHead } from '@/components/seo/SEOHead';
 
 const BlogPage = () => {
@@ -40,29 +40,31 @@ const BlogPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-3">
-              {isLoading ? (
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-                  {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div key={i} className="bg-sos-dark/80 rounded-lg h-64 animate-pulse border border-sos-orange/20" />
-                  ))}
+          <div className="max-w-6xl mx-auto">
+            {isLoading ? (
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div key={i} className="bg-sos-dark/80 rounded-lg h-64 animate-pulse border border-sos-orange/20" />
+                ))}
+              </div>
+            ) : error ? (
+              <div className="text-center py-12">
+                <h3 className="text-lg font-medium text-white mb-2">Error loading posts</h3>
+                <p className="text-gray-300">Please try again later.</p>
+              </div>
+            ) : (
+              <>
+                <div className="max-w-3xl mx-auto mb-10 text-gray-300 leading-relaxed">
+                  <p className="mb-4">
+                    Practical guides, buyer checklists, and product verification insights — written to help you avoid fraud and make safer purchases. We cover IMEI, VIN, serial numbers, and marketplace safety using real workflows.
+                  </p>
+                  <p className="mb-0">
+                    New articles drop regularly. Explore our latest posts below.
+                  </p>
                 </div>
-              ) : error ? (
-                <div className="text-center py-12">
-                  <h3 className="text-lg font-medium text-white mb-2">Error loading posts</h3>
-                  <p className="text-gray-300">Please try again later.</p>
-                </div>
-              ) : (
                 <BlogList posts={posts || []} featured={!category} />
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <BlogCategories />
-            </div>
+              </>
+            )}
           </div>
         </div>
       </div>
