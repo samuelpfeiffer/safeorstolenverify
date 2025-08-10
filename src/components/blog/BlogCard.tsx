@@ -46,7 +46,7 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
       )}
       
       <CardHeader>
-        <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
+        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
           <div className="flex items-center gap-1">
             <Calendar className="h-4 w-4" />
             <span>{post.published_at ? formatDate(post.published_at) : formatDate(post.created_at)}</span>
@@ -61,7 +61,7 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
         
         <Link to={`/blog/${post.slug}`} className="block">
           <h3 className={cn(
-            'font-bold text-gray-900 group-hover:text-blue-600 transition-colors',
+            'font-bold text-foreground group-hover:text-sos-orange transition-colors',
             featured ? 'text-2xl' : 'text-xl'
           )}>
             {post.title}
@@ -70,7 +70,7 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
       </CardHeader>
 
       <CardContent>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed">
           {post.excerpt || post.content.substring(0, 150) + '...'}
         </p>
       </CardContent>
@@ -92,7 +92,7 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
         
         <Link 
           to={`/blog/${post.slug}`}
-          className="text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
+          className="text-sos-orange hover:text-sos-orange/90 font-medium text-sm transition-colors"
         >
           Read More →
         </Link>
