@@ -21,10 +21,10 @@ export const SponsorsStrip: React.FC = () => {
             title="FasterCapital"
           >
             <img
-              src="/images/partners/fastercapital-logo.png"
+              src="/lovable-uploads/0f4c8076-5366-4794-b77f-eba4a130a1ff.png"
               alt="FasterCapital official logo"
               loading="lazy"
-              className="h-6 md:h-8 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
+              className="h-8 md:h-10 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
             />
           </a>
 
