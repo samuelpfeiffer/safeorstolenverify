@@ -17,12 +17,26 @@ import {
   RefreshCw
 } from 'lucide-react';
 
+import HotGunzWidget from '@/components/integrations/HotGunzWidget';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
+
 const RealTimeVerificationPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
   const [verificationResult, setVerificationResult] = useState<any>(null);
   const [realtimeConnected, setRealtimeConnected] = useState(false);
   const { toast } = useToast();
+
+  const [showFirearmsWidget, setShowFirearmsWidget] = useState(false);
+  const [hotgunzStyle, setHotgunzStyle] = useState<'style1'|'style2'|'style3'|'style4'>('style4');
+
+  // Reveal firearms widget if category=firearms in URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('category')?.toLowerCase() === 'firearms') {
+      setShowFirearmsWidget(true);
+    }
+  }, []);
 
   // Simulate real-time connection
   useEffect(() => {
@@ -269,6 +283,44 @@ const RealTimeVerificationPage = () => {
           </div>
           <ZapierIntegration />
         </div>
+
+        {showFirearmsWidget && (
+          <section aria-labelledby="hotgunz-heading" className="mb-12">
+            <div className="text-center mb-8">
+              <h2 id="hotgunz-heading" className="text-3xl font-bold mb-4">Stolen Firearms Check (HotGunz)</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Search the community-sourced stolen firearms database. Choose a style that fits your layout.
+              </p>
+            </div>
+            <Card className="bg-card border-border">
+              <CardContent className="space-y-4 pt-6">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-sm text-muted-foreground">Choose widget style</div>
+                  <div className="w-full sm:w-64">
+                    <Select value={hotgunzStyle} onValueChange={(v) => setHotgunzStyle(v as any)}>
+                      <SelectTrigger className="bg-background">
+                        <SelectValue placeholder="Select style" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="style1">Style 1</SelectItem>
+                        <SelectItem value="style2">Style 2</SelectItem>
+                        <SelectItem value="style3">Style 3</SelectItem>
+                        <SelectItem value="style4">Style 4 (Transparent)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <div className="rounded-lg overflow-hidden border border-border">
+                  <HotGunzWidget style={hotgunzStyle as any} height={420} />
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  This widget is provided by HotGunz. If it fails to load due to network or HTTPS restrictions, visit
+                  <a className="underline ml-1" href="https://www.hotgunz.com/" target="_blank" rel="noopener noreferrer">hotgunz.com</a>.
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
       </div>
     </div>
   );
