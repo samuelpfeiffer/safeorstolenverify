@@ -90,11 +90,12 @@ const Hero = () => {
               href="https://fastercapital.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-200 hover:text-white hover:bg-white/10 transition-colors mb-6"
-              title="Accelerated By FasterCapital"
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
+              title="Accelerated by FasterCapital"
+              aria-label="FasterCapital accelerator"
             >
-              <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2d0d27ab5_image.png" alt="FasterCapital accelerator logo" className="h-4 w-4 object-contain" loading="lazy" />
-              <span className="text-xs uppercase tracking-wide">Accelerated By</span>
+              <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/2d0d27ab5_image.png" alt="FasterCapital logo" className="h-6 w-6 object-contain" loading="lazy" />
+              <span className="text-sm uppercase tracking-wide">Accelerated By</span>
               <span className="font-semibold">FasterCapital</span>
             </a>
 

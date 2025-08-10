@@ -38,11 +38,10 @@ export const FasterCapitalPartnership: React.FC = () => {
   ];
 
   const achievements = [
-    'Successfully completed FasterCapital\'s rigorous selection process',
-    'Developed comprehensive go-to-market strategy',
-    'Achieved 500K+ user milestone ahead of schedule',
-    'Secured strategic partnerships in multiple markets',
-    'Built scalable technology platform for global expansion'
+    'Selected into FasterCapital acceleration program',
+    'Developed go-to-market strategy and execution plan',
+    'Established strategic partnerships across key markets',
+    'Built a scalable verification platform'
   ];
 
   return (
@@ -72,30 +71,18 @@ export const FasterCapitalPartnership: React.FC = () => {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-sm text-muted-foreground">
-              FasterCapital is a global online accelerator and funding platform that helps 
-              entrepreneurs around the world build their startups and raise funding.
+              FasterCapital is a global accelerator and funding platform supporting startups with mentorship, resources,
+              and investor access.
             </p>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <p className="font-medium">Founded</p>
-                <p className="text-muted-foreground">2010</p>
-              </div>
-              <div>
-                <p className="font-medium">Global Reach</p>
-                <p className="text-muted-foreground">65+ Countries</p>
-              </div>
-              <div>
-                <p className="font-medium">Startups Helped</p>
-                <p className="text-muted-foreground">1000+</p>
-              </div>
-              <div>
-                <p className="font-medium">Funding Raised</p>
-                <p className="text-muted-foreground">$50M+</p>
-              </div>
-            </div>
-            <Button variant="outline" size="sm" className="w-full">
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full"
+              type="button"
+              onClick={() => window.open('https://fastercapital.com','_blank','noopener,noreferrer')}
+            >
               <ExternalLink className="h-4 w-4 mr-2" />
-              Learn More About FasterCapital
+              Visit FasterCapital
             </Button>
           </CardContent>
         </Card>
@@ -195,7 +182,7 @@ export const FasterCapitalPartnership: React.FC = () => {
             If you're a tech startup looking for acceleration and funding support, 
             FasterCapital could be the right partner for you
           </p>
-          <Button variant="default">
+          <Button variant="default" type="button" onClick={() => window.open('https://fastercapital.com','_blank','noopener,noreferrer')}>
             <ExternalLink className="h-4 w-4 mr-2" />
             Apply to FasterCapital
           </Button>
