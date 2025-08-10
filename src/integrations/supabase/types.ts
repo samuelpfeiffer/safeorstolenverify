@@ -257,66 +257,6 @@ export type Database = {
         }
         Relationships: []
       }
-      checkmend_api_usage: {
-        Row: {
-          api_endpoint: string
-          created_at: string
-          id: string
-          request_count: number | null
-          reset_time: string
-          user_id: string
-        }
-        Insert: {
-          api_endpoint: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time: string
-          user_id: string
-        }
-        Update: {
-          api_endpoint?: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      checkmend_verification_cache: {
-        Row: {
-          cache_key: string
-          created_at: string
-          expires_at: string
-          id: string
-          item_type: string
-          serial_number: string
-          updated_at: string
-          verification_data: Json
-        }
-        Insert: {
-          cache_key: string
-          created_at?: string
-          expires_at: string
-          id?: string
-          item_type: string
-          serial_number: string
-          updated_at?: string
-          verification_data: Json
-        }
-        Update: {
-          cache_key?: string
-          created_at?: string
-          expires_at?: string
-          id?: string
-          item_type?: string
-          serial_number?: string
-          updated_at?: string
-          verification_data?: Json
-        }
-        Relationships: []
-      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -377,48 +317,6 @@ export type Database = {
           id?: string
           total_winners?: number | null
           updated_at?: string
-        }
-        Relationships: []
-      }
-      property_verifications: {
-        Row: {
-          api_response: Json | null
-          confidence_score: number | null
-          created_at: string
-          data_retention_until: string | null
-          id: string
-          property_address: string
-          property_type: string | null
-          recipero_report_id: string | null
-          updated_at: string
-          user_id: string
-          verification_status: string
-        }
-        Insert: {
-          api_response?: Json | null
-          confidence_score?: number | null
-          created_at?: string
-          data_retention_until?: string | null
-          id?: string
-          property_address: string
-          property_type?: string | null
-          recipero_report_id?: string | null
-          updated_at?: string
-          user_id: string
-          verification_status?: string
-        }
-        Update: {
-          api_response?: Json | null
-          confidence_score?: number | null
-          created_at?: string
-          data_retention_until?: string | null
-          id?: string
-          property_address?: string
-          property_type?: string | null
-          recipero_report_id?: string | null
-          updated_at?: string
-          user_id?: string
-          verification_status?: string
         }
         Relationships: []
       }
@@ -528,33 +426,6 @@ export type Database = {
           },
         ]
       }
-      recipero_api_usage: {
-        Row: {
-          api_endpoint: string
-          created_at: string
-          id: string
-          request_count: number | null
-          reset_time: string
-          user_id: string
-        }
-        Insert: {
-          api_endpoint: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time: string
-          user_id: string
-        }
-        Update: {
-          api_endpoint?: string
-          created_at?: string
-          id?: string
-          request_count?: number | null
-          reset_time?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
       subscribers: {
         Row: {
           created_at: string
@@ -652,20 +523,11 @@ export type Database = {
         Row: {
           api_response: Json | null
           api_source: string
-          checkmend_report_id: string | null
           confidence_score: number | null
           created_at: string
           data_retention_until: string | null
-          device_specifications: Json | null
-          due_diligence_data: Json | null
           id: string
-          insurance_history: Json | null
           item_type: string
-          network_status: Json | null
-          ownership_verification: Json | null
-          property_address: string | null
-          recipero_report_id: string | null
-          risk_assessment: Json | null
           serial_number: string
           updated_at: string
           user_id: string
@@ -675,20 +537,11 @@ export type Database = {
         Insert: {
           api_response?: Json | null
           api_source: string
-          checkmend_report_id?: string | null
           confidence_score?: number | null
           created_at?: string
           data_retention_until?: string | null
-          device_specifications?: Json | null
-          due_diligence_data?: Json | null
           id?: string
-          insurance_history?: Json | null
           item_type: string
-          network_status?: Json | null
-          ownership_verification?: Json | null
-          property_address?: string | null
-          recipero_report_id?: string | null
-          risk_assessment?: Json | null
           serial_number: string
           updated_at?: string
           user_id: string
@@ -698,20 +551,11 @@ export type Database = {
         Update: {
           api_response?: Json | null
           api_source?: string
-          checkmend_report_id?: string | null
           confidence_score?: number | null
           created_at?: string
           data_retention_until?: string | null
-          device_specifications?: Json | null
-          due_diligence_data?: Json | null
           id?: string
-          insurance_history?: Json | null
           item_type?: string
-          network_status?: Json | null
-          ownership_verification?: Json | null
-          property_address?: string | null
-          recipero_report_id?: string | null
-          risk_assessment?: Json | null
           serial_number?: string
           updated_at?: string
           user_id?: string
@@ -752,10 +596,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      clean_expired_checkmend_cache: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never

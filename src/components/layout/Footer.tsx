@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Shield, Heart, ExternalLink, Twitter, Linkedin, Github } from 'lucide-react';
-import { FasterCapitalLogo } from '@/components/common/FasterCapitalLogo';
 
 /**
  * Application Footer
@@ -67,8 +65,8 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
-                alt="Safe or Stolen"
+                src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                alt="Safe or Stolen" 
                 className="h-8 w-8"
               />
               <span className="text-xl font-bold text-white">Safe or Stolen</span>
@@ -83,11 +81,19 @@ export const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 mb-4">
               <Badge variant="outline" className="border-sos-lime text-sos-lime">
                 <Shield className="h-3 w-3 mr-1" />
-                Accelerated
+                FasterCapital Accelerated
               </Badge>
             </div>
 
-            <FasterCapitalLogo size="md" />
+            <a 
+              href="https://fastercapital.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-gray-400 hover:text-sos-lime transition-colors"
+            >
+              Powered by FasterCapital
+              <ExternalLink className="h-3 w-3 ml-1" />
+            </a>
           </div>
 
           {/* Footer Links */}

@@ -9,7 +9,6 @@ import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
-import { MobileOptimizer } from '@/components/mobile/MobileOptimizer';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -48,7 +47,6 @@ export const AppRoot: React.FC = () => {
               <SEOProvider>
                 <Router>
                   <div className="min-h-screen bg-sos text-white antialiased">
-                    <MobileOptimizer />
                     <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />
                     </Suspense>

@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
@@ -7,19 +8,14 @@ import QrScanner from '@/components/hero/QrScanner';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
-import { FasterCapitalLogo } from '@/components/common/FasterCapitalLogo';
+
 const Hero = () => {
   const [isQrScannerOpen, setIsQrScannerOpen] = useState(false);
   const navigate = useNavigate();
-  const {
-    toast
-  } = useToast();
-  const {
-    verifyItem
-  } = useRealVerification();
-  const {
-    addToSearchHistory
-  } = useSearchHistory();
+  const { toast } = useToast();
+  const { verifyItem } = useRealVerification();
+  const { addToSearchHistory } = useSearchHistory();
+
   const handleQrCodeSuccess = useCallback(async (decodedText: string) => {
     if (!decodedText?.trim()) {
       toast({
@@ -29,12 +25,14 @@ const Hero = () => {
       });
       return;
     }
+
     try {
       const itemType = detectItemType(decodedText);
       const trimmedText = decodedText.trim();
 
       // Add to search history
       addToSearchHistory(trimmedText);
+      
       toast({
         title: "QR Code Scanned Successfully",
         description: `Starting real verification for ${itemType}: ${trimmedText}`
@@ -50,9 +48,7 @@ const Hero = () => {
         setTimeout(() => {
           const verificationSection = document.getElementById('verification-results');
           if (verificationSection) {
-            verificationSection.scrollIntoView({
-              behavior: 'smooth'
-            });
+            verificationSection.scrollIntoView({ behavior: 'smooth' });
           }
         }, 300);
       } else {
@@ -67,13 +63,17 @@ const Hero = () => {
       });
     }
   }, [verifyItem, addToSearchHistory, navigate, toast]);
+
   const handleOpenQrScanner = useCallback(() => {
     setIsQrScannerOpen(true);
   }, []);
+
   const handleCloseQrScanner = useCallback((open: boolean) => {
     setIsQrScannerOpen(open);
   }, []);
-  return <ErrorBoundary>
+
+  return (
+    <ErrorBoundary>
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Clean Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-sos-dark to-sos"></div>
@@ -84,20 +84,18 @@ const Hero = () => {
             
             {/* Logo */}
             <div className="mb-8">
-              
+              <img 
+                src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                alt="Safe or Stolen" 
+                className="h-20 w-20 md:h-24 md:w-24 mx-auto filter drop-shadow-lg" 
+              />
             </div>
             
-            {/* FasterCapital Branding */}
-            <div className="mb-6">
-              <div className="flex items-center justify-center gap-3 text-sm">
-                <span className="text-gray-300">Accelerated By</span>
-                <FasterCapitalLogo size="lg" />
-              </div>
-            </div>
-            
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-red-400">SafeOrStolen</span>
+            {/* Clean Headline */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              Don't Get <span className="text-red-400">Scammed</span>
+              <br />
+              Verify Before You Buy
             </h1>
             
             {/* Simple Subheadline */}
@@ -108,25 +106,33 @@ const Hero = () => {
             
             {/* Clean Search Form */}
             <div className="mb-12">
-              <ErrorBoundary fallback={<div className="text-center p-4 text-gray-500">
+              <ErrorBoundary fallback={
+                <div className="text-center p-4 text-gray-500">
                   Search form temporarily unavailable
-                </div>}>
+                </div>
+              }>
                 <SimpleSearchForm onOpenQrScanner={handleOpenQrScanner} />
               </ErrorBoundary>
             </div>
 
             {/* Simple Trust Statement */}
             <p className="text-sm text-gray-400">
-              Trusted by 500K+ users
+              Trusted by 500K+ users • Featured by FasterCapital
             </p>
           </div>
         </div>
 
         {/* QR Scanner Dialog */}
         <ErrorBoundary fallback={null}>
-          <QrScanner isOpen={isQrScannerOpen} onOpenChange={handleCloseQrScanner} onScanSuccess={handleQrCodeSuccess} />
+          <QrScanner 
+            isOpen={isQrScannerOpen} 
+            onOpenChange={handleCloseQrScanner} 
+            onScanSuccess={handleQrCodeSuccess} 
+          />
         </ErrorBoundary>
       </div>
-    </ErrorBoundary>;
+    </ErrorBoundary>
+  );
 };
+
 export default Hero;

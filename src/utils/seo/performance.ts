@@ -18,7 +18,7 @@ export const preloadCriticalResources = () => {
     // Preload logo image
     const logoPreload = document.createElement('link');
     logoPreload.rel = 'preload';
-    logoPreload.href = '/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png';
+    logoPreload.href = '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png';
     logoPreload.as = 'image';
     document.head.appendChild(logoPreload);
   }

@@ -106,7 +106,7 @@ export const SEOHead = ({
       />
       <link 
         rel="preload" 
-        href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+        href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
         as="image"
       />
 

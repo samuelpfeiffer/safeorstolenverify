@@ -98,8 +98,8 @@ const ForBrandsPage: React.FC = () => {
               </div>
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/03c902d9-ed92-4e91-a1bd-179c243fefc1.png" 
-                  alt="Enterprise Dashboard"
+                  src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
+                  alt="Enterprise Dashboard" 
                   className="rounded-lg shadow-2xl"
                 />
                 <div className="absolute -top-4 -left-4 bg-sos-orange text-white px-4 py-2 rounded-lg text-sm font-semibold">
