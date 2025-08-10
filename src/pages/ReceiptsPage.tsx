@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from '@/integrations/supabase/client';
@@ -172,7 +172,6 @@ const ReceiptsPage = () => {
             Sign In
           </Button>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -203,7 +202,7 @@ const ReceiptsPage = () => {
           </>
         )}
       </div>
-      <Footer />
+      
     </div>
   );
 };

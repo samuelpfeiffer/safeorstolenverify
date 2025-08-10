@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
@@ -196,7 +196,6 @@ const SearchHistoryPage = () => {
             Sign In
           </Button>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -224,7 +223,7 @@ const SearchHistoryPage = () => {
           </>
         )}
       </div>
-      <Footer />
+      
     </div>
   );
 };

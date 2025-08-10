@@ -1,5 +1,5 @@
 
-import Footer from "@/components/Footer";
+
 import { SEOHead } from "@/components/seo/SEOHead";
 import { HeroSection } from "@/components/problem/HeroSection";
 import { StatisticsSection } from "@/components/problem/StatisticsSection";
@@ -24,7 +24,7 @@ const ProblemPage = () => {
         <CaseStudySection />
         <CurrentSolutionsSection />
         <SolutionSection />
-        <Footer />
+        
       </div>
     </>
   );

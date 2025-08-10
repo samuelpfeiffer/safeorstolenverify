@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -104,7 +104,6 @@ const PurchaseHistoryPage = () => {
             Sign In
           </Button>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -131,7 +130,7 @@ const PurchaseHistoryPage = () => {
           </>
         )}
       </div>
-      <Footer />
+      
     </div>
   );
 };

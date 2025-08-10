@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home, Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -172,8 +172,6 @@ const ContactPage = () => {
         </div>
       </div>
       
-      <Footer />
-    </div>
   );
 };
 

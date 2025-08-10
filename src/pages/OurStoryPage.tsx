@@ -1,5 +1,5 @@
 
-import Footer from "@/components/Footer";
+
 import { TeamProfiles } from "@/components/team/TeamProfiles";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { getPageMetadata } from "@/utils/seo/metadata";
@@ -46,7 +46,7 @@ const OurStoryPage = () => {
 
         <AcknowledgmentsSection />
 
-        <Footer />
+        
       </div>
     </>
   );
