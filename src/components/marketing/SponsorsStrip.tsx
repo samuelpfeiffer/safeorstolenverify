@@ -67,8 +67,8 @@ export const SponsorsStrip: React.FC = () => {
             title="HotGunz"
           >
             <img
-              src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
-              alt="HotGunz official logo"
+              src="/lovable-uploads/03461ed0-873b-46ba-8871-8ed6fd1c51b2.png"
+              alt="HotGunz stolen firearms database logo"
               loading="lazy"
               className="h-8 md:h-10 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
             />
