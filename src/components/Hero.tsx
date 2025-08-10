@@ -115,13 +115,16 @@ const Hero = () => {
 
             {/* Extra actions below verify card */}
             <div className="flex flex-col items-center gap-4">
-              <Button
-                variant="destructive"
-                className="px-5"
-                onClick={() => navigate('/firearms-check')}
-              >
-                Search Stolen Firearms Database
-              </Button>
+              <div className="w-full max-w-2xl mx-auto">
+                <Button
+                  variant="destructive"
+                  className="w-full px-5"
+                  onClick={() => navigate('/firearms-check')}
+                  aria-label="Search Stolen Firearms Database"
+                >
+                  Search Stolen Firearms Database
+                </Button>
+              </div>
 
               {/* Credits pill */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-gray-200">
