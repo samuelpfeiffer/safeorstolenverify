@@ -24,7 +24,7 @@ export const SponsorsStrip: React.FC = () => {
               src="/lovable-uploads/0f4c8076-5366-4794-b77f-eba4a130a1ff.png"
               alt="FasterCapital official logo"
               loading="lazy"
-              className="h-8 md:h-10 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
+              className="h-8 md:h-10 w-auto"
             />
           </a>
 
@@ -41,7 +41,7 @@ export const SponsorsStrip: React.FC = () => {
               src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png"
               alt="IMEI.info official logo"
               loading="lazy"
-              className="h-8 md:h-10 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
+              className="h-8 md:h-10 w-auto"
             />
           </a>
 
@@ -70,7 +70,7 @@ export const SponsorsStrip: React.FC = () => {
               src="/lovable-uploads/03461ed0-873b-46ba-8871-8ed6fd1c51b2.png"
               alt="HotGunz stolen firearms database logo"
               loading="lazy"
-              className="h-8 md:h-10 w-auto opacity-90 grayscale hover:grayscale-0 transition-all"
+              className="h-8 md:h-10 w-auto"
             />
           </a>
         </div>
