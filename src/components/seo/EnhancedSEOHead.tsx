@@ -21,8 +21,10 @@ export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   type = 'website',
   additionalSchemas = []
 }) => {
-  const baseUrl = window.location.origin;
-  const fullCanonical = canonical ? `${baseUrl}${canonical}` : window.location.href;
+  const baseUrl = 'https://safeorstolen.com';
+  const fullCanonical = canonical
+    ? (canonical.startsWith('http') ? canonical : `${baseUrl}${canonical}`)
+    : `${baseUrl}${typeof window !== 'undefined' ? window.location.pathname + window.location.search : ''}`;
   const fullImage = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
   // Core schemas
