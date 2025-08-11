@@ -45,6 +45,23 @@ export const SponsorsStrip: React.FC = () => {
             />
           </a>
 
+          {/* Bike Index */}
+          <a
+            href="https://bikeindex.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center"
+            aria-label="Visit Bike Index"
+            title="Bike Index"
+          >
+            <img
+              src="/images/partners/bikeindex-logo.svg"
+              alt="Bike Index official logo"
+              loading="lazy"
+              className="h-8 md:h-10 w-auto"
+            />
+          </a>
+
           {/* Recipero (text fallback if logo not available) */}
           <a
             href="https://www.recipero.com"
