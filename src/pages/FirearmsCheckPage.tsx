@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,11 +6,12 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Search, ExternalLink, AlertTriangle } from 'lucide-react';
+import { Search, AlertTriangle } from 'lucide-react';
 
 const FirearmsCheckPage: React.FC = () => {
   const [style, setStyle] = useState<'style1' | 'style2' | 'style3' | 'style4'>('style4');
   const [serial, setSerial] = useState('');
+  const widgetRef = useRef<HTMLDivElement>(null);
 
   const faqSchema = useMemo(() => ([{
     '@context': 'https://schema.org',
@@ -61,15 +62,18 @@ const FirearmsCheckPage: React.FC = () => {
 
   const handleSearch = () => {
     const cleaned = serial.replace(/\s+/g, '');
-    const url = 'https://www.hotgunz.com/';
-    window.open(url, '_blank', 'noopener,noreferrer');
+    // Keep users on this page: scroll to the embedded search tool below
+    const el = widgetRef.current;
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
     <div className="min-h-screen bg-sos text-white pt-20">
       <EnhancedSEOHead
         title="Search Stolen Firearms Database (HotGunz)"
-        description="Check if a firearm has been reported stolen before purchasing. Search HotGunz via embedded widget or open in a new tab."
+        description="Check if a firearm has been reported stolen before purchasing. Search HotGunz via the embedded widget on this page."
         canonical="/firearms-check"
         additionalSchemas={faqSchema as unknown as Array<Record<string, any>>}
       />
@@ -115,13 +119,12 @@ const FirearmsCheckPage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button onClick={handleSearch} className="sm:w-auto" variant="destructive">
+                  <Button onClick={handleSearch} className="sm:w-auto">
                     <Search className="mr-2 h-4 w-4" />
-                    Search Stolen Firearms Database
-                    <ExternalLink className="ml-2 h-4 w-4" />
+                    Search Below
                   </Button>
                   <div className="text-xs text-muted-foreground sm:self-center">
-                    This will search the HotGunz stolen firearms database in a new tab
+                    Your search stays on this site. Use the embedded tool below to run your query.
                   </div>
                 </div>
               </div>
@@ -143,7 +146,7 @@ const FirearmsCheckPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="rounded-lg overflow-hidden border border-border">
+              <div className="rounded-lg overflow-hidden border border-border" ref={widgetRef}>
                 <HotGunzWidget style={style} height={440} />
               </div>
             </CardContent>
