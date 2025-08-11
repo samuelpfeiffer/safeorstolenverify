@@ -81,9 +81,24 @@ serve(async (req) => {
       case 'motorcycle':
         verificationResult = await verifyVIN(serialNumber)
         break
-      default:
+      case 'bicycle':
+      case 'bike':
+      case 'bicycles':
+        verificationResult = await verifyBike(serialNumber)
+        break
+      default: {
+        // First try Bike Index if configured; if inconclusive, fall back to generic
+        const bikeResult = await verifyBike(serialNumber)
+        if (bikeResult.source === 'BikeIndex_API') {
+          // If Bike Index provided a meaningful status, prefer it (especially stolen/lost/safe)
+          if (['stolen', 'lost', 'safe'].includes(bikeResult.status)) {
+            verificationResult = bikeResult as VerificationResult
+            break
+          }
+        }
         verificationResult = await verifyGenericSerial(serialNumber, itemType)
         break
+      }
     }
 
     // Store the verification result
@@ -123,7 +138,7 @@ serve(async (req) => {
     console.error('Verification error:', error)
     return new Response(
       JSON.stringify({ 
-        error: error.message || 'Verification failed',
+        error: (error as Error).message || 'Verification failed',
         success: false 
       }),
       { 
@@ -361,6 +376,145 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
       confidence: 0,
       source: 'system',
       message: 'Verification service temporarily unavailable'
+    }
+  }
+}
+
+/**
+ * Bike Index verification
+ * Uses BIKEINDEX_ACCESS_TOKEN (Supabase secret) to query Bike Index.
+ * 1) Searches for the serial (stolenness=all)
+ * 2) If a bike is found, fetches /bikes/:id to get richer details
+ * Returns stolen/lost/safe/unknown based on flags present
+ */
+async function verifyBike(serialNumber: string): Promise<VerificationResult> {
+  try {
+    const token = Deno.env.get('BIKEINDEX_ACCESS_TOKEN') || ''
+    if (!token) {
+      // Return an unknown result tagged with a non-BikeIndex source so callers can choose to fall back
+      return {
+        status: 'unknown',
+        confidence: 40,
+        source: 'system',
+        message: 'Bike Index token not configured'
+      }
+    }
+
+    const baseUrl = 'https://bikeindex.org/api/v3'
+
+    // Search for the bike by serial
+    const searchUrl = `${baseUrl}/search?serial=${encodeURIComponent(serialNumber)}&stolenness=all&per_page=3`
+    const searchResp = await fetch(searchUrl, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/json'
+      }
+    })
+
+    if (!searchResp.ok) {
+      const text = await searchResp.text()
+      console.warn('Bike Index search failed:', searchResp.status, text)
+      return {
+        status: 'unknown',
+        confidence: 35,
+        source: 'BikeIndex_API',
+        message: 'Unable to search Bike Index'
+      }
+    }
+
+    const searchData = await searchResp.json() as any
+    const bikes = Array.isArray(searchData.bikes) ? searchData.bikes : []
+    if (bikes.length === 0) {
+      return {
+        status: 'unknown',
+        confidence: 45,
+        source: 'BikeIndex_API',
+        details: { matched: false, query_serial: serialNumber },
+        message: 'No matching bikes found'
+      }
+    }
+
+    // Use the best match (first)
+    const best = bikes[0]
+    const bikeId = best?.id
+    let stolen = false
+    let lost = false
+    let enriched: any = {}
+
+    if (bikeId) {
+      const bikeResp = await fetch(`${baseUrl}/bikes/${bikeId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json'
+        }
+      })
+
+      if (bikeResp.ok) {
+        const bikeData = await bikeResp.json() as any
+        // Bike Index flags
+        stolen = !!(bikeData?.bike?.stolen || bikeData?.bike?.stolen_record || (Array.isArray(bikeData?.bike?.stolen_records) && bikeData.bike.stolen_records.length > 0))
+        // Bike Index does not have a distinct "lost" flag; we'll treat "stolen" only. Keep 'lost' false.
+        lost = false
+
+        const photos = Array.isArray(bikeData?.bike?.public_images)
+          ? bikeData.bike.public_images.map((img: any) => img?.large || img?.medium || img?.thumb).filter(Boolean)
+          : (bikeData?.bike?.thumb ? [bikeData.bike.thumb] : [])
+
+        enriched = {
+          matched: true,
+          bike_id: bikeId,
+          serial: bikeData?.bike?.serial || best?.serial,
+          manufacturer: bikeData?.bike?.manufacturer_name || best?.manufacturer_name,
+          model: bikeData?.bike?.frame_model || best?.frame_model,
+          year: bikeData?.bike?.year,
+          colors: bikeData?.bike?.frame_colors || best?.frame_colors,
+          is_stolen: stolen,
+          registry_url: bikeData?.bike?.url || (best?.url ?? null),
+          photos
+        }
+      } else {
+        const txt = await bikeResp.text()
+        console.warn('Bike Index bike fetch failed:', bikeResp.status, txt)
+      }
+    }
+
+    // Decide status
+    if (stolen) {
+      return {
+        status: 'stolen',
+        confidence: 95,
+        source: 'BikeIndex_API',
+        details: enriched,
+        message: 'Bike reported stolen in Bike Index'
+      }
+    } else if (lost) {
+      // Currently Bike Index doesn't expose "lost" separate from stolen; kept for future compatibility
+      return {
+        status: 'lost',
+        confidence: 85,
+        source: 'BikeIndex_API',
+        details: enriched,
+        message: 'Bike reported lost'
+      }
+    } else {
+      // Found a bike record and not marked stolen -> likely safe
+      const foundRecord = bikes.length > 0
+      return {
+        status: foundRecord ? 'safe' : 'unknown',
+        confidence: foundRecord ? 80 : 45,
+        source: 'BikeIndex_API',
+        details: enriched.matched ? enriched : { matched: foundRecord, candidate_id: bikeId },
+        message: foundRecord ? 'Bike found with no stolen record' : 'No matching bikes found'
+      }
+    }
+
+  } catch (error) {
+    console.error('Bike Index verification error:', error)
+    return {
+      status: 'error',
+      confidence: 0,
+      source: 'BikeIndex_API',
+      message: 'Bike Index service temporarily unavailable'
     }
   }
 }
