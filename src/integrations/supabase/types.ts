@@ -576,8 +576,12 @@ export type Database = {
           created_at: string
           expires_at: string | null
           id: string
+          id_token: string | null
+          metadata: Json
           provider: string
           refresh_token: string | null
+          revoked: boolean
+          scope: string | null
           token_type: string | null
           updated_at: string
           user_id: string
@@ -587,8 +591,12 @@ export type Database = {
           created_at?: string
           expires_at?: string | null
           id?: string
+          id_token?: string | null
+          metadata?: Json
           provider: string
           refresh_token?: string | null
+          revoked?: boolean
+          scope?: string | null
           token_type?: string | null
           updated_at?: string
           user_id: string
@@ -598,8 +606,12 @@ export type Database = {
           created_at?: string
           expires_at?: string | null
           id?: string
+          id_token?: string | null
+          metadata?: Json
           provider?: string
           refresh_token?: string | null
+          revoked?: boolean
+          scope?: string | null
           token_type?: string | null
           updated_at?: string
           user_id?: string
