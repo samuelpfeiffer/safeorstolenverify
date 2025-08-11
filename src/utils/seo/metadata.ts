@@ -24,8 +24,12 @@ const SITE_CONFIG = {
     'Where to check if something is stolen?',
     'Can I check if something is stolen before I buy it?',
     'I want to check if something is stolen',
-    'How do I check if something used is stolen?'
-  ]
+    'How do I check if something used is stolen?',
+    'check stolen items',
+    'verify its not stolen',
+    'I purchased or bought a used item and want to check or see if its legitimate',
+    'Should I buy this or not?'
+  ] as const,
 } as const;
 
 // Page-specific metadata

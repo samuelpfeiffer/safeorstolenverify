@@ -15,7 +15,7 @@ interface EnhancedSEOHeadProps {
 export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   title,
   description,
-  keywords = "stolen goods verification, consumer protection, marketplace safety, fraud prevention, real-time verification, FasterCapital",
+  keywords = "stolen goods verification, consumer protection, marketplace safety, fraud prevention, real-time verification, FasterCapital, check stolen items, verify its not stolen, check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen, safeorstolen.com",
   canonical,
   image = "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
   type = 'website',
