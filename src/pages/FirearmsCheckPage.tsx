@@ -1,17 +1,18 @@
-import React, { useMemo, useState, useRef } from 'react';
-import HotGunzWidget from '@/components/integrations/HotGunzWidget';
+import React, { useMemo, useState } from 'react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 import { Card, CardContent } from '@/components/ui/card';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Search, AlertTriangle } from 'lucide-react';
+import { Search, AlertTriangle, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const FirearmsCheckPage: React.FC = () => {
-  const [style, setStyle] = useState<'style1' | 'style2' | 'style3' | 'style4'>('style4');
   const [serial, setSerial] = useState('');
-  const widgetRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [resultHtml, setResultHtml] = useState<string | null>(null);
+  const [found, setFound] = useState<boolean | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const faqSchema = useMemo(() => ([{
     '@context': 'https://schema.org',
@@ -22,7 +23,7 @@ const FirearmsCheckPage: React.FC = () => {
         name: 'How do I search for a stolen firearm?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Enter the firearm\'s serial number without spaces or special characters, then run a search against the HotGunz stolen firearms database.'
+          text: 'Enter the firearm\'s serial number without spaces or special characters, then run a search using the button. Results will appear below.'
         }
       },
       {
@@ -46,7 +47,7 @@ const FirearmsCheckPage: React.FC = () => {
         name: 'Do you log my search results?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Searches through this tool are intended to help people make informed decisions. Refer to HotGunz\'s policies for their logging practices.'
+          text: 'Searches are intended to help people make informed decisions. Refer to HotGunz\'s policies for their logging practices.'
         }
       },
       {
@@ -60,12 +61,28 @@ const FirearmsCheckPage: React.FC = () => {
     ]
   }]), []);
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     const cleaned = serial.replace(/\s+/g, '');
-    // Keep users on this page: scroll to the embedded search tool below
-    const el = widgetRef.current;
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!cleaned) return;
+    setError(null);
+    setLoading(true);
+    setResultHtml(null);
+    setFound(null);
+    try {
+      const { data, error } = await supabase.functions.invoke('verify-firearm-hotgunz', {
+        body: { serial: cleaned }
+      });
+      if (error) throw error;
+      if (data?.status === 'ok') {
+        setResultHtml(data.html || null);
+        setFound(typeof data.found === 'boolean' ? data.found : null);
+      } else {
+        setError(data?.error || 'Verification failed.');
+      }
+    } catch (err: any) {
+      setError(err?.message || 'Unexpected error');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -73,7 +90,7 @@ const FirearmsCheckPage: React.FC = () => {
     <div className="min-h-screen bg-sos text-white pt-20">
       <EnhancedSEOHead
         title="Search Stolen Firearms Database (HotGunz)"
-        description="Check if a firearm has been reported stolen before purchasing. Search HotGunz via the embedded widget on this page."
+        description="Check if a firearm has been reported stolen before purchasing. Get on-site results from HotGunz without leaving this page."
         canonical="/firearms-check"
         additionalSchemas={faqSchema as unknown as Array<Record<string, any>>}
       />
@@ -119,35 +136,53 @@ const FirearmsCheckPage: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button onClick={handleSearch} className="sm:w-auto">
-                    <Search className="mr-2 h-4 w-4" />
-                    Search Below
+                  <Button onClick={handleSearch} className="sm:w-auto" disabled={loading}>
+                    {loading ? (<><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Checking...</>) : (<><Search className="mr-2 h-4 w-4" /> Check Serial</>)}
                   </Button>
                   <div className="text-xs text-muted-foreground sm:self-center">
-                    Your search stays on this site. Use the embedded tool below to run your query.
+                    Results will appear below. Always confirm via local law enforcement (NCIC).
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                <div className="text-sm text-muted-foreground">Embedded widget style</div>
-                <div className="w-full sm:w-64">
-                  <Select value={style} onValueChange={(v) => setStyle(v as any)}>
-                    <SelectTrigger className="bg-background">
-                      <SelectValue placeholder="Select style" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="style1">Style 1</SelectItem>
-                      <SelectItem value="style2">Style 2</SelectItem>
-                      <SelectItem value="style3">Style 3</SelectItem>
-                      <SelectItem value="style4">Style 4 (Transparent)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
+              {/* Results */}
+              <div className="pt-4 space-y-3">
+                {error && (
+                  <Alert>
+                    <AlertTriangle className="h-4 w-4" />
+                    <AlertTitle>Search failed</AlertTitle>
+                    <AlertDescription>{error}</AlertDescription>
+                  </Alert>
+                )}
 
-              <div className="rounded-lg overflow-hidden border border-border" ref={widgetRef}>
-                <HotGunzWidget style={style} height={440} />
+                {found !== null && (
+                  <div className="text-sm font-medium">
+                    {found === false ? (
+                      <span className="text-green-500">No stolen records found on HotGunz for this serial.</span>
+                    ) : (
+                      <span className="text-destructive">Potential stolen records found on HotGunz. Review details below.</span>
+                    )}
+                  </div>
+                )}
+
+                <div className="rounded-lg overflow-hidden border border-border min-h-[200px]">
+                  {loading && (
+                    <div className="p-6 text-sm text-muted-foreground flex items-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin" /> Fetching results from HotGunz...
+                    </div>
+                  )}
+                  {!loading && resultHtml && (
+                    <iframe
+                      title="HotGunz Results"
+                      className="w-full h-[480px] bg-background"
+                      sandbox="allow-same-origin"
+                      srcDoc={resultHtml}
+                    />
+                  )}
+                  {!loading && !resultHtml && !error && (
+                    <div className="p-6 text-sm text-muted-foreground">No results yet. Enter a serial and click Check.</div>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -174,7 +209,7 @@ const FirearmsCheckPage: React.FC = () => {
                 </article>
                 <article>
                   <h3 className="font-semibold mb-1">Do you log my search results?</h3>
-                  <p>This service is designed to help people make informed decisions. For HotGunz\'s logging and privacy policies, please refer to their website.</p>
+                  <p>This service is designed to help people make informed decisions. For HotGunz's logging and privacy policies, please refer to their website.</p>
                 </article>
                 <article>
                   <h3 className="font-semibold mb-1">What if I don't know the serial number?</h3>

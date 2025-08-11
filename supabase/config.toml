@@ -1,1 +1,4 @@
 project_id = "lxrdzbknktwlubbmlsqe"
+
+[functions.verify-firearm-hotgunz]
+verify_jwt = false
