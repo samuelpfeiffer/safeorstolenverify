@@ -18,7 +18,13 @@ const SITE_CONFIG = {
     'consumer protection',
     'safe buying',
     'stolen property check',
-    'marketplace security'
+    'marketplace security',
+    'How to check if something is stolen',
+    'How do I check if something is stolen?',
+    'Where to check if something is stolen?',
+    'Can I check if something is stolen before I buy it?',
+    'I want to check if something is stolen',
+    'How do I check if something used is stolen?'
   ]
 } as const;
 

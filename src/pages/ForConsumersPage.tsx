@@ -11,7 +11,7 @@ const ForConsumersPage: React.FC = () => {
       <SEOHead 
         title="For Consumers - Safe or Stolen"
         description="Protect yourself from stolen goods. Verify second-hand purchases instantly with our consumer verification platform."
-        keywords="consumer protection, stolen goods, verify purchases, second-hand verification"
+        keywords="consumer protection, stolen goods, verify purchases, second-hand verification, How to check if something is stolen, How do I check if something is stolen?, Where to check if something is stolen?, Can I check if something is stolen before I buy it?, I want to check if something is stolen, How do I check if something used is stolen?"
       />
       
       <div className="min-h-screen bg-background">

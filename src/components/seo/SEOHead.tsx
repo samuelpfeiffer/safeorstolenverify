@@ -22,7 +22,7 @@ interface SEOHeadProps {
 export const SEOHead = ({
   title = "Safe Or Stolen - Global #1 IMEI, Serial & VIN Verification Service | Verify Before You Buy",
   description = "World's most trusted verification service for second-hand items. Check IMEI numbers, serial numbers, and VIN numbers globally to verify if items are stolen, lost, or legitimate before buying/selling. Protect yourself from fraud worldwide.",
-  keywords = "global verification service, IMEI check worldwide, serial number verification international, VIN number check global, stolen item database, second-hand item verification, lost property check, legitimate purchase verification, verify before you buy, fraud prevention",
+  keywords = "global verification service, IMEI check worldwide, serial number verification international, VIN number check global, stolen item database, second-hand item verification, lost property check, legitimate purchase verification, verify before you buy, fraud prevention, How to check if something is stolen, How do I check if something is stolen?, Where to check if something is stolen?, Can I check if something is stolen before I buy it?, I want to check if something is stolen, How do I check if something used is stolen?",
   canonical,
   ogTitle,
   ogDescription,
