@@ -1,79 +1,124 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://safeorstolen.com/</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png</image:loc>
-      <image:caption>Safe Or Stolen Logo - Global IMEI, Serial &amp; VIN Verification Service</image:caption>
-      <image:title>Safe Or Stolen Global Verification Service</image:title>
+      <image:caption>Safe Or Stolen Logo - IMEI, Serial &amp; VIN Verification Service</image:caption>
+      <image:title>Safe Or Stolen</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://safeorstolen.com/how-it-works</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://safeorstolen.com/how-it-works-image.png</image:loc>
-      <image:caption>How IMEI, Serial Number and VIN verification works globally - 3 simple steps</image:caption>
-      <image:title>Safe Or Stolen Global Verification Process</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/for-brands</loc>
-    <lastmod>2025-06-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://safeorstolen.com/brands-image.png</image:loc>
-      <image:caption>Safe Or Stolen for brands worldwide - Global brand protection services</image:caption>
-      <image:title>Global Brand Protection Services</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://safeorstolen.com/for-consumers</loc>
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://safeorstolen.com/consumers-image.png</image:loc>
-      <image:caption>Safe Or Stolen for consumers worldwide - Verify IMEI, Serial Numbers, VIN before buying</image:caption>
-      <image:title>Global Consumer Protection Services</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://safeorstolen.com/blog</loc>
-    <lastmod>2025-06-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://safeorstolen.com/og-image-blog.png</image:loc>
-      <image:caption>Safe Or Stolen Blog - Verification news, guides, and safety tips</image:caption>
-      <image:title>Verification Blog and News</image:title>
-    </image:image>
+    <loc>https://safeorstolen.com/for-brands</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/contact</loc>
-    <lastmod>2025-06-13</lastmod>
+    <loc>https://safeorstolen.com/about-problem</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/our-story</loc>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/terms-of-service</loc>
-    <lastmod>2025-06-13</lastmod>
+    <loc>https://safeorstolen.com/real-time-verification</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/firearms-check</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/pricing</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/about</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/contact</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/faq</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/privacy-policy</loc>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/privacy-policy</loc>
-    <lastmod>2025-06-13</lastmod>
+    <loc>https://safeorstolen.com/terms-of-service</loc>
+    <lastmod>2025-08-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/privacy</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/terms</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/fastercapital/raise-capital</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/fastercapital/tech-cofounder</loc>
+    <lastmod>2025-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>

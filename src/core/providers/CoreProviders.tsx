@@ -2,7 +2,6 @@ import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // Dev tools import removed to avoid dependency issues
 import { AuthProvider } from '@/lib/auth';
-import { SEOProvider } from '@/components/seo/SEOProvider';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthErrorBoundary } from '@/components/auth/AuthErrorBoundary';
 import { ScrollRestoration } from '@/components/ScrollRestoration';
@@ -49,12 +48,10 @@ export const CoreProviders: React.FC<CoreProvidersProps> = ({ children }) => {
         <AuthErrorBoundary>
           <QueryClientProvider client={queryClient}>
             <AuthProvider>
-              <SEOProvider>
                 <ScrollRestoration />
                 {children}
                 <Toaster />
                 {/* Dev tools removed for production build */}
-              </SEOProvider>
             </AuthProvider>
           </QueryClientProvider>
         </AuthErrorBoundary>
