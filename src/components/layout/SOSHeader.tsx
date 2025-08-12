@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
@@ -14,11 +14,14 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { LogOut, User, Crown, Menu } from 'lucide-react';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
+import { MobileMenu } from '@/components/navigation/MobileMenu';
 export const SOSHeader: React.FC = () => {
   const { user, signOut } = useAuth();
   const isAuthenticated = !!user;
   const location = useLocation();
   const { remainingSearches, isSubscribed, isLoading } = useSearchLimits();
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => setMenuOpen(false), [location.pathname]);
   const navigation = [
     { title: 'Home', href: '/' },
     { title: 'Verify', href: '/real-time-verification' },
@@ -38,7 +41,7 @@ export const SOSHeader: React.FC = () => {
   };
 
   return (
-    <header className="bg-sos-dark/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50">
+    <header className="bg-sos-dark/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
@@ -134,12 +137,25 @@ export const SOSHeader: React.FC = () => {
             </div>
           )}
 
-          {/* Mobile menu placeholder for future expansion to avoid breaking layout */}
-          <Button variant="ghost" size="icon" className="md:hidden" aria-label="Menu">
+          {/* Mobile menu trigger */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label="Menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
             <Menu className="h-5 w-5" />
           </Button>
         </div>
       </div>
+      {/* Mobile menu panel */}
+      <MobileMenu
+        isOpen={menuOpen}
+        closeMenu={() => setMenuOpen(false)}
+        currentPath={location.pathname}
+      />
     </header>
   );
 };
