@@ -31,7 +31,7 @@ export const SEOProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Safe or Stolen" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://safeorstolen.com" />
+        
       </Helmet>
       {children}
     </SEOContext.Provider>

@@ -31,7 +31,7 @@ Allow: /
 
 # Sitemap locations
 Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/sitemap-news.xml
+
 
 # Prevent crawling of admin, private, or dynamic areas
 User-agent: *
