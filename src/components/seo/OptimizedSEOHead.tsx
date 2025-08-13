@@ -8,7 +8,7 @@ interface OptimizedSEOHeadProps {
   canonical?: string;
   image?: string;
   type?: string;
-  structuredData?: object[];
+  structuredData?: Record<string, any> | object[];
   noIndex?: boolean;
 }
 
@@ -19,11 +19,18 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   canonical,
   image = '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
   type = 'website',
-  structuredData = [],
+  structuredData,
   noIndex = false
 }) => {
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
-  const fullCanonicalUrl = canonical ? `https://safeorstolen.com${canonical}` : undefined;
+  const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://safeorstolen.com${canonical}` : undefined;
+
+  // Convert structured data to array format
+  const structuredDataArray = structuredData 
+    ? Array.isArray(structuredData) 
+      ? structuredData 
+      : [structuredData]
+    : [];
 
   return (
     <Helmet>
@@ -56,7 +63,7 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="twitter:site" content="@safeorstolen" />
       
       {/* Structured Data */}
-      {structuredData.map((schema, index) => (
+      {structuredDataArray.map((schema, index) => (
         <script key={index} type="application/ld+json">
           {JSON.stringify(schema)}
         </script>

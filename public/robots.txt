@@ -1,4 +1,4 @@
-# Simplified robots.txt for Safe Or Stolen
+# Enhanced robots.txt for Safe Or Stolen
 User-agent: *
 Allow: /
 
@@ -6,8 +6,31 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Disallow: /auth/callback
-Disallow: /verification-success
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /analytics/
+Disallow: /subscription/
+Disallow: /security-settings/
+Disallow: /404
+Disallow: /*?*
+Disallow: /*.json$
+
+# Allow important public pages
+Allow: /blog/
+Allow: /real-time-verification
+Allow: /firearms-check
+Allow: /how-it-works
+Allow: /for-consumers
+Allow: /for-brands
+Allow: /about-problem
+Allow: /our-story
+Allow: /pricing
+Allow: /contact
+Allow: /faq
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml

@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
 import { Home, ArrowLeft, Search } from 'lucide-react';
+import { OptimizedSEOHead } from '@/components/seo/OptimizedSEOHead';
 
 const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Set proper HTTP status code for crawlers
+    const metaStatus = document.createElement('meta');
+    metaStatus.httpEquiv = 'status';
+    metaStatus.content = '404';
+    document.head.appendChild(metaStatus);
+
+    return () => {
+      // Cleanup
+      const existingMeta = document.querySelector('meta[http-equiv="status"]');
+      if (existingMeta) {
+        document.head.removeChild(existingMeta);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-sos text-white flex items-center justify-center px-6">
+      <OptimizedSEOHead
+        title="404 - Page Not Found | Safe Or Stolen"
+        description="The page you're looking for doesn't exist. Find what you need with our stolen goods verification service."
+        noIndex={true}
+        canonical="https://safeorstolen.com/404"
+        type="website"
+      />
       <Card className="bg-sos-dark border-sos-orange/20 max-w-2xl w-full">
         <CardContent className="p-12 text-center">
           {/* 404 Animation */}

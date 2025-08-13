@@ -30,4 +30,18 @@ export default defineConfig(({ mode }) => ({
     // Ensure React is available globally
     global: 'globalThis',
   },
+  // Handle 404s properly for SPA routing
+  preview: {
+    port: 8080,
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+        },
+      },
+    },
+  },
 }));

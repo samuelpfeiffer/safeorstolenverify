@@ -159,8 +159,13 @@ export const AppRoutes: React.FC = () => {
 
         {/* Catch all - 404 */}
         <Route path="/404" element={<NotFoundPage />} />
+        <Route path="404" element={<NotFoundPage />} />
+        
+        {/* Clean redirects without double slashes */}
         <Route path="security" element={<Navigate to="/security-settings" replace />} />
-        <Route path="*" element={<Navigate to="/404" replace />} />
+        
+        {/* Catch all unknown routes */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );
