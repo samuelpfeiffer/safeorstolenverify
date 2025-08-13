@@ -1230,8 +1230,8 @@ export type Database = {
           | { key_user_id: string }
           | {
               requesting_user_id: string
-              target_user_id: string
-              operation: string
+              resource_user_id: string
+              operation_type: string
             }
         Returns: boolean
       }
@@ -1239,8 +1239,8 @@ export type Database = {
         Args:
           | {
               requesting_user_id: string
-              target_user_id: string
-              operation: string
+              resource_user_id: string
+              operation_type: string
             }
           | { token_user_id: string; token_id: string }
         Returns: boolean
