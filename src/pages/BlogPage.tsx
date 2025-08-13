@@ -17,12 +17,37 @@ const BlogPage = () => {
     ? `Read our latest articles about ${category.replace('-', ' ')} and product verification.`
     : 'Stay informed with the latest tips, guides, and news about product verification and safety.';
 
+  // Generate ItemList schema for blog posts
+  const itemListSchema = posts?.length ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": category ? `${category.replace('-', ' ')} Articles` : 'Stolen Goods Prevention Blog Posts',
+    "description": pageDescription,
+    "numberOfItems": posts.length,
+    "itemListElement": posts.map((post: any, index: number) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.excerpt,
+        "url": `https://safeorstolen.com/blog/${post.slug}`,
+        "datePublished": post.date,
+        "author": {
+          "@type": "Organization",
+          "name": "Safe or Stolen"
+        }
+      }
+    }))
+  } : undefined;
+
   return (
     <>
       <SEOHead
         title={pageTitle}
         description={pageDescription}
         canonical={category ? `/blog/category/${category}` : '/blog'}
+        structuredData={itemListSchema}
       />
       
       <div className="bg-sos text-white min-h-screen">
@@ -30,12 +55,12 @@ const BlogPage = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-white mb-4">
-              {category ? `${category.replace('-', ' ')} Articles` : 'Our Blog'}
+              {category ? `${category.replace('-', ' ')} Articles` : 'Stolen Goods Prevention Blog'}
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               {category 
                 ? `Everything you need to know about ${category.replace('-', ' ')}`
-                : 'Stay informed with the latest tips, guides, and news about product verification and safety.'
+                : 'Learn how to verify items before buying, avoid stolen goods, and shop safely on marketplaces like eBay, Facebook Marketplace, and Craigslist.'
               }
             </p>
           </div>

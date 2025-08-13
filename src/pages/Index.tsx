@@ -20,7 +20,34 @@ const Index = () => {
         description="Enter IMEI, VIN, or serial to verify a used item instantly on safeorstolen.com. Check stolen items before you buy."
         keywords="check stolen items, verify its not stolen, check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen, verify before you buy, IMEI check, VIN check, serial number check, safeorstolen.com"
         canonical="/"
-        additionalSchemas={[{
+        additionalSchemas={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Safe or Stolen",
+            "url": "https://safeorstolen.com",
+            "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+            "description": "Real-time stolen goods verification platform protecting consumers from fraud",
+            "sameAs": [
+              "https://twitter.com/safeorstolen"
+            ],
+            "foundingDate": "2024",
+            "founders": [
+              {
+                "@type": "Person",
+                "name": "Safe or Stolen Team"
+              }
+            ],
+            "knowsAbout": [
+              "Stolen goods verification",
+              "IMEI checking",
+              "VIN verification", 
+              "Serial number checking",
+              "Marketplace safety",
+              "Fraud prevention"
+            ]
+          },
+          {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           mainEntity: [
