@@ -22,6 +22,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { useRealVerification } from '@/hooks/useRealVerification';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const RealTimeVerificationPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -91,7 +92,14 @@ const RealTimeVerificationPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sos text-white pt-20">
+    <>
+      <SEOHead
+        title="Real-Time Verification | Safe Or Stolen"
+        description="Verify IMEI, serial or VIN instantly with our live verification engine."
+        canonical="/real-time-verification"
+        keywords="real-time verification, IMEI check, VIN check, serial check, verify item, safe or stolen"
+      />
+      <div className="min-h-screen bg-sos text-white pt-20">
       <div className="container mx-auto container-padding py-12">
         {/* Header */}
         <div className="text-center mb-12">
@@ -294,6 +302,7 @@ const RealTimeVerificationPage = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
