@@ -1225,6 +1225,10 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: undefined
       }
+      is_authenticated_user: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
       validate_api_key_access: {
         Args:
           | { key_user_id: string }
