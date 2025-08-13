@@ -18,7 +18,18 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/api/
 RewriteCond %{REQUEST_URI} !^/admin/
+RewriteCond %{REQUEST_URI} !^/sitemap\.xml$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteCond %{REQUEST_URI} !^/manifest\.json$
+RewriteCond %{REQUEST_URI} !\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot|xml|txt|json)$
 RewriteRule . /index.html [L]
+
+# Ensure proper status codes for SPA routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_URI} !^/admin/
+RewriteRule ^(.*)$ /index.html [L,R=200]
 
 # Custom 404 error page
 ErrorDocument 404 /index.html

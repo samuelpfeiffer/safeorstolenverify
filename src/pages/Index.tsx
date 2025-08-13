@@ -19,7 +19,7 @@ const Index = () => {
         title="Check if an item is stolen – Safe or Stolen"
         description="Enter IMEI, VIN, or serial to verify a used item instantly on safeorstolen.com. Check stolen items before you buy."
         keywords="check stolen items, verify its not stolen, check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen, verify before you buy, IMEI check, VIN check, serial number check, safeorstolen.com"
-        canonical="/"
+        canonical="https://safeorstolen.com/"
         additionalSchemas={[
           {
             "@context": "https://schema.org",
