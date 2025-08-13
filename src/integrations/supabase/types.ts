@@ -1226,11 +1226,23 @@ export type Database = {
         Returns: undefined
       }
       validate_api_key_access: {
-        Args: { key_user_id: string }
+        Args:
+          | { key_user_id: string }
+          | {
+              requesting_user_id: string
+              target_user_id: string
+              operation: string
+            }
         Returns: boolean
       }
       validate_oauth_token_access: {
-        Args: { token_user_id: string; token_id: string }
+        Args:
+          | {
+              requesting_user_id: string
+              target_user_id: string
+              operation: string
+            }
+          | { token_user_id: string; token_id: string }
         Returns: boolean
       }
     }
