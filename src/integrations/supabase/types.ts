@@ -895,6 +895,45 @@ export type Database = {
         }
         Relationships: []
       }
+      sensitive_data_access_log: {
+        Row: {
+          access_type: string
+          created_at: string | null
+          id: string
+          ip_address: string | null
+          record_id: string | null
+          risk_score: number | null
+          session_data: Json | null
+          table_name: string
+          user_agent: string | null
+          user_id: string | null
+        }
+        Insert: {
+          access_type: string
+          created_at?: string | null
+          id?: string
+          ip_address?: string | null
+          record_id?: string | null
+          risk_score?: number | null
+          session_data?: Json | null
+          table_name: string
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          access_type?: string
+          created_at?: string | null
+          id?: string
+          ip_address?: string | null
+          record_id?: string | null
+          risk_score?: number | null
+          session_data?: Json | null
+          table_name?: string
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       social_media_findings: {
         Row: {
           confidence_level: string | null
@@ -1181,6 +1220,18 @@ export type Database = {
       clean_expired_checkmend_cache: {
         Args: Record<PropertyKey, never>
         Returns: undefined
+      }
+      cleanup_expired_tokens: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      validate_api_key_access: {
+        Args: { key_user_id: string }
+        Returns: boolean
+      }
+      validate_oauth_token_access: {
+        Args: { token_user_id: string; token_id: string }
+        Returns: boolean
       }
     }
     Enums: {
