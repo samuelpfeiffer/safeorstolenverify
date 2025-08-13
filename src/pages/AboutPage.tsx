@@ -3,9 +3,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Globe, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '@/components/seo/SEOHead';
 const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-sos text-white">
+      <SEOHead
+        title="About Safe Or Stolen | Verify Before You Buy"
+        description="Learn our mission to make secondhand buying safer with instant IMEI, serial and VIN checks."
+        canonical="/about"
+      />
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">

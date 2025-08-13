@@ -1,6 +1,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const FaqPage = () => {
   const faqs = [
@@ -38,8 +39,27 @@ const FaqPage = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.answer
+      }
+    }))
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <SEOHead
+        title="Safe Or Stolen FAQ | Verify Before You Buy"
+        description="Answers to common questions about verifying IMEI, serial and VIN numbers before you buy."
+        canonical="/faq"
+        structuredData={faqSchema}
+      />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Frequently Asked Questions</h1>

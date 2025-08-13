@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -53,6 +54,25 @@ const ContactPage = () => {
 
   return (
     <div className="bg-sos text-white min-h-screen">
+      <SEOHead
+        title="Contact Safe Or Stolen | Support & Inquiries"
+        description="Contact our team for support, partnerships, or media inquiries."
+        canonical="/contact"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Safe Or Stolen",
+          "url": "https://safeorstolen.com",
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "safeorstolenmail@gmail.com",
+            "telephone": "+1-206-249-2203",
+            "areaServed": "US",
+            "availableLanguage": ["English"]
+          }]
+        }}
+      />
       <div className="container mx-auto px-4 pt-24 pb-16">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
