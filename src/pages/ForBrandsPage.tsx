@@ -62,9 +62,9 @@ const ForBrandsPage: React.FC = () => {
   return (
     <>
       <SEOHead 
-        title="For Brands - Safe or Stolen Enterprise Solutions"
-        description="Enterprise solutions for brands to protect against stolen goods, reduce fraud, and build customer trust with real-time verification."
-        keywords="enterprise solutions, brand protection, anti-fraud, verification API, stolen goods prevention"
+        title="Enterprise Brand Protection Solutions - Safe or Stolen"
+        description="Enterprise solutions for brands to protect against stolen goods, reduce fraud, and build customer trust with real-time verification API and analytics."
+        keywords="enterprise solutions, brand protection, anti-fraud, verification API, stolen goods prevention, enterprise security"
       />
       
       <div className="min-h-screen bg-background">

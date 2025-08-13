@@ -33,6 +33,7 @@ const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
 const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('@/pages/TermsOfServicePage'));
+const DisclaimerPage = lazy(() => import('@/pages/DisclaimerPage'));
 
 // FasterCapital Pages
 const RaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
@@ -78,6 +79,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-story" element={<OurStoryPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="terms-of-service" element={<TermsOfServicePage />} />
+          <Route path="disclaimer" element={<DisclaimerPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />

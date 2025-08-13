@@ -42,9 +42,9 @@ const HowItWorksPage: React.FC = () => {
   return (
     <>
       <SEOHead 
-        title="How It Works - Safe or Stolen"
-        description="Learn how our verification system works to protect you from stolen goods. Real-time database checks in seconds."
-        keywords="how it works, verification process, stolen goods, database check"
+        title="How It Works - Safe or Stolen Verification Process"
+        description="Learn how our verification system works to protect you from stolen goods. Real-time database checks in seconds with step-by-step process explanation."
+        keywords="how it works, verification process, stolen goods check, database verification, item verification steps"
       />
       
       <div className="min-h-screen bg-background">

@@ -9,9 +9,9 @@ const ForConsumersPage: React.FC = () => {
   return (
     <>
       <SEOHead 
-        title="For Consumers - Safe or Stolen"
-        description="Protect yourself from stolen goods. Verify second-hand purchases instantly with our consumer verification platform."
-        keywords="consumer protection, stolen goods, verify purchases, second-hand verification, How to check if something is stolen, How do I check if something is stolen?, Where to check if something is stolen?, Can I check if something is stolen before I buy it?, I want to check if something is stolen, How do I check if something used is stolen?"
+        title="Consumer Protection from Stolen Goods - Safe or Stolen"
+        description="Protect yourself from stolen goods when buying second-hand. Verify IMEI, VIN, serial numbers instantly. Check if something is stolen before you buy."
+        keywords="consumer protection, stolen goods verification, check if stolen, verify before buying, second-hand safety, how to check if something is stolen, where to check if something is stolen"
       />
       
       <div className="min-h-screen bg-background">
