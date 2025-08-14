@@ -570,6 +570,30 @@ export type Database = {
           },
         ]
       }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          is_subscribed: boolean
+          subscribed_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          is_subscribed?: boolean
+          subscribed_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          is_subscribed?: boolean
+          subscribed_at?: string
+        }
+        Relationships: []
+      }
       oauth_tokens: {
         Row: {
           access_token: string
@@ -1228,6 +1252,10 @@ export type Database = {
       is_authenticated_user: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      subscribe_to_newsletter: {
+        Args: { user_email: string }
+        Returns: Json
       }
       validate_api_key_access: {
         Args:

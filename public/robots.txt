@@ -33,4 +33,4 @@ Allow: /faq
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://safeorstolen.com/sitemap.xml
+Sitemap: https://www.safeorstolen.com/sitemap.xml
