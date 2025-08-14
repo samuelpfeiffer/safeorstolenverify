@@ -2,3 +2,18 @@ project_id = "lxrdzbknktwlubbmlsqe"
 
 [functions.verify-firearm-hotgunz]
 verify_jwt = false
+
+[functions.verify-checkmend]
+verify_jwt = false
+
+[functions.verify-claude-analysis]
+verify_jwt = false
+
+[functions.enhanced-verification]
+verify_jwt = false
+
+[functions.enterprise-api]
+verify_jwt = false
+
+[functions.marketplace-integration]
+verify_jwt = false

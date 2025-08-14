@@ -523,10 +523,13 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
   try {
     console.log(`Verifying ${itemType} serial: ${serialNumber}`)
     
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800))
+    // Try CheckMend first for comprehensive stolen goods verification
+    const checkMendResult = await verifyWithCheckMend(serialNumber, itemType)
+    if (checkMendResult.status !== 'unknown' && checkMendResult.confidence > 70) {
+      return checkMendResult
+    }
     
-    // Simulate different outcomes based on serial number patterns
+    // Fallback to simulated logic if CheckMend is inconclusive
     const hash = serialNumber.split('').reduce((a, b) => {
       a = ((a << 5) - a) + b.charCodeAt(0)
       return a & a
@@ -575,6 +578,102 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
       confidence: 0,
       source: 'system',
       message: 'Verification service temporarily unavailable'
+    }
+  }
+}
+
+async function verifyWithCheckMend(serialNumber: string, itemType: string): Promise<VerificationResult> {
+  try {
+    // Check cache first
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    )
+    
+    const cacheKey = `checkmend_${serialNumber}_${itemType}`.toLowerCase()
+    const { data: cachedResult } = await supabase
+      .from('checkmend_verification_cache')
+      .select('*')
+      .eq('cache_key', cacheKey)
+      .gt('expires_at', new Date().toISOString())
+      .single()
+
+    if (cachedResult) {
+      return cachedResult.verification_data
+    }
+
+    // Get CheckMend API credentials
+    const apiKey = Deno.env.get('CHECKMEND_API_KEY')
+    const apiUrl = Deno.env.get('CHECKMEND_API_URL') || 'https://api.checkmend.com'
+
+    if (apiKey) {
+      try {
+        const response = await fetch(`${apiUrl}/v1/verify`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            serial_number: serialNumber,
+            item_type: itemType
+          })
+        })
+
+        if (response.ok) {
+          const data = await response.json()
+          
+          let status: VerificationResult['status'] = 'unknown'
+          if (data.is_stolen === true || data.status === 'stolen') {
+            status = 'stolen'
+          } else if (data.is_lost === true || data.status === 'lost') {
+            status = 'lost'
+          } else if (data.is_safe === true || data.status === 'safe') {
+            status = 'safe'
+          }
+
+          const result: VerificationResult = {
+            status,
+            confidence: data.confidence || (status === 'unknown' ? 45 : 90),
+            source: 'CheckMend_API',
+            details: data,
+            message: data.message || `CheckMend verification: ${status}`
+          }
+
+          // Cache the result
+          const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+          await supabase
+            .from('checkmend_verification_cache')
+            .upsert({
+              cache_key: cacheKey,
+              serial_number: serialNumber,
+              item_type: itemType,
+              verification_data: result,
+              expires_at: expiresAt
+            })
+
+          return result
+        }
+      } catch (apiError) {
+        console.error('CheckMend API error:', apiError)
+      }
+    }
+
+    // Return unknown if CheckMend is not available
+    return {
+      status: 'unknown',
+      confidence: 30,
+      source: 'CheckMend_Unavailable',
+      message: 'CheckMend service not available'
+    }
+
+  } catch (error) {
+    console.error('CheckMend verification error:', error)
+    return {
+      status: 'unknown',
+      confidence: 30,
+      source: 'CheckMend_Error',
+      message: 'CheckMend verification failed'
     }
   }
 }
