@@ -11,31 +11,56 @@ const SITE_CONFIG = {
   twitterHandle: '@safeorstolen',
   author: 'Safe or Stolen Team',
   keywords: [
+    // Core verification terms
     'check serial number',
-    'check VIN number',
+    'check VIN number', 
     'check IMEI',
     'check MAC address',
     'serial number lookup',
     'VIN lookup stolen',
     'IMEI check stolen',
+    'free stolen check',
+    'free lost item check',
+    
+    // Lost and stolen items (competitor focuses on both)
+    'lost or stolen lookup',
+    'stolen and lost property',
+    'check if lost or stolen',
+    'report lost item',
+    'find lost property',
+    'recover stolen items',
+    
+    // Specific item categories (matching competitor coverage)
     'check if phone stolen',
-    'check if car stolen',
+    'check if car stolen', 
     'check if bike stolen',
-    'check if electronics stolen',
+    'check if bicycle stolen',
     'check if laptop stolen',
-    'stolen phone lookup',
-    'stolen car check',
-    'stolen vehicle lookup',
-    'stolen electronics check',
+    'check if camera stolen',
+    'check if motorcycle stolen',
+    'check if tablet stolen',
+    'check if electronics stolen',
+    'check if gaming console stolen',
+    'check if GPS stolen',
+    'check if sports equipment stolen',
+    
+    // Verification actions
     'is my phone stolen',
     'is my car stolen',
+    'is my bike stolen',
     'verify serial number',
     'verify VIN',
     'verify IMEI',
-    'stolen goods check',
-    'check stolen property',
-    'lost or stolen lookup',
-    'stolen item database',
+    
+    // Database and registry terms
+    'stolen goods database',
+    'stolen property registry',
+    'lost item database',
+    'stolen item register',
+    'worldwide stolen database',
+    'global stolen property check',
+    
+    // Marketplace safety
     'check before you buy',
     'verify before buying',
     'second hand verification',
@@ -44,23 +69,30 @@ const SITE_CONFIG = {
     'eBay stolen check',
     'Facebook Marketplace stolen',
     'Craigslist stolen check',
+    
+    // How-to searches
     'how to check serial number',
     'how to check VIN',
     'how to check IMEI',
     'where to check if stolen',
+    'how to verify before buying',
+    
+    // Protection and prevention
     'stolen goods verification',
-    'fraud prevention check'
+    'fraud prevention check',
+    'consumer protection',
+    'secondhand buyer protection'
   ] as const,
 } as const;
 
 // Page-specific metadata
 const PAGE_METADATA: Record<string, PageMetadata> = {
   home: {
-    title: `Check Serial Numbers, VIN, IMEI - Safe or Stolen Verification`,
-    description: 'Check serial numbers, VIN, IMEI, MAC addresses instantly. Verify if phones, cars, electronics, bikes are stolen before you buy. Free stolen goods lookup database.',
+    title: `Free Stolen & Lost Property Check - Verify Serial Numbers, VIN, IMEI`,
+    description: 'Free worldwide database to check if items are stolen or lost. Verify phones, cars, bikes, electronics before buying. Check serial numbers, VIN, IMEI instantly.',
     keywords: SITE_CONFIG.keywords.join(', '),
-    ogTitle: `Check Serial Numbers & VIN - Stolen Goods Verification`,
-    ogDescription: 'Free tool to check serial numbers, VIN, IMEI. Verify if items are stolen before buying on eBay, Facebook Marketplace, Craigslist.',
+    ogTitle: `Free Stolen Property Check - Worldwide Lost & Stolen Database`,
+    ogDescription: 'Free tool to check if any item is stolen or lost. Verify serial numbers, VIN, IMEI before buying secondhand items.',
     ogImage: SITE_CONFIG.ogImage,
     robotsDirectives: 'index, follow, max-image-preview:large'
   },

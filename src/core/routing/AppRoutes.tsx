@@ -49,6 +49,8 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
 const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
 const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
+const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
+const ItemCategoriesPage = lazy(() => import('@/pages/ItemCategoriesPage'));
 
 // User history & receipts
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
@@ -102,6 +104,8 @@ export const AppRoutes: React.FC = () => {
           <Route path="check-phone" element={<CheckPhonePage />} />
           <Route path="check-car" element={<CheckCarPage />} />
           <Route path="check-electronics" element={<CheckElectronicsPage />} />
+          <Route path="check-bike" element={<CheckBikePage />} />
+          <Route path="item-categories" element={<ItemCategoriesPage />} />
 
           {/* Protected User Routes */}
           <Route path="verify" element={
