@@ -1,6 +1,9 @@
 # Netlify redirects file
-# Handle SPA routing by serving index.html for all routes that don't match files
+# Force www subdomain
+https://safeorstolen.com/* https://www.safeorstolen.com/:splat 301!
+http://safeorstolen.com/* https://www.safeorstolen.com/:splat 301!
 
+# Handle SPA routing by serving index.html for all routes that don't match files
 # API routes should not redirect (if you have any)
 /api/*  /api/:splat  200
 

@@ -10,7 +10,7 @@ const AboutPage: React.FC = () => {
       <SEOHead
         title="About Safe Or Stolen | Verify Before You Buy"
         description="Learn our mission to make secondhand buying safer with instant IMEI, serial and VIN checks."
-        canonical="/about"
+        keywords="about safe or stolen, company mission, verify before you buy, stolen goods prevention"
       />
       {/* Hero Section */}
       <section className="relative py-20">

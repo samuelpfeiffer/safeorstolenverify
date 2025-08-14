@@ -1,9 +1,16 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const TermsPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-sos text-white py-12">
+    <>
+      <SEOHead
+        title="Terms of Service - Safe or Stolen"
+        description="Terms of service and user agreement for Safe or Stolen verification platform. Read our service terms and conditions."
+        keywords="terms of service, user agreement, safe or stolen terms, legal terms"
+      />
+      <div className="min-h-screen bg-sos text-white py-12">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 gradient-text">Terms of Service</h1>
@@ -134,6 +141,7 @@ const TermsPage: React.FC = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 
