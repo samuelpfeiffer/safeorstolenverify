@@ -38,11 +38,17 @@ const Features = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Why Choose Safe or Stolen?
+            How Our Verification Process Works
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Simple, fast, and reliable verification to keep you safe from stolen goods.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Our advanced AI technology cross-references multiple databases to give you instant peace of mind when buying secondhand items.
           </p>
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
+            <span>✓ Police Databases</span>
+            <span>✓ Insurance Claims</span>
+            <span>✓ Manufacturer Reports</span>
+            <span>✓ International Networks</span>
+          </div>
         </div>
 
         {/* Features Grid */}
