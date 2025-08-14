@@ -11,41 +11,56 @@ const SITE_CONFIG = {
   twitterHandle: '@safeorstolen',
   author: 'Safe or Stolen Team',
   keywords: [
-    'stolen goods check',
-    'verify before you buy',
-    'is this stolen',
-    'check if stolen',
+    'check serial number',
+    'check VIN number',
+    'check IMEI',
+    'check MAC address',
+    'serial number lookup',
+    'VIN lookup stolen',
     'IMEI check stolen',
-    'serial number stolen check',
-    'VIN stolen lookup',
+    'check if phone stolen',
+    'check if car stolen',
+    'check if bike stolen',
+    'check if electronics stolen',
+    'check if laptop stolen',
+    'stolen phone lookup',
+    'stolen car check',
+    'stolen vehicle lookup',
+    'stolen electronics check',
+    'is my phone stolen',
+    'is my car stolen',
+    'verify serial number',
+    'verify VIN',
+    'verify IMEI',
+    'stolen goods check',
+    'check stolen property',
+    'lost or stolen lookup',
     'stolen item database',
-    'marketplace safety',
-    'eBay fraud prevention',
-    'Facebook Marketplace safety',
-    'Craigslist protection',
-    'secondhand safety',
-    'used item verification',
-    'How to check if something is stolen',
-    'How do I check if something is stolen?',
-    'Where to check if something is stolen?',
-    'Can I check if something is stolen before I buy it?',
-    'Should I buy this used item?',
-    'verify legitimacy',
-    'fraud protection',
+    'check before you buy',
+    'verify before buying',
+    'second hand verification',
+    'used item check',
+    'marketplace safety check',
+    'eBay stolen check',
+    'Facebook Marketplace stolen',
+    'Craigslist stolen check',
+    'how to check serial number',
+    'how to check VIN',
+    'how to check IMEI',
+    'where to check if stolen',
     'stolen goods verification',
-    'secondhand marketplace safety',
-    'consumer protection'
+    'fraud prevention check'
   ] as const,
 } as const;
 
 // Page-specific metadata
 const PAGE_METADATA: Record<string, PageMetadata> = {
   home: {
-    title: `Safe or Stolen - Verify Before You Buy | Stolen Goods Check`,
-    description: 'Check if items are stolen before buying. Free IMEI, serial number, VIN verification. Protect yourself from fraud on eBay, Facebook Marketplace, Craigslist. Instant results.',
+    title: `Check Serial Numbers, VIN, IMEI - Safe or Stolen Verification`,
+    description: 'Check serial numbers, VIN, IMEI, MAC addresses instantly. Verify if phones, cars, electronics, bikes are stolen before you buy. Free stolen goods lookup database.',
     keywords: SITE_CONFIG.keywords.join(', '),
-    ogTitle: `Safe or Stolen - Check If Items Are Stolen Before You Buy`,
-    ogDescription: 'Free tool to verify if items are stolen. Check IMEI, serial numbers, VIN before buying on marketplaces. Protect yourself from fraud.',
+    ogTitle: `Check Serial Numbers & VIN - Stolen Goods Verification`,
+    ogDescription: 'Free tool to check serial numbers, VIN, IMEI. Verify if items are stolen before buying on eBay, Facebook Marketplace, Craigslist.',
     ogImage: SITE_CONFIG.ogImage,
     robotsDirectives: 'index, follow, max-image-preview:large'
   },
@@ -110,6 +125,33 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'stolen goods news, marketplace safety blog, consumer protection tips, fraud prevention insights',
     ogTitle: 'Safe or Stolen Blog - Latest Marketplace Safety Insights',
     ogDescription: 'Expert insights on marketplace safety, fraud prevention, and protecting yourself from stolen goods.',
+    robotsDirectives: 'index, follow'
+  },
+
+  'check-phone': {
+    title: `Check If Phone Is Stolen - IMEI Lookup | ${SITE_CONFIG.name}`,
+    description: 'Check if a phone is stolen using IMEI lookup. Verify smartphones before buying on eBay, Facebook Marketplace. Free stolen phone database check.',
+    keywords: 'check if phone stolen, IMEI lookup, check IMEI, stolen phone check, is my phone stolen, verify phone IMEI, stolen smartphone lookup',
+    ogTitle: 'Check If Phone Is Stolen - Free IMEI Lookup',
+    ogDescription: 'Verify if a smartphone is stolen before you buy. Free IMEI check against stolen phone databases.',
+    robotsDirectives: 'index, follow'
+  },
+
+  'check-car': {
+    title: `Check If Car Is Stolen - VIN Lookup | ${SITE_CONFIG.name}`,
+    description: 'Check if a car is stolen using VIN lookup. Verify vehicles before buying. Free stolen car database check for used cars, motorcycles, trucks.',
+    keywords: 'check if car stolen, VIN lookup, check VIN number, stolen car check, is my car stolen, verify VIN, stolen vehicle lookup',
+    ogTitle: 'Check If Car Is Stolen - Free VIN Lookup',
+    ogDescription: 'Verify if a vehicle is stolen before you buy. Free VIN check against stolen car databases.',
+    robotsDirectives: 'index, follow'
+  },
+
+  'check-electronics': {
+    title: `Check If Electronics Are Stolen - Serial Number Lookup | ${SITE_CONFIG.name}`,
+    description: 'Check if electronics are stolen using serial number lookup. Verify laptops, tablets, gaming devices before buying. Free stolen electronics database.',
+    keywords: 'check if electronics stolen, serial number lookup, check serial number, stolen electronics check, verify electronics, stolen laptop check',
+    ogTitle: 'Check If Electronics Are Stolen - Serial Number Lookup',
+    ogDescription: 'Verify if electronics are stolen before you buy. Free serial number check for laptops, tablets, gaming devices.',
     robotsDirectives: 'index, follow'
   }
 };

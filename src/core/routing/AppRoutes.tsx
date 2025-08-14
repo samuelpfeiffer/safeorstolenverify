@@ -45,6 +45,11 @@ const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounder
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
+// Item-specific verification pages
+const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
+const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
+const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
+
 // User history & receipts
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
 const ReceiptsPage = lazy(() => import('@/pages/ReceiptsPage'));
@@ -92,6 +97,11 @@ export const AppRoutes: React.FC = () => {
           {/* Real-time Verification */}
           <Route path="real-time-verification" element={<RealTimeVerificationPage />} />
           <Route path="firearms-check" element={<FirearmsCheckPage />} />
+          
+          {/* Item-specific verification pages */}
+          <Route path="check-phone" element={<CheckPhonePage />} />
+          <Route path="check-car" element={<CheckCarPage />} />
+          <Route path="check-electronics" element={<CheckElectronicsPage />} />
 
           {/* Protected User Routes */}
           <Route path="verify" element={
