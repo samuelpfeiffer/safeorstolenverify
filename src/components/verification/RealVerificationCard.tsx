@@ -17,11 +17,51 @@ import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
 import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
 
 interface RealVerificationCardProps {
-  verificationResult: VerificationResult;
+  verificationResult?: VerificationResult;
 }
 
 const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps) => {
   const { generateReceipt, isGenerating } = useReceiptGenerator();
+
+  // Show placeholder when no verification result is provided
+  if (!verificationResult) {
+    return (
+      <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-2 border-primary/20">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <Shield className="h-8 w-8 text-primary" />
+            <div>
+              <CardTitle className="text-xl text-primary">
+                Ready to Verify Items
+              </CardTitle>
+              <p className="text-sm text-muted-foreground mt-1">
+                Enter a serial number above to check if an item is safe to purchase
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div className="space-y-2">
+              <CheckCircle className="h-6 w-6 text-green-600 mx-auto" />
+              <p className="text-sm font-medium">Safe Items</p>
+              <p className="text-xs text-muted-foreground">Clear to purchase</p>
+            </div>
+            <div className="space-y-2">
+              <XCircle className="h-6 w-6 text-red-600 mx-auto" />
+              <p className="text-sm font-medium">Stolen Items</p>
+              <p className="text-xs text-muted-foreground">Avoid purchasing</p>
+            </div>
+            <div className="space-y-2">
+              <AlertTriangle className="h-6 w-6 text-orange-600 mx-auto" />
+              <p className="text-sm font-medium">Lost Items</p>
+              <p className="text-xs text-muted-foreground">Exercise caution</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   const getStatusInfo = (status: string) => {
     switch (status) {
