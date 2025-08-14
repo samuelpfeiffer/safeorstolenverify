@@ -26,6 +26,18 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
   {
+    url: 'https://safeorstolen.com/real-time-verification',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.9
+  },
+  {
+    url: 'https://safeorstolen.com/firearms-check',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.9
+  },
+  {
     url: 'https://safeorstolen.com/how-it-works',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
@@ -37,6 +49,48 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
         title: 'Safe Or Stolen Global Verification Process'
       }
     ]
+  },
+  {
+    url: 'https://safeorstolen.com/enterprise-demo',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.8
+  },
+  {
+    url: 'https://safeorstolen.com/api-docs',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.8
+  },
+  {
+    url: 'https://safeorstolen.com/referral',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.7
+  },
+  {
+    url: 'https://safeorstolen.com/check-phone',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.8
+  },
+  {
+    url: 'https://safeorstolen.com/check-car',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.8
+  },
+  {
+    url: 'https://safeorstolen.com/check-electronics',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.8
+  },
+  {
+    url: 'https://safeorstolen.com/check-bike',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.8
   },
   {
     url: 'https://safeorstolen.com/for-brands',

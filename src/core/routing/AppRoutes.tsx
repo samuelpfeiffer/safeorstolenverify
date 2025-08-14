@@ -58,6 +58,12 @@ const ReceiptsPage = lazy(() => import('@/pages/ReceiptsPage'));
 const PurchaseHistoryPage = lazy(() => import('@/pages/PurchaseHistoryPage'));
 const SecuritySettingsPage = lazy(() => import('@/pages/SecuritySettingsPage'));
 
+// Enterprise & Marketing Pages
+const EnterpriseDemo = lazy(() => import('@/pages/EnterpriseDemo'));
+const ReferralPage = lazy(() => import('@/pages/ReferralPage'));
+const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
+const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
+
 /**
  * Enterprise Application Routing
  * Handles all application routes with proper lazy loading and access control
@@ -91,6 +97,12 @@ export const AppRoutes: React.FC = () => {
           <Route path="disclaimer" element={<DisclaimerPage />} />
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="refunds" element={<RefundsPage />} />
+          
+          {/* Enterprise & Marketing Routes */}
+          <Route path="enterprise-demo" element={<EnterpriseDemo />} />
+          <Route path="referral" element={<ReferralPage />} />
+          <Route path="api-docs" element={<ApiDocsPage />} />
+          <Route path="sitemap" element={<SitemapPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
