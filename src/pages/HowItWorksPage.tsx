@@ -42,9 +42,69 @@ const HowItWorksPage: React.FC = () => {
   return (
     <>
       <SEOHead 
-        title="How It Works - Safe or Stolen Verification Process"
-        description="Learn how our verification system works to protect you from stolen goods. Real-time database checks in seconds with step-by-step process explanation."
-        keywords="how it works, verification process, stolen goods check, database verification, item verification steps"
+        title="How It Works - IMEI, Serial Number & VIN Verification in 4 Steps"
+        description="Learn how Safe or Stolen verifies IMEI, serial numbers, and VIN codes across 50+ global databases in real-time. Protect yourself from stolen goods with our 4-step verification process."
+        keywords="how verification works, IMEI checker, serial number verification, VIN check, stolen goods database, verification process, check if stolen"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Verify IMEI, Serial Numbers & VIN Codes",
+          "description": "Step-by-step guide to verify items before purchase using Safe or Stolen verification system",
+          "image": "https://safeorstolen.com/how-it-works-image.png",
+          "totalTime": "PT2M",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+          },
+          "supply": [
+            {
+              "@type": "HowToSupply",
+              "name": "Item identifier (IMEI, Serial Number, or VIN)"
+            }
+          ],
+          "tool": [
+            {
+              "@type": "HowToTool",
+              "name": "Safe or Stolen Verification System"
+            }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Enter Item Details",
+              "text": "Input the serial number, IMEI, or unique identifier of the item you want to verify.",
+              "image": "https://safeorstolen.com/step1-enter-details.png",
+              "url": "https://safeorstolen.com/how-it-works#step1"
+            },
+            {
+              "@type": "HowToStep", 
+              "name": "Database Search",
+              "text": "Our system searches through millions of records in real-time across 50+ global law enforcement databases.",
+              "image": "https://safeorstolen.com/step2-database-search.png",
+              "url": "https://safeorstolen.com/how-it-works#step2"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Security Verification", 
+              "text": "Advanced algorithms verify legitimacy and cross-reference stolen goods databases using multiple verification sources.",
+              "image": "https://safeorstolen.com/step3-security-verification.png",
+              "url": "https://safeorstolen.com/how-it-works#step3"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Get Results",
+              "text": "Receive instant verification results with detailed information about the item's status and safety.",
+              "image": "https://safeorstolen.com/step4-get-results.png", 
+              "url": "https://safeorstolen.com/how-it-works#step4"
+            }
+          ],
+          "about": {
+            "@type": "Thing",
+            "name": "Item Verification",
+            "description": "Stolen goods verification and item authentication"
+          }
+        }}
       />
       
       <div className="min-h-screen bg-background">
@@ -55,10 +115,10 @@ const HowItWorksPage: React.FC = () => {
               How It Works
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Verify Items in <span className="text-sos-orange">4 Simple Steps</span>
+              Verify IMEI, Serial Numbers & VIN in <span className="text-sos-orange">4 Simple Steps</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Our advanced verification system checks millions of records in real-time to protect you from unknowingly purchasing stolen goods.
+              Our advanced verification system checks millions of records across 50+ global databases in real-time to protect you from unknowingly purchasing stolen phones, electronics, cars, and more.
             </p>
             <Link to="/verify">
               <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">

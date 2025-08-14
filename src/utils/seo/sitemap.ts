@@ -1,4 +1,3 @@
-
 export interface SitemapEntry {
   url: string;
   lastmod?: string;
@@ -12,104 +11,149 @@ export interface SitemapEntry {
 }
 
 export const generateStaticSitemapEntries = (): SitemapEntry[] => [
+  // Core Pages - Maximum Priority
   {
     url: 'https://safeorstolen.com/',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
+    changefreq: 'daily',
     priority: 1.0,
     images: [
       {
         loc: 'https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
-        caption: 'Safe Or Stolen Logo - Global IMEI, Serial & VIN Verification Service',
+        caption: 'Safe Or Stolen - Global IMEI, Serial & VIN Verification Service',
         title: 'Safe Or Stolen Global Verification Service'
       }
     ]
   },
+  
+  // Primary Verification Services - Critical for SEO
   {
     url: 'https://safeorstolen.com/real-time-verification',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/firearms-check',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/how-it-works',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
+    changefreq: 'always',
     priority: 0.9,
     images: [
       {
-        loc: 'https://safeorstolen.com/how-it-works-image.png',
-        caption: 'How IMEI, Serial Number and VIN verification works globally - 3 simple steps',
-        title: 'Safe Or Stolen Global Verification Process'
+        loc: 'https://safeorstolen.com/real-time-verification-image.png',
+        caption: 'Real-time IMEI, Serial Number and VIN verification across global databases',
+        title: 'Safe Or Stolen Real-time Verification'
       }
     ]
   },
-  {
-    url: 'https://safeorstolen.com/enterprise-demo',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8
-  },
-  {
-    url: 'https://safeorstolen.com/api-docs',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8
-  },
-  {
-    url: 'https://safeorstolen.com/referral',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
+  
+  // Verification Type Pages - High SEO Value for Targeted Keywords
   {
     url: 'https://safeorstolen.com/check-phone',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8
+    changefreq: 'always',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/phone-verification-image.png',
+        caption: 'IMEI and ESN phone verification - Check if phone is stolen',
+        title: 'Safe Or Stolen Phone IMEI Verification'
+      }
+    ]
   },
   {
     url: 'https://safeorstolen.com/check-car',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8
+    changefreq: 'always',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/car-verification-image.png',
+        caption: 'VIN number verification - Check if car is stolen',
+        title: 'Safe Or Stolen Car VIN Verification'
+      }
+    ]
   },
   {
     url: 'https://safeorstolen.com/check-electronics',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8
+    changefreq: 'always',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/electronics-verification-image.png',
+        caption: 'Serial number verification for electronics - Check if stolen',
+        title: 'Safe Or Stolen Electronics Verification'
+      }
+    ]
   },
   {
     url: 'https://safeorstolen.com/check-bike',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8
+    changefreq: 'always',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/bike-verification-image.png',
+        caption: 'Bicycle serial number verification - Check if bike is stolen',
+        title: 'Safe Or Stolen Bike Verification'
+      }
+    ]
   },
+  
+  // Firearms Check - Specialized Service
   {
-    url: 'https://safeorstolen.com/for-brands',
+    url: 'https://safeorstolen.com/firearms-check',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'always',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/firearms-verification-image.png',
+        caption: 'Firearm serial number verification - Check if firearm is stolen',
+        title: 'Safe Or Stolen Firearms Verification'
+      }
+    ]
+  },
+  
+  // How It Works - Essential for User Education & SEO
+  {
+    url: 'https://safeorstolen.com/how-it-works',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.8,
     images: [
       {
-        loc: 'https://safeorstolen.com/brands-image.png',
-        caption: 'Safe Or Stolen for brands worldwide - Global brand protection services',
-        title: 'Global Brand Protection Services'
+        loc: 'https://safeorstolen.com/how-it-works-image.png',
+        caption: 'How IMEI, Serial Number and VIN verification works globally - 4 simple steps',
+        title: 'Safe Or Stolen Global Verification Process'
       }
     ]
   },
+  
+  // Core Business Pages
+  {
+    url: 'https://safeorstolen.com/pricing',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.8
+  },
+  
+  // Content Marketing Hub
+  {
+    url: 'https://safeorstolen.com/blog',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'weekly',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/og-image-blog.png',
+        caption: 'Safe Or Stolen Blog - Verification news, guides, and safety tips',
+        title: 'Verification Blog and News'
+      }
+    ]
+  },
+  
+  // Target Audience Pages
   {
     url: 'https://safeorstolen.com/for-consumers',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
-    priority: 0.8,
+    priority: 0.7,
     images: [
       {
         loc: 'https://safeorstolen.com/consumers-image.png',
@@ -119,32 +163,90 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
   {
-    url: 'https://safeorstolen.com/blog',
+    url: 'https://safeorstolen.com/for-brands',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'daily',
+    changefreq: 'monthly',
     priority: 0.7,
     images: [
       {
-        loc: 'https://safeorstolen.com/og-image-blog.png',
-        caption: 'Safe Or Stolen Blog - Verification news, guides, and safety tips',
-        title: 'Verification Blog and News'
+        loc: 'https://safeorstolen.com/brands-image.png',
+        caption: 'Safe Or Stolen for brands worldwide - Global brand protection services',
+        title: 'Global Brand Protection Services'
       }
     ]
   },
+  
+  // Enterprise Services
   {
-    url: 'https://safeorstolen.com/contact',
+    url: 'https://safeorstolen.com/enterprise-demo',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.7
+  },
+  {
+    url: 'https://safeorstolen.com/api-docs',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.6
+  },
+  
+  // Company Information
+  {
+    url: 'https://safeorstolen.com/about',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'yearly',
+    priority: 0.6
+  },
+  {
+    url: 'https://safeorstolen.com/our-story',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'yearly',
+    priority: 0.6
+  },
+  {
+    url: 'https://safeorstolen.com/about-problem',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.6
+  },
+  
+  // Support & Trust Pages
+  {
+    url: 'https://safeorstolen.com/contact',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'yearly',
+    priority: 0.5
+  },
+  {
+    url: 'https://safeorstolen.com/faq',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.5
+  },
+  
+  // Marketing & Growth
+  {
+    url: 'https://safeorstolen.com/referral',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.5
+  },
+  
+  // Legal Pages - Important for Trust & Compliance
+  {
+    url: 'https://safeorstolen.com/privacy-policy',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'yearly',
+    priority: 0.4
   },
   {
     url: 'https://safeorstolen.com/terms-of-service',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
-    priority: 0.3
+    priority: 0.4
   },
   {
-    url: 'https://safeorstolen.com/privacy-policy',
+    url: 'https://safeorstolen.com/disclaimer',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
     priority: 0.3
@@ -228,59 +330,44 @@ export const generateSitemapXML = (entries: SitemapEntry[]): string => {
 };
 
 export const generateRobotsTxt = (): string => {
-  return `# Safe Or Stolen Global robots.txt
+  return `# Enhanced robots.txt for Safe Or Stolen
 User-agent: *
 Allow: /
 
-# Enhanced crawling for major search engines
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Sitemap locations
-Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/sitemap-news.xml
-
-# Prevent crawling of admin, private, or dynamic areas
-User-agent: *
+# Disallow sensitive or non-indexable areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Disallow: /auth/callback
-Disallow: /verification-success
-Disallow: /_next/
-Disallow: /tmp/
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /analytics/
+Disallow: /subscription/
+Disallow: /security-settings/
+Disallow: /404
+Disallow: /*?*
+Disallow: /*.json$
 
-# Block tracking parameters
-Disallow: /*?*utm_*
-Disallow: /*?*fbclid*
-Disallow: /*?*gclid*
-Disallow: /*?*ref=*
-Disallow: /*?*source=*
+# Allow important public pages
+Allow: /blog/
+Allow: /real-time-verification
+Allow: /firearms-check
+Allow: /how-it-works
+Allow: /for-consumers
+Allow: /for-brands
+Allow: /about-problem
+Allow: /our-story
+Allow: /pricing
+Allow: /contact
+Allow: /faq
 
-# Allow important assets and pages
-Allow: /lovable-uploads/
+# Allow verification type pages - high SEO value
+Allow: /check-phone
+Allow: /check-car
+Allow: /check-electronics
+Allow: /check-bike
+
+# Allow assets
 Allow: /*.css
 Allow: /*.js
 Allow: /*.png
@@ -290,18 +377,11 @@ Allow: /*.gif
 Allow: /*.svg
 Allow: /*.webp
 Allow: /*.ico
-Allow: /blog/
-Allow: /how-it-works
-Allow: /for-brands
-Allow: /for-consumers
-Allow: /contact
-Allow: /terms-of-service
-Allow: /privacy-policy
 
-# Cache directive for better performance
-User-agent: *
-Request-rate: 1/1s
+# Crawl delay for respectful crawling
+Crawl-delay: 1
 
-# Host directive
-Host: https://safeorstolen.com`;
+# Sitemap location
+Sitemap: https://safeorstolen.com/sitemap.xml
+`;
 };
