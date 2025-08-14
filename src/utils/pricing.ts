@@ -32,7 +32,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_basic_monthly'
+    stripePriceId: 'price_1QdcLPFzDDOvseYj7oNsHQ2m' // Basic monthly plan
   },
   premium: {
     name: 'Premium',
@@ -46,7 +46,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Priority support',
       'Custom verification alerts'
     ],
-    stripePriceId: 'price_premium_monthly'
+    stripePriceId: 'price_1QdcMBFzDDOvseYjKFxWQPZC' // Premium monthly plan
   },
   enterprise: {
     name: 'Enterprise',
@@ -59,7 +59,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Custom integrations',
       'Dedicated account manager'
     ],
-    stripePriceId: 'price_enterprise_monthly'
+    stripePriceId: 'price_1QdcMgFzDDOvseYjHQRLVCzw' // Enterprise monthly plan
   }
 };
 
