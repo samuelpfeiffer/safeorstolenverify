@@ -175,4 +175,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>https://www.safeorstolen.com/cookies</loc>
+    <lastmod>2025-08-14T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.safeorstolen.com/refunds</loc>
+    <lastmod>2025-08-14T12:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
