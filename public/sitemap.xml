@@ -216,6 +216,14 @@
     <priority>0.7</priority>
   </url>
   
+  <!-- Community Page -->
+  <url>
+    <loc>https://safeorstolen.com/community</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Legal Pages - Important for Trust & Compliance -->
   <url>
     <loc>https://safeorstolen.com/privacy-policy</loc>

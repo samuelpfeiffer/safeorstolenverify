@@ -63,6 +63,7 @@ const EnterpriseDemo = lazy(() => import('@/pages/EnterpriseDemo'));
 const ReferralPage = lazy(() => import('@/pages/ReferralPage'));
 const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
 const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
+const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 
 /**
  * Enterprise Application Routing
@@ -103,6 +104,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="referral" element={<ReferralPage />} />
           <Route path="api-docs" element={<ApiDocsPage />} />
           <Route path="sitemap" element={<SitemapPage />} />
+          <Route path="community" element={<CommunityPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />

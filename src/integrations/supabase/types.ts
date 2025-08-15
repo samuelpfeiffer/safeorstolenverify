@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "12.2.3 (519615d)"
@@ -440,6 +440,48 @@ export type Database = {
           status?: string | null
           stripe_price_id?: string
           stripe_session_id?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      community_stories: {
+        Row: {
+          created_at: string
+          email: string | null
+          experience_type: string
+          id: string
+          is_approved: boolean
+          item_type: string
+          name: string | null
+          search_terms: unknown | null
+          story: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          experience_type: string
+          id?: string
+          is_approved?: boolean
+          item_type: string
+          name?: string | null
+          search_terms?: unknown | null
+          story: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          experience_type?: string
+          id?: string
+          is_approved?: boolean
+          item_type?: string
+          name?: string | null
+          search_terms?: unknown | null
+          story?: string
           updated_at?: string
           user_id?: string | null
         }
@@ -1261,20 +1303,20 @@ export type Database = {
         Args:
           | { key_user_id: string }
           | {
+              operation_type: string
               requesting_user_id: string
               resource_user_id: string
-              operation_type: string
             }
         Returns: boolean
       }
       validate_oauth_token_access: {
         Args:
           | {
+              operation_type: string
               requesting_user_id: string
               resource_user_id: string
-              operation_type: string
             }
-          | { token_user_id: string; token_id: string }
+          | { token_id: string; token_user_id: string }
         Returns: boolean
       }
     }

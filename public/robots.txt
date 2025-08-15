@@ -28,6 +28,7 @@ Allow: /our-story
 Allow: /pricing
 Allow: /contact
 Allow: /faq
+Allow: /community
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1
