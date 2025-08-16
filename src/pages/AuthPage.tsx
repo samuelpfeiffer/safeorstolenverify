@@ -27,6 +27,7 @@ const AuthPage = () => {
   const navigate = useNavigate();
   const { signIn, signUp, loading } = useAuth();
   const defaultTab = searchParams.get('tab') === 'signup' ? 'signup' : 'signin';
+  const [activeTab, setActiveTab] = useState(defaultTab);
 
   const signInForm = useForm({
     resolver: zodResolver(signInSchema),
@@ -51,6 +52,13 @@ const AuthPage = () => {
     if (result.success) {
       // Don't navigate immediately, let user handle email verification
       signUpForm.reset();
+    } else if (result.error === 'User already exists') {
+      // Switch to sign in tab when user already exists
+      setActiveTab('signin');
+      // Pre-fill the email on the sign in form
+      setTimeout(() => {
+        signInForm.setValue('email', values.email);
+      }, 100);
     }
     // Error handling is done inside the auth hook
   };
@@ -79,7 +87,7 @@ const AuthPage = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue={defaultTab} className="w-full">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="signin">Sign In</TabsTrigger>
                 <TabsTrigger value="signup">Sign Up</TabsTrigger>

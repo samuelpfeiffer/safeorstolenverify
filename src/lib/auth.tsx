@@ -182,8 +182,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (error) {
         let errorMessage = 'Sign up failed';
-        if (error.message.includes('already registered')) {
-          errorMessage = 'An account with this email already exists';
+        if (error.message.includes('already registered') || error.message.includes('User already registered')) {
+          // Clear the form and suggest sign in instead
+          toast({
+            title: 'Account already exists',
+            description: 'An account with this email already exists. Please sign in instead.',
+            variant: 'destructive',
+          });
+          return { success: false, error: 'User already exists' };
         } else if (error.message.includes('Password')) {
           errorMessage = 'Password must be at least 6 characters';
         } else {
