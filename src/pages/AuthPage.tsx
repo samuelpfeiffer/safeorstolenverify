@@ -8,8 +8,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { TermsAndConditions } from '@/components/auth/TermsAndConditions';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const signInSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -22,12 +25,17 @@ const signUpSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
 });
 
+type AuthStep = 'auth' | 'terms';
+
 const AuthPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { signIn, signUp, loading } = useAuth();
+  const { signIn, signUp, loading, user } = useAuth();
+  const { toast } = useToast();
   const defaultTab = searchParams.get('tab') === 'signup' ? 'signup' : 'signin';
   const [activeTab, setActiveTab] = useState(defaultTab);
+  const [step, setStep] = useState<AuthStep>('auth');
+  const [pendingUser, setPendingUser] = useState<any>(null);
 
   const signInForm = useForm({
     resolver: zodResolver(signInSchema),
@@ -44,24 +52,87 @@ const AuthPage = () => {
     if (result.success) {
       navigate('/dashboard');
     }
-    // Error handling is done inside the auth hook
   };
 
   const onSignUp = async (values: z.infer<typeof signUpSchema>) => {
     const result = await signUp(values.email, values.password, values.fullName);
     if (result.success) {
-      // Don't navigate immediately, let user handle email verification
-      signUpForm.reset();
+      // For signup, we need to get the user from auth context after successful signup
+      if (user) {
+        setPendingUser(user);
+        setStep('terms');
+      } else {
+        // Handle case where user needs email verification
+        toast({
+          title: "Check your email",
+          description: "Please check your email to verify your account.",
+        });
+      }
     } else if (result.error === 'User already exists') {
-      // Switch to sign in tab when user already exists
       setActiveTab('signin');
-      // Pre-fill the email on the sign in form
       setTimeout(() => {
         signInForm.setValue('email', values.email);
       }, 100);
     }
-    // Error handling is done inside the auth hook
   };
+
+  const handleTermsAccept = async () => {
+    if (!pendingUser) return;
+
+    try {
+      // Record terms acceptance
+      const { error } = await supabase
+        .from('user_terms_acceptance')
+        .insert({
+          user_id: pendingUser.id,
+          terms_version: '1.0',
+          ip_address: null, // Would be filled by actual IP detection
+          user_agent: navigator.userAgent,
+        });
+
+      if (error) {
+        console.error('Terms acceptance error:', error);
+        toast({
+          title: "Error",
+          description: "Failed to record terms acceptance. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      toast({
+        title: "Welcome!",
+        description: "Your account has been created successfully!",
+      });
+
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Terms acceptance error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to complete registration. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleTermsDecline = () => {
+    setStep('auth');
+    setPendingUser(null);
+    signUpForm.reset();
+  };
+
+  if (step === 'terms') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted flex items-center justify-center p-4">
+        <TermsAndConditions
+          onAccept={handleTermsAccept}
+          onDecline={handleTermsDecline}
+          isLoading={loading}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted flex items-center justify-center p-4">
@@ -76,13 +147,13 @@ const AuthPage = () => {
           </Button>
         </div>
 
-        <Card>
+        <Card className="border border-border bg-card">
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
               <Shield className="h-12 w-12 text-primary" />
             </div>
-            <CardTitle className="text-2xl">Safe or Stolen</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-2xl text-card-foreground">Safe or Stolen</CardTitle>
+            <CardDescription className="text-muted-foreground">
               Sign in to your account or create a new one
             </CardDescription>
           </CardHeader>
@@ -101,9 +172,9 @@ const AuthPage = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="text-card-foreground">Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your email" {...field} />
+                            <Input placeholder="Enter your email" {...field} className="bg-background border-border text-foreground" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -114,9 +185,9 @@ const AuthPage = () => {
                       name="password"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Password</FormLabel>
+                          <FormLabel className="text-card-foreground">Password</FormLabel>
                           <FormControl>
-                            <Input type="password" placeholder="Enter your password" {...field} />
+                            <Input type="password" placeholder="Enter your password" {...field} className="bg-background border-border text-foreground" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -137,9 +208,9 @@ const AuthPage = () => {
                       name="fullName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Full Name</FormLabel>
+                          <FormLabel className="text-card-foreground">Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your full name" {...field} />
+                            <Input placeholder="Enter your full name" {...field} className="bg-background border-border text-foreground" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -150,9 +221,9 @@ const AuthPage = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="text-card-foreground">Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="Enter your email" {...field} />
+                            <Input placeholder="Enter your email" {...field} className="bg-background border-border text-foreground" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -163,9 +234,9 @@ const AuthPage = () => {
                       name="password"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Password</FormLabel>
+                          <FormLabel className="text-card-foreground">Password</FormLabel>
                           <FormControl>
-                            <Input type="password" placeholder="Create a password" {...field} />
+                            <Input type="password" placeholder="Create a password" {...field} className="bg-background border-border text-foreground" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
