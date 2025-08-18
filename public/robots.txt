@@ -34,4 +34,4 @@ Allow: /community
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://www.safeorstolen.com/sitemap.xml
+Sitemap: https://safeorstolen.com/sitemap.xml
