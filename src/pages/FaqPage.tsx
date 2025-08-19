@@ -1,7 +1,8 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SEOHead } from '@/components/seo/SEOHead';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
 const FaqPage = () => {
   const faqs = [
@@ -52,13 +53,19 @@ const FaqPage = () => {
     }))
   };
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'FAQ', url: '/faq' }
+  ]);
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <SEOHead
-        title="Safe Or Stolen FAQ | Verify Before You Buy"
-        description="Answers to common questions about verifying IMEI, serial and VIN numbers before you buy."
+      <EnhancedSEOHead
+        title="FAQ - Check if Stolen: IMEI, VIN, Serial Number Questions | Safe or Stolen"
+        description="Get answers to common questions about checking if items are stolen. Learn how to verify IMEI, VIN, serial numbers before buying secondhand items."
+        keywords="check if stolen FAQ, IMEI check questions, VIN verification help, serial number lookup questions, stolen goods verification FAQ, how to check if stolen, verify before buying FAQ"
         canonical="/faq"
-        structuredData={faqSchema}
+        additionalSchemas={[faqSchema, breadcrumbSchema]}
       />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">

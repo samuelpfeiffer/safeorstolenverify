@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { SEOHead } from '@/components/seo/SEOHead';
-import { getPageMetadata } from '@/utils/seo/metadata';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,12 @@ const CheckElectronicsPage: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [result, setResult] = useState<'clean' | 'stolen' | null>(null);
   const [detectedType, setDetectedType] = useState<string>('');
-  const metadata = getPageMetadata('check-electronics');
+  const serviceSchema = createServiceSchema();
+  const faqSchema = createFAQSchema();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Check Electronics', url: '/check-electronics' }
+  ]);
 
   const handleSearch = async () => {
     if (!serialNumber.trim()) return;
@@ -30,12 +36,14 @@ const CheckElectronicsPage: React.FC = () => {
 
   return (
     <>
-      <SEOHead 
-        title={metadata.title}
-        description={metadata.description}
-        keywords={metadata.keywords}
+      <EnhancedSEOHead 
+        title="Check if Electronics Are Stolen - Free Serial Number Lookup | Safe or Stolen"
+        description="Check if electronics are stolen using serial number lookup. Verify laptops, tablets, gaming consoles before buying. Free stolen electronics database check."
+        keywords="check if electronics stolen, electronic serial number lookup, check laptop stolen, tablet stolen check, gaming console stolen, verify electronics serial, stolen electronics database, laptop theft check"
         canonical="/check-electronics"
+        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
+      <CompetitiveKeywords pageType="serial" />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">

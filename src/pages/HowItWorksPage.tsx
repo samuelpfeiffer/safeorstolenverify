@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import HowItWorks from '@/components/HowItWorks';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Search, CheckCircle, Database } from 'lucide-react';
 
@@ -39,13 +40,12 @@ const HowItWorksPage: React.FC = () => {
     }
   ];
 
-  return (
-    <>
-      <SEOHead 
-        title="How It Works - IMEI, Serial Number & VIN Verification in 4 Steps"
-        description="Learn how Safe or Stolen verifies IMEI, serial numbers, and VIN codes across 50+ global databases in real-time. Protect yourself from stolen goods with our 4-step verification process."
-        keywords="how verification works, IMEI checker, serial number verification, VIN check, stolen goods database, verification process, check if stolen"
-        structuredData={{
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'How It Works', url: '/how-it-works' }
+  ]);
+
+  const howToSchema = {
           "@context": "https://schema.org",
           "@type": "HowTo",
           "name": "How to Verify IMEI, Serial Numbers & VIN Codes",
@@ -104,7 +104,16 @@ const HowItWorksPage: React.FC = () => {
             "name": "Item Verification",
             "description": "Stolen goods verification and item authentication"
           }
-        }}
+        };
+
+  return (
+    <>
+      <EnhancedSEOHead 
+        title="How It Works - Check if Stolen: IMEI, VIN, Serial Number Verification | Safe or Stolen"
+        description="Learn how Safe or Stolen verifies IMEI, serial numbers, and VIN codes across 50+ global databases in real-time. 4-step process to check if items are stolen."
+        keywords="how to check if stolen, IMEI verification process, VIN check how it works, serial number verification steps, stolen goods database check, verify before buying process, check if something is stolen"
+        canonical="/how-it-works"
+        additionalSchemas={[howToSchema, breadcrumbSchema]}
       />
       
       <div className="min-h-screen bg-background">

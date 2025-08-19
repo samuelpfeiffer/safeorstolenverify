@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { SEOHead } from '@/components/seo/SEOHead';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { createBreadcrumbSchema, createLocalBusinessSchema } from '@/utils/seo/structuredData';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -52,26 +53,21 @@ const ContactPage = () => {
     });
   };
 
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' }
+  ]);
+
+  const localBusinessSchema = createLocalBusinessSchema();
+
   return (
     <div className="bg-sos text-white min-h-screen">
-      <SEOHead
-        title="Contact Safe Or Stolen | Support & Inquiries"
-        description="Contact our team for support, partnerships, or media inquiries."
+      <EnhancedSEOHead
+        title="Contact Safe or Stolen - Support, Partnerships & Media Inquiries"
+        description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: safeorstolenmail@gmail.com"
+        keywords="contact safe or stolen, customer support, stolen goods verification support, IMEI check help, VIN verification support, partnership inquiries, media contact"
         canonical="/contact"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Safe Or Stolen",
-          "url": "https://safeorstolen.com",
-          "contactPoint": [{
-            "@type": "ContactPoint",
-            "contactType": "customer support",
-            "email": "safeorstolenmail@gmail.com",
-            "telephone": "+1-206-249-2203",
-            "areaServed": "US",
-            "availableLanguage": ["English"]
-          }]
-        }}
+        additionalSchemas={[localBusinessSchema, breadcrumbSchema]}
       />
       <div className="container mx-auto px-4 pt-24 pb-16">
         <Breadcrumb className="mb-6">

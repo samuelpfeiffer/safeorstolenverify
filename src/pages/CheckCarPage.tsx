@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { SEOHead } from '@/components/seo/SEOHead';
-import { getPageMetadata } from '@/utils/seo/metadata';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -11,7 +12,12 @@ const CheckCarPage: React.FC = () => {
   const [vin, setVin] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [result, setResult] = useState<'clean' | 'stolen' | null>(null);
-  const metadata = getPageMetadata('check-car');
+  const serviceSchema = createServiceSchema();
+  const faqSchema = createFAQSchema();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Check Car', url: '/check-car' }
+  ]);
 
   const handleSearch = async () => {
     if (!vin.trim()) return;
@@ -30,12 +36,14 @@ const CheckCarPage: React.FC = () => {
 
   return (
     <>
-      <SEOHead 
-        title={metadata.title}
-        description={metadata.description}
-        keywords={metadata.keywords}
+      <EnhancedSEOHead 
+        title="Check if Car is Stolen - Free VIN Lookup | Safe or Stolen"
+        description="Free VIN check to verify if vehicle is stolen before buying. Check car history against NICB database. Avoid buying stolen cars, trucks, motorcycles."
+        keywords="check if car stolen, VIN check, VIN lookup, vehicle stolen check, check stolen car, verify VIN number, stolen vehicle database, car history check, truck stolen check, motorcycle VIN check"
         canonical="/check-car"
+        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
+      <CompetitiveKeywords pageType="vin" />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">

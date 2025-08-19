@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogList } from '@/components/blog/BlogList';
 
-import { SEOHead } from '@/components/seo/SEOHead';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
 const BlogPage = () => {
   const { category } = useParams();
@@ -41,13 +42,21 @@ const BlogPage = () => {
     }))
   } : undefined;
 
+  const faqSchema = createFAQSchema();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+    ...(category ? [{ name: category.replace('-', ' '), url: `/blog/category/${category}` }] : [])
+  ]);
+
   return (
     <>
-      <SEOHead
+      <EnhancedSEOHead
         title={pageTitle}
         description={pageDescription}
+        keywords="stolen goods verification blog, check if stolen guide, IMEI check tutorial, VIN verification tips, serial number lookup guide, marketplace safety tips, avoid stolen items, buyer protection advice, fraud prevention blog, verify before buying tips"
         canonical={category ? `/blog/category/${category}` : '/blog'}
-        structuredData={itemListSchema}
+        additionalSchemas={[itemListSchema, faqSchema, breadcrumbSchema].filter(Boolean)}
       />
       
       <div className="bg-sos text-white min-h-screen">

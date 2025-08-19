@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -10,6 +12,13 @@ const CheckBikePage: React.FC = () => {
   const [serialNumber, setSerialNumber] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [result, setResult] = useState<'clean' | 'stolen' | null>(null);
+  
+  const serviceSchema = createServiceSchema();
+  const faqSchema = createFAQSchema();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Check Bike', url: '/check-bike' }
+  ]);
 
   const handleSearch = async () => {
     if (!serialNumber.trim()) return;
@@ -23,12 +32,14 @@ const CheckBikePage: React.FC = () => {
 
   return (
     <>
-      <SEOHead 
-        title="Check If Bike Is Stolen - Free Bicycle Serial Number Lookup"
-        description="Check if a bicycle is stolen using serial number lookup. Verify bikes before buying on Craigslist, Facebook Marketplace. Free stolen bike database check."
-        keywords="check if bike stolen, bicycle serial number lookup, check bicycle, stolen bike check, is my bike stolen, verify bike serial number, stolen bicycle lookup"
+      <EnhancedSEOHead 
+        title="Check If Bike Is Stolen - Free Bicycle Serial Number Lookup | Safe or Stolen"
+        description="Check if bicycle is stolen using serial number lookup. Verify bikes before buying on Craigslist, Facebook Marketplace. Free BikeIndex database check."
+        keywords="check if bike stolen, bicycle serial number lookup, check bicycle, stolen bike check, is my bike stolen, verify bike serial number, stolen bicycle lookup, bike index check, bicycle theft check"
         canonical="/check-bike"
+        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
+      <CompetitiveKeywords pageType="serial" />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">

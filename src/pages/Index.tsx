@@ -4,6 +4,8 @@ import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { LocalSEO } from '@/components/seo/LocalSEO';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 
 
@@ -16,9 +18,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <EnhancedSEOHead 
-        title="Check if an item is stolen – Safe or Stolen"
-        description="Enter IMEI, VIN, or serial to verify a used item instantly on safeorstolen.com. Check stolen items before you buy."
-        keywords="check stolen items, verify its not stolen, check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen, verify before you buy, IMEI check, VIN check, serial number check, safeorstolen.com"
+        title="Check if Stolen: Free IMEI, VIN, Serial Number Verification | Safe or Stolen"
+        description="Verify if items are stolen before buying. Free IMEI, VIN, serial number lookup. Check phones, cars, electronics against global stolen goods databases instantly."
+        keywords="check if stolen, IMEI check free, VIN check stolen, serial number lookup, verify before you buy, stolen goods verification, check stolen items, is it stolen, stolen phone check, stolen car check, free stolen check"
         canonical="/"
         additionalSchemas={[
           {
@@ -84,6 +86,8 @@ const Index = () => {
           ]
         }]}
       />
+      <CompetitiveKeywords pageType="homepage" />
+      <LocalSEO />
       <Hero />
       <SponsorsStrip />
       

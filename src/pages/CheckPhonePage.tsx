@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { SEOHead } from '@/components/seo/SEOHead';
-import { getPageMetadata } from '@/utils/seo/metadata';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -11,7 +12,12 @@ const CheckPhonePage: React.FC = () => {
   const [imei, setImei] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [result, setResult] = useState<'clean' | 'stolen' | null>(null);
-  const metadata = getPageMetadata('check-phone');
+  const serviceSchema = createServiceSchema();
+  const faqSchema = createFAQSchema();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Check Phone', url: '/check-phone' }
+  ]);
 
   const handleSearch = async () => {
     if (!imei.trim()) return;
@@ -30,12 +36,14 @@ const CheckPhonePage: React.FC = () => {
 
   return (
     <>
-      <SEOHead 
-        title={metadata.title}
-        description={metadata.description}
-        keywords={metadata.keywords}
+      <EnhancedSEOHead 
+        title="Check if Phone is Stolen - Free IMEI Lookup | Safe or Stolen"
+        description="Free IMEI check to verify if phone is stolen before buying. Check smartphone status against global databases. Avoid buying stolen phones on Craigslist, eBay, Facebook."
+        keywords="check if phone stolen, IMEI check, IMEI lookup, phone stolen check, check stolen phone, verify phone IMEI, stolen phone database, iPhone stolen check, Android stolen check, check IMEI free"
         canonical="/check-phone"
+        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
+      <CompetitiveKeywords pageType="imei" />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
