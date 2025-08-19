@@ -3,7 +3,7 @@
  */
 
 export const getCanonicalUrl = (path: string): string => {
-  const baseUrl = 'https://www.safeorstolen.com';
+  const baseUrl = 'https://safeorstolen.com';
   
   // Remove trailing slashes except for root
   const cleanPath = path === '/' ? path : path.replace(/\/+$/, '');
@@ -17,7 +17,7 @@ export const getCanonicalUrl = (path: string): string => {
 export const isValidCanonicalUrl = (url: string): boolean => {
   try {
     const parsedUrl = new URL(url);
-    return parsedUrl.protocol === 'https:' && parsedUrl.hostname === 'www.safeorstolen.com';
+    return parsedUrl.protocol === 'https:' && parsedUrl.hostname === 'safeorstolen.com';
   } catch {
     return false;
   }

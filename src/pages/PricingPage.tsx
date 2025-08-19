@@ -8,6 +8,7 @@ import { useSecureStripe } from "@/utils/stripe/secureStripeOperations";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -55,13 +56,50 @@ const PricingPage = () => {
     }
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Safe or Stolen Verification Service",
+    "description": "IMEI, serial number, and VIN verification service with multiple pricing tiers",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free Plan",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer", 
+        "name": "Basic Plan",
+        "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium Plan", 
+        "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
-          <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
-        </div>
+    <>
+      <SEOHead
+        title="Pricing - Safe or Stolen Verification Service"
+        description="Choose from free and paid verification plans. Get unlimited IMEI, serial number, and VIN checks starting from free tier."
+        canonical="/pricing"
+        structuredData={structuredData}
+      />
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
+            <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
+          </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Free Plan */}
@@ -157,8 +195,9 @@ const PricingPage = () => {
             Cancel anytime. No hidden fees.
           </p>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

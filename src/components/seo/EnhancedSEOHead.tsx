@@ -21,7 +21,7 @@ export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   type = 'website',
   additionalSchemas = []
 }) => {
-  const baseUrl = 'https://www.safeorstolen.com';
+  const baseUrl = 'https://safeorstolen.com';
   const fullCanonical = canonical
     ? (canonical.startsWith('http') ? canonical : `${baseUrl}${canonical}`)
     : `${baseUrl}${typeof window !== 'undefined' ? window.location.pathname + window.location.search : ''}`;
