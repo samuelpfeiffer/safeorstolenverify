@@ -82,6 +82,7 @@ const PrivacyPolicyPage: React.FC = () => {
         title="Privacy Policy - Safe or Stolen"
         description="Learn how Safe or Stolen protects your privacy and handles your data. Comprehensive privacy policy with GDPR compliance."
         keywords="privacy policy, data protection, GDPR, privacy rights, data security"
+        canonical="/privacy-policy"
       />
       
       <div className="min-h-screen bg-background">

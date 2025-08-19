@@ -82,6 +82,7 @@ const TermsOfServicePage: React.FC = () => {
         title="Terms of Service - Safe or Stolen"
         description="Read the complete terms of service for Safe or Stolen verification platform. Understand your rights and responsibilities."
         keywords="terms of service, user agreement, legal terms, service conditions"
+        canonical="/terms-of-service"
       />
       
       <div className="min-h-screen bg-background">

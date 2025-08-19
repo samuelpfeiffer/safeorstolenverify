@@ -39,10 +39,10 @@ export const GoogleRequirements: React.FC = () => {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "Safe or Stolen",
-          "url": "https://www.safeorstolen.com",
+          "url": "https://safeorstolen.com",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.safeorstolen.com/real-time-verification?q={search_term_string}",
+            "target": "https://safeorstolen.com/real-time-verification?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         })}

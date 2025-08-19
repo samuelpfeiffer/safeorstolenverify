@@ -22,8 +22,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   structuredData,
   noIndex = false
 }) => {
-  const fullImageUrl = image?.startsWith('http') ? image : `https://www.safeorstolen.com${image}`;
-  const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://www.safeorstolen.com${canonical}` : undefined;
+  const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
+  const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://safeorstolen.com${canonical}` : undefined;
 
   // Convert structured data to array format
   const structuredDataArray = structuredData 

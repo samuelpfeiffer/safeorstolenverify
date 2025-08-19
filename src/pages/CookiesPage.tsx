@@ -128,7 +128,7 @@ const CookiesPage: React.FC = () => {
                   <br />
                   Email: privacy@safeorstolen.com
                   <br />
-                  Website: www.safeorstolen.com/contact
+                  Website: safeorstolen.com/contact
                 </p>
               </section>
             </CardContent>
