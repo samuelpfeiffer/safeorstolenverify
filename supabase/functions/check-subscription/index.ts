@@ -132,10 +132,22 @@ serve(async (req) => {
 
       // Determine subscription tier from price ID
       const priceId = subscription.items.data[0].price.id;
-      let subscriptionTier = "Basic";
+      let subscriptionTier = "Basic"; // Default fallback
       
-      if (priceId === "price_1RcbMzQ3BLYiWM70t3G8oMq4") {
-        subscriptionTier = "Premium";
+      // Map actual Stripe Price IDs to subscription tiers
+      switch (priceId) {
+        case "price_1RyGpLFzDDOvseYjOshm1xt1":
+          subscriptionTier = "Basic";
+          break;
+        case "price_1RyGqMFzDDOvseYjPiKWPInQ":
+          subscriptionTier = "Premium";
+          break;
+        case "price_1RyGrDFzDDOvseYjUvVMBvVQ":
+          subscriptionTier = "Enterprise";
+          break;
+        default:
+          console.log("[CHECK-SUBSCRIPTION] Unknown price ID:", priceId);
+          subscriptionTier = "Basic";
       }
 
       console.log("[CHECK-SUBSCRIPTION] Subscription tier determined:", subscriptionTier);

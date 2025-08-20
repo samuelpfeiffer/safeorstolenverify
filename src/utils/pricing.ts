@@ -59,7 +59,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Custom integrations',
       'Dedicated account manager'
     ],
-    stripePriceId: 'price_1QdcMgFzDDOvseYjHQRLVCzw' // Enterprise monthly plan
+    stripePriceId: 'price_1RyGrDFzDDOvseYjUvVMBvVQ' // Enterprise monthly plan
   }
 };
 
