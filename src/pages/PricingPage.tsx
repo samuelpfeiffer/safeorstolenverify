@@ -14,6 +14,7 @@ const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const { secureCreateCheckoutSession } = useSecureStripe();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
+  const [stripeCheckoutUrl, setStripeCheckoutUrl] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -40,6 +41,7 @@ const PricingPage = () => {
     }
 
     setLoadingTier(tier);
+    setStripeCheckoutUrl(null);
 
     try {
       const priceId = getSubscriptionPriceId(tier);
@@ -54,14 +56,14 @@ const PricingPage = () => {
         throw new Error('No checkout URL returned');
       }
 
-      // Simple approach: direct link to Stripe
-      window.location.href = checkoutUrl;
+      setStripeCheckoutUrl(checkoutUrl);
+      toast({ title: 'Checkout ready', description: 'Click the button below to complete your purchase on Stripe.' });
     } catch (error) {
       console.error('Subscription error:', error);
       toast({
-        title: "Error",
-        description: "Failed to start subscription. Please try again.",
-        variant: "destructive"
+        title: 'Error',
+        description: 'Failed to start subscription. Please try again.',
+        variant: 'destructive'
       });
     } finally {
       setLoadingTier(null);
@@ -176,7 +178,7 @@ const PricingPage = () => {
                 {loadingTier === 'basic' ? (
                   <span className="flex items-center justify-center gap-2">
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Redirecting to Stripe...
+                    Preparing checkout...
                   </span>
                 ) : 'Choose Basic'}
               </Button>
@@ -207,13 +209,26 @@ const PricingPage = () => {
                 {loadingTier === 'premium' ? (
                   <span className="flex items-center justify-center gap-2">
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Redirecting to Stripe...
+                    Preparing checkout...
                   </span>
                 ) : 'Choose Premium'}
               </Button>
             </CardContent>
           </Card>
         </div>
+        
+        {stripeCheckoutUrl && (
+          <div className="mt-8 text-center">
+            <p className="mb-3 font-medium">Your checkout is ready.</p>
+            <Button
+              size="lg"
+              className="w-full md:w-auto bg-sos-orange hover:bg-sos-orange/90"
+              onClick={() => { if (stripeCheckoutUrl) { window.location.href = stripeCheckoutUrl; } }}
+            >
+              ✅ Click Here to Complete Your Purchase on Stripe
+            </Button>
+          </div>
+        )}
         
         {/* Additional Info */}
         <div className="mt-12 text-center">
