@@ -6,7 +6,7 @@ import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
 
 // Lazy load all pages for optimal performance
-const Index = lazy(() => import('@/pages/Index'));
+const HomePage = lazy(() => import('@/pages/HomePage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const VerificationPage = lazy(() => import('@/pages/VerificationPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
@@ -81,7 +81,7 @@ export const AppRoutes: React.FC = () => {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<Index />} />
+          <Route index element={<HomePage />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="pricing" element={<PricingPage />} />
           <Route path="about" element={<AboutPage />} />
