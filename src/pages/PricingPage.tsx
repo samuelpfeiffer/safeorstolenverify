@@ -59,11 +59,47 @@ const PricingPage = () => {
       });
 
       if (checkoutUrl) {
+        console.info('Stripe Checkout URL:', checkoutUrl);
         toast({ title: 'Redirecting to Stripe…' });
-        if (popup) {
-          popup.location.replace(checkoutUrl);
-        } else {
-          window.location.assign(checkoutUrl);
+
+        let opened = false;
+        // 1) Prefer the already-opened popup (avoids iframe popup blockers)
+        if (popup && !popup.closed) {
+          try {
+            popup.location.replace(checkoutUrl);
+            opened = true;
+          } catch (e) {
+            console.warn('Popup redirect failed:', e);
+          }
+        }
+
+        // 2) Fallback: programmatic anchor click to open a new tab
+        if (!opened) {
+          try {
+            const a = document.createElement('a');
+            a.href = checkoutUrl;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            opened = true;
+          } catch (e) {
+            console.warn('Anchor open failed:', e);
+          }
+        }
+
+        // 3) Final fallbacks
+        if (!opened) {
+          try { window.open(checkoutUrl, '_blank'); opened = true; } catch {}
+        }
+        if (!opened) {
+          try { window.location.assign(checkoutUrl); opened = true; } catch {}
+        }
+
+        if (!opened) {
+          if (popup) popup.close();
+          toast({ title: 'Unable to open Stripe', description: 'Please allow popups and try again.', variant: 'destructive' });
         }
       } else {
         if (popup) popup.close();
