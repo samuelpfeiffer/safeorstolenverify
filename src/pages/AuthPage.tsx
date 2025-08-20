@@ -50,7 +50,18 @@ const AuthPage = () => {
   const onSignIn = async (values: z.infer<typeof signInSchema>) => {
     const result = await signIn(values.email, values.password);
     if (result.success) {
-      navigate('/dashboard');
+      // Check if user was trying to subscribe before authentication
+      const pendingSubscription = localStorage.getItem('pendingSubscription');
+      const redirectParam = searchParams.get('redirect');
+      
+      if (pendingSubscription && redirectParam === 'subscription') {
+        // Clear the stored subscription intent
+        localStorage.removeItem('pendingSubscription');
+        // Redirect to pricing page with the subscription tier
+        navigate(`/pricing?subscribe=${pendingSubscription}`);
+      } else {
+        navigate('/dashboard');
+      }
     }
   };
 
@@ -105,7 +116,18 @@ const AuthPage = () => {
         description: "Your account has been created successfully!",
       });
 
-      navigate('/dashboard');
+      // Check if user was trying to subscribe before authentication
+      const pendingSubscription = localStorage.getItem('pendingSubscription');
+      const redirectParam = searchParams.get('redirect');
+      
+      if (pendingSubscription && redirectParam === 'subscription') {
+        // Clear the stored subscription intent
+        localStorage.removeItem('pendingSubscription');
+        // Redirect to pricing page with the subscription tier
+        navigate(`/pricing?subscribe=${pendingSubscription}`);
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       console.error('Terms acceptance error:', error);
       toast({

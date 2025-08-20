@@ -1,12 +1,12 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
 import { useSecureStripe } from "@/utils/stripe/secureStripeOperations";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { SEOHead } from '@/components/seo/SEOHead';
 
@@ -14,16 +14,29 @@ const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const { secureCreateCheckoutSession } = useSecureStripe();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  // Check for automatic subscription trigger after authentication
+  useEffect(() => {
+    const subscribeParam = searchParams.get('subscribe');
+    if (subscribeParam && isAuthenticated && (subscribeParam === 'basic' || subscribeParam === 'premium')) {
+      // Remove the URL parameter and trigger subscription
+      navigate('/pricing', { replace: true });
+      handleSubscribe(subscribeParam);
+    }
+  }, [searchParams, isAuthenticated]);
+
   const handleSubscribe = async (tier: 'basic' | 'premium') => {
     if (!isAuthenticated) {
+      // Store the intended subscription plan for after authentication
+      localStorage.setItem('pendingSubscription', tier);
       toast({
         title: "Authentication required",
         description: "Please sign in to subscribe to a plan.",
       });
-      navigate('/auth?tab=signin');
+      navigate('/auth?tab=signin&redirect=subscription');
       return;
     }
 
