@@ -14,7 +14,6 @@ const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const { secureCreateCheckoutSession } = useSecureStripe();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
-  const [checkoutUrlFallback, setCheckoutUrlFallback] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -31,7 +30,6 @@ const PricingPage = () => {
 
   const handleSubscribe = async (tier: 'basic' | 'premium') => {
     if (!isAuthenticated) {
-      // Store the intended subscription plan for after authentication
       localStorage.setItem('pendingSubscription', tier);
       toast({
         title: "Authentication required",
@@ -41,7 +39,6 @@ const PricingPage = () => {
       return;
     }
 
-    // Disable the clicked plan and show clear feedback
     setLoadingTier(tier);
 
     try {
@@ -57,20 +54,15 @@ const PricingPage = () => {
         throw new Error('No checkout URL returned');
       }
 
-      // Always provide a manual link fallback to avoid sandbox issues
-      setCheckoutUrlFallback(checkoutUrl);
-
-      // Try to open in a new tab (best UX in sandboxed preview)
-      const newTab = window.open(checkoutUrl, '_blank');
-      if (!newTab || newTab.closed) {
-        // If blocked, instruct user to click the button we render below
-        toast({ title: 'Open Stripe checkout', description: 'Click the button below to continue to Stripe.' });
-      }
-      return;
-    }
-    catch (error) {
-      console.error('Subscription redirect error:', error);
-      alert('Failed to start subscription process. Please try again.');
+      // Simple approach: direct link to Stripe
+      window.location.href = checkoutUrl;
+    } catch (error) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to start subscription. Please try again.",
+        variant: "destructive"
+      });
     } finally {
       setLoadingTier(null);
     }
@@ -222,17 +214,6 @@ const PricingPage = () => {
             </CardContent>
           </Card>
         </div>
-        
-        {checkoutUrlFallback && (
-          <div className="mt-8 text-center">
-            <p className="mb-3">Popup was blocked. Continue to Stripe checkout:</p>
-            <Button asChild className="inline-flex">
-              <a href={checkoutUrlFallback} target="_blank" rel="noopener noreferrer">
-                Open Stripe Checkout
-              </a>
-            </Button>
-          </div>
-        )}
         
         {/* Additional Info */}
         <div className="mt-12 text-center">
