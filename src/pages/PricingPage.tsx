@@ -51,8 +51,10 @@ const PricingPage = () => {
       });
 
       if (checkoutUrl) {
-        // Open Stripe checkout in a new tab
-        window.open(checkoutUrl, '_blank');
+        toast({ title: 'Redirecting to Stripe…' });
+        window.location.href = checkoutUrl;
+      } else {
+        toast({ title: 'Unable to start checkout', description: 'Please try again.', variant: 'destructive' });
       }
     } catch (error) {
       console.error('Subscription error:', error);
