@@ -14,9 +14,22 @@ const ApiDocsPage = () => {
   return (
     <>
       <PageSEO
-        title="API Documentation - Safe Or Stolen Developer Portal"
-        description="Complete API documentation for Safe Or Stolen verification services. Integrate stolen goods verification into your platform with our enterprise APIs."
-        keywords="API documentation, verification API, stolen goods API, IMEI API, VIN API, serial number API, enterprise integration"
+        title="API Documentation - Safe Or Stolen Developer Portal | Enterprise Integration"
+        description="Complete API documentation for Safe Or Stolen verification services. Integrate stolen goods verification into your platform with our enterprise APIs. Real-time IMEI, VIN, serial number verification."
+        keywords="API documentation, verification API, stolen goods API, IMEI API, VIN API, serial number API, enterprise integration, developer portal, REST API, webhook integration"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "name": "Safe Or Stolen API Documentation",
+          "description": "Complete API documentation for integrating stolen goods verification services",
+          "url": "https://safeorstolen.com/api-docs",
+          "author": {
+            "@type": "Organization",
+            "name": "Safe Or Stolen"
+          },
+          "datePublished": "2024-01-01",
+          "dateModified": new Date().toISOString().split('T')[0]
+        }}
       />
 
       <div className="min-h-screen bg-background">

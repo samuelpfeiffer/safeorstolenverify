@@ -100,9 +100,17 @@ const ItemCategoriesPage: React.FC = () => {
     <>
       <SEOHead 
         title="Item Categories - Check If Any Item Is Stolen | Safe or Stolen"
-        description="Complete list of item categories you can check for stolen status. Verify phones, cars, bikes, electronics, cameras, gaming consoles, and more before buying."
-        keywords="stolen item categories, check stolen phones, verify cars, stolen electronics, lost property types, item verification categories"
+        description="Complete list of item categories you can check for stolen status. Verify phones, cars, bikes, electronics, cameras, gaming consoles, and more before buying secondhand goods."
+        keywords="stolen item categories, check stolen phones, verify cars, stolen electronics, lost property types, item verification categories, secondhand verification, pre-owned check"
         canonical="/item-categories"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Stolen Item Verification Categories",
+          "description": "Complete list of item categories that can be verified for stolen status",
+          "url": "https://safeorstolen.com/item-categories",
+          "numberOfItems": 12
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">

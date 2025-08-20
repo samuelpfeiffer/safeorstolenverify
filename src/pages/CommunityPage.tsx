@@ -137,9 +137,9 @@ export default function CommunityPage() {
   return (
     <>
       <Helmet>
-        <title>Community Stories - Stolen Item Reports & Recovery | SafeOrStolen</title>
-        <meta name="description" content="Real user experiences checking stolen items. See scam alerts, recovery stories, and verify legitimacy before buying secondhand goods." />
-        <meta name="keywords" content="stolen item check, verify stolen goods, scam alerts, item recovery, IMEI check, VIN check, serial number lookup, stolen property database" />
+        <title>Community Stories - Real User Experiences | Safe Or Stolen</title>
+        <meta name="description" content="Real user experiences checking stolen items before purchase. Read scam alerts, recovery stories, and verification success stories from our community." />
+        <meta name="keywords" content="stolen item stories, scam alerts, item recovery, user experiences, IMEI check stories, VIN verification stories, stolen goods community" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
