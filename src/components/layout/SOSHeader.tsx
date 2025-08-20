@@ -24,11 +24,10 @@ export const SOSHeader: React.FC = () => {
   useEffect(() => setMenuOpen(false), [location.pathname]);
   const navigation = [
     { title: 'Home', href: '/' },
-    { title: 'Verify', href: '/real-time-verification' },
+    { title: 'How It Works', href: '/how-it-works' },
+    { title: 'For Businesses', href: '/for-brands' },
     { title: 'Pricing', href: '/pricing' },
     { title: 'Blog', href: '/blog' },
-    { title: 'FasterCapital', href: '/fastercapital/raise-capital' },
-    { title: 'About Us', href: '/about' },
   ];
 
   const isActive = (href: string) => (href === '/' ? location.pathname === '/' : location.pathname.startsWith(href));
