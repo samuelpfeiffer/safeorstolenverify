@@ -41,23 +41,31 @@ const PricingPage = () => {
     }
 
     setLoadingTier(tier);
+    const popup = window.open('', '_blank');
     try {
       const priceId = getSubscriptionPriceId(tier);
       const checkoutUrl = await secureCreateCheckoutSession({
         priceId,
-        serialNumber: '', // Not needed for subscriptions
+        serialNumber: '',
         itemType: 'subscription',
         isSubscription: true,
       });
 
       if (checkoutUrl) {
         toast({ title: 'Redirecting to Stripe…' });
-        window.location.href = checkoutUrl;
+        if (popup) {
+          popup.location.href = checkoutUrl;
+        } else {
+          window.location.href = checkoutUrl;
+        }
       } else {
+        if (popup) popup.close();
         toast({ title: 'Unable to start checkout', description: 'Please try again.', variant: 'destructive' });
       }
     } catch (error) {
+      if (popup) popup.close();
       console.error('Subscription error:', error);
+      toast({ title: 'Payment error', description: 'Please try again in a moment.', variant: 'destructive' });
     } finally {
       setLoadingTier(null);
     }
