@@ -9,6 +9,7 @@ import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
+import { SEOUrlValidation } from '@/components/seo/SEOUrlValidation';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -46,6 +47,7 @@ export const AppRoot: React.FC = () => {
             <ThemeProvider>
               <SEOProvider>
                 <Router>
+                  <SEOUrlValidation />
                   <div className="min-h-screen bg-sos text-white antialiased">
                     <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />

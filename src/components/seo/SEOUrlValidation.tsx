@@ -13,9 +13,18 @@ interface SEOUrl {
 /**
  * SEO URL validation and tracking component
  * Ensures all URLs follow SEO best practices and tracks coverage
+ * Note: This component must be rendered inside a Router context
  */
 export const SEOUrlValidation: React.FC = () => {
-  const location = useLocation();
+  let location;
+  
+  try {
+    location = useLocation();
+  } catch (error) {
+    // Component is being rendered outside Router context
+    console.warn('SEOUrlValidation: useLocation hook used outside Router context');
+    return null;
+  }
 
   // Define all expected SEO-optimized URLs
   const seoUrls: SEOUrl[] = [
@@ -56,6 +65,8 @@ export const SEOUrlValidation: React.FC = () => {
   ];
 
   useEffect(() => {
+    if (!location) return;
+    
     // Validate current URL structure
     const currentPath = location.pathname;
     const currentUrl = seoUrls.find(url => url.path === currentPath);
@@ -75,7 +86,7 @@ export const SEOUrlValidation: React.FC = () => {
       if (urlChecks.hasTrailingSlash) issues.push('URL should not have trailing slash');
       if (urlChecks.hasMultipleSlashes) issues.push('URL has multiple consecutive slashes');
       if (urlChecks.hasSpecialChars) issues.push('URL contains special characters');
-      if (!urlChecks.isInSEOList && !currentPath.startsWith('/admin') && !currentPath.startsWith('/auth')) {
+      if (!urlChecks.isInSEOList && !currentPath.startsWith('/admin') && !currentPath.startsWith('/auth') && !currentPath.startsWith('/dashboard')) {
         issues.push('URL not in SEO validation list');
       }
 
@@ -88,7 +99,7 @@ export const SEOUrlValidation: React.FC = () => {
         console.log(`SEO URL: ${currentPath} - Priority: ${currentUrl.priority}, Category: ${currentUrl.category}`);
       }
     }
-  }, [location.pathname]);
+  }, [location?.pathname]);
 
   return null; // This component doesn't render anything
 };

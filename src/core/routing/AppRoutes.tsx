@@ -69,6 +69,7 @@ const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 const VerificationResultsPage = lazy(() => import('@/pages/VerificationResultsPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
 const ProblemPage = lazy(() => import('@/pages/ProblemPage'));
+const LaunchTestPage = lazy(() => import('@/pages/LaunchTestPage'));
 
 /**
  * Enterprise Application Routing
@@ -130,6 +131,13 @@ export const AppRoutes: React.FC = () => {
           <Route path="problem" element={<ProblemPage />} />
           <Route path="verification-results/:id" element={<VerificationResultsPage />} />
           <Route path="verification-success" element={<VerificationSuccessPage />} />
+          
+          {/* Testing and development pages */}
+          <Route path="launch-test" element={
+            <ProtectedRoute>
+              <LaunchTestPage />
+            </ProtectedRoute>
+          } />
 
           {/* Protected User Routes */}
           <Route path="verify" element={
