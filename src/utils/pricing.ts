@@ -32,7 +32,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_1QdcLPFzDDOvseYj7oNsHQ2m' // Basic monthly plan
+    stripePriceId: 'price_1RyGpLFzDDOvseYjOshm1xt1' // Basic monthly plan
   },
   premium: {
     name: 'Premium',
