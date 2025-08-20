@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { History, Receipt, CreditCard, Settings, Share } from 'lucide-react';
+import { History, Receipt, CreditCard, Settings, Share, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface DashboardSidebarProps {
@@ -10,6 +10,12 @@ interface DashboardSidebarProps {
 
 export const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarProps) => {
   const menuItems = [
+    {
+      id: 'verification',
+      label: 'New Verification',
+      icon: Search,
+      hasShare: false,
+    },
     {
       id: 'search-history',
       label: 'Search History',
