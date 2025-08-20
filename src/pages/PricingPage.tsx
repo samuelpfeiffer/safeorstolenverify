@@ -14,6 +14,7 @@ const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const { secureCreateCheckoutSession } = useSecureStripe();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
+  const [checkoutUrlFallback, setCheckoutUrlFallback] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -75,8 +76,13 @@ const PricingPage = () => {
       const newTab = window.open(checkoutUrl, '_blank');
       if (newTab && !newTab.closed) return;
 
-      // Fallback 2: full-page redirect
-      window.location.href = checkoutUrl;
+      // Fallback 2: if not embedded, do full-page redirect; otherwise show manual link
+      if (window.top === window.self) {
+        window.location.href = checkoutUrl;
+      } else {
+        setCheckoutUrlFallback(checkoutUrl);
+        toast({ title: 'Pop-up blocked', description: 'Click the button below to continue to Stripe Checkout.' });
+      }
       return;
     }
     catch (error) {
@@ -233,6 +239,17 @@ const PricingPage = () => {
             </CardContent>
           </Card>
         </div>
+        
+        {checkoutUrlFallback && (
+          <div className="mt-8 text-center">
+            <p className="mb-3">Popup was blocked. Continue to Stripe checkout:</p>
+            <Button asChild className="inline-flex">
+              <a href={checkoutUrlFallback} target="_blank" rel="noopener noreferrer">
+                Open Stripe Checkout
+              </a>
+            </Button>
+          </div>
+        )}
         
         {/* Additional Info */}
         <div className="mt-12 text-center">
