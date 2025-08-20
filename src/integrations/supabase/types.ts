@@ -684,6 +684,36 @@ export type Database = {
         }
         Relationships: []
       }
+      pending_verifications: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          item_type: string | null
+          serial_number: string
+          session_id: string
+          user_intent: string | null
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          item_type?: string | null
+          serial_number: string
+          session_id: string
+          user_intent?: string | null
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          item_type?: string | null
+          serial_number?: string
+          session_id?: string
+          user_intent?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -694,6 +724,8 @@ export type Database = {
           is_promotion_winner: boolean | null
           promotion_expires_at: string | null
           promotion_searches_remaining: number | null
+          search_count: number
+          search_count_reset_at: string | null
           terms_accepted: boolean | null
           terms_accepted_at: string | null
           updated_at: string
@@ -707,6 +739,8 @@ export type Database = {
           is_promotion_winner?: boolean | null
           promotion_expires_at?: string | null
           promotion_searches_remaining?: number | null
+          search_count?: number
+          search_count_reset_at?: string | null
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
           updated_at?: string
@@ -720,6 +754,8 @@ export type Database = {
           is_promotion_winner?: boolean | null
           promotion_expires_at?: string | null
           promotion_searches_remaining?: number | null
+          search_count?: number
+          search_count_reset_at?: string | null
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
           updated_at?: string
@@ -1314,6 +1350,10 @@ export type Database = {
     }
     Functions: {
       clean_expired_checkmend_cache: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      clean_expired_pending_verifications: {
         Args: Record<PropertyKey, never>
         Returns: undefined
       }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,25 +21,70 @@ import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
 import { supabase } from '@/integrations/supabase/client';
 import { DashboardSidebar } from '@/components/dashboard/DashboardSidebar';
 import { VerificationSection } from '@/components/dashboard/VerificationSection';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
+import { useFreemiumFlow } from '@/hooks/useFreemiumFlow';
+import { PaywallModal } from '@/components/dashboard/PaywallModal';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { remainingSearches, hasReachedLimit, isSubscribed } = useSearchLimits();
   const { searchHistory, isLoading: historyLoading } = useSearchHistory();
   const { getReceipts } = useReceiptGenerator();
+  const { pendingVerification, clearPendingVerification } = usePendingVerification();
+  const { showPaywall, hidePaywall, searchCount, isLoading: freemiumLoading } = useFreemiumFlow();
   const [activeTab, setActiveTab] = useState('verification');
   const [recentVerifications, setRecentVerifications] = useState<any[]>([]);
   const [receipts, setReceipts] = useState<any[]>([]);
   const [purchases, setPurchases] = useState<any[]>([]);
   const [userProfile, setUserProfile] = useState<any>(null);
+  const [prePopulatedData, setPrePopulatedData] = useState<{
+    serial: string;
+    type: string;
+    intent: string;
+  } | null>(null);
 
   useEffect(() => {
     if (user) {
       loadDashboardData();
       loadUserProfile();
+      checkForPrePopulatedData();
     }
   }, [user]);
+
+  // Check for pre-populated verification data from URL or pending verification
+  const checkForPrePopulatedData = () => {
+    // Check URL params first (from authenticated redirect)
+    const serialFromUrl = searchParams.get('serial');
+    const typeFromUrl = searchParams.get('type');
+    const intentFromUrl = searchParams.get('intent');
+
+    if (serialFromUrl && typeFromUrl) {
+      setPrePopulatedData({
+        serial: serialFromUrl,
+        type: typeFromUrl,
+        intent: intentFromUrl || 'buyer'
+      });
+      // Clean up URL
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.delete('serial');
+      newUrl.searchParams.delete('type');
+      newUrl.searchParams.delete('intent');
+      window.history.replaceState({}, '', newUrl.toString());
+      return;
+    }
+
+    // Check pending verification (from anonymous user flow)
+    if (pendingVerification) {
+      setPrePopulatedData({
+        serial: pendingVerification.serial_number,
+        type: pendingVerification.item_type || 'Unknown',
+        intent: pendingVerification.user_intent || 'buyer'
+      });
+      clearPendingVerification();
+    }
+  };
 
   const loadUserProfile = async () => {
     if (!user) return;
@@ -395,9 +440,22 @@ const DashboardPage = () => {
           <h1 className="text-3xl font-bold mb-2 text-foreground">
             Welcome, {getUserDisplayName()}!
           </h1>
+          
+          {/* Search Usage Display */}
+          <div className="flex justify-center items-center gap-4 mb-6">
+            <div className="text-sm text-muted-foreground">
+              Search Usage: <span className="font-medium">{searchCount}/4 free searches used</span>
+            </div>
+            {!isSubscribed && (
+              <Link to="/subscription" className="text-sos-orange hover:underline text-sm font-medium">
+                Upgrade for unlimited
+              </Link>
+            )}
+          </div>
+
           {activeTab === 'verification' && (
             <div className="mt-4">
-              <VerificationSection />
+              <VerificationSection prePopulatedData={prePopulatedData} />
             </div>
           )}
         </div>
@@ -457,6 +515,9 @@ const DashboardPage = () => {
             </Button>
           </div>
         )}
+
+        {/* Paywall Modal */}
+        <PaywallModal isOpen={showPaywall} onClose={hidePaywall} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,6 +10,14 @@ import { useAuth } from '@/lib/auth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { useToast } from '@/hooks/use-toast';
 
+interface VerificationSectionProps {
+  prePopulatedData?: {
+    serial: string;
+    type: string;
+    intent: string;
+  } | null;
+}
+
 interface VerificationResult {
   status: 'safe' | 'stolen' | 'lost';
   item: {
@@ -20,8 +28,8 @@ interface VerificationResult {
   };
 }
 
-export const VerificationSection = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+export const VerificationSection = ({ prePopulatedData }: VerificationSectionProps) => {
+  const [searchQuery, setSearchQuery] = useState(prePopulatedData?.serial || '');
   const [isScanning, setIsScanning] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
   const [isVerifying, setIsVerifying] = useState(false);
@@ -31,6 +39,18 @@ export const VerificationSection = () => {
   const { user } = useAuth();
   const { remainingSearches, hasReachedLimit, isSubscribed } = useSearchLimits();
   const { toast } = useToast();
+
+  // Auto-populate and focus when pre-populated data is available
+  useEffect(() => {
+    if (prePopulatedData) {
+      setSearchQuery(prePopulatedData.serial);
+      // Show helpful message about the pre-populated data
+      toast({
+        title: `Ready to verify item ${prePopulatedData.intent === 'seller' ? 'for selling' : 'before buying'}`,
+        description: `Serial: ${prePopulatedData.serial.substring(0, 10)}...`,
+      });
+    }
+  }, [prePopulatedData, toast]);
 
   const handleSearch = async () => {
     if (!searchQuery.trim()) return;

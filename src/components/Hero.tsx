@@ -3,7 +3,7 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useRealVerification } from '@/hooks/useRealVerification';
-import { SimpleSearchForm } from '@/components/hero/SimpleSearchForm';
+import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
 import QrScanner from '@/components/hero/QrScanner';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
@@ -107,13 +107,34 @@ const Hero = () => {
             </a>
 
             {/* Domain Headline */}
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">safeorstolen.com</h1>
-            <p className="text-lg md:text-2xl text-gray-300 mb-2">
-              Protect yourself from <span className="text-sos-orange font-semibold">stolen goods</span> with instant verification
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy and Sell with Confidence</h1>
+            <p className="text-lg md:text-2xl text-gray-300 mb-6">
+              Verify items aren't stolen before you buy. Protect your reputation before you sell.
             </p>
-            <p className="text-base md:text-lg text-sos-lime font-semibold mb-4">
+            <p className="text-base md:text-lg text-sos-lime font-semibold mb-8">
               Real-time database checks in under 3 seconds
             </p>
+            
+            {/* Dual CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button 
+                size="lg" 
+                className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg"
+                onClick={() => navigate('/?intent=buyer')}
+              >
+                <Shield className="mr-2 h-5 w-5" />
+                Check an Item to Buy
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg"
+                onClick={() => navigate('/?intent=seller')}
+              >
+                <Badge className="mr-2 h-5 w-5" />
+                Verify an Item to Sell
+              </Button>
+            </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400 mb-8">
               <span className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-sos-lime" />
@@ -134,7 +155,7 @@ const Hero = () => {
               <ErrorBoundary fallback={
                 <div className="text-center p-4 text-gray-500">Search form temporarily unavailable</div>
               }>
-                <SimpleSearchForm onOpenQrScanner={handleOpenQrScanner} />
+                <TwoSidedSearchForm onOpenQrScanner={handleOpenQrScanner} />
               </ErrorBoundary>
             </div>
 
