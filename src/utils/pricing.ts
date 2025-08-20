@@ -46,7 +46,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Priority support',
       'Custom verification alerts'
     ],
-    stripePriceId: 'price_1QdcMBFzDDOvseYjKFxWQPZC' // Premium monthly plan
+    stripePriceId: 'price_1RyGqMFzDDOvseYjPiKWPInQ' // Premium monthly plan
   },
   enterprise: {
     name: 'Enterprise',
