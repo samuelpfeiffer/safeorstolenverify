@@ -11,8 +11,6 @@ import { ContentClaritySection } from '@/components/content/ContentClaritySectio
 import { EnhancedPageSEO } from '@/components/seo/EnhancedPageSEO';
 
 const HomePage = () => {
-  console.log('HomePage component rendering...');
-  
   const homePageStructuredData = [
     {
       "@context": "https://schema.org",
@@ -44,15 +42,18 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b from-sos to-sos-dark">
-        <div className="container mx-auto px-4 py-20">
-          <h1 className="text-4xl font-bold text-center text-white mb-8">
-            Safe or Stolen - Full Homepage
-          </h1>
-          <p className="text-xl text-center text-gray-200 mb-12">
-            This is the complete HomePage component with all sections
-          </p>
-        </div>
+      <EnhancedPageSEO 
+        title="Safe or Stolen - Check if IMEI, Serial Numbers & VIN are Stolen | Free Verification Tool"
+        description="Instantly verify if phones (IMEI), cars (VIN), bikes, electronics are stolen before buying. Free stolen goods checker. Protect yourself from marketplace fraud."
+        keywords="check if stolen, IMEI check stolen, VIN stolen lookup, serial number verification, stolen goods check, verify before you buy, marketplace safety, fraud prevention"
+        image="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+        type="website"
+        structuredData={homePageStructuredData}
+        breadcrumbPath={[
+          { name: "Home", url: "/" }
+        ]}
+      />
+      <div className="min-h-screen">
         <Hero />
         <div id="verification-results">
           <RealVerificationCard />
