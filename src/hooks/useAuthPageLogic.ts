@@ -61,12 +61,12 @@ export const useAuthPageLogic = () => {
       // Show welcome message
       toast({
         title: "Welcome!",
-        description: "You have been signed in successfully.",
+        description: "You have been signed in successfully. Redirecting to your dashboard...",
         duration: 3000,
       });
       
-      // Get redirect destination
-      const from = location.state?.from?.pathname || '/';
+      // Get redirect destination - prioritize dashboard for new users
+      const from = location.state?.from?.pathname || '/dashboard';
       
       // Redirect after a short delay
       console.log('Redirecting to:', from);

@@ -20,8 +20,9 @@ export const useTermsAcceptance = () => {
       console.log('Terms accepted for user:', userId);
       
       toast({
-        title: "Terms Accepted",
-        description: "Your account has been successfully created!",
+        title: "Thank you for signing up!",
+        description: "Your account has been successfully created! Redirecting to your dashboard...",
+        duration: 5000,
       });
       
       setIsProcessing(false);

@@ -86,6 +86,10 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
         setPendingSignUpData(null);
         setCreatedUserId(null);
         setStep('form');
+        // Navigate to dashboard after successful signup and terms acceptance
+        setTimeout(() => {
+          window.location.href = '/dashboard';
+        }, 500);
         onSuccess?.();
       }
       
