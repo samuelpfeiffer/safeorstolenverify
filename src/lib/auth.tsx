@@ -214,7 +214,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } else {
         toast({
           title: 'Thank you for signing up!',
-          description: 'Welcome to Safe or Stolen! Redirecting to your dashboard...',
+          description: 'Welcome to Safe or Stolen! You can now start verifying items.',
           duration: 5000,
         });
       }

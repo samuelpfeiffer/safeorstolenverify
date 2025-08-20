@@ -30,6 +30,7 @@ interface VerificationResult {
 
 export const VerificationSection = ({ prePopulatedData }: VerificationSectionProps) => {
   const [searchQuery, setSearchQuery] = useState(prePopulatedData?.serial || '');
+  const [selectedItemType, setSelectedItemType] = useState<string>(prePopulatedData?.type || '');
   const [isScanning, setIsScanning] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
   const [isVerifying, setIsVerifying] = useState(false);
@@ -40,10 +41,20 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
   const { remainingSearches, hasReachedLimit, isSubscribed } = useSearchLimits();
   const { toast } = useToast();
 
+  const itemTypes = [
+    { value: 'phone', label: '📱 Phone (IMEI)' },
+    { value: 'car', label: '🚗 Vehicle (VIN)' },
+    { value: 'bike', label: '🚲 Bicycle' },
+    { value: 'electronics', label: '💻 Electronics' },
+    { value: 'firearm', label: '🔫 Firearm/Gun' },
+    { value: 'other', label: '📦 Other Item' },
+  ];
+
   // Auto-populate and focus when pre-populated data is available
   useEffect(() => {
     if (prePopulatedData) {
       setSearchQuery(prePopulatedData.serial);
+      setSelectedItemType(prePopulatedData.type || '');
       // Show helpful message about the pre-populated data
       toast({
         title: `Ready to verify item ${prePopulatedData.intent === 'seller' ? 'for selling' : 'before buying'}`,
@@ -105,6 +116,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
   const resetVerification = () => {
     setVerificationResult(null);
     setSearchQuery('');
+    setSelectedItemType('');
     setShowReceiptGenerator(false);
   };
 
@@ -229,15 +241,35 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-4">
+          {/* Item Type Selection */}
+          <div>
+            <label className="block text-sm font-medium mb-2">Item Type</label>
+            <select
+              value={selectedItemType}
+              onChange={(e) => setSelectedItemType(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md bg-background"
+            >
+              <option value="">Select item type...</option>
+              {itemTypes.map((type) => (
+                <option key={type.value} value={type.value}>
+                  {type.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div className="flex gap-2">
             <Input
-              placeholder="Enter serial number, IMEI, or VIN"
+              placeholder={selectedItemType === 'firearm' ? 'Enter firearm serial number' : 
+                          selectedItemType === 'phone' ? 'Enter IMEI number' :
+                          selectedItemType === 'car' ? 'Enter VIN number' :
+                          'Enter serial number, IMEI, or VIN'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
               className="flex-1"
             />
-            <Button onClick={handleSearch} disabled={isVerifying || !searchQuery.trim()}>
+            <Button onClick={handleSearch} disabled={isVerifying || !searchQuery.trim() || !selectedItemType}>
               {isVerifying ? (
                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
               ) : (
@@ -245,6 +277,15 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
               )}
             </Button>
           </div>
+
+          {selectedItemType === 'firearm' && (
+            <div className="bg-yellow-50 border border-yellow-200 rounded-md p-3">
+              <p className="text-sm text-yellow-800">
+                🔫 <strong>Firearm Verification:</strong> We check federal and state databases for stolen firearms. 
+                This includes ATF, NCIC, and local law enforcement records.
+              </p>
+            </div>
+          )}
 
           <div className="text-center">
             <span className="text-muted-foreground">or</span>
