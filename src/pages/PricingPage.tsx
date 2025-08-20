@@ -41,7 +41,6 @@ const PricingPage = () => {
     }
 
     setLoadingTier(tier);
-    const popup = window.open('', '_blank');
     try {
       const priceId = getSubscriptionPriceId(tier);
       const checkoutUrl = await secureCreateCheckoutSession({
@@ -53,17 +52,15 @@ const PricingPage = () => {
 
       if (checkoutUrl) {
         toast({ title: 'Redirecting to Stripe…' });
-        if (popup) {
-          popup.location.href = checkoutUrl;
+        if (window.top && window.top !== window.self) {
+          window.open(checkoutUrl, '_blank');
         } else {
-          window.location.href = checkoutUrl;
+          window.location.assign(checkoutUrl);
         }
       } else {
-        if (popup) popup.close();
         toast({ title: 'Unable to start checkout', description: 'Please try again.', variant: 'destructive' });
       }
     } catch (error) {
-      if (popup) popup.close();
       console.error('Subscription error:', error);
       toast({ title: 'Payment error', description: 'Please try again in a moment.', variant: 'destructive' });
     } finally {
