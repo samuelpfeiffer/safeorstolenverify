@@ -17,27 +17,34 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
   const scannerInstanceRef = useRef<Html5Qrcode | null>(null);
   const { toast } = useToast();
 
-  const startQrScanner = () => {
-    if (!qrScannerRef.current || scannerInitialized) return;
+  const startQrScanner = async () => {
+    if (!qrScannerRef.current || scannerInitialized || scannerInstanceRef.current) return;
 
-    const scanner = new Html5Qrcode("qr-scanner");
-    scannerInstanceRef.current = scanner;
-    
-    const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
-    
-    scanner.start(
-      { facingMode: "environment" },
-      qrConfig,
-      (decodedText) => {
-        // QR code successfully scanned
-        onScanSuccess(decodedText);
-        stopQrScanner();
-        onOpenChange(false);
-      },
-      (errorMessage) => {
-        console.log(`QR scan error: ${errorMessage}`);
-      }
-    ).catch((err) => {
+    try {
+      // Clear any existing scanner first
+      await stopQrScanner();
+      
+      const scanner = new Html5Qrcode("qr-scanner");
+      scannerInstanceRef.current = scanner;
+      
+      const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
+      
+      await scanner.start(
+        { facingMode: "environment" },
+        qrConfig,
+        (decodedText) => {
+          // QR code successfully scanned
+          onScanSuccess(decodedText);
+          stopQrScanner();
+          onOpenChange(false);
+        },
+        (errorMessage) => {
+          // Ignore error messages during normal scanning
+        }
+      );
+      
+      setScannerInitialized(true);
+    } catch (err) {
       console.error("QR scanner error:", err);
       toast({
         title: "Scanner Error",
@@ -45,18 +52,22 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
         variant: "destructive",
       });
       onOpenChange(false);
-    });
-    
-    setScannerInitialized(true);
+    }
   };
 
-  const stopQrScanner = () => {
-    if (scannerInstanceRef.current && scannerInstanceRef.current.isScanning) {
-      scannerInstanceRef.current.stop().then(() => {
-        setScannerInitialized(false);
-      }).catch(err => {
+  const stopQrScanner = async () => {
+    if (scannerInstanceRef.current) {
+      try {
+        if (scannerInstanceRef.current.isScanning) {
+          await scannerInstanceRef.current.stop();
+        }
+        await scannerInstanceRef.current.clear();
+      } catch (err) {
         console.error("Failed to stop scanner:", err);
-      });
+      } finally {
+        scannerInstanceRef.current = null;
+        setScannerInitialized(false);
+      }
     }
   };
 
@@ -65,7 +76,7 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
       // Initialize scanner when dialog opens
       setTimeout(() => {
         startQrScanner();
-      }, 500);
+      }, 300);
     } else {
       // Clean up scanner when dialog closes
       stopQrScanner();
@@ -86,7 +97,11 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
           <DialogTitle>Scan QR Code</DialogTitle>
         </DialogHeader>
         <div className="flex flex-col items-center justify-center">
-          <div id="qr-scanner" ref={qrScannerRef} className="w-full h-[300px] bg-gray-100" />
+          <div 
+            id="qr-scanner" 
+            ref={qrScannerRef} 
+            className="w-full h-[300px] bg-gray-100 rounded-lg overflow-hidden" 
+          />
           <p className="text-sm text-muted-foreground mt-2">Position the QR code within the frame</p>
           <Button 
             onClick={() => onOpenChange(false)} 
