@@ -40,14 +40,8 @@ const PricingPage = () => {
       return;
     }
 
+    // Disable the clicked plan and show clear feedback
     setLoadingTier(tier);
-    // Open a blank tab immediately to avoid popup blockers when inside the editor iframe
-    const popup = window.open('', '_blank');
-    if (popup) {
-      try {
-        popup.document.write('<!doctype html><title>Redirecting…</title><body style="font:16px system-ui;padding:24px;">Redirecting to Stripe Checkout…</body>');
-      } catch {}
-    }
 
     try {
       const priceId = getSubscriptionPriceId(tier);
@@ -59,56 +53,15 @@ const PricingPage = () => {
       });
 
       if (checkoutUrl) {
-        console.info('Stripe Checkout URL:', checkoutUrl);
-        toast({ title: 'Redirecting to Stripe…' });
-
-        let opened = false;
-        // 1) Prefer the already-opened popup (avoids iframe popup blockers)
-        if (popup && !popup.closed) {
-          try {
-            popup.location.replace(checkoutUrl);
-            opened = true;
-          } catch (e) {
-            console.warn('Popup redirect failed:', e);
-          }
-        }
-
-        // 2) Fallback: programmatic anchor click to open a new tab
-        if (!opened) {
-          try {
-            const a = document.createElement('a');
-            a.href = checkoutUrl;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            opened = true;
-          } catch (e) {
-            console.warn('Anchor open failed:', e);
-          }
-        }
-
-        // 3) Final fallbacks
-        if (!opened) {
-          try { window.open(checkoutUrl, '_blank'); opened = true; } catch {}
-        }
-        if (!opened) {
-          try { window.location.assign(checkoutUrl); opened = true; } catch {}
-        }
-
-        if (!opened) {
-          if (popup) popup.close();
-          toast({ title: 'Unable to open Stripe', description: 'Please allow popups and try again.', variant: 'destructive' });
-        }
-      } else {
-        if (popup) popup.close();
-        toast({ title: 'Unable to start checkout', description: 'Please try again.', variant: 'destructive' });
+        // Full-page redirect for maximum reliability
+        window.location.href = checkoutUrl;
+        return;
       }
+
+      throw new Error('No checkout URL returned');
     } catch (error) {
-      if (popup) popup.close();
-      console.error('Subscription error:', error);
-      toast({ title: 'Payment error', description: 'Please try again in a moment.', variant: 'destructive' });
+      console.error('Subscription redirect error:', error);
+      alert('Failed to start subscription process. Please try again.');
     } finally {
       setLoadingTier(null);
     }
@@ -219,7 +172,7 @@ const PricingPage = () => {
                 className="w-full bg-sos-orange hover:bg-sos-orange/90"
                 disabled={loadingTier === 'basic'}
               >
-                {loadingTier === 'basic' ? 'Processing...' : 'Choose Basic'}
+                {loadingTier === 'basic' ? 'Redirecting to Stripe...' : 'Choose Basic'}
               </Button>
             </CardContent>
           </Card>
@@ -245,7 +198,7 @@ const PricingPage = () => {
                 variant="outline"
                 disabled={loadingTier === 'premium'}
               >
-                {loadingTier === 'premium' ? 'Processing...' : 'Choose Premium'}
+                {loadingTier === 'premium' ? 'Redirecting to Stripe...' : 'Choose Premium'}
               </Button>
             </CardContent>
           </Card>
