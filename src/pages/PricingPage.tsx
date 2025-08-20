@@ -53,8 +53,13 @@ const PricingPage = () => {
       });
 
       if (checkoutUrl) {
-        // Full-page redirect for maximum reliability
-        window.location.href = checkoutUrl;
+        // Full-page redirect at the top window to avoid iframe sandbox blank screens
+        if (window.top && window.top !== window.self) {
+          // Navigate the parent frame (Lovable preview) directly to Stripe
+          (window.top as Window).location.href = checkoutUrl;
+        } else {
+          window.location.href = checkoutUrl;
+        }
         return;
       }
 
