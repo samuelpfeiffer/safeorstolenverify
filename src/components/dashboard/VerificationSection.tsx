@@ -298,7 +298,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
             disabled={isVerifying}
           >
             <ScanLine className="h-4 w-4" />
-            Scan QR Code / Barcode
+            Scan Code (QR, Barcode, VIN, Serial)
           </Button>
         </div>
 
