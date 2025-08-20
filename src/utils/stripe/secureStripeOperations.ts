@@ -1,6 +1,6 @@
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { validateSerialNumberSecurity, getSecurityHeaders } from '@/utils/securityValidation';
+import { validateSerialNumberSecurity } from '@/utils/securityValidation';
 import { logAuditEvent, AUDIT_ACTIONS } from '@/utils/auditLogging';
 import { checkRateLimit } from '@/utils/rateLimiting';
 
@@ -95,10 +95,6 @@ export const useSecureStripe = (options: SecureStripeOptions = {}) => {
       
       const { data, error } = await supabase.functions.invoke("create-checkout", {
         body: requestBody,
-        headers: {
-          ...getSecurityHeaders(),
-          'Content-Type': 'application/json',
-        },
       });
 
       if (error) {
