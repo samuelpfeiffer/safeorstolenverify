@@ -218,16 +218,33 @@ const PricingPage = () => {
         </div>
         
         {stripeCheckoutUrl && (
-          <div className="mt-8 text-center">
-            <p className="mb-3 font-medium">Your checkout is ready.</p>
-            <Button
-              size="lg"
-              className="w-full md:w-auto bg-sos-orange hover:bg-sos-orange/90"
-              onClick={() => { if (stripeCheckoutUrl) { window.location.href = stripeCheckoutUrl; } }}
-            >
-              ✅ Click Here to Complete Your Purchase on Stripe
-            </Button>
-          </div>
+          <>
+            {/* Inline helper button in content area */}
+            <div className="mt-8 text-center">
+              <p className="mb-3 font-medium">Your checkout is ready.</p>
+              <Button
+                size="lg"
+                className="w-full md:w-auto bg-sos-orange hover:bg-sos-orange/90"
+                onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.location.href = stripeCheckoutUrl; } }}
+              >
+                ✅ Click Here to Complete Your Purchase on Stripe
+              </Button>
+            </div>
+
+            {/* Fixed bottom bar to guarantee visibility */}
+            <div className="fixed inset-x-0 bottom-0 z-50 bg-white/90 backdrop-blur border-t">
+              <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p className="font-medium">Checkout is ready. Continue on Stripe.</p>
+                <Button
+                  size="lg"
+                  className="bg-sos-orange hover:bg-sos-orange/90"
+                  onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.location.href = stripeCheckoutUrl; } }}
+                >
+                  ✅ Click Here to Complete Your Purchase on Stripe
+                </Button>
+              </div>
+            </div>
+          </>
         )}
         
         {/* Additional Info */}
