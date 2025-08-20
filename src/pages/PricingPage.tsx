@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check, Star, Loader2 } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
 import { useSecureStripe } from "@/utils/stripe/secureStripeOperations";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
@@ -172,7 +172,12 @@ const PricingPage = () => {
                 className="w-full bg-sos-orange hover:bg-sos-orange/90"
                 disabled={loadingTier === 'basic'}
               >
-                {loadingTier === 'basic' ? 'Redirecting to Stripe...' : 'Choose Basic'}
+                {loadingTier === 'basic' ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Redirecting to Stripe...
+                  </span>
+                ) : 'Choose Basic'}
               </Button>
             </CardContent>
           </Card>
@@ -198,7 +203,12 @@ const PricingPage = () => {
                 variant="outline"
                 disabled={loadingTier === 'premium'}
               >
-                {loadingTier === 'premium' ? 'Redirecting to Stripe...' : 'Choose Premium'}
+                {loadingTier === 'premium' ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Redirecting to Stripe...
+                  </span>
+                ) : 'Choose Premium'}
               </Button>
             </CardContent>
           </Card>
