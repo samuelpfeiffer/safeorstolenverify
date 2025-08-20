@@ -65,6 +65,11 @@ const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
 const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
 const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 
+// Additional verification pages
+const VerificationResultsPage = lazy(() => import('@/pages/VerificationResultsPage'));
+const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
+const ProblemPage = lazy(() => import('@/pages/ProblemPage'));
+
 /**
  * Enterprise Application Routing
  * Handles all application routes with proper lazy loading and access control
@@ -120,6 +125,11 @@ export const AppRoutes: React.FC = () => {
           <Route path="check-electronics" element={<CheckElectronicsPage />} />
           <Route path="check-bike" element={<CheckBikePage />} />
           <Route path="item-categories" element={<ItemCategoriesPage />} />
+          
+          {/* Problem and verification result pages */}
+          <Route path="problem" element={<ProblemPage />} />
+          <Route path="verification-results/:id" element={<VerificationResultsPage />} />
+          <Route path="verification-success" element={<VerificationSuccessPage />} />
 
           {/* Protected User Routes */}
           <Route path="verify" element={

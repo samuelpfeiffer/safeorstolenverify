@@ -4,6 +4,7 @@ import { GoogleSEOOptimization } from '@/components/seo/GoogleSEOOptimization';
 import { GoogleCoreWebVitals } from '@/components/seo/GoogleCoreWebVitals';
 import { GoogleSearchConsole } from '@/components/seo/GoogleSearchConsole';
 import { SEOMonitoring } from '@/components/seo/SEOMonitoring';
+import { SEOUrlValidation } from '@/components/seo/SEOUrlValidation';
 
 interface SEOContextType {
   updateSEO: (data: SEOData) => void;
@@ -52,6 +53,7 @@ export const SEOProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       <GoogleCoreWebVitals />
       <GoogleSearchConsole />
       <SEOMonitoring />
+      <SEOUrlValidation />
       
       {children}
     </SEOContext.Provider>
