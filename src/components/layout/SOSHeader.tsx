@@ -28,6 +28,7 @@ export const SOSHeader: React.FC = () => {
     { title: 'For Businesses', href: '/for-brands' },
     { title: 'Pricing', href: '/pricing' },
     { title: 'Blog', href: '/blog' },
+    { title: 'FasterCapital', href: '/fastercapital/raise-capital' },
   ];
 
   const isActive = (href: string) => (href === '/' ? location.pathname === '/' : location.pathname.startsWith(href));
