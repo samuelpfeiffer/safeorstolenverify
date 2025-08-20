@@ -46,10 +46,6 @@ const PricingPage = () => {
 
     try {
       const priceId = getSubscriptionPriceId(tier);
-
-      // Open a blank tab synchronously to preserve the user gesture (prevents popup blockers)
-      const pendingWindow = window.open('', '_blank');
-
       const checkoutUrl = await secureCreateCheckoutSession({
         priceId,
         serialNumber: '',
@@ -61,27 +57,14 @@ const PricingPage = () => {
         throw new Error('No checkout URL returned');
       }
 
-      // If the placeholder tab exists, navigate it to Stripe now
-      if (pendingWindow && !pendingWindow.closed) {
-        try {
-          pendingWindow.location.href = checkoutUrl;
-          pendingWindow.focus?.();
-          return;
-        } catch (navErr) {
-          console.warn('Failed to navigate pre-opened tab, falling back to direct open.', navErr);
-        }
-      }
+      // Always provide a manual link fallback to avoid sandbox issues
+      setCheckoutUrlFallback(checkoutUrl);
 
-      // Fallback 1: open Stripe directly in a new tab
+      // Try to open in a new tab (best UX in sandboxed preview)
       const newTab = window.open(checkoutUrl, '_blank');
-      if (newTab && !newTab.closed) return;
-
-      // Fallback 2: if not embedded, do full-page redirect; otherwise show manual link
-      if (window.top === window.self) {
-        window.location.href = checkoutUrl;
-      } else {
-        setCheckoutUrlFallback(checkoutUrl);
-        toast({ title: 'Pop-up blocked', description: 'Click the button below to continue to Stripe Checkout.' });
+      if (!newTab || newTab.closed) {
+        // If blocked, instruct user to click the button we render below
+        toast({ title: 'Open Stripe checkout', description: 'Click the button below to continue to Stripe.' });
       }
       return;
     }
