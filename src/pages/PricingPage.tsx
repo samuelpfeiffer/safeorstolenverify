@@ -45,6 +45,10 @@ const PricingPage = () => {
 
     try {
       const priceId = getSubscriptionPriceId(tier);
+
+      // Open a placeholder tab immediately to keep the user gesture and avoid popup blockers
+      const pendingWindow = window.open('', '_blank', 'noopener,noreferrer');
+
       const checkoutUrl = await secureCreateCheckoutSession({
         priceId,
         serialNumber: '',
@@ -52,23 +56,31 @@ const PricingPage = () => {
         isSubscription: true,
       });
 
-      if (checkoutUrl) {
-        // Prefer full-page redirect; if blocked by sandbox, fallback to new tab
-        try {
-          if (window.top && window.top !== window.self) {
-            (window.top as Window).location.href = checkoutUrl;
-          } else {
-            window.location.href = checkoutUrl;
-          }
-        } catch (navErr) {
-          console.warn('Top-level navigation blocked, opening in new tab.', navErr);
-          window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
-        }
+      if (!checkoutUrl) {
+        throw new Error('No checkout URL returned');
+      }
+
+      // If a new tab was successfully opened, navigate it now (most reliable in sandboxed iframes)
+      if (pendingWindow && !pendingWindow.closed) {
+        pendingWindow.location.href = checkoutUrl;
+        pendingWindow.focus?.();
         return;
       }
 
-      throw new Error('No checkout URL returned');
-    } catch (error) {
+      // Otherwise, try full-page redirect; if blocked by sandbox, final fallback opens new tab
+      try {
+        if (window.top && window.top !== window.self) {
+          (window.top as Window).location.href = checkoutUrl;
+        } else {
+          window.location.href = checkoutUrl;
+        }
+      } catch (navErr) {
+        console.warn('Navigation blocked, opening Stripe in a new tab.', navErr);
+        window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      }
+      return;
+    }
+    catch (error) {
       console.error('Subscription redirect error:', error);
       alert('Failed to start subscription process. Please try again.');
     } finally {
