@@ -5,9 +5,12 @@ import { Badge } from '@/components/ui/badge';
 import { useEnhancedSubscription } from '@/hooks/useEnhancedSubscription';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Crown, Check, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
+import { getSubscriptionPriceId } from '@/utils/pricing';
 
 const SubscriptionPage: React.FC = () => {
-  const { subscriptionData, isLoading, error } = useEnhancedSubscription();
+  const { subscriptionData, isLoading, error, createSubscriptionCheckout, openCustomerPortal } = useEnhancedSubscription();
   const { isAuthenticated } = useUnifiedAuth();
 
   if (!isAuthenticated) {
@@ -19,7 +22,7 @@ const SubscriptionPage: React.FC = () => {
             <p className="text-gray-300 mb-6">
               Please sign in to view your subscription details.
             </p>
-            <Button>Sign In</Button>
+            <Button asChild><Link to="/auth">Sign In</Link></Button>
           </CardContent>
         </Card>
       </div>
@@ -35,7 +38,15 @@ const SubscriptionPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-sos text-white p-6">
+    <>
+      <BetterSEOHead
+        title="Manage Subscription"
+        description="View plan status and manage your Safe or Stolen subscription."
+        canonical="/subscription"
+        noindex
+        nofollow
+      />
+      <div className="min-h-screen bg-sos text-white p-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 gradient-text">Subscription Management</h1>
@@ -69,7 +80,7 @@ const SubscriptionPage: React.FC = () => {
                       </p>
                     )}
                   </div>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full" onClick={openCustomerPortal}>
                     Manage Subscription
                   </Button>
                 </div>
@@ -79,7 +90,7 @@ const SubscriptionPage: React.FC = () => {
                   <p className="text-gray-300">
                     You're on the free plan with limited searches.
                   </p>
-                  <Button className="w-full bg-sos-orange hover:bg-sos-orange/80">
+                  <Button className="w-full bg-sos-orange hover:bg-sos-orange/80" onClick={async () => { const url = await createSubscriptionCheckout(getSubscriptionPriceId('premium')); if (url) window.location.href = url; }}>
                     Upgrade Now
                   </Button>
                 </div>
@@ -141,7 +152,7 @@ const SubscriptionPage: React.FC = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
