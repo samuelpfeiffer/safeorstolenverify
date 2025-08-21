@@ -1,6 +1,6 @@
 
 import { useSearchLimits } from '@/hooks/useSearchLimits';
-import { useSubscription } from '@/hooks/useSubscription';
+import { useOptimizedSubscription } from '@/hooks/useOptimizedSubscription';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,10 +17,11 @@ export const SubscriptionStatus = () => {
   const {
     subscriptionData,
     isLoading,
+    error,
     createSubscriptionCheckout,
     openCustomerPortal,
     refreshSubscription
-  } = useSubscription();
+  } = useOptimizedSubscription();
   const { isAuthenticated } = useUnifiedAuth();
   const navigate = useNavigate();
 

@@ -1,35 +1,33 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Star, Loader2 } from "lucide-react";
+import { Check, Star, Loader2, AlertTriangle } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
-import { useSecureStripe } from "@/utils/stripe/secureStripeOperations";
+import { useOptimizedSubscription } from "@/hooks/useOptimizedSubscription";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { SEOHead } from '@/components/seo/SEOHead';
+import { LoadingBoundary } from '@/components/common/LoadingBoundary';
+import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
-  const { secureCreateCheckoutSession } = useSecureStripe();
+  const { 
+    createSubscriptionCheckout, 
+    isLoading: subscriptionLoading,
+    error: subscriptionError 
+  } = useOptimizedSubscription();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
   const [stripeCheckoutUrl, setStripeCheckoutUrl] = useState<string | null>(null);
+  const [hasError, setHasError] = useState(false);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Check for automatic subscription trigger after authentication
-  useEffect(() => {
-    const subscribeParam = searchParams.get('subscribe');
-    if (subscribeParam && isAuthenticated && (subscribeParam === 'basic' || subscribeParam === 'premium')) {
-      // Remove the URL parameter and trigger subscription
-      navigate('/pricing', { replace: true });
-      handleSubscribe(subscribeParam);
-    }
-  }, [searchParams, isAuthenticated]);
-
-  const handleSubscribe = async (tier: 'basic' | 'premium') => {
+  const handleSubscribe = useCallback(async (tier: 'basic' | 'premium') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -40,35 +38,84 @@ const PricingPage = () => {
       return;
     }
 
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     setLoadingTier(tier);
     setStripeCheckoutUrl(null);
+    setHasError(false);
+
+    // Set a timeout for the entire operation
+    timeoutRef.current = setTimeout(() => {
+      setLoadingTier(null);
+      setHasError(true);
+      toast({
+        title: 'Request timeout',
+        description: 'The request is taking too long. Please try again.',
+        variant: 'destructive'
+      });
+    }, 15000); // 15 second timeout
 
     try {
       const priceId = getSubscriptionPriceId(tier);
-      const checkoutUrl = await secureCreateCheckoutSession({
-        priceId,
-        serialNumber: '',
-        itemType: 'subscription',
-        isSubscription: true,
-      });
+      console.log(`Starting checkout for ${tier} tier with price ID: ${priceId}`);
+      
+      const checkoutUrl = await createSubscriptionCheckout(priceId);
 
       if (!checkoutUrl) {
         throw new Error('No checkout URL returned');
       }
 
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+
       setStripeCheckoutUrl(checkoutUrl);
-      toast({ title: 'Checkout ready', description: 'Click the button below to complete your purchase on Stripe.' });
-    } catch (error) {
+      toast({ 
+        title: 'Checkout ready', 
+        description: 'Click the button below to complete your purchase on Stripe.' 
+      });
+      
+    } catch (error: any) {
       console.error('Subscription error:', error);
+      setHasError(true);
+      
       toast({
         title: 'Error',
-        description: 'Failed to start subscription. Please try again.',
+        description: error.message || 'Failed to start subscription. Please try again.',
         variant: 'destructive'
       });
     } finally {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
       setLoadingTier(null);
     }
-  };
+  }, [isAuthenticated, navigate, toast, createSubscriptionCheckout]);
+
+  // Check for automatic subscription trigger after authentication
+  useEffect(() => {
+    const subscribeParam = searchParams.get('subscribe');
+    if (subscribeParam && isAuthenticated && (subscribeParam === 'basic' || subscribeParam === 'premium')) {
+      // Remove the URL parameter and trigger subscription
+      navigate('/pricing', { replace: true });
+      // Add small delay to prevent race conditions
+      setTimeout(() => {
+        handleSubscribe(subscribeParam);
+      }, 500);
+    }
+  }, [searchParams, isAuthenticated, handleSubscribe, navigate]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleFreeStart = () => {
     if (!isAuthenticated) {
@@ -108,15 +155,37 @@ const PricingPage = () => {
     ]
   };
 
+  const ErrorState = () => (
+    <Card className="max-w-md mx-auto">
+      <CardContent className="p-6 text-center space-y-4">
+        <AlertTriangle className="h-8 w-8 mx-auto text-destructive" />
+        <div>
+          <h3 className="font-semibold mb-2">Service Error</h3>
+          <p className="text-sm text-muted-foreground mb-4">
+            {subscriptionError || 'Unable to load pricing information'}
+          </p>
+          <Button onClick={() => window.location.reload()} variant="outline">
+            Refresh Page
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+
   return (
-    <>
+    <ErrorBoundary>
       <SEOHead
         title="Pricing - Safe or Stolen Verification Service"
         description="Choose from free and paid verification plans. Get unlimited IMEI, serial number, and VIN checks starting from free tier."
         canonical="/pricing"
         structuredData={structuredData}
       />
-      <div className="container mx-auto px-4 py-8">
+      <LoadingBoundary
+        timeout={20000}
+        fallback={<ErrorState />}
+        onTimeout={() => setHasError(true)}
+      >
+        <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
@@ -170,17 +239,17 @@ const PricingPage = () => {
                   </li>
                 ))}
               </ul>
-              <Button 
+               <Button 
                 onClick={() => handleSubscribe('basic')}
                 className="w-full bg-sos-orange hover:bg-sos-orange/90"
-                disabled={loadingTier === 'basic'}
+                disabled={loadingTier === 'basic' || subscriptionLoading || hasError}
               >
                 {loadingTier === 'basic' ? (
                   <span className="flex items-center justify-center gap-2">
                     <Loader2 className="h-4 w-4 animate-spin" />
                     Preparing checkout...
                   </span>
-                ) : 'Choose Basic'}
+                ) : hasError ? 'Service Unavailable' : 'Choose Basic'}
               </Button>
             </CardContent>
           </Card>
@@ -200,18 +269,18 @@ const PricingPage = () => {
                   </li>
                 ))}
               </ul>
-              <Button 
+               <Button 
                 onClick={() => handleSubscribe('premium')}
                 className="w-full" 
                 variant="outline"
-                disabled={loadingTier === 'premium'}
+                disabled={loadingTier === 'premium' || subscriptionLoading || hasError}
               >
                 {loadingTier === 'premium' ? (
                   <span className="flex items-center justify-center gap-2">
                     <Loader2 className="h-4 w-4 animate-spin" />
                     Preparing checkout...
                   </span>
-                ) : 'Choose Premium'}
+                ) : hasError ? 'Service Unavailable' : 'Choose Premium'}
               </Button>
             </CardContent>
           </Card>
@@ -258,8 +327,9 @@ const PricingPage = () => {
           </p>
         </div>
         </div>
-      </div>
-    </>
+        </div>
+      </LoadingBoundary>
+    </ErrorBoundary>
   );
 };
 
