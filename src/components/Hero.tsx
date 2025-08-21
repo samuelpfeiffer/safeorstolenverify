@@ -9,8 +9,9 @@ import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { Button } from '@/components/ui/button';
-import { useSearchLimits } from '@/hooks/useSearchLimits';
+import { useEnhancedSearchLimits } from '@/hooks/useEnhancedSearchLimits';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 import { Shield, Users } from 'lucide-react';
 
 const Hero = () => {
@@ -19,7 +20,7 @@ const Hero = () => {
   const { toast } = useToast();
   const { verifyItem } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
-  const { remainingSearches, isSubscribed, isLoading: limitsLoading, consumeSearch } = useSearchLimits();
+  const { remainingSearches, isSubscribed, isLoading: limitsLoading, consumeSearch } = useEnhancedSearchLimits();
 
   const handleQrCodeSuccess = useCallback(async (decodedText: string) => {
     if (!decodedText?.trim()) {
@@ -163,7 +164,7 @@ const Hero = () => {
             <div className="text-center -mt-2 mb-8">
               <p className="text-sm md:text-base text-gray-300">
                 Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
-                <a href="/auth" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</a>.
+                <Link to="/auth" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
               </p>
             </div>
 

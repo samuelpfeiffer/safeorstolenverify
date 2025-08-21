@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Loader2, AlertTriangle } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
-import { useOptimizedSubscription } from "@/hooks/useOptimizedSubscription";
+import { useEnhancedSubscription } from "@/hooks/useEnhancedSubscription";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -18,7 +18,7 @@ const PricingPage = () => {
     createSubscriptionCheckout, 
     isLoading: subscriptionLoading,
     error: subscriptionError 
-  } = useOptimizedSubscription();
+  } = useEnhancedSubscription();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
   const [stripeCheckoutUrl, setStripeCheckoutUrl] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);

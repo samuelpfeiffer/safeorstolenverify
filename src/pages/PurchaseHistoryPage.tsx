@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useToast } from '@/hooks/use-toast';
@@ -24,6 +25,7 @@ interface PurchaseItem {
 }
 
 const PurchaseHistoryPage = () => {
+  const navigate = useNavigate();
   const [purchases, setPurchases] = useState<PurchaseItem[]>([]);
   const [filteredPurchases, setFilteredPurchases] = useState<PurchaseItem[]>([]);
   const [filterTerm, setFilterTerm] = useState("");
@@ -100,7 +102,7 @@ const PurchaseHistoryPage = () => {
           <p className="text-lg text-gray-300 mb-8">
             Please sign in to view your purchase history.
           </p>
-          <Button onClick={() => window.location.href = '/auth'} className="bg-sos-orange hover:bg-sos-orange/90">
+          <Button onClick={() => navigate('/auth')} className="bg-sos-orange hover:bg-sos-orange/90">
             Sign In
           </Button>
         </div>

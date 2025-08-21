@@ -1,8 +1,12 @@
 
-import { X, Receipt } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Receipt, Download, Eye, X } from 'lucide-react';
+import { format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 interface ReceiptItem {
   id: string;
@@ -25,6 +29,7 @@ interface ReceiptCardProps {
 }
 
 export const ReceiptCard = ({ item, onRemove }: ReceiptCardProps) => {
+  const navigate = useNavigate();
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleString();
@@ -84,7 +89,7 @@ export const ReceiptCard = ({ item, onRemove }: ReceiptCardProps) => {
               variant="outline" 
               size="sm" 
               className="border-sos-orange text-sos-orange hover:bg-sos-orange/10"
-              onClick={() => window.location.href = `/?verificationId=${item.purchase_details.verification_id}`}
+              onClick={() => navigate(`/?verificationId=${item.purchase_details.verification_id}`)}
             >
               <Receipt size={14} className="mr-1" />
               View Receipt

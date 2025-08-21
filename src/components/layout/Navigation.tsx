@@ -49,7 +49,7 @@ export const Navigation: React.FC = () => {
   const userMenuItems = isAuthenticated ? [
     { label: 'Search History', href: '/search-history', icon: Search },
     { label: 'Profile', href: '/profile', icon: User },
-    { label: 'Security Settings', href: '/security', icon: Shield },
+    { label: 'Security Settings', href: '/security-settings', icon: Shield },
     { label: 'Subscription', href: '/subscription', icon: Crown },
   ] : [];
 

@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -27,6 +28,7 @@ interface ReceiptItem {
 }
 
 const ReceiptsPage = () => {
+  const navigate = useNavigate();
   const [receipts, setReceipts] = useState<ReceiptItem[]>([]);
   const [filteredReceipts, setFilteredReceipts] = useState<ReceiptItem[]>([]);
   const [filterTerm, setFilterTerm] = useState("");
@@ -168,7 +170,7 @@ const ReceiptsPage = () => {
           <p className="text-lg text-gray-300 mb-8">
             Please sign in to view your saved receipts.
           </p>
-          <Button onClick={() => window.location.href = '/auth'} className="bg-sos-orange hover:bg-sos-orange/90">
+          <Button onClick={() => navigate('/auth')} className="bg-sos-orange hover:bg-sos-orange/90">
             Sign In
           </Button>
         </div>

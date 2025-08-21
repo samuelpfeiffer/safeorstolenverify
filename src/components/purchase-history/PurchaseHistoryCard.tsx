@@ -1,7 +1,12 @@
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { format } from 'date-fns';
+import { Eye, RefreshCw } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 interface PurchaseItem {
   id: string;
@@ -20,6 +25,7 @@ interface PurchaseHistoryCardProps {
 }
 
 export const PurchaseHistoryCard = ({ item }: PurchaseHistoryCardProps) => {
+  const navigate = useNavigate();
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString();
@@ -65,14 +71,14 @@ export const PurchaseHistoryCard = ({ item }: PurchaseHistoryCardProps) => {
             variant="outline" 
             size="sm" 
             className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10"
-            onClick={() => window.location.href = `/?verificationId=${item.verification_id}`}
+            onClick={() => navigate(`/?verificationId=${item.verification_id}`)}
           >
             View Details
           </Button>
           <Button 
             size="sm" 
             className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"
-            onClick={() => window.location.href = '/'}
+            onClick={() => navigate('/')}
           >
             Verify Again
           </Button>

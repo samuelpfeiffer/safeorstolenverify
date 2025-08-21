@@ -8,6 +8,7 @@ import { useAuth } from '@/lib/auth';
 import { useTermsAcceptance } from '@/hooks/useTermsAcceptance';
 import { useSecureSignUpForm, getMobileErrorMessage, SecureSignUpFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 interface SignUpFormSecureProps {
@@ -17,6 +18,7 @@ interface SignUpFormSecureProps {
 type SignUpStep = 'form' | 'terms';
 
 export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
+  const navigate = useNavigate();
   const { signUp, loading: authLoading, user } = useAuth();
   const isAuthenticated = !!user;
   const { acceptTerms, isProcessing } = useTermsAcceptance();
@@ -88,7 +90,7 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
         setStep('form');
         // Navigate to dashboard after successful signup and terms acceptance
         setTimeout(() => {
-          window.location.href = '/dashboard';
+          navigate('/dashboard');
         }, 500);
         onSuccess?.();
       }
