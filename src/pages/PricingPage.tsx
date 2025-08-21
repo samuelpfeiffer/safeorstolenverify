@@ -102,11 +102,13 @@ const PricingPage = () => {
       // Remove the URL parameter and trigger subscription
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         handleSubscribe(subscribeParam);
       }, 500);
+      
+      return () => clearTimeout(timeoutId);
     }
-  }, [searchParams, isAuthenticated, handleSubscribe, navigate]);
+  }, [searchParams.get('subscribe'), isAuthenticated, navigate]); // Removed handleSubscribe to prevent infinite loops
 
   // Cleanup timeout on unmount
   useEffect(() => {

@@ -2,13 +2,12 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useSubscription } from '@/hooks/useSubscription';
+import { useEnhancedSubscription } from '@/hooks/useEnhancedSubscription';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Crown, Check, Zap } from 'lucide-react';
 
 const SubscriptionPage: React.FC = () => {
-  const { subscriptionData } = useSubscription();
-  const loading = false;
+  const { subscriptionData, isLoading, error } = useEnhancedSubscription();
   const { isAuthenticated } = useUnifiedAuth();
 
   if (!isAuthenticated) {
@@ -27,7 +26,7 @@ const SubscriptionPage: React.FC = () => {
     );
   }
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-sos flex items-center justify-center">
         <div className="text-white">Loading subscription details...</div>
