@@ -84,9 +84,10 @@ const DataSourcesPage: React.FC = () => {
               <Database className="h-4 w-4 mr-2" />
               Trusted Data Sources
             </Badge>
-            <h1 className="text-4xl font-bold mb-4">Where Our Data Comes From</h1>
+            <h1 className="text-4xl font-bold mb-4">THE MOST COMPREHENSIVE DATABASE NETWORK ON EARTH</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We partner with law enforcement, insurance companies, and verified databases to give you the most comprehensive stolen item detection available.
+              We don't just access databases - we DOMINATE data coverage. 15+ sources, real-time updates, global reach. 
+              <span className="font-bold text-primary">Competitors can't even dream of this level of access.</span>
             </p>
           </div>
 
