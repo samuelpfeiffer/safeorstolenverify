@@ -16,10 +16,22 @@ export const Footer: React.FC = () => {
       title: 'Product',
       links: [
         { name: 'Verification Hub', href: '/verification-hub' },
+        { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'Verify Items', href: '/dashboard' },
         { name: 'How It Works', href: '/how-it-works' },
         { name: 'Pricing', href: '/pricing' },
+        { name: 'API Docs', href: '/api-docs' },
+      ]
+    },
+    {
+      title: 'For Business',
+      links: [
         { name: 'For Brands', href: '/for-brands' },
+        { name: 'Auction Houses', href: '/auction-houses' },
+        { name: 'Pawn Shops', href: '/pawn-shops' },
+        { name: 'Enterprise Demo', href: '/enterprise-demo' },
+        { name: 'Marketplace Integration', href: '/marketplace-integration' },
+        { name: 'Global Domination', href: '/global-domination' },
       ]
     },
     {
@@ -29,16 +41,17 @@ export const Footer: React.FC = () => {
         { name: 'Our Story', href: '/our-story' },
         { name: 'About Problem', href: '/about-problem' },
         { name: 'Contact', href: '/contact' },
+        { name: 'Data Sources', href: '/data-sources' },
       ]
     },
     {
       title: 'Support',
       links: [
-        { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'FAQ', href: '/faq' },
         { name: 'For Consumers', href: '/for-consumers' },
         { name: 'Contact Support', href: '/contact' },
         { name: 'Blog', href: '/blog' },
+        { name: 'Community', href: '/community' },
       ]
     },
     {
@@ -46,7 +59,7 @@ export const Footer: React.FC = () => {
       links: [
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-of-service' },
-        { name: 'Data Sources', href: '/data-sources' },
+        { name: 'Disclaimer', href: '/disclaimer' },
         { name: 'Security', href: '/admin/security' },
         { name: 'Data Protection', href: '/privacy-policy#data-protection' },
       ]
@@ -76,8 +89,8 @@ export const Footer: React.FC = () => {
             </div>
             
             <p className="text-gray-400 text-sm mb-4 max-w-md">
-              Fighting the $13 billion stolen goods crisis with real-time database verification. 
-              Protecting millions from unknowingly purchasing stolen items.
+              GLOBAL DOMINATION of stolen goods verification. Every marketplace, auction house, pawn shop 
+              worldwide uses SafeOrStolen.com. Fighting the $188 billion stolen goods crisis across 150+ countries.
             </p>
 
             {/* FasterCapital Branding */}
@@ -163,7 +176,7 @@ export const Footer: React.FC = () => {
             </div>
             <div>
               <p className="mb-2 font-medium text-gray-400">Global Impact</p>
-              <p>Protecting consumers across 50+ countries from stolen goods fraud.</p>
+              <p>DOMINATING 150+ countries. Every marketplace, auction house, pawn shop uses us worldwide.</p>
             </div>
           </div>
         </div>

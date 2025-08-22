@@ -33,8 +33,10 @@ export const Navigation: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'How It Works', href: '/how-it-works', icon: null },
+    { name: 'Verification Hub', href: '/verification-hub', icon: null },
     { name: 'For Businesses', href: '/for-brands', icon: null },
+    { name: 'Auction Houses', href: '/auction-houses', icon: null },
+    { name: 'Pawn Shops', href: '/pawn-shops', icon: null },
     { name: 'Pricing', href: '/pricing', icon: null },
     { name: 'Blog', href: '/blog', icon: null },
   ];

@@ -76,6 +76,7 @@ const UltimateGuidePage = lazy(() => import('@/pages/UltimateGuidePage'));
 const AuctionHousesPage = lazy(() => import('@/pages/AuctionHousesPage'));
 const PawnShopsPage = lazy(() => import('@/pages/PawnShopsPage'));
 const GlobalDominationPage = lazy(() => import('@/pages/GlobalDominationPage'));
+const MarketplaceIntegrationPage = lazy(() => import('@/pages/MarketplaceIntegrationPage'));
 
 /**
  * Enterprise Application Routing
@@ -123,6 +124,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="auction-houses" element={<AuctionHousesPage />} />
           <Route path="pawn-shops" element={<PawnShopsPage />} />
           <Route path="global-domination" element={<GlobalDominationPage />} />
+          <Route path="marketplace-integration" element={<MarketplaceIntegrationPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
