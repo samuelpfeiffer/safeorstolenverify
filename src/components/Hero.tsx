@@ -182,24 +182,32 @@ const Hero = () => {
 
             {/* Extra actions below verify card */}
             <div className="flex flex-col items-center gap-4">
-              <div className="w-full max-w-2xl mx-auto">
-                <Button
-                  variant="destructive"
-                  className="w-full px-5"
-                  onClick={() => navigate('/firearms-check')}
-                  aria-label="Search Stolen Firearms Database"
-                >
-                  Search Stolen Firearms Database
-                </Button>
-              </div>
+               <div className="w-full max-w-2xl mx-auto">
+                 <Button
+                   variant="destructive"
+                   className="w-full px-5"
+                   onClick={() => {
+                     if (!isAuthenticated) {
+                       navigate('/auth?tab=signup');
+                     } else {
+                       navigate('/firearms-check');
+                     }
+                   }}
+                   aria-label="Search Stolen Firearms Database"
+                 >
+                   {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
+                 </Button>
+               </div>
 
-              {/* Credits pill */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-gray-200">
-                <span className="text-sm">Verification Credits:</span>
-                <Badge variant="outline" className="rounded-full border-white/20 text-white">
-                  {limitsLoading ? 'checking...' : (isSubscribed ? 'unlimited' : `${remainingSearches} remaining`)}
-                </Badge>
-              </div>
+               {/* Credits pill - only show for authenticated users */}
+               {isAuthenticated && (
+                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-gray-200">
+                   <span className="text-sm">Verification Credits:</span>
+                   <Badge variant="outline" className="rounded-full border-white/20 text-white">
+                     {limitsLoading ? 'checking...' : (isSubscribed ? 'unlimited' : `${remainingSearches} remaining`)}
+                   </Badge>
+                 </div>
+               )}
             </div>
           </div>
         </div>

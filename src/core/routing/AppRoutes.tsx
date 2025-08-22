@@ -130,21 +130,25 @@ export const AppRoutes: React.FC = () => {
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
           <Route path="fastercapital/tech-cofounder" element={<TechCofounderPage />} />
           
-          {/* Real-time Verification */}
-          <Route path="real-time-verification" element={<Navigate to="/firearms-check" replace />} />
+          {/* Real-time Verification - ALL PROTECTED */}
+          <Route path="real-time-verification" element={
+            <ProtectedRoute>
+              <Navigate to="/firearms-check" replace />
+            </ProtectedRoute>
+          } />
           <Route path="firearms-check" element={<ProtectedRoute><FirearmsCheckPage /></ProtectedRoute>} />
           
-          {/* Item-specific verification pages */}
-          <Route path="check-phone" element={<CheckPhonePage />} />
-          <Route path="check-car" element={<CheckCarPage />} />
-          <Route path="check-electronics" element={<CheckElectronicsPage />} />
-          <Route path="check-bike" element={<CheckBikePage />} />
-          <Route path="item-categories" element={<ItemCategoriesPage />} />
+          {/* Item-specific verification pages - ALL PROTECTED */}
+          <Route path="check-phone" element={<ProtectedRoute><CheckPhonePage /></ProtectedRoute>} />
+          <Route path="check-car" element={<ProtectedRoute><CheckCarPage /></ProtectedRoute>} />
+          <Route path="check-electronics" element={<ProtectedRoute><CheckElectronicsPage /></ProtectedRoute>} />
+          <Route path="check-bike" element={<ProtectedRoute><CheckBikePage /></ProtectedRoute>} />
+          <Route path="item-categories" element={<ProtectedRoute><ItemCategoriesPage /></ProtectedRoute>} />
           
-          {/* Problem and verification result pages */}
+          {/* Problem and verification result pages - PROTECTED */}
           <Route path="problem" element={<ProblemPage />} />
-          <Route path="verification-results/:id" element={<VerificationResultsPage />} />
-          <Route path="verification-success" element={<VerificationSuccessPage />} />
+          <Route path="verification-results/:id" element={<ProtectedRoute><VerificationResultsPage /></ProtectedRoute>} />
+          <Route path="verification-success" element={<ProtectedRoute><VerificationSuccessPage /></ProtectedRoute>} />
           
           {/* Testing and development pages */}
           <Route path="launch-test" element={
@@ -153,7 +157,11 @@ export const AppRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-          <Route path="verify" element={<Navigate to="/dashboard" replace />} />
+          <Route path="verify" element={
+            <ProtectedRoute>
+              <Navigate to="/dashboard" replace />
+            </ProtectedRoute>
+          } />
           <Route path="dashboard" element={
             <ProtectedRoute>
               <DashboardPage />
