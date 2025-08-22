@@ -10,7 +10,7 @@ import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
 import { getSubscriptionPriceId } from '@/utils/pricing';
 
 const SubscriptionPage: React.FC = () => {
-  const { subscriptionData, isLoading, error, createSubscriptionCheckout, openCustomerPortal } = useEnhancedSubscription();
+  const { subscriptionData, isLoading, error, createSubscriptionCheckout, openCustomerPortal, getCustomerPortalUrl } = useEnhancedSubscription();
   const { isAuthenticated } = useUnifiedAuth();
 
   if (!isAuthenticated) {
@@ -80,7 +80,7 @@ const SubscriptionPage: React.FC = () => {
                         </p>
                       )}
                     </div>
-                    <Button variant="outline" className="w-full" onClick={openCustomerPortal}>
+                    <Button variant="outline" className="w-full" onClick={async () => { const newTab = window.open('', '_blank'); const portalUrl = await getCustomerPortalUrl(); if (portalUrl) { if (newTab) { newTab.location.href = portalUrl; } else { window.open(portalUrl, '_blank'); } } else { newTab?.close(); } }}>
                       Manage Subscription
                     </Button>
                   </div>

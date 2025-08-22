@@ -17,6 +17,7 @@ interface UseEnhancedSubscriptionReturn {
   checkSubscription: () => Promise<void>;
   createSubscriptionCheckout: (priceId: string) => Promise<string | null>;
   openCustomerPortal: () => Promise<void>;
+  getCustomerPortalUrl: () => Promise<string | null>;
   refreshSubscription: () => Promise<void>;
 }
 
@@ -187,6 +188,54 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     }
   }, [session, executeRequest, toast]);
 
+  const getCustomerPortalUrl = useCallback(async (): Promise<string | null> => {
+    if (!session) {
+      toast({
+        title: "Authentication required",
+        description: "Please sign in to manage your subscription",
+        variant: "destructive",
+      });
+      return null;
+    }
+
+    if (isMountedRef.current) {
+      setIsLoading(true);
+    }
+
+    try {
+      const result = await executeRequest(
+        async (signal) => {
+          const { data, error } = await supabase.functions.invoke('customer-portal', {
+            headers: {
+              Authorization: `Bearer ${session.access_token}`,
+            },
+          });
+
+          if (error) throw error;
+          return data.url as string;
+        },
+        `portal-url-${session.user.id}`,
+        { timeout: 10000, dedupe: true }
+      );
+
+      return result || null;
+    } catch (error: any) {
+      console.error("Failed to get customer portal URL:", error);
+      if (isMountedRef.current) {
+        toast({
+          title: "Portal error",
+          description: error.message || "Failed to open customer portal",
+          variant: "destructive",
+        });
+      }
+      return null;
+    } finally {
+      if (isMountedRef.current) {
+        setIsLoading(false);
+      }
+    }
+  }, [session, executeRequest, toast]);
+
   const refreshSubscription = useCallback(async () => {
     await checkSubscription();
   }, [checkSubscription]);
@@ -205,6 +254,7 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     checkSubscription,
     createSubscriptionCheckout,
     openCustomerPortal,
+    getCustomerPortalUrl,
     refreshSubscription,
   };
 };
