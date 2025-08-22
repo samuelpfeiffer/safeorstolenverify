@@ -7,7 +7,7 @@ import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
 import { IntegrationShowcase } from '@/components/integration/IntegrationShowcase';
 import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
 import { ContentClaritySection } from '@/components/content/ContentClaritySection';
-import { EnhancedPageSEO } from '@/components/seo/EnhancedPageSEO';
+import { ComprehensiveSEO } from '@/components/seo/ComprehensiveSEO';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -41,16 +41,11 @@ const HomePage = () => {
 
   return (
     <>
-      <EnhancedPageSEO 
+      <ComprehensiveSEO 
         title="Can I Check if This is Stolen? Free Hub for Cars, Phones, Guns, Everything"
         description="Can I check if this car/phone/bike/gun/electronics is stolen? What website can I use to see if ANYTHING is hot? THE verification hub for everything!"
         keywords="can I check if this is stolen, is this hot, stolen goods checker, verify if legitimate, check if something hot, stolen car phone gun bike electronics jewelry tools everything"
-        image="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
-        type="website"
-        structuredData={homePageStructuredData}
-        breadcrumbPath={[
-          { name: "Home", url: "/" }
-        ]}
+        canonical="/"
       />
       <div className="min-h-screen">
         <Hero />

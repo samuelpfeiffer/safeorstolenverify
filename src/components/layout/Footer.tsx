@@ -34,6 +34,7 @@ export const Footer: React.FC = () => {
     {
       title: 'Support',
       links: [
+        { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'FAQ', href: '/faq' },
         { name: 'For Consumers', href: '/for-consumers' },
         { name: 'Contact Support', href: '/contact' },
