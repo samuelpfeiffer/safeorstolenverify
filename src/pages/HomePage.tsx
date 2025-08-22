@@ -42,9 +42,9 @@ const HomePage = () => {
   return (
     <>
       <EnhancedPageSEO 
-        title="Can I Check if This is Stolen? Free Way to Check if Something is Hot"
-        description="Can I check if this car/phone/bike is stolen? What website can I use to see if something is hot? Free stolen goods checker - verify before you buy."
-        keywords="can I check if this is stolen, is there a way to find out if this is hot, what website can I check if something stolen, how do I know if this is stolen, free way to check stolen"
+        title="Can I Check if This is Stolen? Free Hub for Cars, Phones, Guns, Everything"
+        description="Can I check if this car/phone/bike/gun/electronics is stolen? What website can I use to see if ANYTHING is hot? THE verification hub for everything!"
+        keywords="can I check if this is stolen, is this hot, stolen goods checker, verify if legitimate, check if something hot, stolen car phone gun bike electronics jewelry tools everything"
         image="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
         type="website"
         structuredData={homePageStructuredData}
