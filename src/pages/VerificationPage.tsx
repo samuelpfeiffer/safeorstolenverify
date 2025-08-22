@@ -100,25 +100,6 @@ const VerificationPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
-      {/* Navigation */}
-      <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold">Safe or Stolen</h1>
-          </div>
-          <div className="flex items-center space-x-4">
-            <Button asChild variant="ghost">
-              <Link to="/">Home</Link>
-            </Button>
-            {user && (
-              <Button asChild variant="ghost">
-                <Link to="/dashboard">Dashboard</Link>
-              </Button>
-            )}
-          </div>
-        </div>
-      </nav>
 
       <div className="container mx-auto px-4 py-8">
         {/* Back Button */}
