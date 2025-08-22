@@ -117,7 +117,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="fastercapital/tech-cofounder" element={<TechCofounderPage />} />
           
           {/* Real-time Verification */}
-          <Route path="real-time-verification" element={<ProtectedRoute><RealTimeVerificationPage /></ProtectedRoute>} />
+          <Route path="real-time-verification" element={<Navigate to="/firearms-check" replace />} />
           <Route path="firearms-check" element={<ProtectedRoute><FirearmsCheckPage /></ProtectedRoute>} />
           
           {/* Item-specific verification pages */}
