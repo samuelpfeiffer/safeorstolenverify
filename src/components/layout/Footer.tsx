@@ -44,6 +44,7 @@ export const Footer: React.FC = () => {
       links: [
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Service', href: '/terms-of-service' },
+        { name: 'Data Sources', href: '/data-sources' },
         { name: 'Security', href: '/admin/security' },
         { name: 'Data Protection', href: '/privacy-policy#data-protection' },
       ]

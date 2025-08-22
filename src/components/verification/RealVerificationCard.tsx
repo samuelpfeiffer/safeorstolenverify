@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -15,6 +16,7 @@ import {
 import { VerificationResult } from '@/utils/typeGuards';
 import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
 import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
+import { CertifiedSafeBadge } from './CertifiedSafeBadge';
 
 interface RealVerificationCardProps {
   verificationResult?: VerificationResult;
@@ -218,8 +220,10 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
         </CardHeader>
         <CardContent>
           {verificationResult.status === 'safe' && (
-            <div className="space-y-2">
-              <p className="text-green-700">✓ This item appears safe to purchase</p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <CertifiedSafeBadge size="sm" />
+              </div>
               <p className="text-sm text-gray-600">However, always verify the seller's identity and request proof of ownership.</p>
             </div>
           )}

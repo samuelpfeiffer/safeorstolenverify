@@ -70,6 +70,7 @@ const VerificationResultsPage = lazy(() => import('@/pages/VerificationResultsPa
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
 const ProblemPage = lazy(() => import('@/pages/ProblemPage'));
 const LaunchTestPage = lazy(() => import('@/pages/LaunchTestPage'));
+const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 
 /**
  * Enterprise Application Routing
@@ -111,6 +112,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="api-docs" element={<ApiDocsPage />} />
           <Route path="sitemap" element={<SitemapPage />} />
           <Route path="community" element={<CommunityPage />} />
+          <Route path="data-sources" element={<DataSourcesPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
