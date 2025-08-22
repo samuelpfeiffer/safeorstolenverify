@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Search, AlertTriangle, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useNavigate } from 'react-router-dom';
 
 const FirearmsCheckPage: React.FC = () => {
   const [serial, setSerial] = useState('');
@@ -13,6 +15,8 @@ const FirearmsCheckPage: React.FC = () => {
   const [resultHtml, setResultHtml] = useState<string | null>(null);
   const [found, setFound] = useState<boolean | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { isAuthenticated } = useUnifiedAuth();
+  const navigate = useNavigate();
 
   const faqSchema = useMemo(() => ([{
     '@context': 'https://schema.org',
@@ -62,6 +66,10 @@ const FirearmsCheckPage: React.FC = () => {
   }]), []);
 
   const handleSearch = async () => {
+    if (!isAuthenticated) {
+      navigate('/auth?tab=signup');
+      return;
+    }
     const cleaned = serial.replace(/\s+/g, '');
     if (!cleaned) return;
     setError(null);

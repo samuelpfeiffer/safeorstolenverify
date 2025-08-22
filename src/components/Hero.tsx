@@ -13,6 +13,8 @@ import { useEnhancedSearchLimits } from '@/hooks/useEnhancedSearchLimits';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Shield, Users } from 'lucide-react';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
 
 const Hero = () => {
   const [isQrScannerOpen, setIsQrScannerOpen] = useState(false);
@@ -21,6 +23,8 @@ const Hero = () => {
   const { verifyItem } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
   const { remainingSearches, isSubscribed, isLoading: limitsLoading, consumeSearch } = useEnhancedSearchLimits();
+  const { isAuthenticated } = useUnifiedAuth();
+  const { savePendingVerification } = usePendingVerification();
 
   const handleQrCodeSuccess = useCallback(async (decodedText: string) => {
     if (!decodedText?.trim()) {
@@ -35,6 +39,14 @@ const Hero = () => {
     try {
       const itemType = detectItemType(decodedText);
       const trimmedText = decodedText.trim();
+
+      // Require authentication before verification
+      if (!isAuthenticated) {
+        await savePendingVerification(trimmedText, itemType, 'buyer');
+        setIsQrScannerOpen(false);
+        navigate('/auth?tab=signup');
+        return;
+      }
 
       // Check search limits
       const canProceed = await consumeSearch();
