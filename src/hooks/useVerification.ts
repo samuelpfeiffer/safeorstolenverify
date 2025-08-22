@@ -37,8 +37,8 @@ export const useVerification = (initialSerialNumber?: string | null) => {
   // Handle URL search parameters
   useEffect(() => {
     if (initialSerialNumber) {
-      // Use the real verification algorithm instead of random selection
-      const status = determineStatus(initialSerialNumber);
+      // Use 'unknown' status since no fake verification
+      const status = 'unknown' as const;
       const category = 'Electronics'; // Default category for direct URL queries
       const iconType = determineIconType(category);
       
@@ -49,7 +49,7 @@ export const useVerification = (initialSerialNumber?: string | null) => {
         category: category,
         image: "https://images.unsplash.com/photo-1511707171634-5f897ff02ff9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
         icon: getIconForCategory(iconType),
-        status: status,
+        status: 'unknown', // No fake status determination
         serialNumber: initialSerialNumber,
         verificationDate: new Date().toISOString(),
         color: "Black"

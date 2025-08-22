@@ -8,6 +8,7 @@ import { Search, ScanLine, CheckCircle, X, Receipt, Camera } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
+import { ContactCard } from '@/components/ContactCard';
 import { useToast } from '@/hooks/use-toast';
 
 interface VerificationSectionProps {
@@ -34,7 +35,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
   const [isScanning, setIsScanning] = useState(false);
   const [verificationResult, setVerificationResult] = useState<VerificationResult | null>(null);
   const [isVerifying, setIsVerifying] = useState(false);
-  const [showReceiptGenerator, setShowReceiptGenerator] = useState(false);
+  const [showContactCard, setShowContactCard] = useState(false);
   const [isBusinessAccount] = useState(false); // This would come from user profile
   
   const { user } = useAuth();
@@ -77,26 +78,18 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
 
     setIsVerifying(true);
     
-    // Simulate verification process
+    // Show contact card instead of fake verification
     setTimeout(() => {
-      const isStolen = Math.random() < 0.2; // 20% chance of stolen/lost
-      const result: VerificationResult = {
-        status: isStolen ? (Math.random() < 0.5 ? 'stolen' : 'lost') : 'safe',
-        item: {
-          name: 'iPhone 14 Pro',
-          image: '/placeholder.svg',
-          description: 'Apple iPhone 14 Pro 128GB Space Black',
-          serialNumber: searchQuery,
-        },
-      };
-      
-      setVerificationResult(result);
+      setVerificationResult(null);
+      setShowContactCard(true);
       setIsVerifying(false);
       
-      if (result.status === 'safe') {
-        setShowReceiptGenerator(true);
-      }
-    }, 2000);
+      toast({
+        title: "Verification Request Received",
+        description: "We only provide real database results. Please contact us for manual verification assistance.",
+        variant: "default",
+      });
+    }, 1500);
   };
 
   const handleQrScan = (result: string) => {
@@ -107,17 +100,16 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
 
   const generateReceipt = () => {
     toast({
-      title: "Receipt Generated",
+      title: "Receipt Generated", 
       description: "Verification receipt has been created and saved.",
     });
-    setShowReceiptGenerator(false);
   };
 
   const resetVerification = () => {
     setVerificationResult(null);
     setSearchQuery('');
     setSelectedItemType('');
-    setShowReceiptGenerator(false);
+    setShowContactCard(false);
   };
 
   const getStatusIcon = (status: string) => {
@@ -137,12 +129,29 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
       case 'safe':
         return 'bg-green-50 border-green-200 text-green-800';
       case 'stolen':
+      case 'unknown':
+        return 'bg-amber-50 border-amber-200 text-amber-800';
       case 'lost':
         return 'bg-red-50 border-red-200 text-red-800';
       default:
         return 'bg-gray-50 border-gray-200 text-gray-800';
     }
   };
+
+  if (showContactCard) {
+    return (
+      <div className="w-full max-w-2xl mx-auto space-y-4">
+        <ContactCard 
+          message="We couldn't verify this item through our automated systems. All our verification results come from real database lookups only - no simulated or fake results."
+        />
+        <div className="text-center">
+          <Button onClick={resetVerification} variant="outline">
+            Try Another Item
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   if (verificationResult) {
     return (
@@ -173,47 +182,11 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
             </div>
           </div>
 
-          {verificationResult.status === 'safe' && showReceiptGenerator && (
-            <Card className="border-green-200 bg-green-50">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Receipt className="h-5 w-5" />
-                  Generate Receipt
-                </CardTitle>
-                <CardDescription>
-                  Create a verification receipt for your records
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="grid grid-cols-2 gap-3">
-                  <Input placeholder="Buyer Name" />
-                  <Input placeholder="Purchase Price" />
-                </div>
-                <Input placeholder="Purchase Location" />
-                <Input placeholder="Additional Notes" />
-                
-                {isBusinessAccount && (
-                  <Card className="border-blue-200 bg-blue-50 p-3">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Camera className="h-4 w-4 text-blue-600" />
-                      <span className="text-sm font-medium text-blue-800">Business Account - ID Scanner</span>
-                    </div>
-                    <Button variant="outline" size="sm" className="w-full">
-                      Scan Customer ID
-                    </Button>
-                  </Card>
-                )}
-                
-                <div className="flex gap-2">
-                  <Button onClick={generateReceipt} className="flex-1">
-                    Generate Receipt
-                  </Button>
-                  <Button variant="outline" onClick={() => setShowReceiptGenerator(false)}>
-                    Skip
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          {verificationResult.status === 'safe' && (
+            <ContactCard 
+              message="Item appears safe, but please contact us for official verification documentation and receipt generation."
+              className="border-green-200 bg-green-50"
+            />
           )}
 
           <div className="flex gap-3">

@@ -252,53 +252,12 @@ async function verifyIMEI(imei: string): Promise<VerificationResult> {
       }
     }
 
-    // Fallback: Simulated outcomes based on IMEI patterns (kept for resilience and demos)
-    const lastDigit = parseInt(imei.slice(-1))
-    if (lastDigit <= 2) {
-      return {
-        status: 'stolen',
-        confidence: 95,
-        source: 'CTIA_Stolen_Database',
-        details: {
-          reportedDate: '2024-01-15',
-          reportingAgency: 'Local Police Department',
-          caseNumber: 'SPD-2024-0156'
-        },
-        message: 'Device reported stolen'
-      }
-    } else if (lastDigit <= 4) {
-      return {
-        status: 'lost',
-        confidence: 88,
-        source: 'GSMA_IMEI_Database',
-        details: {
-          reportedDate: '2024-02-10',
-          status: 'blacklisted'
-        },
-        message: 'Device reported lost'
-      }
-    } else if (lastDigit <= 6) {
-      return {
-        status: 'unknown',
-        confidence: 45,
-        source: 'Multiple_Sources',
-        details: {
-          note: 'No records found in available databases'
-        },
-        message: 'No theft reports found'
-      }
-    } else {
-      return {
-        status: 'safe',
-        confidence: 92,
-        source: 'GSMA_IMEI_Database',
-        details: {
-          manufacturer: 'Apple',
-          model: 'iPhone 14 Pro',
-          verificationDate: new Date().toISOString()
-        },
-        message: 'Device appears to be legitimate'
-      }
+    // Only use real API results - remove all simulated outcomes
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'system',
+      message: 'IMEI verification requires manual processing. Please contact support for assistance.'
     }
 
   } catch (error) {
@@ -316,9 +275,6 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
   try {
     console.log(`Verifying VIN: ${vin}`)
     
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1200))
-    
     // Basic VIN validation
     if (!/^[A-HJ-NPR-Z0-9]{17}$/i.test(vin)) {
       return {
@@ -329,53 +285,20 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
       }
     }
 
-    // Simulate different outcomes based on VIN patterns
-    const checkDigit = vin.charAt(8)
-    
-    if (['1', '2', '3'].includes(checkDigit)) {
-      return {
-        status: 'stolen',
-        confidence: 98,
-        source: 'NCIC_Database',
-        details: {
-          reportedDate: '2024-03-05',
-          reportingAgency: 'FBI',
-          caseNumber: 'FBI-2024-VT-4478'
-        },
-        message: 'Vehicle reported stolen'
-      }
-    } else if (['4', '5'].includes(checkDigit)) {
-      return {
-        status: 'unknown',
-        confidence: 35,
-        source: 'AutoCheck_Database',
-        details: {
-          note: 'Limited information available'
-        },
-        message: 'No theft reports found'
-      }
-    } else {
-      return {
-        status: 'safe',
-        confidence: 94,
-        source: 'CARFAX_Database',
-        details: {
-          make: 'Toyota',
-          model: 'Camry',
-          year: 2022,
-          verificationDate: new Date().toISOString()
-        },
-        message: 'Vehicle appears to be legitimate'
-      }
+    // No fake results - only return unknown for manual verification
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'system',
+      message: 'VIN verification requires manual processing. Please contact support for assistance.'
     }
-    
   } catch (error) {
     console.error('VIN verification error:', error)
     return {
-      status: 'error',
+      status: 'error', 
       confidence: 0,
-      source: 'system',
-      message: 'Verification service temporarily unavailable'
+      source: 'error',
+      message: 'VIN verification service temporarily unavailable'
     }
   }
 }
@@ -523,52 +446,18 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
   try {
     console.log(`Verifying ${itemType} serial: ${serialNumber}`)
     
-    // Try CheckMend first for comprehensive stolen goods verification
+    // Only return CheckMend results or unknown - no fake simulation
     const checkMendResult = await verifyWithCheckMend(serialNumber, itemType)
     if (checkMendResult.status !== 'unknown' && checkMendResult.confidence > 70) {
       return checkMendResult
     }
     
-    // Fallback to simulated logic if CheckMend is inconclusive
-    const hash = serialNumber.split('').reduce((a, b) => {
-      a = ((a << 5) - a) + b.charCodeAt(0)
-      return a & a
-    }, 0)
-    
-    const outcome = Math.abs(hash) % 10
-    
-    if (outcome <= 1) {
-      return {
-        status: 'stolen',
-        confidence: 85,
-        source: 'Stolen_Goods_Registry',
-        details: {
-          reportedDate: '2024-01-20',
-          category: itemType
-        },
-        message: 'Item reported stolen'
-      }
-    } else if (outcome <= 3) {
-      return {
-        status: 'unknown',
-        confidence: 50,
-        source: 'Generic_Database',
-        details: {
-          note: 'No records found'
-        },
-        message: 'No theft reports found'
-      }
-    } else {
-      return {
-        status: 'safe',
-        confidence: 88,
-        source: 'Manufacturer_Registry',
-        details: {
-          category: itemType,
-          verificationDate: new Date().toISOString()
-        },
-        message: 'Item appears to be legitimate'
-      }
+    // No fake results - direct to manual verification
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'system', 
+      message: 'Manual verification required. Please contact support for assistance.'
     }
     
   } catch (error) {
