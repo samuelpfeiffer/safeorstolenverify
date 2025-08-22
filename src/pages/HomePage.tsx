@@ -9,6 +9,7 @@ import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
 import { ContentClaritySection } from '@/components/content/ContentClaritySection';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { GlobalSEOHead } from '@/components/seo/GlobalSEOHead';
+import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 
 const HomePage = () => {
@@ -45,10 +46,11 @@ const HomePage = () => {
     <>
       <GlobalPerformanceOptimizer />
       <GlobalAnalytics />
+      <GoogleSearchConsoleSetup />
       <GlobalSEOHead
-        title="GLOBAL DOMINATION: SafeOrStolen.com - Every Marketplace, Auction House, Pawn Shop NEEDS Us! Check if Cars, Phones, Guns, Electronics, Bikes, Jewelry, Tools, ANYTHING is Stolen!"
-        description="THE ONLY platform that Facebook Marketplace, Craigslist, OfferUp, Christie's, Sotheby's, and 12,000+ pawn shops will BUY or INTEGRATE. Global stolen goods verification dominance. Check ANY item: cars, phones, guns, electronics, bikes, jewelry, tools by VIN, IMEI, serial number. Used by auction houses, pawn shops, marketplaces worldwide. Can I check if this is stolen? Is this hot? Where to verify if something is legitimate? THE answer is SafeOrStolen.com - global verification hub."
-        keywords="global marketplace domination, Facebook Marketplace verification, Craigslist stolen goods check, OfferUp verification, auction house authentication, pawn shop verification, stolen goods API, marketplace integration, Christie's verification, Sotheby's authentication, global verification platform, check if stolen worldwide, stolen goods database global, international verification, marketplace fraud prevention, global second-hand verification, worldwide stolen goods check, can I check if this is stolen, is this hot, stolen goods checker, verify if legitimate, check if something hot, stolen car phone gun bike electronics jewelry tools everything, where to check if stolen, what website checks stolen goods, how to verify if something is hot, global stolen item database, international fraud prevention, worldwide verification service"
+        title="Safe Or Stolen - Check if Items are Stolen Before You Buy"
+        description="Free verification tool to check if IMEI, serial numbers, VIN are stolen. Protect yourself from fraud on Facebook Marketplace, eBay, Craigslist. Verify before you buy secondhand items."
+        keywords="stolen goods check, IMEI stolen check, VIN stolen lookup, serial number verification, check if stolen, verify before buy, Facebook Marketplace safety, eBay fraud prevention, Craigslist protection, secondhand verification"
         canonical="/"
       />
       <div className="min-h-screen">
