@@ -97,8 +97,8 @@ const FirearmsCheckPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-sos text-white pt-20">
       <EnhancedSEOHead
-        title="Search Stolen Firearms Database (HotGunz)"
-        description="Check if a firearm has been reported stolen before purchasing. Get on-site results from HotGunz without leaving this page."
+        title="Where to Check if Gun is Stolen - Free Firearm Serial Number Lookup"
+        description="Where do I check if a gun is stolen? Free firearm serial number lookup using HotGunz database. Verify gun is not stolen before purchase."
         canonical="/firearms-check"
         additionalSchemas={faqSchema as unknown as Array<Record<string, any>>}
       />

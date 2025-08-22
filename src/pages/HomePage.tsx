@@ -42,9 +42,9 @@ const HomePage = () => {
   return (
     <>
       <EnhancedPageSEO 
-        title="Safe or Stolen - Check if IMEI, Serial Numbers & VIN are Stolen | Free Verification Tool"
-        description="Instantly verify if phones (IMEI), cars (VIN), bikes, electronics are stolen before buying. Free stolen goods checker. Protect yourself from marketplace fraud."
-        keywords="check if stolen, IMEI check stolen, VIN stolen lookup, serial number verification, stolen goods check, verify before you buy, marketplace safety, fraud prevention"
+        title="Where to Check if Car, Phone, Bike, TV, Gun is Stolen | Free Verification"
+        description="Check if your car (VIN), phone (IMEI), bike, TV, electronics, gun is stolen before buying. Free stolen goods database search. Avoid buying stolen items."
+        keywords="where to check if car stolen, how to check if phone stolen, verify VIN stolen, IMEI blacklist check, stolen bike lookup, gun serial number check, stolen electronics database, avoid stolen goods"
         image="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
         type="website"
         structuredData={homePageStructuredData}

@@ -1,234 +1,211 @@
 import React from 'react';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Smartphone, Car, Bike, Laptop, Camera, Gamepad2, 
-  Navigation, Tablet, Tv, Headphones, Trophy, Shield
-} from 'lucide-react';
+import { Shield, Search, CheckCircle, Smartphone, Car, Bike, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ItemCategoriesPage: React.FC = () => {
-  const categories = [
+  const serviceSchema = createServiceSchema();
+  const faqSchema = createFAQSchema();
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Check Items', url: '/item-categories' }
+  ]);
+
+  const itemCategories = [
     {
-      icon: Smartphone,
-      title: 'Phones & Mobile Devices',
-      description: 'Check smartphones, feature phones, tablets, smartwatches',
-      items: ['iPhone', 'Samsung Galaxy', 'Google Pixel', 'OnePlus', 'Nokia', 'Xiaomi'],
-      link: '/check-phone'
-    },
-    {
+      title: "Cars & Vehicles",
+      description: "Check if car, truck, motorcycle is stolen using VIN",
       icon: Car,
-      title: 'Vehicles & Transportation',
-      description: 'Verify cars, trucks, motorcycles, trailers, RVs',
-      items: ['Cars', 'Trucks', 'SUVs', 'Motorcycles', 'Trailers', 'Buses'],
-      link: '/check-car'
+      link: "/check-car",
+      keywords: "VIN, vehicle, car, truck, motorcycle",
+      color: "bg-blue-500"
     },
     {
+      title: "Phones & Electronics", 
+      description: "Verify if phone, tablet, laptop is stolen using IMEI",
+      icon: Smartphone,
+      link: "/check-phone",
+      keywords: "IMEI, iPhone, Android, phone, tablet",
+      color: "bg-green-500"
+    },
+    {
+      title: "Bikes & Cycles",
+      description: "Check if bicycle, motorcycle is reported stolen",
       icon: Bike,
-      title: 'Bicycles & E-Bikes',
-      description: 'Check road bikes, mountain bikes, BMX, e-bikes, scooters',
-      items: ['Road Bikes', 'Mountain Bikes', 'BMX', 'E-Bikes', 'Scooters', 'Racing Bikes'],
-      link: '/check-bike'
+      link: "/check-bike", 
+      keywords: "bicycle, bike, cycle, frame number",
+      color: "bg-purple-500"
     },
     {
-      icon: Laptop,
-      title: 'Computers & Laptops',
-      description: 'Verify desktop computers, laptops, monitors, peripherals',
-      items: ['MacBooks', 'Dell Laptops', 'HP Computers', 'Lenovo ThinkPads', 'Gaming PCs', 'Monitors'],
-      link: '/check-electronics'
+      title: "TVs & Electronics",
+      description: "Verify if TV, computer, gaming console is stolen",
+      icon: Monitor,
+      link: "/check-electronics",
+      keywords: "TV, television, computer, gaming, console",
+      color: "bg-orange-500"
     },
     {
-      icon: Camera,
-      title: 'Cameras & Photography',
-      description: 'Check cameras, lenses, flashes, photography equipment',
-      items: ['DSLR Cameras', 'Mirrorless', 'Canon', 'Nikon', 'Sony', 'Lenses'],
-      link: '/check-electronics'
-    },
-    {
-      icon: Gamepad2,
-      title: 'Gaming Consoles',
-      description: 'Verify PlayStation, Xbox, Nintendo Switch, handheld gaming',
-      items: ['PlayStation 5', 'Xbox Series X', 'Nintendo Switch', 'Steam Deck', 'Gaming Handhelds'],
-      link: '/check-electronics'
-    },
-    {
-      icon: Navigation,
-      title: 'GPS & Navigation',
-      description: 'Check GPS devices, navigation systems, tracking devices',
-      items: ['Garmin GPS', 'TomTom', 'Vehicle Navigation', 'Handheld GPS', 'Marine GPS'],
-      link: '/check-electronics'
-    },
-    {
-      icon: Tablet,
-      title: 'Tablets & E-Readers',
-      description: 'Verify iPads, Android tablets, e-readers, drawing tablets',
-      items: ['iPad', 'Samsung Galaxy Tab', 'Microsoft Surface', 'Kindle', 'Wacom Tablets'],
-      link: '/check-electronics'
-    },
-    {
-      icon: Tv,
-      title: 'Electronics & Home Theater',
-      description: 'Check TVs, audio systems, receivers, home theater equipment',
-      items: ['Smart TVs', 'Sound Systems', 'Receivers', 'Projectors', 'Streaming Devices'],
-      link: '/check-electronics'
-    },
-    {
-      icon: Headphones,
-      title: 'Audio & Music Equipment',
-      description: 'Verify headphones, speakers, instruments, audio gear',
-      items: ['AirPods', 'Headphones', 'Speakers', 'Musical Instruments', 'DJ Equipment'],
-      link: '/check-electronics'
-    },
-    {
-      icon: Trophy,
-      title: 'Sports & Recreation',
-      description: 'Check sports equipment, outdoor gear, fitness equipment',
-      items: ['Surfboards', 'Skis', 'Golf Clubs', 'Gym Equipment', 'Outdoor Gear'],
-      link: '/check-electronics'
-    },
-    {
+      title: "Firearms & Guns",
+      description: "Check if gun, rifle, pistol is stolen using serial number",
       icon: Shield,
-      title: 'Other Valuables',
-      description: 'Verify jewelry, tools, machinery, collectibles, antiques',
-      items: ['Power Tools', 'Jewelry', 'Collectibles', 'Machinery', 'Art', 'Antiques'],
-      link: '/check-electronics'
+      link: "/firearms-check",
+      keywords: "gun, firearm, rifle, pistol, serial number",
+      color: "bg-red-500"
+    }
+  ];
+
+  const faqData = [
+    {
+      question: "Where do I check if something is stolen?",
+      answer: "Use our free verification tools above. Each category checks against official stolen goods databases including law enforcement and insurance company records."
+    },
+    {
+      question: "How do I know if I'm buying stolen goods?",
+      answer: "Always verify the item's serial number, VIN, or IMEI before purchase. If the seller can't provide these numbers or seems evasive, walk away."
+    },
+    {
+      question: "What should I do if an item shows as stolen?",
+      answer: "Do not purchase the item. Contact local law enforcement immediately and report the seller. You could be helping recover stolen property."
+    },
+    {
+      question: "Are these checks really free?",
+      answer: "Yes, basic verification checks are completely free. We believe everyone should be able to protect themselves from stolen goods."
     }
   ];
 
   return (
     <>
-      <SEOHead 
-        title="Item Categories - Check If Any Item Is Stolen | Safe or Stolen"
-        description="Complete list of item categories you can check for stolen status. Verify phones, cars, bikes, electronics, cameras, gaming consoles, and more before buying secondhand goods."
-        keywords="stolen item categories, check stolen phones, verify cars, stolen electronics, lost property types, item verification categories, secondhand verification, pre-owned check"
+      <EnhancedSEOHead 
+        title="Where to Check if Items are Stolen - Free Database Lookup for Any Item"
+        description="Where do I check if something is stolen? Free lookup for cars (VIN), phones (IMEI), bikes, TVs, guns, electronics. Verify before you buy anything."
+        keywords="where to check if stolen, how to check if something stolen, where check stolen goods, verify item not stolen, stolen goods database, check before buying"
         canonical="/item-categories"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "name": "Stolen Item Verification Categories",
-          "description": "Complete list of item categories that can be verified for stolen status",
-          "url": "https://safeorstolen.com/item-categories",
-          "numberOfItems": 12
-        }}
+        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="text-center mb-12">
+            <div className="flex justify-center mb-6">
+              <div className="p-4 bg-primary/10 rounded-full">
+                <Search className="h-12 w-12 text-primary" />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Check Any Item Type
+              Where to Check if Items are Stolen
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our comprehensive database covers all types of valuable items. Select a category to verify if an item is stolen or lost before you buy.
+              Free verification tools to check if cars, phones, bikes, electronics, or guns are stolen before you buy them
             </p>
           </div>
 
-          {/* Categories Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {categories.map((category, index) => {
-              const Icon = category.icon;
-              return (
-                <Card key={index} className="group hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg">{category.title}</CardTitle>
+          {/* Item Categories Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {itemCategories.map((category, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`p-2 ${category.color} rounded-lg`}>
+                      <category.icon className="h-6 w-6 text-white" />
                     </div>
-                    <p className="text-sm text-muted-foreground">{category.description}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {category.items.map((item, itemIndex) => (
-                        <span 
-                          key={itemIndex}
-                          className="text-xs bg-muted px-2 py-1 rounded-md"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                    <Button asChild className="w-full" variant="outline">
-                      <Link to={category.link}>
-                        Check This Category
-                      </Link>
+                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground">{category.description}</p>
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Check:</strong> {category.keywords}
+                  </p>
+                  <Link to={category.link}>
+                    <Button className="w-full">
+                      <Shield className="h-4 w-4 mr-2" />
+                      Check {category.title}
                     </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
-          {/* Benefits Section */}
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Why Check Before You Buy?</h2>
+          {/* Quick Stats */}
+          <Card className="mb-12 bg-primary/5 border-primary/20">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">$13B</div>
+                  <p className="text-sm text-muted-foreground">Lost annually to stolen goods</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">1 in 7</div>
+                  <p className="text-sm text-muted-foreground">Second-hand purchases are stolen</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">Free</div>
+                  <p className="text-sm text-muted-foreground">Verification checks to protect you</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* How It Works */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8">How to Check if Something is Stolen</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="p-3 bg-green-100 rounded-full w-fit mx-auto mb-4">
-                    <Shield className="h-6 w-6 text-green-600" />
+                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
+                    <Search className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Protect Yourself</h3>
+                  <h3 className="font-semibold mb-2">1. Find ID Number</h3>
                   <p className="text-sm text-muted-foreground">
-                    Avoid legal troubles and financial losses from unknowingly buying stolen goods
+                    Locate VIN, IMEI, serial number, or model number
                   </p>
                 </CardContent>
               </Card>
               
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="p-3 bg-blue-100 rounded-full w-fit mx-auto mb-4">
-                    <Trophy className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
+                    <Shield className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Help Victims</h3>
+                  <h3 className="font-semibold mb-2">2. Check Database</h3>
                   <p className="text-sm text-muted-foreground">
-                    Help reunite stolen items with their rightful owners and support justice
+                    We search law enforcement and insurance databases
                   </p>
                 </CardContent>
               </Card>
               
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="p-3 bg-purple-100 rounded-full w-fit mx-auto mb-4">
-                    <Smartphone className="h-6 w-6 text-purple-600" />
+                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
+                    <CheckCircle className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Peace of Mind</h3>
+                  <h3 className="font-semibold mb-2">3. Get Answer</h3>
                   <p className="text-sm text-muted-foreground">
-                    Buy with confidence knowing your purchase is legitimate and legal
+                    Know immediately if it's safe to buy or avoid
                   </p>
                 </CardContent>
               </Card>
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <Card className="max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">
-                  Don't See Your Item Category?
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Our database is constantly expanding. If you can't find your specific item type, 
-                  try our general electronics check or contact us to request a new category.
-                </p>
-                <div className="flex gap-4 justify-center">
-                  <Button asChild>
-                    <Link to="/check-electronics">
-                      General Item Check
-                    </Link>
-                  </Button>
-                  <Button variant="outline" asChild>
-                    <Link to="/contact">
-                      Request Category
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          {/* FAQ Section */}
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">Common Questions</h2>
+            <div className="space-y-4">
+              {faqData.map((faq, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold mb-2">{faq.question}</h3>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>

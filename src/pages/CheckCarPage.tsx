@@ -37,9 +37,9 @@ const CheckCarPage: React.FC = () => {
   return (
     <>
       <EnhancedSEOHead 
-        title="Check if Car is Stolen - Free VIN Lookup | Safe or Stolen"
-        description="Free VIN check to verify if vehicle is stolen before buying. Check car history against NICB database. Avoid buying stolen cars, trucks, motorcycles."
-        keywords="check if car stolen, VIN check, VIN lookup, vehicle stolen check, check stolen car, verify VIN number, stolen vehicle database, car history check, truck stolen check, motorcycle VIN check"
+        title="Where to Check if Car is Stolen - Free VIN Number Lookup"
+        description="Where do I check if a car is stolen? Free VIN lookup to verify if vehicle is stolen before buying. Check against stolen car database instantly."
+        keywords="where to check if car stolen, how to check if car stolen, where check stolen car, VIN check stolen, check if vehicle stolen, stolen car lookup, verify car not stolen"
         canonical="/check-car"
         additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />

@@ -37,9 +37,9 @@ const CheckPhonePage: React.FC = () => {
   return (
     <>
       <EnhancedSEOHead 
-        title="Check if Phone is Stolen - Free IMEI Lookup | Safe or Stolen"
-        description="Free IMEI check to verify if phone is stolen before buying. Check smartphone status against global databases. Avoid buying stolen phones on Craigslist, eBay, Facebook."
-        keywords="check if phone stolen, IMEI check, IMEI lookup, phone stolen check, check stolen phone, verify phone IMEI, stolen phone database, iPhone stolen check, Android stolen check, check IMEI free"
+        title="Where to Check if Phone is Stolen - Free IMEI Number Lookup"
+        description="Where do I check if a phone is stolen? Free IMEI lookup to verify if iPhone or Android is stolen before buying. Check phone blacklist instantly."
+        keywords="where to check if phone stolen, how to check if phone stolen, where check stolen phone, IMEI check stolen, check if iPhone stolen, stolen phone lookup, verify phone not stolen"
         canonical="/check-phone"
         additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
