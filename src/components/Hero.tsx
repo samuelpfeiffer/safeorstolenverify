@@ -24,7 +24,7 @@ const Hero = () => {
             href="https://fastercapital.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
+            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
             title="Accelerated by FasterCapital"
             aria-label="FasterCapital accelerator"
           >
