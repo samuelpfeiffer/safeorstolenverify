@@ -84,7 +84,7 @@ const NotFoundPage: React.FC = () => {
                 Home Page
               </button>
               <button
-                onClick={() => navigate('/verify')}
+                onClick={() => navigate('/dashboard')}
                 className="text-sos-orange hover:text-sos-orange/80 underline"
               >
                 Verify Items

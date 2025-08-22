@@ -129,7 +129,7 @@ const HowItWorksPage: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Whether you're buying or selling, our advanced verification system checks millions of records across 50+ global databases in real-time to protect both buyers from unknowingly purchasing stolen goods and sellers from unknowingly listing stolen items.
             </p>
-            <Link to="/verify">
+            <Link to="/dashboard">
               <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
                 Try It Now
                 <ArrowRight className="ml-2 h-5 w-5" />

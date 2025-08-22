@@ -178,7 +178,7 @@ const AboutPage: React.FC = () => {
             Join thousands of users who trust Safe or Stolen for legitimate item verification.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/verify">
+            <Link to="/dashboard">
               <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
                 Start Verifying Now
               </Button>

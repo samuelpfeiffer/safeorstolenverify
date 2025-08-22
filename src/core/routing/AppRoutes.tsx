@@ -139,12 +139,7 @@ export const AppRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-          {/* Protected User Routes */}
-          <Route path="verify" element={
-            <ProtectedRoute>
-              <VerificationPage />
-            </ProtectedRoute>
-          } />
+          <Route path="verify" element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={
             <ProtectedRoute>
               <DashboardPage />
