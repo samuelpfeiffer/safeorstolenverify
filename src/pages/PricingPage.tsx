@@ -296,7 +296,7 @@ const PricingPage = () => {
               <Button
                 size="lg"
                 className="w-full md:w-auto bg-sos-orange hover:bg-sos-orange/90"
-                onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.location.href = stripeCheckoutUrl; } }}
+                onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.open(stripeCheckoutUrl, '_blank'); } }}
               >
                 ✅ Click Here to Complete Your Purchase on Stripe
               </Button>
@@ -309,7 +309,7 @@ const PricingPage = () => {
                 <Button
                   size="lg"
                   className="bg-sos-orange hover:bg-sos-orange/90"
-                  onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.location.href = stripeCheckoutUrl; } }}
+                  onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.open(stripeCheckoutUrl, '_blank'); } }}
                 >
                   ✅ Click Here to Complete Your Purchase on Stripe
                 </Button>

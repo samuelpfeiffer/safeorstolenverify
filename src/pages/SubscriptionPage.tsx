@@ -47,109 +47,110 @@ const SubscriptionPage: React.FC = () => {
         nofollow
       />
       <div className="min-h-screen bg-sos text-white p-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4 gradient-text">Subscription Management</h1>
-          <p className="text-xl text-gray-300">
-            Manage your SOS verification subscription
-          </p>
-        </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4 gradient-text">Subscription Management</h1>
+            <p className="text-xl text-gray-300">
+              Manage your SOS verification subscription
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Current Plan */}
-          <Card className="bg-sos-dark border-sos-orange/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Crown className="h-5 w-5 text-sos-orange" />
-                Current Plan
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              {subscriptionData?.subscribed ? (
-                <div className="space-y-4">
-                  <Badge className="bg-sos-orange text-white">
-                    {subscriptionData.subscription_tier || 'Premium'}
-                  </Badge>
-                  <div className="space-y-2">
-                    <p className="text-gray-300">
-                      <strong>Status:</strong> Active
-                    </p>
-                    {subscriptionData.subscription_end && (
-                      <p className="text-gray-300">
-                        <strong>Expires:</strong> {new Date(subscriptionData.subscription_end).toLocaleDateString()}
-                      </p>
-                    )}
-                  </div>
-                  <Button variant="outline" className="w-full" onClick={openCustomerPortal}>
-                    Manage Subscription
-                  </Button>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  <Badge variant="secondary">Free Plan</Badge>
-                  <p className="text-gray-300">
-                    You're on the free plan with limited searches.
-                  </p>
-                  <Button className="w-full bg-sos-orange hover:bg-sos-orange/80" onClick={async () => { const url = await createSubscriptionCheckout(getSubscriptionPriceId('premium')); if (url) window.location.href = url; }}>
-                    Upgrade Now
-                  </Button>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-
-          {/* Plan Features */}
-          <Card className="bg-sos-dark border-sos-orange/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-white">
-                <Zap className="h-5 w-5 text-sos-orange" />
-                Plan Features
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Current Plan */}
+            <Card className="bg-sos-dark border-sos-orange/20">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-white">
+                  <Crown className="h-5 w-5 text-sos-orange" />
+                  Current Plan
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
                 {subscriptionData?.subscribed ? (
-                  <>
-                    <div className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span className="text-gray-300">Unlimited verifications</span>
+                  <div className="space-y-4">
+                    <Badge className="bg-sos-orange text-white">
+                      {subscriptionData.subscription_tier || 'Premium'}
+                    </Badge>
+                    <div className="space-y-2">
+                      <p className="text-gray-300">
+                        <strong>Status:</strong> Active
+                      </p>
+                      {subscriptionData.subscription_end && (
+                        <p className="text-gray-300">
+                          <strong>Expires:</strong> {new Date(subscriptionData.subscription_end).toLocaleDateString()}
+                        </p>
+                      )}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span className="text-gray-300">Priority support</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span className="text-gray-300">Advanced analytics</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-green-500" />
-                      <span className="text-gray-300">API access</span>
-                    </div>
-                  </>
+                    <Button variant="outline" className="w-full" onClick={openCustomerPortal}>
+                      Manage Subscription
+                    </Button>
+                  </div>
                 ) : (
-                  <>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sos-orange">•</span>
-                      <span className="text-gray-300">4 free verifications</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sos-orange">•</span>
-                      <span className="text-gray-300">Basic support</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-500">•</span>
-                      <span className="text-gray-500 line-through">Advanced analytics</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-500">•</span>
-                      <span className="text-gray-500 line-through">API access</span>
-                    </div>
-                  </>
+                  <div className="space-y-4">
+                    <Badge variant="secondary">Free Plan</Badge>
+                    <p className="text-gray-300">
+                      You're on the free plan with limited searches.
+                    </p>
+                    <Button className="w-full bg-sos-orange hover:bg-sos-orange/80" onClick={async () => { const url = await createSubscriptionCheckout(getSubscriptionPriceId('premium')); if (url) window.open(url, '_blank'); }}>
+                      Upgrade Now
+                    </Button>
+                  </div>
                 )}
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            {/* Plan Features */}
+            <Card className="bg-sos-dark border-sos-orange/20">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-white">
+                  <Zap className="h-5 w-5 text-sos-orange" />
+                  Plan Features
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {subscriptionData?.subscribed ? (
+                    <>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        <span className="text-gray-300">Unlimited verifications</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        <span className="text-gray-300">Priority support</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        <span className="text-gray-300">Advanced analytics</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        <span className="text-gray-300">API access</span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sos-orange">•</span>
+                        <span className="text-gray-300">4 free verifications</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sos-orange">•</span>
+                        <span className="text-gray-300">Basic support</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-500">•</span>
+                        <span className="text-gray-500 line-through">Advanced analytics</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-500">•</span>
+                        <span className="text-gray-500 line-through">API access</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </>
