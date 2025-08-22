@@ -1,8 +1,8 @@
 
 {
-  "name": "Safe Or Stolen - Phoenix Verification Service",
-  "short_name": "Safe Or Stolen",
-  "description": "Phoenix-based IMEI, Serial & VIN verification service for second-hand items",
+  "name": "SafeOrStolen - Verify Items Before You Buy",
+  "short_name": "SafeOrStolen",
+  "description": "Verify items aren't stolen before you buy. Protect your reputation before you sell. Real-time database checks in under 3 seconds.",
   "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#1a1a1a",
@@ -37,8 +37,8 @@
     {
       "name": "Verify Item",
       "short_name": "Verify",
-      "description": "Quick verification of IMEI, Serial, or VIN numbers",
-      "url": "/?shortcut=verify",
+      "description": "Quick verification of serial numbers, IMEI, or VIN",
+      "url": "/dashboard?shortcut=verify",
       "icons": [
         {
           "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",

@@ -10,6 +10,7 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
+import { AppInstallBanner } from '@/components/pwa/AppInstallBanner';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -52,6 +53,7 @@ export const AppRoot: React.FC = () => {
                   <Suspense fallback={<AppLoadingScreen />}>
                     <AppRoutes />
                   </Suspense>
+                  <AppInstallBanner />
                   <Toaster />
                 </div>
               </Router>
