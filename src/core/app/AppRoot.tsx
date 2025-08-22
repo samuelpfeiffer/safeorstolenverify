@@ -7,8 +7,9 @@ import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { SEOProvider } from '@/core/providers/SEOProvider';
 import { AuthProvider } from '@/lib/auth';
+import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
+import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -44,16 +45,16 @@ export const AppRoot: React.FC = () => {
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
             <ThemeProvider>
-              <SEOProvider>
-                <Router>
-                  <div className="min-h-screen bg-sos text-white antialiased">
-                    <Suspense fallback={<AppLoadingScreen />}>
-                      <AppRoutes />
-                    </Suspense>
-                    <Toaster />
-                  </div>
-                </Router>
-              </SEOProvider>
+              <Router>
+                <div className="min-h-screen bg-sos text-white antialiased">
+                  <GlobalAnalytics />
+                  <GlobalPerformanceOptimizer />
+                  <Suspense fallback={<AppLoadingScreen />}>
+                    <AppRoutes />
+                  </Suspense>
+                  <Toaster />
+                </div>
+              </Router>
             </ThemeProvider>
           </AuthProvider>
         </QueryClientProvider>
