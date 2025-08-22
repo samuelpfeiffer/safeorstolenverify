@@ -15,6 +15,8 @@ import {
   sanitizeInputSecurity 
 } from '@/utils/securityValidation';
 import { handleSecureError, createSecureError } from '@/utils/errorHandling';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
 
 interface SimpleSearchFormProps {
   onOpenQrScanner: () => void;
@@ -29,6 +31,8 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
   const { consumeSearch } = useSearchLimits();
   const { verifyItem } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
+  const { isAuthenticated } = useUnifiedAuth();
+  const { savePendingVerification } = usePendingVerification();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = sanitizeInputSecurity(e.target.value);

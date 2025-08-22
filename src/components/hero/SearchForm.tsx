@@ -18,6 +18,8 @@ import {
   sanitizeInputSecurity 
 } from '@/utils/securityValidation';
 import { handleSecureError, createSecureError } from '@/utils/errorHandling';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
 
 interface SearchFormProps {
   onOpenQrScanner: () => void;
@@ -32,6 +34,8 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
   const { verifyItem, isLoading } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
   const { isOnline } = usePWA();
+  const { isAuthenticated } = useUnifiedAuth();
+  const { savePendingVerification } = usePendingVerification();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value: string = sanitizeInputSecurity(e.target.value);
@@ -48,6 +52,19 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
         'INVALID_INPUT'
       );
       handleSecureError(error, toast);
+      return;
+    }
+
+    // Require authentication before any verification
+    if (!isAuthenticated) {
+      const cleanSerialNumber: string = sanitizeInputSecurity(serialNumber.trim());
+      const itemType = detectItemType(cleanSerialNumber);
+      await savePendingVerification(cleanSerialNumber, itemType, 'buyer');
+      toast({
+        title: 'Sign in required',
+        description: 'Please create an account or sign in to verify items.',
+      });
+      navigate('/auth?tab=signup');
       return;
     }
 
@@ -73,7 +90,6 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
 
     setIsDialogOpen(true);
   };
-
   const handleRealVerification = async () => {
     const canProceed = await consumeSearch();
     if (!canProceed) return;
