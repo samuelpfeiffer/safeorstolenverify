@@ -414,25 +414,7 @@ const DashboardPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
-      {/* Header */}
-      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <Shield className="h-8 w-8 text-primary" />
-              <h1 className="text-2xl font-bold text-foreground">Safe or Stolen</h1>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button asChild variant="ghost">
-                <Link to="/" className="text-foreground hover:text-primary">Home</Link>
-              </Button>
-              <Button onClick={signOut} variant="outline">
-                Sign Out
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Header removed to avoid duplication with AppLayout's SOSHeader */}
 
       <div className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
