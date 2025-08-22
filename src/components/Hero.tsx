@@ -33,12 +33,12 @@ const Hero = () => {
           </a>
 
           {/* Domain Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy and Sell with Confidence</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Stolen Item Checker – Verify Before You Buy</h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            Verify items aren't stolen before you buy. Protect your reputation before you sell.
+            Use our stolen checker to verify IMEI, VIN, and serial numbers in seconds.
           </p>
           <p className="text-base md:text-lg text-sos-lime font-semibold mb-8">
-            Real-time database checks in under 3 seconds
+            Real-time stolen item checks across 50+ databases
           </p>
           
           {/* Dual CTA Buttons */}

@@ -48,9 +48,9 @@ const HomePage = () => {
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <GlobalSEOHead
-        title="Safe Or Stolen - Check if Items are Stolen Before You Buy"
-        description="Free verification tool to check if IMEI, serial numbers, VIN are stolen. Protect yourself from fraud on Facebook Marketplace, eBay, Craigslist. Verify before you buy secondhand items."
-        keywords="stolen goods check, IMEI stolen check, VIN stolen lookup, serial number verification, check if stolen, verify before buy, Facebook Marketplace safety, eBay fraud prevention, Craigslist protection, secondhand verification"
+        title="Stolen Item Checker | Safe Or Stolen"
+        description="Use our stolen checker to verify IMEI, VIN, and serial numbers before you buy. Fast results, free checks. Protect yourself from marketplace fraud."
+        keywords="stolen checker, stolen item checker, IMEI checker, VIN stolen check, serial number stolen check, verify before you buy, marketplace safety"
         canonical="/"
       />
       <div className="min-h-screen">
