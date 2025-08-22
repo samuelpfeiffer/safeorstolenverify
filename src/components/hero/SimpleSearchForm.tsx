@@ -52,6 +52,19 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
       return;
     }
 
+    // Require authentication before verification
+    if (!isAuthenticated) {
+      const cleanSerialNumber: string = sanitizeInputSecurity(serialNumber.trim());
+      const itemType = detectItemType(cleanSerialNumber);
+      await savePendingVerification(cleanSerialNumber, itemType, 'buyer');
+      toast({
+        title: 'Sign in required',
+        description: 'Please create an account or sign in to verify items.',
+      });
+      navigate('/auth?tab=signup');
+      return;
+    }
+
     const canProceed = await consumeSearch();
     if (!canProceed) return;
 
