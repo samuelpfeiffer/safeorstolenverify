@@ -59,29 +59,29 @@ const ItemCategoriesPage: React.FC = () => {
 
   const faqData = [
     {
-      question: "Where do I check if something is stolen?",
-      answer: "Use our free verification tools above. Each category checks against official stolen goods databases including law enforcement and insurance company records."
+      question: "Can I check if this is stolen for free?",
+      answer: "Yes! Use our free verification tools above. Each category checks against official stolen goods databases including law enforcement and insurance company records."
     },
     {
-      question: "How do I know if I'm buying stolen goods?",
+      question: "How do I know if something is hot before buying?",
       answer: "Always verify the item's serial number, VIN, or IMEI before purchase. If the seller can't provide these numbers or seems evasive, walk away."
     },
     {
-      question: "What should I do if an item shows as stolen?",
+      question: "What should I do if this item shows as stolen?",
       answer: "Do not purchase the item. Contact local law enforcement immediately and report the seller. You could be helping recover stolen property."
     },
     {
-      question: "Are these checks really free?",
-      answer: "Yes, basic verification checks are completely free. We believe everyone should be able to protect themselves from stolen goods."
+      question: "Is there a way to find out if this is legit?",
+      answer: "Yes, our database checks give you instant results. We search law enforcement, insurance, and manufacturer databases to verify legitimacy."
     }
   ];
 
   return (
     <>
       <EnhancedSEOHead 
-        title="Where to Check if Items are Stolen - Free Database Lookup for Any Item"
-        description="Where do I check if something is stolen? Free lookup for cars (VIN), phones (IMEI), bikes, TVs, guns, electronics. Verify before you buy anything."
-        keywords="where to check if stolen, how to check if something stolen, where check stolen goods, verify item not stolen, stolen goods database, check before buying"
+        title="What Website Can I Check if Something is Stolen? How to Tell if Hot"
+        description="What website can I use to check if something is stolen? How do I know if this item is hot? Free way to check cars, phones, bikes, guns before buying."
+        keywords="what website can I check if something stolen, how do I know if this is hot, can I check if this is stolen, is there a way to find out if stolen, how to tell if something hot"
         canonical="/item-categories"
         additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
@@ -96,10 +96,10 @@ const ItemCategoriesPage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Where to Check if Items are Stolen
+              What Website Can I Check if Something is Stolen?
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Free verification tools to check if cars, phones, bikes, electronics, or guns are stolen before you buy them
+              Free way to check if cars, phones, bikes, electronics, or guns are hot before you buy them
             </p>
           </div>
 
@@ -153,7 +153,7 @@ const ItemCategoriesPage: React.FC = () => {
 
           {/* How It Works */}
           <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">How to Check if Something is Stolen</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">How Do I Know if This is Stolen?</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Card>
                 <CardContent className="p-6 text-center">
