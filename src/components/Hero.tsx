@@ -106,19 +106,6 @@ const Hero = () => {
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Accelerated By pill */}
-            <a
-              href="https://fastercapital.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
-              title="Accelerated by FasterCapital"
-              aria-label="FasterCapital accelerator"
-            >
-              <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">ACCELERATED BY</span>
-              <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
-            </a>
-
             {/* Domain Headline */}
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy and Sell with Confidence</h1>
             <p className="text-lg md:text-2xl text-gray-300 mb-6">
@@ -155,7 +142,7 @@ const Hero = () => {
               </span>
               <span className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-sos-lime" />
-                500K+ Protected Users
+                5K+ Protected Users
               </span>
               <span className="flex items-center gap-2">
                 <Badge className="h-4 w-4 text-sos-lime" />
@@ -181,7 +168,7 @@ const Hero = () => {
             </div>
 
             {/* Extra actions below verify card */}
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4 mt-12">
                <div className="w-full max-w-2xl mx-auto">
                  <Button
                    variant="destructive"
