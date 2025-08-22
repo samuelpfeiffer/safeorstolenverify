@@ -6,26 +6,26 @@ import { TrendingUp, Shield, Users, Database } from 'lucide-react';
 const stats = [
   {
     icon: Users,
-    label: '500K+ Users Protected',
-    value: '500,000+',
+    label: 'Users Protected',
+    value: 'Growing',
     color: 'text-sos-lime'
   },
   {
     icon: Database,
-    label: 'Items Verified Daily',
-    value: '10,000+',
+    label: 'Database Searches',
+    value: 'Multi-Source',
     color: 'text-sos-orange'
   },
   {
     icon: Shield,
-    label: 'Accuracy Rate',
-    value: '98.7%',
+    label: 'Verification',
+    value: 'Comprehensive',
     color: 'text-green-400'
   },
   {
     icon: TrendingUp,
-    label: 'Fraud Prevented',
-    value: '$2.3M+',
+    label: 'Protection',
+    value: 'Continuous',
     color: 'text-blue-400'
   }
 ];

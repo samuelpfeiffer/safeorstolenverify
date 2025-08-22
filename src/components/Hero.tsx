@@ -38,7 +38,7 @@ const Hero = () => {
             Use our stolen checker to verify IMEI, VIN, and serial numbers in seconds.
           </p>
           <p className="text-base md:text-lg text-sos-lime font-semibold mb-8">
-            Real-time stolen item checks across 50+ databases
+            Real-time stolen item verification and database searches
           </p>
           
           {/* Dual CTA Buttons */}
@@ -77,15 +77,15 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400 mb-8">
             <span className="flex items-center gap-2">
               <Shield className="h-4 w-4 text-sos-lime" />
-              50+ Global Databases
+              Multi-Database Search
             </span>
             <span className="flex items-center gap-2">
               <Users className="h-4 w-4 text-sos-lime" />
-              5K+ Protected Users
+              Instant Verification
             </span>
             <span className="flex items-center gap-2">
               <Badge className="h-4 w-4 text-sos-lime" />
-              98.7% Accuracy Rate
+              Comprehensive Reports
             </span>
           </div>
 

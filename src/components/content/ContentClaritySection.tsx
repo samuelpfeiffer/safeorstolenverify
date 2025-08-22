@@ -26,7 +26,7 @@ export const ContentClaritySection: React.FC = () => {
     {
       number: "02", 
       title: "Real-Time Database Check",
-      description: "We search 50+ global databases instantly",
+      description: "We search multiple databases instantly",
       icon: Database,
       detail: "Police records, insurance claims, manufacturer reports, international networks"
     },
@@ -44,19 +44,19 @@ export const ContentClaritySection: React.FC = () => {
       title: "Legal Protection",
       description: "Avoid unknowingly purchasing stolen goods and potential legal consequences",
       icon: Shield,
-      stats: "Prevents 95% of stolen goods purchases"
+      stats: "Helps prevent stolen goods purchases"
     },
     {
       title: "Financial Security", 
       description: "Protect your money from scams and fraudulent sellers",
       icon: CheckCircle,
-      stats: "Average savings: $840 per prevented purchase"
+      stats: "Protects your investment"
     },
     {
       title: "Peace of Mind",
       description: "Buy with confidence knowing items are legitimate",
       icon: Users,
-      stats: "500K+ users trust our verification"
+      stats: "Trusted verification service"
     }
   ];
 
@@ -171,18 +171,18 @@ export const ContentClaritySection: React.FC = () => {
             </div>
             <div className="text-center">
               <Globe className="h-8 w-8 text-sos-lime mx-auto mb-2" />
-              <div className="font-semibold">50+ Countries</div>
-              <div className="text-sm text-muted-foreground">Global coverage</div>
+              <div className="font-semibold">Global Search</div>
+              <div className="text-sm text-muted-foreground">International coverage</div>
             </div>
             <div className="text-center">
               <Users className="h-8 w-8 text-sos-orange mx-auto mb-2" />
-              <div className="font-semibold">500K+ Users</div>
+              <div className="font-semibold">Growing User Base</div>
               <div className="text-sm text-muted-foreground">Protected daily</div>
             </div>
             <div className="text-center">
               <Shield className="h-8 w-8 text-sos-lime mx-auto mb-2" />
-              <div className="font-semibold">98.7% Accuracy</div>
-              <div className="text-sm text-muted-foreground">Verification rate</div>
+              <div className="font-semibold">Reliable Results</div>
+              <div className="text-sm text-muted-foreground">Comprehensive verification</div>
             </div>
           </div>
         </div>
