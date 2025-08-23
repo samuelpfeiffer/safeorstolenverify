@@ -47,7 +47,7 @@ serve(async (req) => {
     }
 
     // Parse the request body
-    const { priceId, serialNumber, itemType, redirectUrl, isSubscription } = await req.json();
+    const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
     // Initialize Stripe
     const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") ?? "", {
@@ -61,6 +61,28 @@ serve(async (req) => {
       customerId = customers.data[0].id;
     }
 
+    // Helper: resolve a valid Stripe Price ID
+    const resolvePriceId = async (maybePriceId?: string, maybePlanName?: string): Promise<string> => {
+      // Try direct retrieve first if an ID was sent
+      if (maybePriceId) {
+        try {
+          const p = await stripe.prices.retrieve(maybePriceId);
+          if (p && p.id) return p.id;
+        } catch (_e) {
+          // fall through to lookup by plan name
+        }
+      }
+      if (maybePlanName) {
+        const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
+        const match = prices.data.find((p: any) => {
+          const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) ? (p.product as any).name : undefined;
+          return productName && productName.toLowerCase() === maybePlanName.toLowerCase() && p.recurring?.interval === 'month';
+        });
+        if (match) return match.id;
+      }
+      throw new Error('Unable to resolve a valid Stripe price for the requested plan.');
+    };
+
     let sessionConfig: any = {
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
@@ -70,17 +92,19 @@ serve(async (req) => {
         user_id: user.id,
         item_type: itemType || 'subscription',
         serial_number: serialNumber || 'subscription',
+        plan_name: planName || undefined,
       },
     };
 
     if (isSubscription) {
       // Subscription mode
+      const resolvedPrice = await resolvePriceId(priceId, planName);
       sessionConfig = {
         ...sessionConfig,
         mode: "subscription",
         line_items: [
           {
-            price: priceId,
+            price: resolvedPrice,
             quantity: 1,
           },
         ],
@@ -145,8 +169,9 @@ serve(async (req) => {
     );
   } catch (error) {
     console.error("Error:", error);
+    const message = error instanceof Error ? error.message : String(error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: message }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

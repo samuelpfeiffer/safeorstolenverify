@@ -79,12 +79,11 @@ const PricingPage = () => {
       
     } catch (error: any) {
       console.error('Subscription error:', error);
-      setHasError(true);
-      
+      // Do not lock the UI; just show a toast so users can retry
       toast({
         title: 'Error',
-        description: error.message || 'Failed to start subscription. Please try again.',
-        variant: 'destructive'
+        description: error?.message || 'Failed to start subscription. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       if (timeoutRef.current) {
@@ -241,14 +240,14 @@ const PricingPage = () => {
                   <Button 
                     onClick={() => handleSubscribe('basic')}
                     className="w-full bg-sos-orange hover:bg-sos-orange/90"
-                    disabled={loadingTier === 'basic' || subscriptionLoading || hasError}
+                    disabled={loadingTier === 'basic' || subscriptionLoading}
                   >
                     {loadingTier === 'basic' ? (
                       <span className="flex items-center justify-center gap-2">
                         <Loader2 className="h-4 w-4 animate-spin" />
                         Preparing checkout...
                       </span>
-                    ) : hasError ? 'Service Unavailable' : 'Choose Basic'}
+                    ) : 'Choose Basic'}
                   </Button>
                 </CardContent>
               </Card>
@@ -272,14 +271,14 @@ const PricingPage = () => {
                     onClick={() => handleSubscribe('premium')}
                     className="w-full" 
                     variant="outline"
-                    disabled={loadingTier === 'premium' || subscriptionLoading || hasError}
+                    disabled={loadingTier === 'premium' || subscriptionLoading}
                   >
                     {loadingTier === 'premium' ? (
                       <span className="flex items-center justify-center gap-2">
                         <Loader2 className="h-4 w-4 animate-spin" />
                         Preparing checkout...
                       </span>
-                    ) : hasError ? 'Service Unavailable' : 'Choose Premium'}
+                    ) : 'Choose Premium'}
                   </Button>
                 </CardContent>
               </Card>

@@ -3,6 +3,7 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useToast } from '@/hooks/use-toast';
 import { useRequestManager } from '@/hooks/useRequestManager';
 import { supabase } from '@/integrations/supabase/client';
+import { SUBSCRIPTION_TIERS } from '@/utils/pricing';
 
 interface SubscriptionData {
   subscribed: boolean;
@@ -102,11 +103,15 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     try {
       const result = await executeRequest(
         async (signal) => {
+          // Attempt to also send a human-readable plan name to the edge function
+          const planName = Object.values(SUBSCRIPTION_TIERS).find((t) => t.stripePriceId === priceId)?.name;
+
           const { data, error } = await supabase.functions.invoke('create-checkout', {
             body: {
               priceId,
               isSubscription: true,
               redirectUrl: window.location.origin,
+              planName, // helps the edge function resolve the correct Stripe Price if IDs changed
             },
             headers: {
               Authorization: `Bearer ${session.access_token}`,
