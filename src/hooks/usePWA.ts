@@ -41,14 +41,18 @@ export const usePWA = () => {
   const installApp = async () => {
     if (!installPrompt) return false;
 
-    const result = await installPrompt.prompt();
-    if (result.outcome === 'accepted') {
+    try {
+      // The prompt can only be called once
+      await installPrompt.prompt();
+      const choice = await installPrompt.userChoice;
+      // Reset the stored event after use regardless of outcome
       setInstallPrompt(null);
-      return true;
+      return choice?.outcome === 'accepted';
+    } catch (e) {
+      setInstallPrompt(null);
+      return false;
     }
-    return false;
   };
-
   return {
     isOnline,
     installPrompt,
