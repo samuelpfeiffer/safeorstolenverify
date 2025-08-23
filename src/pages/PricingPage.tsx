@@ -35,7 +35,7 @@ const PricingPage = () => {
         title: "Authentication required",
         description: "Please sign in to subscribe to a plan.",
       });
-      navigate('/auth?tab=signin&redirect=subscription');
+      navigate('/auth?tab=signin&redirect=pricing');
       return;
     }
 
@@ -98,6 +98,7 @@ const PricingPage = () => {
 
   const handleReport = useCallback(async () => {
     if (!isAuthenticated) {
+      localStorage.setItem('pendingReport', '1');
       toast({ title: 'Authentication required', description: 'Please sign in to purchase a report.' });
       navigate('/auth?tab=signin&redirect=pricing');
       return;
@@ -128,6 +129,31 @@ const PricingPage = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [searchParams.get('subscribe'), isAuthenticated, navigate]); // Removed handleSubscribe to prevent infinite loops
+
+  // Auto-run pending actions after authentication
+  useEffect(() => {
+    if (!isAuthenticated) return;
+
+    // Pending subscription tier from localStorage
+    const pending = localStorage.getItem('pendingSubscription');
+    if (pending === 'basic' || pending === 'premium' || pending === 'enterprise') {
+      localStorage.removeItem('pendingSubscription');
+      setTimeout(() => handleSubscribe(pending as 'basic' | 'premium' | 'enterprise'), 300);
+      return; // don't process report in same tick
+    }
+
+    // Pending one-time report purchase
+    const pendingReport = localStorage.getItem('pendingReport');
+    if (pendingReport === '1') {
+      localStorage.removeItem('pendingReport');
+      setTimeout(() => {
+        const serial = window.prompt('Enter the Serial / IMEI / VIN to include in your certified report:');
+        if (serial) {
+          createOneTimePayment(serial, 'general').then((url) => url && window.open(url, '_blank'));
+        }
+      }, 300);
+    }
+  }, [isAuthenticated]);
 
   // Cleanup timeout on unmount
   useEffect(() => {
