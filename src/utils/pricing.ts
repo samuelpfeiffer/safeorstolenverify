@@ -2,7 +2,7 @@
 export interface SubscriptionTier {
   name: string;
   price: number;
-  interval: 'month' | 'year';
+  interval: 'month' | 'year' | 'day';
   features?: string[];
   popular?: boolean;
   stripePriceId?: string;
@@ -23,7 +23,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     ]
   },
   basic: {
-    name: 'Basic',
+    name: 'Basic Plan',
     price: 999, // $9.99 in cents
     interval: 'month',
     features: [
@@ -32,10 +32,10 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_1RyGpLFzDDOvseYjOshm1xt1' // Basic monthly plan
+    stripePriceId: 'price_1Rz7rm2eGaMDLFHojH9Vch1Y'
   },
   premium: {
-    name: 'Premium',
+    name: 'Premium Plan',
     price: 1999, // $19.99 in cents
     interval: 'month',
     popular: true,
@@ -46,10 +46,10 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Priority support',
       'Custom verification alerts'
     ],
-    stripePriceId: 'price_1RyGqMFzDDOvseYjPiKWPInQ' // Premium monthly plan
+    stripePriceId: 'price_1Rz7xu2eGaMDLFHoqGT0Pyjk'
   },
   enterprise: {
-    name: 'Enterprise',
+    name: 'Enterprise Plan',
     price: 4999, // $49.99 in cents
     interval: 'month',
     features: [
@@ -59,7 +59,19 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Custom integrations',
       'Dedicated account manager'
     ],
-    stripePriceId: 'price_1RyGrDFzDDOvseYjUvVMBvVQ' // Enterprise monthly plan
+    stripePriceId: 'price_1Rz80X2eGaMDLFHozeZyChte'
+  },
+  report: {
+    name: 'Certified Stolen/Legitimate Report',
+    price: 1000, // $10.00 in cents
+    interval: 'day',
+    features: [
+      'Single verification report',
+      'Certified authenticity check',
+      'Stolen item database search',
+      'Official documentation'
+    ],
+    stripePriceId: 'price_1Rz83i2eGaMDLFHonAmu86lS'
   }
 };
 
