@@ -136,14 +136,17 @@ serve(async (req) => {
       
       // Map actual Stripe Price IDs to subscription tiers
       switch (priceId) {
-        case "price_1RyGpLFzDDOvseYjOshm1xt1":
+        case "price_1Rz7rm2eGaMDLFHojH9Vch1Y":
           subscriptionTier = "Basic";
           break;
-        case "price_1RyGqMFzDDOvseYjPiKWPInQ":
+        case "price_1Rz7xu2eGaMDLFHoqGT0Pyjk":
           subscriptionTier = "Premium";
           break;
-        case "price_1RyGrDFzDDOvseYjUvVMBvVQ":
+        case "price_1Rz80X2eGaMDLFHozeZyChte":
           subscriptionTier = "Enterprise";
+          break;
+        case "price_1Rz83i2eGaMDLFHonAmu86lS":
+          subscriptionTier = "Report";
           break;
         default:
           console.log("[CHECK-SUBSCRIPTION] Unknown price ID:", priceId);

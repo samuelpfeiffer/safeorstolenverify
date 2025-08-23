@@ -130,8 +130,23 @@ serve(async (req) => {
         const priceId = subscription.items.data[0].price.id;
         let subscriptionTier = "Basic";
         
-        if (priceId === "price_1RcbMzQ3BLYiWM70t3G8oMq4") {
-          subscriptionTier = "Premium";
+        // Map actual Stripe Price IDs to subscription tiers
+        switch (priceId) {
+          case "price_1Rz7rm2eGaMDLFHojH9Vch1Y":
+            subscriptionTier = "Basic";
+            break;
+          case "price_1Rz7xu2eGaMDLFHoqGT0Pyjk":
+            subscriptionTier = "Premium";
+            break;
+          case "price_1Rz80X2eGaMDLFHozeZyChte":
+            subscriptionTier = "Enterprise";
+            break;
+          case "price_1Rz83i2eGaMDLFHonAmu86lS":
+            subscriptionTier = "Report";
+            break;
+          default:
+            console.log(`Unknown price ID in webhook: ${priceId}`);
+            subscriptionTier = "Basic";
         }
         
         // Update subscriber record

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Check, Crown, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -15,30 +16,19 @@ export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
   const plans = [
     {
       name: 'Basic',
-      price: '$9.99',
+      price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
       period: '/month',
-      features: [
-        'Unlimited verifications',
-        'Real-time database checks',
-        'Basic verification reports',
-        'Email support'
-      ],
+      features: SUBSCRIPTION_TIERS.basic.features || [],
       highlighted: false,
-      stripePriceId: 'price_1QdcLPFzDDOvseYj7oNsHQ2m'
+      stripePriceId: SUBSCRIPTION_TIERS.basic.stripePriceId!
     },
     {
       name: 'Premium',
-      price: '$19.99',
+      price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
       period: '/month',
-      features: [
-        'Everything in Basic',
-        'Advanced verification reports',
-        'API access (100 calls/month)',
-        'Priority support',
-        'Custom verification alerts'
-      ],
+      features: SUBSCRIPTION_TIERS.premium.features || [],
       highlighted: true,
-      stripePriceId: 'price_1QdcMBFzDDOvseYjKFxWQPZC'
+      stripePriceId: SUBSCRIPTION_TIERS.premium.stripePriceId!
     }
   ];
 
@@ -105,7 +95,7 @@ export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
 
         <div className="text-center mt-6 pt-4 border-t">
           <p className="text-sm text-muted-foreground">
-            All plans come with a 30-day money-back guarantee
+            All plans come with a 7-day free trial and can be cancelled anytime
           </p>
           <Button variant="ghost" onClick={onClose} className="mt-2">
             Maybe Later

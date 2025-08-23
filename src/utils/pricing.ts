@@ -27,6 +27,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     price: 999, // $9.99 in cents
     interval: 'month',
     features: [
+      '7-day free trial',
       'Unlimited verifications',
       'Real-time database checks',
       'Basic verification reports',
@@ -40,6 +41,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     interval: 'month',
     popular: true,
     features: [
+      '7-day free trial',
       'Everything in Basic',
       'Advanced verification reports',
       'API access (100 calls/month)',
@@ -53,6 +55,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     price: 4999, // $49.99 in cents
     interval: 'month',
     features: [
+      '7-day free trial',
       'Everything in Premium',
       'Unlimited API access',
       'White-label solution',
