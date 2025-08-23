@@ -102,7 +102,7 @@ const PurchaseHistoryPage = () => {
           <p className="text-lg text-gray-300 mb-8">
             Please sign in to view your purchase history.
           </p>
-          <Button onClick={() => navigate('/auth')} className="bg-sos-orange hover:bg-sos-orange/90">
+          <Button onClick={() => navigate('/auth?tab=signin')} className="bg-sos-orange hover:bg-sos-orange/90">
             Sign In
           </Button>
         </div>

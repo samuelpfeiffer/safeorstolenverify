@@ -39,7 +39,7 @@ export const SubscriptionStatus = () => {
   const handleSubscribeClick = useCallback(async (tier: 'basic' | 'premium') => {
     if (!isAuthenticated) {
       console.log("Not authenticated, redirecting to auth");
-      navigate('/auth');
+      navigate('/auth?tab=signin');
       return;
     }
     

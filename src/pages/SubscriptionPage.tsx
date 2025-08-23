@@ -23,7 +23,7 @@ const SubscriptionPage: React.FC = () => {
             <p className="text-gray-300 mb-6">
               Please sign in to view your subscription details.
             </p>
-            <Button asChild><Link to="/auth">Sign In</Link></Button>
+            <Button asChild><Link to="/auth?tab=signin">Sign In</Link></Button>
           </CardContent>
         </Card>
       </div>

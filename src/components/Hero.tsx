@@ -93,7 +93,7 @@ const Hero = () => {
           <div className="text-center mb-8">
             <p className="text-sm md:text-base text-gray-300">
               Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
-              <Link to="/auth" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
+              <Link to="/auth?tab=signup" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
             </p>
           </div>
 

@@ -195,13 +195,13 @@ const TopNavigation = () => {
               <div className="flex items-center gap-3">
                 <Button
                   variant="ghost"
-                  onClick={() => navigate('/auth')}
+                  onClick={() => navigate('/auth?tab=signin')}
                   className="text-gray-300 hover:text-white"
                 >
                   Sign In
                 </Button>
                 <Button
-                  onClick={() => navigate('/auth')}
+                  onClick={() => navigate('/auth?tab=signup')}
                   className="bg-sos-orange hover:bg-sos-orange/90 text-white font-medium"
                 >
                   <User className="h-4 w-4 mr-2" />

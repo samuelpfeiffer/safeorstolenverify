@@ -22,7 +22,7 @@ export const AuthRequiredBanner: React.FC<AuthRequiredBannerProps> = ({
         </span>
         <div className="flex gap-2 ml-4">
           <Button variant="outline" size="sm" asChild className="border-amber-300 text-amber-800 hover:bg-amber-100">
-            <Link to="/auth">
+            <Link to="/auth?tab=signin">
               Sign In
             </Link>
           </Button>

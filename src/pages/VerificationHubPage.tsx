@@ -296,7 +296,7 @@ const VerificationHubPage: React.FC = () => {
                     <Shield className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link to="/auth">
+                <Link to="/auth?tab=signup">
                   <Button variant="outline" size="lg">
                     Create Free Account
                   </Button>

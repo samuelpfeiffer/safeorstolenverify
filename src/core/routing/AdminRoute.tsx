@@ -22,7 +22,7 @@ export const AdminRoute: React.FC<AdminRouteProps> = ({ children }) => {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/auth" replace />;
+    return <Navigate to="/auth?tab=signin" replace />;
   }
 
   // Enhanced admin check

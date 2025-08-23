@@ -66,7 +66,7 @@ export const MobileUserDropdown = () => {
             <DropdownMenuSeparator className="bg-gray-800" />
             <DropdownMenuItem 
               className="hover:bg-gray-800 cursor-pointer text-white focus:bg-gray-800 focus:text-white"
-              onClick={() => navigate('/auth')}
+              onClick={() => navigate('/auth?tab=signin')}
             >
               <LogIn size={16} className="mr-2" />
               Login

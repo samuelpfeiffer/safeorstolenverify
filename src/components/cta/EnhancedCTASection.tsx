@@ -119,7 +119,7 @@ export const EnhancedCTASection: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center">
           <p className="text-gray-400 mb-6">
-            Already have an account? <Link to="/auth" className="text-sos-orange hover:underline">Sign in here</Link>
+            Already have an account? <Link to="/auth?tab=signin" className="text-sos-orange hover:underline">Sign in here</Link>
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">

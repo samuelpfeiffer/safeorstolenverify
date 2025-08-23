@@ -25,7 +25,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/auth" state={{ from: location }} replace />;
+    return <Navigate to="/auth?tab=signin" state={{ from: location }} replace />;
   }
 
   // TODO: Add subscription check when subscription system is fully implemented

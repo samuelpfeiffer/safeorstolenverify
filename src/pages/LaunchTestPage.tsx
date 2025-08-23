@@ -19,7 +19,7 @@ const LaunchTestPage = () => {
   const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname.includes('lovable');
 
   if (!isAuthenticated || (!isAdmin && !isDevelopment)) {
-    return <Navigate to="/auth" replace />;
+    return <Navigate to="/auth?tab=signin" replace />;
   }
 
   return (
