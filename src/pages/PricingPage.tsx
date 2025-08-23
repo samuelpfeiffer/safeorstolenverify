@@ -9,7 +9,6 @@ import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { SEOHead } from '@/components/seo/SEOHead';
-import { LoadingBoundary } from '@/components/common/LoadingBoundary';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 
 const PricingPage = () => {
@@ -182,155 +181,153 @@ const PricingPage = () => {
         canonical="/pricing"
         structuredData={structuredData}
       />
-      <LoadingBoundary
-        timeout={20000}
-        fallback={<ErrorState />}
-        onTimeout={() => setHasError(true)}
-      >
+      {subscriptionError ? (
+        <ErrorState />
+      ) : (
         <div className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
-            <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
+              <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Free Plan */}
+              <Card className="relative">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Free</CardTitle>
+                  <div className="text-3xl font-bold">$0<span className="text-sm font-normal">/month</span></div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
+                    {SUBSCRIPTION_TIERS.free.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    onClick={handleFreeStart}
+                    className="w-full" 
+                    variant="outline"
+                  >
+                    {isAuthenticated ? 'Current Plan' : 'Get Started'}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Basic Plan */}
+              <Card className="relative border-sos-orange">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-sos-orange text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
+                    <Star className="h-3 w-3" />
+                    Most Popular
+                  </div>
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-2xl">Basic</CardTitle>
+                  <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.basic.price)}<span className="text-sm font-normal">/month</span></div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
+                    {SUBSCRIPTION_TIERS.basic.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    onClick={() => handleSubscribe('basic')}
+                    className="w-full bg-sos-orange hover:bg-sos-orange/90"
+                    disabled={loadingTier === 'basic' || subscriptionLoading || hasError}
+                  >
+                    {loadingTier === 'basic' ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Preparing checkout...
+                      </span>
+                    ) : hasError ? 'Service Unavailable' : 'Choose Basic'}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Premium Plan */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl">Premium</CardTitle>
+                  <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.premium.price)}<span className="text-sm font-normal">/month</span></div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
+                    {SUBSCRIPTION_TIERS.premium.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    onClick={() => handleSubscribe('premium')}
+                    className="w-full" 
+                    variant="outline"
+                    disabled={loadingTier === 'premium' || subscriptionLoading || hasError}
+                  >
+                    {loadingTier === 'premium' ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Preparing checkout...
+                      </span>
+                    ) : hasError ? 'Service Unavailable' : 'Choose Premium'}
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {stripeCheckoutUrl && (
+              <>
+                {/* Inline helper button in content area */}
+                <div className="mt-8 text-center">
+                  <p className="mb-3 font-medium">Your checkout is ready.</p>
+                  <Button
+                    size="lg"
+                    className="w-full md:w-auto bg-sos-orange hover:bg-sos-orange/90"
+                    onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.open(stripeCheckoutUrl, '_blank'); } }}
+                  >
+                    ✅ Click Here to Complete Your Purchase on Stripe
+                  </Button>
+                </div>
+
+                {/* Fixed bottom bar to guarantee visibility */}
+                <div className="fixed inset-x-0 bottom-0 z-50 bg-white/90 backdrop-blur border-t">
+                  <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+                    <p className="font-medium">Checkout is ready. Continue on Stripe.</p>
+                    <Button
+                      size="lg"
+                      className="bg-sos-orange hover:bg-sos-orange/90"
+                      onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.open(stripeCheckoutUrl, '_blank'); } }}
+                    >
+                      ✅ Click Here to Complete Your Purchase on Stripe
+                    </Button>
+                  </div>
+                </div>
+              </>
+            )}
+            
+            {/* Additional Info */}
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-4">
+                All plans include secure verification, search history, and customer support.
+              </p>
+              <p className="text-sm text-gray-500">
+                {!isAuthenticated && "Sign up required for paid plans. "}
+                Cancel anytime. No hidden fees.
+              </p>
+            </div>
           </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Free Plan */}
-          <Card className="relative">
-            <CardHeader>
-              <CardTitle className="text-2xl">Free</CardTitle>
-              <div className="text-3xl font-bold">$0<span className="text-sm font-normal">/month</span></div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.free.features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Button 
-                onClick={handleFreeStart}
-                className="w-full" 
-                variant="outline"
-              >
-                {isAuthenticated ? 'Current Plan' : 'Get Started'}
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Basic Plan */}
-          <Card className="relative border-sos-orange">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <div className="bg-sos-orange text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                <Star className="h-3 w-3" />
-                Most Popular
-              </div>
-            </div>
-            <CardHeader>
-              <CardTitle className="text-2xl">Basic</CardTitle>
-              <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.basic.price)}<span className="text-sm font-normal">/month</span></div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.basic.features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-               <Button 
-                onClick={() => handleSubscribe('basic')}
-                className="w-full bg-sos-orange hover:bg-sos-orange/90"
-                disabled={loadingTier === 'basic' || subscriptionLoading || hasError}
-              >
-                {loadingTier === 'basic' ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    Preparing checkout...
-                  </span>
-                ) : hasError ? 'Service Unavailable' : 'Choose Basic'}
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Premium Plan */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Premium</CardTitle>
-              <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.premium.price)}<span className="text-sm font-normal">/month</span></div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.premium.features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-               <Button 
-                onClick={() => handleSubscribe('premium')}
-                className="w-full" 
-                variant="outline"
-                disabled={loadingTier === 'premium' || subscriptionLoading || hasError}
-              >
-                {loadingTier === 'premium' ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    Preparing checkout...
-                  </span>
-                ) : hasError ? 'Service Unavailable' : 'Choose Premium'}
-              </Button>
-            </CardContent>
-          </Card>
         </div>
-        
-        {stripeCheckoutUrl && (
-          <>
-            {/* Inline helper button in content area */}
-            <div className="mt-8 text-center">
-              <p className="mb-3 font-medium">Your checkout is ready.</p>
-              <Button
-                size="lg"
-                className="w-full md:w-auto bg-sos-orange hover:bg-sos-orange/90"
-                onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.open(stripeCheckoutUrl, '_blank'); } }}
-              >
-                ✅ Click Here to Complete Your Purchase on Stripe
-              </Button>
-            </div>
-
-            {/* Fixed bottom bar to guarantee visibility */}
-            <div className="fixed inset-x-0 bottom-0 z-50 bg-white/90 backdrop-blur border-t">
-              <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
-                <p className="font-medium">Checkout is ready. Continue on Stripe.</p>
-                <Button
-                  size="lg"
-                  className="bg-sos-orange hover:bg-sos-orange/90"
-                  onClick={() => { if (stripeCheckoutUrl) { console.info('Navigating to Stripe:', stripeCheckoutUrl); window.open(stripeCheckoutUrl, '_blank'); } }}
-                >
-                  ✅ Click Here to Complete Your Purchase on Stripe
-                </Button>
-              </div>
-            </div>
-          </>
-        )}
-        
-        {/* Additional Info */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">
-            All plans include secure verification, search history, and customer support.
-          </p>
-          <p className="text-sm text-gray-500">
-            {!isAuthenticated && "Sign up required for paid plans. "}
-            Cancel anytime. No hidden fees.
-          </p>
-        </div>
-        </div>
-        </div>
-      </LoadingBoundary>
+      )}
     </ErrorBoundary>
   );
 };
