@@ -81,6 +81,19 @@ export const useSubscription = (): UseSubscriptionReturn => {
         'price_1Rz83i2eGaMDLFHonAmu86lS': 'Certified Stolen/Legitimate Report'
       };
       
+      // Check if this is the one-time report product
+      const isOneTimeReport = priceId === 'price_1Rz83i2eGaMDLFHonAmu86lS';
+      
+      if (isOneTimeReport) {
+        // Redirect to one-time payment instead of subscription
+        toast({
+          title: "One-time payment required",
+          description: "This product requires a one-time payment, not a subscription. Please use the verification form.",
+          variant: "default",
+        });
+        return null;
+      }
+      
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId,
