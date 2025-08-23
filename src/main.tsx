@@ -10,8 +10,8 @@ pwaService.initDB().then(() => {
   pwaService.clearOldCache().catch(console.error);
 }).catch(console.error);
 
-// Register service worker for PWA capabilities (simplified)
-if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+// Register service worker for PWA capabilities
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(() => {
     // Silently fail for better mobile compatibility
   });

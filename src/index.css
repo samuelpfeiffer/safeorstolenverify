@@ -148,4 +148,9 @@
   .text-pretty {
     text-wrap: pretty;
   }
+
+  /* Smooth hover scale utility used in pricing cards and CTAs */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-[1.02];
+  }
 }

@@ -312,7 +312,7 @@ const TopNavigation = () => {
                   </Button>
                   <Button
                     onClick={() => {
-                     navigate('/auth?tab=signin');
+                     navigate('/auth?tab=signup');
                       setIsMobileMenuOpen(false);
                     }}
                     className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"
