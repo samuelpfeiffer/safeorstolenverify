@@ -20,39 +20,22 @@ export const AppInstallBanner = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Check if app is already installed
-    if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
-      setIsInstalled(true);
-      return;
-    }
+    let timer: number | undefined;
 
-    // Check if user has dismissed the banner recently
-    const bannerDismissed = localStorage.getItem('pwa-banner-dismissed');
-    const dismissedTime = bannerDismissed ? parseInt(bannerDismissed) : 0;
-    const daysSinceDismiss = (Date.now() - dismissedTime) / (1000 * 60 * 60 * 24);
-
-    // Show banner if not dismissed or dismissed more than 7 days ago
-    if (!bannerDismissed || daysSinceDismiss > 7) {
-      // Wait 3 seconds before showing banner to not be too aggressive
-      const timer = setTimeout(() => {
-        setShowBanner(true);
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
-
-    // Listen for beforeinstallprompt event
+    // Always attach listeners FIRST so we don't miss the event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
-      
-      // Show banner if conditions are met
+      const bip = e as BeforeInstallPromptEvent;
+      setDeferredPrompt(bip);
+      // When eligible, reveal the banner immediately
+      const bannerDismissed = localStorage.getItem('pwa-banner-dismissed');
+      const dismissedTime = bannerDismissed ? parseInt(bannerDismissed) : 0;
+      const daysSinceDismiss = (Date.now() - dismissedTime) / (1000 * 60 * 60 * 24);
       if (!bannerDismissed || daysSinceDismiss > 7) {
-        setTimeout(() => setShowBanner(true), 3000);
+        setShowBanner(true);
       }
     };
 
-    // Listen for app installed event
     const handleAppInstalled = () => {
       setIsInstalled(true);
       setShowBanner(false);
@@ -66,9 +49,23 @@ export const AppInstallBanner = () => {
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     window.addEventListener('appinstalled', handleAppInstalled);
 
+    // Detect already installed (standalone) but still keep listeners for completeness
+    if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+      setIsInstalled(true);
+    }
+
+    // Show the banner after a small delay even if beforeinstallprompt hasn't fired yet (e.g. iOS)
+    const bannerDismissed = localStorage.getItem('pwa-banner-dismissed');
+    const dismissedTime = bannerDismissed ? parseInt(bannerDismissed) : 0;
+    const daysSinceDismiss = (Date.now() - dismissedTime) / (1000 * 60 * 60 * 24);
+    if (!bannerDismissed || daysSinceDismiss > 7) {
+      timer = window.setTimeout(() => setShowBanner(true), 3000);
+    }
+
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
       window.removeEventListener('appinstalled', handleAppInstalled);
+      if (timer) window.clearTimeout(timer);
     };
   }, [toast]);
 
