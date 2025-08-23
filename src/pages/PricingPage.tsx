@@ -8,6 +8,7 @@ import { useEnhancedSubscription } from "@/hooks/useEnhancedSubscription";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 
@@ -25,8 +26,9 @@ const PricingPage = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { createOneTimePayment, isLoading: reportLoading } = useOneTimePayment();
 
-  const handleSubscribe = useCallback(async (tier: 'basic' | 'premium') => {
+  const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -72,6 +74,7 @@ const PricingPage = () => {
       }
 
       setStripeCheckoutUrl(checkoutUrl);
+      window.open(checkoutUrl, '_blank');
       toast({ 
         title: 'Checkout ready', 
         description: 'Click the button below to complete your purchase on Stripe.' 
@@ -92,6 +95,24 @@ const PricingPage = () => {
       setLoadingTier(null);
     }
   }, [isAuthenticated, navigate, toast, createSubscriptionCheckout]);
+
+  const handleReport = useCallback(async () => {
+    if (!isAuthenticated) {
+      toast({ title: 'Authentication required', description: 'Please sign in to purchase a report.' });
+      navigate('/auth?tab=signin&redirect=pricing');
+      return;
+    }
+    const serial = window.prompt('Enter the Serial / IMEI / VIN to include in your certified report:');
+    if (!serial) return;
+    try {
+      const url = await createOneTimePayment(serial, 'general');
+      if (url) {
+        window.open(url, '_blank');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, [isAuthenticated, navigate, createOneTimePayment, toast]);
 
   // Check for automatic subscription trigger after authentication
   useEffect(() => {
@@ -151,6 +172,20 @@ const PricingPage = () => {
         "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise Plan", 
+        "price": formatPrice(SUBSCRIPTION_TIERS.enterprise.price).replace('$', ''),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Certified Stolen/Legitimate Report", 
+        "price": formatPrice(SUBSCRIPTION_TIERS.report.price).replace('$', ''),
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
       }
     ]
   };
@@ -190,7 +225,7 @@ const PricingPage = () => {
               <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* Free Plan */}
               <Card className="relative">
                 <CardHeader>
@@ -279,6 +314,68 @@ const PricingPage = () => {
                         Preparing checkout...
                       </span>
                     ) : 'Choose Premium'}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Enterprise Plan */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl">Enterprise</CardTitle>
+                  <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.enterprise.price)}<span className="text-sm font-normal">/month</span></div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
+                    {SUBSCRIPTION_TIERS.enterprise.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    onClick={() => handleSubscribe('enterprise')}
+                    className="w-full" 
+                    variant="outline"
+                    disabled={loadingTier === 'enterprise' || subscriptionLoading}
+                  >
+                    {loadingTier === 'enterprise' ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Preparing checkout...
+                      </span>
+                    ) : 'Choose Enterprise'}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Certified Report (One-time) */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl">Certified Report</CardTitle>
+                  <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.report.price)}<span className="text-sm font-normal">/report</span></div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
+                    {SUBSCRIPTION_TIERS.report.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    onClick={handleReport}
+                    className="w-full" 
+                    variant="outline"
+                    disabled={reportLoading}
+                  >
+                    {reportLoading ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Preparing checkout...
+                      </span>
+                    ) : 'Buy Report'}
                   </Button>
                 </CardContent>
               </Card>
