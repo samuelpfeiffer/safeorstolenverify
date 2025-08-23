@@ -29,6 +29,7 @@ const PricingPage = () => {
   const { createOneTimePayment, isLoading: reportLoading } = useOneTimePayment();
 
   const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
+    console.log('[Pricing] handleSubscribe clicked', { tier, isAuthenticated });
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -301,7 +302,7 @@ const PricingPage = () => {
                   <Button 
                     onClick={() => handleSubscribe('basic')}
                     className="w-full bg-sos-orange hover:bg-sos-orange/90"
-                    disabled={loadingTier === 'basic' || subscriptionLoading}
+                    disabled={loadingTier === 'basic'}
                   >
                     {loadingTier === 'basic' ? (
                       <span className="flex items-center justify-center gap-2">
@@ -332,7 +333,7 @@ const PricingPage = () => {
                     onClick={() => handleSubscribe('premium')}
                     className="w-full" 
                     variant="outline"
-                    disabled={loadingTier === 'premium' || subscriptionLoading}
+                    disabled={loadingTier === 'premium'}
                   >
                     {loadingTier === 'premium' ? (
                       <span className="flex items-center justify-center gap-2">
@@ -363,7 +364,7 @@ const PricingPage = () => {
                     onClick={() => handleSubscribe('enterprise')}
                     className="w-full" 
                     variant="outline"
-                    disabled={loadingTier === 'enterprise' || subscriptionLoading}
+                    disabled={loadingTier === 'enterprise'}
                   >
                     {loadingTier === 'enterprise' ? (
                       <span className="flex items-center justify-center gap-2">
