@@ -41,7 +41,7 @@ export const ProductCard = ({
   };
 
   return (
-    <Card className={`relative overflow-hidden ${popular ? 'border-sos-orange scale-105 shadow-lg shadow-sos-orange/20' : 'border-border'}`}>
+    <Card className={`relative overflow-hidden transition-all hover-scale hover:shadow-xl hover:shadow-sos-orange/20 hover:border-sos-orange ${popular ? 'border-sos-orange scale-105 shadow-lg shadow-sos-orange/20' : 'border-border'}`}>
       {popular && (
         <div className="absolute top-0 right-0 bg-sos-orange text-white text-xs font-bold uppercase py-1 px-3 rounded-bl-lg">
           Most Popular

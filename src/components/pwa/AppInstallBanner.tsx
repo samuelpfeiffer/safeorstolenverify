@@ -121,7 +121,7 @@ export const AppInstallBanner = () => {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:max-w-sm">
+    <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:max-w-sm animate-fade-in">
       <Card className="border-sos-orange shadow-2xl bg-gradient-to-r from-sos-dark to-sos">
         <CardContent className="p-4">
           <div className="flex items-start gap-3">
@@ -143,12 +143,14 @@ export const AppInstallBanner = () => {
                 <Button
                   onClick={handleInstallClick}
                   size="sm"
-                  className="bg-sos-orange hover:bg-sos-orange/90 text-white text-xs px-3 py-1.5 h-auto"
+                  disabled={!deferredPrompt && !isIOS()}
+                  aria-disabled={!deferredPrompt && !isIOS()}
+                  className="bg-sos-orange hover:bg-sos-orange/90 text-white text-xs px-3 py-1.5 h-auto disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Download className="w-3 h-3 mr-1" />
                   Install
                 </Button>
-                
+
                 {isIOS() && (
                   <div className="text-xs text-gray-300 flex items-center">
                     <Smartphone className="w-3 h-3 mr-1" />

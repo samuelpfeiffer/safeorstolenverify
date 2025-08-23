@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -36,6 +36,12 @@ const AuthPage = () => {
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [step, setStep] = useState<AuthStep>('auth');
   const [pendingUser, setPendingUser] = useState<any>(null);
+
+  // Sync active tab with URL parameter changes
+  useEffect(() => {
+    const tabParam = searchParams.get('tab') === 'signup' ? 'signup' : 'signin';
+    setActiveTab(tabParam);
+  }, [searchParams]);
 
   const signInForm = useForm({
     resolver: zodResolver(signInSchema),

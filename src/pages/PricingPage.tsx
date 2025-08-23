@@ -254,7 +254,7 @@ const PricingPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* Free Plan */}
-              <Card className="relative">
+              <Card className="relative transition-all hover-scale hover:shadow-xl hover:shadow-sos-orange/20 hover:border-sos-orange">
                 <CardHeader>
                   <CardTitle className="text-2xl">Free</CardTitle>
                   <div className="text-3xl font-bold">$0<span className="text-sm font-normal">/month</span></div>
@@ -279,7 +279,7 @@ const PricingPage = () => {
               </Card>
 
               {/* Basic Plan */}
-              <Card className="relative border-sos-orange">
+              <Card className="relative border-sos-orange transition-all hover-scale hover:shadow-xl hover:shadow-sos-orange/20">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <div className="bg-sos-orange text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
                     <Star className="h-3 w-3" />
@@ -315,7 +315,7 @@ const PricingPage = () => {
               </Card>
 
               {/* Premium Plan */}
-              <Card>
+              <Card className="transition-all hover-scale hover:shadow-xl hover:shadow-sos-orange/20 hover:border-sos-orange">
                 <CardHeader>
                   <CardTitle className="text-2xl">Premium</CardTitle>
                   <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.premium.price)}<span className="text-sm font-normal">/month</span></div>
@@ -346,7 +346,7 @@ const PricingPage = () => {
               </Card>
 
               {/* Enterprise Plan */}
-              <Card>
+              <Card className="transition-all hover-scale hover:shadow-xl hover:shadow-sos-orange/20 hover:border-sos-orange">
                 <CardHeader>
                   <CardTitle className="text-2xl">Enterprise</CardTitle>
                   <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.enterprise.price)}<span className="text-sm font-normal">/month</span></div>
@@ -377,7 +377,7 @@ const PricingPage = () => {
               </Card>
 
               {/* Certified Report (One-time) */}
-              <Card>
+              <Card className="transition-all hover-scale hover:shadow-xl hover:shadow-sos-orange/20 hover:border-sos-orange">
                 <CardHeader>
                   <CardTitle className="text-2xl">Certified Report</CardTitle>
                   <div className="text-3xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.report.price)}<span className="text-sm font-normal">/report</span></div>
