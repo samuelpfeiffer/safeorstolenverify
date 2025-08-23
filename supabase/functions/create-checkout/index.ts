@@ -134,7 +134,7 @@ serve(async (req) => {
     let sessionConfig: any = {
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
-      success_url: `${redirectUrl}/verification-success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${redirectUrl}/dashboard?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${redirectUrl}?canceled=true`,
       metadata: {
         user_id: user.id,
