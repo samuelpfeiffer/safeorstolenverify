@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import { ProductCard } from './ProductCard';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
-import { useSecureStripe } from '@/utils/stripe/secureStripeOperations';
+import { useSubscription } from '@/hooks/useSubscription';
 import { toast } from 'sonner';
 
 export const PricingGrid = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { secureCreateCheckoutSession } = useSecureStripe();
+  const { createSubscriptionCheckout } = useSubscription();
 
   const handleCheckout = async (priceId: string) => {
     setIsLoading(true);
     try {
-      const url = await secureCreateCheckoutSession({
-        serialNumber: '',
-        itemType: 'subscription',
-        priceId,
-        isSubscription: true
-      });
+      const url = await createSubscriptionCheckout(priceId);
       
       if (url) {
         window.open(url, '_blank');
@@ -62,7 +57,7 @@ export const PricingGrid = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Choose Your Plan</h1>
+        <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
         <p className="text-xl text-muted-foreground">Get started with verification services that fit your needs</p>
       </div>
       

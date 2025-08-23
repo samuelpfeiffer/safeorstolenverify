@@ -8,6 +8,7 @@ import { Crown, Check, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
 import { getSubscriptionPriceId } from '@/utils/pricing';
+import { PricingGrid } from '@/components/pricing/PricingGrid';
 
 const SubscriptionPage: React.FC = () => {
   const { subscriptionData, isLoading, createSubscriptionCheckout, openCustomerPortal } = useSubscription();
@@ -151,6 +152,9 @@ const SubscriptionPage: React.FC = () => {
               </CardContent>
             </Card>
           </div>
+          <section className="mt-12">
+            <PricingGrid />
+          </section>
         </div>
       </div>
     </>
