@@ -51,7 +51,7 @@ export const MobileMenu = ({ currentPath, closeMenu, isOpen }: MobileMenuProps) 
               </>
             ) : (
               <>
-                <Link to="/auth" className="w-full" onClick={closeMenu}>
+                <Link to="/auth?tab=signin" className="w-full" onClick={closeMenu}>
                   <Button variant="outline" className="border-sos-orange text-sos-orange hover:bg-sos-orange/10 w-full">
                     Login
                   </Button>

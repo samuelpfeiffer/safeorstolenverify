@@ -192,7 +192,7 @@ export const Navigation: React.FC = () => {
             ) : (
               <div className="hidden lg:flex items-center space-x-3">
                 <Button variant="ghost" asChild className="text-gray-300 hover:text-white">
-                  <Link to="/auth">Sign In</Link>
+                  <Link to="/auth?tab=signin">Sign In</Link>
                 </Button>
                 <Button asChild className="bg-sos-orange hover:bg-sos-orange/90 text-white font-medium">
                   <Link to="/auth?tab=signup">
@@ -245,7 +245,7 @@ export const Navigation: React.FC = () => {
                       <div className="border-t border-sos-orange/20 my-4"></div>
                       <div className="space-y-2 px-4">
                         <Button variant="outline" asChild className="w-full">
-                          <Link to="/auth" onClick={() => setIsOpen(false)}>Sign In</Link>
+                          <Link to="/auth?tab=signin" onClick={() => setIsOpen(false)}>Sign In</Link>
                         </Button>
                         <Button asChild className="w-full bg-sos-orange hover:bg-sos-orange/90">
                           <Link to="/auth?tab=signup" onClick={() => setIsOpen(false)}>Get Started</Link>

@@ -302,7 +302,7 @@ const TopNavigation = () => {
                 <div className="border-t border-white/10 pt-4 mt-4 space-y-3">
                   <Button
                     onClick={() => {
-                      navigate('/auth');
+                     navigate('/auth?tab=signin');
                       setIsMobileMenuOpen(false);
                     }}
                     variant="ghost"
@@ -312,7 +312,7 @@ const TopNavigation = () => {
                   </Button>
                   <Button
                     onClick={() => {
-                      navigate('/auth');
+                     navigate('/auth?tab=signin');
                       setIsMobileMenuOpen(false);
                     }}
                     className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"

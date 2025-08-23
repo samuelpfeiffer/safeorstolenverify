@@ -129,7 +129,7 @@ export const SOSHeader: React.FC = () => {
           ) : (
             <div className="hidden sm:flex items-center gap-2">
               <Button variant="ghost" asChild className="text-gray-300 hover:text-white">
-                <Link to="/auth">Sign In</Link>
+                <Link to="/auth?tab=signin">Sign In</Link>
               </Button>
               <Button asChild className="bg-sos-orange hover:bg-sos-orange/90 text-white">
                 <Link to="/auth?tab=signup">Get Started</Link>
