@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useEnhancedSubscription } from '@/hooks/useEnhancedSubscription';
+import { useSubscription } from '@/hooks/useSubscription';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Crown, Check, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
 import { getSubscriptionPriceId } from '@/utils/pricing';
 
 const SubscriptionPage: React.FC = () => {
-  const { subscriptionData, isLoading, error, createSubscriptionCheckout, openCustomerPortal, getCustomerPortalUrl } = useEnhancedSubscription();
+  const { subscriptionData, isLoading, createSubscriptionCheckout, openCustomerPortal } = useSubscription();
   const { isAuthenticated } = useUnifiedAuth();
 
   if (!isAuthenticated) {
@@ -80,7 +80,7 @@ const SubscriptionPage: React.FC = () => {
                         </p>
                       )}
                     </div>
-                    <Button variant="outline" className="w-full" onClick={async () => { const newTab = window.open('', '_blank'); const portalUrl = await getCustomerPortalUrl(); if (portalUrl) { if (newTab) { newTab.location.href = portalUrl; } else { window.open(portalUrl, '_blank'); } } else { newTab?.close(); } }}>
+                    <Button variant="outline" className="w-full" onClick={openCustomerPortal}>
                       Manage Subscription
                     </Button>
                   </div>
