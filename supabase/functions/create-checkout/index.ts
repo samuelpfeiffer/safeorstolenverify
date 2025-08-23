@@ -1,4 +1,3 @@
-
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 import Stripe from "https://esm.sh/stripe@13.10.0";
@@ -16,6 +15,8 @@ serve(async (req) => {
   }
 
   try {
+    console.log("Creating Stripe checkout session...");
+    
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
@@ -46,6 +47,8 @@ serve(async (req) => {
       );
     }
 
+    console.log(`User authenticated: ${user.email}`);
+
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
@@ -59,28 +62,73 @@ serve(async (req) => {
     let customerId;
     if (customers.data.length > 0) {
       customerId = customers.data[0].id;
+      console.log(`Found existing Stripe customer: ${customerId}`);
+    } else {
+      console.log("No existing Stripe customer found, will create new one");
     }
 
     // Helper: resolve a valid Stripe Price ID
     const resolvePriceId = async (maybePriceId?: string, maybePlanName?: string): Promise<string> => {
+      console.log(`Resolving price ID: ${maybePriceId}, Plan name: ${maybePlanName}`);
+      
       // Try direct retrieve first if an ID was sent
       if (maybePriceId) {
         try {
           const p = await stripe.prices.retrieve(maybePriceId);
-          if (p && p.id) return p.id;
+          if (p && p.id) {
+            console.log(`Direct price ID lookup successful: ${p.id}`);
+            return p.id;
+          }
         } catch (_e) {
-          // fall through to lookup by plan name
+          console.log(`Price ID ${maybePriceId} not found, trying to match by name...`);
         }
       }
+      
+      // Map common plan names to search for in Stripe
+      const planNameMap: Record<string, string[]> = {
+        'basic': ['basic plan', 'basic', 'starter'],
+        'premium': ['premium plan', 'premium', 'pro'],
+        'enterprise': ['enterprise plan', 'enterprise', 'business'],
+        'report': ['certified stolen/legitimate report', 'report', 'single report']
+      };
+      
+      // Determine search terms based on price or plan name
+      let searchTerms: string[] = [];
       if (maybePlanName) {
+        const normalizedName = maybePlanName.toLowerCase();
+        searchTerms = planNameMap[normalizedName] || [normalizedName];
+      } else if (maybePriceId) {
+        // Try to infer plan type from existing price IDs
+        if (maybePriceId.includes('basic') || maybePriceId === 'price_1Rz7rm2eGaMDLFHojH9Vch1Y') {
+          searchTerms = planNameMap.basic;
+        } else if (maybePriceId.includes('premium') || maybePriceId === 'price_1Rz7xu2eGaMDLFHoqGT0Pyjk') {
+          searchTerms = planNameMap.premium;
+        } else if (maybePriceId.includes('enterprise') || maybePriceId === 'price_1Rz80X2eGaMDLFHozeZyChte') {
+          searchTerms = planNameMap.enterprise;
+        } else if (maybePriceId.includes('report') || maybePriceId === 'price_1Rz83i2eGaMDLFHonAmu86lS') {
+          searchTerms = planNameMap.report;
+        }
+      }
+      
+      if (searchTerms.length > 0) {
+        console.log(`Searching for prices matching: ${searchTerms.join(', ')}`);
         const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
         const match = prices.data.find((p: any) => {
           const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) ? (p.product as any).name : undefined;
-          return productName && productName.toLowerCase() === maybePlanName.toLowerCase() && p.recurring?.interval === 'month';
+          if (!productName) return false;
+          
+          return searchTerms.some(term => 
+            productName.toLowerCase().includes(term) &&
+            (p.recurring?.interval === 'month' || p.recurring?.interval === 'day')
+          );
         });
-        if (match) return match.id;
+        if (match) {
+          console.log(`Found matching price: ${match.id} for plan: ${searchTerms[0]}`);
+          return match.id;
+        }
       }
-      throw new Error('Unable to resolve a valid Stripe price for the requested plan.');
+      
+      throw new Error(`Unable to resolve a valid Stripe price. Please ensure you have products named: "Basic Plan", "Premium Plan", "Enterprise Plan", or "Certified Stolen/Legitimate Report" in your Stripe dashboard.`);
     };
 
     let sessionConfig: any = {
@@ -97,8 +145,10 @@ serve(async (req) => {
     };
 
     if (isSubscription) {
-      // Subscription mode
+      // Subscription mode with 7-day free trial
       const resolvedPrice = await resolvePriceId(priceId, planName);
+      console.log(`Creating subscription checkout with 7-day trial for price: ${resolvedPrice}`);
+      
       sessionConfig = {
         ...sessionConfig,
         mode: "subscription",
@@ -108,9 +158,14 @@ serve(async (req) => {
             quantity: 1,
           },
         ],
+        subscription_data: {
+          trial_period_days: 7,
+        },
       };
     } else {
       // One-time payment mode for verification
+      console.log("Creating one-time payment session");
+      
       const verificationData = await supabaseClient
         .from("verification_searches")
         .insert({
@@ -153,6 +208,7 @@ serve(async (req) => {
 
     // Create Checkout Session
     const session = await stripe.checkout.sessions.create(sessionConfig);
+    console.log(`Checkout session created: ${session.id}`);
 
     // Update purchase record with session ID for one-time payments
     if (!isSubscription && serialNumber) {

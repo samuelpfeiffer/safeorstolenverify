@@ -71,10 +71,20 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating subscription checkout...");
+      console.log("Creating subscription checkout with 7-day trial...");
+      
+      // Map price IDs to plan names for better Stripe matching
+      const planNameMap: Record<string, string> = {
+        'price_1Rz7rm2eGaMDLFHojH9Vch1Y': 'Basic Plan',
+        'price_1Rz7xu2eGaMDLFHoqGT0Pyjk': 'Premium Plan', 
+        'price_1Rz80X2eGaMDLFHozeZyChte': 'Enterprise Plan',
+        'price_1Rz83i2eGaMDLFHonAmu86lS': 'Certified Stolen/Legitimate Report'
+      };
+      
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId,
+          planName: planNameMap[priceId],
           isSubscription: true,
           redirectUrl: window.location.origin,
         },
@@ -88,7 +98,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
         throw error;
       }
 
-      console.log("Checkout created:", data.url);
+      console.log("Checkout created with trial:", data.url);
       return data.url;
     } catch (error: any) {
       console.error("Failed to create checkout:", error);
