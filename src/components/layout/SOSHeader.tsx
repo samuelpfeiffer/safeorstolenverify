@@ -132,7 +132,7 @@ export const SOSHeader: React.FC = () => {
                 <Link to="/auth">Sign In</Link>
               </Button>
               <Button asChild className="bg-sos-orange hover:bg-sos-orange/90 text-white">
-                <Link to="/auth?tab=register">Get Started</Link>
+                <Link to="/auth?tab=signup">Get Started</Link>
               </Button>
             </div>
           )}

@@ -56,7 +56,7 @@ export const MobileMenu = ({ currentPath, closeMenu, isOpen }: MobileMenuProps) 
                     Login
                   </Button>
                 </Link>
-                <Link to="/auth?tab=register" className="w-full" onClick={closeMenu}>
+                <Link to="/auth?tab=signup" className="w-full" onClick={closeMenu}>
                   <Button className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full">
                     Sign Up
                   </Button>

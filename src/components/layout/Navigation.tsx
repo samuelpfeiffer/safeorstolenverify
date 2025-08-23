@@ -195,7 +195,7 @@ export const Navigation: React.FC = () => {
                   <Link to="/auth">Sign In</Link>
                 </Button>
                 <Button asChild className="bg-sos-orange hover:bg-sos-orange/90 text-white font-medium">
-                  <Link to="/auth?tab=register">
+                  <Link to="/auth?tab=signup">
                     <User className="h-4 w-4 mr-2" />
                     Get Started
                   </Link>
@@ -248,7 +248,7 @@ export const Navigation: React.FC = () => {
                           <Link to="/auth" onClick={() => setIsOpen(false)}>Sign In</Link>
                         </Button>
                         <Button asChild className="w-full bg-sos-orange hover:bg-sos-orange/90">
-                          <Link to="/auth?tab=register" onClick={() => setIsOpen(false)}>Get Started</Link>
+                          <Link to="/auth?tab=signup" onClick={() => setIsOpen(false)}>Get Started</Link>
                         </Button>
                       </div>
                     </>

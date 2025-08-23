@@ -18,7 +18,7 @@ export const EnhancedCTASection: React.FC = () => {
       },
       secondaryAction: {
         text: "Free Trial",
-        href: "/auth?tab=register"
+        href: "/auth?tab=signup"
       },
       highlight: "4 Free Searches"
     },
