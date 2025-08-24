@@ -5,6 +5,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
 import { Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
 interface TestResult {
   tier: string;
@@ -93,7 +94,7 @@ export const SubscriptionFlowTest: React.FC = () => {
   };
 
   const openCheckout = (url: string) => {
-    window.location.href = url;
+    navigateOutOfIframe(url);
   };
 
   return (

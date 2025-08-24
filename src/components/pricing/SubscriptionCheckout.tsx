@@ -4,6 +4,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
 import { Loader2 } from 'lucide-react';
+import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
 interface SubscriptionCheckoutProps {
   priceId: string;
@@ -42,8 +43,8 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
       if (error) throw error;
 
       if (data?.url) {
-        // Redirect in the same tab to avoid Link blank-tab issues
-        window.location.href = data.url as string;
+        // Ensure Stripe loads outside the preview iframe
+        navigateOutOfIframe(data.url as string);
       }
     } catch (error) {
       console.error('Error creating checkout session:', error);
