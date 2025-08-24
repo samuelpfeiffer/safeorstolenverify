@@ -115,6 +115,14 @@ export const AppInstallBanner = () => {
     return window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
   };
 
+  const isEmbedded = () => {
+    try {
+      return window.top !== window.self;
+    } catch {
+      return true; // cross-origin iframe
+    }
+  };
+
   // Don't show if already installed or in standalone mode
   if (isInstalled || isStandalone() || !showBanner) {
     return null;
@@ -139,22 +147,52 @@ export const AppInstallBanner = () => {
                 Get instant access to verify items on-the-go. Fast, secure, and always available.
               </p>
               
-              <div className="flex gap-2">
-                <Button
-                  onClick={handleInstallClick}
-                  size="sm"
-                  disabled={!deferredPrompt && !isIOS()}
-                  aria-disabled={!deferredPrompt && !isIOS()}
-                  className="bg-sos-orange hover:bg-sos-orange/90 text-white text-xs px-3 py-1.5 h-auto disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  <Download className="w-3 h-3 mr-1" />
-                  Install
-                </Button>
-
-                {isIOS() && (
-                  <div className="text-xs text-gray-300 flex items-center">
-                    <Smartphone className="w-3 h-3 mr-1" />
-                    Tap Share → Add to Home Screen
+              <div className="flex flex-col gap-2">
+                {(deferredPrompt || isIOS()) ? (
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={handleInstallClick}
+                      size="sm"
+                      className="bg-sos-orange hover:bg-sos-orange/90 text-white text-xs px-3 py-1.5 h-auto"
+                    >
+                      <Download className="w-3 h-3 mr-1" />
+                      Install
+                    </Button>
+                    {isIOS() && (
+                      <div className="text-xs text-gray-300 flex items-center">
+                        <Smartphone className="w-3 h-3 mr-1" />
+                        Tap Share → Add to Home Screen
+                      </div>
+                    )}
+                  </div>
+                ) : isEmbedded() ? (
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={() => window.open(window.location.href, '_blank', 'noopener')}
+                      size="sm"
+                      className="bg-sos-orange hover:bg-sos-orange/90 text-white text-xs px-3 py-1.5 h-auto"
+                    >
+                      <Download className="w-3 h-3 mr-1" />
+                      Open in new tab to install
+                    </Button>
+                    <div className="text-xs text-gray-300 flex items-center">
+                      Installation is disabled in preview. Open in a new tab.
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex gap-2">
+                    <Button
+                      size="sm"
+                      disabled
+                      aria-disabled
+                      className="bg-sos-orange text-white text-xs px-3 py-1.5 h-auto disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      <Download className="w-3 h-3 mr-1" />
+                      Install
+                    </Button>
+                    <div className="text-xs text-gray-300 flex items-center">
+                      Your browser may not support install here. Try menu → Install App.
+                    </div>
                   </div>
                 )}
               </div>
