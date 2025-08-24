@@ -19,6 +19,8 @@ import { ItemSpecificQuestionsSection } from '@/components/seo/ItemSpecificQuest
 import { DataSourceCredibility } from '@/components/seo/DataSourceCredibility';
 import { MethodologyTransparency } from '@/components/seo/MethodologyTransparency';
 import { PublicAuditDashboard } from '@/components/seo/PublicAuditDashboard';
+import { ThirdPartyValidation } from '@/components/trust/ThirdPartyValidation';
+import { LiveSystemStatus } from '@/components/system/LiveSystemStatus';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -96,7 +98,9 @@ const HomePage = () => {
       <div className="min-h-screen">
         <Hero />
         <DataSourceCredibility />
+        <ThirdPartyValidation />
         <PublicAuditDashboard />
+        <LiveSystemStatus />
         <MethodologyTransparency />
         <StolenItemCheckerSection />
         <ItemSpecificQuestionsSection />
