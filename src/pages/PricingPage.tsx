@@ -180,49 +180,98 @@ const PricingPage = () => {
     }
   };
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Safe or Stolen Verification Service",
-    "description": "IMEI, serial number, and VIN verification service with multiple pricing tiers",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Free Plan",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Safe or Stolen Verification Service",
+      "description": "IMEI, serial number, and VIN verification service with multiple pricing tiers",
+      "provider": {
+        "@type": "Organization",
+        "name": "Safe or Stolen",
+        "url": "https://safeorstolen.com"
       },
-      {
-        "@type": "Offer", 
-        "name": "Basic Plan",
-        "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "name": "Premium Plan", 
-        "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "name": "Enterprise Plan", 
-        "price": formatPrice(SUBSCRIPTION_TIERS.enterprise.price).replace('$', ''),
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "name": "Certified Stolen/Legitimate Report", 
-        "price": formatPrice(SUBSCRIPTION_TIERS.report.price).replace('$', ''),
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      }
-    ]
-  };
+      "serviceType": "Security Verification Service",
+      "areaServed": "Worldwide"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Safe or Stolen Pricing Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Plan",
+          "description": "Basic verification with 5 free searches",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Basic Plan",
+          "description": "Enhanced verification with unlimited searches",
+          "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium Plan",
+          "description": "Professional verification with AI assistance",
+          "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise Plan",
+          "description": "Enterprise-grade verification with dedicated support",
+          "price": formatPrice(SUBSCRIPTION_TIERS.enterprise.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Certified Report",
+          "description": "One-time certified stolen/legitimate report",
+          "price": formatPrice(SUBSCRIPTION_TIERS.report.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        }
+      ]
+    }
+  ];
 
   const ErrorState = () => (
     <Card className="max-w-md mx-auto">
