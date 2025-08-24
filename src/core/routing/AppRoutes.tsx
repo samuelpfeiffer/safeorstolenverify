@@ -126,7 +126,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="community" element={<CommunityPage />} />
           <Route path="case-studies" element={<CaseStudiesPage />} />
           <Route path="trust-verification" element={<TrustVerificationPage />} />
-          <Route path="our-data" element={<DataSourcesPage />} />
+          <Route path="data-sources" element={<DataSourcesPage />} />
           <Route path="accuracy" element={<AccuracyPage />} />
           <Route path="verification-hub" element={<VerificationHubPage />} />
           <Route path="ultimate-guide" element={<UltimateGuidePage />} />

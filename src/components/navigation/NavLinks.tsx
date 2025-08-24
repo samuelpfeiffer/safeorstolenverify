@@ -58,6 +58,14 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
         FasterCapital
       </Link>
       <Link 
+        to="/data-sources" 
+        className={cn("transition-colors", 
+          currentPath === "/data-sources" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+        )}
+      >
+        Data Sources
+      </Link>
+      <Link 
         to="/contact" 
         className={cn("transition-colors", 
           currentPath === "/contact" ? "text-sos-orange" : "text-white hover:text-sos-orange"

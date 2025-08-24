@@ -5,8 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { useNavigate } from 'react-router-dom';
 
 const DataSourcesPage = () => {
+  const navigate = useNavigate();
   const dataSources = [
     {
       name: "BikeIndex",
@@ -256,10 +258,10 @@ const DataSourcesPage = () => {
             in the secondhand economy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={() => window.location.href = '/'}>
+            <Button size="lg" onClick={() => navigate('/')}>
               Start Verification
             </Button>
-            <Button variant="outline" size="lg" onClick={() => window.location.href = '/accuracy'}>
+            <Button variant="outline" size="lg" onClick={() => navigate('/accuracy')}>
               View Our Accuracy Report
             </Button>
           </div>

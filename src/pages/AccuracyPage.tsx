@@ -5,8 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const AccuracyPage = () => {
+  const navigate = useNavigate();
   const accuracyMetrics = [
     {
       metric: "Overall Accuracy",
@@ -317,10 +319,10 @@ const AccuracyPage = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button size="lg" onClick={() => window.location.href = '/'}>
+            <Button size="lg" onClick={() => navigate('/')}>
               Start Verification
             </Button>
-            <Button variant="outline" size="lg" onClick={() => window.location.href = '/our-data'}>
+            <Button variant="outline" size="lg" onClick={() => navigate('/data-sources')}>
               View Our Data Sources
             </Button>
           </div>
