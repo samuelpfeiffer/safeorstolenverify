@@ -27,6 +27,7 @@ const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
+const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
@@ -103,6 +104,7 @@ export const AppRoutes: React.FC = () => {
           
           {/* New Routes */}
           <Route path="how-it-works" element={<HowItWorksPage />} />
+          <Route path="how-it-works-detailed" element={<HowItWorksDetailedPage />} />
           <Route path="for-consumers" element={<ForConsumersPage />} />
           <Route path="for-brands" element={<ForBrandsPage />} />
           <Route path="about-problem" element={<AboutProblemPage />} />

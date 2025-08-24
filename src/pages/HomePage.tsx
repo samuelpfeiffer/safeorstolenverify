@@ -18,6 +18,7 @@ import { StolenItemCheckerSection } from '@/components/seo/StolenItemCheckerSect
 import { ItemSpecificQuestionsSection } from '@/components/seo/ItemSpecificQuestionsSection';
 import { DataSourceCredibility } from '@/components/seo/DataSourceCredibility';
 import { MethodologyTransparency } from '@/components/seo/MethodologyTransparency';
+import { PublicAuditDashboard } from '@/components/seo/PublicAuditDashboard';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -95,6 +96,7 @@ const HomePage = () => {
       <div className="min-h-screen">
         <Hero />
         <DataSourceCredibility />
+        <PublicAuditDashboard />
         <MethodologyTransparency />
         <StolenItemCheckerSection />
         <ItemSpecificQuestionsSection />
