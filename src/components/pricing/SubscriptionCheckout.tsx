@@ -33,7 +33,7 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
     setIsLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
-        body: { priceId },
+        body: { priceId, isSubscription: true, planName, redirectUrl: window.location.origin },
         headers: {
           Authorization: `Bearer ${session.access_token}`,
         },
@@ -42,8 +42,8 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
       if (error) throw error;
 
       if (data?.url) {
-        // Open Stripe checkout in a new tab
-        window.open(data.url, '_blank');
+        // Redirect in the same tab to avoid Link blank-tab issues
+        window.location.href = data.url as string;
       }
     } catch (error) {
       console.error('Error creating checkout session:', error);
