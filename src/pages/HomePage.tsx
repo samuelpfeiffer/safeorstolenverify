@@ -14,29 +14,62 @@ import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { UserSearchQueriesSection } from '@/components/seo/UserSearchQueriesSection';
 import { RealUserScenariosSection } from '@/components/seo/RealUserScenariosSection';
 import { DetailedFAQSection } from '@/components/seo/DetailedFAQSection';
+import { StolenItemCheckerSection } from '@/components/seo/StolenItemCheckerSection';
 
 const HomePage = () => {
   const homePageStructuredData = [
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Safe or Stolen",
+      "name": "SafeOrStolen - Stolen Item Checker",
+      "alternateName": "Safe or Stolen",
       "url": "https://safeorstolen.com",
-      "description": "Global verification service for IMEI, serial numbers, and VIN to check if items are stolen or safe to buy",
+      "description": "Free online stolen item checker tool to verify IMEI, VIN, and serial numbers against police databases before buying secondhand items",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://safeorstolen.com/?q={search_term_string}",
         "query-input": "required name=search_term_string"
-      }
+      },
+      "sameAs": [
+        "https://safeorstolen.com"
+      ]
     },
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Safe or Stolen Verification Tool",
-      "description": "Free online tool to check if IMEI, serial numbers, and VIN are stolen",
+      "name": "SafeOrStolen Stolen Item Checker",
+      "description": "Free online stolen item checker - verify IMEI, serial numbers, and VIN against stolen goods databases instantly",
       "url": "https://safeorstolen.com",
       "applicationCategory": "SecurityApplication",
+      "applicationSubCategory": "Verification Tool",
       "operatingSystem": "Web Browser",
+      "browserRequirements": "Chrome, Firefox, Safari, Edge",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free stolen item checking service"
+      },
+      "featureList": [
+        "IMEI stolen check",
+        "VIN stolen verification", 
+        "Serial number stolen lookup",
+        "Phone stolen check",
+        "Car stolen verification",
+        "Electronics stolen check"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Stolen Item Checker Service",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "description": "Professional stolen item checking service for consumers buying secondhand goods",
+      "serviceType": "Verification Service",
+      "areaServed": "Worldwide",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -51,13 +84,14 @@ const HomePage = () => {
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <GlobalSEOHead
-        title="Stolen Item Checker | Safe Or Stolen - Verify IMEI, VIN, Serial Numbers"
-        description="Check if something is stolen before you buy. Instant IMEI, VIN, and serial number verification against police databases. Free searches available. Protect yourself from fraud."
-        keywords="how to check if something is stolen, stolen item checker, IMEI stolen check, VIN stolen verification, check phone stolen, verify before you buy, stolen goods database, marketplace safety, secondhand verification, avoid stolen goods, is my phone stolen, car stolen check, electronics verification, Facebook marketplace safety, unknowingly bought stolen goods, stolen item database, serial number verification, prevent fraud buying used, police stolen database, consumer protection"
+        title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
+        description="Free stolen item checker tool. Verify IMEI, VIN, serial numbers instantly before buying secondhand items. Check phones, cars, electronics against police databases. Protect yourself from stolen goods."
+        keywords="stolen item checker, check if stolen, stolen item lookup, stolen goods checker, IMEI checker stolen, VIN stolen check, serial number stolen verification, stolen phone checker, stolen car lookup, stolen electronics check, free stolen item search, police stolen database, stolen goods database, check before you buy, secondhand safety checker, marketplace verification tool, avoid stolen goods, stolen item verification, stolen property checker, stolen goods search"
         canonical="/"
       />
       <div className="min-h-screen">
         <Hero />
+        <StolenItemCheckerSection />
         <ContentClaritySection />
         <UserSearchQueriesSection />
         <TestimonialsSection />
