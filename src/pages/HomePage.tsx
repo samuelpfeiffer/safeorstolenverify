@@ -15,6 +15,7 @@ import { UserSearchQueriesSection } from '@/components/seo/UserSearchQueriesSect
 import { RealUserScenariosSection } from '@/components/seo/RealUserScenariosSection';
 import { DetailedFAQSection } from '@/components/seo/DetailedFAQSection';
 import { StolenItemCheckerSection } from '@/components/seo/StolenItemCheckerSection';
+import { ItemSpecificQuestionsSection } from '@/components/seo/ItemSpecificQuestionsSection';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -92,6 +93,7 @@ const HomePage = () => {
       <div className="min-h-screen">
         <Hero />
         <StolenItemCheckerSection />
+        <ItemSpecificQuestionsSection />
         <ContentClaritySection />
         <UserSearchQueriesSection />
         <TestimonialsSection />
