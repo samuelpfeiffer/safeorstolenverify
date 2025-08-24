@@ -11,6 +11,9 @@ import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerforma
 import { GlobalSEOHead } from '@/components/seo/GlobalSEOHead';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
+import { UserSearchQueriesSection } from '@/components/seo/UserSearchQueriesSection';
+import { RealUserScenariosSection } from '@/components/seo/RealUserScenariosSection';
+import { DetailedFAQSection } from '@/components/seo/DetailedFAQSection';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -48,16 +51,19 @@ const HomePage = () => {
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <GlobalSEOHead
-        title="Stolen Item Checker | Safe Or Stolen"
-        description="Use our stolen checker to verify IMEI, VIN, and serial numbers before you buy. Fast results, free checks. Protect yourself from marketplace fraud."
-        keywords="stolen checker, stolen item checker, IMEI checker, VIN stolen check, serial number stolen check, verify before you buy, marketplace safety"
+        title="Stolen Item Checker | Safe Or Stolen - Verify IMEI, VIN, Serial Numbers"
+        description="Check if something is stolen before you buy. Instant IMEI, VIN, and serial number verification against police databases. Free searches available. Protect yourself from fraud."
+        keywords="how to check if something is stolen, stolen item checker, IMEI stolen check, VIN stolen verification, check phone stolen, verify before you buy, stolen goods database, marketplace safety, secondhand verification, avoid stolen goods, is my phone stolen, car stolen check, electronics verification, Facebook marketplace safety, unknowingly bought stolen goods, stolen item database, serial number verification, prevent fraud buying used, police stolen database, consumer protection"
         canonical="/"
       />
       <div className="min-h-screen">
         <Hero />
         <ContentClaritySection />
+        <UserSearchQueriesSection />
         <TestimonialsSection />
         <Features />
+        <RealUserScenariosSection />
+        <DetailedFAQSection />
         <IntegrationShowcase />
         <FeaturedBlogSection />
         <EnhancedCTASection />
