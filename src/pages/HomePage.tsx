@@ -16,6 +16,8 @@ import { RealUserScenariosSection } from '@/components/seo/RealUserScenariosSect
 import { DetailedFAQSection } from '@/components/seo/DetailedFAQSection';
 import { StolenItemCheckerSection } from '@/components/seo/StolenItemCheckerSection';
 import { ItemSpecificQuestionsSection } from '@/components/seo/ItemSpecificQuestionsSection';
+import { DataSourceCredibility } from '@/components/seo/DataSourceCredibility';
+import { MethodologyTransparency } from '@/components/seo/MethodologyTransparency';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -92,6 +94,8 @@ const HomePage = () => {
       />
       <div className="min-h-screen">
         <Hero />
+        <DataSourceCredibility />
+        <MethodologyTransparency />
         <StolenItemCheckerSection />
         <ItemSpecificQuestionsSection />
         <ContentClaritySection />
