@@ -31,8 +31,23 @@
 
     <!-- Geographic Meta Tags - Removed Phoenix-specific targeting for global reach -->
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://safeorstolen.com/" />
+    <!-- Canonical URL (set dynamically per route for SPA) -->
+    <script>
+      (function(){
+        try {
+          var path = window.location.pathname.replace(/\/+$/, '');
+          if (path === '') path = '/';
+          var canonical = 'https://safeorstolen.com' + (path === '/' ? '/' : path);
+          var link = document.querySelector('link[rel="canonical"]');
+          if (!link) {
+            link = document.createElement('link');
+            link.setAttribute('rel', 'canonical');
+            document.head.appendChild(link);
+          }
+          link.setAttribute('href', canonical);
+        } catch (e) {}
+      })();
+    </script>
     <!-- Search engine site verification (replace tokens below in production) -->
     <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_TOKEN" />
     <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" />
