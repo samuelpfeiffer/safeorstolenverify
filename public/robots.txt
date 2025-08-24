@@ -1,6 +1,35 @@
-# Safe Or Stolen robots.txt
+# Robots.txt for SafeOrStolen.com
+# AI-powered verification platform for secondhand goods
+
 User-agent: *
+
+# Allow public pages and content
 Allow: /
+Allow: /about
+Allow: /our-story
+Allow: /how-it-works
+Allow: /pricing
+Allow: /faq
+Allow: /contact
+Allow: /blog
+Allow: /blog/*
+Allow: /check-phone
+Allow: /check-car
+Allow: /check-bike
+Allow: /check-electronics
+Allow: /firearms-check
+Allow: /item-categories
+Allow: /for-consumers
+Allow: /for-brands
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /disclaimer
+Allow: /refunds
+Allow: /cookies
+Allow: /sitemap
+Allow: /about-problem
+Allow: /community
+Allow: /real-time-verification
 
 # Block private user areas
 Disallow: /dashboard
@@ -45,6 +74,9 @@ Allow: /images/
 Allow: /assets/
 Allow: /favicon.ico
 Allow: /manifest.json
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
 
 # Block aggressive crawlers
 User-agent: AhrefsBot
