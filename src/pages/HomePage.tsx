@@ -21,6 +21,7 @@ import { MethodologyTransparency } from '@/components/seo/MethodologyTransparenc
 import { PublicAuditDashboard } from '@/components/seo/PublicAuditDashboard';
 import { ThirdPartyValidation } from '@/components/trust/ThirdPartyValidation';
 import { LiveSystemStatus } from '@/components/system/LiveSystemStatus';
+import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
 
 const HomePage = () => {
   const homePageStructuredData = [
@@ -97,6 +98,7 @@ const HomePage = () => {
       />
       <div className="min-h-screen">
         <Hero />
+        <TrustBadgeStrip />
         <DataSourceCredibility />
         <ThirdPartyValidation />
         <PublicAuditDashboard />
