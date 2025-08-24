@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogList } from '@/components/blog/BlogList';
 
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
 const BlogPage = () => {
@@ -51,12 +51,13 @@ const BlogPage = () => {
 
   return (
     <>
-      <EnhancedSEOHead
+      <UnifiedSEO
         title={pageTitle}
         description={pageDescription}
-        keywords="stolen goods verification blog, check if stolen guide, IMEI check tutorial, VIN verification tips, serial number lookup guide, marketplace safety tips, avoid stolen items, buyer protection advice, fraud prevention blog, verify before buying tips"
         canonical={category ? `/blog/category/${category}` : '/blog'}
-        additionalSchemas={[itemListSchema, faqSchema, breadcrumbSchema].filter(Boolean)}
+        keywords="blog, stolen goods, verification, security, second-hand items, IMEI check, VIN check, serial numbers"
+        type="website"
+        structuredData={[itemListSchema, faqSchema, breadcrumbSchema]}
       />
       
       <div className="bg-sos text-white min-h-screen">

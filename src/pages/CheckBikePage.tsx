@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -32,12 +32,13 @@ const CheckBikePage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead 
-        title="Check If Bike Is Stolen - Free Bicycle Serial Number Lookup | Safe or Stolen"
-        description="Check if bicycle is stolen using serial number lookup. Verify bikes before buying on Craigslist, Facebook Marketplace. Free BikeIndex database check."
-        keywords="check if bike stolen, bicycle serial number lookup, check bicycle, stolen bike check, is my bike stolen, verify bike serial number, stolen bicycle lookup, bike index check, bicycle theft check"
+      <UnifiedSEO 
+        title="Free Bike Check - Verify Serial Numbers | Safe or Stolen"
+        description="Check if a bike is stolen before buying. Free bike serial number verification to avoid purchasing stolen bicycles. Protect yourself and help reduce bike theft."
         canonical="/check-bike"
-        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+        keywords="bike check, bicycle theft, stolen bike verification, bike serial number check, bicycle security"
+        type="website"
+        structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="serial" />
       

@@ -9,7 +9,7 @@ import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";
-import { SEOHead } from '@/components/seo/SEOHead';
+import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 
 const PricingPage = () => {
@@ -243,10 +243,11 @@ const PricingPage = () => {
 
   return (
     <ErrorBoundary>
-      <SEOHead
-        title="Pricing - Safe or Stolen Verification Service"
-        description="Choose from free and paid verification plans. Get unlimited IMEI, serial number, and VIN checks starting from free tier."
+      <UnifiedSEO
+        title="Pricing Plans - Safe or Stolen"
+        description="Choose the perfect plan for your stolen goods verification needs. Free searches, premium features, and enterprise solutions available."
         canonical="/pricing"
+        keywords="pricing, stolen goods verification, subscription plans, security services"
         structuredData={structuredData}
       />
       {subscriptionError ? (

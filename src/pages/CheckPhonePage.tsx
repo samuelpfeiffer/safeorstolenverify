@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,12 +36,13 @@ const CheckPhonePage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead 
-        title="Can I Check if This iPhone is Stolen? How to Tell if Phone is Hot"
-        description="Can I check if this phone is stolen? How do I know if this iPhone/Android is hot? Free IMEI check to see if phone is legit before buying."
-        keywords="can I check if this iPhone is stolen, how to tell if phone is hot, is this phone stolen, check if IMEI is hot, how do I know if phone stolen, verify phone not stolen"
+      <UnifiedSEO 
+        title="Free Phone Check - IMEI Verification | Safe or Stolen"
+        description="Check if a phone is stolen before buying. Free IMEI verification to avoid purchasing stolen smartphones. Protect yourself from fraud and theft."
         canonical="/check-phone"
-        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+        keywords="phone check, IMEI check, stolen phone verification, mobile phone security, smartphone theft"
+        type="website"
+        structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="imei" />
       
