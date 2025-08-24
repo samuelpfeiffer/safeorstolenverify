@@ -28,6 +28,13 @@ const PricingPage = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { createOneTimePayment, isLoading: reportLoading } = useOneTimePayment();
 
+  // Add Stripe price IDs for your actual products
+  const STRIPE_PRICE_IDS = {
+    basic: "price_1Rz7rm2eGaMDLFHojH9Vch1Y",
+    premium: "price_1Rz7xu2eGaMDLFHoqGT0Pyjk", 
+    enterprise: "price_1Rz80X2eGaMDLFHozeZyChte"
+  };
+
   const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
     console.log('[Pricing] handleSubscribe clicked', { tier, isAuthenticated });
     if (!isAuthenticated) {
