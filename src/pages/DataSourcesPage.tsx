@@ -12,7 +12,7 @@ const DataSourcesPage = () => {
   const dataSources = [
     {
       name: "BikeIndex",
-      logo: "/images/partners/bikeindex-logo.svg",
+      logo: "/images/partners/bikeindex-logo.png",
       description: "The world's largest bicycle database with over 1.2 million registered bikes",
       website: "https://bikeindex.org",
       coverage: "Global",
