@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { SEOHead } from '@/components/seo/SEOHead';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
+import { SubscriptionFlowTest } from '@/components/testing/SubscriptionFlowTest';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -257,6 +258,11 @@ const PricingPage = () => {
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
               <p className="text-xl text-gray-600">Choose the plan that works best for you</p>
+            </div>
+
+            {/* Subscription Flow Test Component - For debugging all payment flows */}
+            <div className="mb-12">
+              <SubscriptionFlowTest />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

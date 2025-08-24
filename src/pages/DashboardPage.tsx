@@ -50,8 +50,38 @@ const DashboardPage = () => {
       loadDashboardData();
       loadUserProfile();
       checkForPrePopulatedData();
+      handleSubscriptionSuccess();
     }
   }, [user]);
+  
+  // Handle subscription success from Stripe checkout
+  const handleSubscriptionSuccess = () => {
+    const sessionId = searchParams.get('session_id');
+    if (sessionId) {
+      console.log('[Dashboard] Subscription success detected, session:', sessionId);
+      
+      // Show success toast
+      const toastModule = import('@/hooks/use-toast');
+      toastModule.then(({ useToast }) => {
+        const { toast } = useToast();
+        toast({
+          title: "Subscription Activated!",
+          description: "Welcome to your new plan. Your subscription is now active.",
+          duration: 5000,
+        });
+      });
+      
+      // Clear the session_id from URL
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.delete('session_id');
+      window.history.replaceState({}, '', newUrl.toString());
+      
+      // Refresh subscription status after a short delay
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+  };
 
   // Check for pre-populated verification data from URL or pending verification
   const checkForPrePopulatedData = () => {
