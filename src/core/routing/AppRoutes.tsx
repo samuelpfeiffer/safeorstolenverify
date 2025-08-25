@@ -26,6 +26,12 @@ const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+
+// New Blog Posts
+const DataSourceCredibilityPost = lazy(() => import('@/pages/blog/DataSourceCredibilityPost'));
+const VerificationMethodologyPost = lazy(() => import('@/pages/blog/VerificationMethodologyPost'));
+const RealUserStoriesPost = lazy(() => import('@/pages/blog/RealUserStoriesPost'));
+const CompleteVerificationGuidePost = lazy(() => import('@/pages/blog/CompleteVerificationGuidePost'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
@@ -104,6 +110,12 @@ export const AppRoutes: React.FC = () => {
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/category/:category" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
+          
+          {/* Static Blog Posts */}
+          <Route path="blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
+          <Route path="blog/verification-methodology" element={<VerificationMethodologyPost />} />
+          <Route path="blog/real-user-stories" element={<RealUserStoriesPost />} />
+          <Route path="blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
           
           {/* New Routes */}
           <Route path="how-it-works" element={<HowItWorksPage />} />

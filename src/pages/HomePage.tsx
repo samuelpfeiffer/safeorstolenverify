@@ -4,23 +4,11 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
-import { IntegrationShowcase } from '@/components/integration/IntegrationShowcase';
 import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
-import { ContentClaritySection } from '@/components/content/ContentClaritySection';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
-import { UserSearchQueriesSection } from '@/components/seo/UserSearchQueriesSection';
-import { RealUserScenariosSection } from '@/components/seo/RealUserScenariosSection';
-import { DetailedFAQSection } from '@/components/seo/DetailedFAQSection';
-import { StolenItemCheckerSection } from '@/components/seo/StolenItemCheckerSection';
-import { ItemSpecificQuestionsSection } from '@/components/seo/ItemSpecificQuestionsSection';
-import { DataSourceCredibility } from '@/components/seo/DataSourceCredibility';
-import { MethodologyTransparency } from '@/components/seo/MethodologyTransparency';
-import { PublicAuditDashboard } from '@/components/seo/PublicAuditDashboard';
-import { ThirdPartyValidation } from '@/components/trust/ThirdPartyValidation';
-import { LiveSystemStatus } from '@/components/system/LiveSystemStatus';
 import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
 
 const HomePage = () => {
@@ -99,20 +87,8 @@ const HomePage = () => {
       <div className="min-h-screen">
         <Hero />
         <TrustBadgeStrip />
-        <DataSourceCredibility />
-        <ThirdPartyValidation />
-        <PublicAuditDashboard />
-        <LiveSystemStatus />
-        <MethodologyTransparency />
-        <StolenItemCheckerSection />
-        <ItemSpecificQuestionsSection />
-        <ContentClaritySection />
-        <UserSearchQueriesSection />
-        <TestimonialsSection />
         <Features />
-        <RealUserScenariosSection />
-        <DetailedFAQSection />
-        <IntegrationShowcase />
+        <TestimonialsSection />
         <FeaturedBlogSection />
         <EnhancedCTASection />
       </div>
