@@ -2,16 +2,19 @@
 import { SITE_CONFIG } from './metadata';
 import type { BlogPost } from './types';
 
-// Enhanced Organization Schema with FasterCapital
+// Enhanced Organization Schema - Corporation Status
 export const createOrganizationSchema = () => ({
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "Corporation",
   "name": SITE_CONFIG.name,
-  "alternateName": "SOS Verification Platform",
+  "legalName": "Safe or Stolen Corp.",
+  "alternateName": ["SOS Verification Platform", "SafeOrStolen"],
   "description": "The world's first real-time stolen goods verification platform, protecting consumers from unknowingly purchasing stolen items and fighting the $13 billion stolen goods crisis.",
   "url": SITE_CONFIG.url,
   "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
   "foundingDate": "2024",
+  "incorporationDate": "2024",
+  "taxID": "[EIN_NUMBER_PLACEHOLDER]", // User needs to replace with actual EIN
   "founder": [
     {
       "@type": "Person",
@@ -40,11 +43,27 @@ export const createOrganizationSchema = () => ({
     "https://twitter.com/safeorstolen",
     "https://linkedin.com/company/safeorstolen"
   ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-800-SOS-CHECK",
-    "contactType": "customer service",
-    "email": "support@safeorstolen.com"
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-SOS-CHECK",
+      "contactType": "customer service",
+      "email": "support@safeorstolen.com",
+      "availableLanguage": "English"
+    },
+    {
+      "@type": "ContactPoint", 
+      "contactType": "corporate headquarters",
+      "email": "corporate@safeorstolen.com"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US",
+    "addressRegion": "[STATE_PLACEHOLDER]",
+    "addressLocality": "[CITY_PLACEHOLDER]", 
+    "streetAddress": "[STREET_ADDRESS_PLACEHOLDER]",
+    "postalCode": "[ZIP_CODE_PLACEHOLDER]"
   },
   "knowsAbout": [
     "Stolen goods verification",
@@ -52,9 +71,14 @@ export const createOrganizationSchema = () => ({
     "E-commerce security",
     "Law enforcement databases",
     "Real-time verification",
-    "Marketplace fraud prevention"
+    "Marketplace fraud prevention",
+    "Corporate compliance",
+    "Business verification services"
   ],
-  "slogan": "Verify Before You Buy - Fighting the $13B Stolen Goods Crisis"
+  "slogan": "Verify Before You Buy - Fighting the $13B Stolen Goods Crisis",
+  "duns": "[DUNS_NUMBER_PLACEHOLDER]", // D-U-N-S Number if available
+  "naics": "518210", // Data Processing, Hosting, and Related Services
+  "isicV4": "6311" // Data processing and hosting services
 });
 
 // Website Schema
@@ -127,25 +151,41 @@ export const createServiceSchema = () => ({
   }
 });
 
-// Local Business Schema (if applicable)
+// Enhanced Local Business Schema for Corporate Entity
 export const createLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${SITE_CONFIG.url}/#localbusiness`,
   "name": SITE_CONFIG.name,
+  "legalName": "Safe or Stolen Corp.",
   "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
   "telephone": "+1-800-SOS-CHECK",
   "email": "support@safeorstolen.com",
+  "foundingDate": "2024",
+  "taxID": "[EIN_NUMBER_PLACEHOLDER]",
   "areaServed": "Worldwide",
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": {
-      "@type": "GeoCoordinates",
+      "@type": "GeoCoordinates", 
       "latitude": "39.8283",
       "longitude": "-98.5795"
     },
     "geoRadius": "20000000"
   },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US",
+    "addressRegion": "[STATE_PLACEHOLDER]",
+    "addressLocality": "[CITY_PLACEHOLDER]", 
+    "streetAddress": "[STREET_ADDRESS_PLACEHOLDER]",
+    "postalCode": "[ZIP_CODE_PLACEHOLDER]"
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Credit Card, Debit Card",
+  "priceRange": "$",
   "knowsAbout": [
     "Stolen goods verification",
     "Fraud prevention", 

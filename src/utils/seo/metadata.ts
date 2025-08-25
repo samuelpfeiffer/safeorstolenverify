@@ -1,11 +1,12 @@
 
 import type { PageMetadata } from './types';
 
-// Base site configuration
+// Base site configuration - Corporation
 const SITE_CONFIG = {
   name: 'Safe or Stolen',
+  legalName: 'Safe or Stolen Corp.',
   tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
-  description: 'Real-time stolen goods verification platform protecting consumers and businesses from fraud',
+  description: 'Real-time stolen goods verification platform protecting consumers and businesses from fraud. Incorporated corporation providing enterprise-grade verification services.',
   url: 'https://safeorstolen.com',
   ogImage: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
   twitterHandle: '@safeorstolen',
@@ -81,7 +82,13 @@ const SITE_CONFIG = {
     'stolen goods verification',
     'fraud prevention check',
     'consumer protection',
-    'secondhand buyer protection'
+    'secondhand buyer protection',
+    
+    // Corporate terms
+    'enterprise verification services',
+    'corporate fraud prevention',
+    'business verification platform',
+    'B2B verification services'
   ] as const,
 } as const;
 
