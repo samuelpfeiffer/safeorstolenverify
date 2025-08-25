@@ -145,7 +145,7 @@ const PrivacyPage: React.FC = () => {
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
                 <br />
-                Email: privacy@safeorstolen.com
+                Email: support@safeorstolen.com
                 <br />
                 Address: [Company Address]
                 <br />

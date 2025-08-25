@@ -126,7 +126,7 @@ const CookiesPage: React.FC = () => {
                 <p className="text-gray-300 leading-relaxed">
                   If you have any questions about our Cookie Policy, please contact us at:
                   <br />
-                  Email: privacy@safeorstolen.com
+                  Email: support@safeorstolen.com
                   <br />
                   Website: safeorstolen.com/contact
                 </p>

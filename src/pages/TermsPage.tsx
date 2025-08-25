@@ -132,7 +132,7 @@ const TermsPage: React.FC = () => {
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about these Terms of Service, please contact us at:
                 <br />
-                Email: legal@safeorstolen.com
+                Email: support@safeorstolen.com
                 <br />
                 Address: [Company Address]
               </p>

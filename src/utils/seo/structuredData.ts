@@ -54,7 +54,7 @@ export const createOrganizationSchema = () => ({
     {
       "@type": "ContactPoint", 
       "contactType": "corporate headquarters",
-      "email": "corporate@safeorstolen.com"
+      "email": "support@safeorstolen.com"
     }
   ],
   "address": {

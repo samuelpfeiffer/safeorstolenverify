@@ -162,7 +162,7 @@ const PrivacyPolicyPage: React.FC = () => {
                   If you have any questions about this Privacy Policy or our data practices, please contact us:
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p><strong>Email:</strong> privacy@safeorstolen.com</p>
+                  <p><strong>Email:</strong> support@safeorstolen.com</p>
                   <p><strong>Address:</strong> Safe or Stolen Privacy Office</p>
                   <p><strong>Response Time:</strong> We respond to all privacy inquiries within 72 hours</p>
                 </div>

@@ -533,7 +533,7 @@ const TrustVerificationPage: React.FC = () => {
               <div className="text-sm text-muted-foreground space-y-2">
                 <p><strong>Still have concerns?</strong> Contact us with specific questions about any claim.</p>
                 <p>We will provide additional documentation and verification methods.</p>
-                <p><strong>Phone:</strong> (555) 123-SAFE • <strong>Email:</strong> verify@safeorstolen.com</p>
+                <p><strong>Phone:</strong> (555) 123-SAFE • <strong>Email:</strong> support@safeorstolen.com</p>
               </div>
             </div>
           </div>

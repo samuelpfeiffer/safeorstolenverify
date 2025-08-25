@@ -196,7 +196,7 @@ const TermsOfServicePage: React.FC = () => {
                   If you have questions about these Terms of Service, please contact our legal team:
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p><strong>Email:</strong> legal@safeorstolen.com</p>
+                  <p><strong>Email:</strong> support@safeorstolen.com</p>
                   <p><strong>Address:</strong> Safe or Stolen Legal Department</p>
                   <p><strong>Response Time:</strong> We respond to all legal inquiries within 5 business days</p>
                 </div>
