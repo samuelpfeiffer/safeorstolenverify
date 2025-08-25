@@ -1,14 +1,15 @@
+
 import { ReferralProgram } from '@/components/marketing/ReferralProgram';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 export default function ReferralPage() {
   return (
     <div className="bg-sos min-h-screen">
-      <SEOHead 
+      <PageSEO 
         title="Referral Program - Earn Rewards | Safe Or Stolen"
         description="Earn rewards by helping others stay safe from stolen goods. Get free verifications and premium features for every successful referral to our verification service!"
         keywords="referral program, rewards, free verifications, earn money, affiliate program, stolen goods verification, IMEI verification rewards"
-        ogType="website"
+        type="website"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "WebPage",
