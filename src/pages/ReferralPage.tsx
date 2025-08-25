@@ -1,5 +1,5 @@
 import { ReferralProgram } from '@/components/marketing/ReferralProgram';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 export default function ReferralPage() {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,12 +36,11 @@ const CheckCarPage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead 
+      <PageSEO 
         title="Can I Check if This Car is Stolen? How Do I Know if Car is Hot?"
         description="Can I check if this car is stolen? How do I know if this VIN is hot? Free way to verify car not stolen before buying. Check if vehicle is legit."
         keywords="can I check if this car is stolen, how do I know if car is hot, is this car stolen, check if VIN is hot, how to tell if car stolen, verify car not stolen"
-        canonical="/check-car"
-        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+        structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="vin" />
       

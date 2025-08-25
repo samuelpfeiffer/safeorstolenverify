@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { createBreadcrumbSchema, createLocalBusinessSchema } from '@/utils/seo/structuredData';
 
 const ContactPage = () => {
@@ -62,12 +62,11 @@ const ContactPage = () => {
 
   return (
     <div className="bg-sos text-white min-h-screen">
-      <EnhancedSEOHead
+      <PageSEO
         title="Contact Safe or Stolen - Support, Partnerships & Media Inquiries"
         description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: safeorstolenmail@gmail.com"
         keywords="contact safe or stolen, customer support, stolen goods verification support, IMEI check help, VIN verification support, partnership inquiries, media contact"
-        canonical="/contact"
-        additionalSchemas={[localBusinessSchema, breadcrumbSchema]}
+        structuredData={[localBusinessSchema, breadcrumbSchema]}
       />
       <div className="container mx-auto px-4 pt-24 pb-16">
         <Breadcrumb className="mb-6">

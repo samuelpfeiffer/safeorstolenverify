@@ -10,7 +10,7 @@ interface PageSEOProps {
   image?: string;
   type?: string;
   noIndex?: boolean;
-  structuredData?: Record<string, any>;
+  structuredData?: Record<string, any> | Record<string, any>[];
 }
 
 export const PageSEO: React.FC<PageSEOProps> = ({
@@ -25,6 +25,13 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   const location = useLocation();
   const canonical = getCanonicalUrl(location.pathname);
 
+  // Ensure structuredData is always an array for OptimizedSEOHead
+  const normalizedStructuredData = structuredData 
+    ? Array.isArray(structuredData) 
+      ? structuredData.filter(Boolean) 
+      : [structuredData]
+    : undefined;
+
   return (
     <OptimizedSEOHead
       title={title}
@@ -34,7 +41,7 @@ export const PageSEO: React.FC<PageSEOProps> = ({
       image={image}
       type={type}
       noIndex={noIndex}
-      structuredData={structuredData}
+      structuredData={normalizedStructuredData}
     />
   );
 };

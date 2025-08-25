@@ -4,7 +4,7 @@ import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
 import { useBlogPost } from '@/hooks/useBlogPosts';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { getBlogPostMetadata } from '@/utils/seo/metadata';
 import { createArticleSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
@@ -73,18 +73,13 @@ const BlogPostPage = () => {
 
   return (
     <>
-      <SEOHead
+      <PageSEO
         title={metadata.title}
         description={metadata.description}
         keywords={metadata.keywords}
-        canonical={metadata.canonical}
-        ogTitle={metadata.ogTitle}
-        ogDescription={metadata.ogDescription}
-        ogImage={metadata.ogImage}
-        ogType="article"
+        image={metadata.ogImage}
+        type="article"
         structuredData={structuredData}
-        robotsDirectives={metadata.robotsDirectives}
-        preloadUrls={post.featured_image_url ? [post.featured_image_url] : []}
       />
       
       <div className="bg-white min-h-screen">

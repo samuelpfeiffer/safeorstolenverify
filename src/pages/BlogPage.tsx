@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogList } from '@/components/blog/BlogList';
 
-import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
 const BlogPage = () => {
@@ -51,13 +51,12 @@ const BlogPage = () => {
 
   return (
     <>
-      <UnifiedSEO
+      <PageSEO
         title={pageTitle}
         description={pageDescription}
-        canonical={category ? `/blog/category/${category}` : '/blog'}
         keywords="blog, stolen goods, verification, security, second-hand items, IMEI check, VIN check, serial numbers"
         type="website"
-        structuredData={[itemListSchema, faqSchema, breadcrumbSchema]}
+        structuredData={[itemListSchema, faqSchema, breadcrumbSchema].filter(Boolean)}
       />
       
       <div className="bg-sos text-white min-h-screen">

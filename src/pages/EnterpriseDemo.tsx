@@ -1,5 +1,5 @@
 import { EnterpriseDemo } from '@/components/enhanced/EnterpriseDemo';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 export default function EnterpriseDemoPage() {
   return (

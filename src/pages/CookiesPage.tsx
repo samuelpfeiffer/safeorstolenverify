@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const CookiesPage: React.FC = () => {
   return (
     <>
-      <SEOHead
+      <PageSEO
         title="Cookie Policy - Safe or Stolen"
         description="Learn about how Safe or Stolen uses cookies to improve your experience. Understand our cookie policy and privacy practices."
         keywords="cookie policy, cookies, privacy, data collection, safe or stolen cookies"

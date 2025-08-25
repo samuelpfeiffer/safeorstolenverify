@@ -1,7 +1,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
 const FaqPage = () => {
@@ -60,12 +60,11 @@ const FaqPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <EnhancedSEOHead
+      <PageSEO
         title="FAQ - Check if Stolen: IMEI, VIN, Serial Number Questions | Safe or Stolen"
         description="Get answers to common questions about checking if items are stolen. Learn how to verify IMEI, VIN, serial numbers before buying secondhand items."
         keywords="check if stolen FAQ, IMEI check questions, VIN verification help, serial number lookup questions, stolen goods verification FAQ, how to check if stolen, verify before buying FAQ"
-        canonical="/faq"
-        additionalSchemas={[faqSchema, breadcrumbSchema]}
+        structuredData={[faqSchema, breadcrumbSchema]}
       />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">

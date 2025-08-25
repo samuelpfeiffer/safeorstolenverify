@@ -15,7 +15,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const successStories = [
   {
@@ -142,11 +142,10 @@ const CaseStudiesPage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead
+      <PageSEO
         title="Success Stories - Real Cases Where SafeOrStolen Prevented Fraud | Case Studies"
         description="Real success stories from people who used SafeOrStolen to avoid buying stolen goods, recover stolen property, and prevent fraud. Police-verified cases with documented results."
         keywords="stolen goods success stories, fraud prevention cases, recovered stolen property, verified testimonials, police confirmed cases"
-        canonical="/case-studies"
       />
       
       <div className="min-h-screen bg-background">
