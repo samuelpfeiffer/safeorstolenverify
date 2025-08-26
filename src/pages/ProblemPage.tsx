@@ -18,12 +18,7 @@ const ProblemPage = () => {
       />
       <div className="bg-sos text-white min-h-screen">
         <HeroSection />
-        <StatisticsSection />
-        <ConsequencesSection />
-        <CaseStudySection />
-        <CurrentSolutionsSection />
         <SolutionSection />
-        
       </div>
     </>
   );

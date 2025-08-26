@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -8,8 +7,7 @@ import {
   ShieldCheck, 
   Clock,
   ArrowRight,
-  CheckCircle,
-  Zap
+  CheckCircle
 } from 'lucide-react';
 
 const HowItWorks = () => {
@@ -17,7 +15,7 @@ const HowItWorks = () => {
     {
       number: "01",
       title: "Enter Your Item Details",
-      description: "Simply input the IMEI, VIN, or serial number of the item you're considering purchasing. Our smart detection automatically identifies the item type.",
+      description: "Simply input the IMEI, VIN, or serial number of the item you're considering purchasing.",
       icon: <Search className="h-8 w-8 text-sos-orange" />,
       features: ["Smart auto-detection", "Multiple ID formats", "Instant validation"],
       time: "< 5 seconds"
@@ -25,27 +23,19 @@ const HowItWorks = () => {
     {
       number: "02", 
       title: "Real Database Check",
-      description: "We instantly query official law enforcement databases, insurance claim records, and manufacturer registries across 50+ countries.",
+      description: "We instantly query official databases and manufacturer registries.",
       icon: <Database className="h-8 w-8 text-sos-lime" />,
-      features: ["50+ country coverage", "Real-time data", "Official sources"],
+      features: ["Multiple databases", "Real-time data", "Official sources"],
       time: "< 3 seconds"
     },
     {
       number: "03",
       title: "Get Instant Results",
-      description: "Receive a comprehensive verification report with theft status, ownership history, and safety recommendations within seconds.",
+      description: "Receive a comprehensive verification report with theft status and safety recommendations.",
       icon: <ShieldCheck className="h-8 w-8 text-sos-orange" />,
-      features: ["Detailed report", "Risk assessment", "Legal protection"],
+      features: ["Detailed report", "Risk assessment", "Clear recommendations"],
       time: "Immediate"
     }
-  ];
-
-  const benefits = [
-    "Avoid legal complications from stolen goods",
-    "Protect yourself from financial loss", 
-    "Buy with complete confidence",
-    "Access real law enforcement data",
-    "Get instant verification results"
   ];
 
   return (
@@ -60,8 +50,8 @@ const HowItWorks = () => {
             How <span className="text-gradient">Safe or Stolen</span> Works
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed">
-            Our advanced verification technology connects directly to official databases, 
-            giving you <strong className="text-foreground">real results in seconds</strong> — not guesswork.
+            Our verification technology connects to databases, 
+            giving you <strong className="text-foreground">real results in seconds</strong>.
           </p>
         </div>
 
@@ -118,84 +108,22 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        {/* Benefits Section */}
-        <div className="card-enhanced p-12 mb-12 bg-card">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                Why Choose <span className="text-gradient">Real Verification</span>?
-              </h3>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Unlike other services that provide generic advice, we give you <strong className="text-foreground">actual data</strong> from official sources.
-              </p>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-sos-lime/20 rounded-full flex items-center justify-center">
-                      <CheckCircle className="h-5 w-5 text-sos-lime" />
-                    </div>
-                    <span className="text-card-foreground">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="card-enhanced p-8 border border-sos-lime/20 bg-card">
-                <div className="flex items-center gap-3 mb-6">
-                  <Zap className="h-6 w-6 text-sos-lime" />
-                  <span className="text-lg font-semibold text-foreground">Real-Time Results</span>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Database Query</span>
-                    <span className="text-sos-lime">0.8s</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Data Processing</span>
-                    <span className="text-sos-lime">0.3s</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Report Generation</span>
-                    <span className="text-sos-lime">0.2s</span>
-                  </div>
-                  <div className="border-t border-border pt-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-foreground font-semibold">Total Time</span>
-                      <span className="text-sos-orange font-bold">1.3s</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* CTA Section */}
         <div className="text-center">
           <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             Ready to <span className="text-gradient">Verify Safely</span>?
           </h3>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join over 500,000 users who trust our platform to verify purchases and avoid stolen goods.
+            Join thousands who trust our platform to verify purchases.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-sos-orange hover:bg-sos-orange-600 text-white button-glow font-semibold"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              Start Verifying Now
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-sos-lime text-sos-lime hover:bg-sos-lime/10"
-            >
-              Learn More
-            </Button>
-          </div>
+          <Button 
+            size="lg"
+            className="bg-sos-orange hover:bg-sos-orange-600 text-white button-glow font-semibold"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            Start Verifying Now
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </div>
     </section>
