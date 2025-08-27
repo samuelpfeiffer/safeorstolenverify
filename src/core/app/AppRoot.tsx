@@ -10,7 +10,8 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
-import { AppInstallBanner } from '@/components/pwa/AppInstallBanner';
+import { PWAProvider } from '@/core/providers/PWAProvider';
+import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -45,19 +46,21 @@ export const AppRoot: React.FC = () => {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
-            <ThemeProvider>
-              <Router>
-                <div className="min-h-screen bg-sos text-white antialiased">
-                  <GlobalAnalytics />
-                  <GlobalPerformanceOptimizer />
-                  <Suspense fallback={<AppLoadingScreen />}>
-                    <AppRoutes />
-                  </Suspense>
-                  <AppInstallBanner />
-                  <Toaster />
-                </div>
-              </Router>
-            </ThemeProvider>
+            <PWAProvider>
+              <ThemeProvider>
+                <Router>
+                  <div className="min-h-screen bg-sos text-white antialiased">
+                    <GlobalAnalytics />
+                    <GlobalPerformanceOptimizer />
+                    <Suspense fallback={<AppLoadingScreen />}>
+                      <AppRoutes />
+                    </Suspense>
+                    <PWAInstallBanner />
+                    <Toaster />
+                  </div>
+                </Router>
+              </ThemeProvider>
+            </PWAProvider>
           </AuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
