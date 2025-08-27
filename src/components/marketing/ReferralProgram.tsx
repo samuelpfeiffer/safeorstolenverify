@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Gift, Users, Share2, Trophy, Copy, Check } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { Gift, Users, Share2, Trophy } from 'lucide-react';
+import { CopyButton } from '@/components/common/CopyButton';
 import { useAuth } from '@/lib/auth';
 
 interface ReferralStats {
@@ -18,9 +18,7 @@ interface ReferralStats {
 
 export const ReferralProgram = () => {
   const { user } = useAuth();
-  const { toast } = useToast();
-  const [copied, setCopied] = useState(false);
-  const [stats, setStats] = useState<ReferralStats>({
+  const [stats] = useState<ReferralStats>({
     referralsCount: 3,
     pendingRewards: 25,
     totalEarned: 75,
@@ -30,24 +28,6 @@ export const ReferralProgram = () => {
 
   const referralUrl = `https://safeorstolen.com/signup?ref=${stats.referralCode}`;
   const progressToNext = (stats.referralsCount / stats.nextMilestone) * 100;
-
-  const handleCopyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(referralUrl);
-      setCopied(true);
-      toast({
-        title: "Link copied!",
-        description: "Referral link copied to clipboard"
-      });
-      setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
-      toast({
-        title: "Copy failed",
-        description: "Please copy the link manually",
-        variant: "destructive"
-      });
-    }
-  };
 
   const shareOnSocial = (platform: string) => {
     const message = "Check out Safe Or Stolen - verify if items are stolen before you buy! Use my referral link to get 5 free verifications:";
@@ -143,13 +123,12 @@ export const ReferralProgram = () => {
                   readOnly
                   className="bg-gray-800 border-gray-600 text-white"
                 />
-                <Button
-                  onClick={handleCopyLink}
+                <CopyButton
+                  text={referralUrl}
                   variant="outline"
                   className="border-gray-600 text-white hover:bg-gray-700"
-                >
-                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
+                  successMessage="Link copied! Share it with friends to earn rewards."
+                />
               </div>
 
               <div className="flex gap-2">
@@ -260,12 +239,12 @@ export const ReferralProgram = () => {
             For the next 30 days, earn DOUBLE rewards for every successful referral. 
             That's 10 free verifications per referral instead of 5!
           </p>
-          <Button 
-            onClick={handleCopyLink}
+          <CopyButton
+            text={referralUrl}
             className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-3"
-          >
-            Start Referring Now
-          </Button>
+            showText={true}
+            successMessage="Link copied! Share it to earn double rewards."
+          />
         </CardContent>
       </Card>
     </div>
