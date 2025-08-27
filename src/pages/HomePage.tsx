@@ -9,6 +9,7 @@ import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerforma
 import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
+import { TrustIndicators } from '@/components/TrustIndicators';
 import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
 
 const HomePage = () => {
@@ -79,14 +80,15 @@ const HomePage = () => {
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <PageSEO
-        title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
-        description="Free verification tool to check if secondhand items are stolen before you buy. Verify IMEI, VIN, serial numbers against databases. Protect yourself when buying used goods from Facebook Marketplace, eBay, Craigslist."
-        keywords="check if stolen before buying, verify secondhand items, Facebook Marketplace stolen check, eBay stolen goods verification, Craigslist safety check, used item verification, IMEI stolen check, VIN stolen verification, serial number check, secondhand buyer protection, avoid buying stolen goods, marketplace safety"
+        title="Don't Get Scammed - Verify Items Before You Buy | SafeOrStolen"
+        description="Stop losing money to scams! Check any secondhand item in seconds before buying from Facebook Marketplace, eBay, Craigslist. Join 25,000+ smart buyers who protect their purchases."
+        keywords="don't get scammed, protect your purchase, avoid stolen goods, Facebook Marketplace scams, eBay safety, secondhand buyer protection, verify before buying, stolen item checker, marketplace safety"
         canonical="/"
         structuredData={homePageStructuredData}
       />
       <div className="min-h-screen">
         <Hero />
+        <TrustIndicators />
         <TrustBadgeStrip />
         <Features />
         <TestimonialsSection />

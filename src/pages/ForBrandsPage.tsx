@@ -35,25 +35,26 @@ const ForBrandsPage: React.FC = () => {
               </Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-8">
-                Verification API for <span className="text-primary">Marketplaces</span>
+                Reduce Liability. Increase Trust. <span className="text-primary">Scale Your Business.</span>
               </h1>
               
               <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-                Integrate our verification technology into your platform to protect users and reduce fraud.
+                Protect your inventory, reputation, and bottom line with professional-grade stolen goods verification. 
+                Integrate our API to eliminate liability and build customer trust.
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">99%</div>
-                  <div className="text-muted-foreground">Accuracy</div>
+                  <div className="text-3xl font-bold text-primary">$2.3M</div>
+                  <div className="text-muted-foreground">Loss Prevention</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-primary">99.2%</div>
+                  <div className="text-muted-foreground">Accuracy Rate</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">&lt;2s</div>
                   <div className="text-muted-foreground">Response</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">15+</div>
-                  <div className="text-muted-foreground">Databases</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">24/7</div>
