@@ -9,6 +9,7 @@ import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerforma
 import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
+import { ConversionTracker } from '@/components/ConversionTracker';
 import { TrustIndicators } from '@/components/TrustIndicators';
 import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
 
@@ -87,6 +88,7 @@ const HomePage = () => {
         structuredData={homePageStructuredData}
       />
       <div className="min-h-screen">
+        <ConversionTracker />
         <Hero />
         <TrustIndicators />
         <TrustBadgeStrip />

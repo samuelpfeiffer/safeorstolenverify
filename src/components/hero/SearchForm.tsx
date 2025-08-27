@@ -20,6 +20,7 @@ import {
 import { handleSecureError, createSecureError } from '@/utils/errorHandling';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
+import { FreemiumPaywall } from '@/components/FreemiumPaywall';
 
 interface SearchFormProps {
   onOpenQrScanner: () => void;
@@ -132,8 +133,23 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
     await handleRealVerification();
   };
 
+  const handleUpgrade = () => {
+    navigate('/pricing');
+  };
+
+  const searchCount = 4 - remainingSearches; // Calculate how many searches used
+
   return (
     <div className="w-full max-w-lg mx-auto animate-slideUp" style={{ animationDelay: '0.3s' }}>
+      {/* Show paywall before search form if approaching limit */}
+      {isAuthenticated && !isSubscribed && (remainingSearches <= 1) && (
+        <FreemiumPaywall 
+          searchCount={searchCount}
+          maxFreeSearches={4}
+          onUpgrade={handleUpgrade}
+        />
+      )}
+      
       <div className="flex gap-2 mb-4">
         <Input 
           type="text" 

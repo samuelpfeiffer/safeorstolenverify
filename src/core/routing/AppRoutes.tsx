@@ -66,7 +66,7 @@ const PurchaseHistoryPage = lazy(() => import('@/pages/PurchaseHistoryPage'));
 const SecuritySettingsPage = lazy(() => import('@/pages/SecuritySettingsPage'));
 
 // Enterprise & Marketing Pages
-const EnterpriseDemo = lazy(() => import('@/pages/EnterpriseDemo'));
+const EnterpriseDemoPage = lazy(() => import('@/pages/EnterpriseDemoPage'));
 const ReferralPage = lazy(() => import('@/pages/ReferralPage'));
 const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
 const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
@@ -137,7 +137,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="refunds" element={<RefundsPage />} />
           
           {/* Enterprise & Marketing Routes */}
-          <Route path="enterprise-demo" element={<EnterpriseDemo />} />
+          <Route path="enterprise-demo" element={<EnterpriseDemoPage />} />
           <Route path="referral" element={<ReferralPage />} />
           <Route path="api-docs" element={<ApiDocsPage />} />
           <Route path="sitemap" element={<SitemapPage />} />

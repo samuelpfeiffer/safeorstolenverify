@@ -66,7 +66,7 @@ const ForBrandsPage: React.FC = () => {
                 <Link to="/enterprise-demo">
                   <Button size="lg">
                     <Rocket className="h-5 w-5 mr-2" />
-                    Request Demo
+                    Schedule Live Demo
                   </Button>
                 </Link>
                 <Link to="/contact">
