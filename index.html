@@ -12,6 +12,9 @@
     <!-- CRITICAL: Static robots meta tag for immediate indexing (before JS loads) -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:160" />
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:160" />
+    
+    <!-- CRITICAL: Canonical URL to prevent redirect issues -->
+    <link rel="canonical" href="https://safeorstolen.com/" id="canonical-url" />
 
     <!-- Enhanced Security Headers (relaxed for in-app preview iframe + dev HMR) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.googletagmanager.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://www.google-analytics.com ws: wss:; frame-src 'self' https://js.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *; upgrade-insecure-requests;" />
@@ -85,6 +88,28 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX'); // Replace with your actual Google Analytics ID when you have one
+    </script>
+    
+    <!-- Dynamic canonical URL script -->
+    <script>
+      // Fix canonical URL on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const canonicalLink = document.getElementById('canonical-url');
+        if (canonicalLink) {
+          let currentUrl = window.location.href;
+          
+          // Force HTTPS and remove www
+          currentUrl = currentUrl.replace('http://', 'https://');
+          currentUrl = currentUrl.replace('https://www.', 'https://');
+          
+          // Remove trailing slash except for root
+          if (currentUrl !== 'https://safeorstolen.com/') {
+            currentUrl = currentUrl.replace(/\/$/, '');
+          }
+          
+          canonicalLink.href = currentUrl;
+        }
+      });
     </script>
   </head>
 
