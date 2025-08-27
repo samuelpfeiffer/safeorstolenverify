@@ -4,18 +4,20 @@
 # Enable rewrite engine
 RewriteEngine On
 
-# Redirect www to non-www and force HTTPS
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Force HTTPS and redirect www to non-www (canonical URL)
+# Handle all combinations: http://www, https://www, http://non-www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://safeorstolen.com/$1 [R=301,L]
 
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Additional safety net for any remaining www redirects
+RewriteCond %{HTTP_HOST} ^www\.safeorstolen\.com$ [NC]
+RewriteRule ^(.*)$ https://safeorstolen.com/$1 [R=301,L]
 
-# Remove trailing slashes (except for root)
+# Remove trailing slashes (except for root) to prevent duplicate content
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.*)$ /$1 [R=301,L]
 
 # Handle SPA routing - serve index.html for routes that don't match files
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -27,13 +29,6 @@ RewriteCond %{REQUEST_URI} !^/robots\.txt$
 RewriteCond %{REQUEST_URI} !^/manifest\.json$
 RewriteCond %{REQUEST_URI} !\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot|xml|txt|json)$
 RewriteRule . /index.html [L]
-
-# Ensure proper status codes for SPA routes
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/api/
-RewriteCond %{REQUEST_URI} !^/admin/
-RewriteRule ^(.*)$ /index.html [L,R=200]
 
 # Custom 404 error page
 ErrorDocument 404 /index.html
