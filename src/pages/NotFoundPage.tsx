@@ -30,7 +30,6 @@ const NotFoundPage: React.FC = () => {
         title="404 - Page Not Found | Safe Or Stolen"
         description="The page you're looking for doesn't exist. Find what you need with our stolen goods verification service."
         noIndex={true}
-        canonical="/404"
         type="website"
       />
       <Card className="bg-sos-dark border-sos-orange/20 max-w-2xl w-full">
