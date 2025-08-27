@@ -1,9 +1,7 @@
 
 const CACHE_NAME = 'safeorstolen-v1';
 const urlsToCache = [
-  '/',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
+  // Only cache manifest and essential assets; avoid caching '/' to prevent stale HTML for crawlers
   '/manifest.json'
 ];
 
@@ -32,14 +30,18 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  const req = event.request;
+
+  // Network-first for navigation requests (prevents soft 404 from stale cached HTML)
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req).catch(() => caches.match('/'))
+    );
+    return;
+  }
+
+  // Cache-first for static assets
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      }
-    )
+    caches.match(req).then(response => response || fetch(req))
   );
 });
