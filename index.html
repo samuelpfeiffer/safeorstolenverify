@@ -15,6 +15,26 @@
     
     <!-- CRITICAL: Canonical URL to prevent redirect issues -->
     <link rel="canonical" href="https://safeorstolen.com/" />
+    
+    <!-- Failsafe: Ensure correct homepage title/canonical before React mounts -->
+    <script>
+      (function() {
+        try {
+          var path = location.pathname.replace(/\/+$/, '') || '/';
+          if (path === '/') {
+            document.title = 'Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen';
+            var link = document.querySelector('link[rel="canonical"]');
+            if (!link) {
+              link = document.createElement('link');
+              link.setAttribute('rel', 'canonical');
+              document.head.appendChild(link);
+            }
+            link.setAttribute('href', 'https://safeorstolen.com/');
+          }
+        } catch (e) { /* no-op */ }
+      })();
+    </script>
+    
     <!-- Enhanced Security Headers (relaxed for in-app preview iframe + dev HMR) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.googletagmanager.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://www.google-analytics.com ws: wss:; frame-src 'self' https://js.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *; upgrade-insecure-requests;" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
