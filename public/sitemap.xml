@@ -4,7 +4,7 @@
   <!-- Homepage - highest priority -->
   <url>
     <loc>https://safeorstolen.com/</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,35 +12,35 @@
   <!-- Main service pages -->
   <url>
     <loc>https://safeorstolen.com/check-phone</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/check-car</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/check-bike</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/check-electronics</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/firearms-check</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -48,56 +48,56 @@
   <!-- Key pages -->
   <url>
     <loc>https://safeorstolen.com/about</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/how-it-works</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/pricing</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/for-consumers</loc>
-    <lastmod>2025-08-27</lastmod>  
+    <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/for-brands</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/blog</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/contact</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/faq</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

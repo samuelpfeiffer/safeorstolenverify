@@ -1,0 +1,23 @@
+# SafeOrStolen Redirect Audit Log
+# Created: 2025-08-28
+# Purpose: Help Google understand redirect patterns
+
+CANONICAL DOMAIN: https://safeorstolen.com
+
+REDIRECT PATTERNS:
+http://safeorstolen.com → https://safeorstolen.com (301)
+http://www.safeorstolen.com → https://safeorstolen.com (301)  
+https://www.safeorstolen.com → https://safeorstolen.com (301)
+
+VERIFIED HTTPS PAGES (No redirects):
+✓ https://safeorstolen.com/
+✓ https://safeorstolen.com/how-it-works
+✓ https://safeorstolen.com/for-consumers
+✓ https://safeorstolen.com/about
+✓ https://safeorstolen.com/pricing
+✓ https://safeorstolen.com/blog
+✓ https://safeorstolen.com/contact
+✓ https://safeorstolen.com/faq
+
+STATUS: All pages serve directly on HTTPS without redirects
+LAST UPDATED: 2025-08-28

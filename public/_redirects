@@ -1,12 +1,12 @@
-# Netlify/Modern Platform Redirects for Safe Or Stolen
-# Force canonical domain: https://safeorstolen.com (non-www)
+# Lovable Platform Redirects for Safe Or Stolen
+# Force canonical domain: https://safeorstolen.com (non-www, HTTPS only)
 
-# Redirect all www traffic to non-www (301 permanent redirect)  
-https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
+# CRITICAL: Force all HTTP to HTTPS (eliminate all HTTP redirects)
+http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
 http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
-# Force HTTPS for non-www traffic
-http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
+# Force www to non-www (already HTTPS)  
+https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # Specific redirects for pages that were returning 404s
 /terms /terms-of-service 301
