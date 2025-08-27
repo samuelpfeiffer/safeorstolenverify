@@ -296,6 +296,7 @@ const PricingPage = () => {
         title="Pricing Plans - Safe or Stolen"
         description="Choose the perfect plan for your stolen goods verification needs. Free searches, premium features, and enterprise solutions available."
         keywords="pricing, stolen goods verification, subscription plans, security services"
+        canonical="/pricing"
         structuredData={structuredData}
       />
       {subscriptionError ? (

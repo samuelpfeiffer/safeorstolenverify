@@ -3,7 +3,7 @@
  */
 
 export const getCanonicalUrl = (path: string): string => {
-  const baseUrl = 'https://safeorstolen.com'; // Always use non-www version
+  const baseUrl = 'https://safeorstolen.com'; // Always use non-www version for canonical
   
   // Remove trailing slashes except for root
   const cleanPath = path === '/' ? path : path.replace(/\/+$/, '');

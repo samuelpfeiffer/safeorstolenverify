@@ -55,6 +55,7 @@ const BlogPage = () => {
         title={pageTitle}
         description={pageDescription}
         keywords="blog, stolen goods, verification, security, second-hand items, IMEI check, VIN check, serial numbers"
+        canonical={category ? `/blog/category/${category}` : '/blog'}
         type="website"
         structuredData={[itemListSchema, faqSchema, breadcrumbSchema].filter(Boolean)}
       />

@@ -37,7 +37,10 @@ export const SEOHead = ({
   preloadUrls = []
 }: SEOHeadProps) => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://safeorstolen.com';
-  const canonicalUrl = canonical ? `https://safeorstolen.com${canonical}` : currentUrl;
+  // Always use non-www canonical URL
+  const canonicalUrl = canonical 
+    ? `https://safeorstolen.com${canonical}` 
+    : currentUrl.replace(/^https?:\/\/www\.safeorstolen\.com/, 'https://safeorstolen.com');
 
   return (
     <Helmet>

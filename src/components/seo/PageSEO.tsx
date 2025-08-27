@@ -10,6 +10,7 @@ interface PageSEOProps {
   image?: string;
   type?: string;
   noIndex?: boolean;
+  canonical?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
 }
 
@@ -20,10 +21,11 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   image,
   type = 'website',
   noIndex = false,
+  canonical: customCanonical,
   structuredData
 }) => {
   const location = useLocation();
-  const canonical = getCanonicalUrl(location.pathname);
+  const canonical = customCanonical ? getCanonicalUrl(customCanonical) : getCanonicalUrl(location.pathname);
 
   // Ensure structuredData is always an array for OptimizedSEOHead
   const normalizedStructuredData = structuredData 
