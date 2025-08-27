@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Home, ArrowLeft, Search } from 'lucide-react';
 import { OptimizedSEOHead } from '@/components/seo/OptimizedSEOHead';
 
 const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = (location.pathname.replace(/\/+$/, '') || '/') === '/';
 
   useEffect(() => {
+    if (isHome) return;
     // Set proper HTTP status code for crawlers
     const metaStatus = document.createElement('meta');
     metaStatus.httpEquiv = 'status';
@@ -22,7 +25,19 @@ const NotFoundPage: React.FC = () => {
         document.head.removeChild(existingMeta);
       }
     };
-  }, []);
+  }, [isHome]);
+
+  if (isHome) {
+    return (
+      <div className="min-h-screen bg-sos text-white flex items-center justify-center px-6">
+        <OptimizedSEOHead
+          title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
+          description="Free stolen item checker tool. Verify IMEI, VIN, serial numbers instantly before buying secondhand items. Check phones, cars, electronics against police databases. Protect yourself from stolen goods."
+          type="website"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-sos text-white flex items-center justify-center px-6">
