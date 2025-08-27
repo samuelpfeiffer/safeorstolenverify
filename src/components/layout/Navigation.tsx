@@ -33,7 +33,7 @@ export const Navigation: React.FC = () => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'Check if Stolen', href: '/stolen-items-database', icon: null },
+    { name: 'Verify Items', href: '/check-if-stolen', icon: null },
     { name: 'Verification Hub', href: isAuthenticated ? '/verification-hub' : '/auth?tab=signup', icon: null },
     { name: 'For Businesses', href: '/for-brands', icon: null },
     { name: 'Pricing', href: '/pricing', icon: null },

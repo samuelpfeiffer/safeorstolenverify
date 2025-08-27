@@ -33,12 +33,12 @@ const Hero = () => {
           </a>
 
           {/* Domain Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Stolen Item Checker – Verify Before You Buy</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Verify Secondhand Items Before You Buy</h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            Use our stolen checker to verify IMEI, VIN, and serial numbers in seconds.
+            Check IMEI, VIN, and serial numbers to avoid buying stolen goods from Facebook Marketplace, eBay, and Craigslist.
           </p>
           <p className="text-base md:text-lg text-sos-lime font-semibold mb-8">
-            Real-time stolen item verification and database searches
+            Protect yourself with instant verification before purchasing used items
           </p>
           
           {/* Dual CTA Buttons */}
@@ -121,16 +121,16 @@ const Hero = () => {
                <p className="text-sm text-gray-400 mb-4">Popular Stolen Item Checks:</p>
                <div className="flex flex-wrap justify-center gap-2">
                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/stolen-items-database">All Stolen Items</Link>
+                   <Link to="/check-if-stolen">Verify Items</Link>
                  </Button>
                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-phone">Stolen Phones</Link>
+                   <Link to="/check-phone">Check Phone IMEI</Link>
                  </Button>
                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-car">Stolen Cars</Link>
+                   <Link to="/check-car">Verify Car VIN</Link>
                  </Button>
                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/stolen-goods-checker">Avoid Stolen Goods</Link>
+                   <Link to="/how-to-check-if-item-stolen">Buying Guide</Link>
                  </Button>
                </div>
              </div>

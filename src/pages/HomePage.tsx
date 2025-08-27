@@ -80,8 +80,8 @@ const HomePage = () => {
       <GoogleSearchConsoleSetup />
       <PageSEO
         title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
-        description="Free stolen item checker tool. Verify IMEI, VIN, serial numbers instantly before buying secondhand items. Check phones, cars, electronics against police databases. Protect yourself from stolen goods."
-        keywords="stolen item checker, check if stolen, stolen item lookup, stolen goods checker, IMEI checker stolen, VIN stolen check, serial number stolen verification, stolen phone checker, stolen car lookup, stolen electronics check, free stolen item search, police stolen database, stolen goods database, check before you buy, secondhand safety checker, marketplace verification tool, avoid stolen goods, stolen item verification, stolen property checker, stolen goods search"
+        description="Free verification tool to check if secondhand items are stolen before you buy. Verify IMEI, VIN, serial numbers against databases. Protect yourself when buying used goods from Facebook Marketplace, eBay, Craigslist."
+        keywords="check if stolen before buying, verify secondhand items, Facebook Marketplace stolen check, eBay stolen goods verification, Craigslist safety check, used item verification, IMEI stolen check, VIN stolen verification, serial number check, secondhand buyer protection, avoid buying stolen goods, marketplace safety"
         canonical="/"
         structuredData={homePageStructuredData}
       />
