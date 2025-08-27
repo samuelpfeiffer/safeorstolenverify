@@ -89,6 +89,9 @@ const PawnShopsPage = lazy(() => import('@/pages/PawnShopsPage'));
 const GlobalDominationPage = lazy(() => import('@/pages/GlobalDominationPage'));
 const MarketplaceIntegrationPage = lazy(() => import('@/pages/MarketplaceIntegrationPage'));
 const HowToCheckIfItemStolenPage = lazy(() => import('@/pages/HowToCheckIfItemStolenPage'));
+const StolenItemsDatabasePage = lazy(() => import('@/pages/StolenItemsDatabasePage'));
+const StolenGoodsCheckerPage = lazy(() => import('@/pages/StolenGoodsCheckerPage'));
+const AvoidStolenGoodsPage = lazy(() => import('@/pages/AvoidStolenGoodsPage'));
 
 /**
  * Enterprise Application Routing
@@ -148,6 +151,13 @@ export const AppRoutes: React.FC = () => {
            <Route path="global-domination" element={<GlobalDominationPage />} />
            <Route path="marketplace-integration" element={<MarketplaceIntegrationPage />} />
            <Route path="how-to-check-if-item-stolen" element={<HowToCheckIfItemStolenPage />} />
+           <Route path="stolen-items-database" element={<StolenItemsDatabasePage />} />
+           <Route path="stolen-property-lookup" element={<StolenItemsDatabasePage />} />
+           <Route path="check-if-stolen" element={<StolenItemsDatabasePage />} />
+           <Route path="stolen-goods-checker" element={<StolenGoodsCheckerPage />} />
+           <Route path="stolen-merchandise-check" element={<StolenGoodsCheckerPage />} />
+           <Route path="avoid-buying-stolen-goods" element={<AvoidStolenGoodsPage />} />
+           <Route path="avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />

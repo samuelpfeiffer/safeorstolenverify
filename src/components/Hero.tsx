@@ -115,6 +115,25 @@ const Hero = () => {
                  {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
                </Button>
              </div>
+             
+             {/* Popular Stolen Checks */}
+             <div className="mt-8">
+               <p className="text-sm text-gray-400 mb-4">Popular Stolen Item Checks:</p>
+               <div className="flex flex-wrap justify-center gap-2">
+                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                   <Link to="/stolen-items-database">All Stolen Items</Link>
+                 </Button>
+                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                   <Link to="/check-phone">Stolen Phones</Link>
+                 </Button>
+                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                   <Link to="/check-car">Stolen Cars</Link>
+                 </Button>
+                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                   <Link to="/stolen-goods-checker">Avoid Stolen Goods</Link>
+                 </Button>
+               </div>
+             </div>
           </div>
         </div>
       </div>
