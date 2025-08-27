@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { createBreadcrumbSchema } from '@/utils/seo/structuredData';
+import { createBreadcrumbSchema, createFAQSchema } from '@/utils/seo/structuredData';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Search, CheckCircle, Database } from 'lucide-react';
 
@@ -36,16 +36,17 @@ const HowItWorksPage: React.FC = () => {
     { name: 'Home', url: '/' },
     { name: 'How It Works', url: '/how-it-works' }
   ]);
+  const faqSchema = createFAQSchema();
 
   return (
     <>
-      <EnhancedSEOHead 
-        title="How It Works - Check if Stolen: IMEI, VIN, Serial Number Verification | Safe or Stolen"
-        description="Learn how Safe or Stolen verifies IMEI, serial numbers, and VIN codes across databases in real-time."
-        keywords="how to check if stolen, IMEI verification process, VIN check how it works, serial number verification steps"
-        canonical="/how-it-works"
-        additionalSchemas={[breadcrumbSchema]}
-      />
+        <EnhancedSEOHead 
+          title="How SafeOrStolen Works | Stolen Item Checker"
+          description="See how SafeOrStolen verifies IMEI, VIN and serial numbers in real time to detect stolen items."
+          keywords="how it works, stolen item checker, IMEI verification, VIN check, serial number lookup"
+          canonical="/how-it-works"
+          additionalSchemas={[breadcrumbSchema, faqSchema]}
+        />
       
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -91,6 +92,31 @@ const HowItWorksPage: React.FC = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">How it works — FAQ</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">How does verification work?</h3>
+                <p className="text-muted-foreground">We check IMEI, VIN, and serial numbers against trusted databases from law enforcement, insurers, and registries to see if an item was reported lost or stolen.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">What items can I check?</h3>
+                <p className="text-muted-foreground">Phones, cars, bikes, electronics, tools, firearms, and more—anything with a unique identifier.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Is it free?</h3>
+                <p className="text-muted-foreground">Yes—get daily free checks with optional upgrades for power users and businesses.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">How fast are results?</h3>
+                <p className="text-muted-foreground">Instant. You’ll see a clear Safe, Lost, or Stolen status along with useful guidance.</p>
+              </div>
             </div>
           </div>
         </section>
