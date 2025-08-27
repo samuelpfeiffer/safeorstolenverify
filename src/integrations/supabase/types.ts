@@ -1393,6 +1393,10 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: boolean
       }
+      is_service_role: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
       subscribe_to_newsletter: {
         Args: { user_email: string }
         Returns: Json
