@@ -143,12 +143,6 @@ export const createServiceSchema = () => ({
       }
     ]
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "1250",
-    "bestRating": "5"
-  }
 });
 
 // Enhanced Local Business Schema for Corporate Entity
@@ -243,7 +237,9 @@ export const createBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: st
     "@type": "ListItem",
     "position": index + 1,
     "name": crumb.name,
-    "item": crumb.url
+    "item": crumb.url.startsWith('http') 
+      ? crumb.url 
+      : `https://safeorstolen.com${crumb.url.startsWith('/') ? crumb.url : `/${crumb.url}`}`
   }))
 });
 
