@@ -88,6 +88,7 @@ const AuctionHousesPage = lazy(() => import('@/pages/AuctionHousesPage'));
 const PawnShopsPage = lazy(() => import('@/pages/PawnShopsPage'));
 const GlobalDominationPage = lazy(() => import('@/pages/GlobalDominationPage'));
 const MarketplaceIntegrationPage = lazy(() => import('@/pages/MarketplaceIntegrationPage'));
+const HowToCheckIfItemStolenPage = lazy(() => import('@/pages/HowToCheckIfItemStolenPage'));
 
 /**
  * Enterprise Application Routing
@@ -144,8 +145,9 @@ export const AppRoutes: React.FC = () => {
           <Route path="ultimate-guide" element={<UltimateGuidePage />} />
           <Route path="auction-houses" element={<AuctionHousesPage />} />
           <Route path="pawn-shops" element={<PawnShopsPage />} />
-          <Route path="global-domination" element={<GlobalDominationPage />} />
-          <Route path="marketplace-integration" element={<MarketplaceIntegrationPage />} />
+           <Route path="global-domination" element={<GlobalDominationPage />} />
+           <Route path="marketplace-integration" element={<MarketplaceIntegrationPage />} />
+           <Route path="how-to-check-if-item-stolen" element={<HowToCheckIfItemStolenPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
