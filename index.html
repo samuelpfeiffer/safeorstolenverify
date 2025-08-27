@@ -14,7 +14,7 @@
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:160" />
     
     <!-- CRITICAL: Canonical URL to prevent redirect issues -->
-    <link rel="canonical" href="https://safeorstolen.com/" id="canonical-url" />
+    
 
     <!-- Enhanced Security Headers (relaxed for in-app preview iframe + dev HMR) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.googletagmanager.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://www.google-analytics.com ws: wss:; frame-src 'self' https://js.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *; upgrade-insecure-requests;" />
@@ -38,23 +38,6 @@
 
     <!-- Geographic Meta Tags - Removed Phoenix-specific targeting for global reach -->
 
-    <!-- Canonical URL (set dynamically per route for SPA) -->
-    <script>
-      (function(){
-        try {
-          var path = window.location.pathname.replace(/\/+$/, '');
-          if (path === '') path = '/';
-          var canonical = 'https://safeorstolen.com' + (path === '/' ? '/' : path);
-          var link = document.querySelector('link[rel="canonical"]');
-          if (!link) {
-            link = document.createElement('link');
-            link.setAttribute('rel', 'canonical');
-            document.head.appendChild(link);
-          }
-          link.setAttribute('href', canonical);
-        } catch (e) {}
-      })();
-    </script>
     <!-- Search engine site verification (replace tokens below in production) -->
     <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_TOKEN" />
     <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" />
@@ -90,27 +73,6 @@
       gtag('config', 'G-XXXXXXXXXX'); // Replace with your actual Google Analytics ID when you have one
     </script>
     
-    <!-- Dynamic canonical URL script -->
-    <script>
-      // Fix canonical URL on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        const canonicalLink = document.getElementById('canonical-url');
-        if (canonicalLink) {
-          let currentUrl = window.location.href;
-          
-          // Force HTTPS and remove www
-          currentUrl = currentUrl.replace('http://', 'https://');
-          currentUrl = currentUrl.replace('https://www.', 'https://');
-          
-          // Remove trailing slash except for root
-          if (currentUrl !== 'https://safeorstolen.com/') {
-            currentUrl = currentUrl.replace(/\/$/, '');
-          }
-          
-          canonicalLink.href = currentUrl;
-        }
-      });
-    </script>
   </head>
 
   <body>
