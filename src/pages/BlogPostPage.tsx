@@ -42,20 +42,28 @@ const BlogPostPage = () => {
 
   if (error || !post) {
     return (
-      <div className="bg-white min-h-screen">
-        <div className="container mx-auto px-4 py-16">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Post Not Found</h1>
-            <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
-            <Link to="/blog">
-              <Button>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Blog
-              </Button>
-            </Link>
+      <>
+        <PageSEO
+          title="Blog Post Not Found - Safe or Stolen"
+          description="The blog post you're looking for doesn't exist or may have been moved."
+          canonical={`/blog/${slug}`}
+          noIndex={true}
+        />
+        <div className="bg-white min-h-screen">
+          <div className="container mx-auto px-4 py-16">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Post Not Found</h1>
+              <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+              <Link to="/blog">
+                <Button>
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Back to Blog
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 

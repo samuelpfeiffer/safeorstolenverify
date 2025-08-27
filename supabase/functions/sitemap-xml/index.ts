@@ -133,12 +133,6 @@ const generateStaticSitemapEntries = (): SitemapEntry[] => [
     priority: 0.7
   },
   {
-    url: 'https://safeorstolen.com/blog/serial-numbers-stolen-goods-101',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
     url: 'https://safeorstolen.com/blog/verification-data-privacy',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
