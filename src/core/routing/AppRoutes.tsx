@@ -92,6 +92,8 @@ const HowToCheckIfItemStolenPage = lazy(() => import('@/pages/HowToCheckIfItemSt
 const StolenItemsDatabasePage = lazy(() => import('@/pages/StolenItemsDatabasePage'));
 const StolenGoodsCheckerPage = lazy(() => import('@/pages/StolenGoodsCheckerPage'));
 const AvoidStolenGoodsPage = lazy(() => import('@/pages/AvoidStolenGoodsPage'));
+const UltimateGuideNotBuyingStolenPage = lazy(() => import('@/pages/UltimateGuideNotBuyingStolenPage'));
+const HowToCheckAnythingStolenPage = lazy(() => import('@/pages/HowToCheckAnythingStolenPage'));
 
 /**
  * Enterprise Application Routing
@@ -158,6 +160,8 @@ export const AppRoutes: React.FC = () => {
            <Route path="stolen-merchandise-check" element={<StolenGoodsCheckerPage />} />
            <Route path="avoid-buying-stolen-goods" element={<AvoidStolenGoodsPage />} />
            <Route path="avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
+           <Route path="ultimate-guide-not-buying-stolen-goods" element={<UltimateGuideNotBuyingStolenPage />} />
+           <Route path="how-to-check-if-anything-is-stolen-before-you-buy" element={<HowToCheckAnythingStolenPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
