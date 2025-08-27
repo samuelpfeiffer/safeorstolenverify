@@ -82,6 +82,7 @@ const HomePage = () => {
         title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
         description="Free stolen item checker tool. Verify IMEI, VIN, serial numbers instantly before buying secondhand items. Check phones, cars, electronics against police databases. Protect yourself from stolen goods."
         keywords="stolen item checker, check if stolen, stolen item lookup, stolen goods checker, IMEI checker stolen, VIN stolen check, serial number stolen verification, stolen phone checker, stolen car lookup, stolen electronics check, free stolen item search, police stolen database, stolen goods database, check before you buy, secondhand safety checker, marketplace verification tool, avoid stolen goods, stolen item verification, stolen property checker, stolen goods search"
+        canonical="/"
         structuredData={homePageStructuredData}
       />
       <div className="min-h-screen">
