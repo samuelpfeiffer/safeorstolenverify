@@ -157,13 +157,13 @@ export const AppRoutes: React.FC = () => {
               <Navigate to="/firearms-check" replace />
             </ProtectedRoute>
           } />
-          <Route path="firearms-check" element={<ProtectedRoute><FirearmsCheckPage /></ProtectedRoute>} />
+          <Route path="firearms-check" element={<FirearmsCheckPage />} />
           
-          {/* Item-specific verification pages - ALL PROTECTED */}
+          {/* Item-specific verification pages - Landing pages public, auth required for searches */}
           <Route path="check-phone" element={<ProtectedRoute><CheckPhonePage /></ProtectedRoute>} />
-          <Route path="check-car" element={<ProtectedRoute><CheckCarPage /></ProtectedRoute>} />
-          <Route path="check-electronics" element={<ProtectedRoute><CheckElectronicsPage /></ProtectedRoute>} />
-          <Route path="check-bike" element={<ProtectedRoute><CheckBikePage /></ProtectedRoute>} />
+          <Route path="check-car" element={<CheckCarPage />} />
+          <Route path="check-electronics" element={<CheckElectronicsPage />} />
+          <Route path="check-bike" element={<CheckBikePage />} />
           <Route path="item-categories" element={<ProtectedRoute><ItemCategoriesPage /></ProtectedRoute>} />
           
           {/* Problem and verification result pages - PROTECTED */}
