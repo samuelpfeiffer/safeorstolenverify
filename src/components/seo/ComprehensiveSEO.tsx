@@ -88,10 +88,6 @@ export const ComprehensiveSEO: React.FC<ComprehensiveSEOProps> = ({
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "itemReviewed": {
-        "@type": "SoftwareApplication",
-        "name": "Safe or Stolen Verification Tool"
-      },
       "ratingValue": "4.9",
       "ratingCount": "15847",
       "bestRating": "5"

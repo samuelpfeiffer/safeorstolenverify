@@ -145,10 +145,6 @@ export const createServiceSchema = () => ({
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "itemReviewed": {
-      "@type": "Service",
-      "name": "Real-time Stolen Goods Verification"
-    },
     "ratingValue": "4.8",
     "reviewCount": "1250",
     "bestRating": "5"
