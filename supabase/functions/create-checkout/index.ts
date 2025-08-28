@@ -53,7 +53,14 @@ serve(async (req) => {
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
     // Initialize Stripe
-    const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") ?? "", {
+    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+    console.log("Stripe key available:", stripeKey ? "Yes" : "No");
+    
+    if (!stripeKey) {
+      throw new Error("STRIPE_SECRET_KEY environment variable not found");
+    }
+    
+    const stripe = new Stripe(stripeKey, {
       apiVersion: "2023-10-16",
     });
 
