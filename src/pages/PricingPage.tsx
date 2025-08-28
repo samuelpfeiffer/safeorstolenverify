@@ -99,6 +99,8 @@ const PricingPage = () => {
       
     } catch (error: any) {
       console.error('Subscription error:', error);
+      // Close the pre-opened tab on failure to avoid a blank tab
+      if (pendingTab && !pendingTab.closed) pendingTab.close();
       // Do not lock the UI; just show a toast so users can retry
       toast({
         title: 'Error',
