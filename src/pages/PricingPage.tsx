@@ -300,16 +300,12 @@ const PricingPage = () => {
         canonical="/pricing"
         structuredData={structuredData}
       />
-      {subscriptionError ? (
-        <ErrorState />
-      ) : (
-        <div className="min-h-screen bg-background">
-          <ConversionOptimizedPricing 
-            onSubscribe={handleSubscribe}
-            loadingTier={loadingTier}
-          />
-        </div>
-      )}
+      <div className="min-h-screen bg-background">
+        <ConversionOptimizedPricing 
+          onSubscribe={handleSubscribe}
+          loadingTier={loadingTier}
+        />
+      </div>
     </ErrorBoundary>
   );
 };

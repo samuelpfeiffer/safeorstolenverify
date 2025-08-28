@@ -62,7 +62,10 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
             },
           });
 
-          if (error) throw error;
+          if (error) {
+            console.error("Supabase function error:", error);
+            throw new Error(error.message || 'Edge function failed');
+          }
           return data;
         },
         `subscription-${session.user.id}`,
@@ -75,7 +78,8 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     } catch (error: any) {
       console.error("Failed to check subscription:", error);
       if (isMountedRef.current) {
-        setError(error.message || 'Failed to check subscription');
+        // Don't show error for subscription checks on pricing page - just set defaults
+        setError(null);
         setSubscriptionData({ subscribed: false, subscription_tier: null, subscription_end: null });
       }
     } finally {
