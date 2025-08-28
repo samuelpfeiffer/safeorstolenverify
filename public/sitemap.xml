@@ -298,6 +298,35 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- New Blog Posts -->
+  <url>
+    <loc>https://safeorstolen.com/blog/ultimate-marketplace-buyers-guide</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/business-guide-preventing-stolen-goods</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/scammer-tactics-exposed</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/phone-verification-guide</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Legal pages -->
   <url>
     <loc>https://safeorstolen.com/terms-of-service</loc>
