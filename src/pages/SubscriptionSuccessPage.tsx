@@ -1,16 +1,32 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, CreditCard, ArrowLeft } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import { useAuth } from "@/lib/auth";
+import React, { useEffect, useState } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { CheckCircle, ArrowRight, Settings, CreditCard } from 'lucide-react';
+import { useAuth } from '@/lib/auth';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
+import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
-export default function SubscriptionSuccessPage() {
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+const SubscriptionSuccessPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const { session } = useAuth();
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+  const sessionId = searchParams.get('session_id');
+
+  useEffect(() => {
+    // Refresh subscription status after successful checkout
+    if (session) {
+      supabase.functions.invoke('check-subscription', {
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
+    }
+  }, [session]);
 
   const handleManageBilling = async () => {
     if (!session) {
@@ -33,8 +49,7 @@ export default function SubscriptionSuccessPage() {
       if (error) throw error;
 
       if (data?.url) {
-        // Open Stripe customer portal in a new tab
-        window.open(data.url, '_blank');
+        navigateOutOfIframe(data.url);
       }
     } catch (error) {
       console.error('Error opening customer portal:', error);
@@ -49,59 +64,103 @@ export default function SubscriptionSuccessPage() {
   };
 
   return (
-    <div className="min-h-screen bg-sos text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-md mx-auto">
-          <Card className="bg-sos-dark border-sos-orange/20">
-            <CardHeader className="text-center">
-              <div className="mx-auto w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="w-8 h-8 text-green-400" />
-              </div>
-              <CardTitle className="text-white text-xl">
-                Subscription Successful!
-              </CardTitle>
-            </CardHeader>
+    <div className="min-h-screen bg-gradient-to-br from-background to-background/80 flex items-center justify-center p-4">
+      <Card className="max-w-2xl w-full">
+        <CardHeader className="text-center space-y-4">
+          <div className="mx-auto w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center">
+            <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
+          </div>
+          <div>
+            <CardTitle className="text-2xl font-bold text-foreground">
+              Subscription Successful!
+            </CardTitle>
+            <CardDescription className="text-lg mt-2">
+              Welcome to SafeOrStolen Premium! Your account has been upgraded.
+            </CardDescription>
+          </div>
+        </CardHeader>
+        
+        <CardContent className="space-y-6">
+          <div className="flex items-center justify-center">
+            <Badge variant="secondary" className="text-lg px-4 py-2 bg-primary/10 text-primary border-primary/20">
+              <CheckCircle className="w-4 h-4 mr-2" />
+              Premium Plan Active
+            </Badge>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 border rounded-lg bg-card">
+              <h3 className="font-semibold text-foreground mb-2">What's Included:</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                  Unlimited verifications
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                  Advanced fraud detection
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                  Priority support
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                  Detailed reports
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-4 border rounded-lg bg-card">
+              <h3 className="font-semibold text-foreground mb-2">Next Steps:</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center">
+                  <ArrowRight className="w-4 h-4 mr-2 text-primary" />
+                  Start verifying items now
+                </li>
+                <li className="flex items-center">
+                  <Settings className="w-4 h-4 mr-2 text-primary" />
+                  Set up your preferences
+                </li>
+                <li className="flex items-center">
+                  <CreditCard className="w-4 h-4 mr-2 text-primary" />
+                  Manage your billing
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
+            <Button 
+              onClick={() => navigate('/dashboard')}
+              className="flex-1"
+            >
+              <ArrowRight className="w-4 h-4 mr-2" />
+              Go to Dashboard
+            </Button>
             
-            <CardContent className="space-y-6">
-              <p className="text-gray-300 text-center">
-                Thank you for subscribing to SafeOrStolen! Your premium features are now active.
+            <Button 
+              variant="outline" 
+              onClick={handleManageBilling}
+              disabled={isLoading}
+              className="flex-1"
+            >
+              <CreditCard className="w-4 h-4 mr-2" />
+              {isLoading ? 'Loading...' : 'Manage Billing'}
+            </Button>
+          </div>
+
+          {sessionId && (
+            <div className="text-center pt-4 border-t">
+              <p className="text-xs text-muted-foreground">
+                Session ID: {sessionId.slice(0, 20)}...
               </p>
-
-              <div className="space-y-3">
-                <Button
-                  onClick={handleManageBilling}
-                  disabled={isLoading}
-                  className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"
-                >
-                  <CreditCard className="w-4 h-4 mr-2" />
-                  {isLoading ? "Opening..." : "Manage Billing"}
-                </Button>
-
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-gray-600 text-gray-300 hover:bg-gray-800"
-                >
-                  <Link to="/dashboard">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Go to Dashboard
-                  </Link>
-                </Button>
-
-                <Button
-                  asChild
-                  variant="ghost"
-                  className="w-full text-gray-400 hover:text-white"
-                >
-                  <Link to="/pricing">
-                    View All Plans
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
-}
+};
+
+export default SubscriptionSuccessPage;
