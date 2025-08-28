@@ -464,22 +464,11 @@ const PhoneVerificationGuide = () => {
 
           {/* CTA Section */}
           <CommercialCTA 
+            type="verification"
             title="Verify Your Next Phone Purchase"
             description="Join 12,000+ smart buyers who check IMEI numbers before buying used phones"
-            primaryAction={{
-              text: "Check IMEI Now - Free",
-              href: "/"
-            }}
-            secondaryAction={{
-              text: "View Phone Verification Plans",
-              href: "/pricing"
-            }}
-            features={[
-              "Instant IMEI verification",
-              "Check stolen & blacklist status",
-              "Carrier compatibility check",
-              "Save money, avoid scams"
-            ]}
+            buttonText="Check IMEI Now - Free"
+            buttonLink="/"
           />
         </div>
       </div>

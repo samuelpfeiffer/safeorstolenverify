@@ -372,22 +372,11 @@ const TheUltimateMarketplaceBuyersGuide = () => {
 
           {/* CTA Section */}
           <CommercialCTA 
+            type="verification"
             title="Start Buying Safely Today"
             description="Join 25,000+ smart buyers who verify before they buy"
-            primaryAction={{
-              text: "Verify Your First Item Free",
-              href: "/"
-            }}
-            secondaryAction={{
-              text: "View Pricing",
-              href: "/pricing"
-            }}
-            features={[
-              "4 free verifications to start",
-              "Instant results in seconds", 
-              "Works for phones, cars, electronics",
-              "Trusted by thousands of buyers"
-            ]}
+            buttonText="Verify Your First Item Free"
+            buttonLink="/"
           />
         </div>
       </div>

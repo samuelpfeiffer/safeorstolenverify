@@ -423,22 +423,11 @@ const BusinessGuidePreventingStolenGoods = () => {
 
           {/* CTA Section */}
           <CommercialCTA 
+            type="business"
             title="Protect Your Business Today"
             description="Join 500+ businesses using enterprise verification to prevent stolen goods liability"
-            primaryAction={{
-              text: "Schedule Enterprise Demo",
-              href: "/enterprise-demo"
-            }}
-            secondaryAction={{
-              text: "View Enterprise Pricing",
-              href: "/pricing"
-            }}
-            features={[
-              "99.8% verification accuracy",
-              "24/7 enterprise support",
-              "Custom API integration",
-              "Complete compliance documentation"
-            ]}
+            buttonText="Schedule Enterprise Demo"
+            buttonLink="/enterprise-demo"
           />
         </div>
       </div>

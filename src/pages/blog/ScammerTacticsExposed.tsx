@@ -405,22 +405,11 @@ const ScammerTacticsExposed = () => {
 
           {/* CTA Section */}
           <CommercialCTA 
+            type="protection"
             title="Don't Let Scammers Win"
             description="Use verification tools to see through their deception and buy safely"
-            primaryAction={{
-              text: "Verify Your Next Purchase",
-              href: "/"
-            }}
-            secondaryAction={{
-              text: "Read More Safety Guides",
-              href: "/blog"
-            }}
-            features={[
-              "Instant verification results",
-              "See through scammer tactics",
-              "Protect yourself from fraud",
-              "Join 25,000+ safe buyers"
-            ]}
+            buttonText="Verify Your Next Purchase"
+            buttonLink="/"
           />
         </div>
       </div>
