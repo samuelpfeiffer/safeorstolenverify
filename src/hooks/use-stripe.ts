@@ -36,6 +36,9 @@ export function useStripe() {
           itemType,
           redirectUrl: window.location.origin,
         },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
       });
 
       if (error) {

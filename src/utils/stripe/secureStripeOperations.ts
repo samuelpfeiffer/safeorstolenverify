@@ -95,6 +95,9 @@ export const useSecureStripe = (options: SecureStripeOptions = {}) => {
       
       const { data, error } = await supabase.functions.invoke("create-checkout", {
         body: requestBody,
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
       });
 
       if (error) {
