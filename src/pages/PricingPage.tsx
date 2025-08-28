@@ -57,8 +57,12 @@ const PricingPage = () => {
     setStripeCheckoutUrl(null);
     setHasError(false);
 
+    // Open a tab immediately to avoid popup blockers
+    const pendingTab = window.open('about:blank', '_blank');
+
     // Set a timeout for the entire operation
     timeoutRef.current = setTimeout(() => {
+      if (pendingTab && !pendingTab.closed) pendingTab.close();
       setLoadingTier(null);
       setHasError(true);
       toast({
@@ -83,7 +87,11 @@ const PricingPage = () => {
       }
 
       setStripeCheckoutUrl(checkoutUrl);
-      window.open(checkoutUrl, '_blank');
+      if (pendingTab && !pendingTab.closed) {
+        pendingTab.location.href = checkoutUrl;
+      } else {
+        window.open(checkoutUrl, '_blank');
+      }
       toast({ 
         title: 'Checkout ready', 
         description: 'Click the button below to complete your purchase on Stripe.' 
