@@ -7,6 +7,7 @@ import { AuthErrorBoundary } from '@/components/auth/AuthErrorBoundary';
 import { ScrollRestoration } from '@/components/ScrollRestoration';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PerformanceProvider } from '@/core/providers/PerformanceProvider';
+import { EnhancedSecurityProvider } from '@/components/security/EnhancedSecurityProvider';
 
 // Optimized query client configuration
 const queryClient = new QueryClient({
@@ -48,10 +49,12 @@ export const CoreProviders: React.FC<CoreProvidersProps> = ({ children }) => {
         <AuthErrorBoundary>
           <QueryClientProvider client={queryClient}>
             <AuthProvider>
+              <EnhancedSecurityProvider>
                 <ScrollRestoration />
                 {children}
                 <Toaster />
                 {/* Dev tools removed for production build */}
+              </EnhancedSecurityProvider>
             </AuthProvider>
           </QueryClientProvider>
         </AuthErrorBoundary>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
-import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { Card, CardContent } from '@/components/ui/card';
-import { AlertTriangle } from 'lucide-react';
+import { SecureAdminGuard } from '@/components/security/SecureAdminGuard';
 
 interface AdminRouteProps {
   children: React.ReactNode;
@@ -18,33 +16,20 @@ export const AdminRoute: React.FC<AdminRouteProps> = ({ children }) => {
   const isAuthenticated = !!user;
 
   if (loading) {
-    return <AppLoadingScreen />;
+    return (
+      <div className="min-h-screen bg-sos flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sos-orange"></div>
+      </div>
+    );
   }
 
   if (!isAuthenticated) {
     return <Navigate to="/auth?tab=signin" replace />;
   }
 
-  // Enhanced admin check
-  const isAdmin = user?.email === 'admin@safeorstolen.com' || 
-                  user?.email?.endsWith('@safeorstolen.com') ||
-                  user?.email === 'samandhisbigideas@gmail.com';
-
-  if (!isAdmin) {
-    return (
-      <div className="min-h-screen bg-sos text-white flex items-center justify-center">
-        <Card className="bg-sos-dark border-sos-orange/20 max-w-md">
-          <CardContent className="p-8 text-center">
-            <AlertTriangle className="h-12 w-12 text-sos-orange mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2 text-white">Access Denied</h2>
-            <p className="text-gray-300">
-              Administrator privileges required to access this area.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
-  return <>{children}</>;
+  return (
+    <SecureAdminGuard requireAdmin={true}>
+      {children}
+    </SecureAdminGuard>
+  );
 };
