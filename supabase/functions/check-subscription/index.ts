@@ -38,6 +38,9 @@ serve(async (req) => {
       return null;
     };
 
+    // Debug: Log all available environment variables
+    console.log("[CHECK-SUBSCRIPTION] Available env vars:", Object.keys(Deno.env.toObject()).filter(k => k.toLowerCase().includes('stripe')));
+    
     const stripeSecretKey = getStripeKey();
     if (!stripeSecretKey) {
       console.error("[CHECK-SUBSCRIPTION] ERROR - Stripe secret key not found in environment");

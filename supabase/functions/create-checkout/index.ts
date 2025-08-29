@@ -63,8 +63,10 @@ serve(async (req) => {
         "stripe_secret_key",
         "stripe_secret"
       ];
+      console.log("Available Stripe env vars:", Object.keys(Deno.env.toObject()).filter(k => k.toLowerCase().includes('stripe')));
       for (const name of candidates) {
         const val = Deno.env.get(name);
+        console.log(`Checking ${name}:`, val ? `Found (starts with ${val.substring(0,3)}...)` : 'Not found');
         if (val && val.startsWith("sk_")) {
           console.log("Using Stripe key from", name);
           return val;
