@@ -17,21 +17,32 @@ serve(async (req) => {
   try {
     console.log("[CHECK-SUBSCRIPTION] Function started v2", { ts: Date.now() });
     
-    // Get the Stripe secret key from environment
-    const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
+    // Resolve Stripe secret key from env
+    const getStripeKey = () => {
+      const candidates = [
+        "STRIPE_SECRET_KEY",
+        "STRIPE_SECRET",
+        "STRIPE_LIVE_SECRET_KEY",
+        "STRIPE_TEST_SECRET_KEY",
+        "STRIPE_KEY",
+        "stripe_secret_key",
+        "stripe_secret"
+      ];
+      for (const name of candidates) {
+        const val = Deno.env.get(name);
+        if (val && val.startsWith("sk_")) {
+          console.log("[CHECK-SUBSCRIPTION] Using Stripe key from", name);
+          return val;
+        }
+      }
+      return null;
+    };
+
+    const stripeSecretKey = getStripeKey();
     if (!stripeSecretKey) {
-      console.error("[CHECK-SUBSCRIPTION] ERROR - Missing STRIPE_SECRET_KEY");
+      console.error("[CHECK-SUBSCRIPTION] ERROR - Stripe secret key not found in environment");
       return new Response(
         JSON.stringify({ error: "Stripe configuration missing" }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    // Validate that we have a secret key (starts with sk_)
-    if (!stripeSecretKey.startsWith('sk_')) {
-      console.error("[CHECK-SUBSCRIPTION] ERROR - Invalid Stripe key format, must start with sk_");
-      return new Response(
-        JSON.stringify({ error: "Invalid Stripe key configuration" }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }

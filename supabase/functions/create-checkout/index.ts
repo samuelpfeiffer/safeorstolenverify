@@ -52,12 +52,32 @@ serve(async (req) => {
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
-    // Initialize Stripe
-    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+    // Initialize Stripe - resolve key from env
+    const getStripeKey = () => {
+      const candidates = [
+        "STRIPE_SECRET_KEY",
+        "STRIPE_SECRET",
+        "STRIPE_LIVE_SECRET_KEY",
+        "STRIPE_TEST_SECRET_KEY",
+        "STRIPE_KEY",
+        "stripe_secret_key",
+        "stripe_secret"
+      ];
+      for (const name of candidates) {
+        const val = Deno.env.get(name);
+        if (val && val.startsWith("sk_")) {
+          console.log("Using Stripe key from", name);
+          return val;
+        }
+      }
+      return null;
+    };
+
+    const stripeKey = getStripeKey();
     console.log("Stripe key available:", stripeKey ? "Yes" : "No");
     
     if (!stripeKey) {
-      throw new Error("STRIPE_SECRET_KEY environment variable not found");
+      throw new Error("STRIPE secret key not found in environment");
     }
     
     const stripe = new Stripe(stripeKey, {
