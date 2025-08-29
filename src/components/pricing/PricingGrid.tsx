@@ -3,6 +3,7 @@ import { ProductCard } from './ProductCard';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
 import { useSubscription } from '@/hooks/useSubscription';
 import { toast } from 'sonner';
+import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
 export const PricingGrid = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +15,7 @@ export const PricingGrid = () => {
       const url = await createSubscriptionCheckout(priceId);
       
       if (url) {
-        window.open(url, '_blank');
+        navigateOutOfIframe(url);
       } else {
         toast.error('Failed to create checkout session');
       }
