@@ -15,7 +15,7 @@ serve(async (req) => {
   }
 
   try {
-    console.log("[CHECK-SUBSCRIPTION] Function started");
+    console.log("[CHECK-SUBSCRIPTION] Function started v2", { ts: Date.now() });
     
     // Get the Stripe secret key from environment
     const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");

@@ -15,7 +15,7 @@ serve(async (req) => {
   }
 
   try {
-    console.log("Creating Stripe checkout session...");
+    console.log("Creating Stripe checkout session... v2", { ts: Date.now() });
     
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
