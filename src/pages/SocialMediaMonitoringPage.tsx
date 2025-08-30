@@ -65,14 +65,37 @@ const SocialMediaMonitoringPage = () => {
   const [autoResponseText, setAutoResponseText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Pre-defined keywords for SafeOrStolen
+  // Pre-defined keywords for SafeOrStolen - Comprehensive list
   const defaultKeywords = [
-    'safeorstolen',
-    'safe or stolen',
-    'stolen',
-    'safeorstolen.com',
-    'safe or stolen verification',
-    'stolen goods checker'
+    // SafeOrStolen specific
+    'safeorstolen', 'safe or stolen', 'safeorstolen.com',
+    
+    // General stolen terms  
+    'stolen', 'stolen goods', 'stolen item', 'stolen items', 'verify stolen',
+    'check if stolen', 'is this stolen', 'might be stolen', 'could be stolen',
+    
+    // Specific stolen items
+    'stolen car', 'stolen cars', 'stolen vehicle', 'stolen bike', 'stolen bicycle', 
+    'stolen phone', 'stolen iphone', 'stolen android', 'stolen laptop', 'stolen computer',
+    'stolen tablet', 'stolen ipad', 'stolen watch', 'stolen jewelry', 'stolen electronics',
+    'stolen gun', 'stolen firearm', 'stolen motorcycle', 'stolen scooter', 'stolen camera',
+    'stolen tools', 'stolen equipment',
+    
+    // Buying concerns
+    'buying stolen', 'bought stolen', 'purchased stolen', 'avoid stolen', 'prevent stolen',
+    'stolen purchase', 'hot goods', 'hot item', 'hot car', 'hot phone', 'fence goods',
+    
+    // Verification terms
+    'verify before buying', 'check before purchase', 'legitimate purchase', 'legal purchase',
+    'vin check', 'imei check', 'serial check', 'serial number check',
+    
+    // Marketplace concerns
+    'craigslist scam', 'facebook marketplace scam', 'ebay scam', 'offerup scam',
+    'used car scam', 'secondhand scam', 'marketplace safety', 'buyer beware',
+    'too good to be true', 'suspicious price', 'suspicious seller',
+    
+    // Legal terms
+    'police report', 'reported stolen', 'theft report', 'stolen property'
   ];
 
   const platforms = [

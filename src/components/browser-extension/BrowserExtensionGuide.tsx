@@ -27,14 +27,102 @@ export const BrowserExtensionGuide = () => {
   ]
 }`;
 
-  const contentScriptContent = `// content.js - SafeOrStolen Auto-Responder
+const contentScriptContent = `// content.js - SafeOrStolen Auto-Responder
 const keywords = [
+  // SafeOrStolen specific
   'safeorstolen',
-  'safe or stolen', 
-  'stolen',
+  'safe or stolen',
   'safeorstolen.com',
+  
+  // General stolen keywords
+  'stolen',
   'stolen goods',
-  'verify stolen'
+  'stolen item',
+  'stolen items',
+  'verify stolen',
+  'check if stolen',
+  'is this stolen',
+  'might be stolen',
+  'could be stolen',
+  'looks stolen',
+  'seems stolen',
+  
+  // Specific stolen items
+  'stolen car',
+  'stolen cars', 
+  'stolen vehicle',
+  'stolen bike',
+  'stolen bicycle',
+  'stolen phone',
+  'stolen iphone',
+  'stolen android',
+  'stolen laptop',
+  'stolen computer',
+  'stolen tablet',
+  'stolen ipad',
+  'stolen watch',
+  'stolen jewelry',
+  'stolen electronics',
+  'stolen gun',
+  'stolen firearm',
+  'stolen motorcycle',
+  'stolen scooter',
+  'stolen camera',
+  'stolen tools',
+  'stolen equipment',
+  
+  // Buying concerns
+  'buying stolen',
+  'bought stolen',
+  'purchased stolen',
+  'avoid stolen',
+  'prevent stolen',
+  'stolen purchase',
+  'stolen from',
+  'hot goods',
+  'hot item',
+  'hot car',
+  'hot phone',
+  'fence goods',
+  'fenced',
+  
+  // Verification terms
+  'verify before buying',
+  'check before purchase',
+  'legitimate purchase',
+  'legal purchase',
+  'clean title',
+  'clear title',
+  'vin check',
+  'imei check',
+  'serial check',
+  'serial number check',
+  'background check item',
+  
+  // Secondhand concerns  
+  'craigslist scam',
+  'facebook marketplace scam',
+  'ebay scam',
+  'offerup scam',
+  'used car scam',
+  'secondhand scam',
+  'buying used',
+  'used item safety',
+  'marketplace safety',
+  'buyer beware',
+  'too good to be true',
+  'suspicious price',
+  'suspicious seller',
+  
+  // Police/legal terms
+  'police report',
+  'reported stolen',
+  'theft report',
+  'crime report',
+  'stolen property',
+  'hot property',
+  'illegal goods',
+  'contraband'
 ];
 
 const responseTemplate = \`🛡️ SafeOrStolen.com - Free stolen goods verification service! 
@@ -51,11 +139,21 @@ Try it free: https://safeorstolen.com
 // Function to detect keywords in text
 function containsKeywords(text) {
   const lowerText = text.toLowerCase();
-  return keywords.some(keyword => lowerText.includes(keyword.toLowerCase()));
+  
+  // Find which keywords matched for better messaging
+  const matchedKeywords = keywords.filter(keyword => 
+    lowerText.includes(keyword.toLowerCase())
+  );
+  
+  return {
+    hasMatch: matchedKeywords.length > 0,
+    matchedKeywords: matchedKeywords,
+    primaryMatch: matchedKeywords[0] || null
+  };
 }
 
 // Function to show suggestion popup
-function showSuggestion(textElement) {
+function showSuggestion(textElement, matchInfo) {
   // Remove any existing suggestions
   const existingSuggestion = document.querySelector('#safeorstolen-suggestion');
   if (existingSuggestion) {
@@ -90,7 +188,7 @@ function showSuggestion(textElement) {
       <strong>SafeOrStolen Suggestion</strong>
     </div>
     <p style="margin: 0 0 12px 0; line-height: 1.4;">
-      Detected keywords about stolen goods! Want to share SafeOrStolen.com?
+      Detected: "<strong>\${matchInfo.primaryMatch}</strong>" - Want to share SafeOrStolen.com verification service?
     </p>
     <div style="display: flex; gap: 8px;">
       <button id="copy-response" style="background: #22c55e; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">
@@ -139,10 +237,13 @@ function setupTextMonitoring() {
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(() => {
         const text = e.target.value || e.target.textContent || '';
-        if (text.length > 10 && containsKeywords(text)) {
-          showSuggestion(e.target);
+        if (text.length > 5) { // Reduced minimum length
+          const matchInfo = containsKeywords(text);
+          if (matchInfo.hasMatch) {
+            showSuggestion(e.target, matchInfo);
+          }
         }
-      }, 1000); // Wait 1 second after user stops typing
+      }, 800); // Slightly faster response time
     });
   });
 }

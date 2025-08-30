@@ -19,12 +19,27 @@ export const SocialMediaMonitoring = ({ onWebhookTrigger }: SocialMediaMonitorin
   const { toast } = useToast();
 
   const safeorstokenKeywords = [
-    'safeorstolen',
-    'safe or stolen',
-    'stolen',
-    'safeorstolen.com',
-    'stolen goods checker',
-    'verify stolen items'
+    // SafeOrStolen specific
+    'safeorstolen', 'safe or stolen', 'safeorstolen.com',
+    
+    // General stolen terms
+    'stolen', 'stolen goods', 'stolen item', 'stolen items', 'verify stolen', 
+    'check if stolen', 'is this stolen', 'might be stolen', 'could be stolen',
+    
+    // Specific stolen items
+    'stolen car', 'stolen cars', 'stolen vehicle', 'stolen bike', 'stolen bicycle',
+    'stolen phone', 'stolen iphone', 'stolen android', 'stolen laptop', 'stolen computer',
+    'stolen tablet', 'stolen ipad', 'stolen watch', 'stolen jewelry', 'stolen electronics',
+    'stolen gun', 'stolen firearm', 'stolen motorcycle', 'stolen tools',
+    
+    // Buying concerns
+    'buying stolen', 'bought stolen', 'avoid stolen', 'hot goods', 'hot item',
+    'hot car', 'hot phone', 'fence goods', 'fenced',
+    
+    // Verification needs
+    'verify before buying', 'check before purchase', 'vin check', 'imei check',
+    'serial check', 'craigslist scam', 'facebook marketplace scam', 'marketplace safety',
+    'buyer beware', 'too good to be true', 'suspicious seller', 'reported stolen'
   ];
 
   const responseTemplate = `🛡️ Hey! If you're buying secondhand, check SafeOrStolen.com first - it's a free service that verifies if items are stolen!
