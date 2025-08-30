@@ -10,10 +10,12 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
+import { CriticalResourceLoader } from '@/components/performance/CriticalResourceLoader';
+import { PerformanceMonitor } from '@/components/performance/PerformanceMonitor';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
-import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
-import { BundleAnalyzer } from '@/components/optimized/BundleOptimizer';
+import { SystemHealthMonitor } from '@/components/monitoring/SystemHealthMonitor';
+import { RouteValidator } from '@/components/routing/RouteValidator';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -51,15 +53,17 @@ export const AppRoot: React.FC = () => {
             <PWAProvider>
               <ThemeProvider>
                 <Router>
+                  <RouteValidator />
                   <div className="min-h-screen bg-sos text-white antialiased">
                     <CriticalResourceLoader />
+                    <PerformanceMonitor />
+                    <SystemHealthMonitor />
                     <GlobalAnalytics />
                     <GlobalPerformanceOptimizer />
                     <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />
                     </Suspense>
                     <PWAInstallBanner />
-                    <BundleAnalyzer />
                     <Toaster />
                   </div>
                 </Router>

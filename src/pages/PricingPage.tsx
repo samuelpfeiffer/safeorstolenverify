@@ -57,12 +57,8 @@ const PricingPage = () => {
     setStripeCheckoutUrl(null);
     setHasError(false);
 
-    // Open a tab immediately to avoid popup blockers
-    const pendingTab = window.open('about:blank', '_blank');
-
     // Set a timeout for the entire operation
     timeoutRef.current = setTimeout(() => {
-      if (pendingTab && !pendingTab.closed) pendingTab.close();
       setLoadingTier(null);
       setHasError(true);
       toast({
@@ -70,7 +66,7 @@ const PricingPage = () => {
         description: 'The request is taking too long. Please try again.',
         variant: 'destructive'
       });
-    }, 15000); // 15 second timeout
+    }, 20000); // Increased to 20 second timeout
 
     try {
       const priceId = getSubscriptionPriceId(tier);
@@ -87,27 +83,34 @@ const PricingPage = () => {
       }
 
       setStripeCheckoutUrl(checkoutUrl);
-      if (pendingTab && !pendingTab.closed) {
-        pendingTab.location.href = checkoutUrl;
-      } else {
-        window.open(checkoutUrl, '_blank');
-      }
+      
+      // Direct navigation to Stripe - more reliable than new tab
+      window.location.href = checkoutUrl;
+      
       toast({ 
-        title: 'Checkout ready', 
-        description: 'Click the button below to complete your purchase on Stripe.' 
+        title: 'Redirecting to payment...', 
+        description: 'Please complete your payment on Stripe.' 
       });
       
     } catch (error: any) {
       console.error('Subscription error:', error);
-      // Close the pre-opened tab on failure to avoid a blank tab
-      if (pendingTab && !pendingTab.closed) pendingTab.close();
       
       const errorMessage = error?.message || 'Failed to start subscription. Please try again.';
       console.error('Detailed error:', { error, message: errorMessage });
       
+      // Show specific error messages for common issues
+      let userFriendlyMessage = errorMessage;
+      if (errorMessage.includes('Stripe live key')) {
+        userFriendlyMessage = 'Payment system configuration issue. Please contact support.';
+      } else if (errorMessage.includes('network') || errorMessage.includes('fetch')) {
+        userFriendlyMessage = 'Network error. Please check your connection and try again.';
+      } else if (errorMessage.includes('rate') || errorMessage.includes('limit')) {
+        userFriendlyMessage = 'Too many requests. Please wait a moment and try again.';
+      }
+      
       toast({
         title: 'Subscription Error',
-        description: errorMessage,
+        description: userFriendlyMessage,
         variant: 'destructive',
       });
     } finally {

@@ -1,84 +1,139 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const GlobalPerformanceOptimizer: React.FC = () => {
+  const hasInitialized = useRef(false);
+
   useEffect(() => {
+    if (hasInitialized.current) return;
+    hasInitialized.current = true;
+
     // Preload critical resources
     const criticalImages = [
       '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png',
       '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png'
     ];
 
-    criticalImages.forEach(src => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = src;
-      document.head.appendChild(link);
+    // Use requestIdleCallback for better performance
+    const scheduleWork = (callback: () => void) => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(callback);
+      } else {
+        setTimeout(callback, 0);
+      }
+    };
+
+    scheduleWork(() => {
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+      });
     });
 
     // Preconnect to external domains
     const preconnectDomains = [
       'https://fonts.googleapis.com',
       'https://fonts.gstatic.com',
-      'https://api.safeorstolen.com'
+      'https://lxrdzbknktwlubbmlsqe.supabase.co',
+      'https://js.stripe.com'
     ];
 
-    preconnectDomains.forEach(domain => {
-      const link = document.createElement('link');
-      link.rel = 'preconnect';
-      link.href = domain;
-      link.crossOrigin = 'anonymous';
-      document.head.appendChild(link);
+    scheduleWork(() => {
+      preconnectDomains.forEach(domain => {
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = domain;
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+      });
     });
 
-    // Lazy load non-critical resources
+    // Enhanced lazy loading with better performance
     const lazyLoadImages = () => {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target as HTMLImageElement;
-            img.src = img.dataset.src!;
-            img.classList.remove('lazy');
-            observer.unobserve(img);
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target as HTMLImageElement;
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+              }
+            }
+            });
+          },
+          {
+            rootMargin: '50px 0px',
+            threshold: 0.01
           }
-        });
-      });
+        );
 
-      document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-      });
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
+        });
+      }
     };
 
-    // Service Worker registration for caching
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {
-        // Silent fail
+    // Optimized service worker registration
+    if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+      scheduleWork(() => {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .catch(() => {
+            // Silent fail for service worker
+          });
       });
     }
 
-    // Performance monitoring
+    // Enhanced performance monitoring with Core Web Vitals
     const measurePerformance = () => {
       if ('performance' in window) {
         const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
         
-        // Send performance data to analytics (optional)
         const perfData = {
-          loadTime: navigation.loadEventEnd - navigation.fetchStart,
-          domContentLoaded: navigation.domContentLoadedEventEnd - navigation.fetchStart,
-          firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0
+          loadTime: Math.round(navigation.loadEventEnd - navigation.fetchStart),
+          domContentLoaded: Math.round(navigation.domContentLoadedEventEnd - navigation.fetchStart),
+          firstContentfulPaint: Math.round(performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0),
+          largestContentfulPaint: Math.round(performance.getEntriesByName('largest-contentful-paint')[0]?.startTime || 0),
+          firstInputDelay: 0
         };
 
-        // Could send to analytics service
-        console.log('Performance Metrics:', perfData);
+        // Only log significant performance issues
+        if (perfData.loadTime > 3000) {
+          console.warn('Slow page load detected:', perfData);
+        }
       }
     };
 
-    // Defer performance measurement
-    setTimeout(measurePerformance, 1000);
-    setTimeout(lazyLoadImages, 100);
+    // Resource hints optimization
+    const addResourceHints = () => {
+      const preloadResources = [
+        { href: '/favicon.ico', as: 'image' },
+        { href: '/manifest.json', as: 'fetch', crossorigin: 'anonymous' }
+      ];
+
+      preloadResources.forEach(({ href, as, crossorigin }) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = href;
+        link.as = as;
+        if (crossorigin) link.crossOrigin = crossorigin;
+        document.head.appendChild(link);
+      });
+    };
+
+    // Schedule all optimizations
+    scheduleWork(lazyLoadImages);
+    scheduleWork(addResourceHints);
+    setTimeout(measurePerformance, 2000);
 
     return () => {
-      // Cleanup if needed
+      // Cleanup performance observers if needed
     };
   }, []);
 
