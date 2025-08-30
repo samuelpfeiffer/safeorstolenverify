@@ -62,17 +62,19 @@ serve(async (req) => {
       let selected: string | null = null;
 
       for (const name of candidates) {
-        const val = Deno.env.get(name as unknown as string);
+        const raw = Deno.env.get(name as unknown as string);
+        const val = raw?.trim();
         console.log(`[CREATE-CHECKOUT] Checking secret ${name}: ${val ? 'FOUND' : 'MISSING'}`);
-        if (!selected && val && val.startsWith("sk_live_")) {
-          selected = val;
-          console.log(`[CREATE-CHECKOUT] Using key from ${name}, prefix: ${val.substring(0, 8)}...`);
+        if (!selected && val && val.trim().startsWith("sk_live_")) {
+          selected = val.trim();
+          console.log(`[CREATE-CHECKOUT] Using key from ${name}, prefix: ${selected.substring(0, 8)}...`);
           break;
         }
       }
 
       if (!selected) {
-        const key = Deno.env.get("STRIPE_SECRET_KEY");
+        const rawKey = Deno.env.get("STRIPE_SECRET_KEY");
+        const key = rawKey?.trim();
         console.log(`[CREATE-CHECKOUT] STRIPE_SECRET_KEY found: ${key ? 'YES' : 'NO'}`);
         console.log(`[CREATE-CHECKOUT] Key starts with sk_live_: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
         console.log(`[CREATE-CHECKOUT] Key prefix: ${key?.substring(0, 8)}...`);
