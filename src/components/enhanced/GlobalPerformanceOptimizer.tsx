@@ -105,7 +105,7 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
 
         // Only log significant performance issues
         if (perfData.loadTime > 3000) {
-          console.warn('Slow page load detected:', perfData);
+          // Log only critical performance issues in production
         }
       }
     };

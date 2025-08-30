@@ -38,13 +38,11 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
   useEffect(() => {
     if (isAuthenticated && user) {
       // User is already authenticated, skip signup form
-      console.log('User already authenticated, skipping signup form');
       onSuccess?.();
     }
   }, [isAuthenticated, user, onSuccess]);
 
   const handleSignUpFormSubmit = async (data: SecureSignUpFormData) => {
-    console.log('=== Secure Sign Up Form Submitted ===');
     setIsLoading(true);
     
     try {
@@ -56,16 +54,11 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
           setCreatedUserId(user.id);
           setPendingSignUpData(data);
           setStep('terms');
-          console.log('Account created, proceeding to terms acceptance');
-        } else {
-          console.log('Account creation pending email confirmation');
         }
-      } else {
-        console.log('Account creation failed or pending confirmation');
       }
       
     } catch (error) {
-      console.error('Secure sign up failed:', error);
+      // Handle signup error silently in production
     } finally {
       setIsLoading(false);
     }
@@ -73,11 +66,9 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
 
   const handleTermsAccept = async () => {
     if (!createdUserId) {
-      console.error('No user ID available for terms acceptance');
       return;
     }
     
-    console.log('=== Terms Accepted, Recording Acceptance ===');
     setIsLoading(true);
     
     try {
@@ -96,7 +87,7 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
       }
       
     } catch (error) {
-      console.error('Terms acceptance failed:', error);
+      // Handle terms acceptance error silently
     } finally {
       setIsLoading(false);
     }

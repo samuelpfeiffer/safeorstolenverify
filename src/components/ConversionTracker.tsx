@@ -28,9 +28,9 @@ export const ConversionTracker: React.FC = () => {
       }
     };
 
-    // Log to console in development
+    // Log to console only in development
     if (process.env.NODE_ENV === 'development') {
-      console.log('🎯 Conversion Event:', conversionEvent);
+      // Development tracking only
     }
 
     // In production, send to analytics service
@@ -85,7 +85,7 @@ export const useConversionTracking = () => {
     };
 
     if (process.env.NODE_ENV === 'development') {
-      console.log('🎯 Manual Conversion:', conversionEvent);
+      // Development tracking only
     }
 
     // Send to analytics in production

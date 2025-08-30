@@ -9,8 +9,8 @@ declare global {
 
 export const GlobalAnalytics: React.FC = () => {
   useEffect(() => {
-    // Google Analytics 4 setup
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual ID
+    // Google Analytics 4 setup - placeholder ID for development
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual production ID
     
     // Load Google Analytics script
     const script = document.createElement('script');
@@ -27,7 +27,7 @@ export const GlobalAnalytics: React.FC = () => {
 
     gtag('js', new Date());
     gtag('config', GA_MEASUREMENT_ID, {
-      page_title: 'SafeOrStolen.com - Global Domination',
+      page_title: 'SafeOrStolen.com - Production Ready',
       page_location: window.location.href,
       custom_map: {
         custom_parameter_1: 'marketplace_verification',

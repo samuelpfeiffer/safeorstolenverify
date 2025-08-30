@@ -12,7 +12,6 @@ import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
-import { DebugBanner } from '@/components/debug/DebugBanner';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -51,7 +50,6 @@ export const AppRoot: React.FC = () => {
               <ThemeProvider>
                 <Router>
                   <div className="min-h-screen bg-sos text-white antialiased">
-                    <DebugBanner />
                     <GlobalAnalytics />
                     <GlobalPerformanceOptimizer />
                     <Suspense fallback={<AppLoadingScreen />}>

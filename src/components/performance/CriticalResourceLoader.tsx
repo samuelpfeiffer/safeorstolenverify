@@ -42,7 +42,7 @@ export const CriticalResourceLoader: React.FC<CriticalResourceLoaderProps> = ({
         
         // Add error handling
         link.onerror = () => {
-          console.warn(`Failed to preload resource: ${href}`);
+          // Silent error handling for preload failures
         };
         
         document.head.appendChild(link);

@@ -15,8 +15,6 @@ serve(async (req) => {
   }
 
   try {
-    console.log("Creating Stripe checkout session... v2", { ts: Date.now() });
-    
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
@@ -47,43 +45,27 @@ serve(async (req) => {
       );
     }
 
-    console.log(`User authenticated: ${user.email}`);
-
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
     // Live Mode Stripe secret key validation
     const getStripeKey = () => {
-      console.log("[CREATE-CHECKOUT] Starting live mode Stripe key resolution");
-      
       const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
       if (!stripeKey) {
-        console.error("[CREATE-CHECKOUT] STRIPE_SECRET_KEY not found in environment");
         return null;
       }
       
       if (!stripeKey.startsWith("sk_live_")) {
-        console.error("[CREATE-CHECKOUT] STRIPE_SECRET_KEY must be a live key (sk_live_) for production mode", { 
-          prefix: stripeKey.substring(0, 7),
-          note: "Test keys (sk_test_) are not allowed in live mode"
-        });
         return null;
       }
       
-      console.log("[CREATE-CHECKOUT] Valid live Stripe secret key found", { 
-        source: "STRIPE_SECRET_KEY", 
-        prefix: "sk_live_",
-        keyType: "live"
-      });
       return stripeKey;
     };
 
     const stripeKey = getStripeKey();
-    console.log("[CREATE-CHECKOUT] Stripe key available:", stripeKey ? "Yes (Live Mode)" : "No");
     
     if (!stripeKey) {
       const errorMsg = "Live mode requires a valid Stripe live secret key (sk_live_). Please configure STRIPE_SECRET_KEY in your Supabase secrets with your live key from the Stripe dashboard.";
-      console.error("[CREATE-CHECKOUT] ERROR:", errorMsg);
       throw new Error(errorMsg);
     }
     
@@ -96,25 +78,19 @@ serve(async (req) => {
     let customerId;
     if (customers.data.length > 0) {
       customerId = customers.data[0].id;
-      console.log(`Found existing Stripe customer: ${customerId}`);
-    } else {
-      console.log("No existing Stripe customer found, will create new one");
     }
 
     // Helper: resolve a valid Stripe Price ID for live mode
     const resolvePriceId = async (maybePriceId?: string, maybePlanName?: string): Promise<string> => {
-      console.log(`[CREATE-CHECKOUT] Resolving price ID for live mode: ${maybePriceId}, Plan name: ${maybePlanName}`);
-      
       // Try direct retrieve first if an ID was sent
       if (maybePriceId) {
         try {
           const p = await stripe.prices.retrieve(maybePriceId);
           if (p && p.id && p.active) {
-            console.log(`[CREATE-CHECKOUT] Direct price ID lookup successful: ${p.id}`);
             return p.id;
           }
         } catch (e) {
-          console.log(`[CREATE-CHECKOUT] Price ID ${maybePriceId} not found or inactive, trying plan name...`);
+          // Fall through to plan name resolution
         }
       }
       
@@ -134,7 +110,6 @@ serve(async (req) => {
       }
       
       if (searchTerms.length > 0) {
-        console.log(`[CREATE-CHECKOUT] Searching live Stripe for prices matching: ${searchTerms.join(', ')}`);
         const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
         const match = prices.data.find((p: any) => {
           const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) ? (p.product as any).name : undefined;
@@ -146,7 +121,6 @@ serve(async (req) => {
           );
         });
         if (match) {
-          console.log(`[CREATE-CHECKOUT] Found matching live price: ${match.id} for plan: ${searchTerms[0]}`);
           return match.id;
         }
       }
@@ -170,7 +144,6 @@ serve(async (req) => {
     if (isSubscription) {
       // Subscription mode with 7-day free trial
       const resolvedPrice = await resolvePriceId(priceId, planName);
-      console.log(`Creating subscription checkout with 7-day trial for price: ${resolvedPrice}`);
       
       sessionConfig = {
         ...sessionConfig,
@@ -187,7 +160,6 @@ serve(async (req) => {
       };
     } else {
       // One-time payment mode for verification
-      console.log("Creating one-time payment session");
       
       const verificationData = await supabaseClient
         .from("verification_searches")
@@ -231,7 +203,6 @@ serve(async (req) => {
 
     // Create Checkout Session
     const session = await stripe.checkout.sessions.create(sessionConfig);
-    console.log(`Checkout session created: ${session.id}`);
 
     // Update purchase record with session ID for one-time payments
     if (!isSubscription && serialNumber) {
@@ -247,7 +218,6 @@ serve(async (req) => {
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
-    console.error("Error:", error);
     const message = error instanceof Error ? error.message : String(error);
     return new Response(
       JSON.stringify({ error: message }),

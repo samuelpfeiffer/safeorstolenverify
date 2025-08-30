@@ -56,19 +56,13 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     try {
       const result = await executeRequest(
         async (signal) => {
-          console.info('[Subscription] Invoking check-subscription', {
-            userId: session.user.id,
-          });
           const { data, error } = await supabase.functions.invoke('check-subscription', {
             headers: {
               Authorization: `Bearer ${session.access_token}`,
             },
           });
 
-          console.info('[Subscription] check-subscription response', { hasData: !!data, data, error });
-
           if (error) {
-            console.error("Supabase function error:", error);
             throw new Error(error.message || 'Edge function failed');
           }
           return data;
@@ -81,7 +75,6 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
         setSubscriptionData(result);
       }
     } catch (error: any) {
-      console.error("Failed to check subscription:", error);
       if (isMountedRef.current) {
         // Don't show error for subscription checks on pricing page - just set defaults
         setError(null);
@@ -112,30 +105,19 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     try {
       const result = await executeRequest(
         async (signal) => {
-          // Attempt to also send a human-readable plan name to the edge function
           const planName = Object.values(SUBSCRIPTION_TIERS).find((t) => t.stripePriceId === priceId)?.name;
-
-          console.info("[Subscription] Invoking create-checkout", {
-            priceId,
-            planName,
-            isSubscription: true,
-            origin: window.location.origin,
-            userId: session.user.id,
-          });
 
           const { data, error } = await supabase.functions.invoke('create-checkout', {
             body: {
               priceId,
               isSubscription: true,
               redirectUrl: window.location.origin,
-              planName, // helps the edge function resolve the correct Stripe Price if IDs changed
+              planName,
             },
             headers: {
               Authorization: `Bearer ${session.access_token}`,
             },
           });
-
-          console.info('[Subscription] create-checkout response', { hasData: !!data, data, error });
 
           if (error) throw error;
           if (!data?.url) {
@@ -149,7 +131,6 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
 
       return result;
     } catch (error: any) {
-      console.error("Failed to create checkout:", error);
       if (isMountedRef.current) {
         const errorMessage = error?.message || 'Failed to create checkout session';
         setError(errorMessage);
@@ -203,7 +184,6 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
         window.open(result, '_blank');
       }
     } catch (error: any) {
-      console.error("Failed to open customer portal:", error);
       if (isMountedRef.current) {
         toast({
           title: "Portal error",
@@ -250,7 +230,6 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
 
       return result || null;
     } catch (error: any) {
-      console.error("Failed to get customer portal URL:", error);
       if (isMountedRef.current) {
         toast({
           title: "Portal error",

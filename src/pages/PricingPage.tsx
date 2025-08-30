@@ -29,15 +29,9 @@ const PricingPage = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { createOneTimePayment, isLoading: reportLoading } = useOneTimePayment();
 
-  // Add Stripe price IDs for your actual products
-  const STRIPE_PRICE_IDS = {
-    basic: "price_1Rz7rm2eGaMDLFHojH9Vch1Y",
-    premium: "price_1Rz7xu2eGaMDLFHoqGT0Pyjk", 
-    enterprise: "price_1Rz80X2eGaMDLFHozeZyChte"
-  };
+  // Remove duplicate price IDs - using centralized pricing config
 
   const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
-    console.log('[Pricing] handleSubscribe clicked', { tier, isAuthenticated });
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -70,7 +64,6 @@ const PricingPage = () => {
 
     try {
       const priceId = getSubscriptionPriceId(tier);
-      console.log(`Starting checkout for ${tier} tier with price ID: ${priceId}`);
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
@@ -93,10 +86,7 @@ const PricingPage = () => {
       });
       
     } catch (error: any) {
-      console.error('Subscription error:', error);
-      
       const errorMessage = error?.message || 'Failed to start subscription. Please try again.';
-      console.error('Detailed error:', { error, message: errorMessage });
       
       // Show specific error messages for common issues
       let userFriendlyMessage = errorMessage;
@@ -136,7 +126,7 @@ const PricingPage = () => {
         window.open(url, '_blank');
       }
     } catch (e) {
-      console.error(e);
+      // Silent error handling for one-time payment
     }
   }, [isAuthenticated, navigate, createOneTimePayment, toast]);
 
