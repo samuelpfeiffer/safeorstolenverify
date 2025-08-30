@@ -50,27 +50,9 @@ serve(async (req) => {
 
     // Live Mode Stripe secret key validation
     const getStripeKey = () => {
-      const candidates = [
-        "STRIPE_SECRET_KEY",
-        "stripe secret server key",
-        "stripe secret key",
-        "Stripe Secret Key",
-        "last stripe secret key",
-        "stripe secret key2",
-        "stripe secret key3",
-        "stripe keyAug28",
-        "stripe august28515",
-        "STRIPE_SECRET_SERVER_KEY",
-        "STRIPE_LIVE_SECRET_KEY",
-        "STRIPE_LIVE_KEY",
-        "STRIPE_KEY",
-      ];
-      for (const name of candidates) {
-        const key = Deno.env.get(name);
-        if (key && key.startsWith("sk_live_")) {
-          console.log(`[CREATE-CHECKOUT] Using Stripe key from secret: ${name}`);
-          return key;
-        }
+      const key = Deno.env.get("STRIPE_SECRET_KEY");
+      if (key && key.startsWith("sk_live_")) {
+        return key;
       }
       return null;
     };

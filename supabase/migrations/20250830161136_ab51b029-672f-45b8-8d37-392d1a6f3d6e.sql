@@ -1,0 +1,1 @@
+DELETE FROM system_configuration WHERE config_key ILIKE '%stripe%' OR config_value::text ILIKE '%sk_%' OR config_value::text ILIKE '%pk_%';
