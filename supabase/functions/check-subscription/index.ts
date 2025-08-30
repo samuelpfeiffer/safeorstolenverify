@@ -17,29 +17,58 @@ serve(async (req) => {
   try {
     console.log("[CHECK-SUBSCRIPTION] Function started v2", { ts: Date.now() });
     
-    // Resolve Stripe secret key from env
+    // Robust Stripe secret key resolution
     const getStripeKey = () => {
-      const candidates = [
-        "STRIPE_SECRET_KEY",
-        "STRIPE_SECRET",
-        "STRIPE_LIVE_SECRET_KEY",
-        "STRIPE_TEST_SECRET_KEY",
-        "STRIPE_KEY",
-        "stripe_secret_key",
-        "stripe_secret"
-      ];
-      for (const name of candidates) {
-        const val = Deno.env.get(name);
-        if (val && val.startsWith("sk_")) {
-          console.log("[CHECK-SUBSCRIPTION] Using Stripe key from", name);
-          return val;
+      console.log("[CHECK-SUBSCRIPTION] Starting Stripe key resolution");
+      
+      // First, try the standard STRIPE_SECRET_KEY
+      const standardKey = Deno.env.get("STRIPE_SECRET_KEY");
+      if (standardKey && standardKey.startsWith("sk_")) {
+        console.log("[CHECK-SUBSCRIPTION] Found valid secret key", { 
+          source: "STRIPE_SECRET_KEY", 
+          prefix: standardKey.substring(0, 7),
+          keyType: standardKey.startsWith("sk_live_") ? "live" : "test"
+        });
+        return standardKey;
+      }
+      
+      console.log("[CHECK-SUBSCRIPTION] Standard STRIPE_SECRET_KEY not found or invalid, scanning all environment variables");
+      
+      // Get all environment variables and look for Stripe-related ones
+      const allEnvVars = Deno.env.toObject();
+      const stripeEnvNames = Object.keys(allEnvVars).filter(key => 
+        key.toLowerCase().includes('stripe')
+      );
+      
+      console.log("[CHECK-SUBSCRIPTION] Available Stripe environment variables", { names: stripeEnvNames });
+      
+      // Look for any variable with a valid secret key value
+      for (const envName of stripeEnvNames) {
+        const value = allEnvVars[envName];
+        if (value && value.startsWith("sk_")) {
+          console.log("[CHECK-SUBSCRIPTION] Found valid Stripe secret key", { 
+            source: envName, 
+            prefix: value.substring(0, 7),
+            keyType: value.startsWith("sk_live_") ? "live" : "test"
+          });
+          return value;
+        }
+        
+        if (value) {
+          const prefix = value.substring(0, 3);
+          console.log("[CHECK-SUBSCRIPTION] Found Stripe key but invalid type", { 
+            source: envName, 
+            prefix: prefix,
+            expected: "sk_",
+            note: prefix === "pk_" ? "This is a publishable key (not usable for server-side)" : 
+                  prefix === "rk_" ? "This is a restricted key (not usable for server-side)" : "Unknown key type"
+          });
         }
       }
+      
+      console.log("[CHECK-SUBSCRIPTION] No valid Stripe secret key found");
       return null;
     };
-
-    // Debug: Log all available environment variables
-    console.log("[CHECK-SUBSCRIPTION] Available env vars:", Object.keys(Deno.env.toObject()).filter(k => k.toLowerCase().includes('stripe')));
     
     const stripeSecretKey = getStripeKey();
     if (!stripeSecretKey) {

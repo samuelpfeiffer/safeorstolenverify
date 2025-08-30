@@ -52,34 +52,66 @@ serve(async (req) => {
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
-    // Initialize Stripe - resolve key from env
+    // Robust Stripe secret key resolution
     const getStripeKey = () => {
-      const candidates = [
-        "STRIPE_SECRET_KEY",
-        "STRIPE_SECRET",
-        "STRIPE_LIVE_SECRET_KEY",
-        "STRIPE_TEST_SECRET_KEY",
-        "STRIPE_KEY",
-        "stripe_secret_key",
-        "stripe_secret"
-      ];
-      console.log("Available Stripe env vars:", Object.keys(Deno.env.toObject()).filter(k => k.toLowerCase().includes('stripe')));
-      for (const name of candidates) {
-        const val = Deno.env.get(name);
-        console.log(`Checking ${name}:`, val ? `Found (starts with ${val.substring(0,3)}...)` : 'Not found');
-        if (val && val.startsWith("sk_")) {
-          console.log("Using Stripe key from", name);
-          return val;
+      console.log("[CREATE-CHECKOUT] Starting Stripe key resolution");
+      
+      // First, try the standard STRIPE_SECRET_KEY
+      const standardKey = Deno.env.get("STRIPE_SECRET_KEY");
+      if (standardKey && standardKey.startsWith("sk_")) {
+        console.log("[CREATE-CHECKOUT] Found valid secret key", { 
+          source: "STRIPE_SECRET_KEY", 
+          prefix: standardKey.substring(0, 7),
+          keyType: standardKey.startsWith("sk_live_") ? "live" : "test"
+        });
+        return standardKey;
+      }
+      
+      console.log("[CREATE-CHECKOUT] Standard STRIPE_SECRET_KEY not found or invalid, scanning all environment variables");
+      
+      // Get all environment variables and look for Stripe-related ones
+      const allEnvVars = Deno.env.toObject();
+      const stripeEnvNames = Object.keys(allEnvVars).filter(key => 
+        key.toLowerCase().includes('stripe')
+      );
+      
+      console.log("[CREATE-CHECKOUT] Available Stripe environment variables", { names: stripeEnvNames });
+      
+      // Look for any variable with a valid secret key value
+      for (const envName of stripeEnvNames) {
+        const value = allEnvVars[envName];
+        if (value && value.startsWith("sk_")) {
+          console.log("[CREATE-CHECKOUT] Found valid Stripe secret key", { 
+            source: envName, 
+            prefix: value.substring(0, 7),
+            keyType: value.startsWith("sk_live_") ? "live" : "test"
+          });
+          return value;
+        }
+        
+        if (value) {
+          const prefix = value.substring(0, 3);
+          console.log("[CREATE-CHECKOUT] Found Stripe key but invalid type", { 
+            source: envName, 
+            prefix: prefix,
+            expected: "sk_",
+            note: prefix === "pk_" ? "This is a publishable key (not usable for server-side)" : 
+                  prefix === "rk_" ? "This is a restricted key (not usable for server-side)" : "Unknown key type"
+          });
         }
       }
+      
+      console.log("[CREATE-CHECKOUT] No valid Stripe secret key found");
       return null;
     };
 
     const stripeKey = getStripeKey();
-    console.log("Stripe key available:", stripeKey ? "Yes" : "No");
+    console.log("[CREATE-CHECKOUT] Stripe key available:", stripeKey ? "Yes" : "No");
     
     if (!stripeKey) {
-      throw new Error("STRIPE secret key not found in environment");
+      const errorMsg = "No valid Stripe secret key found. Please ensure you have a secret key (starting with sk_) configured in your Supabase secrets.";
+      console.error("[CREATE-CHECKOUT] ERROR:", errorMsg);
+      throw new Error(errorMsg);
     }
     
     const stripe = new Stripe(stripeKey, {
