@@ -50,15 +50,34 @@ serve(async (req) => {
 
     // Live Mode Stripe secret key validation with debug logging
     const getStripeKey = () => {
-      const key = Deno.env.get("STRIPE_SECRET_KEY");
-      console.log(`[CREATE-CHECKOUT] STRIPE_SECRET_KEY found: ${key ? 'YES' : 'NO'}`);
-      console.log(`[CREATE-CHECKOUT] Key starts with sk_live_: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
-      console.log(`[CREATE-CHECKOUT] Key prefix: ${key?.substring(0, 8)}...`);
-      
-      if (key && key.startsWith("sk_live_")) {
-        return key;
+      // Try multiple possible secret names to avoid config mismatch
+      const candidates = [
+        "STRIPE_SECRET_KEY",
+        "Stripe Secret Key",
+        "stripe secret key",
+        "stripe secret server key",
+        "last stripe secret key",
+      ] as const;
+
+      let selected: string | null = null;
+
+      for (const name of candidates) {
+        const val = Deno.env.get(name as unknown as string);
+        console.log(`[CREATE-CHECKOUT] Checking secret ${name}: ${val ? 'FOUND' : 'MISSING'}`);
+        if (!selected && val && val.startsWith("sk_live_")) {
+          selected = val;
+          console.log(`[CREATE-CHECKOUT] Using key from ${name}, prefix: ${val.substring(0, 8)}...`);
+          break;
+        }
       }
-      return null;
+
+      if (!selected) {
+        const key = Deno.env.get("STRIPE_SECRET_KEY");
+        console.log(`[CREATE-CHECKOUT] STRIPE_SECRET_KEY found: ${key ? 'YES' : 'NO'}`);
+        console.log(`[CREATE-CHECKOUT] Key starts with sk_live_: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
+        console.log(`[CREATE-CHECKOUT] Key prefix: ${key?.substring(0, 8)}...`);
+      }
+      return selected;
     };
 
     const stripeKey = getStripeKey();
