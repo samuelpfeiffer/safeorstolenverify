@@ -56,11 +56,16 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     try {
       const result = await executeRequest(
         async (signal) => {
+          console.info('[Subscription] Invoking check-subscription', {
+            userId: session.user.id,
+          });
           const { data, error } = await supabase.functions.invoke('check-subscription', {
             headers: {
               Authorization: `Bearer ${session.access_token}`,
             },
           });
+
+          console.info('[Subscription] check-subscription response', { hasData: !!data, data, error });
 
           if (error) {
             console.error("Supabase function error:", error);
@@ -110,6 +115,14 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
           // Attempt to also send a human-readable plan name to the edge function
           const planName = Object.values(SUBSCRIPTION_TIERS).find((t) => t.stripePriceId === priceId)?.name;
 
+          console.info("[Subscription] Invoking create-checkout", {
+            priceId,
+            planName,
+            isSubscription: true,
+            origin: window.location.origin,
+            userId: session.user.id,
+          });
+
           const { data, error } = await supabase.functions.invoke('create-checkout', {
             body: {
               priceId,
@@ -122,7 +135,12 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
             },
           });
 
+          console.info('[Subscription] create-checkout response', { hasData: !!data, data, error });
+
           if (error) throw error;
+          if (!data?.url) {
+            throw new Error((data as any)?.error || 'No checkout URL returned from edge function');
+          }
           return data.url;
         },
         `checkout-${priceId}-${session.user.id}`,
