@@ -53,6 +53,7 @@ serve(async (req) => {
       // Try multiple possible secret names to avoid config mismatch
       const candidates = [
         "STRIPE_SECRET_KEY",
+        "STRIPE_LIVE_SECRET_KEY",
         "Stripe Secret Key",
         "stripe secret key",
         "stripe secret server key",
