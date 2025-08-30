@@ -26,8 +26,24 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
 
   return (
     <div className="max-w-5xl mx-auto pt-8" id="pricing">
-      <h2 className="text-3xl font-bold mb-8 text-center">Subscription Plans</h2>
-      <p className="text-center text-xl mb-10">Get started with {SUBSCRIPTION_TIERS.free.searchLimit} free searches. Choose the plan that best fits your needs.</p>
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold mb-4">Transparent, Fair Pricing</h2>
+        <p className="text-xl mb-4">Get started with {SUBSCRIPTION_TIERS.free.searchLimit} free searches. No hidden fees, cancel anytime.</p>
+        <div className="flex justify-center items-center gap-6 text-sm text-gray-400">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <span>SSL Secured</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <span>GDPR Compliant</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <span>Law Enforcement Verified</span>
+          </div>
+        </div>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Free Plan */}
@@ -123,6 +139,59 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             Buy Credits
           </Button>
         </Link>
+      </div>
+      
+      {/* Trust & Transparency Section */}
+      <div className="mt-16 text-center">
+        <h3 className="text-2xl font-bold mb-8">Why Trust SafeOrStolen?</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="bg-secondary/20 rounded-xl p-6">
+            <div className="w-12 h-12 bg-sos-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-sos-orange font-bold">✓</span>
+            </div>
+            <h4 className="font-semibold mb-2">Law Enforcement Data</h4>
+            <p className="text-gray-400 text-sm">Direct access to official stolen goods databases and law enforcement reports</p>
+          </div>
+          <div className="bg-secondary/20 rounded-xl p-6">
+            <div className="w-12 h-12 bg-sos-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-sos-orange font-bold">⚡</span>
+            </div>
+            <h4 className="font-semibold mb-2">Real-Time Verification</h4>
+            <p className="text-gray-400 text-sm">Instant checks across multiple databases with AI-powered risk assessment</p>
+          </div>
+          <div className="bg-secondary/20 rounded-xl p-6">
+            <div className="w-12 h-12 bg-sos-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-sos-orange font-bold">🛡️</span>
+            </div>
+            <h4 className="font-semibold mb-2">Enterprise Security</h4>
+            <p className="text-gray-400 text-sm">Bank-level encryption and GDPR-compliant data handling practices</p>
+          </div>
+        </div>
+        
+        {/* Partnership Badge */}
+        <div className="bg-gradient-to-r from-sos-orange/10 to-transparent rounded-xl p-6 mb-8">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital" className="h-8" />
+            <span className="text-sos-orange font-semibold">Backed by FasterCapital</span>
+          </div>
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+            SafeOrStolen is supported by FasterCapital, a leading startup accelerator, 
+            ensuring professional development and investor confidence in our platform.
+          </p>
+        </div>
+        
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link to="/how-it-works-detailed">
+            <Button variant="outline" className="border-sos-orange text-sos-orange hover:bg-sos-orange/10">
+              How Our Verification Works
+            </Button>
+          </Link>
+          <Link to="/data-sources">
+            <Button variant="outline" className="border-white text-white hover:bg-white/10">
+              View Data Sources
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

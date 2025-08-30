@@ -42,6 +42,7 @@ export const Footer: React.FC = () => {
         { name: 'About Problem', href: '/about-problem' },
         { name: 'Contact', href: '/contact' },
         { name: 'Data Sources', href: '/data-sources' },
+        { name: 'Transparency Report', href: '/transparency' },
       ]
     },
     {

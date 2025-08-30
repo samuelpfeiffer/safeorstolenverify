@@ -66,6 +66,14 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
         Data Sources
       </Link>
       <Link 
+        to="/transparency" 
+        className={cn("transition-colors", 
+          currentPath === "/transparency" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+        )}
+      >
+        Transparency
+      </Link>
+      <Link 
         to="/contact" 
         className={cn("transition-colors", 
           currentPath === "/contact" ? "text-sos-orange" : "text-white hover:text-sos-orange"
