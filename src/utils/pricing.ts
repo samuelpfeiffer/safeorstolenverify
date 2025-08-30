@@ -33,7 +33,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_1Rz7rm2eGaMDLFHojH9Vch1Y'
+    stripePriceId: 'price_1S0uGQGxnZLw8J7OOgm02vdB'
   },
   premium: {
     name: 'Savvy Shopper',
@@ -48,7 +48,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Priority support',
       'Custom verification alerts'
     ],
-    stripePriceId: 'price_1Rz7xu2eGaMDLFHoqGT0Pyjk'
+    stripePriceId: 'price_1S0uGiGxnZLw8J7OQEwssbK7'
   },
   enterprise: {
     name: 'Business Pro',
@@ -62,7 +62,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Custom integrations',
       'Dedicated account manager'
     ],
-    stripePriceId: 'price_1Rz80X2eGaMDLFHozeZyChte'
+    stripePriceId: 'price_1S0uJsGxnZLw8J7OfU7XKMhV'
   },
   report: {
     name: 'Certified Stolen/Legitimate Report',
