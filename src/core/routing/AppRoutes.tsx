@@ -84,6 +84,7 @@ const TrustVerificationPage = lazy(() => import('@/pages/TrustVerificationPage')
 const CaseStudiesPage = lazy(() => import('@/pages/CaseStudiesPage'));
 const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
+const ServiceLimitationsPage = lazy(() => import('@/pages/ServiceLimitationsPage'));
 const AccuracyPage = lazy(() => import('@/pages/AccuracyPage'));
 const VerificationHubPage = lazy(() => import('@/pages/VerificationHubPage'));
 const UltimateGuidePage = lazy(() => import('@/pages/UltimateGuidePage'));
@@ -151,6 +152,7 @@ export const AppRoutes: React.FC = () => {
            <Route path="trust-verification" element={<TrustVerificationPage />} />
            <Route path="data-sources" element={<DataSourcesPage />} />
            <Route path="transparency" element={<TransparencyPage />} />
+           <Route path="service-limitations" element={<ServiceLimitationsPage />} />
            <Route path="accuracy" element={<AccuracyPage />} />
           <Route path="verification-hub" element={<VerificationHubPage />} />
           <Route path="ultimate-guide" element={<UltimateGuidePage />} />

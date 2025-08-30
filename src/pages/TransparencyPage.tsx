@@ -85,19 +85,19 @@ const securityMeasures = [
 const businessPractices = [
   {
     title: "Revenue Model Transparency",
-    content: "SafeOrStolen operates on a freemium subscription model. Free users get limited searches, paid subscribers get unlimited access. We do not sell user data, search patterns, or verification results to third parties."
+    content: "SafeOrStolen operates on a freemium subscription model with limited free searches and paid unlimited access. We do not sell user data or verification results. Funding came from personal investment and we continue seeking partnerships to expand database access."
   },
   {
-    title: "Partnership Disclosures", 
-    content: "We maintain partnerships with FasterCapital (investment), CheckMEND (data), and BikeIndex (data). These partnerships are disclosed and do not influence our verification algorithms or results."
+    title: "Partnership Status & Development", 
+    content: "We are actively working to establish verified partnerships with law enforcement and insurance databases. Current integrations include confirmed partners like CheckMEND and BikeIndex, with others in development. We clearly mark the status of each data source."
   },
   {
-    title: "Conflict of Interest Policy",
-    content: "SafeOrStolen does not accept payments from marketplaces, sellers, or law enforcement to alter verification results. Our verification process is automated and cannot be influenced by external parties."
+    title: "Accuracy & False Positive Policy",
+    content: "We provide confidence scores because no stolen goods database is perfect. We maintain a public process for reporting false positives and work to improve accuracy. However, users should always verify through multiple sources for high-value items."
   },
   {
-    title: "Data Source Reliability",
-    content: "While we strive for comprehensive coverage, stolen goods databases are not perfect. Some thefts may not be reported, and some reports may contain errors. We provide confidence scores to help users assess reliability."
+    title: "Not a Replacement for Official Verification",
+    content: "SafeOrStolen is designed as a risk assessment tool to supplement, not replace, official verification methods. For vehicles, always use official government databases. For valuable items, request purchase documentation and consider professional authentication."
   }
 ];
 
@@ -223,38 +223,106 @@ const TransparencyPage = () => {
           </div>
 
           {/* Limitations & Disclaimers */}
+          <Card className="bg-red-500/10 border-red-500/50 mb-8">
+            <CardHeader>
+              <CardTitle className="text-red-400 flex items-center gap-3">
+                <AlertTriangle className="h-6 w-6" />
+                Important: This is a Risk Assessment Tool, Not Official Verification
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4 text-gray-300">
+                <div className="bg-red-500/20 p-4 rounded-lg">
+                  <h4 className="font-semibold text-red-400 mb-3">⚠️ DO NOT RELY ON THIS SERVICE ALONE</h4>
+                  <p className="text-sm mb-3">
+                    SafeOrStolen is a risk assessment tool designed to help inform your purchasing decisions. 
+                    It is NOT an authoritative verification service and should NOT be your only method of checking if an item is stolen.
+                  </p>
+                  <p className="text-sm font-semibold text-red-300">
+                    Always perform additional due diligence including requesting proof of purchase, 
+                    contacting official authorities, and using multiple verification methods for valuable items.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-yellow-400 mb-2">Database Coverage Is Incomplete</h4>
+                  <p className="text-sm">
+                    No stolen goods database covers 100% of theft incidents. Many thefts are never reported to police, 
+                    may be reported to jurisdictions not in our network, or may have significant data entry delays. 
+                    A "SAFE" result does not guarantee an item is not stolen.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-yellow-400 mb-2">Data Source Partnerships Under Development</h4>
+                  <p className="text-sm">
+                    While we work to establish partnerships with law enforcement and insurance databases, 
+                    many integrations are still in development. We clearly mark the status of each data source 
+                    and do not claim partnerships that don't exist.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-yellow-400 mb-2">Use at Your Own Risk</h4>
+                  <p className="text-sm">
+                    SafeOrStolen provides information to help assess risk, but cannot guarantee accuracy or completeness. 
+                    Users are responsible for making their own informed decisions and taking appropriate legal precautions 
+                    when purchasing secondhand items.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-yellow-400 mb-2">When Purchasing High-Value Items</h4>
+                  <p className="text-sm">
+                    For vehicles, electronics, or other valuable items, always:
+                    • Request original purchase receipts or documentation
+                    • Use official government databases (like VINCheck for vehicles)  
+                    • Consider hiring professional inspectors or appraisers
+                    • Meet sellers at police stations for high-value transactions
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Service Limitations */}
           <Card className="bg-yellow-500/10 border-yellow-500/50 mb-16">
             <CardHeader>
               <CardTitle className="text-yellow-400 flex items-center gap-3">
                 <AlertTriangle className="h-6 w-6" />
-                Important Limitations & Disclaimers
+                Service Limitations & Proper Use Guidelines
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4 text-gray-300">
                 <div>
-                  <h4 className="font-semibold text-yellow-400 mb-2">Database Coverage Limitations</h4>
-                  <p className="text-sm">
-                    While SafeOrStolen accesses comprehensive databases, no system captures 100% of theft incidents. 
-                    Some thefts may not be reported to police, may be reported to jurisdictions not in our network, 
-                    or may have data entry delays.
-                  </p>
+                  <h4 className="font-semibold text-yellow-400 mb-2">What This Service IS</h4>
+                  <ul className="text-sm space-y-1 ml-4">
+                    <li>• A risk assessment tool that checks available databases</li>
+                    <li>• An additional layer of due diligence for informed buyers</li>
+                    <li>• A starting point for theft verification, not the final word</li>
+                    <li>• A service that clearly discloses its data sources and limitations</li>
+                  </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-yellow-400 mb-2">Verification Tool Only</h4>
-                  <p className="text-sm">
-                    SafeOrStolen is a risk assessment tool and should not be your only verification method. 
-                    For high-value purchases, always request additional documentation and consider independent appraisals.
-                  </p>
+                  <h4 className="font-semibold text-yellow-400 mb-2">What This Service IS NOT</h4>
+                  <ul className="text-sm space-y-1 ml-4">
+                    <li>• An official law enforcement verification system</li>
+                    <li>• A guarantee that items marked "SAFE" are not stolen</li>
+                    <li>• A replacement for proper documentation and receipts</li>
+                    <li>• Legal protection against purchasing stolen goods</li>
+                  </ul>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-yellow-400 mb-2">Legal Responsibilities</h4>
-                  <p className="text-sm">
-                    If our system indicates an item may be stolen, you are responsible for taking appropriate action, 
-                    including reporting to law enforcement. SafeOrStolen cannot guarantee legal protection for any transaction.
-                  </p>
+                  <h4 className="font-semibold text-yellow-400 mb-2">Recommended Use Cases</h4>
+                  <ul className="text-sm space-y-1 ml-4">
+                    <li>• Quick initial screening of serial numbers before purchase</li>
+                    <li>• Additional verification alongside official methods</li>
+                    <li>• Risk assessment for lower-value secondhand purchases</li>
+                    <li>• Educational tool about theft verification importance</li>
+                  </ul>
                 </div>
               </div>
             </CardContent>

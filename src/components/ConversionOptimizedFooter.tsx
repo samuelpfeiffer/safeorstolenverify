@@ -107,6 +107,8 @@ export const ConversionOptimizedFooter: React.FC = () => {
               <ul className="space-y-2 text-gray-400">
                 <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
+                <li><Link to="/service-limitations" className="hover:text-white transition-colors">Service Limitations</Link></li>
+                <li><Link to="/transparency" className="hover:text-white transition-colors">Transparency Report</Link></li>
                 <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                 <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>

@@ -37,9 +37,28 @@ const Hero = () => {
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
             Verify any second-hand item in seconds. Protect your money, your business, and your peace of mind.
           </p>
-          <p className="text-base md:text-lg text-sos-lime font-semibold mb-8">
+          <p className="text-base md:text-lg text-sos-lime font-semibold mb-6">
             Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses.
           </p>
+          
+          {/* Service Disclaimer */}
+          <div className="max-w-3xl mx-auto mb-8">
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+              <div className="flex items-center gap-2 text-yellow-400 mb-2">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm font-semibold">Risk Assessment Tool</span>
+              </div>
+              <p className="text-yellow-200 text-sm">
+                SafeOrStolen helps assess theft risk but should be used alongside other verification methods. 
+                Always request documentation for valuable purchases. 
+                <Link to="/transparency" className="text-yellow-400 hover:underline ml-1">
+                  See limitations →
+                </Link>
+              </p>
+            </div>
+          </div>
           
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
