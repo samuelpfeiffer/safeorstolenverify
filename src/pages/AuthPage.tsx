@@ -9,6 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TermsAndConditions } from '@/components/auth/TermsAndConditions';
+import { SignUpWelcome } from '@/components/auth/SignUpWelcome';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
@@ -25,7 +26,7 @@ const signUpSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
 });
 
-type AuthStep = 'auth' | 'terms';
+type AuthStep = 'auth' | 'terms' | 'welcome';
 
 const AuthPage = () => {
   const [searchParams] = useSearchParams();
@@ -117,23 +118,8 @@ const AuthPage = () => {
         return;
       }
 
-      toast({
-        title: "Welcome!",
-        description: "Your account has been created successfully!",
-      });
-
-      // Check if user was trying to subscribe before authentication
-      const pendingSubscription = localStorage.getItem('pendingSubscription');
-      const redirectParam = searchParams.get('redirect');
-      
-      if (pendingSubscription && redirectParam === 'subscription') {
-        // Clear the stored subscription intent
-        localStorage.removeItem('pendingSubscription');
-        // Redirect to pricing page with the subscription tier
-        navigate(`/pricing?subscribe=${pendingSubscription}`);
-      } else {
-        navigate('/dashboard');
-      }
+      // Move to welcome step instead of redirecting immediately
+      setStep('welcome');
     } catch (error) {
       console.error('Terms acceptance error:', error);
       toast({
@@ -141,6 +127,21 @@ const AuthPage = () => {
         description: "Failed to complete registration. Please try again.",
         variant: "destructive",
       });
+    }
+  };
+
+  const handleWelcomeContinue = () => {
+    // Check if user was trying to subscribe before authentication
+    const pendingSubscription = localStorage.getItem('pendingSubscription');
+    const redirectParam = searchParams.get('redirect');
+    
+    if (pendingSubscription && redirectParam === 'subscription') {
+      // Clear the stored subscription intent
+      localStorage.removeItem('pendingSubscription');
+      // Redirect to pricing page with the subscription tier
+      navigate(`/pricing?subscribe=${pendingSubscription}`);
+    } else {
+      navigate('/dashboard');
     }
   };
 
@@ -159,6 +160,15 @@ const AuthPage = () => {
           isLoading={loading}
         />
       </div>
+    );
+  }
+
+  if (step === 'welcome') {
+    return (
+      <SignUpWelcome
+        onContinue={handleWelcomeContinue}
+        isLoading={loading}
+      />
     );
   }
 
