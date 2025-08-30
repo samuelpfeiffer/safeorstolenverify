@@ -5,8 +5,11 @@
 http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
 http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
-# Force www to non-www (already HTTPS)  
+# Force www to non-www (already HTTPS) - CRITICAL FOR GOOGLE INDEXING  
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
+
+# Ensure trailing slash consistency for canonical URLs
+https://safeorstolen.com/*/ https://safeorstolen.com/:splat 301!
 
 # Specific redirects for pages that were returning 404s
 /terms /terms-of-service 301

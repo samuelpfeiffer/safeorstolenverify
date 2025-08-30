@@ -12,6 +12,9 @@ import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
+import { DefaultSEO } from '@/components/seo/DefaultSEO';
+import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
+import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -50,6 +53,9 @@ export const AppRoot: React.FC = () => {
               <ThemeProvider>
                 <Router>
                   <div className="min-h-screen bg-sos text-white antialiased">
+                    <MetaRedirectHandler />
+                    <CanonicalRedirectFix />
+                    <DefaultSEO />
                     <GlobalAnalytics />
                     <GlobalPerformanceOptimizer />
                     <Suspense fallback={<AppLoadingScreen />}>
