@@ -22,11 +22,33 @@ serve(async (req) => {
   try {
     logStep("Function started");
 
-    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeKey || !stripeKey.startsWith("sk_live_")) {
-      throw new Error("STRIPE_SECRET_KEY is missing or not a live key (sk_live_...)");
+    const getStripeKey = () => {
+      // Try multiple possible secret names to avoid config mismatch
+      const candidates = [
+        "last stripe secret key",
+        "STRIPE_SECRET_KEY",
+        "stripe secret server key", 
+        "Stripe Secret Key",
+        "stripe secret key"
+      ];
+
+      logStep("Looking for live Stripe key...");
+      
+      for (const name of candidates) {
+        const key = Deno.env.get(name);
+        logStep(`Checking ${name}: ${key ? 'FOUND' : 'MISSING'}`);
+        if (key && key.trim().startsWith("sk_live_")) {
+          logStep(`Using live key from: ${name}`);
+          return key.trim();
+        }
+      }
+      return null;
+    };
+
+    const stripeKey = getStripeKey();
+    if (!stripeKey) {
+      throw new Error("Live Stripe secret key not found. Please configure a live key (sk_live_...) in your Supabase secrets.");
     }
-    logStep("Stripe key verified", { secretName: "STRIPE_SECRET_KEY" });
 
     // Initialize Supabase client with the service role key
     const supabaseClient = createClient(

@@ -17,9 +17,24 @@ serve(async (req) => {
   try {
     // Live Mode Stripe secret key validation
     const getStripeKey = () => {
-      const key = Deno.env.get("STRIPE_SECRET_KEY");
-      if (key && key.startsWith("sk_live_")) {
-        return key;
+      // Try multiple possible secret names to avoid config mismatch
+      const candidates = [
+        "last stripe secret key",
+        "STRIPE_SECRET_KEY", 
+        "stripe secret server key",
+        "Stripe Secret Key",
+        "stripe secret key"
+      ];
+
+      console.log("[CHECK-SUBSCRIPTION] Looking for live Stripe key...");
+      
+      for (const name of candidates) {
+        const key = Deno.env.get(name);
+        console.log(`[CHECK-SUBSCRIPTION] Checking ${name}: ${key ? 'FOUND' : 'MISSING'}`);
+        if (key && key.trim().startsWith("sk_live_")) {
+          console.log(`[CHECK-SUBSCRIPTION] Using live key from: ${name}`);
+          return key.trim();
+        }
       }
       return null;
     };
@@ -109,22 +124,20 @@ serve(async (req) => {
       const priceId = subscription.items.data[0].price.id;
       let subscriptionTier = "Basic"; // Default fallback
       
-      // Map actual Stripe Price IDs to subscription tiers
+      // Map actual live Stripe Price IDs to subscription tiers
       switch (priceId) {
-        case "price_1Rz7rm2eGaMDLFHojH9Vch1Y":
-          subscriptionTier = "Basic";
+        case "price_1S0uGQGxnZLw8J7OOgm02vdB":
+          subscriptionTier = "Smart Buyer";
           break;
-        case "price_1Rz7xu2eGaMDLFHoqGT0Pyjk":
-          subscriptionTier = "Premium";
+        case "price_1S0uGiGxnZLw8J7OQEwssbK7":
+          subscriptionTier = "Savvy Shopper";
           break;
-        case "price_1Rz80X2eGaMDLFHozeZyChte":
-          subscriptionTier = "Enterprise";
+        case "price_1S0uJsGxnZLw8J7OfU7XKMhV":
+          subscriptionTier = "Business Pro";
           break;
-        case "price_1Rz83i2eGaMDLFHonAmu86lS":
-          subscriptionTier = "Report";
-          break;
+        // Fallback for any other price IDs
         default:
-          subscriptionTier = "Basic";
+          subscriptionTier = "Smart Buyer";
       }
 
       return new Response(

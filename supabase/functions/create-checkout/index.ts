@@ -52,12 +52,12 @@ serve(async (req) => {
     const getStripeKey = () => {
       // Try multiple possible secret names to avoid config mismatch
       const candidates = [
+        "last stripe secret key",
         "STRIPE_SECRET_KEY",
-        "STRIPE_LIVE_SECRET_KEY",
+        "stripe secret server key", 
         "Stripe Secret Key",
         "stripe secret key",
-        "stripe secret server key",
-        "last stripe secret key",
+        "STRIPE_LIVE_SECRET_KEY"
       ] as const;
 
       let selected: string | null = null;
@@ -118,9 +118,9 @@ serve(async (req) => {
       
       // Map plan names to search terms for live Stripe products
       const planNameMap: Record<string, string[]> = {
-        'basic': ['basic plan', 'basic', 'starter'],
-        'premium': ['premium plan', 'premium', 'pro'],
-        'enterprise': ['enterprise plan', 'enterprise', 'business'],
+        'basic': ['smart buyer', 'basic plan', 'basic', 'starter'],
+        'premium': ['savvy shopper', 'premium plan', 'premium', 'pro'],
+        'enterprise': ['business pro', 'enterprise plan', 'enterprise', 'business'],
         'report': ['certified stolen/legitimate report', 'report', 'single report']
       };
       
