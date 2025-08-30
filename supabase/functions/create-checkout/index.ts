@@ -50,20 +50,18 @@ serve(async (req) => {
 
     // Live Mode Stripe secret key validation with debug logging
     const getStripeKey = () => {
-      const key = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
-      console.log(`[CREATE-CHECKOUT] Using STRIPE_SECRET_KEY: ${key ? key.substring(0,8) + '...' : 'MISSING'}`);
+      const key = Deno.env.get("last stripe secret key")?.trim();
+      console.log(`[CREATE-CHECKOUT] Using Supabase secret "last stripe secret key": ${key ? key.substring(0,8) + '...' : 'MISSING'}`);
       if (key && key.startsWith("sk_live_")) return key;
       return null;
     };
-
     const stripeKey = getStripeKey();
     
     if (!stripeKey) {
-      const errorMsg = "Live mode requires a valid Stripe live secret key (sk_live_). Please configure STRIPE_SECRET_KEY in your Supabase secrets with your live key from the Stripe dashboard.";
+      const errorMsg = "Live mode requires a valid Stripe live secret key (sk_live_). Please configure the Supabase secret named 'last stripe secret key' with your live key from the Stripe dashboard.";
       console.log(`[CREATE-CHECKOUT] ERROR: ${errorMsg}`);
       throw new Error(errorMsg);
     }
-    
     const stripe = new Stripe(stripeKey, {
       apiVersion: "2023-10-16",
     });
