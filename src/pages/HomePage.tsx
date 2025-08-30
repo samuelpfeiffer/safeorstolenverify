@@ -1,6 +1,9 @@
 
 import React from 'react';
 import Hero from '@/components/Hero';
+import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
+import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
+import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 import Features from '@/components/Features';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
@@ -90,8 +93,11 @@ const HomePage = () => {
       <div className="min-h-screen">
         <ConversionTracker />
         <Hero />
+        <AudienceNavigation />
+        <ValuePropositionSections />
         <TrustIndicators />
         <TrustBadgeStrip />
+        <TrustBuildingFAQ />
         <Features />
         <TestimonialsSection />
         <FeaturedBlogSection />

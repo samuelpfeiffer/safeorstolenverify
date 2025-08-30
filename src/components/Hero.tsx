@@ -32,13 +32,13 @@ const Hero = () => {
             <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
           </a>
 
-          {/* Commercial Intent Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Don't Get Scammed. Verify Before You Buy.</h1>
+          {/* Universal Value Proposition Headline */}
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy, Sell, and Do Business with 100% Confidence</h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            Protect your money and avoid legal trouble. Check any item in seconds before purchasing from Facebook Marketplace, eBay, or Craigslist.
+            Verify any second-hand item in seconds. Protect your money, your business, and your peace of mind.
           </p>
           <p className="text-base md:text-lg text-sos-lime font-semibold mb-8">
-            Join thousands who refuse to buy stolen goods. Start your free verification now.
+            Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses.
           </p>
           
           {/* Dual CTA Buttons */}
@@ -55,7 +55,7 @@ const Hero = () => {
               }}
             >
               <Shield className="mr-2 h-5 w-5" />
-              Protect Your Purchase - Check Now
+              Check a Serial Number — It's Free
             </Button>
             <Button 
               size="lg" 
