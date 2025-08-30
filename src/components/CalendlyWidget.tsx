@@ -105,10 +105,10 @@ export const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({
               <Mail className="h-5 w-5 mx-auto mb-2 text-primary" />
               <p className="text-sm">Email us at:</p>
               <a 
-                href="mailto:partnerships@safeorstolen.com" 
+                href="mailto:support@safeorstolen.com" 
                 className="text-primary hover:underline font-medium"
               >
-                partnerships@safeorstolen.com
+                support@safeorstolen.com
               </a>
             </div>
             <div>

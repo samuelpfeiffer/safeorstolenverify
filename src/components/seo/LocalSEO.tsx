@@ -9,7 +9,7 @@ export const LocalSEO: React.FC = () => {
     "description": "Stolen goods verification service helping consumers check IMEI, VIN, and serial numbers before purchasing secondhand items",
     "url": "https://safeorstolen.com",
     "telephone": "+1-206-249-2203",
-    "email": "safeorstolenmail@gmail.com",
+    "email": "support@safeorstolen.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Phoenix",

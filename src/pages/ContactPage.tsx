@@ -64,7 +64,7 @@ const ContactPage = () => {
     <div className="bg-sos text-white min-h-screen">
       <PageSEO
         title="Contact Safe or Stolen - Support, Partnerships & Media Inquiries"
-        description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: safeorstolenmail@gmail.com"
+        description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: support@safeorstolen.com"
         keywords="contact safe or stolen, customer support, stolen goods verification support, IMEI check help, VIN verification support, partnership inquiries, media contact"
         structuredData={[localBusinessSchema, breadcrumbSchema]}
       />
@@ -105,7 +105,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <h3 className="text-lg font-medium">Email Us</h3>
-                <p className="text-gray-300">safeorstolenmail@gmail.com</p>
+                <p className="text-gray-300">support@safeorstolen.com</p>
               </div>
             </div>
             
