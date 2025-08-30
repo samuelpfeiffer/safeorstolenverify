@@ -48,9 +48,13 @@ serve(async (req) => {
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
-    // Live Mode Stripe secret key validation
+    // Live Mode Stripe secret key validation with debug logging
     const getStripeKey = () => {
       const key = Deno.env.get("STRIPE_SECRET_KEY");
+      console.log(`[CREATE-CHECKOUT] STRIPE_SECRET_KEY found: ${key ? 'YES' : 'NO'}`);
+      console.log(`[CREATE-CHECKOUT] Key starts with sk_live_: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
+      console.log(`[CREATE-CHECKOUT] Key prefix: ${key?.substring(0, 8)}...`);
+      
       if (key && key.startsWith("sk_live_")) {
         return key;
       }
@@ -61,6 +65,7 @@ serve(async (req) => {
     
     if (!stripeKey) {
       const errorMsg = "Live mode requires a valid Stripe live secret key (sk_live_). Please configure STRIPE_SECRET_KEY in your Supabase secrets with your live key from the Stripe dashboard.";
+      console.log(`[CREATE-CHECKOUT] ERROR: ${errorMsg}`);
       throw new Error(errorMsg);
     }
     
