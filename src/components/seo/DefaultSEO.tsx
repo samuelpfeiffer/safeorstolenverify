@@ -37,6 +37,7 @@ export const DefaultSEO: React.FC = () => {
     <Helmet>
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:160" />
       <link rel="canonical" href={canonical} />
+      <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />
       <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
     </Helmet>
