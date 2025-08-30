@@ -465,6 +465,34 @@ const DashboardPage = () => {
             )}
           </div>
 
+          {/* Quick Access Tools */}
+          <div className="flex justify-center gap-4 mb-6">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => navigate('/firearms-check')}
+              className="bg-red-500/10 border-red-500/20 text-red-600 hover:bg-red-500/20"
+            >
+              🔫 HotGunz Firearms Check
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => navigate('/check-phone')}
+              className="bg-blue-500/10 border-blue-500/20 text-blue-600 hover:bg-blue-500/20"
+            >
+              📱 IMEI Phone Check
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => navigate('/check-car')}
+              className="bg-green-500/10 border-green-500/20 text-green-600 hover:bg-green-500/20"
+            >
+              🚗 VIN Car Check
+            </Button>
+          </div>
+
           {activeTab === 'verification' && (
             <div className="mt-4">
               <VerificationSection prePopulatedData={prePopulatedData} />
