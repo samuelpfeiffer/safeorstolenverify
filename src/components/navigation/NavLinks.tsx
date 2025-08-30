@@ -82,6 +82,14 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
         Social Monitoring
       </Link>
       <Link 
+        to="/community-watch" 
+        className={cn("transition-colors", 
+          currentPath === "/community-watch" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+        )}
+      >
+        Community Watch
+      </Link>
+      <Link 
         to="/contact" 
         className={cn("transition-colors", 
           currentPath === "/contact" ? "text-sos-orange" : "text-white hover:text-sos-orange"

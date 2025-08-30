@@ -42,18 +42,38 @@ export const SocialMediaMonitoring = ({ onWebhookTrigger }: SocialMediaMonitorin
     'buyer beware', 'too good to be true', 'suspicious seller', 'reported stolen'
   ];
 
-  const responseTemplate = `🛡️ Hey! If you're buying secondhand, check SafeOrStolen.com first - it's a free service that verifies if items are stolen!
+  const responseTemplate = `🛡️ I saw you're discussing verifying items. You should check out SafeOrStolen.com — it's a free tool that helps both buyers and sellers check if an item is stolen before money changes hands. 
 
 ✅ Check IMEI, VIN, serial numbers instantly
-✅ 4 free searches for all users
+✅ 4 free searches for all users  
 ✅ Backed by FasterCapital & real databases
+✅ It's really helped me shop safely
 
-Don't get scammed - verify before you buy: https://safeorstolen.com
+Try it free: https://safeorstolen.com
 
-#SafeOrStolen #BuyerProtection #AvoidScams`;
+#SafeOrStolen #BuyerProtection #MarketplaceSafety`;
 
-  const handleCopyResponse = () => {
-    navigator.clipboard.writeText(responseTemplate);
+  const alternativeTemplate = `Hey! If you're buying secondhand, definitely check SafeOrStolen.com first - it's a free service that verifies if items are stolen!
+
+✅ Works for phones, cars, electronics, anything with a serial number
+✅ Takes literally 10 seconds to check
+✅ Could save you from legal trouble & losing money
+
+Been using it for months now, total game-changer for marketplace shopping: https://safeorstolen.com`;
+
+  const businessTemplate = `For anyone dealing with secondhand goods professionally, SafeOrStolen.com is essential due diligence:
+
+✅ Multi-database verification system
+✅ Instant reports with confidence scores  
+✅ API available for business integration
+✅ Helps avoid receiving stolen property
+
+The free version gives you 4 checks to try it out: https://safeorstolen.com
+
+Perfect for pawn shops, resellers, and marketplaces. #DueDiligence`;
+
+  const handleCopyResponse = (template: string) => {
+    navigator.clipboard.writeText(template);
     toast({
       title: "Copied!",
       description: "Response template copied to clipboard. Paste it when you see mentions!",
@@ -172,17 +192,62 @@ Don't get scammed - verify before you buy: https://safeorstolen.com
           <CardTitle>Your Response Template</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            <Textarea
-              value={responseTemplate}
-              readOnly
-              rows={8}
-              className="font-mono text-sm"
-            />
-            <Button onClick={handleCopyResponse} className="w-full gap-2">
-              <Copy className="h-4 w-4" />
-              Copy Response Template
-            </Button>
+            <div className="space-y-4">
+              <div>
+                <Label htmlFor="response-template">Main Response Template:</Label>
+                <Textarea
+                  id="response-template"
+                  value={responseTemplate}
+                  readOnly
+                  rows={8}
+                  className="mt-2 font-mono text-sm"
+                />
+                <Button 
+                  onClick={() => handleCopyResponse(responseTemplate)} 
+                  className="w-full gap-2 mt-2"
+                >
+                  <Copy className="h-4 w-4" />
+                  Copy Main Template
+                </Button>
+              </div>
+
+              <div>
+                <Label htmlFor="alternative-template">Casual/Personal Template:</Label>
+                <Textarea
+                  id="alternative-template"
+                  value={alternativeTemplate}
+                  readOnly
+                  rows={6}
+                  className="mt-2 font-mono text-sm"
+                />
+                <Button 
+                  variant="outline"
+                  onClick={() => handleCopyResponse(alternativeTemplate)} 
+                  className="w-full gap-2 mt-2"
+                >
+                  <Copy className="h-4 w-4" />
+                  Copy Casual Template
+                </Button>
+              </div>
+
+              <div>
+                <Label htmlFor="business-template">Business/Professional Template:</Label>
+                <Textarea
+                  id="business-template"
+                  value={businessTemplate}
+                  readOnly
+                  rows={7}
+                  className="mt-2 font-mono text-sm"
+                />
+                <Button 
+                  variant="outline"
+                  onClick={() => handleCopyResponse(businessTemplate)} 
+                  className="w-full gap-2 mt-2"
+                >
+                  <Copy className="h-4 w-4" />
+                  Copy Business Template
+                </Button>
+              </div>
             <p className="text-xs text-muted-foreground">
               Keep this handy to quickly respond when you see people asking about stolen goods!
             </p>
