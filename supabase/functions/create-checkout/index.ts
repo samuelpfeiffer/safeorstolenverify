@@ -66,7 +66,7 @@ serve(async (req) => {
         const raw = Deno.env.get(name as unknown as string);
         const val = raw?.trim();
         console.log(`[CREATE-CHECKOUT] Checking secret ${name}: ${val ? 'FOUND' : 'MISSING'}`);
-        if (!selected && val && val.trim().startsWith("sk_live_")) {
+        if (!selected && val && val.trim().startsWith("sk_")) {
           selected = val.trim();
           console.log(`[CREATE-CHECKOUT] Using key from ${name}, prefix: ${selected.substring(0, 8)}...`);
           break;
