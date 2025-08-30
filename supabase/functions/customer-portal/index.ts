@@ -22,7 +22,30 @@ serve(async (req) => {
   try {
     logStep("Function started");
 
-    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+    const candidates = [
+      "STRIPE_SECRET_KEY",
+      "stripe secret server key",
+      "stripe secret key",
+      "Stripe Secret Key",
+      "last stripe secret key",
+      "stripe secret key2",
+      "stripe secret key3",
+      "stripe keyAug28",
+      "stripe august28515",
+      "STRIPE_SECRET_SERVER_KEY",
+      "STRIPE_LIVE_SECRET_KEY",
+      "STRIPE_LIVE_KEY",
+      "STRIPE_KEY",
+    ];
+    let stripeKey: string | null = null;
+    for (const name of candidates) {
+      const key = Deno.env.get(name);
+      if (key && key.startsWith("sk_live_")) {
+        stripeKey = key;
+        logStep("Using Stripe key", { secretName: name });
+        break;
+      }
+    }
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
     logStep("Stripe key verified");
 

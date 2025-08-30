@@ -12,6 +12,7 @@ import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
+import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -77,8 +78,8 @@ const PricingPage = () => {
 
       setStripeCheckoutUrl(checkoutUrl);
       
-      // Direct navigation to Stripe - more reliable than new tab
-      window.location.href = checkoutUrl;
+      // Use iframe-safe navigation to ensure redirect works in all environments
+      navigateOutOfIframe(checkoutUrl);
       
       toast({ 
         title: 'Redirecting to payment...', 
