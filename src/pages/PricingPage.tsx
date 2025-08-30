@@ -101,10 +101,13 @@ const PricingPage = () => {
       console.error('Subscription error:', error);
       // Close the pre-opened tab on failure to avoid a blank tab
       if (pendingTab && !pendingTab.closed) pendingTab.close();
-      // Do not lock the UI; just show a toast so users can retry
+      
+      const errorMessage = error?.message || 'Failed to start subscription. Please try again.';
+      console.error('Detailed error:', { error, message: errorMessage });
+      
       toast({
-        title: 'Error',
-        description: error?.message || 'Failed to start subscription. Please try again.',
+        title: 'Subscription Error',
+        description: errorMessage,
         variant: 'destructive',
       });
     } finally {

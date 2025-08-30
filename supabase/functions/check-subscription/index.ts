@@ -15,71 +15,44 @@ serve(async (req) => {
   }
 
   try {
-    console.log("[CHECK-SUBSCRIPTION] Function started v2", { ts: Date.now() });
+    console.log("[CHECK-SUBSCRIPTION] Function started v3 - Live Mode", { ts: Date.now() });
     
-    // Robust Stripe secret key resolution
+    // Live Mode Stripe secret key validation
     const getStripeKey = () => {
-      console.log("[CHECK-SUBSCRIPTION] Starting Stripe key resolution");
+      console.log("[CHECK-SUBSCRIPTION] Starting live mode Stripe key resolution");
       
-      // First, try the standard STRIPE_SECRET_KEY
-      const standardKey = Deno.env.get("STRIPE_SECRET_KEY");
-      if (standardKey && standardKey.startsWith("sk_")) {
-        console.log("[CHECK-SUBSCRIPTION] Found valid secret key", { 
-          source: "STRIPE_SECRET_KEY", 
-          prefix: standardKey.substring(0, 7),
-          keyType: standardKey.startsWith("sk_live_") ? "live" : "test"
+      const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+      if (!stripeKey) {
+        console.error("[CHECK-SUBSCRIPTION] STRIPE_SECRET_KEY not found in environment");
+        return null;
+      }
+      
+      if (!stripeKey.startsWith("sk_live_")) {
+        console.error("[CHECK-SUBSCRIPTION] STRIPE_SECRET_KEY must be a live key (sk_live_) for production mode", { 
+          prefix: stripeKey.substring(0, 7),
+          note: "Test keys (sk_test_) are not allowed in live mode"
         });
-        return standardKey;
+        return null;
       }
       
-      console.log("[CHECK-SUBSCRIPTION] Standard STRIPE_SECRET_KEY not found or invalid, scanning all environment variables");
-      
-      // Get all environment variables and look for Stripe-related ones
-      const allEnvVars = Deno.env.toObject();
-      const stripeEnvNames = Object.keys(allEnvVars).filter(key => 
-        key.toLowerCase().includes('stripe')
-      );
-      
-      console.log("[CHECK-SUBSCRIPTION] Available Stripe environment variables", { names: stripeEnvNames });
-      
-      // Look for any variable with a valid secret key value
-      for (const envName of stripeEnvNames) {
-        const value = allEnvVars[envName];
-        if (value && value.startsWith("sk_")) {
-          console.log("[CHECK-SUBSCRIPTION] Found valid Stripe secret key", { 
-            source: envName, 
-            prefix: value.substring(0, 7),
-            keyType: value.startsWith("sk_live_") ? "live" : "test"
-          });
-          return value;
-        }
-        
-        if (value) {
-          const prefix = value.substring(0, 3);
-          console.log("[CHECK-SUBSCRIPTION] Found Stripe key but invalid type", { 
-            source: envName, 
-            prefix: prefix,
-            expected: "sk_",
-            note: prefix === "pk_" ? "This is a publishable key (not usable for server-side)" : 
-                  prefix === "rk_" ? "This is a restricted key (not usable for server-side)" : "Unknown key type"
-          });
-        }
-      }
-      
-      console.log("[CHECK-SUBSCRIPTION] No valid Stripe secret key found");
-      return null;
+      console.log("[CHECK-SUBSCRIPTION] Valid live Stripe secret key found", { 
+        source: "STRIPE_SECRET_KEY", 
+        prefix: "sk_live_",
+        keyType: "live"
+      });
+      return stripeKey;
     };
     
     const stripeSecretKey = getStripeKey();
     if (!stripeSecretKey) {
-      console.error("[CHECK-SUBSCRIPTION] ERROR - Stripe secret key not found in environment");
+      console.error("[CHECK-SUBSCRIPTION] ERROR - Live mode requires a valid Stripe live secret key (sk_live_)");
       return new Response(
-        JSON.stringify({ error: "Stripe configuration missing" }),
+        JSON.stringify({ error: "Stripe live key configuration missing" }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    console.log("[CHECK-SUBSCRIPTION] Stripe key verified");
+    console.log("[CHECK-SUBSCRIPTION] Stripe key verified for live mode");
 
     // Get the authorization header from the request
     const authHeader = req.headers.get("Authorization");
@@ -120,7 +93,7 @@ serve(async (req) => {
 
     console.log("[CHECK-SUBSCRIPTION] User authenticated", { userId: user.id, email: user.email });
 
-    // Initialize Stripe with the secret key
+    // Initialize Stripe with the live secret key
     const stripe = new Stripe(stripeSecretKey, {
       apiVersion: "2023-10-16",
     });

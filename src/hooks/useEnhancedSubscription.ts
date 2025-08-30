@@ -151,14 +151,17 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
     } catch (error: any) {
       console.error("Failed to create checkout:", error);
       if (isMountedRef.current) {
-        setError(error.message || 'Failed to create checkout');
+        const errorMessage = error?.message || 'Failed to create checkout session';
+        setError(errorMessage);
         toast({
-          title: "Checkout error",
-          description: error.message || "Failed to create checkout session",
+          title: "Checkout Error",
+          description: errorMessage.includes('Stripe live key') 
+            ? "Stripe configuration issue. Please contact support."
+            : errorMessage,
           variant: "destructive",
         });
       }
-      return null;
+      throw error; // Re-throw so PricingPage can handle it
     } finally {
       if (isMountedRef.current) {
         setIsLoading(false);

@@ -52,64 +52,37 @@ serve(async (req) => {
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
-    // Robust Stripe secret key resolution
+    // Live Mode Stripe secret key validation
     const getStripeKey = () => {
-      console.log("[CREATE-CHECKOUT] Starting Stripe key resolution");
+      console.log("[CREATE-CHECKOUT] Starting live mode Stripe key resolution");
       
-      // First, try the standard STRIPE_SECRET_KEY
-      const standardKey = Deno.env.get("STRIPE_SECRET_KEY");
-      if (standardKey && standardKey.startsWith("sk_")) {
-        console.log("[CREATE-CHECKOUT] Found valid secret key", { 
-          source: "STRIPE_SECRET_KEY", 
-          prefix: standardKey.substring(0, 7),
-          keyType: standardKey.startsWith("sk_live_") ? "live" : "test"
+      const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+      if (!stripeKey) {
+        console.error("[CREATE-CHECKOUT] STRIPE_SECRET_KEY not found in environment");
+        return null;
+      }
+      
+      if (!stripeKey.startsWith("sk_live_")) {
+        console.error("[CREATE-CHECKOUT] STRIPE_SECRET_KEY must be a live key (sk_live_) for production mode", { 
+          prefix: stripeKey.substring(0, 7),
+          note: "Test keys (sk_test_) are not allowed in live mode"
         });
-        return standardKey;
+        return null;
       }
       
-      console.log("[CREATE-CHECKOUT] Standard STRIPE_SECRET_KEY not found or invalid, scanning all environment variables");
-      
-      // Get all environment variables and look for Stripe-related ones
-      const allEnvVars = Deno.env.toObject();
-      const stripeEnvNames = Object.keys(allEnvVars).filter(key => 
-        key.toLowerCase().includes('stripe')
-      );
-      
-      console.log("[CREATE-CHECKOUT] Available Stripe environment variables", { names: stripeEnvNames });
-      
-      // Look for any variable with a valid secret key value
-      for (const envName of stripeEnvNames) {
-        const value = allEnvVars[envName];
-        if (value && value.startsWith("sk_")) {
-          console.log("[CREATE-CHECKOUT] Found valid Stripe secret key", { 
-            source: envName, 
-            prefix: value.substring(0, 7),
-            keyType: value.startsWith("sk_live_") ? "live" : "test"
-          });
-          return value;
-        }
-        
-        if (value) {
-          const prefix = value.substring(0, 3);
-          console.log("[CREATE-CHECKOUT] Found Stripe key but invalid type", { 
-            source: envName, 
-            prefix: prefix,
-            expected: "sk_",
-            note: prefix === "pk_" ? "This is a publishable key (not usable for server-side)" : 
-                  prefix === "rk_" ? "This is a restricted key (not usable for server-side)" : "Unknown key type"
-          });
-        }
-      }
-      
-      console.log("[CREATE-CHECKOUT] No valid Stripe secret key found");
-      return null;
+      console.log("[CREATE-CHECKOUT] Valid live Stripe secret key found", { 
+        source: "STRIPE_SECRET_KEY", 
+        prefix: "sk_live_",
+        keyType: "live"
+      });
+      return stripeKey;
     };
 
     const stripeKey = getStripeKey();
-    console.log("[CREATE-CHECKOUT] Stripe key available:", stripeKey ? "Yes" : "No");
+    console.log("[CREATE-CHECKOUT] Stripe key available:", stripeKey ? "Yes (Live Mode)" : "No");
     
     if (!stripeKey) {
-      const errorMsg = "No valid Stripe secret key found. Please ensure you have a secret key (starting with sk_) configured in your Supabase secrets.";
+      const errorMsg = "Live mode requires a valid Stripe live secret key (sk_live_). Please configure STRIPE_SECRET_KEY in your Supabase secrets with your live key from the Stripe dashboard.";
       console.error("[CREATE-CHECKOUT] ERROR:", errorMsg);
       throw new Error(errorMsg);
     }
@@ -128,24 +101,24 @@ serve(async (req) => {
       console.log("No existing Stripe customer found, will create new one");
     }
 
-    // Helper: resolve a valid Stripe Price ID
+    // Helper: resolve a valid Stripe Price ID for live mode
     const resolvePriceId = async (maybePriceId?: string, maybePlanName?: string): Promise<string> => {
-      console.log(`Resolving price ID: ${maybePriceId}, Plan name: ${maybePlanName}`);
+      console.log(`[CREATE-CHECKOUT] Resolving price ID for live mode: ${maybePriceId}, Plan name: ${maybePlanName}`);
       
       // Try direct retrieve first if an ID was sent
       if (maybePriceId) {
         try {
           const p = await stripe.prices.retrieve(maybePriceId);
-          if (p && p.id) {
-            console.log(`Direct price ID lookup successful: ${p.id}`);
+          if (p && p.id && p.active) {
+            console.log(`[CREATE-CHECKOUT] Direct price ID lookup successful: ${p.id}`);
             return p.id;
           }
-        } catch (_e) {
-          console.log(`Price ID ${maybePriceId} not found, trying to match by name...`);
+        } catch (e) {
+          console.log(`[CREATE-CHECKOUT] Price ID ${maybePriceId} not found or inactive, trying plan name...`);
         }
       }
       
-      // Map common plan names to search for in Stripe
+      // Map plan names to search terms for live Stripe products
       const planNameMap: Record<string, string[]> = {
         'basic': ['basic plan', 'basic', 'starter'],
         'premium': ['premium plan', 'premium', 'pro'],
@@ -153,26 +126,15 @@ serve(async (req) => {
         'report': ['certified stolen/legitimate report', 'report', 'single report']
       };
       
-      // Determine search terms based on price or plan name
       let searchTerms: string[] = [];
       if (maybePlanName) {
         const normalizedName = maybePlanName.toLowerCase();
-        searchTerms = planNameMap[normalizedName] || [normalizedName];
-      } else if (maybePriceId) {
-        // Try to infer plan type from existing price IDs
-        if (maybePriceId.includes('basic') || maybePriceId === 'price_1Rz7rm2eGaMDLFHojH9Vch1Y') {
-          searchTerms = planNameMap.basic;
-        } else if (maybePriceId.includes('premium') || maybePriceId === 'price_1Rz7xu2eGaMDLFHoqGT0Pyjk') {
-          searchTerms = planNameMap.premium;
-        } else if (maybePriceId.includes('enterprise') || maybePriceId === 'price_1Rz80X2eGaMDLFHozeZyChte') {
-          searchTerms = planNameMap.enterprise;
-        } else if (maybePriceId.includes('report') || maybePriceId === 'price_1Rz83i2eGaMDLFHonAmu86lS') {
-          searchTerms = planNameMap.report;
-        }
+        const planKey = Object.keys(planNameMap).find(key => normalizedName.includes(key));
+        searchTerms = planKey ? planNameMap[planKey] : [normalizedName];
       }
       
       if (searchTerms.length > 0) {
-        console.log(`Searching for prices matching: ${searchTerms.join(', ')}`);
+        console.log(`[CREATE-CHECKOUT] Searching live Stripe for prices matching: ${searchTerms.join(', ')}`);
         const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
         const match = prices.data.find((p: any) => {
           const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) ? (p.product as any).name : undefined;
@@ -180,16 +142,16 @@ serve(async (req) => {
           
           return searchTerms.some(term => 
             productName.toLowerCase().includes(term) &&
-            (p.recurring?.interval === 'month' || p.recurring?.interval === 'day')
+            (p.recurring?.interval === 'month' || p.type === 'one_time')
           );
         });
         if (match) {
-          console.log(`Found matching price: ${match.id} for plan: ${searchTerms[0]}`);
+          console.log(`[CREATE-CHECKOUT] Found matching live price: ${match.id} for plan: ${searchTerms[0]}`);
           return match.id;
         }
       }
       
-      throw new Error(`Unable to resolve a valid Stripe price. Please ensure you have products named: "Basic Plan", "Premium Plan", "Enterprise Plan", or "Certified Stolen/Legitimate Report" in your Stripe dashboard.`);
+      throw new Error(`Unable to resolve a valid live Stripe price. Please ensure you have active products in your live Stripe dashboard named: "Basic Plan", "Premium Plan", "Enterprise Plan", or "Certified Stolen/Legitimate Report".`);
     };
 
     let sessionConfig: any = {
