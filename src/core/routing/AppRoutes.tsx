@@ -76,7 +76,7 @@ const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 
 // Additional verification pages
 const VerificationResultsPage = lazy(() => import('@/pages/VerificationResultsPage'));
-const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
+const SocialMediaMonitoringPage = lazy(() => import('@/pages/SocialMediaMonitoringPage'));
 const ProblemPage = lazy(() => import('@/pages/ProblemPage'));
 const LaunchTestPage = lazy(() => import('@/pages/LaunchTestPage'));
 const TestOneTimePaymentPage = lazy(() => import('@/pages/TestOneTimePaymentPage'));
@@ -191,7 +191,7 @@ export const AppRoutes: React.FC = () => {
           {/* Problem and verification result pages - PROTECTED */}
           <Route path="problem" element={<ProblemPage />} />
           <Route path="verification-results/:id" element={<ProtectedRoute><VerificationResultsPage /></ProtectedRoute>} />
-          <Route path="verification-success" element={<ProtectedRoute><VerificationSuccessPage /></ProtectedRoute>} />
+          <Route path="social-media-monitoring" element={<SocialMediaMonitoringPage />} />
           
           {/* Testing and development pages */}
           <Route path="launch-test" element={
