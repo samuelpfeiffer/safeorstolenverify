@@ -23,8 +23,8 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     ]
   },
   basic: {
-    name: 'Basic Plan',
-    price: 999, // $9.99 in cents
+    name: 'Smart Buyer',
+    price: 799, // $7.99 in cents
     interval: 'month',
     features: [
       '7-day free trial',
@@ -36,8 +36,8 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     stripePriceId: 'price_1Rz7rm2eGaMDLFHojH9Vch1Y'
   },
   premium: {
-    name: 'Premium Plan',
-    price: 1999, // $19.99 in cents
+    name: 'Savvy Shopper',
+    price: 1900, // $19.00 in cents
     interval: 'month',
     popular: true,
     features: [
@@ -51,8 +51,8 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     stripePriceId: 'price_1Rz7xu2eGaMDLFHoqGT0Pyjk'
   },
   enterprise: {
-    name: 'Enterprise Plan',
-    price: 4999, // $49.99 in cents
+    name: 'Business Pro',
+    price: 4995, // $49.95 in cents
     interval: 'month',
     features: [
       '7-day free trial',
