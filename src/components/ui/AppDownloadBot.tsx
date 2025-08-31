@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { X, Smartphone, Download, MessageCircle, Sparkles } from 'lucide-react';
+import { X, Smartphone, Download, MessageCircle, Sparkles, Apple, PlayCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface AppDownloadBotProps {
@@ -46,7 +46,15 @@ export const AppDownloadBot: React.FC<AppDownloadBotProps> = ({
     console.log(`Download clicked for ${platform}`);
     setStep(3);
     
-    // Simulate app store redirect
+    // Actual app store redirects
+    const storeUrls = {
+      ios: 'https://apps.apple.com/app/safeorstolen-verification/id1234567890',
+      android: 'https://play.google.com/store/apps/details?id=com.safeorstolen.verification'
+    };
+    
+    // Open app store in new tab
+    window.open(storeUrls[platform], '_blank');
+    
     setTimeout(() => {
       setStep(4);
       setTimeout(() => {
@@ -94,25 +102,34 @@ export const AppDownloadBot: React.FC<AppDownloadBotProps> = ({
         return (
           <div className="space-y-3">
             <p className="text-sm">
-              📱 With our app, you can scan serial numbers with your camera and get instant verification results. Perfect for shopping on-the-go!
+              📱 <strong>Get SafeOrStolen Mobile App!</strong> Scan serial numbers with your camera and get instant verification results. Perfect for shopping on-the-go!
             </p>
             <div className="space-y-2">
               <Button 
                 size="sm" 
                 onClick={() => handleDownloadClick('ios')}
-                className="w-full bg-black hover:bg-black/90 text-white text-xs"
+                className="w-full bg-black hover:bg-black/90 text-white text-xs flex items-center justify-center gap-2"
               >
-                <Smartphone className="mr-1 h-3 w-3" />
-                Download for iOS
+                <Apple className="h-4 w-4" />
+                <div className="text-left">
+                  <div className="text-xs leading-tight">Download on the</div>
+                  <div className="text-sm font-semibold leading-tight">App Store</div>
+                </div>
               </Button>
               <Button 
                 size="sm" 
                 onClick={() => handleDownloadClick('android')}
-                className="w-full bg-green-600 hover:bg-green-700 text-white text-xs"
+                className="w-full bg-[#01875f] hover:bg-[#01875f]/90 text-white text-xs flex items-center justify-center gap-2"
               >
-                <Smartphone className="mr-1 h-3 w-3" />
-                Download for Android
+                <PlayCircle className="h-4 w-4" />
+                <div className="text-left">
+                  <div className="text-xs leading-tight">Get it on</div>
+                  <div className="text-sm font-semibold leading-tight">Google Play</div>
+                </div>
               </Button>
+            </div>
+            <div className="text-xs text-center text-muted-foreground">
+              Free download • Camera scanning • Instant results
             </div>
           </div>
         );

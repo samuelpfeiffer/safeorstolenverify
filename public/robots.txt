@@ -4,12 +4,56 @@ Allow: /
 # Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
 
-# Prioritize key verification pages for crawling
-User-agent: Googlebot
+# Priority pages for all crawlers
+Allow: /dashboard
+Allow: /how-it-works
+Allow: /blog/
+Allow: /pricing
+Allow: /subscriptions
+Allow: /about
+Allow: /contact
+
+# High-value verification pages
 Allow: /verify
 Allow: /imei
 Allow: /vin
 Allow: /bulk
 Allow: /check-phone
 Allow: /check-car
+Allow: /check-bike
+Allow: /check-electronics
+Allow: /firearms-check
+
+# New technology blog posts - priority for indexing
+Allow: /blog/ai-verification-technology
+Allow: /blog/mobile-app-features
+Allow: /blog/enterprise-security
+Allow: /blog/industry-insights-2024
+Allow: /blog/database-integration
+
+# Disallow admin or sensitive areas
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /api/
+Disallow: /tmp/
+
+# Allow search engines to access static resources
+Allow: /assets/
+Allow: /images/
+Allow: /lovable-uploads/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Prioritize key verification pages for crawling
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Bing crawler
+User-agent: bingbot
 Crawl-delay: 1

@@ -98,7 +98,7 @@
   
   <url>
     <loc>https://safeorstolen.com/how-it-works</loc>
-    <lastmod>2025-08-28</lastmod>
+    <lastmod>2024-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -347,6 +347,42 @@
     <lastmod>2025-08-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+
+  <!-- NEW TECH BLOG POSTS - HIGH PRIORITY -->
+  <url>
+    <loc>https://safeorstolen.com/blog/ai-verification-technology</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/mobile-app-features</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/enterprise-security</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/industry-insights-2024</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/database-integration</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- New Blog Posts -->
