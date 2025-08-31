@@ -5,9 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { MarketDominanceSEO } from '@/components/seo/MarketDominanceSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
+import { RevenueEngine } from '@/components/monetization/RevenueEngine';
+import { IndustryLeadershipBadges } from '@/components/credibility/IndustryLeadershipBadges';
 import { AICapabilitiesStructuredData } from '@/components/seo/AICapabilitiesStructuredData';
 import { MobileAppStructuredData } from '@/components/seo/MobileAppStructuredData';
 import { GoogleMobilityManifesto } from '@/components/seo/GoogleMobilityManifesto';
@@ -113,6 +116,7 @@ const HomePage = () => {
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <GlobalSEOOptimization />
+      <MarketDominanceSEO />
       <AICapabilitiesStructuredData />
       <MobileAppStructuredData />
       <GoogleMobilityManifesto />
@@ -180,8 +184,28 @@ const HomePage = () => {
           <ValuePropositionSections />
         </Suspense>
         
-        {/* Industry Credentials Section */}
+        {/* Industry Leadership & Revenue Section */}
         <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+          <div className="container mx-auto px-4">
+            <IndustryLeadershipBadges />
+          </div>
+        </section>
+
+        {/* Revenue Engine Section */}
+        <section className="py-16 bg-gradient-to-b from-muted/10 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold mb-4">Choose Your Success Plan</h2>
+                <p className="text-xl text-muted-foreground">Industry-leading verification platform with plans for every need</p>
+              </div>
+              <RevenueEngine />
+            </div>
+          </div>
+        </section>
+
+        {/* Industry Credentials Section */}
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <IndustryCredentials />
           </div>
