@@ -1,4 +1,3 @@
-
 import React, { Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,105 +10,77 @@ import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 
 // Lazy load components for better performance
 const Features = lazy(() => import('@/components/Features'));
-const TestimonialsSection = lazy(() => import('@/components/testimonials/TestimonialsSection').then(m => ({ default: m.TestimonialsSection })));
-const FeaturedBlogSection = lazy(() => import('@/components/blog/FeaturedBlogSection').then(m => ({ default: m.FeaturedBlogSection })));
-const EnhancedCTASection = lazy(() => import('@/components/cta/EnhancedCTASection').then(m => ({ default: m.EnhancedCTASection })));
+const TestimonialsSection = lazy(() => import('@/components/testimonials/TestimonialsSection').then(m => ({
+  default: m.TestimonialsSection
+})));
+const FeaturedBlogSection = lazy(() => import('@/components/blog/FeaturedBlogSection').then(m => ({
+  default: m.FeaturedBlogSection
+})));
+const EnhancedCTASection = lazy(() => import('@/components/cta/EnhancedCTASection').then(m => ({
+  default: m.EnhancedCTASection
+})));
 
 // Loading component for lazy loaded sections
-const SectionLoader = () => (
-  <div className="h-32 flex items-center justify-center">
+const SectionLoader = () => <div className="h-32 flex items-center justify-center">
     <div className="w-6 h-6 border-2 border-sos-orange border-t-transparent rounded-full animate-spin"></div>
-  </div>
-);
-
+  </div>;
 const HomePage = () => {
   const navigate = useNavigate();
-  const homePageStructuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SafeOrStolen - Stolen Item Checker",
-      "alternateName": "Safe or Stolen",
-      "url": "https://safeorstolen.com",
-      "description": "Free online stolen item checker tool to verify IMEI, VIN, and serial numbers against police databases before buying secondhand items",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://safeorstolen.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "sameAs": [
-        "https://safeorstolen.com"
-      ]
+  const homePageStructuredData = [{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SafeOrStolen - Stolen Item Checker",
+    "alternateName": "Safe or Stolen",
+    "url": "https://safeorstolen.com",
+    "description": "Free online stolen item checker tool to verify IMEI, VIN, and serial numbers against police databases before buying secondhand items",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://safeorstolen.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "SafeOrStolen Stolen Item Checker",
-      "description": "Free online stolen item checker - verify IMEI, serial numbers, and VIN against stolen goods databases instantly",
-      "url": "https://safeorstolen.com",
-      "applicationCategory": "SecurityApplication",
-      "applicationSubCategory": "Verification Tool",
-      "operatingSystem": "Web Browser",
-      "browserRequirements": "Chrome, Firefox, Safari, Edge",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free stolen item checking service"
-      },
-      "featureList": [
-        "Electronics verification (IMEI, serial numbers)",
-        "Vehicle VIN stolen check", 
-        "Firearms serial number lookup",
-        "Art & collectibles verification",
-        "Jewelry & watches authentication",
-        "Tools & machinery checks",
-        "Gaming equipment verification",
-        "Real-time database searches",
-        "Enterprise API integration",
-        "Bulk verification processing"
-      ]
+    "sameAs": ["https://safeorstolen.com"]
+  }, {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SafeOrStolen Stolen Item Checker",
+    "description": "Free online stolen item checker - verify IMEI, serial numbers, and VIN against stolen goods databases instantly",
+    "url": "https://safeorstolen.com",
+    "applicationCategory": "SecurityApplication",
+    "applicationSubCategory": "Verification Tool",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Chrome, Firefox, Safari, Edge",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free stolen item checking service"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Stolen Item Checker Service",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen"
-      },
-      "description": "Professional stolen item checking service for consumers buying secondhand goods",
-      "serviceType": "Verification Service",
-      "areaServed": "Worldwide",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+    "featureList": ["Electronics verification (IMEI, serial numbers)", "Vehicle VIN stolen check", "Firearms serial number lookup", "Art & collectibles verification", "Jewelry & watches authentication", "Tools & machinery checks", "Gaming equipment verification", "Real-time database searches", "Enterprise API integration", "Bulk verification processing"]
+  }, {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Stolen Item Checker Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen"
+    },
+    "description": "Professional stolen item checking service for consumers buying secondhand goods",
+    "serviceType": "Verification Service",
+    "areaServed": "Worldwide",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
     }
-  ];
-
-  return (
-    <>
-      <PageSEO
-        title="Free Stolen Item Checker | SafeOrStolen - Verify Before You Buy"
-        description="Check if electronics, vehicles, firearms & valuables are stolen before buying. Free IMEI, VIN & serial number verification against police databases worldwide."
-        keywords="stolen item checker, IMEI checker, VIN checker, serial number verification, stolen goods database, free verification tool"
-        canonical="/"
-        structuredData={homePageStructuredData}
-      />
+  }];
+  return <>
+      <PageSEO title="Free Stolen Item Checker | SafeOrStolen - Verify Before You Buy" description="Check if electronics, vehicles, firearms & valuables are stolen before buying. Free IMEI, VIN & serial number verification against police databases worldwide." keywords="stolen item checker, IMEI checker, VIN checker, serial number verification, stolen goods database, free verification tool" canonical="/" structuredData={homePageStructuredData} />
       <div className="min-h-screen">
         <ConversionTracker />
         <Hero />
         
         {/* FasterCapital Partnership Section */}
-        <section className="py-12 bg-gradient-to-r from-sos-dark/50 to-sos/50 border-y border-sos-orange/20">
-          <div className="container mx-auto px-4">
-            <div className="text-center">
-              <FasterCapitalBranding />
-            </div>
-          </div>
-        </section>
+        
         
         {/* Sponsors & Partners */}
         <SponsorsStrip />
@@ -205,20 +176,12 @@ const HomePage = () => {
                 Become a part of the SafeOrStolen community watch and help protect buyers everywhere.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
-                  onClick={() => navigate('/community-watch')}
-                >
+                <Button size="lg" className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold" onClick={() => navigate('/community-watch')}>
                   <Shield className="mr-2 h-5 w-5" />
                   See Community Tools
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => navigate('/for-brands')}
-                >
+                <Button size="lg" variant="outline" onClick={() => navigate('/for-brands')}>
                   <Monitor className="mr-2 h-5 w-5" />
                   Business Solutions
                 </Button>
@@ -242,8 +205,6 @@ const HomePage = () => {
           <EnhancedCTASection />
         </Suspense>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default HomePage;
