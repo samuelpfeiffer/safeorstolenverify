@@ -109,191 +109,25 @@ const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
  */
 export const AppRoutes: React.FC = () => {
   return (
-    <Suspense fallback={<AppLoadingScreen />}>
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="auth" element={<AuthPage />} />
-          <Route path="subscriptions" element={<PricingPage />} />
-          <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
-          <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="faq" element={<FaqPage />} />
-          <Route path="terms" element={<TermsPage />} />
-          <Route path="privacy" element={<PrivacyPage />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog/category/:category" element={<BlogPage />} />
-          <Route path="blog/:slug" element={<BlogPostPage />} />
-          
-          {/* Static Blog Posts */}
-          <Route path="blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
-          <Route path="blog/verification-methodology" element={<VerificationMethodologyPost />} />
-          <Route path="blog/real-user-stories" element={<RealUserStoriesPost />} />
-          <Route path="blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
-          
-          {/* New Routes */}
-          <Route path="how-it-works" element={<HowItWorksPage />} />
-          <Route path="how-it-works-detailed" element={<HowItWorksDetailedPage />} />
-          <Route path="for-consumers" element={<ForConsumersPage />} />
-          <Route path="for-brands" element={<ForBrandsPage />} />
-          <Route path="about-problem" element={<AboutProblemPage />} />
-          <Route path="our-story" element={<OurStoryPage />} />
-          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="terms-of-service" element={<TermsOfServicePage />} />
-          <Route path="disclaimer" element={<DisclaimerPage />} />
-          <Route path="cookies" element={<CookiesPage />} />
-          <Route path="refunds" element={<RefundsPage />} />
-          
-          {/* Enterprise & Marketing Routes */}
-          <Route path="enterprise-demo" element={<EnterpriseDemoPage />} />
-          <Route path="referral" element={<ReferralPage />} />
-          <Route path="api-docs" element={<ApiDocsPage />} />
-          <Route path="sitemap" element={<SitemapPage />} />
-          <Route path="community" element={<CommunityPage />} />
-           <Route path="case-studies" element={<CaseStudiesPage />} />
-           <Route path="trust-verification" element={<TrustVerificationPage />} />
-           <Route path="data-sources" element={<DataSourcesPage />} />
-           <Route path="transparency" element={<TransparencyPage />} />
-           <Route path="service-limitations" element={<ServiceLimitationsPage />} />
-           <Route path="accuracy" element={<AccuracyPage />} />
-          <Route path="verification-hub" element={<VerificationHubPage />} />
-          <Route path="ultimate-guide" element={<UltimateGuidePage />} />
-          <Route path="auction-houses" element={<AuctionHousesPage />} />
-          <Route path="pawn-shops" element={<PawnShopsPage />} />
-           <Route path="global-domination" element={<GlobalDominationPage />} />
-           <Route path="marketplace-integration" element={<MarketplaceIntegrationPage />} />
-           <Route path="how-to-check-if-item-stolen" element={<HowToCheckIfItemStolenPage />} />
-           <Route path="stolen-items-database" element={<StolenItemsDatabasePage />} />
-           <Route path="stolen-property-lookup" element={<StolenItemsDatabasePage />} />
-           <Route path="check-if-stolen" element={<StolenItemsDatabasePage />} />
-           <Route path="stolen-goods-checker" element={<StolenGoodsCheckerPage />} />
-           <Route path="stolen-merchandise-check" element={<StolenGoodsCheckerPage />} />
-           <Route path="avoid-buying-stolen-goods" element={<AvoidStolenGoodsPage />} />
-           <Route path="avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
-           <Route path="ultimate-guide-not-buying-stolen-goods" element={<UltimateGuideNotBuyingStolenPage />} />
-           <Route path="how-to-check-if-anything-is-stolen-before-you-buy" element={<HowToCheckAnythingStolenPage />} />
-           <Route path="comprehensive-guide" element={<ComprehensiveGuidePage />} />
-           <Route path="city/:city" element={<LocalSEOPage />} />
-           <Route path="blog/2024-theft-trends-report" element={<TheftTrendsBlogPage />} />
-           <Route path="partnerships" element={<PartnershipsPage />} />
-          
-          {/* FasterCapital Routes */}
-          <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
-          <Route path="fastercapital/tech-cofounder" element={<TechCofounderPage />} />
-          
-          {/* Real-time Verification - ALL PROTECTED */}
-          <Route path="real-time-verification" element={
-            <ProtectedRoute>
-              <Navigate to="/firearms-check" replace />
-            </ProtectedRoute>
-          } />
-          <Route path="firearms-check" element={<FirearmsCheckPage />} />
-          
-          {/* Item-specific verification pages - Landing pages public, auth required for searches */}
-          <Route path="check-phone" element={<ProtectedRoute><CheckPhonePage /></ProtectedRoute>} />
-          <Route path="check-car" element={<CheckCarPage />} />
-          <Route path="check-electronics" element={<CheckElectronicsPage />} />
-          <Route path="check-bike" element={<CheckBikePage />} />
-          <Route path="item-categories" element={<ProtectedRoute><ItemCategoriesPage /></ProtectedRoute>} />
-          
-          {/* Problem and verification result pages - PROTECTED */}
-          <Route path="problem" element={<ProblemPage />} />
-          <Route path="verification-results/:id" element={<ProtectedRoute><VerificationResultsPage /></ProtectedRoute>} />
-          <Route path="community-watch" element={<CommunityWatchPage />} />
-          
-          {/* Testing and development pages */}
-          <Route path="launch-test" element={
-            <ProtectedRoute>
-              <LaunchTestPage />
-            </ProtectedRoute>
-          } />
-          <Route path="test-payment" element={
-            <ProtectedRoute>
-              <TestOneTimePaymentPage />
-            </ProtectedRoute>
-          } />
-
-          <Route path="verify" element={
-            <ProtectedRoute>
-              <Navigate to="/dashboard" replace />
-            </ProtectedRoute>
-          } />
-          <Route path="dashboard" element={
-            <ProtectedRoute>
-              <DashboardPage />
-            </ProtectedRoute>
-          } />
-          <Route path="profile" element={
-            <ProtectedRoute>
-              <ProfilePage />
-            </ProtectedRoute>
-          } />
-          <Route path="subscription" element={
-            <ProtectedRoute>
-              <SubscriptionPage />
-            </ProtectedRoute>
-          } />
-          <Route path="analytics" element={
-            <ProtectedRoute>
-              <AnalyticsPage />
-            </ProtectedRoute>
-          } />
-          <Route path="search-history" element={
-            <ProtectedRoute>
-              <SearchHistoryPage />
-            </ProtectedRoute>
-          } />
-          <Route path="receipts" element={
-            <ProtectedRoute>
-              <ReceiptsPage />
-            </ProtectedRoute>
-          } />
-          <Route path="purchase-history" element={
-            <ProtectedRoute>
-              <PurchaseHistoryPage />
-            </ProtectedRoute>
-          } />
-          <Route path="security-settings" element={
-            <ProtectedRoute>
-              <SecuritySettingsPage />
-            </ProtectedRoute>
-          } />
-          
-          {/* Admin Routes */}
-          <Route path="admin" element={
-            <AdminRoute>
-              <AdminDashboard />
-            </AdminRoute>
-          } />
-          <Route path="admin/users" element={
-            <AdminRoute>
-              <UserManagement />
-            </AdminRoute>
-          } />
-          <Route path="admin/settings" element={
-            <AdminRoute>
-              <SystemSettings />
-            </AdminRoute>
-          } />
-          <Route path="admin/security" element={
-            <AdminRoute>
-              <SecurityCenter />
-            </AdminRoute>
-          } />
-        </Route>
-
-        {/* Catch all - 404 */}
-        <Route path="/404" element={<NotFoundPage />} />
-        <Route path="404" element={<NotFoundPage />} />
-        
-        {/* Clean redirects without double slashes */}
-        <Route path="security" element={<Navigate to="/security-settings" replace />} />
-        
-        {/* Catch all unknown routes */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      {/* Public Routes */}
+      <Route path="/" element={<AppLayout />}>
+        <Route index element={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold mb-4">SafeOrStolen</h1>
+              <p className="text-lg">Site is loading...</p>
+            </div>
+          </div>
+        } />
+        <Route path="*" element={
+          <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+            </div>
+          </div>
+        } />
+      </Route>
+    </Routes>
   );
 };
