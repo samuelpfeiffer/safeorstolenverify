@@ -45,7 +45,7 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
       title: "Stop Losing Money to Scams",
       description: "Every verification could save you hundreds or thousands. Start protecting your purchases today.",
       buttonText: "Start Protecting Yourself",
-      buttonLink: "/pricing",
+      buttonLink: "/subscriptions",
       icon: Shield,
       badge: "Money-Back Guarantee",
       stats: "Recommended by law enforcement"

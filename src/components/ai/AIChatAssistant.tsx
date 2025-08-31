@@ -39,9 +39,9 @@ export const AIChatAssistant: React.FC<AIChatAssistantProps> = ({
       setMessages([{
         id: 'welcome',
         type: 'ai',
-        content: "Hi! I'm your AI verification assistant. I can help you check if items are stolen, provide safety advice, analyze pricing patterns, and answer questions about fraud protection. What would you like to know?",
+        content: "Hi! I'm your AI verification assistant. I can help you check if items are stolen, provide safety advice, analyze market patterns, and answer questions about fraud protection. What would you like to know?",
         timestamp: new Date(),
-        suggestedActions: ['Verify an Item', 'Safety Tips', 'Fraud Detection', 'Pricing Analysis'],
+        suggestedActions: ['Verify an Item', 'Safety Tips', 'Fraud Detection', 'Subscription Plans'],
         confidence: 100
       }]);
     }

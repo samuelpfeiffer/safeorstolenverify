@@ -136,7 +136,7 @@ export const DetailedFAQSection: React.FC = () => {
       ]
     },
     {
-      category: "Pricing & Plans",
+      category: "Subscriptions & Plans",
       icon: DollarSign,
       questions: [
         {

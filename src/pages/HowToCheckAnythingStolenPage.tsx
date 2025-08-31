@@ -446,7 +446,7 @@ const HowToCheckAnythingStolenPage = () => {
                 <Link to="/verification-hub">Check an Item Now</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/pricing">Get Professional Access</Link>
+                <Link to="/subscriptions">Get Professional Access</Link>
               </Button>
             </div>
           </section>

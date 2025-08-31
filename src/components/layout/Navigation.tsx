@@ -36,7 +36,7 @@ export const Navigation: React.FC = () => {
     { name: 'Verify Items', href: '/check-if-stolen', icon: null },
     { name: 'Verification Hub', href: isAuthenticated ? '/verification-hub' : '/auth?tab=signup', icon: null },
     { name: 'For Businesses', href: '/for-brands', icon: null },
-    { name: 'Pricing', href: '/pricing', icon: null },
+    { name: 'Subscriptions', href: '/subscriptions', icon: null },
     { name: 'Blog', href: '/blog', icon: null },
   ];
 

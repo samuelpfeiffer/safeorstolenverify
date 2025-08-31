@@ -380,7 +380,7 @@ export const EnterpriseDemo = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-white font-medium mb-3">Pricing Tiers</h4>
+                  <h4 className="text-white font-medium mb-3">Subscription Tiers</h4>
                   <div className="space-y-2">
                     <div className="p-3 bg-gray-800 rounded-lg">
                       <div className="font-medium text-white">Starter</div>

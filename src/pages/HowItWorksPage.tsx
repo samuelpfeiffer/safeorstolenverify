@@ -205,9 +205,9 @@ const HowItWorksPage: React.FC = () => {
                   Start Free Verification
                 </Button>
               </Link>
-              <Link to="/pricing">
+              <Link to="/subscriptions">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-sos-dark">
-                  View Pricing Plans
+                  View Subscription Plans
                 </Button>
               </Link>
             </div>

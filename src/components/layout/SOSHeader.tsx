@@ -26,7 +26,7 @@ export const SOSHeader: React.FC = () => {
     { title: 'Home', href: '/' },
     { title: 'How It Works', href: '/how-it-works' },
     { title: 'For Businesses', href: '/for-brands' },
-    { title: 'Pricing', href: '/pricing' },
+    { title: 'Subscriptions', href: '/subscriptions' },
     { title: 'Blog', href: '/blog' },
     { title: 'FasterCapital', href: '/fastercapital/raise-capital' },
   ];

@@ -35,8 +35,8 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
       icon: CreditCard,
       title: "Upgrade Anytime",
       description: "Need more searches? Upgrade to unlimited verifications for just $4.99/month.",
-      action: "View Pricing",
-      onClick: () => navigate('/pricing')
+      action: "View Subscriptions",
+      onClick: () => navigate('/subscriptions')
     }
   ];
 

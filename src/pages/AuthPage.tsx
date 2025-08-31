@@ -65,7 +65,7 @@ const AuthPage = () => {
         // Clear the stored subscription intent
         localStorage.removeItem('pendingSubscription');
         // Redirect to pricing page with the subscription tier
-        navigate(`/pricing?subscribe=${pendingSubscription}`);
+        navigate(`/subscriptions?subscribe=${pendingSubscription}`);
       } else {
         navigate('/dashboard');
       }
@@ -139,7 +139,7 @@ const AuthPage = () => {
       // Clear the stored subscription intent
       localStorage.removeItem('pendingSubscription');
       // Redirect to pricing page with the subscription tier
-      navigate(`/pricing?subscribe=${pendingSubscription}`);
+      navigate(`/subscriptions?subscribe=${pendingSubscription}`);
     } else {
       navigate('/dashboard');
     }

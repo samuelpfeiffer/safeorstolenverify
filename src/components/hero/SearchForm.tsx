@@ -134,7 +134,7 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
   };
 
   const handleUpgrade = () => {
-    navigate('/pricing');
+    navigate('/subscriptions');
   };
 
   const searchCount = 4 - remainingSearches; // Calculate how many searches used

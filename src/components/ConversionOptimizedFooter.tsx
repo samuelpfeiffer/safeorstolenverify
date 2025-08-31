@@ -82,7 +82,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
                 <li><Link to="/verification-hub" className="hover:text-white transition-colors">Check an Item</Link></li>
                 <li><Link to="/ultimate-guide-not-buying-stolen-goods" className="hover:text-white transition-colors">Buyer Protection Guide</Link></li>
                 <li><Link to="/how-to-check-if-anything-is-stolen-before-you-buy" className="hover:text-white transition-colors">Verification Methods</Link></li>
-                <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing Plans</Link></li>
+                <li><Link to="/subscriptions" className="hover:text-white transition-colors">Subscription Plans</Link></li>
                 <li><Link to="/check-phone" className="hover:text-white transition-colors">IMEI Check</Link></li>
                 <li><Link to="/check-car" className="hover:text-white transition-colors">VIN Check</Link></li>
               </ul>

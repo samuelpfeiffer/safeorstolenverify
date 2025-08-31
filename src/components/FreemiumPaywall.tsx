@@ -98,7 +98,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
             Upgrade Now - Don't Get Scammed
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <Link to="/pricing">
+            <Link to="/subscriptions">
               View All Plans
             </Link>
           </Button>

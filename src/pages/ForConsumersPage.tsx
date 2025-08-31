@@ -18,7 +18,7 @@ const ForConsumersPage: React.FC = () => {
         <ConsumerHeader />
         <ConsumerFeatures />
         <ConsumerPricing onSubscribeClick={() => {}} isLoading={false} />
-        <ConsumerCTA onScrollToPricing={() => {}} />
+        <ConsumerCTA onScrollToSubscriptions={() => {}} />
       </div>
     </>
   );

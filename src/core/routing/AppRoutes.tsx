@@ -111,7 +111,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />} />
           <Route path="auth" element={<AuthPage />} />
-          <Route path="pricing" element={<PricingPage />} />
+          <Route path="subscriptions" element={<PricingPage />} />
           <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="about" element={<AboutPage />} />

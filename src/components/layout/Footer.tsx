@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
         { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'Verify Items', href: '/dashboard' },
         { name: 'How It Works', href: '/how-it-works' },
-        { name: 'Pricing', href: '/pricing' },
+        { name: 'Subscriptions', href: '/subscriptions' },
         { name: 'API Docs', href: '/api-docs' },
       ]
     },

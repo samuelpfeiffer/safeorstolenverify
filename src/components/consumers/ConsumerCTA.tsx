@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 interface ConsumerCTAProps {
-  onScrollToPricing: () => void;
+  onScrollToSubscriptions: () => void;
 }
 
-export const ConsumerCTA = ({ onScrollToPricing }: ConsumerCTAProps) => {
+export const ConsumerCTA = ({ onScrollToSubscriptions }: ConsumerCTAProps) => {
   return (
     <div className="flex justify-center gap-4 mb-12">
       <Link to="/contact">
@@ -15,12 +15,12 @@ export const ConsumerCTA = ({ onScrollToPricing }: ConsumerCTAProps) => {
         </Button>
       </Link>
       <Button 
-        onClick={onScrollToPricing} 
+        onClick={onScrollToSubscriptions} 
         variant="outline" 
         size="lg" 
         className="border-white text-white hover:bg-white/10"
       >
-        View Pricing & Plans
+        View Subscription Plans
       </Button>
     </div>
   );

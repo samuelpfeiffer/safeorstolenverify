@@ -32,8 +32,8 @@ export const EnhancedCTASection: React.FC = () => {
         variant: "outline" as const
       },
       secondaryAction: {
-        text: "View Pricing",
-        href: "/pricing"
+        text: "View Subscriptions",
+        href: "/subscriptions"
       },
       highlight: "99.9% Uptime"
     }
