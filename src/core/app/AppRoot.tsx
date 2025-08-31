@@ -15,6 +15,8 @@ import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { DefaultSEO } from '@/components/seo/DefaultSEO';
 import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
 import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
+import { CriticalPathOptimizer } from '@/components/performance/CriticalPathOptimizer';
+import { MobileLCPOptimizer } from '@/components/performance/MobileLCPOptimizer';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -57,7 +59,9 @@ export const AppRoot: React.FC = () => {
                     <CanonicalRedirectFix />
                     <DefaultSEO />
                     <GlobalAnalytics />
-                    <GlobalPerformanceOptimizer />
+        <GlobalPerformanceOptimizer />
+        <CriticalPathOptimizer />
+        <MobileLCPOptimizer />
                     <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />
                     </Suspense>

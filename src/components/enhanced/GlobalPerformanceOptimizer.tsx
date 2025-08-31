@@ -7,31 +7,38 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
     if (hasInitialized.current) return;
     hasInitialized.current = true;
 
-    // Preload critical resources
-    const criticalImages = [
-      '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png',
-      '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png'
+    // Enhanced critical resource preloading for LCP optimization
+    const criticalResources = [
+      { href: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png', as: 'image', fetchPriority: 'high' },
+      { href: '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png', as: 'image' },
+      { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', as: 'style' }
     ];
 
-    // Use requestIdleCallback for better performance
-    const scheduleWork = (callback: () => void) => {
-      if ('requestIdleCallback' in window) {
+    // Optimized scheduling for critical path
+    const scheduleWork = (callback: () => void, priority: 'immediate' | 'idle' = 'idle') => {
+      if (priority === 'immediate') {
+        callback();
+      } else if ('requestIdleCallback' in window) {
         requestIdleCallback(callback);
       } else {
         setTimeout(callback, 0);
       }
     };
 
+    // Immediate loading for LCP-critical resources
     scheduleWork(() => {
-      criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        link.crossOrigin = 'anonymous';
-        document.head.appendChild(link);
+      criticalResources.forEach(({ href, as, fetchPriority }) => {
+        if (!document.querySelector(`link[href="${href}"]`)) {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.href = href;
+          link.as = as;
+          if (fetchPriority) link.setAttribute('fetchpriority', fetchPriority);
+          if (as === 'style') link.crossOrigin = 'anonymous';
+          document.head.appendChild(link);
+        }
       });
-    });
+    }, 'immediate');
 
     // Preconnect to external domains
     const preconnectDomains = [
@@ -51,7 +58,7 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
       });
     });
 
-    // Enhanced lazy loading with better performance
+    // Enhanced lazy loading with LCP optimization
     const lazyLoadImages = () => {
       if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver(
@@ -62,6 +69,7 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
               if (img.dataset.src) {
                 img.src = img.dataset.src;
                 img.removeAttribute('data-src');
+                img.loading = 'eager';
                 img.classList.remove('lazy');
                 observer.unobserve(img);
               }
@@ -69,13 +77,20 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
             });
           },
           {
-            rootMargin: '50px 0px',
+            rootMargin: '100px 0px', // Increased for mobile
             threshold: 0.01
           }
         );
 
-        document.querySelectorAll('img[data-src]').forEach(img => {
-          imageObserver.observe(img);
+        // Optimize above-the-fold images immediately
+        document.querySelectorAll('img').forEach((img, index) => {
+          if (index < 3) { // First 3 images are LCP candidates
+            img.loading = 'eager';
+            img.setAttribute('fetchpriority', 'high');
+            img.setAttribute('decoding', 'sync');
+          } else if (img.dataset.src) {
+            imageObserver.observe(img);
+          }
         });
       }
     };
