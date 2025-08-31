@@ -524,10 +524,18 @@
   </url>
 
   <url>
-    <loc>https://safeorstolen.com/fastercapital/tech-cofounder</loc>
-    <lastmod>2025-08-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://safeorstolen.com/sitemap.xml</loc>
+    <lastmod>2025-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- RSS Feed for Google Discover -->
+  <url>
+    <loc>https://safeorstolen.com/rss.xml</loc>
+    <lastmod>2025-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

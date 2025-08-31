@@ -5,6 +5,7 @@ import { Smartphone, Camera, Zap, Shield, Bell, MapPin, Users, Star } from 'luci
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import mobileHeroImage from '@/assets/blog-hero-mobile-app.jpg';
 
 const MobileAppFeaturesPost = () => {
   const appFeatures = [
@@ -116,6 +117,16 @@ const MobileAppFeaturesPost = () => {
           <div className="max-w-6xl mx-auto">
             {/* Hero Section */}
             <div className="text-center mb-16">
+              {/* Hero Image - Optimized for Google Discover */}
+              <div className="mb-8 rounded-xl overflow-hidden max-w-4xl mx-auto">
+                <img 
+                  src={mobileHeroImage} 
+                  alt="SafeOrStolen Mobile App Interface - QR code scanning and verification features"
+                  className="w-full h-[400px] object-cover"
+                  loading="eager"
+                />
+              </div>
+              
               <Badge className="mb-4 bg-sos-orange/10 text-sos-orange">
                 <Smartphone className="mr-2 h-4 w-4" />
                 Mobile App

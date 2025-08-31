@@ -4,6 +4,9 @@ Allow: /
 # Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
 
+# RSS Feed for Google Discover
+Allow: /rss.xml
+
 # Priority pages for all crawlers
 Allow: /dashboard
 Allow: /how-it-works
