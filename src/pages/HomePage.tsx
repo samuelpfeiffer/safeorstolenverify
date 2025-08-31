@@ -5,31 +5,15 @@ import { Button } from '@/components/ui/button';
 import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
-import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
-import { AICapabilitiesStructuredData } from '@/components/seo/AICapabilitiesStructuredData';
-import { MobileAppStructuredData } from '@/components/seo/MobileAppStructuredData';
-import { GoogleMobilityManifesto } from '@/components/seo/GoogleMobilityManifesto';
-import { AISearchInterface } from '@/components/ai/AISearchInterface';
-import { BusinessPluginSuite } from '@/components/plugins/BusinessPluginSuite';
-import { IndustryCredentials } from '@/components/trust/IndustryCredentials';
-import { MobileFirstManifesto } from '@/components/mobile/MobileFirstManifesto';
-import { GlobalBroadcastStrategy } from '@/components/broadcast/GlobalBroadcastStrategy';
-import { GlobalSEOOptimization } from '@/components/broadcast/GlobalSEOOptimization';
-import { GlobalAnalytics as GlobalBroadcastAnalytics } from '@/components/broadcast/GlobalAnalytics';
+import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 
-// Lazy load heavy components for better performance
+// Lazy load components for better performance
 const Features = lazy(() => import('@/components/Features'));
 const TestimonialsSection = lazy(() => import('@/components/testimonials/TestimonialsSection').then(m => ({ default: m.TestimonialsSection })));
 const FeaturedBlogSection = lazy(() => import('@/components/blog/FeaturedBlogSection').then(m => ({ default: m.FeaturedBlogSection })));
 const EnhancedCTASection = lazy(() => import('@/components/cta/EnhancedCTASection').then(m => ({ default: m.EnhancedCTASection })));
-const GlobalPerformanceOptimizer = lazy(() => import('@/components/enhanced/GlobalPerformanceOptimizer').then(m => ({ default: m.GlobalPerformanceOptimizer })));
-const TrustIndicators = lazy(() => import('@/components/TrustIndicators').then(m => ({ default: m.TrustIndicators })));
-const TrustBadgeStrip = lazy(() => import('@/components/trust/TrustBadgeStrip').then(m => ({ default: m.TrustBadgeStrip })));
-const AudienceNavigation = lazy(() => import('@/components/hero/AudienceNavigation').then(m => ({ default: m.AudienceNavigation })));
-const ValuePropositionSections = lazy(() => import('@/components/hero/ValuePropositionSections').then(m => ({ default: m.ValuePropositionSections })));
-const TrustBuildingFAQ = lazy(() => import('@/components/trust/TrustBuildingFAQ').then(m => ({ default: m.TrustBuildingFAQ })));
 
 // Loading component for lazy loaded sections
 const SectionLoader = () => (
@@ -107,19 +91,10 @@ const HomePage = () => {
 
   return (
     <>
-      <Suspense fallback={null}>
-        <GlobalPerformanceOptimizer />
-      </Suspense>
-      <GlobalAnalytics />
-      <GoogleSearchConsoleSetup />
-      <GlobalSEOOptimization />
-      <AICapabilitiesStructuredData />
-      <MobileAppStructuredData />
-      <GoogleMobilityManifesto />
       <PageSEO
-        title="AI-Powered Mobile Verification Platform | SafeOrStolen Industry Leader"
-        description="First mobile-native AI verification platform with advanced plugin ecosystem. Industry-leading stolen goods detection for businesses, law enforcement, and consumers worldwide."
-        keywords="AI verification platform, mobile-first stolen goods checker, business plugin ecosystem, law enforcement tools, enterprise verification API, real-time theft detection, mobile verification app"
+        title="Free Stolen Item Checker | SafeOrStolen - Verify Before You Buy"
+        description="Check if electronics, vehicles, firearms & valuables are stolen before buying. Free IMEI, VIN & serial number verification against police databases worldwide."
+        keywords="stolen item checker, IMEI checker, VIN checker, serial number verification, stolen goods database, free verification tool"
         canonical="/"
         structuredData={homePageStructuredData}
       />
@@ -127,88 +102,91 @@ const HomePage = () => {
         <ConversionTracker />
         <Hero />
         
-        {/* Launch Announcement Banner */}
-        <section className="py-8 bg-gradient-to-r from-primary/10 to-secondary/10 border-b">
+        {/* FasterCapital Partnership Section */}
+        <section className="py-12 bg-gradient-to-r from-sos-dark/50 to-sos/50 border-y border-sos-orange/20">
           <div className="container mx-auto px-4">
             <div className="text-center">
-              <div className="inline-flex items-center gap-3 bg-background/80 backdrop-blur-sm px-6 py-3 rounded-full border shadow-lg">
-                <div className="h-3 w-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="font-semibold text-foreground">🚀 NOW LIVE: The Global Hub for Second-Hand Verification</span>
-                <a 
-                  href="/press-release" 
-                  className="text-primary hover:text-primary/80 font-semibold underline"
-                >
-                  Read Global Press Release →
-                </a>
-              </div>
+              <FasterCapitalBranding />
             </div>
           </div>
         </section>
         
-        {/* Global Broadcast Strategy Section */}
-        <section className="py-16 bg-gradient-to-b from-muted/10 to-background">
-          <div className="container mx-auto px-4">
-            <GlobalBroadcastStrategy />
-          </div>
-        </section>
+        {/* Sponsors & Partners */}
+        <SponsorsStrip />
         
-        {/* Global Analytics Dashboard */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <GlobalBroadcastAnalytics />
-          </div>
-        </section>
-        
-        {/* Mobile-First Innovation Section */}
-        <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
-          <div className="container mx-auto px-4">
-            <MobileFirstManifesto />
-          </div>
-        </section>
-
-        {/* AI Search Interface Section */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <AISearchInterface />
-          </div>
-        </section>
-
-        <Suspense fallback={<SectionLoader />}>
-          <AudienceNavigation />
-        </Suspense>
-        <Suspense fallback={<SectionLoader />}>
-          <ValuePropositionSections />
-        </Suspense>
-        
-        {/* Industry Credentials Section */}
-        <section className="py-16 bg-gradient-to-b from-background to-muted/30">
-          <div className="container mx-auto px-4">
-            <IndustryCredentials />
-          </div>
-        </section>
-
-        {/* Business Plugin Suite Section */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <BusinessPluginSuite />
-          </div>
-        </section>
-
-        <Suspense fallback={<SectionLoader />}>
-          <TrustIndicators />
-        </Suspense>
-        <Suspense fallback={<SectionLoader />}>
-          <TrustBadgeStrip />
-        </Suspense>
-        <Suspense fallback={<SectionLoader />}>
-          <TrustBuildingFAQ />
-        </Suspense>
+        {/* Features Section */}
         <Suspense fallback={<SectionLoader />}>
           <Features />
         </Suspense>
-        <Suspense fallback={<SectionLoader />}>
-          <TestimonialsSection />
-        </Suspense>
+        
+        {/* Protection Information Section */}
+        <section className="py-16 bg-gradient-to-r from-sos-dark/10 to-sos-orange/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                  Protecting Everyone in the Second-Hand Market
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  SafeOrStolen provides comprehensive protection for all participants in the second-hand marketplace
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* For Buyers */}
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center">
+                  <div className="bg-sos-lime/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-sos-lime" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-card-foreground">For Buyers</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Avoid purchasing stolen goods with our comprehensive verification system
+                  </p>
+                  <ul className="text-sm text-muted-foreground text-left space-y-2">
+                    <li>• Legal protection from unknowingly buying stolen items</li>
+                    <li>• Real-time database searches</li>
+                    <li>• Peace of mind with every purchase</li>
+                    <li>• Free verification checks</li>
+                  </ul>
+                </div>
+                
+                {/* For Sellers */}
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center">
+                  <div className="bg-sos-orange/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-sos-orange" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-card-foreground">For Sellers</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Build trust with buyers by providing verification certificates
+                  </p>
+                  <ul className="text-sm text-muted-foreground text-left space-y-2">
+                    <li>• Verify items before listing</li>
+                    <li>• Provide certificates to buyers</li>
+                    <li>• Increase sale prices with verified items</li>
+                    <li>• Build reputation as trusted seller</li>
+                  </ul>
+                </div>
+                
+                {/* For Businesses */}
+                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 text-center">
+                  <div className="bg-primary/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Monitor className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-card-foreground">For Businesses</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Enterprise solutions for pawn shops, auction houses, and retailers
+                  </p>
+                  <ul className="text-sm text-muted-foreground text-left space-y-2">
+                    <li>• Bulk verification API</li>
+                    <li>• Due diligence compliance</li>
+                    <li>• Reduce liability and legal risks</li>
+                    <li>• Integration with existing systems</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         
         {/* Community Movement Section */}
         <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
@@ -239,19 +217,27 @@ const HomePage = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => navigate('/social-media-monitoring')}
+                  onClick={() => navigate('/for-brands')}
                 >
                   <Monitor className="mr-2 h-5 w-5" />
-                  Social Monitoring
+                  Business Solutions
                 </Button>
               </div>
             </div>
           </div>
         </section>
         
+        {/* Testimonials */}
+        <Suspense fallback={<SectionLoader />}>
+          <TestimonialsSection />
+        </Suspense>
+        
+        {/* Blog Section */}
         <Suspense fallback={<SectionLoader />}>
           <FeaturedBlogSection />
         </Suspense>
+        
+        {/* CTA Section */}
         <Suspense fallback={<SectionLoader />}>
           <EnhancedCTASection />
         </Suspense>
