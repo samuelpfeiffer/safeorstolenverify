@@ -15,6 +15,9 @@ import { AISearchInterface } from '@/components/ai/AISearchInterface';
 import { BusinessPluginSuite } from '@/components/plugins/BusinessPluginSuite';
 import { IndustryCredentials } from '@/components/trust/IndustryCredentials';
 import { MobileFirstManifesto } from '@/components/mobile/MobileFirstManifesto';
+import { GlobalBroadcastStrategy } from '@/components/broadcast/GlobalBroadcastStrategy';
+import { GlobalSEOOptimization } from '@/components/broadcast/GlobalSEOOptimization';
+import { GlobalAnalytics as GlobalBroadcastAnalytics } from '@/components/broadcast/GlobalAnalytics';
 
 // Lazy load heavy components for better performance
 const Features = lazy(() => import('@/components/Features'));
@@ -109,6 +112,7 @@ const HomePage = () => {
       </Suspense>
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
+      <GlobalSEOOptimization />
       <AICapabilitiesStructuredData />
       <MobileAppStructuredData />
       <GoogleMobilityManifesto />
@@ -131,13 +135,27 @@ const HomePage = () => {
                 <div className="h-3 w-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="font-semibold text-foreground">🚀 NOW LIVE: The Global Hub for Second-Hand Verification</span>
                 <a 
-                  href="/announcement" 
+                  href="/press-release" 
                   className="text-primary hover:text-primary/80 font-semibold underline"
                 >
-                  Read Full Announcement →
+                  Read Global Press Release →
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+        
+        {/* Global Broadcast Strategy Section */}
+        <section className="py-16 bg-gradient-to-b from-muted/10 to-background">
+          <div className="container mx-auto px-4">
+            <GlobalBroadcastStrategy />
+          </div>
+        </section>
+        
+        {/* Global Analytics Dashboard */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <GlobalBroadcastAnalytics />
           </div>
         </section>
         
