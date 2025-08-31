@@ -17,10 +17,10 @@ export const ValuePropositionSections = () => {
             <CardContent className="p-8">
               <div className="flex items-center gap-4 mb-6">
                 <Shield className="h-12 w-12 text-sos-lime" />
-                <div>
-                  <h2 className="text-3xl font-bold text-foreground">Shop without fear.</h2>
+                 <div>
+                  <h2 className="text-3xl font-bold text-foreground">Shop any marketplace with confidence.</h2>
                   <p className="text-lg text-muted-foreground mt-2">
-                    Never wonder if you're buying a stolen item again. Our instant check is your first and best line of defense. Protect your investment and buy with confidence.
+                    Whether it's Craigslist, eBay, Facebook Marketplace, or local sales - verify electronics, vehicles, art, jewelry, tools, and more before you buy. Never worry about stolen goods again.
                   </p>
                 </div>
               </div>
@@ -102,9 +102,9 @@ export const ValuePropositionSections = () => {
               <div className="flex items-center gap-4 mb-6">
                 <Building className="h-12 w-12 text-blue-500" />
                 <div>
-                  <h2 className="text-3xl font-bold text-foreground">Your compliance, simplified.</h2>
+                  <h2 className="text-3xl font-bold text-foreground">Professional verification for every business.</h2>
                   <p className="text-lg text-muted-foreground mt-2">
-                    Pawn shops, resellers, thrift stores: Integrate seamless checks into your workflow. Perform due diligence, avoid fines, and protect your business license.
+                    Auction houses, pawn shops, resale stores, law enforcement agencies, insurance companies: Streamline compliance with our enterprise-grade verification. Handle high volumes with API integration and real-time reporting.
                   </p>
                 </div>
               </div>

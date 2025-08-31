@@ -64,12 +64,16 @@ const HomePage = () => {
         "description": "Free stolen item checking service"
       },
       "featureList": [
-        "IMEI stolen check",
-        "VIN stolen verification", 
-        "Serial number stolen lookup",
-        "Phone stolen check",
-        "Car stolen verification",
-        "Electronics stolen check"
+        "Electronics verification (IMEI, serial numbers)",
+        "Vehicle VIN stolen check", 
+        "Firearms serial number lookup",
+        "Art & collectibles verification",
+        "Jewelry & watches authentication",
+        "Tools & machinery checks",
+        "Gaming equipment verification",
+        "Real-time database searches",
+        "Enterprise API integration",
+        "Bulk verification processing"
       ]
     },
     {
@@ -99,9 +103,9 @@ const HomePage = () => {
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <PageSEO
-        title="Don't Get Scammed - Verify Items Before You Buy | SafeOrStolen"
-        description="Stop losing money to scams! Check any secondhand item in seconds before buying from Facebook Marketplace, eBay, Craigslist. Join 25,000+ smart buyers who protect their purchases."
-        keywords="don't get scammed, protect your purchase, avoid stolen goods, Facebook Marketplace scams, eBay safety, secondhand buyer protection, verify before buying, stolen item checker, marketplace safety"
+        title="Global Verification Hub - Check Any Valuable Item | SafeOrStolen"
+        description="The go-to platform for verifying electronics, vehicles, firearms, art, jewelry, tools & more in real-time. For auction houses, pawn shops, resellers, law enforcement & everyone using eBay, Craigslist, Facebook Marketplace."
+        keywords="stolen item checker, verify electronics, check VIN, IMEI lookup, art verification, firearm check, auction house verification, pawn shop compliance, reseller tools, marketplace safety, stolen goods database"
         canonical="/"
         structuredData={homePageStructuredData}
       />

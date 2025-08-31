@@ -33,9 +33,9 @@ const Hero = () => {
           </a>
 
           {/* Universal Value Proposition Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy, Sell, and Do Business with 100% Confidence</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">The Global Hub for 2nd-Hand Item Verification</h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            Verify any second-hand item in seconds. Protect your money, your business, and your peace of mind.
+            Verify electronics, vehicles, guns, art, valuables, machinery, tools & more in real-time. For auction houses, pawn shops, resellers, law enforcement & everyone buying/selling on Craigslist, eBay, Facebook Marketplace.
           </p>
           <p className="text-base md:text-lg text-sos-lime font-semibold mb-6">
             Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses.
@@ -166,24 +166,27 @@ const Hero = () => {
                </Button>
              </div>
              
-             {/* Popular Stolen Checks */}
-             <div className="mt-8">
-               <p className="text-sm text-gray-400 mb-4">Popular Stolen Item Checks:</p>
-               <div className="flex flex-wrap justify-center gap-2">
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-if-stolen">Verify Items</Link>
-                 </Button>
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-phone">Check Phone IMEI</Link>
-                 </Button>
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-car">Verify Car VIN</Link>
-                 </Button>
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/how-to-check-if-item-stolen">Buying Guide</Link>
-                 </Button>
-               </div>
-             </div>
+              {/* Popular Verification Categories */}
+              <div className="mt-8">
+                <p className="text-sm text-gray-400 mb-4">Verify Any Valuable Item:</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/check-phone">Electronics & Phones</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/check-car">Vehicles & VINs</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/firearms-check">Firearms & Guns</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/check-if-stolen">Art & Valuables</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/dashboard">Tools & Machinery</Link>
+                  </Button>
+                </div>
+              </div>
           </div>
         </div>
       </div>
