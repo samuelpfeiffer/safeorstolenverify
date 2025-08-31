@@ -12,21 +12,21 @@ export const useAuthPageLogic = () => {
   const isAuthenticated = !!user;
   const { toast } = useToast();
   
-  console.log('🔐 AuthPageLogic state:', { isAuthenticated, loading, user: !!user });
+  // Track authentication state for debugging in development
+  if (process.env.NODE_ENV === 'development') {
+    console.log('AuthPageLogic state:', { isAuthenticated, loading, user: !!user });
+  }
   
   const searchParams = new URLSearchParams(location.search);
   const initialMode = searchParams.get('tab') === 'register' ? 'signup' : 'signin';
   const isConfirmed = searchParams.get('confirmed') === 'true';
   const [mode, setMode] = useState<'signin' | 'signup'>(initialMode);
 
-  // Debug logging
+  // Debug logging in development only
   useEffect(() => {
-    console.log('=== Secure Auth Page Logic State ===');
-    console.log('Loading:', loading);
-    console.log('Authenticated:', isAuthenticated);
-    console.log('User:', user?.email);
-    console.log('Mode:', mode);
-    console.log('Is Confirmed:', isConfirmed);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Auth Page State:', { loading, isAuthenticated, userEmail: user?.email, mode, isConfirmed });
+    }
   }, [loading, isAuthenticated, user, mode, isConfirmed]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const useAuthPageLogic = () => {
   // Handle email confirmation
   useEffect(() => {
     if (isConfirmed) {
-      console.log('Email confirmation detected');
+      // Email confirmation detected
       toast({
         title: "Email confirmed!",
         description: "Your email has been verified. You can now sign in to your account.",
@@ -54,9 +54,7 @@ export const useAuthPageLogic = () => {
   // Handle successful authentication and redirect
   useEffect(() => {
     if (isAuthenticated && !loading && user) {
-      console.log('=== Secure Authentication Success Detected ===');
-      console.log('User:', user.email);
-      console.log('User ID:', user.id);
+      // Authentication success detected
       
       // Show welcome message
       toast({
@@ -69,7 +67,7 @@ export const useAuthPageLogic = () => {
       const from = location.state?.from?.pathname || '/dashboard';
       
       // Redirect after a short delay
-      console.log('Redirecting to:', from);
+      // Redirecting user to destination
       setTimeout(() => {
         navigate(from, { replace: true });
       }, 1000);
@@ -78,7 +76,7 @@ export const useAuthPageLogic = () => {
 
   const toggleMode = () => {
     const newMode = mode === 'signin' ? 'signup' : 'signin';
-    console.log('Toggling mode from', mode, 'to', newMode);
+    // Toggle authentication mode
     setMode(newMode);
   };
 
