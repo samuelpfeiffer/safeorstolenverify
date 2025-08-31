@@ -22,13 +22,16 @@ export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
   });
 
   const handleSignIn = async (data: SecureSignInFormData) => {
+    console.log('🔐 SignIn form submitted with email:', data.email);
     setIsLoading(true);
     try {
+      console.log('🔐 Calling signIn function...');
       const result = await signIn(data.email, data.password);
+      console.log('🔐 SignIn result:', result);
       form.reset();
       onSuccess?.();
     } catch (error) {
-      console.error('Secure sign in failed:', error);
+      console.error('🔐 Secure sign in failed:', error);
     } finally {
       setIsLoading(false);
     }
