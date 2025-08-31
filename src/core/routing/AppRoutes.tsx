@@ -98,6 +98,10 @@ const StolenGoodsCheckerPage = lazy(() => import('@/pages/StolenGoodsCheckerPage
 const AvoidStolenGoodsPage = lazy(() => import('@/pages/AvoidStolenGoodsPage'));
 const UltimateGuideNotBuyingStolenPage = lazy(() => import('@/pages/UltimateGuideNotBuyingStolenPage'));
 const HowToCheckAnythingStolenPage = lazy(() => import('@/pages/HowToCheckAnythingStolenPage'));
+const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage'));
+const LocalSEOPage = lazy(() => import('@/pages/LocalSEOPage'));
+const TheftTrendsBlogPage = lazy(() => import('@/pages/TheftTrendsBlogPage'));
+const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
 
 /**
  * Enterprise Application Routing
@@ -170,6 +174,10 @@ export const AppRoutes: React.FC = () => {
            <Route path="avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
            <Route path="ultimate-guide-not-buying-stolen-goods" element={<UltimateGuideNotBuyingStolenPage />} />
            <Route path="how-to-check-if-anything-is-stolen-before-you-buy" element={<HowToCheckAnythingStolenPage />} />
+           <Route path="comprehensive-guide" element={<ComprehensiveGuidePage />} />
+           <Route path="city/:city" element={<LocalSEOPage />} />
+           <Route path="blog/2024-theft-trends-report" element={<TheftTrendsBlogPage />} />
+           <Route path="partnerships" element={<PartnershipsPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
