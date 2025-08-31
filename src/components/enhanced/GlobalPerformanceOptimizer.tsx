@@ -14,7 +14,9 @@ const GlobalPerformanceOptimizerComponent = () => {
     const criticalResources = [
       { href: '/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png', as: 'image', fetchPriority: 'high' },
       { href: '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png', as: 'image' },
-      { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', as: 'style' }
+      { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', as: 'style' },
+      { href: '/favicon.ico', as: 'image' },
+      { href: '/manifest.json', as: 'fetch' }
     ];
 
     // Optimized scheduling for critical path
@@ -44,12 +46,17 @@ const GlobalPerformanceOptimizerComponent = () => {
       document.head.appendChild(fragment);
     }, 'immediate');
 
-    // Preconnect to external domains
+    // Preconnect to external domains with DNS prefetch
     const preconnectDomains = [
       'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com',
+      'https://fonts.gstatic.com', 
       'https://lxrdzbknktwlubbmlsqe.supabase.co',
       'https://js.stripe.com'
+    ];
+
+    const dnsPrefetchDomains = [
+      'https://www.googletagmanager.com',
+      'https://www.google-analytics.com'
     ];
 
     scheduleWork(() => {
@@ -58,6 +65,13 @@ const GlobalPerformanceOptimizerComponent = () => {
         link.rel = 'preconnect';
         link.href = domain;
         link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+      });
+
+      dnsPrefetchDomains.forEach(domain => {
+        const link = document.createElement('link');
+        link.rel = 'dns-prefetch';
+        link.href = domain;
         document.head.appendChild(link);
       });
     });

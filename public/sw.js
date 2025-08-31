@@ -1,8 +1,10 @@
 
-const CACHE_NAME = 'safeorstolen-v1';
+const CACHE_NAME = 'safeorstolen-v2';
 const urlsToCache = [
-  // Only cache manifest and essential assets; avoid caching '/' to prevent stale HTML for crawlers
-  '/manifest.json'
+  '/manifest.json',
+  '/favicon.ico',
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+  '/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png'
 ];
 
 self.addEventListener('install', event => {
