@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, Zap, Users, ArrowRight, CheckCircle, Star } from 'lucide-react';
 import { OptimizedHero } from '@/components/core/OptimizedHero';
-import { PageSEO } from '@/components/seo/PageSEO';
-import { MarketDominanceSEO } from '@/components/seo/MarketDominanceSEO';
+import { SpeedOptimizer } from '@/components/optimization/SpeedOptimizer';
+import { ConversionOptimizer } from '@/components/optimization/ConversionOptimizer';
+import { CredibilityBooster } from '@/components/optimization/CredibilityBooster';
+import { SEOBooster } from '@/components/optimization/SEOBooster';
 
 
 const HomePage = () => {
@@ -77,14 +79,8 @@ const HomePage = () => {
 
   return (
     <>
-      <MarketDominanceSEO />
-      <PageSEO
-        title="AI Verification Platform | SafeOrStolen - Check If Items Are Stolen"
-        description="Instantly verify if items are stolen with 99.9% accuracy. AI-powered platform trusted by millions. Free checks available - protect yourself before buying secondhand."
-        keywords="stolen goods checker, verify stolen items, AI verification platform, secondhand safety, fraud prevention"
-        canonical="/"
-        structuredData={homePageStructuredData}
-      />
+      <SpeedOptimizer />
+      <SEOBooster page="home" />
       
       <div className="min-h-screen">
         <OptimizedHero />
@@ -281,25 +277,17 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-sos-orange to-sos-lime">
+        {/* Credibility Section */}
+        <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Don't Risk Buying Stolen Goods
-              </h2>
-              <p className="text-xl mb-8 opacity-90">
-                Join millions who verify before they buy. Start with 4 free checks today.
-              </p>
-              <Button 
-                size="lg" 
-                className="bg-white text-sos-orange hover:bg-white/90 px-8 py-4 text-lg font-semibold"
-                onClick={() => navigate('/auth')}
-              >
-                Get Started Now - It's Free
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
+            <CredibilityBooster />
+          </div>
+        </section>
+
+        {/* Conversion Optimization Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <ConversionOptimizer />
           </div>
         </section>
       </div>
