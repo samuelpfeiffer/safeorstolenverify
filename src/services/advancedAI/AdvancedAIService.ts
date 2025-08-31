@@ -6,6 +6,8 @@
 import { deepThinkingEngine, type DeepThoughtProcess } from './core/DeepThinkingEngine';
 import { internetSearchEngine, type SearchQuery, type SearchResult } from './search/InternetSearchEngine';
 import { aiModelManager, type TaskRequirements, type ModelResponse } from './models/AIModelManager';
+import { aiDatabaseService } from '../aiDatabaseService';
+import { supabase } from '@/integrations/supabase/client';
 
 export interface AdvancedAnalysisRequest {
   query: string;
@@ -70,91 +72,19 @@ export class AdvancedAIService {
   }
 
   async performAdvancedAnalysis(request: AdvancedAnalysisRequest): Promise<string> {
-    const startTime = Date.now();
-    const analysisId = `analysis-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-
     try {
-      console.log(`Starting advanced analysis: ${analysisId}`);
+      // Create database session via edge function
+      const { data, error } = await supabase.functions.invoke('ai-analysis', {
+        body: request
+      });
 
-      // Initialize analysis result
-      const analysisResult: AdvancedAnalysisResult = {
-        id: analysisId,
-        query: request.query,
-        result: '',
-        confidence: 0,
-        sources: [],
-        reasoning: [],
-        recommendations: [],
-        metadata: {
-          modelsUsed: [],
-          processingTime: 0,
-          costEstimate: 0
-        },
-        timestamp: new Date()
-      };
-
-      this.activeAnalyses.set(analysisId, analysisResult);
-
-      // Phase 1: Deep Thinking (if requested)
-      let thinkingProcessId: string | null = null;
-      if (request.requirements.useDeepThinking) {
-        console.log('Initiating deep thinking process...');
-        thinkingProcessId = await deepThinkingEngine.startDeepThinking(request.query, request.context);
+      if (error) {
+        console.error('AI Analysis function error:', error);
+        throw error;
       }
 
-      // Phase 2: Internet Search (if requested)
-      let searchResults: SearchResult[] = [];
-      if (request.requirements.useInternetSearch) {
-        console.log('Performing internet search...');
-        searchResults = await this.performEnhancedSearch(request);
-        analysisResult.metadata.searchResults = searchResults;
-        analysisResult.sources = searchResults.map(r => r.source);
-      }
-
-      // Phase 3: Multi-Model Analysis
-      const modelResponses = await this.performMultiModelAnalysis(request, searchResults);
-      analysisResult.metadata.modelsUsed = modelResponses.map(r => r.model);
-
-      // Phase 4: Wait for Deep Thinking to Complete (if started)
-      let thinkingResult: DeepThoughtProcess | null = null;
-      if (thinkingProcessId) {
-        console.log('Waiting for deep thinking to complete...');
-        
-        // Poll for completion (max 30 seconds)
-        const maxWaitTime = 30000;
-        const pollInterval = 1000;
-        let waited = 0;
-        
-        while (waited < maxWaitTime) {
-          thinkingResult = await deepThinkingEngine.getThinkingProgress(thinkingProcessId);
-          if (thinkingResult?.endTime) break;
-          
-          await new Promise(resolve => setTimeout(resolve, pollInterval));
-          waited += pollInterval;
-        }
-        
-        if (thinkingResult) {
-          analysisResult.metadata.thinkingProcess = thinkingResult;
-          analysisResult.reasoning = thinkingResult.reasoning;
-        }
-      }
-
-      // Phase 5: Synthesis and Final Analysis
-      const finalResult = await this.synthesizeResults(
-        request,
-        modelResponses,
-        searchResults,
-        thinkingResult
-      );
-
-      // Update analysis result
-      analysisResult.result = finalResult.analysis;
-      analysisResult.confidence = finalResult.confidence;
-      analysisResult.recommendations = finalResult.recommendations;
-      analysisResult.metadata.processingTime = Date.now() - startTime;
-      analysisResult.metadata.costEstimate = this.calculateCostEstimate(modelResponses, searchResults);
-
-      console.log(`Advanced analysis complete: ${analysisId} (${analysisResult.metadata.processingTime}ms)`);
+      const analysisId = data.sessionId;
+      console.log(`Advanced analysis started: ${analysisId}`);
       
       return analysisId;
 
@@ -163,24 +93,8 @@ export class AdvancedAIService {
       
       // Fallback to basic analysis
       const fallbackResult = await this.performFallbackAnalysis(request);
+      const analysisId = `fallback-${Date.now()}`;
       
-      const analysisResult: AdvancedAnalysisResult = {
-        id: analysisId,
-        query: request.query,
-        result: fallbackResult,
-        confidence: 0.6,
-        sources: ['fallback-analysis'],
-        reasoning: ['Advanced analysis failed, using fallback methods'],
-        recommendations: ['Consider retrying with different parameters'],
-        metadata: {
-          modelsUsed: ['fallback'],
-          processingTime: Date.now() - startTime,
-          costEstimate: 0
-        },
-        timestamp: new Date()
-      };
-
-      this.activeAnalyses.set(analysisId, analysisResult);
       return analysisId;
     }
   }
@@ -439,7 +353,25 @@ Focus on accuracy, safety, and legal compliance in your analysis.`;
   }
 
   async getAnalysisResult(analysisId: string): Promise<AdvancedAnalysisResult | null> {
-    return this.activeAnalyses.get(analysisId) || null;
+    // Get from database instead of memory
+    const session = await aiDatabaseService.getAnalysisSession(analysisId);
+    if (!session) return null;
+
+    return {
+      id: session.id,
+      query: session.query,
+      result: session.result || '',
+      confidence: session.confidence || 0,
+      sources: session.sources || [],
+      reasoning: session.reasoning || [],
+      recommendations: session.recommendations || [],
+      metadata: {
+        modelsUsed: session.models_used || [],
+        processingTime: session.processing_time_ms || 0,
+        costEstimate: session.cost_estimate || 0
+      },
+      timestamp: new Date(session.created_at)
+    };
   }
 
   async getAllActiveAnalyses(): Promise<AdvancedAnalysisResult[]> {
