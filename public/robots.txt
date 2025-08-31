@@ -3,3 +3,13 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
+
+# Prioritize key verification pages for crawling
+User-agent: Googlebot
+Allow: /verify
+Allow: /imei
+Allow: /vin
+Allow: /bulk
+Allow: /check-phone
+Allow: /check-car
+Crawl-delay: 1
