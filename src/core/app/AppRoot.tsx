@@ -8,7 +8,15 @@ import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
-import { PerformanceMonitor } from '@/components/core/PerformanceMonitor';
+import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
+import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
+import { PWAProvider } from '@/core/providers/PWAProvider';
+import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
+import { DefaultSEO } from '@/components/seo/DefaultSEO';
+import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
+import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
+import { CriticalPathOptimizer } from '@/components/performance/CriticalPathOptimizer';
+import { MobileLCPOptimizer } from '@/components/performance/MobileLCPOptimizer';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -34,8 +42,8 @@ const queryClient = new QueryClient({
 });
 
 /**
- * Clean, High-Performance App Root Component
- * Optimized for speed and conversion
+ * Enterprise-grade App Root Component
+ * Provides complete application infrastructure with security, performance, and reliability
  */
 export const AppRoot: React.FC = () => {
   return (
@@ -43,17 +51,26 @@ export const AppRoot: React.FC = () => {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
-            <ThemeProvider>
-              <Router>
-                <div className="min-h-screen bg-sos text-white antialiased">
-                  <PerformanceMonitor />
-                  <Suspense fallback={<AppLoadingScreen />}>
-                    <AppRoutes />
-                  </Suspense>
-                  <Toaster />
-                </div>
-              </Router>
-            </ThemeProvider>
+            <PWAProvider>
+              <ThemeProvider>
+                <Router>
+                  <div className="min-h-screen bg-sos text-white antialiased">
+                    <MetaRedirectHandler />
+                    <CanonicalRedirectFix />
+                    <DefaultSEO />
+                    <GlobalAnalytics />
+        <GlobalPerformanceOptimizer />
+        <CriticalPathOptimizer />
+        <MobileLCPOptimizer />
+                    <Suspense fallback={<AppLoadingScreen />}>
+                      <AppRoutes />
+                    </Suspense>
+                    <PWAInstallBanner />
+                    <Toaster />
+                  </div>
+                </Router>
+              </ThemeProvider>
+            </PWAProvider>
           </AuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
