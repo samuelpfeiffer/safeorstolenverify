@@ -36,8 +36,8 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'es2020',
-    minify: 'terser',
-    sourcemap: false,
+    minify: mode === 'production' ? 'terser' : 'esbuild',
+    sourcemap: mode === 'development',
     rollupOptions: {
       output: {
         manualChunks: {
