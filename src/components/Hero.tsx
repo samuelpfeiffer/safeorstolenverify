@@ -60,6 +60,15 @@ const Hero = () => {
             </div>
           </div>
           
+          {/* Hero Image */}
+          <div className="mb-8 flex justify-center">
+            <img 
+              src="/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png" 
+              alt="Legitimate verification technology with phone and laptop" 
+              className="max-w-md w-full h-auto rounded-lg shadow-2xl"
+            />
+          </div>
+
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
