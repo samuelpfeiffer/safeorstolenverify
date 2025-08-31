@@ -64,10 +64,10 @@ export const Navigation: React.FC = () => {
       to={href}
       onClick={onClick}
       className={cn(
-        "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+        "px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105",
         isActiveRoute(href)
-          ? 'bg-sos-orange text-white'
-          : 'text-gray-300 hover:text-white hover:bg-sos-orange/20'
+          ? 'bg-sos-orange text-white shadow-lg shadow-sos-orange/30'
+          : 'text-gray-300 hover:text-sos-orange hover:bg-sos-orange/10 hover:shadow-md hover:shadow-sos-orange/20'
       )}
     >
       {children}
@@ -84,10 +84,10 @@ export const Navigation: React.FC = () => {
       to={href}
       onClick={onClick}
       className={cn(
-        "flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors",
+        "flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 hover:scale-105",
         isActiveRoute(href)
-          ? 'bg-sos-orange text-white'
-          : 'text-gray-300 hover:text-white hover:bg-sos-orange/20'
+          ? 'bg-sos-orange text-white shadow-lg shadow-sos-orange/30'
+          : 'text-gray-300 hover:text-sos-orange hover:bg-sos-orange/10 hover:shadow-md hover:shadow-sos-orange/20'
       )}
     >
       {Icon && <Icon className="h-5 w-5" />}
@@ -135,7 +135,7 @@ export const Navigation: React.FC = () => {
                 {/* User Dropdown */}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="flex items-center gap-2 text-gray-300 hover:text-white">
+                    <Button variant="ghost" className="flex items-center gap-2 text-gray-300 hover:text-sos-orange transition-all duration-200 hover:scale-105">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src={user?.avatar} />
                         <AvatarFallback className="bg-sos-orange text-white">
@@ -159,7 +159,7 @@ export const Navigation: React.FC = () => {
                     
                     {userMenuItems.map((item) => (
                       <DropdownMenuItem key={item.href} asChild>
-                        <Link to={item.href} className="text-white hover:bg-sos-orange/20">
+                        <Link to={item.href} className="text-white hover:text-sos-orange hover:bg-sos-orange/10 transition-all duration-200">
                           <item.icon className="mr-2 h-4 w-4" />
                           {item.label}
                         </Link>
@@ -171,7 +171,7 @@ export const Navigation: React.FC = () => {
                         <DropdownMenuSeparator className="bg-sos-orange/20" />
                         {adminNavigation.map((item) => (
                           <DropdownMenuItem key={item.name} asChild>
-                            <Link to={item.href} className="text-white hover:bg-sos-orange/20">
+                            <Link to={item.href} className="text-white hover:text-sos-orange hover:bg-sos-orange/10 transition-all duration-200">
                               <item.icon className="mr-2 h-4 w-4" />
                               {item.name}
                             </Link>
@@ -190,7 +190,7 @@ export const Navigation: React.FC = () => {
               </div>
             ) : (
               <div className="hidden lg:flex items-center space-x-3">
-                <Button variant="ghost" asChild className="text-gray-300 hover:text-white">
+                <Button variant="ghost" asChild className="text-gray-300 hover:text-sos-orange transition-all duration-200 hover:scale-105">
                   <Link to="/auth?tab=signin">Sign In</Link>
                 </Button>
                 <Button asChild className="bg-sos-orange hover:bg-sos-orange/90 text-white font-medium">

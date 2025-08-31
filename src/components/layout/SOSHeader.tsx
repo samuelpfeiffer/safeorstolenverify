@@ -62,8 +62,8 @@ export const SOSHeader: React.FC = () => {
             <Link
               key={item.title}
               to={item.href}
-              className={`relative text-sm font-medium transition-colors ${
-                isActive(item.href) ? 'text-sos-orange' : 'text-gray-300 hover:text-white'
+              className={`relative text-sm font-medium transition-all duration-200 hover:scale-105 ${
+                isActive(item.href) ? 'text-sos-orange' : 'text-gray-300 hover:text-sos-orange'
               }`}
               aria-current={isActive(item.href) ? 'page' : undefined}
             >
