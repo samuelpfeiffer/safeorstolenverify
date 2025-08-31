@@ -8,6 +8,13 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
+import { AICapabilitiesStructuredData } from '@/components/seo/AICapabilitiesStructuredData';
+import { MobileAppStructuredData } from '@/components/seo/MobileAppStructuredData';
+import { GoogleMobilityManifesto } from '@/components/seo/GoogleMobilityManifesto';
+import { AISearchInterface } from '@/components/ai/AISearchInterface';
+import { BusinessPluginSuite } from '@/components/plugins/BusinessPluginSuite';
+import { IndustryCredentials } from '@/components/trust/IndustryCredentials';
+import { MobileFirstManifesto } from '@/components/mobile/MobileFirstManifesto';
 
 // Lazy load heavy components for better performance
 const Features = lazy(() => import('@/components/Features'));
@@ -102,22 +109,55 @@ const HomePage = () => {
       </Suspense>
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
+      <AICapabilitiesStructuredData />
+      <MobileAppStructuredData />
+      <GoogleMobilityManifesto />
       <PageSEO
-        title="Global Verification Hub - Check Any Valuable Item | SafeOrStolen"
-        description="The go-to platform for verifying electronics, vehicles, firearms, art, jewelry, tools & more in real-time. For auction houses, pawn shops, resellers, law enforcement & everyone using eBay, Craigslist, Facebook Marketplace."
-        keywords="stolen item checker, verify electronics, check VIN, IMEI lookup, art verification, firearm check, auction house verification, pawn shop compliance, reseller tools, marketplace safety, stolen goods database"
+        title="AI-Powered Mobile Verification Platform | SafeOrStolen Industry Leader"
+        description="First mobile-native AI verification platform with advanced plugin ecosystem. Industry-leading stolen goods detection for businesses, law enforcement, and consumers worldwide."
+        keywords="AI verification platform, mobile-first stolen goods checker, business plugin ecosystem, law enforcement tools, enterprise verification API, real-time theft detection, mobile verification app"
         canonical="/"
         structuredData={homePageStructuredData}
       />
       <div className="min-h-screen">
         <ConversionTracker />
         <Hero />
+        
+        {/* Mobile-First Innovation Section */}
+        <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
+          <div className="container mx-auto px-4">
+            <MobileFirstManifesto />
+          </div>
+        </section>
+
+        {/* AI Search Interface Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <AISearchInterface />
+          </div>
+        </section>
+
         <Suspense fallback={<SectionLoader />}>
           <AudienceNavigation />
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <ValuePropositionSections />
         </Suspense>
+        
+        {/* Industry Credentials Section */}
+        <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+          <div className="container mx-auto px-4">
+            <IndustryCredentials />
+          </div>
+        </section>
+
+        {/* Business Plugin Suite Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <BusinessPluginSuite />
+          </div>
+        </section>
+
         <Suspense fallback={<SectionLoader />}>
           <TrustIndicators />
         </Suspense>
