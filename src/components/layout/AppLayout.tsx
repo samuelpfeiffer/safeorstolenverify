@@ -9,6 +9,7 @@ import { MetaPreloader } from '@/components/performance/MetaPreloader';
 import { SitelinkStructuredData } from '@/components/seo/SitelinkStructuredData';
 import { NavigationStructuredData } from '@/components/seo/NavigationStructuredData';
 import { SitelinksSearchBox } from '@/components/seo/SitelinksSearchBox';
+import { MobileAppStructuredData } from '@/components/seo/MobileAppStructuredData';
 
 export const AppLayout: React.FC = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ export const AppLayout: React.FC = () => {
       <SitelinkStructuredData />
       <NavigationStructuredData />
       <SitelinksSearchBox />
+      <MobileAppStructuredData />
       <EnsureIndexable allowNoIndex={allowNoIndex} />
       <SOSHeader />
       <main className="flex-1">

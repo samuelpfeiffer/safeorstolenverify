@@ -21,6 +21,7 @@ const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const FaqPage = lazy(() => import('@/pages/FaqPage'));
+const DownloadPage = lazy(() => import('@/pages/DownloadPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
@@ -120,8 +121,9 @@ export const AppRoutes: React.FC = () => {
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
-          <Route path="faq" element={<FaqPage />} />
-          <Route path="terms" element={<TermsPage />} />
+           <Route path="faq" element={<FaqPage />} />
+           <Route path="download" element={<DownloadPage />} />
+           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/category/:category" element={<BlogPage />} />
