@@ -123,6 +123,24 @@ const HomePage = () => {
         <ConversionTracker />
         <Hero />
         
+        {/* Launch Announcement Banner */}
+        <section className="py-8 bg-gradient-to-r from-primary/10 to-secondary/10 border-b">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-3 bg-background/80 backdrop-blur-sm px-6 py-3 rounded-full border shadow-lg">
+                <div className="h-3 w-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="font-semibold text-foreground">🚀 NOW LIVE: The Global Hub for Second-Hand Verification</span>
+                <a 
+                  href="/announcement" 
+                  className="text-primary hover:text-primary/80 font-semibold underline"
+                >
+                  Read Full Announcement →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         {/* Mobile-First Innovation Section */}
         <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
           <div className="container mx-auto px-4">
