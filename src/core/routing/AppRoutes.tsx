@@ -203,6 +203,11 @@ export const AppRoutes: React.FC = () => {
           } />
           <Route path="firearms-check" element={<FirearmsCheckPage />} />
           
+          {/* Item verification routes */}
+          <Route path="imei" element={<CheckPhonePage />} />
+          <Route path="vin" element={<CheckCarPage />} />
+          <Route path="bulk" element={<ProtectedRoute><ItemCategoriesPage /></ProtectedRoute>} />
+          
           {/* Item-specific verification pages - Landing pages public, auth required for searches */}
           <Route path="check-phone" element={<ProtectedRoute><CheckPhonePage /></ProtectedRoute>} />
           <Route path="check-car" element={<CheckCarPage />} />

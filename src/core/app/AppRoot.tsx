@@ -15,6 +15,7 @@ import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { DefaultSEO } from '@/components/seo/DefaultSEO';
 import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
 import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
+import { EnhancedCanonicalHandler } from '@/components/seo/EnhancedCanonicalHandler';
 import { CriticalPathOptimizer } from '@/components/performance/CriticalPathOptimizer';
 import { MobileLCPOptimizer } from '@/components/performance/MobileLCPOptimizer';
 import { AppDownloadBot } from '@/components/ui/AppDownloadBot';
@@ -58,6 +59,7 @@ export const AppRoot: React.FC = () => {
                   <div className="min-h-screen bg-sos text-white antialiased">
                     <MetaRedirectHandler />
                     <CanonicalRedirectFix />
+                    <EnhancedCanonicalHandler />
                     <DefaultSEO />
                     <GlobalAnalytics />
         <GlobalPerformanceOptimizer />

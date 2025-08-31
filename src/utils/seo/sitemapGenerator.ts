@@ -5,13 +5,18 @@ export const generateSitemapUrls = () => {
   const staticPages = [
     '/',
     '/dashboard',
+    '/verify',
+    '/imei',
+    '/vin',
+    '/check-phone',
+    '/check-car',
+    '/check-bike',
+    '/check-electronics',
     '/how-it-works',
     '/pricing',
     '/subscriptions', 
     '/about',
     '/contact',
-    '/privacy',
-    '/terms',
     '/blog'
   ];
 
