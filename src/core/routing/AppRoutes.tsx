@@ -104,6 +104,7 @@ const LocalSEOPage = lazy(() => import('@/pages/LocalSEOPage'));
 const TheftTrendsBlogPage = lazy(() => import('@/pages/TheftTrendsBlogPage'));
 const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
 const RevenueHubPage = lazy(() => import('@/pages/RevenueHubPage'));
+const StartupMasteryPage = lazy(() => import('@/pages/StartupMasteryPage'));
 
 /**
  * Enterprise Application Routing
@@ -182,6 +183,7 @@ export const AppRoutes: React.FC = () => {
            <Route path="blog/2024-theft-trends-report" element={<TheftTrendsBlogPage />} />
            <Route path="partnerships" element={<PartnershipsPage />} />
            <Route path="revenue-hub" element={<RevenueHubPage />} />
+           <Route path="startup-mastery" element={<StartupMasteryPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
