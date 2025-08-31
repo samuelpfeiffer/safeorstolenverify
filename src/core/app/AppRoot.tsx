@@ -17,6 +17,7 @@ import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
 import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
 import { CriticalPathOptimizer } from '@/components/performance/CriticalPathOptimizer';
 import { MobileLCPOptimizer } from '@/components/performance/MobileLCPOptimizer';
+import { AppDownloadBot } from '@/components/ui/AppDownloadBot';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -66,6 +67,7 @@ export const AppRoot: React.FC = () => {
                       <AppRoutes />
                     </Suspense>
                     <PWAInstallBanner />
+                    <AppDownloadBot delay={8000} />
                     <Toaster />
                   </div>
                 </Router>
