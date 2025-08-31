@@ -1,15 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, memo, useRef } from 'react';
 
-export const GlobalPerformanceOptimizer: React.FC = () => {
+const GlobalPerformanceOptimizerComponent = () => {
   const hasInitialized = useRef(false);
 
   useEffect(() => {
     if (hasInitialized.current) return;
     hasInitialized.current = true;
 
+    // Batch DOM operations for better performance
+    const fragment = document.createDocumentFragment();
+    
     // Enhanced critical resource preloading for LCP optimization
     const criticalResources = [
-      { href: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png', as: 'image', fetchPriority: 'high' },
+      { href: '/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png', as: 'image', fetchPriority: 'high' },
       { href: '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png', as: 'image' },
       { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', as: 'style' }
     ];
@@ -33,11 +36,12 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
           link.rel = 'preload';
           link.href = href;
           link.as = as;
-          if (fetchPriority) link.setAttribute('fetchpriority', fetchPriority);
+          if (fetchPriority) link.fetchPriority = fetchPriority; // Fixed TypeScript property
           if (as === 'style') link.crossOrigin = 'anonymous';
-          document.head.appendChild(link);
+          fragment.appendChild(link);
         }
       });
+      document.head.appendChild(fragment);
     }, 'immediate');
 
     // Preconnect to external domains
@@ -154,3 +158,5 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
 
   return null; // This component only runs effects
 };
+
+export const GlobalPerformanceOptimizer = memo(GlobalPerformanceOptimizerComponent);

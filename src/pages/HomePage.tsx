@@ -1,23 +1,32 @@
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
-import Features from '@/components/Features';
-import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
-import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
-import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
-import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
-import { TrustIndicators } from '@/components/TrustIndicators';
-import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
-import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
-import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
-import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
+
+// Lazy load heavy components for better performance
+const Features = lazy(() => import('@/components/Features'));
+const TestimonialsSection = lazy(() => import('@/components/testimonials/TestimonialsSection').then(m => ({ default: m.TestimonialsSection })));
+const FeaturedBlogSection = lazy(() => import('@/components/blog/FeaturedBlogSection').then(m => ({ default: m.FeaturedBlogSection })));
+const EnhancedCTASection = lazy(() => import('@/components/cta/EnhancedCTASection').then(m => ({ default: m.EnhancedCTASection })));
+const GlobalPerformanceOptimizer = lazy(() => import('@/components/enhanced/GlobalPerformanceOptimizer').then(m => ({ default: m.GlobalPerformanceOptimizer })));
+const TrustIndicators = lazy(() => import('@/components/TrustIndicators').then(m => ({ default: m.TrustIndicators })));
+const TrustBadgeStrip = lazy(() => import('@/components/trust/TrustBadgeStrip').then(m => ({ default: m.TrustBadgeStrip })));
+const AudienceNavigation = lazy(() => import('@/components/hero/AudienceNavigation').then(m => ({ default: m.AudienceNavigation })));
+const ValuePropositionSections = lazy(() => import('@/components/hero/ValuePropositionSections').then(m => ({ default: m.ValuePropositionSections })));
+const TrustBuildingFAQ = lazy(() => import('@/components/trust/TrustBuildingFAQ').then(m => ({ default: m.TrustBuildingFAQ })));
+
+// Loading component for lazy loaded sections
+const SectionLoader = () => (
+  <div className="h-32 flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-sos-orange border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -84,7 +93,9 @@ const HomePage = () => {
 
   return (
     <>
-      <GlobalPerformanceOptimizer />
+      <Suspense fallback={null}>
+        <GlobalPerformanceOptimizer />
+      </Suspense>
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <PageSEO
@@ -97,13 +108,27 @@ const HomePage = () => {
       <div className="min-h-screen">
         <ConversionTracker />
         <Hero />
-        <AudienceNavigation />
-        <ValuePropositionSections />
-        <TrustIndicators />
-        <TrustBadgeStrip />
-        <TrustBuildingFAQ />
-        <Features />
-        <TestimonialsSection />
+        <Suspense fallback={<SectionLoader />}>
+          <AudienceNavigation />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <ValuePropositionSections />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <TrustIndicators />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <TrustBadgeStrip />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <TrustBuildingFAQ />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <Features />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <TestimonialsSection />
+        </Suspense>
         
         {/* Community Movement Section */}
         <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
@@ -144,8 +169,12 @@ const HomePage = () => {
           </div>
         </section>
         
-        <FeaturedBlogSection />
-        <EnhancedCTASection />
+        <Suspense fallback={<SectionLoader />}>
+          <FeaturedBlogSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <EnhancedCTASection />
+        </Suspense>
       </div>
     </>
   );

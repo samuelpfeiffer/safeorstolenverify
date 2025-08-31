@@ -60,12 +60,15 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Image */}
+          {/* Hero Image - Optimized */}
           <div className="mb-8 flex justify-center">
             <img 
               src="/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png" 
               alt="Legitimate verification technology with phone and laptop" 
               className="max-w-md w-full h-auto rounded-lg shadow-2xl"
+              loading="eager"
+              decoding="sync"
+              fetchPriority="high"
             />
           </div>
 
