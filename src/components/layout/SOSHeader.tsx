@@ -108,13 +108,13 @@ export const SOSHeader: React.FC = () => {
                 <DropdownMenuLabel className="text-white">My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-sos-orange/20" />
                 <DropdownMenuItem asChild>
-                  <Link to="/profile" className="text-white hover:bg-sos-orange/20">
+                  <Link to="/dashboard" className="text-white hover:bg-sos-orange/20">
                     <User className="mr-2 h-4 w-4" />
                     Profile
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/subscription" className="text-white hover:bg-sos-orange/20">
+                  <Link to="/subscriptions" className="text-white hover:bg-sos-orange/20">
                     <Crown className="mr-2 h-4 w-4" />
                     Subscription
                   </Link>

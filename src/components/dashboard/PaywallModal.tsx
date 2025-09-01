@@ -84,7 +84,7 @@ export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
                   className={`w-full ${plan.highlighted ? 'bg-sos-orange hover:bg-sos-orange/90' : ''}`}
                   variant={plan.highlighted ? 'default' : 'outline'}
                 >
-                  <Link to={`/subscription?plan=${plan.name.toLowerCase()}`}>
+                  <Link to={`/subscriptions?plan=${plan.name.toLowerCase()}`}>
                     Choose {plan.name} Plan
                   </Link>
                 </Button>

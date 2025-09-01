@@ -41,14 +41,24 @@ export const ValuePropositionSections = () => {
                   <p className="text-sm text-muted-foreground">Shop with confidence</p>
                 </div>
               </div>
-              <Button 
-                size="lg" 
-                className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
-                onClick={() => navigate('/for-consumers')}
-              >
-                Check an Item Before You Buy
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
+                  onClick={() => navigate('/subscriptions')}
+                >
+                  View Buyer Plans
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark"
+                  onClick={() => navigate('/for-consumers')}
+                >
+                  Try Free Check
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -83,14 +93,24 @@ export const ValuePropositionSections = () => {
                   <p className="text-sm text-muted-foreground">Gain buyer confidence</p>
                 </div>
               </div>
-              <Button 
-                size="lg" 
-                className="bg-sos-orange text-white hover:bg-sos-orange/90 font-semibold"
-                onClick={() => navigate('/dashboard')}
-              >
-                Verify Your Item Before You List
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-sos-orange text-white hover:bg-sos-orange/90 font-semibold"
+                  onClick={() => navigate('/subscriptions')}
+                >
+                  View Seller Plans
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-sos-orange text-sos-orange hover:bg-sos-orange hover:text-white"
+                  onClick={() => navigate('/dashboard')}
+                >
+                  Verify Now
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -125,14 +145,24 @@ export const ValuePropositionSections = () => {
                   <p className="text-sm text-muted-foreground">Audit-ready documentation</p>
                 </div>
               </div>
-              <Button 
-                size="lg" 
-                className="bg-blue-500 text-white hover:bg-blue-500/90 font-semibold"
-                onClick={() => navigate('/for-brands')}
-              >
-                Learn About Business Solutions
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-500 text-white hover:bg-blue-500/90 font-semibold"
+                  onClick={() => navigate('/subscriptions')}
+                >
+                  View Business Plans
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+                  onClick={() => navigate('/for-brands')}
+                >
+                  Learn More
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </section>

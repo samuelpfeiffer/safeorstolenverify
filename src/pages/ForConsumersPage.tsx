@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ConsumerHeader } from '@/components/consumers/ConsumerHeader';
 import { ConsumerFeatures } from '@/components/consumers/ConsumerFeatures';
@@ -6,6 +7,17 @@ import { ConsumerPricing } from '@/components/consumers/ConsumerPricing';
 import { ConsumerCTA } from '@/components/consumers/ConsumerCTA';
 
 const ForConsumersPage: React.FC = () => {
+  const navigate = useNavigate();
+  
+  const handleSubscribeClick = (tier: 'basic' | 'premium') => {
+    navigate('/subscriptions');
+  };
+
+  const handleScrollToSubscriptions = () => {
+    const element = document.getElementById('consumer-pricing');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <PageSEO 
@@ -17,8 +29,10 @@ const ForConsumersPage: React.FC = () => {
       <div className="min-h-screen bg-background">
         <ConsumerHeader />
         <ConsumerFeatures />
-        <ConsumerPricing onSubscribeClick={() => {}} isLoading={false} />
-        <ConsumerCTA onScrollToSubscriptions={() => {}} />
+        <div id="consumer-pricing">
+          <ConsumerPricing onSubscribeClick={handleSubscribeClick} isLoading={false} />
+        </div>
+        <ConsumerCTA onScrollToSubscriptions={handleScrollToSubscriptions} />
       </div>
     </>
   );

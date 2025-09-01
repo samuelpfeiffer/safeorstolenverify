@@ -67,7 +67,7 @@ const TopNavigation = () => {
 
   const userMenuItems = isAuthenticated ? [
     { label: 'Search History', href: '/search-history', icon: Search },
-    { label: 'Profile', href: '/profile' },
+    { label: 'Profile', href: '/dashboard' },
     { label: 'Security Settings', href: '/security', icon: Shield },
   ] : [];
 

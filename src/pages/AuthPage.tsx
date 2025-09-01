@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TermsAndConditions } from '@/components/auth/TermsAndConditions';
 import { SignUpWelcome } from '@/components/auth/SignUpWelcome';
+import { SignUpSuccess } from '@/components/auth/SignUpSuccess';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
@@ -26,7 +27,7 @@ const signUpSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
 });
 
-type AuthStep = 'auth' | 'terms' | 'welcome';
+type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success';
 
 const AuthPage = () => {
   const [searchParams] = useSearchParams();
@@ -37,6 +38,8 @@ const AuthPage = () => {
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [step, setStep] = useState<AuthStep>('auth');
   const [pendingUser, setPendingUser] = useState<any>(null);
+  const [signUpEmail, setSignUpEmail] = useState<string>('');
+  const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
 
   // Sync active tab with URL parameter changes
   useEffect(() => {
@@ -73,18 +76,19 @@ const AuthPage = () => {
   };
 
   const onSignUp = async (values: z.infer<typeof signUpSchema>) => {
+    setSignUpEmail(values.email);
     const result = await signUp(values.email, values.password, values.fullName);
+    
     if (result.success) {
-      // For signup, we need to get the user from auth context after successful signup
       if (user) {
+        // User is immediately signed in (no email verification required)
         setPendingUser(user);
+        setEmailVerificationRequired(false);
         setStep('terms');
       } else {
-        // Handle case where user needs email verification
-        toast({
-          title: "Check your email",
-          description: "Please check your email to verify your account.",
-        });
+        // Email verification required
+        setEmailVerificationRequired(true);
+        setStep('signup-success');
       }
     } else if (result.error === 'User already exists') {
       setActiveTab('signin');
@@ -145,12 +149,32 @@ const AuthPage = () => {
     }
   };
 
+  const handleSignUpSuccessContinue = () => {
+    if (emailVerificationRequired) {
+      // Go back to sign in form
+      setActiveTab('signin');
+      setStep('auth');
+    } else {
+      // Continue to dashboard (for immediately signed-in users)
+      handleWelcomeContinue();
+    }
+  };
+
   const handleTermsDecline = () => {
     setStep('auth');
     setPendingUser(null);
     signUpForm.reset();
   };
 
+  if (step === 'signup-success') {
+    return (
+      <SignUpSuccess
+        onContinue={handleSignUpSuccessContinue}
+        emailVerificationRequired={emailVerificationRequired}
+        email={signUpEmail}
+      />
+    );
+  }
   if (step === 'terms') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted flex items-center justify-center p-4">

@@ -185,7 +185,7 @@ const RefundsPage: React.FC = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/subscription">
+              <Link to="/subscriptions">
                 <Button size="lg" variant="outline">
                   Manage Subscription
                 </Button>

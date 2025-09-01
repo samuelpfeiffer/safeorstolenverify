@@ -43,7 +43,7 @@ export const MobileMenu = ({ currentPath, closeMenu, isOpen }: MobileMenuProps) 
                 >
                   Logout
                 </Button>
-                <Link to="/search-history" className="w-full" onClick={closeMenu}>
+                <Link to="/dashboard" className="w-full" onClick={closeMenu}>
                   <Button className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full">
                     My Account
                   </Button>
