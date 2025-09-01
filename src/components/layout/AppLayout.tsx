@@ -5,11 +5,6 @@ import { SOSHeader } from '@/components/layout/SOSHeader';
 import { SOSFooter } from '@/components/layout/SOSFooter';
 import { DefaultSEO } from '@/components/seo/DefaultSEO';
 import { EnsureIndexable } from '@/components/seo/EnsureIndexable';
-import { MetaPreloader } from '@/components/performance/MetaPreloader';
-import { SitelinkStructuredData } from '@/components/seo/SitelinkStructuredData';
-import { NavigationStructuredData } from '@/components/seo/NavigationStructuredData';
-import { SitelinksSearchBox } from '@/components/seo/SitelinksSearchBox';
-import { MobileAppStructuredData } from '@/components/seo/MobileAppStructuredData';
 
 export const AppLayout: React.FC = () => {
   const location = useLocation();
@@ -18,12 +13,7 @@ export const AppLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-sos text-white flex flex-col">
-      <MetaPreloader />
       <DefaultSEO />
-      <SitelinkStructuredData />
-      <NavigationStructuredData />
-      <SitelinksSearchBox />
-      <MobileAppStructuredData />
       <EnsureIndexable allowNoIndex={allowNoIndex} />
       <SOSHeader />
       <main className="flex-1">

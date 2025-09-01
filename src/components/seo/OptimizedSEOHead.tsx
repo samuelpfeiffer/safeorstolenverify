@@ -42,9 +42,6 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       {/* Canonical URL */}
       {canonical && <link rel="canonical" href={fullCanonicalUrl} />}
       
-      {/* RSS Feed for Google Discover */}
-      <link rel="alternate" type="application/rss+xml" title="SafeOrStolen - Stolen Goods Verification Insights" href="https://safeorstolen.com/rss.xml" />
-      
       {/* Robots */}
       <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
       

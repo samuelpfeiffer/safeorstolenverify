@@ -17,8 +17,6 @@
     <link rel="canonical" href="https://safeorstolen.com/" />
     <!-- Expose sitemap to crawlers inspecting the page head -->
     <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />
-    <!-- RSS Feed for Google Discover and Follow feature -->
-    <link rel="alternate" type="application/rss+xml" title="SafeOrStolen - Stolen Goods Verification Insights" href="https://safeorstolen.com/rss.xml" />
     
     <!-- Failsafe: Ensure correct homepage title/canonical before React mounts -->
     <script>
@@ -40,7 +38,7 @@
     </script>
     
     <!-- Enhanced Security Headers (relaxed for in-app preview iframe + dev HMR) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://cdn.gpteng.co https://www.googletagmanager.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com blob:; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://www.google-analytics.com ws: wss:; frame-src 'self' https://js.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *; upgrade-insecure-requests;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co https://www.googletagmanager.com https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://www.google-analytics.com ws: wss:; frame-src 'self' https://js.stripe.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *; upgrade-insecure-requests;" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <!-- Removed X-Frame-Options to allow embedding in preview iframe -->
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
@@ -53,26 +51,11 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="SafeOrStolen" />
+    <meta name="apple-mobile-web-app-title" content="Safe Or Stolen" />
     
-    <!-- Favicons - Optimized for Google Search Results -->
-    <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png" sizes="any">
-    <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png" sizes="48x48">
-    <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png" sizes="96x96">
-    <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png" sizes="192x192">
-    
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" sizes="180x180" />
-    <link rel="apple-touch-icon-precomposed" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" sizes="180x180" />
+    <!-- iOS Splash Screens -->
+    <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
     <link rel="apple-touch-startup-image" href="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" />
-    
-    <!-- Mobile App Smart Banners -->
-    <meta name="apple-itunes-app" content="app-id=6738429581, app-argument=https://safeorstolen.com" />
-    <meta name="google-play-app" content="app-id=app.lovable.ded9e6b996c44cc38b1a81d9ed9b1d6b" />
-    
-    <!-- App Store Alternative Links -->
-    <link rel="alternate" href="android-app://app.lovable.ded9e6b996c44cc38b1a81d9ed9b1d6b/https/safeorstolen.com" />
-    <link rel="alternate" href="ios-app://6738429581/https/safeorstolen.com" />
 
     <!-- Geographic Meta Tags - Removed Phoenix-specific targeting for global reach -->
 
@@ -99,6 +82,8 @@
     <meta name="business-type" content="Stolen Goods Verification Service" />
     <meta name="service-area" content="Global" />
     <meta name="service-type" content="Stolen Item Check, IMEI Verification, Serial Number Verification, VIN Verification" />
+    
+    <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png">
     
     <!-- Production Analytics - Replace with actual GA4 ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

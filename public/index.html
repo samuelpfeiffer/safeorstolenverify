@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>SafeOrStolen - Verify Items Before You Buy | Stolen Goods Checker</title>
+  <meta name="title" content="SafeOrStolen - Verify Items Before You Buy | Stolen Goods Checker" />
+  <meta name="description" content="Professional stolen item verification service. Check serial numbers, VINs, and IMEIs against comprehensive theft databases. Protect yourself from buying stolen goods." />
+  <meta name="keywords" content="stolen items checker, verify serial number, stolen goods database, theft verification, IMEI check, VIN check, stolen property lookup" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:160" />
+  <meta name="author" content="SafeOrStolen" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://safeorstolen.com/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://safeorstolen.com/" />
+  <meta property="og:title" content="SafeOrStolen - Verify Items Before You Buy | Stolen Goods Checker" />
+  <meta property="og:description" content="Professional stolen item verification service. Check serial numbers, VINs, and IMEIs against comprehensive theft databases. Protect yourself from buying stolen goods." />
+  <meta property="og:image" content="https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
+  <meta property="og:site_name" content="SafeOrStolen" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://safeorstolen.com/" />
+  <meta property="twitter:title" content="SafeOrStolen - Verify Items Before You Buy | Stolen Goods Checker" />
+  <meta property="twitter:description" content="Professional stolen item verification service. Check serial numbers, VINs, and IMEIs against comprehensive theft databases. Protect yourself from buying stolen goods." />
+  <meta property="twitter:image" content="https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
+  
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/png" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#1a1a1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//lxrdzbknktwlubbmlsqe.supabase.co" />
+  <link rel="dns-prefetch" href="//js.stripe.com" />
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SafeOrStolen",
+    "url": "https://safeorstolen.com",
+    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+    "description": "Professional stolen item verification service",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "support@safeorstolen.com"
+    },
+    "sameAs": [
+      "https://fastercapital.com"
+    ]
+  }
+  </script>
+  
+  <!-- Structured Data - WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SafeOrStolen",
+    "url": "https://safeorstolen.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://safeorstolen.com/dashboard?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <!-- Critical CSS (inline for performance) -->
+  <style>
+    /* Critical loading styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background-color: #1a1a1a;
+      color: white;
+      min-height: 100vh;
+    }
+    
+    #root {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Loading spinner */
+    .loading-spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #ff6b35;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #1a1a1a;
+    }
+    
+    /* Hide content until React loads */
+    .pre-load-hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fallback content for users with JavaScript disabled -->
+  <noscript>
+    <div style="text-align: center; padding: 50px; background-color: #1a1a1a; color: white; min-height: 100vh;">
+      <h1>SafeOrStolen - Verify Items Before You Buy</h1>
+      <p>JavaScript is required to use this application. Please enable JavaScript in your browser.</p>
+      <p>SafeOrStolen helps you verify if items are stolen before you buy them.</p>
+      <a href="mailto:support@safeorstolen.com" style="color: #ff6b35;">Contact Support</a>
+    </div>
+  </noscript>
+  
+  <!-- Main application container -->
+  <div id="root">
+    <!-- Loading fallback -->
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <p style="color: #ccc; margin-top: 20px;">Loading SafeOrStolen...</p>
+    </div>
+  </div>
+  
+  <!-- Application script -->
+  <script type="module" src="/src/main.tsx"></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    // Basic performance monitoring
+    window.addEventListener('load', function() {
+      if ('performance' in window) {
+        setTimeout(function() {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          if (perfData && perfData.loadEventEnd > 0) {
+            console.log('Page load time:', perfData.loadEventEnd, 'ms');
+          }
+        }, 0);
+      }
+    });
+  </script>
+</body>
+</html>

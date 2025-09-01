@@ -6,31 +6,31 @@ import { Link } from 'react-router-dom';
 
 const featuredPosts = [
   {
-    title: "Revolutionary AI Verification Technology",
-    excerpt: "Discover how SafeOrStolen's cutting-edge AI and neural networks deliver industry-leading verification accuracy with enterprise-grade security.",
-    category: "Technology",
-    publishedAt: "2024-12-31",
-    readTime: "7 min read",
-    image: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    slug: "ai-verification-technology"
-  },
-  {
-    title: "SafeOrStolen Mobile App: Advanced Features",
-    excerpt: "Experience verification power in your pocket. Camera scanning, instant results, and smart notifications for safer shopping on-the-go.",
-    category: "Mobile App",
-    publishedAt: "2024-12-30",
-    readTime: "6 min read",
-    image: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    slug: "mobile-app-features"
-  },
-  {
-    title: "Enterprise Security & Privacy Protection",
-    excerpt: "Learn about our military-grade encryption, zero-knowledge architecture, and comprehensive compliance framework that keeps your data secure.",
-    category: "Security",
-    publishedAt: "2024-12-29",
+    title: "How to Avoid Buying Stolen Goods: Complete 2024 Guide",
+    excerpt: "Learn the warning signs, verification methods, and legal protections that keep you safe when buying used items online or in person.",
+    category: "Buyer Safety",
+    publishedAt: "2024-01-15",
     readTime: "8 min read",
-    image: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    slug: "enterprise-security"
+    image: "/images/blog/safer-buyer-flow.jpg",
+    slug: "avoid-buying-stolen-goods-guide"
+  },
+  {
+    title: "Serial Numbers 101: What They Are and Why They Matter",
+    excerpt: "Everything you need to know about serial numbers, how they work, and why they're crucial for verifying the legitimacy of your purchases.",
+    category: "Education", 
+    publishedAt: "2024-01-12",
+    readTime: "6 min read",
+    image: "/images/blog/serial-numbers-101.jpg",
+    slug: "serial-numbers-complete-guide"
+  },
+  {
+    title: "Marketplace Red Flags: 10 Warning Signs of Stolen Items",
+    excerpt: "Spot suspicious listings before you buy. These red flags can save you from unknowingly purchasing stolen merchandise.",
+    category: "Prevention",
+    publishedAt: "2024-01-10", 
+    readTime: "5 min read",
+    image: "/images/blog/marketplace-red-flags.jpg",
+    slug: "marketplace-warning-signs-stolen-items"
   }
 ];
 

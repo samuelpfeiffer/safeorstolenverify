@@ -1,62 +1,44 @@
-import { useEffect, memo, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const GlobalPerformanceOptimizerComponent = () => {
+export const GlobalPerformanceOptimizer: React.FC = () => {
   const hasInitialized = useRef(false);
 
   useEffect(() => {
     if (hasInitialized.current) return;
     hasInitialized.current = true;
 
-    // Batch DOM operations for better performance
-    const fragment = document.createDocumentFragment();
-    
-    // Enhanced critical resource preloading for LCP optimization
-    const criticalResources = [
-      { href: '/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png', as: 'image', fetchPriority: 'high' },
-      { href: '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png', as: 'image' },
-      { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', as: 'style' },
-      { href: '/favicon.ico', as: 'image' },
-      { href: '/manifest.json', as: 'fetch' }
+    // Preload critical resources
+    const criticalImages = [
+      '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png',
+      '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png'
     ];
 
-    // Optimized scheduling for critical path
-    const scheduleWork = (callback: () => void, priority: 'immediate' | 'idle' = 'idle') => {
-      if (priority === 'immediate') {
-        callback();
-      } else if ('requestIdleCallback' in window) {
+    // Use requestIdleCallback for better performance
+    const scheduleWork = (callback: () => void) => {
+      if ('requestIdleCallback' in window) {
         requestIdleCallback(callback);
       } else {
         setTimeout(callback, 0);
       }
     };
 
-    // Immediate loading for LCP-critical resources
     scheduleWork(() => {
-      criticalResources.forEach(({ href, as, fetchPriority }) => {
-        if (!document.querySelector(`link[href="${href}"]`)) {
-          const link = document.createElement('link');
-          link.rel = 'preload';
-          link.href = href;
-          link.as = as;
-          if (fetchPriority) link.fetchPriority = fetchPriority; // Fixed TypeScript property
-          if (as === 'style') link.crossOrigin = 'anonymous';
-          fragment.appendChild(link);
-        }
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
       });
-      document.head.appendChild(fragment);
-    }, 'immediate');
+    });
 
-    // Preconnect to external domains with DNS prefetch
+    // Preconnect to external domains
     const preconnectDomains = [
       'https://fonts.googleapis.com',
-      'https://fonts.gstatic.com', 
+      'https://fonts.gstatic.com',
       'https://lxrdzbknktwlubbmlsqe.supabase.co',
       'https://js.stripe.com'
-    ];
-
-    const dnsPrefetchDomains = [
-      'https://www.googletagmanager.com',
-      'https://www.google-analytics.com'
     ];
 
     scheduleWork(() => {
@@ -67,16 +49,9 @@ const GlobalPerformanceOptimizerComponent = () => {
         link.crossOrigin = 'anonymous';
         document.head.appendChild(link);
       });
-
-      dnsPrefetchDomains.forEach(domain => {
-        const link = document.createElement('link');
-        link.rel = 'dns-prefetch';
-        link.href = domain;
-        document.head.appendChild(link);
-      });
     });
 
-    // Enhanced lazy loading with LCP optimization
+    // Enhanced lazy loading with better performance
     const lazyLoadImages = () => {
       if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver(
@@ -87,7 +62,6 @@ const GlobalPerformanceOptimizerComponent = () => {
               if (img.dataset.src) {
                 img.src = img.dataset.src;
                 img.removeAttribute('data-src');
-                img.loading = 'eager';
                 img.classList.remove('lazy');
                 observer.unobserve(img);
               }
@@ -95,20 +69,13 @@ const GlobalPerformanceOptimizerComponent = () => {
             });
           },
           {
-            rootMargin: '100px 0px', // Increased for mobile
+            rootMargin: '50px 0px',
             threshold: 0.01
           }
         );
 
-        // Optimize above-the-fold images immediately
-        document.querySelectorAll('img').forEach((img, index) => {
-          if (index < 3) { // First 3 images are LCP candidates
-            img.loading = 'eager';
-            img.setAttribute('fetchpriority', 'high');
-            img.setAttribute('decoding', 'sync');
-          } else if (img.dataset.src) {
-            imageObserver.observe(img);
-          }
+        document.querySelectorAll('img[data-src]').forEach(img => {
+          imageObserver.observe(img);
         });
       }
     };
@@ -172,5 +139,3 @@ const GlobalPerformanceOptimizerComponent = () => {
 
   return null; // This component only runs effects
 };
-
-export const GlobalPerformanceOptimizer = memo(GlobalPerformanceOptimizerComponent);

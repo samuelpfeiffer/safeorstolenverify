@@ -21,7 +21,6 @@ const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const FaqPage = lazy(() => import('@/pages/FaqPage'));
-const DownloadPage = lazy(() => import('@/pages/DownloadPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
@@ -35,11 +34,6 @@ const DataSourceCredibilityPost = lazy(() => import('@/pages/blog/DataSourceCred
 const VerificationMethodologyPost = lazy(() => import('@/pages/blog/VerificationMethodologyPost'));
 const RealUserStoriesPost = lazy(() => import('@/pages/blog/RealUserStoriesPost'));
 const CompleteVerificationGuidePost = lazy(() => import('@/pages/blog/CompleteVerificationGuidePost'));
-const AIVerificationTechnologyPost = lazy(() => import('@/pages/blog/AIVerificationTechnologyPost'));
-const MobileAppFeaturesPost = lazy(() => import('@/pages/blog/MobileAppFeaturesPost'));
-const EnterpriseSecurityPost = lazy(() => import('@/pages/blog/EnterpriseSecurityPost'));
-const IndustryInsightsPost = lazy(() => import('@/pages/blog/IndustryInsightsPost'));
-const DatabaseIntegrationPost = lazy(() => import('@/pages/blog/DatabaseIntegrationPost'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
@@ -126,9 +120,8 @@ export const AppRoutes: React.FC = () => {
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
-           <Route path="faq" element={<FaqPage />} />
-           <Route path="download" element={<DownloadPage />} />
-           <Route path="terms" element={<TermsPage />} />
+          <Route path="faq" element={<FaqPage />} />
+          <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/category/:category" element={<BlogPage />} />
@@ -139,11 +132,6 @@ export const AppRoutes: React.FC = () => {
           <Route path="blog/verification-methodology" element={<VerificationMethodologyPost />} />
           <Route path="blog/real-user-stories" element={<RealUserStoriesPost />} />
           <Route path="blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
-          <Route path="blog/ai-verification-technology" element={<AIVerificationTechnologyPost />} />
-          <Route path="blog/mobile-app-features" element={<MobileAppFeaturesPost />} />
-          <Route path="blog/enterprise-security" element={<EnterpriseSecurityPost />} />
-          <Route path="blog/industry-insights-2024" element={<IndustryInsightsPost />} />
-          <Route path="blog/database-integration" element={<DatabaseIntegrationPost />} />
           
           {/* New Routes */}
           <Route path="how-it-works" element={<HowItWorksPage />} />
@@ -202,11 +190,6 @@ export const AppRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
           <Route path="firearms-check" element={<FirearmsCheckPage />} />
-          
-          {/* Item verification routes */}
-          <Route path="imei" element={<CheckPhonePage />} />
-          <Route path="vin" element={<CheckCarPage />} />
-          <Route path="bulk" element={<ProtectedRoute><ItemCategoriesPage /></ProtectedRoute>} />
           
           {/* Item-specific verification pages - Landing pages public, auth required for searches */}
           <Route path="check-phone" element={<ProtectedRoute><CheckPhonePage /></ProtectedRoute>} />

@@ -43,17 +43,12 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
   const { toast } = useToast();
 
   const itemTypes = [
-    { value: 'phone', label: '📱 Phone/Tablet (IMEI)' },
+    { value: 'phone', label: '📱 Phone (IMEI)' },
     { value: 'car', label: '🚗 Vehicle (VIN)' },
-    { value: 'electronics', label: '💻 Laptop/Computer' },
-    { value: 'bike', label: '🚲 Bicycle/E-bike' },
+    { value: 'bike', label: '🚲 Bicycle' },
+    { value: 'electronics', label: '💻 Electronics' },
     { value: 'firearm', label: '🔫 Firearm/Gun' },
-    { value: 'art', label: '🎨 Art/Collectibles' },
-    { value: 'jewelry', label: '💎 Jewelry/Watches' },
-    { value: 'tools', label: '🔧 Tools/Machinery' },
-    { value: 'camera', label: '📷 Camera/Audio Equipment' },
-    { value: 'gaming', label: '🎮 Gaming Console/Equipment' },
-    { value: 'other', label: '📦 Other Valuable Item' },
+    { value: 'other', label: '📦 Other Item' },
   ];
 
   // Auto-populate and focus when pre-populated data is available

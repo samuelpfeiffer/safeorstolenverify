@@ -15,7 +15,7 @@ export const AudienceNavigation = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">
-            The Verification Hub for Every User & Business
+            Choose Your Path to Protection
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Button
@@ -27,7 +27,7 @@ export const AudienceNavigation = () => {
               <ShoppingCart className="h-12 w-12 text-sos-lime group-hover:scale-110 transition-transform duration-300" />
               <div className="text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">I'm a Buyer</h3>
-                <p className="text-sm text-muted-foreground">eBay • Craigslist • Facebook Marketplace</p>
+                <p className="text-sm text-muted-foreground">Shop secondhand with confidence</p>
               </div>
             </Button>
             
@@ -53,7 +53,7 @@ export const AudienceNavigation = () => {
               <Building2 className="h-12 w-12 text-blue-500 group-hover:scale-110 transition-transform duration-300" />
               <div className="text-center">
                 <h3 className="text-xl font-bold text-foreground mb-2">I'm a Business</h3>
-                <p className="text-sm text-muted-foreground">Pawn Shops • Auctions • Law Enforcement</p>
+                <p className="text-sm text-muted-foreground">Streamline compliance and due diligence</p>
               </div>
             </Button>
           </div>

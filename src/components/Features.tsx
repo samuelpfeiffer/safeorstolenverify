@@ -38,20 +38,16 @@ const Features = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Real-Time Verification Across All Categories
+            How Our Verification Process Works
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            From electronics to vehicles, firearms to fine art - our comprehensive verification system cross-references global databases to protect buyers, sellers, and businesses worldwide.
+            Our advanced AI technology cross-references multiple databases to give you instant peace of mind when buying secondhand items.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-sm text-gray-400">
-            <span>✓ Police & FBI Databases</span>
-            <span>✓ Insurance Theft Records</span>
-            <span>✓ Auction House Reports</span>
-            <span>✓ International Crime Networks</span>
-            <span>✓ Manufacturer Registries</span>
-            <span>✓ Art Recovery Databases</span>
-            <span>✓ Firearms Tracking Systems</span>
-            <span>✓ Vehicle History Records</span>
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
+            <span>✓ Police Databases</span>
+            <span>✓ Insurance Claims</span>
+            <span>✓ Manufacturer Reports</span>
+            <span>✓ International Networks</span>
           </div>
         </div>
 
