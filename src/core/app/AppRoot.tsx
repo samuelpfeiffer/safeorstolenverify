@@ -12,6 +12,7 @@ import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
+import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { DefaultSEO } from '@/components/seo/DefaultSEO';
 import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
 import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
@@ -62,6 +63,7 @@ export const AppRoot: React.FC = () => {
                       <AppRoutes />
                     </Suspense>
                     <PWAInstallBanner />
+                    <AppDownloadBot />
                     <Toaster />
                   </div>
                 </Router>
