@@ -1,5 +1,45 @@
 User-agent: *
 Allow: /
 
+# Allow search engines to access all content
+Allow: /auth
+Allow: /subscriptions
+Allow: /about
+Allow: /contact
+Allow: /faq
+Allow: /terms
+Allow: /privacy
+Allow: /blog
+Allow: /how-it-works
+Allow: /for-consumers
+Allow: /for-brands
+
+# Disallow admin and user-specific pages
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /subscription
+Disallow: /analytics
+Disallow: /search-history
+Disallow: /receipts
+Disallow: /purchase-history
+Disallow: /security-settings
+
+# Allow crawling of static assets
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+Allow: /*.woff
+Allow: /*.woff2
+
 # Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

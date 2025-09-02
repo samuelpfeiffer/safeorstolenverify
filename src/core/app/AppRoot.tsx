@@ -10,12 +10,12 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
+import { WebVitalsOptimizer } from '@/components/performance/WebVitalsOptimizer';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { DefaultSEO } from '@/components/seo/DefaultSEO';
-import { CanonicalRedirectFix } from '@/components/seo/CanonicalRedirectFix';
-import { MetaRedirectHandler } from '@/components/seo/MetaRedirectHandler';
+import { StructuredData } from '@/components/seo/StructuredData';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -54,11 +54,12 @@ export const AppRoot: React.FC = () => {
               <ThemeProvider>
                 <Router>
                   <div className="min-h-screen bg-sos text-white antialiased">
-                    <MetaRedirectHandler />
-                    <CanonicalRedirectFix />
                     <DefaultSEO />
+                    <StructuredData type="WebSite" />
+                    <StructuredData type="Organization" />
                     <GlobalAnalytics />
                     <GlobalPerformanceOptimizer />
+                    <WebVitalsOptimizer />
                     <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />
                     </Suspense>

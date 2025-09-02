@@ -43,5 +43,16 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
+    // Optimize for better page speed scores
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    cssCodeSplit: true,
+    sourcemap: false,
+    reportCompressedSize: false,
   },
 }));
