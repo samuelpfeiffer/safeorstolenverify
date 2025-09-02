@@ -15,7 +15,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   {
     url: 'https://safeorstolen.com/',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'daily',
+    changefreq: 'always',
     priority: 1.0,
     images: [
       {
@@ -137,13 +137,28 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   {
     url: 'https://safeorstolen.com/blog',
     lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8,
+    changefreq: 'daily',
+    priority: 0.9,
     images: [
       {
         loc: 'https://safeorstolen.com/og-image-blog.png',
         caption: 'Safe Or Stolen Blog - Verification news, guides, and safety tips',
         title: 'Verification Blog and News'
+      }
+    ]
+  },
+  
+  // High-Value Blog Posts
+  {
+    url: 'https://safeorstolen.com/blog/how-to-check-if-device-is-safe-stolen',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.8,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/device-safety-guide.jpg',
+        caption: 'Complete guide to verify IMEI, serial numbers, and VIN before buying',
+        title: 'Device Safety Verification Guide'
       }
     ]
   },

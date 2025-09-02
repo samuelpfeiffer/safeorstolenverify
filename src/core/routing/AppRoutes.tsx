@@ -34,6 +34,7 @@ const DataSourceCredibilityPost = lazy(() => import('@/pages/blog/DataSourceCred
 const VerificationMethodologyPost = lazy(() => import('@/pages/blog/VerificationMethodologyPost'));
 const RealUserStoriesPost = lazy(() => import('@/pages/blog/RealUserStoriesPost'));
 const CompleteVerificationGuidePost = lazy(() => import('@/pages/blog/CompleteVerificationGuidePost'));
+const DeviceSafetyGuidePost = lazy(() => import('@/pages/blog/DeviceSafetyGuidePost'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
@@ -132,6 +133,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="blog/verification-methodology" element={<VerificationMethodologyPost />} />
           <Route path="blog/real-user-stories" element={<RealUserStoriesPost />} />
           <Route path="blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
+          <Route path="blog/how-to-check-if-device-is-safe-stolen" element={<DeviceSafetyGuidePost />} />
           
           {/* New Routes */}
           <Route path="how-it-works" element={<HowItWorksPage />} />

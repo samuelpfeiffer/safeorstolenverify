@@ -8,6 +8,7 @@ import Features from '@/components/Features';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
 import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
+import { ImageOptimizer } from '@/components/enhanced/ImageOptimizer';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
@@ -84,69 +85,71 @@ const HomePage = () => {
 
   return (
     <>
-      <GlobalPerformanceOptimizer />
-      <GlobalAnalytics />
-      <GoogleSearchConsoleSetup />
-      <PageSEO
-        title="Don't Get Scammed - Verify Items Before You Buy | SafeOrStolen"
-        description="Stop losing money to scams! Check any secondhand item in seconds before buying from Facebook Marketplace, eBay, Craigslist. Join 25,000+ smart buyers who protect their purchases."
-        keywords="don't get scammed, protect your purchase, avoid stolen goods, Facebook Marketplace scams, eBay safety, secondhand buyer protection, verify before buying, stolen item checker, marketplace safety"
-        canonical="/"
-        structuredData={homePageStructuredData}
-      />
-      <div className="min-h-screen">
-        <ConversionTracker />
-        <Hero />
-        <AudienceNavigation />
-        <ValuePropositionSections />
-        <TrustIndicators />
-        <TrustBadgeStrip />
-        <TrustBuildingFAQ />
-        <Features />
-        <TestimonialsSection />
-        
-        {/* Community Movement Section */}
-        <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="flex justify-center mb-6">
-                <div className="bg-sos-lime/10 p-4 rounded-full">
-                  <Users className="h-12 w-12 text-sos-lime" />
+      <ImageOptimizer>
+        <GlobalPerformanceOptimizer />
+        <GlobalAnalytics />
+        <GoogleSearchConsoleSetup />
+        <PageSEO
+          title="Check if Phone is Stolen | Free IMEI Lookup & VIN Verification | SafeOrStolen"
+          description="Free stolen phone checker & IMEI lookup. Verify phones, cars, electronics before buying. Check VIN numbers, serial numbers, IMEI against stolen goods databases instantly."
+          keywords="check if phone stolen, IMEI lookup, VIN check stolen, check serial number, stolen phone check, is phone stolen, verify IMEI, stolen goods check, free IMEI check, phone verification"
+          canonical="/"
+          structuredData={homePageStructuredData}
+        />
+        <div className="min-h-screen">
+          <ConversionTracker />
+          <Hero />
+          <AudienceNavigation />
+          <ValuePropositionSections />
+          <TrustIndicators />
+          <TrustBadgeStrip />
+          <TrustBuildingFAQ />
+          <Features />
+          <TestimonialsSection />
+          
+          {/* Community Movement Section */}
+          <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="bg-sos-lime/10 p-4 rounded-full">
+                    <Users className="h-12 w-12 text-sos-lime" />
+                  </div>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Join the Movement
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  Safety is a community effort. We've built free tools to help everyone fight fraud. 
+                  Become a part of the SafeOrStolen community watch and help protect buyers everywhere.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
+                    onClick={() => navigate('/community-watch')}
+                  >
+                    <Shield className="mr-2 h-5 w-5" />
+                    See Community Tools
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    onClick={() => navigate('/social-media-monitoring')}
+                  >
+                    <Monitor className="mr-2 h-5 w-5" />
+                    Social Monitoring
+                  </Button>
                 </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Join the Movement
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Safety is a community effort. We've built free tools to help everyone fight fraud. 
-                Become a part of the SafeOrStolen community watch and help protect buyers everywhere.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
-                  onClick={() => navigate('/community-watch')}
-                >
-                  <Shield className="mr-2 h-5 w-5" />
-                  See Community Tools
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => navigate('/social-media-monitoring')}
-                >
-                  <Monitor className="mr-2 h-5 w-5" />
-                  Social Monitoring
-                </Button>
-              </div>
             </div>
-          </div>
-        </section>
-        
-        <FeaturedBlogSection />
-        <EnhancedCTASection />
-      </div>
+          </section>
+          
+          <FeaturedBlogSection />
+          <EnhancedCTASection />
+        </div>
+      </ImageOptimizer>
     </>
   );
 };

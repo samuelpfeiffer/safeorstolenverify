@@ -60,12 +60,12 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Image */}
           <div className="mb-8 flex justify-center">
             <img 
-              src="/lovable-uploads/d4daf30e-bbe3-49e5-b6b6-041b57ccd7fa.png" 
-              alt="Legitimate verification technology with phone and laptop" 
-              className="max-w-md w-full h-auto rounded-lg shadow-2xl"
+              src="/images/verification/legitimate-verification-tech.webp" 
+              alt="Free stolen phone IMEI check and VIN verification tool for buyers on Facebook Marketplace, eBay, Craigslist - comprehensive stolen goods database verification" 
+              className="w-full max-w-md mx-auto object-contain rounded-2xl shadow-lg border border-white/10"
+              loading="lazy"
             />
           </div>
 
@@ -118,11 +118,11 @@ const Hero = () => {
             <p className="text-sm text-gray-400 mb-4 text-center">Trusted by thousands of smart buyers and verified by:</p>
             <div className="flex flex-wrap justify-center items-center gap-6">
               <div className="text-center">
-                <img src="/images/partners/bikeindex-logo.png" alt="Bike Index" className="h-8 w-auto mx-auto mb-1" />
+                <img src="/images/partners/bikeindex-logo.png" alt="Bike Index official partner - stolen bike database verification" className="h-8 w-auto mx-auto mb-1" />
                 <span className="text-xs text-gray-500">Bike Index</span>
               </div>
               <div className="text-center">
-                <img src="/images/partners/imei-logo.png" alt="CheckMEND" className="h-8 w-auto mx-auto mb-1" />
+                <img src="/images/partners/imei-logo.png" alt="CheckMEND official partner - IMEI stolen phone database lookup" className="h-8 w-auto mx-auto mb-1" />
                 <span className="text-xs text-gray-500">CheckMEND</span>
               </div>
               <div className="text-center text-green-400">
