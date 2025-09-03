@@ -33,9 +33,9 @@ const Hero = () => {
           </a>
 
           {/* Universal Value Proposition Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy, Sell, and Do Business with 100% Confidence</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">SafeOrStolen</h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            Verify any second-hand item in seconds. Protect your money, your business, and your peace of mind.
+            A platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers in the secondhand market from stolen goods. Verify any item in seconds and buy, sell, and do business with 100% confidence.
           </p>
           <p className="text-base md:text-lg text-sos-lime font-semibold mb-6">
             Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses.
