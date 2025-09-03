@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,13 +5,12 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Shield, Users, BadgeCheck } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-
 const Hero = () => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useUnifiedAuth();
-
-  return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  const {
+    isAuthenticated
+  } = useUnifiedAuth();
+  return <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Clean Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sos-dark to-sos"></div>
       
@@ -20,14 +18,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Accelerated By pill */}
-          <a
-            href="https://fastercapital.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6"
-            title="Accelerated by FasterCapital"
-            aria-label="FasterCapital accelerator"
-          >
+          <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6" title="Accelerated by FasterCapital" aria-label="FasterCapital accelerator">
             <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">ACCELERATED BY</span>
             <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
           </a>
@@ -37,60 +28,28 @@ const Hero = () => {
           <p className="text-lg md:text-2xl text-gray-300 mb-6">
             A platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers in the secondhand market from stolen goods. Verify any item in seconds and buy, sell, and do business with 100% confidence.
           </p>
-          <p className="text-base md:text-lg text-sos-lime font-semibold mb-6">
-            Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses.
-          </p>
+          
           
           {/* Service Disclaimer */}
-          <div className="max-w-3xl mx-auto mb-8">
-            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-              <div className="flex items-center gap-2 text-yellow-400 mb-2">
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-sm font-semibold">Risk Assessment Tool</span>
-              </div>
-              <p className="text-yellow-200 text-sm">
-                SafeOrStolen helps assess theft risk but should be used alongside other verification methods. 
-                Always request documentation for valuable purchases. 
-                <Link to="/transparency" className="text-yellow-400 hover:underline ml-1">
-                  See limitations →
-                </Link>
-              </p>
-            </div>
-          </div>
+          
           
           <div className="mb-8 flex justify-center">
-            <img 
-              src="/images/verification/legitimate-verification-tech.webp" 
-              alt="Free stolen phone IMEI check and VIN verification tool for buyers on Facebook Marketplace, eBay, Craigslist - comprehensive stolen goods database verification" 
-              className="w-full max-w-md mx-auto object-contain rounded-2xl shadow-lg border border-white/10"
-              loading="lazy"
-            />
+            <img src="/images/verification/legitimate-verification-tech.webp" alt="Free stolen phone IMEI check and VIN verification tool for buyers on Facebook Marketplace, eBay, Craigslist - comprehensive stolen goods database verification" className="w-full max-w-md mx-auto object-contain rounded-2xl shadow-lg border border-white/10" loading="lazy" />
           </div>
 
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
-              className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg"
-              onClick={() => {
-                if (!isAuthenticated) {
-                  navigate('/auth?tab=signup');
-                } else {
-                  navigate('/dashboard');
-                }
-              }}
-            >
+            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" onClick={() => {
+            if (!isAuthenticated) {
+              navigate('/auth?tab=signup');
+            } else {
+              navigate('/dashboard');
+            }
+          }}>
               <Shield className="mr-2 h-5 w-5" />
               Check a Serial Number — It's Free
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg"
-              asChild
-            >
+            <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
               <Link to="/for-brands">
                 <Users className="mr-2 h-5 w-5" />
                 For Businesses & APIs
@@ -147,18 +106,13 @@ const Hero = () => {
           {/* Extra actions below */}
           <div className="flex flex-col items-center gap-4 mt-12">
              <div className="w-full max-w-2xl mx-auto">
-               <Button
-                 variant="destructive"
-                 className="w-full px-5"
-                 onClick={() => {
-                   if (!isAuthenticated) {
-                     navigate('/auth?tab=signup');
-                   } else {
-                     navigate('/firearms-check');
-                   }
-                 }}
-                 aria-label="Search Stolen Firearms Database"
-               >
+               <Button variant="destructive" className="w-full px-5" onClick={() => {
+              if (!isAuthenticated) {
+                navigate('/auth?tab=signup');
+              } else {
+                navigate('/firearms-check');
+              }
+            }} aria-label="Search Stolen Firearms Database">
                  {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
                </Button>
              </div>
@@ -184,8 +138,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
