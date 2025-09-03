@@ -73,27 +73,7 @@ const Hero = () => {
           </div>
 
           {/* Social Proof Section */}
-          <div className="bg-white/5 border border-white/10 rounded-lg p-6 mb-8">
-            <p className="text-sm text-gray-400 mb-4 text-center">Trusted by thousands of smart buyers and verified by:</p>
-            <div className="flex flex-wrap justify-center items-center gap-6">
-              <div className="text-center">
-                <img src="/images/partners/bikeindex-logo.png" alt="Bike Index official partner - stolen bike database verification" className="h-8 w-auto mx-auto mb-1" />
-                <span className="text-xs text-gray-500">Bike Index</span>
-              </div>
-              <div className="text-center">
-                <img src="/images/partners/imei-logo.png" alt="CheckMEND official partner - IMEI stolen phone database lookup" className="h-8 w-auto mx-auto mb-1" />
-                <span className="text-xs text-gray-500">CheckMEND</span>
-              </div>
-              <div className="text-center text-green-400">
-                <div className="font-bold text-lg">15,847+</div>
-                <span className="text-xs text-gray-500">Items Verified Daily</span>
-              </div>
-              <div className="text-center text-red-400">
-                <div className="font-bold text-lg">2,847</div>
-                <span className="text-xs text-gray-500">Stolen Items Found</span>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Sign up notice for free searches */}
           <div className="text-center mb-8">
