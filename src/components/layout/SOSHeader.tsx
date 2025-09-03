@@ -41,18 +41,22 @@ export const SOSHeader: React.FC = () => {
   };
 
   return (
-    <header className="bg-sos-dark/95 backdrop-blur-sm border-b border-sos-orange/20 sticky top-0 z-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png"
-            alt="Safe or Stolen logo"
-            className="w-8 h-8 rounded-md"
-          />
+    <header className="bg-sos-dark/95 backdrop-blur-md border-b border-sos-orange/20 sticky top-0 z-50 relative sos-pattern">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sos-orange/5 to-transparent opacity-50"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative z-10">
+        {/* Enhanced SOS Logo */}
+        <Link to="/" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-300">
+          <div className="relative">
+            <img
+              src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png"
+              alt="Safe or Stolen logo"
+              className="w-8 h-8 rounded-md ring-2 ring-sos-orange/30 group-hover:ring-sos-orange/60 transition-all duration-300"
+            />
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-sos-lime rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
           <div className="hidden sm:block">
-            <div className="font-bold text-lg text-white leading-tight">safeorstolen.com</div>
-            <p className="text-[10px] text-gray-400 -mt-0.5">Verify Before You Buy</p>
+            <div className="font-bold text-lg text-white leading-tight group-hover:text-sos-orange/90 transition-colors duration-300">safeorstolen.com</div>
+            <p className="text-[10px] text-gray-400 -mt-0.5 group-hover:text-sos-lime/70 transition-colors duration-300">Verify Before You Buy</p>
           </div>
         </Link>
 

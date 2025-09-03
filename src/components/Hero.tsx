@@ -12,9 +12,16 @@ const Hero = () => {
   const { isAuthenticated } = useUnifiedAuth();
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sos-dark to-sos"></div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sos-pattern">
+      {/* Enhanced SOS Background */}
+      <div className="absolute inset-0 sos-mesh-gradient"></div>
+      
+      {/* Animated Security Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-sos-orange/10 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-sos-lime/15 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-sos-orange/5 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -32,14 +39,18 @@ const Hero = () => {
             <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
           </a>
 
-          {/* Universal Value Proposition Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">Buy, Sell, and Do Business with 100% Confidence</h1>
-          <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            Verify any second-hand item in seconds. Protect your money, your business, and your peace of mind.
+          {/* SOS Brand Headline */}
+          <h1 className="sos-headline mb-6 relative">
+            Buy, Sell, and Do Business with 100% Confidence
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-sos-lime rounded-full animate-ping opacity-75"></div>
+          </h1>
+          <p className="sos-subtitle text-gray-200 mb-6 max-w-3xl mx-auto">
+            Verify any second-hand item in seconds. Protect your money, your business, and your peace of mind with SafeOrStolen's advanced verification technology.
           </p>
-          <p className="text-base md:text-lg text-sos-lime font-semibold mb-6">
-            Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses.
-          </p>
+          <div className="sos-security-badge mb-8">
+            <span className="w-2 h-2 bg-sos-dark rounded-full"></span>
+            Backed by FasterCapital - Trusted by thousands of smart buyers, sellers, and businesses
+          </div>
           
           {/* Service Disclaimer */}
           <div className="max-w-3xl mx-auto mb-8">
@@ -69,11 +80,12 @@ const Hero = () => {
             />
           </div>
 
-          {/* Dual CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          {/* Enhanced SOS CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg"
+              variant="gradient"
+              className="sos-glow px-10 py-4 text-lg transform hover:scale-105 transition-all duration-300"
               onClick={() => {
                 if (!isAuthenticated) {
                   navigate('/auth?tab=signup');
@@ -82,18 +94,18 @@ const Hero = () => {
                 }
               }}
             >
-              <Shield className="mr-2 h-5 w-5" />
-              Check a Serial Number — It's Free
+              <Shield className="mr-3 h-6 w-6" />
+              Start Free Verification
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg"
+              className="px-10 py-4 text-lg transform hover:scale-105 transition-all duration-300"
               asChild
             >
               <Link to="/for-brands">
-                <Users className="mr-2 h-5 w-5" />
-                For Businesses & APIs
+                <Users className="mr-3 h-6 w-6" />
+                Business Solutions
               </Link>
             </Button>
           </div>
@@ -113,25 +125,28 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Social Proof Section */}
-          <div className="bg-white/5 border border-white/10 rounded-lg p-6 mb-8">
-            <p className="text-sm text-gray-400 mb-4 text-center">Trusted by thousands of smart buyers and verified by:</p>
-            <div className="flex flex-wrap justify-center items-center gap-6">
-              <div className="text-center">
-                <img src="/images/partners/bikeindex-logo.png" alt="Bike Index official partner - stolen bike database verification" className="h-8 w-auto mx-auto mb-1" />
-                <span className="text-xs text-gray-500">Bike Index</span>
+          {/* Enhanced Social Proof Section */}
+          <div className="sos-card p-8 mb-8 relative">
+            <div className="absolute top-4 right-4">
+              <div className="w-3 h-3 bg-sos-lime rounded-full animate-pulse"></div>
+            </div>
+            <p className="sos-body text-gray-300 mb-6 text-center font-medium">Trusted by thousands of smart buyers worldwide</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <img src="/images/partners/bikeindex-logo.png" alt="Bike Index official partner - stolen bike database verification" className="h-10 w-auto mx-auto mb-2 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <span className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">Bike Index</span>
               </div>
-              <div className="text-center">
-                <img src="/images/partners/imei-logo.png" alt="CheckMEND official partner - IMEI stolen phone database lookup" className="h-8 w-auto mx-auto mb-1" />
-                <span className="text-xs text-gray-500">CheckMEND</span>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <img src="/images/partners/imei-logo.png" alt="CheckMEND official partner - IMEI stolen phone database lookup" className="h-10 w-auto mx-auto mb-2 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <span className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">CheckMEND</span>
               </div>
-              <div className="text-center text-green-400">
-                <div className="font-bold text-lg">15,847+</div>
-                <span className="text-xs text-gray-500">Items Verified Daily</span>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="font-bold text-2xl text-sos-lime group-hover:text-sos-lime/80 transition-colors">15,847+</div>
+                <span className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">Verified Daily</span>
               </div>
-              <div className="text-center text-red-400">
-                <div className="font-bold text-lg">2,847</div>
-                <span className="text-xs text-gray-500">Stolen Items Found</span>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="font-bold text-2xl text-sos-orange group-hover:text-sos-orange/80 transition-colors">2,847</div>
+                <span className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">Stolen Found</span>
               </div>
             </div>
           </div>
