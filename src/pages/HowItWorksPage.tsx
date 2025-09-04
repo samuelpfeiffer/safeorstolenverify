@@ -111,6 +111,57 @@ const HowItWorksPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Verification Process Details */}
+        <section className="py-20 bg-sos">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                How Our Verification Process Works
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Our advanced AI technology cross-references multiple databases to give you instant peace of mind when buying secondhand items.
+              </p>
+              <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-400">
+                <span>✓ Police Databases</span>
+                <span>✓ Insurance Claims</span>
+                <span>✓ Manufacturer Reports</span>
+                <span>✓ International Networks</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6 text-center">
+                  <Search className="h-12 w-12 text-sos-orange mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Enter Details</h3>
+                  <p className="text-sm text-gray-300">Input IMEI, VIN, or serial number</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6 text-center">
+                  <Database className="h-12 w-12 text-sos-orange mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">AI Analysis</h3>
+                  <p className="text-sm text-gray-300">Cross-reference multiple databases</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6 text-center">
+                  <Shield className="h-12 w-12 text-sos-orange mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Verification</h3>
+                  <p className="text-sm text-gray-300">Check against law enforcement data</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+                <CardContent className="p-6 text-center">
+                  <CheckCircle className="h-12 w-12 text-sos-orange mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2 text-white">Results</h3>
+                  <p className="text-sm text-gray-300">Get instant Safe/Stolen status</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Database Information Section */}
         <section className="py-20 bg-muted/50">
           <div className="container mx-auto px-4">

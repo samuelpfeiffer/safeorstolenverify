@@ -25,14 +25,14 @@ export const AppDownloadBot = () => {
     }
 
     if (!isInstalled && !isDismissed) {
-      // Show bot after 15 seconds with typing animation
+      // Show bot after 3 seconds with typing animation
       const timer = setTimeout(() => {
         setShowTyping(true);
         setTimeout(() => {
           setShowTyping(false);
           setIsVisible(true);
         }, 2000);
-      }, 15000);
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
