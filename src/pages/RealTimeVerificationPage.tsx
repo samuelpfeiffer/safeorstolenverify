@@ -110,9 +110,19 @@ const RealTimeVerificationPage = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-gradient">Instant</span> Verification
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Real-time verification using available sources based on item type
           </p>
+          
+          {/* Hero Image */}
+          <div className="max-w-md mx-auto">
+            <img 
+              src="/lovable-uploads/861961a2-983e-4394-bf36-9d4b895af7db.png" 
+              alt="Real-time verification results in under 3 seconds"
+              className="w-full h-64 object-cover rounded-xl shadow-lg"
+              loading="eager"
+            />
+          </div>
         </div>
 
         {/* Connection Status */}

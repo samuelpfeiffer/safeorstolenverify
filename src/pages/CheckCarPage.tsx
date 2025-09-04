@@ -56,9 +56,19 @@ const CheckCarPage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Check If Car Is Stolen
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Verify if a vehicle is stolen before you buy using our free VIN lookup service
             </p>
+            
+            {/* Hero Image */}
+            <div className="max-w-md mx-auto">
+              <img 
+                src="/lovable-uploads/f560e80a-026e-46a3-b0af-16f7863bf7dc.png" 
+                alt="Car VIN verification and vehicle theft protection"
+                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                loading="eager"
+              />
+            </div>
           </div>
 
           {/* Search Card */}

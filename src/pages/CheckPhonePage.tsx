@@ -58,9 +58,19 @@ const CheckPhonePage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Check If Phone Is Stolen
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Verify if a smartphone is stolen before you buy using our free IMEI lookup service
             </p>
+            
+            {/* Hero Image */}
+            <div className="max-w-md mx-auto">
+              <img 
+                src="/lovable-uploads/d627effd-6ecc-499c-ba64-26edbfa79c4b.png" 
+                alt="Phone verification and stolen item detection"
+                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                loading="eager"
+              />
+            </div>
           </div>
 
           {/* Search Card */}

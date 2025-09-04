@@ -57,9 +57,19 @@ const CheckElectronicsPage: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Check If Electronics Are Stolen
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Verify if electronics are stolen before you buy using our free serial number lookup
             </p>
+            
+            {/* Hero Image */}
+            <div className="max-w-md mx-auto">
+              <img 
+                src="/lovable-uploads/6761f247-72ca-4aa0-94f3-ee87310470ed.png" 
+                alt="Electronics verification and stolen device detection"
+                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                loading="eager"
+              />
+            </div>
           </div>
 
           {/* Search Card */}
