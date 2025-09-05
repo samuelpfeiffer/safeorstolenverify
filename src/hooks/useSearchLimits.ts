@@ -16,9 +16,11 @@ export const useSearchLimits = () => {
     if (user) {
       checkUserLimits();
     } else {
-      // Guest users have no searches
-      setRemainingSearches(0);
-      setHasReachedLimit(true);
+      // Guest users get 3 free searches
+      const guestSearchCount = getGuestSearchCount();
+      const remainingGuest = Math.max(0, 3 - guestSearchCount);
+      setRemainingSearches(remainingGuest);
+      setHasReachedLimit(remainingGuest === 0);
       setIsSubscribed(false);
       setIsLoading(false);
     }
@@ -81,14 +83,35 @@ export const useSearchLimits = () => {
     }
   };
 
+  const getGuestSearchCount = (): number => {
+    const stored = localStorage.getItem('guest_search_count');
+    return stored ? parseInt(stored, 10) : 0;
+  };
+
+  const incrementGuestSearchCount = (): void => {
+    const current = getGuestSearchCount();
+    localStorage.setItem('guest_search_count', (current + 1).toString());
+  };
+
   const consumeSearch = async (): Promise<boolean> => {
     if (!user) {
-      toast({
-        title: "Sign In Required",
-        description: "Please sign in to verify items",
-        variant: "destructive",
-      });
-      return false;
+      // Handle guest users
+      const guestSearchCount = getGuestSearchCount();
+      if (guestSearchCount >= 3) {
+        toast({
+          title: "Free Searches Used",
+          description: "Sign up to continue verifying items and get 4 more searches",
+          variant: "destructive",
+        });
+        return false;
+      }
+      
+      incrementGuestSearchCount();
+      // Update state to reflect the new count
+      const newRemaining = Math.max(0, 3 - (guestSearchCount + 1));
+      setRemainingSearches(newRemaining);
+      setHasReachedLimit(newRemaining === 0);
+      return true;
     }
 
     if (isSubscribed) {

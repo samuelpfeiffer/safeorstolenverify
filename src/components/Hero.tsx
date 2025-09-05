@@ -5,11 +5,16 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Shield, Users, BadgeCheck } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { EnhancedSearchForm } from '@/components/hero/EnhancedSearchForm';
+import { GuestCheckBanner } from '@/components/hero/GuestCheckBanner';
+import { useSearchLimits } from '@/hooks/useSearchLimits';
+import { useState } from 'react';
+import QrScanner from '@/components/hero/QrScanner';
 const Hero = () => {
   const navigate = useNavigate();
-  const {
-    isAuthenticated
-  } = useUnifiedAuth();
+  const { isAuthenticated } = useUnifiedAuth();
+  const { remainingSearches } = useSearchLimits();
+  const [showQrScanner, setShowQrScanner] = useState(false);
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Clean Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sos-dark to-sos"></div>
@@ -75,13 +80,33 @@ const Hero = () => {
           {/* Social Proof Section */}
           
 
-          {/* Sign up notice for free searches */}
-          <div className="text-center mb-8">
-            <p className="text-sm md:text-base text-gray-300">
-              Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
-              <Link to="/auth?tab=signup" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
-            </p>
+          {/* Guest Check Banner */}
+          {!isAuthenticated && remainingSearches > 0 && (
+            <GuestCheckBanner remainingSearches={remainingSearches} />
+          )}
+          
+          {/* Search Form */}
+          <div className="space-y-8">
+            <EnhancedSearchForm onOpenQrScanner={() => setShowQrScanner(true)} />
           </div>
+
+          {/* Sign up notice for free searches */}
+          {isAuthenticated && (
+            <div className="text-center mb-8">
+              <p className="text-sm md:text-base text-gray-300">
+                You have <span className="text-sos-lime font-semibold">4 searches included</span> with your account.
+              </p>
+            </div>
+          )}
+          
+          {!isAuthenticated && remainingSearches === 0 && (
+            <div className="text-center mb-8">
+              <p className="text-sm md:text-base text-gray-300">
+                Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
+                <Link to="/auth?tab=signup" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
+              </p>
+            </div>
+          )}
 
           {/* Extra actions below */}
           <div className="flex flex-col items-center gap-4 mt-12">
@@ -118,6 +143,19 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* QR Scanner Modal */}
+      {showQrScanner && (
+        <QrScanner 
+          isOpen={showQrScanner}
+          onOpenChange={setShowQrScanner}
+          onScanSuccess={(result) => {
+            // Handle QR scan result
+            console.log('QR Scan result:', result);
+            setShowQrScanner(false);
+          }}
+        />
+      )}
     </div>;
 };
 export default Hero;

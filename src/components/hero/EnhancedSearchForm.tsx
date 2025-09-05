@@ -58,14 +58,14 @@ export const EnhancedSearchForm: React.FC<EnhancedSearchFormProps> = ({ onOpenQr
       return;
     }
 
-    // Require authentication before any verification
-    if (!isAuthenticated) {
+    // Allow guest users to proceed with limited searches
+    if (!isAuthenticated && hasReachedLimit) {
       const cleanSerialNumber: string = sanitizeInputSecurity(serialNumber.trim());
       const itemType = detectItemType(cleanSerialNumber);
       await savePendingVerification(cleanSerialNumber, itemType, 'buyer');
       toast({
-        title: 'Sign in required',
-        description: 'Please create an account or sign in to verify items.',
+        title: 'Free searches used',
+        description: 'Sign up to get 4 more searches and continue verifying items.',
       });
       navigate('/auth?tab=signup');
       return;
