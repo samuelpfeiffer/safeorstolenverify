@@ -16,8 +16,16 @@ const Hero = () => {
   const { remainingSearches } = useSearchLimits();
   const [showQrScanner, setShowQrScanner] = useState(false);
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sos-dark to-sos"></div>
+      {/* Hero Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/lovable-uploads/d627effd-6ecc-499c-ba64-26edbfa79c4b.png" 
+          alt="SafeOrStolen verification technology background" 
+          className="w-full h-full object-cover opacity-20"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-sos-dark/90 to-sos/90"></div>
+      </div>
       
       {/* Hero Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -38,9 +46,7 @@ const Hero = () => {
           {/* Service Disclaimer */}
           
           
-          <div className="mb-8 flex justify-center">
-            <img src="/images/verification/legitimate-verification-tech.webp" alt="Free stolen phone IMEI check and VIN verification tool for buyers on Facebook Marketplace, eBay, Craigslist - comprehensive stolen goods database verification" className="w-full max-w-md mx-auto object-contain rounded-2xl shadow-lg border border-white/10" loading="lazy" />
-          </div>
+          {/* Remove duplicate image since it's now the background */}
 
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TermsAndConditions } from '@/components/auth/TermsAndConditions';
 import { SignUpWelcome } from '@/components/auth/SignUpWelcome';
-import { SignUpSuccess } from '@/components/auth/SignUpSuccess';
+import { SignupSuccess } from '@/components/auth/SignupSuccess';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
@@ -168,10 +168,9 @@ const AuthPage = () => {
 
   if (step === 'signup-success') {
     return (
-      <SignUpSuccess
-        onContinue={handleSignUpSuccessContinue}
-        emailVerificationRequired={emailVerificationRequired}
-        email={signUpEmail}
+      <SignupSuccess
+        userEmail={signUpEmail}
+        onClose={handleSignUpSuccessContinue}
       />
     );
   }
