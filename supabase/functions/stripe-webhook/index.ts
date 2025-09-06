@@ -1,7 +1,7 @@
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
-import Stripe from "https://esm.sh/stripe@13.10.0";
+import Stripe from "https://esm.sh/stripe@14.21.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -24,8 +24,14 @@ serve(async (req) => {
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-    if (!stripeSecretKey || !webhookSecret || !supabaseUrl || !supabaseServiceKey) {
-      console.error("Missing required environment variables");
+    const missing: string[] = [];
+    if (!stripeSecretKey) missing.push("STRIPE_SECRET_KEY");
+    if (!webhookSecret) missing.push("STRIPE_WEBHOOK_SECRET");
+    if (!supabaseUrl) missing.push("SUPABASE_URL");
+    if (!supabaseServiceKey) missing.push("SUPABASE_SERVICE_ROLE_KEY");
+
+    if (missing.length > 0) {
+      console.error(`Missing required environment variables: ${missing.join(", ")}`);
       return new Response(JSON.stringify({ error: "Server configuration error" }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -186,7 +192,7 @@ serve(async (req) => {
               .upsert({
                 email: customer.email,
                 stripe_customer_id: customer.id,
-                subscribed: subscription.status === "active",
+                subscribed: ["active", "trialing", "past_due"].includes(subscription.status),
                 subscription_tier: subscriptionTier,
                 subscription_end: new Date(subscription.current_period_end * 1000).toISOString(),
                 updated_at: new Date().toISOString(),

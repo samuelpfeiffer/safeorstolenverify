@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, useState, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -8,8 +8,9 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { EnhancedSearchForm } from '@/components/hero/EnhancedSearchForm';
 import { GuestCheckBanner } from '@/components/hero/GuestCheckBanner';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
-import { useState } from 'react';
-import QrScanner from '@/components/hero/QrScanner';
+import heroBg from '@/assets/hero-bg.jpg';
+
+const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 const Hero = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useUnifiedAuth();
@@ -19,12 +20,14 @@ const Hero = () => {
       {/* Hero Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/d627effd-6ecc-499c-ba64-26edbfa79c4b.png" 
-          alt="SafeOrStolen verification technology background" 
-          className="w-full h-full object-cover opacity-20"
+          src={heroBg}
+          alt="SafeOrStolen verification background across entire hero" 
+          className="w-full h-full object-cover"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-sos-dark/90 to-sos/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-background/60"></div>
       </div>
       
       {/* Hero Content */}
@@ -152,15 +155,16 @@ const Hero = () => {
       
       {/* QR Scanner Modal */}
       {showQrScanner && (
-        <QrScanner 
-          isOpen={showQrScanner}
-          onOpenChange={setShowQrScanner}
-          onScanSuccess={(result) => {
-            // Handle QR scan result
-            console.log('QR Scan result:', result);
-            setShowQrScanner(false);
-          }}
-        />
+        <Suspense fallback={<div className="fixed inset-0 bg-background/80 flex items-center justify-center z-50">Loading scanner...</div>}>
+          <QrScanner 
+            isOpen={showQrScanner}
+            onOpenChange={setShowQrScanner}
+            onScanSuccess={(result) => {
+              console.log('QR Scan result:', result);
+              setShowQrScanner(false);
+            }}
+          />
+        </Suspense>
       )}
     </div>;
 };
