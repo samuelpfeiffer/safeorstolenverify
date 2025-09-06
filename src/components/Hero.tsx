@@ -18,11 +18,11 @@ const Hero = () => {
   const [showQrScanner, setShowQrScanner] = useState(false);
   return <div className="flex flex-col">
       {/* Full Width Image Above Hero */}
-      <div className="w-full">
+      <div className="w-full h-40 md:h-72 overflow-hidden">
         <img 
           src="/lovable-uploads/8ebf6078-8dcd-46a3-ad57-981e6d25022e.png"
           alt="How to find an IMEI Properly (Step-by-Step)" 
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
           decoding="async"
