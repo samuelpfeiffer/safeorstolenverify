@@ -65,6 +65,9 @@ export const PricingGrid = () => {
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
         <p className="text-xl text-muted-foreground">Get started with verification services that fit your needs</p>
+        <div className="mt-4 p-4 bg-yellow-100 text-yellow-800 rounded">
+          <p className="text-sm">Debug: Check browser console for subscription flow logs</p>
+        </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
