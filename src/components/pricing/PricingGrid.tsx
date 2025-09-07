@@ -10,18 +10,23 @@ export const PricingGrid = () => {
   const { createSubscriptionCheckout } = useSubscription();
 
   const handleCheckout = async (priceId: string) => {
+    console.log('PricingGrid: handleCheckout called with priceId:', priceId);
     setIsLoading(true);
     try {
+      console.log('PricingGrid: calling createSubscriptionCheckout...');
       const url = await createSubscriptionCheckout(priceId);
+      console.log('PricingGrid: checkout URL received:', url);
       
       if (url) {
+        console.log('PricingGrid: navigating to checkout URL');
         navigateOutOfIframe(url);
       } else {
-        toast.error('Failed to create checkout session');
+        console.error('PricingGrid: no URL received from checkout');
+        toast.error('Failed to create checkout session - no URL returned');
       }
     } catch (error) {
-      console.error('Checkout error:', error);
-      toast.error('Failed to start checkout process');
+      console.error('PricingGrid: checkout error:', error);
+      toast.error(`Failed to start checkout process: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }

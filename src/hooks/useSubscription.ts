@@ -71,13 +71,13 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating subscription checkout with 7-day trial...");
+      console.log("Creating subscription checkout with 7-day trial for priceId:", priceId);
       
       // Map price IDs to plan names for better Stripe matching
       const planNameMap: Record<string, string> = {
-        'price_1Rz7rm2eGaMDLFHojH9Vch1Y': 'Basic Plan',
-        'price_1Rz7xu2eGaMDLFHoqGT0Pyjk': 'Premium Plan', 
-        'price_1Rz80X2eGaMDLFHozeZyChte': 'Enterprise Plan',
+        'price_1S0uGQGxnZLw8J7OOgm02vdB': 'Smart Buyer',
+        'price_1S0uGiGxnZLw8J7OQEwssbK7': 'Savvy Shopper',
+        'price_1S0uJsGxnZLw8J7OfU7XKMhV': 'Business Pro',
         'price_1Rz83i2eGaMDLFHonAmu86lS': 'Certified Stolen/Legitimate Report'
       };
       
@@ -109,6 +109,11 @@ export const useSubscription = (): UseSubscriptionReturn => {
       if (error) {
         console.error("Error creating checkout:", error);
         throw error;
+      }
+
+      if (!data?.url) {
+        console.error("No URL received from checkout session:", data);
+        throw new Error("No checkout URL received from server");
       }
 
       console.log("Checkout created with trial:", data.url);
