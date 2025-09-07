@@ -120,6 +120,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="pricing" element={<PricingPage />} />
           <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
+          <Route path="verification-success" element={<SubscriptionSuccessPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="faq" element={<FaqPage />} />

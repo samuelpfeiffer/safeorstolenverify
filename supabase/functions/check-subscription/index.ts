@@ -17,7 +17,7 @@ serve(async (req) => {
   try {
     // Live Mode Stripe secret key validation
     const getStripeKey = () => {
-      const key = Deno.env.get("last stripe secret key");
+      const key = Deno.env.get("STRIPE_SECRET_KEY");
       if (key && key.startsWith("sk_live_")) {
         return key;
       }

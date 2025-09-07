@@ -13,6 +13,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
+import { AppValidator } from '@/components/testing/AppValidator';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -312,6 +313,13 @@ const PricingPage = () => {
           onSubscribe={handleSubscribe}
           loadingTier={loadingTier}
         />
+        
+        {/* Temporary validation section */}
+        {searchParams.get('test') === 'true' && (
+          <div className="container mx-auto mt-8">
+            <AppValidator />
+          </div>
+        )}
       </div>
     </ErrorBoundary>
   );
