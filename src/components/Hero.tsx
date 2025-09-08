@@ -13,20 +13,17 @@ import { useSearchLimits } from '@/hooks/useSearchLimits';
 const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 const Hero = () => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useUnifiedAuth();
-  const { remainingSearches } = useSearchLimits();
+  const {
+    isAuthenticated
+  } = useUnifiedAuth();
+  const {
+    remainingSearches
+  } = useSearchLimits();
   const [showQrScanner, setShowQrScanner] = useState(false);
   return <div className="flex flex-col">
       {/* Full Width Image Above Hero */}
       <div className="w-full h-40 md:h-72 overflow-hidden">
-        <img 
-          src="/lovable-uploads/b5315bab-7c31-4bf5-b122-d826a3b3c04b.png"
-          alt="SafeOrStolen team and law enforcement collaboration - protecting buyers and sellers"
-          className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
+        <img src="/lovable-uploads/8ebf6078-8dcd-46a3-ad57-981e6d25022e.png" alt="How to find an IMEI Properly (Step-by-Step)" className="w-full h-full object-cover" loading="eager" fetchPriority="high" decoding="async" />
       </div>
       
       {/* Hero Section */}
@@ -55,12 +52,12 @@ const Hero = () => {
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" onClick={() => {
-            if (!isAuthenticated) {
-              navigate('/auth?tab=signup');
-            } else {
-              navigate('/dashboard');
-            }
-          }}>
+              if (!isAuthenticated) {
+                navigate('/auth?tab=signup');
+              } else {
+                navigate('/dashboard');
+              }
+            }}>
               <Shield className="mr-2 h-5 w-5" />
               Check a Serial Number — It's Free
             </Button>
@@ -72,54 +69,43 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400 mb-8">
-            <span className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-sos-lime" />
-              Multi-Database Search
-            </span>
-            <span className="flex items-center gap-2">
-              <Users className="h-4 w-4 text-sos-lime" />
-              Instant Verification
-            </span>
-            <span className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-sos-lime" />
-              Comprehensive Reports
-            </span>
-          </div>
+          
 
           {/* Social Proof Section */}
           
 
-          {/* Call to Action for Dashboard Access */}
-          <div className="text-center mb-8">
-            <p className="text-lg md:text-xl text-gray-300 mb-4">
-              Ready to verify your items? Access our secure verification system in your dashboard.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold px-8 py-4"
-              onClick={() => {
-                if (!isAuthenticated) {
-                  navigate('/auth?tab=signup');
-                } else {
-                  navigate('/dashboard');
-                }
-              }}
-            >
-              {!isAuthenticated ? 'Sign Up for Free Verification' : 'Go to Dashboard'}
-            </Button>
+          {/* Guest Check Banner */}
+          {!isAuthenticated && remainingSearches > 0}
+          
+          {/* Search Form */}
+          <div className="space-y-8">
+            <EnhancedSearchForm onOpenQrScanner={() => setShowQrScanner(true)} />
           </div>
+
+          {/* Sign up notice for free searches */}
+          {isAuthenticated && <div className="text-center mb-8">
+              <p className="text-sm md:text-base text-gray-300">
+                You have <span className="text-sos-lime font-semibold">4 searches included</span> with your account.
+              </p>
+            </div>}
+          
+          {!isAuthenticated && remainingSearches === 0 && <div className="text-center mb-8">
+              <p className="text-sm md:text-base text-gray-300">
+                Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
+                <Link to="/auth?tab=signup" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
+              </p>
+            </div>}
 
           {/* Extra actions below */}
           <div className="flex flex-col items-center gap-4 mt-12">
              <div className="w-full max-w-2xl mx-auto">
                <Button variant="destructive" className="w-full px-5" onClick={() => {
-              if (!isAuthenticated) {
-                navigate('/auth?tab=signup');
-              } else {
-                navigate('/firearms-check');
-              }
-            }} aria-label="Search Stolen Firearms Database">
+                if (!isAuthenticated) {
+                  navigate('/auth?tab=signup');
+                } else {
+                  navigate('/firearms-check');
+                }
+              }} aria-label="Search Stolen Firearms Database">
                  {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
                </Button>
              </div>
@@ -148,18 +134,12 @@ const Hero = () => {
     </div>
       
       {/* QR Scanner Modal */}
-      {showQrScanner && (
-        <Suspense fallback={<div className="fixed inset-0 bg-background/80 flex items-center justify-center z-50">Loading scanner...</div>}>
-          <QrScanner 
-            isOpen={showQrScanner}
-            onOpenChange={setShowQrScanner}
-            onScanSuccess={(result) => {
-              console.log('QR Scan result:', result);
-              setShowQrScanner(false);
-            }}
-          />
-        </Suspense>
-      )}
+      {showQrScanner && <Suspense fallback={<div className="fixed inset-0 bg-background/80 flex items-center justify-center z-50">Loading scanner...</div>}>
+          <QrScanner isOpen={showQrScanner} onOpenChange={setShowQrScanner} onScanSuccess={result => {
+        console.log('QR Scan result:', result);
+        setShowQrScanner(false);
+      }} />
+        </Suspense>}
     </div>;
 };
 export default Hero;
