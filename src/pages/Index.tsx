@@ -1,5 +1,5 @@
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
@@ -7,6 +7,8 @@ import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { LocalSEO } from '@/components/seo/LocalSEO';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
+import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
+import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 
 
 const Index = () => {
@@ -14,10 +16,17 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
   const isCached = searchParams.get('cached') === 'true';
+  const { trackPageView } = useMarketingAutomation();
+
+  useEffect(() => {
+    // Track homepage visit
+    trackPageView('/');
+  }, [trackPageView]);
 
   return (
     <div className="min-h-screen">
-      <EnhancedSEOHead 
+      <HubSpotTracker portalId="YOUR_PORTAL_ID" />
+      <EnhancedSEOHead
         title="Check if Stolen: Free IMEI, VIN, Serial Number Verification | Safe or Stolen"
         description="Verify if items are stolen before buying. Free IMEI, VIN, serial number lookup. Check phones, cars, electronics against global stolen goods databases instantly."
         keywords="check if stolen, IMEI check free, VIN check stolen, serial number lookup, verify before you buy, stolen goods verification, check stolen items, is it stolen, stolen phone check, stolen car check, free stolen check"

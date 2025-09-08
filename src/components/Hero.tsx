@@ -20,8 +20,8 @@ const Hero = () => {
       {/* Full Width Image Above Hero */}
       <div className="w-full h-40 md:h-72 overflow-hidden">
         <img 
-          src="/lovable-uploads/f5ac2279-d7da-425c-ae04-a22012ae395b.png"
-          alt="Law enforcement officers securing evidence - SafeOrStolen crime prevention" 
+          src="/lovable-uploads/b5315bab-7c31-4bf5-b122-d826a3b3c04b.png"
+          alt="SafeOrStolen team and law enforcement collaboration - protecting buyers and sellers"
           className="w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
