@@ -20,8 +20,8 @@ const Hero = () => {
       {/* Full Width Image Above Hero */}
       <div className="w-full h-40 md:h-72 overflow-hidden">
         <img 
-          src="/lovable-uploads/8ebf6078-8dcd-46a3-ad57-981e6d25022e.png"
-          alt="How to find an IMEI Properly (Step-by-Step)" 
+          src="/lovable-uploads/f5ac2279-d7da-425c-ae04-a22012ae395b.png"
+          alt="Law enforcement officers securing evidence - SafeOrStolen crime prevention" 
           className="w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -90,33 +90,25 @@ const Hero = () => {
           {/* Social Proof Section */}
           
 
-          {/* Guest Check Banner */}
-          {!isAuthenticated && remainingSearches > 0 && (
-            <GuestCheckBanner remainingSearches={remainingSearches} />
-          )}
-          
-          {/* Search Form */}
-          <div className="space-y-8">
-            <EnhancedSearchForm onOpenQrScanner={() => setShowQrScanner(true)} />
+          {/* Call to Action for Dashboard Access */}
+          <div className="text-center mb-8">
+            <p className="text-lg md:text-xl text-gray-300 mb-4">
+              Ready to verify your items? Access our secure verification system in your dashboard.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold px-8 py-4"
+              onClick={() => {
+                if (!isAuthenticated) {
+                  navigate('/auth?tab=signup');
+                } else {
+                  navigate('/dashboard');
+                }
+              }}
+            >
+              {!isAuthenticated ? 'Sign Up for Free Verification' : 'Go to Dashboard'}
+            </Button>
           </div>
-
-          {/* Sign up notice for free searches */}
-          {isAuthenticated && (
-            <div className="text-center mb-8">
-              <p className="text-sm md:text-base text-gray-300">
-                You have <span className="text-sos-lime font-semibold">4 searches included</span> with your account.
-              </p>
-            </div>
-          )}
-          
-          {!isAuthenticated && remainingSearches === 0 && (
-            <div className="text-center mb-8">
-              <p className="text-sm md:text-base text-gray-300">
-                Sign up to receive <span className="text-sos-lime font-semibold">4 free searches</span>.{' '}
-                <Link to="/auth?tab=signup" className="text-sos-orange hover:text-sos-orange/90 font-semibold underline-offset-4 hover:underline">Create your free account</Link>.
-              </p>
-            </div>
-          )}
 
           {/* Extra actions below */}
           <div className="flex flex-col items-center gap-4 mt-12">
