@@ -27,7 +27,7 @@ interface EnhancedSearchFormProps {
   onOpenQrScanner: () => void;
 }
 
-export const EnhancedSearchForm: React.FC<EnhancedSearchFormProps> = ({ onOpenQrScanner }) => {
+export const EnhancedSearchForm = ({ onOpenQrScanner }: EnhancedSearchFormProps): JSX.Element => {
   const [serialNumber, setSerialNumber] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
