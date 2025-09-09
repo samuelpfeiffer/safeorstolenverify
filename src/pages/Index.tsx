@@ -4,8 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
-import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
-import { LocalSEO } from '@/components/seo/LocalSEO';
+import { GlobalCanonicalFix } from '@/components/seo/GlobalCanonicalFix';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
@@ -25,6 +24,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <GlobalCanonicalFix />
       <HubSpotTracker portalId="YOUR_PORTAL_ID" />
       <UnifiedSEO
         title="Check if Stolen: Free IMEI, VIN, Serial Number Verification | Safe or Stolen"
@@ -66,8 +66,6 @@ const Index = () => {
           }
         ]}
       />
-      <CompetitiveKeywords pageType="homepage" />
-      <LocalSEO />
       <Hero />
       <SponsorsStrip />
       
