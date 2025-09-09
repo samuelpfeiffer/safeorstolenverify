@@ -37,7 +37,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   },
   premium: {
     name: 'Savvy Shopper',
-    price: 1900, // $19.00 in cents
+    price: 1999, // $19.99 in cents
     interval: 'month',
     popular: true,
     features: [
@@ -52,7 +52,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   },
   enterprise: {
     name: 'Business Pro',
-    price: 4995, // $49.95 in cents
+    price: 9999, // $99.99 in cents
     interval: 'month',
     features: [
       '7-day free trial',
