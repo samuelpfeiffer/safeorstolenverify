@@ -18,11 +18,11 @@ const Hero = () => {
   const [showQrScanner, setShowQrScanner] = useState(false);
   return <div className="flex flex-col">
       {/* Full Width Image Above Hero */}
-      <div className="w-full h-40 md:h-72 overflow-hidden">
+      <div className="w-full h-auto">
         <img 
-          src="/lovable-uploads/b5315bab-7c31-4bf5-b122-d826a3b3c04b.png"
-          alt="SafeOrStolen team and law enforcement collaboration - protecting buyers and sellers"
-          className="w-full h-full object-cover"
+          src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
+          alt="SafeOrStolen team running with laptops - protecting buyers and sellers from stolen goods"
+          className="w-full h-auto object-contain"
           loading="eager"
           fetchPriority="high"
           decoding="async"
