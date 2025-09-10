@@ -14,6 +14,194 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_analysis_sessions: {
+        Row: {
+          analysis_type: string
+          confidence: number | null
+          cost_estimate: number | null
+          created_at: string
+          id: string
+          models_used: string[] | null
+          priority: string
+          processing_time_ms: number | null
+          query: string
+          reasoning: string[] | null
+          recommendations: string[] | null
+          result: string | null
+          sources: string[] | null
+          status: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          analysis_type: string
+          confidence?: number | null
+          cost_estimate?: number | null
+          created_at?: string
+          id?: string
+          models_used?: string[] | null
+          priority: string
+          processing_time_ms?: number | null
+          query: string
+          reasoning?: string[] | null
+          recommendations?: string[] | null
+          result?: string | null
+          sources?: string[] | null
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          analysis_type?: string
+          confidence?: number | null
+          cost_estimate?: number | null
+          created_at?: string
+          id?: string
+          models_used?: string[] | null
+          priority?: string
+          processing_time_ms?: number | null
+          query?: string
+          reasoning?: string[] | null
+          recommendations?: string[] | null
+          result?: string | null
+          sources?: string[] | null
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      ai_feedback: {
+        Row: {
+          accurate: boolean
+          actionable: boolean
+          comments: string | null
+          created_at: string
+          helpful: boolean
+          id: string
+          outcome_improved_safety: boolean | null
+          outcome_prevented_fraud: boolean | null
+          outcome_saved_money: boolean | null
+          outcome_useful: boolean | null
+          rating: number
+          session_id: string | null
+          user_id: string | null
+        }
+        Insert: {
+          accurate: boolean
+          actionable: boolean
+          comments?: string | null
+          created_at?: string
+          helpful: boolean
+          id?: string
+          outcome_improved_safety?: boolean | null
+          outcome_prevented_fraud?: boolean | null
+          outcome_saved_money?: boolean | null
+          outcome_useful?: boolean | null
+          rating: number
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          accurate?: boolean
+          actionable?: boolean
+          comments?: string | null
+          created_at?: string
+          helpful?: boolean
+          id?: string
+          outcome_improved_safety?: boolean | null
+          outcome_prevented_fraud?: boolean | null
+          outcome_saved_money?: boolean | null
+          outcome_useful?: boolean | null
+          rating?: number
+          session_id?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_feedback_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "ai_analysis_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      ai_model_performance: {
+        Row: {
+          average_latency_ms: number | null
+          created_at: string
+          id: string
+          last_updated: string
+          model_id: string
+          model_name: string
+          provider: string
+          success_rate: number | null
+          successful_queries: number | null
+          total_latency_ms: number | null
+          total_queries: number | null
+        }
+        Insert: {
+          average_latency_ms?: number | null
+          created_at?: string
+          id?: string
+          last_updated?: string
+          model_id: string
+          model_name: string
+          provider: string
+          success_rate?: number | null
+          successful_queries?: number | null
+          total_latency_ms?: number | null
+          total_queries?: number | null
+        }
+        Update: {
+          average_latency_ms?: number | null
+          created_at?: string
+          id?: string
+          last_updated?: string
+          model_id?: string
+          model_name?: string
+          provider?: string
+          success_rate?: number | null
+          successful_queries?: number | null
+          total_latency_ms?: number | null
+          total_queries?: number | null
+        }
+        Relationships: []
+      }
+      ai_system_config: {
+        Row: {
+          config_key: string
+          config_value: Json
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean | null
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          config_key: string
+          config_value: Json
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          config_key?: string
+          config_value?: Json
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       alert_notifications: {
         Row: {
           alert_id: string | null
@@ -129,6 +317,50 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      api_usage_tracking: {
+        Row: {
+          api_key_id: string | null
+          created_at: string | null
+          endpoint: string
+          id: string
+          identifier: string | null
+          ip_address: string | null
+          response_status: number | null
+          response_time_ms: number | null
+          user_agent: string | null
+        }
+        Insert: {
+          api_key_id?: string | null
+          created_at?: string | null
+          endpoint: string
+          id?: string
+          identifier?: string | null
+          ip_address?: string | null
+          response_status?: number | null
+          response_time_ms?: number | null
+          user_agent?: string | null
+        }
+        Update: {
+          api_key_id?: string | null
+          created_at?: string | null
+          endpoint?: string
+          id?: string
+          identifier?: string | null
+          ip_address?: string | null
+          response_status?: number | null
+          response_time_ms?: number | null
+          user_agent?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "api_usage_tracking_api_key_id_fkey"
+            columns: ["api_key_id"]
+            isOneToOne: false
+            referencedRelation: "external_api_keys"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       audit_logs: {
         Row: {
@@ -507,6 +739,160 @@ export type Database = {
           user_id?: string | null
         }
         Relationships: []
+      }
+      deep_thinking_processes: {
+        Row: {
+          confidence: number | null
+          context: Json | null
+          created_at: string
+          end_time: string | null
+          final_analysis: string | null
+          id: string
+          process_id: string
+          query: string
+          reasoning: string[] | null
+          recommendations: string[] | null
+          session_id: string | null
+          sources: string[] | null
+          start_time: string
+          steps: Json[] | null
+        }
+        Insert: {
+          confidence?: number | null
+          context?: Json | null
+          created_at?: string
+          end_time?: string | null
+          final_analysis?: string | null
+          id?: string
+          process_id: string
+          query: string
+          reasoning?: string[] | null
+          recommendations?: string[] | null
+          session_id?: string | null
+          sources?: string[] | null
+          start_time?: string
+          steps?: Json[] | null
+        }
+        Update: {
+          confidence?: number | null
+          context?: Json | null
+          created_at?: string
+          end_time?: string | null
+          final_analysis?: string | null
+          id?: string
+          process_id?: string
+          query?: string
+          reasoning?: string[] | null
+          recommendations?: string[] | null
+          session_id?: string | null
+          sources?: string[] | null
+          start_time?: string
+          steps?: Json[] | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deep_thinking_processes_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "ai_analysis_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      external_api_keys: {
+        Row: {
+          api_key: string
+          created_at: string | null
+          expires_at: string | null
+          id: string
+          is_active: boolean | null
+          key_name: string
+          permissions: Json | null
+          updated_at: string | null
+          usage_count: number | null
+          usage_limit: number | null
+          user_id: string | null
+        }
+        Insert: {
+          api_key: string
+          created_at?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          key_name: string
+          permissions?: Json | null
+          updated_at?: string | null
+          usage_count?: number | null
+          usage_limit?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          api_key?: string
+          created_at?: string | null
+          expires_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          key_name?: string
+          permissions?: Json | null
+          updated_at?: string | null
+          usage_count?: number | null
+          usage_limit?: number | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      internet_search_results: {
+        Row: {
+          confidence: number | null
+          created_at: string
+          id: string
+          metadata: Json | null
+          relevance: number | null
+          search_query: string
+          search_type: string
+          session_id: string | null
+          snippet: string | null
+          source: string
+          title: string
+          url: string
+        }
+        Insert: {
+          confidence?: number | null
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          relevance?: number | null
+          search_query: string
+          search_type: string
+          session_id?: string | null
+          snippet?: string | null
+          source: string
+          title: string
+          url: string
+        }
+        Update: {
+          confidence?: number | null
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          relevance?: number | null
+          search_query?: string
+          search_type?: string
+          session_id?: string | null
+          snippet?: string | null
+          source?: string
+          title?: string
+          url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "internet_search_results_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "ai_analysis_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       marketplace_integrations: {
         Row: {
@@ -1266,6 +1652,45 @@ export type Database = {
         }
         Relationships: []
       }
+      verification_items: {
+        Row: {
+          created_at: string | null
+          id: string
+          identifier: string
+          item_type: string
+          message: string | null
+          metadata: Json | null
+          reported_by: string | null
+          status: string
+          updated_at: string | null
+          verified_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          identifier: string
+          item_type: string
+          message?: string | null
+          metadata?: Json | null
+          reported_by?: string | null
+          status: string
+          updated_at?: string | null
+          verified_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          identifier?: string
+          item_type?: string
+          message?: string | null
+          metadata?: Json | null
+          reported_by?: string | null
+          status?: string
+          updated_at?: string | null
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
       verification_results: {
         Row: {
           api_response: Json | null
@@ -1382,6 +1807,10 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: undefined
       }
+      generate_api_key: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -1407,6 +1836,16 @@ export type Database = {
       }
       subscribe_to_newsletter: {
         Args: { user_email: string }
+        Returns: Json
+      }
+      validate_and_track_api_usage: {
+        Args: {
+          p_api_key: string
+          p_endpoint: string
+          p_identifier?: string
+          p_ip_address?: string
+          p_user_agent?: string
+        }
         Returns: Json
       }
       validate_api_key_access: {

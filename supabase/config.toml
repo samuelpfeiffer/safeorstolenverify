@@ -1,5 +1,8 @@
 project_id = "lxrdzbknktwlubbmlsqe"
 
+[functions.api-v1-check]
+verify_jwt = false
+
 [functions.create-checkout]
 verify_jwt = true
 

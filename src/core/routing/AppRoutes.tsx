@@ -28,6 +28,7 @@ const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const SubscriptionSuccessPage = lazy(() => import('@/pages/SubscriptionSuccessPage'));
 const SubscriptionCancelPage = lazy(() => import('@/pages/SubscriptionCancelPage'));
+const IntegrationsPage = lazy(() => import('@/pages/IntegrationsPage'));
 
 // New Blog Posts
 const DataSourceCredibilityPost = lazy(() => import('@/pages/blog/DataSourceCredibilityPost'));
@@ -118,6 +119,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="auth" element={<AuthPage />} />
           <Route path="subscriptions" element={<PricingPage />} />
           <Route path="pricing" element={<PricingPage />} />
+          <Route path="integrations" element={<IntegrationsPage />} />
           <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="verification-success" element={<SubscriptionSuccessPage />} />
