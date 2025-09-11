@@ -1,32 +1,51 @@
-import React, { Suspense, useState, lazy } from 'react';
+import React, { Suspense, useState, lazy, useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Shield, Users, BadgeCheck } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-import { EnhancedSearchForm } from '@/components/hero/EnhancedSearchForm';
-import { GuestCheckBanner } from '@/components/hero/GuestCheckBanner';
-import { useSearchLimits } from '@/hooks/useSearchLimits';
 // Using uploaded image
 
 const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
-const Hero = () => {
+
+const Hero = memo(() => {
   const navigate = useNavigate();
   const { isAuthenticated } = useUnifiedAuth();
-  const { remainingSearches } = useSearchLimits();
   const [showQrScanner, setShowQrScanner] = useState(false);
+
+  const handleNavigateToAuth = useCallback(() => {
+    if (!isAuthenticated) {
+      navigate('/auth?tab=signup');
+    } else {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleNavigateToFirearms = useCallback(() => {
+    if (!isAuthenticated) {
+      navigate('/auth?tab=signup');
+    } else {
+      navigate('/firearms-check');
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleQrScanSuccess = useCallback((result: string) => {
+    console.log('QR Scan result:', result);
+    setShowQrScanner(false);
+  }, []);
   return <div className="flex flex-col">
       {/* Full Width Image Above Hero */}
       <div className="w-full h-auto">
-        <img 
-          src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
-          alt="SafeOrStolen team running with laptops - protecting buyers and sellers from stolen goods"
-          className="w-full h-auto object-contain"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
+         <img 
+           src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
+           alt="SafeOrStolen verification platform - professional team securing secondhand marketplace transactions"
+           className="w-full h-auto object-contain"
+           loading="eager"
+           fetchPriority="high"
+           decoding="async"
+           width="1200"
+           height="600"
+         />
       </div>
       
       {/* Hero Section */}
@@ -35,14 +54,30 @@ const Hero = () => {
         <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Accelerated By pill */}
-          <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6" title="Accelerated by FasterCapital" aria-label="FasterCapital accelerator">
+          <a 
+            href="https://fastercapital.com" 
+            target="_blank" 
+            rel="noopener noreferrer nofollow" 
+            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6" 
+            title="Accelerated by FasterCapital - Supporting SafeOrStolen's growth" 
+            aria-label="Visit FasterCapital - Our technology accelerator partner"
+          >
             <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">ACCELERATED BY</span>
-            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" />
+            <img 
+              src="/images/partners/fastercapital-logo.png" 
+              alt="FasterCapital official partnership logo" 
+              className="h-16 md:h-20 w-auto object-contain" 
+              loading="lazy" 
+              width="80"
+              height="20"
+            />
           </a>
 
           {/* Universal Value Proposition Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange">SafeOrStolen</h1>
-          <p className="text-lg md:text-2xl text-gray-300 mb-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
+            SafeOrStolen
+          </h1>
+          <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
             A platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers in the secondhand market from stolen goods. Verify any item in seconds and buy, sell, and do business with 100% confidence.
           </p>
           
@@ -54,14 +89,13 @@ const Hero = () => {
 
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" onClick={() => {
-            if (!isAuthenticated) {
-              navigate('/auth?tab=signup');
-            } else {
-              navigate('/dashboard');
-            }
-          }}>
-              <Shield className="mr-2 h-5 w-5" />
+            <Button 
+              size="lg" 
+              className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" 
+              onClick={handleNavigateToAuth}
+              aria-describedby="main-headline"
+            >
+              <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
               Check a Serial Number — It's Free
             </Button>
             <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
@@ -98,13 +132,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold px-8 py-4"
-              onClick={() => {
-                if (!isAuthenticated) {
-                  navigate('/auth?tab=signup');
-                } else {
-                  navigate('/dashboard');
-                }
-              }}
+              onClick={handleNavigateToAuth}
             >
               {!isAuthenticated ? 'Sign Up for Free Verification' : 'Go to Dashboard'}
             </Button>
@@ -113,13 +141,12 @@ const Hero = () => {
           {/* Extra actions below */}
           <div className="flex flex-col items-center gap-4 mt-12">
              <div className="w-full max-w-2xl mx-auto">
-               <Button variant="destructive" className="w-full px-5" onClick={() => {
-              if (!isAuthenticated) {
-                navigate('/auth?tab=signup');
-              } else {
-                navigate('/firearms-check');
-              }
-            }} aria-label="Search Stolen Firearms Database">
+               <Button 
+                 variant="destructive" 
+                 className="w-full px-5" 
+                 onClick={handleNavigateToFirearms}
+                 aria-label="Access stolen firearms verification database"
+               >
                  {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
                </Button>
              </div>
@@ -153,13 +180,13 @@ const Hero = () => {
           <QrScanner 
             isOpen={showQrScanner}
             onOpenChange={setShowQrScanner}
-            onScanSuccess={(result) => {
-              console.log('QR Scan result:', result);
-              setShowQrScanner(false);
-            }}
+            onScanSuccess={handleQrScanSuccess}
           />
         </Suspense>
       )}
     </div>;
-};
+});
+
+Hero.displayName = 'Hero';
+
 export default Hero;
