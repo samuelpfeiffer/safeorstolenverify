@@ -1,4 +1,6 @@
 
+import { sanitizeUserInput, sanitizeSerialNumber, isValidEmail, preventXSS } from './securitySanitization';
+
 interface ValidationResult {
   isValid: boolean;
   errors: string[];
@@ -98,31 +100,27 @@ export const validateSerialNumberSecurity = (serialNumber: string): ValidationRe
     return { isValid: false, errors };
   }
 
-  const trimmed = serialNumber.trim();
+  const sanitized = sanitizeSerialNumber(serialNumber);
   
-  if (trimmed.length < 1 || trimmed.length > 100) {
+  if (sanitized.length < 1 || sanitized.length > 100) {
     errors.push('Serial number must be between 1 and 100 characters');
   }
 
-  // Allow alphanumeric, spaces, hyphens, and underscores only
-  if (!/^[a-zA-Z0-9\s\-_]+$/.test(trimmed)) {
+  // Additional security check for malicious patterns
+  if (sanitized !== serialNumber.trim().replace(/[^a-zA-Z0-9\s\-_]/g, '')) {
     errors.push('Serial number contains invalid characters');
   }
 
   return {
     isValid: errors.length === 0,
     errors,
-    sanitizedValue: errors.length === 0 ? trimmed : undefined,
+    sanitizedValue: errors.length === 0 ? sanitized : undefined,
   };
 };
 
 // Explicitly export and type the sanitizeInputSecurity function
 export const sanitizeInputSecurity = (input: string): string => {
-  if (!input || typeof input !== 'string') {
-    return '';
-  }
-  
-  return input.trim().replace(/[<>]/g, '');
+  return preventXSS(input);
 };
 
 export const getSecurityHeaders = (): Record<string, string> => {

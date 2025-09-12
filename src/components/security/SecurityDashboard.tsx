@@ -5,6 +5,9 @@ import { useAuth } from '@/lib/auth';
 import { SecurityScoreCard } from './SecurityScoreCard';
 import { SecurityMetricsGrid } from './SecurityMetricsGrid';
 import { SecurityDashboardLoading } from './SecurityDashboardLoading';
+import { useSecurityContext } from '@/components/security/SecurityContextProvider';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Shield, AlertTriangle } from 'lucide-react';
 
 interface SecurityMetrics {
   totalVerifications: number;
@@ -16,6 +19,7 @@ interface SecurityMetrics {
 
 export const SecurityDashboard = () => {
   const { user } = useAuth();
+  const { isSecureContext, securityStatus } = useSecurityContext();
   const [metrics, setMetrics] = useState<SecurityMetrics>({
     totalVerifications: 0,
     recentAuditLogs: 0,
@@ -61,11 +65,16 @@ export const SecurityDashboard = () => {
         .eq('user_id', user?.id)
         .gte('window_start', hourAgo.toISOString());
 
-      // Calculate security score based on activity and settings
+      // Enhanced security score calculation
       const verificationScore = Math.min((verificationCount || 0) * 2, 30);
       const auditScore = Math.min((auditCount || 0) * 5, 25);
       const complianceScore = 45; // Base compliance score
-      const totalScore = verificationScore + auditScore + complianceScore;
+      
+      // Add security context bonuses
+      const secureContextBonus = isSecureContext ? 10 : 0;
+      const sessionValidBonus = securityStatus?.sessionValid ? 5 : 0;
+      
+      const totalScore = verificationScore + auditScore + complianceScore + secureContextBonus + sessionValidBonus;
 
       setMetrics({
         totalVerifications: verificationCount || 0,
@@ -87,6 +96,43 @@ export const SecurityDashboard = () => {
 
   return (
     <div className="space-y-6">
+      {/* Security Context Warning */}
+      {!isSecureContext && (
+        <Card className="border-red-500 bg-red-50 dark:bg-red-950">
+          <CardHeader>
+            <CardTitle className="text-red-600 dark:text-red-400 flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5" />
+              Insecure Context Detected
+            </CardTitle>
+            <CardDescription className="text-red-700 dark:text-red-300">
+              Your connection is not secure. For optimal security, please use HTTPS.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      )}
+      
+      {/* Session Security Status */}
+      {securityStatus && (
+        <Card className="bg-sos border-sos-orange/20">
+          <CardHeader>
+            <CardTitle className="text-sos-orange flex items-center gap-2">
+              <Shield className="h-5 w-5" />
+              Session Security Status
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <div className="text-sm text-gray-300">
+              <p>Session Valid: {securityStatus.sessionValid ? '✓ Yes' : '✗ No'}</p>
+              <p>Admin Access: {securityStatus.hasAdminRole ? '✓ Yes' : '✗ No'}</p>
+              <p>Secure Context: {securityStatus.isSecure ? '✓ Yes' : '✗ No'}</p>
+              {securityStatus.lastSecurityCheck && (
+                <p>Last Check: {new Date(securityStatus.lastSecurityCheck).toLocaleString()}</p>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+      
       <SecurityScoreCard securityScore={metrics.securityScore} />
       <SecurityMetricsGrid metrics={metrics} />
     </div>

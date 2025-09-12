@@ -15,6 +15,7 @@ import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { GlobalSEOProvider } from '@/components/seo/GlobalSEOProvider';
+import { SecurityContextProvider } from '@/components/security/SecurityContextProvider';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -49,24 +50,26 @@ export const AppRoot: React.FC = () => {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
-            <PWAProvider>
-              <ThemeProvider>
-                <Router>
-                  <div className="min-h-screen bg-sos text-white antialiased">
-                    <GlobalSEOProvider />
-                    <GlobalAnalytics />
-                    <GlobalPerformanceOptimizer />
-                    <WebVitalsOptimizer />
-                    <Suspense fallback={<AppLoadingScreen />}>
-                      <AppRoutes />
-                    </Suspense>
-                    <PWAInstallBanner />
-                    <AppDownloadBot />
-                    <Toaster />
-                  </div>
-                </Router>
-              </ThemeProvider>
-            </PWAProvider>
+            <SecurityContextProvider>
+              <PWAProvider>
+                <ThemeProvider>
+                  <Router>
+                    <div className="min-h-screen bg-sos text-white antialiased">
+                      <GlobalSEOProvider />
+                      <GlobalAnalytics />
+                      <GlobalPerformanceOptimizer />
+                      <WebVitalsOptimizer />
+                      <Suspense fallback={<AppLoadingScreen />}>
+                        <AppRoutes />
+                      </Suspense>
+                      <PWAInstallBanner />
+                      <AppDownloadBot />
+                      <Toaster />
+                    </div>
+                  </Router>
+                </ThemeProvider>
+              </PWAProvider>
+            </SecurityContextProvider>
           </AuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
