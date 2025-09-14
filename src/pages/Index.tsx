@@ -9,6 +9,7 @@ import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
 import { CoreWebVitalsOptimizer } from '@/components/seo/CoreWebVitalsOptimizer';
 import { CriticalSEOFixes } from '@/components/seo/CriticalSEOFixes';
+import { AISearchOptimization } from '@/components/seo/AISearchOptimization';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 
 
@@ -29,7 +30,11 @@ const Index = () => {
       <CoreWebVitalsOptimizer />
       <CriticalSEOFixes pageType="homepage" />
       <GlobalCanonicalFix />
-      <HubSpotTracker portalId="YOUR_PORTAL_ID" />
+      <AISearchOptimization 
+        pageTitle="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
+        pageDescription="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
+        keywords={['IMEI check', 'verify stolen phone', 'VIN lookup', 'check if device stolen', 'IMEI blacklist check']}
+      />
       <UnifiedSEO
         title="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
         description="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
