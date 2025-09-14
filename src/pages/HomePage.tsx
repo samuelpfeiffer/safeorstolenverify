@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
+import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
 import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
 import { ImageOptimizer } from '@/components/enhanced/ImageOptimizer';
