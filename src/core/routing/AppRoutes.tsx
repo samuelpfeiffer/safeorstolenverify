@@ -77,6 +77,7 @@ const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
 const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 
 // Additional verification pages
+const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 const VerificationResultsPage = lazy(() => import('@/pages/VerificationResultsPage'));
 const CommunityWatchPage = lazy(() => import('@/pages/CommunityWatchPage'));
 const ProblemPage = lazy(() => import('@/pages/ProblemPage'));
@@ -116,7 +117,7 @@ export const AppRoutes: React.FC = () => {
     <Suspense fallback={<AppLoadingScreen />}>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<AppLayout />}>
+        <Route path="/" element={<React.Fragment />}>
           <Route index element={<HomePage />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="subscriptions" element={<PricingPage />} />
@@ -130,6 +131,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="faq" element={<FaqPage />} />
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
+          <Route path="security" element={<SecurityPage />} />
           <Route path="blog" element={<LocalBlogPage />} />
           <Route path="blog/category/:category" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
@@ -298,7 +300,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="404" element={<NotFoundPage />} />
         
         {/* Clean redirects without double slashes */}
-        <Route path="security" element={<Navigate to="/security-settings" replace />} />
+        <Route path="security-old" element={<Navigate to="/security-settings" replace />} />
         
         {/* Catch all unknown routes */}
         <Route path="*" element={<NotFoundPage />} />
