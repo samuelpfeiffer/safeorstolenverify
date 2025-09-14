@@ -3,15 +3,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Globe, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PageSEO } from '@/components/seo/PageSEO';
+import { MasterSEO } from '@/components/seo/MasterSEO';
 const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-sos text-white">
-      <PageSEO
-        title="About Safe Or Stolen | Verify Before You Buy"
-        description="Learn our mission to make secondhand buying safer with instant IMEI, serial and VIN checks."
-        keywords="about safe or stolen, company mission, verify before you buy, stolen goods prevention"
-        canonical="/about"
+      <MasterSEO
+        title="About SafeOrStolen | Verify Before You Buy - Stolen Goods Protection"
+        description="Learn our mission to make secondhand buying safer with instant IMEI, serial and VIN checks. Protecting consumers from stolen device fraud since 2024."
+        keywords="about safe or stolen, company mission, verify before you buy, stolen goods prevention, IMEI verification company, device authentication service"
+        customCanonical="/about"
       />
       {/* Hero Section */}
       <section className="relative py-20">

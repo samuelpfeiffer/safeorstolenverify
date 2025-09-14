@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
-import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
-import { InternalLinkingOptimizer } from '@/components/seo/InternalLinkingOptimizer';
-import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
-import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
+import { MasterSEO } from '@/components/seo/MasterSEO';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -39,21 +35,28 @@ const CheckPhonePage: React.FC = () => {
 
   return (
     <>
-      <UnifiedSEO 
-        title="Free IMEI Check - Verify Stolen Phone Status Instantly | SafeOrStolen"
-        description="Check if phone is stolen before buying. Free IMEI verification protects you from purchasing stolen smartphones. Instant results from global databases."
-        canonical="/check-phone"
-        keywords="free IMEI check, verify stolen phone, phone stolen check, IMEI verification, check if phone stolen, stolen phone database"
+      <MasterSEO 
+        title="Free IMEI Check - Verify Stolen Phone Status Instantly | SafeOrStolen Phone Verification"
+        description="Check if phone is stolen before buying. Free IMEI verification protects you from purchasing stolen smartphones. Instant results from global databases. Secure your secondhand phone purchases."
+        customCanonical="/check-phone"
+        keywords="free IMEI check, verify stolen phone, phone stolen check, IMEI verification, check if phone stolen, stolen phone database, smartphone verification, mobile device authentication"
         type="website"
-        structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
-      />
-      <CompetitiveKeywords pageType="imei" />
-      <AdvancedSchemaMarkup 
-        pageType="service" 
-        customData={{
-          serviceName: "IMEI Phone Verification Service",
-          serviceDescription: "Instant IMEI verification to check if smartphones are stolen before purchase"
-        }}
+        structuredData={[
+          serviceSchema, 
+          faqSchema, 
+          breadcrumbSchema,
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "IMEI Phone Verification Service",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "description": "Instant IMEI verification to check if smartphones are stolen before purchase",
+            "serviceType": "Device Authentication"
+          }
+        ]}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
@@ -186,14 +189,6 @@ const CheckPhonePage: React.FC = () => {
             </div>
           </div>
 
-          {/* FAQ */}
-          <VoiceSearchFAQ pageType="imei" />
-          
-          {/* Internal Linking */}
-          <InternalLinkingOptimizer 
-            pageType="service" 
-            currentPath="/check-phone"
-          />
         </div>
       </div>
     </>

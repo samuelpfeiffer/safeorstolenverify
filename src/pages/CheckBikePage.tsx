@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
-import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { MasterSEO } from '@/components/seo/MasterSEO';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -32,15 +31,14 @@ const CheckBikePage: React.FC = () => {
 
   return (
     <>
-      <UnifiedSEO 
-        title="Free Bike Check - Verify Serial Numbers | Safe or Stolen"
-        description="Check if a bike is stolen before buying. Free bike serial number verification to avoid purchasing stolen bicycles. Protect yourself and help reduce bike theft."
-        canonical="/check-bike"
-        keywords="bike check, bicycle theft, stolen bike verification, bike serial number check, bicycle security"
+      <MasterSEO 
+        title="Free Bike Check - Verify Serial Numbers | SafeOrStolen Bicycle Verification"
+        description="Check if a bike is stolen before buying. Free bike serial number verification to avoid purchasing stolen bicycles. Protect yourself and help reduce bike theft with our comprehensive database."
+        customCanonical="/check-bike"
+        keywords="bike check, bicycle theft, stolen bike verification, bike serial number check, bicycle security, stolen bicycle database, bike theft prevention"
         type="website"
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
-      <CompetitiveKeywords pageType="serial" />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">

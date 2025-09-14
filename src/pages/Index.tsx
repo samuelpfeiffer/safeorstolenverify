@@ -3,24 +3,9 @@ import React, { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
-import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
-import { GlobalCanonicalFix } from '@/components/seo/GlobalCanonicalFix';
+import { MasterSEO } from '@/components/seo/MasterSEO';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
-import { CoreWebVitalsOptimizer } from '@/components/seo/CoreWebVitalsOptimizer';
-import { CriticalSEOFixes } from '@/components/seo/CriticalSEOFixes';
-import { InternalLinkingOptimizer } from '@/components/seo/InternalLinkingOptimizer';
-import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
-import { AdvancedTechnicalSEO } from '@/components/seo/AdvancedTechnicalSEO';
-import { LocalBusinessSEO } from '@/components/seo/LocalBusinessSEO';
-import { EnhancedBreadcrumbs } from '@/components/seo/EnhancedBreadcrumbs';
-import { WebVitalsTracker } from '@/components/seo/WebVitalsTracker';
-import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
-import { AISearchOptimization } from '@/components/seo/AISearchOptimization';
-import { FeaturedSnippetsOptimizer } from '@/components/seo/FeaturedSnippetsOptimizer';
-import { GoogleRankingBooster } from '@/components/seo/GoogleRankingBooster';
-import { MobileSEOOptimizer } from '@/components/seo/MobileSEOOptimizer';
-import { AppStoreSEO } from '@/components/seo/AppStoreSEO';
 
 
 const Index = () => {
@@ -36,60 +21,46 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Ultimate SEO Stack for #1 Rankings */}
-      <GoogleRankingBooster />
-      <AISearchOptimization 
-        pageTitle="SafeOrStolen - Free IMEI Check & VIN Verification | Prevent Stolen Goods Fraud 2024"
-        pageDescription="🔒 Instantly verify if phones, cars, electronics are stolen before buying secondhand. Free IMEI checker, VIN lookup, serial verification. Protect yourself from fraud on eBay, Facebook Marketplace, Craigslist. 4 free checks, then $9.99/month unlimited access."
-        keywords={[
-          "free IMEI check", "stolen phone verification", "VIN lookup free", "verify stolen device", 
-          "secondhand marketplace safety", "eBay fraud prevention", "Facebook marketplace protection",
-          "Craigslist safety check", "device verification service", "stolen goods checker"
+      {/* Master SEO - Single source of truth */}
+      <MasterSEO
+        title="SafeOrStolen - Free IMEI Check & VIN Verification | Prevent Stolen Goods Fraud 2024"
+        description="🔒 Instantly verify if phones, cars, electronics are stolen before buying secondhand. Free IMEI checker, VIN lookup, serial verification. Protect yourself from fraud on eBay, Facebook Marketplace, Craigslist. 4 free checks, then $9.99/month unlimited access."
+        keywords="free IMEI check, stolen phone verification, VIN lookup free, verify stolen device, secondhand marketplace safety, eBay fraud prevention, Facebook marketplace protection, Craigslist safety check, device verification service, stolen goods checker, safeorstolen, mobile app verification, device checker app, fraud prevention app"
+        type="website"
+        customCanonical="/"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "SafeOrStolen",
+            "url": "https://safeorstolen.com",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": "Web Browser, iOS, Android",
+            "description": "Verify if phones, cars, electronics are stolen before buying secondhand",
+            "offers": {
+              "@type": "Offer",
+              "price": "9.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Stolen Goods Verification",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "description": "IMEI check, VIN lookup, serial number verification service"
+          }
         ]}
       />
-      <FeaturedSnippetsOptimizer />
       
-      {/* Mobile App SEO */}
-      <MobileSEOOptimizer pageType="homepage" isNativeApp={true} />
-      <AppStoreSEO />
-      
-      <WebVitalsTracker enableConsoleLogging={false} enableAnalytics={true} />
-      <AdvancedTechnicalSEO 
-        pageType="homepage"
-        customKeywords={[
-          "safeorstolen", "stolen goods verification", "marketplace protection",
-          "IMEI fraud prevention", "VIN theft check", "serial number authentication",
-          "free IMEI check", "stolen phone verification", "VIN lookup free", "verify stolen device",
-          "mobile app verification", "device checker app", "fraud prevention app"
-        ]}
-      />
-      <LocalBusinessSEO />
-      <CoreWebVitalsOptimizer />
-      <CriticalSEOFixes pageType="homepage" />
-      <GlobalCanonicalFix />
       <HubSpotTracker portalId="YOUR_PORTAL_ID" />
-      
-      {/* Legacy SEO - kept for compatibility */}
-      <UnifiedSEO
-        title="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
-        description="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
-        keywords="free IMEI check, verify stolen phone, VIN lookup, check if device stolen, stolen phone checker, device verification service, marketplace safety"
-        canonical="/"
-      />
-      <AdvancedSchemaMarkup pageType="homepage" />
-      
-      {/* Enhanced Breadcrumbs */}
-      <div className="container mx-auto px-4 pt-4">
-        <EnhancedBreadcrumbs showHome={false} />
-      </div>
       
       <Hero />
       <SponsorsStrip />
-      
-      {/* Enhanced FAQ Section */}
-      <div className="container mx-auto px-4">
-        <VoiceSearchFAQ pageType="general" />
-      </div>
       
       {(verificationId || serialNumber) && (
         <Suspense fallback={
@@ -102,13 +73,6 @@ const Index = () => {
         </Suspense>
       )}
 
-      {/* Internal Linking for Homepage */}
-      <div className="container mx-auto px-4">
-        <InternalLinkingOptimizer 
-          pageType="homepage" 
-          currentPath="/"
-        />
-      </div>
 
     </div>
   );

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 /**
- * Global SEO Provider that handles site-wide redirects and canonical domain enforcement
- * This should be included once at the app level
+ * App-level SEO Provider - Handles global SEO and domain redirects
+ * Single source for www/non-www redirects - no conflicts
  */
-export const GlobalSEOProvider: React.FC = () => {
+export const AppSEOProvider: React.FC = () => {
   useEffect(() => {
-    // Handle client-side canonical domain enforcement
+    // Handle canonical domain enforcement - single source of truth
     if (typeof window !== 'undefined') {
       const currentUrl = window.location.href;
       
@@ -29,25 +29,21 @@ export const GlobalSEOProvider: React.FC = () => {
 
   return (
     <Helmet>
-      {/* Global meta tags that apply to all pages */}
+      {/* Global app meta tags */}
       <meta name="author" content="Safe or Stolen" />
-      <meta name="application-name" content="Safe or Stolen" />
-      <meta name="apple-mobile-web-app-title" content="Safe or Stolen" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="application-name" content="SafeOrStolen" />
+      <meta name="theme-color" content="#FF4500" />
       
-      {/* Domain preferences for search engines */}
+      {/* Domain preferences */}
       <meta name="preferred-domain" content="safeorstolen.com" />
       <meta name="canonical-domain" content="https://safeorstolen.com" />
       
-      {/* DNS prefetch for performance */}
-      <link rel="dns-prefetch" href="https://js.stripe.com" />
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      
-      {/* Favicon and PWA icons */}
+      {/* Icons */}
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
+      
+      {/* Sitemap */}
+      <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />
     </Helmet>
   );
 };

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { PageSEO } from '@/components/seo/PageSEO';
+import { MasterSEO } from '@/components/seo/MasterSEO';
 
 const DisclaimerPage: React.FC = () => {
   return (
     <>
-      <PageSEO 
-        title="Disclaimer - Safe or Stolen"
-        description="Important disclaimers and limitations regarding Safe or Stolen verification services."
-        noIndex={false}
+      <MasterSEO 
+        title="Disclaimer - SafeOrStolen Verification Service Limitations"
+        description="Important disclaimers and limitations regarding SafeOrStolen verification services. Understand service boundaries and user responsibilities for stolen goods verification."
+        customCanonical="/disclaimer"
+        keywords="disclaimer, service limitations, verification accuracy, stolen goods verification disclaimer, SafeOrStolen terms"
       />
       
       <div className="min-h-screen bg-background py-20">

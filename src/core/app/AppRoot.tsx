@@ -14,7 +14,7 @@ import { WebVitalsOptimizer } from '@/components/performance/WebVitalsOptimizer'
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
-import { GlobalSEOProvider } from '@/components/seo/GlobalSEOProvider';
+import { AppSEOProvider } from '@/components/seo/AppSEOProvider';
 import { SecurityContextProvider } from '@/components/security/SecurityContextProvider';
 
 // Enhanced QueryClient configuration for enterprise performance
@@ -55,7 +55,7 @@ export const AppRoot: React.FC = () => {
                 <ThemeProvider>
                   <Router>
                     <div className="min-h-screen bg-sos text-white antialiased">
-                      <GlobalSEOProvider />
+                      <AppSEOProvider />
                       <GlobalAnalytics />
                       <GlobalPerformanceOptimizer />
                       <WebVitalsOptimizer />

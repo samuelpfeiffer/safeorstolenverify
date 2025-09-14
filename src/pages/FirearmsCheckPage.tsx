@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { MasterSEO } from '@/components/seo/MasterSEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -96,11 +96,12 @@ const FirearmsCheckPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-sos text-white pt-20">
-      <EnhancedSEOHead
-        title="Can I Check if This Gun is Stolen? How Do I Know if Firearm is Hot?"
-        description="Can I check if this gun is stolen? How do I know if this firearm is hot? Free serial number check to verify gun is legit before buying."
-        canonical="/firearms-check"
-        additionalSchemas={faqSchema as unknown as Array<Record<string, any>>}
+      <MasterSEO
+        title="Can I Check if This Gun is Stolen? How Do I Know if Firearm is Hot? | SafeOrStolen"
+        description="Can I check if this gun is stolen? How do I know if this firearm is hot? Free serial number check to verify gun is legit before buying. Comprehensive firearm verification service."
+        customCanonical="/firearms-check"
+        keywords="check if gun stolen, firearm hot check, gun serial number verification, stolen firearm database, firearm authentication, gun legitimacy check"
+        structuredData={faqSchema as unknown as Record<string, any>[]}
       />
 
       <main className="container mx-auto container-padding py-12">
