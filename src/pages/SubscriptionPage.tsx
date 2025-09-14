@@ -91,7 +91,7 @@ const SubscriptionPage: React.FC = () => {
                     <p className="text-gray-300">
                       You're on the free plan with limited searches.
                     </p>
-                    <Button className="w-full bg-sos-orange hover:bg-sos-orange/80" onClick={async () => { const url = await createSubscriptionCheckout(getSubscriptionPriceId('premium')); if (url) window.open(url, '_blank'); }}>
+                    <Button className="w-full bg-sos-orange hover:bg-sos-orange/80" onClick={async () => { const url = await createSubscriptionCheckout(getSubscriptionPriceId('unlimited')); if (url) window.open(url, '_blank'); }}>
                       Upgrade Now
                     </Button>
                   </div>

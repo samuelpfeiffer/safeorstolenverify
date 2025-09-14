@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
+  const handleSubscribe = useCallback(async (tier: 'free' | 'unlimited') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -65,7 +65,7 @@ const PricingPage = () => {
     }, 20000); // Increased to 20 second timeout
 
     try {
-      const priceId = getSubscriptionPriceId(tier);
+      const priceId = getSubscriptionPriceId('unlimited');
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
@@ -153,9 +153,9 @@ const PricingPage = () => {
 
     // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
-    if (pending === 'basic' || pending === 'premium' || pending === 'enterprise') {
+    if (pending === 'unlimited') {
       localStorage.removeItem('pendingSubscription');
-      setTimeout(() => handleSubscribe(pending as 'basic' | 'premium' | 'enterprise'), 300);
+      setTimeout(() => handleSubscribe('unlimited'), 300);
       return; // don't process report in same tick
     }
 

@@ -75,10 +75,11 @@ const Hero = memo(() => {
 
           {/* Universal Value Proposition Headline */}
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
-            SafeOrStolen
+            Instantly Verify Secondhand Goods—Protect Yourself from Stolen Devices!
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            A platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers in the secondhand market from stolen goods. Verify any item in seconds and buy, sell, and do business with 100% confidence.
+            Stop risking your money on stolen phones, electronics, or vehicles! SafeOrStolen instantly checks IMEI, VIN, or serial numbers so you know the real status before buying or selling. 
+            Avoid scams, bricked devices, and legal trouble.
           </p>
           
           
@@ -96,7 +97,7 @@ const Hero = memo(() => {
               aria-describedby="main-headline"
             >
               <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-              Check a Serial Number — It's Free
+              Get 4 Free Checks — Don't Get Burned!
             </Button>
             <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
               <Link to="/for-brands">

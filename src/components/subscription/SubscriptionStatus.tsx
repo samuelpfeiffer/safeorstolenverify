@@ -45,7 +45,7 @@ export const SubscriptionStatus = () => {
     
     try {
       console.log("Subscribe button clicked for tier:", tier);
-      const priceId = getSubscriptionPriceId(tier);
+      const priceId = getSubscriptionPriceId('unlimited');
       const checkoutUrl = await createSubscriptionCheckout(priceId);
       if (checkoutUrl) {
         window.open(checkoutUrl, '_blank');

@@ -89,7 +89,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'basic' | 'premium' | 'enterprise') => void;
+  onSubscribe: (tier: 'free' | 'unlimited') => void;
   loadingTier?: string | null;
 }
 
@@ -99,57 +99,38 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
 }) => {
   const tiers = [
     {
-      id: 'basic' as const,
-      name: 'Smart Buyer',
-      price: '$7.99',
-      period: 'month',
-      description: 'Perfect for occasional buyers',
+      id: 'free' as const,
+      name: 'Free',
+      price: '$0',
+      period: 'forever',
+      description: 'Get started with 4 free checks',
       features: [
-        'Unlimited item verifications',
-        'Real-time database checks',
-        'IMEI, VIN & serial lookup',
-        'Basic reports & history',
-        'Email support',
-        'Mobile app access'
+        '4 free verifications',
+        'IMEI, VIN & Serial checks',
+        'Basic verification reports',
+        'Avoid stolen devices',
+        'Legal protection'
       ],
-      buttonText: 'Start Protecting Yourself'
+      buttonText: 'Start Free'
     },
     {
-      id: 'premium' as const,
-      name: 'Savvy Shopper',
-      price: '$19.99',
+      id: 'unlimited' as const,
+      name: 'Unlimited Verifications',
+      price: '$9.99',
       period: 'month',
-      description: 'For serious marketplace users',
+      description: 'Perfect for buyers, sellers & businesses',
       features: [
-        'Everything in Smart Buyer',
+        '7-day free trial',
+        'Unlimited verifications',
+        'All device types (IMEI/VIN/Serial)',
         'Advanced verification reports',
-        'Bulk checking tools',
-        'Priority customer support',
-        'API access (limited)',
-        'Purchase protection alerts',
-        'Detailed fraud analytics',
-        'Custom notifications'
+        'Verified Safe badge for sellers',
+        'Priority support',
+        'Prevent chargebacks',
+        'Boost buyer confidence'
       ],
-      buttonText: 'Upgrade to Premium',
+      buttonText: 'Start Free Trial',
       popular: true
-    },
-    {
-      id: 'enterprise' as const,
-      name: 'Business Pro',
-      price: '$99.99',
-      period: 'month',
-      description: 'For businesses and power users',
-      features: [
-        'Everything in Savvy Shopper',
-        'Full API access & integration',
-        'White-label solutions',
-        'Dedicated account manager',
-        'Custom integrations',
-        'Advanced analytics dashboard',
-        'Team management tools',
-        'SLA guarantees'
-      ],
-      buttonText: 'Contact Sales'
     }
   ];
 
@@ -159,11 +140,10 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Stop Losing Money to Scams
+            Instantly Verify Secondhand Goods—Protect Yourself from Stolen Devices!
           </h2>
-          <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-            Choose your protection level. All plans include our money-back guarantee and 
-            instant access to comprehensive verification databases.
+          <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
+            Stop risking your money on stolen phones, electronics, or vehicles! Instantly check IMEI, VIN, or serial numbers—avoid scams, bricked devices, and legal trouble.
           </p>
           
           {/* Social Proof */}
@@ -184,7 +164,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {tiers.map((tier) => (
             <PricingTier
               key={tier.id}

@@ -17,52 +17,28 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     searchLimit: 4,
     features: [
       '4 free verifications',
+      'IMEI, VIN & Serial checks',
       'Basic verification reports',
-      'Search history',
-      'Email support'
+      'Avoid stolen devices',
+      'Legal protection'
     ]
   },
-  basic: {
-    name: 'Smart Buyer',
-    price: 799, // $7.99 in cents
-    interval: 'month',
-    features: [
-      '7-day free trial',
-      'Unlimited verifications',
-      'Real-time database checks',
-      'Basic verification reports',
-      'Email support'
-    ],
-    stripePriceId: 'price_1S0uGQGxnZLw8J7OOgm02vdB'
-  },
-  premium: {
-    name: 'Savvy Shopper',
-    price: 1999, // $19.99 in cents
+  unlimited: {
+    name: 'Unlimited Verifications',
+    price: 999, // $9.99 in cents
     interval: 'month',
     popular: true,
     features: [
       '7-day free trial',
-      'Everything in Basic',
+      'Unlimited verifications',
+      'All device types (IMEI/VIN/Serial)',
       'Advanced verification reports',
-      'API access (100 calls/month)',
+      'Verified Safe badge for sellers',
       'Priority support',
-      'Custom verification alerts'
+      'Prevent chargebacks',
+      'Boost buyer confidence'
     ],
-    stripePriceId: 'price_1S0uGiGxnZLw8J7OQEwssbK7'
-  },
-  enterprise: {
-    name: 'Business Pro',
-    price: 9999, // $99.99 in cents
-    interval: 'month',
-    features: [
-      '7-day free trial',
-      'Everything in Premium',
-      'Unlimited API access',
-      'White-label solution',
-      'Custom integrations',
-      'Dedicated account manager'
-    ],
-    stripePriceId: 'price_1S0uJsGxnZLw8J7OfU7XKMhV'
+    stripePriceId: 'price_1S0uGQGxnZLw8J7OOgm02vdB'
   },
   report: {
     name: 'Certified Stolen/Legitimate Report',
@@ -78,7 +54,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   }
 };
 
-export const getSubscriptionPriceId = (tier: 'basic' | 'premium' | 'enterprise'): string => {
+export const getSubscriptionPriceId = (tier: 'unlimited' | 'report'): string => {
   return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
 };
 
