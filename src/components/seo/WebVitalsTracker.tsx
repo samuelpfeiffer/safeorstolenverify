@@ -72,11 +72,10 @@ export const WebVitalsTracker: React.FC<WebVitalsTrackerProps> = ({
         const webVitals = await import('web-vitals');
         
         // Track Core Web Vitals
-        if (webVitals.getCLS) webVitals.getCLS(trackMetric);
-        if (webVitals.getFID) webVitals.getFID(trackMetric);
-        if (webVitals.getFCP) webVitals.getFCP(trackMetric);
-        if (webVitals.getLCP) webVitals.getLCP(trackMetric);
-        if (webVitals.getTTFB) webVitals.getTTFB(trackMetric);
+        if (webVitals.onCLS) webVitals.onCLS(trackMetric);
+        if (webVitals.onFCP) webVitals.onFCP(trackMetric);
+        if (webVitals.onLCP) webVitals.onLCP(trackMetric);
+        if (webVitals.onTTFB) webVitals.onTTFB(trackMetric);
         
         // Track newer metrics if available
         if (webVitals.onINP) {
