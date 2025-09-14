@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEOAuditReports } from '@/components/seo/SEOAuditReports';
-import { SEOCompletionReport } from '@/components/seo/SEOCompletionReport';
+import { SEOMasterReport } from '@/components/seo/SEOMasterReport';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const SEOAuditPage: React.FC = () => {
@@ -19,7 +19,7 @@ const SEOAuditPage: React.FC = () => {
           </TabsList>
           
           <TabsContent value="completion" className="space-y-6">
-            <SEOCompletionReport />
+            <SEOMasterReport />
           </TabsContent>
           
           <TabsContent value="audit" className="space-y-6">

@@ -16,6 +16,9 @@ import { LocalBusinessSEO } from '@/components/seo/LocalBusinessSEO';
 import { EnhancedBreadcrumbs } from '@/components/seo/EnhancedBreadcrumbs';
 import { WebVitalsTracker } from '@/components/seo/WebVitalsTracker';
 import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
+import { AISearchOptimization } from '@/components/seo/AISearchOptimization';
+import { FeaturedSnippetsOptimizer } from '@/components/seo/FeaturedSnippetsOptimizer';
+import { GoogleRankingBooster } from '@/components/seo/GoogleRankingBooster';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 
 
@@ -33,13 +36,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Enhanced SEO Stack */}
+      {/* Ultimate SEO Stack for #1 Rankings */}
+      <GoogleRankingBooster />
+      <AISearchOptimization 
+        pageTitle="SafeOrStolen - Free IMEI Check & VIN Verification | Prevent Stolen Goods Fraud 2024"
+        pageDescription="🔒 Instantly verify if phones, cars, electronics are stolen before buying secondhand. Free IMEI checker, VIN lookup, serial verification. Protect yourself from fraud on eBay, Facebook Marketplace, Craigslist. 4 free checks, then $9.99/month unlimited access."
+        keywords={[
+          "free IMEI check", "stolen phone verification", "VIN lookup free", "verify stolen device", 
+          "secondhand marketplace safety", "eBay fraud prevention", "Facebook marketplace protection",
+          "Craigslist safety check", "device verification service", "stolen goods checker"
+        ]}
+      />
+      <FeaturedSnippetsOptimizer />
       <WebVitalsTracker enableConsoleLogging={false} enableAnalytics={true} />
       <AdvancedTechnicalSEO 
         pageType="homepage"
         customKeywords={[
           "safeorstolen", "stolen goods verification", "marketplace protection",
-          "IMEI fraud prevention", "VIN theft check", "serial number authentication"
+          "IMEI fraud prevention", "VIN theft check", "serial number authentication",
+          "free IMEI check", "stolen phone verification", "VIN lookup free", "verify stolen device"
         ]}
       />
       <LocalBusinessSEO />
