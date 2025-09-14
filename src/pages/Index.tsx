@@ -7,6 +7,8 @@ import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { GlobalCanonicalFix } from '@/components/seo/GlobalCanonicalFix';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
+import { CoreWebVitalsOptimizer } from '@/components/seo/CoreWebVitalsOptimizer';
+import { CriticalSEOFixes } from '@/components/seo/CriticalSEOFixes';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 
 
@@ -24,11 +26,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <CoreWebVitalsOptimizer />
+      <CriticalSEOFixes pageType="homepage" />
       <GlobalCanonicalFix />
       <HubSpotTracker portalId="YOUR_PORTAL_ID" />
       <UnifiedSEO
-        title="IMEI Check & Device Verification - SafeOrStolen | Free Stolen Phone Checker"
-        description="Instantly verify if phones, cars, bikes are stolen with our free IMEI checker and VIN lookup. Protect yourself from stolen device scams with 4 free checks, then unlimited for $9.99/month."
+        title="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
+        description="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
         keywords="IMEI check, verify stolen phone, VIN lookup, check if device stolen, IMEI blacklist check, stolen device verification, phone verification service"
         canonical="/"
         structuredData={[

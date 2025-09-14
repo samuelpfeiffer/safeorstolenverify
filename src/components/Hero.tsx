@@ -39,7 +39,7 @@ const Hero = memo(() => {
          <img 
            src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
            alt="SafeOrStolen verification platform - professional team securing secondhand marketplace transactions"
-           className="w-full h-auto object-contain"
+           className="hero-image w-full h-auto object-contain"
            loading="eager"
            fetchPriority="high"
            decoding="async"
@@ -49,7 +49,7 @@ const Hero = memo(() => {
       </div>
       
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background/80 to-background/60">
+      <div className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background/80 to-background/60">
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -74,7 +74,7 @@ const Hero = memo(() => {
           </a>
 
           {/* Universal Value Proposition Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
+          <h1 className="main-headline text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
             Instantly Verify Secondhand Goods—Protect Yourself from Stolen Devices!
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
