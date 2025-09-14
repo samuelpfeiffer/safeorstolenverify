@@ -11,6 +11,11 @@ import { CoreWebVitalsOptimizer } from '@/components/seo/CoreWebVitalsOptimizer'
 import { CriticalSEOFixes } from '@/components/seo/CriticalSEOFixes';
 import { InternalLinkingOptimizer } from '@/components/seo/InternalLinkingOptimizer';
 import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
+import { AdvancedTechnicalSEO } from '@/components/seo/AdvancedTechnicalSEO';
+import { LocalBusinessSEO } from '@/components/seo/LocalBusinessSEO';
+import { EnhancedBreadcrumbs } from '@/components/seo/EnhancedBreadcrumbs';
+import { WebVitalsTracker } from '@/components/seo/WebVitalsTracker';
+import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 
 
@@ -28,46 +33,42 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Enhanced SEO Stack */}
+      <WebVitalsTracker enableConsoleLogging={false} enableAnalytics={true} />
+      <AdvancedTechnicalSEO 
+        pageType="homepage"
+        customKeywords={[
+          "safeorstolen", "stolen goods verification", "marketplace protection",
+          "IMEI fraud prevention", "VIN theft check", "serial number authentication"
+        ]}
+      />
+      <LocalBusinessSEO />
       <CoreWebVitalsOptimizer />
       <CriticalSEOFixes pageType="homepage" />
       <GlobalCanonicalFix />
       <HubSpotTracker portalId="YOUR_PORTAL_ID" />
+      
+      {/* Legacy SEO - kept for compatibility */}
       <UnifiedSEO
         title="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
         description="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
         keywords="free IMEI check, verify stolen phone, VIN lookup, check if device stolen, stolen phone checker, device verification service, marketplace safety"
         canonical="/"
-        structuredData={[
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "SafeOrStolen",
-            "description": "Free IMEI checker and device verification service to protect against stolen goods",
-            "url": "https://safeorstolen.com",
-            "potentialAction": {
-              "@type": "SearchAction", 
-              "target": "https://safeorstolen.com/check-phone?imei={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "SafeOrStolen",
-            "description": "Leading platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers from stolen goods",
-            "url": "https://safeorstolen.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Peoria",
-              "addressRegion": "Arizona",
-              "addressCountry": "US"
-            }
-          }
-        ]}
       />
       <AdvancedSchemaMarkup pageType="homepage" />
+      
+      {/* Enhanced Breadcrumbs */}
+      <div className="container mx-auto px-4 pt-4">
+        <EnhancedBreadcrumbs showHome={false} />
+      </div>
+      
       <Hero />
       <SponsorsStrip />
+      
+      {/* Enhanced FAQ Section */}
+      <div className="container mx-auto px-4">
+        <VoiceSearchFAQ pageType="general" />
+      </div>
       
       {(verificationId || serialNumber) && (
         <Suspense fallback={
