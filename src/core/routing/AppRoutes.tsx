@@ -104,6 +104,7 @@ const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage
 const LocalBlogPage = lazy(() => import('@/pages/BlogPage'));
 const TheftTrendsBlogPage = lazy(() => import('@/pages/TheftTrendsBlogPage'));
 const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
+const LocalSEOPage = lazy(() => import('@/pages/LocalSEOPage'));
 
 /**
  * Enterprise Application Routing
