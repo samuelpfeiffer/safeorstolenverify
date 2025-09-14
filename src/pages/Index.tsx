@@ -27,42 +27,35 @@ const Index = () => {
       <GlobalCanonicalFix />
       <HubSpotTracker portalId="YOUR_PORTAL_ID" />
       <UnifiedSEO
-        title="Check if Stolen: Free IMEI, VIN, Serial Number Verification | Safe or Stolen"
-        description="Verify if items are stolen before buying. Free IMEI, VIN, serial number lookup. Check phones, cars, electronics against global stolen goods databases instantly."
-        keywords="check if stolen, IMEI check free, VIN check stolen, serial number lookup, verify before you buy, stolen goods verification, check stolen items, is it stolen, stolen phone check, stolen car check, free stolen check"
+        title="IMEI Check & Device Verification - SafeOrStolen | Free Stolen Phone Checker"
+        description="Instantly verify if phones, cars, bikes are stolen with our free IMEI checker and VIN lookup. Protect yourself from stolen device scams with 4 free checks, then unlimited for $9.99/month."
+        keywords="IMEI check, verify stolen phone, VIN lookup, check if device stolen, IMEI blacklist check, stolen device verification, phone verification service"
         canonical="/"
         structuredData={[
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Safe or Stolen",
+            "name": "SafeOrStolen",
+            "description": "Free IMEI checker and device verification service to protect against stolen goods",
             "url": "https://safeorstolen.com",
             "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://safeorstolen.com/dashboard?q={search_term_string}",
+              "@type": "SearchAction", 
+              "target": "https://safeorstolen.com/check-phone?imei={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           },
           {
             "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How do I check if something is stolen?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Go to safeorstolen.com, enter the IMEI, VIN, or serial number, and run a real-time check against global sources to see if the item is reported stolen or lost." }
-              },
-              {
-                "@type": "Question",
-                "name": "Where to check if something is stolen?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Use SafeOrStolen.com to verify any IMEI, VIN, or serial number. We aggregate trusted data to confirm if an item is flagged as stolen, lost, or clean." }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I check if something is stolen before I buy it?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. On safeorstolen.com you can verify the identifier before purchase to avoid buying stolen goods and protect yourself from fraud." }
-              }
-            ]
+            "@type": "Organization",
+            "name": "SafeOrStolen",
+            "description": "Leading platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers from stolen goods",
+            "url": "https://safeorstolen.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Peoria",
+              "addressRegion": "Arizona",
+              "addressCountry": "US"
+            }
           }
         ]}
       />

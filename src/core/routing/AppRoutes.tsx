@@ -101,7 +101,7 @@ const AvoidStolenGoodsPage = lazy(() => import('@/pages/AvoidStolenGoodsPage'));
 const UltimateGuideNotBuyingStolenPage = lazy(() => import('@/pages/UltimateGuideNotBuyingStolenPage'));
 const HowToCheckAnythingStolenPage = lazy(() => import('@/pages/HowToCheckAnythingStolenPage'));
 const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage'));
-const LocalSEOPage = lazy(() => import('@/pages/LocalSEOPage'));
+const LocalBlogPage = lazy(() => import('@/pages/BlogPage'));
 const TheftTrendsBlogPage = lazy(() => import('@/pages/TheftTrendsBlogPage'));
 const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
 
@@ -118,7 +118,7 @@ export const AppRoutes: React.FC = () => {
           <Route index element={<HomePage />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="subscriptions" element={<PricingPage />} />
-          <Route path="pricing" element={<PricingPage />} />
+          <Route path="blog" element={<BlogPage />} />
           <Route path="integrations" element={<IntegrationsPage />} />
           <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
@@ -128,7 +128,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="faq" element={<FaqPage />} />
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
-          <Route path="blog" element={<BlogPage />} />
+          <Route path="blog" element={<LocalBlogPage />} />
           <Route path="blog/category/:category" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
           

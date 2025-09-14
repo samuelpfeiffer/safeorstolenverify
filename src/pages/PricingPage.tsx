@@ -140,7 +140,7 @@ const PricingPage = () => {
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
       const timeoutId = setTimeout(() => {
-        handleSubscribe(subscribeParam);
+        handleSubscribe('unlimited');
       }, 500);
       
       return () => clearTimeout(timeoutId);
