@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { InternalLinkingOptimizer } from '@/components/seo/InternalLinkingOptimizer';
+import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
+import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -37,14 +40,21 @@ const CheckPhonePage: React.FC = () => {
   return (
     <>
       <UnifiedSEO 
-        title="Free Phone Check - IMEI Verification | Safe or Stolen"
-        description="Check if a phone is stolen before buying. Free IMEI verification to avoid purchasing stolen smartphones. Protect yourself from fraud and theft."
+        title="Free IMEI Check - Verify Stolen Phone Status Instantly | SafeOrStolen"
+        description="Check if phone is stolen before buying. Free IMEI verification protects you from purchasing stolen smartphones. Instant results from global databases."
         canonical="/check-phone"
-        keywords="phone check, IMEI check, stolen phone verification, mobile phone security, smartphone theft"
+        keywords="free IMEI check, verify stolen phone, phone stolen check, IMEI verification, check if phone stolen, stolen phone database"
         type="website"
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="imei" />
+      <AdvancedSchemaMarkup 
+        pageType="service" 
+        customData={{
+          serviceName: "IMEI Phone Verification Service",
+          serviceDescription: "Instant IMEI verification to check if smartphones are stolen before purchase"
+        }}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
@@ -177,31 +187,13 @@ const CheckPhonePage: React.FC = () => {
           </div>
 
           {/* FAQ */}
-          <div className="max-w-3xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">How do I find my phone's IMEI?</h3>
-                  <p className="text-muted-foreground">Dial *#06# on your phone, or go to Settings → About Phone → IMEI. You can also find it on the original box or receipt.</p>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">What if a phone shows as stolen?</h3>
-                  <p className="text-muted-foreground">Do not purchase the device. Report the seller to the platform and local authorities if necessary.</p>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Is this service free?</h3>
-                  <p className="text-muted-foreground">Yes, basic IMEI checks are completely free to help protect consumers from stolen goods.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+          <VoiceSearchFAQ pageType="imei" />
+          
+          {/* Internal Linking */}
+          <InternalLinkingOptimizer 
+            pageType="service" 
+            currentPath="/check-phone"
+          />
         </div>
       </div>
     </>

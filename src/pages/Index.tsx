@@ -9,7 +9,8 @@ import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
 import { CoreWebVitalsOptimizer } from '@/components/seo/CoreWebVitalsOptimizer';
 import { CriticalSEOFixes } from '@/components/seo/CriticalSEOFixes';
-import { AISearchOptimization } from '@/components/seo/AISearchOptimization';
+import { InternalLinkingOptimizer } from '@/components/seo/InternalLinkingOptimizer';
+import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 
 
@@ -30,15 +31,11 @@ const Index = () => {
       <CoreWebVitalsOptimizer />
       <CriticalSEOFixes pageType="homepage" />
       <GlobalCanonicalFix />
-      <AISearchOptimization 
-        pageTitle="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
-        pageDescription="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
-        keywords={['IMEI check', 'verify stolen phone', 'VIN lookup', 'check if device stolen', 'IMEI blacklist check']}
-      />
+      <HubSpotTracker portalId="YOUR_PORTAL_ID" />
       <UnifiedSEO
         title="Free IMEI Check - Verify Stolen Phone & Device Status | SafeOrStolen"
         description="Instantly check if phones, cars, bikes are stolen with our free IMEI checker & VIN lookup. Protect yourself from stolen device scams. 4 free checks, then $9.99/month unlimited."
-        keywords="IMEI check, verify stolen phone, VIN lookup, check if device stolen, IMEI blacklist check, stolen device verification, phone verification service"
+        keywords="free IMEI check, verify stolen phone, VIN lookup, check if device stolen, stolen phone checker, device verification service, marketplace safety"
         canonical="/"
         structuredData={[
           {
@@ -68,6 +65,7 @@ const Index = () => {
           }
         ]}
       />
+      <AdvancedSchemaMarkup pageType="homepage" />
       <Hero />
       <SponsorsStrip />
       
@@ -81,6 +79,14 @@ const Index = () => {
           <VerifiedProduct />
         </Suspense>
       )}
+
+      {/* Internal Linking for Homepage */}
+      <div className="container mx-auto px-4">
+        <InternalLinkingOptimizer 
+          pageType="homepage" 
+          currentPath="/"
+        />
+      </div>
 
     </div>
   );
