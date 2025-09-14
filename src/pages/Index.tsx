@@ -19,7 +19,8 @@ import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
 import { AISearchOptimization } from '@/components/seo/AISearchOptimization';
 import { FeaturedSnippetsOptimizer } from '@/components/seo/FeaturedSnippetsOptimizer';
 import { GoogleRankingBooster } from '@/components/seo/GoogleRankingBooster';
-import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
+import { MobileSEOOptimizer } from '@/components/seo/MobileSEOOptimizer';
+import { AppStoreSEO } from '@/components/seo/AppStoreSEO';
 
 
 const Index = () => {
@@ -27,12 +28,11 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
   const isCached = searchParams.get('cached') === 'true';
-  const { trackPageView } = useMarketingAutomation();
 
   useEffect(() => {
-    // Track homepage visit
-    trackPageView('/');
-  }, [trackPageView]);
+    // Track homepage visit for analytics
+    console.log('Homepage visited');
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -48,13 +48,19 @@ const Index = () => {
         ]}
       />
       <FeaturedSnippetsOptimizer />
+      
+      {/* Mobile App SEO */}
+      <MobileSEOOptimizer pageType="homepage" isNativeApp={true} />
+      <AppStoreSEO />
+      
       <WebVitalsTracker enableConsoleLogging={false} enableAnalytics={true} />
       <AdvancedTechnicalSEO 
         pageType="homepage"
         customKeywords={[
           "safeorstolen", "stolen goods verification", "marketplace protection",
           "IMEI fraud prevention", "VIN theft check", "serial number authentication",
-          "free IMEI check", "stolen phone verification", "VIN lookup free", "verify stolen device"
+          "free IMEI check", "stolen phone verification", "VIN lookup free", "verify stolen device",
+          "mobile app verification", "device checker app", "fraud prevention app"
         ]}
       />
       <LocalBusinessSEO />
