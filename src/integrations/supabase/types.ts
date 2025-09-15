@@ -2049,6 +2049,10 @@ export type Database = {
         }
         Returns: boolean
       }
+      initialize_sample_seo_data: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       is_admin_user: {
         Args: Record<PropertyKey, never>
         Returns: boolean
