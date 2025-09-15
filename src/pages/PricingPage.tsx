@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'free' | 'unlimited') => {
+  const handleSubscribe = useCallback(async (tier: 'free' | 'smart_buyer' | 'savvy_shopper' | 'business_pro') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -65,7 +65,7 @@ const PricingPage = () => {
     }, 20000); // Increased to 20 second timeout
 
     try {
-      const priceId = getSubscriptionPriceId('unlimited');
+      const priceId = getSubscriptionPriceId(tier === 'free' ? 'smart_buyer' : tier);
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 

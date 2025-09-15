@@ -89,7 +89,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'free' | 'unlimited') => void;
+  onSubscribe: (tier: 'free' | 'smart_buyer' | 'savvy_shopper' | 'business_pro') => void;
   loadingTier?: string | null;
 }
 
@@ -114,8 +114,8 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
       buttonText: 'Start Free'
     },
     {
-      id: 'unlimited' as const,
-      name: 'Unlimited Verifications',
+      id: 'smart_buyer' as const,
+      name: 'Smart Buyer',
       price: '$9.99',
       period: 'month',
       description: 'Perfect for buyers, sellers & businesses',
