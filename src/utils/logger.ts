@@ -1,5 +1,5 @@
 // Production-ready logging utility
-// Only logs critical errors in production, full logging in development
+// NO console.log in production - optimized for performance and security
 
 interface LogLevel {
   ERROR: 'error';
@@ -19,8 +19,13 @@ class Logger {
   private isDevelopment = process.env.NODE_ENV === 'development';
 
   error(message: string, data?: any) {
-    // Always log errors
-    console.error(`[ERROR] ${message}`, data);
+    // Always log errors but without sensitive data in production
+    if (this.isDevelopment) {
+      console.error(`[ERROR] ${message}`, data);
+    } else {
+      // In production, only log to external monitoring service
+      this.reportError(message, data);
+    }
   }
 
   warn(message: string, data?: any) {
@@ -52,6 +57,17 @@ class Logger {
   secureLog(message: string, safeData?: Record<string, any>) {
     if (this.isDevelopment) {
       console.log(`[SECURE] ${message}`, safeData);
+    }
+  }
+
+  private reportError(message: string, data?: any) {
+    // In production, send to monitoring service (Sentry, LogRocket, etc.)
+    // For now, just prevent console spam
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'exception', {
+        description: message,
+        fatal: false
+      });
     }
   }
 }

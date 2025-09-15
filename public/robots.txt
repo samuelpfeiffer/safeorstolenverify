@@ -1,45 +1,97 @@
+# SafeOrStolen.com - Enhanced robots.txt for AI and Search Engine Optimization
+# Designed to rank #1 for stolen goods verification searches
+
 User-agent: *
 Allow: /
 
-# Allow search engines to access all content
-Allow: /auth
-Allow: /subscriptions
-Allow: /about
-Allow: /contact
-Allow: /faq
-Allow: /terms
-Allow: /privacy
-Allow: /blog
-Allow: /how-it-works
+# High-priority pages for search engines
+Allow: /dashboard
+Allow: /blog/
+Allow: /pricing
 Allow: /for-consumers
-Allow: /for-brands
+Allow: /for-businesses
+Allow: /how-it-works
+Allow: /about
+Allow: /api-docs
 
-# Disallow admin and user-specific pages
+# Block admin and internal pages
 Disallow: /admin/
-Disallow: /dashboard
-Disallow: /profile
-Disallow: /subscription
-Disallow: /analytics
-Disallow: /search-history
-Disallow: /receipts
-Disallow: /purchase-history
-Disallow: /security-settings
+Disallow: /api/
+Disallow: /auth/
+Disallow: /dashboard/admin
+Disallow: /integrations/admin
+Disallow: /subscription/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: *.json$
+Disallow: /components/
+Disallow: /utils/
+Disallow: /hooks/
 
-# Allow crawling of static assets
-Allow: /*.css
-Allow: /*.js
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.gif
-Allow: /*.svg
-Allow: /*.webp
-Allow: /*.ico
-Allow: /*.woff
-Allow: /*.woff2
+# Block duplicate content and test pages
+Disallow: /test/
+Disallow: /staging/
+Disallow: /dev/
+Disallow: /*?*preview=*
+Disallow: /*?*debug=*
+Disallow: /*?*test=*
 
-# Sitemap location
-Sitemap: https://safeorstolen.com/sitemap.xml
+# AI Search Engine Specific Rules
+# OpenAI GPT
+User-agent: GPTBot
+Allow: /
+Allow: /blog/
+Allow: /api-docs
+Allow: /how-it-works
+Disallow: /admin/
+Disallow: /auth/
 
-# Crawl delay for respectful crawling
+# Claude (Anthropic)
+User-agent: Claude-Web
+Allow: /
+Allow: /blog/
+Allow: /api-docs
+Disallow: /admin/
+Disallow: /auth/
+
+# Google Bard
+User-agent: GoogleOther
+Allow: /
+Allow: /blog/
+Allow: /api-docs
+Disallow: /admin/
+Disallow: /auth/
+
+# Bing Chat
+User-agent: BingPreview
+Allow: /
+Allow: /blog/
+Allow: /api-docs
+Disallow: /admin/
+Disallow: /auth/
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Allow: /blog/
+Allow: /api-docs
+Disallow: /admin/
+Disallow: /auth/
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+Allow: /blog/
+Allow: /api-docs
+Disallow: /admin/
+Disallow: /auth/
+
+# Crawl delay for responsible crawling
 Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://safeorstolen.com/sitemap.xml
+Sitemap: https://safeorstolen.com/blog-sitemap.xml
+
+# Host directive for canonical domain
+Host: https://safeorstolen.com
