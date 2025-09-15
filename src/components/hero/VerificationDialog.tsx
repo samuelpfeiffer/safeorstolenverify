@@ -23,19 +23,16 @@ export const VerificationDialog = ({
   const { isAuthenticated } = useUnifiedAuth();
 
   const handleFreeVerification = () => {
-    console.log("Starting free verification...");
     onFreeVerification();
     onOpenChange(false);
   };
 
   const handleSignIn = () => {
-    console.log("Redirecting to auth...");
     onOpenChange(false);
     navigate("/auth");
   };
 
   const handlePremiumSignIn = () => {
-    console.log("Redirecting to auth for premium...");
     onOpenChange(false);
     navigate("/auth");
   };

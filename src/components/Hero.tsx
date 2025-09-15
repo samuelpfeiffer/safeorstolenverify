@@ -30,7 +30,6 @@ const Hero = memo(() => {
   }, [isAuthenticated, navigate]);
 
   const handleQrScanSuccess = useCallback((result: string) => {
-    console.log('QR Scan result:', result);
     setShowQrScanner(false);
   }, []);
   return <div className="flex flex-col">

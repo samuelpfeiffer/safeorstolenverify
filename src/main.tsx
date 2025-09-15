@@ -7,8 +7,12 @@ import './index.css';
 
 // Initialize PWA service and clean old cache on startup
 pwaService.initDB().then(() => {
-  pwaService.clearOldCache().catch(console.error);
-}).catch(console.error);
+  pwaService.clearOldCache().catch(() => {
+    // Silent fail for better UX
+  });
+}).catch(() => {
+  // Silent fail for better UX
+});
 
 // Register service worker for PWA capabilities
 if ('serviceWorker' in navigator) {

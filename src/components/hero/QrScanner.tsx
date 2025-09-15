@@ -91,8 +91,6 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
           // Detect the type of code scanned
           const codeType = detectCodeType(decodedText, decodedResult?.result?.format);
           
-          console.log(`Scanned ${codeType}: ${decodedText}`);
-          
           // Show success toast with detected format
           toast({
             title: `${detectedFormat} Detected!`,
@@ -117,7 +115,6 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
       });
       
     } catch (err) {
-      console.error("Scanner error:", err);
       toast({
         title: "Scanner Error",
         description: "Could not access your camera. Please check permissions.",
@@ -135,7 +132,7 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
         }
         await scannerInstanceRef.current.clear();
       } catch (err) {
-        console.error("Failed to stop scanner:", err);
+        // Silent error handling for scanner cleanup
       } finally {
         scannerInstanceRef.current = null;
         setScannerInitialized(false);
