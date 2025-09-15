@@ -16,10 +16,6 @@ import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { AppSEOProvider } from '@/components/seo/AppSEOProvider';
 import { SecurityContextProvider } from '@/components/security/SecurityContextProvider';
-import { I18nProvider } from '@/components/i18n/MultilingualSupport';
-import LiveChat from '@/components/support/LiveChat';
-import FeedbackWidget from '@/components/feedback/FeedbackWidget';
-import TopNavigation from '@/components/TopNavigation';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -56,30 +52,22 @@ export const AppRoot: React.FC = () => {
           <AuthProvider>
             <SecurityContextProvider>
               <PWAProvider>
-                <I18nProvider>
-                  <ThemeProvider>
-                    <Router>
+                <ThemeProvider>
+                  <Router>
                     <div className="min-h-screen bg-sos text-white antialiased">
                       <AppSEOProvider />
                       <GlobalAnalytics />
                       <GlobalPerformanceOptimizer />
-                       <WebVitalsOptimizer />
-                       <TopNavigation />
-                       <Suspense fallback={<AppLoadingScreen />}>
-                         <AppRoutes />
-                       </Suspense>
+                      <WebVitalsOptimizer />
+                      <Suspense fallback={<AppLoadingScreen />}>
+                        <AppRoutes />
+                      </Suspense>
                       <PWAInstallBanner />
                       <AppDownloadBot />
-                      
-                      {/* Global support and feedback components */}
-                      <LiveChat isBusinessHours={true} />
-                      <FeedbackWidget context="general" />
-                      
                       <Toaster />
                     </div>
-                    </Router>
-                  </ThemeProvider>
-                </I18nProvider>
+                  </Router>
+                </ThemeProvider>
               </PWAProvider>
             </SecurityContextProvider>
           </AuthProvider>

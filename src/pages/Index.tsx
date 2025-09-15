@@ -3,8 +3,6 @@ import React, { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
-import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import BlogSection from '@/components/blog/BlogSection';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
@@ -75,9 +73,7 @@ const Index = () => {
         </Suspense>
       )}
 
-      {/* Enhanced sections */}
-      <TestimonialsSection />
-      <BlogSection />
+
     </div>
   );
 };

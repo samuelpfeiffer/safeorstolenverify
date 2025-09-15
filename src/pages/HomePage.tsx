@@ -1,11 +1,8 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
-import { SafeComponent } from '@/components/enhanced/SafeComponent';
-import { ComponentFallback } from '@/components/fallbacks/ComponentFallback';
-
-// Import components with SafeComponent wrapper for error handling
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
@@ -88,103 +85,71 @@ const HomePage = () => {
 
   return (
     <>
-      <SafeComponent fallback={<ComponentFallback name="Image Optimizer" />}>
-        <ImageOptimizer>
-          <SafeComponent fallback={<ComponentFallback name="Performance Optimizer" />}>
-            <GlobalPerformanceOptimizer />
-          </SafeComponent>
-          <SafeComponent fallback={<ComponentFallback name="Analytics" />}>
-            <GlobalAnalytics />
-          </SafeComponent>
-          <SafeComponent fallback={<ComponentFallback name="Search Console" />}>
-            <GoogleSearchConsoleSetup />
-          </SafeComponent>
-          <SafeComponent fallback={<ComponentFallback name="Page SEO" />}>
-            <PageSEO
-              title="Check if Phone is Stolen | Free IMEI Lookup & VIN Verification | SafeOrStolen"
-              description="Free stolen phone checker & IMEI lookup. Verify phones, cars, electronics before buying. Check VIN numbers, serial numbers, IMEI against stolen goods databases instantly."
-              keywords="check if phone stolen, IMEI lookup, VIN check stolen, check serial number, stolen phone check, is phone stolen, verify IMEI, stolen goods check, free IMEI check, phone verification"
-              canonical="/"
-              structuredData={homePageStructuredData}
-            />
-          </SafeComponent>
-          <div className="min-h-screen">
-            <SafeComponent fallback={<ComponentFallback name="Conversion Tracker" />}>
-              <ConversionTracker />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Hero Section" />}>
-              <Hero />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Audience Navigation" />}>
-              <AudienceNavigation />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Value Propositions" />}>
-              <ValuePropositionSections />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Trust Indicators" />}>
-              <TrustIndicators />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Trust Badge Strip" />}>
-              <TrustBadgeStrip />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Trust Building FAQ" />}>
-              <TrustBuildingFAQ />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Features" />}>
-              <Features />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Testimonials" />}>
-              <TestimonialsSection />
-            </SafeComponent>
-            
-            {/* Community Movement Section */}
-            <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
-              <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                  <div className="flex justify-center mb-6">
-                    <div className="bg-sos-lime/10 p-4 rounded-full">
-                      <Users className="h-12 w-12 text-sos-lime" />
-                    </div>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                    Join the Movement
-                  </h2>
-                  <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                    Safety is a community effort. We've built free tools to help everyone fight fraud. 
-                    Become a part of the SafeOrStolen community watch and help protect buyers everywhere.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button 
-                      size="lg" 
-                      className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
-                      onClick={() => navigate('/community-watch')}
-                    >
-                      <Shield className="mr-2 h-5 w-5" />
-                      See Community Tools
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                    <Button 
-                      size="lg" 
-                      variant="outline"
-                      onClick={() => navigate('/social-media-monitoring')}
-                    >
-                      <Monitor className="mr-2 h-5 w-5" />
-                      Social Monitoring
-                    </Button>
+      <ImageOptimizer>
+        <GlobalPerformanceOptimizer />
+        <GlobalAnalytics />
+        <GoogleSearchConsoleSetup />
+        <PageSEO
+          title="Check if Phone is Stolen | Free IMEI Lookup & VIN Verification | SafeOrStolen"
+          description="Free stolen phone checker & IMEI lookup. Verify phones, cars, electronics before buying. Check VIN numbers, serial numbers, IMEI against stolen goods databases instantly."
+          keywords="check if phone stolen, IMEI lookup, VIN check stolen, check serial number, stolen phone check, is phone stolen, verify IMEI, stolen goods check, free IMEI check, phone verification"
+          canonical="/"
+          structuredData={homePageStructuredData}
+        />
+        <div className="min-h-screen">
+          <ConversionTracker />
+          <Hero />
+          <AudienceNavigation />
+          <ValuePropositionSections />
+          <TrustIndicators />
+          <TrustBadgeStrip />
+          <TrustBuildingFAQ />
+          <Features />
+          <TestimonialsSection />
+          
+          {/* Community Movement Section */}
+          <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="bg-sos-lime/10 p-4 rounded-full">
+                    <Users className="h-12 w-12 text-sos-lime" />
                   </div>
                 </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Join the Movement
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  Safety is a community effort. We've built free tools to help everyone fight fraud. 
+                  Become a part of the SafeOrStolen community watch and help protect buyers everywhere.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg" 
+                    className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
+                    onClick={() => navigate('/community-watch')}
+                  >
+                    <Shield className="mr-2 h-5 w-5" />
+                    See Community Tools
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    onClick={() => navigate('/social-media-monitoring')}
+                  >
+                    <Monitor className="mr-2 h-5 w-5" />
+                    Social Monitoring
+                  </Button>
+                </div>
               </div>
-            </section>
-            
-            <SafeComponent fallback={<ComponentFallback name="Featured Blog Section" />}>
-              <FeaturedBlogSection />
-            </SafeComponent>
-            <SafeComponent fallback={<ComponentFallback name="Enhanced CTA Section" />}>
-              <EnhancedCTASection />
-            </SafeComponent>
-          </div>
-        </ImageOptimizer>
-      </SafeComponent>
+            </div>
+          </section>
+          
+          <FeaturedBlogSection />
+          <EnhancedCTASection />
+        </div>
+      </ImageOptimizer>
     </>
   );
 };
