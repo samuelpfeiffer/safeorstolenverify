@@ -1795,15 +1795,6 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      check_secure_rate_limit: {
-        Args: {
-          action_type: string
-          max_requests?: number
-          user_identifier: string
-          window_minutes?: number
-        }
-        Returns: Json
-      }
       clean_expired_checkmend_cache: {
         Args: Record<PropertyKey, never>
         Returns: undefined
@@ -1819,23 +1810,6 @@ export type Database = {
       generate_api_key: {
         Args: Record<PropertyKey, never>
         Returns: string
-      }
-      get_newsletter_subscriber_count: {
-        Args: Record<PropertyKey, never>
-        Returns: number
-      }
-      get_public_community_stories: {
-        Args: Record<PropertyKey, never>
-        Returns: {
-          created_at: string
-          experience_type: string
-          id: string
-          is_approved: boolean
-          item_type: string
-          name: string
-          story: string
-          updated_at: string
-        }[]
       }
       has_role: {
         Args: {
@@ -1893,10 +1867,6 @@ export type Database = {
             }
           | { token_id: string; token_user_id: string }
         Returns: boolean
-      }
-      validate_serial_number_secure: {
-        Args: { input_serial: string }
-        Returns: Json
       }
     }
     Enums: {

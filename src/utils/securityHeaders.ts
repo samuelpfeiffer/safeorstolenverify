@@ -1,41 +1,35 @@
 
 /**
- * Enhanced mobile-friendly security headers configuration with CSP
+ * Mobile-friendly security headers configuration
  */
 export const SECURITY_HEADERS = {
-  // Strict CSP that prevents XSS while allowing necessary functionality
+  // Very permissive CSP for mobile compatibility
   'Content-Security-Policy': [
-    "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' *.lovableproject.com *.supabase.co",
-    "style-src 'self' 'unsafe-inline' fonts.googleapis.com",
-    "font-src 'self' fonts.gstatic.com data:",
-    "img-src 'self' data: blob: *.supabase.co *.lovableproject.com",
-    "connect-src 'self' *.supabase.co *.lovableproject.com wss: ws:",
-    "frame-src 'self' *.stripe.com",
-    "object-src 'none'",
+    "default-src 'self' 'unsafe-inline' 'unsafe-eval' *",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' * blob: data:",
+    "style-src 'self' 'unsafe-inline' *",
+    "font-src 'self' * data:",
+    "img-src 'self' * data: blob:",
+    "connect-src 'self' * ws: wss:",
+    "frame-src 'self' *",
+    "object-src 'self'",
     "base-uri 'self'",
-    "form-action 'self'",
-    "upgrade-insecure-requests"
+    "form-action 'self' *"
   ].join('; '),
   
-  // Security headers for production
+  // Mobile-friendly security headers
   'X-Content-Type-Options': 'nosniff',
-  'X-Frame-Options': 'DENY',
-  'X-XSS-Protection': '1; mode=block',
-  'Referrer-Policy': 'strict-origin-when-cross-origin',
-  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Referrer-Policy': 'strict-origin-when-cross-origin'
 } as const;
 
 export const applySecurityHeaders = (): void => {
-  // Apply comprehensive security headers
-  const headers = {
+  // Only apply minimal headers for mobile
+  const mobileHeaders = {
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'DENY',
-    'X-XSS-Protection': '1; mode=block',
     'Referrer-Policy': 'strict-origin-when-cross-origin'
   };
 
-  Object.entries(headers).forEach(([name, value]) => {
+  Object.entries(mobileHeaders).forEach(([name, value]) => {
     const existingMeta = document.querySelector(`meta[http-equiv="${name}"]`);
     if (!existingMeta) {
       const meta = document.createElement('meta');
@@ -44,31 +38,17 @@ export const applySecurityHeaders = (): void => {
       document.head.appendChild(meta);
     }
   });
-
-  // Add CSP meta tag for additional XSS protection
-  const cspMeta = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
-  if (!cspMeta) {
-    const meta = document.createElement('meta');
-    meta.httpEquiv = 'Content-Security-Policy';
-    meta.content = SECURITY_HEADERS['Content-Security-Policy'];
-    document.head.appendChild(meta);
-  }
 };
 
 export const validateSecureContext = (): boolean => {
-  // Enhanced secure context validation
+  // Mobile-friendly secure context validation
   if (typeof window !== 'undefined') {
-    const isSecure = window.location.protocol === 'https:' || 
+    return window.location.protocol === 'https:' || 
            window.location.hostname === 'localhost' ||
            window.location.hostname.includes('lovableproject.com') ||
-           window.isSecureContext;
-    
-    if (!isSecure && window.location.protocol === 'http:' && 
-        !window.location.hostname.includes('localhost')) {
-      console.warn('Application is running in an insecure context. HTTPS is recommended for production.');
-    }
-    
-    return isSecure;
+           window.isSecureContext ||
+           // Allow HTTP for development/testing
+           window.location.protocol === 'http:';
   }
-  return true;
+  return true; // Default to true for mobile compatibility
 };
