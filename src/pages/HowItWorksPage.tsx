@@ -53,14 +53,19 @@ const HowItWorksPage: React.FC = () => {
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-sos-dark to-sos relative overflow-hidden">
           <div className="container mx-auto px-4">
+            {/* Full Width Title */}
+            <div className="text-center mb-12">
+              <Badge variant="outline" className="mb-6 border-sos-orange text-sos-orange">
+                How It Works
+              </Badge>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-wide">
+                How <span className="text-sos-orange">SafeOrStolen</span> Works
+              </h1>
+            </div>
+            
+            {/* Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <Badge variant="outline" className="mb-6 border-sos-orange text-sos-orange">
-                  How It Works
-                </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                  How Safe or Stolen Verification Works
-                </h1>
                 <p className="text-xl text-gray-300 mb-8">
                   Our advanced verification system checks IMEI, VIN, and serial numbers across multiple trusted databases to help protect you from purchasing stolen goods. Here's exactly how our process works.
                 </p>
