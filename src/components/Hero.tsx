@@ -75,16 +75,16 @@ const Hero = memo(() => {
 
           {/* Universal Value Proposition Headline */}
           <h1 className="main-headline text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
-            Instantly Verify Secondhand Goods—Protect Yourself from Stolen Devices!
+            Instantly Verify Any Second-Hand Item—Protect Everyone in the Transaction
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            Stop risking your money on stolen phones, electronics, or vehicles! SafeOrStolen instantly checks IMEI, VIN, or serial numbers so you know the real status before buying or selling. 
-            Avoid scams, bricked devices, and legal trouble.
+            Whether you buy, sell, trade, or handle second-hand goods—verify legitimacy instantly with IMEI, VIN, and serial number checks. 
+            Protect yourself from financial loss and legal trouble.
           </p>
           
           <div className="max-w-4xl mx-auto mb-8">
             <p className="text-lg text-gray-300 leading-relaxed">
-              SafeOrStolen is the leading platform for verifying IMEI numbers, VIN codes, and serial numbers before you buy secondhand electronics, vehicles, or other valuable items. Our comprehensive database checks help you avoid stolen goods, protect your investment, and shop with confidence. With instant verification results from multiple law enforcement and carrier databases, you can verify any device in seconds. Start with 4 free IMEI checks, then upgrade to unlimited verifications for just $9.99/month. Join thousands of smart buyers who protect themselves from stolen device scams every day.
+              SafeOrStolen protects everyone in the second-hand marketplace ecosystem. From individual buyers and sellers to businesses, pawn shops, traders, and logistics companies—our comprehensive verification platform ensures safety for all participants. Instantly check IMEI numbers, VIN codes, and serial numbers against multiple law enforcement and carrier databases. Whether you're purchasing inventory, processing trades, or handling goods, verify legitimacy in seconds. Start with 4 free checks, then upgrade to unlimited verifications for just $9.99/month. Join thousands of marketplace participants who protect themselves and their businesses every day.
             </p>
           </div>
 

@@ -39,6 +39,9 @@ const DeviceSafetyGuidePost = lazy(() => import('@/pages/blog/DeviceSafetyGuideP
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
+const ForSellersPage = lazy(() => import('@/pages/ForSellersPage'));
+const ForTradersPage = lazy(() => import('@/pages/ForTradersPage'));
+const ForHandlersPage = lazy(() => import('@/pages/ForHandlersPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
 const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
@@ -145,6 +148,9 @@ export const AppRoutes: React.FC = () => {
         <Route path="how-it-works" element={<HowItWorksPage />} />
         <Route path="how-it-works-detailed" element={<HowItWorksDetailedPage />} />
         <Route path="for-consumers" element={<ForConsumersPage />} />
+        <Route path="for-sellers" element={<ForSellersPage />} />
+        <Route path="for-traders" element={<ForTradersPage />} />
+        <Route path="for-handlers" element={<ForHandlersPage />} />
         <Route path="for-brands" element={<ForBrandsPage />} />
         <Route path="about-problem" element={<AboutProblemPage />} />
         <Route path="our-story" element={<OurStoryPage />} />
