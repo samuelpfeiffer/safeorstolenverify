@@ -169,6 +169,48 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_seo_suggestions: {
+        Row: {
+          ai_confidence_score: number | null
+          completed_at: string | null
+          created_at: string | null
+          description: string
+          expected_impact: string | null
+          id: string
+          implementation_notes: string | null
+          priority: string
+          status: string | null
+          suggestion_type: string
+          title: string
+        }
+        Insert: {
+          ai_confidence_score?: number | null
+          completed_at?: string | null
+          created_at?: string | null
+          description: string
+          expected_impact?: string | null
+          id?: string
+          implementation_notes?: string | null
+          priority?: string
+          status?: string | null
+          suggestion_type: string
+          title: string
+        }
+        Update: {
+          ai_confidence_score?: number | null
+          completed_at?: string | null
+          created_at?: string | null
+          description?: string
+          expected_impact?: string | null
+          id?: string
+          implementation_notes?: string | null
+          priority?: string
+          status?: string | null
+          suggestion_type?: string
+          title?: string
+        }
+        Relationships: []
+      }
       ai_system_config: {
         Row: {
           config_key: string
@@ -716,6 +758,90 @@ export type Database = {
           story?: string
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      competitor_analysis: {
+        Row: {
+          ai_insights: string | null
+          competitor_domain: string
+          competitor_rank: number | null
+          content_gap_analysis: string | null
+          created_at: string | null
+          id: string
+          keyword: string
+          last_analyzed_at: string | null
+          our_rank: number | null
+        }
+        Insert: {
+          ai_insights?: string | null
+          competitor_domain: string
+          competitor_rank?: number | null
+          content_gap_analysis?: string | null
+          created_at?: string | null
+          id?: string
+          keyword: string
+          last_analyzed_at?: string | null
+          our_rank?: number | null
+        }
+        Update: {
+          ai_insights?: string | null
+          competitor_domain?: string
+          competitor_rank?: number | null
+          content_gap_analysis?: string | null
+          created_at?: string | null
+          id?: string
+          keyword?: string
+          last_analyzed_at?: string | null
+          our_rank?: number | null
+        }
+        Relationships: []
+      }
+      content_performance: {
+        Row: {
+          ai_content_score: number | null
+          bounce_rate: number | null
+          created_at: string | null
+          current_rankings: Json | null
+          id: string
+          last_analyzed_at: string | null
+          meta_description: string | null
+          optimization_suggestions: string[] | null
+          organic_traffic: number | null
+          page_title: string | null
+          page_url: string
+          target_keywords: string[] | null
+          time_on_page: number | null
+        }
+        Insert: {
+          ai_content_score?: number | null
+          bounce_rate?: number | null
+          created_at?: string | null
+          current_rankings?: Json | null
+          id?: string
+          last_analyzed_at?: string | null
+          meta_description?: string | null
+          optimization_suggestions?: string[] | null
+          organic_traffic?: number | null
+          page_title?: string | null
+          page_url: string
+          target_keywords?: string[] | null
+          time_on_page?: number | null
+        }
+        Update: {
+          ai_content_score?: number | null
+          bounce_rate?: number | null
+          created_at?: string | null
+          current_rankings?: Json | null
+          id?: string
+          last_analyzed_at?: string | null
+          meta_description?: string | null
+          optimization_suggestions?: string[] | null
+          organic_traffic?: number | null
+          page_title?: string | null
+          page_url?: string
+          target_keywords?: string[] | null
+          time_on_page?: number | null
         }
         Relationships: []
       }
@@ -1419,6 +1545,81 @@ export type Database = {
           table_name?: string
           user_agent?: string | null
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      seo_keywords: {
+        Row: {
+          created_at: string | null
+          current_rank: number | null
+          difficulty_score: number | null
+          id: string
+          keyword: string
+          last_checked_at: string | null
+          search_volume: number | null
+          target_rank: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          current_rank?: number | null
+          difficulty_score?: number | null
+          id?: string
+          keyword: string
+          last_checked_at?: string | null
+          search_volume?: number | null
+          target_rank?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          current_rank?: number | null
+          difficulty_score?: number | null
+          id?: string
+          keyword?: string
+          last_checked_at?: string | null
+          search_volume?: number | null
+          target_rank?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      seo_performance: {
+        Row: {
+          ai_optimization_score: number | null
+          average_position: number | null
+          click_through_rate: number | null
+          created_at: string | null
+          date: string
+          id: string
+          keyword_rankings_declined: number | null
+          keyword_rankings_improved: number | null
+          organic_traffic: number | null
+          total_keywords_tracking: number | null
+        }
+        Insert: {
+          ai_optimization_score?: number | null
+          average_position?: number | null
+          click_through_rate?: number | null
+          created_at?: string | null
+          date?: string
+          id?: string
+          keyword_rankings_declined?: number | null
+          keyword_rankings_improved?: number | null
+          organic_traffic?: number | null
+          total_keywords_tracking?: number | null
+        }
+        Update: {
+          ai_optimization_score?: number | null
+          average_position?: number | null
+          click_through_rate?: number | null
+          created_at?: string | null
+          date?: string
+          id?: string
+          keyword_rankings_declined?: number | null
+          keyword_rankings_improved?: number | null
+          organic_traffic?: number | null
+          total_keywords_tracking?: number | null
         }
         Relationships: []
       }

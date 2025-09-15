@@ -35,3 +35,12 @@ verify_jwt = false
 
 [functions.sitemap-xml]
 verify_jwt = false
+
+[functions.ai-competitor-analysis]
+verify_jwt = false
+
+[functions.ai-content-optimizer]
+verify_jwt = false
+
+[functions.ai-ranking-analyzer]
+verify_jwt = false
