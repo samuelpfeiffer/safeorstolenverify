@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
+import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
 import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
 import { ImageOptimizer } from '@/components/enhanced/ImageOptimizer';
@@ -14,7 +14,11 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
-import { CertifiedSafeBadge } from '@/components/verification/CertifiedSafeBadge';
+import { TrustIndicators } from '@/components/TrustIndicators';
+import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
+import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
+import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
+import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -95,16 +99,11 @@ const HomePage = () => {
         <div className="min-h-screen">
           <ConversionTracker />
           <Hero />
-          {/* Safe Badge Section */}
-          <section className="py-8 bg-gradient-to-r from-green-500/5 to-emerald-600/5">
-            <div className="container mx-auto px-4 text-center">
-              <CertifiedSafeBadge size="lg" variant="premium" className="mb-4" />
-              <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                Your verification results are backed by multiple law enforcement databases and carrier networks worldwide.
-              </p>
-            </div>
-          </section>
-          
+          <AudienceNavigation />
+          <ValuePropositionSections />
+          <TrustIndicators />
+          <TrustBadgeStrip />
+          <TrustBuildingFAQ />
           <Features />
           <TestimonialsSection />
           
