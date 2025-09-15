@@ -19,6 +19,7 @@ import { SecurityContextProvider } from '@/components/security/SecurityContextPr
 import { I18nProvider } from '@/components/i18n/MultilingualSupport';
 import LiveChat from '@/components/support/LiveChat';
 import FeedbackWidget from '@/components/feedback/FeedbackWidget';
+import TopNavigation from '@/components/TopNavigation';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -62,10 +63,11 @@ export const AppRoot: React.FC = () => {
                       <AppSEOProvider />
                       <GlobalAnalytics />
                       <GlobalPerformanceOptimizer />
-                      <WebVitalsOptimizer />
-                      <Suspense fallback={<AppLoadingScreen />}>
-                        <AppRoutes />
-                      </Suspense>
+                       <WebVitalsOptimizer />
+                       <TopNavigation />
+                       <Suspense fallback={<AppLoadingScreen />}>
+                         <AppRoutes />
+                       </Suspense>
                       <PWAInstallBanner />
                       <AppDownloadBot />
                       
