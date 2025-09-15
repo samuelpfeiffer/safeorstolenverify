@@ -88,8 +88,8 @@ const TopNavigation = () => {
             >
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-                  alt="Safe or Stolen" 
+                  src="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" 
+                  alt="SafeOrStolen - Verify Before You Buy" 
                   className="h-10 w-10 filter drop-shadow-lg"
                 />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
