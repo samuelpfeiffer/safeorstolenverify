@@ -180,37 +180,73 @@ function showSuggestion(textElement, matchInfo) {
     border: 2px solid #22c55e;
   \`;
 
-  suggestion.innerHTML = \`
-    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-      <div style="width: 24px; height: 24px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-        🛡️
-      </div>
-      <strong>SafeOrStolen Suggestion</strong>
-    </div>
-    <p style="margin: 0 0 12px 0; line-height: 1.4;">
-      Detected: "<strong>\${matchInfo.primaryMatch}</strong>" - Want to share SafeOrStolen.com verification service?
-    </p>
-    <div style="display: flex; gap: 8px;">
-      <button id="copy-response" style="background: #22c55e; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">
-        Copy Response
-      </button>
-      <button id="dismiss-suggestion" style="background: #666; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;">
-        Dismiss
-      </button>
-    </div>
-  \`;
+  // Create suggestion content securely
+  const suggestionIcon = document.createElement('div');
+  suggestionIcon.style.cssText = 'width: 24px; height: 24px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center;';
+  suggestionIcon.textContent = '🛡️';
+  
+  const suggestionHeader = document.createElement('div');
+  suggestionHeader.style.cssText = 'display: flex; align-items: center; gap: 8px; margin-bottom: 12px;';
+  
+  const suggestionTitle = document.createElement('strong');
+  suggestionTitle.textContent = 'SafeOrStolen Suggestion';
+  
+  suggestionHeader.appendChild(suggestionIcon);
+  suggestionHeader.appendChild(suggestionTitle);
+  
+  const suggestionText = document.createElement('p');
+  suggestionText.style.cssText = 'margin: 0 0 12px 0; line-height: 1.4;';
+  suggestionText.innerHTML = 'Detected: "<strong>' + escapeHtml(matchInfo.primaryMatch) + '</strong>" - Want to share SafeOrStolen.com verification service?';
+  
+  const buttonContainer = document.createElement('div');
+  buttonContainer.style.cssText = 'display: flex; gap: 8px;';
+  
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-response';
+  copyButton.style.cssText = 'background: #22c55e; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;';
+  copyButton.textContent = 'Copy Response';
+  
+  const dismissButton = document.createElement('button');
+  dismissButton.id = 'dismiss-suggestion';
+  dismissButton.style.cssText = 'background: #666; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;';
+  dismissButton.textContent = 'Dismiss';
+  
+  buttonContainer.appendChild(copyButton);
+  buttonContainer.appendChild(dismissButton);
+  
+  suggestion.appendChild(suggestionHeader);
+  suggestion.appendChild(suggestionText);
+  suggestion.appendChild(buttonContainer);
+  
+  // Helper function to escape HTML
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
 
   document.body.appendChild(suggestion);
 
   // Add event listeners
   document.getElementById('copy-response').addEventListener('click', () => {
     navigator.clipboard.writeText(responseTemplate);
-    suggestion.innerHTML = \`
-      <div style="display: flex; align-items: center; gap: 8px; color: #22c55e;">
-        <span>✅</span>
-        <strong>Copied to clipboard!</strong>
-      </div>
-    \`;
+    
+    // Clear suggestion content securely
+    suggestion.innerHTML = '';
+    
+    const successMessage = document.createElement('div');
+    successMessage.style.cssText = 'display: flex; align-items: center; gap: 8px; color: #22c55e;';
+    
+    const checkmark = document.createElement('span');
+    checkmark.textContent = '✅';
+    
+    const message = document.createElement('strong');
+    message.textContent = 'Copied to clipboard!';
+    
+    successMessage.appendChild(checkmark);
+    successMessage.appendChild(message);
+    suggestion.appendChild(successMessage);
+    
     setTimeout(() => suggestion.remove(), 2000);
   });
 

@@ -47,6 +47,13 @@ class Logger {
       window.gtag('event', event, properties);
     }
   }
+
+  // Secure logging method that doesn't expose sensitive data
+  secureLog(message: string, safeData?: Record<string, any>) {
+    if (this.isDevelopment) {
+      console.log(`[SECURE] ${message}`, safeData);
+    }
+  }
 }
 
 export const logger = new Logger();

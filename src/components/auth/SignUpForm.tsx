@@ -25,14 +25,11 @@ export const SignUpForm = ({ onSuccess }: SignUpFormProps) => {
   // Check if user is already authenticated via OAuth
   useEffect(() => {
     if (isAuthenticated && user) {
-      // OAuth users are already authenticated, skip signup form
-      console.log('User already authenticated, skipping signup form');
       onSuccess?.();
     }
   }, [isAuthenticated, user, onSuccess]);
 
   const handleSignUpFormSubmit = async (data: SignUpFormData) => {
-    console.log('=== Sign Up Form Submitted ===');
     setIsLoading(true);
     
     try {
@@ -45,12 +42,7 @@ export const SignUpForm = ({ onSuccess }: SignUpFormProps) => {
           setCreatedUserId(user.id);
           setPendingSignUpData(data);
           setStep('terms');
-          console.log('Account created, proceeding to terms acceptance');
-        } else {
-          console.log('Account creation pending email confirmation');
         }
-      } else {
-        console.log('Account creation failed or pending confirmation');
       }
       
     } catch (error) {
@@ -67,7 +59,6 @@ export const SignUpForm = ({ onSuccess }: SignUpFormProps) => {
       return;
     }
     
-    console.log('=== Terms Accepted, Recording Acceptance ===');
     setIsLoading(true);
     
     try {

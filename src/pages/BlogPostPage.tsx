@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { getBlogPostMetadata } from '@/utils/seo/metadata';
 import { createArticleSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
+import DOMPurify from 'dompurify';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -163,10 +164,16 @@ const BlogPostPage = () => {
               </figure>
             )}
 
-            {/* Article content with proper semantic structure */}
+            {/* Article content with proper semantic structure and XSS protection */}
             <article 
               className="prose prose-lg max-w-none mb-8 prose-headings:text-gray-900 prose-links:text-blue-600 prose-links:no-underline hover:prose-links:underline"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ 
+                __html: DOMPurify.sanitize(post.content, {
+                  ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'a', 'blockquote'],
+                  ALLOWED_ATTR: ['href', 'target', 'rel'],
+                  ALLOW_DATA_ATTR: false
+                })
+              }}
             />
 
             {/* Tags */}
