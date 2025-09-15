@@ -6,6 +6,7 @@ import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 import { createBreadcrumbSchema, createFAQSchema } from '@/utils/seo/structuredData';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Search, CheckCircle, Database } from 'lucide-react';
+import stolenLaptopImage from '@/assets/stolen-laptop-chase.png';
 
 const HowItWorksPage: React.FC = () => {
   const steps = [
@@ -50,29 +51,48 @@ const HowItWorksPage: React.FC = () => {
       
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-sos-dark to-sos">
-          <div className="container mx-auto px-4 text-center">
-            <Badge variant="outline" className="mb-6 border-sos-orange text-sos-orange">
-              How It Works
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              How Safe or Stolen Verification Works
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Our advanced verification system checks IMEI, VIN, and serial numbers across multiple trusted databases to help protect you from purchasing stolen goods. Here's exactly how our process works.
-            </p>
-            <div className="text-lg text-gray-300 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              <p>✓ Real-time database searches</p>
-              <p>✓ Multiple law enforcement databases</p>
-              <p>✓ Insurance company records</p>
-              <p>✓ Instant verification results</p>
+        <section className="py-20 bg-gradient-to-br from-sos-dark to-sos relative overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <Badge variant="outline" className="mb-6 border-sos-orange text-sos-orange">
+                  How It Works
+                </Badge>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                  How Safe or Stolen Verification Works
+                </h1>
+                <p className="text-xl text-gray-300 mb-8">
+                  Our advanced verification system checks IMEI, VIN, and serial numbers across multiple trusted databases to help protect you from purchasing stolen goods. Here's exactly how our process works.
+                </p>
+                <div className="text-lg text-gray-300 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <p>✓ Real-time database searches</p>
+                  <p>✓ Multiple law enforcement databases</p>
+                  <p>✓ Insurance company records</p>
+                  <p>✓ Instant verification results</p>
+                </div>
+                <Link to="/dashboard">
+                  <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
+                    Try Verification Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={stolenLaptopImage} 
+                    alt="Person running with stolen laptop being chased - illustrating the problem Safe or Stolen prevents"
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-sos-dark/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <p className="text-sm font-medium bg-black/50 backdrop-blur-sm rounded-lg p-3">
+                      Don't let this happen to you. Verify before you buy.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <Link to="/dashboard">
-              <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
-                Try Verification Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
           </div>
         </section>
 
