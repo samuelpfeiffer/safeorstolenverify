@@ -120,7 +120,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="auth" element={<AuthPage />} />
         <Route path="subscriptions" element={<PricingPage />} />
-        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog" element={<LocalBlogPage />} />
         <Route path="integrations" element={<IntegrationsPage />} />
         <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
         <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
@@ -131,7 +131,6 @@ export const AppRoutes: React.FC = () => {
         <Route path="terms" element={<TermsPage />} />
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="security" element={<SecurityPage />} />
-        <Route path="blog" element={<LocalBlogPage />} />
         <Route path="blog/category/:category" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogPostPage />} />
         
