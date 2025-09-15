@@ -2,13 +2,19 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Play, Shield, Users, TrendingUp } from 'lucide-react';
 
+const extractVideoId = (url: string): string => {
+  const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^"&?\/\s]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : '';
+};
+
 export const VideoMarketingSection = () => {
   const videoContent = [
     {
       title: "The $13 Billion Problem Explained",
       description: "Understanding the scope of the stolen goods crisis and how it affects innocent consumers",
-      thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
-      duration: "3:45",
+      youtubeUrl: "https://YouTube.com/shorts/Er_PXY0oMgE?si=nhhHl7uKYXWfJcwZ",
+      duration: "0:59",
       category: "Problem Awareness"
     },
     {
@@ -47,43 +53,60 @@ export const VideoMarketingSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {videoContent.map((video, index) => (
-            <Card key={index} className="bg-white/5 border-sos-orange/20 backdrop-blur-sm group hover:bg-white/10 transition-all duration-300 cursor-pointer">
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={video.thumbnail} 
-                    alt={video.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:scale-110 transition-transform">
-                      <Play className="h-8 w-8 text-white" />
+          {videoContent.map((video, index) => {
+            const videoId = video.youtubeUrl ? extractVideoId(video.youtubeUrl) : null;
+            const thumbnailSrc = videoId 
+              ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+              : video.thumbnail;
+            
+            const handleVideoClick = () => {
+              if (video.youtubeUrl) {
+                window.open(video.youtubeUrl, '_blank');
+              }
+            };
+
+            return (
+              <Card 
+                key={index} 
+                className="bg-white/5 border-sos-orange/20 backdrop-blur-sm group hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                onClick={handleVideoClick}
+              >
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img 
+                      src={thumbnailSrc} 
+                      alt={video.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 group-hover:scale-110 transition-transform">
+                        <Play className="h-8 w-8 text-white" />
+                      </div>
+                    </div>
+                    <div className="absolute top-3 right-3">
+                      <Badge variant="secondary" className="bg-black/60 text-white border-none">
+                        {video.duration}
+                      </Badge>
+                    </div>
+                    <div className="absolute top-3 left-3">
+                      <Badge variant="secondary" className="bg-sos-orange/80 text-white border-none">
+                        {video.category}
+                      </Badge>
                     </div>
                   </div>
-                  <div className="absolute top-3 right-3">
-                    <Badge variant="secondary" className="bg-black/60 text-white border-none">
-                      {video.duration}
-                    </Badge>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-sos-orange transition-colors">
+                      {video.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {video.description}
+                    </p>
                   </div>
-                  <div className="absolute top-3 left-3">
-                    <Badge variant="secondary" className="bg-sos-orange/80 text-white border-none">
-                      {video.category}
-                    </Badge>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-sos-orange transition-colors">
-                    {video.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {video.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* Call to Action */}
