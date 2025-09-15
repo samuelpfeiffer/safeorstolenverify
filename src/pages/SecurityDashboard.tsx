@@ -3,10 +3,6 @@ import { SecurityOptimizer } from '@/core/security/SecurityOptimizer';
 import { Helmet } from 'react-helmet-async';
 
 const SecurityDashboard: React.FC = () => {
-import { SecurityOptimizer } from '@/core/security/SecurityOptimizer';
-import { Helmet } from 'react-helmet-async';
-
-export const SecurityDashboard: React.FC = () => {
   return (
     <>
       <Helmet>
