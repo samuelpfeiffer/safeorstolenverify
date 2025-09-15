@@ -11,12 +11,12 @@ export const GoogleRankingBooster: React.FC = () => {
       images.forEach((img, index) => {
         if (index < 3) {
           // Above-the-fold images
-          img.loading = 'eager';
-          img.fetchPriority = 'high';
+          (img as HTMLImageElement).loading = 'eager';
+          (img as HTMLImageElement).fetchPriority = 'high';
         } else {
           // Below-the-fold images
-          img.loading = 'lazy';
-          img.fetchPriority = 'low';
+          (img as HTMLImageElement).loading = 'lazy';
+          (img as HTMLImageElement).fetchPriority = 'low';
         }
         
         // Add missing dimensions to prevent CLS

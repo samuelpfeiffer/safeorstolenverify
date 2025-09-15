@@ -111,14 +111,14 @@ export const VerificationDialog = ({
             <div className="border border-sos-orange rounded-lg p-4 bg-sos-orange/10 hover:bg-sos-orange/20 cursor-pointer transition-colors">
               <h3 className="font-bold flex items-center gap-2 text-white">
                 <Crown className="h-4 w-4 text-sos-orange" />
-                Basic Plan 
+                Unlimited Plan 
                 <span className="bg-sos-orange px-2 py-1 text-xs rounded-full text-white">
-                  {formatPrice(SUBSCRIPTION_TIERS.basic.price)}/month
+                  {formatPrice(SUBSCRIPTION_TIERS.unlimited.price)}/month
                 </span>
               </h3>
               <p className="text-sm text-gray-400 mt-1">Unlimited verifications with detailed reports</p>
               <div className="mt-2 text-xs text-gray-500 space-y-1">
-                {SUBSCRIPTION_TIERS.basic.features?.slice(0, 3).map((feature, index) => (
+                {SUBSCRIPTION_TIERS.unlimited.features?.slice(0, 3).map((feature, index) => (
                   <div key={index}>• {feature}</div>
                 ))}
               </div>
@@ -127,14 +127,14 @@ export const VerificationDialog = ({
             <div className="border border-yellow-500 rounded-lg p-4 bg-yellow-500/10 hover:bg-yellow-500/20 cursor-pointer transition-colors">
               <h3 className="font-bold flex items-center gap-2 text-white">
                 <Star className="h-4 w-4 text-yellow-500" />
-                Premium Plan 
+                Certified Report 
                 <span className="bg-yellow-500 px-2 py-1 text-xs rounded-full text-black">
-                  {formatPrice(SUBSCRIPTION_TIERS.premium.price)}/month
+                  {formatPrice(SUBSCRIPTION_TIERS.report.price)}/report
                 </span>
               </h3>
-              <p className="text-sm text-gray-400 mt-1">Everything in Basic plus API access and premium support</p>
+              <p className="text-sm text-gray-400 mt-1">One-time professional verification report</p>
               <div className="mt-2 text-xs text-gray-500 space-y-1">
-                {SUBSCRIPTION_TIERS.premium.features?.slice(0, 3).map((feature, index) => (
+                {SUBSCRIPTION_TIERS.report.features?.slice(0, 3).map((feature, index) => (
                   <div key={index}>• {feature}</div>
                 ))}
               </div>

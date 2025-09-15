@@ -211,7 +211,7 @@ const PricingPage = () => {
         {
           "@type": "Offer",
           "name": "Free Plan",
-          "description": "Basic verification with 5 free searches",
+          "description": "Basic verification with 4 free searches",
           "price": "0",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
@@ -224,37 +224,9 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Basic Plan",
+          "name": "Unlimited Verifications",
           "description": "Enhanced verification with unlimited searches",
-          "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Premium Plan",
-          "description": "Professional verification with AI assistance",
-          "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Enterprise Plan",
-          "description": "Enterprise-grade verification with dedicated support",
-          "price": formatPrice(SUBSCRIPTION_TIERS.enterprise.price).replace('$', ''),
+          "price": formatPrice(SUBSCRIPTION_TIERS.unlimited.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "validFrom": "2024-01-01",

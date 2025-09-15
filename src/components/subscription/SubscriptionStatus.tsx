@@ -36,7 +36,7 @@ export const SubscriptionStatus = () => {
     }
   }, [subscriptionData?.subscription_tier]);
 
-  const handleSubscribeClick = useCallback(async (tier: 'basic' | 'premium') => {
+  const handleSubscribeClick = useCallback(async (tier: 'unlimited' | 'report') => {
     if (!isAuthenticated) {
       console.log("Not authenticated, redirecting to auth");
       navigate('/auth?tab=signin');
@@ -45,7 +45,7 @@ export const SubscriptionStatus = () => {
     
     try {
       console.log("Subscribe button clicked for tier:", tier);
-      const priceId = getSubscriptionPriceId('unlimited');
+      const priceId = getSubscriptionPriceId(tier === 'unlimited' ? 'unlimited' : 'report');
       const checkoutUrl = await createSubscriptionCheckout(priceId);
       if (checkoutUrl) {
         window.open(checkoutUrl, '_blank');
@@ -169,19 +169,19 @@ export const SubscriptionStatus = () => {
         {/* Subscription Options */}
         <div className="space-y-2">
           <Button 
-            onClick={() => handleSubscribeClick('basic')} 
+            onClick={() => handleSubscribeClick('unlimited')} 
             className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white border-none" 
             disabled={isLoading}
           >
-            Upgrade to Basic - {formatPrice(SUBSCRIPTION_TIERS.basic.price)}/month
+            Upgrade to Unlimited - {formatPrice(SUBSCRIPTION_TIERS.unlimited.price)}/month
           </Button>
           <Button 
-            onClick={() => handleSubscribeClick('premium')} 
+            onClick={() => handleSubscribeClick('report')} 
             variant="outline" 
             className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10 bg-transparent" 
             disabled={isLoading}
           >
-            Upgrade to Premium - {formatPrice(SUBSCRIPTION_TIERS.premium.price)}/month
+            Get Certified Report - {formatPrice(SUBSCRIPTION_TIERS.report.price)}/report
           </Button>
         </div>
 
