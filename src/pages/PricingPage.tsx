@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'free' | 'smart_buyer' | 'savvy_shopper' | 'business_pro') => {
+  const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -65,7 +65,7 @@ const PricingPage = () => {
     }, 20000); // Increased to 20 second timeout
 
     try {
-      const priceId = getSubscriptionPriceId(tier === 'free' ? 'smart_buyer' : tier);
+      const priceId = getSubscriptionPriceId(tier);
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
@@ -140,7 +140,7 @@ const PricingPage = () => {
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
       const timeoutId = setTimeout(() => {
-        handleSubscribe('unlimited');
+        handleSubscribe(subscribeParam);
       }, 500);
       
       return () => clearTimeout(timeoutId);
@@ -153,9 +153,9 @@ const PricingPage = () => {
 
     // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
-    if (pending === 'unlimited') {
+    if (pending === 'basic' || pending === 'premium' || pending === 'enterprise') {
       localStorage.removeItem('pendingSubscription');
-      setTimeout(() => handleSubscribe('unlimited'), 300);
+      setTimeout(() => handleSubscribe(pending as 'basic' | 'premium' | 'enterprise'), 300);
       return; // don't process report in same tick
     }
 
@@ -211,7 +211,7 @@ const PricingPage = () => {
         {
           "@type": "Offer",
           "name": "Free Plan",
-          "description": "Basic verification with 4 free searches",
+          "description": "Basic verification with 5 free searches",
           "price": "0",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
@@ -224,9 +224,37 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Unlimited Verifications",
+          "name": "Basic Plan",
           "description": "Enhanced verification with unlimited searches",
-          "price": formatPrice(SUBSCRIPTION_TIERS.unlimited.price).replace('$', ''),
+          "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium Plan",
+          "description": "Professional verification with AI assistance",
+          "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Enterprise Plan",
+          "description": "Enterprise-grade verification with dedicated support",
+          "price": formatPrice(SUBSCRIPTION_TIERS.enterprise.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "validFrom": "2024-01-01",

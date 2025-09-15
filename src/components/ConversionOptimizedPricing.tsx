@@ -89,7 +89,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'free' | 'smart_buyer' | 'savvy_shopper' | 'business_pro') => void;
+  onSubscribe: (tier: 'basic' | 'premium' | 'enterprise') => void;
   loadingTier?: string | null;
 }
 
@@ -99,38 +99,57 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
 }) => {
   const tiers = [
     {
-      id: 'free' as const,
-      name: 'Free',
-      price: '$0',
-      period: 'forever',
-      description: 'Get started with 4 free checks',
+      id: 'basic' as const,
+      name: 'Smart Buyer',
+      price: '$7.99',
+      period: 'month',
+      description: 'Perfect for occasional buyers',
       features: [
-        '4 free verifications',
-        'IMEI, VIN & Serial checks',
-        'Basic verification reports',
-        'Avoid stolen devices',
-        'Legal protection'
+        'Unlimited item verifications',
+        'Real-time database checks',
+        'IMEI, VIN & serial lookup',
+        'Basic reports & history',
+        'Email support',
+        'Mobile app access'
       ],
-      buttonText: 'Start Free'
+      buttonText: 'Start Protecting Yourself'
     },
     {
-      id: 'smart_buyer' as const,
-      name: 'Smart Buyer',
-      price: '$9.99',
+      id: 'premium' as const,
+      name: 'Savvy Shopper',
+      price: '$19.99',
       period: 'month',
-      description: 'Perfect for buyers, sellers & businesses',
+      description: 'For serious marketplace users',
       features: [
-        '7-day free trial',
-        'Unlimited verifications',
-        'All device types (IMEI/VIN/Serial)',
+        'Everything in Smart Buyer',
         'Advanced verification reports',
-        'Verified Safe badge for sellers',
-        'Priority support',
-        'Prevent chargebacks',
-        'Boost buyer confidence'
+        'Bulk checking tools',
+        'Priority customer support',
+        'API access (limited)',
+        'Purchase protection alerts',
+        'Detailed fraud analytics',
+        'Custom notifications'
       ],
-      buttonText: 'Start Free Trial',
+      buttonText: 'Upgrade to Premium',
       popular: true
+    },
+    {
+      id: 'enterprise' as const,
+      name: 'Business Pro',
+      price: '$99.99',
+      period: 'month',
+      description: 'For businesses and power users',
+      features: [
+        'Everything in Savvy Shopper',
+        'Full API access & integration',
+        'White-label solutions',
+        'Dedicated account manager',
+        'Custom integrations',
+        'Advanced analytics dashboard',
+        'Team management tools',
+        'SLA guarantees'
+      ],
+      buttonText: 'Contact Sales'
     }
   ];
 
@@ -140,10 +159,11 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
-            Instantly Verify Secondhand Goods—Protect Yourself from Stolen Devices!
+            Stop Losing Money to Scams
           </h2>
-          <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-            Stop risking your money on stolen phones, electronics, or vehicles! Instantly check IMEI, VIN, or serial numbers—avoid scams, bricked devices, and legal trouble.
+          <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
+            Choose your protection level. All plans include our money-back guarantee and 
+            instant access to comprehensive verification databases.
           </p>
           
           {/* Social Proof */}
@@ -164,7 +184,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
           {tiers.map((tier) => (
             <PricingTier
               key={tier.id}

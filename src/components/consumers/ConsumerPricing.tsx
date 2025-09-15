@@ -7,7 +7,7 @@ import { useAuth } from "@/lib/auth";
 import { useNavigate } from "react-router-dom";
 
 interface ConsumerPricingProps {
-  onSubscribeClick: (tier: 'unlimited' | 'report') => void;
+  onSubscribeClick: (tier: 'basic' | 'premium') => void;
   isLoading: boolean;
 }
 
@@ -68,15 +68,15 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
           </Button>
         </div>
         
-        {/* Basic Plan - Using unlimited tier */}
+        {/* Basic Plan */}
         <div className="bg-secondary/50 backdrop-blur-lg rounded-xl p-8 border border-sos-orange relative overflow-hidden transform scale-105 shadow-lg shadow-sos-orange/20">
           <div className="absolute -right-6 -top-6 bg-sos-orange/20 p-10 rounded-full"></div>
           <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mb-4">Most Popular</div>
-          <h3 className="text-2xl font-bold mb-2">Unlimited</h3>
-          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.unlimited.price)}<span className="text-lg font-normal">/month</span></div>
-          <p className="text-gray-300 mb-6">Unlimited searches for all buyers</p>
+          <h3 className="text-2xl font-bold mb-2">Basic</h3>
+          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.basic.price)}<span className="text-lg font-normal">/month</span></div>
+          <p className="text-gray-300 mb-6">Unlimited searches for casual buyers</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.unlimited.features.map((feature, index) => (
+            {SUBSCRIPTION_TIERS.basic.features.map((feature, index) => (
               <li key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
                 <span>{feature}</span>
@@ -84,7 +84,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             ))}
           </ul>
           <Button 
-            onClick={() => onSubscribeClick('unlimited')}
+            onClick={() => onSubscribeClick('basic')}
             className="w-full bg-sos-orange hover:bg-sos-orange/90"
             disabled={isLoading}
           >
@@ -92,14 +92,14 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
           </Button>
         </div>
         
-        {/* Report Plan */}
+        {/* Premium Plan */}
         <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
           <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Certified Report</h3>
-          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.report.price)}<span className="text-lg font-normal">/report</span></div>
-          <p className="text-gray-400 mb-6">One-time professional report</p>
+          <h3 className="text-2xl font-bold mb-2">Premium</h3>
+          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.premium.price)}<span className="text-lg font-normal">/month</span></div>
+          <p className="text-gray-400 mb-6">For businesses and frequent buyers</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.report.features.map((feature, index) => (
+            {SUBSCRIPTION_TIERS.premium.features.map((feature, index) => (
               <li key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
                 <span>{feature}</span>
@@ -107,7 +107,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             ))}
           </ul>
           <Button 
-            onClick={() => onSubscribeClick('report')}
+            onClick={() => onSubscribeClick('premium')}
             className="w-full bg-secondary hover:bg-secondary/80"
             disabled={isLoading}
           >

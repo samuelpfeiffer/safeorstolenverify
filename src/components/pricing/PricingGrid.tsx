@@ -34,15 +34,21 @@ export const PricingGrid = () => {
 
   const products = [
     {
-      ...SUBSCRIPTION_TIERS.unlimited,
-      price: formatPrice(SUBSCRIPTION_TIERS.unlimited.price),
-      priceId: SUBSCRIPTION_TIERS.unlimited.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.basic,
+      price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
+      priceId: SUBSCRIPTION_TIERS.basic.stripePriceId!,
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
-      ...SUBSCRIPTION_TIERS.report,
-      price: formatPrice(SUBSCRIPTION_TIERS.report.price),
-      priceId: SUBSCRIPTION_TIERS.report.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.premium,
+      price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
+      priceId: SUBSCRIPTION_TIERS.premium.stripePriceId!,
+      image: "https://i.imgur.com/6Mvijcm.png"
+    },
+    {
+      ...SUBSCRIPTION_TIERS.enterprise,
+      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price),
+      priceId: SUBSCRIPTION_TIERS.enterprise.stripePriceId!,
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {

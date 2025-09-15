@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
-import { InternalLinkingOptimizer } from '@/components/seo/InternalLinkingOptimizer';
-import { VoiceSearchFAQ } from '@/components/seo/VoiceSearchFAQ';
-import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -40,19 +37,12 @@ const CheckCarPage: React.FC = () => {
   return (
     <>
       <PageSEO 
-        title="Free VIN Check - Is This Car Stolen? Vehicle Verification | SafeOrStolen"
-        description="Check if car is stolen before buying. Free VIN lookup verifies vehicle history and theft status. Protect yourself from stolen car scams instantly."
-        keywords="free VIN check, is this car stolen, vehicle stolen check, VIN verification, check if vehicle stolen, stolen car database"
+        title="Can I Check if This Car is Stolen? How Do I Know if Car is Hot?"
+        description="Can I check if this car is stolen? How do I know if this VIN is hot? Free way to verify car not stolen before buying. Check if vehicle is legit."
+        keywords="can I check if this car is stolen, how do I know if car is hot, is this car stolen, check if VIN is hot, how to tell if car stolen, verify car not stolen"
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="vin" />
-      <AdvancedSchemaMarkup 
-        pageType="service" 
-        customData={{
-          serviceName: "VIN Vehicle Verification Service",
-          serviceDescription: "Instant VIN verification to check if vehicles are stolen before purchase"
-        }}
-      />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
@@ -185,13 +175,31 @@ const CheckCarPage: React.FC = () => {
           </div>
 
           {/* FAQ */}
-          <VoiceSearchFAQ pageType="vin" />
-          
-          {/* Internal Linking */}
-          <InternalLinkingOptimizer 
-            pageType="service" 
-            currentPath="/check-car"
-          />
+          <div className="max-w-3xl mx-auto mt-16">
+            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">Where can I find my car's VIN?</h3>
+                  <p className="text-muted-foreground">The VIN is typically located on the dashboard near the windshield (driver's side), on the driver's door jamb, or on your vehicle registration.</p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">What if a vehicle shows as stolen?</h3>
+                  <p className="text-muted-foreground">Do not purchase the vehicle. Contact local law enforcement immediately and report the seller.</p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-semibold mb-2">Does this check work for motorcycles and trucks?</h3>
+                  <p className="text-muted-foreground">Yes, our VIN lookup works for all vehicles including cars, trucks, motorcycles, and RVs.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </>

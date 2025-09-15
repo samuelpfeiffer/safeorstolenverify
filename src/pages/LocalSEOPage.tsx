@@ -82,7 +82,7 @@ const LocalSEOPage = () => {
 
   if (!cityInfo) {
     return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
+      <div className="min-h-screen bg-sos text-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">City Not Found</h1>
           <p>We don't have data for this location yet.</p>
@@ -95,7 +95,7 @@ const LocalSEOPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-sos text-white">
       <Helmet>
         <title>Stolen Item Checker {cityInfo.name}, {cityInfo.state} - Verify Before You Buy | SafeOrStolen</title>
         <meta name="description" content={`Professional stolen item verification in ${cityInfo.name}, ${cityInfo.state}. Check ${cityInfo.topStolenItems.join(', ')} against theft databases. ${cityInfo.theftRate} theft risk.`} />
@@ -141,49 +141,49 @@ const LocalSEOPage = () => {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-b from-background to-muted">
+        <section className="py-16 bg-gradient-to-b from-sos to-sos-dark">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-3 mb-6">
-                <MapPin className="h-8 w-8 text-primary" />
+                <MapPin className="h-8 w-8 text-sos-orange" />
                 <div>
                   <h1 className="text-4xl md:text-5xl font-bold">
-                    Stolen Item Checker for <span className="text-primary">{cityInfo.name}</span>
+                    Stolen Item Checker for <span className="text-sos-orange">{cityInfo.name}</span>
                   </h1>
-                  <p className="text-lg text-muted-foreground mt-2">{cityInfo.state} • Population: {cityInfo.population}</p>
+                  <p className="text-lg text-gray-300 mt-2">{cityInfo.state} • Population: {cityInfo.population}</p>
                 </div>
               </div>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-gray-300 mb-8">
                 Protect yourself from purchasing stolen goods in {cityInfo.name}. {cityInfo.description}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <Card className="bg-destructive/20 border-destructive/30">
+                <Card className="bg-red-500/20 border-red-500/30">
                   <CardContent className="p-4 text-center">
-                    <AlertTriangle className="h-8 w-8 text-destructive mx-auto mb-2" />
+                    <AlertTriangle className="h-8 w-8 text-red-400 mx-auto mb-2" />
                     <div className="text-lg font-bold">{cityInfo.theftRate}</div>
-                    <div className="text-sm text-muted-foreground">Theft Risk</div>
+                    <div className="text-sm text-gray-300">Theft Risk</div>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-primary/20 border-primary/30">
+                <Card className="bg-sos-orange/20 border-sos-orange/30">
                   <CardContent className="p-4 text-center">
-                    <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
+                    <TrendingUp className="h-8 w-8 text-sos-orange mx-auto mb-2" />
                     <div className="text-lg font-bold">{cityInfo.annualThefts}</div>
-                    <div className="text-sm text-muted-foreground">Annual Thefts</div>
+                    <div className="text-sm text-gray-300">Annual Thefts</div>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-secondary/20 border-secondary/30">
+                <Card className="bg-sos-lime/20 border-sos-lime/30">
                   <CardContent className="p-4 text-center">
-                    <Shield className="h-8 w-8 text-secondary-foreground mx-auto mb-2" />
+                    <Shield className="h-8 w-8 text-sos-lime mx-auto mb-2" />
                     <div className="text-lg font-bold">Verified</div>
-                    <div className="text-sm text-muted-foreground">Protection Available</div>
+                    <div className="text-sm text-gray-300">Protection Available</div>
                   </CardContent>
                 </Card>
               </div>
 
-              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90" asChild>
                 <Link to="/dashboard">
                   <Shield className="mr-2 h-5 w-5" />
                   Check an Item in {cityInfo.name} Now
@@ -201,9 +201,9 @@ const LocalSEOPage = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {cityInfo.topStolenItems.map((item, index) => (
-                <Card key={index} className="bg-card border-border hover:border-primary/50 transition-colors">
+                <Card key={index} className="bg-card/20 border-border/20 hover:border-sos-orange/50 transition-colors">
                   <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-primary mb-2">#{index + 1}</div>
+                    <div className="text-2xl font-bold text-sos-orange mb-2">#{index + 1}</div>
                     <div className="text-lg font-semibold">{item}</div>
                     <Button size="sm" className="mt-4" asChild>
                       <Link to={`/check-${item.toLowerCase()}`}>
@@ -218,24 +218,24 @@ const LocalSEOPage = () => {
         </section>
 
         {/* High-Risk Areas */}
-        <section className="py-16 bg-muted/50">
+        <section className="py-16 bg-sos-dark/50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">
               High-Risk Areas in {cityInfo.name}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {cityInfo.hotspots.map((area, index) => (
-                <Card key={index} className="bg-destructive/10 border-destructive/20">
+                <Card key={index} className="bg-red-500/10 border-red-500/20">
                   <CardContent className="p-4 text-center">
-                    <AlertTriangle className="h-6 w-6 text-destructive mx-auto mb-2" />
+                    <AlertTriangle className="h-6 w-6 text-red-400 mx-auto mb-2" />
                     <div className="font-semibold">{area}</div>
-                    <div className="text-sm text-muted-foreground mt-1">High Theft Area</div>
+                    <div className="text-sm text-gray-400 mt-1">High Theft Area</div>
                   </CardContent>
                 </Card>
               ))}
             </div>
             <div className="text-center mt-8">
-              <p className="text-muted-foreground mb-4">
+              <p className="text-gray-300 mb-4">
                 Be extra cautious when buying items from these areas. Always verify before purchasing.
               </p>
             </div>
@@ -249,11 +249,11 @@ const LocalSEOPage = () => {
               Local Resources in {cityInfo.name}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card className="bg-card border-border">
+              <Card className="bg-card/20 border-border/20">
                 <CardContent className="p-6">
-                  <Phone className="h-8 w-8 text-primary mb-4" />
+                  <Phone className="h-8 w-8 text-sos-orange mb-4" />
                   <h3 className="text-xl font-bold mb-4">Report Stolen Items</h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-gray-300 mb-4">
                     If you've been a victim of theft in {cityInfo.name}, report it immediately to local authorities.
                   </p>
                   <ul className="space-y-2 text-sm">
@@ -265,11 +265,11 @@ const LocalSEOPage = () => {
                 </CardContent>
               </Card>
               
-              <Card className="bg-card border-border">
+              <Card className="bg-card/20 border-border/20">
                 <CardContent className="p-6">
-                  <Users className="h-8 w-8 text-secondary-foreground mb-4" />
+                  <Users className="h-8 w-8 text-sos-lime mb-4" />
                   <h3 className="text-xl font-bold mb-4">Consumer Protection</h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-gray-300 mb-4">
                     Know your rights when purchasing used items in {cityInfo.state}.
                   </p>
                   <ul className="space-y-2 text-sm">
@@ -285,22 +285,22 @@ const LocalSEOPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-b from-muted to-background">
+        <section className="py-16 bg-gradient-to-b from-sos-dark to-sos">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">
               Protect Yourself in {cityInfo.name}
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Don't become a statistic. Verify any used item before you buy in {cityInfo.name}, {cityInfo.state}.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90" asChild>
                 <Link to="/dashboard">
                   <Shield className="mr-2 h-5 w-5" />
                   Start Verification - Free
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-secondary text-secondary-foreground hover:bg-secondary/10" asChild>
+              <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime/10" asChild>
                 <Link to="/comprehensive-guide">
                   Learn More
                 </Link>

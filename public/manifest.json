@@ -1,14 +1,14 @@
 
 {
-  "name": "SafeOrStolen - Device Verification",
+  "name": "SafeOrStolen - Verify Items Before You Buy",
   "short_name": "SafeOrStolen",
-  "description": "Instantly verify if phones, cars, and electronics are stolen before buying secondhand. Free IMEI checker, VIN lookup, and serial number verification to protect against fraud.",
+  "description": "Verify items aren't stolen before you buy. Protect your reputation before you sell. Real-time database checks in under 3 seconds.",
   "start_url": "/?source=pwa",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ea580c",
+  "background_color": "#1a1a1a",
+  "theme_color": "#ff6b35",
   "orientation": "portrait-primary",
-  "categories": ["utilities", "business", "shopping", "security", "verification"],
+  "categories": ["security", "verification", "shopping"],
   "lang": "en-US",
   "scope": "/",
   "icons": [
@@ -30,35 +30,15 @@
       "src": "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
       "sizes": "1280x800",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "SafeOrStolen desktop interface showing verification dashboard"
-    },
-    {
-      "src": "/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Mobile app showing IMEI verification process"
+      "form_factor": "wide"
     }
   ],
   "shortcuts": [
     {
-      "name": "Check Phone",
-      "short_name": "IMEI Check",
-      "description": "Verify phone IMEI number for stolen status",
-      "url": "/check-phone?shortcut=imei",
-      "icons": [
-        {
-          "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Check Car",
-      "short_name": "VIN Check",
-      "description": "Verify vehicle VIN number for theft records",
-      "url": "/check-car?shortcut=vin",
+      "name": "Verify Item",
+      "short_name": "Verify",
+      "description": "Quick verification of serial numbers, IMEI, or VIN",
+      "url": "/dashboard?shortcut=verify",
       "icons": [
         {
           "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
@@ -77,31 +57,6 @@
           "sizes": "96x96"
         }
       ]
-    }
-  ],
-  "prefer_related_applications": false,
-  "related_applications": [
-    {
-      "platform": "play",
-      "id": "app.lovable.ded9e6b996c44cc38b1a81d9ed9b1d6b",
-      "url": "https://play.google.com/store/apps/details?id=app.lovable.ded9e6b996c44cc38b1a81d9ed9b1d6b"
-    },
-    {
-      "platform": "itunes",
-      "id": "pending-app-store-id", 
-      "url": "https://apps.apple.com/app/safeorstolen/pending"
-    }
-  ],
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
-  "launch_handler": {
-    "client_mode": "focus-existing"
-  },
-  "protocol_handlers": [
-    {
-      "protocol": "web+safeorstolen",
-      "url": "/verify?type=%s"
     }
   ]
 }

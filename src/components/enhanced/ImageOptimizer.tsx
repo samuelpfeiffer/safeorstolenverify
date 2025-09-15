@@ -34,11 +34,11 @@ export const ImageOptimizer: React.FC<ImageOptimizerProps> = ({ children }) => {
       document.head.appendChild(link);
     });
 
-    // Add fetchPriority="high" to above-the-fold images
+    // Add fetchpriority="high" to above-the-fold images
     const heroImages = document.querySelectorAll('img[alt*="verification"], img[alt*="Safe or Stolen"]');
     heroImages.forEach((img, index) => {
       if (index < 2) { // Only first 2 images
-        (img as HTMLImageElement).fetchPriority = 'high';
+        img.setAttribute('fetchpriority', 'high');
       }
     });
 

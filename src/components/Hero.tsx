@@ -39,7 +39,7 @@ const Hero = memo(() => {
          <img 
            src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
            alt="SafeOrStolen verification platform - professional team securing secondhand marketplace transactions"
-           className="hero-image w-full h-auto object-contain"
+           className="w-full h-auto object-contain"
            loading="eager"
            fetchPriority="high"
            decoding="async"
@@ -49,7 +49,7 @@ const Hero = memo(() => {
       </div>
       
       {/* Hero Section */}
-      <div className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background/80 to-background/60">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background/80 to-background/60">
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -74,19 +74,18 @@ const Hero = memo(() => {
           </a>
 
           {/* Universal Value Proposition Headline */}
-          <h1 className="main-headline text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
-            Instantly Verify Secondhand Goods—Protect Yourself from Stolen Devices!
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
+            SafeOrStolen
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            Stop risking your money on stolen phones, electronics, or vehicles! SafeOrStolen instantly checks IMEI, VIN, or serial numbers so you know the real status before buying or selling. 
-            Avoid scams, bricked devices, and legal trouble.
+            A platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers in the secondhand market from stolen goods. Verify any item in seconds and buy, sell, and do business with 100% confidence.
           </p>
           
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-lg text-gray-300 leading-relaxed">
-              SafeOrStolen is the leading platform for verifying IMEI numbers, VIN codes, and serial numbers before you buy secondhand electronics, vehicles, or other valuable items. Our comprehensive database checks help you avoid stolen goods, protect your investment, and shop with confidence. With instant verification results from multiple law enforcement and carrier databases, you can verify any device in seconds. Start with 4 free IMEI checks, then upgrade to unlimited verifications for just $9.99/month. Join thousands of smart buyers who protect themselves from stolen device scams every day.
-            </p>
-          </div>
+          
+          {/* Service Disclaimer */}
+          
+          
+          {/* Remove duplicate image since it's now the background */}
 
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -97,7 +96,7 @@ const Hero = memo(() => {
               aria-describedby="main-headline"
             >
               <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-              Get 4 Free Checks — Don't Get Burned!
+              Check a Serial Number — It's Free
             </Button>
             <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
               <Link to="/for-brands">
