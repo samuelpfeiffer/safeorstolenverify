@@ -20,7 +20,7 @@ const AboutPage: React.FC = () => {
             About Safe or Stolen
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            We're on a mission to make secondhand buying safer by telling you if an item is legitimate or stolen — instantly.
+            SafeOrStolen protects everyone in the second-hand marketplace ecosystem. From individual buyers and sellers to businesses, pawn shops, traders, and logistics companies—our comprehensive verification platform ensures safety for all participants. Instantly check IMEI numbers, VIN codes, and serial numbers against multiple law enforcement and carrier databases. Whether you&apos;re purchasing inventory, processing trades, or handling goods, verify legitimacy in seconds. Start with 4 free checks, then upgrade to unlimited verifications for just $9.99/month. Join thousands of marketplace participants who protect themselves and their businesses every day.
           </p>
           <Link to="/real-time-verification">
             <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/80">
