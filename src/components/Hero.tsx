@@ -82,11 +82,6 @@ const Hero = memo(() => {
             Avoid scams, bricked devices, and legal trouble.
           </p>
           
-          <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-lg text-gray-300 leading-relaxed">
-              SafeOrStolen is the leading platform for verifying IMEI numbers, VIN codes, and serial numbers before you buy secondhand electronics, vehicles, or other valuable items. Our comprehensive database checks help you avoid stolen goods, protect your investment, and shop with confidence. With instant verification results from multiple law enforcement and carrier databases, you can verify any device in seconds. Start with 4 free IMEI checks, then upgrade to unlimited verifications for just $9.99/month. Join thousands of smart buyers who protect themselves from stolen device scams every day.
-            </p>
-          </div>
 
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

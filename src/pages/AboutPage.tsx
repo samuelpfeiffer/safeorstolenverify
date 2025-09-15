@@ -36,8 +36,11 @@ const AboutPage: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-white">Our Mission</h2>
+            <p className="text-gray-300 max-w-3xl mx-auto mb-8">
+              SafeOrStolen protects everyone in the second-hand marketplace ecosystem. From individual buyers and sellers to businesses, pawn shops, traders, and logistics companies—our comprehensive verification platform ensures safety for all participants. Instantly check IMEI numbers, VIN codes, and serial numbers against multiple law enforcement and carrier databases. Whether you're purchasing inventory, processing trades, or handling goods, verify legitimacy in seconds. Start with 4 free checks, then upgrade to unlimited verifications for just $9.99/month. Join thousands of marketplace participants who protect themselves and their businesses every day.
+            </p>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              To empower consumers and businesses with tools to check if items are legitimate or stolen — and make informed decisions.
+              Our mission is to empower consumers and businesses with the tools they need to verify item legitimacy and make informed decisions.
             </p>
           </div>
           

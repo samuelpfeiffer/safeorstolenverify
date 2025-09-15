@@ -14,11 +14,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
-import { TrustIndicators } from '@/components/TrustIndicators';
-import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
-import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
-import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
-import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
+import { CertifiedSafeBadge } from '@/components/verification/CertifiedSafeBadge';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -99,11 +95,16 @@ const HomePage = () => {
         <div className="min-h-screen">
           <ConversionTracker />
           <Hero />
-          <AudienceNavigation />
-          <ValuePropositionSections />
-          <TrustIndicators />
-          <TrustBadgeStrip />
-          <TrustBuildingFAQ />
+          {/* Safe Badge Section */}
+          <section className="py-8 bg-gradient-to-r from-green-500/5 to-emerald-600/5">
+            <div className="container mx-auto px-4 text-center">
+              <CertifiedSafeBadge size="lg" variant="premium" className="mb-4" />
+              <p className="text-sm text-muted-foreground max-w-md mx-auto">
+                Your verification results are backed by multiple law enforcement databases and carrier networks worldwide.
+              </p>
+            </div>
+          </section>
+          
           <Features />
           <TestimonialsSection />
           
