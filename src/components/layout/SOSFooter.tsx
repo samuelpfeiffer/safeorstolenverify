@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Youtube } from 'lucide-react';
+import { handleExternalNavigation } from '@/utils/navigationUtils';
 
 export const SOSFooter: React.FC = () => {
   const year = new Date().getFullYear();
@@ -44,18 +45,16 @@ export const SOSFooter: React.FC = () => {
         </div>
 
         <div className="mt-6 text-center md:text-left">
-          <Link to="/privacy" className="text-xs text-gray-500 hover:text-gray-300 mr-4">Privacy</Link>
-          <Link to="/terms" className="text-xs text-gray-500 hover:text-gray-300 mr-4">Terms</Link>
-          <Link to="/contact" className="text-xs text-gray-500 hover:text-gray-300 mr-4">Contact</Link>
-          <a 
-            href="https://www.youtube.com/@SafeOrStolen" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-xs text-gray-500 hover:text-gray-300 inline-flex items-center gap-1"
+          <Link to="/privacy" className="text-base text-gray-500 hover:text-gray-300 mr-4">Privacy</Link>
+          <Link to="/terms" className="text-base text-gray-500 hover:text-gray-300 mr-4">Terms</Link>
+          <Link to="/contact" className="text-base text-gray-500 hover:text-gray-300 mr-4">Contact</Link>
+          <button 
+            onClick={() => handleExternalNavigation("https://www.youtube.com/@SafeOrStolen", true)}
+            className="text-base text-gray-500 hover:text-gray-300 inline-flex items-center gap-1 cursor-pointer"
           >
-            <Youtube className="h-3 w-3" />
+            <Youtube className="h-4 w-4" />
             YouTube
-          </a>
+          </button>
         </div>
       </div>
     </footer>
