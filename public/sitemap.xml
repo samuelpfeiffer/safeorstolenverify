@@ -471,6 +471,35 @@
     <priority>0.2</priority>
   </url>
 
+  <!-- New High-Priority SEO Pages -->
+  <url>
+    <loc>https://safeorstolen.com/imei-checker</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/vin-verification</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/serial-number-checker</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/seo-strategy</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- FasterCapital partnership pages -->
   <url>
     <loc>https://safeorstolen.com/fastercapital/raise-capital</loc>

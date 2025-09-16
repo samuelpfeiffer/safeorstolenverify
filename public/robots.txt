@@ -13,6 +13,10 @@ Allow: /for-businesses
 Allow: /how-it-works
 Allow: /about
 Allow: /api-docs
+Allow: /imei-checker
+Allow: /vin-verification
+Allow: /serial-number-checker
+Allow: /seo-strategy
 
 # Block admin and internal pages
 Disallow: /admin/
