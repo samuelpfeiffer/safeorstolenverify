@@ -14,6 +14,11 @@ https://safeorstolen.com/*/ https://safeorstolen.com/:splat 301!
 # Specific redirects for pages that were returning 404s
 /terms /terms-of-service 301
 
+# E-commerce routes that don't apply to our verification service - redirect to services
+/wishlist /services 301
+/cart /services 301  
+/shopping-cart /services 301
+
 # Handle API routes (don't redirect)
 /api/* /api/:splat 200
 

@@ -111,6 +111,7 @@ const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const EnterpriseSecurityPost = lazy(() => import('@/pages/blog/EnterpriseSecurityPost'));
 const MobileAppFeaturesPost = lazy(() => import('@/pages/blog/MobileAppFeaturesPost'));
 const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
+const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
 
 /**
  * Enterprise Application Routing
@@ -135,6 +136,12 @@ export const AppRoutes: React.FC = () => {
           <Route path="verification-success" element={<SubscriptionSuccessPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="services" element={<ServicesPage />} />
+          
+          {/* E-commerce style routes - redirect to main services since this isn't an e-commerce site */}
+          <Route path="wishlist" element={<Navigate to="/services" replace />} />
+          <Route path="cart" element={<Navigate to="/services" replace />} />
+          <Route path="shopping-cart" element={<Navigate to="/services" replace />} />
           <Route path="faq" element={<FAQPage />} />
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />

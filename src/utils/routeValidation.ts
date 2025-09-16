@@ -3,6 +3,7 @@ export const validateRoutes = () => {
   const routes = [
     '/',
     '/auth',
+    '/services',  
     '/pricing',
     '/subscriptions',
     '/about',
