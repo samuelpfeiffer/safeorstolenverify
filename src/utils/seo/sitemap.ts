@@ -287,7 +287,24 @@ export const generateBlogSitemapEntries = (blogPosts: any[]): SitemapEntry[] => 
 export const generateSitemapEntries = (blogPosts: any[] = []): SitemapEntry[] => {
   const staticEntries = generateStaticSitemapEntries();
   const blogEntries = generateBlogSitemapEntries(blogPosts);
-  return [...staticEntries, ...blogEntries];
+  
+  // Add new blog post entries for canonical fix
+  const newBlogEntries: SitemapEntry[] = [
+    {
+      url: 'https://safeorstolen.com/blog/enterprise-security',
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'monthly',
+      priority: 0.7
+    },
+    {
+      url: 'https://safeorstolen.com/blog/mobile-app-features', 
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'monthly',
+      priority: 0.7
+    }
+  ];
+  
+  return [...staticEntries, ...blogEntries, ...newBlogEntries];
 };
 
 export const generateSitemapXML = (entries: SitemapEntry[]): string => {

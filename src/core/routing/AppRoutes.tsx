@@ -4,6 +4,8 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
+import { CanonicalFix } from '@/components/seo/CanonicalFix';
+import { GlobalSEOFixer } from '@/components/seo/GlobalSEOFixer';
 
 // Lazy load all pages for optimal performance
 const HomePage = lazy(() => import('@/pages/HomePage'));
@@ -105,6 +107,9 @@ const HowToCheckAnythingStolenPage = lazy(() => import('@/pages/HowToCheckAnythi
 const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage'));
 const LocalSEOPage = lazy(() => import('@/pages/LocalSEOPage'));
 const TheftTrendsBlogPage = lazy(() => import('@/pages/TheftTrendsBlogPage'));
+const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
+const EnterpriseSecurityPost = lazy(() => import('@/pages/blog/EnterpriseSecurityPost'));
+const MobileAppFeaturesPost = lazy(() => import('@/pages/blog/MobileAppFeaturesPost'));
 const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
 
 /**
@@ -113,7 +118,10 @@ const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
  */
 export const AppRoutes: React.FC = () => {
   return (
-    <Suspense fallback={<AppLoadingScreen />}>
+    <>
+      <GlobalSEOFixer />
+      <CanonicalFix />
+      <Suspense fallback={<AppLoadingScreen />}>
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
@@ -134,12 +142,14 @@ export const AppRoutes: React.FC = () => {
           <Route path="blog/category/:category" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogPostPage />} />
           
-          {/* Static Blog Posts */}
-          <Route path="blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
-          <Route path="blog/verification-methodology" element={<VerificationMethodologyPost />} />
-          <Route path="blog/real-user-stories" element={<RealUserStoriesPost />} />
-          <Route path="blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
-          <Route path="blog/how-to-check-if-device-is-safe-stolen" element={<DeviceSafetyGuidePost />} />
+           {/* Static Blog Posts */}
+           <Route path="blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
+           <Route path="blog/verification-methodology" element={<VerificationMethodologyPost />} />
+           <Route path="blog/real-user-stories" element={<RealUserStoriesPost />} />
+           <Route path="blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
+           <Route path="blog/how-to-check-if-device-is-safe-stolen" element={<DeviceSafetyGuidePost />} />
+           <Route path="blog/enterprise-security" element={<EnterpriseSecurityPost />} />
+           <Route path="blog/mobile-app-features" element={<MobileAppFeaturesPost />} />
           
           {/* New Routes */}
           <Route path="how-it-works" element={<HowItWorksPage />} />
@@ -223,11 +233,10 @@ export const AppRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-          <Route path="verify" element={
-            <ProtectedRoute>
-              <Navigate to="/dashboard" replace />
-            </ProtectedRoute>
-          } />
+           {/* Redirect routes for old URLs */}
+           <Route path="imei" element={<IMEICheckerPage />} />
+           <Route path="imei-checker" element={<IMEICheckerPage />} />
+           <Route path="verify" element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={
             <ProtectedRoute>
               <DashboardPage />
@@ -312,6 +321,7 @@ export const AppRoutes: React.FC = () => {
         {/* Catch all unknown routes */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Suspense>
+      </Suspense>
+    </>
   );
 };
