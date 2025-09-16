@@ -500,6 +500,43 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- New Blog Posts Added Today -->
+  <url>
+    <loc>https://safeorstolen.com/blog/enterprise-security</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/blog/mobile-app-features</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- New SEO Pages Added Today -->
+  <url>
+    <loc>https://safeorstolen.com/about</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/faq</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://safeorstolen.com/privacy-policy</loc>
+    <lastmod>2025-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- FasterCapital partnership pages -->
   <url>
     <loc>https://safeorstolen.com/fastercapital/raise-capital</loc>
