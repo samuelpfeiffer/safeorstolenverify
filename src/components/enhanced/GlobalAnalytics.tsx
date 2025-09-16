@@ -9,8 +9,8 @@ declare global {
 
 export const GlobalAnalytics: React.FC = () => {
   useEffect(() => {
-    // Google Analytics 4 setup - placeholder ID for development
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual production ID
+    // Google Analytics 4 setup - production ID
+    const GA_MEASUREMENT_ID = 'G-0T59FF9N6Z';
     
     // Load Google Analytics script
     const script = document.createElement('script');
