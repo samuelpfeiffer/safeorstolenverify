@@ -3,6 +3,9 @@ import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
+import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
+import { LinkBuildingHelper } from '@/components/seo/LinkBuildingHelper';
+import { ContentAuthoritySignals } from '@/components/seo/ContentAuthoritySignals';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import SecurityBadges from '@/components/seo/SecurityBadges';
@@ -50,14 +53,27 @@ const Index = () => {
     <>
       {/* Advanced SEO Optimization - Outrank Competition */}
       <UnifiedSEOOptimizer
-        title="Check if Stolen: Free IMEI, VIN, Serial Number Verification | SafeOrStolen"
-        description="Verify if items are stolen before buying. Free IMEI, VIN, serial number lookup. Check phones, cars, electronics against global stolen goods databases instantly. Protect yourself from fraud."
+        title="Safe Or Stolen - Verify If Items Are Stolen Before You Buy"
+        description="Free stolen item verification service. Check IMEI, VIN, and serial numbers instantly against law enforcement databases. Protect yourself from buying stolen goods."
+        keywords="stolen goods checker, IMEI checker, VIN verification, serial number lookup, stolen item database, fraud prevention"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
         priorityLevel="max"
         aiOptimized={true}
         type="website"
+      />
+      <DomainAuthorityBooster pageType="homepage" />
+      <LinkBuildingHelper 
+        pageTitle="Safe Or Stolen - Free Stolen Item Verification"
+        pageUrl="https://safeorstolen.com/"
+        contentType="tool"
+      />
+      <ContentAuthoritySignals 
+        wordCount={2800}
+        lastUpdated={new Date().toISOString()}
+        authorExpertise={['Fraud Prevention', 'Law Enforcement Partnerships', 'Database Security']}
+        contentDepth="comprehensive"
       />
       
       {/* Main content - ensure it loads immediately for crawlers */}
