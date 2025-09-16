@@ -11,6 +11,9 @@ import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { HubSpotTracker } from '@/components/marketing/HubSpotTracker';
 import { useMarketingAutomation } from '@/hooks/useMarketingAutomation';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
+import { TrustSignals } from '@/components/seo/TrustSignals';
+import SecurityBadges from '@/components/seo/SecurityBadges';
+import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 
 
 const Index = () => {
@@ -75,6 +78,9 @@ const Index = () => {
       
       <Hero />
       <SponsorsStrip />
+      <TrustSignals />
+      <TestimonialsSection />
+      <SecurityBadges />
       
       {(verificationId || serialNumber) && (
         <Suspense fallback={
