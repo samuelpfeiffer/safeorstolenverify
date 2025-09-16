@@ -20,7 +20,7 @@ const SecurityCenter = lazy(() => import('@/pages/admin/SecurityCenter'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
-const FaqPage = lazy(() => import('@/pages/FaqPage'));
+const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
@@ -127,7 +127,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="verification-success" element={<SubscriptionSuccessPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
-          <Route path="faq" element={<FaqPage />} />
+          <Route path="faq" element={<FAQPage />} />
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="blog" element={<BlogPage />} />
