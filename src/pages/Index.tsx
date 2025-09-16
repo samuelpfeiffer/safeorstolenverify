@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
-import { PageSEO } from '@/components/seo/PageSEO';
+import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import SecurityBadges from '@/components/seo/SecurityBadges';
@@ -48,13 +48,16 @@ const Index = () => {
 
   return (
     <>
-      {/* Critical SEO fix for Soft 404 - simplified single SEO component */}
-      <PageSEO
+      {/* Advanced SEO Optimization - Outrank Competition */}
+      <UnifiedSEOOptimizer
         title="Check if Stolen: Free IMEI, VIN, Serial Number Verification | SafeOrStolen"
         description="Verify if items are stolen before buying. Free IMEI, VIN, serial number lookup. Check phones, cars, electronics against global stolen goods databases instantly. Protect yourself from fraud."
-        keywords="check if stolen, IMEI check free, VIN check stolen, serial number lookup, verify before you buy, stolen goods verification, check stolen items, is it stolen, stolen phone check, stolen car check"
         canonical="/"
         structuredData={homePageStructuredData}
+        competitiveKeywords="homepage"
+        priorityLevel="max"
+        aiOptimized={true}
+        type="website"
       />
       
       {/* Main content - ensure it loads immediately for crawlers */}
