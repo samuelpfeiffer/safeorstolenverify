@@ -9,8 +9,7 @@ import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
-import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
-import { WebVitalsOptimizer } from '@/components/performance/WebVitalsOptimizer';
+import { OptimizedLCPLoader } from '@/components/performance/OptimizedLCPLoader';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
@@ -55,8 +54,7 @@ export const AppRoot: React.FC = () => {
                   <div className="min-h-screen bg-sos text-white antialiased">
                     <GlobalSEOProvider />
                     <GlobalAnalytics />
-                    <GlobalPerformanceOptimizer />
-                    <WebVitalsOptimizer />
+                    <OptimizedLCPLoader />
                     <Suspense fallback={<AppLoadingScreen />}>
                       <AppRoutes />
                     </Suspense>

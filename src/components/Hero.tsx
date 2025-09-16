@@ -34,18 +34,18 @@ const Hero = memo(() => {
   }, []);
   return <div className="flex flex-col">
       {/* Full Width Image Above Hero */}
-      <div className="w-full h-auto">
-         <img 
-           src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
-           alt="SafeOrStolen verification platform - professional team securing secondhand marketplace transactions"
-           className="w-full h-auto object-contain"
-           loading="eager"
-           fetchPriority="high"
-           decoding="async"
-           width="1200"
-           height="600"
-         />
-      </div>
+       <div className="w-full h-auto">
+          <img 
+            src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
+            alt="SafeOrStolen verification platform - professional team securing secondhand marketplace transactions"
+            className="w-full h-auto object-contain"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+            width="1200"
+            height="600"
+          />
+       </div>
       
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background/80 to-background/60">
