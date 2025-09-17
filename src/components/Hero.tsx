@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Users, BadgeCheck } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-// Using uploaded image
+import heroImage from '@/assets/hero-verification-devices.png';
 
 const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 
@@ -36,9 +36,9 @@ const Hero = memo(() => {
       {/* Full Width Image Above Hero */}
        <div className="w-full h-auto">
           <img 
-            src="/lovable-uploads/45491b3e-261f-4838-95f8-a95ae95bd6ea.png"
-            alt="SafeOrStolen verification platform - professional team securing secondhand marketplace transactions"
-            className="w-full h-auto object-contain"
+            src={heroImage}
+            alt="SafeOrStolen verification on mobile and laptop showing Item Verified status - consumer using fraud protection technology"
+            className="w-full h-auto object-cover"
             loading="eager"
             fetchPriority="high"
             decoding="sync"
