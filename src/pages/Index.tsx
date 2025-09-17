@@ -5,6 +5,7 @@ import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
 import { LinkBuildingHelper } from '@/components/seo/LinkBuildingHelper';
+import { GoogleDiscoverOptimizer } from '@/components/seo/GoogleDiscoverOptimizer';
 import { ContentAuthoritySignals } from '@/components/seo/ContentAuthoritySignals';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { TrustSignals } from '@/components/seo/TrustSignals';
@@ -74,6 +75,13 @@ const Index = () => {
         lastUpdated={new Date().toISOString()}
         authorExpertise={['Fraud Prevention', 'Law Enforcement Partnerships', 'Database Security']}
         contentDepth="comprehensive"
+      />
+      <GoogleDiscoverOptimizer 
+        title="Safe or Stolen - Verify Used Items Before You Buy"
+        description="Instantly check if phones, cars, electronics and other items are stolen before you buy. Free IMEI, VIN, and serial number verification tool."
+        image="/images/homepage-hero.jpg"
+        category="Consumer Protection"
+        enableFollow={true}
       />
       
       {/* Main content - ensure it loads immediately for crawlers */}

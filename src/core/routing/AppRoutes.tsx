@@ -114,6 +114,7 @@ const PartnershipsPage = lazy(() => import('@/pages/PartnershipsPage'));
 const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
 const UltimateGuideBuyingSafelyPage = lazy(() => import('@/pages/UltimateGuideBuyingSafelyPage'));
 const StolenGoodsStatisticsPage = lazy(() => import('@/pages/StolenGoodsStatisticsPage'));
+const RSSFeedPage = lazy(() => import('@/pages/RSSFeedPage'));
 
 /**
  * Enterprise Application Routing
@@ -207,6 +208,10 @@ export const AppRoutes: React.FC = () => {
            <Route path="partnerships" element={<PartnershipsPage />} />
            <Route path="ultimate-guide-buying-safely" element={<UltimateGuideBuyingSafelyPage />} />
            <Route path="stolen-goods-statistics-2024" element={<StolenGoodsStatisticsPage />} />
+           <Route path="guide/buying-safely" element={<UltimateGuideBuyingSafelyPage />} />
+           <Route path="statistics/stolen-goods-2024" element={<StolenGoodsStatisticsPage />} />
+           <Route path="feed.xml" element={<RSSFeedPage />} />
+           <Route path="rss" element={<RSSFeedPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />

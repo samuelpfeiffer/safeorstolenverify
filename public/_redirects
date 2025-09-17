@@ -19,6 +19,18 @@ https://safeorstolen.com/*/ https://safeorstolen.com/:splat 301!
 /cart /services 301  
 /shopping-cart /services 301
 
+# RSS Feed redirects for Google Discover Follow feature
+/feed.xml /rss 200
+/rss.xml /rss 200  
+/atom.xml /rss 200
+
+# Sitemap redirects
+/sitemap.xml /sitemap 200
+
+# SEO content redirects for better URL structure
+/ultimate-guide-buying-safely /guide/buying-safely 301
+/stolen-goods-statistics-2024 /statistics/stolen-goods-2024 301
+
 # Handle API routes (don't redirect)
 /api/* /api/:splat 200
 
