@@ -10,33 +10,33 @@ export const CompetitiveKeywords: React.FC<CompetitiveKeywordsProps> = ({ pageTy
     switch (pageType) {
       case 'homepage':
         return {
-          primary: "check if stolen, verify before you buy, stolen goods verification",
-          longtail: "how to check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen",
-          competitor: "checkmend alternative, stolen register alternative, leads online alternative, free stolen check"
+          primary: "safe secondhand buying, check if item is stolen, verify ownership before buying, secondhand item verification, trusted item verification",
+          longtail: "is it safe to buy used, buy and sell safely, protect buyers and sellers, secondhand buyer protection, how to check if something is stolen before I buy it",
+          competitor: "checkmend alternative, stolen register alternative, leads online alternative, free stolen check, global stolen property database"
         };
       case 'imei':
         return {
-          primary: "IMEI check, check if phone stolen, IMEI lookup",
-          longtail: "free IMEI check, check stolen phone IMEI, verify phone not stolen, IMEI checker free",
-          competitor: "checkmend IMEI, stolen register phone, IMEI checker better than checkmend"
+          primary: "IMEI device check, check if phone stolen, stolen phone check, IMEI lookup, verify phone not stolen",
+          longtail: "free IMEI check, check stolen phone IMEI, used electronics safe, electronics background check, is my phone stolen",
+          competitor: "checkmend IMEI, stolen register phone, IMEI checker better than checkmend, trusted device verification"
         };
       case 'vin':
         return {
-          primary: "VIN check, check if car stolen, VIN lookup",
-          longtail: "free VIN check stolen, verify car not stolen, vehicle theft check VIN",
-          competitor: "NICB VIN check, stolen vehicle database, better than carfax theft"
+          primary: "VIN lookup, check if car stolen, secondhand car check, vehicle theft check, verify car not stolen",
+          longtail: "free VIN check stolen, used car safety check, vehicle history report, how to check VIN for stolen, is my car stolen",
+          competitor: "NICB VIN check, stolen vehicle database, better than carfax theft, secure vehicle verification"
         };
       case 'serial':
         return {
-          primary: "serial number check, check if item stolen, verify serial number",
-          longtail: "electronics serial number check, laptop serial check stolen, bike serial stolen check",
-          competitor: "property check serial number, better than stolen goods database"
+          primary: "serial number lookup, check if item stolen, electronics background check, verify serial number, property legitimacy tool",
+          longtail: "electronics serial number check, laptop serial check stolen, bike serial stolen check, how to check serial number",
+          competitor: "property check serial number, better than stolen goods database, trusted item verification, secure marketplace tool"
         };
       default:
         return {
-          primary: "stolen goods verification, check if stolen",
-          longtail: "verify before buying used items",
-          competitor: "best stolen goods checker"
+          primary: "stolen goods verification, anti-theft register for buyers, scam prevention tool, resale security check",
+          longtail: "verify before buying used items, buy used safely online, check property before selling, avoid stolen goods",
+          competitor: "best stolen goods checker, global stolen property database, secure marketplace tool"
         };
     }
   };

@@ -12,18 +12,52 @@ const SITE_CONFIG = {
   twitterHandle: '@safeorstolen',
   author: 'Safe or Stolen Team',
   keywords: [
-    // Core verification terms
+    // Broad Market & Transaction Safety
+    'safe secondhand buying',
+    'is it safe to buy used',
+    'check if item is stolen',
+    'verify ownership before buying',
+    'secondhand item verification',
+    'lost and stolen check',
+    'buy and sell safely',
+    'protect buyers and sellers',
+    'resale security check',
+    'property legitimacy tool',
+    
+    // Device, Vehicle, and ID-Specific
+    'IMEI device check',
+    'serial number lookup',
+    'VIN lookup',
+    'electronics background check',
+    'stolen phone check',
+    'report lost or stolen',
+    'used electronics safe',
+    'secondhand car check',
+    
+    // Consumer & E-commerce
+    'buy used safely online',
+    'check property before selling',
+    'scam prevention tool',
+    'anti-theft register for buyers',
+    'property history report',
+    'avoid stolen goods',
+    
+    // Brand/Trust-Oriented
+    'trusted item verification',
+    'global stolen property database',
+    'secure marketplace tool',
+    
+    // Core verification terms (existing)
     'check serial number',
     'check VIN number', 
     'check IMEI',
     'check MAC address',
-    'serial number lookup',
     'VIN lookup stolen',
     'IMEI check stolen',
     'free stolen check',
     'free lost item check',
     
-    // Lost and stolen items (competitor focuses on both)
+    // Lost and stolen items
     'lost or stolen lookup',
     'stolen and lost property',
     'check if lost or stolen',
@@ -31,7 +65,7 @@ const SITE_CONFIG = {
     'find lost property',
     'recover stolen items',
     
-    // Specific item categories (matching competitor coverage)
+    // Specific item categories
     'check if phone stolen',
     'check if car stolen', 
     'check if bike stolen',
