@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
+import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -37,12 +39,17 @@ const CheckCarPage: React.FC = () => {
   return (
     <>
       <PageSEO 
-        title="Can I Check if This Car is Stolen? How Do I Know if Car is Hot?"
-        description="Can I check if this car is stolen? How do I know if this VIN is hot? Free way to verify car not stolen before buying. Check if vehicle is legit."
-        keywords="can I check if this car is stolen, how do I know if car is hot, is this car stolen, check if VIN is hot, how to tell if car stolen, verify car not stolen"
+        title="VIN Lookup - Free Secondhand Car Check | Safe Or Stolen" 
+        description="VIN lookup to check if car is stolen. Free secondhand car check for used vehicles. Verify ownership before buying and avoid stolen vehicle scams."
+        keywords="VIN lookup, secondhand car check, check if car stolen, verify car not stolen, vehicle theft protection, used car verification, stolen vehicle database, automotive security check, car history report"
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="vin" />
+      <AdvancedKeywordOptimizer 
+        pageType="vin" 
+        context="verification"
+        primaryKeywords={['VIN lookup', 'secondhand car check', 'verify car not stolen']}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
@@ -54,10 +61,10 @@ const CheckCarPage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Check If Car Is Stolen
+              VIN Lookup - Secondhand Car Check
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Verify if a vehicle is stolen before you buy using our free VIN lookup service
+              Verify ownership before buying used vehicles with our free VIN lookup service
             </p>
             
             {/* Hero Image */}

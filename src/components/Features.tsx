@@ -17,23 +17,23 @@ const Features = () => {
   const features = [
     {
       icon: <ShieldCheck className="h-8 w-8 text-sos-orange" />,
-      title: "Stolen Item Detection",
-      description: "Instantly check if items are reported stolen before you buy. Protect yourself from legal issues."
+      title: "Safe Secondhand Buying",
+      description: "Check if item is stolen before you buy. Verify ownership before buying used items to protect yourself from legal issues and fraud."
     },
     {
       icon: <Clock className="h-8 w-8 text-sos-lime" />,
-      title: "Real-Time Results", 
-      description: "Get verification results in under 3 seconds. Fast, accurate data when you need it."
+      title: "Instant Verification Results", 
+      description: "Trusted item verification in under 3 seconds. Get property history reports when you need them most for secure marketplace transactions."
     },
     {
       icon: <Globe className="h-8 w-8 text-sos-orange" />,
-      title: "Global Database",
-      description: "Access databases from 50+ countries. Comprehensive international stolen goods tracking."
+      title: "Global Stolen Property Database",
+      description: "Access the world's largest stolen goods database from 50+ countries. Comprehensive anti-theft register for buyers worldwide."
     },
     {
       icon: <Users className="h-8 w-8 text-sos-lime" />,
-      title: "Seller Protection",
-      description: "Help sellers prove their items are legitimate. Build trust in every transaction."
+      title: "Protect Buyers and Sellers",
+      description: "Help sellers prove legitimacy and buyers buy used safely online. Build trust in every secondhand transaction with our scam prevention tool."
     }
   ];
 
@@ -43,10 +43,10 @@ const Features = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            Why Choose SafeOrStolen?
+            Why Choose Our Trusted Item Verification Platform?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Trusted by thousands of buyers and sellers worldwide. Our comprehensive verification system keeps you safe in the secondhand market.
+            Trusted by thousands worldwide for safe secondhand buying. Our secure marketplace tool and property legitimacy verification keep you protected from stolen goods.
           </p>
         </div>
 

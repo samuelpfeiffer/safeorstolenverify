@@ -77,7 +77,7 @@ const Hero = memo(() => {
             SafeOrStolen
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            A platform for verifying IMEI, VIN, and Serial Numbers to protect buyers and sellers in the secondhand market from stolen goods. Verify any item in seconds and buy, sell, and do business with 100% confidence.
+            Safe secondhand buying platform - verify ownership before buying used items. Check if item is stolen using IMEI device check, VIN lookup, and serial number verification. Trusted item verification for secure marketplace transactions.
           </p>
           
           
@@ -95,7 +95,7 @@ const Hero = memo(() => {
               aria-describedby="main-headline"
             >
               <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-              Check a Serial Number — It's Free
+              Verify Ownership Before Buying - Free Check
             </Button>
             <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
               <Link to="/for-brands">
@@ -126,7 +126,7 @@ const Hero = memo(() => {
           {/* Call to Action for Dashboard Access */}
           <div className="text-center mb-8">
             <p className="text-lg md:text-xl text-gray-300 mb-4">
-              Ready to verify your items? Access our secure verification system in your dashboard.
+              Buy used safely online with our trusted item verification service. Check property before selling and protect yourself from stolen goods.
             </p>
             <Button 
               size="lg" 
@@ -151,23 +151,23 @@ const Hero = memo(() => {
              </div>
              
              {/* Popular Stolen Checks */}
-             <div className="mt-8">
-               <p className="text-sm text-gray-400 mb-4">Popular Stolen Item Checks:</p>
-               <div className="flex flex-wrap justify-center gap-2">
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-if-stolen">Verify Items</Link>
-                 </Button>
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-phone">Check Phone IMEI</Link>
-                 </Button>
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/check-car">Verify Car VIN</Link>
-                 </Button>
-                 <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                   <Link to="/how-to-check-if-item-stolen">Buying Guide</Link>
-                 </Button>
-               </div>
-             </div>
+              <div className="mt-8">
+                <p className="text-sm text-gray-400 mb-4">Popular Safe Secondhand Buying Tools:</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/check-if-stolen">Check If Item Stolen</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/check-phone">IMEI Device Check</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/check-car">VIN Lookup</Link>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
+                    <Link to="/how-to-check-if-item-stolen">Safe Buying Guide</Link>
+                  </Button>
+                </div>
+              </div>
           </div>
         </div>
       </div>

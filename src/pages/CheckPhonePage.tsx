@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
+import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -37,14 +39,19 @@ const CheckPhonePage: React.FC = () => {
   return (
     <>
       <UnifiedSEO 
-        title="Free Phone Check - IMEI Verification | Safe or Stolen"
-        description="Check if a phone is stolen before buying. Free IMEI verification to avoid purchasing stolen smartphones. Protect yourself from fraud and theft."
+        title="IMEI Device Check - Free Stolen Phone Check | Safe Or Stolen"
+        description="IMEI device check to verify if phone is stolen. Free electronics background check for used smartphones. Report lost or stolen phones and buy used electronics safely."
+        keywords="IMEI device check, stolen phone check, electronics background check, used electronics safe, report lost or stolen, check if phone stolen, IMEI lookup stolen, mobile device verification, smartphone security check, secondhand phone verification"
         canonical="/check-phone"
-        keywords="phone check, IMEI check, stolen phone verification, mobile phone security, smartphone theft"
         type="website"
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="imei" />
+      <AdvancedKeywordOptimizer 
+        pageType="imei" 
+        context="verification"
+        primaryKeywords={['IMEI device check', 'stolen phone check', 'electronics background check']}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
@@ -56,7 +63,7 @@ const CheckPhonePage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Check If Phone Is Stolen
+              IMEI Device Check - Verify Phone Not Stolen
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Verify if a smartphone is stolen before you buy using our free IMEI lookup service

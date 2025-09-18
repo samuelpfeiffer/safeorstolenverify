@@ -12,9 +12,9 @@ const ProblemPage = () => {
   return (
     <>
       <PageSEO
-        title="The $13 Billion Stolen Goods Crisis - Safe Or Stolen"
-        description="Learn about the massive stolen goods problem affecting millions of Americans. Discover why 2.3M people unknowingly buy stolen items yearly and how to protect yourself."
-        keywords="stolen goods crisis, secondhand fraud, NICB statistics, stolen property market, consumer protection"
+        title="The $13 Billion Stolen Goods Crisis - Protect Buyers and Sellers | Safe Or Stolen"
+        description="Learn about the massive stolen goods crisis affecting millions. Discover why 2.3M people unknowingly buy stolen items yearly. Safe secondhand buying solutions to avoid stolen goods."
+        keywords="stolen goods crisis, secondhand fraud, protect buyers and sellers, safe secondhand buying, avoid stolen goods, consumer protection, resale security, marketplace safety, anti-theft register, property legitimacy"
       />
       <div className="bg-sos text-white min-h-screen">
         <HeroSection />

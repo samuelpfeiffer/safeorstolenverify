@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
+import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
+import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -37,13 +39,18 @@ const CheckElectronicsPage: React.FC = () => {
   return (
     <>
       <EnhancedSEOHead 
-        title="Check if Electronics Are Stolen - Free Serial Number Lookup | Safe or Stolen"
-        description="Check if electronics are stolen using serial number lookup. Verify laptops, tablets, gaming consoles before buying. Free stolen electronics database check."
-        keywords="check if electronics stolen, electronic serial number lookup, check laptop stolen, tablet stolen check, gaming console stolen, verify electronics serial, stolen electronics database, laptop theft check"
+        title="Serial Number Lookup - Check If Electronics Are Stolen | Safe Or Stolen"
+        description="Free serial number lookup to check if electronics are stolen. Verify laptops, tablets, gaming devices before buying. Electronics background check for safe secondhand purchases."
+        keywords="serial number lookup, electronics background check, check if electronics stolen, verify electronics serial, used electronics safe, laptop theft check, tablet stolen verification, gaming console security, secondhand electronics verification"
         canonical="/check-electronics"
         additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="serial" />
+      <AdvancedKeywordOptimizer 
+        pageType="serial" 
+        context="verification"
+        primaryKeywords={['serial number lookup', 'electronics background check', 'used electronics safe']}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
@@ -55,10 +62,10 @@ const CheckElectronicsPage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Check If Electronics Are Stolen
+              Serial Number Lookup - Electronics Background Check
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Verify if electronics are stolen before you buy using our free serial number lookup
+              Verify if electronics are stolen before buying used devices. Free electronics background check for safe secondhand purchases.
             </p>
             
             {/* Hero Image */}

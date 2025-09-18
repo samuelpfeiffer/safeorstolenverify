@@ -11,6 +11,9 @@ import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import SecurityBadges from '@/components/seo/SecurityBadges';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
+import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
+import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
+import { ComprehensiveKeywordFooter } from '@/components/seo/ComprehensiveKeywordFooter';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
 
 const Index = () => {
@@ -54,15 +57,20 @@ const Index = () => {
     <>
       {/* Advanced SEO Optimization - Outrank Competition */}
       <UnifiedSEOOptimizer
-        title="Safe Or Stolen - Verify If Items Are Stolen Before You Buy"
-        description="Free stolen item verification service. Check IMEI, VIN, and serial numbers instantly against law enforcement databases. Protect yourself from buying stolen goods."
-        keywords="stolen goods checker, IMEI checker, VIN verification, serial number lookup, stolen item database, fraud prevention"
+        title="Safe Secondhand Buying - Check If Item Is Stolen Before You Buy | SafeOrStolen"
+        description="Free stolen item verification service. Verify ownership before buying used items. Check IMEI, VIN, serial numbers against global stolen property database. Trusted item verification platform."
+        keywords="safe secondhand buying, check if item is stolen, verify ownership before buying, secondhand item verification, buy and sell safely, protect buyers and sellers, IMEI device check, serial number lookup, VIN lookup, stolen goods verification, trusted item verification, global stolen property database, secure marketplace tool"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
         priorityLevel="max"
         aiOptimized={true}
         type="website"
+      />
+      <AdvancedKeywordOptimizer 
+        pageType="homepage" 
+        context="transaction"
+        primaryKeywords={['safe secondhand buying', 'check if item is stolen', 'verify ownership before buying']}
       />
       <DomainAuthorityBooster pageType="homepage" />
       <LinkBuildingHelper 
@@ -77,9 +85,9 @@ const Index = () => {
         contentDepth="comprehensive"
       />
       <GoogleDiscoverOptimizer 
-        title="Safe or Stolen - Verify Used Items Before You Buy"
-        description="Instantly check if phones, cars, electronics and other items are stolen before you buy. Free IMEI, VIN, and serial number verification tool."
-        image="/images/homepage-hero.jpg"
+        title="Safe Secondhand Buying - Verify Ownership Before Buying Used Items"
+        description="Instantly check if phones, cars, electronics and other items are stolen before you buy. Free verification tools for safe secondhand buying and trusted item verification."
+        image="/assets/hero-verification-devices.png"
         category="Consumer Protection"
         enableFollow={true}
       />
@@ -92,10 +100,10 @@ const Index = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-primary">
               SafeOrStolen
             </h1>
-            <p className="text-lg md:text-2xl text-muted-foreground mb-6">
-              Verify IMEI, VIN, and Serial Numbers to protect buyers and sellers from stolen goods. 
-              Free verification service for consumers and businesses.
-            </p>
+              <p className="text-lg md:text-2xl text-muted-foreground mb-6">
+               Safe secondhand buying platform with trusted item verification. Check if item is stolen before you buy. 
+               Free verification service for consumers and businesses to protect buyers and sellers.
+              </p>
             <p className="text-lg text-muted-foreground">
               Enable JavaScript to access our full verification platform.
             </p>
@@ -103,6 +111,7 @@ const Index = () => {
         </noscript>
         
         <Hero />
+        <KeywordOptimizedContent pageType="homepage" className="py-12 bg-muted/30" />
         <SponsorsStrip />
         <TrustSignals />
         <TestimonialsSection />
@@ -118,6 +127,8 @@ const Index = () => {
             <VerifiedProduct />
           </Suspense>
         )}
+        
+        <ComprehensiveKeywordFooter />
       </div>
     </>
   );
