@@ -32,7 +32,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification report',
       'Email support'
     ],
-    stripePriceId: 'price_YOUR_PAY_PER_CHECK_PRICE_ID' // Replace with actual Stripe price ID
+    stripePriceId: 'price_1S9CuPGxnZLw8J7OyBKr6134'
   },
   entryLevel: {
     name: 'Entry Level (Individual)',
