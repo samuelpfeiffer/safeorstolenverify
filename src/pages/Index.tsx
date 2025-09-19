@@ -59,8 +59,8 @@ const Index = () => {
       {/* Advanced SEO Optimization - Outrank Competition */}
       <UnifiedSEOOptimizer
         title="Safe Secondhand Buying - Check If Item Is Stolen Before You Buy | SafeOrStolen"
-        description="Free stolen item verification service. Check if items are stolen before buying used goods. Protect yourself from unknowingly purchasing stolen guns, vehicles, electronics, and tools from our global stolen property database."
-        keywords="safe secondhand buying, check if item is stolen, check if stolen before buying, secondhand item verification, buy and sell safely, protect buyers and sellers, IMEI device check, serial number lookup, VIN lookup, stolen goods verification, trusted item verification, global stolen property database, secure marketplace tool, stolen gun check, stolen vehicle check, stolen electronics check"
+        description="Protect buyers and sellers in secondhand market. Check if items are stolen before transactions. Help sellers prove legitimacy and buyers avoid fraud. Global verification database access."
+        keywords="protect buyers sellers, stolen goods verification, secondhand market protection, IMEI check, VIN verification, serial number lookup, mobile verification app, seller reputation protection, buyer fraud prevention, protect sellers reputation, seller legitimacy check"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
@@ -102,8 +102,8 @@ const Index = () => {
               SafeOrStolen
             </h1>
               <p className="text-lg md:text-2xl text-muted-foreground mb-6">
-               Safe secondhand buying platform - check if items are stolen before buying used goods. Protect yourself from unknowingly purchasing stolen items. 
-               Free stolen goods checker for consumers and businesses.
+                Protect buyers and sellers in the secondhand market. Check if items are stolen before transactions. 
+                Help sellers prove legitimacy and buyers avoid fraud in resale economy.
               </p>
             <p className="text-lg text-muted-foreground">
               Enable JavaScript to access our full verification platform.

@@ -18,6 +18,7 @@ import { TrustIndicators } from '@/components/TrustIndicators';
 import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
 import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
 import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
+import { MobileBenefitsSection } from '@/components/mobile/MobileBenefitsSection';
 import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 
 const HomePage = () => {
@@ -90,9 +91,9 @@ const HomePage = () => {
         <GlobalAnalytics />
         <GoogleSearchConsoleSetup />
         <PageSEO
-          title="Check if Item is Stolen | Free Stolen Goods Checker | Protect Buyers | SafeOrStolen"
-          description="Free stolen goods checker for secondhand buyers. Check if guns, vehicles, electronics, tools are stolen before buying. Protect yourself from unknowingly purchasing stolen items."
-          keywords="check if stolen, stolen goods checker, secondhand buyer protection, avoid stolen goods, stolen gun check, stolen vehicle check, stolen electronics check, buyer protection service, used item verification"
+          title="Protect Buyers & Sellers | Free Stolen Goods Verification | SafeOrStolen Mobile App"
+          description="Protect buyers and sellers in secondhand transactions. Instantly verify phones, vehicles, electronics using IMEI, VIN, serial numbers. Mobile app for on-the-go verification."
+          keywords="protect buyers sellers, stolen goods verification, secondhand market protection, IMEI check, VIN verification, serial number lookup, mobile verification app, seller reputation protection, buyer fraud prevention"
           canonical="/"
           structuredData={homePageStructuredData}
         />
@@ -105,6 +106,7 @@ const HomePage = () => {
           <TrustBadgeStrip />
           <TrustBuildingFAQ />
           <Features />
+          <MobileBenefitsSection />
           <TestimonialsSection />
           
           {/* Community Movement Section */}
@@ -120,8 +122,8 @@ const HomePage = () => {
                   Join the Movement
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Safety is a community effort. We've built free tools to help everyone fight fraud. 
-                  Become a part of the SafeOrStolen community watch and help protect buyers everywhere.
+                   Safety is a community effort. We've built free tools to help protect both buyers and sellers. 
+                   Become a part of the SafeOrStolen community and help make secondhand transactions safer for everyone.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
