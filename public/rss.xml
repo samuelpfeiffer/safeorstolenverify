@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  
+  <channel>
+    <title>Safe or Stolen - Stolen Goods Verification News & Updates</title>
+    <link>https://safeorstolen.com</link>
+    <description>Latest news, insights, and updates from Safe or Stolen - the world's leading stolen goods verification platform. Stay informed about marketplace safety, fraud prevention, and consumer protection.</description>
+    <atom:link href="https://safeorstolen.com/rss.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language>
+    <category>Consumer Protection</category>
+    <category>Fraud Prevention</category>
+    <category>Marketplace Safety</category>
+    <copyright>Copyright 2024 Safe or Stolen Corp.</copyright>
+    <managingEditor>support@safeorstolen.com (Safe or Stolen Team)</managingEditor>
+    <webMaster>support@safeorstolen.com (Safe or Stolen Technical Team)</webMaster>
+    <lastBuildDate>Fri, 19 Sep 2025 00:00:00 GMT</lastBuildDate>
+    <pubDate>Fri, 19 Sep 2025 00:00:00 GMT</pubDate>
+    <ttl>60</ttl>
+    <image>
+      <url>https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png</url>
+      <title>Safe or Stolen Logo</title>
+      <link>https://safeorstolen.com</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    
+    <!-- Key Content for Google Discover -->
+    <item>
+      <title>How to Check If a Phone Is Stolen Using IMEI - Complete Guide</title>
+      <link>https://safeorstolen.com/check-phone</link>
+      <description>Learn how to check if a phone is stolen before you buy it. Complete guide to IMEI verification, what to look for when buying used phones, and how to protect yourself from purchasing stolen smartphones.</description>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/check-phone</guid>
+      <category>Consumer Protection</category>
+      <dc:creator>Safe or Stolen Team</dc:creator>
+      <content:encoded><![CDATA[
+        <h1>How to Check If a Phone Is Stolen Using IMEI</h1>
+        <p>Before buying a used smartphone, it's crucial to verify the phone isn't stolen. Our free IMEI check helps you avoid legal troubles and financial loss.</p>
+        <h2>What Is IMEI and Why Check It?</h2>
+        <p>The International Mobile Equipment Identity (IMEI) is a unique 15-digit number that identifies every mobile device. When phones are reported stolen, their IMEI numbers are added to blacklist databases.</p>
+        <h2>How to Find Your Phone's IMEI</h2>
+        <ul>
+          <li>Dial *#06# on the phone</li>
+          <li>Check Settings > About Phone > IMEI</li>
+          <li>Look on the original box or SIM tray</li>
+        </ul>
+        <p><a href="https://safeorstolen.com/check-phone">Check your phone's IMEI now →</a></p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>VIN Lookup: How to Check If a Car Is Stolen Before Buying</title>
+      <link>https://safeorstolen.com/check-car</link>
+      <description>Essential guide to VIN verification when buying used cars. Learn how to check if a vehicle is stolen, what databases to search, and red flags to avoid when purchasing secondhand cars.</description>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/check-car</guid>
+      <category>Vehicle Safety</category>
+      <dc:creator>Safe or Stolen Team</dc:creator>
+      <content:encoded><![CDATA[
+        <h1>VIN Lookup: How to Check If a Car Is Stolen</h1>
+        <p>Buying a stolen car can result in its confiscation, legal problems, and complete financial loss. Our VIN lookup service helps you verify any vehicle's status before purchase.</p>
+        <h2>Where to Find a Vehicle's VIN Number</h2>
+        <ul>
+          <li>Dashboard on driver's side (visible through windshield)</li>
+          <li>Driver's side door jamb sticker</li>
+          <li>Engine block</li>
+          <li>Title and registration documents</li>
+        </ul>
+        <p><a href="https://safeorstolen.com/check-car">Verify your vehicle's VIN now →</a></p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>The $13 Billion Stolen Goods Crisis: Protecting Yourself from Fraud</title>
+      <link>https://safeorstolen.com/about-problem</link>
+      <description>Discover the shocking truth about stolen goods in America. Learn how 2.3 million people unknowingly buy stolen items yearly and how to protect yourself from becoming a victim.</description>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/about-problem</guid>
+      <category>Crime Prevention</category>
+      <dc:creator>Safe or Stolen Research Team</dc:creator>
+    </item>
+    
+    <item>
+      <title>Serial Number Verification for Electronics - Complete Safety Guide</title>
+      <link>https://safeorstolen.com/check-electronics</link>
+      <description>How to check if electronics are stolen using serial numbers. Comprehensive guide to verifying laptops, tablets, gaming consoles, and other valuable electronics before purchase.</description>
+      <pubDate>Fri, 19 Sep 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/check-electronics</guid>
+      <category>Electronics Safety</category>
+      <dc:creator>Safe or Stolen Team</dc:creator>
+    </item>
+    
+  </channel>
+</rss>

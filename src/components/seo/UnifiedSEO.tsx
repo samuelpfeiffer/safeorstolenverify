@@ -48,17 +48,79 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       : [structuredData]
     : [];
 
-  // Default organization schema
+  // Enhanced organization schema for better AI/Google understanding
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Safe Or Stolen",
+    "@type": ["Organization", "Corporation", "SoftwareApplication"],
+    "name": "Safe or Stolen",
+    "legalName": "Safe or Stolen Corp.",
+    "alternateName": ["SOS Verification", "SafeOrStolen", "Safe Or Stolen Platform"],
     "url": "https://safeorstolen.com",
     "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "support@safeorstolen.com"
+    "description": "Real-time stolen goods verification platform protecting consumers from unknowingly purchasing stolen items. Free worldwide database checks for phones, cars, electronics using IMEI, VIN, serial numbers.",
+    "foundingDate": "2024",
+    "slogan": "Verify Before You Buy - Fighting the $13B Stolen Goods Crisis",
+    "knowsAbout": [
+      "Stolen goods verification",
+      "IMEI lookup", 
+      "VIN lookup",
+      "Serial number check",
+      "Consumer protection",
+      "Marketplace fraud prevention",
+      "Secondhand item verification",
+      "Property legitimacy verification"
+    ],
+    "serviceArea": "Worldwide",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Global"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service", 
+        "email": "support@safeorstolen.com",
+        "availableLanguage": "English"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "technical support",
+        "email": "support@safeorstolen.com"
+      }
+    ],
+    "sameAs": [
+      "https://twitter.com/safeorstolen",
+      "https://linkedin.com/company/safeorstolen"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Stolen Goods Verification Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Free IMEI Phone Check",
+            "description": "Check if a phone is stolen using IMEI lookup"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Free VIN Car Check", 
+            "description": "Verify if a vehicle is stolen using VIN lookup"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Electronics Serial Number Check",
+            "description": "Verify electronics using serial number against stolen databases"
+          }
+        }
+      ]
     }
   };
 

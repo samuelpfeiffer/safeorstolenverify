@@ -14,6 +14,7 @@ import { TestimonialsSection } from '@/components/testimonials/TestimonialsSecti
 import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
 import { ComprehensiveKeywordFooter } from '@/components/seo/ComprehensiveKeywordFooter';
+import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
 
 const Index = () => {
@@ -111,6 +112,7 @@ const Index = () => {
         </noscript>
         
         <Hero />
+        <AIOptimizedContent page="home" />
         <KeywordOptimizedContent pageType="homepage" className="py-12 bg-muted/30" />
         <SponsorsStrip />
         <TrustSignals />

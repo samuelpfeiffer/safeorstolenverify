@@ -1,0 +1,6 @@
+Contact: mailto:security@safeorstolen.com
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://safeorstolen.com/.well-known/pgp-key.txt
+Preferred-Languages: en
+Canonical: https://safeorstolen.com/.well-known/security.txt
+Policy: https://safeorstolen.com/security-policy

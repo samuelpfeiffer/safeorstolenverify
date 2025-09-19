@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
+import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
 import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
@@ -37,8 +38,9 @@ const CheckPhonePage: React.FC = () => {
   };
 
   return (
-    <>
-      <UnifiedSEO 
+      <>
+        <AIOptimizedContent page="check-phone" />
+        <UnifiedSEO 
         title="IMEI Device Check - Free Stolen Phone Check | Safe Or Stolen"
         description="IMEI device check to verify if phone is stolen. Free electronics background check for used smartphones. Report lost or stolen phones and buy used electronics safely."
         keywords="IMEI device check, stolen phone check, electronics background check, used electronics safe, report lost or stolen, check if phone stolen, IMEI lookup stolen, mobile device verification, smartphone security check, secondhand phone verification"
