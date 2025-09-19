@@ -22,6 +22,31 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Email support'
     ]
   },
+  payPerCheck: {
+    name: 'Pay Per Check',
+    price: 500, // $5.00 in cents
+    interval: 'day',
+    features: [
+      'Single verification check',
+      'Instant results',
+      'Basic verification report',
+      'Email support'
+    ],
+    stripePriceId: 'price_YOUR_PAY_PER_CHECK_PRICE_ID' // Replace with actual Stripe price ID
+  },
+  entryLevel: {
+    name: 'Entry Level (Individual)',
+    price: 500, // $5.00 in cents
+    interval: 'month',
+    features: [
+      '7-day free trial',
+      'Up to 10 verifications/month',
+      'Real-time database checks',
+      'Basic verification reports',
+      'Email support'
+    ],
+    stripePriceId: 'price_YOUR_ENTRY_LEVEL_PRICE_ID' // Replace with actual Stripe price ID
+  },
   basic: {
     name: 'Smart Buyer',
     price: 799, // $7.99 in cents

@@ -34,21 +34,38 @@ export const PricingGrid = () => {
 
   const products = [
     {
+      ...SUBSCRIPTION_TIERS.payPerCheck,
+      price: formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price),
+      priceId: SUBSCRIPTION_TIERS.payPerCheck.stripePriceId!,
+      period: 'per check',
+      image: "https://i.imgur.com/6Mvijcm.png"
+    },
+    {
+      ...SUBSCRIPTION_TIERS.entryLevel,
+      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
+      priceId: SUBSCRIPTION_TIERS.entryLevel.stripePriceId!,
+      period: 'month',
+      image: "https://i.imgur.com/6Mvijcm.png"
+    },
+    {
       ...SUBSCRIPTION_TIERS.basic,
       price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
       priceId: SUBSCRIPTION_TIERS.basic.stripePriceId!,
+      period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
       ...SUBSCRIPTION_TIERS.premium,
       price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
       priceId: SUBSCRIPTION_TIERS.premium.stripePriceId!,
+      period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
       ...SUBSCRIPTION_TIERS.enterprise,
       price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price),
       priceId: SUBSCRIPTION_TIERS.enterprise.stripePriceId!,
+      period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
@@ -70,14 +87,14 @@ export const PricingGrid = () => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 max-w-full mx-auto">
         {products.map((product) => (
           <ProductCard
             key={product.priceId}
             name={product.name}
             price={product.price}
             priceId={product.priceId}
-            period={product.name === 'Certified Stolen/Legitimate Report' ? 'per report' : product.interval}
+            period={product.period}
             features={product.features}
             popular={product.popular}
             image={product.image}
