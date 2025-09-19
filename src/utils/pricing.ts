@@ -36,16 +36,16 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   },
   entryLevel: {
     name: 'Entry Level (Individual)',
-    price: 500, // $5.00 in cents
+    price: 1000, // $10.00 in cents
     interval: 'month',
     features: [
       '7-day free trial',
-      'Up to 10 verifications/month',
+      '20 verifications/month',
       'Real-time database checks',
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_YOUR_ENTRY_LEVEL_PRICE_ID' // Replace with actual Stripe price ID
+    stripePriceId: 'price_1S9CrOGxnZLw8J7OAWHGY2P9'
   },
   basic: {
     name: 'Smart Buyer',
