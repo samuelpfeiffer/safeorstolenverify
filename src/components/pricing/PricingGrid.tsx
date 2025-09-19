@@ -74,13 +74,13 @@ export const PricingGrid = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
-        <p className="text-xl text-muted-foreground">Get started with verification services that fit your needs</p>
+        <p className="text-xl text-muted-foreground">All 5 subscription options available</p>
         <div className="mt-4 p-4 bg-yellow-100 text-yellow-800 rounded">
           <p className="text-sm">Debug: Check browser console for subscription flow logs</p>
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 max-w-full mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-full mx-auto">
         {products.map((product) => (
           <ProductCard
             key={product.priceId}
