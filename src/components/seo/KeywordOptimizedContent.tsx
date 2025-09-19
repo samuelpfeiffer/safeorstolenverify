@@ -14,7 +14,7 @@ export const KeywordOptimizedContent: React.FC<KeywordOptimizedContentProps> = (
       case 'homepage':
         return {
           heading: "Safe Secondhand Buying - Trusted Item Verification Platform",
-          subheading: "Check if item is stolen before you buy. Verify ownership using our global stolen property database.",
+          subheading: "Check if item is stolen before you buy. Protect yourself from unknowingly purchasing stolen goods using our global stolen property database.",
           benefits: [
             "Safe secondhand buying with instant verification",
             "Buy and sell safely with our scam prevention tool",
@@ -40,7 +40,7 @@ export const KeywordOptimizedContent: React.FC<KeywordOptimizedContentProps> = (
       case 'car':
         return {
           heading: "VIN Lookup - Secondhand Car Check Service",
-          subheading: "Verify ownership before buying used vehicles. Free vehicle theft protection database check.",
+          subheading: "Check if vehicle is stolen before buying used vehicles. Free vehicle theft protection database check.",
           benefits: [
             "VIN lookup against stolen vehicle databases",
             "Secondhand car check for all vehicle types",
@@ -107,7 +107,7 @@ export const KeywordOptimizedContent: React.FC<KeywordOptimizedContentProps> = (
           <p>
             Our platform helps consumers buy used safely online by providing comprehensive 
             verification services. Whether you need to check property before selling, 
-            verify ownership before buying, or access our anti-theft register for buyers, 
+            check if stolen before buying, or access our anti-theft register for buyers, 
             we provide trusted item verification through our global stolen property database. 
             Our secure marketplace tool offers property legitimacy verification, helping 
             protect buyers and sellers in all secondhand transactions.

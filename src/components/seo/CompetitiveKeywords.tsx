@@ -10,7 +10,7 @@ export const CompetitiveKeywords: React.FC<CompetitiveKeywordsProps> = ({ pageTy
     switch (pageType) {
       case 'homepage':
         return {
-          primary: "safe secondhand buying, check if item is stolen, verify ownership before buying, secondhand item verification, trusted item verification",
+          primary: "safe secondhand buying, check if item is stolen, check if stolen before buying, secondhand item verification, trusted item verification",
           longtail: "is it safe to buy used, buy and sell safely, protect buyers and sellers, secondhand buyer protection, how to check if something is stolen before I buy it",
           competitor: "checkmend alternative, stolen register alternative, leads online alternative, free stolen check, global stolen property database"
         };

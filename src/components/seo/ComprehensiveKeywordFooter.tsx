@@ -16,7 +16,7 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
                 Check If Item Is Stolen
               </Link>
               <Link to="/verify-before-buying" className="block hover:text-primary">
-                Verify Ownership Before Buying
+                Check if Stolen Before Buying
               </Link>
               <Link to="/secondhand-verification" className="block hover:text-primary">
                 Secondhand Item Verification
@@ -80,7 +80,7 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm text-muted-foreground mb-4">
               SafeOrStolen provides comprehensive stolen goods verification services for safe secondhand buying. 
-              Our trusted item verification platform helps you check if item is stolen before you buy, verify ownership before buying used items, 
+              Our stolen goods checker helps you check if item is stolen before you buy, check if stolen before buying used items, 
               and access our global stolen property database. Whether you need IMEI device check, VIN lookup, or serial number verification, 
               our secure marketplace tool protects buyers and sellers from fraud.
             </p>

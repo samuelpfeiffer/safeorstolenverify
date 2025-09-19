@@ -64,7 +64,7 @@ const CheckCarPage: React.FC = () => {
               VIN Lookup - Secondhand Car Check
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Verify ownership before buying used vehicles with our free VIN lookup service
+              Check if vehicle is stolen before buying used vehicles with our free VIN lookup service
             </p>
             
             {/* Hero Image */}

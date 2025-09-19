@@ -90,9 +90,9 @@ const HomePage = () => {
         <GlobalAnalytics />
         <GoogleSearchConsoleSetup />
         <PageSEO
-          title="Check if Phone is Stolen | Free IMEI Lookup & VIN Verification | SafeOrStolen"
-          description="Free stolen phone checker & IMEI lookup. Verify phones, cars, electronics before buying. Check VIN numbers, serial numbers, IMEI against stolen goods databases instantly."
-          keywords="check if phone stolen, IMEI lookup, VIN check stolen, check serial number, stolen phone check, is phone stolen, verify IMEI, stolen goods check, free IMEI check, phone verification"
+          title="Check if Item is Stolen | Free Stolen Goods Checker | Protect Buyers | SafeOrStolen"
+          description="Free stolen goods checker for secondhand buyers. Check if guns, vehicles, electronics, tools are stolen before buying. Protect yourself from unknowingly purchasing stolen items."
+          keywords="check if stolen, stolen goods checker, secondhand buyer protection, avoid stolen goods, stolen gun check, stolen vehicle check, stolen electronics check, buyer protection service, used item verification"
           canonical="/"
           structuredData={homePageStructuredData}
         />

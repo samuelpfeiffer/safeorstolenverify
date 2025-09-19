@@ -19,7 +19,7 @@ export const AdvancedKeywordOptimizer: React.FC<AdvancedKeywordOptimizerProps> =
         'safe secondhand buying',
         'is it safe to buy used',
         'check if item is stolen',
-        'verify ownership before buying',
+        'check if stolen before buying',
         'secondhand item verification',
         'lost and stolen check',
         'buy and sell safely',

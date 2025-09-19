@@ -109,7 +109,7 @@ export const DetailedFAQSection: React.FC = () => {
         {
           question: "Should I check rental cars or lease vehicles?",
           answer: "Yes! Rental cars are sometimes sold fraudulently by people who don't own them. Lease vehicles may be sold before lease completion. Always verify any vehicle purchase, regardless of the seller's claims about ownership or rental history.",
-          searches: ["rental car fraud", "lease vehicle verification", "car ownership verification"]
+          searches: ["rental car fraud", "lease vehicle verification", "car history check"]
         }
       ]
     },

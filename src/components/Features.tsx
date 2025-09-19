@@ -18,7 +18,7 @@ const Features = () => {
     {
       icon: <ShieldCheck className="h-8 w-8 text-sos-orange" />,
       title: "Safe Secondhand Buying",
-      description: "Check if item is stolen before you buy. Verify ownership before buying used items to protect yourself from legal issues and fraud."
+      description: "Check if item is stolen before you buy. Protect yourself from unknowingly purchasing stolen secondhand goods and avoid legal issues."
     },
     {
       icon: <Clock className="h-8 w-8 text-sos-lime" />,

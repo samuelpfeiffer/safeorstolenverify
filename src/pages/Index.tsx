@@ -59,8 +59,8 @@ const Index = () => {
       {/* Advanced SEO Optimization - Outrank Competition */}
       <UnifiedSEOOptimizer
         title="Safe Secondhand Buying - Check If Item Is Stolen Before You Buy | SafeOrStolen"
-        description="Free stolen item verification service. Verify ownership before buying used items. Check IMEI, VIN, serial numbers against global stolen property database. Trusted item verification platform."
-        keywords="safe secondhand buying, check if item is stolen, verify ownership before buying, secondhand item verification, buy and sell safely, protect buyers and sellers, IMEI device check, serial number lookup, VIN lookup, stolen goods verification, trusted item verification, global stolen property database, secure marketplace tool"
+        description="Free stolen item verification service. Check if items are stolen before buying used goods. Protect yourself from unknowingly purchasing stolen guns, vehicles, electronics, and tools from our global stolen property database."
+        keywords="safe secondhand buying, check if item is stolen, check if stolen before buying, secondhand item verification, buy and sell safely, protect buyers and sellers, IMEI device check, serial number lookup, VIN lookup, stolen goods verification, trusted item verification, global stolen property database, secure marketplace tool, stolen gun check, stolen vehicle check, stolen electronics check"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
@@ -71,7 +71,7 @@ const Index = () => {
       <AdvancedKeywordOptimizer 
         pageType="homepage" 
         context="transaction"
-        primaryKeywords={['safe secondhand buying', 'check if item is stolen', 'verify ownership before buying']}
+        primaryKeywords={['safe secondhand buying', 'check if item is stolen', 'check if stolen before buying']}
       />
       <DomainAuthorityBooster pageType="homepage" />
       <LinkBuildingHelper 
@@ -87,7 +87,7 @@ const Index = () => {
       />
       <GoogleDiscoverOptimizer 
         title="Safe Secondhand Buying - Verify Ownership Before Buying Used Items"
-        description="Instantly check if phones, cars, electronics and other items are stolen before you buy. Free verification tools for safe secondhand buying and trusted item verification."
+        description="Instantly check if phones, cars, electronics and other items are stolen before you buy. Free verification tools for safe secondhand buying and buyer protection from stolen goods."
         image="/assets/hero-verification-devices.png"
         category="Consumer Protection"
         enableFollow={true}
@@ -102,8 +102,8 @@ const Index = () => {
               SafeOrStolen
             </h1>
               <p className="text-lg md:text-2xl text-muted-foreground mb-6">
-               Safe secondhand buying platform with trusted item verification. Check if item is stolen before you buy. 
-               Free verification service for consumers and businesses to protect buyers and sellers.
+               Safe secondhand buying platform - check if items are stolen before buying used goods. Protect yourself from unknowingly purchasing stolen items. 
+               Free stolen goods checker for consumers and businesses.
               </p>
             <p className="text-lg text-muted-foreground">
               Enable JavaScript to access our full verification platform.

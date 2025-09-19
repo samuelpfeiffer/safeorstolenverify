@@ -77,7 +77,7 @@ const Hero = memo(() => {
             SafeOrStolen
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            Safe secondhand buying platform - verify ownership before buying used items. Check if item is stolen using IMEI device check, VIN lookup, and serial number verification. Trusted item verification for secure marketplace transactions.
+            Safe secondhand buying platform - check if items are stolen before buying used goods. Protect yourself from unknowingly purchasing stolen guns, vehicles, electronics, tools, and more. Free stolen goods verification service.
           </p>
           
           
@@ -95,7 +95,7 @@ const Hero = memo(() => {
               aria-describedby="main-headline"
             >
               <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-              Verify Ownership Before Buying - Free Check
+              Check if Stolen Before Buying - Free
             </Button>
             <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
               <Link to="/for-brands">
@@ -126,7 +126,7 @@ const Hero = memo(() => {
           {/* Call to Action for Dashboard Access */}
           <div className="text-center mb-8">
             <p className="text-lg md:text-xl text-gray-300 mb-4">
-              Buy used safely online with our trusted item verification service. Check property before selling and protect yourself from stolen goods.
+              Buy used safely online with our stolen goods checker. Protect yourself from unknowingly purchasing stolen items like guns, vehicles, electronics, and tools.
             </p>
             <Button 
               size="lg" 
