@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'basic' | 'premium' | 'enterprise') => {
+  const handleSubscribe = useCallback(async (tier: 'payPerCheck' | 'entryLevel' | 'basic' | 'premium' | 'enterprise') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({

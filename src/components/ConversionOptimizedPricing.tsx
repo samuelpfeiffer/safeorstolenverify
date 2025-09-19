@@ -109,21 +109,21 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
       buttonText: 'Pay Per Check'
     },
     {
-      id: 'entryLevel' as const,
-      name: SUBSCRIPTION_TIERS.entryLevel.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
-      period: SUBSCRIPTION_TIERS.entryLevel.interval,
-      description: 'Perfect for regular buyers',
-      features: SUBSCRIPTION_TIERS.entryLevel.features || [],
-      buttonText: 'Start 7-Day Trial'
-    },
-    {
       id: 'basic' as const,
       name: SUBSCRIPTION_TIERS.basic.name,
       price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
       period: SUBSCRIPTION_TIERS.basic.interval,
       description: 'Perfect for occasional buyers',
       features: SUBSCRIPTION_TIERS.basic.features || [],
+      buttonText: 'Start 7-Day Trial'
+    },
+    {
+      id: 'entryLevel' as const,
+      name: SUBSCRIPTION_TIERS.entryLevel.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
+      period: SUBSCRIPTION_TIERS.entryLevel.interval,
+      description: 'Perfect for regular buyers',
+      features: SUBSCRIPTION_TIERS.entryLevel.features || [],
       buttonText: 'Start 7-Day Trial'
     },
     {

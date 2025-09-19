@@ -102,7 +102,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   }
 };
 
-export const getSubscriptionPriceId = (tier: 'basic' | 'premium' | 'enterprise'): string => {
+export const getSubscriptionPriceId = (tier: 'payPerCheck' | 'entryLevel' | 'basic' | 'premium' | 'enterprise'): string => {
   return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
 };
 
