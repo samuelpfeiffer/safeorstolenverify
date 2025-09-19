@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check, Star, Shield, Zap, Clock, Users } from 'lucide-react';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
 
 interface PricingTierProps {
   name: string;
@@ -89,7 +90,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'basic' | 'premium' | 'enterprise') => void;
+  onSubscribe: (tier: 'payPerCheck' | 'entryLevel' | 'basic' | 'premium' | 'enterprise') => void;
   loadingTier?: string | null;
 }
 
@@ -99,57 +100,50 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
 }) => {
   const tiers = [
     {
+      id: 'payPerCheck' as const,
+      name: SUBSCRIPTION_TIERS.payPerCheck.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price),
+      period: SUBSCRIPTION_TIERS.payPerCheck.interval,
+      description: 'Quick verification without commitment',
+      features: SUBSCRIPTION_TIERS.payPerCheck.features || [],
+      buttonText: 'Pay Per Check'
+    },
+    {
+      id: 'entryLevel' as const,
+      name: SUBSCRIPTION_TIERS.entryLevel.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
+      period: SUBSCRIPTION_TIERS.entryLevel.interval,
+      description: 'Perfect for regular buyers',
+      features: SUBSCRIPTION_TIERS.entryLevel.features || [],
+      buttonText: 'Start 7-Day Trial'
+    },
+    {
       id: 'basic' as const,
-      name: 'Smart Buyer',
-      price: '$7.99',
-      period: 'month',
+      name: SUBSCRIPTION_TIERS.basic.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
+      period: SUBSCRIPTION_TIERS.basic.interval,
       description: 'Perfect for occasional buyers',
-      features: [
-        'Unlimited item verifications',
-        'Real-time database checks',
-        'IMEI, VIN & serial lookup',
-        'Basic reports & history',
-        'Email support',
-        'Mobile app access'
-      ],
-      buttonText: 'Start Protecting Yourself'
+      features: SUBSCRIPTION_TIERS.basic.features || [],
+      buttonText: 'Start 7-Day Trial'
     },
     {
       id: 'premium' as const,
-      name: 'Savvy Shopper',
-      price: '$19.99',
-      period: 'month',
+      name: SUBSCRIPTION_TIERS.premium.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
+      period: SUBSCRIPTION_TIERS.premium.interval,
       description: 'For serious marketplace users',
-      features: [
-        'Everything in Smart Buyer',
-        'Advanced verification reports',
-        'Bulk checking tools',
-        'Priority customer support',
-        'API access (limited)',
-        'Purchase protection alerts',
-        'Detailed fraud analytics',
-        'Custom notifications'
-      ],
-      buttonText: 'Upgrade to Premium',
-      popular: true
+      features: SUBSCRIPTION_TIERS.premium.features || [],
+      buttonText: 'Start 7-Day Trial',
+      popular: SUBSCRIPTION_TIERS.premium.popular
     },
     {
       id: 'enterprise' as const,
-      name: 'Business Pro',
-      price: '$99.99',
-      period: 'month',
+      name: SUBSCRIPTION_TIERS.enterprise.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price),
+      period: SUBSCRIPTION_TIERS.enterprise.interval,
       description: 'For businesses and power users',
-      features: [
-        'Everything in Savvy Shopper',
-        'Full API access & integration',
-        'White-label solutions',
-        'Dedicated account manager',
-        'Custom integrations',
-        'Advanced analytics dashboard',
-        'Team management tools',
-        'SLA guarantees'
-      ],
-      buttonText: 'Contact Sales'
+      features: SUBSCRIPTION_TIERS.enterprise.features || [],
+      buttonText: 'Start 7-Day Trial'
     }
   ];
 
@@ -184,7 +178,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto mb-12">
           {tiers.map((tier) => (
             <PricingTier
               key={tier.id}
