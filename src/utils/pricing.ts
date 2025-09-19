@@ -25,11 +25,11 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   payPerCheck: {
     name: 'Pay Per Check',
     price: 500, // $5.00 in cents
-    interval: 'day',
+    interval: 'month',
     features: [
-      'Single verification check',
-      'Instant results',
-      'Basic verification report',
+      'Quick, on-demand access',
+      'Instantly verify IMEI, VIN, or serial',
+      'No subscription required',
       'Email support'
     ],
     stripePriceId: 'price_1S9CuPGxnZLw8J7OyBKr6134'
@@ -67,11 +67,10 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     popular: true,
     features: [
       '7-day free trial',
-      'Everything in Entry Level',
+      'Everything in Smart Buyer',
       'Advanced verification reports',
-      'API access (100 calls/month)',
-      'Priority support',
-      'Custom verification alerts'
+      'Bulk checking tools',
+      'Priority support'
     ],
     stripePriceId: 'price_1S0uGiGxnZLw8J7OQEwssbK7'
   },
