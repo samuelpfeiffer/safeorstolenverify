@@ -73,7 +73,7 @@ export const ConsolidatedSEO: React.FC = () => {
       <meta httpEquiv="content-language" content="en" />
       
       {/* Site verification placeholders - replace with actual codes */}
-      <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
+      <meta name="google-site-verification" content="CEKJMjlTWCmifp7l0LdxaIrp5wtSuxQ4Q6gXsLv-MEE" />
       <meta name="msvalidate.01" content="REPLACE_WITH_BING_VERIFICATION_CODE" />
       
       {/* Additional crawling hints */}
