@@ -6,16 +6,17 @@ http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
 http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
-# Remove trailing slash consistency issues - let SPA handle routing
-# https://safeorstolen.com/*/ https://safeorstolen.com/:splat 301!
-
-# Specific redirects for pages that were returning 404s
-/terms /terms-of-service 301
+# Specific redirects to prevent Google Search Console issues
+/terms /terms-of-service 301!
+/imei /check-phone 301!
+/imei-checker /check-phone 301!
+/vin-checker /check-car 301!
+/serial-checker /check-electronics 301!
 
 # E-commerce routes that don't apply to our verification service - redirect to services
-/wishlist /services 301
-/cart /services 301  
-/shopping-cart /services 301
+/wishlist /services 301!
+/cart /services 301!
+/shopping-cart /services 301!
 
 # RSS Feed redirects for Google Discover Follow feature
 /feed.xml /rss 200

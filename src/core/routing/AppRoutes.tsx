@@ -4,8 +4,7 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
 import { AppLayout } from '@/components/layout/AppLayout';
-import { CanonicalFix } from '@/components/seo/CanonicalFix';
-import { GlobalSEOFixer } from '@/components/seo/GlobalSEOFixer';
+// Removed duplicate SEO components - using ConsolidatedSEO in AppRoot.tsx instead
 
 // Lazy load all pages for optimal performance
 const HomePage = lazy(() => import('@/pages/HomePage'));
@@ -122,10 +121,7 @@ const RSSFeedPage = lazy(() => import('@/pages/RSSFeedPage'));
  */
 export const AppRoutes: React.FC = () => {
   return (
-    <>
-      <GlobalSEOFixer />
-      <CanonicalFix />
-      <Suspense fallback={<AppLoadingScreen />}>
+    <Suspense fallback={<AppLoadingScreen />}>
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
@@ -338,6 +334,5 @@ export const AppRoutes: React.FC = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       </Suspense>
-    </>
   );
 };
