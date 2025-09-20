@@ -8,6 +8,9 @@ import { AppLayout } from '@/components/layout/AppLayout';
 
 // Lazy load all pages for optimal performance
 const HomePage = lazy(() => import('@/pages/HomePage'));
+const StolenItemChecker = lazy(() => import('@/pages/StolenItemChecker'));
+const IMEICheck = lazy(() => import('@/pages/IMEICheck'));
+const VINVerification = lazy(() => import('@/pages/VINVerification'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const VerificationPage = lazy(() => import('@/pages/VerificationPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
@@ -130,6 +133,14 @@ export const AppRoutes: React.FC = () => {
         {/* Public Routes */}
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />} />
+          
+          {/* SEO-Focused Landing Pages for Stolen Item Searches */}
+          <Route path="stolen-item-checker" element={<StolenItemChecker />} />
+          <Route path="imei-check" element={<IMEICheck />} />
+          <Route path="vin-verification" element={<VINVerification />} />
+          <Route path="serial-number-lookup" element={<StolenItemChecker />} />
+          <Route path="check" element={<StolenItemChecker />} />
+          <Route path="verify" element={<Navigate to="/stolen-item-checker" replace />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="subscriptions" element={<PricingPage />} />
           <Route path="pricing" element={<PricingPage />} />

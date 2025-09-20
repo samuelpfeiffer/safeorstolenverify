@@ -1,32 +1,33 @@
-# SafeOrStolen.com - Enhanced robots.txt for AI and Search Engine Optimization
-# Designed to rank #1 for stolen goods verification searches
-
 User-agent: *
 Allow: /
 
-# High-priority pages for search engines
-Allow: /dashboard
+# SEO-focused pages for stolen goods verification
+Allow: /stolen-item-checker
+Allow: /imei-check
+Allow: /vin-verification
+Allow: /serial-number-lookup
+Allow: /check
+Allow: /verify
 Allow: /blog/
+Allow: /how-it-works
+Allow: /community-stories
+
+# High-priority pages for search engines  
+Allow: /dashboard
 Allow: /pricing
 Allow: /for-consumers
 Allow: /for-businesses
-Allow: /how-it-works
 Allow: /about
 Allow: /api-docs
-Allow: /imei-checker
-Allow: /vin-verification
-Allow: /serial-number-checker
-Allow: /seo-strategy
 
 # Block admin and internal pages
 Disallow: /admin/
 Disallow: /api/
 Disallow: /auth/
-Disallow: /dashboard/admin
-Disallow: /integrations/admin
-Disallow: /subscription/
+Disallow: /subscriptions/
 Disallow: /checkout/
 Disallow: /profile/
+Disallow: /settings/
 Disallow: *.json$
 Disallow: /components/
 Disallow: /utils/
@@ -40,62 +41,16 @@ Disallow: /*?*preview=*
 Disallow: /*?*debug=*
 Disallow: /*?*test=*
 
-# AI Search Engine Specific Rules
-# OpenAI GPT
-User-agent: GPTBot
-Allow: /
-Allow: /blog/
-Allow: /api-docs
-Allow: /how-it-works
-Disallow: /admin/
-Disallow: /auth/
-
-# Claude (Anthropic)
-User-agent: Claude-Web
-Allow: /
-Allow: /blog/
-Allow: /api-docs
-Disallow: /admin/
-Disallow: /auth/
-
-# Google Bard
-User-agent: GoogleOther
-Allow: /
-Allow: /blog/
-Allow: /api-docs
-Disallow: /admin/
-Disallow: /auth/
-
-# Bing Chat
-User-agent: BingPreview
-Allow: /
-Allow: /blog/
-Allow: /api-docs
-Disallow: /admin/
-Disallow: /auth/
-
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-Allow: /blog/
-Allow: /api-docs
-Disallow: /admin/
-Disallow: /auth/
-
-# You.com AI Search
-User-agent: YouBot
-Allow: /
-Allow: /blog/
-Allow: /api-docs
-Disallow: /admin/
-Disallow: /auth/
+# Allow search parameters for verification
+Allow: /*?q=*
+Allow: /*?serial=*
+Allow: /*?imei=*
 
 # Crawl delay for responsible crawling
 Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/blog-sitemap.xml
 
 # Host directive for canonical domain
 Host: https://safeorstolen.com

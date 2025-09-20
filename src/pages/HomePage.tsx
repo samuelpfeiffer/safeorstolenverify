@@ -91,9 +91,9 @@ const HomePage = () => {
         <GlobalAnalytics />
         <GoogleSearchConsoleSetup />
         <PageSEO
-          title="Protect Buyers & Sellers | Free Stolen Goods Verification | SafeOrStolen Mobile App"
-          description="Instantly verify the legitimacy of phones, electronics, vehicles, and more with IMEI, VIN, and serial number checks powered by law enforcement, insurance, and trusted global data partners. SafeOrStolen.com empowers buyers and sellers with secure, transparent secondhand verification for every transaction."
-          keywords="protect buyers sellers, stolen goods verification, secondhand market protection, IMEI check, VIN verification, serial number lookup, mobile verification app, seller reputation protection, buyer fraud prevention"
+          title="Free Stolen Item Checker | Verify IMEI, VIN & Serial Numbers | SafeOrStolen"
+          description="#1 Free stolen item checker - Instantly verify if phones, cars, electronics are stolen. Check IMEI, VIN, serial numbers against police databases. Protect yourself from buying stolen goods."
+          keywords="stolen item checker, stolen goods verification, IMEI check stolen, VIN stolen lookup, serial number stolen, check if stolen, stolen phone IMEI, stolen car VIN, secondhand verification, buy safe used items"
           canonical="/"
           structuredData={homePageStructuredData}
         />
