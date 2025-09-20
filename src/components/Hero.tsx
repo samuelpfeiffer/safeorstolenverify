@@ -77,7 +77,7 @@ const Hero = memo(() => {
             SafeOrStolen
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            Protect buyers and sellers in the secondhand market. Instantly verify phones, electronics, vehicles using IMEI, VIN, or serial numbers. Prevent buying stolen goods and help sellers prove legitimacy.
+            Free stolen item lookup & IMEI checker. Search stolen database for electronics, vehicles, phones. Check IMEI block status, VIN verification & serial number lookup. Avoid buying stolen goods - find stolen property instantly.
           </p>
           
           
@@ -95,7 +95,7 @@ const Hero = memo(() => {
               aria-describedby="main-headline"
             >
               <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-              Protect Buyers & Sellers - Free Check
+              Check Stolen Status - Free Verification
             </Button>
             <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
               <Link to="/for-brands">
@@ -155,16 +155,16 @@ const Hero = memo(() => {
                 <p className="text-sm text-gray-400 mb-4">Popular Safe Secondhand Buying Tools:</p>
                 <div className="flex flex-wrap justify-center gap-2">
                   <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/check-if-stolen">Check If Item Stolen</Link>
+                    <Link to="/stolen-item-checker">Stolen Item Lookup</Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/check-phone">IMEI Device Check</Link>
+                    <Link to="/imei-check">Free IMEI Checker</Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/check-car">VIN Lookup</Link>
+                    <Link to="/vin-verification">VIN Check Free</Link>
                   </Button>
                   <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/how-to-check-if-item-stolen">Safe Buying Guide</Link>
+                    <Link to="/guides/how-to-check-stolen-items">How to Check if Item Stolen</Link>
                   </Button>
                 </div>
               </div>

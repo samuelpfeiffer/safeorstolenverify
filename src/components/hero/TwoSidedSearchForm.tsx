@@ -158,7 +158,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
           <div className="relative">
             <Input
               type="text"
-              placeholder="Enter serial number, IMEI, or VIN code"
+              placeholder="Enter IMEI, VIN, or serial number to check stolen status"
               value={serialNumber}
               onChange={(e) => handleInputChange(e.target.value)}
               className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 pr-12"
