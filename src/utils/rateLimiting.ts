@@ -9,15 +9,38 @@ const rateLimitConfigs: Record<string, RateLimitConfig> = {
   authentication: { maxAttempts: 5, windowMs: 300000 }, // 5 attempts per 5 minutes
 };
 
-export const checkRateLimit = async (action: string): Promise<boolean> => {
+export const checkRateLimit = async (action: string, userId?: string): Promise<boolean> => {
   try {
     const config = rateLimitConfigs[action];
     if (!config) return true; // No rate limit configured
 
-    const key = `rate_limit_${action}`;
+    // Use database-based rate limiting for authenticated users
+    if (userId) {
+      try {
+        const { supabase } = await import('@/integrations/supabase/client');
+        const { data, error } = await supabase.rpc('check_secure_rate_limit', {
+          user_identifier: userId,
+          action_type: action,
+          max_requests: config.maxAttempts,
+          window_minutes: Math.ceil(config.windowMs / 60000)
+        });
+        
+        if (error) {
+          console.error('Database rate limit check failed:', error);
+          // Fall back to localStorage
+        } else if (data && typeof data === 'object' && 'allowed' in data) {
+          return (data as any).allowed === true;
+        }
+      } catch (dbError) {
+        console.error('Database rate limit error:', dbError);
+        // Fall back to localStorage
+      }
+    }
+
+    // Fallback to localStorage-based rate limiting
+    const key = `rate_limit_${action}_${userId || 'anon'}`;
     const now = Date.now();
     
-    // Get stored attempts from localStorage (in a real app, use Redis or database)
     const storedData = localStorage.getItem(key);
     let attempts: number[] = storedData ? JSON.parse(storedData) : [];
     

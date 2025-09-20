@@ -15,14 +15,19 @@ export const validateEmailSecurity = (email: string): ValidationResult => {
 
   const trimmedEmail = email.trim().toLowerCase();
   
-  // Basic email format validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Enhanced email format validation
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(trimmedEmail)) {
     errors.push('Please enter a valid email address');
   }
 
-  // Check for suspicious patterns
-  if (trimmedEmail.includes('..')) {
+  // Check for suspicious patterns and length limits
+  if (trimmedEmail.includes('..') || trimmedEmail.length > 254) {
+    errors.push('Email contains invalid characters or is too long');
+  }
+
+  // Check for script injection attempts
+  if (/script|javascript|vbscript/i.test(trimmedEmail)) {
     errors.push('Email contains invalid characters');
   }
 
@@ -98,21 +103,26 @@ export const validateSerialNumberSecurity = (serialNumber: string): ValidationRe
     return { isValid: false, errors };
   }
 
-  const trimmed = serialNumber.trim();
+  // Enhanced validation: remove spaces and special characters, keep only alphanumeric
+  const sanitized = serialNumber.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
   
-  if (trimmed.length < 1 || trimmed.length > 100) {
-    errors.push('Serial number must be between 1 and 100 characters');
+  if (sanitized.length < 3) {
+    errors.push('Serial number must be at least 3 characters (after removing spaces and special characters)');
+  }
+  
+  if (sanitized.length > 50) {
+    errors.push('Serial number too long (maximum 50 alphanumeric characters)');
   }
 
-  // Allow alphanumeric, spaces, hyphens, and underscores only
-  if (!/^[a-zA-Z0-9\s\-_]+$/.test(trimmed)) {
-    errors.push('Serial number contains invalid characters');
+  // Check for malicious patterns
+  if (/SCRIPT|JAVASCRIPT|VBSCRIPT|ONLOAD|ONERROR/.test(sanitized)) {
+    errors.push('Serial number contains invalid patterns');
   }
 
   return {
     isValid: errors.length === 0,
     errors,
-    sanitizedValue: errors.length === 0 ? trimmed : undefined,
+    sanitizedValue: errors.length === 0 ? sanitized : undefined,
   };
 };
 

@@ -8,11 +8,14 @@ export const SECURITY_CONFIG = {
   MAX_ITEM_TYPE_LENGTH: 50,
   MAX_FULL_NAME_LENGTH: 200,
   
-  // Rate limiting (requests per hour) - will be overridden by database config
+  // Enhanced rate limiting (requests per hour) - will be overridden by database config
   RATE_LIMITS: {
     VERIFICATION: 10,
     SEARCH_HISTORY: 50,
-    PROFILE_UPDATE: 5
+    PROFILE_UPDATE: 5,
+    AUTHENTICATION: 5,
+    PASSWORD_RESET: 3,
+    API_REQUESTS: 100
   },
   
   // Session management - will be overridden by database config

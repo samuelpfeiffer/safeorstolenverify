@@ -3,23 +3,26 @@
  * Mobile-friendly security headers configuration
  */
 export const SECURITY_HEADERS = {
-  // Very permissive CSP for mobile compatibility
+  // Balanced CSP - secure but functional
   'Content-Security-Policy': [
-    "default-src 'self' 'unsafe-inline' 'unsafe-eval' *",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' * blob: data:",
-    "style-src 'self' 'unsafe-inline' *",
-    "font-src 'self' * data:",
-    "img-src 'self' * data: blob:",
-    "connect-src 'self' * ws: wss:",
-    "frame-src 'self' *",
-    "object-src 'self'",
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' https://js.stripe.com https://checkout.stripe.com",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com data:",
+    "img-src 'self' data: blob: https:",
+    "connect-src 'self' https: wss: https://*.supabase.co",
+    "frame-src 'self' https://js.stripe.com https://checkout.stripe.com",
+    "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self' *"
+    "form-action 'self'"
   ].join('; '),
   
-  // Mobile-friendly security headers
+  // Enhanced security headers
   'X-Content-Type-Options': 'nosniff',
-  'Referrer-Policy': 'strict-origin-when-cross-origin'
+  'X-Frame-Options': 'DENY',
+  'X-XSS-Protection': '1; mode=block',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
 } as const;
 
 export const applySecurityHeaders = (): void => {
