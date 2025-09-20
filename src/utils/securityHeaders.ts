@@ -3,7 +3,7 @@
  * Mobile-friendly security headers configuration
  */
 export const SECURITY_HEADERS = {
-  // Balanced CSP - secure but functional
+  // Enhanced security headers with balanced CSP for functionality
   'Content-Security-Policy': [
     "default-src 'self'",
     "script-src 'self' 'unsafe-inline' https://js.stripe.com https://checkout.stripe.com",
@@ -14,15 +14,19 @@ export const SECURITY_HEADERS = {
     "frame-src 'self' https://js.stripe.com https://checkout.stripe.com",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self'"
+    "form-action 'self' https://checkout.stripe.com",
+    "upgrade-insecure-requests"
   ].join('; '),
   
-  // Enhanced security headers
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'DENY',
   'X-XSS-Protection': '1; mode=block',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
-  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(self)',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+  'Cross-Origin-Embedder-Policy': 'credentialless',
+  'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+  'Cross-Origin-Resource-Policy': 'cross-origin'
 } as const;
 
 export const applySecurityHeaders = (): void => {

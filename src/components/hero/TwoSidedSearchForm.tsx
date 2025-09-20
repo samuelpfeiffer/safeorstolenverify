@@ -80,7 +80,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
     }
 
     // Security validation
-    const validation = validateSerialNumberSecurity(serialNumber);
+    const validation = await validateSerialNumberSecurity(serialNumber);
     if (!validation.isValid) {
       toast({
         title: "Invalid Input",

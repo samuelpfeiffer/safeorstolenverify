@@ -6,6 +6,10 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/lib/auth';
 import { useSecureSignInForm, getMobileErrorMessage, SecureSignInFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useToast } from '@/hooks/use-toast';
+import { checkRateLimit } from '@/utils/rateLimiting';
+import { validateEmailSecurity } from '@/utils/securityValidation';
+import { logEnhancedSecurityEvent } from '@/utils/enhancedSecurityAudit';
 
 interface SignInFormSecureProps {
   onSuccess?: () => void;
@@ -14,6 +18,8 @@ interface SignInFormSecureProps {
 export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
   const { signIn, loading: authLoading } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
+  const [rateLimitCheck, setRateLimitCheck] = useState(true);
+  const { toast } = useToast();
   const isMobile = useIsMobile();
   const form = useSecureSignInForm({
     enableMobileOptimizations: isMobile,
@@ -22,13 +28,63 @@ export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
   });
 
   const handleSignIn = async (data: SecureSignInFormData) => {
+    if (!rateLimitCheck) return;
+    
     setIsLoading(true);
     try {
-      const result = await signIn(data.email, data.password);
-      form.reset();
-      onSuccess?.();
+      // Enhanced input validation (synchronous email validation)
+      const emailValidation = validateEmailSecurity(data.email);
+      if (!emailValidation.isValid) {
+        toast({
+          title: "Invalid email",
+          description: emailValidation.errors[0],
+          variant: "destructive"
+        });
+        return;
+      }
+
+      const { error } = await signIn(emailValidation.sanitizedValue || data.email, data.password);
+      
+      if (error) {
+        toast({
+          title: "Sign in failed",
+          description: (error as any)?.message || "Please check your email and password",
+          variant: "destructive"
+        });
+        
+        // Enhanced rate limit check for failed attempt
+        const rateLimitAllowed = await checkRateLimit('authentication', undefined, window.location.hostname);
+        setRateLimitCheck(rateLimitAllowed);
+        
+        // Log security event for failed authentication
+        await logEnhancedSecurityEvent({
+          action: 'FAILED_SIGN_IN_ATTEMPT',
+          details: {
+            email: emailValidation.sanitizedValue || data.email,
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent
+          }
+        });
+      } else {
+        form.reset();
+        onSuccess?.();
+        
+        // Log successful authentication
+        await logEnhancedSecurityEvent({
+          action: 'SUCCESSFUL_SIGN_IN',
+          details: {
+            email: emailValidation.sanitizedValue || data.email,
+            timestamp: new Date().toISOString()
+          }
+        });
+      }
     } catch (error) {
       console.error('Secure sign in failed:', error);
+      toast({
+        title: "Sign in failed",
+        description: "An unexpected error occurred",
+        variant: "destructive"
+      });
     } finally {
       setIsLoading(false);
     }

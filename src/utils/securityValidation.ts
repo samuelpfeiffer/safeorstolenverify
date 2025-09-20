@@ -95,23 +95,51 @@ export const validateNameSecurity = (name: string, fieldName: string): Validatio
   };
 };
 
-export const validateSerialNumberSecurity = (serialNumber: string): ValidationResult => {
-  const errors: string[] = [];
-  
-  if (!serialNumber) {
-    errors.push('Serial number is required');
-    return { isValid: false, errors };
+export const validateSerialNumberSecurity = async (serialNumber: string): Promise<ValidationResult> => {
+  if (!serialNumber || typeof serialNumber !== 'string') {
+    return { isValid: false, errors: ['Serial number is required'] };
   }
 
-  // Enhanced validation: remove spaces and special characters, keep only alphanumeric
-  const sanitized = serialNumber.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  // Use enhanced database validation for better security
+  try {
+    const { supabase } = await import('@/integrations/supabase/client');
+    const { data, error } = await supabase.rpc('validate_serial_number_enhanced', {
+      input_serial: serialNumber
+    });
+    
+    if (error) {
+      console.error('Database validation failed:', error);
+      // Fall back to client-side validation
+    } else if (data && typeof data === 'object') {
+      const result = data as any;
+      if (result.valid) {
+        return {
+          isValid: true,
+          errors: [],
+          sanitizedValue: result.sanitized_value
+        };
+      } else {
+        return {
+          isValid: false,
+          errors: [result.error]
+        };
+      }
+    }
+  } catch (error) {
+    console.error('Serial number validation error:', error);
+    // Fall back to client-side validation
+  }
+
+  // Fallback client-side validation
+  const errors: string[] = [];
+  const sanitized = serialNumber.trim().toUpperCase().replace(/[^A-Z0-9\-_]/g, '');
   
   if (sanitized.length < 3) {
-    errors.push('Serial number must be at least 3 characters (after removing spaces and special characters)');
+    errors.push('Serial number must be at least 3 characters');
   }
   
   if (sanitized.length > 50) {
-    errors.push('Serial number too long (maximum 50 alphanumeric characters)');
+    errors.push('Serial number too long (maximum 50 characters)');
   }
 
   // Check for malicious patterns

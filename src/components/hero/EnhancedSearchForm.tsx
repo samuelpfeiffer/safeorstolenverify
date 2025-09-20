@@ -46,7 +46,7 @@ export const EnhancedSearchForm = ({ onOpenQrScanner }: EnhancedSearchFormProps)
   };
 
   const handleSearch = async () => {
-    const validation = validateSerialNumberSecurity(serialNumber);
+    const validation = await validateSerialNumberSecurity(serialNumber);
     
     if (!validation.isValid) {
       const error = createSecureError(

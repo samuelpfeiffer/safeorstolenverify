@@ -1996,6 +1996,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      check_enhanced_rate_limit: {
+        Args: {
+          action_type: string
+          ip_address?: string
+          max_requests?: number
+          user_identifier: string
+          window_minutes?: number
+        }
+        Returns: Json
+      }
       check_item_verification_status: {
         Args: { item_identifier: string; item_type_param?: string }
         Returns: Json
@@ -2106,6 +2116,10 @@ export type Database = {
             }
           | { token_id: string; token_user_id: string }
         Returns: boolean
+      }
+      validate_serial_number_enhanced: {
+        Args: { input_serial: string }
+        Returns: Json
       }
       validate_serial_number_secure: {
         Args: { input_serial: string }

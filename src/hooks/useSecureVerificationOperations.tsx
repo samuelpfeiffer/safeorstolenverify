@@ -27,7 +27,7 @@ export const useSecureVerificationOperations = () => {
       }
 
       // Validate and sanitize inputs
-      const serialValidation = validateSerialNumberSecurity(verificationData.serial_number);
+      const serialValidation = await validateSerialNumberSecurity(verificationData.serial_number);
       if (!serialValidation.isValid) {
         throw new Error(serialValidation.errors[0]);
       }

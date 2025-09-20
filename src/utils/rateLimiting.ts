@@ -9,32 +9,37 @@ const rateLimitConfigs: Record<string, RateLimitConfig> = {
   authentication: { maxAttempts: 5, windowMs: 300000 }, // 5 attempts per 5 minutes
 };
 
-export const checkRateLimit = async (action: string, userId?: string): Promise<boolean> => {
+export const checkRateLimit = async (action: string, userId?: string, ipAddress?: string): Promise<boolean> => {
   try {
     const config = rateLimitConfigs[action];
     if (!config) return true; // No rate limit configured
 
-    // Use database-based rate limiting for authenticated users
-    if (userId) {
-      try {
-        const { supabase } = await import('@/integrations/supabase/client');
-        const { data, error } = await supabase.rpc('check_secure_rate_limit', {
-          user_identifier: userId,
-          action_type: action,
-          max_requests: config.maxAttempts,
-          window_minutes: Math.ceil(config.windowMs / 60000)
-        });
-        
-        if (error) {
-          console.error('Database rate limit check failed:', error);
-          // Fall back to localStorage
-        } else if (data && typeof data === 'object' && 'allowed' in data) {
-          return (data as any).allowed === true;
-        }
-      } catch (dbError) {
-        console.error('Database rate limit error:', dbError);
+    // Always try database-based rate limiting first
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      const identifier = userId || `anon_${ipAddress || 'unknown'}`;
+      
+      const { data, error } = await supabase.rpc('check_enhanced_rate_limit', {
+        user_identifier: identifier,
+        action_type: action,
+        max_requests: config.maxAttempts,
+        window_minutes: Math.ceil(config.windowMs / 60000),
+        ip_address: ipAddress
+      });
+      
+      if (error) {
+        console.error('Enhanced rate limit check failed:', error);
         // Fall back to localStorage
+      } else if (data && typeof data === 'object' && 'allowed' in data) {
+        const result = data as any;
+        if (!result.allowed && result.limit_exceeded) {
+          console.warn(`Rate limit exceeded for ${action}. Reset time:`, result.reset_time);
+        }
+        return result.allowed === true;
       }
+    } catch (dbError) {
+      console.error('Database rate limit error:', dbError);
+      // Fall back to localStorage
     }
 
     // Fallback to localStorage-based rate limiting

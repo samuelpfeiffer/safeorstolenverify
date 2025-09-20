@@ -53,9 +53,10 @@ export const useSecureStripe = (options: SecureStripeOptions = {}) => {
     }
 
     // Input validation
+    let serialValidation: any = null;
     if (enableInputValidation) {
       if (!isSubscription) {
-        const serialValidation = validateSerialNumberSecurity(serialNumber);
+        serialValidation = await validateSerialNumberSecurity(serialNumber);
         if (!serialValidation.isValid) {
           toast({
             title: "Invalid input",
@@ -84,8 +85,8 @@ export const useSecureStripe = (options: SecureStripeOptions = {}) => {
         redirectUrl: window.location.origin,
         isSubscription,
         ...(isSubscription ? {} : {
-          serialNumber: enableInputValidation ? 
-            validateSerialNumberSecurity(serialNumber).sanitizedValue : 
+          serialNumber: enableInputValidation && serialValidation?.sanitizedValue ? 
+            serialValidation.sanitizedValue : 
             serialNumber,
           itemType: itemType.trim(),
         }),
