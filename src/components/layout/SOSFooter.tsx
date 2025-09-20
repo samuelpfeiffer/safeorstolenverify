@@ -45,9 +45,16 @@ export const SOSFooter: React.FC = () => {
         </div>
 
         <div className="mt-6 text-center md:text-left">
-          <Link to="/privacy" className="text-base text-gray-500 hover:text-gray-300 mr-4">Privacy</Link>
-          <Link to="/terms" className="text-base text-gray-500 hover:text-gray-300 mr-4">Terms</Link>
+          <Link to="/privacy-policy" className="text-base text-gray-500 hover:text-gray-300 mr-4">Privacy</Link>
+          <Link to="/terms-of-service" className="text-base text-gray-500 hover:text-gray-300 mr-4">Terms</Link>
           <Link to="/contact" className="text-base text-gray-500 hover:text-gray-300 mr-4">Contact</Link>
+          <Link to="/about" className="text-base text-gray-500 hover:text-gray-300 mr-4">About</Link>
+          <Link to="/how-it-works" className="text-base text-gray-500 hover:text-gray-300 mr-4">How It Works</Link>
+          <Link to="/services" className="text-base text-gray-500 hover:text-gray-300 mr-4">Services</Link>
+          <Link to="/for-consumers" className="text-base text-gray-500 hover:text-gray-300 mr-4">For Consumers</Link>
+          <Link to="/for-brands" className="text-base text-gray-500 hover:text-gray-300 mr-4">For Brands</Link>
+          <Link to="/api-docs" className="text-base text-gray-500 hover:text-gray-300 mr-4">API</Link>
+          <Link to="/blog" className="text-base text-gray-500 hover:text-gray-300 mr-4">Blog</Link>
           <button 
             onClick={() => handleExternalNavigation("https://www.youtube.com/@SafeOrStolen", true)}
             className="text-base text-gray-500 hover:text-gray-300 inline-flex items-center gap-1 cursor-pointer"
