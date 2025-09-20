@@ -92,7 +92,7 @@ const HomePage = () => {
         <GoogleSearchConsoleSetup />
         <PageSEO
           title="Protect Buyers & Sellers | Free Stolen Goods Verification | SafeOrStolen Mobile App"
-          description="Protect buyers and sellers in secondhand transactions. Instantly verify phones, vehicles, electronics using IMEI, VIN, serial numbers. Mobile app for on-the-go verification."
+          description="Verify phones, electronics, vehicles, and more for theft, loss, or fraud with instant IMEI, VIN, and serial number checks. SafeOrStolen.com protects buyers and sellers in the secondhand marketplace—fast, secure, and comprehensive verification for safer transactions."
           keywords="protect buyers sellers, stolen goods verification, secondhand market protection, IMEI check, VIN verification, serial number lookup, mobile verification app, seller reputation protection, buyer fraud prevention"
           canonical="/"
           structuredData={homePageStructuredData}
