@@ -1,15 +1,13 @@
 # Lovable Platform Redirects for Safe Or Stolen
 # Force canonical domain: https://safeorstolen.com (non-www, HTTPS only)
 
-# CRITICAL: Force all HTTP to HTTPS (eliminate all HTTP redirects)
+# CRITICAL: Force all HTTP to HTTPS and www to non-www
 http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
 http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
-
-# Force www to non-www (already HTTPS) - CRITICAL FOR GOOGLE INDEXING  
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
-# Ensure trailing slash consistency for canonical URLs
-https://safeorstolen.com/*/ https://safeorstolen.com/:splat 301!
+# Remove trailing slash consistency issues - let SPA handle routing
+# https://safeorstolen.com/*/ https://safeorstolen.com/:splat 301!
 
 # Specific redirects for pages that were returning 404s
 /terms /terms-of-service 301

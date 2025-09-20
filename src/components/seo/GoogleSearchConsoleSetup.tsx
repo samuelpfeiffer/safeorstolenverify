@@ -7,14 +7,14 @@ export const GoogleSearchConsoleSetup: React.FC = () => {
       {/* Google Search Console Verification - To be replaced with actual token */}
       <meta name="google-site-verification" content="pending-verification" />
       
-      {/* Google Analytics 4 - To be configured */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PENDING"></script>
+      {/* Google Analytics 4 - Active */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-0T59FF9N6Z"></script>
       <script>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-PENDING');
+          gtag('config', 'G-0T59FF9N6Z');
         `}
       </script>
       

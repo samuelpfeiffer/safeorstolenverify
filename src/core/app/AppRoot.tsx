@@ -13,7 +13,7 @@ import { OptimizedLCPLoader } from '@/components/performance/OptimizedLCPLoader'
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
-import { GlobalSEOProvider } from '@/components/seo/GlobalSEOProvider';
+import { ConsolidatedSEO } from '@/components/seo/ConsolidatedSEO';
 import { CompetitiveAnalytics } from '@/components/seo/CompetitiveAnalytics';
 
 // Enhanced QueryClient configuration for enterprise performance
@@ -53,7 +53,7 @@ export const AppRoot: React.FC = () => {
               <ThemeProvider>
                 <Router>
                   <div className="min-h-screen bg-sos text-white antialiased">
-                    <GlobalSEOProvider />
+                    <ConsolidatedSEO />
                     <CompetitiveAnalytics />
                     <GlobalAnalytics />
                     <OptimizedLCPLoader />

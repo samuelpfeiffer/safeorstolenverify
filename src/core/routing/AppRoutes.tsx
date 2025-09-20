@@ -90,7 +90,7 @@ const TrustVerificationPage = lazy(() => import('@/pages/TrustVerificationPage')
 const CaseStudiesPage = lazy(() => import('@/pages/CaseStudiesPage'));
 const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
-const ServiceLimitationsPage = lazy(() => import('@/pages/ServiceLimitationsPage'));
+const ServiceLimitationsPage = lazy(() => import('@/pages/ServiceLimitations'));
 const AccuracyPage = lazy(() => import('@/pages/AccuracyPage'));
 const VerificationHubPage = lazy(() => import('@/pages/VerificationHubPage'));
 const UltimateGuidePage = lazy(() => import('@/pages/UltimateGuidePage'));
