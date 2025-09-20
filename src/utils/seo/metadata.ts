@@ -12,113 +12,101 @@ const SITE_CONFIG = {
   twitterHandle: '@safeorstolen',
   author: 'Safe or Stolen Team',
   keywords: [
-    // Broad Market & Transaction Safety
-    'safe secondhand buying',
-    'is it safe to buy used',
+    // Top Competitor Keywords - Primary Focus
+    'stolen item lookup',
+    'stolen item check',
+    'find stolen property', 
+    'report stolen items',
+    'search stolen database',
+    'online stolen items search',
+    'IMEI checker',
+    'VIN check',
+    'ESN checker',
+    'blacklist check',
+    'device authenticity check',
+    'free IMEI check',
+    'check if IMEI is stolen',
+    'phone blacklist check',
+    'serial number check',
+    'second hand item verification',
+    'check for stolen electronics',
+    'check for stolen vehicles',
+    'track lost property',
+    'phone stolen status',
+    'stolen phone search',
+    'lost and found property',
+    'stolen valuables database',
+    'secondhand goods database',
+    'device blocklist lookup',
+    
+    // Competitor Brand Alternatives
+    'CheckMEND alternative',
+    'Stolen 911 alternative',
+    'IMEICheck.com alternative',
+    'Swappa IMEI Check alternative',
+    'Seeker app alternative',
+    'stolen items verification service',
+    'stolen property checker online',
+    'free stolen goods checker',
+    
+    // Enhanced Core Terms
     'check if item is stolen',
     'check if stolen before buying',
     'secondhand item verification',
     'lost and stolen check',
-    'buy and sell safely',
-    'protect buyers and sellers',
-    'resale security check',
-    'property legitimacy tool',
-    
-    // Device, Vehicle, and ID-Specific
     'IMEI device check',
     'serial number lookup',
     'VIN lookup',
-    'electronics background check',
     'stolen phone check',
     'report lost or stolen',
-    'used electronics safe',
+    'used electronics verification',
     'secondhand car check',
     
-    // Consumer & E-commerce
+    // Marketplace & Consumer Safety
     'buy used safely online',
     'check property before selling',
-    'scam prevention tool',
-    'anti-theft register for buyers',
-    'property history report',
-    'avoid stolen goods',
+    'marketplace safety check',
+    'eBay stolen check',
+    'Facebook Marketplace stolen',
+    'Craigslist stolen check',
+    'verify before buying',
+    'second hand verification',
+    'used item check',
     
-    // Brand/Trust-Oriented
-    'trusted item verification',
-    'global stolen property database',
-    'secure marketplace tool',
-    
-    // Core verification terms (existing)
-    'check serial number',
-    'check VIN number', 
-    'check IMEI',
-    'check MAC address',
-    'VIN lookup stolen',
-    'IMEI check stolen',
-    'free stolen check',
-    'free lost item check',
-    
-    // Lost and stolen items
-    'lost or stolen lookup',
-    'stolen and lost property',
-    'check if lost or stolen',
-    'report lost item',
-    'find lost property',
-    'recover stolen items',
-    
-    // Specific item categories
-    'check if phone stolen',
-    'check if car stolen', 
-    'check if bike stolen',
-    'check if bicycle stolen',
-    'check if laptop stolen',
-    'check if camera stolen',
-    'check if motorcycle stolen',
-    'check if tablet stolen',
-    'check if electronics stolen',
-    'check if gaming console stolen',
-    'check if GPS stolen',
-    'check if sports equipment stolen',
-    
-    // Verification actions
-    'is my phone stolen',
-    'is my car stolen',
-    'is my bike stolen',
-    'verify serial number',
-    'verify VIN',
-    'verify IMEI',
-    
-    // Database and registry terms
+    // Database & Registry Terms
     'stolen goods database',
     'stolen property registry',
     'lost item database',
     'stolen item register',
     'worldwide stolen database',
     'global stolen property check',
+    'property legitimacy tool',
+    'trusted item verification',
+    'global stolen property database',
     
-    // Marketplace safety
-    'check before you buy',
-    'verify before buying',
-    'second hand verification',
-    'used item check',
-    'marketplace safety check',
-    'eBay stolen check',
-    'Facebook Marketplace stolen',
-    'Craigslist stolen check',
-    
-    // How-to searches
+    // Verification Actions & How-To
     'how to check serial number',
     'how to check VIN',
     'how to check IMEI',
     'where to check if stolen',
     'how to verify before buying',
+    'verify serial number',
+    'verify VIN',
+    'verify IMEI',
+    'is my phone stolen',
+    'is my car stolen',
     
-    // Protection and prevention
+    // Protection & Prevention
     'stolen goods verification',
     'fraud prevention check',
     'consumer protection',
     'secondhand buyer protection',
+    'avoid stolen goods',
+    'scam prevention tool',
+    'anti-theft register for buyers',
+    'property history report',
     
-    // Corporate terms
+    // Enterprise & Business
     'enterprise verification services',
     'corporate fraud prevention',
     'business verification platform',
@@ -129,11 +117,11 @@ const SITE_CONFIG = {
 // Page-specific metadata
 const PAGE_METADATA: Record<string, PageMetadata> = {
   home: {
-    title: `Free Stolen & Lost Property Check - Verify Serial Numbers, VIN, IMEI`,
-    description: 'Free worldwide database to check if items are stolen or lost. Verify phones, cars, bikes, electronics before buying. Check serial numbers, VIN, IMEI instantly.',
+    title: `Stolen Item Lookup | Free IMEI Checker, VIN Check & Serial Number Verification`,
+    description: 'Free stolen item check database. Search stolen items, verify IMEI, VIN numbers & serial numbers. Best alternative to CheckMEND, Stolen 911 - track lost property instantly.',
     keywords: SITE_CONFIG.keywords.join(', '),
-    ogTitle: `Free Stolen Property Check - Worldwide Lost & Stolen Database`,
-    ogDescription: 'Free tool to check if any item is stolen or lost. Verify serial numbers, VIN, IMEI before buying secondhand items.',
+    ogTitle: `Free Stolen Item Lookup - IMEI Checker & VIN Verification Database`,
+    ogDescription: 'Online stolen items search tool. Free IMEI check, VIN verification, serial number lookup. Find stolen property & verify secondhand goods.',
     ogImage: SITE_CONFIG.ogImage,
     robotsDirectives: 'index, follow, max-image-preview:large'
   },
@@ -202,29 +190,38 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
   },
 
   'check-phone': {
-    title: `Check If Phone Is Stolen - IMEI Lookup | ${SITE_CONFIG.name}`,
-    description: 'Check if a phone is stolen using IMEI lookup. Verify smartphones before buying on eBay, Facebook Marketplace. Free stolen phone database check.',
-    keywords: 'check if phone stolen, IMEI lookup, check IMEI, stolen phone check, is my phone stolen, verify phone IMEI, stolen smartphone lookup',
-    ogTitle: 'Check If Phone Is Stolen - Free IMEI Lookup',
-    ogDescription: 'Verify if a smartphone is stolen before you buy. Free IMEI check against stolen phone databases.',
+    title: `Free IMEI Checker - Phone Blacklist Check | Stolen Phone Search`,
+    description: 'Free IMEI check for stolen phones. Verify phone blacklist status, ESN checker, device authenticity check. Better than Swappa IMEI Check - instant phone stolen status.',
+    keywords: 'free IMEI check, IMEI checker, phone blacklist check, check if IMEI is stolen, phone stolen status, stolen phone search, ESN checker, device authenticity check',
+    ogTitle: 'Free IMEI Checker - Verify Phone Blacklist & Stolen Status',
+    ogDescription: 'Instant IMEI verification. Check phone blacklist, stolen status & device authenticity. Free alternative to premium IMEI checkers.',
     robotsDirectives: 'index, follow'
   },
 
   'check-car': {
-    title: `Check If Car Is Stolen - VIN Lookup | ${SITE_CONFIG.name}`,
-    description: 'Check if a car is stolen using VIN lookup. Verify vehicles before buying. Free stolen car database check for used cars, motorcycles, trucks.',
-    keywords: 'check if car stolen, VIN lookup, check VIN number, stolen car check, is my car stolen, verify VIN, stolen vehicle lookup',
-    ogTitle: 'Check If Car Is Stolen - Free VIN Lookup',
-    ogDescription: 'Verify if a vehicle is stolen before you buy. Free VIN check against stolen car databases.',
+    title: `VIN Check - Free Vehicle Stolen Property Check | Check for Stolen Vehicles`,
+    description: 'Free VIN check for stolen vehicles. Search stolen database for cars, trucks, motorcycles. Track lost property & verify secondhand vehicles before buying.',
+    keywords: 'VIN check, check for stolen vehicles, VIN lookup, stolen vehicle lookup, track lost property, secondhand vehicle verification, free VIN checker',
+    ogTitle: 'Free VIN Check - Verify Vehicle History & Stolen Status',
+    ogDescription: 'Instant VIN verification for stolen vehicles. Free vehicle history check & stolen property database search.',
     robotsDirectives: 'index, follow'
   },
 
   'check-electronics': {
-    title: `Check If Electronics Are Stolen - Serial Number Lookup | ${SITE_CONFIG.name}`,
-    description: 'Check if electronics are stolen using serial number lookup. Verify laptops, tablets, gaming devices before buying. Free stolen electronics database.',
-    keywords: 'check if electronics stolen, serial number lookup, check serial number, stolen electronics check, verify electronics, stolen laptop check',
-    ogTitle: 'Check If Electronics Are Stolen - Serial Number Lookup',
-    ogDescription: 'Verify if electronics are stolen before you buy. Free serial number check for laptops, tablets, gaming devices.',
+    title: `Serial Number Check - Free Electronics Stolen Item Lookup | Check for Stolen Electronics`,
+    description: 'Free serial number check for stolen electronics. Verify laptops, tablets, gaming devices. Check for stolen electronics in secondhand goods database before buying.',
+    keywords: 'serial number check, check for stolen electronics, serial number lookup, stolen electronics check, secondhand goods database, device authenticity check',
+    ogTitle: 'Free Serial Number Check - Electronics Stolen Item Verification',
+    ogDescription: 'Instant serial number verification for electronics. Check stolen item database for laptops, tablets & gaming devices.',
+    robotsDirectives: 'index, follow'
+  },
+
+  'stolen-item-checker': {
+    title: `Stolen Item Checker - Free Online Stolen Items Search | Report Stolen Items`,
+    description: 'Free stolen item checker & online stolen items search. Report stolen items, find stolen property, search stolen database. Best CheckMEND & Stolen 911 alternative.',
+    keywords: 'stolen item checker, online stolen items search, report stolen items, find stolen property, search stolen database, stolen item lookup, stolen item check',
+    ogTitle: 'Free Stolen Item Checker - Search Database & Report Items',
+    ogDescription: 'Comprehensive stolen item checker. Search stolen database, report items & find stolen property online.',
     robotsDirectives: 'index, follow'
   }
 };

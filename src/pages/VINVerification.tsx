@@ -59,11 +59,11 @@ const VINVerification = () => {
                 Free VIN Checker
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Free VIN Stolen Verification
+                Free VIN Check & Vehicle Stolen Property Check
               </h1>
               <p className="text-xl mb-8 leading-relaxed">
-                Verify if any vehicle is stolen by checking its VIN number against police databases 
-                and stolen car registries. Protect yourself when buying used cars, trucks, or motorcycles.
+                Free VIN check to verify stolen vehicles & track lost property. Check for stolen vehicles in our database. 
+                Secondhand vehicle verification for cars, trucks, motorcycles before buying.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <Badge variant="outline" className="border-white text-white">

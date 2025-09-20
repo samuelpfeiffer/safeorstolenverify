@@ -97,11 +97,11 @@ const IMEICheck = () => {
                 Free IMEI Checker
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Free IMEI Stolen Check
+                Free IMEI Checker & Phone Blacklist Check
               </h1>
               <p className="text-xl mb-8 leading-relaxed">
-                Verify if any iPhone or Android phone is stolen by checking its IMEI number 
-                against police databases and stolen phone registries. Protect yourself when buying used phones.
+                Free IMEI check for phone stolen status & blacklist verification. ESN checker & device authenticity check. 
+                Better than Swappa IMEI Check - instant stolen phone search & phone blacklist check.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <Badge variant="outline" className="border-white text-white">

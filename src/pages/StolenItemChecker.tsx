@@ -98,11 +98,11 @@ const StolenItemChecker = () => {
                 #1 Free Stolen Item Checker
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Free Stolen Item Checker
+                Free Stolen Item Checker & Online Stolen Items Search
               </h1>
               <p className="text-xl mb-8 leading-relaxed">
-                Instantly verify if phones, cars, electronics, or any item is stolen before you buy. 
-                Check IMEI, VIN, and serial numbers against police databases for free.
+                Report stolen items, find stolen property & search stolen database instantly. Free alternative to CheckMEND, Stolen 911 & Seeker app. 
+                Check for stolen electronics, vehicles & track lost property in our secondhand goods database.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <Badge variant="outline" className="border-white text-white">
