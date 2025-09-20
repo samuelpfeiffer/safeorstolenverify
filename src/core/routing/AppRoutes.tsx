@@ -11,6 +11,8 @@ const HomePage = lazy(() => import('@/pages/HomePage'));
 const StolenItemChecker = lazy(() => import('@/pages/StolenItemChecker'));
 const IMEICheck = lazy(() => import('@/pages/IMEICheck'));
 const VINVerification = lazy(() => import('@/pages/VINVerification'));
+const HowToCheckStolenItems = lazy(() => import('@/pages/guides/HowToCheckStolenItems'));
+const IMEIBlacklistGuide = lazy(() => import('@/pages/guides/IMEIBlacklistGuide'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const VerificationPage = lazy(() => import('@/pages/VerificationPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
@@ -138,6 +140,8 @@ export const AppRoutes: React.FC = () => {
           <Route path="stolen-item-checker" element={<StolenItemChecker />} />
           <Route path="imei-check" element={<IMEICheck />} />
           <Route path="vin-verification" element={<VINVerification />} />
+          <Route path="guides/how-to-check-stolen-items" element={<HowToCheckStolenItems />} />
+          <Route path="guides/imei-blacklist-explained" element={<IMEIBlacklistGuide />} />
           <Route path="serial-number-lookup" element={<StolenItemChecker />} />
           <Route path="check" element={<StolenItemChecker />} />
           <Route path="verify" element={<Navigate to="/stolen-item-checker" replace />} />

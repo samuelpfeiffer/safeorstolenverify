@@ -39,6 +39,25 @@ const SITE_CONFIG = {
     'secondhand goods database',
     'device blocklist lookup',
     
+    // New User Intent Keywords
+    'is my item stolen',
+    'find serial number database',
+    'property recovery service',
+    'IMEI blacklist check',
+    'device check before buying',
+    'how to verify secondhand items',
+    'is this gadget clear',
+    'secure resale lookup',
+    'validate used electronics',
+    'track stolen gear',
+    'check VIN for theft',
+    'IMEI block status',
+    'avoid buying stolen goods',
+    'secondhand item legitimacy',
+    'trusted item verification',
+    'lost item search engine',
+    'blacklist registry search',
+    
     // Competitor Brand Alternatives
     'CheckMEND alternative',
     'Stolen 911 alternative',
@@ -222,6 +241,24 @@ const PAGE_METADATA: Record<string, PageMetadata> = {
     keywords: 'stolen item checker, online stolen items search, report stolen items, find stolen property, search stolen database, stolen item lookup, stolen item check',
     ogTitle: 'Free Stolen Item Checker - Search Database & Report Items',
     ogDescription: 'Comprehensive stolen item checker. Search stolen database, report items & find stolen property online.',
+    robotsDirectives: 'index, follow'
+  },
+
+  'how-to-check-stolen': {
+    title: `How to Check if Your Item is Stolen | Complete Verification Guide`,
+    description: 'Complete guide: How to check if items are stolen using IMEI, VIN & serial numbers. Step-by-step process to verify secondhand items, avoid buying stolen goods.',
+    keywords: 'how to check if item stolen, is my item stolen, device check before buying, verify secondhand items, avoid buying stolen goods, stolen item verification guide',
+    ogTitle: 'How to Check if Items Are Stolen - Complete Guide',
+    ogDescription: 'Step-by-step guide to verify if items are stolen. Learn IMEI, VIN & serial number checking.',
+    robotsDirectives: 'index, follow'
+  },
+
+  'imei-blacklist-guide': {
+    title: `IMEI Blacklists Explained | Free Phone Blacklist Check Guide`,
+    description: 'Complete guide to IMEI blacklists: what they are, how to check IMEI block status, and what to do if your phone is blacklisted. Free IMEI blacklist checker.',
+    keywords: 'IMEI blacklist check, IMEI block status, phone blacklist check, what is IMEI blacklist, check if phone blocked, carrier blacklist lookup',
+    ogTitle: 'IMEI Blacklists Explained - Complete Phone Blacklist Guide',
+    ogDescription: 'Learn about IMEI blacklists, check phone block status, and understand carrier blacklist databases.',
     robotsDirectives: 'index, follow'
   }
 };
