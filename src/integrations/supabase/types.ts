@@ -1997,7 +1997,7 @@ export type Database = {
     }
     Functions: {
       check_item_verification_status: {
-        Args: { item_identifier: string; item_type_param: string }
+        Args: { item_identifier: string; item_type_param?: string }
         Returns: Json
       }
       check_secure_rate_limit: {
