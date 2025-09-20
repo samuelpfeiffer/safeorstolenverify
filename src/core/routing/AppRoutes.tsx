@@ -59,6 +59,9 @@ const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounder
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
+// Admin Pages
+const AdminBlogPage = lazy(() => import('@/pages/admin/AdminBlogPage'));
+
 // Item-specific verification pages
 const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
 const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
@@ -144,9 +147,10 @@ export const AppRoutes: React.FC = () => {
           <Route path="faq" element={<FAQPage />} />
           <Route path="terms" element={<TermsPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog/category/:category" element={<BlogPage />} />
-          <Route path="blog/:slug" element={<BlogPostPage />} />
+           <Route path="blog" element={<BlogPage />} />
+           <Route path="blog/category/:category" element={<BlogPage />} />
+           <Route path="blog/:slug" element={<BlogPostPage />} />
+           <Route path="admin/blog" element={<AdminBlogPage />} />
           
            {/* Static Blog Posts */}
            <Route path="blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
