@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
 import { useNavigate } from 'react-router-dom';
+import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 
 const StolenItemChecker = () => {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ const StolenItemChecker = () => {
 
   return (
     <>
+      <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/stolen-item-checker" />
       <Helmet>
         <title>Free Stolen Item Checker - Verify IMEI, VIN & Serial Numbers | SafeOrStolen</title>
         <meta 

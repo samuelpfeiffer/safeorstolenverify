@@ -11,6 +11,7 @@ import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
 import { ImageOptimizer } from '@/components/enhanced/ImageOptimizer';
 import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
 import { GlobalAnalytics } from '@/components/enhanced/GlobalAnalytics';
 import { ConversionTracker } from '@/components/ConversionTracker';
@@ -86,6 +87,7 @@ const HomePage = () => {
 
   return (
     <>
+      <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
       <ImageOptimizer>
         <GlobalPerformanceOptimizer />
         <GlobalAnalytics />

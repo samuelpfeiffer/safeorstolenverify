@@ -266,10 +266,12 @@ export const AppRoutes: React.FC = () => {
             </ProtectedRoute>
           } />
 
-           {/* Redirect routes for old URLs */}
-           <Route path="imei" element={<IMEICheckerPage />} />
-           <Route path="imei-checker" element={<IMEICheckerPage />} />
-           <Route path="verify" element={<Navigate to="/dashboard" replace />} />
+           {/* Redirect routes for old URLs - Return 200 status with canonical tags */}
+           <Route path="imei" element={<Navigate to="/imei-check" replace />} />
+           <Route path="imei-checker" element={<Navigate to="/imei-check" replace />} />
+           <Route path="vin-checker" element={<Navigate to="/vin-verification" replace />} />
+           <Route path="serial-checker" element={<Navigate to="/stolen-item-checker" replace />} />
+           <Route path="verify" element={<Navigate to="/stolen-item-checker" replace />} />
           <Route path="dashboard" element={
             <ProtectedRoute>
               <DashboardPage />

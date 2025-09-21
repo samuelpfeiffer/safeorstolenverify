@@ -8,10 +8,10 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # Specific redirects to prevent Google Search Console issues
 /terms /terms-of-service 301!
-/imei /check-phone 301!
-/imei-checker /check-phone 301!
-/vin-checker /check-car 301!
-/serial-checker /check-electronics 301!
+/imei /imei-check 301!
+/imei-checker /imei-check 301!
+/vin-checker /vin-verification 301!
+/serial-checker /stolen-item-checker 301!
 
 # E-commerce routes that don't apply to our verification service - redirect to services
 /wishlist /services 301!

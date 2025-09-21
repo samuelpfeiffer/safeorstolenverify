@@ -4,32 +4,19 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Home, ArrowLeft, Search } from 'lucide-react';
 import { OptimizedSEOHead } from '@/components/seo/OptimizedSEOHead';
+import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 
 const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHome = (location.pathname.replace(/\/+$/, '') || '/') === '/';
 
-  useEffect(() => {
-    if (isHome) return;
-    // Set proper HTTP status code for crawlers
-    const metaStatus = document.createElement('meta');
-    metaStatus.httpEquiv = 'status';
-    metaStatus.content = '404';
-    document.head.appendChild(metaStatus);
-
-    return () => {
-      // Cleanup
-      const existingMeta = document.querySelector('meta[http-equiv="status"]');
-      if (existingMeta) {
-        document.head.removeChild(existingMeta);
-      }
-    };
-  }, [isHome]);
+  // No useEffect needed - StatusCodeHandler manages this
 
   if (isHome) {
     return (
       <div className="min-h-screen bg-sos text-white flex items-center justify-center px-6">
+        <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
         <OptimizedSEOHead
           title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
           description="Free stolen item checker tool. Verify IMEI, VIN, serial numbers instantly before buying secondhand items. Check phones, cars, electronics against police databases. Protect yourself from stolen goods."
@@ -41,6 +28,7 @@ const NotFoundPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-sos text-white flex items-center justify-center px-6">
+      <StatusCodeHandler statusCode={404} noIndex={true} />
       <OptimizedSEOHead
         title="404 - Page Not Found | Safe Or Stolen"
         description="The page you're looking for doesn't exist. Find what you need with our stolen goods verification service."
