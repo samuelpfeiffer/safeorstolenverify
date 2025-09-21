@@ -94,9 +94,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
           // Handle auth events
           if (event === 'SIGNED_IN') {
+            const userName = session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'there';
             toast({
-              title: 'Welcome back!',
-              description: 'Successfully signed in.',
+              title: `Welcome back, ${userName}!`,
+              description: 'Ready to verify items and stay protected from stolen goods.',
             });
           } else if (event === 'SIGNED_OUT') {
             toast({

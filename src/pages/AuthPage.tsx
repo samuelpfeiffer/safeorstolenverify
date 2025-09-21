@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TermsAndConditions } from '@/components/auth/TermsAndConditions';
 import { SignUpWelcome } from '@/components/auth/SignUpWelcome';
+import { SignInWelcome } from '@/components/auth/SignInWelcome';
 import { SignupSuccess } from '@/components/auth/SignupSuccess';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
@@ -27,7 +28,7 @@ const signUpSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
 });
 
-type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success';
+type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success' | 'signin-welcome';
 
 const AuthPage = () => {
   const [searchParams] = useSearchParams();
@@ -60,18 +61,8 @@ const AuthPage = () => {
   const onSignIn = async (values: z.infer<typeof signInSchema>) => {
     const result = await signIn(values.email, values.password);
     if (result.success) {
-      // Check if user was trying to subscribe before authentication
-      const pendingSubscription = localStorage.getItem('pendingSubscription');
-      const redirectParam = searchParams.get('redirect');
-      
-      if (pendingSubscription && redirectParam === 'subscription') {
-        // Clear the stored subscription intent
-        localStorage.removeItem('pendingSubscription');
-        // Redirect to pricing page with the subscription tier
-        navigate(`/subscriptions?subscribe=${pendingSubscription}`);
-      } else {
-        navigate('/dashboard');
-      }
+      // Show welcome screen for returning users
+      setStep('signin-welcome');
     }
   };
 
@@ -149,6 +140,21 @@ const AuthPage = () => {
     }
   };
 
+  const handleSignInWelcomeContinue = () => {
+    // Check if user was trying to subscribe before authentication
+    const pendingSubscription = localStorage.getItem('pendingSubscription');
+    const redirectParam = searchParams.get('redirect');
+    
+    if (pendingSubscription && redirectParam === 'subscription') {
+      // Clear the stored subscription intent
+      localStorage.removeItem('pendingSubscription');
+      // Redirect to pricing page with the subscription tier
+      navigate(`/subscriptions?subscribe=${pendingSubscription}`);
+    } else {
+      navigate('/dashboard');
+    }
+  };
+
   const handleSignUpSuccessContinue = () => {
     if (emailVerificationRequired) {
       // Go back to sign in form
@@ -190,6 +196,16 @@ const AuthPage = () => {
     return (
       <SignUpWelcome
         onContinue={handleWelcomeContinue}
+        isLoading={loading}
+      />
+    );
+  }
+
+  if (step === 'signin-welcome') {
+    return (
+      <SignInWelcome
+        userName={user?.fullName || user?.email?.split('@')[0]}
+        onContinue={handleSignInWelcomeContinue}
         isLoading={loading}
       />
     );
