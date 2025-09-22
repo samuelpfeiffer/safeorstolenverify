@@ -21,6 +21,8 @@ import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
 import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
 import { MobileBenefitsSection } from '@/components/mobile/MobileBenefitsSection';
 import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
+import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
+import { SEOAuditComponent } from '@/components/seo/SEOAuditComponent';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -88,6 +90,8 @@ const HomePage = () => {
   return (
     <>
       <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
+      <InternalLinkingSchema />
+      <SEOAuditComponent />
       <ImageOptimizer>
         <GlobalPerformanceOptimizer />
         <GlobalAnalytics />
@@ -107,6 +111,75 @@ const HomePage = () => {
           <TrustIndicators />
           <TrustBadgeStrip />
           <TrustBuildingFAQ />
+          
+          {/* Quick Access Section for Key Verification Services */}
+          <section className="py-16 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold mb-4">Quick Verification Access</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Direct access to our most popular verification services and safety guides
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div className="bg-card p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold mb-4 text-primary">Verification Tools</h3>
+                  <div className="space-y-2">
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/stolen-item-checker')}>
+                      General Item Checker
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/serial-number-checker')}>
+                      Serial Number Checker
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/imei-check')}>
+                      IMEI Phone Check
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/vin-verification')}>
+                      VIN Car Check
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="bg-card p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold mb-4 text-primary">Safety Guides</h3>
+                  <div className="space-y-2">
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/how-to-check-if-item-stolen')}>
+                      How to Check if Stolen
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/avoid-stolen-goods')}>
+                      Avoid Stolen Goods
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/ultimate-guide-not-buying-stolen-goods')}>
+                      Ultimate Safety Guide
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/comprehensive-guide')}>
+                      Comprehensive Guide
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="bg-card p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold mb-4 text-primary">Resources</h3>
+                  <div className="space-y-2">
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/faq')}>
+                      FAQ
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/data-sources')}>
+                      Data Sources
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/transparency')}>
+                      Transparency Report
+                    </Button>
+                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/api-docs')}>
+                      API Documentation
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
           <Features />
           <MobileBenefitsSection />
           <TestimonialsSection />

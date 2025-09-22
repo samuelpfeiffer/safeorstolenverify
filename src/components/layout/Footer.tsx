@@ -15,11 +15,13 @@ export const Footer: React.FC = () => {
     {
       title: 'Product',
       links: [
+        { name: 'Stolen Item Checker', href: '/stolen-item-checker' },
+        { name: 'Serial Number Checker', href: '/serial-number-checker' },
+        { name: 'IMEI Check', href: '/imei-check' },
+        { name: 'VIN Verification', href: '/vin-verification' },
         { name: 'Verification Hub', href: '/verification-hub' },
         { name: 'Ultimate Guide', href: '/ultimate-guide' },
-        { name: 'Verify Items', href: '/dashboard' },
         { name: 'How It Works', href: '/how-it-works' },
-        { name: 'Subscriptions', href: '/subscriptions' },
         { name: 'API Docs', href: '/api-docs' },
       ]
     },
@@ -46,6 +48,17 @@ export const Footer: React.FC = () => {
       ]
     },
     {
+      title: 'Safety Guides',
+      links: [
+        { name: 'How to Check if Item Stolen', href: '/how-to-check-if-item-stolen' },
+        { name: 'Avoid Stolen Goods', href: '/avoid-stolen-goods' },
+        { name: 'Ultimate Guide Not Buying Stolen', href: '/ultimate-guide-not-buying-stolen-goods' },
+        { name: 'Check if Stolen Database', href: '/check-if-stolen' },
+        { name: 'Stolen Property Lookup', href: '/stolen-property-lookup' },
+        { name: 'Comprehensive Guide', href: '/comprehensive-guide' },
+      ]
+    },
+    {
       title: 'Support',
       links: [
         { name: 'FAQ', href: '/faq' },
@@ -53,18 +66,9 @@ export const Footer: React.FC = () => {
         { name: 'Contact Support', href: '/contact' },
         { name: 'Blog', href: '/blog' },
         { name: 'Community', href: '/community' },
+        { name: 'Cookies Policy', href: '/cookies' },
       ]
     },
-    {
-      title: 'Legal',
-      links: [
-        { name: 'Privacy Policy', href: '/privacy-policy' },
-        { name: 'Terms of Service', href: '/terms-of-service' },
-        { name: 'Disclaimer', href: '/disclaimer' },
-        { name: 'Security', href: '/admin/security' },
-        { name: 'Data Protection', href: '/privacy-policy#data-protection' },
-      ]
-    }
   ];
 
   const socialLinks = [
