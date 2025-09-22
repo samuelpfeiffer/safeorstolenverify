@@ -102,6 +102,8 @@ const ServiceLimitationsPage = lazy(() => import('@/pages/ServiceLimitations'));
 const AccuracyPage = lazy(() => import('@/pages/AccuracyPage'));
 const VerificationHubPage = lazy(() => import('@/pages/VerificationHubPage'));
 const UltimateGuidePage = lazy(() => import('@/pages/UltimateGuidePage'));
+const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
+const SEOStrategyPage = lazy(() => import('@/pages/SEOStrategyPage'));
 const AuctionHousesPage = lazy(() => import('@/pages/AuctionHousesPage'));
 const PawnShopsPage = lazy(() => import('@/pages/PawnShopsPage'));
 const GlobalDominationPage = lazy(() => import('@/pages/GlobalDominationPage'));
@@ -142,9 +144,11 @@ export const AppRoutes: React.FC = () => {
           <Route path="vin-verification" element={<VINVerification />} />
           <Route path="guides/how-to-check-stolen-items" element={<HowToCheckStolenItems />} />
           <Route path="guides/imei-blacklist-explained" element={<IMEIBlacklistGuide />} />
-          <Route path="serial-number-lookup" element={<StolenItemChecker />} />
-          <Route path="check" element={<StolenItemChecker />} />
-          <Route path="verify" element={<Navigate to="/stolen-item-checker" replace />} />
+           <Route path="serial-number-lookup" element={<StolenItemChecker />} />
+           <Route path="serial-number-checker" element={<SerialNumberCheckerPage />} />
+           <Route path="seo-strategy" element={<SEOStrategyPage />} />
+           <Route path="check" element={<StolenItemChecker />} />
+           <Route path="verify" element={<Navigate to="/stolen-item-checker" replace />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="subscriptions" element={<PricingPage />} />
           <Route path="pricing" element={<PricingPage />} />

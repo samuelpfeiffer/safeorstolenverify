@@ -5,6 +5,14 @@ Allow: /
 Allow: /stolen-item-checker
 Allow: /imei-check  
 Allow: /vin-verification
+Allow: /serial-number-checker
+Allow: /seo-strategy
+Allow: /faq
+Allow: /transparency
+Allow: /data-sources
+Allow: /ultimate-guide
+Allow: /api-docs
+Allow: /for-brands
 Allow: /check-phone
 Allow: /check-car
 Allow: /check-electronics
@@ -34,11 +42,8 @@ Disallow: /staging/
 Disallow: /*?*preview=*
 Disallow: /*?*debug=*
 
-# Block old redirect URLs (these now properly redirect)
-Disallow: /imei
-Disallow: /imei-checker  
-Disallow: /vin-checker
-Disallow: /serial-checker
+# Block old redirect URLs - removed since they now properly redirect
+# These URLs properly redirect with 301 status codes
 
 # Allow search parameters for verification
 Allow: /*?q=*

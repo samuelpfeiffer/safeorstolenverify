@@ -110,6 +110,60 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
   
+  // Additional Core Verification Services
+  {
+    url: 'https://safeorstolen.com/stolen-item-checker',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'always',
+    priority: 0.9,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/stolen-item-checker-image.png',
+        caption: 'Free stolen item checker - verify serial numbers, IMEI, and VIN numbers instantly',
+        title: 'Safe Or Stolen Item Checker'
+      }
+    ]
+  },
+  {
+    url: 'https://safeorstolen.com/serial-number-checker',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'always',
+    priority: 0.9,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/serial-checker-image.png',
+        caption: 'Serial number checker - verify if electronics and bikes are stolen',
+        title: 'Serial Number Checker'
+      }
+    ]
+  },
+  {
+    url: 'https://safeorstolen.com/imei-check',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'always',
+    priority: 0.9,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/imei-check-image.png',
+        caption: 'IMEI checker - verify phone blacklist status and theft reports',
+        title: 'IMEI Check Service'
+      }
+    ]
+  },
+  {
+    url: 'https://safeorstolen.com/vin-verification',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'always',
+    priority: 0.9,
+    images: [
+      {
+        loc: 'https://safeorstolen.com/vin-verification-image.png',
+        caption: 'VIN verification - check if vehicle is stolen or has liens',
+        title: 'VIN Verification Service'
+      }
+    ]
+  },
+  
   // How It Works - Essential for User Education & SEO
   {
     url: 'https://safeorstolen.com/how-it-works',
@@ -200,6 +254,24 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   },
   {
     url: 'https://safeorstolen.com/api-docs',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.6
+  },
+  {
+    url: 'https://safeorstolen.com/seo-strategy',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.5
+  },
+  {
+    url: 'https://safeorstolen.com/transparency',
+    lastmod: new Date().toISOString().split('T')[0],
+    changefreq: 'monthly',
+    priority: 0.6
+  },
+  {
+    url: 'https://safeorstolen.com/data-sources',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.6
