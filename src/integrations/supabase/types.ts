@@ -2060,6 +2060,10 @@ export type Database = {
           updated_at: string
         }[]
       }
+      get_security_status: {
+        Args: Record<PropertyKey, never>
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
