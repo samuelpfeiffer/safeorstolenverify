@@ -71,37 +71,20 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating subscription checkout with 7-day trial for priceId:", priceId);
+      console.log("Creating subscription checkout for product:", priceId);
       
-      // Map price IDs to plan names for better Stripe matching
-      const planNameMap: Record<string, string> = {
-        'price_1S0uGQGxnZLw8J7OOgm02vdB': 'Smart Buyer',
-        'price_1S0uGiGxnZLw8J7OQEwssbK7': 'Savvy Shopper',
-        'price_1S0uJsGxnZLw8J7OfU7XKMhV': 'Business Pro',
-        'price_1S9CrOGxnZLw8J7OAWHGY2P9': 'Entry Level',
-        'price_1S9CuPGxnZLw8J7OyBKr6134': 'Pay Per Check',
-        'price_1Rz83i2eGaMDLFHonAmu86lS': 'Certified Stolen/Legitimate Report'
-      };
+      // Since we now use product names as priceId, we can pass it directly as planName
+      // The priceId parameter now contains the actual product name from Stripe
+      const planName = priceId; // This is now a product name like "Smart Buyer", "Savvy Shopper", etc.
       
-      // Check if this is the one-time report product
-      const isOneTimeReport = priceId === 'price_1Rz83i2eGaMDLFHonAmu86lS';
-      
-      if (isOneTimeReport) {
-        // Redirect to one-time payment instead of subscription
-        toast({
-          title: "One-time payment required",
-          description: "This product requires a one-time payment, not a subscription. Please use the verification form.",
-          variant: "default",
-        });
-        return null;
-      }
+      console.log("Using plan name for Stripe matching:", planName);
       
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId,
-          planName: planNameMap[priceId] || `Plan for ${priceId}`,
+          priceId: null, // Let the edge function resolve the actual Stripe price ID
+          planName: planName, // Use the product name for dynamic matching
           isSubscription: true,
-          redirectUrl: window.location.origin,
+          redirectUrl: `${window.location.origin}/subscriptions?success=true`,
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -132,7 +115,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
         return null;
       }
 
-      console.log("Checkout created with trial:", data.url);
+      console.log("Checkout created successfully:", data.url);
       return data.url;
     } catch (error: any) {
       console.error("Failed to create checkout:", error);

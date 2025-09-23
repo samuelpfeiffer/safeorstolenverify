@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useSubscription } from '@/hooks/useSubscription';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-import { Crown, Check, Zap } from 'lucide-react';
+import { Crown, Check, Zap, Bug } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
 import { getSubscriptionPriceId } from '@/utils/pricing';
 import { PricingGrid } from '@/components/pricing/PricingGrid';
+import { ComprehensivePaymentDebug } from '@/components/debug/ComprehensivePaymentDebug';
 
 const SubscriptionPage: React.FC = () => {
   const { subscriptionData, isLoading, createSubscriptionCheckout, openCustomerPortal } = useSubscription();
@@ -154,6 +155,24 @@ const SubscriptionPage: React.FC = () => {
           </div>
           <section className="mt-12">
             <PricingGrid />
+          </section>
+          
+          {/* Debug Section - Remove this once payment system is working */}
+          <section className="mt-12">
+            <Card className="bg-sos-dark border-orange-500/50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-white">
+                  <Bug className="h-5 w-5 text-orange-500" />
+                  Payment System Debug
+                  <Badge variant="outline" className="text-orange-500 border-orange-500">
+                    Testing Only
+                  </Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ComprehensivePaymentDebug />
+              </CardContent>
+            </Card>
           </section>
         </div>
       </div>

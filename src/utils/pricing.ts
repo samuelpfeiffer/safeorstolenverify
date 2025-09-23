@@ -32,7 +32,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'No subscription required',
       'Email support'
     ],
-    stripePriceId: 'price_1S9CuPGxnZLw8J7OyBKr6134'
+    stripePriceId: 'Pay Per Check' // Use product name for dynamic matching
   },
   entryLevel: {
     name: 'Entry Level (Individual)',
@@ -45,7 +45,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_1S9CrOGxnZLw8J7OAWHGY2P9'
+    stripePriceId: 'Entry Level (Individual)' // Use product name for dynamic matching
   },
   basic: {
     name: 'Smart Buyer',
@@ -58,7 +58,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'price_1S0uGQGxnZLw8J7OOgm02vdB'
+    stripePriceId: 'Smart Buyer' // Use product name for dynamic matching
   },
   premium: {
     name: 'Savvy Shopper',
@@ -72,7 +72,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Bulk checking tools',
       'Priority support'
     ],
-    stripePriceId: 'price_1S0uGiGxnZLw8J7OQEwssbK7'
+    stripePriceId: 'Savvy Shopper' // Use product name for dynamic matching
   },
   enterprise: {
     name: 'Business Pro',
@@ -86,7 +86,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Custom integrations',
       'Dedicated account manager'
     ],
-    stripePriceId: 'price_1S0uJsGxnZLw8J7OfU7XKMhV'
+    stripePriceId: 'Business Pro' // Use product name for dynamic matching
   },
   report: {
     name: 'Certified Stolen/Legitimate Report',
@@ -98,7 +98,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Stolen item database search',
       'Official documentation'
     ],
-    stripePriceId: 'price_1Rz83i2eGaMDLFHonAmu86lS'
+    stripePriceId: 'Report' // Use product name for dynamic matching
   }
 };
 
