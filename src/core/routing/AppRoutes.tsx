@@ -67,6 +67,7 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 // Admin Pages
 const AdminBlogPage = lazy(() => import('@/pages/admin/AdminBlogPage'));
 const AdminAutomationPage = lazy(() => import('@/pages/admin/AdminAutomationPage'));
+const AdminAICenter = lazy(() => import('@/pages/AdminAICenter'));
 
 // Item-specific verification pages
 const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
@@ -172,6 +173,7 @@ export const AppRoutes: React.FC = () => {
            <Route path="blog/:slug" element={<BlogPostPage />} />
            <Route path="admin/blog" element={<AdminBlogPage />} />
            <Route path="admin/automation" element={<AdminAutomationPage />} />
+           <Route path="admin/ai-center" element={<AdminAICenter />} />
           
            {/* Static Blog Posts */}
            <Route path="blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
