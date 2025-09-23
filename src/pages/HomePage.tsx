@@ -23,6 +23,7 @@ import { MobileBenefitsSection } from '@/components/mobile/MobileBenefitsSection
 import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
 import { SEOAuditComponent } from '@/components/seo/SEOAuditComponent';
+import { AuthDebug } from '@/components/debug/AuthDebug';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -223,6 +224,7 @@ const HomePage = () => {
             </div>
           </section>
           
+          <AuthDebug />
           <FeaturedBlogSection />
           <EnhancedCTASection />
         </div>

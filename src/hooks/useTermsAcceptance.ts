@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 interface TermsAcceptanceResult {
   success: boolean;
@@ -15,13 +16,22 @@ export const useTermsAcceptance = () => {
     setIsProcessing(true);
     
     try {
-      // In a real implementation, you would save terms acceptance to database
-      // For now, we'll just simulate the process
-      console.log('Terms accepted for user:', userId);
+      // Save terms acceptance to database
+      const { error } = await supabase
+        .from('profiles')
+        .update({
+          terms_accepted: true,
+          terms_accepted_at: new Date().toISOString(),
+        })
+        .eq('id', userId);
+
+      if (error) {
+        throw error;
+      }
       
       toast({
-        title: "Thank you for signing up!",
-        description: "Your account has been successfully created! Redirecting to your dashboard...",
+        title: "Welcome to SafeOrStolen!",
+        description: "Your account has been created successfully. You can now start verifying items!",
         duration: 5000,
       });
       
@@ -31,7 +41,7 @@ export const useTermsAcceptance = () => {
       console.error('Terms acceptance error:', error);
       
       toast({
-        title: "Terms Acceptance Failed",
+        title: "Registration Failed",
         description: "Unable to complete registration. Please try again.",
         variant: "destructive",
       });

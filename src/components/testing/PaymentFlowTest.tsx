@@ -22,16 +22,26 @@ export const PaymentFlowTest = () => {
   };
 
   const testEdgeFunctions = async () => {
-    // Test check-subscription function
-    const { data, error } = await supabase.functions.invoke('check-subscription');
-    if (error) throw new Error(`check-subscription failed: ${error.message}`);
-    console.log('check-subscription result:', data);
+    try {
+      // Test check-subscription function
+      const { data, error } = await supabase.functions.invoke('check-subscription');
+      if (error) throw new Error(`check-subscription failed: ${error.message}`);
+      console.log('check-subscription result:', data);
+    } catch (error) {
+      console.error('Edge function test error:', error);
+      throw error;
+    }
   };
 
   const testCreateCheckout = async () => {
-    const url = await createSubscriptionCheckout('price_1S0uGQGxnZLw8J7OOgm02vdB');
-    if (!url) throw new Error('No checkout URL returned');
-    console.log('Checkout URL:', url);
+    try {
+      const url = await createSubscriptionCheckout('price_1S0uGQGxnZLw8J7OOgm02vdB');
+      if (!url) throw new Error('No checkout URL returned');
+      console.log('Checkout URL:', url);
+    } catch (error) {
+      console.error('Checkout test error:', error);
+      throw error;
+    }
   };
 
   const testCustomerPortal = async () => {

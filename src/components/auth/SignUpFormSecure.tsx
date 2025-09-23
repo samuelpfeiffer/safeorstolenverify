@@ -9,6 +9,8 @@ import { useTermsAcceptance } from '@/hooks/useTermsAcceptance';
 import { useSecureSignUpForm, getMobileErrorMessage, SecureSignUpFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useNavigate } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
 
 interface SignUpFormSecureProps {
@@ -20,6 +22,7 @@ type SignUpStep = 'form' | 'terms';
 export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
   const navigate = useNavigate();
   const { signUp, loading: authLoading, user } = useAuth();
+  const { toast } = useToast();
   const isAuthenticated = !!user;
   const { acceptTerms, isProcessing } = useTermsAcceptance();
   const [step, setStep] = useState<SignUpStep>('form');
@@ -49,16 +52,38 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
       const result = await signUp(data.email, data.password, data.fullName);
       
       if (result.success) {
-        // For the new auth system, we'll use the current user
-        if (user) {
-          setCreatedUserId(user.id);
-          setPendingSignUpData(data);
+        // Set pending data and move to terms step
+        setPendingSignUpData(data);
+        
+        // Get the user after signup
+        const { data: { user: newUser } } = await supabase.auth.getUser();
+        if (newUser) {
+          setCreatedUserId(newUser.id);
           setStep('terms');
+        } else {
+          // If no immediate user (email verification required), show success message
+          toast({
+            title: "Check your email",
+            description: "Please verify your email address to complete registration.",
+            duration: 10000,
+          });
+          onSuccess?.();
         }
+      } else {
+        toast({
+          title: "Sign up failed",
+          description: result.error || "Please check your information and try again.",
+          variant: "destructive",
+        });
       }
       
-    } catch (error) {
-      // Handle signup error silently in production
+    } catch (error: any) {
+      console.error('Sign up error:', error);
+      toast({
+        title: "Sign up failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -66,6 +91,11 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
 
   const handleTermsAccept = async () => {
     if (!createdUserId) {
+      toast({
+        title: "Error",
+        description: "User ID not found. Please try signing up again.",
+        variant: "destructive",
+      });
       return;
     }
     
@@ -79,15 +109,26 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
         setPendingSignUpData(null);
         setCreatedUserId(null);
         setStep('form');
-        // Navigate to dashboard after successful signup and terms acceptance
+        // Redirect to home page after successful signup and terms acceptance
         setTimeout(() => {
-          navigate('/dashboard');
-        }, 500);
+          navigate('/');
+        }, 1000);
         onSuccess?.();
+      } else {
+        toast({
+          title: "Terms acceptance failed",
+          description: termsResult.error || "Please try again.",
+          variant: "destructive",
+        });
       }
       
-    } catch (error) {
-      // Handle terms acceptance error silently
+    } catch (error: any) {
+      console.error('Terms acceptance error:', error);
+      toast({
+        title: "Terms acceptance failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }

@@ -1,5 +1,5 @@
-
 import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { Link } from 'react-router-dom';
 
 interface TermsCheckboxesProps {
@@ -23,40 +23,42 @@ export const TermsCheckboxes = ({
         <Checkbox
           id="terms"
           checked={termsAccepted}
-          onCheckedChange={(checked) => onTermsChange(checked as boolean)}
-          className="mt-1"
+          onCheckedChange={onTermsChange}
           disabled={disabled}
+          className="border-gray-600 data-[state=checked]:bg-sos-orange data-[state=checked]:border-sos-orange"
         />
-        <label htmlFor="terms" className="text-sm text-gray-300 leading-relaxed">
-          I have read and agree to the{' '}
-          <Link 
-            to="/terms-of-service" 
+        <Label htmlFor="terms" className="text-sm text-gray-300 leading-relaxed">
+          I agree to the{' '}
+          <Link
+            to="/terms"
             target="_blank"
             className="text-sos-orange hover:underline"
           >
             Terms of Service
-          </Link>
-        </label>
+          </Link>{' '}
+          and acknowledge that I understand the verification process and limitations.
+        </Label>
       </div>
 
       <div className="flex items-start space-x-3">
         <Checkbox
           id="privacy"
           checked={privacyAccepted}
-          onCheckedChange={(checked) => onPrivacyChange(checked as boolean)}
-          className="mt-1"
+          onCheckedChange={onPrivacyChange}
           disabled={disabled}
+          className="border-gray-600 data-[state=checked]:bg-sos-orange data-[state=checked]:border-sos-orange"
         />
-        <label htmlFor="privacy" className="text-sm text-gray-300 leading-relaxed">
-          I have read and agree to the{' '}
-          <Link 
-            to="/privacy-policy" 
+        <Label htmlFor="privacy" className="text-sm text-gray-300 leading-relaxed">
+          I agree to the{' '}
+          <Link
+            to="/privacy"
             target="_blank"
             className="text-sos-orange hover:underline"
           >
             Privacy Policy
-          </Link>
-        </label>
+          </Link>{' '}
+          and consent to the collection and processing of my data as described.
+        </Label>
       </div>
     </div>
   );
