@@ -25,6 +25,8 @@ import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
 import { SEOAuditComponent } from '@/components/seo/SEOAuditComponent';
 import { AuthDebug } from '@/components/debug/AuthDebug';
 import { PaymentSystemDebug } from '@/components/debug/PaymentSystemDebug';
+import { EnhancedSEOContent } from '@/components/seo/EnhancedSEOContent';
+import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -98,10 +100,11 @@ const HomePage = () => {
         <GlobalPerformanceOptimizer />
         <GlobalAnalytics />
         <GoogleSearchConsoleSetup />
+        <OptimizedTitles pageType="home" />
         <PageSEO
-          title="Stolen Item Lookup | Free IMEI Checker, VIN Check & Serial Number Verification"
-          description="Free stolen item check database. Search stolen items, verify IMEI, VIN numbers & serial numbers. Best alternative to CheckMEND, Stolen 911 - track lost property instantly."
-          keywords="stolen item lookup, stolen item check, find stolen property, report stolen items, search stolen database, online stolen items search, IMEI checker, VIN check, ESN checker, blacklist check, device authenticity check, free IMEI check"
+          title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check"
+          description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented."
+          keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention"
           canonical="/"
           structuredData={homePageStructuredData}
         />
@@ -225,6 +228,15 @@ const HomePage = () => {
             </div>
           </section>
           
+          <EnhancedSEOContent 
+            pageType="home"
+            title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check"
+            description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented."
+            keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention"
+            showTestimonials={true}
+            showFAQ={true}
+            showStats={true}
+          />
           <AuthDebug />
           <PaymentSystemDebug />
           <FeaturedBlogSection />

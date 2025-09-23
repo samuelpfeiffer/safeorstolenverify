@@ -43,39 +43,69 @@ export const generateSEODescription = (description: string): string => {
  */
 export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
   home: {
-    title: 'Check if IMEI, Serial Numbers & VIN are Stolen | Free Verification Tool',
-    description: 'Instantly verify if phones (IMEI), cars (VIN), bikes, electronics are stolen before buying. Free stolen goods checker. Protect yourself from marketplace fraud.',
-    keywords: 'check if stolen, IMEI check stolen, VIN stolen lookup, serial number verification, stolen goods check, verify before you buy, marketplace safety, fraud prevention',
+    title: 'Verify Stolen Goods Instantly - IMEI, VIN & Serial Check',
+    description: 'Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented.',
+    keywords: 'verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety, fraud prevention',
     type: 'website'
   },
   about: {
-    title: 'About Safe Or Stolen | Verify Before You Buy',
-    description: 'Learn our mission to make secondhand buying safer with instant IMEI, serial and VIN checks. Fighting the $13 billion stolen goods crisis.',
-    keywords: 'about safe or stolen, company mission, verify before you buy, stolen goods prevention',
+    title: 'About SafeOrStolen - $13B Stolen Goods Crisis Solution',  
+    description: 'Our mission: make secondhand buying safer with instant IMEI, VIN & serial checks. Fighting the $13 billion stolen goods crisis with real-time verification.',
+    keywords: 'about safeorstolen, stolen goods prevention, theft database, verification service mission, marketplace safety',
     type: 'website'
   },
   pricing: {
-    title: 'Pricing Plans | Safe Or Stolen Verification Service',
-    description: 'Choose the right verification plan for your needs. Free basic checks, premium features for businesses. Transparent pricing, no hidden fees.',
-    keywords: 'pricing plans, verification service cost, IMEI check pricing, stolen goods verification plans',
+    title: 'Pricing - Free IMEI & VIN Checks, Premium Business Plans',
+    description: 'Free basic stolen goods verification. Premium plans for businesses: bulk checks, API access, priority support. No hidden fees, cancel anytime.',
+    keywords: 'free IMEI check, VIN verification pricing, stolen goods API pricing, business verification plans',
     type: 'service'
   },
   contact: {
-    title: 'Contact Us | Safe Or Stolen Support',
-    description: 'Get help with stolen goods verification. Contact our support team for assistance with IMEI, VIN, and serial number checks.',
-    keywords: 'contact support, help, customer service, verification assistance',
+    title: 'Contact SafeOrStolen Support - Verification Help Available',
+    description: 'Need help with stolen goods verification? Contact our expert support team for IMEI, VIN, serial number checks and marketplace safety guidance.',
+    keywords: 'contact support, verification help, IMEI support, VIN check help, stolen goods assistance',
     type: 'website'
   },
   faq: {
-    title: 'FAQ | Frequently Asked Questions About Stolen Goods Verification',
-    description: 'Get answers to common questions about checking if items are stolen, IMEI verification, VIN checks, and marketplace safety.',
-    keywords: 'FAQ, frequently asked questions, how to check if stolen, IMEI help, VIN verification help',
+    title: 'FAQ - How to Check if Items are Stolen Before Buying',
+    description: 'Get answers: How to verify IMEI numbers, check VIN for stolen cars, serial number verification, and avoid buying stolen goods from marketplaces.',
+    keywords: 'how to check if stolen, IMEI verification FAQ, VIN check questions, serial number help, marketplace safety FAQ',
     type: 'website'
   },
   'how-it-works': {
-    title: 'How It Works | Safe Or Stolen Verification Process',
-    description: 'Learn how our stolen goods verification works. Simple 3-step process to check IMEI, serial numbers, and VIN before buying.',
-    keywords: 'how it works, verification process, check stolen goods, IMEI verification process, VIN check process',
+    title: 'How Stolen Goods Verification Works - 30 Second Process',
+    description: 'Learn how our stolen item verification works: 1) Enter IMEI/VIN/Serial 2) Real-time database check 3) Instant results. Protect yourself in 30 seconds.',
+    keywords: 'how verification works, stolen goods check process, IMEI verification steps, VIN check process, serial number lookup',
+    type: 'website'
+  },
+  'check-phone': {
+    title: 'Check if Phone is Stolen - Free IMEI Verification Tool',
+    description: 'Verify phone IMEI numbers against stolen device databases. Check if iPhone, Android, or any mobile device is reported stolen before buying.',
+    keywords: 'check phone stolen, IMEI verification, stolen phone check, verify iPhone IMEI, Android stolen check',
+    type: 'website'
+  },
+  'check-car': {
+    title: 'Check if Car is Stolen - Free VIN Verification Lookup', 
+    description: 'Verify vehicle VIN numbers against stolen car databases. Check if cars, trucks, motorcycles are reported stolen before purchasing.',
+    keywords: 'check car stolen, VIN verification, stolen vehicle check, verify car VIN, stolen car lookup',
+    type: 'website'
+  },
+  'check-electronics': {
+    title: 'Check Electronics - Serial Number Stolen Verification',
+    description: 'Verify electronics serial numbers: laptops, tablets, gaming consoles, cameras. Check if devices are stolen before buying from marketplaces.',
+    keywords: 'check electronics stolen, serial number verification, laptop stolen check, gaming console verification',
+    type: 'website'
+  },
+  'imei-check': {
+    title: 'IMEI Check - Verify Phone Not Stolen in 30 Seconds',
+    description: 'Free IMEI checker tool. Enter phone IMEI to verify against stolen device databases. Check iPhone, Samsung, Android IMEI - protect yourself from stolen phones.',
+    keywords: 'IMEI check, IMEI checker, verify IMEI, phone IMEI lookup, stolen phone IMEI, IMEI database',
+    type: 'website'
+  },
+  'vin-verification': {
+    title: 'VIN Check - Verify Car Not Stolen Before Buying',
+    description: 'Free VIN verification tool. Check vehicle identification numbers against stolen car databases. Verify cars, trucks, motorcycles before purchase.',
+    keywords: 'VIN check, VIN verification, car VIN lookup, stolen car VIN, vehicle identification check',
     type: 'website'
   }
 };

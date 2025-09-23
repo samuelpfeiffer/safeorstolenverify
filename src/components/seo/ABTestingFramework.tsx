@@ -57,15 +57,22 @@ export const ABTestingFramework: React.FC<ABTestingFrameworkProps> = ({
     ];
 
     const allTests = [...defaultTests, ...tests];
-    
-    allTests.forEach(test => {
-      runABTest(test);
-    });
 
-    // Initialize FAQ schema A/B test
-    initializeFAQSchemaTest();
+    // Run tests only once when component mounts
+    const runTestsOnce = () => {
+      allTests.forEach(test => {
+        runABTest(test);
+      });
+
+      // Initialize FAQ schema A/B test
+      initializeFAQSchemaTest();
+    };
+
+    // Use setTimeout to prevent infinite re-renders
+    const timeoutId = setTimeout(runTestsOnce, 100);
     
-  }, [tests]);
+    return () => clearTimeout(timeoutId);
+  }, []); // Empty dependency array to run only once
 
   const runABTest = (config: ABTestConfig) => {
     const { testName, element, variants, trafficSplit = 0.5 } = config;
