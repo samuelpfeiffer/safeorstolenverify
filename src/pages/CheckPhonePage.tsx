@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Smartphone, Shield, Search, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 
 const CheckPhonePage: React.FC = () => {
   const [imei, setImei] = useState('');
@@ -41,9 +42,9 @@ const CheckPhonePage: React.FC = () => {
       <>
         <AIOptimizedContent page="check-phone" />
         <UnifiedSEO 
-        title="IMEI Device Check - Free Stolen Phone Check | Safe Or Stolen"
-        description="IMEI device check to verify if phone is stolen. Free electronics background check for used smartphones. Report lost or stolen phones and buy used electronics safely."
-        keywords="IMEI device check, stolen phone check, electronics background check, used electronics safe, report lost or stolen, check if phone stolen, IMEI lookup stolen, mobile device verification, smartphone security check, secondhand phone verification"
+        title="Check if Phone is Stolen - Free IMEI Verification Tool"
+        description="Verify phone IMEI numbers against stolen device databases. Check if iPhone, Android phones are reported stolen before buying. Free 30-second verification."
+        keywords="check phone stolen, IMEI verification, stolen phone check, verify iPhone IMEI, Android stolen check, phone theft prevention"
         canonical="/check-phone"
         type="website"
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
@@ -65,10 +66,10 @@ const CheckPhonePage: React.FC = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              IMEI Device Check - Verify Phone Not Stolen
+              Check if Phone is Stolen - Free IMEI Verification
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Verify if a smartphone is stolen before you buy using our free IMEI lookup service
+              Verify smartphone IMEI against stolen device databases before buying. 30-second verification - $2.3M in scams prevented.
             </p>
             
             {/* Hero Image */}
@@ -186,31 +187,7 @@ const CheckPhonePage: React.FC = () => {
           </div>
 
           {/* FAQ */}
-          <div className="max-w-3xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">How do I find my phone's IMEI?</h3>
-                  <p className="text-muted-foreground">Dial *#06# on your phone, or go to Settings → About Phone → IMEI. You can also find it on the original box or receipt.</p>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">What if a phone shows as stolen?</h3>
-                  <p className="text-muted-foreground">Do not purchase the device. Report the seller to the platform and local authorities if necessary.</p>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Is this service free?</h3>
-                  <p className="text-muted-foreground">Yes, basic IMEI checks are completely free to help protect consumers from stolen goods.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+          <ComprehensiveFAQ pageType="phone" maxItems={6} showCategories={false} />
         </div>
       </div>
     </>

@@ -27,6 +27,8 @@ import { AuthDebug } from '@/components/debug/AuthDebug';
 import { PaymentSystemDebug } from '@/components/debug/PaymentSystemDebug';
 import { EnhancedSEOContent } from '@/components/seo/EnhancedSEOContent';
 import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
+import { SiteNavigationOptimizer } from '@/components/seo/SiteNavigationOptimizer';
+import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -228,13 +230,15 @@ const HomePage = () => {
             </div>
           </section>
           
+          <SiteNavigationOptimizer />
+          <ComprehensiveFAQ pageType="home" maxItems={8} />
           <EnhancedSEOContent 
             pageType="home"
             title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check"
             description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented."
             keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention"
             showTestimonials={true}
-            showFAQ={true}
+            showFAQ={false}
             showStats={true}
           />
           <AuthDebug />

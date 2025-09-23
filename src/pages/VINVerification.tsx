@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
 import { useNavigate } from 'react-router-dom';
+import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 
 const VINVerification = () => {
   const navigate = useNavigate();
@@ -35,10 +36,10 @@ const VINVerification = () => {
   return (
     <>
       <Helmet>
-        <title>Free VIN Stolen Check - Verify Car VIN Numbers | SafeOrStolen</title>
+        <title>VIN Check - Verify Car Not Stolen Before Buying</title>
         <meta 
           name="description" 
-          content="Free VIN checker to verify if cars are stolen. Check vehicle VIN numbers against police databases and stolen car reports. Protect yourself when buying used cars." 
+          content="Free VIN checker - verify cars, trucks, motorcycles aren't stolen before purchase. Check VIN against stolen vehicle databases in 30 seconds." 
         />
         <meta 
           name="keywords" 
@@ -59,11 +60,10 @@ const VINVerification = () => {
                 Free VIN Checker
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Free VIN Check & Vehicle Stolen Property Check
+                VIN Check - Verify Car Not Stolen Before Buying
               </h1>
               <p className="text-xl mb-8 leading-relaxed">
-                Free VIN check to verify stolen vehicles & track lost property. Check for stolen vehicles in our database. 
-                Secondhand vehicle verification for cars, trucks, motorcycles before buying.
+                Free VIN verification - check cars, trucks, motorcycles against stolen vehicle databases. 30-second verification, $2.3M in fraud prevented.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <Badge variant="outline" className="border-white text-white">
@@ -157,6 +157,7 @@ const VINVerification = () => {
         </section>
 
         {/* Why Check VIN */}
+        <ComprehensiveFAQ pageType="vin" maxItems={6} showCategories={false} />
         <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">

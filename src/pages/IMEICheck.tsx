@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
 import { useNavigate } from 'react-router-dom';
+import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 
 const IMEICheck = () => {
   const navigate = useNavigate();
@@ -73,10 +74,10 @@ const IMEICheck = () => {
   return (
     <>
       <Helmet>
-        <title>Free IMEI Stolen Check - Verify iPhone & Android IMEI Numbers | SafeOrStolen</title>
+        <title>IMEI Check - Verify Phone Not Stolen in 30 Seconds</title>
         <meta 
           name="description" 
-          content="Free IMEI checker to verify if phones are stolen. Check iPhone and Android IMEI numbers against police databases. Protect yourself when buying used phones." 
+          content="Free IMEI checker - verify iPhone, Android phones aren't stolen before buying. Check IMEI against stolen phone databases instantly. Protect yourself from stolen devices." 
         />
         <meta 
           name="keywords" 
@@ -97,11 +98,10 @@ const IMEICheck = () => {
                 Free IMEI Checker
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Free IMEI Checker & Phone Blacklist Check
+                IMEI Check - Verify Phone Not Stolen in 30 Seconds
               </h1>
               <p className="text-xl mb-8 leading-relaxed">
-                Free IMEI check for phone stolen status & blacklist verification. ESN checker & device authenticity check. 
-                Better than Swappa IMEI Check - instant stolen phone search & phone blacklist check.
+                Free IMEI verification - check iPhone, Android phones against stolen device databases instantly. $2.3M in scams prevented.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <Badge variant="outline" className="border-white text-white">
@@ -233,7 +233,8 @@ const IMEICheck = () => {
           </div>
         </section>
 
-        {/* Why Check IMEI */}
+        {/* FAQ */}
+        <ComprehensiveFAQ pageType="imei" maxItems={6} showCategories={false} />
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
