@@ -83,8 +83,9 @@ export const trackCoreWebVitals = (): void => {
     let clsScore = 0;
     const clsObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        if (!entry.hadRecentInput) {
-          clsScore += entry.value;
+        const layoutShift = entry as any; // LayoutShift interface not fully typed
+        if (!layoutShift.hadRecentInput) {
+          clsScore += layoutShift.value;
         }
       }
       
@@ -108,7 +109,8 @@ export const trackCoreWebVitals = (): void => {
     // Time to First Byte (TTFB)
     const navigationObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        const ttfb = entry.responseStart - entry.requestStart;
+        const navEntry = entry as PerformanceNavigationTiming;
+        const ttfb = navEntry.responseStart - navEntry.requestStart;
         
         // Good < 800ms, Needs Improvement < 1800ms
         const rating = ttfb <= 800 ? 'good' : ttfb <= 1800 ? 'needs-improvement' : 'poor';
@@ -230,8 +232,8 @@ export const monitorPerformanceMetrics = (): void => {
         connection: navigation.connectEnd - navigation.connectStart,
         request: navigation.responseStart - navigation.requestStart,
         response: navigation.responseEnd - navigation.responseStart,
-        dom: navigation.domContentLoadedEventEnd - navigation.navigationStart,
-        load: navigation.loadEventEnd - navigation.navigationStart
+        dom: navigation.domContentLoadedEventEnd - navigation.fetchStart,
+        load: navigation.loadEventEnd - navigation.fetchStart
       };
       
       // Track performance metrics

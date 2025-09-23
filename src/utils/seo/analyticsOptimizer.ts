@@ -118,7 +118,8 @@ export const trackCoreWebVitalsGA4 = (): void => {
     // Track FID (First Input Delay)
     const fidObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        const fid = entry.processingStart - entry.startTime;
+        const perfEntry = entry as any; // PerformanceEventTiming not fully typed
+        const fid = perfEntry.processingStart - perfEntry.startTime;
         const rating = fid <= 100 ? 'good' : fid <= 300 ? 'needs_improvement' : 'poor';
         
         window.gtag('event', 'core_web_vital', {
@@ -135,8 +136,9 @@ export const trackCoreWebVitalsGA4 = (): void => {
     let clsScore = 0;
     const clsObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        if (!entry.hadRecentInput) {
-          clsScore += entry.value;
+        const layoutShift = entry as any; // LayoutShift interface not fully typed
+        if (!layoutShift.hadRecentInput) {
+          clsScore += layoutShift.value;
         }
       }
       
