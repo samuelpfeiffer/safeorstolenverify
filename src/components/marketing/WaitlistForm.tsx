@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Mail, Gift, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 export const WaitlistForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -17,23 +18,28 @@ export const WaitlistForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Newsletter subscription for waitlist
-      const response = await fetch('/api/newsletter-subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+      // Use secure Supabase function for newsletter subscription
+      const { data, error } = await supabase.rpc('subscribe_to_newsletter', {
+        user_email: email.trim().toLowerCase()
       });
 
-      if (response.ok) {
+      if (error) {
+        throw new Error(error.message || 'Subscription failed');
+      }
+
+      const result = data as { success: boolean; message: string };
+      
+      if (result.success) {
         setIsSubmitted(true);
         toast({
           title: "Welcome to the waitlist!",
           description: "You'll get 10 free scans when we launch your tier.",
         });
       } else {
-        throw new Error('Subscription failed');
+        throw new Error(result.message || 'Subscription failed');
       }
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       toast({
         title: "Something went wrong",
         description: "Please try again or contact support.",
