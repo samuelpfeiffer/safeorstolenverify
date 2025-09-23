@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
-import { AppLayout } from '@/components/layout/AppLayout';
+import { EnhancedAppLayout } from '@/components/layout/EnhancedAppLayout';
 // Removed duplicate SEO components - using ConsolidatedSEO in AppRoot.tsx instead
 
 // Lazy load all pages for optimal performance
@@ -136,7 +136,7 @@ export const AppRoutes: React.FC = () => {
     <Suspense fallback={<AppLoadingScreen />}>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<AppLayout />}>
+        <Route path="/" element={<EnhancedAppLayout />}>
           <Route index element={<HomePage />} />
           
           {/* SEO-Focused Landing Pages for Stolen Item Searches */}
