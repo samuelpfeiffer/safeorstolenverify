@@ -48,19 +48,41 @@ serve(async (req) => {
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
 
-    // Live Mode Stripe secret key validation with debug logging
+    // Enhanced Stripe secret key validation with detailed logging
     const getStripeKey = () => {
+      console.log(`[CREATE-CHECKOUT] Starting Stripe key validation...`);
       const key = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
-      console.log(`[CREATE-CHECKOUT] Using Supabase secret "STRIPE_SECRET_KEY": ${key ? key.substring(0,8) + '...' : 'MISSING'}`);
-      if (key && key.startsWith("sk_live_")) return key;
-      return null;
+      console.log(`[CREATE-CHECKOUT] Key found: ${key ? 'YES' : 'NO'}`);
+      console.log(`[CREATE-CHECKOUT] Key prefix: ${key ? key.substring(0,8) + '...' : 'MISSING'}`);
+      console.log(`[CREATE-CHECKOUT] Is live key: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
+      
+      if (!key) {
+        console.log(`[CREATE-CHECKOUT] ERROR: No STRIPE_SECRET_KEY found in Supabase secrets`);
+        return null;
+      }
+      
+      if (!key.startsWith("sk_live_")) {
+        console.log(`[CREATE-CHECKOUT] ERROR: Key does not start with sk_live_`);
+        return null;
+      }
+      
+      console.log(`[CREATE-CHECKOUT] SUCCESS: Valid live Stripe key found`);
+      return key;
     };
+    
     const stripeKey = getStripeKey();
     
     if (!stripeKey) {
-      const errorMsg = "Live mode requires a valid Stripe live secret key (sk_live_). Please configure the Supabase secret named 'STRIPE_SECRET_KEY' with your live key from the Stripe dashboard.";
-      console.log(`[CREATE-CHECKOUT] ERROR: ${errorMsg}`);
-      throw new Error(errorMsg);
+      const errorMsg = "❌ STRIPE CONFIGURATION ERROR: Live mode requires a valid Stripe live secret key (sk_live_). Please:\n1. Go to your Stripe Dashboard\n2. Copy your live secret key (starts with sk_live_)\n3. Add it to Supabase secrets as 'STRIPE_SECRET_KEY'\n4. Try again";
+      console.log(`[CREATE-CHECKOUT] ${errorMsg}`);
+      return new Response(
+        JSON.stringify({ 
+          error: "Stripe configuration error", 
+          details: "Live secret key required",
+          action: "Please configure your Stripe live secret key in Supabase secrets"
+        }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
     const stripe = new Stripe(stripeKey, {
       apiVersion: "2023-10-16",
@@ -118,7 +140,9 @@ serve(async (req) => {
         }
       }
       
-      throw new Error(`Unable to resolve a valid live Stripe price. Please ensure you have active products in your live Stripe dashboard named: "Basic Plan", "Premium Plan", "Enterprise Plan", or "Certified Stolen/Legitimate Report".`);
+      console.log(`[CREATE-CHECKOUT] ERROR: Price resolution failed for price: ${maybePriceId}, plan: ${maybePlanName}`);
+      console.log(`[CREATE-CHECKOUT] Available live prices:`, prices.data.map(p => ({ id: p.id, product: typeof p.product === 'object' && p.product && 'name' in p.product ? (p.product as any).name : 'Unknown' })));
+      throw new Error(`❌ STRIPE PRODUCT ERROR: Unable to find matching live Stripe product.\n\nPlease ensure you have active products in your live Stripe dashboard:\n• "Smart Buyer" (Basic Plan)\n• "Savvy Shopper" (Premium Plan) \n• "Business Pro" (Enterprise Plan)\n• "Certified Stolen/Legitimate Report"\n\nThen update the price IDs in your code or contact support.`);
     };
 
     let sessionConfig: any = {

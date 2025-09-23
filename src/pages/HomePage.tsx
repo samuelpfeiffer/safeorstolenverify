@@ -24,6 +24,7 @@ import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
 import { SEOAuditComponent } from '@/components/seo/SEOAuditComponent';
 import { AuthDebug } from '@/components/debug/AuthDebug';
+import { PaymentSystemDebug } from '@/components/debug/PaymentSystemDebug';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -225,6 +226,7 @@ const HomePage = () => {
           </section>
           
           <AuthDebug />
+          <PaymentSystemDebug />
           <FeaturedBlogSection />
           <EnhancedCTASection />
         </div>

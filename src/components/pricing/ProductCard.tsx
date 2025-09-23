@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle } from 'lucide-react';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {
@@ -29,7 +29,7 @@ export const ProductCard = ({
   onCheckout,
   isLoading 
 }: ProductCardProps) => {
-  const { user } = useAuth();
+  const { user } = useUnifiedAuth();
   const navigate = useNavigate();
 
   const handleCheckout = () => {
