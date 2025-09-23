@@ -206,6 +206,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: false, error: errorMessage };
       }
 
+      // Send welcome email for new users
+      if (data.user && !error) {
+        console.log("User created successfully, sending welcome email...");
+        
+        try {
+          await supabase.functions.invoke('send-welcome-email', {
+            body: {
+              email: data.user.email,
+              fullName: fullName,
+              userId: data.user.id
+            }
+          });
+          console.log("Welcome email sent successfully");
+        } catch (emailError) {
+          console.error("Error sending welcome email:", emailError);
+          // Don't fail the signup if email fails
+        }
+      }
+
       if (data.user && !data.session) {
         toast({
           title: 'Check your email',
@@ -214,9 +233,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
       } else {
         toast({
-          title: 'Thank you for signing up!',
-          description: 'Welcome to Safe or Stolen! You can now start verifying items.',
-          duration: 5000,
+          title: 'Welcome to SafeOrStolen! 🎉',
+          description: 'Your account has been created successfully. Check your email for next steps!',
+          duration: 8000,
         });
       }
 

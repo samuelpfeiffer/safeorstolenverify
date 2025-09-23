@@ -34,31 +34,32 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     ],
     stripePriceId: 'Pay Per Check' // Use product name for dynamic matching
   },
-  entryLevel: {
-    name: 'Entry Level (Individual)',
-    price: 1000, // $10.00 in cents
-    interval: 'month',
-    features: [
-      '7-day free trial',
-      '20 verifications/month',
-      'Real-time database checks',
-      'Basic verification reports',
-      'Email support'
-    ],
-    stripePriceId: 'Entry Level (Individual)' // Use product name for dynamic matching
-  },
   basic: {
     name: 'Smart Buyer',
     price: 799, // $7.99 in cents
     interval: 'month',
     features: [
       '7-day free trial',
-      'Unlimited verifications',
+      '30 verifications/month',
       'Real-time database checks',
       'Basic verification reports',
       'Email support'
     ],
     stripePriceId: 'Smart Buyer' // Use product name for dynamic matching
+  },
+  entryLevel: {
+    name: 'Entry Level (Individual)',
+    price: 1000, // $10.00 in cents
+    interval: 'month',
+    features: [
+      '7-day free trial',
+      'Unlimited verifications',
+      'Real-time database checks',
+      'Enhanced verification reports',
+      'Priority email support',
+      'Early access to new features'
+    ],
+    stripePriceId: 'Entry Level (Individual)' // Use product name for dynamic matching
   },
   premium: {
     name: 'Savvy Shopper',
@@ -67,10 +68,11 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     popular: true,
     features: [
       '7-day free trial',
-      'Everything in Smart Buyer',
+      'Everything in Entry Level',
       'Advanced verification reports',
-      'Bulk checking tools',
-      'Priority support'
+      'Bulk checking tools (up to 50 items)',
+      'Priority support',
+      'Mobile app access'
     ],
     stripePriceId: 'Savvy Shopper' // Use product name for dynamic matching
   },
@@ -81,7 +83,8 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     features: [
       '7-day free trial',
       'Everything in Savvy Shopper',
-      'Unlimited API access',
+      'Unlimited bulk checking',
+      'API access (10,000 calls/month)',
       'White-label solution',
       'Custom integrations',
       'Dedicated account manager'

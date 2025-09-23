@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { TermsAcceptance } from '@/components/auth/TermsAcceptance';
+import { WelcomeModal } from '@/components/auth/WelcomeModal';
 import { useAuth } from '@/lib/auth';
 import { useTermsAcceptance } from '@/hooks/useTermsAcceptance';
 import { useSecureSignUpForm, getMobileErrorMessage, SecureSignUpFormData } from '@/hooks/useSecureFormValidation';
@@ -17,7 +18,7 @@ interface SignUpFormSecureProps {
   onSuccess?: () => void;
 }
 
-type SignUpStep = 'form' | 'terms';
+type SignUpStep = 'form' | 'terms' | 'welcome';
 
 export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [pendingSignUpData, setPendingSignUpData] = useState<SecureSignUpFormData | null>(null);
   const [createdUserId, setCreatedUserId] = useState<string | null>(null);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const isMobile = useIsMobile();
   
   const form = useSecureSignUpForm({
@@ -105,15 +107,8 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
       const termsResult = await acceptTerms(createdUserId);
       
       if (termsResult.success) {
-        form.reset();
-        setPendingSignUpData(null);
-        setCreatedUserId(null);
-        setStep('form');
-        // Redirect to home page after successful signup and terms acceptance
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
-        onSuccess?.();
+        // Show welcome modal instead of immediately navigating away
+        setShowWelcomeModal(true);
       } else {
         toast({
           title: "Terms acceptance failed",
@@ -134,6 +129,17 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
     }
   };
 
+  const handleWelcomeModalClose = () => {
+    setShowWelcomeModal(false);
+    form.reset();
+    setPendingSignUpData(null);
+    setCreatedUserId(null);
+    setStep('form');
+    onSuccess?.();
+    // Navigate to home with welcome parameter
+    navigate('/?welcome=true');
+  };
+
   const handleBackToSignUp = () => {
     setStep('form');
     setPendingSignUpData(null);
@@ -147,15 +153,25 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
     return null;
   }
 
-  if (step === 'terms') {
+  // Show welcome modal after successful signup
+  if (showWelcomeModal) {
     return (
-      <div className="w-full max-w-md mx-auto">
-        <TermsAcceptance 
-          onAccept={handleTermsAccept}
-          onBack={handleBackToSignUp}
-          isLoading={currentlyLoading}
-        />
-      </div>
+      <WelcomeModal
+        isOpen={showWelcomeModal}
+        onClose={handleWelcomeModalClose}
+        userName={pendingSignUpData?.fullName}
+        userEmail={pendingSignUpData?.email}
+      />
+    );
+  }
+
+  if (step === 'terms' && pendingSignUpData) {
+    return (
+      <TermsAcceptance
+        onAccept={handleTermsAccept}
+        onBack={handleBackToSignUp}
+        isLoading={currentlyLoading}
+      />
     );
   }
 
