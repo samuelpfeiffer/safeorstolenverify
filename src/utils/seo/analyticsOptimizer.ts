@@ -168,7 +168,7 @@ export const trackCoreWebVitalsGA4 = (): void => {
 };
 
 /**
- * Track SEO-specific events and user interactions with enhanced metadata
+ * Enhanced SEO Event Tracking with comprehensive metadata and segmentation
  */
 export const trackSEOInteraction = (action: string, element: string, value?: string): void => {
   if (typeof window === 'undefined' || !window.gtag) return;
@@ -178,22 +178,22 @@ export const trackSEOInteraction = (action: string, element: string, value?: str
   const canonicalUrl = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || window.location.href;
   const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6')).map(h => ({
     tag: h.tagName.toLowerCase(),
-    text: h.textContent?.trim() || ''
+    text: h.textContent?.trim() || '',
+    hasId: !!h.id
   }));
 
-  // Schema markup detection
+  // Advanced Schema markup detection with validation
   const schemaElements = document.querySelectorAll('script[type="application/ld+json"]');
-  const hasStructuredData = schemaElements.length > 0;
-  const schemaTypes = Array.from(schemaElements).map(script => {
-    try {
-      const data = JSON.parse(script.textContent || '{}');
-      return data['@type'] || 'unknown';
-    } catch {
-      return 'invalid';
-    }
-  });
+  const schemaValidation = validateSchemaMarkup(schemaElements);
+  
+  // Page type segmentation
+  const pageType = getDetailedPageType(window.location.pathname);
+  const contentCategory = getContentCategory(window.location.pathname);
+  
+  // SEO health metrics
+  const seoHealthScore = calculateSEOHealthScore();
 
-  window.gtag('event', 'seo_interaction', {
+  window.gtag('event', 'enhanced_seo_interaction', {
     event_category: getSEOEventCategory(action, element),
     event_action: action,
     event_label: element,
@@ -201,18 +201,44 @@ export const trackSEOInteraction = (action: string, element: string, value?: str
     
     // Enhanced SEO metadata
     meta_description: metaDescription,
+    meta_description_length: metaDescription.length,
     canonical_url: canonicalUrl,
-    headings_count: headings.length,
+    headings_structure: JSON.stringify(headings.map(h => ({ tag: h.tag, hasId: h.hasId }))),
+    h1_count: headings.filter(h => h.tag === 'h1').length,
     h1_text: headings.find(h => h.tag === 'h1')?.text || '',
-    has_structured_data: hasStructuredData,
-    schema_types: schemaTypes.join(','),
+    total_headings: headings.length,
+    
+    // Schema validation results
+    has_structured_data: schemaValidation.hasValidSchema,
+    schema_types: schemaValidation.schemaTypes.join(','),
+    schema_validation_errors: schemaValidation.validationErrors.length,
+    faq_schema_present: schemaValidation.hasFAQSchema,
+    product_schema_present: schemaValidation.hasProductSchema,
+    review_schema_present: schemaValidation.hasReviewSchema,
+    howto_schema_present: schemaValidation.hasHowToSchema,
+    
+    // Page segmentation
+    page_type: pageType,
+    content_category: contentCategory,
+    is_landing_page: pageType === 'landing',
+    is_guide_page: pageType === 'guide',
+    is_checkout_page: pageType === 'checkout',
+    is_verification_tool: pageType === 'verification_tool',
+    
+    // SEO health indicators
+    seo_health_score: seoHealthScore.overall,
+    title_optimization_score: seoHealthScore.title,
+    content_optimization_score: seoHealthScore.content,
+    technical_seo_score: seoHealthScore.technical,
     
     // Page context
     page_path: window.location.pathname,
     page_title: document.title,
+    page_title_length: document.title.length,
     page_word_count: getPageWordCount(),
     internal_links_count: getInternalLinksCount(),
     external_links_count: getExternalLinksCount(),
+    images_without_alt: getImagesWithoutAlt(),
     
     timestamp: Date.now()
   });
@@ -554,32 +580,104 @@ export const trackSEOABTest = (testName: string, variant: string, element: strin
 };
 
 /**
- * Track Core Web Vitals with enhanced context
+ * Comprehensive Core Web Vitals tracking with device and performance context
  */
 export const trackEnhancedWebVitals = (): void => {
   if (typeof window === 'undefined' || !('PerformanceObserver' in window)) return;
 
+  const deviceContext = getDeviceContext();
+  const networkContext = getNetworkContext();
+
   try {
-    // Enhanced LCP tracking with element details
+    // Enhanced LCP tracking
     const lcpObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
         const lcp = entry.startTime;
         const rating = lcp <= 2500 ? 'good' : lcp <= 4000 ? 'needs_improvement' : 'poor';
         
-        window.gtag('event', 'enhanced_web_vital', {
-          event_category: 'Core_Web_Vitals',
+        window.gtag('event', 'comprehensive_web_vitals', {
+          event_category: 'Core_Web_Vitals_Enhanced',
           metric_name: 'LCP',
           metric_value: Math.round(lcp),
           metric_rating: rating,
-          connection_type: getConnectionType(),
-          device_type: getDeviceType(),
-          page_word_count: getPageWordCount(),
+          
+          // Device context
+          device_type: deviceContext.type,
+          viewport_width: deviceContext.viewportWidth,
+          viewport_height: deviceContext.viewportHeight,
+          screen_resolution: `${deviceContext.screenWidth}x${deviceContext.screenHeight}`,
+          pixel_ratio: deviceContext.pixelRatio,
+          
+          // Network context
+          connection_type: networkContext.effectiveType,
+          downlink_speed: networkContext.downlink,
+          rtt_latency: networkContext.rtt,
+          
+          // Page context
           images_count: document.images.length,
+          total_resources: performance.getEntriesByType('resource').length,
+          page_type: getDetailedPageType(window.location.pathname),
           page_path: window.location.pathname
         });
+
+        // Track critical performance issues
+        if (rating === 'poor') {
+          trackPerformanceAlert('LCP_CRITICAL', lcp, 'poor');
+        }
       }
     });
     lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+    // Enhanced FID tracking
+    const fidObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        const perfEntry = entry as any;
+        const fid = perfEntry.processingStart - perfEntry.startTime;
+        const rating = fid <= 100 ? 'good' : fid <= 300 ? 'needs_improvement' : 'poor';
+        
+        window.gtag('event', 'comprehensive_web_vitals', {
+          event_category: 'Core_Web_Vitals_Enhanced',
+          metric_name: 'FID',
+          metric_value: Math.round(fid),
+          metric_rating: rating,
+          device_type: deviceContext.type,
+          viewport_width: deviceContext.viewportWidth,
+          page_path: window.location.pathname
+        });
+
+        if (rating === 'poor') {
+          trackPerformanceAlert('FID_CRITICAL', fid, 'poor');
+        }
+      }
+    });
+    fidObserver.observe({ entryTypes: ['first-input'] });
+
+    // Enhanced CLS tracking
+    let clsScore = 0;
+    const clsObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        const layoutShift = entry as any;
+        if (!layoutShift.hadRecentInput) {
+          clsScore += layoutShift.value;
+        }
+      }
+      
+      const rating = clsScore <= 0.1 ? 'good' : clsScore <= 0.25 ? 'needs_improvement' : 'poor';
+      
+      window.gtag('event', 'comprehensive_web_vitals', {
+        event_category: 'Core_Web_Vitals_Enhanced',
+        metric_name: 'CLS',
+        metric_value: Math.round(clsScore * 1000) / 1000,
+        metric_rating: rating,
+        device_type: deviceContext.type,
+        page_path: window.location.pathname
+      });
+
+      if (rating === 'poor') {
+        trackPerformanceAlert('CLS_CRITICAL', clsScore, 'poor');
+      }
+    });
+    clsObserver.observe({ entryTypes: ['layout-shift'] });
 
   } catch (error) {
     console.warn('Enhanced Core Web Vitals tracking failed:', error);
@@ -629,6 +727,156 @@ const calculateReadingSpeed = (): number => {
   const wordCount = getPageWordCount();
   const timeOnPage = (Date.now() - performance.timing.navigationStart) / 1000;
   return Math.round((wordCount / timeOnPage) * 60); // Words per minute
+};
+
+/**
+ * Advanced helper functions for comprehensive SEO tracking
+ */
+const validateSchemaMarkup = (schemaElements: NodeListOf<Element>) => {
+  const validationResults = {
+    hasValidSchema: false,
+    schemaTypes: [] as string[],
+    validationErrors: [] as string[],
+    hasFAQSchema: false,
+    hasProductSchema: false,
+    hasReviewSchema: false,
+    hasHowToSchema: false
+  };
+
+  schemaElements.forEach((script, index) => {
+    try {
+      const data = JSON.parse(script.textContent || '{}');
+      const schemaType = data['@type'] || 'unknown';
+      
+      validationResults.schemaTypes.push(schemaType);
+      validationResults.hasValidSchema = true;
+      
+      // Check for specific schema types
+      if (schemaType === 'FAQPage' || (Array.isArray(data) && data.some(item => item['@type'] === 'Question'))) {
+        validationResults.hasFAQSchema = true;
+      }
+      if (schemaType === 'Product') {
+        validationResults.hasProductSchema = true;
+      }
+      if (schemaType === 'Review' || schemaType === 'AggregateRating') {
+        validationResults.hasReviewSchema = true;
+      }
+      if (schemaType === 'HowTo') {
+        validationResults.hasHowToSchema = true;
+      }
+      
+    } catch (error) {
+      validationResults.validationErrors.push(`Schema ${index + 1}: Invalid JSON`);
+    }
+  });
+
+  return validationResults;
+};
+
+const getDetailedPageType = (pathname: string): string => {
+  const typeMapping: Record<string, string> = {
+    '/': 'landing',
+    '/stolen-item-checker': 'verification_tool',
+    '/imei-check': 'verification_tool', 
+    '/vin-verification': 'verification_tool',
+    '/check-phone': 'verification_tool',
+    '/check-car': 'verification_tool',
+    '/how-it-works': 'guide',
+    '/for-brands': 'business_landing',
+    '/pricing': 'checkout',
+    '/contact': 'support',
+    '/about': 'company_info',
+    '/faq': 'support'
+  };
+
+  // Check for blog posts
+  if (pathname.includes('/blog/')) return 'blog_post';
+  if (pathname.includes('/guide/')) return 'guide';
+  if (pathname.includes('/city/')) return 'local_page';
+  
+  return typeMapping[pathname] || 'standard_page';
+};
+
+const getContentCategory = (pathname: string): string => {
+  if (pathname.includes('check') || pathname.includes('verify')) return 'verification_tools';
+  if (pathname.includes('how') || pathname.includes('guide')) return 'educational_content';
+  if (pathname.includes('for-brands') || pathname.includes('pricing')) return 'business_content';
+  if (pathname.includes('blog')) return 'blog_content';
+  return 'general_content';
+};
+
+const calculateSEOHealthScore = () => {
+  const title = document.title;
+  const metaDesc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+  const h1Elements = document.querySelectorAll('h1');
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const imagesWithoutAlt = getImagesWithoutAlt();
+  const totalImages = document.images.length;
+
+  // Title optimization (0-100)
+  let titleScore = 0;
+  if (title.length > 10 && title.length < 60) titleScore += 40;
+  if (title.toLowerCase().includes('verify') || title.toLowerCase().includes('stolen')) titleScore += 30;
+  if (title.includes('|') || title.includes('-')) titleScore += 15;
+  if (!title.includes('SafeOrStolen') || title.indexOf('SafeOrStolen') > 20) titleScore += 15;
+
+  // Content optimization (0-100)  
+  let contentScore = 0;
+  if (metaDesc.length > 50 && metaDesc.length < 160) contentScore += 30;
+  if (h1Elements.length === 1) contentScore += 25;
+  if (getPageWordCount() > 100) contentScore += 20;
+  if (imagesWithoutAlt === 0 && totalImages > 0) contentScore += 25;
+
+  // Technical SEO (0-100)
+  let technicalScore = 0;
+  if (canonical) technicalScore += 25;
+  if (document.querySelector('meta[name="viewport"]')) technicalScore += 25;
+  if (document.querySelectorAll('script[type="application/ld+json"]').length > 0) technicalScore += 25;
+  if (window.location.protocol === 'https:') technicalScore += 25;
+
+  const overallScore = Math.round((titleScore + contentScore + technicalScore) / 3);
+
+  return {
+    overall: overallScore,
+    title: titleScore,
+    content: contentScore,
+    technical: technicalScore
+  };
+};
+
+const getDeviceContext = () => ({
+  type: getDeviceType(),
+  viewportWidth: window.innerWidth,
+  viewportHeight: window.innerHeight,
+  screenWidth: window.screen.width,
+  screenHeight: window.screen.height,
+  pixelRatio: window.devicePixelRatio || 1
+});
+
+const getNetworkContext = () => {
+  const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+  return {
+    effectiveType: connection?.effectiveType || 'unknown',
+    downlink: connection?.downlink || 0,
+    rtt: connection?.rtt || 0
+  };
+};
+
+const getImagesWithoutAlt = (): number => {
+  return Array.from(document.images).filter(img => !img.alt || img.alt.trim() === '').length;
+};
+
+const trackPerformanceAlert = (alertType: string, value: number, severity: string): void => {
+  if (window.gtag) {
+    window.gtag('event', 'performance_alert', {
+      event_category: 'SEO_Performance_Alerts',
+      alert_type: alertType,
+      metric_value: value,
+      severity: severity,
+      page_path: window.location.pathname,
+      timestamp: Date.now()
+    });
+  }
 };
 
 /**

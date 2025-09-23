@@ -6,9 +6,12 @@ import { pwaService } from '@/services/pwaService';
 import { initPerformanceMonitoring } from '@/utils/seo/performanceOptimizer';
 import { initEnhancedAnalytics } from '@/utils/seo/analyticsOptimizer';
 import { ComprehensiveSEOTracker } from '@/components/seo/ComprehensiveSEOTracker';
+import { ABTestingFramework } from '@/components/seo/ABTestingFramework';
+import { OutboundLinkTracker } from '@/components/seo/OutboundLinkTracker';
+import { SEOHealthMonitor } from '@/components/seo/SEOHealthMonitor';
 import './index.css';
 
-// Initialize SEO performance monitoring
+// Initialize comprehensive SEO tracking system
 initPerformanceMonitoring();
 initEnhancedAnalytics();
 
@@ -38,5 +41,8 @@ root.render(
   <React.StrictMode>
     <AppRoot />
     <ComprehensiveSEOTracker />
+    <ABTestingFramework />
+    <OutboundLinkTracker />
+    <SEOHealthMonitor />
   </React.StrictMode>
 );
