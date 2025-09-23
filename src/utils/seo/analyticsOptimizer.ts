@@ -57,6 +57,15 @@ export const initEnhancedAnalytics = (): void => {
   // Track initial page view with enhanced data
   trackEnhancedPageView(window.location.pathname);
   
+  // Initialize enhanced tracking features
+  trackEngagementMetrics();
+  trackSchemaMarkup();
+  trackReferralSources();
+  trackEnhancedWebVitals();
+
+  // Track initial page view with enhanced data
+  trackEnhancedPageView(window.location.pathname);
+  
   console.log('Enhanced Analytics initialized with SEO tracking');
 };
 
@@ -159,20 +168,52 @@ export const trackCoreWebVitalsGA4 = (): void => {
 };
 
 /**
- * Track SEO-specific events and user interactions
+ * Track SEO-specific events and user interactions with enhanced metadata
  */
 export const trackSEOInteraction = (action: string, element: string, value?: string): void => {
   if (typeof window === 'undefined' || !window.gtag) return;
 
+  // Enhanced metadata collection
+  const metaDescription = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+  const canonicalUrl = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || window.location.href;
+  const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6')).map(h => ({
+    tag: h.tagName.toLowerCase(),
+    text: h.textContent?.trim() || ''
+  }));
+
+  // Schema markup detection
+  const schemaElements = document.querySelectorAll('script[type="application/ld+json"]');
+  const hasStructuredData = schemaElements.length > 0;
+  const schemaTypes = Array.from(schemaElements).map(script => {
+    try {
+      const data = JSON.parse(script.textContent || '{}');
+      return data['@type'] || 'unknown';
+    } catch {
+      return 'invalid';
+    }
+  });
+
   window.gtag('event', 'seo_interaction', {
-    event_category: 'SEO',
+    event_category: getSEOEventCategory(action, element),
     event_action: action,
     event_label: element,
     value: value,
     
-    // Additional SEO context
+    // Enhanced SEO metadata
+    meta_description: metaDescription,
+    canonical_url: canonicalUrl,
+    headings_count: headings.length,
+    h1_text: headings.find(h => h.tag === 'h1')?.text || '',
+    has_structured_data: hasStructuredData,
+    schema_types: schemaTypes.join(','),
+    
+    // Page context
     page_path: window.location.pathname,
     page_title: document.title,
+    page_word_count: getPageWordCount(),
+    internal_links_count: getInternalLinksCount(),
+    external_links_count: getExternalLinksCount(),
+    
     timestamp: Date.now()
   });
 };
@@ -233,49 +274,101 @@ export const trackSiteSearch = (searchQuery: string, resultCount: number, catego
 };
 
 /**
- * Track user engagement for SEO signals
+ * Track enhanced user engagement for SEO signals
  */
 export const trackEngagementMetrics = (): void => {
   if (typeof window === 'undefined') return;
 
   let scrollDepth = 0;
+  let maxScrollDepth = 0;
   let timeOnPage = Date.now();
-  
-  // Track scroll depth
+  let readingTime = 0;
+  let scrollEvents = 0;
+  let dwellTimeTracked = false;
+
+  // Enhanced scroll tracking with reading behavior
   const trackScroll = () => {
     const scrollPercent = Math.round(
       (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
     );
     
-    if (scrollPercent > scrollDepth && scrollPercent % 25 === 0) {
+    scrollEvents++;
+    maxScrollDepth = Math.max(maxScrollDepth, scrollPercent);
+
+    // Track milestone scroll depths
+    if (scrollPercent > scrollDepth && [10, 25, 50, 75, 90, 100].includes(scrollPercent)) {
       scrollDepth = scrollPercent;
       
       if (window.gtag) {
         window.gtag('event', 'scroll_depth', {
-          event_category: 'Engagement',
+          event_category: 'Enhanced_Engagement',
+          event_action: 'Scroll_Milestone',
+          event_label: `${scrollPercent}%`,
+          scroll_depth: scrollPercent,
+          max_scroll: maxScrollDepth,
+          scroll_events: scrollEvents,
+          reading_speed: calculateReadingSpeed(),
+          page_path: window.location.pathname
+        });
+      }
+    }
+
+    // Track dwell time at 30 seconds for engaged users
+    if (!dwellTimeTracked && Date.now() - timeOnPage > 30000 && scrollPercent > 25) {
+      dwellTimeTracked = true;
+      if (window.gtag) {
+        window.gtag('event', 'engaged_user', {
+          event_category: 'Enhanced_Engagement',
+          event_action: 'Dwell_Time',
+          value: 30,
           scroll_depth: scrollPercent,
           page_path: window.location.pathname
         });
       }
     }
   };
-  
-  // Track time on page when user leaves
+
+  // Enhanced time tracking with reading behavior analysis
   const trackTimeOnPage = () => {
     const timeSpent = Math.round((Date.now() - timeOnPage) / 1000);
     
-    if (window.gtag && timeSpent > 10) { // Only track if user spent more than 10 seconds
+    if (window.gtag && timeSpent > 5) {
       window.gtag('event', 'time_on_page', {
-        event_category: 'Engagement',
+        event_category: 'Enhanced_Engagement',
+        event_action: 'Session_End',
         time_spent: timeSpent,
-        page_path: window.location.pathname,
-        engaged_session: timeSpent > 60 // Mark as engaged if > 1 minute
+        max_scroll_depth: maxScrollDepth,
+        scroll_events: scrollEvents,
+        reading_speed: calculateReadingSpeed(),
+        bounce_candidate: timeSpent < 15 && maxScrollDepth < 25,
+        engaged_session: timeSpent > 60 && maxScrollDepth > 50,
+        page_path: window.location.pathname
       });
     }
   };
-  
+
+  // Track content interaction (clicks, selections)
+  const trackContentInteraction = (e: Event) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A') {
+      const isInternal = target.getAttribute('href')?.startsWith('/') || 
+                        target.getAttribute('href')?.includes(window.location.hostname);
+      
+      if (window.gtag) {
+        window.gtag('event', 'content_interaction', {
+          event_category: 'Enhanced_Engagement',
+          event_action: isInternal ? 'Internal_Link_Click' : 'External_Link_Click',
+          event_label: target.textContent?.trim() || 'Unknown',
+          link_url: target.getAttribute('href') || '',
+          page_path: window.location.pathname
+        });
+      }
+    }
+  };
+
   window.addEventListener('scroll', trackScroll, { passive: true });
   window.addEventListener('beforeunload', trackTimeOnPage);
+  window.addEventListener('click', trackContentInteraction);
 };
 
 /**
@@ -355,16 +448,202 @@ const getSearchIntent = (query: string): string => {
 };
 
 /**
+ * Track Schema.org markup validation and performance
+ */
+export const trackSchemaMarkup = (): void => {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  const schemaElements = document.querySelectorAll('script[type="application/ld+json"]');
+  const validSchemas: string[] = [];
+  const invalidSchemas: string[] = [];
+
+  schemaElements.forEach((script, index) => {
+    try {
+      const data = JSON.parse(script.textContent || '{}');
+      const schemaType = data['@type'] || 'unknown';
+      validSchemas.push(schemaType);
+      
+      // Track specific schema types
+      window.gtag('event', 'schema_validation', {
+        event_category: 'Schema_Markup',
+        event_action: 'Valid_Schema',
+        event_label: schemaType,
+        schema_index: index,
+        has_context: !!data['@context'],
+        page_path: window.location.pathname
+      });
+    } catch {
+      invalidSchemas.push(`schema_${index}`);
+      
+      window.gtag('event', 'schema_validation', {
+        event_category: 'Schema_Markup',
+        event_action: 'Invalid_Schema',
+        event_label: `schema_${index}`,
+        page_path: window.location.pathname
+      });
+    }
+  });
+
+  // Overall schema summary
+  if (validSchemas.length > 0 || invalidSchemas.length > 0) {
+    window.gtag('event', 'schema_summary', {
+      event_category: 'Schema_Markup',
+      valid_schemas: validSchemas.length,
+      invalid_schemas: invalidSchemas.length,
+      schema_types: validSchemas.join(','),
+      page_path: window.location.pathname
+    });
+  }
+};
+
+/**
+ * Track backlink clicks and referral sources
+ */
+export const trackReferralSources = (): void => {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  const referrer = document.referrer;
+  if (referrer && !referrer.includes(window.location.hostname)) {
+    const referrerDomain = new URL(referrer).hostname;
+    
+    window.gtag('event', 'referral_traffic', {
+      event_category: 'Traffic_Sources',
+      event_action: 'External_Referrer',
+      event_label: referrerDomain,
+      referrer_url: referrer,
+      page_path: window.location.pathname
+    });
+  }
+
+  // Track outbound link clicks
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLAnchorElement;
+    if (target.tagName === 'A' && target.href) {
+      const isExternal = !target.href.includes(window.location.hostname) && 
+                        target.href.startsWith('http');
+      
+      if (isExternal && window.gtag) {
+        const domain = new URL(target.href).hostname;
+        window.gtag('event', 'outbound_click', {
+          event_category: 'Traffic_Sources',
+          event_action: 'Outbound_Link',
+          event_label: domain,
+          link_url: target.href,
+          link_text: target.textContent?.trim() || '',
+          page_path: window.location.pathname
+        });
+      }
+    }
+  });
+};
+
+/**
+ * A/B testing for SEO elements
+ */
+export const trackSEOABTest = (testName: string, variant: string, element: string): void => {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', 'seo_ab_test', {
+    event_category: 'SEO_AB_Testing',
+    event_action: testName,
+    event_label: variant,
+    test_element: element,
+    page_path: window.location.pathname,
+    timestamp: Date.now()
+  });
+};
+
+/**
+ * Track Core Web Vitals with enhanced context
+ */
+export const trackEnhancedWebVitals = (): void => {
+  if (typeof window === 'undefined' || !('PerformanceObserver' in window)) return;
+
+  try {
+    // Enhanced LCP tracking with element details
+    const lcpObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        const lcp = entry.startTime;
+        const rating = lcp <= 2500 ? 'good' : lcp <= 4000 ? 'needs_improvement' : 'poor';
+        
+        window.gtag('event', 'enhanced_web_vital', {
+          event_category: 'Core_Web_Vitals',
+          metric_name: 'LCP',
+          metric_value: Math.round(lcp),
+          metric_rating: rating,
+          connection_type: getConnectionType(),
+          device_type: getDeviceType(),
+          page_word_count: getPageWordCount(),
+          images_count: document.images.length,
+          page_path: window.location.pathname
+        });
+      }
+    });
+    lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+  } catch (error) {
+    console.warn('Enhanced Core Web Vitals tracking failed:', error);
+  }
+};
+
+/**
+ * Helper functions for enhanced tracking
+ */
+const getSEOEventCategory = (action: string, element: string): string => {
+  const categoryMap: Record<string, string> = {
+    'title_click': 'SEO_Title_Optimization',
+    'meta_view': 'SEO_Meta_Optimization', 
+    'schema_interaction': 'SEO_Schema_Markup',
+    'faq_expansion': 'SEO_FAQ_Engagement',
+    'review_submission': 'SEO_Review_Generation',
+    'breadcrumb_click': 'SEO_Navigation',
+    'internal_link': 'SEO_Internal_Linking',
+    'rich_snippet': 'SEO_Rich_Results'
+  };
+  
+  return categoryMap[action] || 'SEO_General';
+};
+
+const getPageWordCount = (): number => {
+  const text = document.body.textContent || '';
+  return text.trim().split(/\s+/).length;
+};
+
+const getInternalLinksCount = (): number => {
+  const links = Array.from(document.querySelectorAll('a[href]'));
+  return links.filter(link => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('/') || href.includes(window.location.hostname);
+  }).length;
+};
+
+const getExternalLinksCount = (): number => {
+  const links = Array.from(document.querySelectorAll('a[href]'));
+  return links.filter(link => {
+    const href = link.getAttribute('href') || '';
+    return href.startsWith('http') && !href.includes(window.location.hostname);
+  }).length;
+};
+
+const calculateReadingSpeed = (): number => {
+  const wordCount = getPageWordCount();
+  const timeOnPage = (Date.now() - performance.timing.navigationStart) / 1000;
+  return Math.round((wordCount / timeOnPage) * 60); // Words per minute
+};
+
+/**
  * Track errors for SEO monitoring
  */
 export const trackSEOError = (errorType: string, errorMessage: string, url?: string): void => {
   if (typeof window === 'undefined' || !window.gtag) return;
 
   window.gtag('event', 'seo_error', {
-    event_category: 'SEO Errors',
+    event_category: 'SEO_Errors',
     error_type: errorType,
     error_message: errorMessage,
     page_url: url || window.location.href,
+    page_title: document.title,
+    has_structured_data: document.querySelectorAll('script[type="application/ld+json"]').length > 0,
     timestamp: Date.now()
   });
 };

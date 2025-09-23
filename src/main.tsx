@@ -5,6 +5,7 @@ import { AppRoot } from '@/core/app/AppRoot';
 import { pwaService } from '@/services/pwaService';
 import { initPerformanceMonitoring } from '@/utils/seo/performanceOptimizer';
 import { initEnhancedAnalytics } from '@/utils/seo/analyticsOptimizer';
+import { ComprehensiveSEOTracker } from '@/components/seo/ComprehensiveSEOTracker';
 import './index.css';
 
 // Initialize SEO performance monitoring
@@ -36,5 +37,6 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <AppRoot />
+    <ComprehensiveSEOTracker />
   </React.StrictMode>
 );
