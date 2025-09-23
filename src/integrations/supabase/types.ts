@@ -1996,6 +1996,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      check_auth_rate_limit: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
       check_enhanced_rate_limit: {
         Args: {
           action_type: string
