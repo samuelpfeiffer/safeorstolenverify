@@ -3,7 +3,13 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import { pwaService } from '@/services/pwaService';
+import { initPerformanceMonitoring } from '@/utils/seo/performanceOptimizer';
+import { initEnhancedAnalytics } from '@/utils/seo/analyticsOptimizer';
 import './index.css';
+
+// Initialize SEO performance monitoring
+initPerformanceMonitoring();
+initEnhancedAnalytics();
 
 // Initialize PWA service and clean old cache on startup
 pwaService.initDB().then(() => {
