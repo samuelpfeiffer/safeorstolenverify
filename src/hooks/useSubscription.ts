@@ -34,7 +34,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Checking subscription status with updated Stripe key...");
+      console.log("Checking subscription status...");
       const { data, error } = await supabase.functions.invoke('check-subscription', {
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -49,10 +49,10 @@ export const useSubscription = (): UseSubscriptionReturn => {
       }
 
       console.log("Subscription check result:", data);
-      setSubscriptionData(data);
+      setSubscriptionData(data || { subscribed: false, subscription_tier: null, subscription_end: null });
     } catch (error: any) {
       console.error("Failed to check subscription:", error);
-      // Handle gracefully without showing error toast
+      // Handle gracefully without showing error toast for subscription checks
       setSubscriptionData({ subscribed: false, subscription_tier: null, subscription_end: null });
     } finally {
       setIsLoading(false);
@@ -60,7 +60,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
   };
 
   const createSubscriptionCheckout = async (priceId: string): Promise<string | null> => {
-    if (!session) {
+    if (!session || !isAuthenticated) {
       toast({
         title: "Authentication required",
         description: "Please sign in to subscribe",
@@ -78,6 +78,8 @@ export const useSubscription = (): UseSubscriptionReturn => {
         'price_1S0uGQGxnZLw8J7OOgm02vdB': 'Smart Buyer',
         'price_1S0uGiGxnZLw8J7OQEwssbK7': 'Savvy Shopper',
         'price_1S0uJsGxnZLw8J7OfU7XKMhV': 'Business Pro',
+        'price_1S9CrOGxnZLw8J7OAWHGY2P9': 'Entry Level',
+        'price_1S9CuPGxnZLw8J7OyBKr6134': 'Pay Per Check',
         'price_1Rz83i2eGaMDLFHonAmu86lS': 'Certified Stolen/Legitimate Report'
       };
       
@@ -97,7 +99,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId,
-          planName: planNameMap[priceId],
+          planName: planNameMap[priceId] || `Plan for ${priceId}`,
           isSubscription: true,
           redirectUrl: window.location.origin,
         },
@@ -108,22 +110,56 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
       if (error) {
         console.error("Error creating checkout:", error);
+        const errorMessage = typeof error === 'object' && error.details 
+          ? error.details 
+          : error.message || "Unknown error occurred";
+        
+        toast({
+          title: "Checkout error",
+          description: errorMessage,
+          variant: "destructive",
+        });
         throw error;
       }
 
       if (!data?.url) {
         console.error("No URL received from checkout session:", data);
-        throw new Error("No checkout URL received from server");
+        toast({
+          title: "Checkout error", 
+          description: "No checkout URL received from server. Please try again.",
+          variant: "destructive",
+        });
+        return null;
       }
 
       console.log("Checkout created with trial:", data.url);
       return data.url;
     } catch (error: any) {
       console.error("Failed to create checkout:", error);
+      
+      // Enhanced error handling with specific messages
+      let errorMessage = "Failed to create checkout session";
+      let errorAction = "Please try again";
+      
+      if (error?.message?.includes("Stripe configuration")) {
+        errorMessage = "Payment system configuration error";
+        errorAction = "Please contact support or try again later";
+      } else if (error?.message?.includes("No matching")) {
+        errorMessage = "Product not found in payment system";
+        errorAction = "Please try a different plan or contact support";
+      } else if (error?.message?.includes("Invalid token")) {
+        errorMessage = "Session expired";
+        errorAction = "Please sign in again and try again";
+      } else if (error?.details) {
+        errorMessage = error.details;
+        errorAction = error.action || "Please try again";
+      }
+      
       toast({
-        title: "Checkout error",
-        description: error.message || "Failed to create checkout session",
+        title: "Subscription Error",
+        description: `${errorMessage}. ${errorAction}`,
         variant: "destructive",
+        duration: 8000, // Show longer for error messages
       });
       return null;
     } finally {
@@ -132,7 +168,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
   };
 
   const openCustomerPortal = async () => {
-    if (!session) {
+    if (!session || !isAuthenticated) {
       toast({
         title: "Authentication required",
         description: "Please sign in to manage your subscription",
@@ -152,7 +188,26 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
       if (error) {
         console.error("Error opening customer portal:", error);
-        throw error;
+        const errorMessage = typeof error === 'object' && error.details 
+          ? error.details 
+          : error.message || "Failed to open customer portal";
+        
+        toast({
+          title: "Portal Error",
+          description: errorMessage,
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (!data?.url) {
+        console.error("No URL received from customer portal:", data);
+        toast({
+          title: "Portal Error",
+          description: "No portal URL received. Please try again.",
+          variant: "destructive",
+        });
+        return;
       }
 
       console.log("Opening portal:", data.url);
@@ -160,7 +215,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
     } catch (error: any) {
       console.error("Failed to open customer portal:", error);
       toast({
-        title: "Portal error",
+        title: "Portal Error",
         description: error.message || "Failed to open customer portal",
         variant: "destructive",
       });

@@ -1,11 +1,11 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
-import Stripe from "https://esm.sh/stripe@15.8.0";
+import Stripe from "https://esm.sh/stripe@16.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Methods": "POST, OPTIONS, GET, PUT, PATCH, DELETE",
 };
 
 serve(async (req) => {
@@ -15,6 +15,8 @@ serve(async (req) => {
   }
 
   try {
+    console.log(`[CREATE-CHECKOUT] Request started - Method: ${req.method}`);
+    
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
@@ -23,8 +25,12 @@ serve(async (req) => {
     // Get the authorization header from the request
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) {
+      console.log(`[CREATE-CHECKOUT] ERROR: No authorization header`);
       return new Response(
-        JSON.stringify({ error: "No authorization header" }),
+        JSON.stringify({ 
+          error: "No authorization header",
+          details: "Please ensure you are logged in and try again"
+        }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -39,110 +45,172 @@ serve(async (req) => {
     } = await supabaseClient.auth.getUser(jwt);
 
     if (userError || !user) {
+      console.log(`[CREATE-CHECKOUT] ERROR: Invalid token`, userError);
       return new Response(
-        JSON.stringify({ error: "Invalid token" }),
+        JSON.stringify({ 
+          error: "Invalid token",
+          details: "Please sign in again and try again"
+        }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
+    console.log(`[CREATE-CHECKOUT] User authenticated: ${user.email}`);
+
     // Parse the request body
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
+    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription });
 
-    // Enhanced Stripe secret key validation with detailed logging
+    // Enhanced Stripe secret key validation with test/live mode support
     const getStripeKey = () => {
       console.log(`[CREATE-CHECKOUT] Starting Stripe key validation...`);
       const key = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
       console.log(`[CREATE-CHECKOUT] Key found: ${key ? 'YES' : 'NO'}`);
-      console.log(`[CREATE-CHECKOUT] Key prefix: ${key ? key.substring(0,8) + '...' : 'MISSING'}`);
-      console.log(`[CREATE-CHECKOUT] Is live key: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
       
       if (!key) {
         console.log(`[CREATE-CHECKOUT] ERROR: No STRIPE_SECRET_KEY found in Supabase secrets`);
         return null;
       }
       
-      if (!key.startsWith("sk_live_")) {
-        console.log(`[CREATE-CHECKOUT] ERROR: Key does not start with sk_live_`);
+      const isLiveKey = key.startsWith("sk_live_");
+      const isTestKey = key.startsWith("sk_test_");
+      
+      console.log(`[CREATE-CHECKOUT] Key type: ${isLiveKey ? 'LIVE' : isTestKey ? 'TEST' : 'UNKNOWN'}`);
+      
+      if (!isLiveKey && !isTestKey) {
+        console.log(`[CREATE-CHECKOUT] ERROR: Key is neither live nor test format`);
         return null;
       }
       
-      console.log(`[CREATE-CHECKOUT] SUCCESS: Valid live Stripe key found`);
+      console.log(`[CREATE-CHECKOUT] SUCCESS: Valid Stripe key found (${isLiveKey ? 'live' : 'test'} mode)`);
       return key;
     };
     
     const stripeKey = getStripeKey();
     
     if (!stripeKey) {
-      const errorMsg = "❌ STRIPE CONFIGURATION ERROR: Live mode requires a valid Stripe live secret key (sk_live_). Please:\n1. Go to your Stripe Dashboard\n2. Copy your live secret key (starts with sk_live_)\n3. Add it to Supabase secrets as 'STRIPE_SECRET_KEY'\n4. Try again";
+      const errorMsg = "❌ STRIPE CONFIGURATION ERROR: Please configure a valid Stripe secret key:\n1. Go to your Stripe Dashboard\n2. Copy your secret key (starts with sk_live_ or sk_test_)\n3. Add it to Supabase secrets as 'STRIPE_SECRET_KEY'\n4. Try again";
       console.log(`[CREATE-CHECKOUT] ${errorMsg}`);
       return new Response(
         JSON.stringify({ 
           error: "Stripe configuration error", 
-          details: "Live secret key required",
-          action: "Please configure your Stripe live secret key in Supabase secrets"
+          details: "Invalid or missing Stripe secret key",
+          action: "Please configure your Stripe secret key in Supabase secrets"
         }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
+    
     const stripe = new Stripe(stripeKey, {
       apiVersion: "2023-10-16",
     });
 
     // Check if customer exists in Stripe
+    console.log(`[CREATE-CHECKOUT] Looking for existing customer: ${user.email}`);
     const customers = await stripe.customers.list({ email: user.email, limit: 1 });
     let customerId;
     if (customers.data.length > 0) {
       customerId = customers.data[0].id;
+      console.log(`[CREATE-CHECKOUT] Found existing customer: ${customerId}`);
+    } else {
+      console.log(`[CREATE-CHECKOUT] No existing customer found, will create one during checkout`);
     }
 
-    // Helper: resolve a valid Stripe Price ID for live mode
+    // Enhanced Price ID resolution that works with any Stripe account
     const resolvePriceId = async (maybePriceId?: string, maybePlanName?: string): Promise<string> => {
+      console.log(`[CREATE-CHECKOUT] Resolving price for:`, { priceId: maybePriceId, planName: maybePlanName });
+      
       // Try direct retrieve first if an ID was sent
       if (maybePriceId) {
         try {
+          console.log(`[CREATE-CHECKOUT] Attempting to retrieve price: ${maybePriceId}`);
           const p = await stripe.prices.retrieve(maybePriceId);
           if (p && p.id && p.active) {
+            console.log(`[CREATE-CHECKOUT] Successfully found price: ${p.id}`);
             return p.id;
+          } else {
+            console.log(`[CREATE-CHECKOUT] Price found but not active: ${p.id}, active: ${p.active}`);
           }
         } catch (e) {
+          console.log(`[CREATE-CHECKOUT] Failed to retrieve price ${maybePriceId}:`, e);
           // Fall through to plan name resolution
         }
       }
       
-      // Map plan names to search terms for live Stripe products
+      // Get all active prices and try to match by product name
+      console.log(`[CREATE-CHECKOUT] Fetching all active prices for matching...`);
+      const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
+      console.log(`[CREATE-CHECKOUT] Found ${prices.data.length} active prices`);
+      
+      // Log all available products for debugging
+      const availableProducts = prices.data.map(p => {
+        const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) 
+          ? (p.product as any).name 
+          : 'Unknown';
+        return { priceId: p.id, productName, type: p.type, interval: p.recurring?.interval };
+      });
+      console.log(`[CREATE-CHECKOUT] Available products:`, availableProducts);
+      
+      // Map plan names to flexible search terms
       const planNameMap: Record<string, string[]> = {
-        'basic': ['smart buyer', 'basic plan', 'basic', 'starter'],
-        'premium': ['savvy shopper', 'premium plan', 'premium', 'pro'],
-        'enterprise': ['business pro', 'enterprise plan', 'enterprise', 'business'],
-        'report': ['certified stolen/legitimate report', 'report', 'single report']
+        'smart buyer': ['smart buyer', 'basic plan', 'basic', 'starter', 'individual'],
+        'savvy shopper': ['savvy shopper', 'premium plan', 'premium', 'pro', 'popular'],  
+        'business pro': ['business pro', 'enterprise plan', 'enterprise', 'business'],
+        'entry level': ['entry level', 'entry', 'individual', 'starter'],
+        'pay per check': ['pay per check', 'single', 'one-time', 'per check'],
+        'report': ['certified stolen', 'report', 'single report', 'verification']
       };
       
       let searchTerms: string[] = [];
       if (maybePlanName) {
         const normalizedName = maybePlanName.toLowerCase();
-        const planKey = Object.keys(planNameMap).find(key => normalizedName.includes(key));
-        searchTerms = planKey ? planNameMap[planKey] : [normalizedName];
+        console.log(`[CREATE-CHECKOUT] Normalized plan name: ${normalizedName}`);
+        
+        // Find matching search terms
+        for (const [key, terms] of Object.entries(planNameMap)) {
+          if (terms.some(term => normalizedName.includes(term) || term.includes(normalizedName))) {
+            searchTerms = terms;
+            console.log(`[CREATE-CHECKOUT] Found matching terms for "${normalizedName}":`, searchTerms);
+            break;
+          }
+        }
+        
+        if (searchTerms.length === 0) {
+          searchTerms = [normalizedName];
+          console.log(`[CREATE-CHECKOUT] Using direct plan name as search term: ${normalizedName}`);
+        }
       }
       
       if (searchTerms.length > 0) {
-        const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
         const match = prices.data.find((p: any) => {
-          const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) ? (p.product as any).name : undefined;
+          const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) 
+            ? (p.product as any).name 
+            : undefined;
           if (!productName) return false;
           
-          return searchTerms.some(term => 
-            productName.toLowerCase().includes(term) &&
-            (p.recurring?.interval === 'month' || p.type === 'one_time')
+          const nameMatch = searchTerms.some(term => 
+            productName.toLowerCase().includes(term.toLowerCase()) ||
+            term.toLowerCase().includes(productName.toLowerCase())
           );
+          
+          // For subscriptions, prefer monthly recurring prices
+          const typeMatch = isSubscription ? 
+            (p.recurring?.interval === 'month' || p.type === 'recurring') :
+            (p.type === 'one_time');
+            
+          console.log(`[CREATE-CHECKOUT] Checking product "${productName}":`, { nameMatch, typeMatch, type: p.type, interval: p.recurring?.interval });
+          
+          return nameMatch && typeMatch;
         });
+        
         if (match) {
+          console.log(`[CREATE-CHECKOUT] Successfully matched price: ${match.id} for product: ${(match.product as any)?.name}`);
           return match.id;
         }
       }
       
-      console.log(`[CREATE-CHECKOUT] ERROR: Price resolution failed for price: ${maybePriceId}, plan: ${maybePlanName}`);
-      console.log(`[CREATE-CHECKOUT] Available live prices:`, prices.data.map(p => ({ id: p.id, product: typeof p.product === 'object' && p.product && 'name' in p.product ? (p.product as any).name : 'Unknown' })));
-      throw new Error(`❌ STRIPE PRODUCT ERROR: Unable to find matching live Stripe product.\n\nPlease ensure you have active products in your live Stripe dashboard:\n• "Smart Buyer" (Basic Plan)\n• "Savvy Shopper" (Premium Plan) \n• "Business Pro" (Enterprise Plan)\n• "Certified Stolen/Legitimate Report"\n\nThen update the price IDs in your code or contact support.`);
+      console.log(`[CREATE-CHECKOUT] ERROR: No matching price found. Available products:`, availableProducts);
+      throw new Error(`❌ STRIPE PRODUCT ERROR: Unable to find matching Stripe product for "${maybePlanName || maybePriceId}"\n\nAvailable products in your Stripe account:\n${availableProducts.map(p => `• ${p.productName} (${p.priceId})`).join('\n')}\n\nPlease ensure you have the correct products set up in your Stripe dashboard.`);
     };
 
     let sessionConfig: any = {
@@ -160,6 +228,7 @@ serve(async (req) => {
 
     if (isSubscription) {
       // Subscription mode with 7-day free trial
+      console.log(`[CREATE-CHECKOUT] Setting up subscription checkout...`);
       const resolvedPrice = await resolvePriceId(priceId, planName);
       
       sessionConfig = {
@@ -175,8 +244,11 @@ serve(async (req) => {
           trial_period_days: 7,
         },
       };
+      
+      console.log(`[CREATE-CHECKOUT] Subscription config ready with 7-day trial`);
     } else {
       // One-time payment mode for verification
+      console.log(`[CREATE-CHECKOUT] Setting up one-time payment...`);
       
       const verificationData = await supabaseClient
         .from("verification_searches")
@@ -189,15 +261,18 @@ serve(async (req) => {
         .single();
 
       if (verificationData.error) {
+        console.log(`[CREATE-CHECKOUT] ERROR creating verification record:`, verificationData.error);
         throw verificationData.error;
       }
+
+      const resolvedPrice = await resolvePriceId(priceId, planName);
 
       sessionConfig = {
         ...sessionConfig,
         mode: "payment",
         line_items: [
           {
-            price: priceId,
+            price: resolvedPrice,
             quantity: 1,
           },
         ],
@@ -216,10 +291,14 @@ serve(async (req) => {
         currency: "usd",
         verification_id: verificationData.data.id,
       });
+      
+      console.log(`[CREATE-CHECKOUT] One-time payment config ready`);
     }
 
     // Create Checkout Session
+    console.log(`[CREATE-CHECKOUT] Creating Stripe checkout session...`);
     const session = await stripe.checkout.sessions.create(sessionConfig);
+    console.log(`[CREATE-CHECKOUT] Checkout session created: ${session.id}`);
 
     // Update purchase record with session ID for one-time payments
     if (!isSubscription && serialNumber) {
@@ -228,16 +307,23 @@ serve(async (req) => {
         .update({ stripe_session_id: session.id })
         .eq("user_id", user.id)
         .eq("stripe_session_id", "pending");
+      console.log(`[CREATE-CHECKOUT] Updated purchase record with session ID`);
     }
 
+    console.log(`[CREATE-CHECKOUT] SUCCESS: Returning checkout URL`);
     return new Response(
       JSON.stringify({ url: session.url }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
+    console.log(`[CREATE-CHECKOUT] ERROR:`, message);
     return new Response(
-      JSON.stringify({ error: message }),
+      JSON.stringify({ 
+        error: "Checkout creation failed",
+        details: message,
+        action: "Please check your Stripe configuration and try again"
+      }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

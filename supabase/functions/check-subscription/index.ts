@@ -1,11 +1,11 @@
-
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
-import Stripe from "https://esm.sh/stripe@15.8.0";
+import Stripe from "https://esm.sh/stripe@16.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS, GET, PUT, PATCH, DELETE",
 };
 
 serve(async (req) => {
@@ -15,25 +15,30 @@ serve(async (req) => {
   }
 
   try {
-    // Enhanced Stripe secret key validation with detailed logging
+    console.log(`[CHECK-SUBSCRIPTION] Request started - Method: ${req.method}`);
+    
+    // Enhanced Stripe secret key validation with test/live mode support
     const getStripeKey = () => {
       console.log(`[CHECK-SUBSCRIPTION] Starting Stripe key validation...`);
       const key = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
       console.log(`[CHECK-SUBSCRIPTION] Key found: ${key ? 'YES' : 'NO'}`);
-      console.log(`[CHECK-SUBSCRIPTION] Key prefix: ${key ? key.substring(0,8) + '...' : 'MISSING'}`);
-      console.log(`[CHECK-SUBSCRIPTION] Is live key: ${key?.startsWith("sk_live_") ? 'YES' : 'NO'}`);
       
       if (!key) {
         console.log(`[CHECK-SUBSCRIPTION] ERROR: No STRIPE_SECRET_KEY found in Supabase secrets`);
         return null;
       }
       
-      if (!key.startsWith("sk_live_")) {
-        console.log(`[CHECK-SUBSCRIPTION] ERROR: Key does not start with sk_live_`);
+      const isLiveKey = key.startsWith("sk_live_");
+      const isTestKey = key.startsWith("sk_test_");
+      
+      console.log(`[CHECK-SUBSCRIPTION] Key type: ${isLiveKey ? 'LIVE' : isTestKey ? 'TEST' : 'UNKNOWN'}`);
+      
+      if (!isLiveKey && !isTestKey) {
+        console.log(`[CHECK-SUBSCRIPTION] ERROR: Key is neither live nor test format`);
         return null;
       }
       
-      console.log(`[CHECK-SUBSCRIPTION] SUCCESS: Valid live Stripe key found`);
+      console.log(`[CHECK-SUBSCRIPTION] SUCCESS: Valid Stripe key found (${isLiveKey ? 'live' : 'test'} mode)`);
       return key;
     };
     
@@ -44,10 +49,11 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ 
           error: "Stripe configuration error", 
-          details: "Live secret key required for subscription checking",
+          details: "Invalid or missing Stripe secret key",
           subscribed: false,
           subscription_tier: null,
-          subscription_end: null
+          subscription_end: null,
+          action: "Please configure your Stripe secret key in Supabase secrets"
         }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
@@ -55,8 +61,12 @@ serve(async (req) => {
 
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) {
+      console.log(`[CHECK-SUBSCRIPTION] ERROR: No authorization header`);
       return new Response(
-        JSON.stringify({ error: "No authorization header" }),
+        JSON.stringify({ 
+          error: "No authorization header",
+          details: "Please ensure you are logged in and try again"
+        }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -76,13 +86,19 @@ serve(async (req) => {
     } = await supabaseClient.auth.getUser(jwt);
 
     if (userError || !user) {
+      console.log(`[CHECK-SUBSCRIPTION] ERROR: Invalid token`, userError);
       return new Response(
-        JSON.stringify({ error: "Invalid token" }),
+        JSON.stringify({ 
+          error: "Invalid token",
+          details: "Please sign in again and try again"
+        }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    // Initialize Stripe with the live secret key
+    console.log(`[CHECK-SUBSCRIPTION] User authenticated: ${user.email}`);
+
+    // Initialize Stripe with the secret key
     const stripe = new Stripe(stripeSecretKey, {
       apiVersion: "2023-10-16",
     });
@@ -113,7 +129,7 @@ serve(async (req) => {
       const subscriptions = await stripe.subscriptions.list({
         customer: customer.id,
         status: "active",
-        limit: 1,
+        limit: 10, // Get more subscriptions in case there are multiple
       });
 
       if (subscriptions.data.length === 0) {
@@ -131,33 +147,41 @@ serve(async (req) => {
       const subscription = subscriptions.data[0];
       console.log(`[CHECK-SUBSCRIPTION] Found active subscription: ${subscription.id}`);
 
-      // Determine subscription tier from price ID
+      // Determine subscription tier from price and product information
       const priceId = subscription.items.data[0].price.id;
+      const price = subscription.items.data[0].price;
       console.log(`[CHECK-SUBSCRIPTION] Subscription price ID: ${priceId}`);
       
       let subscriptionTier = "Smart Buyer"; // Default fallback
       
-      // Map actual live Stripe Price IDs to subscription tiers
-      switch (priceId) {
-        case "price_1S0uGQGxnZLw8J7OOgm02vdB":
-          subscriptionTier = "Smart Buyer";
-          break;
-        case "price_1S0uGiGxnZLw8J7OQEwssbK7":
-          subscriptionTier = "Savvy Shopper";
-          break;
-        case "price_1S0uJsGxnZLw8J7OfU7XKMhV":
-          subscriptionTier = "Business Pro";
-          break;
-        case "price_1S9CrOGxnZLw8J7OAWHGY2P9":
-          subscriptionTier = "Entry Level";
-          break;
-        case "price_1S9CuPGxnZLw8J7OyBKr6134":
-          subscriptionTier = "Pay Per Check";
-          break;
-        // Fallback for any other price IDs
-        default:
-          console.log(`[CHECK-SUBSCRIPTION] Unknown price ID: ${priceId}, using default tier`);
-          subscriptionTier = "Smart Buyer";
+      // Fetch the product details to get the name
+      try {
+        const productId = typeof price.product === 'string' ? price.product : (price.product as any)?.id;
+        if (productId) {
+          const product = await stripe.products.retrieve(productId);
+          console.log(`[CHECK-SUBSCRIPTION] Product details:`, { id: product.id, name: product.name });
+          
+          // Use product name to determine tier, with flexible matching
+          const productName = product.name.toLowerCase();
+          if (productName.includes('smart buyer') || productName.includes('basic')) {
+            subscriptionTier = "Smart Buyer";
+          } else if (productName.includes('savvy shopper') || productName.includes('premium')) {
+            subscriptionTier = "Savvy Shopper";
+          } else if (productName.includes('business pro') || productName.includes('enterprise')) {
+            subscriptionTier = "Business Pro";
+          } else if (productName.includes('entry level') || productName.includes('individual')) {
+            subscriptionTier = "Entry Level";
+          } else if (productName.includes('pay per check') || productName.includes('single')) {
+            subscriptionTier = "Pay Per Check";
+          } else {
+            // Use the actual product name if no match found
+            subscriptionTier = product.name;
+          }
+        }
+      } catch (productError) {
+        console.log(`[CHECK-SUBSCRIPTION] Could not fetch product details:`, productError);
+        // Fallback to price-based mapping if product fetch fails
+        subscriptionTier = "Smart Buyer";
       }
 
       const result = {
@@ -177,10 +201,11 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ 
           error: "Subscription check failed", 
-          details: stripeError.message,
+          details: stripeError.message || "Unknown Stripe error",
           subscribed: false,
           subscription_tier: null,
-          subscription_end: null
+          subscription_end: null,
+          action: "Please check your Stripe account configuration"
         }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
@@ -191,10 +216,11 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         error: "Internal server error", 
-        details: error.message,
+        details: error.message || "Unknown error occurred",
         subscribed: false,
         subscription_tier: null,
-        subscription_end: null
+        subscription_end: null,
+        action: "Please try again or contact support"
       }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );

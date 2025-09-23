@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
@@ -19,12 +19,12 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const { session } = useAuth();
+  const { session, isAuthenticated } = useUnifiedAuth();
 
   const handleSubscribe = async () => {
-    if (!session) {
+    if (!session || !isAuthenticated) {
       toast({
-        title: "Authentication Required",
+        title: "Authentication Required", 
         description: "Please sign in to subscribe to a plan.",
         variant: "destructive",
       });
