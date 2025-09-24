@@ -97,24 +97,17 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* Stolen Guns Check Banner - Redesigned */}
-          <section className="py-5 bg-gradient-to-br from-red-900 via-red-800 to-orange-800 text-white relative overflow-hidden">
+          {/* Stolen Guns Check Banner - 75% Smaller */}
+          <section className="py-1 bg-gradient-to-br from-red-900 via-red-800 to-orange-800 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-700/50 text-red-100 text-xs font-medium mb-2">
-                    <Shield className="h-3 w-3" />
-                    Firearms Verification
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                <div className="text-center mb-1">
+                  <h2 className="text-lg font-bold mb-1">
                     🔫 Stolen Firearms Database
                   </h2>
-                  <p className="text-sm text-red-100 max-w-2xl mx-auto leading-relaxed">
-                    Before buying or selling any firearm, verify it's not stolen. Protect yourself from legal trouble and help law enforcement recover stolen weapons.
-                  </p>
                 </div>
-                <div className="modern-card bg-white/10 backdrop-blur-lg border-white/20 rounded-2xl p-2">
+                <div className="modern-card bg-white/10 backdrop-blur-lg border-white/20 rounded-lg p-1">
                   <HotGunzWidget style="style4" height={105} />
                 </div>
               </div>
