@@ -275,10 +275,10 @@ const RealTimeVerificationPage = () => {
 
         {showFirearmsWidget && (
           <section aria-labelledby="hotgunz-heading" className="mb-12">
-            <div className="text-center mb-8">
-              <h2 id="hotgunz-heading" className="text-3xl font-bold mb-4">Stolen Firearms Check (HotGunz)</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Search the community-sourced stolen firearms database. Choose a style that fits your layout.
+            <div className="text-center mb-2">
+              <h2 id="hotgunz-heading" className="text-sm font-medium mb-1">🔫 Stolen Firearms Check</h2>
+              <p className="text-xs text-muted-foreground max-w-xl mx-auto">
+                Search the community-sourced stolen firearms database.
               </p>
             </div>
             <Card className="bg-card border-border">

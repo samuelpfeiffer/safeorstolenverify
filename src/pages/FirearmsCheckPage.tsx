@@ -104,9 +104,9 @@ const FirearmsCheckPage: React.FC = () => {
       />
 
       <main className="container mx-auto container-padding py-12">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-2">Search Stolen Firearms Database</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <header className="text-center mb-2">
+          <h1 className="text-sm font-medium mb-1">🔫 Stolen Firearms Database</h1>
+          <p className="text-xs text-muted-foreground max-w-xl mx-auto">
             Check if a firearm has been reported stolen before purchasing.
           </p>
         </header>
