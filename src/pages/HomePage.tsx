@@ -97,15 +97,13 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* Stolen Guns Check Banner - Ultra Minimal */}
-          <section className="bg-gradient-to-br from-red-900 via-red-800 to-orange-800 text-white">
+          {/* Stolen Guns Check Banner - Tiny Strip */}
+          <section className="h-8 bg-gradient-to-r from-red-900 to-orange-800 text-white flex items-center">
             <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                <div className="text-center">
-                  <h2 className="text-xs font-bold py-0.5">🔫 Stolen Firearms Database</h2>
-                </div>
-                <div className="bg-white/10 rounded">
-                  <HotGunzWidget style="style4" height={40} />
+              <div className="flex items-center justify-between">
+                <h2 className="text-xs font-medium">🔫 Stolen Firearms Database</h2>
+                <div className="w-32 h-6">
+                  <HotGunzWidget style="style4" height={24} />
                 </div>
               </div>
             </div>
