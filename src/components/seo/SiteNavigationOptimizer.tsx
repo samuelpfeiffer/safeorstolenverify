@@ -150,9 +150,7 @@ export const SiteNavigationOptimizer: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Verify Any Item Before You Buy Or Sell</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive verification tools and guides to protect you from stolen goods and marketplace fraud
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Comprehensive verification tools and guides to protect you from legal risks, stolen goods, and marketplace fraud</p>
           </div>
 
           {/* Primary Verification Services */}
