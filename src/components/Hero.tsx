@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom';
 import { Shield, Users, BadgeCheck } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import heroImage from '@/assets/hero-verification-devices.png';
-
 const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
-
 const Hero = memo(() => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useUnifiedAuth();
+  const {
+    isAuthenticated
+  } = useUnifiedAuth();
   const [showQrScanner, setShowQrScanner] = useState(false);
-
   const handleNavigateToAuth = useCallback(() => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
@@ -20,7 +19,6 @@ const Hero = memo(() => {
       navigate('/dashboard');
     }
   }, [isAuthenticated, navigate]);
-
   const handleNavigateToFirearms = useCallback(() => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
@@ -28,23 +26,13 @@ const Hero = memo(() => {
       navigate('/firearms-check');
     }
   }, [isAuthenticated, navigate]);
-
   const handleQrScanSuccess = useCallback((result: string) => {
     setShowQrScanner(false);
   }, []);
   return <div className="flex flex-col">
       {/* Full Width Image Above Hero */}
        <div className="w-full h-auto">
-          <img 
-            src={heroImage}
-            alt="SafeOrStolen verification on mobile and laptop showing Item Verified status - consumer using fraud protection technology"
-            className="w-full h-auto object-cover"
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-            width="1200"
-            height="600"
-          />
+          <img src={heroImage} alt="SafeOrStolen verification on mobile and laptop showing Item Verified status - consumer using fraud protection technology" className="w-full h-auto object-cover" loading="eager" fetchPriority="high" decoding="sync" width="1200" height="600" />
        </div>
       
       {/* Hero Section */}
@@ -53,32 +41,16 @@ const Hero = memo(() => {
         <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Accelerated By pill */}
-          <a 
-            href="https://fastercapital.com" 
-            target="_blank" 
-            rel="noopener noreferrer nofollow" 
-            className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6" 
-            title="Accelerated by FasterCapital - Supporting SafeOrStolen's growth" 
-            aria-label="Visit FasterCapital - Our technology accelerator partner"
-          >
+          <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6" title="Accelerated by FasterCapital - Supporting SafeOrStolen's growth" aria-label="Visit FasterCapital - Our technology accelerator partner">
             <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">ACCELERATED BY</span>
-            <img 
-              src="/images/partners/fastercapital-logo.png" 
-              alt="FasterCapital official partnership logo" 
-              className="h-16 md:h-20 w-auto object-contain" 
-              loading="lazy" 
-              width="80"
-              height="20"
-            />
+            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official partnership logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" width="80" height="20" />
           </a>
 
           {/* Universal Value Proposition Headline */}
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
             SafeOrStolen
           </h1>
-          <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">
-            Free stolen item lookup & IMEI checker. Search stolen database for electronics, vehicles, phones. Check IMEI block status, VIN verification & serial number lookup. Avoid buying stolen goods - find stolen property instantly.
-          </p>
+          <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">Free stolen item lookup & IMEI checker. Search stolen database for electronics, vehicles, phones, guns, machinery, and more. Check IMEI block status, VIN verification & serial number lookup. Avoid buying stolen goods - find stolen property instantly.</p>
           
           
           {/* Service Disclaimer */}
@@ -88,12 +60,7 @@ const Hero = memo(() => {
 
           {/* Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
-              className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" 
-              onClick={handleNavigateToAuth}
-              aria-describedby="main-headline"
-            >
+            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" onClick={handleNavigateToAuth} aria-describedby="main-headline">
               <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
               Check Stolen Status - Free Verification
             </Button>
@@ -125,14 +92,8 @@ const Hero = memo(() => {
 
           {/* Call to Action for Dashboard Access */}
           <div className="text-center mb-8">
-            <p className="text-lg md:text-xl text-gray-300 mb-4">
-              Protect both buyers and sellers in secondhand transactions. Verify item legitimacy using global databases from law enforcement and insurers. Build trust and prevent fraud.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold px-8 py-4"
-              onClick={handleNavigateToAuth}
-            >
+            <p className="text-lg md:text-xl text-gray-300 mb-4">Protecting both buyers and sellers in secondhand transactions. Verify item legitimacy using global databases from law enforcement and insurers. Build trust and prevent fraud.</p>
+            <Button size="lg" className="bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold px-8 py-4" onClick={handleNavigateToAuth}>
               {!isAuthenticated ? 'Sign Up for Free Verification' : 'Go to Dashboard'}
             </Button>
           </div>
@@ -140,12 +101,7 @@ const Hero = memo(() => {
           {/* Extra actions below */}
           <div className="flex flex-col items-center gap-4 mt-12">
              <div className="w-full max-w-2xl mx-auto">
-               <Button 
-                 variant="destructive" 
-                 className="w-full px-5" 
-                 onClick={handleNavigateToFirearms}
-                 aria-label="Access stolen firearms verification database"
-               >
+               <Button variant="destructive" className="w-full px-5" onClick={handleNavigateToFirearms} aria-label="Access stolen firearms verification database">
                  {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
                </Button>
              </div>
@@ -174,18 +130,10 @@ const Hero = memo(() => {
     </div>
       
       {/* QR Scanner Modal */}
-      {showQrScanner && (
-        <Suspense fallback={<div className="fixed inset-0 bg-background/80 flex items-center justify-center z-50">Loading scanner...</div>}>
-          <QrScanner 
-            isOpen={showQrScanner}
-            onOpenChange={setShowQrScanner}
-            onScanSuccess={handleQrScanSuccess}
-          />
-        </Suspense>
-      )}
+      {showQrScanner && <Suspense fallback={<div className="fixed inset-0 bg-background/80 flex items-center justify-center z-50">Loading scanner...</div>}>
+          <QrScanner isOpen={showQrScanner} onOpenChange={setShowQrScanner} onScanSuccess={handleQrScanSuccess} />
+        </Suspense>}
     </div>;
 });
-
 Hero.displayName = 'Hero';
-
 export default Hero;
