@@ -48,10 +48,10 @@ const Hero = memo(() => {
 
           {/* Streamlined Hero Content */}
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-sos-orange" id="main-headline">
-            Verify Before You Buy
+            Protect Every Secondhand Transaction
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" role="banner">
-            Free stolen item checker - instantly verify IMEI, VIN, and serial numbers before purchasing secondhand goods.
+            The global hub for buyers AND sellers - verify IMEI, VIN, and serial numbers to safely buy and resell secondhand goods.
           </p>
           
           {/* Single Primary CTA */}

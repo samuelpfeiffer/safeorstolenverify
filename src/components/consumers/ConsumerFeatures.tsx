@@ -10,8 +10,8 @@ export const ConsumerFeatures = () => {
             <ShoppingBag className="h-10 w-10 text-sos-orange" />
           </div>
         </div>
-        <h3 className="text-xl font-semibold mb-3">Shop Confidently</h3>
-        <p className="text-gray-300">Verify that second-hand items are legitimate before purchasing them.</p>
+        <h3 className="text-xl font-semibold mb-3">Buy with Confidence</h3>
+        <p className="text-gray-300">Verify secondhand items are legitimate before purchasing - protect yourself from unknowingly buying stolen goods.</p>
       </div>
       
       <div className="bg-secondary/50 backdrop-blur-lg rounded-xl p-8 text-center">
@@ -20,8 +20,8 @@ export const ConsumerFeatures = () => {
             <AlertCircle className="h-10 w-10 text-sos-orange" />
           </div>
         </div>
-        <h3 className="text-xl font-semibold mb-3">Report Lost Items</h3>
-        <p className="text-gray-300">Register your lost or stolen items to alert potential buyers.</p>
+        <h3 className="text-xl font-semibold mb-3">Sell Safely</h3>
+        <p className="text-gray-300">Verify items before reselling to avoid legal trouble from undercover police operations targeting stolen goods.</p>
       </div>
       
       <div className="bg-secondary/50 backdrop-blur-lg rounded-xl p-8 text-center">
@@ -30,8 +30,8 @@ export const ConsumerFeatures = () => {
             <CreditCard className="h-10 w-10 text-sos-orange" />
           </div>
         </div>
-        <h3 className="text-xl font-semibold mb-3">Protect Purchases</h3>
-        <p className="text-gray-300">Keep records of verified purchases for insurance and resale purposes.</p>
+        <h3 className="text-xl font-semibold mb-3">Complete Protection</h3>
+        <p className="text-gray-300">The global hub for secondhand market safety - protecting both buyers and sellers from stolen goods risks.</p>
       </div>
     </div>
   );

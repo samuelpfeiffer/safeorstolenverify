@@ -36,7 +36,7 @@ const HomePage = () => {
     "name": "SafeOrStolen - Stolen Item Checker",
     "alternateName": "Safe or Stolen",
     "url": "https://safeorstolen.com",
-    "description": "Free online stolen item checker tool to verify IMEI, VIN, and serial numbers against police databases before buying secondhand items",
+    "description": "Global hub for secondhand market safety - protect both buyers and sellers by verifying IMEI, VIN, and serial numbers against stolen goods databases",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://safeorstolen.com/?q={search_term_string}",
@@ -47,7 +47,7 @@ const HomePage = () => {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "SafeOrStolen Stolen Item Checker",
-    "description": "Free online stolen item checker - verify IMEI, serial numbers, and VIN against stolen goods databases instantly",
+    "description": "Global hub for secondhand market safety - verify IMEI, serial numbers, and VIN to protect both buyers and sellers from stolen goods risks",
     "url": "https://safeorstolen.com",
     "applicationCategory": "SecurityApplication",
     "applicationSubCategory": "Verification Tool",
@@ -68,7 +68,7 @@ const HomePage = () => {
       "@type": "Organization",
       "name": "SafeOrStolen"
     },
-    "description": "Professional stolen item checking service for consumers buying secondhand goods",
+    "description": "Complete stolen item verification service protecting both buyers and sellers in secondhand transactions",
     "serviceType": "Verification Service",
     "areaServed": "Worldwide",
     "offers": {
@@ -86,7 +86,7 @@ const HomePage = () => {
         <GlobalAnalytics />
         <GoogleSearchConsoleSetup />
         <OptimizedTitles pageType="home" />
-        <PageSEO title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check" description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented." keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention" canonical="/" structuredData={homePageStructuredData} />
+        <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
         <div className="min-h-screen">
           <ConversionTracker />
           <Hero />
@@ -100,7 +100,8 @@ const HomePage = () => {
             <section className="py-8 bg-muted/30">
               <div className="container mx-auto px-4">
                 <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold mb-4">Popular Verification Tools</h2>
+                  <h2 className="text-2xl font-bold mb-4">Global Verification Hub</h2>
+                  <p className="text-gray-600 max-w-2xl mx-auto">Protect yourself as both buyer and seller in the secondhand market</p>
                 </div>
                 
                 <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
