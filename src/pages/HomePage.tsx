@@ -97,17 +97,10 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* Stolen Guns Check Banner - Tiny Strip */}
-          <section className="h-8 bg-gradient-to-r from-red-900 to-orange-800 text-white flex items-center">
-            <div className="container mx-auto px-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xs font-medium">🔫 Stolen Firearms Database</h2>
-                <div className="w-32 h-6">
-                  <HotGunzWidget style="style4" height={24} />
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* Tiny Firearms Strip */}
+          <div className="h-4 bg-red-600 text-white text-center">
+            <span className="text-xs">🔫 Stolen Firearms Database</span>
+          </div>
 
           {/* Safe Or Stolen - Mission & Protection */}
           <section className="py-24 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
