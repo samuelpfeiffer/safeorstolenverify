@@ -115,7 +115,7 @@ const HomePage = () => {
                   </p>
                 </div>
                 <div className="modern-card bg-white/10 backdrop-blur-lg border-white/20 rounded-3xl p-8">
-                  <HotGunzWidget style="style4" height={420} />
+                  <HotGunzWidget style="style4" height={105} />
                 </div>
               </div>
             </div>
