@@ -97,9 +97,9 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* Tiny Firearms Strip */}
-          <div className="h-4 bg-red-600 text-white text-center">
-            <span className="text-xs">🔫 Stolen Firearms Database</span>
+          {/* TINY FIREARMS - BRIGHT PINK SO YOU CAN SEE THE CHANGE */}
+          <div className="h-2 bg-pink-500 text-black text-center flex items-center justify-center">
+            <span className="text-xs">🔫</span>
           </div>
 
           {/* Safe Or Stolen - Mission & Protection */}
