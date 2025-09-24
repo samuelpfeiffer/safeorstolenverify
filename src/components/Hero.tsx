@@ -47,12 +47,8 @@ const Hero = memo(() => {
           </a>
 
           {/* Streamlined Hero Content */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-sos-orange" id="main-headline">
-            Protect Every Secondhand Transaction
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" role="banner">
-            The global hub for buyers AND sellers - verify IMEI, VIN, and serial numbers to safely buy and resell secondhand goods.
-          </p>
+          <h1 id="main-headline" className="text-4xl md:text-6xl font-extrabold mb-6 text-green-50">Safe Or Stolen</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" role="banner">Lookup and verify IMEI, VIN, and serial numbers to safely buy and resell secondhand goods.</p>
           
           {/* Single Primary CTA */}
           <div className="mb-12">
