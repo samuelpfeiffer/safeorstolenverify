@@ -52,7 +52,7 @@ const Hero = memo(() => {
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed animate-slideUp" style={{animationDelay: '0.2s'}}>
-              Global hub protecting buyers and sellers in secondhand markets. 
+              Protecting buyers and sellers in the secondhand market from buying and selling stolen items such as used vehicles, guns, electronics, phones, machinery, and more.
               <span className="block mt-2 text-emerald-400 font-semibold">
                 Instantly verify IMEI, VIN & serial numbers worldwide
               </span>
