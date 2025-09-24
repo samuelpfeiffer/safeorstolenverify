@@ -8,7 +8,7 @@ import { useEffect } from 'react';
  * Provides a consistent interface for authentication across the app
  */
 export const useUnifiedAuth = () => {
-  const { user, session, loading, signOut, signIn, signUp } = useAuth();
+  const { user, session, loading, initialized, signOut, signIn, signUp, resetPassword } = useAuth();
   
   // Enhanced security logging
   useEffect(() => {
@@ -38,9 +38,11 @@ export const useUnifiedAuth = () => {
     user,
     session,
     loading,
-    isAuthenticated: !!user,
+    initialized,
+    isAuthenticated: initialized && user !== null,
     signOut: secureSignOut,
     signIn,
     signUp,
+    resetPassword,
   };
 };
