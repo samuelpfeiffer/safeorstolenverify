@@ -46,84 +46,36 @@ const Hero = memo(() => {
             <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official partnership logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" width="80" height="20" />
           </a>
 
-          {/* Universal Value Proposition Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-sos-orange" id="main-headline">
-            SafeOrStolen
+          {/* Streamlined Hero Content */}
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-sos-orange" id="main-headline">
+            Verify Before You Buy
           </h1>
-          <p className="text-lg md:text-2xl text-gray-300 mb-6" role="banner">Free stolen item lookup & IMEI checker. Search stolen database for electronics, vehicles, phones, guns, machinery, and more. Check IMEI block status, VIN verification & serial number lookup. Avoid buying stolen goods - find stolen property instantly.</p>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" role="banner">
+            Free stolen item checker - instantly verify IMEI, VIN, and serial numbers before purchasing secondhand goods.
+          </p>
           
-          
-          {/* Service Disclaimer */}
-          
-          
-          {/* Remove duplicate image since it's now the background */}
-
-          {/* Dual CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-4 text-lg" onClick={handleNavigateToAuth} aria-describedby="main-headline">
-              <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-              Check Stolen Status - Free Verification
-            </Button>
-            <Button size="lg" variant="outline" className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark font-semibold px-8 py-4 text-lg" asChild>
-              <Link to="/for-brands">
-                <Users className="mr-2 h-5 w-5" />
-                For Businesses & APIs
-              </Link>
+          {/* Single Primary CTA */}
+          <div className="mb-12">
+            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-12 py-6 text-xl" onClick={handleNavigateToAuth} aria-describedby="main-headline">
+              <Shield className="mr-3 h-6 w-6" aria-hidden="true" />
+              Start Free Check Now
             </Button>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400 mb-8">
+          {/* Simple Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
             <span className="flex items-center gap-2">
               <Shield className="h-4 w-4 text-sos-lime" />
-              Multi-Database Search
-            </span>
-            <span className="flex items-center gap-2">
-              <Users className="h-4 w-4 text-sos-lime" />
-              Instant Verification
+              $2.3M Scams Prevented
             </span>
             <span className="flex items-center gap-2">
               <BadgeCheck className="h-4 w-4 text-sos-lime" />
-              Comprehensive Reports
+              Instant Results
             </span>
-          </div>
-
-          {/* Social Proof Section */}
-          
-
-          {/* Call to Action for Dashboard Access */}
-          <div className="text-center mb-8">
-            <p className="text-lg md:text-xl text-gray-300 mb-4">Protecting both buyers and sellers in secondhand transactions. Verify item legitimacy using global databases from law enforcement and insurers. Build trust and prevent fraud.</p>
-            <Button size="lg" className="bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold px-8 py-4" onClick={handleNavigateToAuth}>
-              {!isAuthenticated ? 'Sign Up for Free Verification' : 'Go to Dashboard'}
-            </Button>
-          </div>
-
-          {/* Extra actions below */}
-          <div className="flex flex-col items-center gap-4 mt-12">
-             <div className="w-full max-w-2xl mx-auto">
-               <Button variant="destructive" className="w-full px-5" onClick={handleNavigateToFirearms} aria-label="Access stolen firearms verification database">
-                 {!isAuthenticated ? 'Sign Up to Search Firearms Database' : 'Search Stolen Firearms Database'}
-               </Button>
-             </div>
-             
-             {/* Popular Stolen Checks */}
-              <div className="mt-8">
-                <p className="text-sm text-gray-400 mb-4">Popular Safe Secondhand Buying Tools:</p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/stolen-item-checker">Stolen Item Lookup</Link>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/imei-check">Free IMEI Checker</Link>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/vin-verification">VIN Check Free</Link>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild className="text-gray-300 border-gray-600 hover:bg-sos-orange/20">
-                    <Link to="/guides/how-to-check-stolen-items">How to Check if Item Stolen</Link>
-                  </Button>
-                </div>
-              </div>
+            <span className="flex items-center gap-2">
+              <Users className="h-4 w-4 text-sos-lime" />
+              100% Free
+            </span>
           </div>
         </div>
       </div>

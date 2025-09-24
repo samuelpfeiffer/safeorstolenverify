@@ -113,136 +113,65 @@ const HomePage = () => {
         <div className="min-h-screen">
           <ConversionTracker />
           <Hero />
-          <AudienceNavigation />
-          <ValuePropositionSections />
-          <TrustIndicators />
-          <TrustBadgeStrip />
-          <TrustBuildingFAQ />
           
-          {/* Quick Access Section for Key Verification Services */}
-          <section className="py-16 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Quick Verification Access</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Direct access to our most popular verification services and safety guides
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <div className="bg-card p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="font-semibold mb-4 text-primary">Verification Tools</h3>
-                  <div className="space-y-2">
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/stolen-item-checker')}>
-                      General Item Checker
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/serial-number-checker')}>
-                      Serial Number Checker
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/imei-check')}>
-                      IMEI Phone Check
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/vin-verification')}>
-                      VIN Car Check
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="bg-card p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="font-semibold mb-4 text-primary">Safety Guides</h3>
-                  <div className="space-y-2">
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/how-to-check-if-item-stolen')}>
-                      How to Check if Stolen
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/avoid-stolen-goods')}>
-                      Avoid Stolen Goods
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/ultimate-guide-not-buying-stolen-goods')}>
-                      Ultimate Safety Guide
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/comprehensive-guide')}>
-                      Comprehensive Guide
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="bg-card p-6 rounded-lg border shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="font-semibold mb-4 text-primary">Resources</h3>
-                  <div className="space-y-2">
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/faq')}>
-                      FAQ
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/data-sources')}>
-                      Data Sources
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/transparency')}>
-                      Transparency Report
-                    </Button>
-                    <Button variant="ghost" size="sm" className="w-full justify-start p-2" onClick={() => navigate('/api-docs')}>
-                      API Documentation
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          
+          {/* Main Features Section */}
           <Features />
-          <MobileBenefitsSection />
-          <TestimonialsSection />
           
-          {/* Community Movement Section */}
-          <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-sos-lime/10 p-4 rounded-full">
-                    <Users className="h-12 w-12 text-sos-lime" />
-                  </div>
+          {/* Content moved to expandable sections below */}
+          <div className="py-16 space-y-16">
+            {/* Quick Access - Condensed */}
+            <section className="py-8 bg-muted/30">
+              <div className="container mx-auto px-4">
+                <div className="text-center mb-8">
+                  <h2 className="text-2xl font-bold mb-4">Popular Verification Tools</h2>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                  Join the Movement
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                   Safety is a community effort. We've built free tools to help protect both buyers and sellers. 
-                   Become a part of the SafeOrStolen community and help make secondhand transactions safer for everyone.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    size="lg" 
-                    className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
-                    onClick={() => navigate('/community-watch')}
-                  >
-                    <Shield className="mr-2 h-5 w-5" />
-                    See Community Tools
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                
+                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                  <Button variant="outline" onClick={() => navigate('/imei-check')}>
+                    IMEI Phone Check
                   </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    onClick={() => navigate('/social-media-monitoring')}
-                  >
-                    <Monitor className="mr-2 h-5 w-5" />
-                    Social Monitoring
+                  <Button variant="outline" onClick={() => navigate('/vin-verification')}>
+                    VIN Car Check
+                  </Button>
+                  <Button variant="outline" onClick={() => navigate('/serial-number-checker')}>
+                    Serial Number Check
+                  </Button>
+                  <Button variant="outline" onClick={() => navigate('/stolen-item-checker')}>
+                    General Item Check
                   </Button>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+            
+            {/* Testimonials */}
+            <TestimonialsSection />
+            
+            {/* Trust and Community - Simplified */}
+            <section className="py-8 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
+              <div className="container mx-auto px-4">
+                <div className="max-w-3xl mx-auto text-center">
+                  <h2 className="text-2xl font-bold mb-4 text-foreground">
+                    Trusted by Thousands
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                     $2.3M in scams prevented through our free verification tools.
+                  </p>
+                  <div className="flex justify-center gap-4">
+                    <TrustIndicators />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
           
-          <SiteNavigationOptimizer />
-          <ComprehensiveFAQ pageType="home" maxItems={8} />
-          <EnhancedSEOContent 
-            pageType="home"
-            title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check"
-            description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented."
-            keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention"
-            showTestimonials={true}
-            showFAQ={false}
-            showStats={true}
-          />
-          <FeaturedBlogSection />
-          <EnhancedCTASection />
+          {/* Below-fold content - collapsed/organized */}
+          <div className="space-y-8">
+            <SiteNavigationOptimizer />
+            <TrustBuildingFAQ />
+            <ComprehensiveFAQ pageType="home" maxItems={6} />
+            <FeaturedBlogSection />
+            <EnhancedCTASection />
+          </div>
         </div>
       </ImageOptimizer>
     </>
