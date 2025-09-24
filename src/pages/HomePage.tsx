@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -29,72 +28,56 @@ import { EnhancedSEOContent } from '@/components/seo/EnhancedSEOContent';
 import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
 import { SiteNavigationOptimizer } from '@/components/seo/SiteNavigationOptimizer';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
-
 const HomePage = () => {
   const navigate = useNavigate();
-  const homePageStructuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SafeOrStolen - Stolen Item Checker",
-      "alternateName": "Safe or Stolen",
-      "url": "https://safeorstolen.com",
-      "description": "Free online stolen item checker tool to verify IMEI, VIN, and serial numbers against police databases before buying secondhand items",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://safeorstolen.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "sameAs": [
-        "https://safeorstolen.com"
-      ]
+  const homePageStructuredData = [{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SafeOrStolen - Stolen Item Checker",
+    "alternateName": "Safe or Stolen",
+    "url": "https://safeorstolen.com",
+    "description": "Free online stolen item checker tool to verify IMEI, VIN, and serial numbers against police databases before buying secondhand items",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://safeorstolen.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "SafeOrStolen Stolen Item Checker",
-      "description": "Free online stolen item checker - verify IMEI, serial numbers, and VIN against stolen goods databases instantly",
-      "url": "https://safeorstolen.com",
-      "applicationCategory": "SecurityApplication",
-      "applicationSubCategory": "Verification Tool",
-      "operatingSystem": "Web Browser",
-      "browserRequirements": "Chrome, Firefox, Safari, Edge",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free stolen item checking service"
-      },
-      "featureList": [
-        "IMEI stolen check",
-        "VIN stolen verification", 
-        "Serial number stolen lookup",
-        "Phone stolen check",
-        "Car stolen verification",
-        "Electronics stolen check"
-      ]
+    "sameAs": ["https://safeorstolen.com"]
+  }, {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SafeOrStolen Stolen Item Checker",
+    "description": "Free online stolen item checker - verify IMEI, serial numbers, and VIN against stolen goods databases instantly",
+    "url": "https://safeorstolen.com",
+    "applicationCategory": "SecurityApplication",
+    "applicationSubCategory": "Verification Tool",
+    "operatingSystem": "Web Browser",
+    "browserRequirements": "Chrome, Firefox, Safari, Edge",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free stolen item checking service"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Stolen Item Checker Service",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen"
-      },
-      "description": "Professional stolen item checking service for consumers buying secondhand goods",
-      "serviceType": "Verification Service",
-      "areaServed": "Worldwide",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+    "featureList": ["IMEI stolen check", "VIN stolen verification", "Serial number stolen lookup", "Phone stolen check", "Car stolen verification", "Electronics stolen check"]
+  }, {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Stolen Item Checker Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen"
+    },
+    "description": "Professional stolen item checking service for consumers buying secondhand goods",
+    "serviceType": "Verification Service",
+    "areaServed": "Worldwide",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
     }
-  ];
-
-  return (
-    <>
+  }];
+  return <>
       <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
       <InternalLinkingSchema />
       <SEOAuditComponent />
@@ -103,13 +86,7 @@ const HomePage = () => {
         <GlobalAnalytics />
         <GoogleSearchConsoleSetup />
         <OptimizedTitles pageType="home" />
-        <PageSEO
-          title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check"
-          description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented."
-          keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention"
-          canonical="/"
-          structuredData={homePageStructuredData}
-        />
+        <PageSEO title="Verify Stolen Goods Instantly - IMEI, VIN & Serial Check" description="Instantly check if phones, cars, electronics are stolen before buying. Enter IMEI, VIN or serial number to verify with our global theft database - $2.3M in scams prevented." keywords="verify stolen goods, IMEI check stolen phone, VIN stolen car lookup, serial number verification, stolen item checker, marketplace safety fraud prevention" canonical="/" structuredData={homePageStructuredData} />
         <div className="min-h-screen">
           <ConversionTracker />
           <Hero />
@@ -150,12 +127,8 @@ const HomePage = () => {
             <section className="py-8 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
               <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-2xl font-bold mb-4 text-foreground">
-                    Trusted by Thousands
-                  </h2>
-                  <p className="text-muted-foreground mb-6">
-                     $2.3M in scams prevented through our free verification tools.
-                  </p>
+                  
+                  
                   <div className="flex justify-center gap-4">
                     <TrustIndicators />
                   </div>
@@ -174,8 +147,6 @@ const HomePage = () => {
           </div>
         </div>
       </ImageOptimizer>
-    </>
-  );
+    </>;
 };
-
 export default HomePage;
