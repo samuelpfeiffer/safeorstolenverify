@@ -97,18 +97,17 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* Stolen Guns Check Banner - 75% Smaller */}
-          <section className="py-1 bg-gradient-to-br from-red-900 via-red-800 to-orange-800 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+          {/* Stolen Guns Check Banner - Minimal Size */}
+          <section className="py-0.5 bg-gradient-to-br from-red-900 via-red-800 to-orange-800 text-white relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-1">
-                  <h2 className="text-lg font-bold mb-1">
+                <div className="text-center">
+                  <h2 className="text-sm font-bold py-1">
                     🔫 Stolen Firearms Database
                   </h2>
                 </div>
-                <div className="modern-card bg-white/10 backdrop-blur-lg border-white/20 rounded-lg p-1">
-                  <HotGunzWidget style="style4" height={105} />
+                <div className="bg-white/10 backdrop-blur-lg border-white/20 rounded p-0.5">
+                  <HotGunzWidget style="style4" height={60} />
                 </div>
               </div>
             </div>
