@@ -41,8 +41,6 @@ root.render(
   <React.StrictMode>
     <AppRoot />
     <ComprehensiveSEOTracker />
-    <ABTestingFramework />
     <OutboundLinkTracker />
-    <SEOHealthMonitor />
   </React.StrictMode>
 );

@@ -11,7 +11,7 @@ export const SOSFooter: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img
-              src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png"
+              src="/assets/SOS_logo.png"
               alt="Safe or Stolen logo"
               className="w-8 h-8 rounded-md"
             />

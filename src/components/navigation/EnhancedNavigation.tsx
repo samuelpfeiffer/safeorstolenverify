@@ -276,7 +276,7 @@ export const EnhancedNavigation: React.FC = () => {
               className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               onClick={() => trackSEOInteraction('logo_click', 'Homepage Navigation')}
             >
-              <Shield className="w-8 h-8 text-blue-600" />
+              <img src="/assets/SOS_logo.png" alt="SafeOrStolen Logo" className="w-8 h-8" />
               <span>SafeOrStolen</span>
             </Link>
           </div>

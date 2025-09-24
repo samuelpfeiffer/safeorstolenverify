@@ -235,10 +235,10 @@ export const SiteNavigationOptimizer: React.FC = () => {
               <p className="text-muted-foreground">You might also be interested in:</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              {contextualLinks.slice(0, 6).map((link, index) => <Link key={index} to={link.href} className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border">
+              {contextualLinks.slice(0, 6).map((link, index) => <Link key={index} to={link.href} className="block p-4 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow border border-border">
                   <div className="flex items-center gap-2">
                     <ChevronRight className="h-4 w-4 text-primary" />
-                    <span className="font-medium text-sm">{link.text}</span>
+                    <span className="font-medium text-sm text-foreground">{link.text}</span>
                   </div>
                 </Link>)}
             </div>

@@ -241,8 +241,6 @@ const HomePage = () => {
             showFAQ={false}
             showStats={true}
           />
-          <AuthDebug />
-          <PaymentSystemDebug />
           <FeaturedBlogSection />
           <EnhancedCTASection />
         </div>
