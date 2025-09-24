@@ -89,7 +89,7 @@ const HomePage = () => {
         <GoogleSearchConsoleSetup />
         <OptimizedTitles pageType="home" />
         <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-red-500">
           <ConversionTracker />
           <AppDownloadBot />
           <Hero />
