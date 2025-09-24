@@ -26,8 +26,12 @@ const Features = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             Why Choose Our Trusted Item Verification Platform?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">Trusted by thousands worldwide. 
-Our goal is to protect buyers and sellers from financial loss and legal risks when dealing with second-hand goods. Prior to purchasing or selling any used item, check if it is listed as lost, stolen, or safe to handle. Verify the legitimacy before any transaction.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Our verification system cross-references multiple official databases including law enforcement agencies, 
+            insurance companies, and certified registries worldwide. Through strategic partnerships with trusted 
+            government and industry sources, we provide comprehensive verification that protects both buyers and 
+            sellers in secondhand transactions.
+          </p>
         </div>
 
         {/* Features Grid */}

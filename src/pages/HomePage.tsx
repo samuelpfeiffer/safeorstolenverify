@@ -28,6 +28,7 @@ import { EnhancedSEOContent } from '@/components/seo/EnhancedSEOContent';
 import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
 import { SiteNavigationOptimizer } from '@/components/seo/SiteNavigationOptimizer';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
+import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 const HomePage = () => {
   const navigate = useNavigate();
   const homePageStructuredData = [{
@@ -91,8 +92,45 @@ const HomePage = () => {
           <ConversionTracker />
           <Hero />
           
+          {/* Stolen Guns Check Banner */}
+          <section className="py-12 bg-gradient-to-r from-red-50 to-orange-50 border-t border-b">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl font-bold text-red-800 mb-4">
+                    🔫 Check Stolen Firearms Database
+                  </h2>
+                  <p className="text-red-700 text-lg max-w-3xl mx-auto">
+                    Before buying or selling any firearm, verify it's not stolen. Protect yourself from legal trouble and help law enforcement recover stolen weapons.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl shadow-lg p-6">
+                  <HotGunzWidget style="style4" height={420} />
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Main Features Section */}
           <Features />
+
+          {/* Safe Or Stolen - Mission & Protection */}
+          <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                  Safe Or Stolen
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+                  Trusted by thousands worldwide. Our goal is to protect buyers and sellers from financial 
+                  loss and legal risks when dealing with second-hand goods. Prior to purchasing or selling 
+                  any used item, check if it is listed as lost, stolen, or safe to handle. Verify the 
+                  legitimacy before any transaction - because undercover law enforcement regularly monitors 
+                  online marketplaces for stolen goods being resold.
+                </p>
+              </div>
+            </div>
+          </section>
           
           {/* Content moved to expandable sections below */}
           <div className="py-16 space-y-16">
