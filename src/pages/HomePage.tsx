@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Shield, Users, Monitor, ArrowRight } from 'lucide-react';
+import { Shield, Users, Monitor, ArrowRight, Smartphone, BarChart3, QrCode, ShieldCheck } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
@@ -29,6 +29,7 @@ import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
 import { SiteNavigationOptimizer } from '@/components/seo/SiteNavigationOptimizer';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
+import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 const HomePage = () => {
   const navigate = useNavigate();
   const homePageStructuredData = [{
@@ -90,38 +91,48 @@ const HomePage = () => {
         <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
         <div className="min-h-screen">
           <ConversionTracker />
+          <AppDownloadBot />
           <Hero />
           
-          {/* Stolen Guns Check Banner */}
-          <section className="py-12 bg-gradient-to-r from-red-50 to-orange-50 border-t border-b">
-            <div className="container mx-auto px-4">
+          {/* Main Features Section */}
+          <Features />
+
+          {/* Stolen Guns Check Banner - Redesigned */}
+          <section className="py-20 bg-gradient-to-br from-red-900 via-red-800 to-orange-800 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+            <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold text-red-800 mb-4">
-                    🔫 Check Stolen Firearms Database
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-700/50 text-red-100 text-sm font-medium mb-6">
+                    <Shield className="h-4 w-4" />
+                    Firearms Verification
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    🔫 Stolen Firearms Database
                   </h2>
-                  <p className="text-red-700 text-lg max-w-3xl mx-auto">
+                  <p className="text-xl text-red-100 max-w-3xl mx-auto leading-relaxed">
                     Before buying or selling any firearm, verify it's not stolen. Protect yourself from legal trouble and help law enforcement recover stolen weapons.
                   </p>
                 </div>
-                <div className="bg-white rounded-xl shadow-lg p-6">
+                <div className="modern-card bg-white/10 backdrop-blur-lg border-white/20 rounded-3xl p-8">
                   <HotGunzWidget style="style4" height={420} />
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Main Features Section */}
-          <Features />
-
           {/* Safe Or Stolen - Mission & Protection */}
-          <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
+          <section className="py-24 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
             <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-6">
+                  <Shield className="h-4 w-4" />
+                  Our Mission
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
                   Safe Or Stolen
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+                <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                   Trusted by thousands worldwide. Our goal is to protect buyers and sellers from financial 
                   loss and legal risks when dealing with second-hand goods. Prior to purchasing or selling 
                   any used item, check if it is listed as lost, stolen, or safe to handle. Verify the 
@@ -132,52 +143,71 @@ const HomePage = () => {
             </div>
           </section>
           
-          {/* Content moved to expandable sections below */}
-          <div className="py-16 space-y-16">
-            {/* Quick Access - Condensed */}
-            <section className="py-8 bg-muted/30">
-              <div className="container mx-auto px-4">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold mb-4">Verification Tools</h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">Protect yourself as both buyer and seller in the secondhand market</p>
-                </div>
-                
-                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                  <Button variant="outline" onClick={() => navigate('/imei-check')}>
-                    IMEI Phone Check
-                  </Button>
-                  <Button variant="outline" onClick={() => navigate('/vin-verification')}>
-                    VIN Car Check
-                  </Button>
-                  <Button variant="outline" onClick={() => navigate('/serial-number-checker')}>
-                    Serial Number Check
-                  </Button>
-                  <Button variant="outline" onClick={() => navigate('/stolen-item-checker')}>
-                    General Item Check
-                  </Button>
-                </div>
+          {/* Quick Access - Modern Design */}
+          <section className="py-20 bg-white dark:bg-slate-900">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Verification Tools</h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Protect yourself as both buyer and seller in the secondhand market
+                </p>
               </div>
-            </section>
-            
-            {/* Testimonials */}
-            <TestimonialsSection />
-            
-            {/* Trust and Community - Simplified */}
-            <section className="py-8 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
-              <div className="container mx-auto px-4">
-                <div className="max-w-3xl mx-auto text-center">
-                  
-                  
-                  <div className="flex justify-center gap-4">
-                    <TrustIndicators />
-                  </div>
-                </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="h-20 text-lg font-semibold hover-lift modern-card border-2"
+                  onClick={() => navigate('/imei-check')}
+                >
+                  <Smartphone className="mr-2 h-5 w-5" />
+                  IMEI Phone Check
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="h-20 text-lg font-semibold hover-lift modern-card border-2"
+                  onClick={() => navigate('/vin-verification')}
+                >
+                  <BarChart3 className="mr-2 h-5 w-5" />
+                  VIN Car Check
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="h-20 text-lg font-semibold hover-lift modern-card border-2"
+                  onClick={() => navigate('/serial-number-checker')}
+                >
+                  <QrCode className="mr-2 h-5 w-5" />
+                  Serial Number
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="h-20 text-lg font-semibold hover-lift modern-card border-2"
+                  onClick={() => navigate('/stolen-item-checker')}
+                >
+                  <ShieldCheck className="mr-2 h-5 w-5" />
+                  General Check
+                </Button>
               </div>
-            </section>
-          </div>
+            </div>
+          </section>
           
-          {/* Below-fold content - collapsed/organized */}
-          <div className="space-y-8">
+          {/* Testimonials */}
+          <TestimonialsSection />
+          
+          {/* Trust Indicators */}
+          <section className="py-16 bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-emerald-900/20 dark:to-blue-900/20">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto text-center">
+                <TrustIndicators />
+              </div>
+            </div>
+          </section>
+          
+          {/* Below-fold content - organized */}
+          <div className="space-y-12">
             <SiteNavigationOptimizer />
             <TrustBuildingFAQ />
             <ComprehensiveFAQ pageType="home" maxItems={6} />

@@ -29,53 +29,80 @@ const Hero = memo(() => {
   const handleQrScanSuccess = useCallback((result: string) => {
     setShowQrScanner(false);
   }, []);
-  return <div className="flex flex-col">
-      {/* Full Width Image Above Hero */}
-       <div className="w-full h-auto">
-          <img src={heroImage} alt="SafeOrStolen verification on mobile and laptop showing Item Verified status - consumer using fraud protection technology" className="w-full h-auto object-cover" loading="eager" fetchPriority="high" decoding="sync" width="1200" height="600" />
-       </div>
-      
-      {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background/80 to-background/60">
+  return <div className="relative overflow-hidden">
+      {/* Modern Hero Section */}
+      <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Accelerated By pill */}
-          <a href="https://fastercapital.com" target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-gray-100 hover:text-white hover:bg-white/10 transition-colors mb-6" title="Accelerated by FasterCapital - Supporting SafeOrStolen's growth" aria-label="Visit FasterCapital - Our technology accelerator partner">
-            <span className="text-base md:text-lg uppercase tracking-wide text-muted-foreground">ACCELERATED BY</span>
-            <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official partnership logo" className="h-16 md:h-20 w-auto object-contain" loading="lazy" width="80" height="20" />
-          </a>
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Trust Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full hero-glass text-white/90 text-sm font-medium mb-8 animate-fadeIn">
+              <Shield className="h-4 w-4 text-emerald-400" />
+              Trusted by 100,000+ Users Worldwide
+            </div>
 
-          {/* Streamlined Hero Content */}
-          <h1 id="main-headline" className="text-4xl md:text-6xl font-extrabold mb-6 text-green-50">Safe Or Stolen</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" role="banner">Lookup and verify IMEI, VIN, and serial numbers to safely buy and resell secondhand goods.</p>
-          
-          {/* Single Primary CTA */}
-          <div className="mb-12">
-            <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-12 py-6 text-xl" onClick={handleNavigateToAuth} aria-describedby="main-headline">
-              <Shield className="mr-3 h-6 w-6" aria-hidden="true" />
-              Start Free Check Now
-            </Button>
-          </div>
-          
-          {/* Simple Trust Indicators */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-            <span className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-sos-lime" />
-              $2.3M Scams Prevented
-            </span>
-            <span className="flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 text-sos-lime" />
-              Instant Results
-            </span>
-            <span className="flex items-center gap-2">
-              <Users className="h-4 w-4 text-sos-lime" />
-              100% Free
-            </span>
+            {/* Main Headline */}
+            <h1 id="main-headline" className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight animate-slideUp">
+              Verify Before You Buy
+              <span className="block text-gradient">Safe Or Stolen</span>
+            </h1>
+            
+            {/* Subheading */}
+            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed animate-slideUp" style={{animationDelay: '0.2s'}}>
+              Global hub protecting buyers and sellers in secondhand markets. 
+              <span className="block mt-2 text-emerald-400 font-semibold">
+                Instantly verify IMEI, VIN & serial numbers worldwide
+              </span>
+            </p>
+            
+            {/* Single Primary CTA */}
+            <div className="mb-16 animate-slideUp" style={{animationDelay: '0.4s'}}>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold px-12 py-6 text-xl rounded-2xl shadow-2xl hover-lift transform transition-all duration-300" 
+                onClick={handleNavigateToAuth} 
+                aria-describedby="main-headline"
+              >
+                <Shield className="mr-3 h-6 w-6" aria-hidden="true" />
+                Start Free Verification
+              </Button>
+              <p className="text-white/60 text-sm mt-4">No signup required • Results in seconds</p>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto animate-slideUp" style={{animationDelay: '0.6s'}}>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">$2.3M+</div>
+                <div className="text-white/70 text-sm">Scams Prevented</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">&lt; 3s</div>
+                <div className="text-white/70 text-sm">Instant Results</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-emerald-400 mb-2">100%</div>
+                <div className="text-white/70 text-sm">Free to Use</div>
+              </div>
+            </div>
           </div>
         </div>
+        
+        {/* Floating Device Preview */}
+        <div className="absolute right-8 top-1/2 transform -translate-y-1/2 hidden xl:block animate-float">
+          <img 
+            src={heroImage} 
+            alt="SafeOrStolen verification interface" 
+            className="w-80 h-auto rounded-3xl shadow-2xl modern-card" 
+            loading="eager" 
+            fetchPriority="high" 
+            width="320" 
+            height="640" 
+          />
+        </div>
       </div>
-    </div>
       
       {/* QR Scanner Modal */}
       {showQrScanner && <Suspense fallback={<div className="fixed inset-0 bg-background/80 flex items-center justify-center z-50">Loading scanner...</div>}>
