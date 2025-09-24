@@ -97,9 +97,9 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* TINY FIREARMS - BRIGHT PINK SO YOU CAN SEE THE CHANGE */}
-          <div className="h-2 bg-pink-500 text-black text-center flex items-center justify-center">
-            <span className="text-xs">🔫</span>
+          {/* MASSIVE FIREARMS BANNER - IMPOSSIBLE TO MISS */}
+          <div className="h-32 bg-red-600 text-white text-center flex items-center justify-center text-6xl font-bold animate-pulse">
+            🔫 FIREARMS DATABASE 🔫
           </div>
 
           {/* Safe Or Stolen - Mission & Protection */}
