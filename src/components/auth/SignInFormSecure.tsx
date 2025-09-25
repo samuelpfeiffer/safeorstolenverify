@@ -28,22 +28,9 @@ export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
   });
 
   const handleSignIn = async (data: SecureSignInFormData) => {
-    if (!rateLimitCheck) return;
-    
     setIsLoading(true);
     try {
-      // Enhanced input validation (synchronous email validation)
-      const emailValidation = validateEmailSecurity(data.email);
-      if (!emailValidation.isValid) {
-        toast({
-          title: "Invalid email",
-          description: emailValidation.errors[0],
-          variant: "destructive"
-        });
-        return;
-      }
-
-      const { error } = await signIn(emailValidation.sanitizedValue || data.email, data.password);
+      const { error } = await signIn(data.email.trim().toLowerCase(), data.password);
       
       if (error) {
         toast({
@@ -51,35 +38,12 @@ export const SignInFormSecure = ({ onSuccess }: SignInFormSecureProps) => {
           description: (error as any)?.message || "Please check your email and password",
           variant: "destructive"
         });
-        
-        // Enhanced rate limit check for failed attempt
-        const rateLimitAllowed = await checkRateLimit('authentication', undefined, window.location.hostname);
-        setRateLimitCheck(rateLimitAllowed);
-        
-        // Log security event for failed authentication
-        await logEnhancedSecurityEvent({
-          action: 'FAILED_SIGN_IN_ATTEMPT',
-          details: {
-            email: emailValidation.sanitizedValue || data.email,
-            timestamp: new Date().toISOString(),
-            userAgent: navigator.userAgent
-          }
-        });
       } else {
         form.reset();
         onSuccess?.();
-        
-        // Log successful authentication
-        await logEnhancedSecurityEvent({
-          action: 'SUCCESSFUL_SIGN_IN',
-          details: {
-            email: emailValidation.sanitizedValue || data.email,
-            timestamp: new Date().toISOString()
-          }
-        });
       }
     } catch (error) {
-      console.error('Secure sign in failed:', error);
+      console.error('Sign in failed:', error);
       toast({
         title: "Sign in failed",
         description: "An unexpected error occurred",

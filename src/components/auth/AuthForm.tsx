@@ -13,11 +13,23 @@ interface AuthFormProps {
 export const AuthForm = ({ mode, onToggleMode }: AuthFormProps) => {
   const { loading: authLoading } = useAuth();
 
+  const handleAuthSuccess = () => {
+    // Small delay to let toast show, then switch to signin for signup users
+    if (mode === 'signup') {
+      setTimeout(() => {
+        onToggleMode();
+      }, 2000);
+    }
+  };
+
   return (
     <div className="w-full max-w-md mx-auto space-y-6">
       <AuthFormHeader mode={mode} />
 
-      {mode === 'signin' ? <SignInFormSecure /> : <SignUpFormSecure />}
+      {mode === 'signin' ? 
+        <SignInFormSecure onSuccess={handleAuthSuccess} /> : 
+        <SignUpFormSecure onSuccess={handleAuthSuccess} />
+      }
 
       <AuthFormToggle 
         mode={mode} 

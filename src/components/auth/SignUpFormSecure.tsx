@@ -3,34 +3,21 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
-import { TermsAcceptance } from '@/components/auth/TermsAcceptance';
-import { WelcomeModal } from '@/components/auth/WelcomeModal';
 import { useAuth } from '@/lib/auth';
-import { useTermsAcceptance } from '@/hooks/useTermsAcceptance';
 import { useSecureSignUpForm, getMobileErrorMessage, SecureSignUpFormData } from '@/hooks/useSecureFormValidation';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
 
 interface SignUpFormSecureProps {
   onSuccess?: () => void;
 }
 
-type SignUpStep = 'form' | 'terms' | 'welcome';
-
 export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
-  const navigate = useNavigate();
   const { signUp, loading: authLoading, user } = useAuth();
   const { toast } = useToast();
   const isAuthenticated = !!user;
-  const { acceptTerms, isProcessing } = useTermsAcceptance();
-  const [step, setStep] = useState<SignUpStep>('form');
   const [isLoading, setIsLoading] = useState(false);
-  const [pendingSignUpData, setPendingSignUpData] = useState<SecureSignUpFormData | null>(null);
-  const [createdUserId, setCreatedUserId] = useState<string | null>(null);
-  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const isMobile = useIsMobile();
   
   const form = useSecureSignUpForm({
@@ -39,10 +26,9 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
     enableSecurityChecks: true
   });
 
-  // Check if user is already authenticated via OAuth
+  // Check if user is already authenticated
   useEffect(() => {
     if (isAuthenticated && user) {
-      // User is already authenticated, skip signup form
       onSuccess?.();
     }
   }, [isAuthenticated, user, onSuccess]);
@@ -54,23 +40,17 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
       const result = await signUp(data.email, data.password, data.fullName);
       
       if (result.success) {
-        // Set pending data and move to terms step
-        setPendingSignUpData(data);
+        // Show success message immediately
+        toast({
+          title: "🎉 Account Created Successfully!",
+          description: "Thank you for signing up! Please check your email to verify your account, then sign in.",
+          duration: 8000,
+        });
         
-        // Get the user after signup
-        const { data: { user: newUser } } = await supabase.auth.getUser();
-        if (newUser) {
-          setCreatedUserId(newUser.id);
-          setStep('terms');
-        } else {
-          // If no immediate user (email verification required), show success message
-          toast({
-            title: "Check your email",
-            description: "Please verify your email address to complete registration.",
-            duration: 10000,
-          });
-          onSuccess?.();
-        }
+        // Reset form and call success callback
+        form.reset();
+        onSuccess?.();
+        
       } else {
         toast({
           title: "Sign up failed",
@@ -91,88 +71,11 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
     }
   };
 
-  const handleTermsAccept = async () => {
-    if (!createdUserId) {
-      toast({
-        title: "Error",
-        description: "User ID not found. Please try signing up again.",
-        variant: "destructive",
-      });
-      return;
-    }
-    
-    setIsLoading(true);
-    
-    try {
-      const termsResult = await acceptTerms(createdUserId);
-      
-      if (termsResult.success) {
-        // Show welcome modal instead of immediately navigating away
-        setShowWelcomeModal(true);
-      } else {
-        toast({
-          title: "Terms acceptance failed",
-          description: termsResult.error || "Please try again.",
-          variant: "destructive",
-        });
-      }
-      
-    } catch (error: any) {
-      console.error('Terms acceptance error:', error);
-      toast({
-        title: "Terms acceptance failed",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleWelcomeModalClose = () => {
-    setShowWelcomeModal(false);
-    form.reset();
-    setPendingSignUpData(null);
-    setCreatedUserId(null);
-    setStep('form');
-    onSuccess?.();
-    // Navigate to home with welcome parameter
-    navigate('/?welcome=true');
-  };
-
-  const handleBackToSignUp = () => {
-    setStep('form');
-    setPendingSignUpData(null);
-    setCreatedUserId(null);
-  };
-
-  const currentlyLoading = isLoading || authLoading || isProcessing;
+  const currentlyLoading = isLoading || authLoading;
 
   // Don't show signup form if user is already authenticated
   if (isAuthenticated && user) {
     return null;
-  }
-
-  // Show welcome modal after successful signup
-  if (showWelcomeModal) {
-    return (
-      <WelcomeModal
-        isOpen={showWelcomeModal}
-        onClose={handleWelcomeModalClose}
-        userName={pendingSignUpData?.fullName}
-        userEmail={pendingSignUpData?.email}
-      />
-    );
-  }
-
-  if (step === 'terms' && pendingSignUpData) {
-    return (
-      <TermsAcceptance
-        onAccept={handleTermsAccept}
-        onBack={handleBackToSignUp}
-        isLoading={currentlyLoading}
-      />
-    );
   }
 
   return (
