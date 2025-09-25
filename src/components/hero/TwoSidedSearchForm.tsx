@@ -9,7 +9,7 @@ import { QrCode, Search } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { detectItemType } from '@/utils/itemTypeDetector';
-import { validateSerialNumberSecurity } from '@/utils/securityValidation';
+import { validateSerialNumberSecurity } from '@/utils/simpleValidation';
 import { useAuth } from '@/lib/auth';
 
 interface TwoSidedSearchFormProps {

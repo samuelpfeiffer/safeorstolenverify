@@ -40,17 +40,22 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
         },
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Checkout error:', error);
+        throw new Error(error.message || 'Failed to create checkout session');
+      }
 
       if (data?.url) {
         // Ensure Stripe loads outside the preview iframe
         navigateOutOfIframe(data.url as string);
+      } else {
+        throw new Error('No checkout URL received');
       }
     } catch (error) {
       console.error('Error creating checkout session:', error);
       toast({
-        title: "Error",
-        description: "Failed to start checkout. Please try again.",
+        title: "Payment System Temporarily Unavailable",
+        description: "Please try again in a few minutes or contact support if the issue persists.",
         variant: "destructive",
       });
     } finally {

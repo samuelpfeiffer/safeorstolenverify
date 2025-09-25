@@ -1,6 +1,5 @@
 
 import { useAuth } from '@/lib/auth';
-import { logEnhancedSecurityEvent } from '@/utils/enhancedSecurityAudit';
 import { useEffect } from 'react';
 
 /**
@@ -10,28 +9,15 @@ import { useEffect } from 'react';
 export const useUnifiedAuth = () => {
   const { user, session, loading, initialized, signOut, signIn, signUp, resetPassword } = useAuth();
   
-  // Enhanced security logging
-  useEffect(() => {
-    if (user && !loading) {
-      logEnhancedSecurityEvent({
-        action: 'USER_SESSION_ACTIVE',
-        details: {
-          userId: user.id,
-          sessionValid: !!session,
-          email: user.email
-        }
-      });
-    }
-  }, [user, session, loading]);
-  
+  // Simple, reliable sign out without complex logging
   const secureSignOut = async () => {
-    if (user) {
-      await logEnhancedSecurityEvent({
-        action: 'USER_LOGOUT',
-        details: { userId: user.id }
-      });
+    try {
+      return await signOut();
+    } catch (error) {
+      console.error('Sign out error:', error);
+      // Force clear local session state
+      window.location.href = '/';
     }
-    return signOut();
   };
   
   return {

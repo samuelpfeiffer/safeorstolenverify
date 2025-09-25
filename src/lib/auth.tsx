@@ -260,17 +260,35 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const { error } = await supabase.auth.signOut();
       
       if (error) {
-        throw error;
+        console.error('Sign out error:', error);
       }
+      
+      // Always clear local state regardless of API response
+      setState({
+        user: null,
+        session: null,
+        loading: false,
+        initialized: true,
+      });
+      
+      toast({
+        title: 'Signed out',
+        description: 'Successfully signed out.',
+      });
     } catch (error) {
       console.error('Sign out error:', error);
-      toast({
-        title: 'Sign out failed',
-        description: 'Please try again',
-        variant: 'destructive',
+      // Force clear state even if API fails
+      setState({
+        user: null,
+        session: null,
+        loading: false,
+        initialized: true,
       });
-    } finally {
-      setState(prev => ({ ...prev, loading: false }));
+      
+      toast({
+        title: 'Signed out',
+        description: 'You have been signed out.',
+      });
     }
   };
 

@@ -22,8 +22,6 @@ import { MobileBenefitsSection } from '@/components/mobile/MobileBenefitsSection
 import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
 import { SEOAuditComponent } from '@/components/seo/SEOAuditComponent';
-import { AuthDebug } from '@/components/debug/AuthDebug';
-import { PaymentSystemDebug } from '@/components/debug/PaymentSystemDebug';
 import { EnhancedSEOContent } from '@/components/seo/EnhancedSEOContent';
 import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
 import { SiteNavigationOptimizer } from '@/components/seo/SiteNavigationOptimizer';
@@ -97,9 +95,12 @@ const HomePage = () => {
           {/* Main Features Section */}
           <Features />
 
-          {/* MASSIVE FIREARMS BANNER - IMPOSSIBLE TO MISS */}
-          <div className="h-32 bg-red-600 text-white text-center flex items-center justify-center text-6xl font-bold animate-pulse">
-            🔫 FIREARMS DATABASE 🔫
+          {/* FIREARMS DATABASE SECTION */}
+          <div className="py-8 bg-red-600 text-white text-center">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl font-bold mb-2">🔫 FIREARMS DATABASE AVAILABLE 🔫</h2>
+              <p className="text-lg">Check firearms serial numbers for stolen status</p>
+            </div>
           </div>
 
           {/* Safe Or Stolen - Mission & Protection */}

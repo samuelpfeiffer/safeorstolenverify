@@ -18,7 +18,7 @@ import { pwaService } from '@/services/pwaService';
 import { 
   validateSerialNumberSecurity, 
   sanitizeInputSecurity 
-} from '@/utils/securityValidation';
+} from '@/utils/simpleValidation';
 import { handleSecureError, createSecureError } from '@/utils/errorHandling';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { usePendingVerification } from '@/hooks/usePendingVerification';

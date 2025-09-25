@@ -16,8 +16,8 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
   const createOneTimePayment = async (serialNumber: string, itemType: string): Promise<string | null> => {
     if (!session || !isAuthenticated) {
       toast({
-        title: "Authentication required",
-        description: "Please sign in to purchase a report",
+        title: "Authentication Required",
+        description: "Please sign in to purchase a verification report.",
         variant: "destructive",
       });
       return null;
@@ -25,8 +25,8 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
 
     if (!serialNumber.trim()) {
       toast({
-        title: "Serial number required",
-        description: "Please enter a serial number to verify",
+        title: "Serial Number Required",
+        description: "Please enter a valid serial number.",
         variant: "destructive",
       });
       return null;
@@ -42,7 +42,7 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
           serialNumber: serialNumber.trim(),
           itemType: itemType || 'general',
           isSubscription: false, // This is a one-time payment
-          redirectUrl: window.location.origin,
+          redirectUrl: window.location.origin + '/verification-success',
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -50,19 +50,33 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
       });
 
       if (error) {
-        console.error("Error creating one-time payment:", error);
-        throw error;
+        console.error("Payment creation error:", error);
+        throw new Error(error.message || 'Payment system unavailable');
       }
 
-      console.log("One-time payment checkout created:", data.url);
-      return data.url;
+      if (data?.url) {
+        console.log("Checkout URL created:", data.url);
+        return data.url;
+      }
+
+      throw new Error('No checkout URL received from payment system');
     } catch (error: any) {
-      console.error("Failed to create one-time payment:", error);
-      toast({
-        title: "Payment error",
-        description: error.message || "Failed to create payment session",
-        variant: "destructive",
-      });
+      console.error("Error creating one-time payment:", error);
+      
+      // Check if it's a network connectivity issue
+      if (error.message === 'Failed to fetch' || error.name === 'TypeError') {
+        toast({
+          title: "Connection Error",
+          description: "Unable to connect to payment system. Please check your internet connection and try again.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Payment System Temporarily Unavailable",
+          description: "Please try again in a few minutes or contact support if the issue persists.",
+          variant: "destructive",
+        });
+      }
       return null;
     } finally {
       setIsLoading(false);
