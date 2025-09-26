@@ -27,16 +27,26 @@
     --ring: 14 100% 57%;
     --radius: 0.75rem;
     
-    /* Modern gradients using theme colors */
+    /* Futuristic gradients */
     --gradient-primary: linear-gradient(135deg, hsl(14 100% 57%), hsl(0 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 15%) 100%);
-    --gradient-card: linear-gradient(145deg, rgba(255,87,34,0.1), rgba(255,87,34,0.05));
+    --gradient-hero: linear-gradient(135deg, hsl(220 40% 5%) 0%, hsl(220 30% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(0,255,255,0.1), rgba(0,255,255,0.05));
+    --gradient-cyber: linear-gradient(45deg, hsl(180 100% 50%) 0%, hsl(120 100% 50%) 50%, hsl(300 100% 50%) 100%);
+    --gradient-glow: radial-gradient(circle, rgba(0,255,255,0.3) 0%, transparent 70%);
     
-    /* Premium shadows with orange tint */
+    /* Neon accents */
+    --neon-cyan: 180 100% 50%;
+    --neon-green: 120 100% 50%;
+    --neon-purple: 270 100% 70%;
+    --neon-pink: 330 100% 70%;
+    
+    /* Futuristic shadows with neon glow */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(255 87 34 / 0.1), 0 2px 4px -2px rgb(255 87 34 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(255 87 34 / 0.1), 0 4px 6px -4px rgb(255 87 34 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(255 87 34 / 0.1), 0 8px 10px -6px rgb(255 87 34 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 255 255 / 0.1), 0 2px 4px -2px rgb(0 255 255 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 255 255 / 0.1), 0 4px 6px -4px rgb(0 255 255 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 255 255 / 0.1), 0 8px 10px -6px rgb(0 255 255 / 0.1);
+    --shadow-neon: 0 0 20px rgb(0 255 255 / 0.5), 0 0 40px rgb(0 255 255 / 0.3);
+    --shadow-glow: 0 0 30px rgb(120 255 120 / 0.4), 0 0 60px rgb(120 255 120 / 0.2);
 
     /* Brand: FasterCapital */
     --fc-blue: 214 84% 45%;
@@ -74,10 +84,11 @@
     --input: 0 0% 15%;
     --ring: 14 100% 57%;
     
-    /* Dark mode gradients using theme colors */
+    /* Dark mode futuristic gradients */
     --gradient-primary: linear-gradient(135deg, hsl(14 100% 57%), hsl(0 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 10%) 100%);
-    --gradient-card: linear-gradient(145deg, rgba(255,87,34,0.15), rgba(255,87,34,0.05));
+    --gradient-hero: linear-gradient(135deg, hsl(220 50% 3%) 0%, hsl(220 40% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(0,255,255,0.2), rgba(0,255,255,0.08));
+    --gradient-cyber: linear-gradient(45deg, hsl(180 100% 40%) 0%, hsl(120 100% 40%) 50%, hsl(300 100% 60%) 100%);
   }
 
   * {
@@ -107,6 +118,39 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .text-cyber {
+    background: var(--gradient-cyber);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: cyber-pulse 2s infinite alternate;
+  }
+
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+    border: 1px solid hsl(var(--neon-cyan) / 0.5);
+  }
+
+  .cyber-border {
+    border: 1px solid hsl(var(--neon-cyan) / 0.3);
+    position: relative;
+  }
+
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--neon-cyan) / 0.5) 50%, 
+      transparent 100%);
+    opacity: 0;
+    animation: scan-line 3s infinite;
   }
 
   .fc-gradient-text {
@@ -182,5 +226,34 @@
 
   .hover-scale {
     @apply transition-transform duration-200 hover:scale-[1.02];
+  }
+
+  .cyber-float {
+    animation: cyber-float 6s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes cyber-pulse {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    100% { filter: hue-rotate(360deg) brightness(1.2); }
+  }
+
+  @keyframes scan-line {
+    0%, 100% { opacity: 0; transform: translateX(-100%); }
+    50% { opacity: 1; transform: translateX(100%); }
+  }
+
+  @keyframes cyber-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.3); }
+    100% { box-shadow: 0 0 40px hsl(var(--neon-cyan) / 0.8), 0 0 60px hsl(var(--neon-green) / 0.4); }
   }
 }
