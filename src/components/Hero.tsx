@@ -1,4 +1,4 @@
-import React, { Suspense, useState, lazy, useCallback, memo } from 'react';
+import React, { Suspense, useState, useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -7,15 +7,13 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { HolographicBackground } from '@/components/futuristic/HolographicBackground';
 import { motion } from 'framer-motion';
 import { CyberReveal, SlideUp } from '@/components/futuristic/MotionWrapper';
-import { EnhancedSearchForm } from '@/components/hero/EnhancedSearchForm';
+import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import heroImage from '@/assets/hero-verification-devices.png';
-const QrScanner = lazy(() => import('@/components/hero/QrScanner'));
 const Hero = memo(() => {
   const navigate = useNavigate();
   const {
     isAuthenticated
   } = useUnifiedAuth();
-  const [showQrScanner, setShowQrScanner] = useState(false);
   const handleNavigateToAuth = useCallback(() => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
@@ -30,9 +28,6 @@ const Hero = memo(() => {
       navigate('/firearms-check');
     }
   }, [isAuthenticated, navigate]);
-  const handleQrScanSuccess = useCallback((result: string) => {
-    setShowQrScanner(false);
-  }, []);
   return (
     <div className="relative overflow-hidden">
       {/* Futuristic Hero Section */}
@@ -105,7 +100,7 @@ const Hero = memo(() => {
                 >
                   Verify Before You Buy
                 </motion.span>
-                <span className="block text-cyber cyber-float">Safe Or Stolen</span>
+                <span className="block text-cyber cyber-float">SafeOrStolen</span>
               </h1>
             </CyberReveal>
             
@@ -140,10 +135,98 @@ const Hero = memo(() => {
               </div>
             </SlideUp>
 
-            {/* Enhanced Search Form Integration */}
+            {/* FasterCapital Branding */}
+            <SlideUp delay={0.9}>
+              <div className="mb-12">
+                <FasterCapitalBranding />
+              </div>
+            </SlideUp>
+
+            {/* Three User Type Sections */}
+            <SlideUp delay={1.0}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+                {/* Buyers Section */}
+                <div className="bg-gradient-to-br from-sos-orange/20 to-sos-orange/5 rounded-2xl p-6 border border-sos-orange/30 hover:border-sos-orange/50 transition-all duration-300 cyber-border">
+                  <div className="text-center">
+                    <Shield className="h-12 w-12 text-sos-orange mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-sos-orange mb-3">For Buyers</h3>
+                    <p className="text-white/80 mb-6 text-sm">
+                      Shop with confidence. Never buy stolen goods again.
+                    </p>
+                    <Button 
+                      onClick={handleNavigateToAuth}
+                      className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold"
+                    >
+                      Start Checking Items
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Sellers Section */}
+                <div className="bg-gradient-to-br from-sos-lime/20 to-sos-lime/5 rounded-2xl p-6 border border-sos-lime/30 hover:border-sos-lime/50 transition-all duration-300 cyber-border">
+                  <div className="text-center">
+                    <BadgeCheck className="h-12 w-12 text-sos-lime mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-sos-lime mb-3">For Sellers</h3>
+                    <p className="text-white/80 mb-6 text-sm">
+                      Prove your items are legitimate. Sell with confidence.
+                    </p>
+                    <Button 
+                      onClick={handleNavigateToAuth}
+                      className="w-full bg-sos-lime hover:bg-sos-lime/90 text-sos-dark font-semibold"
+                    >
+                      Verify Your Items
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Businesses Section */}
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-2xl p-6 border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300 cyber-border">
+                  <div className="text-center">
+                    <Users className="h-12 w-12 text-blue-500 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-blue-500 mb-3">For Businesses</h3>
+                    <p className="text-white/80 mb-6 text-sm">
+                      API integration for pawn shops, resellers & more.
+                    </p>
+                    <Button 
+                      onClick={handleNavigateToAuth}
+                      className="w-full bg-blue-500 hover:bg-blue-500/90 text-white font-semibold"
+                    >
+                      Get Business Access
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </SlideUp>
+
+            {/* Enhanced Search Form - Requires Auth */}
             <SlideUp delay={1.2}>
-              <div className="mt-16">
-                <EnhancedSearchForm onOpenQrScanner={() => setShowQrScanner(true)} />
+              <div className="mt-8">
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl p-8 border border-neon-cyan/20 cyber-border">
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">Ready to Verify?</h3>
+                      <p className="text-white/70">Sign up to get 4 free searches and start protecting yourself</p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Button 
+                        onClick={handleNavigateToAuth}
+                        size="lg"
+                        className="flex-1 bg-gradient-cyber hover:shadow-neon text-white font-bold py-4 text-lg"
+                      >
+                        <Shield className="mr-2 h-5 w-5" />
+                        Get Started - Free
+                      </Button>
+                      <Button 
+                        onClick={handleNavigateToFirearms}
+                        size="lg"
+                        variant="outline"
+                        className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-slate-900 py-4"
+                      >
+                        Check Firearms
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </SlideUp>
             
@@ -216,20 +299,6 @@ const Hero = memo(() => {
           </motion.div>
         </motion.div>
       </div>
-      
-      {/* Enhanced QR Scanner Modal */}
-      {showQrScanner && (
-        <Suspense fallback={
-          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="cyber-border rounded-xl p-8 bg-card">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-neon-cyan mx-auto mb-4"></div>
-              <p className="text-cyber">Loading futuristic scanner...</p>
-            </div>
-          </div>
-        }>
-          <QrScanner isOpen={showQrScanner} onOpenChange={setShowQrScanner} onScanSuccess={handleQrScanSuccess} />
-        </Suspense>
-      )}
     </div>
   );
 });

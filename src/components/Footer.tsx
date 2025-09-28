@@ -57,9 +57,9 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" alt="Safe or Stolen" className="h-12 w-12 filter drop-shadow-lg" />
+                <img src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" alt="SafeOrStolen" className="h-12 w-12 filter drop-shadow-lg" />
                 <div>
-                  <div className="text-xl font-bold text-foreground">Safe or Stolen</div>
+                  <div className="text-xl font-bold text-foreground">SafeOrStolen</div>
                   <div className="text-sm text-sos-orange">Verify the Legitimacy of 2nd-hand items</div>
                 </div>
               </div>
@@ -172,7 +172,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="text-sm text-muted-foreground">
-                © 2024 Safe or Stolen. All rights reserved.
+                © 2024 SafeOrStolen. All rights reserved.
               </div>
               <FasterCapitalBranding />
             </div>

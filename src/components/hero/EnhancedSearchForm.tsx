@@ -46,6 +46,16 @@ export const EnhancedSearchForm = ({ onOpenQrScanner }: EnhancedSearchFormProps)
   };
 
   const handleSearch = async () => {
+    // Require authentication first
+    if (!isAuthenticated) {
+      toast({
+        title: 'Sign in required',
+        description: 'Please sign up or sign in to start verifying items.',
+      });
+      navigate('/auth?tab=signup');
+      return;
+    }
+
     const validation = await validateSerialNumberSecurity(serialNumber);
     
     if (!validation.isValid) {
@@ -58,16 +68,13 @@ export const EnhancedSearchForm = ({ onOpenQrScanner }: EnhancedSearchFormProps)
       return;
     }
 
-    // Allow guest users to proceed with limited searches
-    if (!isAuthenticated && hasReachedLimit) {
-      const cleanSerialNumber: string = sanitizeInputSecurity(serialNumber.trim());
-      const itemType = detectItemType(cleanSerialNumber);
-      await savePendingVerification(cleanSerialNumber, itemType, 'buyer');
+    // Check if user has reached limit
+    if (hasReachedLimit) {
       toast({
-        title: 'Free searches used',
-        description: 'Sign up to get 4 more searches and continue verifying items.',
+        title: 'Search limit reached',
+        description: 'Upgrade to a paid plan for unlimited searches.',
       });
-      navigate('/auth?tab=signup');
+      navigate('/subscriptions');
       return;
     }
 

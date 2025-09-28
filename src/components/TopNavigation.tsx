@@ -89,13 +89,13 @@ const TopNavigation = () => {
               <div className="relative">
                 <img 
                   src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-                  alt="Safe or Stolen" 
+                  alt="SafeOrStolen" 
                   className="h-10 w-10 filter drop-shadow-lg"
                 />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
               </div>
               <div className="hidden sm:block">
-                <span className="text-white font-bold text-xl tracking-tight">Safe or Stolen</span>
+                <span className="text-white font-bold text-xl tracking-tight">SafeOrStolen</span>
                 <div className="text-xs text-sos-orange font-medium">Verify Before You Buy</div>
               </div>
             </button>
