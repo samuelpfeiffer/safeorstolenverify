@@ -207,8 +207,7 @@ const Hero = memo(() => {
               src={heroImage} 
               alt="SafeOrStolen verification interface" 
               className="w-80 h-auto rounded-3xl shadow-2xl cyber-border neon-glow" 
-              loading="eager" 
-              fetchPriority="high" 
+              loading="eager"
               width="320" 
               height="640" 
             />
