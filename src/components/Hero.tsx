@@ -33,7 +33,8 @@ const Hero = memo(() => {
   const handleQrScanSuccess = useCallback((result: string) => {
     setShowQrScanner(false);
   }, []);
-  return <div className="relative overflow-hidden">
+  return (
+    <div className="relative overflow-hidden">
       {/* Futuristic Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* 3D Holographic Background */}
@@ -57,8 +58,8 @@ const Hero = memo(() => {
               key={i}
               className="absolute w-1 h-1 bg-neon-cyan rounded-full"
               initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
+                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+                y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
                 opacity: 0,
               }}
               animate={{
@@ -81,13 +82,6 @@ const Hero = memo(() => {
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Enhanced Search Form Integration */}
-            <SlideUp delay={1.2}>
-              <div className="mt-16">
-                <EnhancedSearchForm onOpenQrScanner={() => setShowQrScanner(true)} />
-              </div>
-            </SlideUp>
-          </div>
             {/* Trust Badge */}
             <CyberReveal delay={0}>
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full cyber-border neon-glow text-white/90 text-sm font-medium mb-8">
@@ -145,56 +139,13 @@ const Hero = memo(() => {
                 <p className="text-white/60 text-sm mt-4">No signup required • Results in seconds</p>
               </div>
             </SlideUp>
-          </div>
-        </div>
-        
-        {/* Enhanced Floating Device Preview */}
-        <motion.div 
-          className="absolute right-8 top-1/2 transform -translate-y-1/2 hidden xl:block"
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <motion.div
-            animate={{
-              y: [-10, 10, -10],
-              rotateY: [0, 5, 0, -5, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="relative"
-          >
-            <img 
-              src={heroImage} 
-              alt="SafeOrStolen verification interface" 
-              className="w-80 h-auto rounded-3xl shadow-2xl cyber-border neon-glow" 
-              loading="eager" 
-              fetchPriority="high" 
-              width="320" 
-              height="640" 
-            />
-            {/* Holographic overlay */}
-            <div className="absolute inset-0 bg-gradient-cyber opacity-20 rounded-3xl pointer-events-none"></div>
-          </motion.div>
-        </motion.div>
-      </div>
-      
-      {/* Enhanced QR Scanner Modal */}
-      {showQrScanner && <Suspense fallback={
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="cyber-border rounded-xl p-8 bg-card">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-neon-cyan mx-auto mb-4"></div>
-            <p className="text-cyber">Loading futuristic scanner...</p>
-          </div>
-        </div>
-      }>
-          <QrScanner isOpen={showQrScanner} onOpenChange={setShowQrScanner} onScanSuccess={handleQrScanSuccess} />
-        </Suspense>}
-    </div>;
-});
+
+            {/* Enhanced Search Form Integration */}
+            <SlideUp delay={1.2}>
+              <div className="mt-16">
+                <EnhancedSearchForm onOpenQrScanner={() => setShowQrScanner(true)} />
+              </div>
+            </SlideUp>
             
             {/* Enhanced Trust Indicators with Animations */}
             <SlideUp delay={0.8}>
@@ -268,17 +219,20 @@ const Hero = memo(() => {
       </div>
       
       {/* Enhanced QR Scanner Modal */}
-      {showQrScanner && <Suspense fallback={
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="cyber-border rounded-xl p-8 bg-card">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-neon-cyan mx-auto mb-4"></div>
-            <p className="text-cyber">Loading futuristic scanner...</p>
+      {showQrScanner && (
+        <Suspense fallback={
+          <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
+            <div className="cyber-border rounded-xl p-8 bg-card">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-neon-cyan mx-auto mb-4"></div>
+              <p className="text-cyber">Loading futuristic scanner...</p>
+            </div>
           </div>
-        </div>
-      }>
+        }>
           <QrScanner isOpen={showQrScanner} onOpenChange={setShowQrScanner} onScanSuccess={handleQrScanSuccess} />
-        </Suspense>}
-    </div>;
+        </Suspense>
+      )}
+    </div>
+  );
 });
 Hero.displayName = 'Hero';
 export default Hero;
