@@ -1,4 +1,5 @@
 
+import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 type SearchLimitDisplayProps = {
@@ -12,6 +13,7 @@ export const SearchLimitDisplay = ({
   remainingSearches, 
   isSubscribed
 }: SearchLimitDisplayProps) => {
+  const { remainingSearches: actualRemaining } = useSearchLimits();
   const { isAuthenticated } = useUnifiedAuth();
 
   if (isSubscribed) {
@@ -24,14 +26,15 @@ export const SearchLimitDisplay = ({
     );
   }
 
+  // For non-authenticated users, show sign-up message
   if (!isAuthenticated) {
     return (
       <div className="text-center mt-3">
-        <p className="text-sm text-sos-orange">
-          🔐 Sign in to get 4 free searches
+        <p className="text-sm text-sos-orange font-medium">
+          🔐 Sign up to get your 4 free verification searches
         </p>
         <p className="text-xs text-gray-400 mt-1">
-          Create your free account to start verifying items
+          Create your free account to start protecting yourself from stolen goods
         </p>
       </div>
     );

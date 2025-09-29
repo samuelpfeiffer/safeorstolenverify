@@ -92,17 +92,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             initialized: true,
           });
 
-          // Handle auth events
+          // Handle auth events with prominent announcements
           if (event === 'SIGNED_IN') {
             const userName = session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'there';
             toast({
-              title: `Welcome back, ${userName}!`,
-              description: 'Ready to verify items and stay protected from stolen goods.',
+              title: `🎉 Successfully Signed In!`,
+              description: `Welcome back, ${userName}! You're now ready to verify items safely.`,
+              duration: 6000,
             });
           } else if (event === 'SIGNED_OUT') {
             toast({
-              title: 'Signed out',
-              description: 'Successfully signed out.',
+              title: '👋 Signed Out Successfully',
+              description: 'You have been safely signed out of your account.',
+              duration: 4000,
             });
           } else if (event === 'TOKEN_REFRESHED') {
             console.log('Token refreshed');
@@ -227,15 +229,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (data.user && !data.session) {
         toast({
-          title: 'Check your email',
-          description: 'We sent you a verification link. Please check your email and click the link to complete registration.',
-          duration: 10000,
+          title: '🎉 Account Created Successfully!',
+          description: 'Please check your email and click the verification link to unlock your 4 free searches!',
+          duration: 12000,
         });
       } else {
         toast({
-          title: 'Welcome to SafeOrStolen! 🎉',
-          description: 'Your account has been created successfully. Check your email for next steps!',
-          duration: 8000,
+          title: '🎉 Welcome to SafeOrStolen!',
+          description: 'Account created! You now have 4 free verification searches to stay protected from stolen goods.',
+          duration: 10000,
         });
       }
 
