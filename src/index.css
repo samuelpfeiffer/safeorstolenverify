@@ -6,26 +6,32 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Softer, more trustworthy color palette */
+    --background: 210 20% 98%;  /* Soft blue-white */
+    --foreground: 215 25% 27%;  /* Deep navy for trust */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 215 25% 27%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    --primary: 14 100% 57%;  /* Orange */
+    --popover-foreground: 215 25% 27%;
+    --primary: 211 100% 50%;  /* Trustworthy blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 84% 60%;  /* Red */
+    --secondary: 162 73% 46%;  /* Calming teal */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 20%;
-    --accent: 84 81% 44%;  /* Lime green */
-    --accent-foreground: 0 0% 0%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 142 76% 36%;  /* Success green */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 14 100% 57%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 211 100% 50%;
     --radius: 0.75rem;
+    
+    /* Buyer/Seller/Business theme colors */
+    --buyer-orange: 25 95% 53%;  /* Softer orange for buyers */
+    --seller-green: 142 76% 36%;  /* Professional green for sellers */
+    --business-blue: 211 100% 50%;  /* Corporate blue for businesses */
     
     /* Futuristic gradients */
     --gradient-primary: linear-gradient(135deg, hsl(14 100% 57%), hsl(0 84% 60%));

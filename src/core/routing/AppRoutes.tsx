@@ -126,6 +126,7 @@ const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
 const UltimateGuideBuyingSafelyPage = lazy(() => import('@/pages/UltimateGuideBuyingSafelyPage'));
 const StolenGoodsStatisticsPage = lazy(() => import('@/pages/StolenGoodsStatisticsPage'));
 const RSSFeedPage = lazy(() => import('@/pages/RSSFeedPage'));
+const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
 
 /**
  * Enterprise Application Routing
@@ -160,6 +161,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="services" element={<ServicesPage />} />
+          <Route path="features" element={<FeaturesPage />} />
           
           {/* E-commerce style routes - redirect to main services since this isn't an e-commerce site */}
           <Route path="wishlist" element={<Navigate to="/services" replace />} />

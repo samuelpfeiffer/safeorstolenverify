@@ -3,6 +3,10 @@ import { Shield, Users, Award, Lock, CheckCircle, Building } from 'lucide-react'
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { FounderStory } from '@/components/story/FounderStory';
+import { SuccessStories } from '@/components/story/SuccessStories';
+import { MarketplacePartners } from '@/components/marketplace/MarketplacePartners';
+import { ItemRegistration } from '@/components/registration/ItemRegistration';
 
 const AboutPage = () => {
   const teamMembers = [
@@ -272,6 +276,18 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Founder Story */}
+        <FounderStory />
+
+        {/* Success Stories */}
+        <SuccessStories />
+
+        {/* Marketplace Partnerships */}
+        <MarketplacePartners />
+
+        {/* Item Registration */}
+        <ItemRegistration />
       </div>
     </>
   );

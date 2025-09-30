@@ -15,6 +15,7 @@ import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { CompetitiveAnalytics } from '@/components/seo/CompetitiveAnalytics';
+import { SEOEnhancements } from '@/components/seo/SEOEnhancements';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -55,6 +56,7 @@ export const AppRoot: React.FC = () => {
                   <div className="min-h-screen bg-sos text-white antialiased">
                     <MasterSEO />
                     <CompetitiveAnalytics />
+                    <SEOEnhancements />
                     <GlobalAnalytics />
                     <OptimizedLCPLoader />
                     <Suspense fallback={<AppLoadingScreen />}>

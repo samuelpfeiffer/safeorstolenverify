@@ -45,12 +45,17 @@ const TopNavigation = () => {
 
   const navigationItems = [
     { label: 'Home', href: '/', icon: Home },
-    { label: 'Real-time Verify', href: '/real-time-verification', icon: Search },
-    { label: 'About Problem', href: '/about-problem' },
+    { 
+      label: 'Verify Now', 
+      href: '/real-time-verification', 
+      icon: Search,
+      highlight: true 
+    },
+    { label: 'Features', href: '/features' },
     { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Our Story', href: '/our-story' },
+    { label: 'About', href: '/about' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'For Business', href: '/for-brands' },
-    { label: 'Contact', href: '/contact' },
   ];
 
   // FasterCapital Program Requirements Menu
