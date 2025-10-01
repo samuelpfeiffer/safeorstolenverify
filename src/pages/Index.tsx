@@ -61,11 +61,11 @@ const Index = () => {
 
   return (
     <>
-      {/* Advanced SEO Optimization - Outrank Competition */}
+      {/* Simplified SEO - Single Optimizer */}
       <UnifiedSEOOptimizer
-        title="IMEI, VIN, and Serial Number Checker – SafeOrStolen: Prevent Fraud Instantly"
-        description="Easily check if a phone, car, or device is stolen with SafeOrStolen's global IMEI, VIN, and serial number databases. Download our app for instant results!"
-        keywords="verify stolen item, IMEI checker app, VIN check app, serial number check, stolen goods database, check if phone is stolen, stolen electronics verification, secondhand item verification, theft report lookup, safe marketplace buying"
+        title="IMEI, VIN, and Serial Number Checker – SafeOrStolen Mobile App"
+        description="Download the SafeOrStolen app for instant stolen item verification. Check IMEI, VIN, and serial numbers to protect buyers and sellers."
+        keywords="verify stolen item, IMEI checker app, VIN check app, serial number check, stolen goods database, check if phone is stolen"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
@@ -73,69 +73,21 @@ const Index = () => {
         aiOptimized={true}
         type="website"
       />
-      <AdvancedKeywordOptimizer 
-        pageType="homepage" 
-        context="transaction"
-        primaryKeywords={['verify stolen item', 'IMEI checker app', 'check if phone is stolen', 'VIN check app', 'secondhand item verification', 'stolen goods database']}
-      />
-      <DomainAuthorityBooster pageType="homepage" />
-      <LinkBuildingHelper 
-        pageTitle="Safe Or Stolen - Free Stolen Item Verification"
-        pageUrl="https://safeorstolen.com/"
-        contentType="tool"
-      />
-      <ContentAuthoritySignals 
-        wordCount={2800}
-        lastUpdated={new Date().toISOString()}
-        authorExpertise={['Fraud Prevention', 'Law Enforcement Partnerships', 'Database Security']}
-        contentDepth="comprehensive"
-      />
-      <GoogleDiscoverOptimizer 
-        title="Verify Before You Buy or Sell - Stop Buying & Selling Stolen Goods"
-        description="Instantly verify IMEI, VIN and serial numbers before buying or selling second-hand items. Free verification tools protect buyers and sellers from stolen goods. Trusted by 100,000+ users worldwide."
-        image="/assets/hero-verification-devices.png"
-        category="Consumer Protection"
-        enableFollow={true}
-      />
       
-      {/* Main content - ensure it loads immediately for crawlers */}
+      {/* Clean, organized content */}
       <div className="min-h-screen">
-        {/* AI Background Monitor - Shows AI is always working */}
-        <div className="fixed bottom-4 right-4 z-40 max-w-md">
-          <BackgroundAIMonitor />
-        </div>
-        
-        {/* Privacy & Data Transparency */}
-        <PrivacyTransparency />
-        
-        <noscript>
-          {/* Fallback content for crawlers when JS is disabled */}
-          <div className="container mx-auto px-4 py-20 text-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-primary">
-              SafeOrStolen
-            </h1>
-              <p className="text-lg md:text-2xl text-muted-foreground mb-6">
-                Protect buyers and sellers in the secondhand market. Check if items are stolen before transactions. 
-                Help sellers prove legitimacy and buyers avoid fraud in resale economy.
-              </p>
-            <p className="text-lg text-muted-foreground">
-              Enable JavaScript to access our full verification platform.
-            </p>
-          </div>
-        </noscript>
-        
         <Hero />
-        <HighImpactFAQ />
-        <AIOptimizedContent page="home" />
-        <KeywordOptimizedContent pageType="homepage" className="py-12 bg-muted/30" />
-        <SponsorsStrip />
-        <TrustSignals />
-        <TestimonialsSection />
-        <SecurityBadges />
         
-        {/* Enhanced Trust and Mobile Sections */}
-        <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
-          <TrustBadges />
+        {/* Consolidated Trust Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4 space-y-16">
+            <TestimonialsSection />
+            <HighImpactFAQ />
+          </div>
+        </section>
+        
+        {/* Mobile App Promotion */}
+        <Suspense fallback={<div className="py-8" />}>
           <MobileOptimization />
         </Suspense>
         
@@ -149,8 +101,6 @@ const Index = () => {
             <VerifiedProduct />
           </Suspense>
         )}
-        
-        <ComprehensiveKeywordFooter />
       </div>
     </>
   );

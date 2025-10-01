@@ -45,34 +45,20 @@ const TopNavigation = () => {
 
   const navigationItems = [
     { label: 'Home', href: '/', icon: Home },
-    { 
-      label: 'Verify Now', 
-      href: '/real-time-verification', 
-      icon: Search,
-      highlight: true 
-    },
-    { label: 'Download App', href: '/download-app' },
-    { label: 'Buyer Guide', href: '/buyer-guide' },
-    { label: 'Seller Guide', href: '/seller-guide' },
-    { label: 'vs CheckMend', href: '/vs/checkmend' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Features', href: '/features' },
     { label: 'How It Works', href: '/how-it-works' },
-    { label: 'About', href: '/about' },
+    { label: 'Features', href: '/features' },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'For Business', href: '/for-brands' },
+    { label: 'Blog', href: '/blog' },
   ];
 
-  // FasterCapital Program Requirements Menu
-  const fasterCapitalRequirements = [
-    { label: 'Raise Capital', href: '/fastercapital/raise-capital', description: 'Get funding from 155K+ angels and 50K+ VCs' },
-    { label: 'Tech Cofounder', href: '/fastercapital/tech-cofounder', description: 'Get technical cofounders for your startup' },
-    { label: 'Incubation', href: '/fastercapital/incubation', description: 'Join our 12-month acceleration program' },
-    { label: 'Mega Financing', href: '/fastercapital/mega-financing', description: 'Financing for $100M+ projects' },
-    { label: 'Business Plan', href: '/fastercapital/business-plan', description: 'Professional business plan development' },
-    { label: 'Pitch Deck', href: '/fastercapital/pitch-deck', description: 'Investor-ready pitch deck creation' },
-    { label: 'Financial Model', href: '/fastercapital/financial-model', description: 'Financial projections and modeling' },
-    { label: 'Market Research', href: '/fastercapital/market-research', description: 'Comprehensive market analysis' },
+  // Resources Menu
+  const resourcesMenu = [
+    { label: 'Download App', href: '/download-app', description: 'Get our mobile app for iOS & Android' },
+    { label: 'Buyer Guide', href: '/buyer-guide', description: 'How to buy secondhand safely' },
+    { label: 'Seller Guide', href: '/seller-guide', description: 'How to sell with confidence' },
+    { label: 'Compare Services', href: '/vs/checkmend', description: 'SafeOrStolen vs CheckMend' },
+    { label: 'About Us', href: '/about', description: 'Our mission and team' },
+    { label: 'For Business', href: '/for-brands', description: 'Enterprise solutions' },
   ];
 
   const userMenuItems = isAuthenticated ? [
@@ -127,22 +113,22 @@ const TopNavigation = () => {
                 {item.label}
               </button>
             ))}
-            
-            {/* FasterCapital Requirements Menu */}
+
+            {/* Resources Menu */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10">
-                    FasterCapital
+                    Resources
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] p-4 bg-gray-900 border-gray-800">
                       <div className="mb-3">
-                        <h4 className="text-sm font-medium text-sos-orange mb-1">Program Requirements</h4>
-                        <p className="text-xs text-gray-400">Choose the right program for your startup</p>
+                        <h4 className="text-sm font-medium text-sos-orange mb-1">Helpful Resources</h4>
+                        <p className="text-xs text-gray-400">Everything you need to know</p>
                       </div>
                       <div className="grid gap-2">
-                        {fasterCapitalRequirements.map((item) => (
+                        {resourcesMenu.map((item) => (
                           <NavigationMenuLink key={item.href} asChild>
                             <button
                               onClick={() => navigate(item.href)}
@@ -167,6 +153,15 @@ const TopNavigation = () => {
 
           {/* User Menu & CTA */}
           <div className="hidden lg:flex items-center gap-4">
+            {/* Prominent Verify Button */}
+            <Button
+              onClick={() => navigate('/stolen-item-checker')}
+              className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              <Search className="h-4 w-4 mr-2" />
+              Verify Item
+            </Button>
+            
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -257,10 +252,10 @@ const TopNavigation = () => {
                 </button>
               ))}
               
-              {/* FasterCapital Requirements in Mobile */}
+              {/* Resources Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
-                <p className="text-gray-400 text-sm mb-3 px-4">FasterCapital Programs</p>
-                {fasterCapitalRequirements.map((item) => (
+                <p className="text-gray-400 text-sm mb-3 px-4">Resources</p>
+                {resourcesMenu.map((item) => (
                   <button
                     key={item.href}
                     onClick={() => {
