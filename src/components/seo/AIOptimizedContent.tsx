@@ -144,7 +144,7 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page }) 
       
       {/* Hidden content for AI crawlers - not visible to users */}
       <div style={{ display: 'none' }} aria-hidden="true" data-ai-content="true">
-        <h1>{content.title}</h1>
+        <h2>{content.title}</h2>
         <p><strong>Summary:</strong> {content.summary}</p>
         <p><strong>Use Case:</strong> {content.useCase}</p>
         <p><strong>How It Works:</strong> {content.howItWorks}</p>

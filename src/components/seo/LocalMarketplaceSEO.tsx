@@ -69,9 +69,10 @@ export const LocalMarketplaceSEO = () => {
       {/* Geo-Targeted Long-Tail Keywords */}
       <meta name="local-keywords" content="facebook marketplace safety near me, craigslist scam prevention my area, offerup buyer protection local, verify before buying near me" />
       
-      <script type="application/ld+json">
-        {JSON.stringify(localizedSchema)}
-      </script>
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localizedSchema) }}
+      />
     </Helmet>
   );
 };
