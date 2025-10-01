@@ -7,7 +7,7 @@ import { EnhancedAppLayout } from '@/components/layout/EnhancedAppLayout';
 // Removed duplicate SEO components - using ConsolidatedSEO in AppRoot.tsx instead
 
 // Lazy load all pages for optimal performance
-const HomePage = lazy(() => import('@/pages/HomePage'));
+const Index = lazy(() => import('@/pages/Index'));
 const StolenItemChecker = lazy(() => import('@/pages/StolenItemChecker'));
 const IMEICheck = lazy(() => import('@/pages/IMEICheck'));
 const VINVerification = lazy(() => import('@/pages/VINVerification'));
@@ -144,7 +144,7 @@ export const AppRoutes: React.FC = () => {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<EnhancedAppLayout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Index />} />
           
           {/* SEO-Focused Landing Pages for Stolen Item Searches */}
           <Route path="stolen-item-checker" element={<StolenItemChecker />} />
