@@ -9,13 +9,14 @@ export const SEOContentSection = () => {
           {/* Main SEO Content */}
           <article>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Free Stolen Item Checker: Better Than CheckMend, IMEIinfo & Stolen Register
+              Free Stolen Item Checker: Mobile App for Phones, Cars, Guns & Everything
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Looking for a <strong>free alternative to CheckMend</strong> or <strong>IMEIinfo</strong>? SafeOrStolen provides instant stolen goods verification with 
-              4 FREE searches - no credit card required. Whether you're buying used phones on Facebook Marketplace, cars on Craigslist, or electronics on eBay, 
-              our comprehensive database checks IMEI numbers, VIN numbers, and serial numbers faster and more accurately than any competitor.
+              Looking for a <strong>free alternative to CheckMend</strong> or <strong>IMEIinfo with mobile app</strong>? SafeOrStolen is the ONLY service with 
+              dedicated iOS & Android apps that verify <strong>phones (IMEI)</strong>, <strong>cars (VIN)</strong>, <strong>electronics</strong>, and <strong>firearms (gun serial numbers)</strong>. 
+              Get 4 FREE searches - no credit card required. Whether you're at a gun show, car lot, or checking Facebook Marketplace listings, 
+              verify items instantly from your phone - something CheckMend, IMEIinfo, and Stolen Register simply cannot offer.
             </p>
 
             <div className="bg-primary/10 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
@@ -23,19 +24,19 @@ export const SEOContentSection = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs CheckMend:</strong> Get 4 free searches vs their paid-only service PLUS mobile app (they don't have one!)</span>
+                  <span><strong>vs CheckMend:</strong> Get 4 free searches vs their paid-only service PLUS mobile app with firearms checking (they have neither!)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs IMEIinfo:</strong> Beyond just IMEI - verify ALL device types with our exclusive iOS & Android app</span>
+                  <span><strong>vs IMEIinfo:</strong> Beyond just IMEI - verify ALL device types including firearms with our exclusive iOS & Android app</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs Stolen Register:</strong> Real-time mobile verification - they're stuck with desktop-only access</span>
+                  <span><strong>vs Stolen Register:</strong> Real-time mobile verification for phones, cars, electronics & firearms - they're stuck with desktop-only access</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>EXCLUSIVE:</strong> Only verification service with dedicated mobile apps for iOS & Android!</span>
+                  <span><strong>🔫 FIREARMS VERIFICATION:</strong> Only verification mobile app that checks gun serial numbers against HotGunz, ATF & NCIC databases!</span>
                 </li>
               </ul>
             </div>

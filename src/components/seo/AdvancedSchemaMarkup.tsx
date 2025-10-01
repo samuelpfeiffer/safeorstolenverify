@@ -10,7 +10,7 @@ export const AdvancedSchemaMarkup: React.FC = () => {
   const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "SafeOrStolen - Free IMEI & VIN Checker",
+    "name": "SafeOrStolen - Free IMEI, VIN & Firearms Checker",
     "operatingSystem": "iOS, Android, Web",
     "applicationCategory": "UtilitiesApplication",
     "offers": {
@@ -25,7 +25,17 @@ export const AdvancedSchemaMarkup: React.FC = () => {
       "bestRating": "5",
       "worstRating": "1"
     },
-    "description": "Free stolen goods verification app. Check IMEI, VIN, and serial numbers instantly against stolen property databases."
+    "description": "The ONLY mobile app for complete stolen goods verification. Check phones (IMEI), vehicles (VIN), electronics, and firearms serial numbers instantly against stolen property databases. Available on iOS and Android - something CheckMend, IMEIinfo, and Stolen Register don't offer.",
+    "featureList": [
+      "IMEI number verification for phones",
+      "VIN verification for vehicles",
+      "Serial number lookup for electronics",
+      "Firearms serial number checking (HotGunz, ATF, NCIC)",
+      "Camera scanning for barcodes and QR codes",
+      "Offline verification history access",
+      "Push notifications for stolen item alerts",
+      "4 free verification searches included"
+    ]
   };
 
   // HowTo Schema for verification process
@@ -65,35 +75,42 @@ export const AdvancedSchemaMarkup: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Stolen Goods Verification Services",
-    "description": "Complete suite of verification tools for buyers and sellers",
+    "description": "Complete suite of verification tools for buyers and sellers - including exclusive mobile app",
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "IMEI Checker",
+        "name": "IMEI Checker Mobile App",
         "url": "https://safeorstolen.com/imei-check",
-        "description": "Free IMEI number verification for smartphones and tablets"
+        "description": "Free IMEI number verification for smartphones and tablets on iOS & Android"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "VIN Verification",
+        "name": "VIN Verification Mobile App",
         "url": "https://safeorstolen.com/vin-verification",
-        "description": "Vehicle identification number check for cars and motorcycles"
+        "description": "Vehicle identification number check for cars and motorcycles on mobile"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Serial Number Lookup",
         "url": "https://safeorstolen.com/serial-number-checker",
-        "description": "Electronics and laptop serial number verification"
+        "description": "Electronics and laptop serial number verification via mobile app"
       },
       {
         "@type": "ListItem",
         "position": 4,
+        "name": "Firearms Serial Number Checker",
+        "url": "https://safeorstolen.com/firearms-check",
+        "description": "Gun serial number verification against HotGunz, ATF and NCIC databases - available on mobile app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
         "name": "Stolen Goods Database",
         "url": "https://safeorstolen.com/stolen-items-database",
-        "description": "Comprehensive stolen property database search"
+        "description": "Comprehensive stolen property database search accessible from mobile and web"
       }
     ]
   };
@@ -169,8 +186,14 @@ export const AdvancedSchemaMarkup: React.FC = () => {
       </script>
 
       {/* Enhanced Meta Tags for SERP Features */}
-      <meta name="intended-audience" content="online marketplace buyers, secondhand shoppers, vehicle buyers, electronics buyers" />
-      <meta name="use-case" content="pre-purchase verification, theft prevention, consumer protection" />
+      <meta name="intended-audience" content="online marketplace buyers, secondhand shoppers, vehicle buyers, electronics buyers, firearms purchasers, gun show attendees" />
+      <meta name="use-case" content="pre-purchase verification, theft prevention, consumer protection, firearms verification, gun serial checking" />
+      
+      {/* Mobile App Exclusive Features */}
+      <meta name="mobile-app-features" content="IMEI checking, VIN verification, firearms serial number lookup, camera scanning, offline access, push notifications" />
+      <meta name="app-platforms" content="iOS, Android" />
+      <meta name="unique-offering" content="only verification service with mobile app, only app with firearms checking capability" />
+      <meta name="firearms-databases" content="HotGunz, ATF records, NCIC database access" />
       
       {/* Social Proof Meta */}
       <meta property="business:contact_data:street_address" content="Global Service" />
@@ -179,6 +202,8 @@ export const AdvancedSchemaMarkup: React.FC = () => {
       <meta name="verified-service" content="true" />
       <meta name="customer-count" content="100000+" />
       <meta name="scams-prevented-value" content="2300000" />
+      <meta name="app-downloads" content="100000+" />
+      <meta name="verification-types" content="IMEI, VIN, serial numbers, firearms, electronics, vehicles" />
     </Helmet>
   );
 };

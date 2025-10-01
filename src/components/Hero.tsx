@@ -60,16 +60,16 @@ const Hero = memo(() => {
 
             {/* Bold, Clear Headline - SEO Optimized */}
             <h1 id="main-headline" className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight tracking-tight animate-slideUp">
-              Free IMEI Checker & VIN Verification
+              Free IMEI, VIN & Gun Serial Checker
               <span className="block mt-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                Only Verification Service With Mobile App
+                Only Mobile App for Complete Verification
               </span>
             </h1>
             
             {/* Clear Value Prop */}
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Instant stolen item verification on iOS & Android. Check IMEI, VIN & serial numbers anywhere, anytime. 
-              Unlike CheckMend or IMEIinfo - verify on-the-go with our exclusive mobile app. 4 free searches!
+              Instant verification on iOS & Android. Check phones (IMEI), cars (VIN), electronics & firearms serial numbers anywhere, anytime. 
+              Unlike CheckMend or IMEIinfo - we're the ONLY service with a mobile app that verifies everything including guns!
             </p>
             
             {/* Big, Clear CTAs */}

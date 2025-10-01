@@ -8,24 +8,24 @@ import { Helmet } from 'react-helmet-async';
 export const CompetitorComparisonSEO: React.FC = () => {
   const competitors = {
     checkmend: {
-      keywords: "checkmend alternative, better than checkmend, checkmend vs safeorstolen, free checkmend, checkmend competitor, replace checkmend",
-      advantages: "Free 4 searches vs CheckMend paid only, faster results, more databases"
+      keywords: "checkmend alternative, better than checkmend, checkmend vs safeorstolen, free checkmend, checkmend competitor, replace checkmend, checkmend mobile app",
+      advantages: "Free 4 searches vs CheckMend paid only, faster results, more databases, PLUS mobile app (CheckMend has no app), firearms verification"
     },
     imeiinfo: {
-      keywords: "imeiinfo alternative, imei.info competitor, free imei check, imeiinfo vs safeorstolen, better than imei.info",
-      advantages: "Comprehensive verification beyond just IMEI, includes VIN and serial numbers"
+      keywords: "imeiinfo alternative, imei.info competitor, free imei check, imeiinfo vs safeorstolen, better than imei.info, imeiinfo mobile app",
+      advantages: "Comprehensive verification beyond just IMEI, includes VIN, serial numbers, and firearms - PLUS exclusive mobile apps for iOS & Android"
     },
     stolenregister: {
-      keywords: "stolen register alternative, stolenregister.com competitor, free stolen goods check, stolen register vs safeorstolen",
-      advantages: "Real-time verification, law enforcement partnerships, instant results"
+      keywords: "stolen register alternative, stolenregister.com competitor, free stolen goods check, stolen register vs safeorstolen, stolen register mobile app",
+      advantages: "Real-time verification, law enforcement partnerships, instant results, mobile app, firearms database access"
     },
     swappa: {
       keywords: "swappa imei check, swappa alternative verification, imei check like swappa",
-      advantages: "Verify before purchasing anywhere, not just Swappa marketplace"
+      advantages: "Verify before purchasing anywhere, not just Swappa marketplace - includes firearms, vehicles, all electronics on mobile"
     },
     checkserial: {
-      keywords: "checkserial alternative, serial number verification, checkserial competitor",
-      advantages: "Multi-type verification - IMEI, VIN, serial in one platform"
+      keywords: "checkserial alternative, serial number verification, checkserial competitor, gun serial checker",
+      advantages: "Multi-type verification - IMEI, VIN, serial, firearms in one mobile app platform"
     }
   };
 

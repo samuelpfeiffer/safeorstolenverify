@@ -30,9 +30,9 @@ const Index = () => {
       <CompetitorComparisonSEO />
       <AdvancedSchemaMarkup />
       <UnifiedSEOOptimizer
-        title="Free IMEI Checker & VIN Verification Mobile App | Better Than CheckMend | SafeOrStolen"
-        description="✓ ONLY verification service with mobile app (iOS & Android) ✓ Free IMEI check ✓ VIN verification - CheckMend, IMEIinfo & Stolen Register have NO mobile apps! Download now for instant on-the-go verification. 4 FREE searches!"
-        keywords="mobile imei checker app, vin verification app ios android, stolen item checker mobile app, imei check app free download, mobile phone verification app, car vin check app, safeorstolen app, checkmend mobile app alternative, imeiinfo app alternative, verification app ios android, scan imei app, on the go verification"
+        title="Free IMEI, VIN & Firearm Serial Checker Mobile App | iOS & Android | SafeOrStolen"
+        description="✓ ONLY verification mobile app with firearms checking! ✓ Free IMEI check ✓ VIN verification ✓ Gun serial number lookup - CheckMend, IMEIinfo have NO mobile apps or firearms checking! Download SafeOrStolen for iOS & Android. 4 FREE searches!"
+        keywords="mobile imei checker app, vin verification app ios android, gun serial number checker app, firearm verification mobile app, stolen gun checker app, stolen item checker mobile app, imei check app free download, mobile phone verification app, car vin check app, firearms database app, safeorstolen app, checkmend mobile app alternative, imeiinfo app alternative, verification app ios android, scan imei app, gun serial lookup app, firearm stolen check mobile"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         competitiveKeywords="homepage"
