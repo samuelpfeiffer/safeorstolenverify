@@ -165,10 +165,6 @@ serve(async (req) => {
           const productName = product.name.toLowerCase();
           if (productName.includes('personal use') || productName.includes('instantly check')) {
             subscriptionTier = "Personal Use - Instantly Check if an Item is Stolen";
-          } else if (productName.includes('savvy shopper') || productName.includes('premium')) {
-            subscriptionTier = "Savvy Shopper";
-          } else if (productName.includes('business pro') || productName.includes('enterprise')) {
-            subscriptionTier = "Business Pro";
           } else if (productName.includes('professional') || productName.includes('stolen item lookup')) {
             subscriptionTier = "Professional - Stolen Item Lookup";
           } else if (productName.includes('pay per lookup') || productName.includes('pay per check')) {

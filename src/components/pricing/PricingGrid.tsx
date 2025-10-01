@@ -37,14 +37,7 @@ export const PricingGrid = () => {
       ...SUBSCRIPTION_TIERS.payPerCheck,
       price: formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price),
       priceId: SUBSCRIPTION_TIERS.payPerCheck.stripePriceId!,
-      period: 'per check',
-      image: "https://i.imgur.com/6Mvijcm.png"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.entryLevel,
-      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
-      priceId: SUBSCRIPTION_TIERS.entryLevel.stripePriceId!,
-      period: 'month',
+      period: 'per lookup',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
@@ -55,16 +48,9 @@ export const PricingGrid = () => {
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
-      ...SUBSCRIPTION_TIERS.premium,
-      price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
-      priceId: SUBSCRIPTION_TIERS.premium.stripePriceId!,
-      period: 'month',
-      image: "https://i.imgur.com/6Mvijcm.png"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.enterprise,
-      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price),
-      priceId: SUBSCRIPTION_TIERS.enterprise.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.entryLevel,
+      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
+      priceId: SUBSCRIPTION_TIERS.entryLevel.stripePriceId!,
       period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     }
@@ -74,13 +60,10 @@ export const PricingGrid = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
-        <p className="text-xl text-muted-foreground">All 5 subscription options available</p>
-        <div className="mt-4 p-4 bg-yellow-100 text-yellow-800 rounded">
-          <p className="text-sm">Debug: Check browser console for subscription flow logs</p>
-        </div>
+        <p className="text-xl text-muted-foreground">Select the perfect plan for your needs</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-full mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {products.map((product) => (
           <ProductCard
             key={product.priceId}

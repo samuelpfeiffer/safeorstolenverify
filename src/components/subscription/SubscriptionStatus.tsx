@@ -36,7 +36,7 @@ export const SubscriptionStatus = () => {
     }
   }, [subscriptionData?.subscription_tier]);
 
-  const handleSubscribeClick = useCallback(async (tier: 'basic' | 'premium') => {
+  const handleSubscribeClick = useCallback(async (tier: 'basic' | 'entryLevel') => {
     if (!isAuthenticated) {
       console.log("Not authenticated, redirecting to auth");
       navigate('/auth?tab=signin');
@@ -173,15 +173,15 @@ export const SubscriptionStatus = () => {
             className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white border-none" 
             disabled={isLoading}
           >
-            Upgrade to Basic - {formatPrice(SUBSCRIPTION_TIERS.basic.price)}/month
+            Upgrade to Personal Use - {formatPrice(SUBSCRIPTION_TIERS.basic.price)}/month
           </Button>
           <Button 
-            onClick={() => handleSubscribeClick('premium')} 
+            onClick={() => handleSubscribeClick('entryLevel')} 
             variant="outline" 
             className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10 bg-transparent" 
             disabled={isLoading}
           >
-            Upgrade to Premium - {formatPrice(SUBSCRIPTION_TIERS.premium.price)}/month
+            Upgrade to Professional - {formatPrice(SUBSCRIPTION_TIERS.entryLevel.price)}/month
           </Button>
         </div>
 

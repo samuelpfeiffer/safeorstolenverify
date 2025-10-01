@@ -51,6 +51,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     name: 'Professional - Stolen Item Lookup',
     price: 1000, // $10.00 in cents
     interval: 'month',
+    popular: true,
     features: [
       '7-day free trial',
       'Unlimited verifications',
@@ -60,52 +61,10 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Early access to new features'
     ],
     stripePriceId: 'Professional - Stolen Item Lookup' // Use product name for dynamic matching
-  },
-  premium: {
-    name: 'Savvy Shopper',
-    price: 1900, // $19.00 in cents
-    interval: 'month',
-    popular: true,
-    features: [
-      '7-day free trial',
-      'Everything in Entry Level',
-      'Advanced verification reports',
-      'Bulk checking tools (up to 50 items)',
-      'Priority support',
-      'Mobile app access'
-    ],
-    stripePriceId: 'Savvy Shopper' // Use product name for dynamic matching
-  },
-  enterprise: {
-    name: 'Business Pro',
-    price: 4995, // $49.95 in cents
-    interval: 'month',
-    features: [
-      '7-day free trial',
-      'Everything in Savvy Shopper',
-      'Unlimited bulk checking',
-      'API access (10,000 calls/month)',
-      'White-label solution',
-      'Custom integrations',
-      'Dedicated account manager'
-    ],
-    stripePriceId: 'Business Pro' // Use product name for dynamic matching
-  },
-  report: {
-    name: 'Certified Stolen/Legitimate Report',
-    price: 1000, // $10.00 in cents
-    interval: 'day',
-    features: [
-      'Single verification report',
-      'Certified authenticity check',
-      'Stolen item database search',
-      'Official documentation'
-    ],
-    stripePriceId: 'Report' // Use product name for dynamic matching
   }
 };
 
-export const getSubscriptionPriceId = (tier: 'payPerCheck' | 'entryLevel' | 'basic' | 'premium' | 'enterprise'): string => {
+export const getSubscriptionPriceId = (tier: 'payPerCheck' | 'entryLevel' | 'basic'): string => {
   return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
 };
 

@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'payPerCheck' | 'entryLevel' | 'basic' | 'premium' | 'enterprise') => {
+  const handleSubscribe = useCallback(async (tier: 'payPerCheck' | 'entryLevel' | 'basic') => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -135,7 +135,7 @@ const PricingPage = () => {
   // Check for automatic subscription trigger after authentication
   useEffect(() => {
     const subscribeParam = searchParams.get('subscribe');
-    if (subscribeParam && isAuthenticated && (subscribeParam === 'basic' || subscribeParam === 'premium')) {
+    if (subscribeParam && isAuthenticated && (subscribeParam === 'basic' || subscribeParam === 'entryLevel')) {
       // Remove the URL parameter and trigger subscription
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
@@ -153,9 +153,9 @@ const PricingPage = () => {
 
     // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
-    if (pending === 'basic' || pending === 'premium' || pending === 'enterprise') {
+    if (pending === 'basic' || pending === 'entryLevel' || pending === 'payPerCheck') {
       localStorage.removeItem('pendingSubscription');
-      setTimeout(() => handleSubscribe(pending as 'basic' | 'premium' | 'enterprise'), 300);
+      setTimeout(() => handleSubscribe(pending as 'basic' | 'entryLevel' | 'payPerCheck'), 300);
       return; // don't process report in same tick
     }
 
@@ -211,7 +211,7 @@ const PricingPage = () => {
         {
           "@type": "Offer",
           "name": "Free Plan",
-          "description": "Basic verification with 5 free searches",
+          "description": "Basic verification with 4 free searches",
           "price": "0",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
@@ -224,8 +224,22 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Basic Plan",
-          "description": "Enhanced verification with unlimited searches",
+          "name": "Pay Per Lookup",
+          "description": "One-time verification lookup",
+          "price": formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price).replace('$', ''),
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-01-01",
+          "priceValidUntil": "2025-12-31",
+          "seller": {
+            "@type": "Organization",
+            "name": "Safe or Stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Personal Use Plan",
+          "description": "Monthly subscription with 30 verifications",
           "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
@@ -238,37 +252,9 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Premium Plan",
-          "description": "Professional verification with AI assistance",
-          "price": formatPrice(SUBSCRIPTION_TIERS.premium.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Enterprise Plan",
-          "description": "Enterprise-grade verification with dedicated support",
-          "price": formatPrice(SUBSCRIPTION_TIERS.enterprise.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Certified Report",
-          "description": "One-time certified stolen/legitimate report",
-          "price": formatPrice(SUBSCRIPTION_TIERS.report.price).replace('$', ''),
+          "name": "Professional Plan",
+          "description": "Unlimited verifications for professionals",
+          "price": formatPrice(SUBSCRIPTION_TIERS.entryLevel.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "validFrom": "2024-01-01",
