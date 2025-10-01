@@ -75,6 +75,21 @@ export const EnhancedAppLayout: React.FC = () => {
               </h3>
               <ul className="space-y-2">
                 <li>
+                  <a href="/buyer-guide" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    Buyer's Guide
+                  </a>
+                </li>
+                <li>
+                  <a href="/seller-guide" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    Seller's Guide
+                  </a>
+                </li>
+                <li>
+                  <a href="/download-app" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    Download Mobile App
+                  </a>
+                </li>
+                <li>
                   <a href="/ultimate-guide-buying-safely" className="text-gray-300 hover:text-blue-400 transition-colors">
                     Ultimate Buying Guide
                   </a>
@@ -95,13 +110,8 @@ export const EnhancedAppLayout: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/case-studies" className="text-gray-300 hover:text-blue-400 transition-colors">
-                    Success Stories
-                  </a>
-                </li>
-                <li>
-                  <a href="/stolen-goods-statistics-2024" className="text-gray-300 hover:text-blue-400 transition-colors">
-                    Theft Statistics 2024
+                  <a href="/vs/checkmend" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    vs CheckMEND
                   </a>
                 </li>
               </ul>

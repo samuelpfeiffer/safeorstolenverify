@@ -127,6 +127,10 @@ const UltimateGuideBuyingSafelyPage = lazy(() => import('@/pages/UltimateGuideBu
 const StolenGoodsStatisticsPage = lazy(() => import('@/pages/StolenGoodsStatisticsPage'));
 const RSSFeedPage = lazy(() => import('@/pages/RSSFeedPage'));
 const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
+const ComparisonCheckMendPage = lazy(() => import('@/pages/ComparisonCheckMendPage'));
+const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
+const BuyerGuidePage = lazy(() => import('@/pages/BuyerGuidePage'));
+const SellerGuidePage = lazy(() => import('@/pages/SellerGuidePage'));
 
 /**
  * Enterprise Application Routing
@@ -237,6 +241,16 @@ export const AppRoutes: React.FC = () => {
            <Route path="statistics/stolen-goods-2024" element={<StolenGoodsStatisticsPage />} />
            <Route path="feed.xml" element={<RSSFeedPage />} />
            <Route path="rss" element={<RSSFeedPage />} />
+           
+           {/* SEO Comparison & Guide Pages */}
+           <Route path="vs/checkmend" element={<ComparisonCheckMendPage />} />
+           <Route path="comparison/checkmend" element={<ComparisonCheckMendPage />} />
+           <Route path="download-app" element={<AppDownloadPage />} />
+           <Route path="app" element={<AppDownloadPage />} />
+           <Route path="buyer-guide" element={<BuyerGuidePage />} />
+           <Route path="guide/buyers" element={<BuyerGuidePage />} />
+           <Route path="seller-guide" element={<SellerGuidePage />} />
+           <Route path="guide/sellers" element={<SellerGuidePage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
