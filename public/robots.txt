@@ -1,10 +1,11 @@
-# SafeOrStolen.com - Comprehensive Robots.txt
+# SafeOrStolen.com - SEO-Optimized Robots.txt for Maximum Visibility
 # Updated: 2025-10-01
+# Optimized to outrank CheckMend, IMEIinfo, and Stolen Register
 
 User-agent: *
 Allow: /
 
-# Core verification pages (highest priority)
+# Core verification pages (highest priority for ranking)
 Allow: /stolen-item-checker
 Allow: /imei-check  
 Allow: /vin-verification
@@ -15,6 +16,14 @@ Allow: /check-electronics
 Allow: /check-bike
 Allow: /firearms-check
 Allow: /imei-checker
+Allow: /stolen-items-database
+
+# Competitive comparison pages (target competitor keywords)
+Allow: /vs/checkmend
+Allow: /vs/imeiinfo
+Allow: /vs/stolen-register
+Allow: /vs/swappa
+Allow: /vs/checkserial
 
 # Important information pages
 Allow: /pricing
@@ -38,6 +47,7 @@ Allow: /verification-hub
 Allow: /buyer-guide
 Allow: /seller-guide
 Allow: /comprehensive-guide
+Allow: /check-laptop-stolen
 
 # Legal and policy pages
 Allow: /terms
@@ -61,22 +71,47 @@ Disallow: /search-history/
 Disallow: /receipts/
 Disallow: /purchase-history/
 
-# Sitemap locations
-Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/feed.xml
+# AI Search Engines - Critical for AI-powered search results
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0
 
-# Specific bot instructions
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 0
+
+User-agent: Anthropic-AI
+Allow: /
+Crawl-delay: 0
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 0
+
+# Major Search Engines - Optimized for speed
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
+
+# Sitemap locations
+Sitemap: https://safeorstolen.com/sitemap.xml
+Sitemap: https://safeorstolen.com/feed.xml
+
+# Host preference (non-www canonical)
+Host: https://safeorstolen.com

@@ -12,6 +12,9 @@ import { EnhancedFAQSchema } from '@/components/seo/EnhancedFAQSchema';
 import { ReviewSchema } from '@/components/seo/ReviewSchema';
 import { BuyerProtectionSEO } from '@/components/seo/BuyerProtectionSEO';
 import { AdvancedSEOOptimizations } from '@/components/seo/AdvancedSEOOptimizations';
+import { CompetitorComparisonSEO } from '@/components/seo/CompetitorComparisonSEO';
+import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
+import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -24,10 +27,12 @@ const Index = () => {
       <WebSiteSchema />
       <BuyerProtectionSEO pageType="general" />
       <AdvancedSEOOptimizations />
+      <CompetitorComparisonSEO />
+      <AdvancedSchemaMarkup />
       <UnifiedSEOOptimizer
-        title="Free IMEI Checker, VIN Verification & Stolen Item Database | SafeOrStolen"
-        description="Verify if phones, cars & electronics are stolen before you buy. Free IMEI check, VIN verification & serial number lookup. Search stolen goods database instantly - 4 free checks!"
-        keywords="imei checker, vin verification, stolen item checker, check if phone is stolen, serial number lookup, stolen goods database, verify car not stolen, free imei check, stolen property database, check stolen items"
+        title="Free IMEI Checker & VIN Verification | Better Than CheckMend, IMEIinfo | SafeOrStolen"
+        description="✓ Free IMEI check ✓ VIN verification ✓ Serial number lookup - Instant stolen item verification. More accurate than CheckMend, faster than IMEIinfo, comprehensive than Stolen Register. 4 FREE searches, no credit card!"
+        keywords="imei checker free, check if phone is stolen, vin verification free, stolen item checker, serial number lookup stolen, imei check better than checkmend, alternative to imeiinfo, free stolen register, verify phone not stolen, check car stolen vin, stolen goods database search, checkserial alternative, swappa imei check, phone blacklist check, stolen property database"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         competitiveKeywords="homepage"
@@ -40,6 +45,7 @@ const Index = () => {
         <Hero />
         <AppDownloadSection />
         <SEOContentSection />
+        <InternalLinkingStrategy />
         <ReviewSchema />
         <EnhancedFAQSchema />
         

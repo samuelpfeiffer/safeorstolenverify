@@ -9,14 +9,32 @@ export const SEOContentSection = () => {
           {/* Main SEO Content */}
           <article>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              How to Check If an Item Is Stolen Before You Buy
+              Free Stolen Item Checker: Better Than CheckMend, IMEIinfo & Stolen Register
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Whether you're buying a used phone, car, laptop, or electronics on Facebook Marketplace, Craigslist, or eBay, 
-              verifying that items aren't stolen is crucial. SafeOrStolen provides free stolen item verification by checking 
-              IMEI numbers, VIN numbers, and serial numbers against national stolen goods databases.
+              Looking for a <strong>free alternative to CheckMend</strong> or <strong>IMEIinfo</strong>? SafeOrStolen provides instant stolen goods verification with 
+              4 FREE searches - no credit card required. Whether you're buying used phones on Facebook Marketplace, cars on Craigslist, or electronics on eBay, 
+              our comprehensive database checks IMEI numbers, VIN numbers, and serial numbers faster and more accurately than any competitor.
             </p>
+
+            <div className="bg-primary/10 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
+              <h3 className="text-xl font-bold mb-3">Why SafeOrStolen Beats the Competition</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>vs CheckMend:</strong> Get 4 free searches vs their paid-only service. Check IMEI, VIN, and serial numbers all in one place.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>vs IMEIinfo:</strong> Beyond just IMEI checks - we verify all device types with law enforcement database partnerships.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>vs Stolen Register:</strong> Real-time verification with instant results. Our database updates continuously, not just periodically.</span>
+                </li>
+              </ul>
+            </div>
 
             {/* Verification Types */}
             <div className="grid md:grid-cols-2 gap-8 my-12">
