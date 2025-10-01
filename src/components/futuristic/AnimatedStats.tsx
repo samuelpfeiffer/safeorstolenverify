@@ -65,7 +65,7 @@ export const AnimatedStats: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               className="relative group"
             >
-              <div className="cyber-border rounded-xl p-6 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 cyber-float pulse-glow">
+              <div className="cyber-border rounded-xl p-6 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 cyber-float">
                 <div className="flex flex-col items-center text-center">
                   <div className={`p-3 rounded-full bg-gradient-glow mb-4 ${stat.color}`}>
                     <stat.icon className="w-8 h-8" />

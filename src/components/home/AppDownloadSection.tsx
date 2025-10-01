@@ -12,7 +12,7 @@ export const AppDownloadSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Exclusive Badge */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground text-sm font-bold shadow-lg animate-pulse">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground text-sm font-bold shadow-lg">
               🏆 EXCLUSIVE: Only Verification Service With Mobile App
             </div>
           </div>

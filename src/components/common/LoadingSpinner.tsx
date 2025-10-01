@@ -29,7 +29,7 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
       <div className="flex flex-col items-center gap-3">
         <Loader2 className={`${sizeClasses[size]} animate-spin text-sos-orange`} />
         {text && (
-          <p className="text-sm text-gray-300 animate-pulse">{text}</p>
+          <p className="text-sm text-gray-300">{text}</p>
         )}
       </div>
     </div>
@@ -38,7 +38,7 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 
 // Skeleton loader for content
 export const SkeletonLoader: React.FC<{ className?: string }> = ({ className }) => (
-  <div className={`animate-pulse bg-gray-600 rounded ${className}`} />
+  <div className={`bg-gray-600 rounded ${className}`} />
 );
 
 // Card skeleton

@@ -56,7 +56,7 @@ export const StatsTickerBar: React.FC = () => {
       </div>
       
       {/* Animated border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-sos-orange/20 via-sos-lime/20 to-sos-orange/20 opacity-50 animate-pulse"></div>
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-sos-orange/20 via-sos-lime/20 to-sos-orange/20 opacity-50"></div>
     </div>
   );
 };

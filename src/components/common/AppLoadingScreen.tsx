@@ -14,9 +14,9 @@ export const AppLoadingScreen: React.FC = () => {
           <img 
             src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
             alt="Safe or Stolen" 
-            className="h-20 w-20 mx-auto animate-pulse"
+            className="h-20 w-20 mx-auto"
           />
-          <div className="absolute -inset-4 bg-sos-orange/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute -inset-4 bg-sos-orange/20 rounded-full blur-xl"></div>
         </div>
         
         {/* Loading Spinner */}
@@ -28,7 +28,7 @@ export const AppLoadingScreen: React.FC = () => {
         {/* Progress Bar */}
         <div className="w-80 mx-auto">
           <div className="bg-gray-700 rounded-full h-2 overflow-hidden">
-            <div className="bg-gradient-to-r from-sos-orange to-sos-lime h-full animate-pulse"></div>
+            <div className="bg-gradient-to-r from-sos-orange to-sos-lime h-full"></div>
           </div>
         </div>
         

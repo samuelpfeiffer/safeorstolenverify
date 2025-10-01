@@ -89,7 +89,7 @@ const Hero = memo(() => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-8 text-xl rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-110 transition-all animate-pulse" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-8 text-xl rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-110 transition-all" 
                 onClick={handleNavigateToAuth}
                 aria-describedby="main-headline"
               >
