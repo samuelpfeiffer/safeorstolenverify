@@ -9,6 +9,7 @@ import { ComprehensiveSEOTracker } from '@/components/seo/ComprehensiveSEOTracke
 import { ABTestingFramework } from '@/components/seo/ABTestingFramework';
 import { OutboundLinkTracker } from '@/components/seo/OutboundLinkTracker';
 import { SEOHealthMonitor } from '@/components/seo/SEOHealthMonitor';
+import { SEOProvider } from '@/core/providers/SEOProvider';
 import './index.css';
 
 // Initialize comprehensive SEO tracking system
@@ -39,8 +40,12 @@ if (!container) {
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <AppRoot />
-    <ComprehensiveSEOTracker />
-    <OutboundLinkTracker />
+    <SEOProvider>
+      <AppRoot />
+      <ComprehensiveSEOTracker />
+      <ABTestingFramework />
+      <OutboundLinkTracker />
+      <SEOHealthMonitor />
+    </SEOProvider>
   </React.StrictMode>
 );

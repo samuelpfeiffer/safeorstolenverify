@@ -19,6 +19,9 @@ import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { CompetitiveAnalytics } from '@/components/seo/CompetitiveAnalytics';
 import { SEOEnhancements } from '@/components/seo/SEOEnhancements';
+import { GlobalSEOProvider } from '@/components/seo/GlobalSEOProvider';
+import { DefaultSEO } from '@/components/seo/DefaultSEO';
+import { CanonicalOptimizer } from '@/components/seo/CanonicalOptimizer';
 
 // Enhanced QueryClient configuration for enterprise performance
 const queryClient = new QueryClient({
@@ -56,6 +59,9 @@ export const AppRoot: React.FC = () => {
             <PWAProvider>
               <ThemeProvider>
                 <Router>
+                  <GlobalSEOProvider />
+                  <DefaultSEO />
+                  <CanonicalOptimizer />
                   <MasterSEO />
                   <CompetitiveAnalytics />
                   <SEOEnhancements />
