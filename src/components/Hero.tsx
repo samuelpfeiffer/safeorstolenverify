@@ -29,104 +29,106 @@ const Hero = memo(() => {
     }
   }, [isAuthenticated, navigate]);
   return (
-    <div className="relative overflow-hidden">
-      {/* Clean Hero Section */}
-      <div className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        {/* Subtle Background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="w-full h-full" style={{
-            backgroundImage: `
-              linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '100px 100px'
-          }}></div>
-        </div>
+    <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
+      {/* Modern Hero Section */}
+      <div className="relative min-h-[85vh] flex items-center justify-center py-20">
         
-        {/* Clean Hero Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+        {/* Hero Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-10">
             
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white/90 text-sm font-medium bg-white/5 backdrop-blur-sm">
-              <Shield className="h-4 w-4 text-sos-orange" />
-              <span>Trusted by 100,000+ Users Worldwide</span>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 text-accent text-sm font-medium animate-fadeIn">
+              <Shield className="h-4 w-4" />
+              <span>Trusted by 100,000+ Users</span>
             </div>
 
-            {/* Main Headline - Clean & Clear */}
-            <h1 id="main-headline" className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
-              Check if Items are Stolen
-              <span className="block mt-4 text-sos-orange">
-                Download the SafeOrStolen App
+            {/* Bold, Clear Headline */}
+            <h1 id="main-headline" className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight tracking-tight animate-slideUp">
+              Verify Items Are Safe
+              <span className="block mt-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+                Before You Buy or Sell
               </span>
             </h1>
             
-            {/* Subheading */}
-            <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
-              Instantly verify IMEI, VIN, and serial numbers. Protect yourself when buying or selling secondhand items.
+            {/* Clear Value Prop */}
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              Check IMEI, VIN & serial numbers instantly. Peace of mind in seconds with our mobile app.
             </p>
             
-            {/* Primary CTA */}
-            <div className="space-y-4">
+            {/* Big, Clear CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
               <Button 
                 size="lg" 
-                className="bg-sos-orange hover:bg-sos-orange/90 text-white font-bold px-12 py-6 text-xl rounded-xl shadow-lg hover:shadow-xl transition-all" 
-                onClick={handleNavigateToAuth} 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-7 text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all" 
+                onClick={handleNavigateToAuth}
                 aria-describedby="main-headline"
               >
-                <Shield className="mr-3 h-6 w-6" aria-hidden="true" />
-                Start Free Verification
+                <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
+                Start Free Now
               </Button>
-              <p className="text-white/60 text-sm">4 free searches • No credit card required</p>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-foreground/20 hover:bg-muted font-semibold px-10 py-7 text-lg rounded-2xl hover:scale-105 transition-all" 
+                onClick={handleNavigateToFirearms}
+              >
+                Download App
+              </Button>
             </div>
+            
+            <p className="text-muted-foreground text-sm">4 free searches • No credit card • Instant results</p>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8">
-              {[
-                { value: '$2.3M+', label: 'Scams Prevented' },
-                { value: '< 3s', label: 'Verification Time' },
-                { value: '100%', label: 'Free to Start' },
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-sos-orange mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-white/70 text-sm">{stat.label}</div>
-                </div>
-              ))}
+            {/* Clean Stats Row */}
+            <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-12 border-t border-border/50">
+              <div className="text-center space-y-2">
+                <div className="text-4xl font-bold text-primary">$2.3M+</div>
+                <div className="text-sm text-muted-foreground">Scams Prevented</div>
+              </div>
+              <div className="text-center space-y-2">
+                <div className="text-4xl font-bold text-secondary">&lt;3s</div>
+                <div className="text-sm text-muted-foreground">Verification</div>
+              </div>
+              <div className="text-center space-y-2">
+                <div className="text-4xl font-bold text-accent">100%</div>
+                <div className="text-sm text-muted-foreground">Free to Start</div>
+              </div>
             </div>
           </div>
         </div>
-        
-        {/* Simple Features Grid - Below Hero */}
-        <div className="container mx-auto px-4 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto -mt-10">
-            {/* Buyers */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-sos-orange/50 transition-all">
-              <Shield className="h-10 w-10 text-sos-orange mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">For Buyers</h3>
-              <p className="text-white/70 text-sm">
-                Never buy stolen goods. Verify items instantly before purchase.
-              </p>
-            </div>
+      </div>
 
-            {/* Sellers */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-sos-lime/50 transition-all">
-              <BadgeCheck className="h-10 w-10 text-sos-lime mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">For Sellers</h3>
-              <p className="text-white/70 text-sm">
-                Prove legitimacy. Build trust with verified clean records.
-              </p>
+      {/* Who It's For - Clean Cards Below */}
+      <div className="container mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="bg-card rounded-2xl p-8 border border-border hover:border-primary/50 hover:shadow-xl transition-all group">
+            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <Shield className="h-7 w-7 text-primary" />
             </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">For Buyers</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Never buy stolen goods. Verify items instantly before making a purchase.
+            </p>
+          </div>
 
-            {/* Businesses */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-blue-500/50 transition-all">
-              <Users className="h-10 w-10 text-blue-500 mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">For Businesses</h3>
-              <p className="text-white/70 text-sm">
-                API access for pawn shops, resellers, and marketplaces.
-              </p>
+          <div className="bg-card rounded-2xl p-8 border border-border hover:border-secondary/50 hover:shadow-xl transition-all group">
+            <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <BadgeCheck className="h-7 w-7 text-secondary" />
             </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">For Sellers</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Prove legitimacy and build trust with verified clean records.
+            </p>
+          </div>
+
+          <div className="bg-card rounded-2xl p-8 border border-border hover:border-accent/50 hover:shadow-xl transition-all group">
+            <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <Users className="h-7 w-7 text-accent" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3">For Businesses</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              API access for pawn shops, resellers, and online marketplaces.
+            </p>
           </div>
         </div>
       </div>

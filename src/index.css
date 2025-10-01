@@ -6,27 +6,27 @@
 
 @layer base {
   :root {
-    /* Softer, more trustworthy color palette */
-    --background: 210 20% 98%;  /* Soft blue-white */
-    --foreground: 215 25% 27%;  /* Deep navy for trust */
+    /* Modern, clean, spacious color palette */
+    --background: 0 0% 100%;  /* Pure white */
+    --foreground: 222 47% 11%;  /* Deep slate for readability */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
-    --primary: 211 100% 50%;  /* Trustworthy blue */
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;  /* Modern blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 162 73% 46%;  /* Calming teal */
+    --secondary: 142 76% 36%;  /* Fresh green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 20% 96%;
+    --muted: 210 40% 96%;  /* Light gray */
     --muted-foreground: 215 16% 47%;
-    --accent: 142 76% 36%;  /* Success green */
+    --accent: 25 95% 53%;  /* Warm orange accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 211 100% 50%;
-    --radius: 0.75rem;
+    --ring: 221 83% 53%;
+    --radius: 1rem;
     
     /* Buyer/Seller/Business theme colors */
     --buyer-orange: 25 95% 53%;  /* Softer orange for buyers */
@@ -107,7 +107,8 @@
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
-    line-height: 1.5;
+    line-height: 1.7;  /* More spacious line height */
+    letter-spacing: -0.01em;  /* Tighter tracking for modern look */
     @apply antialiased;
   }
 
@@ -115,6 +116,7 @@
     @apply font-display;
     font-feature-settings: 'cv11', 'ss01';
     text-wrap: balance;
+    letter-spacing: -0.02em;  /* Tighter for headlines */
   }
 }
 
