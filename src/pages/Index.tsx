@@ -17,6 +17,7 @@ import { ComprehensiveKeywordFooter } from '@/components/seo/ComprehensiveKeywor
 import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
 import { TrustBadges } from '@/components/trust/TrustBadges';
 import { MobileOptimization } from '@/components/mobile/MobileOptimization';
+import { BackgroundAIMonitor } from '@/components/ai/BackgroundAIMonitor';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
 
 const Index = () => {
@@ -97,6 +98,11 @@ const Index = () => {
       
       {/* Main content - ensure it loads immediately for crawlers */}
       <div className="min-h-screen">
+        {/* AI Background Monitor - Shows AI is always working */}
+        <div className="fixed bottom-4 right-4 z-40 max-w-md">
+          <BackgroundAIMonitor />
+        </div>
+        
         <noscript>
           {/* Fallback content for crawlers when JS is disabled */}
           <div className="container mx-auto px-4 py-20 text-center">

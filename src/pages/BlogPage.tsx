@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogList } from '@/components/blog/BlogList';
 import { AIBlogStatus } from '@/components/blog/AIBlogStatus';
+import { BlogFeaturedAI } from '@/components/blog/BlogFeaturedAI';
 import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
@@ -82,6 +83,11 @@ const BlogPage = () => {
           {/* AI Status Dashboard */}
           <div className="mb-12">
             <AIBlogStatus />
+          </div>
+
+          {/* Feature Banner */}
+          <div className="mb-12">
+            <BlogFeaturedAI />
           </div>
 
           <div className="max-w-6xl mx-auto">
