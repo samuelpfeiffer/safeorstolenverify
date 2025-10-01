@@ -12,6 +12,15 @@ export const CanonicalOptimizer: React.FC<CanonicalOptimizerProps> = ({
   const location = useLocation();
 
   useEffect(() => {
+    // Only perform URL canonicalization on production domain
+    const isProductionDomain = window.location.hostname === 'safeorstolen.com' || 
+                                window.location.hostname === 'www.safeorstolen.com';
+    
+    if (!isProductionDomain) {
+      // Skip URL manipulation in preview/development environments
+      return;
+    }
+
     // Redirect non-canonical URLs to canonical versions
     const currentUrl = window.location.href;
     const canonicalUrl = generateCanonicalUrl();
@@ -20,7 +29,11 @@ export const CanonicalOptimizer: React.FC<CanonicalOptimizerProps> = ({
     if (currentUrl !== canonicalUrl && !customCanonical) {
       // Only redirect if it's a clear canonical issue (trailing slash, www, etc.)
       if (shouldRedirectToCanonical(currentUrl, canonicalUrl)) {
-        window.history.replaceState(null, '', canonicalUrl);
+        try {
+          window.history.replaceState(null, '', canonicalUrl);
+        } catch (error) {
+          console.warn('Cannot update URL in preview environment:', error);
+        }
       }
     }
   }, [location]);
