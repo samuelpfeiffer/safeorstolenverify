@@ -1,17 +1,10 @@
-# SafeOrStolen.com - Robots.txt
+# SafeOrStolen.com - Comprehensive Robots.txt
+# Updated: 2025-10-01
+
 User-agent: *
 Allow: /
 
-# Important pages for crawling
-Allow: /pricing
-Allow: /about
-Allow: /how-it-works
-Allow: /blog/
-Allow: /faq
-Allow: /services
-Allow: /features
-
-# Core verification pages
+# Core verification pages (highest priority)
 Allow: /stolen-item-checker
 Allow: /imei-check  
 Allow: /vin-verification
@@ -19,28 +12,71 @@ Allow: /serial-number-checker
 Allow: /check-phone
 Allow: /check-car
 Allow: /check-electronics
+Allow: /check-bike
+Allow: /firearms-check
+Allow: /imei-checker
 
-# Disallow admin and auth pages
+# Important information pages
+Allow: /pricing
+Allow: /about
+Allow: /how-it-works
+Allow: /how-it-works-detailed
+Allow: /blog/
+Allow: /guides/
+Allow: /faq
+Allow: /services
+Allow: /features
+Allow: /contact
+Allow: /trust-verification
+Allow: /data-sources
+Allow: /transparency
+Allow: /accuracy
+
+# Guides and educational content
+Allow: /ultimate-guide
+Allow: /verification-hub
+Allow: /buyer-guide
+Allow: /seller-guide
+Allow: /comprehensive-guide
+
+# Legal and policy pages
+Allow: /terms
+Allow: /terms-of-service
+Allow: /privacy
+Allow: /privacy-policy
+Allow: /disclaimer
+Allow: /cookies
+Allow: /refunds
+
+# Disallow private and admin areas
 Disallow: /auth
 Disallow: /dashboard
-Disallow: /admin
+Disallow: /admin/
 Disallow: /api/
 Disallow: /profile/
-Disallow: /subscription/
+Disallow: /subscription-success
+Disallow: /subscription-cancel
+Disallow: /verification-success
 Disallow: /search-history/
+Disallow: /receipts/
+Disallow: /purchase-history/
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://safeorstolen.com/sitemap.xml
+Sitemap: https://safeorstolen.com/feed.xml
 
-# Crawl-delay for being respectful
+# Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow specific bots full access
+# Specific bot instructions
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1

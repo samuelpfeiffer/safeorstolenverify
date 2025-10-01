@@ -23,6 +23,9 @@ export * from '../seo/metadata';
 export * from '../seo/performanceOptimizer';
 export * from '../seo/analyticsOptimizer';
 
+// Sitemap Configuration
+export * from '../../config/sitemap-urls';
+
 // Verification Utilities
 export * from '../verification';
 export * from '../verificationUtils';
