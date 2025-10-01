@@ -5,7 +5,11 @@
 
 // Types already declared globally
 
-// Replace with your actual Google Analytics 4 Measurement ID
+/**
+ * ⚠️ ACTION REQUIRED: Replace with your actual Google Analytics 4 Measurement ID
+ * Get your GA4 ID from: https://analytics.google.com/
+ * Format: G-XXXXXXXXXX (where X are alphanumeric characters)
+ */
 const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace in production
 
 /**
