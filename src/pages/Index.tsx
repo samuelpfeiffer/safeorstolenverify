@@ -17,6 +17,11 @@ import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrateg
 import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
 import { AIAnswerEngineOptimizer } from '@/components/seo/AIAnswerEngineOptimizer';
 import { LCPOptimizer } from '@/components/performance/LCPOptimizer';
+import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
+import { EEATSignals } from '@/components/seo/EEATSignals';
+import { FeaturedSnippetOptimizer } from '@/components/seo/FeaturedSnippetOptimizer';
+import { VoiceSearchOptimizer } from '@/components/seo/VoiceSearchOptimizer';
+import { LinkBuildingSignals } from '@/components/seo/LinkBuildingSignals';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -33,6 +38,11 @@ const Index = () => {
       <CompetitorComparisonSEO />
       <AdvancedSchemaMarkup />
       <AIAnswerEngineOptimizer />
+      <AdvancedSchemaGenerator />
+      <EEATSignals />
+      <FeaturedSnippetOptimizer />
+      <VoiceSearchOptimizer />
+      <LinkBuildingSignals />
       <UnifiedSEOOptimizer
         title="Mobile IMEI VIN Gun Checker | iOS Android - Free"
         description="✓ ONLY verification mobile app with firearms checking! ✓ Free IMEI check ✓ VIN verification ✓ Gun serial number lookup - CheckMend, IMEIinfo have NO mobile apps or firearms checking! Download SafeOrStolen for iOS & Android. 4 FREE searches!"
