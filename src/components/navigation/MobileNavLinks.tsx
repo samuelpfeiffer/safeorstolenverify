@@ -56,13 +56,13 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
         For Business
       </Link>
       <Link 
-        to="/fastercapital/raise-capital" 
+        to="/pricing" 
         onClick={closeMenu} 
         className={cn("py-2 transition-colors", 
-          currentPath === "/fastercapital/raise-capital" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/pricing" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
-        FasterCapital
+        Pricing
       </Link>
       <Link 
         to="/data-sources" 
