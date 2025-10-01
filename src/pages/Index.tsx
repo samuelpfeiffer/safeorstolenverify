@@ -15,6 +15,7 @@ import { AdvancedSEOOptimizations } from '@/components/seo/AdvancedSEOOptimizati
 import { CompetitorComparisonSEO } from '@/components/seo/CompetitorComparisonSEO';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
 import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
+import { AIAnswerEngineOptimizer } from '@/components/seo/AIAnswerEngineOptimizer';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -29,6 +30,7 @@ const Index = () => {
       <AdvancedSEOOptimizations />
       <CompetitorComparisonSEO />
       <AdvancedSchemaMarkup />
+      <AIAnswerEngineOptimizer />
       <UnifiedSEOOptimizer
         title="Free IMEI, VIN & Firearm Serial Checker Mobile App | iOS & Android | SafeOrStolen"
         description="✓ ONLY verification mobile app with firearms checking! ✓ Free IMEI check ✓ VIN verification ✓ Gun serial number lookup - CheckMend, IMEIinfo have NO mobile apps or firearms checking! Download SafeOrStolen for iOS & Android. 4 FREE searches!"
