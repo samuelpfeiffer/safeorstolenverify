@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
+import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 
 const VINVerification = () => {
   const navigate = useNavigate();
@@ -36,14 +37,14 @@ const VINVerification = () => {
   return (
     <>
       <Helmet>
-        <title>VIN Check - Verify Car Not Stolen Before Buying</title>
+        <title>VIN Check App – Instant Stolen Vehicle Verification | Check Car Not Stolen Before Buying</title>
         <meta 
           name="description" 
-          content="Free VIN checker - verify cars, trucks, motorcycles aren't stolen before purchase. Check VIN against stolen vehicle databases in 30 seconds." 
+          content="Free VIN check app - verify cars, trucks, motorcycles aren't stolen before purchase. Instant vehicle theft verification against police databases. Get results in 30 seconds!" 
         />
         <meta 
           name="keywords" 
-          content="VIN stolen check, car VIN verification, vehicle theft lookup, stolen car check, VIN number verification, check car stolen VIN, auto theft prevention" 
+          content="VIN check app, verify stolen vehicle, car theft verification, VIN number lookup, stolen car check, vehicle history check, auto theft prevention, check if car stolen" 
         />
         <link rel="canonical" href="https://safeorstolen.com/vin-verification" />
         <script type="application/ld+json">
@@ -215,6 +216,11 @@ const VINVerification = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 container mx-auto px-4">
+          <HighImpactFAQ />
         </section>
       </div>
     </>

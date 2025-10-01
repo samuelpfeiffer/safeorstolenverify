@@ -19,6 +19,7 @@ import { TrustBadges } from '@/components/trust/TrustBadges';
 import { MobileOptimization } from '@/components/mobile/MobileOptimization';
 import { BackgroundAIMonitor } from '@/components/ai/BackgroundAIMonitor';
 import { PrivacyTransparency } from '@/components/privacy/PrivacyTransparency';
+import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
 
 const Index = () => {
@@ -62,9 +63,9 @@ const Index = () => {
     <>
       {/* Advanced SEO Optimization - Outrank Competition */}
       <UnifiedSEOOptimizer
-        title="Verify Before You Buy or Sell Second-Hand - Check If Item Is Stolen | SafeOrStolen"
-        description="Protect yourself from buying or selling stolen goods. Instantly verify IMEI, VIN & serial numbers. Trusted verification platform for buyers and sellers worldwide. 4 free searches included."
-        keywords="verify before you buy, verify before you sell, check if stolen, secondhand market protection, IMEI check, VIN verification, serial number lookup, buyer protection, seller protection, stolen goods database"
+        title="IMEI, VIN, and Serial Number Checker – SafeOrStolen: Prevent Fraud Instantly"
+        description="Easily check if a phone, car, or device is stolen with SafeOrStolen's global IMEI, VIN, and serial number databases. Download our app for instant results!"
+        keywords="verify stolen item, IMEI checker app, VIN check app, serial number check, stolen goods database, check if phone is stolen, stolen electronics verification, secondhand item verification, theft report lookup, safe marketplace buying"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
@@ -75,7 +76,7 @@ const Index = () => {
       <AdvancedKeywordOptimizer 
         pageType="homepage" 
         context="transaction"
-        primaryKeywords={['verify before you buy', 'verify before you sell', 'check if item is stolen', 'secondhand market safety']}
+        primaryKeywords={['verify stolen item', 'IMEI checker app', 'check if phone is stolen', 'VIN check app', 'secondhand item verification', 'stolen goods database']}
       />
       <DomainAuthorityBooster pageType="homepage" />
       <LinkBuildingHelper 
@@ -124,6 +125,7 @@ const Index = () => {
         </noscript>
         
         <Hero />
+        <HighImpactFAQ />
         <AIOptimizedContent page="home" />
         <KeywordOptimizedContent pageType="homepage" className="py-12 bg-muted/30" />
         <SponsorsStrip />

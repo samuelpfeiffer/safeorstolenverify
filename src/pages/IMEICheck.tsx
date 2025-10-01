@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
+import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 
 const IMEICheck = () => {
   const navigate = useNavigate();
@@ -74,14 +75,14 @@ const IMEICheck = () => {
   return (
     <>
       <Helmet>
-        <title>IMEI Check - Verify Phone Not Stolen in 30 Seconds</title>
+        <title>Check If Phone is Stolen – Free IMEI Checker App | Instant Stolen Phone Lookup</title>
         <meta 
           name="description" 
-          content="Free IMEI checker - verify iPhone, Android phones aren't stolen before buying. Check IMEI against stolen phone databases instantly. Protect yourself from stolen devices." 
+          content="Instantly check if a phone is stolen with our free IMEI checker app. Verify iPhone & Android devices against global stolen phone databases. Get results in 3 seconds!" 
         />
         <meta 
           name="keywords" 
-          content="IMEI stolen check, iPhone IMEI verification, Android IMEI lookup, stolen phone check, IMEI blacklist, mobile IMEI verification, check phone stolen IMEI" 
+          content="check if phone is stolen, IMEI checker app, stolen phone lookup, IMEI verification, stolen electronics verification, mobile device history report, free IMEI check, iPhone stolen check, Android IMEI verification" 
         />
         <link rel="canonical" href="https://safeorstolen.com/imei-check" />
         <script type="application/ld+json">
@@ -292,6 +293,11 @@ const IMEICheck = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 container mx-auto px-4">
+          <HighImpactFAQ />
         </section>
       </div>
     </>

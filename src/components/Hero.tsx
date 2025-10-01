@@ -99,10 +99,10 @@ const Hero = memo(() => {
                   transition={{ duration: 2, repeat: Infinity }}
                   className="block"
                 >
-                  Verify Before You Buy or Sell Second-Hand
+                  How to Instantly Check if an Item is Stolen
                 </motion.span>
                 <span className="block mt-4 bg-gradient-to-r from-sos-orange-500 via-sos-orange-400 to-sos-orange-600 bg-clip-text text-transparent cyber-float font-extrabold">
-                  SafeOrStolen
+                  SafeOrStolen Mobile App
                 </span>
               </h1>
             </CyberReveal>
@@ -110,9 +110,9 @@ const Hero = memo(() => {
             {/* Subheading */}
             <SlideUp delay={0.4}>
               <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Protecting buyers and sellers in the secondhand market from buying and selling stolen items such as used vehicles, guns, electronics, phones, machinery, and more.
+                The world's only mobile app for stolen item verification. Check IMEI, VIN, and serial numbers to protect buyers and sellers in the secondhand market from fraud.
                 <span className="block mt-2 text-neon-cyan font-semibold pulse-glow">
-                  Instantly verify IMEI, VIN & serial numbers worldwide
+                  Instantly verify items • Safe marketplace buying • Anti-fraud app for buyers
                 </span>
               </p>
             </SlideUp>

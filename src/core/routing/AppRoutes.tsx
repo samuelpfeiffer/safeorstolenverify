@@ -131,6 +131,8 @@ const ComparisonCheckMendPage = lazy(() => import('@/pages/ComparisonCheckMendPa
 const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
 const BuyerGuidePage = lazy(() => import('@/pages/BuyerGuidePage'));
 const SellerGuidePage = lazy(() => import('@/pages/SellerGuidePage'));
+const HowToCheckLaptopStolenPage = lazy(() => import('@/pages/HowToCheckLaptopStolenPage'));
+const BuyUsedElectronicsSafelyPage = lazy(() => import('@/pages/BuyUsedElectronicsSafelyPage'));
 
 /**
  * Enterprise Application Routing
@@ -251,6 +253,10 @@ export const AppRoutes: React.FC = () => {
            <Route path="guide/buyers" element={<BuyerGuidePage />} />
            <Route path="seller-guide" element={<SellerGuidePage />} />
            <Route path="guide/sellers" element={<SellerGuidePage />} />
+           <Route path="how-to-check-if-laptop-stolen" element={<HowToCheckLaptopStolenPage />} />
+           <Route path="laptop-serial-number-check" element={<HowToCheckLaptopStolenPage />} />
+           <Route path="buy-used-electronics-safely" element={<BuyUsedElectronicsSafelyPage />} />
+           <Route path="safe-way-to-buy-used-gadgets" element={<BuyUsedElectronicsSafelyPage />} />
           
           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
