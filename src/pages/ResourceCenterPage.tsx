@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { SOSHeader } from '@/components/layout/SOSHeader';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -100,8 +99,6 @@ const ResourceCenterPage = () => {
       />
       
       <div className="min-h-screen bg-background">
-        <SOSHeader />
-        
         <main className="container mx-auto px-4 py-20">
           {/* Hero Section */}
           <div className="text-center mb-12">

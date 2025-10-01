@@ -3,8 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ProtectedRoute } from '@/core/routing/ProtectedRoute';
 import { AdminRoute } from '@/core/routing/AdminRoute';
-import { EnhancedAppLayout } from '@/components/layout/EnhancedAppLayout';
-// Removed duplicate SEO components - using ConsolidatedSEO in AppRoot.tsx instead
 
 // Lazy load all pages for optimal performance
 const Index = lazy(() => import('@/pages/Index'));
@@ -143,8 +141,7 @@ export const AppRoutes: React.FC = () => {
     <Suspense fallback={<AppLoadingScreen />}>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<EnhancedAppLayout />}>
-          <Route index element={<Index />} />
+        <Route path="/" element={<Index />} />
           
           {/* SEO-Focused Landing Pages for Stolen Item Searches */}
           <Route path="stolen-item-checker" element={<StolenItemChecker />} />
@@ -372,7 +369,6 @@ export const AppRoutes: React.FC = () => {
                <SecurityDashboard />
              </AdminRoute>
            } />
-        </Route>
 
         {/* Catch all - 404 */}
         <Route path="/404" element={<NotFoundPage />} />
@@ -384,6 +380,6 @@ export const AppRoutes: React.FC = () => {
         {/* Catch all unknown routes */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      </Suspense>
+    </Suspense>
   );
 };
