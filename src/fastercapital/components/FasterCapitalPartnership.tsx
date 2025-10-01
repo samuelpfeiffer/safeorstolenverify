@@ -38,10 +38,10 @@ export const FasterCapitalPartnership: React.FC = () => {
   ];
 
   const achievements = [
-    'Selected into FasterCapital acceleration program',
-    'Developed go-to-market strategy and execution plan',
-    'Established strategic partnerships across key markets',
-    'Built a scalable verification platform'
+    'Signed FasterCapital Acceleration Agreement (April 2025)',
+    'Receiving consultation on pitch deck, business plan, and financial forecasts',
+    'Working on startup evaluation and capital raising terms',
+    'Connecting with potential angel investors and venture capital firms'
   ];
 
   return (
@@ -138,36 +138,36 @@ export const FasterCapitalPartnership: React.FC = () => {
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center p-4 border border-border/50 rounded-lg">
-              <h4 className="font-semibold mb-2">Duration</h4>
-              <p className="text-2xl font-bold text-sos-orange">12 Months</p>
-              <p className="text-sm text-muted-foreground">Intensive acceleration</p>
+              <h4 className="font-semibold mb-2">Agreement Date</h4>
+              <p className="text-2xl font-bold text-sos-orange">April 2025</p>
+              <p className="text-sm text-muted-foreground">Active partnership</p>
             </div>
             <div className="text-center p-4 border border-border/50 rounded-lg">
-              <h4 className="font-semibold mb-2">Equity</h4>
-              <p className="text-2xl font-bold text-sos-lime">0%</p>
-              <p className="text-sm text-muted-foreground">Equity-free program</p>
+              <h4 className="font-semibold mb-2">Program Type</h4>
+              <p className="text-2xl font-bold text-sos-lime">Non-Exclusive</p>
+              <p className="text-sm text-muted-foreground">Acceleration consulting</p>
             </div>
             <div className="text-center p-4 border border-border/50 rounded-lg">
-              <h4 className="font-semibold mb-2">Funding Goal</h4>
-              <p className="text-2xl font-bold text-sos-orange">$5M</p>
-              <p className="text-sm text-muted-foreground">Series A target</p>
+              <h4 className="font-semibold mb-2">Focus</h4>
+              <p className="text-2xl font-bold text-sos-orange">Series A</p>
+              <p className="text-sm text-muted-foreground">Investor preparation</p>
             </div>
           </div>
           
           <div className="bg-muted/20 p-6 rounded-lg">
-            <h4 className="font-semibold mb-3">Program Focus Areas</h4>
+            <h4 className="font-semibold mb-3">Consulting Services Provided</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <ul className="space-y-2">
-                <li>• Business model optimization</li>
-                <li>• Go-to-market strategy</li>
-                <li>• Product development guidance</li>
-                <li>• Team building & hiring</li>
+                <li>• Pitch deck review and improvement</li>
+                <li>• Business plan consultation</li>
+                <li>• Financial forecast development</li>
+                <li>• Startup valuation guidance</li>
               </ul>
               <ul className="space-y-2">
-                <li>• Financial planning & modeling</li>
-                <li>• Investor pitch preparation</li>
-                <li>• Legal & compliance support</li>
-                <li>• International expansion</li>
+                <li>• Capital raising terms consultation</li>
+                <li>• Angel investor connections</li>
+                <li>• Venture capital introductions</li>
+                <li>• Investor approach strategies</li>
               </ul>
             </div>
           </div>

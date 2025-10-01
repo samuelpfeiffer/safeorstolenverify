@@ -87,7 +87,7 @@ const Hero = memo(() => {
 
             {/* Main Headline with Cyber Effect */}
             <CyberReveal delay={0.2}>
-              <h1 id="main-headline" className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+              <h1 id="main-headline" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
                 <motion.span
                   animate={{
                     textShadow: [
@@ -97,10 +97,13 @@ const Hero = memo(() => {
                     ]
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
+                  className="block"
                 >
-                  Verify Before You Buy
+                  Verify Before You Buy or Sell Second-Hand
                 </motion.span>
-                <span className="block text-cyber cyber-float">SafeOrStolen</span>
+                <span className="block mt-4 bg-gradient-to-r from-sos-orange-500 via-sos-orange-400 to-sos-orange-600 bg-clip-text text-transparent cyber-float font-extrabold">
+                  SafeOrStolen
+                </span>
               </h1>
             </CyberReveal>
             

@@ -15,6 +15,8 @@ import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedConten
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
 import { ComprehensiveKeywordFooter } from '@/components/seo/ComprehensiveKeywordFooter';
 import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
+import { TrustBadges } from '@/components/trust/TrustBadges';
+import { MobileOptimization } from '@/components/mobile/MobileOptimization';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
 
 const Index = () => {
@@ -58,9 +60,9 @@ const Index = () => {
     <>
       {/* Advanced SEO Optimization - Outrank Competition */}
       <UnifiedSEOOptimizer
-        title="Safe Secondhand Buying - Check If Item Is Stolen Before You Buy | SafeOrStolen"
-        description="Protect buyers and sellers in secondhand market. Check if items are stolen before transactions. Help sellers prove legitimacy and buyers avoid fraud. Global verification database access."
-        keywords="protect buyers sellers, stolen goods verification, secondhand market protection, IMEI check, VIN verification, serial number lookup, mobile verification app, seller reputation protection, buyer fraud prevention, protect sellers reputation, seller legitimacy check"
+        title="Verify Before You Buy or Sell Second-Hand - Check If Item Is Stolen | SafeOrStolen"
+        description="Protect yourself from buying or selling stolen goods. Instantly verify IMEI, VIN & serial numbers. Trusted verification platform for buyers and sellers worldwide. 4 free searches included."
+        keywords="verify before you buy, verify before you sell, check if stolen, secondhand market protection, IMEI check, VIN verification, serial number lookup, buyer protection, seller protection, stolen goods database"
         canonical="/"
         structuredData={homePageStructuredData}
         competitiveKeywords="homepage"
@@ -71,7 +73,7 @@ const Index = () => {
       <AdvancedKeywordOptimizer 
         pageType="homepage" 
         context="transaction"
-        primaryKeywords={['safe secondhand buying', 'check if item is stolen', 'check if stolen before buying']}
+        primaryKeywords={['verify before you buy', 'verify before you sell', 'check if item is stolen', 'secondhand market safety']}
       />
       <DomainAuthorityBooster pageType="homepage" />
       <LinkBuildingHelper 
@@ -86,8 +88,8 @@ const Index = () => {
         contentDepth="comprehensive"
       />
       <GoogleDiscoverOptimizer 
-        title="Safe Secondhand Buying - Verify Ownership Before Buying Used Items"
-        description="Instantly check if phones, cars, electronics and other items are stolen before you buy. Free verification tools for safe secondhand buying and buyer protection from stolen goods."
+        title="Verify Before You Buy or Sell - Stop Buying & Selling Stolen Goods"
+        description="Instantly verify IMEI, VIN and serial numbers before buying or selling second-hand items. Free verification tools protect buyers and sellers from stolen goods. Trusted by 100,000+ users worldwide."
         image="/assets/hero-verification-devices.png"
         category="Consumer Protection"
         enableFollow={true}
@@ -118,6 +120,12 @@ const Index = () => {
         <TrustSignals />
         <TestimonialsSection />
         <SecurityBadges />
+        
+        {/* Enhanced Trust and Mobile Sections */}
+        <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
+          <TrustBadges />
+          <MobileOptimization />
+        </Suspense>
         
         {(verificationId || serialNumber) && (
           <Suspense fallback={

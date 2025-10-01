@@ -234,6 +234,18 @@
     @apply transition-transform duration-200 hover:scale-[1.02];
   }
 
+  /* SOS Brand Colors - Orange gradient for SafeOrStolen branding */
+  .sos-brand-gradient {
+    background: linear-gradient(135deg, #FF5722 0%, #FF7043 50%, #FF5722 100%);
+  }
+  
+  .sos-brand-text {
+    background: linear-gradient(135deg, #FF5722 0%, #FF7043 50%, #FF5722 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .cyber-float {
     animation: cyber-float 6s ease-in-out infinite;
   }
