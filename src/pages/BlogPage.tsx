@@ -2,7 +2,8 @@
 import { useParams } from 'react-router-dom';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { BlogList } from '@/components/blog/BlogList';
-
+import { AIBlogStatus } from '@/components/blog/AIBlogStatus';
+import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 
@@ -63,16 +64,24 @@ const BlogPage = () => {
       <div className="bg-sos text-white min-h-screen">
         <div className="container mx-auto px-4 py-16">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-white mb-4">
-              {category ? `${category.replace('-', ' ')} Articles` : 'Stolen Goods Prevention Blog'}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              {category ? `${category.replace('-', ' ')} Articles` : 'SafeOrStolen Blog'}
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-6">
               {category 
                 ? `Everything you need to know about ${category.replace('-', ' ')}`
-                : 'Learn how to verify items before buying, avoid stolen goods, and shop safely on marketplaces like eBay, Facebook Marketplace, and Craigslist.'
+                : 'Daily AI-generated content about verification, fraud prevention, and secondhand market safety'
               }
             </p>
+            <Badge className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-0">
+              🤖 AI-Powered Daily Updates
+            </Badge>
+          </div>
+
+          {/* AI Status Dashboard */}
+          <div className="mb-12">
+            <AIBlogStatus />
           </div>
 
           <div className="max-w-6xl mx-auto">

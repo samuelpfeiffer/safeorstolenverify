@@ -51,6 +51,7 @@ const TopNavigation = () => {
       icon: Search,
       highlight: true 
     },
+    { label: 'Blog', href: '/blog' },
     { label: 'Features', href: '/features' },
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'About', href: '/about' },

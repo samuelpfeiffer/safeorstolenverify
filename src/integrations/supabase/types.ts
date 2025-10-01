@@ -1509,6 +1509,27 @@ export type Database = {
         }
         Relationships: []
       }
+      roles: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       sensitive_data_access_log: {
         Row: {
           access_type: string
@@ -1853,6 +1874,38 @@ export type Database = {
         }
         Relationships: []
       }
+      users_roles: {
+        Row: {
+          created_at: string | null
+          id: string
+          role_id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          role_id: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          role_id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "users_roles_role_id_fkey"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       verification_items: {
         Row: {
           created_at: string | null
@@ -2038,6 +2091,10 @@ export type Database = {
       generate_api_key: {
         Args: Record<PropertyKey, never>
         Returns: string
+      }
+      get_complete_schema: {
+        Args: Record<PropertyKey, never>
+        Returns: Json
       }
       get_current_user_role: {
         Args: Record<PropertyKey, never>
