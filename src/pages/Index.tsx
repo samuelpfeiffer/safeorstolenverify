@@ -16,6 +16,7 @@ import { CompetitorComparisonSEO } from '@/components/seo/CompetitorComparisonSE
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
 import { AdvancedSchemaMarkup } from '@/components/seo/AdvancedSchemaMarkup';
 import { AIAnswerEngineOptimizer } from '@/components/seo/AIAnswerEngineOptimizer';
+import { LCPOptimizer } from '@/components/performance/LCPOptimizer';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -24,6 +25,7 @@ const Index = () => {
 
   return (
     <>
+      <LCPOptimizer />
       <OrganizationSchema />
       <WebSiteSchema />
       <BuyerProtectionSEO pageType="general" />

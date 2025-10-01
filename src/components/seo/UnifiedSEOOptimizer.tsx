@@ -104,9 +104,8 @@ export const UnifiedSEOOptimizer: React.FC<UnifiedSEOOptimizerProps> = ({
     { name: "target-intent", content: "transactional, informational, commercial investigation" }
   ] : [];
 
-  // Enhanced Core Web Vitals optimization
+  // Enhanced Core Web Vitals optimization - Fixed to prevent DOM errors
   const performanceOptimizations = priorityLevel === 'max' ? [
-    <link key="preload-hero" rel="preload" as="image" href={imageUrl} />,
     <link key="dns-prefetch-fonts" rel="dns-prefetch" href="https://fonts.googleapis.com" />,
     <link key="preconnect-fonts" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />,
     <link key="dns-prefetch-api" rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co" />,
@@ -114,7 +113,7 @@ export const UnifiedSEOOptimizer: React.FC<UnifiedSEOOptimizerProps> = ({
       __html: `
         .hero-section{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);min-height:100vh}
         .btn-primary{background:hsl(16 100% 50%);color:white;padding:1rem 2rem;border-radius:0.75rem;font-weight:600;transition:all 0.3s}
-        .btn-primary:hover{background:hsl(16 100% 45%);transform:translateY(-2px)}
+        .btn-primary:hover{background:hsl(16 100% 45%);transform:translateY(-2px)}img{content-visibility:auto}
       `
     }} />
   ] : [];
@@ -230,22 +229,19 @@ export const UnifiedSEOOptimizer: React.FC<UnifiedSEOOptimizerProps> = ({
       <meta httpEquiv="X-Frame-Options" content="DENY" />
       <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
       
-      {/* Additional Performance Hints */}
+      {/* Additional Performance Hints - Removed problematic preload */}
       {priorityLevel !== 'normal' && (
-        <>
-          <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-          <script dangerouslySetInnerHTML={{
-            __html: `
-              // Critical resource prioritization
-              if ('connection' in navigator && navigator.connection.effectiveType === '4g') {
-                const link = document.createElement('link');
-                link.rel = 'prefetch';
-                link.href = '/dashboard';
-                document.head.appendChild(link);
-              }
-            `
-          }} />
-        </>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            // Critical resource prioritization
+            if ('connection' in navigator && navigator.connection.effectiveType === '4g') {
+              const link = document.createElement('link');
+              link.rel = 'prefetch';
+              link.href = '/dashboard';
+              document.head.appendChild(link);
+            }
+          `
+        }} />
       )}
     </Helmet>
   );
