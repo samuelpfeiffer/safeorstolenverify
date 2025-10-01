@@ -22,6 +22,9 @@ import { EEATSignals } from '@/components/seo/EEATSignals';
 import { FeaturedSnippetOptimizer } from '@/components/seo/FeaturedSnippetOptimizer';
 import { VoiceSearchOptimizer } from '@/components/seo/VoiceSearchOptimizer';
 import { LinkBuildingSignals } from '@/components/seo/LinkBuildingSignals';
+import { MarketplaceSEODomination } from '@/components/seo/MarketplaceSEODomination';
+import { LocalMarketplaceSEO } from '@/components/seo/LocalMarketplaceSEO';
+import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -43,10 +46,13 @@ const Index = () => {
       <FeaturedSnippetOptimizer />
       <VoiceSearchOptimizer />
       <LinkBuildingSignals />
+      <MarketplaceSEODomination />
+      <LocalMarketplaceSEO />
+      <CompetitorTargetingSEO />
       <UnifiedSEOOptimizer
-        title="Mobile IMEI VIN Gun Checker | iOS Android - Free"
-        description="✓ ONLY verification mobile app with firearms checking! ✓ Free IMEI check ✓ VIN verification ✓ Gun serial number lookup - CheckMend, IMEIinfo have NO mobile apps or firearms checking! Download SafeOrStolen for iOS & Android. 4 FREE searches!"
-        keywords="mobile imei checker app, vin verification app ios android, gun serial number checker app, firearm verification mobile app, stolen gun checker app, stolen item checker mobile app, imei check app free download, mobile phone verification app, car vin check app, firearms database app, safeorstolen app, checkmend mobile app alternative, imeiinfo app alternative, verification app ios android, scan imei app, gun serial lookup app, firearm stolen check mobile"
+        title="FREE Mobile App for Facebook Marketplace OfferUp Craigslist eBay | Check Stolen Items BEFORE Buying | iOS Android"
+        description="🔥 ONLY MOBILE APP for marketplace buyers! Verify phones, cars, electronics BEFORE buying on Facebook Marketplace, OfferUp, Craigslist, eBay. FREE iPhone & Android app with 4 FREE checks. CheckMend & IMEIinfo have NO mobile apps. Download SafeOrStolen NOW - don't meet seller without it!"
+        keywords="facebook marketplace safety app, offerup scam prevention app, craigslist buyer protection app, ebay verification mobile app, marketplace stolen phone checker, facebook marketplace phone verification, offerup imei check app, craigslist vin checker app, marketplace safety checker mobile, stolen item checker app ios android, verify before buying app, marketplace buyer protection mobile, facebook marketplace scam detector, craigslist car verification app, offerup electronics checker"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         competitiveKeywords="homepage"

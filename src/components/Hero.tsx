@@ -58,94 +58,138 @@ const Hero = memo(() => {
               <span>Trusted by 100,000+ Users</span>
             </div>
 
-            {/* Bold, Clear Headline - SEO Optimized */}
+            {/* MOBILE APP HEADLINE - MARKETPLACE FOCUSED */}
             <h1 id="main-headline" className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight tracking-tight animate-slideUp">
-              Free IMEI, VIN & Gun Serial Checker
-              <span className="block mt-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                Only Mobile App for Complete Verification
+              📱 FREE Mobile App for 
+              <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+                Facebook Marketplace • OfferUp • Craigslist • eBay
+              </span>
+              <span className="block mt-4 text-3xl sm:text-4xl md:text-5xl">
+                Check Items BEFORE Buying!
               </span>
             </h1>
             
-            {/* Clear Value Prop */}
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Instant verification on iOS & Android. Check phones (IMEI), cars (VIN), electronics & firearms serial numbers anywhere, anytime. 
-              Unlike CheckMend or IMEIinfo - we're the ONLY service with a mobile app that verifies everything including guns!
+            {/* MOBILE APP VALUE PROP */}
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
+              🚨 <strong>ONLY mobile app</strong> to verify phones, cars & electronics on-site! 
+              <span className="block mt-3 text-lg md:text-xl">
+                Download FREE on <strong>iPhone & Android</strong> • Verify at meetup in 30 seconds • 4 FREE checks included
+              </span>
+              <span className="block mt-3 text-base md:text-lg text-destructive font-bold">
+                ⚠️ CheckMend & IMEIinfo have NO mobile apps - SafeOrStolen is your ONLY option!
+              </span>
             </p>
             
-            {/* Big, Clear CTAs */}
+            {/* MOBILE APP DOWNLOAD CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-7 text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-8 text-xl rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-110 transition-all animate-pulse" 
                 onClick={handleNavigateToAuth}
                 aria-describedby="main-headline"
               >
-                <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
-                Start Free Now
+                📱 Download FREE App Now
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-foreground/20 hover:bg-muted font-semibold px-10 py-7 text-lg rounded-2xl hover:scale-105 transition-all" 
-                onClick={handleNavigateToFirearms}
+                className="border-2 border-primary/50 hover:bg-primary/10 font-semibold px-10 py-7 text-lg rounded-2xl hover:scale-105 transition-all" 
+                onClick={handleNavigateToAuth}
               >
-                Download App
+                <Shield className="mr-2 h-5 w-5" aria-hidden="true" />
+                Start Verifying Free
               </Button>
             </div>
             
-            <p className="text-muted-foreground text-sm">4 free searches • No credit card • Instant results</p>
+            <div className="space-y-2">
+              <p className="text-foreground text-base font-semibold">✓ Available on App Store (iPhone) & Google Play (Android)</p>
+              <p className="text-muted-foreground text-sm">4 FREE verifications • No credit card • Verify in 30 seconds</p>
+              <p className="text-destructive text-sm font-bold">⚠️ Don't meet marketplace sellers without this app!</p>
+            </div>
 
-            {/* Clean Stats Row */}
-            <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-12 border-t border-border/50">
+            {/* MARKETPLACE-FOCUSED STATS */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-12 border-t border-border/50">
               <div className="text-center space-y-2">
-                <div className="text-4xl font-bold text-primary">$2.3M+</div>
-                <div className="text-sm text-muted-foreground">Scams Prevented</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">📱 ONLY</div>
+                <div className="text-sm text-muted-foreground">Mobile App (iOS & Android)</div>
               </div>
               <div className="text-center space-y-2">
-                <div className="text-4xl font-bold text-secondary">&lt;3s</div>
-                <div className="text-sm text-muted-foreground">Verification</div>
+                <div className="text-3xl md:text-4xl font-bold text-secondary">4 FREE</div>
+                <div className="text-sm text-muted-foreground">Verifications Included</div>
               </div>
               <div className="text-center space-y-2">
-                <div className="text-4xl font-bold text-accent">100%</div>
-                <div className="text-sm text-muted-foreground">Free to Start</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent">30 sec</div>
+                <div className="text-sm text-muted-foreground">On-Site Verification</div>
+              </div>
+              <div className="text-center space-y-2">
+                <div className="text-3xl md:text-4xl font-bold text-primary">50K+</div>
+                <div className="text-sm text-muted-foreground">Marketplace Buyers Trust Us</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Who It's For - Clean Cards Below */}
+      {/* MARKETPLACE USE CASES - WHO NEEDS THIS APP */}
       <div className="container mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-card rounded-2xl p-8 border border-border hover:border-primary/50 hover:shadow-xl transition-all group">
-            <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Shield className="h-7 w-7 text-primary" />
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">For Buyers</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Never buy stolen goods. Verify items instantly before making a purchase.
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Perfect for Marketplace Buyers & Sellers
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            The ONLY mobile app designed specifically for Facebook Marketplace, OfferUp, Craigslist & eBay
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="bg-card rounded-2xl p-6 border-2 border-primary hover:border-primary hover:shadow-2xl transition-all group">
+            <div className="text-4xl mb-4">📘</div>
+            <h3 className="text-lg font-bold text-foreground mb-2">Facebook Marketplace</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Verify phones & electronics BEFORE meeting seller. Download app, check IMEI on-site in 30 seconds.
             </p>
           </div>
 
-          <div className="bg-card rounded-2xl p-8 border border-border hover:border-secondary/50 hover:shadow-xl transition-all group">
-            <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <BadgeCheck className="h-7 w-7 text-secondary" />
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">For Sellers</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Prove legitimacy and build trust with verified clean records.
+          <div className="bg-card rounded-2xl p-6 border-2 border-secondary hover:border-secondary hover:shadow-2xl transition-all group">
+            <div className="text-4xl mb-4">📱</div>
+            <h3 className="text-lg font-bold text-foreground mb-2">OfferUp Buyers</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Check items at meetup location with FREE mobile app. Don't hand over cash without verifying first!
             </p>
           </div>
 
-          <div className="bg-card rounded-2xl p-8 border border-border hover:border-accent/50 hover:shadow-xl transition-all group">
-            <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Users className="h-7 w-7 text-accent" />
-            </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">For Businesses</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              API access for pawn shops, resellers, and online marketplaces.
+          <div className="bg-card rounded-2xl p-6 border-2 border-accent hover:border-accent hover:shadow-2xl transition-all group">
+            <div className="text-4xl mb-4">📋</div>
+            <h3 className="text-lg font-bold text-foreground mb-2">Craigslist Safety</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Verify cars with VIN check on-site. Mobile app works anywhere - parking lots, driveways, dealerships.
             </p>
           </div>
+
+          <div className="bg-card rounded-2xl p-6 border-2 border-primary hover:border-primary hover:shadow-2xl transition-all group">
+            <div className="text-4xl mb-4">🛒</div>
+            <h3 className="text-lg font-bold text-foreground mb-2">eBay Verification</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Check items before bidding or upon delivery. ONLY mobile app for eBay buyer protection.
+            </p>
+          </div>
+        </div>
+
+        {/* URGENCY BANNER */}
+        <div className="mt-12 max-w-3xl mx-auto bg-destructive/10 border-2 border-destructive rounded-2xl p-8 text-center">
+          <p className="text-xl font-bold text-destructive mb-3">
+            ⚠️ Meeting a seller today? Download the app NOW!
+          </p>
+          <p className="text-muted-foreground mb-4">
+            Don't risk buying stolen goods. Get FREE verification BEFORE handing over cash.
+          </p>
+          <Button 
+            size="lg" 
+            className="bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold px-10 py-6"
+            onClick={handleNavigateToAuth}
+          >
+            Download FREE App - Verify in 30 Seconds
+          </Button>
         </div>
       </div>
     </div>
