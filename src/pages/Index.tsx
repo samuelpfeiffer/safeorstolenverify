@@ -5,6 +5,8 @@ import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { AppDownloadSection } from '@/components/home/AppDownloadSection';
 import { getHomePageStructuredData } from '@/components/home/HomeStructuredData';
+import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
+import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { EnhancedFAQSchema } from '@/components/seo/EnhancedFAQSchema';
 import { ReviewSchema } from '@/components/seo/ReviewSchema';
@@ -16,6 +18,8 @@ const Index = () => {
 
   return (
     <>
+      <OrganizationSchema />
+      <WebSiteSchema />
       <UnifiedSEOOptimizer
         title="Free IMEI Checker, VIN Verification & Stolen Item Database | SafeOrStolen"
         description="Verify if phones, cars & electronics are stolen before you buy. Free IMEI check, VIN verification & serial number lookup. Search stolen goods database instantly - 4 free checks!"

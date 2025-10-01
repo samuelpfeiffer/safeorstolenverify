@@ -1,60 +1,46 @@
+# SafeOrStolen.com - Robots.txt
 User-agent: *
 Allow: /
 
-# Core public pages
+# Important pages for crawling
+Allow: /pricing
+Allow: /about
+Allow: /how-it-works
+Allow: /blog/
+Allow: /faq
+Allow: /services
+Allow: /features
+
+# Core verification pages
 Allow: /stolen-item-checker
 Allow: /imei-check  
 Allow: /vin-verification
 Allow: /serial-number-checker
-Allow: /seo-strategy
-Allow: /faq
-Allow: /transparency
-Allow: /data-sources
-Allow: /ultimate-guide
-Allow: /api-docs
-Allow: /for-brands
 Allow: /check-phone
 Allow: /check-car
 Allow: /check-electronics
-Allow: /guides/
-Allow: /blog/
-Allow: /how-it-works
-Allow: /pricing
-Allow: /about
-Allow: /contact
-Allow: /services
 
-# Block admin and protected pages  
-Disallow: /admin/
+# Disallow admin and auth pages
+Disallow: /auth
+Disallow: /dashboard
+Disallow: /admin
 Disallow: /api/
-Disallow: /auth/
-Disallow: /dashboard/
 Disallow: /profile/
 Disallow: /subscription/
-Disallow: /analytics/
 Disallow: /search-history/
-Disallow: /receipts/
 
-# Block technical files and test content
-Disallow: *.json$
-Disallow: /test/
-Disallow: /staging/
-Disallow: /*?*preview=*
-Disallow: /*?*debug=*
-
-# Block old redirect URLs - removed since they now properly redirect
-# These URLs properly redirect with 301 status codes
-
-# Allow search parameters for verification
-Allow: /*?q=*
-Allow: /*?serial=*
-Allow: /*?imei=*
-
-# Crawl delay for responsible crawling
-Crawl-delay: 1
-
-# Sitemaps
+# Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
 
-# Host directive for canonical domain
-Host: https://safeorstolen.com
+# Crawl-delay for being respectful
+Crawl-delay: 1
+
+# Allow specific bots full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
