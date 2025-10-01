@@ -131,6 +131,9 @@ const BuyerGuidePage = lazy(() => import('@/pages/BuyerGuidePage'));
 const SellerGuidePage = lazy(() => import('@/pages/SellerGuidePage'));
 const HowToCheckLaptopStolenPage = lazy(() => import('@/pages/HowToCheckLaptopStolenPage'));
 const BuyUsedElectronicsSafelyPage = lazy(() => import('@/pages/BuyUsedElectronicsSafelyPage'));
+const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
+const OurTeamPage = lazy(() => import('@/pages/OurTeamPage'));
+const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 
 /**
  * Enterprise Application Routing
@@ -189,10 +192,13 @@ export const AppRoutes: React.FC = () => {
            <Route path="blog/enterprise-security" element={<EnterpriseSecurityPost />} />
            <Route path="blog/mobile-app-features" element={<MobileAppFeaturesPost />} />
           
-          {/* New Routes */}
-          <Route path="how-it-works" element={<HowItWorksPage />} />
-          <Route path="how-it-works-detailed" element={<HowItWorksDetailedPage />} />
-          <Route path="for-consumers" element={<ForConsumersPage />} />
+           {/* New Routes */}
+           <Route path="how-it-works" element={<HowItWorksPage />} />
+           <Route path="how-it-works-detailed" element={<HowItWorksDetailedPage />} />
+           <Route path="vs-checkmend" element={<VsCheckMendPage />} />
+           <Route path="our-team" element={<OurTeamPage />} />
+           <Route path="security" element={<SecurityPage />} />
+           <Route path="for-consumers" element={<ForConsumersPage />} />
           <Route path="for-brands" element={<ForBrandsPage />} />
           <Route path="about-problem" element={<AboutProblemPage />} />
           <Route path="our-story" element={<OurStoryPage />} />
