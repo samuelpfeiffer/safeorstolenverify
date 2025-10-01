@@ -59,7 +59,8 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
       await savePendingVerification(cleanSerialNumber, itemType, 'buyer');
       toast({
         title: 'Sign in required',
-        description: 'Please create an account or sign in to verify items.',
+        description: 'Create an account to get 4 free verification searches.',
+        duration: 5000,
       });
       navigate('/auth?tab=signup');
       return;
@@ -69,6 +70,14 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
     if (!canProceed) return;
 
     setIsLoading(true);
+    
+    // Show loading feedback
+    toast({
+      title: "🔍 Verifying...",
+      description: "Checking item against stolen goods databases...",
+      duration: 2000,
+    });
+
     try {
       const cleanSerialNumber: string = sanitizeInputSecurity(serialNumber.trim());
       const itemType = detectItemType(cleanSerialNumber);
@@ -76,10 +85,23 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
       // Add to search history
       addToSearchHistory(cleanSerialNumber);
 
-      // Perform verification
-      const result = await verifyItem(cleanSerialNumber, itemType);
+      // Perform verification with timeout
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Verification timeout')), 30000)
+      );
+      
+      const result = await Promise.race([
+        verifyItem(cleanSerialNumber, itemType),
+        timeoutPromise
+      ]) as any;
       
       if (result) {
+        toast({
+          title: "✅ Verification Complete",
+          description: "Results are ready. Scroll down to view details.",
+          duration: 4000,
+        });
+
         // Navigate to verification results
         navigate(`/?verificationId=${result.id}`);
         
@@ -96,14 +118,29 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
       }
     } catch (error) {
       console.error('Verification error:', error);
+      const errorMessage = error instanceof Error && error.message === 'Verification timeout'
+        ? 'Verification is taking longer than expected. Please check your connection and try again.'
+        : 'Unable to verify the item. Please check your connection and try again.';
+      
       toast({
-        title: "Verification Failed",
-        description: "Unable to verify the item. Please try again.",
-        variant: "destructive"
+        title: "❌ Verification Failed",
+        description: errorMessage,
+        variant: "destructive",
+        duration: 5000,
       });
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleClear = () => {
+    setSerialNumber('');
+    setSelectedType('');
+    toast({
+      title: "Input Cleared",
+      description: "Ready for a new search",
+      duration: 2000,
+    });
   };
 
   return (
@@ -155,25 +192,37 @@ export const SimpleSearchForm: React.FC<SimpleSearchFormProps> = ({ onOpenQrScan
           </div>
         </div>
 
-        {/* Verify button */}
-        <Button 
-          onClick={handleSearch} 
-          size="lg" 
-          className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold"
-          disabled={isLoading || !serialNumber.trim()}
-        >
-          {isLoading ? (
-            <>
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-              Verifying...
-            </>
-          ) : (
-            <>
-              <Search className="mr-2 h-5 w-5" />
-              Verify Now
-            </>
-          )}
-        </Button>
+        {/* Action buttons */}
+        <div className="grid grid-cols-2 gap-3">
+          <Button 
+            onClick={handleSearch} 
+            size="lg" 
+            className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold"
+            disabled={isLoading || !serialNumber.trim()}
+          >
+            {isLoading ? (
+              <>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                Verifying...
+              </>
+            ) : (
+              <>
+                <Search className="mr-2 h-5 w-5" />
+                Verify
+              </>
+            )}
+          </Button>
+          
+          <Button 
+            onClick={handleClear}
+            size="lg"
+            variant="outline"
+            className="border-white/20 text-white hover:bg-white/10"
+            disabled={isLoading || !serialNumber.trim()}
+          >
+            Clear
+          </Button>
+        </div>
 
         <p className="text-xs text-gray-400 text-center">
           Real-time verification • Results in under 3 seconds

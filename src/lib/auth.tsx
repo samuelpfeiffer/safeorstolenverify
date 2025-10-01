@@ -55,8 +55,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     let mounted = true;
+    let retryCount = 0;
+    const MAX_RETRIES = 3;
 
-    // Get initial session
+    // Get initial session with retry logic
     const getInitialSession = async () => {
       try {
         const { data: { session }, error } = await supabase.auth.getSession();
@@ -64,6 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (mounted) {
           if (error) {
             console.error('Error getting session:', error);
+            // Don't fail completely, just log and continue
           }
           
           setState({
@@ -75,40 +78,46 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
       } catch (error) {
         console.error('Session initialization error:', error);
-        if (mounted) {
+        if (mounted && retryCount < MAX_RETRIES) {
+          retryCount++;
+          setTimeout(() => getInitialSession(), 1000 * retryCount);
+        } else if (mounted) {
           setState(prev => ({ ...prev, loading: false, initialized: true }));
         }
       }
     };
 
-    // Listen for auth changes
+    // Listen for auth changes with error handling
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
-        if (mounted) {
-          setState({
-            user: transformUser(session?.user || null),
-            session,
-            loading: false,
-            initialized: true,
-          });
+        if (!mounted) return;
 
-          // Handle auth events with prominent announcements
-          if (event === 'SIGNED_IN') {
-            const userName = session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'there';
-            toast({
-              title: `🎉 Successfully Signed In!`,
-              description: `Welcome back, ${userName}! You're now ready to verify items safely.`,
-              duration: 6000,
-            });
-          } else if (event === 'SIGNED_OUT') {
-            toast({
-              title: '👋 Signed Out Successfully',
-              description: 'You have been safely signed out of your account.',
-              duration: 4000,
-            });
-          } else if (event === 'TOKEN_REFRESHED') {
-            console.log('Token refreshed');
-          }
+        // Handle token refresh errors gracefully
+        if (event === 'TOKEN_REFRESHED') {
+          console.log('Auth token refreshed successfully');
+        }
+        
+        setState({
+          user: transformUser(session?.user || null),
+          session,
+          loading: false,
+          initialized: true,
+        });
+
+        // Handle auth events with feedback
+        if (event === 'SIGNED_IN') {
+          const userName = session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'there';
+          toast({
+            title: `🎉 Successfully Signed In!`,
+            description: `Welcome back, ${userName}! You're ready to verify items.`,
+            duration: 5000,
+          });
+        } else if (event === 'SIGNED_OUT') {
+          toast({
+            title: '👋 Signed Out',
+            description: 'Successfully signed out of your account.',
+            duration: 3000,
+          });
         }
       }
     );

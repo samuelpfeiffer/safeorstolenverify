@@ -18,6 +18,7 @@ import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
 import { TrustBadges } from '@/components/trust/TrustBadges';
 import { MobileOptimization } from '@/components/mobile/MobileOptimization';
 import { BackgroundAIMonitor } from '@/components/ai/BackgroundAIMonitor';
+import { PrivacyTransparency } from '@/components/privacy/PrivacyTransparency';
 import { createFAQSchema, createOrganizationSchema, createServiceSchema, createWebsiteSchema } from '@/utils/seo/structuredData';
 
 const Index = () => {
@@ -102,6 +103,9 @@ const Index = () => {
         <div className="fixed bottom-4 right-4 z-40 max-w-md">
           <BackgroundAIMonitor />
         </div>
+        
+        {/* Privacy & Data Transparency */}
+        <PrivacyTransparency />
         
         <noscript>
           {/* Fallback content for crawlers when JS is disabled */}
