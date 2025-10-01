@@ -41,6 +41,7 @@ const Hero = memo(() => {
 
       {/* Modern Hero Section */}
       <div className="relative min-h-[85vh] flex items-center justify-center py-20">
+        <HolographicBackground />
         
         {/* Hero Content */}
         <div className="container mx-auto px-6 relative z-10">
@@ -87,6 +88,11 @@ const Hero = memo(() => {
             </div>
             
             <p className="text-muted-foreground text-sm">4 free searches • No credit card • Instant results</p>
+
+            {/* FasterCapital Branding */}
+            <div className="pt-4">
+              <FasterCapitalBranding />
+            </div>
 
             {/* Clean Stats Row */}
             <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-12 border-t border-border/50">
