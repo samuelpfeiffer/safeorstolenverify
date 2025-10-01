@@ -30,9 +30,9 @@ const Index = () => {
       <CompetitorComparisonSEO />
       <AdvancedSchemaMarkup />
       <UnifiedSEOOptimizer
-        title="Free IMEI Checker & VIN Verification | Better Than CheckMend, IMEIinfo | SafeOrStolen"
-        description="✓ Free IMEI check ✓ VIN verification ✓ Serial number lookup - Instant stolen item verification. More accurate than CheckMend, faster than IMEIinfo, comprehensive than Stolen Register. 4 FREE searches, no credit card!"
-        keywords="imei checker free, check if phone is stolen, vin verification free, stolen item checker, serial number lookup stolen, imei check better than checkmend, alternative to imeiinfo, free stolen register, verify phone not stolen, check car stolen vin, stolen goods database search, checkserial alternative, swappa imei check, phone blacklist check, stolen property database"
+        title="Free IMEI Checker & VIN Verification Mobile App | Better Than CheckMend | SafeOrStolen"
+        description="✓ ONLY verification service with mobile app (iOS & Android) ✓ Free IMEI check ✓ VIN verification - CheckMend, IMEIinfo & Stolen Register have NO mobile apps! Download now for instant on-the-go verification. 4 FREE searches!"
+        keywords="mobile imei checker app, vin verification app ios android, stolen item checker mobile app, imei check app free download, mobile phone verification app, car vin check app, safeorstolen app, checkmend mobile app alternative, imeiinfo app alternative, verification app ios android, scan imei app, on the go verification"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         competitiveKeywords="homepage"

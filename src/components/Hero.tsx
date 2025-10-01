@@ -62,14 +62,14 @@ const Hero = memo(() => {
             <h1 id="main-headline" className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight tracking-tight animate-slideUp">
               Free IMEI Checker & VIN Verification
               <span className="block mt-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                Check If Items Are Stolen Before You Buy
+                Only Verification Service With Mobile App
               </span>
             </h1>
             
             {/* Clear Value Prop */}
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Instant stolen item verification. Check IMEI numbers, VIN numbers & serial numbers against stolen goods databases. 
-              More accurate than CheckMend, faster than IMEIinfo - 100% free to start.
+              Instant stolen item verification on iOS & Android. Check IMEI, VIN & serial numbers anywhere, anytime. 
+              Unlike CheckMend or IMEIinfo - verify on-the-go with our exclusive mobile app. 4 free searches!
             </p>
             
             {/* Big, Clear CTAs */}

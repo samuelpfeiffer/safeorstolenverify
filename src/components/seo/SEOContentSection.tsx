@@ -19,19 +19,23 @@ export const SEOContentSection = () => {
             </p>
 
             <div className="bg-primary/10 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
-              <h3 className="text-xl font-bold mb-3">Why SafeOrStolen Beats the Competition</h3>
+              <h3 className="text-xl font-bold mb-3">🏆 Why SafeOrStolen Beats the Competition</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs CheckMend:</strong> Get 4 free searches vs their paid-only service. Check IMEI, VIN, and serial numbers all in one place.</span>
+                  <span><strong>vs CheckMend:</strong> Get 4 free searches vs their paid-only service PLUS mobile app (they don't have one!)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs IMEIinfo:</strong> Beyond just IMEI checks - we verify all device types with law enforcement database partnerships.</span>
+                  <span><strong>vs IMEIinfo:</strong> Beyond just IMEI - verify ALL device types with our exclusive iOS & Android app</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs Stolen Register:</strong> Real-time verification with instant results. Our database updates continuously, not just periodically.</span>
+                  <span><strong>vs Stolen Register:</strong> Real-time mobile verification - they're stuck with desktop-only access</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>EXCLUSIVE:</strong> Only verification service with dedicated mobile apps for iOS & Android!</span>
                 </li>
               </ul>
             </div>

@@ -38,7 +38,15 @@ export const CompetitorComparisonSEO: React.FC = () => {
         "name": "Is SafeOrStolen better than CheckMend?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen offers 4 free verification searches vs CheckMend's paid-only service. We check more databases with faster results and provide comprehensive reports including IMEI, VIN, and serial numbers all in one platform."
+          "text": "Yes! SafeOrStolen offers 4 free verification searches vs CheckMend's paid-only service. We check more databases with faster results and provide comprehensive reports including IMEI, VIN, and serial numbers all in one platform. PLUS we're the ONLY verification service with mobile apps for iOS and Android - CheckMend has no mobile app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does SafeOrStolen have a mobile app unlike CheckMend and IMEIinfo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "YES! SafeOrStolen is the ONLY stolen goods verification service with dedicated mobile apps for both iOS and Android. CheckMend, IMEIinfo, and Stolen Register do NOT offer mobile apps. Our app lets you scan barcodes, verify items on-the-go, and access verification history offline - something no competitor can match."
         }
       },
       {
@@ -46,15 +54,15 @@ export const CompetitorComparisonSEO: React.FC = () => {
         "name": "SafeOrStolen vs IMEIinfo - which is better?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "While IMEIinfo focuses only on IMEI checks, SafeOrStolen verifies IMEI numbers, VIN numbers, serial numbers, and checks law enforcement databases. We offer 4 free searches and instant verification across multiple device types."
+          "text": "SafeOrStolen is superior in every way. While IMEIinfo focuses only on IMEI checks with no mobile app, SafeOrStolen verifies IMEI numbers, VIN numbers, serial numbers AND provides exclusive iOS & Android mobile apps for on-the-go verification. We offer 4 free searches and instant verification across multiple device types."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I use SafeOrStolen instead of Stolen Register?",
+        "name": "Can I use SafeOrStolen mobile app instead of Stolen Register website?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! SafeOrStolen provides real-time verification with direct law enforcement partnerships and instant results. Unlike traditional stolen registers, our database updates continuously and covers global stolen property reports."
+          "text": "Absolutely! Unlike Stolen Register which only has a website, SafeOrStolen provides real-time verification through our mobile apps (iOS & Android) PLUS web access. Our database updates continuously and covers global stolen property reports with law enforcement partnerships. Download our app for instant mobile verification that Stolen Register simply cannot offer."
         }
       }
     ]
