@@ -47,6 +47,11 @@ const Hero = memo(() => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-10">
             
+            {/* FasterCapital Branding - Front and Center */}
+            <div className="pt-4">
+              <FasterCapitalBranding />
+            </div>
+
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 text-accent text-sm font-medium animate-fadeIn">
               <Shield className="h-4 w-4" />
@@ -88,11 +93,6 @@ const Hero = memo(() => {
             </div>
             
             <p className="text-muted-foreground text-sm">4 free searches • No credit card • Instant results</p>
-
-            {/* FasterCapital Branding */}
-            <div className="pt-4">
-              <FasterCapitalBranding />
-            </div>
 
             {/* Clean Stats Row */}
             <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-12 border-t border-border/50">
