@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet-async';
 
 /**
  * MARKETPLACE SEO DOMINATION
- * Target: Facebook Marketplace, OfferUp, Craigslist, eBay buyers
- * Goal: Make mobile app THE solution for marketplace safety
+ * Target: Marketplace BUYERS, SELLERS & BUSINESSES
+ * Goal: Mobile app is THE solution for ALL marketplace users
  */
 
 export const MarketplaceSEODomination = () => {
@@ -137,21 +137,23 @@ export const MarketplaceSEODomination = () => {
       <meta name="mobile-app-primary" content="SafeOrStolen - ONLY mobile app for marketplace buyers on iOS and Android" />
       <meta name="app-store-keywords" content="facebook marketplace safety app, offerup scam prevention, craigslist buyer protection app, ebay verification mobile app" />
       
-      {/* MARKETPLACE-SPECIFIC TARGETING */}
-      <meta name="facebook-marketplace-app" content="SafeOrStolen is the ONLY mobile app to verify Facebook Marketplace items. Check phones, cars, electronics BEFORE buying. FREE on iPhone & Android." />
-      <meta name="offerup-safety-app" content="ONLY OfferUp buyer protection app. Verify items on-site before handing over cash. FREE mobile app for iOS and Android with 4 free checks." />
-      <meta name="craigslist-verification-app" content="Mobile app to verify Craigslist purchases. Check cars, phones, electronics instantly. ONLY app designed for Craigslist buyers. FREE download." />
-      <meta name="ebay-mobile-checker" content="Only mobile app for eBay buyers to verify phones, electronics, vehicles. FREE on App Store and Google Play." />
+      {/* MARKETPLACE-SPECIFIC TARGETING - BUYERS & SELLERS */}
+      <meta name="facebook-marketplace-app" content="SafeOrStolen mobile app for Facebook Marketplace BUYERS & SELLERS. Buyers verify before buying, Sellers prove legitimacy. ONLY app on iOS & Android." />
+      <meta name="offerup-app-buyers-sellers" content="OfferUp app for buyers AND sellers. Buyers verify items, Sellers build trust. ONLY verification mobile app. FREE on iPhone & Android." />
+      <meta name="craigslist-verification-app" content="Craigslist app for buyers, sellers & businesses. Verify VIN, IMEI on-site. Prove items aren't stolen. ONLY mobile app. FREE download." />
+      <meta name="ebay-mobile-checker" content="eBay app for buyers, sellers, businesses. Verify phones, electronics, vehicles. Build trust & avoid scams. ONLY mobile app - iOS & Android." />
       
       {/* COMPETITIVE MOBILE APP ADVANTAGE */}
       <meta name="checkmend-no-mobile-app" content="CheckMend has NO mobile app. SafeOrStolen has FREE apps for iPhone and Android - perfect for marketplace buyers." />
       <meta name="imeiinfo-no-app" content="IMEIinfo has NO mobile app. SafeOrStolen offers FREE iOS and Android apps for on-site verification." />
       <meta name="only-marketplace-app" content="SafeOrStolen is the ONLY verification app built for Facebook Marketplace, OfferUp, Craigslist, and eBay buyers." />
       
-      {/* USE CASE TARGETING */}
-      <meta name="use-case-marketplace-phone" content="Buying phone on Facebook Marketplace? Use SafeOrStolen app to check IMEI BEFORE paying." />
-      <meta name="use-case-craigslist-car" content="Viewing Craigslist car? SafeOrStolen app checks VIN on-site in 30 seconds. FREE mobile app." />
-      <meta name="use-case-offerup-electronics" content="Meeting OfferUp seller? Verify electronics with SafeOrStolen mobile app BEFORE buying." />
+      {/* USE CASE TARGETING - BUYERS, SELLERS, BUSINESSES */}
+      <meta name="use-case-buyer-marketplace" content="Buying on Facebook Marketplace? SafeOrStolen app verifies items BEFORE you pay. FREE on iOS & Android." />
+      <meta name="use-case-seller-marketplace" content="Selling on Craigslist? Prove items aren't stolen with SafeOrStolen. Build trust instantly. FREE mobile app." />
+      <meta name="use-case-business-pawn-shop" content="Run a pawn shop? SafeOrStolen API verifies bulk inventory. Mobile app for on-site checks. FREE trial." />
+      <meta name="use-case-reseller-business" content="Reseller or flipper? SafeOrStolen mobile app verifies items before purchase. API for bulk. iOS & Android." />
+      <meta name="use-case-marketplace-api" content="Online marketplace owner? Integrate SafeOrStolen API for buyer/seller protection. WHITE-label available." />
       
       {/* URGENCY & CONVERSION */}
       <meta name="free-searches" content="4 FREE verification searches included - no credit card required" />

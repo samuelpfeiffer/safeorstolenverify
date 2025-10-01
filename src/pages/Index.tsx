@@ -50,9 +50,9 @@ const Index = () => {
       <LocalMarketplaceSEO />
       <CompetitorTargetingSEO />
       <UnifiedSEOOptimizer
-        title="FREE Mobile App for Facebook Marketplace OfferUp Craigslist eBay | Check Stolen Items BEFORE Buying | iOS Android"
-        description="🔥 ONLY MOBILE APP for marketplace buyers! Verify phones, cars, electronics BEFORE buying on Facebook Marketplace, OfferUp, Craigslist, eBay. FREE iPhone & Android app with 4 FREE checks. CheckMend & IMEIinfo have NO mobile apps. Download SafeOrStolen NOW - don't meet seller without it!"
-        keywords="facebook marketplace safety app, offerup scam prevention app, craigslist buyer protection app, ebay verification mobile app, marketplace stolen phone checker, facebook marketplace phone verification, offerup imei check app, craigslist vin checker app, marketplace safety checker mobile, stolen item checker app ios android, verify before buying app, marketplace buyer protection mobile, facebook marketplace scam detector, craigslist car verification app, offerup electronics checker"
+        title="FREE Mobile App for Buyers, Sellers & Businesses | Facebook Marketplace OfferUp Craigslist eBay | iOS Android"
+        description="🔥 ONLY MOBILE APP for marketplace buyers, sellers & businesses! 🛒 BUYERS: Verify BEFORE buying | 🏪 SELLERS: Prove legitimacy & build trust | 🏢 BUSINESSES: API for bulk verification. FREE iPhone & Android app with 4 FREE checks. CheckMend & IMEIinfo have NO mobile apps! Download SafeOrStolen NOW."
+        keywords="facebook marketplace app buyers sellers, offerup app seller verification, craigslist business verification app, pawn shop verification app, reseller stolen goods checker, marketplace seller trust app, buyer protection mobile app, business bulk verification api, facebook marketplace seller legitimacy, craigslist seller proof app, offerup buyer seller app, ebay verification sellers, marketplace stolen phone checker buyers sellers, business inventory verification app"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         competitiveKeywords="homepage"
