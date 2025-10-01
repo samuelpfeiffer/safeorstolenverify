@@ -23,8 +23,8 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     ]
   },
   payPerCheck: {
-    name: 'Pay Per Check',
-    price: 500, // $5.00 in cents
+    name: 'Pay Per Lookup',
+    price: 100, // $1.00 in cents
     interval: 'month',
     features: [
       'Quick, on-demand access',
@@ -32,10 +32,10 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'No subscription required',
       'Email support'
     ],
-    stripePriceId: 'Pay Per Check' // Use product name for dynamic matching
+    stripePriceId: 'Pay Per Lookup' // Use product name for dynamic matching
   },
   basic: {
-    name: 'Smart Buyer',
+    name: 'Personal Use - Instantly Check if an Item is Stolen',
     price: 799, // $7.99 in cents
     interval: 'month',
     features: [
@@ -45,10 +45,10 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Basic verification reports',
       'Email support'
     ],
-    stripePriceId: 'Smart Buyer' // Use product name for dynamic matching
+    stripePriceId: 'Personal Use - Instantly Check if an Item is Stolen' // Use product name for dynamic matching
   },
   entryLevel: {
-    name: 'Entry Level (Individual)',
+    name: 'Professional - Stolen Item Lookup',
     price: 1000, // $10.00 in cents
     interval: 'month',
     features: [
@@ -59,7 +59,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
       'Priority email support',
       'Early access to new features'
     ],
-    stripePriceId: 'Entry Level (Individual)' // Use product name for dynamic matching
+    stripePriceId: 'Professional - Stolen Item Lookup' // Use product name for dynamic matching
   },
   premium: {
     name: 'Savvy Shopper',

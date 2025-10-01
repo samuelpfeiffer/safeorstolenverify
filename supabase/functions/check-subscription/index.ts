@@ -152,7 +152,7 @@ serve(async (req) => {
       const price = subscription.items.data[0].price;
       console.log(`[CHECK-SUBSCRIPTION] Subscription price ID: ${priceId}`);
       
-      let subscriptionTier = "Smart Buyer"; // Default fallback
+      let subscriptionTier = "Personal Use - Instantly Check if an Item is Stolen"; // Default fallback
       
       // Fetch the product details to get the name
       try {
@@ -163,16 +163,16 @@ serve(async (req) => {
           
           // Use product name to determine tier, with flexible matching
           const productName = product.name.toLowerCase();
-          if (productName.includes('smart buyer') || productName.includes('basic')) {
-            subscriptionTier = "Smart Buyer";
+          if (productName.includes('personal use') || productName.includes('instantly check')) {
+            subscriptionTier = "Personal Use - Instantly Check if an Item is Stolen";
           } else if (productName.includes('savvy shopper') || productName.includes('premium')) {
             subscriptionTier = "Savvy Shopper";
           } else if (productName.includes('business pro') || productName.includes('enterprise')) {
             subscriptionTier = "Business Pro";
-          } else if (productName.includes('entry level') || productName.includes('individual')) {
-            subscriptionTier = "Entry Level";
-          } else if (productName.includes('pay per check') || productName.includes('single')) {
-            subscriptionTier = "Pay Per Check";
+          } else if (productName.includes('professional') || productName.includes('stolen item lookup')) {
+            subscriptionTier = "Professional - Stolen Item Lookup";
+          } else if (productName.includes('pay per lookup') || productName.includes('pay per check')) {
+            subscriptionTier = "Pay Per Lookup";
           } else {
             // Use the actual product name if no match found
             subscriptionTier = product.name;
