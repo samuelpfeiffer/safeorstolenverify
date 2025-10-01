@@ -90,7 +90,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'payPerCheck' | 'entryLevel' | 'basic' | 'premium' | 'enterprise') => void;
+  onSubscribe: (tier: 'payPerCheck' | 'entryLevel' | 'basic') => void;
   loadingTier?: string | null;
 }
 
@@ -106,7 +106,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
       period: SUBSCRIPTION_TIERS.payPerCheck.interval,
       description: 'Quick verification without commitment',
       features: SUBSCRIPTION_TIERS.payPerCheck.features || [],
-      buttonText: 'Pay Per Check'
+      buttonText: 'Pay Once'
     },
     {
       id: 'basic' as const,
@@ -122,28 +122,10 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
       name: SUBSCRIPTION_TIERS.entryLevel.name,
       price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
       period: SUBSCRIPTION_TIERS.entryLevel.interval,
-      description: 'Perfect for regular buyers',
+      description: 'Perfect for professionals and regular buyers',
       features: SUBSCRIPTION_TIERS.entryLevel.features || [],
-      buttonText: 'Start 7-Day Trial'
-    },
-    {
-      id: 'premium' as const,
-      name: SUBSCRIPTION_TIERS.premium.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
-      period: SUBSCRIPTION_TIERS.premium.interval,
-      description: 'For serious marketplace users',
-      features: SUBSCRIPTION_TIERS.premium.features || [],
       buttonText: 'Start 7-Day Trial',
-      popular: SUBSCRIPTION_TIERS.premium.popular
-    },
-    {
-      id: 'enterprise' as const,
-      name: SUBSCRIPTION_TIERS.enterprise.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price),
-      period: SUBSCRIPTION_TIERS.enterprise.interval,
-      description: 'For businesses and power users',
-      features: SUBSCRIPTION_TIERS.enterprise.features || [],
-      buttonText: 'Start 7-Day Trial'
+      popular: SUBSCRIPTION_TIERS.entryLevel.popular
     }
   ];
 
@@ -178,7 +160,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {tiers.map((tier) => (
             <PricingTier
               key={tier.id}
