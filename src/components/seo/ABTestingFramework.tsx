@@ -219,26 +219,6 @@ export const ABTestingFramework: React.FC<ABTestingFrameworkProps> = ({
     (window as any).exportABTestResults = exportTestResults;
   }, [activeTests]);
 
-  return (
-    <>
-      {/* Development mode indicator */}
-      {process.env.NODE_ENV === 'development' && (
-        <div style={{
-          position: 'fixed',
-          top: 10,
-          right: 10,
-          background: 'rgba(0,0,0,0.8)',
-          color: 'white',
-          padding: '8px',
-          borderRadius: '4px',
-          fontSize: '12px',
-          zIndex: 9999
-        }}>
-          A/B Tests: {Array.from(activeTests.entries()).map(([test, variant]) => 
-            `${test}:${variant}`
-          ).join(', ')}
-        </div>
-      )}
-    </>
-  );
+  // No visual display - A/B testing runs silently in backend
+  return null;
 };

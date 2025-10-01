@@ -337,34 +337,6 @@ export const SEOHealthMonitor: React.FC = () => {
     (window as any).toggleSEOMonitoring = () => setIsMonitoring(prev => !prev);
   }, [healthMetrics, alerts]);
 
-  return (
-    <>
-      {process.env.NODE_ENV === 'development' && healthMetrics && (
-        <div style={{
-          position: 'fixed',
-          bottom: 10,
-          right: 10,
-          background: 'rgba(0,0,0,0.9)',
-          color: 'white',
-          padding: '12px',
-          borderRadius: '6px',
-          fontSize: '11px',
-          maxWidth: '300px',
-          zIndex: 9999
-        }}>
-          <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>SEO Health Monitor</div>
-          <div>Title: {healthMetrics.content.titleLength}ch</div>
-          <div>Meta: {healthMetrics.content.metaDescLength}ch</div>
-          <div>H1: {healthMetrics.content.h1Count}</div>
-          <div>Images w/o alt: {healthMetrics.content.imagesWithoutAlt}</div>
-          <div>Alerts: {alerts.length}</div>
-          {alerts.length > 0 && (
-            <div style={{ marginTop: '8px', fontSize: '10px' }}>
-              Last: {alerts[alerts.length - 1].message.slice(0, 40)}...
-            </div>
-          )}
-        </div>
-      )}
-    </>
-  );
+  // No visual display - all monitoring happens in backend
+  return null;
 };

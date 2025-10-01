@@ -54,37 +54,37 @@ const VerificationResultCard = ({ activeProduct, onGenerateReceipt, onClose }: V
             : "This item has been reported as stolen. Do not purchase - contact authorities."}
         </p>
         
-        <div className="bg-black/30 rounded-lg p-4 mb-6 text-left">
+        <div className="bg-card/30 rounded-lg p-4 mb-6 text-left">
           <h4 className="font-semibold mb-2">Item Details</h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <p className="text-gray-300">Name: <span className="text-white">{activeProduct.name}</span></p>
-              <p className="text-gray-300">Type: <span className="text-white">{activeProduct.type}</span></p>
-              <p className="text-gray-300">Category: <span className="text-white">{activeProduct.category}</span></p>
+              <p className="text-muted-foreground">Name: <span className="text-foreground">{activeProduct.name}</span></p>
+              <p className="text-muted-foreground">Type: <span className="text-foreground">{activeProduct.type}</span></p>
+              <p className="text-muted-foreground">Category: <span className="text-foreground">{activeProduct.category}</span></p>
             </div>
             <div>
-              <p className="text-gray-300">Serial: <span className="text-white">{activeProduct.serialNumber}</span></p>
-              <p className="text-gray-300">Verified on: <span className="text-white">{new Date(activeProduct.verificationDate).toLocaleDateString()}</span></p>
-              <p className="text-gray-300">Color: <span className="text-white">{activeProduct.color || 'Black'}</span></p>
+              <p className="text-muted-foreground">Serial: <span className="text-foreground">{activeProduct.serialNumber}</span></p>
+              <p className="text-muted-foreground">Verified on: <span className="text-foreground">{new Date(activeProduct.verificationDate).toLocaleDateString()}</span></p>
+              <p className="text-muted-foreground">Color: <span className="text-foreground">{activeProduct.color || 'Black'}</span></p>
             </div>
           </div>
         </div>
         
         {activeProduct.status === 'safe' ? (
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button className="flex-1 bg-green-500 hover:bg-green-600 text-white">
+            <Button className="flex-1" variant="default">
               View Item History
             </Button>
-            <Button className="flex-1 bg-sos-orange hover:bg-sos-orange/90 text-white" onClick={onGenerateReceipt}>
+            <Button className="flex-1" onClick={onGenerateReceipt}>
               Generate Receipt
             </Button>
           </div>
         ) : activeProduct.status === 'lost' ? (
-          <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-medium">
+          <Button className="w-full" variant="secondary">
             Report Information
           </Button>
         ) : (
-          <Button className="w-full bg-red-500 hover:bg-red-600 text-white">
+          <Button className="w-full" variant="destructive">
             Contact Authorities
           </Button>
         )}

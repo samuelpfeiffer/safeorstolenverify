@@ -42,10 +42,10 @@ const Features = () => {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <Card key={index} className="modern-card p-8 hover-lift border-0 bg-white/50 dark:bg-slate-800/50">
+            <Card key={index} className="modern-card p-8 hover-lift border-0 bg-card/50">
               <CardContent className="space-y-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
-                  {React.cloneElement(feature.icon, { className: "h-8 w-8 text-white" })}
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
+                  {React.cloneElement(feature.icon, { className: "h-8 w-8 text-primary-foreground" })}
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">
                   {feature.title}

@@ -45,15 +45,15 @@ const ReceiptDialog = ({ open, onOpenChange, activeProduct }: ReceiptDialogProps
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-gray-900 text-white border-gray-800 max-w-md">
+      <DialogContent className="bg-card text-foreground border-border max-w-md">
         <DialogHeader>
           <DialogTitle>Verification Receipt</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 my-2">
-          <div className="bg-black/30 rounded-lg p-4">
-            <div className="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
+          <div className="bg-muted rounded-lg p-4">
+            <div className="flex justify-between items-center mb-4 border-b border-border pb-2">
               <h3 className="font-bold text-lg">SOS Verification</h3>
-              <p className="text-xs text-gray-400">Receipt #{Math.floor(Math.random() * 1000000)}</p>
+              <p className="text-xs text-muted-foreground">Receipt #{Math.floor(Math.random() * 1000000)}</p>
             </div>
             
             <div className="space-y-2 mb-4">
@@ -62,19 +62,19 @@ const ReceiptDialog = ({ open, onOpenChange, activeProduct }: ReceiptDialogProps
               <p><strong>Category:</strong> {activeProduct.category}</p>
               <p><strong>Verification Date:</strong> {new Date(activeProduct.verificationDate).toLocaleDateString()}</p>
               <p><strong>Status:</strong> <span className={
-                activeProduct.status === 'safe' ? "text-green-400" : 
-                activeProduct.status === 'lost' ? "text-yellow-400" : 
-                "text-red-400"
+                activeProduct.status === 'safe' ? "text-primary" : 
+                activeProduct.status === 'lost' ? "text-accent" : 
+                "text-destructive"
               }>
                 {activeProduct.status.toUpperCase()}
               </span></p>
             </div>
             
-            <div className="border-t border-gray-700 pt-2 text-center">
+            <div className="border-t border-border pt-2 text-center">
               <div className="flex justify-center mb-2">
                 {getStatusIcon(activeProduct.status)}
               </div>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-muted-foreground">
                 This verification receipt confirms the current status of the item.
               </p>
             </div>
@@ -82,7 +82,6 @@ const ReceiptDialog = ({ open, onOpenChange, activeProduct }: ReceiptDialogProps
         </div>
         <DialogFooter>
           <Button 
-            className="bg-sos-orange hover:bg-sos-orange/90 w-full" 
             onClick={handleSaveReceipt}
             disabled={isGenerating}
           >

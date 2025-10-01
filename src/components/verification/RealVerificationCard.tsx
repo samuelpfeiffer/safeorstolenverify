@@ -110,8 +110,8 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
       default:
         return {
           icon: AlertTriangle,
-          color: 'text-gray-600',
-          bgColor: 'bg-gray-50 border-gray-200',
+          color: 'text-muted-foreground',
+          bgColor: 'bg-muted border-border',
           badge: 'Error',
           badgeVariant: 'outline' as const,
           title: 'Verification Error',
@@ -143,7 +143,7 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
                 <CardTitle className={`text-xl ${statusInfo.color}`}>
                   {statusInfo.title}
                 </CardTitle>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-muted-foreground mt-1">
                   {statusInfo.description}
                 </p>
               </div>
@@ -157,7 +157,7 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
         <CardContent className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Shield className="h-4 w-4" />
                 <span>Item Details</span>
               </div>
@@ -168,7 +168,7 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
             </div>
             
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Database className="h-4 w-4" />
                 <span>Verification Info</span>
               </div>
@@ -181,11 +181,11 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
 
           {verificationResult.details && (
             <div className="border-t pt-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                 <Clock className="h-4 w-4" />
                 <span>Additional Details</span>
               </div>
-              <div className="pl-6 text-sm text-gray-700">
+              <div className="pl-6 text-sm text-foreground">
                 {Object.entries(verificationResult.details).map(([key, value]) => (
                   <p key={key}>
                     <span className="font-medium capitalize">{key.replace(/([A-Z])/g, ' $1')}:</span> {String(value)}
@@ -196,7 +196,7 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
           )}
 
           <div className="border-t pt-4 flex items-center justify-between">
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-muted-foreground">
               Verified on {new Date(verificationResult.verified_at).toLocaleString()}
             </div>
             <Button 
@@ -224,25 +224,25 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
               <div className="flex items-center gap-2">
                 <CertifiedSafeBadge size="sm" />
               </div>
-              <p className="text-sm text-gray-600">However, always verify the seller's identity and request proof of ownership.</p>
+              <p className="text-sm text-muted-foreground">However, always verify the seller's identity and request proof of ownership.</p>
             </div>
           )}
           {verificationResult.status === 'stolen' && (
             <div className="space-y-2">
-              <p className="text-red-700">⚠ Do not purchase this item</p>
-              <p className="text-sm text-gray-600">Consider reporting this listing to the platform and local authorities.</p>
+              <p className="text-destructive font-medium">⚠ Do not purchase this item</p>
+              <p className="text-sm text-muted-foreground">Consider reporting this listing to the platform and local authorities.</p>
             </div>
           )}
           {verificationResult.status === 'lost' && (
             <div className="space-y-2">
-              <p className="text-orange-700">⚠ Exercise extreme caution</p>
-              <p className="text-sm text-gray-600">This item has been reported lost. Contact the seller for proof of legitimate ownership.</p>
+              <p className="text-accent font-medium">⚠ Exercise extreme caution</p>
+              <p className="text-sm text-muted-foreground">This item has been reported lost. Contact the seller for proof of legitimate ownership.</p>
             </div>
           )}
           {verificationResult.status === 'unknown' && (
             <div className="space-y-2">
-              <p className="text-yellow-700">? Unable to verify status</p>
-              <p className="text-sm text-gray-600">Request additional documentation from the seller, including purchase receipts and warranty information.</p>
+              <p className="text-secondary font-medium">? Unable to verify status</p>
+              <p className="text-sm text-muted-foreground">Request additional documentation from the seller, including purchase receipts and warranty information.</p>
             </div>
           )}
         </CardContent>

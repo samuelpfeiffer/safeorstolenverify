@@ -13,9 +13,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
         alt={product.name} 
         className="w-full h-auto object-cover rounded-lg mb-4"
       />
-      <h3 className="text-xl font-semibold">{product.name}</h3>
-      <p className="text-gray-300">Type: {product.type}</p>
-      <p className="text-sos-orange mt-2">{product.category}</p>
+      <h3 className="text-xl font-semibold text-foreground">{product.name}</h3>
+      <p className="text-muted-foreground">Type: {product.type}</p>
+      <p className="text-primary mt-2">{product.category}</p>
     </div>
   );
 };

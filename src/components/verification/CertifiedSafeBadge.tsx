@@ -27,9 +27,9 @@ export const CertifiedSafeBadge: React.FC<CertifiedSafeBadgeProps> = ({
   };
 
   const variantClasses = {
-    default: 'bg-green-100 text-green-800 border-green-200',
-    success: 'bg-green-500 text-white border-green-600',
-    premium: 'bg-gradient-to-r from-green-500 to-emerald-600 text-white border-0'
+    default: 'bg-secondary/20 text-secondary border-secondary/30',
+    success: 'bg-primary text-primary-foreground border-primary',
+    premium: 'bg-gradient-to-r from-primary to-secondary text-primary-foreground border-0'
   };
 
   return (
