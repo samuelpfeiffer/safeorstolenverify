@@ -3,10 +3,11 @@ import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
-import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
-import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 import { AppDownloadSection } from '@/components/home/AppDownloadSection';
 import { getHomePageStructuredData } from '@/components/home/HomeStructuredData';
+import { SEOContentSection } from '@/components/seo/SEOContentSection';
+import { EnhancedFAQSchema } from '@/components/seo/EnhancedFAQSchema';
+import { ReviewSchema } from '@/components/seo/ReviewSchema';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -16,9 +17,9 @@ const Index = () => {
   return (
     <>
       <UnifiedSEOOptimizer
-        title="IMEI, VIN, and Serial Number Checker – SafeOrStolen Mobile App"
-        description="Download the SafeOrStolen app for instant stolen item verification. Check IMEI, VIN, and serial numbers to protect buyers and sellers."
-        keywords="verify stolen item, IMEI checker app, VIN check app, serial number check, stolen goods database, check if phone is stolen"
+        title="Free IMEI Checker, VIN Verification & Stolen Item Database | SafeOrStolen"
+        description="Verify if phones, cars & electronics are stolen before you buy. Free IMEI check, VIN verification & serial number lookup. Search stolen goods database instantly - 4 free checks!"
+        keywords="imei checker, vin verification, stolen item checker, check if phone is stolen, serial number lookup, stolen goods database, verify car not stolen, free imei check, stolen property database, check stolen items"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         competitiveKeywords="homepage"
@@ -30,18 +31,9 @@ const Index = () => {
       <div className="min-h-screen">
         <Hero />
         <AppDownloadSection />
-        
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-6">
-            <TestimonialsSection />
-          </div>
-        </section>
-
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-6">
-            <HighImpactFAQ />
-          </div>
-        </section>
+        <SEOContentSection />
+        <ReviewSchema />
+        <EnhancedFAQSchema />
         
         {(verificationId || serialNumber) && (
           <Suspense fallback={

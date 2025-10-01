@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import { SOSFooter } from '@/components/layout/SOSFooter';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
@@ -62,6 +63,7 @@ export const AppRoot: React.FC = () => {
                   <OptimizedLCPLoader />
                   <div className="min-h-screen bg-background text-foreground flex flex-col">
                     <TopNavigation />
+                    <BreadcrumbSchema />
                     <main className="flex-1 pt-20">
                       <Suspense fallback={<AppLoadingScreen />}>
                         <AppRoutes />
