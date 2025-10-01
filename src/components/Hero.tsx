@@ -30,6 +30,15 @@ const Hero = memo(() => {
   }, [isAuthenticated, navigate]);
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
+      {/* Full Width Hero Image */}
+      <div className="w-full">
+        <img 
+          src={heroImage} 
+          alt="SafeOrStolen verification on mobile and laptop showing item verified status" 
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
       {/* Modern Hero Section */}
       <div className="relative min-h-[85vh] flex items-center justify-center py-20">
         
