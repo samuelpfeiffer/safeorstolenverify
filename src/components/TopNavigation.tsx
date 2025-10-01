@@ -53,6 +53,8 @@ const TopNavigation = () => {
     },
     { label: 'Download App', href: '/download-app' },
     { label: 'Buyer Guide', href: '/buyer-guide' },
+    { label: 'Seller Guide', href: '/seller-guide' },
+    { label: 'vs CheckMend', href: '/vs/checkmend' },
     { label: 'Blog', href: '/blog' },
     { label: 'Features', href: '/features' },
     { label: 'How It Works', href: '/how-it-works' },

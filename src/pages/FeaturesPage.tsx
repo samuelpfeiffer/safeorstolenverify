@@ -4,14 +4,15 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { SuccessStories } from '@/components/story/SuccessStories';
 import { MarketplacePartners } from '@/components/marketplace/MarketplacePartners';
 import { ItemRegistration } from '@/components/registration/ItemRegistration';
+import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 
 const FeaturesPage = () => {
   return (
     <>
       <PageSEO
-        title="Features - SafeOrStolen Verification Platform"
-        description="Explore SafeOrStolen's comprehensive features including item registration, marketplace partnerships, and real-time verification services."
-        keywords="item verification, marketplace integration, stolen goods checker, item registration"
+        title="SafeOrStolen Mobile App Features - IMEI, VIN & Serial Number Verification"
+        description="Download the SafeOrStolen mobile app for iOS & Android. Features include instant IMEI verification, VIN checks, serial number lookup, barcode scanning, and offline verification. The only app buyers and sellers need for secondhand safety."
+        keywords="stolen item app features, IMEI checker app, VIN verification mobile app, serial number scanner, marketplace safety app, download verification app, anti-fraud app features, mobile stolen checker"
       />
       
       <div className="min-h-screen bg-background">
@@ -20,10 +21,10 @@ const FeaturesPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Comprehensive Protection Features
+                SafeOrStolen Mobile App Features
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                From verification to registration, we offer everything you need to buy and sell with confidence.
+                The world's only mobile app for instant stolen item verification. Download for iOS & Android to check IMEI, VIN, and serial numbers on-the-go. Protect yourself when buying or selling secondhand items.
               </p>
             </div>
           </div>
@@ -31,6 +32,14 @@ const FeaturesPage = () => {
 
         <ItemRegistration />
         <MarketplacePartners />
+        
+        {/* FAQ Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <HighImpactFAQ />
+          </div>
+        </section>
+        
         <SuccessStories />
         <FounderStory />
       </div>

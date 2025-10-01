@@ -7,6 +7,7 @@ import { createBreadcrumbSchema, createFAQSchema } from '@/utils/seo/structuredD
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Search, CheckCircle, Database } from 'lucide-react';
 import stolenLaptopImage from '@/assets/stolen-laptop-chase.png';
+import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 
 const HowItWorksPage: React.FC = () => {
   const steps = [
@@ -42,9 +43,9 @@ const HowItWorksPage: React.FC = () => {
   return (
     <>
       <EnhancedSEOHead 
-        title="How Safe or Stolen Works - IMEI, VIN & Serial Number Verification"
-        description="Learn exactly how Safe or Stolen checks IMEI, VIN, and serial numbers against stolen item databases. Step-by-step guide to our verification process."
-        keywords="how it works, stolen item checker, IMEI verification process, VIN check system, serial number lookup verification, database search methodology"
+        title="How the SafeOrStolen Mobile App Works - Instant IMEI & VIN Verification"
+        description="Download the SafeOrStolen app for iOS & Android to instantly check if items are stolen. Our mobile app verifies IMEI, VIN, and serial numbers in under 3 seconds. Learn how our instant verification protects buyers and sellers."
+        keywords="how stolen checker app works, IMEI verification app, VIN check mobile app, instant verification process, stolen item checker app, mobile verification guide, download safeorstolen app"
         canonical="/how-it-works"
         additionalSchemas={[breadcrumbSchema, faqSchema]}
       />
@@ -59,7 +60,7 @@ const HowItWorksPage: React.FC = () => {
                 How It Works
               </Badge>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 tracking-wide">
-                How <span className="text-sos-orange">SafeOrStolen</span> Works
+                How the <span className="text-sos-orange">SafeOrStolen App</span> Works
               </h1>
             </div>
             
@@ -67,7 +68,7 @@ const HowItWorksPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
                 <p className="text-xl text-gray-300 mb-8">
-                  Our advanced verification system checks IMEI, VIN, and serial numbers across multiple trusted databases to help protect you from purchasing stolen goods. Here's exactly how our process works.
+                  Download the SafeOrStolen mobile app for iOS & Android to instantly verify IMEI, VIN, and serial numbers. Our app checks multiple databases in under 3 seconds, protecting buyers and sellers from stolen goods. Here's exactly how our mobile verification works.
                 </p>
                 <div className="text-lg text-gray-300 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <p>✓ Real-time database searches</p>
@@ -232,35 +233,9 @@ const HowItWorksPage: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20">
+        <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">How does verification work?</h3>
-                <p className="text-muted-foreground">We check IMEI, VIN, and serial numbers against trusted databases from law enforcement, insurers, and registries to see if an item was reported lost or stolen.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">What items can I check?</h3>
-                <p className="text-muted-foreground">Phones, cars, bikes, electronics, tools, firearms, and more—anything with a unique identifier like IMEI, VIN, or serial number.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Is it free to use?</h3>
-                <p className="text-muted-foreground">Yes—get daily free checks with optional upgrades for power users and businesses who need unlimited verifications.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">How fast are results?</h3>
-                <p className="text-muted-foreground">Instant. You'll see a clear Safe, Lost, or Stolen status along with useful guidance within seconds of submitting your search.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">What databases do you search?</h3>
-                <p className="text-muted-foreground">We search law enforcement databases, insurance company records, device registries, and community reports to provide comprehensive coverage.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">How accurate are the results?</h3>
-                <p className="text-muted-foreground">Our verification system provides real-time results from authoritative sources, giving you the most up-to-date information available.</p>
-              </div>
-            </div>
+            <HighImpactFAQ />
           </div>
         </section>
 

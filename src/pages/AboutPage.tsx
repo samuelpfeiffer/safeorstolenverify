@@ -109,9 +109,9 @@ const AboutPage = () => {
   return (
     <>
       <PageSEO
-        title="About SafeOrStolen.com - Expert Stolen Item Verification Service"
-        description="Learn about SafeOrStolen.com's expert team, law enforcement partnerships, and 99.7% accurate verification process. Trusted by consumers and businesses nationwide."
-        keywords="about safeorstolen, stolen item verification experts, law enforcement partnerships, fraud prevention team"
+        title="About SafeOrStolen - The Only Mobile App for Stolen Item Verification"
+        description="World's first mobile app for instant stolen item verification. Download SafeOrStolen for iOS & Android to check IMEI, VIN, serial numbers. Protect buyers and sellers with our expert team and law enforcement partnerships."
+        keywords="about safeorstolen app, stolen item verification mobile app, IMEI checker app, VIN verification app, secondhand safety experts, fraud prevention mobile app, download stolen checker app"
         structuredData={structuredData}
       />
       
@@ -121,11 +121,10 @@ const AboutPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                About SafeOrStolen.com
+                About SafeOrStolen - The Mobile App That Protects Buyers & Sellers
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                The world's most trusted verification service for checking if items are reported as lost or stolen. 
-                Founded by cybersecurity experts and backed by law enforcement partnerships.
+                The world's only mobile app for instant stolen item verification. Download SafeOrStolen on iOS & Android to check IMEI, VIN, and serial numbers before buying or selling. Founded by cybersecurity experts and backed by law enforcement partnerships.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="secondary" className="text-lg px-4 py-2">
