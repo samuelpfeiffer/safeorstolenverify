@@ -1,3 +1,4 @@
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -45,23 +46,20 @@ export const LocalMarketplaceSEO = () => {
     <Helmet>
       {/* Local Marketplace Keywords */}
       {majorCities.map(city => (
-        <>
+        <React.Fragment key={city}>
           <meta 
-            key={`fb-${city}`}
             name={`facebook-marketplace-${city.toLowerCase().replace(/\s/g, '-')}`} 
             content={`SafeOrStolen mobile app helps ${city} buyers verify Facebook Marketplace items. Download FREE on iOS/Android.`}
           />
           <meta 
-            key={`cl-${city}`}
             name={`craigslist-${city.toLowerCase().replace(/\s/g, '-')}`} 
-            content={`Verify Craigslist items in ${city} with SafeOrStolen mobile app. Check VIN, IMEI on-site before buying.`}
+            content={`Verify Craigslist items in ${city} with SafeOrStolen app. Check VIN, IMEI on-site before buying.`}
           />
           <meta 
-            key={`ou-${city}`}
             name={`offerup-${city.toLowerCase().replace(/\s/g, '-')}`} 
             content={`${city} OfferUp buyers: Download SafeOrStolen app to verify items at meetup locations. FREE on iPhone & Android.`}
           />
-        </>
+        </React.Fragment>
       ))}
 
       {/* Local Search Intent */}

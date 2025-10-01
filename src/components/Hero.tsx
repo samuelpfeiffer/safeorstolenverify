@@ -59,7 +59,7 @@ const Hero = memo(() => {
             </div>
 
             {/* MOBILE APP HEADLINE - FOR BUYERS, SELLERS & BUSINESSES */}
-            <h1 id="main-headline" className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight tracking-tight animate-slideUp">
+            <div className="text-5xl sm:text-6xl md:text-7xl font-bold text-foreground leading-tight tracking-tight animate-slideUp">
               📱 FREE Mobile App for 
               <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
                 Buyers • Sellers • Businesses
@@ -67,7 +67,7 @@ const Hero = memo(() => {
               <span className="block mt-4 text-3xl sm:text-4xl md:text-5xl">
                 Verify Items on Facebook Marketplace, OfferUp, Craigslist, eBay
               </span>
-            </h1>
+            </div>
             
             {/* MOBILE APP VALUE PROP - ALL AUDIENCES */}
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
@@ -138,9 +138,9 @@ const Hero = memo(() => {
       {/* FOR BUYERS, SELLERS & BUSINESSES */}
       <div className="container mx-auto px-6 pb-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             ONLY Mobile App for Buyers, Sellers & Businesses
-          </h2>
+          </h1>
           <p className="text-lg text-muted-foreground">
             Download FREE on iPhone & Android • Works on Facebook Marketplace, OfferUp, Craigslist, eBay
           </p>
