@@ -102,15 +102,15 @@ export const FloatingAdCarousel: React.FC = () => {
 
   return (
     <>
-      {/* Floating Carousel */}
+      {/* Floating Carousel - More Prominent */}
       <div 
-        className="fixed bottom-8 right-8 z-40 w-80 bg-card/95 backdrop-blur-md rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in"
+        className="fixed bottom-4 right-4 z-50 w-96 bg-card/98 backdrop-blur-lg rounded-2xl shadow-2xl border-2 border-primary/30 overflow-hidden animate-fade-in"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Ad Image */}
         <div 
-          className="relative h-48 cursor-pointer group overflow-hidden"
+          className="relative h-64 cursor-pointer group overflow-hidden"
           onClick={handleAdClick}
         >
           <OptimizedImage
