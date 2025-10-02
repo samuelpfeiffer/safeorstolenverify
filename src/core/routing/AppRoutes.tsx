@@ -135,6 +135,10 @@ const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
 const OurTeamPage = lazy(() => import('@/pages/OurTeamPage'));
 const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 
+// Dynamic SEO Expansion Templates
+const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
+const ItemVerificationPage = lazy(() => import('@/pages/templates/ItemVerificationPage'));
+
 /**
  * Enterprise Application Routing
  * Handles all application routes with proper lazy loading and access control
@@ -376,9 +380,50 @@ export const AppRoutes: React.FC = () => {
              </AdminRoute>
            } />
 
-        {/* Catch all - 404 */}
-        <Route path="/404" element={<NotFoundPage />} />
-        <Route path="404" element={<NotFoundPage />} />
+         {/* Dynamic SEO Expansion Routes (2000+ pages) */}
+         {/* City-specific verification pages */}
+         <Route path="city/:city/:service" element={<CityVerificationPage />} />
+         
+         {/* Item-specific verification pages */}
+         <Route path="check-:item" element={<ItemVerificationPage />} />
+         
+         {/* Marketplace-specific pages */}
+         <Route path="facebook-marketplace-stolen-check" element={<StolenItemChecker />} />
+         <Route path="craigslist-verification-guide" element={<StolenItemChecker />} />
+         <Route path="ebay-stolen-item-checker" element={<StolenItemChecker />} />
+         <Route path="offerup-safety-verification" element={<StolenItemChecker />} />
+         
+         {/* State pages */}
+         <Route path="state/:state/stolen-item-checker" element={<CityVerificationPage />} />
+         
+         {/* How-to guides */}
+         <Route path="how-to-check-if-iphone-is-stolen" element={<HowToCheckStolenItems />} />
+         <Route path="how-to-verify-phone-not-stolen" element={<HowToCheckStolenItems />} />
+         <Route path="how-to-check-if-car-is-stolen-before-buying" element={<VINVerification />} />
+         <Route path="how-to-avoid-buying-stolen-iphone" element={<HowToCheckStolenItems />} />
+         
+         {/* Competitor comparison pages */}
+         <Route path="vs-carfax" element={<ComparisonCheckMendPage />} />
+         <Route path="cheaper-than-carfax" element={<VINVerification />} />
+         <Route path="free-vin-check-alternative" element={<VINVerification />} />
+         
+         {/* Business use case pages */}
+         <Route path="for-phone-repair-shops" element={<ForBrandsPage />} />
+         <Route path="for-used-car-dealers" element={<ForBrandsPage />} />
+         <Route path="for-insurance-companies" element={<ForBrandsPage />} />
+         
+         {/* Mobile app pages */}
+         <Route path="ios-app" element={<AppDownloadPage />} />
+         <Route path="android-app" element={<AppDownloadPage />} />
+         <Route path="mobile-app" element={<AppDownloadPage />} />
+         
+         {/* Blog expansion */}
+         <Route path="blog/2025-stolen-goods-statistics" element={<StolenGoodsStatisticsPage />} />
+         <Route path="blog/most-stolen-items-2025" element={<TheftTrendsBlogPage />} />
+
+         {/* Catch all - 404 */}
+         <Route path="/404" element={<NotFoundPage />} />
+         <Route path="404" element={<NotFoundPage />} />
         
         {/* Clean redirects without double slashes */}
         <Route path="security" element={<Navigate to="/security-settings" replace />} />

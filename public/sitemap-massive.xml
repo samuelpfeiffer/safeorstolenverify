@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- CORE PAGES - Priority 1.0 -->
+  <url>
+    <loc>https://safeorstolen.com/</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- MOBILE APP PAGES - Priority 1.0 (BREAD & BUTTER) -->
+  <url>
+    <loc>https://safeorstolen.com/app</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/download-app</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/mobile-app</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/ios-app</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/android-app</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- CORE VERIFICATION SERVICES - Priority 0.9 -->
+  <url>
+    <loc>https://safeorstolen.com/imei-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/vin-verification</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/serial-number-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- ITEM CATEGORY PAGES - Priority 0.9 -->
+  <url>
+    <loc>https://safeorstolen.com/check-phone</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-car</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-electronics</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-bike</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/firearms-check</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- ELECTRONICS - SPECIFIC DEVICES (40 pages) -->
+  <url>
+    <loc>https://safeorstolen.com/check-iphone</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-iphone-15</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-iphone-14</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-samsung-phone</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-android-phone</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-laptop</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-macbook</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-ipad</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-tablet</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-camera</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-playstation</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-xbox</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-nintendo-switch</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-apple-watch</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- VEHICLES - BRANDS (20 pages) -->
+  <url>
+    <loc>https://safeorstolen.com/check-tesla</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-bmw</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-mercedes</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-toyota</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-honda</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-ford</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/check-motorcycle</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- LONG-TAIL HOW-TO PAGES (High Priority) -->
+  <url>
+    <loc>https://safeorstolen.com/how-to-check-if-iphone-is-stolen</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/how-to-verify-phone-not-stolen</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/how-to-check-if-car-is-stolen-before-buying</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/how-to-avoid-buying-stolen-iphone</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- MARKETPLACE-SPECIFIC PAGES (Critical for Traffic) -->
+  <url>
+    <loc>https://safeorstolen.com/facebook-marketplace-stolen-check</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/craigslist-verification-guide</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/ebay-stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/offerup-safety-verification</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- COMPETITOR COMPARISON PAGES (Beat them at their own game) -->
+  <url>
+    <loc>https://safeorstolen.com/vs-checkmend</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/vs-carfax</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/cheaper-than-carfax</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/free-vin-check-alternative</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- TOP 100 US CITIES - 3 PAGES EACH (300 total) -->
+  <!-- New York, NY -->
+  <url>
+    <loc>https://safeorstolen.com/city/new-york-ny/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/city/new-york-ny/imei-check</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/city/new-york-ny/vin-verification</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Los Angeles, CA -->
+  <url>
+    <loc>https://safeorstolen.com/city/los-angeles-ca/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/city/los-angeles-ca/imei-check</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/city/los-angeles-ca/vin-verification</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Chicago, IL -->
+  <url>
+    <loc>https://safeorstolen.com/city/chicago-il/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/city/chicago-il/imei-check</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/city/chicago-il/vin-verification</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- NOTE: Full sitemap contains all 2000+ URLs -->
+  <!-- This is a representative sample showing structure -->
+  <!-- Complete generation happens dynamically via generateMassiveSitemap() -->
+  
+  <!-- STATE PAGES (50 states) -->
+  <url>
+    <loc>https://safeorstolen.com/state/california/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/state/texas/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/state/florida/stolen-item-checker</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- BUSINESS USE CASE PAGES -->
+  <url>
+    <loc>https://safeorstolen.com/for-pawn-shops</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/for-used-car-dealers</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/for-phone-repair-shops</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- BLOG CONTENT -->
+  <url>
+    <loc>https://safeorstolen.com/blog/2025-stolen-goods-statistics</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <url>
+    <loc>https://safeorstolen.com/blog/most-stolen-items-2025</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  
+</urlset>
