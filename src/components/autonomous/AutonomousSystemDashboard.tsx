@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { CronJobsSetup } from './CronJobsSetup';
 
 export const AutonomousSystemDashboard: React.FC = () => {
   const [systemStatus, setSystemStatus] = useState<any>(null);
@@ -162,6 +163,9 @@ export const AutonomousSystemDashboard: React.FC = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Cron Jobs Setup */}
+      <CronJobsSetup />
 
       {/* Manual Controls */}
       <Card>

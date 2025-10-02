@@ -43,6 +43,7 @@ const CompleteVerificationGuidePost = lazy(() => import('@/pages/blog/CompleteVe
 const DeviceSafetyGuidePost = lazy(() => import('@/pages/blog/DeviceSafetyGuidePost'));
 const AISEOPage = lazy(() => import('@/pages/AISEOPage'));
 const SecurityDashboard = lazy(() => import('@/pages/SecurityDashboard'));
+const AutonomousSystemPage = lazy(() => import('@/pages/AutonomousSystemPage'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
@@ -372,6 +373,11 @@ export const AppRoutes: React.FC = () => {
            <Route path="ai-seo" element={
              <AdminRoute>
                <AISEOPage />
+             </AdminRoute>
+           } />
+           <Route path="autonomous-system" element={
+             <AdminRoute>
+               <AutonomousSystemPage />
              </AdminRoute>
            } />
            <Route path="security" element={

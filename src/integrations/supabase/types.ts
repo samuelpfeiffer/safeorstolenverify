@@ -443,6 +443,27 @@ export type Database = {
         }
         Relationships: []
       }
+      autonomous_system_metrics: {
+        Row: {
+          created_at: string | null
+          id: string
+          metric_type: string
+          metric_value: Json
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          metric_type: string
+          metric_value: Json
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          metric_type?: string
+          metric_value?: Json
+        }
+        Relationships: []
+      }
       blog_categories: {
         Row: {
           color: string | null
