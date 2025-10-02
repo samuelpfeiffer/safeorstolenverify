@@ -8,6 +8,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { getBlogPostMetadata } from '@/utils/seo/metadata';
 import { createArticleSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import DOMPurify from 'dompurify';
+import { SmartAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -175,6 +176,9 @@ const BlogPostPage = () => {
                 })
               }}
             />
+
+            {/* Contextual Ad */}
+            <SmartAdPlacement placement="inline" />
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (

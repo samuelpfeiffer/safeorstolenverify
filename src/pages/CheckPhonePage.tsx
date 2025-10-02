@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Smartphone, Shield, Search, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const CheckPhonePage: React.FC = () => {
   const [imei, setImei] = useState('');
@@ -185,6 +186,9 @@ const CheckPhonePage: React.FC = () => {
               </Card>
             </div>
           </div>
+
+          {/* Contextual Ad */}
+          <ContextualAdPlacement context="smartphone" placement="inline" />
 
           {/* FAQ */}
           <ComprehensiveFAQ pageType="phone" maxItems={6} showCategories={false} />

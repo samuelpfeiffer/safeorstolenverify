@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Laptop, Shield, Search, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { detectItemType, getItemTypeDisplayName } from '@/utils/itemTypeDetector';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const CheckElectronicsPage: React.FC = () => {
   const [serialNumber, setSerialNumber] = useState('');
@@ -206,6 +207,9 @@ const CheckElectronicsPage: React.FC = () => {
               </Card>
             </div>
           </div>
+
+          {/* Contextual Ad */}
+          <ContextualAdPlacement context="verification" placement="inline" />
 
           {/* FAQ */}
           <div className="max-w-3xl mx-auto mt-16">

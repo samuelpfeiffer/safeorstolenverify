@@ -3,6 +3,7 @@ import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { Link } from 'react-router-dom';
 import { Shield, Search, Database, Users, Zap, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SmartAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const ServicesPage = () => {
   const services = [
@@ -97,6 +98,9 @@ const ServicesPage = () => {
               </div>
             ))}
           </div>
+
+          {/* Strategic Ad Placement */}
+          <SmartAdPlacement placement="inline" />
 
           {/* CTA Section */}
           <div className="bg-primary/10 rounded-lg p-8 text-center border border-primary/20">
