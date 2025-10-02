@@ -37,9 +37,8 @@ export const AppDownloadSection = () => {
                   className="rounded-2xl shadow-xl w-full"
                   width="800"
                   height="600"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
-                  fetchPriority="high"
                 />
               </div>
               {/* Floating badge */}

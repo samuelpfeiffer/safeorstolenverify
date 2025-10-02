@@ -31,7 +31,7 @@ const Hero = memo(() => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
       {/* Full Width Hero Image - Optimized for LCP */}
-      <div className="w-full">
+      <div className="w-full" style={{ aspectRatio: '16/9' }}>
         <img 
           src={heroImage} 
           alt="SafeOrStolen verification on mobile and laptop showing item verified status" 
@@ -41,6 +41,7 @@ const Hero = memo(() => {
           loading="eager"
           decoding="async"
           fetchPriority="high"
+          style={{ display: 'block' }}
         />
       </div>
 

@@ -4,6 +4,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CRITICAL: Preload hero image FIRST for LCP -->
+    <link rel="preload" as="image" href="/src/assets/hero-verification-devices.png" fetchpriority="high" />
+    <link rel="preload" as="style" href="/src/index.css" />
+    
     <title>Free IMEI, VIN & Firearm Serial Checker Mobile App | iOS & Android | SafeOrStolen</title>
     <meta name="description" content="✓ ONLY verification mobile app with firearms checking! ✓ Free IMEI check ✓ VIN verification ✓ Gun serial number lookup - CheckMend, IMEIinfo have NO mobile apps or firearms checking! Download SafeOrStolen for iOS & Android. 4 FREE searches!">
     <meta name="author" content="SafeOrStolen" />
@@ -96,11 +101,8 @@
     
     <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png">
     
-    <!-- CRITICAL: Preload hero image for LCP optimization -->
-    <link rel="preload" as="image" href="/src/assets/hero-verification-devices.png" fetchpriority="high" />
-    
-    <!-- Production Analytics - Replace with actual GA4 ID; defer config to reduce main thread work -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Defer non-critical analytics -->
+    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.addEventListener('load', function(){
         window.dataLayer = window.dataLayer || [];
