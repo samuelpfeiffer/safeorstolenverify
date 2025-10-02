@@ -9,7 +9,6 @@ import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
-import { FloatingAdCarousel } from '@/components/advertising/FloatingAdCarousel';
 import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
 import { AdvertisingStrategy } from '@/components/advertising/AdvertisingStrategy';
 import { AdvancedSEOManager } from '@/components/advertising/AdvancedSEOManager';
@@ -69,9 +68,6 @@ const Index = () => {
           </Suspense>
         )}
       </div>
-      
-      {/* Floating Ad Carousel */}
-      <FloatingAdCarousel />
       
       {/* Dynamic Conversion Elements */}
       <DynamicCTASystem />

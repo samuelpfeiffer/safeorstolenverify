@@ -157,7 +157,10 @@ serve(async (req) => {
         'savvy shopper': ['savvy shopper', 'premium plan', 'premium', 'pro', 'popular'],  
         'business pro': ['business pro', 'enterprise plan', 'enterprise', 'business'],
         'entry level': ['entry level', 'entry', 'individual', 'starter'],
-        'pay per check': ['pay per check', 'single', 'one-time', 'per check'],
+        'pay per check': ['pay per check', 'pay per lookup', 'single', 'one-time', 'per check', 'lookup'],
+        'pay per lookup': ['pay per lookup', 'pay per check', 'single', 'one-time', 'per check', 'lookup'],
+        'personal use': ['personal use', 'personal', 'instantly check'],
+        'professional': ['professional', 'stolen item lookup', 'pro'],
         'report': ['certified stolen', 'report', 'single report', 'verification']
       };
       
