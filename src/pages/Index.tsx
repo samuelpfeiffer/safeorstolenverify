@@ -17,6 +17,7 @@ import { DynamicCTASystem } from '@/components/advertising/DynamicCTASystem';
 import { SocialProofEngine } from '@/components/advertising/SocialProofEngine';
 import { ConversionOptimizer } from '@/components/advertising/ConversionOptimizer';
 import { KeywordTargeting } from '@/components/advertising/KeywordTargeting';
+import { PerformanceMonitor } from '@/components/performance/PerformanceMonitor';
 import familyProtection from '@/assets/ads/family-protection.jpg';
 
 const Index = () => {
@@ -75,6 +76,9 @@ const Index = () => {
       {/* Dynamic Conversion Elements */}
       <DynamicCTASystem />
       <SocialProofEngine />
+      
+      {/* Performance Monitoring (Dev Only) */}
+      <PerformanceMonitor />
     </>
   );
 };

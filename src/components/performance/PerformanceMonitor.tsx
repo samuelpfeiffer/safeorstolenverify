@@ -1,125 +1,58 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { usePerformanceOptimization } from '@/hooks/usePerformanceOptimization';
+import { Card, CardContent } from '@/components/ui/card';
+import { Zap, TrendingUp, AlertCircle } from 'lucide-react';
 
-interface PerformanceMetrics {
-  loadTime: number;
-  domContentLoaded: number;
-  firstContentfulPaint: number;
-  largestContentfulPaint: number;
-  cumulativeLayoutShift: number;
-  firstInputDelay: number;
-}
-
-interface PerformanceMonitorProps {
-  onMetrics?: (metrics: PerformanceMetrics) => void;
-  threshold?: {
-    loadTime?: number;
-    fcp?: number;
-    lcp?: number;
-    cls?: number;
-    fid?: number;
-  };
-}
-
-export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
-  onMetrics,
-  threshold = {
-    loadTime: 3000,
-    fcp: 1800,
-    lcp: 2500,
-    cls: 0.1,
-    fid: 100
-  }
-}) => {
-  const hasReported = useRef(false);
+export const PerformanceMonitor = () => {
+  const { metrics, isOptimizing } = usePerformanceOptimization();
+  const [showMonitor, setShowMonitor] = useState(false);
 
   useEffect(() => {
-    if (hasReported.current) return;
+    const isDev = window.location.hostname === 'localhost';
+    const showParam = new URLSearchParams(window.location.search).has('perf');
+    setShowMonitor(isDev || showParam);
+  }, []);
 
-    const measurePerformance = () => {
-      if (!('performance' in window)) return;
+  if (!showMonitor || !metrics) return null;
 
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      const fcpEntry = performance.getEntriesByName('first-contentful-paint')[0];
-      const lcpEntries = performance.getEntriesByType('largest-contentful-paint');
-      
-      const metrics: PerformanceMetrics = {
-        loadTime: Math.round(navigation.loadEventEnd - navigation.fetchStart),
-        domContentLoaded: Math.round(navigation.domContentLoadedEventEnd - navigation.fetchStart),
-        firstContentfulPaint: Math.round(fcpEntry?.startTime || 0),
-        largestContentfulPaint: Math.round(lcpEntries[lcpEntries.length - 1]?.startTime || 0),
-        cumulativeLayoutShift: 0,
-        firstInputDelay: 0
-      };
+  const getScoreColor = (score: number, thresholds: [number, number]) => {
+    if (score <= thresholds[0]) return 'text-green-500';
+    if (score <= thresholds[1]) return 'text-yellow-500';
+    return 'text-red-500';
+  };
 
-      // Measure CLS
-      if ('PerformanceObserver' in window) {
-        try {
-          const clsObserver = new PerformanceObserver((entryList) => {
-            for (const entry of entryList.getEntries()) {
-              if (!(entry as any).hadRecentInput) {
-                metrics.cumulativeLayoutShift += (entry as any).value;
-              }
-            }
-          });
-          clsObserver.observe({ entryTypes: ['layout-shift'] });
+  return (
+    <div className="fixed bottom-4 right-4 z-50 max-w-sm">
+      <Card className="bg-black/90 backdrop-blur-lg border-gray-700">
+        <CardContent className="p-4 text-white">
+          <div className="flex items-center gap-2 mb-3">
+            <Zap className="h-5 w-5 text-yellow-400" />
+            <h3 className="font-bold">Performance</h3>
+            {isOptimizing && <TrendingUp className="h-4 w-4 text-blue-400 animate-pulse" />}
+          </div>
 
-          // Measure FID
-          const fidObserver = new PerformanceObserver((entryList) => {
-            for (const entry of entryList.getEntries()) {
-              metrics.firstInputDelay = Math.round((entry as any).processingStart - entry.startTime);
-            }
-          });
-          fidObserver.observe({ entryTypes: ['first-input'] });
-
-          // Stop observing after 10 seconds
-          setTimeout(() => {
-            clsObserver.disconnect();
-            fidObserver.disconnect();
-          }, 10000);
-        } catch (e) {
-          // Silently fail if PerformanceObserver is not supported
-        }
-      }
-
-      // Report metrics
-      if (onMetrics) {
-        onMetrics(metrics);
-      }
-
-      // Log performance warnings
-      const warnings = [];
-      if (metrics.loadTime > (threshold.loadTime || 3000)) {
-        warnings.push(`Slow load time: ${metrics.loadTime}ms`);
-      }
-      if (metrics.firstContentfulPaint > (threshold.fcp || 1800)) {
-        warnings.push(`Slow FCP: ${metrics.firstContentfulPaint}ms`);
-      }
-      if (metrics.largestContentfulPaint > (threshold.lcp || 2500)) {
-        warnings.push(`Slow LCP: ${metrics.largestContentfulPaint}ms`);
-      }
-      if (metrics.cumulativeLayoutShift > (threshold.cls || 0.1)) {
-        warnings.push(`High CLS: ${metrics.cumulativeLayoutShift}`);
-      }
-      if (metrics.firstInputDelay > (threshold.fid || 100)) {
-        warnings.push(`High FID: ${metrics.firstInputDelay}ms`);
-      }
-
-      if (warnings.length > 0) {
-        console.warn('Performance issues detected:', warnings.join(', '));
-      }
-
-      hasReported.current = true;
-    };
-
-    // Wait for page to fully load
-    if (document.readyState === 'complete') {
-      setTimeout(measurePerformance, 1000);
-    } else {
-      window.addEventListener('load', () => {
-        setTimeout(measurePerformance, 1000);
-      });
-    }
-  }, [onMetrics, threshold]);
-
-  return null;
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between">
+              <span>Load:</span>
+              <span className={getScoreColor(metrics.loadTime, [1000, 3000])}>
+                {metrics.loadTime.toFixed(0)}ms
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span>FCP:</span>
+              <span className={getScoreColor(metrics.firstContentfulPaint, [1800, 3000])}>
+                {metrics.firstContentfulPaint.toFixed(0)}ms
+              </span>
+            </div>
+            {metrics.loadTime > 3000 && (
+              <div className="flex items-start gap-2 mt-3 p-2 bg-red-500/20 rounded text-xs">
+                <AlertCircle className="h-4 w-4 text-red-400" />
+                <p className="text-red-300">AI optimizing...</p>
+              </div>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
 };

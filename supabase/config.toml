@@ -44,3 +44,13 @@ verify_jwt = false
 
 [functions.ai-ranking-analyzer]
 verify_jwt = false
+
+[functions.ai-seo-optimizer]
+verify_jwt = false
+
+[functions.ai-performance-analyzer]
+verify_jwt = false
+
+[functions.ai-ad-optimizer]
+verify_jwt = false
+
