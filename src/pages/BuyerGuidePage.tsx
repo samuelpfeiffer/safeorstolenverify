@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Shield, AlertTriangle, CheckCircle, Search, FileText, DollarSign, Scale } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import familyProtection from '@/assets/ads/family-protection.jpg';
 
 const BuyerGuidePage = () => {
   const navigate = useNavigate();
@@ -283,12 +281,6 @@ const BuyerGuidePage = () => {
               </ul>
             </CardContent>
           </Card>
-
-          {/* Paranoia Ad */}
-          <ParanoiaAd 
-            src={familyProtection} 
-            alt="Protect yourself and your family when buying used goods with SafeOrStolen.com"
-          />
           
           {/* Trust-Building Ad */}
           <div className="my-8">

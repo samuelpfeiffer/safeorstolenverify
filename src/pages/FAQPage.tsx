@@ -5,8 +5,6 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import runningDeal from '@/assets/ads/running-deal.jpg';
 
 const FAQPage = () => {
   const faqCategories = [
@@ -222,12 +220,6 @@ const FAQPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Paranoia Ad */}
-        <ParanoiaAd 
-          src={runningDeal} 
-          alt="Don't run away from making a good deal - verify items on SafeOrStolen.com"
-        />
         
         {/* Featured Ad */}
         <div className="container mx-auto px-4 py-8">

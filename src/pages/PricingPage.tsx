@@ -12,11 +12,8 @@ import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
-import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import devilDeal from '@/assets/ads/devil-deal.jpg';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -302,15 +299,6 @@ const PricingPage = () => {
           onSubscribe={handleSubscribe}
           loadingTier={loadingTier}
         />
-        
-        {/* Paranoia Ad */}
-        <ParanoiaAd 
-          src={devilDeal} 
-          alt="Deal too good to be true? Better check it on SafeOrStolen.com"
-          size="large"
-        />
-        
-        <StrategicAdPlacement placement="banner" />
         
         {/* Temporary validation section */}
         {searchParams.get('test') === 'true' && (

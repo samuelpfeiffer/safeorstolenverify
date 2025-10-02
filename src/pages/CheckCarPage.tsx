@@ -10,8 +10,6 @@ import { Button } from '@/components/ui/button';
 import { Car, Shield, Search, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import devilDeal from '@/assets/ads/devil-deal.jpg';
 
 const CheckCarPage: React.FC = () => {
   const [vin, setVin] = useState('');
@@ -183,13 +181,6 @@ const CheckCarPage: React.FC = () => {
               </Card>
             </div>
           </div>
-
-          {/* Paranoia Ad */}
-          <ParanoiaAd 
-            src={devilDeal} 
-            alt="Deal too good to be true? Better check it on SafeOrStolen.com"
-            size="small"
-          />
           
           {/* Contextual Ad */}
           <ContextualAdPlacement context="vehicle" placement="inline" />

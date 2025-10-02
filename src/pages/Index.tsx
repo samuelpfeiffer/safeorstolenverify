@@ -9,15 +9,12 @@ import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
 import { AdvertisingStrategy } from '@/components/advertising/AdvertisingStrategy';
 import { AdvancedSEOManager } from '@/components/advertising/AdvancedSEOManager';
-import { DynamicCTASystem } from '@/components/advertising/DynamicCTASystem';
 import { SocialProofEngine } from '@/components/advertising/SocialProofEngine';
 import { ConversionOptimizer } from '@/components/advertising/ConversionOptimizer';
 import { KeywordTargeting } from '@/components/advertising/KeywordTargeting';
 import { PerformanceMonitor } from '@/components/performance/PerformanceMonitor';
-import familyProtection from '@/assets/ads/family-protection.jpg';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -47,13 +44,6 @@ const Index = () => {
       <Hero />
       <AppDownloadSection />
       
-      {/* Strategic Paranoia Ad - Homepage */}
-      <ParanoiaAd 
-        src={familyProtection} 
-        alt="Protect yourself and your family when buying used goods with SafeOrStolen.com"
-        size="large"
-      />
-      
       <SEOContentSection />
       <InternalLinkingStrategy />
         
@@ -70,7 +60,6 @@ const Index = () => {
       </div>
       
       {/* Dynamic Conversion Elements */}
-      <DynamicCTASystem />
       <SocialProofEngine />
       
       {/* Performance Monitoring (Dev Only) */}

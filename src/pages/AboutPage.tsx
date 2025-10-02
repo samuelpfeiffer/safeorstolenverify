@@ -8,8 +8,6 @@ import { SuccessStories } from '@/components/story/SuccessStories';
 import { MarketplacePartners } from '@/components/marketplace/MarketplacePartners';
 import { ItemRegistration } from '@/components/registration/ItemRegistration';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import handshakeConfidence from '@/assets/ads/handshake-confidence.jpg';
 
 const AboutPage = () => {
   const teamMembers = [
@@ -284,12 +282,6 @@ const AboutPage = () => {
 
         {/* Success Stories */}
         <SuccessStories />
-
-        {/* Paranoia Ad */}
-        <ParanoiaAd 
-          src={handshakeConfidence} 
-          alt="Feel confident about the deals you make with SafeOrStolen.com verification"
-        />
 
         {/* Featured Trust Ad */}
         <div className="container mx-auto px-4 py-8">

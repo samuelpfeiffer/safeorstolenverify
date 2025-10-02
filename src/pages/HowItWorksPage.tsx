@@ -3,9 +3,6 @@ import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, Lock, Globe, Clock } from 'lucide-react';
-import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import familyProtection from '@/assets/ads/family-protection.jpg';
 
 const HowItWorksPage = () => {
   const steps = [
@@ -204,15 +201,6 @@ const HowItWorksPage = () => {
             </div>
           </div>
         </section>
-
-        {/* Paranoia Ad */}
-        <ParanoiaAd 
-          src={familyProtection} 
-          alt="Protect yourself and your family when buying used goods with SafeOrStolen.com"
-        />
-        
-        {/* Strategic Ad Placement */}
-        <StrategicAdPlacement placement="banner" />
 
         {/* CTA Section */}
         <section className="py-20">

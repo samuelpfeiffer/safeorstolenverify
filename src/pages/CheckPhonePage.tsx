@@ -12,8 +12,6 @@ import { Smartphone, Shield, Search, CheckCircle, AlertTriangle } from 'lucide-r
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
-import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
-import runningDeal from '@/assets/ads/running-deal.jpg';
 
 const CheckPhonePage: React.FC = () => {
   const [imei, setImei] = useState('');
@@ -188,13 +186,6 @@ const CheckPhonePage: React.FC = () => {
               </Card>
             </div>
           </div>
-
-          {/* Paranoia Ad */}
-          <ParanoiaAd 
-            src={runningDeal} 
-            alt="Don't run away from making a good deal - verify items on SafeOrStolen.com"
-            size="small"
-          />
           
           {/* Contextual Ad */}
           <ContextualAdPlacement context="smartphone" placement="inline" />

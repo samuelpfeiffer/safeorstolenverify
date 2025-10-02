@@ -5,7 +5,6 @@ import { ConsumerHeader } from '@/components/consumers/ConsumerHeader';
 import { ConsumerFeatures } from '@/components/consumers/ConsumerFeatures';
 import { ConsumerPricing } from '@/components/consumers/ConsumerPricing';
 import { ConsumerCTA } from '@/components/consumers/ConsumerCTA';
-import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
 
 const ForConsumersPage: React.FC = () => {
   const navigate = useNavigate();
@@ -30,7 +29,6 @@ const ForConsumersPage: React.FC = () => {
       <div className="min-h-screen bg-background">
         <ConsumerHeader />
         <ConsumerFeatures />
-        <StrategicAdPlacement placement="inline" />
         <div id="consumer-pricing">
           <ConsumerPricing onSubscribeClick={handleSubscribeClick} isLoading={false} />
         </div>
