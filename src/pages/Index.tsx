@@ -9,9 +9,10 @@ import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
-
 import { FloatingAdCarousel } from '@/components/advertising/FloatingAdCarousel';
-import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
+import { AdvertisingStrategy } from '@/components/advertising/AdvertisingStrategy';
+import familyProtection from '@/assets/ads/family-protection.jpg';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -20,6 +21,7 @@ const Index = () => {
 
   return (
     <>
+      <AdvertisingStrategy />
       <OrganizationSchema />
       <WebSiteSchema />
       <UnifiedSEOOptimizer
@@ -34,6 +36,14 @@ const Index = () => {
       <div className="min-h-screen">
       <Hero />
       <AppDownloadSection />
+      
+      {/* Strategic Paranoia Ad - Homepage */}
+      <ParanoiaAd 
+        src={familyProtection} 
+        alt="Protect yourself and your family when buying used goods with SafeOrStolen.com"
+        size="large"
+      />
+      
       <SEOContentSection />
       <InternalLinkingStrategy />
         
