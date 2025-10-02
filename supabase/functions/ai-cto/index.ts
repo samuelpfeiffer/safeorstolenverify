@@ -129,11 +129,17 @@ Return as JSON:
     }
 
     // Update CTO executive status
+    const { data: currentExec } = await supabase
+      .from('ai_executives')
+      .select('decisions_count')
+      .eq('role', 'CTO')
+      .single();
+    
     await supabase
       .from('ai_executives')
       .update({
         last_decision_at: new Date().toISOString(),
-        decisions_count: supabase.raw('decisions_count + ' + (decisionsToStore?.length || 0)),
+        decisions_count: (currentExec?.decisions_count || 0) + (decisionsToStore?.length || 0),
         updated_at: new Date().toISOString()
       })
       .eq('role', 'CTO');

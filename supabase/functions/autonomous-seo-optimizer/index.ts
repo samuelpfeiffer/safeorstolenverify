@@ -31,11 +31,14 @@ serve(async (req) => {
       .order('current_rank', { ascending: true })
       .limit(20);
 
+    // Get competitors if table exists, otherwise use empty array
     const { data: competitors } = await supabase
       .from('seo_competitors')
       .select('*')
       .order('domain_authority', { ascending: false })
-      .limit(10);
+      .limit(10)
+      .then(res => res)
+      .catch(() => ({ data: [] }));
 
     const { data: performance } = await supabase
       .from('seo_performance')
@@ -151,7 +154,7 @@ Provide response as JSON:
     // Update SEO performance tracking
     const { error: perfError } = await supabase
       .from('seo_performance')
-      .upsert({
+      .insert({
         date: currentDate,
         ai_optimization_score: 95,
         total_keywords_tracking: keywords?.length || 0,
@@ -159,8 +162,6 @@ Provide response as JSON:
         organic_traffic: (performance?.[0]?.organic_traffic || 0) + Math.floor(Math.random() * 100),
         click_through_rate: 4.2,
         average_position: keywords?.reduce((acc, k) => acc + (k.current_rank || 100), 0) / (keywords?.length || 1)
-      }, {
-        onConflict: 'date'
       });
 
     if (perfError) {

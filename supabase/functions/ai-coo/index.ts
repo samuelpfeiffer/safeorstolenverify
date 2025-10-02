@@ -148,11 +148,17 @@ Return as JSON:
     }
 
     // Update COO executive status
+    const { data: currentExec } = await supabase
+      .from('ai_executives')
+      .select('decisions_count')
+      .eq('role', 'COO')
+      .single();
+    
     await supabase
       .from('ai_executives')
       .update({
         last_decision_at: new Date().toISOString(),
-        decisions_count: supabase.raw('decisions_count + ' + (decisionsToStore?.length || 0)),
+        decisions_count: (currentExec?.decisions_count || 0) + (decisionsToStore?.length || 0),
         updated_at: new Date().toISOString()
       })
       .eq('role', 'COO');
