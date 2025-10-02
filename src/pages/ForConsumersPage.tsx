@@ -10,7 +10,7 @@ import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacem
 const ForConsumersPage: React.FC = () => {
   const navigate = useNavigate();
   
-  const handleSubscribeClick = (tier: 'basic' | 'premium') => {
+  const handleSubscribeClick = (tier: 'basic' | 'entryLevel') => {
     navigate('/subscriptions');
   };
 

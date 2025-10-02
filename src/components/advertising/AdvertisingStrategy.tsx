@@ -7,16 +7,8 @@ import { Helmet } from 'react-helmet-async';
  */
 export const AdvertisingStrategy = () => {
   useEffect(() => {
-    // Track page views for retargeting
-    if (typeof window !== 'undefined') {
-      // Facebook Pixel simulation (replace with actual pixel ID when ready)
-      const fbPixelId = 'YOUR_FACEBOOK_PIXEL_ID';
-      
-      // Google Ads conversion tracking simulation
-      const googleAdsId = 'YOUR_GOOGLE_ADS_ID';
-      
-      console.log('Advertising pixels initialized:', { fbPixelId, googleAdsId });
-    }
+    // Tracking pixels ready - add your pixel IDs when available
+    // To enable: Add FACEBOOK_PIXEL_ID and GOOGLE_ADS_ID to your environment
   }, []);
 
   return (

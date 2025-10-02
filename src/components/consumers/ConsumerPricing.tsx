@@ -7,7 +7,7 @@ import { useAuth } from "@/lib/auth";
 import { useNavigate } from "react-router-dom";
 
 interface ConsumerPricingProps {
-  onSubscribeClick: (tier: 'basic' | 'premium') => void;
+  onSubscribeClick: (tier: 'basic' | 'entryLevel') => void;
   isLoading: boolean;
 }
 
@@ -92,14 +92,14 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
           </Button>
         </div>
         
-        {/* Premium Plan */}
+        {/* Professional Plan */}
         <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
           <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Premium</h3>
-          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.premium.price)}<span className="text-lg font-normal">/month</span></div>
+          <h3 className="text-2xl font-bold mb-2">Professional</h3>
+          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.entryLevel.price)}<span className="text-lg font-normal">/month</span></div>
           <p className="text-gray-400 mb-6">For businesses and frequent buyers</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.premium.features.map((feature, index) => (
+            {SUBSCRIPTION_TIERS.entryLevel.features?.map((feature, index) => (
               <li key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
                 <span>{feature}</span>
@@ -107,7 +107,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             ))}
           </ul>
           <Button 
-            onClick={() => onSubscribeClick('premium')}
+            onClick={() => onSubscribeClick('entryLevel')}
             className="w-full bg-secondary hover:bg-secondary/80"
             disabled={isLoading}
           >
