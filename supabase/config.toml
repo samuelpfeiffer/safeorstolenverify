@@ -54,3 +54,6 @@ verify_jwt = false
 [functions.ai-ad-optimizer]
 verify_jwt = false
 
+[functions.ai-seo-domination]
+verify_jwt = false
+
