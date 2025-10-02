@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
-import { ErrorBoundary } from '@/components/error/ErrorBoundary';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
@@ -36,7 +36,7 @@ const queryClient = new QueryClient({
  */
 export const AppRoot: React.FC = () => {
   return (
-    <ErrorBoundary fallback={<div className="min-h-screen bg-sos flex items-center justify-center text-white">Application Error - Please Refresh</div>}>
+    <ErrorBoundary>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
