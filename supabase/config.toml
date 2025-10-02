@@ -66,3 +66,6 @@ verify_jwt = false
 [functions.autonomous-health-monitor]
 verify_jwt = false
 
+[functions.ai-site-optimizer]
+verify_jwt = false
+

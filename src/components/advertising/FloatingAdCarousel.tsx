@@ -4,7 +4,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import runningDeal from '@/assets/ads/running-deal.jpg';
 import handshakeConfidence from '@/assets/ads/handshake-confidence.jpg';
 import smartphoneCheck from '@/assets/ads/smartphone-check.jpg';
 import laptopVerify from '@/assets/ads/laptop-verify.jpg';
@@ -26,8 +25,8 @@ export const FloatingAdCarousel: React.FC = () => {
 
   const ads: Ad[] = [
     {
-      src: runningDeal,
-      alt: 'Running Deal Advertisement',
+      src: handshakeConfidence,
+      alt: 'Buy & Sell with Confidence',
       title: 'Limited Time Offer',
       description: 'Verify unlimited items with our premium plans. Protect yourself from stolen goods and fraudulent sellers.',
       ctaText: 'View Pricing',

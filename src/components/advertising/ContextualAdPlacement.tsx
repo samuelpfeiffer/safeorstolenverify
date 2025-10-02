@@ -4,7 +4,6 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import runningDeal from '@/assets/ads/running-deal.jpg';
 import handshakeConfidence from '@/assets/ads/handshake-confidence.jpg';
 import smartphoneCheck from '@/assets/ads/smartphone-check.jpg';
 import laptopVerify from '@/assets/ads/laptop-verify.jpg';
@@ -21,7 +20,7 @@ export const ContextualAdPlacement: React.FC<ContextualAdProps> = ({
 }) => {
   const adMapping = {
     pricing: {
-      src: runningDeal,
+      src: handshakeConfidence,
       title: 'Special Pricing Available',
       description: 'Get unlimited verifications with our premium plans. Limited time offer!',
       cta: 'View All Plans',

@@ -10,7 +10,8 @@ import {
   RefreshCw,
   AlertCircle,
   CheckCircle,
-  Clock
+  Clock,
+  Sparkles
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -205,6 +206,15 @@ export const AutonomousSystemDashboard: React.FC = () => {
             >
               <Activity className="h-4 w-4 mr-2" />
               Run Health Check
+            </Button>
+            
+            <Button
+              onClick={() => window.location.href = '/ai-optimizer'}
+              variant="default"
+              className="w-full md:col-span-3"
+            >
+              <Sparkles className="h-4 w-4 mr-2" />
+              Open AI Optimizer Dashboard
             </Button>
           </div>
         </CardContent>

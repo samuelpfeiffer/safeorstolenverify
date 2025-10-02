@@ -73,7 +73,7 @@ export const AD_DISTRIBUTION_CONFIG = {
     rationale: 'First impression - protect your family'
   },
   problem: {
-    ad: 'devil-deal',
+    ad: 'handshake-confidence',
     size: 'large',
     placement: 'mid-content',
     rationale: 'Reinforce the danger of too-good deals'
@@ -91,13 +91,13 @@ export const AD_DISTRIBUTION_CONFIG = {
     rationale: 'Remind users of protection benefits'
   },
   checkPhone: {
-    ad: 'running-deal',
+    ad: 'smartphone-check',
     size: 'small',
     placement: 'after-tutorial',
     rationale: 'Don\'t miss good deals by skipping verification'
   },
   checkCar: {
-    ad: 'devil-deal',
+    ad: 'laptop-verify',
     size: 'small',
     placement: 'after-tutorial',
     rationale: 'Vehicle scams are expensive - verify first'
@@ -121,13 +121,13 @@ export const AD_DISTRIBUTION_CONFIG = {
     rationale: 'Educational content pairs with protection message'
   },
   faq: {
-    ad: 'running-deal',
+    ad: 'family-protection',
     size: 'medium',
     placement: 'end-content',
     rationale: 'After questions answered, motivate action'
   },
   pricing: {
-    ad: 'devil-deal',
+    ad: 'handshake-confidence',
     size: 'large',
     placement: 'after-plans',
     rationale: 'High-intent page - reinforce value before purchase'
