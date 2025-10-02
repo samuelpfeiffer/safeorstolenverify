@@ -11,6 +11,7 @@ import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
 import { PromoAdsSection } from '@/components/advertising/PromoAdsSection';
 import { FloatingAdCarousel } from '@/components/advertising/FloatingAdCarousel';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -32,8 +33,26 @@ const Index = () => {
       
       <div className="min-h-screen">
       <Hero />
+      
+      {/* Featured Ad - Immediately After Hero */}
+      <div className="container mx-auto px-4 py-8">
+        <ContextualAdPlacement context="verification" placement="banner" />
+      </div>
+      
       <AppDownloadSection />
+      
+      {/* Mid-Page Featured Ad */}
+      <div className="container mx-auto px-4 py-8">
+        <ContextualAdPlacement context="smartphone" placement="banner" />
+      </div>
+      
       <PromoAdsSection />
+      
+      {/* Another Strategic Ad */}
+      <div className="container mx-auto px-4 py-8">
+        <ContextualAdPlacement context="firearm" placement="banner" />
+      </div>
+      
       <SEOContentSection />
       <InternalLinkingStrategy />
         
