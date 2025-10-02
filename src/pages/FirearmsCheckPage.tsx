@@ -8,6 +8,7 @@ import { Search, AlertTriangle, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 const FirearmsCheckPage: React.FC = () => {
   const [serial, setSerial] = useState('');
   const [loading, setLoading] = useState(false);
@@ -192,6 +193,11 @@ const FirearmsCheckPage: React.FC = () => {
             </CardContent>
           </Card>
         </section>
+
+        {/* Firearm Verification Ad */}
+        <div className="mt-10">
+          <ContextualAdPlacement context="firearm" placement="banner" />
+        </div>
       </main>
     </div>;
 };

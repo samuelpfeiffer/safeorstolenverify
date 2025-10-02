@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, AlertTriangle, CheckCircle, Search, FileText, DollarSign, Scale } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const BuyerGuidePage = () => {
   const navigate = useNavigate();
@@ -280,6 +281,11 @@ const BuyerGuidePage = () => {
               </ul>
             </CardContent>
           </Card>
+
+          {/* Trust-Building Ad */}
+          <div className="my-8">
+            <ContextualAdPlacement context="verification" placement="banner" />
+          </div>
 
           {/* CTA */}
           <Card className="bg-gradient-to-r from-blue-500/20 to-blue-600/10 border-blue-500/30">

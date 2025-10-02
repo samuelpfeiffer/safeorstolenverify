@@ -7,6 +7,7 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { SuccessStories } from '@/components/story/SuccessStories';
 import { MarketplacePartners } from '@/components/marketplace/MarketplacePartners';
 import { ItemRegistration } from '@/components/registration/ItemRegistration';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const AboutPage = () => {
   const teamMembers = [
@@ -281,6 +282,11 @@ const AboutPage = () => {
 
         {/* Success Stories */}
         <SuccessStories />
+
+        {/* Featured Trust Ad */}
+        <div className="container mx-auto px-4 py-8">
+          <ContextualAdPlacement context="verification" placement="banner" />
+        </div>
 
         {/* Marketplace Partnerships */}
         <MarketplacePartners />

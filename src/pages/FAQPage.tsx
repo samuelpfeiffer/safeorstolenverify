@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
+import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
 const FAQPage = () => {
   const faqCategories = [
@@ -219,6 +220,11 @@ const FAQPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Featured Ad */}
+        <div className="container mx-auto px-4 py-8">
+          <ContextualAdPlacement context="verification" placement="banner" />
+        </div>
       </div>
     </>
   );
