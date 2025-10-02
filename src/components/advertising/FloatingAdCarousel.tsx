@@ -59,11 +59,11 @@ export const FloatingAdCarousel: React.FC = () => {
     },
     {
       src: firearmCheck,
-      alt: 'Firearm Verification',
-      title: 'Firearm Serial Check',
-      description: 'Stay legal and safe. Verify firearm serial numbers against national databases before purchase.',
-      ctaText: 'Check Firearm',
-      ctaLink: '/real-time-verification'
+      alt: 'Firearm Verification - Not sure where that guns been? Check it out on SafeOrStolen.com',
+      title: 'Not Sure Where That Guns Been?',
+      description: "Make sure you check it out on SafeOrStolen.com before you buy a used firearm. Stay legal and safe.",
+      ctaText: 'Check Firearm Serial',
+      ctaLink: '/real-time-verification?category=firearms'
     }
   ];
 

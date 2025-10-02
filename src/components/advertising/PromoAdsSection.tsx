@@ -29,7 +29,7 @@ export const PromoAdsSection: React.FC = () => {
     },
     {
       src: firearmCheck,
-      alt: "Check used firearms before you buy on SafeOrStolen.com"
+      alt: "Not sure where that guns been? Make sure you check it out on SafeOrStolen.com before you buy a used firearm"
     }
   ];
 

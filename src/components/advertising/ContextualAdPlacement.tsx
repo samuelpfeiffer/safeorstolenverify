@@ -50,10 +50,10 @@ export const ContextualAdPlacement: React.FC<ContextualAdProps> = ({
     },
     firearm: {
       src: firearmCheck,
-      title: 'Firearm Serial Check',
-      description: 'Stay legal. Verify firearm serial numbers before purchase.',
-      cta: 'Check Serial',
-      link: '/real-time-verification',
+      title: 'Not Sure Where That Guns Been?',
+      description: 'Make sure you check it out on SafeOrStolen.com before you buy a used firearm. Stay legal and safe.',
+      cta: 'Check Firearm Serial',
+      link: '/real-time-verification?category=firearms',
     },
     general: {
       src: handshakeConfidence,
