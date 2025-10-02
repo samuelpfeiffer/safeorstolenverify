@@ -131,20 +131,29 @@ Return as JSON:
     const data = await response.json();
     const analysis = JSON.parse(data.choices[0].message.content);
 
-    // Store operational decisions
-    const decisionsToStore = analysis.decisions?.map((d: any) => ({
-      executive_role: 'COO',
-      decision_type: 'operational',
-      decision_data: d,
-      reasoning: d.reasoning,
-      confidence: 0.89,
-      priority: d.priority,
-      status: 'pending',
-      impact_score: d.metrics?.efficiency_gain || 0
-    }));
+    // Store operational decisions with proper type validation
+    const decisionsToStore = analysis.decisions?.map((d: any) => {
+      const impactScore = typeof d.metrics?.efficiency_gain === 'number'
+        ? d.metrics.efficiency_gain
+        : parseFloat(d.metrics?.efficiency_gain) || 0;
+      
+      return {
+        executive_role: 'COO',
+        decision_type: 'operational',
+        decision_data: d,
+        reasoning: d.reasoning || 'Operational decision',
+        confidence: 0.89,
+        priority: d.priority || 'medium',
+        status: 'pending',
+        impact_score: isNaN(impactScore) ? 0 : impactScore
+      };
+    });
 
     if (decisionsToStore?.length > 0) {
-      await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      const { error: insertError } = await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      if (insertError) {
+        console.error('[AI-COO] Error storing decisions:', insertError);
+      }
     }
 
     // Update COO executive status

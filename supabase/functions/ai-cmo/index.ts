@@ -117,20 +117,29 @@ Return as JSON:
     const data = await response.json();
     const analysis = JSON.parse(data.choices[0].message.content);
 
-    // Store marketing decisions
-    const decisionsToStore = analysis.decisions?.map((d: any) => ({
-      executive_role: 'CMO',
-      decision_type: 'marketing',
-      decision_data: d,
-      reasoning: d.reasoning,
-      confidence: 0.88,
-      priority: d.priority,
-      status: 'pending',
-      impact_score: d.metrics?.traffic_increase || 0
-    }));
+    // Store marketing decisions with proper type validation
+    const decisionsToStore = analysis.decisions?.map((d: any) => {
+      const impactScore = typeof d.metrics?.traffic_increase === 'number'
+        ? d.metrics.traffic_increase
+        : parseFloat(d.metrics?.traffic_increase) || 0;
+      
+      return {
+        executive_role: 'CMO',
+        decision_type: 'marketing',
+        decision_data: d,
+        reasoning: d.reasoning || 'Marketing decision',
+        confidence: 0.88,
+        priority: d.priority || 'medium',
+        status: 'pending',
+        impact_score: isNaN(impactScore) ? 0 : impactScore
+      };
+    });
 
     if (decisionsToStore?.length > 0) {
-      await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      const { error: insertError } = await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      if (insertError) {
+        console.error('[AI-CMO] Error storing decisions:', insertError);
+      }
     }
 
     // Update CMO executive status

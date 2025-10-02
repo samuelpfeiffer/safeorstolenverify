@@ -36,7 +36,7 @@ serve(async (req) => {
 
     const { data: verifications } = await supabase
       .from('verification_searches')
-      .select('count, created_at')
+      .select('*')
       .gte('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
 
     const ctoPrompt = `You are the CTO AI of SafeOrStolen.com. Make technical decisions to optimize performance, security, and reliability:
@@ -112,20 +112,29 @@ Return as JSON:
     const data = await response.json();
     const analysis = JSON.parse(data.choices[0].message.content);
 
-    // Store technical decisions
-    const decisionsToStore = analysis.decisions?.map((d: any) => ({
-      executive_role: 'CTO',
-      decision_type: 'technical',
-      decision_data: d,
-      reasoning: d.reasoning,
-      confidence: 0.92,
-      priority: d.priority,
-      status: 'pending',
-      impact_score: d.metrics?.improvement_estimate || 0
-    }));
+    // Store technical decisions with proper type validation
+    const decisionsToStore = analysis.decisions?.map((d: any) => {
+      const impactScore = typeof d.metrics?.improvement_estimate === 'number'
+        ? d.metrics.improvement_estimate
+        : parseFloat(d.metrics?.improvement_estimate) || 0;
+      
+      return {
+        executive_role: 'CTO',
+        decision_type: 'technical',
+        decision_data: d,
+        reasoning: d.reasoning || 'Technical decision',
+        confidence: 0.92,
+        priority: d.priority || 'medium',
+        status: 'pending',
+        impact_score: isNaN(impactScore) ? 0 : impactScore
+      };
+    });
 
     if (decisionsToStore?.length > 0) {
-      await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      const { error: insertError } = await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      if (insertError) {
+        console.error('[AI-CTO] Error storing decisions:', insertError);
+      }
     }
 
     // Update CTO executive status

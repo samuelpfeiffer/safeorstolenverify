@@ -119,20 +119,29 @@ Return as JSON:
     const data = await response.json();
     const analysis = JSON.parse(data.choices[0].message.content);
 
-    // Store decisions in database
-    const decisionsToStore = analysis.decisions?.map((d: any) => ({
-      executive_role: 'CEO',
-      decision_type: 'strategic',
-      decision_data: d,
-      reasoning: d.reasoning,
-      confidence: 0.9,
-      priority: d.priority,
-      status: 'pending',
-      impact_score: d.metrics?.revenue_impact || 0
-    }));
+    // Store decisions in database with proper type validation
+    const decisionsToStore = analysis.decisions?.map((d: any) => {
+      const impactScore = typeof d.metrics?.revenue_impact === 'number' 
+        ? d.metrics.revenue_impact 
+        : parseFloat(d.metrics?.revenue_impact) || 0;
+      
+      return {
+        executive_role: 'CEO',
+        decision_type: 'strategic',
+        decision_data: d,
+        reasoning: d.reasoning || 'Strategic decision',
+        confidence: 0.9,
+        priority: d.priority || 'medium',
+        status: 'pending',
+        impact_score: isNaN(impactScore) ? 0 : impactScore
+      };
+    });
 
     if (decisionsToStore?.length > 0) {
-      await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      const { error: insertError } = await supabase.from('ai_executive_decisions').insert(decisionsToStore);
+      if (insertError) {
+        console.error('[AI-CEO] Error storing decisions:', insertError);
+      }
     }
 
     // Update CEO executive status
