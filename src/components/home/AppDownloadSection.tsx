@@ -35,6 +35,11 @@ export const AppDownloadSection = () => {
                   src={heroImage} 
                   alt="SafeOrStolen mobile app - the only verification service with iOS and Android apps for checking phones, cars, guns, and all items"
                   className="rounded-2xl shadow-xl w-full"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
               {/* Floating badge */}

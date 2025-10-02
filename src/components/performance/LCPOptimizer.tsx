@@ -7,63 +7,41 @@ import { Helmet } from 'react-helmet-async';
  */
 export const LCPOptimizer = () => {
   useEffect(() => {
-    // Optimize images for faster LCP
+    // Optimize below-the-fold images only (hero is already optimized)
     const optimizeImages = () => {
       const images = document.querySelectorAll('img');
       images.forEach((img, index) => {
-        // Prioritize above-the-fold images
-        if (index < 3) {
-          img.loading = 'eager';
-          img.decoding = 'async';
-          // @ts-ignore - fetchPriority is not in TypeScript types yet
-          img.fetchPriority = 'high';
-        } else {
+        // Skip first 3 images (already optimized in components)
+        if (index >= 3) {
           img.loading = 'lazy';
           img.decoding = 'async';
         }
       });
     };
 
-    // Run optimization after initial render
-    const timeoutId = setTimeout(optimizeImages, 100);
+    // Defer to after critical render
+    const timeoutId = setTimeout(optimizeImages, 300);
     
     return () => clearTimeout(timeoutId);
   }, []);
 
   return (
     <Helmet>
-      {/* Preconnect to external domains for faster resource loading */}
-      <link rel="preconnect" href="https://safeorstolen.com" />
-      <link rel="dns-prefetch" href="https://safeorstolen.com" />
+      {/* Preconnect for faster resource loading */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
       {/* Critical CSS for LCP optimization */}
       <style dangerouslySetInnerHTML={{
         __html: `
-          /* Load fonts asynchronously */
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-          
           /* Critical styles for LCP optimization */
           img{
-            content-visibility:auto;
             max-width:100%;
-            height:auto;
-          }
-          .hero-image{
-            display:block;
-            width:100%;
             height:auto;
           }
           /* Reduce layout shift */
           *{
             box-sizing:border-box;
-          }
-          /* Optimize animations */
-          @media (prefers-reduced-motion: reduce) {
-            *,*::before,*::after{
-              animation-duration:0.01ms!important;
-              animation-iteration-count:1!important;
-              transition-duration:0.01ms!important;
-            }
           }
         `
       }} />

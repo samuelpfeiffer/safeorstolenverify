@@ -30,12 +30,17 @@ const Hero = memo(() => {
   }, [isAuthenticated, navigate]);
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
-      {/* Full Width Hero Image */}
+      {/* Full Width Hero Image - Optimized for LCP */}
       <div className="w-full">
         <img 
           src={heroImage} 
           alt="SafeOrStolen verification on mobile and laptop showing item verified status" 
           className="w-full h-auto object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
       </div>
 

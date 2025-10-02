@@ -36,19 +36,7 @@ const Index = () => {
       <LCPOptimizer />
       <OrganizationSchema />
       <WebSiteSchema />
-      <BuyerProtectionSEO pageType="general" />
-      <AdvancedSEOOptimizations />
-      <CompetitorComparisonSEO />
-      <AdvancedSchemaMarkup />
-      <AIAnswerEngineOptimizer />
-      <AdvancedSchemaGenerator />
-      <EEATSignals />
-      <FeaturedSnippetOptimizer />
-      <VoiceSearchOptimizer />
-      <LinkBuildingSignals />
-      <MarketplaceSEODomination />
       <LocalMarketplaceSEO />
-      <CompetitorTargetingSEO />
       <UnifiedSEOOptimizer
         title="FREE Marketplace App | SafeOrStolen Verify Items"
         description="ONLY mobile app for Facebook Marketplace, OfferUp, Craigslist & eBay buyers/sellers. Verify items instantly before buying. FREE iPhone & Android app with 4 free checks. Download now!"
