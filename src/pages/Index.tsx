@@ -9,6 +9,7 @@ import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
+import { PromoAdsSection } from '@/components/advertising/PromoAdsSection';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -29,10 +30,11 @@ const Index = () => {
       />
       
       <div className="min-h-screen">
-        <Hero />
-        <AppDownloadSection />
-        <SEOContentSection />
-        <InternalLinkingStrategy />
+      <Hero />
+      <AppDownloadSection />
+      <PromoAdsSection />
+      <SEOContentSection />
+      <InternalLinkingStrategy />
         
         {(verificationId || serialNumber) && (
           <Suspense fallback={
