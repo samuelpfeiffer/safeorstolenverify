@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, Lock, Globe, Clock } from 'lucide-react';
-import { SmartAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
 
 const HowItWorksPage = () => {
   const steps = [
@@ -204,7 +204,7 @@ const HowItWorksPage = () => {
         </section>
 
         {/* Strategic Ad Placement */}
-        <SmartAdPlacement placement="banner" />
+        <StrategicAdPlacement placement="banner" />
 
         {/* CTA Section */}
         <section className="py-20">

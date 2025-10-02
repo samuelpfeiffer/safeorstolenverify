@@ -23,7 +23,7 @@ import { useRealVerification } from '@/hooks/useRealVerification';
 import { detectItemType } from '@/utils/itemTypeDetector';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { SmartAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
 
 const RealTimeVerificationPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -312,7 +312,7 @@ const RealTimeVerificationPage = () => {
           </section>
         )}
         
-        <SmartAdPlacement placement="inline" />
+        <StrategicAdPlacement placement="inline" />
       </div>
     </div>
     </>

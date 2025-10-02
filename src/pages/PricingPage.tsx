@@ -12,7 +12,7 @@ import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
-import { SmartAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
 
@@ -301,7 +301,7 @@ const PricingPage = () => {
           loadingTier={loadingTier}
         />
         
-        <SmartAdPlacement placement="banner" />
+        <StrategicAdPlacement placement="banner" />
         
         {/* Temporary validation section */}
         {searchParams.get('test') === 'true' && (
