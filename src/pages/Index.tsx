@@ -10,6 +10,7 @@ import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
 import { PromoAdsSection } from '@/components/advertising/PromoAdsSection';
+import { FloatingAdCarousel } from '@/components/advertising/FloatingAdCarousel';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -47,6 +48,9 @@ const Index = () => {
           </Suspense>
         )}
       </div>
+      
+      {/* Floating Ad Carousel */}
+      <FloatingAdCarousel />
     </>
   );
 };
