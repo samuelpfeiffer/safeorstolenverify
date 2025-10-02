@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Shield, Search, Database, Users, Zap, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
+import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
+import handshakeConfidence from '@/assets/ads/handshake-confidence.jpg';
 
 const ServicesPage = () => {
   const services = [
@@ -99,6 +101,12 @@ const ServicesPage = () => {
             ))}
           </div>
 
+          {/* Paranoia Ad */}
+          <ParanoiaAd 
+            src={handshakeConfidence} 
+            alt="Feel confident about the deals you make with SafeOrStolen.com verification"
+          />
+          
           {/* Strategic Ad Placement */}
           <StrategicAdPlacement placement="inline" />
 

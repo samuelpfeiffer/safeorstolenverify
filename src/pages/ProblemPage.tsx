@@ -7,6 +7,8 @@ import { ConsequencesSection } from "@/components/problem/ConsequencesSection";
 import { CaseStudySection } from "@/components/problem/CaseStudySection";
 import { CurrentSolutionsSection } from "@/components/problem/CurrentSolutionsSection";
 import { SolutionSection } from "@/components/problem/SolutionSection";
+import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
+import devilDeal from '@/assets/ads/devil-deal.jpg';
 
 const ProblemPage = () => {
   return (
@@ -18,6 +20,11 @@ const ProblemPage = () => {
       />
       <div className="bg-sos text-white min-h-screen">
         <HeroSection />
+        <ParanoiaAd 
+          src={devilDeal} 
+          alt="Deal too good to be true? Better check it on SafeOrStolen.com" 
+          size="large"
+        />
         <SolutionSection />
       </div>
     </>

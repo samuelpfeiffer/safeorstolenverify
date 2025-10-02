@@ -9,6 +9,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
+import firearmCheck from '@/assets/ads/firearm-check.jpg';
 const FirearmsCheckPage: React.FC = () => {
   const [serial, setSerial] = useState('');
   const [loading, setLoading] = useState(false);
@@ -194,6 +196,13 @@ const FirearmsCheckPage: React.FC = () => {
           </Card>
         </section>
 
+        {/* Paranoia Ad */}
+        <ParanoiaAd 
+          src={firearmCheck} 
+          alt="Not sure where that guns been? Make sure you check it out on SafeOrStolen.com before you buy a used firearm"
+          size="large"
+        />
+        
         {/* Firearm Verification Ad */}
         <div className="mt-10">
           <ContextualAdPlacement context="firearm" placement="banner" />

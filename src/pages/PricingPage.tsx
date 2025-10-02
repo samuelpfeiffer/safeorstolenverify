@@ -15,6 +15,8 @@ import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPric
 import { StrategicAdPlacement } from '@/components/advertising/StrategicAdPlacement';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
+import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
+import devilDeal from '@/assets/ads/devil-deal.jpg';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -299,6 +301,13 @@ const PricingPage = () => {
         <ConversionOptimizedPricing 
           onSubscribe={handleSubscribe}
           loadingTier={loadingTier}
+        />
+        
+        {/* Paranoia Ad */}
+        <ParanoiaAd 
+          src={devilDeal} 
+          alt="Deal too good to be true? Better check it on SafeOrStolen.com"
+          size="large"
         />
         
         <StrategicAdPlacement placement="banner" />

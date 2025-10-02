@@ -9,7 +9,7 @@ import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
-import { PromoAdsSection } from '@/components/advertising/PromoAdsSection';
+
 import { FloatingAdCarousel } from '@/components/advertising/FloatingAdCarousel';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 
@@ -34,7 +34,6 @@ const Index = () => {
       <div className="min-h-screen">
       <Hero />
       <AppDownloadSection />
-      <PromoAdsSection />
       <SEOContentSection />
       <InternalLinkingStrategy />
         
