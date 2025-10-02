@@ -21,6 +21,7 @@ const Index = () => {
 
   return (
     <>
+      {/* Advanced SEO & Retargeting */}
       <AdvertisingStrategy />
       <OrganizationSchema />
       <WebSiteSchema />
