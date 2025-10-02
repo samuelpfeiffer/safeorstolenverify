@@ -57,3 +57,12 @@ verify_jwt = false
 [functions.ai-seo-domination]
 verify_jwt = false
 
+[functions.autonomous-error-fixer]
+verify_jwt = false
+
+[functions.autonomous-seo-optimizer]
+verify_jwt = false
+
+[functions.autonomous-health-monitor]
+verify_jwt = false
+
