@@ -12,6 +12,11 @@ import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrateg
 import { FloatingAdCarousel } from '@/components/advertising/FloatingAdCarousel';
 import { ParanoiaAd } from '@/components/advertising/ParanoiaAd';
 import { AdvertisingStrategy } from '@/components/advertising/AdvertisingStrategy';
+import { AdvancedSEOManager } from '@/components/advertising/AdvancedSEOManager';
+import { DynamicCTASystem } from '@/components/advertising/DynamicCTASystem';
+import { SocialProofEngine } from '@/components/advertising/SocialProofEngine';
+import { ConversionOptimizer } from '@/components/advertising/ConversionOptimizer';
+import { KeywordTargeting } from '@/components/advertising/KeywordTargeting';
 import familyProtection from '@/assets/ads/family-protection.jpg';
 
 const Index = () => {
@@ -21,8 +26,12 @@ const Index = () => {
 
   return (
     <>
-      {/* Advanced SEO & Retargeting */}
+      {/* Advanced Advertising & SEO System */}
       <AdvertisingStrategy />
+      <AdvancedSEOManager />
+      <ConversionOptimizer />
+      <KeywordTargeting />
+      
       <OrganizationSchema />
       <WebSiteSchema />
       <UnifiedSEOOptimizer
@@ -62,6 +71,10 @@ const Index = () => {
       
       {/* Floating Ad Carousel */}
       <FloatingAdCarousel />
+      
+      {/* Dynamic Conversion Elements */}
+      <DynamicCTASystem />
+      <SocialProofEngine />
     </>
   );
 };
