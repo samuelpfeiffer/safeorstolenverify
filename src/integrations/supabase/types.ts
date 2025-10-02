@@ -71,6 +71,134 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_executive_actions: {
+        Row: {
+          action_data: Json
+          action_type: string
+          created_at: string | null
+          decision_id: string | null
+          error: string | null
+          executed_at: string | null
+          executive_role: string
+          id: string
+          result: Json | null
+          status: string | null
+        }
+        Insert: {
+          action_data: Json
+          action_type: string
+          created_at?: string | null
+          decision_id?: string | null
+          error?: string | null
+          executed_at?: string | null
+          executive_role: string
+          id?: string
+          result?: Json | null
+          status?: string | null
+        }
+        Update: {
+          action_data?: Json
+          action_type?: string
+          created_at?: string | null
+          decision_id?: string | null
+          error?: string | null
+          executed_at?: string | null
+          executive_role?: string
+          id?: string
+          result?: Json | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_executive_actions_decision_id_fkey"
+            columns: ["decision_id"]
+            isOneToOne: false
+            referencedRelation: "ai_executive_decisions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      ai_executive_decisions: {
+        Row: {
+          confidence: number | null
+          created_at: string | null
+          decision_data: Json
+          decision_type: string
+          executed_at: string | null
+          executive_role: string
+          id: string
+          impact_score: number | null
+          priority: string | null
+          reasoning: string | null
+          result: Json | null
+          status: string | null
+        }
+        Insert: {
+          confidence?: number | null
+          created_at?: string | null
+          decision_data: Json
+          decision_type: string
+          executed_at?: string | null
+          executive_role: string
+          id?: string
+          impact_score?: number | null
+          priority?: string | null
+          reasoning?: string | null
+          result?: Json | null
+          status?: string | null
+        }
+        Update: {
+          confidence?: number | null
+          created_at?: string | null
+          decision_data?: Json
+          decision_type?: string
+          executed_at?: string | null
+          executive_role?: string
+          id?: string
+          impact_score?: number | null
+          priority?: string | null
+          reasoning?: string | null
+          result?: Json | null
+          status?: string | null
+        }
+        Relationships: []
+      }
+      ai_executives: {
+        Row: {
+          actions_taken: number | null
+          created_at: string | null
+          decisions_count: number | null
+          id: string
+          last_decision_at: string | null
+          role: string
+          status: string | null
+          success_rate: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          actions_taken?: number | null
+          created_at?: string | null
+          decisions_count?: number | null
+          id?: string
+          last_decision_at?: string | null
+          role: string
+          status?: string | null
+          success_rate?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          actions_taken?: number | null
+          created_at?: string | null
+          decisions_count?: number | null
+          id?: string
+          last_decision_at?: string | null
+          role?: string
+          status?: string | null
+          success_rate?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       ai_feedback: {
         Row: {
           accurate: boolean
@@ -638,6 +766,33 @@ export type Database = {
           id?: string
           name?: string
           slug?: string
+        }
+        Relationships: []
+      }
+      business_metrics: {
+        Row: {
+          created_at: string | null
+          id: string
+          metric_data: Json | null
+          metric_type: string
+          metric_value: number
+          recorded_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          metric_data?: Json | null
+          metric_type: string
+          metric_value: number
+          recorded_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          metric_data?: Json | null
+          metric_type?: string
+          metric_value?: number
+          recorded_at?: string | null
         }
         Relationships: []
       }

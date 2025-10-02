@@ -69,3 +69,21 @@ verify_jwt = false
 [functions.ai-site-optimizer]
 verify_jwt = false
 
+[functions.ai-ceo]
+verify_jwt = false
+
+[functions.ai-coo]
+verify_jwt = false
+
+[functions.ai-cfo]
+verify_jwt = false
+
+[functions.ai-cmo]
+verify_jwt = false
+
+[functions.ai-cto]
+verify_jwt = false
+
+[functions.ai-executive-orchestrator]
+verify_jwt = false
+

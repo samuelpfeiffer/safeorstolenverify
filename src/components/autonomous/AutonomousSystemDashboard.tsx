@@ -11,7 +11,8 @@ import {
   AlertCircle,
   CheckCircle,
   Clock,
-  Sparkles
+  Sparkles,
+  Brain
 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -210,11 +211,20 @@ export const AutonomousSystemDashboard: React.FC = () => {
             
             <Button
               onClick={() => window.location.href = '/ai-optimizer'}
-              variant="default"
-              className="w-full md:col-span-3"
+              variant="outline"
+              className="w-full"
             >
               <Sparkles className="h-4 w-4 mr-2" />
-              Open AI Optimizer Dashboard
+              AI Optimizer Dashboard
+            </Button>
+            
+            <Button
+              onClick={() => window.location.href = '/ai-executives'}
+              variant="default"
+              className="w-full md:col-span-2"
+            >
+              <Brain className="h-4 w-4 mr-2" />
+              AI Executive Team
             </Button>
           </div>
         </CardContent>
