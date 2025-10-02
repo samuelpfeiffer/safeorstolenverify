@@ -15,7 +15,7 @@ interface PaywallModalProps {
 export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
   const plans = [
     {
-      name: 'Basic',
+      name: 'Personal',
       price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
       period: '/month',
       features: SUBSCRIPTION_TIERS.basic.features || [],
@@ -23,12 +23,12 @@ export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
       stripePriceId: SUBSCRIPTION_TIERS.basic.stripePriceId!
     },
     {
-      name: 'Premium',
-      price: formatPrice(SUBSCRIPTION_TIERS.premium.price),
+      name: 'Professional',
+      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
       period: '/month',
-      features: SUBSCRIPTION_TIERS.premium.features || [],
+      features: SUBSCRIPTION_TIERS.entryLevel.features || [],
       highlighted: true,
-      stripePriceId: SUBSCRIPTION_TIERS.premium.stripePriceId!
+      stripePriceId: SUBSCRIPTION_TIERS.entryLevel.stripePriceId!
     }
   ];
 
