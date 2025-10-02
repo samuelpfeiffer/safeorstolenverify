@@ -8,10 +8,7 @@ import { getHomePageStructuredData } from '@/components/home/HomeStructuredData'
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
-import { EnhancedFAQSchema } from '@/components/seo/EnhancedFAQSchema';
-import { ReviewSchema } from '@/components/seo/ReviewSchema';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
-import { LCPOptimizer } from '@/components/performance/LCPOptimizer';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -20,18 +17,14 @@ const Index = () => {
 
   return (
     <>
-      <LCPOptimizer />
       <OrganizationSchema />
       <WebSiteSchema />
       <UnifiedSEOOptimizer
-        title="FREE Mobile App for Buyers, Sellers & Businesses"
-        description="ONLY verification mobile app for iOS & Android. Check phones, cars, guns & items. Works on Facebook Marketplace, OfferUp, Craigslist, eBay. 4 FREE verifications."
-        keywords="mobile verification app, facebook marketplace app, offerup app, craigslist verification, imei checker app, vin verification app, firearm serial checker app, stolen item checker app"
+        title="FREE Mobile App | SafeOrStolen"
+        description="ONLY verification mobile app for iOS & Android. Check phones, cars, guns & items on Facebook Marketplace, OfferUp, Craigslist, eBay. 4 FREE verifications."
+        keywords="mobile verification app, facebook marketplace app, imei checker, vin verification, firearm serial checker"
         canonical="/"
         structuredData={getHomePageStructuredData()}
-        competitiveKeywords="homepage"
-        priorityLevel="max"
-        aiOptimized={true}
         type="website"
       />
       
@@ -40,8 +33,6 @@ const Index = () => {
         <AppDownloadSection />
         <SEOContentSection />
         <InternalLinkingStrategy />
-        <ReviewSchema />
-        <EnhancedFAQSchema />
         
         {(verificationId || serialNumber) && (
           <Suspense fallback={
