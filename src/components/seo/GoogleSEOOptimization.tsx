@@ -16,7 +16,7 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
   return (
     <Helmet>
       {/* Google Search Console Verification */}
-      <meta name="google-site-verification" content="your-google-verification-code" />
+      <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       
       {/* Google Analytics 4 Enhanced */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

@@ -5,7 +5,7 @@ export const GoogleSearchConsole: React.FC = () => {
   return (
     <Helmet>
       {/* Google Search Console Verification */}
-      <meta name="google-site-verification" content="your-google-search-console-verification-code" />
+      <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       
       {/* Enhanced Robots Directives */}
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />

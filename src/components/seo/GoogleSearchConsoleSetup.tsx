@@ -5,7 +5,7 @@ export const GoogleSearchConsoleSetup: React.FC = () => {
   return (
     <Helmet>
       {/* Google Search Console Verification - To be replaced with actual token */}
-      <meta name="google-site-verification" content="pending-verification" />
+      <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       
       {/* Google Analytics 4 - Active */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-0T59FF9N6Z"></script>

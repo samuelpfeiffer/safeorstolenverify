@@ -104,7 +104,7 @@ export const SEOAuditComponent: React.FC = () => {
       { name: 'googlebot', content: 'index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30' },
       
       // Site verification (placeholder - replace with actual values)
-      { name: 'google-site-verification', content: 'safeorstolen-verification-code' },
+      { name: 'google-site-verification', content: 'google29952b5cc1a6a4dd' },
       { name: 'msvalidate.01', content: 'safeorstolen-bing-verification' },
       
       // Security headers

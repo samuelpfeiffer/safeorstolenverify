@@ -117,7 +117,7 @@ export const MasterSEO: React.FC = () => {
       <link rel="alternate" href={canonicalUrl} hrefLang="en" />
       
       {/* Site verification */}
-      <meta name="google-site-verification" content="safeorstolen-verification" />
+      <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       <meta name="msvalidate.01" content="safeorstolen-bing-verification" />
       
       {/* Structured data */}
