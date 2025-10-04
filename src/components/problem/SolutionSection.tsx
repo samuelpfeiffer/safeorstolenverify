@@ -9,11 +9,11 @@ export const SolutionSection = () => {
     <section className="py-16 bg-gradient-to-r from-sos-orange/10 to-transparent">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">There's Finally a Solution</h2>
+          <h2 className="text-3xl font-bold mb-6 text-white">Free Stolen Item Checker - Mobile App Available</h2>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-            Safe Or Stolen bridges the gap between law enforcement databases and consumer protection. 
-            We're building the world's first comprehensive verification system designed specifically 
-            for secondhand buyers.
+            SafeOrStolen is a free checking service for used items. Check if laptops, phones, cars, 
+            trucks, electronics, TVs, tools, bikes, and more are stolen before you buy. Mobile app 
+            works instantly on Facebook Marketplace, OfferUp, eBay, Craigslist, pawn shops, and yard sales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

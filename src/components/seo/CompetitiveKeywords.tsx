@@ -10,33 +10,33 @@ export const CompetitiveKeywords: React.FC<CompetitiveKeywordsProps> = ({ pageTy
     switch (pageType) {
       case 'homepage':
         return {
-          primary: "safe secondhand buying, check if item is stolen, check if stolen before buying, secondhand item verification, trusted item verification",
-          longtail: "is it safe to buy used, buy and sell safely, protect buyers and sellers, secondhand buyer protection, how to check if something is stolen before I buy it",
-          competitor: "checkmend alternative, stolen register alternative, leads online alternative, free stolen check, global stolen property database"
+          primary: "how to check if something is stolen, free stolen item checker, verify used items before buying, check serial number for stolen goods, is this item stolen lookup",
+          longtail: "how do I know if something is stolen before I buy it, free app to check if item is stolen, check if used laptop is stolen, verify secondhand items on Facebook Marketplace, is there a way to see if something is stolen",
+          competitor: "free alternative to CheckMEND, better than IMEI info, free stolen goods database, check if stolen without paying, SafeOrStolen vs CheckMEND free"
         };
       case 'imei':
         return {
-          primary: "IMEI device check, check if phone stolen, stolen phone check, IMEI lookup, verify phone not stolen",
-          longtail: "free IMEI check, check stolen phone IMEI, used electronics safe, electronics background check, is my phone stolen",
-          competitor: "checkmend IMEI, stolen register phone, IMEI checker better than checkmend, trusted device verification"
+          primary: "free IMEI check, how to check if phone is stolen, IMEI lookup stolen phone, check phone before buying, verify used phone not stolen",
+          longtail: "how do I check if a used phone is stolen, free mobile app to check IMEI, check iPhone IMEI for stolen, verify phone on Facebook Marketplace, is this phone stolen IMEI lookup",
+          competitor: "free IMEI checker app, CheckMEND alternative for phones, free phone verification tool, better than IMEI.info, SafeOrStolen mobile app free"
         };
       case 'vin':
         return {
-          primary: "VIN lookup, check if car stolen, secondhand car check, vehicle theft check, verify car not stolen",
-          longtail: "free VIN check stolen, used car safety check, vehicle history report, how to check VIN for stolen, is my car stolen",
-          competitor: "NICB VIN check, stolen vehicle database, better than carfax theft, secure vehicle verification"
+          primary: "free VIN number check, how to check if car is stolen, VIN lookup for stolen vehicles, check used car before buying, verify vehicle not stolen",
+          longtail: "how do I know if a used car is stolen, free VIN checker for stolen cars, check truck VIN stolen, verify car on Craigslist, is this vehicle stolen VIN search",
+          competitor: "free alternative to NICB VIN check, better than Carfax stolen check, free vehicle verification, SafeOrStolen vs NICB free, mobile app VIN checker"
         };
       case 'serial':
         return {
-          primary: "serial number lookup, check if item stolen, electronics background check, verify serial number, property legitimacy tool",
-          longtail: "electronics serial number check, laptop serial check stolen, bike serial stolen check, how to check serial number",
-          competitor: "property check serial number, better than stolen goods database, trusted item verification, secure marketplace tool"
+          primary: "free serial number lookup, how to check if laptop is stolen, check electronics serial number, verify tools not stolen, is this item stolen serial check",
+          longtail: "how do I check if a laptop is stolen by serial number, free app to check bike serial number, verify used electronics before buying, check power tools serial number stolen, TV serial number lookup",
+          competitor: "free serial number checker, better than stolen property lookup, SafeOrStolen app for serial numbers, free electronics verification, check serial numbers on eBay items"
         };
       default:
         return {
-          primary: "stolen goods verification, anti-theft register for buyers, scam prevention tool, resale security check",
-          longtail: "verify before buying used items, buy used safely online, check property before selling, avoid stolen goods",
-          competitor: "best stolen goods checker, global stolen property database, secure marketplace tool"
+          primary: "how to avoid buying stolen goods, free checking service for used items, verify items on Facebook Marketplace, OfferUp verification tool, eBay item checker",
+          longtail: "how do I make sure I'm not buying stolen property, free mobile app to check stolen items, verify used items before meeting seller, check if something from pawn shop is stolen",
+          competitor: "free stolen goods checker app, best way to verify used items, SafeOrStolen mobile app, free marketplace verification tool, check items on Craigslist"
         };
     }
   };

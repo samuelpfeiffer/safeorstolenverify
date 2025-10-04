@@ -13,67 +13,67 @@ export const KeywordOptimizedContent: React.FC<KeywordOptimizedContentProps> = (
     switch (pageType) {
       case 'homepage':
         return {
-          heading: "Safe Secondhand Buying - Trusted Item Verification Platform",
-          subheading: "Check if item is stolen before you buy. Protect yourself from unknowingly purchasing stolen goods using our global stolen property database.",
+          heading: "Free Stolen Item Checker - Verify Used Items Before You Buy",
+          subheading: "How to check if something is stolen: Enter IMEI, VIN, or serial number for instant verification. Free mobile app to check items on Facebook Marketplace, OfferUp, eBay, and Craigslist.",
           benefits: [
-            "Safe secondhand buying with instant verification",
-            "Buy and sell safely with our scam prevention tool",
-            "Protect buyers and sellers from stolen goods fraud",
-            "Trusted item verification across 50+ countries"
+            "Free checking service for all used items - laptops, phones, cars, bikes, tools, TVs",
+            "Mobile app to verify items instantly at yard sales, pawn shops, and online marketplaces",
+            "Check serial numbers, IMEI, and VIN numbers - no signup required",
+            "Avoid buying stolen goods - protect yourself from legal trouble and financial loss"
           ],
-          cta: "Start Safe Secondhand Buying"
+          cta: "Check If Item Is Stolen - Free"
         };
         
       case 'phone':
         return {
-          heading: "IMEI Device Check - Electronics Background Check",
-          subheading: "Verify if smartphone is stolen before buying used electronics. Free stolen phone check service.",
+          heading: "Free IMEI Check - How to Check If a Used Phone Is Stolen",
+          subheading: "Verify any phone before buying on Facebook Marketplace, OfferUp, or eBay. Free IMEI lookup for iPhones, Samsung, and all smartphones. Mobile app available.",
           benefits: [
-            "IMEI device check against stolen phone databases",
-            "Electronics background check for used smartphones", 
-            "Report lost or stolen phones instantly",
-            "Used electronics safe verification service"
+            "Check if iPhone or Android is stolen - just dial *#06# for IMEI",
+            "Free mobile app to verify phones instantly before meeting seller", 
+            "Works for all carriers - AT&T, Verizon, T-Mobile, unlocked phones",
+            "Verify used tablets, smartwatches, and mobile devices too"
           ],
-          cta: "Check Phone IMEI Now"
+          cta: "Check Phone IMEI Free"
         };
         
       case 'car':
         return {
-          heading: "VIN Lookup - Secondhand Car Check Service",
-          subheading: "Check if vehicle is stolen before buying used vehicles. Free vehicle theft protection database check.",
+          heading: "Free VIN Number Check - How to Check If a Used Car Is Stolen",
+          subheading: "Verify any vehicle before buying on Craigslist, Facebook, or from private sellers. Free VIN lookup for cars, trucks, motorcycles, RVs, and boats.",
           benefits: [
-            "VIN lookup against stolen vehicle databases",
-            "Secondhand car check for all vehicle types",
-            "Vehicle theft protection verification",
-            "Used car verification for safe purchases"
+            "Check if used car, truck, SUV, or motorcycle is stolen - enter VIN number",
+            "Free verification before test drive - protect yourself from stolen vehicles",
+            "Works for all makes: Ford, Chevy, Toyota, Honda, BMW, and more",
+            "Mobile app to check VIN instantly at dealerships or private sales"
           ],
-          cta: "Verify Car VIN Now"
+          cta: "Check VIN Number Free"
         };
         
       case 'electronics':
         return {
-          heading: "Serial Number Lookup - Electronics Verification",
-          subheading: "Check if electronics are stolen using serial number verification. Safe secondhand electronics purchases.",
+          heading: "Free Serial Number Lookup - Check Laptops, TVs, Tools, and Electronics",
+          subheading: "How to check if used electronics are stolen: Enter serial number for instant verification. Works for laptops, computers, TVs, power tools, bikes, cameras, and more.",
           benefits: [
-            "Serial number lookup for all electronics",
-            "Electronics background check service",
-            "Used electronics safe verification",
-            "Laptop, tablet, gaming console security checks"
+            "Check if laptop is stolen by serial number - MacBook, Dell, HP, Lenovo",
+            "Verify power tools from pawn shops, yard sales, OfferUp",
+            "Check TVs, gaming consoles (PlayStation, Xbox), cameras before buying",
+            "Free app to verify bikes, musical instruments, appliances, and equipment"
           ],
-          cta: "Check Electronics Serial"
+          cta: "Check Serial Number Free"
         };
         
       default:
         return {
-          heading: "Property Legitimacy Tool - Anti-Theft Register",
-          subheading: "Secure marketplace tool for verifying secondhand items. Buy used safely online.",
+          heading: "Free Mobile App to Verify Used Items - Facebook Marketplace, OfferUp, eBay",
+          subheading: "Check if anything is stolen before you buy. Free verification for items on online marketplaces, yard sales, pawn shops, and private sellers.",
           benefits: [
-            "Property history reports for any item",
-            "Anti-theft register for buyers protection",
-            "Secure marketplace verification tool",
-            "Resale security check service"
+            "Instant verification - scan or enter serial number, IMEI, or VIN",
+            "Works at Facebook Marketplace meetups, OfferUp pickups, eBay purchases",
+            "Check items at pawn shops, thrift stores, garage sales before buying",
+            "Avoid legal trouble - make sure used items are legitimate before purchase"
           ],
-          cta: "Verify Item Now"
+          cta: "Download Free App"
         };
     }
   };
@@ -105,12 +105,14 @@ export const KeywordOptimizedContent: React.FC<KeywordOptimizedContentProps> = (
         {/* Hidden keyword-rich content for search engines */}
         <div className="sr-only" aria-hidden="true">
           <p>
-            Our platform helps consumers buy used safely online by providing comprehensive 
-            verification services. Whether you need to check property before selling, 
-            check if stolen before buying, or access our anti-theft register for buyers, 
-            we provide trusted item verification through our global stolen property database. 
-            Our secure marketplace tool offers property legitimacy verification, helping 
-            protect buyers and sellers in all secondhand transactions.
+            How to check if something is stolen: Use our free stolen item checker to verify laptops, 
+            phones, cars, bikes, TVs, tools, computers, and electronics before buying. Our mobile app 
+            lets you check serial numbers, IMEI, and VIN numbers instantly on Facebook Marketplace, 
+            OfferUp, eBay, Craigslist, at yard sales, pawn shops, and thrift stores. Free checking 
+            service for used items helps you avoid buying stolen goods. Verify secondhand items 
+            before meeting seller. Check if used car is stolen with free VIN lookup. Check if phone 
+            is stolen with free IMEI check. Check if laptop is stolen by serial number. Our free 
+            mobile app protects you from unknowingly purchasing stolen property and legal consequences.
           </p>
         </div>
       </div>
