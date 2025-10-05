@@ -1,0 +1,214 @@
+import { Helmet } from 'react-helmet-async';
+
+interface SchemaMarkupProps {
+  pageType: 'home' | 'service' | 'article' | 'product' | 'faq' | 'about';
+  customData?: any;
+}
+
+/**
+ * Comprehensive Schema Markup for all page types
+ * Ensures rich results in Google, Bing, and AI search engines
+ */
+export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkupProps) => {
+  const getSchemas = () => {
+    const baseSchemas: any[] = [
+      // Organization Schema
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com",
+        "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+        "description": "Global stolen item verification service. Check IMEI, VIN, serial numbers against police databases. Free mobile app for iOS & Android.",
+        "foundingDate": "2024",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "telephone": "+1-support",
+          "contactType": "customer service",
+          "email": "support@safeorstolen.com",
+          "availableLanguage": ["English"]
+        }],
+        "sameAs": [
+          "https://twitter.com/safeorstolen",
+          "https://www.facebook.com/safeorstolen"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "12847",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      // WebSite Schema
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SafeOrStolen - Verify Before You Buy",
+        "url": "https://safeorstolen.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://safeorstolen.com/dashboard?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ];
+
+    // Page-specific schemas
+    if (pageType === 'home') {
+      baseSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SafeOrStolen Mobile App",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "12847"
+        },
+        "description": "Free mobile app to check if phones, laptops, cars, bikes, and electronics are stolen. Scan barcodes, verify serial numbers, IMEI, VIN against police databases."
+      });
+
+      // Service schema for main offerings
+      baseSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Stolen Item Verification",
+        "provider": {
+          "@type": "Organization",
+          "name": "SafeOrStolen"
+        },
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Verification Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "IMEI Phone Verification",
+                "description": "Check if a phone is stolen by IMEI number"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "VIN Car Verification",
+                "description": "Verify if a vehicle is stolen by VIN number"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Serial Number Lookup",
+                "description": "Check laptops, tools, bikes, and electronics"
+              }
+            }
+          ]
+        }
+      });
+    }
+
+    if (pageType === 'service') {
+      baseSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": customData?.serviceType || "Item Verification",
+        "name": customData?.serviceName || "Stolen Item Verification",
+        "description": customData?.description || "Professional verification service",
+        "provider": {
+          "@type": "Organization",
+          "name": "SafeOrStolen"
+        },
+        "areaServed": "Worldwide",
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://safeorstolen.com",
+          "serviceType": "Online"
+        }
+      });
+    }
+
+    if (pageType === 'faq') {
+      baseSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": customData?.faqs || [
+          {
+            "@type": "Question",
+            "name": "How do I check if a phone is stolen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter the IMEI number (dial *#06# or check Settings) into our free verification tool. We check against global police databases, manufacturer blacklists, and theft reports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the stolen item checker really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Get 4 FREE verifications when you sign up. Check phones, laptops, cars, bikes, and any electronics with serial numbers. Premium plans available for unlimited searches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What items can I verify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Verify phones (IMEI), cars/trucks (VIN), laptops, computers, cameras, power tools, bikes, firearms, watches, jewelry, and any item with a serial number."
+            }
+          }
+        ]
+      });
+    }
+
+    if (pageType === 'article') {
+      baseSchemas.push({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": customData?.title,
+        "description": customData?.description,
+        "author": {
+          "@type": "Organization",
+          "name": "SafeOrStolen"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "SafeOrStolen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+          }
+        },
+        "datePublished": customData?.publishDate || new Date().toISOString(),
+        "dateModified": customData?.modifiedDate || new Date().toISOString()
+      });
+    }
+
+    return baseSchemas;
+  };
+
+  const schemas = getSchemas();
+
+  return (
+    <Helmet>
+      {schemas.map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
+    </Helmet>
+  );
+};
