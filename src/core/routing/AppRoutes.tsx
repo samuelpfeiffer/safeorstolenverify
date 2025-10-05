@@ -77,6 +77,9 @@ const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
 const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
 const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
 const ItemCategoriesPage = lazy(() => import('@/pages/ItemCategoriesPage'));
+const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
+const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
+const DatabasePage = lazy(() => import('@/pages/DatabasePage'));
 
 // User history & receipts
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
@@ -293,6 +296,11 @@ export const AppRoutes: React.FC = () => {
           <Route path="problem" element={<ProblemPage />} />
           <Route path="verification-results/:id" element={<ProtectedRoute><VerificationResultsPage /></ProtectedRoute>} />
           <Route path="community-watch" element={<CommunityWatchPage />} />
+          
+          {/* Resource Pages */}
+          <Route path="report-stolen" element={<ReportStolenPage />} />
+          <Route path="resource-center" element={<ResourceCenterPage />} />
+          <Route path="database" element={<DatabasePage />} />
           
           {/* Testing and development pages */}
           <Route path="launch-test" element={
