@@ -11,7 +11,7 @@ export const useFreemiumFlow = () => {
   const [showPaywall, setShowPaywall] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const FREE_SEARCH_LIMIT = 4;
+  const FREE_SEARCH_LIMIT = 2;
 
   useEffect(() => {
     if (user) {

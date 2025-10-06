@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check, Star, Shield, Zap, Clock, Users } from 'lucide-react';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS, formatPrice, calculateAnnualSavings, formatSavings } from '@/utils/pricing';
+import { BillingToggle } from './pricing/BillingToggle';
 
 interface PricingTierProps {
   name: string;
   price: string;
+  yearlyPrice?: string;
   period: string;
   description: string;
   features: string[];
@@ -15,18 +17,23 @@ interface PricingTierProps {
   popular?: boolean;
   onClick: () => void;
   loading?: boolean;
+  isAnnual?: boolean;
+  savings?: string;
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({
   name,
   price,
+  yearlyPrice,
   period,
   description,
   features,
   buttonText,
   popular = false,
   onClick,
-  loading = false
+  loading = false,
+  isAnnual = false,
+  savings
 }) => (
   <Card className={`relative ${popular ? 'border-2 border-primary shadow-lg scale-105' : 'border'}`}>
     {popular && (
@@ -42,9 +49,14 @@ const PricingTier: React.FC<PricingTierProps> = ({
       <CardTitle className="text-2xl font-bold">{name}</CardTitle>
       <div className="space-y-2">
         <div className="text-4xl font-bold text-primary">
-          {price}
-          <span className="text-lg text-muted-foreground font-normal">/{period}</span>
+          {isAnnual && yearlyPrice ? yearlyPrice : price}
+          <span className="text-lg text-muted-foreground font-normal">/{isAnnual ? 'year' : period}</span>
         </div>
+        {isAnnual && savings && (
+          <Badge variant="secondary" className="bg-sos-lime/20 text-sos-lime border-sos-lime">
+            {savings}
+          </Badge>
+        )}
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </CardHeader>
@@ -90,7 +102,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'payPerCheck' | 'entryLevel' | 'basic') => void;
+  onSubscribe: (tier: 'personal' | 'business', isAnnual?: boolean) => void;
   loadingTier?: string | null;
 }
 
@@ -98,34 +110,39 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
   onSubscribe,
   loadingTier
 }) => {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   const tiers = [
     {
-      id: 'payPerCheck' as const,
-      name: SUBSCRIPTION_TIERS.payPerCheck.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price),
-      period: SUBSCRIPTION_TIERS.payPerCheck.interval,
-      description: 'Quick verification without commitment',
-      features: SUBSCRIPTION_TIERS.payPerCheck.features || [],
-      buttonText: 'Pay Once'
-    },
-    {
-      id: 'basic' as const,
-      name: SUBSCRIPTION_TIERS.basic.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
-      period: SUBSCRIPTION_TIERS.basic.interval,
-      description: 'Perfect for occasional buyers',
-      features: SUBSCRIPTION_TIERS.basic.features || [],
-      buttonText: 'Start 7-Day Trial'
-    },
-    {
-      id: 'entryLevel' as const,
-      name: SUBSCRIPTION_TIERS.entryLevel.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
-      period: SUBSCRIPTION_TIERS.entryLevel.interval,
-      description: 'Perfect for professionals and regular buyers',
-      features: SUBSCRIPTION_TIERS.entryLevel.features || [],
+      id: 'personal' as const,
+      name: SUBSCRIPTION_TIERS.personal.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
+      yearlyPrice: SUBSCRIPTION_TIERS.personal.yearlyPrice 
+        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.personal.yearlyPrice / 12))
+        : undefined,
+      period: SUBSCRIPTION_TIERS.personal.interval,
+      description: 'Perfect for casual buyers and collectors',
+      features: SUBSCRIPTION_TIERS.personal.features || [],
       buttonText: 'Start 7-Day Trial',
-      popular: SUBSCRIPTION_TIERS.entryLevel.popular
+      popular: SUBSCRIPTION_TIERS.personal.popular,
+      savings: SUBSCRIPTION_TIERS.personal.yearlyPrice 
+        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.personal.price))
+        : undefined
+    },
+    {
+      id: 'business' as const,
+      name: SUBSCRIPTION_TIERS.business.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.business.price),
+      yearlyPrice: SUBSCRIPTION_TIERS.business.yearlyPrice 
+        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.business.yearlyPrice / 12))
+        : undefined,
+      period: SUBSCRIPTION_TIERS.business.interval,
+      description: 'For professionals and businesses',
+      features: SUBSCRIPTION_TIERS.business.features || [],
+      buttonText: 'Start 7-Day Trial',
+      savings: SUBSCRIPTION_TIERS.business.yearlyPrice 
+        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.business.price))
+        : undefined
     }
   ];
 
@@ -133,7 +150,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
     <section className="py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
             Stop Losing Money to Scams
           </h2>
@@ -159,20 +176,26 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
           </div>
         </div>
 
+        {/* Billing Toggle */}
+        <BillingToggle isAnnual={isAnnual} onToggle={setIsAnnual} />
+
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
           {tiers.map((tier) => (
             <PricingTier
               key={tier.id}
               name={tier.name}
               price={tier.price}
+              yearlyPrice={tier.yearlyPrice}
               period={tier.period}
               description={tier.description}
               features={tier.features}
               buttonText={tier.buttonText}
               popular={tier.popular}
-              onClick={() => onSubscribe(tier.id)}
+              onClick={() => onSubscribe(tier.id, isAnnual)}
               loading={loadingTier === tier.id}
+              isAnnual={isAnnual}
+              savings={tier.savings}
             />
           ))}
         </div>

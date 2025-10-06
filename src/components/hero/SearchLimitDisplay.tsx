@@ -31,7 +31,7 @@ export const SearchLimitDisplay = ({
     return (
       <div className="text-center mt-3">
         <p className="text-sm text-sos-orange font-medium">
-          🔐 Sign up to get your 4 free verification searches
+          🔐 Sign up to get your 2 free verification searches
         </p>
         <p className="text-xs text-gray-400 mt-1">
           Create your free account to start protecting yourself from stolen goods

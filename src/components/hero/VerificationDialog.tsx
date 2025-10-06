@@ -124,14 +124,14 @@ export const VerificationDialog = ({
             <div className="border border-yellow-500 rounded-lg p-4 bg-yellow-500/10 hover:bg-yellow-500/20 cursor-pointer transition-colors">
               <h3 className="font-bold flex items-center gap-2 text-white">
                 <Star className="h-4 w-4 text-yellow-500" />
-                Professional Plan 
+                Business Plan 
                 <span className="bg-yellow-500 px-2 py-1 text-xs rounded-full text-black">
-                  {formatPrice(SUBSCRIPTION_TIERS.entryLevel.price)}/month
+                  {formatPrice(SUBSCRIPTION_TIERS.business.price)}/month
                 </span>
               </h3>
-              <p className="text-sm text-gray-400 mt-1">Everything in Basic plus unlimited verifications</p>
+              <p className="text-sm text-gray-400 mt-1">Everything in Personal plus business features</p>
               <div className="mt-2 text-xs text-gray-500 space-y-1">
-                {SUBSCRIPTION_TIERS.entryLevel.features?.slice(0, 3).map((feature, index) => (
+                {SUBSCRIPTION_TIERS.business.features?.slice(0, 3).map((feature, index) => (
                   <div key={index}>• {feature}</div>
                 ))}
               </div>

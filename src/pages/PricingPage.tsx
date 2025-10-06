@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'payPerCheck' | 'entryLevel' | 'basic') => {
+  const handleSubscribe = useCallback(async (tier: 'personal' | 'business', isAnnual?: boolean) => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -65,7 +65,9 @@ const PricingPage = () => {
     }, 20000); // Increased to 20 second timeout
 
     try {
-      const priceId = getSubscriptionPriceId(tier);
+      const priceId = isAnnual 
+        ? SUBSCRIPTION_TIERS[tier].stripeYearlyPriceId || SUBSCRIPTION_TIERS[tier].stripePriceId!
+        : SUBSCRIPTION_TIERS[tier].stripePriceId!;
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
@@ -135,12 +137,12 @@ const PricingPage = () => {
   // Check for automatic subscription trigger after authentication
   useEffect(() => {
     const subscribeParam = searchParams.get('subscribe');
-    if (subscribeParam && isAuthenticated && (subscribeParam === 'basic' || subscribeParam === 'entryLevel')) {
+    if (subscribeParam && isAuthenticated && (subscribeParam === 'personal' || subscribeParam === 'business')) {
       // Remove the URL parameter and trigger subscription
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
       const timeoutId = setTimeout(() => {
-        handleSubscribe(subscribeParam);
+        handleSubscribe(subscribeParam as 'personal' | 'business');
       }, 500);
       
       return () => clearTimeout(timeoutId);
@@ -153,9 +155,9 @@ const PricingPage = () => {
 
     // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
-    if (pending === 'basic' || pending === 'entryLevel' || pending === 'payPerCheck') {
+    if (pending === 'personal' || pending === 'business') {
       localStorage.removeItem('pendingSubscription');
-      setTimeout(() => handleSubscribe(pending as 'basic' | 'entryLevel' | 'payPerCheck'), 300);
+      setTimeout(() => handleSubscribe(pending as 'personal' | 'business'), 300);
       return; // don't process report in same tick
     }
 
@@ -252,9 +254,9 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Professional Plan",
-          "description": "Unlimited verifications for professionals",
-          "price": formatPrice(SUBSCRIPTION_TIERS.entryLevel.price).replace('$', ''),
+          "name": "Business Plan",
+          "description": "Unlimited verifications for professionals and businesses",
+          "price": formatPrice(SUBSCRIPTION_TIERS.business.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "validFrom": "2024-01-01",

@@ -1021,6 +1021,47 @@ export type Database = {
         }
         Relationships: []
       }
+      credit_transactions: {
+        Row: {
+          amount: number
+          balance_after: number
+          created_at: string | null
+          description: string | null
+          id: string
+          stripe_session_id: string | null
+          transaction_type: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          balance_after: number
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          stripe_session_id?: string | null
+          transaction_type: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          balance_after?: number
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          stripe_session_id?: string | null
+          transaction_type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "credit_transactions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       customer_portal_sessions: {
         Row: {
           created_at: string
@@ -1406,6 +1447,7 @@ export type Database = {
         Row: {
           avatar_url: string | null
           created_at: string
+          credit_balance: number | null
           email: string | null
           full_name: string | null
           id: string
@@ -1414,6 +1456,7 @@ export type Database = {
           promotion_searches_remaining: number | null
           search_count: number
           search_count_reset_at: string | null
+          subscription_interval: string | null
           terms_accepted: boolean | null
           terms_accepted_at: string | null
           updated_at: string
@@ -1421,6 +1464,7 @@ export type Database = {
         Insert: {
           avatar_url?: string | null
           created_at?: string
+          credit_balance?: number | null
           email?: string | null
           full_name?: string | null
           id: string
@@ -1429,6 +1473,7 @@ export type Database = {
           promotion_searches_remaining?: number | null
           search_count?: number
           search_count_reset_at?: string | null
+          subscription_interval?: string | null
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
           updated_at?: string
@@ -1436,6 +1481,7 @@ export type Database = {
         Update: {
           avatar_url?: string | null
           created_at?: string
+          credit_balance?: number | null
           email?: string | null
           full_name?: string | null
           id?: string
@@ -1444,6 +1490,7 @@ export type Database = {
           promotion_searches_remaining?: number | null
           search_count?: number
           search_count_reset_at?: string | null
+          subscription_interval?: string | null
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
           updated_at?: string

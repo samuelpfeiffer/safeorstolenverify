@@ -16,19 +16,19 @@ export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
   const plans = [
     {
       name: 'Personal',
-      price: formatPrice(SUBSCRIPTION_TIERS.basic.price),
+      price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
       period: '/month',
-      features: SUBSCRIPTION_TIERS.basic.features || [],
+      features: SUBSCRIPTION_TIERS.personal.features || [],
       highlighted: false,
-      stripePriceId: SUBSCRIPTION_TIERS.basic.stripePriceId!
+      stripePriceId: SUBSCRIPTION_TIERS.personal.stripePriceId!
     },
     {
-      name: 'Professional',
-      price: formatPrice(SUBSCRIPTION_TIERS.entryLevel.price),
+      name: 'Business',
+      price: formatPrice(SUBSCRIPTION_TIERS.business.price),
       period: '/month',
-      features: SUBSCRIPTION_TIERS.entryLevel.features || [],
+      features: SUBSCRIPTION_TIERS.business.features || [],
       highlighted: true,
-      stripePriceId: SUBSCRIPTION_TIERS.entryLevel.stripePriceId!
+      stripePriceId: SUBSCRIPTION_TIERS.business.stripePriceId!
     }
   ];
 

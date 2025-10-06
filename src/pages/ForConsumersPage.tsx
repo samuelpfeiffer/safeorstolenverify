@@ -9,7 +9,7 @@ import { ConsumerCTA } from '@/components/consumers/ConsumerCTA';
 const ForConsumersPage: React.FC = () => {
   const navigate = useNavigate();
   
-  const handleSubscribeClick = (tier: 'basic' | 'entryLevel') => {
+  const handleSubscribeClick = (tier: 'personal' | 'business') => {
     navigate('/subscriptions');
   };
 
