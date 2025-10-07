@@ -226,23 +226,9 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Pay Per Lookup",
-          "description": "One-time verification lookup",
-          "price": formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Personal Use Plan",
-          "description": "Monthly subscription with 30 verifications",
-          "price": formatPrice(SUBSCRIPTION_TIERS.basic.price).replace('$', ''),
+          "name": "Personal Plan",
+          "description": "Unlimited verifications for personal use",
+          "price": formatPrice(SUBSCRIPTION_TIERS.personal.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "validFrom": "2024-01-01",
