@@ -8,32 +8,91 @@ export interface SubscriptionTier {
   stripePriceId?: string;
   stripeYearlyPriceId?: string;
   searchLimit?: number;
-  tier: 'free' | 'personal' | 'business' | 'credit_pack';
+  tier: 'free' | 'individual' | 'business' | 'enterprise' | 'personal' | 'credit_pack';
   creditsIncluded?: number;
 }
 
 export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   free: {
-    name: 'Free',
+    name: 'Freemium',
     price: 0,
     interval: 'month',
-    searchLimit: 2,
+    searchLimit: 5,
     tier: 'free',
     features: [
-      '2 free verifications',
-      'Basic verification reports',
-      'Search history',
+      '5 checks per month',
+      'Basic item verification',
+      'Search history (last 30 days)',
+      'Community access',
       'Email support'
     ]
   },
   
+  individual: {
+    name: 'Individual',
+    price: 499, // $4.99/month
+    yearlyPrice: 4788, // $47.88/year (20% discount)
+    interval: 'month',
+    tier: 'individual',
+    popular: true,
+    features: [
+      'Unlimited checks',
+      'Full search history',
+      'Mobile app access',
+      'Priority email support',
+      'Export reports'
+    ],
+    stripePriceId: 'Individual',
+    stripeYearlyPriceId: 'Individual Annual'
+  },
+  
+  business: {
+    name: 'Business',
+    price: 1999, // $19.99/month
+    yearlyPrice: 19188, // $191.88/year (20% discount)
+    interval: 'month',
+    tier: 'business',
+    features: [
+      'Everything in Individual',
+      'API access (1,000 calls/month)',
+      'Bulk upload & verification',
+      'Advanced reporting dashboard',
+      'Priority phone support',
+      'Team management (up to 5 users)',
+      'Custom integrations'
+    ],
+    stripePriceId: 'Business',
+    stripeYearlyPriceId: 'Business Annual'
+  },
+  
+  enterprise: {
+    name: 'Enterprise',
+    price: 9900, // $99/month (starting price)
+    yearlyPrice: 95040, // $950.40/year (20% discount)
+    interval: 'month',
+    tier: 'enterprise',
+    features: [
+      'Everything in Business',
+      'White-label solutions',
+      'Unlimited API calls',
+      'Custom SLA agreements',
+      'Dedicated account manager',
+      'Custom integrations & development',
+      'Unlimited team members',
+      '24/7 premium support'
+    ],
+    stripePriceId: 'Enterprise',
+    stripeYearlyPriceId: 'Enterprise Annual'
+  },
+  
+  // Legacy tier for existing subscribers
   personal: {
-    name: 'Personal',
+    name: 'Personal (Legacy)',
     price: 999, // $9.99/month
     yearlyPrice: 9588, // $95.88/year (20% discount)
     interval: 'month',
     tier: 'personal',
-    popular: true,
+    popular: false,
     features: [
       '7-day free trial',
       'Unlimited verifications',
@@ -45,27 +104,6 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
     ],
     stripePriceId: 'Personal',
     stripeYearlyPriceId: 'Personal Annual'
-  },
-  
-  business: {
-    name: 'Business',
-    price: 2999, // $29.99/month
-    yearlyPrice: 28788, // $287.88/year (20% discount)
-    interval: 'month',
-    tier: 'business',
-    features: [
-      '7-day free trial',
-      'Unlimited verifications',
-      'API access (coming soon)',
-      'Bulk upload tools',
-      'Team management (up to 5 users)',
-      'Downloadable PDF reports',
-      'Priority phone & email support',
-      'Advanced analytics dashboard',
-      'Custom integration support'
-    ],
-    stripePriceId: 'Business',
-    stripeYearlyPriceId: 'Business Annual'
   },
   
   creditPack5: {
@@ -116,7 +154,7 @@ export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   }
 };
 
-export const getSubscriptionPriceId = (tier: 'personal' | 'business' | 'creditPack5' | 'creditPack10' | 'creditPack25'): string => {
+export const getSubscriptionPriceId = (tier: 'individual' | 'business' | 'enterprise' | 'personal' | 'creditPack5' | 'creditPack10' | 'creditPack25'): string => {
   return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
 };
 

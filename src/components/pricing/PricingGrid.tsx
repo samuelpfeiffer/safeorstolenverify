@@ -34,16 +34,16 @@ export const PricingGrid = () => {
 
   const products = [
     {
-      ...SUBSCRIPTION_TIERS.payPerCheck,
-      price: formatPrice(SUBSCRIPTION_TIERS.payPerCheck.price),
-      priceId: SUBSCRIPTION_TIERS.payPerCheck.stripePriceId!,
-      period: 'per lookup',
+      ...SUBSCRIPTION_TIERS.free,
+      price: 'Free',
+      priceId: 'free',
+      period: 'forever',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
-      ...SUBSCRIPTION_TIERS.personal,
-      price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
-      priceId: SUBSCRIPTION_TIERS.personal.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.individual,
+      price: formatPrice(SUBSCRIPTION_TIERS.individual.price),
+      priceId: SUBSCRIPTION_TIERS.individual.stripePriceId!,
       period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
@@ -53,6 +53,13 @@ export const PricingGrid = () => {
       priceId: SUBSCRIPTION_TIERS.business.stripePriceId!,
       period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
+    },
+    {
+      ...SUBSCRIPTION_TIERS.enterprise,
+      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price) + '+',
+      priceId: SUBSCRIPTION_TIERS.enterprise.stripePriceId!,
+      period: 'month',
+      image: "https://i.imgur.com/6Mvijcm.png"
     }
   ];
 
@@ -60,10 +67,10 @@ export const PricingGrid = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
-        <p className="text-xl text-muted-foreground">Select the perfect plan for your needs</p>
+        <p className="text-xl text-muted-foreground">Start free, upgrade as you grow</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {products.map((product) => (
           <ProductCard
             key={product.priceId}

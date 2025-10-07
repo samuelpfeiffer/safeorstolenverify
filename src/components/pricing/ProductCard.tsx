@@ -33,6 +33,16 @@ export const ProductCard = ({
   const navigate = useNavigate();
 
   const handleCheckout = () => {
+    // Free tier doesn't need checkout
+    if (priceId === 'free') {
+      if (!user) {
+        navigate('/auth?tab=signup');
+      } else {
+        navigate('/dashboard');
+      }
+      return;
+    }
+    
     if (!user) {
       navigate('/auth?tab=signup');
       return;
@@ -78,7 +88,9 @@ export const ProductCard = ({
           className={`w-full ${popular ? 'bg-sos-orange hover:bg-sos-orange/90' : 'bg-secondary hover:bg-secondary/80'}`}
           disabled={isLoading}
         >
-          {isLoading ? "Processing..." : user ? "Checkout" : "Sign Up & Checkout"}
+          {isLoading ? "Processing..." : 
+           priceId === 'free' ? (user ? "Get Started" : "Sign Up Free") :
+           user ? "Upgrade Now" : "Sign Up & Subscribe"}
         </Button>
       </CardContent>
     </Card>

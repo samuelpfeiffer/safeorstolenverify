@@ -102,7 +102,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 );
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'personal' | 'business', isAnnual?: boolean) => void;
+  onSubscribe: (tier: 'individual' | 'business' | 'enterprise', isAnnual?: boolean) => void;
   loadingTier?: string | null;
 }
 
@@ -114,19 +114,19 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
 
   const tiers = [
     {
-      id: 'personal' as const,
-      name: SUBSCRIPTION_TIERS.personal.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
-      yearlyPrice: SUBSCRIPTION_TIERS.personal.yearlyPrice 
-        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.personal.yearlyPrice / 12))
+      id: 'individual' as const,
+      name: SUBSCRIPTION_TIERS.individual.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.individual.price),
+      yearlyPrice: SUBSCRIPTION_TIERS.individual.yearlyPrice 
+        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.individual.yearlyPrice / 12))
         : undefined,
-      period: SUBSCRIPTION_TIERS.personal.interval,
+      period: SUBSCRIPTION_TIERS.individual.interval,
       description: 'Perfect for casual buyers and collectors',
-      features: SUBSCRIPTION_TIERS.personal.features || [],
-      buttonText: 'Start 7-Day Trial',
-      popular: SUBSCRIPTION_TIERS.personal.popular,
-      savings: SUBSCRIPTION_TIERS.personal.yearlyPrice 
-        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.personal.price))
+      features: SUBSCRIPTION_TIERS.individual.features || [],
+      buttonText: 'Get Started',
+      popular: SUBSCRIPTION_TIERS.individual.popular,
+      savings: SUBSCRIPTION_TIERS.individual.yearlyPrice 
+        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.individual.price))
         : undefined
     },
     {
@@ -137,11 +137,26 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.business.yearlyPrice / 12))
         : undefined,
       period: SUBSCRIPTION_TIERS.business.interval,
-      description: 'For professionals and businesses',
+      description: 'For resellers, dealers, and small businesses',
       features: SUBSCRIPTION_TIERS.business.features || [],
       buttonText: 'Start 7-Day Trial',
       savings: SUBSCRIPTION_TIERS.business.yearlyPrice 
         ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.business.price))
+        : undefined
+    },
+    {
+      id: 'enterprise' as const,
+      name: SUBSCRIPTION_TIERS.enterprise.name,
+      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price) + '+',
+      yearlyPrice: SUBSCRIPTION_TIERS.enterprise.yearlyPrice 
+        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.enterprise.yearlyPrice / 12))
+        : undefined,
+      period: SUBSCRIPTION_TIERS.enterprise.interval,
+      description: 'Custom solutions for large-scale operations',
+      features: SUBSCRIPTION_TIERS.enterprise.features || [],
+      buttonText: 'Contact Sales',
+      savings: SUBSCRIPTION_TIERS.enterprise.yearlyPrice 
+        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.enterprise.price))
         : undefined
     }
   ];
@@ -152,10 +167,10 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
-            Stop Losing Money to Scams
+            Start Free, Upgrade as You Grow
           </h2>
           <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-            Choose your protection level. All plans include our money-back guarantee and 
+            Choose your protection level. All paid plans include our money-back guarantee and 
             instant access to comprehensive verification databases.
           </p>
           
@@ -180,7 +195,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
         <BillingToggle isAnnual={isAnnual} onToggle={setIsAnnual} />
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
           {tiers.map((tier) => (
             <PricingTier
               key={tier.id}
@@ -221,14 +236,14 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
             </span>
           </div>
           
-          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-orange-200 rounded-lg p-4 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Zap className="h-5 w-5 text-orange-500" />
-              <Badge className="bg-red-500 text-white">Limited Time</Badge>
+              <Zap className="h-5 w-5 text-blue-500" />
+              <Badge className="bg-green-500 text-white">Freemium Launch</Badge>
             </div>
             <p className="font-medium text-gray-900">
-              Join during our launch period and lock in these prices forever. 
-              Regular pricing starts at $12.99/month.
+              Start with 5 free checks per month - no credit card required. 
+              Upgrade anytime to unlock unlimited verifications.
             </p>
           </div>
         </div>

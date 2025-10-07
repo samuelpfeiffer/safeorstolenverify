@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'personal' | 'business', isAnnual?: boolean) => {
+  const handleSubscribe = useCallback(async (tier: 'individual' | 'business' | 'enterprise', isAnnual?: boolean) => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -137,12 +137,12 @@ const PricingPage = () => {
   // Check for automatic subscription trigger after authentication
   useEffect(() => {
     const subscribeParam = searchParams.get('subscribe');
-    if (subscribeParam && isAuthenticated && (subscribeParam === 'personal' || subscribeParam === 'business')) {
+    if (subscribeParam && isAuthenticated && ['individual', 'business', 'enterprise'].includes(subscribeParam)) {
       // Remove the URL parameter and trigger subscription
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
       const timeoutId = setTimeout(() => {
-        handleSubscribe(subscribeParam as 'personal' | 'business');
+        handleSubscribe(subscribeParam as 'individual' | 'business' | 'enterprise');
       }, 500);
       
       return () => clearTimeout(timeoutId);
@@ -155,9 +155,9 @@ const PricingPage = () => {
 
     // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
-    if (pending === 'personal' || pending === 'business') {
+    if (pending && ['individual', 'business', 'enterprise'].includes(pending)) {
       localStorage.removeItem('pendingSubscription');
-      setTimeout(() => handleSubscribe(pending as 'personal' | 'business'), 300);
+      setTimeout(() => handleSubscribe(pending as 'individual' | 'business' | 'enterprise'), 300);
       return; // don't process report in same tick
     }
 
