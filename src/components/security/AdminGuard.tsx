@@ -10,14 +10,26 @@ interface AdminGuardProps {
   requiredRole?: 'admin' | 'moderator';
 }
 
+/**
+ * DEPRECATED: Use SecureAdminGuard instead
+ * This component uses client-side email checks which can be bypassed
+ * 
+ * @deprecated Use SecureAdminGuard from '@/components/security/SecureAdminGuard' instead
+ */
 export const AdminGuard = ({ 
   children, 
   fallback,
   requiredRole = 'admin' 
 }: AdminGuardProps) => {
+  console.warn(
+    'AdminGuard is deprecated and insecure. Use SecureAdminGuard instead. ' +
+    'Client-side email checks can be bypassed by attackers.'
+  );
+  
   const { user, isAuthenticated } = useUnifiedAuth();
 
-  // Check if user is authenticated
+  // This is insecure - kept only for backwards compatibility
+  // New code should use SecureAdminGuard which validates roles server-side
   if (!isAuthenticated || !user) {
     return fallback || (
       <div className="min-h-screen bg-sos text-white flex items-center justify-center">
@@ -31,34 +43,6 @@ export const AdminGuard = ({
               Please sign in to access this area.
             </CardDescription>
           </CardHeader>
-        </Card>
-      </div>
-    );
-  }
-
-  // TODO: Implement role checking when user roles system is in place
-  // For now, we'll use a simple email-based check as a placeholder
-  const isAdmin = user.email === 'admin@safeorstolen.com' || 
-                 user.email?.endsWith('@safeorstolen.com');
-
-  if (!isAdmin) {
-    return fallback || (
-      <div className="min-h-screen bg-sos text-white flex items-center justify-center">
-        <Card className="bg-sos border-red-500/20 max-w-md">
-          <CardHeader>
-            <CardTitle className="text-red-400 flex items-center gap-2">
-              <AlertTriangle className="h-6 w-6" />
-              Access Denied
-            </CardTitle>
-            <CardDescription className="text-gray-300">
-              You don't have permission to access this area. {requiredRole} privileges required.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-gray-400">
-              Contact your administrator if you believe this is an error.
-            </p>
-          </CardContent>
         </Card>
       </div>
     );

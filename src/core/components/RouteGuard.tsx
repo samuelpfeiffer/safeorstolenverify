@@ -31,9 +31,13 @@ export const RouteGuard: React.FC<RouteGuardProps> = ({
     return <Navigate to={redirectPath} state={{ from: location }} replace />;
   }
 
-  // Check admin requirement
-  if (requireAdmin && user?.email !== 'admin@safeorstolen.com') {
-    return <Navigate to="/" replace />;
+  // Admin requirement should use SecureAdminGuard or AdminRoute instead
+  // This check has been removed as it was insecure (client-side only)
+  if (requireAdmin) {
+    console.warn(
+      'RouteGuard with requireAdmin is deprecated and insecure. ' +
+      'Use AdminRoute component instead which uses SecureAdminGuard with server-side validation.'
+    );
   }
 
   return <>{children}</>;

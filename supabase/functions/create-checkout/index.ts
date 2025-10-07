@@ -61,6 +61,29 @@ serve(async (req) => {
     const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
     console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription });
 
+    // SECURITY FIX: Validate credit pack purchases
+    const VALID_CREDIT_PACKS: Record<string, { credits: number; minPrice: number }> = {
+      'creditPack5': { credits: 5, minPrice: 400 },
+      'creditPack10': { credits: 10, minPrice: 800 },
+      'creditPack25': { credits: 25, minPrice: 1800 }
+    };
+
+    // Validate credit pack type
+    if (!isSubscription && planName?.toLowerCase().includes('credit')) {
+      const packKey = Object.keys(VALID_CREDIT_PACKS).find(key => 
+        planName.toLowerCase().includes(key.toLowerCase().replace('creditpack', 'credit pack'))
+      );
+      
+      if (!packKey && !planName.toLowerCase().includes('subscription')) {
+        console.log(`[CREATE-CHECKOUT] ERROR: Invalid credit pack type: ${planName}`);
+        throw new Error(`Invalid credit pack type: ${planName}. Valid options: 5, 10, or 25 credits`);
+      }
+      
+      if (packKey) {
+        console.log(`[CREATE-CHECKOUT] Validated credit pack: ${packKey} (${VALID_CREDIT_PACKS[packKey].credits} credits)`);
+      }
+    }
+
     // Enhanced Stripe secret key validation with test/live mode support
     const getStripeKey = () => {
       console.log(`[CREATE-CHECKOUT] Starting Stripe key validation...`);

@@ -74,6 +74,24 @@ serve(async (req) => {
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
     console.log(`Processing Stripe event: ${event.type} (ID: ${event.id})`);
 
+    // SECURITY FIX: Check for duplicate webhook events (idempotency)
+    const { data: existingEvent } = await supabaseClient
+      .from('stripe_webhook_events')
+      .select('id')
+      .eq('stripe_event_id', event.id)
+      .single();
+
+    if (existingEvent) {
+      console.log(`Event ${event.id} already processed - returning success`);
+      return new Response(
+        JSON.stringify({ received: true, already_processed: true }),
+        { 
+          status: 200, 
+          headers: { ...corsHeaders, "Content-Type": "application/json" } 
+        }
+      );
+    }
+
     try {
       switch (event.type) {
         case "checkout.session.completed": {
@@ -260,6 +278,15 @@ serve(async (req) => {
       }
 
       console.log(`Successfully processed event ${event.type} (ID: ${event.id})`);
+      
+      // SECURITY FIX: Record that we've processed this event
+      await supabaseClient.from('stripe_webhook_events').insert({
+        stripe_event_id: event.id,
+        event_type: event.type,
+        processed_at: new Date().toISOString()
+      });
+      console.log(`Recorded event ${event.id} as processed`);
+      
       return new Response(JSON.stringify({ received: true, event_id: event.id }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 200,

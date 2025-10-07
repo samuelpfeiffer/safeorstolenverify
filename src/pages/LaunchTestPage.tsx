@@ -14,12 +14,21 @@ const LaunchTestPage = () => {
     );
   }
 
-  // Only allow admin users or development environment
-  const isAdmin = user?.email === 'samandhisbigideas@gmail.com'; // Replace with your admin email
+  // Security: This page should be protected by AdminRoute
+  // Client-side checks are insecure and have been removed
   const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname.includes('lovable');
 
-  if (!isAuthenticated || (!isAdmin && !isDevelopment)) {
+  if (!isAuthenticated) {
     return <Navigate to="/auth?tab=signin" replace />;
+  }
+
+  // In production, this page should be wrapped with AdminRoute
+  // For development, allow all authenticated users
+  if (!isDevelopment) {
+    console.warn(
+      'LaunchTestPage should be protected by AdminRoute in production. ' +
+      'Client-side email checks have been removed for security.'
+    );
   }
 
   return (

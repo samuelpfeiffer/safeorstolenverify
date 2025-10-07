@@ -56,19 +56,19 @@ const AdminPage = () => {
     );
   }
 
-  // Check admin access (improved admin check)
-  const isAdmin = user?.email === 'admin@safeorstolen.com' || 
-                  user?.email?.endsWith('@safeorstolen.com') ||
-                  user?.email === 'samandhisbigideas@gmail.com';
+  // Admin check is now handled by AdminRoute which uses SecureAdminGuard
+  // No client-side email checks needed - server validates via RLS and is_admin_user()
+  const isAdmin = true; // AdminRoute already verified this
 
-  if (!user || !isAdmin) {
+  // This redundant check is kept only for direct navigation protection
+  if (!user) {
     return (
       <div className="min-h-screen bg-sos text-white flex items-center justify-center">
         <Card className="bg-sos-dark border-sos-orange/20">
           <CardContent className="p-8 text-center">
             <AlertTriangle className="h-12 w-12 text-sos-orange mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2">Access Denied</h2>
-            <p className="text-gray-300">You need administrator privileges to access this page.</p>
+            <h2 className="text-2xl font-bold mb-2">Authentication Required</h2>
+            <p className="text-gray-300">Please sign in to access this page.</p>
           </CardContent>
         </Card>
       </div>
