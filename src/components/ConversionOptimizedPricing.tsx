@@ -170,7 +170,7 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
             Start Free, Upgrade as You Grow
           </h2>
           <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-            Choose your protection level. All paid plans include our money-back guarantee and 
+            Start with 2 FREE checks (14-day trial). All paid plans include our money-back guarantee and 
             instant access to comprehensive verification databases.
           </p>
           
@@ -239,10 +239,10 @@ export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProp
           <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Zap className="h-5 w-5 text-blue-500" />
-              <Badge className="bg-green-500 text-white">Freemium Launch</Badge>
+              <Badge className="bg-green-500 text-white">Free Trial Available</Badge>
             </div>
             <p className="font-medium text-gray-900">
-              Start with 5 free checks per month - no credit card required. 
+              Start with 2 free checks (14-day trial) - no credit card required. 
               Upgrade anytime to unlock unlimited verifications.
             </p>
           </div>

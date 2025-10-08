@@ -20,6 +20,8 @@ import { SocialShareOptimizer } from '@/components/seo/SocialShareOptimizer';
 import { ComprehensiveFAQSection } from '@/components/seo/ComprehensiveFAQSection';
 import { RichContentHub } from '@/components/seo/RichContentHub';
 import { useCoreWebVitals, optimizeImages, prefetchCriticalResources } from '@/hooks/useCoreWebVitals';
+import { TrialCountdownBanner } from '@/components/trial/TrialCountdownBanner';
+import { ConversionTracking } from '@/components/conversion/ConversionTracking';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -37,6 +39,12 @@ const Index = () => {
 
   return (
     <>
+      {/* Conversion Tracking */}
+      <ConversionTracking />
+      
+      {/* Trial Countdown Banner */}
+      <TrialCountdownBanner />
+      
       {/* Advanced Advertising & SEO System */}
       <AdvertisingStrategy />
       <AdvancedSEOManager />
@@ -48,7 +56,7 @@ const Index = () => {
       <ComprehensiveSchemaMarkup pageType="home" />
       <UnifiedSEOOptimizer
         title="Check if Stolen FREE | Verify Phones, Cars, Laptops, Tools Before Buying | SafeOrStolen Mobile App"
-        description="FREE mobile app for iOS & Android. Instantly check if phones (IMEI), cars (VIN), laptops, tools, bikes are stolen. Verify items on Facebook Marketplace, OfferUp, Craigslist, eBay before buying. 4 FREE searches. 127M+ items tracked."
+        description="FREE mobile app for iOS & Android. Instantly check if phones (IMEI), cars (VIN), laptops, tools, bikes are stolen. Verify items on Facebook Marketplace, OfferUp, Craigslist, eBay before buying. 2 FREE verifications (14-day trial). 127M+ items tracked."
         keywords="check if phone stolen, IMEI lookup free, VIN check stolen car, verify laptop serial number, facebook marketplace verification, offerup safety check, craigslist stolen item checker, serial number lookup, check if stolen before buying, secondhand item verification"
         canonical="/"
         structuredData={getHomePageStructuredData()}

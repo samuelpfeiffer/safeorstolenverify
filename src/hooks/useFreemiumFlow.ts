@@ -12,6 +12,7 @@ export const useFreemiumFlow = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const FREE_SEARCH_LIMIT = 2;
+  const TRIAL_DURATION_DAYS = 14;
 
   useEffect(() => {
     if (user) {
@@ -40,18 +41,28 @@ export const useFreemiumFlow = () => {
         return;
       }
 
-      // Get user profile with search count
+      // Get user profile with search count and created_at for trial tracking
       const { data: profile } = await supabase
         .from('profiles')
-        .select('search_count')
+        .select('search_count, created_at')
         .eq('id', user.id)
         .single();
 
       const currentCount = profile?.search_count || 0;
       setSearchCount(currentCount);
-      
-      // Show paywall if limit reached
-      if (currentCount >= FREE_SEARCH_LIMIT) {
+
+      // Check if trial has expired (14 days from account creation)
+      if (profile?.created_at) {
+        const createdAt = new Date(profile.created_at);
+        const expiresAt = new Date(createdAt);
+        expiresAt.setDate(expiresAt.getDate() + TRIAL_DURATION_DAYS);
+        const isTrialExpired = new Date() > expiresAt;
+
+        // Show paywall if limit reached OR trial expired
+        if (currentCount >= FREE_SEARCH_LIMIT || isTrialExpired) {
+          setShowPaywall(true);
+        }
+      } else if (currentCount >= FREE_SEARCH_LIMIT) {
         setShowPaywall(true);
       }
 

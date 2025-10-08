@@ -14,17 +14,17 @@ export interface SubscriptionTier {
 
 export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
   free: {
-    name: 'Freemium',
+    name: 'Free Trial',
     price: 0,
     interval: 'month',
-    searchLimit: 5,
+    searchLimit: 2,
     tier: 'free',
     features: [
-      '5 checks per month',
+      '2 free checks (expires in 14 days)',
       'Basic item verification',
-      'Search history (last 30 days)',
-      'Community access',
-      'Email support'
+      'Instant results',
+      'Mobile app access',
+      'No credit card required'
     ]
   },
   

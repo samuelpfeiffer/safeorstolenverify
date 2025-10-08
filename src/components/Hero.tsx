@@ -2,7 +2,7 @@ import React, { Suspense, useState, useCallback, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Shield, Users, BadgeCheck } from 'lucide-react';
+import { Shield, Users, BadgeCheck, Clock } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { HolographicBackground } from '@/components/futuristic/HolographicBackground';
 import { motion } from 'framer-motion';
@@ -114,7 +114,12 @@ const Hero = memo(() => {
             
             <div className="space-y-2">
               <p className="text-foreground text-base font-semibold">✓ Available on App Store (iPhone) & Google Play (Android)</p>
-              <p className="text-muted-foreground text-sm">4 FREE verifications • No credit card • Verify in 30 seconds</p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-sos-orange/10 border border-sos-orange/30 rounded-lg">
+                <Clock className="h-4 w-4 text-sos-orange" />
+                <p className="text-sos-orange text-sm font-bold">
+                  🎁 2 FREE Verifications • Expires in 14 Days • No Credit Card
+                </p>
+              </div>
               <p className="text-destructive text-sm font-bold">⚠️ Don't meet marketplace sellers without this app!</p>
             </div>
 
@@ -125,8 +130,8 @@ const Hero = memo(() => {
                 <div className="text-sm text-muted-foreground">Mobile App (iOS & Android)</div>
               </div>
               <div className="text-center space-y-2">
-                <div className="text-3xl md:text-4xl font-bold text-secondary">4 FREE</div>
-                <div className="text-sm text-muted-foreground">Verifications Included</div>
+                <div className="text-3xl md:text-4xl font-bold text-secondary">2 FREE</div>
+                <div className="text-sm text-muted-foreground">14-Day Trial</div>
               </div>
               <div className="text-center space-y-2">
                 <div className="text-3xl md:text-4xl font-bold text-accent">30 sec</div>
@@ -172,7 +177,7 @@ const Hero = memo(() => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold">✓</span>
-                <span>4 FREE verifications included</span>
+                <span>2 FREE verifications (14-day trial)</span>
               </li>
             </ul>
           </div>
@@ -251,7 +256,7 @@ const Hero = memo(() => {
               📱 Download FREE App Now - iOS & Android
             </Button>
             <p className="mt-3 text-sm text-muted-foreground">
-              4 FREE verifications • No credit card • Works offline
+              2 FREE verifications • 14-day trial • No credit card • Works offline
             </p>
           </div>
         </div>

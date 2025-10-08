@@ -44,7 +44,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
         <div className="space-y-2">
           <p className="text-lg font-medium">
             {isOverLimit 
-              ? "You've used all 4 free verifications. Upgrade now to continue protecting yourself."
+              ? "You've used all 2 free verifications (14-day trial). Upgrade now to continue protecting yourself."
               : "You're about to use your final free verification. Don't get caught off guard again."
             }
           </p>
@@ -84,7 +84,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
             <Zap className="h-5 w-5 text-yellow-500" />
             <Badge className="bg-red-500 text-white">Limited Time Offer</Badge>
           </div>
-          <p className="text-lg font-bold text-gray-900">Start at just $7.99/month</p>
+          <p className="text-lg font-bold text-gray-900">Start at just $4.99/month</p>
           <p className="text-sm text-gray-600">Cancel anytime • 30-day money-back guarantee</p>
         </div>
 

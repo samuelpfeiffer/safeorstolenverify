@@ -60,17 +60,32 @@ export const useSearchLimits = () => {
         return;
       }
 
-      // Check free tier usage (4 searches total)
+      // Check free tier usage (2 searches total, expires in 14 days)
+      const { data: userProfile } = await supabase
+        .from('profiles')
+        .select('created_at')
+        .eq('id', user.id)
+        .single();
+
+      // Check if trial has expired (14 days from account creation)
+      let isTrialExpired = false;
+      if (userProfile?.created_at) {
+        const createdAt = new Date(userProfile.created_at);
+        const expiresAt = new Date(createdAt);
+        expiresAt.setDate(expiresAt.getDate() + 14);
+        isTrialExpired = new Date() > expiresAt;
+      }
+
       const { count } = await supabase
         .from('verification_results')
         .select('*', { count: 'exact', head: true })
         .eq('user_id', user.id);
 
       const used = count || 0;
-      const remaining = Math.max(0, 4 - used);
+      const remaining = isTrialExpired ? 0 : Math.max(0, 2 - used);
       
       setRemainingSearches(remaining);
-      setHasReachedLimit(remaining === 0);
+      setHasReachedLimit(remaining === 0 || isTrialExpired);
 
     } catch (error) {
       console.error('Error checking user limits:', error);
@@ -96,7 +111,7 @@ export const useSearchLimits = () => {
       // No searches allowed without account - must sign up first
       toast({
         title: "Sign Up Required",
-        description: "Create your free account to get 4 verification searches",
+        description: "Create your free account to get 2 free verifications (expires in 14 days)",
         variant: "destructive",
       });
       return false;
