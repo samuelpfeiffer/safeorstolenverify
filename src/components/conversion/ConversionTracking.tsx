@@ -1,23 +1,15 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
-// Extend window object for Google Analytics
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
-  }
-}
-
-export const ConversionTracking = () => {
+export const ConversionTracking: React.FC = () => {
   const location = useLocation();
   const { user } = useUnifiedAuth();
 
   // Track page views
   useEffect(() => {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'page_view', {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
         page_path: location.pathname + location.search,
         page_title: document.title,
         user_id: user?.id || 'anonymous',
@@ -30,8 +22,8 @@ export const ConversionTracking = () => {
 
 // Helper functions to track specific conversion events
 export const trackTrialStart = (userId: string) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'trial_start', {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'trial_start', {
       event_category: 'engagement',
       event_label: 'trial_started',
       user_id: userId,
@@ -43,8 +35,8 @@ export const trackTrialStart = (userId: string) => {
 };
 
 export const trackCheckUsed = (userId: string, checksRemaining: number, itemType: string) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'check_used', {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'check_used', {
       event_category: 'engagement',
       event_label: 'verification_check',
       user_id: userId,
@@ -57,8 +49,8 @@ export const trackCheckUsed = (userId: string, checksRemaining: number, itemType
 };
 
 export const trackUpgradeClick = (userId: string, source: string, tier: string) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'upgrade_click', {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'upgrade_click', {
       event_category: 'conversion',
       event_label: 'upgrade_intent',
       user_id: userId,
@@ -71,8 +63,8 @@ export const trackUpgradeClick = (userId: string, source: string, tier: string) 
 };
 
 export const trackSubscriptionComplete = (userId: string, tier: string, price: number, interval: string) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'purchase', {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'purchase', {
       event_category: 'conversion',
       transaction_id: `sub_${Date.now()}`,
       value: price / 100,
@@ -93,8 +85,8 @@ export const trackSubscriptionComplete = (userId: string, tier: string, price: n
 };
 
 export const trackTrialExpiring = (userId: string, daysRemaining: number, checksRemaining: number) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'trial_expiring', {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'trial_expiring', {
       event_category: 'engagement',
       event_label: 'trial_urgency',
       user_id: userId,
@@ -107,8 +99,8 @@ export const trackTrialExpiring = (userId: string, daysRemaining: number, checks
 };
 
 export const trackPaywallView = (userId: string, trigger: string) => {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'paywall_view', {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', 'paywall_view', {
       event_category: 'engagement',
       event_label: 'paywall_shown',
       user_id: userId,
