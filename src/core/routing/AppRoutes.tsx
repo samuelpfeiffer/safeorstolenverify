@@ -91,6 +91,7 @@ const SecuritySettingsPage = lazy(() => import('@/pages/SecuritySettingsPage'));
 const EnterpriseDemoPage = lazy(() => import('@/pages/EnterpriseDemoPage'));
 const ReferralPage = lazy(() => import('@/pages/ReferralPage'));
 const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
+const DeveloperPortalPage = lazy(() => import('@/pages/DeveloperPortalPage'));
 const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
 const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 
@@ -224,6 +225,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="enterprise-demo" element={<EnterpriseDemoPage />} />
           <Route path="referral" element={<ReferralPage />} />
           <Route path="api-docs" element={<ApiDocsPage />} />
+          <Route path="developer-portal" element={<DeveloperPortalPage />} />
           <Route path="sitemap" element={<SitemapPage />} />
           <Route path="community" element={<CommunityPage />} />
            <Route path="case-studies" element={<CaseStudiesPage />} />

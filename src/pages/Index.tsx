@@ -20,8 +20,8 @@ import { SocialShareOptimizer } from '@/components/seo/SocialShareOptimizer';
 import { ComprehensiveFAQSection } from '@/components/seo/ComprehensiveFAQSection';
 import { RichContentHub } from '@/components/seo/RichContentHub';
 import { useCoreWebVitals, optimizeImages, prefetchCriticalResources } from '@/hooks/useCoreWebVitals';
-import { TrialCountdownBanner } from '@/components/trial/TrialCountdownBanner';
 import { ConversionTracking } from '@/components/conversion/ConversionTracking';
+import { LiveActivityFeed } from '@/components/conversion/LiveActivityFeed';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -41,9 +41,6 @@ const Index = () => {
     <>
       {/* Conversion Tracking */}
       <ConversionTracking />
-      
-      {/* Trial Countdown Banner */}
-      <TrialCountdownBanner />
       
       {/* Advanced Advertising & SEO System */}
       <AdvertisingStrategy />
@@ -95,6 +92,7 @@ const Index = () => {
       
       {/* Dynamic Conversion Elements */}
       <SocialProofEngine />
+      <LiveActivityFeed />
       
       {/* Performance Monitoring (Dev Only) */}
       <PerformanceMonitor />

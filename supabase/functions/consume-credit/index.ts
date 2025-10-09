@@ -41,25 +41,26 @@ serve(async (req) => {
 
     console.log('[CONSUME-CREDIT] User authenticated:', user.id);
 
-    // Get current credit balance
-    const { data: profile, error: profileError } = await supabaseClient
+    // SECURITY FIX: Use atomic UPDATE to prevent race condition
+    // This ensures only one concurrent request can deduct a credit
+    const { data: updatedProfile, error: updateError } = await supabaseClient
       .from('profiles')
-      .select('credit_balance')
+      .update({ credit_balance: supabaseClient.raw('credit_balance - 1') })
       .eq('id', user.id)
+      .gt('credit_balance', 0) // Only update if balance > 0
+      .select('credit_balance')
       .single();
 
-    if (profileError || !profile) {
-      console.error('[CONSUME-CREDIT] Profile not found:', profileError);
+    if (updateError) {
+      console.error('[CONSUME-CREDIT] Failed to update balance:', updateError);
       return new Response(
-        JSON.stringify({ error: "Profile not found" }),
-        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        JSON.stringify({ error: "Failed to update balance" }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    console.log('[CONSUME-CREDIT] Current balance:', profile.credit_balance);
-
-    if (profile.credit_balance <= 0) {
-      console.log('[CONSUME-CREDIT] Insufficient credits');
+    if (!updatedProfile) {
+      console.log('[CONSUME-CREDIT] Insufficient credits (atomic check failed)');
       return new Response(
         JSON.stringify({ 
           success: false, 
@@ -70,21 +71,8 @@ serve(async (req) => {
       );
     }
 
-    // Deduct 1 credit
-    const newBalance = profile.credit_balance - 1;
-    
-    const { error: updateError } = await supabaseClient
-      .from('profiles')
-      .update({ credit_balance: newBalance })
-      .eq('id', user.id);
-
-    if (updateError) {
-      console.error('[CONSUME-CREDIT] Failed to update balance:', updateError);
-      return new Response(
-        JSON.stringify({ error: "Failed to update balance" }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+    const newBalance = updatedProfile.credit_balance;
+    console.log('[CONSUME-CREDIT] Current balance after deduction:', newBalance);
 
     // Log the transaction
     const { error: transactionError } = await supabaseClient
