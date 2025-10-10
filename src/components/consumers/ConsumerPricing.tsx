@@ -53,7 +53,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
     <div className="max-w-5xl mx-auto pt-8" id="subscriptions">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-4">Transparent, Fair Subscriptions</h2>
-        <p className="text-xl mb-4">Get started with {SUBSCRIPTION_TIERS.free.searchLimit} free searches. No hidden fees, cancel anytime.</p>
+        <p className="text-xl mb-4">Start at just $0.99 per check. No hidden fees, no subscriptions required.</p>
         <div className="flex justify-center items-center gap-6 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>

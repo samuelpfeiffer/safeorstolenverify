@@ -65,9 +65,7 @@ const PricingPage = () => {
     }, 20000); // Increased to 20 second timeout
 
     try {
-      const priceId = isAnnual 
-        ? SUBSCRIPTION_TIERS[tier].stripeYearlyPriceId || SUBSCRIPTION_TIERS[tier].stripePriceId!
-        : SUBSCRIPTION_TIERS[tier].stripePriceId!;
+      const priceId = SUBSCRIPTION_TIERS[tier].stripePriceId!;
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
@@ -285,7 +283,6 @@ const PricingPage = () => {
       <div className="min-h-screen bg-background">
         <ConversionOptimizedPricing 
           onSubscribe={handleSubscribe}
-          loadingTier={loadingTier}
         />
         
         {/* Temporary validation section */}

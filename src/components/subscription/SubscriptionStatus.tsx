@@ -36,7 +36,7 @@ export const SubscriptionStatus = () => {
     }
   }, [subscriptionData?.subscription_tier]);
 
-  const handleSubscribeClick = useCallback(async (tier: 'personal' | 'business') => {
+  const handleSubscribeClick = useCallback(async (tier: 'business75' | 'business300') => {
     if (!isAuthenticated) {
       console.log("Not authenticated, redirecting to auth");
       navigate('/auth?tab=signin');
@@ -169,28 +169,28 @@ export const SubscriptionStatus = () => {
         {/* Subscription Options */}
         <div className="space-y-2">
           <Button 
-            onClick={() => handleSubscribeClick('personal')} 
+            onClick={() => handleSubscribeClick('business75')} 
             className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white border-none" 
             disabled={isLoading}
           >
-            Upgrade to Personal - {formatPrice(SUBSCRIPTION_TIERS.personal.price)}/month
+            Upgrade to Starter - {formatPrice(SUBSCRIPTION_TIERS.business75.price)}/month
           </Button>
           <Button 
-            onClick={() => handleSubscribeClick('business')} 
+            onClick={() => handleSubscribeClick('business300')} 
             variant="outline" 
             className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10 bg-transparent" 
             disabled={isLoading}
           >
-            Upgrade to Business - {formatPrice(SUBSCRIPTION_TIERS.business.price)}/month
+            Upgrade to Pro Business - {formatPrice(SUBSCRIPTION_TIERS.business300.price)}/month
           </Button>
         </div>
 
         {/* Feature comparison */}
         <div className="text-xs text-gray-500 space-y-1 pt-2 border-t border-gray-700">
-          <div className="font-medium">Current plan includes:</div>
-          {SUBSCRIPTION_TIERS.free.features?.map((feature, index) => (
-            <div key={index}>• {feature}</div>
-          ))}
+          <div className="font-medium">Pay-per-check available:</div>
+          <div>• $0.99 per single check</div>
+          <div>• $0.60 per check (50-pack)</div>
+          <div>• $0.40 per check (250-pack)</div>
         </div>
       </CardContent>
     </Card>

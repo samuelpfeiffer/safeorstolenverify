@@ -1,166 +1,150 @@
 export interface SubscriptionTier {
   name: string;
   price: number;
-  yearlyPrice?: number;
-  interval: 'month' | 'year';
+  interval: 'month' | 'once';
   features?: string[];
   popular?: boolean;
   stripePriceId?: string;
-  stripeYearlyPriceId?: string;
-  searchLimit?: number;
-  tier: 'free' | 'individual' | 'business' | 'enterprise' | 'personal' | 'credit_pack';
-  creditsIncluded?: number;
+  checksIncluded?: number;
+  tier: 'pay_per_check' | 'bulk_50' | 'bulk_250' | 'business_75' | 'business_300' | 'enterprise_api';
+  pricePerCheck?: number;
+  hasAPI?: boolean;
+  badge?: boolean;
 }
 
 export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
-  free: {
-    name: 'Free Trial',
-    price: 0,
-    interval: 'month',
-    searchLimit: 2,
-    tier: 'free',
+  // Pay-Per-Check (Casuals - No Account Required)
+  payPerCheck: {
+    name: 'Single Check',
+    price: 99, // $0.99
+    interval: 'once',
+    tier: 'pay_per_check',
+    checksIncluded: 1,
+    pricePerCheck: 0.99,
+    badge: false,
     features: [
-      '2 free checks (expires in 14 days)',
-      'Basic item verification',
-      'Instant results',
-      'Mobile app access',
-      'No credit card required'
-    ]
+      '1 instant device check',
+      'No account required',
+      'Instant verification report',
+      'Mobile & web access',
+      'Undercuts competition at $0.99'
+    ],
+    stripePriceId: 'Single Check'
   },
   
-  individual: {
-    name: 'Individual',
-    price: 499, // $4.99/month
-    yearlyPrice: 4788, // $47.88/year (20% discount)
-    interval: 'month',
-    tier: 'individual',
+  // Bulk Packages
+  bulk50: {
+    name: '50 Checks Bundle',
+    price: 3000, // $30.00
+    interval: 'once',
+    tier: 'bulk_50',
+    checksIncluded: 50,
+    pricePerCheck: 0.60,
+    badge: true,
+    features: [
+      '50 device checks ($0.60 each)',
+      'Credits never expire',
+      'Verification history',
+      'Downloadable trust badges',
+      'Priority email support'
+    ],
+    stripePriceId: '50 Check Bundle'
+  },
+  
+  bulk250: {
+    name: '250 Checks Bundle',
+    price: 10000, // $100.00
+    interval: 'once',
+    tier: 'bulk_250',
+    checksIncluded: 250,
+    pricePerCheck: 0.40,
+    badge: true,
     popular: true,
     features: [
-      'Unlimited checks',
-      'Full search history',
-      'Mobile app access',
-      'Priority email support',
-      'Export reports'
+      '250 device checks ($0.40 each)',
+      'Credits never expire',
+      'Verification history & exports',
+      'Embeddable trust badges',
+      'Priority support',
+      'Bulk upload tool'
     ],
-    stripePriceId: 'Individual',
-    stripeYearlyPriceId: 'Individual Annual'
+    stripePriceId: '250 Check Bundle'
   },
   
-  business: {
-    name: 'Business',
-    price: 1999, // $19.99/month
-    yearlyPrice: 19188, // $191.88/year (20% discount)
+  // Business Subscriptions
+  business75: {
+    name: 'Starter Business',
+    price: 2500, // $25/month
     interval: 'month',
-    tier: 'business',
+    tier: 'business_75',
+    checksIncluded: 75,
+    pricePerCheck: 0.33,
+    hasAPI: false,
+    badge: true,
     features: [
-      'Everything in Individual',
-      'API access (1,000 calls/month)',
-      'Bulk upload & verification',
-      'Advanced reporting dashboard',
-      'Priority phone support',
-      'Team management (up to 5 users)',
-      'Custom integrations'
+      '75 checks per month ($0.33 each)',
+      'Auto-renews monthly',
+      'Verification dashboard',
+      'Embeddable trust badges',
+      'Team management (up to 3 users)',
+      'Priority support'
     ],
-    stripePriceId: 'Business',
-    stripeYearlyPriceId: 'Business Annual'
+    stripePriceId: 'Starter Business'
   },
   
-  enterprise: {
-    name: 'Enterprise',
-    price: 9900, // $99/month (starting price)
-    yearlyPrice: 95040, // $950.40/year (20% discount)
+  business300: {
+    name: 'Pro Business',
+    price: 7500, // $75/month
     interval: 'month',
-    tier: 'enterprise',
+    tier: 'business_300',
+    checksIncluded: 300,
+    pricePerCheck: 0.25,
+    hasAPI: true,
+    badge: true,
+    popular: true,
     features: [
-      'Everything in Business',
-      'White-label solutions',
+      '300 checks per month ($0.25 each)',
+      'Full API access',
+      'Automated verification workflows',
+      'White-label trust badges',
+      'Advanced reporting & analytics',
+      'Team management (unlimited users)',
+      'Dedicated phone support'
+    ],
+    stripePriceId: 'Pro Business'
+  },
+  
+  // Enterprise API
+  enterpriseAPI: {
+    name: 'Enterprise API',
+    price: 10000, // $100/month minimum
+    interval: 'month',
+    tier: 'enterprise_api',
+    checksIncluded: 500, // 500 checks at $0.20 = $100
+    pricePerCheck: 0.20,
+    hasAPI: true,
+    badge: true,
+    features: [
+      'Volume pricing: $0.20 per check',
+      '$100 monthly minimum (500 checks)',
       'Unlimited API calls',
       'Custom SLA agreements',
+      'White-label solutions',
       'Dedicated account manager',
-      'Custom integrations & development',
-      'Unlimited team members',
+      'Custom integrations',
       '24/7 premium support'
     ],
-    stripePriceId: 'Enterprise',
-    stripeYearlyPriceId: 'Enterprise Annual'
-  },
-  
-  // Legacy tier for existing subscribers
-  personal: {
-    name: 'Personal (Legacy)',
-    price: 999, // $9.99/month
-    yearlyPrice: 9588, // $95.88/year (20% discount)
-    interval: 'month',
-    tier: 'personal',
-    popular: false,
-    features: [
-      '7-day free trial',
-      'Unlimited verifications',
-      'Real-time database checks',
-      'Enhanced verification reports',
-      'Priority email support',
-      'Search history & exports',
-      'Mobile app access'
-    ],
-    stripePriceId: 'Personal',
-    stripeYearlyPriceId: 'Personal Annual'
-  },
-  
-  creditPack5: {
-    name: '5 Credit Pack',
-    price: 475, // $4.75
-    interval: 'month',
-    tier: 'credit_pack',
-    creditsIncluded: 5,
-    features: [
-      '5 verification credits',
-      'Credits never expire',
-      'Use anytime',
-      'Basic verification reports'
-    ],
-    stripePriceId: '5 Credit Pack'
-  },
-  
-  creditPack10: {
-    name: '10 Credit Pack',
-    price: 900, // $9.00
-    interval: 'month',
-    tier: 'credit_pack',
-    creditsIncluded: 10,
-    popular: true,
-    features: [
-      '10 verification credits',
-      'Credits never expire',
-      'Use anytime',
-      'Enhanced verification reports'
-    ],
-    stripePriceId: '10 Credit Pack'
-  },
-  
-  creditPack25: {
-    name: '25 Credit Pack',
-    price: 2000, // $20.00
-    interval: 'month',
-    tier: 'credit_pack',
-    creditsIncluded: 25,
-    features: [
-      '25 verification credits',
-      'Credits never expire',
-      'Use anytime',
-      'Enhanced verification reports',
-      'Priority processing'
-    ],
-    stripePriceId: '25 Credit Pack'
+    stripePriceId: 'Enterprise API'
   }
 };
 
-export const getSubscriptionPriceId = (tier: 'individual' | 'business' | 'enterprise' | 'personal' | 'creditPack5' | 'creditPack10' | 'creditPack25'): string => {
+export const getSubscriptionPriceId = (tier: 'payPerCheck' | 'bulk50' | 'bulk250' | 'business75' | 'business300' | 'enterpriseAPI'): string => {
   return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
 };
 
 export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
   if (!tierName || !SUBSCRIPTION_TIERS[tierName]) {
-    return SUBSCRIPTION_TIERS.free;
+    return SUBSCRIPTION_TIERS.payPerCheck;
   }
   return SUBSCRIPTION_TIERS[tierName];
 };
@@ -169,16 +153,14 @@ export const formatPrice = (price: number): string => {
   return `$${(price / 100).toFixed(2)}`;
 };
 
-export const calculateSavings = (monthlyPrice: number, yearlyPrice: number): number => {
-  const monthlyCost = monthlyPrice * 12;
-  return ((monthlyCost - yearlyPrice) / monthlyCost) * 100;
+export const calculatePricePerCheck = (tier: SubscriptionTier): number => {
+  if (!tier.checksIncluded || tier.checksIncluded === 0) return 0;
+  return tier.price / tier.checksIncluded / 100; // Convert cents to dollars
 };
 
-export const calculateAnnualSavings = (monthlyPrice: number): number => {
-  const yearlyPrice = monthlyPrice * 12 * 0.8; // 20% discount
-  return (monthlyPrice * 12) - yearlyPrice;
-};
-
-export const formatSavings = (savings: number): string => {
-  return `Save $${(savings / 100).toFixed(2)}`;
+export const formatSavingsVsPayPerCheck = (tier: SubscriptionTier): string => {
+  const payPerCheckPrice = SUBSCRIPTION_TIERS.payPerCheck.price / 100;
+  const thisTierPricePerCheck = calculatePricePerCheck(tier);
+  const savings = ((payPerCheckPrice - thisTierPricePerCheck) / payPerCheckPrice) * 100;
+  return `Save ${Math.round(savings)}% vs. single checks`;
 };

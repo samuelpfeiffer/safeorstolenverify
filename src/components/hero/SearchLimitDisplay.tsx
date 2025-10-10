@@ -26,15 +26,15 @@ export const SearchLimitDisplay = ({
     );
   }
 
-  // For non-authenticated users, show sign-up message
+  // For non-authenticated users, show pricing message
   if (!isAuthenticated) {
     return (
       <div className="text-center mt-3">
         <p className="text-sm text-sos-orange font-medium">
-          🔐 Sign up to get your 2 free verification searches
+          💰 Just $0.99 per check - No account required
         </p>
         <p className="text-xs text-gray-400 mt-1">
-          Create your free account to start protecting yourself from stolen goods
+          Or save with bulk packages: 50 checks for $30, 250 for $100
         </p>
       </div>
     );

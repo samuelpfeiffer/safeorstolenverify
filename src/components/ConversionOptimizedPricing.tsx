@@ -1,252 +1,242 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useState } from 'react';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Check, Star, Shield, Zap, Clock, Users } from 'lucide-react';
-import { SUBSCRIPTION_TIERS, formatPrice, calculateAnnualSavings, formatSavings } from '@/utils/pricing';
-import { BillingToggle } from './pricing/BillingToggle';
+import { CheckCircle, Loader2 } from 'lucide-react';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
 
 interface PricingTierProps {
   name: string;
-  price: string;
-  yearlyPrice?: string;
-  period: string;
+  price: number;
   description: string;
-  features: string[];
-  buttonText: string;
+  features?: string[];
+  cta: string;
   popular?: boolean;
-  onClick: () => void;
-  loading?: boolean;
-  isAnnual?: boolean;
-  savings?: string;
+  checksIncluded?: number;
+  pricePerCheck?: number;
+  interval: 'month' | 'once';
+  badge?: boolean;
+  hasAPI?: boolean;
+  onSubscribe: (tierName: string) => void;
+  isLoading: boolean;
 }
 
-const PricingTier: React.FC<PricingTierProps> = ({
-  name,
-  price,
-  yearlyPrice,
-  period,
-  description,
-  features,
-  buttonText,
-  popular = false,
-  onClick,
-  loading = false,
-  isAnnual = false,
-  savings
-}) => (
-  <Card className={`relative ${popular ? 'border-2 border-primary shadow-lg scale-105' : 'border'}`}>
-    {popular && (
-      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-        <Badge className="bg-primary text-primary-foreground px-4 py-1">
-          <Star className="h-3 w-3 mr-1" />
-          Most Popular
-        </Badge>
-      </div>
-    )}
-    
-    <CardHeader className="text-center pb-4">
-      <CardTitle className="text-2xl font-bold">{name}</CardTitle>
-      <div className="space-y-2">
-        <div className="text-4xl font-bold text-primary">
-          {isAnnual && yearlyPrice ? yearlyPrice : price}
-          <span className="text-lg text-muted-foreground font-normal">/{isAnnual ? 'year' : period}</span>
+const PricingTier = ({ 
+  name, 
+  price, 
+  description, 
+  features, 
+  cta, 
+  popular,
+  checksIncluded,
+  pricePerCheck,
+  interval,
+  badge,
+  hasAPI,
+  onSubscribe,
+  isLoading
+}: PricingTierProps) => {
+  return (
+    <Card className={`relative p-8 ${popular ? 'border-sos-lime shadow-lg shadow-sos-lime/20' : ''}`}>
+      {popular && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sos-lime to-sos-orange text-black px-4 py-1 rounded-full text-sm font-semibold">
+          Best Value
         </div>
-        {isAnnual && savings && (
-          <Badge variant="secondary" className="bg-sos-lime/20 text-sos-lime border-sos-lime">
-            {savings}
-          </Badge>
-        )}
-        <p className="text-sm text-muted-foreground">{description}</p>
+      )}
+      
+      <div className="mb-6">
+        <h3 className="text-2xl font-bold mb-2">{name}</h3>
+        <p className="text-muted-foreground text-sm">{description}</p>
       </div>
-    </CardHeader>
-    
-    <CardContent className="space-y-6">
-      <ul className="space-y-3">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+
+      <div className="mb-6">
+        <div className="flex items-baseline">
+          <span className="text-5xl font-bold">{formatPrice(price)}</span>
+          <span className="text-muted-foreground ml-2">
+            {interval === 'once' ? 'one-time' : '/month'}
+          </span>
+        </div>
+        {pricePerCheck && (
+          <p className="text-sm text-sos-lime mt-1">
+            ${pricePerCheck.toFixed(2)} per check
+          </p>
+        )}
+        {checksIncluded && (
+          <p className="text-xs text-muted-foreground mt-1">
+            {checksIncluded} checks included
+          </p>
+        )}
+      </div>
+
+      <ul className="space-y-3 mb-8">
+        {(features || []).map((feature, index) => (
+          <li key={index} className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-sos-lime flex-shrink-0 mt-0.5" />
             <span className="text-sm">{feature}</span>
           </li>
         ))}
+        {badge && (
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
+            <span className="text-sm font-semibold">✨ Trust badge included</span>
+          </li>
+        )}
+        {hasAPI && (
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
+            <span className="text-sm font-semibold">🔌 API access included</span>
+          </li>
+        )}
       </ul>
-      
+
       <Button
-        className={`w-full ${popular ? 'bg-primary hover:bg-primary/90' : ''}`}
+        onClick={() => onSubscribe(name)}
+        disabled={isLoading}
+        className={`w-full ${
+          popular 
+            ? 'bg-gradient-to-r from-sos-lime to-sos-orange hover:opacity-90' 
+            : 'bg-primary hover:bg-primary/90'
+        }`}
         size="lg"
-        onClick={onClick}
-        disabled={loading}
       >
-        {loading ? (
-          <div className="flex items-center gap-2">
-            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-            Processing...
-          </div>
-        ) : (
+        {isLoading ? (
           <>
-            <Shield className="mr-2 h-4 w-4" />
-            {buttonText}
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Processing...
           </>
+        ) : (
+          cta
         )}
       </Button>
-      
-      {popular && (
-        <div className="text-center">
-          <p className="text-xs text-green-600 font-medium">
-            ✓ 30-day money-back guarantee
-          </p>
-        </div>
-      )}
-    </CardContent>
-  </Card>
-);
+    </Card>
+  );
+};
 
 interface ConversionOptimizedPricingProps {
-  onSubscribe: (tier: 'individual' | 'business' | 'enterprise', isAnnual?: boolean) => void;
-  loadingTier?: string | null;
+  onSubscribe: (tierName: string) => void;
 }
 
-export const ConversionOptimizedPricing: React.FC<ConversionOptimizedPricingProps> = ({
-  onSubscribe,
-  loadingTier
-}) => {
-  const [isAnnual, setIsAnnual] = useState(false);
+export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedPricingProps) => {
+  const [loadingTier, setLoadingTier] = useState<string | null>(null);
 
-  const tiers = [
+  const handleSubscribeClick = async (tierName: string) => {
+    setLoadingTier(tierName);
+    try {
+      await onSubscribe(tierName);
+    } finally {
+      setLoadingTier(null);
+    }
+  };
+
+  const casualTiers = [
     {
-      id: 'individual' as const,
-      name: SUBSCRIPTION_TIERS.individual.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.individual.price),
-      yearlyPrice: SUBSCRIPTION_TIERS.individual.yearlyPrice 
-        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.individual.yearlyPrice / 12))
-        : undefined,
-      period: SUBSCRIPTION_TIERS.individual.interval,
-      description: 'Perfect for casual buyers and collectors',
-      features: SUBSCRIPTION_TIERS.individual.features || [],
-      buttonText: 'Get Started',
-      popular: SUBSCRIPTION_TIERS.individual.popular,
-      savings: SUBSCRIPTION_TIERS.individual.yearlyPrice 
-        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.individual.price))
-        : undefined
+      ...SUBSCRIPTION_TIERS.payPerCheck,
+      description: "One-time check, no commitment",
+      cta: "Buy Single Check"
     },
     {
-      id: 'business' as const,
-      name: SUBSCRIPTION_TIERS.business.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.business.price),
-      yearlyPrice: SUBSCRIPTION_TIERS.business.yearlyPrice 
-        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.business.yearlyPrice / 12))
-        : undefined,
-      period: SUBSCRIPTION_TIERS.business.interval,
-      description: 'For resellers, dealers, and small businesses',
-      features: SUBSCRIPTION_TIERS.business.features || [],
-      buttonText: 'Start 7-Day Trial',
-      savings: SUBSCRIPTION_TIERS.business.yearlyPrice 
-        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.business.price))
-        : undefined
+      ...SUBSCRIPTION_TIERS.bulk50,
+      description: "Best for regular sellers",
+      cta: "Buy 50 Checks"
     },
     {
-      id: 'enterprise' as const,
-      name: SUBSCRIPTION_TIERS.enterprise.name,
-      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price) + '+',
-      yearlyPrice: SUBSCRIPTION_TIERS.enterprise.yearlyPrice 
-        ? formatPrice(Math.floor(SUBSCRIPTION_TIERS.enterprise.yearlyPrice / 12))
-        : undefined,
-      period: SUBSCRIPTION_TIERS.enterprise.interval,
-      description: 'Custom solutions for large-scale operations',
-      features: SUBSCRIPTION_TIERS.enterprise.features || [],
-      buttonText: 'Contact Sales',
-      savings: SUBSCRIPTION_TIERS.enterprise.yearlyPrice 
-        ? formatSavings(calculateAnnualSavings(SUBSCRIPTION_TIERS.enterprise.price))
-        : undefined
+      ...SUBSCRIPTION_TIERS.bulk250,
+      description: "Maximum value per check",
+      cta: "Buy 250 Checks"
+    }
+  ];
+
+  const businessTiers = [
+    {
+      ...SUBSCRIPTION_TIERS.business75,
+      description: "Perfect for small businesses",
+      cta: "Start Business Plan"
+    },
+    {
+      ...SUBSCRIPTION_TIERS.business300,
+      description: "For active resellers with API",
+      cta: "Start Pro Business"
+    },
+    {
+      ...SUBSCRIPTION_TIERS.enterpriseAPI,
+      description: "Custom solutions for warehouses",
+      cta: "Contact Sales"
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-primary/5">
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold mb-4">
-            Start Free, Upgrade as You Grow
-          </h2>
-          <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-            Start with 2 FREE checks (14-day trial). All paid plans include our money-back guarantee and 
-            instant access to comprehensive verification databases.
-          </p>
-          
-          {/* Social Proof */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
-            <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-primary" />
-              <span className="text-sm font-medium">25,000+ Protected Buyers</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-green-500" />
-              <span className="text-sm font-medium">$2.3M in Scams Prevented</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-blue-500" />
-              <span className="text-sm font-medium">&lt;30s Average Check</span>
-            </div>
-          </div>
+    <section className="w-full py-20 px-4">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
+          Ultra-Simple, Competitive Pricing
+        </h2>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          From $0.99 per check to enterprise API access. Choose what fits your needs—no subscriptions required for casuals.
+        </p>
+      </div>
+
+      {/* Casual Buyers & Sellers Section */}
+      <div className="mb-20">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold mb-3">For Casual Buyers & Sellers</h3>
+          <p className="text-lg text-muted-foreground">No account required. Just verify and go.</p>
         </div>
-
-        {/* Billing Toggle */}
-        <BillingToggle isAnnual={isAnnual} onToggle={setIsAnnual} />
-
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-          {tiers.map((tier) => (
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {casualTiers.map((tier) => (
             <PricingTier
-              key={tier.id}
-              name={tier.name}
-              price={tier.price}
-              yearlyPrice={tier.yearlyPrice}
-              period={tier.period}
-              description={tier.description}
-              features={tier.features}
-              buttonText={tier.buttonText}
-              popular={tier.popular}
-              onClick={() => onSubscribe(tier.id, isAnnual)}
-              loading={loadingTier === tier.id}
-              isAnnual={isAnnual}
-              savings={tier.savings}
+              key={tier.name}
+              {...tier}
+              onSubscribe={handleSubscribeClick}
+              isLoading={loadingTier === tier.name}
             />
           ))}
         </div>
+      </div>
 
-        {/* Trust Indicators */}
-        <div className="text-center space-y-6">
-          <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <Check className="h-4 w-4 text-green-500" />
-              Cancel anytime
-            </span>
-            <span className="flex items-center gap-1">
-              <Check className="h-4 w-4 text-green-500" />
-              30-day money-back guarantee
-            </span>
-            <span className="flex items-center gap-1">
-              <Check className="h-4 w-4 text-green-500" />
-              Secure payment by Stripe
-            </span>
-            <span className="flex items-center gap-1">
-              <Check className="h-4 w-4 text-green-500" />
-              Instant activation
-            </span>
-          </div>
-          
-          <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Zap className="h-5 w-5 text-blue-500" />
-              <Badge className="bg-green-500 text-white">Free Trial Available</Badge>
-            </div>
-            <p className="font-medium text-gray-900">
-              Start with 2 free checks (14-day trial) - no credit card required. 
-              Upgrade anytime to unlock unlimited verifications.
-            </p>
-          </div>
+      {/* Business & API Section */}
+      <div className="mb-16">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold mb-3">For Businesses & Warehouses</h3>
+          <p className="text-lg text-muted-foreground">Monthly subscriptions with API access and trust badges.</p>
         </div>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {businessTiers.map((tier) => (
+            <PricingTier
+              key={tier.name}
+              {...tier}
+              onSubscribe={handleSubscribeClick}
+              isLoading={loadingTier === tier.name}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Social Proof & Trust Indicators */}
+      <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center mb-16">
+        <div className="p-6 rounded-lg bg-card border border-border">
+          <div className="text-4xl font-bold text-sos-lime mb-2">127M+</div>
+          <p className="text-muted-foreground">Items Tracked</p>
+        </div>
+        <div className="p-6 rounded-lg bg-card border border-border">
+          <div className="text-4xl font-bold text-sos-lime mb-2">$0.99</div>
+          <p className="text-muted-foreground">Starting Price</p>
+        </div>
+        <div className="p-6 rounded-lg bg-card border border-border">
+          <div className="text-4xl font-bold text-sos-lime mb-2">50K+</div>
+          <p className="text-muted-foreground">Verified Sellers</p>
+        </div>
+        <div className="p-6 rounded-lg bg-card border border-border">
+          <div className="text-4xl font-bold text-sos-lime mb-2">99.9%</div>
+          <p className="text-muted-foreground">Accuracy Rate</p>
+        </div>
+      </div>
+
+      {/* Trust Badge Highlight */}
+      <div className="mt-16 text-center p-8 rounded-lg bg-gradient-to-r from-sos-lime/10 to-sos-orange/10 border border-sos-lime/20 max-w-4xl mx-auto">
+        <h3 className="text-2xl font-bold mb-3">🛡️ Free "Verified Safe" Trust Badges</h3>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          All bulk and business plans include downloadable trust badges and embeddable widgets.
+          Build buyer confidence and close sales faster with "SafeOrStolen Verified" certificates.
+        </p>
       </div>
     </section>
   );
