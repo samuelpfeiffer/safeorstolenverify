@@ -36,7 +36,7 @@ export const SubscriptionStatus = () => {
     }
   }, [subscriptionData?.subscription_tier]);
 
-  const handleSubscribeClick = useCallback(async (tier: 'business75' | 'business300') => {
+  const handleSubscribeClick = useCallback(async (tier: 'starter' | 'personal' | 'professional') => {
     if (!isAuthenticated) {
       console.log("Not authenticated, redirecting to auth");
       navigate('/auth?tab=signin');

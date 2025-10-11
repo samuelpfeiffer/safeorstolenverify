@@ -1,166 +1,225 @@
+export type SubscriptionTierKey = 'free' | 'payPerUse' | 'starter' | 'personal' | 'professional' | 'enterprise';
+
 export interface SubscriptionTier {
   name: string;
-  price: number;
+  price: number; // cents
+  priceDisplay: string;
   interval: 'month' | 'once';
-  features?: string[];
+  monthlyQuota: number | 'unlimited';
+  overageRate?: number; // dollars per check
+  features: string[];
   popular?: boolean;
   stripePriceId?: string;
-  checksIncluded?: number;
-  tier: 'pay_per_check' | 'bulk_50' | 'bulk_250' | 'business_75' | 'business_300' | 'enterprise_api';
-  pricePerCheck?: number;
-  hasAPI?: boolean;
-  badge?: boolean;
+  tier: SubscriptionTierKey;
+  
+  // Feature flags
+  receiptsIncluded: boolean;
+  historyRetention: number | 'unlimited'; // days
+  trustBadges: boolean;
+  apiAccess: boolean;
+  bulkUpload: boolean;
+  whiteLabel: boolean;
+  phoneSupport: boolean;
+  dedicatedManager: boolean;
 }
 
-export const SUBSCRIPTION_TIERS: Record<string, SubscriptionTier> = {
-  // Pay-Per-Check (Casuals - No Account Required)
-  payPerCheck: {
-    name: 'Single Check',
-    price: 99, // $0.99
-    interval: 'once',
-    tier: 'pay_per_check',
-    checksIncluded: 1,
-    pricePerCheck: 0.99,
-    badge: false,
+export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
+  free: {
+    name: "Safety Check",
+    price: 0,
+    priceDisplay: "Free",
+    interval: "once",
+    monthlyQuota: 2,
+    tier: "free",
     features: [
-      '1 instant device check',
-      'No account required',
-      'Instant verification report',
-      'Mobile & web access',
-      'Undercuts competition at $0.99'
+      "2 free verifications",
+      "Valid for 14 days",
+      "Basic Safe/Stolen results",
+      "No credit card required"
     ],
-    stripePriceId: 'Single Check'
+    receiptsIncluded: false,
+    historyRetention: 0,
+    trustBadges: false,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false
   },
-  
-  // Bulk Packages
-  bulk50: {
-    name: '50 Checks Bundle',
-    price: 3000, // $30.00
-    interval: 'once',
-    tier: 'bulk_50',
-    checksIncluded: 50,
-    pricePerCheck: 0.60,
-    badge: true,
+  payPerUse: {
+    name: "Pay Per Check",
+    price: 50, // $0.50
+    priceDisplay: "$0.50",
+    interval: "once",
+    monthlyQuota: 1,
+    tier: "payPerUse",
     features: [
-      '50 device checks ($0.60 each)',
-      'Credits never expire',
-      'Verification history',
-      'Downloadable trust badges',
-      'Priority email support'
+      "$0.50 per verification",
+      "No monthly commitment",
+      "Instant verification",
+      "PDF receipt generation",
+      "30-day result history"
     ],
-    stripePriceId: '50 Check Bundle'
+    receiptsIncluded: true,
+    historyRetention: 30,
+    trustBadges: false,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false
   },
-  
-  bulk250: {
-    name: '250 Checks Bundle',
-    price: 10000, // $100.00
-    interval: 'once',
-    tier: 'bulk_250',
-    checksIncluded: 250,
-    pricePerCheck: 0.40,
-    badge: true,
+  starter: {
+    name: "Peace of Mind",
+    price: 499, // $4.99
+    priceDisplay: "$4.99",
+    interval: "month",
+    monthlyQuota: 15,
+    overageRate: 0.50,
+    stripePriceId: "price_starter_monthly_499",
+    tier: "starter",
+    features: [
+      "15 verifications per month",
+      "PDF receipt generator",
+      "90-day search history",
+      "Email sharing of receipts",
+      "Basic customer support",
+      "$0.50 per additional check"
+    ],
+    receiptsIncluded: true,
+    historyRetention: 90,
+    trustBadges: false,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false
+  },
+  personal: {
+    name: "Trusted Seller",
+    price: 999, // $9.99
+    priceDisplay: "$9.99",
+    interval: "month",
+    monthlyQuota: 50,
+    overageRate: 0.40,
+    stripePriceId: "price_personal_monthly_999",
+    tier: "personal",
     popular: true,
     features: [
-      '250 device checks ($0.40 each)',
-      'Credits never expire',
-      'Verification history & exports',
-      'Embeddable trust badges',
-      'Priority support',
-      'Bulk upload tool'
+      "50 verifications per month",
+      "Trust badges & certificates",
+      "Unlimited search history",
+      "Priority email support",
+      "Social media sharing",
+      "Downloadable verification badges",
+      "$0.40 per additional check"
     ],
-    stripePriceId: '250 Check Bundle'
+    receiptsIncluded: true,
+    historyRetention: 'unlimited',
+    trustBadges: true,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false
   },
-  
-  // Business Subscriptions
-  business75: {
-    name: 'Starter Business',
-    price: 2500, // $25/month
-    interval: 'month',
-    tier: 'business_75',
-    checksIncluded: 75,
-    pricePerCheck: 0.33,
-    hasAPI: false,
-    badge: true,
+  professional: {
+    name: "Business Verified",
+    price: 2999, // $29.99
+    priceDisplay: "$29.99",
+    interval: "month",
+    monthlyQuota: 'unlimited',
+    stripePriceId: "price_professional_monthly_2999",
+    tier: "professional",
     features: [
-      '75 checks per month ($0.33 each)',
-      'Auto-renews monthly',
-      'Verification dashboard',
-      'Embeddable trust badges',
-      'Team management (up to 3 users)',
-      'Priority support'
+      "Unlimited verifications",
+      "Bulk verification tools (CSV upload)",
+      "Advanced reporting & analytics",
+      "API access (10,000 calls/month)",
+      "White-label certificates",
+      "Priority phone support",
+      "Team management (up to 5 users)"
     ],
-    stripePriceId: 'Starter Business'
+    receiptsIncluded: true,
+    historyRetention: 'unlimited',
+    trustBadges: true,
+    apiAccess: true,
+    bulkUpload: true,
+    whiteLabel: true,
+    phoneSupport: true,
+    dedicatedManager: false
   },
-  
-  business300: {
-    name: 'Pro Business',
-    price: 7500, // $75/month
-    interval: 'month',
-    tier: 'business_300',
-    checksIncluded: 300,
-    pricePerCheck: 0.25,
-    hasAPI: true,
-    badge: true,
-    popular: true,
+  enterprise: {
+    name: "Scale Secure",
+    price: 9900, // $99.00 starting
+    priceDisplay: "Custom",
+    interval: "month",
+    monthlyQuota: 'unlimited',
+    stripePriceId: "price_enterprise_custom",
+    tier: "enterprise",
     features: [
-      '300 checks per month ($0.25 each)',
-      'Full API access',
-      'Automated verification workflows',
-      'White-label trust badges',
-      'Advanced reporting & analytics',
-      'Team management (unlimited users)',
-      'Dedicated phone support'
+      "Unlimited verifications",
+      "Unlimited API calls",
+      "Custom integrations",
+      "Dedicated account manager",
+      "99.9% SLA guarantees",
+      "Custom branding & white-label",
+      "Advanced compliance reporting",
+      "Multi-location support"
     ],
-    stripePriceId: 'Pro Business'
-  },
-  
-  // Enterprise API
-  enterpriseAPI: {
-    name: 'Enterprise API',
-    price: 10000, // $100/month minimum
-    interval: 'month',
-    tier: 'enterprise_api',
-    checksIncluded: 500, // 500 checks at $0.20 = $100
-    pricePerCheck: 0.20,
-    hasAPI: true,
-    badge: true,
-    features: [
-      'Volume pricing: $0.20 per check',
-      '$100 monthly minimum (500 checks)',
-      'Unlimited API calls',
-      'Custom SLA agreements',
-      'White-label solutions',
-      'Dedicated account manager',
-      'Custom integrations',
-      '24/7 premium support'
-    ],
-    stripePriceId: 'Enterprise API'
+    receiptsIncluded: true,
+    historyRetention: 'unlimited',
+    trustBadges: true,
+    apiAccess: true,
+    bulkUpload: true,
+    whiteLabel: true,
+    phoneSupport: true,
+    dedicatedManager: true
   }
 };
 
-export const getSubscriptionPriceId = (tier: 'payPerCheck' | 'bulk50' | 'bulk250' | 'business75' | 'business300' | 'enterpriseAPI'): string => {
-  return SUBSCRIPTION_TIERS[tier].stripePriceId || '';
+export const getTierFeatures = (tier: SubscriptionTierKey): string[] => {
+  return SUBSCRIPTION_TIERS[tier].features;
 };
 
-export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
-  if (!tierName || !SUBSCRIPTION_TIERS[tierName]) {
-    return SUBSCRIPTION_TIERS.payPerCheck;
-  }
-  return SUBSCRIPTION_TIERS[tierName];
+export const getTierQuota = (tier: SubscriptionTierKey): number | 'unlimited' => {
+  return SUBSCRIPTION_TIERS[tier].monthlyQuota;
+};
+
+export const getOverageRate = (tier: SubscriptionTierKey): number | undefined => {
+  return SUBSCRIPTION_TIERS[tier].overageRate;
 };
 
 export const formatPrice = (price: number): string => {
   return `$${(price / 100).toFixed(2)}`;
 };
 
-export const calculatePricePerCheck = (tier: SubscriptionTier): number => {
-  if (!tier.checksIncluded || tier.checksIncluded === 0) return 0;
-  return tier.price / tier.checksIncluded / 100; // Convert cents to dollars
+// Backward compatibility helpers
+export const getSubscriptionPriceId = (tier: string): string => {
+  const tierKey = tier as SubscriptionTierKey;
+  return SUBSCRIPTION_TIERS[tierKey]?.stripePriceId || '';
 };
 
-export const formatSavingsVsPayPerCheck = (tier: SubscriptionTier): string => {
-  const payPerCheckPrice = SUBSCRIPTION_TIERS.payPerCheck.price / 100;
-  const thisTierPricePerCheck = calculatePricePerCheck(tier);
-  const savings = ((payPerCheckPrice - thisTierPricePerCheck) / payPerCheckPrice) * 100;
-  return `Save ${Math.round(savings)}% vs. single checks`;
+export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
+  if (!tierName) return SUBSCRIPTION_TIERS.free;
+  
+  // Try direct match
+  const tierKey = tierName as SubscriptionTierKey;
+  if (SUBSCRIPTION_TIERS[tierKey]) {
+    return SUBSCRIPTION_TIERS[tierKey];
+  }
+  
+  // Legacy tier name mapping
+  const legacyMapping: Record<string, SubscriptionTierKey> = {
+    'Basic': 'starter',
+    'Premium': 'personal',
+    'Enterprise': 'professional',
+    'business75': 'professional',
+    'business300': 'professional',
+    'individual': 'personal',
+    'business': 'professional'
+  };
+  
+  const mappedKey = legacyMapping[tierName];
+  return SUBSCRIPTION_TIERS[mappedKey] || SUBSCRIPTION_TIERS.free;
 };

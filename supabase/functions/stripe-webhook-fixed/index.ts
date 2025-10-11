@@ -237,26 +237,31 @@ serve(async (req) => {
             // Determine subscription tier and interval from price
             const priceId = subscription.items.data[0].price.id;
             const interval = subscription.items.data[0].price.recurring?.interval || 'month';
-            let subscriptionTier = "Basic";
+            // Map Stripe Price IDs to new subscription tiers
+            const TIER_MAPPING: Record<string, string> = {
+              'price_starter_monthly_499': 'starter',
+              'price_personal_monthly_999': 'personal',
+              'price_professional_monthly_2999': 'professional',
+              'price_enterprise_custom': 'enterprise',
+              'price_pay_per_use_50': 'pay_per_use',
+              // Legacy support for old price IDs
+              "price_1Rz7rm2eGaMDLFHojH9Vch1Y": "starter",
+              "price_1Rz7xu2eGaMDLFHoqGT0Pyjk": "personal",
+              "price_1Rz80X2eGaMDLFHozeZyChte": "professional",
+              "price_1Rz83i2eGaMDLFHonAmu86lS": "professional"
+            };
             
-            // Map actual Stripe Price IDs to subscription tiers
-            switch (priceId) {
-              case "price_1Rz7rm2eGaMDLFHojH9Vch1Y":
-                subscriptionTier = "Basic";
-                break;
-              case "price_1Rz7xu2eGaMDLFHoqGT0Pyjk":
-                subscriptionTier = "Premium";
-                break;
-              case "price_1Rz80X2eGaMDLFHozeZyChte":
-                subscriptionTier = "Enterprise";
-                break;
-              case "price_1Rz83i2eGaMDLFHonAmu86lS":
-                subscriptionTier = "Report";
-                break;
-              default:
-                console.log(`Unknown price ID in webhook: ${priceId}`);
-                subscriptionTier = "Basic";
-            }
+            const subscriptionTier = TIER_MAPPING[priceId] || 'starter';
+            console.log(`Mapped price ID ${priceId} to tier: ${subscriptionTier}`);
+            
+            // Determine quota based on tier
+            const quotaMapping: Record<string, number | null> = {
+              'starter': 15,
+              'personal': 50,
+              'professional': null, // unlimited
+              'enterprise': null // unlimited
+            };
+            const monthlyLimit = quotaMapping[subscriptionTier] || 15;
             
             console.log(`Subscription interval: ${interval}, tier: ${subscriptionTier}`);
             
@@ -274,11 +279,15 @@ serve(async (req) => {
                   subscription_tier: subscriptionTier,
                   subscription_interval: interval,
                   subscription_end: new Date(subscription.current_period_end * 1000).toISOString(),
+                  monthly_verification_limit: monthlyLimit,
+                  verifications_used_this_month: 0,
+                  billing_cycle_start_date: new Date().toISOString(),
+                  is_trial_expired: true, // End trial when subscription starts
                   updated_at: new Date().toISOString()
                 })
                 .eq('id', profile.id);
               
-              console.log(`Updated profile with subscription interval: ${interval}`);
+              console.log(`Updated profile with tier: ${subscriptionTier}, limit: ${monthlyLimit}`);
             }
             
             // Update subscriber record with error handling

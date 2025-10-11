@@ -108,8 +108,8 @@ export const useTrialStatus = () => {
       const checksRemaining = Math.max(0, TRIAL_CHECK_LIMIT - checksUsed);
 
       setTrialStatus({
-        isTrialActive: !isExpired && checksRemaining > 0,
-        isTrialExpired: isExpired || checksRemaining === 0,
+    isTrialActive: !isExpired, // Trial only expires after 14 days, not when checks used
+    isTrialExpired: isExpired, // Time-based only
         daysRemaining,
         hoursRemaining,
         checksRemaining,

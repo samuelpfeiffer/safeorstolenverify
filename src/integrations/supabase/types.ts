@@ -1446,54 +1446,72 @@ export type Database = {
       profiles: {
         Row: {
           avatar_url: string | null
+          billing_cycle_start_date: string | null
           created_at: string
           credit_balance: number | null
           email: string | null
           full_name: string | null
           id: string
           is_promotion_winner: boolean | null
+          is_trial_expired: boolean | null
+          monthly_verification_limit: number | null
           promotion_expires_at: string | null
           promotion_searches_remaining: number | null
           search_count: number
           search_count_reset_at: string | null
           subscription_interval: string | null
+          subscription_tier: string | null
           terms_accepted: boolean | null
           terms_accepted_at: string | null
+          trial_end_date: string | null
           updated_at: string
+          verifications_used_this_month: number | null
         }
         Insert: {
           avatar_url?: string | null
+          billing_cycle_start_date?: string | null
           created_at?: string
           credit_balance?: number | null
           email?: string | null
           full_name?: string | null
           id: string
           is_promotion_winner?: boolean | null
+          is_trial_expired?: boolean | null
+          monthly_verification_limit?: number | null
           promotion_expires_at?: string | null
           promotion_searches_remaining?: number | null
           search_count?: number
           search_count_reset_at?: string | null
           subscription_interval?: string | null
+          subscription_tier?: string | null
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
+          trial_end_date?: string | null
           updated_at?: string
+          verifications_used_this_month?: number | null
         }
         Update: {
           avatar_url?: string | null
+          billing_cycle_start_date?: string | null
           created_at?: string
           credit_balance?: number | null
           email?: string | null
           full_name?: string | null
           id?: string
           is_promotion_winner?: boolean | null
+          is_trial_expired?: boolean | null
+          monthly_verification_limit?: number | null
           promotion_expires_at?: string | null
           promotion_searches_remaining?: number | null
           search_count?: number
           search_count_reset_at?: string | null
           subscription_interval?: string | null
+          subscription_tier?: string | null
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
+          trial_end_date?: string | null
           updated_at?: string
+          verifications_used_this_month?: number | null
         }
         Relationships: []
       }
@@ -1992,6 +2010,50 @@ export type Database = {
         }
         Relationships: []
       }
+      subscription_history: {
+        Row: {
+          billing_period_end: string
+          billing_period_start: string
+          created_at: string | null
+          id: string
+          overage_charges: number | null
+          subscription_tier: string
+          user_id: string
+          verifications_included: number
+          verifications_used: number | null
+        }
+        Insert: {
+          billing_period_end: string
+          billing_period_start: string
+          created_at?: string | null
+          id?: string
+          overage_charges?: number | null
+          subscription_tier: string
+          user_id: string
+          verifications_included: number
+          verifications_used?: number | null
+        }
+        Update: {
+          billing_period_end?: string
+          billing_period_start?: string
+          created_at?: string | null
+          id?: string
+          overage_charges?: number | null
+          subscription_tier?: string
+          user_id?: string
+          verifications_included?: number
+          verifications_used?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subscription_history_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       system_configuration: {
         Row: {
           config_key: string
@@ -2172,6 +2234,7 @@ export type Database = {
         Row: {
           api_response: Json | null
           api_source: string
+          billed_as: string | null
           checkmend_report_id: string | null
           confidence_score: number | null
           created_at: string
@@ -2182,6 +2245,7 @@ export type Database = {
           insurance_history: Json | null
           item_type: string
           network_status: Json | null
+          overage_cost: number | null
           ownership_verification: Json | null
           property_address: string | null
           recipero_report_id: string | null
@@ -2195,6 +2259,7 @@ export type Database = {
         Insert: {
           api_response?: Json | null
           api_source: string
+          billed_as?: string | null
           checkmend_report_id?: string | null
           confidence_score?: number | null
           created_at?: string
@@ -2205,6 +2270,7 @@ export type Database = {
           insurance_history?: Json | null
           item_type: string
           network_status?: Json | null
+          overage_cost?: number | null
           ownership_verification?: Json | null
           property_address?: string | null
           recipero_report_id?: string | null
@@ -2218,6 +2284,7 @@ export type Database = {
         Update: {
           api_response?: Json | null
           api_source?: string
+          billed_as?: string | null
           checkmend_report_id?: string | null
           confidence_score?: number | null
           created_at?: string
@@ -2228,6 +2295,7 @@ export type Database = {
           insurance_history?: Json | null
           item_type?: string
           network_status?: Json | null
+          overage_cost?: number | null
           ownership_verification?: Json | null
           property_address?: string | null
           recipero_report_id?: string | null
@@ -2374,6 +2442,10 @@ export type Database = {
       is_service_role_or_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      reset_monthly_verifications: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
       }
       subscribe_to_newsletter: {
         Args: { user_email: string }
