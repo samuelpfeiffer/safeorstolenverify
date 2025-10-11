@@ -26,7 +26,7 @@ const OneTimePaymentTest: React.FC = () => {
     }
   };
 
-  const reportProduct = SUBSCRIPTION_TIERS.report;
+  const reportProduct = SUBSCRIPTION_TIERS.payPerUse; // Single payment option
 
   return (
     <Card className="w-full max-w-md mx-auto">

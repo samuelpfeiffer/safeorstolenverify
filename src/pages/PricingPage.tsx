@@ -238,9 +238,9 @@ const PricingPage = () => {
         },
         {
           "@type": "Offer",
-          "name": "Business Plan",
+          "name": "Professional Plan",
           "description": "Unlimited verifications for professionals and businesses",
-          "price": formatPrice(SUBSCRIPTION_TIERS.business.price).replace('$', ''),
+          "price": formatPrice(SUBSCRIPTION_TIERS.professional.price).replace('$', ''),
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "validFrom": "2024-01-01",

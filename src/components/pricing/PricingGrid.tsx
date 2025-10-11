@@ -41,16 +41,16 @@ export const PricingGrid = () => {
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
-      ...SUBSCRIPTION_TIERS.individual,
-      price: formatPrice(SUBSCRIPTION_TIERS.individual.price),
-      priceId: SUBSCRIPTION_TIERS.individual.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.personal,
+      price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
+      priceId: SUBSCRIPTION_TIERS.personal.stripePriceId!,
       period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
-      ...SUBSCRIPTION_TIERS.business,
-      price: formatPrice(SUBSCRIPTION_TIERS.business.price),
-      priceId: SUBSCRIPTION_TIERS.business.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.professional,
+      price: formatPrice(SUBSCRIPTION_TIERS.professional.price),
+      priceId: SUBSCRIPTION_TIERS.professional.stripePriceId!,
       period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     },

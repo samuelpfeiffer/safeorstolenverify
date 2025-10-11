@@ -169,19 +169,19 @@ export const SubscriptionStatus = () => {
         {/* Subscription Options */}
         <div className="space-y-2">
           <Button 
-            onClick={() => handleSubscribeClick('business75')} 
+            onClick={() => handleSubscribeClick('professional')} 
             className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white border-none" 
             disabled={isLoading}
           >
-            Upgrade to Starter - {formatPrice(SUBSCRIPTION_TIERS.business75.price)}/month
+            Upgrade to Professional - {formatPrice(SUBSCRIPTION_TIERS.professional.price)}/month
           </Button>
           <Button 
-            onClick={() => handleSubscribeClick('business300')} 
+            onClick={() => handleSubscribeClick('professional')} 
             variant="outline" 
             className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10 bg-transparent" 
             disabled={isLoading}
           >
-            Upgrade to Pro Business - {formatPrice(SUBSCRIPTION_TIERS.business300.price)}/month
+            View Professional Plan Details
           </Button>
         </div>
 

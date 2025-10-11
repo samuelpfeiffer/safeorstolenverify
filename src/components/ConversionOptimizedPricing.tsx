@@ -129,36 +129,31 @@ export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedP
 
   const casualTiers = [
     {
-      ...SUBSCRIPTION_TIERS.payPerCheck,
+      ...SUBSCRIPTION_TIERS.payPerUse,
       description: "One-time check, no commitment",
       cta: "Buy Single Check"
     },
     {
-      ...SUBSCRIPTION_TIERS.bulk50,
+      ...SUBSCRIPTION_TIERS.starter,
       description: "Best for regular sellers",
-      cta: "Buy 50 Checks"
+      cta: "Start Starter Plan"
     },
     {
-      ...SUBSCRIPTION_TIERS.bulk250,
+      ...SUBSCRIPTION_TIERS.personal,
       description: "Maximum value per check",
-      cta: "Buy 250 Checks"
+      cta: "Start Personal Plan"
     }
   ];
 
   const businessTiers = [
     {
-      ...SUBSCRIPTION_TIERS.business75,
+      ...SUBSCRIPTION_TIERS.professional,
       description: "Perfect for small businesses",
-      cta: "Start Business Plan"
+      cta: "Start Professional Plan"
     },
     {
-      ...SUBSCRIPTION_TIERS.business300,
-      description: "For active resellers with API",
-      cta: "Start Pro Business"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.enterpriseAPI,
-      description: "Custom solutions for warehouses",
+      ...SUBSCRIPTION_TIERS.enterprise,
+      description: "For large scale operations",
       cta: "Contact Sales"
     }
   ];

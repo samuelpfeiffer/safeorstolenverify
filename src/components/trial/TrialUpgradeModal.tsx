@@ -89,18 +89,18 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
             <CardContent className="p-6 space-y-4">
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">For Individuals</p>
-                <h3 className="text-2xl font-bold mt-1">{SUBSCRIPTION_TIERS.individual.name}</h3>
+                <h3 className="text-2xl font-bold mt-1">{SUBSCRIPTION_TIERS.personal.name}</h3>
                 <div className="mt-2">
-                  <span className="text-4xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.individual.price)}</span>
+                  <span className="text-4xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Save 20% with annual billing
+                  50 checks per month
                 </p>
               </div>
 
               <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.individual.features?.map((feature, index) => (
+                {SUBSCRIPTION_TIERS.personal.features?.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">{feature}</span>
@@ -109,11 +109,11 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
               </ul>
 
               <Button 
-                onClick={() => handleUpgrade('individual')}
+                onClick={() => handleUpgrade('personal')}
                 className="w-full"
                 size="lg"
               >
-                Start Individual Plan
+                Start Personal Plan
               </Button>
             </CardContent>
           </Card>
@@ -130,18 +130,18 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
             <CardContent className="p-6 space-y-4">
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">For Businesses</p>
-                <h3 className="text-2xl font-bold mt-1">{SUBSCRIPTION_TIERS.business.name}</h3>
+                <h3 className="text-2xl font-bold mt-1">{SUBSCRIPTION_TIERS.professional.name}</h3>
                 <div className="mt-2">
-                  <span className="text-4xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.business.price)}</span>
+                  <span className="text-4xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.professional.price)}</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Save 20% with annual billing
+                  Unlimited verifications
                 </p>
               </div>
 
               <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.business.features?.map((feature, index) => (
+                {SUBSCRIPTION_TIERS.professional.features?.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                     <span className="text-sm">{feature}</span>

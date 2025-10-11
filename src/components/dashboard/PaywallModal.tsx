@@ -23,12 +23,12 @@ export const PaywallModal = ({ isOpen, onClose }: PaywallModalProps) => {
       stripePriceId: SUBSCRIPTION_TIERS.personal.stripePriceId!
     },
     {
-      name: 'Business',
-      price: formatPrice(SUBSCRIPTION_TIERS.business.price),
+      name: 'Professional',
+      price: formatPrice(SUBSCRIPTION_TIERS.professional.price),
       period: '/month',
-      features: SUBSCRIPTION_TIERS.business.features || [],
+      features: SUBSCRIPTION_TIERS.professional.features || [],
       highlighted: true,
-      stripePriceId: SUBSCRIPTION_TIERS.business.stripePriceId!
+      stripePriceId: SUBSCRIPTION_TIERS.professional.stripePriceId!
     }
   ];
 

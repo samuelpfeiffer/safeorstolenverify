@@ -9,7 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 interface ConsumerPricingProps {
-  onSubscribeClick: (tier: 'personal' | 'business') => void;
+  onSubscribeClick: (tier: 'personal' | 'professional') => void;
   isLoading: boolean;
 }
 
@@ -120,11 +120,11 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
         {/* Business Plan */}
         <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
           <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Business</h3>
-          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.business.price)}<span className="text-lg font-normal">/month</span></div>
+          <h3 className="text-2xl font-bold mb-2">Professional</h3>
+          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.professional.price)}<span className="text-lg font-normal">/month</span></div>
           <p className="text-gray-400 mb-6">For businesses and frequent buyers</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.business.features?.map((feature, index) => (
+            {SUBSCRIPTION_TIERS.professional.features?.map((feature, index) => (
               <li key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
                 <span>{feature}</span>
@@ -132,7 +132,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             ))}
           </ul>
           <Button 
-            onClick={() => onSubscribeClick('business')}
+            onClick={() => onSubscribeClick('professional')}
             className="w-full bg-secondary hover:bg-secondary/80"
             disabled={isLoading}
           >
@@ -141,46 +141,40 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
         </div>
       </div>
       
-      {/* Credit Packs */}
+      {/* Pay Per Use */}
       <div className="mt-12 bg-gray-800/50 backdrop-blur-lg rounded-xl p-8 text-center border border-gray-700">
-        <h3 className="text-2xl font-bold mb-4">Credit Packs</h3>
-        <p className="text-xl mb-6">Need just a few checks? Buy credits that never expire!</p>
+        <h3 className="text-2xl font-bold mb-4">Pay Per Check</h3>
+        <p className="text-xl mb-6">Need just one check? Pay as you go with no commitment!</p>
         <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40">
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.creditPack5.price)}</div>
-            <p className="text-gray-400 mb-4">5 Credits</p>
+            <div className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.payPerUse.priceDisplay}</div>
+            <p className="text-gray-400 mb-4">Single Check</p>
             <Button 
-              onClick={() => handleCreditPackPurchase('creditPack5')}
               variant="outline"
               size="sm"
-              disabled={creditPackLoading === 'creditPack5'}
             >
-              {creditPackLoading === 'creditPack5' ? 'Loading...' : 'Buy Now'}
+              Buy Now
             </Button>
           </div>
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40 border-2 border-sos-orange">
             <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-2 rounded-full inline-block mb-2">Best Value</div>
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.creditPack10.price)}</div>
-            <p className="text-gray-400 mb-4">10 Credits</p>
+            <div className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.starter.priceDisplay}</div>
+            <p className="text-gray-400 mb-4">15 Checks/mo</p>
             <Button 
-              onClick={() => handleCreditPackPurchase('creditPack10')}
               className="bg-sos-orange hover:bg-sos-orange/90"
               size="sm"
-              disabled={creditPackLoading === 'creditPack10'}
             >
-              {creditPackLoading === 'creditPack10' ? 'Loading...' : 'Buy Now'}
+              Subscribe
             </Button>
           </div>
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40">
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.creditPack25.price)}</div>
-            <p className="text-gray-400 mb-4">25 Credits</p>
+            <div className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.personal.priceDisplay}</div>
+            <p className="text-gray-400 mb-4">50 Checks/mo</p>
             <Button 
-              onClick={() => handleCreditPackPurchase('creditPack25')}
               variant="outline"
               size="sm"
-              disabled={creditPackLoading === 'creditPack25'}
             >
-              {creditPackLoading === 'creditPack25' ? 'Loading...' : 'Buy Now'}
+              Subscribe
             </Button>
           </div>
         </div>
