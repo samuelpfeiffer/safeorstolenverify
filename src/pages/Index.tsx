@@ -22,6 +22,7 @@ import { RichContentHub } from '@/components/seo/RichContentHub';
 import { useCoreWebVitals, optimizeImages, prefetchCriticalResources } from '@/hooks/useCoreWebVitals';
 import { ConversionTracking } from '@/components/conversion/ConversionTracking';
 import { LiveActivityFeed } from '@/components/conversion/LiveActivityFeed';
+import { ArizonaTheftSection } from '@/components/arizona/ArizonaTheftSection';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -62,6 +63,7 @@ const Index = () => {
       
       <div className="min-h-screen">
       <Hero />
+      <ArizonaTheftSection />
       <AppDownloadSection />
       
       {/* Social Sharing for Backlinks */}

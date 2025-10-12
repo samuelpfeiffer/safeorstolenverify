@@ -65,6 +65,10 @@ const TechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounder
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
+// Arizona Theft Database
+const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
+const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
+
 // Admin Pages
 const AdminBlogPage = lazy(() => import('@/pages/admin/AdminBlogPage'));
 const AdminAutomationPage = lazy(() => import('@/pages/admin/AdminAutomationPage'));
@@ -162,6 +166,12 @@ export const AppRoutes: React.FC = () => {
           <Route path="stolen-item-checker" element={<StolenItemChecker />} />
           <Route path="imei-check" element={<IMEICheck />} />
           <Route path="vin-verification" element={<VINVerification />} />
+          
+          {/* Arizona Theft Database Lookups */}
+          <Route path="arizona-license-plate-lookup" element={<ArizonaLicensePlateLookup />} />
+          <Route path="arizona-vin-lookup" element={<ArizonaVinLookup />} />
+          <Route path="theftaz" element={<ArizonaVinLookup />} />
+          <Route path="arizona-stolen-vehicle-check" element={<ArizonaVinLookup />} />
           <Route path="guides/how-to-check-stolen-items" element={<HowToCheckStolenItems />} />
           <Route path="guides/imei-blacklist-explained" element={<IMEIBlacklistGuide />} />
            <Route path="serial-number-lookup" element={<StolenItemChecker />} />

@@ -54,6 +54,8 @@ const TopNavigation = () => {
   // Resources Menu
   const resourcesMenu = [
     { label: 'Download App', href: '/download-app', description: 'Get our mobile app for iOS & Android' },
+    { label: 'Arizona License Plate Check', href: '/arizona-license-plate-lookup', description: 'Verify AZ stolen vehicles by plate' },
+    { label: 'Arizona VIN Lookup', href: '/arizona-vin-lookup', description: 'Check TheftAZ database by VIN' },
     { label: 'Buyer Guide', href: '/buyer-guide', description: 'How to buy secondhand safely' },
     { label: 'Seller Guide', href: '/seller-guide', description: 'How to sell with confidence' },
     { label: 'Compare Services', href: '/vs/checkmend', description: 'SafeOrStolen vs CheckMend' },

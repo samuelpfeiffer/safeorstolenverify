@@ -99,3 +99,7 @@ verify_jwt = true
 [functions.stripe-webhook-fixed]
 verify_jwt = false
 
+[functions.arizona-theft-lookup]
+verify_jwt = true
+
+
