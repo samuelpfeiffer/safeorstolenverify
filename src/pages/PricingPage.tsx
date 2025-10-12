@@ -33,7 +33,7 @@ const PricingPage = () => {
 
   // Remove duplicate price IDs - using centralized pricing config
 
-  const handleSubscribe = useCallback(async (tier: 'individual' | 'business' | 'enterprise', isAnnual?: boolean) => {
+  const handleSubscribe = useCallback(async (tier: string) => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -65,7 +65,8 @@ const PricingPage = () => {
     }, 20000); // Increased to 20 second timeout
 
     try {
-      const priceId = SUBSCRIPTION_TIERS[tier].stripePriceId!;
+      const tierKey = tier.toLowerCase() as keyof typeof SUBSCRIPTION_TIERS;
+      const priceId = SUBSCRIPTION_TIERS[tierKey]?.stripePriceId!;
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
@@ -135,12 +136,12 @@ const PricingPage = () => {
   // Check for automatic subscription trigger after authentication
   useEffect(() => {
     const subscribeParam = searchParams.get('subscribe');
-    if (subscribeParam && isAuthenticated && ['individual', 'business', 'enterprise'].includes(subscribeParam)) {
+    if (subscribeParam && isAuthenticated) {
       // Remove the URL parameter and trigger subscription
       navigate('/pricing', { replace: true });
       // Add small delay to prevent race conditions
       const timeoutId = setTimeout(() => {
-        handleSubscribe(subscribeParam as 'individual' | 'business' | 'enterprise');
+        handleSubscribe(subscribeParam);
       }, 500);
       
       return () => clearTimeout(timeoutId);
@@ -153,9 +154,9 @@ const PricingPage = () => {
 
     // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
-    if (pending && ['individual', 'business', 'enterprise'].includes(pending)) {
+    if (pending) {
       localStorage.removeItem('pendingSubscription');
-      setTimeout(() => handleSubscribe(pending as 'individual' | 'business' | 'enterprise'), 300);
+      setTimeout(() => handleSubscribe(pending), 300);
       return; // don't process report in same tick
     }
 

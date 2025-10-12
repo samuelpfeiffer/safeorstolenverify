@@ -17,35 +17,12 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const navigate = useNavigate();
-  const { createSubscriptionCheckout } = useSubscription();
-  const [creditPackLoading, setCreditPackLoading] = useState<string | null>(null);
 
   const handleFreeStart = () => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
     } else {
       navigate('/');
-    }
-  };
-
-  const handleCreditPackPurchase = async (packTier: 'creditPack5' | 'creditPack10' | 'creditPack25') => {
-    if (!isAuthenticated) {
-      navigate('/auth?tab=signup');
-      return;
-    }
-
-    setCreditPackLoading(packTier);
-    try {
-      const priceId = SUBSCRIPTION_TIERS[packTier].stripePriceId!;
-      const url = await createSubscriptionCheckout(priceId);
-      if (url) {
-        window.location.href = url;
-      }
-    } catch (error) {
-      console.error('Credit pack purchase error:', error);
-      toast.error('Failed to start checkout');
-    } finally {
-      setCreditPackLoading(null);
     }
   };
 
@@ -117,7 +94,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
           </Button>
         </div>
         
-        {/* Business Plan */}
+        {/* Professional Plan */}
         <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
           <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
           <h3 className="text-2xl font-bold mb-2">Professional</h3>
@@ -143,11 +120,11 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
       
       {/* Pay Per Use */}
       <div className="mt-12 bg-gray-800/50 backdrop-blur-lg rounded-xl p-8 text-center border border-gray-700">
-        <h3 className="text-2xl font-bold mb-4">Pay Per Check</h3>
-        <p className="text-xl mb-6">Need just one check? Pay as you go with no commitment!</p>
+        <h3 className="text-2xl font-bold mb-4">Flexible Options</h3>
+        <p className="text-xl mb-6">Choose the plan that works for you</p>
         <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40">
-            <div className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.payPerUse.priceDisplay}</div>
+            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.payPerUse.price)}</div>
             <p className="text-gray-400 mb-4">Single Check</p>
             <Button 
               variant="outline"
@@ -158,7 +135,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
           </div>
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40 border-2 border-sos-orange">
             <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-2 rounded-full inline-block mb-2">Best Value</div>
-            <div className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.starter.priceDisplay}</div>
+            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.starter.price)}</div>
             <p className="text-gray-400 mb-4">15 Checks/mo</p>
             <Button 
               className="bg-sos-orange hover:bg-sos-orange/90"
@@ -168,7 +145,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             </Button>
           </div>
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40">
-            <div className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.personal.priceDisplay}</div>
+            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}</div>
             <p className="text-gray-400 mb-4">50 Checks/mo</p>
             <Button 
               variant="outline"
@@ -178,7 +155,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             </Button>
           </div>
         </div>
-        <p className="text-sm text-gray-400">Credits never expire and can be used anytime</p>
+        <p className="text-sm text-gray-400">All plans include instant verification</p>
       </div>
       
       {/* Trust & Transparency Section */}

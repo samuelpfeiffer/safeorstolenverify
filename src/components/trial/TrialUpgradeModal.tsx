@@ -84,7 +84,7 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-6 mt-6">
-          {/* Individual Plan */}
+          {/* Personal Plan */}
           <Card className="border-2 hover:border-primary hover:shadow-lg transition-all">
             <CardContent className="p-6 space-y-4">
               <div className="text-center">
@@ -118,7 +118,7 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
             </CardContent>
           </Card>
 
-          {/* Business Plan - Most Popular */}
+          {/* Professional Plan - Most Popular */}
           <Card className="border-2 border-sos-orange shadow-lg relative">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
               <Badge className="bg-sos-orange text-white px-4 py-1">
@@ -150,11 +150,11 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
               </ul>
 
               <Button 
-                onClick={() => handleUpgrade('business')}
+                onClick={() => handleUpgrade('professional')}
                 className="w-full bg-sos-orange hover:bg-sos-orange/90"
                 size="lg"
               >
-                Start Business Plan
+                Start Professional Plan
               </Button>
             </CardContent>
           </Card>
