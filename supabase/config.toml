@@ -102,4 +102,13 @@ verify_jwt = false
 [functions.arizona-theft-lookup]
 verify_jwt = true
 
+[functions.nicb-vincheck]
+verify_jwt = true
+
+[functions.gsma-device-check]
+verify_jwt = true
+
+[functions.immobilize-lookup]
+verify_jwt = true
+
 

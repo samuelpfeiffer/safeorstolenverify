@@ -68,6 +68,7 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 // Arizona Theft Database
 const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
 const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
+const UnifiedVerificationPage = lazy(() => import('@/pages/UnifiedVerificationPage'));
 
 // Admin Pages
 const AdminBlogPage = lazy(() => import('@/pages/admin/AdminBlogPage'));
@@ -172,6 +173,12 @@ export const AppRoutes: React.FC = () => {
           <Route path="arizona-vin-lookup" element={<ArizonaVinLookup />} />
           <Route path="theftaz" element={<ArizonaVinLookup />} />
           <Route path="arizona-stolen-vehicle-check" element={<ArizonaVinLookup />} />
+          
+          {/* Unified Multi-Database Verification */}
+          <Route path="verify" element={<UnifiedVerificationPage />} />
+          <Route path="stolen-item-checker" element={<UnifiedVerificationPage />} />
+          <Route path="vin-check" element={<UnifiedVerificationPage />} />
+          <Route path="imei-check" element={<UnifiedVerificationPage />} />
           <Route path="guides/how-to-check-stolen-items" element={<HowToCheckStolenItems />} />
           <Route path="guides/imei-blacklist-explained" element={<IMEIBlacklistGuide />} />
            <Route path="serial-number-lookup" element={<StolenItemChecker />} />

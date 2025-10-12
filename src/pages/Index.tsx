@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
 import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { AppDownloadSection } from '@/components/home/AppDownloadSection';
@@ -23,6 +24,7 @@ import { useCoreWebVitals, optimizeImages, prefetchCriticalResources } from '@/h
 import { ConversionTracking } from '@/components/conversion/ConversionTracking';
 import { LiveActivityFeed } from '@/components/conversion/LiveActivityFeed';
 import { ArizonaTheftSection } from '@/components/arizona/ArizonaTheftSection';
+import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -63,7 +65,24 @@ const Index = () => {
       
       <div className="min-h-screen">
       <Hero />
+      
+      {/* Universal Search Section */}
+      <section className="py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4">
+              Search Across All Databases
+            </h2>
+            <p className="text-muted-foreground">
+              One search checks NICB, GSMA, CheckMEND, Bike Index, TheftAZ, and more
+            </p>
+          </div>
+          <UnifiedSearchBar variant="default" />
+        </div>
+      </section>
+      
       <ArizonaTheftSection />
+      <HowItWorks />
       <AppDownloadSection />
       
       {/* Social Sharing for Backlinks */}
