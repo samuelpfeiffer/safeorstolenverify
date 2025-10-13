@@ -69,6 +69,7 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
 const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
 const UnifiedVerificationPage = lazy(() => import('@/pages/UnifiedVerificationPage'));
+const APIManagementPage = lazy(() => import('@/pages/APIManagementPage'));
 
 // Admin Pages
 const AdminBlogPage = lazy(() => import('@/pages/admin/AdminBlogPage'));
@@ -179,6 +180,10 @@ export const AppRoutes: React.FC = () => {
           <Route path="stolen-item-checker" element={<UnifiedVerificationPage />} />
           <Route path="vin-check" element={<UnifiedVerificationPage />} />
           <Route path="imei-check" element={<UnifiedVerificationPage />} />
+          
+          {/* API Management */}
+          <Route path="api" element={<APIManagementPage />} />
+          <Route path="api-management" element={<APIManagementPage />} />
           <Route path="guides/how-to-check-stolen-items" element={<HowToCheckStolenItems />} />
           <Route path="guides/imei-blacklist-explained" element={<IMEIBlacklistGuide />} />
            <Route path="serial-number-lookup" element={<StolenItemChecker />} />
