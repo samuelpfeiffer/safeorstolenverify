@@ -111,4 +111,16 @@ verify_jwt = true
 [functions.immobilize-lookup]
 verify_jwt = true
 
+[functions.carfax-vin-lookup]
+verify_jwt = true
+
+[functions.imei-info-lookup]
+verify_jwt = true
+
+[functions.marketplace-sync]
+verify_jwt = true
+
+[functions.database-optimizer]
+verify_jwt = false
+
 

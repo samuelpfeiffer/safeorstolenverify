@@ -1,0 +1,41 @@
+{
+  "name": "SafeOrStolen - Verify Before You Buy",
+  "short_name": "SafeOrStolen",
+  "description": "Verify IMEI, VIN, and serial numbers against stolen item databases. Protect yourself from fraud.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "security", "shopping"],
+  "shortcuts": [
+    {
+      "name": "Quick Verify",
+      "short_name": "Verify",
+      "description": "Quickly verify an item",
+      "url": "/",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Check Phone",
+      "short_name": "Phone",
+      "description": "Verify phone IMEI",
+      "url": "/check-phone",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

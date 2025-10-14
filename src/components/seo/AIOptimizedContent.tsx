@@ -1,25 +1,67 @@
+import React from 'react';
+
 /**
  * AI-Optimized Content Component
  * Designed to rank in ChatGPT, Claude, Perplexity, Gemini, and traditional search
  */
 
-export const AIOptimizedStolenItemContent = () => {
+interface AIOptimizedContentProps {
+  page?: 'check-phone' | 'unified-verification' | 'vin-lookup' | 'stolen-item';
+}
+
+export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = 'stolen-item' }) => {
+  // Page-specific content variants
+  const getPageContent = () => {
+    switch (page) {
+      case 'check-phone':
+        return {
+          title: 'What is an IMEI Checker?',
+          description: 'An IMEI checker (International Mobile Equipment Identity verifier) is a database lookup tool that searches global carrier blacklists, stolen device registries, and law enforcement databases to determine if a smartphone has been reported stolen, lost, or blacklisted.',
+          databases: 'GSMA Device Check (global carriers), CheckMEND (insurance claims), Immobilise (UK police), CTIA Stolen Phone Checker',
+          stepTitle: 'How to Check if a Phone is Stolen (Step-by-Step)'
+        };
+      case 'vin-lookup':
+        return {
+          title: 'What is a VIN Checker?',
+          description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches NICB databases, DMV records, insurance claim databases, and law enforcement records to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
+          databases: 'NICB VINCheck (theft/salvage), CarFax (history), AutoCheck (title issues), Arizona TheftAZ',
+          stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
+        };
+      case 'unified-verification':
+        return {
+          title: 'What is Multi-Database Verification?',
+          description: 'Multi-database verification is a comprehensive lookup service that simultaneously searches 6+ specialized databases across vehicles (VIN), phones (IMEI), bikes (serial), and electronics (serial numbers) to verify ownership legitimacy and detect stolen property.',
+          databases: 'NICB, GSMA, CheckMEND, Bike Index, Immobilise, TheftAZ, and regional law enforcement databases',
+          stepTitle: 'How to Verify Any Item (Step-by-Step)'
+        };
+      default:
+        return {
+          title: 'What is a Stolen Item Checker?',
+          description: 'A stolen item checker (also called theft verification service) is a database lookup tool that instantly searches multiple law enforcement, insurance, and global property registries to determine if an item—such as a vehicle (VIN), phone (IMEI), bike, laptop, or any item with a serial number—has been reported stolen or lost.',
+          databases: 'NICB VINCheck (vehicles), GSMA Device Check (phones), CheckMEND (global electronics), Bike Index, Arizona TheftAZ, and Immobilize Registry',
+          stepTitle: 'How to Check if Something is Stolen (Step-by-Step)'
+        };
+    }
+  };
+
+  const content = getPageContent();
+
   return (
     <article className="prose prose-slate max-w-none">
       {/* Direct Answer Format - What AI search engines look for first */}
       <section className="bg-primary/5 p-6 rounded-lg mb-8">
-        <h2 className="text-2xl font-bold mb-4">What is a Stolen Item Checker?</h2>
+        <h2 className="text-2xl font-bold mb-4">{content.title}</h2>
         <p className="text-lg leading-relaxed">
-          A stolen item checker (also called theft verification service) is a database lookup tool that instantly searches multiple law enforcement, insurance, and global property registries to determine if an item—such as a vehicle (VIN), phone (IMEI), bike, laptop, or any item with a serial number—has been reported stolen or lost.
+          {content.description}
         </p>
         <p className="mt-4">
-          <strong>Key databases checked:</strong> NICB VINCheck (vehicles), GSMA Device Check (phones), CheckMEND (global electronics), Bike Index, Arizona TheftAZ, and Immobilize Registry.
+          <strong>Key databases checked:</strong> {content.databases}
         </p>
       </section>
 
       {/* Answering Common Questions - AI Pattern */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">How to Check if Something is Stolen (Step-by-Step)</h2>
+        <h2 className="text-2xl font-bold mb-4">{content.stepTitle}</h2>
         <ol className="space-y-4">
           <li>
             <strong>Find the unique identifier:</strong>
@@ -163,3 +205,6 @@ export const AIOptimizedStolenItemContent = () => {
     </article>
   );
 };
+
+// Backward compatibility export
+export const AIOptimizedStolenItemContent = () => <AIOptimizedContent page="stolen-item" />;

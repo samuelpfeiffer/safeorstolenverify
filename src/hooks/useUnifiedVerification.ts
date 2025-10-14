@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { detectItemType } from '@/utils/itemTypeDetector';
+import { analyzeFraudRisk, calculateConfidenceScore } from '@/utils/fraudDetection';
 
 interface UnifiedVerificationResult {
   status: 'stolen' | 'lost' | 'safe' | 'error' | 'blacklisted' | 'salvage';
@@ -28,12 +29,25 @@ export const useUnifiedVerification = () => {
 
       let providers: Array<{name: string; result: any}> = [];
       
+      // Fraud risk analysis
+      const fraudAnalysis = analyzeFraudRisk({
+        identifier: sanitizedInput,
+        itemType: detectedType
+      });
+
+      if (fraudAnalysis.recommendation === 'abort') {
+        toast.warning('⚠️ High fraud risk detected', {
+          description: fraudAnalysis.indicators.join('. ')
+        });
+      }
+
       // Route to appropriate providers based on detected type
       if (detectedType === 'vehicle' || /^[A-HJ-NPR-Z0-9]{17}$/i.test(sanitizedInput)) {
         // VIN detected - check multiple vehicle databases
-        const [nicbResult, arizonaResult] = await Promise.allSettled([
+        const [nicbResult, arizonaResult, carfaxResult] = await Promise.allSettled([
           supabase.functions.invoke('nicb-vincheck', { body: { vin: sanitizedInput } }),
-          supabase.functions.invoke('arizona-theft-lookup', { body: { type: 'vin', value: sanitizedInput } })
+          supabase.functions.invoke('arizona-theft-lookup', { body: { type: 'vin', value: sanitizedInput } }),
+          supabase.functions.invoke('carfax-vin-lookup', { body: { vin: sanitizedInput } })
         ]);
 
         if (nicbResult.status === 'fulfilled' && nicbResult.value.data) {
@@ -42,12 +56,16 @@ export const useUnifiedVerification = () => {
         if (arizonaResult.status === 'fulfilled' && arizonaResult.value.data) {
           providers.push({ name: 'Arizona TheftAZ', result: arizonaResult.value.data });
         }
-      } 
+        if (carfaxResult.status === 'fulfilled' && carfaxResult.value.data) {
+          providers.push({ name: 'CarFax', result: carfaxResult.value.data });
+        }
+      }
       else if (detectedType === 'smartphone' || /^\d{14,15}$/.test(sanitizedInput)) {
         // IMEI detected - check phone databases
-        const [gsmaResult, checkmendResult] = await Promise.allSettled([
+        const [gsmaResult, checkmendResult, imeiInfoResult] = await Promise.allSettled([
           supabase.functions.invoke('gsma-device-check', { body: { imei: sanitizedInput } }),
-          supabase.functions.invoke('verify-checkmend', { body: { serialNumber: sanitizedInput, itemType: 'smartphone' } })
+          supabase.functions.invoke('verify-checkmend', { body: { serialNumber: sanitizedInput, itemType: 'smartphone' } }),
+          supabase.functions.invoke('imei-info-lookup', { body: { imei: sanitizedInput } })
         ]);
 
         if (gsmaResult.status === 'fulfilled' && gsmaResult.value.data) {
@@ -55,6 +73,9 @@ export const useUnifiedVerification = () => {
         }
         if (checkmendResult.status === 'fulfilled' && checkmendResult.value.data) {
           providers.push({ name: 'CheckMEND', result: checkmendResult.value.data });
+        }
+        if (imeiInfoResult.status === 'fulfilled' && imeiInfoResult.value.data) {
+          providers.push({ name: 'IMEI.info', result: imeiInfoResult.value.data });
         }
       }
       else {
@@ -85,17 +106,31 @@ export const useUnifiedVerification = () => {
         p.result.status === 'stolen' || p.result.status === 'lost'
       );
 
+      // Calculate confidence score
+      const confidenceScore = calculateConfidenceScore({
+        providersChecked: providers.length,
+        databaseMatches: providers.filter(p => p.result.status === 'stolen' || p.result.status === 'lost').length
+      });
+
       const aggregatedResult: UnifiedVerificationResult = {
         status: hasStolenReport ? 'stolen' : 'safe',
         message: hasStolenReport 
-          ? `⚠️ This item has been reported as stolen or lost in ${providers.filter(p => p.result.status === 'stolen' || p.result.status === 'lost').length} database(s)`
-          : `✓ No theft records found across ${providers.length} database(s)`,
-        details: providers.map(p => ({
-          provider: p.name,
-          status: p.result.status,
-          message: p.result.message,
-          details: p.result.details
-        })),
+          ? `⚠️ This item has been reported as stolen or lost in ${providers.filter(p => p.result.status === 'stolen' || p.result.status === 'lost').length} database(s) | Confidence: ${confidenceScore}% | Fraud Risk: ${fraudAnalysis.riskScore}/100`
+          : `✓ No theft records found across ${providers.length} database(s) | Confidence: ${confidenceScore}% | Fraud Risk: ${fraudAnalysis.riskScore}/100`,
+        details: {
+          providers: providers.map(p => ({
+            provider: p.name,
+            status: p.result.status,
+            message: p.result.message,
+            details: p.result.details
+          })),
+          fraudAnalysis: {
+            riskScore: fraudAnalysis.riskScore,
+            indicators: fraudAnalysis.indicators,
+            recommendation: fraudAnalysis.recommendation
+          },
+          confidenceScore
+        },
         source: 'unified_multi_provider',
         providers: providers.map(p => p.name),
         timestamp: new Date().toISOString()
