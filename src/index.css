@@ -6,53 +6,54 @@
 
 @layer base {
   :root {
-    /* Modern, clean, spacious color palette */
-    --background: 0 0% 100%;  /* Pure white */
-    --foreground: 222 47% 11%;  /* Deep slate for readability */
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    /* Modern, clean, vibrant color palette */
+    --background: 0 0% 99%;  /* Soft white for less eye strain */
+    --foreground: 220 30% 15%;  /* Warm dark slate for better readability */
+    --card: 0 0% 100%;  /* Pure white cards for contrast */
+    --card-foreground: 220 30% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 0 73% 51%;  /* Red primary */
+    --popover-foreground: 220 30% 15%;
+    --primary: 0 84% 60%;  /* Vibrant red that pops */
     --primary-foreground: 0 0% 100%;
-    --secondary: 142 76% 36%;  /* Fresh green */
+    --secondary: 142 71% 45%;  /* Balanced green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 98%;  /* Ultra light gray for more white space */
-    --muted-foreground: 215 16% 47%;
-    --accent: 0 73% 51%;  /* Red accent */
+    --muted: 220 20% 97%;  /* Warm light gray */
+    --muted-foreground: 220 15% 40%;  /* Better contrast for secondary text */
+    --accent: 210 100% 50%;  /* Blue accent for variety */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 95%;  /* Lighter border */
-    --input: 214 32% 96%;  /* Lighter input */
-    --ring: 0 73% 51%;  /* Red ring */
+    --border: 220 20% 92%;  /* Subtle warm borders */
+    --input: 220 20% 97%;  /* Soft input background */
+    --ring: 0 84% 60%;  /* Vibrant focus ring */
     --radius: 1rem;
     
     /* Buyer/Seller/Business theme colors */
-    --buyer-red: 0 73% 51%;  /* Red for buyers */
-    --seller-green: 142 76% 36%;  /* Professional green for sellers */
-    --business-blue: 211 100% 50%;  /* Corporate blue for businesses */
+    --buyer-red: 0 84% 60%;  /* Vibrant red for buyers */
+    --seller-green: 142 71% 45%;  /* Professional green for sellers */
+    --business-blue: 210 100% 50%;  /* Corporate blue for businesses */
     
-    /* Clean gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 73% 51%), hsl(0 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
-    --gradient-cyber: linear-gradient(45deg, hsl(0 73% 51%) 0%, hsl(142 76% 36%) 50%, hsl(211 100% 50%) 100%);
-    --gradient-glow: radial-gradient(circle, rgba(220,38,38,0.1) 0%, transparent 70%);
+    /* Beautiful gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 72% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 99%) 0%, hsl(220 20% 97%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 20% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(210 100% 50%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 76% 36%) 100%);
+    --gradient-glow: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 70%);
     
-    /* Neon accents */
-    --neon-cyan: 180 100% 50%;
-    --neon-green: 120 100% 50%;
-    --neon-purple: 270 100% 70%;
-    --neon-pink: 330 100% 70%;
+    /* Modern accent colors */
+    --accent-blue: 210 100% 50%;
+    --accent-green: 142 71% 45%;
+    --accent-red: 0 84% 60%;
+    --accent-yellow: 45 93% 58%;
     
-    /* Futuristic shadows with neon glow */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 255 255 / 0.1), 0 2px 4px -2px rgb(0 255 255 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 255 255 / 0.1), 0 4px 6px -4px rgb(0 255 255 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 255 255 / 0.1), 0 8px 10px -6px rgb(0 255 255 / 0.1);
-    --shadow-neon: 0 0 20px rgb(0 255 255 / 0.5), 0 0 40px rgb(0 255 255 / 0.3);
-    --shadow-glow: 0 0 30px rgb(120 255 120 / 0.4), 0 0 60px rgb(120 255 120 / 0.2);
+    /* Elegant shadows */
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08);
+    --shadow-lg: 0 10px 24px -4px rgb(0 0 0 / 0.10);
+    --shadow-xl: 0 20px 40px -8px rgb(0 0 0 / 0.12);
+    --shadow-primary: 0 8px 24px -4px rgba(239, 68, 68, 0.2);
+    --shadow-success: 0 8px 24px -4px rgba(34, 197, 94, 0.2);
 
     /* Brand: FasterCapital */
     --fc-blue: 214 84% 45%;
@@ -60,41 +61,41 @@
     --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 0 73% 51%;
+    --sidebar-foreground: 220 30% 15%;
+    --sidebar-primary: 0 84% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 142 76% 36%;
-    --sidebar-accent-foreground: 0 0% 0%;
-    --sidebar-border: 214 32% 95%;
-    --sidebar-ring: 0 73% 51%;
+    --sidebar-accent: 142 71% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 20% 92%;
+    --sidebar-ring: 0 84% 60%;
   }
 
   .dark {
-    --background: 0 0% 5%;  /* Dark gray instead of black */
-    --foreground: 0 0% 100%;  /* White */
-    --card: 0 0% 98%;  /* Light cards in dark mode */
-    --card-foreground: 222 47% 11%;  /* Dark text on light cards */
-    --popover: 0 0% 98%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 0 73% 51%;  /* Red */
+    --background: 220 30% 8%;  /* Warm dark background */
+    --foreground: 0 0% 98%;  /* Soft white text */
+    --card: 0 0% 100%;  /* Keep cards light even in dark mode */
+    --card-foreground: 220 30% 15%;  /* Dark text on light cards */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+    --primary: 0 84% 60%;  /* Vibrant red */
     --primary-foreground: 0 0% 100%;
-    --secondary: 142 76% 36%;  /* Green */
+    --secondary: 142 71% 45%;  /* Green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 96%;  /* Light muted */
-    --muted-foreground: 215 16% 47%;
-    --accent: 0 73% 51%;  /* Red accent */
+    --muted: 220 20% 97%;  /* Light muted even in dark mode */
+    --muted-foreground: 220 15% 40%;
+    --accent: 210 100% 50%;  /* Blue accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 92%;
-    --input: 214 32% 96%;
-    --ring: 0 73% 51%;
+    --border: 220 20% 92%;
+    --input: 220 20% 97%;
+    --ring: 0 84% 60%;
     
-    /* Clean gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(0 73% 51%), hsl(0 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
-    --gradient-cyber: linear-gradient(45deg, hsl(0 73% 51%) 0%, hsl(142 76% 36%) 50%, hsl(211 100% 50%) 100%);
+    /* Beautiful gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 72% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 8%) 0%, hsl(220 30% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 20% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(210 100% 50%) 100%);
   }
 
   * {
@@ -236,13 +237,13 @@
     @apply transition-transform duration-200 hover:scale-[1.02];
   }
 
-  /* SOS Brand Colors - Red gradient for SafeOrStolen branding */
+  /* SOS Brand Colors - Vibrant red gradient for SafeOrStolen branding */
   .sos-brand-gradient {
-    background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #DC2626 100%);
+    background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #EF4444 100%);
   }
   
   .sos-brand-text {
-    background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #DC2626 100%);
+    background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #EF4444 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

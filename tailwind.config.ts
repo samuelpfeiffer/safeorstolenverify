@@ -68,17 +68,17 @@ export default {
 					dark: '#F8FAFC',    // Light gray
 					light: '#FFFFFF',   // Pure white
 					orange: {
-						DEFAULT: '#DC2626', // Red instead of orange
+						DEFAULT: '#EF4444', // Vibrant red that works better visually
 						50: '#FEF2F2',
 						100: '#FEE2E2',
 						200: '#FECACA',
 						300: '#FCA5A5',
 						400: '#F87171',
-						500: '#DC2626',
-						600: '#B91C1C',
-						700: '#991B1B',
-						800: '#7F1D1D',
-						900: '#450A0A'
+						500: '#EF4444',
+						600: '#DC2626',
+						700: '#B91C1C',
+						800: '#991B1B',
+						900: '#7F1D1D'
 					},
 					lime: {
 						DEFAULT: '#84CC16',
@@ -140,9 +140,11 @@ export default {
 				'3xl': '1.5rem',
 			},
 			boxShadow: {
-				'glow': '0 0 20px rgba(220, 38, 38, 0.15)',
-				'glow-lg': '0 0 40px rgba(220, 38, 38, 0.2)',
-				'lime-glow': '0 0 20px rgba(132, 204, 22, 0.15)',
+				'glow': '0 0 20px rgba(239, 68, 68, 0.2)',
+				'glow-lg': '0 0 40px rgba(239, 68, 68, 0.25)',
+				'lime-glow': '0 0 20px rgba(34, 197, 94, 0.2)',
+				'elegant': '0 4px 20px -4px rgba(0, 0, 0, 0.1)',
+				'elegant-lg': '0 10px 40px -8px rgba(0, 0, 0, 0.15)',
 			},
 			keyframes: {
 				'accordion-down': {
