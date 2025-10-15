@@ -166,7 +166,7 @@ const TopNavigation = () => {
     href: '/security',
     icon: Shield
   }] : [];
-  return <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-white/95 backdrop-blur-lg border-b border-border shadow-lg" : "bg-white/90 backdrop-blur-md")}>
+  return <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-white/98 backdrop-blur-lg border-b border-border shadow-elegant" : "bg-white/95 backdrop-blur-md")}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         {/* Top Bar with FasterCapital Branding */}
         
@@ -198,7 +198,7 @@ const TopNavigation = () => {
 
           {/* Desktop Navigation with Dropdown Menus */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navigationItems.map(item => <button key={item.href} onClick={() => navigate(item.href)} className={cn("px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 min-h-[44px]", location.pathname === item.href ? "text-sos-orange bg-sos-orange/10" : "text-gray-300 hover:text-white hover:bg-white/5")}>
+            {navigationItems.map(item => <button key={item.href} onClick={() => navigate(item.href)} className={cn("px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px]", location.pathname === item.href ? "text-primary bg-primary/10 border border-primary/20" : "text-foreground hover:text-primary hover:bg-muted/50")}>
                 {item.label}
               </button>)}
             
@@ -361,10 +361,10 @@ const TopNavigation = () => {
 
           {/* User Menu & CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Prominent Verify Button - Larger for mobile usability */}
-            <Button onClick={() => navigate('/stolen-item-checker')} className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all min-h-[48px] px-8">
-              <Search className="h-5 w-5 mr-2" />
-              Verify Item
+            {/* Prominent Verify Button - Trust-focused */}
+            <Button onClick={() => navigate('/stolen-item-checker')} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-trust hover:shadow-lg transition-all min-h-[48px] px-8 border border-primary/20">
+              <Shield className="h-5 w-5 mr-2" />
+              Verify Now
             </Button>
             
             {isAuthenticated ? <DropdownMenu>

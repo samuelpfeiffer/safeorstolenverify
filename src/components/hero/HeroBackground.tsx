@@ -4,40 +4,34 @@ import React, { memo } from 'react';
 export const HeroBackground = memo(() => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sos via-sos-dark/95 to-background"></div>
+      {/* Professional Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background"></div>
       
-      {/* Animated Mesh Gradient */}
-      <div className="absolute inset-0 opacity-40">
+      {/* Subtle Animated Accents */}
+      <div className="absolute inset-0 opacity-30">
         <div 
-          className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-sos-orange/20 to-sos-lime/20 rounded-full filter blur-3xl animate-float"
+          className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/15 to-secondary/10 rounded-full filter blur-3xl animate-float"
         ></div>
         <div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-sos-lime/15 to-sos-orange/15 rounded-full filter blur-3xl animate-float" 
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-secondary/10 to-primary/10 rounded-full filter blur-3xl animate-float" 
           style={{ '--animation-delay': '2s' } as React.CSSProperties}
         ></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-t from-sos-orange/10 to-transparent rounded-full filter blur-2xl"></div>
       </div>
       
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
         <div className="w-full h-full" style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            linear-gradient(rgba(59,130,246,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59,130,246,0.1) 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px'
+          backgroundSize: '60px 60px'
         }}></div>
       </div>
       
-      {/* Spotlight Effects */}
+      {/* Professional Trust Glow */}
       <div 
-        className="absolute top-1/4 left-1/3 w-64 h-64 bg-sos-orange/5 rounded-full filter blur-3xl" 
-        style={{ '--animation-delay': '1s' } as React.CSSProperties}
-      ></div>
-      <div 
-        className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-sos-lime/10 rounded-full filter blur-2xl"
-        style={{ '--animation-delay': '3s' } as React.CSSProperties}
+        className="absolute top-1/3 left-1/3 w-72 h-72 bg-primary/5 rounded-full filter blur-3xl"
       ></div>
     </div>
   );

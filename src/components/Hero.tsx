@@ -26,54 +26,68 @@ const Hero = () => {
             <FasterCapitalBranding />
           </div>
 
-          {/* Clear, Focused Headline */}
+          {/* Trust-focused Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
-            Check if It's Stolen
+            Verify Items Instantly
             <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              In 30 Seconds, For Free
+              Buy with Confidence & Peace of Mind
             </span>
           </h1>
           
-          {/* Simple Value Prop */}
+          {/* Trust Value Proposition */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Verify guns, phones, cars, laptops, tools before buying. Protect yourself from stolen goods on Facebook Marketplace, OfferUp, Craigslist.
+            Trusted by thousands to verify phones, vehicles, electronics, and firearms. Check serial numbers, IMEI, VIN instantly—protecting you from stolen goods and fraud.
           </p>
 
-          {/* THE ONE SEARCH BAR - Core Focus - Enhanced Visibility */}
-          <div className="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border-2 border-primary/40 ring-8 ring-primary/5 animate-fade-in">
-            <div className="flex items-center gap-3 mb-8 px-6 py-4 bg-primary/5 rounded-xl border-2 border-primary/30 shadow-inner">
-              <Search className="h-7 w-7 text-primary animate-pulse" />
-              <span className="text-lg font-bold text-foreground">Enter IMEI, VIN, or Serial Number</span>
+          {/* Professional Search Interface */}
+          <div className="max-w-2xl mx-auto bg-white p-10 rounded-2xl shadow-trust border border-primary/20 animate-fade-in">
+            <div className="flex items-center gap-3 mb-8 px-6 py-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl border border-primary/20">
+              <Shield className="h-7 w-7 text-primary" />
+              <span className="text-lg font-semibold text-foreground">Secure Verification - Enter Your Item Details</span>
             </div>
             <UnifiedSearchBar variant="hero" />
-            <p className="text-sm text-center text-muted-foreground mt-6 font-semibold">
-              ✓ 4 free checks • No credit card • Instant results
-            </p>
+            <div className="mt-6 flex items-center justify-center gap-6 text-sm">
+              <div className="flex items-center gap-2 text-secondary">
+                <Shield className="h-4 w-4" />
+                <span className="font-medium">Secure & Private</span>
+              </div>
+              <div className="flex items-center gap-2 text-primary">
+                <Search className="h-4 w-4" />
+                <span className="font-medium">Instant Results</span>
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <span className="font-medium">No Credit Card</span>
+              </div>
+            </div>
           </div>
           
-          {/* Simple CTA */}
+          {/* Trust-focused CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="font-semibold px-10 h-14 text-base shadow-lg" onClick={handleGetStarted}>
-              Start Free
+            <Button size="lg" className="font-semibold px-12 h-14 text-base shadow-trust hover:shadow-lg transition-all" onClick={handleGetStarted}>
+              <Shield className="h-5 w-5 mr-2" />
+              Start Verification
             </Button>
-            <Button size="lg" variant="outline" className="font-semibold px-10 h-14 text-base" asChild>
-              <Link to="/how-it-works">How It Works</Link>
+            <Button size="lg" variant="outline" className="font-semibold px-10 h-14 text-base border-2 hover:bg-muted/50" asChild>
+              <Link to="/how-it-works">Learn More</Link>
             </Button>
           </div>
 
-          {/* Key Stats - Simple */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-10 border-t border-border/50">
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto pt-12 border-t border-border">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50M+</div>
-              <div className="text-sm text-muted-foreground font-medium">Records</div>
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">50M+</div>
+              <div className="text-sm font-semibold text-muted-foreground">Verified Records</div>
+              <div className="text-xs text-muted-foreground mt-1">Trusted Database</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">&lt;30s</div>
-              <div className="text-sm text-muted-foreground font-medium">Verification</div>
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-secondary to-secondary/70 bg-clip-text text-transparent mb-2">99.9%</div>
+              <div className="text-sm font-semibold text-muted-foreground">Accuracy Rate</div>
+              <div className="text-xs text-muted-foreground mt-1">Industry Leading</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">99.7%</div>
-              <div className="text-sm text-muted-foreground font-medium">Accuracy</div>
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-2">&lt;30s</div>
+              <div className="text-sm font-semibold text-muted-foreground">Fast Results</div>
+              <div className="text-xs text-muted-foreground mt-1">Instant Verification</div>
             </div>
           </div>
         </div>

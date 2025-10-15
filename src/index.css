@@ -6,54 +6,55 @@
 
 @layer base {
   :root {
-    /* Modern, clean, vibrant color palette */
-    --background: 0 0% 99%;  /* Soft white for less eye strain */
-    --foreground: 220 30% 15%;  /* Warm dark slate for better readability */
-    --card: 0 0% 100%;  /* Pure white cards for contrast */
-    --card-foreground: 220 30% 15%;
+    /* Trust-focused professional color palette */
+    --background: 210 20% 98%;  /* Soft cool white - professional and clean */
+    --foreground: 222 47% 11%;  /* Deep navy for authority and trust */
+    --card: 0 0% 100%;  /* Pure white cards for clarity */
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 15%;
-    --primary: 0 84% 60%;  /* Vibrant red that pops */
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;  /* Professional blue - trust and security */
     --primary-foreground: 0 0% 100%;
-    --secondary: 142 71% 45%;  /* Balanced green */
+    --secondary: 142 71% 45%;  /* Success green for verified items */
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 20% 97%;  /* Warm light gray */
-    --muted-foreground: 220 15% 40%;  /* Better contrast for secondary text */
-    --accent: 210 100% 50%;  /* Blue accent for variety */
+    --muted: 210 20% 96%;  /* Cool light gray */
+    --muted-foreground: 215 20% 45%;  /* Professional gray text */
+    --accent: 217 91% 60%;  /* Blue accent for consistency */
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 60%;  /* Alert red for stolen items */
     --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 92%;  /* Subtle warm borders */
-    --input: 220 20% 97%;  /* Soft input background */
-    --ring: 0 84% 60%;  /* Vibrant focus ring */
-    --radius: 1rem;
+    --border: 214 32% 91%;  /* Subtle professional borders */
+    --input: 0 0% 100%;  /* Clean white inputs */
+    --ring: 217 91% 60%;  /* Blue focus ring for trust */
+    --radius: 0.75rem;  /* Slightly softer corners */
     
-    /* Buyer/Seller/Business theme colors */
-    --buyer-red: 0 84% 60%;  /* Vibrant red for buyers */
-    --seller-green: 142 71% 45%;  /* Professional green for sellers */
-    --business-blue: 210 100% 50%;  /* Corporate blue for businesses */
+    /* Trust & Security theme colors */
+    --trust-blue: 217 91% 60%;  /* Primary trust color */
+    --verified-green: 142 71% 45%;  /* Success and verified */
+    --alert-red: 0 84% 60%;  /* Warnings and stolen items */
+    --professional-navy: 222 47% 11%;  /* Authority and reliability */
     
-    /* Beautiful gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 72% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 99%) 0%, hsl(220 20% 97%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 20% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(210 100% 50%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 76% 36%) 100%);
-    --gradient-glow: radial-gradient(circle, rgba(239,68,68,0.12) 0%, transparent 70%);
+    /* Professional gradients for trust */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 76% 48%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 20% 98%) 0%, hsl(217 91% 97%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    --gradient-trust: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
+    --gradient-verified: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 40%) 100%);
+    --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
     
-    /* Modern accent colors */
-    --accent-blue: 210 100% 50%;
+    /* Professional accent colors */
+    --accent-blue: 217 91% 60%;
     --accent-green: 142 71% 45%;
-    --accent-red: 0 84% 60%;
-    --accent-yellow: 45 93% 58%;
+    --accent-amber: 38 92% 50%;  /* For warnings */
+    --accent-navy: 222 47% 11%;
     
-    /* Elegant shadows */
-    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.08);
-    --shadow-lg: 0 10px 24px -4px rgb(0 0 0 / 0.10);
-    --shadow-xl: 0 20px 40px -8px rgb(0 0 0 / 0.12);
-    --shadow-primary: 0 8px 24px -4px rgba(239, 68, 68, 0.2);
-    --shadow-success: 0 8px 24px -4px rgba(34, 197, 94, 0.2);
+    /* Trust-building shadows - subtle and professional */
+    --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+    --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.05);
+    --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.10), 0 8px 10px -6px rgb(15 23 42 / 0.05);
+    --shadow-trust: 0 4px 20px -4px rgba(59, 130, 246, 0.2);
+    --shadow-verified: 0 4px 20px -4px rgba(34, 197, 94, 0.2);
 
     /* Brand: FasterCapital */
     --fc-blue: 214 84% 45%;
@@ -61,13 +62,13 @@
     --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 30% 15%;
-    --sidebar-primary: 0 84% 60%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 142 71% 45%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 20% 92%;
-    --sidebar-ring: 0 84% 60%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
@@ -105,11 +106,11 @@
   body {
     background: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
-    line-height: 1.8;  /* Even more spacious */
-    letter-spacing: -0.01em;
+    line-height: 1.6;  /* Professional line height */
+    letter-spacing: -0.011em;  /* Subtle tighter tracking for modern feel */
     @apply antialiased;
   }
 
@@ -117,7 +118,24 @@
     @apply font-display;
     font-feature-settings: 'cv11', 'ss01';
     text-wrap: balance;
-    letter-spacing: -0.02em;  /* Tighter for headlines */
+    letter-spacing: -0.025em;  /* Refined for trust and authority */
+    font-weight: 700;  /* Bold for confidence */
+    color: hsl(var(--foreground));
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    line-height: 1.1;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+    line-height: 1.3;
   }
 }
 
@@ -237,16 +255,24 @@
     @apply transition-transform duration-200 hover:scale-[1.02];
   }
 
-  /* SOS Brand Colors - Vibrant red gradient for SafeOrStolen branding */
+  /* Trust-focused brand gradients */
   .sos-brand-gradient {
-    background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #EF4444 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   }
   
   .sos-brand-text {
-    background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #EF4444 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .trust-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm border border-primary/20;
+  }
+
+  .verified-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm border border-secondary/20;
   }
 
   .cyber-float {
