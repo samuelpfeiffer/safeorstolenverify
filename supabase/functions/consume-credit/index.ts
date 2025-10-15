@@ -39,7 +39,7 @@ serve(async (req) => {
       );
     }
 
-    console.log('[CONSUME-CREDIT] User authenticated:', user.id);
+    console.log('[CONSUME-CREDIT] User authenticated');
 
     // SECURITY FIX: Use atomic UPDATE to prevent race condition
     // This ensures only one concurrent request can deduct a credit
@@ -72,7 +72,7 @@ serve(async (req) => {
     }
 
     const newBalance = updatedProfile.credit_balance;
-    console.log('[CONSUME-CREDIT] Current balance after deduction:', newBalance);
+    console.log('[CONSUME-CREDIT] Credit deduction successful');
 
     // Log the transaction
     const { error: transactionError } = await supabaseClient
@@ -89,7 +89,7 @@ serve(async (req) => {
       console.error('[CONSUME-CREDIT] Failed to log transaction:', transactionError);
     }
 
-    console.log('[CONSUME-CREDIT] Credit consumed successfully, new balance:', newBalance);
+    console.log('[CONSUME-CREDIT] Transaction completed successfully');
 
     return new Response(
       JSON.stringify({ 
