@@ -470,9 +470,27 @@ const AIContentScheduler: React.FC = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-center py-8">
-                <BarChart3 className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">Analytics dashboard coming soon...</p>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">Total Tasks Scheduled</div>
+                    <div className="text-2xl font-bold">{scheduledTasks.length}</div>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">Content Plans</div>
+                    <div className="text-2xl font-bold">{contentPlans.length}</div>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">Completed</div>
+                    <div className="text-2xl font-bold">
+                      {scheduledTasks.filter(t => t.status === 'completed').length}
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center py-4">
+                  <BarChart3 className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-sm text-muted-foreground">Schedule more content to see detailed analytics</p>
+                </div>
               </div>
             </CardContent>
           </Card>

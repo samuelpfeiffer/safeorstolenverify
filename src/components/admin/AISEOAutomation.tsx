@@ -473,9 +473,31 @@ const AISEOAutomation: React.FC = () => {
               <CardDescription>Track and optimize content for maximum SEO impact</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-center py-8">
-                <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">Content analytics coming soon...</p>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">SEO Suggestions</div>
+                    <div className="text-2xl font-bold">{suggestions.length}</div>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">Applied</div>
+                    <div className="text-2xl font-bold">
+                      {suggestions.filter(s => s.status === 'applied').length}
+                    </div>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">Avg. Performance Score</div>
+                    <div className="text-2xl font-bold">
+                      {performance?.overall_score || 0}
+                    </div>
+                  </div>
+                  <div className="p-4 bg-primary/5 rounded-lg">
+                    <div className="text-sm text-muted-foreground">Pending Optimizations</div>
+                    <div className="text-2xl font-bold">
+                      {suggestions.filter(s => s.status === 'pending').length}
+                    </div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>

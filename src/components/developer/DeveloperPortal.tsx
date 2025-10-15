@@ -340,9 +340,25 @@ Content-Type: application/json
               <CardTitle>Recent Activity</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Detailed usage logs and analytics coming soon...
-              </p>
+              <div className="space-y-4">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="p-3 bg-muted rounded">
+                    <div className="text-xs text-muted-foreground">Requests Today</div>
+                    <div className="text-xl font-bold">--</div>
+                  </div>
+                  <div className="p-3 bg-muted rounded">
+                    <div className="text-xs text-muted-foreground">Success Rate</div>
+                    <div className="text-xl font-bold">--</div>
+                  </div>
+                  <div className="p-3 bg-muted rounded">
+                    <div className="text-xs text-muted-foreground">Avg. Response</div>
+                    <div className="text-xl font-bold">--ms</div>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground text-center py-2">
+                  Make API calls to see detailed usage logs and analytics
+                </p>
+              </div>
             </CardContent>
           </Card>
         </TabsContent>

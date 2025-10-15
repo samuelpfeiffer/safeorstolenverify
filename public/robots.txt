@@ -1,5 +1,5 @@
 # SafeOrStolen.com - SEO-Optimized Robots.txt for Maximum Visibility
-# Updated: 2025-10-01
+# Updated: 2025-10-15
 # Optimized to outrank CheckMend, IMEIinfo, and Stolen Register
 
 User-agent: *
