@@ -1,8 +1,10 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, CheckCircle, ArrowRight, Zap, CreditCard } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { CheckCircle, Sparkles, Star, Gift, Shield, Zap, CreditCard, ArrowRight } from 'lucide-react';
+import { useAuth } from '@/lib/auth';
 
 interface SignUpWelcomeProps {
   onContinue: () => void;
@@ -149,7 +151,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
               <p className="text-sm text-muted-foreground">
                 Need help getting started? 
                 <Button variant="link" className="p-0 ml-1 h-auto text-sm" asChild>
-                  <a href="/contact" target="_blank">Contact our support team</a>
+                  <Link to="/contact">Contact our support team</Link>
                 </Button>
               </p>
             </div>

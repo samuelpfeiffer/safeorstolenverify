@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Link } from 'react-router-dom';
 import { HelpCircle, Shield, DollarSign, Globe, Smartphone, Lock, Clock, Award } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
@@ -181,18 +182,18 @@ export const EnhancedFAQSection = () => {
             Our support team is available 24/7 to help with any questions about verification, pricing, or technical issues.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all min-h-[56px]"
             >
               Contact Support
-            </a>
-            <a 
-              href="/faq" 
+            </Link>
+            <Link 
+              to="/faq" 
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary hover:bg-primary/10 font-semibold rounded-lg transition-all min-h-[56px]"
             >
               View Full FAQ
-            </a>
+            </Link>
           </div>
         </Card>
       </div>
