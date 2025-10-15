@@ -55,16 +55,36 @@
     
     <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png">
     
-    <!-- Defer non-critical analytics -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 - Deferred for performance -->
+    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-0T59FF9N6Z"></script>
     <script>
       window.addEventListener('load', function(){
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);} 
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-0T59FF9N6Z', {
+          'page_title': document.title,
+          'page_location': window.location.href,
+          'page_path': window.location.pathname
+        });
       });
     </script>
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
+    
+    <!-- Font optimization with font-display: swap -->
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Inter'), local('Inter-Regular');
+      }
+    </style>
     
   </head>
 

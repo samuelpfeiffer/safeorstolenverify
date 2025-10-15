@@ -40,6 +40,8 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          charts: ['recharts'],
+          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
         },
       },
     },
@@ -49,10 +51,19 @@ export default defineConfig(({ mode }) => ({
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+      mangle: {
+        safari10: true,
+      },
+      format: {
+        comments: false,
       },
     },
     cssCodeSplit: true,
     sourcemap: false,
     reportCompressedSize: false,
+    chunkSizeWarningLimit: 1000,
+    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
   },
 }));

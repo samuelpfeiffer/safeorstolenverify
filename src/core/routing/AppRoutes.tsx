@@ -98,6 +98,8 @@ const EnterpriseDemoPage = lazy(() => import('@/pages/EnterpriseDemoPage'));
 const ReferralPage = lazy(() => import('@/pages/ReferralPage'));
 const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
 const DeveloperPortalPage = lazy(() => import('@/pages/DeveloperPortalPage'));
+const MarketplacePage = lazy(() => import('@/pages/MarketplacePage'));
+const StatisticsPage = lazy(() => import('@/pages/StatisticsPage'));
 const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
 const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
 
@@ -202,6 +204,8 @@ export const AppRoutes: React.FC = () => {
           <Route path="contact" element={<ContactPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="features" element={<FeaturesPage />} />
+          <Route path="marketplace" element={<MarketplacePage />} />
+          <Route path="statistics" element={<StatisticsPage />} />
           
           {/* E-commerce style routes - redirect to main services since this isn't an e-commerce site */}
           <Route path="wishlist" element={<Navigate to="/services" replace />} />

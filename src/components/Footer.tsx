@@ -57,7 +57,14 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" alt="SafeOrStolen" className="h-12 w-12 filter drop-shadow-lg" />
+                <img 
+                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                  alt="SafeOrStolen logo - stolen goods verification platform for checking IMEI, VIN, and serial numbers" 
+                  className="h-12 w-12 filter drop-shadow-lg"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
                 <div>
                   <div className="text-xl font-bold text-foreground">SafeOrStolen</div>
                   <div className="text-sm text-sos-orange">Verify the Legitimacy of 2nd-hand items</div>

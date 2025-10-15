@@ -15,6 +15,8 @@ import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { MasterSEO } from '@/components/seo/MasterSEO';
+import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData';
+import { PerformanceMonitor } from '@/components/seo/PerformanceMonitor';
 
 // Optimized QueryClient configuration
 const queryClient = new QueryClient({
@@ -44,6 +46,8 @@ export const AppRoot: React.FC = () => {
               <ThemeProvider>
                 <Router>
                   <MasterSEO />
+                  <EnhancedStructuredData />
+                  <PerformanceMonitor />
                   <div className="min-h-screen bg-background text-foreground flex flex-col">
                     <TopNavigation />
                     <BreadcrumbSchema />
