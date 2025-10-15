@@ -74,14 +74,14 @@ serve(async (req) => {
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
     console.log(`Processing Stripe event: ${event.type} (ID: ${event.id})`);
 
-    // SECURITY FIX: Check for duplicate webhook events (idempotency)
-    const { data: existingEvent } = await supabaseClient
+    // SECURITY FIX: Insert idempotency record BEFORE processing
+    const { data: existingEvent, error: checkError } = await supabaseClient
       .from('stripe_webhook_events')
-      .select('id')
+      .select('id, processed_at')
       .eq('stripe_event_id', event.id)
       .single();
 
-    if (existingEvent) {
+    if (existingEvent && existingEvent.processed_at) {
       console.log(`Event ${event.id} already processed - returning success`);
       return new Response(
         JSON.stringify({ received: true, already_processed: true }),
@@ -92,11 +92,65 @@ serve(async (req) => {
       );
     }
 
+    // Insert processing marker
+    if (!existingEvent) {
+      await supabaseClient.from('stripe_webhook_events').insert({
+        stripe_event_id: event.id,
+        event_type: event.type,
+        processed_at: null // Mark as processing
+      });
+    }
+
     try {
       switch (event.type) {
         case "checkout.session.completed": {
           const session = event.data.object;
           console.log(`Processing checkout completion for session ${session.id}`);
+          
+          // REVENUE FIX: Grant credits for credit pack purchases
+          const metadata = session.metadata || {};
+          const purchaseType = metadata.purchase_type || 'subscription';
+          
+          if (purchaseType === 'credit_pack') {
+            const creditsAmount = parseInt(metadata.credits_amount || '0');
+            const userId = metadata.user_id;
+            
+            if (creditsAmount > 0 && userId) {
+              console.log(`Granting ${creditsAmount} credits to user ${userId}`);
+              
+              // Get current balance
+              const { data: profile } = await supabaseClient
+                .from('profiles')
+                .select('credit_balance')
+                .eq('id', userId)
+                .single();
+              
+              const currentBalance = profile?.credit_balance || 0;
+              const newBalance = currentBalance + creditsAmount;
+              
+              // Update credit balance
+              const { error: creditError } = await supabaseClient
+                .from('profiles')
+                .update({ credit_balance: newBalance })
+                .eq('id', userId);
+              
+              if (creditError) {
+                console.error(`Error granting credits: ${creditError.message}`);
+              } else {
+                console.log(`Successfully granted ${creditsAmount} credits. New balance: ${newBalance}`);
+                
+                // Log transaction
+                await supabaseClient.from('credit_transactions').insert({
+                  user_id: userId,
+                  transaction_type: 'purchase',
+                  amount: creditsAmount,
+                  balance_after: newBalance,
+                  description: `Credit pack purchase (${creditsAmount} credits)`,
+                  stripe_session_id: session.id
+                });
+              }
+            }
+          }
           
           try {
             // Update purchase status with error handling
@@ -111,7 +165,6 @@ serve(async (req) => {
 
             if (purchaseError) {
               console.error(`Error updating purchase: ${purchaseError.message}`);
-              // Continue processing even if purchase update fails
             } else {
               console.log(`Successfully updated purchase for session ${session.id}`);
             }
@@ -181,27 +234,60 @@ serve(async (req) => {
               break;
             }
             
-            // Determine subscription tier from price
+            // Determine subscription tier and interval from price
             const priceId = subscription.items.data[0].price.id;
-            let subscriptionTier = "Basic";
+            const interval = subscription.items.data[0].price.recurring?.interval || 'month';
+            // Map Stripe Price IDs to new subscription tiers
+            const TIER_MAPPING: Record<string, string> = {
+              'price_starter_monthly_499': 'starter',
+              'price_personal_monthly_999': 'personal',
+              'price_professional_monthly_2999': 'professional',
+              'price_enterprise_custom': 'enterprise',
+              'price_pay_per_use_50': 'pay_per_use',
+              // Legacy support for old price IDs
+              "price_1Rz7rm2eGaMDLFHojH9Vch1Y": "starter",
+              "price_1Rz7xu2eGaMDLFHoqGT0Pyjk": "personal",
+              "price_1Rz80X2eGaMDLFHozeZyChte": "professional",
+              "price_1Rz83i2eGaMDLFHonAmu86lS": "professional"
+            };
             
-            // Map actual Stripe Price IDs to subscription tiers
-            switch (priceId) {
-              case "price_1Rz7rm2eGaMDLFHojH9Vch1Y":
-                subscriptionTier = "Basic";
-                break;
-              case "price_1Rz7xu2eGaMDLFHoqGT0Pyjk":
-                subscriptionTier = "Premium";
-                break;
-              case "price_1Rz80X2eGaMDLFHozeZyChte":
-                subscriptionTier = "Enterprise";
-                break;
-              case "price_1Rz83i2eGaMDLFHonAmu86lS":
-                subscriptionTier = "Report";
-                break;
-              default:
-                console.log(`Unknown price ID in webhook: ${priceId}`);
-                subscriptionTier = "Basic";
+            const subscriptionTier = TIER_MAPPING[priceId] || 'starter';
+            console.log(`Mapped price ID ${priceId} to tier: ${subscriptionTier}`);
+            
+            // Determine quota based on tier
+            const quotaMapping: Record<string, number | null> = {
+              'starter': 15,
+              'personal': 50,
+              'professional': null, // unlimited
+              'enterprise': null // unlimited
+            };
+            const monthlyLimit = quotaMapping[subscriptionTier] || 15;
+            
+            console.log(`Subscription interval: ${interval}, tier: ${subscriptionTier}`);
+            
+            // REVENUE FIX: Update profiles table with subscription_interval
+            const { data: profile } = await supabaseClient
+              .from('profiles')
+              .select('id')
+              .eq('email', customer.email)
+              .single();
+            
+            if (profile) {
+              await supabaseClient
+                .from('profiles')
+                .update({
+                  subscription_tier: subscriptionTier,
+                  subscription_interval: interval,
+                  subscription_end: new Date(subscription.current_period_end * 1000).toISOString(),
+                  monthly_verification_limit: monthlyLimit,
+                  verifications_used_this_month: 0,
+                  billing_cycle_start_date: new Date().toISOString(),
+                  is_trial_expired: true, // End trial when subscription starts
+                  updated_at: new Date().toISOString()
+                })
+                .eq('id', profile.id);
+              
+              console.log(`Updated profile with tier: ${subscriptionTier}, limit: ${monthlyLimit}`);
             }
             
             // Update subscriber record with error handling
@@ -237,6 +323,25 @@ serve(async (req) => {
             if (customer.deleted) {
               console.error("Customer was deleted, skipping subscription deletion update");
               break;
+            }
+            
+            // Update profiles table
+            const { data: profile } = await supabaseClient
+              .from('profiles')
+              .select('id')
+              .eq('email', customer.email)
+              .single();
+            
+            if (profile) {
+              await supabaseClient
+                .from('profiles')
+                .update({
+                  subscription_tier: null,
+                  subscription_interval: null,
+                  subscription_end: null,
+                  updated_at: new Date().toISOString()
+                })
+                .eq('id', profile.id);
             }
             
             // Update subscriber record to reflect cancellation
@@ -279,13 +384,13 @@ serve(async (req) => {
 
       console.log(`Successfully processed event ${event.type} (ID: ${event.id})`);
       
-      // SECURITY FIX: Record that we've processed this event
-      await supabaseClient.from('stripe_webhook_events').insert({
-        stripe_event_id: event.id,
-        event_type: event.type,
-        processed_at: new Date().toISOString()
-      });
-      console.log(`Recorded event ${event.id} as processed`);
+      // Mark event as processed
+      await supabaseClient
+        .from('stripe_webhook_events')
+        .update({ processed_at: new Date().toISOString() })
+        .eq('stripe_event_id', event.id);
+      
+      console.log(`Marked event ${event.id} as processed`);
       
       return new Response(JSON.stringify({ received: true, event_id: event.id }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -294,7 +399,17 @@ serve(async (req) => {
 
     } catch (eventProcessingError) {
       console.error(`Error processing event ${event.type}: ${eventProcessingError.message}`);
-      // Still return 200 to acknowledge receipt, but log the error
+      
+      // Mark as failed but don't retry
+      await supabaseClient
+        .from('stripe_webhook_events')
+        .update({ 
+          processed_at: new Date().toISOString(),
+          error_message: eventProcessingError.message
+        })
+        .eq('stripe_event_id', event.id);
+      
+      // Still return 200 to acknowledge receipt
       return new Response(JSON.stringify({ 
         received: true, 
         event_id: event.id, 
