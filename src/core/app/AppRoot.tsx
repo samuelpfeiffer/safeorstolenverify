@@ -9,6 +9,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
+import { RouteErrorRecovery } from '@/core/routing/RouteErrorRecovery';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { PWAProvider } from '@/core/providers/PWAProvider';
@@ -20,7 +21,8 @@ import { PerformanceMonitor } from '@/components/seo/PerformanceMonitor';
 import { SpeedOptimizer } from '@/components/performance/SpeedOptimizer';
 import { CriticalCSSInline } from '@/components/seo/CriticalCSSInline';
 
-// Optimized QueryClient configuration
+// Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
+// This prevents recreation on HMR and ensures stable React context
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -56,9 +58,11 @@ export const AppRoot: React.FC = () => {
                     <TopNavigation />
                     <BreadcrumbSchema />
                     <main className="flex-1 pt-20">
-                      <Suspense fallback={<AppLoadingScreen />}>
-                        <AppRoutes />
-                      </Suspense>
+                      <RouteErrorRecovery>
+                        <Suspense fallback={<AppLoadingScreen />}>
+                          <AppRoutes />
+                        </Suspense>
+                      </RouteErrorRecovery>
                     </main>
                     <SOSFooter />
                   </div>

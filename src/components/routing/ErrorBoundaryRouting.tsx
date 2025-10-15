@@ -23,6 +23,19 @@ export const ErrorBoundaryRouting: React.FC<ErrorBoundaryRoutingProps> = ({
       errorInfo
     });
 
+    // Detect React context errors (common with HMR)
+    const isContextError = error.message?.includes('useContext') || 
+                          error.message?.includes('Cannot read properties of null');
+    
+    if (isContextError) {
+      console.warn('React context error detected - likely HMR issue. Reloading page...');
+      // Auto-reload on context errors in development
+      if (import.meta.env.DEV) {
+        setTimeout(() => window.location.reload(), 1000);
+        return;
+      }
+    }
+
     // Track routing errors for analytics
     if (typeof window !== 'undefined' && 'gtag' in window) {
       (window as any).gtag('event', 'exception', {
