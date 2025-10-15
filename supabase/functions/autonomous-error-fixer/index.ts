@@ -12,17 +12,17 @@ serve(async (req) => {
   }
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     const SUPABASE_URL = Deno.env.get('SUPABASE_URL');
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
-    if (!LOVABLE_API_KEY || !SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    if (!OPENAI_API_KEY || !SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
       throw new Error('Missing required environment variables');
     }
 
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    console.log('[AUTONOMOUS-ERROR-FIXER] Starting error detection and auto-fix cycle...');
+    console.log('[AUTONOMOUS-ERROR-FIXER] Starting error detection and auto-fix cycle with OpenAI...');
 
     // Check for recent errors in audit logs
     const { data: recentErrors, error: fetchError } = await supabase
@@ -81,14 +81,14 @@ Provide response as JSON with structure:
   "preventiveMeasures": ["measure1", "measure2"]
 }`;
 
-    const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
+        model: 'gpt-5-mini-2025-08-07',
         messages: [
           {
             role: 'system',
@@ -96,7 +96,8 @@ Provide response as JSON with structure:
           },
           { role: 'user', content: analysisPrompt }
         ],
-        response_format: { type: "json_object" }
+        response_format: { type: "json_object" },
+        max_completion_tokens: 2500
       }),
     });
 
@@ -119,7 +120,7 @@ Provide response as JSON with structure:
         query: 'Autonomous error detection and fix',
         result: JSON.stringify(analysis),
         status: 'completed',
-        models_used: ['google/gemini-2.5-flash'],
+        models_used: ['gpt-5-mini-2025-08-07'],
         recommendations: analysis.fixes.map((f: any) => f.solution)
       });
 
