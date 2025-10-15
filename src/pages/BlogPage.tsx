@@ -103,7 +103,7 @@ const BlogPage = () => {
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto mb-12 text-center">
-            <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold mb-4 text-foreground">
               Safe or Stolen Blog
             </h1>
             <p className="text-xl text-muted-foreground">
@@ -148,7 +148,7 @@ const BlogPage = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/10 to-orange-500/10">
+            <Card className="max-w-2xl mx-auto border-primary/20 bg-primary/5">
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-4">Stay Protected</h2>
                 <p className="text-muted-foreground mb-6">
