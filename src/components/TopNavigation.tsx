@@ -162,10 +162,20 @@ const TopNavigation = () => {
           <div className="flex items-center gap-4">
             <button onClick={() => navigate('/')} className="flex items-center gap-3 group transition-transform hover:scale-105" aria-label="SafeOrStolen Home">
               <div className="relative">
-                <img src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" alt="SafeOrStolen Logo - Stolen goods verification platform" className="h-10 w-10 filter drop-shadow-lg" width="40" height="40" />
+                <img 
+                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                  alt="SafeOrStolen Logo" 
+                  className="h-10 w-10 filter drop-shadow-lg object-contain" 
+                  width="40" 
+                  height="40"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.add('hidden');
+                  }}
+                />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
               </div>
-              <div className="hidden sm:block">
+              <div className="sm:block">
                 <span className="text-white font-bold text-xl tracking-tight">SafeOrStolen</span>
                 <div className="text-xs text-sos-orange font-medium">Verify Before You Buy</div>
               </div>
@@ -177,6 +187,15 @@ const TopNavigation = () => {
             {navigationItems.map(item => <button key={item.href} onClick={() => navigate(item.href)} className={cn("px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 min-h-[44px]", location.pathname === item.href ? "text-sos-orange bg-sos-orange/10" : "text-gray-300 hover:text-white hover:bg-white/5")}>
                 {item.label}
               </button>)}
+            
+            {/* Blog Link - Prominent */}
+            <button 
+              onClick={() => navigate('/blog')} 
+              className={cn("px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 min-h-[44px]", 
+                location.pathname === '/blog' ? "text-sos-orange bg-sos-orange/10" : "text-gray-300 hover:text-white hover:bg-white/5")}
+            >
+              Blog
+            </button>
 
             {/* Users Dropdown */}
             <NavigationMenu>
