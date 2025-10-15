@@ -25,6 +25,10 @@ import { ConversionTracking } from '@/components/conversion/ConversionTracking';
 import { LiveActivityFeed } from '@/components/conversion/LiveActivityFeed';
 import { ArizonaTheftSection } from '@/components/arizona/ArizonaTheftSection';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
+import { TestimonialsSection } from '@/components/home/TestimonialsSection';
+import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
+import { ContactFormSection } from '@/components/home/ContactFormSection';
+import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -94,9 +98,12 @@ const Index = () => {
         />
       </div>
       
+      <TrustSignalsSection />
+      <TestimonialsSection />
       <SEOContentSection />
       <RichContentHub />
-      <ComprehensiveFAQSection />
+      <EnhancedFAQSection />
+      <ContactFormSection />
       <InternalLinkingStrategy />
         
         {(verificationId || serialNumber) && (
