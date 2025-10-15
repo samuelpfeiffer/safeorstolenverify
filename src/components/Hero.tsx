@@ -5,11 +5,11 @@ import { Shield, Search } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-
 const Hero = () => {
   const navigate = useNavigate();
-  const { isAuthenticated } = useUnifiedAuth();
-
+  const {
+    isAuthenticated
+  } = useUnifiedAuth();
   const handleGetStarted = () => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
@@ -17,9 +17,7 @@ const Hero = () => {
       navigate('/dashboard');
     }
   };
-
-  return (
-    <div className="relative bg-gradient-to-br from-background via-primary/5 to-background">
+  return <div className="relative bg-gradient-to-br from-background via-primary/5 to-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           
@@ -29,10 +27,7 @@ const Hero = () => {
           </div>
 
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-            <Shield className="h-4 w-4" />
-            <span>Trusted by 500K+ Users</span>
-          </div>
+          
 
           {/* Clear, Focused Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight">
@@ -43,10 +38,7 @@ const Hero = () => {
           </h1>
           
           {/* Simple Value Prop */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Verify phones, cars, laptops, tools before buying. 
-            Protect yourself from stolen goods on Facebook Marketplace, OfferUp, Craigslist.
-          </p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">Verify guns, phones, cars, laptops, tools before buying. Protect yourself from stolen goods on Facebook Marketplace, OfferUp, Craigslist.</p>
 
           {/* THE ONE SEARCH BAR - Core Focus */}
           <div className="max-w-2xl mx-auto bg-card p-6 rounded-2xl shadow-lg border border-border">
@@ -62,19 +54,10 @@ const Hero = () => {
           
           {/* Simple CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              size="lg" 
-              className="font-semibold px-8"
-              onClick={handleGetStarted}
-            >
+            <Button size="lg" className="font-semibold px-8" onClick={handleGetStarted}>
               Start Free
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="font-semibold px-8"
-              asChild
-            >
+            <Button size="lg" variant="outline" className="font-semibold px-8" asChild>
               <Link to="/how-it-works">How It Works</Link>
             </Button>
           </div>
@@ -96,9 +79,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 Hero.displayName = 'Hero';
 export default Hero;
