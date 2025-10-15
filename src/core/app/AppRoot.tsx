@@ -17,6 +17,8 @@ import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData';
 import { PerformanceMonitor } from '@/components/seo/PerformanceMonitor';
+import { SpeedOptimizer } from '@/components/performance/SpeedOptimizer';
+import { CriticalCSSInline } from '@/components/seo/CriticalCSSInline';
 
 // Optimized QueryClient configuration
 const queryClient = new QueryClient({
@@ -45,6 +47,8 @@ export const AppRoot: React.FC = () => {
             <PWAProvider>
               <ThemeProvider>
                 <Router>
+                  <CriticalCSSInline />
+                  <SpeedOptimizer />
                   <MasterSEO />
                   <EnhancedStructuredData />
                   <PerformanceMonitor />

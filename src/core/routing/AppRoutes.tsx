@@ -150,6 +150,7 @@ const BuyUsedElectronicsSafelyPage = lazy(() => import('@/pages/BuyUsedElectroni
 const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
 const OurTeamPage = lazy(() => import('@/pages/OurTeamPage'));
 const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
+const OurMissionPage = lazy(() => import('@/pages/OurMissionPage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -201,6 +202,9 @@ export const AppRoutes: React.FC = () => {
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="verification-success" element={<SubscriptionSuccessPage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="our-mission" element={<OurMissionPage />} />
+          <Route path="reduce-crime" element={<Navigate to="/our-mission" replace />} />
+          <Route path="crime-prevention" element={<Navigate to="/our-mission" replace />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="features" element={<FeaturesPage />} />
@@ -300,8 +304,19 @@ export const AppRoutes: React.FC = () => {
            <Route path="laptop-serial-number-check" element={<HowToCheckLaptopStolenPage />} />
            <Route path="buy-used-electronics-safely" element={<BuyUsedElectronicsSafelyPage />} />
            <Route path="safe-way-to-buy-used-gadgets" element={<BuyUsedElectronicsSafelyPage />} />
-          
-          {/* FasterCapital Routes */}
+           
+           {/* SEO-Optimized Redirect URLs */}
+           <Route path="mobile-app" element={<Navigate to="/download-app" replace />} />
+           <Route path="mobile-verification" element={<Navigate to="/download-app" replace />} />
+           <Route path="instant-check" element={<Navigate to="/stolen-item-checker" replace />} />
+           <Route path="free-verification" element={<Navigate to="/stolen-item-checker" replace />} />
+           <Route path="check-stolen-phone" element={<Navigate to="/check-phone" replace />} />
+           <Route path="check-stolen-car" element={<Navigate to="/check-car" replace />} />
+           <Route path="marketplace-safety" element={<Navigate to="/for-consumers" replace />} />
+           <Route path="buyer-protection" element={<Navigate to="/buyer-guide" replace />} />
+           <Route path="seller-protection" element={<Navigate to="/seller-guide" replace />} />
+           
+           {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
           <Route path="fastercapital/tech-cofounder" element={<TechCofounderPage />} />
           

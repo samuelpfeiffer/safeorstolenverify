@@ -64,7 +64,7 @@ export const TrustSignalsSection = () => {
             Why Buyers, Sellers & Businesses Trust SafeOrStolen
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The only verification platform with law enforcement partnerships, real-time database access, and enterprise security
+            The only verification platform with law enforcement partnerships, real-time database access, and enterprise security—working together to reduce crime globally
           </p>
         </div>
 

@@ -38,7 +38,20 @@ const Hero = () => {
           </h1>
           
           {/* Simple Value Prop */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">Verify guns, phones, cars, laptops, tools before buying. Protect yourself from stolen goods on Facebook Marketplace, OfferUp, Craigslist.</p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Verify guns, phones, cars, laptops, tools before buying. Protect yourself from stolen goods on Facebook Marketplace, OfferUp, Craigslist.
+          </p>
+          
+          {/* Crime Reduction Mission */}
+          <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <Shield className="h-6 w-6 text-primary" />
+              <h2 className="text-xl font-bold text-foreground">Our Mission: Reduce Crime Globally</h2>
+            </div>
+            <p className="text-muted-foreground">
+              By protecting buyers and sellers from financial loss and legal consequences, we're making stolen goods harder to sell—deterring theft worldwide and creating safer marketplaces for everyone.
+            </p>
+          </div>
 
           {/* THE ONE SEARCH BAR - Core Focus */}
           <div className="max-w-2xl mx-auto bg-card p-6 rounded-2xl shadow-lg border border-border">

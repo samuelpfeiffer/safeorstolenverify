@@ -139,6 +139,11 @@ const TopNavigation = () => {
     href: '/about',
     description: 'Our mission and team',
     icon: Home
+  }, {
+    label: 'Our Mission',
+    href: '/our-mission',
+    description: 'Reducing crime globally',
+    icon: Shield
   }];
   const userMenuItems = isAuthenticated ? [{
     label: 'Search History',

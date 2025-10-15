@@ -33,9 +33,9 @@ const Index = () => {
       <OrganizationSchema />
       <WebSiteSchema />
       <UnifiedSEOOptimizer
-        title="Check if Stolen FREE | Instant Verification | SafeOrStolen"
-        description="FREE instant verification. Check if phones, cars, laptops, tools are stolen. Verify items on Facebook Marketplace, OfferUp, Craigslist before buying. 4 free checks to start."
-        keywords="check if stolen, IMEI lookup, VIN check, verify serial number, marketplace verification"
+        title="Check if Stolen FREE | Mobile App | Reduce Crime | SafeOrStolen"
+        description="FREE mobile verification app protecting buyers & sellers from stolen goods. Instant checks for phones, cars, electronics. Join our mission to reduce crime globally—no other service offers mobile-first verification."
+        keywords="check if stolen, mobile app verification, IMEI lookup, VIN check, reduce crime, buyer protection, seller protection, marketplace safety"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         type="website"
