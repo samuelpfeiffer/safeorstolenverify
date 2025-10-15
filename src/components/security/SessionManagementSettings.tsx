@@ -21,27 +21,27 @@ export const SessionManagementSettings = ({ sessionTimeoutMinutes }: SessionMana
   };
 
   return (
-    <Card className="bg-sos border-sos-orange/20">
+    <Card className="border-primary/20 bg-primary/5">
       <CardHeader>
-        <CardTitle className="text-sos-orange flex items-center gap-2">
-          <Lock className="h-5 w-5" />
+        <CardTitle className="text-foreground flex items-center gap-2">
+          <Lock className="h-5 w-5 text-primary" />
           Session Management
         </CardTitle>
-        <CardDescription className="text-gray-300">
+        <CardDescription className="text-muted-foreground">
           Control your session security
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label className="text-white">Session Timeout</Label>
-          <p className="text-sm text-gray-400">
+          <Label className="text-foreground">Session Timeout</Label>
+          <p className="text-sm text-muted-foreground">
             {sessionTimeoutMinutes} minutes
           </p>
         </div>
         
         <Button
           variant="outline"
-          className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10"
+          className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
           onClick={handleClearSessions}
         >
           Clear All Sessions

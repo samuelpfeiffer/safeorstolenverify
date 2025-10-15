@@ -25,7 +25,7 @@ export const EnhancedButton: React.FC<EnhancedButtonProps> = ({
       {...props}
       disabled={disabled || loading}
       className={cn(
-        gradient && "bg-gradient-to-r from-sos-orange to-sos-orange/90 hover:from-sos-orange/90 hover:to-sos-orange",
+        gradient && "bg-primary hover:bg-primary/90",
         "transition-all duration-300 hover:shadow-lg active:scale-95",
         className
       )}

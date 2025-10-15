@@ -11,18 +11,18 @@ interface SecurityMetricCardProps {
 
 export const SecurityMetricCard = ({ title, value, description, icon: Icon }: SecurityMetricCardProps) => {
   return (
-    <Card className="bg-sos border-sos-orange/20">
+    <Card className="border-primary/20 bg-primary/5">
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-medium text-gray-300 flex items-center gap-2">
-          <Icon className="h-4 w-4" />
+        <CardTitle className="text-sm font-medium text-foreground flex items-center gap-2">
+          <Icon className="h-4 w-4 text-primary" />
           {title}
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold text-sos-orange">
+        <div className="text-2xl font-bold text-primary">
           {value}
         </div>
-        <p className="text-xs text-gray-500 mt-1">
+        <p className="text-xs text-muted-foreground mt-1">
           {description}
         </p>
       </CardContent>

@@ -13,20 +13,20 @@ export const ContactCard: React.FC<ContactCardProps> = ({
   className = ""
 }) => {
   return (
-    <Card className={`border-amber-200 bg-amber-50 ${className}`}>
+    <Card className={`border-secondary/30 bg-secondary/10 ${className}`}>
       <CardHeader>
-        <CardTitle className="text-amber-800 flex items-center gap-2">
-          <MessageCircle className="h-5 w-5" />
+        <CardTitle className="text-foreground flex items-center gap-2">
+          <MessageCircle className="h-5 w-5 text-secondary" />
           Need Help with Verification?
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <p className="text-amber-700">{message}</p>
+        <p className="text-foreground">{message}</p>
         
         <div className="flex flex-col sm:flex-row gap-3">
           <Button
             variant="outline"
-            className="border-amber-300 text-amber-800 hover:bg-amber-100"
+            className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
             onClick={() => window.location.href = 'mailto:support@safeorstolen.com?subject=Manual Verification Request'}
           >
             <Mail className="h-4 w-4 mr-2" />
@@ -35,7 +35,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
           
           <Button
             variant="outline"
-            className="border-amber-300 text-amber-800 hover:bg-amber-100"
+            className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
             onClick={() => window.open('/contact', '_blank')}
           >
             <MessageCircle className="h-4 w-4 mr-2" />
@@ -43,7 +43,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
           </Button>
         </div>
         
-        <p className="text-sm text-amber-600">
+        <p className="text-sm text-muted-foreground">
           Our team can manually search additional databases and provide expert verification within 24-48 hours.
         </p>
       </CardContent>

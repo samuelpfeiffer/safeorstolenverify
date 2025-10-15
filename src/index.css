@@ -255,16 +255,13 @@
     @apply transition-transform duration-200 hover:scale-[1.02];
   }
 
-  /* Trust-focused brand gradients */
+  /* Trust-focused brand colors - solid, no gradients */
   .sos-brand-gradient {
-    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    background: hsl(var(--primary));
   }
   
   .sos-brand-text {
-    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: hsl(var(--primary));
   }
 
   .trust-badge {
