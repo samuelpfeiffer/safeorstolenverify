@@ -152,6 +152,7 @@ const OurTeamPage = lazy(() => import('@/pages/OurTeamPage'));
 const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 const OurMissionPage = lazy(() => import('@/pages/OurMissionPage'));
 const PressPage = lazy(() => import('@/pages/PressPage'));
+const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -312,8 +313,17 @@ export const AppRoutes: React.FC = () => {
            <Route path="safe-way-to-buy-used-gadgets" element={<BuyUsedElectronicsSafelyPage />} />
            
            {/* SEO-Optimized Redirect URLs */}
-           <Route path="mobile-app" element={<Navigate to="/download-app" replace />} />
-           <Route path="mobile-verification" element={<Navigate to="/download-app" replace />} />
+           <Route path="mobile-app" element={<MobileAppPage />} />
+           <Route path="mobile" element={<MobileAppPage />} />
+           <Route path="app" element={<MobileAppPage />} />
+           <Route path="ios-app" element={<MobileAppPage />} />
+           <Route path="android-app" element={<MobileAppPage />} />
+           <Route path="get-app" element={<MobileAppPage />} />
+           <Route path="install-app" element={<MobileAppPage />} />
+           <Route path="mobile-verification" element={<MobileAppPage />} />
+           <Route path="verification-app" element={<MobileAppPage />} />
+           <Route path="stolen-checker-app" element={<MobileAppPage />} />
+           <Route path="imei-checker-app" element={<MobileAppPage />} />
            <Route path="instant-check" element={<Navigate to="/stolen-item-checker" replace />} />
            <Route path="free-verification" element={<Navigate to="/stolen-item-checker" replace />} />
            <Route path="check-stolen-phone" element={<Navigate to="/check-phone" replace />} />

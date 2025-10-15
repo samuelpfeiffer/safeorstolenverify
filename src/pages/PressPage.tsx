@@ -72,6 +72,12 @@ export default function PressPage() {
       description: "Follow us for company updates"
     },
     {
+      name: "Mobile App",
+      url: "/mobile-app",
+      icon: TrendingUp,
+      description: "Download our iOS & Android app"
+    },
+    {
       name: "FasterCapital Partnership",
       url: "https://fastercapital.com",
       icon: TrendingUp,

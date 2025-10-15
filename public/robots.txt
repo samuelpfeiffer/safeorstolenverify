@@ -18,6 +18,29 @@ Allow: /firearms-check
 Allow: /imei-checker
 Allow: /stolen-items-database
 
+# Mobile App Pages (NEW - Highest Priority)
+Allow: /mobile-app
+Allow: /mobile
+Allow: /app
+Allow: /ios-app
+Allow: /android-app
+Allow: /verification-app
+Allow: /stolen-checker-app
+Allow: /imei-checker-app
+Allow: /download-app
+Allow: /get-app
+Allow: /install-app
+Allow: /mobile-verification
+
+# Press and Mission Pages (NEW)
+Allow: /press
+Allow: /news
+Allow: /newsroom
+Allow: /media
+Allow: /our-mission
+Allow: /reduce-crime
+Allow: /crime-prevention
+
 # Competitive comparison pages (target competitor keywords)
 Allow: /vs/checkmend
 Allow: /vs/imeiinfo
@@ -111,6 +134,7 @@ Crawl-delay: 1
 
 # Sitemap locations
 Sitemap: https://safeorstolen.com/sitemap.xml
+Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
 Sitemap: https://safeorstolen.com/feed.xml
 
 # Host preference (non-www canonical)

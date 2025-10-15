@@ -42,6 +42,21 @@ const Index = () => {
       />
       
       <div className="min-h-screen">
+        {/* Top Banner Image */}
+        <div className="w-full bg-gradient-to-r from-primary/10 to-secondary/10 py-3 border-b border-primary/20">
+          <div className="container mx-auto px-4 flex items-center justify-center">
+            <img 
+              src="/images/sos-logo.png" 
+              alt="SafeOrStolen - Verify Before You Buy or Sell" 
+              className="h-16 w-auto object-contain"
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+          </div>
+        </div>
+        
         {/* Hero with search bar - THE CORE VALUE */}
         <Hero />
         

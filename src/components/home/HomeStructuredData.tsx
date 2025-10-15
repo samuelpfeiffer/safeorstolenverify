@@ -7,6 +7,19 @@ export const getHomePageStructuredData = () => {
     createServiceSchema(),
     createFAQSchema(),
     {
+      "@type": "MobileApplication",
+      "name": "SafeOrStolen Mobile App",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "The only mobile app for instant stolen goods verification on the go",
+      "downloadUrl": "https://safeorstolen.com/mobile-app"
+    },
+    {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
       "name": "SafeOrStolen - Mobile Stolen Item Checker",
