@@ -29,8 +29,8 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
     }
 
     if (!user) {
-      // Redirect to signup for guests
-      navigate('/signup?redirect=verify');
+      // Redirect to auth page for guests
+      navigate('/auth?tab=signup&redirect=verify');
       return;
     }
 

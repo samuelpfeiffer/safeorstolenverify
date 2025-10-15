@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Index from '@/pages/Index';
 import AuthPage from '@/pages/AuthPage';
@@ -8,6 +8,10 @@ import SEOHub from '@/pages/SEOHub';
 import { MNTNIntegration } from '@/components/marketing/MNTNIntegration';
 import { AIContentGenerator } from '@/components/ai/AIContentGenerator';
 import { PageLayout } from '@/components/layout/PageLayout';
+
+// Lazy load new pages
+const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
+const VerificationResultsPage = lazy(() => import('@/pages/VerificationResultsPage'));
 
 export const AppRoutes = () => {
   return (
@@ -42,6 +46,12 @@ export const AppRoutes = () => {
           </PageLayout>
         } 
       />
+
+      {/* Download App Page */}
+      <Route path="/download-app" element={<DownloadAppPage />} />
+      
+      {/* Verification Results Page */}
+      <Route path="/verification-results" element={<VerificationResultsPage />} />
 
       {/* Additional organized routes can be added here */}
     </Routes>

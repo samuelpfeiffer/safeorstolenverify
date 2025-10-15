@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -242,33 +243,33 @@ export const ContactFormSection = () => {
             <Card className="p-8 bg-card border-border">
               <h3 className="text-xl font-bold text-foreground mb-4">Quick Questions?</h3>
               <div className="space-y-3">
-                <a 
-                  href="/faq" 
+                <Link 
+                  to="/faq" 
                   className="block p-4 rounded-lg hover:bg-muted/50 transition-colors group"
                 >
                   <p className="font-medium text-foreground group-hover:text-primary">
                     Is this free? How many checks do I get?
                   </p>
                   <p className="text-sm text-muted-foreground">View pricing & plans →</p>
-                </a>
-                <a 
-                  href="/faq" 
+                </Link>
+                <Link 
+                  to="/faq" 
                   className="block p-4 rounded-lg hover:bg-muted/50 transition-colors group"
                 >
                   <p className="font-medium text-foreground group-hover:text-primary">
                     Is this database global?
                   </p>
                   <p className="text-sm text-muted-foreground">Learn about coverage →</p>
-                </a>
-                <a 
-                  href="/faq" 
+                </Link>
+                <Link 
+                  to="/faq" 
                   className="block p-4 rounded-lg hover:bg-muted/50 transition-colors group"
                 >
                   <p className="font-medium text-foreground group-hover:text-primary">
                     How accurate are the results?
                   </p>
                   <p className="text-sm text-muted-foreground">See our accuracy rates →</p>
-                </a>
+                </Link>
               </div>
             </Card>
           </div>

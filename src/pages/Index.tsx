@@ -1,8 +1,7 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
-import VerifiedProduct from '@/components/VerifiedProduct';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { AppDownloadSection } from '@/components/home/AppDownloadSection';
 import { getHomePageStructuredData } from '@/components/home/HomeStructuredData';
@@ -10,39 +9,20 @@ import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
-import { AdvertisingStrategy } from '@/components/advertising/AdvertisingStrategy';
-import { AdvancedSEOManager } from '@/components/advertising/AdvancedSEOManager';
-import { SocialProofEngine } from '@/components/advertising/SocialProofEngine';
-import { ConversionOptimizer } from '@/components/advertising/ConversionOptimizer';
-import { KeywordTargeting } from '@/components/advertising/KeywordTargeting';
-import { PerformanceMonitor } from '@/components/performance/PerformanceMonitor';
-import { ComprehensiveSchemaMarkup } from '@/components/seo/ComprehensiveSchemaMarkup';
-import { SocialShareOptimizer } from '@/components/seo/SocialShareOptimizer';
-import { ComprehensiveFAQSection } from '@/components/seo/ComprehensiveFAQSection';
-import { RichContentHub } from '@/components/seo/RichContentHub';
-import { useCoreWebVitals, optimizeImages, prefetchCriticalResources } from '@/hooks/useCoreWebVitals';
 import { ConversionTracking } from '@/components/conversion/ConversionTracking';
 import { LiveActivityFeed } from '@/components/conversion/LiveActivityFeed';
-import { ArizonaTheftSection } from '@/components/arizona/ArizonaTheftSection';
-import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
 import { ContactFormSection } from '@/components/home/ContactFormSection';
 import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 
+// Lazy load VerifiedProduct component
+const VerifiedProduct = lazy(() => import('@/components/VerifiedProduct'));
+
 const Index = () => {
   const [searchParams] = useSearchParams();
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
-  
-  // Monitor Core Web Vitals for SEO
-  const webVitals = useCoreWebVitals();
-  
-  useEffect(() => {
-    // Optimize images and prefetch critical resources for better SEO
-    optimizeImages();
-    prefetchCriticalResources();
-  }, []);
 
   return (
     <>

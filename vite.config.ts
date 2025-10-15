@@ -38,10 +38,12 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-          charts: ['recharts'],
-          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-radix': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
+          'charts': ['recharts'],
+          'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          'supabase': ['@supabase/supabase-js'],
+          'tanstack': ['@tanstack/react-query'],
         },
       },
     },
@@ -63,7 +65,7 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: false,
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 1000,
-    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+    chunkSizeWarningLimit: 1500,
+    assetsInlineLimit: 4096,
   },
 }));

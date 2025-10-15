@@ -1,5 +1,6 @@
 import { Shield, BadgeCheck, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-verification-devices.png';
 
 export const AppDownloadSection = () => {
@@ -99,12 +100,12 @@ export const AppDownloadSection = () => {
 
               {/* Download Buttons */}
               <div className="pt-6 space-y-4">
-                <a 
-                  href="/download-app" 
+                <Link 
+                  to="/download-app" 
                   className="block w-full bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-bold py-4 px-8 rounded-xl text-center transition-all hover:scale-105 shadow-xl"
                 >
                   📱 Download for iOS & Android - Verify Phones, Cars & Guns!
-                </a>
+                </Link>
                 <p className="text-center text-primary-foreground/70 text-sm">
                   ⭐ 4.9/5 rating • 100,000+ downloads • All verification types included
                 </p>

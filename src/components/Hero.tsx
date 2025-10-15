@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, Search } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -75,7 +75,7 @@ const Hero = () => {
               className="font-semibold px-8"
               asChild
             >
-              <a href="/how-it-works">How It Works</a>
+              <Link to="/how-it-works">How It Works</Link>
             </Button>
           </div>
 
