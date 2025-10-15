@@ -133,9 +133,8 @@ const VerificationPage = () => {
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="search" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="search">Text Search</TabsTrigger>
-                    <TabsTrigger value="qr">QR Code</TabsTrigger>
+                  <TabsList className="grid w-full grid-cols-1">
+                    <TabsTrigger value="search">Item Verification</TabsTrigger>
                   </TabsList>
 
                   <TabsContent value="search" className="space-y-4 mt-6">
@@ -169,19 +168,6 @@ const VerificationPage = () => {
                         </>
                       )}
                     </Button>
-                  </TabsContent>
-
-                  <TabsContent value="qr" className="space-y-4 mt-6">
-                    <div className="text-center py-12 border-2 border-dashed border-muted rounded-lg">
-                      <QrCode className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                      <h3 className="font-semibold mb-2">QR Code Scanner</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        QR code scanning feature coming soon
-                      </p>
-                      <Button variant="outline" disabled>
-                        Scan QR Code
-                      </Button>
-                    </div>
                   </TabsContent>
                 </Tabs>
               </CardContent>

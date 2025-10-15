@@ -14,13 +14,6 @@ export const MarketplacePartners = () => {
       logo: "FB"
     },
     {
-      name: "Craigslist",
-      status: "Coming Soon",
-      description: "Partnership in development to integrate verification into listings",
-      features: ["Verification links", "Trusted seller badge", "Reduced scam reports"],
-      logo: "CL"
-    },
-    {
       name: "OfferUp",
       status: "Active Partnership",
       description: "Sellers can add verification certificates to their listings",

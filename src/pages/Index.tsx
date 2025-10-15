@@ -42,16 +42,6 @@ const Index = () => {
       />
       
       <div className="min-h-screen">
-        {/* Hero Image Banner */}
-        <div className="w-full relative">
-          <img 
-            src="/images/hero-verification.png" 
-            alt="SafeOrStolen - Verify items on mobile and desktop" 
-            className="w-full h-[400px] md:h-[500px] object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
-        </div>
-        
         {/* Hero with search bar - THE CORE VALUE */}
         <Hero />
         

@@ -115,18 +115,18 @@ const AppDownloadPage = () => {
               </Button>
             </div>
 
-            <p className="text-gray-400 text-sm">Coming Soon • Sign up to get notified when we launch</p>
+            <p className="text-foreground/70 text-sm">Launching Q1 2026 • Join the waitlist to get early access</p>
           </div>
 
           {/* App Preview */}
           <div className="max-w-5xl mx-auto mb-20">
             <Card className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700 overflow-hidden">
               <CardContent className="p-8">
-                <div className="aspect-video bg-gradient-to-br from-sos-orange/20 to-slate-900 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <Smartphone className="h-24 w-24 text-sos-orange mx-auto mb-4" />
-                    <p className="text-white text-xl font-semibold">App Screenshots Coming Soon</p>
-                    <p className="text-gray-400 mt-2">Mobile app in final development stages</p>
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-background rounded-lg flex items-center justify-center">
+                  <div className="text-center px-8">
+                    <Smartphone className="h-24 w-24 text-primary mx-auto mb-4" />
+                    <p className="text-foreground text-xl font-semibold mb-2">Mobile App Preview</p>
+                    <p className="text-foreground/70 mt-2">Screenshots and demos will be available as we approach launch in Q1 2026</p>
                   </div>
                 </div>
               </CardContent>
