@@ -110,189 +110,109 @@ const AboutPage = () => {
   return (
     <>
       <PageSEO
-        title="About SafeOrStolen - The Only Mobile App for Stolen Item Verification"
-        description="World's first mobile app for instant stolen item verification. Download SafeOrStolen for iOS & Android to check IMEI, VIN, serial numbers. Protect buyers and sellers with our expert team and law enforcement partnerships."
-        keywords="about safeorstolen app, stolen item verification mobile app, IMEI checker app, VIN verification app, secondhand safety experts, fraud prevention mobile app, download stolen checker app"
+        title="About SafeOrStolen - Trusted Stolen Item Verification"
+        description="Industry-leading verification service checking IMEI, VIN, and serial numbers against law enforcement databases. 99.7% accuracy, instant results, trusted by 500K+ users worldwide."
+        keywords="about safeorstolen, stolen item verification, IMEI checker, VIN verification, secondhand safety"
         structuredData={structuredData}
       />
       
       <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        {/* Simplified Hero Section */}
+        <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                About SafeOrStolen - The Mobile App That Protects Buyers & Sellers
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Protecting Buyers & Sellers Since 2024
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                The world's only mobile app for instant stolen item verification. Download SafeOrStolen on iOS & Android to check IMEI, VIN, and serial numbers before buying or selling. Founded by cybersecurity experts and backed by law enforcement partnerships.
+              <p className="text-lg text-muted-foreground mb-6">
+                SafeOrStolen verifies items instantly against law enforcement databases. 
+                Founded by cybersecurity experts, backed by partnerships with police departments nationwide.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Badge variant="secondary" className="text-lg px-4 py-2">
-                  <Shield className="h-5 w-5 mr-2" />
-                  99.7% Accuracy Rate
+              <div className="flex flex-wrap justify-center gap-3">
+                <Badge variant="secondary" className="px-3 py-1">
+                  <Shield className="h-4 w-4 mr-2" />
+                  99.7% Accuracy
                 </Badge>
-                <Badge variant="secondary" className="text-lg px-4 py-2">
-                  <Users className="h-5 w-5 mr-2" />
-                  500K+ Verified Checks
-                </Badge>
-                <Badge variant="secondary" className="text-lg px-4 py-2">
-                  <Award className="h-5 w-5 mr-2" />
-                  Industry Leading
+                <Badge variant="secondary" className="px-3 py-1">
+                  <Users className="h-4 w-4 mr-2" />
+                  500K+ Checks
                 </Badge>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Mission & Vision */}
-        <section className="py-16">
+        {/* Mission (Simplified) */}
+        <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-foreground">Our Mission</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To protect consumers and businesses from unknowingly purchasing stolen goods by providing 
-                  instant, accurate verification services backed by comprehensive law enforcement databases 
-                  and cutting-edge technology.
-                </p>
-              </Card>
-              <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-foreground">Our Vision</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  A world where every second-hand purchase is safe, transparent, and legal. We envision 
-                  eliminating the market for stolen goods through universal verification adoption.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Expert Team */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Our Expert Team</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Led by industry veterans with decades of experience in cybersecurity, law enforcement, 
-                and fraud prevention.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {teamMembers.map((member, index) => (
-                <Card key={index} className="p-6 text-center">
-                  <div className="h-20 w-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-10 w-10 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-foreground">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-3">{member.role}</p>
-                  <p className="text-muted-foreground mb-3">{member.experience}</p>
-                  <Badge variant="outline" className="text-sm">
-                    {member.credentials}
-                  </Badge>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Verification Process */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Our Verification Process</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                A rigorous 5-step process ensuring maximum accuracy and reliability in every verification.
-              </p>
-            </div>
             <div className="max-w-4xl mx-auto">
-              {verificationProcess.map((process, index) => (
-                <div key={index} className="flex items-start gap-6 mb-8">
-                  <div className="h-12 w-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                    {process.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-foreground">{process.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{process.description}</p>
-                  </div>
-                </div>
-              ))}
+              <Card className="p-6">
+                <h2 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Protect consumers and businesses from stolen goods through instant, accurate verification 
+                  backed by law enforcement databases and cutting-edge technology.
+                </p>
+              </Card>
             </div>
           </div>
         </section>
 
-        {/* Partnerships */}
-        <section className="py-16 bg-muted/30">
+        {/* Trust Indicators (Simplified to 3) */}
+        <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Trusted Partnerships</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                We work directly with law enforcement agencies and regulatory bodies to ensure 
-                comprehensive and up-to-date verification data.
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <Card className="p-6 text-center">
+                <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-foreground">Bank-Level Security</h3>
+                <p className="text-muted-foreground text-sm">256-bit SSL encryption</p>
+              </Card>
+              <Card className="p-6 text-center">
+                <CheckCircle className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-foreground">99.7% Accuracy</h3>
+                <p className="text-muted-foreground text-sm">Third-party verified</p>
+              </Card>
+              <Card className="p-6 text-center">
+                <Lock className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-foreground">Zero Data Retention</h3>
+                <p className="text-muted-foreground text-sm">GDPR compliant</p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Partnerships (Simplified) */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Trusted Partnerships</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Direct partnerships with law enforcement and regulatory bodies
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {partnerships.map((partner, index) => (
-                <Card key={index} className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Building className="h-8 w-8 text-primary" />
-                    <Badge variant="secondary">{partner.type}</Badge>
-                  </div>
-                  <h3 className="text-lg font-bold mb-3 text-foreground">{partner.name}</h3>
-                  <p className="text-muted-foreground">{partner.description}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Trust Indicators */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Why Trust SafeOrStolen.com?</h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              <Card className="p-6 text-center">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2 text-foreground">Bank-Level Security</h3>
-                <p className="text-muted-foreground text-sm">256-bit SSL encryption and SOC 2 compliance</p>
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              <Card className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Building className="h-6 w-6 text-primary" />
+                  <Badge variant="secondary">Law Enforcement</Badge>
+                </div>
+                <h3 className="font-bold mb-2 text-foreground">NCIC Partnership</h3>
+                <p className="text-muted-foreground text-sm">
+                  Direct access to federal stolen property databases
+                </p>
               </Card>
-              <Card className="p-6 text-center">
-                <CheckCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2 text-foreground">99.7% Accuracy</h3>
-                <p className="text-muted-foreground text-sm">Verified by independent third-party audits</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2 text-foreground">Privacy Protected</h3>
-                <p className="text-muted-foreground text-sm">GDPR compliant with zero data retention</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2 text-foreground">Industry Recognition</h3>
-                <p className="text-muted-foreground text-sm">Endorsed by major law enforcement agencies</p>
+              <Card className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Building className="h-6 w-6 text-primary" />
+                  <Badge variant="secondary">Industry</Badge>
+                </div>
+                <h3 className="font-bold mb-2 text-foreground">IACP Certified</h3>
+                <p className="text-muted-foreground text-sm">
+                  Compliance with consumer protection standards
+                </p>
               </Card>
             </div>
           </div>
         </section>
-
-        {/* Founder Story */}
-        <FounderStory />
-
-        {/* Success Stories */}
-        <SuccessStories />
-
-        {/* Featured Trust Ad */}
-        <div className="container mx-auto px-4 py-8">
-          <ContextualAdPlacement context="verification" placement="banner" />
-        </div>
-
-        {/* Marketplace Partnerships */}
-        <MarketplacePartners />
-
-        {/* Item Registration */}
-        <ItemRegistration />
       </div>
     </>
   );

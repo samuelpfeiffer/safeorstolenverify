@@ -133,31 +133,16 @@ const FAQPage = () => {
       />
       
       <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        {/* Simplified Hero */}
+        <section className="py-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Frequently Asked Questions
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Common Questions
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Everything you need to know about SafeOrStolen.com's stolen item verification service. 
-                Can't find your answer? Contact our support team.
+              <p className="text-lg text-muted-foreground">
+                Quick answers about our verification service
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Badge variant="secondary" className="text-lg px-4 py-2">
-                  <Shield className="h-5 w-5 mr-2" />
-                  99.7% Accuracy
-                </Badge>
-                <Badge variant="secondary" className="text-lg px-4 py-2">
-                  <Clock className="h-5 w-5 mr-2" />
-                  Instant Results
-                </Badge>
-                <Badge variant="secondary" className="text-lg px-4 py-2">
-                  <Database className="h-5 w-5 mr-2" />
-                  50+ Databases
-                </Badge>
-              </div>
             </div>
           </div>
         </section>
@@ -191,40 +176,17 @@ const FAQPage = () => {
           </div>
         </section>
 
-        {/* Contact Support */}
-        <section className="py-16 bg-muted/30">
+        {/* Simplified Contact */}
+        <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Still Have Questions?</h2>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Our expert support team is available 24/7 to help with any questions about 
-                our verification services or results interpretation.
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-2xl font-bold mb-4 text-foreground">Need More Help?</h2>
+              <p className="text-muted-foreground mb-6">
+                Contact us at support@safeorstolen.com or (206) 249-2203
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Card className="p-6 text-center">
-                  <h3 className="font-bold mb-2 text-foreground">Email Support</h3>
-                  <p className="text-muted-foreground">support@safeorstolen.com</p>
-                  <p className="text-sm text-muted-foreground mt-2">Response within 2 hours</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <h3 className="font-bold mb-2 text-foreground">Live Chat</h3>
-                  <p className="text-muted-foreground">Available 24/7</p>
-                  <p className="text-sm text-muted-foreground mt-2">Instant assistance</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <h3 className="font-bold mb-2 text-foreground">Phone Support</h3>
-                  <p className="text-muted-foreground">1-800-SAFE-123</p>
-                  <p className="text-sm text-muted-foreground mt-2">Mon-Fri 9AM-6PM EST</p>
-                </Card>
-              </div>
             </div>
           </div>
         </section>
-        
-        {/* Featured Ad */}
-        <div className="container mx-auto px-4 py-8">
-          <ContextualAdPlacement context="verification" placement="banner" />
-        </div>
       </div>
     </>
   );

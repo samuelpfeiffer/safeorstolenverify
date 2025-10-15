@@ -46,65 +46,49 @@ const Index = () => {
 
   return (
     <>
-      {/* Conversion Tracking */}
+      {/* Essential tracking only */}
       <ConversionTracking />
       
-      {/* Advanced Advertising & SEO System */}
-      <AdvertisingStrategy />
-      <AdvancedSEOManager />
-      <ConversionOptimizer />
-      <KeywordTargeting />
-      
+      {/* Core SEO */}
       <OrganizationSchema />
       <WebSiteSchema />
-      <ComprehensiveSchemaMarkup pageType="home" />
       <UnifiedSEOOptimizer
-        title="Check if Stolen FREE | Verify Phones, Cars, Laptops, Tools Before Buying | SafeOrStolen Mobile App"
-        description="FREE mobile app for iOS & Android. Instantly check if phones (IMEI), cars (VIN), laptops, tools, bikes are stolen. Verify items on Facebook Marketplace, OfferUp, Craigslist, eBay before buying. 2 FREE verifications (14-day trial). 127M+ items tracked."
-        keywords="check if phone stolen, IMEI lookup free, VIN check stolen car, verify laptop serial number, facebook marketplace verification, offerup safety check, craigslist stolen item checker, serial number lookup, check if stolen before buying, secondhand item verification"
+        title="Check if Stolen FREE | Instant Verification | SafeOrStolen"
+        description="FREE instant verification. Check if phones, cars, laptops, tools are stolen. Verify items on Facebook Marketplace, OfferUp, Craigslist before buying. 4 free checks to start."
+        keywords="check if stolen, IMEI lookup, VIN check, verify serial number, marketplace verification"
         canonical="/"
         structuredData={getHomePageStructuredData()}
         type="website"
       />
       
       <div className="min-h-screen">
-      <Hero />
-      
-      {/* Universal Search Section */}
-      <section className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">
-              Search Across All Databases
-            </h2>
-            <p className="text-muted-foreground">
-              One search checks NICB, GSMA, CheckMEND, Bike Index, TheftAZ, and more
-            </p>
+        {/* Hero with search bar - THE CORE VALUE */}
+        <Hero />
+        
+        {/* Trust signals immediately */}
+        <TrustSignalsSection />
+        
+        {/* Simple how it works */}
+        <HowItWorks />
+        
+        {/* Social proof */}
+        <TestimonialsSection />
+        
+        {/* Simple CTA */}
+        <AppDownloadSection />
+        
+        {/* Progressive Disclosure: Hide advanced content below fold */}
+        <details className="container mx-auto px-4 py-8 max-w-4xl">
+          <summary className="text-center text-muted-foreground cursor-pointer hover:text-foreground transition-colors text-sm">
+            Show More Information ▼
+          </summary>
+          <div className="mt-8 space-y-12">
+            <EnhancedFAQSection />
+            <ContactFormSection />
+            <SEOContentSection />
+            <InternalLinkingStrategy />
           </div>
-          <UnifiedSearchBar variant="default" />
-        </div>
-      </section>
-      
-      <ArizonaTheftSection />
-      <HowItWorks />
-      <AppDownloadSection />
-      
-      {/* Social Sharing for Backlinks */}
-      <div className="container mx-auto px-4 py-8 flex justify-center">
-        <SocialShareOptimizer 
-          title="SafeOrStolen - FREE Mobile App to Check if Items Are Stolen"
-          description="Download the #1 verification app. Check phones, cars, laptops before buying. Protect yourself from stolen goods on Facebook Marketplace, OfferUp, eBay."
-          hashtags={['SafeOrStolen', 'VerifyBeforeYouBuy', 'MarketplaceSafety', 'StolenItemCheck']}
-        />
-      </div>
-      
-      <TrustSignalsSection />
-      <TestimonialsSection />
-      <SEOContentSection />
-      <RichContentHub />
-      <EnhancedFAQSection />
-      <ContactFormSection />
-      <InternalLinkingStrategy />
+        </details>
         
         {(verificationId || serialNumber) && (
           <Suspense fallback={
@@ -118,12 +102,8 @@ const Index = () => {
         )}
       </div>
       
-      {/* Dynamic Conversion Elements */}
-      <SocialProofEngine />
+      {/* Subtle conversion helpers */}
       <LiveActivityFeed />
-      
-      {/* Performance Monitoring (Dev Only) */}
-      <PerformanceMonitor />
     </>
   );
 };

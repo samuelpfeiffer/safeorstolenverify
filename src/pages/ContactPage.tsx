@@ -69,117 +69,68 @@ const ContactPage = () => {
         structuredData={[localBusinessSchema, breadcrumbSchema]}
       />
       <div className="container mx-auto px-4 pt-24 pb-16">
-        <Breadcrumb className="mb-6">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/">
-                <Home className="h-4 w-4 mr-1" />
-                Home
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/contact">Contact</BreadcrumbLink>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <h1 className="text-3xl font-bold mb-4 text-center">Contact Us</h1>
+        <p className="text-lg text-center max-w-2xl mx-auto mb-8">Questions? We're here to help.</p>
         
-        <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
-        <p className="text-xl text-center max-w-3xl mx-auto mb-12">Have questions or need assistance? We're here to help.</p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-8">
-            <div className="flex items-center space-x-4">
-              <div className="rounded-full bg-secondary/80 p-3">
-                <Phone className="h-6 w-6 text-sos-orange" />
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <Phone className="h-5 w-5 text-sos-orange" />
               <div>
-                <h3 className="text-lg font-medium">Phone</h3>
+                <h3 className="font-medium">Phone</h3>
                 <p className="text-gray-300">(206) 249-2203</p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <div className="rounded-full bg-secondary/80 p-3">
-                <Mail className="h-6 w-6 text-sos-orange" />
-              </div>
+            <div className="flex items-center space-x-3">
+              <Mail className="h-5 w-5 text-sos-orange" />
               <div>
-                <h3 className="text-lg font-medium">Email Us</h3>
+                <h3 className="font-medium">Email</h3>
                 <p className="text-gray-300">support@safeorstolen.com</p>
               </div>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <div className="rounded-full bg-secondary/80 p-3">
-                <MapPin className="h-6 w-6 text-sos-orange" />
-              </div>
+            <div className="flex items-center space-x-3">
+              <MapPin className="h-5 w-5 text-sos-orange" />
               <div>
-                <h3 className="text-lg font-medium">Location</h3>
+                <h3 className="font-medium">Location</h3>
                 <p className="text-gray-300">Phoenix, AZ</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="rounded-full bg-secondary/80 p-3">
-                <MessageSquare className="h-6 w-6 text-sos-orange" />
-              </div>
-              <div>
-                <h3 className="text-lg font-medium">Live Chat</h3>
-                <p className="text-gray-300">Available Monday-Friday, 9am-5pm MST</p>
               </div>
             </div>
           </div>
           
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Name*</label>
-                <Input 
-                  id="name" 
-                  className="bg-secondary/50" 
-                  placeholder="Your name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">Email*</label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  className="bg-secondary/50" 
-                  placeholder="Your email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-            </div>
-            
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
               <Input 
-                id="subject" 
+                id="name" 
                 className="bg-secondary/50" 
-                placeholder="Subject of your message"
-                value={formData.subject}
+                placeholder="Name*"
+                value={formData.name}
                 onChange={handleInputChange}
+                required
               />
             </div>
-            
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">Message*</label>
+              <Input 
+                id="email" 
+                type="email" 
+                className="bg-secondary/50" 
+                placeholder="Email*"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
               <Textarea 
                 id="message" 
-                className="bg-secondary/50 min-h-32" 
-                placeholder="Your message..."
+                className="bg-secondary/50 min-h-24" 
+                placeholder="Your message*"
                 value={formData.message}
                 onChange={handleInputChange}
                 required
               />
             </div>
-            
             <Button type="submit" className="bg-sos-orange hover:bg-sos-orange/90 text-white w-full">
               Send Message
             </Button>
