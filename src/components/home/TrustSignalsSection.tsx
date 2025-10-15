@@ -2,49 +2,39 @@ import { Shield, Lock, Award, Database, Zap, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-
 export const TrustSignalsSection = () => {
-  const trustBadges = [
-    {
-      icon: Shield,
-      title: "Law Enforcement Partner",
-      description: "Integrated with police databases nationwide",
-      color: "text-primary"
-    },
-    {
-      icon: Lock,
-      title: "Stripe Secured Payments",
-      description: "Bank-level encryption for all transactions",
-      color: "text-secondary"
-    },
-    {
-      icon: Database,
-      title: "3,000+ Global Databases",
-      description: "NICB, GSMA, CheckMEND, Police databases",
-      color: "text-accent"
-    },
-    {
-      icon: Award,
-      title: "SOC 2 Type II Certified",
-      description: "Enterprise-grade security compliance",
-      color: "text-primary"
-    },
-    {
-      icon: Zap,
-      title: "Real-Time Verification",
-      description: "Instant results in 30 seconds or less",
-      color: "text-secondary"
-    },
-    {
-      icon: Users,
-      title: "100,000+ Trust Us",
-      description: "Join marketplace buyers & sellers worldwide",
-      color: "text-accent"
-    }
-  ];
-
-  return (
-    <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+  const trustBadges = [{
+    icon: Shield,
+    title: "Law Enforcement Partner",
+    description: "Integrated with police databases nationwide",
+    color: "text-primary"
+  }, {
+    icon: Lock,
+    title: "Stripe Secured Payments",
+    description: "Bank-level encryption for all transactions",
+    color: "text-secondary"
+  }, {
+    icon: Database,
+    title: "3,000+ Global Databases",
+    description: "NICB, GSMA, CheckMEND, Police databases",
+    color: "text-accent"
+  }, {
+    icon: Award,
+    title: "SOC 2 Type II Certified",
+    description: "Enterprise-grade security compliance",
+    color: "text-primary"
+  }, {
+    icon: Zap,
+    title: "Real-Time Verification",
+    description: "Instant results in 30 seconds or less",
+    color: "text-secondary"
+  }, {
+    icon: Users,
+    title: "100,000+ Trust Us",
+    description: "Join marketplace buyers & sellers worldwide",
+    color: "text-accent"
+  }];
+  return <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* FasterCapital Banner */}
         <div className="max-w-4xl mx-auto mb-16">
@@ -57,9 +47,7 @@ export const TrustSignalsSection = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-2">
                   Backed by FasterCapital
                 </h3>
-                <p className="text-muted-foreground">
-                  Accelerated startup with $150K+ funding for global expansion
-                </p>
+                <p className="text-muted-foreground">Accelerated startup funding for global expansion</p>
               </div>
               <FasterCapitalBranding />
             </div>
@@ -82,11 +70,7 @@ export const TrustSignalsSection = () => {
 
         {/* Trust Badges Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-          {trustBadges.map((badge, index) => (
-            <Card 
-              key={index}
-              className="p-8 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl group"
-            >
+          {trustBadges.map((badge, index) => <Card key={index} className="p-8 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl group">
               <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 <badge.icon className={`h-7 w-7 ${badge.color}`} />
               </div>
@@ -96,8 +80,7 @@ export const TrustSignalsSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {badge.description}
               </p>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Database Sources Count */}
@@ -151,6 +134,5 @@ export const TrustSignalsSection = () => {
           </Badge>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
