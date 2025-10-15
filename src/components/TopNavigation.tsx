@@ -166,8 +166,8 @@ const TopNavigation = () => {
     href: '/security',
     icon: Shield
   }] : [];
-  return <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-sos/95 backdrop-blur-lg border-b border-sos-orange/10 shadow-lg" : "bg-transparent")}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  return <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-white/95 backdrop-blur-lg border-b border-border shadow-lg" : "bg-white/90 backdrop-blur-md")}>
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         {/* Top Bar with FasterCapital Branding */}
         
 
@@ -190,8 +190,8 @@ const TopNavigation = () => {
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
               </div>
               <div className="sm:block">
-                <span className="text-white font-bold text-xl tracking-tight">SafeOrStolen</span>
-                <div className="text-xs text-sos-orange font-medium">Verify Before You Buy</div>
+                <span className="text-foreground font-bold text-xl tracking-tight">SafeOrStolen</span>
+                <div className="text-xs text-primary font-medium">Verify Before You Buy</div>
               </div>
             </button>
           </div>

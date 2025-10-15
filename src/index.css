@@ -13,32 +13,32 @@
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;  /* Modern blue */
+    --primary: 0 73% 51%;  /* Red primary */
     --primary-foreground: 0 0% 100%;
     --secondary: 142 76% 36%;  /* Fresh green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 96%;  /* Light gray */
+    --muted: 210 40% 98%;  /* Ultra light gray for more white space */
     --muted-foreground: 215 16% 47%;
-    --accent: 25 95% 53%;  /* Warm orange accent */
+    --accent: 0 73% 51%;  /* Red accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
+    --border: 214 32% 95%;  /* Lighter border */
+    --input: 214 32% 96%;  /* Lighter input */
+    --ring: 0 73% 51%;  /* Red ring */
     --radius: 1rem;
     
     /* Buyer/Seller/Business theme colors */
-    --buyer-orange: 25 95% 53%;  /* Softer orange for buyers */
+    --buyer-red: 0 73% 51%;  /* Red for buyers */
     --seller-green: 142 76% 36%;  /* Professional green for sellers */
     --business-blue: 211 100% 50%;  /* Corporate blue for businesses */
     
-    /* Futuristic gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(14 100% 57%), hsl(0 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 40% 5%) 0%, hsl(220 30% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, rgba(0,255,255,0.1), rgba(0,255,255,0.05));
-    --gradient-cyber: linear-gradient(45deg, hsl(180 100% 50%) 0%, hsl(120 100% 50%) 50%, hsl(300 100% 50%) 100%);
-    --gradient-glow: radial-gradient(circle, rgba(0,255,255,0.3) 0%, transparent 70%);
+    /* Clean gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 73% 51%), hsl(0 84% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+    --gradient-cyber: linear-gradient(45deg, hsl(0 73% 51%) 0%, hsl(142 76% 36%) 50%, hsl(211 100% 50%) 100%);
+    --gradient-glow: radial-gradient(circle, rgba(220,38,38,0.1) 0%, transparent 70%);
     
     /* Neon accents */
     --neon-cyan: 180 100% 50%;
@@ -59,42 +59,42 @@
     --fc-red: 0 72% 55%;
     --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 0%;
-    --sidebar-primary: 14 100% 57%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 0 73% 51%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 84 81% 44%;
+    --sidebar-accent: 142 76% 36%;
     --sidebar-accent-foreground: 0 0% 0%;
-    --sidebar-border: 0 0% 89%;
-    --sidebar-ring: 14 100% 57%;
+    --sidebar-border: 214 32% 95%;
+    --sidebar-ring: 0 73% 51%;
   }
 
   .dark {
-    --background: 0 0% 0%;  /* Black */
+    --background: 0 0% 5%;  /* Dark gray instead of black */
     --foreground: 0 0% 100%;  /* White */
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 14 100% 57%;  /* Orange */
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 84% 60%;  /* Red */
+    --card: 0 0% 98%;  /* Light cards in dark mode */
+    --card-foreground: 222 47% 11%;  /* Dark text on light cards */
+    --popover: 0 0% 98%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 0 73% 51%;  /* Red */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 36%;  /* Green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 84 81% 44%;  /* Lime green */
-    --accent-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;  /* Light muted */
+    --muted-foreground: 215 16% 47%;
+    --accent: 0 73% 51%;  /* Red accent */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 14 100% 57%;
+    --border: 214 32% 92%;
+    --input: 214 32% 96%;
+    --ring: 0 73% 51%;
     
-    /* Dark mode futuristic gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(14 100% 57%), hsl(0 84% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 50% 3%) 0%, hsl(220 40% 8%) 100%);
-    --gradient-card: linear-gradient(145deg, rgba(0,255,255,0.2), rgba(0,255,255,0.08));
-    --gradient-cyber: linear-gradient(45deg, hsl(180 100% 40%) 0%, hsl(120 100% 40%) 50%, hsl(300 100% 60%) 100%);
+    /* Clean gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(0 73% 51%), hsl(0 84% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+    --gradient-cyber: linear-gradient(45deg, hsl(0 73% 51%) 0%, hsl(142 76% 36%) 50%, hsl(211 100% 50%) 100%);
   }
 
   * {
@@ -107,8 +107,8 @@
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
-    line-height: 1.7;  /* More spacious line height */
-    letter-spacing: -0.01em;  /* Tighter tracking for modern look */
+    line-height: 1.8;  /* Even more spacious */
+    letter-spacing: -0.01em;
     @apply antialiased;
   }
 
@@ -203,11 +203,11 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-20 md:py-28 lg:py-36;
   }
   
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-6 sm:px-8 lg:px-12;
   }
 
   .card-enhanced {
@@ -236,13 +236,13 @@
     @apply transition-transform duration-200 hover:scale-[1.02];
   }
 
-  /* SOS Brand Colors - Orange gradient for SafeOrStolen branding */
+  /* SOS Brand Colors - Red gradient for SafeOrStolen branding */
   .sos-brand-gradient {
-    background: linear-gradient(135deg, #FF5722 0%, #FF7043 50%, #FF5722 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #DC2626 100%);
   }
   
   .sos-brand-text {
-    background: linear-gradient(135deg, #FF5722 0%, #FF7043 50%, #FF5722 100%);
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #DC2626 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

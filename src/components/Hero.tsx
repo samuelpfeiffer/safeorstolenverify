@@ -17,9 +17,9 @@ const Hero = () => {
       navigate('/dashboard');
     }
   };
-  return <div className="relative bg-gradient-to-br from-background via-primary/5 to-background">
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+  return <div className="relative bg-white">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24">
+        <div className="max-w-5xl mx-auto text-center space-y-12">
           
           {/* FasterCapital Badge */}
           <div className="flex justify-center animate-fade-in">
@@ -40,13 +40,13 @@ const Hero = () => {
           </p>
 
           {/* THE ONE SEARCH BAR - Core Focus - Enhanced Visibility */}
-          <div className="max-w-2xl mx-auto bg-gradient-to-br from-card via-card to-primary/5 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 ring-4 ring-primary/10 animate-fade-in">
-            <div className="flex items-center gap-3 mb-6 px-4 py-3 bg-primary/10 rounded-lg border border-primary/20">
-              <Search className="h-6 w-6 text-primary animate-pulse" />
-              <span className="text-base font-bold text-foreground">Enter IMEI, VIN, or Serial Number</span>
+          <div className="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border-2 border-primary/40 ring-8 ring-primary/5 animate-fade-in">
+            <div className="flex items-center gap-3 mb-8 px-6 py-4 bg-primary/5 rounded-xl border-2 border-primary/30 shadow-inner">
+              <Search className="h-7 w-7 text-primary animate-pulse" />
+              <span className="text-lg font-bold text-foreground">Enter IMEI, VIN, or Serial Number</span>
             </div>
             <UnifiedSearchBar variant="hero" />
-            <p className="text-sm text-center text-muted-foreground mt-4 font-medium">
+            <p className="text-sm text-center text-muted-foreground mt-6 font-semibold">
               ✓ 4 free checks • No credit card • Instant results
             </p>
           </div>

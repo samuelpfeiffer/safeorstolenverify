@@ -64,21 +64,21 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				sos: {
-					DEFAULT: '#0F172A', // Dark slate 900
-					dark: '#1E293B',    // Slate 800
-					light: '#334155',   // Slate 700
+					DEFAULT: '#FFFFFF', // Clean white
+					dark: '#F8FAFC',    // Light gray
+					light: '#FFFFFF',   // Pure white
 					orange: {
-						DEFAULT: '#FF5722',
-						50: '#FFF3F0',
-						100: '#FFE6E0',
-						200: '#FFCDC2',
-						300: '#FFB4A3',
-						400: '#FF9B85',
-						500: '#FF5722',
-						600: '#E64100',
-						700: '#CC3700',
-						800: '#B32D00',
-						900: '#992400'
+						DEFAULT: '#DC2626', // Red instead of orange
+						50: '#FEF2F2',
+						100: '#FEE2E2',
+						200: '#FECACA',
+						300: '#FCA5A5',
+						400: '#F87171',
+						500: '#DC2626',
+						600: '#B91C1C',
+						700: '#991B1B',
+						800: '#7F1D1D',
+						900: '#450A0A'
 					},
 					lime: {
 						DEFAULT: '#84CC16',
@@ -140,8 +140,8 @@ export default {
 				'3xl': '1.5rem',
 			},
 			boxShadow: {
-				'glow': '0 0 20px rgba(255, 87, 34, 0.15)',
-				'glow-lg': '0 0 40px rgba(255, 87, 34, 0.2)',
+				'glow': '0 0 20px rgba(220, 38, 38, 0.15)',
+				'glow-lg': '0 0 40px rgba(220, 38, 38, 0.2)',
 				'lime-glow': '0 0 20px rgba(132, 204, 22, 0.15)',
 			},
 			keyframes: {
