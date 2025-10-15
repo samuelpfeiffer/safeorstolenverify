@@ -1,5 +1,4 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Shield, AlertTriangle, CheckCircle } from 'lucide-react';
@@ -23,7 +22,6 @@ export default function MarketplacePage() {
         description="Verify items from Facebook Marketplace, OfferUp, Craigslist, and eBay before buying. Check if phones, cars, and electronics are stolen. Essential buyer protection."
         keywords="facebook marketplace verification, offerup safety, craigslist buyer protection, ebay stolen goods check"
       />
-      <EnhancedStructuredData />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6 py-20">

@@ -1,5 +1,4 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData';
 import { Card } from '@/components/ui/card';
 import { TrendingUp, Shield, Users, DollarSign, AlertTriangle, CheckCircle } from 'lucide-react';
 
@@ -32,7 +31,6 @@ export default function StatisticsPage() {
         description="Real-time statistics on stolen phones, vehicles, electronics. See how SafeOrStolen prevents fraud and protects consumers from buying stolen goods on marketplaces."
         keywords="stolen goods statistics, phone theft data, vehicle theft statistics, marketplace fraud rates"
       />
-      <EnhancedStructuredData />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6 py-20">
