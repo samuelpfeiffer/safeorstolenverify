@@ -18,76 +18,62 @@ const Hero = () => {
     }
   };
   return <div className="relative bg-gradient-to-br from-background via-primary/5 to-background">
-      <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           
           {/* FasterCapital Badge */}
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-fade-in">
             <FasterCapitalBranding />
           </div>
 
-          {/* Trust Badge */}
-          
-
           {/* Clear, Focused Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
             Check if It's Stolen
-            <span className="block mt-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               In 30 Seconds, For Free
             </span>
           </h1>
           
           {/* Simple Value Prop */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Verify guns, phones, cars, laptops, tools before buying. Protect yourself from stolen goods on Facebook Marketplace, OfferUp, Craigslist.
           </p>
-          
-          {/* Crime Reduction Mission */}
-          <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <Shield className="h-6 w-6 text-primary" />
-              <h2 className="text-xl font-bold text-foreground">Our Mission: Reduce Crime Globally</h2>
-            </div>
-            <p className="text-muted-foreground">
-              By protecting buyers and sellers from financial loss and legal consequences, we're making stolen goods harder to sell—deterring theft worldwide and creating safer marketplaces for everyone.
-            </p>
-          </div>
 
-          {/* THE ONE SEARCH BAR - Core Focus */}
-          <div className="max-w-2xl mx-auto bg-card p-6 rounded-2xl shadow-lg border border-border">
-            <div className="flex items-center gap-2 mb-4 text-muted-foreground">
-              <Search className="h-5 w-5" />
-              <span className="text-sm font-medium">Enter IMEI, VIN, or Serial Number</span>
+          {/* THE ONE SEARCH BAR - Core Focus - Enhanced Visibility */}
+          <div className="max-w-2xl mx-auto bg-gradient-to-br from-card via-card to-primary/5 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 ring-4 ring-primary/10 animate-fade-in">
+            <div className="flex items-center gap-3 mb-6 px-4 py-3 bg-primary/10 rounded-lg border border-primary/20">
+              <Search className="h-6 w-6 text-primary animate-pulse" />
+              <span className="text-base font-bold text-foreground">Enter IMEI, VIN, or Serial Number</span>
             </div>
             <UnifiedSearchBar variant="hero" />
-            <p className="text-xs text-muted-foreground mt-3">
+            <p className="text-sm text-center text-muted-foreground mt-4 font-medium">
               ✓ 4 free checks • No credit card • Instant results
             </p>
           </div>
           
           {/* Simple CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="font-semibold px-8" onClick={handleGetStarted}>
+            <Button size="lg" className="font-semibold px-10 h-14 text-base shadow-lg" onClick={handleGetStarted}>
               Start Free
             </Button>
-            <Button size="lg" variant="outline" className="font-semibold px-8" asChild>
+            <Button size="lg" variant="outline" className="font-semibold px-10 h-14 text-base" asChild>
               <Link to="/how-it-works">How It Works</Link>
             </Button>
           </div>
 
           {/* Key Stats - Simple */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-8 border-t border-border/50">
+          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto pt-10 border-t border-border/50">
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary">50M+</div>
-              <div className="text-xs text-muted-foreground">Records</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50M+</div>
+              <div className="text-sm text-muted-foreground font-medium">Records</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary">&lt;30s</div>
-              <div className="text-xs text-muted-foreground">Verification</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">&lt;30s</div>
+              <div className="text-sm text-muted-foreground font-medium">Verification</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary">99.7%</div>
-              <div className="text-xs text-muted-foreground">Accuracy</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">99.7%</div>
+              <div className="text-sm text-muted-foreground font-medium">Accuracy</div>
             </div>
           </div>
         </div>
