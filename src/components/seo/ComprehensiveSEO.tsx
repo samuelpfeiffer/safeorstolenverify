@@ -27,7 +27,7 @@ export const ComprehensiveSEO: React.FC<ComprehensiveSEOProps> = ({
     "@type": "Organization",
     "name": "Safe or Stolen",
     "url": "https://safeorstolen.com",
-    "logo": "https://safeorstolen.com/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+    "logo": "https://safeorstolen.com/images/sos-logo.png",
     "description": "The only mobile-first stolen goods verification platform. Protecting buyers and sellers from financial loss and legal issues while reducing crime globally. Check phones, cars, electronics instantly.",
     "founder": {
       "@type": "Person",

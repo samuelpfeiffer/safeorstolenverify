@@ -151,6 +151,7 @@ const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
 const OurTeamPage = lazy(() => import('@/pages/OurTeamPage'));
 const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 const OurMissionPage = lazy(() => import('@/pages/OurMissionPage'));
+const PressPage = lazy(() => import('@/pages/PressPage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -205,6 +206,11 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-mission" element={<OurMissionPage />} />
           <Route path="reduce-crime" element={<Navigate to="/our-mission" replace />} />
           <Route path="crime-prevention" element={<Navigate to="/our-mission" replace />} />
+          <Route path="press" element={<PressPage />} />
+          <Route path="news" element={<PressPage />} />
+          <Route path="press-releases" element={<PressPage />} />
+          <Route path="media" element={<PressPage />} />
+          <Route path="newsroom" element={<PressPage />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="features" element={<FeaturesPage />} />

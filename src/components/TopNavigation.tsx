@@ -144,6 +144,11 @@ const TopNavigation = () => {
     href: '/our-mission',
     description: 'Reducing crime globally',
     icon: Shield
+  }, {
+    label: 'Press & News',
+    href: '/press',
+    description: 'Latest announcements and media',
+    icon: Home
   }];
   const userMenuItems = isAuthenticated ? [{
     label: 'Search History',
@@ -168,14 +173,14 @@ const TopNavigation = () => {
             <button onClick={() => navigate('/')} className="flex items-center gap-3 group transition-transform hover:scale-105" aria-label="SafeOrStolen Home">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                  src="/images/sos-logo.png" 
                   alt="SafeOrStolen Logo" 
                   className="h-10 w-10 filter drop-shadow-lg object-contain" 
                   width="40" 
                   height="40"
                   onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.add('hidden');
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
                   }}
                 />
                 <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>

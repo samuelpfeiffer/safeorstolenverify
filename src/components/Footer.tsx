@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <img 
-                  src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
+                  src="/images/sos-logo.png" 
                   alt="SafeOrStolen logo - stolen goods verification platform for checking IMEI, VIN, and serial numbers" 
                   className="h-12 w-12 filter drop-shadow-lg"
                   width="48"

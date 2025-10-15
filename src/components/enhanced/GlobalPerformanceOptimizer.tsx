@@ -9,7 +9,7 @@ export const GlobalPerformanceOptimizer: React.FC = () => {
 
     // Preload critical resources
     const criticalImages = [
-      '/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png',
+      '/images/sos-logo.png',
       '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png'
     ];
 
