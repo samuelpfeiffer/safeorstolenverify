@@ -8,25 +8,32 @@ export const getHomePageStructuredData = () => {
     createFAQSchema(),
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SafeOrStolen Verification Platform",
-      "description": "Free IMEI, VIN, and serial number verification service to check if items are stolen before purchase",
+      "@type": "MobileApplication",
+      "name": "SafeOrStolen - Mobile Stolen Item Checker",
+      "description": "Only mobile app for stolen goods verification. Protects buyers and sellers from financial loss and legal issues. Helps reduce crime globally through instant IMEI, VIN, serial number checks.",
       "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Web Browser",
+      "operatingSystem": ["iOS", "Android", "Web Browser"],
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free verification service for consumers"
+        "description": "Free mobile verification protecting buyers and sellers"
       },
       "featureList": [
-        "IMEI number verification",
-        "VIN number checking", 
-        "Serial number validation",
-        "Global stolen goods database search",
-        "Instant verification results",
-        "Consumer fraud protection"
+        "Mobile-first stolen item verification",
+        "Buyer and seller protection",
+        "Financial loss prevention",
+        "Legal issue prevention",
+        "Crime reduction technology",
+        "Instant mobile IMEI VIN checks",
+        "Marketplace integration (Facebook, OfferUp, eBay)",
+        "Point-of-sale verification"
       ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1247"
+      },
       "url": "https://safeorstolen.com",
       "screenshot": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
     }

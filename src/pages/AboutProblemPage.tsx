@@ -12,9 +12,9 @@ const AboutProblemPage = () => {
   return (
     <>
       <PageSEO
-        title="About the Problem - The $13 Billion Stolen Goods Crisis"
-        description="Understanding the massive stolen goods problem: $13B market, 2.3M victims yearly, and why innocent buyers need protection from criminal enterprises."
-        keywords="stolen goods crisis, secondhand market problems, consumer protection, criminal marketplace, NICB statistics, How to check if something is stolen, How do I check if something is stolen?, Where to check if something is stolen?, Can I check if something is stolen before I buy it?, I want to check if something is stolen, How do I check if something used is stolen?"
+        title="Mobile App to Check Stolen Items - Protect Buyers & Sellers, Reduce Crime"
+        description="Only mobile app for stolen item verification. Protects buyers AND sellers from financial loss and legal issues while helping reduce crime globally. Check phones, cars, electronics anywhere."
+        keywords="mobile stolen item checker app, protect buyers sellers financial loss, prevent legal issues stolen goods, crime reduction technology, mobile IMEI VIN checker, marketplace safety app, buyer seller protection, How to check if something is stolen on phone, mobile app check stolen items, prevent buying stolen goods legal trouble, seller protection stolen goods"
       />
       <div className="bg-sos text-white min-h-screen pt-16">
         <HeroSection />
