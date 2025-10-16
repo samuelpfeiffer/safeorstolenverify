@@ -15,6 +15,7 @@ interface PricingTierProps {
   interval: 'month' | 'once';
   badge?: boolean;
   hasAPI?: boolean;
+  promotionBadge?: string;
   onSubscribe: (tierName: string) => void;
   isLoading: boolean;
 }
@@ -30,11 +31,15 @@ const PricingTier = ({
   interval,
   badge,
   hasAPI,
+  promotionBadge,
   onSubscribe,
   isLoading
 }: PricingTierProps) => {
-  return <Card className={`relative p-8 ${popular ? 'border-sos-lime shadow-lg shadow-sos-lime/20' : ''}`}>
-      {popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sos-lime to-sos-orange text-black px-4 py-1 rounded-full text-sm font-semibold">
+  return <Card className={`relative p-8 ${popular ? 'border-sos-lime shadow-lg shadow-sos-lime/20' : ''} ${promotionBadge ? 'border-2 border-destructive shadow-lg shadow-destructive/20' : ''}`}>
+      {promotionBadge && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-destructive text-destructive-foreground px-4 py-1 rounded-full text-xs font-bold animate-pulse">
+          {promotionBadge}
+        </div>}
+      {popular && !promotionBadge && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sos-lime to-sos-orange text-black px-4 py-1 rounded-full text-sm font-semibold">
           Best Value
         </div>}
       
@@ -99,10 +104,11 @@ export const ConversionOptimizedPricing = ({
   const casualTiers = [
     {
       ...SUBSCRIPTION_TIERS.free,
-      description: "Everything free for 14 days",
+      description: "🎉 LAUNCH PROMOTION: Everything free for 14 days!",
       cta: "Start Free Trial",
       checksIncluded: SUBSCRIPTION_TIERS.free.monthlyQuota as number,
       interval: SUBSCRIPTION_TIERS.free.interval,
+      promotionBadge: "LIMITED TIME",
     },
     {
       ...SUBSCRIPTION_TIERS.payPerUse,
@@ -128,17 +134,32 @@ export const ConversionOptimizedPricing = ({
   }];
   return <section className="w-full py-20 px-4">
       <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 mb-4 animate-pulse">
+          <span className="text-sm font-bold text-destructive">🎉 LAUNCH PROMOTION - LIMITED TIME ONLY</span>
+        </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
-          Ultra-Simple, Competitive Pricing
+          Everything Free for 14 Days!
         </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Start with unlimited verifications for 14 days, then pay only $0.50 per check or choose unlimited monthly plans. No subscriptions required for casuals.</p>
+        <p className="text-xl text-foreground max-w-3xl mx-auto mb-3">
+          🚀 <span className="text-primary font-bold">Launch Special:</span> Sign up now and get unlimited verifications, 
+          all features unlocked, and full access for 14 days - completely free!
+        </p>
+        <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          No credit card required • Cancel anytime • Join 50,000+ protected buyers
+        </p>
       </div>
 
       {/* Casual Buyers & Sellers Section */}
       <div className="mb-20">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-3">
+            <span className="text-sm font-bold text-secondary">🎁 LAUNCH OFFER</span>
+          </div>
           <h3 className="text-3xl font-bold mb-3">For Casual Buyers & Sellers</h3>
-          <p className="text-lg text-muted-foreground">14-day free trial with unlimited checks, then pay as you go.</p>
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
+            Start with our <span className="font-bold text-primary">14-day launch promotion</span> - everything free! 
+            Then choose a plan that fits your needs.
+          </p>
         </div>
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {casualTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}

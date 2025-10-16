@@ -72,31 +72,31 @@
   }
 
   .dark {
-    --background: 220 30% 8%;  /* Warm dark background */
-    --foreground: 0 0% 98%;  /* Soft white text */
-    --card: 0 0% 100%;  /* Keep cards light even in dark mode */
-    --card-foreground: 220 30% 8%;  /* Dark text on light cards */
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 8%;  /* Dark text on light popovers */
-    --primary: 0 84% 60%;  /* Vibrant red */
+    --background: 0 0% 7%;  /* Near black background */
+    --foreground: 0 0% 98%;  /* White text */
+    --card: 0 0% 12%;  /* Dark gray cards */
+    --card-foreground: 0 0% 98%;  /* White text on dark cards */
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;  /* White text on dark popovers */
+    --primary: 217 91% 60%;  /* Professional blue */
     --primary-foreground: 0 0% 100%;
     --secondary: 142 71% 45%;  /* Green */
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 20% 97%;  /* Light muted even in dark mode */
-    --muted-foreground: 220 15% 30%;  /* Darker for better contrast on light backgrounds */
-    --accent: 210 100% 50%;  /* Blue accent */
+    --muted: 0 0% 18%;  /* Medium gray */
+    --muted-foreground: 0 0% 75%;  /* Light gray text - visible on dark backgrounds */
+    --accent: 217 91% 60%;  /* Blue accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 92%;
-    --input: 220 20% 97%;
-    --ring: 0 84% 60%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 217 91% 60%;
     
-    /* Beautiful gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(0 72% 55%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 30% 8%) 0%, hsl(220 30% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 20% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%) 0%, hsl(210 100% 50%) 100%);
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 76% 48%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
   }
 
   * {

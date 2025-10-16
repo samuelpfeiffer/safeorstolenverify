@@ -7,21 +7,23 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
   free: {
-    name: "Free Trial",
+    name: "🎉 Launch Special",
     price: 0,
     priceDisplay: "Free",
     interval: "once",
     monthlyQuota: 999,
     tier: "free",
     features: [
-      "Unlimited verifications for 14 days",
+      "🚀 LIMITED TIME: Everything free for 14 days",
+      "Unlimited verifications during trial",
       "Full access to all features",
-      "Basic Safe/Stolen results",
+      "PDF receipt generation",
+      "Trust badges & certificates",
       "No credit card required"
     ],
-    receiptsIncluded: false,
-    historyRetention: 0,
-    trustBadges: false,
+    receiptsIncluded: true,
+    historyRetention: 14,
+    trustBadges: true,
     apiAccess: false,
     bulkUpload: false,
     whiteLabel: false,
