@@ -31,3 +31,40 @@ serve(async (req) => {
     Provide 3 variations of optimized ad copy. Each variation should be distinct and designed to appeal to different segments within the target audience.
     
     Format your response as a JSON object with a single key "variations" that contains an array of the 3 optimized ad copy variations.`;
+
+    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'google/gemini-2.5-flash',
+        messages: [
+          { role: 'system', content: 'You are an expert digital advertising strategist.' },
+          { role: 'user', content: prompt }
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('AI Gateway error:', response.status, errorText);
+      return createErrorResponse('AI optimization failed', 500, corsHeaders);
+    }
+
+    const data = await response.json();
+    const content = data.choices[0]?.message?.content;
+
+    if (!content) {
+      return createErrorResponse('No response from AI', 500, corsHeaders);
+    }
+
+    return new Response(JSON.stringify({ variations: JSON.parse(content).variations }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.error('Error in ai-ad-optimizer:', error);
+    return createErrorResponse(error instanceof Error ? error.message : 'Unknown error', 500, corsHeaders);
+  }
+});
