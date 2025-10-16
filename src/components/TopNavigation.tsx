@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/lib/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -10,6 +10,7 @@ import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 const TopNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string>('');
   const {
     user,
     signOut
@@ -18,6 +19,11 @@ const TopNavigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Close mobile menu on navigation
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +31,29 @@ const TopNavigation = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle escape key and body scroll lock for mobile menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
   }, []);
   const handleSignOut = async () => {
     await signOut();
@@ -212,9 +241,9 @@ const TopNavigation = () => {
             </button>
 
             {/* Users Dropdown */}
-            <NavigationMenu>
+            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
               <NavigationMenuList>
-                <NavigationMenuItem>
+                <NavigationMenuItem value="users">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     <Users className="h-4 w-4 mr-2" />
                     For Users
@@ -249,9 +278,9 @@ const TopNavigation = () => {
             </NavigationMenu>
 
             {/* Businesses Dropdown */}
-            <NavigationMenu>
+            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
               <NavigationMenuList>
-                <NavigationMenuItem>
+                <NavigationMenuItem value="businesses">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     <Briefcase className="h-4 w-4 mr-2" />
                     For Businesses
@@ -286,9 +315,9 @@ const TopNavigation = () => {
             </NavigationMenu>
 
             {/* How It Works Dropdown */}
-            <NavigationMenu>
+            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
               <NavigationMenuList>
-                <NavigationMenuItem>
+                <NavigationMenuItem value="howitworks">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     <HelpCircle className="h-4 w-4 mr-2" />
                     How It Works
@@ -323,9 +352,9 @@ const TopNavigation = () => {
             </NavigationMenu>
 
             {/* Resources Dropdown */}
-            <NavigationMenu>
+            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
               <NavigationMenuList>
-                <NavigationMenuItem>
+                <NavigationMenuItem value="resources">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     Resources
                   </NavigationMenuTrigger>
@@ -403,14 +432,22 @@ const TopNavigation = () => {
 
           {/* Mobile menu button - Larger touch target */}
           <div className="lg:hidden">
-            <Button variant="ghost" size="lg" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white hover:bg-white/10 min-h-[48px] min-w-[48px]" aria-label="Toggle menu">
+            <Button variant="ghost" size="lg" onClick={toggleMobileMenu} className="text-white hover:bg-white/10 min-h-[48px] min-w-[48px]" aria-label="Toggle menu">
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation - Improved spacing and touch targets */}
-        {isMobileMenuOpen && <div className="lg:hidden bg-gray-900/95 backdrop-blur-lg rounded-2xl mt-4 p-6 border border-white/10 mb-4">
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <div 
+              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <div className="lg:hidden bg-gray-900/95 backdrop-blur-lg rounded-2xl mt-4 p-6 border border-white/10 mb-4 relative z-50">
             {/* Mobile FasterCapital Branding */}
             <div className="mb-6 pb-4 border-b border-white/10">
               <FasterCapitalBranding />
@@ -522,7 +559,9 @@ const TopNavigation = () => {
                   </Button>
                 </div>}
             </div>
-          </div>}
+          </div>
+          </>
+        )}
       </div>
     </nav>;
 };

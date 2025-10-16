@@ -182,9 +182,7 @@ export const AppRoutes: React.FC = () => {
           
           {/* Unified Multi-Database Verification */}
           <Route path="verify" element={<UnifiedVerificationPage />} />
-          <Route path="stolen-item-checker" element={<UnifiedVerificationPage />} />
           <Route path="vin-check" element={<UnifiedVerificationPage />} />
-          <Route path="imei-check" element={<UnifiedVerificationPage />} />
           
           {/* API Management */}
           <Route path="api" element={<APIManagementPage />} />
@@ -195,7 +193,6 @@ export const AppRoutes: React.FC = () => {
            <Route path="serial-number-checker" element={<SerialNumberCheckerPage />} />
            <Route path="seo-strategy" element={<SEOStrategyPage />} />
            <Route path="check" element={<StolenItemChecker />} />
-           <Route path="verify" element={<Navigate to="/stolen-item-checker" replace />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="subscriptions" element={<PricingPage />} />
           <Route path="pricing" element={<PricingPage />} />

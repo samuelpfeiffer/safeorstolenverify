@@ -1,14 +1,12 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-}
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { createErrorResponse } from '../_shared/errors.ts';
 
 Deno.serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+  
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -31,10 +29,10 @@ Deno.serve(async (req) => {
     }
   } catch (error) {
     console.error('Sitemap generator error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Internal server error', details: error.message }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return createErrorResponse(error, {
+      functionName: 'automated-sitemap',
+      operation: 'generate'
+    }, getCorsHeaders(req.headers.get('origin')));
   }
 });
 
