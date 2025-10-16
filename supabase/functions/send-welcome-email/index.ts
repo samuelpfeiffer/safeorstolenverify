@@ -1,13 +1,10 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { createErrorResponse } from '../_shared/errors.ts';
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
 
 interface WelcomeEmailRequest {
   email: string;
@@ -16,10 +13,10 @@ interface WelcomeEmailRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
-  // Handle CORS preflight requests
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+  
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   if (req.method !== "POST") {
     return new Response("Method not allowed", { 
@@ -167,14 +164,7 @@ const handler = async (req: Request): Promise<Response> => {
 
   } catch (error: any) {
     console.error("[WELCOME-EMAIL] Error sending welcome email:", error);
-    
-    return new Response(JSON.stringify({ 
-      error: error.message || 'Failed to send welcome email',
-      details: error.toString()
-    }), {
-      status: 500,
-      headers: { "Content-Type": "application/json", ...corsHeaders },
-    });
+    return createErrorResponse(error, { functionName: 'send-welcome-email' }, corsHeaders);
   }
 };
 
