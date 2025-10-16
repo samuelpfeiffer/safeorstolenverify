@@ -3,7 +3,6 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Loader2 } from 'lucide-react';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
-
 interface PricingTierProps {
   name: string;
   price: number;
@@ -19,13 +18,12 @@ interface PricingTierProps {
   onSubscribe: (tierName: string) => void;
   isLoading: boolean;
 }
-
-const PricingTier = ({ 
-  name, 
-  price, 
-  description, 
-  features, 
-  cta, 
+const PricingTier = ({
+  name,
+  price,
+  description,
+  features,
+  cta,
   popular,
   checksIncluded,
   pricePerCheck,
@@ -35,13 +33,10 @@ const PricingTier = ({
   onSubscribe,
   isLoading
 }: PricingTierProps) => {
-  return (
-    <Card className={`relative p-8 ${popular ? 'border-sos-lime shadow-lg shadow-sos-lime/20' : ''}`}>
-      {popular && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sos-lime to-sos-orange text-black px-4 py-1 rounded-full text-sm font-semibold">
+  return <Card className={`relative p-8 ${popular ? 'border-sos-lime shadow-lg shadow-sos-lime/20' : ''}`}>
+      {popular && <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sos-lime to-sos-orange text-black px-4 py-1 rounded-full text-sm font-semibold">
           Best Value
-        </div>
-      )}
+        </div>}
       
       <div className="mb-6">
         <h3 className="text-2xl font-bold mb-2">{name}</h3>
@@ -55,69 +50,44 @@ const PricingTier = ({
             {interval === 'once' ? 'one-time' : '/month'}
           </span>
         </div>
-        {pricePerCheck && (
-          <p className="text-sm text-sos-lime mt-1">
+        {pricePerCheck && <p className="text-sm text-sos-lime mt-1">
             ${pricePerCheck.toFixed(2)} per check
-          </p>
-        )}
-        {checksIncluded && (
-          <p className="text-xs text-muted-foreground mt-1">
+          </p>}
+        {checksIncluded && <p className="text-xs text-muted-foreground mt-1">
             {checksIncluded} checks included
-          </p>
-        )}
+          </p>}
       </div>
 
       <ul className="space-y-3 mb-8">
-        {(features || []).map((feature, index) => (
-          <li key={index} className="flex items-start gap-2">
+        {(features || []).map((feature, index) => <li key={index} className="flex items-start gap-2">
             <CheckCircle className="w-5 h-5 text-sos-lime flex-shrink-0 mt-0.5" />
             <span className="text-sm">{feature}</span>
-          </li>
-        ))}
-        {badge && (
-          <li className="flex items-start gap-2">
+          </li>)}
+        {badge && <li className="flex items-start gap-2">
             <CheckCircle className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
             <span className="text-sm font-semibold">✨ Trust badge included</span>
-          </li>
-        )}
-        {hasAPI && (
-          <li className="flex items-start gap-2">
+          </li>}
+        {hasAPI && <li className="flex items-start gap-2">
             <CheckCircle className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
             <span className="text-sm font-semibold">🔌 API access included</span>
-          </li>
-        )}
+          </li>}
       </ul>
 
-      <Button
-        onClick={() => onSubscribe(name)}
-        disabled={isLoading}
-        className={`w-full ${
-          popular 
-            ? 'bg-gradient-to-r from-sos-lime to-sos-orange hover:opacity-90' 
-            : 'bg-primary hover:bg-primary/90'
-        }`}
-        size="lg"
-      >
-        {isLoading ? (
-          <>
+      <Button onClick={() => onSubscribe(name)} disabled={isLoading} className={`w-full ${popular ? 'bg-gradient-to-r from-sos-lime to-sos-orange hover:opacity-90' : 'bg-primary hover:bg-primary/90'}`} size="lg">
+        {isLoading ? <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             Processing...
-          </>
-        ) : (
-          cta
-        )}
+          </> : cta}
       </Button>
-    </Card>
-  );
+    </Card>;
 };
-
 interface ConversionOptimizedPricingProps {
   onSubscribe: (tierName: string) => void;
 }
-
-export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedPricingProps) => {
+export const ConversionOptimizedPricing = ({
+  onSubscribe
+}: ConversionOptimizedPricingProps) => {
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
-
   const handleSubscribeClick = async (tierName: string) => {
     setLoadingTier(tierName);
     try {
@@ -126,47 +96,34 @@ export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedP
       setLoadingTier(null);
     }
   };
-
-  const casualTiers = [
-    {
-      ...SUBSCRIPTION_TIERS.payPerUse,
-      description: "One-time check, no commitment",
-      cta: "Buy Single Check"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.starter,
-      description: "Best for regular sellers",
-      cta: "Start Starter Plan"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.personal,
-      description: "Maximum value per check",
-      cta: "Start Personal Plan"
-    }
-  ];
-
-  const businessTiers = [
-    {
-      ...SUBSCRIPTION_TIERS.professional,
-      description: "Perfect for small businesses",
-      cta: "Start Professional Plan"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.enterprise,
-      description: "For large scale operations",
-      cta: "Contact Sales"
-    }
-  ];
-
-  return (
-    <section className="w-full py-20 px-4">
+  const casualTiers = [{
+    ...SUBSCRIPTION_TIERS.payPerUse,
+    description: "One-time check, no commitment",
+    cta: "Buy Single Check"
+  }, {
+    ...SUBSCRIPTION_TIERS.starter,
+    description: "Best for regular sellers",
+    cta: "Start Starter Plan"
+  }, {
+    ...SUBSCRIPTION_TIERS.personal,
+    description: "Maximum value per check",
+    cta: "Start Personal Plan"
+  }];
+  const businessTiers = [{
+    ...SUBSCRIPTION_TIERS.professional,
+    description: "Perfect for small businesses",
+    cta: "Start Professional Plan"
+  }, {
+    ...SUBSCRIPTION_TIERS.enterprise,
+    description: "For large scale operations",
+    cta: "Contact Sales"
+  }];
+  return <section className="w-full py-20 px-4">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
           Ultra-Simple, Competitive Pricing
         </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          From $0.99 per check to enterprise API access. Choose what fits your needs—no subscriptions required for casuals.
-        </p>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">From $0.50 per check to enterprise API access. Choose what fits your needs—no subscriptions required for casuals.</p>
       </div>
 
       {/* Casual Buyers & Sellers Section */}
@@ -176,14 +133,7 @@ export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedP
           <p className="text-lg text-muted-foreground">No account required. Just verify and go.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {casualTiers.map((tier) => (
-            <PricingTier
-              key={tier.name}
-              {...tier}
-              onSubscribe={handleSubscribeClick}
-              isLoading={loadingTier === tier.name}
-            />
-          ))}
+          {casualTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}
         </div>
       </div>
 
@@ -194,14 +144,7 @@ export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedP
           <p className="text-lg text-muted-foreground">Monthly subscriptions with API access and trust badges.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {businessTiers.map((tier) => (
-            <PricingTier
-              key={tier.name}
-              {...tier}
-              onSubscribe={handleSubscribeClick}
-              isLoading={loadingTier === tier.name}
-            />
-          ))}
+          {businessTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}
         </div>
       </div>
 
@@ -233,6 +176,5 @@ export const ConversionOptimizedPricing = ({ onSubscribe }: ConversionOptimizedP
           Build buyer confidence and close sales faster with "SafeOrStolen Verified" certificates.
         </p>
       </div>
-    </section>
-  );
+    </section>;
 };
