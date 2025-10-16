@@ -1,18 +1,14 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 import Stripe from "https://esm.sh/stripe@16.0.0";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-  "Access-Control-Allow-Methods": "POST, OPTIONS, GET, PUT, PATCH, DELETE",
-};
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { createErrorResponse } from '../_shared/errors.ts';
 
 serve(async (req) => {
-  // Handle CORS preflight requests
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+  
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
     console.log(`[CHECK-SUBSCRIPTION] Request started - Method: ${req.method}`);
@@ -209,16 +205,13 @@ serve(async (req) => {
 
   } catch (error: any) {
     console.log(`[CHECK-SUBSCRIPTION] Unexpected error:`, error);
-    return new Response(
-      JSON.stringify({ 
-        error: "Internal server error", 
-        details: error.message || "Unknown error occurred",
-        subscribed: false,
-        subscription_tier: null,
-        subscription_end: null,
-        action: "Please try again or contact support"
-      }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    return createErrorResponse(
+      error,
+      {
+        functionName: 'check-subscription',
+        operation: 'subscription_check',
+      },
+      corsHeaders
     );
   }
 });
