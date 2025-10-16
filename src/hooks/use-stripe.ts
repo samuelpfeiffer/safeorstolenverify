@@ -79,7 +79,7 @@ export function useStripe() {
         .from("verification_searches")
         .select("*, purchases(*)")
         .eq("id", verificationId)
-        .single();
+        .maybeSingle();
 
       if (error) {
         console.error("Database error:", error);

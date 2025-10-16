@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useOneTimePayment } from '@/hooks/useOneTimePayment';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Badge } from '@/components/ui/badge';
-import { formatPrice, SUBSCRIPTION_TIERS } from '@/utils/pricing';
+import { formatPrice, SUBSCRIPTION_TIERS } from '@/features/pricing';
 import { Loader2, ShieldCheck, Receipt } from 'lucide-react';
 
 const OneTimePaymentTest: React.FC = () => {

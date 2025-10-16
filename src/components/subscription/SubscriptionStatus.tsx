@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Search, Crown, Clock, Settings, RefreshCw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { formatPrice, getSubscriptionPriceId, SUBSCRIPTION_TIERS, getSubscriptionTier } from '@/utils/pricing';
+import { formatPrice, getSubscriptionPriceId, SUBSCRIPTION_TIERS, getSubscriptionTier } from '@/features/pricing';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { useCallback, useMemo } from 'react';
 import { cn } from '@/lib/utils';
@@ -38,37 +38,27 @@ export const SubscriptionStatus = () => {
 
   const handleSubscribeClick = useCallback(async (tier: 'starter' | 'personal' | 'professional') => {
     if (!isAuthenticated) {
-      console.log("Not authenticated, redirecting to auth");
       navigate('/auth?tab=signin');
       return;
     }
     
     try {
-      console.log("Subscribe button clicked for tier:", tier);
       const priceId = getSubscriptionPriceId(tier);
       const checkoutUrl = await createSubscriptionCheckout(priceId);
       if (checkoutUrl) {
         window.open(checkoutUrl, '_blank');
       }
     } catch (error) {
-      console.error('Error creating subscription checkout:', error);
+      // Error handled by useEnhancedSubscription
     }
   }, [isAuthenticated, navigate, createSubscriptionCheckout]);
 
   const handleManageSubscription = useCallback(() => {
-    try {
-      openCustomerPortal();
-    } catch (error) {
-      console.error('Error opening customer portal:', error);
-    }
+    openCustomerPortal();
   }, [openCustomerPortal]);
 
   const handleRefresh = useCallback(() => {
-    try {
-      refreshSubscription();
-    } catch (error) {
-      console.error('Error refreshing subscription:', error);
-    }
+    refreshSubscription();
   }, [refreshSubscription]);
 
   // Premium Subscriber Card

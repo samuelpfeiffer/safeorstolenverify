@@ -105,7 +105,7 @@ export const useBlogPost = (slug: string) => {
         `)
         .eq('slug', slug)
         .eq('status', 'published')
-        .single();
+        .maybeSingle();
 
       if (error) {
         console.error('Error fetching blog post:', error);

@@ -7,7 +7,7 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Crown, Check, Zap, Bug } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
-import { getSubscriptionPriceId } from '@/utils/pricing';
+import { getSubscriptionPriceId } from '@/features/pricing';
 import { PricingGrid } from '@/components/pricing/PricingGrid';
 import { ComprehensivePaymentDebug } from '@/components/debug/ComprehensivePaymentDebug';
 

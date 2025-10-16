@@ -60,7 +60,7 @@ const AISEODashboard = () => {
       .select('*')
       .order('date', { ascending: false })
       .limit(1)
-      .single();
+      .maybeSingle();
 
     setKeywords(kwData || []);
     setSuggestions(sugData || []);

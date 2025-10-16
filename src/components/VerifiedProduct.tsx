@@ -50,7 +50,7 @@ const VerifiedProduct = () => {
             .from('verification_results')
             .select('*')
             .eq('id', verificationId)
-            .single();
+            .maybeSingle();
 
           if (error) {
             console.error('Error fetching verification result:', error);

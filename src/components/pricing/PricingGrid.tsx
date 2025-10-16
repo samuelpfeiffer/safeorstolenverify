@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ProductCard } from './ProductCard';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { useSubscription } from '@/hooks/useSubscription';
 import { toast } from 'sonner';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
@@ -10,22 +10,16 @@ export const PricingGrid = () => {
   const { createSubscriptionCheckout } = useSubscription();
 
   const handleCheckout = async (priceId: string) => {
-    console.log('PricingGrid: handleCheckout called with priceId:', priceId);
     setIsLoading(true);
     try {
-      console.log('PricingGrid: calling createSubscriptionCheckout...');
       const url = await createSubscriptionCheckout(priceId);
-      console.log('PricingGrid: checkout URL received:', url);
       
       if (url) {
-        console.log('PricingGrid: navigating to checkout URL');
         navigateOutOfIframe(url);
       } else {
-        console.error('PricingGrid: no URL received from checkout');
         toast.error('Failed to create checkout session - no URL returned');
       }
     } catch (error) {
-      console.error('PricingGrid: checkout error:', error);
       toast.error(`Failed to start checkout process: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setIsLoading(false);

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Loader2 } from 'lucide-react';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 interface PricingTierProps {
   name: string;
   price: number;

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Check, Crown, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 
 interface PaywallModalProps {
   isOpen: boolean;

@@ -57,7 +57,7 @@ export const useEnhancedSearchLimits = () => {
             .from('subscribers')
             .select('subscribed, subscription_tier')
             .eq('user_id', user.id)
-            .single();
+            .maybeSingle();
 
           if (subscription?.subscribed) {
             return {

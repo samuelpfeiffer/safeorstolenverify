@@ -2,7 +2,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { Crown, Star, UserPlus } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 

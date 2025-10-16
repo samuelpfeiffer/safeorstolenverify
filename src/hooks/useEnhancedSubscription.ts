@@ -3,7 +3,7 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useToast } from '@/hooks/use-toast';
 import { useRequestManager } from '@/hooks/useRequestManager';
 import { supabase } from '@/integrations/supabase/client';
-import { SUBSCRIPTION_TIERS } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS } from '@/features/pricing';
 
 interface SubscriptionData {
   subscribed: boolean;

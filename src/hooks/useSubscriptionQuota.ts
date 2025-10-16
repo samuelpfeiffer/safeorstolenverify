@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
-import { SubscriptionTierKey } from '@/utils/pricing';
+import { SubscriptionTierKey } from '@/features/pricing';
 
 interface QuotaStatus {
   tier: SubscriptionTierKey;

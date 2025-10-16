@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Star, Loader2, AlertTriangle } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
 import { useEnhancedSubscription } from "@/hooks/useEnhancedSubscription";
-import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from "@/utils/pricing";
+import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";

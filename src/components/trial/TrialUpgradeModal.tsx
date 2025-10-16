@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Check, Shield, Star, Clock, Users, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/utils/pricing';
+import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { useTrialStatus } from '@/hooks/useTrialStatus';
 
 interface TrialUpgradeModalProps {

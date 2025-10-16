@@ -1,75 +1,42 @@
-// Production-ready logging utility
-// NO console.log in production - optimized for performance and security
+/**
+ * Production-Safe Logging Utility
+ * Only logs in development, silent in production
+ */
 
-interface LogLevel {
-  ERROR: 'error';
-  WARN: 'warn';
-  INFO: 'info';
-  DEBUG: 'debug';
-}
+const isDevelopment = import.meta.env.DEV;
 
-const LOG_LEVELS: LogLevel = {
-  ERROR: 'error',
-  WARN: 'warn',
-  INFO: 'info',
-  DEBUG: 'debug'
+export const logger = {
+  /**
+   * Log informational messages (dev only)
+   */
+  info: (...args: any[]) => {
+    if (isDevelopment) {
+      console.log('[INFO]', ...args);
+    }
+  },
+
+  /**
+   * Log warning messages (dev only)
+   */
+  warn: (...args: any[]) => {
+    if (isDevelopment) {
+      console.warn('[WARN]', ...args);
+    }
+  },
+
+  /**
+   * Log error messages (always logged for debugging)
+   */
+  error: (...args: any[]) => {
+    console.error('[ERROR]', ...args);
+  },
+
+  /**
+   * Log debug messages (dev only)
+   */
+  debug: (...args: any[]) => {
+    if (isDevelopment) {
+      console.debug('[DEBUG]', ...args);
+    }
+  },
 };
-
-class Logger {
-  private isDevelopment = process.env.NODE_ENV === 'development';
-
-  error(message: string, data?: any) {
-    // Always log errors but without sensitive data in production
-    if (this.isDevelopment) {
-      console.error(`[ERROR] ${message}`, data);
-    } else {
-      // In production, only log to external monitoring service
-      this.reportError(message, data);
-    }
-  }
-
-  warn(message: string, data?: any) {
-    if (this.isDevelopment) {
-      console.warn(`[WARN] ${message}`, data);
-    }
-  }
-
-  info(message: string, data?: any) {
-    if (this.isDevelopment) {
-      console.info(`[INFO] ${message}`, data);
-    }
-  }
-
-  debug(message: string, data?: any) {
-    if (this.isDevelopment) {
-      console.debug(`[DEBUG] ${message}`, data);
-    }
-  }
-
-  // For production analytics/monitoring
-  track(event: string, properties?: Record<string, any>) {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', event, properties);
-    }
-  }
-
-  // Secure logging method that doesn't expose sensitive data
-  secureLog(message: string, safeData?: Record<string, any>) {
-    if (this.isDevelopment) {
-      console.log(`[SECURE] ${message}`, safeData);
-    }
-  }
-
-  private reportError(message: string, data?: any) {
-    // In production, send to monitoring service (Sentry, LogRocket, etc.)
-    // For now, just prevent console spam
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'exception', {
-        description: message,
-        fatal: false
-      });
-    }
-  }
-}
-
-export const logger = new Logger();
