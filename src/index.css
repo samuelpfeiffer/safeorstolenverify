@@ -6,25 +6,25 @@
 
 @layer base {
   :root {
-    /* Trust-focused professional color palette */
-    --background: 210 20% 98%;  /* Soft cool white - professional and clean */
-    --foreground: 222 47% 11%;  /* Deep navy for authority and trust */
-    --card: 0 0% 100%;  /* Pure white cards for clarity */
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    /* Black and gray background palette */
+    --background: 0 0% 7%;  /* Near black background */
+    --foreground: 0 0% 98%;  /* White text */
+    --card: 0 0% 12%;  /* Dark gray cards */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
     --primary: 217 91% 60%;  /* Professional blue - trust and security */
     --primary-foreground: 0 0% 100%;
     --secondary: 142 71% 45%;  /* Success green for verified items */
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 20% 96%;  /* Cool light gray */
-    --muted-foreground: 215 25% 30%;  /* Darker professional gray text - WCAG AA compliant */
+    --muted: 0 0% 18%;  /* Medium gray */
+    --muted-foreground: 0 0% 70%;  /* Light gray text */
     --accent: 217 91% 60%;  /* Blue accent for consistency */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;  /* Alert red for stolen items */
     --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;  /* Subtle professional borders */
-    --input: 0 0% 100%;  /* Clean white inputs */
+    --border: 0 0% 20%;  /* Dark gray borders */
+    --input: 0 0% 12%;  /* Dark input backgrounds */
     --ring: 217 91% 60%;  /* Blue focus ring for trust */
     --radius: 0.75rem;  /* Slightly softer corners */
     
@@ -34,13 +34,13 @@
     --alert-red: 0 84% 60%;  /* Warnings and stolen items */
     --professional-navy: 222 47% 11%;  /* Authority and reliability */
     
-    /* Professional gradients for trust */
+    /* Dark gradients with black and gray */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 76% 48%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(210 20% 98%) 0%, hsl(217 91% 97%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 15%));
     --gradient-trust: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
     --gradient-verified: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 40%) 100%);
-    --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
     
     /* Professional accent colors */
     --accent-blue: 217 91% 60%;
@@ -61,13 +61,13 @@
     --fc-red: 0 72% 55%;
     --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 142 71% 45%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 214 32% 91%;
+    --sidebar-border: 0 0% 20%;
     --sidebar-ring: 217 91% 60%;
   }
 
