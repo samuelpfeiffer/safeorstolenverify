@@ -28,15 +28,15 @@ const Hero = () => {
 
           {/* Trust-focused Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
-            Verify Items Instantly
+            Is This Stolen? Find Out in 30 Seconds
             <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Buy with Confidence & Peace of Mind
+              Check Before You Buy—Avoid Scams & Stolen Goods
             </span>
           </h1>
           
           {/* Trust Value Proposition */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Trusted by thousands to verify phones, vehicles, electronics, and firearms. Check serial numbers, IMEI, VIN instantly—protecting you from stolen goods and fraud.
+            Don't get scammed on Facebook Marketplace, OfferUp, or eBay. FREE IMEI, VIN & serial number checker instantly verifies if phones, cars, electronics are stolen. Trusted by 50,000+ safe buyers.
           </p>
 
           {/* Professional Search Interface */}

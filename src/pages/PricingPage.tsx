@@ -275,9 +275,9 @@ const PricingPage = () => {
   return (
     <ErrorBoundary>
       <PageSEO
-        title="Stop Losing Money to Scams - Pricing Plans | SafeOrStolen"
-        description="Choose your protection level. All plans include money-back guarantee and instant access to comprehensive verification databases. Join 25,000+ protected buyers."
-        keywords="don't get scammed pricing, buyer protection plans, marketplace safety subscription, avoid stolen goods membership, verification pricing"
+        title="Pricing: Never Buy Stolen Goods Again | Free Trial + Paid Plans"
+        description="Protect yourself from scams and stolen goods. FREE plan: 4 checks/day. Paid plans from $7.99/mo with unlimited IMEI, VIN, serial number verification. Money-back guarantee. Join 50K+ protected buyers."
+        keywords="how much does stolen goods verification cost, free IMEI check pricing, marketplace protection subscription, avoid scams membership, buyer protection cost, check if stolen price, Facebook Marketplace safety plan"
         canonical="/pricing"
         structuredData={structuredData}
       />

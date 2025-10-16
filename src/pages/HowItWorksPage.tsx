@@ -80,9 +80,9 @@ const HowItWorksPage = () => {
   return (
     <>
       <PageSEO
-        title="How It Works: Verify IMEI, VIN & Serial Numbers in 30 Seconds"
-        description="Learn how Safe or Stolen instantly verifies if items are stolen by checking IMEI, VIN, and serial numbers against 50M+ records worldwide."
-        keywords="how to check IMEI, how to verify VIN, serial number lookup process, stolen goods verification, item verification steps"
+        title="How to Check if a Phone/Car is Stolen Before Buying | 3 Simple Steps"
+        description="Step-by-step guide: How do I know if something is stolen? Enter IMEI/VIN/serial → We scan 50M+ stolen goods databases → Get instant Safe or Stolen status. Works for phones, cars, electronics."
+        keywords="how do I check if phone is stolen, how to verify car not stolen, can I check if something is stolen, IMEI check tutorial, VIN verification guide, stolen goods database search, check before buying used items"
         canonical="/how-it-works"
         structuredData={[structuredData]}
       />
