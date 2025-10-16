@@ -60,32 +60,30 @@ export const useSearchLimits = () => {
         return;
       }
 
-      // Check free tier usage (2 searches total, expires in 14 days)
+      // Check trial status (14-day trial with unlimited checks)
       const { data: userProfile } = await supabase
         .from('profiles')
         .select('created_at')
         .eq('id', user.id)
         .single();
 
-      // Check if trial has expired (14 days from account creation)
-      let isTrialExpired = false;
       if (userProfile?.created_at) {
         const createdAt = new Date(userProfile.created_at);
-        const expiresAt = new Date(createdAt);
-        expiresAt.setDate(expiresAt.getDate() + 14);
-        isTrialExpired = new Date() > expiresAt;
+        const trialExpiresAt = new Date(createdAt);
+        trialExpiresAt.setDate(trialExpiresAt.getDate() + 14);
+        const isTrialActive = new Date() < trialExpiresAt;
+
+        if (isTrialActive) {
+          // Unlimited checks during 14-day trial
+          setRemainingSearches(999);
+          setHasReachedLimit(false);
+          return;
+        }
       }
 
-      const { count } = await supabase
-        .from('verification_results')
-        .select('*', { count: 'exact', head: true })
-        .eq('user_id', user.id);
-
-      const used = count || 0;
-      const remaining = isTrialExpired ? 0 : Math.max(0, 2 - used);
-      
-      setRemainingSearches(remaining);
-      setHasReachedLimit(remaining === 0 || isTrialExpired);
+      // Trial expired - no more checks
+      setRemainingSearches(0);
+      setHasReachedLimit(true);
 
     } catch (error) {
       console.error('Error checking user limits:', error);
@@ -111,7 +109,7 @@ export const useSearchLimits = () => {
       // No searches allowed without account - must sign up first
       toast({
         title: "Sign Up Required",
-        description: "Create your free account to get 2 free verifications (expires in 14 days)",
+        description: "Create your free account to get unlimited verifications for 14 days",
         variant: "destructive",
       });
       return false;

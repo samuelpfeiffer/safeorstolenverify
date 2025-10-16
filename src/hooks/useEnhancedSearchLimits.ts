@@ -87,18 +87,34 @@ export const useEnhancedSearchLimits = () => {
             };
           }
 
-          // Check free tier usage (2 searches total, valid for 14 days)
-          const { count } = await supabase
-            .from('verification_results')
-            .select('*', { count: 'exact', head: true })
-            .eq('user_id', user.id);
+          // Check trial status (14-day trial with unlimited checks)
+          const { data: userProfile } = await supabase
+            .from('profiles')
+            .select('created_at')
+            .eq('id', user.id)
+            .single();
 
-          const used = count || 0;
-          const remaining = Math.max(0, 4 - used);
-          
+          if (userProfile?.created_at) {
+            const createdAt = new Date(userProfile.created_at);
+            const trialExpiresAt = new Date(createdAt);
+            trialExpiresAt.setDate(trialExpiresAt.getDate() + 14);
+            const isTrialActive = new Date() < trialExpiresAt;
+
+            if (isTrialActive) {
+              // Unlimited checks during 14-day trial
+              return {
+                remainingSearches: 999,
+                hasReachedLimit: false,
+                isSubscribed: false,
+                isLoading: false
+              };
+            }
+          }
+
+          // Trial expired - no more checks
           return {
-            remainingSearches: remaining,
-            hasReachedLimit: remaining === 0,
+            remainingSearches: 0,
+            hasReachedLimit: true,
             isSubscribed: false,
             isLoading: false
           };

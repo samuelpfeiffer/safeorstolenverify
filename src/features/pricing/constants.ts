@@ -7,15 +7,15 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
   free: {
-    name: "Free IMEI Verification",
+    name: "Free Trial",
     price: 0,
     priceDisplay: "Free",
     interval: "once",
-    monthlyQuota: 2,
+    monthlyQuota: 999,
     tier: "free",
     features: [
-      "2 free verifications",
-      "Valid for 14 days",
+      "Unlimited verifications for 14 days",
+      "Full access to all features",
       "Basic Safe/Stolen results",
       "No credit card required"
     ],

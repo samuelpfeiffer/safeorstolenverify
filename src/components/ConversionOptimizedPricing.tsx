@@ -99,7 +99,7 @@ export const ConversionOptimizedPricing = ({
   const casualTiers = [
     {
       ...SUBSCRIPTION_TIERS.free,
-      description: "Perfect for one-time buyers",
+      description: "Everything free for 14 days",
       cta: "Start Free Trial",
       checksIncluded: SUBSCRIPTION_TIERS.free.monthlyQuota as number,
       interval: SUBSCRIPTION_TIERS.free.interval,
@@ -131,14 +131,14 @@ export const ConversionOptimizedPricing = ({
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
           Ultra-Simple, Competitive Pricing
         </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Start with 2 free verifications, then pay only $0.50 per check or choose unlimited monthly plans. No subscriptions required for casuals.</p>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Start with unlimited verifications for 14 days, then pay only $0.50 per check or choose unlimited monthly plans. No subscriptions required for casuals.</p>
       </div>
 
       {/* Casual Buyers & Sellers Section */}
       <div className="mb-20">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold mb-3">For Casual Buyers & Sellers</h3>
-          <p className="text-lg text-muted-foreground">Start free, then pay as you go. No account required for paid checks.</p>
+          <p className="text-lg text-muted-foreground">14-day free trial with unlimited checks, then pay as you go.</p>
         </div>
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {casualTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}

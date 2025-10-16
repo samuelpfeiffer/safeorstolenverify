@@ -14,7 +14,7 @@ export interface TrialStatus {
 }
 
 const TRIAL_DURATION_DAYS = 14;
-const TRIAL_CHECK_LIMIT = 2;
+const TRIAL_CHECK_LIMIT = 999; // Unlimited checks during trial
 
 export const useTrialStatus = () => {
   const { user } = useAuth();
