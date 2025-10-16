@@ -52,6 +52,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$0.50",
     interval: "once",
     monthlyQuota: 1,
+    stripePriceId: "prod_T9lOGzQX72aTYu",
     tier: "payPerUse",
     features: [
       "$0.50 per verification",
@@ -76,7 +77,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 15,
     overageRate: 0.50,
-    stripePriceId: "price_starter_monthly_499",
+    stripePriceId: "prod_TDfkVL8GE1dRt5",
     tier: "starter",
     features: [
       "15 verifications per month",
@@ -102,7 +103,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 50,
     overageRate: 0.40,
-    stripePriceId: "price_personal_monthly_999",
+    stripePriceId: "prod_TDg5LsN4Fw5vtg",
     tier: "personal",
     popular: true,
     features: [
@@ -129,7 +130,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: "price_professional_monthly_2999",
+    stripePriceId: "prod_TDg5LsN4Fw5vtg",
     tier: "professional",
     features: [
       "Unlimited verifications",
@@ -155,7 +156,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "Custom",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: "price_enterprise_custom",
+    stripePriceId: "prod_TDg9BzuF9bPHAI",
     tier: "enterprise",
     features: [
       "Unlimited verifications",

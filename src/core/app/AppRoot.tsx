@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import { SOSFooter } from '@/components/layout/SOSFooter';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
@@ -44,11 +44,13 @@ export const AppRoot: React.FC = () => {
   return (
     <ErrorBoundary>
       <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <PWAProvider>
-              <ThemeProvider>
-                <Router>
+        <QueryErrorResetBoundary>
+          {({ reset }) => (
+            <QueryClientProvider client={queryClient}>
+              <AuthProvider>
+                <PWAProvider>
+                  <ThemeProvider>
+                    <Router>
                   <CriticalCSSInline />
                   <SpeedOptimizer />
                   <MasterSEO />
@@ -66,14 +68,16 @@ export const AppRoot: React.FC = () => {
                     </main>
                     <SOSFooter />
                   </div>
-                  <PWAInstallBanner />
-                  <AppDownloadBot />
-                  <Toaster />
-                </Router>
-              </ThemeProvider>
-            </PWAProvider>
-          </AuthProvider>
-        </QueryClientProvider>
+                      <PWAInstallBanner />
+                      <AppDownloadBot />
+                      <Toaster />
+                    </Router>
+                  </ThemeProvider>
+                </PWAProvider>
+              </AuthProvider>
+            </QueryClientProvider>
+          )}
+        </QueryErrorResetBoundary>
       </HelmetProvider>
     </ErrorBoundary>
   );

@@ -17,8 +17,15 @@ if (!container) {
 }
 
 const root = createRoot(container);
+
+// Conditionally use StrictMode to prevent HMR context errors in development
+const isDev = import.meta.env.DEV;
 root.render(
-  <React.StrictMode>
+  isDev ? (
     <AppRoot />
-  </React.StrictMode>
+  ) : (
+    <React.StrictMode>
+      <AppRoot />
+    </React.StrictMode>
+  )
 );

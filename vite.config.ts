@@ -17,6 +17,8 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    // Prevent duplicate React instances that cause context errors
+    dedupe: ['react', 'react-dom', '@tanstack/react-query'],
   },
   optimizeDeps: {
     include: [
