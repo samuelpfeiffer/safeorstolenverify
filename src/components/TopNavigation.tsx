@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+import sosLogo from '@/assets/new-sos-logo.png';
 const TopNavigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -206,21 +207,13 @@ const TopNavigation = () => {
             <button onClick={() => navigate('/')} className="flex items-center gap-3 group transition-transform hover:scale-105" aria-label="SafeOrStolen Home">
               <div className="relative">
                 <img 
-                  src="/images/sos-logo.png" 
-                  alt="SafeOrStolen Logo" 
-                  className="h-10 w-10 filter drop-shadow-lg object-contain" 
-                  width="40" 
-                  height="40"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = 'none';
-                  }}
+                  src={sosLogo}
+                  alt="SafeOrStolen - Verify Before You Buy or Sell" 
+                  className="h-12 w-auto filter drop-shadow-lg object-contain" 
+                  width="auto" 
+                  height="48"
                 />
-                <div className="absolute -inset-2 bg-sos-orange/20 rounded-full blur-xl group-hover:bg-sos-orange/30 transition-colors"></div>
-              </div>
-              <div className="sm:block">
-                <span className="text-foreground font-bold text-xl tracking-tight">SafeOrStolen</span>
-                <div className="text-xs text-primary font-medium">Verify Before You Buy</div>
+                <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors"></div>
               </div>
             </button>
           </div>
