@@ -10,7 +10,7 @@ const DEFAULT_CONFIG = {
     search_history: { maxRequests: 100, windowMinutes: 60 }
   },
   search_limits: {
-    free_tier: { total_searches: 4, reset_period: 'never' },
+    free_tier: { total_searches: 2, reset_period: 'never' },
     basic_tier: { total_searches: 'unlimited', reset_period: 'monthly' },
     premium_tier: { total_searches: 'unlimited', reset_period: 'monthly' }
   },

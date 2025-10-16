@@ -34,6 +34,12 @@ const PricingPage = () => {
   // Remove duplicate price IDs - using centralized pricing config
 
   const handleSubscribe = useCallback(async (tier: string) => {
+    // Handle free tier
+    if (tier.toLowerCase().includes('free')) {
+      handleFreeStart();
+      return;
+    }
+
     if (!isAuthenticated) {
       localStorage.setItem('pendingSubscription', tier);
       toast({
@@ -186,7 +192,7 @@ const PricingPage = () => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
     } else {
-      navigate('/');
+      navigate('/verify');
     }
   };
 

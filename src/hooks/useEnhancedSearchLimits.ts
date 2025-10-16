@@ -87,7 +87,7 @@ export const useEnhancedSearchLimits = () => {
             };
           }
 
-          // Check free tier usage (4 searches total)
+          // Check free tier usage (2 searches total, valid for 14 days)
           const { count } = await supabase
             .from('verification_results')
             .select('*', { count: 'exact', head: true })

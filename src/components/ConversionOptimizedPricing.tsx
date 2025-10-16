@@ -96,8 +96,16 @@ export const ConversionOptimizedPricing = ({
       setLoadingTier(null);
     }
   };
-  const casualTiers = [{
-    ...SUBSCRIPTION_TIERS.payPerUse,
+  const casualTiers = [
+    {
+      ...SUBSCRIPTION_TIERS.free,
+      description: "Perfect for one-time buyers",
+      cta: "Start Free Trial",
+      checksIncluded: SUBSCRIPTION_TIERS.free.monthlyQuota as number,
+      interval: SUBSCRIPTION_TIERS.free.interval,
+    },
+    {
+      ...SUBSCRIPTION_TIERS.payPerUse,
     description: "One-time check, no commitment",
     cta: "Buy Single Check"
   }, {
@@ -123,16 +131,16 @@ export const ConversionOptimizedPricing = ({
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
           Ultra-Simple, Competitive Pricing
         </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">From $0.50 per check to enterprise API access. Choose what fits your needs—no subscriptions required for casuals.</p>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Start with 2 free verifications, then pay only $0.50 per check or choose unlimited monthly plans. No subscriptions required for casuals.</p>
       </div>
 
       {/* Casual Buyers & Sellers Section */}
       <div className="mb-20">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold mb-3">For Casual Buyers & Sellers</h3>
-          <p className="text-lg text-muted-foreground">No account required. Just verify and go.</p>
+          <p className="text-lg text-muted-foreground">Start free, then pay as you go. No account required for paid checks.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {casualTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}
         </div>
       </div>
@@ -155,7 +163,7 @@ export const ConversionOptimizedPricing = ({
           <p className="text-muted-foreground">Items Tracked</p>
         </div>
         <div className="p-6 rounded-lg bg-card border border-border">
-          <div className="text-4xl font-bold text-sos-lime mb-2">$0.99</div>
+          <div className="text-4xl font-bold text-sos-lime mb-2">Free</div>
           <p className="text-muted-foreground">Starting Price</p>
         </div>
         <div className="p-6 rounded-lg bg-card border border-border">
