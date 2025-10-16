@@ -25,7 +25,7 @@ export interface SubscriptionTier {
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
   free: {
-    name: "Safety Check",
+    name: "Free IMEI Verification",
     price: 0,
     priceDisplay: "Free",
     interval: "once",
@@ -47,7 +47,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   payPerUse: {
-    name: "Pay Per Check",
+    name: "Single Verification",
     price: 50, // $0.50
     priceDisplay: "$0.50",
     interval: "once",
@@ -70,7 +70,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   starter: {
-    name: "Peace of Mind",
+    name: "Starter Plan",
     price: 499, // $4.99
     priceDisplay: "$4.99",
     interval: "month",
@@ -96,7 +96,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   personal: {
-    name: "Trusted Seller",
+    name: "Personal Plan",
     price: 999, // $9.99
     priceDisplay: "$9.99",
     interval: "month",
@@ -124,7 +124,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   professional: {
-    name: "Business Verified",
+    name: "Professional Plan",
     price: 2999, // $29.99
     priceDisplay: "$29.99",
     interval: "month",
@@ -150,7 +150,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   enterprise: {
-    name: "Scale Secure",
+    name: "Enterprise Plan",
     price: 9900, // $99.00 starting
     priceDisplay: "Custom",
     interval: "month",
