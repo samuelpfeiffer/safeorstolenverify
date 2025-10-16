@@ -1,20 +1,18 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { createErrorResponse } from '../_shared/errors.ts';
 
 const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+  
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
     const { topic, keywords, contentType, tone } = await req.json();
@@ -146,13 +144,10 @@ Format the response as JSON with these fields:
     });
 
   } catch (error) {
-    console.error('Error in ai-blog-generator function:', error);
-    return new Response(JSON.stringify({ 
-      success: false,
-      error: error.message 
-    }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    return createErrorResponse(
+      error,
+      { functionName: 'ai-blog-generator' },
+      corsHeaders
+    );
   }
 });

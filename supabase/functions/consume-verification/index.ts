@@ -1,16 +1,14 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import Stripe from "https://esm.sh/stripe@14.21.0";
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { createErrorResponse } from '../_shared/errors.ts';
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+  
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
     const supabaseClient = createClient(
@@ -242,10 +240,10 @@ serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('Verification consumption error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    return createErrorResponse(
+      error,
+      { functionName: 'consume-verification' },
+      corsHeaders
     );
   }
 });
