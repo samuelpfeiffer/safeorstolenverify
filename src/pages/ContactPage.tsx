@@ -61,7 +61,7 @@ const ContactPage = () => {
   const localBusinessSchema = createLocalBusinessSchema();
 
   return (
-    <div className="bg-sos text-white min-h-screen">
+    <div className="bg-background text-white min-h-screen">
       <PageSEO
         title="Contact Safe or Stolen - Support, Partnerships & Media Inquiries"
         description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: support@safeorstolen.com"
@@ -78,7 +78,7 @@ const ContactPage = () => {
               <Phone className="h-5 w-5 text-sos-orange" />
               <div>
                 <h3 className="font-medium">Phone</h3>
-                <p className="text-gray-300">(206) 249-2203</p>
+                <p className="text-foreground/90">(206) 249-2203</p>
               </div>
             </div>
 
@@ -86,7 +86,7 @@ const ContactPage = () => {
               <Mail className="h-5 w-5 text-sos-orange" />
               <div>
                 <h3 className="font-medium">Email</h3>
-                <p className="text-gray-300">support@safeorstolen.com</p>
+                <p className="text-foreground/90">support@safeorstolen.com</p>
               </div>
             </div>
             
@@ -94,7 +94,7 @@ const ContactPage = () => {
               <MapPin className="h-5 w-5 text-sos-orange" />
               <div>
                 <h3 className="font-medium">Location</h3>
-                <p className="text-gray-300">Phoenix, AZ</p>
+                <p className="text-foreground/90">Phoenix, AZ</p>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ const ContactPage = () => {
             <div>
               <Input 
                 id="name" 
-                className="bg-secondary/50" 
+                className="bg-card border-border" 
                 placeholder="Name*"
                 value={formData.name}
                 onChange={handleInputChange}
@@ -114,7 +114,7 @@ const ContactPage = () => {
               <Input 
                 id="email" 
                 type="email" 
-                className="bg-secondary/50" 
+                className="bg-card border-border" 
                 placeholder="Email*"
                 value={formData.email}
                 onChange={handleInputChange}
@@ -124,7 +124,7 @@ const ContactPage = () => {
             <div>
               <Textarea 
                 id="message" 
-                className="bg-secondary/50 min-h-24" 
+                className="bg-card border-border min-h-24" 
                 placeholder="Your message*"
                 value={formData.message}
                 onChange={handleInputChange}

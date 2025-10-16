@@ -7,7 +7,7 @@ import { Loader2 } from 'lucide-react';
  */
 export const AppLoadingScreen: React.FC = () => {
   return (
-    <div className="min-h-screen bg-sos flex items-center justify-center">
+    <div className="min-h-screen bg-background flex items-center justify-center">
       <div className="text-center space-y-6">
         {/* Logo */}
         <div className="relative">
