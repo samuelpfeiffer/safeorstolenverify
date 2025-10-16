@@ -10,14 +10,14 @@ export const CallToActionSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Join the Fight Against Stolen Goods</h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-xl text-foreground/90 mb-8 leading-relaxed">
             Every verification makes the marketplace safer. Every protected purchase weakens criminal networks. 
             Together, we can eliminate the stolen goods crisis.
           </p>
           
           <div className="bg-gradient-to-r from-sos/50 to-sos-dark/50 rounded-lg p-8 mb-8 border border-sos-lime/30">
             <h3 className="text-lg font-semibold text-sos-lime mb-4">Ready to Get Started?</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-foreground/90 mb-6">
               Join thousands of protected consumers who verify before they buy. 
               Your first verification could save you thousands.
             </p>

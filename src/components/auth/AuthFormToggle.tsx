@@ -8,7 +8,7 @@ interface AuthFormToggleProps {
 export const AuthFormToggle = ({ mode, onToggleMode, disabled }: AuthFormToggleProps) => {
   return (
     <div className="text-center">
-      <span className="text-gray-400">
+      <span className="text-foreground/80">
         {mode === 'signin' ? "Don't have an account? " : "Already have an account? "}
       </span>
       <button

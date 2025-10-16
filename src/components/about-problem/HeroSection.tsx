@@ -42,7 +42,7 @@ export const HeroSection = () => {
               <CardContent className="p-6 text-center">
                 <DollarSign className="h-8 w-8 text-red-400 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-red-400 mb-1">$13B</div>
-                <div className="text-sm text-gray-300">Annual stolen goods market</div>
+                <div className="text-sm text-foreground/90">Annual stolen goods market</div>
               </CardContent>
             </Card>
             
@@ -50,7 +50,7 @@ export const HeroSection = () => {
               <CardContent className="p-6 text-center">
                 <TrendingDown className="h-8 w-8 text-orange-400 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-orange-400 mb-1">2.3M</div>
-                <div className="text-sm text-gray-300">Victims annually</div>
+                <div className="text-sm text-foreground/90">Victims annually</div>
               </CardContent>
             </Card>
             
@@ -58,7 +58,7 @@ export const HeroSection = () => {
               <CardContent className="p-6 text-center">
                 <AlertTriangle className="h-8 w-8 text-yellow-400 mx-auto mb-3" />
                 <div className="text-2xl font-bold text-yellow-400 mb-1">95%</div>
-                <div className="text-sm text-gray-300">Purchases go unchecked</div>
+                <div className="text-sm text-foreground/90">Purchases go unchecked</div>
               </CardContent>
             </Card>
           </div>

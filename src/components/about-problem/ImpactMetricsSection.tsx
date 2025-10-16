@@ -36,7 +36,7 @@ export const ImpactMetricsSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">Measurable Impact</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Since launch, Safe Or Stolen has demonstrated real, quantifiable results in protecting 
               consumers and disrupting criminal networks.
             </p>
@@ -55,7 +55,7 @@ export const ImpactMetricsSection = () => {
                   </div>
                   <div className="text-3xl font-bold text-white mb-2">{metric.metric}</div>
                   <div className="text-sos-orange font-semibold mb-2">{metric.label}</div>
-                  <div className="text-xs text-gray-300">{metric.description}</div>
+                  <div className="text-xs text-foreground/90">{metric.description}</div>
                 </CardContent>
               </Card>
             ))}
@@ -65,7 +65,7 @@ export const ImpactMetricsSection = () => {
             <Card className="bg-gradient-to-br from-green-900/30 to-sos-lime/20 border-sos-lime/30">
               <CardContent className="p-8">
                 <h3 className="text-xl font-bold text-sos-lime mb-4">Consumer Success Stories</h3>
-                <blockquote className="text-gray-300 italic mb-4">
+                <blockquote className="text-foreground/90 italic mb-4">
                   "Safe Or Stolen saved me from buying a stolen MacBook. The seller seemed legitimate, 
                   but the verification showed it was reported stolen just days before. I avoided legal 
                   trouble and losing $1,200."
@@ -77,7 +77,7 @@ export const ImpactMetricsSection = () => {
             <Card className="bg-gradient-to-br from-orange-900/30 to-sos-orange/20 border-sos-orange/30">
               <CardContent className="p-8">
                 <h3 className="text-xl font-bold text-sos-orange mb-4">Law Enforcement Impact</h3>
-                <blockquote className="text-gray-300 italic mb-4">
+                <blockquote className="text-foreground/90 italic mb-4">
                   "Safe Or Stolen has become an invaluable tool for our investigations. When consumers 
                   verify items, it helps us track stolen goods and build stronger cases against thieves."
                 </blockquote>

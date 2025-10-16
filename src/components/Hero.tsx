@@ -17,7 +17,7 @@ const Hero = () => {
       navigate('/dashboard');
     }
   };
-  return <div className="relative bg-white">
+  return <div className="relative bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto text-center space-y-12">
           
@@ -40,7 +40,7 @@ const Hero = () => {
           </p>
 
           {/* Professional Search Interface */}
-          <div className="max-w-2xl mx-auto bg-white p-10 rounded-2xl shadow-trust border border-primary/20 animate-fade-in">
+          <div className="max-w-2xl mx-auto bg-card p-10 rounded-2xl shadow-trust border border-primary/20 animate-fade-in">
             <div className="flex items-center gap-3 mb-8 px-6 py-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl border border-primary/20">
               <Shield className="h-7 w-7 text-primary" />
               <span className="text-lg font-semibold text-foreground">Secure Verification - Enter Your Item Details</span>

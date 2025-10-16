@@ -79,7 +79,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
           </div>
         </div>
 
-        <div className="bg-white/50 rounded-lg p-4 border">
+        <div className="bg-card/50 rounded-lg p-4 border">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Zap className="h-5 w-5 text-yellow-500" />
             <Badge className="bg-red-500 text-white">Limited Time Offer</Badge>
@@ -104,7 +104,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
           </Button>
         </div>
 
-        <div className="text-xs text-gray-500 space-y-1">
+        <div className="text-xs text-muted-foreground space-y-1">
           <p>✓ Instant activation • ✓ No setup fees • ✓ Bank-level security</p>
           <p className="font-medium">Join 25,000+ smart buyers who refuse to buy stolen goods</p>
         </div>

@@ -32,7 +32,7 @@ export const SolutionSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">Our Revolutionary Solution</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Safe Or Stolen is the world's first comprehensive verification system that bridges 
               law enforcement databases with consumer protection, creating an impenetrable shield 
               against stolen goods purchases.
@@ -51,7 +51,7 @@ export const SolutionSection = () => {
                     </div>
                     <h3 className="text-lg font-semibold text-sos-lime">{feature.title}</h3>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  <p className="text-foreground/90 leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -65,21 +65,21 @@ export const SolutionSection = () => {
                   <span className="text-sos-lime font-bold text-lg">1</span>
                 </div>
                 <h4 className="font-semibold text-white">Upload or Scan</h4>
-                <p className="text-gray-300 text-sm">Take a photo or enter the item's serial number, IMEI, or unique identifier</p>
+                <p className="text-foreground/90 text-sm">Take a photo or enter the item's serial number, IMEI, or unique identifier</p>
               </div>
               <div className="space-y-3">
                 <div className="w-12 h-12 bg-sos-lime/20 rounded-full flex items-center justify-center mx-auto">
                   <span className="text-sos-lime font-bold text-lg">2</span>
                 </div>
                 <h4 className="font-semibold text-white">Instant Analysis</h4>
-                <p className="text-gray-300 text-sm">Our AI searches multiple databases and cross-references theft reports in real-time</p>
+                <p className="text-foreground/90 text-sm">Our AI searches multiple databases and cross-references theft reports in real-time</p>
               </div>
               <div className="space-y-3">
                 <div className="w-12 h-12 bg-sos-lime/20 rounded-full flex items-center justify-center mx-auto">
                   <span className="text-sos-lime font-bold text-lg">3</span>
                 </div>
                 <h4 className="font-semibold text-white">Clear Verdict</h4>
-                <p className="text-gray-300 text-sm">Get a definitive "Safe" or "Stolen" result with detailed evidence and next steps</p>
+                <p className="text-foreground/90 text-sm">Get a definitive "Safe" or "Stolen" result with detailed evidence and next steps</p>
               </div>
             </div>
           </div>

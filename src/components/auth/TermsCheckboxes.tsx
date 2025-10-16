@@ -27,7 +27,7 @@ export const TermsCheckboxes = ({
           disabled={disabled}
           className="border-gray-600 data-[state=checked]:bg-sos-orange data-[state=checked]:border-sos-orange"
         />
-        <Label htmlFor="terms" className="text-sm text-gray-300 leading-relaxed">
+        <Label htmlFor="terms" className="text-sm text-foreground/90 leading-relaxed">
           I agree to the{' '}
           <Link
             to="/terms"
@@ -48,7 +48,7 @@ export const TermsCheckboxes = ({
           disabled={disabled}
           className="border-gray-600 data-[state=checked]:bg-sos-orange data-[state=checked]:border-sos-orange"
         />
-        <Label htmlFor="privacy" className="text-sm text-gray-300 leading-relaxed">
+        <Label htmlFor="privacy" className="text-sm text-foreground/90 leading-relaxed">
           I agree to the{' '}
           <Link
             to="/privacy"

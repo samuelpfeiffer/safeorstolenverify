@@ -111,11 +111,11 @@ const VerifiedProduct = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Verification Results</h2>
           <div className="flex justify-center items-center space-x-2 mb-4">
             <AlertTriangle className="h-6 w-6 text-yellow-500" />
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-foreground/90">
               {error || 'No verification data available'}
             </p>
           </div>
-          <p className="text-gray-400 mb-8">
+          <p className="text-foreground/80 mb-8">
             {serialNumber ? 'Try performing a new verification for this item.' : 'Search for an item to see verification results.'}
           </p>
           <Button 
@@ -134,7 +134,7 @@ const VerifiedProduct = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Real Verification Results</h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/90 max-w-2xl mx-auto">
             Verified against real stolen goods databases and manufacturer registries.
           </p>
         </div>

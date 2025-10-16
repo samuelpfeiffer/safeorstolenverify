@@ -129,7 +129,7 @@ export const SignUpFormSecure = ({ onSuccess }: SignUpFormSecureProps) => {
         {form.passwordStrength && form.passwordStrength.score > 0 && (
           <div className="mt-2">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-xs text-gray-400">Password Strength</span>
+              <span className="text-xs text-foreground/80">Password Strength</span>
               <span className={cn('text-xs font-medium', form.passwordStrength.color)}>
                 {form.passwordStrength.label}
               </span>

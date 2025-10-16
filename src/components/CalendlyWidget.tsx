@@ -87,7 +87,7 @@ export const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({
       </Card>
 
       {/* Embedded Calendly Widget */}
-      <div className="border rounded-lg overflow-hidden bg-white">
+      <div className="border rounded-lg overflow-hidden bg-card">
         <div
           className="calendly-inline-widget"
           data-url={url}
