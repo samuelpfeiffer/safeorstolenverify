@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/components/ui/use-toast';
 import { Loader2, Sparkles, FileText, Eye, Download } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import DOMPurify from 'dompurify';
 
 interface GeneratedBlogPost {
   id: string;
@@ -306,12 +307,18 @@ export const AIBlogGenerator: React.FC = () => {
                 </div>
               </div>
 
-              {showPreview && (
+              {showPreview && generatedPost && (
                 <div className="border-t pt-4">
                   <Label className="text-sm font-medium">Content Preview</Label>
                   <div 
                     className="prose max-w-none mt-2 p-4 bg-muted rounded"
-                    dangerouslySetInnerHTML={{ __html: generatedPost.content }}
+                    dangerouslySetInnerHTML={{ 
+                      __html: DOMPurify.sanitize(generatedPost.content, {
+                        ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'a', 'blockquote', 'code', 'pre'],
+                        ALLOWED_ATTR: ['href', 'target', 'rel', 'class'],
+                        ALLOW_DATA_ATTR: false
+                      })
+                    }}
                   />
                 </div>
               )}
