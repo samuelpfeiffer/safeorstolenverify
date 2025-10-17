@@ -360,29 +360,64 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth(): AuthContextType {
   const context = useContext(AuthContext);
+  
   if (!context) {
+    // During HMR, context can be temporarily null
+    // Return safe fallback instead of throwing error
+    if (import.meta.env.DEV) {
+      console.warn('AuthContext not ready (HMR), returning fallback state');
+      return {
+        user: null,
+        session: null,
+        loading: true,
+        initialized: false,
+        signIn: async () => ({ success: false, error: 'Auth not ready' }),
+        signUp: async () => ({ success: false, error: 'Auth not ready' }),
+        signOut: async () => {},
+        resetPassword: async () => ({ success: false, error: 'Auth not ready' }),
+      };
+    }
+    
+    // In production, still throw error (this should never happen)
     throw new Error('useAuth must be used within an AuthProvider');
   }
+  
   return context;
 }
 
 export function useAuthState(): AuthState {
-  const { user, session, loading, initialized } = useAuth();
-  return { user, session, loading, initialized };
+  try {
+    const { user, session, loading, initialized } = useAuth();
+    return { user, session, loading, initialized };
+  } catch {
+    return { user: null, session: null, loading: true, initialized: false };
+  }
 }
 
 // Convenience hooks
 export function useUser(): AuthUser | null {
-  const { user } = useAuth();
-  return user;
+  try {
+    const { user } = useAuth();
+    return user;
+  } catch {
+    return null;
+  }
 }
 
 export function useSession(): Session | null {
-  const { session } = useAuth();
-  return session;
+  try {
+    const { session } = useAuth();
+    return session;
+  } catch {
+    return null;
+  }
 }
 
 export function useIsAuthenticated(): boolean {
-  const { user, initialized } = useAuth();
-  return initialized && user !== null;
+  try {
+    const { user, initialized } = useAuth();
+    return initialized && user !== null;
+  } catch {
+    return false;
+  }
 }
