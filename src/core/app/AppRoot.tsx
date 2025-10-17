@@ -20,7 +20,6 @@ import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData'
 import { PerformanceMonitor } from '@/components/seo/PerformanceMonitor';
 import { SpeedOptimizer } from '@/components/performance/SpeedOptimizer';
 import { CriticalCSSInline } from '@/components/seo/CriticalCSSInline';
-import { HMRSafeWrapper } from '@/core/routing/HMRSafeWrapper';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -43,45 +42,43 @@ const queryClient = new QueryClient({
  */
 export const AppRoot: React.FC = () => {
   return (
-    <ErrorBoundary>
-      <HMRSafeWrapper>
-        <HelmetProvider>
-          <QueryClientProvider client={queryClient}>
-            <QueryErrorResetBoundary>
-              {({ reset }) => (
-                <AuthProvider>
-                  <PWAProvider>
-                    <ThemeProvider>
-                      <Router>
-                        <CriticalCSSInline />
-                        <SpeedOptimizer />
-                        <MasterSEO />
-                        <EnhancedStructuredData />
-                        <PerformanceMonitor />
-                        <div className="min-h-screen bg-background text-foreground flex flex-col">
-                          <TopNavigation />
-                          <BreadcrumbSchema />
-                          <main className="flex-1 pt-20">
-                            <RouteErrorRecovery>
-                              <Suspense fallback={<AppLoadingScreen />}>
-                                <AppRoutes />
-                              </Suspense>
-                            </RouteErrorRecovery>
-                          </main>
-                          <SOSFooter />
-                        </div>
-                        <PWAInstallBanner />
-                        <AppDownloadBot />
-                        <Toaster />
-                      </Router>
-                    </ThemeProvider>
-                  </PWAProvider>
-                </AuthProvider>
-              )}
-            </QueryErrorResetBoundary>
-          </QueryClientProvider>
-        </HelmetProvider>
-      </HMRSafeWrapper>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <QueryErrorResetBoundary>
+          {({ reset }) => (
+            <ErrorBoundary>
+              <AuthProvider>
+                <PWAProvider>
+                  <ThemeProvider>
+                    <Router>
+                      <CriticalCSSInline />
+                      <SpeedOptimizer />
+                      <MasterSEO />
+                      <EnhancedStructuredData />
+                      <PerformanceMonitor />
+                      <div className="min-h-screen bg-background text-foreground flex flex-col">
+                        <TopNavigation />
+                        <BreadcrumbSchema />
+                        <main className="flex-1 pt-20">
+                          <RouteErrorRecovery>
+                            <Suspense fallback={<AppLoadingScreen />}>
+                              <AppRoutes />
+                            </Suspense>
+                          </RouteErrorRecovery>
+                        </main>
+                        <SOSFooter />
+                      </div>
+                      <PWAInstallBanner />
+                      <AppDownloadBot />
+                      <Toaster />
+                    </Router>
+                  </ThemeProvider>
+                </PWAProvider>
+              </AuthProvider>
+            </ErrorBoundary>
+          )}
+        </QueryErrorResetBoundary>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 };
