@@ -155,6 +155,7 @@ const PressPage = lazy(() => import('@/pages/PressPage'));
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ResellerPage = lazy(() => import('@/pages/ResellerPage'));
 const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
+const SocialMediaMonitoringPage = lazy(() => import('@/pages/SocialMediaMonitoringPage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -355,9 +356,10 @@ export const AppRoutes: React.FC = () => {
           {/* Problem and verification result pages - PROTECTED */}
           <Route path="problem" element={<ProblemPage />} />
           <Route path="verification-results/:id" element={<ProtectedRoute><VerificationResultsPage /></ProtectedRoute>} />
-          <Route path="community-watch" element={<CommunityWatchPage />} />
-          
-          {/* Resource Pages */}
+           <Route path="community-watch" element={<CommunityWatchPage />} />
+           <Route path="social-media-monitoring" element={<SocialMediaMonitoringPage />} />
+           
+           {/* Resource Pages */}
           <Route path="report-stolen" element={<ReportStolenPage />} />
           <Route path="resource-center" element={<ResourceCenterPage />} />
           <Route path="database" element={<DatabasePage />} />

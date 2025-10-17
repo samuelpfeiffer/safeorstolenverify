@@ -44,28 +44,15 @@ const transformUser = (user: User | null): AuthUser | null => {
 };
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  // Safely handle React hooks with error boundary
-  let state, setState, toast;
+  // React hooks MUST be called unconditionally at the top level
+  const [state, setState] = useState<AuthState>({
+    user: null,
+    session: null,
+    loading: true,
+    initialized: false,
+  });
   
-  try {
-    [state, setState] = useState<AuthState>({
-      user: null,
-      session: null,
-      loading: true,
-      initialized: false,
-    });
-    
-    ({ toast } = useToast());
-  } catch (error) {
-    console.error('React hooks initialization error:', error);
-    // Return minimal fallback if hooks fail during HMR
-    return <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-        <p className="text-muted-foreground">Initializing authentication...</p>
-      </div>
-    </div>;
-  }
+  const { toast } = useToast();
 
   useEffect(() => {
     let mounted = true;
