@@ -233,9 +233,10 @@ const TopNavigation = () => {
               Blog
             </button>
 
-            {/* Users Dropdown */}
+            {/* Single NavigationMenu wrapper for all dropdowns */}
             <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
               <NavigationMenuList>
+                {/* Users Dropdown */}
                 <NavigationMenuItem value="users">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     <Users className="h-4 w-4 mr-2" />
@@ -267,12 +268,8 @@ const TopNavigation = () => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
 
-            {/* Businesses Dropdown */}
-            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
-              <NavigationMenuList>
+                {/* Businesses Dropdown */}
                 <NavigationMenuItem value="businesses">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     <Briefcase className="h-4 w-4 mr-2" />
@@ -304,12 +301,8 @@ const TopNavigation = () => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
 
-            {/* How It Works Dropdown */}
-            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
-              <NavigationMenuList>
+                {/* How It Works Dropdown */}
                 <NavigationMenuItem value="howitworks">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     <HelpCircle className="h-4 w-4 mr-2" />
@@ -341,12 +334,8 @@ const TopNavigation = () => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
 
-            {/* Resources Dropdown */}
-            <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
-              <NavigationMenuList>
+                {/* Resources Dropdown */}
                 <NavigationMenuItem value="resources">
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     Resources
