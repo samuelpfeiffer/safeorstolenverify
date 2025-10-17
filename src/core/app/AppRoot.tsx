@@ -42,11 +42,11 @@ const queryClient = new QueryClient({
  */
 export const AppRoot: React.FC = () => {
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <QueryErrorResetBoundary>
-          {({ reset }) => (
-            <ErrorBoundary>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <QueryErrorResetBoundary>
+            {({ reset }) => (
               <AuthProvider>
                 <PWAProvider>
                   <ThemeProvider>
@@ -75,10 +75,10 @@ export const AppRoot: React.FC = () => {
                   </ThemeProvider>
                 </PWAProvider>
               </AuthProvider>
-            </ErrorBoundary>
-          )}
-        </QueryErrorResetBoundary>
-      </QueryClientProvider>
-    </HelmetProvider>
+            )}
+          </QueryErrorResetBoundary>
+        </QueryClientProvider>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 };
