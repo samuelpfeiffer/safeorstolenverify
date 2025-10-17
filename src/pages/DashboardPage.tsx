@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useAuth } from '@/lib/auth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -28,7 +29,7 @@ import { PaywallModal } from '@/components/dashboard/PaywallModal';
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const { remainingSearches, hasReachedLimit, isSubscribed } = useSearchLimits();
   const { searchHistory, isLoading: historyLoading } = useSearchHistory();
   const { getReceipts } = useReceiptGenerator();

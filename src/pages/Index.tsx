@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
@@ -20,7 +20,7 @@ import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 const VerifiedProduct = lazy(() => import('@/components/VerifiedProduct'));
 
 const Index = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TermsAndConditions } from '@/components/auth/TermsAndConditions';
@@ -13,7 +14,7 @@ import { Shield, ArrowLeft } from 'lucide-react';
 type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success' | 'signin-welcome';
 
 const AuthPage = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const navigate = useNavigate();
   const { user, loading } = useAuth();
   const defaultTab = searchParams.get('tab') === 'signup' ? 'signup' : 'signin';

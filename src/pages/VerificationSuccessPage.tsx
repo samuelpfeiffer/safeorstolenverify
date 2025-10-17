@@ -1,13 +1,13 @@
-
 import { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import { useSecureStripe } from '@/utils/stripe/secureStripeOperations';
 
 const VerificationSuccessPage = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const sessionId = searchParams.get('session_id');
   const verificationId = searchParams.get('verification_id');
   const [loading, setLoading] = useState(true);

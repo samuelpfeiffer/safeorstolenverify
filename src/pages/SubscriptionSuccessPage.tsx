@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
 const SubscriptionSuccessPage: React.FC = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const navigate = useNavigate();
   const { session } = useAuth();
   const { toast } = useToast();

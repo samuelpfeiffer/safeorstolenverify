@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -20,7 +21,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
   const [serialNumber, setSerialNumber] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
   const { savePendingVerification } = usePendingVerification();

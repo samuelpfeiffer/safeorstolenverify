@@ -6,7 +6,8 @@ import { Check, Star, Loader2, AlertTriangle } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
 import { useEnhancedSubscription } from "@/hooks/useEnhancedSubscription";
 import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
@@ -25,7 +26,7 @@ const PricingPage = () => {
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
   const [stripeCheckoutUrl, setStripeCheckoutUrl] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSafeSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
