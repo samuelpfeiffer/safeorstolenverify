@@ -1,6 +1,5 @@
-
 import { useAuth } from '@/lib/auth';
-import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Unified Auth Hook
@@ -8,6 +7,7 @@ import { useEffect } from 'react';
  */
 export const useUnifiedAuth = () => {
   const { user, session, loading, initialized, signOut, signIn, signUp, resetPassword } = useAuth();
+  const navigate = useNavigate();
   
   // Simple, reliable sign out without complex logging
   const secureSignOut = async () => {
@@ -15,8 +15,8 @@ export const useUnifiedAuth = () => {
       return await signOut();
     } catch (error) {
       console.error('Sign out error:', error);
-      // Force clear local session state
-      window.location.href = '/';
+      // Force clear local session state and navigate home
+      navigate('/');
     }
   };
   

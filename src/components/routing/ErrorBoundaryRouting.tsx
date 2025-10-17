@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 
 interface ErrorBoundaryRoutingProps {
@@ -12,6 +12,7 @@ export const ErrorBoundaryRouting: React.FC<ErrorBoundaryRoutingProps> = ({
   fallbackPath = '/404' 
 }) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
     // Log routing errors with additional context
@@ -53,7 +54,7 @@ export const ErrorBoundaryRouting: React.FC<ErrorBoundaryRoutingProps> = ({
             <h1 className="text-2xl font-bold text-white">Page Error</h1>
             <p className="text-gray-300">Something went wrong loading this page.</p>
             <button 
-              onClick={() => window.location.href = fallbackPath}
+              onClick={() => navigate(fallbackPath)}
               className="px-4 py-2 bg-sos-orange hover:bg-sos-orange/80 text-white rounded-md"
             >
               Go to Home
