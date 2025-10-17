@@ -29,9 +29,7 @@ const Hero = () => {
           {/* Trust-focused Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
             Is This Stolen? Find Out in 30 Seconds
-            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Check Before You Buy—Avoid Scams & Stolen Goods
-            </span>
+            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Check Before You Buy or Sell. Avoid Scams &amp; Stolen Goods</span>
           </h1>
           
           {/* Trust Value Proposition */}
