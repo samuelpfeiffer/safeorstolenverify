@@ -31,7 +31,7 @@ export type Database = {
           sources: string[] | null
           status: string
           updated_at: string
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           analysis_type: string
@@ -49,7 +49,7 @@ export type Database = {
           sources?: string[] | null
           status?: string
           updated_at?: string
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           analysis_type?: string
@@ -67,7 +67,7 @@ export type Database = {
           sources?: string[] | null
           status?: string
           updated_at?: string
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: []
       }
