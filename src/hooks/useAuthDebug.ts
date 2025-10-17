@@ -1,13 +1,15 @@
-
 import { useUnifiedAuth } from './useUnifiedAuth';
 
 export const useAuthDebug = () => {
   const authContext = useUnifiedAuth();
   
-  console.log('Auth Debug - Context available:', !!authContext);
-  console.log('Auth Debug - User:', authContext?.user?.id);
-  console.log('Auth Debug - Loading:', authContext?.loading);
-  console.log('Auth Debug - Authenticated:', authContext?.isAuthenticated);
+  // Auth debugging - only in development
+  if (import.meta.env.DEV) {
+    console.debug('Auth Debug - Context available:', !!authContext);
+    console.debug('Auth Debug - User:', authContext?.user?.id);
+    console.debug('Auth Debug - Loading:', authContext?.loading);
+    console.debug('Auth Debug - Authenticated:', authContext?.isAuthenticated);
+  }
   
   return authContext;
 };

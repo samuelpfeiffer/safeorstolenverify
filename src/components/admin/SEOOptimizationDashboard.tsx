@@ -5,12 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, TrendingUp, Zap, Target, AlertCircle, CheckCircle } from 'lucide-react';
+import { SEOSuggestion, SEOKeyword } from '@/types/dashboard';
+import { logger } from '@/utils/logger';
 
 export const SEOOptimizationDashboard = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState<SEOSuggestion[]>([]);
   const [performance, setPerformance] = useState<any>(null);
-  const [keywords, setKeywords] = useState<any[]>([]);
+  const [keywords, setKeywords] = useState<SEOKeyword[]>([]);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export const SEOOptimizationDashboard = () => {
       if (perfRes.data?.[0]) setPerformance(perfRes.data[0]);
       if (keywordsRes.data) setKeywords(keywordsRes.data);
     } catch (error) {
-      console.error('Error loading dashboard:', error);
+      logger.error('Error loading dashboard:', error);
     }
   };
 
