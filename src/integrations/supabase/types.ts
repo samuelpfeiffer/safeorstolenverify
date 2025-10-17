@@ -213,7 +213,7 @@ export type Database = {
           outcome_useful: boolean | null
           rating: number
           session_id: string | null
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           accurate: boolean
@@ -228,7 +228,7 @@ export type Database = {
           outcome_useful?: boolean | null
           rating: number
           session_id?: string | null
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           accurate?: boolean
@@ -243,7 +243,7 @@ export type Database = {
           outcome_useful?: boolean | null
           rating?: number
           session_id?: string | null
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: [
           {
