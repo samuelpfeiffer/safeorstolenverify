@@ -153,6 +153,8 @@ const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 const OurMissionPage = lazy(() => import('@/pages/OurMissionPage'));
 const PressPage = lazy(() => import('@/pages/PressPage'));
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
+const ResellerPage = lazy(() => import('@/pages/ResellerPage'));
+const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -328,6 +330,8 @@ export const AppRoutes: React.FC = () => {
            <Route path="marketplace-safety" element={<Navigate to="/for-consumers" replace />} />
            <Route path="buyer-protection" element={<Navigate to="/buyer-guide" replace />} />
            <Route path="seller-protection" element={<Navigate to="/seller-guide" replace />} />
+           <Route path="resellers" element={<ResellerPage />} />
+           <Route path="download-app" element={<DownloadAppPage />} />
            
            {/* FasterCapital Routes */}
           <Route path="fastercapital/raise-capital" element={<RaiseCapitalPage />} />
