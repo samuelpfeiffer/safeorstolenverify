@@ -18,6 +18,7 @@ import { TrustIndicators } from '@/components/TrustIndicators';
 import { TrustBadgeStrip } from '@/components/trust/TrustBadgeStrip';
 import { AudienceNavigation } from '@/components/hero/AudienceNavigation';
 import { ValuePropositionSections } from '@/components/hero/ValuePropositionSections';
+import { HeroBanner } from '@/components/hero/HeroBanner';
 import { MobileBenefitsSection } from '@/components/mobile/MobileBenefitsSection';
 import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
 import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
@@ -90,6 +91,7 @@ const HomePage = () => {
         <div className="min-h-screen">
           <ConversionTracker />
           <AppDownloadBot />
+          <HeroBanner />
           <Hero />
           
           {/* Main Features Section */}
