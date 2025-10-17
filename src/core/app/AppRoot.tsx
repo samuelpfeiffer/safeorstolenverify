@@ -44,30 +44,30 @@ export const AppRoot: React.FC = () => {
   return (
     <ErrorBoundary>
       <HelmetProvider>
-        <QueryErrorResetBoundary>
-          {({ reset }) => (
-            <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
+          <QueryErrorResetBoundary>
+            {({ reset }) => (
               <AuthProvider>
                 <PWAProvider>
                   <ThemeProvider>
                     <Router>
-                  <CriticalCSSInline />
-                  <SpeedOptimizer />
-                  <MasterSEO />
-                  <EnhancedStructuredData />
-                  <PerformanceMonitor />
-                  <div className="min-h-screen bg-background text-foreground flex flex-col">
-                    <TopNavigation />
-                    <BreadcrumbSchema />
-                    <main className="flex-1 pt-20">
-                      <RouteErrorRecovery>
-                        <Suspense fallback={<AppLoadingScreen />}>
-                          <AppRoutes />
-                        </Suspense>
-                      </RouteErrorRecovery>
-                    </main>
-                    <SOSFooter />
-                  </div>
+                      <CriticalCSSInline />
+                      <SpeedOptimizer />
+                      <MasterSEO />
+                      <EnhancedStructuredData />
+                      <PerformanceMonitor />
+                      <div className="min-h-screen bg-background text-foreground flex flex-col">
+                        <TopNavigation />
+                        <BreadcrumbSchema />
+                        <main className="flex-1 pt-20">
+                          <RouteErrorRecovery>
+                            <Suspense fallback={<AppLoadingScreen />}>
+                              <AppRoutes />
+                            </Suspense>
+                          </RouteErrorRecovery>
+                        </main>
+                        <SOSFooter />
+                      </div>
                       <PWAInstallBanner />
                       <AppDownloadBot />
                       <Toaster />
@@ -75,9 +75,9 @@ export const AppRoot: React.FC = () => {
                   </ThemeProvider>
                 </PWAProvider>
               </AuthProvider>
-            </QueryClientProvider>
-          )}
-        </QueryErrorResetBoundary>
+            )}
+          </QueryErrorResetBoundary>
+        </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>
   );
