@@ -4,6 +4,16 @@ import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
+// HMR Error Recovery - Reload on context corruption
+if (import.meta.env.DEV) {
+  window.addEventListener('error', (event) => {
+    if (event.message.includes('useState') || event.message.includes('useEffect')) {
+      console.warn('HMR context error detected, reloading page...');
+      window.location.reload();
+    }
+  });
+}
+
 // Defer PWA initialization to avoid blocking
 setTimeout(() => {
   if ('serviceWorker' in navigator) {

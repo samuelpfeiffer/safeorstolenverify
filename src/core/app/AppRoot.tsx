@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import { SOSFooter } from '@/components/layout/SOSFooter';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
-import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
@@ -45,38 +45,34 @@ export const AppRoot: React.FC = () => {
     <ErrorBoundary>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
-          <QueryErrorResetBoundary>
-            {({ reset }) => (
-              <AuthProvider>
-                <PWAProvider>
-                  <ThemeProvider>
-                    <Router>
-                      <CriticalCSSInline />
-                      <SpeedOptimizer />
-                      <MasterSEO />
-                      <EnhancedStructuredData />
-                      <PerformanceMonitor />
-                      <div className="min-h-screen bg-background text-foreground flex flex-col">
-                        <TopNavigation />
-                        <BreadcrumbSchema />
-                        <main className="flex-1 pt-20">
-                          <RouteErrorRecovery>
-                            <Suspense fallback={<AppLoadingScreen />}>
-                              <AppRoutes />
-                            </Suspense>
-                          </RouteErrorRecovery>
-                        </main>
-                        <SOSFooter />
-                      </div>
-                      <PWAInstallBanner />
-                      <AppDownloadBot />
-                      <Toaster />
-                    </Router>
-                  </ThemeProvider>
-                </PWAProvider>
-              </AuthProvider>
-            )}
-          </QueryErrorResetBoundary>
+          <AuthProvider>
+            <PWAProvider>
+              <ThemeProvider>
+                <Router>
+                  <CriticalCSSInline />
+                  <SpeedOptimizer />
+                  <MasterSEO />
+                  <EnhancedStructuredData />
+                  <PerformanceMonitor />
+                  <div className="min-h-screen bg-background text-foreground flex flex-col">
+                    <TopNavigation />
+                    <BreadcrumbSchema />
+                    <main className="flex-1 pt-20">
+                      <RouteErrorRecovery>
+                        <Suspense fallback={<AppLoadingScreen />}>
+                          <AppRoutes />
+                        </Suspense>
+                      </RouteErrorRecovery>
+                    </main>
+                    <SOSFooter />
+                  </div>
+                  <PWAInstallBanner />
+                  <AppDownloadBot />
+                  <Toaster />
+                </Router>
+              </ThemeProvider>
+            </PWAProvider>
+          </AuthProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </ErrorBoundary>
