@@ -5,8 +5,9 @@ export const HeroBanner = () => {
     <div className="w-full">
       <img 
         src={heroBannerImage} 
-        alt="SafeOrStolen verification on mobile and desktop devices"
+        alt="SafeOrStolen verification on mobile and desktop devices showing Item Verified status"
         className="w-full h-auto object-cover"
+        loading="eager"
       />
     </div>
   );
