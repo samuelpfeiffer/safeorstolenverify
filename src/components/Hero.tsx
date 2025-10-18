@@ -1,22 +1,14 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, Search } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 const Hero = () => {
-  const navigate = useNavigate();
   const {
     isAuthenticated
   } = useUnifiedAuth();
-  const handleGetStarted = () => {
-    if (!isAuthenticated) {
-      navigate('/auth?tab=signup');
-    } else {
-      navigate('/dashboard');
-    }
-  };
   return <div className="relative bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto text-center space-y-12">
@@ -61,9 +53,11 @@ const Hero = () => {
           
           {/* Trust-focused CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="font-semibold px-12 h-14 text-base shadow-trust hover:shadow-lg transition-all" onClick={handleGetStarted}>
-              <Shield className="h-5 w-5 mr-2" />
-              Start Verification
+            <Button size="lg" asChild className="font-semibold px-12 h-14 text-base shadow-trust hover:shadow-lg transition-all">
+              <Link to={!isAuthenticated ? '/auth?tab=signup' : '/dashboard'}>
+                <Shield className="h-5 w-5 mr-2" />
+                Start Verification
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="font-semibold px-10 h-14 text-base border-2 hover:bg-muted/50" asChild>
               <Link to="/how-it-works">Learn More</Link>

@@ -373,9 +373,11 @@ const TopNavigation = () => {
           {/* User Menu & CTA */}
           <div className="hidden lg:flex items-center gap-4">
             {/* Prominent Verify Button - Trust-focused */}
-            <Button onClick={() => navigate('/stolen-item-checker')} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-trust hover:shadow-lg transition-all min-h-[48px] px-8 border border-primary/20">
-              <Shield className="h-5 w-5 mr-2" />
-              Verify Now
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-trust hover:shadow-lg transition-all min-h-[48px] px-8 border border-primary/20">
+              <Link to="/stolen-item-checker">
+                <Shield className="h-5 w-5 mr-2" />
+                Verify Now
+              </Link>
             </Button>
             
             {isAuthenticated ? <DropdownMenu>
@@ -404,12 +406,14 @@ const TopNavigation = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu> : <div className="flex items-center gap-3">
-                <Button variant="ghost" onClick={() => navigate('/auth?tab=signin')} className="text-foreground/90 hover:text-white min-h-[48px] px-6">
-                  Sign In
+                <Button variant="ghost" asChild className="text-foreground/90 hover:text-white min-h-[48px] px-6">
+                  <Link to="/auth?tab=signin">Sign In</Link>
                 </Button>
-                <Button onClick={() => navigate('/auth?tab=signup')} className="bg-sos-orange hover:bg-sos-orange/90 text-white font-medium min-h-[48px] px-8">
-                  <User className="h-4 w-4 mr-2" />
-                  Get Started
+                <Button asChild className="bg-sos-orange hover:bg-sos-orange/90 text-white font-medium min-h-[48px] px-8">
+                  <Link to="/auth?tab=signup">
+                    <User className="h-4 w-4 mr-2" />
+                    Get Started
+                  </Link>
                 </Button>
               </div>}
           </div>
@@ -511,17 +515,15 @@ const TopNavigation = () => {
                     </button>
                   </div>
                 </> : <div className="border-t border-white/10 pt-4 mt-4 space-y-3">
-                  <Button onClick={() => {
-              navigate('/auth?tab=signin');
-              setIsMobileMenuOpen(false);
-            }} variant="ghost" className="w-full text-foreground/90 hover:text-white hover:bg-white/5 min-h-[56px] text-base">
-                    Sign In
+                  <Button asChild variant="ghost" className="w-full text-foreground/90 hover:text-white hover:bg-white/5 min-h-[56px] text-base">
+                    <Link to="/auth?tab=signin" onClick={() => setIsMobileMenuOpen(false)}>
+                      Sign In
+                    </Link>
                   </Button>
-                  <Button onClick={() => {
-              navigate('/auth?tab=signup');
-              setIsMobileMenuOpen(false);
-            }} className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white min-h-[56px] text-base">
-                    Get Started
+                  <Button asChild className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white min-h-[56px] text-base">
+                    <Link to="/auth?tab=signup" onClick={() => setIsMobileMenuOpen(false)}>
+                      Get Started
+                    </Link>
                   </Button>
                 </div>}
             </div>
