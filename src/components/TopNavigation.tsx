@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/lib/auth';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, User, LogOut, Search, Home, Shield, ChevronDown, Users, Briefcase, ShoppingBag, HelpCircle, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -204,7 +204,7 @@ const TopNavigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <div className="flex items-center gap-4">
-            <button onClick={() => navigate('/')} className="flex items-center gap-3 group transition-transform hover:scale-105" aria-label="SafeOrStolen Home">
+            <Link to="/" className="flex items-center gap-3 group transition-transform hover:scale-105" aria-label="SafeOrStolen Home">
               <div className="relative">
                 <img 
                   src={sosLogo}
@@ -215,23 +215,23 @@ const TopNavigation = () => {
                 />
                 <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors"></div>
               </div>
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation with Dropdown Menus */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navigationItems.map(item => <button key={item.href} onClick={() => navigate(item.href)} className={cn("px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px]", location.pathname === item.href ? "text-primary bg-primary/10 border border-primary/20" : "text-foreground hover:text-primary hover:bg-muted/50")}>
+            {navigationItems.map(item => <Link key={item.href} to={item.href} className={cn("px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px]", location.pathname === item.href ? "text-primary bg-primary/10 border border-primary/20" : "text-foreground hover:text-primary hover:bg-muted/50")}>
                 {item.label}
-              </button>)}
+              </Link>)}
             
             {/* Blog Link - Prominent */}
-            <button 
-              onClick={() => navigate('/blog')} 
+            <Link 
+              to="/blog" 
               className={cn("px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 min-h-[44px]", 
                 location.pathname === '/blog' ? "text-sos-orange bg-sos-orange/10" : "text-foreground/90 hover:text-white hover:bg-white/5")}
             >
               Blog
-            </button>
+            </Link>
 
             {/* Single NavigationMenu wrapper for all dropdowns */}
             <NavigationMenu value={openMenu} onValueChange={setOpenMenu}>
@@ -250,7 +250,7 @@ const TopNavigation = () => {
                       </div>
                       <div className="grid gap-2">
                         {usersMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <button onClick={() => navigate(item.href)} className="w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
+                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
                               <div className="flex items-start gap-3">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
                                 <div>
@@ -262,7 +262,7 @@ const TopNavigation = () => {
                                   </div>
                                 </div>
                               </div>
-                            </button>
+                            </Link>
                           </NavigationMenuLink>)}
                       </div>
                     </div>
@@ -283,7 +283,7 @@ const TopNavigation = () => {
                       </div>
                       <div className="grid gap-2">
                         {businessesMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <button onClick={() => navigate(item.href)} className="w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
+                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
                               <div className="flex items-start gap-3">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
                                 <div>
@@ -295,7 +295,7 @@ const TopNavigation = () => {
                                   </div>
                                 </div>
                               </div>
-                            </button>
+                            </Link>
                           </NavigationMenuLink>)}
                       </div>
                     </div>
@@ -316,7 +316,7 @@ const TopNavigation = () => {
                       </div>
                       <div className="grid gap-2">
                         {howItWorksMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <button onClick={() => navigate(item.href)} className="w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
+                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
                               <div className="flex items-start gap-3">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
                                 <div>
@@ -328,7 +328,7 @@ const TopNavigation = () => {
                                   </div>
                                 </div>
                               </div>
-                            </button>
+                            </Link>
                           </NavigationMenuLink>)}
                       </div>
                     </div>
@@ -348,7 +348,7 @@ const TopNavigation = () => {
                       </div>
                       <div className="grid gap-2">
                         {resourcesMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <button onClick={() => navigate(item.href)} className="w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
+                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
                               <div className="flex items-start gap-3">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
                                 <div>
@@ -360,7 +360,7 @@ const TopNavigation = () => {
                                   </div>
                                 </div>
                               </div>
-                            </button>
+                            </Link>
                           </NavigationMenuLink>)}
                       </div>
                     </div>
@@ -391,9 +391,11 @@ const TopNavigation = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 bg-gray-900 border-gray-800" align="end">
-                  {userMenuItems.map(item => <DropdownMenuItem key={item.href} onClick={() => navigate(item.href)} className="flex items-center gap-2 text-foreground/90 hover:text-white hover:bg-gray-800 min-h-[44px]">
-                      {item.icon && <item.icon className="h-4 w-4" />}
-                      {item.label}
+                  {userMenuItems.map(item => <DropdownMenuItem key={item.href} asChild>
+                      <Link to={item.href} className="flex items-center gap-2 text-foreground/90 hover:text-white hover:bg-gray-800 min-h-[44px] cursor-pointer">
+                        {item.icon && <item.icon className="h-4 w-4" />}
+                        {item.label}
+                      </Link>
                     </DropdownMenuItem>)}
                   <DropdownMenuSeparator className="bg-gray-800" />
                   <DropdownMenuItem onClick={handleSignOut} className="flex items-center gap-2 text-red-400 hover:text-red-300 hover:bg-red-500/10 min-h-[44px]">
@@ -436,88 +438,70 @@ const TopNavigation = () => {
             </div>
 
             <div className="flex flex-col space-y-2">
-              {navigationItems.map(item => <button key={item.href} onClick={() => {
-            navigate(item.href);
-            setIsMobileMenuOpen(false);
-          }} className={cn("flex items-center gap-3 px-5 py-4 rounded-xl text-left transition-all min-h-[56px]", location.pathname === item.href ? "text-sos-orange bg-sos-orange/10" : "text-foreground/90 hover:text-white hover:bg-white/5")}>
+              {navigationItems.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className={cn("flex items-center gap-3 px-5 py-4 rounded-xl text-left transition-all min-h-[56px]", location.pathname === item.href ? "text-sos-orange bg-sos-orange/10" : "text-foreground/90 hover:text-white hover:bg-white/5")}>
                   {item.icon && <item.icon className="h-5 w-5" />}
                   <span className="font-medium">{item.label}</span>
-                </button>)}
+                </Link>)}
               
               {/* Users Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">For Users</p>
-                {usersMenu.map(item => <button key={item.href} onClick={() => {
-              navigate(item.href);
-              setIsMobileMenuOpen(false);
-            }} className="w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {usersMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {item.description}
                     </div>
-                  </button>)}
+                  </Link>)}
               </div>
 
               {/* Businesses Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">For Businesses</p>
-                {businessesMenu.map(item => <button key={item.href} onClick={() => {
-              navigate(item.href);
-              setIsMobileMenuOpen(false);
-            }} className="w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {businessesMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {item.description}
                     </div>
-                  </button>)}
+                  </Link>)}
               </div>
 
               {/* How It Works Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">How It Works</p>
-                {howItWorksMenu.map(item => <button key={item.href} onClick={() => {
-              navigate(item.href);
-              setIsMobileMenuOpen(false);
-            }} className="w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {howItWorksMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {item.description}
                     </div>
-                  </button>)}
+                  </Link>)}
               </div>
               
               {/* Resources Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">Resources</p>
-                {resourcesMenu.map(item => <button key={item.href} onClick={() => {
-              navigate(item.href);
-              setIsMobileMenuOpen(false);
-            }} className="w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {resourcesMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {item.description}
                     </div>
-                  </button>)}
+                  </Link>)}
               </div>
               
               {isAuthenticated ? <>
                   <div className="border-t border-white/10 pt-4 mt-4">
                     <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">Account</p>
-                    {userMenuItems.map(item => <button key={item.href} onClick={() => {
-                navigate(item.href);
-                setIsMobileMenuOpen(false);
-              }} className="flex items-center gap-3 text-foreground/90 hover:text-white hover:bg-white/5 px-5 py-4 rounded-xl w-full text-left transition-all min-h-[56px]">
+                    {userMenuItems.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-foreground/90 hover:text-white hover:bg-white/5 px-5 py-4 rounded-xl w-full text-left transition-all min-h-[56px]">
                         {item.icon && <item.icon className="h-5 w-5" />}
                         {item.label}
-                      </button>)}
+                      </Link>)}
                     <button onClick={() => {
                 handleSignOut();
                 setIsMobileMenuOpen(false);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Smartphone, Download, QrCode, Shield, Zap, Globe, Star, Check } from 'lucide-react';
@@ -231,10 +232,10 @@ const AppDownloadPage = () => {
               </p>
               <Button
                 size="lg"
-                onClick={() => window.location.href = '/auth?tab=signup'}
+                asChild
                 className="bg-sos-orange hover:bg-sos-orange/90 text-white text-lg px-8"
               >
-                Sign Up for Early Access
+                <Link to="/auth?tab=signup">Sign Up for Early Access</Link>
               </Button>
             </CardContent>
           </Card>
