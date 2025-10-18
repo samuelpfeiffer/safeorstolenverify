@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { 
   Activity, 
   TrendingUp, 
@@ -22,6 +23,7 @@ export const AutonomousSystemDashboard: React.FC = () => {
   const [systemStatus, setSystemStatus] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   useEffect(() => {
     loadSystemStatus();
@@ -210,7 +212,7 @@ export const AutonomousSystemDashboard: React.FC = () => {
             </Button>
             
             <Button
-              onClick={() => window.location.href = '/ai-optimizer'}
+              onClick={() => navigate('/ai-optimizer')}
               variant="outline"
               className="w-full"
             >
@@ -219,7 +221,7 @@ export const AutonomousSystemDashboard: React.FC = () => {
             </Button>
             
             <Button
-              onClick={() => window.location.href = '/ai-executives'}
+              onClick={() => navigate('/ai-executives')}
               variant="default"
               className="w-full md:col-span-2"
             >

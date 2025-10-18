@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useEnhancedSecurityContext } from './EnhancedSecurityProvider';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle, Shield, Loader2 } from 'lucide-react';
@@ -15,6 +16,7 @@ export const SecureAdminGuard: React.FC<SecureAdminGuardProps> = ({
   requireAdmin = true,
   fallbackMessage 
 }) => {
+  const navigate = useNavigate();
   const { hasAdminRole, isSecure, sessionValid, logSecurityEvent, performSecurityCheck } = useEnhancedSecurityContext();
   const [isLoading, setIsLoading] = useState(true);
   const [accessDeniedLogged, setAccessDeniedLogged] = useState(false);
@@ -94,7 +96,7 @@ export const SecureAdminGuard: React.FC<SecureAdminGuardProps> = ({
               Your session has expired. Please log in again to continue.
             </p>
             <Button 
-              onClick={() => window.location.href = '/auth?tab=signin'}
+              onClick={() => navigate('/auth?tab=signin')}
               className="bg-sos-orange hover:bg-sos-orange/80"
             >
               Login Again
