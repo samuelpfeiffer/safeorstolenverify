@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/lib/auth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -8,10 +8,11 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import sosLogo from '@/assets/sos-logo.png';
-const TopNavigation = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [openMenu, setOpenMenu] = useState<string>('');
+
+const TopNavigation: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState<string>('');
   const {
     user,
     signOut
