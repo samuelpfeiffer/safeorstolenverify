@@ -104,11 +104,10 @@ export const ConversionOptimizedPricing = ({
   const casualTiers = [
     {
       ...SUBSCRIPTION_TIERS.free,
-      description: "🎉 LAUNCH PROMOTION: Everything free for 14 days!",
+      description: "Try before you buy - 2 free searches",
       cta: "Start Free Trial",
       checksIncluded: SUBSCRIPTION_TIERS.free.monthlyQuota as number,
       interval: SUBSCRIPTION_TIERS.free.interval,
-      promotionBadge: "LIMITED TIME",
     },
     {
       ...SUBSCRIPTION_TIERS.payPerUse,
@@ -134,31 +133,23 @@ export const ConversionOptimizedPricing = ({
   }];
   return <section className="w-full py-20 px-4">
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 mb-4 animate-pulse">
-          <span className="text-sm font-bold text-destructive">🎉 LAUNCH PROMOTION - LIMITED TIME ONLY</span>
-        </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
-          Everything Free for 14 Days!
+          Simple, Transparent Pricing
         </h2>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-3">
-          🚀 <span className="text-primary font-bold">Launch Special:</span> Sign up now and get unlimited verifications, 
-          all features unlocked, and full access for 14 days - completely free!
+          Start with 2 free searches. No credit card required.
         </p>
         <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-          No credit card required • Cancel anytime • Join 50,000+ protected buyers
+          Pay only for what you need • Cancel anytime • Join 50,000+ protected buyers
         </p>
       </div>
 
       {/* Casual Buyers & Sellers Section */}
       <div className="mb-20">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-3">
-            <span className="text-sm font-bold text-secondary">🎁 LAUNCH OFFER</span>
-          </div>
           <h3 className="text-3xl font-bold mb-3">For Casual Buyers & Sellers</h3>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Start with our <span className="font-bold text-primary">14-day launch promotion</span> - everything free! 
-            Then choose a plan that fits your needs.
+            Start with 2 free searches, then choose a plan that fits your needs.
           </p>
         </div>
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
