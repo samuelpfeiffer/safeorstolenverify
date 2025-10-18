@@ -53,6 +53,6 @@ export const LiveActivityFeed: React.FC = () => {
     };
     setActivities(prev => [newActivity, ...prev].slice(0, 3));
   };
-  if (!isVisible) return null;
-  return;
+  // Disabled for performance - no visible output needed
+  return null;
 };

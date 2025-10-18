@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
+import { Suspense, lazy } from 'react';
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
@@ -10,7 +10,6 @@ import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
 import { ConversionTracking } from '@/components/conversion/ConversionTracking';
-import { LiveActivityFeed } from '@/components/conversion/LiveActivityFeed';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
 import { ContactFormSection } from '@/components/home/ContactFormSection';
@@ -81,9 +80,6 @@ const Index = () => {
           </Suspense>
         )}
       </div>
-      
-      {/* Subtle conversion helpers */}
-      <LiveActivityFeed />
     </>
   );
 };
