@@ -20,9 +20,10 @@ const TopNavigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Close mobile menu on navigation
+  // Close mobile menu and reset dropdown state on navigation
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenMenu(''); // Reset dropdown menu state
   }, [location.pathname]);
 
   // Handle scroll effect
