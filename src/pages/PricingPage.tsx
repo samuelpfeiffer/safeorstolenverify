@@ -35,8 +35,10 @@ const PricingPage = () => {
   // Remove duplicate price IDs - using centralized pricing config
 
   const handleSubscribe = useCallback(async (tier: string) => {
-    // Handle free tier
-    if (tier.toLowerCase().includes('free')) {
+    console.log('handleSubscribe called with tier:', tier);
+    
+    // Handle free tier - check by name directly
+    if (tier === 'Free Trial' || tier.toLowerCase().includes('free')) {
       handleFreeStart();
       return;
     }
@@ -66,19 +68,35 @@ const PricingPage = () => {
       setHasError(true);
       toast({
         title: 'Request timeout',
-        description: 'The request is taking too long. Please try again.',
-        variant: 'destructive'
+        description: 'The checkout request is taking too long. The payment system may be temporarily unavailable. Please try again in a moment.',
+        variant: 'destructive',
+        duration: 10000,
       });
-    }, 20000); // Increased to 20 second timeout
+    }, 20000);
 
     try {
-      const tierKey = tier.toLowerCase() as keyof typeof SUBSCRIPTION_TIERS;
-      const priceId = SUBSCRIPTION_TIERS[tierKey]?.stripePriceId!;
+      // Find the matching subscription tier
+      const tierEntry = Object.entries(SUBSCRIPTION_TIERS).find(
+        ([, value]) => value.name === tier || value.name.toLowerCase() === tier.toLowerCase()
+      );
+
+      if (!tierEntry) {
+        throw new Error(`Subscription tier "${tier}" not found`);
+      }
+
+      const [tierKey, tierData] = tierEntry;
+      const priceId = tierData.stripePriceId;
+      
+      if (!priceId) {
+        throw new Error(`No price ID configured for ${tier}. Please contact support.`);
+      }
+
+      console.log('Creating checkout for tier:', tierKey, 'priceId:', priceId);
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 
       if (!checkoutUrl) {
-        throw new Error('No checkout URL returned');
+        throw new Error('Payment system did not return a checkout URL. Please try again or contact support.');
       }
 
       if (timeoutRef.current) {
@@ -87,32 +105,49 @@ const PricingPage = () => {
 
       setStripeCheckoutUrl(checkoutUrl);
       
-      // Use iframe-safe navigation to ensure redirect works in all environments
+      // Use iframe-safe navigation
       navigateOutOfIframe(checkoutUrl);
       
       toast({ 
         title: 'Redirecting to payment...', 
-        description: 'Please complete your payment on Stripe.' 
+        description: 'Please complete your payment on Stripe.',
+        duration: 3000,
       });
       
     } catch (error: any) {
+      console.error('Subscription error:', error);
+      
       const errorMessage = error?.message || 'Failed to start subscription. Please try again.';
       
       // Show specific error messages for common issues
       let userFriendlyMessage = errorMessage;
-      if (errorMessage.includes('Stripe live key')) {
-        userFriendlyMessage = 'Payment system configuration issue. Please contact support.';
-      } else if (errorMessage.includes('network') || errorMessage.includes('fetch')) {
-        userFriendlyMessage = 'Network error. Please check your connection and try again.';
+      let title = 'Subscription Error';
+      
+      if (errorMessage.includes('Failed to fetch') || errorMessage.includes('network')) {
+        title = 'Connection Error';
+        userFriendlyMessage = 'Unable to connect to the payment system. Please check your internet connection and try again.';
+      } else if (errorMessage.includes('Stripe') && errorMessage.includes('configuration')) {
+        title = 'Payment System Error';
+        userFriendlyMessage = 'The payment system is not properly configured. Please contact support@safeorstolen.com';
+      } else if (errorMessage.includes('price ID') || errorMessage.includes('not found')) {
+        title = 'Plan Configuration Error';
+        userFriendlyMessage = 'This subscription plan is not properly configured. Please try a different plan or contact support.';
       } else if (errorMessage.includes('rate') || errorMessage.includes('limit')) {
-        userFriendlyMessage = 'Too many requests. Please wait a moment and try again.';
+        title = 'Too Many Requests';
+        userFriendlyMessage = 'Please wait a moment before trying again.';
+      } else if (errorMessage.includes('timeout')) {
+        title = 'Request Timeout';
+        userFriendlyMessage = 'The payment system is taking too long to respond. Please try again.';
       }
       
       toast({
-        title: 'Subscription Error',
+        title,
         description: userFriendlyMessage,
         variant: 'destructive',
+        duration: 10000,
       });
+      
+      setHasError(true);
     } finally {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
