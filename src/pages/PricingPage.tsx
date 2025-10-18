@@ -124,20 +124,23 @@ const PricingPage = () => {
       let title = 'Subscription Error';
       
       if (errorMessage.includes('Failed to fetch') || errorMessage.includes('network')) {
-        title = 'Connection Error';
-        userFriendlyMessage = 'Unable to connect to the payment system. Please check your internet connection and try again.';
+        title = 'Payment System Unavailable';
+        userFriendlyMessage = 'The payment system is currently unavailable. This could be because:\n\n• Edge functions need to be deployed\n• Stripe integration needs configuration\n• Network connection issues\n\nPlease contact support or try again later.';
       } else if (errorMessage.includes('Stripe') && errorMessage.includes('configuration')) {
-        title = 'Payment System Error';
-        userFriendlyMessage = 'The payment system is not properly configured. Please contact support@safeorstolen.com';
+        title = 'Payment Configuration Required';
+        userFriendlyMessage = 'The Stripe payment system needs to be configured. Please contact support@safeorstolen.com to enable subscriptions.';
       } else if (errorMessage.includes('price ID') || errorMessage.includes('not found')) {
         title = 'Plan Configuration Error';
-        userFriendlyMessage = 'This subscription plan is not properly configured. Please try a different plan or contact support.';
+        userFriendlyMessage = 'This subscription plan is not properly configured in Stripe. Please try a different plan or contact support.';
       } else if (errorMessage.includes('rate') || errorMessage.includes('limit')) {
         title = 'Too Many Requests';
         userFriendlyMessage = 'Please wait a moment before trying again.';
       } else if (errorMessage.includes('timeout')) {
         title = 'Request Timeout';
         userFriendlyMessage = 'The payment system is taking too long to respond. Please try again.';
+      } else if (errorMessage.includes('No checkout URL')) {
+        title = 'Checkout Creation Failed';
+        userFriendlyMessage = 'Unable to create checkout session. The payment system may need to be configured. Please contact support.';
       }
       
       toast({

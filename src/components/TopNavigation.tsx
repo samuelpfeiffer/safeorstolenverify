@@ -252,10 +252,10 @@ const TopNavigation: React.FC = () => {
                       </div>
                       <div className="grid gap-2">
                         {usersMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
-                              <div className="flex items-start gap-3">
-                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
-                                <div>
+                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                              <div className="flex items-center gap-3 w-full">
+                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
+                                <div className="flex-1">
                                   <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
                                     {item.label}
                                   </div>
@@ -285,10 +285,10 @@ const TopNavigation: React.FC = () => {
                       </div>
                       <div className="grid gap-2">
                         {businessesMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
-                              <div className="flex items-start gap-3">
-                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
-                                <div>
+                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                              <div className="flex items-center gap-3 w-full">
+                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
+                                <div className="flex-1">
                                   <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
                                     {item.label}
                                   </div>
@@ -318,10 +318,10 @@ const TopNavigation: React.FC = () => {
                       </div>
                       <div className="grid gap-2">
                         {howItWorksMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
-                              <div className="flex items-start gap-3">
-                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
-                                <div>
+                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                              <div className="flex items-center gap-3 w-full">
+                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
+                                <div className="flex-1">
                                   <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
                                     {item.label}
                                   </div>
@@ -350,10 +350,10 @@ const TopNavigation: React.FC = () => {
                       </div>
                       <div className="grid gap-2">
                         {resourcesMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="block w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group min-h-[60px]">
-                              <div className="flex items-start gap-3">
-                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0 mt-0.5" />
-                                <div>
+                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                              <div className="flex items-center gap-3 w-full">
+                                <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
+                                <div className="flex-1">
                                   <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
                                     {item.label}
                                   </div>
