@@ -13,9 +13,14 @@ const ALLOWED_ORIGINS = [
   ),
 ];
 
+// Check if origin is a Lovable preview domain
+function isLovablePreview(origin: string): boolean {
+  return origin.endsWith('.lovableproject.com') || origin.endsWith('.lovable.app');
+}
+
 export function getCorsHeaders(requestOrigin?: string | null): HeadersInit {
   const origin = requestOrigin || '';
-  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) 
+  const allowedOrigin = ALLOWED_ORIGINS.includes(origin) || isLovablePreview(origin)
     ? origin 
     : 'https://safeorstolen.com';
 
