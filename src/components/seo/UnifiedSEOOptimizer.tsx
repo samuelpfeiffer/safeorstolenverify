@@ -124,13 +124,6 @@ export const UnifiedSEOOptimizer: React.FC<UnifiedSEOOptimizerProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={getCompetitiveKeywords()} />
-      <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Advanced Robots Configuration */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="bingbot" content="index, follow" />
-      <meta name="slurp" content="index, follow" />
       
       {/* Open Graph - Enhanced */}
       <meta property="og:type" content={type} />

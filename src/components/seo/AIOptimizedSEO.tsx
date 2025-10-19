@@ -55,14 +55,6 @@ export const AIOptimizedSEO: React.FC<AIOptimizedSEOProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={aiEnhancedKeywords} />
       
-      {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={fullCanonicalUrl} />}
-      
-      {/* Advanced Robots Directive */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
-      <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1" />
-      
       {/* AI Search Engine Specific */}
       <meta name="AI-crawlable" content="true" />
       <meta name="chatgpt-plugin" content="true" />

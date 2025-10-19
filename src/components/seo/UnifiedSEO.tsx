@@ -39,8 +39,6 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   const fullTitle = title.includes('Safe or Stolen') ? title : `${title} | Safe or Stolen`;
   const imageUrl = image.startsWith('http') ? image : `https://safeorstolen.com${image}`;
 
-  const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:160';
-
   // Normalize structured data
   const normalizedStructuredData = structuredData 
     ? Array.isArray(structuredData) 
@@ -132,9 +130,6 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      <meta name="robots" content={robotsContent} />
-      <meta name="googlebot" content={robotsContent} />
-      <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />

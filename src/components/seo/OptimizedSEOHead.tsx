@@ -53,12 +53,6 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="distribution" content="global" />
       <meta name="rating" content="safe for kids" />
       
-      {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={fullCanonicalUrl} />}
-      
-      {/* Robots */}
-      <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
-      
       {/* Open Graph */}
       <meta property="og:title" content={optimizedTitle} />
       <meta property="og:description" content={optimizedDescription} />
