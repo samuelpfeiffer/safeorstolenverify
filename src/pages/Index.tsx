@@ -2,9 +2,7 @@ import { Suspense, lazy } from 'react';
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
-import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
 import { AppDownloadSection } from '@/components/home/AppDownloadSection';
-import { getHomePageStructuredData } from '@/components/home/HomeStructuredData';
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
@@ -31,14 +29,6 @@ const Index = () => {
       {/* Core SEO */}
       <OrganizationSchema />
       <WebSiteSchema />
-      <UnifiedSEOOptimizer
-        title="How to Check if Something is Stolen Before Buying | Free IMEI VIN Serial Checker"
-        description="Is this phone stolen? Check IMEI, VIN, serial numbers FREE before buying used items on Facebook Marketplace, OfferUp, eBay. Avoid scams—verify if items are stolen in 30 seconds. Trusted by 50K+ buyers."
-        keywords="how to check if something is stolen, is my phone stolen check, free IMEI checker, VIN stolen car lookup, check serial number before buying, Facebook Marketplace safety, avoid buying stolen goods, verify used items, stolen property checker"
-        canonical="/"
-        structuredData={getHomePageStructuredData()}
-        type="website"
-      />
       
       <div className="min-h-screen">
         {/* Hero with search bar - THE CORE VALUE */}
