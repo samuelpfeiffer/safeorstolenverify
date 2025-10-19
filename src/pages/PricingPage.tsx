@@ -92,7 +92,25 @@ const PricingPage = () => {
 
       console.log('Creating checkout for tier:', tier, 'priceId:', priceId, 'isSubscription:', isSubscription);
       
-      const checkoutUrl = await createSubscriptionCheckout(priceId);
+      let checkoutUrl: string | null = null;
+      
+      if (isSubscription) {
+        // Use subscription checkout for monthly plans
+        checkoutUrl = await createSubscriptionCheckout(priceId);
+      } else {
+        // Use one-time payment for pay-per-use plans
+        // For one-time payments, we need serial number - prompt user
+        const serialNumber = prompt('Enter the serial number, IMEI, or VIN to verify:');
+        if (!serialNumber || serialNumber.trim() === '') {
+          toast({
+            title: "Serial number required",
+            description: "Please enter a serial number to proceed with verification.",
+            variant: "destructive",
+          });
+          return;
+        }
+        checkoutUrl = await createOneTimePayment(serialNumber.trim(), 'general');
+      }
 
       if (!checkoutUrl) {
         throw new Error('Payment system did not return a checkout URL. Please try again or contact support.');
