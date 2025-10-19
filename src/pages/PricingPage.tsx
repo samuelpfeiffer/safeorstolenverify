@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";
+import { supabase } from "@/integrations/supabase/client";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
@@ -78,17 +79,25 @@ const PricingPage = () => {
       const tierData = getSubscriptionTier(tier);
       const priceId = getSubscriptionPriceId(tier);
       
-      console.log('[SUBSCRIPTION] Tier:', tier, 'Data:', tierData, 'Price ID:', priceId);
+      console.log('[SUBSCRIPTION-DEBUG] Starting subscription flow');
+      console.log('[SUBSCRIPTION-DEBUG] Tier requested:', tier);
+      console.log('[SUBSCRIPTION-DEBUG] Tier data found:', tierData);
+      console.log('[SUBSCRIPTION-DEBUG] Price ID:', priceId);
+      console.log('[SUBSCRIPTION-DEBUG] Is authenticated:', isAuthenticated);
+      console.log('[SUBSCRIPTION-DEBUG] User session exists:', !!supabase.auth.getSession());
       
       if (!priceId) {
-        console.error('[SUBSCRIPTION] No price ID found for tier:', tier);
+        console.error('[SUBSCRIPTION-DEBUG] ERROR: No price ID found for tier:', tier);
+        console.error('[SUBSCRIPTION-DEBUG] Available tiers:', Object.keys(SUBSCRIPTION_TIERS));
         toast({
           title: "Configuration Error",
-          description: "This subscription plan is not yet configured. Please contact support.",
+          description: `This subscription plan (${tier}) is not configured. Available plans: ${Object.keys(SUBSCRIPTION_TIERS).join(', ')}`,
           variant: "destructive",
         });
         return;
       }
+      
+      console.log('[SUBSCRIPTION-DEBUG] Price ID validated, calling createSubscriptionCheckout...');
 
       // Determine if this is a subscription or one-time payment based on interval
       const isSubscription = tierData.interval === 'month';
@@ -99,7 +108,14 @@ const PricingPage = () => {
       
       if (isSubscription) {
         // Use subscription checkout for monthly plans
-        checkoutUrl = await createSubscriptionCheckout(priceId);
+        console.log('[SUBSCRIPTION-DEBUG] Calling createSubscriptionCheckout with priceId:', priceId);
+        try {
+          checkoutUrl = await createSubscriptionCheckout(priceId);
+          console.log('[SUBSCRIPTION-DEBUG] Checkout URL received:', checkoutUrl ? 'SUCCESS' : 'NULL');
+        } catch (err) {
+          console.error('[SUBSCRIPTION-DEBUG] createSubscriptionCheckout error:', err);
+          throw err;
+        }
       } else {
         // Use one-time payment for pay-per-use plans
         // For one-time payments, we need serial number - prompt user
