@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 
 interface UseOneTimePaymentReturn {
   isLoading: boolean;
-  createOneTimePayment: (serialNumber: string, itemType: string) => Promise<string | null>;
+  createOneTimePayment: (priceId?: string, planName?: string) => Promise<string | null>;
 }
 
 export const useOneTimePayment = (): UseOneTimePaymentReturn => {
@@ -13,20 +13,11 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  const createOneTimePayment = async (serialNumber: string, itemType: string): Promise<string | null> => {
+  const createOneTimePayment = async (priceId?: string, planName?: string): Promise<string | null> => {
     if (!session || !isAuthenticated) {
       toast({
         title: "Authentication Required",
-        description: "Please sign in to purchase a verification report.",
-        variant: "destructive",
-      });
-      return null;
-    }
-
-    if (!serialNumber.trim()) {
-      toast({
-        title: "Serial Number Required",
-        description: "Please enter a valid serial number.",
+        description: "Please sign in to purchase a verification.",
         variant: "destructive",
       });
       return null;
@@ -34,15 +25,17 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating one-time payment for serial number:", serialNumber);
+      const finalPriceId = priceId || 'price_1Rz83i2eGaMDLFHonAmu86lS'; // $10 Report price ID as default
+      const finalPlanName = planName || 'Single Verification';
+      
+      console.log("Creating one-time payment checkout with priceId:", finalPriceId);
       
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: 'price_1Rz83i2eGaMDLFHonAmu86lS', // $10 Report price ID
-          serialNumber: serialNumber.trim(),
-          itemType: itemType || 'general',
+          priceId: finalPriceId,
           isSubscription: false, // This is a one-time payment
-          redirectUrl: window.location.origin + '/verification-success',
+          redirectUrl: window.location.origin,
+          planName: finalPlanName,
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,

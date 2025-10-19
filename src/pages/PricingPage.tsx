@@ -116,17 +116,8 @@ const PricingPage = () => {
         }
       } else {
         // Use one-time payment for pay-per-use plans
-        // For one-time payments, we need serial number - prompt user
-        const serialNumber = prompt('Enter the serial number, IMEI, or VIN to verify:');
-        if (!serialNumber || serialNumber.trim() === '') {
-          toast({
-            title: "Serial number required",
-            description: "Please enter a serial number to proceed with verification.",
-            variant: "destructive",
-          });
-          return;
-        }
-        checkoutUrl = await createOneTimePayment(serialNumber.trim(), 'general');
+        console.log('[ONE-TIME-DEBUG] Creating one-time payment checkout with priceId:', priceId);
+        checkoutUrl = await createOneTimePayment(priceId, tierData.name || tier);
       }
 
       if (!checkoutUrl) {
