@@ -277,19 +277,28 @@ serve(async (req) => {
       // One-time payment mode for verification
       console.log(`[CREATE-CHECKOUT] Setting up one-time payment...`);
       
-      const verificationData = await supabaseClient
-        .from("verification_searches")
-        .insert({
-          user_id: user.id,
-          serial_number: serialNumber,
-          item_type: itemType,
-        })
-        .select()
-        .single();
+      // Only create verification record if serial number is provided
+      let verificationId: string | undefined;
+      if (serialNumber && serialNumber.trim()) {
+        console.log(`[CREATE-CHECKOUT] Creating verification record for serial: ${serialNumber}`);
+        const verificationData = await supabaseClient
+          .from("verification_searches")
+          .insert({
+            user_id: user.id,
+            serial_number: serialNumber,
+            item_type: itemType,
+          })
+          .select()
+          .single();
 
-      if (verificationData.error) {
-        console.log(`[CREATE-CHECKOUT] ERROR creating verification record:`, verificationData.error);
-        throw verificationData.error;
+        if (verificationData.error) {
+          console.log(`[CREATE-CHECKOUT] ERROR creating verification record:`, verificationData.error);
+          throw verificationData.error;
+        }
+        verificationId = verificationData.data.id;
+        console.log(`[CREATE-CHECKOUT] Verification record created: ${verificationId}`);
+      } else {
+        console.log(`[CREATE-CHECKOUT] No serial number provided - skipping verification record creation`);
       }
 
       const resolvedPrice = await resolvePriceId(priceId, planName);
@@ -303,10 +312,12 @@ serve(async (req) => {
             quantity: 1,
           },
         ],
-        success_url: `${redirectUrl}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationData.data.id}`,
+        success_url: verificationId 
+          ? `${redirectUrl}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
+          : `${redirectUrl}/subscription-success?session_id={CHECKOUT_SESSION_ID}`,
         metadata: {
           ...sessionConfig.metadata,
-          verification_id: verificationData.data.id,
+          verification_id: verificationId || undefined,
         },
       };
 
@@ -316,7 +327,7 @@ serve(async (req) => {
         stripe_session_id: "pending", // Will be updated after session creation
         amount: 0, // Will be updated by webhook
         currency: "usd",
-        verification_id: verificationData.data.id,
+        verification_id: verificationId || null,
       });
       
       console.log(`[CREATE-CHECKOUT] One-time payment config ready`);
@@ -328,7 +339,7 @@ serve(async (req) => {
     console.log(`[CREATE-CHECKOUT] Checkout session created: ${session.id}`);
 
     // Update purchase record with session ID for one-time payments
-    if (!isSubscription && serialNumber) {
+    if (!isSubscription) {
       await supabaseClient
         .from("purchases")
         .update({ stripe_session_id: session.id })
