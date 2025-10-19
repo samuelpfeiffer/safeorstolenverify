@@ -233,22 +233,22 @@ const TopNavigation: React.FC = () => {
                     <Users className="h-4 w-4 mr-2" />
                     For Users
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[420px] p-4 bg-gray-900 border-gray-800">
+                  <NavigationMenuContent className="z-50">
+                    <div className="w-[420px] p-4 bg-background border border-border shadow-xl">
                       <div className="mb-3">
                         <h4 className="text-sm font-medium text-sos-orange mb-1">Buyers & Sellers</h4>
-                        <p className="text-xs text-foreground/80">Verify items on marketplaces</p>
+                        <p className="text-xs text-muted-foreground">Verify items on marketplaces</p>
                       </div>
                       <div className="grid gap-2">
                         {usersMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                            <Link to={item.href} className="flex items-center w-full text-left p-3 rounded-lg hover:bg-muted transition-colors group">
                               <div className="flex items-center gap-3 w-full">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
                                 <div className="flex-1">
-                                  <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
+                                  <div className="text-sm font-medium text-foreground group-hover:text-primary mb-1">
                                     {item.label}
                                   </div>
-                                  <div className="text-xs text-muted-foreground group-hover:text-foreground/80">
+                                  <div className="text-xs text-muted-foreground">
                                     {item.description}
                                   </div>
                                 </div>
@@ -266,22 +266,22 @@ const TopNavigation: React.FC = () => {
                     <Briefcase className="h-4 w-4 mr-2" />
                     For Businesses
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[420px] p-4 bg-gray-900 border-gray-800">
+                  <NavigationMenuContent className="z-50">
+                    <div className="w-[420px] p-4 bg-background border border-border shadow-xl">
                       <div className="mb-3">
                         <h4 className="text-sm font-medium text-sos-orange mb-1">Enterprise Solutions</h4>
-                        <p className="text-xs text-foreground/80">API access & bulk verification</p>
+                        <p className="text-xs text-muted-foreground">API access & bulk verification</p>
                       </div>
                       <div className="grid gap-2">
                         {businessesMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                            <Link to={item.href} className="flex items-center w-full text-left p-3 rounded-lg hover:bg-muted transition-colors group">
                               <div className="flex items-center gap-3 w-full">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
                                 <div className="flex-1">
-                                  <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
+                                  <div className="text-sm font-medium text-foreground group-hover:text-primary mb-1">
                                     {item.label}
                                   </div>
-                                  <div className="text-xs text-muted-foreground group-hover:text-foreground/80">
+                                  <div className="text-xs text-muted-foreground">
                                     {item.description}
                                   </div>
                                 </div>
@@ -299,22 +299,22 @@ const TopNavigation: React.FC = () => {
                     <HelpCircle className="h-4 w-4 mr-2" />
                     How It Works
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[420px] p-4 bg-gray-900 border-gray-800">
+                  <NavigationMenuContent className="z-50">
+                    <div className="w-[420px] p-4 bg-background border border-border shadow-xl">
                       <div className="mb-3">
                         <h4 className="text-sm font-medium text-sos-orange mb-1">Verification Services</h4>
-                        <p className="text-xs text-foreground/80">Check phones, cars, electronics & more</p>
+                        <p className="text-xs text-muted-foreground">Check phones, cars, electronics & more</p>
                       </div>
                       <div className="grid gap-2">
                         {howItWorksMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                            <Link to={item.href} className="flex items-center w-full text-left p-3 rounded-lg hover:bg-muted transition-colors group">
                               <div className="flex items-center gap-3 w-full">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
                                 <div className="flex-1">
-                                  <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
+                                  <div className="text-sm font-medium text-foreground group-hover:text-primary mb-1">
                                     {item.label}
                                   </div>
-                                  <div className="text-xs text-muted-foreground group-hover:text-foreground/80">
+                                  <div className="text-xs text-muted-foreground">
                                     {item.description}
                                   </div>
                                 </div>
@@ -331,22 +331,22 @@ const TopNavigation: React.FC = () => {
                   <NavigationMenuTrigger className="bg-transparent text-foreground/90 hover:text-white hover:bg-white/5 data-[state=open]:text-sos-orange data-[state=open]:bg-sos-orange/10 min-h-[44px] px-5">
                     Resources
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[420px] p-4 bg-gray-900 border-gray-800">
+                  <NavigationMenuContent className="z-50">
+                    <div className="w-[420px] p-4 bg-background border border-border shadow-xl">
                       <div className="mb-3">
                         <h4 className="text-sm font-medium text-sos-orange mb-1">Support & Learning</h4>
-                        <p className="text-xs text-foreground/80">Everything you need to know</p>
+                        <p className="text-xs text-muted-foreground">Everything you need to know</p>
                       </div>
                       <div className="grid gap-2">
                         {resourcesMenu.map(item => <NavigationMenuLink key={item.href} asChild>
-                            <Link to={item.href} className="flex items-center w-full text-left p-4 rounded-lg hover:bg-gray-800 transition-colors group">
+                            <Link to={item.href} className="flex items-center w-full text-left p-3 rounded-lg hover:bg-muted transition-colors group">
                               <div className="flex items-center gap-3 w-full">
                                 <item.icon className="h-5 w-5 text-sos-orange flex-shrink-0" />
                                 <div className="flex-1">
-                                  <div className="text-sm font-medium text-foreground/90 group-hover:text-white mb-1">
+                                  <div className="text-sm font-medium text-foreground group-hover:text-primary mb-1">
                                     {item.label}
                                   </div>
-                                  <div className="text-xs text-muted-foreground group-hover:text-foreground/80">
+                                  <div className="text-xs text-muted-foreground">
                                     {item.description}
                                   </div>
                                 </div>
@@ -383,15 +383,15 @@ const TopNavigation: React.FC = () => {
                     <ChevronDown className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 bg-gray-900 border-gray-800" align="end">
+                <DropdownMenuContent className="w-56 bg-background border border-border shadow-xl z-50" align="end">
                   {userMenuItems.map(item => <DropdownMenuItem key={item.href} asChild>
-                      <Link to={item.href} className="flex items-center gap-2 text-foreground/90 hover:text-white hover:bg-gray-800 min-h-[44px] cursor-pointer">
+                      <Link to={item.href} className="flex items-center gap-2 text-foreground hover:text-primary hover:bg-muted min-h-[44px] cursor-pointer px-3 py-2">
                         {item.icon && <item.icon className="h-4 w-4" />}
                         {item.label}
                       </Link>
                     </DropdownMenuItem>)}
-                  <DropdownMenuSeparator className="bg-gray-800" />
-                  <DropdownMenuItem onClick={handleSignOut} className="flex items-center gap-2 text-red-400 hover:text-red-300 hover:bg-red-500/10 min-h-[44px]">
+                  <DropdownMenuSeparator className="bg-border" />
+                  <DropdownMenuItem onClick={handleSignOut} className="flex items-center gap-2 text-red-500 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/20 min-h-[44px] px-3 py-2 cursor-pointer">
                     <LogOut className="h-4 w-4" />
                     Sign Out
                   </DropdownMenuItem>
