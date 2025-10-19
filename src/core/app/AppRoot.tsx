@@ -15,7 +15,6 @@ import { AuthProvider } from '@/lib/auth';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
-import { AuthHelp } from '@/components/auth/AuthHelp';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData';
 import { PerformanceMonitor } from '@/components/seo/PerformanceMonitor';
@@ -69,7 +68,6 @@ export const AppRoot: React.FC = () => {
                   </div>
                   <PWAInstallBanner />
                   <AppDownloadBot />
-                  {!window.location.pathname.includes('/auth') && <AuthHelp />}
                   <Toaster />
                 </Router>
               </ThemeProvider>

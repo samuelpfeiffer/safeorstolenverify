@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";
-import { supabase } from "@/integrations/supabase/client";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
@@ -84,7 +83,6 @@ const PricingPage = () => {
       console.log('[SUBSCRIPTION-DEBUG] Tier data found:', tierData);
       console.log('[SUBSCRIPTION-DEBUG] Price ID:', priceId);
       console.log('[SUBSCRIPTION-DEBUG] Is authenticated:', isAuthenticated);
-      console.log('[SUBSCRIPTION-DEBUG] User session exists:', !!supabase.auth.getSession());
       
       if (!priceId) {
         console.error('[SUBSCRIPTION-DEBUG] ERROR: No price ID found for tier:', tier);
