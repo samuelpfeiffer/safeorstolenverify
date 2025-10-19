@@ -452,7 +452,7 @@ const TopNavigation: React.FC = () => {
               {/* Users Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">For Users</p>
-                {usersMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {usersMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
@@ -465,7 +465,7 @@ const TopNavigation: React.FC = () => {
               {/* Businesses Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">For Businesses</p>
-                {businessesMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {businessesMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
@@ -478,7 +478,7 @@ const TopNavigation: React.FC = () => {
               {/* How It Works Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">How It Works</p>
-                {howItWorksMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {howItWorksMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
@@ -491,7 +491,7 @@ const TopNavigation: React.FC = () => {
               {/* Resources Menu in Mobile */}
               <div className="border-t border-white/10 pt-4 mt-4">
                 <p className="text-foreground/80 text-sm font-semibold mb-3 px-4">Resources</p>
-                {resourcesMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
+                {resourcesMenu.map(item => <Link key={item.href} to={item.href} onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col w-full text-left px-5 py-4 rounded-xl hover:bg-white/5 transition-all min-h-[56px]">
                     <div className="text-sm font-medium text-foreground/90 hover:text-white mb-1">
                       {item.label}
                     </div>
