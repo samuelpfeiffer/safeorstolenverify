@@ -78,7 +78,10 @@ const PricingPage = () => {
       const tierData = getSubscriptionTier(tier);
       const priceId = getSubscriptionPriceId(tier);
       
+      console.log('[SUBSCRIPTION] Tier:', tier, 'Data:', tierData, 'Price ID:', priceId);
+      
       if (!priceId) {
+        console.error('[SUBSCRIPTION] No price ID found for tier:', tier);
         toast({
           title: "Configuration Error",
           description: "This subscription plan is not yet configured. Please contact support.",

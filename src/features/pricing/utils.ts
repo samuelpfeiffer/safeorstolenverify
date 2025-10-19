@@ -38,8 +38,8 @@ export const formatPrice = (priceInCents: number): string => {
  * Get Stripe Price ID for a subscription tier
  */
 export const getSubscriptionPriceId = (tier: string): string => {
-  const tierKey = tier as SubscriptionTierKey;
-  return SUBSCRIPTION_TIERS[tierKey]?.stripePriceId || '';
+  const tierData = getSubscriptionTier(tier);
+  return tierData?.stripePriceId || '';
 };
 
 /**
@@ -48,10 +48,19 @@ export const getSubscriptionPriceId = (tier: string): string => {
 export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
   if (!tierName) return SUBSCRIPTION_TIERS.free;
   
-  // Try direct match
+  const normalized = tierName.toLowerCase();
+  
+  // Try direct key match
   const tierKey = tierName as SubscriptionTierKey;
   if (SUBSCRIPTION_TIERS[tierKey]) {
     return SUBSCRIPTION_TIERS[tierKey];
+  }
+  
+  // Try matching by tier name (e.g., "Personal Plan" -> personal)
+  for (const [key, tier] of Object.entries(SUBSCRIPTION_TIERS)) {
+    if (tier.name.toLowerCase() === normalized) {
+      return tier;
+    }
   }
   
   // Try legacy mapping
