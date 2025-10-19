@@ -170,22 +170,27 @@ serve(async (req) => {
       });
       console.log(`[CREATE-CHECKOUT] Available products:`, availableProducts);
       
-      // Map plan names to flexible search terms
+      // Map plan names to flexible search terms - includes actual Stripe product names
       const planNameMap: Record<string, string[]> = {
-        'smart buyer': ['smart buyer', 'basic plan', 'basic', 'starter', 'individual'],
-        'savvy shopper': ['savvy shopper', 'premium plan', 'premium', 'pro', 'popular'],  
+        'personal plan': ['personal plan', 'personal', 'individual', 'smart buyer', 'basic'],
+        'professional plan': ['professional plan', 'professional', 'pro', 'savvy shopper', 'premium'],
+        'enterprise plan': ['enterprise plan', 'enterprise', 'business pro', 'business'],
+        'single verification': ['single verification', 'pay per use', 'pay per check', 'pay per lookup', 'single', 'one-time'],
+        'smart buyer': ['smart buyer', 'basic plan', 'basic', 'starter', 'individual', 'personal plan'],
+        'savvy shopper': ['savvy shopper', 'premium plan', 'premium', 'pro', 'popular', 'professional plan'],  
         'business pro': ['business pro', 'enterprise plan', 'enterprise', 'business'],
         'entry level': ['entry level', 'entry', 'individual', 'starter'],
-        'pay per check': ['pay per check', 'pay per lookup', 'single', 'one-time', 'per check', 'lookup'],
-        'pay per lookup': ['pay per lookup', 'pay per check', 'single', 'one-time', 'per check', 'lookup'],
-        'personal use': ['personal use', 'personal', 'instantly check'],
-        'professional': ['professional', 'stolen item lookup', 'pro'],
-        'report': ['certified stolen', 'report', 'single report', 'verification']
+        'pay per check': ['pay per check', 'pay per lookup', 'single', 'one-time', 'per check', 'lookup', 'single verification'],
+        'pay per lookup': ['pay per lookup', 'pay per check', 'single', 'one-time', 'per check', 'lookup', 'single verification'],
+        'personal use': ['personal use', 'personal', 'instantly check', 'personal plan'],
+        'professional': ['professional', 'stolen item lookup', 'pro', 'professional plan'],
+        'report': ['certified stolen', 'report', 'single report', 'verification', 'single verification']
       };
       
       let searchTerms: string[] = [];
       if (maybePlanName) {
         const normalizedName = maybePlanName.toLowerCase();
+        console.log(`[CREATE-CHECKOUT] Attempting to match planName: "${normalizedName}"`);
         console.log(`[CREATE-CHECKOUT] Normalized plan name: ${normalizedName}`);
         
         // Find matching search terms

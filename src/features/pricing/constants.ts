@@ -60,7 +60,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 50,
     overageRate: 0.40,
-    stripePriceId: "prod_TDfqU96mC1oPGJ",
+    stripePriceId: "price_1SHEUQGxnZLw8J7OinyVqNMK",
     tier: "personal",
     popular: true,
     features: [
