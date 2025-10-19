@@ -20,20 +20,20 @@ const Hero = () => {
 
           {/* Trust-focused Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
-            Is This Stolen? Find Out in 30 Seconds
-            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Check Before You Buy or Sell. Avoid Scams &amp; Stolen Goods</span>
+            Free Database Search - Verify if Stolen in 30 Seconds
+            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Check & Verify Before You Buy. Search IMEI, VIN, Serial Numbers</span>
           </h1>
           
           {/* Trust Value Proposition */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don't get scammed on Facebook Marketplace, OfferUp, or eBay. FREE IMEI, VIN & serial number checker instantly verifies if phones, cars, electronics are stolen. Trusted by 50,000+ safe buyers.
+            Don't get scammed on Facebook Marketplace, OfferUp, or eBay. Free database search to check & verify IMEI, VIN, serial numbers instantly. Trusted by 50,000+ safe buyers. 4 free searches included.
           </p>
 
           {/* Professional Search Interface */}
           <div className="max-w-2xl mx-auto bg-card p-10 rounded-2xl shadow-trust border border-primary/20 animate-fade-in">
             <div className="flex items-center gap-3 mb-8 px-6 py-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl border border-primary/20">
               <Shield className="h-7 w-7 text-primary" />
-              <span className="text-lg font-semibold text-foreground">Secure Verification - Enter Your Item Details</span>
+              <span className="text-lg font-semibold text-foreground">Search Database Free - Verify Any Item</span>
             </div>
             <UnifiedSearchBar variant="hero" />
             <div className="mt-6 flex items-center justify-center gap-6 text-sm">

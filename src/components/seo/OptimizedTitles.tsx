@@ -20,32 +20,32 @@ export const OptimizedTitles: React.FC<OptimizedTitlesProps> = ({
     switch (pageType) {
       case 'home':
         return {
-          title: customTitle || `Verify Stolen Goods Instantly - IMEI, VIN & Serial Check${locationSuffix}`,
-          description: customDescription || `Instantly check if phones, cars, electronics are stolen before buying${locationSuffix}. Enter IMEI, VIN or serial number - $2.3M in scams prevented.`
+          title: customTitle || `Free IMEI VIN Check - Verify & Search Stolen Items Database${locationSuffix}`,
+          description: customDescription || `Free stolen item verification. Check & verify phones, cars, electronics before buying${locationSuffix}. Search our database: IMEI, VIN, serial numbers. 4 free checks.`
         };
       
       case 'check-phone':
         return {
-          title: customTitle || `Check if Phone is Stolen - Free IMEI Verification${locationSuffix}`,
-          description: customDescription || `Free IMEI checker${locationSuffix}. Verify iPhone, Samsung, Android phones against stolen device databases. Check phone IMEI in 30 seconds.`
+          title: customTitle || `Free IMEI Check - Verify Phone Not Stolen Before Buying${locationSuffix}`,
+          description: customDescription || `Free IMEI verification tool${locationSuffix}. Check & verify iPhone, Samsung, Android against stolen phone database. Search IMEI numbers instantly.`
         };
       
       case 'check-car':
         return {
-          title: customTitle || `Check if Car is Stolen - Free VIN Verification${locationSuffix}`,
-          description: customDescription || `Free VIN checker${locationSuffix}. Verify cars, trucks, motorcycles against stolen vehicle databases. Check car VIN before buying.`
+          title: customTitle || `Free VIN Check - Verify Car Not Stolen Before Buying${locationSuffix}`,
+          description: customDescription || `Free VIN verification tool${locationSuffix}. Check & verify cars, trucks, motorcycles in stolen vehicle database. Search VIN numbers instantly.`
         };
       
       case 'imei':
         return {
-          title: customTitle || `IMEI Check - Verify Phone Not Stolen in 30 Seconds${locationSuffix}`,
-          description: customDescription || `Free IMEI verification tool${locationSuffix}. Check iPhone, Android IMEI against stolen phone databases. Protect yourself from stolen devices.`
+          title: customTitle || `Free IMEI Check - Verify & Search Stolen Phone Database${locationSuffix}`,
+          description: customDescription || `Free IMEI verification${locationSuffix}. Check & verify iPhone, Android IMEI numbers in stolen phone database. Search before buying.`
         };
       
       case 'vin':
         return {
-          title: customTitle || `VIN Check - Verify Car Not Stolen Before Buying${locationSuffix}`,
-          description: customDescription || `Free VIN verification${locationSuffix}. Check vehicle identification numbers against stolen car databases. Verify before purchase.`
+          title: customTitle || `Free VIN Check - Verify & Search Stolen Car Database${locationSuffix}`,
+          description: customDescription || `Free VIN verification${locationSuffix}. Check & verify vehicle numbers in stolen car database. Search VIN before buying.`
         };
       
       case 'verification':

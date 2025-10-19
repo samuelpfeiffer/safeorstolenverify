@@ -12,6 +12,7 @@ import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
 import { ContactFormSection } from '@/components/home/ContactFormSection';
 import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
+import { QuestionBasedContent } from '@/components/home/QuestionBasedContent';
 
 // Lazy load VerifiedProduct component
 const VerifiedProduct = lazy(() => import('@/components/VerifiedProduct'));
@@ -39,6 +40,9 @@ const Index = () => {
         
         {/* Simple how it works */}
         <HowItWorks />
+        
+        {/* Question-based content for SEO */}
+        <QuestionBasedContent />
         
         {/* Social proof */}
         <TestimonialsSection />

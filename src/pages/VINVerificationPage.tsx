@@ -41,11 +41,11 @@ const VINVerificationPage: React.FC = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-              Free VIN Checker Tool
+              Free VIN Check - Verify Car Database
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Verify if a vehicle is reported stolen before making a purchase. 
-              Our VIN checker searches law enforcement databases to protect you from buying stolen cars, trucks, and motorcycles.
+              Check & verify if a vehicle is stolen before buying. Free database search of law enforcement records.
+              Search VIN numbers to protect yourself from stolen cars, trucks, and motorcycles.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ const VINVerificationPage: React.FC = () => {
                   />
                   <Button className="w-full" size="lg">
                     <Search className="h-5 w-5 mr-2" />
-                    Check VIN Status
+                    Search Database Free
                   </Button>
                 </div>
               </CardContent>
@@ -118,10 +118,10 @@ const VINVerificationPage: React.FC = () => {
 
           {/* SEO Content Section */}
           <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert">
-            <h2>How to Check if a Car is Stolen Using VIN</h2>
+            <h2>How to Check if a Car is Stolen Using VIN - Free Database</h2>
             <p>
               Every vehicle manufactured since 1981 has a unique 17-character Vehicle Identification Number (VIN) that serves as its DNA. 
-              When vehicles are reported stolen, their VIN numbers are entered into national databases. Our VIN checker tool searches 
+              When vehicles are reported stolen, their VIN numbers are entered into national databases. Our free VIN checker searches 
               these databases to help you verify a vehicle's history before purchase.
             </p>
 

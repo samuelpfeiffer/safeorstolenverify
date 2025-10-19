@@ -111,10 +111,10 @@ export const EnhancedFAQSection = () => {
             <span>Frequently Asked Questions</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Everything You Need to Know
+            How to Check if Something is Stolen Before Buying?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Answers to the most common questions from buyers, sellers, and businesses using SafeOrStolen
+            Common questions about verifying stolen items, checking databases, and protecting yourself when buying secondhand
           </p>
         </div>
 
