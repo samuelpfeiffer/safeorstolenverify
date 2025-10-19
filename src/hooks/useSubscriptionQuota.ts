@@ -59,7 +59,7 @@ export const useSubscriptionQuota = () => {
       }
 
       // Check if over quota for limited tiers
-      if (['starter', 'personal'].includes(tier) && used >= limit) {
+      if (tier === 'personal' && used >= limit) {
         needsPayment = true; // Will need to pay overage
       }
 
@@ -74,7 +74,7 @@ export const useSubscriptionQuota = () => {
         used,
         remaining: isUnlimited ? 'unlimited' : Math.max(0, limit - used),
         isUnlimited,
-        overageRate: tier === 'starter' ? 0.50 : tier === 'personal' ? 0.40 : null,
+        overageRate: tier === 'personal' ? 0.40 : null,
         canPerformCheck,
         needsPayment
       });

@@ -88,7 +88,6 @@ export const getPersonalTiers = (): SubscriptionTier[] => {
   return [
     SUBSCRIPTION_TIERS.free,
     SUBSCRIPTION_TIERS.payPerUse,
-    SUBSCRIPTION_TIERS.starter,
     SUBSCRIPTION_TIERS.personal
   ];
 };

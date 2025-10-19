@@ -135,8 +135,8 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
           </div>
           <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40 border-2 border-sos-orange">
             <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-2 rounded-full inline-block mb-2">Best Value</div>
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.starter.price)}</div>
-            <p className="text-gray-400 mb-4">15 Checks/mo</p>
+            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}</div>
+            <p className="text-gray-400 mb-4">50 Checks/mo</p>
             <Button 
               className="bg-sos-orange hover:bg-sos-orange/90"
               size="sm"

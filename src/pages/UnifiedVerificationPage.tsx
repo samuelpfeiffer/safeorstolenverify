@@ -307,7 +307,7 @@ export default function UnifiedVerificationPage() {
               <Card className="p-6">
                 <h3 className="font-semibold mb-2">How much does verification cost?</h3>
                 <p className="text-sm text-muted-foreground">
-                  Free tier: 2 verifications (14-day trial). Pay-per-check: $0.50. Monthly plans: Starter $4.99 (15 checks), Personal $9.99 (50 checks), Professional $29.99 (unlimited + bulk tools + API access).
+                  Free tier: 2 verifications (14-day trial). Pay-per-check: $0.50. Monthly plans: Personal $9.99 (50 checks), Professional $29.99 (unlimited + bulk tools + API access).
                 </p>
               </Card>
             </div>

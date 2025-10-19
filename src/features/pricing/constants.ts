@@ -35,7 +35,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$0.50",
     interval: "once",
     monthlyQuota: 1,
-    stripePriceId: "prod_T9lOGzQX72aTYu",
+    stripePriceId: "price_1SDRrMGxnZLw8J7ObJsUlp6k",
     tier: "payPerUse",
     features: [
       "$0.50 per verification",
@@ -53,32 +53,6 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     phoneSupport: false,
     dedicatedManager: false
   },
-  starter: {
-    name: "Starter Plan",
-    price: 499,
-    priceDisplay: "$4.99",
-    interval: "month",
-    monthlyQuota: 15,
-    overageRate: 0.50,
-    stripePriceId: "prod_TDfkVL8GE1dRt5",
-    tier: "starter",
-    features: [
-      "15 verifications per month",
-      "PDF receipt generator",
-      "90-day search history",
-      "Email sharing of receipts",
-      "Basic customer support",
-      "$0.50 per additional check"
-    ],
-    receiptsIncluded: true,
-    historyRetention: 90,
-    trustBadges: false,
-    apiAccess: false,
-    bulkUpload: false,
-    whiteLabel: false,
-    phoneSupport: false,
-    dedicatedManager: false
-  },
   personal: {
     name: "Personal Plan",
     price: 999,
@@ -86,7 +60,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 50,
     overageRate: 0.40,
-    stripePriceId: "prod_TDg5LsN4Fw5vtg",
+    stripePriceId: "prod_TDfqU96mC1oPGJ",
     tier: "personal",
     popular: true,
     features: [
@@ -113,7 +87,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: "prod_TDg5LsN4Fw5vtg",
+    stripePriceId: "price_1SHEiuGxnZLw8J7OszscBBk7",
     tier: "professional",
     features: [
       "Unlimited verifications",
@@ -139,7 +113,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "Custom",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: "prod_TDg9BzuF9bPHAI",
+    stripePriceId: "price_1SHEnFGxnZLw8J7Oq1PM96Eo",
     tier: "enterprise",
     features: [
       "Unlimited verifications",
@@ -164,7 +138,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
 
 // Legacy tier name mapping for backward compatibility
 export const LEGACY_TIER_MAPPING: Record<string, SubscriptionTierKey> = {
-  'Basic': 'starter',
+  'Basic': 'personal',
   'Premium': 'personal',
   'Enterprise': 'professional',
   'business75': 'professional',

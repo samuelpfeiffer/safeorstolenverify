@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Star, Loader2, AlertTriangle } from "lucide-react";
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
 import { useEnhancedSubscription } from "@/hooks/useEnhancedSubscription";
-import { getSubscriptionPriceId, SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
+import { getSubscriptionPriceId, getSubscriptionTier, SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { useNavigate } from "react-router-dom";
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useToast } from "@/hooks/use-toast";
@@ -75,23 +75,22 @@ const PricingPage = () => {
     }, 20000);
 
     try {
-      // Find the matching subscription tier
-      const tierEntry = Object.entries(SUBSCRIPTION_TIERS).find(
-        ([, value]) => value.name === tier || value.name.toLowerCase() === tier.toLowerCase()
-      );
-
-      if (!tierEntry) {
-        throw new Error(`Subscription tier "${tier}" not found`);
-      }
-
-      const [tierKey, tierData] = tierEntry;
-      const priceId = tierData.stripePriceId;
+      const tierData = getSubscriptionTier(tier);
+      const priceId = getSubscriptionPriceId(tier);
       
       if (!priceId) {
-        throw new Error(`No price ID configured for ${tier}. Please contact support.`);
+        toast({
+          title: "Configuration Error",
+          description: "This subscription plan is not yet configured. Please contact support.",
+          variant: "destructive",
+        });
+        return;
       }
 
-      console.log('Creating checkout for tier:', tierKey, 'priceId:', priceId);
+      // Determine if this is a subscription or one-time payment based on interval
+      const isSubscription = tierData.interval === 'month';
+
+      console.log('Creating checkout for tier:', tier, 'priceId:', priceId, 'isSubscription:', isSubscription);
       
       const checkoutUrl = await createSubscriptionCheckout(priceId);
 

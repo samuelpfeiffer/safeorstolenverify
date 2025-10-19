@@ -114,10 +114,6 @@ export const ConversionOptimizedPricing = ({
     description: "One-time check, no commitment",
     cta: "Buy Single Check"
   }, {
-    ...SUBSCRIPTION_TIERS.starter,
-    description: "Best for regular sellers",
-    cta: "Start Starter Plan"
-  }, {
     ...SUBSCRIPTION_TIERS.personal,
     description: "Maximum value per check",
     cta: "Start Personal Plan"

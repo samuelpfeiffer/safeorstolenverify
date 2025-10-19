@@ -36,7 +36,7 @@ export const SubscriptionStatus = () => {
     }
   }, [subscriptionData?.subscription_tier]);
 
-  const handleSubscribeClick = useCallback(async (tier: 'starter' | 'personal' | 'professional') => {
+  const handleSubscribeClick = useCallback(async (tier: 'personal' | 'professional') => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signin');
       return;

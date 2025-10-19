@@ -209,7 +209,6 @@ export default function PremiumFeaturesPage() {
                   <tr className="border-b">
                     <th className="text-left p-4">Feature</th>
                     <th className="p-4">Free</th>
-                    <th className="p-4">Starter</th>
                     <th className="p-4">Personal</th>
                     <th className="p-4 bg-primary/5">Professional</th>
                   </tr>
@@ -218,7 +217,6 @@ export default function PremiumFeaturesPage() {
                   <tr className="border-b">
                     <td className="p-4 font-medium">Monthly Verifications</td>
                     <td className="p-4 text-center">2</td>
-                    <td className="p-4 text-center">15</td>
                     <td className="p-4 text-center">50</td>
                     <td className="p-4 text-center bg-primary/5">Unlimited</td>
                   </tr>
@@ -226,12 +224,10 @@ export default function PremiumFeaturesPage() {
                     <td className="p-4 font-medium">PDF Certificates</td>
                     <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center">✓</td>
-                    <td className="p-4 text-center">✓</td>
                     <td className="p-4 text-center bg-primary/5">✓</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Alert Monitoring</td>
-                    <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center">10 items</td>
                     <td className="p-4 text-center bg-primary/5">Unlimited</td>
@@ -240,12 +236,10 @@ export default function PremiumFeaturesPage() {
                     <td className="p-4 font-medium">Bulk Verification</td>
                     <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center">✗</td>
-                    <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center bg-primary/5">✓</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">API Access</td>
-                    <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center">✗</td>
                     <td className="p-4 text-center bg-primary/5">10k calls/mo</td>
@@ -253,7 +247,6 @@ export default function PremiumFeaturesPage() {
                   <tr>
                     <td className="p-4 font-medium">Price</td>
                     <td className="p-4 text-center">$0</td>
-                    <td className="p-4 text-center">$4.99/mo</td>
                     <td className="p-4 text-center">$9.99/mo</td>
                     <td className="p-4 text-center bg-primary/5">$29.99/mo</td>
                   </tr>
