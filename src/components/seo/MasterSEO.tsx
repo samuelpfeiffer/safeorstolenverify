@@ -60,7 +60,6 @@ export const MasterSEO: React.FC = () => {
   const shouldIndex = !location.pathname.includes('/admin') && 
                      !location.pathname.includes('/auth') && 
                      !location.pathname.includes('/test') &&
-                     !location.pathname.includes('/dashboard') &&
                      !location.pathname.includes('/profile') &&
                      !location.pathname.includes('/subscription');
 
