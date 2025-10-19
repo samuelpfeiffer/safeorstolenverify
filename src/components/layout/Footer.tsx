@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Shield, Heart, ExternalLink, Twitter, Linkedin, Github } from 'lucide-react';
+import { Logo } from '@/components/common/Logo';
 
 /**
  * Application Footer
@@ -84,14 +85,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-                alt="Safe or Stolen" 
-                className="h-8 w-8"
-              />
-              <span className="text-xl font-bold text-white">Safe or Stolen</span>
-            </div>
+            <Logo size="md" showText className="mb-4" />
             
             <p className="text-gray-400 text-sm mb-4 max-w-md">
               GLOBAL DOMINATION of stolen goods verification. Every marketplace, auction house, pawn shop 

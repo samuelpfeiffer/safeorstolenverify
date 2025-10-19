@@ -1,3 +1,4 @@
+import { Logo } from '@/components/common/Logo';
 
 interface AuthFormHeaderProps {
   mode: 'signin' | 'signup';
@@ -5,7 +6,7 @@ interface AuthFormHeaderProps {
 
 export const AuthFormHeader = ({ mode }: AuthFormHeaderProps) => {
   return (
-    <div className="text-center">
+    <div className="text-center space-y-4">
       <h1 className="text-3xl font-bold text-white mb-2">
         {mode === 'signin' ? 'Welcome Back' : 'Create Account'}
       </h1>

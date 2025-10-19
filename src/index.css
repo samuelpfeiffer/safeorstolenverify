@@ -6,97 +6,87 @@
 
 @layer base {
   :root {
-    /* Black and gray background palette */
-    --background: 0 0% 7%;  /* Near black background */
+    /* Black and gray background palette with enhanced contrast */
+    --background: 0 0% 5%;  /* Deeper black background */
     --foreground: 0 0% 98%;  /* White text */
-    --card: 0 0% 12%;  /* Dark gray cards */
+    --card: 0 0% 10%;  /* Dark gray cards with subtle elevation */
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 12%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 217 91% 60%;  /* Professional blue - trust and security */
+    --primary: 28 100% 50%;  /* Vibrant SOS Orange */
     --primary-foreground: 0 0% 100%;
-    --secondary: 142 71% 45%;  /* Success green for verified items */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 82 84% 55%;  /* Vibrant SOS Lime */
+    --secondary-foreground: 0 0% 10%;
     --muted: 0 0% 18%;  /* Medium gray */
-    --muted-foreground: 0 0% 75%;  /* Lighter gray text - visible on dark backgrounds */
-    --accent: 217 91% 60%;  /* Blue accent for consistency */
+    --muted-foreground: 0 0% 75%;  /* Lighter gray text */
+    --accent: 28 100% 50%;  /* SOS Orange accent */
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;  /* Alert red for stolen items */
+    --destructive: 0 84% 60%;  /* Alert red */
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 20%;  /* Dark gray borders */
     --input: 0 0% 12%;  /* Dark input backgrounds */
-    --ring: 217 91% 60%;  /* Blue focus ring for trust */
-    --radius: 0.75rem;  /* Slightly softer corners */
+    --ring: 28 100% 50%;  /* Orange focus ring */
+    --radius: 0.75rem;
     
-    /* Trust & Security theme colors */
-    --trust-blue: 217 91% 60%;  /* Primary trust color */
-    --verified-green: 142 71% 45%;  /* Success and verified */
-    --alert-red: 0 84% 60%;  /* Warnings and stolen items */
-    --professional-navy: 222 47% 11%;  /* Authority and reliability */
+    /* Brand colors - SOS Theme */
+    --sos-orange: 28 100% 50%;  /* #FF8000 */
+    --sos-lime: 82 84% 55%;  /* #B8FF2D */
+    --sos-dark: 0 0% 7%;  /* Near black */
+    --sos: 0 0% 5%;  /* Pure black background */
     
-    /* Dark gradients with black and gray */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 76% 48%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 15%));
-    --gradient-trust: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
-    --gradient-verified: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 40%) 100%);
-    --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    /* Enhanced gradients with SOS brand colors */
+    --gradient-primary: linear-gradient(135deg, hsl(28 100% 50%) 0%, hsl(28 100% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5%) 0%, hsl(0 0% 12%) 50%, hsl(28 100% 50% / 0.1) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%), hsl(0 0% 13%));
+    --gradient-sos: linear-gradient(135deg, hsl(28 100% 50%) 0%, hsl(82 84% 55%) 100%);
+    --gradient-verified: linear-gradient(135deg, hsl(82 84% 55%) 0%, hsl(142 71% 45%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, rgba(255, 128, 0, 0.15) 0%, transparent 70%);
     
-    /* Professional accent colors */
-    --accent-blue: 217 91% 60%;
-    --accent-green: 142 71% 45%;
-    --accent-amber: 38 92% 50%;  /* For warnings */
-    --accent-navy: 222 47% 11%;
-    
-    /* Trust-building shadows - subtle and professional */
-    --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 2px 4px -2px rgb(15 23 42 / 0.04);
-    --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.05);
-    --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.10), 0 8px 10px -6px rgb(15 23 42 / 0.05);
-    --shadow-trust: 0 4px 20px -4px rgba(59, 130, 246, 0.2);
-    --shadow-verified: 0 4px 20px -4px rgba(34, 197, 94, 0.2);
+    /* Professional shadows with orange glow */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    --shadow-orange: 0 4px 20px -4px rgba(255, 128, 0, 0.3);
+    --shadow-lime: 0 4px 20px -4px rgba(184, 255, 45, 0.3);
+    --shadow-elegant: 0 8px 32px rgba(255, 128, 0, 0.2);
 
     /* Brand: FasterCapital */
     --fc-blue: 214 84% 45%;
     --fc-red: 0 72% 55%;
     --fc-gradient: linear-gradient(90deg, hsl(var(--fc-blue)), hsl(var(--fc-red)));
 
-    --sidebar-background: 0 0% 7%;
+    --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary: 28 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 142 71% 45%;
-    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-accent: 82 84% 55%;
+    --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 28 100% 50%;
   }
 
   .dark {
-    --background: 0 0% 7%;  /* Near black background */
-    --foreground: 0 0% 98%;  /* White text */
-    --card: 0 0% 12%;  /* Dark gray cards */
-    --card-foreground: 0 0% 98%;  /* White text on dark cards */
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;  /* White text on dark popovers */
-    --primary: 217 91% 60%;  /* Professional blue */
+    /* Same as root for dark theme consistency */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 28 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 142 71% 45%;  /* Green */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 18%;  /* Medium gray */
-    --muted-foreground: 0 0% 75%;  /* Light gray text - visible on dark backgrounds */
-    --accent: 217 91% 60%;  /* Blue accent */
+    --secondary: 82 84% 55%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 75%;
+    --accent: 28 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 20%;
     --input: 0 0% 12%;
-    --ring: 217 91% 60%;
-    
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(224 76% 48%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 15%));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 71% 45%) 100%);
+    --ring: 28 100% 50%;
   }
 
   * {
@@ -255,13 +245,24 @@
     @apply transition-transform duration-200 hover:scale-[1.02];
   }
 
-  /* Trust-focused brand colors - solid, no gradients */
-  .sos-brand-gradient {
-    background: hsl(var(--primary));
+  /* SOS Brand Styles - Orange & Lime */
+  .sos-gradient {
+    background: var(--gradient-sos);
   }
   
-  .sos-brand-text {
-    color: hsl(var(--primary));
+  .sos-gradient-text {
+    background: var(--gradient-sos);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .sos-glow {
+    box-shadow: var(--shadow-orange);
+  }
+  
+  .sos-lime-glow {
+    box-shadow: var(--shadow-lime);
   }
 
   .trust-badge {
@@ -272,23 +273,34 @@
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm border border-secondary/20;
   }
 
-  .cyber-float {
-    animation: cyber-float 6s ease-in-out infinite;
+  .animate-glow {
+    animation: glow-pulse 2s ease-in-out infinite;
   }
 
-  @keyframes cyber-pulse {
-    0% { filter: hue-rotate(0deg) brightness(1); }
-    100% { filter: hue-rotate(360deg) brightness(1.2); }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(255, 128, 0, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(255, 128, 0, 0.6);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { 
+      transform: translateY(0px);
+    }
+    50% { 
+      transform: translateY(-10px);
+    }
   }
 
   @keyframes scan-line {
     0%, 100% { opacity: 0; transform: translateX(-100%); }
     50% { opacity: 1; transform: translateX(100%); }
-  }
-
-  @keyframes cyber-float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(5px) rotate(-1deg); }
   }
 }

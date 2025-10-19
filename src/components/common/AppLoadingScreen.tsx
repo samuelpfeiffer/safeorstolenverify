@@ -1,5 +1,6 @@
 import React from 'react';
 import { Loader2 } from 'lucide-react';
+import { Logo } from '@/components/common/Logo';
 
 /**
  * Enterprise Application Loading Screen
@@ -11,12 +12,8 @@ export const AppLoadingScreen: React.FC = () => {
       <div className="text-center space-y-6">
         {/* Logo */}
         <div className="relative">
-          <img 
-            src="/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png" 
-            alt="Safe or Stolen" 
-            className="h-20 w-20 mx-auto"
-          />
-          <div className="absolute -inset-4 bg-sos-orange/20 rounded-full blur-xl"></div>
+          <Logo size="xl" linkTo={null} />
+          <div className="absolute -inset-4 bg-sos-orange/20 rounded-full blur-xl animate-pulse"></div>
         </div>
         
         {/* Loading Spinner */}

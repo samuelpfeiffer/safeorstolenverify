@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-import sosLogo from '@/assets/sos-logo.png';
+import { Logo } from '@/components/common/Logo';
 
 const TopNavigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -206,18 +206,7 @@ const TopNavigation: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <div className="flex items-center gap-4">
-            <Link to="/" className="flex items-center gap-3 group transition-transform hover:scale-105" aria-label="SafeOrStolen Home">
-              <div className="relative">
-                <img 
-                  src={sosLogo}
-                  alt="SafeOrStolen - Verify Before You Buy or Sell" 
-                  className="h-12 w-auto filter drop-shadow-lg object-contain" 
-                  width="auto" 
-                  height="48"
-                />
-                <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl group-hover:bg-primary/30 transition-colors"></div>
-              </div>
-            </Link>
+            <Logo size="lg" showText className="filter drop-shadow-lg" />
           </div>
 
           {/* Desktop Navigation with Dropdown Menus */}
