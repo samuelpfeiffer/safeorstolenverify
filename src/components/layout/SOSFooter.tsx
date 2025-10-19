@@ -56,8 +56,9 @@ export const SOSFooter: React.FC = () => {
           <Link to="/api-docs" className="text-base text-gray-500 hover:text-gray-300 mr-4">API</Link>
           <Link to="/blog" className="text-base text-gray-500 hover:text-gray-300 mr-4">Blog</Link>
           <button 
-            onClick={() => handleExternalNavigation("https://www.youtube.com/@SafeOrStolen", true)}
+            onClick={() => handleExternalNavigation("https://www.youtube.com/@safeorstolenofficially", true)}
             className="text-base text-gray-500 hover:text-gray-300 inline-flex items-center gap-1 cursor-pointer"
+            aria-label="Visit Safe or Stolen YouTube channel"
           >
             <Youtube className="h-4 w-4" />
             YouTube

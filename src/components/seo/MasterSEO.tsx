@@ -92,6 +92,7 @@ export const MasterSEO: React.FC = () => {
       "availableLanguage": "English"
     },
     "sameAs": [
+      "https://www.youtube.com/@safeorstolenofficially",
       "https://twitter.com/safeorstolen",
       "https://facebook.com/safeorstolen"
     ]

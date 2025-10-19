@@ -36,6 +36,7 @@ export const EnhancedStructuredData = () => {
       "availableLanguage": ["English"]
     },
     "sameAs": [
+      "https://www.youtube.com/@safeorstolenofficially",
       "https://x.com/safeorstolen",
       "https://www.linkedin.com/company/safeorstolen/"
     ]
