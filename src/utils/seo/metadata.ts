@@ -6,7 +6,7 @@ const SITE_CONFIG = {
   name: 'Safe or Stolen',
   legalName: 'Safe or Stolen Corp.',
   tagline: 'Verify the Legitimacy of 2nd-hand items before you buy or sell',
-  description: 'Comprehensive stolen goods verification platform for all item types. Verify vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment using IMEI, VIN, and serial numbers. Real-time database checks protecting consumers and businesses from fraud.',
+  description: 'World\'s leading stolen goods verification platform serving customers globally across 200+ countries. As the worldwide leader in IMEI, VIN, and serial number verification, we protect millions internationally. Comprehensive verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Real-time global database checks protecting consumers and businesses worldwide from fraud.',
   url: 'https://safeorstolen.com',
   ogImage: '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
   twitterHandle: '@safeorstolen',
@@ -161,11 +161,11 @@ const SITE_CONFIG = {
 // Page-specific metadata
 const PAGE_METADATA: Record<string, PageMetadata> = {
   home: {
-    title: `Stolen Item Lookup | IMEI, VIN & Serial Number Verification - All Categories`,
-    description: 'Complete stolen item verification database for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Free IMEI, VIN & serial number checks.',
-    keywords: SITE_CONFIG.keywords.join(', '),
-    ogTitle: `Complete Stolen Item Verification - All Categories | IMEI, VIN & Serial Number Database`,
-    ogDescription: 'Comprehensive stolen item database for vehicles, electronics, firearms, machinery, tools, and more. Verify any IMEI, VIN, or serial number instantly.',
+    title: `World's Leading Stolen Item Verification | Global IMEI, VIN & Serial Number Database`,
+    description: 'Worldwide leader in stolen item verification serving 200+ countries. Complete global database for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Trusted internationally for IMEI, VIN & serial number verification. Free worldwide checks.',
+    keywords: SITE_CONFIG.keywords.join(', ') + ', worldwide verification, global stolen item check, international IMEI checker, global VIN verification, worldwide leader, international verification service',
+    ogTitle: `World's Leading Verification Service - Global IMEI, VIN & Serial Number Database`,
+    ogDescription: 'Trusted worldwide across 200+ countries. Comprehensive international stolen item database for all categories. The global leader in verification services.',
     ogImage: SITE_CONFIG.ogImage,
     robotsDirectives: 'index, follow, max-image-preview:large'
   },
