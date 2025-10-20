@@ -92,7 +92,7 @@ const IMEICheck = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background/50 to-sos-orange/5">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-r from-sos-dark to-sos-orange text-white">
+        <section className="py-16 bg-gradient-to-b from-[#6B4423] via-[#8B5A3C] to-sos-orange text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4 bg-sos-lime text-sos-dark">
