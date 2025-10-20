@@ -135,7 +135,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
           <h2 className="text-2xl font-bold text-white mb-2">
             {intentText.title}
           </h2>
-          <p className="text-gray-300">
+          <p className="text-white/90 font-medium">
             {intentText.subtitle}
           </p>
         </div>
@@ -197,7 +197,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
 
           {/* Auth hint for non-authenticated users */}
           {!user && (
-            <p className="text-center text-sm text-gray-400">
+            <p className="text-center text-sm text-white/80">
               Get <span className="text-sos-lime font-semibold">4 free verifications</span> when you create your account
             </p>
           )}
