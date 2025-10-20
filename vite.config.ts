@@ -17,16 +17,19 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    // Prevent duplicate React instances that cause context errors
-    dedupe: ['react', 'react-dom', '@tanstack/react-query'],
+    // CRITICAL: Prevent duplicate React instances that cause context errors
+    dedupe: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'react-helmet-async'],
   },
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
       'react-router-dom',
-      '@tanstack/react-query'
+      '@tanstack/react-query',
+      'react-helmet-async'
     ],
+    // Force single instance
+    force: true,
   },
   define: {
     // Ensure React is available globally
@@ -40,7 +43,8 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          // CRITICAL: Keep ALL React packages together to prevent duplicate instances
+          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
           'ui-radix': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
           'charts': ['recharts'],
           'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
