@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,8 +8,25 @@ import { Button } from '@/components/ui/button';
 import { Code, Copy, ExternalLink, Shield, Zap } from 'lucide-react';
 
 const ApiDocsPage = () => {
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('quickstart');
+  
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
+  };
+
+  const handleGetApiKey = () => {
+    // Navigate to contact or enterprise page for API key request
+    navigate('/contact?subject=API%20Key%20Request');
+  };
+
+  const handleViewExamples = () => {
+    // Switch to examples tab
+    setActiveTab('examples');
+    // Scroll to the tabs section
+    setTimeout(() => {
+      document.getElementById('api-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   };
 
   return (
@@ -51,11 +69,11 @@ const ApiDocsPage = () => {
                 Real-time verification across IMEI, VIN, serial numbers, and firearms databases.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="group">
+                <Button size="lg" className="group" onClick={handleGetApiKey}>
                   Get API Key
                   <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={handleViewExamples}>
                   View Examples
                 </Button>
               </div>
@@ -103,7 +121,7 @@ const ApiDocsPage = () => {
                 </Card>
               </div>
 
-              <Tabs defaultValue="quickstart" className="w-full">
+              <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full" id="api-tabs">
                 <TabsList className="grid w-full grid-cols-5">
                   <TabsTrigger value="quickstart">Quick Start</TabsTrigger>
                   <TabsTrigger value="authentication">Auth</TabsTrigger>
