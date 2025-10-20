@@ -67,15 +67,20 @@ export const createOrganizationSchema = () => ({
   },
   "knowsAbout": [
     "How to check if something is stolen",
-    "Free IMEI checker for phones",
-    "VIN stolen car verification",
-    "Serial number stolen goods lookup",
+    "Free IMEI checker for phones and tablets",
+    "VIN verification for cars, motorcycles, boats, jet skis, sidebysides",
+    "Serial number verification for electronics, laptops, computers, TVs, cameras, watches",
+    "Stolen firearms and guns database check",
+    "Dirt bikes, mopeds, electric bikes, and bicycles verification",
+    "Machinery, engines, and tools stolen item check",
+    "Home appliances and furniture verification",
+    "RC cars and specialty equipment verification",
     "Facebook Marketplace buyer protection",
     "Avoid buying stolen merchandise",
     "Marketplace fraud prevention",
     "Consumer protection from scams",
-    "Secondhand item verification",
-    "Stolen property database search"
+    "Secondhand item verification across all categories",
+    "Stolen property database search for any item with IMEI, VIN, or serial number"
   ],
   "slogan": "Check if Stolen Before You Buy - Don't Get Scammed",
   "duns": "[DUNS_NUMBER_PLACEHOLDER]", // D-U-N-S Number if available
@@ -101,20 +106,26 @@ export const createWebsiteSchema = () => ({
 export const createServiceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Free Stolen Goods Verification - Check IMEI, VIN, Serial Numbers",
-  "description": "How to check if something is stolen before buying: FREE verification service checking IMEI, VIN, and serial numbers against 50M+ stolen goods databases. Protect yourself from scams on Facebook Marketplace, OfferUp, eBay. Instant results in 30 seconds.",
+  "name": "Comprehensive Stolen Goods Verification - IMEI, VIN, Serial Number Database",
+  "description": "Complete stolen item verification database for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number FREE against 50M+ stolen goods databases. Instant results in 30 seconds.",
   "provider": {
     "@type": "Organization",
     "name": SITE_CONFIG.name,
     "url": SITE_CONFIG.url
   },
-  "serviceType": "Consumer Protection and Stolen Goods Verification",
+  "serviceType": "Consumer Protection and Comprehensive Stolen Goods Verification",
   "areaServed": "Worldwide",
   "audience": {
     "@type": "Audience",
     "audienceType": "Consumers, Retailers, Law Enforcement, E-commerce Platforms"
   },
   "category": "Consumer Protection",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": SITE_CONFIG.url,
+    "serviceType": "Online Database"
+  },
+  "termsOfService": `${SITE_CONFIG.url}/terms-of-service`,
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Verification Services",
@@ -217,7 +228,7 @@ export const createFAQSchema = () => ({
       "name": "What items can I check to see if they're stolen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can verify any item with an IMEI, VIN, or serial number: smartphones (iPhone, Android), vehicles (cars, trucks, motorcycles), laptops, tablets, cameras, power tools, bicycles, musical instruments, firearms, jewelry, and more. Perfect for checking items before buying on Facebook Marketplace, OfferUp, eBay, or Craigslist."
+        "text": "You can verify any item with an IMEI, VIN, or serial number including: vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, electric bikes, bicycles), electronics (smartphones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms and guns, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Perfect for checking items before buying on Facebook Marketplace, OfferUp, eBay, or Craigslist."
       }
     },
     {

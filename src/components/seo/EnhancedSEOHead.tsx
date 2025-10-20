@@ -15,7 +15,7 @@ interface EnhancedSEOHeadProps {
 export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   title,
   description,
-  keywords = "stolen goods verification, consumer protection, marketplace safety, fraud prevention, real-time verification, FasterCapital, check stolen items, verify its not stolen, check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen, safeorstolen.com",
+  keywords = "stolen goods verification, IMEI checker, VIN checker, serial number verification, stolen phone check, stolen car check, stolen motorcycle check, stolen boat check, stolen jet ski check, stolen sidebyside check, stolen dirt bike check, stolen moped check, stolen electric bike check, stolen bicycle check, stolen laptop check, stolen computer check, stolen TV check, stolen camera check, stolen watch check, stolen firearm check, stolen gun database, stolen machinery check, stolen engine check, stolen tools check, stolen home appliances check, stolen furniture check, stolen RC car check, stolen specialty equipment check, consumer protection, marketplace safety, fraud prevention, real-time verification, FasterCapital, check stolen items, verify its not stolen, check if something is stolen, where to check if something is stolen, can I check if something is stolen before I buy it, how do I check if something used is stolen, safeorstolen.com",
   canonical,
   image = "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
   type = 'website',
