@@ -223,7 +223,7 @@ export const createServiceSchema = () => ({
         }
       }
     ]
-  },
+  }
 });
 
 // Enhanced Local Business Schema for Corporate Entity
