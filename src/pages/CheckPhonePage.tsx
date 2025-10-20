@@ -4,7 +4,7 @@ import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
 import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
-import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
+import { createServiceSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -18,7 +18,6 @@ const CheckPhonePage: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [result, setResult] = useState<'clean' | 'stolen' | null>(null);
   const serviceSchema = createServiceSchema();
-  const faqSchema = createFAQSchema();
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Check Phone', url: '/check-phone' }
@@ -49,7 +48,7 @@ const CheckPhonePage: React.FC = () => {
         canonical="/check-phone"
         type="website"
         noindex={false}
-        structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
+        structuredData={[serviceSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="imei" />
       <AdvancedKeywordOptimizer 
