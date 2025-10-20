@@ -23,16 +23,16 @@ const BlogPostPage = () => {
 
   if (isLoading) {
     return (
-      <div className="bg-white min-h-screen">
+      <div className="bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] min-h-screen">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
-            <div className="h-8 bg-gray-200 rounded w-32 mb-8 animate-pulse" />
-            <div className="h-12 bg-gray-200 rounded w-3/4 mb-4 animate-pulse" />
-            <div className="h-6 bg-gray-200 rounded w-1/2 mb-8 animate-pulse" />
-            <div className="h-64 bg-gray-200 rounded mb-8 animate-pulse" />
+            <div className="h-8 bg-muted/20 rounded w-32 mb-8 animate-pulse" />
+            <div className="h-12 bg-muted/20 rounded w-3/4 mb-4 animate-pulse" />
+            <div className="h-6 bg-muted/20 rounded w-1/2 mb-8 animate-pulse" />
+            <div className="h-64 bg-muted/20 rounded mb-8 animate-pulse" />
             <div className="space-y-4">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-4 bg-gray-200 rounded animate-pulse" />
+                <div key={i} className="h-4 bg-muted/20 rounded animate-pulse" />
               ))}
             </div>
           </div>
@@ -50,11 +50,11 @@ const BlogPostPage = () => {
           canonical={`/blog/${slug}`}
           noIndex={true}
         />
-        <div className="bg-white min-h-screen">
+        <div className="bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] min-h-screen">
           <div className="container mx-auto px-4 py-16">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">Post Not Found</h1>
-              <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+              <h1 className="text-4xl font-bold text-white mb-4">Post Not Found</h1>
+              <p className="text-white/80 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
               <Link to="/blog">
                 <Button>
                   <ArrowLeft className="h-4 w-4 mr-2" />
@@ -91,22 +91,22 @@ const BlogPostPage = () => {
         structuredData={structuredData}
       />
       
-      <div className="bg-white min-h-screen">
+      <div className="bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] min-h-screen">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             {/* Breadcrumb for SEO */}
             <nav className="mb-4" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2 text-sm text-gray-600">
-                <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
+              <ol className="flex items-center space-x-2 text-sm text-white/60">
+                <li><Link to="/" className="hover:text-primary">Home</Link></li>
                 <li>/</li>
-                <li><Link to="/blog" className="hover:text-blue-600">Blog</Link></li>
+                <li><Link to="/blog" className="hover:text-primary">Blog</Link></li>
                 <li>/</li>
-                <li className="text-gray-900">{post.title}</li>
+                <li className="text-white">{post.title}</li>
               </ol>
             </nav>
 
             {/* Back button */}
-            <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
+            <Link to="/blog" className="inline-flex items-center text-primary hover:text-primary/80 mb-8">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Blog
             </Link>
@@ -128,12 +128,12 @@ const BlogPostPage = () => {
 
             {/* Title with proper heading structure */}
             <header className="mb-8">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-4xl font-bold text-white mb-4 leading-tight">
                 {post.title}
               </h1>
 
               {/* Meta information */}
-              <div className="flex items-center gap-6 text-gray-600">
+              <div className="flex items-center gap-6 text-white/60">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   <time dateTime={post.published_at || post.created_at}>
@@ -166,7 +166,7 @@ const BlogPostPage = () => {
 
             {/* Article content with proper semantic structure and XSS protection */}
             <article 
-              className="prose prose-lg max-w-none mb-8 prose-headings:text-gray-900 prose-links:text-blue-600 prose-links:no-underline hover:prose-links:underline"
+              className="prose prose-lg max-w-none mb-8 prose-headings:text-white prose-p:text-white/90 prose-li:text-white/90 prose-links:text-primary prose-links:no-underline hover:prose-links:underline prose-strong:text-white"
               dangerouslySetInnerHTML={{ 
                 __html: DOMPurify.sanitize(post.content, {
                   ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'a', 'blockquote'],
@@ -178,8 +178,8 @@ const BlogPostPage = () => {
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <footer className="border-t pt-8">
-                <h2 className="text-lg font-semibold text-gray-900 mb-4">Tags</h2>
+              <footer className="border-t border-white/10 pt-8">
+                <h2 className="text-lg font-semibold text-white mb-4">Tags</h2>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
                     <Badge key={tag.id} variant="secondary">
@@ -192,11 +192,13 @@ const BlogPostPage = () => {
             )}
 
             {/* Related content suggestion */}
-            <div className="mt-12 p-6 bg-gray-50 rounded-lg">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">Want to verify an item?</h2>
-              <p className="text-gray-600 mb-4">Use our global verification service to check if your item is stolen or legitimate.</p>
-              <Link to="/" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
-                Start Verification
+            <div className="mt-12 p-6 bg-card/80 backdrop-blur rounded-lg border border-primary/20">
+              <h2 className="text-xl font-semibold text-foreground mb-4">Want to verify an item?</h2>
+              <p className="text-muted-foreground mb-4">Use our global verification service to check if your item is stolen or legitimate.</p>
+              <Link to="/" className="inline-flex items-center">
+                <Button>
+                  Start Verification
+                </Button>
               </Link>
             </div>
           </div>

@@ -11,7 +11,7 @@ export const BlogList = ({ posts, featured = false }: BlogListProps) => {
   if (!posts || posts.length === 0) {
     return (
       <div className="text-center py-12">
-        <h3 className="text-lg font-medium text-white mb-2">No blog posts found</h3>
+        <h3 className="text-lg font-medium text-foreground mb-2">No blog posts found</h3>
         <p className="text-muted-foreground">Check back later for new content!</p>
       </div>
     );

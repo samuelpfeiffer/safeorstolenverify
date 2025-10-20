@@ -100,20 +100,20 @@ const BlogPage = () => {
         structuredData={[structuredData]}
       />
 
-      <div className="min-h-screen bg-background py-12">
+      <div className="min-h-screen bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto mb-12 text-center">
-            <h1 className="text-5xl font-bold mb-4 text-foreground">
+            <h1 className="text-5xl font-bold mb-4 text-white">
               Safe or Stolen Blog
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white/80">
               Expert guides to protect yourself from buying stolen goods and marketplace scams
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {articles.map((article) => (
-              <Card key={article.slug} className="hover:shadow-lg transition-shadow">
+              <Card key={article.slug} className="hover:shadow-lg transition-shadow bg-card border-primary/20">
                 <CardHeader>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                     <span className="bg-primary/10 text-primary px-2 py-1 rounded">
@@ -124,7 +124,7 @@ const BlogPage = () => {
                       {article.readTime}
                     </span>
                   </div>
-                  <CardTitle className="text-2xl mb-2">{article.title}</CardTitle>
+                  <CardTitle className="text-2xl mb-2 text-foreground">{article.title}</CardTitle>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4" />
                     {new Date(article.date).toLocaleDateString('en-US', {
@@ -136,7 +136,7 @@ const BlogPage = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{article.excerpt}</p>
-                  <Button asChild variant="outline" className="group">
+                  <Button asChild variant="outline" className="group border-primary/20">
                     <Link to={`/blog/${article.slug}`}>
                       Read More
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -148,9 +148,9 @@ const BlogPage = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <Card className="max-w-2xl mx-auto border-primary/20 bg-primary/5">
+            <Card className="max-w-2xl mx-auto border-primary/20 bg-card">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-4">Stay Protected</h2>
+                <h2 className="text-2xl font-bold mb-4 text-foreground">Stay Protected</h2>
                 <p className="text-muted-foreground mb-6">
                   Subscribe to get the latest guides on verifying items and staying safe in online marketplaces
                 </p>

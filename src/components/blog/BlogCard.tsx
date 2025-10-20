@@ -21,7 +21,7 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
   };
 
   return (
-    <Card className={cn('group hover:shadow-lg transition-shadow duration-300', featured && 'md:col-span-2')}>
+    <Card className={cn('group hover:shadow-lg transition-shadow duration-300 bg-card border-primary/20', featured && 'md:col-span-2')}>
       {post.featured_image_url && (
         <div className="relative overflow-hidden">
           <img
