@@ -94,7 +94,7 @@ const StolenItemChecker = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background/50 to-sos-orange/5">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-r from-sos-dark to-sos-orange text-white">
+        <section className="py-16 bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4 bg-sos-lime text-sos-dark">
@@ -128,9 +128,9 @@ const StolenItemChecker = () => {
         <section className="py-12 -mt-8 relative z-10">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
-              <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur">
+              <Card className="shadow-2xl border border-primary/20 bg-card">
                 <CardHeader className="text-center">
-                  <CardTitle className="text-2xl text-sos-dark">
+                  <CardTitle className="text-2xl text-foreground">
                     Check if an Item is Stolen
                   </CardTitle>
                   <CardDescription className="text-lg">
