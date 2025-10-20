@@ -43,11 +43,12 @@ const CheckPhonePage: React.FC = () => {
       <>
         <AIOptimizedContent page="check-phone" />
         <UnifiedSEO 
-        title="Check if Phone is Stolen - Free IMEI Verification Tool"
-        description="Verify phone IMEI numbers against stolen device databases. Check if iPhone, Android phones are reported stolen before buying. Free 30-second verification."
-        keywords="check phone stolen, IMEI verification, stolen phone check, verify iPhone IMEI, Android stolen check, phone theft prevention"
+        title="Free IMEI Check & Verify Phone - Stolen Phone Database Search"
+        description="Free database search to check & verify if phone is stolen using IMEI. 30-second verification for iPhone, Android, Samsung. 4 free searches included."
+        keywords="free IMEI check, verify phone stolen, check if phone stolen, IMEI database search, stolen phone verification, iPhone IMEI check, Android phone verification"
         canonical="/check-phone"
         type="website"
+        noindex={false}
         structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       <CompetitiveKeywords pageType="imei" />

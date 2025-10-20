@@ -145,6 +145,14 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
 
+      {/* Robots Meta Tags - CRITICAL FOR INDEXING */}
+      {!noindex && (
+        <>
+          <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30" />
+          <meta name="googlebot" content="index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30" />
+        </>
+      )}
+
       {/* Mobile Optimization */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
       <meta name="theme-color" content="#FF5722" />

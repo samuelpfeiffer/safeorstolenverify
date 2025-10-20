@@ -56,12 +56,15 @@ export const MasterSEO: React.FC = () => {
   
   const canonicalUrl = generateCanonicalUrl(location.pathname);
   
-  // Determine indexing status
+  // Determine indexing status - exclude private/user-specific pages
   const shouldIndex = !location.pathname.includes('/admin') && 
                      !location.pathname.includes('/auth') && 
                      !location.pathname.includes('/test') &&
                      !location.pathname.includes('/profile') &&
-                     !location.pathname.includes('/subscription');
+                     !location.pathname.includes('/subscription') &&
+                     !location.pathname.includes('/dashboard') && // Private user dashboard
+                     !location.pathname.includes('/receipts') && // Private user receipts
+                     !location.pathname.includes('/search-history'); // Private search history
 
   // Base structured data for all pages
   const websiteSchema = {
