@@ -162,7 +162,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
               placeholder="Enter IMEI, VIN, or serial number to check stolen status"
               value={serialNumber}
               onChange={(e) => handleInputChange(e.target.value)}
-              className="bg-white/5 border-white/20 text-white placeholder:!text-white/70 pr-12"
+              className="bg-white/5 border-white/20 text-white placeholder:text-white/80 pr-12"
               onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSearch()}
             />
             <Button
