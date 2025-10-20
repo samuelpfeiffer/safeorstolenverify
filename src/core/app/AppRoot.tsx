@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import { SOSFooter } from '@/components/layout/SOSFooter';
-import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from '@/components/ui/sonner';
@@ -15,11 +14,6 @@ import { AuthProvider } from '@/lib/auth';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
-import { MasterSEO } from '@/components/seo/MasterSEO';
-import { EnhancedStructuredData } from '@/components/seo/EnhancedStructuredData';
-import { PerformanceMonitor } from '@/components/seo/PerformanceMonitor';
-import { SpeedOptimizer } from '@/components/performance/SpeedOptimizer';
-import { CriticalCSSInline } from '@/components/seo/CriticalCSSInline';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -49,14 +43,8 @@ export const AppRoot: React.FC = () => {
             <PWAProvider>
               <ThemeProvider>
                 <Router>
-                  <CriticalCSSInline />
-                  <SpeedOptimizer />
-                  <MasterSEO />
-                  <EnhancedStructuredData />
-                  <PerformanceMonitor />
                   <div className="min-h-screen bg-background text-foreground flex flex-col">
                     <TopNavigation />
-                    <BreadcrumbSchema />
                     <main className="flex-1 pt-20">
                       <RouteErrorRecovery>
                         <Suspense fallback={<AppLoadingScreen />}>
