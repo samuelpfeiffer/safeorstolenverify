@@ -5,6 +5,7 @@ export const WebSiteSchema = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Safe or Stolen",
+    "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "Safe or Stolen Verification"],
     "url": "https://safeorstolen.com",
     "description": "Instantly verify if IMEI, VIN, or serial numbers are stolen. Protect yourself from buying stolen goods on marketplaces.",
     "publisher": {
