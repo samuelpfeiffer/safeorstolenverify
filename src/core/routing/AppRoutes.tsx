@@ -347,7 +347,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="firearms-check" element={<FirearmsCheckPage />} />
           
           {/* Item-specific verification pages - Landing pages public, auth required for searches */}
-          <Route path="check-phone" element={<ProtectedRoute><CheckPhonePage /></ProtectedRoute>} />
+          <Route path="check-phone" element={<CheckPhonePage />} />
           <Route path="check-car" element={<CheckCarPage />} />
           <Route path="check-electronics" element={<CheckElectronicsPage />} />
           <Route path="check-bike" element={<CheckBikePage />} />
