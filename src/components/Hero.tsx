@@ -9,7 +9,7 @@ const Hero = () => {
   const {
     isAuthenticated
   } = useUnifiedAuth();
-  return <div className="relative bg-gradient-to-b from-[#6B4423] via-[#8B4C25] to-[#A0522D] text-white">
+  return <div className="relative bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] text-white">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto text-center space-y-12">
           
