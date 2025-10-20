@@ -132,7 +132,7 @@ const IMEICheck = () => {
                     <Phone className="h-6 w-6" />
                     Check IMEI for Stolen Phone
                   </CardTitle>
-                  <CardDescription className="text-lg text-foreground/80 font-medium">
+                  <CardDescription className="text-lg !text-gray-700 dark:!text-gray-300 font-medium">
                     Enter 15-digit IMEI number to verify if phone is stolen
                   </CardDescription>
                 </CardHeader>
@@ -159,7 +159,7 @@ const IMEICheck = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Check Any Phone IMEI for Theft
                 </h2>
-                <p className="text-xl text-foreground/70">
+                <p className="text-xl !text-gray-700 dark:!text-gray-300">
                   Our IMEI checker works with all major phone brands and models
                 </p>
               </div>
@@ -172,7 +172,7 @@ const IMEICheck = () => {
                         <Phone className="h-8 w-8 text-sos-lime" />
                       </div>
                       <CardTitle className="text-lg">{phoneType.brand}</CardTitle>
-                      <CardDescription className="text-sm text-foreground/70">
+                      <CardDescription className="text-sm !text-gray-600 dark:!text-gray-400">
                         {phoneType.description}
                       </CardDescription>
                     </CardHeader>
@@ -201,7 +201,7 @@ const IMEICheck = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   How to Find Your Phone's IMEI Number
                 </h2>
-                <p className="text-xl text-foreground/70">
+                <p className="text-xl !text-gray-700 dark:!text-gray-300">
                   Multiple ways to locate the IMEI on any phone
                 </p>
               </div>
@@ -251,7 +251,7 @@ const IMEICheck = () => {
                     <AlertTriangle className="h-8 w-8 text-red-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Avoid Legal Issues</h3>
-                  <p className="text-foreground/70">
+                  <p className="!text-gray-700 dark:!text-gray-300">
                     Possession of stolen phones can lead to legal consequences and confiscation by police
                   </p>
                 </div>
@@ -261,7 +261,7 @@ const IMEICheck = () => {
                     <Shield className="h-8 w-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Financial Protection</h3>
-                  <p className="text-foreground/70">
+                  <p className="!text-gray-700 dark:!text-gray-300">
                     Don't lose money on phones that might be blocked or blacklisted by carriers
                   </p>
                 </div>
@@ -271,7 +271,7 @@ const IMEICheck = () => {
                     <CheckCircle className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Peace of Mind</h3>
-                  <p className="text-foreground/70">
+                  <p className="!text-gray-700 dark:!text-gray-300">
                     Buy used phones with confidence knowing they're legitimate and safe to use
                   </p>
                 </div>
@@ -279,7 +279,7 @@ const IMEICheck = () => {
 
               <div className="bg-gradient-to-r from-sos-lime/10 to-sos-orange/10 p-8 rounded-lg text-center">
                 <h3 className="text-2xl font-bold mb-4">Start Your IMEI Check Now</h3>
-                <p className="text-lg text-foreground/80 mb-6">
+                <p className="text-lg !text-gray-700 dark:!text-gray-300 mb-6">
                   Protect yourself from buying stolen phones. Check any IMEI in seconds - completely free.
                 </p>
                 <Button 
