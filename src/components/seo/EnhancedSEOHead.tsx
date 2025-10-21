@@ -22,9 +22,30 @@ export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   additionalSchemas = []
 }) => {
   const baseUrl = 'https://safeorstolen.com';
-  const fullCanonical = canonical
-    ? (canonical.startsWith('http') ? canonical : `${baseUrl}${canonical}`)
-    : `${baseUrl}${typeof window !== 'undefined' ? window.location.pathname + window.location.search : ''}`;
+  
+  // Robust canonical URL construction with validation
+  let fullCanonical: string;
+  if (canonical) {
+    // Handle full URLs
+    if (canonical.startsWith('http')) {
+      fullCanonical = canonical.replace(/^https?:\/\/www\.safeorstolen\.com/, 'https://safeorstolen.com');
+    } else {
+      // Handle relative paths - ensure leading slash
+      const path = canonical.startsWith('/') ? canonical : `/${canonical}`;
+      fullCanonical = `${baseUrl}${path}`;
+    }
+  } else {
+    // Fallback to current pathname
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '';
+    fullCanonical = `${baseUrl}${currentPath}`;
+  }
+
+  // Validate canonical is not incorrectly pointing to homepage
+  if (canonical && canonical !== '/' && fullCanonical === baseUrl) {
+    console.warn(`[SEO Warning] Canonical URL incorrectly set to homepage. Expected: ${baseUrl}${canonical}`);
+    fullCanonical = `${baseUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}`;
+  }
+  
   const fullImage = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
   // Core schemas

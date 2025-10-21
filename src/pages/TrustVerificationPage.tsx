@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 
 const verifiablePartnerships = [
   {
@@ -179,6 +180,7 @@ const TrustVerificationPage: React.FC = () => {
 
   return (
     <>
+      <CanonicalUrl url="https://safeorstolen.com/trust-verification" />
       <EnhancedSEOHead
         title="Trust & Verification - Addressing Reliability Concerns | SafeOrStolen"
         description="Direct response to reliability concerns about SafeOrStolen. Verifiable partnerships, public documentation, contact information for independent verification of all claims."

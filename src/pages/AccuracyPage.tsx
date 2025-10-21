@@ -5,12 +5,21 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const AccuracyPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <CanonicalUrl url="https://safeorstolen.com/accuracy" />
+      <PageSEO
+        title="Accuracy & Limitations - SafeOrStolen"
+        description="Learn about SafeOrStolen's accuracy, verification methods, and service limitations for stolen item checking."
+        keywords="accuracy, verification accuracy, service limitations, stolen item checker accuracy"
+      />
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="bg-gradient-to-b from-primary/5 to-background py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -70,7 +79,8 @@ const AccuracyPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

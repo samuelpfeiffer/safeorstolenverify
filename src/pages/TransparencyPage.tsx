@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PageSEO } from "@/components/seo/PageSEO";
+import { CanonicalUrl } from "@/components/seo/CanonicalUrl";
 import { Link } from "react-router-dom";
 
 const transparencyPrinciples = [
@@ -104,6 +105,7 @@ const businessPractices = [
 const TransparencyPage = () => {
   return (
     <>
+      <CanonicalUrl url="https://safeorstolen.com/transparency" />
       <PageSEO
         title="Transparency & Trust - How SafeOrStolen Works"
         description="Complete transparency report on SafeOrStolen's verification methodology, data sources, privacy practices, and business model. Learn how we protect users and ensure accurate results."

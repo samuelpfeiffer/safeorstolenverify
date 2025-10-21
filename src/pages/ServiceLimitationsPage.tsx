@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { Link } from 'react-router-dom';
 
 const limitations = [
@@ -99,6 +100,7 @@ const bestPractices = [
 const ServiceLimitationsPage = () => {
   return (
     <>
+      <CanonicalUrl url="https://safeorstolen.com/service-limitations" />
       <PageSEO
         title="Service Limitations & Proper Use - SafeOrStolen Disclaimer"
         description="Important limitations of SafeOrStolen's stolen item checking service. Learn proper use, what we can and cannot guarantee, and best practices for safe purchasing."

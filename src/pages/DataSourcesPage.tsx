@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PageSEO } from "@/components/seo/PageSEO";
+import { CanonicalUrl } from "@/components/seo/CanonicalUrl";
 import { Link } from "react-router-dom";
 
 const dataSources = [
@@ -87,6 +88,7 @@ const trustMetrics = [
 const DataSourcesPage = () => {
   return (
     <>
+      <CanonicalUrl url="https://safeorstolen.com/data-sources" />
       <PageSEO
         title="Data Sources & Verification Database Partners - SafeOrStolen"
         description="Learn about SafeOrStolen's comprehensive network of law enforcement databases, stolen goods registries, and verification partners ensuring accurate theft detection."

@@ -1,5 +1,6 @@
 import React from 'react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema, createArticleSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -118,7 +119,8 @@ const UltimateGuidePage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead 
+      <CanonicalUrl url="https://safeorstolen.com/ultimate-guide" />
+      <EnhancedSEOHead
         title="Ultimate Guide: How to Check if Anything is Stolen (2025 Complete Expert Guide)"
         description="The definitive 2025 guide to checking if cars, phones, guns, electronics, bikes, jewelry, tools, or ANY item is stolen before you buy. Expert methods revealed by security professionals."
         keywords="how to check if stolen, ultimate guide stolen goods, check if car stolen, check if phone stolen, check if gun stolen, verify not stolen, stolen goods guide 2025, expert methods"

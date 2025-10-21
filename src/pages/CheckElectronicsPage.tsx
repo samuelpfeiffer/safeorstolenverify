@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
 import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
@@ -39,7 +40,8 @@ const CheckElectronicsPage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead 
+      <CanonicalUrl url="https://safeorstolen.com/check-electronics" />
+      <EnhancedSEOHead
         title="Serial Number Lookup - Check If Electronics Are Stolen | Safe Or Stolen"
         description="Free serial number lookup to check if electronics are stolen. Verify laptops, tablets, gaming devices before buying. Electronics background check for safe secondhand purchases."
         keywords="serial number lookup, electronics background check, check if electronics stolen, verify electronics serial, used electronics safe, laptop theft check, tablet stolen verification, gaming console security, secondhand electronics verification"

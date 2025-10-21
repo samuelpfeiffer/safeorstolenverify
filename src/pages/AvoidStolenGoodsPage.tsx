@@ -15,6 +15,7 @@ import {
   DollarSign
 } from 'lucide-react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { Link } from 'react-router-dom';
 
 const AvoidStolenGoodsPage: React.FC = () => {
@@ -139,14 +140,15 @@ const AvoidStolenGoodsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <CanonicalUrl url="https://safeorstolen.com/avoid-stolen-goods" />
       <EnhancedSEOHead
         title="How to Avoid Buying Stolen Goods - Complete Protection Guide 2024"
         description="Learn how to avoid buying stolen goods with our comprehensive guide. Tips to identify stolen merchandise, verify sellers, check documentation, and protect yourself legally and financially."
         keywords="avoid buying stolen goods, how to avoid stolen merchandise, prevent buying stolen items, stolen goods prevention, check if stolen before buying, avoid stolen property, stolen goods protection, verify not stolen"
       />
-
-      <div className="container mx-auto px-6 py-12 max-w-6xl">
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-6 py-12 max-w-6xl">
         {/* Hero Section */}
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -358,8 +360,9 @@ const AvoidStolenGoodsPage: React.FC = () => {
             </CardContent>
           </Card>
         </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

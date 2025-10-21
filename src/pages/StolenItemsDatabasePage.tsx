@@ -23,6 +23,7 @@ import {
   Tablet
 } from 'lucide-react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { Link } from 'react-router-dom';
 
 const StolenItemsDatabasePage: React.FC = () => {
@@ -119,8 +120,10 @@ const StolenItemsDatabasePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <EnhancedSEOHead
+    <>
+      <CanonicalUrl url="https://safeorstolen.com/stolen-items-database" />
+      <div className="min-h-screen bg-background">
+        <EnhancedSEOHead
         title="Stolen Items Database - Check if Something is Stolen Before You Buy | Free Lookup"
         description="Free stolen items database checker. Verify IMEI, VIN, serial numbers instantly. Check phones, cars, electronics, bikes against police databases. Avoid buying stolen goods with our comprehensive stolen property lookup."
         keywords="stolen items database, stolen property lookup, check if stolen, stolen goods checker, IMEI stolen check, VIN stolen lookup, stolen electronics, stolen car database, police stolen property, stolen merchandise, avoid stolen goods, stolen item verification"
@@ -427,6 +430,7 @@ const StolenItemsDatabasePage: React.FC = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

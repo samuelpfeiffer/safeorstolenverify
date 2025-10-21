@@ -5,12 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Shield, CheckCircle, Database } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 
 const HowItWorksDetailedPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <>
+      <CanonicalUrl url="https://safeorstolen.com/how-it-works-detailed" />
       <EnhancedSEOHead
         title="How It Works - Detailed Verification Process | SafeOrStolen"
         description="Complete transparency into our stolen item verification process. See exactly which databases we check and our verification methodology."

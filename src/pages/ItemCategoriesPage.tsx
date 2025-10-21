@@ -1,5 +1,6 @@
 import React from 'react';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
+import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -78,7 +79,8 @@ const ItemCategoriesPage: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEOHead 
+      <CanonicalUrl url="https://safeorstolen.com/item-categories" />
+      <EnhancedSEOHead
         title="What Website Can I Check if Something is Stolen? How to Tell if Hot"
         description="What website can I use to check if something is stolen? How do I know if this item is hot? Free way to check cars, phones, bikes, guns before buying."
         keywords="what website can I check if something stolen, how do I know if this is hot, can I check if this is stolen, is there a way to find out if stolen, how to tell if something hot"
