@@ -25,9 +25,8 @@ const Hero = () => {
           </h1>
           
           {/* Trust Value Proposition */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don't get scammed on Facebook Marketplace, OfferUp, or eBay. Free database search to check & verify IMEI, VIN, serial numbers instantly. Trusted by 50,000+ safe buyers. 4 free searches included.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Don't get scammed on Facebook Marketplace, OfferUp, Craigslist, or eBay.
+ Search IMEI, VIN, Serial Numbers Instantly.  </p>
 
           {/* Professional Search Interface */}
           <div className="max-w-2xl mx-auto bg-card p-10 rounded-2xl shadow-trust border border-primary/20 animate-fade-in">
