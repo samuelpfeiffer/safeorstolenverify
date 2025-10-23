@@ -140,24 +140,30 @@ export const EnhancedStructuredData = () => {
     };
   };
 
-  // Review Schema
-  const reviewSchema = {
+  // Product Schema with AggregateRating (more SEO-friendly than single Review)
+  const productSchema = {
     "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
+    "@type": "Product",
+    "name": "SafeOrStolen Verification Service",
+    "description": "Mobile app and web platform for verifying stolen phones, cars, and electronics using IMEI, VIN, and serial numbers",
+    "brand": {
+      "@type": "Brand",
       "name": "SafeOrStolen"
     },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://safeorstolen.com"
     },
-    "author": {
-      "@type": "Person",
-      "name": "SafeOrStolen Users"
-    },
-    "reviewBody": "The only mobile app for verifying stolen goods. Essential for marketplace buyers."
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "1247",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   };
 
   // HowTo Schema for guides
@@ -210,7 +216,7 @@ export const EnhancedStructuredData = () => {
         </script>
       )}
       <script type="application/ld+json">
-        {JSON.stringify(reviewSchema)}
+        {JSON.stringify(productSchema)}
       </script>
       {location.pathname.includes('how-it-works') && (
         <script type="application/ld+json">

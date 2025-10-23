@@ -179,18 +179,24 @@ export const ComprehensiveFAQ: React.FC<ComprehensiveFAQProps> = ({
     technical: 'Technical Questions'
   };
 
-  // Generate FAQ Schema
+  // Generate FAQ Schema with proper validation
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage", 
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+    "mainEntity": faqs.map(faq => {
+      // Ensure text is properly formatted and under 5000 characters
+      const cleanAnswer = faq.answer.trim().substring(0, 5000);
+      const cleanQuestion = faq.question.trim().substring(0, 300);
+      
+      return {
+        "@type": "Question",
+        "name": cleanQuestion,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": cleanAnswer
+        }
+      };
+    })
   };
 
   return (
