@@ -1,7 +1,15 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import * as React from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+
+// HMR Safety Check - Prevent React context corruption
+if (import.meta.env.DEV && (!React || typeof React.useState !== 'function')) {
+  console.error('React is corrupted, forcing reload...');
+  window.location.reload();
+  throw new Error('React context corrupted - reloading');
+}
 
 export interface AuthUser {
   id: string;
@@ -44,6 +52,13 @@ const transformUser = (user: User | null): AuthUser | null => {
 };
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
+  // HMR Safety: Verify React is available before using hooks
+  if (import.meta.env.DEV && !React) {
+    console.error('React is null in AuthProvider');
+    window.location.reload();
+    return null;
+  }
+
   // React hooks MUST be called unconditionally at the top level
   const [state, setState] = useState<AuthState>({
     user: null,

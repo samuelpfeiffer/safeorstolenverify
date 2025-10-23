@@ -1,51 +1,47 @@
 
-import React from 'react';
+import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
-// HMR Error Recovery - Aggressive reload on React context corruption
+// HMR Error Recovery - Immediate reload on React context corruption
 if (import.meta.env.DEV) {
-  let errorCount = 0;
-  const MAX_ERRORS = 2;
+  // Verify React is available at startup
+  if (!React || typeof React.useState !== 'function') {
+    console.error('React not properly loaded, reloading...');
+    sessionStorage.setItem('hmr-reload-count', String(Number(sessionStorage.getItem('hmr-reload-count') || '0') + 1));
+    
+    // Prevent infinite reload loop
+    if (Number(sessionStorage.getItem('hmr-reload-count')) < 3) {
+      window.location.reload();
+    } else {
+      sessionStorage.removeItem('hmr-reload-count');
+      alert('React failed to load properly. Please refresh the page manually.');
+    }
+  }
   
   window.addEventListener('error', (event) => {
-    const errorPatterns = [
-      'useState',
-      'useEffect',
-      'useContext',
-      'useReducer',
-      'useCallback',
-      'useMemo',
-      'useRef',
-      'Cannot read properties of null',
-      'Cannot read properties of undefined',
-      'Hook',
-      'Invalid hook call'
-    ];
+    const isReactHookError = 
+      event.message?.includes('useState') ||
+      event.message?.includes('useEffect') ||
+      event.message?.includes('useContext') ||
+      event.message?.includes('Cannot read properties of null') ||
+      event.message?.includes('Invalid hook call') ||
+      event.error?.message?.includes('useState') ||
+      event.error?.message?.includes('reading \'useState\'');
     
-    const isReactError = errorPatterns.some(pattern => 
-      event.message?.includes(pattern) || event.error?.message?.includes(pattern)
-    );
-    
-    if (isReactError) {
-      errorCount++;
-      console.warn(`HMR error detected (${errorCount}/${MAX_ERRORS}):`, event.message);
+    if (isReactHookError) {
+      console.error('Critical React error detected:', event.message);
+      console.warn('Forcing immediate reload to recover from HMR corruption...');
       
-      if (errorCount >= MAX_ERRORS) {
-        console.warn('Multiple HMR errors detected, forcing reload...');
-        // Clear all cached modules and state
-        if (import.meta.hot) {
-          import.meta.hot.invalidate();
-        }
-        sessionStorage.clear();
-        window.location.reload();
-      } else {
-        // First error - try soft recovery
-        setTimeout(() => {
-          errorCount = Math.max(0, errorCount - 1);
-        }, 3000);
-      }
+      // Clear any corrupted state
+      sessionStorage.clear();
+      localStorage.removeItem('vite-plugin-react-hmr');
+      
+      // Force hard reload
+      window.location.href = window.location.href;
+      event.preventDefault();
+      return false;
     }
   });
   
@@ -53,9 +49,17 @@ if (import.meta.env.DEV) {
   window.addEventListener('unhandledrejection', (event) => {
     const message = event.reason?.message || String(event.reason);
     if (message.includes('Hook') || message.includes('useState') || message.includes('useEffect')) {
-      console.warn('HMR promise rejection detected, reloading...');
-      window.location.reload();
+      console.warn('HMR promise rejection detected, forcing hard reload...');
+      sessionStorage.clear();
+      window.location.href = window.location.href;
     }
+  });
+  
+  // Clear reload count on successful load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      sessionStorage.removeItem('hmr-reload-count');
+    }, 1000);
   });
 }
 

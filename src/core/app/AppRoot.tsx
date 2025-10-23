@@ -1,4 +1,5 @@
-import React, { Suspense } from 'react';
+import * as React from 'react';
+import { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import { SOSFooter } from '@/components/layout/SOSFooter';
