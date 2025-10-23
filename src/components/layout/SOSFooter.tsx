@@ -50,6 +50,7 @@ export const SOSFooter: React.FC = () => {
           <Link to="/services" className="text-base text-gray-500 hover:text-gray-300 mr-4">Services</Link>
           <Link to="/for-consumers" className="text-base text-gray-500 hover:text-gray-300 mr-4">For Consumers</Link>
           <Link to="/for-brands" className="text-base text-gray-500 hover:text-gray-300 mr-4">For Brands</Link>
+          <Link to="/press-release" className="text-base text-gray-500 hover:text-gray-300 mr-4">Press Release</Link>
           <Link to="/api-docs" className="text-base text-gray-500 hover:text-gray-300 mr-4">API</Link>
           <Link to="/blog" className="text-base text-gray-500 hover:text-gray-300 mr-4">Blog</Link>
           <button 

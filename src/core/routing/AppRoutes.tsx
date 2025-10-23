@@ -34,6 +34,7 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const SubscriptionSuccessPage = lazy(() => import('@/pages/SubscriptionSuccessPage'));
 const SubscriptionCancelPage = lazy(() => import('@/pages/SubscriptionCancelPage'));
 const IntegrationsPage = lazy(() => import('@/pages/IntegrationsPage'));
+const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
 
 // New Blog Posts
 const DataSourceCredibilityPost = lazy(() => import('@/pages/blog/DataSourceCredibilityPost'));
@@ -207,6 +208,7 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-mission" element={<OurMissionPage />} />
           <Route path="reduce-crime" element={<Navigate to="/our-mission" replace />} />
           <Route path="crime-prevention" element={<Navigate to="/our-mission" replace />} />
+          <Route path="press-release" element={<PressReleasePage />} />
           <Route path="press" element={<PressPage />} />
           <Route path="news" element={<PressPage />} />
           <Route path="press-releases" element={<PressPage />} />

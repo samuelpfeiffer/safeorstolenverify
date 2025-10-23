@@ -156,6 +156,11 @@ const TopNavigation: React.FC = () => {
     description: 'Expert tips on fraud prevention',
     icon: Home
   }, {
+    label: 'Press Release',
+    href: '/press-release',
+    description: 'SafeOrStolen & FasterCapital partnership news',
+    icon: Home
+  }, {
     label: 'Case Studies',
     href: '/case-studies',
     description: 'Real stories from our users',

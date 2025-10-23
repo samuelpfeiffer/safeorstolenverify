@@ -107,6 +107,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/about-problem', priority: 0.7, changefreq: 'monthly' },
   { path: '/case-studies', priority: 0.7, changefreq: 'monthly' },
   { path: '/partnerships', priority: 0.6, changefreq: 'monthly' },
+  { path: '/press-release', priority: 0.8, changefreq: 'yearly' },
   
   // Target Audiences
   { path: '/for-consumers', priority: 0.7, changefreq: 'monthly' },
