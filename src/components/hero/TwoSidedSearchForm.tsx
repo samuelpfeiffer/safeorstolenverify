@@ -126,16 +126,16 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur border-white/20">
+    <Card className="w-full max-w-2xl mx-auto bg-card/80 backdrop-blur border">
       <CardContent className="p-6">
         <div className="text-center mb-6">
           <Badge className={`${intentText.badgeColor} text-white mb-3`}>
             {intentText.badge}
           </Badge>
-          <h2 className="text-2xl font-bold text-white mb-2">
+          <h2 className="text-2xl font-bold text-foreground mb-2">
             {intentText.title}
           </h2>
-          <p className="text-white/90 font-medium">
+          <p className="text-muted-foreground font-medium">
             {intentText.subtitle}
           </p>
         </div>
@@ -143,7 +143,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
         <div className="space-y-4">
           {/* Item Type Selector */}
           <Select value={selectedType} onValueChange={setSelectedType}>
-            <SelectTrigger className="bg-white/5 border-white/20 text-white">
+            <SelectTrigger className="bg-input border text-foreground">
               <SelectValue placeholder="Select item type (optional)" />
             </SelectTrigger>
             <SelectContent>
@@ -162,14 +162,14 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
               placeholder="Enter IMEI, VIN, or serial number to check stolen status"
               value={serialNumber}
               onChange={(e) => handleInputChange(e.target.value)}
-              className="bg-white/5 border-white/20 text-white placeholder:text-white/80 pr-12"
+              className="bg-input border text-foreground placeholder:text-muted-foreground pr-12"
               onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSearch()}
             />
             <Button
               type="button"
               variant="ghost"
               size="sm"
-              className="absolute right-1 top-1 h-8 w-8 p-0 text-gray-400 hover:text-white"
+              className="absolute right-1 top-1 h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
               onClick={onOpenQrScanner}
             >
               <QrCode className="h-4 w-4" />
@@ -197,7 +197,7 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
 
           {/* Auth hint for non-authenticated users */}
           {!user && (
-            <p className="text-center text-sm text-white/80">
+            <p className="text-center text-sm text-muted-foreground">
               Get <span className="text-sos-lime font-semibold">4 free verifications</span> when you create your account
             </p>
           )}

@@ -128,21 +128,9 @@ const StolenItemChecker = () => {
         <section className="py-12 -mt-8 relative z-10">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
-              <Card className="shadow-2xl border border-primary/20 bg-card">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-2xl text-foreground">
-                    Check if an Item is Stolen
-                  </CardTitle>
-                  <CardDescription className="text-lg">
-                    Enter IMEI, VIN, or serial number to verify instantly
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <TwoSidedSearchForm 
-                    onOpenQrScanner={() => navigate('/qr-scanner')}
-                  />
-                </CardContent>
-              </Card>
+              <TwoSidedSearchForm 
+                onOpenQrScanner={() => navigate('/qr-scanner')}
+              />
             </div>
           </div>
         </section>
