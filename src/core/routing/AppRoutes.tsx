@@ -178,6 +178,38 @@ export const AppRoutes: React.FC = () => {
           <Route path="imei-check" element={<IMEICheck />} />
           <Route path="vin-verification" element={<VINVerification />} />
           
+          {/* Comprehensive Stolen Item Search Routes for SEO */}
+          <Route path="stolen-item-lookup" element={<StolenItemChecker />} />
+          <Route path="check-stolen-item" element={<StolenItemChecker />} />
+          <Route path="stolen-items-list" element={<StolenItemChecker />} />
+          <Route path="check-stolen-database" element={<StolenItemChecker />} />
+          
+          {/* Vehicle-Related Stolen Check Routes */}
+          <Route path="stolen-vehicle-database" element={<VINVerification />} />
+          <Route path="vin-check-lookup" element={<VINVerification />} />
+          <Route path="check-stolen-car" element={<VINVerification />} />
+          <Route path="search-stolen-vehicle" element={<VINVerification />} />
+          <Route path="check-vehicle-stolen" element={<VINVerification />} />
+          <Route path="stolen-car-vin" element={<VINVerification />} />
+          <Route path="vehicles-by-license-plate" element={<VINVerification />} />
+          <Route path="search-stolen-cars" element={<VINVerification />} />
+          <Route path="car-by-vin" element={<VINVerification />} />
+          
+          {/* Phone-Related Stolen Check Routes */}
+          <Route path="stolen-phone-check" element={<IMEICheck />} />
+          <Route path="search-stolen-phone" element={<IMEICheck />} />
+          <Route path="search-stolen-mobile" element={<IMEICheck />} />
+          <Route path="search-stolen-iphone" element={<IMEICheck />} />
+          
+          {/* Firearms-Related Stolen Check Routes */}
+          <Route path="search-stolen-firearms" element={<FirearmsCheckPage />} />
+          <Route path="search-stolen-guns" element={<FirearmsCheckPage />} />
+          <Route path="stolen-gun-database" element={<FirearmsCheckPage />} />
+          
+          {/* Bike-Related Stolen Check Routes */}
+          <Route path="search-stolen-bikes" element={<CheckBikePage />} />
+          <Route path="check-bike-stolen" element={<CheckBikePage />} />
+          
           {/* Arizona Theft Database Lookups */}
           <Route path="arizona-license-plate-lookup" element={<ArizonaLicensePlateLookup />} />
           <Route path="arizona-vin-lookup" element={<ArizonaVinLookup />} />

@@ -21,6 +21,38 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/serial-number-checker', priority: 0.9, changefreq: 'daily' },
   { path: '/check', priority: 0.9, changefreq: 'daily' },
   
+  // Comprehensive Stolen Item Search Pages (High SEO Priority)
+  { path: '/stolen-item-lookup', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-stolen-item', priority: 0.9, changefreq: 'daily' },
+  { path: '/stolen-items-list', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-stolen-database', priority: 0.9, changefreq: 'daily' },
+  
+  // Vehicle-Related Stolen Check Pages
+  { path: '/stolen-vehicle-database', priority: 0.9, changefreq: 'daily' },
+  { path: '/vin-check-lookup', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-stolen-car', priority: 0.9, changefreq: 'daily' },
+  { path: '/search-stolen-vehicle', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-vehicle-stolen', priority: 0.9, changefreq: 'daily' },
+  { path: '/stolen-car-vin', priority: 0.9, changefreq: 'daily' },
+  { path: '/vehicles-by-license-plate', priority: 0.9, changefreq: 'daily' },
+  { path: '/search-stolen-cars', priority: 0.9, changefreq: 'daily' },
+  { path: '/car-by-vin', priority: 0.9, changefreq: 'daily' },
+  
+  // Phone-Related Stolen Check Pages
+  { path: '/stolen-phone-check', priority: 0.9, changefreq: 'daily' },
+  { path: '/search-stolen-phone', priority: 0.9, changefreq: 'daily' },
+  { path: '/search-stolen-mobile', priority: 0.9, changefreq: 'daily' },
+  { path: '/search-stolen-iphone', priority: 0.9, changefreq: 'daily' },
+  
+  // Firearms-Related Stolen Check Pages
+  { path: '/search-stolen-firearms', priority: 0.8, changefreq: 'weekly' },
+  { path: '/search-stolen-guns', priority: 0.8, changefreq: 'weekly' },
+  { path: '/stolen-gun-database', priority: 0.8, changefreq: 'weekly' },
+  
+  // Bike-Related Stolen Check Pages
+  { path: '/search-stolen-bikes', priority: 0.8, changefreq: 'weekly' },
+  { path: '/check-bike-stolen', priority: 0.8, changefreq: 'weekly' },
+  
   // Item-Specific Verification
   { path: '/check-phone', priority: 0.8, changefreq: 'weekly' },
   { path: '/check-car', priority: 0.8, changefreq: 'weekly' },

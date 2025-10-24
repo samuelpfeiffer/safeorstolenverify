@@ -107,6 +107,114 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     description: 'Free VIN verification tool. Check vehicle identification numbers against stolen car databases. Verify cars, trucks, motorcycles before purchase.',
     keywords: 'VIN check, VIN verification, car VIN lookup, stolen car VIN, vehicle identification check',
     type: 'website'
+  },
+  'stolen-item-checker': {
+    title: 'Stolen Item Checker - Free IMEI, VIN & Serial Number Lookup',
+    description: 'Check if any item is stolen instantly. Free verification for phones (IMEI), vehicles (VIN), electronics, bikes, and more. Protect yourself from stolen goods.',
+    keywords: 'stolen item checker, check stolen items, stolen goods verification, stolen item lookup, stolen database check, verify stolen goods',
+    type: 'website'
+  },
+  'stolen-vehicle-database': {
+    title: 'Stolen Vehicle Database - Check Cars, Motorcycles & More',
+    description: 'Access the global stolen vehicle database. Check VINs for cars, trucks, motorcycles, boats against theft reports. Free vehicle verification.',
+    keywords: 'stolen vehicle database, stolen car database, stolen motorcycle lookup, stolen vehicle check, vehicle theft database',
+    type: 'website'
+  },
+  'stolen-phone-check': {
+    title: 'Stolen Phone Check - Free IMEI Verification & Lookup',
+    description: 'Check if a phone is stolen before buying. Verify IMEI numbers for iPhone, Samsung, Android devices against stolen phone databases.',
+    keywords: 'stolen phone check, check if phone stolen, phone IMEI check, stolen iPhone lookup, stolen Android verification',
+    type: 'website'
+  },
+  'check-stolen-database': {
+    title: 'Check Stolen Database - Verify IMEI, VIN & Serial Numbers',
+    description: 'Search our comprehensive stolen goods database. Check IMEI, VIN, and serial numbers against police reports and theft registries instantly.',
+    keywords: 'check stolen database, stolen goods database, theft database search, stolen items registry, police stolen database',
+    type: 'website'
+  },
+  'stolen-item-lookup': {
+    title: 'Stolen Item Lookup - Instant Verification Service',
+    description: 'Lookup any item to see if it\'s stolen. Instant verification for phones, vehicles, electronics, and more. Free stolen item search.',
+    keywords: 'stolen item lookup, lookup stolen goods, item theft check, stolen goods search, verify stolen items',
+    type: 'website'
+  },
+  'check-stolen-item': {
+    title: 'Check Stolen Item - Free Online Verification Tool',
+    description: 'Check stolen items online for free. Verify IMEI, VIN, serial numbers before buying. Protect yourself from purchasing stolen goods.',
+    keywords: 'check stolen item, verify stolen goods, stolen item verification, check if stolen, item theft verification',
+    type: 'website'
+  },
+  'stolen-items-list': {
+    title: 'Stolen Items List - Search Database of Reported Thefts',
+    description: 'Browse and search the stolen items list. Find reported stolen phones, vehicles, electronics, and more. Check before you buy.',
+    keywords: 'stolen items list, list of stolen goods, stolen property list, theft reports database, stolen goods registry',
+    type: 'website'
+  },
+  'vin-check-lookup': {
+    title: 'VIN Check Lookup - Free Vehicle History & Theft Check',
+    description: 'Free VIN check and lookup service. Verify vehicle history, check for theft reports, and get instant results before buying any vehicle.',
+    keywords: 'VIN check lookup, vehicle VIN lookup, free VIN check, car history lookup, VIN theft check',
+    type: 'website'
+  },
+  'check-stolen-car': {
+    title: 'Check Stolen Car - Free VIN Verification Service',
+    description: 'Check if a car is stolen before you buy. Free VIN verification against stolen vehicle databases. Protect yourself from car theft fraud.',
+    keywords: 'check stolen car, stolen car check, car theft verification, verify car not stolen, stolen vehicle check',
+    type: 'website'
+  },
+  'search-stolen-vehicle': {
+    title: 'Search Stolen Vehicle - Free VIN Database Lookup',
+    description: 'Search stolen vehicle databases by VIN number. Check cars, trucks, motorcycles against national theft registries instantly.',
+    keywords: 'search stolen vehicle, stolen vehicle search, vehicle theft search, VIN stolen search, find stolen cars',
+    type: 'website'
+  },
+  'search-stolen-firearms': {
+    title: 'Search Stolen Firearms - Gun Serial Number Verification',
+    description: 'Search stolen firearms database. Verify gun serial numbers against national stolen weapons registries. Check before purchasing firearms.',
+    keywords: 'search stolen firearms, stolen gun database, firearms serial check, stolen weapons lookup, gun theft verification',
+    type: 'website'
+  },
+  'search-stolen-guns': {
+    title: 'Search Stolen Guns - Weapon Serial Number Database',
+    description: 'Search stolen guns and weapons by serial number. Free verification against stolen firearms databases. Ensure legal gun purchases.',
+    keywords: 'search stolen guns, stolen gun lookup, gun serial verification, weapons theft check, stolen firearms search',
+    type: 'website'
+  },
+  'search-stolen-bikes': {
+    title: 'Search Stolen Bikes - Bicycle Serial Number Lookup',
+    description: 'Search stolen bikes and bicycles by serial number. Check bike registries before buying used bikes. Free bicycle theft verification.',
+    keywords: 'search stolen bikes, stolen bicycle check, bike serial lookup, bicycle theft database, stolen bike search',
+    type: 'website'
+  },
+  'search-stolen-mobile': {
+    title: 'Search Stolen Mobile - Phone IMEI Verification',
+    description: 'Search stolen mobile phones by IMEI number. Check if smartphones are reported stolen before buying. Free mobile theft verification.',
+    keywords: 'search stolen mobile, stolen mobile check, mobile IMEI search, phone theft lookup, stolen smartphone verification',
+    type: 'website'
+  },
+  'search-stolen-iphone': {
+    title: 'Search Stolen iPhone - IMEI Check & Verification',
+    description: 'Search stolen iPhone database by IMEI. Check if an iPhone is reported stolen or blacklisted before purchase. Free iPhone verification.',
+    keywords: 'search stolen iPhone, stolen iPhone check, iPhone IMEI lookup, Apple theft verification, iPhone blacklist check',
+    type: 'website'
+  },
+  'check-vehicle-stolen': {
+    title: 'Check Vehicle Stolen - Free VIN Theft Verification',
+    description: 'Check if a vehicle was stolen using VIN number. Free verification against national stolen vehicle databases. Protect your vehicle purchase.',
+    keywords: 'check vehicle stolen, vehicle theft check, was vehicle stolen, VIN theft verification, stolen vehicle lookup',
+    type: 'website'
+  },
+  'stolen-car-vin': {
+    title: 'Stolen Car VIN Check - Verify Vehicle History',
+    description: 'Check stolen car VIN numbers against theft databases. Verify vehicle history and theft status before buying any car.',
+    keywords: 'stolen car VIN, VIN stolen check, car VIN theft lookup, vehicle VIN verification, stolen car database',
+    type: 'website'
+  },
+  'vehicles-by-license-plate': {
+    title: 'Check Stolen Vehicles by License Plate Number',
+    description: 'Search stolen vehicles using license plate numbers. Verify vehicle ownership and theft status by plate lookup.',
+    keywords: 'stolen vehicles by license plate, license plate check, plate number lookup, vehicle plate verification, stolen car plate',
+    type: 'website'
   }
 };
 
