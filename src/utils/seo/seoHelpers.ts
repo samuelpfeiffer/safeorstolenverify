@@ -215,6 +215,90 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     description: 'Search stolen vehicles using license plate numbers. Verify vehicle ownership and theft status by plate lookup.',
     keywords: 'stolen vehicles by license plate, license plate check, plate number lookup, vehicle plate verification, stolen car plate',
     type: 'website'
+  },
+  'how-do-i-check-if-stolen': {
+    title: 'How Do I Check if Something is Stolen? - Free Guide',
+    description: 'Learn how to check if items are stolen before buying. Step-by-step guide to verify IMEI, VIN, serial numbers. Free stolen goods verification.',
+    keywords: 'how do i check if stolen, check if something stolen, verify item not stolen, how to check stolen goods',
+    type: 'website'
+  },
+  'is-this-stolen': {
+    title: 'Is This Stolen? - Free Instant Verification Tool',
+    description: 'Find out if your item is stolen instantly. Check phones, cars, electronics against theft databases. Free verification in seconds.',
+    keywords: 'is this stolen, check if stolen, stolen verification, is item stolen, stolen goods check',
+    type: 'website'
+  },
+  'verify-not-stolen': {
+    title: 'Verify Item Not Stolen - Free Database Check',
+    description: 'Verify items are not stolen before purchase. Free checks for phones, vehicles, electronics against global theft databases.',
+    keywords: 'verify not stolen, verify item safe, check not stolen, stolen verification service',
+    type: 'website'
+  },
+  'stolen-goods-search': {
+    title: 'Stolen Goods Search - Free Database Lookup',
+    description: 'Search stolen goods databases for free. Check IMEI, VIN, serial numbers against police reports and theft registries.',
+    keywords: 'stolen goods search, search stolen items, stolen property search, theft database search',
+    type: 'website'
+  },
+  'free-stolen-check': {
+    title: 'Free Stolen Check - IMEI, VIN & Serial Verification',
+    description: 'Free stolen item checks. Verify phones, cars, electronics instantly. No credit card required. 4 free searches for new users.',
+    keywords: 'free stolen check, free IMEI check, free VIN check, free verification, no cost stolen check',
+    type: 'website'
+  },
+  'stolen-property-check': {
+    title: 'Stolen Property Check - Verify Before You Buy',
+    description: 'Check stolen property databases before purchasing. Free verification for all items. Protect yourself from buying stolen goods.',
+    keywords: 'stolen property check, property theft verification, check stolen property, stolen goods verification',
+    type: 'website'
+  },
+  'check-if-phone-was-stolen': {
+    title: 'Check if Phone Was Stolen - IMEI Verification',
+    description: 'Check if a phone was stolen by IMEI number. Free verification for iPhone, Android, Samsung. Instant stolen phone check.',
+    keywords: 'check if phone was stolen, phone stolen check, was phone stolen, stolen phone verification',
+    type: 'website'
+  },
+  'check-if-car-was-stolen': {
+    title: 'Check if Car Was Stolen - VIN Verification',
+    description: 'Check if a car was stolen by VIN number. Free vehicle theft verification. Check before buying any used car.',
+    keywords: 'check if car was stolen, car stolen check, was car stolen, stolen car verification',
+    type: 'website'
+  },
+  'stolen-item-search': {
+    title: 'Stolen Item Search - Global Database Access',
+    description: 'Search global stolen item databases. Find reported stolen phones, cars, electronics, and more. Free instant search.',
+    keywords: 'stolen item search, search stolen goods, stolen property search, item theft search',
+    type: 'website'
+  },
+  'check-stolen-goods': {
+    title: 'Check Stolen Goods - Free Verification Service',
+    description: 'Check stolen goods before buying. Free IMEI, VIN, serial number verification. Protect yourself from theft fraud.',
+    keywords: 'check stolen goods, stolen goods checker, verify stolen goods, stolen merchandise check',
+    type: 'website'
+  },
+  'stolen-check-free': {
+    title: 'Stolen Check Free - No Credit Card Required',
+    description: 'Free stolen checks for all items. No credit card, no signup required for basic checks. Verify items instantly.',
+    keywords: 'stolen check free, free theft check, no cost verification, free stolen lookup',
+    type: 'website'
+  },
+  'verify-serial-number': {
+    title: 'Verify Serial Number - Check Against Theft Database',
+    description: 'Verify serial numbers for electronics, tools, appliances. Check if items are stolen before purchase. Free verification.',
+    keywords: 'verify serial number, serial number check, serial verification, check serial stolen',
+    type: 'website'
+  },
+  'imei-stolen-check': {
+    title: 'IMEI Stolen Check - Verify Phone Not Blacklisted',
+    description: 'IMEI stolen check for all phones. Check if IMEI is blacklisted or reported stolen. Free iPhone and Android verification.',
+    keywords: 'IMEI stolen check, check IMEI stolen, IMEI blacklist check, phone IMEI verification',
+    type: 'website'
+  },
+  'vin-stolen-check': {
+    title: 'VIN Stolen Check - Vehicle Theft Verification',
+    description: 'VIN stolen check for all vehicles. Verify cars, trucks, motorcycles against theft databases. Free VIN verification.',
+    keywords: 'VIN stolen check, check VIN stolen, vehicle VIN verification, VIN theft check',
+    type: 'website'
   }
 };
 

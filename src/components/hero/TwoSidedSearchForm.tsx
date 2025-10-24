@@ -126,24 +126,24 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto bg-card/80 backdrop-blur border">
-      <CardContent className="p-6">
-        <div className="text-center mb-6">
-          <Badge className={`${intentText.badgeColor} text-white mb-3`}>
+    <Card className="w-full max-w-2xl mx-auto bg-card/95 backdrop-blur-lg border-2 border-sos-lime/20 shadow-2xl">
+      <CardContent className="p-8">
+        <div className="text-center mb-8">
+          <Badge className={`${intentText.badgeColor} text-white mb-4 text-sm px-4 py-2`}>
             {intentText.badge}
           </Badge>
-          <h2 className="text-2xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl font-bold text-foreground mb-3">
             {intentText.title}
           </h2>
-          <p className="text-muted-foreground font-medium">
+          <p className="text-lg text-muted-foreground font-medium">
             {intentText.subtitle}
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {/* Item Type Selector */}
           <Select value={selectedType} onValueChange={setSelectedType}>
-            <SelectTrigger className="bg-input border text-foreground">
+            <SelectTrigger className="bg-background border-2 border-input hover:border-sos-lime/50 text-foreground h-12 text-base transition-colors">
               <SelectValue placeholder="Select item type (optional)" />
             </SelectTrigger>
             <SelectContent>
@@ -162,17 +162,17 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
               placeholder="Enter IMEI, VIN, or serial number to check stolen status"
               value={serialNumber}
               onChange={(e) => handleInputChange(e.target.value)}
-              className="bg-input border text-foreground placeholder:text-muted-foreground pr-12"
+              className="bg-background border-2 border-input hover:border-sos-lime/50 text-foreground placeholder:text-muted-foreground pr-14 h-12 text-base transition-colors focus:border-sos-lime"
               onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSearch()}
             />
             <Button
               type="button"
               variant="ghost"
               size="sm"
-              className="absolute right-1 top-1 h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
+              className="absolute right-2 top-2 h-8 w-8 p-0 text-muted-foreground hover:text-sos-lime hover:bg-sos-lime/10"
               onClick={onOpenQrScanner}
             >
-              <QrCode className="h-4 w-4" />
+              <QrCode className="h-5 w-5" />
             </Button>
           </div>
 
@@ -180,25 +180,25 @@ export const TwoSidedSearchForm = ({ onOpenQrScanner }: TwoSidedSearchFormProps)
           <Button 
             onClick={handleSearch} 
             disabled={!serialNumber.trim() || isLoading}
-            className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold py-3"
+            className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white font-bold py-6 text-lg shadow-lg hover:shadow-xl transition-all"
           >
             {isLoading ? (
               <div className="flex items-center">
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
                 Processing...
               </div>
             ) : (
               <>
-                <Search className="mr-2 h-4 w-4" />
-                {user ? 'Verify Now' : 'Sign Up & Verify'}
+                <Search className="mr-3 h-5 w-5" />
+                {user ? 'Verify Now' : 'Sign Up & Verify Free'}
               </>
             )}
           </Button>
 
           {/* Auth hint for non-authenticated users */}
           {!user && (
-            <p className="text-center text-sm text-muted-foreground">
-              Get <span className="text-sos-lime font-semibold">4 free verifications</span> when you create your account
+            <p className="text-center text-base text-muted-foreground pt-2">
+              Get <span className="text-sos-lime font-bold text-lg">4 FREE verifications</span> when you create your account
             </p>
           )}
         </div>

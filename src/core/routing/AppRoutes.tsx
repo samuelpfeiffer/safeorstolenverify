@@ -210,6 +210,24 @@ export const AppRoutes: React.FC = () => {
           <Route path="search-stolen-bikes" element={<CheckBikePage />} />
           <Route path="check-bike-stolen" element={<CheckBikePage />} />
           
+          {/* Natural Language Question-Based Routes for SEO */}
+          <Route path="how-do-i-check-if-stolen" element={<StolenItemChecker />} />
+          <Route path="is-this-stolen" element={<StolenItemChecker />} />
+          <Route path="verify-not-stolen" element={<StolenItemChecker />} />
+          <Route path="check-if-phone-was-stolen" element={<IMEICheck />} />
+          <Route path="check-if-car-was-stolen" element={<VINVerification />} />
+          
+          {/* Additional Search Terms */}
+          <Route path="stolen-goods-search" element={<StolenItemChecker />} />
+          <Route path="free-stolen-check" element={<StolenItemChecker />} />
+          <Route path="stolen-property-check" element={<StolenItemChecker />} />
+          <Route path="stolen-item-search" element={<StolenItemChecker />} />
+          <Route path="check-stolen-goods" element={<StolenItemChecker />} />
+          <Route path="stolen-check-free" element={<StolenItemChecker />} />
+          <Route path="verify-serial-number" element={<SerialNumberCheckerPage />} />
+          <Route path="imei-stolen-check" element={<IMEICheck />} />
+          <Route path="vin-stolen-check" element={<VINVerification />} />
+          
           {/* Arizona Theft Database Lookups */}
           <Route path="arizona-license-plate-lookup" element={<ArizonaLicensePlateLookup />} />
           <Route path="arizona-vin-lookup" element={<ArizonaVinLookup />} />

@@ -53,6 +53,24 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/search-stolen-bikes', priority: 0.8, changefreq: 'weekly' },
   { path: '/check-bike-stolen', priority: 0.8, changefreq: 'weekly' },
   
+  // Natural Language Question-Based Routes (High SEO Value)
+  { path: '/how-do-i-check-if-stolen', priority: 0.9, changefreq: 'weekly' },
+  { path: '/is-this-stolen', priority: 0.9, changefreq: 'daily' },
+  { path: '/verify-not-stolen', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-if-phone-was-stolen', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-if-car-was-stolen', priority: 0.9, changefreq: 'daily' },
+  
+  // Additional Common Search Terms
+  { path: '/stolen-goods-search', priority: 0.9, changefreq: 'daily' },
+  { path: '/free-stolen-check', priority: 0.9, changefreq: 'daily' },
+  { path: '/stolen-property-check', priority: 0.9, changefreq: 'daily' },
+  { path: '/stolen-item-search', priority: 0.9, changefreq: 'daily' },
+  { path: '/check-stolen-goods', priority: 0.9, changefreq: 'daily' },
+  { path: '/stolen-check-free', priority: 0.9, changefreq: 'daily' },
+  { path: '/verify-serial-number', priority: 0.9, changefreq: 'daily' },
+  { path: '/imei-stolen-check', priority: 0.9, changefreq: 'daily' },
+  { path: '/vin-stolen-check', priority: 0.9, changefreq: 'daily' },
+  
   // Item-Specific Verification
   { path: '/check-phone', priority: 0.8, changefreq: 'weekly' },
   { path: '/check-car', priority: 0.8, changefreq: 'weekly' },

@@ -77,14 +77,14 @@ const StolenItemChecker = () => {
     <>
       <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/stolen-item-checker" />
       <Helmet>
-        <title>Stolen Item Checker App - Instant IMEI, VIN & Serial Verification | SafeOrStolen</title>
+        <title>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification | SafeOrStolen</title>
         <meta 
           name="description" 
-          content="Download the SafeOrStolen mobile app for instant stolen item checks. Verify IMEI, VIN, serial numbers on-the-go. Protect buyers and sellers with real-time verification - the only app for stolen goods verification." 
+          content="Check if any item is stolen instantly. Free verification for phones (IMEI), vehicles (VIN), electronics (serial numbers). Verify before you buy - protect yourself from stolen goods and fraud. Used by over 100,000+ buyers & sellers worldwide." 
         />
         <meta 
           name="keywords" 
-          content="stolen item checker app, IMEI checker app, VIN check app, mobile verification app, check if phone is stolen, secondhand item verification, stolen goods database, safe marketplace buying, anti-fraud app, instant verification app" 
+          content="stolen item checker, check if stolen, is this stolen, verify not stolen, how do i check if stolen, stolen goods search, free stolen check, stolen property check, stolen item search, check stolen goods, IMEI check, VIN verification, serial number check, stolen phone check, stolen car check, stolen vehicle database, stolen items list, check stolen database, stolen item lookup, verify serial number, imei stolen check, vin stolen check, check if phone was stolen, check if car was stolen, free verification, marketplace safety, anti-fraud protection" 
         />
         <link rel="canonical" href="https://safeorstolen.com/stolen-item-checker" />
         <script type="application/ld+json">
@@ -98,13 +98,13 @@ const StolenItemChecker = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4 bg-sos-lime text-sos-dark">
-                World's Only Mobile App for Stolen Item Verification
+                #1 Free Stolen Item Checker - 100,000+ Users Trust Us
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Instantly Check if Items are Stolen with Our Mobile App
+                Check if Items are Stolen Before You Buy
               </h1>
               <p className="text-xl mb-8 leading-relaxed">
-                The SafeOrStolen app provides instant verification for IMEI, VIN, and serial numbers. Protect yourself when buying or selling secondhand items - download our mobile app for iOS & Android. Better than CheckMEND with 4 FREE searches and global coverage.
+                Free instant verification for phones, cars, electronics, and more. Enter IMEI, VIN, or serial numbers to check against global stolen goods databases. Protect yourself from fraud, legal issues, and financial loss when buying secondhand items.
               </p>
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <Badge variant="outline" className="border-white text-white">
