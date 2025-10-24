@@ -299,6 +299,12 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     description: 'VIN stolen check for all vehicles. Verify cars, trucks, motorcycles against theft databases. Free VIN verification.',
     keywords: 'VIN stolen check, check VIN stolen, vehicle VIN verification, VIN theft check',
     type: 'website'
+  },
+  'stolen-search-console': {
+    title: 'Stolen Search Console - Real-Time Database Analytics',
+    description: 'Access the Stolen Search Console for trending stolen item searches, database statistics, and verification analytics. Monitor global theft prevention data.',
+    keywords: 'stolen search console, theft analytics, stolen item trends, database statistics, search monitoring, verification analytics',
+    type: 'website'
   }
 };
 

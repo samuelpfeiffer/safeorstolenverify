@@ -157,6 +157,7 @@ const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ResellerPage = lazy(() => import('@/pages/ResellerPage'));
 const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
 const SocialMediaMonitoringPage = lazy(() => import('@/pages/SocialMediaMonitoringPage'));
+const StolenSearchConsolePage = lazy(() => import('@/pages/StolenSearchConsolePage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -349,6 +350,12 @@ export const AppRoutes: React.FC = () => {
            <Route path="statistics/stolen-goods-2024" element={<StolenGoodsStatisticsPage />} />
            <Route path="feed.xml" element={<RSSFeedPage />} />
            <Route path="rss" element={<RSSFeedPage />} />
+           
+           {/* Stolen Search Console - Analytics Platform */}
+           <Route path="stolen-search-console" element={<StolenSearchConsolePage />} />
+           <Route path="search-console" element={<StolenSearchConsolePage />} />
+           <Route path="analytics" element={<StolenSearchConsolePage />} />
+           <Route path="search-trends" element={<StolenSearchConsolePage />} />
            
            {/* SEO Comparison & Guide Pages */}
            <Route path="vs/checkmend" element={<ComparisonCheckMendPage />} />

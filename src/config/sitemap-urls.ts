@@ -159,6 +159,12 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/partnerships', priority: 0.6, changefreq: 'monthly' },
   { path: '/press-release', priority: 0.8, changefreq: 'yearly' },
   
+  // Stolen Search Console - Analytics Platform
+  { path: '/stolen-search-console', priority: 0.9, changefreq: 'daily' },
+  { path: '/search-console', priority: 0.8, changefreq: 'daily' },
+  { path: '/analytics', priority: 0.7, changefreq: 'weekly' },
+  { path: '/search-trends', priority: 0.7, changefreq: 'daily' },
+  
   // Target Audiences
   { path: '/for-consumers', priority: 0.7, changefreq: 'monthly' },
   { path: '/for-brands', priority: 0.7, changefreq: 'monthly' },
