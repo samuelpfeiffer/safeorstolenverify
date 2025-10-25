@@ -2,191 +2,133 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { 
-  Shield, 
-  FileCheck, 
-  ExternalLink, 
-  CheckCircle, 
-  AlertTriangle,
-  Users,
-  Database,
-  Award,
-  Phone,
-  Scale,
-  Eye
-} from 'lucide-react';
+import { Shield, FileCheck, ExternalLink, CheckCircle, AlertTriangle, Users, Database, Award, Phone, Scale, Eye } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
 import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
-
-const verifiablePartnerships = [
-  {
-    organization: "Maricopa County Sheriff's Office",
-    contact: "Detective Sarah Martinez",
-    phone: "(623) 876-1011",
-    email: "smartinez@mcso.maricopa.gov",
-    verificationMethod: "Direct contact for partnership verification",
-    agreement: "Data Sharing Agreement #MCSO-2024-DS-0847",
-    publicRecord: "Available through FOIA request",
-    status: "Active since January 2024"
-  },
-  {
-    organization: "IMEI.info Database",
-    contact: "API Partnership Team",
-    phone: "Verify at imei.info/partners",
-    email: "partners@imei.info",
-    verificationMethod: "Public partner directory listing",
-    agreement: "API License Agreement #IMI-2024-0291",
-    publicRecord: "Listed on IMEI.info official partners page",
-    status: "Active integration since December 2023"
-  },
-  {
-    organization: "Bike Index Registry",
-    contact: "Bryan Hance, Executive Director",
-    phone: "(503) 719-7665",
-    email: "bryan@bikeindex.org",
-    verificationMethod: "Direct contact or check Bike Index API docs",
-    agreement: "Non-profit partnership agreement",
-    publicRecord: "Documented in Bike Index annual report 2024",
-    status: "Active partnership since November 2023"
-  }
-];
-
-const publicDocumentation = [
-  {
-    title: "Business Registration & Licensing",
-    documents: [
-      "Arizona Corporation Commission Registration #23462789",
-      "Business License #BL-2023-AZ-891234",
-      "Federal EIN #88-1234567"
-    ],
-    verification: "Arizona Secretary of State business search",
-    url: "https://ecorp.azcc.gov"
-  },
-  {
-    title: "Security Certifications",
-    documents: [
-      "SOC 2 Type II Audit Report (Deloitte, 2024)",
-      "ISO 27001:2022 Certificate #ISO2024-AZ-001",
-      "GDPR Compliance Assessment (TrustArc, 2024)"
-    ],
-    verification: "Certificate numbers verifiable with issuing bodies",
-    url: "#"
-  },
-  {
-    title: "Insurance & Bonding",
-    documents: [
-      "Professional Liability Insurance ($2M coverage)",
-      "Data Breach Insurance ($5M coverage)",
-      "Surety Bond #SB-2024-AZ-7891"
-    ],
-    verification: "Insurance certificates available upon request",
-    url: "#"
-  }
-];
-
-const userTestimonials = [
-  {
-    name: "Sarah Mitchell",
-    location: "Phoenix, AZ",
-    date: "March 15, 2024",
-    story: "Checked iPhone IMEI before buying on Facebook Marketplace - showed stolen from Tempe burglary",
-    outcome: "Saved $800, helped police recover evidence",
-    verification: "Phoenix PD Case #2024-0318992",
-    contact: "Verified through Phoenix PD Public Information Office",
-    linkedIn: "linkedin.com/in/sarah-mitchell-phoenix",
-    rating: 5
-  },
-  {
-    name: "Mike's Cycle Shop",
-    location: "Denver, CO", 
-    date: "February 28, 2024",
-    story: "Used SafeOrStolen to verify 6 bikes someone wanted to sell - all showed stolen",
-    outcome: "Prevented $12,000 in stolen goods, suspect arrested",
-    verification: "Denver PD Report #DPD-2024-87432",
-    contact: "Mike's Cycle Shop: (303) 555-0199",
-    googleReviews: "4.8/5 stars on Google Business",
-    rating: 5
-  },
-  {
-    name: "Jessica Torres (UT Student)",
-    location: "Austin, TX",
-    date: "January 22, 2024",
-    story: "MacBook Pro on Craigslist seemed too cheap - serial number showed stolen from campus",
-    outcome: "Avoided legal trouble, laptop returned to student",
-    verification: "UT Police Department Case #UT-2024-0122",
-    contact: "UT Police: (512) 471-4441",
-    studentVerified: true,
-    rating: 5
-  }
-];
-
-const mediaVerification = [
-  {
-    outlet: "Arizona Republic",
-    headline: "Local Tech Startup Partners with Sheriff's Office to Combat Theft",
-    date: "January 18, 2024",
-    reporter: "Mike Johnson",
-    verificationUrl: "azcentral.com/story/news/local/phoenix/2024/01/18/safeorstolen-partners-mcso",
-    archived: "Available in Wayback Machine"
-  },
-  {
-    outlet: "Phoenix Business Journal",
-    headline: "SafeOrStolen Raises $2.1M to Expand Stolen Goods Database",
-    date: "December 8, 2023",
-    reporter: "Amanda Rodriguez",
-    verificationUrl: "bizjournals.com/phoenix/news/2023/12/08/safeorstolen-funding",
-    archived: "Available in news archive"
-  },
-  {
-    outlet: "TechCrunch",
-    headline: "Y Combinator Grad SafeOrStolen Tackles Secondhand Market Safety",
-    date: "November 15, 2023",
-    reporter: "Sarah Perez",
-    verificationUrl: "techcrunch.com/2023/11/15/safeorstolen-yc-grad",
-    archived: "TechCrunch archive"
-  }
-];
-
-const legalFramework = [
-  {
-    title: "Terms of Service",
-    description: "Legally binding terms with liability limitations and dispute resolution",
-    lastUpdated: "March 1, 2024",
-    url: "/terms-of-service"
-  },
-  {
-    title: "Privacy Policy", 
-    description: "GDPR and CCPA compliant data handling practices",
-    lastUpdated: "March 1, 2024",
-    url: "/privacy-policy"
-  },
-  {
-    title: "Data Processing Agreement",
-    description: "Enterprise customer data processing terms",
-    lastUpdated: "February 15, 2024",
-    url: "/dpa"
-  },
-  {
-    title: "Service Level Agreement",
-    description: "99.9% uptime guarantee with service credits",
-    lastUpdated: "January 15, 2024", 
-    url: "/sla"
-  }
-];
-
+const verifiablePartnerships = [{
+  organization: "Maricopa County Sheriff's Office",
+  contact: "Detective Sarah Martinez",
+  phone: "(623) 876-1011",
+  email: "smartinez@mcso.maricopa.gov",
+  verificationMethod: "Direct contact for partnership verification",
+  agreement: "Data Sharing Agreement #MCSO-2024-DS-0847",
+  publicRecord: "Available through FOIA request",
+  status: "Active since January 2024"
+}, {
+  organization: "IMEI.info Database",
+  contact: "API Partnership Team",
+  phone: "Verify at imei.info/partners",
+  email: "partners@imei.info",
+  verificationMethod: "Public partner directory listing",
+  agreement: "API License Agreement #IMI-2024-0291",
+  publicRecord: "Listed on IMEI.info official partners page",
+  status: "Active integration since December 2023"
+}, {
+  organization: "Bike Index Registry",
+  contact: "Bryan Hance, Executive Director",
+  phone: "(503) 719-7665",
+  email: "bryan@bikeindex.org",
+  verificationMethod: "Direct contact or check Bike Index API docs",
+  agreement: "Non-profit partnership agreement",
+  publicRecord: "Documented in Bike Index annual report 2024",
+  status: "Active partnership since November 2023"
+}];
+const publicDocumentation = [{
+  title: "Business Registration & Licensing",
+  documents: ["Arizona Corporation Commission Registration #23462789", "Business License #BL-2023-AZ-891234", "Federal EIN #88-1234567"],
+  verification: "Arizona Secretary of State business search",
+  url: "https://ecorp.azcc.gov"
+}, {
+  title: "Security Certifications",
+  documents: ["SOC 2 Type II Audit Report (Deloitte, 2024)", "ISO 27001:2022 Certificate #ISO2024-AZ-001", "GDPR Compliance Assessment (TrustArc, 2024)"],
+  verification: "Certificate numbers verifiable with issuing bodies",
+  url: "#"
+}, {
+  title: "Insurance & Bonding",
+  documents: ["Professional Liability Insurance ($2M coverage)", "Data Breach Insurance ($5M coverage)", "Surety Bond #SB-2024-AZ-7891"],
+  verification: "Insurance certificates available upon request",
+  url: "#"
+}];
+const userTestimonials = [{
+  name: "Sarah Mitchell",
+  location: "Phoenix, AZ",
+  date: "March 15, 2024",
+  story: "Checked iPhone IMEI before buying on Facebook Marketplace - showed stolen from Tempe burglary",
+  outcome: "Saved $800, helped police recover evidence",
+  verification: "Phoenix PD Case #2024-0318992",
+  contact: "Verified through Phoenix PD Public Information Office",
+  linkedIn: "linkedin.com/in/sarah-mitchell-phoenix",
+  rating: 5
+}, {
+  name: "Mike's Cycle Shop",
+  location: "Denver, CO",
+  date: "February 28, 2024",
+  story: "Used SafeOrStolen to verify 6 bikes someone wanted to sell - all showed stolen",
+  outcome: "Prevented $12,000 in stolen goods, suspect arrested",
+  verification: "Denver PD Report #DPD-2024-87432",
+  contact: "Mike's Cycle Shop: (303) 555-0199",
+  googleReviews: "4.8/5 stars on Google Business",
+  rating: 5
+}, {
+  name: "Jessica Torres (UT Student)",
+  location: "Austin, TX",
+  date: "January 22, 2024",
+  story: "MacBook Pro on Craigslist seemed too cheap - serial number showed stolen from campus",
+  outcome: "Avoided legal trouble, laptop returned to student",
+  verification: "UT Police Department Case #UT-2024-0122",
+  contact: "UT Police: (512) 471-4441",
+  studentVerified: true,
+  rating: 5
+}];
+const mediaVerification = [{
+  outlet: "Arizona Republic",
+  headline: "Local Tech Startup Partners with Sheriff's Office to Combat Theft",
+  date: "January 18, 2024",
+  reporter: "Mike Johnson",
+  verificationUrl: "azcentral.com/story/news/local/phoenix/2024/01/18/safeorstolen-partners-mcso",
+  archived: "Available in Wayback Machine"
+}, {
+  outlet: "Phoenix Business Journal",
+  headline: "SafeOrStolen Raises $2.1M to Expand Stolen Goods Database",
+  date: "December 8, 2023",
+  reporter: "Amanda Rodriguez",
+  verificationUrl: "bizjournals.com/phoenix/news/2023/12/08/safeorstolen-funding",
+  archived: "Available in news archive"
+}, {
+  outlet: "TechCrunch",
+  headline: "Y Combinator Grad SafeOrStolen Tackles Secondhand Market Safety",
+  date: "November 15, 2023",
+  reporter: "Sarah Perez",
+  verificationUrl: "techcrunch.com/2023/11/15/safeorstolen-yc-grad",
+  archived: "TechCrunch archive"
+}];
+const legalFramework = [{
+  title: "Terms of Service",
+  description: "Legally binding terms with liability limitations and dispute resolution",
+  lastUpdated: "March 1, 2024",
+  url: "/terms-of-service"
+}, {
+  title: "Privacy Policy",
+  description: "GDPR and CCPA compliant data handling practices",
+  lastUpdated: "March 1, 2024",
+  url: "/privacy-policy"
+}, {
+  title: "Data Processing Agreement",
+  description: "Enterprise customer data processing terms",
+  lastUpdated: "February 15, 2024",
+  url: "/dpa"
+}, {
+  title: "Service Level Agreement",
+  description: "99.9% uptime guarantee with service credits",
+  lastUpdated: "January 15, 2024",
+  url: "/sla"
+}];
 const TrustVerificationPage: React.FC = () => {
   const navigate = useNavigate();
-
-  return (
-    <>
+  return <>
       <CanonicalUrl url="https://safeorstolen.com/trust-verification" />
-      <EnhancedSEOHead
-        title="Trust & Verification - Addressing Reliability Concerns | SafeOrStolen"
-        description="Direct response to reliability concerns about SafeOrStolen. Verifiable partnerships, public documentation, contact information for independent verification of all claims."
-        keywords="SafeOrStolen reliability, trust verification, law enforcement partnerships, verifiable claims, independent verification"
-        canonical="/trust-verification"
-      />
+      <EnhancedSEOHead title="Trust & Verification - Addressing Reliability Concerns | SafeOrStolen" description="Direct response to reliability concerns about SafeOrStolen. Verifiable partnerships, public documentation, contact information for independent verification of all claims." keywords="SafeOrStolen reliability, trust verification, law enforcement partnerships, verifiable claims, independent verification" canonical="/trust-verification" />
       
       <div className="min-h-screen bg-background">
         {/* Hero Section - Direct Response */}
@@ -197,9 +139,7 @@ const TrustVerificationPage: React.FC = () => {
                 <AlertTriangle className="h-4 w-4 mr-2" />
                 Addressing Reliability Concerns
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                "SafeOrStolen.com Reliability Cannot Be Confirmed"
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">"SafeOrStolen.com - Most Reliable Way To Search Secondhand Items</h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 We've seen this critique, and we take it seriously. Below is every piece of 
                 verifiable evidence about our partnerships, data sources, and track record. 
@@ -226,14 +166,13 @@ const TrustVerificationPage: React.FC = () => {
                   Verifiable Law Enforcement Partnerships
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  <strong>Claim:</strong> "No public announcements or official statements from law enforcement"<br/>
+                  <strong>Claim:</strong> "No public announcements or official statements from law enforcement"<br />
                   <strong>Response:</strong> Here are the contacts to verify our partnerships directly
                 </p>
               </div>
 
               <div className="space-y-6">
-                {verifiablePartnerships.map((partnership, index) => (
-                  <Card key={index} className="border-l-4 border-l-blue-500">
+                {verifiablePartnerships.map((partnership, index) => <Card key={index} className="border-l-4 border-l-blue-500">
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-xl">{partnership.organization}</CardTitle>
@@ -286,8 +225,7 @@ const TrustVerificationPage: React.FC = () => {
                         </p>
                       </div>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -302,14 +240,13 @@ const TrustVerificationPage: React.FC = () => {
                   Public Business Documentation
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  <strong>Claim:</strong> "Minimal public track record"<br/>
+                  <strong>Claim:</strong> "Minimal public track record"<br />
                   <strong>Response:</strong> Complete business registration and certification records
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {publicDocumentation.map((doc, index) => (
-                  <Card key={index} className="border-green-200 hover:shadow-lg transition-shadow">
+                {publicDocumentation.map((doc, index) => <Card key={index} className="border-green-200 hover:shadow-lg transition-shadow">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center">
                         <FileCheck className="h-5 w-5 mr-2 text-green-600" />
@@ -318,28 +255,23 @@ const TrustVerificationPage: React.FC = () => {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        {doc.documents.map((document, docIndex) => (
-                          <div key={docIndex} className="text-sm p-3 bg-green-50 rounded border">
+                        {doc.documents.map((document, docIndex) => <div key={docIndex} className="text-sm p-3 bg-green-50 rounded border">
                             {document}
-                          </div>
-                        ))}
+                          </div>)}
                         <div className="pt-3 border-t">
                           <p className="text-xs text-muted-foreground mb-2">
                             <strong>Verify at:</strong> {doc.verification}
                           </p>
-                          {doc.url !== "#" && (
-                            <Button variant="ghost" size="sm" asChild>
+                          {doc.url !== "#" && <Button variant="ghost" size="sm" asChild>
                               <a href={doc.url} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="h-3 w-3 mr-2" />
                                 Check Records
                               </a>
-                            </Button>
-                          )}
+                            </Button>}
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -354,14 +286,13 @@ const TrustVerificationPage: React.FC = () => {
                   Police-Verified Success Stories
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  <strong>Claim:</strong> "No significant user feedback or discussion"<br/>
+                  <strong>Claim:</strong> "No significant user feedback or discussion"<br />
                   <strong>Response:</strong> Real users with police case numbers and contact verification
                 </p>
               </div>
 
               <div className="space-y-8">
-                {userTestimonials.map((testimonial, index) => (
-                  <Card key={index} className="border-l-4 border-l-green-500 shadow-lg">
+                {userTestimonials.map((testimonial, index) => <Card key={index} className="border-l-4 border-l-green-500 shadow-lg">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div>
@@ -370,9 +301,7 @@ const TrustVerificationPage: React.FC = () => {
                             {testimonial.location} • {testimonial.date}
                           </div>
                           <div className="flex items-center mt-2">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <CheckCircle key={i} className="h-4 w-4 text-green-600" />
-                            ))}
+                            {[...Array(testimonial.rating)].map((_, i) => <CheckCircle key={i} className="h-4 w-4 text-green-600" />)}
                           </div>
                         </div>
                         <Badge className="bg-green-100 text-green-800">
@@ -393,18 +322,13 @@ const TrustVerificationPage: React.FC = () => {
                           <div className="space-y-1 text-sm text-green-600">
                             <div><strong>Police Case:</strong> {testimonial.verification}</div>
                             <div><strong>Verify with:</strong> {testimonial.contact}</div>
-                            {testimonial.linkedIn && (
-                              <div><strong>LinkedIn:</strong> {testimonial.linkedIn}</div>
-                            )}
-                            {testimonial.googleReviews && (
-                              <div><strong>Business Reviews:</strong> {testimonial.googleReviews}</div>
-                            )}
+                            {testimonial.linkedIn && <div><strong>LinkedIn:</strong> {testimonial.linkedIn}</div>}
+                            {testimonial.googleReviews && <div><strong>Business Reviews:</strong> {testimonial.googleReviews}</div>}
                           </div>
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -424,8 +348,7 @@ const TrustVerificationPage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {mediaVerification.map((article, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                {mediaVerification.map((article, index) => <Card key={index} className="hover:shadow-lg transition-shadow">
                     <CardHeader>
                       <CardTitle className="text-lg">{article.outlet}</CardTitle>
                       <p className="text-sm text-muted-foreground">By {article.reporter} • {article.date}</p>
@@ -443,8 +366,7 @@ const TrustVerificationPage: React.FC = () => {
                         </a>
                       </Button>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -459,14 +381,13 @@ const TrustVerificationPage: React.FC = () => {
                   Legal Framework & Accountability
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  <strong>Claim:</strong> "Holds no legal weight"<br/>
+                  <strong>Claim:</strong> "Holds no legal weight"<br />
                   <strong>Response:</strong> Comprehensive legal protections and service guarantees
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {legalFramework.map((legal, index) => (
-                  <Card key={index} className="border-purple-200">
+                {legalFramework.map((legal, index) => <Card key={index} className="border-purple-200">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center">
                         <Scale className="h-5 w-5 mr-2 text-purple-600" />
@@ -483,8 +404,7 @@ const TrustVerificationPage: React.FC = () => {
                         View Document
                       </Button>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               <Card className="bg-gradient-to-r from-purple-50 to-background border-purple-200">
@@ -541,8 +461,6 @@ const TrustVerificationPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default TrustVerificationPage;
