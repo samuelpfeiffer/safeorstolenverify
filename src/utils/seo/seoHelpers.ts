@@ -301,9 +301,27 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     type: 'website'
   },
   'stolen-search-console': {
-    title: 'Stolen Search Console - Real-Time Database Analytics',
-    description: 'Access the Stolen Search Console for trending stolen item searches, database statistics, and verification analytics. Monitor global theft prevention data.',
-    keywords: 'stolen search console, theft analytics, stolen item trends, database statistics, search monitoring, verification analytics',
+    title: 'Stolen Search Console - Real-Time Analytics | SafeOrStolen',
+    description: 'Access real-time stolen item search analytics, trending searches, and global statistics. Monitor patterns and protect your community with live data insights.',
+    keywords: 'stolen search console, search analytics, stolen item trends, real-time data, search statistics, theft patterns',
+    type: 'website'
+  },
+  'about-company': {
+    title: 'About Safe or Stolen LLC - Company Information & Leadership',
+    description: 'Learn about Safe or Stolen LLC, our mission, leadership team, and commitment to transparency. Headquartered in Peoria, Arizona, serving users worldwide.',
+    keywords: 'Safe or Stolen company, about us, leadership team, company information, Samuel Pfeiffer, Arizona LLC',
+    type: 'website'
+  },
+  'transparency': {
+    title: 'Transparency Report - Safe or Stolen | Platform Statistics & Operations',
+    description: 'View our quarterly transparency report including platform statistics, data handling practices, law enforcement cooperation, and operational details.',
+    keywords: 'transparency report, platform statistics, data handling, privacy practices, operational transparency',
+    type: 'website'
+  },
+  'roadmap': {
+    title: 'Product Roadmap - Safe or Stolen | Development Timeline & Features',
+    description: 'View our product development roadmap, upcoming features, and launch timeline for SafeOrStolen.com platform and mobile applications.',
+    keywords: 'product roadmap, development timeline, upcoming features, mobile app launch, platform updates',
     type: 'website'
   },
   'trust-verification': {

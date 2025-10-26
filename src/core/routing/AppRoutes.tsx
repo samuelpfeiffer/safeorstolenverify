@@ -158,6 +158,8 @@ const ResellerPage = lazy(() => import('@/pages/ResellerPage'));
 const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
 const SocialMediaMonitoringPage = lazy(() => import('@/pages/SocialMediaMonitoringPage'));
 const StolenSearchConsolePage = lazy(() => import('@/pages/StolenSearchConsolePage'));
+const AboutUsPage = lazy(() => import('@/pages/AboutUsPage'));
+const ProductRoadmapPage = lazy(() => import('@/pages/ProductRoadmapPage'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -256,6 +258,19 @@ export const AppRoutes: React.FC = () => {
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="verification-success" element={<SubscriptionSuccessPage />} />
           <Route path="about" element={<AboutPage />} />
+          
+          {/* Trust & Company Pages */}
+          <Route path="/about-company" element={<AboutUsPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/company" element={<AboutUsPage />} />
+          <Route path="/transparency" element={<TransparencyPage />} />
+          <Route path="/transparency-report" element={<Navigate to="/transparency" replace />} />
+          <Route path="/roadmap" element={<ProductRoadmapPage />} />
+          <Route path="/product-roadmap" element={<Navigate to="/roadmap" replace />} />
+          <Route path="/launch-status" element={<Navigate to="/roadmap" replace />} />
+          <Route path="/stolen-search-console" element={<StolenSearchConsolePage />} />
+          <Route path="/search-console" element={<Navigate to="/stolen-search-console" replace />} />
+          
           <Route path="our-mission" element={<OurMissionPage />} />
           <Route path="reduce-crime" element={<Navigate to="/our-mission" replace />} />
           <Route path="crime-prevention" element={<Navigate to="/our-mission" replace />} />

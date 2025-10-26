@@ -5,7 +5,7 @@ export const OrganizationSchema = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Safe or Stolen",
-    "legalName": "Safe or Stolen",
+    "legalName": "Safe or Stolen LLC",
     "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "Safe or Stolen Verification Service"],
     "url": "https://safeorstolen.com",
     "brand": {
@@ -15,16 +15,19 @@ export const OrganizationSchema = () => {
       "logo": "https://safeorstolen.com/logo.png"
     },
     "logo": "https://safeorstolen.com/logo.png",
-    "description": "Leading IMEI, VIN, and serial number verification service protecting buyers from stolen goods and marketplace scams. Trusted by 25,000+ users worldwide.",
+    "description": "Safe or Stolen LLC is a verified technology company providing IMEI, VIN, and serial number verification services. Headquartered in Peoria, Arizona, we protect buyers from stolen goods and marketplace scams. Currently operational web platform with 25,000+ verifications completed.",
     "foundingDate": "2024",
     "founders": [
       {
         "@type": "Person",
-        "name": "Safe or Stolen Team"
+        "name": "Samuel Pfeiffer",
+        "jobTitle": "Founder & CEO"
       }
     ],
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Peoria",
+      "addressRegion": "AZ",
       "addressCountry": "US"
     },
     "contactPoint": {
@@ -52,7 +55,14 @@ export const OrganizationSchema = () => {
       "Second-hand item verification"
     ],
     "slogan": "Verify Before You Buy - Protect Yourself from Stolen Goods",
-    "keywords": "SafeOrStolen, Safe or Stolen, IMEI check, VIN verification, serial number lookup, stolen item checker"
+    "keywords": "SafeOrStolen, Safe or Stolen, IMEI check, VIN verification, serial number lookup, stolen item checker",
+    "isAccessibleForFree": true,
+    "publishingPrinciples": "https://safeorstolen.com/transparency",
+    "subOrganization": {
+      "@type": "Organization",
+      "name": "Safe or Stolen LLC",
+      "description": "Arizona Limited Liability Company"
+    }
   };
 
   return (
