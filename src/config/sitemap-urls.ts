@@ -103,7 +103,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/faq', priority: 0.7, changefreq: 'monthly' },
   
   // Trust & Credibility Pages
-  { path: '/trust-verification', priority: 0.7, changefreq: 'monthly' },
+  { path: '/trust-verification', priority: 0.9, changefreq: 'weekly' },
   { path: '/data-sources', priority: 0.7, changefreq: 'monthly' },
   { path: '/transparency', priority: 0.7, changefreq: 'monthly' },
   { path: '/accuracy', priority: 0.7, changefreq: 'monthly' },

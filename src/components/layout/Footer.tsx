@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Shield, Heart, ExternalLink, Twitter, Linkedin, Github } from 'lucide-react';
+import { Shield, Heart, ExternalLink, Twitter, Linkedin, Github, Lock, Award, CheckCircle } from 'lucide-react';
 import { Logo } from '@/components/common/Logo';
 
 /**
@@ -162,8 +162,39 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Additional Info */}
+        {/* Security Badges */}
         <div className="mt-8 pt-8 border-t border-sos-orange/20">
+          <div className="text-center mb-6">
+            <Link to="/trust-verification" className="inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors">
+              <Shield className="h-4 w-4 mr-2" />
+              View Our Security Certifications
+              <ExternalLink className="h-3 w-3 ml-1" />
+            </Link>
+          </div>
+          
+          <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
+            <Badge variant="outline" className="border-green-500/30 text-green-400">
+              <Lock className="h-3 w-3 mr-1" />
+              256-bit SSL/TLS
+            </Badge>
+            <Badge variant="outline" className="border-blue-500/30 text-blue-400">
+              <Award className="h-3 w-3 mr-1" />
+              SOC 2 Type II
+            </Badge>
+            <Badge variant="outline" className="border-purple-500/30 text-purple-400">
+              <Shield className="h-3 w-3 mr-1" />
+              ISO 27001
+            </Badge>
+            <Badge variant="outline" className="border-emerald-500/30 text-emerald-400">
+              <CheckCircle className="h-3 w-3 mr-1" />
+              GDPR Compliant
+            </Badge>
+            <Badge variant="outline" className="border-cyan-500/30 text-cyan-400">
+              <Award className="h-3 w-3 mr-1" />
+              PCI DSS Level 1
+            </Badge>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-500">
             <div>
               <p className="mb-2 font-medium text-gray-400">Security & Compliance</p>

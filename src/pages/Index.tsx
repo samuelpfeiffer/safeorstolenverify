@@ -13,6 +13,8 @@ import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
 import { ContactFormSection } from '@/components/home/ContactFormSection';
 import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 import { QuestionBasedContent } from '@/components/home/QuestionBasedContent';
+import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
+import { VerifiedSiteBadge } from '@/components/trust/VerifiedSiteBadge';
 
 // Lazy load VerifiedProduct component
 const VerifiedProduct = lazy(() => import('@/components/VerifiedProduct'));
@@ -31,9 +33,15 @@ const Index = () => {
       <OrganizationSchema />
       <WebSiteSchema />
       
+      {/* Trust header bar */}
+      <TrustHeaderBar />
+      
       <div className="min-h-screen">
         {/* Hero with search bar - THE CORE VALUE */}
         <Hero />
+        
+        {/* Floating verified badge */}
+        <VerifiedSiteBadge variant="floating" />
         
         {/* Trust signals immediately */}
         <TrustSignalsSection />

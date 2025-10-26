@@ -305,6 +305,18 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     description: 'Access the Stolen Search Console for trending stolen item searches, database statistics, and verification analytics. Monitor global theft prevention data.',
     keywords: 'stolen search console, theft analytics, stolen item trends, database statistics, search monitoring, verification analytics',
     type: 'website'
+  },
+  'trust-verification': {
+    title: 'Trust & Security Verification - Certified Secure Platform',
+    description: 'Verify our enterprise-grade security certifications including SOC 2, ISO 27001, GDPR, and PCI DSS compliance. View our security badges, audits, and trust indicators.',
+    keywords: 'security verification, trust certification, SOC 2, ISO 27001, GDPR compliant, PCI DSS, secure platform, verified site, security audit, compliance certification, enterprise security, data protection',
+    type: 'website'
+  },
+  'security': {
+    title: 'Security & Privacy - Enterprise Data Protection',
+    description: 'Learn about our enterprise-grade security measures, data encryption, privacy policies, and compliance with international security standards.',
+    keywords: 'security measures, data protection, privacy policy, encryption, GDPR compliance, data security, secure platform',
+    type: 'website'
   }
 };
 
