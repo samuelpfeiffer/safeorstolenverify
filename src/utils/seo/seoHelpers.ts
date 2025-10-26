@@ -324,6 +324,12 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     keywords: 'product roadmap, development timeline, upcoming features, mobile app launch, platform updates',
     type: 'website'
   },
+  'company-verification': {
+    title: 'Official Company Verification - Safe or Stolen LLC | Peoria, Arizona',
+    description: 'Official verification: Safe or Stolen LLC is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company.',
+    keywords: 'Safe or Stolen LLC, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification, Arizona business, Samuel Pfeiffer',
+    type: 'website'
+  },
   'trust-verification': {
     title: 'Trust & Security Verification - Certified Secure Platform',
     description: 'Verify our enterprise-grade security certifications including SOC 2, ISO 27001, GDPR, and PCI DSS compliance. View our security badges, audits, and trust indicators.',

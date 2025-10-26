@@ -114,6 +114,7 @@ const TrustVerificationPage = lazy(() => import('@/pages/TrustVerificationPage')
 const CaseStudiesPage = lazy(() => import('@/pages/CaseStudiesPage'));
 const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
+const CompanyVerificationPage = lazy(() => import('@/pages/CompanyVerificationPage'));
 const ServiceLimitationsPage = lazy(() => import('@/pages/ServiceLimitations'));
 const AccuracyPage = lazy(() => import('@/pages/AccuracyPage'));
 const VerificationHubPage = lazy(() => import('@/pages/VerificationHubPage'));
@@ -265,6 +266,9 @@ export const AppRoutes: React.FC = () => {
           <Route path="/company" element={<AboutUsPage />} />
           <Route path="/transparency" element={<TransparencyPage />} />
           <Route path="/transparency-report" element={<Navigate to="/transparency" replace />} />
+          <Route path="/company-verification" element={<CompanyVerificationPage />} />
+          <Route path="/verification" element={<Navigate to="/company-verification" replace />} />
+          <Route path="/legitimacy" element={<Navigate to="/company-verification" replace />} />
           <Route path="/roadmap" element={<ProductRoadmapPage />} />
           <Route path="/product-roadmap" element={<Navigate to="/roadmap" replace />} />
           <Route path="/launch-status" element={<Navigate to="/roadmap" replace />} />

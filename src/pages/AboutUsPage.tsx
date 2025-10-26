@@ -199,6 +199,9 @@ const AboutUsPage: React.FC = () => {
                   <Link to="/trust-verification">View Security Info</Link>
                 </Button>
                 <Button variant="outline" asChild>
+                  <Link to="/company-verification">Company Verification</Link>
+                </Button>
+                <Button variant="outline" asChild>
                   <Link to="/transparency">Transparency Report</Link>
                 </Button>
               </div>

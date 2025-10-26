@@ -15,8 +15,17 @@ export const OrganizationSchema = () => {
       "logo": "https://safeorstolen.com/logo.png"
     },
     "logo": "https://safeorstolen.com/logo.png",
-    "description": "Safe or Stolen LLC is a verified technology company providing IMEI, VIN, and serial number verification services. Headquartered in Peoria, Arizona, we protect buyers from stolen goods and marketplace scams. Currently operational web platform with 25,000+ verifications completed.",
-    "foundingDate": "2024",
+    "description": "Safe or Stolen LLC is a legitimate Arizona corporation providing IMEI, VIN, and serial number verification services. Incorporated July 7, 2025, and headquartered in Peoria, Arizona. We are NOT affiliated with any Shelton, Washington company. Currently operational web platform serving users nationwide.",
+    "foundingDate": "2025-07-07",
+    "foundingLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Peoria",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
+    },
     "founders": [
       {
         "@type": "Person",
@@ -28,7 +37,17 @@ export const OrganizationSchema = () => {
       "@type": "PostalAddress",
       "addressLocality": "Peoria",
       "addressRegion": "AZ",
+      "postalCode": "85345",
       "addressCountry": "US"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "Peoria, Arizona",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.5806,
+        "longitude": -112.2374
+      }
     },
     "contactPoint": {
       "@type": "ContactPoint",

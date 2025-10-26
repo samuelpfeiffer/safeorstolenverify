@@ -168,6 +168,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/about-company', priority: 0.9, changefreq: 'monthly' },
   { path: '/transparency', priority: 0.8, changefreq: 'monthly' },
   { path: '/roadmap', priority: 0.7, changefreq: 'weekly' },
+  { path: '/company-verification', priority: 0.95, changefreq: 'monthly' },
   
   // Target Audiences
   { path: '/for-consumers', priority: 0.7, changefreq: 'monthly' },

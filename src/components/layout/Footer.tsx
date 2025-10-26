@@ -41,6 +41,7 @@ export const Footer: React.FC = () => {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about' },
+        { name: 'Company Verification', href: '/company-verification' },
         { name: 'Our Story', href: '/our-story' },
         { name: 'About Problem', href: '/about-problem' },
         { name: 'Contact', href: '/contact' },
