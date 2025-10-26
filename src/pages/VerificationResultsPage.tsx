@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, AlertTriangle, Shield, ArrowLeft } from 'lucide-react';
+import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 
 export default function VerificationResultsPage() {
   const location = useLocation();
@@ -136,6 +137,31 @@ export default function VerificationResultsPage() {
                 </Button>
               </div>
             </Card>
+
+            {/* Trust Badge for Safe Items */}
+            {isSafe && (
+              <div className="space-y-4">
+                <Card className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-2 border-primary/30">
+                  <div className="p-6">
+                    <div className="text-center space-y-3">
+                      <div className="inline-flex items-center gap-2 text-primary">
+                        <Shield className="h-6 w-6" />
+                        <span className="text-xl font-bold">Item Verified Safe! 🎉</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Get your trust badge below to share on marketplace listings
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                
+                <EmbeddableSafeBadge 
+                  verificationId={result.verificationId || result.id || 'verified'} 
+                  status="safe"
+                  itemName={searchInput}
+                />
+              </div>
+            )}
 
             {/* Additional Info */}
             {isStolen && (

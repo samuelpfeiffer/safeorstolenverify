@@ -17,6 +17,7 @@ import { VerificationResult } from '@/utils/typeGuards';
 import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
 import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
 import { CertifiedSafeBadge } from './CertifiedSafeBadge';
+import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 
 interface RealVerificationCardProps {
   verificationResult?: VerificationResult;
@@ -220,11 +221,22 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
         </CardHeader>
         <CardContent>
           {verificationResult.status === 'safe' && (
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <CertifiedSafeBadge size="sm" />
               </div>
-              <p className="text-sm text-muted-foreground">However, always verify the seller's identity and request proof of ownership.</p>
+              <p className="text-sm text-muted-foreground">
+                However, always verify the seller's identity and request proof of ownership.
+              </p>
+              
+              {/* Embeddable Trust Badge */}
+              <div className="pt-4 border-t">
+                <EmbeddableSafeBadge 
+                  verificationId={verificationResult.id}
+                  status="safe"
+                  itemName={verificationResult.serial_number}
+                />
+              </div>
             </div>
           )}
           {verificationResult.status === 'stolen' && (
