@@ -38,12 +38,15 @@ serve(async (req) => {
       );
     }
 
-    // Call IMEI.info API
-    const response = await fetch(`https://api.imei.info/v1/check/${imei}`, {
+    // Call IMEI.info API - Real integration
+    // Sign up at https://dash.imei.info/register/
+    const response = await fetch(`https://api.imei.info/api/check`, {
+      method: 'POST',
       headers: {
         'Authorization': `Bearer ${IMEI_INFO_API_KEY}`,
         'Content-Type': 'application/json'
-      }
+      },
+      body: JSON.stringify({ imei })
     });
 
     if (!response.ok) {
@@ -52,18 +55,31 @@ serve(async (req) => {
 
     const data = await response.json();
 
+    // Check their Lost Device Database
+    const lostCheckResponse = await fetch(`https://www.imei.info/api/lost-device/check`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${IMEI_INFO_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ imei })
+    });
+
+    const lostData = lostCheckResponse.ok ? await lostCheckResponse.json() : null;
+
     const result = {
-      status: data.blacklisted ? 'blacklisted' : 'safe',
-      message: data.blacklisted 
-        ? '⚠️ Device is blacklisted by carriers'
-        : '✓ Device is not blacklisted',
+      status: (data.blacklisted || lostData?.found) ? 'stolen' : 'safe',
+      message: (data.blacklisted || lostData?.found)
+        ? '⚠️ Device is blacklisted or reported lost/stolen'
+        : '✓ Device is not blacklisted or reported stolen',
       provider: 'IMEI.info',
       imei: imei,
       details: {
-        manufacturer: data.manufacturer,
-        model: data.model,
+        manufacturer: data.device?.manufacturer,
+        model: data.device?.model,
         blacklisted: data.blacklisted,
-        carriers: data.carriers || []
+        reported_lost: lostData?.found || false,
+        specifications: data.device
       }
     };
 
