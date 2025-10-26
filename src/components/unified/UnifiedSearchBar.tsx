@@ -7,7 +7,6 @@ import { useUnifiedVerification } from '@/hooks/useUnifiedVerification';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
-import { PaywallModal } from '@/components/dashboard/PaywallModal';
 import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';
 
 interface UnifiedSearchBarProps {
@@ -21,7 +20,6 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
   const navigate = useNavigate();
   const { user } = useAuth();
   const { remainingSearches, hasReachedLimit, isSubscribed, consumeSearch } = useSearchLimits();
-  const [showPaywall, setShowPaywall] = useState(false);
 
   const handleSearch = async () => {
     if (!input.trim()) return;
@@ -31,9 +29,15 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
       return;
     }
 
+    // Check if already at limit BEFORE consuming search
+    if (hasReachedLimit && !isSubscribed) {
+      navigate('/pricing?reason=limit-reached');
+      return;
+    }
+
     const canSearch = await consumeSearch();
     if (!canSearch) {
-      setShowPaywall(true);
+      navigate('/pricing?reason=limit-reached');
       return;
     }
 
@@ -90,7 +94,6 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
         />
-        <PaywallModal isOpen={showPaywall} onClose={() => setShowPaywall(false)} />
       </>
     );
   }
@@ -153,7 +156,6 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
         />
-        <PaywallModal isOpen={showPaywall} onClose={() => setShowPaywall(false)} />
       </>
     );
   }
@@ -237,7 +239,6 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
           </div>
         </div>
       </Card>
-      <PaywallModal isOpen={showPaywall} onClose={() => setShowPaywall(false)} />
     </>
   );
 };

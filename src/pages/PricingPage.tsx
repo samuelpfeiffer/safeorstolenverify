@@ -342,6 +342,8 @@ const PricingPage = () => {
     </Card>
   );
 
+  const limitReached = searchParams.get('reason') === 'limit-reached';
+
   return (
     <ErrorBoundary>
       <PageSEO
@@ -352,6 +354,18 @@ const PricingPage = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
+        {limitReached && (
+          <div className="bg-primary/10 border-b-2 border-primary/20 py-4">
+            <div className="container mx-auto px-4 text-center">
+              <p className="text-lg font-semibold text-foreground">
+                🔒 You've used your 2 free searches
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Choose a plan below to continue verifying items and stay protected
+              </p>
+            </div>
+          </div>
+        )}
         <ConversionOptimizedPricing 
           onSubscribe={handleSubscribe}
         />
