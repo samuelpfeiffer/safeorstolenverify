@@ -29,29 +29,29 @@ export const SearchLimitDisplay = ({
   // For non-authenticated users, show sign up message
   if (!isAuthenticated) {
     return (
-      <div className="text-center mt-3">
-        <p className="text-sm text-sos-orange font-medium">
-          🎁 Sign up for 2 FREE verifications
+      <div className="text-center mt-3 space-y-1">
+        <p className="text-sm text-sos-lime font-semibold">
+          ✨ Try it FREE - Sign up for 2 free verifications
         </p>
-        <p className="text-xs text-gray-400 mt-1">
-          Then upgrade for unlimited access
+        <p className="text-xs text-muted-foreground">
+          No credit card required • Instant access
         </p>
       </div>
     );
   }
 
   return (
-    <div className="text-center mt-3">
-      <p className="text-sm text-gray-400">
+    <div className="text-center mt-3 space-y-1">
+      <p className="text-sm text-muted-foreground">
         {hasReachedLimit 
-          ? "You've used your 2 free searches - upgrade for unlimited" 
-          : `${remainingSearches} of 2 free searches remaining`
+          ? "🎯 You've used your free searches" 
+          : `${remainingSearches} of 2 free verifications remaining`
         }
       </p>
       {hasReachedLimit && (
-        <p className="text-xs text-sos-orange mt-1">
-          <a href="/pricing" className="hover:underline">
-            View pricing plans →
+        <p className="text-xs text-sos-lime font-medium">
+          <a href="/pricing" className="hover:underline inline-flex items-center gap-1">
+            Upgrade for unlimited verifications →
           </a>
         </p>
       )}

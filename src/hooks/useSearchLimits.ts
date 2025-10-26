@@ -16,9 +16,9 @@ export const useSearchLimits = () => {
     if (user) {
       checkUserLimits();
     } else {
-      // Guests get 0 searches - must sign up for 2 free searches
+      // Guests can see the form and type, but need to sign up to verify
       setRemainingSearches(0);
-      setHasReachedLimit(true);
+      setHasReachedLimit(false); // Changed: Don't block guest interaction
       setIsSubscribed(false);
       setIsLoading(false);
     }

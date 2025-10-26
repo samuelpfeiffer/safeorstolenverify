@@ -59,14 +59,17 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
             onKeyPress={handleKeyPress}
             placeholder="VIN, IMEI, Serial Number..."
             className="flex-1 h-12 border-2 border-primary bg-background/80 focus:bg-background focus:border-primary focus:ring-4 focus:ring-primary/20 shadow-md hover:shadow-lg transition-all"
-            disabled={isLoading || (hasReachedLimit && !isSubscribed)}
+            disabled={isLoading}
+            autoComplete="off"
+            inputMode="text"
+            enterKeyHint="search"
           />
           {onOpenQrScanner && (
             <Button 
               variant="outline" 
               size="icon"
               onClick={onOpenQrScanner}
-              disabled={isLoading || (hasReachedLimit && !isSubscribed)}
+              disabled={isLoading}
               className="h-12 w-12"
             >
               <Scan className="h-5 w-5" />
@@ -74,14 +77,10 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
           )}
           <Button 
             onClick={handleSearch}
-            disabled={isLoading || !input.trim() || (hasReachedLimit && !isSubscribed)}
+            disabled={isLoading || !input.trim()}
             className="h-12"
           >
-            {hasReachedLimit && !isSubscribed ? (
-              <Lock className="h-5 w-5" />
-            ) : (
-              <Search className="h-5 w-5" />
-            )}
+            <Search className="h-5 w-5" />
           </Button>
         </div>
         <SearchLimitDisplay 
@@ -105,7 +104,10 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
               onKeyPress={handleKeyPress}
               placeholder="👉 Enter your IMEI, VIN, or Serial Number here..."
               className="h-16 text-lg px-6 bg-card border-4 border-primary focus:border-primary focus:ring-4 focus:ring-primary/30 transition-all placeholder:text-muted-foreground font-medium shadow-xl hover:shadow-2xl animate-in"
-              disabled={isLoading || (hasReachedLimit && !isSubscribed)}
+              disabled={isLoading}
+              autoComplete="off"
+              inputMode="text"
+              enterKeyHint="search"
             />
           </div>
           <div className="flex gap-3">
@@ -114,7 +116,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
                 variant="outline" 
                 size="lg"
                 onClick={onOpenQrScanner}
-                disabled={isLoading || (hasReachedLimit && !isSubscribed)}
+                disabled={isLoading}
                 className="h-16 px-6 border-2 border-primary/30 hover:bg-primary/10 hover:border-primary transition-all"
               >
                 <Scan className="h-5 w-5 mr-2" />
@@ -123,25 +125,20 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
             )}
             <Button 
               onClick={handleSearch}
-              disabled={isLoading || !input.trim() || (hasReachedLimit && !isSubscribed)}
+              disabled={isLoading || !input.trim()}
               size="lg"
               className="h-16 px-8 font-bold shadow-xl hover:shadow-2xl transition-all text-base"
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
                   <div className="animate-spin h-5 w-5 border-2 border-current border-t-transparent rounded-full"></div>
-                  <span>Checking...</span>
+                  <span>Verifying...</span>
                 </div>
-              ) : hasReachedLimit && !isSubscribed ? (
-                <>
-                  <Lock className="h-5 w-5 mr-2" />
-                  Upgrade
-                </>
               ) : (
-                <>
-                  <Search className="h-5 w-5 mr-2" />
-                  Verify Now
-                </>
+                <div className="flex items-center gap-2">
+                  <Search className="h-5 w-5" />
+                  <span>Verify Now</span>
+                </div>
               )}
             </Button>
           </div>
@@ -178,7 +175,10 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
                 onKeyPress={handleKeyPress}
                 placeholder="👉 Type VIN, IMEI, License Plate, or Serial Number here..."
                 className="pl-12 h-14 text-base bg-card border-3 border-primary/60 focus:border-primary focus:ring-4 focus:ring-primary/20 hover:border-primary/80 transition-all shadow-lg hover:shadow-xl placeholder:font-medium"
-                disabled={isLoading || (hasReachedLimit && !isSubscribed)}
+                disabled={isLoading}
+                autoComplete="off"
+                inputMode="text"
+                enterKeyHint="search"
               />
             </div>
             
@@ -187,7 +187,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
                 variant="outline" 
                 size="icon"
                 onClick={onOpenQrScanner}
-                disabled={isLoading || (hasReachedLimit && !isSubscribed)}
+                disabled={isLoading}
                 title="Scan QR Code or Barcode"
                 className="h-14 w-14 border-2 hover:bg-primary/10"
               >
@@ -197,7 +197,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
 
             <Button 
               onClick={handleSearch}
-              disabled={isLoading || !input.trim() || (hasReachedLimit && !isSubscribed)}
+              disabled={isLoading || !input.trim()}
               className="min-w-[140px] h-14 font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               {isLoading ? (
