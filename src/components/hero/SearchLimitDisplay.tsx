@@ -26,15 +26,15 @@ export const SearchLimitDisplay = ({
     );
   }
 
-  // For non-authenticated users, show pricing message
+  // For non-authenticated users, show sign up message
   if (!isAuthenticated) {
     return (
       <div className="text-center mt-3">
         <p className="text-sm text-sos-orange font-medium">
-          💰 Just $0.99 per check - No account required
+          🎁 Sign up for 2 FREE verifications
         </p>
         <p className="text-xs text-gray-400 mt-1">
-          Or save with bulk packages: 50 checks for $30, 250 for $100
+          Then upgrade for unlimited access
         </p>
       </div>
     );
@@ -44,13 +44,15 @@ export const SearchLimitDisplay = ({
     <div className="text-center mt-3">
       <p className="text-sm text-gray-400">
         {hasReachedLimit 
-          ? "All free searches used - upgrade for unlimited access" 
-          : `${remainingSearches} free search${remainingSearches !== 1 ? 'es' : ''} remaining`
+          ? "You've used your 2 free searches - upgrade for unlimited" 
+          : `${remainingSearches} of 2 free searches remaining`
         }
       </p>
       {hasReachedLimit && (
         <p className="text-xs text-sos-orange mt-1">
-          Upgrade to a paid plan for unlimited searches!
+          <a href="/pricing" className="hover:underline">
+            View pricing plans →
+          </a>
         </p>
       )}
     </div>

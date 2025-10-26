@@ -904,7 +904,7 @@ export type Database = {
           is_approved: boolean
           item_type: string
           name: string | null
-          search_terms: unknown | null
+          search_terms: unknown
           story: string
           updated_at: string
           user_id: string | null
@@ -917,7 +917,7 @@ export type Database = {
           is_approved?: boolean
           item_type: string
           name?: string | null
-          search_terms?: unknown | null
+          search_terms?: unknown
           story: string
           updated_at?: string
           user_id?: string | null
@@ -930,7 +930,7 @@ export type Database = {
           is_approved?: boolean
           item_type?: string
           name?: string | null
-          search_terms?: unknown | null
+          search_terms?: unknown
           story?: string
           updated_at?: string
           user_id?: string | null
@@ -2340,10 +2340,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      check_auth_rate_limit: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
+      check_auth_rate_limit: { Args: never; Returns: boolean }
       check_enhanced_rate_limit: {
         Args: {
           action_type: string
@@ -2367,36 +2364,15 @@ export type Database = {
         }
         Returns: Json
       }
-      clean_expired_checkmend_cache: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      clean_expired_pending_verifications: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      cleanup_expired_tokens: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      generate_api_key: {
-        Args: Record<PropertyKey, never>
-        Returns: string
-      }
-      get_complete_schema: {
-        Args: Record<PropertyKey, never>
-        Returns: Json
-      }
-      get_current_user_role: {
-        Args: Record<PropertyKey, never>
-        Returns: string
-      }
-      get_newsletter_subscriber_count: {
-        Args: Record<PropertyKey, never>
-        Returns: number
-      }
+      clean_expired_checkmend_cache: { Args: never; Returns: undefined }
+      clean_expired_pending_verifications: { Args: never; Returns: undefined }
+      cleanup_expired_tokens: { Args: never; Returns: undefined }
+      generate_api_key: { Args: never; Returns: string }
+      get_complete_schema: { Args: never; Returns: Json }
+      get_current_user_role: { Args: never; Returns: string }
+      get_newsletter_subscriber_count: { Args: never; Returns: number }
       get_public_community_stories: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           created_at: string
           experience_type: string
@@ -2408,10 +2384,7 @@ export type Database = {
           updated_at: string
         }[]
       }
-      get_security_status: {
-        Args: Record<PropertyKey, never>
-        Returns: Json
-      }
+      get_security_status: { Args: never; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -2419,38 +2392,15 @@ export type Database = {
         }
         Returns: boolean
       }
-      initialize_sample_seo_data: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      is_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      is_admin_user: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      is_authenticated_user: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      is_service_role: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      is_service_role_or_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-      reset_monthly_verifications: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      subscribe_to_newsletter: {
-        Args: { user_email: string }
-        Returns: Json
-      }
+      increment_search_count: { Args: { user_id: string }; Returns: number }
+      initialize_sample_seo_data: { Args: never; Returns: undefined }
+      is_admin: { Args: never; Returns: boolean }
+      is_admin_user: { Args: never; Returns: boolean }
+      is_authenticated_user: { Args: never; Returns: boolean }
+      is_service_role: { Args: never; Returns: boolean }
+      is_service_role_or_admin: { Args: never; Returns: boolean }
+      reset_monthly_verifications: { Args: never; Returns: undefined }
+      subscribe_to_newsletter: { Args: { user_email: string }; Returns: Json }
       validate_and_track_api_usage: {
         Args: {
           p_api_key: string
@@ -2461,26 +2411,29 @@ export type Database = {
         }
         Returns: Json
       }
-      validate_api_key_access: {
-        Args:
-          | { key_user_id: string }
-          | {
+      validate_api_key_access:
+        | { Args: { key_user_id: string }; Returns: boolean }
+        | {
+            Args: {
               operation_type: string
               requesting_user_id: string
               resource_user_id: string
             }
-        Returns: boolean
-      }
-      validate_oauth_token_access: {
-        Args:
-          | {
+            Returns: boolean
+          }
+      validate_oauth_token_access:
+        | {
+            Args: { token_id: string; token_user_id: string }
+            Returns: boolean
+          }
+        | {
+            Args: {
               operation_type: string
               requesting_user_id: string
               resource_user_id: string
             }
-          | { token_id: string; token_user_id: string }
-        Returns: boolean
-      }
+            Returns: boolean
+          }
       validate_serial_number_enhanced: {
         Args: { input_serial: string }
         Returns: Json

@@ -16,7 +16,7 @@ export const useSearchLimits = () => {
     if (user) {
       checkUserLimits();
     } else {
-      // Guests must sign up first - no free searches without account
+      // Guests get 0 searches - must sign up for 2 free searches
       setRemainingSearches(0);
       setHasReachedLimit(true);
       setIsSubscribed(false);
@@ -47,7 +47,7 @@ export const useSearchLimits = () => {
       // Check profile for promotion status
       const { data: profile } = await supabase
         .from('profiles')
-        .select('is_promotion_winner, promotion_searches_remaining, promotion_expires_at')
+        .select('is_promotion_winner, promotion_searches_remaining, promotion_expires_at, search_count, created_at')
         .eq('id', user.id)
         .single();
 
@@ -60,28 +60,27 @@ export const useSearchLimits = () => {
         return;
       }
 
-      // Check trial status (14-day trial with unlimited checks)
-      const { data: userProfile } = await supabase
-        .from('profiles')
-        .select('created_at')
-        .eq('id', user.id)
-        .single();
+      // Free tier: 2 searches within 14 days of account creation
+      const FREE_SEARCH_LIMIT = 2;
+      const searchCount = profile?.search_count || 0;
+      const remainingFree = Math.max(0, FREE_SEARCH_LIMIT - searchCount);
 
-      if (userProfile?.created_at) {
-        const createdAt = new Date(userProfile.created_at);
+      // Check if 14-day trial period is still active
+      if (profile?.created_at) {
+        const createdAt = new Date(profile.created_at);
         const trialExpiresAt = new Date(createdAt);
         trialExpiresAt.setDate(trialExpiresAt.getDate() + 14);
         const isTrialActive = new Date() < trialExpiresAt;
 
-        if (isTrialActive) {
-          // Unlimited checks during 14-day trial
-          setRemainingSearches(999);
+        if (isTrialActive && remainingFree > 0) {
+          // User has searches remaining within trial period
+          setRemainingSearches(remainingFree);
           setHasReachedLimit(false);
           return;
         }
       }
 
-      // Trial expired - no more checks
+      // Trial expired or searches exhausted
       setRemainingSearches(0);
       setHasReachedLimit(true);
 
@@ -106,10 +105,10 @@ export const useSearchLimits = () => {
 
   const consumeSearch = async (): Promise<boolean> => {
     if (!user) {
-      // No searches allowed without account - must sign up first
+      // No searches allowed without account - must sign up for 2 free searches
       toast({
         title: "Sign Up Required",
-        description: "Create your free account to get unlimited verifications for 14 days",
+        description: "Create your free account to get 2 free verifications",
         variant: "destructive",
       });
       return false;
@@ -122,13 +121,22 @@ export const useSearchLimits = () => {
     if (hasReachedLimit) {
       toast({
         title: "Search Limit Reached",
-        description: "Upgrade to continue verifying items",
+        description: "You've used your 2 free searches. Upgrade for unlimited access.",
         variant: "destructive",
       });
       return false;
     }
 
-    // Update remaining searches
+    // Increment search count in database using RPC function
+    const { error } = await supabase.rpc('increment_search_count', { 
+      user_id: user.id 
+    });
+
+    if (error) {
+      console.error('Error incrementing search count:', error);
+    }
+
+    // Refresh limits after consuming search
     await checkUserLimits();
     return remainingSearches > 0;
   };
