@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { Shield, MapPin, Building2, CheckCircle, XCircle, Calendar, FileText, Globe } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -88,25 +89,18 @@ const CompanyVerificationPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Official Company Verification - Safe or Stolen LLC | Peoria, Arizona</title>
-        <meta name="description" content="Official verification: Safe or Stolen LLC is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company." />
-        <meta name="keywords" content="Safe or Stolen LLC, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification" />
-        <link rel="canonical" href="https://safeorstolen.com/company-verification" />
-        
-        {/* Geographic targeting */}
-        <meta name="geo.region" content="US-AZ" />
-        <meta name="geo.placename" content="Peoria" />
-        <meta name="geo.position" content="33.5806;-112.2374" />
-        <meta name="ICBM" content="33.5806, -112.2374" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify(verificationSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-      </Helmet>
+      <PageSEO
+        title="Official Company Verification - Safe or Stolen LLC | Peoria, Arizona"
+        description="Official verification: Safe or Stolen LLC is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company."
+        keywords="Safe or Stolen LLC, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification"
+        canonical="/company-verification"
+        structuredData={[verificationSchema, localBusinessSchema]}
+      />
+      <AISearchOptimizer 
+        page="company-verification" 
+        context="business-legitimacy"
+        primaryKeywords={['is safeorstolen legit', 'company verification', 'arizona business records']}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

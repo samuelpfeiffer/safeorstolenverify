@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -8,7 +10,6 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Helmet } from 'react-helmet-async';
 import { MessageCircle, Shield, AlertTriangle, Trophy } from 'lucide-react';
 
 interface CommunityStory {
@@ -136,29 +137,33 @@ export default function CommunityPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Community Stories - Real User Experiences | Safe Or Stolen</title>
-        <meta name="description" content="Real user experiences checking stolen items before purchase. Read scam alerts, recovery stories, and verification success stories from our community." />
-        <meta name="keywords" content="stolen item stories, scam alerts, item recovery, user experiences, IMEI check stories, VIN verification stories, stolen goods community" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Stolen Item Reports & Recovery Stories",
-            "description": "User-submitted stolen item verifications and recovery stories",
-            "url": "https://safeorstolen.com/community",
-            "itemListElement": stories.slice(0, 10).map((story, index) => ({
-              "@type": "ListItem",
-              "position": index + 1,
-              "item": {
-                "@type": "Report",
-                "name": `${experienceTypeMap[story.experience_type].label} - ${itemTypeMap[story.item_type]}`,
-                "description": story.story.substring(0, 200) + "..."
-              }
-            }))
-          })}
-        </script>
-      </Helmet>
+      <PageSEO
+        title="Community Stories - Real User Experiences | Safe Or Stolen"
+        description="Real user experiences checking stolen items before purchase. Read scam alerts, recovery stories, and verification success stories from our community."
+        keywords="stolen item stories, scam alerts, item recovery, user experiences, IMEI check stories, VIN verification stories, stolen goods community"
+        canonical="/community"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Stolen Item Reports & Recovery Stories",
+          "description": "User-submitted stolen item verifications and recovery stories",
+          "url": "https://safeorstolen.com/community",
+          "itemListElement": stories.slice(0, 10).map((story, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+              "@type": "Report",
+              "name": `${experienceTypeMap[story.experience_type].label} - ${itemTypeMap[story.item_type]}`,
+              "description": story.story.substring(0, 200) + "..."
+            }
+          }))
+        }}
+      />
+      <AISearchOptimizer 
+        page="community" 
+        context="user-stories"
+        primaryKeywords={['stolen item stories', 'scam alerts', 'recovery stories']}
+      />
 
       <div className="container mx-auto px-4 py-12">
         {/* Header */}

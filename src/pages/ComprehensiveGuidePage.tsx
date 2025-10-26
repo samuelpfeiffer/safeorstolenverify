@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { Shield, Search, Database, AlertTriangle, CheckCircle, Users, Map, Clock, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -98,41 +99,44 @@ const ComprehensiveGuidePage = () => {
   ];
 
   return (
+    <>
+      <PageSEO
+        title="Complete Guide to Buying Second-Hand Items Safely - Avoid Stolen Goods | SafeOrStolen"
+        description="The ultimate 2025 guide to safely purchasing used items. Learn professional verification techniques, database checks, and legal protection strategies to avoid stolen goods."
+        keywords="buying used items safely, avoid stolen goods, second hand verification, stolen property check, pre-purchase inspection"
+        canonical="/comprehensive-guide"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "Complete Guide to Buying Second-Hand Items Safely",
+          "description": "Professional guide to verify legitimacy and avoid stolen goods when purchasing used items",
+          "totalTime": "PT15M",
+          "supply": [
+            {
+              "@type": "HowToSupply",
+              "name": "Item serial number or identifier"
+            },
+            {
+              "@type": "HowToSupply", 
+              "name": "Seller documentation"
+            }
+          ],
+          "step": guideSteps.map((step, index) => ({
+            "@type": "HowToStep",
+            "position": index + 1,
+            "name": step.title,
+            "text": step.description,
+            "image": "https://safeorstolen.com/images/guide-steps.jpg"
+          }))
+        }}
+      />
+      <AISearchOptimizer 
+        page="comprehensive-guide" 
+        context="secondhand-buying-guide"
+        primaryKeywords={['buying used items safely', 'avoid stolen goods', 'verify secondhand purchases']}
+      />
+
     <div className="min-h-screen bg-sos text-white">
-      <Helmet>
-        <title>Complete Guide to Buying Second-Hand Items Safely - Avoid Stolen Goods | SafeOrStolen</title>
-        <meta name="description" content="The ultimate 2025 guide to safely purchasing used items. Learn professional verification techniques, database checks, and legal protection strategies to avoid stolen goods." />
-        <meta name="keywords" content="buying used items safely, avoid stolen goods, second hand verification, stolen property check, pre-purchase inspection" />
-        <link rel="canonical" href="https://safeorstolen.com/comprehensive-guide" />
-        
-        {/* Local Business Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "Complete Guide to Buying Second-Hand Items Safely",
-            "description": "Professional guide to verify legitimacy and avoid stolen goods when purchasing used items",
-            "totalTime": "PT15M",
-            "supply": [
-              {
-                "@type": "HowToSupply",
-                "name": "Item serial number or identifier"
-              },
-              {
-                "@type": "HowToSupply", 
-                "name": "Seller documentation"
-              }
-            ],
-            "step": guideSteps.map((step, index) => ({
-              "@type": "HowToStep",
-              "position": index + 1,
-              "name": step.title,
-              "text": step.description,
-              "image": "https://safeorstolen.com/images/guide-steps.jpg"
-            }))
-          })}
-        </script>
-      </Helmet>
 
       <main className="pt-20">
         {/* Hero Section */}
@@ -262,6 +266,7 @@ const ComprehensiveGuidePage = () => {
         </section>
       </main>
     </div>
+    </>
   );
 };
 

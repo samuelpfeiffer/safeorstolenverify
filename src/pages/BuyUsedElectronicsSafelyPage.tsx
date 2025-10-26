@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Smartphone, Laptop, Shield, CheckCircle, AlertTriangle, Search } from 'lucide-react';
@@ -56,13 +57,18 @@ const BuyUsedElectronicsSafelyPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Buy Used Electronics Safely: Complete Verification Guide 2025 | Avoid Stolen Devices</title>
-        <meta name="description" content="Expert guide on how to buy used electronics safely. Learn to verify serial numbers, check if items are stolen, and protect yourself when buying secondhand phones, laptops, and devices." />
-        <meta name="keywords" content="buy used electronics safely, secondhand electronics verification, check if device stolen, safe way to buy used gadgets, verify used electronics, stolen device check, secondhand fraud prevention" />
-        <link rel="canonical" href="https://safeorstolen.com/buy-used-electronics-safely" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Buy Used Electronics Safely: Complete Verification Guide 2025 | Avoid Stolen Devices"
+        description="Expert guide on how to buy used electronics safely. Learn to verify serial numbers, check if items are stolen, and protect yourself when buying secondhand phones, laptops, and devices."
+        keywords="buy used electronics safely, secondhand electronics verification, check if device stolen, safe way to buy used gadgets, verify used electronics, stolen device check, secondhand fraud prevention"
+        canonical="/buy-used-electronics-safely"
+        structuredData={articleSchema}
+      />
+      <AISearchOptimizer 
+        page="buy-electronics-safely" 
+        context="electronics-verification-guide"
+        primaryKeywords={['buy used electronics safely', 'verify secondhand devices', 'avoid stolen electronics']}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto px-4 py-20">
