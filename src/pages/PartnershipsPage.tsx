@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Users, Shield, Building, Award, CheckCircle, Phone, Globe, Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -108,34 +108,31 @@ const PartnershipsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-sos text-white">
-      <Helmet>
-        <title>Partner with SafeOrStolen - Consumer Protection & Law Enforcement Partnerships</title>
-        <meta name="description" content="Join SafeOrStolen's partner network. Collaborate with law enforcement, consumer protection organizations, and businesses to combat theft and protect consumers." />
-        <meta name="keywords" content="law enforcement partnerships, consumer protection, business partnerships, theft prevention collaboration, API integration" />
-        <link rel="canonical" href="https://safeorstolen.com/partnerships" />
-        
-        {/* Organization Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "SafeOrStolen Partnerships",
-            "description": "Partnership opportunities with law enforcement, consumer protection organizations, and businesses",
-            "url": "https://safeorstolen.com/partnerships",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "partnerships",
-              "email": "partnerships@safeorstolen.com",
-              "telephone": "+1-800-SAFE-CHECK"
-            },
-            "sameAs": [
-              "https://fastercapital.com",
-              "https://bikeindex.org"
-            ]
-          })}
-        </script>
-      </Helmet>
+    <>
+      <PageSEO
+        title="Partner with SafeOrStolen - Consumer Protection & Law Enforcement Partnerships"
+        description="Join SafeOrStolen's partner network. Collaborate with law enforcement, consumer protection organizations, and businesses to combat theft and protect consumers."
+        keywords="law enforcement partnerships, consumer protection, business partnerships, theft prevention collaboration, API integration"
+        canonical="/partnerships"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "SafeOrStolen Partnerships",
+          "description": "Partnership opportunities with law enforcement, consumer protection organizations, and businesses",
+          "url": "https://safeorstolen.com/partnerships",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "partnerships",
+            "email": "partnerships@safeorstolen.com",
+            "telephone": "+1-800-SAFE-CHECK"
+          },
+          "sameAs": [
+            "https://fastercapital.com",
+            "https://bikeindex.org"
+          ]
+        }}
+      />
+      <div className="min-h-screen bg-sos text-white">
 
       <main className="pt-20">
         {/* Hero Section */}
@@ -323,7 +320,8 @@ const PartnershipsPage = () => {
           </div>
         </section>
       </main>
-    </div>
+      </div>
+    </>
   );
 };
 

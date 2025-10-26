@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Shield, Users, Target, Award, MapPin, Mail, Phone, Building2, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 const AboutUsPage: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>About Safe or Stolen LLC - Company Information & Leadership</title>
-        <meta name="description" content="Learn about Safe or Stolen LLC, our mission to prevent fraud in secondhand marketplaces, our leadership team, and our commitment to transparency and community safety." />
-        <meta name="keywords" content="Safe or Stolen company, about us, leadership team, company information, business verification, LLC details" />
-        <link rel="canonical" href="https://safeorstolen.com/about" />
-      </Helmet>
+      <PageSEO
+        title="About Safe or Stolen LLC - Company Information & Leadership"
+        description="Learn about Safe or Stolen LLC, our mission to prevent fraud in secondhand marketplaces, our leadership team, and our commitment to transparency and community safety."
+        keywords="Safe or Stolen company, about us, leadership team, company information, business verification, LLC details"
+        canonical="/about"
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, X, ArrowRight, Shield, Smartphone, Globe } from 'lucide-react';
@@ -119,13 +119,13 @@ const ComparisonCheckMendPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>SafeOrStolen vs CheckMEND: Which is Better for Verifying Stolen Items? | 2025 Comparison</title>
-        <meta name="description" content="Complete comparison of SafeOrStolen vs CheckMEND stolen item checkers. Compare global coverage, pricing, features, and mobile apps. See why SafeOrStolen is the #1 choice with 4 FREE searches." />
-        <meta name="keywords" content="safeorstolen vs checkmend, checkmend alternative, better than checkmend, imei checker comparison, stolen phone checker comparison, free checkmend alternative" />
-        <link rel="canonical" href="https://safeorstolen.com/vs/checkmend" />
-        <script type="application/ld+json">{JSON.stringify(comparisonSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="SafeOrStolen vs CheckMEND: Which is Better for Verifying Stolen Items? | 2025 Comparison"
+        description="Complete comparison of SafeOrStolen vs CheckMEND stolen item checkers. Compare global coverage, pricing, features, and mobile apps. See why SafeOrStolen is the #1 choice with 4 FREE searches."
+        keywords="safeorstolen vs checkmend, checkmend alternative, better than checkmend, imei checker comparison, stolen phone checker comparison, free checkmend alternative"
+        canonical="/vs/checkmend"
+        structuredData={comparisonSchema}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto px-4 py-20">

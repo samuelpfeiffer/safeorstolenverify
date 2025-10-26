@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -59,18 +59,13 @@ const AppDownloadPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Download SafeOrStolen App - Free IMEI, VIN & Serial Number Checker for iOS & Android</title>
-        <meta name="description" content="Download the #1 stolen item verification app for iOS and Android. Check if phones, cars, and electronics are stolen before you buy. Free barcode scanner included. 4.8★ rating from 12K+ users." />
-        <meta name="keywords" content="safeorstolen app download, stolen item checker app, imei checker app, vin lookup app, serial number scanner app, secondhand verification app, ios android app" />
-        <link rel="canonical" href="https://safeorstolen.com/download-app" />
-        
-        {/* App store meta tags */}
-        <meta name="apple-itunes-app" content="app-id=safeorstolen" />
-        <meta name="google-play-app" content="app-id=com.safeorstolen.app" />
-        
-        <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Download SafeOrStolen App - Free IMEI, VIN & Serial Number Checker for iOS & Android"
+        description="Download the #1 stolen item verification app for iOS and Android. Check if phones, cars, and electronics are stolen before you buy. Free barcode scanner included. 4.8★ rating from 12K+ users."
+        keywords="safeorstolen app download, stolen item checker app, imei checker app, vin lookup app, serial number scanner app, secondhand verification app, ios android app"
+        canonical="/download-app"
+        structuredData={appSchema}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto px-4 py-20">
