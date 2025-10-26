@@ -8,19 +8,23 @@ const corsHeaders = {
 
 interface NICBLookupRequest {
   vin: string;
+  requestType?: 'api' | 'redirect';
 }
 
 interface NICBLookupResponse {
-  status: 'stolen' | 'safe' | 'error' | 'salvage';
+  status: 'stolen' | 'salvage' | 'safe' | 'error' | 'not_found' | 'redirect_required';
   message: string;
   details?: {
+    category?: string;
+    lastUpdate?: string;
+    nicbUrl?: string;
+    reportDate?: string;
     theftRecord?: boolean;
     salvageRecord?: boolean;
-    exportRecord?: boolean;
-    source?: string;
   };
-  source: 'nicb.org';
+  source: 'nicb_vincheck';
   timestamp: string;
+  redirectUrl?: string;
 }
 
 serve(async (req) => {
@@ -45,19 +49,15 @@ serve(async (req) => {
       throw new Error('Unauthorized');
     }
 
-    const { vin }: NICBLookupRequest = await req.json();
+    const { vin, requestType = 'api' }: NICBLookupRequest = await req.json();
 
-    if (!vin) {
-      throw new Error('VIN is required');
+    // Validate VIN format (17 characters, alphanumeric, excludes I, O, Q)
+    if (!vin || !/^[A-HJ-NPR-Z0-9]{17}$/i.test(vin)) {
+      throw new Error('Invalid VIN format. VIN must be exactly 17 alphanumeric characters (excluding I, O, Q)');
     }
 
-    console.log(`[NICB-VINCHECK] User ${user.id} requesting VIN lookup for: ${vin}`);
-
-    const sanitizedVin = vin.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
-    
-    if (sanitizedVin.length !== 17) {
-      throw new Error('Invalid VIN format. VIN must be 17 characters.');
-    }
+    const sanitizedVin = vin.trim().toUpperCase();
+    console.log(`[NICB-VINCHECK] User ${user.id} requesting VIN check for: ${sanitizedVin}`);
 
     // Check cache first
     const cacheKey = `nicb_vin_${sanitizedVin}`;
@@ -76,25 +76,90 @@ serve(async (req) => {
       );
     }
 
-    // NICB VINCheck API integration
-    // Note: NICB provides free web lookup but requires partnership for API access
-    // For production, you need to contact NICB for API credentials
-    // This is a simulated response structure based on NICB's service
+    // Check if NICB API key is available
+    const nicbApiKey = Deno.env.get('NICB_API_KEY');
     
-    const lookupResult: NICBLookupResponse = {
-      status: 'safe',
-      message: `No theft or salvage records found in NICB database for this VIN`,
-      details: {
-        theftRecord: false,
-        salvageRecord: false,
-        exportRecord: false,
-        source: 'National Insurance Crime Bureau (NICB) VINCheck'
-      },
-      source: 'nicb.org',
-      timestamp: new Date().toISOString()
-    };
+    let lookupResult: NICBLookupResponse;
 
-    // Store in cache (7 day expiration for NICB data)
+    if (!nicbApiKey || requestType === 'redirect') {
+      // No API key or manual redirect requested
+      // Provide redirect URL to official NICB VINCheck (complies with NICB Terms of Use)
+      const nicbUrl = `https://www.nicb.org/vincheck?vin=${sanitizedVin}`;
+      
+      lookupResult = {
+        status: 'redirect_required',
+        message: 'NICB VINCheck requires manual verification. Click the link below to check this VIN on the official NICB website.',
+        details: {
+          nicbUrl: nicbUrl,
+          lastUpdate: new Date().toISOString()
+        },
+        source: 'nicb_vincheck',
+        timestamp: new Date().toISOString(),
+        redirectUrl: nicbUrl
+      };
+
+      console.log('[NICB-VINCHECK] No API key - providing redirect URL');
+    } else {
+      // API key available - make API call to NICB
+      // Note: Contact communications@nicb.org for partnership approval
+      
+      try {
+        // Replace with actual NICB API endpoint once partnership is approved
+        const nicbApiUrl = Deno.env.get('NICB_API_ENDPOINT') || 'https://api.nicb.org/vincheck';
+        
+        const response = await fetch(nicbApiUrl, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${nicbApiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ vin: sanitizedVin })
+        });
+
+        if (!response.ok) {
+          throw new Error(`NICB API error: ${response.status}`);
+        }
+
+        const nicbData = await response.json();
+
+        // Parse NICB response
+        lookupResult = {
+          status: nicbData.found ? (nicbData.category === 'theft' ? 'stolen' : 'salvage') : 'safe',
+          message: nicbData.found 
+            ? `Vehicle found in NICB database - ${nicbData.category}` 
+            : 'No theft or salvage records found in NICB database',
+          details: {
+            category: nicbData.category,
+            lastUpdate: nicbData.last_update,
+            reportDate: nicbData.report_date,
+            theftRecord: nicbData.category === 'theft',
+            salvageRecord: nicbData.category === 'salvage'
+          },
+          source: 'nicb_vincheck',
+          timestamp: new Date().toISOString()
+        };
+
+        console.log(`[NICB-VINCHECK] API check completed: ${lookupResult.status}`);
+      } catch (apiError) {
+        console.error('[NICB-VINCHECK] API call failed, falling back to redirect:', apiError);
+        
+        // Fallback to redirect method if API fails
+        const nicbUrl = `https://www.nicb.org/vincheck?vin=${sanitizedVin}`;
+        lookupResult = {
+          status: 'redirect_required',
+          message: 'NICB API temporarily unavailable. Please verify manually on the official NICB website.',
+          details: {
+            nicbUrl: nicbUrl,
+            lastUpdate: new Date().toISOString()
+          },
+          source: 'nicb_vincheck',
+          timestamp: new Date().toISOString(),
+          redirectUrl: nicbUrl
+        };
+      }
+    }
+
+    // Store in cache (24 hour expiration per NICB rate limits)
     await supabase
       .from('checkmend_verification_cache')
       .insert({
@@ -102,7 +167,7 @@ serve(async (req) => {
         serial_number: sanitizedVin,
         item_type: 'vehicle',
         verification_data: lookupResult,
-        expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
+        expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
       });
 
     // Log the verification
@@ -122,11 +187,12 @@ serve(async (req) => {
       .from('audit_logs')
       .insert({
         user_id: user.id,
-        action: 'NICB_VINCHECK_LOOKUP',
+        action: 'NICB_VINCHECK',
         table_name: 'verification_results',
         new_values: {
           vin: sanitizedVin,
           result: lookupResult.status,
+          method: nicbApiKey ? 'api' : 'redirect',
           timestamp: new Date().toISOString()
         }
       });
@@ -139,7 +205,7 @@ serve(async (req) => {
         headers: { 
           ...corsHeaders, 
           'Content-Type': 'application/json',
-          'Cache-Control': 'public, max-age=86400' 
+          'Cache-Control': 'public, max-age=3600' 
         } 
       }
     );
@@ -151,7 +217,7 @@ serve(async (req) => {
       JSON.stringify({ 
         status: 'error',
         message: error.message || 'An error occurred during NICB VINCheck lookup',
-        source: 'nicb.org',
+        source: 'nicb_vincheck',
         timestamp: new Date().toISOString()
       }),
       { 
