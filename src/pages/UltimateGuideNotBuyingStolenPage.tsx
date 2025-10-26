@@ -1,6 +1,5 @@
 import React from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -167,13 +166,12 @@ const UltimateGuideNotBuyingStolenPage = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/ultimate-guide-not-buying-stolen-goods" />
-      <EnhancedSEOHead
+      <PageSEO
         title="The Ultimate Guide to Not Buying Stolen Goods - Protect Your Purchases"
         description="Complete guide to avoiding stolen goods when buying secondhand. Learn verification methods for Facebook Marketplace, eBay, Craigslist. Protect yourself legally and financially."
         keywords="avoid buying stolen goods, secondhand buyer protection, Facebook Marketplace safety, eBay stolen items, Craigslist safety tips, verify before buying, stolen goods guide, buyer protection tips"
         canonical="/ultimate-guide-not-buying-stolen-goods"
-        additionalSchemas={combinedSchema}
+        structuredData={combinedSchema}
       />
 
       <div className="min-h-screen bg-background">

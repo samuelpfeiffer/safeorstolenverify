@@ -1,6 +1,5 @@
 import React from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { createServiceSchema, createFAQSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -104,13 +103,12 @@ const VerificationHubPage: React.FC = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/verification-hub" />
-      <EnhancedSEOHead
+      <PageSEO
         title="Check if ANYTHING is Stolen - Free Hub for Cars, Phones, Guns, Electronics"
         description="THE hub to check if anything is stolen, hot, lost, or legitimate. Free verification for cars, phones, bikes, guns, electronics, jewelry, tools - everything!"
         keywords="check if anything stolen, is this hot, stolen goods checker, verify if legitimate, check if something hot, stolen car phone gun bike electronics jewelry tools, theft records database"
         canonical="/verification-hub"
-        additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+        structuredData={[serviceSchema, faqSchema, breadcrumbSchema]}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">

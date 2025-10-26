@@ -1,5 +1,5 @@
 import React from 'react';
-import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
 import { LinkBuildingHelper } from '@/components/seo/LinkBuildingHelper';
 import { ContentAuthoritySignals } from '@/components/seo/ContentAuthoritySignals';
@@ -145,15 +145,12 @@ const UltimateGuideBuyingSafelyPage = () => {
 
   return (
     <>
-      <UnifiedSEOOptimizer
+      <PageSEO
         title="How to Check if Something is Stolen Before You Buy It - Complete Guide 2024"
         description="Learn how to verify items aren't stolen when buying used goods. Free tools, red flags to watch for, and legal protection tips. Check IMEI, VIN, serial numbers instantly."
         keywords="how to check if something is stolen, check if item stolen before buying, verify not stolen goods, stolen goods red flags, check serial number stolen, IMEI check stolen phone, VIN check stolen car"
         canonical="/ultimate-guide-buying-safely"
         structuredData={structuredData}
-        competitiveKeywords="general"
-        priorityLevel="max"
-        aiOptimized={true}
         type="article"
       />
       <DomainAuthorityBooster pageType="guide" />

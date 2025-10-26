@@ -13,8 +13,7 @@ import {
   FileText,
   Phone
 } from 'lucide-react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 
 const StolenGoodsCheckerPage: React.FC = () => {
@@ -58,13 +57,13 @@ const StolenGoodsCheckerPage: React.FC = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/stolen-goods-checker" />
-      <div className="min-h-screen bg-background">
-        <EnhancedSEOHead
+      <PageSEO
         title="Stolen Goods Checker - Avoid Buying Stolen Merchandise | Free Verification Tool"
         description="Free stolen goods checker tool. Learn how to identify stolen merchandise, verify items before buying, and protect yourself from fraud. Check serial numbers against stolen goods databases instantly."
         keywords="stolen goods checker, stolen merchandise, avoid buying stolen goods, check stolen items, stolen property verification, how to avoid stolen goods, stolen goods database, merchandise theft checker"
+        canonical="/stolen-goods-checker"
       />
+      <div className="min-h-screen bg-background">
 
       <div className="container mx-auto px-6 py-12 max-w-6xl">
         {/* Hero Section */}

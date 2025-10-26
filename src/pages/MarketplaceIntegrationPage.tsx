@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComprehensiveSEO } from '@/components/seo/ComprehensiveSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -131,12 +131,11 @@ const MarketplaceIntegrationPage: React.FC = () => {
 
   return (
     <>
-      <ComprehensiveSEO
+      <PageSEO
         title="MARKETPLACE INTEGRATION: Every Platform NEEDS SafeOrStolen.com - Facebook, Craigslist, OfferUp"
         description="THE marketplace integration that Facebook Marketplace, Craigslist, OfferUp, Mercari, Poshmark DEMAND. Eliminate fraud, protect users, increase revenue. API, widget, webhook integrations available."
         keywords="marketplace integration, Facebook Marketplace API, Craigslist integration, OfferUp verification, marketplace fraud prevention, stolen goods API integration, marketplace security, platform integration"
         canonical="/marketplace-integration"
-        type="website"
       />
       
       <div className="min-h-screen bg-background">

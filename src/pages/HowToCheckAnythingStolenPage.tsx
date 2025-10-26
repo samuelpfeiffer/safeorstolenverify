@@ -1,6 +1,5 @@
 import React from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -176,13 +175,12 @@ const HowToCheckAnythingStolenPage = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/how-to-check-if-anything-is-stolen-before-you-buy" />
-      <EnhancedSEOHead
+      <PageSEO
         title="How to Check if Anything is Stolen Before You Buy - Complete Verification Guide"
         description="Step-by-step guide to verify any item before purchase. Check phones, cars, bikes, electronics for stolen status. Protect yourself on Facebook Marketplace, eBay, Craigslist."
         keywords="how to check if stolen, verify before buying, check stolen phone, VIN stolen check, serial number verification, Facebook Marketplace check, eBay safety, stolen item lookup"
         canonical="/how-to-check-if-anything-is-stolen-before-you-buy"
-        additionalSchemas={combinedSchema}
+        structuredData={combinedSchema}
       />
 
       <div className="min-h-screen bg-background">

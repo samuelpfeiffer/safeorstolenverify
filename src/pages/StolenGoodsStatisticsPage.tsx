@@ -1,5 +1,5 @@
 import React from 'react';
-import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
 import { LinkBuildingHelper } from '@/components/seo/LinkBuildingHelper';
 import { ContentAuthoritySignals } from '@/components/seo/ContentAuthoritySignals';
@@ -92,15 +92,12 @@ const StolenGoodsStatisticsPage = () => {
 
   return (
     <>
-      <UnifiedSEOOptimizer
+      <PageSEO
         title="2024 Stolen Goods Statistics: $13 Billion Crisis - Crime Data & Trends"
         description="Latest stolen goods statistics for 2024. Phone theft, vehicle theft, electronics theft rates. FBI and NICB data on the $13B stolen goods market."
         keywords="stolen goods statistics 2024, theft statistics, phone theft statistics, vehicle theft data, stolen property crime rates, FBI theft data"
         canonical="/stolen-goods-statistics-2024"
         structuredData={structuredData}
-        competitiveKeywords="general"
-        priorityLevel="high"
-        aiOptimized={true}
         type="article"
       />
       <DomainAuthorityBooster pageType="blog" />

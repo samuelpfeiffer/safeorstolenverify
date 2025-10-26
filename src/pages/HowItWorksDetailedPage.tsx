@@ -4,16 +4,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Shield, CheckCircle, Database } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const HowItWorksDetailedPage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/how-it-works-detailed" />
-      <EnhancedSEOHead
+      <PageSEO
         title="How It Works - Detailed Verification Process | SafeOrStolen"
         description="Complete transparency into our stolen item verification process. See exactly which databases we check and our verification methodology."
         keywords="how stolen item checker works, verification process, database sources, accuracy methodology"

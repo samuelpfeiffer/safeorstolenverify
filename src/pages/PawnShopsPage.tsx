@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComprehensiveSEO } from '@/components/seo/ComprehensiveSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -110,12 +110,11 @@ const PawnShopsPage: React.FC = () => {
 
   return (
     <>
-      <ComprehensiveSEO
+      <PageSEO
         title="PAWN SHOP DOMINATION: Every Pawn Shop NEEDS SafeOrStolen.com - Ultimate Protection"
         description="Transform your pawn shop with SafeOrStolen.com. Instantly verify electronics, jewelry, tools, firearms. Eliminate stolen goods liability, increase loan values 40%, dominate your market."
         keywords="pawn shop verification, stolen goods protection, pawn shop software, IMEI verification pawn shop, jewelry verification, tool verification, firearms verification pawn shop"
         canonical="/pawn-shops"
-        type="website"
       />
       
       <div className="min-h-screen bg-background">

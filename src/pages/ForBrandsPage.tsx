@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ComprehensiveSEO } from '@/components/seo/ComprehensiveSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { 
   Shield, 
@@ -16,12 +16,11 @@ import {
 const ForBrandsPage: React.FC = () => {
   return (
     <>
-      <ComprehensiveSEO
+      <PageSEO
         title="Enterprise Verification API for Marketplaces - Safe or Stolen"
         description="Integrate our verification technology into your platform to protect users and reduce fraud. Enterprise-grade API for marketplace verification."
         keywords="marketplace verification API, enterprise fraud prevention, stolen goods API, marketplace integration"
         canonical="/for-brands"
-        type="website"
       />
       
       <div className="min-h-screen bg-background">

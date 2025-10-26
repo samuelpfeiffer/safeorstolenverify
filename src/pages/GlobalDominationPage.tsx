@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComprehensiveSEO } from '@/components/seo/ComprehensiveSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -139,12 +139,11 @@ const GlobalDominationPage: React.FC = () => {
 
   return (
     <>
-      <ComprehensiveSEO
+      <PageSEO
         title="GLOBAL DOMINATION: SafeOrStolen.com - The ONLY Platform Every Market NEEDS Worldwide"
         description="SafeOrStolen.com global domination strategy. Conquer Facebook Marketplace, Craigslist, auction houses, pawn shops WORLDWIDE. 150+ countries, 25+ languages, universal verification platform."
         keywords="global marketplace domination, worldwide verification platform, international stolen goods detection, global second-hand market, worldwide fraud prevention, international verification API"
         canonical="/global-domination"
-        type="website"
       />
       
       <div className="min-h-screen bg-background">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComprehensiveSEO } from '@/components/seo/ComprehensiveSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -84,12 +84,11 @@ const AuctionHousesPage: React.FC = () => {
 
   return (
     <>
-      <ComprehensiveSEO
+      <PageSEO
         title="AUCTION HOUSE DOMINATION: The ONLY Verification Platform Every Auction House NEEDS - Safe or Stolen"
         description="Christie's, Sotheby's, Bonhams - EVERY major auction house needs SafeOrStolen.com. Eliminate stolen goods liability, increase hammer prices 35%, dominate the $20B global auction market."
         keywords="auction house verification, Christie's verification, Sotheby's authentication, stolen art detection, auction authentication, fine art verification, antique verification, auction house liability"
         canonical="/auction-houses"
-        type="website"
       />
       
       <div className="min-h-screen bg-background">

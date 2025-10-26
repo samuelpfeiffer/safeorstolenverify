@@ -18,8 +18,7 @@ import {
   Database,
   Users
 } from 'lucide-react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 
 const HowToCheckIfItemStolenPage: React.FC = () => {
@@ -109,14 +108,14 @@ const HowToCheckIfItemStolenPage: React.FC = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/how-to-check-if-item-stolen" />
-      <div className="min-h-screen bg-background">
-        <EnhancedSEOHead
+      <PageSEO
         title="How to Check if Something is Stolen: Complete Guide 2024 | SafeOrStolen"
         description="Learn how to check if an item is stolen before buying. Free tools to verify IMEI, VIN, serial numbers. Check phones, cars, electronics against police databases. Avoid buying stolen goods."
         keywords="how to check if stolen, stolen item database, IMEI check stolen, VIN check stolen, serial number lookup, stolen property check, avoid stolen goods, NCIC database, stolen phone check"
+        canonical="/how-to-check-if-item-stolen"
       />
       
+      <div className="min-h-screen bg-background">
       {/* Structured Data for HowTo */}
       <script type="application/ld+json">
         {JSON.stringify({

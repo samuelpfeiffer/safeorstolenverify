@@ -1,6 +1,5 @@
 import React from 'react';
-import { EnhancedSEOHead } from '@/components/seo/EnhancedSEOHead';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { CalendlyWidget } from '@/components/CalendlyWidget';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -73,13 +72,12 @@ const EnterpriseDemoPage: React.FC = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/enterprise-demo" />
-      <EnhancedSEOHead
+      <PageSEO
         title="Enterprise Demo - See SafeOrStolen API in Action | Schedule Free Demo"
         description="Schedule a personalized demo of SafeOrStolen's enterprise verification API. See how we help businesses reduce liability and build trust with real-time stolen goods verification."
         keywords="enterprise demo, business verification API, marketplace integration demo, stolen goods prevention for business, pawn shop software demo"
-        canonical="/enterprise-demo" 
-        additionalSchemas={structuredData}
+        canonical="/enterprise-demo"
+        structuredData={structuredData}
       />
 
       <div className="min-h-screen bg-background">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UnifiedSEOOptimizer } from '@/components/seo/UnifiedSEOOptimizer';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { Shield, Search, Database, Users, Zap, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -52,11 +52,11 @@ const ServicesPage = () => {
 
   return (
     <>
-      <UnifiedSEOOptimizer
+      <PageSEO
         title="Safe Or Stolen Services - Complete Item Verification Solutions"
         description="Comprehensive stolen item verification services including IMEI checks, VIN lookups, electronics verification, and enterprise API solutions. Protect yourself from stolen goods."
         keywords="stolen item verification services, IMEI check service, VIN verification, electronics verification, enterprise API, bulk verification"
-        canonical="https://safeorstolen.com/services"
+        canonical="/services"
       />
       
       <main className="min-h-screen bg-sos text-white">
