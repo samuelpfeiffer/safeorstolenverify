@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Scale, Shield, AlertTriangle, Users, FileText, CreditCard } from 'lucide-react';
 
 const TermsOfServicePage: React.FC = () => {
@@ -78,7 +78,7 @@ const TermsOfServicePage: React.FC = () => {
 
   return (
     <>
-      <UnifiedSEO 
+      <PageSEO 
         title="Terms of Service - Safe or Stolen"
         description="Read the terms of service for Safe or Stolen's stolen goods verification platform. Understand your rights and responsibilities when using our services."
         canonical="/terms-of-service"

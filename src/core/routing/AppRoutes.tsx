@@ -162,6 +162,12 @@ const StolenSearchConsolePage = lazy(() => import('@/pages/StolenSearchConsolePa
 const AboutUsPage = lazy(() => import('@/pages/AboutUsPage'));
 const ProductRoadmapPage = lazy(() => import('@/pages/ProductRoadmapPage'));
 
+// Competitor Comparison Pages
+const SafeOrStolenVsCheckMendPage = lazy(() => import('@/pages/SafeOrStolenVsCheckMendPage'));
+const SafeOrStolenVsIMEIInfoPage = lazy(() => import('@/pages/SafeOrStolenVsIMEIInfoPage'));
+const SafeOrStolenVsCarfaxPage = lazy(() => import('@/pages/SafeOrStolenVsCarfaxPage'));
+const CompetitorAlternativesHubPage = lazy(() => import('@/pages/CompetitorAlternativesHubPage'));
+
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
 const ItemVerificationPage = lazy(() => import('@/pages/templates/ItemVerificationPage'));
@@ -259,6 +265,15 @@ export const AppRoutes: React.FC = () => {
           <Route path="subscription-cancel" element={<SubscriptionCancelPage />} />
           <Route path="verification-success" element={<SubscriptionSuccessPage />} />
           <Route path="about" element={<AboutPage />} />
+          
+          {/* Competitor Comparison Pages */}
+          <Route path="safeorstolen-vs-checkmend" element={<SafeOrStolenVsCheckMendPage />} />
+          <Route path="safeorstolen-vs-imeiinfo" element={<SafeOrStolenVsIMEIInfoPage />} />
+          <Route path="safeorstolen-vs-carfax" element={<SafeOrStolenVsCarfaxPage />} />
+          <Route path="competitor-alternatives" element={<CompetitorAlternativesHubPage />} />
+          <Route path="alternatives" element={<Navigate to="/competitor-alternatives" replace />} />
+          <Route path="checkmend-alternative" element={<Navigate to="/safeorstolen-vs-checkmend" replace />} />
+          <Route path="imeiinfo-alternative" element={<Navigate to="/safeorstolen-vs-imeiinfo" replace />} />
           
           {/* Trust & Company Pages */}
           <Route path="/about-company" element={<AboutUsPage />} />

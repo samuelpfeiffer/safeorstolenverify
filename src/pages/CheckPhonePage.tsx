@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { UnifiedSEO } from '@/components/seo/UnifiedSEO';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { AIOptimizedContent } from '@/components/seo/AIOptimizedContent';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
-import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
 import { createServiceSchema, createBreadcrumbSchema } from '@/utils/seo/structuredData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -41,14 +41,19 @@ const CheckPhonePage: React.FC = () => {
   return (
       <>
         <AIOptimizedContent page="check-phone" />
-        <UnifiedSEO 
+        <PageSEO 
         title="Free IMEI Check & Verify Phone - Stolen Phone Database Search"
         description="Free database search to check & verify if phone is stolen using IMEI. 30-second verification for iPhone, Android, Samsung. 4 free searches included."
         keywords="free IMEI check, verify phone stolen, check if phone stolen, IMEI database search, stolen phone verification, iPhone IMEI check, Android phone verification"
         canonical="/check-phone"
         type="website"
-        noindex={false}
+        noIndex={false}
         structuredData={[serviceSchema, breadcrumbSchema]}
+      />
+      <AISearchOptimizer 
+        page="check-phone" 
+        context="phone-verification"
+        primaryKeywords={['free IMEI check', 'stolen phone database', 'verify phone IMEI']}
       />
       <CompetitiveKeywords pageType="imei" />
       <AdvancedKeywordOptimizer 

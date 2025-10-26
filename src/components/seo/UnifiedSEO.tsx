@@ -1,3 +1,8 @@
+/**
+ * ⚠️ DEPRECATED: Use PageSEO instead
+ * This component is maintained for backward compatibility only.
+ * New pages should use the PageSEO component from '@/components/seo/PageSEO'
+ */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';

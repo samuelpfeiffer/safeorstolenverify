@@ -1,7 +1,8 @@
 
 
 import { TeamProfiles } from "@/components/team/TeamProfiles";
-import { UnifiedSEO } from "@/components/seo/UnifiedSEO";
+import { PageSEO } from "@/components/seo/PageSEO";
+import { AISearchOptimizer } from "@/components/seo/AISearchOptimizer";
 import { getPageMetadata } from "@/utils/seo/metadata";
 import { HeroSection } from "@/components/our-story/HeroSection";
 import { FounderJourneySection } from "@/components/our-story/FounderJourneySection";
@@ -17,11 +18,16 @@ const OurStoryPage = () => {
 
   return (
     <>
-      <UnifiedSEO
+      <PageSEO
         title="Our Story - Safe or Stolen"
         description="Learn about Safe or Stolen's mission to combat the stolen goods market and protect consumers from purchasing stolen items."
         canonical="/our-story"
         keywords="company story, stolen goods prevention, consumer protection, mission"
+      />
+      <AISearchOptimizer 
+        page="our-story" 
+        context="company-information"
+        primaryKeywords={['company mission', 'stolen goods crisis', 'consumer protection platform']}
       />
       <div className="bg-sos text-white min-h-screen">
         
