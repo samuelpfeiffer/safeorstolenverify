@@ -44,12 +44,11 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           // CRITICAL: Keep ALL React packages together to prevent duplicate instances
-          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async', '@tanstack/react-query'],
           'ui-radix': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
           'charts': ['recharts'],
           'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
           'supabase': ['@supabase/supabase-js'],
-          'tanstack': ['@tanstack/react-query'],
         },
       },
     },
