@@ -29,12 +29,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
       return;
     }
 
-    // Check if already at limit BEFORE consuming search
-    if (hasReachedLimit && !isSubscribed) {
-      navigate('/pricing?reason=limit-reached');
-      return;
-    }
-
+    // Try to consume a search - will redirect to pricing if limit reached
     const canSearch = await consumeSearch();
     if (!canSearch) {
       navigate('/pricing?reason=limit-reached');
