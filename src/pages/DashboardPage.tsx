@@ -25,16 +25,18 @@ import { VerificationSection } from '@/components/dashboard/VerificationSection'
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { useFreemiumFlow } from '@/hooks/useFreemiumFlow';
 import { PaywallModal } from '@/components/dashboard/PaywallModal';
+import { useToast } from '@/hooks/use-toast';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSafeSearchParams();
-  const { remainingSearches, hasReachedLimit, isSubscribed } = useSearchLimits();
+  const { remainingSearches, hasReachedLimit, isSubscribed, refreshLimits } = useSearchLimits();
   const { searchHistory, isLoading: historyLoading } = useSearchHistory();
   const { getReceipts } = useReceiptGenerator();
   const { pendingVerification, clearPendingVerification } = usePendingVerification();
   const { showPaywall, hidePaywall, searchCount, isLoading: freemiumLoading } = useFreemiumFlow();
+  const { toast } = useToast();
   const [activeTab, setActiveTab] = useState('verification');
   const [recentVerifications, setRecentVerifications] = useState<any[]>([]);
   const [receipts, setReceipts] = useState<any[]>([]);
@@ -77,10 +79,14 @@ const DashboardPage = () => {
       newUrl.searchParams.delete('session_id');
       window.history.replaceState({}, '', newUrl.toString());
       
-      // Refresh subscription status after a short delay
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
+      // Refresh subscription status without full page reload
+      setTimeout(async () => {
+        await refreshLimits();
+        toast({
+          title: "Subscription activated!",
+          description: "Your account has been upgraded successfully.",
+        });
+      }, 1000);
     }
   };
 

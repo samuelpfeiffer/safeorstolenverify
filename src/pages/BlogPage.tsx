@@ -6,7 +6,7 @@ import { Calendar, Clock, ArrowRight, Loader2 } from 'lucide-react';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
 
 const BlogPage = () => {
-  const { data: posts, isLoading, error } = useBlogPosts();
+  const { data: posts, isLoading, error, refetch } = useBlogPosts();
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -64,7 +64,7 @@ const BlogPage = () => {
           ) : error ? (
             <div className="text-center py-12">
               <p className="text-white/80 mb-4">Failed to load blog posts.</p>
-              <Button variant="outline" onClick={() => window.location.reload()}>
+              <Button variant="outline" onClick={() => refetch()}>
                 Try Again
               </Button>
             </div>

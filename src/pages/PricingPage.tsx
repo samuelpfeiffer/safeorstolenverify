@@ -334,7 +334,11 @@ const PricingPage = () => {
           <p className="text-sm text-muted-foreground mb-4">
             {subscriptionError || 'Unable to load pricing information'}
           </p>
-          <Button onClick={() => window.location.reload()} variant="outline">
+          <Button onClick={async () => {
+            setHasError(false);
+            // Force reload subscription data
+            window.location.href = '/pricing';
+          }} variant="outline">
             Refresh Page
           </Button>
         </div>
