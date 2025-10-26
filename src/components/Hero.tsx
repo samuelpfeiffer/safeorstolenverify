@@ -21,12 +21,12 @@ const Hero = () => {
           {/* Trust-focused Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight animate-fade-in">
             Free Database Search - Verify if Stolen in 30 Seconds
-            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Check & Verify If Second-hand Item Is Safe Or Stolen Before You Buy Or Sell. </span>
+            <span className="block mt-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Welcome to SafeOrStolen - Check & Verify Secondhand items If Safe Or Stolen Instantly Before You Buy Or Sell</span>
           </h1>
           
           {/* Trust Value Proposition */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Don't get scammed on Facebook Marketplace, OfferUp, Craigslist, or eBay.
- Search IMEI, VIN, Serial Numbers Instantly.  </p>
+ Search IMEI, VIN, Serial Numbers Instantly.  </p>
 
           {/* Professional Search Interface */}
           <div className="max-w-2xl mx-auto bg-card p-10 rounded-2xl shadow-trust border border-primary/20 animate-fade-in">
