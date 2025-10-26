@@ -13,8 +13,8 @@ import { RouteErrorRecovery } from '@/core/routing/RouteErrorRecovery';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { AuthProvider } from '@/lib/auth';
 import { PWAProvider } from '@/core/providers/PWAProvider';
-import { PWAInstallBanner } from '@/components/pwa/PWAInstallBanner';
-import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
+import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
+import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -55,8 +55,8 @@ export const AppRoot: React.FC = () => {
                     </main>
                     <SOSFooter />
                   </div>
-                  <PWAInstallBanner />
-                  <AppDownloadBot />
+                  <PWAInstallManager />
+                  <MobileNavigation />
                   <Toaster />
                 </Router>
               </ThemeProvider>

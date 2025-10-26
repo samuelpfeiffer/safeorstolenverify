@@ -13,9 +13,16 @@
   "dependencies": {
     "@ai-sdk/openai": "^2.0.18",
     "@capacitor/android": "^7.4.3",
+    "@capacitor/app": "^7.1.0",
+    "@capacitor/camera": "^7.0.2",
     "@capacitor/cli": "^7.4.3",
     "@capacitor/core": "^7.4.3",
+    "@capacitor/haptics": "^7.0.2",
     "@capacitor/ios": "^7.4.3",
+    "@capacitor/push-notifications": "^7.0.3",
+    "@capacitor/share": "^7.0.2",
+    "@capacitor/splash-screen": "^7.0.3",
+    "@capacitor/status-bar": "^7.0.3",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -83,7 +90,9 @@
     "terser": "^5.43.1",
     "three": "^0.170.0",
     "vaul": "^0.9.3",
+    "vite-plugin-pwa": "^1.1.0",
     "web-vitals": "^5.1.0",
+    "workbox-window": "^7.3.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -52,10 +52,34 @@
   ],
   "shortcuts": [
     {
-      "name": "Check Item",
+      "name": "Quick Verify",
       "short_name": "Verify",
       "description": "Quickly verify if an item is stolen",
-      "url": "/dashboard",
+      "url": "/mobile-verify",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Scan Camera",
+      "short_name": "Scan",
+      "description": "Scan item with camera",
+      "url": "/mobile-verify",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "short_name": "History",
+      "description": "View verification history",
+      "url": "/mobile-dashboard",
       "icons": [
         {
           "src": "/android-chrome-192x192.png",

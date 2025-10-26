@@ -48,6 +48,12 @@ const AutonomousSystemPage = lazy(() => import('@/pages/AutonomousSystemPage'));
 const AIOptimizerPage = lazy(() => import('@/pages/AIOptimizerPage'));
 const AIExecutivePage = lazy(() => import('@/pages/AIExecutivePage'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
+
+// Mobile Pages
+const MobileVerifyPage = lazy(() => import('@/mobile/pages/MobileVerifyPage'));
+const MobileDashboardPage = lazy(() => import('@/mobile/pages/MobileDashboardPage'));
+const MobileOnboardingPage = lazy(() => import('@/mobile/pages/MobileOnboardingPage'));
+const MobileSettingsPage = lazy(() => import('@/mobile/pages/MobileSettingsPage'));
 const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
@@ -596,11 +602,15 @@ export const AppRoutes: React.FC = () => {
          <Route path="for-insurance-companies" element={<ForBrandsPage />} />
          
          {/* Mobile app pages */}
-         <Route path="ios-app" element={<AppDownloadPage />} />
-         <Route path="android-app" element={<AppDownloadPage />} />
-         <Route path="mobile-app" element={<AppDownloadPage />} />
-         
-         {/* Blog expansion */}
+          <Route path="ios-app" element={<AppDownloadPage />} />
+          <Route path="android-app" element={<AppDownloadPage />} />
+          <Route path="mobile-app" element={<AppDownloadPage />} />
+          <Route path="mobile-verify" element={<MobileVerifyPage />} />
+          <Route path="mobile-dashboard" element={<MobileDashboardPage />} />
+          <Route path="mobile-onboarding" element={<MobileOnboardingPage />} />
+          <Route path="mobile-settings" element={<MobileSettingsPage />} />
+          
+          {/* Blog expansion */}
          <Route path="blog/2025-stolen-goods-statistics" element={<StolenGoodsStatisticsPage />} />
          <Route path="blog/most-stolen-items-2025" element={<TheftTrendsBlogPage />} />
 
