@@ -21,6 +21,8 @@ export * from './useFreemiumFlow';
 // Search & Verification Hooks
 export * from './useSearchLimits';
 export * from './useRealVerification';
+export * from './useVerification';
+export * from './useSearchFormLogic';
 export * from './usePendingVerification';
 export * from './useSearchHistory';
 export * from './useReceiptGenerator';

@@ -4,10 +4,11 @@ import { Phone, Shield, AlertTriangle, CheckCircle, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
+import { UnifiedSearchForm } from '@/components/search/UnifiedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
+import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 
 const IMEICheck = () => {
   const navigate = useNavigate();
@@ -16,22 +17,9 @@ const IMEICheck = () => {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Free IMEI Stolen Check",
-    "description": "Free IMEI checker to verify if phones are stolen. Check iPhone and Android IMEI numbers against stolen phone databases instantly.",
+    "description": "Free IMEI checker to verify if phones are stolen.",
     "url": "https://safeorstolen.com/imei-check",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer", 
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "iPhone IMEI stolen check",
-      "Android IMEI verification", 
-      "Stolen phone lookup",
-      "IMEI blacklist check",
-      "Mobile device verification"
-    ]
+    "applicationCategory": "SecurityApplication"
   };
 
   const phoneTypes = [
@@ -74,6 +62,7 @@ const IMEICheck = () => {
 
   return (
     <>
+      <CompetitiveMetaTags page="imei" />
       <Helmet>
         <title>Check If Phone is Stolen – Free IMEI Checker App | Instant Stolen Phone Lookup</title>
         <meta 
@@ -137,7 +126,8 @@ const IMEICheck = () => {
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <TwoSidedSearchForm 
+                  <UnifiedSearchForm 
+                    variant="simple"
                     onOpenQrScanner={() => navigate('/qr-scanner')}
                   />
                   <div className="mt-4 p-4 bg-blue-50 rounded-lg">

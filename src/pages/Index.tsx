@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import { AppDownloadSection } from '@/components/home/AppDownloadSection';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
@@ -62,6 +63,7 @@ const Index = () => {
   return (
     <>
       {/* SEO Optimization */}
+      <CompetitiveMetaTags page="home" />
       <PageSEO
         title="Free Stolen Item Checker - Verify IMEI, VIN, Serial Numbers | SafeOrStolen"
         description="Check if items are stolen before buying. Free IMEI, VIN, serial number verification. Protect yourself from purchasing stolen phones, cars, electronics. 4 FREE searches."

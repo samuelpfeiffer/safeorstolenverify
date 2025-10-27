@@ -4,10 +4,11 @@ import { Search, Shield, CheckCircle, AlertTriangle, Phone, Car, Laptop } from '
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
+import { UnifiedSearchForm } from '@/components/search/UnifiedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
+import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 
 const StolenItemChecker = () => {
   const navigate = useNavigate();
@@ -16,22 +17,9 @@ const StolenItemChecker = () => {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Free Stolen Item Checker",
-    "description": "Free online tool to check if items are stolen. Verify IMEI, VIN, and serial numbers against stolen goods databases instantly.",
+    "description": "Free online tool to check if items are stolen.",
     "url": "https://safeorstolen.com/stolen-item-checker",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Check if phone is stolen by IMEI",
-      "Verify if car is stolen by VIN",
-      "Stolen electronics verification",
-      "Serial number stolen lookup",
-      "Instant stolen goods verification"
-    ]
+    "applicationCategory": "SecurityApplication"
   };
 
   const checkableItems = [
@@ -76,6 +64,7 @@ const StolenItemChecker = () => {
   return (
     <>
       <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/stolen-item-checker" />
+      <CompetitiveMetaTags page="stolen-checker" />
       <Helmet>
         <title>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification | SafeOrStolen</title>
         <meta 
@@ -128,7 +117,8 @@ const StolenItemChecker = () => {
         <section className="py-12 -mt-8 relative z-10">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
-              <TwoSidedSearchForm 
+              <UnifiedSearchForm 
+                variant="simple"
                 onOpenQrScanner={() => navigate('/qr-scanner')}
               />
             </div>

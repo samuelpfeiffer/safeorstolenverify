@@ -4,10 +4,11 @@ import { Car, Shield, AlertTriangle, CheckCircle, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
+import { UnifiedSearchForm } from '@/components/search/UnifiedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
+import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 
 const VINVerification = () => {
   const navigate = useNavigate();
@@ -16,26 +17,14 @@ const VINVerification = () => {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Free VIN Stolen Check",
-    "description": "Free VIN checker to verify if vehicles are stolen. Check car VIN numbers against stolen vehicle databases and police reports.",
+    "description": "Free VIN checker to verify if vehicles are stolen.",
     "url": "https://safeorstolen.com/vin-verification",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Car VIN stolen check",
-      "Vehicle theft verification",
-      "Stolen car lookup", 
-      "VIN history check",
-      "Auto theft prevention"
-    ]
+    "applicationCategory": "SecurityApplication"
   };
 
   return (
     <>
+      <CompetitiveMetaTags page="vin" />
       <Helmet>
         <title>VIN Check App – Instant Stolen Vehicle Verification | Check Car Not Stolen Before Buying</title>
         <meta 
@@ -99,7 +88,8 @@ const VINVerification = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TwoSidedSearchForm 
+                  <UnifiedSearchForm 
+                    variant="simple"
                     onOpenQrScanner={() => navigate('/qr-scanner')}
                   />
                   <div className="mt-4 p-4 bg-blue-50 rounded-lg">

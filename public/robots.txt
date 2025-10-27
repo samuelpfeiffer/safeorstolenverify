@@ -1,130 +1,21 @@
-# SafeOrStolen.com - SEO-Optimized Robots.txt for Maximum Visibility
-# Updated: 2025-10-15
-# Optimized to outrank CheckMend, IMEIinfo, and Stolen Register
+# SafeOrStolen.com Robots.txt
+# Allow all search engines to crawl
 
 User-agent: *
 Allow: /
+Disallow: /dashboard*
+Disallow: /admin*
+Disallow: /api/*
+Disallow: /auth*
+Disallow: /*.json$
+Disallow: /*?*
 
-# Core verification pages (highest priority for ranking)
-Allow: /stolen-item-checker
-Allow: /imei-check  
-Allow: /vin-verification
-Allow: /serial-number-checker
-Allow: /check-phone
-Allow: /check-car
-Allow: /check-electronics
-Allow: /check-bike
-Allow: /firearms-check
-Allow: /imei-checker
-Allow: /stolen-items-database
-
-# Mobile App Pages (NEW - Highest Priority)
-Allow: /mobile-app
-Allow: /mobile
-Allow: /app
-Allow: /ios-app
-Allow: /android-app
-Allow: /verification-app
-Allow: /stolen-checker-app
-Allow: /imei-checker-app
-Allow: /download-app
-Allow: /get-app
-Allow: /install-app
-Allow: /mobile-verification
-
-# Press and Mission Pages (NEW)
-Allow: /press
-Allow: /news
-Allow: /newsroom
-Allow: /media
-Allow: /our-mission
-Allow: /reduce-crime
-Allow: /crime-prevention
-
-# Competitive comparison pages (target competitor keywords)
-Allow: /vs/checkmend
-Allow: /vs/imeiinfo
-Allow: /vs/stolen-register
-Allow: /vs/swappa
-Allow: /vs/checkserial
-
-# Important information pages
-Allow: /pricing
-Allow: /about
-Allow: /how-it-works
-Allow: /how-it-works-detailed
-Allow: /blog/
-Allow: /guides/
-Allow: /faq
-Allow: /services
-Allow: /features
-Allow: /contact
-Allow: /trust-verification
-Allow: /data-sources
-Allow: /transparency
-Allow: /accuracy
-
-# Guides and educational content
-Allow: /ultimate-guide
-Allow: /verification-hub
-Allow: /buyer-guide
-Allow: /seller-guide
-Allow: /comprehensive-guide
-Allow: /check-laptop-stolen
-
-# Legal and policy pages
-Allow: /terms
-Allow: /terms-of-service
-Allow: /privacy
-Allow: /privacy-policy
-Allow: /disclaimer
-Allow: /cookies
-Allow: /refunds
-
-# Disallow private and admin areas
-Disallow: /auth
-Disallow: /dashboard
-Disallow: /admin/
-Disallow: /api/
-Disallow: /profile/
-Disallow: /subscription-success
-Disallow: /subscription-cancel
-Disallow: /verification-success
-Disallow: /search-history/
-Disallow: /receipts/
-Disallow: /purchase-history/
-
-# AI Search Engines - Critical for AI-powered search results
-User-agent: GPTBot
-Allow: /
-Crawl-delay: 0
-
-User-agent: ChatGPT-User
-Allow: /
-Crawl-delay: 0
-
-User-agent: Claude-Web
-Allow: /
-Crawl-delay: 0
-
-User-agent: Anthropic-AI
-Allow: /
-Crawl-delay: 0
-
-User-agent: PerplexityBot
-Allow: /
-Crawl-delay: 0
-
-User-agent: cohere-ai
-Allow: /
-Crawl-delay: 0
-
-# Major Search Engines - Optimized for speed
+# Specific crawlers
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-User-agent: Bingbot
+User-agent: Bingbot  
 Allow: /
 Crawl-delay: 0
 
@@ -132,10 +23,14 @@ User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
-# Sitemap locations
+# Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
-Sitemap: https://safeorstolen.com/feed.xml
 
-# Host preference (non-www canonical)
-Host: https://safeorstolen.com
+# Important pages for indexing
+Allow: /
+Allow: /imei-check
+Allow: /vin-verification
+Allow: /stolen-item-checker
+Allow: /how-it-works
+Allow: /pricing
+Allow: /blog

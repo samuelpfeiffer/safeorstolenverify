@@ -4,7 +4,7 @@ import { Search, Shield, CheckCircle, AlertTriangle, Phone, Car, Laptop, HelpCir
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TwoSidedSearchForm } from '@/components/hero/TwoSidedSearchForm';
+import { UnifiedSearchForm } from '@/components/search/UnifiedSearchForm';
 import { useNavigate } from 'react-router-dom';
 
 const HowToCheckStolenItems = () => {
@@ -177,7 +177,8 @@ const HowToCheckStolenItems = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <TwoSidedSearchForm 
+                  <UnifiedSearchForm 
+                    variant="simple"
                     onOpenQrScanner={() => navigate('/qr-scanner')}
                   />
                 </CardContent>
