@@ -63,23 +63,45 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // CRITICAL: Keep ALL React packages together to prevent duplicate instances
-          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async', '@tanstack/react-query'],
-          'ui-radix': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
-          'charts': ['recharts'],
-          'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          'supabase': ['@supabase/supabase-js'],
+        manualChunks: (id) => {
+          // CRITICAL: Keep ALL React packages together
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router') || id.includes('react-helmet') || id.includes('@tanstack/react-query')) {
+              return 'react-vendor';
+            }
+            if (id.includes('@radix-ui')) {
+              return 'ui-radix';
+            }
+            if (id.includes('recharts')) {
+              return 'charts';
+            }
+            if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+              return 'forms';
+            }
+            if (id.includes('@supabase')) {
+              return 'supabase';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            // All other node_modules in vendor chunk
+            return 'vendor';
+          }
+          // Split large route/page components
+          if (id.includes('/pages/')) {
+            const pageName = id.split('/pages/')[1].split('.')[0];
+            return `page-${pageName}`;
+          }
         },
       },
     },
-    // Optimize for better page speed scores
+    // Optimize for better page speed and cleaner builds
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
       },
       mangle: {
         safari10: true,
@@ -91,7 +113,9 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: false,
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 1500,
+    chunkSizeWarningLimit: 2000,
     assetsInlineLimit: 4096,
+    // Suppress verbose output
+    emptyOutDir: true,
   },
 }));
