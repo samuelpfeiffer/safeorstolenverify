@@ -36,6 +36,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/real-user-stories-stolen-goods-verification /blog/real-user-stories 301!
 /blog/data-source-credibility-stolen-goods-verification /blog/data-source-credibility 301!
 
+# Consolidate duplicate stolen goods checker routes
+/stolen-merchandise-check /stolen-goods-checker 301!
+
 # Handle API routes (don't redirect)
 /api/* /api/:splat 200
 

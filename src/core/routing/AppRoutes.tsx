@@ -372,7 +372,7 @@ export const AppRoutes: React.FC = () => {
            <Route path="stolen-property-lookup" element={<StolenItemsDatabasePage />} />
            <Route path="check-if-stolen" element={<StolenItemsDatabasePage />} />
            <Route path="stolen-goods-checker" element={<StolenGoodsCheckerPage />} />
-           <Route path="stolen-merchandise-check" element={<StolenGoodsCheckerPage />} />
+           <Route path="stolen-merchandise-check" element={<Navigate to="/stolen-goods-checker" replace />} />
            <Route path="avoid-buying-stolen-goods" element={<AvoidStolenGoodsPage />} />
            <Route path="avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
            <Route path="ultimate-guide-not-buying-stolen-goods" element={<UltimateGuideNotBuyingStolenPage />} />

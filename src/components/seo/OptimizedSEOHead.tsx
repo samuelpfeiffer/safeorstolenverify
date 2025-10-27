@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 interface OptimizedSEOHeadProps {
   title: string;
@@ -22,6 +23,15 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   structuredData,
   noIndex = false
 }) => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  
+  // Check if URL has search parameters that should not be indexed
+  const hasBlockedParams = searchParams.has('search') || 
+                           searchParams.has('q') || 
+                           searchParams.has('query') ||
+                           searchParams.has('serialNumber');
+  
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://safeorstolen.com${canonical}` : undefined;
   
@@ -45,8 +55,11 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="description" content={optimizedDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       
-      {/* Canonical URL */}
-      {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
+      {/* Canonical URL - Skip if search params present */}
+      {fullCanonicalUrl && !hasBlockedParams && <link rel="canonical" href={fullCanonicalUrl} />}
+      
+      {/* Robots Meta Tag - noindex if search params or explicit noIndex */}
+      <meta name="robots" content={hasBlockedParams || noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
       
       {/* Enhanced SEO Meta Tags */}
       <meta name="author" content="SafeOrStolen.com" />

@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { CanonicalUrl } from '@/components/seo/CanonicalUrl';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 const AccuracyPage = () => {
@@ -13,7 +12,6 @@ const AccuracyPage = () => {
 
   return (
     <>
-      <CanonicalUrl url="https://safeorstolen.com/accuracy" />
       <PageSEO
         title="Accuracy & Limitations - SafeOrStolen"
         description="Learn about SafeOrStolen's accuracy, verification methods, and service limitations for stolen item checking."
