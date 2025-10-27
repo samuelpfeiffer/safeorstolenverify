@@ -224,9 +224,6 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
-      
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(content.schema)}

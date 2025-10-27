@@ -45,6 +45,9 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="description" content={optimizedDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       
+      {/* Canonical URL */}
+      {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
+      
       {/* Enhanced SEO Meta Tags */}
       <meta name="author" content="SafeOrStolen.com" />
       <meta name="language" content="en" />
