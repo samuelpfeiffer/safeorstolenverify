@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Search, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -13,7 +14,7 @@ interface UnifiedSearchButtonProps {
   className?: string;
 }
 
-export const UnifiedSearchButton = ({
+const UnifiedSearchButtonComponent = ({
   onClick,
   isLoading = false,
   disabled = false,
@@ -41,19 +42,28 @@ export const UnifiedSearchButton = ({
   };
 
   const variantStyles = {
-    default: "h-14 min-w-[140px] font-semibold shadow-lg hover:shadow-xl",
-    hero: "h-16 px-8 font-bold shadow-xl hover:shadow-2xl text-base",
-    compact: "h-12",
+    default: "h-14 min-h-[56px] min-w-[140px] font-semibold shadow-lg hover:shadow-xl active:scale-[0.98]",
+    hero: "h-16 min-h-[64px] px-8 font-bold shadow-xl hover:shadow-2xl text-base active:scale-[0.98]",
+    compact: "h-12 min-h-[48px] active:scale-[0.98]",
+  };
+
+  const handleClick = () => {
+    // Haptic feedback for mobile devices
+    if ('vibrate' in navigator) {
+      navigator.vibrate(10);
+    }
+    onClick();
   };
 
   return (
     <Button
-      onClick={onClick}
+      onClick={handleClick}
       disabled={isLoading || disabled}
       size={variant === 'hero' ? 'lg' : 'default'}
+      aria-label={getButtonText()}
       className={cn(
         variantStyles[variant],
-        "transition-all",
+        "transition-all touch-manipulation",
         className
       )}
     >
@@ -64,3 +74,6 @@ export const UnifiedSearchButton = ({
     </Button>
   );
 };
+
+// Memoize to prevent unnecessary re-renders
+export const UnifiedSearchButton = memo(UnifiedSearchButtonComponent);

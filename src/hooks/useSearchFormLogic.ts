@@ -11,6 +11,7 @@ import { handleSecureError, createSecureError } from '@/utils/errorHandling';
 export const useSearchFormLogic = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string>('');
   const navigate = useNavigate();
   const { toast } = useToast();
   const { consumeSearch, remainingSearches, hasReachedLimit, isSubscribed } = useSearchLimits();
@@ -20,15 +21,22 @@ export const useSearchFormLogic = () => {
   const handleInputChange = (value: string) => {
     const sanitized = sanitizeInputSecurity(value);
     setInput(sanitized);
+    // Clear error when user types
+    if (error) setError('');
   };
 
   const handleSearch = async () => {
+    // Clear previous errors
+    setError('');
+    
     // Validate input
     const validation = await validateSerialNumberSecurity(input);
     
     if (!validation.isValid) {
+      const errorMessage = validation.errors[0];
+      setError(errorMessage);
       const error = createSecureError(
-        validation.errors[0],
+        errorMessage,
         `Invalid input: ${input}`,
         'INVALID_INPUT'
       );
@@ -71,11 +79,13 @@ export const useSearchFormLogic = () => {
 
   const clearInput = () => {
     setInput('');
+    setError('');
   };
 
   return {
     input,
     isLoading,
+    error,
     setIsLoading,
     handleInputChange,
     handleSearch,
