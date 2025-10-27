@@ -61,19 +61,43 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   build: {
+    logLevel: 'error',
     rollupOptions: {
       output: {
-        manualChunks: {
-          // CRITICAL: Keep ALL React packages together to prevent duplicate instances
-          'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async', '@tanstack/react-query'],
-          'ui-radix': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-toast'],
-          'charts': ['recharts'],
-          'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          'supabase': ['@supabase/supabase-js'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom') || id.includes('react-helmet-async') || id.includes('@tanstack/react-query')) {
+              return 'react-vendor';
+            }
+            if (id.includes('@radix-ui')) return 'ui-radix';
+            if (id.includes('recharts')) return 'charts';
+            if (id.includes('react-hook-form') || id.includes('@hookform/resolvers') || id.includes('zod')) return 'forms';
+            if (id.includes('@supabase/supabase-js')) return 'supabase';
+            if (id.includes('stripe')) return 'stripe';
+            if (id.includes('lucide-react')) return 'icons';
+            return 'vendor';
+          }
+          if (id.includes('/pages/')) {
+            if (id.match(/\/(Index|HomePage|StolenItemChecker|IMEICheck|VIN|UnifiedVerification)Page/)) return 'pages-hero';
+            if (id.match(/\/(Serial|Firearms|CheckPhone|CheckCar|CheckElectronics|CheckBike|ItemCategories)Page/)) return 'pages-verify';
+            if (id.match(/\/(Auth|Dashboard|Profile|Subscription|Analytics|Security|SearchHistory|Receipts|PurchaseHistory)Page/)) return 'pages-user';
+            if (id.includes('/admin/') || id.includes('Admin')) return 'pages-admin';
+            if (id.includes('/blog/') || id.includes('Blog') || id.includes('Post')) return 'pages-blog';
+            if (id.match(/\/(Vs|Compare|Competitor|Alternative|SafeOrStolenVs)/i)) return 'pages-seo';
+            if (id.match(/\/(Guide|HowTo|Tutorial|Ultimate|Comprehensive|Avoid)/i)) return 'pages-guides';
+            if (id.match(/\/(Arizona|Florida|California|Texas|City|Local)/)) return 'pages-locations';
+            if (id.includes('/mobile/') || id.includes('Mobile')) return 'pages-mobile';
+            if (id.includes('/templates/') || id.includes('Template')) return 'pages-templates';
+            if (id.includes('/fastercapital/') || id.includes('Partner')) return 'pages-partners';
+            if (id.match(/\/(Pricing|Payment|Success|Cancel|Checkout|Enterprise)/)) return 'pages-commerce';
+            if (id.match(/\/(Terms|Privacy|Disclaimer|Cookies|Refund|About|Contact|FAQ|Press)/)) return 'pages-info';
+            if (id.match(/\/(Statistic|Data|Report|Analysis|Performance|Transparency)/)) return 'pages-data';
+            return 'pages-other';
+          }
         },
+        compact: true,
       },
     },
-    // Optimize for better page speed scores
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -91,7 +115,7 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: false,
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 2000,
+    chunkSizeWarningLimit: 5000,
     assetsInlineLimit: 4096,
   },
 }));

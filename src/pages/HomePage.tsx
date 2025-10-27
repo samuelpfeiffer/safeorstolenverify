@@ -7,8 +7,6 @@ import Features from '@/components/Features';
 import { TestimonialsSection } from '@/components/testimonials/TestimonialsSection';
 import { FeaturedBlogSection } from '@/components/blog/FeaturedBlogSection';
 import { EnhancedCTASection } from '@/components/cta/EnhancedCTASection';
-import { ImageOptimizer } from '@/components/enhanced/ImageOptimizer';
-import { GlobalPerformanceOptimizer } from '@/components/enhanced/GlobalPerformanceOptimizer';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { GoogleSearchConsoleSetup } from '@/components/seo/GoogleSearchConsoleSetup';
@@ -21,11 +19,7 @@ import { ValuePropositionSections } from '@/components/hero/ValuePropositionSect
 import { HeroBanner } from '@/components/hero/HeroBanner';
 import { MobileBenefitsSection } from '@/components/mobile/MobileBenefitsSection';
 import { TrustBuildingFAQ } from '@/components/trust/TrustBuildingFAQ';
-import { InternalLinkingSchema } from '@/components/seo/InternalLinkingSchema';
-import { SEOAuditComponent } from '@/components/seo/SEOAuditComponent';
-import { EnhancedSEOContent } from '@/components/seo/EnhancedSEOContent';
 import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
-import { SiteNavigationOptimizer } from '@/components/seo/SiteNavigationOptimizer';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
@@ -80,15 +74,11 @@ const HomePage = () => {
   }];
   return <>
       <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
-      <InternalLinkingSchema />
-      <SEOAuditComponent />
-      <ImageOptimizer>
-        <GlobalPerformanceOptimizer />
-        <GlobalAnalytics />
-        <GoogleSearchConsoleSetup />
-        <OptimizedTitles pageType="home" />
-        <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
-        <div className="min-h-screen">
+      <GlobalAnalytics />
+      <GoogleSearchConsoleSetup />
+      <OptimizedTitles pageType="home" />
+      <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
+      <div className="min-h-screen">
           <ConversionTracker />
           <AppDownloadBot />
           <HeroBanner />
@@ -192,14 +182,12 @@ const HomePage = () => {
           
           {/* Below-fold content - organized */}
           <div className="space-y-12">
-            <SiteNavigationOptimizer />
             <TrustBuildingFAQ />
             <ComprehensiveFAQ pageType="home" maxItems={6} />
             <FeaturedBlogSection />
             <EnhancedCTASection />
           </div>
         </div>
-      </ImageOptimizer>
     </>;
 };
 export default HomePage;

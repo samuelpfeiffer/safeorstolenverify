@@ -15,6 +15,7 @@ import { AuthProvider } from '@/lib/auth';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
+import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -39,6 +40,7 @@ export const AppRoot: React.FC = () => {
   return (
     <ErrorBoundary>
       <HelmetProvider>
+        <CriticalResourceLoader />
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
             <PWAProvider>
