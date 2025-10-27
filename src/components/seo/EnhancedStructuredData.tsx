@@ -84,11 +84,7 @@ export const EnhancedStructuredData = () => {
     "name": "SafeOrStolen",
     "operatingSystem": ["iOS", "Android", "Web"],
     "applicationCategory": "SecurityApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
+    "price": "Free",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -140,23 +136,18 @@ export const EnhancedStructuredData = () => {
     };
   };
 
-  // Product Schema with AggregateRating (more SEO-friendly than single Review)
-  const productSchema = {
+  // Service Schema (not a product - SafeOrStolen is a verification service)
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "SafeOrStolen Verification Service",
     "description": "Mobile app and web platform for verifying stolen phones, cars, and electronics using IMEI, VIN, and serial numbers",
-    "brand": {
-      "@type": "Brand",
+    "serviceType": "Security Verification Service",
+    "provider": {
+      "@type": "Organization",
       "name": "SafeOrStolen"
     },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://safeorstolen.com"
-    },
+    "areaServed": "Worldwide",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -216,7 +207,7 @@ export const EnhancedStructuredData = () => {
         </script>
       )}
       <script type="application/ld+json">
-        {JSON.stringify(productSchema)}
+        {JSON.stringify(serviceSchema)}
       </script>
       {location.pathname.includes('how-it-works') && (
         <script type="application/ld+json">
