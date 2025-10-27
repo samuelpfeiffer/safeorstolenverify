@@ -224,8 +224,7 @@ const IMEICheck = () => {
           </div>
         </section>
 
-        {/* FAQ */}
-        <ComprehensiveFAQ pageType="imei" maxItems={6} showCategories={false} />
+        {/* Why Check IMEI Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
@@ -285,10 +284,8 @@ const IMEICheck = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 container mx-auto px-4">
-          <HighImpactFAQ />
-        </section>
+        {/* Single Consolidated FAQ Section */}
+        <ComprehensiveFAQ pageType="imei" maxItems={10} showCategories={false} />
       </div>
     </>
   );
