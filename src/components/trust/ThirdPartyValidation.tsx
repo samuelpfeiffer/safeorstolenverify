@@ -138,7 +138,7 @@ export const ThirdPartyValidation: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 px-4 py-2">
+            <Badge className="mb-4 bg-sos-orange/10 text-sos-orange border-sos-orange/30 px-4 py-2">
               <Award className="h-4 w-4 mr-2" />
               Third-Party Validation
             </Badge>
@@ -146,8 +146,8 @@ export const ThirdPartyValidation: React.FC = () => {
               Independently Verified & Industry Recognized
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              Don't just take our word for it. Our platform has been audited, certified, 
-              and recognized by independent security firms, major media outlets, and industry leaders.
+              Our platform has been audited, certified, and recognized by independent security firms, 
+              major media outlets, and industry leaders worldwide.
             </p>
           </div>
 
@@ -156,13 +156,13 @@ export const ThirdPartyValidation: React.FC = () => {
             <h3 className="text-2xl font-bold text-center mb-8">Security Certifications</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {securityCertifications.map((cert, index) => (
-                <Card key={index} className="border-green-200 bg-green-50/50 hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-sos-orange/20 bg-sos-orange/5 hover:shadow-lg transition-shadow">
                   <CardContent className="p-6 text-center">
-                    <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                      <Shield className="h-8 w-8 text-green-600" />
+                    <div className="h-16 w-16 rounded-full bg-sos-orange/10 flex items-center justify-center mx-auto mb-4">
+                      <Shield className="h-8 w-8 text-sos-orange" />
                     </div>
                     <h4 className="font-bold text-lg mb-2">{cert.name}</h4>
-                    <Badge className="mb-3 bg-green-100 text-green-800">
+                    <Badge className="mb-3 bg-sos-lime/20 text-sos-lime border-sos-lime/30">
                       <CheckCircle className="h-3 w-3 mr-1" />
                       {cert.status}
                     </Badge>
@@ -185,7 +185,7 @@ export const ThirdPartyValidation: React.FC = () => {
             <h3 className="text-2xl font-bold text-center mb-8">Press Coverage & Media Recognition</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {pressCoverage.map((article, index) => (
-                <Card key={index} className="border-blue-200 hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-sos-orange/20 hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -212,12 +212,12 @@ export const ThirdPartyValidation: React.FC = () => {
             <h3 className="text-2xl font-bold text-center mb-8">Marketplace Integrations & Partnerships</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {platformIntegrations.map((integration, index) => (
-                <Card key={index} className="border-purple-200 bg-purple-50/50 hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-sos-lime/20 bg-sos-lime/5 hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <h4 className="font-bold text-lg">{integration.platform}</h4>
-                        <Badge className="bg-purple-100 text-purple-800 text-xs">
+                        <Badge className="bg-sos-lime/20 text-sos-lime border-sos-lime/30 text-xs">
                           {integration.status}
                         </Badge>
                       </div>
@@ -242,10 +242,10 @@ export const ThirdPartyValidation: React.FC = () => {
             <h3 className="text-2xl font-bold text-center mb-8">Industry Awards & Recognition</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {industryRecognition.map((award, index) => (
-                <Card key={index} className="border-orange-200 bg-orange-50/50 text-center">
+                <Card key={index} className="border-sos-orange/20 bg-sos-orange/5 text-center">
                   <CardContent className="p-6">
-                    <div className="h-16 w-16 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-4">
-                      <Award className="h-8 w-8 text-orange-600" />
+                    <div className="h-16 w-16 rounded-full bg-sos-orange/10 flex items-center justify-center mx-auto mb-4">
+                      <Award className="h-8 w-8 text-sos-orange" />
                     </div>
                     <h4 className="font-bold mb-2">{award.award}</h4>
                     <p className="text-sm text-muted-foreground mb-2">{award.organization}</p>
@@ -260,24 +260,24 @@ export const ThirdPartyValidation: React.FC = () => {
           </div>
 
           {/* Trust Statement */}
-          <Card className="bg-gradient-to-r from-blue-900 to-purple-900 text-white">
+          <Card className="bg-gradient-to-r from-sos-orange to-sos-lime text-white border-0">
             <CardContent className="p-8 text-center">
-              <CheckCircle className="h-12 w-12 mx-auto mb-4 text-green-400" />
+              <CheckCircle className="h-12 w-12 mx-auto mb-4 text-white" />
               <h3 className="text-2xl font-bold mb-4">Independently Verified Trust</h3>
-              <p className="text-blue-100 mb-6 max-w-3xl mx-auto">
-                Unlike unverified competitors, every claim we make is backed by independent audits, 
-                third-party certifications, and documented partnerships. Our credibility isn't just claimed—it's proven.
+              <p className="text-white/90 mb-6 max-w-3xl mx-auto">
+                Every claim we make is backed by independent audits, third-party certifications, 
+                and documented partnerships. Our credibility isn't just claimed—it's proven through rigorous verification.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <Badge variant="secondary" className="bg-green-600 text-white">
+                <Badge variant="secondary" className="bg-white text-sos-orange border-0">
                   <FileCheck className="h-3 w-3 mr-1" />
                   Security Audited
                 </Badge>
-                <Badge variant="secondary" className="bg-blue-600 text-white">
+                <Badge variant="secondary" className="bg-white text-sos-orange border-0">
                   <Globe className="h-3 w-3 mr-1" />
                   Media Recognized
                 </Badge>
-                <Badge variant="secondary" className="bg-purple-600 text-white">
+                <Badge variant="secondary" className="bg-white text-sos-orange border-0">
                   <Lock className="h-3 w-3 mr-1" />
                   Industry Certified
                 </Badge>
