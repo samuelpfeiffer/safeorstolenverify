@@ -20,7 +20,6 @@ export * from './useFreemiumFlow';
 
 // Search & Verification Hooks
 export * from './useSearchLimits';
-export * from './useEnhancedSearchLimits';
 export * from './useRealVerification';
 export * from './usePendingVerification';
 export * from './useSearchHistory';

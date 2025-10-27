@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { QrCode, Search, WifiOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
-import { useEnhancedSearchLimits } from '@/hooks/useEnhancedSearchLimits';
+import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { useRealVerification } from '@/hooks/useRealVerification';
 import { VerificationDialog } from './VerificationDialog';
 import { SearchLimitDisplay } from './SearchLimitDisplay';
@@ -31,7 +31,7 @@ const SearchForm = ({ onOpenQrScanner }: SearchFormProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { remainingSearches, hasReachedLimit, isSubscribed, consumeSearch } = useEnhancedSearchLimits();
+  const { remainingSearches, hasReachedLimit, isSubscribed, consumeSearch } = useSearchLimits();
   const { verifyItem, isLoading } = useRealVerification();
   const { addToSearchHistory } = useSearchHistory();
   const { isOnline } = usePWA();

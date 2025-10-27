@@ -58,7 +58,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="VIN, IMEI, Serial Number..."
-            className="flex-1 h-12 border-2 border-primary bg-background/80 focus:bg-background focus:border-primary focus:ring-4 focus:ring-primary/20 shadow-md hover:shadow-lg transition-all"
+            className="flex-1 h-12 border-2 border-primary bg-background/80 focus:bg-background focus:border-primary focus:ring-4 focus:ring-primary/20 shadow-md hover:shadow-lg transition-all min-h-[48px]"
             disabled={isLoading}
             autoComplete="off"
             inputMode="text"
@@ -103,7 +103,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="👉 Enter your IMEI, VIN, or Serial Number here..."
-              className="h-16 text-lg px-6 bg-card border-4 border-primary focus:border-primary focus:ring-4 focus:ring-primary/30 transition-all placeholder:text-muted-foreground font-medium shadow-xl hover:shadow-2xl animate-in"
+              className="h-16 text-lg px-6 bg-card border-4 border-primary focus:border-primary focus:ring-4 focus:ring-primary/30 transition-all placeholder:text-muted-foreground font-medium shadow-xl hover:shadow-2xl animate-in min-h-[64px]"
               disabled={isLoading}
               autoComplete="off"
               inputMode="text"
@@ -174,7 +174,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="👉 Type VIN, IMEI, License Plate, or Serial Number here..."
-                className="pl-12 h-14 text-base bg-card border-3 border-primary/60 focus:border-primary focus:ring-4 focus:ring-primary/20 hover:border-primary/80 transition-all shadow-lg hover:shadow-xl placeholder:font-medium"
+                className="pl-12 h-14 text-base bg-card border-3 border-primary/60 focus:border-primary focus:ring-4 focus:ring-primary/20 hover:border-primary/80 transition-all shadow-lg hover:shadow-xl placeholder:font-medium min-h-[56px]"
                 disabled={isLoading}
                 autoComplete="off"
                 inputMode="text"
