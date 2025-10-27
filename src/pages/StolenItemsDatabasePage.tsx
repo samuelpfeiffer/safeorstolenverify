@@ -23,6 +23,7 @@ import {
   Tablet
 } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 import { Link } from 'react-router-dom';
 
 const StolenItemsDatabasePage: React.FC = () => {
@@ -126,32 +127,8 @@ const StolenItemsDatabasePage: React.FC = () => {
         keywords="stolen items database, stolen property lookup, check if stolen, stolen goods checker, IMEI stolen check, VIN stolen lookup, stolen electronics, stolen car database, police stolen property, stolen merchandise, avoid stolen goods, stolen item verification"
         canonical="/stolen-items-database"
       />
+      <ServiceOfferSchema />
       <div className="min-h-screen bg-background">
-
-      {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Stolen Items Database",
-          "description": "Comprehensive database to check if items are stolen before purchase",
-          "url": "https://safeorstolen.com/stolen-items-database",
-          "applicationCategory": "SecurityApplication",
-          "operatingSystem": "Web",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "featureList": [
-            "IMEI stolen phone check",
-            "VIN stolen car lookup", 
-            "Electronics serial number verification",
-            "Bike theft database search",
-            "Stolen property verification"
-          ]
-        })}
-      </script>
 
       <div className="container mx-auto px-6 py-12 max-w-7xl">
         {/* Hero Section */}

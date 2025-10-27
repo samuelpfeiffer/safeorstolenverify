@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -73,23 +74,6 @@ export default function ArizonaLicensePlateLookup() {
     }
   };
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Arizona License Plate Theft Check - TheftAZ Database Lookup",
-    "description": "Free Arizona license plate theft verification. Check if a vehicle is reported stolen in Arizona's official TheftAZ database. Instant results from Arizona Attorney General's stolen vehicle registry.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Safe or Stolen",
-      "url": "https://safeorstolen.com"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  };
-
   return (
     <>
       <PageSEO
@@ -97,8 +81,8 @@ export default function ArizonaLicensePlateLookup() {
         description="Instantly check if a vehicle is stolen in Arizona. Free license plate verification using Arizona Attorney General's TheftAZ database. Search AZ stolen vehicle registry by plate number. Protect yourself before buying a used car in Arizona."
         keywords="arizona license plate check, theftaz lookup, arizona stolen vehicle search, az plate number verification, arizona attorney general theft database, check arizona stolen car, theftaz.azag.gov alternative, phoenix stolen vehicle lookup, arizona dmv stolen check, free az license plate search"
         canonical="/arizona-license-plate-lookup"
-        structuredData={structuredData}
       />
+      <ServiceOfferSchema />
 
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

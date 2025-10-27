@@ -15,6 +15,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /serial-checker /stolen-item-checker 301!
 /verify /stolen-item-checker 301!
 
+# Consolidate checker pages for better SEO authority
+/check-phone /imei-check 301!
+/check-car /vin-verification 301!
+/check-electronics /stolen-item-checker 301!
+/check-bike /stolen-item-checker 301!
+
 # E-commerce routes that don't apply to our verification service - redirect to services
 /wishlist /services 301!
 /cart /services 301!

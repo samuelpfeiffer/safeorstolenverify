@@ -163,11 +163,6 @@ export const GlobalSEOHead: React.FC<GlobalSEOHeadProps> = ({
       "name": "Safe or Stolen Global Verification Platform",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Web Browser, iOS, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
       "featureList": [
         "Facebook Marketplace verification",
         "Craigslist stolen goods check",

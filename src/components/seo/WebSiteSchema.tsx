@@ -63,16 +63,6 @@ export const WebSiteSchema = () => {
       "featureList": "Global leader in verification services: Verify IMEI numbers, VIN numbers, serial numbers worldwide for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, and specialty equipment. Serving 200+ countries internationally.",
       "availableOnDevice": "Desktop, Mobile, Tablet",
       "countriesSupported": "Worldwide - 200+ countries",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "availableAtOrFrom": {
-          "@type": "Place",
-          "name": "Worldwide"
-        }
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",

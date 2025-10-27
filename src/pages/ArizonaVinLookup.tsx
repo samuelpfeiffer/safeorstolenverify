@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -65,23 +66,6 @@ export default function ArizonaVinLookup() {
     }
   };
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Arizona VIN Theft Check - TheftAZ Database Lookup",
-    "description": "Free Arizona VIN theft verification. Check if a vehicle is reported stolen using VIN number in Arizona's official TheftAZ database. Instant results from Arizona Attorney General's stolen vehicle registry.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Safe or Stolen",
-      "url": "https://safeorstolen.com"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  };
-
   return (
     <>
       <PageSEO
@@ -89,8 +73,8 @@ export default function ArizonaVinLookup() {
         description="Instantly verify if a vehicle is stolen in Arizona by VIN number. Free VIN theft check using Arizona Attorney General's TheftAZ database. Search AZ stolen vehicle registry before buying. Protect yourself from stolen car purchases in Arizona."
         keywords="arizona vin check, theftaz vin lookup, arizona stolen vin search, az vin verification, arizona attorney general vin database, check arizona stolen vehicle vin, theftaz.azag.gov vin search, phoenix vin theft check, arizona dmv vin verification, free az vin lookup"
         canonical="/arizona-vin-lookup"
-        structuredData={structuredData}
       />
+      <ServiceOfferSchema />
 
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

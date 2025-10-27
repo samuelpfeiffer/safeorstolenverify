@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -46,20 +47,6 @@ const StolenSearchConsolePage = () => {
     }
   };
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Stolen Search Console",
-    "description": "Real-time stolen item search analytics and verification console. Monitor trending searches, database statistics, and verification activity.",
-    "url": "https://safeorstolen.com/stolen-search-console",
-    "applicationCategory": "SecurityApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  };
-
   return (
     <>
       <PageSEO
@@ -67,8 +54,8 @@ const StolenSearchConsolePage = () => {
         description="Access the Stolen Search Console for real-time stolen item search trends, database statistics, and verification analytics. Monitor what people are searching for in stolen goods databases worldwide."
         keywords="stolen search console, theft database analytics, stolen item trends, IMEI search statistics, VIN lookup analytics, stolen goods monitoring, real-time verification data"
         canonical="https://safeorstolen.com/stolen-search-console"
-        structuredData={structuredData}
       />
+      <ServiceOfferSchema />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background/50 to-sos-orange/5">
         {/* Hero Section */}

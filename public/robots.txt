@@ -7,8 +7,14 @@ Disallow: /dashboard*
 Disallow: /admin*
 Disallow: /api/*
 Disallow: /auth*
+Disallow: /profile
+Disallow: /subscription
+Disallow: /analytics
+Disallow: /receipts
+Disallow: /search-history
+Disallow: /purchase-history
 Disallow: /*.json$
-Disallow: /*?*
+Disallow: /*_redirects
 
 # Specific crawlers
 User-agent: Googlebot
