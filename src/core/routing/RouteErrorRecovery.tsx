@@ -27,16 +27,22 @@ export const RouteErrorRecovery: React.FC<Props> = ({ children }) => {
                             err?.message?.includes('reading \'useContext\'');
       
       // Auto-reload on first context error in development
+      // Use queueMicrotask to defer state updates until after render
       if (isContextError && errorCount === 0 && import.meta.env.DEV) {
         console.warn('React context error detected - triggering automatic reload...');
-        setErrorCount(1);
-        setTimeout(() => {
-          window.location.reload();
-        }, 500);
+        queueMicrotask(() => {
+          setErrorCount(1);
+          setTimeout(() => {
+            window.location.reload();
+          }, 500);
+        });
+      } else {
+        // Defer other error state updates as well to prevent setState during render
+        queueMicrotask(() => {
+          setHasError(true);
+          setError(err);
+        });
       }
-      
-      setHasError(true);
-      setError(err);
     };
 
     window.addEventListener('error', handleError);
