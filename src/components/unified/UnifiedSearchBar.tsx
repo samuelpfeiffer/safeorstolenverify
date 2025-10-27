@@ -20,6 +20,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
   const navigate = useNavigate();
   const { user } = useAuth();
   const { remainingSearches, hasReachedLimit, isSubscribed, consumeSearch } = useSearchLimits();
+  const isAuthenticated = !!user;
 
   const handleSearch = async () => {
     if (!input.trim()) return;
@@ -87,6 +88,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
+          isAuthenticated={isAuthenticated}
         />
       </>
     );
@@ -147,6 +149,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
+          isAuthenticated={isAuthenticated}
         />
       </>
     );
@@ -223,6 +226,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
             hasReachedLimit={hasReachedLimit}
             remainingSearches={remainingSearches}
             isSubscribed={isSubscribed}
+            isAuthenticated={isAuthenticated}
           />
 
           <div className="flex flex-wrap gap-2 text-xs">

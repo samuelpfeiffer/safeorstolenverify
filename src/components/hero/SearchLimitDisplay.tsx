@@ -1,20 +1,18 @@
 import { memo } from 'react';
-import { useSearchLimits } from '@/hooks/useSearchLimits';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 type SearchLimitDisplayProps = {
   hasReachedLimit: boolean;
   remainingSearches: number;
   isSubscribed: boolean;
+  isAuthenticated: boolean;
 };
 
 const SearchLimitDisplayComponent = ({ 
   hasReachedLimit, 
   remainingSearches, 
-  isSubscribed
+  isSubscribed,
+  isAuthenticated
 }: SearchLimitDisplayProps) => {
-  const { remainingSearches: actualRemaining } = useSearchLimits();
-  const { isAuthenticated } = useUnifiedAuth();
 
   if (isSubscribed) {
     return (

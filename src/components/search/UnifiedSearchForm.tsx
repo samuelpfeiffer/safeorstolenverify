@@ -80,6 +80,7 @@ const UnifiedSearchFormComponent = ({
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
+          isAuthenticated={isAuthenticated}
         />
       </div>
     );
@@ -131,6 +132,7 @@ const UnifiedSearchFormComponent = ({
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
+          isAuthenticated={isAuthenticated}
         />
       </div>
     );
@@ -206,6 +208,7 @@ const UnifiedSearchFormComponent = ({
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
+          isAuthenticated={isAuthenticated}
         />
       </Card>
     );
@@ -271,6 +274,7 @@ const UnifiedSearchFormComponent = ({
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
           isSubscribed={isSubscribed}
+          isAuthenticated={isAuthenticated}
         />
 
         <div className="flex flex-wrap gap-2 text-xs">
