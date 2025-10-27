@@ -157,8 +157,6 @@ export default function SitemapPage() {
       links: [
         { path: '/mobile-app', label: 'Mobile App', priority: 'high' },
         { path: '/app-download', label: 'Download App', priority: 'high' },
-        { path: '/ios-app', label: 'iOS App', priority: 'medium' },
-        { path: '/android-app', label: 'Android App', priority: 'medium' },
       ]
     },
     {

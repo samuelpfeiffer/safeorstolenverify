@@ -407,19 +407,19 @@ export const AppRoutes: React.FC = () => {
            <Route path="laptop-serial-number-check" element={<HowToCheckLaptopStolenPage />} />
            <Route path="buy-used-electronics-safely" element={<BuyUsedElectronicsSafelyPage />} />
            <Route path="safe-way-to-buy-used-gadgets" element={<BuyUsedElectronicsSafelyPage />} />
-           
-           {/* SEO-Optimized Redirect URLs */}
-           <Route path="mobile-app" element={<MobileAppPage />} />
-           <Route path="mobile" element={<MobileAppPage />} />
-           <Route path="app" element={<MobileAppPage />} />
-           <Route path="ios-app" element={<MobileAppPage />} />
-           <Route path="android-app" element={<MobileAppPage />} />
-           <Route path="get-app" element={<MobileAppPage />} />
-           <Route path="install-app" element={<MobileAppPage />} />
-           <Route path="mobile-verification" element={<MobileAppPage />} />
-           <Route path="verification-app" element={<MobileAppPage />} />
-           <Route path="stolen-checker-app" element={<MobileAppPage />} />
-           <Route path="imei-checker-app" element={<MobileAppPage />} />
+            
+            {/* SEO-Optimized Mobile App Routes - All redirect to main mobile-app page */}
+            <Route path="mobile-app" element={<MobileAppPage />} />
+            <Route path="mobile" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="ios-app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="android-app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="get-app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="install-app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="mobile-verification" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="verification-app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="stolen-checker-app" element={<Navigate to="/mobile-app" replace />} />
+            <Route path="imei-checker-app" element={<Navigate to="/mobile-app" replace />} />
            <Route path="instant-check" element={<Navigate to="/stolen-item-checker" replace />} />
            <Route path="free-verification" element={<Navigate to="/stolen-item-checker" replace />} />
            <Route path="check-stolen-phone" element={<Navigate to="/check-phone" replace />} />
@@ -597,15 +597,12 @@ export const AppRoutes: React.FC = () => {
          <Route path="for-phone-repair-shops" element={<ForBrandsPage />} />
          <Route path="for-used-car-dealers" element={<ForBrandsPage />} />
          <Route path="for-insurance-companies" element={<ForBrandsPage />} />
-         
-         {/* Mobile app pages */}
-          <Route path="ios-app" element={<AppDownloadPage />} />
-          <Route path="android-app" element={<AppDownloadPage />} />
-          <Route path="mobile-app" element={<AppDownloadPage />} />
-          <Route path="mobile-verify" element={<MobileVerifyPage />} />
-          <Route path="mobile-dashboard" element={<MobileDashboardPage />} />
-          <Route path="mobile-onboarding" element={<MobileOnboardingPage />} />
-          <Route path="mobile-settings" element={<MobileSettingsPage />} />
+          
+          {/* Mobile dashboard pages */}
+           <Route path="mobile-verify" element={<MobileVerifyPage />} />
+           <Route path="mobile-dashboard" element={<MobileDashboardPage />} />
+           <Route path="mobile-onboarding" element={<MobileOnboardingPage />} />
+           <Route path="mobile-settings" element={<MobileSettingsPage />} />
           
           {/* Blog expansion */}
          <Route path="blog/2025-stolen-goods-statistics" element={<StolenGoodsStatisticsPage />} />
