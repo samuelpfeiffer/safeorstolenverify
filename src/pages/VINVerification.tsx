@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { UnifiedSearchForm } from '@/components/search/UnifiedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
-import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 
 const VINVerification = () => {
@@ -147,8 +146,7 @@ const VINVerification = () => {
           </div>
         </section>
 
-        {/* Why Check VIN */}
-        <ComprehensiveFAQ pageType="vin" maxItems={6} showCategories={false} />
+        {/* Why Check VIN & FAQ Section */}
         <section className="py-16 bg-gradient-to-r from-sos-dark/5 to-sos-orange/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
@@ -208,9 +206,9 @@ const VINVerification = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* Comprehensive FAQ Section */}
         <section className="py-16 container mx-auto px-4">
-          <HighImpactFAQ />
+          <ComprehensiveFAQ pageType="vin" maxItems={10} showCategories={true} />
         </section>
       </div>
     </>

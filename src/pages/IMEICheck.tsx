@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { UnifiedSearchForm } from '@/components/search/UnifiedSearchForm';
 import { useNavigate } from 'react-router-dom';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
-import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 
 const IMEICheck = () => {
