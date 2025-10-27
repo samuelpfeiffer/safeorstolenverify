@@ -1,108 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- Homepage - Highest Priority -->
-  <url>
-    <loc>https://safeorstolen.com/</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- Core Pages Sitemap -->
+  <sitemap>
+    <loc>https://safeorstolen.com/sitemap-core.xml</loc>
+    <lastmod>2025-10-27</lastmod>
+  </sitemap>
   
-  <!-- Core Service Pages -->
-  <url>
-    <loc>https://safeorstolen.com/imei-check</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Mobile App Pages Sitemap -->
+  <sitemap>
+    <loc>https://safeorstolen.com/sitemap-mobile-app.xml</loc>
+    <lastmod>2025-10-27</lastmod>
+  </sitemap>
   
-  <url>
-    <loc>https://safeorstolen.com/vin-verification</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- SEO Expansion Pages Sitemap -->
+  <sitemap>
+    <loc>https://safeorstolen.com/sitemap-seo-expansion.xml</loc>
+    <lastmod>2025-10-27</lastmod>
+  </sitemap>
   
-  <url>
-    <loc>https://safeorstolen.com/stolen-item-checker</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Blog/RSS Feed -->
+  <sitemap>
+    <loc>https://safeorstolen.com/feed.xml</loc>
+    <lastmod>2025-10-27</lastmod>
+  </sitemap>
   
-  <!-- Information Pages -->
-  <url>
-    <loc>https://safeorstolen.com/how-it-works</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/pricing</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/about</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/contact</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Arizona State Pages -->
-  <url>
-    <loc>https://safeorstolen.com/arizona-vin-lookup</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/arizona-license-plate-lookup</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Database & Analytics -->
-  <url>
-    <loc>https://safeorstolen.com/stolen-items-database</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/stolen-search-console</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Guide Pages -->
-  <url>
-    <loc>https://safeorstolen.com/guides/how-to-check-stolen-items</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/guides/imei-blacklist-guide</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-</urlset>
+</sitemapindex>
