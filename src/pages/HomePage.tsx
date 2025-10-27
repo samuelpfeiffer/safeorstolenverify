@@ -23,6 +23,7 @@ import { OptimizedTitles } from '@/components/seo/OptimizedTitles';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 const HomePage = () => {
   const navigate = useNavigate();
   const homePageStructuredData = [{
@@ -48,29 +49,7 @@ const HomePage = () => {
     "applicationSubCategory": "Verification Tool",
     "operatingSystem": "Web Browser",
     "browserRequirements": "Chrome, Firefox, Safari, Edge",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free stolen item checking service"
-    },
     "featureList": ["IMEI stolen check", "VIN stolen verification", "Serial number stolen lookup", "Phone stolen check", "Car stolen verification", "Electronics stolen check"]
-  }, {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Stolen Item Checker Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
-    },
-    "description": "Complete stolen item verification service protecting both buyers and sellers in secondhand transactions",
-    "serviceType": "Verification Service",
-    "areaServed": "Worldwide",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
   }];
   return <>
       <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
@@ -78,6 +57,7 @@ const HomePage = () => {
       <GoogleSearchConsoleSetup />
       <OptimizedTitles pageType="home" />
       <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
+      <ServiceOfferSchema />
       <div className="min-h-screen">
           <ConversionTracker />
           <AppDownloadBot />

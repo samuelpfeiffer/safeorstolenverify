@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 
 export default function MobileAppPage() {
   const navigate = useNavigate();
@@ -15,11 +16,6 @@ export default function MobileAppPage() {
     "name": "SafeOrStolen",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS, Android",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -80,6 +76,7 @@ export default function MobileAppPage() {
         keywords="SafeOrStolen app, stolen goods checker app, IMEI checker app, VIN verification app, mobile stolen check, iOS Android verification app, marketplace safety app, instant verification app, on-the-go verification, mobile-first app"
         canonical="/mobile-app"
       />
+      <ServiceOfferSchema />
 
       <Helmet>
         <script type="application/ld+json">

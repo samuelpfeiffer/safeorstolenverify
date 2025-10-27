@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Car, Search, AlertTriangle, Shield, FileCheck } from 'lucide-react';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 
 const VINVerificationPage: React.FC = () => {
   const structuredData = {
@@ -14,11 +15,6 @@ const VINVerificationPage: React.FC = () => {
     "url": "https://safeorstolen.com/vin-verification",
     "applicationCategory": "AutomotiveApplication",
     "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",  
-      "price": "0",
-      "priceCurrency": "USD"
-    },
     "provider": {
       "@type": "Organization",
       "name": "SafeOrStolen",
@@ -35,6 +31,7 @@ const VINVerificationPage: React.FC = () => {
         canonical="/vin-verification"
         structuredData={structuredData}
       />
+      <ServiceOfferSchema />
       
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12">

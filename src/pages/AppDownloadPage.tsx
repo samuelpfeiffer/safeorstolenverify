@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Smartphone, Download, QrCode, Shield, Zap, Globe, Star, Check } from 'lucide-react';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 
 const AppDownloadPage = () => {
   const appSchema = {
@@ -13,11 +14,6 @@ const AppDownloadPage = () => {
     "description": "Download the SafeOrStolen mobile app to instantly verify if items are stolen before buying. Scan barcodes, check IMEI, VIN, and serial numbers on-the-go.",
     "operatingSystem": "iOS, Android",
     "applicationCategory": "UtilityApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -66,6 +62,7 @@ const AppDownloadPage = () => {
         canonical="/download-app"
         structuredData={appSchema}
       />
+      <ServiceOfferSchema />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <div className="container mx-auto px-4 py-20">

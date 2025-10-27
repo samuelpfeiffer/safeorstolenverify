@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Hash, Search, AlertTriangle, Shield, Laptop, Camera, Watch } from 'lucide-react';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 
 const SerialNumberCheckerPage: React.FC = () => {
   const structuredData = {
@@ -14,11 +15,6 @@ const SerialNumberCheckerPage: React.FC = () => {
     "url": "https://safeorstolen.com/serial-number-checker",
     "applicationCategory": "SecurityApplication",
     "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0", 
-      "priceCurrency": "USD"
-    },
     "provider": {
       "@type": "Organization",
       "name": "SafeOrStolen",
@@ -35,6 +31,7 @@ const SerialNumberCheckerPage: React.FC = () => {
         canonical="/serial-number-checker"
         structuredData={structuredData}
       />
+      <ServiceOfferSchema />
       
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12">

@@ -8,6 +8,7 @@ import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
+import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 import { SEOContentSection } from '@/components/seo/SEOContentSection';
 import { InternalLinkingStrategy } from '@/components/seo/InternalLinkingStrategy';
 import { ConversionTracking } from '@/components/conversion/ConversionTracking';
@@ -47,11 +48,6 @@ const Index = () => {
       "name": "SafeOrStolen Verification App",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": ["iOS", "Android", "Web"],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -83,6 +79,7 @@ const Index = () => {
       {/* Core SEO */}
       <OrganizationSchema />
       <WebSiteSchema />
+      <ServiceOfferSchema />
       
       {/* Trust header bar */}
       <TrustHeaderBar />
