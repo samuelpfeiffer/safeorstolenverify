@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 interface StructuredDataProps {
-  type: 'Organization' | 'WebSite' | 'FAQPage' | 'Article' | 'Service' | 'Product';
+  type: 'Organization' | 'WebSite' | 'FAQPage' | 'Article' | 'Service' | 'Thing';
   data: any;
 }
 
@@ -103,33 +103,16 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
           ...data
         };
 
-      case 'Product':
-        // If data explicitly requests Product schema (for verified items), use minimal schema
-        if (data.isVerifiedItem) {
-          return {
-            ...baseContext,
-            name: data.name,
-            description: data.description,
-            identifier: data.identifier,
-            additionalProperty: data.additionalProperty
-          };
-        }
-        // Otherwise, convert to Service schema for SafeOrStolen
+      case 'Thing':
+        // For verification results - NOT a product for sale
+        // Using "Thing" instead of "Product" to avoid Google Merchant Listings errors
         return {
           '@context': 'https://schema.org',
-          '@type': 'Service',
+          '@type': 'Thing',
           name: data.name,
           description: data.description,
-          serviceType: 'Verification Service',
-          provider: {
-            '@type': 'Organization',
-            name: 'SafeOrStolen'
-          },
-          aggregateRating: data.rating ? {
-            '@type': 'AggregateRating',
-            ratingValue: data.rating.value,
-            reviewCount: data.rating.count
-          } : undefined
+          identifier: data.identifier,
+          additionalProperty: data.additionalProperty
         };
 
       default:

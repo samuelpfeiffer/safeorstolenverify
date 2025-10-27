@@ -324,26 +324,28 @@ export const createBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: st
   }))
 });
 
-// Product Schema for verification results
-export const createProductSchema = (product: {
+// Verification Result Schema (formerly Product Schema)
+// Note: Changed from Product to Thing to avoid Google Merchant Listings errors
+// SafeOrStolen is a service, not a product marketplace
+export const createVerificationResultSchema = (result: {
   name: string;
   description: string;
   serialNumber: string;
   status: string;
 }) => ({
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": product.name,
-  "description": product.description,
+  "@type": "Thing",
+  "name": result.name,
+  "description": result.description,
   "identifier": {
     "@type": "PropertyValue",
     "name": "Serial Number",
-    "value": product.serialNumber
+    "value": result.serialNumber
   },
   "additionalProperty": {
     "@type": "PropertyValue", 
     "name": "Verification Status",
-    "value": product.status
+    "value": result.status
   }
 });
 
