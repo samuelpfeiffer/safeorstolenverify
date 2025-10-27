@@ -104,19 +104,26 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
         };
 
       case 'Product':
+        // If data explicitly requests Product schema (for verified items), use minimal schema
+        if (data.isVerifiedItem) {
+          return {
+            ...baseContext,
+            name: data.name,
+            description: data.description,
+            identifier: data.identifier,
+            additionalProperty: data.additionalProperty
+          };
+        }
+        // Otherwise, convert to Service schema for SafeOrStolen
         return {
-          ...baseContext,
+          '@context': 'https://schema.org',
+          '@type': 'Service',
           name: data.name,
           description: data.description,
-          brand: {
-            '@type': 'Brand',
+          serviceType: 'Verification Service',
+          provider: {
+            '@type': 'Organization',
             name: 'SafeOrStolen'
-          },
-          offers: {
-            '@type': 'Offer',
-            price: data.price || '0',
-            priceCurrency: 'USD',
-            availability: 'https://schema.org/InStock'
           },
           aggregateRating: data.rating ? {
             '@type': 'AggregateRating',

@@ -28,20 +28,16 @@ const reviews = [
 export const ReviewSchema = () => {
   const aggregateRating = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "SafeOrStolen Verification Service",
     "description": "Free IMEI, VIN, and serial number verification service to check if items are stolen",
-    "brand": {
-      "@type": "Brand",
-      "name": "SafeOrStolen"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
+    "serviceType": "Security Verification Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
+    "areaServed": "Worldwide",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
