@@ -7,21 +7,23 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
   free: {
-    name: "Free Trial",
+    name: "Free IMEI Verification",
     price: 0,
     priceDisplay: "Free",
-    interval: "once",
-    monthlyQuota: 2,
+    interval: "month",
+    monthlyQuota: 4,
+    stripePriceId: "price_1SIzMMGxnZLw8J7Ov1Q25jVy",
     tier: "free",
     features: [
-      "2 free searches",
-      "Expires in 14 days",
+      "4 free verifications per month",
+      "Lookup any device",
+      "Phones, tablets & more",
       "Instant verification results",
       "PDF receipt generation",
       "No credit card required"
     ],
     receiptsIncluded: true,
-    historyRetention: 14,
+    historyRetention: 30,
     trustBadges: false,
     apiAccess: false,
     bulkUpload: false,
