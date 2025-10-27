@@ -16,6 +16,7 @@ import { PWAProvider } from '@/core/providers/PWAProvider';
 import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
+import { SearchParamBlocker } from '@/components/seo/SearchParamBlocker';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -46,6 +47,7 @@ export const AppRoot: React.FC = () => {
             <PWAProvider>
               <ThemeProvider>
                 <Router>
+                  <SearchParamBlocker />
                   <div className="min-h-screen bg-background text-foreground flex flex-col">
                     <TopNavigation />
                     <main className="flex-1 pt-20">

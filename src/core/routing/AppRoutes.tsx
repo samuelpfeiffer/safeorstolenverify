@@ -22,6 +22,7 @@ const UserManagement = lazy(() => import('@/pages/admin/UserManagement'));
 const SystemSettings = lazy(() => import('@/pages/admin/SystemSettings'));
 const SecurityCenter = lazy(() => import('@/pages/admin/SecurityCenter'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
+const SubscriptionsPage = lazy(() => import('@/pages/SubscriptionsPage'));
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
@@ -262,7 +263,7 @@ export const AppRoutes: React.FC = () => {
            <Route path="seo-strategy" element={<SEOStrategyPage />} />
            <Route path="check" element={<StolenItemChecker />} />
           <Route path="auth" element={<AuthPage />} />
-          <Route path="subscriptions" element={<PricingPage />} />
+          <Route path="subscriptions" element={<SubscriptionsPage />} />
           <Route path="pricing" element={<PricingPage />} />
           <Route path="integrations" element={<IntegrationsPage />} />
           <Route path="subscription-success" element={<SubscriptionSuccessPage />} />
