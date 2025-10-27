@@ -60,7 +60,6 @@ const AboutProblemPage = lazy(() => import('@/pages/AboutProblemPage'));
 const OurStoryPage = lazy(() => import('@/pages/OurStoryPage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsOfServicePage = lazy(() => import('@/pages/TermsOfServicePage'));
-const DisclaimerPage = lazy(() => import('@/pages/DisclaimerPage'));
 const CookiesPage = lazy(() => import('@/pages/CookiesPage'));
 const RefundsPage = lazy(() => import('@/pages/RefundsPage'));
 
@@ -121,7 +120,6 @@ const CaseStudiesPage = lazy(() => import('@/pages/CaseStudiesPage'));
 const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
 const CompanyVerificationPage = lazy(() => import('@/pages/CompanyVerificationPage'));
-const ServiceLimitationsPage = lazy(() => import('@/pages/ServiceLimitations'));
 const AccuracyPage = lazy(() => import('@/pages/AccuracyPage'));
 const VerificationHubPage = lazy(() => import('@/pages/VerificationHubPage'));
 const UltimateGuidePage = lazy(() => import('@/pages/UltimateGuidePage'));
@@ -347,7 +345,6 @@ export const AppRoutes: React.FC = () => {
           <Route path="our-story" element={<OurStoryPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="terms-of-service" element={<TermsOfServicePage />} />
-          <Route path="disclaimer" element={<DisclaimerPage />} />
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="refunds" element={<RefundsPage />} />
           
@@ -362,7 +359,6 @@ export const AppRoutes: React.FC = () => {
            <Route path="trust-verification" element={<TrustVerificationPage />} />
            <Route path="data-sources" element={<DataSourcesPage />} />
            <Route path="transparency" element={<TransparencyPage />} />
-           <Route path="service-limitations" element={<ServiceLimitationsPage />} />
            <Route path="accuracy" element={<AccuracyPage />} />
           <Route path="verification-hub" element={<VerificationHubPage />} />
           <Route path="ultimate-guide" element={<UltimateGuidePage />} />

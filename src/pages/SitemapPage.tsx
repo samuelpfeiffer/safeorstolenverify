@@ -127,7 +127,6 @@ export default function SitemapPage() {
         { path: '/data-sources', label: 'Our Data Sources', priority: 'medium' },
         { path: '/transparency', label: 'Transparency', priority: 'medium' },
         { path: '/accuracy', label: 'Accuracy Information', priority: 'medium' },
-        { path: '/service-limitations', label: 'Service Limitations', priority: 'low' },
         { path: '/case-studies', label: 'Case Studies', priority: 'medium' },
         { path: '/database', label: 'Database Information', priority: 'low' },
         { path: '/stolen-items-database', label: 'Stolen Items Database', priority: 'medium' },
@@ -176,11 +175,10 @@ export default function SitemapPage() {
       icon: FileText,
       color: 'text-gray-600',
       links: [
-        { path: '/terms', label: 'Terms of Service', priority: 'high' },
+        { path: '/terms', label: 'Terms & Conditions', priority: 'high' },
         { path: '/terms-of-service', label: 'Terms (Detailed)', priority: 'medium' },
         { path: '/privacy', label: 'Privacy Policy', priority: 'high' },
         { path: '/privacy-policy', label: 'Privacy (Detailed)', priority: 'medium' },
-        { path: '/disclaimer', label: 'Disclaimer', priority: 'medium' },
         { path: '/cookies', label: 'Cookie Policy', priority: 'low' },
         { path: '/refunds', label: 'Refund Policy', priority: 'medium' },
       ]

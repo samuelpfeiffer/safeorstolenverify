@@ -106,12 +106,10 @@ export const ConversionOptimizedFooter: React.FC = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link to="/faq" className="hover:text-foreground transition-colors">FAQ</Link></li>
                 <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact Support</Link></li>
-                <li><Link to="/service-limitations" className="hover:text-foreground transition-colors">Service Limitations</Link></li>
                 <li><Link to="/transparency" className="hover:text-foreground transition-colors">Transparency Report</Link></li>
                 <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
                 <li><Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
-                <li><Link to="/disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms & Conditions</Link></li>
               </ul>
             </div>
           </div>

@@ -54,8 +54,7 @@ export const EnhancedFooterLinks: React.FC = () => {
         { href: '/faq', text: 'FAQ - Common Questions' },
         { href: '/how-it-works', text: 'How It Works' },
         { href: '/contact', text: 'Contact Support' },
-        { href: '/api-docs', text: 'API Documentation' },
-        { href: '/service-limitations', text: 'Service Limitations' }
+        { href: '/api-docs', text: 'API Documentation' }
       ]
     },
     {
@@ -170,13 +169,10 @@ export const EnhancedFooterLinks: React.FC = () => {
             </div>
             <div className="flex gap-6 text-sm text-gray-300">
               <Link to="/terms-of-service" className="hover:text-white transition-colors">
-                Terms
+                Terms & Conditions
               </Link>
               <Link to="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy
-              </Link>
-              <Link to="/disclaimer" className="hover:text-white transition-colors">
-                Disclaimer
               </Link>
               <Link to="/contact" className="hover:text-white transition-colors">
                 Contact

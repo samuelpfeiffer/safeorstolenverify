@@ -30,13 +30,12 @@ export const TermsCheckboxes = ({
         <Label htmlFor="terms" className="text-sm text-foreground/90 leading-relaxed">
           I agree to the{' '}
           <Link
-            to="/terms"
+            to="/terms-of-service"
             target="_blank"
             className="text-sos-orange hover:underline"
           >
-            Terms of Service
-          </Link>{' '}
-          and acknowledge that I understand the verification process and limitations.
+            Terms & Conditions
+          </Link>
         </Label>
       </div>
 
@@ -51,13 +50,12 @@ export const TermsCheckboxes = ({
         <Label htmlFor="privacy" className="text-sm text-foreground/90 leading-relaxed">
           I agree to the{' '}
           <Link
-            to="/privacy"
+            to="/privacy-policy"
             target="_blank"
             className="text-sos-orange hover:underline"
           >
             Privacy Policy
-          </Link>{' '}
-          and consent to the collection and processing of my data as described.
+          </Link>
         </Label>
       </div>
     </div>

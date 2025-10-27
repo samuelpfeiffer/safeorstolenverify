@@ -18,7 +18,6 @@ const VALID_ROUTES = new Set([
   '/our-story',
   '/privacy-policy',
   '/terms-of-service',
-  '/disclaimer',
   '/cookies',
   '/refunds',
   '/enterprise-demo',

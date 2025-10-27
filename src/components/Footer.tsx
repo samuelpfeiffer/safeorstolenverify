@@ -23,17 +23,11 @@ const Footer = () => {
     href: '/contact'
   }];
   const legalLinks = [{
-    label: 'Privacy Policy',
-    href: '/privacy-policy'
-  }, {
-    label: 'Terms of Service',
+    label: 'Terms & Conditions',
     href: '/terms-of-service'
   }, {
-    label: 'Data Protection',
-    href: '/privacy-policy#data-protection'
-  }, {
-    label: 'Cookie Policy',
-    href: '/privacy-policy#cookies'
+    label: 'Privacy Policy',
+    href: '/privacy-policy'
   }];
   const supportLinks = [{
     label: 'Help Center',

@@ -180,9 +180,8 @@ export const RichContentHub = () => {
         { text: "Police Cooperation Guide", url: "/legal/police" },
         { text: "Insurance Documentation", url: "/legal/insurance" },
         { text: "Dispute Resolution", url: "/legal/disputes" },
-        { text: "Terms of Service", url: "/terms" },
-        { text: "Privacy Policy", url: "/privacy" },
-        { text: "Service Limitations", url: "/service-limitations" }
+        { text: "Terms & Conditions", url: "/terms-of-service" },
+        { text: "Privacy Policy", url: "/privacy-policy" }
       ]
     }
   ];
