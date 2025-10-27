@@ -7,31 +7,12 @@ export const getHomePageStructuredData = () => {
     createServiceSchema(),
     createFAQSchema(),
     {
-      "@type": "MobileApplication",
-      "name": "SafeOrStolen Mobile App",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "iOS, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "The only mobile app for instant stolen goods verification on the go",
-      "downloadUrl": "https://safeorstolen.com/mobile-app"
-    },
-    {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
       "name": "SafeOrStolen - Mobile Stolen Item Checker",
       "description": "Only mobile app for stolen goods verification. Protects buyers and sellers from financial loss and legal issues. Helps reduce crime globally through instant IMEI, VIN, serial number checks.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": ["iOS", "Android", "Web Browser"],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free mobile verification protecting buyers and sellers"
-      },
       "featureList": [
         "Mobile-first stolen item verification",
         "Buyer and seller protection",

@@ -276,52 +276,52 @@ const PricingPage = () => {
     },
     {
       "@context": "https://schema.org",
-      "@type": "OfferCatalog",
-      "name": "Safe or Stolen Pricing Plans",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "Free Plan",
-          "description": "Basic verification with 4 free searches",
-          "price": "0",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
+      "@type": "Service",
+      "name": "Safe or Stolen Verification Services",
+      "description": "Professional stolen item verification service with flexible pricing plans for consumers and businesses",
+      "provider": {
+        "@type": "Organization",
+        "name": "Safe or Stolen",
+        "url": "https://safeorstolen.com"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Verification Service Plans",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Free Verification Plan",
+              "description": "Basic verification service with 4 free searches per day for consumer protection"
+            },
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Personal Verification Plan",
+              "description": "Unlimited verification service for personal use with priority support"
+            },
+            "price": formatPrice(SUBSCRIPTION_TIERS.personal.price).replace('$', ''),
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Professional Verification Plan",
+              "description": "Unlimited verification service for professionals and businesses with API access"
+            },
+            "price": formatPrice(SUBSCRIPTION_TIERS.professional.price).replace('$', ''),
+            "priceCurrency": "USD"
           }
-        },
-        {
-          "@type": "Offer",
-          "name": "Personal Plan",
-          "description": "Unlimited verifications for personal use",
-          "price": formatPrice(SUBSCRIPTION_TIERS.personal.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Professional Plan",
-          "description": "Unlimited verifications for professionals and businesses",
-          "price": formatPrice(SUBSCRIPTION_TIERS.professional.price).replace('$', ''),
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2024-01-01",
-          "priceValidUntil": "2025-12-31",
-          "seller": {
-            "@type": "Organization",
-            "name": "Safe or Stolen"
-          }
-        }
-      ]
+        ]
+      },
+      "areaServed": "Worldwide",
+      "serviceType": "Stolen Item Verification Service"
     }
   ];
 
