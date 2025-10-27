@@ -3,7 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { MobileAppMetaTags } from '@/components/seo/MobileAppMetaTags';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 
@@ -75,11 +74,10 @@ export default function MobileAppPage() {
 
   return (
     <>
-      <MobileAppMetaTags />
       <PageSEO
-        title="Mobile App - Instant Stolen Goods Verification | SafeOrStolen"
-        description="Download the only mobile app for instant stolen goods verification. Check IMEI, VIN, serial numbers on-the-go at yard sales, meetups, marketplaces. iOS & Android. FREE to start."
-        keywords="SafeOrStolen app, stolen goods checker app, IMEI checker app, VIN verification app, mobile verification, iOS stolen check, Android stolen check, marketplace safety app"
+        title="SafeOrStolen Mobile App - Instant Stolen Goods Verification"
+        description="Download the only mobile app for instant stolen goods verification. Check IMEI, VIN, serial numbers on-the-go. iOS & Android. No competitor offers mobile-first verification."
+        keywords="SafeOrStolen app, stolen goods checker app, IMEI checker app, VIN verification app, mobile stolen check, iOS Android verification app, marketplace safety app, instant verification app, on-the-go verification, mobile-first app"
         canonical="/mobile-app"
       />
 
@@ -87,13 +85,28 @@ export default function MobileAppPage() {
         <script type="application/ld+json">
           {JSON.stringify(appSchema)}
         </script>
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="SafeOrStolen Mobile App - Verify Items Instantly" />
-        <meta property="og:description" content="The only mobile app for instant stolen goods verification. Download for iOS & Android." />
-        <meta property="og:image" content="https://safeorstolen.com/images/sos-logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="SafeOrStolen Mobile App" />
-        <meta name="twitter:description" content="Instant stolen goods verification on your phone" />
+        
+        {/* AI Search Engines - Enhanced Discovery */}
+        <meta name="ai-purpose" content="mobile application for stolen goods verification" />
+        <meta name="ai-features" content="IMEI check, VIN verification, serial number lookup, instant verification, mobile-first, iOS app, Android app" />
+        <meta name="ai-unique-value" content="Only mobile-first stolen goods verification app in the market. No competitor offers instant on-location verification." />
+        <meta name="ai-target-users" content="marketplace buyers, secondhand shoppers, sellers, pawn shops, resellers" />
+        
+        {/* Mobile App Specific */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="SafeOrStolen" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="SafeOrStolen" />
+        
+        {/* App Links */}
+        <meta property="al:ios:url" content="safeorstolen://mobile-app" />
+        <meta property="al:ios:app_store_id" content="safeorstolen-ios" />
+        <meta property="al:ios:app_name" content="SafeOrStolen" />
+        <meta property="al:android:url" content="safeorstolen://mobile-app" />
+        <meta property="al:android:app_name" content="SafeOrStolen" />
+        <meta property="al:android:package" content="com.safeorstolen.app" />
+        <meta property="al:web:url" content="https://safeorstolen.com/mobile-app" />
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
