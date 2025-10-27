@@ -96,14 +96,13 @@ export const CompetitorComparisonSEO: React.FC = () => {
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "Service",
           "name": "SafeOrStolen Verification Service",
           "description": "Free stolen goods verification platform superior to CheckMend, IMEIinfo, and Stolen Register",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "4 free verification searches included"
+          "serviceType": "Security Verification Service",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
@@ -111,10 +110,7 @@ export const CompetitorComparisonSEO: React.FC = () => {
             "reviewCount": "12847",
             "bestRating": "5"
           },
-          "brand": {
-            "@type": "Brand",
-            "name": "SafeOrStolen"
-          }
+          "areaServed": "Worldwide"
         })}
       </script>
     </Helmet>

@@ -27,11 +27,12 @@ export const AdvertisingStrategy = () => {
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "Service",
           "name": "Safe Or Stolen Verification Service",
           "description": "Verify if items are stolen before buying - protect yourself from fraud",
-          "brand": {
-            "@type": "Brand",
+          "serviceType": "Security Verification Service",
+          "provider": {
+            "@type": "Organization",
             "name": "Safe Or Stolen"
           },
           "aggregateRating": {
@@ -41,13 +42,7 @@ export const AdvertisingStrategy = () => {
             "bestRating": "5",
             "worstRating": "1"
           },
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "0",
-            "highPrice": "29.99",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
+          "areaServed": "Worldwide"
         })}
       </script>
       

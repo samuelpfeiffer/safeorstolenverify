@@ -94,24 +94,26 @@ const ComparisonCheckMendPage = () => {
       "@type": "ItemList",
       "itemListElement": [
         {
-          "@type": "Product",
+          "@type": "Service",
           "name": "SafeOrStolen",
           "description": "Global stolen item verification platform with free searches and mobile apps",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+          "serviceType": "Verification Service",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "areaServed": "Worldwide"
         },
         {
-          "@type": "Product",
+          "@type": "Service",
           "name": "CheckMEND",
           "description": "UK-focused stolen phone checker",
-          "offers": {
-            "@type": "Offer",
-            "price": "2.99",
-            "priceCurrency": "GBP"
-          }
+          "serviceType": "Verification Service",
+          "provider": {
+            "@type": "Organization",
+            "name": "CheckMEND"
+          },
+          "areaServed": "United Kingdom"
         }
       ]
     }

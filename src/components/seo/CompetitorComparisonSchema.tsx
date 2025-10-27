@@ -44,25 +44,21 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
       "@type": "ItemList",
       "itemListElement": [
         {
-          "@type": "Product",
+          "@type": "Service",
           "position": 1,
           "name": "SafeOrStolen",
           "description": "Global stolen item verification platform with free searches and mobile apps",
-          "brand": {
-            "@type": "Brand",
+          "serviceType": "Verification Service",
+          "provider": {
+            "@type": "Organization",
             "name": "SafeOrStolen"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.8",
             "ratingCount": "12847"
           },
+          "areaServed": "Worldwide",
           "additionalProperty": [
             {
               "@type": "PropertyValue",
@@ -87,20 +83,16 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
           ]
         },
         {
-          "@type": "Product",
+          "@type": "Service",
           "position": 2,
           "name": data.name,
           "description": data.description,
-          "brand": {
-            "@type": "Brand",
+          "serviceType": "Verification Service",
+          "provider": {
+            "@type": "Organization",
             "name": data.name
           },
-          "offers": {
-            "@type": "Offer",
-            "price": data.price,
-            "priceCurrency": data.currency,
-            "availability": "https://schema.org/InStock"
-          },
+          "areaServed": data.coverage,
           "additionalProperty": [
             {
               "@type": "PropertyValue",

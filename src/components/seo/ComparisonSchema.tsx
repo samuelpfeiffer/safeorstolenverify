@@ -25,12 +25,12 @@ export const ComparisonSchema = ({ competitorName, ourProduct, theirProduct }: C
     "description": `Feature-by-feature comparison of ${ourProduct.name} and ${competitorName} for stolen goods verification`,
     "itemOffered": [
       {
-        "@type": "Product",
+        "@type": "Service",
         "name": ourProduct.name,
-        "offers": {
-          "@type": "Offer",
-          "price": ourProduct.price,
-          "priceCurrency": "USD"
+        "serviceType": "Verification Service",
+        "provider": {
+          "@type": "Organization",
+          "name": "SafeOrStolen"
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -44,12 +44,12 @@ export const ComparisonSchema = ({ competitorName, ourProduct, theirProduct }: C
         }))
       },
       {
-        "@type": "Product",
+        "@type": "Service",
         "name": theirProduct.name,
-        "offers": {
-          "@type": "Offer",
-          "price": theirProduct.price,
-          "priceCurrency": "USD"
+        "serviceType": "Verification Service",
+        "provider": {
+          "@type": "Organization",
+          "name": competitorName
         },
         "aggregateRating": theirProduct.rating ? {
           "@type": "AggregateRating",

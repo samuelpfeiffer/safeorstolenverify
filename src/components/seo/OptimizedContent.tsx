@@ -99,15 +99,15 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
         h1: "Enterprise Verification Solutions - Protect Your Marketplace from $2.3M in Fraud",
         schema: {
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "Service",
           "name": "Enterprise Verification API",
           "description": "Professional verification service for marketplaces and businesses",
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock",
-            "price": "Custom",
-            "priceCurrency": "USD"
-          }
+          "serviceType": "API Integration Service",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "areaServed": "Worldwide"
         }
       },
       about: {
