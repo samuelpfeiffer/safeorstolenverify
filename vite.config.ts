@@ -16,12 +16,26 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        runtimeCaching: [{
-          urlPattern: /^https:\/\/.*\.supabase\.co\/.*/i,
-          handler: 'NetworkFirst',
-          options: { cacheName: 'supabase-cache' }
-        }]
+        globPatterns: ['**/*.{js,css,html,ico,svg,woff2}'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/.*\.supabase\.co\/.*/i,
+            handler: 'NetworkFirst',
+            options: { cacheName: 'supabase-cache' }
+          },
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|webp|gif)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'image-cache',
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60
+              }
+            }
+          }
+        ]
       },
       manifest: {
         name: 'SafeOrStolen',
@@ -84,14 +98,15 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('/admin/') || id.includes('Admin')) return 'pages-admin';
             if (id.includes('/blog/') || id.includes('Blog') || id.includes('Post')) return 'pages-blog';
             if (id.match(/\/(Vs|Compare|Competitor|Alternative|SafeOrStolenVs)/i)) return 'pages-seo';
-            if (id.match(/\/(Guide|HowTo|Tutorial|Ultimate|Comprehensive|Avoid)/i)) return 'pages-guides';
-            if (id.match(/\/(Arizona|Florida|California|Texas|City|Local)/)) return 'pages-locations';
+            if (id.match(/\/(Guide|HowTo|Tutorial|Ultimate|Comprehensive|Avoid|Learn|Tips|Report)/i)) return 'pages-guides';
+            if (id.match(/\/(Arizona|Florida|California|Texas|City|Local|NewYork|Illinois)/)) return 'pages-locations';
             if (id.includes('/mobile/') || id.includes('Mobile')) return 'pages-mobile';
             if (id.includes('/templates/') || id.includes('Template')) return 'pages-templates';
             if (id.includes('/fastercapital/') || id.includes('Partner')) return 'pages-partners';
-            if (id.match(/\/(Pricing|Payment|Success|Cancel|Checkout|Enterprise)/)) return 'pages-commerce';
-            if (id.match(/\/(Terms|Privacy|Disclaimer|Cookies|Refund|About|Contact|FAQ|Press)/)) return 'pages-info';
-            if (id.match(/\/(Statistic|Data|Report|Analysis|Performance|Transparency)/)) return 'pages-data';
+            if (id.match(/\/(Pricing|Payment|Success|Cancel|Checkout|Enterprise|Subscription)/)) return 'pages-commerce';
+            if (id.match(/\/(Terms|Privacy|Disclaimer|Cookies|Refund|About|Contact|FAQ|Press|Legal)/)) return 'pages-info';
+            if (id.match(/\/(Statistic|Data|Analysis|Performance|Transparency|Problem|Accuracy|Service)/i)) return 'pages-data';
+            if (id.match(/\/(NotFound|Error|404)/i)) return 'pages-utility';
             return 'pages-other';
           }
         },
