@@ -13,9 +13,9 @@ export const createOrganizationSchema = () => ({
   "slogan": "Worldwide Leader in Stolen Item Verification - Global Protection, Local Trust",
   "url": SITE_CONFIG.url,
   "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
-  "foundingDate": "2024",
-  "incorporationDate": "2024",
-  "taxID": "[EIN_NUMBER_PLACEHOLDER]", // User needs to replace with actual EIN
+  "foundingDate": "2025-08",
+  "incorporationDate": "2025-08",
+  "taxID": "39-3892151",
   "founder": [
     {
       "@type": "Person",
@@ -84,10 +84,10 @@ export const createOrganizationSchema = () => ({
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US",
-    "addressRegion": "[STATE_PLACEHOLDER]",
-    "addressLocality": "[CITY_PLACEHOLDER]", 
-    "streetAddress": "[STREET_ADDRESS_PLACEHOLDER]",
-    "postalCode": "[ZIP_CODE_PLACEHOLDER]"
+    "addressRegion": "AZ",
+    "addressLocality": "Peoria", 
+    "streetAddress": "9303 W Gold Dust Ave",
+    "postalCode": "85345"
   },
   "knowsAbout": [
     "How to check if something is stolen",
@@ -237,25 +237,25 @@ export const createLocalBusinessSchema = () => ({
   "url": SITE_CONFIG.url,
   "telephone": "+1-800-SOS-CHECK",
   "email": "support@safeorstolen.com",
-  "foundingDate": "2024",
-  "taxID": "[EIN_NUMBER_PLACEHOLDER]",
+  "foundingDate": "2025-08",
+  "taxID": "39-3892151",
   "areaServed": "Worldwide",
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates", 
-      "latitude": "39.8283",
-      "longitude": "-98.5795"
+      "latitude": "33.5806",
+      "longitude": "-112.2374"
     },
     "geoRadius": "20000000"
   },
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US",
-    "addressRegion": "[STATE_PLACEHOLDER]",
-    "addressLocality": "[CITY_PLACEHOLDER]", 
-    "streetAddress": "[STREET_ADDRESS_PLACEHOLDER]",
-    "postalCode": "[ZIP_CODE_PLACEHOLDER]"
+    "addressRegion": "AZ",
+    "addressLocality": "Peoria", 
+    "streetAddress": "9303 W Gold Dust Ave",
+    "postalCode": "85345"
   },
   "openingHours": "Mo-Fr 09:00-17:00",
   "currenciesAccepted": "USD",

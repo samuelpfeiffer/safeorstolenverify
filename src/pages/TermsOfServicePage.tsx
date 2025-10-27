@@ -116,7 +116,7 @@ const TermsOfServicePage: React.FC = () => {
                 <h2 className="text-2xl font-bold mb-4">Agreement Overview</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   These Terms of Service ("Terms") constitute a legally binding agreement between you and 
-                  Safe or Stolen Corp., a corporation organized and existing under the laws of [STATE_PLACEHOLDER] ("Company", "we", "us", or "our"), regarding your use of our verification platform, website, mobile applications, 
+                  SAFEORSTOLEN, a corporation organized and existing under the laws of Arizona, incorporated in August 2025 ("Company", "we", "us", or "our"), regarding your use of our verification platform, website, mobile applications,
                   and related services (collectively, the "Services"). Our mission is to combat the $13 billion 
                   stolen goods crisis by providing real-time verification services to consumers and businesses. 
                   By using our Services, you acknowledge that you understand and agree to be bound by these Terms.

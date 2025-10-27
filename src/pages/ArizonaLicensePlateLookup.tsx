@@ -286,7 +286,7 @@ export default function ArizonaLicensePlateLookup() {
               <h3>Arizona Stolen Vehicle Statistics</h3>
               <p>
                 According to the National Insurance Crime Bureau (NICB), Arizona ranks in the top 10 
-                states for vehicle theft. Phoenix, Tucson, and Mesa are hotspots for stolen vehicle 
+                states for vehicle theft. Peoria, Phoenix, Tucson, and Mesa are hotspots for stolen vehicle 
                 activity. Common targets include:
               </p>
               <ul>

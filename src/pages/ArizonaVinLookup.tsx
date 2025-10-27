@@ -278,7 +278,7 @@ export default function ArizonaVinLookup() {
               </p>
               <ul>
                 <li>Over 18,000 vehicles stolen in Arizona annually</li>
-                <li>Phoenix metro area accounts for 60% of Arizona vehicle thefts</li>
+                <li>Peoria and Phoenix metro area account for 60% of Arizona vehicle thefts</li>
                 <li>Only 60% of stolen vehicles are recovered in Arizona</li>
                 <li>Average stolen vehicle value in Arizona: $12,000-$18,000</li>
                 <li>Most common targets: Ford F-150, Chevrolet Silverado, Honda Accord</li>

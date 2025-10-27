@@ -12,14 +12,16 @@ export const LocalSEO: React.FC = () => {
     "email": "support@safeorstolen.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Phoenix",
+      "streetAddress": "9303 W Gold Dust Ave",
+      "addressLocality": "Peoria",
       "addressRegion": "AZ",
+      "postalCode": "85345",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "33.4484",
-      "longitude": "-112.0740"
+      "latitude": "33.5806",
+      "longitude": "-112.2374"
     },
     "areaServed": [
       {
@@ -86,9 +88,9 @@ export const LocalSEO: React.FC = () => {
       
       {/* Local Business Meta Tags */}
       <meta name="geo.region" content="US-AZ" />
-      <meta name="geo.placename" content="Phoenix" />
-      <meta name="geo.position" content="33.4484;-112.0740" />
-      <meta name="ICBM" content="33.4484, -112.0740" />
+      <meta name="geo.placename" content="Peoria" />
+      <meta name="geo.position" content="33.5806;-112.2374" />
+      <meta name="ICBM" content="33.5806, -112.2374" />
       
       {/* Service Area */}
       <meta name="coverage" content="Worldwide" />

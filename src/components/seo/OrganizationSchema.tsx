@@ -35,6 +35,7 @@ export const OrganizationSchema = () => {
     ],
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9303 W Gold Dust Ave",
       "addressLocality": "Peoria",
       "addressRegion": "AZ",
       "postalCode": "85345",
