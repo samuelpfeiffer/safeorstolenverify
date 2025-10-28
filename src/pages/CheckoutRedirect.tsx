@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
+import { isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -10,6 +11,20 @@ const CheckoutRedirect: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // CRITICAL: If we're still in iframe, force escape AGAIN
+    if (isInIframe()) {
+      console.log('[CHECKOUT-REDIRECT] Still in iframe, escaping to top window');
+      const fullUrl = window.location.href;
+      try {
+        if (window.top) {
+          (window.top as Window).location.href = fullUrl;
+        }
+      } catch {
+        window.open(fullUrl, '_top');
+      }
+      return; // Stop execution in iframe context
+    }
+
     const createCheckout = async () => {
       const priceId = searchParams.get('priceId');
       const planName = searchParams.get('planName');
