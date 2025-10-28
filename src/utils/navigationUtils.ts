@@ -7,6 +7,27 @@ export const isInIframe = (): boolean => {
   }
 };
 
+// CRITICAL: Escape iframe before making Stripe API calls
+// This navigates to a page outside iframe context before creating checkout session
+export const escapeIframeAndNavigate = (path: string) => {
+  const fullUrl = `${window.location.origin}${path}`;
+  
+  if (isInIframe() && window.top) {
+    try {
+      // Navigate top-level window out of iframe
+      (window.top as Window).location.href = fullUrl;
+      return;
+    } catch {
+      // Fallback for cross-origin restrictions
+      window.location.href = fullUrl;
+      return;
+    }
+  }
+  
+  // Not in iframe, just navigate normally
+  window.location.href = fullUrl;
+};
+
 export const navigateOutOfIframe = (url: string, newTab = false) => {
   if (newTab) {
     // CRITICAL: Use window.top.open when in iframe to escape iframe security context

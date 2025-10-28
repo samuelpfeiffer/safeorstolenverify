@@ -4,28 +4,32 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useOneTimePayment } from '@/hooks/useOneTimePayment';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Badge } from '@/components/ui/badge';
 import { formatPrice, SUBSCRIPTION_TIERS } from '@/features/pricing';
-import { Loader2, ShieldCheck, Receipt } from 'lucide-react';
+import { ShieldCheck, Receipt } from 'lucide-react';
 
 const OneTimePaymentTest: React.FC = () => {
   const { isAuthenticated } = useUnifiedAuth();
-  const { createOneTimePayment, isLoading } = useOneTimePayment();
   const [serialNumber, setSerialNumber] = useState('');
   const [itemType, setItemType] = useState('phone');
 
-  const handlePurchase = async () => {
+  const handlePurchase = () => {
     if (!serialNumber.trim()) return;
     
-    const checkoutUrl = await createOneTimePayment(serialNumber, itemType);
+    // CRITICAL FIX: Redirect to checkout page OUTSIDE iframe
+    // This page will then create the Stripe session and redirect to Stripe
+    const { escapeIframeAndNavigate } = require('@/utils/navigationUtils');
     
-    if (checkoutUrl) {
-      // Use navigateOutOfIframe to properly escape iframe context
-      const { navigateOutOfIframe } = await import('@/utils/navigationUtils');
-      navigateOutOfIframe(checkoutUrl, true);
-    }
+    const params = new URLSearchParams({
+      priceId: 'price_1Rz83i2eGaMDLFHonAmu86lS', // $10 Report
+      planName: 'Single Verification',
+      isSubscription: 'false',
+      serialNumber,
+      itemType,
+    });
+    
+    escapeIframeAndNavigate(`/checkout-redirect?${params.toString()}`);
   };
 
   const reportProduct = SUBSCRIPTION_TIERS.payPerUse; // Single payment option
@@ -100,20 +104,11 @@ const OneTimePaymentTest: React.FC = () => {
       <CardFooter>
         <Button 
           onClick={handlePurchase}
-          disabled={!isAuthenticated || !serialNumber.trim() || isLoading}
+          disabled={!isAuthenticated || !serialNumber.trim()}
           className="w-full"
           size="lg"
         >
-          {isLoading ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Creating Payment...
-            </>
-          ) : (
-            <>
-              Purchase Report for {formatPrice(reportProduct.price)}
-            </>
-          )}
+          Purchase Report for {formatPrice(reportProduct.price)}
         </Button>
       </CardFooter>
     </Card>

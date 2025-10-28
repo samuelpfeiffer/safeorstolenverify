@@ -48,6 +48,7 @@ const SecurityDashboard = lazy(() => import('@/pages/SecurityDashboard'));
 const AutonomousSystemPage = lazy(() => import('@/pages/AutonomousSystemPage'));
 const AIOptimizerPage = lazy(() => import('@/pages/AIOptimizerPage'));
 const AIExecutivePage = lazy(() => import('@/pages/AIExecutivePage'));
+const CheckoutRedirect = lazy(() => import('@/pages/CheckoutRedirect'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 
 // Mobile Pages
@@ -187,6 +188,9 @@ export const AppRoutes: React.FC = () => {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Index />} />
+        
+        {/* Checkout Redirect - Escapes iframe before Stripe API call */}
+        <Route path="/checkout-redirect" element={<CheckoutRedirect />} />
           
           {/* SEO-Focused Landing Pages for Stolen Item Searches */}
           <Route path="stolen-item-checker" element={<StolenItemChecker />} />
