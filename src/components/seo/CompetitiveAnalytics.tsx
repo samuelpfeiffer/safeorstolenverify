@@ -55,33 +55,6 @@ export const CompetitiveAnalytics: React.FC = () => {
         })}
       </script>
       
-      {/* Market Domination Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "CompetitiveProduct",
-          "name": "SafeOrStolen Verification Platform",
-          "description": "Superior stolen goods verification technology outranking CheckSerial, StolenProperty, and other competitors",
-          "category": "Consumer Protection Software",
-          "competitorOf": [
-            "checkserial.com",
-            "stolenproperty.com", 
-            "imeicheck.net",
-            "carfax.com",
-            "swappa.com"
-          ],
-          "advantages": [
-            "Real-time verification",
-            "Comprehensive database coverage",
-            "Free consumer access",
-            "Enterprise API integration",
-            "Global law enforcement partnerships"
-          ],
-          "marketPosition": "Industry Leader",
-          "trustScore": "98%",
-          "userSatisfaction": "4.9/5"
-        })}
-      </script>
     </Helmet>
   );
 };

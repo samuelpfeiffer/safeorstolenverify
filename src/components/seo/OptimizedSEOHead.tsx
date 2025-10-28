@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface OptimizedSEOHeadProps {
   title: string;
@@ -23,14 +23,16 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   structuredData,
   noIndex = false
 }) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
+  const location = useSafeLocation();
+  const searchParams = location ? new URLSearchParams(location.search) : new URLSearchParams();
   
-  // Check if URL has search parameters that should not be indexed
-  const hasBlockedParams = searchParams.has('search') || 
-                           searchParams.has('q') || 
-                           searchParams.has('query') ||
-                           searchParams.has('serialNumber');
+  // Check if URL has search parameters that should not be indexed (only if location exists)
+  const hasBlockedParams = location ? (
+    searchParams.has('search') || 
+    searchParams.has('q') || 
+    searchParams.has('query') ||
+    searchParams.has('serialNumber')
+  ) : false;
   
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://safeorstolen.com${canonical}` : undefined;

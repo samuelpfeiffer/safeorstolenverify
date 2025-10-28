@@ -1,7 +1,7 @@
 import React from 'react';
 import { OptimizedSEOHead } from './OptimizedSEOHead';
 import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface PageSEOProps {
   title: string;
@@ -24,8 +24,12 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   canonical: customCanonical,
   structuredData
 }) => {
-  const location = useLocation();
-  const canonical = customCanonical ? getCanonicalUrl(customCanonical) : getCanonicalUrl(location.pathname);
+  const location = useSafeLocation();
+  const canonical = customCanonical 
+    ? getCanonicalUrl(customCanonical) 
+    : location 
+      ? getCanonicalUrl(location.pathname)
+      : getCanonicalUrl('/'); // Fallback to homepage if Router context unavailable
 
   // Ensure structuredData is always an array for OptimizedSEOHead
   const normalizedStructuredData = structuredData 
