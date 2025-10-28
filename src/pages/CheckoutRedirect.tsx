@@ -7,8 +7,9 @@ import { isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const { session } = useUnifiedAuth();
+  const { session, isAuthenticated, loading } = useUnifiedAuth();
   const [error, setError] = useState<string | null>(null);
+  const [sessionWaitCount, setSessionWaitCount] = useState(0);
 
   useEffect(() => {
     // CRITICAL: If we're still in iframe, force escape AGAIN
@@ -25,6 +26,14 @@ const CheckoutRedirect: React.FC = () => {
       return; // Stop execution in iframe context
     }
 
+    console.log('[CHECKOUT-REDIRECT] Outside iframe, session status:', { 
+      hasSession: !!session, 
+      isAuthenticated,
+      loading,
+      sessionWaitCount,
+      sessionAccessToken: session?.access_token ? 'present' : 'missing' 
+    });
+
     const createCheckout = async () => {
       const priceId = searchParams.get('priceId');
       const planName = searchParams.get('planName');
@@ -32,10 +41,30 @@ const CheckoutRedirect: React.FC = () => {
       const serialNumber = searchParams.get('serialNumber');
       const itemType = searchParams.get('itemType');
 
-      if (!priceId || !session) {
-        setError('Missing required parameters or not authenticated');
+      console.log('[CHECKOUT-REDIRECT] Parameters:', { priceId, planName, isSubscription, serialNumber, itemType });
+
+      if (!priceId) {
+        console.error('[CHECKOUT-REDIRECT] Missing priceId');
+        setError('Missing price information');
         return;
       }
+
+      // Wait for session to be available
+      if (loading || !session || !session.access_token) {
+        console.log('[CHECKOUT-REDIRECT] Waiting for session...', { loading, hasSession: !!session, waitCount: sessionWaitCount });
+        
+        // Prevent infinite waiting
+        if (sessionWaitCount > 20) {
+          console.error('[CHECKOUT-REDIRECT] Session timeout after 20 attempts');
+          setError('Authentication session timeout. Please try again.');
+          return;
+        }
+        
+        setSessionWaitCount(prev => prev + 1);
+        return;
+      }
+
+      console.log('[CHECKOUT-REDIRECT] Session ready, creating checkout...');
 
       try {
         console.log('Creating checkout outside iframe:', { priceId, planName, isSubscription });
@@ -76,7 +105,7 @@ const CheckoutRedirect: React.FC = () => {
     };
 
     createCheckout();
-  }, [searchParams, session]);
+  }, [searchParams, session, loading, sessionWaitCount]);
 
   if (error) {
     return (

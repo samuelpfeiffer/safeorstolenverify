@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
-import { escapeIframeAndNavigate } from '@/utils/navigationUtils';
+import { isInIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
 
 const PricingPage = () => {
@@ -76,17 +75,27 @@ const PricingPage = () => {
       // Determine if this is a subscription or one-time payment based on interval
       const isSubscription = tierData.interval === 'month';
 
-      console.log('[SUBSCRIPTION-DEBUG] Escaping iframe and redirecting to checkout page');
+      console.log('[SUBSCRIPTION-DEBUG] Creating checkout in new window to bypass iframe');
       
-      // CRITICAL FIX: Redirect to checkout page OUTSIDE iframe
-      // This page will then create the Stripe session and redirect to Stripe
-      const params = new URLSearchParams({
+      // CRITICAL FIX: Open in new tab to completely bypass iframe restrictions
+      const checkoutUrl = `${window.location.origin}/checkout-redirect?${new URLSearchParams({
         priceId,
         planName: tierData.name || tier,
         isSubscription: String(isSubscription),
-      });
+      }).toString()}`;
       
-      escapeIframeAndNavigate(`/checkout-redirect?${params.toString()}`);
+      console.log('[SUBSCRIPTION-DEBUG] Opening checkout URL:', checkoutUrl);
+      
+      // Open in new tab - this completely bypasses iframe security
+      const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+      
+      if (!newWindow) {
+        toast({
+          title: "Pop-up Blocked",
+          description: "Please allow pop-ups for this site to complete checkout.",
+          variant: "destructive",
+        });
+      }
       
     } catch (error: any) {
       console.error('Subscription error:', error);
