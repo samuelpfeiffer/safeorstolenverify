@@ -46,8 +46,8 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
       }
 
       if (data?.url) {
-        // Ensure Stripe loads outside the preview iframe
-        navigateOutOfIframe(data.url as string);
+        // Always open Stripe in new tab to avoid iframe blocking
+        navigateOutOfIframe(data.url as string, true);
       } else {
         throw new Error('No checkout URL received');
       }

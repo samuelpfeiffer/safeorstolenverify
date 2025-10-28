@@ -49,6 +49,8 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
 
       if (data?.url) {
         console.log("Checkout URL created:", data.url);
+        // Open in new tab to avoid iframe blocking
+        window.open(data.url, '_blank', 'noopener,noreferrer');
         return data.url;
       }
 
