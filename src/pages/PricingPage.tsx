@@ -13,23 +13,20 @@ import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
-import { navigateOutOfIframe } from '@/utils/navigationUtils';
+import { escapeIframeAndNavigate } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const { 
-    createSubscriptionCheckout, 
     isLoading: subscriptionLoading,
     error: subscriptionError 
   } = useEnhancedSubscription();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
-  const [stripeCheckoutUrl, setStripeCheckoutUrl] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);
   const [searchParams] = useSafeSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { createOneTimePayment, isLoading: reportLoading } = useOneTimePayment();
 
   // Remove duplicate price IDs - using centralized pricing config
@@ -53,26 +50,7 @@ const PricingPage = () => {
       return;
     }
 
-    // Clear any existing timeout
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
     setLoadingTier(tier);
-    setStripeCheckoutUrl(null);
-    setHasError(false);
-
-    // Set a timeout for the entire operation
-    timeoutRef.current = setTimeout(() => {
-      setLoadingTier(null);
-      setHasError(true);
-      toast({
-        title: 'Request timeout',
-        description: 'The checkout request is taking too long. The payment system may be temporarily unavailable. Please try again in a moment.',
-        variant: 'destructive',
-        duration: 10000,
-      });
-    }, 20000);
 
     try {
       const tierData = getSubscriptionTier(tier);
@@ -82,7 +60,6 @@ const PricingPage = () => {
       console.log('[SUBSCRIPTION-DEBUG] Tier requested:', tier);
       console.log('[SUBSCRIPTION-DEBUG] Tier data found:', tierData);
       console.log('[SUBSCRIPTION-DEBUG] Price ID:', priceId);
-      console.log('[SUBSCRIPTION-DEBUG] Is authenticated:', isAuthenticated);
       
       if (!priceId) {
         console.error('[SUBSCRIPTION-DEBUG] ERROR: No price ID found for tier:', tier);
@@ -92,97 +69,37 @@ const PricingPage = () => {
           description: `This subscription plan (${tier}) is not configured. Available plans: ${Object.keys(SUBSCRIPTION_TIERS).join(', ')}`,
           variant: "destructive",
         });
+        setLoadingTier(null);
         return;
       }
-      
-      console.log('[SUBSCRIPTION-DEBUG] Price ID validated, calling createSubscriptionCheckout...');
 
       // Determine if this is a subscription or one-time payment based on interval
       const isSubscription = tierData.interval === 'month';
 
-      console.log('Creating checkout for tier:', tier, 'priceId:', priceId, 'isSubscription:', isSubscription);
+      console.log('[SUBSCRIPTION-DEBUG] Escaping iframe and redirecting to checkout page');
       
-      let checkoutUrl: string | null = null;
-      
-      if (isSubscription) {
-        // Use subscription checkout for monthly plans
-        console.log('[SUBSCRIPTION-DEBUG] Calling createSubscriptionCheckout with priceId:', priceId);
-        try {
-          checkoutUrl = await createSubscriptionCheckout(priceId);
-          console.log('[SUBSCRIPTION-DEBUG] Checkout URL received:', checkoutUrl ? 'SUCCESS' : 'NULL');
-        } catch (err) {
-          console.error('[SUBSCRIPTION-DEBUG] createSubscriptionCheckout error:', err);
-          throw err;
-        }
-      } else {
-        // Use one-time payment for pay-per-use plans
-        console.log('[ONE-TIME-DEBUG] Creating one-time payment checkout with priceId:', priceId);
-        checkoutUrl = await createOneTimePayment(priceId, tierData.name || tier);
-      }
-
-      if (!checkoutUrl) {
-        throw new Error('Payment system did not return a checkout URL. Please try again or contact support.');
-      }
-
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-
-      setStripeCheckoutUrl(checkoutUrl);
-      
-      // Use iframe-safe navigation
-      navigateOutOfIframe(checkoutUrl);
-      
-      toast({ 
-        title: 'Redirecting to payment...', 
-        description: 'Please complete your payment on Stripe.',
-        duration: 3000,
+      // CRITICAL FIX: Redirect to checkout page OUTSIDE iframe
+      // This page will then create the Stripe session and redirect to Stripe
+      const params = new URLSearchParams({
+        priceId,
+        planName: tierData.name || tier,
+        isSubscription: String(isSubscription),
       });
+      
+      escapeIframeAndNavigate(`/checkout-redirect?${params.toString()}`);
       
     } catch (error: any) {
       console.error('Subscription error:', error);
       
-      const errorMessage = error?.message || 'Failed to start subscription. Please try again.';
-      
-      // Show specific error messages for common issues
-      let userFriendlyMessage = errorMessage;
-      let title = 'Subscription Error';
-      
-      if (errorMessage.includes('Failed to fetch') || errorMessage.includes('network')) {
-        title = 'Payment System Unavailable';
-        userFriendlyMessage = 'The payment system is currently unavailable. This could be because:\n\n• Edge functions need to be deployed\n• Stripe integration needs configuration\n• Network connection issues\n\nPlease contact support or try again later.';
-      } else if (errorMessage.includes('Stripe') && errorMessage.includes('configuration')) {
-        title = 'Payment Configuration Required';
-        userFriendlyMessage = 'The Stripe payment system needs to be configured. Please contact support@safeorstolen.com to enable subscriptions.';
-      } else if (errorMessage.includes('price ID') || errorMessage.includes('not found')) {
-        title = 'Plan Configuration Error';
-        userFriendlyMessage = 'This subscription plan is not properly configured in Stripe. Please try a different plan or contact support.';
-      } else if (errorMessage.includes('rate') || errorMessage.includes('limit')) {
-        title = 'Too Many Requests';
-        userFriendlyMessage = 'Please wait a moment before trying again.';
-      } else if (errorMessage.includes('timeout')) {
-        title = 'Request Timeout';
-        userFriendlyMessage = 'The payment system is taking too long to respond. Please try again.';
-      } else if (errorMessage.includes('No checkout URL')) {
-        title = 'Checkout Creation Failed';
-        userFriendlyMessage = 'Unable to create checkout session. The payment system may need to be configured. Please contact support.';
-      }
-      
       toast({
-        title,
-        description: userFriendlyMessage,
+        title: "Configuration Error",
+        description: error?.message || 'Failed to start subscription. Please try again.',
         variant: 'destructive',
-        duration: 10000,
       });
       
-      setHasError(true);
-    } finally {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
       setLoadingTier(null);
     }
-  }, [isAuthenticated, navigate, toast, createSubscriptionCheckout]);
+  }, [isAuthenticated, navigate, toast]);
 
   const handleReport = useCallback(async () => {
     if (!isAuthenticated) {
@@ -243,14 +160,6 @@ const PricingPage = () => {
     }
   }, [isAuthenticated]);
 
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   const handleFreeStart = () => {
     if (!isAuthenticated) {
