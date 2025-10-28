@@ -9,7 +9,18 @@ export const isInIframe = (): boolean => {
 
 export const navigateOutOfIframe = (url: string, newTab = false) => {
   if (newTab) {
-    window.open(url, '_blank', 'noopener');
+    // CRITICAL: Use window.top.open when in iframe to escape iframe security context
+    if (isInIframe() && window.top) {
+      try {
+        (window.top as Window).open(url, '_blank', 'noopener,noreferrer');
+        return;
+      } catch {
+        // Fallback if cross-origin prevents access to window.top
+        window.open(url, '_blank', 'noopener,noreferrer');
+        return;
+      }
+    }
+    window.open(url, '_blank', 'noopener,noreferrer');
     return;
   }
   if (isInIframe() && window.top) {
@@ -17,7 +28,7 @@ export const navigateOutOfIframe = (url: string, newTab = false) => {
       (window.top as Window).location.href = url;
       return;
     } catch {
-      window.open(url, '_blank', 'noopener');
+      window.open(url, '_blank', 'noopener,noreferrer');
       return;
     }
   }

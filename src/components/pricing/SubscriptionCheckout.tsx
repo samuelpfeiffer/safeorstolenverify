@@ -32,10 +32,6 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
     }
 
     setIsLoading(true);
-    
-    // CRITICAL: Open window IMMEDIATELY before async call to prevent popup blocking
-    const checkoutWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
-    
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { priceId, isSubscription: true, planName, redirectUrl: window.location.origin },
@@ -46,25 +42,17 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
 
       if (error) {
         console.error('Checkout error:', error);
-        checkoutWindow?.close();
         throw new Error(error.message || 'Failed to create checkout session');
       }
 
       if (data?.url) {
-        // Navigate pre-opened window to Stripe checkout
-        if (checkoutWindow) {
-          checkoutWindow.location.href = data.url;
-        } else {
-          // Fallback: redirect current page if popup was blocked
-          window.location.href = data.url;
-        }
+        // Use navigateOutOfIframe to properly escape iframe context
+        navigateOutOfIframe(data.url as string, true);
       } else {
-        checkoutWindow?.close();
         throw new Error('No checkout URL received');
       }
     } catch (error) {
       console.error('Error creating checkout session:', error);
-      checkoutWindow?.close();
       toast({
         title: "Payment System Temporarily Unavailable",
         description: "Please try again in a few minutes or contact support if the issue persists.",
