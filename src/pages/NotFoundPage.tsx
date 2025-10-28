@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Home, ArrowLeft, Search } from 'lucide-react';
 import { OptimizedSEOHead } from '@/components/seo/OptimizedSEOHead';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 
 const NotFoundPage: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const isHome = (location.pathname.replace(/\/+$/, '') || '/') === '/';
+  const location = useSafeLocation();
+  const isHome = location ? ((location.pathname.replace(/\/+$/, '') || '/') === '/') : false;
 
   // No useEffect needed - StatusCodeHandler manages this
 

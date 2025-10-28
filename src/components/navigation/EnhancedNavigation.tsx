@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Menu, X, Shield, ChevronDown, Search, Globe, FileText, Users, Settings, Zap } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { trackSEOInteraction } from '@/utils/seo/analyticsOptimizer';
@@ -33,12 +34,12 @@ export const EnhancedNavigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { isAuthenticated, user, signOut } = useUnifiedAuth();
-  const location = useLocation();
+  const location = useSafeLocation();
 
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location.pathname]);
+  }, [location?.pathname]);
 
   // SEO-optimized navigation structure
   const verificationServices: NavigationItem[] = [
@@ -189,6 +190,7 @@ export const EnhancedNavigation: React.FC = () => {
   };
 
   const isActivePath = (path: string): boolean => {
+    if (!location) return false;
     return location.pathname === path || 
            (path !== '/' && location.pathname.startsWith(path));
   };

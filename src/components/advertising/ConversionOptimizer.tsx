@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -7,8 +7,10 @@ import { Helmet } from 'react-helmet-async';
  * Implements conversion tracking, exit-intent, and behavior analytics
  */
 export const ConversionOptimizer: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const [showExitIntent, setShowExitIntent] = useState(false);
+  
+  if (!location) return null;
 
   useEffect(() => {
     // Track conversion funnel steps

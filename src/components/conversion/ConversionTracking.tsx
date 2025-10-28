@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 export const ConversionTracking: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const { user } = useUnifiedAuth();
+  
+  if (!location) return null;
 
   // Track page views
   useEffect(() => {

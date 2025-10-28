@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
  * SEO Audit Component
@@ -8,7 +8,9 @@ import { useLocation } from 'react-router-dom';
  * Helps identify and fix indexing problems
  */
 export const SEOAuditComponent: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
 
   useEffect(() => {
     // SEO Audit checks

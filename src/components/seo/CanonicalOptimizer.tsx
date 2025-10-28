@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface CanonicalOptimizerProps {
   customCanonical?: string;
@@ -9,7 +9,15 @@ interface CanonicalOptimizerProps {
 export const CanonicalOptimizer: React.FC<CanonicalOptimizerProps> = ({
   customCanonical
 }) => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) {
+    return (
+      <Helmet>
+        <link rel="canonical" href={customCanonical || "https://safeorstolen.com/"} />
+      </Helmet>
+    );
+  }
 
   useEffect(() => {
     // Only perform URL canonicalization on production domain

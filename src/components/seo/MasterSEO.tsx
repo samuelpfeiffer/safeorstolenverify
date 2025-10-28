@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
  * Master SEO Component - Single source of truth for all SEO
@@ -11,7 +11,9 @@ import { useLocation } from 'react-router-dom';
  * - Sets correct indexing directives
  */
 export const MasterSEO: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
   
   useEffect(() => {
     // Handle client-side canonical domain enforcement (only if needed)

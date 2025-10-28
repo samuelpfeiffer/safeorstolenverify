@@ -5,12 +5,12 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 // Default, site-wide SEO fallback to ensure every route is indexable with a proper canonical URL
 export const DefaultSEO: React.FC = () => {
-  const location = useLocation();
-  const path = location.pathname.replace(/\/+$/, '') || '/';
+  const location = useSafeLocation();
+  const path = location ? (location.pathname.replace(/\/+$/, '') || '/') : '/';
   const canonical = `https://safeorstolen.com${path === '/' ? '/' : path}`;
 
   const websiteSchema = {

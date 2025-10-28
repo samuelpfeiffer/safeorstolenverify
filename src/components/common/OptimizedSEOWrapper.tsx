@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
 
 interface OptimizedSEOWrapperProps {
@@ -26,8 +26,10 @@ export const OptimizedSEOWrapper: React.FC<OptimizedSEOWrapperProps> = ({
   structuredData,
   children
 }) => {
-  const location = useLocation();
-  const canonical = customCanonical ? getCanonicalUrl(customCanonical) : getCanonicalUrl(location.pathname);
+  const location = useSafeLocation();
+  const canonical = customCanonical 
+    ? getCanonicalUrl(customCanonical) 
+    : getCanonicalUrl(location?.pathname || '/');
   
   const fullTitle = title.includes('Safe Or Stolen') ? title : `${title} | Safe Or Stolen`;
   const robotsContent = noIndex ? 'noindex, nofollow' : 'index, follow, max-snippet:160, max-image-preview:large';

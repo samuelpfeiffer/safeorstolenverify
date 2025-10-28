@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 const routeNames: Record<string, string> = {
   'imei-check': 'IMEI Checker',
@@ -16,7 +17,10 @@ const routeNames: Record<string, string> = {
 };
 
 export const BreadcrumbSchema = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
+  
   const pathSegments = location.pathname.split('/').filter(Boolean);
 
   if (pathSegments.length === 0) return null;

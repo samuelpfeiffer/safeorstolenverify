@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface UnifiedSEOProps {
   title: string;
@@ -28,7 +28,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   structuredData,
   canonical: customCanonical
 }) => {
-  const location = useLocation();
+  const location = useSafeLocation();
   
   // Ensure consistent canonical URL generation
   const getCanonicalUrl = (path: string): string => {
@@ -39,7 +39,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
 
   const canonicalUrl = customCanonical 
     ? getCanonicalUrl(customCanonical)
-    : getCanonicalUrl(location.pathname);
+    : getCanonicalUrl(location?.pathname || '/');
 
   const fullTitle = title.includes('Safe or Stolen') ? title : `${title} | Safe or Stolen`;
   const imageUrl = image.startsWith('http') ? image : `https://safeorstolen.com${image}`;

@@ -1,12 +1,12 @@
-
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { useAuth } from '@/lib/auth';
 import { trackPageView } from '@/utils/analytics';
 import { useToast } from '@/hooks/use-toast';
 
 export const useAuthPageLogic = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const navigate = useNavigate();
   const { user, loading } = useAuth();
   const isAuthenticated = !!user;
@@ -14,7 +14,7 @@ export const useAuthPageLogic = () => {
   
   console.log('🔐 AuthPageLogic state:', { isAuthenticated, loading, user: !!user });
   
-  const searchParams = new URLSearchParams(location.search);
+  const searchParams = new URLSearchParams(location?.search || '');
   const initialMode = searchParams.get('tab') === 'register' ? 'signup' : 'signin';
   const isConfirmed = searchParams.get('confirmed') === 'true';
   const [mode, setMode] = useState<'signin' | 'signup'>(initialMode);

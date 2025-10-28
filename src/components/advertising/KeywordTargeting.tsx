@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
  * Advanced Keyword Targeting System
@@ -7,7 +7,9 @@ import { useLocation } from 'react-router-dom';
  * Targets Google's semantic search and entity recognition
  */
 export const KeywordTargeting = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
 
   useEffect(() => {
     // Inject keyword-rich content into the page dynamically

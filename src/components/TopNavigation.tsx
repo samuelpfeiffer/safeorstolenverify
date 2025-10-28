@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/lib/auth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Menu, X, User, LogOut, Search, Home, Shield, ChevronDown, Users, Briefcase, ShoppingBag, HelpCircle, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
@@ -19,13 +20,13 @@ const TopNavigation: React.FC = () => {
   } = useAuth();
   const isAuthenticated = !!user;
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useSafeLocation();
 
   // Close mobile menu and reset dropdown state on navigation
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenMenu(''); // Reset dropdown menu state
-  }, [location.pathname]);
+  }, [location?.pathname]);
 
   // Handle scroll effect
   useEffect(() => {
@@ -216,7 +217,7 @@ const TopNavigation: React.FC = () => {
 
           {/* Desktop Navigation with Dropdown Menus */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navigationItems.map(item => <Link key={item.href} to={item.href} className={cn("px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px]", location.pathname === item.href ? "text-primary bg-primary/10 border border-primary/20" : "text-foreground hover:text-primary hover:bg-muted/50")}>
+            {navigationItems.map(item => <Link key={item.href} to={item.href} className={cn("px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 min-h-[44px]", location?.pathname === item.href ? "text-primary bg-primary/10 border border-primary/20" : "text-foreground hover:text-primary hover:bg-muted/50")}>
                 {item.label}
               </Link>)}
             
@@ -224,7 +225,7 @@ const TopNavigation: React.FC = () => {
             <Link 
               to="/blog" 
               className={cn("px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 min-h-[44px]", 
-                location.pathname === '/blog' ? "text-sos-orange bg-sos-orange/10" : "text-foreground/90 hover:text-white hover:bg-white/5")}
+                location?.pathname === '/blog' ? "text-sos-orange bg-sos-orange/10" : "text-foreground/90 hover:text-white hover:bg-white/5")}
             >
               Blog
             </Link>

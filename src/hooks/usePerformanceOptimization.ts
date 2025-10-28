@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface PerformanceMetrics {
   loadTime: number;
@@ -16,7 +16,7 @@ interface PerformanceMetrics {
  * Monitors page performance and automatically optimizes
  */
 export const usePerformanceOptimization = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isOptimizing, setIsOptimizing] = useState(false);
 
@@ -96,7 +96,7 @@ export const usePerformanceOptimization = () => {
     lazyLoadComponents();
     prefetchCriticalResources();
 
-  }, [location]);
+  }, [location?.pathname]);
 
   const analyzePerformanceWithAI = async (metrics: PerformanceMetrics) => {
     if (isOptimizing) return;

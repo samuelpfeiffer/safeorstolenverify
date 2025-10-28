@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { ChevronRight, Home } from 'lucide-react';
 import { trackSEOInteraction } from '@/utils/seo/analyticsOptimizer';
 import { Helmet } from 'react-helmet-async';
@@ -19,7 +20,9 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   customBreadcrumbs,
   showHome = true 
 }) => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
 
   // Generate automatic breadcrumbs from URL path
   const generateBreadcrumbs = (): BreadcrumbItem[] => {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 
 interface ConversionEvent {
@@ -11,8 +11,10 @@ interface ConversionEvent {
 }
 
 export const ConversionTracker: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const { user, isAuthenticated } = useUnifiedAuth();
+  
+  if (!location) return null;
 
   const trackEvent = (event: string, properties?: Record<string, any>) => {
     const conversionEvent: ConversionEvent = {
@@ -69,13 +71,13 @@ export const ConversionTracker: React.FC = () => {
 
 // Hook for manual conversion tracking
 export const useConversionTracking = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const { user, isAuthenticated } = useUnifiedAuth();
 
   const trackConversion = (event: string, properties?: Record<string, any>) => {
     const conversionEvent: ConversionEvent = {
       event,
-      page: location.pathname,
+      page: location?.pathname || '/',
       user_id: user?.id,
       timestamp: new Date().toISOString(),
       properties: {

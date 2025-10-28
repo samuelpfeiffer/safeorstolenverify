@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface UnifiedSEOOptimizerProps {
   title: string;
@@ -27,7 +27,7 @@ export const UnifiedSEOOptimizer: React.FC<UnifiedSEOOptimizerProps> = ({
   priorityLevel = 'normal',
   aiOptimized = true
 }) => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const baseUrl = 'https://safeorstolen.com';
   
   // Generate clean canonical URL
@@ -35,7 +35,7 @@ export const UnifiedSEOOptimizer: React.FC<UnifiedSEOOptimizerProps> = ({
     if (canonical) {
       return canonical.startsWith('http') ? canonical : `${baseUrl}${canonical}`;
     }
-    const cleanPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
+    const cleanPath = location?.pathname === '/' ? '/' : (location?.pathname.replace(/\/$/, '') || '/');
     return `${baseUrl}${cleanPath}`;
   };
 

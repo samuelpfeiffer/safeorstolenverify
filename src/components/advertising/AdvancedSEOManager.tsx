@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -7,7 +7,9 @@ import { Helmet } from 'react-helmet-async';
  * Implements real-time keyword targeting, competitor analysis, and content optimization
  */
 export const AdvancedSEOManager = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
 
   useEffect(() => {
     // Track page views with enhanced analytics

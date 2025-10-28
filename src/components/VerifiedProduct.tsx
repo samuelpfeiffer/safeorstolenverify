@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useRealVerification } from '@/hooks/useRealVerification';
 import RealVerificationCard from '@/components/verification/RealVerificationCard';
 import { Smartphone, Loader2, AlertTriangle } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { supabase } from '@/integrations/supabase/client';
 import { normalizeVerificationStatus, type VerificationStatus } from '@/utils/typeGuards';
 
@@ -21,9 +21,9 @@ interface VerificationResult {
 }
 
 const VerifiedProduct = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const [searchParams] = useState<URLSearchParams>(() => {
-    return new URLSearchParams(location.search);
+    return new URLSearchParams(location?.search || '');
   });
   
   const verificationId = searchParams.get('verificationId');

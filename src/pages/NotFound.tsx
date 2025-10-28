@@ -1,16 +1,18 @@
-
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useSafeLocation } from "@/hooks/useSafeLocation";
 
 const NotFound = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
+    if (location) {
+      console.error(
+        "404 Error: User attempted to access non-existent route:",
+        location.pathname
+      );
+    }
+  }, [location?.pathname]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-sos text-white">

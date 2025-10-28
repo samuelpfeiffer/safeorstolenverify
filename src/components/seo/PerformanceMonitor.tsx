@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
  * Performance Monitor Component
@@ -15,7 +15,9 @@ interface PerformanceMetrics {
 }
 
 export const PerformanceMonitor = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
 
   useEffect(() => {
     const metrics: PerformanceMetrics = {};

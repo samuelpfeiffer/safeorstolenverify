@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Home, Shield, Search, FileText, Users } from 'lucide-react';
@@ -11,7 +12,9 @@ interface NavigationLink {
   priority: 'high' | 'medium' | 'low';
 }
 export const SiteNavigationOptimizer: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
+  
+  if (!location) return null;
   const primaryServices: NavigationLink[] = [{
     href: '/imei-check',
     text: 'IMEI Check - Verify Phone Not Stolen',

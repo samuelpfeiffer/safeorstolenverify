@@ -1,4 +1,5 @@
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -7,8 +8,8 @@ import { CheckCircle, AlertTriangle, Shield, ArrowLeft } from 'lucide-react';
 import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 
 export default function VerificationResultsPage() {
-  const location = useLocation();
-  const { result, searchInput } = location.state || {};
+  const location = useSafeLocation();
+  const { result, searchInput } = location?.state || {};
 
   if (!result) {
     return (

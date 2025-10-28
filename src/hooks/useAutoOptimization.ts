@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 interface OptimizationConfig {
   enabled: boolean;
@@ -13,9 +13,13 @@ interface OptimizationConfig {
  * Can be enabled/disabled through admin settings
  */
 export const useAutoOptimization = (config?: Partial<OptimizationConfig>) => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const [isOptimizing, setIsOptimizing] = useState(false);
   const [lastOptimized, setLastOptimized] = useState<Date | null>(null);
+  
+  if (!location) {
+    return { isOptimizing, lastOptimized, optimizePage: async () => {} };
+  }
 
   const defaultConfig: OptimizationConfig = {
     enabled: config?.enabled ?? false,

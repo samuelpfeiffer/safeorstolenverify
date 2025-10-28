@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
  * Enhanced Structured Data Component
@@ -7,8 +7,8 @@ import { useLocation } from 'react-router-dom';
  */
 
 export const EnhancedStructuredData = () => {
-  const location = useLocation();
-  const currentUrl = `https://safeorstolen.com${location.pathname}`;
+  const location = useSafeLocation();
+  const currentUrl = `https://safeorstolen.com${location?.pathname || '/'}`;
 
   // Organization Schema
   const organizationSchema = {
@@ -110,6 +110,7 @@ export const EnhancedStructuredData = () => {
 
   // BreadcrumbList Schema
   const getBreadcrumbSchema = () => {
+    if (!location) return null;
     const pathSegments = location.pathname.split('/').filter(Boolean);
     
     if (pathSegments.length === 0) return null;
@@ -209,7 +210,7 @@ export const EnhancedStructuredData = () => {
       <script type="application/ld+json">
         {JSON.stringify(serviceSchema)}
       </script>
-      {location.pathname.includes('how-it-works') && (
+      {location?.pathname.includes('how-it-works') && (
         <script type="application/ld+json">
           {JSON.stringify(howToSchema)}
         </script>

@@ -1,14 +1,13 @@
-
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 export const ScrollRestoration = () => {
-  const { pathname } = useLocation();
+  const location = useSafeLocation();
   
   useEffect(() => {
     // Scroll to top when pathname changes
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [location?.pathname]);
   
   return null; // This component doesn't render anything
 };

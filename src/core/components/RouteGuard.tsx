@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { useAuth } from '@/lib/auth';
 import { AppLoadingFallback } from './AppLoadingFallback';
 
@@ -18,7 +19,7 @@ export const RouteGuard: React.FC<RouteGuardProps> = ({
 }) => {
   const { user, loading } = useAuth();
   const isAuthenticated = !!user;
-  const location = useLocation();
+  const location = useSafeLocation();
 
   // Show loading while auth state is being determined
   if (loading) {

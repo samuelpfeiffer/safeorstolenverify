@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 
 interface ErrorBoundaryRoutingProps {
@@ -11,7 +12,7 @@ export const ErrorBoundaryRouting: React.FC<ErrorBoundaryRoutingProps> = ({
   children, 
   fallbackPath = '/404' 
 }) => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const navigate = useNavigate();
 
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
@@ -19,8 +20,8 @@ export const ErrorBoundaryRouting: React.FC<ErrorBoundaryRoutingProps> = ({
     console.error('Routing Error:', {
       error: error.message,
       stack: error.stack,
-      location: location.pathname,
-      search: location.search,
+      location: location?.pathname || 'unknown',
+      search: location?.search || '',
       errorInfo
     });
 
@@ -38,7 +39,7 @@ export const ErrorBoundaryRouting: React.FC<ErrorBoundaryRoutingProps> = ({
     }
 
     // Track routing errors for analytics
-    if (typeof window !== 'undefined' && 'gtag' in window) {
+    if (typeof window !== 'undefined' && 'gtag' in window && location) {
       (window as any).gtag('event', 'exception', {
         description: `Routing error on ${location.pathname}: ${error.message}`,
         fatal: false

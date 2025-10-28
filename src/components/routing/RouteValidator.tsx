@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 // Define valid routes for validation
 const VALID_ROUTES = new Set([
@@ -84,8 +85,10 @@ const DYNAMIC_ROUTE_PATTERNS = [
 ];
 
 export const RouteValidator: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const navigate = useNavigate();
+  
+  if (!location) return null;
 
   useEffect(() => {
     const currentPath = location.pathname;

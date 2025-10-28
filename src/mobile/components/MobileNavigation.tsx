@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { Home, Search, History, Settings, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { mobileDetection } from '../utils/mobileDetection';
 
 export const MobileNavigation: React.FC = () => {
-  const location = useLocation();
+  const location = useSafeLocation();
   const isStandalone = mobileDetection.isStandalone();
 
-  if (!isStandalone) return null;
+  if (!isStandalone || !location) return null;
 
   const navItems = [
     { icon: Home, label: 'Home', path: '/' },
