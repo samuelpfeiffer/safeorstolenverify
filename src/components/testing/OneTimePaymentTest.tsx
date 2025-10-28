@@ -19,10 +19,20 @@ const OneTimePaymentTest: React.FC = () => {
   const handlePurchase = async () => {
     if (!serialNumber.trim()) return;
     
+    // CRITICAL: Open window IMMEDIATELY before async call to prevent popup blocking
+    const checkoutWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
+    
     const checkoutUrl = await createOneTimePayment(serialNumber, itemType);
-    if (checkoutUrl) {
-      // Open Stripe checkout in a new tab
-      window.open(checkoutUrl, '_blank');
+    
+    if (checkoutUrl && checkoutWindow) {
+      // Navigate pre-opened window to Stripe checkout
+      checkoutWindow.location.href = checkoutUrl;
+    } else if (checkoutUrl) {
+      // Fallback: redirect current page if popup was blocked
+      window.location.href = checkoutUrl;
+    } else if (checkoutWindow) {
+      // Close empty window if checkout failed
+      checkoutWindow.close();
     }
   };
 

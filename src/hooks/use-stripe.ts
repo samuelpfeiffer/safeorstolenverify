@@ -51,8 +51,6 @@ export function useStripe() {
       }
 
       console.log("Checkout session created successfully:", data.url);
-      // Open in new tab to avoid iframe blocking
-      window.open(data.url, '_blank', 'noopener,noreferrer');
       return data.url;
     } catch (error: any) {
       console.error("Error creating checkout session:", error);
