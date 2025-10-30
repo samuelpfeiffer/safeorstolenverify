@@ -75,26 +75,38 @@ const PricingPage = () => {
       // Determine if this is a subscription or one-time payment based on interval
       const isSubscription = tierData.interval === 'month';
 
-      console.log('[SUBSCRIPTION-DEBUG] Creating checkout in new window to bypass iframe');
+      console.log('[SUBSCRIPTION-DEBUG] Preparing checkout redirect');
       
-      // CRITICAL FIX: Open in new tab to completely bypass iframe restrictions
+      // MOBILE-OPTIMIZED: Different behavior for mobile vs desktop
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       const checkoutUrl = `${window.location.origin}/checkout-redirect?${new URLSearchParams({
         priceId,
         planName: tierData.name || tier,
         isSubscription: String(isSubscription),
       }).toString()}`;
       
-      console.log('[SUBSCRIPTION-DEBUG] Opening checkout URL:', checkoutUrl);
+      console.log('[SUBSCRIPTION-DEBUG] Checkout URL:', checkoutUrl, '| Mobile:', isMobile);
       
-      // Open in new tab - this completely bypasses iframe security
-      const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
-      
-      if (!newWindow) {
-        toast({
-          title: "Pop-up Blocked",
-          description: "Please allow pop-ups for this site to complete checkout.",
-          variant: "destructive",
-        });
+      if (isMobile) {
+        // MOBILE: Direct navigation works better than window.open on mobile
+        console.log('[SUBSCRIPTION-DEBUG] Mobile: Using direct navigation');
+        window.location.href = checkoutUrl;
+      } else {
+        // DESKTOP: Open in new tab
+        console.log('[SUBSCRIPTION-DEBUG] Desktop: Opening in new tab');
+        const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+        
+        if (!newWindow) {
+          toast({
+            title: "Pop-up Blocked",
+            description: "Please allow pop-ups for this site to complete checkout.",
+            variant: "destructive",
+          });
+          // Fallback to direct navigation
+          setTimeout(() => {
+            window.location.href = checkoutUrl;
+          }, 1500);
+        }
       }
       
     } catch (error: any) {

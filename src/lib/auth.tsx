@@ -73,16 +73,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let mounted = true;
     let retryCount = 0;
     const MAX_RETRIES = 3;
+    const MOBILE_TIMEOUT = 5000; // 5 second timeout for mobile
 
-    // Get initial session with retry logic
+    // Mobile-optimized session initialization
     const getInitialSession = async () => {
       try {
-        const { data: { session }, error } = await supabase.auth.getSession();
+        // Add timeout for mobile to prevent infinite loading
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Session timeout')), MOBILE_TIMEOUT)
+        );
+        
+        const sessionPromise = supabase.auth.getSession();
+        
+        const result = await Promise.race([sessionPromise, timeoutPromise]) as any;
+        const { data: { session }, error } = result;
         
         if (mounted) {
           if (error) {
             console.error('Error getting session:', error);
-            // Don't fail completely, just log and continue
+            // Continue with no session rather than blocking
           }
           
           setState({
@@ -96,9 +105,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.error('Session initialization error:', error);
         if (mounted && retryCount < MAX_RETRIES) {
           retryCount++;
-          setTimeout(() => getInitialSession(), 1000 * retryCount);
+          console.log(`Retrying session init (${retryCount}/${MAX_RETRIES})...`);
+          setTimeout(() => getInitialSession(), 1000);
         } else if (mounted) {
-          setState(prev => ({ ...prev, loading: false, initialized: true }));
+          // Force initialization complete even if session failed
+          console.warn('Session initialization failed after retries, continuing without session');
+          setState({
+            user: null,
+            session: null,
+            loading: false,
+            initialized: true,
+          });
         }
       }
     };

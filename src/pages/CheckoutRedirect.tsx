@@ -12,9 +12,11 @@ const CheckoutRedirect: React.FC = () => {
   const [sessionWaitCount, setSessionWaitCount] = useState(0);
 
   useEffect(() => {
-    // CRITICAL: If we're still in iframe, force escape AGAIN
-    if (isInIframe()) {
-      console.log('[CHECKOUT-REDIRECT] Still in iframe, escaping to top window');
+    // MOBILE FIX: Don't try to escape iframe on mobile - just work with it
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (!isMobile && isInIframe()) {
+      console.log('[CHECKOUT-REDIRECT] Desktop: Escaping iframe');
       const fullUrl = window.location.href;
       try {
         if (window.top) {
@@ -23,14 +25,15 @@ const CheckoutRedirect: React.FC = () => {
       } catch {
         window.open(fullUrl, '_top');
       }
-      return; // Stop execution in iframe context
+      return;
     }
 
-    console.log('[CHECKOUT-REDIRECT] Outside iframe, session status:', { 
+    console.log('[CHECKOUT-REDIRECT] Session status:', { 
       hasSession: !!session, 
       isAuthenticated,
       loading,
       sessionWaitCount,
+      isMobile,
       sessionAccessToken: session?.access_token ? 'present' : 'missing' 
     });
 
@@ -49,14 +52,18 @@ const CheckoutRedirect: React.FC = () => {
         return;
       }
 
-      // Wait for session to be available
+      // MOBILE: More aggressive session waiting with shorter timeout
       if (loading || !session || !session.access_token) {
         console.log('[CHECKOUT-REDIRECT] Waiting for session...', { loading, hasSession: !!session, waitCount: sessionWaitCount });
         
-        // Prevent infinite waiting
-        if (sessionWaitCount > 20) {
-          console.error('[CHECKOUT-REDIRECT] Session timeout after 20 attempts');
-          setError('Authentication session timeout. Please try again.');
+        // Shorter timeout for mobile (10 attempts = ~5 seconds)
+        const maxWaitAttempts = isMobile ? 10 : 20;
+        if (sessionWaitCount > maxWaitAttempts) {
+          console.error('[CHECKOUT-REDIRECT] Session timeout');
+          setError('Please sign in again to continue with checkout.');
+          setTimeout(() => {
+            window.location.href = '/auth?redirect=pricing';
+          }, 2000);
           return;
         }
         
