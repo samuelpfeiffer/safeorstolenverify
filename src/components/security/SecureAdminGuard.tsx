@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEnhancedSecurityContext } from './EnhancedSecurityProvider';
+import { useAuth } from '@/lib/auth';
+import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle, Shield, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,38 +18,36 @@ export const SecureAdminGuard: React.FC<SecureAdminGuardProps> = ({
   fallbackMessage 
 }) => {
   const navigate = useNavigate();
-  const { hasAdminRole, isSecure, sessionValid, logSecurityEvent, performSecurityCheck } = useEnhancedSecurityContext();
+  const { user, session } = useAuth();
+  const [hasAdminRole, setHasAdminRole] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [accessDeniedLogged, setAccessDeniedLogged] = useState(false);
 
   useEffect(() => {
-    const checkAccess = async () => {
-      setIsLoading(true);
-      
-      // Perform fresh security check
-      await performSecurityCheck();
-      
-      // Log access attempt
-      if (requireAdmin && !hasAdminRole && !accessDeniedLogged) {
-        await logSecurityEvent('ADMIN_ACCESS_DENIED', {
-          required_role: 'admin',
-          has_role: hasAdminRole,
-          secure_context: isSecure,
-          session_valid: sessionValid
-        });
-        setAccessDeniedLogged(true);
-      } else if (hasAdminRole) {
-        await logSecurityEvent('ADMIN_ACCESS_GRANTED', {
-          admin_area: 'admin_guard',
-          timestamp: new Date().toISOString()
-        });
+    const checkAdminRole = async () => {
+      if (!user) {
+        setIsLoading(false);
+        return;
       }
       
-      setIsLoading(false);
+      try {
+        const { data, error } = await supabase.rpc('is_admin_user');
+        
+        if (error) {
+          console.error('Error checking admin role:', error);
+          setHasAdminRole(false);
+        } else {
+          setHasAdminRole(data === true);
+        }
+      } catch (error) {
+        console.error('Admin check failed:', error);
+        setHasAdminRole(false);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
-    checkAccess();
-  }, [hasAdminRole, isSecure, sessionValid, requireAdmin, accessDeniedLogged, logSecurityEvent, performSecurityCheck]);
+    checkAdminRole();
+  }, [user]);
 
   if (isLoading) {
     return (
@@ -66,26 +65,7 @@ export const SecureAdminGuard: React.FC<SecureAdminGuardProps> = ({
     );
   }
 
-  if (!isSecure) {
-    return (
-      <div className="min-h-screen bg-sos text-white flex items-center justify-center">
-        <Card className="bg-sos-dark border-red-500/50 max-w-md">
-          <CardContent className="p-8 text-center">
-            <AlertTriangle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-2 text-white">Insecure Context</h2>
-            <p className="text-gray-300 mb-4">
-              This application requires a secure connection (HTTPS) to function properly.
-            </p>
-            <p className="text-sm text-gray-400">
-              Please ensure you're accessing the application over HTTPS.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
-  if (!sessionValid) {
+  if (!user || !session) {
     return (
       <div className="min-h-screen bg-sos text-white flex items-center justify-center">
         <Card className="bg-sos-dark border-red-500/50 max-w-md">

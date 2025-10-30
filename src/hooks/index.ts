@@ -28,7 +28,6 @@ export * from './useSearchHistory';
 export * from './useReceiptGenerator';
 
 // Security Hooks
-export * from './useEnhancedSecurity';
 export * from './useSecureProfileOperations';
 export * from './useSecureVerificationOperations';
 
