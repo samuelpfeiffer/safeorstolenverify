@@ -1,9 +1,8 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
-// Service Worker registration - deferred to avoid blocking
+// Service Worker registration - deferred
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
@@ -16,8 +15,4 @@ if (!container) {
 }
 
 const root = createRoot(container);
-root.render(
-  <React.StrictMode>
-    <AppRoot />
-  </React.StrictMode>
-);
+root.render(<AppRoot />);

@@ -1,18 +1,17 @@
-import * as React from 'react';
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import TopNavigation from '@/components/TopNavigation';
-import { SOSFooter } from '@/components/layout/SOSFooter';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
+import { AuthProvider } from '@/lib/auth';
+import { PWAProvider } from '@/core/providers/PWAProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { RouteErrorRecovery } from '@/core/routing/RouteErrorRecovery';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { AuthProvider } from '@/lib/auth';
-import { PWAProvider } from '@/core/providers/PWAProvider';
+import TopNavigation from '@/components/TopNavigation';
+import { SOSFooter } from '@/components/layout/SOSFooter';
 import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
@@ -35,39 +34,41 @@ const queryClient = new QueryClient({
 });
 
 /**
- * App Root Component - Optimized for Performance
+ * App Root Component - Production Ready
  */
 export const AppRoot: React.FC = () => {
   return (
-    <ErrorBoundary>
-      <HelmetProvider>
-        <CriticalResourceLoader />
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <PWAProvider>
-              <ThemeProvider>
-                <Router>
-                  <SearchParamBlocker />
-                  <div className="min-h-screen bg-background text-foreground flex flex-col">
-                    <TopNavigation />
-                    <main className="flex-1 pt-20">
-                      <RouteErrorRecovery>
-                        <Suspense fallback={<AppLoadingScreen />}>
-                          <AppRoutes />
-                        </Suspense>
-                      </RouteErrorRecovery>
-                    </main>
-                    <SOSFooter />
-                  </div>
-                  <PWAInstallManager />
-                  <MobileNavigation />
-                  <Toaster />
-                </Router>
-              </ThemeProvider>
-            </PWAProvider>
-          </AuthProvider>
-        </QueryClientProvider>
-      </HelmetProvider>
-    </ErrorBoundary>
+    <React.StrictMode>
+      <ErrorBoundary>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <PWAProvider>
+                <ThemeProvider>
+                  <Router>
+                    <CriticalResourceLoader />
+                    <SearchParamBlocker />
+                    <div className="min-h-screen bg-background text-foreground flex flex-col">
+                      <TopNavigation />
+                      <main className="flex-1 pt-20">
+                        <RouteErrorRecovery>
+                          <Suspense fallback={<AppLoadingScreen />}>
+                            <AppRoutes />
+                          </Suspense>
+                        </RouteErrorRecovery>
+                      </main>
+                      <SOSFooter />
+                    </div>
+                    <PWAInstallManager />
+                    <MobileNavigation />
+                    <Toaster />
+                  </Router>
+                </ThemeProvider>
+              </PWAProvider>
+            </AuthProvider>
+          </QueryClientProvider>
+        </HelmetProvider>
+      </ErrorBoundary>
+    </React.StrictMode>
   );
 };
