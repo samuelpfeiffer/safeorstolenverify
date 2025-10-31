@@ -1,15 +1,7 @@
-import * as React from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-
-// HMR Safety Check - Prevent React context corruption
-if (import.meta.env.DEV && (!React || typeof React.useState !== 'function')) {
-  console.error('React is corrupted, forcing reload...');
-  window.location.reload();
-  throw new Error('React context corrupted - reloading');
-}
 
 export interface AuthUser {
   id: string;
@@ -52,14 +44,6 @@ const transformUser = (user: User | null): AuthUser | null => {
 };
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  // HMR Safety: Verify React is available before using hooks
-  if (import.meta.env.DEV && !React) {
-    console.error('React is null in AuthProvider');
-    window.location.reload();
-    return null;
-  }
-
-  // React hooks MUST be called unconditionally at the top level
   const [state, setState] = useState<AuthState>({
     user: null,
     session: null,
@@ -90,7 +74,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         
         if (mounted) {
           if (error) {
-            console.error('Error getting session:', error);
             // Continue with no session rather than blocking
           }
           
@@ -102,14 +85,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           });
         }
       } catch (error) {
-        console.error('Session initialization error:', error);
         if (mounted && retryCount < MAX_RETRIES) {
           retryCount++;
-          console.log(`Retrying session init (${retryCount}/${MAX_RETRIES})...`);
           setTimeout(() => getInitialSession(), 1000);
         } else if (mounted) {
           // Force initialization complete even if session failed
-          console.warn('Session initialization failed after retries, continuing without session');
           setState({
             user: null,
             session: null,
@@ -125,11 +105,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       (event, session) => {
         if (!mounted) return;
 
-        // Handle token refresh errors gracefully
-        if (event === 'TOKEN_REFRESHED') {
-          console.log('Auth token refreshed successfully');
-        }
-        
         setState({
           user: transformUser(session?.user || null),
           session,
