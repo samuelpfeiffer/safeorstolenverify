@@ -214,6 +214,47 @@ setStorageItem('data', value, 60); // 60-minute expiry
 
 ---
 
+## 7. Input Validation in Edge Functions
+
+**Status**: ✅ Partially Implemented - Critical functions secured
+
+Server-side input validation has been added to prevent injection attacks and API abuse.
+
+### What's Been Done:
+
+1. Created shared validation utility (`supabase/functions/_shared/validation.ts`)
+2. Implemented validation in critical edge functions:
+   - ✅ `api-v1-check` - Serial, VIN, IMEI validation
+   - ✅ `verify-checkmend` - Serial number validation
+   - ✅ `nicb-vincheck` - VIN validation
+
+### What Still Needs Validation:
+
+High priority functions that process user inputs:
+- `verify-firearm-hotgunz`
+- `verify-claude-analysis`
+- `enhanced-verification`
+- `arizona-theft-lookup`
+- `api-verify`
+
+**See Complete Guide**: `supabase/functions/INPUT_VALIDATION_GUIDE.md`
+
+### Key Validation Functions Available:
+
+```typescript
+// In your edge function
+import { validateSerialNumber, validateVIN, validateIMEI } from '../_shared/validation.ts';
+
+const validation = validateSerialNumber(userInput);
+if (!validation.success) {
+  return errorResponse(validation.error);
+}
+
+const cleanInput = validation.data!; // Safe to use
+```
+
+---
+
 ## Security Checklist
 
 Use this checklist to track your security setup:
@@ -225,6 +266,8 @@ Use this checklist to track your security setup:
 - [ ] Audited SECURITY DEFINER functions for search_path
 - [ ] Updated localStorage usage to use secure storage
 - [ ] Reviewed error handling in custom code
+- [x] Implemented server-side input validation in edge functions
+- [ ] Updated remaining edge functions with validation (see INPUT_VALIDATION_GUIDE.md)
 
 ---
 

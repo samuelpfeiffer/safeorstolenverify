@@ -1,6 +1,7 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { validateSerialNumber } from '../_shared/validation.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -33,10 +34,26 @@ serve(async (req) => {
       throw new Error('Serial number and item type are required')
     }
 
-    console.log(`CheckMend verification for ${itemType}: ${serialNumber}`)
+    // Server-side input validation
+    const validation = validateSerialNumber(serialNumber);
+    if (!validation.success) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: validation.error
+        }),
+        { 
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
 
-    // Check cache first
-    const cacheKey = `checkmend_${serialNumber}_${itemType}`.toLowerCase()
+    const cleanSerial = validation.data!;
+    console.log(`CheckMend verification for ${itemType}: ${cleanSerial}`)
+
+    // Check cache first (use clean serial)
+    const cacheKey = `checkmend_${cleanSerial}_${itemType}`.toLowerCase()
     const { data: cachedResult } = await supabase
       .from('checkmend_verification_cache')
       .select('*')
@@ -73,7 +90,7 @@ serve(async (req) => {
             'Accept': 'application/json'
           },
           body: JSON.stringify({
-            serial_number: serialNumber,
+            serial_number: cleanSerial,
             item_type: itemType
           })
         })
@@ -103,11 +120,11 @@ serve(async (req) => {
         }
       } catch (apiError) {
         console.error('CheckMend API error:', apiError)
-        result = getSimulatedResult(serialNumber, itemType)
+        result = getSimulatedResult(cleanSerial, itemType)
       }
     } else {
       // Fallback to simulated results for demo purposes
-      result = getSimulatedResult(serialNumber, itemType)
+      result = getSimulatedResult(cleanSerial, itemType)
     }
 
     // Cache the result for 24 hours
@@ -116,7 +133,7 @@ serve(async (req) => {
       .from('checkmend_verification_cache')
       .upsert({
         cache_key: cacheKey,
-        serial_number: serialNumber,
+        serial_number: cleanSerial,
         item_type: itemType,
         verification_data: result,
         expires_at: expiresAt

@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
+import { validateSerialNumber, validateVIN, validateIMEI } from '../_shared/validation.ts';
 
 interface CheckRequest {
   identifier: string;
@@ -63,18 +64,53 @@ serve(async (req) => {
       );
     }
 
-    // Validate API key and track usage
-    const { data: validationResult } = await supabase.rpc('validate_and_track_api_usage', {
+    // Server-side input validation based on type
+    let validationResult;
+    switch (body.type) {
+      case 'serial':
+        validationResult = validateSerialNumber(body.identifier);
+        break;
+      case 'vin':
+        validationResult = validateVIN(body.identifier);
+        break;
+      case 'imei':
+        validationResult = validateIMEI(body.identifier);
+        break;
+      default:
+        return new Response(
+          JSON.stringify({ error: 'Invalid type. Must be: serial, vin, or imei' }),
+          {
+            status: 400,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+          }
+        );
+    }
+
+    if (!validationResult.success) {
+      return new Response(
+        JSON.stringify({ error: validationResult.error }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
+    // Use validated and sanitized identifier
+    const cleanIdentifier = validationResult.data!;
+
+    // Validate API key and track usage (use clean identifier)
+    const { data: apiValidation } = await supabase.rpc('validate_and_track_api_usage', {
       p_api_key: apiKey,
       p_endpoint: '/api/v1/check',
-      p_identifier: body.identifier,
+      p_identifier: cleanIdentifier,
       p_ip_address: req.headers.get('cf-connecting-ip') || req.headers.get('x-forwarded-for') || 'unknown',
       p_user_agent: req.headers.get('user-agent') || 'unknown'
     });
 
-    if (!validationResult?.valid) {
+    if (!apiValidation?.valid) {
       return new Response(
-        JSON.stringify({ error: validationResult?.error || 'Invalid API key' }), 
+        JSON.stringify({ error: apiValidation?.error || 'Invalid API key' }), 
         { 
           status: 401, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -82,11 +118,11 @@ serve(async (req) => {
       );
     }
 
-    // Look up the item in our verification database
+    // Look up the item in our verification database (use clean identifier)
     const { data: itemData, error: itemError } = await supabase
       .from('verification_items')
       .select('status, message, metadata, verified_at')
-      .eq('identifier', body.identifier)
+      .eq('identifier', cleanIdentifier)
       .eq('item_type', body.type)
       .single();
 
@@ -127,7 +163,7 @@ serve(async (req) => {
         response_status: 200,
         response_time_ms: Date.now() - parseInt(req.headers.get('x-request-start') || '0')
       })
-      .eq('id', validationResult.usage_id);
+      .eq('id', apiValidation.usage_id);
 
     // Send to Zapier webhook for lead capture if configured
     const zapierWebhook = Deno.env.get('ZAPIER_API_CHECK_WEBHOOK');
@@ -137,11 +173,11 @@ serve(async (req) => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            identifier: body.identifier,
+            identifier: cleanIdentifier,
             type: body.type,
             status: response.status,
             timestamp: new Date().toISOString(),
-            api_key_id: validationResult.api_key_id,
+            api_key_id: apiValidation.api_key_id,
             source: 'SafeOrStolen API'
           })
         });

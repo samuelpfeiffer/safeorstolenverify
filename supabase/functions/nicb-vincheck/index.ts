@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
+import { validateVIN } from '../_shared/validation.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -51,12 +52,24 @@ serve(async (req) => {
 
     const { vin, requestType = 'api' }: NICBLookupRequest = await req.json();
 
-    // Validate VIN format (17 characters, alphanumeric, excludes I, O, Q)
-    if (!vin || !/^[A-HJ-NPR-Z0-9]{17}$/i.test(vin)) {
-      throw new Error('Invalid VIN format. VIN must be exactly 17 alphanumeric characters (excluding I, O, Q)');
+    // Server-side VIN validation using shared utility
+    const validation = validateVIN(vin);
+    if (!validation.success) {
+      return new Response(
+        JSON.stringify({
+          status: 'error',
+          message: validation.error,
+          source: 'nicb_vincheck',
+          timestamp: new Date().toISOString()
+        } as NICBLookupResponse),
+        { 
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      );
     }
 
-    const sanitizedVin = vin.trim().toUpperCase();
+    const sanitizedVin = validation.data!;
     console.log(`[NICB-VINCHECK] User ${user.id} requesting VIN check for: ${sanitizedVin}`);
 
     // Check cache first
