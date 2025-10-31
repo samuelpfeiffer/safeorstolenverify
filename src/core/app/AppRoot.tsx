@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
@@ -40,34 +39,32 @@ export const AppRoot: React.FC = () => {
   return (
     <React.StrictMode>
       <ErrorBoundary>
-        <HelmetProvider>
-          <QueryClientProvider client={queryClient}>
-            <AuthProvider>
-              <PWAProvider>
-                <ThemeProvider>
-                  <Router>
-                    <CriticalResourceLoader />
-                    <SearchParamBlocker />
-                    <div className="min-h-screen bg-background text-foreground flex flex-col">
-                      <TopNavigation />
-                      <main className="flex-1 pt-20">
-                        <RouteErrorRecovery>
-                          <Suspense fallback={<AppLoadingScreen />}>
-                            <AppRoutes />
-                          </Suspense>
-                        </RouteErrorRecovery>
-                      </main>
-                      <SOSFooter />
-                    </div>
-                    <PWAInstallManager />
-                    <MobileNavigation />
-                    <Toaster />
-                  </Router>
-                </ThemeProvider>
-              </PWAProvider>
-            </AuthProvider>
-          </QueryClientProvider>
-        </HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <PWAProvider>
+              <ThemeProvider>
+                <Router>
+                  <CriticalResourceLoader />
+                  <SearchParamBlocker />
+                  <div className="min-h-screen bg-background text-foreground flex flex-col">
+                    <TopNavigation />
+                    <main className="flex-1 pt-20">
+                      <RouteErrorRecovery>
+                        <Suspense fallback={<AppLoadingScreen />}>
+                          <AppRoutes />
+                        </Suspense>
+                      </RouteErrorRecovery>
+                    </main>
+                    <SOSFooter />
+                  </div>
+                  <PWAInstallManager />
+                  <MobileNavigation />
+                  <Toaster />
+                </Router>
+              </ThemeProvider>
+            </PWAProvider>
+          </AuthProvider>
+        </QueryClientProvider>
       </ErrorBoundary>
     </React.StrictMode>
   );

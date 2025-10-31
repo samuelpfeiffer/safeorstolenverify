@@ -51,9 +51,10 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "react-helmet-async": path.resolve(__dirname, "./src/shims/react-helmet-async.ts"),
     },
     // CRITICAL: Prevent duplicate React instances that cause context errors
-    dedupe: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'react-helmet-async'],
+    dedupe: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query'],
   },
   optimizeDeps: {
     include: [
