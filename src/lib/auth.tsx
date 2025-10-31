@@ -2,6 +2,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { logAndSanitizeError } from '@/utils/errorSanitizer';
+import { initializeSecureStorage } from '@/utils/secureStorage';
 
 export interface AuthUser {
   id: string;
@@ -58,6 +60,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let retryCount = 0;
     const MAX_RETRIES = 3;
     const MOBILE_TIMEOUT = 5000; // 5 second timeout for mobile
+
+    // Initialize secure storage with expiration
+    initializeSecureStorage();
 
     // Mobile-optimized session initialization
     const getInitialSession = async () => {
@@ -237,10 +242,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               userId: data.user.id
             }
           });
-          console.log("Welcome email sent successfully");
+          // Success - email sent
         } catch (emailError) {
-          console.error("Error sending welcome email:", emailError);
           // Don't fail the signup if email fails
+          // Only log in development
+          if (process.env.NODE_ENV === 'development') {
+            console.error("Error sending welcome email:", emailError);
+          }
         }
       }
 
@@ -261,15 +269,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { success: true };
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
-      const errorMessage = 'An unexpected error occurred';
+      const safeMessage = logAndSanitizeError(error, 'SignUp');
       
       toast({
         title: 'Sign up failed',
-        description: errorMessage,
+        description: safeMessage,
         variant: 'destructive',
       });
 
-      return { success: false, error: errorMessage };
+      return { success: false, error: safeMessage };
     }
   };
 
@@ -285,7 +293,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       
       const { error } = await supabase.auth.signOut();
       
-      if (error) {
+      if (error && process.env.NODE_ENV === 'development') {
         console.error('Sign out error:', error);
       }
       
