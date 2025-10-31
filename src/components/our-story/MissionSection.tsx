@@ -13,9 +13,9 @@ export const MissionSection = () => {
           </div>
           
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            To eliminate the $13 billion stolen goods crisis by creating the world's most comprehensive 
-            verification platform, protecting millions of innocent people from financial loss, legal 
-            consequences, and emotional trauma caused by unknowingly purchasing stolen items.
+            To eliminate the $13 billion stolen goods crisis and reduce crime globally by creating the 
+            world's most comprehensive verification platform, protecting millions of innocent people from 
+            financial loss, legal consequences, and emotional trauma caused by unknowingly purchasing stolen items.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
