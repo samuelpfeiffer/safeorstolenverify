@@ -1,19 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
     <!-- CRITICAL: Preload hero image FIRST for LCP -->
     <link rel="preload" as="image" href="/src/assets/hero-verification-devices.png" fetchpriority="high" />
     <link rel="preload" as="style" href="/src/index.css" />
     
-    <!-- Minimal inline critical CSS -->
+    <!-- Minimal inline critical CSS with dark mode -->
     <style>
-      body{margin:0;font-family:system-ui,-apple-system,sans-serif;}
+      html,body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#0d0d0d;color:#fafafa;min-height:100vh;}
       img{max-width:100%;height:auto;display:block;}
       *{box-sizing:border-box;}
+      #root{min-height:100vh;}
     </style>
     
     <title>SafeOrStolen - Check if Items are Stolen Before You Buy</title>
