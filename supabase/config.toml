@@ -37,55 +37,55 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.ai-competitor-analysis]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-content-optimizer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-ranking-analyzer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-seo-optimizer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-performance-analyzer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-ad-optimizer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-seo-domination]
-verify_jwt = false
+verify_jwt = true
 
 [functions.autonomous-error-fixer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.autonomous-seo-optimizer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.autonomous-health-monitor]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-site-optimizer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-ceo]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-coo]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-cfo]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-cmo]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-cto]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-executive-orchestrator]
-verify_jwt = false
+verify_jwt = true
 
 [functions.badge-widget]
 verify_jwt = false

@@ -44,10 +44,26 @@ serve(async (req) => {
 
     console.log(`Verification request from user: ${user.id}`)
 
-    const { serialNumber, itemType }: VerificationRequest = await req.json()
+    const requestBody = await req.json()
+    const { serialNumber: rawSerial, itemType: rawType } = requestBody
 
-    if (!serialNumber || !itemType) {
-      throw new Error('Serial number and item type are required')
+    // Validate and sanitize inputs
+    if (!rawSerial || typeof rawSerial !== 'string') {
+      throw new Error('Valid serial number required')
+    }
+    if (!rawType || typeof rawType !== 'string') {
+      throw new Error('Valid item type required')
+    }
+
+    // Sanitize serial number: allow alphanumeric, spaces, hyphens, underscores only
+    const serialNumber = rawSerial.trim().slice(0, 100).replace(/[^a-zA-Z0-9\s\-_]/g, '')
+    const itemType = rawType.trim().slice(0, 50).toLowerCase().replace(/[^a-z\-_\s]/g, '')
+
+    if (serialNumber.length < 3) {
+      throw new Error('Serial number too short (minimum 3 characters)')
+    }
+    if (itemType.length < 2) {
+      throw new Error('Item type too short (minimum 2 characters)')
     }
 
     console.log(`Verifying ${itemType} with serial: ${serialNumber}`)
