@@ -2159,6 +2159,42 @@ export type Database = {
         }
         Relationships: []
       }
+      user_webhooks: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          event: string
+          id: string
+          is_active: boolean | null
+          name: string
+          updated_at: string | null
+          url: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          event: string
+          id?: string
+          is_active?: boolean | null
+          name: string
+          updated_at?: string | null
+          url: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          event?: string
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          updated_at?: string | null
+          url?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       users_roles: {
         Row: {
           created_at: string | null

@@ -9,6 +9,7 @@ import { Switch } from '@/components/ui/switch';
 import { Zap, ExternalLink, TestTube, Check, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { sendToZapier } from '@/utils/marketingAutomation';
+import { supabase } from '@/integrations/supabase/client';
 
 interface ZapierWebhook {
   id: string;
@@ -28,25 +29,51 @@ export const ZapierAutomation = () => {
     description: ''
   });
   const [testingWebhook, setTestingWebhook] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { toast } = useToast();
 
   useEffect(() => {
     loadWebhooks();
   }, []);
 
-  const loadWebhooks = () => {
-    const saved = localStorage.getItem('zapier_webhooks');
-    if (saved) {
-      setWebhooks(JSON.parse(saved));
+  const loadWebhooks = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        setLoading(false);
+        return;
+      }
+
+      const { data, error } = await supabase
+        .from('user_webhooks')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+
+      const formattedWebhooks = data?.map(w => ({
+        id: w.id,
+        name: w.name,
+        url: w.url,
+        event: w.event,
+        isActive: w.is_active,
+        description: w.description || ''
+      })) || [];
+
+      setWebhooks(formattedWebhooks);
+    } catch (error) {
+      console.error('Error loading webhooks:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load webhooks",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
-  const saveWebhooks = (updatedWebhooks: ZapierWebhook[]) => {
-    localStorage.setItem('zapier_webhooks', JSON.stringify(updatedWebhooks));
-    setWebhooks(updatedWebhooks);
-  };
-
-  const addWebhook = () => {
+  const addWebhook = async () => {
     if (!newWebhook.name || !newWebhook.url) {
       toast({
         title: "Error",
@@ -56,39 +83,106 @@ export const ZapierAutomation = () => {
       return;
     }
 
-    const webhook: ZapierWebhook = {
-      id: Date.now().toString(),
-      name: newWebhook.name,
-      url: newWebhook.url,
-      event: newWebhook.event,
-      isActive: true,
-      description: newWebhook.description
-    };
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        toast({
+          title: "Error",
+          description: "You must be logged in to add webhooks",
+          variant: "destructive",
+        });
+        return;
+      }
 
-    saveWebhooks([...webhooks, webhook]);
-    setNewWebhook({ name: '', url: '', event: 'verification', description: '' });
-    
-    toast({
-      title: "Success",
-      description: "Webhook added successfully",
-    });
+      const { data, error } = await supabase
+        .from('user_webhooks')
+        .insert({
+          user_id: user.id,
+          name: newWebhook.name,
+          url: newWebhook.url,
+          event: newWebhook.event,
+          is_active: true,
+          description: newWebhook.description
+        })
+        .select()
+        .single();
+
+      if (error) throw error;
+
+      const newWebhookFormatted: ZapierWebhook = {
+        id: data.id,
+        name: data.name,
+        url: data.url,
+        event: data.event,
+        isActive: data.is_active,
+        description: data.description || ''
+      };
+
+      setWebhooks([newWebhookFormatted, ...webhooks]);
+      setNewWebhook({ name: '', url: '', event: 'verification', description: '' });
+      
+      toast({
+        title: "Success",
+        description: "Webhook added successfully",
+      });
+    } catch (error) {
+      console.error('Error adding webhook:', error);
+      toast({
+        title: "Error",
+        description: "Failed to add webhook",
+        variant: "destructive",
+      });
+    }
   };
 
-  const removeWebhook = (id: string) => {
-    const updated = webhooks.filter(w => w.id !== id);
-    saveWebhooks(updated);
-    
-    toast({
-      title: "Success",
-      description: "Webhook removed successfully",
-    });
+  const removeWebhook = async (id: string) => {
+    try {
+      const { error } = await supabase
+        .from('user_webhooks')
+        .delete()
+        .eq('id', id);
+
+      if (error) throw error;
+
+      setWebhooks(webhooks.filter(w => w.id !== id));
+      
+      toast({
+        title: "Success",
+        description: "Webhook removed successfully",
+      });
+    } catch (error) {
+      console.error('Error removing webhook:', error);
+      toast({
+        title: "Error",
+        description: "Failed to remove webhook",
+        variant: "destructive",
+      });
+    }
   };
 
-  const toggleWebhook = (id: string) => {
-    const updated = webhooks.map(w => 
-      w.id === id ? { ...w, isActive: !w.isActive } : w
-    );
-    saveWebhooks(updated);
+  const toggleWebhook = async (id: string) => {
+    try {
+      const webhook = webhooks.find(w => w.id === id);
+      if (!webhook) return;
+
+      const { error } = await supabase
+        .from('user_webhooks')
+        .update({ is_active: !webhook.isActive })
+        .eq('id', id);
+
+      if (error) throw error;
+
+      setWebhooks(webhooks.map(w => 
+        w.id === id ? { ...w, isActive: !w.isActive } : w
+      ));
+    } catch (error) {
+      console.error('Error toggling webhook:', error);
+      toast({
+        title: "Error",
+        description: "Failed to toggle webhook",
+        variant: "destructive",
+      });
+    }
   };
 
   const testWebhook = async (webhook: ZapierWebhook) => {
@@ -218,7 +312,9 @@ export const ZapierAutomation = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Configured Webhooks</h3>
             
-            {webhooks.length === 0 ? (
+            {loading ? (
+              <p className="text-muted-foreground">Loading webhooks...</p>
+            ) : webhooks.length === 0 ? (
               <p className="text-muted-foreground">No webhooks configured yet.</p>
             ) : (
               <div className="space-y-3">
