@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
-import { navigateOutOfIframe } from '@/utils/navigationUtils';
+import { navigateOutOfIframe, isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -85,14 +85,16 @@ const CheckoutRedirect: React.FC = () => {
         if (data?.url) {
           console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
           
-          // CRITICAL: Use navigateOutOfIframe to escape iframe security restrictions
-          navigateOutOfIframe(data.url, false);
+          // Check if we're in Lovable's preview (iframe with cross-origin restrictions)
+          const isLovablePreview = window.location.hostname.includes('lovableproject.com') && isInIframe();
           
-          // Fallback: Show clickable link if redirect doesn't happen in 3 seconds
-          setTimeout(() => {
+          if (isLovablePreview) {
+            // In Lovable preview: Open in new tab immediately (bypasses iframe restrictions)
+            navigateOutOfIframe(data.url, true);
             setError(
               <div className="space-y-4">
-                <p>Redirect taking longer than expected.</p>
+                <p>Opening Stripe checkout in a new tab...</p>
+                <p className="text-sm text-gray-600">If the tab didn't open, click below:</p>
                 <a 
                   href={data.url} 
                   className="inline-block bg-sos-orange text-white px-6 py-3 rounded-lg hover:bg-sos-orange/90 font-semibold"
@@ -103,11 +105,35 @@ const CheckoutRedirect: React.FC = () => {
                     navigateOutOfIframe(data.url, true);
                   }}
                 >
-                  Click here to continue to checkout →
+                  Open Stripe Checkout →
                 </a>
               </div>
             );
-          }, 3000);
+          } else {
+            // Production: Use normal redirect
+            navigateOutOfIframe(data.url, false);
+            
+            // Fallback: Show clickable link if redirect doesn't happen in 3 seconds
+            setTimeout(() => {
+              setError(
+                <div className="space-y-4">
+                  <p>Redirect taking longer than expected.</p>
+                  <a 
+                    href={data.url} 
+                    className="inline-block bg-sos-orange text-white px-6 py-3 rounded-lg hover:bg-sos-orange/90 font-semibold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigateOutOfIframe(data.url, true);
+                    }}
+                  >
+                    Click here to continue to checkout →
+                  </a>
+                </div>
+              );
+            }, 3000);
+          }
         } else {
           setError('No checkout URL received from Stripe');
         }
