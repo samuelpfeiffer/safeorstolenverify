@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
-
+import { navigateOutOfIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -85,8 +85,8 @@ const CheckoutRedirect: React.FC = () => {
         if (data?.url) {
           console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
           
-          // Use standard redirect - works everywhere (iframes, popups, direct)
-          window.location.href = data.url;
+          // CRITICAL: Use navigateOutOfIframe to escape iframe security restrictions
+          navigateOutOfIframe(data.url, false);
           
           // Fallback: Show clickable link if redirect doesn't happen in 3 seconds
           setTimeout(() => {
@@ -98,6 +98,10 @@ const CheckoutRedirect: React.FC = () => {
                   className="inline-block bg-sos-orange text-white px-6 py-3 rounded-lg hover:bg-sos-orange/90 font-semibold"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateOutOfIframe(data.url, true);
+                  }}
                 >
                   Click here to continue to checkout →
                 </a>
