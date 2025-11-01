@@ -1,220 +1,179 @@
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useSafeLocation } from '@/hooks/useSafeLocation';
+
+interface EnhancedStructuredDataProps {
+  data: any | any[];
+}
 
 /**
  * Enhanced Structured Data Component
- * Implements comprehensive Schema.org markup for rich snippets
+ * Supports multiple schema types for comprehensive SEO
+ * Optimized for Google, AI search engines, and rich results
  */
-
-export const EnhancedStructuredData = () => {
-  const location = useSafeLocation();
-  const currentUrl = `https://safeorstolen.com${location?.pathname || '/'}`;
-
-  // Organization Schema
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SafeOrStolen",
-    "legalName": "SafeOrStolen LLC",
-    "url": "https://safeorstolen.com",
-    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    "foundingDate": "2024",
-    "founders": [
-      {
-        "@type": "Person",
-        "name": "SafeOrStolen Founders"
-      }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "support@safeorstolen.com",
-      "availableLanguage": ["English"]
-    },
-    "sameAs": [
-      "https://www.youtube.com/@safeorstolenofficially",
-      "https://x.com/safeorstolen",
-      "https://www.linkedin.com/company/safeorstolen/"
-    ]
-  };
-
-  // LocalBusiness Schema (for local SEO)
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "SafeOrStolen",
-    "image": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    "@id": "https://safeorstolen.com",
-    "url": "https://safeorstolen.com",
-    "telephone": "",
-    "priceRange": "$0.50 - $29.99",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "1247"
-    }
-  };
-
-  // SoftwareApplication Schema (for mobile app)
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "SafeOrStolen",
-    "operatingSystem": ["iOS", "Android", "Web"],
-    "applicationCategory": "SecurityApplication",
-    "price": "Free",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1247"
-    }
-  };
-
-  // WebSite Schema with SearchAction
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SafeOrStolen",
-    "url": "https://safeorstolen.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://safeorstolen.com/dashboard?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
-
-  // BreadcrumbList Schema
-  const getBreadcrumbSchema = () => {
-    if (!location) return null;
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    
-    if (pathSegments.length === 0) return null;
-
-    const breadcrumbList = [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://safeorstolen.com"
-      },
-      ...pathSegments.map((segment, index) => ({
-        "@type": "ListItem",
-        "position": index + 2,
-        "name": segment.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-        "item": `https://safeorstolen.com/${pathSegments.slice(0, index + 1).join('/')}`
-      }))
-    ];
-
-    return {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbList
-    };
-  };
-
-  // Service Schema (not a product - SafeOrStolen is a verification service)
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "SafeOrStolen Verification Service",
-    "description": "Mobile app and web platform for verifying stolen phones, cars, and electronics using IMEI, VIN, and serial numbers",
-    "serviceType": "Security Verification Service",
-    "provider": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
-    },
-    "areaServed": "Worldwide",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "1247",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
-  };
-
-  // HowTo Schema for guides
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Check if a Phone is Stolen Using IMEI",
-    "description": "Step-by-step guide to verify if a phone is stolen before buying",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Find IMEI Number",
-        "text": "Dial *#06# on the phone to display the IMEI number",
-        "position": 1
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Enter IMEI in SafeOrStolen",
-        "text": "Open SafeOrStolen app and enter the 15-digit IMEI number",
-        "position": 2
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Review Results",
-        "text": "Check verification results across 50+ global databases",
-        "position": 3
-      }
-    ]
-  };
-
-  const breadcrumbSchema = getBreadcrumbSchema();
-
+export const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ data }) => {
+  const structuredDataArray = Array.isArray(data) ? data : [data];
+  
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(softwareAppSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(websiteSchema)}
-      </script>
-      {breadcrumbSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
+      {structuredDataArray.map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
         </script>
-      )}
-      <script type="application/ld+json">
-        {JSON.stringify(serviceSchema)}
-      </script>
-      {location?.pathname.includes('how-it-works') && (
-        <script type="application/ld+json">
-          {JSON.stringify(howToSchema)}
-        </script>
-      )}
+      ))}
     </Helmet>
   );
+};
+
+/**
+ * Creates a Breadcrumb schema
+ */
+export const createBreadcrumbSchema = (items: Array<{ name: string; url: string }>) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+};
+
+/**
+ * Creates a HowTo schema
+ */
+export const createHowToSchema = (
+  name: string,
+  description: string,
+  steps: Array<{ name: string; text: string }>
+) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": name,
+    "description": description,
+    "step": steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text
+    }))
+  };
+};
+
+/**
+ * Creates a Service schema
+ */
+export const createServiceSchema = (
+  name: string,
+  description: string,
+  provider: string = "SafeOrStolen",
+  price: string = "0"
+) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": name,
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": provider
+    },
+    "areaServed": "Worldwide",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://safeorstolen.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": price,
+      "priceCurrency": "USD"
+    }
+  };
+};
+
+/**
+ * Creates a FAQ schema
+ */
+export const createFAQSchema = (faqs: Array<{ question: string; answer: string }>) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+};
+
+/**
+ * Creates a Product schema
+ */
+export const createProductSchema = (
+  name: string,
+  description: string,
+  price: string,
+  rating?: { value: string; count: string }
+) => {
+  const schema: any = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": name,
+    "description": description,
+    "offers": {
+      "@type": "Offer",
+      "price": price,
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
+  if (rating) {
+    schema.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": rating.value,
+      "reviewCount": rating.count
+    };
+  }
+
+  return schema;
+};
+
+/**
+ * Creates an Article schema
+ */
+export const createArticleSchema = (
+  title: string,
+  description: string,
+  url: string,
+  datePublished: string,
+  dateModified?: string,
+  author: string = "SafeOrStolen Team"
+) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "url": url,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "author": {
+      "@type": "Organization",
+      "name": author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+      }
+    }
+  };
 };

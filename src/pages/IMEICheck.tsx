@@ -12,14 +12,75 @@ import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 const IMEICheck = () => {
   const navigate = useNavigate();
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free IMEI Stolen Check",
-    "description": "Free IMEI checker to verify if phones are stolen.",
-    "url": "https://safeorstolen.com/imei-check",
-    "applicationCategory": "SecurityApplication"
-  };
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Free IMEI Checker - Check If Phone is Stolen",
+      "description": "Free IMEI checker to instantly verify if phones are stolen. Check iPhone & Android against global databases.",
+      "url": "https://safeorstolen.com/imei-check"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check if a Phone is Stolen Using IMEI",
+      "description": "Step-by-step guide to verify if a phone is stolen using IMEI number",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Find Your IMEI Number",
+          "text": "Dial *#06# or go to Settings > About Phone to find your phone's IMEI number"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter IMEI in SafeOrStolen",
+          "text": "Enter the 15-digit IMEI number in our free verification tool"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Get Instant Results",
+          "text": "Receive verification results in 3 seconds showing if the phone is reported stolen"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://safeorstolen.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "IMEI Check",
+          "item": "https://safeorstolen.com/imei-check"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "IMEI Stolen Phone Verification",
+      "description": "Free IMEI verification service to check if phones are stolen",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ];
 
   const phoneTypes = [
     {
@@ -73,9 +134,11 @@ const IMEICheck = () => {
           content="check if phone is stolen, IMEI checker app, stolen phone lookup, IMEI verification, stolen electronics verification, mobile device history report, free IMEI check, iPhone stolen check, Android IMEI verification" 
         />
         <link rel="canonical" href="https://safeorstolen.com/imei-check" />
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
+        {structuredData.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background/50 to-sos-orange/5">

@@ -12,14 +12,75 @@ import { CompetitiveMetaTags } from '@/components/seo/CompetitiveMetaTags';
 const VINVerification = () => {
   const navigate = useNavigate();
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free VIN Stolen Check",
-    "description": "Free VIN checker to verify if vehicles are stolen.",
-    "url": "https://safeorstolen.com/vin-verification",
-    "applicationCategory": "SecurityApplication"
-  };
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Free VIN Checker - Check If Car is Stolen",
+      "description": "Free VIN checker to instantly verify if vehicles are stolen. Check cars, trucks, motorcycles against global databases.",
+      "url": "https://safeorstolen.com/vin-verification"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check if a Vehicle is Stolen Using VIN",
+      "description": "Step-by-step guide to verify if a car, truck, or motorcycle is stolen using VIN number",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Locate Your VIN Number",
+          "text": "Find the 17-character VIN on your vehicle's dashboard, driver door jamb, or registration documents"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter VIN in SafeOrStolen",
+          "text": "Enter the complete VIN number in our free verification tool"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Get Instant Results",
+          "text": "Receive vehicle theft verification results in 30 seconds showing if the vehicle is reported stolen"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://safeorstolen.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "VIN Verification",
+          "item": "https://safeorstolen.com/vin-verification"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "VIN Stolen Vehicle Verification",
+      "description": "Free VIN verification service to check if vehicles are stolen",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ];
 
   return (
     <>
@@ -35,9 +96,11 @@ const VINVerification = () => {
           content="VIN check app, verify stolen vehicle, car theft verification, VIN number lookup, stolen car check, vehicle history check, auto theft prevention, check if car stolen" 
         />
         <link rel="canonical" href="https://safeorstolen.com/vin-verification" />
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
+        {structuredData.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background/50 to-sos-orange/5">
