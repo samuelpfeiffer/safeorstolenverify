@@ -84,7 +84,23 @@ const CheckoutRedirect: React.FC = () => {
 
         if (data?.url) {
           console.log('Redirecting to Stripe checkout:', data.url);
-          window.location.href = data.url;
+          
+          // Try multiple redirect methods for maximum compatibility
+          try {
+            // Method 1: Try to redirect at top level (escapes iframes)
+            if (window.top && window.top !== window.self) {
+              console.log('[CHECKOUT-REDIRECT] Inside iframe, redirecting at top level');
+              window.top.location.href = data.url;
+            } else {
+              // Method 2: Direct redirect with replace (more reliable)
+              console.log('[CHECKOUT-REDIRECT] Direct redirect');
+              window.location.replace(data.url);
+            }
+          } catch (e) {
+            console.error('[CHECKOUT-REDIRECT] Redirect failed, trying fallback:', e);
+            // Fallback: Show clickable link
+            setError(`Redirect failed. Click here to continue: ${data.url}`);
+          }
         } else {
           setError('No checkout URL received');
         }
