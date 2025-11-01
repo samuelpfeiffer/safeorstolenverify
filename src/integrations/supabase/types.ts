@@ -71,6 +71,42 @@ export type Database = {
         }
         Relationships: []
       }
+      ai_content_generation_log: {
+        Row: {
+          content_type: string
+          created_at: string | null
+          error_message: string | null
+          generation_time_ms: number | null
+          id: string
+          metadata: Json | null
+          model_used: string | null
+          status: string | null
+          topic: string | null
+        }
+        Insert: {
+          content_type: string
+          created_at?: string | null
+          error_message?: string | null
+          generation_time_ms?: number | null
+          id?: string
+          metadata?: Json | null
+          model_used?: string | null
+          status?: string | null
+          topic?: string | null
+        }
+        Update: {
+          content_type?: string
+          created_at?: string | null
+          error_message?: string | null
+          generation_time_ms?: number | null
+          id?: string
+          metadata?: Json | null
+          model_used?: string | null
+          status?: string | null
+          topic?: string | null
+        }
+        Relationships: []
+      }
       ai_executive_actions: {
         Row: {
           action_data: Json
@@ -166,10 +202,13 @@ export type Database = {
       ai_executives: {
         Row: {
           actions_taken: number | null
+          configuration: Json | null
           created_at: string | null
           decisions_count: number | null
           id: string
+          is_active: boolean | null
           last_decision_at: string | null
+          metrics: Json | null
           role: string
           status: string | null
           success_rate: number | null
@@ -177,10 +216,13 @@ export type Database = {
         }
         Insert: {
           actions_taken?: number | null
+          configuration?: Json | null
           created_at?: string | null
           decisions_count?: number | null
           id?: string
+          is_active?: boolean | null
           last_decision_at?: string | null
+          metrics?: Json | null
           role: string
           status?: string | null
           success_rate?: number | null
@@ -188,10 +230,13 @@ export type Database = {
         }
         Update: {
           actions_taken?: number | null
+          configuration?: Json | null
           created_at?: string | null
           decisions_count?: number | null
           id?: string
+          is_active?: boolean | null
           last_decision_at?: string | null
+          metrics?: Json | null
           role?: string
           status?: string | null
           success_rate?: number | null
@@ -619,6 +664,57 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_content_strategy: {
+        Row: {
+          assigned_ai: string | null
+          competition_difficulty: string | null
+          completed_at: string | null
+          content_type: string
+          created_at: string | null
+          estimated_traffic: number | null
+          id: string
+          keywords: string[] | null
+          metadata: Json | null
+          priority: string | null
+          seo_score: number | null
+          status: string | null
+          target_date: string | null
+          topic: string
+        }
+        Insert: {
+          assigned_ai?: string | null
+          competition_difficulty?: string | null
+          completed_at?: string | null
+          content_type: string
+          created_at?: string | null
+          estimated_traffic?: number | null
+          id?: string
+          keywords?: string[] | null
+          metadata?: Json | null
+          priority?: string | null
+          seo_score?: number | null
+          status?: string | null
+          target_date?: string | null
+          topic: string
+        }
+        Update: {
+          assigned_ai?: string | null
+          competition_difficulty?: string | null
+          completed_at?: string | null
+          content_type?: string
+          created_at?: string | null
+          estimated_traffic?: number | null
+          id?: string
+          keywords?: string[] | null
+          metadata?: Json | null
+          priority?: string | null
+          seo_score?: number | null
+          status?: string | null
+          target_date?: string | null
+          topic?: string
+        }
+        Relationships: []
+      }
       blog_post_categories: {
         Row: {
           category_id: string | null
@@ -1018,6 +1114,48 @@ export type Database = {
           page_url?: string
           target_keywords?: string[] | null
           time_on_page?: number | null
+        }
+        Relationships: []
+      }
+      content_performance_tracking: {
+        Row: {
+          avg_time_on_page: number | null
+          backlinks: number | null
+          bounce_rate: number | null
+          content_id: string | null
+          content_type: string | null
+          conversions: number | null
+          id: string
+          keyword_rankings: Json | null
+          organic_traffic: number | null
+          page_url: string
+          recorded_at: string | null
+        }
+        Insert: {
+          avg_time_on_page?: number | null
+          backlinks?: number | null
+          bounce_rate?: number | null
+          content_id?: string | null
+          content_type?: string | null
+          conversions?: number | null
+          id?: string
+          keyword_rankings?: Json | null
+          organic_traffic?: number | null
+          page_url: string
+          recorded_at?: string | null
+        }
+        Update: {
+          avg_time_on_page?: number | null
+          backlinks?: number | null
+          bounce_rate?: number | null
+          content_id?: string | null
+          content_type?: string | null
+          conversions?: number | null
+          id?: string
+          keyword_rankings?: Json | null
+          organic_traffic?: number | null
+          page_url?: string
+          recorded_at?: string | null
         }
         Relationships: []
       }
