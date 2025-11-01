@@ -104,20 +104,27 @@ export const ConversionOptimizedPricing = ({
   const casualTiers = [
     {
       ...SUBSCRIPTION_TIERS.free,
-      description: "Try before you buy - 2 free searches",
+      description: "Try before you buy - 4 free searches",
       cta: "Start Free Trial",
       checksIncluded: SUBSCRIPTION_TIERS.free.monthlyQuota as number,
       interval: SUBSCRIPTION_TIERS.free.interval,
     },
     {
+      ...SUBSCRIPTION_TIERS.starter,
+      description: "Great for occasional buyers",
+      cta: "Start Starter Plan"
+    },
+    {
       ...SUBSCRIPTION_TIERS.payPerUse,
-    description: "One-time check, no commitment",
-    cta: "Buy Single Check"
-  }, {
-    ...SUBSCRIPTION_TIERS.personal,
-    description: "Maximum value per check",
-    cta: "Start Personal Plan"
-  }];
+      description: "One-time check, no commitment",
+      cta: "Buy Single Check"
+    }, 
+    {
+      ...SUBSCRIPTION_TIERS.personal,
+      description: "Maximum value per check",
+      cta: "Start Personal Plan"
+    }
+  ];
   const businessTiers = [{
     ...SUBSCRIPTION_TIERS.professional,
     description: "Perfect for small businesses",

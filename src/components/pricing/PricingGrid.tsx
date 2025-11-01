@@ -35,6 +35,13 @@ export const PricingGrid = () => {
       image: "https://i.imgur.com/6Mvijcm.png"
     },
     {
+      ...SUBSCRIPTION_TIERS.starter,
+      price: formatPrice(SUBSCRIPTION_TIERS.starter.price),
+      priceId: SUBSCRIPTION_TIERS.starter.stripePriceId!,
+      period: 'month',
+      image: "https://i.imgur.com/6Mvijcm.png"
+    },
+    {
       ...SUBSCRIPTION_TIERS.personal,
       price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
       priceId: SUBSCRIPTION_TIERS.personal.stripePriceId!,
@@ -64,7 +71,7 @@ export const PricingGrid = () => {
         <p className="text-xl text-muted-foreground">Start free, upgrade as you grow</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
         {products.map((product) => (
           <ProductCard
             key={product.priceId}

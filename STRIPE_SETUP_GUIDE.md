@@ -14,9 +14,19 @@ Follow these steps in order to get Stripe payments working:
 
 Go to: https://dashboard.stripe.com/test/products (or /live/products for production)
 
-Create these 4 products with EXACT names:
+Create these 5 products with EXACT names:
 
-#### Product 1: Personal Plan
+#### Product 1: Starter Plan ✅ (Already Created)
+- **Name**: `Starter Plan` (exact match required)
+- **Description**: 15 verifications per month for occasional buyers
+- **Pricing**: 
+  - Type: Recurring
+  - Price: $4.99 USD
+  - Billing period: Monthly
+  - Currency: USD
+- **Status**: ✅ Already exists in your Stripe account
+
+#### Product 2: Personal Plan ✅ (Already Created)
 - **Name**: `Personal Plan` (exact match required)
 - **Description**: 50 verifications per month with trust badges
 - **Pricing**: 
@@ -24,8 +34,9 @@ Create these 4 products with EXACT names:
   - Price: $9.99 USD
   - Billing period: Monthly
   - Currency: USD
+- **Status**: ✅ Already exists in your Stripe account
 
-#### Product 2: Professional Plan
+#### Product 3: Professional Plan ✅ (Already Created)
 - **Name**: `Professional Plan` (exact match required)
 - **Description**: Unlimited verifications with API access and bulk tools
 - **Pricing**:
@@ -33,8 +44,9 @@ Create these 4 products with EXACT names:
   - Price: $29.99 USD
   - Billing period: Monthly
   - Currency: USD
+- **Status**: ✅ Already exists in your Stripe account
 
-#### Product 3: Enterprise Plan
+#### Product 4: Enterprise Plan ✅ (Already Created)
 - **Name**: `Enterprise Plan` (exact match required)
 - **Description**: Custom enterprise solution with dedicated support
 - **Pricing**:
@@ -42,14 +54,16 @@ Create these 4 products with EXACT names:
   - Price: $99.00 USD (or custom)
   - Billing period: Monthly
   - Currency: USD
+- **Status**: ✅ Already exists in your Stripe account
 
-#### Product 4: Single Verification
+#### Product 5: Single Verification ✅ (Already Created)
 - **Name**: `Single Verification` (exact match required)
 - **Description**: Pay per verification - no subscription required
 - **Pricing**:
   - Type: One-time
   - Price: $0.50 USD
   - Currency: USD
+- **Status**: ✅ Already exists in your Stripe account
 
 ### 3. Configure Webhook Endpoint
 
@@ -104,6 +118,7 @@ The system uses **automatic product name matching**:
 
 ### Error: "Unable to find matching Stripe product"
 **Solution**: Verify product names in Stripe Dashboard exactly match:
+- "Starter Plan"
 - "Personal Plan"
 - "Professional Plan"  
 - "Enterprise Plan"

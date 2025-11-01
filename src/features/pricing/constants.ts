@@ -17,11 +17,12 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
  * - Get Price IDs from Stripe Dashboard → Products → [Product] → Pricing
  * - Update stripePriceId values below with your actual Price IDs
  * 
- * Products to create in Stripe:
- * 1. "Personal Plan" - $9.99/month recurring
- * 2. "Professional Plan" - $29.99/month recurring  
- * 3. "Enterprise Plan" - Custom pricing recurring
- * 4. "Single Verification" - $0.50 one-time payment
+ * Products in Stripe:
+ * 1. "Starter Plan" - $4.99/month recurring (Price: price_1SHEOxGxnZLw8J7O2zzfPVBK)
+ * 2. "Personal Plan" - $9.99/month recurring
+ * 3. "Professional Plan" - $29.99/month recurring  
+ * 4. "Enterprise Plan" - $99/month recurring
+ * 5. "Single Verification" - $0.50 one-time payment
  */
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
@@ -44,6 +45,32 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     receiptsIncluded: true,
     historyRetention: 30,
     trustBadges: false,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false
+  },
+  starter: {
+    name: "Starter Plan",
+    price: 499,
+    priceDisplay: "$4.99",
+    interval: "month",
+    monthlyQuota: 15,
+    overageRate: 0.45,
+    stripePriceId: undefined, // Will auto-match by product name "Starter Plan"
+    tier: "starter",
+    features: [
+      "15 verifications per month",
+      "Email support",
+      "60-day search history",
+      "PDF receipt generation",
+      "Basic verification badges",
+      "$0.45 per additional check"
+    ],
+    receiptsIncluded: true,
+    historyRetention: 60,
+    trustBadges: true,
     apiAccess: false,
     bulkUpload: false,
     whiteLabel: false,
@@ -165,5 +192,6 @@ export const LEGACY_TIER_MAPPING: Record<string, SubscriptionTierKey> = {
   'business75': 'professional',
   'business300': 'professional',
   'individual': 'personal',
-  'business': 'professional'
+  'business': 'professional',
+  'starter': 'starter'
 };
