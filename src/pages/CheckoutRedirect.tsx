@@ -3,12 +3,12 @@ import { useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
-import { isInIframe } from '@/utils/navigationUtils';
+
 
 const CheckoutRedirect: React.FC = () => {
   const [searchParams] = useSearchParams();
   const { session, isAuthenticated, loading } = useUnifiedAuth();
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | React.ReactNode | null>(null);
   const [sessionWaitCount, setSessionWaitCount] = useState(0);
 
   useEffect(() => {
@@ -83,26 +83,29 @@ const CheckoutRedirect: React.FC = () => {
         }
 
         if (data?.url) {
-          console.log('Redirecting to Stripe checkout:', data.url);
+          console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
           
-          // Try multiple redirect methods for maximum compatibility
-          try {
-            // Method 1: Try to redirect at top level (escapes iframes)
-            if (window.top && window.top !== window.self) {
-              console.log('[CHECKOUT-REDIRECT] Inside iframe, redirecting at top level');
-              window.top.location.href = data.url;
-            } else {
-              // Method 2: Direct redirect with replace (more reliable)
-              console.log('[CHECKOUT-REDIRECT] Direct redirect');
-              window.location.replace(data.url);
-            }
-          } catch (e) {
-            console.error('[CHECKOUT-REDIRECT] Redirect failed, trying fallback:', e);
-            // Fallback: Show clickable link
-            setError(`Redirect failed. Click here to continue: ${data.url}`);
-          }
+          // Use standard redirect - works everywhere (iframes, popups, direct)
+          window.location.href = data.url;
+          
+          // Fallback: Show clickable link if redirect doesn't happen in 3 seconds
+          setTimeout(() => {
+            setError(
+              <div className="space-y-4">
+                <p>Redirect taking longer than expected.</p>
+                <a 
+                  href={data.url} 
+                  className="inline-block bg-sos-orange text-white px-6 py-3 rounded-lg hover:bg-sos-orange/90 font-semibold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Click here to continue to checkout →
+                </a>
+              </div>
+            );
+          }, 3000);
         } else {
-          setError('No checkout URL received');
+          setError('No checkout URL received from Stripe');
         }
       } catch (err: any) {
         console.error('Error creating checkout:', err);
@@ -118,7 +121,7 @@ const CheckoutRedirect: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
         <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
           <h1 className="text-2xl font-bold text-red-600 mb-4">Checkout Error</h1>
-          <p className="text-gray-700 mb-6">{error}</p>
+          <div className="text-gray-700 mb-6">{error}</div>
           <button
             onClick={() => window.location.href = '/'}
             className="bg-sos-orange text-white px-6 py-2 rounded-lg hover:bg-sos-orange/90"
