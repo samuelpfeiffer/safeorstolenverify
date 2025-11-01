@@ -5,6 +5,25 @@
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
+/**
+ * STRIPE CONFIGURATION INSTRUCTIONS:
+ * 
+ * Option 1 (Recommended): Use Product Name Matching
+ * - Create products in Stripe Dashboard with these EXACT names
+ * - The system will auto-match by name, no Price IDs needed
+ * - Set stripePriceId to undefined for auto-matching
+ * 
+ * Option 2: Use Price IDs
+ * - Get Price IDs from Stripe Dashboard → Products → [Product] → Pricing
+ * - Update stripePriceId values below with your actual Price IDs
+ * 
+ * Products to create in Stripe:
+ * 1. "Personal Plan" - $9.99/month recurring
+ * 2. "Professional Plan" - $29.99/month recurring  
+ * 3. "Enterprise Plan" - Custom pricing recurring
+ * 4. "Single Verification" - $0.50 one-time payment
+ */
+
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
   free: {
     name: "Free IMEI Verification",
@@ -12,7 +31,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "Free",
     interval: "month",
     monthlyQuota: 4,
-    stripePriceId: "price_1SIzMMGxnZLw8J7Ov1Q25jVy",
+    stripePriceId: undefined, // No Stripe product needed for free tier
     tier: "free",
     features: [
       "4 free verifications per month",
@@ -37,7 +56,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$0.50",
     interval: "once",
     monthlyQuota: 1,
-    stripePriceId: "price_1SDRrMGxnZLw8J7ObJsUlp6k",
+    stripePriceId: undefined, // Will auto-match by product name "Single Verification"
     tier: "payPerUse",
     features: [
       "$0.50 per verification",
@@ -62,7 +81,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 50,
     overageRate: 0.40,
-    stripePriceId: "price_1SHEUQGxnZLw8J7OinyVqNMK",
+    stripePriceId: undefined, // Will auto-match by product name "Personal Plan"
     tier: "personal",
     popular: true,
     features: [
@@ -89,7 +108,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: "price_1SHEiuGxnZLw8J7OszscBBk7",
+    stripePriceId: undefined, // Will auto-match by product name "Professional Plan"
     tier: "professional",
     features: [
       "Unlimited verifications",
@@ -115,7 +134,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "Custom",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: "price_1SHEnFGxnZLw8J7Oq1PM96Eo",
+    stripePriceId: undefined, // Will auto-match by product name "Enterprise Plan"
     tier: "enterprise",
     features: [
       "Unlimited verifications",
