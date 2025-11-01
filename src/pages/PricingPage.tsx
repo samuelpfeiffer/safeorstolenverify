@@ -58,14 +58,15 @@ const PricingPage = () => {
       console.log('[SUBSCRIPTION-DEBUG] Starting subscription flow');
       console.log('[SUBSCRIPTION-DEBUG] Tier requested:', tier);
       console.log('[SUBSCRIPTION-DEBUG] Tier data found:', tierData);
-      console.log('[SUBSCRIPTION-DEBUG] Price ID:', priceId);
+      console.log('[SUBSCRIPTION-DEBUG] Price ID:', priceId || 'undefined (will use product name matching)');
       
-      if (!priceId) {
-        console.error('[SUBSCRIPTION-DEBUG] ERROR: No price ID found for tier:', tier);
+      // Price ID is optional - edge function can match by product name
+      if (!tierData) {
+        console.error('[SUBSCRIPTION-DEBUG] ERROR: No tier data found for:', tier);
         console.error('[SUBSCRIPTION-DEBUG] Available tiers:', Object.keys(SUBSCRIPTION_TIERS));
         toast({
           title: "Configuration Error",
-          description: `This subscription plan (${tier}) is not configured. Available plans: ${Object.keys(SUBSCRIPTION_TIERS).join(', ')}`,
+          description: `This subscription plan (${tier}) is not found. Available plans: ${Object.keys(SUBSCRIPTION_TIERS).join(', ')}`,
           variant: "destructive",
         });
         setLoadingTier(null);
@@ -79,11 +80,19 @@ const PricingPage = () => {
       
       // MOBILE-OPTIMIZED: Different behavior for mobile vs desktop
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      const checkoutUrl = `${window.location.origin}/checkout-redirect?${new URLSearchParams({
-        priceId,
+      
+      // Build checkout URL params - use planName for product matching if no price ID
+      const params = new URLSearchParams({
         planName: tierData.name || tier,
         isSubscription: String(isSubscription),
-      }).toString()}`;
+      });
+      
+      // Only add priceId if it exists
+      if (priceId) {
+        params.append('priceId', priceId);
+      }
+      
+      const checkoutUrl = `${window.location.origin}/checkout-redirect?${params.toString()}`;
       
       console.log('[SUBSCRIPTION-DEBUG] Checkout URL:', checkoutUrl, '| Mobile:', isMobile);
       

@@ -46,9 +46,10 @@ const CheckoutRedirect: React.FC = () => {
 
       console.log('[CHECKOUT-REDIRECT] Parameters:', { priceId, planName, isSubscription, serialNumber, itemType });
 
-      if (!priceId) {
-        console.error('[CHECKOUT-REDIRECT] Missing priceId');
-        setError('Missing price information');
+      // Plan name is required for product matching (price ID is optional)
+      if (!planName) {
+        console.error('[CHECKOUT-REDIRECT] Missing planName');
+        setError('Missing plan information. Please try again from the pricing page.');
         return;
       }
 
@@ -74,11 +75,11 @@ const CheckoutRedirect: React.FC = () => {
       console.log('[CHECKOUT-REDIRECT] Session ready, creating checkout...');
 
       try {
-        console.log('Creating checkout outside iframe:', { priceId, planName, isSubscription });
+        console.log('Creating checkout outside iframe:', { priceId: priceId || 'none (using planName)', planName, isSubscription });
 
         const body: any = {
-          priceId,
-          planName: planName || 'Subscription',
+          priceId: priceId || null, // null if not provided - edge function will use planName
+          planName: planName,
           isSubscription,
           redirectUrl: window.location.origin,
         };
