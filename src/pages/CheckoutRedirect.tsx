@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -10,6 +10,7 @@ const CheckoutRedirect: React.FC = () => {
   const { session, isAuthenticated, loading } = useUnifiedAuth();
   const [error, setError] = useState<string | React.ReactNode | null>(null);
   const [sessionWaitCount, setSessionWaitCount] = useState(0);
+  const checkoutInProgress = useRef(false);
 
   useEffect(() => {
     console.log('[CHECKOUT-REDIRECT] Session status:', { 
@@ -21,6 +22,12 @@ const CheckoutRedirect: React.FC = () => {
     });
 
     const createCheckout = async () => {
+      // Prevent duplicate checkout creation
+      if (checkoutInProgress.current) {
+        console.log('[CHECKOUT-REDIRECT] Checkout already in progress, skipping');
+        return;
+      }
+
       const priceId = searchParams.get('priceId');
       const planName = searchParams.get('planName');
       const isSubscription = searchParams.get('isSubscription') === 'true';
@@ -55,6 +62,7 @@ const CheckoutRedirect: React.FC = () => {
       }
 
       console.log('[CHECKOUT-REDIRECT] Session ready, creating checkout...');
+      checkoutInProgress.current = true;
 
       try {
         console.log('Creating checkout outside iframe:', { priceId: priceId || 'none (using planName)', planName, isSubscription });
@@ -140,6 +148,7 @@ const CheckoutRedirect: React.FC = () => {
       } catch (err: any) {
         console.error('Error creating checkout:', err);
         setError(err.message || 'Failed to create checkout session');
+        checkoutInProgress.current = false;
       }
     };
 
