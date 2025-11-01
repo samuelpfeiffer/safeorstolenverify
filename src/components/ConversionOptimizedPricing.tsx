@@ -103,15 +103,8 @@ export const ConversionOptimizedPricing = ({
   };
   const casualTiers = [
     {
-      ...SUBSCRIPTION_TIERS.free,
-      description: "Try before you buy - 4 free searches",
-      cta: "Start Free Trial",
-      checksIncluded: SUBSCRIPTION_TIERS.free.monthlyQuota as number,
-      interval: SUBSCRIPTION_TIERS.free.interval,
-    },
-    {
       ...SUBSCRIPTION_TIERS.starter,
-      description: "Great for occasional buyers",
+      description: "For occasional buyers & sellers",
       cta: "Start Starter Plan"
     },
     {
@@ -121,41 +114,44 @@ export const ConversionOptimizedPricing = ({
     }, 
     {
       ...SUBSCRIPTION_TIERS.personal,
-      description: "Maximum value per check",
+      description: "Best value for buyers & sellers",
       cta: "Start Personal Plan"
     }
   ];
-  const businessTiers = [{
-    ...SUBSCRIPTION_TIERS.professional,
-    description: "Perfect for small businesses",
-    cta: "Start Professional Plan"
-  }, {
-    ...SUBSCRIPTION_TIERS.enterprise,
-    description: "For large scale operations",
-    cta: "Contact Sales"
-  }];
+  const businessTiers = [
+    {
+      ...SUBSCRIPTION_TIERS.professional,
+      description: "For businesses & high-volume users",
+      cta: "Start Professional Plan"
+    }, 
+    {
+      ...SUBSCRIPTION_TIERS.enterprise,
+      description: "For large-scale operations",
+      cta: "Start Enterprise Plan"
+    }
+  ];
   return <section className="w-full py-20 px-4">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
           Simple, Transparent Pricing
         </h2>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-3">
-          Start with 2 free searches. No credit card required.
+          Try with 2 free searches (one-time). No credit card required.
         </p>
         <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-          Pay only for what you need • Cancel anytime • Join 50,000+ protected buyers
+          Pay only for what you need • Cancel anytime • Join 50,000+ protected buyers & sellers
         </p>
       </div>
 
       {/* Casual Buyers & Sellers Section */}
       <div className="mb-20">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-3">For Casual Buyers & Sellers</h3>
+          <h3 className="text-3xl font-bold mb-3">For Buyers & Sellers</h3>
           <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Start with 2 free searches, then choose a plan that fits your needs.
+            Choose a plan that fits your verification needs. All tiers serve both buyers and sellers.
           </p>
         </div>
-        <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {casualTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}
         </div>
       </div>
@@ -163,10 +159,10 @@ export const ConversionOptimizedPricing = ({
       {/* Business & API Section */}
       <div className="mb-16">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-3">For Businesses & Warehouses</h3>
-          <p className="text-lg text-muted-foreground">Monthly subscriptions with API access and trust badges.</p>
+          <h3 className="text-3xl font-bold mb-3">For Businesses & High-Volume Users</h3>
+          <p className="text-lg text-muted-foreground">Unlimited verifications with API access, bulk tools, and advanced features.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {businessTiers.map(tier => <PricingTier key={tier.name} {...tier} onSubscribe={handleSubscribeClick} isLoading={loadingTier === tier.name} />)}
         </div>
       </div>

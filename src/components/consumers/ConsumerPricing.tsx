@@ -48,14 +48,14 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Free Plan */}
+        {/* Starter Plan */}
         <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
           <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Free</h3>
-          <div className="text-3xl font-bold mb-2">$0</div>
-          <p className="text-gray-400 mb-6">Get started with basic verification</p>
+          <h3 className="text-2xl font-bold mb-2">Starter Plan</h3>
+          <div className="text-3xl font-bold mb-2">{SUBSCRIPTION_TIERS.starter.priceDisplay}/mo</div>
+          <p className="text-gray-400 mb-6">For occasional buyers & sellers</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.free.features.map((feature, index) => (
+            {SUBSCRIPTION_TIERS.starter.features.map((feature, index) => (
               <li key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
                 <span>{feature}</span>
@@ -63,10 +63,10 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             ))}
           </ul>
           <Button 
-            onClick={handleFreeStart}
-            className="w-full bg-secondary hover:bg-secondary/80"
+            onClick={() => navigate('/pricing')}
+            className="w-full bg-sos-orange hover:bg-sos-orange/90"
           >
-            {isAuthenticated ? 'Current Plan' : 'Start Free'}
+            Get Started
           </Button>
         </div>
         

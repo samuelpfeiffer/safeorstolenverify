@@ -19,38 +19,15 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
  * 
  * Products in Stripe:
  * 1. "Starter Plan" - $4.99/month recurring (Price: price_1SHEOxGxnZLw8J7O2zzfPVBK)
- * 2. "Personal Plan" - $9.99/month recurring
- * 3. "Professional Plan" - $29.99/month recurring  
- * 4. "Enterprise Plan" - $99/month recurring
- * 5. "Single Verification" - $0.50 one-time payment
+ * 2. "Personal Plan" - $9.99/month recurring (Price: price_1SHEUQGxnZLw8J7OinyVqNMK)
+ * 3. "Professional Plan" - $29.99/month recurring (Price: price_1SHEiuGxnZLw8J7OszscBBk7)
+ * 4. "Enterprise Plan" - $99/month recurring (Price: price_1SHEnFGxnZLw8J7Oq1PM96Eo)
+ * 5. "Single Verification" - $0.50 one-time payment (Price: price_1SDRrMGxnZLw8J7ObJsUlp6k)
+ * 
+ * Note: All tiers serve BOTH buyers and sellers
  */
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
-  free: {
-    name: "Free IMEI Verification",
-    price: 0,
-    priceDisplay: "Free",
-    interval: "month",
-    monthlyQuota: 4,
-    stripePriceId: undefined, // No Stripe product needed for free tier
-    tier: "free",
-    features: [
-      "4 free verifications per month",
-      "Lookup any device",
-      "Phones, tablets & more",
-      "Instant verification results",
-      "PDF receipt generation",
-      "No credit card required"
-    ],
-    receiptsIncluded: true,
-    historyRetention: 30,
-    trustBadges: false,
-    apiAccess: false,
-    bulkUpload: false,
-    whiteLabel: false,
-    phoneSupport: false,
-    dedicatedManager: false
-  },
   starter: {
     name: "Starter Plan",
     price: 499,
@@ -58,10 +35,11 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 15,
     overageRate: 0.45,
-    stripePriceId: undefined, // Will auto-match by product name "Starter Plan"
+    stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
     tier: "starter",
     features: [
       "15 verifications per month",
+      "Perfect for buyers & sellers",
       "Email support",
       "60-day search history",
       "PDF receipt generation",
@@ -83,11 +61,12 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$0.50",
     interval: "once",
     monthlyQuota: 1,
-    stripePriceId: undefined, // Will auto-match by product name "Single Verification"
+    stripePriceId: 'price_1SDRrMGxnZLw8J7ObJsUlp6k',
     tier: "payPerUse",
     features: [
       "$0.50 per verification",
       "No monthly commitment",
+      "For buyers & sellers",
       "Instant verification",
       "PDF receipt generation",
       "30-day result history"
@@ -108,11 +87,12 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 50,
     overageRate: 0.40,
-    stripePriceId: undefined, // Will auto-match by product name "Personal Plan"
+    stripePriceId: 'price_1SHEUQGxnZLw8J7OinyVqNMK',
     tier: "personal",
     popular: true,
     features: [
       "50 verifications per month",
+      "For buyers & sellers",
       "Trust badges & certificates",
       "Unlimited search history",
       "Priority email support",
@@ -135,10 +115,11 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: undefined, // Will auto-match by product name "Professional Plan"
+    stripePriceId: 'price_1SHEiuGxnZLw8J7OszscBBk7',
     tier: "professional",
     features: [
       "Unlimited verifications",
+      "For businesses & high-volume users",
       "Bulk verification tools (CSV upload)",
       "Advanced reporting & analytics",
       "API access (10,000 calls/month)",
@@ -158,13 +139,14 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
   enterprise: {
     name: "Enterprise Plan",
     price: 9900,
-    priceDisplay: "Custom",
+    priceDisplay: "$99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: undefined, // Will auto-match by product name "Enterprise Plan"
+    stripePriceId: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',
     tier: "enterprise",
     features: [
       "Unlimited verifications",
+      "For large-scale operations",
       "Unlimited API calls",
       "Custom integrations",
       "Dedicated account manager",

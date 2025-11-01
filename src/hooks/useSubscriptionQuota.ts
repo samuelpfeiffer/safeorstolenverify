@@ -17,7 +17,7 @@ interface QuotaStatus {
 export const useSubscriptionQuota = () => {
   const { user } = useAuth();
   const [quota, setQuota] = useState<QuotaStatus>({
-    tier: 'free',
+    tier: 'starter',
     monthlyLimit: 2,
     used: 0,
     remaining: 2,
@@ -43,7 +43,7 @@ export const useSubscriptionQuota = () => {
 
       if (error) throw error;
 
-      const tier = (profile.subscription_tier || 'free') as SubscriptionTierKey;
+      const tier = (profile.subscription_tier || 'starter') as SubscriptionTierKey;
       const limit = profile.monthly_verification_limit;
       const used = profile.verifications_used_this_month || 0;
       const isUnlimited = ['professional', 'enterprise'].includes(tier);
@@ -51,11 +51,12 @@ export const useSubscriptionQuota = () => {
       let canPerformCheck = true;
       let needsPayment = false;
 
-      // Check trial expiration for free tier
-      if (tier === 'free') {
+      // Check trial for users without subscription
+      if (!profile.subscription_tier) {
         const trialExpired = new Date() > new Date(profile.trial_end_date);
         const checksExhausted = used >= 2;
         canPerformCheck = !trialExpired && !checksExhausted;
+        if (!canPerformCheck) needsPayment = true;
       }
 
       // Check if over quota for limited tiers

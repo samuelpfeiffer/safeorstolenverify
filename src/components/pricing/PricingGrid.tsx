@@ -28,13 +28,6 @@ export const PricingGrid = () => {
 
   const products = [
     {
-      ...SUBSCRIPTION_TIERS.free,
-      price: 'Free',
-      priceId: 'free',
-      period: 'forever',
-      image: "https://i.imgur.com/6Mvijcm.png"
-    },
-    {
       ...SUBSCRIPTION_TIERS.starter,
       price: formatPrice(SUBSCRIPTION_TIERS.starter.price),
       priceId: SUBSCRIPTION_TIERS.starter.stripePriceId!,

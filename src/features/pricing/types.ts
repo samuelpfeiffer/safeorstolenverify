@@ -3,7 +3,7 @@
  * Centralized TypeScript interfaces for subscription and pricing
  */
 
-export type SubscriptionTierKey = 'free' | 'starter' | 'payPerUse' | 'personal' | 'professional' | 'enterprise';
+export type SubscriptionTierKey = 'starter' | 'payPerUse' | 'personal' | 'professional' | 'enterprise';
 
 export interface SubscriptionTier {
   name: string;

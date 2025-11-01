@@ -32,7 +32,7 @@ export const SubscriptionStatus = () => {
       return getSubscriptionTier(subscriptionData?.subscription_tier);
     } catch (error) {
       console.error('Error getting subscription tier:', error);
-      return SUBSCRIPTION_TIERS.free;
+      return SUBSCRIPTION_TIERS.starter;
     }
   }, [subscriptionData?.subscription_tier]);
 

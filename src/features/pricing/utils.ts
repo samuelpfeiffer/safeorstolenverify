@@ -44,9 +44,10 @@ export const getSubscriptionPriceId = (tier: string): string => {
 
 /**
  * Get subscription tier with legacy name support
+ * Returns starter tier as default for unsubscribed users
  */
 export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
-  if (!tierName) return SUBSCRIPTION_TIERS.free;
+  if (!tierName) return SUBSCRIPTION_TIERS.starter;
   
   const normalized = tierName.toLowerCase();
   
@@ -65,7 +66,7 @@ export const getSubscriptionTier = (tierName?: string): SubscriptionTier => {
   
   // Try legacy mapping
   const mappedKey = LEGACY_TIER_MAPPING[tierName];
-  return SUBSCRIPTION_TIERS[mappedKey] || SUBSCRIPTION_TIERS.free;
+  return SUBSCRIPTION_TIERS[mappedKey] || SUBSCRIPTION_TIERS.starter;
 };
 
 /**
@@ -95,7 +96,7 @@ export const getBusinessTiers = (): SubscriptionTier[] => {
  */
 export const getPersonalTiers = (): SubscriptionTier[] => {
   return [
-    SUBSCRIPTION_TIERS.free,
+    SUBSCRIPTION_TIERS.starter,
     SUBSCRIPTION_TIERS.payPerUse,
     SUBSCRIPTION_TIERS.personal
   ];
