@@ -173,6 +173,13 @@ const SafeOrStolenVsCheckMendPage = lazy(() => import('@/pages/SafeOrStolenVsChe
 const SafeOrStolenVsIMEIInfoPage = lazy(() => import('@/pages/SafeOrStolenVsIMEIInfoPage'));
 const SafeOrStolenVsCarfaxPage = lazy(() => import('@/pages/SafeOrStolenVsCarfaxPage'));
 const CompetitorAlternativesHubPage = lazy(() => import('@/pages/CompetitorAlternativesHubPage'));
+const SafeOrStolenVsGreyScoutPage = lazy(() => import('@/pages/SafeOrStolenVsGreyScoutPage'));
+const SafeOrStolenVsEbayPage = lazy(() => import('@/pages/SafeOrStolenVsEbayPage'));
+
+// Global & Regional Pages
+const GlobalMissionPage = lazy(() => import('@/pages/GlobalMissionPage'));
+const RegionIndiaPage = lazy(() => import('@/pages/RegionIndiaPage'));
+const EducationalContentHub = lazy(() => import('@/pages/EducationalContentHub'));
 
 // Dynamic SEO Expansion Templates
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
@@ -283,6 +290,11 @@ export const AppRoutes: React.FC = () => {
           <Route path="alternatives" element={<Navigate to="/competitor-alternatives" replace />} />
           <Route path="checkmend-alternative" element={<Navigate to="/safeorstolen-vs-checkmend" replace />} />
           <Route path="imeiinfo-alternative" element={<Navigate to="/safeorstolen-vs-imeiinfo" replace />} />
+          <Route path="safeorstolen-vs-greyscout" element={<SafeOrStolenVsGreyScoutPage />} />
+          <Route path="safeorstolen-vs-ebay" element={<SafeOrStolenVsEbayPage />} />
+          <Route path="global-mission" element={<GlobalMissionPage />} />
+          <Route path="region/india" element={<RegionIndiaPage />} />
+          <Route path="education" element={<EducationalContentHub />} />
           
           {/* Trust & Company Pages */}
           <Route path="/about-company" element={<AboutUsPage />} />
