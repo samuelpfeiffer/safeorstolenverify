@@ -78,9 +78,6 @@ const PricingPage = () => {
 
       console.log('[SUBSCRIPTION-DEBUG] Preparing checkout redirect');
       
-      // MOBILE-OPTIMIZED: Different behavior for mobile vs desktop
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      
       // Build checkout URL params - use planName for product matching if no price ID
       const params = new URLSearchParams({
         planName: tierData.name || tier,
@@ -92,31 +89,10 @@ const PricingPage = () => {
         params.append('priceId', priceId);
       }
       
-      const checkoutUrl = `${window.location.origin}/checkout-redirect?${params.toString()}`;
+      console.log('[SUBSCRIPTION-DEBUG] Navigating to checkout:', params.toString());
       
-      console.log('[SUBSCRIPTION-DEBUG] Checkout URL:', checkoutUrl, '| Mobile:', isMobile);
-      
-      if (isMobile) {
-        // MOBILE: Direct navigation works better than window.open on mobile
-        console.log('[SUBSCRIPTION-DEBUG] Mobile: Using direct navigation');
-        window.location.href = checkoutUrl;
-      } else {
-        // DESKTOP: Open in new tab
-        console.log('[SUBSCRIPTION-DEBUG] Desktop: Opening in new tab');
-        const newWindow = window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
-        
-        if (!newWindow) {
-          toast({
-            title: "Pop-up Blocked",
-            description: "Please allow pop-ups for this site to complete checkout.",
-            variant: "destructive",
-          });
-          // Fallback to direct navigation
-          setTimeout(() => {
-            window.location.href = checkoutUrl;
-          }, 1500);
-        }
-      }
+      // Direct navigation - works in all contexts including iframes
+      navigate(`/checkout-redirect?${params.toString()}`);
       
     } catch (error: any) {
       console.error('Subscription error:', error);

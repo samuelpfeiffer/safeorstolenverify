@@ -12,28 +12,11 @@ const CheckoutRedirect: React.FC = () => {
   const [sessionWaitCount, setSessionWaitCount] = useState(0);
 
   useEffect(() => {
-    // MOBILE FIX: Don't try to escape iframe on mobile - just work with it
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (!isMobile && isInIframe()) {
-      console.log('[CHECKOUT-REDIRECT] Desktop: Escaping iframe');
-      const fullUrl = window.location.href;
-      try {
-        if (window.top) {
-          (window.top as Window).location.href = fullUrl;
-        }
-      } catch {
-        window.open(fullUrl, '_top');
-      }
-      return;
-    }
-
     console.log('[CHECKOUT-REDIRECT] Session status:', { 
       hasSession: !!session, 
       isAuthenticated,
       loading,
       sessionWaitCount,
-      isMobile,
       sessionAccessToken: session?.access_token ? 'present' : 'missing' 
     });
 
@@ -53,15 +36,14 @@ const CheckoutRedirect: React.FC = () => {
         return;
       }
 
-      // MOBILE: More aggressive session waiting with shorter timeout
+      // Wait for session to be ready
       if (loading || !session || !session.access_token) {
         console.log('[CHECKOUT-REDIRECT] Waiting for session...', { loading, hasSession: !!session, waitCount: sessionWaitCount });
         
-        // Shorter timeout for mobile (10 attempts = ~5 seconds)
-        const maxWaitAttempts = isMobile ? 10 : 20;
-        if (sessionWaitCount > maxWaitAttempts) {
+        // Timeout after 20 attempts (~10 seconds)
+        if (sessionWaitCount > 20) {
           console.error('[CHECKOUT-REDIRECT] Session timeout');
-          setError('Please sign in again to continue with checkout.');
+          setError('Session timeout. Please sign in again to continue with checkout.');
           setTimeout(() => {
             window.location.href = '/auth?redirect=pricing';
           }, 2000);
