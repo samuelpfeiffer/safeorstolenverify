@@ -43,21 +43,27 @@ const CheckoutRedirect: React.FC = () => {
         return;
       }
 
-      // Wait for session to be ready
-      if (loading || !session || !session.access_token) {
-        console.log('[CHECKOUT-REDIRECT] Waiting for session...', { loading, hasSession: !!session, waitCount: sessionWaitCount });
+      // Check if still loading auth
+      if (loading) {
+        console.log('[CHECKOUT-REDIRECT] Auth still loading...', { waitCount: sessionWaitCount });
         
-        // Timeout after 20 attempts (~10 seconds)
-        if (sessionWaitCount > 20) {
-          console.error('[CHECKOUT-REDIRECT] Session timeout');
-          setError('Session timeout. Please sign in again to continue with checkout.');
-          setTimeout(() => {
-            window.location.href = '/auth?redirect=pricing';
-          }, 2000);
+        // Only wait 5 seconds for initial auth check
+        if (sessionWaitCount > 10) {
+          console.error('[CHECKOUT-REDIRECT] Auth loading timeout - redirecting to login');
+          const checkoutParams = new URLSearchParams(window.location.search).toString();
+          window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
           return;
         }
         
         setSessionWaitCount(prev => prev + 1);
+        return;
+      }
+
+      // If not loading but no session, redirect to login immediately
+      if (!session || !session.access_token) {
+        console.log('[CHECKOUT-REDIRECT] No session - redirecting to login');
+        const checkoutParams = new URLSearchParams(window.location.search).toString();
+        window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
         return;
       }
 
