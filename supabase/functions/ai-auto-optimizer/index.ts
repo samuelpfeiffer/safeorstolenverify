@@ -33,7 +33,7 @@ serve(async (req) => {
     const optimizations: any[] = [];
 
     for (const post of posts || []) {
-      const needs Optimization = [];
+      const needsOptimization = [];
 
       // Check if meta description is too short or missing
       if (!post.meta_description || post.meta_description.length < 120) {
