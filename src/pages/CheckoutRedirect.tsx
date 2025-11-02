@@ -7,29 +7,26 @@ import { navigateOutOfIframe, isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
   const location = useLocation();
-  const { session, isAuthenticated, loading } = useUnifiedAuth();
+  const { session, loading } = useUnifiedAuth();
   const [error, setError] = useState<string | React.ReactNode | null>(null);
-  const checkoutInProgress = useRef(false);
+  const [redirecting, setRedirecting] = useState(false);
+  const checkoutAttempted = useRef(false);
 
   useEffect(() => {
-    // Get params fresh from location on every render
+    // Only run once
+    if (checkoutAttempted.current) {
+      return;
+    }
+
     const searchParams = new URLSearchParams(location.search);
     
-    console.log('[CHECKOUT-REDIRECT] Effect running:', { 
+    console.log('[CHECKOUT-REDIRECT] Initializing checkout:', { 
       hasSession: !!session, 
-      isAuthenticated,
       loading,
-      hasAccessToken: session?.access_token ? 'YES' : 'NO',
-      searchParams: searchParams.toString()
+      hasAccessToken: session?.access_token ? 'YES' : 'NO'
     });
 
     const createCheckout = async () => {
-      // Prevent duplicate checkout creation
-      if (checkoutInProgress.current) {
-        console.log('[CHECKOUT-REDIRECT] Checkout already in progress, skipping');
-        return;
-      }
-
       const priceId = searchParams.get('priceId');
       const planName = searchParams.get('planName');
       const isSubscription = searchParams.get('isSubscription') === 'true';
@@ -38,43 +35,37 @@ const CheckoutRedirect: React.FC = () => {
 
       console.log('[CHECKOUT-REDIRECT] Parameters:', { priceId, planName, isSubscription, serialNumber, itemType });
 
-      // Plan name is required for product matching (price ID is optional)
+      // Plan name is required
       if (!planName) {
         console.error('[CHECKOUT-REDIRECT] Missing planName');
+        checkoutAttempted.current = true;
         setError('Missing plan information. Please try again from the pricing page.');
         return;
       }
 
-      // Check if still loading auth - wait max 3 seconds
+      // Wait for auth to complete
       if (loading) {
-        console.log('[CHECKOUT-REDIRECT] Auth still loading, waiting...');
-        setTimeout(() => {
-          // If still loading after 3 seconds, redirect to auth
-          if (loading) {
-            console.log('[CHECKOUT-REDIRECT] Auth timeout - redirecting to login');
-            const checkoutParams = new URLSearchParams(window.location.search).toString();
-            window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
-          }
-        }, 3000);
+        console.log('[CHECKOUT-REDIRECT] Waiting for auth...');
         return;
       }
 
-      // If not loading but no session, redirect to login immediately
+      // Redirect to auth if no session
       if (!session || !session.access_token) {
         console.log('[CHECKOUT-REDIRECT] No session - redirecting to login');
+        checkoutAttempted.current = true;
         const checkoutParams = new URLSearchParams(window.location.search).toString();
         window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
         return;
       }
 
+      // Mark as attempted to prevent re-runs
       console.log('[CHECKOUT-REDIRECT] Session ready, creating checkout...');
-      checkoutInProgress.current = true;
+      checkoutAttempted.current = true;
+      setRedirecting(true);
 
       try {
-        console.log('Creating checkout outside iframe:', { priceId: priceId || 'none (using planName)', planName, isSubscription });
-
         const body: any = {
-          priceId: priceId || null, // null if not provided - edge function will use planName
+          priceId: priceId || null,
           planName: planName,
           isSubscription,
           redirectUrl: window.location.origin,
@@ -82,6 +73,8 @@ const CheckoutRedirect: React.FC = () => {
 
         if (serialNumber) body.serialNumber = serialNumber;
         if (itemType) body.itemType = itemType;
+
+        console.log('[CHECKOUT-REDIRECT] Calling edge function...');
 
         const { data, error } = await supabase.functions.invoke('create-checkout', {
           body,
@@ -91,29 +84,30 @@ const CheckoutRedirect: React.FC = () => {
         });
 
         if (error) {
-          console.error('Checkout error:', error);
+          console.error('[CHECKOUT-REDIRECT] Edge function error:', error);
           setError(error.message || 'Failed to create checkout session');
+          setRedirecting(false);
           return;
         }
 
         if (data?.url) {
-          console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
-          
-          // Always redirect to Stripe checkout URL
-          console.log('[CHECKOUT-REDIRECT] Redirecting to:', data.url);
+          console.log('[CHECKOUT-REDIRECT] SUCCESS! Redirecting to:', data.url);
+          // Immediate redirect - no state updates after this
           window.location.href = data.url;
         } else {
+          console.error('[CHECKOUT-REDIRECT] No URL in response');
           setError('No checkout URL received from Stripe');
+          setRedirecting(false);
         }
       } catch (err: any) {
-        console.error('Error creating checkout:', err);
+        console.error('[CHECKOUT-REDIRECT] Exception:', err);
         setError(err.message || 'Failed to create checkout session');
-        checkoutInProgress.current = false;
+        setRedirecting(false);
       }
     };
 
     createCheckout();
-  }, [location.search, session, loading, isAuthenticated]);
+  }, [location.search, session, loading]);
 
   if (error) {
     return (
@@ -136,8 +130,12 @@ const CheckoutRedirect: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center">
       <div className="text-center">
         <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
-        <h1 className="text-2xl font-bold text-white mb-2">Redirecting to Checkout...</h1>
-        <p className="text-gray-300">Please wait while we prepare your secure payment.</p>
+        <h1 className="text-2xl font-bold text-white mb-2">
+          {redirecting ? 'Redirecting to Stripe...' : 'Preparing Checkout...'}
+        </h1>
+        <p className="text-gray-300">
+          {redirecting ? 'Opening secure payment page...' : 'Please wait while we prepare your payment.'}
+        </p>
       </div>
     </div>
   );
