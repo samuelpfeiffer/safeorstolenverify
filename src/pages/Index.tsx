@@ -9,6 +9,7 @@ import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
 import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
+import { HeroBanner } from '@/components/hero/HeroBanner';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -120,6 +121,9 @@ const Index = () => {
       
       {/* Trust header bar */}
       <TrustHeaderBar />
+      
+      {/* Billboard banner image */}
+      <HeroBanner />
       
       <div className="min-h-screen">
         {/* Hero with search bar - THE CORE VALUE */}
