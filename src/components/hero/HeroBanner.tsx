@@ -1,4 +1,4 @@
-import heroBannerImage from '@/assets/hero-banner.png';
+import heroBannerImage from '@/assets/sos-billboard.jpg';
 
 export const HeroBanner = () => {
   return (
@@ -6,7 +6,7 @@ export const HeroBanner = () => {
       <div className="container mx-auto px-4">
         <img 
           src={heroBannerImage} 
-          alt="SafeOrStolen verification shown on mobile and desktop devices displaying Item Verified status for secure secondhand transactions"
+          alt="Person viewing SafeOrStolen billboard message about checking secondhand items before transactions to protect buyers and sellers"
           className="w-full h-auto max-w-5xl mx-auto rounded-xl shadow-elegant"
           loading="eager"
           width="1920"
