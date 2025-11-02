@@ -3,14 +3,9 @@
  * Enhanced Google Analytics 4 integration for maximum SEO insights
  */
 
-// Types already declared globally
+import { GA4_MEASUREMENT_ID } from '@/config/analytics';
 
-/**
- * ⚠️ ACTION REQUIRED: Replace with your actual Google Analytics 4 Measurement ID
- * Get your GA4 ID from: https://analytics.google.com/
- * Format: G-XXXXXXXXXX (where X are alphanumeric characters)
- */
-const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace in production
+// Types already declared globally
 
 /**
  * Initialize enhanced Google Analytics 4 with SEO tracking

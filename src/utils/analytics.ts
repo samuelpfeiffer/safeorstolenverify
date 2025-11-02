@@ -1,8 +1,9 @@
-
 // Analytics utility functions
+import { GA4_MEASUREMENT_ID } from '@/config/analytics';
 
 /**
  * Initialize analytics
+ * Note: GA4 is now initialized by GA4Provider component
  */
 export const initAnalytics = () => {
   if (typeof window !== 'undefined' && !window.dataLayer) {
@@ -12,12 +13,12 @@ export const initAnalytics = () => {
       window.dataLayer.push(arguments);
     };
     
-    // Initialize with your Google Analytics measurement ID when you have one
+    // Initialize with your Google Analytics measurement ID
     window.gtag('js', new Date());
-    window.gtag('config', 'G-XXXXXXXXXX'); // Replace with your Google Analytics ID when you have one
+    window.gtag('config', GA4_MEASUREMENT_ID);
     
     // Enhanced ecommerce and SEO tracking
-    window.gtag('config', 'G-XXXXXXXXXX', {
+    window.gtag('config', GA4_MEASUREMENT_ID, {
       send_page_view: true,
       anonymize_ip: true,
       allow_google_signals: true,

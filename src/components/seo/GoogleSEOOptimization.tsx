@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { GA4_MEASUREMENT_ID } from '@/config/analytics';
 
 interface GoogleSEOOptimizationProps {
   pageType?: 'homepage' | 'product' | 'blog' | 'service' | 'legal';
@@ -18,20 +19,11 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
       {/* Google Search Console Verification */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       
-      {/* Google Analytics 4 Enhanced */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+      {/* Google Analytics 4 - Managed by GA4Provider */}
       <script>
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX', {
-            page_title: document.title,
-            page_location: '${fullUrl}',
-            content_group1: '${pageType}',
-            send_page_view: true,
-            cookie_flags: 'SameSite=None;Secure'
-          });
+          // GA4 is initialized by GA4Provider component
+          // Measurement ID: ${GA4_MEASUREMENT_ID}
         `}
       </script>
 

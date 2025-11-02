@@ -1,109 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SafeOrStolen - Stolen Item Verification News &amp; Updates</title>
+    <title>SafeOrStolen - News & Updates</title>
     <link>https://safeorstolen.com</link>
-    <description>Latest news, guides, and updates on verifying stolen items. Free IMEI checker, VIN verification, and serial number lookup tools.</description>
+    <description>Latest news, updates, and tips on verifying stolen items, protecting yourself from fraud, and buying second-hand items safely.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Oct 2025 00:00:00 GMT</lastBuildDate>
-    <atom:link href="https://safeorstolen.com/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Oct 2025 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://safeorstolen.com/feed.xml" rel="self" type="application/rss+xml"/>
     <copyright>Copyright 2025 SafeOrStolen.com</copyright>
-    <managingEditor>contact@safeorstolen.com (SafeOrStolen Team)</managingEditor>
-    <webMaster>contact@safeorstolen.com (SafeOrStolen Team)</webMaster>
+    <managingEditor>info@safeorstolen.com (SafeOrStolen Team)</managingEditor>
+    <webMaster>webmaster@safeorstolen.com (SafeOrStolen Technical Team)</webMaster>
     <image>
-      <url>https://safeorstolen.com/images/rss-logo.png</url>
+      <url>https://safeorstolen.com/logo.png</url>
       <title>SafeOrStolen</title>
       <link>https://safeorstolen.com</link>
     </image>
 
     <item>
-      <title>Ultimate Guide: How to Check If Anything Is Stolen Before You Buy</title>
-      <link>https://safeorstolen.com/how-to-check-if-anything-is-stolen-before-you-buy</link>
-      <description>Comprehensive guide covering phones, cars, electronics, bikes, and more. Learn verification methods for any item type.</description>
-      <pubDate>Tue, 01 Oct 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/how-to-check-if-anything-is-stolen-before-you-buy</guid>
-      <category>Guides</category>
+      <title>Welcome to SafeOrStolen - Your Stolen Item Verification Platform</title>
+      <link>https://safeorstolen.com</link>
+      <description>SafeOrStolen.com is now live! Verify IMEI numbers, VIN numbers, and serial numbers to ensure your second-hand purchases are safe and not stolen.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/launch</guid>
+      <category>Announcements</category>
     </item>
 
     <item>
-      <title>Free IMEI Checker - Verify If Your Phone Is Stolen</title>
-      <link>https://safeorstolen.com/imei-checker</link>
-      <description>Check if a phone is stolen, blacklisted, or reported lost using IMEI number verification. Free instant check.</description>
-      <pubDate>Mon, 30 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/imei-checker</guid>
+      <title>IMEI Checker - Verify Your Phone Before You Buy</title>
+      <link>https://safeorstolen.com/imei-check</link>
+      <description>Use our IMEI checker to verify if a phone is stolen, blacklisted, or reported lost. Essential for anyone buying a used phone from Facebook Marketplace, Craigslist, or other platforms.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/imei-checker</guid>
       <category>Tools</category>
     </item>
 
     <item>
-      <title>VIN Verification - Check If Car Is Stolen</title>
+      <title>VIN Verification - Check Vehicle History</title>
       <link>https://safeorstolen.com/vin-verification</link>
-      <description>Free VIN number lookup to verify vehicle history and check if a car is stolen or has salvage title.</description>
-      <pubDate>Sun, 29 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/vin-verification</guid>
+      <description>Verify vehicle VIN numbers to check if a car is stolen, has liens, or has been reported to authorities. Protect yourself when buying used vehicles.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/vin-verification</guid>
       <category>Tools</category>
     </item>
 
     <item>
-      <title>How Our Stolen Item Database Works</title>
+      <title>How to Buy Used Electronics Safely</title>
       <link>https://safeorstolen.com/how-it-works</link>
-      <description>Learn how SafeOrStolen verifies items using IMEI, VIN, and serial numbers against multiple databases.</description>
-      <pubDate>Sat, 28 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/how-it-works</guid>
-      <category>Information</category>
-    </item>
-
-    <item>
-      <title>Buyer's Guide: Avoiding Stolen Goods</title>
-      <link>https://safeorstolen.com/buyer-guide</link>
-      <description>Essential tips and verification steps for buyers on marketplaces like eBay, Facebook Marketplace, and Craigslist.</description>
-      <pubDate>Fri, 27 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/buyer-guide</guid>
+      <description>Learn how to protect yourself when buying used phones, laptops, tablets, and other electronics. Complete guide to verification and safe transactions.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/safe-buying-guide</guid>
       <category>Guides</category>
     </item>
 
     <item>
-      <title>Seller's Guide: Prove Items Aren't Stolen</title>
-      <link>https://safeorstolen.com/seller-guide</link>
-      <description>Help sellers build trust by verifying and documenting that their items are legitimate and not stolen.</description>
-      <pubDate>Thu, 26 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/seller-guide</guid>
+      <title>Marketplace Sellers: How to Build Trust</title>
+      <link>https://safeorstolen.com/for-sellers</link>
+      <description>If you're selling used items online, providing verification builds buyer confidence. Learn how SafeOrStolen helps sellers close more deals.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/sellers-guide</guid>
       <category>Guides</category>
     </item>
 
     <item>
-      <title>Mobile App Launch - iOS &amp; Android</title>
-      <link>https://safeorstolen.com/mobile-app</link>
-      <description>Download our mobile app for instant stolen item checks with barcode scanning and offline verification.</description>
-      <pubDate>Wed, 25 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/mobile-app</guid>
-      <category>News</category>
+      <title>Enterprise Solutions for Marketplaces</title>
+      <link>https://safeorstolen.com/for-brands</link>
+      <description>SafeOrStolen now offers API integration for online marketplaces, pawn shops, and retailers. Protect your platform and users from stolen goods.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/enterprise</guid>
+      <category>Business</category>
     </item>
 
     <item>
-      <title>Firearms Verification Now Available</title>
-      <link>https://safeorstolen.com/firearms-check</link>
-      <description>New feature: Verify firearms serial numbers against stolen gun databases for legal compliance.</description>
-      <pubDate>Tue, 24 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/firearms-check</guid>
-      <category>News</category>
+      <title>Facebook Marketplace Safety Tips</title>
+      <link>https://safeorstolen.com/facebook-marketplace-verification</link>
+      <description>Essential safety tips for buying and selling on Facebook Marketplace. How to verify items and avoid scams.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/facebook-marketplace</guid>
+      <category>Safety Tips</category>
     </item>
 
     <item>
-      <title>Understanding IMEI Blacklists</title>
-      <link>https://safeorstolen.com/blog/imei-blacklist-guide</link>
-      <description>What is an IMEI blacklist, how phones get blacklisted, and how to check if a phone is blacklisted.</description>
-      <pubDate>Mon, 23 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/blog/imei-blacklist-guide</guid>
+      <title>Understanding IMEI Numbers</title>
+      <link>https://safeorstolen.com/imei-check</link>
+      <description>What is an IMEI number? How to find it on your phone? Why is IMEI verification important? Complete guide for buyers and sellers.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/understanding-imei</guid>
       <category>Education</category>
     </item>
 
     <item>
-      <title>Data Source Credibility &amp; Verification</title>
-      <link>https://safeorstolen.com/data-sources</link>
-      <description>Learn about our data sources, verification partnerships, and how we ensure accuracy.</description>
-      <pubDate>Sun, 22 Sep 2025 00:00:00 GMT</pubDate>
-      <guid>https://safeorstolen.com/data-sources</guid>
-      <category>Information</category>
+      <title>VIN Number Basics: What You Need to Know</title>
+      <link>https://safeorstolen.com/vin-verification</link>
+      <description>Everything you need to know about VIN numbers - what they mean, where to find them, and why verification matters when buying used vehicles.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/vin-basics</guid>
+      <category>Education</category>
+    </item>
+
+    <item>
+      <title>Mobile App Coming Soon</title>
+      <link>https://safeorstolen.com/mobile-app</link>
+      <description>The SafeOrStolen mobile app is coming soon to iOS and Android. Scan barcodes, verify items instantly, and shop with confidence on the go.</description>
+      <pubDate>Mon, 27 Oct 2025 00:00:00 GMT</pubDate>
+      <guid>https://safeorstolen.com/news/mobile-app</guid>
+      <category>Announcements</category>
     </item>
 
   </channel>

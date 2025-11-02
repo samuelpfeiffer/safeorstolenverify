@@ -15,6 +15,7 @@ import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
 import { SearchParamBlocker } from '@/components/seo/SearchParamBlocker';
+import { GA4Provider } from '@/components/seo/GA4Provider';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -43,7 +44,8 @@ export const AppRoot: React.FC = () => {
           <AuthProvider>
             <PWAProvider>
               <ThemeProvider>
-                <Router>
+                <GA4Provider>
+                  <Router>
                   <CriticalResourceLoader />
                   <SearchParamBlocker />
                   <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -61,11 +63,12 @@ export const AppRoot: React.FC = () => {
                   <MobileNavigation />
                   <Toaster />
                 </Router>
-              </ThemeProvider>
-            </PWAProvider>
-          </AuthProvider>
-        </QueryClientProvider>
-      </ErrorBoundary>
+              </GA4Provider>
+            </ThemeProvider>
+          </PWAProvider>
+        </AuthProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
     </React.StrictMode>
   );
 };
