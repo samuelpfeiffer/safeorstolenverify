@@ -1,12 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
 import { navigateOutOfIframe, isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
-  const [searchParams] = useSearchParams();
+  // Defensive: Verify Router context is available
+  let searchParams: URLSearchParams;
+  try {
+    const location = useLocation();
+    searchParams = new URLSearchParams(location.search);
+  } catch (error) {
+    console.error('[CHECKOUT-REDIRECT] Router context error:', error);
+    // Fallback to window.location if Router context unavailable
+    searchParams = new URLSearchParams(window.location.search);
+  }
   const { session, isAuthenticated, loading } = useUnifiedAuth();
   const [error, setError] = useState<string | React.ReactNode | null>(null);
   const [sessionWaitCount, setSessionWaitCount] = useState(0);
@@ -29,11 +38,11 @@ const CheckoutRedirect: React.FC = () => {
         return;
       }
 
-      const priceId = searchParams.get('priceId');
-      const planName = searchParams.get('planName');
-      const isSubscription = searchParams.get('isSubscription') === 'true';
-      const serialNumber = searchParams.get('serialNumber');
-      const itemType = searchParams.get('itemType');
+      const priceId = searchParams?.get('priceId');
+      const planName = searchParams?.get('planName');
+      const isSubscription = searchParams?.get('isSubscription') === 'true';
+      const serialNumber = searchParams?.get('serialNumber');
+      const itemType = searchParams?.get('itemType');
 
       console.log('[CHECKOUT-REDIRECT] Parameters:', { priceId, planName, isSubscription, serialNumber, itemType });
 

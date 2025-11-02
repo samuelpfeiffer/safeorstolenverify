@@ -35,6 +35,7 @@ const queryClient = new QueryClient({
 
 /**
  * App Root Component - Production Ready
+ * Router MUST be the outermost provider for all routing hooks to work
  */
 export const AppRoot: React.FC = () => {
   return (
