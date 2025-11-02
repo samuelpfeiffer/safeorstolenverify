@@ -105,26 +105,8 @@ const CheckoutRedirect: React.FC = () => {
           
           if (isLovablePreview) {
             // In Lovable preview: Open in new tab immediately (bypasses iframe restrictions)
-            setIsPreviewMode(true);
+            console.log('[CHECKOUT-REDIRECT] Preview mode: Opening in new tab');
             navigateOutOfIframe(data.url, true);
-            setError(
-              <div className="space-y-4">
-                <p>Opening Stripe checkout in a new tab...</p>
-                <p className="text-sm text-gray-600">If the tab didn't open, click below:</p>
-                <a 
-                  href={data.url} 
-                  className="inline-block bg-sos-orange text-white px-6 py-3 rounded-lg hover:bg-sos-orange/90 font-semibold"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigateOutOfIframe(data.url, true);
-                  }}
-                >
-                  Open Stripe Checkout →
-                </a>
-              </div>
-            );
           } else {
             // Production: Use normal redirect
             navigateOutOfIframe(data.url, false);
