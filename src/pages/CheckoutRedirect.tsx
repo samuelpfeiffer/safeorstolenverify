@@ -6,29 +6,21 @@ import { Loader2 } from 'lucide-react';
 import { navigateOutOfIframe, isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
-  // Defensive: Verify Router context is available
-  let searchParams: URLSearchParams;
-  try {
-    const location = useLocation();
-    searchParams = new URLSearchParams(location.search);
-  } catch (error) {
-    console.error('[CHECKOUT-REDIRECT] Router context error:', error);
-    // Fallback to window.location if Router context unavailable
-    searchParams = new URLSearchParams(window.location.search);
-  }
+  const location = useLocation();
   const { session, isAuthenticated, loading } = useUnifiedAuth();
   const [error, setError] = useState<string | React.ReactNode | null>(null);
-  const [sessionWaitCount, setSessionWaitCount] = useState(0);
-  const [isPreviewMode, setIsPreviewMode] = useState(false);
   const checkoutInProgress = useRef(false);
 
   useEffect(() => {
-    console.log('[CHECKOUT-REDIRECT] Session status:', { 
+    // Get params fresh from location on every render
+    const searchParams = new URLSearchParams(location.search);
+    
+    console.log('[CHECKOUT-REDIRECT] Effect running:', { 
       hasSession: !!session, 
       isAuthenticated,
       loading,
-      sessionWaitCount,
-      sessionAccessToken: session?.access_token ? 'present' : 'missing' 
+      hasAccessToken: session?.access_token ? 'YES' : 'NO',
+      searchParams: searchParams.toString()
     });
 
     const createCheckout = async () => {
@@ -38,11 +30,11 @@ const CheckoutRedirect: React.FC = () => {
         return;
       }
 
-      const priceId = searchParams?.get('priceId');
-      const planName = searchParams?.get('planName');
-      const isSubscription = searchParams?.get('isSubscription') === 'true';
-      const serialNumber = searchParams?.get('serialNumber');
-      const itemType = searchParams?.get('itemType');
+      const priceId = searchParams.get('priceId');
+      const planName = searchParams.get('planName');
+      const isSubscription = searchParams.get('isSubscription') === 'true';
+      const serialNumber = searchParams.get('serialNumber');
+      const itemType = searchParams.get('itemType');
 
       console.log('[CHECKOUT-REDIRECT] Parameters:', { priceId, planName, isSubscription, serialNumber, itemType });
 
@@ -53,19 +45,17 @@ const CheckoutRedirect: React.FC = () => {
         return;
       }
 
-      // Check if still loading auth
+      // Check if still loading auth - wait max 3 seconds
       if (loading) {
-        console.log('[CHECKOUT-REDIRECT] Auth still loading...', { waitCount: sessionWaitCount });
-        
-        // Only wait 5 seconds for initial auth check
-        if (sessionWaitCount > 10) {
-          console.error('[CHECKOUT-REDIRECT] Auth loading timeout - redirecting to login');
-          const checkoutParams = new URLSearchParams(window.location.search).toString();
-          window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
-          return;
-        }
-        
-        setSessionWaitCount(prev => prev + 1);
+        console.log('[CHECKOUT-REDIRECT] Auth still loading, waiting...');
+        setTimeout(() => {
+          // If still loading after 3 seconds, redirect to auth
+          if (loading) {
+            console.log('[CHECKOUT-REDIRECT] Auth timeout - redirecting to login');
+            const checkoutParams = new URLSearchParams(window.location.search).toString();
+            window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
+          }
+        }, 3000);
         return;
       }
 
@@ -109,38 +99,9 @@ const CheckoutRedirect: React.FC = () => {
         if (data?.url) {
           console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
           
-          // Check if we're in Lovable's preview (iframe with cross-origin restrictions)
-          const isLovablePreview = window.location.hostname.includes('lovableproject.com') && isInIframe();
-          
-          if (isLovablePreview) {
-            // In Lovable preview: Open in new tab immediately (bypasses iframe restrictions)
-            console.log('[CHECKOUT-REDIRECT] Preview mode: Opening in new tab');
-            navigateOutOfIframe(data.url, true);
-          } else {
-            // Production: Use normal redirect
-            navigateOutOfIframe(data.url, false);
-            
-            // Fallback: Show clickable link if redirect doesn't happen in 3 seconds
-            setTimeout(() => {
-              setError(
-                <div className="space-y-4">
-                  <p>Redirect taking longer than expected.</p>
-                  <a 
-                    href={data.url} 
-                    className="inline-block bg-sos-orange text-white px-6 py-3 rounded-lg hover:bg-sos-orange/90 font-semibold"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigateOutOfIframe(data.url, true);
-                    }}
-                  >
-                    Click here to continue to checkout →
-                  </a>
-                </div>
-              );
-            }, 3000);
-          }
+          // Always redirect to Stripe checkout URL
+          console.log('[CHECKOUT-REDIRECT] Redirecting to:', data.url);
+          window.location.href = data.url;
         } else {
           setError('No checkout URL received from Stripe');
         }
@@ -152,29 +113,20 @@ const CheckoutRedirect: React.FC = () => {
     };
 
     createCheckout();
-  }, [searchParams, session, loading, sessionWaitCount]);
+  }, [location.search, session, loading, isAuthenticated]);
 
   if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
         <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-          {isPreviewMode ? (
-            <>
-              <h1 className="text-2xl font-bold text-sos-orange mb-4">Redirecting to Checkout</h1>
-              <div className="text-gray-700 mb-6">{error}</div>
-            </>
-          ) : (
-            <>
-              <h1 className="text-2xl font-bold text-red-600 mb-4">Checkout Error</h1>
-              <div className="text-gray-700 mb-6">{error}</div>
-              <button
-                onClick={() => window.location.href = '/'}
-                className="bg-sos-orange text-white px-6 py-2 rounded-lg hover:bg-sos-orange/90"
-              >
-                Return to Home
-              </button>
-            </>
-          )}
+          <h1 className="text-2xl font-bold text-red-600 mb-4">Checkout Error</h1>
+          <div className="text-gray-700 mb-6">{error}</div>
+          <button
+            onClick={() => window.location.href = '/pricing'}
+            className="bg-sos-orange text-white px-6 py-2 rounded-lg hover:bg-sos-orange/90"
+          >
+            Return to Pricing
+          </button>
         </div>
       </div>
     );
