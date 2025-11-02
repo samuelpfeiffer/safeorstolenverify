@@ -28,7 +28,6 @@ export const Logo: React.FC<LogoProps> = ({
       alt="Safe or Stolen - Verify Second-Hand Items" 
       className={`${sizeClasses[size]} object-contain ${className}`}
       loading="eager"
-      fetchPriority="high"
     />
   );
 
