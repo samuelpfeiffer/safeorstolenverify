@@ -175,6 +175,8 @@ const SafeOrStolenVsCarfaxPage = lazy(() => import('@/pages/SafeOrStolenVsCarfax
 const CompetitorAlternativesHubPage = lazy(() => import('@/pages/CompetitorAlternativesHubPage'));
 const SafeOrStolenVsGreyScoutPage = lazy(() => import('@/pages/SafeOrStolenVsGreyScoutPage'));
 const SafeOrStolenVsEbayPage = lazy(() => import('@/pages/SafeOrStolenVsEbayPage'));
+const SafeOrStolenVsMercariPage = lazy(() => import('@/pages/competitor/SafeOrStolenVsMercariPage'));
+const SafeOrStolenVsPoshmarkPage = lazy(() => import('@/pages/competitor/SafeOrStolenVsPoshmarkPage'));
 
 // Global & Regional Pages
 const GlobalMissionPage = lazy(() => import('@/pages/GlobalMissionPage'));
@@ -292,6 +294,8 @@ export const AppRoutes: React.FC = () => {
           <Route path="imeiinfo-alternative" element={<Navigate to="/safeorstolen-vs-imeiinfo" replace />} />
           <Route path="safeorstolen-vs-greyscout" element={<SafeOrStolenVsGreyScoutPage />} />
           <Route path="safeorstolen-vs-ebay" element={<SafeOrStolenVsEbayPage />} />
+          <Route path="safeorstolen-vs-mercari" element={<SafeOrStolenVsMercariPage />} />
+          <Route path="safeorstolen-vs-poshmark" element={<SafeOrStolenVsPoshmarkPage />} />
           <Route path="global-mission" element={<GlobalMissionPage />} />
           <Route path="region/india" element={<RegionIndiaPage />} />
           <Route path="education" element={<EducationalContentHub />} />
