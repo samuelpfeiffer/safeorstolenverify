@@ -10,6 +10,7 @@ const CheckoutRedirect: React.FC = () => {
   const { session, isAuthenticated, loading } = useUnifiedAuth();
   const [error, setError] = useState<string | React.ReactNode | null>(null);
   const [sessionWaitCount, setSessionWaitCount] = useState(0);
+  const [isPreviewMode, setIsPreviewMode] = useState(false);
   const checkoutInProgress = useRef(false);
 
   useEffect(() => {
@@ -104,6 +105,7 @@ const CheckoutRedirect: React.FC = () => {
           
           if (isLovablePreview) {
             // In Lovable preview: Open in new tab immediately (bypasses iframe restrictions)
+            setIsPreviewMode(true);
             navigateOutOfIframe(data.url, true);
             setError(
               <div className="space-y-4">
@@ -165,14 +167,23 @@ const CheckoutRedirect: React.FC = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
         <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Checkout Error</h1>
-          <div className="text-gray-700 mb-6">{error}</div>
-          <button
-            onClick={() => window.location.href = '/'}
-            className="bg-sos-orange text-white px-6 py-2 rounded-lg hover:bg-sos-orange/90"
-          >
-            Return to Home
-          </button>
+          {isPreviewMode ? (
+            <>
+              <h1 className="text-2xl font-bold text-sos-orange mb-4">Redirecting to Checkout</h1>
+              <div className="text-gray-700 mb-6">{error}</div>
+            </>
+          ) : (
+            <>
+              <h1 className="text-2xl font-bold text-red-600 mb-4">Checkout Error</h1>
+              <div className="text-gray-700 mb-6">{error}</div>
+              <button
+                onClick={() => window.location.href = '/'}
+                className="bg-sos-orange text-white px-6 py-2 rounded-lg hover:bg-sos-orange/90"
+              >
+                Return to Home
+              </button>
+            </>
+          )}
         </div>
       </div>
     );
