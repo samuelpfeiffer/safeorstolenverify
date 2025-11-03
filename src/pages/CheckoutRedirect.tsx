@@ -56,16 +56,18 @@ const CheckoutRedirect: React.FC = () => {
         setCheckoutUrl(data.url);
         setLoading(false);
         setRedirecting(true);
-        console.log('[CHECKOUT-REDIRECT] Redirecting to:', data.url);
+        console.log('[CHECKOUT-REDIRECT] Opening Stripe in new window:', data.url);
         
-        // Redirect the top-level window (escape iframe)
+        // Open Stripe in a new window/tab to avoid iframe restrictions
         setTimeout(() => {
-          if (window.top) {
-            window.top.location.href = data.url;
+          const stripeWindow = window.open(data.url, '_blank');
+          if (!stripeWindow) {
+            console.error('[CHECKOUT-REDIRECT] Popup blocked, showing manual button');
+            // Popup was blocked, user will need to click the button
           } else {
-            window.location.href = data.url;
+            console.log('[CHECKOUT-REDIRECT] Stripe opened successfully in new window');
           }
-        }, 500);
+        }, 100);
       } else {
         console.error('[CHECKOUT-REDIRECT] No URL in response:', data);
         setError('No checkout URL received');
@@ -115,23 +117,22 @@ const CheckoutRedirect: React.FC = () => {
           ) : redirecting ? (
             <>
               <Loader2 className="w-16 h-16 text-primary animate-spin mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">Redirecting to Stripe...</h1>
-              <p className="text-muted-foreground mb-6">You'll be redirected automatically</p>
+              <h1 className="text-2xl font-bold text-foreground mb-2">Opening Stripe Checkout...</h1>
+              <p className="text-muted-foreground mb-6">A new window will open automatically</p>
               {checkoutUrl && (
                 <div className="mt-6 p-6 bg-card/50 backdrop-blur-sm rounded-lg border border-border">
-                  <p className="text-foreground mb-4 text-sm">If you're not redirected automatically:</p>
+                  <p className="text-foreground mb-4 text-sm">If the window didn't open (popup blocked):</p>
                   <Button 
                     onClick={() => {
-                      if (window.top) {
-                        window.top.location.href = checkoutUrl;
-                      } else {
-                        window.location.href = checkoutUrl;
-                      }
+                      window.open(checkoutUrl, '_blank');
                     }}
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 text-base"
                   >
-                    Continue to Stripe Checkout →
+                    Open Stripe Checkout →
                   </Button>
+                  <p className="text-muted-foreground text-xs mt-3">
+                    Complete your payment in the new window, then return here
+                  </p>
                 </div>
               )}
             </>
