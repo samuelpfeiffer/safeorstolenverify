@@ -13,7 +13,7 @@ const CheckoutRedirect: React.FC = () => {
   const redirectAttempted = useRef(false);
 
   useEffect(() => {
-    // Only run once
+    // Only run once - EMPTY DEPENDENCIES
     if (redirectAttempted.current) return;
     redirectAttempted.current = true;
 
@@ -36,34 +36,37 @@ const CheckoutRedirect: React.FC = () => {
     }
 
     // Create checkout and redirect
-    fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${session.access_token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        priceId,
-        planName,
-        isSubscription,
-        redirectUrl: window.location.origin,
-      }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.url) {
-        console.log('[CHECKOUT] Got URL, redirecting now');
-        // Force redirect - this MUST work
-        window.location.href = data.url;
-      } else {
-        throw new Error('No checkout URL received');
+    (async () => {
+      try {
+        const response = await fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            priceId,
+            planName,
+            isSubscription,
+            redirectUrl: window.location.origin,
+          }),
+        });
+        
+        const data = await response.json();
+        
+        if (data.url) {
+          console.log('[CHECKOUT] FORCING REDIRECT NOW');
+          // Use top-level window to force redirect
+          window.top!.location.href = data.url;
+        } else {
+          setError('No checkout URL received');
+        }
+      } catch (err: any) {
+        console.error('[CHECKOUT] Error:', err);
+        setError(err.message || 'Failed to create checkout');
       }
-    })
-    .catch(err => {
-      console.error('[CHECKOUT] Error:', err);
-      setError(err.message || 'Failed to create checkout');
-    });
-  }, [isAuthenticated, session, location, navigate]);
+    })();
+  }, []); // EMPTY ARRAY - RUN ONCE ONLY
 
   if (error) {
     return (
