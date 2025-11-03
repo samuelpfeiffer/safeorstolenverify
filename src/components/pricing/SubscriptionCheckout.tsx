@@ -17,13 +17,14 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
 }) => {
   const { toast } = useToast();
   const { session, loading, isAuthenticated } = useUnifiedAuth();
+  const [isProcessing, setIsProcessing] = React.useState(false);
 
-  const handleSubscribe = () => {
-    console.log('[SUBSCRIPTION] Subscribe clicked:', { planName, priceId, isAuthenticated, hasSession: !!session });
+  const handleSubscribe = async () => {
+    console.log('[SUBSCRIPTION-DIRECT] Subscribe clicked:', { planName, priceId, isAuthenticated, hasSession: !!session });
 
     // If not authenticated, redirect to auth first
     if (!isAuthenticated || !session) {
-      console.log('[SUBSCRIPTION] Not authenticated, redirecting to auth...');
+      console.log('[SUBSCRIPTION-DIRECT] Not authenticated, redirecting to auth...');
       const params = new URLSearchParams({
         priceId,
         planName,
@@ -33,24 +34,71 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
       return;
     }
 
-    // User is authenticated, proceed to checkout
-    console.log('[SUBSCRIPTION] Authenticated, redirecting to checkout...');
-    const params = new URLSearchParams({
-      priceId,
-      planName,
-      isSubscription: 'true',
-    });
-    
-    escapeIframeAndNavigate(`/checkout-redirect?${params.toString()}`);
+    // DIRECT CHECKOUT - Skip redirect page
+    setIsProcessing(true);
+    console.log('[SUBSCRIPTION-DIRECT] Calling Stripe directly...');
+
+    try {
+      const { createClient } = await import('@supabase/supabase-js');
+      const supabase = createClient(
+        'https://lxrdzbknktwlubbmlsqe.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4cmR6Ymtua3R3bHViYm1sc3FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0NzE3MjAsImV4cCI6MjA2MjA0NzcyMH0.0ic5cOvgvV-tRy-tLAgGfXNJSEOkZD6-RwbG_3Gq2uI'
+      );
+
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          priceId,
+          planName,
+          isSubscription: true,
+          redirectUrl: window.location.origin,
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
+
+      console.log('[SUBSCRIPTION-DIRECT] Response:', { data, error });
+
+      if (error) {
+        toast({
+          title: 'Error',
+          description: error.message || 'Failed to create checkout session',
+          variant: 'destructive',
+        });
+        setIsProcessing(false);
+        return;
+      }
+
+      if (!data?.url) {
+        toast({
+          title: 'Error',
+          description: 'No checkout URL received',
+          variant: 'destructive',
+        });
+        setIsProcessing(false);
+        return;
+      }
+
+      console.log('[SUBSCRIPTION-DIRECT] Redirecting to Stripe:', data.url);
+      window.location.href = data.url;
+    } catch (err: any) {
+      console.error('[SUBSCRIPTION-DIRECT] Error:', err);
+      toast({
+        title: 'Error',
+        description: err.message || 'An unexpected error occurred',
+        variant: 'destructive',
+      });
+      setIsProcessing(false);
+    }
   };
 
   return (
     <Button
       onClick={handleSubscribe}
-      disabled={disabled || loading}
+      disabled={disabled || loading || isProcessing}
       className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"
     >
-      {loading ? 'Loading...' : `Subscribe to ${planName}`}
+      {isProcessing ? 'Processing...' : loading ? 'Loading...' : `Subscribe to ${planName}`}
     </Button>
   );
 };
