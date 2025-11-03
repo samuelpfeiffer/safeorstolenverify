@@ -64,11 +64,12 @@ const CheckoutRedirect: React.FC = () => {
         if (data.url) {
           console.log('[CHECKOUT] Redirecting to Stripe:', data.url);
           
-          // Set URL for manual button first
-          setCheckoutUrl(data.url);
-          
-          // Use replace to prevent back button issues
+          // CRITICAL: Redirect IMMEDIATELY without any state updates
+          // State updates can cause re-renders that interrupt the redirect
           window.location.replace(data.url);
+          
+          // This return prevents any further code execution
+          return;
         } else {
           throw new Error('No checkout URL received');
         }
