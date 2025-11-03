@@ -51,9 +51,8 @@ const CheckoutRedirect: React.FC = () => {
     .then(response => response.json())
     .then(data => {
       if (data.url) {
-        setCheckoutUrl(data.url);
-        setLoading(false);
-        // NO REDIRECT ATTEMPTS - BUTTON ONLY
+        // Automatically redirect to Stripe checkout
+        window.location.href = data.url;
       } else {
         setError('No checkout URL received');
         setLoading(false);
