@@ -85,10 +85,10 @@ const CheckoutRedirect: React.FC = () => {
           title="Checkout Error - Safe Or Stolen"
           robotsDirectives="noindex, nofollow"
         />
-        <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-            <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
-            <p className="text-gray-700 mb-6">{error}</p>
+        <div className="min-h-screen bg-sos-dark flex items-center justify-center p-4">
+          <div className="bg-card rounded-lg p-8 max-w-md w-full text-center border border-border">
+            <h1 className="text-2xl font-bold text-destructive mb-4">Error</h1>
+            <p className="text-foreground mb-6">{error}</p>
             <Button onClick={() => navigate('/pricing')} className="w-full">
               Return to Pricing
             </Button>
@@ -104,22 +104,22 @@ const CheckoutRedirect: React.FC = () => {
         title="Redirecting to Checkout - Safe Or Stolen"
         robotsDirectives="noindex, nofollow"
       />
-      <div className="min-h-screen bg-[#1a1a2e] flex items-center justify-center p-4">
+      <div className="min-h-screen bg-sos-dark flex items-center justify-center p-4">
         <div className="text-center max-w-md w-full">
           {loading ? (
             <>
-              <Loader2 className="w-16 h-16 text-[#FF8C00] animate-spin mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-white mb-2">Setting up checkout...</h1>
-              <p className="text-gray-300 mb-6">Connecting to Stripe...</p>
+              <Loader2 className="w-16 h-16 text-primary animate-spin mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-foreground mb-2">Setting up checkout...</h1>
+              <p className="text-muted-foreground mb-6">Connecting to Stripe...</p>
             </>
           ) : redirecting ? (
             <>
-              <Loader2 className="w-16 h-16 text-[#FF8C00] animate-spin mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-white mb-2">Redirecting to Stripe...</h1>
-              <p className="text-gray-300 mb-6">You'll be redirected automatically</p>
+              <Loader2 className="w-16 h-16 text-primary animate-spin mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-foreground mb-2">Redirecting to Stripe...</h1>
+              <p className="text-muted-foreground mb-6">You'll be redirected automatically</p>
               {checkoutUrl && (
-                <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                  <p className="text-white mb-4 text-sm">If you're not redirected automatically:</p>
+                <div className="mt-6 p-6 bg-card/50 backdrop-blur-sm rounded-lg border border-border">
+                  <p className="text-foreground mb-4 text-sm">If you're not redirected automatically:</p>
                   <Button 
                     onClick={() => {
                       if (window.top) {
@@ -128,7 +128,7 @@ const CheckoutRedirect: React.FC = () => {
                         window.location.href = checkoutUrl;
                       }
                     }}
-                    className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-bold py-3 text-base"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 text-base"
                   >
                     Continue to Stripe Checkout →
                   </Button>
@@ -140,7 +140,7 @@ const CheckoutRedirect: React.FC = () => {
           <Button 
             variant="outline" 
             onClick={() => navigate('/pricing')}
-            className="mt-6 text-white border-white/50 hover:bg-white hover:text-[#1a1a2e]"
+            className="mt-6"
           >
             ← Return to Pricing
           </Button>
