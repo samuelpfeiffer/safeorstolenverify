@@ -4,8 +4,14 @@ import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SEOHead } from '@/components/seo/SEOHead';
+
+// Log immediately when module loads
+console.log('[CHECKOUT-REDIRECT-MODULE] Module loaded');
 
 const CheckoutRedirect: React.FC = () => {
+  console.log('[CHECKOUT-REDIRECT-COMPONENT] Component rendering');
+  
   const location = useLocation();
   const navigate = useNavigate();
   const { session, isAuthenticated } = useUnifiedAuth();
@@ -13,6 +19,12 @@ const CheckoutRedirect: React.FC = () => {
   const [status, setStatus] = useState('Preparing checkout...');
   const [checkoutUrl, setCheckoutUrl] = useState<string>('');
   const redirectAttempted = useRef(false);
+
+  console.log('[CHECKOUT-REDIRECT] State:', { 
+    isAuthenticated, 
+    hasSession: !!session,
+    location: location.pathname + location.search 
+  });
 
   // Meta refresh as backup - will redirect after 3 seconds if JS fails
   useEffect(() => {
@@ -115,44 +127,59 @@ const CheckoutRedirect: React.FC = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
-        <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
-          <p className="text-gray-700 mb-6">{error}</p>
-          <Button onClick={() => navigate('/pricing')} className="w-full">
-            Return to Pricing
-          </Button>
+      <>
+        <SEOHead 
+          title="Checkout Error - Safe Or Stolen"
+          robotsDirectives="noindex, nofollow"
+        />
+        <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
+            <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
+            <p className="text-gray-700 mb-6">{error}</p>
+            <Button onClick={() => navigate('/pricing')} className="w-full">
+              Return to Pricing
+            </Button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
-      <div className="text-center">
-        <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
-        <h1 className="text-2xl font-bold text-white mb-2">{status}</h1>
-        <p className="text-gray-300 mb-6">Please wait...</p>
-        {checkoutUrl && (
-          <div className="mt-4">
-            <p className="text-sm text-gray-400 mb-2">Not redirecting automatically?</p>
-            <Button 
-              onClick={() => window.location.href = checkoutUrl}
-              className="bg-sos-orange hover:bg-sos-orange/90"
-            >
-              Click Here to Continue
-            </Button>
-          </div>
-        )}
-        <Button 
-          variant="outline" 
-          onClick={() => navigate('/pricing')}
-          className="mt-4 text-white border-white hover:bg-white hover:text-sos-orange"
-        >
-          Cancel
-        </Button>
+    <>
+      <SEOHead 
+        title="Redirecting to Checkout - Safe Or Stolen"
+        robotsDirectives="noindex, nofollow"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
+        <div className="text-center">
+          <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-white mb-2">{status}</h1>
+          <p className="text-gray-300 mb-6">Please wait...</p>
+          {checkoutUrl && (
+            <div className="mt-4">
+              <p className="text-sm text-gray-400 mb-2">Not redirecting automatically?</p>
+              <Button 
+                onClick={() => {
+                  console.log('[CHECKOUT] Manual redirect button clicked');
+                  window.location.href = checkoutUrl;
+                }}
+                className="bg-sos-orange hover:bg-sos-orange/90"
+              >
+                Click Here to Continue
+              </Button>
+            </div>
+          )}
+          <Button 
+            variant="outline" 
+            onClick={() => navigate('/pricing')}
+            className="mt-4 text-white border-white hover:bg-white hover:text-sos-orange"
+          >
+            Cancel
+          </Button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
