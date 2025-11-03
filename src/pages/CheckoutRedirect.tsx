@@ -52,7 +52,7 @@ const CheckoutRedirect: React.FC = () => {
     // Mark checkout as initiated to prevent duplicates
     checkoutInitiated.current = true;
 
-    // Create checkout session with timeout
+    // Create checkout session with proper response handling
     const createCheckout = async () => {
       console.log('[CHECKOUT] Creating checkout session...');
       setStatus('Creating checkout session...');
@@ -68,43 +68,39 @@ const CheckoutRedirect: React.FC = () => {
         if (serialNumber) body.serialNumber = serialNumber;
         if (itemType) body.itemType = itemType;
 
-        console.log('[CHECKOUT] Invoking create-checkout function with body:', body);
+        console.log('[CHECKOUT] Calling edge function with:', body);
 
-        // Add 30 second timeout to prevent infinite hanging
-        const timeoutPromise = new Promise((_, reject) => 
-          setTimeout(() => reject(new Error('Request timeout - please try again')), 30000)
-        );
-
-        const invokePromise = supabase.functions.invoke('create-checkout', {
+        const { data, error: invokeError } = await supabase.functions.invoke('create-checkout', {
           body,
           headers: {
             Authorization: `Bearer ${session.access_token}`,
           },
         });
 
-        const result = await Promise.race([invokePromise, timeoutPromise]) as any;
-        const { data, error: invokeError } = result;
+        console.log('[CHECKOUT] Raw response:', { data, error: invokeError });
 
-        console.log('[CHECKOUT] Response received:', { data, error: invokeError });
-
+        // Check for invoke error first
         if (invokeError) {
-          console.error('[CHECKOUT] Error:', invokeError);
+          console.error('[CHECKOUT] Invoke error:', invokeError);
           setError(invokeError.message || 'Failed to create checkout session');
           return;
         }
 
-        if (!data?.url) {
-          console.error('[CHECKOUT] No URL in response:', data);
-          setError('No checkout URL received from Stripe. Please try again.');
+        // The response might be nested or have different structure
+        const checkoutUrl = data?.url || data?.data?.url || (typeof data === 'string' ? data : null);
+        
+        if (!checkoutUrl) {
+          console.error('[CHECKOUT] No URL found in response. Data:', JSON.stringify(data));
+          setError('Unable to create checkout session. Please try again or contact support.');
           return;
         }
 
-        console.log('[CHECKOUT] Success! Redirecting to Stripe:', data.url);
+        console.log('[CHECKOUT] Redirecting to:', checkoutUrl);
         
-        // Redirect to Stripe immediately
-        window.location.href = data.url;
+        // Force immediate redirect
+        window.location.replace(checkoutUrl);
       } catch (err: any) {
-        console.error('[CHECKOUT] Exception:', err);
+        console.error('[CHECKOUT] Fatal error:', err);
         setError(err.message || 'An unexpected error occurred. Please try again.');
       }
     };
