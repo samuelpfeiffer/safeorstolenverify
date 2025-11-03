@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/hooks/use-toast';
 import { logAndSanitizeError } from '@/utils/errorSanitizer';
 import { initializeSecureStorage } from '@/utils/secureStorage';
 
@@ -52,8 +51,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     loading: true,
     initialized: false,
   });
-  
-  const { toast } = useToast();
 
   useEffect(() => {
     let mounted = true;
@@ -117,20 +114,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           initialized: true,
         });
 
-        // Handle auth events with feedback
+        // Log auth events but don't show toasts to avoid dependencies
         if (event === 'SIGNED_IN') {
-          const userName = session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'there';
-          toast({
-            title: `🎉 Successfully Signed In!`,
-            description: `Welcome back, ${userName}! You're ready to verify items.`,
-            duration: 5000,
-          });
+          console.log('[AUTH] User signed in successfully');
         } else if (event === 'SIGNED_OUT') {
-          toast({
-            title: '👋 Signed Out',
-            description: 'Successfully signed out of your account.',
-            duration: 3000,
-          });
+          console.log('[AUTH] User signed out');
         }
       }
     );
@@ -141,7 +129,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       mounted = false;
       subscription.unsubscribe();
     };
-  }, [toast]);
+  }, []);
 
   const signIn = async (email: string, password: string) => {
     try {
@@ -164,12 +152,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           errorMessage = error.message;
         }
 
-        toast({
-          title: 'Sign in failed',
-          description: errorMessage,
-          variant: 'destructive',
-        });
-
+        console.error('[AUTH] Sign in failed:', errorMessage);
         return { success: false, error: errorMessage };
       }
 
@@ -177,13 +160,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
       const errorMessage = 'An unexpected error occurred';
-      
-      toast({
-        title: 'Sign in failed',
-        description: errorMessage,
-        variant: 'destructive',
-      });
-
+      console.error('[AUTH] Sign in exception:', errorMessage);
       return { success: false, error: errorMessage };
     }
   };
@@ -208,12 +185,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (error) {
         let errorMessage = 'Sign up failed';
         if (error.message.includes('already registered') || error.message.includes('User already registered')) {
-          // Clear the form and suggest sign in instead
-          toast({
-            title: 'Account already exists',
-            description: 'An account with this email already exists. Please sign in instead.',
-            variant: 'destructive',
-          });
+          console.error('[AUTH] User already exists');
           return { success: false, error: 'User already exists' };
         } else if (error.message.includes('Password')) {
           errorMessage = 'Password must be at least 6 characters';
@@ -221,18 +193,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           errorMessage = error.message;
         }
 
-        toast({
-          title: 'Sign up failed',
-          description: errorMessage,
-          variant: 'destructive',
-        });
-
+        console.error('[AUTH] Sign up failed:', errorMessage);
         return { success: false, error: errorMessage };
       }
 
       // Send welcome email for new users
       if (data.user && !error) {
-        console.log("User created successfully, sending welcome email...");
+        console.log("[AUTH] User created successfully, sending welcome email...");
         
         try {
           await supabase.functions.invoke('send-welcome-email', {
@@ -242,41 +209,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               userId: data.user.id
             }
           });
-          // Success - email sent
         } catch (emailError) {
-          // Don't fail the signup if email fails
-          // Only log in development
           if (process.env.NODE_ENV === 'development') {
-            console.error("Error sending welcome email:", emailError);
+            console.error("[AUTH] Error sending welcome email:", emailError);
           }
         }
       }
 
-      if (data.user && !data.session) {
-        toast({
-          title: '🎉 Account Created Successfully!',
-          description: 'Please check your email and click the verification link to unlock your 4 free searches!',
-          duration: 12000,
-        });
-      } else {
-        toast({
-          title: '🎉 Welcome to SafeOrStolen!',
-          description: 'Account created! You now have 4 free verification searches to stay protected from stolen goods.',
-          duration: 10000,
-        });
-      }
-
+      console.log('[AUTH] Sign up successful');
       return { success: true };
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
       const safeMessage = logAndSanitizeError(error, 'SignUp');
-      
-      toast({
-        title: 'Sign up failed',
-        description: safeMessage,
-        variant: 'destructive',
-      });
-
+      console.error('[AUTH] Sign up exception:', safeMessage);
       return { success: false, error: safeMessage };
     }
   };
@@ -294,7 +239,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const { error } = await supabase.auth.signOut();
       
       if (error && process.env.NODE_ENV === 'development') {
-        console.error('Sign out error:', error);
+        console.error('[AUTH] Sign out error:', error);
       }
       
       // Always clear local state regardless of API response
@@ -305,23 +250,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         initialized: true,
       });
       
-      toast({
-        title: 'Signed out',
-        description: 'Successfully signed out.',
-      });
+      console.log('[AUTH] Signed out successfully');
     } catch (error) {
-      console.error('Sign out error:', error);
+      console.error('[AUTH] Sign out exception:', error);
       // Force clear state even if API fails
       setState({
         user: null,
         session: null,
         loading: false,
         initialized: true,
-      });
-      
-      toast({
-        title: 'Signed out',
-        description: 'You have been signed out.',
       });
     }
   };
@@ -333,27 +270,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       });
 
       if (error) {
-        toast({
-          title: 'Reset failed',
-          description: error.message,
-          variant: 'destructive',
-        });
+        console.error('[AUTH] Reset failed:', error.message);
         return { success: false, error: error.message };
       }
 
-      toast({
-        title: 'Reset email sent',
-        description: 'Check your email for password reset instructions.',
-      });
-
+      console.log('[AUTH] Reset email sent successfully');
       return { success: true };
     } catch (error) {
       const errorMessage = 'Failed to send reset email';
-      toast({
-        title: 'Reset failed',
-        description: errorMessage,
-        variant: 'destructive',
-      });
+      console.error('[AUTH] Reset exception:', errorMessage);
       return { success: false, error: errorMessage };
     }
   };
