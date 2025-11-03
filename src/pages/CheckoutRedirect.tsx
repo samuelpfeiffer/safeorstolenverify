@@ -1,146 +1,80 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const CheckoutRedirect: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { session, loading, isAuthenticated } = useUnifiedAuth();
-  const [error, setError] = useState<string | null>(null);
-  const [status, setStatus] = useState<string>('Initializing...');
-  const checkoutInitiated = useRef(false);
-
-  // Emergency escape button - always visible
-  const handleGoToPricing = () => {
-    window.location.href = '/pricing';
-  };
+  const { session, isAuthenticated } = useUnifiedAuth();
+  const [error, setError] = useState<string>('');
+  const [status, setStatus] = useState('Preparing checkout...');
 
   useEffect(() => {
-    // Show escape button immediately
-    const timer = setTimeout(() => {
-      setStatus('Taking longer than expected...');
-    }, 3000);
+    const params = new URLSearchParams(location.search);
+    const priceId = params.get('priceId');
+    const planName = params.get('planName');
+    const isSubscription = params.get('isSubscription') === 'true';
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    // Prevent duplicate checkout creation
-    if (checkoutInitiated.current) {
-      console.log('[CHECKOUT] Already initiated, skipping...');
-      return;
-    }
-    const searchParams = new URLSearchParams(location.search);
-    const priceId = searchParams.get('priceId');
-    const planName = searchParams.get('planName');
-    const isSubscription = searchParams.get('isSubscription') === 'true';
-    const serialNumber = searchParams.get('serialNumber');
-    const itemType = searchParams.get('itemType');
-
-    console.log('[CHECKOUT] Starting with params:', { priceId, planName, isSubscription, serialNumber, itemType });
-
-    // Validate required params
     if (!planName) {
-      console.error('[CHECKOUT] Missing planName');
-      setError('Missing plan information. Please try again from the pricing page.');
+      setError('Missing plan information');
       return;
     }
 
-    // Wait for auth to complete
-    if (loading) {
-      console.log('[CHECKOUT] Waiting for auth to complete...');
-      setStatus('Checking authentication...');
+    if (!isAuthenticated || !session) {
+      navigate(`/auth?redirect=${encodeURIComponent(location.pathname + location.search)}`);
       return;
     }
 
-    // Check if user is authenticated
-    if (!isAuthenticated || !session?.access_token) {
-      console.log('[CHECKOUT] No session, redirecting to auth...');
-      const params = new URLSearchParams(location.search).toString();
-      navigate(`/auth?redirect=${encodeURIComponent(`/checkout-redirect?${params}`)}`);
-      return;
-    }
-
-    // Mark checkout as initiated to prevent duplicates
-    checkoutInitiated.current = true;
-
-    // Create checkout session
     const createCheckout = async () => {
-      console.log('[CHECKOUT] Creating checkout session...');
-      setStatus('Creating checkout session...');
-
       try {
-        const body = {
-          priceId: priceId || null,
-          planName,
-          isSubscription,
-          redirectUrl: window.location.origin,
-          ...(serialNumber && { serialNumber }),
-          ...(itemType && { itemType }),
-        };
-
-        console.log('[CHECKOUT] Request body:', body);
-        console.log('[CHECKOUT] Auth token present:', !!session.access_token);
-
-        const response = await supabase.functions.invoke('create-checkout', {
-          body,
+        setStatus('Contacting Stripe...');
+        
+        const response = await fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
+          method: 'POST',
           headers: {
-            Authorization: `Bearer ${session.access_token}`,
+            'Authorization': `Bearer ${session.access_token}`,
             'Content-Type': 'application/json',
           },
+          body: JSON.stringify({
+            priceId,
+            planName,
+            isSubscription,
+            redirectUrl: window.location.origin,
+          }),
         });
 
-        console.log('[CHECKOUT] Full response:', response);
-        const { data, error: invokeError } = response;
-
-        if (invokeError) {
-          console.error('[CHECKOUT] Invoke error:', invokeError);
-          setError(invokeError.message || 'Failed to create checkout session');
-          return;
-        }
-
-        if (!data) {
-          console.error('[CHECKOUT] No data in response');
-          setError('No response from server. Please try again.');
-          return;
-        }
-
-        // Handle the URL
-        const checkoutUrl = data.url;
+        const data = await response.json();
         
-        if (!checkoutUrl || typeof checkoutUrl !== 'string') {
-          console.error('[CHECKOUT] Invalid URL in response:', data);
-          setError('Invalid checkout session. Please contact support.');
-          return;
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to create checkout');
         }
 
-        console.log('[CHECKOUT] SUCCESS - Redirecting to:', checkoutUrl);
-        
-        // Force redirect
-        window.location.href = checkoutUrl;
+        if (data.url) {
+          setStatus('Redirecting to Stripe...');
+          window.location.href = data.url;
+        } else {
+          throw new Error('No checkout URL received');
+        }
       } catch (err: any) {
-        console.error('[CHECKOUT] Exception:', err);
-        setError(err.message || 'An unexpected error occurred. Please try again.');
+        setError(err.message || 'Failed to create checkout session');
       }
     };
 
     createCheckout();
-  }, [location.search, isAuthenticated, session, loading, navigate]);
+  }, [location, isAuthenticated, session, navigate]);
 
   if (error) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
         <div className="bg-white rounded-lg p-8 max-w-md w-full text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Checkout Error</h1>
-          <div className="text-gray-700 mb-6">{error}</div>
-          <button
-            onClick={() => window.location.href = '/pricing'}
-            className="bg-sos-orange text-white px-6 py-2 rounded-lg hover:bg-sos-orange/90"
-          >
+          <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
+          <p className="text-gray-700 mb-6">{error}</p>
+          <Button onClick={() => navigate('/pricing')} className="w-full">
             Return to Pricing
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -148,20 +82,17 @@ const CheckoutRedirect: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
-      <div className="text-center max-w-md">
+      <div className="text-center">
         <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
-        <h1 className="text-2xl font-bold text-white mb-2">
-          {status}
-        </h1>
-        <p className="text-gray-300 mb-6">
-          Please wait while we prepare your payment.
-        </p>
-        <button
-          onClick={handleGoToPricing}
-          className="bg-white text-sos-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+        <h1 className="text-2xl font-bold text-white mb-2">{status}</h1>
+        <p className="text-gray-300 mb-6">Please wait...</p>
+        <Button 
+          variant="outline" 
+          onClick={() => navigate('/pricing')}
+          className="text-white border-white hover:bg-white hover:text-sos-orange"
         >
-          Return to Pricing
-        </button>
+          Cancel
+        </Button>
       </div>
     </div>
   );
