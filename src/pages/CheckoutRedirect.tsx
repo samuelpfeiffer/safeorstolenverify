@@ -12,6 +12,7 @@ const CheckoutRedirect: React.FC = () => {
   const [error, setError] = useState<string>('');
   const [checkoutUrl, setCheckoutUrl] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
+  const [redirecting, setRedirecting] = useState<boolean>(false);
   const redirectAttempted = useRef(false);
 
   useEffect(() => {
@@ -50,10 +51,19 @@ const CheckoutRedirect: React.FC = () => {
     })
     .then(response => response.json())
     .then(data => {
+      console.log('[CHECKOUT-REDIRECT] Received response:', data);
       if (data.url) {
-        // Automatically redirect to Stripe checkout
-        window.location.href = data.url;
+        setCheckoutUrl(data.url);
+        setLoading(false);
+        setRedirecting(true);
+        console.log('[CHECKOUT-REDIRECT] Redirecting to:', data.url);
+        
+        // Attempt automatic redirect
+        setTimeout(() => {
+          window.location.href = data.url;
+        }, 500);
       } else {
+        console.error('[CHECKOUT-REDIRECT] No URL in response:', data);
         setError('No checkout URL received');
         setLoading(false);
       }
@@ -96,24 +106,26 @@ const CheckoutRedirect: React.FC = () => {
             <>
               <Loader2 className="w-16 h-16 text-[#FF8C00] animate-spin mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-white mb-2">Setting up checkout...</h1>
-              <p className="text-gray-300 mb-6">Please wait a moment...</p>
+              <p className="text-gray-300 mb-6">Connecting to Stripe...</p>
             </>
-          ) : (
+          ) : redirecting ? (
             <>
-              <h1 className="text-2xl font-bold text-white mb-4">Ready to checkout!</h1>
+              <Loader2 className="w-16 h-16 text-[#FF8C00] animate-spin mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-white mb-2">Redirecting to Stripe...</h1>
+              <p className="text-gray-300 mb-6">You'll be redirected automatically</p>
               {checkoutUrl && (
                 <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                  <p className="text-white mb-4 font-medium">Click the button below to continue to Stripe:</p>
+                  <p className="text-white mb-4 text-sm">If you're not redirected automatically:</p>
                   <Button 
-                    onClick={() => window.open(checkoutUrl, '_blank')}
-                    className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-bold py-4 text-lg"
+                    onClick={() => window.location.href = checkoutUrl}
+                    className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-bold py-3 text-base"
                   >
-                    Open Stripe Checkout →
+                    Continue to Stripe Checkout →
                   </Button>
                 </div>
               )}
             </>
-          )}
+          ) : null}
           
           <Button 
             variant="outline" 
