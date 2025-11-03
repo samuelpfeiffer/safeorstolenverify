@@ -36,7 +36,7 @@ const CheckoutRedirect: React.FC = () => {
       return;
     }
 
-    // Create checkout and redirect
+    // Create checkout and get URL
     (async () => {
       try {
         const response = await fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
@@ -58,26 +58,22 @@ const CheckoutRedirect: React.FC = () => {
         if (data.url) {
           console.log('[CHECKOUT] Got URL:', data.url);
           
-          // Set URL for button
+          // Set URL for manual button (SAFE - doesn't throw)
           setCheckoutUrl(data.url);
           
-          // Try multiple redirect methods
-          console.log('[CHECKOUT] Attempting redirect...');
-          
-          // Method 1: Direct assignment
-          window.location.href = data.url;
-          
-          // Method 2: Replace (backup)
-          setTimeout(() => {
-            window.location.replace(data.url);
-          }, 100);
-          
-          // Method 3: Top window (for iframe)
-          setTimeout(() => {
-            if (window.top && window.top !== window) {
-              window.top.location.href = data.url;
+          // Try redirect ONLY if not in iframe (wrapped in try-catch)
+          try {
+            if (window.self === window.top) {
+              // Not in iframe - safe to redirect
+              window.location.href = data.url;
+            } else {
+              // In iframe - show button only
+              console.log('[CHECKOUT] In iframe - manual button will be shown');
             }
-          }, 200);
+          } catch (redirectError) {
+            // Redirect failed - that's OK, button will show
+            console.log('[CHECKOUT] Redirect blocked (expected in iframe)');
+          }
         } else {
           setError('No checkout URL received');
         }
@@ -114,9 +110,6 @@ const CheckoutRedirect: React.FC = () => {
         title="Redirecting to Checkout - Safe Or Stolen"
         robotsDirectives="noindex, nofollow"
       />
-      {checkoutUrl && (
-        <meta httpEquiv="refresh" content={`0;url=${checkoutUrl}`} />
-      )}
       <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
         <div className="text-center max-w-md">
           <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
@@ -125,12 +118,12 @@ const CheckoutRedirect: React.FC = () => {
           
           {checkoutUrl && (
             <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <p className="text-white mb-4 font-medium">If you're not redirected automatically:</p>
+              <p className="text-white mb-4 font-medium">Click the button below to continue:</p>
               <Button 
                 onClick={() => window.open(checkoutUrl, '_blank')}
-                className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-semibold py-3"
+                className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-semibold py-3 text-lg"
               >
-                Click Here to Open Stripe Checkout
+                Open Stripe Checkout
               </Button>
             </div>
           )}
