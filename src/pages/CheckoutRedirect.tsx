@@ -53,12 +53,13 @@ const CheckoutRedirect: React.FC = () => {
         }
 
         if (data.url) {
-          setStatus('Redirecting to Stripe...');
-          window.location.href = data.url;
+          // IMMEDIATE redirect - no state updates
+          window.location.replace(data.url);
         } else {
           throw new Error('No checkout URL received');
         }
       } catch (err: any) {
+        console.error('Checkout error:', err);
         setError(err.message || 'Failed to create checkout session');
       }
     };
