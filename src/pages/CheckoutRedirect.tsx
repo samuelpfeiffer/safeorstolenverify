@@ -62,13 +62,13 @@ const CheckoutRedirect: React.FC = () => {
         }
 
         if (data.url) {
-          console.log('[CHECKOUT] Redirecting immediately to:', data.url);
+          console.log('[CHECKOUT] Redirecting to Stripe:', data.url);
           
-          // IMMEDIATE redirect - no setTimeout, no state updates
-          window.location.href = data.url;
-          
-          // Set URL for manual button as fallback
+          // Set URL for manual button first
           setCheckoutUrl(data.url);
+          
+          // Use replace to prevent back button issues
+          window.location.replace(data.url);
         } else {
           throw new Error('No checkout URL received');
         }
@@ -79,7 +79,7 @@ const CheckoutRedirect: React.FC = () => {
     };
 
     createCheckout();
-  }, []); // Empty deps - only run once
+  }, [isAuthenticated, session, location.search, navigate]);
 
   if (error) {
     return (
