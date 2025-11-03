@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { useAuth } from '@/lib/auth';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
 
 const CheckoutRedirect: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { session, loading } = useAuth();
+  const { session, loading, isAuthenticated } = useUnifiedAuth();
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<string>('Initializing...');
+  const checkoutInitiated = useRef(false);
 
   useEffect(() => {
+    // Prevent duplicate checkout creation
+    if (checkoutInitiated.current) {
+      console.log('[CHECKOUT] Already initiated, skipping...');
+      return;
+    }
     const searchParams = new URLSearchParams(location.search);
     const priceId = searchParams.get('priceId');
     const planName = searchParams.get('planName');
@@ -36,12 +42,15 @@ const CheckoutRedirect: React.FC = () => {
     }
 
     // Check if user is authenticated
-    if (!session?.access_token) {
+    if (!isAuthenticated || !session?.access_token) {
       console.log('[CHECKOUT] No session, redirecting to auth...');
       const params = new URLSearchParams(location.search).toString();
       navigate(`/auth?redirect=${encodeURIComponent(`/checkout-redirect?${params}`)}`);
       return;
     }
+
+    // Mark checkout as initiated to prevent duplicates
+    checkoutInitiated.current = true;
 
     // Create checkout session
     const createCheckout = async () => {
@@ -81,9 +90,8 @@ const CheckoutRedirect: React.FC = () => {
         }
 
         console.log('[CHECKOUT] Success! Redirecting to Stripe:', data.url);
-        setStatus('Redirecting to Stripe...');
         
-        // Redirect to Stripe
+        // Redirect to Stripe immediately - no state updates after this
         window.location.href = data.url;
       } catch (err: any) {
         console.error('[CHECKOUT] Exception:', err);
@@ -92,7 +100,7 @@ const CheckoutRedirect: React.FC = () => {
     };
 
     createCheckout();
-  }, [location.search, session, loading, navigate]);
+  }, [location.search, isAuthenticated, session, loading, navigate]);
 
   if (error) {
     return (
