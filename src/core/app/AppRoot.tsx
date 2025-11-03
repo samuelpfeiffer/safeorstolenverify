@@ -38,8 +38,11 @@ const queryClient = new QueryClient({
  * Router MUST be the outermost provider for all routing hooks to work
  */
 export const AppRoot: React.FC = () => {
+  // Only use StrictMode in production to avoid HMR and double-render issues
+  const Wrapper = import.meta.env.DEV ? React.Fragment : React.StrictMode;
+  
   return (
-    <React.StrictMode>
+    <Wrapper>
       <ErrorBoundary>
         <Router>
           <QueryClientProvider client={queryClient}>
@@ -70,6 +73,6 @@ export const AppRoot: React.FC = () => {
           </QueryClientProvider>
         </Router>
       </ErrorBoundary>
-    </React.StrictMode>
+    </Wrapper>
   );
 };
