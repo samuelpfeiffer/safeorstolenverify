@@ -47,4 +47,5 @@ export * from './useAIIntegration';
 
 // UI Hooks
 export * from './use-mobile';
-export * from './use-toast';
+// NOTE: use-toast is NOT exported here to prevent circular dependencies
+// Import directly: import { useToast } from '@/hooks/use-toast';
