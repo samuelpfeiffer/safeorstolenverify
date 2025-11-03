@@ -1,72 +1,57 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useSearchParams, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
-import { navigateOutOfIframe, isInIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirect: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { session, loading } = useUnifiedAuth();
-  const [error, setError] = useState<string | React.ReactNode | null>(null);
-  const [redirecting, setRedirecting] = useState(false);
-  const checkoutAttempted = useRef(false);
+  const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState<string>('Initializing...');
 
   useEffect(() => {
-    // Only run once
-    if (checkoutAttempted.current) {
+    const searchParams = new URLSearchParams(location.search);
+    const priceId = searchParams.get('priceId');
+    const planName = searchParams.get('planName');
+    const isSubscription = searchParams.get('isSubscription') === 'true';
+    const serialNumber = searchParams.get('serialNumber');
+    const itemType = searchParams.get('itemType');
+
+    console.log('[CHECKOUT] Starting with params:', { priceId, planName, isSubscription, serialNumber, itemType });
+
+    // Validate required params
+    if (!planName) {
+      console.error('[CHECKOUT] Missing planName');
+      setError('Missing plan information. Please try again from the pricing page.');
       return;
     }
 
-    const searchParams = new URLSearchParams(location.search);
-    
-    console.log('[CHECKOUT-REDIRECT] Initializing checkout:', { 
-      hasSession: !!session, 
-      loading,
-      hasAccessToken: session?.access_token ? 'YES' : 'NO'
-    });
+    // Wait for auth to complete
+    if (loading) {
+      console.log('[CHECKOUT] Waiting for auth to complete...');
+      setStatus('Checking authentication...');
+      return;
+    }
 
+    // Check if user is authenticated
+    if (!session?.access_token) {
+      console.log('[CHECKOUT] No session, redirecting to auth...');
+      const params = new URLSearchParams(location.search).toString();
+      navigate(`/auth?redirect=${encodeURIComponent(`/checkout-redirect?${params}`)}`);
+      return;
+    }
+
+    // Create checkout session
     const createCheckout = async () => {
-      const priceId = searchParams.get('priceId');
-      const planName = searchParams.get('planName');
-      const isSubscription = searchParams.get('isSubscription') === 'true';
-      const serialNumber = searchParams.get('serialNumber');
-      const itemType = searchParams.get('itemType');
-
-      console.log('[CHECKOUT-REDIRECT] Parameters:', { priceId, planName, isSubscription, serialNumber, itemType });
-
-      // Plan name is required
-      if (!planName) {
-        console.error('[CHECKOUT-REDIRECT] Missing planName');
-        checkoutAttempted.current = true;
-        setError('Missing plan information. Please try again from the pricing page.');
-        return;
-      }
-
-      // Wait for auth to complete
-      if (loading) {
-        console.log('[CHECKOUT-REDIRECT] Waiting for auth...');
-        return;
-      }
-
-      // Redirect to auth if no session
-      if (!session || !session.access_token) {
-        console.log('[CHECKOUT-REDIRECT] No session - redirecting to login');
-        checkoutAttempted.current = true;
-        const checkoutParams = new URLSearchParams(window.location.search).toString();
-        window.location.href = `/auth?redirect=${encodeURIComponent(`/checkout-redirect?${checkoutParams}`)}`;
-        return;
-      }
-
-      // Mark as attempted to prevent re-runs
-      console.log('[CHECKOUT-REDIRECT] Session ready, creating checkout...');
-      checkoutAttempted.current = true;
-      setRedirecting(true);
+      console.log('[CHECKOUT] Creating checkout session...');
+      setStatus('Creating checkout session...');
 
       try {
         const body: any = {
           priceId: priceId || null,
-          planName: planName,
+          planName,
           isSubscription,
           redirectUrl: window.location.origin,
         };
@@ -74,40 +59,40 @@ const CheckoutRedirect: React.FC = () => {
         if (serialNumber) body.serialNumber = serialNumber;
         if (itemType) body.itemType = itemType;
 
-        console.log('[CHECKOUT-REDIRECT] Calling edge function...');
+        console.log('[CHECKOUT] Invoking create-checkout function...');
 
-        const { data, error } = await supabase.functions.invoke('create-checkout', {
+        const { data, error: invokeError } = await supabase.functions.invoke('create-checkout', {
           body,
           headers: {
             Authorization: `Bearer ${session.access_token}`,
           },
         });
 
-        if (error) {
-          console.error('[CHECKOUT-REDIRECT] Edge function error:', error);
-          setError(error.message || 'Failed to create checkout session');
-          setRedirecting(false);
+        if (invokeError) {
+          console.error('[CHECKOUT] Error:', invokeError);
+          setError(invokeError.message || 'Failed to create checkout session');
           return;
         }
 
-        if (data?.url) {
-          console.log('[CHECKOUT-REDIRECT] SUCCESS! Redirecting to:', data.url);
-          // Immediate redirect - no state updates after this
-          window.location.href = data.url;
-        } else {
-          console.error('[CHECKOUT-REDIRECT] No URL in response');
+        if (!data?.url) {
+          console.error('[CHECKOUT] No URL in response:', data);
           setError('No checkout URL received from Stripe');
-          setRedirecting(false);
+          return;
         }
+
+        console.log('[CHECKOUT] Success! Redirecting to Stripe:', data.url);
+        setStatus('Redirecting to Stripe...');
+        
+        // Redirect to Stripe
+        window.location.href = data.url;
       } catch (err: any) {
-        console.error('[CHECKOUT-REDIRECT] Exception:', err);
-        setError(err.message || 'Failed to create checkout session');
-        setRedirecting(false);
+        console.error('[CHECKOUT] Exception:', err);
+        setError(err.message || 'An unexpected error occurred');
       }
     };
 
     createCheckout();
-  }, [location.search, session, loading]);
+  }, [location.search, session, loading, navigate]);
 
   if (error) {
     return (
@@ -131,10 +116,10 @@ const CheckoutRedirect: React.FC = () => {
       <div className="text-center">
         <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
         <h1 className="text-2xl font-bold text-white mb-2">
-          {redirecting ? 'Redirecting to Stripe...' : 'Preparing Checkout...'}
+          {status}
         </h1>
         <p className="text-gray-300">
-          {redirecting ? 'Opening secure payment page...' : 'Please wait while we prepare your payment.'}
+          Please wait while we prepare your payment.
         </p>
       </div>
     </div>

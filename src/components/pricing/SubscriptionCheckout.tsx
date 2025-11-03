@@ -16,20 +16,25 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
   disabled = false,
 }) => {
   const { toast } = useToast();
-  const { session, isAuthenticated } = useUnifiedAuth();
+  const { session, isAuthenticated, loading } = useUnifiedAuth();
 
   const handleSubscribe = () => {
-    if (!session || !isAuthenticated) {
-      toast({
-        title: "Authentication Required", 
-        description: "Please sign in to subscribe to a plan.",
-        variant: "destructive",
+    console.log('[SUBSCRIPTION] Subscribe clicked:', { planName, priceId, isAuthenticated, hasSession: !!session });
+
+    // If not authenticated, redirect to auth first
+    if (!isAuthenticated || !session) {
+      console.log('[SUBSCRIPTION] Not authenticated, redirecting to auth...');
+      const params = new URLSearchParams({
+        priceId,
+        planName,
+        isSubscription: 'true',
       });
+      escapeIframeAndNavigate(`/auth?redirect=${encodeURIComponent(`/checkout-redirect?${params.toString()}`)}`);
       return;
     }
 
-    // CRITICAL FIX: Redirect to checkout page OUTSIDE iframe
-    // This page will then create the Stripe session and redirect to Stripe
+    // User is authenticated, proceed to checkout
+    console.log('[SUBSCRIPTION] Authenticated, redirecting to checkout...');
     const params = new URLSearchParams({
       priceId,
       planName,
@@ -42,10 +47,10 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
   return (
     <Button
       onClick={handleSubscribe}
-      disabled={disabled}
+      disabled={disabled || loading}
       className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"
     >
-      Subscribe to {planName}
+      {loading ? 'Loading...' : `Subscribe to ${planName}`}
     </Button>
   );
 };
