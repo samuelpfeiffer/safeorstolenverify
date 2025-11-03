@@ -52,7 +52,7 @@ const CheckoutRedirect: React.FC = () => {
     // Mark checkout as initiated to prevent duplicates
     checkoutInitiated.current = true;
 
-    // Create checkout session
+    // Create checkout session with timeout
     const createCheckout = async () => {
       console.log('[CHECKOUT] Creating checkout session...');
       setStatus('Creating checkout session...');
@@ -68,14 +68,24 @@ const CheckoutRedirect: React.FC = () => {
         if (serialNumber) body.serialNumber = serialNumber;
         if (itemType) body.itemType = itemType;
 
-        console.log('[CHECKOUT] Invoking create-checkout function...');
+        console.log('[CHECKOUT] Invoking create-checkout function with body:', body);
 
-        const { data, error: invokeError } = await supabase.functions.invoke('create-checkout', {
+        // Add 30 second timeout to prevent infinite hanging
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Request timeout - please try again')), 30000)
+        );
+
+        const invokePromise = supabase.functions.invoke('create-checkout', {
           body,
           headers: {
             Authorization: `Bearer ${session.access_token}`,
           },
         });
+
+        const result = await Promise.race([invokePromise, timeoutPromise]) as any;
+        const { data, error: invokeError } = result;
+
+        console.log('[CHECKOUT] Response received:', { data, error: invokeError });
 
         if (invokeError) {
           console.error('[CHECKOUT] Error:', invokeError);
@@ -85,17 +95,17 @@ const CheckoutRedirect: React.FC = () => {
 
         if (!data?.url) {
           console.error('[CHECKOUT] No URL in response:', data);
-          setError('No checkout URL received from Stripe');
+          setError('No checkout URL received from Stripe. Please try again.');
           return;
         }
 
         console.log('[CHECKOUT] Success! Redirecting to Stripe:', data.url);
         
-        // Redirect to Stripe immediately - no state updates after this
+        // Redirect to Stripe immediately
         window.location.href = data.url;
       } catch (err: any) {
         console.error('[CHECKOUT] Exception:', err);
-        setError(err.message || 'An unexpected error occurred');
+        setError(err.message || 'An unexpected error occurred. Please try again.');
       }
     };
 
