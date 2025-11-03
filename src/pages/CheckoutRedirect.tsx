@@ -12,8 +12,19 @@ const CheckoutRedirect: React.FC = () => {
   const [status, setStatus] = useState<string>('Initializing...');
   const checkoutInitiated = useRef(false);
 
-  // Force code update marker
-  console.log('[CHECKOUT-v3] Component loaded with new code');
+  // Emergency escape button - always visible
+  const handleGoToPricing = () => {
+    window.location.href = '/pricing';
+  };
+
+  useEffect(() => {
+    // Show escape button immediately
+    const timer = setTimeout(() => {
+      setStatus('Taking longer than expected...');
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Prevent duplicate checkout creation
@@ -136,15 +147,21 @@ const CheckoutRedirect: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center">
-      <div className="text-center">
+    <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
+      <div className="text-center max-w-md">
         <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
         <h1 className="text-2xl font-bold text-white mb-2">
           {status}
         </h1>
-        <p className="text-gray-300">
+        <p className="text-gray-300 mb-6">
           Please wait while we prepare your payment.
         </p>
+        <button
+          onClick={handleGoToPricing}
+          className="bg-white text-sos-orange px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+        >
+          Return to Pricing
+        </button>
       </div>
     </div>
   );
