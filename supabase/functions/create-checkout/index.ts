@@ -351,7 +351,10 @@ serve(async (req) => {
     console.log(`[CREATE-CHECKOUT] SUCCESS: Returning checkout URL`);
     return new Response(
       JSON.stringify({ url: session.url }),
-      { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      { 
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" } 
+      }
     );
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);

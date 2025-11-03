@@ -52,55 +52,62 @@ const CheckoutRedirect: React.FC = () => {
     // Mark checkout as initiated to prevent duplicates
     checkoutInitiated.current = true;
 
-    // Create checkout session with proper response handling
+    // Create checkout session
     const createCheckout = async () => {
       console.log('[CHECKOUT] Creating checkout session...');
       setStatus('Creating checkout session...');
 
       try {
-        const body: any = {
+        const body = {
           priceId: priceId || null,
           planName,
           isSubscription,
           redirectUrl: window.location.origin,
+          ...(serialNumber && { serialNumber }),
+          ...(itemType && { itemType }),
         };
 
-        if (serialNumber) body.serialNumber = serialNumber;
-        if (itemType) body.itemType = itemType;
+        console.log('[CHECKOUT] Request body:', body);
+        console.log('[CHECKOUT] Auth token present:', !!session.access_token);
 
-        console.log('[CHECKOUT] Calling edge function with:', body);
-
-        const { data, error: invokeError } = await supabase.functions.invoke('create-checkout', {
+        const response = await supabase.functions.invoke('create-checkout', {
           body,
           headers: {
             Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json',
           },
         });
 
-        console.log('[CHECKOUT] Raw response:', { data, error: invokeError });
+        console.log('[CHECKOUT] Full response:', response);
+        const { data, error: invokeError } = response;
 
-        // Check for invoke error first
         if (invokeError) {
           console.error('[CHECKOUT] Invoke error:', invokeError);
           setError(invokeError.message || 'Failed to create checkout session');
           return;
         }
 
-        // The response might be nested or have different structure
-        const checkoutUrl = data?.url || data?.data?.url || (typeof data === 'string' ? data : null);
-        
-        if (!checkoutUrl) {
-          console.error('[CHECKOUT] No URL found in response. Data:', JSON.stringify(data));
-          setError('Unable to create checkout session. Please try again or contact support.');
+        if (!data) {
+          console.error('[CHECKOUT] No data in response');
+          setError('No response from server. Please try again.');
           return;
         }
 
-        console.log('[CHECKOUT] Redirecting to:', checkoutUrl);
+        // Handle the URL
+        const checkoutUrl = data.url;
         
-        // Force immediate redirect
-        window.location.replace(checkoutUrl);
+        if (!checkoutUrl || typeof checkoutUrl !== 'string') {
+          console.error('[CHECKOUT] Invalid URL in response:', data);
+          setError('Invalid checkout session. Please contact support.');
+          return;
+        }
+
+        console.log('[CHECKOUT] SUCCESS - Redirecting to:', checkoutUrl);
+        
+        // Force redirect
+        window.location.href = checkoutUrl;
       } catch (err: any) {
-        console.error('[CHECKOUT] Fatal error:', err);
+        console.error('[CHECKOUT] Exception:', err);
         setError(err.message || 'An unexpected error occurred. Please try again.');
       }
     };
