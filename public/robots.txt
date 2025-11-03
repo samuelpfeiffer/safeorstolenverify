@@ -3,18 +3,17 @@
 
 User-agent: *
 Allow: /
+
+# Disallow private/auth pages
 Disallow: /dashboard*
 Disallow: /admin*
-Disallow: /api/*
 Disallow: /auth*
 Disallow: /profile
 Disallow: /subscription
 Disallow: /analytics
-Disallow: /receipts
-Disallow: /search-history
-Disallow: /purchase-history
-Disallow: /*.json$
-Disallow: /*_redirects
+Disallow: /checkout-redirect
+Disallow: /subscription-success
+Disallow: /subscription-cancel
 
 # Specific crawlers
 User-agent: Googlebot
@@ -25,18 +24,11 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
 
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
+# Primary Sitemap (Edge Function - Always Fresh)
+Sitemap: https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/sitemap-xml
 
-# Sitemap Index (references all sub-sitemaps)
+# Fallback Static Sitemap
 Sitemap: https://safeorstolen.com/sitemap.xml
-
-# Individual Sitemaps
-Sitemap: https://safeorstolen.com/sitemap-core.xml
-Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
-Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
-Sitemap: https://safeorstolen.com/feed.xml
 
 # Important pages for indexing
 Allow: /

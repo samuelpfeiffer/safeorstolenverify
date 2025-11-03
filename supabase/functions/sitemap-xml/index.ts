@@ -33,293 +33,107 @@ const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
 
-  // Primary Verification Services - Critical SEO Pages
-  {
-    url: 'https://safeorstolen.com/check-phone',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/check-car',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/check-electronics',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/check-bike',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/firearms-check',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/item-categories',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8
-  },
+  // PRIMARY VERIFICATION SERVICES
+  { url: 'https://safeorstolen.com/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.95 },
+  { url: 'https://safeorstolen.com/imei-check', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.95 },
+  { url: 'https://safeorstolen.com/vin-verification', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.95 },
+  { url: 'https://safeorstolen.com/check-phone', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.9 },
+  { url: 'https://safeorstolen.com/check-car', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.9 },
+  { url: 'https://safeorstolen.com/check-electronics', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.9 },
+  { url: 'https://safeorstolen.com/check-bike', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.9 },
+  { url: 'https://safeorstolen.com/firearms-check', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.9 },
 
-  // Essential Business Pages
-  {
-    url: 'https://safeorstolen.com/how-it-works',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.9
-  },
-  {
-    url: 'https://safeorstolen.com/pricing',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.8
-  },
+  // DEVICE-SPECIFIC PAGES
+  { url: 'https://safeorstolen.com/check-iphone-15', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-iphone-14', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-android-phone', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-macbook', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-laptop', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-camera', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-apple-watch', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-xbox', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-playstation', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
 
-  // Target Audience Pages
-  {
-    url: 'https://safeorstolen.com/for-consumers',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8
-  },
-  {
-    url: 'https://safeorstolen.com/for-brands',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8
-  },
+  // VEHICLE BRANDS
+  { url: 'https://safeorstolen.com/check-tesla', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-toyota', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-honda', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/check-mercedes', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.85 },
 
-  // Content Marketing Hub
-  {
-    url: 'https://safeorstolen.com/blog',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'daily',
-    priority: 0.8
-  },
+  // HOW-TO & GUIDES
+  { url: 'https://safeorstolen.com/how-to-check-if-iphone-is-stolen', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/how-to-avoid-buying-stolen-iphone', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/how-to-check-if-car-is-stolen-before-buying', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/how-do-i-check-if-stolen', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/how-to-verify-phone-not-stolen', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/avoid-buying-stolen-goods', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.85 },
+  { url: 'https://safeorstolen.com/guides/imei-blacklist-guide', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/guides/imei-blacklist-explained', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
 
-  // Blog Posts
-  {
-    url: 'https://safeorstolen.com/blog/complete-imei-guide-protect-yourself',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/blog/marketplace-red-flags-protection-guide',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/blog/safeorstolen-firearms-marketplace-verification',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/blog/safer-buying-workflow',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/blog/verification-data-privacy',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/blog/vin-verification-checklist',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/blog/what-to-do-if-you-bought-stolen',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
+  // MAJOR CITIES
+  { url: 'https://safeorstolen.com/city/new-york-ny/imei-check', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/new-york-ny/vin-verification', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/new-york-ny/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/los-angeles-ca/imei-check', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/los-angeles-ca/vin-verification', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/los-angeles-ca/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/chicago-il/imei-check', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/chicago-il/vin-verification', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/chicago-il/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/city/phoenix', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.75 },
 
-  // Company & Trust Pages
-  {
-    url: 'https://safeorstolen.com/about',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/about-problem',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/our-story',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
+  // STATES
+  { url: 'https://safeorstolen.com/state/california/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.75 },
+  { url: 'https://safeorstolen.com/state/texas/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.75 },
+  { url: 'https://safeorstolen.com/state/florida/stolen-item-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.75 },
 
-  // Support Pages
-  {
-    url: 'https://safeorstolen.com/contact',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/faq',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/community',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
+  // MARKETPLACE INTEGRATIONS
+  { url: 'https://safeorstolen.com/offerup-safety-verification', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/resellers', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
 
-  // Enterprise & API Pages
-  {
-    url: 'https://safeorstolen.com/enterprise-demo',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/api-docs',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/data-sources',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/verification-hub',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/ultimate-guide',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/auction-houses',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/pawn-shops',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/global-domination',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/marketplace-integration',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
+  // BUSINESS PAGES
+  { url: 'https://safeorstolen.com/for-pawn-shops', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/for-phone-repair-shops', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/for-used-car-dealers', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
 
-  // Marketing Pages
-  {
-    url: 'https://safeorstolen.com/referral',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
+  // COMPARISONS
+  { url: 'https://safeorstolen.com/vs-carfax', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.75 },
+  { url: 'https://safeorstolen.com/cheaper-than-carfax', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.75 },
 
-  // Utility Pages
-  {
-    url: 'https://safeorstolen.com/sitemap',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'weekly',
-    priority: 0.4
-  },
+  // CORE BUSINESS PAGES
+  { url: 'https://safeorstolen.com/how-it-works', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.9 },
+  { url: 'https://safeorstolen.com/pricing', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.9 },
+  { url: 'https://safeorstolen.com/for-consumers', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { url: 'https://safeorstolen.com/for-brands', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
 
-  // Legal Pages
-  {
-    url: 'https://safeorstolen.com/terms',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
-  {
-    url: 'https://safeorstolen.com/terms-of-service',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
-  {
-    url: 'https://safeorstolen.com/privacy',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
-  {
-    url: 'https://safeorstolen.com/privacy-policy',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
-  {
-    url: 'https://safeorstolen.com/disclaimer',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
-  {
-    url: 'https://safeorstolen.com/cookies',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
-  {
-    url: 'https://safeorstolen.com/refunds',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  },
+  // CONTENT & BLOG
+  { url: 'https://safeorstolen.com/blog', lastmod: new Date().toISOString().split('T')[0], changefreq: 'daily', priority: 0.8 },
+  { url: 'https://safeorstolen.com/blog/complete-imei-guide-protect-yourself', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/marketplace-red-flags-protection-guide', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/safeorstolen-firearms-marketplace-verification', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/safer-buying-workflow', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/verification-data-privacy', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/vin-verification-checklist', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/what-to-do-if-you-bought-stolen', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/business-guide-preventing-stolen-goods', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/complete-verification-guide', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/industry-insights-2024', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/enterprise-security', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/blog/2025-stolen-goods-statistics', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
 
-  // FasterCapital Pages
-  {
-    url: 'https://safeorstolen.com/fastercapital/raise-capital',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.5
-  },
-  {
-    url: 'https://safeorstolen.com/fastercapital/tech-cofounder',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.5
-  }
+  // COMPANY & TRUST PAGES
+  { url: 'https://safeorstolen.com/about', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/contact', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.6 },
+  { url: 'https://safeorstolen.com/faq', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.6 },
+
+  // DATABASE PAGES  
+  { url: 'https://safeorstolen.com/stolen-items-database', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/imei-checker', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.7 },
+  { url: 'https://safeorstolen.com/item-categories', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.7 },
+
+  // LEGAL PAGES
+  { url: 'https://safeorstolen.com/terms', lastmod: new Date().toISOString().split('T')[0], changefreq: 'yearly', priority: 0.3 },
+  { url: 'https://safeorstolen.com/privacy', lastmod: new Date().toISOString().split('T')[0], changefreq: 'yearly', priority: 0.3 },
 ];
 
 const generateSitemapXML = (entries: SitemapEntry[]): string => {
