@@ -10,20 +10,19 @@ const CheckoutRedirect: React.FC = () => {
   const navigate = useNavigate();
   const { session, isAuthenticated } = useUnifiedAuth();
   const [error, setError] = useState<string>('');
-  const [checkoutUrl, setCheckoutUrl] = useState<string>('');
-  const hasRun = useRef(false);
+  const redirectAttempted = useRef(false);
 
   useEffect(() => {
-    // Prevent multiple executions
-    if (hasRun.current) return;
-    hasRun.current = true;
+    // Only run once
+    if (redirectAttempted.current) return;
+    redirectAttempted.current = true;
 
     const params = new URLSearchParams(location.search);
     const priceId = params.get('priceId');
     const planName = params.get('planName');
     const isSubscription = params.get('isSubscription') === 'true';
 
-    console.log('[CHECKOUT] Flow started:', { priceId, planName, isSubscription, isAuthenticated });
+    console.log('[CHECKOUT] Starting checkout flow');
 
     if (!planName) {
       setError('Missing plan information');
@@ -36,51 +35,35 @@ const CheckoutRedirect: React.FC = () => {
       return;
     }
 
-    const createCheckout = async () => {
-      try {
-        console.log('[CHECKOUT] Calling edge function');
-        
-        const response = await fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            priceId,
-            planName,
-            isSubscription,
-            redirectUrl: window.location.origin,
-          }),
-        });
-
-        const data = await response.json();
-        console.log('[CHECKOUT] Response:', { ok: response.ok, hasUrl: !!data.url });
-        
-        if (!response.ok) {
-          throw new Error(data.error || 'Failed to create checkout');
-        }
-
-        if (data.url) {
-          console.log('[CHECKOUT] Redirecting to Stripe:', data.url);
-          
-          // CRITICAL: Redirect IMMEDIATELY without any state updates
-          // State updates can cause re-renders that interrupt the redirect
-          window.location.replace(data.url);
-          
-          // This return prevents any further code execution
-          return;
-        } else {
-          throw new Error('No checkout URL received');
-        }
-      } catch (err: any) {
-        console.error('[CHECKOUT] Error:', err);
-        setError(err.message || 'Failed to create checkout session');
+    // Create checkout and redirect
+    fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${session.access_token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        priceId,
+        planName,
+        isSubscription,
+        redirectUrl: window.location.origin,
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.url) {
+        console.log('[CHECKOUT] Got URL, redirecting now');
+        // Force redirect - this MUST work
+        window.location.href = data.url;
+      } else {
+        throw new Error('No checkout URL received');
       }
-    };
-
-    createCheckout();
-  }, [isAuthenticated, session, location.search, navigate]);
+    })
+    .catch(err => {
+      console.error('[CHECKOUT] Error:', err);
+      setError(err.message || 'Failed to create checkout');
+    });
+  }, [isAuthenticated, session, location, navigate]);
 
   if (error) {
     return (
@@ -112,25 +95,7 @@ const CheckoutRedirect: React.FC = () => {
         <div className="text-center">
           <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-white mb-2">Redirecting to Stripe...</h1>
-          <p className="text-gray-300 mb-6">Please wait while we redirect you...</p>
-          {checkoutUrl && (
-            <div className="mt-4 p-4 bg-white/10 rounded">
-              <p className="text-sm text-gray-300 mb-3">If you're not redirected automatically:</p>
-              <Button 
-                onClick={() => window.location.href = checkoutUrl}
-                className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold"
-              >
-                Click Here to Continue to Stripe
-              </Button>
-            </div>
-          )}
-          <Button 
-            variant="outline" 
-            onClick={() => navigate('/pricing')}
-            className="mt-4 text-white border-white hover:bg-white hover:text-sos-orange"
-          >
-            Cancel
-          </Button>
+          <p className="text-gray-300">Please wait while we set up your checkout...</p>
         </div>
       </div>
     </>
