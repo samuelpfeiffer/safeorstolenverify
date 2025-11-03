@@ -12,6 +12,9 @@ const CheckoutRedirect: React.FC = () => {
   const [status, setStatus] = useState<string>('Initializing...');
   const checkoutInitiated = useRef(false);
 
+  // Force code update marker
+  console.log('[CHECKOUT-v3] Component loaded with new code');
+
   useEffect(() => {
     // Prevent duplicate checkout creation
     if (checkoutInitiated.current) {
