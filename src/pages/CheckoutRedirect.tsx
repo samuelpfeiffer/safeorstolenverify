@@ -11,10 +11,10 @@ const CheckoutRedirect: React.FC = () => {
   const { session, isAuthenticated } = useUnifiedAuth();
   const [error, setError] = useState<string>('');
   const [checkoutUrl, setCheckoutUrl] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
   const redirectAttempted = useRef(false);
 
   useEffect(() => {
-    // Only run once - EMPTY DEPENDENCIES
     if (redirectAttempted.current) return;
     redirectAttempted.current = true;
 
@@ -23,66 +23,47 @@ const CheckoutRedirect: React.FC = () => {
     const planName = params.get('planName');
     const isSubscription = params.get('isSubscription') === 'true';
 
-    console.log('[CHECKOUT] Starting checkout flow');
-
     if (!planName) {
       setError('Missing plan information');
+      setLoading(false);
       return;
     }
 
     if (!isAuthenticated || !session) {
-      console.log('[CHECKOUT] Not authenticated, redirecting to auth');
       navigate(`/auth?redirect=${encodeURIComponent(location.pathname + location.search)}`);
       return;
     }
 
-    // Create checkout and get URL
-    (async () => {
-      try {
-        const response = await fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            priceId,
-            planName,
-            isSubscription,
-            redirectUrl: window.location.origin,
-          }),
-        });
-        
-        const data = await response.json();
-        
-        if (data.url) {
-          console.log('[CHECKOUT] Got URL:', data.url);
-          
-          // Set URL for manual button (SAFE - doesn't throw)
-          setCheckoutUrl(data.url);
-          
-          // Try redirect ONLY if not in iframe (wrapped in try-catch)
-          try {
-            if (window.self === window.top) {
-              // Not in iframe - safe to redirect
-              window.location.href = data.url;
-            } else {
-              // In iframe - show button only
-              console.log('[CHECKOUT] In iframe - manual button will be shown');
-            }
-          } catch (redirectError) {
-            // Redirect failed - that's OK, button will show
-            console.log('[CHECKOUT] Redirect blocked (expected in iframe)');
-          }
-        } else {
-          setError('No checkout URL received');
-        }
-      } catch (err: any) {
-        console.error('[CHECKOUT] Error:', err);
-        setError(err.message || 'Failed to create checkout');
+    // Get checkout URL - NO REDIRECTS
+    fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${session.access_token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        priceId,
+        planName,
+        isSubscription,
+        redirectUrl: window.location.origin,
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.url) {
+        setCheckoutUrl(data.url);
+        setLoading(false);
+        // NO REDIRECT ATTEMPTS - BUTTON ONLY
+      } else {
+        setError('No checkout URL received');
+        setLoading(false);
       }
-    })();
-  }, []); // EMPTY ARRAY - RUN ONCE ONLY
+    })
+    .catch(err => {
+      setError(err.message || 'Failed to create checkout');
+      setLoading(false);
+    });
+  }, []);
 
   if (error) {
     return (
