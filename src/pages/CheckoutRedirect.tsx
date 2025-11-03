@@ -56,18 +56,7 @@ const CheckoutRedirect: React.FC = () => {
         setCheckoutUrl(data.url);
         setLoading(false);
         setRedirecting(true);
-        console.log('[CHECKOUT-REDIRECT] Opening Stripe in new window:', data.url);
-        
-        // Open Stripe in a new window/tab to avoid iframe restrictions
-        setTimeout(() => {
-          const stripeWindow = window.open(data.url, '_blank');
-          if (!stripeWindow) {
-            console.error('[CHECKOUT-REDIRECT] Popup blocked, showing manual button');
-            // Popup was blocked, user will need to click the button
-          } else {
-            console.log('[CHECKOUT-REDIRECT] Stripe opened successfully in new window');
-          }
-        }, 100);
+        console.log('[CHECKOUT-REDIRECT] Checkout URL ready:', data.url);
       } else {
         console.error('[CHECKOUT-REDIRECT] No URL in response:', data);
         setError('No checkout URL received');
@@ -116,22 +105,30 @@ const CheckoutRedirect: React.FC = () => {
             </>
           ) : redirecting ? (
             <>
-              <Loader2 className="w-16 h-16 text-primary animate-spin mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">Opening Stripe Checkout...</h1>
-              <p className="text-muted-foreground mb-6">A new window will open automatically</p>
+              <div className="mb-8">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h1 className="text-2xl font-bold text-foreground mb-2">Ready to Checkout!</h1>
+                <p className="text-muted-foreground mb-6">Click the button below to complete your purchase</p>
+              </div>
               {checkoutUrl && (
-                <div className="mt-6 p-6 bg-card/50 backdrop-blur-sm rounded-lg border border-border">
-                  <p className="text-foreground mb-4 text-sm">If the window didn't open (popup blocked):</p>
+                <div className="space-y-4">
                   <Button 
                     onClick={() => {
                       window.open(checkoutUrl, '_blank');
                     }}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 text-base"
+                    size="lg"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 text-lg shadow-xl hover:shadow-2xl transition-all"
                   >
-                    Open Stripe Checkout →
+                    Continue to Stripe Checkout →
                   </Button>
-                  <p className="text-muted-foreground text-xs mt-3">
-                    Complete your payment in the new window, then return here
+                  <p className="text-muted-foreground text-sm">
+                    ✓ Secure payment powered by Stripe<br/>
+                    ✓ Your payment will open in a new window<br/>
+                    ✓ Return here after completing payment
                   </p>
                 </div>
               )}
