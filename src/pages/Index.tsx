@@ -16,6 +16,9 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 
+  // Debug: Log when component renders
+  console.log('[INDEX PAGE] Rendering homepage');
+
   const homeStructuredData = [
     {
       "@context": "https://schema.org",

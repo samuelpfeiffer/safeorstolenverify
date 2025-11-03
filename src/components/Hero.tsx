@@ -6,10 +6,12 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 const Hero = () => {
-  const {
-    isAuthenticated
-  } = useUnifiedAuth();
-  return <div className="relative bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] text-white">
+  const { isAuthenticated } = useUnifiedAuth();
+  
+  // Debug logging
+  console.log('[HERO] Rendering hero section');
+  
+  return <div className="relative bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] text-white min-h-screen">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto text-center space-y-12">
           
