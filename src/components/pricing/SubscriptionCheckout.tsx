@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { escapeIframeAndNavigate } from '@/utils/navigationUtils';
 
 interface SubscriptionCheckoutProps {
@@ -16,7 +16,8 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
   disabled = false,
 }) => {
   const { toast } = useToast();
-  const { session, isAuthenticated, loading } = useUnifiedAuth();
+  const { session, loading } = useAuth();
+  const isAuthenticated = !!session;
 
   const handleSubscribe = () => {
     console.log('[SUBSCRIPTION] Subscribe clicked:', { planName, priceId, isAuthenticated, hasSession: !!session });

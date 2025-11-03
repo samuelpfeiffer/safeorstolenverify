@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useAuth } from '@/lib/auth';
 import { Loader2 } from 'lucide-react';
 
 const CheckoutRedirect: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { session, loading } = useUnifiedAuth();
+  const { session, loading } = useAuth();
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<string>('Initializing...');
 
