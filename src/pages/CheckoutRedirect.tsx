@@ -91,30 +91,37 @@ const CheckoutRedirect: React.FC = () => {
         title="Redirecting to Checkout - Safe Or Stolen"
         robotsDirectives="noindex, nofollow"
       />
-      <div className="min-h-screen bg-gradient-to-br from-sos via-sos-dark to-sos-darker flex items-center justify-center p-4">
-        <div className="text-center max-w-md">
-          <Loader2 className="w-16 h-16 text-sos-orange animate-spin mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-white mb-2">Redirecting to Stripe...</h1>
-          <p className="text-gray-300 mb-6">Please wait while we set up your checkout...</p>
-          
-          {checkoutUrl && (
-            <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <p className="text-white mb-4 font-medium">Click the button below to continue:</p>
-              <Button 
-                onClick={() => window.open(checkoutUrl, '_blank')}
-                className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-semibold py-3 text-lg"
-              >
-                Open Stripe Checkout
-              </Button>
-            </div>
+      <div className="min-h-screen bg-[#1a1a2e] flex items-center justify-center p-4">
+        <div className="text-center max-w-md w-full">
+          {loading ? (
+            <>
+              <Loader2 className="w-16 h-16 text-[#FF8C00] animate-spin mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-white mb-2">Setting up checkout...</h1>
+              <p className="text-gray-300 mb-6">Please wait a moment...</p>
+            </>
+          ) : (
+            <>
+              <h1 className="text-2xl font-bold text-white mb-4">Ready to checkout!</h1>
+              {checkoutUrl && (
+                <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                  <p className="text-white mb-4 font-medium">Click the button below to continue to Stripe:</p>
+                  <Button 
+                    onClick={() => window.open(checkoutUrl, '_blank')}
+                    className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-bold py-4 text-lg"
+                  >
+                    Open Stripe Checkout →
+                  </Button>
+                </div>
+              )}
+            </>
           )}
           
           <Button 
             variant="outline" 
             onClick={() => navigate('/pricing')}
-            className="mt-4 text-white border-white/50 hover:bg-white hover:text-sos-dark"
+            className="mt-6 text-white border-white/50 hover:bg-white hover:text-[#1a1a2e]"
           >
-            Return to Pricing
+            ← Return to Pricing
           </Button>
         </div>
       </div>
