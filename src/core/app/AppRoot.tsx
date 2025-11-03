@@ -38,8 +38,11 @@ const queryClient = new QueryClient({
  * Router MUST be the outermost provider for all routing hooks to work
  */
 export const AppRoot: React.FC = () => {
-  // Only use StrictMode in production to avoid HMR and double-render issues
+  // CRITICAL FIX: Disable StrictMode in development to prevent useState null errors
   const Wrapper = import.meta.env.DEV ? React.Fragment : React.StrictMode;
+  
+  // Proof that new code is loaded
+  console.log('[APP ROOT] Loaded - StrictMode:', import.meta.env.DEV ? 'DISABLED (dev)' : 'ENABLED (prod)');
   
   return (
     <Wrapper>
