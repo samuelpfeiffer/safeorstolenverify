@@ -2,7 +2,7 @@ import heroBannerImage from '@/assets/sos-billboard.jpg';
 
 export const HeroBanner = () => {
   return (
-    <section className="w-full py-8">
+    <section className="w-full py-8 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <img 
