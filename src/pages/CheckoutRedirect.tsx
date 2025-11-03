@@ -58,9 +58,13 @@ const CheckoutRedirect: React.FC = () => {
         setRedirecting(true);
         console.log('[CHECKOUT-REDIRECT] Redirecting to:', data.url);
         
-        // Attempt automatic redirect
+        // Redirect the top-level window (escape iframe)
         setTimeout(() => {
-          window.location.href = data.url;
+          if (window.top) {
+            window.top.location.href = data.url;
+          } else {
+            window.location.href = data.url;
+          }
         }, 500);
       } else {
         console.error('[CHECKOUT-REDIRECT] No URL in response:', data);
@@ -117,7 +121,13 @@ const CheckoutRedirect: React.FC = () => {
                 <div className="mt-6 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
                   <p className="text-white mb-4 text-sm">If you're not redirected automatically:</p>
                   <Button 
-                    onClick={() => window.location.href = checkoutUrl}
+                    onClick={() => {
+                      if (window.top) {
+                        window.top.location.href = checkoutUrl;
+                      } else {
+                        window.location.href = checkoutUrl;
+                      }
+                    }}
                     className="w-full bg-[#FF8C00] hover:bg-[#FF8C00]/90 text-white font-bold py-3 text-base"
                   >
                     Continue to Stripe Checkout →
