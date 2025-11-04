@@ -10,74 +10,89 @@ const rateLimitConfigs: Record<string, RateLimitConfig> = {
   authentication: { maxAttempts: 5, windowMs: 300000 }, // 5 attempts per 5 minutes
 };
 
-export const checkRateLimit = async (action: string, userId?: string, ipAddress?: string): Promise<boolean> => {
+// Critical operations that must fail closed (deny on error)
+const CRITICAL_OPERATIONS = ['verification', 'authentication', 'payment'];
+
+export const checkRateLimit = async (
+  action: string, 
+  userId?: string, 
+  ipAddress?: string
+): Promise<{ allowed: boolean; reason?: string }> => {
   try {
     const config = rateLimitConfigs[action];
-    if (!config) return true; // No rate limit configured
+    if (!config) return { allowed: true };
 
-    // Always try database-based rate limiting first
-    try {
-      const { supabase } = await import('@/integrations/supabase/client');
-      const identifier = userId || `anon_${ipAddress || 'unknown'}`;
-      
-      const { data, error } = await supabase.rpc('check_enhanced_rate_limit', {
-        user_identifier: identifier,
-        action_type: action,
-        max_requests: config.maxAttempts,
-        window_minutes: Math.ceil(config.windowMs / 60000),
-        ip_address: ipAddress
+    const { supabase } = await import('@/integrations/supabase/client');
+    const identifier = userId || `ip_${ipAddress || 'unknown'}`;
+    
+    const { data, error } = await supabase.rpc('check_enhanced_rate_limit', {
+      user_identifier: identifier,
+      action_type: action,
+      max_requests: config.maxAttempts,
+      window_minutes: Math.ceil(config.windowMs / 60000),
+      ip_address: ipAddress
+    });
+    
+    if (error) {
+      await SecureLogger.auditLog('error', 'Rate limit check failed', {
+        component: 'rate_limiting',
+        action: action
       });
       
-      if (error) {
-        await SecureLogger.auditLog('error', 'Rate limit check failed', {
+      // FAIL CLOSED for critical operations
+      if (CRITICAL_OPERATIONS.includes(action)) {
+        return { 
+          allowed: false, 
+          reason: 'Service temporarily unavailable. Please try again in a moment.' 
+        };
+      }
+      
+      // Fail open for non-critical operations
+      return { allowed: true };
+    }
+    
+    if (data && typeof data === 'object' && 'allowed' in data) {
+      const result = data as any;
+      
+      if (!result.allowed && result.limit_exceeded) {
+        await SecureLogger.auditLog('warn', 'Rate limit exceeded', {
           component: 'rate_limiting',
           action: action
         });
-        // Fall back to localStorage
-      } else if (data && typeof data === 'object' && 'allowed' in data) {
-        const result = data as any;
-        if (!result.allowed && result.limit_exceeded) {
-          await SecureLogger.auditLog('warn', 'Rate limit exceeded', {
-            component: 'rate_limiting',
-            action: action
-          });
-        }
-        return result.allowed === true;
+        
+        return {
+          allowed: false,
+          reason: 'Too many requests. Please wait a moment and try again.'
+        };
       }
-    } catch (dbError) {
-      await SecureLogger.auditLog('error', 'Database rate limit error', {
-        component: 'rate_limiting',
-        action: action
-      });
-      // Fall back to localStorage
-    }
-
-    // Fallback to localStorage-based rate limiting
-    const key = `rate_limit_${action}_${userId || 'anon'}`;
-    const now = Date.now();
-    
-    const storedData = localStorage.getItem(key);
-    let attempts: number[] = storedData ? JSON.parse(storedData) : [];
-    
-    // Filter out attempts outside the time window
-    attempts = attempts.filter(timestamp => now - timestamp < config.windowMs);
-    
-    // Check if we've exceeded the limit
-    if (attempts.length >= config.maxAttempts) {
-      await SecureLogger.auditLog('warn', 'Rate limit exceeded (localStorage fallback)', {
-        component: 'rate_limiting',
-        action: action
-      });
-      return false;
+      
+      return { allowed: result.allowed === true };
     }
     
-    // Add current attempt
-    attempts.push(now);
-    localStorage.setItem(key, JSON.stringify(attempts));
+    // If data structure is unexpected, fail closed for critical operations
+    if (CRITICAL_OPERATIONS.includes(action)) {
+      return { 
+        allowed: false, 
+        reason: 'Unable to verify rate limit. Please try again.' 
+      };
+    }
     
-    return true;
+    return { allowed: true };
   } catch (error) {
-    SecureLogger.clientLog('error', 'Rate limiting check failed');
-    return true; // Fail open - allow the request
+    await SecureLogger.auditLog('error', 'Rate limiting check exception', {
+      component: 'rate_limiting',
+      action: action
+    });
+    
+    // FAIL CLOSED for critical operations
+    if (CRITICAL_OPERATIONS.includes(action)) {
+      return { 
+        allowed: false, 
+        reason: 'Service temporarily unavailable. Please try again later.' 
+      };
+    }
+    
+    // Fail open for non-critical operations
+    return { allowed: true };
   }
 };
