@@ -38,42 +38,38 @@ const queryClient = new QueryClient({
  * Router MUST be the outermost provider for all routing hooks to work
  */
 export const AppRoot: React.FC = () => {
-  // CRITICAL FIX: Disable StrictMode in development to prevent useState null errors
-  console.log('[APP ROOT] Loaded - StrictMode:', import.meta.env.DEV ? 'DISABLED (dev)' : 'ENABLED (prod)');
-  
-  const content = (
-    <ErrorBoundary>
-      <Router>
-        <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <PWAProvider>
-              <ThemeProvider>
-                <GA4Provider>
-                  <CriticalResourceLoader />
-                  <SearchParamBlocker />
-                  <div className="min-h-screen bg-background text-foreground flex flex-col">
-                    <TopNavigation />
-                    <main className="flex-1 pt-20">
-                      <RouteErrorRecovery>
-                        <Suspense fallback={<AppLoadingScreen />}>
-                          <AppRoutes />
-                        </Suspense>
-                      </RouteErrorRecovery>
-                    </main>
-                    <SOSFooter />
-                  </div>
-                  <PWAInstallManager />
-                  <MobileNavigation />
-                  <Toaster />
-                </GA4Provider>
-              </ThemeProvider>
-            </PWAProvider>
-          </AuthProvider>
-        </QueryClientProvider>
-      </Router>
-    </ErrorBoundary>
+  return (
+    <React.StrictMode>
+      <ErrorBoundary>
+        <Router>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <PWAProvider>
+                <ThemeProvider>
+                  <GA4Provider>
+                    <CriticalResourceLoader />
+                    <SearchParamBlocker />
+                    <div className="min-h-screen bg-background text-foreground flex flex-col">
+                      <TopNavigation />
+                      <main className="flex-1 pt-20">
+                        <RouteErrorRecovery>
+                          <Suspense fallback={<AppLoadingScreen />}>
+                            <AppRoutes />
+                          </Suspense>
+                        </RouteErrorRecovery>
+                      </main>
+                      <SOSFooter />
+                    </div>
+                    <PWAInstallManager />
+                    <MobileNavigation />
+                    <Toaster />
+                  </GA4Provider>
+                </ThemeProvider>
+              </PWAProvider>
+            </AuthProvider>
+          </QueryClientProvider>
+        </Router>
+      </ErrorBoundary>
+    </React.StrictMode>
   );
-  
-  // Only wrap in StrictMode for production
-  return import.meta.env.DEV ? content : <React.StrictMode>{content}</React.StrictMode>;
 };
