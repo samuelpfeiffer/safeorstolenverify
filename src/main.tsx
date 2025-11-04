@@ -15,8 +15,22 @@ if (!container) {
   throw new Error('Root element not found');
 }
 
-// CRITICAL: Create root once and reuse to prevent HMR issues
-const root = createRoot(container);
+// CRITICAL: Prevent HMR from breaking React context
+let root: ReturnType<typeof createRoot> | null = null;
 
-// Render without StrictMode to prevent HMR crashes
-root.render(<AppRoot />);
+function renderApp() {
+  if (!root) {
+    root = createRoot(container!);
+  }
+  root.render(<AppRoot />);
+}
+
+// Initial render
+renderApp();
+
+// Accept HMR updates without breaking React
+if (import.meta.hot) {
+  import.meta.hot.accept('./core/app/AppRoot', () => {
+    renderApp();
+  });
+}
