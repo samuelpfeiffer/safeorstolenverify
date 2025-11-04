@@ -15,22 +15,14 @@ if (!container) {
   throw new Error('Root element not found');
 }
 
-// CRITICAL: Prevent HMR from breaking React context
-let root: ReturnType<typeof createRoot> | null = null;
+// Create root and render
+const root = createRoot(container);
+root.render(<AppRoot />);
 
-function renderApp() {
-  if (!root) {
-    root = createRoot(container!);
-  }
-  root.render(<AppRoot />);
-}
-
-// Initial render
-renderApp();
-
-// Accept HMR updates without breaking React
+// HMR: Properly handle hot updates to prevent React context issues
 if (import.meta.hot) {
   import.meta.hot.accept('./core/app/AppRoot', () => {
-    renderApp();
+    // Re-render with the updated AppRoot
+    root.render(<AppRoot />);
   });
 }
