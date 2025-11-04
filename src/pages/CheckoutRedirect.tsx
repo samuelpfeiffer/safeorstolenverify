@@ -76,11 +76,11 @@ const CheckoutRedirect: React.FC = () => {
           title="Checkout Error - Safe Or Stolen"
           robotsDirectives="noindex, nofollow"
         />
-        <div className="min-h-screen bg-sos-dark flex items-center justify-center p-4">
-          <div className="bg-card rounded-lg p-8 max-w-md w-full text-center border border-border">
-            <h1 className="text-2xl font-bold text-destructive mb-4">Error</h1>
-            <p className="text-foreground mb-6">{error}</p>
-            <Button onClick={() => navigate('/pricing')} className="w-full">
+        <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md w-full text-center border-2 border-orange-200">
+            <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
+            <p className="text-gray-800 mb-6">{error}</p>
+            <Button onClick={() => navigate('/pricing')} className="w-full bg-orange-500 hover:bg-orange-600 text-white">
               Return to Pricing
             </Button>
           </div>
@@ -90,61 +90,61 @@ const CheckoutRedirect: React.FC = () => {
   }
 
   return (
-    <>
-      <SEOHead 
-        title="Redirecting to Checkout - Safe Or Stolen"
-        robotsDirectives="noindex, nofollow"
-      />
-      <div className="min-h-screen bg-sos-dark flex items-center justify-center p-4">
-        <div className="text-center max-w-md w-full">
-          {loading ? (
-            <>
-              <Loader2 className="w-16 h-16 text-primary animate-spin mx-auto mb-4" />
-              <h1 className="text-2xl font-bold text-foreground mb-2">Setting up checkout...</h1>
-              <p className="text-muted-foreground mb-6">Connecting to Stripe...</p>
-            </>
-          ) : redirecting ? (
-            <>
-              <div className="mb-8">
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+      <>
+        <SEOHead 
+          title="Redirecting to Checkout - Safe Or Stolen"
+          robotsDirectives="noindex, nofollow"
+        />
+        <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4">
+          <div className="text-center max-w-md w-full">
+            {loading ? (
+              <>
+                <Loader2 className="w-16 h-16 text-orange-500 animate-spin mx-auto mb-4" />
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">Setting up checkout...</h1>
+                <p className="text-gray-600 mb-6">Connecting to Stripe...</p>
+              </>
+            ) : redirecting ? (
+              <>
+                <div className="mb-8">
+                  <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <svg className="w-10 h-10 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h1 className="text-3xl font-bold text-gray-900 mb-2">Ready to Checkout!</h1>
+                  <p className="text-gray-700 mb-6">Click the button below to complete your purchase</p>
                 </div>
-                <h1 className="text-2xl font-bold text-foreground mb-2">Ready to Checkout!</h1>
-                <p className="text-muted-foreground mb-6">Click the button below to complete your purchase</p>
-              </div>
-              {checkoutUrl && (
-                <div className="space-y-4">
-                  <Button 
-                    onClick={() => {
-                      window.open(checkoutUrl, '_blank');
-                    }}
-                    size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 text-lg shadow-xl hover:shadow-2xl transition-all"
-                  >
-                    Continue to Stripe Checkout →
-                  </Button>
-                  <p className="text-muted-foreground text-sm">
-                    ✓ Secure payment powered by Stripe<br/>
-                    ✓ Your payment will open in a new window<br/>
-                    ✓ Return here after completing payment
-                  </p>
-                </div>
-              )}
-            </>
-          ) : null}
-          
-          <Button 
-            variant="outline" 
-            onClick={() => navigate('/pricing')}
-            className="mt-6"
-          >
-            ← Return to Pricing
-          </Button>
+                {checkoutUrl && (
+                  <div className="space-y-4">
+                    <Button 
+                      onClick={() => {
+                        window.open(checkoutUrl, '_blank');
+                      }}
+                      size="lg"
+                      className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-6 text-lg shadow-xl hover:shadow-2xl transition-all"
+                    >
+                      Continue to Stripe Checkout →
+                    </Button>
+                    <p className="text-gray-700 text-sm font-medium">
+                      ✓ Secure payment powered by Stripe<br/>
+                      ✓ Your payment will open in a new window<br/>
+                      ✓ Return here after completing payment
+                    </p>
+                  </div>
+                )}
+              </>
+            ) : null}
+            
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/pricing')}
+              className="mt-6 border-orange-300 text-gray-700 hover:bg-orange-50"
+            >
+              ← Return to Pricing
+            </Button>
+          </div>
         </div>
-      </div>
-    </>
+      </>
   );
 };
 
