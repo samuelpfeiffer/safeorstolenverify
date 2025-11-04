@@ -1,8 +1,8 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { validateSerialNumberSecurity, sanitizeInputSecurity } from '@/utils/securityValidation';
+import { SecureLogger } from '@/utils/secureLogging';
 
 interface VerificationData {
   serial_number: string;
@@ -52,13 +52,19 @@ export const useSecureVerificationOperations = () => {
         .single();
 
       if (error) {
-        console.error('Error creating verification:', error);
+        await SecureLogger.auditLog('error', 'Verification creation error', {
+          component: 'verification_operations',
+          action: 'create_verification'
+        });
         throw error;
       }
 
       return data;
     } catch (error) {
-      console.error('Failed to create verification:', error);
+      await SecureLogger.auditLog('error', 'Verification creation failed', {
+        component: 'verification_operations',
+        action: 'create_verification'
+      });
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to create verification",
@@ -86,13 +92,19 @@ export const useSecureVerificationOperations = () => {
         .order('created_at', { ascending: false });
 
       if (error) {
-        console.error('Error fetching verification results:', error);
+        await SecureLogger.auditLog('error', 'Verification results fetch error', {
+          component: 'verification_operations',
+          action: 'get_verification_results'
+        });
         throw error;
       }
 
       return data || [];
     } catch (error) {
-      console.error('Failed to get verification results:', error);
+      await SecureLogger.auditLog('error', 'Verification results fetch failed', {
+        component: 'verification_operations',
+        action: 'get_verification_results'
+      });
       toast({
         title: "Error",
         description: "Failed to load verification results",

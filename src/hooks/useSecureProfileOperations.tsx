@@ -1,8 +1,8 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { validateEmailSecurity, validateNameSecurity, sanitizeInputSecurity } from '@/utils/securityValidation';
+import { SecureLogger } from '@/utils/secureLogging';
 
 interface ProfileData {
   full_name?: string;
@@ -30,13 +30,19 @@ export const useSecureProfileOperations = () => {
         .single();
 
       if (error) {
-        console.error('Error fetching profile:', error);
+        await SecureLogger.auditLog('error', 'Profile fetch error', {
+          component: 'profile_operations',
+          action: 'get_profile'
+        });
         throw error;
       }
 
       return data;
     } catch (error) {
-      console.error('Failed to get profile:', error);
+      await SecureLogger.auditLog('error', 'Profile fetch failed', {
+        component: 'profile_operations',
+        action: 'get_profile'
+      });
       toast({
         title: "Error",
         description: "Failed to load profile data",
@@ -88,7 +94,10 @@ export const useSecureProfileOperations = () => {
         .single();
 
       if (error) {
-        console.error('Error updating profile:', error);
+        await SecureLogger.auditLog('error', 'Profile update error', {
+          component: 'profile_operations',
+          action: 'update_profile'
+        });
         throw error;
       }
 
@@ -99,7 +108,10 @@ export const useSecureProfileOperations = () => {
 
       return data;
     } catch (error) {
-      console.error('Failed to update profile:', error);
+      await SecureLogger.auditLog('error', 'Profile update failed', {
+        component: 'profile_operations',
+        action: 'update_profile'
+      });
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to update profile",

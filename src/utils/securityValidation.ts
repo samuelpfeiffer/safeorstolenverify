@@ -1,3 +1,4 @@
+import { SecureLogger } from './secureLogging';
 
 interface ValidationResult {
   isValid: boolean;
@@ -108,7 +109,10 @@ export const validateSerialNumberSecurity = async (serialNumber: string): Promis
     });
     
     if (error) {
-      console.error('Database validation failed:', error);
+      await SecureLogger.auditLog('error', 'Database validation failed', {
+        component: 'input_validation',
+        action: 'serial_number_validation'
+      });
       // Fall back to client-side validation
     } else if (data && typeof data === 'object') {
       const result = data as any;
@@ -126,7 +130,10 @@ export const validateSerialNumberSecurity = async (serialNumber: string): Promis
       }
     }
   } catch (error) {
-    console.error('Serial number validation error:', error);
+    await SecureLogger.auditLog('error', 'Serial number validation error', {
+      component: 'input_validation',
+      action: 'serial_number_validation'
+    });
     // Fall back to client-side validation
   }
 

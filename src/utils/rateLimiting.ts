@@ -1,3 +1,4 @@
+import { SecureLogger } from './secureLogging';
 
 interface RateLimitConfig {
   maxAttempts: number;
@@ -28,17 +29,26 @@ export const checkRateLimit = async (action: string, userId?: string, ipAddress?
       });
       
       if (error) {
-        console.error('Enhanced rate limit check failed:', error);
+        await SecureLogger.auditLog('error', 'Rate limit check failed', {
+          component: 'rate_limiting',
+          action: action
+        });
         // Fall back to localStorage
       } else if (data && typeof data === 'object' && 'allowed' in data) {
         const result = data as any;
         if (!result.allowed && result.limit_exceeded) {
-          console.warn(`Rate limit exceeded for ${action}. Reset time:`, result.reset_time);
+          await SecureLogger.auditLog('warn', 'Rate limit exceeded', {
+            component: 'rate_limiting',
+            action: action
+          });
         }
         return result.allowed === true;
       }
     } catch (dbError) {
-      console.error('Database rate limit error:', dbError);
+      await SecureLogger.auditLog('error', 'Database rate limit error', {
+        component: 'rate_limiting',
+        action: action
+      });
       // Fall back to localStorage
     }
 
@@ -54,7 +64,10 @@ export const checkRateLimit = async (action: string, userId?: string, ipAddress?
     
     // Check if we've exceeded the limit
     if (attempts.length >= config.maxAttempts) {
-      console.warn(`Rate limit exceeded for action: ${action}`);
+      await SecureLogger.auditLog('warn', 'Rate limit exceeded (localStorage fallback)', {
+        component: 'rate_limiting',
+        action: action
+      });
       return false;
     }
     
@@ -64,7 +77,7 @@ export const checkRateLimit = async (action: string, userId?: string, ipAddress?
     
     return true;
   } catch (error) {
-    console.error('Rate limiting check failed:', error);
+    SecureLogger.clientLog('error', 'Rate limiting check failed');
     return true; // Fail open - allow the request
   }
 };
