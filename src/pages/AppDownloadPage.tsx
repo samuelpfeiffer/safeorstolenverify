@@ -87,11 +87,26 @@ const AppDownloadPage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Button
                 size="lg"
+                asChild
+                className="bg-primary hover:bg-primary/90 text-primary-foreground min-w-[200px] h-14"
+              >
+                <Link to="/install-app">
+                  <Download className="mr-2 h-5 w-5" />
+                  <div className="text-left">
+                    <div className="text-xs">Install Now</div>
+                    <div className="text-base font-semibold">Web App (PWA)</div>
+                  </div>
+                </Link>
+              </Button>
+              
+              <Button
+                size="lg"
                 className="bg-black text-white hover:bg-black/80 min-w-[200px] h-14"
+                disabled
               >
                 <Download className="mr-2 h-5 w-5" />
                 <div className="text-left">
-                  <div className="text-xs">Download on the</div>
+                  <div className="text-xs">Coming Q1 2026</div>
                   <div className="text-base font-semibold">App Store</div>
                 </div>
               </Button>
@@ -99,16 +114,22 @@ const AppDownloadPage = () => {
               <Button
                 size="lg"
                 className="bg-black text-white hover:bg-black/80 min-w-[200px] h-14"
+                disabled
               >
                 <Download className="mr-2 h-5 w-5" />
                 <div className="text-left">
-                  <div className="text-xs">GET IT ON</div>
+                  <div className="text-xs">Coming Q1 2026</div>
                   <div className="text-base font-semibold">Google Play</div>
                 </div>
               </Button>
             </div>
 
-            <p className="text-foreground/70 text-sm">Launching Q1 2026 • Join the waitlist to get early access</p>
+            <p className="text-foreground/70 text-sm mb-2">
+              <strong>Available Now:</strong> Install our Progressive Web App (PWA) for instant access
+            </p>
+            <p className="text-foreground/70 text-sm">
+              Native iOS & Android apps launching Q1 2026 • Join waitlist for early access
+            </p>
           </div>
 
           {/* App Preview */}

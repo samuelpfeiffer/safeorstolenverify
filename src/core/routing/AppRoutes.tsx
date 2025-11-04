@@ -48,6 +48,7 @@ const SecurityDashboard = lazy(() => import('@/pages/SecurityDashboard'));
 const AutonomousSystemPage = lazy(() => import('@/pages/AutonomousSystemPage'));
 const AIOptimizerPage = lazy(() => import('@/pages/AIOptimizerPage'));
 const AIExecutivePage = lazy(() => import('@/pages/AIExecutivePage'));
+const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
 const CheckoutRedirect = lazy(() => import('@/pages/CheckoutRedirect'));
 const HowItWorksDetailedPage = lazy(() => import('@/pages/HowItWorksDetailedPage'));
 
@@ -425,8 +426,10 @@ export const AppRoutes: React.FC = () => {
            {/* SEO Comparison & Guide Pages */}
            <Route path="vs/checkmend" element={<ComparisonCheckMendPage />} />
            <Route path="comparison/checkmend" element={<ComparisonCheckMendPage />} />
-           <Route path="download-app" element={<AppDownloadPage />} />
-           <Route path="app" element={<AppDownloadPage />} />
+            <Route path="download-app" element={<AppDownloadPage />} />
+            <Route path="app" element={<AppDownloadPage />} />
+            <Route path="install-app" element={<InstallAppPage />} />
+            <Route path="install" element={<InstallAppPage />} />
            <Route path="buyer-guide" element={<BuyerGuidePage />} />
            <Route path="guide/buyers" element={<BuyerGuidePage />} />
            <Route path="seller-guide" element={<SellerGuidePage />} />

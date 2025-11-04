@@ -25,10 +25,24 @@ export const usePWA = () => {
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     window.addEventListener('appinstalled', handleAppInstalled);
 
-    // Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      setIsInstalled(true);
-    }
+    // Enhanced installation detection
+    const checkIfInstalled = () => {
+      // Check for PWA display mode (desktop/mobile)
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+      
+      // iOS Safari specific check
+      const isIOSStandalone = (window.navigator as any).standalone === true;
+      
+      // Check if running in PWA context
+      if (isStandalone || isIOSStandalone) {
+        setIsInstalled(true);
+        return true;
+      }
+      
+      return false;
+    };
+
+    checkIfInstalled();
 
     return () => {
       window.removeEventListener('online', handleOnline);

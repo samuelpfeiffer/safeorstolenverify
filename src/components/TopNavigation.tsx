@@ -93,10 +93,10 @@ const TopNavigation: React.FC = () => {
     description: 'Complete guide to buying secondhand safely',
     icon: Shield
   }, {
-    label: 'Download App',
-    href: '/download-app',
-    description: 'Get our mobile app for iOS & Android',
-    icon: Home
+    label: 'Install App',
+    href: '/install-app',
+    description: 'Install our Progressive Web App instantly',
+    icon: Smartphone
   }];
 
   // Businesses Menu
