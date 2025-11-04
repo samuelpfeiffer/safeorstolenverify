@@ -34,42 +34,40 @@ const queryClient = new QueryClient({
 });
 
 /**
- * App Root Component - Production Ready
- * Router MUST be the outermost provider for all routing hooks to work
+ * App Root Component - HMR Stable
+ * StrictMode removed to prevent HMR useRef null errors
  */
 export const AppRoot: React.FC = () => {
   return (
-    <React.StrictMode>
-      <ErrorBoundary>
-        <Router>
-          <QueryClientProvider client={queryClient}>
-            <AuthProvider>
-              <PWAProvider>
-                <ThemeProvider>
-                  <GA4Provider>
-                    <CriticalResourceLoader />
-                    <SearchParamBlocker />
-                    <div className="min-h-screen bg-background text-foreground flex flex-col">
-                      <TopNavigation />
-                      <main className="flex-1 pt-20">
-                        <RouteErrorRecovery>
-                          <Suspense fallback={<AppLoadingScreen />}>
-                            <AppRoutes />
-                          </Suspense>
-                        </RouteErrorRecovery>
-                      </main>
-                      <SOSFooter />
-                    </div>
-                    <PWAInstallManager />
-                    <MobileNavigation />
-                    <Toaster />
-                  </GA4Provider>
-                </ThemeProvider>
-              </PWAProvider>
-            </AuthProvider>
-          </QueryClientProvider>
-        </Router>
-      </ErrorBoundary>
-    </React.StrictMode>
+    <ErrorBoundary>
+      <Router>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <PWAProvider>
+              <ThemeProvider>
+                <GA4Provider>
+                  <CriticalResourceLoader />
+                  <SearchParamBlocker />
+                  <div className="min-h-screen bg-background text-foreground flex flex-col">
+                    <TopNavigation />
+                    <main className="flex-1 pt-20">
+                      <RouteErrorRecovery>
+                        <Suspense fallback={<AppLoadingScreen />}>
+                          <AppRoutes />
+                        </Suspense>
+                      </RouteErrorRecovery>
+                    </main>
+                    <SOSFooter />
+                  </div>
+                  <PWAInstallManager />
+                  <MobileNavigation />
+                  <Toaster />
+                </GA4Provider>
+              </ThemeProvider>
+            </PWAProvider>
+          </AuthProvider>
+        </QueryClientProvider>
+      </Router>
+    </ErrorBoundary>
   );
 };
