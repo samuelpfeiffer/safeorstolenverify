@@ -16,22 +16,22 @@ verify_jwt = true
 verify_jwt = false
 
 [functions.verify-firearm-hotgunz]
-verify_jwt = false
+verify_jwt = true
 
 [functions.verify-checkmend]
-verify_jwt = false
+verify_jwt = true
 
 [functions.verify-claude-analysis]
-verify_jwt = false
+verify_jwt = true
 
 [functions.enhanced-verification]
-verify_jwt = false
+verify_jwt = true
 
 [functions.enterprise-api]
-verify_jwt = false
+verify_jwt = true
 
 [functions.marketplace-integration]
-verify_jwt = false
+verify_jwt = true
 
 [functions.sitemap-xml]
 verify_jwt = false
@@ -67,12 +67,12 @@ verify_jwt = true
 verify_jwt = true
 
 [functions.database-optimizer]
-verify_jwt = false
+verify_jwt = true
 
 [functions.enrich-blog-content]
-verify_jwt = false
+verify_jwt = true
 
 [functions.schedule-blog-enrichment]
-verify_jwt = false
+verify_jwt = true
 
 
