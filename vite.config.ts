@@ -53,6 +53,9 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "react-helmet-async": path.resolve(__dirname, "./src/shims/react-helmet-async.ts"),
+      // Force single React instance - critical for preventing context errors
+      "react": path.resolve(__dirname, "./node_modules/react"),
+      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
     // CRITICAL: Prevent duplicate React instances that cause context errors
     dedupe: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query'],
