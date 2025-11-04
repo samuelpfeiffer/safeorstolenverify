@@ -230,10 +230,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       setState(prev => ({ ...prev, loading: true }));
       
-      // Clear sensitive localStorage data before signing out
-      localStorage.removeItem('searchHistory');
-      localStorage.removeItem('savedReceipts');
-      localStorage.removeItem('userJourney');
+      // Clear localStorage data before signing out
+      localStorage.removeItem('user_journey');
+      localStorage.removeItem('offline-queue');
       sessionStorage.clear();
       
       const { error } = await supabase.auth.signOut();

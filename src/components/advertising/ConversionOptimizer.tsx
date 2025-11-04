@@ -48,17 +48,11 @@ export const ConversionOptimizer: React.FC = () => {
   };
 
   const trackFunnelProgress = (step: string) => {
-    console.log('Funnel Progress:', {
-      step,
-      timestamp: new Date().toISOString(),
-      page: location.pathname
-    });
-
-    // Track in localStorage for user journey analysis
+    // Track anonymized journey (no sensitive data)
     const journey = JSON.parse(localStorage.getItem('user_journey') || '[]');
     journey.push({
       step,
-      path: location.pathname,
+      path: location.pathname.split('/').slice(0, 2).join('/'), // Remove any IDs/serial numbers from path
       timestamp: Date.now()
     });
     localStorage.setItem('user_journey', JSON.stringify(journey.slice(-10))); // Keep last 10 steps

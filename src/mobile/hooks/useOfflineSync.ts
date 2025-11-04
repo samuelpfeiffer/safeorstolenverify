@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { usePWA } from '@/hooks/usePWA';
+import { encryptData, decryptData } from '@/utils/encryption';
 
 interface QueuedRequest {
   id: string;
@@ -13,24 +14,35 @@ export const useOfflineSync = () => {
   const [isSyncing, setIsSyncing] = useState(false);
   const { isOnline } = usePWA();
 
-  // Load queue from localStorage
+  // Load queue from localStorage with decryption
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem('offline-queue');
-      if (stored) {
-        setQueue(JSON.parse(stored));
+    const loadQueue = async () => {
+      try {
+        const stored = localStorage.getItem('offline-queue');
+        if (stored) {
+          const decrypted = await decryptData(stored);
+          setQueue(JSON.parse(decrypted));
+        }
+      } catch (error) {
+        console.error('Error loading offline queue');
+        localStorage.removeItem('offline-queue');
       }
-    } catch (error) {
-      console.error('Error loading offline queue:', error);
-    }
+    };
+    loadQueue();
   }, []);
 
-  // Save queue to localStorage
+  // Save queue to localStorage with encryption
   useEffect(() => {
-    try {
-      localStorage.setItem('offline-queue', JSON.stringify(queue));
-    } catch (error) {
-      console.error('Error saving offline queue:', error);
+    const saveQueue = async () => {
+      try {
+        const encrypted = await encryptData(JSON.stringify(queue));
+        localStorage.setItem('offline-queue', encrypted);
+      } catch (error) {
+        console.error('Error saving offline queue');
+      }
+    };
+    if (queue.length > 0) {
+      saveQueue();
     }
   }, [queue]);
 

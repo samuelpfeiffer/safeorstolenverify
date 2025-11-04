@@ -114,9 +114,8 @@ export const usePerformanceOptimization = () => {
         })
       }).then(res => res.json())
         .then(data => {
-          console.log('AI Performance Report:', data.performanceReport);
-          // Store recommendations for future optimization
-          localStorage.setItem('perf_recommendations', JSON.stringify(data.performanceReport));
+          // Performance recommendations received (not stored in localStorage)
+          console.log('Performance analysis complete');
         })
         .catch(err => console.error('AI analysis error:', err));
     } catch (error) {
