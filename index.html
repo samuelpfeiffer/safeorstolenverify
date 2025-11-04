@@ -8,9 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
-    <!-- CRITICAL: Preload hero image FIRST for LCP -->
-    <link rel="preload" as="image" href="/src/assets/hero-verification-devices.png" fetchpriority="high" />
-    <link rel="preload" as="style" href="/src/index.css" />
+    <!-- Asset preloading handled by Vite build process -->
     
     <!-- Minimal inline critical CSS with dark mode -->
     <style>
@@ -161,6 +159,6 @@
 
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Vite will inject the main script bundle here during build -->
   </body>
 </html>
