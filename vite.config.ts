@@ -53,11 +53,8 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "react-helmet-async": path.resolve(__dirname, "./src/shims/react-helmet-async.ts"),
-      // Force single React instance - critical for preventing context errors
-      "react": path.resolve(__dirname, "./node_modules/react"),
-      "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
-    // CRITICAL: Prevent duplicate React instances that cause context errors
+    // CRITICAL: Dedupe prevents multiple React instances
     dedupe: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query'],
   },
   optimizeDeps: {
@@ -68,18 +65,15 @@ export default defineConfig(({ mode }) => ({
       '@tanstack/react-query'
       // DO NOT include react-helmet-async - we use a custom shim
     ],
-    // Force single instance
-    force: true,
   },
   define: {
-    // Ensure React is available globally
     global: 'globalThis',
   },
-  // Handle 404s properly for SPA routing
-  preview: {
-    port: 8080,
-  },
   build: {
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
+    },
     logLevel: 'error',
     rollupOptions: {
       output: {
@@ -137,5 +131,9 @@ export default defineConfig(({ mode }) => ({
     reportCompressedSize: false,
     chunkSizeWarningLimit: 5000,
     assetsInlineLimit: 4096,
+  },
+  // Handle 404s properly for SPA routing
+  preview: {
+    port: 8080,
   },
 }));
