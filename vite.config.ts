@@ -65,8 +65,8 @@ export default defineConfig(({ mode }) => ({
       'react',
       'react-dom',
       'react-router-dom',
-      '@tanstack/react-query',
-      'react-helmet-async'
+      '@tanstack/react-query'
+      // DO NOT include react-helmet-async - we use a custom shim
     ],
     // Force single instance
     force: true,
