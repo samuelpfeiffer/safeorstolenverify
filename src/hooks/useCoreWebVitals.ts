@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // FID has been replaced with INP in web-vitals v3+
 import { onCLS, onLCP, onFCP, onTTFB, onINP } from 'web-vitals';
 import type { Metric } from 'web-vitals';

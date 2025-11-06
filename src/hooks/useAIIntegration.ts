@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { aiService, type AIVerificationAnalysis, type AIContentGeneration } from '@/services/aiService';
 
 export interface AIIntegrationState {

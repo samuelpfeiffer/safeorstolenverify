@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useUnifiedAuth } from './useUnifiedAuth';
 import { trackSignup, trackPurchase, trackVerification, trackEngagement } from '@/utils/marketingAutomation';
 
