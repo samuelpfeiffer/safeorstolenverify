@@ -65,6 +65,13 @@ export default defineConfig(({ mode }) => ({
       '@tanstack/react-query'
       // DO NOT include react-helmet-async - we use a custom shim
     ],
+    esbuildOptions: {
+      // Ensure React is treated as a singleton during pre-bundling
+      mainFields: ['module', 'main'],
+      resolveExtensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
+    },
+    // Force Vite to re-optimize on next start
+    force: true,
   },
   define: {
     global: 'globalThis',
