@@ -1,4 +1,4 @@
-import { useEffect, ReactNode } from 'react';
+import React, { useEffect, ReactNode } from 'react';
 
 /**
  * Helmet Shim - Replaces react-helmet-async without requiring providers

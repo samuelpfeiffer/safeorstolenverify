@@ -38,6 +38,19 @@ const queryClient = new QueryClient({
  * StrictMode removed to prevent HMR useRef null errors
  */
 export const AppRoot: React.FC = () => {
+  // Prevent rendering during HMR context transitions
+  const [isMounted, setIsMounted] = React.useState(false);
+  
+  React.useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+  
+  // Show loading during HMR transitions
+  if (!isMounted && import.meta.hot) {
+    return <AppLoadingScreen />;
+  }
+  
   return (
     <ErrorBoundary>
       <Router>

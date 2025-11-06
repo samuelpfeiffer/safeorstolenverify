@@ -74,6 +74,7 @@ export default defineConfig(({ mode }) => ({
   define: {
     // Ensure React is available globally
     global: 'globalThis',
+    'globalThis.React': 'React',
   },
   // Handle 404s properly for SPA routing
   preview: {

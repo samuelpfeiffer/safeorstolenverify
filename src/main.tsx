@@ -46,8 +46,27 @@ root.render(<AppRoot />);
 
 // HMR: Properly handle hot updates to prevent React context issues
 if (import.meta.hot) {
-  import.meta.hot.accept('./core/app/AppRoot', () => {
-    // Re-render with the updated AppRoot
-    root.render(<AppRoot />);
+  let currentRoot = root;
+  
+  import.meta.hot.accept('./core/app/AppRoot', (newModule) => {
+    if (newModule) {
+      // Unmount old root completely
+      currentRoot.unmount();
+      
+      // Create fresh React root with clean context
+      const container = document.getElementById('root');
+      if (!container) throw new Error('Root element not found');
+      
+      currentRoot = createRoot(container);
+      currentRoot.render(<AppRoot />);
+    }
   });
+  
+  // Prevent DevTools from interfering with HMR
+  (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__ = (window as any).__REACT_DEVTOOLS_GLOBAL_HOOK__ || {
+    supportsFiber: true,
+    inject: () => {},
+    onCommitFiberRoot: () => {},
+    onCommitFiberUnmount: () => {},
+  };
 }
