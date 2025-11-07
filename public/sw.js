@@ -3,8 +3,8 @@
  * Enables offline functionality, caching, and improved performance
  */
 
-const CACHE_NAME = 'safeorstolen-v1';
-const RUNTIME_CACHE = 'safeorstolen-runtime-v1';
+const CACHE_NAME = 'safeorstolen-v2';
+const RUNTIME_CACHE = 'safeorstolen-runtime-v2';
 
 // Critical assets to cache immediately
 const PRECACHE_URLS = [
