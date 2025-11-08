@@ -27,33 +27,27 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches and force immediate update
+// Activate event - clean up old caches intelligently
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating service worker v3 - Force clearing ALL caches...');
+  console.log('[SW] Activating service worker v3...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
-        // DELETE ALL CACHES to force fresh content
+        // Only delete OLD cache versions, keep current ones
         return Promise.all(
-          cacheNames.map(cacheName => {
-            console.log('[SW] Force deleting cache:', cacheName);
-            return caches.delete(cacheName);
-          })
+          cacheNames
+            .filter(cacheName => {
+              return cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE;
+            })
+            .map(cacheName => {
+              console.log('[SW] Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            })
         );
       })
       .then(() => {
-        console.log('[SW] All caches cleared. Taking control immediately.');
+        console.log('[SW] Activation complete, taking control.');
         return self.clients.claim();
-      })
-      .then(() => {
-        // Refresh all clients to load fresh content
-        return self.clients.matchAll({ type: 'window' });
-      })
-      .then(clients => {
-        clients.forEach(client => {
-          console.log('[SW] Reloading client:', client.url);
-          client.postMessage({ type: 'RELOAD' });
-        });
       })
   );
 });
@@ -73,8 +67,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip API calls (always fetch fresh)
-  if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
+  // Skip API calls and dynamic imports (always fetch fresh)
+  if (url.pathname.startsWith('/api/') || 
+      url.pathname.includes('supabase') ||
+      url.pathname.includes('/assets/') && url.pathname.endsWith('.js')) {
     return;
   }
 
