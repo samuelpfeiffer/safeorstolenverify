@@ -27,9 +27,6 @@ Crawl-delay: 0
 # Primary Sitemap (Edge Function - Always Fresh)
 Sitemap: https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/sitemap-xml
 
-# Fallback Static Sitemap
-Sitemap: https://safeorstolen.com/sitemap.xml
-
 # Important pages for indexing
 Allow: /
 Allow: /imei-check

@@ -266,11 +266,8 @@ export const GlobalSEOHead: React.FC<GlobalSEOHeadProps> = ({
       <meta property="article:publisher" content="https://safeorstolen.com" />
       <meta property="article:author" content="Safe or Stolen Global Team" />
       
-      {/* Hreflang for International SEO */}
+      {/* Hreflang for International SEO - Only English supported */}
       <link rel="alternate" hrefLang="en" href={`https://safeorstolen.com${canonical}`} />
-      <link rel="alternate" hrefLang="es" href={`https://safeorstolen.com/es${canonical}`} />
-      <link rel="alternate" hrefLang="fr" href={`https://safeorstolen.com/fr${canonical}`} />
-      <link rel="alternate" hrefLang="de" href={`https://safeorstolen.com/de${canonical}`} />
       <link rel="alternate" hrefLang="x-default" href={`https://safeorstolen.com${canonical}`} />
     </Helmet>
   );

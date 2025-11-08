@@ -3,8 +3,8 @@
  * Enables offline functionality, caching, and improved performance
  */
 
-const CACHE_NAME = 'safeorstolen-v2';
-const RUNTIME_CACHE = 'safeorstolen-runtime-v2';
+const CACHE_NAME = 'safeorstolen-v3';
+const RUNTIME_CACHE = 'safeorstolen-runtime-v3';
 
 // Critical assets to cache immediately
 const PRECACHE_URLS = [
@@ -27,22 +27,34 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - clean up old caches and force immediate update
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating service worker...');
+  console.log('[SW] Activating service worker v3 - Force clearing ALL caches...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
+        // DELETE ALL CACHES to force fresh content
         return Promise.all(
-          cacheNames
-            .filter(cacheName => cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE)
-            .map(cacheName => {
-              console.log('[SW] Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
-            })
+          cacheNames.map(cacheName => {
+            console.log('[SW] Force deleting cache:', cacheName);
+            return caches.delete(cacheName);
+          })
         );
       })
-      .then(() => self.clients.claim())
+      .then(() => {
+        console.log('[SW] All caches cleared. Taking control immediately.');
+        return self.clients.claim();
+      })
+      .then(() => {
+        // Refresh all clients to load fresh content
+        return self.clients.matchAll({ type: 'window' });
+      })
+      .then(clients => {
+        clients.forEach(client => {
+          console.log('[SW] Reloading client:', client.url);
+          client.postMessage({ type: 'RELOAD' });
+        });
+      })
   );
 });
 
