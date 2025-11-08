@@ -3,35 +3,14 @@ import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
-// Enhanced Service Worker registration with update handling
+// Service Worker DISABLED temporarily to fix black screen issue
+// Unregister any existing service workers
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register(`/sw.js?v=${Date.now()}`, { scope: '/' })
-      .then((registration) => {
-        console.log('✅ Service Worker registered successfully');
-        
-        // Check for updates every 60 seconds
-        setInterval(() => {
-          registration.update();
-        }, 60000);
-        
-        // Handle updates
-        registration.addEventListener('updatefound', () => {
-          const newWorker = registration.installing;
-          if (newWorker) {
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                // New service worker available, show update notification
-                console.log('🔄 New version available! Refresh to update.');
-              }
-            });
-          }
-        });
-      })
-      .catch((error) => {
-        console.warn('Service Worker registration failed:', error);
-      });
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    registrations.forEach((registration) => {
+      registration.unregister();
+      console.log('🗑️ Unregistered service worker');
+    });
   });
 }
 
