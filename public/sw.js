@@ -52,7 +52,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - network first, fallback to cache
+// Fetch event - cache static assets only, let JS load normally
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -67,10 +67,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip API calls and dynamic imports (always fetch fresh)
-  if (url.pathname.startsWith('/api/') || 
-      url.pathname.includes('supabase') ||
-      url.pathname.includes('/assets/') && url.pathname.endsWith('.js')) {
+  // NEVER cache JavaScript files - let them load fresh always
+  if (url.pathname.endsWith('.js') || 
+      url.pathname.endsWith('.jsx') || 
+      url.pathname.endsWith('.ts') || 
+      url.pathname.endsWith('.tsx')) {
+    return;
+  }
+
+  // Skip API calls
+  if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
     return;
   }
 
