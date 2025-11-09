@@ -3,15 +3,19 @@ import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
-// Service Worker DISABLED temporarily to fix black screen issue
-// Unregister any existing service workers
+// One-time service worker cleanup migration
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    registrations.forEach((registration) => {
-      registration.unregister();
-      console.log('🗑️ Unregistered service worker');
+  const SW_CLEANUP_KEY = 'sw_cleanup_done_v1';
+  
+  if (!localStorage.getItem(SW_CLEANUP_KEY)) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      registrations.forEach((registration) => {
+        registration.unregister();
+        console.log('🗑️ Unregistered legacy service worker');
+      });
+      localStorage.setItem(SW_CLEANUP_KEY, 'true');
     });
-  });
+  }
 }
 
 const container = document.getElementById('root');

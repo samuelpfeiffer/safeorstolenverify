@@ -110,11 +110,177 @@
       }
     </style>
     
+    <!-- Rich Structured Data (JSON-LD) for Search Engines & AI -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "SafeOrStolen",
+          "alternateName": "Safe or Stolen",
+          "url": "https://safeorstolen.com",
+          "description": "Free stolen item verification platform. Check IMEI numbers, VIN numbers, and serial numbers instantly against 50M+ stolen property records.",
+          "applicationCategory": "SecurityApplication",
+          "operatingSystem": "Web, iOS, Android",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "4 free verification checks per month"
+          },
+          "featureList": [
+            "IMEI Check for Phones",
+            "VIN Verification for Vehicles",
+            "Serial Number Lookup",
+            "50M+ Database Records",
+            "3-Second Results",
+            "Mobile App Available"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "2547",
+            "reviewCount": "2547"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "SafeOrStolen",
+          "url": "https://safeorstolen.com",
+          "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+          "sameAs": [
+            "https://twitter.com/safeorstolen"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@safeorstolen.com"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "SafeOrStolen",
+          "url": "https://safeorstolen.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://safeorstolen.com/mobile-verify?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Stolen Property Verification",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "areaServed": "Worldwide",
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://safeorstolen.com",
+            "serviceType": "Online Service"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- FAQ Schema for rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check if an item is stolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter the IMEI number for phones, VIN for vehicles, or serial number for electronics into SafeOrStolen's verification tool. Results appear in 3 seconds against 50M+ stolen property records."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SafeOrStolen free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. SafeOrStolen offers 4 free verification checks per month. Premium plans are available for frequent users, dealers, and businesses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I verify with SafeOrStolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can verify phones (IMEI), vehicles (VIN), laptops, cameras, bikes, firearms, tools, gaming consoles, and other electronics using their serial numbers."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Dynamic meta tags are managed by React Helmet in each page component -->
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static SEO-visible content that shows before React loads -->
+      <div id="static-content" style="visibility:visible;opacity:1;transition:opacity 0.3s;padding:20px;max-width:1200px;margin:0 auto;">
+        <div style="text-align:center;padding:40px 20px;">
+          <div style="width:60px;height:60px;border:3px solid #3B82F6;border-top-color:transparent;border-radius:50%;margin:0 auto 20px;animation:spin 1s linear infinite;"></div>
+          <h1 style="font-size:28px;margin-bottom:16px;color:#fafafa;">Free Stolen Item Checker</h1>
+          <p style="font-size:16px;color:#a0a0a0;max-width:600px;margin:0 auto;">Verify IMEI, VIN, and Serial Numbers instantly. Checking 50M+ stolen property records...</p>
+        </div>
+        
+        <!-- Crawlable content for search engines -->
+        <div style="max-width:800px;margin:40px auto;line-height:1.6;color:#d0d0d0;">
+          <h2 style="font-size:24px;margin-bottom:16px;color:#fafafa;">Protect Yourself from Stolen Goods</h2>
+          <p>SafeOrStolen helps buyers and sellers verify items before purchase. Check phones, cars, electronics, and more against our comprehensive stolen property database.</p>
+          
+          <h3 style="font-size:20px;margin:24px 0 12px;color:#fafafa;">What We Check</h3>
+          <ul style="margin:0;padding-left:20px;">
+            <li><strong>Phones:</strong> IMEI verification for iPhone, Samsung, Android devices</li>
+            <li><strong>Vehicles:</strong> VIN lookup for cars, motorcycles, RVs</li>
+            <li><strong>Electronics:</strong> Serial number checks for laptops, cameras, gaming consoles</li>
+            <li><strong>Other Items:</strong> Bikes, firearms, tools, equipment</li>
+          </ul>
+          
+          <h3 style="font-size:20px;margin:24px 0 12px;color:#fafafa;">Key Features</h3>
+          <ul style="margin:0;padding-left:20px;">
+            <li>50M+ database records</li>
+            <li>3-second verification results</li>
+            <li>4 free searches monthly</li>
+            <li>Mobile app for iOS & Android</li>
+            <li>Global coverage</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Loading animation CSS -->
+      <style>
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+      </style>
+      
+      <!-- Hide static content after React loads -->
+      <script>
+        (function() {
+          window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+              var el = document.getElementById('static-content');
+              if (el && document.querySelector('[data-react-root]')) {
+                el.style.opacity = '0';
+                setTimeout(function() {
+                  el.style.display = 'none';
+                }, 300);
+              }
+            }, 500);
+          });
+        })();
+      </script>
+    </div>
 
     <noscript>
       <div style="padding:24px;max-width:840px;margin:0 auto;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">

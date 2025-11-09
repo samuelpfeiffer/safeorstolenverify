@@ -1,15 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
-
-// Lazy import utilities to prevent initialization errors
-let supabaseClient: any = null;
-const getSupabase = async () => {
-  if (!supabaseClient) {
-    const { supabase } = await import('@/integrations/supabase/client');
-    supabaseClient = supabase;
-  }
-  return supabaseClient;
-};
+import { supabase } from '@/integrations/supabase/client';
 
 export interface AuthUser {
   id: string;
@@ -68,8 +59,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Mobile-optimized session initialization
     const getInitialSession = async () => {
       try {
-        const supabase = await getSupabase();
-        
         // Add timeout for mobile to prevent infinite loading
         const timeoutPromise = new Promise((_, reject) => 
           setTimeout(() => reject(new Error('Session timeout')), MOBILE_TIMEOUT)
@@ -113,7 +102,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     
     const setupAuthListener = async () => {
       try {
-        const supabase = await getSupabase();
         const { data } = supabase.auth.onAuthStateChange(
           (event, session) => {
             if (!mounted) return;
@@ -162,7 +150,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signIn = async (email: string, password: string) => {
     try {
       setState(prev => ({ ...prev, loading: true }));
-      const supabase = await getSupabase();
       
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim().toLowerCase(),
@@ -197,7 +184,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signUp = async (email: string, password: string, fullName: string) => {
     try {
       setState(prev => ({ ...prev, loading: true }));
-      const supabase = await getSupabase();
       
       const { data, error } = await supabase.auth.signUp({
         email: email.trim().toLowerCase(),
@@ -232,7 +218,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.log("[AUTH] User created successfully, sending welcome email...");
         
         try {
-          const supabase = await getSupabase();
           await supabase.functions.invoke('send-welcome-email', {
             body: {
               email: data.user.email,
@@ -266,7 +251,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.removeItem('offline-queue');
       sessionStorage.clear();
       
-      const supabase = await getSupabase();
       const { error } = await supabase.auth.signOut();
       
       if (error && process.env.NODE_ENV === 'development') {
@@ -296,7 +280,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const resetPassword = async (email: string) => {
     try {
-      const supabase = await getSupabase();
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/auth?reset=true`,
       });
