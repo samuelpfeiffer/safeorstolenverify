@@ -1,8 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
-import { supabase } from '@/integrations/supabase/client';
-import { logAndSanitizeError } from '@/utils/errorSanitizer';
-import { initializeSecureStorage } from '@/utils/secureStorage';
+
+// Lazy import utilities to prevent initialization errors
+let supabaseClient: any = null;
+const getSupabase = async () => {
+  if (!supabaseClient) {
+    const { supabase } = await import('@/integrations/supabase/client');
+    supabaseClient = supabase;
+  }
+  return supabaseClient;
+};
 
 export interface AuthUser {
   id: string;
@@ -58,12 +65,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const MAX_RETRIES = 3;
     const MOBILE_TIMEOUT = 5000; // 5 second timeout for mobile
 
-    // Initialize secure storage with expiration
-    initializeSecureStorage();
-
     // Mobile-optimized session initialization
     const getInitialSession = async () => {
       try {
+        const supabase = await getSupabase();
+        
         // Add timeout for mobile to prevent infinite loading
         const timeoutPromise = new Promise((_, reject) => 
           setTimeout(() => reject(new Error('Session timeout')), MOBILE_TIMEOUT)
@@ -103,37 +109,60 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
 
     // Listen for auth changes with error handling
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        if (!mounted) return;
+    let subscription: any = null;
+    
+    const setupAuthListener = async () => {
+      try {
+        const supabase = await getSupabase();
+        const { data } = supabase.auth.onAuthStateChange(
+          (event, session) => {
+            if (!mounted) return;
 
-        setState({
-          user: transformUser(session?.user || null),
-          session,
-          loading: false,
-          initialized: true,
-        });
+            setState({
+              user: transformUser(session?.user || null),
+              session,
+              loading: false,
+              initialized: true,
+            });
 
-        // Log auth events but don't show toasts to avoid dependencies
-        if (event === 'SIGNED_IN') {
-          console.log('[AUTH] User signed in successfully');
-        } else if (event === 'SIGNED_OUT') {
-          console.log('[AUTH] User signed out');
+            // Log auth events but don't show toasts to avoid dependencies
+            if (event === 'SIGNED_IN') {
+              console.log('[AUTH] User signed in successfully');
+            } else if (event === 'SIGNED_OUT') {
+              console.log('[AUTH] User signed out');
+            }
+          }
+        );
+        subscription = data.subscription;
+      } catch (error) {
+        console.error('[AUTH] Failed to setup listener:', error);
+        // Force initialization even if listener fails
+        if (mounted) {
+          setState({
+            user: null,
+            session: null,
+            loading: false,
+            initialized: true,
+          });
         }
       }
-    );
+    };
 
+    setupAuthListener();
     getInitialSession();
 
     return () => {
       mounted = false;
-      subscription.unsubscribe();
+      if (subscription) {
+        subscription.unsubscribe();
+      }
     };
   }, []);
 
   const signIn = async (email: string, password: string) => {
     try {
       setState(prev => ({ ...prev, loading: true }));
+      const supabase = await getSupabase();
       
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim().toLowerCase(),
@@ -168,6 +197,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signUp = async (email: string, password: string, fullName: string) => {
     try {
       setState(prev => ({ ...prev, loading: true }));
+      const supabase = await getSupabase();
       
       const { data, error } = await supabase.auth.signUp({
         email: email.trim().toLowerCase(),
@@ -202,6 +232,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.log("[AUTH] User created successfully, sending welcome email...");
         
         try {
+          const supabase = await getSupabase();
           await supabase.functions.invoke('send-welcome-email', {
             body: {
               email: data.user.email,
@@ -220,9 +251,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return { success: true };
     } catch (error) {
       setState(prev => ({ ...prev, loading: false }));
-      const safeMessage = logAndSanitizeError(error, 'SignUp');
-      console.error('[AUTH] Sign up exception:', safeMessage);
-      return { success: false, error: safeMessage };
+      const errorMessage = error instanceof Error ? error.message : 'Sign up failed';
+      console.error('[AUTH] Sign up exception:', errorMessage);
+      return { success: false, error: errorMessage };
     }
   };
 
@@ -235,6 +266,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.removeItem('offline-queue');
       sessionStorage.clear();
       
+      const supabase = await getSupabase();
       const { error } = await supabase.auth.signOut();
       
       if (error && process.env.NODE_ENV === 'development') {
@@ -264,6 +296,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const resetPassword = async (email: string) => {
     try {
+      const supabase = await getSupabase();
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/auth?reset=true`,
       });
