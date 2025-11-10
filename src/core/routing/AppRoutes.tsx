@@ -26,6 +26,9 @@ const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 
+// Item Categories
+const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
+
 // Admin
 const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
 const Admin = lazy(() => import('@/pages/Admin'));
@@ -62,6 +65,9 @@ export const AppRoutes = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        
+        {/* Item Category Pages */}
+        <Route path="/firearms-check" element={<FirearmsCheckPage />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogPage />} />
