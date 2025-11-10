@@ -11,7 +11,7 @@ const SafeOrStolenVsCheckMendPage = () => {
   const navigate = useNavigate();
 
   const comparisonData = [
-    { feature: 'Free Searches', safeorstolen: '4 free per month', checkmend: 'None - All paid', winner: 'safeorstolen' },
+    { feature: 'Free Searches', safeorstolen: '2 free (14-day trial)', checkmend: 'None - All paid', winner: 'safeorstolen' },
     { feature: 'Mobile App', safeorstolen: 'iOS & Android', checkmend: 'No app available', winner: 'safeorstolen' },
     { feature: 'Items Supported', safeorstolen: 'Phones, Cars, Electronics, Bikes, Jewelry', checkmend: 'Phones only (IMEI)', winner: 'safeorstolen' },
     { feature: 'Database Size', safeorstolen: '50M+ records', checkmend: '~10M records', winner: 'safeorstolen' },

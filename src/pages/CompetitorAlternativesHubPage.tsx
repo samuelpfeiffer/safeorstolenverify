@@ -15,7 +15,7 @@ const CompetitorAlternativesHubPage = () => {
       name: 'CheckMend',
       category: 'IMEI Checker',
       weaknesses: ['Paid-only service', 'No mobile app', 'Phone verification only'],
-      advantages: ['4 FREE searches', 'iOS & Android apps', 'Multi-item verification'],
+      advantages: ['2 FREE searches (14-day trial)', 'iOS & Android apps', 'Multi-item verification'],
       slug: '/safeorstolen-vs-checkmend'
     },
     {
@@ -45,7 +45,7 @@ const CompetitorAlternativesHubPage = () => {
     <>
       <PageSEO
         title="Best CheckMend, IMEIinfo, Carfax Alternatives - Free Stolen Item Verification"
-        description="Compare SafeOrStolen with CheckMend, IMEIinfo, and Carfax. Get 4 FREE searches, mobile app, and multi-item verification. See why SafeOrStolen is the better choice."
+        description="Compare SafeOrStolen with CheckMend, IMEIinfo, and Carfax. Get 2 FREE searches (14-day trial), mobile app, and multi-item verification. See why SafeOrStolen is the better choice."
         keywords="CheckMend alternative, IMEIinfo alternative, Carfax alternative, free IMEI check, best stolen item checker"
         canonical="/competitor-alternatives"
         structuredData={structuredData}
@@ -100,7 +100,7 @@ const CompetitorAlternativesHubPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                        <span><strong>4 FREE searches</strong> every month (competitors: $0)</span>
+                        <span><strong>2 FREE searches (14-day trial)</strong> (competitors: $0)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-green-600 mt-0.5" />
@@ -213,7 +213,7 @@ const CompetitorAlternativesHubPage = () => {
                   </div>
                 </div>
                 <p className="text-center mt-6 text-muted-foreground">
-                  SafeOrStolen: 4 FREE searches + $9.99/month unlimited = $120/year total
+                  SafeOrStolen: 2 FREE searches (14-day trial) + $9.99/month unlimited = $120/year total
                 </p>
               </CardContent>
             </Card>
@@ -227,7 +227,7 @@ const CompetitorAlternativesHubPage = () => {
               <CardContent className="p-12">
                 <h2 className="text-3xl font-bold mb-4">Ready to Switch?</h2>
                 <p className="text-xl mb-8 text-gray-300">
-                  Join 10,000+ users who switched from CheckMend, IMEIinfo, and Carfax. Get 4 FREE searches now.
+                  Join 10,000+ users who switched from CheckMend, IMEIinfo, and Carfax. Get 2 FREE searches now (14-day trial).
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Button onClick={() => navigate('/check-phone')} size="lg" className="bg-sos-orange hover:bg-sos-orange/90">

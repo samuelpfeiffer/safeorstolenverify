@@ -36,7 +36,7 @@ export default function RegionUKPage() {
     <>
       <PageSEO
         title="UK Stolen Item Checker | SafeOrStolen United Kingdom Database"
-        description="Verify stolen items in the UK. Check phones, cars, electronics against police databases. Gumtree, eBay UK, Facebook Marketplace verification. 4 FREE searches."
+        description="Verify stolen items in the UK. Check phones, cars, electronics against police databases. Gumtree, eBay UK, Facebook Marketplace verification. 2 FREE searches (14-day trial)."
         keywords="UK stolen item checker, Gumtree verification UK, stolen phone check UK, UK stolen goods database, eBay UK verification"
         structuredData={[{
           "@context": "https://schema.org",
@@ -228,7 +228,7 @@ export default function RegionUKPage() {
               Protect Yourself from UK's Stolen Goods Market
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              4 FREE verifications every month. No credit card required. Trusted by millions of UK buyers and sellers.
+              2 FREE verifications (14-day trial). No credit card required. Trusted by millions of UK buyers and sellers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" onClick={() => navigate('/verify')}>

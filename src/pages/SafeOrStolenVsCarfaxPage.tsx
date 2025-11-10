@@ -80,7 +80,7 @@ const SafeOrStolenVsCarfaxPage = () => {
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                        <span>4 FREE searches per month</span>
+                        <span>2 FREE searches (14-day trial)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-green-600 mt-0.5" />

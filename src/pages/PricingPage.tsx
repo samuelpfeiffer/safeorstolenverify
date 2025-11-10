@@ -208,7 +208,7 @@ const PricingPage = () => {
             "itemOffered": {
               "@type": "Service",
               "name": "Free Verification Plan",
-              "description": "Basic verification service with 4 free searches per day for consumer protection"
+              "description": "Basic verification service with 2 free searches (14-day trial) for consumer protection"
             },
             "price": "0",
             "priceCurrency": "USD"

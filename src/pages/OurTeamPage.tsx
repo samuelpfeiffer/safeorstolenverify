@@ -247,7 +247,7 @@ const OurTeamPage = () => {
               Join Our Mission
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Help us make marketplaces safer. Start verifying items today with 4 free checks.
+              Help us make marketplaces safer. Start verifying items today with 2 free checks (14-day trial).
             </p>
             <Button size="lg" asChild>
               <Link to="/auth?tab=signup">Get Started Free</Link>

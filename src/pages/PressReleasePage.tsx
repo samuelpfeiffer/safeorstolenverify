@@ -236,7 +236,7 @@ const PressReleasePage = () => {
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold mb-4">Try SafeOrStolen Today</h3>
                   <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                    Protect yourself when buying or selling secondhand items. Get 4 free verifications when you sign up.
+                    Protect yourself when buying or selling secondhand items. Get 2 free verifications (14-day trial) when you sign up.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
                     <Button 

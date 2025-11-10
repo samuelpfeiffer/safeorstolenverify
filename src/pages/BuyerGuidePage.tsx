@@ -294,7 +294,7 @@ const BuyerGuidePage = () => {
                 Protect Yourself with Free Verification
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Sign up for SafeOrStolen and get 4 FREE verification searches. 
+                Sign up for SafeOrStolen and get 2 FREE verification searches (14-day trial). 
                 Check IMEIs, VINs, and serial numbers before you buy.
               </p>
               <Button
@@ -302,7 +302,7 @@ const BuyerGuidePage = () => {
                 onClick={() => navigate('/auth?tab=signup')}
                 className="bg-blue-500 hover:bg-blue-600 text-white text-lg px-8"
               >
-                Get 4 Free Verifications
+                Get 2 Free Verifications
               </Button>
             </CardContent>
           </Card>

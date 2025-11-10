@@ -187,7 +187,7 @@ const HowItWorksPage = () => {
                   Start Verifying Now
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Get 4 free checks. No credit card required.
+                  Get 2 free checks (14-day trial). No credit card required.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/auth?tab=signup">Try Free</Link>

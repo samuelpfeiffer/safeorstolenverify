@@ -166,7 +166,7 @@ export default function GlobalMissionPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>4 free searches for every user</span>
+                  <span>2 free searches (14-day trial) for every user</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />

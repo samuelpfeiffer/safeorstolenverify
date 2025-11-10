@@ -30,7 +30,7 @@ const ComparisonCheckMendPage = () => {
     {
       category: "Pricing & Value",
       safeorstolen: [
-        "4 FREE verification searches",
+        "2 FREE verification searches (14-day trial)",
         "No hidden fees or subscriptions",
         "Free mobile app downloads",
         "Transparent pricing",
@@ -123,7 +123,7 @@ const ComparisonCheckMendPage = () => {
     <>
       <PageSEO
         title="SafeOrStolen vs CheckMEND: Which is Better for Verifying Stolen Items? | 2025 Comparison"
-        description="Complete comparison of SafeOrStolen vs CheckMEND stolen item checkers. Compare global coverage, pricing, features, and mobile apps. See why SafeOrStolen is the #1 choice with 4 FREE searches."
+        description="Complete comparison of SafeOrStolen vs CheckMEND stolen item checkers. Compare global coverage, pricing, features, and mobile apps. See why SafeOrStolen is the #1 choice with 2 FREE searches (14-day trial)."
         keywords="safeorstolen vs checkmend, checkmend alternative, better than checkmend, imei checker comparison, stolen phone checker comparison, free checkmend alternative"
         canonical="/vs/checkmend"
         structuredData={comparisonSchema}
@@ -167,7 +167,7 @@ const ComparisonCheckMendPage = () => {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <Check className="h-5 w-5 text-green-500" />
-                  <span><strong>4 FREE searches</strong> vs CheckMEND's paid-only model</span>
+                  <span><strong>2 FREE searches (14-day trial)</strong> vs CheckMEND&apos;s paid-only model</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="h-5 w-5 text-green-500" />
@@ -292,7 +292,7 @@ const ComparisonCheckMendPage = () => {
                   Ready to Try the Better Alternative?
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Get started with SafeOrStolen today and enjoy 4 FREE verification searches. 
+                  Get started with SafeOrStolen today and enjoy 2 FREE verification searches (14-day trial). 
                   No credit card required.
                 </p>
                 <Button
@@ -300,7 +300,7 @@ const ComparisonCheckMendPage = () => {
                   onClick={() => navigate('/auth?tab=signup')}
                   className="bg-sos-orange hover:bg-sos-orange/90 text-white text-lg px-8"
                 >
-                  Get 4 Free Searches Now
+                  Get 2 Free Searches Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </CardContent>

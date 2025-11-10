@@ -12,7 +12,7 @@ export default function SafeOrStolenVsCheckMENDPage() {
   const comparisonData = [
     {
       feature: "Pricing Model",
-      safeorstolen: "4 FREE searches/month, then $9.99/month unlimited",
+      safeorstolen: "2 FREE searches (14-day trial), then $9.99/month unlimited",
       checkmend: "$1.99 per IMEI check (no free option)",
       winner: "safeorstolen"
     },
@@ -105,7 +105,7 @@ export default function SafeOrStolenVsCheckMENDPage() {
     <>
       <PageSEO
         title="SafeOrStolen vs CheckMEND: Complete Comparison 2025 | Better Alternative"
-        description="SafeOrStolen offers 4 FREE searches covering all item types vs CheckMEND's $1.99/IMEI phone-only checks. Compare features, pricing, and global coverage."
+        description="SafeOrStolen offers 2 FREE searches (14-day trial) covering all item types vs CheckMEND&apos;s $1.99/IMEI phone-only checks. Compare features, pricing, and global coverage."
         keywords="SafeOrStolen vs CheckMEND, CheckMEND alternative, free IMEI check, better than CheckMEND, stolen phone checker"
         structuredData={[structuredData]}
       />
@@ -127,7 +127,7 @@ export default function SafeOrStolenVsCheckMENDPage() {
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              CheckMEND is UK-focused and phone-only. SafeOrStolen verifies ALL item types globally with 4 FREE searches per month.
+              CheckMEND is UK-focused and phone-only. SafeOrStolen verifies ALL item types globally with 2 FREE searches (14-day trial).
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -152,7 +152,7 @@ export default function SafeOrStolenVsCheckMENDPage() {
                 <DollarSign className="w-12 h-12 text-green-600 mx-auto mb-4" />
                 <h3 className="font-bold mb-2">Pricing Winner</h3>
                 <p className="text-2xl font-bold text-primary mb-2">SafeOrStolen</p>
-                <p className="text-sm text-gray-600">4 FREE searches vs $1.99/check</p>
+                <p className="text-sm text-gray-600">2 FREE searches (14-day trial) vs $1.99/check</p>
               </Card>
 
               <Card className="p-6 text-center">
@@ -216,7 +216,7 @@ export default function SafeOrStolenVsCheckMENDPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span>Want 4 FREE searches per month</span>
+                    <span>Want 2 FREE searches (14-day trial)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -266,7 +266,7 @@ export default function SafeOrStolenVsCheckMENDPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-6">
                 <p className="text-gray-700 mb-4 italic">
-                  "I switched from CheckMEND to SafeOrStolen and couldn't be happier. I can now verify cars, laptops, AND phones all in one place. The 4 free searches sealed the deal!"
+                  "I switched from CheckMEND to SafeOrStolen and couldn&apos;t be happier. I can now verify cars, laptops, AND phones all in one place. The 2 free searches (14-day trial) sealed the deal!"
                 </p>
                 <p className="font-semibold">— Marcus T., Los Angeles</p>
               </Card>
@@ -286,12 +286,12 @@ export default function SafeOrStolenVsCheckMENDPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Switch to SafeOrStolen?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Start with 4 FREE verifications. No credit card required. Cancel anytime.
+              Start with 2 FREE verifications (14-day trial). No credit card required. Cancel anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" onClick={() => navigate('/verify')}>
                 <Shield className="w-5 h-5 mr-2" />
-                Get 4 Free Searches
+                Get 2 Free Searches
               </Button>
               <Button 
                 size="lg" 

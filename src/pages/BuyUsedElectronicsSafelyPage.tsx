@@ -184,7 +184,7 @@ const BuyUsedElectronicsSafelyPage = () => {
                   title: 'Before Meeting the Seller',
                   content: [
                     'Request serial number, IMEI, or model number upfront',
-                    'Run verification check on SafeOrStolen.com (4 free searches)',
+                    'Run verification check on SafeOrStolen.com (2 free searches, 14-day trial)',
                     'Research average market price for the item',
                     'Check seller profile and reviews if on marketplace',
                     'Schedule meeting in public place (police station recommended)'
@@ -260,14 +260,14 @@ const BuyUsedElectronicsSafelyPage = () => {
                 Start Buying Electronics Safely Today
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Get 4 FREE verification searches and check items before you buy.
+                Get 2 FREE verification searches (14-day trial) and check items before you buy.
               </p>
               <Button
                 size="lg"
                 onClick={() => navigate('/auth?tab=signup')}
                 className="bg-green-500 hover:bg-green-600 text-white text-lg px-8"
               >
-                Get 4 Free Verifications
+                Get 2 Free Verifications
               </Button>
             </CardContent>
           </Card>

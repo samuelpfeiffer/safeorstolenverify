@@ -155,7 +155,7 @@ export default function RegionIndiaPage() {
               <Users className="h-10 w-10 text-primary mb-4" />
               <h3 className="text-xl font-bold mb-3">Free for Everyone</h3>
               <p className="mb-4">
-                4 free verification searches for every user. Perfect for occasional buyers on OLX, Quikr, Facebook Marketplace.
+                2 free verification searches (14-day trial) for every user. Perfect for occasional buyers on OLX, Quikr, Facebook Marketplace.
               </p>
               <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">

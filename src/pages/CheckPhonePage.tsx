@@ -43,7 +43,7 @@ const CheckPhonePage: React.FC = () => {
         <AIOptimizedContent page="check-phone" />
         <PageSEO 
         title="Free IMEI Check & Verify Phone - Stolen Phone Database Search"
-        description="Free database search to check & verify if phone is stolen using IMEI. 30-second verification for iPhone, Android, Samsung. 4 free searches included."
+        description="Free database search to check & verify if phone is stolen using IMEI. 30-second verification for iPhone, Android, Samsung. 2 free searches (14-day trial)."
         keywords="free IMEI check, verify phone stolen, check if phone stolen, IMEI database search, stolen phone verification, iPhone IMEI check, Android phone verification"
         canonical="/check-phone"
         type="website"

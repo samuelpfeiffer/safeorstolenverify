@@ -463,7 +463,7 @@ const DashboardPage = () => {
           {/* Search Usage Display */}
           <div className="flex justify-center items-center gap-4 mb-6">
             <div className="text-sm text-muted-foreground">
-              Search Usage: <span className="font-medium">{searchCount}/4 free searches used</span>
+              Search Usage: <span className="font-medium">{searchCount}/2 free searches used (14-day trial)</span>
             </div>
             {!isSubscribed && (
               <Link to="/subscriptions" className="text-sos-orange hover:underline text-sm font-medium">

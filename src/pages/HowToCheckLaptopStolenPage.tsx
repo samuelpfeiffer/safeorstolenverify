@@ -87,7 +87,7 @@ const HowToCheckLaptopStolenPage = () => {
                 <strong>1.</strong> Find the serial number (bottom of laptop or in BIOS)
               </p>
               <p className="text-lg">
-                <strong>2.</strong> Enter it on SafeOrStolen.com (get 4 free checks)
+                <strong>2.</strong> Enter it on SafeOrStolen.com (get 2 free checks with 14-day trial)
               </p>
               <p className="text-lg">
                 <strong>3.</strong> Get instant results in under 3 seconds - shows if laptop is reported stolen
@@ -240,7 +240,7 @@ const HowToCheckLaptopStolenPage = () => {
                 Check Your Laptop Serial Number Now
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Get 4 FREE laptop verifications when you sign up. Instant results in under 3 seconds.
+                Get 2 FREE laptop verifications (14-day trial) when you sign up. Instant results in under 3 seconds.
               </p>
               <Button
                 size="lg"
