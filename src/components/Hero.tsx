@@ -62,18 +62,16 @@ const Hero = () => {
           {/* Main headline */}
           <div className="space-y-6 animate-slideUp">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]">
-              <span className="block text-foreground">Verify Secondhand Items</span>
+              <span className="block text-foreground">Making Stolen Goods</span>
               <span className="block mt-2">
-                <span className="sos-gradient-text">Instantly</span>
-                {' '}& Safely
+                <span className="sos-gradient-text">Worthless</span>
+                {' '}Worldwide
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Check if phones, cars, electronics are{' '}
-              <span className="text-sos-lime font-bold">safe</span> or{' '}
-              <span className="text-sos-orange font-bold">stolen</span>.
-              Free IMEI, VIN, serial number verification.
+              Verify phones, cars, electronics before you buy. Every check makes crime unprofitable. 
+              <span className="text-sos-lime font-bold"> 500K+ monthly verifications</span> deterring theft globally.
             </p>
           </div>
 
