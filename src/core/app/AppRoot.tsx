@@ -18,6 +18,8 @@ import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
 import { SearchParamBlocker } from '@/components/seo/SearchParamBlocker';
 import { GA4Provider } from '@/components/seo/GA4Provider';
+import { MasterSEO } from '@/components/seo/MasterSEO';
+import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -52,6 +54,8 @@ const AuthAwareContent: React.FC = () => {
   return (
     <GA4Provider>
       <PWAProvider>
+        <MasterSEO />
+        <GlobalAISEO />
         <CriticalResourceLoader />
         <SearchParamBlocker />
         <div className="min-h-screen bg-background text-foreground flex flex-col">

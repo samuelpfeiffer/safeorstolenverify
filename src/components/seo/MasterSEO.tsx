@@ -41,18 +41,8 @@ export const MasterSEO: React.FC = () => {
     // Clean up path - remove trailing slashes except for root
     let cleanPath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '');
     
-    // Handle redirects at SEO level to inform Google of preferred URLs
-    const redirectMap: Record<string, string> = {
-      '/imei': '/imei-check',
-      '/imei-checker': '/imei-check',
-      '/vin-checker': '/vin-verification',
-      '/serial-checker': '/stolen-item-checker',
-      '/verify': '/stolen-item-checker'
-    };
-    
-    // Use mapped URL if available
-    cleanPath = redirectMap[cleanPath] || cleanPath;
-    
+    // No redirects - use actual pathname for canonical
+    // Redirects are handled in AppRoutes.tsx
     return `https://safeorstolen.com${cleanPath}`;
   };
   
