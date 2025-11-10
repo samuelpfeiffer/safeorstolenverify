@@ -56,7 +56,6 @@ export const Footer: React.FC = () => {
         { name: 'Avoid Stolen Goods', href: '/avoid-stolen-goods' },
         { name: 'Ultimate Guide Not Buying Stolen', href: '/ultimate-guide-not-buying-stolen-goods' },
         { name: 'Check if Stolen Database', href: '/check-if-stolen' },
-        { name: 'Stolen Property Lookup', href: '/stolen-property-lookup' },
         { name: 'Comprehensive Guide', href: '/comprehensive-guide' },
       ]
     },

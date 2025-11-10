@@ -38,6 +38,9 @@ const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlate
 const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
 const Admin = lazy(() => import('@/pages/Admin'));
 
+// Information Pages
+const ServiceLimitations = lazy(() => import('@/pages/ServiceLimitations'));
+
 // User Features
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
 const VerificationResultPage = lazy(() => import('@/pages/VerificationResultPage'));
@@ -71,6 +74,7 @@ export const AppRoutes = () => {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/transparency" element={<TransparencyPage />} />
+        <Route path="/service-limitations" element={<ServiceLimitations />} />
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
@@ -110,6 +114,11 @@ export const AppRoutes = () => {
         <Route path="/imei-check" element={<Navigate to="/verify" replace />} />
         <Route path="/imei-checker" element={<Navigate to="/verify" replace />} />
         <Route path="/vin-verification" element={<Navigate to="/verify" replace />} />
+        
+        {/* Additional Redirects for Soft 404s */}
+        <Route path="/bulk" element={<Navigate to="/verify" replace />} />
+        <Route path="/vin" element={<Navigate to="/verify" replace />} />
+        <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
 
         {/* 404 - Must be last */}
         <Route path="*" element={<NotFound />} />
