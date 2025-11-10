@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ThemeProvider } from '@/core/providers/ThemeProvider';
 import { AuthProvider } from '@/lib/auth';
+import { AuthLoadingBoundary } from '@/components/auth/AuthLoadingBoundary';
 import { PWAProvider } from '@/core/providers/PWAProvider';
 import { AppRoutes } from '@/core/routing/AppRoutes';
 import { RouteErrorRecovery } from '@/core/routing/RouteErrorRecovery';
@@ -38,34 +39,38 @@ const queryClient = new QueryClient({
  * StrictMode removed to prevent HMR useRef null errors
  */
 export const AppRoot: React.FC = () => {
+  console.log('[AppRoot] ✓ Rendering application root');
+  
   return (
     <ErrorBoundary>
       <Router>
         <QueryClientProvider client={queryClient}>
-          <AuthProvider>
-            <PWAProvider>
-              <ThemeProvider>
-                <GA4Provider>
-                  <CriticalResourceLoader />
-                  <SearchParamBlocker />
-                  <div className="min-h-screen bg-background text-foreground flex flex-col">
-                    <TopNavigation />
-                    <main className="flex-1 pt-20">
-                      <RouteErrorRecovery>
-                        <Suspense fallback={<AppLoadingScreen />}>
-                          <AppRoutes />
-                        </Suspense>
-                      </RouteErrorRecovery>
-                    </main>
-                    <SOSFooter />
-                  </div>
-                  <PWAInstallManager />
-                  <MobileNavigation />
-                  <Toaster />
-                </GA4Provider>
-              </ThemeProvider>
-            </PWAProvider>
-          </AuthProvider>
+          <AuthLoadingBoundary timeout={8000}>
+            <AuthProvider>
+              <PWAProvider>
+                <ThemeProvider>
+                  <GA4Provider>
+                    <CriticalResourceLoader />
+                    <SearchParamBlocker />
+                    <div className="min-h-screen bg-background text-foreground flex flex-col">
+                      <TopNavigation />
+                      <main className="flex-1 pt-20">
+                        <RouteErrorRecovery>
+                          <Suspense fallback={<AppLoadingScreen />}>
+                            <AppRoutes />
+                          </Suspense>
+                        </RouteErrorRecovery>
+                      </main>
+                      <SOSFooter />
+                    </div>
+                    <PWAInstallManager />
+                    <MobileNavigation />
+                    <Toaster />
+                  </GA4Provider>
+                </ThemeProvider>
+              </PWAProvider>
+            </AuthProvider>
+          </AuthLoadingBoundary>
         </QueryClientProvider>
       </Router>
     </ErrorBoundary>

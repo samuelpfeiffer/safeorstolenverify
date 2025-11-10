@@ -108,6 +108,9 @@
         font-display: swap;
         src: local('Inter'), local('Inter-Regular');
       }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
     </style>
     
     <!-- Rich Structured Data (JSON-LD) for Search Engines & AI -->
@@ -225,104 +228,126 @@
 
   <body>
     <div id="root">
-      <!-- Static SEO-visible content that shows before React loads -->
-      <div id="static-content" style="visibility:visible;opacity:1;transition:opacity 0.3s;padding:20px;max-width:1200px;margin:0 auto;">
-        <div style="text-align:center;padding:40px 20px;">
-          <div style="width:60px;height:60px;border:3px solid #3B82F6;border-top-color:transparent;border-radius:50%;margin:0 auto 20px;animation:spin 1s linear infinite;"></div>
-          <h1 style="font-size:28px;margin-bottom:16px;color:#fafafa;">Free Stolen Item Checker</h1>
-          <p style="font-size:16px;color:#a0a0a0;max-width:600px;margin:0 auto;">Verify IMEI, VIN, and Serial Numbers instantly. Checking 50M+ stolen property records...</p>
+      <!-- Static SEO Content - Visible before React loads -->
+      <div id="static-seo-content" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: hsl(222, 47%, 11%); color: hsl(0, 0%, 100%); padding: 2rem; text-align: center; font-family: system-ui, -apple-system, sans-serif;">
+        
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" style="width: 48px; height: 48px; border: 4px solid hsl(24, 100%, 50%); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 2rem;"></div>
+        
+        <!-- Main Headline -->
+        <h1 style="font-size: 2.5rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2;">Free Stolen Item Checker</h1>
+        
+        <!-- Subheadline -->
+        <h2 style="font-size: 1.5rem; font-weight: 400; margin: 0 0 2rem 0; color: hsl(0, 0%, 80%);">Verify Before You Buy - Protect Yourself from Stolen Goods</h2>
+        
+        <!-- Feature List -->
+        <div style="max-width: 600px; text-align: left; margin: 0 auto;">
+          <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0 0 1rem 0;">Check Multiple Identifiers:</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: hsl(24, 100%, 50%);">✓</span>
+              IMEI Numbers (Mobile Devices)
+            </li>
+            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: hsl(24, 100%, 50%);">✓</span>
+              VIN Numbers (Vehicles)
+            </li>
+            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: hsl(24, 100%, 50%);">✓</span>
+              Serial Numbers (Electronics & Valuables)
+            </li>
+          </ul>
         </div>
         
-        <!-- Crawlable content for search engines -->
-        <div style="max-width:800px;margin:40px auto;line-height:1.6;color:#d0d0d0;">
-          <h2 style="font-size:24px;margin-bottom:16px;color:#fafafa;">Protect Yourself from Stolen Goods</h2>
-          <p>SafeOrStolen helps buyers and sellers verify items before purchase. Check phones, cars, electronics, and more against our comprehensive stolen property database.</p>
-          
-          <h3 style="font-size:20px;margin:24px 0 12px;color:#fafafa;">What We Check</h3>
-          <ul style="margin:0;padding-left:20px;">
-            <li><strong>Phones:</strong> IMEI verification for iPhone, Samsung, Android devices</li>
-            <li><strong>Vehicles:</strong> VIN lookup for cars, motorcycles, RVs</li>
-            <li><strong>Electronics:</strong> Serial number checks for laptops, cameras, gaming consoles</li>
-            <li><strong>Other Items:</strong> Bikes, firearms, tools, equipment</li>
-          </ul>
-          
-          <h3 style="font-size:20px;margin:24px 0 12px;color:#fafafa;">Key Features</h3>
-          <ul style="margin:0;padding-left:20px;">
-            <li>50M+ database records</li>
-            <li>3-second verification results</li>
-            <li>4 free searches monthly</li>
-            <li>Mobile app for iOS & Android</li>
-            <li>Global coverage</li>
+        <!-- Trust Indicators -->
+        <p style="margin-top: 2rem; font-size: 0.875rem; color: hsl(0, 0%, 70%);">
+          Trusted by thousands of buyers and sellers worldwide
+        </p>
+        
+        <!-- JavaScript Loading Status (Shows after 10 seconds if React doesn't load) -->
+        <div id="js-warning" style="display: none; margin-top: 3rem; padding: 1rem; background: hsl(0, 84%, 60%); border-radius: 8px; max-width: 500px;">
+          <h3 style="font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0;">JavaScript Required</h3>
+          <p style="font-size: 0.875rem; margin: 0 0 0.5rem 0;">This application requires JavaScript to function. Please:</p>
+          <ul style="font-size: 0.875rem; text-align: left; margin: 0; padding-left: 1.5rem;">
+            <li>Enable JavaScript in your browser settings</li>
+            <li>Update your browser to the latest version</li>
+            <li>Check your network connection</li>
           </ul>
         </div>
       </div>
-      
-      <!-- Loading animation CSS -->
-      <style>
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-      </style>
-      
-      <!-- Hide static content after React loads -->
-      <script>
-        (function() {
-          window.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-              var el = document.getElementById('static-content');
-              if (el && document.querySelector('[data-react-root]')) {
-                el.style.opacity = '0';
-                setTimeout(function() {
-                  el.style.display = 'none';
-                }, 300);
-              }
-            }, 500);
-          });
-        })();
-      </script>
     </div>
-
+    
+    <!-- Enhanced noscript with actionable content -->
     <noscript>
-      <div style="padding:24px;max-width:840px;margin:0 auto;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
-        <h1>Free Stolen Item Checker – Verify IMEI, VIN, Serial Numbers | SafeOrStolen</h1>
-        <p><strong>Check if items are stolen before you buy.</strong> SafeOrStolen provides free instant verification for phones (IMEI), vehicles (VIN), electronics, bikes, and more. Protect yourself from purchasing stolen goods.</p>
-        
-        <h2>How It Works</h2>
-        <ul>
-          <li>Enter IMEI, VIN, or serial number</li>
-          <li>We check 50M+ stolen item records instantly</li>
-          <li>Get results in 3 seconds</li>
-          <li>4 FREE searches every month</li>
-        </ul>
-        
-        <h2>What You Can Check</h2>
-        <ul>
-          <li><strong>Phones:</strong> iPhone, Samsung, Android - IMEI verification</li>
-          <li><strong>Vehicles:</strong> Cars, motorcycles, RVs - VIN lookup</li>
-          <li><strong>Electronics:</strong> Laptops, cameras, gaming consoles</li>
-          <li><strong>Other Items:</strong> Bikes, firearms, tools, equipment</li>
-        </ul>
-        
-        <p><strong>Mobile Apps Available:</strong> Download for iOS and Android to verify items on-the-go at marketplaces, garage sales, or online listings.</p>
-        
-        <p>
-          <strong>Get Started:</strong> Visit <a href="https://safeorstolen.com/how-it-works">How it Works</a> | 
-          <a href="https://safeorstolen.com/dashboard">Start Checking</a> | 
-          <a href="https://safeorstolen.com/imei-check">IMEI Check</a> | 
-          <a href="https://safeorstolen.com/vin-verification">VIN Check</a>
-        </p>
-        
-        <p style="margin-top:20px;padding:15px;background:#f0f0f0;border-left:4px solid #3B82F6;">
-          <strong>Why SafeOrStolen?</strong><br>
-          • 50M+ database records<br>
-          • Instant 3-second verification<br>
-          • Mobile app for on-the-go checks<br>
-          • Protect buyers and sellers<br>
-          • Prevent fraud and legal issues
-        </p>
+      <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: hsl(222, 47%, 11%); color: hsl(0, 0%, 100%); padding: 2rem; font-family: system-ui, -apple-system, sans-serif;">
+        <div style="max-width: 600px; text-align: center;">
+          <h1 style="font-size: 2rem; font-weight: 700; margin: 0 0 1rem 0; color: hsl(24, 100%, 50%);">SafeOrStolen.com</h1>
+          <h2 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem 0;">JavaScript Required</h2>
+          <p style="font-size: 1rem; margin: 0 0 1.5rem 0; line-height: 1.6;">
+            SafeOrStolen is a web application that helps you verify if items are stolen before you buy them. 
+            This service requires JavaScript to function properly.
+          </p>
+          <div style="background: hsl(222, 47%, 15%); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0 0 1rem 0;">To use SafeOrStolen:</h3>
+            <ol style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
+              <li>Enable JavaScript in your browser settings</li>
+              <li>Refresh this page</li>
+              <li>Start verifying items instantly</li>
+            </ol>
+          </div>
+          <p style="font-size: 0.875rem; color: hsl(0, 0%, 70%);">
+            Need help? Contact us at support@safeorstolen.com
+          </p>
+        </div>
       </div>
     </noscript>
-
+    
+    <script>
+      console.log('[index.html] ✓ HTML loaded, DOM parsing complete');
+      console.log('[index.html] → User agent:', navigator.userAgent);
+      console.log('[index.html] → Screen:', window.innerWidth + 'x' + window.innerHeight);
+      
+      // Show JavaScript warning after 10 seconds if React doesn't mount
+      var warningTimeout = setTimeout(function() {
+        console.warn('[index.html] ⚠️ React did not mount after 10 seconds - showing JS warning');
+        var warning = document.getElementById('js-warning');
+        if (warning) {
+          warning.style.display = 'block';
+        }
+      }, 10000);
+      
+      // Monitor for React mounting
+      var checkInterval = setInterval(function() {
+        var root = document.getElementById('root');
+        if (root && root.hasAttribute('data-react-mounted')) {
+          console.log('[index.html] ✓ React mounted successfully - hiding static content');
+          clearTimeout(warningTimeout);
+          clearInterval(checkInterval);
+          
+          var staticContent = document.getElementById('static-seo-content');
+          if (staticContent) {
+            staticContent.style.transition = 'opacity 0.3s ease-out';
+            staticContent.style.opacity = '0';
+            setTimeout(function() {
+              staticContent.style.display = 'none';
+              console.log('[index.html] ✓ Static content hidden - app fully loaded');
+            }, 300);
+          }
+        }
+      }, 100);
+      
+      // Global error handler
+      window.addEventListener('error', function(e) {
+        console.error('[index.html] ✗ Global error:', e.message, e.filename, e.lineno);
+      });
+      
+      window.addEventListener('unhandledrejection', function(e) {
+        console.error('[index.html] ✗ Unhandled promise rejection:', e.reason);
+      });
+      
+      console.log('[index.html] → Loading main.tsx module...');
+    </script>
+    
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>

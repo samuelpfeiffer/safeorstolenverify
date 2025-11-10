@@ -3,6 +3,10 @@ import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
 import './index.css';
 
+console.log('[main.tsx] ✓ Application entry point loaded');
+console.log('[main.tsx] → React version:', React.version);
+console.log('[main.tsx] → Environment:', import.meta.env.MODE);
+
 // One-time service worker cleanup migration
 if ('serviceWorker' in navigator) {
   const SW_CLEANUP_KEY = 'sw_cleanup_done_v1';
@@ -20,12 +24,26 @@ if ('serviceWorker' in navigator) {
 
 const container = document.getElementById('root');
 if (!container) {
+  console.error('[main.tsx] ✗ Root element not found in DOM!');
   throw new Error('Root element not found');
 }
 
+console.log('[main.tsx] ✓ Root element found, creating React root');
+
 // Create root and render
 const root = createRoot(container);
+console.log('[main.tsx] → Rendering AppRoot component');
 root.render(<AppRoot />);
+
+console.log('[main.tsx] ✓ Initial render complete - React is now in control');
+
+// Add global mount indicator
+setTimeout(() => {
+  if (container.querySelector('[data-react-mounted]') === null) {
+    container.setAttribute('data-react-mounted', 'true');
+    console.log('[main.tsx] ✓ React successfully mounted to DOM');
+  }
+}, 100);
 
 // HMR: Properly handle hot updates to prevent React context issues
 if (import.meta.hot) {

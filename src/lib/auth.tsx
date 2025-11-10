@@ -51,99 +51,93 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   });
 
   useEffect(() => {
+    const startTime = Date.now();
+    console.log('[AuthProvider] ✓ Starting authentication initialization');
     let mounted = true;
-    let retryCount = 0;
-    const MAX_RETRIES = 3;
-    const MOBILE_TIMEOUT = 5000; // 5 second timeout for mobile
+    let authTimeout: NodeJS.Timeout;
 
-    // Mobile-optimized session initialization
-    const getInitialSession = async () => {
+    const initAuth = async () => {
+      console.log('[AuthProvider] → Fetching initial session from Supabase');
       try {
-        // Add timeout for mobile to prevent infinite loading
-        const timeoutPromise = new Promise((_, reject) => 
-          setTimeout(() => reject(new Error('Session timeout')), MOBILE_TIMEOUT)
-        );
-        
-        const sessionPromise = supabase.auth.getSession();
-        
-        const result = await Promise.race([sessionPromise, timeoutPromise]) as any;
-        const { data: { session }, error } = result;
-        
-        if (mounted) {
-          if (error) {
-            // Continue with no session rather than blocking
-          }
-          
-          setState({
-            user: transformUser(session?.user || null),
-            session,
-            loading: false,
-            initialized: true,
-          });
+        const sessionStart = Date.now();
+        const { data: { session }, error } = await supabase.auth.getSession();
+        const sessionTime = Date.now() - sessionStart;
+        console.log(`[AuthProvider] ✓ Session fetched (${sessionTime}ms)`, { hasSession: !!session, error: error?.message });
+
+        if (!mounted) {
+          console.log('[AuthProvider] ⚠️ Component unmounted during session fetch');
+          return;
         }
-      } catch (error) {
-        if (mounted && retryCount < MAX_RETRIES) {
-          retryCount++;
-          setTimeout(() => getInitialSession(), 1000);
-        } else if (mounted) {
-          // Force initialization complete even if session failed
-          setState({
-            user: null,
-            session: null,
-            loading: false,
-            initialized: true,
-          });
+
+        if (error) {
+          console.error('[AuthProvider] ✗ Error fetching session:', error);
+          setState(prev => ({ ...prev, loading: false, initialized: true }));
+          window.dispatchEvent(new Event('auth-ready'));
+          return;
+        }
+
+        const totalTime = Date.now() - startTime;
+        console.log(`[AuthProvider] ✓ Authentication initialized successfully (${totalTime}ms)`, {
+          userId: session?.user?.id,
+          email: session?.user?.email
+        });
+        
+        setState({
+          user: transformUser(session?.user || null),
+          session: session ?? null,
+          loading: false,
+          initialized: true
+        });
+        
+        // Signal that auth is ready
+        window.dispatchEvent(new Event('auth-ready'));
+      } catch (err) {
+        const totalTime = Date.now() - startTime;
+        console.error(`[AuthProvider] ✗ Failed to initialize auth (${totalTime}ms):`, err);
+        if (mounted) {
+          setState(prev => ({ ...prev, loading: false, initialized: true }));
+          window.dispatchEvent(new Event('auth-ready'));
         }
       }
     };
 
-    // Listen for auth changes with error handling
-    let subscription: any = null;
-    
-    const setupAuthListener = async () => {
-      try {
-        const { data } = supabase.auth.onAuthStateChange(
-          (event, session) => {
-            if (!mounted) return;
-
-            setState({
-              user: transformUser(session?.user || null),
-              session,
-              loading: false,
-              initialized: true,
-            });
-
-            // Log auth events but don't show toasts to avoid dependencies
-            if (event === 'SIGNED_IN') {
-              console.log('[AUTH] User signed in successfully');
-            } else if (event === 'SIGNED_OUT') {
-              console.log('[AUTH] User signed out');
-            }
-          }
-        );
-        subscription = data.subscription;
-      } catch (error) {
-        console.error('[AUTH] Failed to setup listener:', error);
-        // Force initialization even if listener fails
-        if (mounted) {
-          setState({
-            user: null,
-            session: null,
-            loading: false,
-            initialized: true,
-          });
-        }
+    // Set up auth state listener
+    console.log('[AuthProvider] → Setting up auth state change listener');
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        if (!mounted) return;
+        
+        console.log(`[AuthProvider] ✓ Auth state changed: ${event}`, {
+          userId: session?.user?.id,
+          email: session?.user?.email
+        });
+        
+        setState({
+          user: transformUser(session?.user || null),
+          session: session ?? null,
+          loading: false,
+          initialized: true
+        });
       }
-    };
+    );
 
-    setupAuthListener();
-    getInitialSession();
+    // Safety timeout for mobile - force initialization after 5 seconds
+    authTimeout = setTimeout(() => {
+      if (mounted && !state.initialized) {
+        const totalTime = Date.now() - startTime;
+        console.warn(`[AuthProvider] ⚠️ Auth initialization timeout (${totalTime}ms) - forcing initialized state`);
+        setState(prev => ({ ...prev, loading: false, initialized: true }));
+        window.dispatchEvent(new Event('auth-ready'));
+      }
+    }, 5000);
+
+    initAuth();
 
     return () => {
+      console.log('[AuthProvider] Cleaning up authentication system');
       mounted = false;
-      if (subscription) {
-        subscription.unsubscribe();
-      }
+      clearTimeout(authTimeout);
+      subscription?.unsubscribe();
     };
   }, []);
 
