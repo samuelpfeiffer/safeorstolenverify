@@ -92,8 +92,9 @@ const FirearmsCheckPage: React.FC = () => {
       setLoading(false);
     }
   };
-  return <div className="min-h-screen bg-sos text-white pt-20">
-      <PageSEO 
+  return (
+    <div className="min-h-screen bg-sos text-white pt-20">
+      <PageSEO
         title="Can I Check if This Gun is Stolen? How Do I Know if Firearm is Hot?" 
         description="Can I check if this gun is stolen? How do I know if this firearm is hot? Free serial number check to verify gun is legit before buying." 
         canonical="/firearms-check" 
@@ -204,6 +205,8 @@ const FirearmsCheckPage: React.FC = () => {
           <ContextualAdPlacement context="firearm" placement="banner" />
         </div>
       </main>
-    </div>;
+    </div>
+  );
 };
+
 export default FirearmsCheckPage;
