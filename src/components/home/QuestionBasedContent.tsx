@@ -9,25 +9,25 @@ export const QuestionBasedContent = () => {
       question: "How to check if a phone is stolen before buying?",
       answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our free checker and get instant results. Our database searches 3,000+ sources including carrier blacklists, police reports, and insurance claims.",
       icon: Search,
-      link: "/imei-check"
+      link: "/verify"
     },
     {
       question: "Can I check if something is stolen before buying?",
       answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. Get 2 free searches (14-day trial) to protect yourself.",
       icon: Database,
-      link: "/verification-hub"
+      link: "/verify"
     },
     {
       question: "How do I verify a car isn't stolen?",
       answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our free database search. We verify against NICB stolen vehicle database, police records, and DMV theft reports. Results in 30 seconds.",
       icon: Shield,
-      link: "/vin-verification"
+      link: "/verify"
     },
     {
       question: "Is there a free database to check stolen items?",
       answer: "Yes! SafeOrStolen offers 2 free database searches (14-day trial). We check IMEI numbers, VIN numbers, and serial numbers against 3,000+ databases including NICB, GSMA, police records, and insurance claims. No credit card required for free searches.",
       icon: CheckCircle2,
-      link: "/verification-hub"
+      link: "/verify"
     }
   ];
 

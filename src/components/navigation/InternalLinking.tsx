@@ -32,7 +32,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
   const allInternalLinks: InternalLink[] = [
     // High-priority verification services
     {
-      href: '/imei-check',
+      href: '/verify',
       text: 'Free IMEI Verification',
       description: 'Check if phone is stolen in 30 seconds',
       category: 'verification',
@@ -40,7 +40,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
       isHighPriority: true
     },
     {
-      href: '/vin-verification',
+      href: '/verify',
       text: 'VIN Lookup Service',
       description: 'Verify vehicle history and theft status',
       category: 'verification',
@@ -48,7 +48,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
       isHighPriority: true
     },
     {
-      href: '/serial-number-checker',
+      href: '/verify',
       text: 'Serial Number Verification',
       description: 'Check electronics and equipment legitimacy',
       category: 'verification',

@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
     {
       title: 'Product',
       links: [
-        { name: 'Stolen Item Checker', href: '/stolen-item-checker' },
-        { name: 'Serial Number Checker', href: '/serial-number-checker' },
-        { name: 'IMEI Check', href: '/imei-check' },
-        { name: 'VIN Verification', href: '/vin-verification' },
-        { name: 'Verification Hub', href: '/verification-hub' },
+        { name: 'Stolen Item Checker', href: '/verify' },
+        { name: 'Serial Number Checker', href: '/verify' },
+        { name: 'IMEI Check', href: '/verify' },
+        { name: 'VIN Verification', href: '/verify' },
+        { name: 'Verification Hub', href: '/verify' },
         { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'How It Works', href: '/how-it-works' },
         { name: 'API Docs', href: '/api-docs' },

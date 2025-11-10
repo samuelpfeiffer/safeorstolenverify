@@ -18,10 +18,10 @@ export const EnhancedFooterLinks: React.FC = () => {
       title: 'Quick Verify',
       icon: <Search className="h-5 w-5" />,
       links: [
-        { href: '/imei-check', text: 'IMEI Check - Verify Phone' },
-        { href: '/vin-verification', text: 'VIN Check - Verify Car' },
-        { href: '/serial-number-checker', text: 'Serial Number Checker' },
-        { href: '/stolen-item-checker', text: 'General Item Checker' },
+        { href: '/verify', text: 'IMEI Check - Verify Phone' },
+        { href: '/verify', text: 'VIN Check - Verify Car' },
+        { href: '/verify', text: 'Serial Number Checker' },
+        { href: '/verify', text: 'General Item Checker' },
         { href: '/check-electronics', text: 'Check Electronics' }
       ]
     },

@@ -45,21 +45,21 @@ export const EnhancedNavigation: React.FC = () => {
   const verificationServices: NavigationItem[] = [
     {
       label: 'IMEI Check',
-      href: '/imei-check',
+      href: '/verify',
       description: 'Verify phone legitimacy instantly',
       icon: Shield,
       keywords: ['IMEI verification', 'stolen phone check', 'mobile device verification']
     },
     {
       label: 'VIN Verification', 
-      href: '/vin-verification',
+      href: '/verify',
       description: 'Check vehicle history and theft status',
       icon: Search,
       keywords: ['VIN lookup', 'stolen car check', 'vehicle verification']
     },
     {
       label: 'Serial Number Lookup',
-      href: '/serial-number-checker',
+      href: '/verify',
       description: 'Verify electronics and equipment',
       icon: FileText,
       keywords: ['serial number check', 'electronics verification', 'device authentication']
