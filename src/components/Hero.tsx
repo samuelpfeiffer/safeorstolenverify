@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Shield, Zap, Database, TrendingUp } from 'lucide-react';
+import { Search, Shield, Zap, Database, TrendingUp, ScanLine, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -132,8 +132,24 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-slideUp" style={{ animationDelay: '0.4s' }}>
             <Button
               size="lg"
+              onClick={() => navigate('/dashboard')}
+              className="sos-gradient hover:opacity-90 text-white font-bold text-lg px-8 h-14 rounded-xl shadow-orange hover:shadow-elegant transition-all"
+            >
+              <ScanLine className="w-5 h-5 mr-2" />
+              Scan Now
+            </Button>
+            <Button
+              size="lg"
+              onClick={() => navigate('/mobile-app')}
+              className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-bold text-lg px-8 h-14 rounded-xl shadow-lime hover:shadow-elegant transition-all"
+            >
+              <Smartphone className="w-5 h-5 mr-2" />
+              Download App
+            </Button>
+            <Button
+              size="lg"
               onClick={() => navigate('/auth?mode=signup')}
-              className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-bold text-lg px-10 h-14 rounded-xl shadow-lime hover:shadow-elegant transition-all"
+              className="bg-background border-2 border-border hover:bg-secondary/50 text-foreground font-semibold text-lg px-8 h-14 rounded-xl transition-all"
             >
               Get Started Free
             </Button>
@@ -141,7 +157,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => navigate('/how-it-works')}
-              className="border-2 border-sos-orange text-sos-orange hover:bg-sos-orange/10 font-semibold text-lg px-10 h-14 rounded-xl transition-all"
+              className="border-2 border-border text-muted-foreground hover:bg-secondary/30 font-semibold text-lg px-8 h-14 rounded-xl transition-all"
             >
               See How It Works
             </Button>
