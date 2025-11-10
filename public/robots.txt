@@ -32,10 +32,9 @@ Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
 Sitemap: https://safeorstolen.com/feed.xml
 
 # Important pages for indexing
-Allow: /
-Allow: /imei-check
-Allow: /vin-verification
-Allow: /stolen-item-checker
+Allow: /verify
 Allow: /how-it-works
 Allow: /pricing
 Allow: /blog
+Allow: /firearms-check
+Allow: /transparency
