@@ -33,6 +33,39 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 // Regional Pages
 const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
 const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
+const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
+const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
+const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
+
+// Item Categories
+const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
+const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
+const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
+const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
+
+// Educational/Guide Pages
+const BuyerGuidePage = lazy(() => import('@/pages/BuyerGuidePage'));
+const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage'));
+const AvoidStolenGoodsPage = lazy(() => import('@/pages/AvoidStolenGoodsPage'));
+
+// Business/Features
+const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
+const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
+const AuctionHousesPage = lazy(() => import('@/pages/AuctionHousesPage'));
+const ApiDocsPage = lazy(() => import('@/pages/ApiDocsPage'));
+const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
+const AccuracyPage = lazy(() => import('@/pages/AccuracyPage'));
+
+// Comparison/Alternatives
+const ComparisonCheckMendPage = lazy(() => import('@/pages/ComparisonCheckMendPage'));
+const CompetitorAlternativesHubPage = lazy(() => import('@/pages/CompetitorAlternativesHubPage'));
+
+// Community/Trust
+const CaseStudiesPage = lazy(() => import('@/pages/CaseStudiesPage'));
+const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
+
+// Legal/Info
+const CookiesPage = lazy(() => import('@/pages/CookiesPage'));
 
 // Admin
 const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
@@ -78,10 +111,41 @@ export const AppRoutes = () => {
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
+        <Route path="/check-electronics" element={<CheckElectronicsPage />} />
+        <Route path="/check-bike" element={<CheckBikePage />} />
+        <Route path="/check-phone" element={<CheckPhonePage />} />
+        <Route path="/check-car" element={<CheckCarPage />} />
+
+        {/* Educational/Guide Pages */}
+        <Route path="/buyer-guide" element={<BuyerGuidePage />} />
+        <Route path="/comprehensive-guide" element={<ComprehensiveGuidePage />} />
+        <Route path="/avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
+
+        {/* Business/Features */}
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/for-consumers" element={<ForConsumersPage />} />
+        <Route path="/auction-houses" element={<AuctionHousesPage />} />
+        <Route path="/api-docs" element={<ApiDocsPage />} />
+        <Route path="/data-sources" element={<DataSourcesPage />} />
+        <Route path="/accuracy" element={<AccuracyPage />} />
+
+        {/* Comparison/Alternatives */}
+        <Route path="/comparison-checkmend" element={<ComparisonCheckMendPage />} />
+        <Route path="/competitor-alternatives" element={<CompetitorAlternativesHubPage />} />
+
+        {/* Community/Trust */}
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/community" element={<CommunityPage />} />
+
+        {/* Legal/Info */}
+        <Route path="/cookies" element={<CookiesPage />} />
 
         {/* Regional Pages */}
         <Route path="/arizona-vin-lookup" element={<ArizonaVinLookup />} />
         <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookup />} />
+        <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
+        <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
+        <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogPage />} />
@@ -108,8 +172,6 @@ export const AppRoutes = () => {
         <Route path="/check-imei" element={<Navigate to="/verify" replace />} />
         <Route path="/check-vin" element={<Navigate to="/verify" replace />} />
         <Route path="/check-serial" element={<Navigate to="/verify" replace />} />
-        <Route path="/check-phone" element={<Navigate to="/verify" replace />} />
-        <Route path="/check-car" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
         <Route path="/imei-check" element={<Navigate to="/verify" replace />} />
         <Route path="/imei-checker" element={<Navigate to="/verify" replace />} />

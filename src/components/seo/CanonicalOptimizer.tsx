@@ -61,18 +61,7 @@ export const CanonicalOptimizer: React.FC<CanonicalOptimizerProps> = ({
       path = path.slice(0, -1);
     }
 
-    // Handle specific redirects and canonical mappings
-    const redirects: Record<string, string> = {
-      '/imei': '/imei-check',
-      '/imei-checker': '/imei-check',
-      '/vin-checker': '/vin-verification',
-      '/serial-checker': '/serial-number-checker',
-      '/verify': '/stolen-item-checker'
-    };
-
-    if (redirects[path]) {
-      path = redirects[path];
-    }
+    // No redirects needed - MasterSEO handles this globally
 
     return `${baseUrl}${path}`;
   };
