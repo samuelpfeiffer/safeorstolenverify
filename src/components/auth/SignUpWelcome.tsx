@@ -22,7 +22,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Shield,
       title: "Start Verifying Items",
-      description: "You get 4 free verifications to check any serial number, IMEI, or VIN.",
+      description: "You get 2 free verifications to check any serial number, IMEI, or VIN. Valid for 14 days.",
       action: "Try Your First Check",
       onClick: handleStartVerification
     },
@@ -103,7 +103,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  4 free verifications per account
+                  2 free verifications (14-day trial)
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />

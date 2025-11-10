@@ -48,7 +48,7 @@ export const VerificationDialog = ({
               Sign In Required
             </DialogTitle>
             <DialogDescription className="text-gray-400">
-              Create a free account to get 4 free verifications and protect yourself from stolen goods.
+              Create a free account to get 2 free verifications (14-day trial) and protect yourself from stolen goods.
             </DialogDescription>
           </DialogHeader>
           
@@ -56,7 +56,7 @@ export const VerificationDialog = ({
             <div className="bg-sos-orange/10 border border-sos-orange/30 rounded-lg p-4 mb-4">
               <h3 className="font-semibold text-sos-orange mb-2">What you'll get:</h3>
               <ul className="text-sm text-gray-300 space-y-1">
-                <li>• 4 free verifications (one-time)</li>
+                <li>• 2 free verifications (14-day trial)</li>
                 <li>• Search history tracking</li>
                 <li>• Basic verification reports</li>
                 <li>• Option to upgrade for unlimited access</li>

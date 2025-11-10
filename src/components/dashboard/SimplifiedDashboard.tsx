@@ -33,7 +33,7 @@ export const SimplifiedDashboard: React.FC<SimplifiedDashboardProps> = ({
               <span className="text-primary font-medium">✓ Premium Account</span>
             ) : (
               <span>
-                {searchCount}/4 free searches used • 
+                {searchCount}/2 free searches used (14-day trial) • 
                 <Link to="/pricing" className="text-primary hover:underline ml-1">
                   Upgrade
                 </Link>

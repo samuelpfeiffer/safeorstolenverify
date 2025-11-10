@@ -20,7 +20,7 @@ export const EnhancedCTASection: React.FC = () => {
         text: "Free Trial",
         href: "/auth?tab=signup"
       },
-      highlight: "4 Free Searches"
+      highlight: "2 Free Searches (14-Day Trial)"
     },
     {
       title: "For Businesses",

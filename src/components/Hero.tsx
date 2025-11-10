@@ -117,7 +117,7 @@ const Hero = () => {
               </div>
               
               <p className="text-sm text-muted-foreground">
-                <span className="text-sos-orange font-bold">4 FREE</span> searches monthly
+                <span className="text-sos-orange font-bold">2 FREE</span> searches (14-day trial)
                 {' • '}
                 <span className="text-sos-lime font-semibold">50M+</span> records
                 {' • '}
