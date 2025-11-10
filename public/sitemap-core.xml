@@ -82,54 +82,38 @@
   <!-- Arizona State Pages -->
   <url>
     <loc>https://safeorstolen.com/arizona-vin-lookup</loc>
-    <lastmod>2025-10-27</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://safeorstolen.com/arizona-license-plate-lookup</loc>
-    <lastmod>2025-10-27</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Database & Analytics -->
-  <url>
-    <loc>https://safeorstolen.com/stolen-items-database</loc>
-    <lastmod>2025-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://safeorstolen.com/stolen-search-console</loc>
-    <lastmod>2025-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Database & Analytics - REMOVED non-existent URLs -->
+  <!-- stolen-items-database, stolen-search-console removed - pages don't exist -->
   
   <!-- Blog -->
   <url>
     <loc>https://safeorstolen.com/blog</loc>
-    <lastmod>2025-10-27</lastmod>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Guide Pages -->
+  <!-- Transparency Page -->
   <url>
-    <loc>https://safeorstolen.com/guides/how-to-check-stolen-items</loc>
-    <lastmod>2025-10-27</lastmod>
+    <loc>https://safeorstolen.com/transparency</loc>
+    <lastmod>2025-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <url>
-    <loc>https://safeorstolen.com/guides/imei-blacklist-guide</loc>
-    <lastmod>2025-10-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Guide Pages - REMOVED non-existent URLs -->
+  <!-- guides/how-to-check-stolen-items, guides/imei-blacklist-guide removed - pages don't exist -->
   
 </urlset>

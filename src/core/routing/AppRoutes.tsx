@@ -17,6 +17,7 @@ const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
+const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
 
 // Blog
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
@@ -28,6 +29,10 @@ const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
+
+// Regional Pages
+const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
+const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
 
 // Admin
 const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
@@ -65,9 +70,14 @@ export const AppRoutes = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/transparency" element={<TransparencyPage />} />
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
+
+        {/* Regional Pages */}
+        <Route path="/arizona-vin-lookup" element={<ArizonaVinLookup />} />
+        <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookup />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogPage />} />

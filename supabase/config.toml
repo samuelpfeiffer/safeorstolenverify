@@ -75,4 +75,7 @@ verify_jwt = true
 [functions.schedule-blog-enrichment]
 verify_jwt = true
 
+[functions.fix-blog-slugs]
+verify_jwt = false
+
 
