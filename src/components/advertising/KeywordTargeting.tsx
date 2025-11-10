@@ -88,7 +88,7 @@ export const KeywordTargeting = () => {
           <h3>Common Questions About Verification</h3>
           <dl>
             <dt>Can I check if an item is stolen for free?</dt>
-            <dd>Yes! We offer 4 free verifications to start. Enter any IMEI, VIN, or serial number.</dd>
+            <dd>Yes! We offer 2 free verifications (14-day trial) to start. Enter any IMEI, VIN, or serial number.</dd>
             
             <dt>How do I know if a phone is blacklisted?</dt>
             <dd>Use our IMEI checker - we check carrier blacklists, stolen phone databases, and insurance claims.</dd>

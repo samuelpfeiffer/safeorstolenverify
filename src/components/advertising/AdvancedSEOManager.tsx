@@ -59,7 +59,7 @@ export const AdvancedSEOManager = () => {
       '/': 'FREE verification app to check if items are stolen. Protect yourself from fraud on Facebook Marketplace, OfferUp, Craigslist. 50M+ records. Instant results.',
       '/check-phone': 'Check phone IMEI for FREE - verify if stolen before buying. Instant blacklist check against 50M+ records. Protect yourself from stolen device scams.',
       '/check-car': 'FREE VIN lookup - check if vehicle is stolen. Instant verification against NICB database. Avoid buying stolen cars, save thousands in legal fees.',
-      '/pricing': 'Affordable verification plans starting FREE. Protect yourself from buying stolen goods. 4 free checks, unlimited plans available. Money-back guarantee.',
+      '/pricing': 'Affordable verification plans starting FREE. Protect yourself from buying stolen goods. 2 free checks (14-day trial), unlimited plans available. Money-back guarantee.',
       '/check-firearms': 'Check firearm serial numbers FREE - verify gun not stolen before purchase. Legal protection, ATF database check. Avoid federal charges.',
       '/problem': 'The $13B stolen goods crisis explained. Learn how 2.3M people unknowingly buy stolen items yearly. Protect yourself with verification.',
       '/buyer-guide': 'Ultimate guide to safe secondhand shopping. Learn to spot scams, verify items, protect yourself from fraud on any marketplace.',
@@ -136,7 +136,7 @@ export const AdvancedSEOManager = () => {
               "name": "Is the verification service free?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes! We offer 4 free verifications to start. After that, you can use pay-per-check ($0.99) or subscribe to unlimited plans starting at $9.99/month."
+                "text": "Yes! We offer 2 free verifications (14-day trial) to start. After that, you can use pay-per-check ($0.99) or subscribe to unlimited plans starting at $9.99/month."
               }
             },
             {

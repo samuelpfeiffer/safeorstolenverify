@@ -35,7 +35,7 @@ export const AISearchOptimizer: React.FC<AISearchOptimizerProps> = ({
   // Generate AI-optimized summary
   const getAISummary = (page: string): string => {
     const summaries: Record<string, string> = {
-      'home': 'SafeOrStolen: Free stolen item checker. Verify phones, cars, electronics before buying. 4 free searches, 50M+ database records, 30-second verification.',
+      'home': 'SafeOrStolen: Free stolen item checker. Verify phones, cars, electronics before buying. 2 free searches (14-day trial), 50M+ database records, 30-second verification.',
       'imei-check': 'Free IMEI phone checker. Verify if phone is stolen in 30 seconds. Check iPhone, Android, Samsung against global databases.',
       'vin-verification': 'Free VIN car checker. Verify if vehicle is stolen before purchase. Check cars, trucks, motorcycles against police databases.',
       'check-phone': 'Free smartphone verification using IMEI. Instant stolen phone database search. Protect yourself from buying stolen devices.',
@@ -43,7 +43,7 @@ export const AISearchOptimizer: React.FC<AISearchOptimizerProps> = ({
       'check-bike': 'Free bicycle verification using serial number. Check if bike is stolen before purchase. BikeIndex and police database access.',
       'about': 'SafeOrStolen fights the $13B stolen goods crisis with real-time verification. Mission: make stolen goods unsellable.',
       'how-it-works': 'SafeOrStolen verifies items in 3 steps: Enter ID → Database check → Instant results. Uses 50M+ records from law enforcement.',
-      'pricing': 'SafeOrStolen pricing: 4 free searches, then $9.99/month unlimited. No contracts, cancel anytime. Enterprise plans available.'
+      'pricing': 'SafeOrStolen pricing: 2 free searches (14-day trial), then $9.99/month unlimited. No contracts, cancel anytime. Enterprise plans available.'
     };
     return summaries[page] || 'SafeOrStolen provides instant verification of stolen items using IMEI, VIN, and serial numbers against global databases.';
   };

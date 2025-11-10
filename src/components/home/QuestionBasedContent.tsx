@@ -13,7 +13,7 @@ export const QuestionBasedContent = () => {
     },
     {
       question: "Can I check if something is stolen before buying?",
-      answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. Get 4 free searches to protect yourself.",
+      answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. Get 2 free searches (14-day trial) to protect yourself.",
       icon: Database,
       link: "/verification-hub"
     },
@@ -25,7 +25,7 @@ export const QuestionBasedContent = () => {
     },
     {
       question: "Is there a free database to check stolen items?",
-      answer: "Yes! SafeOrStolen offers 4 free database searches. We check IMEI numbers, VIN numbers, and serial numbers against 3,000+ databases including NICB, GSMA, police records, and insurance claims. No credit card required for free searches.",
+      answer: "Yes! SafeOrStolen offers 2 free database searches (14-day trial). We check IMEI numbers, VIN numbers, and serial numbers against 3,000+ databases including NICB, GSMA, police records, and insurance claims. No credit card required for free searches.",
       icon: CheckCircle2,
       link: "/verification-hub"
     }

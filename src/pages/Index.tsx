@@ -24,7 +24,7 @@ const Index = () => {
       "name": "SafeOrStolen - Free Stolen Item Checker",
       "alternateName": ["Safe or Stolen", "SafeOrStolen Verification", "Stolen Item Checker"],
       "url": "https://safeorstolen.com",
-      "description": "Free stolen item verification platform. Check phones, cars, electronics using IMEI, VIN, serial numbers. 4 free searches, 50M+ database records.",
+      "description": "Free stolen item verification platform. Check phones, cars, electronics using IMEI, VIN, serial numbers. 2 free searches (14-day trial), 50M+ database records.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -110,7 +110,7 @@ const Index = () => {
       {/* SEO Optimization */}
       <PageSEO
         title="Free Stolen Item Checker - Verify IMEI, VIN, Serial Numbers Instantly | SafeOrStolen"
-        description="Check if phones, cars, electronics are stolen FREE. Instant IMEI, VIN, serial number verification against 50M+ stolen item records. Mobile app available. Protect buyers & sellers. 4 FREE searches monthly."
+        description="Check if phones, cars, electronics are stolen FREE. Instant IMEI, VIN, serial number verification against 50M+ stolen item records. Mobile app available. Protect buyers & sellers. 2 FREE searches (14-day trial)."
         keywords="free stolen item checker, IMEI check, VIN verification, serial number lookup, verify phone stolen, check car stolen, stolen goods database, buy used safely, secondhand marketplace verification, prevent buying stolen items"
         canonical="/"
         structuredData={homeStructuredData}
