@@ -5,6 +5,7 @@ import { Shield, Search } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+
 const Hero = () => {
   const { isAuthenticated } = useUnifiedAuth();
   

@@ -6,6 +6,7 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 const Index = lazy(() => import('@/pages/Index'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const UnifiedVerificationPage = lazy(() => import('@/pages/UnifiedVerificationPage'));
+const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
 const SubscriptionPage = lazy(() => import('@/pages/SubscriptionPage'));
@@ -48,6 +49,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/verify" element={<UnifiedVerificationPage />} />
+        <Route path="/verify-pro" element={<VerifyPage />} />
         <Route path="/mobile-verify" element={<UnifiedVerificationPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />

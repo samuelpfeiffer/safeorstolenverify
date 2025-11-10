@@ -25,7 +25,7 @@ const TopNavigation = () => {
 
   const navigationItems = [
     { href: '/', label: 'Home' },
-    { href: '/verify', label: 'Verify' },
+    { href: '/verify-pro', label: 'Verify' },
     { href: '/pricing', label: 'Pricing' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/blog', label: 'Blog' },
