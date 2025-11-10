@@ -15,9 +15,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/', priority: 1.0, changefreq: 'daily' },
   
   // Core Verification Pages
-  { path: '/stolen-item-checker', priority: 0.9, changefreq: 'daily' },
-  { path: '/imei-check', priority: 0.9, changefreq: 'daily' },
-  { path: '/vin-verification', priority: 0.9, changefreq: 'daily' },
+  { path: '/verify', priority: 0.9, changefreq: 'daily' },
   { path: '/serial-number-checker', priority: 0.9, changefreq: 'daily' },
   { path: '/check', priority: 0.9, changefreq: 'daily' },
   
@@ -72,12 +70,9 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/vin-stolen-check', priority: 0.9, changefreq: 'daily' },
   
   // Item-Specific Verification
-  { path: '/check-phone', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-car', priority: 0.8, changefreq: 'weekly' },
   { path: '/check-electronics', priority: 0.8, changefreq: 'weekly' },
   { path: '/check-bike', priority: 0.8, changefreq: 'weekly' },
   { path: '/item-categories', priority: 0.8, changefreq: 'weekly' },
-  { path: '/imei-checker', priority: 0.8, changefreq: 'weekly' },
   
   // Authentication & Account
   { path: '/auth', priority: 0.7, changefreq: 'monthly' },

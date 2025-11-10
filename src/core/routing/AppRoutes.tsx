@@ -98,6 +98,7 @@ export const AppRoutes = () => {
         <Route path="/check-car" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
         <Route path="/imei-check" element={<Navigate to="/verify" replace />} />
+        <Route path="/imei-checker" element={<Navigate to="/verify" replace />} />
         <Route path="/vin-verification" element={<Navigate to="/verify" replace />} />
 
         {/* 404 - Must be last */}
