@@ -19,8 +19,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     const root = window.document.documentElement;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     
+    // Safety check: Ensure DOM is ready
+    if (!root) {
+      console.error('[ThemeProvider] DOM not ready');
+      return;
+    }
+    
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const activeTheme = theme === 'system' ? systemTheme : theme;
     setResolvedTheme(activeTheme);
     
