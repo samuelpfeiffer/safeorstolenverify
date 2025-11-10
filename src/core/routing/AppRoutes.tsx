@@ -32,6 +32,7 @@ const Admin = lazy(() => import('@/pages/Admin'));
 
 // User Features
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
+const VerificationResultPage = lazy(() => import('@/pages/VerificationResultPage'));
 
 // Stripe
 const CheckoutRedirect = lazy(() => import('@/pages/CheckoutRedirect'));
@@ -76,6 +77,7 @@ export const AppRoutes = () => {
 
         {/* User Features */}
         <Route path="/search-history" element={<SearchHistoryPage />} />
+        <Route path="/verification/:id" element={<VerificationResultPage />} />
 
         {/* Stripe */}
         <Route path="/checkout-redirect" element={<CheckoutRedirect />} />

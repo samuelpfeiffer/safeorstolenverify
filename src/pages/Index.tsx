@@ -9,6 +9,8 @@ import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
 import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
+import { SecurityBadges } from '@/components/home/SecurityBadges';
+import { LiveActivityFeed } from '@/components/home/LiveActivityFeed';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -127,6 +129,26 @@ const Index = () => {
         
         {/* Trust signals immediately */}
         <TrustSignalsSection />
+        
+        {/* Live Activity Feed - Shows real-time verifications */}
+        <div className="py-16 bg-secondary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Join Thousands Verifying Right Now
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Real-time verification activity from our community
+                </p>
+              </div>
+              <LiveActivityFeed />
+            </div>
+          </div>
+        </div>
+        
+        {/* Security Badges */}
+        <SecurityBadges />
         
         {/* Simple how it works */}
         <HowItWorks />

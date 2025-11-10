@@ -2,8 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowRight, Loader2 } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Loader2, Tag } from 'lucide-react';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
+
+const blogHeaderImage = '/generated-assets/blog-cybersecurity.jpg';
 
 const BlogPage = () => {
   const { data: posts, isLoading, error, refetch } = useBlogPosts();
@@ -46,68 +48,107 @@ const BlogPage = () => {
         structuredData={[structuredData]}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto mb-12 text-center">
-            <h1 className="text-5xl font-bold mb-4 text-white">
-              Safe or Stolen Blog
-            </h1>
-            <p className="text-xl text-white/80">
-              Expert guides to protect yourself from buying stolen goods and marketplace scams
-            </p>
+      <div className="min-h-screen py-20">
+        {/* Hero Section with Featured Image */}
+        <div className="relative mb-20 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${blogHeaderImage})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/80" />
           </div>
+          
+          <div className="relative container mx-auto px-4 py-24">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sos-orange/10 border border-sos-orange/20 backdrop-blur-sm mb-4 animate-fadeIn">
+                <Tag className="w-4 h-4 text-sos-orange" />
+                <span className="text-sm font-semibold text-sos-orange">Expert Security Insights</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-black leading-tight text-foreground animate-slideUp">
+                SafeOrStolen Blog
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-slideUp" style={{ animationDelay: '0.1s' }}>
+                Expert guides to protect yourself from buying stolen goods and marketplace scams
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4">
 
           {isLoading ? (
-            <div className="flex justify-center items-center py-12">
-              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            <div className="flex justify-center items-center py-20">
+              <div className="text-center space-y-4">
+                <Loader2 className="h-12 w-12 animate-spin text-sos-orange mx-auto" />
+                <p className="text-muted-foreground">Loading articles...</p>
+              </div>
             </div>
           ) : error ? (
-            <div className="text-center py-12">
-              <p className="text-white/80 mb-4">Failed to load blog posts.</p>
-              <Button variant="outline" onClick={() => refetch()}>
-                Try Again
-              </Button>
+            <div className="text-center py-20">
+              <div className="max-w-md mx-auto space-y-4">
+                <div className="w-20 h-20 rounded-full bg-destructive/10 flex items-center justify-center mx-auto mb-4">
+                  <Loader2 className="w-10 h-10 text-destructive" />
+                </div>
+                <p className="text-foreground font-semibold text-lg">Failed to load blog posts</p>
+                <p className="text-muted-foreground">Please try again later</p>
+                <Button onClick={() => refetch()} className="sos-gradient">
+                  Try Again
+                </Button>
+              </div>
             </div>
           ) : !posts || posts.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-white/80">No blog posts available yet. Check back soon!</p>
+            <div className="text-center py-20">
+              <div className="max-w-md mx-auto space-y-4">
+                <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                  <Tag className="w-10 h-10 text-secondary" />
+                </div>
+                <p className="text-foreground font-semibold text-lg">No blog posts yet</p>
+                <p className="text-muted-foreground">Check back soon for expert security insights!</p>
+              </div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {posts.map((post) => (
-                <Card key={post.id} className="hover:shadow-lg transition-shadow bg-card border-primary/20">
-                  <CardHeader>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
+              {posts.map((post, index) => (
+                <Card 
+                  key={post.id} 
+                  className="group hover:shadow-elegant transition-all hover:scale-[1.02] bg-card/80 backdrop-blur-sm border-border/50 hover:border-sos-orange/30 animate-fadeIn"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CardHeader className="space-y-3">
+                    <div className="flex items-center gap-2 text-xs">
                       {post.categories && post.categories.length > 0 && (
-                        <span className="bg-primary/10 text-primary px-2 py-1 rounded">
+                        <span className="px-3 py-1 rounded-full bg-sos-orange/10 text-sos-orange font-semibold border border-sos-orange/20">
                           {post.categories[0].name}
                         </span>
                       )}
                       {post.reading_time && (
-                        <span className="flex items-center gap-1">
+                        <span className="flex items-center gap-1 text-muted-foreground">
                           <Clock className="h-3 w-3" />
-                          {post.reading_time} min read
+                          {post.reading_time} min
                         </span>
                       )}
                     </div>
-                    <CardTitle className="text-2xl mb-2 text-foreground">{post.title}</CardTitle>
+                    <CardTitle className="text-xl group-hover:text-sos-orange transition-colors line-clamp-2">
+                      {post.title}
+                    </CardTitle>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
                       {new Date(post.published_at || post.created_at).toLocaleDateString('en-US', {
-                        month: 'long',
+                        month: 'short',
                         day: 'numeric',
                         year: 'numeric'
                       })}
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      {post.excerpt || post.content.substring(0, 150) + '...'}
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground line-clamp-3">
+                      {post.excerpt || post.content.substring(0, 120) + '...'}
                     </p>
-                    <Button asChild variant="outline" className="group border-primary/20">
+                    <Button asChild variant="ghost" className="group/btn w-full justify-between border border-border/50 hover:border-sos-orange/50 hover:bg-sos-orange/5">
                       <Link to={`/blog/${post.slug}`}>
-                        Read More
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        Read Article
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
                     </Button>
                   </CardContent>
@@ -116,16 +157,26 @@ const BlogPage = () => {
             </div>
           )}
 
-          <div className="mt-16 text-center">
-            <Card className="max-w-2xl mx-auto border-primary/20 bg-card">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-4 text-foreground">Stay Protected</h2>
-                <p className="text-muted-foreground mb-6">
-                  Subscribe to get the latest guides on verifying items and staying safe in online marketplaces
+          <div className="mt-20">
+            <Card className="max-w-3xl mx-auto border-2 border-sos-orange/20 bg-gradient-to-br from-card to-secondary/5 shadow-elegant">
+              <CardContent className="p-12 text-center">
+                <h2 className="text-3xl font-black mb-4 text-foreground">Stay Protected</h2>
+                <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                  Get the latest guides on verifying items and staying safe in online marketplaces. 
+                  Join thousands of protected buyers and sellers.
                 </p>
-                <Button size="lg" asChild>
-                  <Link to="/auth?tab=signup">Get Started Free</Link>
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" asChild className="sos-gradient hover:opacity-90 text-white font-bold shadow-orange">
+                    <Link to="/auth?tab=signup">
+                      Get Started Free
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="outline" asChild className="border-2 border-sos-orange/30 hover:bg-sos-orange/5">
+                    <Link to="/pricing">
+                      View Plans
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

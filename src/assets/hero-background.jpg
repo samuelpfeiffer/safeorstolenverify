@@ -1,0 +1,3 @@
+// This file is a placeholder for the generated hero background image
+// The actual image is located at public/generated-assets/hero-background.jpg
+export { default } from '../../public/generated-assets/hero-background.jpg';

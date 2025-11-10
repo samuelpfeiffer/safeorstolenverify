@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
+// Import hero background
+const heroBackground = '/generated-assets/hero-background.jpg';
+
 const Hero = () => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
@@ -18,7 +21,15 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-sos-dark">
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+      {/* Hero background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
+      </div>
+      
       {/* Animated glow effect */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sos-orange/20 rounded-full blur-[120px] animate-pulse" />
