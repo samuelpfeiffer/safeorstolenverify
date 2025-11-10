@@ -1,7 +1,6 @@
-import { Shield, BadgeCheck, Users } from 'lucide-react';
+import { Shield, BadgeCheck, Users, Smartphone } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import heroImage from '@/assets/hero-verification-devices.png';
 
 export const AppDownloadSection = () => {
   return (
@@ -29,18 +28,14 @@ export const AppDownloadSection = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* App Screenshots */}
+            {/* App Visual */}
             <div className="relative">
-              <div className="bg-primary-foreground rounded-3xl p-8 shadow-2xl border-4 border-primary-foreground/20">
-                <img 
-                  src={heroImage} 
-                  alt="SafeOrStolen mobile app - the only verification service with iOS and Android apps for checking phones, cars, guns, and all items"
-                  className="rounded-2xl shadow-xl w-full"
-                  width="800"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="bg-primary-foreground rounded-3xl p-12 shadow-2xl border-4 border-primary-foreground/20 flex items-center justify-center min-h-[400px]">
+                <div className="text-center">
+                  <Smartphone className="h-32 w-32 text-primary mx-auto mb-6" />
+                  <h3 className="text-3xl font-bold text-primary mb-2">Mobile App</h3>
+                  <p className="text-muted-foreground text-lg">Available on iOS & Android</p>
+                </div>
               </div>
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full font-bold shadow-xl">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import sosLogo from '@/assets/sos-logo.png';
+import { Shield } from 'lucide-react';
 
 interface LogoProps {
   className?: string;
@@ -23,12 +23,9 @@ export const Logo: React.FC<LogoProps> = ({
   linkTo = '/'
 }) => {
   const logoImage = (
-    <img 
-      src={sosLogo} 
-      alt="Safe or Stolen - Verify Second-Hand Items" 
-      className={`${sizeClasses[size]} object-contain ${className}`}
-      loading="eager"
-    />
+    <div className={`${sizeClasses[size]} flex items-center justify-center bg-gradient-to-br from-primary to-secondary rounded-lg ${className}`}>
+      <Shield className="h-full w-full p-1.5 text-primary-foreground" />
+    </div>
   );
 
   const content = showText ? (

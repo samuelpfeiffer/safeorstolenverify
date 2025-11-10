@@ -15,8 +15,10 @@ export const FasterCapitalBranding = () => {
         title="FasterCapital accelerator"
         aria-label="Visit FasterCapital website"
       >
-        <img src="/images/partners/fastercapital-logo.png" alt="FasterCapital official logo" className="h-8 w-auto" loading="lazy" />
-        <span className="fc-gradient-text font-semibold">FasterCapital</span>
+        <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
+          <Rocket className="h-5 w-5 text-white" />
+          <span className="font-bold text-white">FasterCapital</span>
+        </div>
         <ExternalLink className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
       </a>
     </div>
