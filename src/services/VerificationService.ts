@@ -99,6 +99,10 @@ class VerificationService {
     }
     
     if (itemTypeLower.includes('bike') || itemTypeLower.includes('bicycle')) {
+      providers.push('bike-index-api');
+    }
+    
+    if (itemTypeLower.includes('bike') || itemTypeLower.includes('bicycle')) {
       providers.push('bike-index');
     }
     
