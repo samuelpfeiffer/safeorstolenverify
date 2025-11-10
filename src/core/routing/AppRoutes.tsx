@@ -151,7 +151,24 @@ export const AppRoutes = () => {
             <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
             <Route path="/virginia-vin-lookup" element={<VirginiaVinLookup />} />
             <Route path="/massachusetts-vin-lookup" element={<MassachusettsVinLookup />} />
-            <Route path="/crime-prevention-impact" element={<CrimePreventionImpactPage />} />
+        <Route path="/crime-prevention-impact" element={<CrimePreventionImpactPage />} />
+        <Route path="/connecticut-vin-lookup" element={<ConnecticutVinLookup />} />
+        <Route path="/delaware-vin-lookup" element={<DelawareVinLookup />} />
+        <Route path="/maine-vin-lookup" element={<MaineVinLookup />} />
+        <Route path="/maryland-vin-lookup" element={<MarylandVinLookup />} />
+        <Route path="/new-hampshire-vin-lookup" element={<NewHampshireVinLookup />} />
+        <Route path="/new-jersey-vin-lookup" element={<NewJerseyVinLookup />} />
+        <Route path="/rhode-island-vin-lookup" element={<RhodeIslandVinLookup />} />
+        <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
+        <Route path="/arkansas-vin-lookup" element={<ArkansasVinLookup />} />
+        <Route path="/kentucky-vin-lookup" element={<KentuckyVinLookup />} />
+        <Route path="/louisiana-vin-lookup" element={<LouisianaVinLookup />} />
+        <Route path="/mississippi-vin-lookup" element={<MississippiVinLookup />} />
+        <Route path="/south-carolina-vin-lookup" element={<SouthCarolinaVinLookup />} />
+        <Route path="/tennessee-vin-lookup" element={<TennesseeVinLookup />} />
+        <Route path="/west-virginia-vin-lookup" element={<WestVirginiaVinLookup />} />
+        <Route path="/indiana-vin-lookup" element={<IndianaVinLookup />} />
+        <Route path="/iowa-vin-lookup" element={<IowaVinLookup />} />
 
         {/* Blog */}
         <Route path="/blog" element={<BlogPage />} />
