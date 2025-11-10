@@ -8,9 +8,9 @@ import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 const Hero = () => {
   const { isAuthenticated } = useUnifiedAuth();
   
-  return <div className="relative bg-gradient-to-br from-orange-900/20 via-amber-900/10 to-orange-800/20 text-foreground min-h-screen">
+  return <div className="relative bg-gradient-to-br from-orange-900/90 via-amber-900/70 to-orange-800/80 text-foreground min-h-screen">
       {/* Bright colorful overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-yellow-500/5 to-orange-500/10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/30 via-yellow-500/20 to-orange-600/25 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-12">

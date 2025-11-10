@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Black and gray background palette with enhanced contrast */
-    --background: 0 0% 5%;  /* Deeper black background */
+    --background: 0 0% 12%;  /* Dark gray background for visibility */
     --foreground: 0 0% 98%;  /* White text */
     --card: 0 0% 10%;  /* Dark gray cards with subtle elevation */
     --card-foreground: 0 0% 98%;
