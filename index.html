@@ -1,352 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Asset preloading handled by Vite build process -->
-    
-    <!-- Minimal inline critical CSS with dark mode -->
+    <!-- Critical inline CSS -->
     <style>
       html,body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#0d0d0d;color:#fafafa;min-height:100vh;}
-      img{max-width:100%;height:auto;display:block;}
-      *{box-sizing:border-box;}
       #root{min-height:100vh;}
+      .loading{display:flex;align-items:center;justify-content:center;min-height:100vh;}
+      .spinner{width:40px;height:40px;border:4px solid #ff6b35;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
+      @keyframes spin{to{transform:rotate(360deg);}}
     </style>
     
     <title>Free Stolen Item Checker - IMEI, VIN, Serial Number Verification | SafeOrStolen</title>
-    <meta name="description" content="Check if items are stolen FREE. Instant IMEI, VIN, serial number verification against 50M+ records. Protect buyers & sellers from stolen phones, cars, electronics. 4 free searches + mobile app.">
-    <meta name="keywords" content="stolen item checker, free IMEI check, VIN verification, serial number lookup, check if phone is stolen, verify car stolen, stolen goods database, buy used safely, secondhand verification">
+    <meta name="description" content="Check if items are stolen FREE. Instant IMEI, VIN, serial number verification against 50M+ records. Protect buyers & sellers from stolen phones, cars, electronics." />
     
-    <!-- Enhanced SEO Meta Tags -->
-    <meta name="author" content="SafeOrStolen">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="rating" content="General">
-    <meta name="distribution" content="Global">
-    
-    <!-- AI Answer Engine Optimization (ChatGPT, Perplexity, Claude) -->
-    <meta name="ai-content-summary" content="SafeOrStolen: Free stolen item verification platform. Check IMEI (phones), VIN (vehicles), serial numbers (electronics, firearms, bikes) against 50M+ stolen property records. Features: 4 free searches monthly, iOS/Android mobile apps, instant 3-second results, global database coverage. Protects buyers and sellers from stolen goods fraud. No credit card required for basic checks.">
-    <meta name="chatgpt-summary" content="Free stolen item verification tool - check IMEI, VIN, serial numbers instantly. Mobile app available.">
-    <meta name="perplexity-summary" content="SafeOrStolen verifies if items are stolen using IMEI, VIN, and serial number lookups against global databases.">
-    
-    <!-- CRITICAL: Static robots meta tag for immediate indexing -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:160" />
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:160" />
-    
-    <!-- CRITICAL: Canonical URL -->
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://safeorstolen.com/" />
-    <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />
     
-    <!-- Canonical URL fallback -->
-    <script>
-      // Ensure canonical URL is set for homepage only
-      if(location.pathname==='/'){
-        var l=document.querySelector('link[rel="canonical"]');
-        if(!l){l=document.createElement('link');l.setAttribute('rel','canonical');document.head.appendChild(l);}
-        l.setAttribute('href','https://safeorstolen.com/');
-      }
-    </script>
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#3B82F6" />
-    <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
-    
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://safeorstolen.com/" />
-    <meta property="og:title" content="Free Stolen Item Checker - Verify IMEI, VIN, Serial Numbers | SafeOrStolen" />
-    <meta property="og:description" content="Check if items are stolen FREE. Instant verification of phones, cars, electronics. 50M+ database records. 4 free searches. Mobile app available." />
+    <meta property="og:title" content="Free Stolen Item Checker - SafeOrStolen" />
+    <meta property="og:description" content="Check if items are stolen FREE. Instant verification of phones, cars, electronics." />
     <meta property="og:image" content="https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="SafeOrStolen" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://safeorstolen.com/" />
-    <meta name="twitter:title" content="Free Stolen Item Checker - IMEI, VIN, Serial Verification" />
-    <meta name="twitter:description" content="Instantly check if phones, cars, electronics are stolen. Free IMEI, VIN, serial number verification. 50M+ records." />
+    <meta name="twitter:title" content="Free Stolen Item Checker" />
+    <meta name="twitter:description" content="Instantly check if phones, cars, electronics are stolen." />
     <meta name="twitter:image" content="https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
-    <meta name="twitter:creator" content="@safeorstolen" />
-    <meta name="twitter:site" content="@safeorstolen" />
     
     <link rel="icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" type="image/png">
     
-    <!-- Google Analytics 4 - Deferred for performance -->
-    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-0T59FF9N6Z"></script>
-    <script>
-      window.addEventListener('load', function(){
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);} 
-        gtag('js', new Date());
-        gtag('config', 'G-0T59FF9N6Z', {
-          'page_title': document.title,
-          'page_location': window.location.href,
-          'page_path': window.location.pathname
-        });
-      });
-    </script>
-    
-    <!-- Preconnect to external domains for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
-    
-    <!-- Font optimization with font-display: swap -->
-    <style>
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Inter'), local('Inter-Regular');
-      }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    </style>
-    
-    <!-- Rich Structured Data (JSON-LD) for Search Engines & AI -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebApplication",
-          "name": "SafeOrStolen",
-          "alternateName": "Safe or Stolen",
-          "url": "https://safeorstolen.com",
-          "description": "Free stolen item verification platform. Check IMEI numbers, VIN numbers, and serial numbers instantly against 50M+ stolen property records.",
-          "applicationCategory": "SecurityApplication",
-          "operatingSystem": "Web, iOS, Android",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "4 free verification checks per month"
-          },
-          "featureList": [
-            "IMEI Check for Phones",
-            "VIN Verification for Vehicles",
-            "Serial Number Lookup",
-            "50M+ Database Records",
-            "3-Second Results",
-            "Mobile App Available"
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "2547",
-            "reviewCount": "2547"
-          }
-        },
-        {
-          "@type": "Organization",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com",
-          "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-          "sameAs": [
-            "https://twitter.com/safeorstolen"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer support",
-            "email": "support@safeorstolen.com"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://safeorstolen.com/mobile-verify?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Stolen Property Verification",
-          "provider": {
-            "@type": "Organization",
-            "name": "SafeOrStolen"
-          },
-          "areaServed": "Worldwide",
-          "availableChannel": {
-            "@type": "ServiceChannel",
-            "serviceUrl": "https://safeorstolen.com",
-            "serviceType": "Online Service"
-          }
-        }
-      ]
+      "@type": "WebApplication",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "description": "Free stolen item verification platform. Check IMEI numbers, VIN numbers, and serial numbers instantly.",
+      "applicationCategory": "SecurityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
     </script>
-    
-    <!-- FAQ Schema for rich snippets -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do I check if an item is stolen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Enter the IMEI number for phones, VIN for vehicles, or serial number for electronics into SafeOrStolen's verification tool. Results appear in 3 seconds against 50M+ stolen property records."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is SafeOrStolen free to use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. SafeOrStolen offers 4 free verification checks per month. Premium plans are available for frequent users, dealers, and businesses."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What can I verify with SafeOrStolen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can verify phones (IMEI), vehicles (VIN), laptops, cameras, bikes, firearms, tools, gaming consoles, and other electronics using their serial numbers."
-          }
-        }
-      ]
-    }
-    </script>
-    
-    <!-- Dynamic meta tags are managed by React Helmet in each page component -->
-</head>
+  </head>
 
   <body>
     <div id="root">
-      <!-- Static SEO Content - Visible before React loads -->
-      <div id="static-seo-content" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: hsl(222, 47%, 11%); color: hsl(0, 0%, 100%); padding: 2rem; text-align: center; font-family: system-ui, -apple-system, sans-serif;">
-        
-        <!-- Loading Spinner -->
-        <div id="loading-spinner" style="width: 48px; height: 48px; border: 4px solid hsl(24, 100%, 50%); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 2rem;"></div>
-        
-        <!-- Main Headline -->
-        <h1 style="font-size: 2.5rem; font-weight: 700; margin: 0 0 1rem 0; line-height: 1.2;">Free Stolen Item Checker</h1>
-        
-        <!-- Subheadline -->
-        <h2 style="font-size: 1.5rem; font-weight: 400; margin: 0 0 2rem 0; color: hsl(0, 0%, 80%);">Verify Before You Buy - Protect Yourself from Stolen Goods</h2>
-        
-        <!-- Feature List -->
-        <div style="max-width: 600px; text-align: left; margin: 0 auto;">
-          <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0 0 1rem 0;">Check Multiple Identifiers:</h3>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: hsl(24, 100%, 50%);">✓</span>
-              IMEI Numbers (Mobile Devices)
-            </li>
-            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: hsl(24, 100%, 50%);">✓</span>
-              VIN Numbers (Vehicles)
-            </li>
-            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
-              <span style="position: absolute; left: 0; color: hsl(24, 100%, 50%);">✓</span>
-              Serial Numbers (Electronics & Valuables)
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Trust Indicators -->
-        <p style="margin-top: 2rem; font-size: 0.875rem; color: hsl(0, 0%, 70%);">
-          Trusted by thousands of buyers and sellers worldwide
-        </p>
-        
-        <!-- JavaScript Loading Status (Shows after 10 seconds if React doesn't load) -->
-        <div id="js-warning" style="display: none; margin-top: 3rem; padding: 1rem; background: hsl(0, 84%, 60%); border-radius: 8px; max-width: 500px;">
-          <h3 style="font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0;">JavaScript Required</h3>
-          <p style="font-size: 0.875rem; margin: 0 0 0.5rem 0;">This application requires JavaScript to function. Please:</p>
-          <ul style="font-size: 0.875rem; text-align: left; margin: 0; padding-left: 1.5rem;">
-            <li>Enable JavaScript in your browser settings</li>
-            <li>Update your browser to the latest version</li>
-            <li>Check your network connection</li>
-          </ul>
-        </div>
+      <div class="loading">
+        <div class="spinner"></div>
       </div>
     </div>
-    
-    <!-- Enhanced noscript with actionable content -->
-    <noscript>
-      <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: hsl(222, 47%, 11%); color: hsl(0, 0%, 100%); padding: 2rem; font-family: system-ui, -apple-system, sans-serif;">
-        <div style="max-width: 600px; text-align: center;">
-          <h1 style="font-size: 2rem; font-weight: 700; margin: 0 0 1rem 0; color: hsl(24, 100%, 50%);">SafeOrStolen.com</h1>
-          <h2 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem 0;">JavaScript Required</h2>
-          <p style="font-size: 1rem; margin: 0 0 1.5rem 0; line-height: 1.6;">
-            SafeOrStolen is a web application that helps you verify if items are stolen before you buy them. 
-            This service requires JavaScript to function properly.
-          </p>
-          <div style="background: hsl(222, 47%, 15%); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0 0 1rem 0;">To use SafeOrStolen:</h3>
-            <ol style="text-align: left; padding-left: 1.5rem; line-height: 1.8;">
-              <li>Enable JavaScript in your browser settings</li>
-              <li>Refresh this page</li>
-              <li>Start verifying items instantly</li>
-            </ol>
-          </div>
-          <p style="font-size: 0.875rem; color: hsl(0, 0%, 70%);">
-            Need help? Contact us at support@safeorstolen.com
-          </p>
-        </div>
-      </div>
-    </noscript>
-    
-    <script>
-      console.log('[index.html] ✓ HTML loaded, DOM parsing complete');
-      console.log('[index.html] → User agent:', navigator.userAgent);
-      console.log('[index.html] → Screen:', window.innerWidth + 'x' + window.innerHeight);
-      
-      // Show JavaScript warning after 10 seconds if React doesn't mount
-      var warningTimeout = setTimeout(function() {
-        console.warn('[index.html] ⚠️ React did not mount after 10 seconds - showing JS warning');
-        var warning = document.getElementById('js-warning');
-        if (warning) {
-          warning.style.display = 'block';
-        }
-      }, 10000);
-      
-      // Monitor for React mounting
-      var checkInterval = setInterval(function() {
-        var root = document.getElementById('root');
-        if (root && root.hasAttribute('data-react-mounted')) {
-          console.log('[index.html] ✓ React mounted successfully - hiding static content');
-          clearTimeout(warningTimeout);
-          clearInterval(checkInterval);
-          
-          var staticContent = document.getElementById('static-seo-content');
-          if (staticContent) {
-            staticContent.style.transition = 'opacity 0.3s ease-out';
-            staticContent.style.opacity = '0';
-            setTimeout(function() {
-              staticContent.style.display = 'none';
-              console.log('[index.html] ✓ Static content hidden - app fully loaded');
-            }, 300);
-          }
-        }
-      }, 100);
-      
-      // Global error handler
-      window.addEventListener('error', function(e) {
-        console.error('[index.html] ✗ Global error:', e.message, e.filename, e.lineno);
-      });
-      
-      window.addEventListener('unhandledrejection', function(e) {
-        console.error('[index.html] ✗ Unhandled promise rejection:', e.reason);
-      });
-      
-      console.log('[index.html] → Loading main.tsx module...');
-    </script>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
