@@ -1,92 +1,163 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Search, Shield, Zap, Database, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Shield, Search } from 'lucide-react';
-import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
-import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const Hero = () => {
-  const { isAuthenticated } = useUnifiedAuth();
-  
-  return <div className="relative bg-gradient-to-br from-background via-background/95 to-primary/10 text-foreground min-h-screen">
-      {/* Subtle colorful overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none"></div>
+  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState('');
+  const [itemType, setItemType] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchValue.trim()) {
+      navigate(`/verify?q=${encodeURIComponent(searchValue)}${itemType ? `&type=${itemType}` : ''}`);
+    }
+  };
+
+  return (
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-sos-dark">
+      {/* Animated glow effect */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sos-orange/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sos-lime/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
       
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 md:py-24 relative z-10">
-        <div className="max-w-5xl mx-auto text-center space-y-12">
-          
-          {/* FasterCapital Badge */}
-          <div className="flex justify-center animate-fade-in">
-            <FasterCapitalBranding />
-          </div>
-
-          {/* Trust-focused Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight animate-fade-in drop-shadow-lg">
-            Check & Verify Instantly If Secondhand Items Are Safe Or Stolen
-            <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-yellow-400 to-lime-400">Free Database Search - Verify Any Item in 30 Seconds Before You Buy Or Sell</span>
-          </h1>
-          
-          {/* Trust Value Proposition */}
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed drop-shadow">Don't get scammed on Facebook Marketplace, OfferUp, Craigslist, or eBay.
- Search IMEI, VIN, Serial Numbers Instantly.  </p>
-
-          {/* Professional Search Interface */}
-          <div className="max-w-2xl mx-auto bg-gradient-to-br from-white/10 via-orange-500/10 to-yellow-500/10 backdrop-blur-xl p-10 rounded-2xl shadow-[0_0_80px_rgba(255,140,0,0.4)] border-2 border-orange-400/40 animate-fade-in">
-            <div className="flex items-center gap-3 mb-8 px-6 py-4 bg-gradient-to-r from-primary/30 to-yellow-500/20 rounded-xl border-2 border-primary/50 shadow-lg">
-              <Shield className="h-7 w-7 text-orange-400" />
-              <span className="text-lg font-semibold text-white drop-shadow">Search Database Free - Verify Any Item</span>
+      {/* Content */}
+      <div className="container relative z-10 px-4 py-16">
+        <div className="max-w-5xl mx-auto text-center space-y-10">
+          {/* Trust badges */}
+          <div className="flex flex-wrap justify-center gap-3 animate-fadeIn">
+            <div className="trust-badge">
+              <Shield className="w-4 h-4" />
+              <span>Verified Secure</span>
             </div>
-            <UnifiedSearchBar variant="hero" />
-            <div className="mt-6 flex items-center justify-center gap-6 text-sm">
-              <div className="flex items-center gap-2 text-lime-400">
-                <Shield className="h-4 w-4" />
-                <span className="font-medium drop-shadow">Secure & Private</span>
-              </div>
-              <div className="flex items-center gap-2 text-orange-400">
-                <Search className="h-4 w-4" />
-                <span className="font-medium drop-shadow">Instant Results</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-200">
-                <span className="font-medium drop-shadow">No Credit Card</span>
-              </div>
+            <div className="trust-badge">
+              <Database className="w-4 h-4" />
+              <span>50M+ Records</span>
+            </div>
+            <div className="trust-badge">
+              <Zap className="w-4 h-4" />
+              <span>Instant Results</span>
+            </div>
+            <div className="trust-badge">
+              <TrendingUp className="w-4 h-4" />
+              <span>99.9% Accurate</span>
             </div>
           </div>
-          
-          {/* Trust-focused CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" asChild className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-bold px-12 h-14 text-base shadow-[0_0_30px_rgba(255,140,0,0.5)] hover:shadow-[0_0_50px_rgba(255,140,0,0.7)] transition-all">
-              <Link to={!isAuthenticated ? '/auth?tab=signup' : '/dashboard'}>
-                <Shield className="h-5 w-5 mr-2" />
-                Start Verification
-              </Link>
+
+          {/* Main headline */}
+          <div className="space-y-6 animate-slideUp">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]">
+              <span className="block text-foreground">Verify Secondhand Items</span>
+              <span className="block mt-2">
+                <span className="sos-gradient-text">Instantly</span>
+                {' '}& Safely
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Check if phones, cars, electronics are{' '}
+              <span className="text-sos-lime font-bold">safe</span> or{' '}
+              <span className="text-sos-orange font-bold">stolen</span>.
+              Free IMEI, VIN, serial number verification.
+            </p>
+          </div>
+
+          {/* Search form */}
+          <div className="max-w-4xl mx-auto animate-slideUp" style={{ animationDelay: '0.2s' }}>
+            <form onSubmit={handleSearch} className="space-y-4">
+              <div className="modern-card p-3 rounded-2xl shadow-elegant-lg">
+                <div className="flex flex-col md:flex-row gap-3">
+                  <div className="flex-1">
+                    <Input
+                      type="text"
+                      placeholder="Enter IMEI, VIN, Serial Number..."
+                      value={searchValue}
+                      onChange={(e) => setSearchValue(e.target.value)}
+                      className="h-16 text-lg bg-background border-border/50 focus-visible:ring-2 focus-visible:ring-sos-orange rounded-xl"
+                    />
+                  </div>
+                  <Select value={itemType} onValueChange={setItemType}>
+                    <SelectTrigger className="h-16 w-full md:w-56 bg-background border-border/50 rounded-xl">
+                      <SelectValue placeholder="Item Type (Optional)" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="phone">📱 Phone</SelectItem>
+                      <SelectItem value="vehicle">🚗 Vehicle</SelectItem>
+                      <SelectItem value="laptop">💻 Laptop</SelectItem>
+                      <SelectItem value="bike">🚲 Bicycle</SelectItem>
+                      <SelectItem value="firearm">🔫 Firearm</SelectItem>
+                      <SelectItem value="electronics">📺 Electronics</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={!searchValue.trim()}
+                    className="h-16 px-10 sos-gradient hover:opacity-90 text-white font-bold text-lg rounded-xl shadow-orange hover:shadow-elegant transition-all"
+                  >
+                    <Search className="w-5 h-5 mr-2" />
+                    Search Free
+                  </Button>
+                </div>
+              </div>
+              
+              <p className="text-sm text-muted-foreground">
+                <span className="text-sos-orange font-bold">4 FREE</span> searches monthly
+                {' • '}
+                <span className="text-sos-lime font-semibold">50M+</span> records
+                {' • '}
+                Instant verification
+                {' • '}
+                No credit card required
+              </p>
+            </form>
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-slideUp" style={{ animationDelay: '0.4s' }}>
+            <Button
+              size="lg"
+              onClick={() => navigate('/auth?mode=signup')}
+              className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-bold text-lg px-10 h-14 rounded-xl shadow-lime hover:shadow-elegant transition-all"
+            >
+              Get Started Free
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 border-2 border-white/40 text-white hover:bg-white/20 font-bold px-10 h-14 text-base backdrop-blur" asChild>
-              <Link to="/how-it-works">Learn More</Link>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => navigate('/how-it-works')}
+              className="border-2 border-sos-orange text-sos-orange hover:bg-sos-orange/10 font-semibold text-lg px-10 h-14 rounded-xl transition-all"
+            >
+              See How It Works
             </Button>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto pt-12 border-t-2 border-orange-500/30">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-2">50M+</div>
-              <div className="text-sm font-semibold text-gray-200">Verified Records</div>
-              <div className="text-xs text-gray-300 mt-1">Trusted Database</div>
+          {/* Stats grid */}
+          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto pt-12 border-t border-border/30">
+            <div className="text-center space-y-2">
+              <div className="text-4xl md:text-5xl font-black sos-gradient-text">50M+</div>
+              <div className="text-sm font-semibold text-muted-foreground">Verified Records</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-green-400 mb-2">99.9%</div>
-              <div className="text-sm font-semibold text-gray-200">Accuracy Rate</div>
-              <div className="text-xs text-gray-300 mt-1">Industry Leading</div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl md:text-5xl font-black text-sos-lime">99.9%</div>
+              <div className="text-sm font-semibold text-muted-foreground">Accuracy Rate</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-2">&lt;30s</div>
-              <div className="text-sm font-semibold text-gray-200">Fast Results</div>
-              <div className="text-xs text-gray-300 mt-1">Instant Verification</div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl md:text-5xl font-black text-sos-orange">&lt;30s</div>
+              <div className="text-sm font-semibold text-muted-foreground">Fast Results</div>
             </div>
           </div>
         </div>
       </div>
-    </div>;
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+    </section>
+  );
 };
-Hero.displayName = 'Hero';
+
 export default Hero;

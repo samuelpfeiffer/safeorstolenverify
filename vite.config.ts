@@ -24,11 +24,10 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        // Aggressive cache busting with timestamp + hash
-        entryFileNames: `assets/[name].[hash].${Date.now()}.js`,
-        chunkFileNames: `assets/[name].[hash].${Date.now()}.js`,
-        assetFileNames: `assets/[name].[hash].${Date.now()}.[ext]`,
-        // Simple automatic code splitting
+        // Clean cache busting with content hash
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {

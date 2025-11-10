@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Aggressive cache control -->
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, max-age=0">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    
     <!-- Critical inline CSS -->
     <style>
       html,body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#0d0d0d;color:#fafafa;min-height:100vh;}
@@ -64,9 +59,6 @@
         <div class="spinner"></div>
       </div>
     </div>
-    
-    <!-- Force clear all service workers and caches before loading app -->
-    <script src="/sw-unregister.js"></script>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
