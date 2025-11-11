@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 
 type SearchLimitDisplayProps = {
   hasReachedLimit: boolean;
@@ -48,9 +49,9 @@ const SearchLimitDisplayComponent = ({
       </p>
       {hasReachedLimit && (
         <p className="text-xs text-sos-lime font-medium">
-          <a href="/pricing" className="hover:underline inline-flex items-center gap-1 transition-all hover:gap-2">
+          <Link to="/pricing" className="hover:underline inline-flex items-center gap-1 transition-all hover:gap-2">
             Upgrade for unlimited verifications →
-          </a>
+          </Link>
         </p>
       )}
     </div>
