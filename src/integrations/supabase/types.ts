@@ -1597,6 +1597,7 @@ export type Database = {
           promotion_searches_remaining: number | null
           search_count: number
           search_count_reset_at: string | null
+          stripe_customer_id: string | null
           subscription_interval: string | null
           subscription_tier: string | null
           terms_accepted: boolean | null
@@ -1620,6 +1621,7 @@ export type Database = {
           promotion_searches_remaining?: number | null
           search_count?: number
           search_count_reset_at?: string | null
+          stripe_customer_id?: string | null
           subscription_interval?: string | null
           subscription_tier?: string | null
           terms_accepted?: boolean | null
@@ -1643,6 +1645,7 @@ export type Database = {
           promotion_searches_remaining?: number | null
           search_count?: number
           search_count_reset_at?: string | null
+          stripe_customer_id?: string | null
           subscription_interval?: string | null
           subscription_tier?: string | null
           terms_accepted?: boolean | null
@@ -2106,6 +2109,33 @@ export type Database = {
           search_terms?: string[]
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      stripe_webhook_events: {
+        Row: {
+          created_at: string | null
+          error_message: string | null
+          event_type: string
+          id: string
+          processed_at: string | null
+          stripe_event_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          error_message?: string | null
+          event_type: string
+          id?: string
+          processed_at?: string | null
+          stripe_event_id: string
+        }
+        Update: {
+          created_at?: string | null
+          error_message?: string | null
+          event_type?: string
+          id?: string
+          processed_at?: string | null
+          stripe_event_id?: string
         }
         Relationships: []
       }
