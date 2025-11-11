@@ -129,6 +129,7 @@ export const RouteValidator: React.FC = () => {
       '/prices': '/subscriptions',
       '/plans': '/subscriptions',
       '/pricing': '/subscriptions',
+      '/auth/subscription': '/subscription',
       '/help': '/faq',
       '/support': '/contact',
       '/about-us': '/about',
