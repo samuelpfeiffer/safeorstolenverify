@@ -20,6 +20,7 @@ import { SearchParamBlocker } from '@/components/seo/SearchParamBlocker';
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
+import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -70,6 +71,7 @@ const AuthAwareContent: React.FC = () => {
           <SOSFooter />
         </div>
         <PWAInstallManager />
+        <AppDownloadBot />
         <MobileNavigation />
         <Toaster />
       </PWAProvider>
