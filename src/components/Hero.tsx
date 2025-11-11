@@ -62,10 +62,10 @@ const Hero = () => {
           {/* Main headline */}
           <div className="space-y-6 animate-slideUp">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]">
-              <span className="block text-foreground">Making Stolen Goods</span>
+              <span className="block text-foreground">Search Instantly If</span>
               <span className="block mt-2">
-                <span className="sos-gradient-text">Worthless</span>
-                {' '}Worldwide
+                <span className="sos-gradient-text">Secondhand Items</span>
+                {' '}Are Stolen
               </span>
             </h1>
             

@@ -1,4 +1,4 @@
-import heroBannerImage from '@/assets/sos-billboard.jpg';
+import heroBannerImage from '@/assets/sos-man-billboard.jpg';
 
 export const HeroBanner = () => {
   return (
