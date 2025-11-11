@@ -4,6 +4,7 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { supabase } from '@/integrations/supabase/client';
 
 const CheckoutRedirect: React.FC = () => {
   const location = useLocation();
@@ -35,38 +36,46 @@ const CheckoutRedirect: React.FC = () => {
       return;
     }
 
-    // Get checkout URL - NO REDIRECTS
-    fetch('https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/create-checkout', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${session.access_token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        priceId,
-        planName,
-        isSubscription,
-        redirectUrl: window.location.origin,
-      }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('[CHECKOUT-REDIRECT] Received response:', data);
-      if (data.url) {
-        setCheckoutUrl(data.url);
-        setLoading(false);
-        setRedirecting(true);
-        console.log('[CHECKOUT-REDIRECT] Checkout URL ready:', data.url);
-      } else {
-        console.error('[CHECKOUT-REDIRECT] No URL in response:', data);
-        setError('No checkout URL received');
+    // Get checkout URL using Supabase client
+    const createCheckout = async () => {
+      try {
+        console.log('[CHECKOUT-REDIRECT] Creating checkout session...');
+        const { data, error } = await supabase.functions.invoke('create-checkout', {
+          body: {
+            priceId,
+            planName,
+            isSubscription,
+            redirectUrl: window.location.origin,
+          },
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+          },
+        });
+
+        if (error) {
+          console.error('[CHECKOUT-REDIRECT] Error:', error);
+          throw error;
+        }
+
+        console.log('[CHECKOUT-REDIRECT] Received response:', data);
+        if (data?.url) {
+          setCheckoutUrl(data.url);
+          setLoading(false);
+          setRedirecting(true);
+          console.log('[CHECKOUT-REDIRECT] Checkout URL ready:', data.url);
+        } else {
+          console.error('[CHECKOUT-REDIRECT] No URL in response:', data);
+          setError('No checkout URL received');
+          setLoading(false);
+        }
+      } catch (err: any) {
+        console.error('[CHECKOUT-REDIRECT] Error:', err);
+        setError(err.message || 'Failed to create checkout');
         setLoading(false);
       }
-    })
-    .catch(err => {
-      setError(err.message || 'Failed to create checkout');
-      setLoading(false);
-    });
+    };
+
+    createCheckout();
   }, []);
 
   if (error) {
