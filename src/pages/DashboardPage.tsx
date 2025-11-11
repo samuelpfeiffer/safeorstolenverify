@@ -473,10 +473,19 @@ const DashboardPage = () => {
           </div>
 
           {/* Quick Access Tools */}
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="flex justify-center gap-4 mb-6 flex-wrap">
+            <Button 
+              asChild
+              variant="outline" 
+              size="sm">
+              <Link to="/activity">
+                <Clock className="h-4 w-4 mr-2" />
+                Activity Timeline
+              </Link>
+            </Button>
             <Button 
               variant="outline" 
-              size="sm" 
+              size="sm"
               onClick={() => navigate('/firearms-check')}
               className="bg-red-500/10 border-red-500/20 text-red-600 hover:bg-red-500/20"
             >

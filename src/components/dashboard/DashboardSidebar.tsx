@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { History, Receipt, CreditCard, Settings, Share, Search } from 'lucide-react';
+import { History, Receipt, CreditCard, Settings, Share, Search, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface DashboardSidebarProps {
@@ -15,6 +15,14 @@ export const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarPro
       label: 'New Verification',
       icon: Search,
       hasShare: false,
+    },
+    {
+      id: 'activity',
+      label: 'Activity Timeline',
+      icon: Clock,
+      hasShare: false,
+      isLink: true,
+      linkTo: '/activity',
     },
     {
       id: 'search-history',
@@ -57,18 +65,35 @@ export const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarPro
           
           return (
             <div key={item.id} className="space-y-1">
-              <Button
-                variant={isActive ? "default" : "ghost"}
-                className={`w-full justify-start gap-3 border ${
-                  isActive 
-                    ? 'border-primary bg-primary text-primary-foreground' 
-                    : 'border-border hover:border-primary/50'
-                }`}
-                onClick={() => onTabChange(item.id)}
-              >
-                <Icon className="h-4 w-4" />
-                {item.label}
-              </Button>
+              {item.isLink ? (
+                <Button
+                  asChild
+                  variant={isActive ? "default" : "ghost"}
+                  className={`w-full justify-start gap-3 border ${
+                    isActive 
+                      ? 'border-primary bg-primary text-primary-foreground' 
+                      : 'border-border hover:border-primary/50'
+                  }`}
+                >
+                  <Link to={item.linkTo || '#'}>
+                    <Icon className="h-4 w-4" />
+                    {item.label}
+                  </Link>
+                </Button>
+              ) : (
+                <Button
+                  variant={isActive ? "default" : "ghost"}
+                  className={`w-full justify-start gap-3 border ${
+                    isActive 
+                      ? 'border-primary bg-primary text-primary-foreground' 
+                      : 'border-border hover:border-primary/50'
+                  }`}
+                  onClick={() => onTabChange(item.id)}
+                >
+                  <Icon className="h-4 w-4" />
+                  {item.label}
+                </Button>
+              )}
               
               {item.hasShare && isActive && (
                 <Button
