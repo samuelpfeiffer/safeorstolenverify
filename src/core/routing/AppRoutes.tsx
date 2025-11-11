@@ -10,6 +10,7 @@ const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
 const SubscriptionPage = lazy(() => import('@/pages/SubscriptionPage'));
+const SubscriptionsPage = lazy(() => import('@/pages/SubscriptionsPage'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
@@ -146,6 +147,7 @@ const VerificationResultPage = lazy(() => import('@/pages/VerificationResultPage
 const CheckoutRedirect = lazy(() => import('@/pages/CheckoutRedirect'));
 const SubscriptionSuccessPage = lazy(() => import('@/pages/SubscriptionSuccessPage'));
 const SubscriptionCancelPage = lazy(() => import('@/pages/SubscriptionCancelPage'));
+const StripeTestPage = lazy(() => import('@/pages/StripeTestPage'));
 
 // 404
 const NotFound = lazy(() => import('@/pages/NotFound'));
@@ -163,6 +165,7 @@ export const AppRoutes = () => {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/subscription" element={<SubscriptionPage />} />
+        <Route path="/subscriptions" element={<SubscriptionsPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -283,6 +286,7 @@ export const AppRoutes = () => {
         <Route path="/checkout-redirect" element={<CheckoutRedirect />} />
         <Route path="/subscription-success" element={<SubscriptionSuccessPage />} />
         <Route path="/subscription-cancel" element={<SubscriptionCancelPage />} />
+        <Route path="/stripe-test" element={<StripeTestPage />} />
 
         {/* Legacy Redirects */}
         <Route path="/check-imei" element={<Navigate to="/verify" replace />} />

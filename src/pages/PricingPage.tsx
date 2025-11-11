@@ -45,7 +45,7 @@ const PricingPage = () => {
         title: "Authentication required",
         description: "Please sign in to subscribe to a plan.",
       });
-      navigate('/auth?tab=signin&redirect=subscription');
+      navigate('/auth?tab=signin&redirect=/pricing');
       return;
     }
 
@@ -111,7 +111,7 @@ const PricingPage = () => {
     if (!isAuthenticated) {
       localStorage.setItem('pendingReport', '1');
       toast({ title: 'Authentication required', description: 'Please sign in to purchase a report.' });
-      navigate('/auth?tab=signin&redirect=subscription');
+      navigate('/auth?tab=signin&redirect=/pricing');
       return;
     }
     const serial = window.prompt('Enter the Serial / IMEI / VIN to include in your certified report:');
