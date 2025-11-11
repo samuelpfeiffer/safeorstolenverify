@@ -141,6 +141,7 @@ const ServiceLimitations = lazy(() => import('@/pages/ServiceLimitations'));
 
 // User Features
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
+const ReceiptsPage = lazy(() => import('@/pages/ReceiptsPage'));
 const VerificationResultPage = lazy(() => import('@/pages/VerificationResultPage'));
 
 // Stripe
@@ -280,6 +281,7 @@ export const AppRoutes = () => {
 
         {/* User Features */}
         <Route path="/search-history" element={<SearchHistoryPage />} />
+        <Route path="/receipts" element={<ReceiptsPage />} />
         <Route path="/verification/:id" element={<VerificationResultPage />} />
 
         {/* Stripe */}
