@@ -80,7 +80,7 @@ const TopNavigation = () => {
                   <DropdownMenuItem onClick={() => navigate('/profile')}>
                     Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/history')}>
+                  <DropdownMenuItem onClick={() => navigate('/search-history')}>
                     History
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
