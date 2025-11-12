@@ -20,12 +20,6 @@ export const MarketplaceSEODomination = () => {
       "availability": "https://schema.org/InStock",
       "description": "FREE mobile app with 4 free verification searches - ONLY app for marketplace buyers"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "12847",
-      "bestRating": "5"
-    },
     "screenshot": [
       "https://safeorstolen.com/screenshots/facebook-marketplace-check.jpg",
       "https://safeorstolen.com/screenshots/offerup-verification.jpg",

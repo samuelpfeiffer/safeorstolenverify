@@ -104,12 +104,6 @@ export const CompetitorComparisonSEO: React.FC = () => {
             "@type": "Organization",
             "name": "SafeOrStolen"
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "12847",
-            "bestRating": "5"
-          },
           "areaServed": "Worldwide"
         })}
       </script>

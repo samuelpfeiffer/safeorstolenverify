@@ -53,11 +53,6 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
             "@type": "Organization",
             "name": "SafeOrStolen"
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "12847"
-          },
           "areaServed": "Worldwide",
           "additionalProperty": [
             {

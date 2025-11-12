@@ -112,13 +112,13 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 };
 
 /**
- * Creates a Product schema
+ * Creates a Product schema (Optional - only use when legitimately selling physical/digital products)
+ * NOTE: Do NOT include aggregateRating without actual Review markup to avoid Google errors
  */
 export const createProductSchema = (
   name: string,
   description: string,
-  price: string,
-  rating?: { value: string; count: string }
+  price: string
 ) => {
   const schema: any = {
     "@context": "https://schema.org",
@@ -132,14 +132,6 @@ export const createProductSchema = (
       "availability": "https://schema.org/InStock"
     }
   };
-
-  if (rating) {
-    schema.aggregateRating = {
-      "@type": "AggregateRating",
-      "ratingValue": rating.value,
-      "reviewCount": rating.count
-    };
-  }
 
   return schema;
 };
