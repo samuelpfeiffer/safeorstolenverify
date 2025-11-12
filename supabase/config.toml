@@ -87,4 +87,19 @@ verify_jwt = false
 [functions.schedule-content-generation]
 verify_jwt = false
 
+[functions.ai-executive-system]
+verify_jwt = false
+
+[functions.ai-metrics-collector]
+verify_jwt = false
+
+[functions.ai-revenue-optimizer]
+verify_jwt = false
+
+[functions.ai-learning-system]
+verify_jwt = false
+
+[functions.autonomous-master-scheduler]
+verify_jwt = false
+
 

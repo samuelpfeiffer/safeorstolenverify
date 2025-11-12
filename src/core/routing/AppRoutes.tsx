@@ -136,6 +136,7 @@ const CookiesPage = lazy(() => import('@/pages/CookiesPage'));
 const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard'));
 const Admin = lazy(() => import('@/pages/Admin'));
 const ContentGeneratorPage = lazy(() => import('@/pages/admin/ContentGeneratorPage'));
+const AIExecutivePage = lazy(() => import('@/pages/admin/AIExecutivePage'));
 
 // Information Pages
 const ServiceLimitations = lazy(() => import('@/pages/ServiceLimitations'));
@@ -281,6 +282,7 @@ export const AppRoutes = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/content-generator" element={<ContentGeneratorPage />} />
+        <Route path="/admin/ai-executive" element={<AIExecutivePage />} />
 
         {/* User Features */}
         <Route path="/search-history" element={<SearchHistoryPage />} />
