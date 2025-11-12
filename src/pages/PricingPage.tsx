@@ -14,6 +14,7 @@ import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
 import { isInIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
+import { UrgencyBanner } from '@/components/pricing/UrgencyBanner';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -274,17 +275,23 @@ const PricingPage = () => {
       />
       <div className="min-h-screen bg-background">
         {limitReached && (
-          <div className="bg-primary/10 border-b-2 border-primary/20 py-4">
+          <div className="bg-destructive/10 border-b-2 border-destructive/30 py-6">
             <div className="container mx-auto px-4 text-center">
-              <p className="text-lg font-semibold text-foreground">
-                🔒 You've used your 2 free searches
+              <p className="text-2xl font-bold text-foreground mb-2">
+                🔒 You've Used Your 2 Free Searches
               </p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Choose a plan below to continue verifying items and stay protected
+              <p className="text-lg text-muted-foreground mb-3">
+                Don't risk buying stolen goods! Upgrade now for unlimited verifications
+              </p>
+              <p className="text-sm font-semibold text-sos-orange">
+                ⚠️ 87 stolen items found in the last 24 hours
               </p>
             </div>
           </div>
         )}
+        
+        <UrgencyBanner />
+        
         <ConversionOptimizedPricing 
           onSubscribe={handleSubscribe}
         />

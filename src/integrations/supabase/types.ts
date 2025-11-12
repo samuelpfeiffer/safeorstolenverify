@@ -1588,6 +1588,7 @@ export type Database = {
           created_at: string
           credit_balance: number | null
           email: string | null
+          free_searches_used: number | null
           full_name: string | null
           id: string
           is_promotion_winner: boolean | null
@@ -1603,6 +1604,7 @@ export type Database = {
           terms_accepted: boolean | null
           terms_accepted_at: string | null
           trial_end_date: string | null
+          trial_started_at: string | null
           updated_at: string
           verifications_used_this_month: number | null
         }
@@ -1612,6 +1614,7 @@ export type Database = {
           created_at?: string
           credit_balance?: number | null
           email?: string | null
+          free_searches_used?: number | null
           full_name?: string | null
           id: string
           is_promotion_winner?: boolean | null
@@ -1627,6 +1630,7 @@ export type Database = {
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
           trial_end_date?: string | null
+          trial_started_at?: string | null
           updated_at?: string
           verifications_used_this_month?: number | null
         }
@@ -1636,6 +1640,7 @@ export type Database = {
           created_at?: string
           credit_balance?: number | null
           email?: string | null
+          free_searches_used?: number | null
           full_name?: string | null
           id?: string
           is_promotion_winner?: boolean | null
@@ -1651,6 +1656,7 @@ export type Database = {
           terms_accepted?: boolean | null
           terms_accepted_at?: string | null
           trial_end_date?: string | null
+          trial_started_at?: string | null
           updated_at?: string
           verifications_used_this_month?: number | null
         }

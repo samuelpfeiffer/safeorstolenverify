@@ -7,21 +7,25 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 // Import hero background
 const heroBackground = '/generated-assets/hero-background.jpg';
+
 const Hero = () => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
   const [itemType, setItemType] = useState('');
+  
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue.trim()) {
       navigate(`/verify?q=${encodeURIComponent(searchValue)}${itemType ? `&type=${itemType}` : ''}`);
     }
   };
-  return <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+
+  return (
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
       {/* Hero background image with overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBackground})`
-    }}>
+        backgroundImage: `url(${heroBackground})`
+      }}>
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
       </div>
       
@@ -29,13 +33,21 @@ const Hero = () => {
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sos-orange/20 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sos-lime/20 rounded-full blur-[120px] animate-pulse" style={{
-        animationDelay: '1s'
-      }} />
+          animationDelay: '1s'
+        }} />
       </div>
       
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
         <div className="max-w-5xl mx-auto text-center space-y-10">
+          {/* Urgency Banner */}
+          <div className="bg-gradient-to-r from-sos-orange/20 via-sos-lime/20 to-sos-orange/20 border-2 border-sos-orange/30 rounded-2xl p-4 animate-pulse-slow">
+            <p className="text-lg md:text-xl font-bold text-foreground">
+              🔥 <span className="text-sos-orange">LAUNCH SPECIAL:</span> $2.99 Verification (Reg. $4.99) • 
+              <span className="text-sos-lime"> 2 FREE Searches</span> • 48 Hours Only!
+            </p>
+          </div>
+
           {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-3 animate-fadeIn">
             <div className="trust-badge">
@@ -66,19 +78,35 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Verify phones, cars, electronics before you buy or sell. 500K+ monthly verifications deterring theft globally.<span className="text-sos-lime font-bold"> 500K+ monthly verifications</span> deterring theft globally.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Don't risk <span className="text-destructive font-bold">$500-2,000</span> on stolen goods. 
+              Verify phones, cars, electronics before you buy. 
+              <span className="text-sos-lime font-bold"> 500K+ monthly checks</span> preventing theft globally.
             </p>
+            
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 max-w-2xl mx-auto">
+              <p className="text-sm font-semibold text-foreground">
+                ⚠️ <span className="text-sos-orange">23% of checked items are stolen</span> • 
+                Average buyer saves <span className="text-sos-lime">$842</span> by verifying first
+              </p>
+            </div>
           </div>
 
           {/* Search form */}
           <div className="max-w-4xl mx-auto animate-slideUp" style={{
-          animationDelay: '0.2s'
-        }}>
+            animationDelay: '0.2s'
+          }}>
             <form onSubmit={handleSearch} className="space-y-4">
               <div className="modern-card p-3 rounded-2xl shadow-elegant-lg">
                 <div className="flex flex-col md:flex-row gap-3">
                   <div className="flex-1">
-                    <Input type="text" placeholder="Enter IMEI, VIN, Serial Number..." value={searchValue} onChange={e => setSearchValue(e.target.value)} className="h-16 text-lg bg-background border-border/50 focus-visible:ring-2 focus-visible:ring-sos-orange rounded-xl" />
+                    <Input 
+                      type="text" 
+                      placeholder="Enter IMEI, VIN, Serial Number..." 
+                      value={searchValue} 
+                      onChange={e => setSearchValue(e.target.value)} 
+                      className="h-16 text-lg bg-background border-border/50 focus-visible:ring-2 focus-visible:ring-sos-orange rounded-xl" 
+                    />
                   </div>
                   <Select value={itemType} onValueChange={setItemType}>
                     <SelectTrigger className="h-16 w-full md:w-56 bg-background border-border/50 rounded-xl">
@@ -93,7 +121,12 @@ const Hero = () => {
                       <SelectItem value="electronics">📺 Electronics</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Button type="submit" size="lg" disabled={!searchValue.trim()} className="h-16 px-10 sos-gradient hover:opacity-90 text-white font-bold text-lg rounded-xl shadow-orange hover:shadow-elegant transition-all">
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    disabled={!searchValue.trim()} 
+                    className="h-16 px-10 sos-gradient hover:opacity-90 text-white font-bold text-lg rounded-xl shadow-orange hover:shadow-elegant transition-all"
+                  >
                     <Search className="w-5 h-5 mr-2" />
                     Search Free
                   </Button>
@@ -114,20 +147,37 @@ const Hero = () => {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-slideUp" style={{
-          animationDelay: '0.4s'
-        }}>
-            <Button size="lg" onClick={() => navigate('/dashboard')} className="sos-gradient hover:opacity-90 text-white font-bold text-lg px-8 h-14 rounded-xl shadow-orange hover:shadow-elegant transition-all">
+            animationDelay: '0.4s'
+          }}>
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/dashboard')} 
+              className="sos-gradient hover:opacity-90 text-white font-bold text-lg px-8 h-14 rounded-xl shadow-orange hover:shadow-elegant transition-all"
+            >
               <ScanLine className="w-5 h-5 mr-2" />
               Scan Now
             </Button>
-            <Button size="lg" onClick={() => navigate('/mobile-app')} className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-bold text-lg px-8 h-14 rounded-xl shadow-lime hover:shadow-elegant transition-all">
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/mobile-app')} 
+              className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-bold text-lg px-8 h-14 rounded-xl shadow-lime hover:shadow-elegant transition-all"
+            >
               <Smartphone className="w-5 h-5 mr-2" />
               Download App
             </Button>
-            <Button size="lg" onClick={() => navigate('/auth?mode=signup')} className="bg-background border-2 border-border hover:bg-secondary/50 text-foreground font-semibold text-lg px-8 h-14 rounded-xl transition-all">
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/auth?mode=signup')} 
+              className="bg-background border-2 border-border hover:bg-secondary/50 text-foreground font-semibold text-lg px-8 h-14 rounded-xl transition-all"
+            >
               Get Started Free
             </Button>
-            <Button size="lg" variant="outline" onClick={() => navigate('/how-it-works')} className="border-2 border-border text-muted-foreground hover:bg-secondary/30 font-semibold text-lg px-8 h-14 rounded-xl transition-all">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={() => navigate('/how-it-works')} 
+              className="border-2 border-border text-muted-foreground hover:bg-secondary/30 font-semibold text-lg px-8 h-14 rounded-xl transition-all"
+            >
               See How It Works
             </Button>
           </div>
@@ -152,6 +202,8 @@ const Hero = () => {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

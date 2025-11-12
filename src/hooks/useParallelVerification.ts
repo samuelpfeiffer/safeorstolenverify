@@ -8,6 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from './useUnifiedAuth';
 import { verificationService, type AggregatedResult } from '@/services/VerificationService';
 import { detectItemType } from '@/utils/itemTypeDetector';
+import { supabase } from '@/integrations/supabase/client';
 
 export const useParallelVerification = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +25,71 @@ export const useParallelVerification = () => {
         variant: "destructive",
       });
       return null;
+    }
+
+    // Check free search limit for non-subscribed users
+    if (user?.id) {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('free_searches_used, trial_started_at, subscription_tier')
+        .eq('id', user.id)
+        .single();
+
+      const isSubscribed = profile?.subscription_tier && 
+        profile.subscription_tier !== 'free' && 
+        profile.subscription_tier !== 'starter';
+
+      if (!isSubscribed) {
+        const searchesUsed = profile?.free_searches_used || 0;
+        const trialStarted = profile?.trial_started_at;
+        
+        // Check if trial expired (14 days)
+        if (trialStarted) {
+          const trialStart = new Date(trialStarted);
+          const now = new Date();
+          const daysSinceStart = (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24);
+          
+          if (daysSinceStart > 14) {
+            toast({
+              title: "Trial Expired",
+              description: "Your 14-day trial has ended. Upgrade to continue verifying items.",
+              variant: "destructive",
+            });
+            window.location.href = '/pricing?reason=trial-expired';
+            return null;
+          }
+        }
+
+        // Check if used all free searches
+        if (searchesUsed >= 2) {
+          toast({
+            title: "Free Searches Used",
+            description: "You've used your 2 free searches. Upgrade to verify more items.",
+            variant: "destructive",
+          });
+          window.location.href = '/pricing?reason=limit-reached';
+          return null;
+        }
+
+        // Increment free search counter
+        const newCount = searchesUsed + 1;
+        await supabase
+          .from('profiles')
+          .update({ 
+            free_searches_used: newCount,
+            trial_started_at: trialStarted || new Date().toISOString()
+          })
+          .eq('id', user.id);
+
+        // Show warning on last free search
+        if (newCount === 2) {
+          toast({
+            title: "Last Free Search",
+            description: "This is your final free search. Upgrade to continue protecting yourself.",
+            variant: "default",
+          });
+        }
+      }
     }
 
     setIsLoading(true);
