@@ -187,13 +187,6 @@ export const createServiceSchema = () => ({
   },
   "serviceOutput": "Worldwide Verification Results Across All Item Categories",
   "termsOfService": `${SITE_CONFIG.url}/terms-of-service`,
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "125000",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Verification Services",
