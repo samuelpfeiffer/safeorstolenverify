@@ -31,14 +31,7 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
         "sameAs": [
           "https://twitter.com/safeorstolen",
           "https://www.facebook.com/safeorstolen"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "12847",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
+        ]
       },
       // WebSite Schema
       {
@@ -65,11 +58,6 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
         "name": "SafeOrStolen Mobile App",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "iOS, Android",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "12847"
-        },
         "description": "Free mobile app to check if phones, laptops, cars, bikes, and electronics are stolen. Scan barcodes, verify serial numbers, IMEI, VIN against police databases."
       });
 

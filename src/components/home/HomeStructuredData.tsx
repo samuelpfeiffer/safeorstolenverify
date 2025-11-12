@@ -23,11 +23,6 @@ export const getHomePageStructuredData = () => {
         "Marketplace integration (Facebook, OfferUp, eBay)",
         "Point-of-sale verification"
       ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "1247"
-      },
       "url": "https://safeorstolen.com",
       "screenshot": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
     }

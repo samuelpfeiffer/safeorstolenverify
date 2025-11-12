@@ -16,11 +16,6 @@ export default function MobileAppPage() {
     "name": "SafeOrStolen",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS, Android",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "12500"
-    },
     "description": "The only mobile app for instant stolen goods verification. Check IMEI, VIN, and serial numbers on-the-go. Protect yourself from stolen items while shopping on Facebook Marketplace, OfferUp, Craigslist, and more.",
     "screenshot": "https://safeorstolen.com/images/sos-logo.png",
     "author": {

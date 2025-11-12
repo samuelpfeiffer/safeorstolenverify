@@ -95,12 +95,6 @@ export const ComprehensiveSEO: React.FC<ComprehensiveSEOProps> = ({
       "price": "0",
       "priceCurrency": "USD"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "15847",
-      "bestRating": "5"
-    },
     "featureList": [
       "VIN verification for all vehicles",
       "IMEI checking for phones and tablets", 

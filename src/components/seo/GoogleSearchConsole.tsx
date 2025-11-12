@@ -89,12 +89,6 @@ export const GoogleSearchConsole: React.FC = () => {
             "name": "Worldwide"
           },
           "priceRange": "Free - $$$",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1247",
-            "bestRating": "5"
-          },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Verification Services",

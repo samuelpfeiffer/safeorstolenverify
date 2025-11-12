@@ -60,13 +60,6 @@ export const AdvancedSchemaGenerator = () => {
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "ratingCount": "12847",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "downloadUrl": [
           "https://apps.apple.com/app/safeorstolen",
           "https://play.google.com/store/apps/details?id=com.safeorstolen"

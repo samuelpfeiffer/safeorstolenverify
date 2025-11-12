@@ -35,13 +35,6 @@ export const AdvertisingStrategy = () => {
             "@type": "Organization",
             "name": "Safe Or Stolen"
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "25000",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
           "areaServed": "Worldwide"
         })}
       </script>

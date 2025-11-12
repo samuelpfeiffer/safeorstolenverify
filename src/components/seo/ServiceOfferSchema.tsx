@@ -30,13 +30,6 @@ export const ServiceOfferSchema = () => {
           "@type": "Organization",
           "name": "SafeOrStolen"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "12847",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     },
     {
@@ -60,13 +53,6 @@ export const ServiceOfferSchema = () => {
           "@type": "Organization",
           "name": "SafeOrStolen"
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "8432",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     }
   ];

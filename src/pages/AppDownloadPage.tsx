@@ -14,11 +14,6 @@ const AppDownloadPage = () => {
     "description": "Download the SafeOrStolen mobile app to instantly verify if items are stolen before buying. Scan barcodes, check IMEI, VIN, and serial numbers on-the-go.",
     "operatingSystem": "iOS, Android",
     "applicationCategory": "UtilityApplication",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "12847"
-    },
     "featureList": [
       "Barcode & QR code scanner",
       "Instant IMEI verification",

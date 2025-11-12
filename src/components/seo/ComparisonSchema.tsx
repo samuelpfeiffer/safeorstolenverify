@@ -32,11 +32,6 @@ export const ComparisonSchema = ({ competitorName, ourProduct, theirProduct }: C
           "@type": "Organization",
           "name": "SafeOrStolen"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": ourProduct.rating,
-          "reviewCount": ourProduct.reviewCount
-        },
         "additionalProperty": ourProduct.features.map(feature => ({
           "@type": "PropertyValue",
           "name": "Feature",
@@ -51,11 +46,6 @@ export const ComparisonSchema = ({ competitorName, ourProduct, theirProduct }: C
           "@type": "Organization",
           "name": competitorName
         },
-        "aggregateRating": theirProduct.rating ? {
-          "@type": "AggregateRating",
-          "ratingValue": theirProduct.rating,
-          "reviewCount": 100
-        } : undefined,
         "additionalProperty": theirProduct.features.map(feature => ({
           "@type": "PropertyValue",
           "name": "Feature",
