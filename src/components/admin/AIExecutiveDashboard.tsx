@@ -35,47 +35,48 @@ export const AIExecutiveDashboard = () => {
     try {
       const today = new Date().toISOString().split('T')[0];
 
-      // Get today's metrics
-      const { data: metrics } = await supabase
-        .from('business_metrics')
-        .select('*')
-        .eq('date', today)
-        .single();
+      // Get all verifications today
+      const { data: verifications, count: verificationsCount } = await supabase
+        .from('verification_items')
+        .select('*', { count: 'exact' })
+        .gte('created_at', `${today}T00:00:00Z`);
 
-      if (metrics) {
-        setStats({
-          todayRevenue: metrics.revenue_total || 0,
-          todayUsers: metrics.new_users || 0,
-          todayVerifications: metrics.total_verifications || 0,
-          conversionRate: metrics.conversion_rate || 0,
-        });
-      }
+      // Calculate revenue (assuming $2.99 per paid verification)
+      const paidCount = verifications?.filter(v => v.status === 'completed').length || 0;
+      const todayRevenue = paidCount * 2.99;
 
-      // Get recent AI decisions
+      // Get new users
+      const { count: newUsers } = await supabase
+        .from('profiles')
+        .select('*', { count: 'exact', head: true })
+        .gte('created_at', `${today}T00:00:00Z`);
+
+      setStats({
+        todayRevenue,
+        todayUsers: newUsers || 0,
+        todayVerifications: verificationsCount || 0,
+        conversionRate: newUsers > 0 ? (paidCount / newUsers) * 100 : 0,
+      });
+
+      // Get recent AI executive decisions
       const { data: recentDecisions } = await supabase
-        .from('ai_decisions')
+        .from('ai_executive_decisions')
         .select('*')
         .order('created_at', { ascending: false })
         .limit(10);
 
       setDecisions(recentDecisions || []);
 
-      // Get learnings
+      // Get AI executives status
       const { data: recentLearnings } = await supabase
-        .from('ai_learning_data')
+        .from('ai_executives')
         .select('*')
-        .order('created_at', { ascending: false })
-        .limit(5);
+        .eq('is_active', true);
 
       setLearnings(recentLearnings || []);
 
-      // Get active experiments
-      const { data: activeExperiments } = await supabase
-        .from('revenue_experiments')
-        .select('*')
-        .eq('status', 'running');
-
-      setExperiments(activeExperiments || []);
+      // Mock experiments data (will be populated by AI)
+      setExperiments([]);
 
     } catch (error) {
       console.error('Error loading dashboard:', error);
@@ -85,23 +86,20 @@ export const AIExecutiveDashboard = () => {
   const runAutonomousSystem = async () => {
     setIsRunning(true);
     try {
-      const { data, error } = await supabase.functions.invoke('autonomous-master-scheduler', {
-        body: {}
-      });
+      const { data, error } = await supabase.functions.invoke('autonomous-master-scheduler');
 
       if (error) throw error;
 
       toast({
-        title: "AI Executive System Running",
-        description: `${data.summary.successful}/${data.summary.total_operations} operations successful`,
+        title: "✅ AI Executive System Complete",
+        description: data?.summary ? `${data.summary.successful}/${data.summary.total_operations} operations successful` : "System running",
       });
 
-      // Reload data after operations
       setTimeout(loadDashboardData, 2000);
     } catch (error: any) {
       toast({
         title: "System Error",
-        description: error.message,
+        description: error.message || "Failed to run autonomous system",
         variant: "destructive",
       });
     } finally {
@@ -243,23 +241,23 @@ export const AIExecutiveDashboard = () => {
                   <div key={decision.id} className="p-4 bg-muted/50 rounded-lg">
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        {getRoleBadge(decision.role)}
+                        {getRoleBadge(decision.executive_role)}
                         {getStatusIcon(decision.status)}
-                        <h4 className="font-semibold">{decision.decision_title}</h4>
+                        <h4 className="font-semibold">{decision.decision_type}</h4>
                       </div>
                       <Badge variant="outline">
                         Priority: {decision.priority}
                       </Badge>
                     </div>
                     <p className="text-sm text-muted-foreground mb-2">
-                      {decision.decision_description}
+                      {decision.reasoning || 'AI strategic decision'}
                     </p>
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-muted-foreground">
-                        Confidence: {(decision.confidence_score * 100).toFixed(0)}%
+                        Confidence: {decision.confidence ? (decision.confidence * 100).toFixed(0) : 0}%
                       </span>
                       <span className="text-muted-foreground">
-                        Expected: {decision.expected_outcome}
+                        Impact: {decision.impact_score || 'Calculating...'}
                       </span>
                     </div>
                   </div>
@@ -329,22 +327,28 @@ export const AIExecutiveDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {learnings.map((learning) => (
-                  <div key={learning.id} className="p-4 bg-muted/50 rounded-lg">
+                {learnings.map((executive) => (
+                  <div key={executive.id} className="p-4 bg-muted/50 rounded-lg">
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-semibold">{learning.strategy_name}</h4>
-                      <Badge variant={learning.status === 'adopted' ? 'default' : 'secondary'}>
-                        {learning.status}
+                      <h4 className="font-semibold">{getRoleBadge(executive.role)} - {executive.status}</h4>
+                      <Badge variant={executive.is_active ? 'default' : 'secondary'}>
+                        {executive.is_active ? 'Active' : 'Inactive'}
                       </Badge>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {learning.conclusion}
-                    </p>
-                    {learning.recommendation && (
-                      <div className="text-xs bg-primary/10 text-primary p-2 rounded mt-2">
-                        💡 {learning.recommendation}
+                    <div className="grid grid-cols-3 gap-2 text-sm">
+                      <div>
+                        <div className="text-muted-foreground">Decisions</div>
+                        <div className="font-semibold">{executive.decisions_count || 0}</div>
                       </div>
-                    )}
+                      <div>
+                        <div className="text-muted-foreground">Actions</div>
+                        <div className="font-semibold">{executive.actions_taken || 0}</div>
+                      </div>
+                      <div>
+                        <div className="text-muted-foreground">Success Rate</div>
+                        <div className="font-semibold">{executive.success_rate ? (executive.success_rate * 100).toFixed(0) : 0}%</div>
+                      </div>
+                    </div>
                   </div>
                 ))}
                 {learnings.length === 0 && (
