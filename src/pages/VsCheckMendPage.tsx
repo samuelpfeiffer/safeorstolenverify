@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { ComparisonSchema } from '@/components/seo/ComparisonSchema';
 import { Link } from 'react-router-dom';
 import { Check, X, Star, TrendingUp, Shield, Zap, DollarSign } from 'lucide-react';
 
@@ -90,22 +89,6 @@ const VsCheckMendPage = () => {
         keywords="safe or stolen vs checkmend, checkmend alternative, imei checker comparison, best stolen goods verifier, checkmend vs safe or stolen"
         canonical="/vs-checkmend"
         structuredData={structuredData}
-      />
-      <ComparisonSchema
-        competitorName="CheckMend"
-        ourProduct={{
-          name: "Safe or Stolen",
-          price: "1.00",
-          features: ["4 Free Checks", "50M+ Records", "<30s Speed", "Mobile App", "API Access", "Bulk Checking"],
-          rating: 4.9,
-          reviewCount: 1250
-        }}
-        theirProduct={{
-          name: "CheckMend",
-          price: "2.99",
-          features: ["30M+ Records", "Web Only", "UK Focused"],
-          rating: 4.2
-        }}
       />
 
       <div className="min-h-screen bg-background">

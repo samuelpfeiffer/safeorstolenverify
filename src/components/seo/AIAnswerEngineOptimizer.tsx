@@ -149,7 +149,7 @@ export const AIAnswerEngineOptimizer: React.FC = () => {
       {/* Trust Signals for AI */}
       <meta name="verified" content="true" />
       <meta name="law-enforcement-partnerships" content="true" />
-      <meta name="user-reviews" content="4.9/5 stars from 12,847 users" />
+      <meta name="user-reviews" content="Trusted by 12,847+ users" />
       <meta name="verifications-completed" content="1000000+" />
       <meta name="scams-prevented-value" content="$2,300,000 USD" />
       

@@ -78,7 +78,7 @@ export const EEATSignals = () => {
         {/* Proof of Expertise */}
         <meta name="databases-accessed" content="NCIC, NICB, ATF, Interpol, manufacturer databases, insurance databases" />
         <meta name="verification-accuracy" content="99.7% accuracy rate, verified by independent audit" />
-        <meta name="user-testimonials" content="50,000+ satisfied users, 4.9/5 star rating" />
+        <meta name="user-testimonials" content="50,000+ satisfied users" />
         
         {/* Transparency Signals */}
         <meta name="contact-info" content="support@safeorstolen.com, 24/7 customer support" />

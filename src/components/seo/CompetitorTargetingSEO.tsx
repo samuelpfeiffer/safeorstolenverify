@@ -53,7 +53,7 @@ export const CompetitorTargetingSEO = () => {
       <meta name="imeiinfo-limited-alternative" content="IMEIinfo too limited? SafeOrStolen checks IMEI, VIN, firearms with mobile apps. FREE download." />
       
       {/* COMPETITOR BRANDED SEARCH TERMS */}
-      <meta name="checkmend-review-alternative" content="Looking for CheckMend reviews? Try SafeOrStolen instead - ONLY service with mobile apps, 4.9/5 stars from 50,000+ users." />
+      <meta name="checkmend-review-alternative" content="Looking for CheckMend reviews? Try SafeOrStolen instead - ONLY service with mobile apps, trusted by 50,000+ users." />
       <meta name="imeiinfo-pricing-alternative" content="Searching IMEIinfo pricing? SafeOrStolen offers 4 FREE verifications + mobile apps. Download FREE." />
       
       {/* URGENCY MESSAGING FOR COMPETITOR SEARCHES */}

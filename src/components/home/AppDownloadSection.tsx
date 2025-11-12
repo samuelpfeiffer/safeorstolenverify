@@ -102,7 +102,7 @@ export const AppDownloadSection = () => {
                   📱 Download for iOS & Android - Verify Phones, Cars & Guns!
                 </Link>
                 <p className="text-center text-primary-foreground/70 text-sm">
-                  ⭐ 4.9/5 rating • 100,000+ downloads • All verification types included
+                  ⭐ 100,000+ downloads • All verification types included
                 </p>
               </div>
             </div>
