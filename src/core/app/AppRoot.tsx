@@ -21,6 +21,7 @@ import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
+import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -57,6 +58,7 @@ const AuthAwareContent: React.FC = () => {
       <PWAProvider>
         <MasterSEO />
         <GlobalAISEO />
+        <SchemaValidationMonitor />
         <CriticalResourceLoader />
         <SearchParamBlocker />
         <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -73,6 +75,7 @@ const AuthAwareContent: React.FC = () => {
         <PWAInstallManager />
         <AppDownloadBot />
         <MobileNavigation />
+        <SchemaValidationIndicator />
         <Toaster />
       </PWAProvider>
     </GA4Provider>
