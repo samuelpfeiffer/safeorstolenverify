@@ -22,6 +22,7 @@ import { MasterSEO } from '@/components/seo/MasterSEO';
 import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
+import { SystemHealthMonitor, SystemHealthIndicator } from '@/components/monitoring/SystemHealthMonitor';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -59,6 +60,7 @@ const AuthAwareContent: React.FC = () => {
         <MasterSEO />
         <GlobalAISEO />
         <SchemaValidationMonitor />
+        <SystemHealthMonitor />
         <CriticalResourceLoader />
         <SearchParamBlocker />
         <div className="min-h-screen bg-background text-foreground flex flex-col">
@@ -76,6 +78,7 @@ const AuthAwareContent: React.FC = () => {
         <AppDownloadBot />
         <MobileNavigation />
         <SchemaValidationIndicator />
+        <SystemHealthIndicator />
         <Toaster />
       </PWAProvider>
     </GA4Provider>

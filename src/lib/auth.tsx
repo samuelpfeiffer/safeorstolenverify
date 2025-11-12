@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
+import { markAuthListenerActive } from '@/utils/monitoring/authHealthCheck';
 
 export interface AuthUser {
   id: string;
@@ -62,6 +63,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
       }
     );
+
+    // Mark listener as active for health monitoring
+    markAuthListenerActive();
 
     // Check current session
     supabase.auth.getSession().then(({ data: { session } }) => {
