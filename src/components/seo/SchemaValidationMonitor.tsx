@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { validateReactSchemas, formatValidationReport, type ValidationResult } from '@/utils/seo/schemaValidator';
+import { validateCanonical, formatCanonicalReport } from '@/utils/seo/canonicalValidator';
 import { toast } from 'sonner';
 
 /**
@@ -39,8 +40,23 @@ export const SchemaValidationMonitor = () => {
       const result = validateReactSchemas(schemas);
       setValidationResult(result);
       
-      // Log to console
+      // Log schema validation to console
       console.log(formatValidationReport(result));
+      
+      // Also validate canonical URL
+      const canonicalResult = validateCanonical();
+      console.log(formatCanonicalReport(canonicalResult));
+      
+      // Store canonical result globally
+      (window as any).__canonicalValidation = canonicalResult;
+      
+      // Show critical canonical errors
+      if (!canonicalResult.isValid) {
+        toast.error(`Canonical URL Error: ${canonicalResult.errors[0]}`, {
+          description: 'Check console for details',
+          duration: 10000,
+        });
+      }
       
       // Show toast notifications for critical errors
       if (result.errors.length > 0) {

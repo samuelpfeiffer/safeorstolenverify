@@ -43,7 +43,19 @@ export const MasterSEO: React.FC = () => {
     
     // No redirects - use actual pathname for canonical
     // Redirects are handled in AppRoutes.tsx
-    return `https://safeorstolen.com${cleanPath}`;
+    const canonical = `https://safeorstolen.com${cleanPath}`;
+    
+    // Debug logging in development
+    if (import.meta.env.DEV) {
+      console.log('🔗 MasterSEO Canonical:', {
+        pathname,
+        cleanPath,
+        canonical,
+        timestamp: new Date().toISOString()
+      });
+    }
+    
+    return canonical;
   };
   
   const canonicalUrl = generateCanonicalUrl(location.pathname);
@@ -93,8 +105,8 @@ export const MasterSEO: React.FC = () => {
   };
 
   return (
-    <Helmet>
-      {/* Core canonical and indexing directives */}
+    <Helmet prioritizeSeoTags>
+      {/* Core canonical and indexing directives - HIGHEST PRIORITY */}
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Robots directives - clear and specific */}
