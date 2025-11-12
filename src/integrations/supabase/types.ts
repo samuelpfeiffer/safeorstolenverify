@@ -300,6 +300,60 @@ export type Database = {
           },
         ]
       }
+      ai_generated_content: {
+        Row: {
+          ai_model: string | null
+          content: string
+          content_type: string
+          created_at: string | null
+          generation_prompt: string | null
+          id: string
+          keywords: string[] | null
+          last_optimized_at: string | null
+          meta_description: string | null
+          published_at: string | null
+          seo_score: number | null
+          slug: string
+          status: string | null
+          target_competitors: string[] | null
+          title: string
+        }
+        Insert: {
+          ai_model?: string | null
+          content: string
+          content_type: string
+          created_at?: string | null
+          generation_prompt?: string | null
+          id?: string
+          keywords?: string[] | null
+          last_optimized_at?: string | null
+          meta_description?: string | null
+          published_at?: string | null
+          seo_score?: number | null
+          slug: string
+          status?: string | null
+          target_competitors?: string[] | null
+          title: string
+        }
+        Update: {
+          ai_model?: string | null
+          content?: string
+          content_type?: string
+          created_at?: string | null
+          generation_prompt?: string | null
+          id?: string
+          keywords?: string[] | null
+          last_optimized_at?: string | null
+          meta_description?: string | null
+          published_at?: string | null
+          seo_score?: number | null
+          slug?: string
+          status?: string | null
+          target_competitors?: string[] | null
+          title?: string
+        }
+        Relationships: []
+      }
       ai_model_performance: {
         Row: {
           average_latency_ms: number | null
@@ -1068,6 +1122,95 @@ export type Database = {
           our_rank?: number | null
         }
         Relationships: []
+      }
+      content_generation_queue: {
+        Row: {
+          competitor_urls: string[] | null
+          completed_at: string | null
+          content_type: string
+          created_at: string | null
+          error_message: string | null
+          id: string
+          priority: number | null
+          started_at: string | null
+          status: string | null
+          target_keywords: string[] | null
+          topic: string
+        }
+        Insert: {
+          competitor_urls?: string[] | null
+          completed_at?: string | null
+          content_type: string
+          created_at?: string | null
+          error_message?: string | null
+          id?: string
+          priority?: number | null
+          started_at?: string | null
+          status?: string | null
+          target_keywords?: string[] | null
+          topic: string
+        }
+        Update: {
+          competitor_urls?: string[] | null
+          completed_at?: string | null
+          content_type?: string
+          created_at?: string | null
+          error_message?: string | null
+          id?: string
+          priority?: number | null
+          started_at?: string | null
+          status?: string | null
+          target_keywords?: string[] | null
+          topic?: string
+        }
+        Relationships: []
+      }
+      content_issues: {
+        Row: {
+          auto_fixed: boolean | null
+          content_id: string | null
+          description: string
+          detected_at: string | null
+          fix_action: string | null
+          fixed_at: string | null
+          id: string
+          issue_type: string
+          severity: string
+          status: string | null
+        }
+        Insert: {
+          auto_fixed?: boolean | null
+          content_id?: string | null
+          description: string
+          detected_at?: string | null
+          fix_action?: string | null
+          fixed_at?: string | null
+          id?: string
+          issue_type: string
+          severity: string
+          status?: string | null
+        }
+        Update: {
+          auto_fixed?: boolean | null
+          content_id?: string | null
+          description?: string
+          detected_at?: string | null
+          fix_action?: string | null
+          fixed_at?: string | null
+          id?: string
+          issue_type?: string
+          severity?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_issues_content_id_fkey"
+            columns: ["content_id"]
+            isOneToOne: false
+            referencedRelation: "ai_generated_content"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       content_performance: {
         Row: {
