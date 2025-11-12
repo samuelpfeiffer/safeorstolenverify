@@ -52,13 +52,6 @@ const Index = () => {
         "contactType": "Customer Service",
         "areaServed": "US",
         "availableLanguage": ["English"]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "12500",
-        "bestRating": "5",
-        "worstRating": "1"
       }
     },
     {
@@ -71,11 +64,6 @@ const Index = () => {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "12500"
       }
     },
     {
