@@ -5,9 +5,9 @@ export const WebSiteSchema = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Safe or Stolen",
-    "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "Safe or Stolen Verification", "World's Leading Verification Service", "Global Leader in Stolen Item Verification"],
+    "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "Safe or Stolen Verification", "Trusted Verification Service", "Multi-Database Stolen Item Verification"],
     "url": "https://safeorstolen.com",
-    "description": "World's leading stolen item verification service serving customers globally. Comprehensive international database for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, electric bikes, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, specialty equipment. Trusted worldwide across 200+ countries for IMEI, VIN, and serial number verification.",
+    "description": "Trusted stolen item verification service serving customers across the United States with international expansion. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, electric bikes, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, specialty equipment. Verification via NICB, GSMA, CheckMEND, Bike Index for IMEI, VIN, and serial numbers.",
     "inLanguage": ["en", "es", "fr", "de", "ja", "pt", "it", "zh"],
     "audience": {
       "@type": "Audience",
@@ -57,12 +57,12 @@ export const WebSiteSchema = () => {
     },
     "mainEntity": {
       "@type": "WebApplication",
-      "name": "Safe or Stolen Verification Tool - Worldwide Leader",
+      "name": "Safe or Stolen Multi-Database Verification Tool",
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Any",
-      "featureList": "Global leader in verification services: Verify IMEI numbers, VIN numbers, serial numbers worldwide for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, and specialty equipment. Serving 200+ countries internationally.",
+      "featureList": "Complete multi-database verification: Verify IMEI numbers, VIN numbers, serial numbers via NICB, GSMA, CheckMEND, Bike Index for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, and specialty equipment. Serving the United States with international expansion.",
       "availableOnDevice": "Desktop, Mobile, Tablet",
-      "countriesSupported": "Worldwide - 200+ countries"
+      "countriesSupported": "United States (expanding internationally)"
     }
   };
 

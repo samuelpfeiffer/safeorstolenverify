@@ -8,9 +8,9 @@ export const createOrganizationSchema = () => ({
   "@type": "Corporation",
   "name": SITE_CONFIG.name,
   "legalName": "Safe or Stolen Corp.",
-  "alternateName": ["SOS Verification Platform", "SafeOrStolen", "World's Leading Verification Service"],
-  "description": "The world's leading stolen goods verification platform serving customers globally. As the worldwide leader in IMEI, VIN, and serial number verification, we protect millions of consumers internationally from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment.",
-  "slogan": "Worldwide Leader in Stolen Item Verification - Global Protection, Local Trust",
+  "alternateName": ["SOS Verification Platform", "SafeOrStolen", "Trusted Verification Service"],
+  "description": "Fast-growing stolen goods verification platform serving customers across the United States with international expansion underway. Multi-database IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via NICB, GSMA, CheckMEND, Bike Index and growing database partnerships.",
+  "slogan": "Complete Multi-Database Verification - Protect Every Purchase",
   "url": SITE_CONFIG.url,
   "logo": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
   "foundingDate": "2025-08",
@@ -148,14 +148,14 @@ export const createWebsiteSchema = () => ({
 export const createServiceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Worldwide Leader in Stolen Item Verification - Global IMEI, VIN & Serial Number Database",
-  "description": "World's leading stolen item verification service serving customers globally across 200+ countries. Complete international database for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against 50M+ global stolen goods databases. Trusted worldwide with instant results in 30 seconds.",
+  "name": "Complete Multi-Database Stolen Item Verification - IMEI, VIN & Serial Number Check",
+  "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including NICB, GSMA, CheckMEND, and Bike Index. Fast results in 30 seconds.",
   "provider": {
     "@type": "Organization",
     "name": SITE_CONFIG.name,
     "url": SITE_CONFIG.url
   },
-  "serviceType": "Global Consumer Protection and Worldwide Stolen Goods Verification Leader",
+  "serviceType": "Consumer Protection and Multi-Database Stolen Goods Verification",
   "areaServed": [
     "Worldwide",
     { "@type": "Country", "name": "United States" },
@@ -176,16 +176,16 @@ export const createServiceSchema = () => ({
   ],
   "audience": {
     "@type": "Audience",
-    "audienceType": "International Consumers, Global Retailers, Worldwide Law Enforcement, International E-commerce Platforms, Multinational Corporations"
+    "audienceType": "US Consumers, Retailers, Law Enforcement, E-commerce Platforms, Businesses"
   },
-  "category": "Global Consumer Protection and International Fraud Prevention",
+  "category": "Consumer Protection and Fraud Prevention",
   "availableChannel": {
     "@type": "ServiceChannel",
     "serviceUrl": SITE_CONFIG.url,
-    "serviceType": "Global Online Database Platform",
-    "availableLanguage": ["English", "Spanish", "French", "German", "Japanese", "Portuguese", "Italian", "Chinese"]
+    "serviceType": "Online Multi-Database Verification Platform",
+    "availableLanguage": ["English"]
   },
-  "serviceOutput": "Worldwide Verification Results Across All Item Categories",
+  "serviceOutput": "Verification Results Across All Item Categories",
   "termsOfService": `${SITE_CONFIG.url}/terms-of-service`,
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
