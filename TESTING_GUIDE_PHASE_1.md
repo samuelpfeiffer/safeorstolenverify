@@ -199,7 +199,7 @@ WHERE user_id = (SELECT id FROM profiles WHERE email = 'test+phase1@example.com'
 ### Steps:
 1. On pricing page, find **"Single Verification"** card
 2. Click **"Subscribe to Single Verification"** button
-3. Should redirect to `/checkout-redirect?planName=Single+Verification&isSubscription=false&priceId=price_1SDRrMGxnZLw8J7ObJsUlp6k`
+3. Should redirect to `/checkout-redirect?planName=Single+Verification&isSubscription=false&priceId=price_1SSVqkGxnZLw8J7O3GwCyKRn`
 
 ### Expected Results on Checkout Redirect Page:
 ✅ Shows loading spinner  

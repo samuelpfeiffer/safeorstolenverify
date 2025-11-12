@@ -22,7 +22,7 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
  * 2. "Personal Plan" - $9.99/month recurring (Price: price_1SHEUQGxnZLw8J7OinyVqNMK)
  * 3. "Professional Plan" - $29.99/month recurring (Price: price_1SHEiuGxnZLw8J7OszscBBk7)
  * 4. "Enterprise Plan" - $99/month recurring (Price: price_1SHEnFGxnZLw8J7Oq1PM96Eo)
- * 5. "Single Verification" - $2.99 one-time payment (Price: price_1SDRrMGxnZLw8J7ObJsUlp6k)
+ * 5. "Single Verification" - $2.99 one-time payment (Price: price_1SSVqkGxnZLw8J7O3GwCyKRn)
  * 
  * Note: All tiers serve BOTH buyers and sellers
  */
@@ -61,7 +61,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$2.99",
     interval: "once",
     monthlyQuota: 1,
-    stripePriceId: 'price_1SDRrMGxnZLw8J7ObJsUlp6k',
+    stripePriceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn',
     tier: "payPerUse",
     features: [
       "Instant verification in seconds",
