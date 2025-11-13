@@ -70,7 +70,7 @@ export default function UnifiedVerificationPage() {
           name="keywords" 
           content="stolen item checker, free VIN check, IMEI verification, serial number lookup, stolen phone check, stolen car database, check if stolen, avoid stolen goods, buyer protection, seller verification" 
         />
-        <link rel="canonical" href="https://safeorstolen.com/verify" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         
         {/* Open Graph */}
         <meta property="og:title" content="Free Stolen Item Checker - Verify Before You Buy" />

@@ -100,7 +100,7 @@ const LocalSEOPage = () => {
         <title>Stolen Item Checker {cityInfo.name}, {cityInfo.state} - Verify Before You Buy | SafeOrStolen</title>
         <meta name="description" content={`Professional stolen item verification in ${cityInfo.name}, ${cityInfo.state}. Check ${cityInfo.topStolenItems.join(', ')} against theft databases. ${cityInfo.theftRate} theft risk.`} />
         <meta name="keywords" content={`stolen items ${cityInfo.name}, verify items ${cityInfo.state}, ${cityInfo.name} theft rates, stolen goods checker ${cityInfo.state}`} />
-        <link rel="canonical" href={`https://safeorstolen.com/city/${city}`} />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         
         {/* Local Business Schema */}
         <script type="application/ld+json">

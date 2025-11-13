@@ -104,7 +104,7 @@ const ProductRoadmapPage: React.FC = () => {
       <Helmet>
         <title>Product Roadmap - Safe or Stolen | Development Timeline & Features</title>
         <meta name="description" content="View our product development roadmap, upcoming features, and launch timeline for SafeOrStolen.com platform and mobile applications." />
-        <link rel="canonical" href="https://safeorstolen.com/roadmap" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
       </Helmet>
 
       <div className="min-h-screen bg-background">

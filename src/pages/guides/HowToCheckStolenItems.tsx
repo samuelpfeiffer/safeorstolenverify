@@ -124,7 +124,7 @@ const HowToCheckStolenItems = () => {
           name="keywords" 
           content="how to check if item stolen, is my item stolen, device check before buying, verify secondhand items, avoid buying stolen goods, stolen item verification guide" 
         />
-        <link rel="canonical" href="https://safeorstolen.com/guides/how-to-check-stolen-items" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>

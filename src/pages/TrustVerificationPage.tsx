@@ -50,7 +50,7 @@ const TrustVerificationPage: React.FC = () => {
         <title>Trust & Security Verification - Safe or Stolen | Certified Secure Platform</title>
         <meta name="description" content="Verify our security certifications, compliance standards, and trust indicators. Safe or Stolen maintains enterprise-grade security with SOC 2, ISO 27001, GDPR, and PCI DSS compliance." />
         <meta name="keywords" content="security verification, trust certification, SOC 2, ISO 27001, GDPR compliant, PCI DSS, secure platform, verified site, security audit, compliance certification" />
-        <link rel="canonical" href="https://safeorstolen.com/trust-verification" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         
         {/* Open Graph */}
         <meta property="og:title" content="Trust & Security Verification - Safe or Stolen" />

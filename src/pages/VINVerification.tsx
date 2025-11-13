@@ -95,7 +95,7 @@ const VINVerification = () => {
           name="keywords" 
           content="VIN check app, verify stolen vehicle, car theft verification, VIN number lookup, stolen car check, vehicle history check, auto theft prevention, check if car stolen" 
         />
-        <link rel="canonical" href="https://safeorstolen.com/vin-verification" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         {structuredData.map((schema, index) => (
           <script key={index} type="application/ld+json">
             {JSON.stringify(schema)}

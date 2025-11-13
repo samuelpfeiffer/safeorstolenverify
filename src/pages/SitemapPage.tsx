@@ -194,7 +194,7 @@ export default function SitemapPage() {
           content={`Browse our complete sitemap with ${totalPages}+ pages including verification services, guides, business solutions, and resources for checking stolen items.`}
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/sitemap" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
       </Helmet>
 
       <div className="min-h-screen bg-background py-12">

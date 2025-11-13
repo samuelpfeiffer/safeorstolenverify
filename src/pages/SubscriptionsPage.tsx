@@ -18,7 +18,7 @@ const SubscriptionsPage = () => {
     <Helmet>
       {/* Tell Google this page should not be indexed - canonical is /pricing */}
       <meta name="robots" content="noindex, follow" />
-      <link rel="canonical" href="https://safeorstolen.com/pricing" />
+      {/* Canonical tag handled by PageSEO component to prevent duplicates */}
       <title>Redirecting to Pricing...</title>
     </Helmet>
   );

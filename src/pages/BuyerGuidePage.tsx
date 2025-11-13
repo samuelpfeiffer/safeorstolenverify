@@ -121,7 +121,7 @@ const BuyerGuidePage = () => {
         <title>Complete Buyer's Guide: How to Avoid Buying Stolen Goods in 2025</title>
         <meta name="description" content="Essential guide for secondhand buyers. Learn how to verify items, spot stolen goods, and protect yourself when buying used electronics, vehicles, jewelry, and more. Free verification tools included." />
         <meta name="keywords" content="buyer guide stolen goods, how to avoid stolen goods, buying secondhand safely, verify before buying, check if item stolen, secondhand market tips, used item verification" />
-        <link rel="canonical" href="https://safeorstolen.com/buyer-guide" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">{JSON.stringify(buyerGuideSchema)}</script>
       </Helmet>
 

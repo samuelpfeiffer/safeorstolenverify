@@ -133,7 +133,7 @@ const IMEICheck = () => {
           name="keywords" 
           content="check if phone is stolen, IMEI checker app, stolen phone lookup, IMEI verification, stolen electronics verification, mobile device history report, free IMEI check, iPhone stolen check, Android IMEI verification" 
         />
-        <link rel="canonical" href="https://safeorstolen.com/imei-check" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         {structuredData.map((schema, index) => (
           <script key={index} type="application/ld+json">
             {JSON.stringify(schema)}
