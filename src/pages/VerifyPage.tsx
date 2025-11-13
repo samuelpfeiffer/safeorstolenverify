@@ -12,6 +12,7 @@ import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 
 const VerifyPage = () => {
   const [identifier, setIdentifier] = useState('');
@@ -34,6 +35,13 @@ const VerifyPage = () => {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="space-y-8">
+        {/* Breadcrumb Navigation */}
+        <BreadcrumbNavigation 
+          items={[
+            { name: 'Verify Item', href: '/verify' }
+          ]}
+        />
+
         {/* Header */}
         <div className="text-center space-y-3">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
