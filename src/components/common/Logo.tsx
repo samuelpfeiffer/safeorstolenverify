@@ -23,8 +23,8 @@ export const Logo: React.FC<LogoProps> = ({
   linkTo = '/'
 }) => {
   const logoImage = (
-    <div className={`${sizeClasses[size]} flex items-center justify-center bg-gradient-to-br from-primary to-secondary rounded-lg ${className}`}>
-      <Shield className="h-full w-full p-1.5 text-primary-foreground" />
+    <div className={`${sizeClasses[size]} flex items-center justify-center bg-primary rounded-lg ${className}`}>
+      <Shield className="h-full w-full p-2 text-primary-foreground" />
     </div>
   );
 
@@ -32,8 +32,8 @@ export const Logo: React.FC<LogoProps> = ({
     <div className="flex items-center gap-3">
       {logoImage}
       <div className="flex flex-col">
-        <span className="text-xl font-bold text-white">SafeOrStolen</span>
-        <span className="text-xs text-sos-lime">Verify. Trust. Buy.</span>
+        <span className="text-xl font-bold text-foreground">SafeOrStolen</span>
+        <span className="text-xs text-muted-foreground">Verify. Trust. Buy.</span>
       </div>
     </div>
   ) : logoImage;

@@ -29,63 +29,44 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
       </div>
       
-      {/* Animated glow effect */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sos-orange/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sos-lime/20 rounded-full blur-[120px] animate-pulse" style={{
-          animationDelay: '1s'
-        }} />
-      </div>
-      
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
         <div className="max-w-5xl mx-auto text-center space-y-10">
           {/* Urgency Banner */}
-          <div className="bg-gradient-to-r from-sos-orange/20 via-sos-lime/20 to-sos-orange/20 border-2 border-sos-orange/30 rounded-2xl p-4 animate-pulse-slow">
-            <p className="text-lg md:text-xl font-bold text-foreground">
-              🔥 <span className="text-sos-orange">LAUNCH SPECIAL:</span> $2.99 Verification (Reg. $4.99) • 
-              <span className="text-sos-lime"> 2 FREE Searches</span> • 48 Hours Only!
+          <div className="bg-card border border-border rounded-lg p-4">
+            <p className="text-base md:text-lg font-semibold text-foreground">
+              🔥 <span className="text-primary">LAUNCH SPECIAL:</span> $2.99 Verification • 
+              <span className="text-secondary"> 2 FREE Searches</span> • 48 Hours Only!
             </p>
           </div>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap justify-center gap-3 animate-fadeIn">
-            <div className="trust-badge">
-              <Shield className="w-4 h-4" />
-              <span>Verified Secure</span>
+          <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex items-center gap-2 bg-card px-3 py-1.5 rounded-full border border-border">
+              <Shield className="w-4 h-4 text-primary" />
+              <span className="text-sm text-muted-foreground">Verified Secure</span>
             </div>
-            <div className="trust-badge">
-              <Database className="w-4 h-4" />
-              <span>50M+ Records</span>
+            <div className="flex items-center gap-2 bg-card px-3 py-1.5 rounded-full border border-border">
+              <Database className="w-4 h-4 text-primary" />
+              <span className="text-sm text-muted-foreground">50M+ Records</span>
             </div>
-            <div className="trust-badge">
-              <Zap className="w-4 h-4" />
-              <span>Instant Results</span>
-            </div>
-            <div className="trust-badge">
-              <TrendingUp className="w-4 h-4" />
-              <span>99.9% Accurate</span>
+            <div className="flex items-center gap-2 bg-card px-3 py-1.5 rounded-full border border-border">
+              <Zap className="w-4 h-4 text-primary" />
+              <span className="text-sm text-muted-foreground">Instant Results</span>
             </div>
           </div>
 
           {/* Main headline */}
-          <div className="space-y-6 animate-slideUp">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
               <span className="block text-foreground">Instantly Search If</span>
-              <span className="block mt-2">
-                <span className="sos-gradient-text">Secondhand Items</span>
-                {' '}Are Stolen
-              </span>
+              <span className="block mt-2 text-primary">Secondhand Items Are Stolen</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Don't risk <span className="text-destructive font-bold">$500-2,000</span> on stolen goods. 
-              Verify phones, cars, electronics before you buy. 
-              <span className="text-sos-lime font-bold"> 500K+ monthly checks</span> preventing theft globally.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Verify phones, cars, electronics before you buy. Protect yourself from buying stolen goods.
             </p>
-            
-            <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 max-w-2xl mx-auto">
-              <p className="text-sm font-semibold text-foreground">
+          </div>
                 ⚠️ <span className="text-sos-orange">23% of checked items are stolen</span> • 
                 Average buyer saves <span className="text-sos-lime">$842</span> by verifying first
               </p>

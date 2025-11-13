@@ -32,19 +32,18 @@ const stats = [
 
 export const StatsTickerBar: React.FC = () => {
   return (
-    <div className="relative overflow-hidden bg-card/20 backdrop-blur-sm border border-border/20 rounded-2xl p-6 mb-12">
+    <div className="relative overflow-hidden bg-card border border-border rounded-lg p-6 mb-12">
       <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
         {stats.map((stat, index) => (
           <div 
             key={index} 
-            className="flex items-center gap-3 animate-slideUp" 
-            style={{ animationDelay: `${index * 0.1}s` }}
+            className="flex items-center gap-3"
           >
-            <div className={`p-2 rounded-lg bg-card/40 ${stat.color}`}>
-              <stat.icon className="h-5 w-5" />
+            <div className="p-2 rounded-lg bg-muted/50">
+              <stat.icon className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <div className={`text-lg font-bold ${stat.color}`}>
+              <div className="text-lg font-bold text-foreground">
                 {stat.value}
               </div>
               <div className="text-xs text-muted-foreground">
@@ -54,9 +53,6 @@ export const StatsTickerBar: React.FC = () => {
           </div>
         ))}
       </div>
-      
-      {/* Animated border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-sos-orange/20 via-sos-lime/20 to-sos-orange/20 opacity-50"></div>
     </div>
   );
 };
