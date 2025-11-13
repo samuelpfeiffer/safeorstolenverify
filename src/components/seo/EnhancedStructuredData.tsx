@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { validateSchema, logSchemaValidation } from '@/utils/seo/schemaValidation';
 
 interface EnhancedStructuredDataProps {
   data: any | any[];
@@ -12,6 +13,15 @@ interface EnhancedStructuredDataProps {
  */
 export const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ data }) => {
   const structuredDataArray = Array.isArray(data) ? data : [data];
+  
+  // Validate schemas in development
+  if (import.meta.env.DEV) {
+    structuredDataArray.forEach((schema, index) => {
+      const schemaType = schema['@type'] || 'Unknown';
+      const result = validateSchema(schema);
+      logSchemaValidation(`${schemaType} #${index + 1}`, result);
+    });
+  }
   
   return (
     <Helmet>
@@ -77,11 +87,17 @@ export const createServiceSchema = (
     "@type": "Service",
     "name": name,
     "description": description,
+    "url": "https://safeorstolen.com",
     "provider": {
       "@type": "Organization",
-      "name": provider
+      "name": provider,
+      "url": "https://safeorstolen.com"
     },
-    "areaServed": "Worldwide",
+    "serviceType": "Stolen Item Verification",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
     "availableChannel": {
       "@type": "ServiceChannel",
       "serviceUrl": "https://safeorstolen.com"
@@ -124,13 +140,21 @@ export const createProductSchema = (
   name: string,
   description: string,
   price: string,
-  url: string = "https://safeorstolen.com/pricing"
+  url: string = "https://safeorstolen.com/pricing",
+  brand: string = "SafeOrStolen",
+  imageUrl: string = "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
 ) => {
   const schema: any = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": name,
     "description": description,
+    "brand": {
+      "@type": "Brand",
+      "name": brand
+    },
+    "image": imageUrl,
+    "url": url,
     "offers": {
       "@type": "Offer",
       "url": url,
@@ -138,7 +162,11 @@ export const createProductSchema = (
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2026-12-31",
-      "validFrom": new Date().toISOString().split('T')[0]
+      "validFrom": new Date().toISOString().split('T')[0],
+      "seller": {
+        "@type": "Organization",
+        "name": brand
+      }
     }
   };
 
@@ -154,7 +182,8 @@ export const createArticleSchema = (
   url: string,
   datePublished: string,
   dateModified?: string,
-  author: string = "SafeOrStolen Team"
+  author: string = "SafeOrStolen Team",
+  imageUrl: string = "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
 ) => {
   return {
     "@context": "https://schema.org",
@@ -162,6 +191,7 @@ export const createArticleSchema = (
     "headline": title,
     "description": description,
     "url": url,
+    "image": imageUrl,
     "datePublished": datePublished,
     "dateModified": dateModified || datePublished,
     "author": {
@@ -171,10 +201,17 @@ export const createArticleSchema = (
     "publisher": {
       "@type": "Organization",
       "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+        "url": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+        "width": 600,
+        "height": 60
       }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url
     }
   };
 };

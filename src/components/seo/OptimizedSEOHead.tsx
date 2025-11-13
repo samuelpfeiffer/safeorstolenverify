@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
+import { validateCanonicalUrl, validateSchema, logSchemaValidation } from '@/utils/seo/schemaValidation';
 
 interface OptimizedSEOHeadProps {
   title: string;
@@ -37,6 +38,12 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://safeorstolen.com${canonical}` : undefined;
   
+  // Validate canonical URL in development
+  if (import.meta.env.DEV && fullCanonicalUrl) {
+    const validation = validateCanonicalUrl(fullCanonicalUrl);
+    logSchemaValidation('Canonical URL', validation);
+  }
+  
   // Enhanced title with proper length optimization
   const optimizedTitle = title.length > 60 ? title.substring(0, 57) + '...' : title;
   
@@ -49,6 +56,15 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       ? structuredData 
       : [structuredData]
     : [];
+
+  // Validate structured data in development
+  if (import.meta.env.DEV) {
+    structuredDataArray.forEach((schema, index) => {
+      const schemaType = schema['@type'] || 'Unknown';
+      const result = validateSchema(schema);
+      logSchemaValidation(`${schemaType} #${index + 1}`, result);
+    });
+  }
 
   return (
     <Helmet>
