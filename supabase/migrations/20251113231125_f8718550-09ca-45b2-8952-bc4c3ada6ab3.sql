@@ -1,0 +1,2 @@
+-- Force TypeScript types regeneration for email_notifications_enabled column
+-- This is a no-op migration to trigger type updates
