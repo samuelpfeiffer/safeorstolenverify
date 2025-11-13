@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -28,6 +28,11 @@ const TopNavigation = () => {
     { to: '/pricing', label: 'Pricing' },
     { to: '/how-it-works', label: 'How It Works' },
     { to: '/blog', label: 'Blog' },
+  ];
+
+  const authenticatedLinks = [
+    { to: '/analytics', label: 'Analytics', icon: 'BarChart' },
+    { to: '/report-stolen', label: 'Report Stolen', icon: 'AlertCircle' },
   ];
 
   return (
@@ -85,6 +90,15 @@ const TopNavigation = () => {
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/search-history')}>
                     History
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => navigate('/analytics')}>
+                    <BarChart className="w-4 h-4 mr-2" />
+                    Analytics
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/report-stolen')}>
+                    <AlertCircle className="w-4 h-4 mr-2" />
+                    Report Stolen
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleSignOut}>
@@ -164,6 +178,28 @@ const TopNavigation = () => {
                     }}
                   >
                     Profile
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                    onClick={() => {
+                      navigate('/analytics');
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    <BarChart className="w-4 h-4" />
+                    Analytics
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start gap-2"
+                    onClick={() => {
+                      navigate('/report-stolen');
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    <AlertCircle className="w-4 h-4" />
+                    Report Stolen
                   </Button>
                   <Button
                     variant="outline"
