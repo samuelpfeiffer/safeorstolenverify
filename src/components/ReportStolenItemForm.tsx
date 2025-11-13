@@ -65,9 +65,10 @@ export function ReportStolenItemForm() {
         return;
       }
 
-      // Insert into stolen_items table (using type assertion for table that will be created)
-      const { error } = await supabase
-        .from('stolen_items' as any)
+      // Insert into stolen_items table
+      // Note: Type assertion needed until Supabase types are regenerated
+      const { error } = await (supabase as any)
+        .from('stolen_items')
         .insert({
           user_id: user.id,
           item_type: data.itemType,
