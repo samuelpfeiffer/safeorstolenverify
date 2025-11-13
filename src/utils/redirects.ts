@@ -1,6 +1,7 @@
 /**
  * URL Redirect Configuration
  * Handles 404s, duplicates, and legacy URLs from Google Search Console
+ * Last updated: 2025-11-13
  */
 
 export interface RedirectRule {
