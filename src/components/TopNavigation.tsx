@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, Shield } from 'lucide-react';
+import { Menu, X, User, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import sosLogo from '@/assets/sos-logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,9 +36,11 @@ const TopNavigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sos-orange to-sos-lime flex items-center justify-center shadow-elegant group-hover:shadow-elegant-lg transition-shadow">
-              <Shield className="w-6 h-6 text-white" />
-            </div>
+            <img 
+              src={sosLogo} 
+              alt="SafeOrStolen Logo" 
+              className="h-12 w-auto transition-transform group-hover:scale-105"
+            />
             <span className="text-2xl font-black tracking-tight">
               <span className="text-foreground">Safe</span>
               <span className="text-sos-orange">Or</span>
