@@ -20,7 +20,7 @@ const Hero = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue.trim()) {
-      navigate(`/verify?q=${encodeURIComponent(searchValue)}${itemType ? `&type=${itemType}` : ''}`);
+      navigate(`/dashboard?q=${encodeURIComponent(searchValue)}${itemType ? `&type=${itemType}` : ''}`);
     }
   };
 
