@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/lib/auth';
 import { Loader, AlertCircle, Search, Clock, CheckCircle, XCircle } from 'lucide-react';
@@ -68,10 +69,23 @@ export default function Dashboard() {
     }
   }, [user]);
 
+  // Handle URL query parameter for pre-filled search
+  const [searchParams] = useSearchParams();
+  useEffect(() => {
+    const queryParam = searchParams.get('q');
+    const typeParam = searchParams.get('type');
+    if (queryParam && !searchQuery) {
+      setSearchQuery(queryParam);
+      if (typeParam) {
+        setSearchType(typeParam);
+      }
+    }
+  }, [searchParams]);
+
   async function loadUserStats() {
     try {
       const { data, error } = await supabase
-        .from('user_stats')
+        .from('user_stats' as any)
         .select('*')
         .eq('user_id', user!.id)
         .single();
@@ -80,16 +94,16 @@ export default function Dashboard() {
 
       if (data) {
         setUserStats({
-          freeSearchesUsed: data.free_searches_used || 0,
+          freeSearchesUsed: (data as any).free_searches_used || 0,
           freeSearchesLimit: 2,
-          freeSearchesExpiry: data.free_searches_expiry,
-          isSubscribed: data.is_subscribed || false
+          freeSearchesExpiry: (data as any).free_searches_expiry,
+          isSubscribed: (data as any).is_subscribed || false
         });
       } else {
         const expiryDate = new Date();
         expiryDate.setDate(expiryDate.getDate() + 7);
         
-        await supabase.from('user_stats').insert({
+        await supabase.from('user_stats' as any).insert({
           user_id: user!.id,
           free_searches_used: 0,
           free_searches_expiry: expiryDate.toISOString(),
@@ -111,14 +125,14 @@ export default function Dashboard() {
   async function loadSearchHistory() {
     try {
       const { data, error } = await supabase
-        .from('search_history')
+        .from('search_history' as any)
         .select('*')
         .eq('user_id', user!.id)
         .order('created_at', { ascending: false })
         .limit(10);
 
       if (error) throw error;
-      setSearchHistory(data || []);
+      setSearchHistory((data as any) || []);
     } catch (error) {
       console.error('Error loading search history:', error);
     }
@@ -207,7 +221,7 @@ export default function Dashboard() {
   async function searchSupabase(identifier: string, type: string): Promise<SearchSource> {
     try {
       const { data, error } = await supabase
-        .from('stolen_items')
+        .from('stolen_items' as any)
         .select('*')
         .or(`imei.eq.${identifier},vin.eq.${identifier},serial_number.eq.${identifier}`)
         .limit(10);
@@ -333,7 +347,7 @@ export default function Dashboard() {
 
   async function saveSearchHistory(identifier: string, type: string, results: SearchResults) {
     try {
-      await supabase.from('search_history').insert([{
+      await supabase.from('search_history' as any).insert([{
         user_id: user!.id,
         identifier: identifier,
         search_type: type,
@@ -349,7 +363,7 @@ export default function Dashboard() {
   async function incrementSearchCount() {
     try {
       await supabase
-        .from('user_stats')
+        .from('user_stats' as any)
         .update({ free_searches_used: userStats.freeSearchesUsed + 1 })
         .eq('user_id', user!.id);
 
@@ -368,7 +382,7 @@ export default function Dashboard() {
       expiryDate.setDate(expiryDate.getDate() + 7);
 
       await supabase
-        .from('user_stats')
+        .from('user_stats' as any)
         .update({
           free_searches_used: 0,
           free_searches_expiry: expiryDate.toISOString()
