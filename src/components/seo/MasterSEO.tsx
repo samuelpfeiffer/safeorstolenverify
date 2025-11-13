@@ -3,12 +3,15 @@ import { Helmet } from 'react-helmet-async';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
- * Master SEO Component - Single source of truth for all SEO
- * Fixes Google Search Console issues:
- * - Eliminates duplicate canonical tags
- * - Ensures proper 200 status codes
- * - Prevents redirect loops
- * - Sets correct indexing directives
+ * Master SEO Component - Global SEO configuration
+ * 
+ * IMPORTANT: This component handles ONLY global SEO elements:
+ * - Robots meta tags
+ * - Global structured data (Organization, WebSite schemas)
+ * - Site verification tags
+ * - DNS prefetch hints
+ * 
+ * Page-specific SEO (title, description, canonical) is handled by PageSEO component
  */
 export const MasterSEO: React.FC = () => {
   const location = useSafeLocation();
@@ -35,30 +38,6 @@ export const MasterSEO: React.FC = () => {
       }
     }
   }, []);
-
-  // Generate clean canonical URL
-  const generateCanonicalUrl = (pathname: string): string => {
-    // Clean up path - remove trailing slashes except for root
-    let cleanPath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '');
-    
-    // No redirects - use actual pathname for canonical
-    // Redirects are handled in AppRoutes.tsx
-    const canonical = `https://safeorstolen.com${cleanPath}`;
-    
-    // Debug logging in development
-    if (import.meta.env.DEV) {
-      console.log('🔗 MasterSEO Canonical:', {
-        pathname,
-        cleanPath,
-        canonical,
-        timestamp: new Date().toISOString()
-      });
-    }
-    
-    return canonical;
-  };
-  
-  const canonicalUrl = generateCanonicalUrl(location.pathname);
   
   // Determine indexing status - exclude private/user-specific pages
   const shouldIndex = !location.pathname.includes('/admin') && 
@@ -105,9 +84,9 @@ export const MasterSEO: React.FC = () => {
   };
 
   return (
-    <Helmet prioritizeSeoTags>
-      {/* Core canonical and indexing directives - HIGHEST PRIORITY */}
-      <link rel="canonical" href={canonicalUrl} />
+    <Helmet>
+      {/* NOTE: Canonical tags are handled by PageSEO/OptimizedSEOHead on each page */}
+      {/* Removing canonical from here to prevent duplicates (caused 98 indexing errors in GSC) */}
       
       {/* Robots directives - clear and specific */}
       <meta name="robots" content={shouldIndex ? 
@@ -118,10 +97,6 @@ export const MasterSEO: React.FC = () => {
         "index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30" : 
         "noindex, nofollow"
       } />
-      
-      {/* Prevent duplicate content issues */}
-      <meta property="og:url" content={canonicalUrl} />
-      <link rel="alternate" href={canonicalUrl} hrefLang="en" />
       
       {/* Site verification */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
