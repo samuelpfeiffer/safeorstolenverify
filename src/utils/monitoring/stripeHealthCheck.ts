@@ -22,14 +22,17 @@ export interface StripeHealthResult {
 export const checkStripeHealth = async (): Promise<StripeHealthResult> => {
   const issues: StripeHealthIssue[] = [];
   
-  // Check 1: Verify Stripe environment variables exist
-  const hasPublishableKey = !!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+  // Check 1: Verify Stripe publishable key exists (from config or env)
+  const { getStripePublishableKey } = await import('@/config/stripe');
+  const publishableKey = getStripePublishableKey();
+  const hasPublishableKey = !!publishableKey && publishableKey.startsWith('pk_');
+  
   if (!hasPublishableKey) {
     issues.push({
       severity: 'critical',
       component: 'Configuration',
-      message: 'VITE_STRIPE_PUBLISHABLE_KEY is missing',
-      fix: 'Add Stripe publishable key to environment variables'
+      message: 'Stripe publishable key is missing or invalid',
+      fix: 'Configure Stripe publishable key in src/config/stripe.ts'
     });
   }
 
