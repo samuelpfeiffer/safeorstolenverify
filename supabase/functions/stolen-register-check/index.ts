@@ -64,24 +64,63 @@ serve(async (req) => {
 
     const html = await response.text();
     
-    // Simple detection - look for common result indicators
-    const hasResults = html.includes('search-result') || 
-                      html.includes('property-item') ||
-                      html.includes('stolen-item') ||
-                      (html.includes('found') && !html.includes('no results'));
+    // Use AI to parse HTML intelligently
+    console.log('[STOLEN-REGISTER] Using AI to parse HTML...');
+    const aiParseResponse = await fetch(
+      `${supabaseUrl}/functions/v1/ai-html-parser`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabaseKey}`
+        },
+        body: JSON.stringify({
+          html,
+          identifier,
+          source: 'StolenRegister.com'
+        })
+      }
+    );
+
+    let hasResults = false;
+    let aiDetails = 'No reports found';
+    let confidence = 50;
+
+    if (aiParseResponse.ok) {
+      const aiData = await aiParseResponse.json();
+      if (aiData.success && aiData.result) {
+        hasResults = aiData.result.hasStolenItems;
+        confidence = aiData.result.confidence;
+        aiDetails = aiData.result.summary;
+        
+        if (aiData.result.items?.length > 0) {
+          const item = aiData.result.items[0];
+          aiDetails = `${aiData.result.summary}\n${item.description || ''}\nReport Date: ${item.reportDate || 'Unknown'}\nLocation: ${item.location || 'Unknown'}`;
+        }
+      }
+    } else {
+      console.warn('[STOLEN-REGISTER] AI parsing failed, falling back to simple detection');
+      // Fallback to simple detection
+      hasResults = html.includes('search-result') || 
+                   html.includes('property-item') ||
+                   html.includes('stolen-item') ||
+                   (html.includes('found') && !html.includes('no results'));
+      aiDetails = hasResults 
+        ? 'Visit StolenRegister.com to view full details'
+        : 'No reports found';
+    }
 
     const result = {
       source: 'StolenRegister.com',
       found: hasResults,
       status: hasResults ? 'stolen' : 'safe',
+      confidence,
       message: hasResults 
-        ? '⚠️ Potential match found in StolenRegister database' 
-        : '✓ Not found in StolenRegister',
+        ? '⚠️ AI detected match in StolenRegister database' 
+        : '✓ AI confirmed not found in StolenRegister',
       provider: 'StolenRegister.com',
       identifier: identifier,
-      details: hasResults 
-        ? 'Visit StolenRegister.com to view full details'
-        : 'No reports found',
+      details: aiDetails,
       link: `https://www.stolenregister.com/search?q=${encodeURIComponent(identifier)}`,
       timestamp: new Date().toISOString()
     };

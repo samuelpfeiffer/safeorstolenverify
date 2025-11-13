@@ -108,3 +108,6 @@ verify_jwt = false
 [functions.process-stolen-notifications]
 verify_jwt = false
 
+[functions.ai-html-parser]
+verify_jwt = true
+

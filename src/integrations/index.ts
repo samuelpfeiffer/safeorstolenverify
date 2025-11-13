@@ -40,6 +40,9 @@ export const EdgeFunctions = {
   aiCompetitorAnalysis: 'ai-competitor-analysis',
   aiContentOptimizer: 'ai-content-optimizer',
   aiRankingAnalyzer: 'ai-ranking-analyzer',
+  
+  // AI Parsing Functions
+  aiHtmlParser: 'ai-html-parser',
 } as const;
 
 /**
