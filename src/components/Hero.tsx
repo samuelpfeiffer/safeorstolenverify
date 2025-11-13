@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Shield, Zap, Database, TrendingUp, ScanLine, Smartphone } from 'lucide-react';
+import { Search, Shield, Zap, Database, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -31,10 +31,10 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
-        <div className="max-w-5xl mx-auto text-center space-y-10">
-          {/* Urgency Banner */}
-          <div className="bg-card border border-border rounded-lg p-4">
-            <p className="text-base md:text-lg font-semibold text-foreground">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          {/* Banner */}
+          <div className="bg-card border border-border rounded-lg p-3">
+            <p className="text-sm md:text-base font-medium text-foreground">
               🔥 <span className="text-primary">LAUNCH SPECIAL:</span> $2.99 Verification • 
               <span className="text-secondary"> 2 FREE Searches</span> • 48 Hours Only!
             </p>
@@ -57,41 +57,32 @@ const Hero = () => {
           </div>
 
           {/* Main headline */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
               <span className="block text-foreground">Instantly Search If</span>
               <span className="block mt-2 text-primary">Secondhand Items Are Stolen</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Verify phones, cars, electronics before you buy. Protect yourself from buying stolen goods.
             </p>
           </div>
-                ⚠️ <span className="text-sos-orange">23% of checked items are stolen</span> • 
-                Average buyer saves <span className="text-sos-lime">$842</span> by verifying first
-              </p>
-            </div>
-          </div>
 
           {/* Search form */}
-          <div className="max-w-4xl mx-auto animate-slideUp" style={{
-            animationDelay: '0.2s'
-          }}>
+          <div className="max-w-3xl mx-auto">
             <form onSubmit={handleSearch} className="space-y-4">
-              <div className="modern-card p-3 rounded-2xl shadow-elegant-lg">
+              <div className="bg-card p-4 rounded-lg border border-border">
                 <div className="flex flex-col md:flex-row gap-3">
-                  <div className="flex-1">
-                    <Input 
-                      type="text" 
-                      placeholder="Enter IMEI, VIN, Serial Number..." 
-                      value={searchValue} 
-                      onChange={e => setSearchValue(e.target.value)} 
-                      className="h-16 text-lg bg-background border-border/50 focus-visible:ring-2 focus-visible:ring-sos-orange rounded-xl" 
-                    />
-                  </div>
+                  <Input 
+                    type="text" 
+                    placeholder="Enter IMEI, VIN, Serial Number..." 
+                    value={searchValue} 
+                    onChange={e => setSearchValue(e.target.value)} 
+                    className="flex-1 h-12 text-base"
+                  />
                   <Select value={itemType} onValueChange={setItemType}>
-                    <SelectTrigger className="h-16 w-full md:w-56 bg-background border-border/50 rounded-xl">
-                      <SelectValue placeholder="Item Type (Optional)" />
+                    <SelectTrigger className="h-12 w-full md:w-48">
+                      <SelectValue placeholder="Item Type" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="phone">📱 Phone</SelectItem>
@@ -106,83 +97,50 @@ const Hero = () => {
                     type="submit" 
                     size="lg" 
                     disabled={!searchValue.trim()} 
-                    className="h-16 px-10 sos-gradient hover:opacity-90 text-white font-bold text-lg rounded-xl shadow-orange hover:shadow-elegant transition-all"
+                    className="h-12 px-8"
                   >
                     <Search className="w-5 h-5 mr-2" />
-                    Search Free
+                    Verify Now
                   </Button>
                 </div>
               </div>
               
-              <p className="text-sm text-muted-foreground">
-                <span className="text-sos-orange font-bold">2 FREE</span> searches (14-day trial)
-                {' • '}
-                <span className="text-sos-lime font-semibold">50M+</span> records
-                {' • '}
-                Instant verification
-                {' • '}
-                No credit card required
+              <p className="text-sm text-muted-foreground text-center">
+                <span className="text-primary font-semibold">2 FREE</span> searches • 
+                <span className="text-secondary font-semibold"> 50M+</span> records • 
+                Instant verification • No credit card required
               </p>
             </form>
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-slideUp" style={{
-            animationDelay: '0.4s'
-          }}>
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
             <Button 
               size="lg" 
-              onClick={() => navigate('/dashboard')} 
-              className="sos-gradient hover:opacity-90 text-white font-bold text-lg px-8 h-14 rounded-xl shadow-orange hover:shadow-elegant transition-all"
+              onClick={() => navigate('/mobile-app')}
+              className="gap-2"
             >
-              <ScanLine className="w-5 h-5 mr-2" />
-              Scan Now
-            </Button>
-            <Button 
-              size="lg" 
-              onClick={() => navigate('/mobile-app')} 
-              className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-bold text-lg px-8 h-14 rounded-xl shadow-lime hover:shadow-elegant transition-all"
-            >
-              <Smartphone className="w-5 h-5 mr-2" />
+              <Smartphone className="w-5 h-5" />
               Download App
-            </Button>
-            <Button 
-              size="lg" 
-              onClick={() => navigate('/auth?mode=signup')} 
-              className="bg-background border-2 border-border hover:bg-secondary/50 text-foreground font-semibold text-lg px-8 h-14 rounded-xl transition-all"
-            >
-              Get Started Free
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              onClick={() => navigate('/how-it-works')} 
-              className="border-2 border-border text-muted-foreground hover:bg-secondary/30 font-semibold text-lg px-8 h-14 rounded-xl transition-all"
-            >
-              See How It Works
             </Button>
           </div>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto pt-12 border-t border-border/30">
-            <div className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-black sos-gradient-text">50M+</div>
-              <div className="text-sm font-semibold text-muted-foreground">Verified Records</div>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-black text-sos-lime">99.9%</div>
-              <div className="text-sm font-semibold text-muted-foreground">Accuracy Rate</div>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-black text-sos-orange">&lt;30s</div>
-              <div className="text-sm font-semibold text-muted-foreground">Fast Results</div>
-            </div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-8">
+            {[
+              { value: "2M+", label: "Items Verified" },
+              { value: "50K+", label: "Active Users" },
+              { value: "99.9%", label: "Accuracy" },
+              { value: "24/7", label: "Support" }
+            ].map((stat, i) => (
+              <div key={i} className="text-center p-4 rounded-lg bg-card border border-border">
+                <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 };
