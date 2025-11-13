@@ -19,6 +19,7 @@ const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
+const RedirectTestPage = lazy(() => import('@/pages/RedirectTestPage'));
 
 // Blog
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
@@ -309,6 +310,9 @@ export const AppRoutes = () => {
         <Route path="/bulk" element={<Navigate to="/verify" replace />} />
         <Route path="/vin" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
+
+        {/* Redirect Test Page - Development Tool */}
+        <Route path="/redirect-test" element={<RedirectTestPage />} />
 
         {/* 404 - Must be last */}
         <Route path="*" element={<NotFound />} />
