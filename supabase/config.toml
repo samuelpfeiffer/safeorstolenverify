@@ -102,4 +102,9 @@ verify_jwt = false
 [functions.autonomous-master-scheduler]
 verify_jwt = false
 
+[functions.send-stolen-item-alert]
+verify_jwt = false
+
+[functions.process-stolen-notifications]
+verify_jwt = false
 
