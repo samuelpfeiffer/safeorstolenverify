@@ -21,6 +21,13 @@ export const EdgeFunctions = {
   verifyClaudeAnalysis: 'verify-claude-analysis',
   enhancedVerification: 'enhanced-verification',
   
+  // External Source Scrapers
+  stolenRegisterCheck: 'stolen-register-check',
+  stolen911Check: 'stolen911-check',
+  stolenPropertyCheck: 'stolen-property-check',
+  stolenlostfoundCheck: 'stolenlostfound-check',
+  bikeIndexApi: 'bike-index-api',
+  
   // API Functions
   apiV1Check: 'api-v1-check',
   enterpriseApi: 'enterprise-api',

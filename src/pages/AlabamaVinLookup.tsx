@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Shield, Search, AlertTriangle, CheckCircle2, Car, Database, Phone } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -86,6 +87,13 @@ export default function AlabamaVinLookup() {
       />
 
       <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <BreadcrumbNavigation
+          items={[
+            { name: 'VIN Lookup', href: '/verify' },
+            { name: 'Alabama VIN Lookup', href: '/alabama-vin-lookup' }
+          ]}
+          className="mb-6"
+        />
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Shield className="h-12 w-12 text-primary" />

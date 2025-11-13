@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -11,7 +12,7 @@ serve(async (req) => {
   }
 
   try {
-    const { identifier, itemType } = await req.json();
+    const { identifier } = await req.json();
     
     if (!identifier) {
       return new Response(
@@ -22,52 +23,78 @@ serve(async (req) => {
 
     console.log(`[STOLEN-REGISTER] Checking: ${identifier}`);
 
-    // StolenRegister.com - Free worldwide registry
-    // Public API endpoint (if available) or redirect mode
-    
-    const STOLEN_REGISTER_API_KEY = Deno.env.get('STOLEN_REGISTER_API_KEY');
-    
-    if (!STOLEN_REGISTER_API_KEY) {
-      console.warn('[STOLEN-REGISTER] API key not configured - returning redirect URL');
+    // Initialize Supabase client for caching
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Check cache first (24-hour TTL)
+    const { data: cached } = await supabase
+      .from('external_verification_cache')
+      .select('*')
+      .eq('identifier', identifier)
+      .eq('source', 'StolenRegister')
+      .gt('expires_at', new Date().toISOString())
+      .single();
+
+    if (cached) {
+      console.log('[STOLEN-REGISTER] Cache hit');
       return new Response(
-        JSON.stringify({
-          status: 'redirect_required',
-          message: 'StolenRegister provides free public checks',
-          redirect_url: `https://www.stolenregister.com/check`,
-          instructions: 'Visit StolenRegister.com and enter your serial number, IMEI, VIN, or other identifier. This is a free worldwide registry.',
-          provider: 'StolenRegister.com',
-          identifier: identifier,
-          note: 'Free public database - no API key required for manual checks'
-        }),
+        JSON.stringify({ ...cached.result, cached: true }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    // If API integration becomes available
-    const response = await fetch(`https://api.stolenregister.com/v1/check`, {
-      method: 'POST',
+    // Rate limiting delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Use CORS proxy for scraping
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const searchUrl = `https://www.stolenregister.com/search?q=${encodeURIComponent(identifier)}`;
+    
+    const response = await fetch(proxyUrl + encodeURIComponent(searchUrl), {
       headers: {
-        'Authorization': `Bearer ${STOLEN_REGISTER_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ identifier, item_type: itemType })
+        'User-Agent': 'SafeOrStolen.com Verification Service'
+      }
     });
 
     if (!response.ok) {
-      throw new Error(`StolenRegister API error: ${response.status}`);
+      throw new Error(`HTTP ${response.status}`);
     }
 
-    const data = await response.json();
+    const html = await response.text();
+    
+    // Simple detection - look for common result indicators
+    const hasResults = html.includes('search-result') || 
+                      html.includes('property-item') ||
+                      html.includes('stolen-item') ||
+                      (html.includes('found') && !html.includes('no results'));
 
     const result = {
-      status: data.stolen ? 'stolen' : 'safe',
-      message: data.stolen 
-        ? '⚠️ Item found in StolenRegister database'
-        : '✓ No reports found in StolenRegister',
+      source: 'StolenRegister.com',
+      found: hasResults,
+      status: hasResults ? 'stolen' : 'safe',
+      message: hasResults 
+        ? '⚠️ Potential match found in StolenRegister database' 
+        : '✓ Not found in StolenRegister',
       provider: 'StolenRegister.com',
       identifier: identifier,
-      details: data
+      details: hasResults 
+        ? 'Visit StolenRegister.com to view full details'
+        : 'No reports found',
+      link: `https://www.stolenregister.com/search?q=${encodeURIComponent(identifier)}`,
+      timestamp: new Date().toISOString()
     };
+
+    // Cache the result for 24 hours
+    await supabase
+      .from('external_verification_cache')
+      .upsert({
+        identifier,
+        source: 'StolenRegister',
+        result,
+        expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+      });
 
     return new Response(
       JSON.stringify(result),
@@ -79,7 +106,8 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         status: 'error',
-        message: 'StolenRegister check failed',
+        source: 'StolenRegister.com',
+        message: 'Unable to check StolenRegister at this time',
         error: error.message 
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
