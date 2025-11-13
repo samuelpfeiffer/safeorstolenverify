@@ -69,7 +69,8 @@ export const createServiceSchema = (
   name: string,
   description: string,
   provider: string = "SafeOrStolen",
-  price: string = "0"
+  price: string = "0",
+  url: string = "https://safeorstolen.com/pricing"
 ) => {
   return {
     "@context": "https://schema.org",
@@ -87,8 +88,12 @@ export const createServiceSchema = (
     },
     "offers": {
       "@type": "Offer",
+      "url": url,
       "price": price,
-      "priceCurrency": "USD"
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-12-31",
+      "validFrom": new Date().toISOString().split('T')[0]
     }
   };
 };
@@ -118,7 +123,8 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 export const createProductSchema = (
   name: string,
   description: string,
-  price: string
+  price: string,
+  url: string = "https://safeorstolen.com/pricing"
 ) => {
   const schema: any = {
     "@context": "https://schema.org",
@@ -127,9 +133,12 @@ export const createProductSchema = (
     "description": description,
     "offers": {
       "@type": "Offer",
+      "url": url,
       "price": price,
       "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-12-31",
+      "validFrom": new Date().toISOString().split('T')[0]
     }
   };
 
