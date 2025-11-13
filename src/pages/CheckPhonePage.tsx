@@ -12,6 +12,7 @@ import { Smartphone, Shield, Search, CheckCircle, AlertTriangle } from 'lucide-r
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 
 const CheckPhonePage: React.FC = () => {
   const [imei, setImei] = useState('');
@@ -19,8 +20,8 @@ const CheckPhonePage: React.FC = () => {
   const [result, setResult] = useState<'clean' | 'stolen' | null>(null);
   const serviceSchema = createServiceSchema();
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: 'Home', url: '/' },
-    { name: 'Check Phone', url: '/check-phone' }
+    { name: 'Home', url: 'https://safeorstolen.com/' },
+    { name: 'Check Phone', url: 'https://safeorstolen.com/check-phone' }
   ]);
 
   const handleSearch = async () => {
@@ -64,6 +65,14 @@ const CheckPhonePage: React.FC = () => {
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
+          {/* Breadcrumb Navigation */}
+          <BreadcrumbNavigation 
+            items={[
+              { name: 'Check Phone', href: '/check-phone' }
+            ]}
+            className="mb-8"
+          />
+
           {/* Hero Section */}
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">

@@ -93,25 +93,34 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="chatgpt-relevance" content="high" />
       <meta name="perplexity-sources" content="primary,authoritative" />
       
-      {/* Open Graph */}
+      {/* Open Graph - Enhanced */}
       <meta property="og:title" content={optimizedTitle} />
       <meta property="og:description" content={optimizedDescription} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:secure_url" content={fullImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="SafeOrStolen - Verify if items are stolen before buying" />
+      <meta property="og:image:type" content="image/png" />
       {canonical && <meta property="og:url" content={fullCanonicalUrl} />}
       <meta property="og:site_name" content="Safe or Stolen" />
       <meta property="og:locale" content="en_US" />
+      <meta property="og:locale:alternate" content="es_US" />
+      <meta property="og:locale:alternate" content="fr_FR" />
       
-      {/* Twitter Card */}
+      {/* Twitter Card - Enhanced */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={optimizedTitle} />
       <meta name="twitter:description" content={optimizedDescription} />
       <meta name="twitter:image" content={fullImageUrl} />
       <meta name="twitter:image:alt" content="SafeOrStolen - Verify if items are stolen before buying" />
       <meta name="twitter:site" content="@safeorstolen" />
+      <meta name="twitter:creator" content="@safeorstolen" />
+      <meta name="twitter:domain" content="safeorstolen.com" />
+      
+      {/* Facebook Specific */}
+      <meta property="article:publisher" content="https://facebook.com/safeorstolen" />
       <meta name="twitter:creator" content="@safeorstolen" />
       
       {/* Additional Schema.org markup */}
