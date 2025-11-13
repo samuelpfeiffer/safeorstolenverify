@@ -33,7 +33,9 @@ export const NotificationSettings = () => {
       if (error) throw error;
 
       if (data) {
-        setEmailNotifications(data.email_notifications_enabled ?? true);
+        // Type assertion for column that exists but isn't in auto-generated types yet
+        const notificationsEnabled = (data as any).email_notifications_enabled;
+        setEmailNotifications(notificationsEnabled ?? true);
       }
     } catch (error) {
       console.error('Error loading notification settings:', error);
@@ -50,9 +52,10 @@ export const NotificationSettings = () => {
   async function updateNotificationSetting(enabled: boolean) {
     try {
       setSaving(true);
+      // Type assertion for column that exists but isn't in auto-generated types yet
       const { error } = await supabase
         .from('profiles')
-        .update({ email_notifications_enabled: enabled })
+        .update({ email_notifications_enabled: enabled } as any)
         .eq('id', user!.id);
 
       if (error) throw error;
