@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { CompetitiveKeywords } from '@/components/seo/CompetitiveKeywords';
 import { AdvancedKeywordOptimizer } from '@/components/seo/AdvancedKeywordOptimizer';
 import { KeywordOptimizedContent } from '@/components/seo/KeywordOptimizedContent';
@@ -55,6 +56,10 @@ const CheckElectronicsPage: React.FC = () => {
       
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50 py-12">
         <div className="container mx-auto px-4">
+          <div className="mb-8">
+            <BreadcrumbNavigation items={[{ name: 'Check Electronics', href: '/check-electronics' }]} />
+          </div>
+          
           {/* Hero Section */}
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">

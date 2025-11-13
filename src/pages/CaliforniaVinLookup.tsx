@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -78,6 +79,12 @@ export default function CaliforniaVinLookup() {
 
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">
+          <div className="mb-8">
+            <BreadcrumbNavigation items={[
+              { name: 'VIN Lookup', href: '/vin-lookup' },
+              { name: 'California', href: '/california-vin-lookup' }
+            ]} />
+          </div>
           {/* Header */}
           <header className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
