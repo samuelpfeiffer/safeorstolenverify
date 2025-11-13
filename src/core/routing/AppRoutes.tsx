@@ -23,6 +23,10 @@ const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
 const RedirectTestPage = lazy(() => import('@/pages/RedirectTestPage'));
 
+// Analytics & Reporting
+const Analytics = lazy(() => import('@/pages/Analytics'));
+const ReportStolen = lazy(() => import('@/pages/ReportStolen'));
+
 // Blog
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
@@ -184,6 +188,10 @@ export const AppRoutes = () => {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/transparency" element={<TransparencyPage />} />
         <Route path="/service-limitations" element={<ServiceLimitations />} />
+        
+        {/* Analytics & Reporting */}
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/report-stolen" element={<ReportStolen />} />
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
