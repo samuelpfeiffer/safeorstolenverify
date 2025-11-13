@@ -66,7 +66,7 @@ const SellerGuidePage = () => {
         <title>Seller's Guide: Prove Your Items Are Legitimate & Sell Faster in 2025</title>
         <meta name="description" content="Essential guide for secondhand sellers. Learn how to verify your items, build buyer trust, and sell 3x faster with verification certificates. Protect yourself from false accusations." />
         <meta name="keywords" content="seller guide secondhand, prove item legitimate, verification certificate seller, sell faster verified items, secondhand marketplace seller tips, avoid selling stolen goods" />
-        <link rel="canonical" href="https://safeorstolen.com/seller-guide" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">{JSON.stringify(sellerGuideSchema)}</script>
       </Helmet>
 

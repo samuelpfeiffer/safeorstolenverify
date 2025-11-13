@@ -12,7 +12,7 @@ const TransparencyPage: React.FC = () => {
       <Helmet>
         <title>Transparency Report - Safe or Stolen | Platform Statistics & Operations</title>
         <meta name="description" content="View our quarterly transparency report including platform statistics, data handling practices, law enforcement cooperation, and operational details." />
-        <link rel="canonical" href="https://safeorstolen.com/transparency" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
       </Helmet>
 
       <div className="min-h-screen bg-background">

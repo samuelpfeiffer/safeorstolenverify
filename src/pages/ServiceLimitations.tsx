@@ -8,7 +8,7 @@ export const ServiceLimitations: React.FC = () => {
         <title>Service Limitations - Safe Or Stolen</title>
         <meta name="description" content="Understanding the limitations and scope of our verification services for stolen item checking." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/service-limitations" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
       </Helmet>
       
       <div className="min-h-screen bg-background">

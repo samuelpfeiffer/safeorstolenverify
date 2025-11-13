@@ -48,7 +48,7 @@ const HowToCheckLaptopStolenPage = () => {
         <title>How to Check if a Laptop is Stolen Before Buying | Instant Serial Number Verification</title>
         <meta name="description" content="Learn how to instantly check if a used laptop is stolen. Find the serial number, verify against stolen property databases, and buy secondhand laptops safely. Free guide + verification tool." />
         <meta name="keywords" content="how to check if laptop stolen, laptop serial number check, used laptop verification, stolen electronics check, secondhand laptop safety, verify laptop not stolen" />
-        <link rel="canonical" href="https://safeorstolen.com/how-to-check-if-laptop-stolen" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 

@@ -92,7 +92,7 @@ const TheftTrendsBlogPage = () => {
         <title>2024 Theft Trends Report: What's Being Stolen and Where | SafeOrStolen</title>
         <meta name="description" content="Latest theft trends and statistics for 2024. See what items are being stolen most, regional hotspots, and expert prevention strategies to protect yourself." />
         <meta name="keywords" content="theft trends 2024, stolen items statistics, crime prevention, theft hotspots, stolen goods data, theft prevention tips" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/2024-theft-trends-report" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         
         {/* Article Schema */}
         <script type="application/ld+json">

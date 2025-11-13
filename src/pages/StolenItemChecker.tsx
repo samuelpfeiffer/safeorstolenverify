@@ -75,7 +75,7 @@ const StolenItemChecker = () => {
           name="keywords" 
           content="stolen item checker, check if stolen, is this stolen, verify not stolen, how do i check if stolen, stolen goods search, free stolen check, stolen property check, stolen item search, check stolen goods, IMEI check, VIN verification, serial number check, stolen phone check, stolen car check, stolen vehicle database, stolen items list, check stolen database, stolen item lookup, verify serial number, imei stolen check, vin stolen check, check if phone was stolen, check if car was stolen, free verification, marketplace safety, anti-fraud protection" 
         />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-item-checker" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>

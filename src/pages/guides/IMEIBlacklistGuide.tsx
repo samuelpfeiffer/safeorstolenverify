@@ -92,7 +92,7 @@ const IMEIBlacklistGuide = () => {
           name="keywords" 
           content="IMEI blacklist check, IMEI block status, phone blacklist check, what is IMEI blacklist, check if phone blocked, carrier blacklist lookup" 
         />
-        <link rel="canonical" href="https://safeorstolen.com/guides/imei-blacklist-explained" />
+        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
