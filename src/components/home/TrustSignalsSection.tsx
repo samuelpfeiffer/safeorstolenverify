@@ -1,42 +1,38 @@
 import { Shield, Lock, Award, Database, Zap, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-export const TrustSignalsSection = () => {
-  const trustBadges = [{
-    icon: Shield,
-    title: "Law Enforcement Partner",
-    description: "Integrated with police databases nationwide",
-    color: "text-primary"
-  }, {
-    icon: Lock,
-    title: "Stripe Secured Payments",
-    description: "Bank-level encryption for all transactions",
-    color: "text-secondary"
-  }, {
-    icon: Database,
-    title: "3,000+ Global Databases",
-    description: "NICB, GSMA, CheckMEND, Police databases",
-    color: "text-accent"
-  }, {
-    icon: Award,
-    title: "SOC 2 Type II Certified",
-    description: "Enterprise-grade security compliance",
-    color: "text-primary"
-  }, {
-    icon: Zap,
-    title: "Real-Time Verification",
-    description: "Instant results in 30 seconds or less",
-    color: "text-secondary"
-  }, {
-    icon: Users,
-    title: "100,000+ Trust Us",
-    description: "Join marketplace buyers & sellers worldwide",
-    color: "text-accent"
-  }];
-  return <section className="py-20 bg-muted/5">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
+export const TrustSignalsSection = () => {
+  const trustBadges = [
+    {
+      icon: Shield,
+      title: "Law Enforcement Partner",
+      description: "Integrated with police databases nationwide",
+      color: "text-primary"
+    },
+    {
+      icon: Lock,
+      title: "Stripe Secured Payments",
+      description: "Bank-level encryption for all transactions",
+      color: "text-secondary"
+    },
+    {
+      icon: Database,
+      title: "3,000+ Global Databases",
+      description: "NICB, GSMA, CheckMEND, Police databases",
+      color: "text-accent"
+    },
+    {
+      icon: Award,
+      title: "SOC 2 Type II Certified",
+      description: "Enterprise-grade security compliance",
+      color: "text-primary"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-muted/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -48,8 +44,9 @@ export const TrustSignalsSection = () => {
         </div>
 
         {/* Trust Badges Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {trustBadges.slice(0, 4).map((badge, index) => <Card key={index} className="p-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {trustBadges.map((badge, index) => (
+            <Card key={index} className="p-6">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <badge.icon className="h-6 w-6 text-primary" />
               </div>
@@ -59,59 +56,63 @@ export const TrustSignalsSection = () => {
               <p className="text-sm text-muted-foreground">
                 {badge.description}
               </p>
-            </Card>)}
+            </Card>
+          ))}
         </div>
 
-        {/* Database Sources Count */}
-        <Card className="p-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 max-w-4xl mx-auto">
-          <div className="text-center">
-            <Database className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Now Searching 3,000+ Police & Insurance Databases
-            </h3>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Real-time access to NICB, GSMA, CheckMEND, Bike Index, ATF, state police databases, and international stolen goods registries
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border">
-              <div>
-                <div className="text-3xl font-bold text-primary mb-1">50+</div>
-                <div className="text-sm text-muted-foreground">Countries</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-1">127M+</div>
-                <div className="text-sm text-muted-foreground">Items Tracked</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-1">24/7</div>
-                <div className="text-sm text-muted-foreground">Real-Time</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary mb-1">30s</div>
-                <div className="text-sm text-muted-foreground">Results</div>
+        {/* Database Stats */}
+        <div className="mt-12">
+          <Card className="p-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <Database className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                3,000+ Databases Worldwide
+              </h3>
+              <p className="text-base text-muted-foreground mb-6">
+                Real-time access to NICB, GSMA, CheckMEND, and international registries
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                  <div className="text-xs text-muted-foreground">Countries</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">127M+</div>
+                  <div className="text-xs text-muted-foreground">Items Tracked</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+                  <div className="text-xs text-muted-foreground">Real-Time</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">30s</div>
+                  <div className="text-xs text-muted-foreground">Results</div>
+                </div>
               </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
 
         {/* Compliance Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-6 mt-16 pt-12 border-t border-border max-w-4xl mx-auto">
-          <Badge variant="outline" className="px-6 py-3 text-base">
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-12 max-w-4xl mx-auto">
+          <Badge variant="outline" className="px-4 py-2">
             <Lock className="h-4 w-4 mr-2" />
-            GDPR Compliant
+            GDPR
           </Badge>
-          <Badge variant="outline" className="px-6 py-3 text-base">
+          <Badge variant="outline" className="px-4 py-2">
             <Shield className="h-4 w-4 mr-2" />
-            SOC 2 Type II
+            SOC 2
           </Badge>
-          <Badge variant="outline" className="px-6 py-3 text-base">
+          <Badge variant="outline" className="px-4 py-2">
             <Award className="h-4 w-4 mr-2" />
             ISO 27001
           </Badge>
-          <Badge variant="outline" className="px-6 py-3 text-base">
+          <Badge variant="outline" className="px-4 py-2">
             <Lock className="h-4 w-4 mr-2" />
-            PCI DSS Level 1
+            PCI DSS
           </Badge>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
