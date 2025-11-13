@@ -225,8 +225,53 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
               <div className="flex items-center gap-2">
                 <CertifiedSafeBadge size="sm" />
               </div>
+              
+              {/* Trust Badge Description */}
+              <div className="space-y-3 bg-primary/5 p-4 rounded-lg border border-primary/20">
+                <h4 className="font-semibold text-foreground flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-primary" />
+                  Your Trust Badge - Proof of Authenticity
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  You've received an official SafeOrStolen Trust Badge - a verified digital certificate that proves your item is legitimate and clear of any theft or loss reports.
+                </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">Buyer Protection:</span>
+                      <span className="text-muted-foreground"> Show potential buyers your item has been professionally verified</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">Instant Credibility:</span>
+                      <span className="text-muted-foreground"> Display the badge on listings or social media to build trust</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">Legal Documentation:</span>
+                      <span className="text-muted-foreground"> Keep as proof of due diligence in your records</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <span className="font-medium text-foreground">Shareable Verification:</span>
+                      <span className="text-muted-foreground"> Embed or link the badge anywhere to demonstrate authenticity</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground italic border-t border-primary/10 pt-3">
+                  This isn't just a checkmark - it's your shield against fraud and your guarantee of legitimacy.
+                </p>
+              </div>
+
               <p className="text-sm text-muted-foreground">
-                However, always verify the seller's identity and request proof of ownership.
+                Always verify the seller's identity and request proof of ownership before completing any transaction.
               </p>
               
               {/* Embeddable Trust Badge */}
