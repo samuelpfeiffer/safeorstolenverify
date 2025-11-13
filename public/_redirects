@@ -1,70 +1,115 @@
 # Lovable Platform Redirects for Safe Or Stolen
-# Force canonical domain: https://safeorstolen.com (non-www, HTTPS only)
+# Corrected redirects to fix Google Search Console canonical tag issues
+# Last updated: 2025-11-13
 
-# CRITICAL: Force all HTTP to HTTPS and www to non-www
+# ============================================
+# FORCE CANONICAL DOMAIN (non-www, HTTPS)
+# ============================================
 http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
 http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
-# Specific redirects to prevent Google Search Console issues
-/terms /terms-of-service 301!
-/imei /imei-check 301!
-/imei-checker /imei-check 301!
-/vin-checker /vin-verification 301!
-/vin /vin-verification 301!
-/serial-checker /stolen-item-checker 301!
-/verify /stolen-item-checker 301!
+# ============================================
+# DUPLICATE APP URLS (GSC Errors)
+# ============================================
+/imei-checker-app       /mobile-app  301!
+/mobile-verification    /mobile-app  301!
+/get-app                /mobile-app  301!
+/install-app            /mobile-app  301!
+/verification-app       /mobile-app  301!
+/android-app            /mobile-app  301!
+/ios-app                /mobile-app  301!
 
-# Consolidate checker pages for better SEO authority
-/check-phone /imei-check 301!
-/check-car /vin-verification 301!
-/check-electronics /stolen-item-checker 301!
-/check-bike /stolen-item-checker 301!
+# ============================================
+# LEGACY VERIFICATION URLS (GSC Errors)
+# ============================================
+/verify-not-stolen          /verify  301!
+/stolen-merchandise-check   /verify  301!
+/verification-hub           /verify  301!
 
-# E-commerce routes that don't apply to our verification service - redirect to services
-/wishlist /services 301!
-/cart /services 301!
-/shopping-cart /services 301!
+# ============================================
+# LEGACY CHECKER URLS (GSC Errors)
+# ============================================
+/imei-checker           /imei-check  301!
+/vin-verification       /check-car   301!
+/serial-number-checker  /verify      301!
+/stolen-item-checker    /verify      301!
 
-# RSS Feed redirects for Google Discover Follow feature
-/feed.xml /rss 200
-/rss.xml /rss 200  
-/atom.xml /rss 200
+# ============================================
+# BLOG POST REDIRECTS (GSC 404s)
+# ============================================
+/blog/ultimate-marketplace-buyers-guide                        /blog            301!
+/blog/complete-imei-guide-protect-yourself                     /blog            301!
+/blog/safeorstolen-firearms-marketplace-verification           /firearms-check  301!
+/blog/complete-verification-guide-stolen-goods-check           /how-it-works    301!
+/blog/data-source-credibility-stolen-goods-verification        /data-sources    301!
+/blog/mobile-app-features                                      /mobile-app      301!
+/blog/industry-insights-2024                                   /blog            301!
+/blog/what-to-do-if-you-bought-stolen                          /blog            301!
+/blog/ai-verification-technology                               /blog            301!
+/blog/verification-data-privacy                                /privacy         301!
+/blog/serial-numbers-stolen-goods-101                          /blog            301!
+/blog/enterprise-security                                      /for-brands      301!
 
-# Sitemap redirects
-/sitemap.xml /sitemap 200
+# Blog posts with timestamps (pattern match)
+/blog/*-:timestamp      /blog  301!
 
-# SEO content redirects for better URL structure
-/ultimate-guide-buying-safely /guide/buying-safely 301
-/stolen-goods-statistics-2024 /statistics/stolen-goods-2024 301
+# ============================================
+# SOFT 404 REDIRECTS (GSC Errors)
+# ============================================
+/bulk                   /verify      301!
+/stolen-property-lookup /verify      301!
+/vin                    /check-car   301!
 
-# Blog post redirects for consistency  
-/blog/real-user-stories-stolen-goods-verification /blog/real-user-stories 301!
-/blog/data-source-credibility-stolen-goods-verification /blog/data-source-credibility 301!
+# ============================================
+# OTHER LEGACY URLS
+# ============================================
+/avoid-buying-stolen-goods                          /how-it-works      301!
+/imei                                               /check-phone       301!
+/stolen-items-database                              /data-sources      301!
+/how-to-check-if-anything-is-stolen-before-you-buy  /how-it-works      301!
+/disclaimer                                         /terms-of-service  301!
+/our-story                                          /about             301!
+/enterprise-demo                                    /for-brands        301!
+/for-consumers                                      /                  301!
+/fastercapital/tech-cofounder                       /fastercapital/raise-capital  301!
 
-# Consolidate duplicate stolen goods checker routes
-/stolen-merchandise-check /stolen-goods-checker 301!
+# ============================================
+# LEGACY REDIRECTS (Keep for compatibility)
+# ============================================
+/terms  /terms-of-service  301!
 
-# Handle API routes (don't redirect)
-/api/* /api/:splat 200
+# ============================================
+# RSS & SITEMAP REWRITES
+# ============================================
+/feed.xml    /rss      200
+/rss.xml     /rss      200  
+/atom.xml    /rss      200
+/sitemap.xml /sitemap  200
 
-# Static assets should serve correctly
-/*.js /:splat 200
-/*.css /:splat 200
-/*.png /:splat 200
-/*.jpg /:splat 200
-/*.jpeg /:splat 200
-/*.gif /:splat 200
-/*.svg /:splat 200
-/*.webp /:splat 200
-/*.ico /:splat 200
-/*.woff /:splat 200
-/*.woff2 /:splat 200
-/*.ttf /:splat 200
-/*.eot /:splat 200
-/*.xml /:splat 200
-/*.txt /:splat 200
-/*.json /:splat 200
+# ============================================
+# STATIC ASSETS (Don't redirect)
+# ============================================
+/api/*    /api/:splat    200
+/*.js     /:splat        200
+/*.css    /:splat        200
+/*.png    /:splat        200
+/*.jpg    /:splat        200
+/*.jpeg   /:splat        200
+/*.gif    /:splat        200
+/*.svg    /:splat        200
+/*.webp   /:splat        200
+/*.ico    /:splat        200
+/*.woff   /:splat        200
+/*.woff2  /:splat        200
+/*.ttf    /:splat        200
+/*.eot    /:splat        200
+/*.xml    /:splat        200
+/*.txt    /:splat        200
+/*.json   /:splat        200
+/*.map    /:splat        200
 
-# SPA fallback - serve index.html for all other routes
-/* /index.html 200
+# ============================================
+# SPA FALLBACK (MUST BE LAST)
+# ============================================
+/*  /index.html  200
