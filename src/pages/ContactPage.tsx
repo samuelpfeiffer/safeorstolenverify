@@ -1,4 +1,4 @@
-
+import { BreadcrumbNavigation } from "@/components/seo/BreadcrumbNavigation";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home, Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -66,9 +66,13 @@ const ContactPage = () => {
         title="Contact Safe or Stolen - Support, Partnerships & Media Inquiries"
         description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: support@safeorstolen.com"
         keywords="contact safe or stolen, customer support, stolen goods verification support, IMEI check help, VIN verification support, partnership inquiries, media contact"
+        canonical="/contact"
         structuredData={[localBusinessSchema, breadcrumbSchema]}
       />
-      <div className="container mx-auto px-4 pt-24 pb-16">
+      <div className="container mx-auto px-4 pt-24 pb-4">
+        <BreadcrumbNavigation items={[{ name: 'Contact', href: '/contact' }]} />
+      </div>
+      <div className="container mx-auto px-4 pb-16">
         <h1 className="text-3xl font-bold mb-4 text-center">Contact Us</h1>
         <p className="text-lg text-center max-w-2xl mx-auto mb-8">Questions? We're here to help.</p>
         

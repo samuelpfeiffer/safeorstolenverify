@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, Lock, Globe, Clock } from 'lucide-react';
 
@@ -88,6 +89,10 @@ const HowItWorksPage = () => {
       />
 
       <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'How It Works', href: '/how-it-works' }]} />
+        </div>
+        
         {/* Simplified Hero */}
         <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4 text-center">

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
 import { 
   Shield, 
@@ -24,6 +25,10 @@ const ForBrandsPage: React.FC = () => {
       />
       
       <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'For Brands', href: '/for-brands' }]} />
+        </div>
+        
         {/* Hero Section */}
         <section className="py-24 bg-gradient-to-br from-primary/10 to-background">
           <div className="container mx-auto px-4">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Users, Award, Lock, CheckCircle, Building } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { FounderStory } from '@/components/story/FounderStory';
@@ -113,10 +114,15 @@ const AboutPage = () => {
         title="About SafeOrStolen - Trusted Stolen Item Verification"
         description="Industry-leading verification service checking IMEI, VIN, and serial numbers against law enforcement databases. 99.7% accuracy, instant results, trusted by 500K+ users worldwide."
         keywords="about safeorstolen, stolen item verification, IMEI checker, VIN verification, secondhand safety"
+        canonical="/about"
         structuredData={structuredData}
       />
       
       <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'About Us', href: '/about' }]} />
+        </div>
+        
         {/* Simplified Hero Section */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-4">

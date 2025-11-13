@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -129,10 +130,15 @@ const FAQPage = () => {
         title="FAQ - Frequently Asked Questions About Stolen Item Verification"
         description="Get answers to common questions about SafeOrStolen.com's verification process, accuracy rates, supported items, privacy policy, and pricing. 99.7% accuracy guaranteed."
         keywords="safeorstolen FAQ, stolen item verification questions, IMEI check questions, VIN verification help, serial number verification guide"
+        canonical="/faq"
         structuredData={structuredData}
       />
       
       <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'FAQ', href: '/faq' }]} />
+        </div>
+        
         {/* Simplified Hero */}
         <section className="py-12 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-4">

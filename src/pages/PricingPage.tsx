@@ -10,6 +10,7 @@ import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useToast } from "@/hooks/use-toast";
 import { useOneTimePayment } from "@/hooks/useOneTimePayment";
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
 import { isInIframe } from '@/utils/navigationUtils';
@@ -291,6 +292,10 @@ const PricingPage = () => {
         )}
         
         <UrgencyBanner />
+        
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'Pricing', href: '/pricing' }]} />
+        </div>
         
         <ConversionOptimizedPricing 
           onSubscribe={handleSubscribe}
