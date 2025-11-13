@@ -1,5 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, CheckCircle, Award, TrendingUp, Users, FileCheck } from 'lucide-react';
@@ -69,8 +71,22 @@ const SellerGuidePage = () => {
         {/* Canonical tag handled by PageSEO component to prevent duplicates */}
         <script type="application/ld+json">{JSON.stringify(sellerGuideSchema)}</script>
       </Helmet>
+      
+      <PageSEO
+        title="Seller's Guide: Prove Your Items Are Legitimate & Sell Faster | SafeOrStolen"
+        description="Essential guide for secondhand sellers. Learn how to verify your items, build buyer trust, and sell 3x faster with verification certificates."
+        keywords="seller guide secondhand, prove item legitimate, verification certificate seller, sell faster verified items"
+        canonical="/seller-guide"
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[
+            { name: 'Guides', href: '/guides' },
+            { name: 'Seller Guide', href: '/seller-guide' }
+          ]} />
+        </div>
+        
         <div className="container mx-auto px-4 py-20">
           {/* Hero */}
           <div className="text-center mb-16">

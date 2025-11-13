@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -55,6 +56,13 @@ const SafeOrStolenVsCheckMendPage = () => {
       />
 
       <div className="min-h-screen bg-gradient-to-br from-background to-muted/50">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[
+            { name: 'Comparisons', href: '/comparisons' },
+            { name: 'vs CheckMEND', href: '/safeorstolen-vs-checkmend' }
+          ]} />
+        </div>
+        
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-sos-dark to-sos">
           <div className="container mx-auto px-4">

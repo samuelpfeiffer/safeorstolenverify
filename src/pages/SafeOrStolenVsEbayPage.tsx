@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { AISearchOptimizer } from '@/components/seo/AISearchOptimizer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -83,6 +84,13 @@ export default function SafeOrStolenVsEbayPage() {
       />
 
       <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <div className="mb-8">
+          <BreadcrumbNavigation items={[
+            { name: 'Comparisons', href: '/comparisons' },
+            { name: 'vs eBay', href: '/safeorstolen-vs-ebay' }
+          ]} />
+        </div>
+        
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
