@@ -5,13 +5,24 @@
 export const getCanonicalUrl = (path: string): string => {
   const baseUrl = 'https://safeorstolen.com'; // Always use non-www version for canonical
   
+  // Handle empty or invalid paths
+  if (!path || path === '') {
+    return baseUrl;
+  }
+  
+  // Remove query parameters and hash fragments for canonical URLs
+  const cleanPath = path.split('?')[0].split('#')[0];
+  
   // Remove trailing slashes except for root
-  const cleanPath = path === '/' ? path : path.replace(/\/+$/, '');
+  const trimmedPath = cleanPath === '/' ? cleanPath : cleanPath.replace(/\/+$/, '');
   
   // Ensure path starts with /
-  const normalizedPath = cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`;
+  const normalizedPath = trimmedPath.startsWith('/') ? trimmedPath : `/${trimmedPath}`;
   
-  return `${baseUrl}${normalizedPath}`;
+  // Remove double slashes
+  const finalPath = normalizedPath.replace(/\/+/g, '/');
+  
+  return `${baseUrl}${finalPath}`;
 };
 
 export const normalizeCanonicalUrl = (url: string): string => {
