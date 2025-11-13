@@ -26,6 +26,7 @@ import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { useFreemiumFlow } from '@/hooks/useFreemiumFlow';
 import { PaywallModal } from '@/components/dashboard/PaywallModal';
 import { useToast } from '@/hooks/use-toast';
+import { NotificationSettings } from '@/components/settings/NotificationSettings';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
@@ -401,47 +402,51 @@ const DashboardPage = () => {
 
       case 'settings':
         return (
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Settings className="h-5 w-5" />
-                Account Settings
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div>
-                    <label className="text-sm font-medium">Full Name</label>
-                    <p className="text-sm text-muted-foreground">{userProfile?.full_name || 'Not set'}</p>
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Settings className="h-5 w-5" />
+                  Account Settings
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <label className="text-sm font-medium">Full Name</label>
+                      <p className="text-sm text-muted-foreground">{userProfile?.full_name || 'Not set'}</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium">Email</label>
+                      <p className="text-sm text-muted-foreground">{user?.email}</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium">Account Type</label>
+                      <p className="text-sm text-muted-foreground">
+                        {isSubscribed ? 'Premium' : 'Free'}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-sm font-medium">Email</label>
-                    <p className="text-sm text-muted-foreground">{user?.email}</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium">Account Type</label>
-                    <p className="text-sm text-muted-foreground">
-                      {isSubscribed ? 'Premium' : 'Free'}
-                    </p>
+                  <div className="space-y-4">
+                    <Button variant="outline" className="w-full">
+                      Update Profile
+                    </Button>
+                    <Button asChild className="w-full">
+                      <Link to="/subscriptions">
+                        {isSubscribed ? 'Manage Subscription' : 'Upgrade Account'}
+                      </Link>
+                    </Button>
+                    <Button variant="outline" onClick={signOut} className="w-full">
+                      Sign Out
+                    </Button>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <Button variant="outline" className="w-full">
-                    Update Profile
-                  </Button>
-                  <Button asChild className="w-full">
-                    <Link to="/subscriptions">
-                      {isSubscribed ? 'Manage Subscription' : 'Upgrade Account'}
-                    </Link>
-                  </Button>
-                  <Button variant="outline" onClick={signOut} className="w-full">
-                    Sign Out
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+            
+            <NotificationSettings />
+          </div>
         );
 
       default:
