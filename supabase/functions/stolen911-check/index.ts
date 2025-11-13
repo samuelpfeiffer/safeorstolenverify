@@ -64,24 +64,63 @@ serve(async (req) => {
 
     const html = await response.text();
     
-    // Detect results - Stolen911 has specific markers
-    const hasResults = html.includes('stolen-item') || 
-                      html.includes('report-date') ||
-                      html.includes('item-title') ||
-                      (html.toLowerCase().includes('found') && html.toLowerCase().includes('report'));
+    // Use AI to parse HTML intelligently
+    console.log('[STOLEN911] Using AI to parse HTML...');
+    const aiParseResponse = await fetch(
+      `${supabaseUrl}/functions/v1/ai-html-parser`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabaseKey}`
+        },
+        body: JSON.stringify({
+          html,
+          identifier,
+          source: 'Stolen911.com'
+        })
+      }
+    );
+
+    let hasResults = false;
+    let aiDetails = 'No reports found in detective database';
+    let confidence = 50;
+
+    if (aiParseResponse.ok) {
+      const aiData = await aiParseResponse.json();
+      if (aiData.success && aiData.result) {
+        hasResults = aiData.result.hasStolenItems;
+        confidence = aiData.result.confidence;
+        aiDetails = `Police detective database: ${aiData.result.summary}`;
+        
+        if (aiData.result.items?.length > 0) {
+          const item = aiData.result.items[0];
+          aiDetails += `\n${item.description || ''}\nCase: ${item.caseNumber || 'N/A'}\nLocation: ${item.location || 'Unknown'}`;
+        }
+      }
+    } else {
+      console.warn('[STOLEN911] AI parsing failed, falling back to simple detection');
+      // Fallback to simple detection
+      hasResults = html.includes('stolen-item') || 
+                   html.includes('report-date') ||
+                   html.includes('item-title') ||
+                   (html.toLowerCase().includes('found') && html.toLowerCase().includes('report'));
+      aiDetails = hasResults 
+        ? 'Police detective-founded database - Visit site for full details'
+        : 'No reports found in detective database';
+    }
 
     const result = {
       source: 'Stolen911.com',
       found: hasResults,
       status: hasResults ? 'stolen' : 'safe',
+      confidence,
       message: hasResults 
-        ? '⚠️ Item may be in Stolen911 database' 
-        : '✓ Not found in Stolen911',
+        ? '⚠️ AI detected item in Stolen911 database' 
+        : '✓ AI confirmed not found in Stolen911',
       provider: 'Stolen911.com',
       identifier: identifier,
-      details: hasResults 
-        ? 'Police detective-founded database - Visit site for full details'
-        : 'No reports found in detective database',
+      details: aiDetails,
       link: `https://www.stolen911.com/search?q=${encodeURIComponent(identifier)}`,
       timestamp: new Date().toISOString()
     };

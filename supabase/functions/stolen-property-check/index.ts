@@ -64,24 +64,63 @@ serve(async (req) => {
 
     const html = await response.text();
     
-    // Detect results
-    const hasResults = html.includes('property-result') || 
-                      html.includes('stolen-property') ||
-                      html.includes('search-match') ||
-                      (html.includes('serial') && html.includes('match'));
+    // Use AI to parse HTML intelligently
+    console.log('[STOLEN-PROPERTY] Using AI to parse HTML...');
+    const aiParseResponse = await fetch(
+      `${supabaseUrl}/functions/v1/ai-html-parser`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabaseKey}`
+        },
+        body: JSON.stringify({
+          html,
+          identifier,
+          source: 'Stolen-Property.com'
+        })
+      }
+    );
+
+    let hasResults = false;
+    let aiDetails = 'No international reports found';
+    let confidence = 50;
+
+    if (aiParseResponse.ok) {
+      const aiData = await aiParseResponse.json();
+      if (aiData.success && aiData.result) {
+        hasResults = aiData.result.hasStolenItems;
+        confidence = aiData.result.confidence;
+        aiDetails = `International database: ${aiData.result.summary}`;
+        
+        if (aiData.result.items?.length > 0) {
+          const item = aiData.result.items[0];
+          aiDetails += `\n${item.description || ''}\nLocation: ${item.location || 'Unknown'}\nSerial: ${item.serialNumber || identifier}`;
+        }
+      }
+    } else {
+      console.warn('[STOLEN-PROPERTY] AI parsing failed, falling back to simple detection');
+      // Fallback to simple detection
+      hasResults = html.includes('property-result') || 
+                   html.includes('stolen-property') ||
+                   html.includes('search-match') ||
+                   (html.includes('serial') && html.includes('match'));
+      aiDetails = hasResults 
+        ? 'International stolen property database - Check site for details'
+        : 'No international reports found';
+    }
 
     const result = {
       source: 'Stolen-Property.com',
       found: hasResults,
       status: hasResults ? 'stolen' : 'safe',
+      confidence,
       message: hasResults 
-        ? '⚠️ Match found in international database' 
-        : '✓ Not found in Stolen-Property.com',
+        ? '⚠️ AI detected match in international database' 
+        : '✓ AI confirmed not found in Stolen-Property.com',
       provider: 'Stolen-Property.com',
       identifier: identifier,
-      details: hasResults 
-        ? 'International stolen property database - Check site for details'
-        : 'No international reports found',
+      details: aiDetails,
       link: `https://www.stolen-property.com/search?q=${encodeURIComponent(identifier)}`,
       timestamp: new Date().toISOString()
     };
