@@ -35,12 +35,12 @@ const VerifyPage = () => {
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="space-y-8">
         {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <div className="text-center space-y-3">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             Verify Item Status
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Check if an item is stolen or safe across multiple databases simultaneously
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+            Check if an item is stolen or safe across multiple databases
           </p>
         </div>
 
@@ -85,7 +85,7 @@ const VerifyPage = () => {
                 type="submit"
                 size="lg"
                 disabled={isLoading || !identifier.trim()}
-                className="w-full text-lg py-6"
+                className="w-full"
               >
                 {isLoading ? (
                   <>

@@ -34,50 +34,29 @@ export const TrustSignalsSection = () => {
     description: "Join marketplace buyers & sellers worldwide",
     color: "text-accent"
   }];
-  return <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+  return <section className="py-20 bg-muted/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* FasterCapital Banner */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <Card className="p-8 bg-gradient-to-r from-primary/10 via-background to-secondary/10 border-2 border-primary/20">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <Badge className="mb-3 bg-primary text-primary-foreground">
-                  🚀 Accelerator Partner
-                </Badge>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Backed by FasterCapital
-                </h3>
-                <p className="text-muted-foreground">Accelerated startup funding for global expansion</p>
-              </div>
-              <FasterCapitalBranding />
-            </div>
-          </Card>
-        </div>
 
         {/* Main Heading */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
-            <Shield className="h-4 w-4" />
-            <span>Enterprise-Grade Security & Trust</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Buyers, Sellers & Businesses Trust SafeOrStolen
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Why Trust SafeOrStolen
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The only verification platform with law enforcement partnerships, real-time database access, and enterprise security
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Enterprise-grade security with real-time database access
           </p>
         </div>
 
         {/* Trust Badges Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-          {trustBadges.map((badge, index) => <Card key={index} className="p-8 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl group">
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <badge.icon className={`h-7 w-7 ${badge.color}`} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {trustBadges.slice(0, 4).map((badge, index) => <Card key={index} className="p-6">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <badge.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 {badge.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground">
                 {badge.description}
               </p>
             </Card>)}
