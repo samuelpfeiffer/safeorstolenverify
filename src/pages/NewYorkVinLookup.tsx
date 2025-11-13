@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +17,13 @@ export default function NewYorkVinLookup() {
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">
+          <div className="mb-8">
+            <BreadcrumbNavigation items={[
+              { name: 'VIN Lookup', href: '/vin-lookup' },
+              { name: 'New York', href: '/new-york-vin-lookup' }
+            ]} />
+          </div>
+          
           <header className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
               <Shield className="h-12 w-12 text-sos-orange mr-3" />

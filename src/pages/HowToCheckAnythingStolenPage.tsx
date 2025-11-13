@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -179,11 +180,18 @@ const HowToCheckAnythingStolenPage = () => {
         title="How to Check if Anything is Stolen Before You Buy - Complete Verification Guide"
         description="Step-by-step guide to verify any item before purchase. Check phones, cars, bikes, electronics for stolen status. Protect yourself on Facebook Marketplace, eBay, Craigslist."
         keywords="how to check if stolen, verify before buying, check stolen phone, VIN stolen check, serial number verification, Facebook Marketplace check, eBay safety, stolen item lookup"
-        canonical="/how-to-check-if-anything-is-stolen-before-you-buy"
+        canonical="/how-to-check-anything-stolen"
         structuredData={combinedSchema}
       />
 
       <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[
+            { name: 'Guides', href: '/guides' },
+            { name: 'How to Check Anything Stolen', href: '/how-to-check-anything-stolen' }
+          ]} />
+        </div>
+        
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/10 to-background py-20">
           <div className="max-w-4xl mx-auto px-6 text-center">

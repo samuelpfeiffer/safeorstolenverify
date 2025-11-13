@@ -1,5 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Shield, AlertTriangle, CheckCircle, Search, FileText, DollarSign, Scale } from 'lucide-react';
@@ -126,6 +128,20 @@ const BuyerGuidePage = () => {
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <PageSEO
+          title="Complete Buyer's Guide: How to Avoid Buying Stolen Goods in 2025"
+          description="Essential guide for secondhand buyers. Learn how to verify items, spot stolen goods, and protect yourself when buying used electronics, vehicles, jewelry, and more. Free verification tools included."
+          keywords="buyer guide stolen goods, how to avoid stolen goods, buying secondhand safely, verify before buying, check if item stolen, secondhand market tips, used item verification"
+          canonical="/buyer-guide"
+        />
+        
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[
+            { name: 'Guides', href: '/guides' },
+            { name: 'Buyer Guide', href: '/buyer-guide' }
+          ]} />
+        </div>
+        
         <div className="container mx-auto px-4 py-20">
           {/* Hero */}
           <div className="text-center mb-16">
