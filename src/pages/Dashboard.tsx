@@ -17,10 +17,10 @@ interface UserStats {
 }
 
 interface SearchHistoryItem {
-  identifier: string;
-  search_type: string;
+  serial_number: string;
+  item_type: string;
   created_at: string;
-  results: any;
+  result: any;
 }
 
 interface SearchSource {
@@ -85,36 +85,20 @@ export default function Dashboard() {
   async function loadUserStats() {
     try {
       const { data, error } = await supabase
-        .from('user_stats' as any)
+        .from('profiles')
         .select('*')
-        .eq('user_id', user!.id)
+        .eq('id', user!.id)
         .single();
 
-      if (error && error.code !== 'PGRST116') throw error;
+      if (error) throw error;
 
       if (data) {
+        const isSubscribed = data.subscription_tier && data.subscription_tier !== 'free';
         setUserStats({
-          freeSearchesUsed: (data as any).free_searches_used || 0,
+          freeSearchesUsed: data.free_searches_used || 0,
           freeSearchesLimit: 2,
-          freeSearchesExpiry: (data as any).free_searches_expiry,
-          isSubscribed: (data as any).is_subscribed || false
-        });
-      } else {
-        const expiryDate = new Date();
-        expiryDate.setDate(expiryDate.getDate() + 7);
-        
-        await supabase.from('user_stats' as any).insert({
-          user_id: user!.id,
-          free_searches_used: 0,
-          free_searches_expiry: expiryDate.toISOString(),
-          is_subscribed: false
-        });
-        
-        setUserStats({
-          freeSearchesUsed: 0,
-          freeSearchesLimit: 2,
-          freeSearchesExpiry: expiryDate.toISOString(),
-          isSubscribed: false
+          freeSearchesExpiry: data.trial_end_date,
+          isSubscribed: isSubscribed
         });
       }
     } catch (error) {
@@ -125,7 +109,7 @@ export default function Dashboard() {
   async function loadSearchHistory() {
     try {
       const { data, error } = await supabase
-        .from('search_history' as any)
+        .from('verification_searches')
         .select('*')
         .eq('user_id', user!.id)
         .order('created_at', { ascending: false })
@@ -347,12 +331,12 @@ export default function Dashboard() {
 
   async function saveSearchHistory(identifier: string, type: string, results: SearchResults) {
     try {
-      await supabase.from('search_history' as any).insert([{
+      await supabase.from('verification_searches').insert({
         user_id: user!.id,
-        identifier: identifier,
-        search_type: type,
-        results: results as any
-      }]);
+        serial_number: identifier,
+        item_type: type,
+        result: results as any
+      });
       
       await loadSearchHistory();
     } catch (error) {
@@ -363,9 +347,11 @@ export default function Dashboard() {
   async function incrementSearchCount() {
     try {
       await supabase
-        .from('user_stats' as any)
-        .update({ free_searches_used: userStats.freeSearchesUsed + 1 })
-        .eq('user_id', user!.id);
+        .from('profiles')
+        .update({ 
+          free_searches_used: userStats.freeSearchesUsed + 1 
+        })
+        .eq('id', user!.id);
 
       setUserStats(prev => ({
         ...prev,
@@ -382,12 +368,12 @@ export default function Dashboard() {
       expiryDate.setDate(expiryDate.getDate() + 7);
 
       await supabase
-        .from('user_stats' as any)
+        .from('profiles')
         .update({
           free_searches_used: 0,
-          free_searches_expiry: expiryDate.toISOString()
+          trial_end_date: expiryDate.toISOString()
         })
-        .eq('user_id', user!.id);
+        .eq('id', user!.id);
 
       setUserStats(prev => ({
         ...prev,
@@ -528,29 +514,29 @@ export default function Dashboard() {
               <CardContent>
                 <div className="space-y-3">
                   {searchHistory.map((search, idx) => (
-                    <div 
-                      key={idx}
-                      className="flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted/80 cursor-pointer transition-colors"
-                      onClick={() => {
-                        setSearchQuery(search.identifier);
-                        setSearchType(search.search_type);
-                      }}
-                    >
-                      <div className="flex items-center gap-3">
-                        <Clock className="h-4 w-4 text-muted-foreground" />
-                        <div>
-                          <p className="font-medium">{search.identifier}</p>
-                          <p className="text-sm text-muted-foreground">
-                            {search.search_type.toUpperCase()} • {new Date(search.created_at).toLocaleDateString()}
-                          </p>
-                        </div>
+                  <div 
+                    key={idx}
+                    className="flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted/80 cursor-pointer transition-colors"
+                    onClick={() => {
+                      setSearchQuery(search.serial_number);
+                      setSearchType(search.item_type);
+                    }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Clock className="h-4 w-4 text-muted-foreground" />
+                      <div>
+                        <p className="font-medium">{search.serial_number}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {search.item_type.toUpperCase()} • {new Date(search.created_at).toLocaleDateString()}
+                        </p>
                       </div>
-                      {search.results?.supabase?.found || search.results?.external?.some((e: SearchSource) => e.found) ? (
-                        <XCircle className="h-5 w-5 text-destructive" />
-                      ) : (
-                        <CheckCircle className="h-5 w-5 text-sos-lime" />
-                      )}
                     </div>
+                    {search.result?.supabase?.found || search.result?.external?.some((e: SearchSource) => e.found) ? (
+                      <XCircle className="h-5 w-5 text-destructive" />
+                    ) : (
+                      <CheckCircle className="h-5 w-5 text-sos-lime" />
+                    )}
+                  </div>
                   ))}
                 </div>
               </CardContent>
