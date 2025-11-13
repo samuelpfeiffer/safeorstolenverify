@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { LazyImage } from '@/components/optimized/LazyImage';
 
 const featuredPosts = [
   {
@@ -53,13 +54,13 @@ export const FeaturedBlogSection = () => {
           {featuredPosts.map((post, index) => (
             <Link key={index} to={`/blog/${post.slug}`} className="group">
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+                <LazyImage
+                  src={post.image}
+                  alt={post.title}
+                  aspectRatio="16/9"
+                  containerClassName="w-full"
+                  className="group-hover:scale-105 transition-transform duration-300"
+                />
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-3">
                     <Badge variant="secondary" className="bg-sos-orange/10 text-sos-orange">

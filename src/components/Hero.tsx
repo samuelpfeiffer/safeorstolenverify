@@ -4,6 +4,7 @@ import { Search, Shield, Zap, Database, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useImageOptimization } from '@/hooks/useImageOptimization';
 
 // Import hero background
 const heroBackground = '/generated-assets/hero-background.jpg';
@@ -12,6 +13,9 @@ const Hero = () => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('');
   const [itemType, setItemType] = useState('');
+  
+  // Optimize images on mount
+  useImageOptimization();
   
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,11 +26,17 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-      {/* Hero background image with overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url(${heroBackground})`
-      }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
+      {/* Hero background with optimized loading */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+          style={{
+            backgroundImage: `url(${heroBackground})`,
+            transform: 'translateZ(0)', // GPU acceleration
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
+        </div>
       </div>
       
       {/* Content */}
