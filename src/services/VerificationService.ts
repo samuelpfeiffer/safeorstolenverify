@@ -87,9 +87,15 @@ class VerificationService {
   private selectProviders(itemType: string): string[] {
     const itemTypeLower = itemType.toLowerCase();
     
-    // All items get checked against general databases
-    const providers = ['stolen-register'];
+    // All items get checked against general stolen item databases
+    const providers = [
+      'stolen-register-check',    // StolenRegister.com - community database
+      'stolen911-check',          // Stolen911.com - police detective database
+      'stolen-property-check',    // Stolen-Property.com - international database
+      'stolenlostfound-check'     // StolenLostFound.com - community lost/stolen
+    ];
     
+    // Item-specific databases
     if (itemTypeLower.includes('phone') || itemTypeLower.includes('smartphone') || itemTypeLower.includes('mobile')) {
       providers.push('gsma-device-check', 'imei-info-lookup', 'checkmend');
     }
@@ -100,10 +106,6 @@ class VerificationService {
     
     if (itemTypeLower.includes('bike') || itemTypeLower.includes('bicycle')) {
       providers.push('bike-index-api');
-    }
-    
-    if (itemTypeLower.includes('bike') || itemTypeLower.includes('bicycle')) {
-      providers.push('bike-index');
     }
     
     if (itemTypeLower.includes('firearm') || itemTypeLower.includes('gun')) {

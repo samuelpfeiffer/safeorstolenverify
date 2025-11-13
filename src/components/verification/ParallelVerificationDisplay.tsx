@@ -4,8 +4,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, XCircle, AlertTriangle, Clock, ExternalLink } from 'lucide-react';
-import type { AggregatedResult, ProviderResult } from '@/services/VerificationService';
+import { CheckCircle2, XCircle, AlertTriangle, Clock } from 'lucide-react';
+import type { AggregatedResult } from '@/services/VerificationService';
+import { SourceCard } from './SourceCard';
 
 interface Props {
   result: AggregatedResult;
@@ -15,29 +16,48 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
   const getRiskColor = () => {
     switch (result.riskLevel) {
       case 'critical': return 'text-destructive bg-destructive/10 border-destructive';
-      case 'high': return 'text-orange-600 bg-orange-100 border-orange-600';
-      case 'medium': return 'text-yellow-600 bg-yellow-100 border-yellow-600';
-      case 'low': return 'text-green-600 bg-green-100 border-green-600';
+      case 'high': return 'text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950 border-orange-600';
+      case 'medium': return 'text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-950 border-yellow-600';
+      case 'low': return 'text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-950 border-green-600';
     }
   };
 
-  const getStatusIcon = (status: ProviderResult['status']) => {
-    switch (status) {
-      case 'safe': return <CheckCircle2 className="w-4 h-4 text-green-600" />;
-      case 'stolen': return <XCircle className="w-4 h-4 text-destructive" />;
-      case 'lost': return <AlertTriangle className="w-4 h-4 text-orange-600" />;
-      case 'unknown': return <AlertTriangle className="w-4 h-4 text-yellow-600" />;
-      case 'error': return <XCircle className="w-4 h-4 text-muted-foreground" />;
+  const getRiskIcon = () => {
+    switch (result.riskLevel) {
+      case 'critical': return <XCircle className="w-6 h-6" />;
+      case 'high': return <AlertTriangle className="w-6 h-6" />;
+      case 'medium': return <AlertTriangle className="w-6 h-6" />;
+      case 'low': return <CheckCircle2 className="w-6 h-6" />;
     }
   };
+
+  // Get provider icons based on name
+  const getProviderIcon = (providerName: string): string => {
+    const name = providerName.toLowerCase();
+    if (name.includes('bike')) return '🚴';
+    if (name.includes('phone') || name.includes('imei') || name.includes('gsma')) return '📱';
+    if (name.includes('vehicle') || name.includes('car') || name.includes('vin')) return '🚗';
+    if (name.includes('firearm') || name.includes('gun')) return '🔫';
+    if (name.includes('stolen911')) return '🚨';
+    if (name.includes('register')) return '🔍';
+    if (name.includes('property')) return '🏠';
+    if (name.includes('lost')) return '🔎';
+    return '🔒';
+  };
+
+  const totalSources = result.checkedSources.length;
+  const alertSources = result.providers.filter(p => p.status === 'stolen' || p.status === 'lost').length;
 
   return (
     <div className="space-y-6">
       {/* Main Result Card */}
       <Card className={`border-2 ${getRiskColor()}`}>
         <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <span>Verification Result</span>
+          <CardTitle className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              {getRiskIcon()}
+              <span>Verification Result</span>
+            </div>
             <Badge variant="outline" className={getRiskColor()}>
               {result.riskLevel.toUpperCase()} RISK
             </Badge>
@@ -47,7 +67,16 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
           <div className="text-lg font-semibold">
             {result.message}
           </div>
-          <div className="grid grid-cols-2 gap-4 text-sm">
+          
+          {alertSources > 0 && (
+            <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+              <p className="text-sm font-medium text-destructive">
+                ⚠️ Found in {alertSources} of {totalSources} database{totalSources !== 1 ? 's' : ''}
+              </p>
+            </div>
+          )}
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
             <div>
               <span className="text-muted-foreground">Status:</span>
               <span className="ml-2 font-medium uppercase">{result.finalStatus}</span>
@@ -56,60 +85,40 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
               <span className="text-muted-foreground">Confidence:</span>
               <span className="ml-2 font-medium">{result.confidence.toFixed(0)}%</span>
             </div>
-            <div className="col-span-2">
+            <div>
               <span className="text-muted-foreground">Sources Checked:</span>
-              <span className="ml-2 font-medium">{result.checkedSources.length}</span>
+              <span className="ml-2 font-medium">{totalSources}</span>
             </div>
           </div>
-        </CardContent>
-      </Card>
 
-      {/* Individual Provider Results */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Database Check Details</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {result.providers.map((provider, index) => (
-              <div
-                key={index}
-                className="flex items-start justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors"
-              >
-                <div className="flex items-start gap-3 flex-1">
-                  {getStatusIcon(provider.status)}
-                  <div className="flex-1">
-                    <div className="font-medium capitalize">
-                      {provider.provider.replace(/-/g, ' ')}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {provider.message}
-                    </div>
-                    {provider.url && (
-                      <a
-                        href={provider.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs text-primary hover:underline mt-1"
-                      >
-                        Manual check required <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Clock className="w-3 h-3" />
-                  {provider.responseTime}ms
-                </div>
-              </div>
-            ))}
+          <div className="text-xs text-muted-foreground flex items-center gap-1">
+            <Clock className="w-3 h-3" />
+            Checked: {new Date(result.timestamp).toLocaleString()}
           </div>
         </CardContent>
       </Card>
 
-      {/* Timestamp */}
-      <div className="text-xs text-muted-foreground text-center">
-        Verified at {new Date(result.timestamp).toLocaleString()}
+      {/* Multi-Source Results Grid */}
+      <div className="space-y-3">
+        <h3 className="text-lg font-semibold">Database Check Results ({totalSources} sources)</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {result.providers.map((provider, index) => (
+            <SourceCard
+              key={index}
+              title={provider.provider.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+              icon={getProviderIcon(provider.provider)}
+              result={{
+                found: provider.status === 'stolen' || provider.status === 'lost',
+                status: provider.status,
+                message: provider.message,
+                error: provider.status === 'error',
+                link: provider.url,
+                timestamp: result.timestamp
+              }}
+              description={`Response time: ${provider.responseTime}ms`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
