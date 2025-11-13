@@ -1,80 +1,17 @@
-import { Card, CardContent } from '@/components/ui/card';
+import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
-import { Search, Shield, CheckCircle, Database, Zap, Lock, Globe, Clock } from 'lucide-react';
+import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
 
 const HowItWorksPage = () => {
-  const steps = [
-    {
-      icon: Search,
-      title: 'Enter Your Item Details',
-      description: 'Input the IMEI, VIN, or serial number of the item you want to verify. Our system accepts all major formats.',
-      detail: 'Works with phones, vehicles, laptops, cameras, power tools, and more.'
-    },
-    {
-      icon: Database,
-      title: 'We Scan Multiple Databases',
-      description: 'Our system instantly checks your item against international stolen goods databases, law enforcement records, and insurance claims.',
-      detail: 'Over 50 million records checked in under 30 seconds.'
-    },
-    {
-      icon: Shield,
-      title: 'Get Instant Results',
-      description: 'Receive a comprehensive report showing if the item is stolen, lost, or safe to purchase.',
-      detail: 'Clear status with detailed information and next steps.'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Buy with Confidence',
-      description: 'Armed with verification results, make informed purchasing decisions and protect yourself from financial loss.',
-      detail: 'Save thousands by avoiding stolen goods and legal issues.'
-    }
-  ];
-
-  const features = [
-    {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Results in under 30 seconds',
-      stat: '<30s'
-    },
-    {
-      icon: Database,
-      title: 'Comprehensive Coverage',
-      description: '50M+ stolen item records',
-      stat: '50M+'
-    },
-    {
-      icon: Globe,
-      title: 'Worldwide Database',
-      description: 'International coverage',
-      stat: '195+'
-    },
-    {
-      icon: Lock,
-      title: 'Secure & Private',
-      description: 'Bank-level encryption',
-      stat: '256-bit'
-    }
-  ];
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": "How to Verify if an Item is Stolen",
     "description": "Step-by-step guide to checking IMEI, VIN, and serial numbers against stolen goods databases",
-    "step": steps.map((step, index) => ({
-      "@type": "HowToStep",
-      "position": index + 1,
-      "name": step.title,
-      "text": step.description,
-      "itemListElement": {
-        "@type": "HowToDirection",
-        "text": step.detail
-      }
-    })),
     "totalTime": "PT30S"
   };
 
@@ -88,117 +25,529 @@ const HowItWorksPage = () => {
         structuredData={[structuredData]}
       />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'How It Works', href: '/how-it-works' }]} />
         </div>
         
-        {/* Simplified Hero */}
-        <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
+        {/* Hero Section */}
+        <section className="py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Check Any Item in 30 Seconds
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              How SafeOrStolen Works
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              Enter a serial number, IMEI, or VIN. We instantly check 50M+ stolen goods records.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Verify items before you buy with our comprehensive multi-source verification system
             </p>
-            <Button size="lg" asChild>
-              <Link to="/auth?tab=signup">Try Free Now</Link>
-            </Button>
           </div>
         </section>
 
-        {/* 3-Step Process (Simplified from 4) */}
+        {/* Main Process */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto space-y-6">
-              <Card>
-                <CardContent className="p-6 flex gap-4 items-start">
-                  <div className="bg-primary text-white text-lg font-bold px-4 py-2 rounded-full flex-shrink-0">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Enter Item Details</h3>
-                    <p className="text-muted-foreground">
-                      Input IMEI, VIN, or serial number. Works with phones, vehicles, electronics, tools.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6 flex gap-4 items-start">
-                  <div className="bg-primary text-white text-lg font-bold px-4 py-2 rounded-full flex-shrink-0">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">We Scan Databases</h3>
-                    <p className="text-muted-foreground">
-                      System checks 50+ databases including FBI, NCIC, and insurance records in under 30 seconds.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6 flex gap-4 items-start">
-                  <div className="bg-primary text-white text-lg font-bold px-4 py-2 rounded-full flex-shrink-0">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Get Clear Results</h3>
-                    <p className="text-muted-foreground">
-                      Receive Safe, Stolen, or Lost status with detailed report and next steps.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+            <h2 className="text-3xl font-bold text-center mb-8">The Verification Process</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <ProcessStep
+                icon={<Search className="h-8 w-8" />}
+                number="1"
+                title="Enter Identifier"
+                description="Input the IMEI, VIN, or serial number of the item you want to verify"
+              />
+              <ProcessStep
+                icon={<Database className="h-8 w-8" />}
+                number="2"
+                title="Multi-Source Check"
+                description="We search our database plus BikeIndex, StolenRegister, and more"
+              />
+              <ProcessStep
+                icon={<Zap className="h-8 w-8" />}
+                number="3"
+                title="Instant Results"
+                description="Get comprehensive results in seconds from all sources"
+              />
+              <ProcessStep
+                icon={<Shield className="h-8 w-8" />}
+                number="4"
+                title="Make Informed Decision"
+                description="See clear status and details before completing your purchase"
+              />
             </div>
           </div>
         </section>
 
-        {/* Key Stats (Simplified) */}
+        {/* What We Check */}
         <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-center mb-8">What We Check</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <ItemTypeCard
+                icon="📱"
+                title="Phones & Tablets"
+                description="Check IMEI numbers against stolen phone databases"
+                examples={['iPhone', 'Samsung Galaxy', 'iPad', 'Android tablets']}
+              />
+              <ItemTypeCard
+                icon="🚗"
+                title="Vehicles"
+                description="Verify VIN numbers for cars, trucks, motorcycles"
+                examples={['Cars', 'Trucks', 'Motorcycles', 'RVs']}
+              />
+              <ItemTypeCard
+                icon="🚲"
+                title="Bicycles"
+                description="Search bike serial numbers in BikeIndex and our database"
+                examples={['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX']}
+              />
+              <ItemTypeCard
+                icon="💻"
+                title="Electronics"
+                description="Check serial numbers for laptops, cameras, tools, and more"
+                examples={['Laptops', 'Cameras', 'Gaming consoles', 'Power tools']}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Data Sources */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Our Data Sources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <DataSourceCard
+                title="SafeOrStolen Database"
+                description="Our proprietary database of user-reported stolen items"
+                icon="🏠"
+              />
+              <DataSourceCard
+                title="BikeIndex.org"
+                description="1.4M bikes cataloged, 159K stolen bikes registered"
+                icon="🚴"
+              />
+              <DataSourceCard
+                title="StolenRegister.com"
+                description="Community-reported stolen property database"
+                icon="🔍"
+              />
+              <DataSourceCard
+                title="NHTSA Database"
+                description="Official vehicle identification and specifications"
+                icon="🚗"
+              />
+              <DataSourceCard
+                title="Stolen911"
+                description="Police detective-founded stolen property service"
+                icon="🚨"
+              />
+              <DataSourceCard
+                title="More Coming Soon"
+                description="We're constantly adding new data sources"
+                icon="➕"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* How to Find Identifiers */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">How to Find Identifiers</h2>
+            <div className="space-y-6 max-w-4xl mx-auto">
               <Card>
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">&lt;30s</div>
-                  <p className="text-sm text-muted-foreground">Instant Results</p>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span>📱</span> IMEI (Phone/Tablet)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Method 1:</strong> Dial *#06# on your phone</p>
+                    <p><strong>Method 2:</strong> Settings → About Phone → IMEI</p>
+                    <p><strong>Method 3:</strong> Check the original box or SIM tray</p>
+                    <p className="text-sm text-muted-foreground">IMEI is 15 digits long</p>
+                  </div>
                 </CardContent>
               </Card>
+
               <Card>
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">50M+</div>
-                  <p className="text-sm text-muted-foreground">Records Checked</p>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span>🚗</span> VIN (Vehicle)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Method 1:</strong> Dashboard near windshield (driver's side)</p>
+                    <p><strong>Method 2:</strong> Driver's side door jamb sticker</p>
+                    <p><strong>Method 3:</strong> Vehicle registration or insurance card</p>
+                    <p className="text-sm text-muted-foreground">VIN is 17 characters long</p>
+                  </div>
                 </CardContent>
               </Card>
+
               <Card>
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">99.7%</div>
-                  <p className="text-sm text-muted-foreground">Accuracy Rate</p>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span>🔢</span> Serial Number (Electronics/Other)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Method 1:</strong> Check device label or sticker</p>
+                    <p><strong>Method 2:</strong> Settings → About → Serial Number</p>
+                    <p><strong>Method 3:</strong> Original packaging or receipt</p>
+                    <p className="text-sm text-muted-foreground">Serial numbers vary in length</p>
+                  </div>
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
 
-        {/* Simple CTA */}
+        {/* Free vs Premium */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Free vs Premium</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Card className="border-2 border-border">
+                <CardHeader className="bg-muted/30">
+                  <CardTitle>Free Plan</CardTitle>
+                  <CardDescription>Great for occasional buyers</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>2 free searches</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>Valid for 1 week</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>Multi-source verification</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>Basic search history</span>
+                    </div>
+                  </div>
+                  <Button variant="outline" className="w-full mt-6" asChild>
+                    <Link to="/auth">Get Started Free</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary shadow-lg">
+                <CardHeader className="bg-primary/5">
+                  <CardTitle className="flex items-center gap-2">
+                    Premium Plan
+                    <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded">Popular</span>
+                  </CardTitle>
+                  <CardDescription>For serious buyers & sellers</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span><strong>Unlimited searches</strong></span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>Multi-source verification</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>Full search history</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>Priority support</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>API access (coming soon)</span>
+                    </div>
+                  </div>
+                  <Button className="w-full mt-6" asChild>
+                    <Link to="/pricing">View Pricing</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Why It Matters */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Why Verification Matters</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Card className="border-2 border-red-200 bg-red-50/50 dark:bg-red-950/20">
+                <CardContent className="pt-6">
+                  <AlertTriangle className="h-12 w-12 text-red-500 mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Avoid Legal Issues</h3>
+                  <p className="text-muted-foreground">
+                    Buying stolen property is illegal and you could lose both the item and your money
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-yellow-200 bg-yellow-50/50 dark:bg-yellow-950/20">
+                <CardContent className="pt-6">
+                  <AlertTriangle className="h-12 w-12 text-yellow-500 mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Protect Your Investment</h3>
+                  <p className="text-muted-foreground">
+                    Stolen items can be remotely disabled, blacklisted, or confiscated by police
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-green-200 bg-green-50/50 dark:bg-green-950/20">
+                <CardContent className="pt-6">
+                  <Shield className="h-12 w-12 text-green-500 mb-4" />
+                  <h3 className="text-xl font-bold mb-2">Peace of Mind</h3>
+                  <p className="text-muted-foreground">
+                    Buy with confidence knowing you've checked all available databases
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-12 max-w-5xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-8">Our Impact</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                  <div className="text-5xl font-bold mb-2">50,000+</div>
+                  <div className="text-xl opacity-90">Items Verified</div>
+                </div>
+                <div>
+                  <div className="text-5xl font-bold mb-2">1,200+</div>
+                  <div className="text-xl opacity-90">Stolen Items Identified</div>
+                </div>
+                <div>
+                  <div className="text-5xl font-bold mb-2">$2.5M+</div>
+                  <div className="text-xl opacity-90">Fraud Prevented</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4 max-w-3xl mx-auto">
+              <FAQItem
+                question="How accurate are the results?"
+                answer="We search multiple databases and provide results from each source. While we strive for accuracy, we recommend verifying with the seller and local authorities for high-value items."
+              />
+              <FAQItem
+                question="What if an item isn't in your database?"
+                answer="A 'not found' result means the item doesn't appear in our databases at the time of search. This is generally a good sign, but always exercise caution and verify seller authenticity."
+              />
+              <FAQItem
+                question="Can I report a stolen item?"
+                answer="Yes! You can report stolen items through your dashboard, and we'll add them to our database to help others avoid buying stolen property."
+              />
+              <FAQItem
+                question="Do you store my search history?"
+                answer="For registered users, we store search history to help you track items you've verified. Free users have limited history access."
+              />
+              <FAQItem
+                question="What if I find my stolen item on SafeOrStolen?"
+                answer="Contact local law enforcement immediately with the verification report. We can provide supporting documentation to help with recovery."
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* What We Check - Item Types */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Data Sources We Check</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <DataSourceCard
+                title="SafeOrStolen Database"
+                description="Our proprietary database of user-reported stolen items"
+                icon="🏠"
+              />
+              <DataSourceCard
+                title="BikeIndex.org"
+                description="1.4M bikes cataloged, 159K stolen bikes registered"
+                icon="🚴"
+              />
+              <DataSourceCard
+                title="StolenRegister.com"
+                description="Community-reported stolen property database"
+                icon="🔍"
+              />
+              <DataSourceCard
+                title="NHTSA Database"
+                description="Official vehicle identification and specifications"
+                icon="🚗"
+              />
+              <DataSourceCard
+                title="Stolen911"
+                description="Police detective-founded stolen property service"
+                icon="🚨"
+              />
+              <DataSourceCard
+                title="More Coming Soon"
+                description="We're constantly adding new data sources"
+                icon="➕"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* How to Find Identifiers */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">How to Find Identifiers</h2>
+            <div className="space-y-6 max-w-4xl mx-auto">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span>📱</span> IMEI (Phone/Tablet)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Method 1:</strong> Dial *#06# on your phone</p>
+                    <p><strong>Method 2:</strong> Settings → About Phone → IMEI</p>
+                    <p><strong>Method 3:</strong> Check the original box or SIM tray</p>
+                    <p className="text-sm text-muted-foreground">IMEI is 15 digits long</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span>🚗</span> VIN (Vehicle)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Method 1:</strong> Dashboard near windshield (driver's side)</p>
+                    <p><strong>Method 2:</strong> Driver's side door jamb sticker</p>
+                    <p><strong>Method 3:</strong> Vehicle registration or insurance card</p>
+                    <p className="text-sm text-muted-foreground">VIN is 17 characters long</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span>🔢</span> Serial Number (Electronics/Other)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <p><strong>Method 1:</strong> Check device label or sticker</p>
+                    <p><strong>Method 2:</strong> Settings → About → Serial Number</p>
+                    <p><strong>Method 3:</strong> Original packaging or receipt</p>
+                    <p className="text-sm text-muted-foreground">Serial numbers vary in length</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Free vs Premium */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-8">Free vs Premium</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <Card className="border-2 border-border">
+                <CardHeader className="bg-muted/30">
+                  <CardTitle>Free Plan</CardTitle>
+                  <CardDescription>Great for occasional buyers</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>2 free searches</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>Valid for 1 week</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>Multi-source verification</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <span>Basic search history</span>
+                    </div>
+                  </div>
+                  <Button variant="outline" className="w-full mt-6" asChild>
+                    <Link to="/auth">Get Started Free</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary shadow-lg">
+                <CardHeader className="bg-primary/5">
+                  <CardTitle className="flex items-center gap-2">
+                    Premium Plan
+                    <span className="text-sm bg-primary text-primary-foreground px-2 py-1 rounded">Popular</span>
+                  </CardTitle>
+                  <CardDescription>For serious buyers & sellers</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span><strong>Unlimited searches</strong></span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>Multi-source verification</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>Full search history</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>Priority support</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-primary" />
+                      <span>API access (coming soon)</span>
+                    </div>
+                  </div>
+                  <Button className="w-full mt-6" asChild>
+                    <Link to="/pricing">View Pricing</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
         <section className="py-12">
           <div className="container mx-auto px-4 text-center">
-            <Card className="max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold mb-3">
-                  Start Verifying Now
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  Get 2 free checks (14-day trial). No credit card required.
-                </p>
-                <Button size="lg" asChild>
-                  <Link to="/auth?tab=signup">Try Free</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            <h2 className="text-3xl font-bold mb-4">Ready to Verify?</h2>
+            <p className="text-xl text-muted-foreground mb-6">
+              Start with 2 free searches today
+            </p>
+            <Button size="lg" asChild>
+              <Link to="/dashboard">Start Verification</Link>
+            </Button>
           </div>
         </section>
       </div>
@@ -206,4 +555,70 @@ const HowItWorksPage = () => {
   );
 };
 
+// Component Helpers
+function ProcessStep({ icon, number, title, description }: { icon: React.ReactNode; number: string; title: string; description: string }) {
+  return (
+    <div className="text-center">
+      <div className="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+        {icon}
+      </div>
+      <div className="bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2 text-sm font-bold">
+        {number}
+      </div>
+      <h3 className="font-bold mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
+function ItemTypeCard({ icon, title, description, examples }: { icon: string; title: string; description: string; examples: string[] }) {
+  return (
+    <Card>
+      <CardContent className="pt-6">
+        <div className="text-4xl mb-3">{icon}</div>
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <p className="text-muted-foreground mb-3">{description}</p>
+        <div className="flex flex-wrap gap-2">
+          {examples.map((example, idx) => (
+            <span key={idx} className="text-xs bg-muted px-2 py-1 rounded">
+              {example}
+            </span>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function DataSourceCard({ title, description, icon }: { title: string; description: string; icon: string }) {
+  return (
+    <Card>
+      <CardContent className="pt-6 text-center">
+        <div className="text-4xl mb-3">{icon}</div>
+        <h3 className="font-bold mb-2">{title}</h3>
+        <p className="text-sm text-muted-foreground">{description}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setIsOpen(!isOpen)}>
+      <CardContent className="pt-6">
+        <div className="flex items-center justify-between">
+          <h3 className="font-bold">{question}</h3>
+          <span className="text-2xl text-primary">{isOpen ? '−' : '+'}</span>
+        </div>
+        {isOpen && (
+          <p className="text-muted-foreground mt-3">{answer}</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 export default HowItWorksPage;
+
