@@ -4,6 +4,7 @@ import { Smartphone, Shield, AlertTriangle, CheckCircle, Search, Lock } from 'lu
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { VideoEmbed } from '@/components/blog/VideoEmbed';
 
 export default function HowToCheckIfPhoneStolen() {
   const navigate = useNavigate();
@@ -145,6 +146,12 @@ export default function HowToCheckIfPhoneStolen() {
               Verify IMEI Free →
             </Button>
           </div>
+
+          {/* Video Tutorial */}
+          <VideoEmbed 
+            url="YOUR_YOUTUBE_VIDEO_URL_HERE"
+            title="Watch: How to Check if a Phone is Stolen (2-Minute Tutorial)"
+          />
 
           {/* Step-by-Step Guide */}
           <section className="mb-12">
