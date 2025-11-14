@@ -12,11 +12,11 @@ export default function MobileAppPage() {
 
   const appSchema = {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
+    "@type": "WebApplication",
     "name": "SafeOrStolen",
     "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "iOS, Android",
-    "description": "The only mobile app for instant stolen goods verification. Check IMEI, VIN, and serial numbers on-the-go. Protect yourself from stolen items while shopping on Facebook Marketplace, OfferUp, Craigslist, and more.",
+    "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
+    "description": "Installable web app for instant stolen goods verification. Check IMEI, VIN, and serial numbers on-the-go. Install directly from your browser - no app store needed.",
     "screenshot": "https://safeorstolen.com/images/sos-logo.png",
     "author": {
       "@type": "Organization",
@@ -66,9 +66,9 @@ export default function MobileAppPage() {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Mobile App - Instant Stolen Goods Verification"
-        description="Download the only mobile app for instant stolen goods verification. Check IMEI, VIN, serial numbers on-the-go. iOS & Android. No competitor offers mobile-first verification."
-        keywords="SafeOrStolen app, stolen goods checker app, IMEI checker app, VIN verification app, mobile stolen check, iOS Android verification app, marketplace safety app, instant verification app, on-the-go verification, mobile-first app"
+        title="SafeOrStolen Web App - Install & Verify On-The-Go"
+        description="Installable web app for instant stolen goods verification. Check IMEI, VIN, serial numbers anywhere. Install from your browser - no app store needed. Works on all devices."
+        keywords="SafeOrStolen web app, installable app, PWA verification, IMEI checker, VIN verification, stolen goods check, marketplace safety, instant verification, mobile web app"
         canonical="/mobile-app"
       />
       <ServiceOfferSchema />
