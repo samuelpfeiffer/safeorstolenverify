@@ -58,7 +58,15 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
         "name": "SafeOrStolen Mobile App",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "iOS, Android",
-        "description": "Free mobile app to check if phones, laptops, cars, bikes, and electronics are stolen. Scan barcodes, verify serial numbers, IMEI, VIN against police databases."
+        "description": "Free mobile app to check if phones, laptops, cars, bikes, and electronics are stolen. Scan barcodes, verify serial numbers, IMEI, VIN against police databases.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/mobile-app"
+        }
       });
 
       // Service schema for main offerings

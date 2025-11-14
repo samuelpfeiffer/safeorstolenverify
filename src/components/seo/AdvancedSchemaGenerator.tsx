@@ -58,7 +58,9 @@ export const AdvancedSchemaGenerator = () => {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/mobile-app"
         },
         "downloadUrl": [
           "https://apps.apple.com/app/safeorstolen",
