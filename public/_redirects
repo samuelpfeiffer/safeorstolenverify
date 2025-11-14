@@ -57,29 +57,35 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # SOFT 404 REDIRECTS (GSC Errors)
 # ============================================
-/bulk                   /verify           301!
-/stolen-property-lookup /verify           301!
-/vin                    /check-car        301!
-/transparency           /data-sources     301!
-/service-limitations    /terms-of-service 301!
+/bulk                   /verify      301!
+/stolen-property-lookup /verify      301!
+/vin                    /check-car   301!
+
+# ============================================
+# LEGACY CHECKER URLS CONTINUATION
+# ============================================
+/imei                   /check-phone 301!
 
 # ============================================
 # OTHER LEGACY URLS
 # ============================================
 /avoid-buying-stolen-goods                          /how-it-works      301!
-/imei                                               /check-phone       301!
 /stolen-items-database                              /data-sources      301!
 /how-to-check-if-anything-is-stolen-before-you-buy  /how-it-works      301!
-/disclaimer                                         /terms-of-service  301!
+/disclaimer                                         /terms             301!
 /our-story                                          /about             301!
 /enterprise-demo                                    /for-brands        301!
 /for-consumers                                      /                  301!
 /fastercapital/tech-cofounder                       /fastercapital/raise-capital  301!
 
+# URL variations for legal pages
+/terms-of-service       /terms       301!
+/privacy-policy         /privacy     301!
+
 # ============================================
 # LEGACY REDIRECTS (Keep for compatibility)
 # ============================================
-/terms  /terms-of-service  301!
+/terms  /terms           200
 
 # ============================================
 # RSS & SITEMAP REWRITES
