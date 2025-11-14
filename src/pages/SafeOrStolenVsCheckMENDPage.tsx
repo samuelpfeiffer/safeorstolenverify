@@ -85,7 +85,10 @@ export default function SafeOrStolenVsCheckMENDPage() {
         "offers": {
           "@type": "Offer",
           "price": "9.99",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         }
       },
       {
@@ -95,7 +98,10 @@ export default function SafeOrStolenVsCheckMENDPage() {
         "offers": {
           "@type": "Offer",
           "price": "1.99",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://checkmend.com/uk"
         }
       }
     ]

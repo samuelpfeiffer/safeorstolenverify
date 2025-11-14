@@ -63,7 +63,10 @@ const Index = () => {
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://safeorstolen.com/pricing"
       }
     },
     {

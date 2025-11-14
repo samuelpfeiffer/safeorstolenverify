@@ -114,6 +114,9 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://safeorstolen.com/pricing",
                 "description": "Free stolen goods verification"
               }
             }

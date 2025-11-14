@@ -204,6 +204,7 @@ const PricingPage = () => {
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Verification Service Plans",
+        "numberOfItems": 3,
         "itemListElement": [
           {
             "@type": "Offer",
@@ -213,7 +214,10 @@ const PricingPage = () => {
               "description": "Basic verification service with 2 free searches (14-day trial) for consumer protection"
             },
             "price": "0",
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://safeorstolen.com/pricing"
           },
           {
             "@type": "Offer",
@@ -223,7 +227,10 @@ const PricingPage = () => {
               "description": "Unlimited verification service for personal use with priority support"
             },
             "price": formatPrice(SUBSCRIPTION_TIERS.personal.price).replace('$', ''),
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://safeorstolen.com/pricing"
           },
           {
             "@type": "Offer",
@@ -233,7 +240,10 @@ const PricingPage = () => {
               "description": "Unlimited verification service for professionals and businesses with API access"
             },
             "price": formatPrice(SUBSCRIPTION_TIERS.professional.price).replace('$', ''),
-            "priceCurrency": "USD"
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://safeorstolen.com/pricing"
           }
         ]
       },

@@ -17,7 +17,9 @@ export const MarketplaceSEODomination = () => {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/InStock",
+      "url": "https://safeorstolen.com/pricing",
       "description": "FREE mobile app with 4 free verification searches - ONLY app for marketplace buyers"
     },
     "screenshot": [
