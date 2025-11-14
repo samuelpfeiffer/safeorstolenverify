@@ -1465,6 +1465,33 @@ export type Database = {
         }
         Relationships: []
       }
+      external_verification_cache: {
+        Row: {
+          created_at: string | null
+          expires_at: string
+          id: string
+          identifier: string
+          result: Json
+          source: string
+        }
+        Insert: {
+          created_at?: string | null
+          expires_at: string
+          id?: string
+          identifier: string
+          result: Json
+          source: string
+        }
+        Update: {
+          created_at?: string | null
+          expires_at?: string
+          id?: string
+          identifier?: string
+          result?: Json
+          source?: string
+        }
+        Relationships: []
+      }
       internet_search_results: {
         Row: {
           confidence: number | null
@@ -1731,6 +1758,7 @@ export type Database = {
           created_at: string
           credit_balance: number | null
           email: string | null
+          email_notifications_enabled: boolean | null
           free_searches_used: number | null
           full_name: string | null
           id: string
@@ -1757,6 +1785,7 @@ export type Database = {
           created_at?: string
           credit_balance?: number | null
           email?: string | null
+          email_notifications_enabled?: boolean | null
           free_searches_used?: number | null
           full_name?: string | null
           id: string
@@ -1783,6 +1812,7 @@ export type Database = {
           created_at?: string
           credit_balance?: number | null
           email?: string | null
+          email_notifications_enabled?: boolean | null
           free_searches_used?: number | null
           full_name?: string | null
           id?: string
@@ -2061,6 +2091,33 @@ export type Database = {
         }
         Relationships: []
       }
+      search_history: {
+        Row: {
+          created_at: string
+          id: string
+          identifier: string
+          results: Json
+          search_type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          identifier: string
+          results?: Json
+          search_type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          identifier?: string
+          results?: Json
+          search_type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       sensitive_data_access_log: {
         Row: {
           access_type: string
@@ -2261,6 +2318,123 @@ export type Database = {
         }
         Relationships: []
       }
+      stolen_item_notifications: {
+        Row: {
+          created_at: string | null
+          error_message: string | null
+          id: string
+          notification_data: Json
+          search_date: string
+          searched_identifier: string
+          sent_at: string | null
+          status: string
+          stolen_item_id: string
+          updated_at: string | null
+          user_email: string
+          user_id: string
+          user_name: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          error_message?: string | null
+          id?: string
+          notification_data: Json
+          search_date: string
+          searched_identifier: string
+          sent_at?: string | null
+          status?: string
+          stolen_item_id: string
+          updated_at?: string | null
+          user_email: string
+          user_id: string
+          user_name?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          error_message?: string | null
+          id?: string
+          notification_data?: Json
+          search_date?: string
+          searched_identifier?: string
+          sent_at?: string | null
+          status?: string
+          stolen_item_id?: string
+          updated_at?: string | null
+          user_email?: string
+          user_id?: string
+          user_name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stolen_item_notifications_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stolen_item_notifications_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stolen_items: {
+        Row: {
+          brand: string | null
+          created_at: string
+          date_stolen: string | null
+          description: string | null
+          id: string
+          imei: string | null
+          item_type: string
+          location: string | null
+          model: string | null
+          police_report_number: string | null
+          serial_number: string | null
+          status: string
+          updated_at: string
+          user_id: string | null
+          vin: string | null
+        }
+        Insert: {
+          brand?: string | null
+          created_at?: string
+          date_stolen?: string | null
+          description?: string | null
+          id?: string
+          imei?: string | null
+          item_type: string
+          location?: string | null
+          model?: string | null
+          police_report_number?: string | null
+          serial_number?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+          vin?: string | null
+        }
+        Update: {
+          brand?: string | null
+          created_at?: string
+          date_stolen?: string | null
+          description?: string | null
+          id?: string
+          imei?: string | null
+          item_type?: string
+          location?: string | null
+          model?: string | null
+          police_report_number?: string | null
+          serial_number?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+          vin?: string | null
+        }
+        Relationships: []
+      }
       stripe_webhook_events: {
         Row: {
           created_at: string | null
@@ -2442,6 +2616,36 @@ export type Database = {
           created_at?: string
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_stats: {
+        Row: {
+          created_at: string
+          free_searches_expiry: string | null
+          free_searches_used: number
+          id: string
+          is_subscribed: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          free_searches_expiry?: string | null
+          free_searches_used?: number
+          id?: string
+          is_subscribed?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          free_searches_expiry?: string | null
+          free_searches_used?: number
+          id?: string
+          is_subscribed?: boolean
+          updated_at?: string
           user_id?: string
         }
         Relationships: []
@@ -2719,6 +2923,7 @@ export type Database = {
       }
       clean_expired_checkmend_cache: { Args: never; Returns: undefined }
       clean_expired_pending_verifications: { Args: never; Returns: undefined }
+      cleanup_expired_cache: { Args: never; Returns: undefined }
       cleanup_expired_tokens: { Args: never; Returns: undefined }
       generate_api_key: { Args: never; Returns: string }
       get_complete_schema: { Args: never; Returns: Json }
@@ -2754,6 +2959,14 @@ export type Database = {
       is_service_role_or_admin: { Args: never; Returns: boolean }
       reset_monthly_verifications: { Args: never; Returns: undefined }
       subscribe_to_newsletter: { Args: { user_email: string }; Returns: Json }
+      update_notification_status: {
+        Args: {
+          error_msg?: string
+          new_status: string
+          notification_id: string
+        }
+        Returns: undefined
+      }
       validate_and_track_api_usage: {
         Args: {
           p_api_key: string

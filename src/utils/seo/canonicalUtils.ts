@@ -10,6 +10,29 @@ export const getCanonicalUrl = (path: string): string => {
     return baseUrl;
   }
   
+  // Handle full URLs (convert to canonical)
+  if (path.startsWith('http')) {
+    try {
+      const url = new URL(path);
+      // Force non-www, https
+      url.protocol = 'https:';
+      url.hostname = 'safeorstolen.com';
+      // Remove query params and hash
+      url.search = '';
+      url.hash = '';
+      
+      let cleanPath = url.pathname;
+      // Remove trailing slash (except root)
+      if (cleanPath !== '/' && cleanPath.endsWith('/')) {
+        cleanPath = cleanPath.slice(0, -1);
+      }
+      
+      return `${baseUrl}${cleanPath}`;
+    } catch {
+      return baseUrl;
+    }
+  }
+  
   // Remove query parameters and hash fragments for canonical URLs
   const cleanPath = path.split('?')[0].split('#')[0];
   

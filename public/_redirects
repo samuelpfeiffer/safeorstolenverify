@@ -57,9 +57,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # SOFT 404 REDIRECTS (GSC Errors)
 # ============================================
-/bulk                   /verify      301!
-/stolen-property-lookup /verify      301!
-/vin                    /check-car   301!
+/bulk                   /verify           301!
+/stolen-property-lookup /verify           301!
+/vin                    /check-car        301!
+/transparency           /data-sources     301!
+/service-limitations    /terms-of-service 301!
 
 # ============================================
 # OTHER LEGACY URLS
