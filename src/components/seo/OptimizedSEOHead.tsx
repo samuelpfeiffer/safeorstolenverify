@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { validateCanonicalUrl, validateSchema, logSchemaValidation } from '@/utils/seo/schemaValidation';
+import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
 
 interface OptimizedSEOHeadProps {
   title: string;
@@ -36,7 +37,9 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   ) : false;
   
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
-  const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `https://safeorstolen.com${canonical}` : undefined;
+  
+  // Use centralized canonical URL generator
+  const fullCanonicalUrl = canonical ? getCanonicalUrl(canonical) : undefined;
   
   // Validate canonical URL in development
   if (import.meta.env.DEV && fullCanonicalUrl) {
@@ -103,7 +106,7 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content="SafeOrStolen - Verify if items are stolen before buying" />
       <meta property="og:image:type" content="image/png" />
-      {canonical && <meta property="og:url" content={fullCanonicalUrl} />}
+      {fullCanonicalUrl && <meta property="og:url" content={fullCanonicalUrl} />}
       <meta property="og:site_name" content="Safe or Stolen" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="es_US" />
