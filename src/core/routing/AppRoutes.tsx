@@ -31,6 +31,15 @@ const ReportStolen = lazy(() => import('@/pages/ReportStolen'));
 // Blog
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
 const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
+const HowToCheckIfPhoneStolen = lazy(() => import('@/pages/blog/HowToCheckIfPhoneStolen'));
+const IMEICheckerGuide2025 = lazy(() => import('@/pages/blog/IMEICheckerGuide2025'));
+const VINVerificationGuide = lazy(() => import('@/pages/blog/VINVerificationGuide'));
+const FacebookMarketplaceSafety = lazy(() => import('@/pages/blog/FacebookMarketplaceSafety'));
+const WhatToDoIfBoughtStolenPhone = lazy(() => import('@/pages/blog/WhatToDoIfBoughtStolenPhone'));
+const BestIMEICheckerTools2025 = lazy(() => import('@/pages/blog/BestIMEICheckerTools2025'));
+
+// Tools
+const ToolsPage = lazy(() => import('@/pages/ToolsPage'));
 
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
@@ -288,6 +297,17 @@ export const AppRoutes = () => {
         {/* Blog */}
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        
+        {/* Blog Posts */}
+        <Route path="/blog/how-to-check-if-phone-stolen" element={<HowToCheckIfPhoneStolen />} />
+        <Route path="/blog/imei-checker-guide-2025" element={<IMEICheckerGuide2025 />} />
+        <Route path="/blog/vin-verification-guide" element={<VINVerificationGuide />} />
+        <Route path="/blog/facebook-marketplace-safety" element={<FacebookMarketplaceSafety />} />
+        <Route path="/blog/what-to-do-if-bought-stolen-phone" element={<WhatToDoIfBoughtStolenPhone />} />
+        <Route path="/blog/best-imei-checker-tools-2025" element={<BestIMEICheckerTools2025 />} />
+        
+        {/* Tools */}
+        <Route path="/tools" element={<ToolsPage />} />
 
         {/* Business */}
         <Route path="/mobile-app" element={<MobileAppPage />} />
