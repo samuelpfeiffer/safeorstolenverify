@@ -46,8 +46,6 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/bulk', to: '/verify', permanent: true },
   { from: '/stolen-property-lookup', to: '/verify', permanent: true },
   { from: '/vin', to: '/check-car', permanent: true },
-  { from: '/transparency', to: '/data-sources', permanent: true },
-  { from: '/service-limitations', to: '/terms-of-service', permanent: true },
 
   // ===== LEGACY VERIFICATION URLS =====
   { from: '/verify-not-stolen', to: '/verify', permanent: true },
@@ -59,10 +57,10 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/vin-verification', to: '/check-car', permanent: true },
   { from: '/serial-number-checker', to: '/verify', permanent: true },
   { from: '/stolen-item-checker', to: '/verify', permanent: true },
+  { from: '/imei', to: '/check-phone', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
-  { from: '/imei', to: '/check-phone', permanent: true },
   { from: '/stolen-items-database', to: '/data-sources', permanent: true },
   { from: '/how-to-check-if-anything-is-stolen-before-you-buy', to: '/how-it-works', permanent: true },
   { from: '/disclaimer', to: '/terms-of-service', permanent: true },
@@ -70,6 +68,8 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/enterprise-demo', to: '/for-brands', permanent: true },
   { from: '/for-consumers', to: '/', permanent: true },
   { from: '/fastercapital/tech-cofounder', to: '/fastercapital/raise-capital', permanent: true },
+  { from: '/terms-of-service', to: '/terms', permanent: true },
+  { from: '/privacy-policy', to: '/privacy', permanent: true },
 ];
 
 /**
