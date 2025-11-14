@@ -28,7 +28,22 @@ export const AIOptimizedSEO: React.FC<AIOptimizedSEOProps> = ({
 }) => {
   const baseUrl = 'https://safeorstolen.com';
   const fullImageUrl = image?.startsWith('http') ? image : `${baseUrl}${image}`;
-  const fullCanonicalUrl = canonical?.startsWith('http') ? canonical : canonical ? `${baseUrl}${canonical}` : undefined;
+  
+  // Build canonical URL - always clean (no query params, no hash)
+  let fullCanonicalUrl: string | undefined;
+  if (canonical?.startsWith('http')) {
+    // If full URL provided, use it
+    fullCanonicalUrl = canonical;
+  } else if (canonical) {
+    // If path provided, construct full URL
+    fullCanonicalUrl = `${baseUrl}${canonical}`;
+  } else {
+    // Fallback to current path (clean)
+    const currentPath = typeof window !== 'undefined' 
+      ? window.location.pathname.split('?')[0].split('#')[0]
+      : undefined;
+    fullCanonicalUrl = currentPath ? `${baseUrl}${currentPath}` : undefined;
+  }
 
   // Enhanced keywords for AI understanding
   const aiEnhancedKeywords = keywords ? 
@@ -86,6 +101,9 @@ export const AIOptimizedSEO: React.FC<AIOptimizedSEOProps> = ({
       {aiMetaTags.map((tag, index) => (
         <meta key={index} name={tag.name} content={tag.content} />
       ))}
+      
+      {/* Canonical URL */}
+      {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
       
       {/* Technical SEO */}
       <meta name="theme-color" content="#FF6B35" />

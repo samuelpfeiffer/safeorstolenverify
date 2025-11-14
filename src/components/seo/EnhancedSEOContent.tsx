@@ -25,12 +25,16 @@ export const EnhancedSEOContent: React.FC<EnhancedSEOContentProps> = ({
   showStats = true
 }) => {
   // Enhanced structured data with better Schema.org markup
+  const currentCleanUrl = typeof window !== 'undefined' 
+    ? `https://safeorstolen.com${window.location.pathname.split('?')[0].split('#')[0]}`
+    : 'https://safeorstolen.com';
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@type": pageType === 'service' ? "Service" : "WebPage",
     "name": title,
     "description": description,
-    "url": typeof window !== 'undefined' ? window.location.href : 'https://safeorstolen.com',
+    "url": currentCleanUrl,
     "provider": {
       "@type": "Organization",
       "@id": "https://safeorstolen.com/#organization"

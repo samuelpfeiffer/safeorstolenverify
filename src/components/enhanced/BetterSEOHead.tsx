@@ -33,8 +33,10 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
   nofollow = false
 }) => {
   const fullTitle = title.includes('Safe or Stolen') ? title : `${title} | Safe or Stolen`;
-  const currentUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://safeorstolen.com');
-  const canonicalUrl = canonical ? `https://safeorstolen.com${canonical}` : currentUrl;
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname.split('?')[0].split('#')[0] : '/';
+  const canonicalUrl = canonical 
+    ? (canonical.startsWith('http') ? canonical : `https://safeorstolen.com${canonical}`) 
+    : `https://safeorstolen.com${currentPath}`;
   const imageUrl = image.startsWith('http') ? image : `https://safeorstolen.com${image}`;
 
   const robotsContent = [
@@ -54,7 +56,7 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
-      <meta property="og:url" content={currentUrl} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content="Safe or Stolen" />
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
@@ -85,6 +87,9 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
           {JSON.stringify(structuredData)}
         </script>
       )}
+
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* PWA Meta */}
       <meta name="application-name" content="Safe or Stolen" />

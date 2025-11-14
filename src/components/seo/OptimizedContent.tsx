@@ -190,7 +190,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={finalDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={typeof window !== 'undefined' ? window.location.href : ''} />
+      <meta property="og:url" content={typeof window !== 'undefined' ? `https://safeorstolen.com${window.location.pathname.split('?')[0].split('#')[0]}` : 'https://safeorstolen.com'} />
       <meta property="og:image" content="https://safeor.stolen/images/og-image.jpg" />
       <meta property="og:image:alt" content="SafeOrStolen - Verify stolen goods and protect your purchases" />
       <meta property="og:site_name" content="SafeOrStolen" />
@@ -243,7 +243,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
           "@type": "WebPage",
           "name": finalTitle,
           "description": finalDescription,
-          "url": typeof window !== 'undefined' ? window.location.href : '',
+          "url": typeof window !== 'undefined' ? `https://safeorstolen.com${window.location.pathname.split('?')[0].split('#')[0]}` : 'https://safeorstolen.com',
           "mainEntity": content.schema,
           "breadcrumb": {
             "@type": "BreadcrumbList",

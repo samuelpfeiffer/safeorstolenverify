@@ -35,8 +35,10 @@ export const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
       fullCanonical = `${baseUrl}${path}`;
     }
   } else {
-    // Fallback to current pathname
-    const currentPath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '';
+    // Fallback to current pathname (strip query params and hash for canonical)
+    const currentPath = typeof window !== 'undefined' 
+      ? window.location.pathname.split('?')[0].split('#')[0]
+      : '';
     fullCanonical = `${baseUrl}${currentPath}`;
   }
 
