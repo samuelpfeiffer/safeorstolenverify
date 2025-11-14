@@ -27,7 +27,9 @@ export const EnhancedPageSEO: React.FC<EnhancedPageSEOProps> = ({
 }) => {
   const location = useLocation();
   const baseUrl = 'https://safeorstolen.com';
-  const canonicalUrl = `${baseUrl}${location.pathname}`;
+  // Clean pathname: remove trailing slashes, query params, and hash
+  const cleanPath = location.pathname.split('?')[0].split('#')[0].replace(/\/+$/, '') || '/';
+  const canonicalUrl = `${baseUrl}${cleanPath}`;
   const imageUrl = image ? (image.startsWith('http') ? image : `${baseUrl}${image}`) : `${baseUrl}/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png`;
 
   // Generate breadcrumb structured data

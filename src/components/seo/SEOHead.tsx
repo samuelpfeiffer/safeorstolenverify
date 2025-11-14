@@ -36,11 +36,16 @@ export const SEOHead = ({
   alternateUrls,
   preloadUrls = []
 }: SEOHeadProps) => {
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://safeorstolen.com';
+  // Get clean current URL (no query params, no hash)
+  const currentCleanPath = typeof window !== 'undefined' 
+    ? window.location.pathname.split('?')[0].split('#')[0]
+    : '/';
+  const currentCleanUrl = `https://safeorstolen.com${currentCleanPath}`;
+  
   // Always use non-www canonical URL
   const canonicalUrl = canonical 
     ? `https://safeorstolen.com${canonical}` 
-    : currentUrl.replace(/^https?:\/\/www\.safeorstolen\.com/, 'https://safeorstolen.com');
+    : currentCleanUrl;
 
   return (
     <Helmet>
@@ -63,7 +68,7 @@ export const SEOHead = ({
 
       {/* Open Graph Tags */}
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={currentUrl} />
+      <meta property="og:url" content={currentCleanUrl} />
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={ogImage} />
