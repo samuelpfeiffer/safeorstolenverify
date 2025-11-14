@@ -107,34 +107,55 @@ export const GlobalSEOHead: React.FC<GlobalSEOHeadProps> = ({
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Verification Services",
+      "numberOfItems": 4,
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Facebook Marketplace Integration"
-          }
+          },
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         },
         {
           "@type": "Offer", 
           "itemOffered": {
             "@type": "Service",
             "name": "Craigslist Verification"
-          }
+          },
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service", 
             "name": "Auction House Authentication"
-          }
+          },
+          "price": "99.00",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Pawn Shop Verification"
-          }
+          },
+          "price": "99.00",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         }
       ]
     },

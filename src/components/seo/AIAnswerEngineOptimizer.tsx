@@ -26,6 +26,9 @@ export const AIAnswerEngineOptimizer: React.FC = () => {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://safeorstolen.com/pricing",
       "description": "2 free verification searches (14-day trial), then affordable paid plans"
     },
     "areaServed": "Worldwide",

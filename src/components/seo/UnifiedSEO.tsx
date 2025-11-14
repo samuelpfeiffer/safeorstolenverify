@@ -98,6 +98,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Stolen Goods Verification Services",
+      "numberOfItems": 3,
       "itemListElement": [
         {
           "@type": "Offer",
@@ -105,7 +106,12 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
             "@type": "Service", 
             "name": "Free IMEI Phone Check",
             "description": "Check if a phone is stolen using IMEI lookup"
-          }
+          },
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         },
         {
           "@type": "Offer",
@@ -113,7 +119,12 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
             "@type": "Service",
             "name": "Free VIN Car Check", 
             "description": "Verify if a vehicle is stolen using VIN lookup"
-          }
+          },
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         },
         {
           "@type": "Offer",
@@ -121,7 +132,12 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
             "@type": "Service",
             "name": "Electronics Serial Number Check",
             "description": "Verify electronics using serial number against stolen databases"
-          }
+          },
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31",
+          "availability": "https://schema.org/InStock",
+          "url": "https://safeorstolen.com/pricing"
         }
       ]
     }

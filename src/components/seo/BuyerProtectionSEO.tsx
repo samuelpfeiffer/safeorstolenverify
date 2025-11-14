@@ -83,6 +83,9 @@ export const BuyerProtectionSEO: React.FC<BuyerProtectionSEOProps> = ({
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://safeorstolen.com/pricing",
       "description": "Free stolen goods verification"
     }
   };

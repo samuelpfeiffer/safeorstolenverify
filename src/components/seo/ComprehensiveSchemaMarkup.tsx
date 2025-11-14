@@ -74,6 +74,7 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Verification Services",
+          "numberOfItems": 3,
           "itemListElement": [
             {
               "@type": "Offer",
@@ -81,7 +82,12 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
                 "@type": "Service",
                 "name": "IMEI Phone Verification",
                 "description": "Check if a phone is stolen by IMEI number"
-              }
+              },
+              "price": "0",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://safeorstolen.com/pricing"
             },
             {
               "@type": "Offer",
@@ -89,7 +95,12 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
                 "@type": "Service",
                 "name": "VIN Car Verification",
                 "description": "Verify if a vehicle is stolen by VIN number"
-              }
+              },
+              "price": "0",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://safeorstolen.com/pricing"
             },
             {
               "@type": "Offer",
@@ -97,7 +108,12 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
                 "@type": "Service",
                 "name": "Serial Number Lookup",
                 "description": "Check laptops, tools, bikes, and electronics"
-              }
+              },
+              "price": "0",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://safeorstolen.com/pricing"
             }
           ]
         }

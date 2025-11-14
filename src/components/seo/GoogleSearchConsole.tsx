@@ -92,6 +92,7 @@ export const GoogleSearchConsole: React.FC = () => {
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Verification Services",
+            "numberOfItems": 3,
             "itemListElement": [
               {
                 "@type": "Offer",
@@ -99,7 +100,12 @@ export const GoogleSearchConsole: React.FC = () => {
                   "@type": "Service",
                   "name": "IMEI Verification",
                   "description": "Check if phone IMEI is stolen or blacklisted"
-                }
+                },
+                "price": "0",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://safeorstolen.com/pricing"
               },
               {
                 "@type": "Offer", 
@@ -107,7 +113,12 @@ export const GoogleSearchConsole: React.FC = () => {
                   "@type": "Service",
                   "name": "VIN Verification",
                   "description": "Check if vehicle VIN is reported stolen"
-                }
+                },
+                "price": "0",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://safeorstolen.com/pricing"
               },
               {
                 "@type": "Offer",
@@ -115,7 +126,12 @@ export const GoogleSearchConsole: React.FC = () => {
                   "@type": "Service", 
                   "name": "Serial Number Verification",
                   "description": "Verify electronics and other items by serial number"
-                }
+                },
+                "price": "0",
+                "priceCurrency": "USD",
+                "priceValidUntil": "2026-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://safeorstolen.com/pricing"
               }
             ]
           }

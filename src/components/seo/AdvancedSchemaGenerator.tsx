@@ -91,6 +91,7 @@ export const AdvancedSchemaGenerator = () => {
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Verification Services",
+          "numberOfItems": 3,
           "itemListElement": [
             {
               "@type": "Offer",
@@ -98,7 +99,12 @@ export const AdvancedSchemaGenerator = () => {
                 "@type": "Service",
                 "name": "IMEI Verification",
                 "description": "Check if a phone or mobile device IMEI number is stolen"
-              }
+              },
+              "price": "0",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://safeorstolen.com/pricing"
             },
             {
               "@type": "Offer",
@@ -106,7 +112,12 @@ export const AdvancedSchemaGenerator = () => {
                 "@type": "Service",
                 "name": "VIN Verification",
                 "description": "Verify vehicle identification numbers for stolen cars"
-              }
+              },
+              "price": "0",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://safeorstolen.com/pricing"
             },
             {
               "@type": "Offer",
@@ -114,7 +125,12 @@ export const AdvancedSchemaGenerator = () => {
                 "@type": "Service",
                 "name": "Firearm Serial Number Check",
                 "description": "Check gun serial numbers against stolen firearms databases"
-              }
+              },
+              "price": "0",
+              "priceCurrency": "USD",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://safeorstolen.com/pricing"
             }
           ]
         }

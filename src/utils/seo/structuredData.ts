@@ -190,6 +190,7 @@ export const createServiceSchema = () => ({
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Verification Services",
+    "numberOfItems": 3,
     "itemListElement": [
       {
         "@type": "Offer",
@@ -197,7 +198,12 @@ export const createServiceSchema = () => ({
           "@type": "Service",
           "name": "Free Consumer Verification",
           "description": "Basic stolen goods verification protecting innocent consumers with 4 free searches per day"
-        }
+        },
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": `${SITE_CONFIG.url}/pricing`
       },
       {
         "@type": "Offer",
@@ -205,7 +211,12 @@ export const createServiceSchema = () => ({
           "@type": "Service",
           "name": "Enterprise API",
           "description": "Real-time verification API for businesses to integrate stolen goods checking into their platforms"
-        }
+        },
+        "price": "99.00",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": `${SITE_CONFIG.url}/pricing`
       },
       {
         "@type": "Offer",
@@ -213,7 +224,12 @@ export const createServiceSchema = () => ({
           "@type": "Service",
           "name": "Premium Protection",
           "description": "Unlimited verifications with detailed reports, priority support, and advanced fraud protection"
-        }
+        },
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": `${SITE_CONFIG.url}/pricing`
       }
     ]
   }
