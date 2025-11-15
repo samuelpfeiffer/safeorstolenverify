@@ -38,8 +38,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   
-  // Use centralized canonical URL generator
-  const fullCanonicalUrl = canonical ? getCanonicalUrl(canonical) : undefined;
+  // Canonical URL is already processed by PageSEO, use it directly
+  const fullCanonicalUrl = canonical || undefined;
   
   // Validate canonical URL in development
   if (import.meta.env.DEV && fullCanonicalUrl) {

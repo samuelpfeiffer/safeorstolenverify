@@ -25,11 +25,13 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   structuredData
 }) => {
   const location = useSafeLocation();
+  
+  // Build canonical URL - always provide a value
   const canonical = customCanonical 
     ? getCanonicalUrl(customCanonical) 
-    : location 
+    : location?.pathname 
       ? getCanonicalUrl(location.pathname)
-      : getCanonicalUrl('/'); // Fallback to homepage if Router context unavailable
+      : getCanonicalUrl('/');
 
   // Ensure structuredData is always an array for OptimizedSEOHead
   const normalizedStructuredData = structuredData 

@@ -1,14 +1,20 @@
 /**
  * Centralized Analytics Configuration
  * 
- * ⚠️ ACTION REQUIRED: Replace the placeholder GA4_MEASUREMENT_ID with your real ID
+ * ⚠️ ACTION REQUIRED: Configure your GA4 Measurement ID
+ * 
+ * Option 1 - Hardcode (Quick, but less secure):
+ * Replace 'NEEDS_CONFIGURATION' below with your GA4 ID (format: G-XXXXXXXXXX)
+ * 
+ * Option 2 - Use Environment Variable (Recommended):
+ * 1. Create a .env file in your project root
+ * 2. Add: VITE_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
+ * 3. The code will automatically use it
  * 
  * How to get your GA4 ID:
  * 1. Go to https://analytics.google.com/
  * 2. Create a new GA4 property for safeorstolen.com
  * 3. Copy your Measurement ID (format: G-XXXXXXXXXX)
- * 4. Replace the value below
- * 5. Save and deploy
  * 
  * This is the ONLY file you need to edit to enable Google Analytics!
  */
@@ -16,9 +22,9 @@
 export const ANALYTICS_CONFIG = {
   /**
    * Google Analytics 4 Measurement ID
-   * Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
+   * Priority: Environment Variable > Hardcoded Value
    */
-  GA4_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Replace with your GA4 ID
+  GA4_MEASUREMENT_ID: import.meta.env.VITE_GA4_MEASUREMENT_ID || 'NEEDS_CONFIGURATION',
   
   /**
    * Google Search Console Verification Code
@@ -40,7 +46,8 @@ export const ANALYTICS_CONFIG = {
 
 // Helper to check if analytics is configured
 export const isAnalyticsConfigured = (): boolean => {
-  return ANALYTICS_CONFIG.GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX';
+  return ANALYTICS_CONFIG.GA4_MEASUREMENT_ID !== 'NEEDS_CONFIGURATION' && 
+         ANALYTICS_CONFIG.GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX';
 };
 
 // Export for easy access
