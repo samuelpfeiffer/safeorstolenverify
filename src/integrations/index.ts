@@ -27,6 +27,7 @@ export const EdgeFunctions = {
   stolenPropertyCheck: 'stolen-property-check',
   stolenlostfoundCheck: 'stolenlostfound-check',
   bikeIndexApi: 'bike-index-api',
+  webScraperVerification: 'web-scraper-verification',
   
   // API Functions
   apiV1Check: 'api-v1-check',
