@@ -453,13 +453,63 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
   try {
     console.log(`Verifying ${itemType} serial: ${serialNumber}`)
     
-    // Only return CheckMend results or unknown - no fake simulation
-    const checkMendResult = await verifyWithCheckMend(serialNumber, itemType)
-    if (checkMendResult.status !== 'unknown' && checkMendResult.confidence > 70) {
-      return checkMendResult
+    // Run parallel verification: CheckMend + Web Scraper
+    const [checkMendResult, webScraperResult] = await Promise.allSettled([
+      verifyWithCheckMend(serialNumber, itemType),
+      verifyWithWebScraper(serialNumber, itemType)
+    ])
+    
+    const results: VerificationResult[] = []
+    
+    if (checkMendResult.status === 'fulfilled' && checkMendResult.value.confidence > 0) {
+      results.push(checkMendResult.value)
     }
     
-    // No fake results - direct to manual verification
+    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
+      results.push(webScraperResult.value)
+    }
+    
+    // Aggregate results - prioritize stolen/lost findings
+    if (results.length > 0) {
+      const hasStolenReport = results.some(r => r.status === 'stolen')
+      const hasLostReport = results.some(r => r.status === 'lost')
+      
+      if (hasStolenReport) {
+        const stolenResult = results.find(r => r.status === 'stolen')!
+        return {
+          ...stolenResult,
+          details: {
+            ...stolenResult.details,
+            all_sources: results
+          }
+        }
+      }
+      
+      if (hasLostReport) {
+        const lostResult = results.find(r => r.status === 'lost')!
+        return {
+          ...lostResult,
+          details: {
+            ...lostResult.details,
+            all_sources: results
+          }
+        }
+      }
+      
+      // Return highest confidence result
+      const bestResult = results.reduce((best, current) => 
+        current.confidence > best.confidence ? current : best
+      )
+      return {
+        ...bestResult,
+        details: {
+          ...bestResult.details,
+          all_sources: results
+        }
+      }
+    }
+    
+    // No results - direct to manual verification
     return {
       status: 'unknown',
       confidence: 0,
@@ -474,6 +524,65 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
       confidence: 0,
       source: 'system',
       message: 'Verification service temporarily unavailable'
+    }
+  }
+}
+
+async function verifyWithWebScraper(serialNumber: string, itemType: string): Promise<VerificationResult> {
+  try {
+    console.log('Calling web-scraper-verification for:', serialNumber)
+    
+    const supabaseClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    )
+    
+    const { data, error } = await supabaseClient.functions.invoke('web-scraper-verification', {
+      body: { identifier: serialNumber, itemType }
+    })
+    
+    if (error) {
+      console.error('Web scraper error:', error)
+      return {
+        status: 'unknown',
+        confidence: 0,
+        source: 'web_scraper',
+        message: 'Web scraper unavailable'
+      }
+    }
+    
+    if (!data || !data.success) {
+      return {
+        status: 'unknown',
+        confidence: 0,
+        source: 'web_scraper',
+        message: 'No web scraper results'
+      }
+    }
+    
+    // Map web scraper response to VerificationResult
+    let status: VerificationResult['status'] = 'unknown'
+    if (data.status === 'stolen') status = 'stolen'
+    else if (data.status === 'safe') status = 'safe'
+    
+    return {
+      status,
+      confidence: data.confidence || 70,
+      source: 'web_scraper',
+      details: {
+        databases_searched: data.sources?.length || 0,
+        sources: data.sources || []
+      },
+      message: data.message || (status === 'stolen' ? 'Item found in stolen registries' : 'No stolen records found in web search')
+    }
+    
+  } catch (error) {
+    console.error('Web scraper verification error:', error)
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'web_scraper',
+      message: 'Web scraper service error'
     }
   }
 }
