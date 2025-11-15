@@ -65,7 +65,7 @@ serve(async (req) => {
         const searchUrl = `${database}/search?q=${encodeURIComponent(identifier)}`;
         
         // Scrape the search results page
-        const scrapeResponse = await firecrawl.scrapeUrl(searchUrl, {
+        const scrapeResponse = await firecrawl.v1.scrapeUrl(searchUrl, {
           formats: ['markdown', 'html'],
           onlyMainContent: true,
           timeout: 10000,

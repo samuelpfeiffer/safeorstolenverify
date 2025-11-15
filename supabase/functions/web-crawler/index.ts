@@ -54,7 +54,7 @@ serve(async (req) => {
     const firecrawl = new FirecrawlApp({ apiKey: FIRECRAWL_API_KEY });
 
     console.log('Starting crawl with options:', options);
-    const crawlResponse = await firecrawl.crawlUrl(url, {
+    const crawlResponse = await firecrawl.v1.crawlUrl(url, {
       limit: options?.limit || 10,
       scrapeOptions: options?.scrapeOptions || {
         formats: ['markdown', 'html'],
