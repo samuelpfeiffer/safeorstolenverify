@@ -55,6 +55,13 @@ export default function UnifiedVerificationPage() {
       icon: Database,
       coverage: 'USA',
       types: ['All Property']
+    },
+    {
+      name: 'Web Scraper Verification',
+      description: 'Automated search across multiple stolen item registries online',
+      icon: Globe,
+      coverage: 'Global',
+      types: ['All Items']
     }
   ];
 

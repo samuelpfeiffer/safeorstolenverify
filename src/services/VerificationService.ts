@@ -92,7 +92,8 @@ class VerificationService {
       'stolen-register-check',    // StolenRegister.com - community database
       'stolen911-check',          // Stolen911.com - police detective database
       'stolen-property-check',    // Stolen-Property.com - international database
-      'stolenlostfound-check'     // StolenLostFound.com - community lost/stolen
+      'stolenlostfound-check',    // StolenLostFound.com - community lost/stolen
+      'web-scraper-verification'  // Web scraping across multiple stolen item databases
     ];
     
     // Item-specific databases
