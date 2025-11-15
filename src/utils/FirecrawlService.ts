@@ -1,3 +1,5 @@
+import { supabase } from '@/integrations/supabase/client';
+
 interface CrawlStatusResponse {
   success: true;
   status: string;
@@ -31,28 +33,19 @@ export class FirecrawlService {
     options?: CrawlOptions
   ): Promise<{ success: boolean; error?: string; data?: any }> {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/web-crawler`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
-          },
-          body: JSON.stringify({ url, options }),
-        }
-      );
+      const { data, error } = await supabase.functions.invoke('web-crawler', {
+        body: { url, options },
+      });
 
-      if (!response.ok) {
-        const errorText = await response.text();
+      if (error) {
+        console.error('Error invoking web-crawler function:', error);
         return {
           success: false,
-          error: `HTTP ${response.status}: ${errorText}`,
+          error: error.message || 'Failed to crawl website',
         };
       }
 
-      const result = await response.json();
-      return result;
+      return data;
     } catch (error) {
       console.error('Error during crawl:', error);
       return {
