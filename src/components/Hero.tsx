@@ -46,7 +46,7 @@ const Hero = () => {
           <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-lg p-3">
             <p className="text-sm md:text-base font-medium text-foreground">
               📱 <span className="text-primary">NEW:</span> Download Our Mobile App • 
-              <span className="text-secondary"> Only App That Verifies Firearms</span> • Free Forever!
+              <span className="text-secondary"> Only App That Verifies Firearms</span> • No Subscription Required
             </p>
           </div>
 

@@ -13,13 +13,13 @@ export default function AppDownloadPage() {
     "100+ police and insurance database access",
     "Verification history tracking",
     "No app store required - install from browser",
-    "Free forever - no subscriptions"
+    "No subscription required"
   ];
 
   return (
     <AppPageTemplate
       title="Download SafeOrStolen App - iOS, Android & Web"
-      description="Download SafeOrStolen mobile app for instant stolen goods verification. Available on iOS, Android, and as a Progressive Web App. Verify IMEI, VIN, serial numbers, and firearms on-the-go. Free forever."
+      description="Download SafeOrStolen mobile app for instant stolen goods verification. Available on iOS, Android, and as a Progressive Web App. Verify IMEI, VIN, serial numbers, and firearms on-the-go. No subscription required."
       keywords="download SafeOrStolen, SafeOrStolen app download, install SafeOrStolen, IMEI checker app, VIN checker app, stolen goods app, mobile verification app"
       canonical="/app/download"
       h1Title="Download SafeOrStolen - Verify Stolen Items Instantly"

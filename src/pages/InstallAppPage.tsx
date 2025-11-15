@@ -217,7 +217,7 @@ const InstallAppPage = () => {
                   '📂 Offline access to history',
                   '🔔 Optional push notifications',
                   '💾 No storage on app stores',
-                  '🆓 Completely free forever',
+                  '🆓 No subscription required',
                   '♻️ Always up-to-date automatically',
                 ].map((benefit, idx) => (
                   <div key={idx} className="flex items-center gap-3">
