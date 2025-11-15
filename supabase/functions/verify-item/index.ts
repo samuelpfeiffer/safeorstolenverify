@@ -453,55 +453,18 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
   try {
     console.log(`Verifying ${itemType} serial: ${serialNumber}`)
     
-    // Run multiple verification sources in parallel
-    const [checkMendResult, webScraperResult] = await Promise.allSettled([
-      verifyWithCheckMend(serialNumber, itemType),
-      verifyWithWebScraper(serialNumber, itemType),
-    ])
-    
-    // Process CheckMend result
-    const checkMend = checkMendResult.status === 'fulfilled' 
-      ? checkMendResult.value 
-      : { status: 'unknown', confidence: 0, source: 'CheckMEND' } as VerificationResult
-    
-    // Process Web Scraper result
-    const webScraper = webScraperResult.status === 'fulfilled'
-      ? webScraperResult.value
-      : { status: 'unknown', confidence: 0, source: 'WebScraper' } as VerificationResult
-    
-    // Combine results - prioritize any "stolen" findings
-    if (checkMend.status === 'stolen' || webScraper.status === 'stolen') {
-      return {
-        status: 'stolen',
-        confidence: Math.max(checkMend.confidence, webScraper.confidence),
-        source: checkMend.status === 'stolen' ? 'CheckMEND + WebScraper' : 'WebScraper',
-        details: {
-          checkMend: checkMend.status === 'stolen' ? checkMend.details : null,
-          webScraper: webScraper.status === 'stolen' ? webScraper.details : null,
-        },
-        message: 'Item found in stolen databases. DO NOT PURCHASE.'
-      }
+    // Only return CheckMend results or unknown - no fake simulation
+    const checkMendResult = await verifyWithCheckMend(serialNumber, itemType)
+    if (checkMendResult.status !== 'unknown' && checkMendResult.confidence > 70) {
+      return checkMendResult
     }
     
-    // If CheckMend found something definitive
-    if (checkMend.status !== 'unknown' && checkMend.confidence > 70) {
-      return checkMend
-    }
-    
-    // If web scraper found something meaningful
-    if (webScraper.status !== 'unknown' && webScraper.confidence > 50) {
-      return webScraper
-    }
-    
-    // No conclusive results
+    // No fake results - direct to manual verification
     return {
       status: 'unknown',
       confidence: 0,
       source: 'system', 
-      message: 'No stolen records found across multiple databases. Always verify in person.',
-      details: {
-        sourcesChecked: ['CheckMEND', 'WebScraper', 'Multiple online databases']
-      }
+      message: 'Manual verification required. Please contact support for assistance.'
     }
     
   } catch (error) {
@@ -607,66 +570,6 @@ async function verifyWithCheckMend(serialNumber: string, itemType: string): Prom
       confidence: 30,
       source: 'CheckMend_Error',
       message: 'CheckMend verification failed'
-    }
-  }
-}
-
-async function verifyWithWebScraper(serialNumber: string, itemType: string): Promise<VerificationResult> {
-  try {
-    console.log(`Running web scraper verification for ${itemType}: ${serialNumber}`)
-    
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    )
-    
-    // Call the web-scraper-verification edge function
-    const { data, error } = await supabase.functions.invoke('web-scraper-verification', {
-      body: { 
-        identifier: serialNumber,
-        itemType: itemType 
-      }
-    })
-    
-    if (error) {
-      console.error('Web scraper invocation error:', error)
-      return {
-        status: 'unknown',
-        confidence: 0,
-        source: 'WebScraper_Error',
-        message: 'Web scraper unavailable'
-      }
-    }
-    
-    if (!data || !data.success) {
-      return {
-        status: 'unknown',
-        confidence: 0,
-        source: 'WebScraper',
-        message: 'No results from web scraper'
-      }
-    }
-    
-    // Convert web scraper response to VerificationResult format
-    return {
-      status: data.status === 'stolen' ? 'stolen' : data.status === 'safe' ? 'safe' : 'unknown',
-      confidence: data.confidence || 40,
-      source: 'WebScraper',
-      details: {
-        sources: data.sources,
-        databasesSearched: data.databasesSearched,
-        timestamp: data.timestamp
-      },
-      message: data.message || 'Web verification completed'
-    }
-    
-  } catch (error) {
-    console.error('Web scraper verification error:', error)
-    return {
-      status: 'unknown',
-      confidence: 0,
-      source: 'WebScraper_Error',
-      message: 'Web scraper error'
     }
   }
 }

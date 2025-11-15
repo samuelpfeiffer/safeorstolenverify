@@ -6,29 +6,9 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
-import { usePWA } from '@/hooks/usePWA';
-import { useToast } from '@/hooks/use-toast';
 
 export default function MobileAppPage() {
   const navigate = useNavigate();
-  const { showInstallPrompt, isInstalled } = usePWA();
-  const { toast } = useToast();
-
-  const handleInstall = async () => {
-    const result = await showInstallPrompt();
-    if (result) {
-      toast({
-        title: "App Installing",
-        description: "SafeOrStolen is being added to your home screen!",
-      });
-    } else {
-      toast({
-        title: "Install SafeOrStolen",
-        description: "On iPhone: Tap Share → Add to Home Screen. On Android: Tap menu → Install App.",
-        duration: 6000,
-      });
-    }
-  };
 
   const appSchema = {
     "@context": "https://schema.org",
@@ -145,30 +125,17 @@ export default function MobileAppPage() {
                     Check if items are stolen right from your phone—at yard sales, meetups, or anywhere. No other service offers mobile-first verification to protect you on the go.
                   </p>
 
-                  {/* Install Button */}
+                  {/* Download Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    {isInstalled ? (
-                      <div className="flex items-center gap-2 px-6 py-3 bg-green-500/10 text-green-600 dark:text-green-400 rounded-lg border border-green-500/20">
-                        <Check className="h-5 w-5" />
-                        <span className="font-medium">App Installed on Your Device</span>
-                      </div>
-                    ) : (
-                      <Button size="lg" className="px-8 gap-2" onClick={handleInstall}>
-                        <Download className="h-5 w-5" />
-                        Install App Now
-                      </Button>
-                    )}
-                    <Button size="lg" variant="outline" className="px-8" onClick={() => navigate('/pricing')}>
-                      View Pricing
+                    <Button size="lg" className="px-8" onClick={() => navigate('/download-app')}>
+                      <Apple className="h-5 w-5 mr-2" />
+                      Download for iOS
+                    </Button>
+                    <Button size="lg" variant="outline" className="px-8" onClick={() => navigate('/download-app')}>
+                      <PlayCircle className="h-5 w-5 mr-2" />
+                      Download for Android
                     </Button>
                   </div>
-
-                  {!isInstalled && (
-                    <p className="text-sm text-muted-foreground">
-                      <strong>iPhone:</strong> Tap Share → Add to Home Screen<br />
-                      <strong>Android:</strong> Tap menu → Install App
-                    </p>
-                  )}
 
                   {/* Quick Stats */}
                   <div className="flex flex-wrap gap-6 pt-6">
