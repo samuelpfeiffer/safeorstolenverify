@@ -1,5 +1,6 @@
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { RebuildHero } from '@/components/home/RebuildHero';
+import { BillboardSection } from '@/components/home/BillboardSection';
 import { ProblemSection } from '@/components/home/ProblemSection';
 import { HowItWorksSteps } from '@/components/home/HowItWorksSteps';
 import { WhatWeCheck } from '@/components/home/WhatWeCheck';
@@ -112,6 +113,9 @@ const Index = () => {
       <div className="min-h-screen">
         {/* New Hero Section */}
         <RebuildHero />
+        
+        {/* Billboard Campaign Section */}
+        <BillboardSection />
         
         {/* Problem Section */}
         <ProblemSection />
