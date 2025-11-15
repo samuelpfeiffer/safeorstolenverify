@@ -11,7 +11,7 @@ export const useFreemiumFlow = () => {
   const [showPaywall, setShowPaywall] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const FREE_SEARCH_LIMIT = 999; // Unlimited during 14-day trial
+  const FREE_SEARCH_LIMIT = 2; // 2 free searches during 14-day trial
   const TRIAL_DURATION_DAYS = 14;
 
   useEffect(() => {

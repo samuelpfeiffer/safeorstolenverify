@@ -4,13 +4,13 @@ import { supabase } from '@/integrations/supabase/client';
 // Default fallback configuration if database is not available
 const DEFAULT_CONFIG = {
   rate_limits: {
-    verification: { maxRequests: 999, windowMinutes: Infinity },
-    search: { maxRequests: 999, windowMinutes: Infinity },
+    verification: { maxRequests: 10, windowMinutes: 60 },
+    search: { maxRequests: 10, windowMinutes: 60 },
     profile_update: { maxRequests: 10, windowMinutes: 60 },
     search_history: { maxRequests: 100, windowMinutes: 60 }
   },
   search_limits: {
-    free_tier: { total_searches: 999, reset_period: 'never' },
+    free_tier: { total_searches: 2, reset_period: '14_days' },
     basic_tier: { total_searches: 'unlimited', reset_period: 'monthly' },
     premium_tier: { total_searches: 'unlimited', reset_period: 'monthly' }
   },

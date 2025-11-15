@@ -136,7 +136,7 @@ export const ConversionOptimizedPricing = ({
           Simple, Transparent Pricing
         </h2>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-3">
-          Try with 2 free searches (one-time). No credit card required.
+          Start with 2 free verifications • Valid for 14 days • No credit card required
         </p>
         <p className="text-base text-muted-foreground max-w-2xl mx-auto">
           Pay only for what you need • Cancel anytime • Join 50,000+ protected buyers & sellers
