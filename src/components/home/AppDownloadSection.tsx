@@ -19,11 +19,11 @@ export const AppDownloadSection = () => {
 
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">
-              Verify Phones, Cars, Guns & More On-The-Go
+              Mobile App Coming Soon
             </h2>
             <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              CheckMend doesn't have it. IMEIinfo doesn't have it. Stolen Register doesn't have it. 
-              <span className="block mt-2 font-bold">Only SafeOrStolen offers complete mobile verification - IMEI, VIN, Serial Numbers & Firearms!</span>
+              Be among the first to experience complete mobile verification for phones, cars, electronics & firearms.
+              <span className="block mt-2 font-bold">Join the waitlist for early access to our iOS & Android apps!</span>
             </p>
           </div>
 
@@ -34,12 +34,12 @@ export const AppDownloadSection = () => {
                 <div className="text-center">
                   <Smartphone className="h-32 w-32 text-primary mx-auto mb-6" />
                   <h3 className="text-3xl font-bold text-primary mb-2">Mobile App</h3>
-                  <p className="text-muted-foreground text-lg">Available on iOS & Android</p>
+                  <p className="text-muted-foreground text-lg">Coming to iOS & Android</p>
                 </div>
               </div>
               {/* Floating badge */}
               <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full font-bold shadow-xl">
-                iOS & Android
+                Coming Soon
               </div>
             </div>
 
@@ -96,13 +96,13 @@ export const AppDownloadSection = () => {
               {/* Download Buttons */}
               <div className="pt-6 space-y-4">
                 <Link 
-                  to="/download-app" 
+                  to="/pricing" 
                   className="block w-full bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-bold py-4 px-8 rounded-xl text-center transition-all hover:scale-105 shadow-xl"
                 >
-                  📱 Download for iOS & Android - Verify Phones, Cars & Guns!
+                  📱 Join Waitlist - Early Access to Mobile App
                 </Link>
                 <p className="text-center text-primary-foreground/70 text-sm">
-                  ⭐ 100,000+ downloads • All verification types included
+                  ⭐ Be first to know • Pre-register for iOS & Android
                 </p>
               </div>
             </div>
