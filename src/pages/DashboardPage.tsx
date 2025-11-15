@@ -27,6 +27,9 @@ import { useFreemiumFlow } from '@/hooks/useFreemiumFlow';
 import { PaywallModal } from '@/components/dashboard/PaywallModal';
 import { useToast } from '@/hooks/use-toast';
 import { NotificationSettings } from '@/components/settings/NotificationSettings';
+import { QuickStatsCard } from '@/components/dashboard/QuickStatsCard';
+import { RecentActivityCard } from '@/components/dashboard/RecentActivityCard';
+import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatusCard';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
