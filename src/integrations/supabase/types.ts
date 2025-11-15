@@ -2926,6 +2926,10 @@ export type Database = {
       cleanup_expired_cache: { Args: never; Returns: undefined }
       cleanup_expired_tokens: { Args: never; Returns: undefined }
       generate_api_key: { Args: never; Returns: string }
+      generate_unique_clean_slug: {
+        Args: { input_slug: string; post_id: string }
+        Returns: string
+      }
       get_complete_schema: { Args: never; Returns: Json }
       get_current_user_role: { Args: never; Returns: string }
       get_newsletter_subscriber_count: { Args: never; Returns: number }

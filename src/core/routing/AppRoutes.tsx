@@ -435,7 +435,7 @@ export const AppRoutes = () => {
 
         {/* Business */}
         <Route path="/mobile-app" element={<MobileAppPage />} />
-        <Route path="/for-businesses" element={<ForBrandsPage />} />
+        <Route path="/for-brands" element={<ForBrandsPage />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />} />

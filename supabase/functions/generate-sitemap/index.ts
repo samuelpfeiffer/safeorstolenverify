@@ -23,7 +23,10 @@ serve(async (req) => {
       { url: '/faq', priority: '0.8', changefreq: 'monthly' },
       { url: '/contact', priority: '0.6', changefreq: 'monthly' },
       { url: '/blog', priority: '0.8', changefreq: 'daily' },
-      { url: '/auth', priority: '0.5', changefreq: 'monthly' },
+      { url: '/for-brands', priority: '0.8', changefreq: 'monthly' },
+      { url: '/terms', priority: '0.5', changefreq: 'yearly' },
+      { url: '/privacy', priority: '0.5', changefreq: 'yearly' },
+      { url: '/cookies', priority: '0.4', changefreq: 'yearly' },
     ];
 
     // Generate XML sitemap
