@@ -65,6 +65,18 @@ const AppVsCarfaxPage = lazy(() => import('@/pages/app/AppVsCarfaxPage'));
 // App Pages - Item Types
 const AppIMEICheckerPage = lazy(() => import('@/pages/app/AppIMEICheckerPage'));
 const AppFirearmsCheckerPage = lazy(() => import('@/pages/app/AppFirearmsCheckerPage'));
+const AppVINCheckerPage = lazy(() => import('@/pages/app/AppVINCheckerPage'));
+
+// App Pages - Use Cases
+const AppMarketplacePage = lazy(() => import('@/pages/app/AppMarketplacePage'));
+const AppPawnShopsPage = lazy(() => import('@/pages/app/AppPawnShopsPage'));
+
+// App Pages - More Competitors
+const AppVsSwappaPage = lazy(() => import('@/pages/app/AppVsSwappaPage'));
+const AppVsNICBPage = lazy(() => import('@/pages/app/AppVsNICBPage'));
+
+// Blog - App Posts
+const BestStolenItemCheckerApps2025 = lazy(() => import('@/pages/blog/BestStolenItemCheckerApps2025'));
 
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
@@ -326,6 +338,7 @@ export const AppRoutes = () => {
         <Route path="/blog/facebook-marketplace-safety" element={<FacebookMarketplaceSafety />} />
         <Route path="/blog/what-to-do-if-bought-stolen-phone" element={<WhatToDoIfBoughtStolenPhone />} />
         <Route path="/blog/best-imei-checker-tools-2025" element={<BestIMEICheckerTools2025 />} />
+        <Route path="/blog/best-stolen-item-checker-apps-2025" element={<BestStolenItemCheckerApps2025 />} />
         
         {/* Tools */}
         <Route path="/tools" element={<ToolsPage />} />

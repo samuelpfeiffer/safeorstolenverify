@@ -12,4 +12,8 @@
     <mobile:mobile/>
   </url>
 
-</urlset>
+  <link rel="preconnect" href="https://safeorstolen.com" crossorigin />
+  
+  <!-- Sitemap Expansion Reference -->
+  <link rel="sitemap" type="application/xml" title="Mobile App Sitemap" href="/sitemap-mobile-app-expanded.xml" />
+  <link rel="sitemap" type="application/xml" title="Core Sitemap" href="/sitemap-core.xml" />

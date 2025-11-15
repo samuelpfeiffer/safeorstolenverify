@@ -7,10 +7,16 @@
     <lastmod>2025-11-10</lastmod>
   </sitemap>
   
-  <!-- Mobile App Pages Sitemap -->
+  <!-- Mobile App Pages Sitemap - EXPANDED -->
+  <sitemap>
+    <loc>https://safeorstolen.com/sitemap-mobile-app-expanded.xml</loc>
+    <lastmod>2025-11-15</lastmod>
+  </sitemap>
+  
+  <!-- Mobile App Original -->
   <sitemap>
     <loc>https://safeorstolen.com/sitemap-mobile-app.xml</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-11-15</lastmod>
   </sitemap>
   
   <!-- SEO Expansion Pages Sitemap - CLEANED UP -->
