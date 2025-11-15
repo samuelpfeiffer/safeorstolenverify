@@ -44,6 +44,7 @@ const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
 const BrandsPage = lazy(() => import('@/pages/BrandsPage'));
 const PressReleasesPage = lazy(() => import('@/pages/PressReleasesPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
+const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
@@ -312,6 +313,7 @@ export const AppRoutes = () => {
         
         {/* Tools */}
         <Route path="/tools" element={<ToolsPage />} />
+        <Route path="/web-crawler" element={<WebCrawlerPage />} />
         
         {/* Services & Company Pages */}
         <Route path="/services" element={<ServicesPage />} />
