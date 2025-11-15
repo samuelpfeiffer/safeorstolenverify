@@ -1,5 +1,5 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
-import FirecrawlApp from 'npm:@mendable/firecrawl-js@^1.0.0';
+import FirecrawlApp from 'npm:@mendable/firecrawl-js@1.6.5';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -90,11 +90,11 @@ serve(async (req) => {
               'crime reference',
             ];
             
-            const hasStorenIndicator = stolenKeywords.some(keyword => 
+            const hasStolenIndicator = stolenKeywords.some(keyword => 
               normalizedContent.includes(keyword)
             );
             
-            if (hasStorenIndicator) {
+            if (hasStolenIndicator) {
               foundStolen = true;
               sources.push({
                 database: database,
