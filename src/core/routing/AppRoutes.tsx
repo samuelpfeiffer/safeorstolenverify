@@ -61,22 +61,33 @@ const AppInstallGuidePage = lazy(() => import('@/pages/app/AppInstallGuidePage')
 const AppVsCheckMendPage = lazy(() => import('@/pages/app/AppVsCheckMendPage'));
 const AppVsIMEIInfoPage = lazy(() => import('@/pages/app/AppVsIMEIInfoPage'));
 const AppVsCarfaxPage = lazy(() => import('@/pages/app/AppVsCarfaxPage'));
+const AppVsSwappaPage = lazy(() => import('@/pages/app/AppVsSwappaPage'));
+const AppVsNICBPage = lazy(() => import('@/pages/app/AppVsNICBPage'));
+const AppVsStolenRegisterPage = lazy(() => import('@/pages/app/AppVsStolenRegisterPage'));
+const AppVsIMEIProPage = lazy(() => import('@/pages/app/AppVsIMEIProPage'));
 
 // App Pages - Item Types
 const AppIMEICheckerPage = lazy(() => import('@/pages/app/AppIMEICheckerPage'));
-const AppFirearmsCheckerPage = lazy(() => import('@/pages/app/AppFirearmsCheckerPage'));
 const AppVINCheckerPage = lazy(() => import('@/pages/app/AppVINCheckerPage'));
+const AppSerialNumberCheckerPage = lazy(() => import('@/pages/app/AppSerialNumberCheckerPage'));
+const AppElectronicsCheckerPage = lazy(() => import('@/pages/app/AppElectronicsCheckerPage'));
+const AppFirearmsCheckerPage = lazy(() => import('@/pages/app/AppFirearmsCheckerPage'));
 
 // App Pages - Use Cases
 const AppMarketplacePage = lazy(() => import('@/pages/app/AppMarketplacePage'));
 const AppPawnShopsPage = lazy(() => import('@/pages/app/AppPawnShopsPage'));
+const AppResellersPage = lazy(() => import('@/pages/app/AppResellersPage'));
+const AppBuyersPage = lazy(() => import('@/pages/app/AppBuyersPage'));
 
-// App Pages - More Competitors
-const AppVsSwappaPage = lazy(() => import('@/pages/app/AppVsSwappaPage'));
-const AppVsNICBPage = lazy(() => import('@/pages/app/AppVsNICBPage'));
+// App Pages - Features
+const AppBarcodeScannerPage = lazy(() => import('@/pages/app/features/AppBarcodeScannerPage'));
+const AppCameraScanPage = lazy(() => import('@/pages/app/features/AppCameraScanPage'));
+const AppOfflineModePage = lazy(() => import('@/pages/app/features/AppOfflineModePage'));
 
 // Blog - App Posts
 const BestStolenItemCheckerApps2025 = lazy(() => import('@/pages/blog/BestStolenItemCheckerApps2025'));
+const WhyCheckMendHasNoApp = lazy(() => import('@/pages/blog/WhyCheckMendHasNoApp'));
+const FirearmsAppExclusive = lazy(() => import('@/pages/blog/FirearmsAppExclusive'));
 
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
@@ -339,6 +350,42 @@ export const AppRoutes = () => {
         <Route path="/blog/what-to-do-if-bought-stolen-phone" element={<WhatToDoIfBoughtStolenPhone />} />
         <Route path="/blog/best-imei-checker-tools-2025" element={<BestIMEICheckerTools2025 />} />
         <Route path="/blog/best-stolen-item-checker-apps-2025" element={<BestStolenItemCheckerApps2025 />} />
+        <Route path="/blog/why-checkmend-has-no-app" element={<WhyCheckMendHasNoApp />} />
+        <Route path="/blog/firearms-app-exclusive" element={<FirearmsAppExclusive />} />
+        
+        {/* App Routes - Platform */}
+        <Route path="/app/ios" element={<AppIOSPage />} />
+        <Route path="/app/android" element={<AppAndroidPage />} />
+        <Route path="/app/pwa" element={<AppPWAPage />} />
+        <Route path="/app/download" element={<AppDownloadPage />} />
+        <Route path="/app/install-guide" element={<AppInstallGuidePage />} />
+        
+        {/* App Routes - Competitors */}
+        <Route path="/app/vs-checkmend" element={<AppVsCheckMendPage />} />
+        <Route path="/app/vs-imeiinfo" element={<AppVsIMEIInfoPage />} />
+        <Route path="/app/vs-carfax" element={<AppVsCarfaxPage />} />
+        <Route path="/app/vs-swappa" element={<AppVsSwappaPage />} />
+        <Route path="/app/vs-nicb" element={<AppVsNICBPage />} />
+        <Route path="/app/vs-stolen-register" element={<AppVsStolenRegisterPage />} />
+        <Route path="/app/vs-imeipro" element={<AppVsIMEIProPage />} />
+        
+        {/* App Routes - Item Types */}
+        <Route path="/app/imei-checker" element={<AppIMEICheckerPage />} />
+        <Route path="/app/vin-checker" element={<AppVINCheckerPage />} />
+        <Route path="/app/serial-number-checker" element={<AppSerialNumberCheckerPage />} />
+        <Route path="/app/electronics-checker" element={<AppElectronicsCheckerPage />} />
+        <Route path="/app/firearms-checker" element={<AppFirearmsCheckerPage />} />
+        
+        {/* App Routes - Use Cases */}
+        <Route path="/app/marketplace" element={<AppMarketplacePage />} />
+        <Route path="/app/pawn-shops" element={<AppPawnShopsPage />} />
+        <Route path="/app/resellers" element={<AppResellersPage />} />
+        <Route path="/app/buyers" element={<AppBuyersPage />} />
+        
+        {/* App Routes - Features */}
+        <Route path="/app/features/barcode-scanner" element={<AppBarcodeScannerPage />} />
+        <Route path="/app/features/camera-scan" element={<AppCameraScanPage />} />
+        <Route path="/app/features/offline-mode" element={<AppOfflineModePage />} />
         
         {/* Tools */}
         <Route path="/tools" element={<ToolsPage />} />
