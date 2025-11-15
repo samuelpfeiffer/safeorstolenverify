@@ -2,7 +2,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
-import { Shield, Smartphone, Car, Bike, Package, Database, CheckCircle, Search, AlertTriangle } from 'lucide-react';
+import { Shield, Smartphone, Car, Bike, Package, Database, CheckCircle, Search, AlertTriangle, Settings, Waves, Zap, Wrench } from 'lucide-react';
 
 export default function ServicesPage() {
   const navigate = useNavigate();
@@ -32,9 +32,37 @@ export default function ServicesPage() {
     {
       icon: Package,
       title: "Electronics & Equipment",
-      description: "Verify serial numbers for laptops, cameras, gaming consoles, tools, and other high-value electronics.",
+      description: "Verify serial numbers for laptops, cameras, gaming consoles, and other high-value electronics.",
       features: ["Multi-brand support", "Serial format validation", "Police report database", "Manufacturer verification"],
       cta: "Check Electronics"
+    },
+    {
+      icon: Wrench,
+      title: "Tools & Equipment",
+      description: "Verify power tools, construction equipment, and professional tools before purchase.",
+      features: ["Tool serial verification", "Brand authentication", "Theft database check", "Warranty validation"],
+      cta: "Check Tools"
+    },
+    {
+      icon: Settings,
+      title: "Machinery & Appliances",
+      description: "Verify industrial machinery, home appliances, and heavy equipment serial numbers.",
+      features: ["Machinery ID check", "Appliance verification", "Model validation", "Theft record search"],
+      cta: "Check Machinery"
+    },
+    {
+      icon: Zap,
+      title: "Electric Bikes & Scooters",
+      description: "Check e-bikes, electric scooters, and personal electric vehicles for theft records.",
+      features: ["Frame number lookup", "Battery ID check", "Motor serial verification", "Registry database"],
+      cta: "Check E-Bike"
+    },
+    {
+      icon: Waves,
+      title: "Marine & Water Equipment",
+      description: "Verify boats, jet skis, outboard motors, and marine equipment using HIN and serial numbers.",
+      features: ["HIN verification", "Motor serial check", "Coast Guard database", "Insurance records"],
+      cta: "Check Marine"
     },
     {
       icon: Database,
