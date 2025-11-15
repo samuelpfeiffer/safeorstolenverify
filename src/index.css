@@ -339,4 +339,21 @@
   .animation-delay-1000 {
     animation-delay: 1s;
   }
+
+  /* 3D Float Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+    }
+    33% {
+      transform: translateY(-30px) translateX(20px) scale(1.05);
+    }
+    66% {
+      transform: translateY(-15px) translateX(-20px) scale(0.95);
+    }
+  }
+
+  .animate-float {
+    animation: float 20s ease-in-out infinite;
+  }
 }
