@@ -40,6 +40,10 @@ const BestIMEICheckerTools2025 = lazy(() => import('@/pages/blog/BestIMEIChecker
 
 // Tools
 const ToolsPage = lazy(() => import('@/pages/ToolsPage'));
+const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
+const BrandsPage = lazy(() => import('@/pages/BrandsPage'));
+const PressReleasesPage = lazy(() => import('@/pages/PressReleasesPage'));
+const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
@@ -308,6 +312,14 @@ export const AppRoutes = () => {
         
         {/* Tools */}
         <Route path="/tools" element={<ToolsPage />} />
+        
+        {/* Services & Company Pages */}
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/brands" element={<BrandsPage />} />
+        <Route path="/partners" element={<BrandsPage />} />
+        <Route path="/press-releases" element={<PressReleasesPage />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/reviews" element={<TestimonialsPage />} />
 
         {/* Business */}
         <Route path="/mobile-app" element={<MobileAppPage />} />
