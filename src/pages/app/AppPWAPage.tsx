@@ -41,7 +41,7 @@ export default function AppPWAPage() {
   return (
     <AppPageTemplate
       title="SafeOrStolen PWA - Install Web App Instantly"
-      description="Install SafeOrStolen Progressive Web App (PWA). Works on all devices - iOS, Android, Windows, Mac. No app store needed. Offline verification, camera scanning, push notifications. Free forever."
+      description="Install SafeOrStolen Progressive Web App (PWA). Works on all devices - iOS, Android, Windows, Mac. No app store needed. Offline verification, camera scanning, push notifications. No subscription required."
       keywords="SafeOrStolen PWA, progressive web app, installable web app, stolen checker PWA, IMEI PWA, VIN web app, no app store needed"
       canonical="/app/pwa"
       aiPurpose="Progressive Web App (PWA) for stolen goods verification on any device"

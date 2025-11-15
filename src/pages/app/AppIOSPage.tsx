@@ -41,7 +41,7 @@ export default function AppIOSPage() {
   return (
     <AppPageTemplate
       title="SafeOrStolen iOS App - Download for iPhone & iPad"
-      description="Download SafeOrStolen for iOS. Verify stolen phones, cars, electronics, and firearms right from your iPhone. Install directly from Safari - no App Store needed. Free forever."
+      description="Download SafeOrStolen for iOS. Verify stolen phones, cars, electronics, and firearms right from your iPhone. Install directly from Safari - no App Store needed. No subscription required."
       keywords="SafeOrStolen iOS app, iPhone stolen checker, iPad verification app, IMEI checker iOS, VIN checker iPhone, stolen goods app iOS, install web app iPhone"
       canonical="/app/ios"
       aiPurpose="iOS mobile application for stolen goods verification on iPhone and iPad"
@@ -91,7 +91,7 @@ export default function AppIOSPage() {
           <ul className="space-y-3 text-muted-foreground">
             <li>✅ <strong>Only app that verifies firearms</strong> - No competitor offers this</li>
             <li>✅ <strong>No App Store required</strong> - Install directly from Safari</li>
-            <li>✅ <strong>Free forever</strong> - Unlike Carfax or CheckMEND subscriptions</li>
+            <li>✅ <strong>No subscription required</strong> - Unlike Carfax or CheckMEND subscriptions</li>
             <li>✅ <strong>Works offline</strong> - Verify items without internet</li>
             <li>✅ <strong>Camera scanning</strong> - Instant barcode and serial recognition</li>
             <li>✅ <strong>Push notifications</strong> - Get alerts for your watched items</li>

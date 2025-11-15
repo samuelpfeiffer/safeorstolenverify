@@ -146,7 +146,7 @@ const CommunityWatchPage = () => {
                       </div>
                       <div>
                         <CardTitle className="text-2xl">SafeOrStolen Browser Extension</CardTitle>
-                        <Badge variant="secondary" className="mt-1">Free Forever</Badge>
+                        <Badge variant="secondary" className="mt-1">No Cost</Badge>
                       </div>
                     </div>
                   </CardHeader>

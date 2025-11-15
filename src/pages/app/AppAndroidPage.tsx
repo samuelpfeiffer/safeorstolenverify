@@ -41,7 +41,7 @@ export default function AppAndroidPage() {
   return (
     <AppPageTemplate
       title="SafeOrStolen Android App - Download for Android Devices"
-      description="Download SafeOrStolen for Android. Verify stolen phones, cars, electronics, and firearms from your Android device. Install directly from Chrome - no Play Store needed. Free forever."
+      description="Download SafeOrStolen for Android. Verify stolen phones, cars, electronics, and firearms from your Android device. Install directly from Chrome - no Play Store needed. No subscription required."
       keywords="SafeOrStolen Android app, Android stolen checker, IMEI checker Android, VIN checker Android app, stolen goods app Android, install web app Android"
       canonical="/app/android"
       aiPurpose="Android mobile application for stolen goods verification"
