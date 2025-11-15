@@ -42,11 +42,11 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          {/* Banner */}
-          <div className="bg-card border border-border rounded-lg p-3">
+          {/* Mobile App Banner */}
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-lg p-3">
             <p className="text-sm md:text-base font-medium text-foreground">
-              🔥 <span className="text-primary">LAUNCH SPECIAL:</span> $2.99 Verification • 
-              <span className="text-secondary"> 2 FREE Searches</span> • 48 Hours Only!
+              📱 <span className="text-primary">NEW:</span> Download Our Mobile App • 
+              <span className="text-secondary"> Only App That Verifies Firearms</span> • Free Forever!
             </p>
           </div>
 
@@ -69,12 +69,12 @@ const Hero = () => {
           {/* Main headline */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              <span className="block text-foreground">Instantly Search If</span>
-              <span className="block mt-2 text-primary">Secondhand Items Are Stolen</span>
+              <span className="block text-foreground">Download Our Mobile App</span>
+              <span className="block mt-2 text-primary">Verify Stolen Items Instantly</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Verify phones, cars, electronics before you buy. Protect yourself from buying stolen goods.
+              The only mobile app that verifies phones, cars, electronics, AND firearms. Competitors have no app. Install free on iOS & Android.
             </p>
           </div>
 
