@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone } from 'lucide-react';
 const Footer = () => {
   const quickLinks = [{
     label: 'How It Works',
@@ -102,6 +102,43 @@ const Footer = () => {
                   <Linkedin className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
               </div>
+            </div>
+
+            {/* Mobile App Section - NEW */}
+            <div>
+              <h3 className="text-lg font-bold text-foreground mb-6 flex items-center gap-2">
+                <Smartphone className="h-5 w-5 text-sos-orange" />
+                Mobile App
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link to="/mobile-app" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                    <span>Download App</span>
+                    <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/app/ios" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                    <span>iOS App</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/app/android" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                    <span>Android App</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/app/install-guide" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                    <span>Install Guide</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/app/firearms-checker" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-1 group">
+                    <Badge variant="outline" className="bg-sos-orange/20 text-sos-orange border-sos-orange/40 text-xs">Exclusive</Badge>
+                    <span>Firearms Checker</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
 
             {/* Quick Links */}
