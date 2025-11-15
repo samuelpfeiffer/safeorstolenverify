@@ -78,16 +78,27 @@ const AppMarketplacePage = lazy(() => import('@/pages/app/AppMarketplacePage'));
 const AppPawnShopsPage = lazy(() => import('@/pages/app/AppPawnShopsPage'));
 const AppResellersPage = lazy(() => import('@/pages/app/AppResellersPage'));
 const AppBuyersPage = lazy(() => import('@/pages/app/AppBuyersPage'));
+const AppSellersPage = lazy(() => import('@/pages/app/AppSellersPage'));
+const AppLawEnforcementPage = lazy(() => import('@/pages/app/AppLawEnforcementPage'));
 
 // App Pages - Features
 const AppBarcodeScannerPage = lazy(() => import('@/pages/app/features/AppBarcodeScannerPage'));
 const AppCameraScanPage = lazy(() => import('@/pages/app/features/AppCameraScanPage'));
 const AppOfflineModePage = lazy(() => import('@/pages/app/features/AppOfflineModePage'));
+const AppPushNotificationsPage = lazy(() => import('@/pages/app/features/AppPushNotificationsPage'));
+const AppVerificationHistoryPage = lazy(() => import('@/pages/app/features/AppVerificationHistoryPage'));
+const AppInstantScanPage = lazy(() => import('@/pages/app/features/AppInstantScanPage'));
+
+// App Pages - Locations
+const AppLosAngelesPage = lazy(() => import('@/pages/app/locations/AppLosAngelesPage'));
+const AppNewYorkPage = lazy(() => import('@/pages/app/locations/AppNewYorkPage'));
 
 // Blog - App Posts
 const BestStolenItemCheckerApps2025 = lazy(() => import('@/pages/blog/BestStolenItemCheckerApps2025'));
 const WhyCheckMendHasNoApp = lazy(() => import('@/pages/blog/WhyCheckMendHasNoApp'));
 const FirearmsAppExclusive = lazy(() => import('@/pages/blog/FirearmsAppExclusive'));
+const IMEICheckerAppComparison = lazy(() => import('@/pages/blog/IMEICheckerAppComparison'));
+const SafeOrStolenAppGuide = lazy(() => import('@/pages/blog/SafeOrStolenAppGuide'));
 
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
@@ -352,6 +363,8 @@ export const AppRoutes = () => {
         <Route path="/blog/best-stolen-item-checker-apps-2025" element={<BestStolenItemCheckerApps2025 />} />
         <Route path="/blog/why-checkmend-has-no-app" element={<WhyCheckMendHasNoApp />} />
         <Route path="/blog/firearms-app-exclusive" element={<FirearmsAppExclusive />} />
+        <Route path="/blog/imei-checker-app-comparison" element={<IMEICheckerAppComparison />} />
+        <Route path="/blog/safeorstolen-app-guide" element={<SafeOrStolenAppGuide />} />
         
         {/* App Routes - Platform */}
         <Route path="/app/ios" element={<AppIOSPage />} />
@@ -381,11 +394,20 @@ export const AppRoutes = () => {
         <Route path="/app/pawn-shops" element={<AppPawnShopsPage />} />
         <Route path="/app/resellers" element={<AppResellersPage />} />
         <Route path="/app/buyers" element={<AppBuyersPage />} />
+        <Route path="/app/sellers" element={<AppSellersPage />} />
+        <Route path="/app/law-enforcement" element={<AppLawEnforcementPage />} />
         
         {/* App Routes - Features */}
         <Route path="/app/features/barcode-scanner" element={<AppBarcodeScannerPage />} />
         <Route path="/app/features/camera-scan" element={<AppCameraScanPage />} />
         <Route path="/app/features/offline-mode" element={<AppOfflineModePage />} />
+        <Route path="/app/features/push-notifications" element={<AppPushNotificationsPage />} />
+        <Route path="/app/features/history" element={<AppVerificationHistoryPage />} />
+        <Route path="/app/features/instant-scan" element={<AppInstantScanPage />} />
+        
+        {/* App Routes - Locations */}
+        <Route path="/app/los-angeles" element={<AppLosAngelesPage />} />
+        <Route path="/app/new-york" element={<AppNewYorkPage />} />
         
         {/* Tools */}
         <Route path="/tools" element={<ToolsPage />} />
