@@ -24,7 +24,7 @@ export const ANALYTICS_CONFIG = {
    * Google Analytics 4 Measurement ID
    * Priority: Environment Variable > Hardcoded Value
    */
-  GA4_MEASUREMENT_ID: import.meta.env.VITE_GA4_MEASUREMENT_ID || 'NEEDS_CONFIGURATION',
+  GA4_MEASUREMENT_ID: import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-368534389',
   
   /**
    * Google Search Console Verification Code
