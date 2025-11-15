@@ -153,6 +153,46 @@ async function generateCompleteSitemap(supabase: any) {
     '/how-to-check-if-anything-is-stolen-before-you-buy'
   ];
 
+  // Add mobile app pages
+  const mobileAppPages = [
+    { url: '/mobile-app', priority: 1.0 },
+    { url: '/app/ios', priority: 0.95 },
+    { url: '/app/android', priority: 0.95 },
+    { url: '/app/pwa', priority: 0.9 },
+    { url: '/app/download', priority: 0.95 },
+    { url: '/app/install-guide', priority: 0.85 },
+    { url: '/app/vs-checkmend', priority: 0.95 },
+    { url: '/app/vs-imeiinfo', priority: 0.95 },
+    { url: '/app/vs-carfax', priority: 0.9 },
+    { url: '/app/vs-swappa', priority: 0.9 },
+    { url: '/app/vs-nicb', priority: 0.9 },
+    { url: '/app/vs-stolen-register', priority: 0.85 },
+    { url: '/app/vs-imeipro', priority: 0.85 },
+    { url: '/app/imei-checker', priority: 0.95 },
+    { url: '/app/vin-checker', priority: 0.95 },
+    { url: '/app/serial-number-checker', priority: 0.9 },
+    { url: '/app/electronics-checker', priority: 0.85 },
+    { url: '/app/firearms-checker', priority: 1.0 },
+    { url: '/app/marketplace', priority: 0.9 },
+    { url: '/app/pawn-shops', priority: 0.9 },
+    { url: '/app/resellers', priority: 0.85 },
+    { url: '/app/buyers', priority: 0.85 },
+    { url: '/app/sellers', priority: 0.85 },
+    { url: '/app/law-enforcement', priority: 0.85 },
+    { url: '/app/features/barcode-scanner', priority: 0.8 },
+    { url: '/app/features/camera-scan', priority: 0.85 },
+    { url: '/app/features/offline-mode', priority: 0.85 },
+    { url: '/app/features/push-notifications', priority: 0.8 },
+    { url: '/app/features/history', priority: 0.8 },
+    { url: '/app/features/instant-scan', priority: 0.85 },
+    { url: '/app/los-angeles', priority: 0.85 },
+    { url: '/app/new-york', priority: 0.85 },
+    { url: '/app/chicago', priority: 0.85 },
+    { url: '/app/houston', priority: 0.85 },
+    { url: '/app/phoenix', priority: 0.85 },
+    { url: '/app/philadelphia', priority: 0.85 }
+  ];
+
   keywordPages.forEach(page => {
     sitemapXml += `
   <url>
@@ -160,6 +200,17 @@ async function generateCompleteSitemap(supabase: any) {
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>`;
+  });
+
+  // Add mobile app pages
+  mobileAppPages.forEach(page => {
+    sitemapXml += `
+  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${page.priority}</priority>
   </url>`;
   });
 
