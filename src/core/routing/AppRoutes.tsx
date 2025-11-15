@@ -50,6 +50,22 @@ const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 
+// App Pages - Platform
+const AppIOSPage = lazy(() => import('@/pages/app/AppIOSPage'));
+const AppAndroidPage = lazy(() => import('@/pages/app/AppAndroidPage'));
+const AppPWAPage = lazy(() => import('@/pages/app/AppPWAPage'));
+const AppDownloadPage = lazy(() => import('@/pages/app/AppDownloadPage'));
+const AppInstallGuidePage = lazy(() => import('@/pages/app/AppInstallGuidePage'));
+
+// App Pages - Competitors
+const AppVsCheckMendPage = lazy(() => import('@/pages/app/AppVsCheckMendPage'));
+const AppVsIMEIInfoPage = lazy(() => import('@/pages/app/AppVsIMEIInfoPage'));
+const AppVsCarfaxPage = lazy(() => import('@/pages/app/AppVsCarfaxPage'));
+
+// App Pages - Item Types
+const AppIMEICheckerPage = lazy(() => import('@/pages/app/AppIMEICheckerPage'));
+const AppFirearmsCheckerPage = lazy(() => import('@/pages/app/AppFirearmsCheckerPage'));
+
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
