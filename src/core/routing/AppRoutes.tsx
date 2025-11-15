@@ -92,6 +92,10 @@ const AppInstantScanPage = lazy(() => import('@/pages/app/features/AppInstantSca
 // App Pages - Locations
 const AppLosAngelesPage = lazy(() => import('@/pages/app/locations/AppLosAngelesPage'));
 const AppNewYorkPage = lazy(() => import('@/pages/app/locations/AppNewYorkPage'));
+const AppChicagoPage = lazy(() => import('@/pages/app/locations/AppChicagoPage'));
+const AppHoustonPage = lazy(() => import('@/pages/app/locations/AppHoustonPage'));
+const AppPhoenixPage = lazy(() => import('@/pages/app/locations/AppPhoenixPage'));
+const AppPhiladelphiaPage = lazy(() => import('@/pages/app/locations/AppPhiladelphiaPage'));
 
 // Blog - App Posts
 const BestStolenItemCheckerApps2025 = lazy(() => import('@/pages/blog/BestStolenItemCheckerApps2025'));
@@ -99,6 +103,8 @@ const WhyCheckMendHasNoApp = lazy(() => import('@/pages/blog/WhyCheckMendHasNoAp
 const FirearmsAppExclusive = lazy(() => import('@/pages/blog/FirearmsAppExclusive'));
 const IMEICheckerAppComparison = lazy(() => import('@/pages/blog/IMEICheckerAppComparison'));
 const SafeOrStolenAppGuide = lazy(() => import('@/pages/blog/SafeOrStolenAppGuide'));
+const MobileAppVsWebsiteVerification = lazy(() => import('@/pages/blog/MobileAppVsWebsiteVerification'));
+const HowToUseIMEICheckerApp = lazy(() => import('@/pages/blog/HowToUseIMEICheckerApp'));
 
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
@@ -365,6 +371,8 @@ export const AppRoutes = () => {
         <Route path="/blog/firearms-app-exclusive" element={<FirearmsAppExclusive />} />
         <Route path="/blog/imei-checker-app-comparison" element={<IMEICheckerAppComparison />} />
         <Route path="/blog/safeorstolen-app-guide" element={<SafeOrStolenAppGuide />} />
+        <Route path="/blog/mobile-app-vs-website-verification" element={<MobileAppVsWebsiteVerification />} />
+        <Route path="/blog/how-to-use-imei-checker-app" element={<HowToUseIMEICheckerApp />} />
         
         {/* App Routes - Platform */}
         <Route path="/app/ios" element={<AppIOSPage />} />
@@ -408,6 +416,10 @@ export const AppRoutes = () => {
         {/* App Routes - Locations */}
         <Route path="/app/los-angeles" element={<AppLosAngelesPage />} />
         <Route path="/app/new-york" element={<AppNewYorkPage />} />
+        <Route path="/app/chicago" element={<AppChicagoPage />} />
+        <Route path="/app/houston" element={<AppHoustonPage />} />
+        <Route path="/app/phoenix" element={<AppPhoenixPage />} />
+        <Route path="/app/philadelphia" element={<AppPhiladelphiaPage />} />
         
         {/* Tools */}
         <Route path="/tools" element={<ToolsPage />} />
