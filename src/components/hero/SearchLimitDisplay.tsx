@@ -30,10 +30,10 @@ const SearchLimitDisplayComponent = ({
     return (
       <div className="text-center mt-3 space-y-1 animate-in fade-in duration-300">
         <p className="text-sm text-sos-lime font-semibold">
-          🎁 Try it FREE - Sign up for 2 free verifications
+          🎁 Sign up for 2 FREE verifications
         </p>
         <p className="text-xs text-muted-foreground">
-          No credit card required • Instant access
+          Valid for 14 days • No credit card required
         </p>
       </div>
     );
