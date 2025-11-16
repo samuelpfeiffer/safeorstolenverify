@@ -50,6 +50,18 @@ const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 
+// Redirect Pages (with HTML meta refresh for crawlers)
+const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
+const IMEICheckerPage = lazy(() => import('@/pages/redirects/IMEICheckerPage'));
+const BulkPage = lazy(() => import('@/pages/redirects/BulkPage'));
+const VINPage = lazy(() => import('@/pages/redirects/VINPage'));
+const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenPropertyLookupPage'));
+const IMEICheckerAppPage = lazy(() => import('@/pages/redirects/IMEICheckerAppPage'));
+const MobileVerificationPage = lazy(() => import('@/pages/redirects/MobileVerificationPage'));
+const GetAppPage = lazy(() => import('@/pages/redirects/GetAppPage'));
+const InstallAppPage = lazy(() => import('@/pages/redirects/InstallAppPage'));
+const VerificationAppPage = lazy(() => import('@/pages/redirects/VerificationAppPage'));
+
 // App Pages - Platform
 const AppIOSPage = lazy(() => import('@/pages/app/AppIOSPage'));
 const AppAndroidPage = lazy(() => import('@/pages/app/AppAndroidPage'));
@@ -461,19 +473,26 @@ export const AppRoutes = () => {
         <Route path="/subscription-cancel" element={<SubscriptionCancelPage />} />
         <Route path="/stripe-test" element={<StripeTestPage />} />
 
-        {/* Legacy Redirects */}
+        {/* Legacy Redirects - Now with HTML meta refresh for Google */}
         <Route path="/check-imei" element={<Navigate to="/verify" replace />} />
         <Route path="/check-vin" element={<Navigate to="/verify" replace />} />
         <Route path="/check-serial" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
-        <Route path="/imei-check" element={<Navigate to="/verify" replace />} />
-        <Route path="/imei-checker" element={<Navigate to="/verify" replace />} />
+        <Route path="/imei-check" element={<IMEICheckPage />} />
+        <Route path="/imei-checker" element={<IMEICheckerPage />} />
         <Route path="/vin-verification" element={<Navigate to="/verify" replace />} />
         
-        {/* Additional Redirects for Soft 404s */}
-        <Route path="/bulk" element={<Navigate to="/verify" replace />} />
-        <Route path="/vin" element={<Navigate to="/verify" replace />} />
-        <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
+        {/* Soft 404 Fixes - Actual pages with meta refresh */}
+        <Route path="/bulk" element={<BulkPage />} />
+        <Route path="/vin" element={<VINPage />} />
+        <Route path="/stolen-property-lookup" element={<StolenPropertyLookupPage />} />
+
+        {/* App Marketing Redirects */}
+        <Route path="/imei-checker-app" element={<IMEICheckerAppPage />} />
+        <Route path="/mobile-verification" element={<MobileVerificationPage />} />
+        <Route path="/get-app" element={<GetAppPage />} />
+        <Route path="/install-app" element={<InstallAppPage />} />
+        <Route path="/verification-app" element={<VerificationAppPage />} />
 
         {/* Redirect Test Page - Development Tool */}
         <Route path="/redirect-test" element={<RedirectTestPage />} />

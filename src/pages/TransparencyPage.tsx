@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { FileText, TrendingUp, Users, Shield, Database, CheckCircle, AlertCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -9,11 +9,11 @@ const TransparencyPage: React.FC = () => {
   
   return (
     <>
-      <Helmet>
-        <title>Transparency Report - Safe or Stolen | Platform Statistics & Operations</title>
-        <meta name="description" content="View our quarterly transparency report including platform statistics, data handling practices, law enforcement cooperation, and operational details." />
-        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
-      </Helmet>
+      <PageSEO
+        title="Transparency Report - Safe or Stolen | Platform Statistics & Operations"
+        description="View our quarterly transparency report including platform statistics, data handling practices, law enforcement cooperation, and operational details."
+        canonical="/transparency"
+      />
 
       <div className="min-h-screen bg-background">
         <section className="bg-gradient-to-br from-blue-600 via-cyan-600 to-teal-600 py-20">
