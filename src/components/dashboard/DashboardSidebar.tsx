@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { History, Receipt, CreditCard, Settings, Share, Search, Clock } from 'lucide-react';
+import { History, Receipt, CreditCard, Settings, Share, Search, Clock, LayoutDashboard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface DashboardSidebarProps {
@@ -10,6 +10,12 @@ interface DashboardSidebarProps {
 
 export const DashboardSidebar = ({ activeTab, onTabChange }: DashboardSidebarProps) => {
   const menuItems = [
+    {
+      id: 'overview',
+      label: 'Overview',
+      icon: LayoutDashboard,
+      hasShare: false,
+    },
     {
       id: 'verification',
       label: 'New Verification',

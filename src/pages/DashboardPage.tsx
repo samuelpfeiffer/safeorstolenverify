@@ -41,7 +41,7 @@ const DashboardPage = () => {
   const { pendingVerification, clearPendingVerification } = usePendingVerification();
   const { showPaywall, hidePaywall, searchCount, isLoading: freemiumLoading } = useFreemiumFlow();
   const { toast } = useToast();
-  const [activeTab, setActiveTab] = useState('verification');
+  const [activeTab, setActiveTab] = useState('overview');
   const [recentVerifications, setRecentVerifications] = useState<any[]>([]);
   const [receipts, setReceipts] = useState<any[]>([]);
   const [purchases, setPurchases] = useState<any[]>([]);
@@ -242,6 +242,17 @@ const DashboardPage = () => {
 
   const renderTabContent = () => {
     switch (activeTab) {
+      case 'overview':
+        return (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <QuickStatsCard />
+              <SubscriptionStatusCard />
+            </div>
+            <RecentActivityCard />
+          </div>
+        );
+
       case 'search-history':
         return (
           <Card>
