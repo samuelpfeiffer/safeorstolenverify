@@ -23,6 +23,7 @@ import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
+import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -78,6 +79,7 @@ const AuthAwareContent: React.FC = () => {
         <AppDownloadBot />
         <MobileNavigation />
         <SchemaValidationIndicator />
+        <AISafetyAdvisor />
         <Toaster />
       </PWAProvider>
     </GA4Provider>

@@ -80,7 +80,8 @@ export const createServiceSchema = (
   description: string,
   provider: string = "SafeOrStolen",
   price: string = "0",
-  url: string = "https://safeorstolen.com/pricing"
+  url: string = "https://safeorstolen.com/pricing",
+  serviceType: string = "Stolen Item Verification"
 ) => {
   return {
     "@context": "https://schema.org",
@@ -93,7 +94,7 @@ export const createServiceSchema = (
       "name": provider,
       "url": "https://safeorstolen.com"
     },
-    "serviceType": "Stolen Item Verification",
+    "serviceType": serviceType,
     "areaServed": {
       "@type": "Place",
       "name": "Worldwide"
