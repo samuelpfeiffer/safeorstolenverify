@@ -218,6 +218,8 @@ const AIExecutivePage = lazy(() => import('@/pages/admin/AIExecutivePage'));
 
 // Information Pages
 const ServiceLimitations = lazy(() => import('@/pages/ServiceLimitations'));
+const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
+const DatabasePage = lazy(() => import('@/pages/DatabasePage'));
 
 // User Features
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
@@ -264,6 +266,10 @@ export const AppRoutes = () => {
         {/* Analytics & Reporting */}
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/report-stolen" element={<ReportStolen />} />
+        
+        {/* Resources & Information */}
+        <Route path="/resource-center" element={<ResourceCenterPage />} />
+        <Route path="/database" element={<DatabasePage />} />
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />

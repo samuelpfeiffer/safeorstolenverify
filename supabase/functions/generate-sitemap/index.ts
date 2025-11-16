@@ -24,6 +24,8 @@ serve(async (req) => {
       { url: '/contact', priority: '0.6', changefreq: 'monthly' },
       { url: '/blog', priority: '0.8', changefreq: 'daily' },
       { url: '/for-brands', priority: '0.8', changefreq: 'monthly' },
+      { url: '/resource-center', priority: '0.8', changefreq: 'weekly' },
+      { url: '/database', priority: '0.7', changefreq: 'monthly' },
       { url: '/terms', priority: '0.5', changefreq: 'yearly' },
       { url: '/privacy', priority: '0.5', changefreq: 'yearly' },
       { url: '/cookies', priority: '0.4', changefreq: 'yearly' },
