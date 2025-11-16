@@ -59,7 +59,9 @@ export const validateRoutes = () => {
     '/check-electronics',
     '/check-bike',
     '/problem',
-    '/community-watch'
+    '/community-watch',
+    '/resource-center',
+    '/database'
   ];
 
   return routes;
