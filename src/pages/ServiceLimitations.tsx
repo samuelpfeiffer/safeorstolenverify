@@ -1,15 +1,14 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 export const ServiceLimitations: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Service Limitations - Safe Or Stolen</title>
-        <meta name="description" content="Understanding the limitations and scope of our verification services for stolen item checking." />
-        <meta name="robots" content="index, follow" />
-        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
-      </Helmet>
+      <PageSEO
+        title="Service Limitations - Safe Or Stolen"
+        description="Understanding the limitations and scope of our verification services for stolen item checking."
+        canonical="/service-limitations"
+      />
       
       <div className="min-h-screen bg-background">
         <main className="container mx-auto px-4 py-8">
