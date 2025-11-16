@@ -5,7 +5,7 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 // Core Pages
 const Index = lazy(() => import('@/pages/Index'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
-const UnifiedVerificationPage = lazy(() => import('@/pages/UnifiedVerificationPage'));
+const UnifiedVerificationPage = lazy(() => import('@/pages/UnifiedVerificationPageEnhanced'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
