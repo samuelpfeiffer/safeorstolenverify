@@ -14,6 +14,9 @@ import { LiveActivityFeed } from '@/components/home/LiveActivityFeed';
 import { HomepagePWABanner } from '@/components/pwa/HomepagePWABanner';
 import { ProductHuntBanner } from '@/components/home/ProductHuntBanner';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
+import { MobileAppCTA } from '@/components/home/MobileAppCTA';
+import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
+import { UrgencyBanner } from '@/components/conversion/UrgencyBanner';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -120,6 +123,12 @@ const Index = () => {
       {/* Trust header bar */}
       <TrustHeaderBar />
       
+      {/* Urgency Banner - Conversion Optimization */}
+      <UrgencyBanner />
+      
+      {/* Exit Intent Popup - Shows when user tries to leave */}
+      <ExitIntentPopup />
+      
       <div className="min-h-screen">
         {/* Hero with search bar - THE CORE VALUE */}
         <Hero />
@@ -129,6 +138,9 @@ const Index = () => {
         
         {/* Trust signals immediately */}
         <TrustSignalsSection />
+        
+        {/* Mobile App CTA - The Golden Ticket */}
+        <MobileAppCTA />
         
         {/* PWA Install Banner - Prominent placement */}
         <div className="container mx-auto px-4 py-8">
