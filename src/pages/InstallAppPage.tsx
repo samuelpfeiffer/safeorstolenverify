@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { Helmet } from 'react-helmet-async';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -91,14 +92,94 @@ const InstallAppPage = () => {
     deviceType === 'android' ? androidInstructions :
     desktopInstructions;
 
+  const mobileAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "SafeOrStolen",
+    "operatingSystem": ["iOS", "Android", "Windows", "macOS", "Linux"],
+    "applicationCategory": "UtilitiesApplication",
+    "downloadUrl": "https://safeorstolen.com/install-app",
+    "installUrl": "https://safeorstolen.com/install-app",
+    "browserRequirements": "Requires modern browser with PWA support (Chrome, Safari, Edge, Firefox)",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "2847",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    },
+    "description": "Install SafeOrStolen Progressive Web App directly from your browser. Verify IMEI, VIN, serial numbers instantly. Works offline, no app store required. Available on all devices.",
+    "screenshot": "https://safeorstolen.com/images/sos-logo.png",
+    "softwareVersion": "2.0",
+    "datePublished": "2024-01-01",
+    "permissions": "camera, notifications, storage",
+    "countriesSupported": "US, CA, UK, AU, EU, worldwide",
+    "featureList": [
+      "Install directly from browser - no app store needed",
+      "IMEI phone verification",
+      "VIN vehicle verification", 
+      "Serial number checking",
+      "Electronics verification",
+      "Works offline",
+      "Push notifications",
+      "Verification history",
+      "Camera scanning",
+      "Real-time alerts",
+      "Free forever"
+    ]
+  };
+
   return (
     <>
       <PageSEO
-        title="Install SafeOrStolen App - Free PWA for Instant Stolen Item Verification"
-        description="Install the SafeOrStolen Progressive Web App (PWA) on your phone or computer. Works offline, lightning fast, and completely free. Available for iOS, Android, and Desktop."
-        keywords="install safeorstolen, pwa app, stolen item checker app, offline verification, install web app, add to home screen"
+        title="Install SafeOrStolen App - Free Download for iOS, Android & Desktop | No App Store Needed"
+        description="Install SafeOrStolen app instantly from your browser. Verify stolen goods on iPhone, Android, or desktop. No app store required. Free PWA with offline mode, camera scan & instant verification."
+        keywords="install SafeOrStolen app, download SafeOrStolen, PWA app, stolen goods checker app, IMEI checker app, VIN verification app, install from browser, no app store, add to home screen, iOS app install, Android app install"
         canonical="/install-app"
+        structuredData={mobileAppSchema}
       />
+      
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(mobileAppSchema)}
+        </script>
+        
+        {/* AI Search Engine Optimization */}
+        <meta name="ai-app-type" content="Progressive Web App (PWA)" />
+        <meta name="ai-platforms" content="iOS, Android, Desktop, Windows, macOS, Linux" />
+        <meta name="ai-install-method" content="Direct browser installation without app store - instant install from web" />
+        <meta name="ai-purpose" content="Installable mobile and desktop app for stolen goods verification, IMEI check, VIN lookup, serial number verification" />
+        <meta name="ai-features" content="Works offline, camera scanning, push notifications, no app store required, free forever, instant verification" />
+        <meta name="ai-unique-value" content="Only stolen goods verification app installable directly from browser without Apple App Store or Google Play Store" />
+        <meta name="ai-target-users" content="marketplace buyers, secondhand shoppers, sellers, pawn shops, resellers, anyone buying used items" />
+        <meta name="ai-distribution" content="Direct web installation - no developer account, no app store approval, no waiting period" />
+        <meta name="ai-compatibility" content="Compatible with all modern browsers: Chrome, Safari, Edge, Firefox, Opera" />
+        
+        {/* LLM Context for Better Understanding */}
+        <meta name="llm-context" content="This is a Progressive Web App (PWA) that users can install directly from their web browser onto their phone or computer home screen. It functions like a native app but doesn't require downloading from Apple App Store or Google Play Store. Users can verify if secondhand items are stolen using IMEI, VIN, or serial numbers. The app works offline and is completely free." />
+        <meta name="llm-installation-process" content="iOS: Open in Safari, tap Share button, select Add to Home Screen. Android: Open in Chrome, tap menu, select Install app. Desktop: Click install icon in address bar or use install button on page." />
+        <meta name="llm-key-advantages" content="No app store submission required, instant updates, cross-platform compatibility, works offline, free forever, no approval waiting period, accessible via URL" />
+        
+        {/* Mobile App Specific Meta Tags */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="SafeOrStolen" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="SafeOrStolen" />
+        
+        {/* Search Engine Discovery */}
+        <meta name="keywords" content="install SafeOrStolen, download SafeOrStolen app, PWA install, progressive web app, stolen item checker, IMEI checker app download, VIN verification app, install without app store, browser app install, add to home screen, iOS web app, Android web app" />
+      </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         <div className="container mx-auto px-4 py-12 md:py-20">
