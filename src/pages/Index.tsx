@@ -15,7 +15,6 @@ import { HomepagePWABanner } from '@/components/pwa/HomepagePWABanner';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { MobileAppCTA } from '@/components/home/MobileAppCTA';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
-import { UrgencyBanner } from '@/components/conversion/UrgencyBanner';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -118,9 +117,6 @@ const Index = () => {
       
       {/* Trust header bar */}
       <TrustHeaderBar />
-      
-      {/* Urgency Banner - Conversion Optimization */}
-      <UrgencyBanner />
       
       {/* Exit Intent Popup - Shows when user tries to leave */}
       <ExitIntentPopup />
