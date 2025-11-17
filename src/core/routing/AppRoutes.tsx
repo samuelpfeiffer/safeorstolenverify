@@ -60,8 +60,10 @@ const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenProp
 const IMEICheckerAppPage = lazy(() => import('@/pages/redirects/IMEICheckerAppPage'));
 const MobileVerificationPage = lazy(() => import('@/pages/redirects/MobileVerificationPage'));
 const GetAppPage = lazy(() => import('@/pages/redirects/GetAppPage'));
-const InstallAppPage = lazy(() => import('@/pages/redirects/InstallAppPage'));
 const VerificationAppPage = lazy(() => import('@/pages/redirects/VerificationAppPage'));
+
+// Actual Install App Page (not redirect)
+const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
 
 // App Pages - Platform
 const AppIOSPage = lazy(() => import('@/pages/app/AppIOSPage'));
