@@ -1,19 +1,13 @@
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
-import { AppDownloadSection } from '@/components/home/AppDownloadSection';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
-import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { TrustSignalsSection } from '@/components/home/TrustSignalsSection';
-import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
-import { SecurityBadges } from '@/components/home/SecurityBadges';
-import { LiveActivityFeed } from '@/components/home/LiveActivityFeed';
-import { HomepagePWABanner } from '@/components/pwa/HomepagePWABanner';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
-import { MobileAppCTA } from '@/components/home/MobileAppCTA';
+import { CompactTestimonials } from '@/components/home/CompactTestimonials';
+import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
 
 const Index = () => {
