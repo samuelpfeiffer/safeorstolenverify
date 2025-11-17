@@ -11,6 +11,7 @@ import { EnhancedFAQSection } from '@/components/home/EnhancedFAQSection';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
 import { SecurityBadges } from '@/components/home/SecurityBadges';
 import { LiveActivityFeed } from '@/components/home/LiveActivityFeed';
+import { HomepagePWABanner } from '@/components/pwa/HomepagePWABanner';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -120,6 +121,11 @@ const Index = () => {
         
         {/* Trust signals immediately */}
         <TrustSignalsSection />
+        
+        {/* PWA Install Banner - Prominent placement */}
+        <div className="container mx-auto px-4 py-8">
+          <HomepagePWABanner />
+        </div>
         
         {/* Live Activity Feed - Shows real-time verifications */}
         <div className="py-16 bg-secondary/5">
