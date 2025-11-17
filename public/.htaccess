@@ -1,8 +1,23 @@
 # Enhanced .htaccess for Safe Or Stolen
-# Handle SPA routing and SEO optimization
+# Handle SPA routing, SEO optimization, and bot prerendering
 
 # Enable rewrite engine
 RewriteEngine On
+
+# ===================================
+# Bot Detection & Prerendered Content
+# ===================================
+# Serve prerendered static HTML to search engine bots
+RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
+RewriteCond %{REQUEST_URI} !^/_prerendered/
+RewriteCond %{DOCUMENT_ROOT}/_prerendered%{REQUEST_URI}.html -f
+RewriteRule ^(.*)$ /_prerendered/$1.html [L]
+
+# Serve prerendered index for bot homepage requests
+RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{DOCUMENT_ROOT}/_prerendered/index.html -f
+RewriteRule ^$ /_prerendered/index.html [L]
 
 # Force HTTPS and redirect www to non-www (canonical URL)
 # Handle all combinations: http://www, https://www, http://non-www
