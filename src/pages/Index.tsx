@@ -12,7 +12,6 @@ import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
 import { SecurityBadges } from '@/components/home/SecurityBadges';
 import { LiveActivityFeed } from '@/components/home/LiveActivityFeed';
 import { HomepagePWABanner } from '@/components/pwa/HomepagePWABanner';
-import { ProductHuntBanner } from '@/components/home/ProductHuntBanner';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { MobileAppCTA } from '@/components/home/MobileAppCTA';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
@@ -116,9 +115,6 @@ const Index = () => {
       {/* Core SEO */}
       <OrganizationSchema />
       <WebSiteSchema />
-      
-      {/* Product Hunt Banner */}
-      <ProductHuntBanner />
       
       {/* Trust header bar */}
       <TrustHeaderBar />
