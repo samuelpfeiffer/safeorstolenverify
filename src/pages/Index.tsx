@@ -12,6 +12,8 @@ import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
 import { SecurityBadges } from '@/components/home/SecurityBadges';
 import { LiveActivityFeed } from '@/components/home/LiveActivityFeed';
 import { HomepagePWABanner } from '@/components/pwa/HomepagePWABanner';
+import { ProductHuntBanner } from '@/components/home/ProductHuntBanner';
+import { PressMediaSection } from '@/components/home/PressMediaSection';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -112,12 +114,18 @@ const Index = () => {
       <OrganizationSchema />
       <WebSiteSchema />
       
+      {/* Product Hunt Banner */}
+      <ProductHuntBanner />
+      
       {/* Trust header bar */}
       <TrustHeaderBar />
       
       <div className="min-h-screen">
         {/* Hero with search bar - THE CORE VALUE */}
         <Hero />
+        
+        {/* Press Coverage Section */}
+        <PressMediaSection />
         
         {/* Trust signals immediately */}
         <TrustSignalsSection />
