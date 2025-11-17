@@ -134,25 +134,26 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 };
 
 /**
- * Creates a Product schema (Optional - only use when legitimately selling physical/digital products)
+ * Creates a Pricing Service schema (for pricing/subscription offerings)
+ * This is specifically for service offerings, not physical products
  * NOTE: Do NOT include aggregateRating without actual Review markup to avoid Google errors
  */
-export const createProductSchema = (
+export const createPricingServiceSchema = (
   name: string,
   description: string,
   price: string,
   url: string = "https://safeorstolen.com/pricing",
-  brand: string = "SafeOrStolen",
+  provider: string = "SafeOrStolen",
   imageUrl: string = "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
 ) => {
   const schema: any = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": name,
     "description": description,
-    "brand": {
-      "@type": "Brand",
-      "name": brand
+    "provider": {
+      "@type": "Organization",
+      "name": provider
     },
     "image": imageUrl,
     "url": url,
@@ -166,7 +167,7 @@ export const createProductSchema = (
       "validFrom": new Date().toISOString().split('T')[0],
       "seller": {
         "@type": "Organization",
-        "name": brand
+        "name": provider
       }
     }
   };
