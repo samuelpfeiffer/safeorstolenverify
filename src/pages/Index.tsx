@@ -2,8 +2,6 @@ import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
-import { WebSiteSchema } from '@/components/seo/WebSiteSchema';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
@@ -105,65 +103,17 @@ const Index = () => {
         structuredData={homeStructuredData}
       />
       
-      {/* Core SEO */}
-      <OrganizationSchema />
-      <WebSiteSchema />
-      
-      {/* Trust header bar */}
       <TrustHeaderBar />
       
       {/* Exit Intent Popup - Shows when user tries to leave */}
       <ExitIntentPopup />
       
       <div className="min-h-screen">
-        {/* Hero with search bar - THE CORE VALUE */}
         <Hero />
-        
-        {/* Press Coverage Section */}
         <PressMediaSection />
-        
-        {/* Trust signals immediately */}
-        <TrustSignalsSection />
-        
-        {/* Mobile App CTA - The Golden Ticket */}
-        <MobileAppCTA />
-        
-        {/* PWA Install Banner - Prominent placement */}
-        <div className="container mx-auto px-4 py-8">
-          <HomepagePWABanner />
-        </div>
-        
-        {/* Live Activity Feed - Shows real-time verifications */}
-        <div className="py-16 bg-secondary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Join Thousands Verifying Right Now
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  Real-time verification activity from our community
-                </p>
-              </div>
-              <LiveActivityFeed />
-            </div>
-          </div>
-        </div>
-        
-        {/* Security Badges */}
-        <SecurityBadges />
-        
-        {/* Simple how it works */}
         <HowItWorks />
-        
-        {/* Social proof */}
-        <TestimonialsSection />
-        
-        {/* Simple CTA */}
-        <AppDownloadSection />
-        
-        {/* FAQ Section */}
-        <EnhancedFAQSection />
+        <CompactTestimonials />
+        <CompactMobileAppCTA />
       </div>
     </>
   );
