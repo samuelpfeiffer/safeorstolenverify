@@ -10,9 +10,6 @@
   </url>
   
   <!-- Core Service Pages -->
-  <!-- imei-check removed - redirects to /verify -->
-  <!-- stolen-item-checker removed - redirects to /verify -->
-  <!-- vin-verification removed - redirects to /verify -->
   
   <url>
     <loc>https://safeorstolen.com/verify</loc>
@@ -81,7 +78,7 @@
   
   <url>
     <loc>https://safeorstolen.com/faq</loc>
-    <lastmod>2025-01-17</lastmod>
+    <lastmod>2025-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -129,9 +126,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Database & Analytics - REMOVED non-existent URLs -->
-  <!-- stolen-items-database, stolen-search-console removed - pages don't exist -->
   
   <!-- Blog -->
   <url>
