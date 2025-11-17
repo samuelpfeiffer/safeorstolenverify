@@ -27,6 +27,7 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/how-it-works', label: 'How It Works' },
+    { to: '/install-app', label: 'Install App', featured: true },
     { to: '/blog', label: 'Blog' },
   ];
 
@@ -59,7 +60,11 @@ const TopNavigation = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors relative group py-2"
+                className={`text-sm font-semibold transition-colors relative group py-2 ${
+                  link.featured 
+                    ? 'text-transparent bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sos-orange to-sos-lime transition-all duration-300 group-hover:w-full" />

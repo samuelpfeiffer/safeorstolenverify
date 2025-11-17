@@ -28,6 +28,7 @@ Crawl-delay: 0
 Sitemap: https://safeorstolen.com/sitemap.xml
 Sitemap: https://safeorstolen.com/sitemap-core.xml
 Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
+Sitemap: https://safeorstolen.com/sitemap-mobile-app-expanded.xml
 Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
 
 # RSS Feed (not a sitemap)
@@ -35,8 +36,29 @@ Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
 
 # Important pages for indexing
 Allow: /verify
+Allow: /install-app
+Allow: /mobile-app
 Allow: /how-it-works
 Allow: /pricing
 Allow: /blog
 Allow: /firearms-check
 Allow: /transparency
+
+# AI Search Engine Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
