@@ -42,6 +42,14 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Mobile App Install Page -->
+  <url>
+    <loc>https://safeorstolen.com/install-app</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
   <!-- Information Pages -->
   <url>
     <loc>https://safeorstolen.com/how-it-works</loc>
