@@ -24,9 +24,11 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/ios-app', to: '/mobile-app', permanent: true },
 
   // ===== BLOG POSTS WITH TIMESTAMPS (404s) =====
-  { from: '/blog/red-flags-buying-used-electronics-1759314016.095080', to: '/blog', permanent: true },
-  { from: '/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080', to: '/blog', permanent: true },
-  { from: '/blog/vin-verification-complete-guide-used-cars-1759314016.095080', to: '/blog', permanent: true },
+  // Note: Timestamp pattern is handled by findRedirect() function
+  // These specific redirects kept for reference and faster exact matches
+  { from: '/blog/red-flags-buying-used-electronics-1759314016.095080', to: '/blog/red-flags-buying-used-electronics', permanent: true },
+  { from: '/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080', to: '/blog/complete-guide-verify-imei-numbers-used-phone', permanent: true },
+  { from: '/blog/vin-verification-complete-guide-used-cars-1759314016.095080', to: '/blog/vin-verification-complete-guide-used-cars', permanent: true },
 
   // ===== BLOG POST REDIRECTS =====
   { from: '/blog/ultimate-marketplace-buyers-guide', to: '/blog', permanent: true },
@@ -84,10 +86,11 @@ export function findRedirect(path: string): string | null {
     }
   }
   
-  // Handle blog post timestamp pattern
+  // Handle blog post timestamp pattern - strip timestamp and redirect to clean slug
   const timestampMatch = cleanPath.match(/^\/blog\/(.+)-[\d.]+$/);
   if (timestampMatch) {
-    return '/blog';
+    const cleanSlug = timestampMatch[1];
+    return `/blog/${cleanSlug}`;
   }
   
   return null;
