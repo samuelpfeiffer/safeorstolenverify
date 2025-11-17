@@ -1,158 +1,130 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Shield, Lock, Award, Users, Database, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Shield, Lock, Eye, Server, FileCheck, Bell } from 'lucide-react';
 
-const SecurityPage = () => {
+export default function SecurityPage() {
   const securityFeatures = [
     {
-      icon: Lock,
-      title: "256-Bit Encryption",
-      description: "All data transmitted to and from Safe or Stolen is encrypted using industry-standard 256-bit SSL/TLS encryption—the same security level used by banks."
-    },
-    {
       icon: Shield,
-      title: "GDPR & CCPA Compliant",
-      description: "We comply with international data protection regulations including GDPR (Europe) and CCPA (California). Your data rights are protected."
+      title: "256-Bit SSL Encryption",
+      description: "All data transmissions are protected with bank-level encryption to ensure your searches remain private and secure."
     },
     {
-      icon: Eye,
-      title: "Zero Data Retention",
-      description: "We don't store your verification searches indefinitely. Search history is encrypted and can be deleted by you at any time."
+      icon: Lock,
+      title: "GDPR Compliant",
+      description: "We follow strict EU data protection regulations to safeguard your personal information and privacy rights."
     },
     {
-      icon: Server,
-      title: "Secure Infrastructure",
-      description: "Our servers are hosted in SOC 2 Type II certified data centers with 24/7 monitoring, redundancy, and physical security."
+      icon: Database,
+      title: "50M+ Verified Records",
+      description: "Our database is continuously updated from trusted law enforcement and insurance sources worldwide."
     },
     {
-      icon: FileCheck,
-      title: "Regular Security Audits",
-      description: "Independent third-party security audits conducted quarterly to identify and fix vulnerabilities before they become issues."
-    },
-    {
-      icon: Bell,
-      title: "Breach Notification",
-      description: "In the unlikely event of a security incident, we'll notify affected users within 72 hours as required by law."
+      icon: Users,
+      title: "100K+ Users Trust Us",
+      description: "Join thousands of buyers, sellers, and businesses who verify items daily with confidence."
     }
   ];
 
-  const dataHandling = [
+  const certifications = [
     {
-      category: "What We Collect",
-      items: [
-        "Email address (for account access)",
-        "Search queries (IMEI, VIN, serial numbers)",
-        "Payment information (processed securely by Stripe)",
-        "Usage analytics (anonymized)"
-      ]
+      badge: "🔒",
+      title: "SSL Secured",
+      description: "256-bit encryption"
     },
     {
-      category: "What We DON'T Collect",
-      items: [
-        "Your personal identifying information",
-        "Browsing history outside our site",
-        "Social media data",
-        "Contacts or phone books"
-      ]
+      badge: "✅",
+      title: "Industry Leader",
+      description: "Trusted since 2024"
     },
     {
-      category: "How We Use Your Data",
-      items: [
-        "Provide verification services",
-        "Improve database accuracy",
-        "Send service-related notifications",
-        "Prevent fraud and abuse"
-      ]
+      badge: "👥",
+      title: "100K+ Users",
+      description: "Verified daily"
     },
     {
-      category: "Who We Share With",
-      items: [
-        "No one - we never sell your data",
-        "Law enforcement (only with valid warrants)",
-        "Service providers (under strict NDAs)",
-        "You control what data we keep"
-      ]
+      badge: "🛡️",
+      title: "Privacy Protected",
+      description: "GDPR compliant"
     }
   ];
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Security & Privacy at Safe or Stolen",
-    "description": "Learn how Safe or Stolen protects your data with bank-level encryption, GDPR compliance, and zero data retention policies",
-    "about": {
-      "@type": "Thing",
-      "name": "Data Security",
-      "description": "256-bit encryption, GDPR compliant, regular security audits"
+  const dataProtection = [
+    {
+      title: "No Data Selling",
+      description: "We never sell or share your search data with third parties"
+    },
+    {
+      title: "Secure Storage",
+      description: "All data stored in encrypted, geo-redundant servers"
+    },
+    {
+      title: "Anonymized Searches",
+      description: "Your searches are anonymized for maximum privacy"
+    },
+    {
+      title: "Right to Delete",
+      description: "Request deletion of your data at any time"
     }
-  };
+  ];
 
   return (
     <>
       <PageSEO
-        title="Security & Privacy: How We Protect Your Data | Safe or Stolen"
-        description="Bank-level 256-bit encryption, GDPR compliant, zero data retention. Learn how Safe or Stolen keeps your verification searches private and secure."
-        keywords="data security, privacy policy, GDPR compliant, encrypted verification, secure IMEI check, data protection"
+        title="Security & Privacy - SafeOrStolen"
+        description="Learn about SafeOrStolen's security measures, data protection, privacy policy, and industry certifications. We protect your data with bank-level encryption."
+        keywords="security, privacy, data protection, encryption, GDPR, compliance"
         canonical="/security"
-        structuredData={[structuredData]}
       />
 
       <div className="min-h-screen bg-background">
-        {/* Hero */}
-        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto px-4 text-center">
-            <Shield className="h-20 w-20 mx-auto mb-6 text-primary" />
-            <h1 className="text-5xl font-bold mb-6">
-              Your Security is Our Priority
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We use bank-level encryption and follow strict data protection standards 
-              to keep your searches private and secure.
-            </p>
+        {/* Hero Section */}
+        <section className="pt-24 pb-12 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <Link to="/">
+              <Button variant="ghost" className="mb-6">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Button>
+            </Link>
+            
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+                <Shield className="h-4 w-4" />
+                <span>Your Security is Our Priority</span>
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Security & Privacy
+              </h1>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                We take your security seriously. Learn how we protect your data and maintain the highest standards of privacy and compliance.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Security Features */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-12">How We Protect You</h2>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {securityFeatures.map((feature, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <feature.icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle>{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Data Handling */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-4xl font-bold text-center mb-12">Data Handling Policy</h2>
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">Our Security Measures</h2>
+              
               <div className="grid md:grid-cols-2 gap-8">
-                {dataHandling.map((section, index) => (
-                  <Card key={index}>
-                    <CardHeader>
-                      <CardTitle>{section.category}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2">
-                        {section.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-primary mt-1">•</span>
-                            <span className="text-sm">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
+                {securityFeatures.map((feature, index) => (
+                  <Card key={index} className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <feature.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">{feature.title}</h3>
+                        <p className="text-muted-foreground">{feature.description}</p>
+                      </div>
+                    </div>
                   </Card>
                 ))}
               </div>
@@ -160,91 +132,116 @@ const SecurityPage = () => {
           </div>
         </section>
 
-        {/* Compliance */}
-        <section className="py-16">
+        {/* Trust Badges */}
+        <section className="py-16 bg-muted/20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <Card>
-                <CardContent className="p-8">
-                  <h2 className="text-3xl font-bold mb-6 text-center">Compliance & Certifications</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="font-bold mb-4">Privacy Regulations</h3>
-                      <ul className="space-y-3 text-sm">
-                        <li className="flex items-start gap-2">
-                          <Shield className="h-4 w-4 text-green-500 mt-0.5" />
-                          <div>
-                            <strong>GDPR Compliant</strong>
-                            <p className="text-muted-foreground">Full compliance with EU data protection laws</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Shield className="h-4 w-4 text-green-500 mt-0.5" />
-                          <div>
-                            <strong>CCPA Compliant</strong>
-                            <p className="text-muted-foreground">California Consumer Privacy Act adherence</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Shield className="h-4 w-4 text-green-500 mt-0.5" />
-                          <div>
-                            <strong>PIPEDA Compliant</strong>
-                            <p className="text-muted-foreground">Canadian privacy law compliance</p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-bold mb-4">Security Standards</h3>
-                      <ul className="space-y-3 text-sm">
-                        <li className="flex items-start gap-2">
-                          <Lock className="h-4 w-4 text-green-500 mt-0.5" />
-                          <div>
-                            <strong>PCI DSS Level 1</strong>
-                            <p className="text-muted-foreground">Payment card industry data security standard</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Lock className="h-4 w-4 text-green-500 mt-0.5" />
-                          <div>
-                            <strong>SOC 2 Type II</strong>
-                            <p className="text-muted-foreground">Independent security audit certification</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Lock className="h-4 w-4 text-green-500 mt-0.5" />
-                          <div>
-                            <strong>ISO 27001</strong>
-                            <p className="text-muted-foreground">Information security management system</p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">Certifications & Trust Badges</h2>
+              
+              <div className="grid md:grid-cols-4 gap-6">
+                {certifications.map((cert, index) => (
+                  <Card key={index} className="p-6 text-center">
+                    <div className="text-4xl mb-3">{cert.badge}</div>
+                    <h3 className="font-semibold text-lg mb-1">{cert.title}</h3>
+                    <p className="text-sm text-muted-foreground">{cert.description}</p>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Contact */}
-        <section className="py-16 bg-gradient-to-r from-primary/10 to-orange-500/10">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Have Security Questions?</h2>
-            <p className="text-xl text-muted-foreground mb-6">
-              Our security team is here to answer any concerns about data protection and privacy.
-            </p>
-            <p className="text-sm">
-              Email: <a href="mailto:security@safeorstolen.com" className="text-primary hover:underline font-semibold">security@safeorstolen.com</a>
-            </p>
-            <p className="text-xs text-muted-foreground mt-4">
-              Response within 24 hours • GPG key available upon request
-            </p>
+        {/* Data Protection */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-4">Data Protection Promise</h2>
+              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                Your privacy matters. Here's our commitment to protecting your data.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {dataProtection.map((item, index) => (
+                  <Card key={index} className="p-6">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground">{item.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Compliance Section */}
+        <section className="py-16 bg-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-8">Regulatory Compliance</h2>
+              
+              <Card className="p-8">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">GDPR Compliance</h3>
+                    <p className="text-muted-foreground">
+                      We comply with the EU General Data Protection Regulation, giving you full control over your personal data, including the right to access, correct, and delete your information.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">CCPA Compliance</h3>
+                    <p className="text-muted-foreground">
+                      California residents have additional privacy rights under the California Consumer Privacy Act. We honor all CCPA requests promptly.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Law Enforcement Cooperation</h3>
+                    <p className="text-muted-foreground">
+                      We work closely with law enforcement agencies worldwide to combat stolen goods trafficking while protecting user privacy within legal frameworks.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <div className="text-center mt-12">
+                <p className="text-muted-foreground mb-4">
+                  Questions about security or privacy?
+                </p>
+                <a 
+                  href="mailto:security@safeorstolen.com" 
+                  className="text-primary hover:underline font-semibold"
+                >
+                  security@safeorstolen.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Start Verifying Securely
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Your data is protected. Your searches are private. Verify with confidence.
+              </p>
+              <Link to="/verify">
+                <Button size="lg">
+                  Start Free Verification
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
     </>
   );
-};
-
-export default SecurityPage;
+}

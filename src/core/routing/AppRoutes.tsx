@@ -44,7 +44,9 @@ const ToolsPage = lazy(() => import('@/pages/ToolsPage'));
 const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
 const BrandsPage = lazy(() => import('@/pages/BrandsPage'));
 const PressReleasesPage = lazy(() => import('@/pages/PressReleasesPage'));
+const PressPage = lazy(() => import('@/pages/PressPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
+const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 
 // Business
@@ -452,8 +454,10 @@ export const AppRoutes = () => {
         <Route path="/brands" element={<BrandsPage />} />
         <Route path="/partners" element={<BrandsPage />} />
         <Route path="/press-releases" element={<PressReleasesPage />} />
+        <Route path="/press" element={<PressPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/reviews" element={<TestimonialsPage />} />
+        <Route path="/security" element={<SecurityPage />} />
 
         {/* Business */}
         <Route path="/mobile-app" element={<MobileAppPage />} />
