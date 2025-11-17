@@ -7,7 +7,7 @@ export const PressMediaSection = () => {
     {
       outlet: "IssueWire",
       headline: "SafeOrStolen Partners with FasterCapital to Launch Web App",
-      url: "https://issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-1780404205073178",
+      url: "https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904",
       date: "2024",
       icon: "🗞️"
     },
