@@ -76,6 +76,38 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               The only mobile app that verifies phones, cars, electronics, AND firearms. Competitors have no app. Install free on iOS & Android.
             </p>
+            
+            {/* Press credential badge */}
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <span>As seen in</span>
+              <a 
+                href="https://issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-1780404205073178" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                IssueWire
+              </a>
+              <span>&</span>
+              <a 
+                href="https://pressroom.prlog.org/SAFEORSTOLEN/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                PRLog
+              </a>
+              <span className="mx-2">|</span>
+              <span>Backed by</span>
+              <a 
+                href="https://fastercapital.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:underline font-medium"
+              >
+                FasterCapital
+              </a>
+            </div>
           </div>
 
           {/* Search form */}
