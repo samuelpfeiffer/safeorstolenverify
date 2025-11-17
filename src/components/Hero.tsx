@@ -81,7 +81,7 @@ const Hero = () => {
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <span>As seen in</span>
               <a 
-                href="https://issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-1780404205073178" 
+                href="https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-primary hover:underline font-medium"
