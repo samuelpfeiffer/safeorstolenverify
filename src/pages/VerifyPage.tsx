@@ -13,6 +13,8 @@ import { ParallelVerificationDisplay } from '@/components/verification/ParallelV
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 
 const VerifyPage = () => {
   const [identifier, setIdentifier] = useState('');
@@ -32,8 +34,63 @@ const VerifyPage = () => {
     await verify(identifier, itemType || undefined);
   };
 
+  // Structured data for verification service
+  const verificationServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Stolen Item Verification Service",
+    "description": "Instantly verify if items are stolen by checking IMEI, VIN, and serial numbers across multiple databases",
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    },
+    "serviceType": "Verification Service",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Verification Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "IMEI Check",
+            "description": "Verify if mobile phone is stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "VIN Verification",
+            "description": "Check if vehicle is stolen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Serial Number Lookup",
+            "description": "Verify electronics and other items"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <>
+      {/* SEO Components - Critical for Google indexing */}
+      <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/verify" />
+      <PageSEO
+        title="Verify Item Status - Check If Stolen Before Buying | SafeOrStolen"
+        description="Instantly verify if an item is stolen. Check IMEI, VIN, serial numbers across multiple databases. Protect yourself before buying secondhand items. Free verification available."
+        keywords="verify stolen item, IMEI check, VIN verification, serial number lookup, stolen item database, check if stolen, secondhand verification, used item safety"
+        canonical="/verify"
+        structuredData={verificationServiceSchema}
+      />
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="space-y-8">
         {/* Breadcrumb Navigation */}
         <BreadcrumbNavigation 
@@ -149,6 +206,7 @@ const VerifyPage = () => {
         {result && <ParallelVerificationDisplay result={result} />}
       </div>
     </div>
+    </>
   );
 };
 
