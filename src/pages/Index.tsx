@@ -6,6 +6,7 @@ import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
+import { TrustSignals } from '@/components/seo/TrustSignals';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
 
 const Index = () => {
@@ -13,43 +14,8 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 
+  // Page-specific structured data only (WebSite and Organization are in MasterSEO)
   const homeStructuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SafeOrStolen - Free Stolen Item Checker",
-      "alternateName": ["Safe or Stolen", "SafeOrStolen Verification", "Stolen Item Checker"],
-      "url": "https://safeorstolen.com",
-      "description": "Free stolen item verification platform. Check phones, cars, electronics using IMEI, VIN, serial numbers. 2 free searches (14-day trial), 50M+ database records.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://safeorstolen.com/?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      },
-      "sameAs": [
-        "https://www.facebook.com/safeorstolen",
-        "https://twitter.com/safeorstolen",
-        "https://www.linkedin.com/company/safeorstolen"
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-      "description": "Leading stolen item verification platform protecting buyers and sellers worldwide",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-888-SAFE-CHECK",
-        "contactType": "Customer Service",
-        "areaServed": "US",
-        "availableLanguage": ["English"]
-      }
-    },
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -114,6 +80,7 @@ const Index = () => {
         <HowItWorks />
         <CompactTestimonials />
         <CompactMobileAppCTA />
+        <TrustSignals />
       </div>
     </>
   );
