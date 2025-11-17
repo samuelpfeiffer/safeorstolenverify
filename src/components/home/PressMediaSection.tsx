@@ -1,5 +1,6 @@
 import { ExternalLink, Award, Users, Globe } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import billboardImage from '@/assets/billboard-campaign.jpg';
 
 export const PressMediaSection = () => {
   const pressItems = [
@@ -72,6 +73,19 @@ export const PressMediaSection = () => {
                 </Card>
               </a>
             ))}
+          </div>
+
+          {/* Billboard Campaign Visual */}
+          <div className="mt-12">
+            <img 
+              src={billboardImage}
+              alt="SafeOrStolen billboard campaign - Person viewing verification message"
+              className="rounded-xl shadow-2xl w-full max-w-4xl mx-auto object-cover"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="675"
+            />
           </div>
 
           {/* Stats Row */}
