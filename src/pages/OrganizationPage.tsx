@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Users, Building, Award, Globe, CheckCircle } from 'lucide-react';
-import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const OrganizationPage = () => {
   const organizationData = {
@@ -58,7 +58,7 @@ const OrganizationPage = () => {
 
   return (
     <>
-      <BetterSEOHead
+      <PageSEO
         title="About SafeOrStolen - Organization | Leadership | Mission"
         description="Learn about SafeOrStolen's mission to protect buyers and sellers in the secondhand market. Accelerated by FasterCapital, we're leading the fight against stolen goods fraud."
         keywords="SafeOrStolen organization, company mission, fraud prevention company, FasterCapital, secondhand market protection"

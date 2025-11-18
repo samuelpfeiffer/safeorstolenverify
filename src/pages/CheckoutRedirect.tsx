@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { supabase } from '@/integrations/supabase/client';
 
 const CheckoutRedirect: React.FC = () => {
@@ -81,9 +81,11 @@ const CheckoutRedirect: React.FC = () => {
   if (error) {
     return (
       <>
-        <SEOHead 
+        <PageSEO 
           title="Checkout Error - Safe Or Stolen"
-          robotsDirectives="noindex, nofollow"
+          description="An error occurred during checkout. Please try again."
+          noIndex={true}
+          canonical="/checkout-redirect"
         />
         <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md w-full text-center border-2 border-orange-200">
@@ -100,9 +102,11 @@ const CheckoutRedirect: React.FC = () => {
 
   return (
       <>
-        <SEOHead 
+        <PageSEO 
           title="Redirecting to Checkout - Safe Or Stolen"
-          robotsDirectives="noindex, nofollow"
+          description="Redirecting you to secure checkout. Please wait..."
+          noIndex={true}
+          canonical="/checkout-redirect"
         />
         <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 flex items-center justify-center p-4">
           <div className="text-center max-w-md w-full">

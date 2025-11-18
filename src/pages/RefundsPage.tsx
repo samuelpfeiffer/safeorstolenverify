@@ -2,16 +2,17 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { ArrowRight, Clock, CreditCard, Mail } from 'lucide-react';
 
 const RefundsPage: React.FC = () => {
   return (
     <>
-      <SEOHead
+      <PageSEO
         title="Refund Policy - Safe or Stolen"
         description="Understand Safe or Stolen's refund policy for subscription services. Learn about our refund process and terms."
         keywords="refund policy, subscription refunds, safe or stolen refunds, cancellation policy"
+        canonical="/refunds"
       />
       <div className="min-h-screen bg-sos text-white py-12">
         <div className="max-w-4xl mx-auto px-6">

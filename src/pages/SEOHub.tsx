@@ -15,7 +15,7 @@ import {
   Shield,
   Award
 } from 'lucide-react';
-import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const SEOHub = () => {
   const seoMetrics = {
@@ -57,12 +57,12 @@ const SEOHub = () => {
 
   return (
     <>
-      <BetterSEOHead
+      <PageSEO
         title="SafeOrStolen SEO Performance Hub - Rankings & Analytics"
         description="Monitor SafeOrStolen's search engine optimization performance, keyword rankings, and competitive analysis. Leading the stolen goods verification market."
         keywords="SafeOrStolen SEO, search rankings, keyword performance, stolen goods verification SEO, IMEI check rankings"
         canonical="/seo-hub"
-        noindex={true}
+        noIndex={true}
       />
 
       <div className="min-h-screen bg-background">
