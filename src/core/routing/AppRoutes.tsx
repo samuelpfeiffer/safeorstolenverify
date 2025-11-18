@@ -83,6 +83,21 @@ const SecondhandResearchAppPage = lazy(() => import('@/pages/redirects/Secondhan
 const BuyerProtectionResearchPage = lazy(() => import('@/pages/redirects/BuyerProtectionResearchPage'));
 const StolenDatabaseSearchPage = lazy(() => import('@/pages/redirects/StolenDatabaseSearchPage'));
 
+// Marketplace & Competitor Redirect Pages
+const CarfaxAlternativePage = lazy(() => import('@/pages/redirects/CarfaxAlternativePage'));
+const EbayVerificationPage = lazy(() => import('@/pages/redirects/EbayVerificationPage'));
+const FacebookMarketplaceCheckerPage = lazy(() => import('@/pages/redirects/FacebookMarketplaceCheckerPage'));
+const OfferUpSafetyPage = lazy(() => import('@/pages/redirects/OfferUpSafetyPage'));
+const AuctionVerificationPage = lazy(() => import('@/pages/redirects/AuctionVerificationPage'));
+const PawnshopVerificationPage = lazy(() => import('@/pages/redirects/PawnshopVerificationPage'));
+
+// Marketplace Verify Pages
+const EbayVerifyPage = lazy(() => import('@/pages/verify/EbayVerifyPage'));
+const FacebookMarketplaceVerifyPage = lazy(() => import('@/pages/verify/FacebookMarketplaceVerifyPage'));
+const OfferUpVerifyPage = lazy(() => import('@/pages/verify/OfferUpVerifyPage'));
+const AuctionsVerifyPage = lazy(() => import('@/pages/verify/AuctionsVerifyPage'));
+const PawnshopsVerifyPage = lazy(() => import('@/pages/verify/PawnshopsVerifyPage'));
+
 // App Pages - Platform
 const AppIOSPage = lazy(() => import('@/pages/app/AppIOSPage'));
 const AppAndroidPage = lazy(() => import('@/pages/app/AppAndroidPage'));
@@ -279,6 +294,13 @@ export const AppRoutes = () => {
         <Route path="/verify" element={<UnifiedVerificationPage />} />
         <Route path="/verify-pro" element={<VerifyPage />} />
         <Route path="/mobile-verify" element={<UnifiedVerificationPage />} />
+        
+        {/* Verify Marketplace Routes */}
+        <Route path="/verify/ebay" element={<EbayVerifyPage />} />
+        <Route path="/verify/facebook-marketplace" element={<FacebookMarketplaceVerifyPage />} />
+        <Route path="/verify/offerup" element={<OfferUpVerifyPage />} />
+        <Route path="/verify/auctions" element={<AuctionsVerifyPage />} />
+        <Route path="/verify/pawnshops" element={<PawnshopsVerifyPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard-old" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />
@@ -448,6 +470,14 @@ export const AppRoutes = () => {
         <Route path="/app/secondhand-research-app" element={<SecondhandResearchAppPage />} />
         <Route path="/app/buyer-protection-research" element={<BuyerProtectionResearchPage />} />
         <Route path="/app/stolen-database-search" element={<StolenDatabaseSearchPage />} />
+        
+        {/* App Routes - Marketplace & Competitor Domination */}
+        <Route path="/app/carfax-alternative" element={<CarfaxAlternativePage />} />
+        <Route path="/app/ebay-verification" element={<EbayVerificationPage />} />
+        <Route path="/app/facebook-marketplace-checker" element={<FacebookMarketplaceCheckerPage />} />
+        <Route path="/app/offerup-safety" element={<OfferUpSafetyPage />} />
+        <Route path="/app/auction-verification" element={<AuctionVerificationPage />} />
+        <Route path="/app/pawnshop-verification" element={<PawnshopVerificationPage />} />
         
         {/* App Routes - Use Cases */}
         <Route path="/app/marketplace" element={<AppMarketplacePage />} />

@@ -24,8 +24,8 @@ export const MobileAppSchema = () => {
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
-    "description": "Mobile app for researching stolen items before buying. Research IMEI, VIN, serial numbers. Investigate stolen goods instantly. Download FREE. The only app that researches 100+ stolen item databases.",
-    "keywords": ["research stolen items", "research stolen phone", "research stolen car", "lookup stolen goods", "investigate stolen property", "research IMEI stolen", "research VIN stolen", "stolen item research app", "secondhand research app", "buyer protection research"],
+    "description": "Mobile app for researching stolen items before buying. Research IMEI, VIN, serial numbers. Investigate stolen goods instantly. Download FREE. The only app that researches 100+ stolen item databases. Works for eBay, Facebook Marketplace, OfferUp, auctions, pawn shops. Free Carfax alternative for vehicles.",
+    "keywords": ["research stolen items", "research stolen phone", "research stolen car", "lookup stolen goods", "investigate stolen property", "research IMEI stolen", "research VIN stolen", "stolen item research app", "secondhand research app", "buyer protection research", "carfax alternative app", "ebay verification app", "facebook marketplace checker", "offerup safety app", "auction verification", "pawnshop checker"],
     "screenshot": "https://safeorstolen.com/images/sos-logo.png",
     "softwareVersion": "2.0",
     "datePublished": "2024-01-01",
