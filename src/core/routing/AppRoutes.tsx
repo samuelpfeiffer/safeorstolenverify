@@ -63,6 +63,10 @@ const IMEICheckerAppPage = lazy(() => import('@/pages/redirects/IMEICheckerAppPa
 const MobileVerificationPage = lazy(() => import('@/pages/redirects/MobileVerificationPage'));
 const GetAppPage = lazy(() => import('@/pages/redirects/GetAppPage'));
 const VerificationAppPage = lazy(() => import('@/pages/redirects/VerificationAppPage'));
+const UltimateMarketplaceBuyersGuidePage = lazy(() => import('@/pages/redirects/UltimateMarketplaceBuyersGuidePage'));
+const CompleteIMEIGuidePage = lazy(() => import('@/pages/redirects/CompleteIMEIGuidePage'));
+const FirearmsMarketplacePage = lazy(() => import('@/pages/redirects/FirearmsMarketplacePage'));
+const CompleteVerificationGuidePage = lazy(() => import('@/pages/redirects/CompleteVerificationGuidePage'));
 
 // Actual Install App Page (not redirect)
 const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
@@ -501,6 +505,12 @@ export const AppRoutes = () => {
         <Route path="/get-app" element={<GetAppPage />} />
         <Route path="/install-app" element={<InstallAppPage />} />
         <Route path="/verification-app" element={<VerificationAppPage />} />
+
+        {/* Blog Post Redirects */}
+        <Route path="/blog/ultimate-marketplace-buyers-guide" element={<UltimateMarketplaceBuyersGuidePage />} />
+        <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteIMEIGuidePage />} />
+        <Route path="/blog/safeorstolen-firearms-marketplace-verification" element={<FirearmsMarketplacePage />} />
+        <Route path="/blog/complete-verification-guide-stolen-goods-check" element={<CompleteVerificationGuidePage />} />
 
         {/* Redirect Test Page - Development Tool */}
         <Route path="/redirect-test" element={<RedirectTestPage />} />
