@@ -27,6 +27,7 @@ Crawl-delay: 0
 # Sitemaps - Submit these to Google Search Console
 Sitemap: https://safeorstolen.com/sitemap.xml
 Sitemap: https://safeorstolen.com/sitemap-core.xml
+Sitemap: https://safeorstolen.com/sitemap-blog.xml
 Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
 Sitemap: https://safeorstolen.com/sitemap-mobile-app-expanded.xml
 Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
