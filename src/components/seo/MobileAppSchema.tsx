@@ -4,7 +4,7 @@ export const MobileAppSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    "name": "SafeOrStolen",
+    "name": "SafeOrStolen - Research Stolen Items",
     "operatingSystem": ["iOS", "Android", "Web"],
     "applicationCategory": "UtilitiesApplication",
     "offers": {
@@ -24,13 +24,19 @@ export const MobileAppSchema = () => {
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     },
-    "description": "Mobile app for instant stolen goods verification. Check IMEI, VIN, serial numbers, and firearms. The only mobile app that verifies all item types.",
+    "description": "Mobile app for researching stolen items before buying. Research IMEI, VIN, serial numbers. Investigate stolen goods instantly. Download FREE. The only app that researches 100+ stolen item databases.",
+    "keywords": ["research stolen items", "research stolen phone", "research stolen car", "lookup stolen goods", "investigate stolen property", "research IMEI stolen", "research VIN stolen", "stolen item research app", "secondhand research app", "buyer protection research"],
     "screenshot": "https://safeorstolen.com/images/sos-logo.png",
     "softwareVersion": "2.0",
     "datePublished": "2024-01-01",
     "permissions": "camera, notifications, storage",
     "countriesSupported": "US, CA, UK, AU, EU",
     "featureList": [
+      "Research stolen phones instantly",
+      "Research stolen vehicles and VINs",
+      "Lookup stolen goods databases",
+      "Investigate serial numbers",
+      "Research before buying secondhand",
       "IMEI phone verification",
       "VIN vehicle verification", 
       "Firearm serial number checking",

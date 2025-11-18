@@ -74,16 +74,88 @@
   <!-- Item-Specific App Pages -->
   <url>
     <loc>https://safeorstolen.com/app/imei-checker</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/app/firearms-checker</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Research Stolen Items Pages (SEO Expansion) -->
+  <url>
+    <loc>https://safeorstolen.com/app/research-stolen-items</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/research-stolen-phone</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/research-stolen-car</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/lookup-stolen-items</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/investigate-stolen-property</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/check-stolen-before-buying</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/stolen-item-scanner</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/secondhand-research-app</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/buyer-protection-research</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/stolen-database-search</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
