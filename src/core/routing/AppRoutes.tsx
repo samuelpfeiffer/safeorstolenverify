@@ -348,7 +348,7 @@ export const AppRoutes = () => {
         {/* Resources & Information */}
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/database" element={<DatabasePage />} />
-        <Route path="/stolen-goods-statistics-2025" element={<StolenGoodsStatistics2025 />} />
+        <Route path="/statistics/stolen-goods-2025" element={<StolenGoodsStatistics2025 />} />
         
         {/* Comparison Pages */}
         <Route path="/vs-carfax" element={<VSCarfaxPage />} />

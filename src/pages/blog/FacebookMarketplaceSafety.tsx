@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { Shield, AlertTriangle, CheckCircle, DollarSign, MapPin, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -33,15 +34,55 @@ export default function FacebookMarketplaceSafety() {
         structuredData={[articleSchema]}
       />
       
-      <noscript>
-        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>Buying on Facebook Marketplace? Check if It's Stolen First</h1>
-          <h2>Facebook Marketplace Fraud is Exploding</h2>
-          <p>$256 million lost to marketplace scams in 2024</p>
-          <p>1 in 6 electronics listings involve stolen goods</p>
-          <p>73% of victims never recover their money</p>
-        </div>
-      </noscript>
+      <BotVisibleContent>
+        <h1>Buying on Facebook Marketplace? Check if It's Stolen First (2025)</h1>
+        
+        <h2>Facebook Marketplace Fraud is Exploding</h2>
+        <p><strong>$256 million</strong> lost to Facebook Marketplace scams in 2024</p>
+        <p><strong>1 in 6</strong> electronics listings involve stolen goods</p>
+        <p><strong>73%</strong> of victims never recover their money</p>
+        <p><strong>Facebook provides NO buyer protection</strong> for local pickups</p>
+        
+        <h2>Most Common Facebook Marketplace Scams</h2>
+        <h3>1. Stolen Goods (Most Common)</h3>
+        <p>Thieves sell stolen phones, laptops, and electronics that get remotely locked or seized by police after you buy them. You lose both your money and the item.</p>
+        
+        <h3>2. Fake Items and Counterfeit Products</h3>
+        <p>Counterfeit designer goods, fake electronics that break immediately, items that don't match description.</p>
+        
+        <h3>3. No-Show Sellers</h3>
+        <p>Seller takes deposit or payment via Venmo/CashApp then disappears. Account often deleted after scam.</p>
+        
+        <h2>Essential Facebook Marketplace Safety Steps</h2>
+        <ul>
+          <li>Verify serial numbers with SafeOrStolen before meeting seller</li>
+          <li>Check seller's Facebook profile age and activity history</li>
+          <li>Meet only at police stations or public safe zones</li>
+          <li>Inspect items thoroughly before making any payment</li>
+          <li>Use Facebook Pay for payment paper trail</li>
+          <li>Photograph serial numbers, seller ID, and item condition</li>
+          <li>Never wire money or use payment apps before seeing item</li>
+          <li>Trust your instincts - if deal seems too good, it probably is</li>
+        </ul>
+        
+        <h2>Facebook Marketplace Red Flags</h2>
+        <ul>
+          <li>Seller refuses to provide serial number or IMEI</li>
+          <li>Pressure to buy immediately without questions</li>
+          <li>Price significantly below market value</li>
+          <li>New Facebook profile selling expensive items</li>
+          <li>Seller wants to meet in private location</li>
+          <li>Multiple identical items from same seller</li>
+          <li>Seller asks you to communicate off-platform</li>
+          <li>Payment demanded before meeting</li>
+        </ul>
+        
+        <h2>What To Do If You Bought Stolen Goods on Facebook Marketplace</h2>
+        <p>If you discover you purchased a stolen item: Stop using it immediately. Contact local police with your receipt and seller information. File report with Facebook. Contact SafeOrStolen to document the stolen status. You may need to surrender the item to police and will likely lose your money, but having documentation protects you from criminal charges.</p>
+        
+        <h2>How to Verify Facebook Marketplace Items</h2>
+        <p>Before meeting any Facebook Marketplace seller, request the item's serial number or IMEI. Use SafeOrStolen's free verification tool to instantly check if it's reported stolen. This one simple step can save you hundreds or thousands of dollars and prevent legal problems.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12 max-w-4xl">
