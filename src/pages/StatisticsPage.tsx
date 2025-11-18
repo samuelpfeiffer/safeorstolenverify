@@ -46,7 +46,7 @@ export default function StatisticsPage() {
     "dateModified": "2025-01-15",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://safeorstolen.com/statistics/stolen-goods-2025"
+      "@id": "https://safeorstolen.com/statistics/stolen-goods"
     },
     "articleBody": "Real-time statistics showing the scale of the stolen goods problem. Global theft statistics for 2024: $15 billion in stolen goods sold annually, 2.3 million phones stolen in US, 750,000 vehicles stolen in US, 68% of stolen phones resold on marketplaces. SafeOrStolen impact: 100,000+ active users, 500,000+ verifications performed, 15,247 stolen items identified, $4.2M in consumer losses prevented. Marketplace stolen rates: Facebook Marketplace 8%, OfferUp 12%, Craigslist 15%, eBay 6%. Most stolen items: 2.3 million smartphones per year, 750,000 vehicles per year, 1.5 million electronics per year."
   };

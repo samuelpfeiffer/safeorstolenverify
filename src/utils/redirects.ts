@@ -48,6 +48,9 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/bulk', to: '/verify', permanent: true },
   { from: '/stolen-property-lookup', to: '/verify', permanent: true },
   { from: '/vin', to: '/check-car', permanent: true },
+  
+  // ===== STATISTICS PAGE EVERGREEN URL =====
+  { from: '/statistics/stolen-goods-2025', to: '/statistics/stolen-goods', permanent: true },
 
   // ===== LEGACY VERIFICATION URLS =====
   { from: '/verify-not-stolen', to: '/verify', permanent: true },

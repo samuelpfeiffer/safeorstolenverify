@@ -18,9 +18,10 @@ export const prerenderRoutes = [
   '/how-it-works',
   '/firearms-check',
   '/for-businesses',
+  '/fastercapital/raise-capital',
   
   // Statistics & Data Pages
-  '/statistics/stolen-goods-2025',
+  '/statistics/stolen-goods',
   
   // Marketplace Guides (CRITICAL - Fix Soft 404)
   '/guides/ebay-buyer-protection',

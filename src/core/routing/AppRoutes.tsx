@@ -55,6 +55,7 @@ const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
+const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
 
 // Redirect Pages (with HTML meta refresh for crawlers)
 const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
@@ -70,6 +71,11 @@ const UltimateMarketplaceBuyersGuidePage = lazy(() => import('@/pages/redirects/
 const CompleteIMEIGuidePage = lazy(() => import('@/pages/redirects/CompleteIMEIGuidePage'));
 const FirearmsMarketplacePage = lazy(() => import('@/pages/redirects/FirearmsMarketplacePage'));
 const CompleteVerificationGuidePage = lazy(() => import('@/pages/redirects/CompleteVerificationGuidePage'));
+
+// Timestamped Blog Post Redirects (404 fixes)
+const RedFlagsBuyingUsedElectronicsPage = lazy(() => import('@/pages/redirects/RedFlagsBuyingUsedElectronicsPage'));
+const CompleteGuideVerifyIMEIPage = lazy(() => import('@/pages/redirects/CompleteGuideVerifyIMEIPage'));
+const VINVerificationCompleteGuidePage = lazy(() => import('@/pages/redirects/VINVerificationCompleteGuidePage'));
 
 // Actual Install App Page (not redirect)
 const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
@@ -348,7 +354,10 @@ export const AppRoutes = () => {
         {/* Resources & Information */}
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/database" element={<DatabasePage />} />
-        <Route path="/statistics/stolen-goods-2025" element={<StolenGoodsStatistics2025 />} />
+        <Route path="/statistics/stolen-goods" element={<StolenGoodsStatistics2025 />} />
+        
+        {/* FasterCapital Integration */}
+        <Route path="/fastercapital/raise-capital" element={<FasterCapitalRaiseCapitalPage />} />
         
         {/* Comparison Pages */}
         <Route path="/vs-carfax" element={<VSCarfaxPage />} />
@@ -606,6 +615,11 @@ export const AppRoutes = () => {
         <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteIMEIGuidePage />} />
         <Route path="/blog/safeorstolen-firearms-marketplace-verification" element={<FirearmsMarketplacePage />} />
         <Route path="/blog/complete-verification-guide-stolen-goods-check" element={<CompleteVerificationGuidePage />} />
+        
+        {/* Timestamped Blog Post Redirects (404 fixes) */}
+        <Route path="/blog/red-flags-buying-used-electronics-1759314016.095080" element={<RedFlagsBuyingUsedElectronicsPage />} />
+        <Route path="/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080" element={<CompleteGuideVerifyIMEIPage />} />
+        <Route path="/blog/vin-verification-complete-guide-used-cars-1759314016.095080" element={<VINVerificationCompleteGuidePage />} />
 
         {/* Redirect Test Page - Development Tool */}
         <Route path="/redirect-test" element={<RedirectTestPage />} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 
 export const ServiceLimitations: React.FC = () => {
   return (
@@ -9,6 +10,27 @@ export const ServiceLimitations: React.FC = () => {
         description="Understanding the limitations and scope of our verification services for stolen item checking."
         canonical="/service-limitations"
       />
+      
+      {/* Bot-visible content for search engines */}
+      <BotVisibleContent>
+        <h1>Service Limitations</h1>
+        <p>Understanding the scope and limitations of our verification services</p>
+        
+        <h2>Database Coverage</h2>
+        <p>Our verification service checks against multiple databases of reported stolen items, but coverage may vary by geographic region and local reporting practices, item type and manufacturer reporting systems, time since theft was reported, and quality and completeness of original theft reports.</p>
+        
+        <h2>Verification Accuracy</h2>
+        <p>While we strive for accuracy, our service has certain limitations. Results are based on available data at time of search. False negatives possible if items not yet reported. Historical data may have gaps or inconsistencies. International databases may have varying update frequencies.</p>
+        
+        <h2>Legal Considerations</h2>
+        <p>Our service is for verification purposes only. Results do not constitute legal advice. Users should verify with local authorities when required. Service does not replace due diligence in transactions. Regional laws and regulations may vary.</p>
+        
+        <h2>Technical Limitations</h2>
+        <p>Technical factors that may affect service availability include network connectivity and database access, scheduled maintenance windows, peak usage periods may affect response times, and mobile device capabilities for scanning features.</p>
+        
+        <h2>Recommendations</h2>
+        <p>For best results and protection: Use our service as one part of your verification process, verify seller identity and purchase documentation, consider local law enforcement resources when available, and trust your instincts if something seems suspicious.</p>
+      </BotVisibleContent>
       
       <div className="min-h-screen bg-background">
         <main className="container mx-auto px-4 py-8">
