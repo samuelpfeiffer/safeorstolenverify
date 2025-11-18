@@ -84,7 +84,7 @@ const BuyerProtectionResearchPage = lazy(() => import('@/pages/redirects/BuyerPr
 const StolenDatabaseSearchPage = lazy(() => import('@/pages/redirects/StolenDatabaseSearchPage'));
 
 // Marketplace & Competitor Redirect Pages
-const CarfaxAlternativePage = lazy(() => import('@/pages/redirects/CarfaxAlternativePage'));
+const CarfaxAlternativePage = lazy(() => import('@/pages/CarfaxAlternativePage'));
 const EbayVerificationPage = lazy(() => import('@/pages/redirects/EbayVerificationPage'));
 const FacebookMarketplaceCheckerPage = lazy(() => import('@/pages/redirects/FacebookMarketplaceCheckerPage'));
 const OfferUpSafetyPage = lazy(() => import('@/pages/redirects/OfferUpSafetyPage'));
@@ -294,6 +294,9 @@ export const AppRoutes = () => {
         <Route path="/verify" element={<UnifiedVerificationPage />} />
         <Route path="/verify-pro" element={<VerifyPage />} />
         <Route path="/mobile-verify" element={<UnifiedVerificationPage />} />
+        
+        {/* Marketplace Landing Pages */}
+        <Route path="/carfax-alternative" element={<CarfaxAlternativePage />} />
         
         {/* Verify Marketplace Routes */}
         <Route path="/verify/ebay" element={<EbayVerifyPage />} />

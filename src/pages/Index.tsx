@@ -8,6 +8,7 @@ import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
+import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -62,9 +63,9 @@ const Index = () => {
     <>
       {/* SEO Optimization */}
       <PageSEO
-        title="Free Stolen Item Checker - Verify IMEI, VIN, Serial Numbers Instantly | SafeOrStolen"
-        description="Check if phones, cars, electronics are stolen FREE. Instant IMEI, VIN, serial number verification against 50M+ stolen item records. Mobile app available. Protect buyers & sellers. 2 FREE searches (14-day trial)."
-        keywords="free stolen item checker, IMEI check, VIN verification, serial number lookup, verify phone stolen, check car stolen, stolen goods database, buy used safely, secondhand marketplace verification, prevent buying stolen items"
+        title="Free Stolen Item Checker - Verify IMEI, VIN, Serial Numbers | SafeOrStolen"
+        description="Check if phones, cars, electronics are stolen FREE. Instant IMEI, VIN verification. Free Carfax alternative. Verify items from eBay, Facebook Marketplace, OfferUp, auctions, pawn shops. Mobile app available. 2 FREE searches."
+        keywords="free stolen item checker, IMEI check, VIN verification, carfax alternative free, ebay verification, facebook marketplace safety, offerup verification, serial number lookup, verify phone stolen, check car stolen, stolen goods database, marketplace safety, pawn shop verification"
         canonical="/"
         structuredData={homeStructuredData}
       />
@@ -77,6 +78,7 @@ const Index = () => {
       <div className="min-h-screen">
         <Hero />
         <PressMediaSection />
+        <MarketplaceSafetySection />
         <HowItWorks />
         <CompactTestimonials />
         <CompactMobileAppCTA />

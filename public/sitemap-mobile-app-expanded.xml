@@ -5,10 +5,18 @@
   <!-- Main Mobile App Pages -->
   <url>
     <loc>https://safeorstolen.com/mobile-app</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
+  </url>
+
+  <!-- Marketplace Landing Pages -->
+  <url>
+    <loc>https://safeorstolen.com/carfax-alternative</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- Platform-Specific Pages -->
