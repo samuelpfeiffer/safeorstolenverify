@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { ShoppingBag, Shield, AlertTriangle, CheckCircle, Search } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -33,15 +34,38 @@ export default function EbayBuyerProtection() {
         structuredData={articleSchema}
       />
       
-      <noscript>
-        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>Complete eBay Buyer Protection Guide (2025)</h1>
-          <h2>Why eBay Buyers Need Protection</h2>
-          <p>8% of eBay items are stolen</p>
-          <p>$780M lost to eBay fraud yearly</p>
-          <p>390K fraud reports filed (2024)</p>
-        </div>
-      </noscript>
+      <BotVisibleContent>
+        <h1>Complete eBay Buyer Protection Guide (2025)</h1>
+        
+        <h2>Why eBay Buyers Need Protection</h2>
+        <p><strong>8%</strong> of eBay items are stolen goods</p>
+        <p><strong>$780 Million</strong> lost to eBay fraud yearly</p>
+        <p><strong>390,000</strong> fraud reports filed in 2024</p>
+        
+        <h2>Essential eBay Safety Steps</h2>
+        <ul>
+          <li>Always verify serial numbers with SafeOrStolen before bidding</li>
+          <li>Check seller ratings and feedback history thoroughly</li>
+          <li>Avoid sellers with multiple identical high-value items</li>
+          <li>Request serial numbers before making any purchase</li>
+          <li>Meet sellers at police stations for local pickups</li>
+          <li>Use eBay's Money Back Guarantee protection</li>
+          <li>Document everything with screenshots and messages</li>
+        </ul>
+        
+        <h2>Red Flags When Buying on eBay</h2>
+        <ul>
+          <li>Sellers refusing to provide serial numbers</li>
+          <li>Prices too good to be true</li>
+          <li>Seller pressure to complete transaction quickly</li>
+          <li>New accounts selling high-value items</li>
+          <li>Multiple identical items from different sellers</li>
+          <li>Poor quality photos or stock images only</li>
+        </ul>
+        
+        <h2>How to Verify eBay Items Before Buying</h2>
+        <p>Use SafeOrStolen's free verification tool to check IMEI numbers, serial numbers, and VIN numbers against stolen goods databases before you bid or buy on eBay. This protects you from accidentally purchasing stolen property.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-muted/20">
         <div className="max-w-4xl mx-auto px-4 py-12">

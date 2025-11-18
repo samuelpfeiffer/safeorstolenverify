@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { Card } from '@/components/ui/card';
 import { Gavel, AlertTriangle, CheckCircle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,15 +35,50 @@ export default function AuctionHouseSafety() {
         structuredData={articleSchema}
       />
       
-      <noscript>
-        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>Auction House Buyer's Safety Guide</h1>
-          <h2>The Auction House Stolen Goods Problem</h2>
-          <p>5-10% of high-value auction items may have questionable origins</p>
-          <p>Storage unit auctions may contain abandoned stolen property</p>
-          <p>Estate sales sometimes unknowingly sell stolen items</p>
-        </div>
-      </noscript>
+      <BotVisibleContent>
+        <h1>Auction House Buyer's Safety Guide (2025)</h1>
+        
+        <h2>The Auction House Stolen Goods Problem</h2>
+        <p><strong>5-10%</strong> of high-value auction items may have questionable origins</p>
+        <p>Storage unit auctions may contain abandoned stolen property</p>
+        <p>Estate sales sometimes unknowingly sell stolen items</p>
+        <p>Police auctions may include seized property where ownership was never established</p>
+        
+        <h2>Auction Risk Levels</h2>
+        <h3>HIGH RISK - Storage Unit Auctions</h3>
+        <p>Items from people who disappeared or were evicted. No ownership verification. Contents often include valuable electronics with no documentation.</p>
+        
+        <h3>MEDIUM-HIGH RISK - Online Auctions and Police Auctions</h3>
+        <p>May include seized property where ownership was never fully established. Some police auctions sell items that were never claimed.</p>
+        
+        <h3>MEDIUM RISK - Estate Sales</h3>
+        <p>Usually legitimate but deceased person may have acquired items questionably. Family often doesn't know item history.</p>
+        
+        <h2>Essential Auction Safety Steps</h2>
+        <ul>
+          <li>Research auction house reputation and reviews thoroughly</li>
+          <li>Verify serial numbers with SafeOrStolen before bidding</li>
+          <li>Request provenance documentation for high-value items</li>
+          <li>Inspect items thoroughly during preview period</li>
+          <li>Ask about return policy for stolen items</li>
+          <li>Document everything including photos and receipts</li>
+          <li>Use payment methods that offer buyer protection</li>
+        </ul>
+        
+        <h2>Red Flags at Auctions</h2>
+        <ul>
+          <li>No documentation of ownership history</li>
+          <li>Auction house refuses serial number checks</li>
+          <li>Extremely low prices on high-value electronics</li>
+          <li>Items still in original packaging from "estate sale"</li>
+          <li>Auction house has no stolen goods policy</li>
+          <li>Multiple high-end items from single storage unit</li>
+          <li>Pressure to bid without adequate inspection time</li>
+        </ul>
+        
+        <h2>How to Verify Auction Items</h2>
+        <p>Before bidding at any auction, request item serial numbers, IMEI numbers (for phones), or VIN numbers (for vehicles) during the preview period. Use SafeOrStolen to verify these identifiers aren't reported stolen. Reputable auction houses will allow this verification to protect both buyers and their reputation.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-4xl">

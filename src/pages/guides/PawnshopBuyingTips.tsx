@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { Card } from '@/components/ui/card';
 import { Store, Shield, AlertTriangle, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,15 +35,45 @@ export default function PawnshopBuyingTips() {
         structuredData={articleSchema}
       />
       
-      <noscript>
-        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>Pawn Shop Buying Guide: How to Avoid Stolen Goods</h1>
-          <h2>The Pawn Shop Stolen Goods Reality</h2>
-          <p>10-20% of pawn shop electronics may have questionable origins</p>
-          <p>Not all police departments actively check pawn shop inventories</p>
-          <p>Serial numbers aren't always verified against stolen databases</p>
-        </div>
-      </noscript>
+      <BotVisibleContent>
+        <h1>Pawn Shop Buying Guide: How to Avoid Stolen Goods (2025)</h1>
+        
+        <h2>The Pawn Shop Stolen Goods Reality</h2>
+        <p><strong>10-20%</strong> of pawn shop electronics may have questionable origins</p>
+        <p>Not all police departments actively check pawn shop inventories</p>
+        <p>Serial numbers aren't always verified against stolen databases</p>
+        <p>Pawn shops legally required to hold items for 30-90 days but thieves use fake IDs</p>
+        
+        <h2>Your Legal Protection When Buying from Pawn Shops</h2>
+        <p>You're protected as innocent buyer IF pawn shop followed all laws</p>
+        <p>However, original owner can still reclaim item if proven stolen</p>
+        <p>You may lose money even if you legally purchased the item</p>
+        <p>Document everything for your protection</p>
+        
+        <h2>Essential Pawn Shop Safety Steps</h2>
+        <ul>
+          <li>Always ask for serial number and verify with SafeOrStolen before purchase</li>
+          <li>Request pawn shop's holding certificate or police clearance</li>
+          <li>Inspect items thoroughly for signs of damage or tampering</li>
+          <li>Ask about return policy if item turns out stolen</li>
+          <li>Photograph serial number and receipt</li>
+          <li>Shop at reputable, established pawn shops only</li>
+          <li>Check pawn shop's license and reputation online</li>
+        </ul>
+        
+        <h2>Red Flags at Pawn Shops</h2>
+        <ul>
+          <li>Pawn shop refuses to provide serial numbers</li>
+          <li>Pressure to buy immediately without verification</li>
+          <li>Price too good to be true for high-value items</li>
+          <li>Items look brand new but sold as used</li>
+          <li>Shop has no clear return or stolen goods policy</li>
+          <li>Staff seems evasive about item history</li>
+        </ul>
+        
+        <h2>How Pawn Shops Should Handle Stolen Goods</h2>
+        <p>Legitimate pawn shops are required by law to report all inventory to police, hold items for a waiting period (typically 30-90 days depending on state), and verify seller identification. Before buying from any pawn shop, verify the item's serial number with SafeOrStolen to ensure it's not reported stolen.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-4xl">

@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { Card } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,15 +35,42 @@ export default function OfferUpVerification() {
         structuredData={articleSchema}
       />
       
-      <noscript>
-        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>OfferUp Safety Guide: How to Avoid Buying Stolen Items</h1>
-          <h2>Why OfferUp is High-Risk</h2>
-          <p>15-25% of high-value electronics on local marketplaces may be stolen</p>
-          <p>No mandatory ID verification for sellers</p>
-          <p>Cash transactions leave no paper trail</p>
-        </div>
-      </noscript>
+      <BotVisibleContent>
+        <h1>OfferUp Safety Guide: How to Avoid Buying Stolen Items (2025)</h1>
+        
+        <h2>Why OfferUp is High-Risk for Stolen Goods</h2>
+        <p><strong>15-25%</strong> of high-value electronics on local marketplaces may be stolen</p>
+        <p>No mandatory ID verification for sellers on OfferUp</p>
+        <p>Cash transactions leave no paper trail</p>
+        <p>Local pickup means no shipping documentation</p>
+        <p>Anonymous profiles are common</p>
+        <p>Limited buyer protection compared to other platforms</p>
+        
+        <h2>Essential OfferUp Safety Steps</h2>
+        <ul>
+          <li>Verify serial numbers with SafeOrStolen before meeting any seller</li>
+          <li>Check seller TruYou verification status</li>
+          <li>Meet only at police stations or designated safe zones</li>
+          <li>Inspect items thoroughly before making payment</li>
+          <li>Photograph serial numbers and seller identification</li>
+          <li>Use OfferUp's messaging system to create paper trail</li>
+          <li>Never wire money or use cash apps before seeing item</li>
+        </ul>
+        
+        <h2>OfferUp Red Flags to Watch For</h2>
+        <ul>
+          <li>Seller refuses to provide serial number or IMEI</li>
+          <li>Pressure to buy immediately without inspection</li>
+          <li>Price significantly below market value</li>
+          <li>Seller wants to meet in private location</li>
+          <li>New profile selling expensive electronics</li>
+          <li>Multiple listings with similar items</li>
+          <li>Seller asks you to go off-platform</li>
+        </ul>
+        
+        <h2>How to Verify OfferUp Items</h2>
+        <p>Before meeting any OfferUp seller, request the item's serial number, IMEI (for phones), or VIN (for vehicles). Use SafeOrStolen's free verification tool to instantly check if the item is reported stolen. This simple step can save you from legal trouble and financial loss.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-4xl">

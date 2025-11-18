@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { Card } from '@/components/ui/card';
 import { TrendingUp, Shield, Users, DollarSign, AlertTriangle, CheckCircle } from 'lucide-react';
 
@@ -59,27 +60,52 @@ export default function StatisticsPage() {
         structuredData={structuredData}
       />
 
-      {/* Hidden SEO content for crawlers */}
-      <noscript>
-        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
-          <h1>Stolen Goods Statistics & Market Data 2025</h1>
-          <h2>Global Theft Statistics</h2>
-          <p>$15 Billion in stolen goods sold annually</p>
-          <p>2.3 Million phones stolen in US (2024)</p>
-          <p>750,000 vehicles stolen in US (2024)</p>
-          <p>68% of stolen phones resold on marketplaces</p>
-          <h2>SafeOrStolen Impact</h2>
-          <p>100,000+ Active SafeOrStolen Users</p>
-          <p>500,000+ Verifications Performed</p>
-          <p>15,247 Stolen Items Identified</p>
-          <p>$4.2M Consumer Losses Prevented</p>
-          <h2>Marketplace Stolen Rates</h2>
-          <p>Facebook Marketplace: 8%</p>
-          <p>OfferUp: 12%</p>
-          <p>Craigslist: 15%</p>
-          <p>eBay: 6%</p>
-        </div>
-      </noscript>
+      {/* Bot-visible static content for search engines */}
+      <BotVisibleContent>
+        <h1>Stolen Goods Statistics & Market Data 2025</h1>
+        
+        <section>
+          <h2>Global Theft Statistics (2024-2025)</h2>
+          <p><strong>$15 Billion</strong> in stolen goods sold annually worldwide</p>
+          <p><strong>2.3 Million</strong> phones stolen in United States (2024)</p>
+          <p><strong>750,000</strong> vehicles stolen in United States (2024)</p>
+          <p><strong>68%</strong> of stolen phones are resold on online marketplaces</p>
+          <p><strong>1.5 Million</strong> electronics items stolen per year</p>
+        </section>
+        
+        <section>
+          <h2>SafeOrStolen Platform Impact</h2>
+          <p><strong>100,000+</strong> Active SafeOrStolen Users protecting themselves from fraud</p>
+          <p><strong>500,000+</strong> Verification Searches Performed</p>
+          <p><strong>15,247</strong> Stolen Items Successfully Identified</p>
+          <p><strong>$4.2 Million</strong> in Consumer Losses Prevented</p>
+        </section>
+        
+        <section>
+          <h2>Marketplace Stolen Goods Rates</h2>
+          <p><strong>Facebook Marketplace:</strong> 8% of items may be stolen</p>
+          <p><strong>OfferUp:</strong> 12% stolen rate</p>
+          <p><strong>Craigslist:</strong> 15% stolen rate</p>
+          <p><strong>eBay:</strong> 6% stolen rate</p>
+        </section>
+        
+        <section>
+          <h2>Most Commonly Stolen Items</h2>
+          <ul>
+            <li>Smartphones: 2.3 million per year</li>
+            <li>Vehicles: 750,000 per year</li>
+            <li>Electronics: 1.5 million per year</li>
+            <li>Bicycles: Over 1 million per year</li>
+            <li>Laptops and tablets: Hundreds of thousands annually</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>How SafeOrStolen Protects Buyers</h2>
+          <p>SafeOrStolen provides instant verification for serial numbers, IMEI numbers, and VIN numbers against global stolen goods databases. Our platform helps consumers avoid buying stolen property by checking items before purchase.</p>
+          <p>Key features include: Real-time database checks, stolen item alerts, marketplace integration, and verified seller badges.</p>
+        </section>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6 py-20">
