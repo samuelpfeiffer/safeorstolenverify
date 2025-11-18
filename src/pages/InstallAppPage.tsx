@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { Helmet } from 'react-helmet-async';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -148,6 +149,26 @@ const InstallAppPage = () => {
         canonical="/install-app"
         structuredData={mobileAppSchema}
       />
+      
+      {/* Bot-visible content for search engines */}
+      <BotVisibleContent>
+        <h1>Install SafeOrStolen App - Download Free Mobile App</h1>
+        <p>Install SafeOrStolen mobile app directly from your browser. No app store required. Works on iOS, Android, Windows, Mac, and Linux. Free forever.</p>
+        
+        <h2>How to Install SafeOrStolen App</h2>
+        <p>iOS Installation: Open SafeOrStolen.com in Safari browser. Tap the Share button (square with arrow) at the bottom. Scroll down and tap "Add to Home Screen". Tap "Add" in the top right. The app icon will appear on your home screen.</p>
+        <p>Android Installation: Open SafeOrStolen.com in Chrome browser. Tap the menu icon (three dots) in the top right. Tap "Add to Home screen" or "Install app". Tap "Add" or "Install". The app will be added to your home screen.</p>
+        <p>Desktop Installation: Open SafeOrStolen.com in your browser. Look for the install icon in your browser address bar. Click "Install SafeOrStolen". The app will open in its own window.</p>
+        
+        <h2>App Features</h2>
+        <p>Lightning Fast: Instant offline access to verification history. Secure & Private: Your data stays on your device. Works Offline: Access search history without internet. Native Experience: Full-screen app with no browser UI.</p>
+        
+        <h2>Why Install the App?</h2>
+        <p>One-tap access from home screen. Works offline. Push notifications for alerts. Full-screen experience. Faster than opening browser. Automatic updates.</p>
+        
+        <h2>What Can You Do with SafeOrStolen App?</h2>
+        <p>Verify IMEI numbers for phones and tablets. Check VIN numbers for vehicles. Validate serial numbers for electronics. Scan barcodes and QR codes. View verification history. Get real-time alerts. Access offline.</p>
+      </BotVisibleContent>
       
       <Helmet>
         <script type="application/ld+json">

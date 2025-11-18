@@ -212,10 +212,18 @@
   
   <!-- Statistics & Data Pages -->
   <url>
-    <loc>https://safeorstolen.com/statistics/stolen-goods-2025</loc>
+    <loc>https://safeorstolen.com/statistics/stolen-goods</loc>
     <lastmod>2025-11-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- FasterCapital Integration -->
+  <url>
+    <loc>https://safeorstolen.com/fastercapital/raise-capital</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Marketplace Safety Guides -->

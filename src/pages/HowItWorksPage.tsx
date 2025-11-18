@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
@@ -24,6 +25,30 @@ const HowItWorksPage = () => {
         canonical="/how-it-works"
         structuredData={[structuredData]}
       />
+      
+      {/* Bot-visible content for search engines */}
+      <BotVisibleContent>
+        <h1>How SafeOrStolen Works</h1>
+        <p>Verify items before you buy with our comprehensive multi-source verification system. Check IMEI, VIN, and serial numbers against stolen goods databases.</p>
+        
+        <h2>The Verification Process</h2>
+        <p>Step 1: Enter Identifier - Input the IMEI, VIN, or serial number of the item you want to verify.</p>
+        <p>Step 2: Multi-Source Check - We search our database plus BikeIndex, StolenRegister, and more.</p>
+        <p>Step 3: Instant Results - Get comprehensive results in seconds from all sources.</p>
+        <p>Step 4: Make Informed Decision - See clear status and details before completing your purchase.</p>
+        
+        <h2>What We Check</h2>
+        <p>Phones & Tablets: Check IMEI numbers against stolen phone databases including iPhone, Samsung Galaxy, iPad, Android tablets.</p>
+        <p>Vehicles: Verify VINs against motor vehicle theft databases including cars, trucks, motorcycles, RVs.</p>
+        <p>Electronics: Validate serial numbers for laptops, cameras, gaming consoles, power tools.</p>
+        <p>Bicycles: Check against BikeIndex and global bike registries including road bikes, mountain bikes, e-bikes.</p>
+        
+        <h2>Data Sources</h2>
+        <p>We check multiple databases: Global theft reports from law enforcement agencies, manufacturer blacklist databases, insurance company stolen property records, verified community reports, and marketplace flagged items.</p>
+        
+        <h2>How to Use SafeOrStolen</h2>
+        <p>Enter IMEI, VIN, or serial number. Our system searches across all data sources. Results show safe, stolen, or flagged status. View detailed information and make informed decisions.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 pt-24 pb-4">

@@ -15,14 +15,15 @@ const routes = [
   '/check-car',
   '/check-electronics',
   '/check-bike',
+  // Tier 3: Important conversion pages
   '/pricing',
   '/how-it-works',
   '/firearms-check',
   '/for-businesses',
-  '/crime-prevention-impact',
+  '/fastercapital/raise-capital',
   
   // Statistics & Data Pages
-  '/statistics/stolen-goods-2025',
+  '/statistics/stolen-goods',
   
   // Marketplace Guides (CRITICAL - Fix Soft 404)
   '/guides/ebay-buyer-protection',
