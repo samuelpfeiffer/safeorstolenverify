@@ -24,13 +24,62 @@ export default function StatisticsPage() {
     { marketplace: 'eBay', users: '182 million+', stolenRate: '6%' },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stolen Goods Statistics & Market Data 2025",
+    "description": "Comprehensive stolen goods statistics showing $15 billion in annual fraud, 2.3 million phones stolen, 750,000 vehicles stolen in US. SafeOrStolen has prevented $4.2M in consumer losses.",
+    "author": {
+      "@type": "Organization",
+      "name": "SafeOrStolen"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://safeorstolen.com/sos-logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-15",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://safeorstolen.com/statistics/stolen-goods-2025"
+    },
+    "articleBody": "Real-time statistics showing the scale of the stolen goods problem. Global theft statistics for 2024: $15 billion in stolen goods sold annually, 2.3 million phones stolen in US, 750,000 vehicles stolen in US, 68% of stolen phones resold on marketplaces. SafeOrStolen impact: 100,000+ active users, 500,000+ verifications performed, 15,247 stolen items identified, $4.2M in consumer losses prevented. Marketplace stolen rates: Facebook Marketplace 8%, OfferUp 12%, Craigslist 15%, eBay 6%. Most stolen items: 2.3 million smartphones per year, 750,000 vehicles per year, 1.5 million electronics per year."
+  };
+
   return (
     <>
       <PageSEO
         title="Stolen Goods Statistics & Market Data | SafeOrStolen"
         description="Real-time statistics on stolen phones, vehicles, electronics. See how SafeOrStolen prevents fraud and protects consumers from buying stolen goods on marketplaces."
         keywords="stolen goods statistics, phone theft data, vehicle theft statistics, marketplace fraud rates"
+        structuredData={structuredData}
       />
+
+      {/* Hidden SEO content for crawlers */}
+      <noscript>
+        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>Stolen Goods Statistics & Market Data 2025</h1>
+          <h2>Global Theft Statistics</h2>
+          <p>$15 Billion in stolen goods sold annually</p>
+          <p>2.3 Million phones stolen in US (2024)</p>
+          <p>750,000 vehicles stolen in US (2024)</p>
+          <p>68% of stolen phones resold on marketplaces</p>
+          <h2>SafeOrStolen Impact</h2>
+          <p>100,000+ Active SafeOrStolen Users</p>
+          <p>500,000+ Verifications Performed</p>
+          <p>15,247 Stolen Items Identified</p>
+          <p>$4.2M Consumer Losses Prevented</p>
+          <h2>Marketplace Stolen Rates</h2>
+          <p>Facebook Marketplace: 8%</p>
+          <p>OfferUp: 12%</p>
+          <p>Craigslist: 15%</p>
+          <p>eBay: 6%</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-6 py-20">

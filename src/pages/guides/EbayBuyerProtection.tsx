@@ -7,6 +7,22 @@ import { useNavigate } from 'react-router-dom';
 export default function EbayBuyerProtection() {
   const navigate = useNavigate();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Complete eBay Buyer Protection Guide 2025",
+    "description": "Essential eBay buyer protection strategies. Learn how to verify items before bidding, spot stolen goods, avoid scams, and protect yourself when buying secondhand on eBay.",
+    "author": { "@type": "Organization", "name": "SafeOrStolen" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" }
+    },
+    "datePublished": "2025-01-14",
+    "dateModified": "2025-01-15",
+    "articleBody": "Complete eBay buyer protection guide for 2025. 8% of eBay items are stolen, $780M lost to eBay fraud yearly, 390K fraud reports filed in 2024. Essential strategies include: always verify serial numbers with SafeOrStolen before bidding, check seller ratings and feedback history, avoid sellers with multiple identical high-value items, request and verify serial numbers before purchase, meet sellers at police stations for local pickups, use eBay's Money Back Guarantee, document everything with screenshots and messages. Red flags: sellers refusing to provide serial numbers, prices too good to be true, seller pressure to complete transaction quickly, new accounts with high-value items, multiple identical items from different sellers."
+  };
+
   return (
     <>
       <PageSEO
@@ -14,7 +30,18 @@ export default function EbayBuyerProtection() {
         description="Essential eBay buyer protection strategies. Learn how to verify items before bidding, spot stolen goods, avoid scams, and protect yourself when buying secondhand on eBay."
         keywords="ebay buyer protection, buying on ebay safely, ebay scam prevention, verify ebay items, ebay stolen goods, ebay buyer guide"
         canonical="/guides/ebay-buyer-protection"
+        structuredData={articleSchema}
       />
+      
+      <noscript>
+        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>Complete eBay Buyer Protection Guide (2025)</h1>
+          <h2>Why eBay Buyers Need Protection</h2>
+          <p>8% of eBay items are stolen</p>
+          <p>$780M lost to eBay fraud yearly</p>
+          <p>390K fraud reports filed (2024)</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-muted/20">
         <div className="max-w-4xl mx-auto px-4 py-12">

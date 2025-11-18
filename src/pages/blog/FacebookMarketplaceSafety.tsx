@@ -13,7 +13,14 @@ export default function FacebookMarketplaceSafety() {
     "headline": "Buying on Facebook Marketplace? Check if It's Stolen First (2025)",
     "description": "Complete safety guide for Facebook Marketplace buyers. Learn how to avoid scams, check if items are stolen, and protect yourself from fraud.",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
-    "datePublished": "2025-01-14"
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" }
+    },
+    "datePublished": "2025-01-14",
+    "dateModified": "2025-01-15",
+    "articleBody": "Facebook Marketplace safety guide 2025. $256 million lost to marketplace scams in 2024, 1 in 6 electronics listings involve stolen goods, 73% of victims never recover their money, Facebook provides NO buyer protection for local pickups. Most common scams: stolen goods most common - thieves sell stolen phones and electronics that get remotely locked or seized by police. Essential safety steps: verify serial numbers with SafeOrStolen before meeting, check seller's Facebook profile age and activity, meet only at police stations, inspect items thoroughly before payment, use Facebook Pay for paper trail, photograph serial numbers and seller. Red flags: seller refuses to provide serial number, pressure to buy immediately, price significantly below market value, new Facebook profile selling expensive items, seller wants to meet in private location, multiple identical items from same seller."
   };
 
   return (
@@ -25,6 +32,16 @@ export default function FacebookMarketplaceSafety() {
         canonical="/blog/facebook-marketplace-safety"
         structuredData={[articleSchema]}
       />
+      
+      <noscript>
+        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>Buying on Facebook Marketplace? Check if It's Stolen First</h1>
+          <h2>Facebook Marketplace Fraud is Exploding</h2>
+          <p>$256 million lost to marketplace scams in 2024</p>
+          <p>1 in 6 electronics listings involve stolen goods</p>
+          <p>73% of victims never recover their money</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12 max-w-4xl">
