@@ -31,6 +31,29 @@ serve(async (req) => {
       { url: '/cookies', priority: '0.4', changefreq: 'yearly' },
     ];
 
+    // Fetch all published blog posts from the database
+    const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+    const supabaseUrl = Deno.env.get('SUPABASE_URL') ?? '';
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+    
+    const { data: blogPosts } = await supabase
+      .from('blog_posts')
+      .select('slug, updated_at')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false });
+
+    // Add all blog posts to the pages array
+    if (blogPosts && blogPosts.length > 0) {
+      blogPosts.forEach((post: { slug: string; updated_at: string }) => {
+        pages.push({
+          url: `/blog/${post.slug}`,
+          priority: '0.8',
+          changefreq: 'monthly',
+        });
+      });
+    }
+
     // Generate XML sitemap
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
