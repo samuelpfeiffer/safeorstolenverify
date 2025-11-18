@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useImageOptimization } from '@/hooks/useImageOptimization';
+import heroDeviceImage from '@/assets/hero-verification-device.png';
 
 // Import hero background
 const heroBackground = '/generated-assets/hero-background.jpg';
@@ -180,6 +181,16 @@ const Hero = () => {
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Verification in Action Image */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <img 
+              src={heroDeviceImage} 
+              alt="SafeOrStolen verification app on mobile and desktop showing item verified status" 
+              className="w-full h-auto rounded-2xl shadow-2xl"
+              loading="eager"
+            />
           </div>
         </div>
       </div>

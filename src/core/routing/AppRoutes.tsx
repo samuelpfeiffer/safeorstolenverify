@@ -38,6 +38,9 @@ const VINVerificationGuide = lazy(() => import('@/pages/blog/VINVerificationGuid
 const FacebookMarketplaceSafety = lazy(() => import('@/pages/blog/FacebookMarketplaceSafety'));
 const WhatToDoIfBoughtStolenPhone = lazy(() => import('@/pages/blog/WhatToDoIfBoughtStolenPhone'));
 const BestIMEICheckerTools2025 = lazy(() => import('@/pages/blog/BestIMEICheckerTools2025'));
+const AvoidingStolenGoodsCompleteGuide = lazy(() => import('@/pages/blog/AvoidingStolenGoodsCompleteGuide'));
+const IMEICheckEverything = lazy(() => import('@/pages/blog/IMEICheckEverything'));
+const CarfaxVsFreeVINAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFreeVINAlternatives'));
 
 // Tools
 const ToolsPage = lazy(() => import('@/pages/ToolsPage'));
@@ -150,6 +153,23 @@ const BestStolenItemCheckerApps2025 = lazy(() => import('@/pages/blog/BestStolen
 const WhyCheckMendHasNoApp = lazy(() => import('@/pages/blog/WhyCheckMendHasNoApp'));
 const FirearmsAppExclusive = lazy(() => import('@/pages/blog/FirearmsAppExclusive'));
 const IMEICheckerAppComparison = lazy(() => import('@/pages/blog/IMEICheckerAppComparison'));
+
+// Comparison Pages
+const VSCarfaxPage = lazy(() => import('@/pages/vs/VSCarfaxPage'));
+const VSCheckMendPage = lazy(() => import('@/pages/vs/VSCheckMendPage'));
+const VSIMEIInfoPage = lazy(() => import('@/pages/vs/VSIMEIInfoPage'));
+const VSStolenRegisterPage = lazy(() => import('@/pages/vs/VSStolenRegisterPage'));
+const VSNICBPage = lazy(() => import('@/pages/vs/VSNICBPage'));
+
+// Marketplace Safety Guides
+const EbayBuyerProtection = lazy(() => import('@/pages/guides/EbayBuyerProtection'));
+const FacebookMarketplaceSafetyGuide = lazy(() => import('@/pages/guides/FacebookMarketplaceSafety'));
+const OfferUpVerification = lazy(() => import('@/pages/guides/OfferUpVerification'));
+const AuctionHouseSafety = lazy(() => import('@/pages/guides/AuctionHouseSafety'));
+const PawnshopBuyingTips = lazy(() => import('@/pages/guides/PawnshopBuyingTips'));
+
+// Statistics & Data Pages
+const StolenGoodsStatistics2025 = lazy(() => import('@/pages/StolenGoodsStatistics2025'));
 const SafeOrStolenAppGuide = lazy(() => import('@/pages/blog/SafeOrStolenAppGuide'));
 const MobileAppVsWebsiteVerification = lazy(() => import('@/pages/blog/MobileAppVsWebsiteVerification'));
 const HowToUseIMEICheckerApp = lazy(() => import('@/pages/blog/HowToUseIMEICheckerApp'));
@@ -328,6 +348,21 @@ export const AppRoutes = () => {
         {/* Resources & Information */}
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/database" element={<DatabasePage />} />
+        <Route path="/stolen-goods-statistics-2025" element={<StolenGoodsStatistics2025 />} />
+        
+        {/* Comparison Pages */}
+        <Route path="/vs-carfax" element={<VSCarfaxPage />} />
+        <Route path="/vs-checkmend" element={<VSCheckMendPage />} />
+        <Route path="/vs-imeiinfo" element={<VSIMEIInfoPage />} />
+        <Route path="/vs-stolenregister" element={<VSStolenRegisterPage />} />
+        <Route path="/vs-nicb" element={<VSNICBPage />} />
+        
+        {/* Marketplace Safety Guides */}
+        <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtection />} />
+        <Route path="/guides/facebook-marketplace-safety" element={<FacebookMarketplaceSafetyGuide />} />
+        <Route path="/guides/offerup-verification" element={<OfferUpVerification />} />
+        <Route path="/guides/auction-house-safety" element={<AuctionHouseSafety />} />
+        <Route path="/guides/pawnshop-buying-tips" element={<PawnshopBuyingTips />} />
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
@@ -431,6 +466,9 @@ export const AppRoutes = () => {
         <Route path="/blog/facebook-marketplace-safety" element={<FacebookMarketplaceSafety />} />
         <Route path="/blog/what-to-do-if-bought-stolen-phone" element={<WhatToDoIfBoughtStolenPhone />} />
         <Route path="/blog/best-imei-checker-tools-2025" element={<BestIMEICheckerTools2025 />} />
+        <Route path="/blog/avoiding-stolen-goods-complete-guide" element={<AvoidingStolenGoodsCompleteGuide />} />
+        <Route path="/blog/imei-check-everything" element={<IMEICheckEverything />} />
+        <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVINAlternatives />} />
         <Route path="/blog/best-stolen-item-checker-apps-2025" element={<BestStolenItemCheckerApps2025 />} />
         <Route path="/blog/why-checkmend-has-no-app" element={<WhyCheckMendHasNoApp />} />
         <Route path="/blog/firearms-app-exclusive" element={<FirearmsAppExclusive />} />
