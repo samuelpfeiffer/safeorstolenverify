@@ -25,6 +25,12 @@
     <lastmod>2025-11-17</lastmod>
   </sitemap>
   
+  <!-- Blog Posts Sitemap - 40 Published Articles -->
+  <sitemap>
+    <loc>https://safeorstolen.com/sitemap-blog.xml</loc>
+    <lastmod>2025-11-18</lastmod>
+  </sitemap>
+  
   <!-- Blog/RSS Feed -->
   <sitemap>
     <loc>https://safeorstolen.com/feed.xml</loc>
