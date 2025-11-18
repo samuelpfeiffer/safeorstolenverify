@@ -6,7 +6,7 @@ import { useSubscription } from '@/hooks/useSubscription';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { Crown, Check, Zap, Bug } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { getSubscriptionPriceId } from '@/features/pricing';
 import { PricingGrid } from '@/components/pricing/PricingGrid';
 import { ComprehensivePaymentDebug } from '@/components/debug/ComprehensivePaymentDebug';
@@ -41,12 +41,11 @@ const SubscriptionPage: React.FC = () => {
 
   return (
     <>
-      <BetterSEOHead
+      <PageSEO
         title="Manage Subscription"
         description="View plan status and manage your Safe or Stolen subscription."
         canonical="/subscription"
-        noindex
-        nofollow
+        noIndex={true}
       />
       <div className="min-h-screen bg-sos text-white p-6">
         <div className="max-w-4xl mx-auto">

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { SEOHead } from '@/components/seo/SEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const TermsPage: React.FC = () => {
   return (
     <>
-      <SEOHead
+      <PageSEO
         title="Terms of Service - Safe or Stolen"
         description="Terms of service and user agreement for Safe or Stolen verification platform. Read our service terms and conditions."
         keywords="terms of service, user agreement, safe or stolen terms, legal terms"
+        canonical="/terms"
       />
       <div className="min-h-screen bg-sos text-white py-12">
       <div className="max-w-4xl mx-auto px-6">

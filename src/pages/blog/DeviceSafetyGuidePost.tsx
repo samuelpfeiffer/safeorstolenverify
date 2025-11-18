@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, Smartphone, Car, Laptop, AlertTriangle, CheckCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BetterSEOHead } from '@/components/enhanced/BetterSEOHead';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const DeviceSafetyGuidePost = () => {
   const structuredData = {
@@ -70,15 +70,13 @@ const DeviceSafetyGuidePost = () => {
 
   return (
     <>
-      <BetterSEOHead
+      <PageSEO
         title="How to Check if Your Device is Safe or Stolen Before Buying | Complete Guide"
         description="Complete step-by-step guide to verify IMEI, serial numbers, and VIN before purchasing secondhand devices. Protect yourself from stolen goods with our free verification tools."
         keywords="check if stolen, IMEI lookup, VIN check, serial number verification, stolen device check, verify before buying, marketplace safety, how to check if phone stolen, stolen goods prevention"
         canonical="/blog/how-to-check-if-device-is-safe-stolen"
         structuredData={structuredData}
         type="article"
-        publishedTime="2024-01-15"
-        modifiedTime="2024-01-15"
       />
 
       <div className="min-h-screen bg-background">
