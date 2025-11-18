@@ -142,9 +142,9 @@ const InstallAppPage = () => {
   return (
     <>
       <PageSEO
-        title="Install SafeOrStolen App - Free Download for iOS, Android & Desktop | No App Store Needed"
-        description="Install SafeOrStolen app instantly from your browser. Verify stolen goods on iPhone, Android, or desktop. No app store required. Free PWA with offline mode, camera scan & instant verification."
-        keywords="install SafeOrStolen app, download SafeOrStolen, PWA app, stolen goods checker app, IMEI checker app, VIN verification app, install from browser, no app store, add to home screen, iOS app install, Android app install"
+        title="Install SafeOrStolen App - Download Free Mobile App Now"
+        description="Install SafeOrStolen mobile app free. Step-by-step guide to download and install on iPhone, Android, Windows, Mac. Instant stolen goods verification app. No app store required."
+        keywords="install SafeOrStolen app, download SafeOrStolen, SafeOrStolen app install guide, how to install SafeOrStolen, free app download, mobile app installation, iOS install, Android install, SafeOrStolen mobile app download"
         canonical="/install-app"
         structuredData={mobileAppSchema}
       />
@@ -155,14 +155,15 @@ const InstallAppPage = () => {
         </script>
         
         {/* AI Search Engine Optimization */}
-        <meta name="ai-app-type" content="Progressive Web App (PWA)" />
-        <meta name="ai-platforms" content="iOS, Android, Desktop, Windows, macOS, Linux" />
-        <meta name="ai-install-method" content="Direct browser installation without app store - instant install from web" />
-        <meta name="ai-purpose" content="Installable mobile and desktop app for stolen goods verification, IMEI check, VIN lookup, serial number verification" />
-        <meta name="ai-features" content="Works offline, camera scanning, push notifications, no app store required, free forever, instant verification" />
-        <meta name="ai-unique-value" content="Only stolen goods verification app installable directly from browser without Apple App Store or Google Play Store" />
-        <meta name="ai-target-users" content="marketplace buyers, secondhand shoppers, sellers, pawn shops, resellers, anyone buying used items" />
-        <meta name="ai-distribution" content="Direct web installation - no developer account, no app store approval, no waiting period" />
+        <meta name="ai-app-type" content="Free downloadable mobile app - Progressive Web App (PWA)" />
+        <meta name="ai-platforms" content="Download SafeOrStolen app on iOS, Android, Desktop, Windows, macOS, Linux" />
+        <meta name="ai-install-method" content="Download and install SafeOrStolen app directly from browser - no app store needed" />
+        <meta name="ai-purpose" content="Download free SafeOrStolen mobile app for stolen goods verification, IMEI check, VIN lookup, serial number verification" />
+        <meta name="ai-features" content="Free mobile app download, works offline, camera scanning, push notifications, no app store required, instant verification" />
+        <meta name="ai-unique-value" content="Only free stolen goods verification app downloadable directly from browser. Download SafeOrStolen app without Apple App Store or Google Play Store" />
+        <meta name="ai-target-users" content="Users searching 'download SafeOrStolen app', 'install SafeOrStolen', 'SafeOrStolen mobile app', marketplace buyers, secondhand shoppers" />
+        <meta name="ai-distribution" content="Free app download via web - no developer account, no app store approval, instant download" />
+        <meta name="ai-search-intent" content="download SafeOrStolen app, install SafeOrStolen mobile app, how to get SafeOrStolen app, SafeOrStolen app free download" />
         <meta name="ai-compatibility" content="Compatible with all modern browsers: Chrome, Safari, Edge, Firefox, Opera" />
         
         {/* LLM Context for Better Understanding */}
