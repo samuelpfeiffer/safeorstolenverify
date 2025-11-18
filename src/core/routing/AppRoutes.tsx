@@ -71,6 +71,18 @@ const CompleteVerificationGuidePage = lazy(() => import('@/pages/redirects/Compl
 // Actual Install App Page (not redirect)
 const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
 
+// Research Stolen Items Redirect Pages
+const ResearchStolenItemsPage = lazy(() => import('@/pages/redirects/ResearchStolenItemsPage'));
+const ResearchStolenPhonePage = lazy(() => import('@/pages/redirects/ResearchStolenPhonePage'));
+const ResearchStolenCarPage = lazy(() => import('@/pages/redirects/ResearchStolenCarPage'));
+const LookupStolenItemsPage = lazy(() => import('@/pages/redirects/LookupStolenItemsPage'));
+const InvestigateStolenPropertyPage = lazy(() => import('@/pages/redirects/InvestigateStolenPropertyPage'));
+const CheckStolenBeforeBuyingPage = lazy(() => import('@/pages/redirects/CheckStolenBeforeBuyingPage'));
+const StolenItemScannerPage = lazy(() => import('@/pages/redirects/StolenItemScannerPage'));
+const SecondhandResearchAppPage = lazy(() => import('@/pages/redirects/SecondhandResearchAppPage'));
+const BuyerProtectionResearchPage = lazy(() => import('@/pages/redirects/BuyerProtectionResearchPage'));
+const StolenDatabaseSearchPage = lazy(() => import('@/pages/redirects/StolenDatabaseSearchPage'));
+
 // App Pages - Platform
 const AppIOSPage = lazy(() => import('@/pages/app/AppIOSPage'));
 const AppAndroidPage = lazy(() => import('@/pages/app/AppAndroidPage'));
@@ -424,6 +436,18 @@ export const AppRoutes = () => {
         <Route path="/app/serial-number-checker" element={<AppSerialNumberCheckerPage />} />
         <Route path="/app/electronics-checker" element={<AppElectronicsCheckerPage />} />
         <Route path="/app/firearms-checker" element={<AppFirearmsCheckerPage />} />
+        
+        {/* App Routes - Research Stolen Items (SEO Expansion) */}
+        <Route path="/app/research-stolen-items" element={<ResearchStolenItemsPage />} />
+        <Route path="/app/research-stolen-phone" element={<ResearchStolenPhonePage />} />
+        <Route path="/app/research-stolen-car" element={<ResearchStolenCarPage />} />
+        <Route path="/app/lookup-stolen-items" element={<LookupStolenItemsPage />} />
+        <Route path="/app/investigate-stolen-property" element={<InvestigateStolenPropertyPage />} />
+        <Route path="/app/check-stolen-before-buying" element={<CheckStolenBeforeBuyingPage />} />
+        <Route path="/app/stolen-item-scanner" element={<StolenItemScannerPage />} />
+        <Route path="/app/secondhand-research-app" element={<SecondhandResearchAppPage />} />
+        <Route path="/app/buyer-protection-research" element={<BuyerProtectionResearchPage />} />
+        <Route path="/app/stolen-database-search" element={<StolenDatabaseSearchPage />} />
         
         {/* App Routes - Use Cases */}
         <Route path="/app/marketplace" element={<AppMarketplacePage />} />
