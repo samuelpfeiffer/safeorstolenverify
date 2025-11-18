@@ -7,6 +7,22 @@ import { useNavigate } from 'react-router-dom';
 export default function OfferUpVerification() {
   const navigate = useNavigate();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "OfferUp Safety Guide: How to Avoid Buying Stolen Items 2025",
+    "description": "Complete OfferUp buyer safety guide. Learn how to verify items aren't stolen, spot red flags, meet safely, and protect yourself when buying used goods on OfferUp.",
+    "author": { "@type": "Organization", "name": "SafeOrStolen" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" }
+    },
+    "datePublished": "2025-01-14",
+    "dateModified": "2025-01-15",
+    "articleBody": "OfferUp safety guide 2025. Studies show 15-25% of high-value electronics on local marketplaces may be stolen. Why OfferUp is high-risk: no mandatory ID verification for sellers, cash transactions leave no paper trail, local pickup means no shipping documentation, anonymous profiles are common, limited buyer protection. Essential safety steps: verify serial numbers with SafeOrStolen before meeting, check seller TruYou verification status, meet only at police stations or safe zones, inspect items thoroughly before payment, photograph serial numbers and seller ID, use OfferUp's messaging system for paper trail. Red flags: seller refuses to provide serial number, pressure to buy immediately, price significantly below market value, seller wants to meet in private location, new profile with expensive items."
+  };
+
   return (
     <>
       <PageSEO
@@ -15,7 +31,18 @@ export default function OfferUpVerification() {
         canonical="https://safeorstolen.com/guides/offerup-verification"
         image="https://safeorstolen.com/og-offerup-guide.png"
         keywords="OfferUp safety, OfferUp stolen items, OfferUp verification, buy safely on OfferUp, OfferUp red flags, OfferUp scams"
+        structuredData={articleSchema}
       />
+      
+      <noscript>
+        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>OfferUp Safety Guide: How to Avoid Buying Stolen Items</h1>
+          <h2>Why OfferUp is High-Risk</h2>
+          <p>15-25% of high-value electronics on local marketplaces may be stolen</p>
+          <p>No mandatory ID verification for sellers</p>
+          <p>Cash transactions leave no paper trail</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-4xl">

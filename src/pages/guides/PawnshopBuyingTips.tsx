@@ -7,6 +7,22 @@ import { useNavigate } from 'react-router-dom';
 export default function PawnshopBuyingTips() {
   const navigate = useNavigate();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pawn Shop Buying Guide: How to Avoid Stolen Goods 2025",
+    "description": "Complete guide to buying safely at pawn shops. Learn how pawn shops work, your legal rights, how to verify items aren't stolen, and essential tips for smart pawn shop purchases.",
+    "author": { "@type": "Organization", "name": "SafeOrStolen" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" }
+    },
+    "datePublished": "2025-01-14",
+    "dateModified": "2025-01-15",
+    "articleBody": "Pawn shop buying guide 2025. Estimates suggest 10-20% of pawn shop electronics may have questionable origins. Pawn shops are required by law to hold items for waiting period (30-90 days) before selling for police checks. However, not all police departments actively check inventories, thieves use fake IDs, serial numbers aren't always verified. Your legal protection: you're protected as innocent buyer IF pawn shop followed all laws, original owner can still reclaim if stolen, you may lose money even if legal, document everything for protection. Essential safety steps: always ask for serial number and verify with SafeOrStolen before purchase, request pawn shop's holding certificate or police clearance, inspect items thoroughly, ask about return policy, photograph serial number and receipt, shop at reputable established pawn shops only. Red flags: pawn shop refuses to provide serial number, pressure to buy immediately, price too good to be true, items look new but sold as used."
+  };
+
   return (
     <>
       <PageSEO
@@ -15,7 +31,18 @@ export default function PawnshopBuyingTips() {
         canonical="https://safeorstolen.com/guides/pawnshop-buying-tips"
         image="https://safeorstolen.com/og-pawnshop-guide.png"
         keywords="pawn shop buying guide, pawn shop stolen goods, buying at pawn shops, pawn shop verification, pawn shop safety"
+        structuredData={articleSchema}
       />
+      
+      <noscript>
+        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>Pawn Shop Buying Guide: How to Avoid Stolen Goods</h1>
+          <h2>The Pawn Shop Stolen Goods Reality</h2>
+          <p>10-20% of pawn shop electronics may have questionable origins</p>
+          <p>Not all police departments actively check pawn shop inventories</p>
+          <p>Serial numbers aren't always verified against stolen databases</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-4xl">

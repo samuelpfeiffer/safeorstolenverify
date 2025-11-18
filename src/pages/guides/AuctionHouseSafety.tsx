@@ -7,6 +7,22 @@ import { useNavigate } from 'react-router-dom';
 export default function AuctionHouseSafety() {
   const navigate = useNavigate();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Auction House Buying Guide: How to Avoid Stolen Goods 2025",
+    "description": "Complete guide to buying safely at auction houses. Learn how to verify items aren't stolen, spot warning signs, and protect yourself at estate sales, storage auctions, and online auctions.",
+    "author": { "@type": "Organization", "name": "SafeOrStolen" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "logo": { "@type": "ImageObject", "url": "https://safeorstolen.com/sos-logo.png" }
+    },
+    "datePublished": "2025-01-14",
+    "dateModified": "2025-01-15",
+    "articleBody": "Auction house buyer's safety guide 2025. Industry estimates 5-10% of high-value auction items may have questionable origins. Risk levels: HIGH RISK - Storage unit auctions contain items from people who disappeared or were evicted with no ownership verification. MEDIUM-HIGH RISK - Online auctions and police auctions may include seized property where ownership was never established. MEDIUM RISK - Estate sales usually legitimate but deceased may have acquired items questionably. Essential safety steps: research auction house reputation, verify serial numbers with SafeOrStolen before bidding, request provenance documentation, inspect items thoroughly, ask about return policy for stolen items, document everything including photos and receipts. Red flags: no documentation of ownership history, seller refuses serial number checks, extremely low prices on high-value items, items still in original packaging supposedly from estate sale, auction house has no theft policy."
+  };
+
   return (
     <>
       <PageSEO
@@ -15,7 +31,18 @@ export default function AuctionHouseSafety() {
         canonical="https://safeorstolen.com/guides/auction-house-safety"
         image="https://safeorstolen.com/og-auction-guide.png"
         keywords="auction house safety, buying at auctions, stolen auction items, estate sale verification, storage unit auction safety"
+        structuredData={articleSchema}
       />
+      
+      <noscript>
+        <div style={{ padding: '20px', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>Auction House Buyer's Safety Guide</h1>
+          <h2>The Auction House Stolen Goods Problem</h2>
+          <p>5-10% of high-value auction items may have questionable origins</p>
+          <p>Storage unit auctions may contain abandoned stolen property</p>
+          <p>Estate sales sometimes unknowingly sell stolen items</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-4xl">
