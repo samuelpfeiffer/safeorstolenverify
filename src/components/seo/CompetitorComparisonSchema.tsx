@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface CompetitorComparisonSchemaProps {
-  competitor: 'checkmend' | 'imeiinfo' | 'stolenregister' | 'autocheck';
+  competitor: 'checkmend' | 'imeiinfo' | 'stolenregister' | 'autocheck' | 'carfax' | 'nicb';
 }
 
 export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProps> = ({ competitor }) => {
@@ -10,34 +10,32 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
     checkmend: {
       name: 'CheckMEND',
       description: 'UK-focused stolen phone checker',
-      price: '2.99',
-      currency: 'GBP',
-      coverage: 'UK Only',
-      features: ['Phone checks', 'Web interface']
+      coverage: 'UK Only'
     },
     imeiinfo: {
       name: 'IMEIInfo',
       description: 'IMEI checker and phone information service',
-      price: '1.99',
-      currency: 'USD',
-      coverage: 'Global',
-      features: ['IMEI checks', 'Phone specs', 'Basic verification']
+      coverage: 'Global'
     },
     stolenregister: {
       name: 'Stolen Register',
       description: 'Property marking and checking service',
-      price: '1.50',
-      currency: 'GBP',
-      coverage: 'UK & Europe',
-      features: ['Property marking', 'Basic checks', 'Registration service']
+      coverage: 'UK & Europe'
     },
     autocheck: {
       name: 'AutoCheck',
       description: 'Vehicle history reports and stolen vehicle checks',
-      price: '24.99',
-      currency: 'USD',
-      coverage: 'United States',
-      features: ['Vehicle history', 'Accident reports', 'Title history', 'Ownership records']
+      coverage: 'United States'
+    },
+    carfax: {
+      name: 'Carfax',
+      description: 'Vehicle history reports service',
+      coverage: 'United States & Canada'
+    },
+    nicb: {
+      name: 'NICB VINCheck',
+      description: 'Free vehicle theft and salvage database',
+      coverage: 'United States'
     }
   };
 
@@ -45,71 +43,37 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
 
   const comparisonSchema = {
     "@context": "https://schema.org",
-    "@type": "ComparisonPage",
-    "name": `SafeOrStolen vs ${data.name}: Detailed Comparison`,
-    "description": `Compare SafeOrStolen and ${data.name}. See which stolen item verification service offers better coverage, features, and value.`,
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "Service",
-          "position": 1,
-          "name": "SafeOrStolen",
-          "description": "Global stolen item verification platform with free searches and mobile apps",
-          "serviceType": "Verification Service",
-          "provider": {
-            "@type": "Organization",
-            "name": "SafeOrStolen"
-          },
-          "areaServed": "Worldwide",
-          "additionalProperty": [
-            {
-              "@type": "PropertyValue",
-              "name": "Coverage",
-              "value": "Global"
-            },
-            {
-              "@type": "PropertyValue",
-              "name": "Free Searches",
-              "value": "4"
-            },
-            {
-              "@type": "PropertyValue",
-              "name": "Mobile App",
-              "value": "Yes - iOS & Android"
-            },
-            {
-              "@type": "PropertyValue",
-              "name": "Item Types",
-              "value": "Phones, Vehicles, Electronics, Tools, Jewelry, Bikes"
-            }
-          ]
-        },
-        {
-          "@type": "Service",
-          "position": 2,
-          "name": data.name,
-          "description": data.description,
-          "serviceType": "Verification Service",
-          "provider": {
-            "@type": "Organization",
-            "name": data.name
-          },
-          "areaServed": data.coverage,
-          "additionalProperty": [
-            {
-              "@type": "PropertyValue",
-              "name": "Coverage",
-              "value": data.coverage
-            },
-            {
-              "@type": "PropertyValue",
-              "name": "Free Searches",
-              "value": "0"
-            }
-          ]
-        }
-      ]
+    "@type": "WebPage",
+    "name": `SafeOrStolen vs ${data.name}: Service Comparison`,
+    "description": `Compare SafeOrStolen and ${data.name} stolen item verification services. See which platform offers better coverage, features, and value.`,
+    "about": {
+      "@type": "Service",
+      "serviceType": "Stolen Item Verification Service",
+      "name": "SafeOrStolen",
+      "description": "Global stolen item verification platform with free searches and mobile apps",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    },
+    "mentions": {
+      "@type": "Service",
+      "serviceType": "Verification Service",
+      "name": data.name,
+      "description": data.description,
+      "provider": {
+        "@type": "Organization",
+        "name": data.name
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": data.coverage
+      }
     }
   };
 

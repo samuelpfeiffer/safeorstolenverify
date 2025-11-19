@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { CompetitorComparisonSchema } from '@/components/seo/CompetitorComparisonSchema';
 import { Card } from '@/components/ui/card';
 import { Check, X, AlertCircle, DollarSign, Clock, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,6 +17,7 @@ export default function VSCheckMendPage() {
         image="https://safeorstolen.com/og-vs-checkmend.png"
         keywords="SafeOrStolen vs CheckMEND, CheckMEND alternative, IMEI check comparison, stolen item verification comparison, CheckMEND pricing, free IMEI check"
       />
+      <CompetitorComparisonSchema competitor="checkmend" />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-6xl">
