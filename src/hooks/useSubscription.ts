@@ -70,11 +70,12 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating subscription checkout for product:", priceId);
+      console.log("Creating subscription checkout for plan:", priceId);
       
-      // Since we now use product names as priceId, we can pass it directly as planName
-      // The priceId parameter now contains the actual product name from Stripe
-      const planName = priceId; // This is now a product name like "Smart Buyer", "Savvy Shopper", etc.
+      // Since we now use plan names as priceId, we can pass it directly as planName
+      // The priceId parameter now contains the actual plan name from our pricing tiers
+      // Note: Stripe calls their pricing tiers "products" but these are subscription plans for our SaaS service
+      const planName = priceId; // This is a plan name like "Smart Buyer", "Savvy Shopper", etc.
       
       console.log("Using plan name for Stripe matching:", planName);
       
