@@ -226,6 +226,44 @@
     <priority>0.6</priority>
   </url>
   
+  <!-- Comparison Pages -->
+  <url>
+    <loc>https://safeorstolen.com/vs-carfax</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/vs-checkmend</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/vs-imeiinfo</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/vs-stolenregister</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/vs-nicb</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/safeorstolen-vs-autocheck</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Marketplace Safety Guides -->
   <url>
     <loc>https://safeorstolen.com/guides/ebay-buyer-protection</loc>

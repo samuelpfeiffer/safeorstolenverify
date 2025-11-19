@@ -321,6 +321,7 @@ export const AppRoutes = () => {
         <Route path="/verify" element={<UnifiedVerificationPage />} />
         <Route path="/verify-pro" element={<VerifyPage />} />
         <Route path="/mobile-verify" element={<UnifiedVerificationPage />} />
+        <Route path="/vin-check" element={<Navigate to="/check-car" replace />} />
         
         {/* Marketplace Landing Pages */}
         <Route path="/carfax-alternative" element={<CarfaxAlternativePage />} />
@@ -344,7 +345,9 @@ export const AppRoutes = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
         <Route path="/transparency" element={<TransparencyPage />} />
         <Route path="/service-limitations" element={<ServiceLimitations />} />
         
@@ -362,7 +365,9 @@ export const AppRoutes = () => {
         
         {/* Comparison Pages */}
         <Route path="/vs-carfax" element={<VSCarfaxPage />} />
+        <Route path="/safeorstolen-vs-carfax" element={<Navigate to="/vs-carfax" replace />} />
         <Route path="/vs-checkmend" element={<VSCheckMendPage />} />
+        <Route path="/safeorstolen-vs-checkmend" element={<Navigate to="/vs-checkmend" replace />} />
         <Route path="/vs-imeiinfo" element={<VSIMEIInfoPage />} />
         <Route path="/vs-stolenregister" element={<VSStolenRegisterPage />} />
         <Route path="/vs-nicb" element={<VSNICBPage />} />
@@ -371,9 +376,12 @@ export const AppRoutes = () => {
         {/* Marketplace Safety Guides */}
         <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtection />} />
         <Route path="/guides/facebook-marketplace-safety" element={<FacebookMarketplaceSafetyGuide />} />
+        <Route path="/guides/check-facebook-marketplace-items" element={<Navigate to="/guides/facebook-marketplace-safety" replace />} />
         <Route path="/guides/offerup-verification" element={<OfferUpVerification />} />
+        <Route path="/guides/offerup-scam-protection" element={<Navigate to="/guides/offerup-verification" replace />} />
         <Route path="/guides/auction-house-safety" element={<AuctionHouseSafety />} />
         <Route path="/guides/pawnshop-buying-tips" element={<PawnshopBuyingTips />} />
+        <Route path="/guides/verify-craigslist-items" element={<Navigate to="/guides/facebook-marketplace-safety" replace />} />
         
         {/* Item Category Pages */}
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
@@ -386,6 +394,15 @@ export const AppRoutes = () => {
         <Route path="/buyer-guide" element={<BuyerGuidePage />} />
         <Route path="/comprehensive-guide" element={<ComprehensiveGuidePage />} />
         <Route path="/avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
+        
+        {/* Redirects for alternate URLs */}
+        <Route path="/verification-hub" element={<Navigate to="/verify" replace />} />
+        <Route path="/ultimate-guide-not-buying-stolen-goods" element={<Navigate to="/buyer-guide" replace />} />
+        <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/comprehensive-guide" replace />} />
+        <Route path="/our-story" element={<Navigate to="/about" replace />} />
+        <Route path="/enterprise-demo" element={<Navigate to="/contact" replace />} />
+        <Route path="/marketplace-integration" element={<Navigate to="/for-brands" replace />} />
+        <Route path="/pawn-shops" element={<Navigate to="/for-brands" replace />} />
 
         {/* Business/Features */}
         <Route path="/features" element={<FeaturesPage />} />
