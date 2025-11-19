@@ -57,6 +57,7 @@ const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
+const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
 // Redirect Pages (with HTML meta refresh for crawlers)
 const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
@@ -583,7 +584,8 @@ export const AppRoutes = () => {
         {/* Services & Company Pages */}
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/brands" element={<BrandsPage />} />
-        <Route path="/partners" element={<BrandsPage />} />
+        <Route path="/partners" element={<DataPartnershipsPage />} />
+        <Route path="/partnerships" element={<DataPartnershipsPage />} />
         <Route path="/press-releases" element={<PressReleasesPage />} />
         <Route path="/press" element={<PressPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
