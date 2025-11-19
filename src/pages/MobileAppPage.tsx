@@ -181,6 +181,8 @@ export default function MobileAppPage() {
                       src="/images/sos-logo.png" 
                       alt="SafeOrStolen Mobile App" 
                       className="w-full h-auto object-contain"
+                      width="400"
+                      height="400"
                     />
                   </div>
                   {/* Decorative Elements */}

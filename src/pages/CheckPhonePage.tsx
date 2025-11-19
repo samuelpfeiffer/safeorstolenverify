@@ -93,6 +93,8 @@ const CheckPhonePage: React.FC = () => {
                 src="/lovable-uploads/d627effd-6ecc-499c-ba64-26edbfa79c4b.png" 
                 alt="Phone verification and stolen item detection"
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
+                width="448"
+                height="256"
                 loading="eager"
               />
             </div>

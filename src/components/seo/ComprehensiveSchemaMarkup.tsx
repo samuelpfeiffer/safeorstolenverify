@@ -23,10 +23,10 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
         "foundingDate": "2024",
         "contactPoint": [{
           "@type": "ContactPoint",
-          "telephone": "+1-support",
           "contactType": "customer service",
           "email": "support@safeorstolen.com",
-          "availableLanguage": ["English"]
+          "availableLanguage": ["English"],
+          "areaServed": "US"
         }],
         "sameAs": [
           "https://twitter.com/safeorstolen",

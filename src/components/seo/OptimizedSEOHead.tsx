@@ -124,7 +124,6 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       
       {/* Facebook Specific */}
       <meta property="article:publisher" content="https://facebook.com/safeorstolen" />
-      <meta name="twitter:creator" content="@safeorstolen" />
       
       {/* Additional Schema.org markup */}
       <meta name="application-name" content="SafeOrStolen" />
