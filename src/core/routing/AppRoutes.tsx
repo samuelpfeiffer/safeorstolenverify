@@ -256,6 +256,58 @@ const UtahVinLookup = lazy(() => import('@/pages/UtahVinLookup'));
 const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
 const WyomingVinLookup = lazy(() => import('@/pages/WyomingVinLookup'));
 
+// State Verification Pages - All 50 States
+const AlabamaVerificationPage = lazy(() => import('@/pages/state-pages/AlabamaVerificationPage'));
+const AlaskaVerificationPage = lazy(() => import('@/pages/state-pages/AlaskaVerificationPage'));
+const ArizonaVerificationPage = lazy(() => import('@/pages/state-pages/ArizonaVerificationPage'));
+const ArkansasVerificationPage = lazy(() => import('@/pages/state-pages/ArkansasVerificationPage'));
+const CaliforniaVerificationPage = lazy(() => import('@/pages/state-pages/CaliforniaVerificationPage'));
+const ColoradoVerificationPage = lazy(() => import('@/pages/state-pages/ColoradoVerificationPage'));
+const ConnecticutVerificationPage = lazy(() => import('@/pages/state-pages/ConnecticutVerificationPage'));
+const DelawareVerificationPage = lazy(() => import('@/pages/state-pages/DelawareVerificationPage'));
+const FloridaVerificationPage = lazy(() => import('@/pages/state-pages/FloridaVerificationPage'));
+const GeorgiaVerificationPage = lazy(() => import('@/pages/state-pages/GeorgiaVerificationPage'));
+const HawaiiVerificationPage = lazy(() => import('@/pages/state-pages/HawaiiVerificationPage'));
+const IdahoVerificationPage = lazy(() => import('@/pages/state-pages/IdahoVerificationPage'));
+const IllinoisVerificationPage = lazy(() => import('@/pages/state-pages/IllinoisVerificationPage'));
+const IndianaVerificationPage = lazy(() => import('@/pages/state-pages/IndianaVerificationPage'));
+const IowaVerificationPage = lazy(() => import('@/pages/state-pages/IowaVerificationPage'));
+const KansasVerificationPage = lazy(() => import('@/pages/state-pages/KansasVerificationPage'));
+const KentuckyVerificationPage = lazy(() => import('@/pages/state-pages/KentuckyVerificationPage'));
+const LouisianaVerificationPage = lazy(() => import('@/pages/state-pages/LouisianaVerificationPage'));
+const MaineVerificationPage = lazy(() => import('@/pages/state-pages/MaineVerificationPage'));
+const MarylandVerificationPage = lazy(() => import('@/pages/state-pages/MarylandVerificationPage'));
+const MassachusettsVerificationPage = lazy(() => import('@/pages/state-pages/MassachusettsVerificationPage'));
+const MichiganVerificationPage = lazy(() => import('@/pages/state-pages/MichiganVerificationPage'));
+const MinnesotaVerificationPage = lazy(() => import('@/pages/state-pages/MinnesotaVerificationPage'));
+const MississippiVerificationPage = lazy(() => import('@/pages/state-pages/MississippiVerificationPage'));
+const MissouriVerificationPage = lazy(() => import('@/pages/state-pages/MissouriVerificationPage'));
+const MontanaVerificationPage = lazy(() => import('@/pages/state-pages/MontanaVerificationPage'));
+const NebraskaVerificationPage = lazy(() => import('@/pages/state-pages/NebraskaVerificationPage'));
+const NevadaVerificationPage = lazy(() => import('@/pages/state-pages/NevadaVerificationPage'));
+const NewHampshireVerificationPage = lazy(() => import('@/pages/state-pages/NewHampshireVerificationPage'));
+const NewJerseyVerificationPage = lazy(() => import('@/pages/state-pages/NewJerseyVerificationPage'));
+const NewMexicoVerificationPage = lazy(() => import('@/pages/state-pages/NewMexicoVerificationPage'));
+const NewYorkVerificationPage = lazy(() => import('@/pages/state-pages/NewYorkVerificationPage'));
+const NorthCarolinaVerificationPage = lazy(() => import('@/pages/state-pages/NorthCarolinaVerificationPage'));
+const NorthDakotaVerificationPage = lazy(() => import('@/pages/state-pages/NorthDakotaVerificationPage'));
+const OhioVerificationPage = lazy(() => import('@/pages/state-pages/OhioVerificationPage'));
+const OklahomaVerificationPage = lazy(() => import('@/pages/state-pages/OklahomaVerificationPage'));
+const OregonVerificationPage = lazy(() => import('@/pages/state-pages/OregonVerificationPage'));
+const PennsylvaniaVerificationPage = lazy(() => import('@/pages/state-pages/PennsylvaniaVerificationPage'));
+const RhodeIslandVerificationPage = lazy(() => import('@/pages/state-pages/RhodeIslandVerificationPage'));
+const SouthCarolinaVerificationPage = lazy(() => import('@/pages/state-pages/SouthCarolinaVerificationPage'));
+const SouthDakotaVerificationPage = lazy(() => import('@/pages/state-pages/SouthDakotaVerificationPage'));
+const TennesseeVerificationPage = lazy(() => import('@/pages/state-pages/TennesseeVerificationPage'));
+const TexasVerificationPage = lazy(() => import('@/pages/state-pages/TexasVerificationPage'));
+const UtahVerificationPage = lazy(() => import('@/pages/state-pages/UtahVerificationPage'));
+const VermontVerificationPage = lazy(() => import('@/pages/state-pages/VermontVerificationPage'));
+const VirginiaVerificationPage = lazy(() => import('@/pages/state-pages/VirginiaVerificationPage'));
+const WashingtonVerificationPage = lazy(() => import('@/pages/state-pages/WashingtonVerificationPage'));
+const WestVirginiaVerificationPage = lazy(() => import('@/pages/state-pages/WestVirginiaVerificationPage'));
+const WisconsinVerificationPage = lazy(() => import('@/pages/state-pages/WisconsinVerificationPage'));
+const WyomingVerificationPage = lazy(() => import('@/pages/state-pages/WyomingVerificationPage'));
+
 // International Pages
 const UKVehicleCheck = lazy(() => import('@/pages/UKVehicleCheck'));
 const CanadaVinCheck = lazy(() => import('@/pages/CanadaVinCheck'));
@@ -656,6 +708,58 @@ export const AppRoutes = () => {
 
         {/* Redirect Test Page - Development Tool */}
         <Route path="/redirect-test" element={<RedirectTestPage />} />
+
+        {/* State Verification Pages - All 50 States */}
+        <Route path="/alabama-stolen-item-check" element={<AlabamaVerificationPage />} />
+        <Route path="/alaska-stolen-item-check" element={<AlaskaVerificationPage />} />
+        <Route path="/arizona-stolen-item-check" element={<ArizonaVerificationPage />} />
+        <Route path="/arkansas-stolen-item-check" element={<ArkansasVerificationPage />} />
+        <Route path="/california-stolen-item-check" element={<CaliforniaVerificationPage />} />
+        <Route path="/colorado-stolen-item-check" element={<ColoradoVerificationPage />} />
+        <Route path="/connecticut-stolen-item-check" element={<ConnecticutVerificationPage />} />
+        <Route path="/delaware-stolen-item-check" element={<DelawareVerificationPage />} />
+        <Route path="/florida-stolen-item-check" element={<FloridaVerificationPage />} />
+        <Route path="/georgia-stolen-item-check" element={<GeorgiaVerificationPage />} />
+        <Route path="/hawaii-stolen-item-check" element={<HawaiiVerificationPage />} />
+        <Route path="/idaho-stolen-item-check" element={<IdahoVerificationPage />} />
+        <Route path="/illinois-stolen-item-check" element={<IllinoisVerificationPage />} />
+        <Route path="/indiana-stolen-item-check" element={<IndianaVerificationPage />} />
+        <Route path="/iowa-stolen-item-check" element={<IowaVerificationPage />} />
+        <Route path="/kansas-stolen-item-check" element={<KansasVerificationPage />} />
+        <Route path="/kentucky-stolen-item-check" element={<KentuckyVerificationPage />} />
+        <Route path="/louisiana-stolen-item-check" element={<LouisianaVerificationPage />} />
+        <Route path="/maine-stolen-item-check" element={<MaineVerificationPage />} />
+        <Route path="/maryland-stolen-item-check" element={<MarylandVerificationPage />} />
+        <Route path="/massachusetts-stolen-item-check" element={<MassachusettsVerificationPage />} />
+        <Route path="/michigan-stolen-item-check" element={<MichiganVerificationPage />} />
+        <Route path="/minnesota-stolen-item-check" element={<MinnesotaVerificationPage />} />
+        <Route path="/mississippi-stolen-item-check" element={<MississippiVerificationPage />} />
+        <Route path="/missouri-stolen-item-check" element={<MissouriVerificationPage />} />
+        <Route path="/montana-stolen-item-check" element={<MontanaVerificationPage />} />
+        <Route path="/nebraska-stolen-item-check" element={<NebraskaVerificationPage />} />
+        <Route path="/nevada-stolen-item-check" element={<NevadaVerificationPage />} />
+        <Route path="/new-hampshire-stolen-item-check" element={<NewHampshireVerificationPage />} />
+        <Route path="/new-jersey-stolen-item-check" element={<NewJerseyVerificationPage />} />
+        <Route path="/new-mexico-stolen-item-check" element={<NewMexicoVerificationPage />} />
+        <Route path="/new-york-stolen-item-check" element={<NewYorkVerificationPage />} />
+        <Route path="/north-carolina-stolen-item-check" element={<NorthCarolinaVerificationPage />} />
+        <Route path="/north-dakota-stolen-item-check" element={<NorthDakotaVerificationPage />} />
+        <Route path="/ohio-stolen-item-check" element={<OhioVerificationPage />} />
+        <Route path="/oklahoma-stolen-item-check" element={<OklahomaVerificationPage />} />
+        <Route path="/oregon-stolen-item-check" element={<OregonVerificationPage />} />
+        <Route path="/pennsylvania-stolen-item-check" element={<PennsylvaniaVerificationPage />} />
+        <Route path="/rhode-island-stolen-item-check" element={<RhodeIslandVerificationPage />} />
+        <Route path="/south-carolina-stolen-item-check" element={<SouthCarolinaVerificationPage />} />
+        <Route path="/south-dakota-stolen-item-check" element={<SouthDakotaVerificationPage />} />
+        <Route path="/tennessee-stolen-item-check" element={<TennesseeVerificationPage />} />
+        <Route path="/texas-stolen-item-check" element={<TexasVerificationPage />} />
+        <Route path="/utah-stolen-item-check" element={<UtahVerificationPage />} />
+        <Route path="/vermont-stolen-item-check" element={<VermontVerificationPage />} />
+        <Route path="/virginia-stolen-item-check" element={<VirginiaVerificationPage />} />
+        <Route path="/washington-stolen-item-check" element={<WashingtonVerificationPage />} />
+        <Route path="/west-virginia-stolen-item-check" element={<WestVirginiaVerificationPage />} />
+        <Route path="/wisconsin-stolen-item-check" element={<WisconsinVerificationPage />} />
+        <Route path="/wyoming-stolen-item-check" element={<WyomingVerificationPage />} />
 
         {/* 404 - Must be last */}
         <Route path="*" element={<NotFound />} />
