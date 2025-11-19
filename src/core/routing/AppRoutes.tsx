@@ -308,6 +308,58 @@ const WestVirginiaVerificationPage = lazy(() => import('@/pages/state-pages/West
 const WisconsinVerificationPage = lazy(() => import('@/pages/state-pages/WisconsinVerificationPage'));
 const WyomingVerificationPage = lazy(() => import('@/pages/state-pages/WyomingVerificationPage'));
 
+// City Verification Pages - All 50 Cities
+const PhoenixVerificationPage = lazy(() => import('@/pages/city-pages/PhoenixVerificationPage'));
+const LosAngelesVerificationPage = lazy(() => import('@/pages/city-pages/LosAngelesVerificationPage'));
+const ChicagoVerificationPage = lazy(() => import('@/pages/city-pages/ChicagoVerificationPage'));
+const HoustonVerificationPage = lazy(() => import('@/pages/city-pages/HoustonVerificationPage'));
+const NewYorkCityVerificationPage = lazy(() => import('@/pages/city-pages/NewYorkCityVerificationPage'));
+const MiamiVerificationPage = lazy(() => import('@/pages/city-pages/MiamiVerificationPage'));
+const PhiladelphiaVerificationPage = lazy(() => import('@/pages/city-pages/PhiladelphiaVerificationPage'));
+const SanAntonioVerificationPage = lazy(() => import('@/pages/city-pages/SanAntonioVerificationPage'));
+const SanDiegoVerificationPage = lazy(() => import('@/pages/city-pages/SanDiegoVerificationPage'));
+const DallasVerificationPage = lazy(() => import('@/pages/city-pages/DallasVerificationPage'));
+const SanJoseVerificationPage = lazy(() => import('@/pages/city-pages/SanJoseVerificationPage'));
+const AustinVerificationPage = lazy(() => import('@/pages/city-pages/AustinVerificationPage'));
+const JacksonvilleVerificationPage = lazy(() => import('@/pages/city-pages/JacksonvilleVerificationPage'));
+const FortWorthVerificationPage = lazy(() => import('@/pages/city-pages/FortWorthVerificationPage'));
+const ColumbusVerificationPage = lazy(() => import('@/pages/city-pages/ColumbusVerificationPage'));
+const CharlotteVerificationPage = lazy(() => import('@/pages/city-pages/CharlotteVerificationPage'));
+const SanFranciscoVerificationPage = lazy(() => import('@/pages/city-pages/SanFranciscoVerificationPage'));
+const IndianopolisVerificationPage = lazy(() => import('@/pages/city-pages/IndianopolisVerificationPage'));
+const SeattleVerificationPage = lazy(() => import('@/pages/city-pages/SeattleVerificationPage'));
+const DenverVerificationPage = lazy(() => import('@/pages/city-pages/DenverVerificationPage'));
+const WashingtonDCVerificationPage = lazy(() => import('@/pages/city-pages/WashingtonDCVerificationPage'));
+const BostonVerificationPage = lazy(() => import('@/pages/city-pages/BostonVerificationPage'));
+const NashvilleVerificationPage = lazy(() => import('@/pages/city-pages/NashvilleVerificationPage'));
+const DetroitVerificationPage = lazy(() => import('@/pages/city-pages/DetroitVerificationPage'));
+const PortlandVerificationPage = lazy(() => import('@/pages/city-pages/PortlandVerificationPage'));
+const LasVegasVerificationPage = lazy(() => import('@/pages/city-pages/LasVegasVerificationPage'));
+const MemphisVerificationPage = lazy(() => import('@/pages/city-pages/MemphisVerificationPage'));
+const LouisvilleVerificationPage = lazy(() => import('@/pages/city-pages/LouisvilleVerificationPage'));
+const BaltimoreVerificationPage = lazy(() => import('@/pages/city-pages/BaltimoreVerificationPage'));
+const MilwaukeeVerificationPage = lazy(() => import('@/pages/city-pages/MilwaukeeVerificationPage'));
+const AlbuquerqueVerificationPage = lazy(() => import('@/pages/city-pages/AlbuquerqueVerificationPage'));
+const TucsonVerificationPage = lazy(() => import('@/pages/city-pages/TucsonVerificationPage'));
+const FresnoVerificationPage = lazy(() => import('@/pages/city-pages/FresnoVerificationPage'));
+const SacramentoVerificationPage = lazy(() => import('@/pages/city-pages/SacramentoVerificationPage'));
+const MesaVerificationPage = lazy(() => import('@/pages/city-pages/MesaVerificationPage'));
+const KansasCityVerificationPage = lazy(() => import('@/pages/city-pages/KansasCityVerificationPage'));
+const AtlantaVerificationPage = lazy(() => import('@/pages/city-pages/AtlantaVerificationPage'));
+const ColoradoSpringsVerificationPage = lazy(() => import('@/pages/city-pages/ColoradoSpringsVerificationPage'));
+const RaleighVerificationPage = lazy(() => import('@/pages/city-pages/RaleighVerificationPage'));
+const OmahaVerificationPage = lazy(() => import('@/pages/city-pages/OmahaVerificationPage'));
+const OaklandVerificationPage = lazy(() => import('@/pages/city-pages/OaklandVerificationPage'));
+const MinneapolisVerificationPage = lazy(() => import('@/pages/city-pages/MinneapolisVerificationPage'));
+const TulsaVerificationPage = lazy(() => import('@/pages/city-pages/TulsaVerificationPage'));
+const ClevelandVerificationPage = lazy(() => import('@/pages/city-pages/ClevelandVerificationPage'));
+const WichitaVerificationPage = lazy(() => import('@/pages/city-pages/WichitaVerificationPage'));
+const ArlingtonVerificationPage = lazy(() => import('@/pages/city-pages/ArlingtonVerificationPage'));
+const TampaVerificationPage = lazy(() => import('@/pages/city-pages/TampaVerificationPage'));
+const OrlandoVerificationPage = lazy(() => import('@/pages/city-pages/OrlandoVerificationPage'));
+const StLouisVerificationPage = lazy(() => import('@/pages/city-pages/StLouisVerificationPage'));
+const PittsburghVerificationPage = lazy(() => import('@/pages/city-pages/PittsburghVerificationPage'));
+
 // International Pages
 const UKVehicleCheck = lazy(() => import('@/pages/UKVehicleCheck'));
 const CanadaVinCheck = lazy(() => import('@/pages/CanadaVinCheck'));
@@ -760,6 +812,58 @@ export const AppRoutes = () => {
         <Route path="/west-virginia-stolen-item-check" element={<WestVirginiaVerificationPage />} />
         <Route path="/wisconsin-stolen-item-check" element={<WisconsinVerificationPage />} />
         <Route path="/wyoming-stolen-item-check" element={<WyomingVerificationPage />} />
+
+        {/* City Verification Pages - All 50 Cities */}
+        <Route path="/phoenix-stolen-item-check" element={<PhoenixVerificationPage />} />
+        <Route path="/los-angeles-stolen-item-check" element={<LosAngelesVerificationPage />} />
+        <Route path="/chicago-stolen-item-check" element={<ChicagoVerificationPage />} />
+        <Route path="/houston-stolen-item-check" element={<HoustonVerificationPage />} />
+        <Route path="/new-york-city-stolen-item-check" element={<NewYorkCityVerificationPage />} />
+        <Route path="/miami-stolen-item-check" element={<MiamiVerificationPage />} />
+        <Route path="/philadelphia-stolen-item-check" element={<PhiladelphiaVerificationPage />} />
+        <Route path="/san-antonio-stolen-item-check" element={<SanAntonioVerificationPage />} />
+        <Route path="/san-diego-stolen-item-check" element={<SanDiegoVerificationPage />} />
+        <Route path="/dallas-stolen-item-check" element={<DallasVerificationPage />} />
+        <Route path="/san-jose-stolen-item-check" element={<SanJoseVerificationPage />} />
+        <Route path="/austin-stolen-item-check" element={<AustinVerificationPage />} />
+        <Route path="/jacksonville-stolen-item-check" element={<JacksonvilleVerificationPage />} />
+        <Route path="/fort-worth-stolen-item-check" element={<FortWorthVerificationPage />} />
+        <Route path="/columbus-stolen-item-check" element={<ColumbusVerificationPage />} />
+        <Route path="/charlotte-stolen-item-check" element={<CharlotteVerificationPage />} />
+        <Route path="/san-francisco-stolen-item-check" element={<SanFranciscoVerificationPage />} />
+        <Route path="/indianapolis-stolen-item-check" element={<IndianopolisVerificationPage />} />
+        <Route path="/seattle-stolen-item-check" element={<SeattleVerificationPage />} />
+        <Route path="/denver-stolen-item-check" element={<DenverVerificationPage />} />
+        <Route path="/washington-dc-stolen-item-check" element={<WashingtonDCVerificationPage />} />
+        <Route path="/boston-stolen-item-check" element={<BostonVerificationPage />} />
+        <Route path="/nashville-stolen-item-check" element={<NashvilleVerificationPage />} />
+        <Route path="/detroit-stolen-item-check" element={<DetroitVerificationPage />} />
+        <Route path="/portland-stolen-item-check" element={<PortlandVerificationPage />} />
+        <Route path="/las-vegas-stolen-item-check" element={<LasVegasVerificationPage />} />
+        <Route path="/memphis-stolen-item-check" element={<MemphisVerificationPage />} />
+        <Route path="/louisville-stolen-item-check" element={<LouisvilleVerificationPage />} />
+        <Route path="/baltimore-stolen-item-check" element={<BaltimoreVerificationPage />} />
+        <Route path="/milwaukee-stolen-item-check" element={<MilwaukeeVerificationPage />} />
+        <Route path="/albuquerque-stolen-item-check" element={<AlbuquerqueVerificationPage />} />
+        <Route path="/tucson-stolen-item-check" element={<TucsonVerificationPage />} />
+        <Route path="/fresno-stolen-item-check" element={<FresnoVerificationPage />} />
+        <Route path="/sacramento-stolen-item-check" element={<SacramentoVerificationPage />} />
+        <Route path="/mesa-stolen-item-check" element={<MesaVerificationPage />} />
+        <Route path="/kansas-city-stolen-item-check" element={<KansasCityVerificationPage />} />
+        <Route path="/atlanta-stolen-item-check" element={<AtlantaVerificationPage />} />
+        <Route path="/colorado-springs-stolen-item-check" element={<ColoradoSpringsVerificationPage />} />
+        <Route path="/raleigh-stolen-item-check" element={<RaleighVerificationPage />} />
+        <Route path="/omaha-stolen-item-check" element={<OmahaVerificationPage />} />
+        <Route path="/oakland-stolen-item-check" element={<OaklandVerificationPage />} />
+        <Route path="/minneapolis-stolen-item-check" element={<MinneapolisVerificationPage />} />
+        <Route path="/tulsa-stolen-item-check" element={<TulsaVerificationPage />} />
+        <Route path="/cleveland-stolen-item-check" element={<ClevelandVerificationPage />} />
+        <Route path="/wichita-stolen-item-check" element={<WichitaVerificationPage />} />
+        <Route path="/arlington-stolen-item-check" element={<ArlingtonVerificationPage />} />
+        <Route path="/tampa-stolen-item-check" element={<TampaVerificationPage />} />
+        <Route path="/orlando-stolen-item-check" element={<OrlandoVerificationPage />} />
+        <Route path="/st-louis-stolen-item-check" element={<StLouisVerificationPage />} />
+        <Route path="/pittsburgh-stolen-item-check" element={<PittsburghVerificationPage />} />
 
         {/* 404 - Must be last */}
         <Route path="*" element={<NotFound />} />
