@@ -121,6 +121,8 @@ const RealTimeVerificationPage = () => {
               src="/lovable-uploads/861961a2-983e-4394-bf36-9d4b895af7db.png" 
               alt="Real-time verification results in under 3 seconds"
               className="w-full h-64 object-cover rounded-xl shadow-lg"
+              width="448"
+              height="256"
               loading="eager"
             />
           </div>

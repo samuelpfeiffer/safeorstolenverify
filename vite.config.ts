@@ -40,10 +40,21 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        // Clean cache busting with content hash
+        // Cache busting with content hash - enables long-term caching
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]',
+        assetFileNames: (assetInfo) => {
+          // Set long cache for hashed assets (1 year)
+          const name = assetInfo.name || 'asset';
+          const extType = name.split('.').pop() || '';
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {
+            return 'assets/images/[name].[hash].[ext]';
+          }
+          if (/woff2?|ttf|eot/i.test(extType)) {
+            return 'assets/fonts/[name].[hash].[ext]';
+          }
+          return 'assets/[name].[hash].[ext]';
+        },
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {

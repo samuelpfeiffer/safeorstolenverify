@@ -97,6 +97,8 @@ export default function PressPage() {
                 src={billboardImage}
                 alt="SafeOrStolen billboard campaign - Person viewing verification message"
                 className="rounded-xl shadow-2xl w-full object-cover"
+                width="1200"
+                height="675"
                 loading="lazy"
               />
               <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">

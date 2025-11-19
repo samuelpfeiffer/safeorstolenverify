@@ -159,6 +159,8 @@ const BlogPostPage = () => {
                   src={post.featured_image_url}
                   alt={`Featured image for ${post.title}`}
                   className="w-full h-64 md:h-96 object-cover rounded-lg"
+                  width="800"
+                  height="400"
                   loading="eager"
                 />
               </figure>

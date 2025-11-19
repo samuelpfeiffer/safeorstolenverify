@@ -80,6 +80,8 @@ const CheckElectronicsPage: React.FC = () => {
                 src="/lovable-uploads/6761f247-72ca-4aa0-94f3-ee87310470ed.png" 
                 alt="Electronics verification and stolen device detection"
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
+                width="448"
+                height="256"
                 loading="eager"
               />
             </div>

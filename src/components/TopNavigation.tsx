@@ -133,10 +133,10 @@ const TopNavigation = () => {
             )}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - 48x48 minimum tap target */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+            className="md:hidden min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg hover:bg-muted/50 transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -147,7 +147,7 @@ const TopNavigation = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Enhanced tap targets with 8px spacing */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-border/50 py-4 space-y-2 animate-fadeIn">
             {navLinks.map((link) => (
@@ -155,7 +155,7 @@ const TopNavigation = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-4 py-3 text-foreground hover:bg-muted/50 rounded-lg font-semibold transition-colors"
+                className="block px-4 py-4 min-h-[48px] flex items-center text-foreground hover:bg-muted/50 rounded-lg font-semibold transition-colors"
               >
                 {link.label}
               </Link>

@@ -74,6 +74,8 @@ const CheckCarPage: React.FC = () => {
                 src="/lovable-uploads/f560e80a-026e-46a3-b0af-16f7863bf7dc.png" 
                 alt="Car VIN verification and vehicle theft protection"
                 className="w-full h-64 object-cover rounded-xl shadow-lg"
+                width="448"
+                height="256"
                 loading="eager"
               />
             </div>
