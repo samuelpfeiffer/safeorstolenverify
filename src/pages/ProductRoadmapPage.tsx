@@ -102,8 +102,8 @@ const ProductRoadmapPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Product Roadmap - Safe or Stolen | Development Timeline & Features</title>
-        <meta name="description" content="View our product development roadmap, upcoming features, and launch timeline for SafeOrStolen.com platform and mobile applications." />
+        <title>Platform Roadmap - Safe or Stolen | Development Timeline & Features</title>
+        <meta name="description" content="View our platform development roadmap, upcoming features, and launch timeline for SafeOrStolen.com service and mobile applications." />
         {/* Canonical tag handled by PageSEO component to prevent duplicates */}
       </Helmet>
 
@@ -112,7 +112,7 @@ const ProductRoadmapPage: React.FC = () => {
           <div className="container mx-auto px-4 text-center">
             <Rocket className="h-16 w-16 mx-auto mb-4 text-white" />
             <h1 className="text-5xl font-bold text-white mb-6">
-              Product Roadmap
+              Platform Roadmap
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Our transparent development timeline and upcoming features
@@ -124,7 +124,7 @@ const ProductRoadmapPage: React.FC = () => {
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold mb-4">What's Available & What's Coming</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We believe in complete transparency about our product development. Here's exactly 
+              We believe in complete transparency about our platform development. Here's exactly 
               what's live, what we're building, and what's on our roadmap.
             </p>
           </div>

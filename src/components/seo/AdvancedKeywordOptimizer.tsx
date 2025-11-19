@@ -86,8 +86,8 @@ export const AdvancedKeywordOptimizer: React.FC<AdvancedKeywordOptimizerProps> =
       case 'serial':
         return {
           primary: [...baseKeywords.deviceSpecific.filter(k => k.includes('serial') || k.includes('electronics'))],
-          semantic: 'serial verification, electronics authentication, product legitimacy',
-          intent: 'product verification, electronics purchase protection',
+          semantic: 'serial verification, electronics authentication, item legitimacy',
+          intent: 'item verification, electronics purchase protection',
           audience: 'electronics buyers, gadget consumers, tech purchasers'
         };
         
@@ -110,8 +110,8 @@ export const AdvancedKeywordOptimizer: React.FC<AdvancedKeywordOptimizerProps> =
       case 'brand':
         return {
           primary: [...baseKeywords.brandTrust],
-          semantic: 'brand protection, manufacturer verification, product authenticity',
-          intent: 'brand security, manufacturer partnership, product legitimacy',
+          semantic: 'brand protection, manufacturer verification, service authenticity',
+          intent: 'brand security, manufacturer partnership, service legitimacy',
           audience: 'brands, manufacturers, business partners, enterprise clients'
         };
         
