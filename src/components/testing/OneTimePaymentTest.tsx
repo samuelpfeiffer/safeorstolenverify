@@ -32,7 +32,7 @@ const OneTimePaymentTest: React.FC = () => {
     escapeIframeAndNavigate(`/checkout-redirect?${params.toString()}`);
   };
 
-  const reportProduct = SUBSCRIPTION_TIERS.payPerUse; // Single payment option
+  const paymentPlan = SUBSCRIPTION_TIERS.payPerUse; // Single payment option
 
   return (
     <Card className="w-full max-w-md mx-auto">
@@ -43,10 +43,10 @@ const OneTimePaymentTest: React.FC = () => {
             ONE-TIME PURCHASE TEST
           </Badge>
         </div>
-        <CardTitle className="text-xl">{reportProduct.name}</CardTitle>
+        <CardTitle className="text-xl">{paymentPlan.name}</CardTitle>
         <CardDescription>
           <span className="text-2xl font-bold text-sos-orange">
-            {formatPrice(reportProduct.price)}
+            {formatPrice(paymentPlan.price)}
           </span>
           <span className="text-muted-foreground ml-2">per report</span>
         </CardDescription>
@@ -86,7 +86,7 @@ const OneTimePaymentTest: React.FC = () => {
             What you'll get:
           </h4>
           <ul className="space-y-1 text-sm text-muted-foreground">
-            {reportProduct.features?.map((feature, index) => (
+            {paymentPlan.features?.map((feature, index) => (
               <li key={index}>• {feature}</li>
             ))}
           </ul>
@@ -108,7 +108,7 @@ const OneTimePaymentTest: React.FC = () => {
           className="w-full"
           size="lg"
         >
-          Purchase Report for {formatPrice(reportProduct.price)}
+          Purchase Report for {formatPrice(paymentPlan.price)}
         </Button>
       </CardFooter>
     </Card>
