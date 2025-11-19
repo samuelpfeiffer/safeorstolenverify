@@ -13,7 +13,7 @@ export const AuthFormHeader = ({ mode }: AuthFormHeaderProps) => {
       <p className="text-foreground/80">
         {mode === 'signin' 
           ? 'Sign in to your SafeOrStolen account' 
-          : 'Join SafeOrStolen to start verifying products'
+          : 'Join SafeOrStolen to start verifying items'
         }
       </p>
     </div>

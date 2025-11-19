@@ -20,7 +20,7 @@ interface VerificationResult {
   item_type: string;
 }
 
-const VerifiedProduct = () => {
+const VerifiedItem = () => {
   const location = useSafeLocation();
   const [searchParams] = useState<URLSearchParams>(() => {
     return new URLSearchParams(location?.search || '');
@@ -147,4 +147,4 @@ const VerifiedProduct = () => {
   );
 };
 
-export default VerifiedProduct;
+export default VerifiedItem;

@@ -22,7 +22,7 @@ export const VideoMarketingSection = () => {
       description: "See our real-time verification technology in action",
       thumbnail: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png", 
       duration: "2:30",
-      category: "Product Demo"
+      category: "Platform Demo"
     },
     {
       title: "Customer Success Stories",

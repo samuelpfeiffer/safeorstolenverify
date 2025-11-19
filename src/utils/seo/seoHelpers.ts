@@ -319,9 +319,9 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     type: 'website'
   },
   'roadmap': {
-    title: 'Product Roadmap - Safe or Stolen | Development Timeline & Features',
-    description: 'View our product development roadmap, upcoming features, and launch timeline for SafeOrStolen.com platform and mobile applications.',
-    keywords: 'product roadmap, development timeline, upcoming features, mobile app launch, platform updates',
+    title: 'Platform Roadmap - Safe or Stolen | Development Timeline & Features',
+    description: 'View our platform development roadmap, upcoming features, and launch timeline for SafeOrStolen.com service and mobile applications.',
+    keywords: 'platform roadmap, development timeline, upcoming features, mobile app launch, service updates',
     type: 'website'
   },
   'company-verification': {

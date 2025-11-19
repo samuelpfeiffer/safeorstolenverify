@@ -14,7 +14,7 @@ export default function PressReleasesPage() {
       date: "2025-01-15",
       title: "SafeOrStolen Launches AI-Powered Verification Platform to Combat Secondhand Fraud",
       excerpt: "New platform provides instant verification of phones, vehicles, and electronics against global stolen item databases, protecting consumers from purchasing stolen goods.",
-      category: "Product Launch",
+      category: "Platform Launch",
       url: "https://safeorstolen.com/press-releases/ai-platform-launch-2025"
     },
     {
@@ -49,7 +49,7 @@ export default function PressReleasesPage() {
       date: "2024-11-01",
       title: "Introducing API Access: Businesses Can Now Integrate SafeOrStolen Verification",
       excerpt: "New API allows retailers, marketplaces, and pawn shops to integrate instant verification into their platforms.",
-      category: "Product Launch",
+      category: "Platform Launch",
       url: "https://safeorstolen.com/press-releases/api-launch-2024"
     }
   ];
@@ -60,7 +60,7 @@ export default function PressReleasesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "SafeOrStolen Press Releases",
-    "description": "Latest news, product launches, and company announcements from SafeOrStolen",
+    "description": "Latest news, platform launches, and company announcements from SafeOrStolen",
     "url": "https://safeorstolen.com/press-releases"
   };
 
@@ -68,7 +68,7 @@ export default function PressReleasesPage() {
     <>
       <PageSEO
         title="Press Releases - Latest News & Announcements | SafeOrStolen"
-        description="Stay updated with SafeOrStolen's latest product launches, partnerships, and company milestones. Read our official press releases and news announcements."
+        description="Stay updated with SafeOrStolen's latest platform launches, partnerships, and company milestones. Read our official press releases and news announcements."
         keywords="press releases, news, announcements, SafeOrStolen news, company updates"
         structuredData={collectionSchema}
       />
@@ -89,7 +89,7 @@ export default function PressReleasesPage() {
               Press Releases & News
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Latest announcements, product launches, and company milestones from SafeOrStolen.
+              Latest announcements, platform launches, and company milestones from SafeOrStolen.
             </p>
             <Button variant="outline" onClick={() => navigate('/press')}>
               Media & Press Kit

@@ -20,7 +20,7 @@ export default function PressPage() {
       headline: "SafeOrStolen Press Release Archive",
       url: "https://pressroom.prlog.org/SAFEORSTOLEN/",
       date: "2024",
-      description: "Complete archive of SafeOrStolen press releases covering product launches, partnerships, and industry impact.",
+      description: "Complete archive of SafeOrStolen press releases covering platform launches, partnerships, and industry impact.",
       icon: "📰"
     },
     {
