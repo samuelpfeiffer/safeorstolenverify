@@ -1,6 +1,10 @@
 /**
  * Pricing Module - Constants & Configuration
- * Subscription tiers with real Stripe Product IDs
+ * Subscription plan tiers with Stripe integration
+ * 
+ * NOTE: Stripe uses the term "Product" in their API to refer to subscription plans/tiers.
+ * This is Stripe's internal terminology - SafeOrStolen is a SaaS platform offering
+ * verification SERVICES, not selling physical products.
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
@@ -8,16 +12,16 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
 /**
  * STRIPE CONFIGURATION INSTRUCTIONS:
  * 
- * Option 1 (Recommended): Use Product Name Matching
- * - Create products in Stripe Dashboard with these EXACT names
+ * Option 1 (Recommended): Use Plan Name Matching
+ * - Create subscription plans in Stripe Dashboard with these EXACT names
  * - The system will auto-match by name, no Price IDs needed
  * - Set stripePriceId to undefined for auto-matching
  * 
  * Option 2: Use Price IDs
- * - Get Price IDs from Stripe Dashboard → Products → [Product] → Pricing
+ * - Get Price IDs from Stripe Dashboard → Products → [Plan] → Pricing
  * - Update stripePriceId values below with your actual Price IDs
  * 
- * Products in Stripe:
+ * Stripe Plans (Note: Stripe calls these "Products" in their API):
  * 1. "Starter Plan" - $4.99/month recurring (Price: price_1SHEOxGxnZLw8J7O2zzfPVBK)
  * 2. "Personal Plan" - $9.99/month recurring (Price: price_1SHEUQGxnZLw8J7OinyVqNMK)
  * 3. "Professional Plan" - $29.99/month recurring (Price: price_1SHEiuGxnZLw8J7OszscBBk7)

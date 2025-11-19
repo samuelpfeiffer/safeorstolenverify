@@ -181,12 +181,12 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
     const abortController = new AbortController();
     
     try {
-      console.log("Creating subscription checkout for product:", priceId);
+      console.log("Creating subscription checkout for plan:", priceId);
       
       const checkoutPromise = supabase.functions.invoke('create-checkout', {
         body: {
           priceId: null, // Let the edge function resolve the actual Stripe price ID
-          planName: priceId, // Use the product name for dynamic matching 
+          planName: priceId, // Use the plan name for Stripe matching (Stripe calls their pricing tiers "products")
           isSubscription: true,
           redirectUrl: `${window.location.origin}/subscriptions?success=true`,
         },

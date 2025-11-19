@@ -57,12 +57,12 @@ export const useAIIntegration = (itemData?: any) => {
     }
   };
 
-  const generateAIContent = async (productData: any, verificationResult: any) => {
+  const generateAIContent = async (itemData: any, verificationResult: any) => {
     setState(prev => ({ ...prev, isLoading: true }));
     
     try {
       const content = await aiService.generateContent({
-        product: productData,
+        product: itemData, // Note: aiService uses 'product' as field name
         verificationResult,
         userContext: {}
       });
