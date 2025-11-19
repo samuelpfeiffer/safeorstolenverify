@@ -61,7 +61,7 @@ const pressCoverage = [
     outlet: "Consumer Reports",
     headline: "New Tool Helps Buyers Avoid Stolen Electronics",
     date: "January 2024",
-    type: "Product Review",
+    type: "Service Review",
     url: "#",
     logo: null
   },

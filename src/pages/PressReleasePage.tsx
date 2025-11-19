@@ -114,7 +114,7 @@ const PressReleasePage = () => {
                       <div>
                         <h3 className="font-semibold mb-1">$500K Funding Round</h3>
                         <p className="text-muted-foreground text-sm">
-                          Supporting product development and team growth
+                          Supporting platform development and team growth
                         </p>
                       </div>
                     </div>
@@ -155,7 +155,7 @@ const PressReleasePage = () => {
 
                 <h2 className="text-2xl font-bold mt-12 mb-4">FasterCapital Partnership Value</h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Through the LaunchUp program, SafeOrStolen gains access to FasterCapital's extensive resources including strategic mentorship, capital raising facilitation, and global networking opportunities. FasterCapital's rigorous selection process, led by Hesham Zreik, underscores the startup's strong product-market fit and growth potential.
+                  Through the LaunchUp program, SafeOrStolen gains access to FasterCapital's extensive resources including strategic mentorship, capital raising facilitation, and global networking opportunities. FasterCapital's rigorous selection process, led by Hesham Zreik, underscores the startup's strong service-market fit and growth potential.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   This partnership accelerates SafeOrStolen's development timeline, supporting its goal to reach 1 million users and scale internationally within the next 18 months. The collaboration also enhances credibility with investors and partners, positioning SafeOrStolen for successful fundraising and market penetration.
@@ -189,7 +189,7 @@ const PressReleasePage = () => {
                   SafeOrStolen plans to launch updates across its platform within the next six months, targeting 350,000 to 500,000 users in the first year. Following initial traction, the company will focus on monetization via freemium subscriptions, in-app purchases, and strategic partnerships.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Geographic expansion beyond the U.S. is slated for year two, with a goal of reaching over 1 million users globally. The startup is currently seeking $500,000 in funding to support product development, marketing, and team growth, aiming to become the definitive platform for second-hand merchandise legitimacy and crime prevention worldwide.
+                  Geographic expansion beyond the U.S. is slated for year two, with a goal of reaching over 1 million users globally. The startup is currently seeking $500,000 in funding to support platform development, marketing, and team growth, aiming to become the definitive platform for second-hand merchandise legitimacy and crime prevention worldwide.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-12 mb-4">About SafeOrStolen</h2>

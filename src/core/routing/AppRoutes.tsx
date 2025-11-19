@@ -56,6 +56,7 @@ const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
+const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
 
 // Redirect Pages (with HTML meta refresh for crawlers)
 const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
@@ -359,6 +360,7 @@ export const AppRoutes = () => {
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/database" element={<DatabasePage />} />
         <Route path="/statistics/stolen-goods" element={<StolenGoodsStatistics2025 />} />
+        <Route path="/seo-health" element={<SEOHealthPage />} />
         
         {/* FasterCapital Integration */}
         <Route path="/fastercapital/raise-capital" element={<FasterCapitalRaiseCapitalPage />} />
