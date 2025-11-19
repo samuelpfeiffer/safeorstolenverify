@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface CompetitorComparisonSchemaProps {
-  competitor: 'checkmend' | 'imeiinfo' | 'stolenregister';
+  competitor: 'checkmend' | 'imeiinfo' | 'stolenregister' | 'autocheck';
 }
 
 export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProps> = ({ competitor }) => {
@@ -30,6 +30,14 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
       currency: 'GBP',
       coverage: 'UK & Europe',
       features: ['Property marking', 'Basic checks', 'Registration service']
+    },
+    autocheck: {
+      name: 'AutoCheck',
+      description: 'Vehicle history reports and stolen vehicle checks',
+      price: '24.99',
+      currency: 'USD',
+      coverage: 'United States',
+      features: ['Vehicle history', 'Accident reports', 'Title history', 'Ownership records']
     }
   };
 
