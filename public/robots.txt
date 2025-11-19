@@ -31,6 +31,7 @@ Sitemap: https://safeorstolen.com/sitemap-blog.xml
 Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
 Sitemap: https://safeorstolen.com/sitemap-mobile-app-expanded.xml
 Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
+Sitemap: https://safeorstolen.com/sitemap-states.xml
 
 # RSS Feed (not a sitemap)
 # Sitemap: https://safeorstolen.com/feed.xml

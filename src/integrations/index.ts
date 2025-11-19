@@ -44,6 +44,13 @@ export const EdgeFunctions = {
   
   // AI Parsing Functions
   aiHtmlParser: 'ai-html-parser',
+  
+  // State Theft Lookup Functions
+  floridaTheftLookup: 'florida-theft-lookup',
+  texasTheftLookup: 'texas-theft-lookup',
+  californiaTheftLookup: 'california-theft-lookup',
+  newYorkTheftLookup: 'new-york-theft-lookup',
+  universalStateLookup: 'universal-state-lookup',
 } as const;
 
 /**
