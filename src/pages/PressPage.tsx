@@ -46,7 +46,7 @@ export default function PressPage() {
     },
     {
       title: "Screenshots",
-      description: "Product screenshots and images",
+      description: "Platform screenshots and images",
       icon: "📸"
     }
   ];

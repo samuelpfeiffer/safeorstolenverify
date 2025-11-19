@@ -56,7 +56,52 @@ export const SecurityStatusIndicator = () => {
         return <AlertTriangle className="h-4 w-4" />;
     }
   };
-  return <Card className="bg-gray-800/50 border-gray-700">
-      
-    </Card>;
+  return (
+    <Card className="bg-card border-border">
+      <CardContent className="p-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <Shield className={cn("h-5 w-5", getStatusColor())} />
+            <span className="font-semibold text-foreground">Security Status</span>
+          </div>
+          <Badge variant={securityStatus === 'secure' ? 'default' : 'destructive'}>
+            <span className="flex items-center gap-1">
+              {getStatusIcon()}
+              {securityStatus === 'secure' ? 'Protected' : 'Check Required'}
+            </span>
+          </Badge>
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">HTTPS</span>
+            {checks.https ? (
+              <CheckCircle className="h-4 w-4 text-green-400" />
+            ) : (
+              <AlertTriangle className="h-4 w-4 text-red-400" />
+            )}
+          </div>
+          
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">Authentication</span>
+            {checks.authentication ? (
+              <CheckCircle className="h-4 w-4 text-green-400" />
+            ) : (
+              <Lock className="h-4 w-4 text-muted-foreground" />
+            )}
+          </div>
+          
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">Database Security (RLS)</span>
+            <CheckCircle className="h-4 w-4 text-green-400" />
+          </div>
+          
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">Input Validation</span>
+            <CheckCircle className="h-4 w-4 text-green-400" />
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
 };

@@ -35,7 +35,7 @@ export default function PressReleasesPage() {
       date: "2024-12-01",
       title: "New Database Integration: SafeOrStolen Now Checks Against Interpol's Stolen Vehicle Database",
       excerpt: "Expansion into international vehicle verification provides users with access to 190+ countries' stolen vehicle records.",
-      category: "Product Update",
+      category: "Platform Update",
       url: "https://safeorstolen.com/press-releases/interpol-database-integration"
     },
     {
@@ -176,7 +176,7 @@ export default function PressReleasesPage() {
           <div className="max-w-5xl mx-auto">
             <h3 className="text-xl font-semibold mb-4">Browse by Category</h3>
             <div className="flex flex-wrap gap-2">
-              {["All", "Product Launch", "Partnership", "Milestone", "Product Update", "Award"].map((category) => (
+              {["All", "Platform Launch", "Partnership", "Milestone", "Platform Update", "Award"].map((category) => (
                 <Badge key={category} variant="outline" className="cursor-pointer hover:bg-primary/10">
                   {category}
                 </Badge>

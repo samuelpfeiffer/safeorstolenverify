@@ -31,7 +31,7 @@ const TermsPage: React.FC = () => {
             <section>
             <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Service</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Safe or Stolen provides product verification services to help users determine whether items are legitimate or stolen.
+              Safe or Stolen provides item verification services to help users determine whether items are legitimate or stolen.
               Our service includes:
             </p>
             <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
