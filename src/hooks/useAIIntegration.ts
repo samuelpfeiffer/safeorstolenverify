@@ -62,7 +62,7 @@ export const useAIIntegration = (itemData?: any) => {
     
     try {
       const content = await aiService.generateContent({
-        product: itemData, // Note: aiService uses 'product' as field name
+        product: itemData, // Note: External API field name (their terminology, not ours)
         verificationResult,
         userContext: {}
       });
@@ -130,7 +130,7 @@ export const useAIIntegration = (itemData?: any) => {
         ...prev,
         recommendations: [
           ...recommendations.safetyTips.map(tip => ({ type: 'safety', content: tip })),
-          ...recommendations.productSuggestions.map(suggestion => ({ type: 'product', content: suggestion })),
+          ...recommendations.itemSuggestions.map(suggestion => ({ type: 'item', content: suggestion })),
           ...recommendations.riskAlerts.map(alert => ({ type: 'risk', content: alert }))
         ]
       }));

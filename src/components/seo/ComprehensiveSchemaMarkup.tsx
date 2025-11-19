@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 interface SchemaMarkupProps {
-  pageType: 'home' | 'service' | 'article' | 'product' | 'faq' | 'about';
+  pageType: 'home' | 'service' | 'article' | 'faq' | 'about';
   customData?: any;
 }
 
