@@ -3,7 +3,7 @@
  * Common types for verification functionality
  */
 
-export interface ProductType {
+export interface VerificationItemType {
   id: string;
   name: string;
   type: string;
@@ -18,9 +18,9 @@ export interface ProductType {
 
 export interface ReceiptData {
   id: string;
-  productId: string;
-  productName: string;
-  productType: string;
+  itemId: string;
+  itemName: string;
+  itemType: string;
   category: string;
   serialNumber: string;
   verificationDate: string;

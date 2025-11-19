@@ -3,13 +3,13 @@
  * Functions to generate verification data from various sources
  */
 
-import { ProductType } from './types';
-import { determineCategory, determineIconType, getImageForCategory, determineColor, generateName } from './productHelpers';
+import { VerificationItemType } from './types';
+import { determineCategory, determineIconType, getImageForCategory, determineColor, generateName } from './itemHelpers';
 import { getIconForCategory } from './iconUtils';
 import { determineStatus } from './statusUtils';
 
 // Generate verification data from real database results only
-export const generateVerificationData = (searchHistory: any[], savedReceipts: any[]): ProductType[] => {
+export const generateVerificationData = (searchHistory: any[], savedReceipts: any[]): VerificationItemType[] => {
   // Only return real saved receipts with verified status
   if (savedReceipts.length > 0) {
     return savedReceipts

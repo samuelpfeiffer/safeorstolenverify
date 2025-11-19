@@ -5,15 +5,15 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Brain, Shield, AlertTriangle, CheckCircle2, TrendingUp, Zap } from 'lucide-react';
 import { aiService, type AIVerificationAnalysis } from '@/services/aiService';
-import { ProductType } from '@/utils/verification/types';
+import { VerificationItemType } from '@/utils/verification/types';
 
 interface AIVerificationCardProps {
-  product: ProductType;
+  item: VerificationItemType;
   onAnalysisComplete?: (analysis: AIVerificationAnalysis) => void;
 }
 
 export const AIVerificationCard: React.FC<AIVerificationCardProps> = ({
-  product,
+  item,
   onAnalysisComplete
 }) => {
   const [analysis, setAnalysis] = useState<AIVerificationAnalysis | null>(null);
@@ -21,20 +21,20 @@ export const AIVerificationCard: React.FC<AIVerificationCardProps> = ({
   const [showFullAnalysis, setShowFullAnalysis] = useState(false);
 
   useEffect(() => {
-    if (product) {
+    if (item) {
       performAIAnalysis();
     }
-  }, [product]);
+  }, [item]);
 
   const performAIAnalysis = async () => {
     setIsLoading(true);
     try {
       const analysisResult = await aiService.analyzeVerification({
-        serialNumber: product.serialNumber,
-        itemType: product.name,
-        category: product.category,
-        dbResults: [{ status: product.status }],
-        metadata: { color: product.color, type: product.type }
+        serialNumber: item.serialNumber,
+        itemType: item.name,
+        category: item.category,
+        dbResults: [{ status: item.status }],
+        metadata: { color: item.color, type: item.type }
       });
       
       setAnalysis(analysisResult);

@@ -1,6 +1,6 @@
 
 /**
- * Helper functions for product categories and attributes
+ * Helper functions for item categories and attributes
  */
 
 // Helper functions for generating verification data
@@ -90,21 +90,22 @@ export const generateName = (itemType: string, category: string): string => {
   if (itemType.includes('imei') || category === 'Electronics') {
     return 'XS Pro Smartphone';
   } else if (itemType.includes('vin') || category === 'Automotive') {
-    return 'Premium Sedan';
+    return '2019 Sedan';
   } else if (category === 'Fashion') {
-    return 'Ultra Timepiece';
-  } else if (category === 'Audio') {
-    return 'Sound Pro Headphones';
+    return 'Luxury Wristwatch';
   } else if (category === 'Computers') {
-    return 'UltraBook Pro';
+    return 'Pro Laptop';
+  } else if (category === 'Audio') {
+    return 'Wireless Headphones';
   } else if (category === 'Tools') {
-    return 'Professional Power Drill';
+    return 'Power Drill';
   } else if (category === 'Machinery') {
     return 'Industrial Equipment';
   } else if (category === 'E-Bikes') {
-    return 'Electric Bicycle';
+    return 'Electric Mountain Bike';
   } else if (category === 'Marine') {
-    return 'Marine Vessel';
+    return 'Speedboat';
   }
-  return `Premium ${category} Item`;
+  
+  return 'Verified Item';
 };

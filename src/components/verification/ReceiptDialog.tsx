@@ -1,5 +1,5 @@
 
-import { ProductType } from '@/utils/verificationUtils';
+import { VerificationItemType } from '@/utils/verificationUtils';
 import { ShieldCheck, ShieldAlert, ShieldX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
@@ -8,13 +8,13 @@ import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
 interface ReceiptDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  activeProduct: ProductType | null;
+  activeItem: VerificationItemType | null;
 }
 
-const ReceiptDialog = ({ open, onOpenChange, activeProduct }: ReceiptDialogProps) => {
+const ReceiptDialog = ({ open, onOpenChange, activeItem }: ReceiptDialogProps) => {
   const { generateReceipt, isGenerating } = useReceiptGenerator();
 
-  if (!activeProduct) return null;
+  if (!activeItem) return null;
   
   const getStatusIcon = (status: string) => {
     switch(status) {
@@ -30,12 +30,12 @@ const ReceiptDialog = ({ open, onOpenChange, activeProduct }: ReceiptDialogProps
   };
 
   const handleSaveReceipt = async () => {
-    if (!activeProduct.serialNumber) return;
+    if (!activeItem.serialNumber) return;
     
     const receipt = await generateReceipt(
-      activeProduct.id, 
-      activeProduct.serialNumber, 
-      activeProduct.category
+      activeItem.id, 
+      activeItem.serialNumber, 
+      activeItem.category
     );
     
     if (receipt) {
@@ -57,22 +57,22 @@ const ReceiptDialog = ({ open, onOpenChange, activeProduct }: ReceiptDialogProps
             </div>
             
             <div className="space-y-2 mb-4">
-              <p><strong>Item:</strong> {activeProduct.name}</p>
-              <p><strong>Serial:</strong> {activeProduct.serialNumber}</p>
-              <p><strong>Category:</strong> {activeProduct.category}</p>
-              <p><strong>Verification Date:</strong> {new Date(activeProduct.verificationDate).toLocaleDateString()}</p>
+              <p><strong>Item:</strong> {activeItem.name}</p>
+              <p><strong>Serial:</strong> {activeItem.serialNumber}</p>
+              <p><strong>Category:</strong> {activeItem.category}</p>
+              <p><strong>Verification Date:</strong> {new Date(activeItem.verificationDate).toLocaleDateString()}</p>
               <p><strong>Status:</strong> <span className={
-                activeProduct.status === 'safe' ? "text-primary" : 
-                activeProduct.status === 'lost' ? "text-accent" : 
+                activeItem.status === 'safe' ? "text-primary" : 
+                activeItem.status === 'lost' ? "text-accent" : 
                 "text-destructive"
               }>
-                {activeProduct.status.toUpperCase()}
+                {activeItem.status.toUpperCase()}
               </span></p>
             </div>
             
             <div className="border-t border-border pt-2 text-center">
               <div className="flex justify-center mb-2">
-                {getStatusIcon(activeProduct.status)}
+                {getStatusIcon(activeItem.status)}
               </div>
               <p className="text-sm text-muted-foreground">
                 This verification receipt confirms the current status of the item.
