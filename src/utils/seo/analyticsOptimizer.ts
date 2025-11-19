@@ -212,7 +212,7 @@ export const trackSEOInteraction = (action: string, element: string, value?: str
     schema_types: schemaValidation.schemaTypes.join(','),
     schema_validation_errors: schemaValidation.validationErrors.length,
     faq_schema_present: schemaValidation.hasFAQSchema,
-    product_schema_present: schemaValidation.hasProductSchema,
+    service_schema_present: schemaValidation.hasProductSchema,
     review_schema_present: schemaValidation.hasReviewSchema,
     howto_schema_present: schemaValidation.hasHowToSchema,
     

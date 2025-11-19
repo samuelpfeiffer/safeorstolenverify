@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Product',
+      title: 'Platform',
       links: [
         { name: 'Stolen Item Checker', href: '/verify' },
         { name: 'Serial Number Checker', href: '/verify' },

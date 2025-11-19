@@ -6,7 +6,7 @@ import { CheckCircle } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
 
-interface ProductCardProps {
+interface PlanCardProps {
   name: string;
   price: string;
   priceId: string;
@@ -18,7 +18,7 @@ interface ProductCardProps {
   isLoading?: boolean;
 }
 
-export const ProductCard = ({ 
+export const PlanCard = ({ 
   name, 
   price, 
   priceId, 
@@ -28,7 +28,7 @@ export const ProductCard = ({
   image,
   onCheckout,
   isLoading 
-}: ProductCardProps) => {
+}: PlanCardProps) => {
   const { user } = useUnifiedAuth();
   const navigate = useNavigate();
 
