@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ProductCard } from './ProductCard';
+import { PlanCard } from './PlanCard';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { useSubscription } from '@/hooks/useSubscription';
 import { toast } from 'sonner';
@@ -26,7 +26,7 @@ export const PricingGrid = () => {
     }
   };
 
-  const products = [
+  const plans = [
     {
       ...SUBSCRIPTION_TIERS.starter,
       price: formatPrice(SUBSCRIPTION_TIERS.starter.price),
@@ -65,16 +65,16 @@ export const PricingGrid = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
-        {products.map((product) => (
-          <ProductCard
-            key={product.priceId}
-            name={product.name}
-            price={product.price}
-            priceId={product.priceId}
-            period={product.period}
-            features={product.features}
-            popular={product.popular}
-            image={product.image}
+        {plans.map((plan) => (
+          <PlanCard
+            key={plan.priceId}
+            name={plan.name}
+            price={plan.price}
+            priceId={plan.priceId}
+            period={plan.period}
+            features={plan.features}
+            popular={plan.popular}
+            image={plan.image}
             onCheckout={handleCheckout}
             isLoading={isLoading}
           />

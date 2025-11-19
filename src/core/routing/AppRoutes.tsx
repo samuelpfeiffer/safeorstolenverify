@@ -403,6 +403,8 @@ export const AppRoutes = () => {
         <Route path="/enterprise-demo" element={<Navigate to="/contact" replace />} />
         <Route path="/marketplace-integration" element={<Navigate to="/for-brands" replace />} />
         <Route path="/pawn-shops" element={<Navigate to="/for-brands" replace />} />
+        <Route path="/video/how-to-check-phone" element={<Navigate to="/check-phone" replace />} />
+        <Route path="/video/how-to-check-vin" element={<Navigate to="/check-car" replace />} />
 
         {/* Business/Features */}
         <Route path="/features" element={<FeaturesPage />} />
