@@ -4,7 +4,7 @@
  */
 
 export * from './types';
-export * from './productHelpers';
+export * from './itemHelpers';
 export * from './iconUtils';
 export * from './statusUtils';
 export * from './dataGenerator';
