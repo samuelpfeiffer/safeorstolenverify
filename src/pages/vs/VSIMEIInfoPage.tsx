@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { CompetitorComparisonSchema } from '@/components/seo/CompetitorComparisonSchema';
 import { Card } from '@/components/ui/card';
 import { Check, X, Shield, Database, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,6 +17,7 @@ export default function VSIMEIInfoPage() {
         image="https://safeorstolen.com/og-vs-imeiinfo.png"
         keywords="SafeOrStolen vs IMEI.info, IMEI checker comparison, free IMEI check, phone verification, stolen phone check, carrier unlock check"
       />
+      <CompetitorComparisonSchema competitor="imeiinfo" />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-6xl">

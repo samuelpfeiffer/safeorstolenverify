@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { CompetitorComparisonSchema } from '@/components/seo/CompetitorComparisonSchema';
 import { Card } from '@/components/ui/card';
 import { Check, X, Car, DollarSign, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,6 +17,7 @@ export default function VSNICBPage() {
         image="https://safeorstolen.com/og-vs-nicb.png"
         keywords="SafeOrStolen vs NICB, NICB VINCheck alternative, free VIN check, stolen car check, vehicle history report, VIN verification"
       />
+      <CompetitorComparisonSchema competitor="nicb" />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5">
         <div className="container mx-auto px-4 py-12 max-w-6xl">

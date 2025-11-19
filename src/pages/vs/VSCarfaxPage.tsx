@@ -16,7 +16,7 @@ export default function VSCarfaxPage() {
         keywords="safeorstolen vs carfax, carfax alternative, free carfax, vehicle history comparison, vin check comparison, stolen car check"
         canonical="/vs-carfax"
       />
-      <CompetitorComparisonSchema competitor="checkmend" />
+      <CompetitorComparisonSchema competitor="carfax" />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-muted/20">
         <div className="max-w-5xl mx-auto px-4 py-12">
