@@ -39,7 +39,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   
   // Canonical URL is already processed by PageSEO, use it directly
-  const fullCanonicalUrl = canonical || undefined;
+  // CRITICAL FIX: Always provide a canonical URL, never undefined
+  const fullCanonicalUrl = canonical || getCanonicalUrl(location?.pathname || '/');
   
   // Validate canonical URL in development
   if (import.meta.env.DEV && fullCanonicalUrl) {
@@ -76,8 +77,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="description" content={optimizedDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       
-      {/* Canonical URL - Skip if search params present */}
-      {fullCanonicalUrl && !hasBlockedParams && <link rel="canonical" href={fullCanonicalUrl} />}
+      {/* Canonical URL - Always render (critical for SEO) */}
+      {!hasBlockedParams && <link rel="canonical" href={fullCanonicalUrl} />}
       
       {/* Robots Meta Tag - noindex if search params or explicit noIndex */}
       <meta name="robots" content={hasBlockedParams || noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large"} />

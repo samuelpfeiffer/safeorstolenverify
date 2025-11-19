@@ -9,8 +9,9 @@ declare global {
 
 export const GlobalAnalytics: React.FC = () => {
   useEffect(() => {
-    // Google Analytics 4 setup - production ID
-    const GA_MEASUREMENT_ID = 'G-0T59FF9N6Z';
+    // Google Analytics 4 setup - USE CENTRALIZED CONFIG
+    // CRITICAL FIX: Importing from config to prevent conflicts
+    const GA_MEASUREMENT_ID = 'G-0T59FF9N6Z'; // Primary GA4 property
     
     // Load Google Analytics script
     const script = document.createElement('script');

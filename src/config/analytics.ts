@@ -23,8 +23,9 @@ export const ANALYTICS_CONFIG = {
   /**
    * Google Analytics 4 Measurement ID
    * Priority: Environment Variable > Hardcoded Value
+   * CRITICAL FIX: Using G-0T59FF9N6Z as primary GA4 property (consolidation)
    */
-  GA4_MEASUREMENT_ID: import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-368534389',
+  GA4_MEASUREMENT_ID: import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-0T59FF9N6Z',
   
   /**
    * Google Search Console Verification Code
