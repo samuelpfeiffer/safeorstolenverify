@@ -166,6 +166,7 @@ const VSCheckMendPage = lazy(() => import('@/pages/vs/VSCheckMendPage'));
 const VSIMEIInfoPage = lazy(() => import('@/pages/vs/VSIMEIInfoPage'));
 const VSStolenRegisterPage = lazy(() => import('@/pages/vs/VSStolenRegisterPage'));
 const VSNICBPage = lazy(() => import('@/pages/vs/VSNICBPage'));
+const VSAutoCheckPage = lazy(() => import('@/pages/vs/VSAutoCheckPage'));
 
 // Marketplace Safety Guides
 const EbayBuyerProtection = lazy(() => import('@/pages/guides/EbayBuyerProtection'));
@@ -365,6 +366,7 @@ export const AppRoutes = () => {
         <Route path="/vs-imeiinfo" element={<VSIMEIInfoPage />} />
         <Route path="/vs-stolenregister" element={<VSStolenRegisterPage />} />
         <Route path="/vs-nicb" element={<VSNICBPage />} />
+        <Route path="/safeorstolen-vs-autocheck" element={<VSAutoCheckPage />} />
         
         {/* Marketplace Safety Guides */}
         <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtection />} />
