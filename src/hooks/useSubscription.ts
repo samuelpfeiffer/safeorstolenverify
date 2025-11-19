@@ -82,7 +82,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId: null, // Let the edge function resolve the actual Stripe price ID
-          planName: planName, // Use the product name for dynamic matching
+          planName: planName, // Use the plan name for dynamic matching
           isSubscription: true,
           redirectUrl: `${window.location.origin}/subscriptions?success=true`,
         },
@@ -128,7 +128,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
         errorMessage = "Payment system configuration error";
         errorAction = "Please contact support or try again later";
       } else if (error?.message?.includes("No matching")) {
-        errorMessage = "Product not found in payment system";
+        errorMessage = "Plan not found in payment system";
         errorAction = "Please try a different plan or contact support";
       } else if (error?.message?.includes("Invalid token")) {
         errorMessage = "Session expired";

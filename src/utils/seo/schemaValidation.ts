@@ -118,16 +118,71 @@ export const validateCanonicalUrl = (url: string): SchemaValidationResult => {
 
     // Check for trailing slash consistency
     if (parsedUrl.pathname !== '/' && parsedUrl.pathname.endsWith('/')) {
-      warnings.push('Canonical URL should not have trailing slash (except for root)');
+      warnings.push('Canonical URL has trailing slash (consider removing for consistency)');
     }
 
-    // Check domain
+    // Check for www subdomain
     if (parsedUrl.hostname.startsWith('www.')) {
-      warnings.push('Canonical URL should use non-www version for consistency');
+      warnings.push('Canonical URL includes www subdomain (consider using non-www version)');
     }
 
-  } catch (e) {
-    errors.push('Invalid URL format');
+    return {
+      isValid: errors.length === 0,
+      errors,
+      warnings
+    };
+  } catch (error) {
+    return {
+      isValid: false,
+      errors: ['Invalid URL format'],
+      warnings: []
+    };
+  }
+};
+
+/**
+ * Validates SoftwareApplication schema
+ */
+export const validateSoftwareApplicationSchema = (schema: any): SchemaValidationResult => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (!schema.name) errors.push('SoftwareApplication schema missing required field: name');
+  if (!schema.applicationCategory) errors.push('SoftwareApplication schema missing required field: applicationCategory');
+  if (!schema.operatingSystem) warnings.push('SoftwareApplication schema missing recommended field: operatingSystem');
+  
+  // Offers validation
+  if (!schema.offers) {
+    warnings.push('SoftwareApplication schema missing recommended field: offers');
+  } else {
+    if (!schema.offers.price) warnings.push('Offer missing recommended field: price');
+    if (!schema.offers.priceCurrency) warnings.push('Offer missing recommended field: priceCurrency');
+  }
+
+  return {
+    isValid: errors.length === 0,
+    errors,
+    warnings
+  };
+};
+
+/**
+ * Validates BreadcrumbList schema
+ */
+export const validateBreadcrumbListSchema = (schema: any): SchemaValidationResult => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (!schema.itemListElement) {
+    errors.push('BreadcrumbList schema missing required field: itemListElement');
+  } else if (!Array.isArray(schema.itemListElement)) {
+    errors.push('BreadcrumbList itemListElement must be an array');
+  } else {
+    schema.itemListElement.forEach((item: any, index: number) => {
+      if (!item.position) errors.push(`Breadcrumb item ${index} missing required field: position`);
+      if (!item.name) errors.push(`Breadcrumb item ${index} missing required field: name`);
+      if (!item.item) warnings.push(`Breadcrumb item ${index} missing recommended field: item (URL)`);
+    });
   }
 
   return {
@@ -156,6 +211,10 @@ export const validateSchema = (schema: any): SchemaValidationResult => {
       return validateServiceSchema(schema);
     case 'Article':
       return validateArticleSchema(schema);
+    case 'SoftwareApplication':
+      return validateSoftwareApplicationSchema(schema);
+    case 'BreadcrumbList':
+      return validateBreadcrumbListSchema(schema);
     default:
       return {
         isValid: true,

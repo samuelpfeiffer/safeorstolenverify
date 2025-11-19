@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { GA4_MEASUREMENT_ID } from '@/config/analytics';
 
 interface GoogleSEOOptimizationProps {
-  pageType?: 'homepage' | 'product' | 'blog' | 'service' | 'legal';
+  pageType?: 'homepage' | 'blog' | 'service' | 'legal';
   pageUrl?: string;
 }
 

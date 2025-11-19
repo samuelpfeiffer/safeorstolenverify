@@ -8,7 +8,7 @@ interface UnifiedSEOOptimizerProps {
   keywords?: string;
   canonical?: string;
   image?: string;
-  type?: 'website' | 'article' | 'service' | 'product';
+  type?: 'website' | 'article' | 'service';
   structuredData?: Array<Record<string, any>>;
   competitiveKeywords?: 'homepage' | 'imei' | 'vin' | 'serial' | 'general';
   priorityLevel?: 'max' | 'high' | 'normal';

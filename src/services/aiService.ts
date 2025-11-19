@@ -173,16 +173,16 @@ class AIService {
    */
   async generateRecommendations(userProfile: any, verificationHistory: any[]): Promise<{
     safetyTips: string[];
-    productSuggestions: string[];
+    itemSuggestions: string[];
     riskAlerts: string[];
   }> {
     const safetyTips = this.generatePersonalizedSafetyTips(userProfile, verificationHistory);
-    const productSuggestions = this.generatePersonalizedProductSuggestions(verificationHistory);
+    const itemSuggestions = this.generatePersonalizedItemSuggestions(verificationHistory);
     const riskAlerts = this.generatePersonalizedRiskAlerts(verificationHistory);
 
     return {
       safetyTips,
-      productSuggestions,
+      itemSuggestions,
       riskAlerts
     };
   }
@@ -315,7 +315,7 @@ class AIService {
 
   private generateBaseContent(data: any): any {
     return {
-      description: `AI-Enhanced Analysis: This ${data.product?.category || 'item'} has been processed through our advanced verification algorithms, cross-referencing multiple databases and applying machine learning patterns for comprehensive risk assessment.`,
+      description: `AI-Enhanced Analysis: This ${data.item?.category || data.category || 'item'} has been processed through our advanced verification algorithms, cross-referencing multiple databases and applying machine learning patterns for comprehensive risk assessment.`,
       risk: `Our AI system has evaluated this item using 50+ risk factors including database matches, serial number patterns, seller behavior analysis, and market price comparisons to provide you with an intelligent risk assessment.`,
       advice: `Based on AI analysis, we recommend following our suggested safety protocols. Our algorithms have identified the most relevant precautions for this specific item type and risk profile.`,
       market: `AI Market Intelligence: Current market trends and pricing patterns have been analyzed to help you make an informed purchasing decision. Unusual pricing or listing patterns have been flagged for your attention.`
@@ -353,11 +353,11 @@ class AIService {
     ];
   }
 
-  private generatePersonalizedProductSuggestions(history: any[]): string[] {
+  private generatePersonalizedItemSuggestions(history: any[]): string[] {
     return [
       'Consider certified pre-owned options for electronics',
       'Look for items with warranty coverage',
-      'Check manufacturer refurbished products',
+      'Check manufacturer refurbished items',
       'Verify authenticity certificates for luxury items'
     ];
   }
