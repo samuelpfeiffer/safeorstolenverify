@@ -129,3 +129,18 @@ verify_jwt = true
 [functions.ai-safety-advisor]
 verify_jwt = false
 
+[functions.florida-theft-lookup]
+verify_jwt = true
+
+[functions.texas-theft-lookup]
+verify_jwt = true
+
+[functions.california-theft-lookup]
+verify_jwt = true
+
+[functions.new-york-theft-lookup]
+verify_jwt = true
+
+[functions.universal-state-lookup]
+verify_jwt = true
+

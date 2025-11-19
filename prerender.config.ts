@@ -37,12 +37,17 @@ export const prerenderRoutes = [
   '/mobile-app/vs-checkmend',
   '/mobile-app/vs-autocheck',
   
-  // Top state pages
+  // Top state pages (VIN + License Plate)
   '/arizona-vin-lookup',
+  '/arizona-license-plate-lookup',
   '/california-vin-lookup',
+  '/california-license-plate-lookup',
   '/texas-vin-lookup',
+  '/texas-license-plate-lookup',
   '/florida-vin-lookup',
+  '/florida-license-plate-lookup',
   '/new-york-vin-lookup',
+  '/new-york-license-plate-lookup',
   '/utah-vin-lookup',
   '/virginia-vin-lookup',
   '/wyoming-vin-lookup',

@@ -2318,6 +2318,99 @@ export type Database = {
         }
         Relationships: []
       }
+      state_theft_lookup_cache: {
+        Row: {
+          cached_at: string | null
+          confidence_score: number | null
+          created_at: string | null
+          data_sources: string[] | null
+          expires_at: string | null
+          id: string
+          lookup_type: string
+          lookup_value: string
+          result_data: Json | null
+          result_status: string | null
+          state_code: string
+        }
+        Insert: {
+          cached_at?: string | null
+          confidence_score?: number | null
+          created_at?: string | null
+          data_sources?: string[] | null
+          expires_at?: string | null
+          id?: string
+          lookup_type: string
+          lookup_value: string
+          result_data?: Json | null
+          result_status?: string | null
+          state_code: string
+        }
+        Update: {
+          cached_at?: string | null
+          confidence_score?: number | null
+          created_at?: string | null
+          data_sources?: string[] | null
+          expires_at?: string | null
+          id?: string
+          lookup_type?: string
+          lookup_value?: string
+          result_data?: Json | null
+          result_status?: string | null
+          state_code?: string
+        }
+        Relationships: []
+      }
+      state_verification_databases: {
+        Row: {
+          api_available: boolean | null
+          created_at: string | null
+          database_name: string | null
+          database_url: string | null
+          has_direct_integration: boolean | null
+          id: string
+          last_verified_at: string | null
+          metadata: Json | null
+          rate_limit_per_hour: number | null
+          state_code: string
+          state_name: string
+          supports_license_plate: boolean | null
+          supports_vin: boolean | null
+          updated_at: string | null
+        }
+        Insert: {
+          api_available?: boolean | null
+          created_at?: string | null
+          database_name?: string | null
+          database_url?: string | null
+          has_direct_integration?: boolean | null
+          id?: string
+          last_verified_at?: string | null
+          metadata?: Json | null
+          rate_limit_per_hour?: number | null
+          state_code: string
+          state_name: string
+          supports_license_plate?: boolean | null
+          supports_vin?: boolean | null
+          updated_at?: string | null
+        }
+        Update: {
+          api_available?: boolean | null
+          created_at?: string | null
+          database_name?: string | null
+          database_url?: string | null
+          has_direct_integration?: boolean | null
+          id?: string
+          last_verified_at?: string | null
+          metadata?: Json | null
+          rate_limit_per_hour?: number | null
+          state_code?: string
+          state_name?: string
+          supports_license_plate?: boolean | null
+          supports_vin?: boolean | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       stolen_item_notifications: {
         Row: {
           created_at: string | null

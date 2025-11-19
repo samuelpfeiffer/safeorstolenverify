@@ -189,6 +189,10 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 // Regional Pages
 const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
 const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
+const FloridaLicensePlateLookup = lazy(() => import('@/pages/FloridaLicensePlateLookup'));
+const TexasLicensePlateLookup = lazy(() => import('@/pages/TexasLicensePlateLookup'));
+const CaliforniaLicensePlateLookup = lazy(() => import('@/pages/CaliforniaLicensePlateLookup'));
+const NewYorkLicensePlateLookup = lazy(() => import('@/pages/NewYorkLicensePlateLookup'));
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
 const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
@@ -431,6 +435,10 @@ export const AppRoutes = () => {
         {/* Regional Pages */}
         <Route path="/arizona-vin-lookup" element={<ArizonaVinLookup />} />
         <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookup />} />
+        <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookup />} />
+        <Route path="/texas-license-plate-lookup" element={<TexasLicensePlateLookup />} />
+        <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookup />} />
+        <Route path="/new-york-license-plate-lookup" element={<NewYorkLicensePlateLookup />} />
             <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
             <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
             <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
