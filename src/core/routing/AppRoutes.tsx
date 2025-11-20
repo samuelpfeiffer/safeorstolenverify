@@ -59,9 +59,7 @@ const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/R
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
 const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
-// Redirect Pages (with HTML meta refresh for crawlers)
-const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
-const IMEICheckerPage = lazy(() => import('@/pages/redirects/IMEICheckerPage'));
+// Redirect Pages (with HTML meta refresh for crawlers) - IMEICheckerPage moved to dedicated SEO pages section
 const BulkPage = lazy(() => import('@/pages/redirects/BulkPage'));
 const VINPage = lazy(() => import('@/pages/redirects/VINPage'));
 const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenPropertyLookupPage'));
@@ -161,6 +159,19 @@ const BestStolenItemCheckerApps2025 = lazy(() => import('@/pages/blog/BestStolen
 const WhyCheckMendHasNoApp = lazy(() => import('@/pages/blog/WhyCheckMendHasNoApp'));
 const FirearmsAppExclusive = lazy(() => import('@/pages/blog/FirearmsAppExclusive'));
 const IMEICheckerAppComparison = lazy(() => import('@/pages/blog/IMEICheckerAppComparison'));
+const BusinessGuidePreventingStolenGoods = lazy(() => import('@/pages/blog/BusinessGuidePreventingStolenGoods'));
+const CompleteVerificationGuidePost = lazy(() => import('@/pages/blog/CompleteVerificationGuidePost'));
+const DataSourceCredibilityPost = lazy(() => import('@/pages/blog/DataSourceCredibilityPost'));
+const DeviceSafetyGuidePost = lazy(() => import('@/pages/blog/DeviceSafetyGuidePost'));
+const EnterpriseSecurityPost = lazy(() => import('@/pages/blog/EnterpriseSecurityPost'));
+const MobileAppFeaturesPost = lazy(() => import('@/pages/blog/MobileAppFeaturesPost'));
+const PhoneVerificationGuide = lazy(() => import('@/pages/blog/PhoneVerificationGuide'));
+const RealUserStoriesPost = lazy(() => import('@/pages/blog/RealUserStoriesPost'));
+const ScammerTacticsExposed = lazy(() => import('@/pages/blog/ScammerTacticsExposed'));
+const TheUltimateMarketplaceBuyersGuide = lazy(() => import('@/pages/blog/TheUltimateMarketplaceBuyersGuide'));
+const VerificationMethodologyPost = lazy(() => import('@/pages/blog/VerificationMethodologyPost'));
+const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
+const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
 
 // Comparison Pages
 const VSCarfaxPage = lazy(() => import('@/pages/vs/VSCarfaxPage'));
@@ -622,6 +633,19 @@ export const AppRoutes = () => {
         <Route path="/blog/mobile-app-vs-website-verification" element={<MobileAppVsWebsiteVerification />} />
         <Route path="/blog/how-to-use-imei-checker-app" element={<HowToUseIMEICheckerApp />} />
         
+        {/* Missing blog post routes - ADDED */}
+        <Route path="/blog/business-guide-preventing-stolen-goods" element={<BusinessGuidePreventingStolenGoods />} />
+        <Route path="/blog/complete-verification-guide" element={<CompleteVerificationGuidePost />} />
+        <Route path="/blog/data-source-credibility" element={<DataSourceCredibilityPost />} />
+        <Route path="/blog/device-safety-guide" element={<DeviceSafetyGuidePost />} />
+        <Route path="/blog/enterprise-security" element={<EnterpriseSecurityPost />} />
+        <Route path="/blog/mobile-app-features" element={<MobileAppFeaturesPost />} />
+        <Route path="/blog/phone-verification-guide" element={<PhoneVerificationGuide />} />
+        <Route path="/blog/real-user-stories" element={<RealUserStoriesPost />} />
+        <Route path="/blog/scammer-tactics-exposed" element={<ScammerTacticsExposed />} />
+        <Route path="/blog/ultimate-marketplace-buyers-guide" element={<TheUltimateMarketplaceBuyersGuide />} />
+        <Route path="/blog/verification-methodology" element={<VerificationMethodologyPost />} />
+        
         {/* App Routes - Platform */}
         <Route path="/app/ios" element={<AppIOSPage />} />
         <Route path="/app/android" element={<AppAndroidPage />} />
@@ -733,6 +757,7 @@ export const AppRoutes = () => {
         <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
+        <Route path="/vin-checker" element={<VINCheckerPage />} />
         <Route path="/vin-verification" element={<Navigate to="/verify" replace />} />
         
         {/* Soft 404 Fixes - Actual pages with meta refresh */}
