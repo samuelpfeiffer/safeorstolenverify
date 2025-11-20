@@ -82,6 +82,7 @@ const UltimateMarketplaceBuyersGuidePage = lazy(() => import('@/pages/redirects/
 const CompleteIMEIGuidePage = lazy(() => import('@/pages/redirects/CompleteIMEIGuidePage'));
 const FirearmsMarketplacePage = lazy(() => import('@/pages/redirects/FirearmsMarketplacePage'));
 const CompleteVerificationGuidePage = lazy(() => import('@/pages/redirects/CompleteVerificationGuidePage'));
+const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
 
 // Timestamped Blog Post Redirects (404 fixes)
 const RedFlagsBuyingUsedElectronicsPage = lazy(() => import('@/pages/redirects/RedFlagsBuyingUsedElectronicsPage'));
@@ -908,6 +909,31 @@ export const AppRoutes = () => {
         <Route path="/orlando-stolen-item-check" element={<OrlandoVerificationPage />} />
         <Route path="/st-louis-stolen-item-check" element={<StLouisVerificationPage />} />
         <Route path="/pittsburgh-stolen-item-check" element={<PittsburghVerificationPage />} />
+
+        {/* Short State Name Redirects (for SEO) */}
+        <Route path="/california" element={<Navigate to="/california-stolen-item-check" replace />} />
+        <Route path="/texas" element={<Navigate to="/texas-stolen-item-check" replace />} />
+        <Route path="/florida" element={<Navigate to="/florida-stolen-item-check" replace />} />
+        <Route path="/new-york" element={<Navigate to="/new-york-stolen-item-check" replace />} />
+        <Route path="/illinois" element={<Navigate to="/illinois-stolen-item-check" replace />} />
+        
+        {/* City/Service Pattern Routes (e.g., /chicago/imei-check) */}
+        <Route path="/:city/imei-check" element={<CityVerificationPage />} />
+        <Route path="/:city/vin-check" element={<CityVerificationPage />} />
+        <Route path="/:city/stolen-item-check" element={<CityVerificationPage />} />
+        
+        {/* Alternate City Pattern (e.g., /city/chicago-il/imei-check) */}
+        <Route path="/city/:cityState/imei-check" element={<CityVerificationPage />} />
+        <Route path="/city/:cityState/vin-check" element={<CityVerificationPage />} />
+        <Route path="/city/:cityState/stolen-item-check" element={<CityVerificationPage />} />
+        
+        {/* Device-Specific Check Pages */}
+        <Route path="/check-android" element={<Navigate to="/check-phone?device=android" replace />} />
+        <Route path="/check-samsung" element={<Navigate to="/check-phone?device=samsung" replace />} />
+        <Route path="/check-iphone" element={<Navigate to="/check-phone?device=iphone" replace />} />
+        <Route path="/check-firearm" element={<Navigate to="/verify?type=firearm" replace />} />
+        <Route path="/check-gaming-console" element={<Navigate to="/verify?type=gaming-console" replace />} />
+        <Route path="/check-imei-before-buying" element={<Navigate to="/check-phone" replace />} />
 
         {/* 404 - Must be last */}
         <Route path="*" element={<NotFound />} />

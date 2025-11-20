@@ -1,17 +1,39 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { OptimizedContent } from '@/components/seo/OptimizedContent';
 import { Button } from '@/components/ui/button';
 import { Shield, Search, CheckCircle, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 export default function CityVerificationPage() {
-  const { city, service } = useParams<{ city: string; service: string }>();
+  const { city, service, cityState } = useParams<{ city?: string; service?: string; cityState?: string }>();
+  const location = useLocation();
   
-  const cityName = city?.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') || '';
+  // Extract service from URL path if not in params
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const serviceFromPath = pathParts[pathParts.length - 1]; // Last part is the service
+  
+  // Determine city name from params
+  let cityName = '';
+  if (city) {
+    cityName = city.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  } else if (cityState) {
+    // Handle "chicago-il" format - extract just city name
+    const cityPart = cityState.split('-')[0];
+    cityName = cityPart.charAt(0).toUpperCase() + cityPart.slice(1);
+  }
+  
+  // Determine which service based on params or path
+  const currentServiceKey = service || serviceFromPath || 'stolen-item-check';
   
   const serviceInfo = {
     'stolen-item-checker': {
       title: 'Stolen Item Checker',
+      description: 'Verify if phones, cars, electronics, and more are stolen before you buy',
+      icon: Shield,
+    },
+    'stolen-item-check': {
+      title: 'Stolen Item Check',
       description: 'Verify if phones, cars, electronics, and more are stolen before you buy',
       icon: Shield,
     },
@@ -25,19 +47,31 @@ export default function CityVerificationPage() {
       description: 'Verify vehicle history and check if a car is stolen by VIN',
       icon: CheckCircle,
     },
+    'vin-check': {
+      title: 'VIN Check',
+      description: 'Verify vehicle history and check if a car is stolen by VIN',
+      icon: CheckCircle,
+    },
   };
   
-  const currentService = serviceInfo[service as keyof typeof serviceInfo] || serviceInfo['stolen-item-checker'];
+  const currentService = serviceInfo[currentServiceKey as keyof typeof serviceInfo] || serviceInfo['stolen-item-check'];
   const Icon = currentService.icon;
 
   return (
     <>
+      <PageSEO
+        title={`${cityName} ${currentService.title} | SafeOrStolen`}
+        description={`${currentService.description} in ${cityName}. Fast, accurate verification with 2 FREE searches. Trusted by thousands in ${cityName}.`}
+        keywords={`${cityName} ${currentServiceKey}, ${cityName} stolen verification, verify stolen items ${cityName}, ${currentService.title.toLowerCase()}`}
+        canonical={location.pathname}
+      />
+      
       <OptimizedContent
         pageType="verification"
         customTitle={`${cityName} ${currentService.title} | SafeOrStolen`}
-        customDescription={`${currentService.description} in ${cityName}. Fast, accurate verification with 4 FREE searches. Trusted by thousands in ${cityName}.`}
+        customDescription={`${currentService.description} in ${cityName}. Fast, accurate verification with 2 FREE searches. Trusted by thousands in ${cityName}.`}
         keywords={[
-          `${cityName} ${service}`,
+          `${cityName} ${currentServiceKey}`,
           `${cityName} stolen verification`,
           `verify stolen items ${cityName}`,
           currentService.title.toLowerCase(),
@@ -139,6 +173,29 @@ export default function CityVerificationPage() {
               Trusted by {cityName} Residents & Businesses
             </h2>
             
+            {/* Noscript content for search engines */}
+            <noscript>
+              <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+                <h3>{cityName} {currentService.title} - Free Verification Service</h3>
+                <p>SafeOrStolen provides free stolen item verification services to residents and businesses in {cityName}. Our comprehensive database checks help protect you from purchasing stolen property.</p>
+                
+                <h4>What We Verify in {cityName}</h4>
+                <ul>
+                  <li>Mobile phones (IMEI check) - iPhone, Samsung, Android devices</li>
+                  <li>Vehicles (VIN verification) - Cars, trucks, motorcycles</li>
+                  <li>Electronics - Laptops, tablets, gaming consoles</li>
+                  <li>Tools and equipment - Serial number verification</li>
+                  <li>Bicycles and e-bikes - Frame number check</li>
+                </ul>
+                
+                <h4>Popular Marketplaces in {cityName}</h4>
+                <p>Protect yourself when buying from Facebook Marketplace, Craigslist, OfferUp, LetGo, and local {cityName} sellers. Always verify before you buy.</p>
+                
+                <p><strong>Get Started:</strong> Visit <a href="/verify">/verify</a> to check any item for free.</p>
+              </div>
+            </noscript>
+
+            
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 border rounded-lg">
                 <h3 className="font-semibold mb-2">For Buyers in {cityName}</h3>
@@ -166,7 +223,7 @@ export default function CityVerificationPage() {
               Start Verifying Items in {cityName} Today
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              4 FREE searches. No credit card required. Download our mobile app or verify online.
+              2 FREE searches. No credit card required. Download our mobile app or verify online.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">
