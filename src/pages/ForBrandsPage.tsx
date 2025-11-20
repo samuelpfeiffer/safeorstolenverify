@@ -17,6 +17,64 @@ import {
 const ForBrandsPage: React.FC = () => {
   return (
     <>
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>Enterprise Verification API for Marketplaces and Businesses</h1>
+          <p>
+            SafeOrStolen offers enterprise-grade verification technology for marketplaces, pawn shops, 
+            auction houses, and e-commerce platforms. Integrate our stolen goods verification API to 
+            protect your business, reduce liability, and build customer trust.
+          </p>
+          
+          <h2>Why Businesses Choose SafeOrStolen</h2>
+          <ul>
+            <li><strong>Reduce Liability:</strong> Prevent unknowingly handling stolen merchandise</li>
+            <li><strong>Build Trust:</strong> Show customers you verify item legitimacy</li>
+            <li><strong>Increase Revenue:</strong> Attract quality sellers with verified platform</li>
+            <li><strong>Scale Operations:</strong> Handle thousands of verifications per day</li>
+            <li><strong>Fast Integration:</strong> RESTful API integrates in hours, not weeks</li>
+          </ul>
+          
+          <h2>Enterprise Features</h2>
+          <p>
+            Real-time verification API with 99.2% accuracy, custom white-label solutions, bulk verification 
+            tools, dedicated account management, priority support 24/7, and flexible pricing for high volume.
+          </p>
+          
+          <h2>Industries We Serve</h2>
+          <ul>
+            <li><strong>Online Marketplaces:</strong> eBay, Facebook Marketplace, OfferUp competitors</li>
+            <li><strong>Pawn Shops:</strong> Point-of-sale verification for inventory</li>
+            <li><strong>Auction Houses:</strong> Pre-auction item legitimacy checks</li>
+            <li><strong>E-commerce Platforms:</strong> Third-party seller verification</li>
+            <li><strong>Rental Companies:</strong> Equipment and vehicle verification</li>
+            <li><strong>Insurance Companies:</strong> Claims verification and fraud prevention</li>
+          </ul>
+          
+          <h2>API Capabilities</h2>
+          <p>
+            Verify IMEI, VIN, serial numbers with single API call. Check multiple databases simultaneously. 
+            Receive real-time results with confidence scores. Access historical verification data. Generate 
+            detailed reports and certificates. Customize verification thresholds per your business needs.
+          </p>
+          
+          <h2>Success Stories</h2>
+          <p>
+            Our enterprise clients have reduced stolen goods incidents by 94%, prevented $2.3M in potential 
+            losses, and increased customer confidence scores significantly. Integration typically takes less 
+            than 2 hours with our comprehensive documentation and developer support.
+          </p>
+          
+          <h2>Schedule Enterprise Demo</h2>
+          <p>
+            See our API in action with a personalized demo. Learn how SafeOrStolen integrates with your 
+            existing systems, review pricing options, and get custom ROI analysis for your business. 
+            Contact our enterprise sales team: support@safeorstolen.com or call (206) 249-2203.
+          </p>
+        </div>
+      </noscript>
+
       <PageSEO
         title="Enterprise Verification API for Marketplaces - Safe or Stolen"
         description="Integrate our verification technology into your platform to protect users and reduce fraud. Enterprise-grade API for marketplace verification."

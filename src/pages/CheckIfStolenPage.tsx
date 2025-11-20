@@ -36,6 +36,56 @@ export default function CheckIfStolenPage() {
 
   return (
     <>
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>Check If Something Is Stolen - Free IMEI, VIN, Serial Number Lookup</h1>
+          <p>
+            Check if any item is stolen before you buy with our free stolen goods database checker. 
+            Instant verification of phones (IMEI), cars (VIN), electronics (serial numbers), bikes, 
+            and more. Protect yourself from buying stolen goods with 50M+ database records.
+          </p>
+          
+          <h2>How to Check If Something Is Stolen</h2>
+          <ol>
+            <li><strong>Enter Item Information:</strong> IMEI number, VIN number, or serial number</li>
+            <li><strong>Database Search:</strong> We check 50M+ global stolen goods records</li>
+            <li><strong>Get Instant Results:</strong> Know if it's safe or stolen in 30 seconds</li>
+            <li><strong>Make Informed Decision:</strong> Buy safely with confidence</li>
+          </ol>
+          
+          <h2>What You Can Check</h2>
+          <p><strong>Phones & Tablets:</strong> Check IMEI numbers for iPhones, Samsung Galaxy, Android devices, 
+          iPads against carrier blacklists and stolen phone databases.</p>
+          
+          <p><strong>Vehicles:</strong> Verify VIN numbers for cars, trucks, SUVs, motorcycles, ATVs, boats, 
+          jet skis, and RVs against NICB and law enforcement databases.</p>
+          
+          <p><strong>Electronics & More:</strong> Check serial numbers for laptops, computers, cameras, TVs, 
+          gaming consoles, tools, machinery, and bicycles.</p>
+          
+          <h2>Database Coverage</h2>
+          <p>
+            Our system checks multiple stolen property sources: NICB Database for vehicle theft records, 
+            GSMA IMEI for global phone database, BikeIndex for bicycle registry, and law enforcement 
+            police reports. Comprehensive coverage across all item categories.
+          </p>
+          
+          <h2>Why Check Before Buying?</h2>
+          <p>
+            Always verify items before purchase to avoid financial loss and legal issues. Buying stolen 
+            goods is illegal and can result in item confiscation, loss of money, and legal consequences. 
+            Our free checker helps protect buyers, sellers, and businesses from stolen goods fraud.
+          </p>
+          
+          <h2>2 Free Searches Included</h2>
+          <p>
+            Start with 2 free searches. No credit card required. Check any IMEI, VIN, or serial number 
+            instantly. Upgrade for unlimited searches and advanced verification features.
+          </p>
+        </div>
+      </noscript>
+
       <PageSEO
         title="Check If Stolen - Free IMEI, VIN, Serial Number Database Lookup"
         description="Check if an item is stolen before buying. Free instant verification of phones, cars, electronics using IMEI, VIN, serial numbers. 50M+ records checked."
