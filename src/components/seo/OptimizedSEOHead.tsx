@@ -26,15 +26,6 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   noIndex = false
 }) => {
   const location = useSafeLocation();
-  const searchParams = location ? new URLSearchParams(location.search) : new URLSearchParams();
-  
-  // Check if URL has search parameters that should not be indexed (only if location exists)
-  const hasBlockedParams = location ? (
-    searchParams.has('search') || 
-    searchParams.has('q') || 
-    searchParams.has('query') ||
-    searchParams.has('serialNumber')
-  ) : false;
   
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   
@@ -80,8 +71,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       {/* Canonical URL - CRITICAL: Always render for SEO */}
       <link rel="canonical" href={fullCanonicalUrl} />
       
-      {/* Robots Meta Tag - noindex if search params or explicit noIndex */}
-      <meta name="robots" content={hasBlockedParams || noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
+      {/* Robots Meta Tag - only noindex if explicitly requested */}
+      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
       
       {/* Enhanced SEO Meta Tags */}
       <meta name="author" content="SafeOrStolen.com" />
