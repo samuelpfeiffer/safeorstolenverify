@@ -84,8 +84,9 @@ const RedFlagsBuyingUsedElectronicsPage = lazy(() => import('@/pages/redirects/R
 const CompleteGuideVerifyIMEIPage = lazy(() => import('@/pages/redirects/CompleteGuideVerifyIMEIPage'));
 const VINVerificationCompleteGuidePage = lazy(() => import('@/pages/redirects/VINVerificationCompleteGuidePage'));
 
-// Actual Install App Page (not redirect)
+// Actual Install & Download App Pages (not redirects)
 const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
+const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
 
 // Research Stolen Items Redirect Pages
 const ResearchStolenItemsPage = lazy(() => import('@/pages/redirects/ResearchStolenItemsPage'));
@@ -777,11 +778,12 @@ export const AppRoutes = () => {
         <Route path="/vin" element={<VINPage />} />
         <Route path="/stolen-property-lookup" element={<StolenPropertyLookupPage />} />
 
-        {/* App Marketing Redirects */}
+        {/* App Marketing & Install Routes */}
         <Route path="/imei-checker-app" element={<IMEICheckerAppPage />} />
         <Route path="/mobile-verification" element={<MobileVerificationPage />} />
         <Route path="/get-app" element={<GetAppPage />} />
         <Route path="/install-app" element={<InstallAppPage />} />
+        <Route path="/download" element={<DownloadAppPage />} />
         <Route path="/verification-app" element={<VerificationAppPage />} />
 
         {/* Blog Post Redirects */}
@@ -789,7 +791,7 @@ export const AppRoutes = () => {
         <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteIMEIGuidePage />} />
         <Route path="/blog/safeorstolen-firearms-marketplace-verification" element={<FirearmsMarketplacePage />} />
         <Route path="/blog/complete-verification-guide-stolen-goods-check" element={<CompleteVerificationGuidePage />} />
-        
+
         {/* Timestamped Blog Post Redirects (404 fixes) */}
         <Route path="/blog/red-flags-buying-used-electronics-1759314016.095080" element={<RedFlagsBuyingUsedElectronicsPage />} />
         <Route path="/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080" element={<CompleteGuideVerifyIMEIPage />} />
