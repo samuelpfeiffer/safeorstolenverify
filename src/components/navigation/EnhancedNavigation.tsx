@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
-import { Menu, X, Shield, ChevronDown, Search, Globe, FileText, Users, Settings, Zap } from 'lucide-react';
+import { Menu, X, Shield, ChevronDown, Search, Globe, FileText, Users, Settings, Zap, Download, Smartphone } from 'lucide-react';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { trackSEOInteraction } from '@/utils/seo/analyticsOptimizer';
 import {
@@ -318,6 +318,16 @@ export const EnhancedNavigation: React.FC = () => {
             >
               Pricing
             </Link>
+
+            {/* Download App Link - NEW */}
+            <Link
+              to="/install-app"
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-sm"
+              onClick={() => handleNavigationClick({ label: 'Download App', href: '/install-app' })}
+            >
+              <Smartphone className="w-4 h-4" />
+              Download App
+            </Link>
           </div>
 
           {/* User Menu and CTA */}
@@ -434,6 +444,21 @@ export const EnhancedNavigation: React.FC = () => {
               {/* Pricing */}
               <div>
                 <MobileMenuItem item={{ label: 'Pricing', href: '/pricing', description: 'Simple, transparent pricing' }} />
+              </div>
+
+              {/* Download App - NEW */}
+              <div className="pt-2 border-t border-gray-200 dark:border-gray-800">
+                <Link
+                  to="/install-app"
+                  className="flex items-center justify-center gap-2 mx-3 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-sm"
+                  onClick={() => {
+                    handleNavigationClick({ label: 'Download App', href: '/install-app' });
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  <Smartphone className="w-5 h-5" />
+                  Download Mobile App
+                </Link>
               </div>
             </div>
           </div>
