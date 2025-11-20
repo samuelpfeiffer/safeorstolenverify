@@ -468,7 +468,7 @@ const IMEICheckerContentPage = () => {
                         <li>✓ Call *#06# to verify IMEI matches what seller provided</li>
                         <li>✓ Make a test call to verify microphone/speaker work</li>
                         <li>✓ Test WiFi and Bluetooth connectivity</li>
-                        <li>✓ Check battery health (Settings > Battery on iOS/Android)</li>
+                        <li>✓ Check battery health (Settings &gt; Battery on iOS/Android)</li>
                         <li>✓ Verify Face ID/fingerprint sensor works</li>
                         <li>✓ Ensure phone is NOT iCloud/Google locked</li>
                       </ul>

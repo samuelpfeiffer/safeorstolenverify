@@ -9,6 +9,11 @@ import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
 import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
+import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
+import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
+import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWorksSection';
+import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
+import { HomepageFAQ } from '@/components/home/HomepageFAQ';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -78,9 +83,14 @@ const Index = () => {
       <div className="min-h-screen">
         <Hero />
         <PressMediaSection />
+        <WhyCheckBeforeBuying />
+        <WhatYouCanVerify />
+        <HowSafeOrStolenWorksSection />
         <MarketplaceSafetySection />
+        <WhyChooseSafeOrStolen />
         <HowItWorks />
         <CompactTestimonials />
+        <HomepageFAQ />
         <CompactMobileAppCTA />
         <TrustSignals />
       </div>
