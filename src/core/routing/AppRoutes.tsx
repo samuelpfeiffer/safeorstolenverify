@@ -70,6 +70,10 @@ const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
 const BulkPage = lazy(() => import('@/pages/redirects/BulkPage'));
 const VINPage = lazy(() => import('@/pages/redirects/VINPage'));
 const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenPropertyLookupPage'));
+const StolenItemCheckerPage = lazy(() => import('@/pages/redirects/StolenItemCheckerPage'));
+const VINVerificationPageRedirect = lazy(() => import('@/pages/redirects/VINVerificationPage'));
+const VerificationHubPageRedirect = lazy(() => import('@/pages/redirects/VerificationHubPage'));
+const VerifyNotStolenPage = lazy(() => import('@/pages/redirects/VerifyNotStolenPage'));
 const IMEICheckerAppPage = lazy(() => import('@/pages/redirects/IMEICheckerAppPage'));
 const MobileVerificationPage = lazy(() => import('@/pages/redirects/MobileVerificationPage'));
 const GetAppPage = lazy(() => import('@/pages/redirects/GetAppPage'));
@@ -526,7 +530,8 @@ export const AppRoutes = () => {
         <Route path="/avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
         
         {/* Redirects for alternate URLs */}
-        <Route path="/verification-hub" element={<Navigate to="/verify" replace />} />
+        <Route path="/verification-hub" element={<VerificationHubPageRedirect />} />
+        <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
         <Route path="/ultimate-guide-not-buying-stolen-goods" element={<Navigate to="/buyer-guide" replace />} />
         <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/comprehensive-guide" replace />} />
         <Route path="/our-story" element={<Navigate to="/about" replace />} />
@@ -762,7 +767,7 @@ export const AppRoutes = () => {
         <Route path="/check-imei" element={<Navigate to="/verify" replace />} />
         <Route path="/check-vin" element={<Navigate to="/verify" replace />} />
         <Route path="/check-serial" element={<Navigate to="/verify" replace />} />
-        <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
+        <Route path="/stolen-item-checker" element={<StolenItemCheckerPage />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
         
         {/* NEW SEO Content Pages - Emergency Content Injection Phase 1 */}
@@ -771,7 +776,7 @@ export const AppRoutes = () => {
         <Route path="/serial-number-checker" element={<SerialNumberCheckerPage />} />
         <Route path="/marketplace-safety" element={<MarketplaceSafetyPage />} />
         
-        <Route path="/vin-verification" element={<Navigate to="/verify" replace />} />
+        <Route path="/vin-verification" element={<VINVerificationPageRedirect />} />
         
         {/* Soft 404 Fixes - Actual pages with meta refresh */}
         <Route path="/bulk" element={<BulkPage />} />
