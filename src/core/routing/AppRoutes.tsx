@@ -59,7 +59,8 @@ const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/R
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
 const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
-// Redirect Pages (with HTML meta refresh for crawlers) - IMEICheckerPage moved to dedicated SEO pages section
+// Redirect Pages (with HTML meta refresh for crawlers)
+const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
 const BulkPage = lazy(() => import('@/pages/redirects/BulkPage'));
 const VINPage = lazy(() => import('@/pages/redirects/VINPage'));
 const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenPropertyLookupPage'));
