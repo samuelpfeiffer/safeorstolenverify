@@ -62,6 +62,49 @@ const ContactPage = () => {
 
   return (
     <div className="bg-background text-white min-h-screen">
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>Contact SafeOrStolen - Customer Support & Business Inquiries</h1>
+          <p>
+            Get in touch with SafeOrStolen for customer support, technical assistance, business partnerships, 
+            media inquiries, or general questions about our stolen item verification service.
+          </p>
+          
+          <h2>Contact Information</h2>
+          <p><strong>Phone:</strong> (206) 249-2203</p>
+          <p><strong>Email:</strong> support@safeorstolen.com</p>
+          <p><strong>Location:</strong> Phoenix, Arizona</p>
+          
+          <h2>Customer Support</h2>
+          <p>
+            Need help with IMEI check, VIN verification, or serial number lookup? Our support team responds 
+            within 24 hours. We help with account issues, subscription management, verification problems, 
+            and technical questions.
+          </p>
+          
+          <h2>Business & Partnership Inquiries</h2>
+          <p>
+            Interested in our enterprise API? Want to integrate SafeOrStolen verification into your marketplace 
+            or platform? Contact us for partnership opportunities, bulk verification solutions, and white-label 
+            options.
+          </p>
+          
+          <h2>Media & Press</h2>
+          <p>
+            Media professionals can reach us for press kits, company information, expert quotes, and interviews 
+            about stolen goods prevention, marketplace safety, and verification technology.
+          </p>
+          
+          <h2>Report Stolen Item</h2>
+          <p>
+            To report a stolen item to our database, please email support@safeorstolen.com with item details, 
+            police report number, and serial number/IMEI/VIN. We verify all submissions before adding to our 
+            stolen goods database.
+          </p>
+        </div>
+      </noscript>
+
       <PageSEO
         title="Contact Safe or Stolen - Support, Partnerships & Media Inquiries"
         description="Contact Safe or Stolen team for customer support, business partnerships, media inquiries. Phone: (206) 249-2203. Email: support@safeorstolen.com"

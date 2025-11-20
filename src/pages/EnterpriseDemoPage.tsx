@@ -72,6 +72,64 @@ const EnterpriseDemoPage: React.FC = () => {
 
   return (
     <>
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>Enterprise Demo - SafeOrStolen API for Businesses</h1>
+          <p>
+            Schedule a personalized demo of SafeOrStolen's enterprise verification API. See how our 
+            stolen goods verification technology helps businesses reduce liability, prevent fraud, 
+            and build customer trust with real-time IMEI, VIN, and serial number verification.
+          </p>
+          
+          <h2>Why Businesses Choose SafeOrStolen</h2>
+          <p>
+            <strong>Reduce Liability:</strong> Protect your business from unknowingly handling stolen 
+            goods with real-time verification of every item.<br/>
+            
+            <strong>Increase Revenue:</strong> Build customer trust and attract quality inventory with 
+            verified legitimacy. Show customers you verify items.<br/>
+            
+            <strong>Seamless Integration:</strong> RESTful API integrates with your existing workflow 
+            in hours, not weeks. Full documentation included.<br/>
+            
+            <strong>Scale Operations:</strong> Handle thousands of verifications per day with enterprise-grade 
+            infrastructure and 99.2% accuracy rate.
+          </p>
+          
+          <h2>Enterprise Results</h2>
+          <p>
+            Our enterprise clients have prevented $2.3M in potential losses, reduced stolen goods incidents 
+            by 94%, integrated the API in under 2 hours, and receive 24/7 support. Join hundreds of businesses 
+            using SafeOrStolen for marketplace verification, pawn shop point-of-sale checks, auction house 
+            pre-auction verification, and e-commerce platform seller verification.
+          </p>
+          
+          <h2>What You'll See in the Demo</h2>
+          <ul>
+            <li><strong>Live API Demo:</strong> Real-time verification of serial numbers, IMEIs, and VINs</li>
+            <li><strong>Integration Examples:</strong> See how it integrates with popular platforms and systems</li>
+            <li><strong>ROI Analysis:</strong> Custom pricing and return on investment for your business</li>
+            <li><strong>Custom Solutions:</strong> White-label options, bulk verification, dedicated support</li>
+          </ul>
+          
+          <h2>Industries We Serve</h2>
+          <p>
+            Online marketplaces (eBay, Facebook Marketplace competitors), pawn shops and secondhand retailers, 
+            auction houses and estate sales, e-commerce platforms with third-party sellers, equipment rental 
+            companies, and insurance companies for claims verification.
+          </p>
+          
+          <h2>Schedule Your Demo</h2>
+          <p>
+            Contact us to schedule a personalized enterprise demo:<br/>
+            Email: support@safeorstolen.com<br/>
+            Phone: (206) 249-2203<br/>
+            Response time: Same business day
+          </p>
+        </div>
+      </noscript>
+
       <PageSEO
         title="Enterprise Demo - See SafeOrStolen API in Action | Schedule Free Demo"
         description="Schedule a personalized demo of SafeOrStolen's enterprise verification API. See how we help businesses reduce liability and build trust with real-time stolen goods verification."

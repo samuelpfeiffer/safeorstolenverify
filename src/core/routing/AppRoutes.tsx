@@ -21,6 +21,7 @@ const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
+const DisclaimerPage = lazy(() => import('@/pages/DisclaimerPage'));
 const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
 const RedirectTestPage = lazy(() => import('@/pages/RedirectTestPage'));
 
@@ -482,6 +483,7 @@ export const AppRoutes = () => {
         <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
+        <Route path="/disclaimer" element={<DisclaimerPage />} />
         <Route path="/transparency" element={<TransparencyPage />} />
         <Route path="/service-limitations" element={<ServiceLimitations />} />
         

@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { 
   Code, 
   Smartphone, 
@@ -52,8 +53,69 @@ const TechCofounderPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-sos text-white pt-20">
-      <div className="container mx-auto container-padding py-12">
+    <>
+      <PageSEO
+        title="Find Your Tech Cofounder - FasterCapital Technical Partnership Program"
+        description="Get experienced technical cofounders and development teams through FasterCapital. Full-stack development, AI integration, mobile apps, and enterprise security for startups."
+        keywords="tech cofounder, technical cofounder, startup CTO, development team, FasterCapital program, startup technology partner"
+        canonical="/fastercapital/tech-cofounder"
+      />
+
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>Find Your Tech Cofounder - FasterCapital Program</h1>
+          <p>
+            FasterCapital provides experienced technical cofounders and development teams to bring your startup 
+            idea to life. Get a CTO, developers, designers, and QA engineers as equity partners in your business.
+          </p>
+          
+          <h2>What You Get</h2>
+          <ul>
+            <li><strong>Technical Leadership:</strong> Experienced CTOs who understand startup challenges</li>
+            <li><strong>Full Development Team:</strong> Designers, developers, QA engineers</li>
+            <li><strong>Equity Partnership:</strong> True cofounders who share in your success</li>
+            <li><strong>Modern Technology:</strong> React, Node.js, Python, mobile apps, AI/ML, blockchain</li>
+          </ul>
+          
+          <h2>Services Included</h2>
+          <p>
+            Full-stack web development, native iOS and Android mobile apps, AI and machine learning integration, 
+            cloud infrastructure setup, enterprise-grade security and compliance, DevOps and CI/CD pipelines.
+          </p>
+          
+          <h2>Requirements</h2>
+          <p>
+            Clear business idea and market opportunity, committed to building a technology startup, open to 
+            technical cofounder partnership, scalable business model with growth potential.
+          </p>
+          
+          <h2>Technology Stack</h2>
+          <p>
+            React & Next.js for frontend, Node.js & Express for backend, Python & Django for data science, 
+            mobile development for iOS/Android, cloud infrastructure on AWS/Azure/GCP, AI/ML integration, 
+            blockchain technology, DevOps & CI/CD automation.
+          </p>
+          
+          <h2>How It Works</h2>
+          <ol>
+            <li>Submit your startup idea and business plan</li>
+            <li>Review and approval by FasterCapital team</li>
+            <li>Match with technical cofounder and development team</li>
+            <li>Negotiate equity and partnership terms</li>
+            <li>Begin development with your new tech team</li>
+          </ol>
+          
+          <h2>Success Rate</h2>
+          <p>
+            FasterCapital has helped hundreds of startups find technical cofounders and build successful 
+            products. Teams typically integrate within 2 weeks and begin active development immediately.
+          </p>
+        </div>
+      </noscript>
+
+      <div className="min-h-screen bg-sos text-white pt-20">
+        <div className="container mx-auto container-padding py-12">
         {/* Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-6 bg-sos-lime/10 text-sos-lime border-sos-lime/20 inline-flex items-center gap-2">
@@ -175,7 +237,8 @@ const TechCofounderPage = () => {
           </Button>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
