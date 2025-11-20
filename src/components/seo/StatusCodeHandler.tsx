@@ -54,8 +54,8 @@ export const StatusCodeHandler: React.FC<StatusCodeHandlerProps> = ({
         "index, follow, max-snippet:160, max-image-preview:large"
       } />
       
-      {/* Set canonical if provided and status is 200 */}
-      {canonical && statusCode === 200 && (
+      {/* Canonical URL - CRITICAL: Always render for SEO regardless of status */}
+      {canonical && (
         <link rel="canonical" href={canonical} />
       )}
       
