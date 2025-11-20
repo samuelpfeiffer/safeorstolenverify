@@ -98,7 +98,6 @@ const RealTimeVerificationPage = () => {
         description="Verify IMEI, serial or VIN instantly with our live verification engine."
         canonical="/real-time-verification"
         keywords="real-time verification, IMEI check, VIN check, serial check, verify item, safe or stolen"
-        noIndex={true}
       />
       <div className="min-h-screen bg-sos text-white pt-20">
       <div className="container mx-auto container-padding py-12">
