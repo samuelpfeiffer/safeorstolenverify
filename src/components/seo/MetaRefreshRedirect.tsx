@@ -22,7 +22,7 @@ export const MetaRefreshRedirect: React.FC<MetaRefreshRedirectProps> = ({
     <Helmet>
       <meta httpEquiv="refresh" content={`${delay};url=${to}`} />
       <link rel="canonical" href={`https://safeorstolen.com${to}`} />
-      <meta name="robots" content="noindex, follow" />
+      {/* REMOVED noindex - redirect pages should be indexable with their keywords */}
     </Helmet>
   );
 };
