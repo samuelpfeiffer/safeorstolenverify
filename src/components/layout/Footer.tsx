@@ -20,6 +20,7 @@ export const Footer: React.FC = () => {
         { name: 'IMEI Checker', href: '/imei-checker' },
         { name: 'VIN Checker', href: '/vin-checker' },
         { name: 'Serial Number Checker', href: '/serial-number-checker' },
+        { name: 'Download Mobile App', href: '/install-app' },
         { name: 'Verification Hub', href: '/verify' },
         { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'How It Works', href: '/how-it-works' },
