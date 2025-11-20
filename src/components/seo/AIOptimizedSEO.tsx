@@ -102,8 +102,8 @@ export const AIOptimizedSEO: React.FC<AIOptimizedSEOProps> = ({
         <meta key={index} name={tag.name} content={tag.content} />
       ))}
       
-      {/* Canonical URL */}
-      {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
+      {/* Canonical URL - CRITICAL: Always render for SEO */}
+      <link rel="canonical" href={fullCanonicalUrl} />
       
       {/* Technical SEO */}
       <meta name="theme-color" content="#FF6B35" />
