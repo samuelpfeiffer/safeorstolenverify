@@ -1,15 +1,25 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Smartphone, Shield, Zap } from 'lucide-react';
 
 /**
  * Dedicated landing page: /download
- *
- * IMPORTANT: No automatic redirect.
- * Google needs real, unique content here to avoid Soft 404.
+ * Full content page (no redirect) to prevent Soft 404
  */
 const DownloadAppPage = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeOrStolen",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "iOS, Android, Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Download SafeOrStolen app to instantly check if phones, vehicles, and electronics are lost, stolen, or safe to buy. Works on iOS, Android, and as a PWA."
+  };
+
   return (
     <>
       <Helmet>
@@ -19,7 +29,28 @@ const DownloadAppPage = () => {
           content="Download the SafeOrStolen app to instantly check if phones, vehicles, and electronics are lost, stolen, or safe to buy. Works on iOS, Android, and as a PWA."
         />
         <link rel="canonical" href="https://safeorstolen.com/download" />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
+
+      <noscript>
+        <div style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+          <h1>Download SafeOrStolen – Stolen Item Checker App</h1>
+          <p>Install SafeOrStolen on your phone before you meet a stranger, hand over cash, or ship an item. Instantly check serial numbers, IMEIs, and VINs to see if something is lost, stolen, or safe to handle.</p>
+          
+          <h2>Why Download SafeOrStolen?</h2>
+          <ul>
+            <li><strong>Protect Your Money</strong> – Avoid buying stolen phones, vehicles, or electronics that can be seized without refund.</li>
+            <li><strong>Fast 3-Second Checks</strong> – Enter or scan an IMEI, VIN, or serial number and get instant results.</li>
+            <li><strong>Works On Any Device</strong> – Use the web app or install as a mobile app on iOS, Android, and desktop.</li>
+          </ul>
+          
+          <h2>Get the App</h2>
+          <p><a href="/mobile-app">Go to Mobile App Install Page</a></p>
+          <p><a href="/app/download">View full SafeOrStolen app download guide</a></p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -48,8 +79,7 @@ const DownloadAppPage = () => {
               <Zap className="h-8 w-8 text-primary mb-3" />
               <h2 className="text-lg font-semibold text-foreground mb-2">Fast 3‑Second Checks</h2>
               <p className="text-sm text-muted-foreground">
-                Enter or scan an IMEI, VIN, or serial number and get a clear "Safe", "At Risk", or "Stolen" style
-                result in seconds.
+                Enter or scan an IMEI, VIN, or serial number and get a clear &quot;Safe&quot;, &quot;At Risk&quot;, or &quot;Stolen&quot; result in seconds.
               </p>
             </div>
 
