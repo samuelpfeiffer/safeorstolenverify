@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { 
   TrendingUp, 
   DollarSign, 
@@ -34,7 +35,14 @@ const FasterCapitalRaiseCapitalPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-sos text-white pt-20">
+    <>
+      <PageSEO
+        title="Raise Capital with FasterCapital - SafeOrStolen Partnership"
+        description="SafeOrStolen partners with FasterCapital to help startups raise capital. Connect with 155K+ angel investors and 50K+ VCs through our trusted partnership."
+        keywords="raise capital, startup funding, angel investors, venture capital, FasterCapital, investment funding"
+        canonical="/fastercapital/raise-capital"
+      />
+      <div className="min-h-screen bg-sos text-white pt-20">
       <div className="container mx-auto container-padding py-12">
         {/* Header */}
         <div className="text-center mb-16">
@@ -140,6 +148,7 @@ const FasterCapitalRaiseCapitalPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
