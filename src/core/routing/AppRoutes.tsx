@@ -52,6 +52,12 @@ const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 const WebCrawlerPage = lazy(() => import('@/pages/WebCrawlerPage'));
 
+// Dedicated SEO Content Pages (NEW - Emergency Content Injection)
+const IMEICheckerContentPage = lazy(() => import('@/pages/IMEICheckerContentPage'));
+const VINCheckerContentPage = lazy(() => import('@/pages/VINCheckerContentPage'));
+const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
+const MarketplaceSafetyPage = lazy(() => import('@/pages/MarketplaceSafetyPage'));
+
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
@@ -757,8 +763,13 @@ export const AppRoutes = () => {
         <Route path="/check-serial" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
-        <Route path="/imei-checker" element={<IMEICheckerPage />} />
-        <Route path="/vin-checker" element={<VINCheckerPage />} />
+        
+        {/* NEW SEO Content Pages - Emergency Content Injection Phase 1 */}
+        <Route path="/imei-checker" element={<IMEICheckerContentPage />} />
+        <Route path="/vin-checker" element={<VINCheckerContentPage />} />
+        <Route path="/serial-number-checker" element={<SerialNumberCheckerPage />} />
+        <Route path="/marketplace-safety" element={<MarketplaceSafetyPage />} />
+        
         <Route path="/vin-verification" element={<Navigate to="/verify" replace />} />
         
         {/* Soft 404 Fixes - Actual pages with meta refresh */}

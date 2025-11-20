@@ -17,9 +17,9 @@ export const Footer: React.FC = () => {
       title: 'Platform',
       links: [
         { name: 'Stolen Item Checker', href: '/verify' },
-        { name: 'Serial Number Checker', href: '/verify' },
-        { name: 'IMEI Check', href: '/verify' },
-        { name: 'VIN Verification', href: '/verify' },
+        { name: 'IMEI Checker', href: '/imei-checker' },
+        { name: 'VIN Checker', href: '/vin-checker' },
+        { name: 'Serial Number Checker', href: '/serial-number-checker' },
         { name: 'Verification Hub', href: '/verify' },
         { name: 'Ultimate Guide', href: '/ultimate-guide' },
         { name: 'How It Works', href: '/how-it-works' },
@@ -52,6 +52,7 @@ export const Footer: React.FC = () => {
     {
       title: 'Safety Guides',
       links: [
+        { name: 'Marketplace Safety Guide', href: '/marketplace-safety' },
         { name: 'How to Check if Item Stolen', href: '/how-to-check-if-item-stolen' },
         { name: 'Avoid Stolen Goods', href: '/avoid-stolen-goods' },
         { name: 'Ultimate Guide Not Buying Stolen', href: '/ultimate-guide-not-buying-stolen-goods' },
