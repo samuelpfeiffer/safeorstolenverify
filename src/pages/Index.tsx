@@ -46,6 +46,7 @@ const Index = () => {
         "@type": "Organization",
         "name": "SafeOrStolen"
       },
+      "serviceType": "Stolen Item Verification Service",
       "areaServed": "Worldwide",
       "availableChannel": {
         "@type": "ServiceChannel",
