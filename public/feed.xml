@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SafeOrStolen - News & Updates</title>
+    <title>SafeOrStolen - News &amp; Updates</title>
     <link>https://safeorstolen.com</link>
     <description>Latest news, updates, and tips on verifying stolen items, protecting yourself from fraud, and buying second-hand items safely.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Nov 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://safeorstolen.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <copyright>Copyright 2025 SafeOrStolen.com</copyright>
+    <copyright>Copyright 2024 SafeOrStolen.com</copyright>
     <managingEditor>info@safeorstolen.com (SafeOrStolen Team)</managingEditor>
     <webMaster>webmaster@safeorstolen.com (SafeOrStolen Technical Team)</webMaster>
     <image>
@@ -20,38 +20,34 @@
       <title>Welcome to SafeOrStolen - Your Stolen Item Verification Platform</title>
       <link>https://safeorstolen.com</link>
       <description>SafeOrStolen.com is now live! Verify IMEI numbers, VIN numbers, and serial numbers to ensure your second-hand purchases are safe and not stolen.</description>
-      <pubDate>Sun, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
       <guid>https://safeorstolen.com/news/launch</guid>
       <category>Announcements</category>
     </item>
-
-    <!-- IMEI checker removed - page redirects to /verify -->
-
-    <!-- VIN verification removed - page redirects to /verify -->
 
     <item>
       <title>How to Buy Used Electronics Safely</title>
       <link>https://safeorstolen.com/how-it-works</link>
       <description>Learn how to protect yourself when buying used phones, laptops, tablets, and other electronics. Complete guide to verification and safe transactions.</description>
-      <pubDate>Sun, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
       <guid>https://safeorstolen.com/news/safe-buying-guide</guid>
       <category>Guides</category>
     </item>
 
     <item>
       <title>Marketplace Sellers: How to Build Trust</title>
-      <link>https://safeorstolen.com/for-sellers</link>
-      <description>If you're selling used items online, providing verification builds buyer confidence. Learn how SafeOrStolen helps sellers close more deals.</description>
-      <pubDate>Sun, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <link>https://safeorstolen.com/for-businesses</link>
+      <description>If you are selling used items online, providing verification builds buyer confidence. Learn how SafeOrStolen helps sellers close more deals.</description>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
       <guid>https://safeorstolen.com/news/sellers-guide</guid>
       <category>Guides</category>
     </item>
 
     <item>
       <title>Enterprise Solutions for Marketplaces</title>
-      <link>https://safeorstolen.com/for-brands</link>
+      <link>https://safeorstolen.com/for-businesses</link>
       <description>SafeOrStolen now offers API integration for online marketplaces, pawn shops, and retailers. Protect your platform and users from stolen goods.</description>
-      <pubDate>Sun, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
       <guid>https://safeorstolen.com/news/enterprise</guid>
       <category>Business</category>
     </item>
@@ -60,20 +56,16 @@
       <title>Facebook Marketplace Safety Tips</title>
       <link>https://safeorstolen.com/blog</link>
       <description>Essential safety tips for buying and selling on Facebook Marketplace. How to verify items and avoid scams.</description>
-      <pubDate>Sun, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
       <guid>https://safeorstolen.com/news/facebook-marketplace</guid>
       <category>Safety Tips</category>
     </item>
 
-    <!-- Understanding IMEI removed - references redirect page -->
-
-    <!-- VIN basics removed - references redirect page -->
-
     <item>
-      <title>Mobile App Coming Soon</title>
+      <title>Mobile App Now Available</title>
       <link>https://safeorstolen.com/mobile-app</link>
-      <description>The SafeOrStolen mobile app is coming soon to iOS and Android. Scan barcodes, verify items instantly, and shop with confidence on the go.</description>
-      <pubDate>Sun, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <description>The SafeOrStolen mobile app is now available as a PWA. Scan barcodes, verify items instantly, and shop with confidence on the go.</description>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 GMT</pubDate>
       <guid>https://safeorstolen.com/news/mobile-app</guid>
       <category>Announcements</category>
     </item>

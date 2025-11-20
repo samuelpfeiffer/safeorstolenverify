@@ -37,10 +37,10 @@
     <lastmod>2025-11-17</lastmod>
   </sitemap>
   
-  <!-- State-Specific Lookups Sitemap - NEW -->
+  <!-- State-Specific Lookups Sitemap - FIXED -->
   <sitemap>
     <loc>https://safeorstolen.com/sitemap-states.xml</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2024-11-20</lastmod>
   </sitemap>
   
 </sitemapindex>
