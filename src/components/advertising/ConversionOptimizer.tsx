@@ -34,8 +34,8 @@ export const ConversionOptimizer: React.FC = () => {
       '/': 'awareness',
       '/problem': 'problem_aware',
       '/how-it-works': 'solution_aware',
-      '/check-phone': 'product_aware',
-      '/check-car': 'product_aware',
+      '/check-phone': 'service_aware',
+      '/check-car': 'service_aware',
       '/pricing': 'consideration',
       '/auth': 'conversion',
       '/dashboard': 'activation'

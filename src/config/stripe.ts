@@ -9,7 +9,7 @@ export const STRIPE_CONFIG = {
   // Live publishable key - safe for client-side use
   publishableKey: 'pk_live_51Rzb0CGxnZLw8J7OddndcfrCnEyqoABYqg9NAGMzRGh2q6oX17CS3vxOfk82cxdAjMjOvANUh7bd45XoKHLAinAv00jJMxWBYb',
   
-  // Price IDs for products
+  // Price IDs for verification services
   prices: {
     singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 per verification
     legacyPrice: 'price_1SDRrMGxnZLw8J7ObJsUlp6k', // $0.50 (archived)
