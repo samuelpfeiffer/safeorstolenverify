@@ -77,8 +77,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta name="description" content={optimizedDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       
-      {/* Canonical URL - Always render (critical for SEO) */}
-      {!hasBlockedParams && <link rel="canonical" href={fullCanonicalUrl} />}
+      {/* Canonical URL - CRITICAL: Always render for SEO */}
+      <link rel="canonical" href={fullCanonicalUrl} />
       
       {/* Robots Meta Tag - noindex if search params or explicit noIndex */}
       <meta name="robots" content={hasBlockedParams || noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
