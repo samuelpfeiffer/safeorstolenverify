@@ -16,7 +16,7 @@ import { SOSFooter } from '@/components/layout/SOSFooter';
 import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
-import { SearchParamBlocker } from '@/components/seo/SearchParamBlocker';
+
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
@@ -63,7 +63,7 @@ const AuthAwareContent: React.FC = () => {
         <RedirectHandler />
         <SchemaValidationMonitor />
         <CriticalResourceLoader />
-        <SearchParamBlocker />
+        
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <TopNavigation />
           <main className="flex-1 pt-20">

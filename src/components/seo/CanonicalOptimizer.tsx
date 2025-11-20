@@ -95,11 +95,6 @@ export const CanonicalOptimizer: React.FC<CanonicalOptimizerProps> = ({
       
       {/* Prevent duplicate content issues */}
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-      
-      {/* Handle pagination if needed */}
-      {location.search.includes('page=') && (
-        <meta name="robots" content="noindex, follow" />
-      )}
     </Helmet>
   );
 };
