@@ -63,6 +63,7 @@ const MarketplaceSafetyPage = lazy(() => import('@/pages/MarketplaceSafetyPage')
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
 const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
+const FasterCapitalTechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounderPage'));
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
 const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
@@ -184,6 +185,10 @@ const RealUserStoriesPost = lazy(() => import('@/pages/blog/RealUserStoriesPost'
 const ScammerTacticsExposed = lazy(() => import('@/pages/blog/ScammerTacticsExposed'));
 const TheUltimateMarketplaceBuyersGuide = lazy(() => import('@/pages/blog/TheUltimateMarketplaceBuyersGuide'));
 const VerificationMethodologyPost = lazy(() => import('@/pages/blog/VerificationMethodologyPost'));
+const IndustryInsights2024 = lazy(() => import('@/pages/blog/IndustryInsights2024'));
+const VerificationDataPrivacy = lazy(() => import('@/pages/blog/VerificationDataPrivacy'));
+const SerialNumbersStolenGoods101 = lazy(() => import('@/pages/blog/SerialNumbersStolenGoods101'));
+const AIVerificationTechnology = lazy(() => import('@/pages/blog/AIVerificationTechnology'));
 const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
 
@@ -430,6 +435,7 @@ const AIExecutivePage = lazy(() => import('@/pages/admin/AIExecutivePage'));
 const ServiceLimitations = lazy(() => import('@/pages/ServiceLimitations'));
 const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
 const DatabasePage = lazy(() => import('@/pages/DatabasePage'));
+const StolenItemsDatabasePage = lazy(() => import('@/pages/StolenItemsDatabasePage'));
 
 // User Features
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
@@ -496,11 +502,13 @@ export const AppRoutes = () => {
         {/* Resources & Information */}
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/database" element={<DatabasePage />} />
+        <Route path="/stolen-items-database" element={<StolenItemsDatabasePage />} />
         <Route path="/statistics/stolen-goods" element={<StolenGoodsStatistics2025 />} />
         <Route path="/seo-health" element={<SEOHealthPage />} />
         
         {/* FasterCapital Integration */}
         <Route path="/fastercapital/raise-capital" element={<FasterCapitalRaiseCapitalPage />} />
+        <Route path="/fastercapital/tech-cofounder" element={<FasterCapitalTechCofounderPage />} />
         
         {/* Comparison Pages */}
         <Route path="/vs-carfax" element={<VSCarfaxPage />} />
@@ -663,6 +671,10 @@ export const AppRoutes = () => {
         <Route path="/blog/scammer-tactics-exposed" element={<ScammerTacticsExposed />} />
         <Route path="/blog/ultimate-marketplace-buyers-guide" element={<TheUltimateMarketplaceBuyersGuide />} />
         <Route path="/blog/verification-methodology" element={<VerificationMethodologyPost />} />
+        <Route path="/blog/industry-insights-2024" element={<IndustryInsights2024 />} />
+        <Route path="/blog/verification-data-privacy" element={<VerificationDataPrivacy />} />
+        <Route path="/blog/serial-numbers-stolen-goods-101" element={<SerialNumbersStolenGoods101 />} />
+        <Route path="/blog/ai-verification-technology" element={<AIVerificationTechnology />} />
         
         {/* App Routes - Platform */}
         <Route path="/app/ios" element={<AppIOSPage />} />
