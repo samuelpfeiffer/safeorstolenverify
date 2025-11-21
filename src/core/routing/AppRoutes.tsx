@@ -433,6 +433,8 @@ const DatabasePage = lazy(() => import('@/pages/DatabasePage'));
 
 // User Features
 const SearchHistoryPage = lazy(() => import('@/pages/SearchHistoryPage'));
+const PurchaseHistoryPage = lazy(() => import('@/pages/PurchaseHistoryPage'));
+const SecuritySettingsPage = lazy(() => import('@/pages/SecuritySettingsPage'));
 const ReceiptsPage = lazy(() => import('@/pages/ReceiptsPage'));
 const ActivityTimelinePage = lazy(() => import('@/pages/ActivityTimelinePage'));
 const VerificationResultPage = lazy(() => import('@/pages/VerificationResultPage'));
@@ -756,6 +758,9 @@ export const AppRoutes = () => {
 
         {/* User Features */}
         <Route path="/search-history" element={<SearchHistoryPage />} />
+        <Route path="/purchase-history" element={<PurchaseHistoryPage />} />
+        <Route path="/security-settings" element={<SecuritySettingsPage />} />
+        <Route path="/settings" element={<SecuritySettingsPage />} />
         <Route path="/receipts" element={<ReceiptsPage />} />
         <Route path="/activity" element={<ActivityTimelinePage />} />
         <Route path="/verification/:id" element={<VerificationResultPage />} />
