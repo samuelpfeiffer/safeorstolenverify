@@ -16,6 +16,7 @@ const MobileVerificationPage = () => {
         description="Verify items instantly with our mobile verification app. Check IMEI, VIN, and serial numbers anywhere with our free mobile app."
         keywords="mobile verification app, mobile stolen checker, verify on mobile, mobile item verification"
         canonical="/mobile-app"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

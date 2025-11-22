@@ -16,6 +16,7 @@ const ProtectYourselfBuyingUsedElectronics = () => {
         description="Learn how to protect yourself when buying used electronics. Check serial numbers and verify electronics aren't stolen before you buy."
         keywords="protect buying used electronics, verify used electronics, check electronics serial number, buy used electronics safely"
         canonical="/serial-number-checker"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/serial-number-checker" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
