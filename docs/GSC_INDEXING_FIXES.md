@@ -160,9 +160,29 @@ Google must re-crawl each fixed page before the validation status changes from "
 
 **This is the most critical category** - Google saw the pages but rejected them.
 
-### 6. Alternate Page with Proper Canonical Tag - 84 pages ✅ WORKING AS INTENDED
-**Status:** These pages have proper canonical tags pointing to other URLs.
-**Action:** None - this is expected behavior for redirect pages and alternate versions.
+### 6. Alternate Page with Proper Canonical Tag - 84 pages ✅ EXPECTED BEHAVIOR
+
+**Status:** These pages have proper canonical tags pointing to their primary versions.
+
+**What this means:**
+- **Dynamic City Pages** (e.g., `/city/los-angeles-ca/vin-verification`) → canonical points to `/los-angeles-stolen-item-check`
+- **Service Variations** (e.g., `/city/new-york-ny/imei-check`) → canonical points to city's main verification page
+- **Comparison Pages** (e.g., `/vs-carfax`) → self-referential canonical (correct)
+- **Guide Pages** (e.g., `/guides/imei-blacklist-explained`) → self-referential canonical (correct)
+
+**Action Required:**
+1. **Verify in GSC** which specific 84 URLs are affected
+2. **Acceptable alternate canonicals:**
+   - Dynamic city templates → Static city pages ✅
+   - Old URL patterns → New URL patterns ✅
+   - Duplicate content → Primary version ✅
+
+3. **Fix ONLY if canonical is WRONG:**
+   - If a content page points to a different page when it shouldn't
+   - If the canonical URL doesn't exist (404)
+   - If circular canonicals exist
+
+**Expected GSC behavior:** Google will index the canonical URL (target), not the alternate page. This is working as designed for most of these 84 pages.
 
 ### 7. Page with Redirect - 21 pages ✅ WORKING AS INTENDED
 **Status:** These are intentional redirects with proper canonical tags.
@@ -185,6 +205,8 @@ Google must re-crawl each fixed page before the validation status changes from "
 4. Ensure each page has unique value proposition
 
 ## Immediate Action Plan for Site Owner
+
+**IMPORTANT CONTEXT:** The "Alternate page with proper canonical tag" status (84 pages) is mostly EXPECTED behavior. These are dynamic templates and variations that correctly point to their primary versions. This is good SEO practice, not an error.
 
 ### Week 1: Critical Fixes (HIGH PRIORITY 🔴)
 
