@@ -96,6 +96,7 @@ const BusinessGuidePreventingStolenGoods = () => {
         title="Business Guide: Preventing Stolen Goods Liability | Enterprise Solutions"
         description="Protect your business from $200K+ in stolen goods liability. Learn how pawn shops, resellers, and dealers use verification APIs to reduce risk and ensure compliance."
         keywords="business stolen goods prevention, pawn shop verification, reseller liability protection, enterprise verification API, stolen goods compliance, business risk management"
+        canonical="/blog/business-guide-preventing-stolen-goods"
         type="article"
         structuredData={{
           "@context": "https://schema.org",
