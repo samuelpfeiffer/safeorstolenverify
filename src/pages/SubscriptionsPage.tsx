@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { MetaRefreshRedirect } from '@/components/seo/MetaRefreshRedirect';
 
 /**
  * Redirects /subscriptions to /pricing with proper SEO handling
@@ -15,12 +16,21 @@ const SubscriptionsPage = () => {
   }, [navigate]);
   
   return (
-    <Helmet>
-      {/* Tell Google this page should not be indexed - canonical is /pricing */}
-      <meta name="robots" content="noindex, follow" />
-      {/* Canonical tag handled by PageSEO component to prevent duplicates */}
-      <title>Redirecting to Pricing...</title>
-    </Helmet>
+    <>
+      <PageSEO
+        title="Subscription Plans & Pricing | SafeOrStolen"
+        description="View SafeOrStolen subscription plans and pricing. Choose the best verification plan for your needs."
+        keywords="subscription plans, pricing, verification plans, stolen goods verification pricing"
+        canonical="/pricing"
+      />
+      <MetaRefreshRedirect to="/pricing" delay={0} />
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Subscription Plans</h1>
+          <p className="text-muted-foreground">Redirecting to pricing page...</p>
+        </div>
+      </div>
+    </>
   );
 };
 
