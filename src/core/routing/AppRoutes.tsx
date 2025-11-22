@@ -59,6 +59,11 @@ const VINCheckerContentPage = lazy(() => import('@/pages/VINCheckerContentPage')
 const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
 const MarketplaceSafetyPage = lazy(() => import('@/pages/MarketplaceSafetyPage'));
 
+// SEO Expansion Generic Template
+import type { SEOUrl } from '@/config/seo-expansion-urls';
+import { ITEM_VERIFICATION_PAGES, LONG_TAIL_PAGES, USE_CASE_PAGES } from '@/config/seo-expansion-urls';
+const SEOExpansionItemPage = lazy(() => import('@/pages/templates/SEOExpansionItemPage'));
+
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
@@ -941,13 +946,15 @@ export const AppRoutes = () => {
         <Route path="/illinois" element={<Navigate to="/illinois-stolen-item-check" replace />} />
         
         {/* City/Service Pattern Routes (e.g., /chicago/imei-check) */}
-        <Route path="/:city/imei-check" element={<CityVerificationPage />} />
-        <Route path="/:city/vin-check" element={<CityVerificationPage />} />
-        <Route path="/:city/stolen-item-check" element={<CityVerificationPage />} />
+        <Route path= "/:city/imei-check" element={<CityVerificationPage />} />
+        <Route path= "/:city/vin-check" element={<CityVerificationPage />} />
+        <Route path= "/:city/vin-verification" element={<CityVerificationPage />} />
+        <Route path= "/:city/stolen-item-check" element={<CityVerificationPage />} />
         
         {/* Alternate City Pattern (e.g., /city/chicago-il/imei-check) */}
         <Route path="/city/:cityState/imei-check" element={<CityVerificationPage />} />
         <Route path="/city/:cityState/vin-check" element={<CityVerificationPage />} />
+        <Route path="/city/:cityState/vin-verification" element={<CityVerificationPage />} />
         <Route path="/city/:cityState/stolen-item-check" element={<CityVerificationPage />} />
         
         {/* Device-Specific Check Pages */}
@@ -957,6 +964,11 @@ export const AppRoutes = () => {
         <Route path="/check-firearm" element={<Navigate to="/verify?type=firearm" replace />} />
         <Route path="/check-gaming-console" element={<Navigate to="/verify?type=gaming-console" replace />} />
         <Route path="/check-imei-before-buying" element={<Navigate to="/check-phone" replace />} />
+
+        {/* SEO Expansion Auto-Generated Pages */}
+        {([...ITEM_VERIFICATION_PAGES, ...LONG_TAIL_PAGES.filter(p => p.category !== 'comparison'), ...USE_CASE_PAGES] as SEOUrl[]).map(page => (
+          <Route key={page.path} path={page.path} element={<SEOExpansionItemPage seo={page} />} />
+        ))}
 
         {/* 404 - Must be last */}
         <Route path="*" element={<NotFound />} />
