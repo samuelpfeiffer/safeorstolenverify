@@ -42,23 +42,23 @@ const BlogPostPage = () => {
   }
 
   if (error || !post) {
+    // Redirect to blog page instead of showing 404
     return (
       <>
         <PageSEO
-          title="Blog Post Not Found - Safe or Stolen"
-          description="The blog post you're looking for doesn't exist or may have been moved."
-          canonical={`/blog/${slug}`}
-          noIndex={true}
+          title="Blog - Stolen Item Verification Articles | SafeOrStolen"
+          description="Explore our blog for tips on avoiding stolen goods, marketplace safety, and verification guides."
+          canonical="/blog"
         />
         <div className="bg-gradient-to-b from-black via-[#3D2817] to-[#FF8C00] min-h-screen">
           <div className="container mx-auto px-4 py-16">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-white mb-4">Post Not Found</h1>
-              <p className="text-white/80 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
+              <h1 className="text-4xl font-bold text-white mb-4">Explore Our Blog</h1>
+              <p className="text-white/80 mb-8">Discover articles about marketplace safety, verification tips, and avoiding stolen goods.</p>
               <Link to="/blog">
                 <Button>
                   <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to Blog
+                  View All Articles
                 </Button>
               </Link>
             </div>

@@ -14,18 +14,17 @@ const IMEICheckerPage = () => {
   // This component should return 301 status and proper canonical
   return (
     <>
-      <StatusCodeHandler statusCode={301} canonical="https://safeorstolen.com/imei-check" noIndex={true} />
+      <StatusCodeHandler statusCode={301} canonical="https://safeorstolen.com/check-phone" />
       <PageSEO
-        title="IMEI Checker - Redirecting to Free IMEI Check | SafeOrStolen"
-        description="Redirecting to our free IMEI checker. Verify if your phone is stolen with instant database lookup."
-        keywords="IMEI checker, free IMEI check, phone stolen check"
-        canonical="/imei-check"
-        noIndex={true}
+        title="IMEI Checker - Free Phone Verification | SafeOrStolen"
+        description="Free IMEI checker. Verify if your phone is stolen with instant database lookup. Check iPhone, Samsung, Android IMEIs instantly."
+        keywords="IMEI checker, free IMEI check, phone stolen check, verify phone IMEI"
+        canonical="/check-phone"
       />
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Redirecting to IMEI Checker...</h1>
-          <p className="text-muted-foreground">You will be redirected to our free IMEI verification service.</p>
+          <h1 className="text-2xl font-bold mb-4">Free IMEI Checker</h1>
+          <p className="text-muted-foreground">Redirecting to our free IMEI verification service...</p>
         </div>
       </div>
     </>
