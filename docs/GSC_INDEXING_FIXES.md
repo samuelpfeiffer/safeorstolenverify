@@ -1,6 +1,6 @@
 # Google Search Console Indexing Fixes
 **Date:** November 2025  
-**Status:** ALL CRITICAL ISSUES RESOLVED ✅
+**Status:** FIXES DEPLOYED - AWAITING GSC VALIDATION ⏳
 
 ## Summary of Fixes
 
@@ -66,27 +66,44 @@
 **File Modified:**
 - `src/components/seo/MetaRefreshRedirect.tsx`
 
+## GSC Validation Timeline
+
+**IMPORTANT:** The fixes are now deployed, but Google Search Console validation takes time:
+- **Duplicate without canonical (9 pages):** Fixed ✅ - Awaiting GSC re-crawl (1-2 weeks)
+- **Excluded by 'noindex' (1 page):** Fixed ✅ - Awaiting GSC re-crawl (1-2 weeks)
+
+Google must re-crawl each fixed page before the validation status changes from "Failed" to "Passed".
+
 ## Remaining GSC Issues (Require Manual Action)
 
 ### Server Error (5xx) - 1 page
-**Action Required:** Check server logs for specific URL causing 5xx error. This is likely a temporary issue or edge function error.
+**Action Required:** 
+1. Click into this issue in GSC to see the specific URL
+2. Check edge function logs for errors
+3. Check database connectivity
+4. Verify the URL is accessible in browser
+5. This is likely a temporary issue or edge function error
 
 ### Page with Redirect - 21 pages
-**Status:** This is EXPECTED behavior. These are intentional redirects with proper canonical tags.
+**Status:** ✅ EXPECTED behavior. These are intentional redirects with proper canonical tags.
 **Action:** Monitor in GSC. Google should index the canonical target URLs instead.
+**No action needed** - this is working as designed.
 
 ### Soft 404 - 3 pages
-**Status:** Pages now have substantial content and proper canonical tags.
-**Action:** Request re-indexing in GSC for:
-- `/download`
-- `/bulk` (redirects to `/verify`)
-- `/stolen-property-lookup` (redirects to `/verify`)
+**Action Required:**
+1. Click into this issue in GSC to identify the 3 specific URLs
+2. Verify each page has substantial content (500+ words)
+3. Ensure proper canonical tags exist
+4. Add more descriptive content if pages seem thin
+5. Request re-indexing in GSC after improvements
 
 ### Not Found (404) - 3 pages
-**Action Required:** Identify the 3 specific URLs from GSC and either:
-1. Create content pages if they're valuable URLs
-2. Add proper 301 redirects to relevant pages
-3. Let them 404 if they're invalid/spam URLs
+**Action Required:** 
+1. Click into this issue in GSC to identify the 3 specific URLs
+2. For each URL, decide:
+   - If valuable: Create content page or add 301 redirect
+   - If invalid/spam: Let it 404 (Google will eventually stop checking)
+3. Check if URLs are typos of existing pages
 
 ### Discovered - Currently Not Indexed - 63 pages
 **Status:** Google found these pages but hasn't indexed them yet.
