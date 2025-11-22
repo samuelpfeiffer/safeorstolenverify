@@ -50,7 +50,7 @@ const DataSourceCredibilityPost = () => {
         title="How Our Data Sources Ensure Verification Credibility | SafeOrStolen Blog"
         description="Learn about the trusted data sources behind SafeOrStolen's verification system. Discover how we ensure accuracy through partnerships with law enforcement, insurance companies, and manufacturers."
         keywords="data sources, verification credibility, stolen goods database, law enforcement partnerships, insurance data, carrier blacklists"
-        canonical="/blog/data-source-credibility-stolen-goods-verification"
+        canonical="/blog/data-source-credibility"
       />
       
       <div className="min-h-screen bg-background py-16">
