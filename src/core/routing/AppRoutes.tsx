@@ -28,6 +28,7 @@ const RedirectTestPage = lazy(() => import('@/pages/RedirectTestPage'));
 // Analytics & Reporting
 const Analytics = lazy(() => import('@/pages/Analytics'));
 const ReportStolen = lazy(() => import('@/pages/ReportStolen'));
+const TrafficStrategyPage = lazy(() => import('@/pages/TrafficStrategyPage'));
 
 // Blog
 const BlogPage = lazy(() => import('@/pages/BlogPage'));
@@ -508,6 +509,7 @@ export const AppRoutes = () => {
         {/* Analytics & Reporting */}
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/report-stolen" element={<ReportStolen />} />
+        <Route path="/traffic-strategy" element={<TrafficStrategyPage />} />
         
         {/* Resources & Information */}
         <Route path="/resource-center" element={<ResourceCenterPage />} />
