@@ -66,44 +66,107 @@
 **File Modified:**
 - `src/components/seo/MetaRefreshRedirect.tsx`
 
+## Current GSC Status Overview
+
+| Issue | Pages | Status | Action Required |
+|-------|-------|--------|-----------------|
+| **Duplicate without canonical** | 9 | Failed ⏳ | Fixed - awaiting re-crawl |
+| **Excluded by 'noindex'** | 1 | Not Started | Investigate specific URL |
+| **Alternate page with proper canonical** | 84 | Started ✅ | Working as intended |
+| **Page with redirect** | 21 | Started ✅ | Working as intended |
+| **Soft 404** | 3 | Started | Add more content |
+| **Not Found (404)** | 3 | Started | Fix or redirect |
+| **Discovered - not indexed** | 63 | Started | Improve content quality |
+| **Crawled - not indexed** | 31 | Started | Enhance page value |
+
 ## GSC Validation Timeline
 
 **IMPORTANT:** The fixes are now deployed, but Google Search Console validation takes time:
 - **Duplicate without canonical (9 pages):** Fixed ✅ - Awaiting GSC re-crawl (1-2 weeks)
-- **Excluded by 'noindex' (1 page):** Fixed ✅ - Awaiting GSC re-crawl (1-2 weeks)
+- **Excluded by 'noindex' (1 page):** Needs investigation - check GSC for specific URL
 
 Google must re-crawl each fixed page before the validation status changes from "Failed" to "Passed".
 
-## Remaining GSC Issues (Require Manual Action)
+## High Priority Issues to Address
 
-### Server Error (5xx) - 1 page
-**Action Required:** 
-1. Click into this issue in GSC to see the specific URL
-2. Check edge function logs for errors
-3. Check database connectivity
-4. Verify the URL is accessible in browser
-5. This is likely a temporary issue or edge function error
-
-### Page with Redirect - 21 pages
-**Status:** ✅ EXPECTED behavior. These are intentional redirects with proper canonical tags.
-**Action:** Monitor in GSC. Google should index the canonical target URLs instead.
-**No action needed** - this is working as designed.
-
-### Soft 404 - 3 pages
+### 1. Excluded by 'noindex' Tag - 1 page 🔴 HIGH PRIORITY
 **Action Required:**
-1. Click into this issue in GSC to identify the 3 specific URLs
-2. Verify each page has substantial content (500+ words)
-3. Ensure proper canonical tags exist
-4. Add more descriptive content if pages seem thin
-5. Request re-indexing in GSC after improvements
+1. Open GSC → Click "Excluded by 'noindex' tag" issue
+2. Identify the specific URL
+3. Check if it's a public page that should be indexed
+4. If yes: Remove `noIndex={true}` from the page component
+5. If no (admin/internal page): This is working as intended
 
-### Not Found (404) - 3 pages
+**Note:** Our audit shows all admin/internal pages correctly have `noIndex={true}`. If GSC shows a public page, this is a bug.
+
+### 2. Not Found (404) - 3 pages 🔴 HIGH PRIORITY
 **Action Required:** 
-1. Click into this issue in GSC to identify the 3 specific URLs
-2. For each URL, decide:
-   - If valuable: Create content page or add 301 redirect
-   - If invalid/spam: Let it 404 (Google will eventually stop checking)
-3. Check if URLs are typos of existing pages
+1. Open GSC → Click "Not found (404)" issue
+2. Identify the 3 specific URLs
+3. For each URL, decide:
+   - **If valuable:** Create content page or add 301 redirect
+   - **If typo:** Check if it's a typo of existing page, add redirect
+   - **If invalid/spam:** Let it 404 (Google will eventually stop checking)
+
+### 3. Soft 404 - 3 pages 🟡 MEDIUM PRIORITY
+**Action Required:**
+1. Open GSC → Click "Soft 404" issue
+2. Identify the 3 specific URLs
+3. For each page:
+   - Verify it has substantial content (800+ words minimum)
+   - Ensure proper canonical tags exist
+   - Add more unique, descriptive content
+   - Include relevant images with alt text
+   - Add internal links to other pages
+4. Request re-indexing in GSC after improvements
+
+**Common Soft 404 causes:**
+- Thin content (under 300 words)
+- Too many redirects in short succession
+- Mostly duplicate content from other pages
+- Page looks like an error page to Google
+
+### 4. Discovered - Currently Not Indexed - 63 pages 🟡 MEDIUM PRIORITY
+**Status:** Google found these pages but hasn't indexed them yet.
+**Why:** Likely perceived as low priority or thin content.
+
+**Action Required:**
+1. Open GSC → Click "Discovered - currently not indexed"
+2. Review the list of 63 URLs
+3. For high-priority pages:
+   - Add 500+ more words of unique content
+   - Improve internal linking from homepage/main pages
+   - Add structured data (FAQ, HowTo, etc.)
+   - Request indexing manually in GSC
+4. For low-priority pages:
+   - Let Google index naturally over time
+   - Focus on high-value pages first
+
+### 5. Crawled - Currently Not Indexed - 31 pages 🟡 MEDIUM PRIORITY
+**Status:** Google crawled but chose NOT to index.
+**Why:** Content perceived as thin, low-quality, or duplicate.
+
+**Action Required:**
+1. Open GSC → Click "Crawled - currently not indexed"
+2. Identify the 31 URLs
+3. For each page (prioritize by importance):
+   - Add 1000+ words of unique, valuable content
+   - Ensure unique title and meta description
+   - Add images with descriptive alt text
+   - Include FAQ section with structured data
+   - Add testimonials or unique data
+   - Improve internal linking structure
+   - Request re-indexing after improvements
+
+**This is the most critical category** - Google saw the pages but rejected them.
+
+### 6. Alternate Page with Proper Canonical Tag - 84 pages ✅ WORKING AS INTENDED
+**Status:** These pages have proper canonical tags pointing to other URLs.
+**Action:** None - this is expected behavior for redirect pages and alternate versions.
+
+### 7. Page with Redirect - 21 pages ✅ WORKING AS INTENDED
+**Status:** These are intentional redirects with proper canonical tags.
+**Action:** None - Google should index the canonical target URLs instead.
 
 ### Discovered - Currently Not Indexed - 63 pages
 **Status:** Google found these pages but hasn't indexed them yet.
@@ -121,23 +184,38 @@ Google must re-crawl each fixed page before the validation status changes from "
 3. Improve internal linking to these pages
 4. Ensure each page has unique value proposition
 
-## Next Steps for Site Owner
+## Immediate Action Plan for Site Owner
 
-### Immediate Actions (This Week):
+### Week 1: Critical Fixes (HIGH PRIORITY 🔴)
 
-1. **Submit for Re-Indexing in GSC:**
-   - All 9 fixed duplicate canonical URLs
-   - `/download`, `/install-app`, `/mobile-app` (high priority)
-   - `/how-it-works`, `/pricing`, `/verify` (core pages)
+1. **Identify Problem URLs in GSC:**
+   - Click "Excluded by 'noindex' tag" → Note the 1 specific URL
+   - Click "Not found (404)" → Note the 3 specific URLs
+   - Click "Soft 404" → Note the 3 specific URLs
+   - Click "Crawled - currently not indexed" → Note all 31 URLs
+   - Click "Discovered - currently not indexed" → Note all 63 URLs
 
-2. **Check Server Logs:**
-   - Identify the 1 page causing 5xx error
-   - Fix any edge function or database issues
+2. **Submit Fixed URLs for Re-Indexing:**
+   Open GSC → URL Inspection → Enter each fixed duplicate canonical URL:
+   - `/imei-checker-app`
+   - `/mobile-verification`
+   - `/verification-app`
+   - `/blog/ultimate-marketplace-buyers-guide`
+   - `/blog/complete-imei-guide-protect-yourself`
+   - `/blog/safeorstolen-firearms-marketplace-verification`
+   - `/blog/data-source-credibility-stolen-goods-verification`
+   - `/blog/protect-yourself-buying-used-electronics`
+   - `/subscriptions`
+   
+   Click "Request Indexing" for each URL.
 
-3. **Verify Fixes in GSC:**
-   ```
-   URL Inspection → Enter fixed URL → Request Indexing
-   ```
+3. **Fix 404 & Soft 404 Issues:**
+   Once you identify the specific URLs from GSC:
+   - Add content or redirects for 404 pages
+   - Enhance content for Soft 404 pages (minimum 800 words)
+   - Share the URLs with AI for implementation
+
+### Week 2-4: Content Enhancement (MEDIUM PRIORITY 🟡)
 
 ### Ongoing Actions (Next 30 Days):
 
