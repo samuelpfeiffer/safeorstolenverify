@@ -69,6 +69,7 @@ const TheUltimateMarketplaceBuyersGuide = () => {
         title="The Ultimate Marketplace Buyer's Guide: Never Get Scammed Again (2024)"
         description="Comprehensive guide to safely buying on Facebook Marketplace, eBay, Craigslist & more. Learn red flags, verification steps, and avoid the $2.8B in annual marketplace fraud."
         keywords="marketplace buyer guide, Facebook Marketplace safety, eBay scam prevention, Craigslist safety tips, avoid marketplace fraud, secondhand buying guide, stolen goods prevention"
+        canonical="/blog/ultimate-marketplace-buyers-guide"
         type="article"
         structuredData={{
           "@context": "https://schema.org",

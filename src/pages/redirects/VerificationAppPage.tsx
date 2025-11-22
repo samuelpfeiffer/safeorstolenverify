@@ -16,6 +16,7 @@ const VerificationAppPage = () => {
         description="Download the free verification app to check if items are stolen. Instant IMEI, VIN, and serial number verification on your phone."
         keywords="verification app, stolen item checker app, download verification app, free stolen checker"
         canonical="/mobile-app"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

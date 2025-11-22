@@ -16,6 +16,7 @@ const CompleteIMEIGuidePage = () => {
         description="Complete guide to IMEI numbers and how to protect yourself when buying used phones. Learn IMEI verification and stolen phone checks."
         keywords="complete imei guide, imei protection, imei verification guide, protect yourself imei"
         canonical="/blog"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/blog" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

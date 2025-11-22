@@ -839,7 +839,6 @@ export const AppRoutes = () => {
         <Route path="/verification-app" element={<VerificationAppPage />} />
 
         {/* Blog Post Redirects */}
-        <Route path="/blog/ultimate-marketplace-buyers-guide" element={<UltimateMarketplaceBuyersGuidePage />} />
         <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteIMEIGuidePage />} />
         <Route path="/blog/safeorstolen-firearms-marketplace-verification" element={<FirearmsMarketplacePage />} />
         <Route path="/blog/complete-verification-guide-stolen-goods-check" element={<CompleteVerificationGuidePage />} />

@@ -16,6 +16,7 @@ const UltimateMarketplaceBuyersGuidePage = () => {
         description="The ultimate guide to buying safely on online marketplaces. Learn how to verify items and avoid scams on eBay, Facebook Marketplace, and more."
         keywords="marketplace buyers guide, online marketplace safety, buy safely online, marketplace verification"
         canonical="/blog"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/blog" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
