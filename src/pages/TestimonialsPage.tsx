@@ -92,9 +92,10 @@ export default function TestimonialsPage() {
     <>
       <PageSEO
         title="Success Stories & Testimonials - SafeOrStolen"
-        description="Real stories from buyers, sellers, and businesses using SafeOrStolen to verify items and prevent fraud. Join 100,000+ users protecting themselves daily."
+        description="Real stories from buyers, sellers, and businesses using SafeOrStolen to verify items and prevent fraud. Join our launch community today."
         keywords="testimonials, reviews, success stories, user feedback, verification reviews"
         canonical="/testimonials"
+        noIndex={false}
       />
 
       <div className="min-h-screen bg-background">
@@ -115,11 +116,11 @@ export default function TestimonialsPage() {
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Trusted by 100,000+ Users Worldwide
+                Real Stories from Early Users
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Join thousands of buyers, sellers, and businesses who verify items every day on Facebook Marketplace, OfferUp, Craigslist, and eBay
+                Join our launch community - buyers, sellers, and businesses verifying items on Facebook Marketplace, OfferUp, Craigslist, and eBay
               </p>
             </div>
           </div>
