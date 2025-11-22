@@ -412,6 +412,9 @@ const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
 const BuyerGuidePage = lazy(() => import('@/pages/BuyerGuidePage'));
 const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage'));
 const AvoidStolenGoodsPage = lazy(() => import('@/pages/AvoidStolenGoodsPage'));
+const ResellerPage = lazy(() => import('@/pages/ResellerPage'));
+const PawnShopsPage = lazy(() => import('@/pages/PawnShopsPage'));
+const TrustVerificationPage = lazy(() => import('@/pages/TrustVerificationPage'));
 
 // Business/Features
 const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
@@ -548,7 +551,24 @@ export const AppRoutes = () => {
         <Route path="/buyer-guide" element={<BuyerGuidePage />} />
         <Route path="/comprehensive-guide" element={<ComprehensiveGuidePage />} />
         <Route path="/avoid-stolen-goods" element={<AvoidStolenGoodsPage />} />
+        <Route path="/resellers" element={<ResellerPage />} />
+        <Route path="/pawn-shops" element={<PawnShopsPage />} />
+        <Route path="/trust-verification" element={<TrustVerificationPage />} />
         
+        {/* Redirects for alternate URLs */}
+        <Route path="/verification-hub" element={<VerificationHubPageRedirect />} />
+        <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
+        <Route path="/how-do-i-check-if-stolen" element={<Navigate to="/how-to-check-if-item-stolen" replace />} />
+        <Route path="/stolen-merchandise-check" element={<Navigate to="/verify" replace />} />
+        <Route path="/android-app" element={<Navigate to="/app/android" replace />} />
+        <Route path="/ios-app" element={<Navigate to="/app/ios" replace />} />
+        <Route path="/avoid-buying-stolen-goods" element={<Navigate to="/avoid-stolen-goods" replace />} />
+        <Route path="/ultimate-guide-not-buying-stolen-goods" element={<Navigate to="/buyer-guide" replace />} />
+        <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/comprehensive-guide" replace />} />
+        <Route path="/our-story" element={<Navigate to="/about" replace />} />
+        <Route path="/enterprise-demo" element={<Navigate to="/contact" replace />} />
+        <Route path="/marketplace-integration" element={<Navigate to="/for-brands" replace />} />
+
         {/* Redirects for alternate URLs */}
         <Route path="/verification-hub" element={<VerificationHubPageRedirect />} />
         <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
