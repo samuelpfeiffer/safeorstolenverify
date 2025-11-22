@@ -17,6 +17,7 @@ const PawnshopVerificationPage = () => {
         description="Download free pawnshop verification app. Verify items at pawn shops before buying. Check if pawnshop items are stolen. Instant verification for safe pawn shop purchases."
         keywords="pawnshop verification app, pawn shop checker app, pawn shop stolen check, verify pawnshop items, pawn shop safety app"
         canonical="/app/pawnshop-verification"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

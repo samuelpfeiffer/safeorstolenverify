@@ -22,6 +22,7 @@ const SubscriptionsPage = () => {
         description="View SafeOrStolen subscription plans and pricing. Choose the best verification plan for your needs."
         keywords="subscription plans, pricing, verification plans, stolen goods verification pricing"
         canonical="/pricing"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/pricing" delay={0} />
       <div className="min-h-screen bg-background flex items-center justify-center">

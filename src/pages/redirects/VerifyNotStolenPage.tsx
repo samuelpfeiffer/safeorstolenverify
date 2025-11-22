@@ -22,6 +22,7 @@ const VerifyNotStolenPage = () => {
         description="Verify items are not stolen before purchasing. Free verification service to confirm phones, vehicles, electronics, and more are legitimate and safe to buy."
         keywords="verify not stolen, confirm not stolen, legitimate item check, safe to buy verification, theft verification"
         canonical="/verify-not-stolen"
+        noIndex={true}
       />
       
       {/* Noscript content for search engine bots */}

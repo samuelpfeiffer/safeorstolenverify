@@ -17,6 +17,7 @@ const OfferUpSafetyPage = () => {
         description="Download free OfferUp safety app. Verify OfferUp items before buying. Check if items are stolen. Instant verification for safe buying on OfferUp."
         keywords="offerup safety app, offerup verification app, offerup stolen check, verify offerup items, offerup buyer protection"
         canonical="/app/offerup-safety"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

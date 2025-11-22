@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MetaRefreshRedirect } from '@/components/seo/MetaRefreshRedirect';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 /**
  * Redirect page for /get-app → /mobile-app
@@ -10,6 +11,12 @@ const GetAppPage = () => {
   useEffect(() => { navigate('/mobile-app', { replace: true }); }, [navigate]);
   return (
     <>
+      <PageSEO
+        title="Get SafeOrStolen App | SafeOrStolen"
+        description="Download the SafeOrStolen mobile app."
+        canonical="/get-app"
+        noIndex={true}
+      />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">

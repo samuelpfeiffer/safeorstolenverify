@@ -22,6 +22,7 @@ const VINPage = () => {
         description="Free VIN checker to verify if a car or vehicle is stolen, salvaged, or has theft history. Check VIN numbers against databases before buying used vehicles."
         keywords="VIN check, free VIN lookup, vehicle history, stolen car check, VIN verification, car theft check"
         canonical="/vin"
+        noIndex={true}
       />
       
       {/* Noscript content for bots */}

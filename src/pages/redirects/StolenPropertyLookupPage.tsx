@@ -22,6 +22,7 @@ const StolenPropertyLookupPage = () => {
         description="Free stolen property lookup service. Search global databases for stolen phones, cars, bikes, electronics, and tools before buying secondhand items."
         keywords="stolen property lookup, stolen goods database, check stolen items, property theft search, stolen database"
         canonical="/stolen-property-lookup"
+        noIndex={true}
       />
       
       {/* Noscript content for bots */}

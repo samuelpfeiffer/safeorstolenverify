@@ -17,6 +17,7 @@ const AuctionVerificationPage = () => {
         description="Download free auction verification app. Verify items at auctions before bidding. Check if auction items are stolen. Instant verification for safe auction buying."
         keywords="auction verification app, auction buyer protection, auction stolen check, verify auction items, auction safety app"
         canonical="/app/auction-verification"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

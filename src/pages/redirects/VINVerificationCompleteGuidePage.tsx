@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MetaRefreshRedirect } from '@/components/seo/MetaRefreshRedirect';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 /**
  * Redirect page for timestamped blog URL
@@ -15,6 +16,12 @@ const VINVerificationCompleteGuidePage = () => {
 
   return (
     <>
+      <PageSEO
+        title="VIN Verification Complete Guide | SafeOrStolen"
+        description="Complete guide to VIN verification for used cars."
+        canonical="/blog/vin-verification-complete-guide-used-cars-1759314016.095080"
+        noIndex={true}
+      />
       <MetaRefreshRedirect to="/blog" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">

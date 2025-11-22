@@ -17,6 +17,7 @@ const CarfaxAlternativePage = () => {
         description="Free Carfax alternative app. Download SafeOrStolen for instant VIN verification, stolen vehicle checks, and vehicle history. No subscription needed - completely free."
         keywords="carfax alternative app, free carfax app, carfax app download, vehicle verification app, VIN checker app, stolen car check app, free vehicle history app"
         canonical="/app/carfax-alternative"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
