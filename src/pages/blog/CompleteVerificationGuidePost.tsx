@@ -125,6 +125,7 @@ const CompleteVerificationGuidePost = () => {
         title="Complete Guide to Stolen Item Verification | SafeOrStolen Blog"
         description="Learn how to verify any item before purchase with our comprehensive guide. Step-by-step instructions for checking IMEI, VIN, serial numbers and more."
         keywords="stolen item verification guide, how to check if stolen, IMEI verification, VIN check, serial number lookup, verification tutorial"
+        canonical="/blog/complete-verification-guide"
       />
       
       <div className="min-h-screen bg-background py-16">

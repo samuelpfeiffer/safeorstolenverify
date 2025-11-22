@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { VerifiedSiteBadge } from '@/components/trust/VerifiedSiteBadge';
 import { SecurityCertificates } from '@/components/trust/SecurityCertificates';
 import { TrustBadges } from '@/components/trust/TrustBadges';
@@ -46,23 +46,12 @@ const TrustVerificationPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Trust & Security Verification - Safe or Stolen | Certified Secure Platform</title>
-        <meta name="description" content="Verify our security certifications, compliance standards, and trust indicators. Safe or Stolen maintains enterprise-grade security with SOC 2, ISO 27001, GDPR, and PCI DSS compliance." />
-        <meta name="keywords" content="security verification, trust certification, SOC 2, ISO 27001, GDPR compliant, PCI DSS, secure platform, verified site, security audit, compliance certification" />
-        {/* Canonical tag handled by PageSEO component to prevent duplicates */}
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Trust & Security Verification - Safe or Stolen" />
-        <meta property="og:description" content="Enterprise-grade security with verified certifications and compliance standards." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://safeorstolen.com/trust-verification" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Trust & Security Verification - Safe or Stolen" />
-        <meta name="twitter:description" content="Enterprise-grade security with verified certifications and compliance standards." />
-      </Helmet>
+      <PageSEO
+        title="Trust & Security Verification - Safe or Stolen | Certified Secure Platform"
+        description="Verify our security certifications, compliance standards, and trust indicators. Safe or Stolen maintains enterprise-grade security with SOC 2, ISO 27001, GDPR, and PCI DSS compliance."
+        keywords="security verification, trust certification, SOC 2, ISO 27001, GDPR compliant, PCI DSS, secure platform, verified site, security audit, compliance certification"
+        canonical="/trust-verification"
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background">
         {/* Hero Section */}
