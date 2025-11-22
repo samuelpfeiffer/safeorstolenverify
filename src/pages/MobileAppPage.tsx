@@ -27,13 +27,6 @@ export default function MobileAppPage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "2847",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "author": {
       "@type": "Organization",
       "name": "SafeOrStolen",
@@ -74,10 +67,10 @@ export default function MobileAppPage() {
   ];
 
   const stats = [
-    { label: "Downloads", value: "100K+", icon: TrendingUp },
-    { label: "Verifications", value: "1M+", icon: Check },
-    { label: "Rating", value: "4.8★", icon: Star },
-    { label: "Countries", value: "150+", icon: Globe }
+    { label: "Launch Special", value: "$2.99", icon: TrendingUp },
+    { label: "Free Trial", value: "2 Checks", icon: Check },
+    { label: "Status", value: "Launching", icon: Star },
+    { label: "Coverage", value: "150+ DBs", icon: Globe }
   ];
 
   return (
@@ -299,29 +292,29 @@ export default function MobileAppPage() {
           </div>
         </section>
 
-        {/* Trust Badges */}
+        {/* Launch Announcement */}
         <section className="py-20 border-t border-border">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h3 className="text-2xl font-bold text-center text-foreground mb-12">
-                Trusted By Thousands Worldwide
+                Join the First Wave of Users
               </h3>
               <div className="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">100K+</div>
-                  <div className="text-sm text-muted-foreground">Active Users</div>
+                  <div className="text-4xl font-bold text-primary mb-2">Launching</div>
+                  <div className="text-sm text-muted-foreground">Available Now</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">1M+</div>
-                  <div className="text-sm text-muted-foreground">Items Verified</div>
+                  <div className="text-4xl font-bold text-primary mb-2">$2.99</div>
+                  <div className="text-sm text-muted-foreground">Launch Pricing</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">4.8★</div>
-                  <div className="text-sm text-muted-foreground">App Rating</div>
+                  <div className="text-4xl font-bold text-primary mb-2">2 Free</div>
+                  <div className="text-sm text-muted-foreground">Trial Checks</div>
                 </div>
                 <div>
                   <div className="text-4xl font-bold text-primary mb-2">150+</div>
-                  <div className="text-sm text-muted-foreground">Countries</div>
+                  <div className="text-sm text-muted-foreground">Databases</div>
                 </div>
               </div>
             </div>
