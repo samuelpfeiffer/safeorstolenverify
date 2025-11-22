@@ -84,6 +84,8 @@ const UltimateMarketplaceBuyersGuidePage = lazy(() => import('@/pages/redirects/
 const CompleteIMEIGuidePage = lazy(() => import('@/pages/redirects/CompleteIMEIGuidePage'));
 const FirearmsMarketplacePage = lazy(() => import('@/pages/redirects/FirearmsMarketplacePage'));
 const CompleteVerificationGuidePage = lazy(() => import('@/pages/redirects/CompleteVerificationGuidePage'));
+const DataSourceCredibilityPage = lazy(() => import('@/pages/redirects/DataSourceCredibilityPage'));
+const ProtectYourselfBuyingUsedElectronics = lazy(() => import('@/pages/blog/ProtectYourselfBuyingUsedElectronics'));
 const CityVerificationPage = lazy(() => import('@/pages/templates/CityVerificationPage'));
 
 // Timestamped Blog Post Redirects (404 fixes)
@@ -816,6 +818,8 @@ export const AppRoutes = () => {
         <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteIMEIGuidePage />} />
         <Route path="/blog/safeorstolen-firearms-marketplace-verification" element={<FirearmsMarketplacePage />} />
         <Route path="/blog/complete-verification-guide-stolen-goods-check" element={<CompleteVerificationGuidePage />} />
+        <Route path="/blog/data-source-credibility-stolen-goods-verification" element={<DataSourceCredibilityPage />} />
+        <Route path="/blog/protect-yourself-buying-used-electronics" element={<ProtectYourselfBuyingUsedElectronics />} />
 
         {/* Timestamped Blog Post Redirects (404 fixes) */}
         <Route path="/blog/red-flags-buying-used-electronics-1759314016.095080" element={<RedFlagsBuyingUsedElectronicsPage />} />
