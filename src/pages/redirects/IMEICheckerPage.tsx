@@ -22,6 +22,7 @@ const IMEICheckerPage = () => {
         description="Free IMEI checker to verify if a phone is stolen, blacklisted, or safe to buy. Check iPhone and Android devices against global databases instantly."
         keywords="IMEI checker, free IMEI check, phone stolen check, blacklist check, verify phone IMEI"
         canonical="/imei-checker"
+        noIndex={true}
       />
       
       {/* Noscript content for bots */}

@@ -17,6 +17,7 @@ const EbayVerificationPage = () => {
         description="Download free eBay verification app. Check if eBay items are stolen before buying. Protect yourself from buying stolen goods on eBay. Instant verification."
         keywords="ebay verification app, ebay buyer protection app, ebay stolen check, verify ebay items, ebay safety app, check ebay listings"
         canonical="/app/ebay-verification"
+        noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">

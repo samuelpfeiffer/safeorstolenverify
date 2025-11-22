@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MetaRefreshRedirect } from '@/components/seo/MetaRefreshRedirect';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 /**
  * Redirect page for timestamped blog URL
@@ -15,6 +16,12 @@ const CompleteGuideVerifyIMEIPage = () => {
 
   return (
     <>
+      <PageSEO
+        title="Complete Guide to Verify IMEI Numbers | SafeOrStolen"
+        description="Complete guide to verifying IMEI numbers for used phones."
+        canonical="/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080"
+        noIndex={true}
+      />
       <MetaRefreshRedirect to="/blog" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">

@@ -22,6 +22,7 @@ const StolenItemCheckerPage = () => {
         description="Free stolen item checker to verify phones, cars, bikes, electronics, tools, and jewelry before purchasing. Check against global theft databases instantly."
         keywords="stolen item checker, check if stolen, stolen goods database, verify stolen items, theft database search"
         canonical="/stolen-item-checker"
+        noIndex={true}
       />
       
       {/* Noscript content for search engine bots */}

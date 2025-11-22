@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MetaRefreshRedirect } from '@/components/seo/MetaRefreshRedirect';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 /**
  * Redirect page for /blog/complete-verification-guide-stolen-goods-check → /how-it-works
@@ -10,6 +11,12 @@ const CompleteVerificationGuidePage = () => {
   useEffect(() => { navigate('/how-it-works', { replace: true }); }, [navigate]);
   return (
     <>
+      <PageSEO
+        title="Complete Verification Guide | SafeOrStolen"
+        description="Complete verification guide for stolen goods check."
+        canonical="/blog/complete-verification-guide-stolen-goods-check"
+        noIndex={true}
+      />
       <MetaRefreshRedirect to="/how-it-works" delay={0} />
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">

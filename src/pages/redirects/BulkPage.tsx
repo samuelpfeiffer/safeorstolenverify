@@ -22,6 +22,7 @@ const BulkPage = () => {
         description="Bulk verification service for businesses, pawn shops, and resellers. Verify multiple IMEI, VIN, and serial numbers efficiently against stolen databases."
         keywords="bulk verification, bulk IMEI check, business verification service, pawn shop verification, reseller tools"
         canonical="/bulk"
+        noIndex={true}
       />
       
       {/* Noscript content for bots */}
