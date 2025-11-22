@@ -43,7 +43,7 @@ export default function GlobalMissionPage() {
         title="Our Global Mission - Reduce Crime Worldwide | SafeOrStolen"
         description="SafeOrStolen's mission: Build the world's most comprehensive stolen goods database with 50M+ items, partner with international law enforcement and insurance companies, and reduce crime globally by empowering every buyer and seller."
         keywords="global crime reduction, stolen goods database, international law enforcement partnership, fraud prevention, theft prevention worldwide, marketplace safety, global verification"
-        canonical="https://safeorstolen.com/global-mission"
+        canonical="/global-mission"
         structuredData={structuredData}
       />
       <AISearchOptimizer

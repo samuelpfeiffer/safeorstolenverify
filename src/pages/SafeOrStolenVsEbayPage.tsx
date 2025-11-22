@@ -75,7 +75,7 @@ export default function SafeOrStolenVsEbayPage() {
         title="SafeOrStolen vs eBay Authenticity Guarantee - Stolen Item Verification vs Product Authentication | 2025"
         description="SafeOrStolen verifies stolen items across ALL marketplaces with instant results. eBay Authenticity Guarantee only covers select luxury items. Compare features, speed, and coverage for safer secondhand shopping."
         keywords="SafeOrStolen vs eBay, eBay Authenticity Guarantee alternative, stolen item verification, eBay stolen check, IMEI verification, marketplace safety, secondhand verification, VIN check"
-        canonical="https://safeorstolen.com/safeorstolen-vs-ebay"
+        canonical="/safeorstolen-vs-ebay"
         structuredData={structuredData}
       />
       <AISearchOptimizer

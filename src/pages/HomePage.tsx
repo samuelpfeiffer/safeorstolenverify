@@ -52,7 +52,7 @@ const HomePage = () => {
     "featureList": ["IMEI stolen check", "VIN stolen verification", "Serial number stolen lookup", "Phone stolen check", "Car stolen verification", "Electronics stolen check"]
   }];
   return <>
-      <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
+      <StatusCodeHandler statusCode={200} />
       <GlobalAnalytics />
       <GoogleSearchConsoleSetup />
       <OptimizedTitles pageType="home" />

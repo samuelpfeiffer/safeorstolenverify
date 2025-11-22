@@ -29,7 +29,7 @@ export default function PawnshopBuyingTips() {
       <PageSEO
         title="Pawn Shop Buying Guide: How to Avoid Stolen Goods (2025)"
         description="Complete guide to buying safely at pawn shops. Learn how pawn shops work, your legal rights, how to verify items aren't stolen, and essential tips for smart pawn shop purchases."
-        canonical="https://safeorstolen.com/guides/pawnshop-buying-tips"
+        canonical="/guides/pawnshop-buying-tips"
         image="https://safeorstolen.com/og-pawnshop-guide.png"
         keywords="pawn shop buying guide, pawn shop stolen goods, buying at pawn shops, pawn shop verification, pawn shop safety"
         structuredData={articleSchema}

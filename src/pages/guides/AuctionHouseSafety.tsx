@@ -29,7 +29,7 @@ export default function AuctionHouseSafety() {
       <PageSEO
         title="Auction House Buying Guide: How to Avoid Stolen Goods (2025)"
         description="Complete guide to buying safely at auction houses. Learn how to verify items aren't stolen, spot warning signs, and protect yourself at estate sales, storage auctions, and online auctions."
-        canonical="https://safeorstolen.com/guides/auction-house-safety"
+        canonical="/guides/auction-house-safety"
         image="https://safeorstolen.com/og-auction-guide.png"
         keywords="auction house safety, buying at auctions, stolen auction items, estate sale verification, storage unit auction safety"
         structuredData={articleSchema}

@@ -78,7 +78,7 @@ export default function EducationalContentHub() {
         title="Education Center - Learn About Stolen Item Verification | SafeOrStolen"
         description="Free guides, video tutorials, industry reports, and case studies on preventing theft, avoiding stolen goods, and safely buying/selling secondhand items. Learn from experts and law enforcement partnerships."
         keywords="stolen goods education, theft prevention guide, IMEI verification tutorial, VIN check guide, marketplace safety, secondhand buying tips, fraud prevention education"
-        canonical="https://safeorstolen.com/education"
+        canonical="/education"
         structuredData={structuredData}
       />
       <AISearchOptimizer

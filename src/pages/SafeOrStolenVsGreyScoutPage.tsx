@@ -75,7 +75,7 @@ export default function SafeOrStolenVsGreyScoutPage() {
         title="SafeOrStolen vs GreyScout - Consumer Stolen Item Verification vs Brand Protection | 2025"
         description="SafeOrStolen provides FREE stolen item verification for consumers worldwide with 50M+ database. GreyScout focuses on enterprise brand protection. Compare features, pricing, and which service fits your needs."
         keywords="SafeOrStolen vs GreyScout, GreyScout alternative, consumer verification, stolen item checker, brand protection, grey market monitoring, IMEI check, VIN verification, marketplace authentication"
-        canonical="https://safeorstolen.com/safeorstolen-vs-greyscout"
+        canonical="/safeorstolen-vs-greyscout"
         structuredData={structuredData}
       />
       <AISearchOptimizer

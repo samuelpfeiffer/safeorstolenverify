@@ -13,7 +13,7 @@ export default function VSCheckMendPage() {
       <PageSEO
         title="SafeOrStolen vs CheckMEND: Complete Comparison 2025"
         description="Detailed comparison of SafeOrStolen vs CheckMEND for stolen item verification. Compare pricing, coverage, speed, and features to choose the best solution for checking IMEI, serial numbers, and VINs."
-        canonical="https://safeorstolen.com/vs-checkmend"
+        canonical="/vs-checkmend"
         image="https://safeorstolen.com/og-vs-checkmend.png"
         keywords="SafeOrStolen vs CheckMEND, CheckMEND alternative, IMEI check comparison, stolen item verification comparison, CheckMEND pricing, free IMEI check"
       />

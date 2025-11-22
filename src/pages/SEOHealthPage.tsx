@@ -9,7 +9,7 @@ const SEOHealthPage = () => {
         title="SEO & Security Health Dashboard - SafeOrStolen"
         description="Monitor SEO technical health, schema validation, and security status"
         keywords="seo health, schema validation, security monitoring"
-        canonical="https://safeorstolen.com/seo-health"
+        canonical="/seo-health"
         noIndex={true}
       />
       <div className="min-h-screen bg-background">

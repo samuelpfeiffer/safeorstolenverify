@@ -13,7 +13,7 @@ export default function VSStolenRegisterPage() {
       <PageSEO
         title="SafeOrStolen vs The Stolen Register: 2025 Comparison"
         description="Compare SafeOrStolen and The Stolen Register for stolen item verification. Find out which service offers better coverage, features, and value for checking stolen phones, bikes, and electronics."
-        canonical="https://safeorstolen.com/vs-stolenregister"
+        canonical="/vs-stolenregister"
         image="https://safeorstolen.com/og-vs-stolenregister.png"
         keywords="SafeOrStolen vs Stolen Register, stolen register alternative, bike theft check, stolen phone register, stolen item database"
       />

@@ -13,7 +13,7 @@ export default function VSIMEIInfoPage() {
       <PageSEO
         title="SafeOrStolen vs IMEI.info: Which IMEI Checker is Better?"
         description="Compare SafeOrStolen and IMEI.info for phone IMEI verification. Discover which service offers better accuracy, more features, and better value for checking stolen phones and carrier locks."
-        canonical="https://safeorstolen.com/vs-imeiinfo"
+        canonical="/vs-imeiinfo"
         image="https://safeorstolen.com/og-vs-imeiinfo.png"
         keywords="SafeOrStolen vs IMEI.info, IMEI checker comparison, free IMEI check, phone verification, stolen phone check, carrier unlock check"
       />

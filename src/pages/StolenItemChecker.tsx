@@ -63,7 +63,7 @@ const StolenItemChecker = () => {
 
   return (
     <>
-      <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/stolen-item-checker" />
+      <StatusCodeHandler statusCode={200} />
       <CompetitiveMetaTags page="stolen-checker" />
       <Helmet>
         <title>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification | SafeOrStolen</title>

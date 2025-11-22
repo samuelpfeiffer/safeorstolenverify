@@ -34,7 +34,7 @@ export default function RegionIndiaPage() {
         title="SafeOrStolen India - Free Stolen Item Verification | IMEI, VIN, Serial Check"
         description="India's #1 stolen item checker. Verify phones, vehicles, electronics against 4.5M+ stolen items database. Free IMEI check, VIN verification. Protect yourself on OLX, Quikr, Facebook Marketplace India."
         keywords="India stolen item checker, IMEI check India, VIN verification India, stolen phone check India, OLX verification, Quikr safety, secondhand verification India, Mumbai Delhi stolen check"
-        canonical="https://safeorstolen.com/region/india"
+        canonical="/region/india"
         structuredData={structuredData}
       />
       <AISearchOptimizer

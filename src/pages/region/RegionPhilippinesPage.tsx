@@ -21,7 +21,7 @@ const RegionPhilippinesPage = () => {
         title="Check Stolen Items in the Philippines | SafeOrStolen"
         description="Verify phones, vehicles, and stolen items in the Philippines. Full coverage of Manila, Cebu, Davao. Integration with Carousell and Facebook Marketplace."
         keywords="stolen items Philippines, IMEI check Philippines, Carousell safety, stolen phone Manila, verify before buying Philippines"
-        canonical="https://safeorstolen.com/region/philippines"
+        canonical="/region/philippines"
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">

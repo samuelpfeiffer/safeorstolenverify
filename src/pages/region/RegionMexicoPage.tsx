@@ -21,7 +21,7 @@ const RegionMexicoPage = () => {
         title="Verificador de Artículos Robados en México | SafeOrStolen"
         description="Verifica teléfonos, vehículos y artículos robados en México. Cobertura completa de CDMX, Guadalajara, Monterrey. Integración con Mercado Libre y más."
         keywords="verificador robados México, IMEI México, VIN México, Mercado Libre seguro, artículos robados CDMX"
-        canonical="https://safeorstolen.com/region/mexico"
+        canonical="/region/mexico"
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
