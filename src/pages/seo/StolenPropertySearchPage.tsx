@@ -10,7 +10,7 @@ const StolenPropertySearchPage = () => {
         title="Stolen Property Search by Serial Number - Check 150+ Databases | SafeOrStolen"
         description="Search stolen property by serial number across 150+ databases. Verify items from American Alarm, Stolen-Property.com, StolenLostFound, and law enforcement registries in seconds."
         keywords="stolen-property search by serial number, american alarm websites to help find stolen items, stolen-property.com search serial number, stolen property serial number lookup"
-        canonical="https://safeorstolen.com/stolen-property-search-serial-number"
+        canonical="/stolen-property-search-serial-number"
       />
 
       <div className="min-h-screen bg-background">

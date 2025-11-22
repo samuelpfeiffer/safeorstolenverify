@@ -10,7 +10,7 @@ const PartialSerialSearchPage = () => {
         title="Partial Serial Number Search - Find Stolen Items by Incomplete Serial | SafeOrStolen"
         description="Search stolen property databases with partial serial numbers. SafeOrStolen checks StolenLostFound, Stolen-Property.com, and 150+ databases even with incomplete serial numbers."
         keywords="partial serial number search, incomplete serial lookup, stolen property search serial number, sndeep lostolen database, stolen-property.com search by serial number"
-        canonical="https://safeorstolen.com/partial-serial-number-search"
+        canonical="/partial-serial-number-search"
       />
 
       <div className="min-h-screen bg-background">
