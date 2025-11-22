@@ -65,6 +65,10 @@ import type { SEOUrl } from '@/config/seo-expansion-urls';
 import { ITEM_VERIFICATION_PAGES, LONG_TAIL_PAGES, USE_CASE_PAGES } from '@/config/seo-expansion-urls';
 const SEOExpansionItemPage = lazy(() => import('@/pages/templates/SEOExpansionItemPage'));
 
+// Targeted SEO Content Pages (Query-Specific)
+const PartialSerialSearchPage = lazy(() => import('@/pages/seo/PartialSerialSearchPage'));
+const StolenPropertySearchPage = lazy(() => import('@/pages/seo/StolenPropertySearchPage'));
+
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
@@ -510,6 +514,10 @@ export const AppRoutes = () => {
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/report-stolen" element={<ReportStolen />} />
         <Route path="/traffic-strategy" element={<TrafficStrategyPage />} />
+        
+        {/* Targeted SEO Content Pages (Query-Specific) */}
+        <Route path="/partial-serial-number-search" element={<PartialSerialSearchPage />} />
+        <Route path="/stolen-property-search-serial-number" element={<StolenPropertySearchPage />} />
         
         {/* Resources & Information */}
         <Route path="/resource-center" element={<ResourceCenterPage />} />
