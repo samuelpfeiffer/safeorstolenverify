@@ -568,16 +568,6 @@ export const AppRoutes = () => {
         <Route path="/our-story" element={<Navigate to="/about" replace />} />
         <Route path="/enterprise-demo" element={<Navigate to="/contact" replace />} />
         <Route path="/marketplace-integration" element={<Navigate to="/for-brands" replace />} />
-
-        {/* Redirects for alternate URLs */}
-        <Route path="/verification-hub" element={<VerificationHubPageRedirect />} />
-        <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
-        <Route path="/ultimate-guide-not-buying-stolen-goods" element={<Navigate to="/buyer-guide" replace />} />
-        <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/comprehensive-guide" replace />} />
-        <Route path="/our-story" element={<Navigate to="/about" replace />} />
-        <Route path="/enterprise-demo" element={<Navigate to="/contact" replace />} />
-        <Route path="/marketplace-integration" element={<Navigate to="/for-brands" replace />} />
-        <Route path="/pawn-shops" element={<Navigate to="/for-brands" replace />} />
         <Route path="/video/how-to-check-phone" element={<Navigate to="/check-phone" replace />} />
         <Route path="/video/how-to-check-vin" element={<Navigate to="/check-car" replace />} />
 
