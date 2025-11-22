@@ -53,7 +53,7 @@ const StolenSearchConsolePage = () => {
         title="Stolen Search Console - Real-Time Theft Database Analytics"
         description="Access the Stolen Search Console for real-time stolen item search trends, database statistics, and verification analytics. Monitor what people are searching for in stolen goods databases worldwide."
         keywords="stolen search console, theft database analytics, stolen item trends, IMEI search statistics, VIN lookup analytics, stolen goods monitoring, real-time verification data"
-        canonical="https://safeorstolen.com/stolen-search-console"
+        canonical="/stolen-search-console"
       />
       <ServiceOfferSchema />
 

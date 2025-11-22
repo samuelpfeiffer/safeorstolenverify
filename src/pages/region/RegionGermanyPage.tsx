@@ -21,7 +21,7 @@ const RegionGermanyPage = () => {
         title="Gestohlene Artikel Prüfen in Deutschland | SafeOrStolen"
         description="Überprüfen Sie Handys, Fahrzeuge und gestohlene Artikel in Deutschland. Vollständige Abdeckung von Berlin, Hamburg, München. Integration mit eBay Kleinanzeigen."
         keywords="gestohlene Artikel Deutschland, IMEI prüfen Deutschland, Fahrzeug Prüfung, eBay Kleinanzeigen sicher"
-        canonical="https://safeorstolen.com/region/germany"
+        canonical="/region/germany"
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">

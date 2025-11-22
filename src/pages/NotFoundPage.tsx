@@ -17,7 +17,7 @@ const NotFoundPage: React.FC = () => {
   if (isHome) {
     return (
       <div className="min-h-screen bg-sos text-white flex items-center justify-center px-6">
-        <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/" />
+        <StatusCodeHandler statusCode={200} />
         <OptimizedSEOHead
           title="Stolen Item Checker - Free Online Tool to Check if Something is Stolen | SafeOrStolen"
           description="Free stolen item checker tool. Verify IMEI, VIN, serial numbers instantly before buying secondhand items. Check phones, cars, electronics against police databases. Protect yourself from stolen goods."

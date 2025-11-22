@@ -13,7 +13,7 @@ export default function VSNICBPage() {
       <PageSEO
         title="SafeOrStolen vs NICB VINCheck: Which is Better for Stolen Vehicle Verification?"
         description="Compare SafeOrStolen and NICB VINCheck for stolen vehicle verification. Discover which service offers better coverage, more features, and better value for checking stolen cars."
-        canonical="https://safeorstolen.com/vs-nicb"
+        canonical="/vs-nicb"
         image="https://safeorstolen.com/og-vs-nicb.png"
         keywords="SafeOrStolen vs NICB, NICB VINCheck alternative, free VIN check, stolen car check, vehicle history report, VIN verification"
       />

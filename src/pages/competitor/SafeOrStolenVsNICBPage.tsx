@@ -99,7 +99,7 @@ const SafeOrStolenVsNICBPage = () => {
         title="SafeOrStolen vs NICB: Complete Comparison 2025 | Which Service is Better?"
         description="Detailed comparison of SafeOrStolen and NICB (National Insurance Crime Bureau). Compare features, pricing, coverage, and find the best stolen item verification service for your needs."
         keywords="SafeOrStolen vs NICB, NICB alternative, stolen vehicle check, VIN verification comparison, NICB vs SafeOrStolen"
-        canonical="https://safeorstolen.com/safeorstolen-vs-nicb"
+        canonical="/safeorstolen-vs-nicb"
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">

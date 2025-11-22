@@ -29,7 +29,7 @@ export default function OfferUpVerification() {
       <PageSEO
         title="OfferUp Safety Guide: How to Avoid Buying Stolen Items (2025)"
         description="Complete OfferUp buyer safety guide. Learn how to verify items aren't stolen, spot red flags, meet safely, and protect yourself when buying used goods on OfferUp."
-        canonical="https://safeorstolen.com/guides/offerup-verification"
+        canonical="/guides/offerup-verification"
         image="https://safeorstolen.com/og-offerup-guide.png"
         keywords="OfferUp safety, OfferUp stolen items, OfferUp verification, buy safely on OfferUp, OfferUp red flags, OfferUp scams"
         structuredData={articleSchema}

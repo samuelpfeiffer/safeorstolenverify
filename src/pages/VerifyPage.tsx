@@ -82,7 +82,7 @@ const VerifyPage = () => {
   return (
     <>
       {/* SEO Components - Critical for Google indexing */}
-      <StatusCodeHandler statusCode={200} canonical="https://safeorstolen.com/verify" />
+      <StatusCodeHandler statusCode={200} />
       <PageSEO
         title="Verify Item Status - Check If Stolen Before Buying | SafeOrStolen"
         description="Instantly verify if an item is stolen. Check IMEI, VIN, serial numbers across multiple databases. Protect yourself before buying secondhand items. Free verification available."
