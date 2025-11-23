@@ -13,43 +13,43 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 28 100% 50%;  /* Vibrant SOS Orange */
+    --primary: 0 84% 55%;  /* Vibrant SOS Red */
     --primary-foreground: 0 0% 100%;
-    --secondary: 82 84% 55%;  /* Vibrant SOS Lime */
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 142 76% 45%;  /* Modern emerald green */
+    --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 18%;  /* Medium gray */
     --muted-foreground: 0 0% 75%;  /* Lighter gray text */
-    --accent: 28 100% 50%;  /* SOS Orange accent */
+    --accent: 0 84% 55%;  /* SOS Red accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;  /* Alert red */
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 20%;  /* Dark gray borders */
     --input: 0 0% 12%;  /* Dark input backgrounds */
-    --ring: 28 100% 50%;  /* Orange focus ring */
+    --ring: 0 84% 55%;  /* Red focus ring */
     --radius: 0.75rem;
     
     /* Brand colors - SOS Theme */
-    --sos-orange: 28 100% 50%;  /* #FF8000 */
-    --sos-lime: 82 84% 55%;  /* #B8FF2D */
+    --sos-orange: 0 84% 55%;  /* Red replacing orange */
+    --sos-lime: 142 76% 45%;  /* Modern emerald green */
     --sos-dark: 0 0% 7%;  /* Near black */
     --sos: 0 0% 5%;  /* Pure black background */
     
     /* Enhanced gradients with SOS brand colors */
-    --gradient-primary: linear-gradient(135deg, hsl(28 100% 50%) 0%, hsl(28 100% 45%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5%) 0%, hsl(0 0% 12%) 50%, hsl(28 100% 50% / 0.1) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(0 84% 55%) 0%, hsl(0 84% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5%) 0%, hsl(0 0% 12%) 50%, hsl(0 84% 55% / 0.1) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 10%), hsl(0 0% 13%));
-    --gradient-sos: linear-gradient(135deg, hsl(28 100% 50%) 0%, hsl(82 84% 55%) 100%);
-    --gradient-verified: linear-gradient(135deg, hsl(82 84% 55%) 0%, hsl(142 71% 45%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, rgba(255, 128, 0, 0.15) 0%, transparent 70%);
+    --gradient-sos: linear-gradient(135deg, hsl(0 84% 55%) 0%, hsl(142 76% 45%) 100%);
+    --gradient-verified: linear-gradient(135deg, hsl(142 76% 45%) 0%, hsl(142 76% 50%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.15) 0%, transparent 70%);
     
-    /* Professional shadows with orange glow */
+    /* Professional shadows with red glow */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.2);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.2);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.3);
-    --shadow-orange: 0 4px 20px -4px rgba(255, 128, 0, 0.3);
-    --shadow-lime: 0 4px 20px -4px rgba(184, 255, 45, 0.3);
-    --shadow-elegant: 0 8px 32px rgba(255, 128, 0, 0.2);
+    --shadow-orange: 0 4px 20px -4px rgba(239, 68, 68, 0.3);
+    --shadow-lime: 0 4px 20px -4px rgba(52, 211, 153, 0.3);
+    --shadow-elegant: 0 8px 32px rgba(239, 68, 68, 0.2);
 
     /* Brand: FasterCapital */
     --fc-blue: 214 84% 45%;
@@ -58,12 +58,12 @@
 
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 28 100% 50%;
+    --sidebar-primary: 0 84% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 82 84% 55%;
-    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-accent: 142 76% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 28 100% 50%;
+    --sidebar-ring: 0 84% 55%;
   }
 
   .dark {
@@ -74,19 +74,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 28 100% 50%;
+    --primary: 0 84% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 82 84% 55%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 142 76% 45%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 75%;
-    --accent: 28 100% 50%;
+    --accent: 0 84% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 20%;
     --input: 0 0% 12%;
-    --ring: 28 100% 50%;
+    --ring: 0 84% 55%;
   }
 
   * {
@@ -289,10 +289,10 @@
 
   @keyframes glow-pulse {
     0%, 100% { 
-      box-shadow: 0 0 20px rgba(255, 128, 0, 0.3);
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
     }
     50% { 
-      box-shadow: 0 0 40px rgba(255, 128, 0, 0.6);
+      box-shadow: 0 0 40px rgba(239, 68, 68, 0.6);
     }
   }
 
