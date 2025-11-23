@@ -12,6 +12,7 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
+import logo from '@/assets/Safe-or-Stolen-logo.png';
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -88,16 +89,19 @@ export default function ArizonaLicensePlateLookup() {
         <div className="container mx-auto max-w-4xl">
           {/* Header */}
           <header className="text-center mb-12">
-            <div className="flex items-center justify-center mb-4">
-              <Shield className="h-12 w-12 text-sos-orange mr-3" />
-              <MapPin className="h-12 w-12 text-sos-orange" />
+            <div className="flex flex-col items-center justify-center mb-6">
+              <img src={logo} alt="SafeOrStolen Logo" className="h-20 w-auto mb-4" />
+              <div className="flex items-center justify-center mb-4">
+                <Shield className="h-12 w-12 text-sos-orange mr-3" />
+                <MapPin className="h-12 w-12 text-sos-orange" />
+              </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Arizona License Plate Theft Check
+              SafeOrStolen Arizona License Plate Lookup
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Verify if a vehicle is reported stolen in Arizona's official TheftAZ database.
-              Free instant lookup powered by Arizona Attorney General's stolen vehicle registry.
+              Verify if a vehicle is reported stolen in Arizona. Free instant license plate lookup 
+              powered by SafeOrStolen.com - the only stolen item verification service with a mobile app.
             </p>
           </header>
 
