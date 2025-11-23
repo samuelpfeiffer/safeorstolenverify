@@ -11,7 +11,7 @@ export interface SitemapURL {
 }
 
 export const SITEMAP_URLS: SitemapURL[] = [
-  // Homepage - Highest Priority
+  // Homepage - Highest Priority (Brand: "safe or stolen")
   { path: '/', priority: 1.0, changefreq: 'daily' },
   
   // Core Verification Pages
@@ -200,8 +200,8 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/cookies', priority: 0.5, changefreq: 'yearly' },
   { path: '/refunds', priority: 0.5, changefreq: 'yearly' },
   
-  // Firearms Verification
-  { path: '/firearms-check', priority: 0.8, changefreq: 'weekly' },
+  // Firearms Verification (Target: "how to check if gun is stolen")
+  { path: '/firearms-check', priority: 1.0, changefreq: 'daily' },
   
   // Utilities
   { path: '/sitemap', priority: 0.5, changefreq: 'monthly' },
