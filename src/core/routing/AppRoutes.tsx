@@ -81,7 +81,6 @@ const IMEICheckPage = lazy(() => import('@/pages/redirects/IMEICheckPage'));
 const BulkPage = lazy(() => import('@/pages/redirects/BulkPage'));
 const VINPage = lazy(() => import('@/pages/redirects/VINPage'));
 const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenPropertyLookupPage'));
-const StolenItemCheckerPage = lazy(() => import('@/pages/redirects/StolenItemCheckerPage'));
 const VINVerificationPageRedirect = lazy(() => import('@/pages/redirects/VINVerificationPage'));
 const VerificationHubPageRedirect = lazy(() => import('@/pages/redirects/VerificationHubPage'));
 const VerifyNotStolenPageRedirect = lazy(() => import('@/pages/redirects/VerifyNotStolenPage'));
@@ -483,6 +482,9 @@ const SearchStolenPhonePage = lazy(() => import('@/pages/SearchStolenPhonePage')
 const SearchStolenFirearmsPage = lazy(() => import('@/pages/SearchStolenFirearmsPage'));
 const SearchStolenBikesPage = lazy(() => import('@/pages/SearchStolenBikesPage'));
 const HowDoICheckIfStolenPage = lazy(() => import('@/pages/HowDoICheckIfStolenPage'));
+const StolenItemCheckerPage = lazy(() => import('@/pages/StolenItemCheckerPage'));
+const CheckFirearmPage = lazy(() => import('@/pages/CheckFirearmPage'));
+const CheckGamingConsolePage = lazy(() => import('@/pages/CheckGamingConsolePage'));
 const VerifyNotStolenPage = lazy(() => import('@/pages/VerifyNotStolenPage'));
 const StolenPropertyCheckPage = lazy(() => import('@/pages/StolenPropertyCheckPage'));
 const AvoidBuyingStolenGoodsPage = lazy(() => import('@/pages/AvoidBuyingStolenGoodsPage'));
@@ -575,6 +577,9 @@ export const AppRoutes = () => {
         <Route path="/search-stolen-bikes" element={<SearchStolenBikesPage />} />
         <Route path="/check-bike-stolen" element={<Navigate to="/search-stolen-bikes" replace />} />
         <Route path="/how-do-i-check-if-stolen" element={<HowDoICheckIfStolenPage />} />
+        <Route path="/stolen-item-checker" element={<StolenItemCheckerPage />} />
+        <Route path="/check-firearm" element={<CheckFirearmPage />} />
+        <Route path="/check-gaming-console" element={<CheckGamingConsolePage />} />
         <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
         <Route path="/stolen-property-check" element={<StolenPropertyCheckPage />} />
         <Route path="/avoid-buying-stolen-goods" element={<AvoidBuyingStolenGoodsPage />} />
@@ -889,7 +894,6 @@ export const AppRoutes = () => {
         <Route path="/check-imei" element={<Navigate to="/verify" replace />} />
         <Route path="/check-vin" element={<Navigate to="/verify" replace />} />
         <Route path="/check-serial" element={<Navigate to="/verify" replace />} />
-        <Route path="/stolen-item-checker" element={<StolenItemCheckerPage />} />
         <Route path="/imei-check" element={<IMEICheckPage />} />
         
         {/* NEW SEO Content Pages - Emergency Content Injection Phase 1 */}
