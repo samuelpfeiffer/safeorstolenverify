@@ -5,7 +5,6 @@ import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 // Core Pages
 const Index = lazy(() => import('@/pages/Index'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
-const UnifiedVerificationPage = lazy(() => import('@/pages/UnifiedVerificationPageEnhanced'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
@@ -476,9 +475,8 @@ export const AppRoutes = () => {
         {/* Core Routes */}
         <Route path="/" element={<Index />} />
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="/verify" element={<UnifiedVerificationPage />} />
-        <Route path="/verify-pro" element={<VerifyPage />} />
-        <Route path="/mobile-verify" element={<UnifiedVerificationPage />} />
+        <Route path="/verify" element={<VerifyPage />} />
+        <Route path="/mobile-verify" element={<VerifyPage />} />
         <Route path="/vin-check" element={<Navigate to="/check-car" replace />} />
         
         {/* Marketplace Landing Pages */}
