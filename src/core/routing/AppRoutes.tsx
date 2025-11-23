@@ -75,6 +75,7 @@ const DownloadPage = lazy(() => import('@/pages/DownloadPage'));
 const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
 const FasterCapitalTechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounderPage'));
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
+const SEOBacklinkStrategyPage = lazy(() => import('@/pages/SEOBacklinkStrategyPage'));
 const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
 // Redirect Pages (with HTML meta refresh for crawlers)
@@ -549,6 +550,7 @@ export const AppRoutes = () => {
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/report-stolen" element={<ReportStolen />} />
         <Route path="/traffic-strategy" element={<TrafficStrategyPage />} />
+        <Route path="/seo-strategy" element={<SEOBacklinkStrategyPage />} />
         
         {/* High-Priority Stolen Check Pages */}
         <Route path="/stolen-item-lookup" element={<StolenItemLookupPage />} />
