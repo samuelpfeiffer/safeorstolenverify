@@ -71,6 +71,7 @@ const StolenPropertySearchPage = lazy(() => import('@/pages/seo/StolenPropertySe
 // Business
 const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
 const ForBrandsPage = lazy(() => import('@/pages/ForBrandsPage'));
+const DownloadPage = lazy(() => import('@/pages/DownloadPage'));
 const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/RaiseCapitalPage'));
 const FasterCapitalTechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounderPage'));
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
@@ -874,6 +875,8 @@ export const AppRoutes = () => {
         {/* Business */}
         <Route path="/mobile-app" element={<MobileAppPage />} />
         <Route path="/for-brands" element={<ForBrandsPage />} />
+        <Route path="/download" element={<DownloadPage />} />
+        <Route path="/install-app" element={<InstallAppPage />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />} />
