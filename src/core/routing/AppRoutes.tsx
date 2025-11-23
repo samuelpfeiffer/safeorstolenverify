@@ -479,6 +479,10 @@ const CheckStolenItemPage = lazy(() => import('@/pages/CheckStolenItemPage'));
 const StolenItemsListPage = lazy(() => import('@/pages/StolenItemsListPage'));
 const CheckStolenDatabasePage = lazy(() => import('@/pages/CheckStolenDatabasePage'));
 const VINCheckLookupPage = lazy(() => import('@/pages/VINCheckLookupPage'));
+const SearchStolenPhonePage = lazy(() => import('@/pages/SearchStolenPhonePage'));
+const SearchStolenFirearmsPage = lazy(() => import('@/pages/SearchStolenFirearmsPage'));
+const SearchStolenBikesPage = lazy(() => import('@/pages/SearchStolenBikesPage'));
+const HowDoICheckIfStolenPage = lazy(() => import('@/pages/HowDoICheckIfStolenPage'));
 
 // 404
 const NotFound = lazy(() => import('@/pages/NotFound'));
@@ -553,25 +557,26 @@ export const AppRoutes = () => {
         <Route path="/search-stolen-cars" element={<Navigate to="/stolen-vehicle-database" replace />} />
         <Route path="/car-by-vin" element={<Navigate to="/stolen-vehicle-database" replace />} />
         <Route path="/stolen-phone-check" element={<StolenPhoneCheckPage />} />
-        <Route path="/search-stolen-phone" element={<Navigate to="/stolen-phone-check" replace />} />
-        <Route path="/search-stolen-mobile" element={<Navigate to="/stolen-phone-check" replace />} />
-        <Route path="/search-stolen-iphone" element={<Navigate to="/stolen-phone-check" replace />} />
+        <Route path="/search-stolen-phone" element={<SearchStolenPhonePage />} />
+        <Route path="/search-stolen-mobile" element={<Navigate to="/search-stolen-phone" replace />} />
+        <Route path="/search-stolen-iphone" element={<Navigate to="/search-stolen-phone" replace />} />
         <Route path="/free-stolen-check" element={<FreeStolenCheckPage />} />
         <Route path="/stolen-check-free" element={<Navigate to="/free-stolen-check" replace />} />
         <Route path="/stolen-goods-search" element={<StolenGoodsSearchPage />} />
         <Route path="/stolen-property-check" element={<Navigate to="/stolen-goods-search" replace />} />
         <Route path="/stolen-item-search" element={<Navigate to="/stolen-goods-search" replace />} />
         <Route path="/check-stolen-goods" element={<Navigate to="/stolen-goods-search" replace />} />
-        <Route path="/search-stolen-firearms" element={<Navigate to="/firearms-check" replace />} />
-        <Route path="/search-stolen-guns" element={<Navigate to="/firearms-check" replace />} />
-        <Route path="/stolen-gun-database" element={<Navigate to="/firearms-check" replace />} />
-        <Route path="/search-stolen-bikes" element={<Navigate to="/check-bike" replace />} />
-        <Route path="/check-bike-stolen" element={<Navigate to="/check-bike" replace />} />
+        <Route path="/search-stolen-firearms" element={<SearchStolenFirearmsPage />} />
+        <Route path="/search-stolen-guns" element={<Navigate to="/search-stolen-firearms" replace />} />
+        <Route path="/stolen-gun-database" element={<Navigate to="/search-stolen-firearms" replace />} />
+        <Route path="/search-stolen-bikes" element={<SearchStolenBikesPage />} />
+        <Route path="/check-bike-stolen" element={<Navigate to="/search-stolen-bikes" replace />} />
+        <Route path="/how-do-i-check-if-stolen" element={<HowDoICheckIfStolenPage />} />
         <Route path="/verify-serial-number" element={<Navigate to="/serial-number-checker" replace />} />
-        <Route path="/imei-stolen-check" element={<Navigate to="/stolen-phone-check" replace />} />
+        <Route path="/imei-stolen-check" element={<Navigate to="/search-stolen-phone" replace />} />
         <Route path="/vin-stolen-check" element={<Navigate to="/stolen-vehicle-database" replace />} />
-        <Route path="/is-this-stolen" element={<Navigate to="/verify" replace />} />
-        <Route path="/check-if-phone-was-stolen" element={<Navigate to="/stolen-phone-check" replace />} />
+        <Route path="/is-this-stolen" element={<Navigate to="/how-do-i-check-if-stolen" replace />} />
+        <Route path="/check-if-phone-was-stolen" element={<Navigate to="/search-stolen-phone" replace />} />
         <Route path="/check-if-car-was-stolen" element={<Navigate to="/stolen-vehicle-database" replace />} />
         
         {/* Targeted SEO Content Pages (Query-Specific) */}
