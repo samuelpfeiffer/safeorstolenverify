@@ -11,6 +11,10 @@ export interface SitemapURL {
 }
 
 export const SITEMAP_URLS: SitemapURL[] = [
+  // License Plate Lookup (Target: "license plate lookup")
+  { path: '/license-plate-lookup', priority: 1.0, changefreq: 'daily' },
+  { path: '/license-plates-lookup', priority: 0.9, changefreq: 'daily' },
+  
   // Homepage - Highest Priority (Brand: "safe or stolen")
   { path: '/', priority: 1.0, changefreq: 'daily' },
   
