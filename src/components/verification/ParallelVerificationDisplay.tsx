@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { CheckCircle2, XCircle, AlertTriangle, Clock } from 'lucide-react';
 import type { AggregatedResult } from '@/services/VerificationService';
 import { SourceCard } from './SourceCard';
+import { TrustBadge } from './TrustBadge';
 
 interface Props {
   result: AggregatedResult;
@@ -50,6 +51,16 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
 
   return (
     <div className="space-y-6">
+      {/* Trust Badge for Safe Items */}
+      {(result.finalStatus === 'safe' || result.riskLevel === 'low') && (
+        <TrustBadge
+          identifier={result.identifier}
+          itemType={result.itemType}
+          verificationDate={result.timestamp}
+          confidence={result.confidence}
+        />
+      )}
+
       {/* Main Result Card */}
       <Card className={`border-2 ${getRiskColor()}`}>
         <CardHeader>
