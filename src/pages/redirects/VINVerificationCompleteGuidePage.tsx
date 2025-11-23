@@ -19,7 +19,6 @@ const VINVerificationCompleteGuidePage = () => {
       <PageSEO
         title="VIN Verification Complete Guide | SafeOrStolen"
         description="Complete guide to VIN verification for used cars."
-        canonical="/blog/vin-verification-complete-guide-used-cars-1759314016.095080"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/blog" delay={0} />

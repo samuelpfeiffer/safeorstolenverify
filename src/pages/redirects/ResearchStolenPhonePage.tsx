@@ -15,7 +15,6 @@ const ResearchStolenPhonePage = () => {
       <PageSEO
         title="Research Stolen Phone App | SafeOrStolen"
         description="Research if a phone is stolen before buying. Free IMEI research app."
-        canonical="/app/research-stolen-phone"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

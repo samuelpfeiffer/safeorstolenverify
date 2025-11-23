@@ -21,7 +21,6 @@ const IMEICheckPage = () => {
         title="Free IMEI Check - Verify Phone Instantly | SafeOrStolen"
         description="Instant free IMEI check service. Verify if your phone is stolen, blacklisted, or clean before buying. Works with iPhone, Samsung, and all Android devices."
         keywords="IMEI check, free IMEI verification, phone blacklist check, stolen phone check, verify IMEI"
-        canonical="/imei-check"
         noIndex={true}
       />
       

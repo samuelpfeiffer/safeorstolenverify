@@ -19,7 +19,7 @@ const IMEICheckerPage = () => {
         title="IMEI Checker - Free Phone Verification | SafeOrStolen"
         description="Free IMEI checker. Verify if your phone is stolen with instant database lookup. Check iPhone, Samsung, Android IMEIs instantly."
         keywords="IMEI checker, free IMEI check, phone stolen check, verify phone IMEI"
-        canonical="/check-phone"
+        noIndex={true}
       />
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">

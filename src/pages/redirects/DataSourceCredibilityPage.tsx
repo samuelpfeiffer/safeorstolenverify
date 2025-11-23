@@ -15,7 +15,6 @@ const DataSourceCredibilityPage = () => {
         title="Data Source Credibility for Stolen Goods Verification | SafeOrStolen"
         description="Learn about our data sources and verification credibility. How we verify stolen goods with trusted databases and law enforcement data."
         keywords="data source credibility, stolen goods verification, verification data sources, trusted verification databases"
-        canonical="/data-sources"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/data-sources" delay={0} />

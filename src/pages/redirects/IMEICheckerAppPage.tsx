@@ -15,7 +15,6 @@ const IMEICheckerAppPage = () => {
         title="IMEI Checker App - Free Mobile Phone Verification | SafeOrStolen"
         description="Download the free IMEI checker mobile app. Verify stolen phones instantly with our mobile IMEI verification app for iPhone and Android."
         keywords="imei checker app, mobile phone verification app, imei lookup app, stolen phone checker app"
-        canonical="/mobile-app"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />
