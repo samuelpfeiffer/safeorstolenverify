@@ -45,6 +45,7 @@ export default function VerificationResultsPage() {
       <PageSEO
         title="Verification Results | SafeOrStolen"
         description="View your item verification results"
+        noIndex={true}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-muted/10 to-background py-16">
