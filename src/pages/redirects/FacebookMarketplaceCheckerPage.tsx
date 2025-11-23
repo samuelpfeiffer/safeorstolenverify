@@ -16,7 +16,6 @@ const FacebookMarketplaceCheckerPage = () => {
         title="Facebook Marketplace Verification App - Check Before Buying | SafeOrStolen"
         description="Download free Facebook Marketplace verification app. Check if items are stolen before buying on Facebook Marketplace. Instant stolen goods verification. Protect yourself from scams."
         keywords="facebook marketplace verification app, facebook marketplace safety app, facebook marketplace checker, verify facebook marketplace items, fb marketplace stolen check"
-        canonical="/app/facebook-marketplace-checker"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

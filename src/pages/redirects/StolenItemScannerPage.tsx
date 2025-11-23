@@ -15,7 +15,6 @@ const StolenItemScannerPage = () => {
       <PageSEO
         title="Stolen Item Scanner App | SafeOrStolen"
         description="Scan items to check if they're stolen. Instant stolen goods scanner."
-        canonical="/app/stolen-item-scanner"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

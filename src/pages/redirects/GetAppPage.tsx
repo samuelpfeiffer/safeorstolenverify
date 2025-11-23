@@ -14,7 +14,6 @@ const GetAppPage = () => {
       <PageSEO
         title="Get SafeOrStolen App | SafeOrStolen"
         description="Download the SafeOrStolen mobile app."
-        canonical="/get-app"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

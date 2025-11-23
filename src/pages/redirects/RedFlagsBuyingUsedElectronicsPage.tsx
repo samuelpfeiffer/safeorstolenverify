@@ -19,7 +19,6 @@ const RedFlagsBuyingUsedElectronicsPage = () => {
       <PageSEO
         title="Red Flags Buying Used Electronics | SafeOrStolen"
         description="Red flags to watch for when buying used electronics."
-        canonical="/blog/red-flags-buying-used-electronics-1759314016.095080"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/blog" delay={0} />

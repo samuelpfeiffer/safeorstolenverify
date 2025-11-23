@@ -15,7 +15,6 @@ const SecondhandResearchAppPage = () => {
       <PageSEO
         title="Secondhand Research App | SafeOrStolen"
         description="Research secondhand items before buying. Used item verification app."
-        canonical="/app/secondhand-research-app"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

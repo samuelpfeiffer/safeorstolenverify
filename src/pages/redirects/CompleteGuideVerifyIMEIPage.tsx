@@ -19,7 +19,6 @@ const CompleteGuideVerifyIMEIPage = () => {
       <PageSEO
         title="Complete Guide to Verify IMEI Numbers | SafeOrStolen"
         description="Complete guide to verifying IMEI numbers for used phones."
-        canonical="/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/blog" delay={0} />

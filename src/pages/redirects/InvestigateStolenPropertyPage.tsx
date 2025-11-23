@@ -15,7 +15,6 @@ const InvestigateStolenPropertyPage = () => {
       <PageSEO
         title="Investigate Stolen Property App | SafeOrStolen"
         description="Investigate stolen property and goods before purchasing."
-        canonical="/app/investigate-stolen-property"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

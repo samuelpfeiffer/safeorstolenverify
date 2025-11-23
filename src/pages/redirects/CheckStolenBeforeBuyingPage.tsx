@@ -15,7 +15,6 @@ const CheckStolenBeforeBuyingPage = () => {
       <PageSEO
         title="Check If Stolen Before Buying | SafeOrStolen"
         description="Verify items are not stolen before buying with SafeOrStolen app."
-        canonical="/app/check-stolen-before-buying"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

@@ -21,7 +21,6 @@ const VerificationHubPage = () => {
         title="Verification Hub - All-in-One Item Verification Center | SafeOrStolen"
         description="Central verification hub for checking phones, vehicles, electronics, and all items against stolen databases. One platform for complete theft verification."
         keywords="verification hub, item verification center, multi-item checker, theft verification platform, all-in-one verification"
-        canonical="/verification-hub"
         noIndex={true}
       />
       

@@ -15,7 +15,6 @@ const ResearchStolenCarPage = () => {
       <PageSEO
         title="Research Stolen Car App | SafeOrStolen"
         description="Research vehicle history and stolen status. Free VIN research app."
-        canonical="/app/research-stolen-car"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/mobile-app" delay={0} />

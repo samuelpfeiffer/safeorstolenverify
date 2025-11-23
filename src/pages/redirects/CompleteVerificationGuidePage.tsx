@@ -14,7 +14,6 @@ const CompleteVerificationGuidePage = () => {
       <PageSEO
         title="Complete Verification Guide | SafeOrStolen"
         description="Complete verification guide for stolen goods check."
-        canonical="/blog/complete-verification-guide-stolen-goods-check"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/how-it-works" delay={0} />

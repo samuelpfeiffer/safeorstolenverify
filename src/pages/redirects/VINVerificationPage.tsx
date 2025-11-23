@@ -21,7 +21,6 @@ const VINVerificationPage = () => {
         title="VIN Verification Service - Check Vehicle History Free | SafeOrStolen"
         description="Professional VIN verification service to check if vehicles are stolen, salvaged, or have theft records. Free VIN check for cars, trucks, motorcycles before buying."
         keywords="VIN verification, vehicle verification, VIN check service, car theft check, stolen vehicle database"
-        canonical="/vin-verification"
         noIndex={true}
       />
       
