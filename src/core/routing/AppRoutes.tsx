@@ -84,7 +84,7 @@ const StolenPropertyLookupPage = lazy(() => import('@/pages/redirects/StolenProp
 const StolenItemCheckerPage = lazy(() => import('@/pages/redirects/StolenItemCheckerPage'));
 const VINVerificationPageRedirect = lazy(() => import('@/pages/redirects/VINVerificationPage'));
 const VerificationHubPageRedirect = lazy(() => import('@/pages/redirects/VerificationHubPage'));
-const VerifyNotStolenPage = lazy(() => import('@/pages/redirects/VerifyNotStolenPage'));
+const VerifyNotStolenPageRedirect = lazy(() => import('@/pages/redirects/VerifyNotStolenPage'));
 const IMEICheckerAppPage = lazy(() => import('@/pages/redirects/IMEICheckerAppPage'));
 const MobileVerificationPage = lazy(() => import('@/pages/redirects/MobileVerificationPage'));
 const GetAppPage = lazy(() => import('@/pages/redirects/GetAppPage'));
@@ -483,6 +483,9 @@ const SearchStolenPhonePage = lazy(() => import('@/pages/SearchStolenPhonePage')
 const SearchStolenFirearmsPage = lazy(() => import('@/pages/SearchStolenFirearmsPage'));
 const SearchStolenBikesPage = lazy(() => import('@/pages/SearchStolenBikesPage'));
 const HowDoICheckIfStolenPage = lazy(() => import('@/pages/HowDoICheckIfStolenPage'));
+const VerifyNotStolenPage = lazy(() => import('@/pages/VerifyNotStolenPage'));
+const StolenPropertyCheckPage = lazy(() => import('@/pages/StolenPropertyCheckPage'));
+const AvoidBuyingStolenGoodsPage = lazy(() => import('@/pages/AvoidBuyingStolenGoodsPage'));
 
 // 404
 const NotFound = lazy(() => import('@/pages/NotFound'));
@@ -572,6 +575,11 @@ export const AppRoutes = () => {
         <Route path="/search-stolen-bikes" element={<SearchStolenBikesPage />} />
         <Route path="/check-bike-stolen" element={<Navigate to="/search-stolen-bikes" replace />} />
         <Route path="/how-do-i-check-if-stolen" element={<HowDoICheckIfStolenPage />} />
+        <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
+        <Route path="/stolen-property-check" element={<StolenPropertyCheckPage />} />
+        <Route path="/avoid-buying-stolen-goods" element={<AvoidBuyingStolenGoodsPage />} />
+        <Route path="/avoid-stolen-goods" element={<Navigate to="/avoid-buying-stolen-goods" replace />} />
+        <Route path="/ultimate-guide-not-buying-stolen-goods" element={<Navigate to="/avoid-buying-stolen-goods" replace />} />
         <Route path="/verify-serial-number" element={<Navigate to="/serial-number-checker" replace />} />
         <Route path="/imei-stolen-check" element={<Navigate to="/search-stolen-phone" replace />} />
         <Route path="/vin-stolen-check" element={<Navigate to="/stolen-vehicle-database" replace />} />
@@ -631,13 +639,9 @@ export const AppRoutes = () => {
         
         {/* Redirects for alternate URLs */}
         <Route path="/verification-hub" element={<VerificationHubPageRedirect />} />
-        <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
-        <Route path="/how-do-i-check-if-stolen" element={<Navigate to="/how-to-check-if-item-stolen" replace />} />
         <Route path="/stolen-merchandise-check" element={<Navigate to="/verify" replace />} />
         <Route path="/android-app" element={<Navigate to="/app/android" replace />} />
         <Route path="/ios-app" element={<Navigate to="/app/ios" replace />} />
-        <Route path="/avoid-buying-stolen-goods" element={<Navigate to="/avoid-stolen-goods" replace />} />
-        <Route path="/ultimate-guide-not-buying-stolen-goods" element={<Navigate to="/buyer-guide" replace />} />
         <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/comprehensive-guide" replace />} />
         <Route path="/our-story" element={<Navigate to="/about" replace />} />
         <Route path="/enterprise-demo" element={<Navigate to="/contact" replace />} />
