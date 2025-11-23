@@ -467,6 +467,7 @@ const StripeTestPage = lazy(() => import('@/pages/StripeTestPage'));
 
 // 404
 const NotFound = lazy(() => import('@/pages/NotFound'));
+const SitemapFallbackPage = lazy(() => import('@/pages/SitemapFallbackPage'));
 
 export const AppRoutes = () => {
   return (
@@ -994,8 +995,9 @@ export const AppRoutes = () => {
           <Route key={page.path} path={page.path} element={<SEOExpansionItemPage seo={page} />} />
         ))}
 
-        {/* 404 - Must be last */}
-        <Route path="*" element={<NotFound />} />
+        {/* 404 / Sitemap fallback - Must be last */}
+        <Route path="*" element={<SitemapFallbackPage />} />
+
       </Routes>
     </Suspense>
   );
