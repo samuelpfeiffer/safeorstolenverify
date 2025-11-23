@@ -475,6 +475,10 @@ const ItemCategoriesPage = lazy(() => import('@/pages/ItemCategoriesPage'));
 const StolenGoodsStatistics2024Page = lazy(() => import('@/pages/StolenGoodsStatistics2024Page'));
 const StolenSearchConsolePage = lazy(() => import('@/pages/StolenSearchConsolePage'));
 const SearchTrendsPage = lazy(() => import('@/pages/SearchTrendsPage'));
+const CheckStolenItemPage = lazy(() => import('@/pages/CheckStolenItemPage'));
+const StolenItemsListPage = lazy(() => import('@/pages/StolenItemsListPage'));
+const CheckStolenDatabasePage = lazy(() => import('@/pages/CheckStolenDatabasePage'));
+const VINCheckLookupPage = lazy(() => import('@/pages/VINCheckLookupPage'));
 
 // 404
 const NotFound = lazy(() => import('@/pages/NotFound'));
@@ -536,11 +540,11 @@ export const AppRoutes = () => {
         
         {/* High-Priority Stolen Check Pages */}
         <Route path="/stolen-item-lookup" element={<StolenItemLookupPage />} />
-        <Route path="/check-stolen-item" element={<Navigate to="/stolen-item-lookup" replace />} />
-        <Route path="/stolen-items-list" element={<Navigate to="/stolen-item-lookup" replace />} />
-        <Route path="/check-stolen-database" element={<Navigate to="/stolen-item-lookup" replace />} />
+        <Route path="/check-stolen-item" element={<CheckStolenItemPage />} />
+        <Route path="/stolen-items-list" element={<StolenItemsListPage />} />
+        <Route path="/check-stolen-database" element={<CheckStolenDatabasePage />} />
         <Route path="/stolen-vehicle-database" element={<StolenVehicleDatabasePage />} />
-        <Route path="/vin-check-lookup" element={<Navigate to="/stolen-vehicle-database" replace />} />
+        <Route path="/vin-check-lookup" element={<VINCheckLookupPage />} />
         <Route path="/check-stolen-car" element={<Navigate to="/stolen-vehicle-database" replace />} />
         <Route path="/search-stolen-vehicle" element={<Navigate to="/stolen-vehicle-database" replace />} />
         <Route path="/check-vehicle-stolen" element={<Navigate to="/stolen-vehicle-database" replace />} />
