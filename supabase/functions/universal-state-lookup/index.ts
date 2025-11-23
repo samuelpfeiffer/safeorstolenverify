@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { runParallelVerification } from '../_shared/parallel-verification.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -75,39 +76,29 @@ serve(async (req) => {
       });
     }
 
-    // Fallback to NICB for states without dedicated integration
-    console.log(`No dedicated function for ${upperStateCode}, using NICB fallback`);
+    // Fallback: Use parallel verification with web scraping + AI
+    console.log(`No dedicated function for ${upperStateCode}, using parallel verification`);
     
-    // For VIN lookups, use NICB
-    if (type === 'vin') {
-      // This would call your existing NICB integration
-      // For now, return a generic response
-      return new Response(JSON.stringify({
-        status: 'safe',
-        message: `No theft records found for ${upperStateCode} ${type.toUpperCase()}: ${value}`,
-        details: {
-          checked_databases: ['NICB VINCheck'],
-          state: upperStateCode,
-          verification_date: new Date().toISOString(),
-          disclaimer: 'This check uses NICB national database. For state-specific verification, contact local law enforcement.'
-        },
-        source: 'National Insurance Crime Bureau (NICB)',
-        timestamp: new Date().toISOString()
-      }), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
+    const result = await runParallelVerification(supabase, {
+      identifier: value,
+      itemType: type === 'vin' ? 'vehicle' : 'license_plate',
+      includeWebScraping: true,
+      includeAI: true,
+      additionalSources: []
+    });
 
-    // For license plates without state integration
     return new Response(JSON.stringify({
-      status: 'unknown',
-      message: `${upperStateCode} does not have a public license plate lookup database. Please verify directly with ${upperStateCode} DMV.`,
+      status: result.status,
+      message: result.message || `Verification completed for ${upperStateCode} ${type.toUpperCase()}: ${value}`,
       details: {
+        ...result.details,
         state: upperStateCode,
-        type: type,
-        recommendation: `Contact ${upperStateCode} Department of Motor Vehicles or local law enforcement for verification.`
+        verification_date: new Date().toISOString(),
+        sources_checked: result.details?.total_sources_checked || 2,
+        disclaimer: 'This check uses web scraping and AI analysis. For state-specific verification, contact local law enforcement.'
       },
-      source: 'SafeOrStolen Universal Lookup',
+      confidence: result.confidence,
+      source: result.source,
       timestamp: new Date().toISOString()
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
