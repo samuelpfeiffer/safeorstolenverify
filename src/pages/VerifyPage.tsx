@@ -2,7 +2,7 @@
  * Verification Page - Production Ready with Parallel API Calls
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -11,17 +11,52 @@ import { Search, Loader2, Shield, AlertTriangle } from 'lucide-react';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
+import { supabase } from '@/integrations/supabase/client';
+import type { AggregatedResult } from '@/services/VerificationService';
 
 const VerifyPage = () => {
+  const [searchParams] = useSearchParams();
   const [identifier, setIdentifier] = useState('');
   const [itemType, setItemType] = useState('');
-  const { verify, isLoading, result, progress } = useParallelVerification();
+  const [stateCode, setStateCode] = useState('');
+  const [customResult, setCustomResult] = useState<AggregatedResult | null>(null);
+  const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
   const { isAuthenticated } = useUnifiedAuth();
   const navigate = useNavigate();
+
+  const result = customResult || hookResult;
+
+  // Set item type from URL params (e.g., ?type=license_plate)
+  useEffect(() => {
+    const typeParam = searchParams.get('type');
+    if (typeParam) {
+      setItemType(typeParam);
+    }
+  }, [searchParams]);
+
+  const US_STATES = [
+    { code: 'AL', name: 'Alabama' }, { code: 'AK', name: 'Alaska' }, { code: 'AZ', name: 'Arizona' },
+    { code: 'AR', name: 'Arkansas' }, { code: 'CA', name: 'California' }, { code: 'CO', name: 'Colorado' },
+    { code: 'CT', name: 'Connecticut' }, { code: 'DE', name: 'Delaware' }, { code: 'FL', name: 'Florida' },
+    { code: 'GA', name: 'Georgia' }, { code: 'HI', name: 'Hawaii' }, { code: 'ID', name: 'Idaho' },
+    { code: 'IL', name: 'Illinois' }, { code: 'IN', name: 'Indiana' }, { code: 'IA', name: 'Iowa' },
+    { code: 'KS', name: 'Kansas' }, { code: 'KY', name: 'Kentucky' }, { code: 'LA', name: 'Louisiana' },
+    { code: 'ME', name: 'Maine' }, { code: 'MD', name: 'Maryland' }, { code: 'MA', name: 'Massachusetts' },
+    { code: 'MI', name: 'Michigan' }, { code: 'MN', name: 'Minnesota' }, { code: 'MS', name: 'Mississippi' },
+    { code: 'MO', name: 'Missouri' }, { code: 'MT', name: 'Montana' }, { code: 'NE', name: 'Nebraska' },
+    { code: 'NV', name: 'Nevada' }, { code: 'NH', name: 'New Hampshire' }, { code: 'NJ', name: 'New Jersey' },
+    { code: 'NM', name: 'New Mexico' }, { code: 'NY', name: 'New York' }, { code: 'NC', name: 'North Carolina' },
+    { code: 'ND', name: 'North Dakota' }, { code: 'OH', name: 'Ohio' }, { code: 'OK', name: 'Oklahoma' },
+    { code: 'OR', name: 'Oregon' }, { code: 'PA', name: 'Pennsylvania' }, { code: 'RI', name: 'Rhode Island' },
+    { code: 'SC', name: 'South Carolina' }, { code: 'SD', name: 'South Dakota' }, { code: 'TN', name: 'Tennessee' },
+    { code: 'TX', name: 'Texas' }, { code: 'UT', name: 'Utah' }, { code: 'VT', name: 'Vermont' },
+    { code: 'VA', name: 'Virginia' }, { code: 'WA', name: 'Washington' }, { code: 'WV', name: 'West Virginia' },
+    { code: 'WI', name: 'Wisconsin' }, { code: 'WY', name: 'Wyoming' }
+  ];
 
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +66,53 @@ const VerifyPage = () => {
       return;
     }
 
-    await verify(identifier, itemType || undefined);
+    // If license plate selected, use universal-state-lookup
+    if (itemType === 'license_plate') {
+      if (!stateCode) {
+        return; // State is required for license plates
+      }
+      
+      try {
+        const { data: lookupResult, error } = await supabase.functions.invoke('universal-state-lookup', {
+          body: { 
+            stateCode: stateCode,
+            type: 'license_plate',
+            value: identifier 
+          }
+        });
+
+        if (error) throw error;
+
+        // Convert to aggregated result format
+        const convertedResult = {
+          identifier: identifier,
+          itemType: 'license_plate',
+          finalStatus: lookupResult.status === 'stolen' ? 'stolen' : lookupResult.status === 'safe' ? 'safe' : 'unknown',
+          message: lookupResult.message || `License plate check completed for ${stateCode}`,
+          riskLevel: lookupResult.status === 'stolen' ? 'critical' : lookupResult.status === 'safe' ? 'safe' : 'low',
+          confidence: lookupResult.confidence || 85,
+          sourceResults: [{
+            source: `${stateCode} License Plate Database`,
+            status: lookupResult.status,
+            confidence: lookupResult.confidence || 85,
+            message: lookupResult.message,
+            timestamp: new Date().toISOString(),
+            details: lookupResult.details
+          }],
+          recommendations: lookupResult.status === 'stolen' 
+            ? ['⚠️ Do not purchase this vehicle', `Contact ${stateCode} law enforcement immediately`, 'Report the listing']
+            : ['Proceed with standard vehicle inspection', 'Verify VIN matches title', 'Check vehicle history report'],
+          verificationDate: new Date().toISOString(),
+          totalSourcesChecked: lookupResult.details?.total_sources_checked || 1
+        };
+
+        setCustomResult(convertedResult as any);
+      } catch (error) {
+        console.error('License plate lookup error:', error);
+      }
+    } else {
+      await verify(identifier, itemType || undefined);
+    }
   };
 
   // Structured data for verification service
@@ -123,7 +204,7 @@ const VerifyPage = () => {
                 <div className="md:col-span-2">
                   <Input
                     type="text"
-                    placeholder="Serial Number, IMEI, VIN, etc."
+                    placeholder={itemType === 'license_plate' ? 'License Plate Number' : 'Serial Number, IMEI, VIN, License Plate, etc.'}
                     value={identifier}
                     onChange={(e) => setIdentifier(e.target.value)}
                     disabled={isLoading}
@@ -137,7 +218,8 @@ const VerifyPage = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="smartphone">Mobile Phone</SelectItem>
-                    <SelectItem value="vehicle">Vehicle</SelectItem>
+                    <SelectItem value="vehicle">Vehicle (VIN)</SelectItem>
+                    <SelectItem value="license_plate">License Plate</SelectItem>
                     <SelectItem value="laptop">Laptop</SelectItem>
                     <SelectItem value="bicycle">Bicycle</SelectItem>
                     <SelectItem value="electronics">Electronics</SelectItem>
@@ -146,10 +228,34 @@ const VerifyPage = () => {
                 </Select>
               </div>
 
+              {/* State selector - only shown for license plates */}
+              {itemType === 'license_plate' && (
+                <div className="space-y-2">
+                  <label htmlFor="state-select" className="text-sm font-medium">
+                    Select State *
+                  </label>
+                  <Select value={stateCode} onValueChange={setStateCode} disabled={isLoading} required>
+                    <SelectTrigger id="state-select" className="py-6">
+                      <SelectValue placeholder="Choose a state" />
+                    </SelectTrigger>
+                    <SelectContent className="max-h-[300px]">
+                      {US_STATES.map((state) => (
+                        <SelectItem key={state.code} value={state.code}>
+                          {state.name} ({state.code})
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <p className="text-xs text-muted-foreground">
+                    License plate checks use state-specific databases and parallel verification
+                  </p>
+                </div>
+              )}
+
               <Button
                 type="submit"
                 size="lg"
-                disabled={isLoading || !identifier.trim()}
+                disabled={isLoading || !identifier.trim() || (itemType === 'license_plate' && !stateCode)}
                 className="w-full"
               >
                 {isLoading ? (
@@ -188,6 +294,7 @@ const VerifyPage = () => {
                     <li>• IMEI.info Lost Device Database</li>
                     <li>• CheckMEND (UK/EU Electronics Registry)</li>
                     <li>• NICB VINCheck (US Vehicle Database)</li>
+                    <li>• State DMV & Police Databases (License Plates - All 50 States)</li>
                     <li>• Bike Index (Global Bicycle Registry)</li>
                     <li>• HotGunz (US Firearms Database)</li>
                     <li>• StolenRegister.com (Worldwide Property)</li>
