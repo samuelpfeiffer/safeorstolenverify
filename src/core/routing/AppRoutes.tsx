@@ -782,6 +782,13 @@ export const AppRoutes = () => {
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/reviews" element={<TestimonialsPage />} />
         <Route path="/security" element={<SecurityPage />} />
+        
+        {/* Additional Public Pages - From Sitemaps */}
+        <Route path="/api-docs" element={<ApiDocsPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/community" element={<CommunityPage />} />
+        <Route path="/competitor-alternatives" element={<CompetitorAlternativesHubPage />} />
+        <Route path="/comparison-checkmend" element={<ComparisonCheckMendPage />} />
 
         {/* Business */}
         <Route path="/mobile-app" element={<MobileAppPage />} />
