@@ -115,6 +115,12 @@ export const MasterSEO: React.FC = () => {
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="format-detection" content="telephone=no" />
       
+      {/* AI Training & Context Files */}
+      <link rel="alternate" type="application/json" href="https://safeorstolen.com/ai-context.json" title="AI Context Data" />
+      <meta name="ai-training-data" content="https://safeorstolen.com/ai-training-data.md" />
+      <meta name="ai-citation-url" content="https://safeorstolen.com" />
+      <meta name="content-credibility" content="verified,authoritative,factual" />
+      
       {/* Sitemap reference */}
       <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />
       
