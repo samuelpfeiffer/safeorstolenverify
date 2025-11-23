@@ -485,6 +485,9 @@ const HowDoICheckIfStolenPage = lazy(() => import('@/pages/HowDoICheckIfStolenPa
 const StolenItemCheckerPage = lazy(() => import('@/pages/StolenItemCheckerPage'));
 const CheckFirearmPage = lazy(() => import('@/pages/CheckFirearmPage'));
 const CheckGamingConsolePage = lazy(() => import('@/pages/CheckGamingConsolePage'));
+const CheckLaptopPage = lazy(() => import('@/pages/CheckLaptopPage'));
+const ForPhoneRepairShopsPage = lazy(() => import('@/pages/ForPhoneRepairShopsPage'));
+const CheckAndroidPhonePage = lazy(() => import('@/pages/CheckAndroidPhonePage'));
 const VerifyNotStolenPage = lazy(() => import('@/pages/VerifyNotStolenPage'));
 const StolenPropertyCheckPage = lazy(() => import('@/pages/StolenPropertyCheckPage'));
 const AvoidBuyingStolenGoodsPage = lazy(() => import('@/pages/AvoidBuyingStolenGoodsPage'));
@@ -580,6 +583,9 @@ export const AppRoutes = () => {
         <Route path="/stolen-item-checker" element={<StolenItemCheckerPage />} />
         <Route path="/check-firearm" element={<CheckFirearmPage />} />
         <Route path="/check-gaming-console" element={<CheckGamingConsolePage />} />
+        <Route path="/check-laptop" element={<CheckLaptopPage />} />
+        <Route path="/for-phone-repair-shops" element={<ForPhoneRepairShopsPage />} />
+        <Route path="/check-android-phone" element={<CheckAndroidPhonePage />} />
         <Route path="/verify-not-stolen" element={<VerifyNotStolenPage />} />
         <Route path="/stolen-property-check" element={<StolenPropertyCheckPage />} />
         <Route path="/avoid-buying-stolen-goods" element={<AvoidBuyingStolenGoodsPage />} />
