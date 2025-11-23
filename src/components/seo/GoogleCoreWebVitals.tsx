@@ -102,35 +102,82 @@ export const GoogleCoreWebVitals: React.FC = () => {
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       
+      {/* Preload critical fonts with font-display swap */}
+      <link 
+        rel="preload" 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+        as="style"
+      />
+      <noscript>
+        <link 
+          rel="stylesheet" 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
+      </noscript>
+      
       {/* Critical CSS inline to improve LCP */}
       <style type="text/css">
         {`
           /* Critical above-the-fold styles */
-          .hero-section { display: block; }
-          .navigation { position: fixed; top: 0; width: 100%; z-index: 50; }
-          img { loading: eager; }
+          * { font-display: swap; }
+          .hero-section { display: block; contain: layout style paint; }
+          .navigation { position: fixed; top: 0; width: 100%; z-index: 50; will-change: transform; }
+          img { loading: eager; content-visibility: auto; }
           img[data-below-fold] { loading: lazy; }
+          /* Prevent layout shift */
+          img, video, iframe { aspect-ratio: attr(width) / attr(height); }
         `}
       </style>
 
-      {/* Preload critical resources */}
-      <link rel="preload" as="image" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
+      {/* Preload critical hero image with high priority */}
+      <link rel="preload" as="image" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" fetchPriority="high" />
       
-      {/* Script for optimizing images */}
+      {/* Preload critical CSS */}
+      <link rel="preload" as="style" href="/src/index.css" />
+      
+      {/* Script for optimizing images and LCP */}
       <script>
         {`
-          // Optimize image loading for Core Web Vitals
-          document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach((img, index) => {
-              if (index > 2) { // Images below the fold
-                img.setAttribute('loading', 'lazy');
-                img.setAttribute('data-below-fold', 'true');
-              } else {
-                img.setAttribute('loading', 'eager');
-              }
-            });
-          });
+          // Critical performance optimizations
+          (function() {
+            // Optimize image loading for Core Web Vitals
+            const optimizeImages = function() {
+              const images = document.querySelectorAll('img');
+              images.forEach((img, index) => {
+                if (index > 2) {
+                  img.setAttribute('loading', 'lazy');
+                  img.setAttribute('data-below-fold', 'true');
+                  img.setAttribute('decoding', 'async');
+                } else {
+                  img.setAttribute('loading', 'eager');
+                  img.setAttribute('fetchpriority', 'high');
+                  img.setAttribute('decoding', 'sync');
+                }
+                // Prevent layout shift
+                if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+                  img.style.aspectRatio = '16/9';
+                }
+              });
+            };
+            
+            // Run immediately for faster LCP
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', optimizeImages);
+            } else {
+              optimizeImages();
+            }
+            
+            // Prefetch next likely pages
+            setTimeout(function() {
+              const links = ['/imei-checker', '/vin-checker', '/verify'];
+              links.forEach(function(url) {
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = url;
+                document.head.appendChild(link);
+              });
+            }, 3000);
+          })();
         `}
       </script>
     </Helmet>
