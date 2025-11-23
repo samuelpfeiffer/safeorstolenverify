@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
+import { runParallelVerification } from '../_shared/parallel-verification.ts';
 
 interface VerificationRequest {
   serialNumber: string;
@@ -87,21 +88,21 @@ serve(async (req) => {
       case 'smartphone':
       case 'phone':
       case 'mobile':
-        verificationResult = await verifyIMEI(serialNumber)
+        verificationResult = await verifyIMEI(serialNumber, supabase)
         break
       case 'vehicle':
       case 'car':
       case 'motorcycle':
-        verificationResult = await verifyVIN(serialNumber)
+        verificationResult = await verifyVIN(serialNumber, supabase)
         break
       case 'bicycle':
       case 'bike':
       case 'bicycles':
-        verificationResult = await verifyBike(serialNumber)
+        verificationResult = await verifyBike(serialNumber, supabase)
         break
       default: {
         // First try Bike Index if configured; if inconclusive, fall back to generic
-        const bikeResult = await verifyBike(serialNumber)
+        const bikeResult = await verifyBike(serialNumber, supabase)
         if (bikeResult.source === 'BikeIndex_API') {
           // If Bike Index provided a meaningful status, prefer it (especially stolen/lost/safe)
           if (['stolen', 'lost', 'safe'].includes(bikeResult.status)) {
@@ -109,7 +110,7 @@ serve(async (req) => {
             break
           }
         }
-        verificationResult = await verifyGenericSerial(serialNumber, itemType)
+        verificationResult = await verifyGenericSerial(serialNumber, itemType, supabase)
         break
       }
     }
@@ -201,7 +202,7 @@ async function checkRateLimit(supabase: any, userId: string): Promise<boolean> {
   return (count || 0) < 4
 }
 
-async function verifyIMEI(imei: string): Promise<VerificationResult> {
+async function verifyIMEI(imei: string, supabase: any): Promise<VerificationResult> {
   try {
     console.log(`Verifying IMEI: ${imei}`)
 
@@ -215,24 +216,16 @@ async function verifyIMEI(imei: string): Promise<VerificationResult> {
       }
     }
 
-    // Run parallel verification: IMEI API + Web Scraper
-    const [imeiApiResult, webScraperResult] = await Promise.allSettled([
-      verifyIMEIWithAPI(imei),
-      verifyWithWebScraper(imei, 'phone')
-    ])
-    
-    const results: VerificationResult[] = []
-    
-    if (imeiApiResult.status === 'fulfilled' && imeiApiResult.value.confidence > 0) {
-      results.push(imeiApiResult.value)
-    }
-    
-    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
-      results.push(webScraperResult.value)
-    }
-    
-    // Aggregate results - prioritize stolen/lost findings
-    return aggregateVerificationResults(results, 'IMEI verification')
+    // Use parallel verification coordinator with all sources
+    return await runParallelVerification(supabase, {
+      identifier: imei,
+      itemType: 'phone',
+      includeWebScraping: true,
+      includeAI: true,
+      additionalSources: [
+        () => verifyIMEIWithAPI(imei)
+      ]
+    });
 
   } catch (error) {
     console.error('IMEI verification error:', error)
@@ -304,7 +297,7 @@ async function verifyIMEIWithAPI(imei: string): Promise<VerificationResult> {
   }
 }
 
-async function verifyVIN(vin: string): Promise<VerificationResult> {
+async function verifyVIN(vin: string, supabase: any): Promise<VerificationResult> {
   try {
     console.log(`Verifying VIN: ${vin}`)
     
@@ -318,24 +311,16 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
       }
     }
 
-    // Run parallel verification: NHTSA + Web Scraper
-    const [nhtsaResult, webScraperResult] = await Promise.allSettled([
-      verifyVINWithNHTSA(vin),
-      verifyWithWebScraper(vin, 'vehicle')
-    ])
-    
-    const results: VerificationResult[] = []
-    
-    if (nhtsaResult.status === 'fulfilled' && nhtsaResult.value.confidence > 0) {
-      results.push(nhtsaResult.value)
-    }
-    
-    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
-      results.push(webScraperResult.value)
-    }
-    
-    // Aggregate results
-    return aggregateVerificationResults(results, 'VIN verification')
+    // Use parallel verification coordinator with all sources
+    return await runParallelVerification(supabase, {
+      identifier: vin,
+      itemType: 'vehicle',
+      includeWebScraping: true,
+      includeAI: true,
+      additionalSources: [
+        () => verifyVINWithNHTSA(vin)
+      ]
+    });
 
   } catch (error) {
     console.error('VIN verification error:', error)
@@ -408,26 +393,18 @@ async function verifyVINWithNHTSA(vin: string): Promise<VerificationResult> {
  * 2) If a bike is found, fetches /bikes/:id to get richer details
  * Returns stolen/lost/safe/unknown based on flags present
  */
-async function verifyBike(serialNumber: string): Promise<VerificationResult> {
+async function verifyBike(serialNumber: string, supabase: any): Promise<VerificationResult> {
   try {
-    // Run parallel verification: Bike Index + Web Scraper
-    const [bikeIndexResult, webScraperResult] = await Promise.allSettled([
-      verifyBikeWithIndex(serialNumber),
-      verifyWithWebScraper(serialNumber, 'bicycle')
-    ])
-    
-    const results: VerificationResult[] = []
-    
-    if (bikeIndexResult.status === 'fulfilled' && bikeIndexResult.value.confidence > 0) {
-      results.push(bikeIndexResult.value)
-    }
-    
-    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
-      results.push(webScraperResult.value)
-    }
-    
-    // Aggregate results
-    return aggregateVerificationResults(results, 'Bike verification')
+    // Use parallel verification coordinator with all sources
+    return await runParallelVerification(supabase, {
+      identifier: serialNumber,
+      itemType: 'bicycle',
+      includeWebScraping: true,
+      includeAI: true,
+      additionalSources: [
+        () => verifyBikeWithIndex(serialNumber)
+      ]
+    });
 
   } catch (error) {
     console.error('Bike verification error:', error)
@@ -550,28 +527,20 @@ async function verifyBikeWithIndex(serialNumber: string): Promise<VerificationRe
   }
 }
 
-async function verifyGenericSerial(serialNumber: string, itemType: string): Promise<VerificationResult> {
+async function verifyGenericSerial(serialNumber: string, itemType: string, supabase: any): Promise<VerificationResult> {
   try {
     console.log(`Verifying ${itemType} serial: ${serialNumber}`)
     
-    // Run parallel verification: CheckMend + Web Scraper
-    const [checkMendResult, webScraperResult] = await Promise.allSettled([
-      verifyWithCheckMend(serialNumber, itemType),
-      verifyWithWebScraper(serialNumber, itemType)
-    ])
-    
-    const results: VerificationResult[] = []
-    
-    if (checkMendResult.status === 'fulfilled' && checkMendResult.value.confidence > 0) {
-      results.push(checkMendResult.value)
-    }
-    
-    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
-      results.push(webScraperResult.value)
-    }
-    
-    // Aggregate results
-    return aggregateVerificationResults(results, 'Generic verification')
+    // Use parallel verification coordinator with all sources
+    return await runParallelVerification(supabase, {
+      identifier: serialNumber,
+      itemType: itemType,
+      includeWebScraping: true,
+      includeAI: true,
+      additionalSources: [
+        () => verifyWithCheckMend(serialNumber, itemType)
+      ]
+    });
     
   } catch (error) {
     console.error('Generic verification error:', error)
