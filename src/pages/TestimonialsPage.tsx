@@ -95,7 +95,6 @@ export default function TestimonialsPage() {
         description="Real stories from buyers, sellers, and businesses using SafeOrStolen to verify items and prevent fraud. Join our launch community today."
         keywords="testimonials, reviews, success stories, user feedback, verification reviews"
         canonical="/testimonials"
-        noIndex={false}
       />
 
       <div className="min-h-screen bg-background">

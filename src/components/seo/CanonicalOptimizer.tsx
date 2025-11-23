@@ -93,8 +93,7 @@ export const CanonicalOptimizer: React.FC<CanonicalOptimizerProps> = ({
       <meta property="og:url" content={canonicalUrl} />
       <link rel="alternate" hrefLang="en" href={canonicalUrl} />
       
-      {/* Prevent duplicate content issues */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      {/* NOTE: robots meta tag removed - handled by OptimizedSEOHead per page */}
     </Helmet>
   );
 };
