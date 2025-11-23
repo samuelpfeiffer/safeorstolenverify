@@ -7,7 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, Loader2, Shield, AlertTriangle } from 'lucide-react';
+import { Search, Loader2, Shield, AlertTriangle, Camera } from 'lucide-react';
+import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
@@ -24,6 +25,7 @@ const VerifyPage = () => {
   const [itemType, setItemType] = useState('');
   const [stateCode, setStateCode] = useState('');
   const [customResult, setCustomResult] = useState<AggregatedResult | null>(null);
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
   const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
   const { isAuthenticated } = useUnifiedAuth();
   const navigate = useNavigate();
@@ -57,6 +59,11 @@ const VerifyPage = () => {
     { code: 'VA', name: 'Virginia' }, { code: 'WA', name: 'Washington' }, { code: 'WV', name: 'West Virginia' },
     { code: 'WI', name: 'Wisconsin' }, { code: 'WY', name: 'Wyoming' }
   ];
+
+  const handleScanResult = (scannedText: string) => {
+    setIdentifier(scannedText);
+    setIsScannerOpen(false);
+  };
 
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -201,16 +208,29 @@ const VerifyPage = () => {
           <CardContent>
             <form onSubmit={handleVerify} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="md:col-span-2">
-                  <Input
-                    type="text"
-                    placeholder={itemType === 'license_plate' ? 'License Plate Number' : 'Serial Number, IMEI, VIN, License Plate, etc.'}
-                    value={identifier}
-                    onChange={(e) => setIdentifier(e.target.value)}
-                    disabled={isLoading}
-                    className="text-lg py-6"
-                    required
-                  />
+                <div className="md:col-span-2 relative">
+                  <div className="flex gap-2">
+                    <Input
+                      type="text"
+                      placeholder={itemType === 'license_plate' ? 'License Plate Number' : 'Serial Number, IMEI, VIN, License Plate, etc.'}
+                      value={identifier}
+                      onChange={(e) => setIdentifier(e.target.value)}
+                      disabled={isLoading}
+                      className="text-lg py-6 flex-1"
+                      required
+                    />
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="icon"
+                      onClick={() => setIsScannerOpen(true)}
+                      disabled={isLoading}
+                      className="h-auto py-6 px-4"
+                      title="Scan QR code or barcode"
+                    >
+                      <Camera className="w-5 h-5" />
+                    </Button>
+                  </div>
                 </div>
                 <Select value={itemType} onValueChange={setItemType} disabled={isLoading}>
                   <SelectTrigger className="py-6">
@@ -312,6 +332,13 @@ const VerifyPage = () => {
         {/* Results */}
         {result && <ParallelVerificationDisplay result={result} />}
       </div>
+      
+      {/* QR/Barcode Scanner Modal */}
+      <QRScanner
+        isOpen={isScannerOpen}
+        onScan={handleScanResult}
+        onClose={() => setIsScannerOpen(false)}
+      />
     </div>
     </>
   );
