@@ -26,55 +26,53 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
-      {/* Hero background with optimized loading */}
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
-          style={{
-            backgroundImage: `url(${heroBackground})`,
-            transform: 'translateZ(0)', // GPU acceleration
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85" />
-        </div>
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-sos via-sos-dark to-sos">
+      {/* Animated gradient mesh background */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-sos-orange/20 via-transparent to-sos-lime/10 animate-gradient-slow bg-200" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,51,0,0.1),transparent)]" />
       </div>
+      
+      {/* Glassmorphism overlay */}
+      <div className="absolute inset-0 backdrop-blur-[1px]" />
       
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          {/* Mobile App Banner */}
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-lg p-3">
-            <p className="text-sm md:text-base font-medium text-foreground">
-              📱 <span className="text-primary">NEW:</span> Download Our Mobile App • 
-              <span className="text-secondary"> Only App That Verifies Firearms</span> • No Subscription Required
+          {/* AI-Powered Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-sos-orange/10 to-sos-lime/10 backdrop-blur-sm border border-sos-orange/30 rounded-full px-6 py-2 shadow-lg">
+            <div className="w-2 h-2 bg-sos-orange rounded-full animate-pulse" />
+            <p className="text-sm md:text-base font-semibold bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text text-transparent">
+              AI-Powered Verification • 50M+ Records • Instant Results
             </p>
           </div>
 
-          {/* Trust badges */}
+          {/* Trust badges with glassmorphism */}
           <div className="flex flex-wrap justify-center gap-3">
-            <div className="flex items-center gap-2 bg-card px-3 py-1.5 rounded-full border border-border">
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Verified Secure</span>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-sos-orange/20 shadow-lg hover:bg-white/10 transition-all">
+              <Shield className="w-4 h-4 text-sos-orange" />
+              <span className="text-sm font-medium text-sos-light">Verified Secure</span>
             </div>
-            <div className="flex items-center gap-2 bg-card px-3 py-1.5 rounded-full border border-border">
-              <Database className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">50M+ Records</span>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-sos-orange/20 shadow-lg hover:bg-white/10 transition-all">
+              <Database className="w-4 h-4 text-sos-lime" />
+              <span className="text-sm font-medium text-sos-light">50M+ Records</span>
             </div>
-            <div className="flex items-center gap-2 bg-card px-3 py-1.5 rounded-full border border-border">
-              <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Instant Results</span>
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-sos-orange/20 shadow-lg hover:bg-white/10 transition-all">
+              <Zap className="w-4 h-4 text-sos-orange" />
+              <span className="text-sm font-medium text-sos-light">Instant Results</span>
             </div>
           </div>
 
-          {/* Main headline */}
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              <span className="block text-foreground">Download Our Mobile App</span>
-              <span className="block mt-2 text-primary">Verify Stolen Items Instantly</span>
+          {/* Main headline with modern gradient text */}
+          <div className="space-y-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+              <span className="block text-sos-light drop-shadow-lg">Verify Before You Buy</span>
+              <span className="block mt-3 bg-gradient-to-r from-sos-orange via-sos-orange to-sos-lime bg-clip-text text-transparent drop-shadow-2xl">
+                AI-Powered Protection
+              </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-sos-gray-200 max-w-3xl mx-auto font-light leading-relaxed">
               The only mobile app that verifies phones, cars, electronics, AND firearms. Competitors have no app. Install free on iOS & Android.
             </p>
             
@@ -111,20 +109,20 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Search form */}
+          {/* Modern glassmorphic search form */}
           <div className="max-w-3xl mx-auto">
             <form onSubmit={handleSearch} className="space-y-4">
-              <div className="bg-card p-4 rounded-lg border border-border">
+              <div className="bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-sos-orange/30 shadow-2xl hover:shadow-sos-orange/20 transition-all">
                 <div className="flex flex-col md:flex-row gap-3">
                   <Input 
                     type="text" 
                     placeholder="Enter IMEI, VIN, Serial Number..." 
                     value={searchValue} 
                     onChange={e => setSearchValue(e.target.value)} 
-                    className="flex-1 h-12 text-base"
+                    className="flex-1 h-14 text-base bg-white/10 border-sos-orange/30 text-sos-light placeholder:text-sos-gray-400 focus:bg-white/15"
                   />
                   <Select value={itemType} onValueChange={setItemType}>
-                    <SelectTrigger className="h-12 w-full md:w-48">
+                    <SelectTrigger className="h-14 w-full md:w-48 bg-white/10 border-sos-orange/30 text-sos-light">
                       <SelectValue placeholder="Item Type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -140,7 +138,7 @@ const Hero = () => {
                     type="submit" 
                     size="lg" 
                     disabled={!searchValue.trim()} 
-                    className="h-12 px-8"
+                    className="h-14 px-8 bg-gradient-to-r from-sos-orange to-sos-orange/90 hover:from-sos-orange/90 hover:to-sos-orange text-white font-semibold shadow-lg shadow-sos-orange/30 hover:shadow-sos-orange/50 transition-all"
                   >
                     <Search className="w-5 h-5 mr-2" />
                     Verify Now
@@ -148,9 +146,9 @@ const Hero = () => {
                 </div>
               </div>
               
-              <p className="text-sm text-muted-foreground text-center">
-                <span className="text-primary font-semibold">2 FREE</span> searches • 
-                <span className="text-secondary font-semibold"> 50M+</span> records • 
+              <p className="text-sm text-sos-gray-300 text-center">
+                <span className="text-sos-orange font-bold">2 FREE</span> searches • 
+                <span className="text-sos-lime font-bold"> 50M+</span> records • 
                 Instant verification • No credit card required
               </p>
             </form>
@@ -168,7 +166,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
+          {/* Modern stats with glassmorphism */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-8">
             {[
               { value: "2M+", label: "Items Verified" },
@@ -176,21 +174,24 @@ const Hero = () => {
               { value: "99.9%", label: "Accuracy" },
               { value: "24/7", label: "Support" }
             ].map((stat, i) => (
-              <div key={i} className="text-center p-4 rounded-lg bg-card border border-border">
-                <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div key={i} className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-sos-orange/20 hover:bg-white/10 hover:border-sos-orange/40 transition-all shadow-lg group">
+                <div className="text-3xl font-bold bg-gradient-to-br from-sos-orange to-sos-lime bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">{stat.value}</div>
+                <div className="text-sm text-sos-gray-300 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          {/* Verification in Action Image */}
-          <div className="max-w-4xl mx-auto mt-12">
-            <img 
-              src={heroDeviceImage} 
-              alt="SafeOrStolen verification app on mobile and desktop showing item verified status" 
-              className="w-full h-auto rounded-2xl shadow-2xl"
-              loading="eager"
-            />
+          {/* Verification in Action Image with modern frame */}
+          <div className="max-w-4xl mx-auto mt-16">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-sos-orange/30 to-sos-lime/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
+              <img 
+                src={heroDeviceImage} 
+                alt="SafeOrStolen verification app on mobile and desktop showing item verified status" 
+                className="relative w-full h-auto rounded-2xl shadow-2xl border border-sos-orange/30 group-hover:scale-[1.02] transition-transform"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>
