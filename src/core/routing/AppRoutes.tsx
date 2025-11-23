@@ -76,6 +76,7 @@ const FasterCapitalRaiseCapitalPage = lazy(() => import('@/pages/fastercapital/R
 const FasterCapitalTechCofounderPage = lazy(() => import('@/pages/fastercapital/TechCofounderPage'));
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
 const SEOBacklinkStrategyPage = lazy(() => import('@/pages/SEOBacklinkStrategyPage'));
+const VideosPage = lazy(() => import('@/pages/VideosPage'));
 const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
 // Redirect Pages (with HTML meta refresh for crawlers)
@@ -551,6 +552,7 @@ export const AppRoutes = () => {
         <Route path="/report-stolen" element={<ReportStolen />} />
         <Route path="/traffic-strategy" element={<TrafficStrategyPage />} />
         <Route path="/seo-strategy" element={<SEOBacklinkStrategyPage />} />
+        <Route path="/videos" element={<VideosPage />} />
         
         {/* Install App & Download Redirects - Consolidate to /app/download */}
         <Route path="/install-app" element={<Navigate to="/app/download" replace />} />

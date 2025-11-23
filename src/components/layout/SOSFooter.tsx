@@ -32,6 +32,7 @@ export const SOSFooter: React.FC = () => {
       title: 'Resources',
       links: [
         { label: 'Blog', to: '/blog' },
+        { label: 'Video Tutorials', to: '/videos' },
         { label: 'How It Works', to: '/how-it-works' },
         { label: 'FAQ', to: '/faq' },
         { label: 'Statistics', to: '/stolen-goods-statistics-2025' },
