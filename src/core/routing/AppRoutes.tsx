@@ -471,6 +471,10 @@ const StolenVehicleDatabasePage = lazy(() => import('@/pages/StolenVehicleDataba
 const StolenPhoneCheckPage = lazy(() => import('@/pages/StolenPhoneCheckPage'));
 const FreeStolenCheckPage = lazy(() => import('@/pages/FreeStolenCheckPage'));
 const StolenGoodsSearchPage = lazy(() => import('@/pages/StolenGoodsSearchPage'));
+const ItemCategoriesPage = lazy(() => import('@/pages/ItemCategoriesPage'));
+const StolenGoodsStatistics2024Page = lazy(() => import('@/pages/StolenGoodsStatistics2024Page'));
+const StolenSearchConsolePage = lazy(() => import('@/pages/StolenSearchConsolePage'));
+const SearchTrendsPage = lazy(() => import('@/pages/SearchTrendsPage'));
 
 // 404
 const NotFound = lazy(() => import('@/pages/NotFound'));
@@ -515,6 +519,15 @@ export const AppRoutes = () => {
         <Route path="/disclaimer" element={<DisclaimerPage />} />
         <Route path="/transparency" element={<TransparencyPage />} />
         <Route path="/service-limitations" element={<ServiceLimitations />} />
+        
+        {/* Item Categories & Statistics */}
+        <Route path="/item-categories" element={<ItemCategoriesPage />} />
+        <Route path="/stolen-goods-statistics-2024" element={<StolenGoodsStatistics2024Page />} />
+        <Route path="/statistics/stolen-goods-2024" element={<Navigate to="/stolen-goods-statistics-2024" replace />} />
+        <Route path="/statistics/stolen-goods" element={<Navigate to="/stolen-goods-statistics-2024" replace />} />
+        <Route path="/stolen-search-console" element={<StolenSearchConsolePage />} />
+        <Route path="/search-console" element={<Navigate to="/stolen-search-console" replace />} />
+        <Route path="/search-trends" element={<SearchTrendsPage />} />
         
         {/* Analytics & Reporting */}
         <Route path="/analytics" element={<Analytics />} />
