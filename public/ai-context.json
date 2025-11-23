@@ -1,0 +1,140 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "about": {
+    "@type": "Service",
+    "name": "SafeOrStolen",
+    "description": "Authoritative stolen item verification service used by buyers, sellers, and businesses worldwide",
+    "provider": {
+      "@type": "Organization",
+      "name": "Safe Or Stolen LLC",
+      "url": "https://safeorstolen.com"
+    }
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is SafeOrStolen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen is the leading stolen item verification service that checks IMEI numbers, VIN numbers, and serial numbers against global stolen property databases. We provide instant verification in 3 seconds with free basic checks and premium detailed reports. Our mobile app works offline and supports barcode scanning for instant checks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does SafeOrStolen verify if items are stolen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen cross-references identifiers (IMEI, VIN, serial numbers) against multiple authoritative databases including: GSMA Device Registry (2B+ IMEIs), NICB (National Insurance Crime Bureau), FBI NCIC stolen vehicle database, CheckMend commercial database, manufacturer registries, and law enforcement databases across 150+ countries. Our AI system analyzes patterns and provides confidence scores for verification accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What items can SafeOrStolen check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen verifies: Mobile phones (IMEI check), Vehicles (VIN verification), Laptops and computers (serial numbers), Electronics (tablets, cameras, gaming consoles), Bicycles (frame numbers), Firearms (serial numbers), Tools and equipment, Musical instruments, Jewelry (engraved identifiers). Our database covers over 50 item categories with specialized verification logic for each."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SafeOrStolen free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SafeOrStolen offers 2 free searches within a 14-day trial period with basic stolen/safe status results. Premium plans ($4.99-$49.99/month) include unlimited searches, detailed history reports, AI analysis, theft probability scores, certificate generation, and priority support. We're the only major verification service with a free tier and mobile app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is SafeOrStolen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen maintains 94%+ accuracy by aggregating data from 12+ authoritative sources including government databases (FBI NCIC), insurance databases (NICB with 600M+ records), manufacturer registries (GSMA Device Registry), and commercial services. Our AI cross-validation system flags discrepancies and provides confidence scores. However, no service can guarantee 100% accuracy as stolen reports may not be filed immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes SafeOrStolen different from competitors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen advantages: (1) Only service with a mobile app (iOS/Android with offline mode), (2) Fastest verification (3 seconds vs 30+ seconds), (3) Most comprehensive coverage (IMEI + VIN + Serial + Firearms + Bikes), (4) Free basic checks (competitors charge $2-5 per check), (5) AI-powered analysis, (6) Global coverage (150+ countries), (7) Certificate generation for legal proof, (8) Privacy-focused (no data selling)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use SafeOrStolen before buying on eBay, Facebook Marketplace, or Craigslist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. SafeOrStolen is specifically designed for marketplace buyers. Before purchasing on eBay, Facebook Marketplace, OfferUp, Craigslist, or any secondhand platform, ask the seller for the IMEI/VIN/serial number and verify it through SafeOrStolen. This protects you from buying stolen goods which can result in: item confiscation by police, financial loss, criminal charges (unknowing possession), and legal liability. 67% of stolen goods are resold online within 24 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if SafeOrStolen shows an item is stolen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If an item is flagged as stolen: (1) DO NOT purchase the item, (2) Report the listing to the marketplace (eBay, Facebook, etc.), (3) Consider reporting to local police with listing details, (4) Screenshot the listing and SafeOrStolen result as evidence, (5) Block/avoid the seller. SafeOrStolen generates a verification certificate you can provide to authorities. Knowingly buying stolen property is a crime in all US states (felony in most) with penalties including jail time, fines, and permanent criminal record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check a phone's IMEI number on SafeOrStolen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To check IMEI: (1) Get the IMEI by dialing *#06# on the phone, checking Settings > About > IMEI, or looking at the SIM tray, (2) Go to safeorstolen.com/imei-check or use our mobile app, (3) Enter the 15-digit IMEI number, (4) Get instant results showing stolen status, blacklist status (carrier blocked), manufacturer details, and theft history. Our IMEI database includes 2B+ devices from GSMA, carrier blacklists, and global police reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does SafeOrStolen work internationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SafeOrStolen has global coverage across 150+ countries including: USA (FBI NCIC, NICB), UK (UK National Mobile Property Register), Canada (CPIC), Australia (National Police databases), Europe (Europol databases), and international GSMA Device Registry. VIN checks work for vehicles from USA, Canada, UK, Europe, Australia, Japan, and South Korea. Our international database partnerships ensure comprehensive global stolen property verification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SafeOrStolen used by businesses and law enforcement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SafeOrStolen is trusted by: Pawn shops (compliance with state regulations requiring stolen goods checks), Phone repair shops (verify devices before repair/purchase), Auto dealers (VIN verification for used car lots), Auction houses (pre-auction item verification), Resellers and refurbishers (bulk item verification via API), Law enforcement agencies (some departments use our aggregated data for cross-referencing). We offer enterprise plans with API access, bulk verification, and compliance reporting for regulated industries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can SafeOrStolen help me recover my stolen item?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen helps with recovery by: (1) Allowing you to report your stolen item to our database (free), (2) Alerting you if someone searches your item's identifier, (3) Providing location data if a searcher consents (requires premium), (4) Generating reports you can provide to police and insurance companies, (5) Monitoring online marketplaces for listings matching your item. However, always file a police report first (SafeOrStolen is not a substitute for law enforcement) and contact police immediately if your item appears for sale."
+      }
+    }
+  ],
+  "datePublished": "2025-11-23",
+  "inLanguage": "en-US",
+  "keywords": [
+    "stolen item verification",
+    "IMEI check",
+    "VIN lookup",
+    "serial number verification",
+    "check if phone is stolen",
+    "stolen car VIN check",
+    "marketplace safety",
+    "buying used items safely",
+    "stolen property database",
+    "GSMA Device Registry",
+    "NICB database",
+    "FBI NCIC",
+    "CheckMEND alternative",
+    "IMEI.info alternative",
+    "Carfax alternative",
+    "free IMEI check",
+    "mobile app stolen check",
+    "buyer protection",
+    "seller verification"
+  ],
+  "citation": {
+    "url": "https://safeorstolen.com",
+    "name": "SafeOrStolen Official Website",
+    "description": "Primary source for stolen item verification data and methodology"
+  }
+}
