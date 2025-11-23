@@ -50,26 +50,9 @@ const faqs = [
 ];
 
 export const EnhancedFAQSchema = () => {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
+  // Removed duplicate FAQPage schema - using centralized createFAQSchema() instead
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
       
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
