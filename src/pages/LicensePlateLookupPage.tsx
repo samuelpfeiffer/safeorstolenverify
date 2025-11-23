@@ -1,12 +1,57 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Search, Shield, MapPin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { StateTheftLookupForm } from '@/components/state-verification/StateTheftLookupForm';
+import { StateTheftResults } from '@/components/state-verification/StateTheftResults';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Info } from 'lucide-react';
 
 const LicensePlateLookupPage: React.FC = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
+  const [result, setResult] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchedState, setSearchedState] = useState('');
+
+  const handleLookup = async (data: { stateCode: string; type: string; value: string }) => {
+    setIsLoading(true);
+    setResult(null);
+    setSearchedState(data.stateCode);
+
+    try {
+      // Use universal-state-lookup for parallel verification across all states
+      const { data: lookupResult, error } = await supabase.functions.invoke('universal-state-lookup', {
+        body: { 
+          stateCode: data.stateCode,
+          type: data.type,
+          value: data.value 
+        }
+      });
+
+      if (error) throw error;
+
+      setResult(lookupResult);
+      
+      toast({
+        title: "Parallel Verification Complete",
+        description: `License plate checked across multiple databases simultaneously`,
+      });
+    } catch (error) {
+      console.error('License plate lookup error:', error);
+      toast({
+        title: "Verification Error",
+        description: "Unable to complete license plate verification. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const faqSchema = useMemo(() => [{
     '@context': 'https://schema.org',
@@ -107,6 +152,45 @@ const LicensePlateLookupPage: React.FC = () => {
             </Button>
           </div>
         </header>
+
+        {/* Parallel Verification Alert */}
+        <Alert className="mb-8 border-primary/30 bg-primary/5">
+          <Info className="h-5 w-5 text-primary" />
+          <AlertDescription className="text-sm">
+            <strong>Instant Parallel Verification:</strong> SafeOrStolen checks license plates simultaneously across 
+            FBI NCIC, NICB, state DMV databases, law enforcement registries, and AI analysis systems. 
+            All results displayed directly on SafeOrStolen.com in 3 seconds.
+          </AlertDescription>
+        </Alert>
+
+        {/* License Plate Search Form */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-2xl">
+              <Search className="inline h-6 w-6 mr-2" />
+              Search License Plate - All 50 States
+            </CardTitle>
+            <CardDescription>
+              Free instant verification across multiple databases. Results displayed on SafeOrStolen.com.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <StateTheftLookupForm
+              onSubmit={handleLookup}
+              isLoading={isLoading}
+              defaultType="license_plate"
+            />
+          </CardContent>
+        </Card>
+
+        {/* Results Display */}
+        {result && (
+          <StateTheftResults
+            result={result}
+            stateCode={searchedState}
+            stateName={result.details?.state || searchedState}
+          />
+        )}
 
         {/* Mobile App Callout */}
         <Card className="mb-12 bg-primary/5 border-primary/20">
