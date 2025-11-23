@@ -27,7 +27,7 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/how-it-works', label: 'How It Works' },
-    { to: '/install-app', label: 'Install App', featured: true },
+    { to: '/app/download', label: 'Download App', featured: true },
     { to: '/blog', label: 'Blog' },
   ];
 
@@ -49,8 +49,8 @@ const TopNavigation = () => {
             />
             <span className="text-2xl font-black tracking-tight">
               <span className="text-foreground">Safe</span>
-              <span className="text-sos-orange">Or</span>
-              <span className="text-sos-lime">Stolen</span>
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Or</span>
+              <span className="bg-gradient-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">Stolen</span>
             </span>
           </Link>
 
@@ -62,12 +62,12 @@ const TopNavigation = () => {
                 to={link.to}
                 className={`text-sm font-semibold transition-colors relative group py-2 ${
                   link.featured 
-                    ? 'text-transparent bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text' 
+                    ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold' 
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sos-orange to-sos-lime transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
@@ -80,7 +80,7 @@ const TopNavigation = () => {
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="gap-2 border-sos-orange/30 hover:border-sos-orange hover:bg-sos-orange/5 transition-all"
+                    className="gap-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all"
                   >
                     <User className="w-4 h-4" />
                     <span>Account</span>

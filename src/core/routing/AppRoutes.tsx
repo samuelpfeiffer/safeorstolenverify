@@ -219,7 +219,6 @@ const AuctionHouseSafety = lazy(() => import('@/pages/guides/AuctionHouseSafety'
 const PawnshopBuyingTips = lazy(() => import('@/pages/guides/PawnshopBuyingTips'));
 
 // Statistics & Data Pages
-const StolenGoodsStatistics2025 = lazy(() => import('@/pages/StolenGoodsStatistics2025'));
 const SafeOrStolenAppGuide = lazy(() => import('@/pages/blog/SafeOrStolenAppGuide'));
 const MobileAppVsWebsiteVerification = lazy(() => import('@/pages/blog/MobileAppVsWebsiteVerification'));
 const HowToUseIMEICheckerApp = lazy(() => import('@/pages/blog/HowToUseIMEICheckerApp'));
@@ -472,6 +471,7 @@ const StolenPhoneCheckPage = lazy(() => import('@/pages/StolenPhoneCheckPage'));
 const FreeStolenCheckPage = lazy(() => import('@/pages/FreeStolenCheckPage'));
 const StolenGoodsSearchPage = lazy(() => import('@/pages/StolenGoodsSearchPage'));
 const ItemCategoriesPage = lazy(() => import('@/pages/ItemCategoriesPage'));
+const StolenGoodsStatistics2025 = lazy(() => import('@/pages/StolenGoodsStatistics2025'));
 const StolenGoodsStatistics2024Page = lazy(() => import('@/pages/StolenGoodsStatistics2024Page'));
 const StolenSearchConsolePage = lazy(() => import('@/pages/StolenSearchConsolePage'));
 const SearchTrendsPage = lazy(() => import('@/pages/SearchTrendsPage'));
@@ -517,8 +517,6 @@ export const AppRoutes = () => {
         <Route path="/verify/offerup" element={<OfferUpVerifyPage />} />
         <Route path="/verify/auctions" element={<AuctionsVerifyPage />} />
         <Route path="/verify/pawnshops" element={<PawnshopsVerifyPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard-old" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/subscription" element={<SubscriptionPage />} />
         <Route path="/subscriptions" element={<SubscriptionsPage />} />
@@ -539,9 +537,11 @@ export const AppRoutes = () => {
         
         {/* Item Categories & Statistics */}
         <Route path="/item-categories" element={<ItemCategoriesPage />} />
-        <Route path="/stolen-goods-statistics-2024" element={<StolenGoodsStatistics2024Page />} />
-        <Route path="/statistics/stolen-goods-2024" element={<Navigate to="/stolen-goods-statistics-2024" replace />} />
-        <Route path="/statistics/stolen-goods" element={<Navigate to="/stolen-goods-statistics-2024" replace />} />
+        <Route path="/stolen-goods-statistics-2025" element={<StolenGoodsStatistics2025 />} />
+        <Route path="/stolen-goods-statistics-2024" element={<Navigate to="/stolen-goods-statistics-2025" replace />} />
+        <Route path="/statistics/stolen-goods-2024" element={<Navigate to="/stolen-goods-statistics-2025" replace />} />
+        <Route path="/statistics/stolen-goods" element={<Navigate to="/stolen-goods-statistics-2025" replace />} />
+        <Route path="/statistics" element={<Navigate to="/stolen-goods-statistics-2025" replace />} />
         <Route path="/stolen-search-console" element={<StolenSearchConsolePage />} />
         <Route path="/search-console" element={<Navigate to="/stolen-search-console" replace />} />
         <Route path="/search-trends" element={<SearchTrendsPage />} />
@@ -551,6 +551,14 @@ export const AppRoutes = () => {
         <Route path="/report-stolen" element={<ReportStolen />} />
         <Route path="/traffic-strategy" element={<TrafficStrategyPage />} />
         <Route path="/seo-strategy" element={<SEOBacklinkStrategyPage />} />
+        
+        {/* Install App & Download Redirects - Consolidate to /app/download */}
+        <Route path="/install-app" element={<Navigate to="/app/download" replace />} />
+        <Route path="/download" element={<Navigate to="/app/download" replace />} />
+        
+        {/* Dashboard Consolidation */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard-old" element={<Navigate to="/dashboard" replace />} />
         
         {/* High-Priority Stolen Check Pages */}
         <Route path="/stolen-item-lookup" element={<StolenItemLookupPage />} />
