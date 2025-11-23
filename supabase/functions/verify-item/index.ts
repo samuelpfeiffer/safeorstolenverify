@@ -215,57 +215,24 @@ async function verifyIMEI(imei: string): Promise<VerificationResult> {
       }
     }
 
-    // If a real IMEI provider API key is configured, try real lookup first
-    const apiKey = Deno.env.get('IMEI_LOOKUP_API_KEY')
-    if (apiKey) {
-      try {
-        // NOTE: Replace the URL below with your actual provider endpoint format
-        // This structure is resilient: if the call fails, we gracefully fall back to simulated logic
-        const url = `https://api.imeilookup.app/lookup?imei=${encodeURIComponent(imei)}`
-        const resp = await fetch(url, {
-          headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Accept': 'application/json'
-          }
-        })
-
-        if (resp.ok) {
-          const data = await resp.json()
-          // Map provider response to our VerificationResult shape
-          // The mapping below is generic — adjust keys to match your provider
-          const providerStatus = String((data.status || data.result || '').toString().toLowerCase())
-          let status: VerificationResult['status'] = 'unknown'
-          if (data.blacklisted === true || providerStatus === 'stolen' || providerStatus === 'blacklisted') {
-            status = 'stolen'
-          } else if (providerStatus === 'lost') {
-            status = 'lost'
-          } else if (providerStatus === 'clean' || providerStatus === 'ok' || providerStatus === 'safe') {
-            status = 'safe'
-          }
-
-          return {
-            status,
-            confidence: typeof data.confidence === 'number' ? Math.max(0, Math.min(100, Math.round(data.confidence))) : (status === 'unknown' ? 45 : 90),
-            source: 'IMEI_Lookup_API',
-            details: data,
-            message: data.message || (status === 'safe' ? 'Device appears to be legitimate' : status === 'unknown' ? 'No records found' : 'Device reported')
-          }
-        } else {
-          console.warn('IMEI provider request failed:', resp.status, await resp.text())
-        }
-      } catch (providerError) {
-        console.error('IMEI provider call error:', providerError)
-        // Intentionally fall through to simulated logic
-      }
+    // Run parallel verification: IMEI API + Web Scraper
+    const [imeiApiResult, webScraperResult] = await Promise.allSettled([
+      verifyIMEIWithAPI(imei),
+      verifyWithWebScraper(imei, 'phone')
+    ])
+    
+    const results: VerificationResult[] = []
+    
+    if (imeiApiResult.status === 'fulfilled' && imeiApiResult.value.confidence > 0) {
+      results.push(imeiApiResult.value)
     }
-
-    // Only use real API results - remove all simulated outcomes
-    return {
-      status: 'unknown',
-      confidence: 0,
-      source: 'system',
-      message: 'IMEI verification requires manual processing. Please contact support for assistance.'
+    
+    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
+      results.push(webScraperResult.value)
     }
+    
+    // Aggregate results - prioritize stolen/lost findings
+    return aggregateVerificationResults(results, 'IMEI verification')
 
   } catch (error) {
     console.error('IMEI verification error:', error)
@@ -274,6 +241,65 @@ async function verifyIMEI(imei: string): Promise<VerificationResult> {
       confidence: 0,
       source: 'system',
       message: 'Verification service temporarily unavailable'
+    }
+  }
+}
+
+async function verifyIMEIWithAPI(imei: string): Promise<VerificationResult> {
+  const apiKey = Deno.env.get('IMEI_LOOKUP_API_KEY')
+  if (!apiKey) {
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'IMEI_API_Unavailable',
+      message: 'IMEI API not configured'
+    }
+  }
+
+  try {
+    const url = `https://api.imeilookup.app/lookup?imei=${encodeURIComponent(imei)}`
+    const resp = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Accept': 'application/json'
+      }
+    })
+
+    if (resp.ok) {
+      const data = await resp.json()
+      const providerStatus = String((data.status || data.result || '').toString().toLowerCase())
+      let status: VerificationResult['status'] = 'unknown'
+      if (data.blacklisted === true || providerStatus === 'stolen' || providerStatus === 'blacklisted') {
+        status = 'stolen'
+      } else if (providerStatus === 'lost') {
+        status = 'lost'
+      } else if (providerStatus === 'clean' || providerStatus === 'ok' || providerStatus === 'safe') {
+        status = 'safe'
+      }
+
+      return {
+        status,
+        confidence: typeof data.confidence === 'number' ? Math.max(0, Math.min(100, Math.round(data.confidence))) : (status === 'unknown' ? 45 : 90),
+        source: 'IMEI_Lookup_API',
+        details: data,
+        message: data.message || (status === 'safe' ? 'Device appears to be legitimate' : status === 'unknown' ? 'No records found' : 'Device reported')
+      }
+    } else {
+      console.warn('IMEI provider request failed:', resp.status, await resp.text())
+      return {
+        status: 'unknown',
+        confidence: 0,
+        source: 'IMEI_API_Error',
+        message: 'IMEI API request failed'
+      }
+    }
+  } catch (error) {
+    console.error('IMEI API error:', error)
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'IMEI_API_Error',
+      message: 'IMEI API unavailable'
     }
   }
 }
@@ -292,13 +318,25 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
       }
     }
 
-    // No fake results - only return unknown for manual verification
-    return {
-      status: 'unknown',
-      confidence: 0,
-      source: 'system',
-      message: 'VIN verification requires manual processing. Please contact support for assistance.'
+    // Run parallel verification: NHTSA + Web Scraper
+    const [nhtsaResult, webScraperResult] = await Promise.allSettled([
+      verifyVINWithNHTSA(vin),
+      verifyWithWebScraper(vin, 'vehicle')
+    ])
+    
+    const results: VerificationResult[] = []
+    
+    if (nhtsaResult.status === 'fulfilled' && nhtsaResult.value.confidence > 0) {
+      results.push(nhtsaResult.value)
     }
+    
+    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
+      results.push(webScraperResult.value)
+    }
+    
+    // Aggregate results
+    return aggregateVerificationResults(results, 'VIN verification')
+
   } catch (error) {
     console.error('VIN verification error:', error)
     return {
@@ -306,6 +344,59 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
       confidence: 0,
       source: 'error',
       message: 'VIN verification service temporarily unavailable'
+    }
+  }
+}
+
+async function verifyVINWithNHTSA(vin: string): Promise<VerificationResult> {
+  try {
+    // NHTSA VIN decoder API (free, public)
+    const url = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/${encodeURIComponent(vin)}?format=json`
+    const resp = await fetch(url)
+    
+    if (!resp.ok) {
+      return {
+        status: 'unknown',
+        confidence: 0,
+        source: 'NHTSA_API_Error',
+        message: 'NHTSA API unavailable'
+      }
+    }
+    
+    const data = await resp.json()
+    const results = data.Results || []
+    
+    // Extract vehicle info from NHTSA response
+    const vehicleInfo: any = {}
+    results.forEach((item: any) => {
+      if (item.Value && item.Value !== 'Not Applicable' && item.Value !== '') {
+        vehicleInfo[item.Variable] = item.Value
+      }
+    })
+    
+    // NHTSA doesn't provide theft status, only vehicle information
+    return {
+      status: 'unknown',
+      confidence: 40,
+      source: 'NHTSA_API',
+      details: {
+        make: vehicleInfo.Make,
+        model: vehicleInfo.Model,
+        year: vehicleInfo.ModelYear,
+        type: vehicleInfo.VehicleType,
+        manufacturer: vehicleInfo.Manufacturer,
+        full_data: vehicleInfo
+      },
+      message: 'Vehicle information retrieved from NHTSA. Theft status check via other sources.'
+    }
+    
+  } catch (error) {
+    console.error('NHTSA API error:', error)
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'NHTSA_API_Error',
+      message: 'NHTSA API unavailable'
     }
   }
 }
@@ -319,20 +410,49 @@ async function verifyVIN(vin: string): Promise<VerificationResult> {
  */
 async function verifyBike(serialNumber: string): Promise<VerificationResult> {
   try {
+    // Run parallel verification: Bike Index + Web Scraper
+    const [bikeIndexResult, webScraperResult] = await Promise.allSettled([
+      verifyBikeWithIndex(serialNumber),
+      verifyWithWebScraper(serialNumber, 'bicycle')
+    ])
+    
+    const results: VerificationResult[] = []
+    
+    if (bikeIndexResult.status === 'fulfilled' && bikeIndexResult.value.confidence > 0) {
+      results.push(bikeIndexResult.value)
+    }
+    
+    if (webScraperResult.status === 'fulfilled' && webScraperResult.value.confidence > 0) {
+      results.push(webScraperResult.value)
+    }
+    
+    // Aggregate results
+    return aggregateVerificationResults(results, 'Bike verification')
+
+  } catch (error) {
+    console.error('Bike verification error:', error)
+    return {
+      status: 'error',
+      confidence: 0,
+      source: 'BikeIndex_API',
+      message: 'Bike verification service temporarily unavailable'
+    }
+  }
+}
+
+async function verifyBikeWithIndex(serialNumber: string): Promise<VerificationResult> {
+  try {
     const token = Deno.env.get('BIKEINDEX_ACCESS_TOKEN') || ''
     if (!token) {
-      // Return an unknown result tagged with a non-BikeIndex source so callers can choose to fall back
       return {
         status: 'unknown',
-        confidence: 40,
-        source: 'system',
+        confidence: 0,
+        source: 'BikeIndex_Unavailable',
         message: 'Bike Index token not configured'
       }
     }
 
     const baseUrl = 'https://bikeindex.org/api/v3'
-
-    // Search for the bike by serial
     const searchUrl = `${baseUrl}/search?serial=${encodeURIComponent(serialNumber)}&stolenness=all&per_page=3`
     const searchResp = await fetch(searchUrl, {
       headers: {
@@ -346,8 +466,8 @@ async function verifyBike(serialNumber: string): Promise<VerificationResult> {
       console.warn('Bike Index search failed:', searchResp.status, text)
       return {
         status: 'unknown',
-        confidence: 35,
-        source: 'BikeIndex_API',
+        confidence: 0,
+        source: 'BikeIndex_API_Error',
         message: 'Unable to search Bike Index'
       }
     }
@@ -357,18 +477,16 @@ async function verifyBike(serialNumber: string): Promise<VerificationResult> {
     if (bikes.length === 0) {
       return {
         status: 'unknown',
-        confidence: 45,
+        confidence: 40,
         source: 'BikeIndex_API',
         details: { matched: false, query_serial: serialNumber },
         message: 'No matching bikes found'
       }
     }
 
-    // Use the best match (first)
     const best = bikes[0]
     const bikeId = best?.id
     let stolen = false
-    let lost = false
     let enriched: any = {}
 
     if (bikeId) {
@@ -381,10 +499,7 @@ async function verifyBike(serialNumber: string): Promise<VerificationResult> {
 
       if (bikeResp.ok) {
         const bikeData = await bikeResp.json() as any
-        // Bike Index flags
         stolen = !!(bikeData?.bike?.stolen || bikeData?.bike?.stolen_record || (Array.isArray(bikeData?.bike?.stolen_records) && bikeData.bike.stolen_records.length > 0))
-        // Bike Index does not have a distinct "lost" flag; we'll treat "stolen" only. Keep 'lost' false.
-        lost = false
 
         const photos = Array.isArray(bikeData?.bike?.public_images)
           ? bikeData.bike.public_images.map((img: any) => img?.large || img?.medium || img?.thumb).filter(Boolean)
@@ -402,13 +517,9 @@ async function verifyBike(serialNumber: string): Promise<VerificationResult> {
           registry_url: bikeData?.bike?.url || (best?.url ?? null),
           photos
         }
-      } else {
-        const txt = await bikeResp.text()
-        console.warn('Bike Index bike fetch failed:', bikeResp.status, txt)
       }
     }
 
-    // Decide status
     if (stolen) {
       return {
         status: 'stolen',
@@ -417,34 +528,24 @@ async function verifyBike(serialNumber: string): Promise<VerificationResult> {
         details: enriched,
         message: 'Bike reported stolen in Bike Index'
       }
-    } else if (lost) {
-      // Currently Bike Index doesn't expose "lost" separate from stolen; kept for future compatibility
-      return {
-        status: 'lost',
-        confidence: 85,
-        source: 'BikeIndex_API',
-        details: enriched,
-        message: 'Bike reported lost'
-      }
-    } else {
-      // Found a bike record and not marked stolen -> likely safe
-      const foundRecord = bikes.length > 0
-      return {
-        status: foundRecord ? 'safe' : 'unknown',
-        confidence: foundRecord ? 80 : 45,
-        source: 'BikeIndex_API',
-        details: enriched.matched ? enriched : { matched: foundRecord, candidate_id: bikeId },
-        message: foundRecord ? 'Bike found with no stolen record' : 'No matching bikes found'
-      }
+    }
+    
+    const foundRecord = bikes.length > 0
+    return {
+      status: foundRecord ? 'safe' : 'unknown',
+      confidence: foundRecord ? 80 : 40,
+      source: 'BikeIndex_API',
+      details: enriched.matched ? enriched : { matched: foundRecord, candidate_id: bikeId },
+      message: foundRecord ? 'Bike found with no stolen record' : 'No matching bikes found'
     }
 
   } catch (error) {
-    console.error('Bike Index verification error:', error)
+    console.error('Bike Index error:', error)
     return {
-      status: 'error',
+      status: 'unknown',
       confidence: 0,
-      source: 'BikeIndex_API',
-      message: 'Bike Index service temporarily unavailable'
+      source: 'BikeIndex_API_Error',
+      message: 'Bike Index service error'
     }
   }
 }
@@ -469,53 +570,8 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
       results.push(webScraperResult.value)
     }
     
-    // Aggregate results - prioritize stolen/lost findings
-    if (results.length > 0) {
-      const hasStolenReport = results.some(r => r.status === 'stolen')
-      const hasLostReport = results.some(r => r.status === 'lost')
-      
-      if (hasStolenReport) {
-        const stolenResult = results.find(r => r.status === 'stolen')!
-        return {
-          ...stolenResult,
-          details: {
-            ...stolenResult.details,
-            all_sources: results
-          }
-        }
-      }
-      
-      if (hasLostReport) {
-        const lostResult = results.find(r => r.status === 'lost')!
-        return {
-          ...lostResult,
-          details: {
-            ...lostResult.details,
-            all_sources: results
-          }
-        }
-      }
-      
-      // Return highest confidence result
-      const bestResult = results.reduce((best, current) => 
-        current.confidence > best.confidence ? current : best
-      )
-      return {
-        ...bestResult,
-        details: {
-          ...bestResult.details,
-          all_sources: results
-        }
-      }
-    }
-    
-    // No results - direct to manual verification
-    return {
-      status: 'unknown',
-      confidence: 0,
-      source: 'system', 
-      message: 'Manual verification required. Please contact support for assistance.'
-    }
+    // Aggregate results
+    return aggregateVerificationResults(results, 'Generic verification')
     
   } catch (error) {
     console.error('Generic verification error:', error)
@@ -524,6 +580,55 @@ async function verifyGenericSerial(serialNumber: string, itemType: string): Prom
       confidence: 0,
       source: 'system',
       message: 'Verification service temporarily unavailable'
+    }
+  }
+}
+
+// Shared aggregation logic for all verification types
+function aggregateVerificationResults(results: VerificationResult[], verificationType: string): VerificationResult {
+  if (results.length === 0) {
+    return {
+      status: 'unknown',
+      confidence: 0,
+      source: 'system',
+      message: `${verificationType} - No sources available. Manual verification required.`
+    }
+  }
+  
+  // Prioritize stolen findings
+  const stolenResult = results.find(r => r.status === 'stolen')
+  if (stolenResult) {
+    return {
+      ...stolenResult,
+      details: {
+        ...stolenResult.details,
+        all_sources: results
+      }
+    }
+  }
+  
+  // Then prioritize lost findings
+  const lostResult = results.find(r => r.status === 'lost')
+  if (lostResult) {
+    return {
+      ...lostResult,
+      details: {
+        ...lostResult.details,
+        all_sources: results
+      }
+    }
+  }
+  
+  // Return highest confidence result
+  const bestResult = results.reduce((best, current) => 
+    current.confidence > best.confidence ? current : best
+  )
+  
+  return {
+    ...bestResult,
+    details: {
+      ...bestResult.details,
+      all_sources: results
     }
   }
 }
