@@ -228,7 +228,7 @@ const HowToUseIMEICheckerApp = lazy(() => import('@/pages/blog/HowToUseIMEICheck
 // Item Categories
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 
-// Regional Pages
+const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
 const ArizonaLicensePlateLookup = lazy(() => import('@/pages/ArizonaLicensePlateLookup'));
 const FloridaLicensePlateLookup = lazy(() => import('@/pages/FloridaLicensePlateLookup'));
@@ -572,6 +572,9 @@ export const AppRoutes = () => {
         <Route path="/check-stolen-database" element={<CheckStolenDatabasePage />} />
         <Route path="/stolen-vehicle-database" element={<StolenVehicleDatabasePage />} />
         <Route path="/vin-check-lookup" element={<VINCheckLookupPage />} />
+        <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
+        <Route path="/license-plates-lookup" element={<Navigate to="/license-plate-lookup" replace />} />
+        <Route path="/vehicles-by-license-plate" element={<Navigate to="/license-plate-lookup" replace />} />
         <Route path="/check-stolen-car" element={<Navigate to="/stolen-vehicle-database" replace />} />
         <Route path="/search-stolen-vehicle" element={<Navigate to="/stolen-vehicle-database" replace />} />
         <Route path="/check-vehicle-stolen" element={<Navigate to="/stolen-vehicle-database" replace />} />
