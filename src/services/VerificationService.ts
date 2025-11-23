@@ -22,6 +22,8 @@ export interface ProviderResult {
 }
 
 export interface AggregatedResult {
+  identifier: string;
+  itemType: string;
   finalStatus: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
   confidence: number;
   riskLevel: 'low' | 'medium' | 'high' | 'critical';
@@ -70,7 +72,7 @@ class VerificationService {
       });
 
     // Aggregate results
-    const aggregated = this.aggregateResults(providerResults);
+    const aggregated = this.aggregateResults(providerResults, request);
     
     // Store results in database
     await this.storeVerificationResult(request, aggregated);
@@ -238,14 +240,17 @@ class VerificationService {
   /**
    * Aggregate results from multiple providers
    */
-  private aggregateResults(providers: ProviderResult[]): AggregatedResult {
+  private aggregateResults(providers: ProviderResult[], request: VerificationRequest): AggregatedResult {
     const timestamp = new Date().toISOString();
     const checkedSources = providers.map(p => p.provider);
+    const { identifier, itemType } = request;
 
     // If ANY provider reports stolen, final status is stolen
     const hasStolenReport = providers.some(p => p.status === 'stolen');
     if (hasStolenReport) {
       return {
+        identifier,
+        itemType,
         finalStatus: 'stolen',
         confidence: 95,
         riskLevel: 'critical',
@@ -260,6 +265,8 @@ class VerificationService {
     const hasLostReport = providers.some(p => p.status === 'lost');
     if (hasLostReport) {
       return {
+        identifier,
+        itemType,
         finalStatus: 'lost',
         confidence: 85,
         riskLevel: 'high',
@@ -280,6 +287,8 @@ class VerificationService {
     const allSafe = successfulChecks.every(p => p.status === 'safe');
     if (allSafe && successfulChecks.length > 0) {
       return {
+        identifier,
+        itemType,
         finalStatus: 'safe',
         confidence: avgConfidence,
         riskLevel: 'low',
@@ -293,6 +302,8 @@ class VerificationService {
     // Mixed or unknown results
     if (successfulChecks.length > 0) {
       return {
+        identifier,
+        itemType,
         finalStatus: 'unknown',
         confidence: avgConfidence,
         riskLevel: 'medium',
@@ -305,6 +316,8 @@ class VerificationService {
 
     // All checks failed
     return {
+      identifier,
+      itemType,
       finalStatus: 'error',
       confidence: 0,
       riskLevel: 'medium',

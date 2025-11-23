@@ -91,29 +91,26 @@ const VerifyPage = () => {
         if (error) throw error;
 
         // Convert to aggregated result format
-        const convertedResult = {
+        const convertedResult: AggregatedResult = {
           identifier: identifier,
           itemType: 'license_plate',
           finalStatus: lookupResult.status === 'stolen' ? 'stolen' : lookupResult.status === 'safe' ? 'safe' : 'unknown',
           message: lookupResult.message || `License plate check completed for ${stateCode}`,
-          riskLevel: lookupResult.status === 'stolen' ? 'critical' : lookupResult.status === 'safe' ? 'safe' : 'low',
+          riskLevel: lookupResult.status === 'stolen' ? 'critical' : lookupResult.status === 'safe' ? 'low' : 'medium',
           confidence: lookupResult.confidence || 85,
-          sourceResults: [{
-            source: `${stateCode} License Plate Database`,
+          providers: [{
+            provider: `${stateCode} License Plate Database`,
             status: lookupResult.status,
             confidence: lookupResult.confidence || 85,
             message: lookupResult.message,
-            timestamp: new Date().toISOString(),
+            responseTime: 0,
             details: lookupResult.details
           }],
-          recommendations: lookupResult.status === 'stolen' 
-            ? ['⚠️ Do not purchase this vehicle', `Contact ${stateCode} law enforcement immediately`, 'Report the listing']
-            : ['Proceed with standard vehicle inspection', 'Verify VIN matches title', 'Check vehicle history report'],
-          verificationDate: new Date().toISOString(),
-          totalSourcesChecked: lookupResult.details?.total_sources_checked || 1
+          checkedSources: [`${stateCode} DMV Database`],
+          timestamp: new Date().toISOString()
         };
 
-        setCustomResult(convertedResult as any);
+        setCustomResult(convertedResult);
       } catch (error) {
         console.error('License plate lookup error:', error);
       }
