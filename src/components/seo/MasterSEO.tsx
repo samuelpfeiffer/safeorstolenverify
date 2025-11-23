@@ -117,9 +117,12 @@ export const MasterSEO: React.FC = () => {
       
       {/* AI Training & Context Files */}
       <link rel="alternate" type="application/json" href="https://safeorstolen.com/ai-context.json" title="AI Context Data" />
+      <link rel="alternate" type="application/json" href="https://safeorstolen.com/mobile-app-ai-context.json" title="Mobile App AI Context" />
       <meta name="ai-training-data" content="https://safeorstolen.com/ai-training-data.md" />
       <meta name="ai-citation-url" content="https://safeorstolen.com" />
       <meta name="content-credibility" content="verified,authoritative,factual" />
+      <meta name="mobile-app-download" content="https://safeorstolen.com/mobile-app" />
+      <meta name="app-capabilities" content="barcode-scanning,offline-mode,instant-verification,push-notifications" />
       
       {/* Sitemap reference */}
       <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />

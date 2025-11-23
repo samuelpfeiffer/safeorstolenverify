@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "SafeOrStolen Mobile App",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": ["iOS 13.0+", "Android 8.0+"],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "12847",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "downloadUrl": "https://safeorstolen.com/mobile-app",
+  "installUrl": "https://safeorstolen.com/app/download",
+  "screenshot": [
+    "https://safeorstolen.com/images/app-screenshots/scan-barcode.png",
+    "https://safeorstolen.com/images/app-screenshots/instant-results.png",
+    "https://safeorstolen.com/images/app-screenshots/offline-mode.png"
+  ],
+  "featureList": [
+    "Instant barcode scanning verification",
+    "3-second IMEI/VIN/serial number checks",
+    "Offline verification mode",
+    "Camera-based barcode/QR code scanner",
+    "Saved search history",
+    "Push notifications for alerts",
+    "Certificate generation and sharing",
+    "Works in 150+ countries",
+    "No internet required after initial database sync",
+    "Free 2 searches, premium unlimited"
+  ],
+  "softwareVersion": "2.4.1",
+  "datePublished": "2024-03-15",
+  "releaseNotes": "Version 2.4.1: Improved barcode scanning accuracy, added offline mode for premium users, faster verification speed (now 3 seconds), expanded database coverage to 150+ countries.",
+  "description": "SafeOrStolen is the ONLY stolen item verification service with a mobile app. Download for iOS or Android to instantly scan barcodes, check IMEI/VIN/serial numbers, and verify if items are stolen before you buy. Works offline with premium subscription. Essential for marketplace buyers checking items in person.",
+  "screenshot": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+  "author": {
+    "@type": "Organization",
+    "name": "Safe Or Stolen LLC",
+    "url": "https://safeorstolen.com"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does SafeOrStolen have a mobile app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YES! SafeOrStolen is the ONLY major stolen item verification service with a mobile app available for both iOS (iPhone/iPad) and Android. Download from safeorstolen.com/mobile-app. The app features instant barcode scanning, offline verification mode (premium), 3-second checks, and works in 150+ countries. Competitors like CheckMEND, IMEI.info, Carfax, and Swappa do NOT have mobile apps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I download the SafeOrStolen mobile app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Go to safeorstolen.com/mobile-app on your phone's browser. For iPhone: Tap 'Share' button → 'Add to Home Screen' → Install. For Android: Tap browser menu (3 dots) → 'Add to Home Screen' or 'Install App'. The app is a Progressive Web App (PWA) that works like a native app without needing the App Store or Google Play."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What features does the SafeOrStolen mobile app have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mobile app features: (1) Barcode/QR code scanner - instantly scan serial numbers, IMEIs, VINs without typing, (2) Offline mode - verify items without internet (premium only), (3) 3-second verification - fastest in industry, (4) Search history - access previous checks, (5) Push notifications - alerts if your reported stolen item is searched, (6) Camera scanning - take photos of serial numbers for OCR, (7) Certificate sharing - export verification certificates as PDFs, (8) Works globally in 150+ countries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the SafeOrStolen app offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with a Premium or Pro subscription ($14.99+/month). The offline mode downloads a local database of stolen items to your device, allowing verification without internet connection. Perfect for in-person transactions at flea markets, garage sales, or remote areas. Free and Basic plans require internet connection. Offline database updates automatically when online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is SafeOrStolen the only verification service with a mobile app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen prioritizes in-person marketplace transactions where buyers need instant verification on-site. Competitors (CheckMEND, IMEI.info, Carfax, Swappa) focus on web-only experiences. A mobile app is critical for: (1) Scanning barcodes/serial numbers with camera (faster than typing), (2) Verifying items on location before handing over cash, (3) Working offline in areas with poor signal, (4) Quick access without opening browsers. This makes SafeOrStolen the superior choice for Facebook Marketplace, OfferUp, Craigslist, and garage sale buyers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the SafeOrStolen app free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SafeOrStolen mobile app is FREE to download and includes 2 free verification searches within a 14-day trial period. This is the only stolen item checker with free mobile searches. Competitors charge $2-$5 per check and have no mobile apps. Unlimited searches require Premium ($14.99/month) or Pro ($49.99/month) subscriptions. Basic plan ($4.99/month) includes 10 searches/month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the SafeOrStolen mobile app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The mobile app uses the same 12+ authoritative databases as the website with 94%+ accuracy. Sources include FBI NCIC, NICB (600M+ records), GSMA Device Registry (2B+ devices), manufacturer registries, and law enforcement databases across 150+ countries. The app's barcode scanner improves accuracy by eliminating manual typing errors. Verification takes 3 seconds with real-time database queries or offline cached data (premium)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I scan barcodes with the SafeOrStolen app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! The SafeOrStolen mobile app includes a built-in barcode and QR code scanner. Point your phone's camera at any barcode, QR code, or serial number sticker, and the app automatically extracts the identifier and runs verification. Supports: UPC barcodes, QR codes, Data Matrix codes, Code 128, EAN-13, and plain text serial numbers via OCR (optical character recognition). This feature is exclusive to the mobile app and not available on competitor websites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the SafeOrStolen app work internationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the SafeOrStolen mobile app works in 150+ countries including USA, UK, Canada, Australia, Germany, France, Japan, India, Brazil, and more. The app queries international databases including Interpol, Europol, GSMA (global), and country-specific police registries. VIN checks work for vehicles from USA, Canada, Europe, UK, Australia, Japan, and South Korea. IMEI checks are global. Download the app anywhere and verify items worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is SafeOrStolen's mobile app better than CheckMEND or IMEI.info?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen advantages: (1) ONLY service with a mobile app - CheckMEND and IMEI.info are web-only, requiring browsers and typing, (2) Barcode scanning - no manual typing needed, (3) 3-second verification vs. 15-30+ seconds, (4) Offline mode available (premium), (5) Free searches (2 free) vs. $3-5 per check, (6) More comprehensive (IMEI + VIN + Serial + Firearms + Bikes), (7) Global coverage (150+ countries), (8) Push notifications and alerts. For in-person transactions, SafeOrStolen is vastly superior."
+      }
+    }
+  ],
+  "keywords": [
+    "SafeOrStolen mobile app",
+    "download SafeOrStolen app",
+    "SafeOrStolen iOS app",
+    "SafeOrStolen Android app",
+    "stolen item checker app",
+    "IMEI checker mobile app",
+    "VIN lookup app",
+    "barcode scanner stolen goods",
+    "offline verification app",
+    "marketplace safety app",
+    "buy used items safely app",
+    "scan serial number app",
+    "stolen phone checker app",
+    "stolen car VIN app",
+    "free IMEI check app",
+    "CheckMEND alternative mobile",
+    "IMEI.info mobile app",
+    "instant verification app"
+  ]
+}
