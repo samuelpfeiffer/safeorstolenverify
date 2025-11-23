@@ -77,6 +77,7 @@ const FasterCapitalTechCofounderPage = lazy(() => import('@/pages/fastercapital/
 const SEOHealthPage = lazy(() => import('@/pages/SEOHealthPage'));
 const SEOBacklinkStrategyPage = lazy(() => import('@/pages/SEOBacklinkStrategyPage'));
 const VideosPage = lazy(() => import('@/pages/VideosPage'));
+const CareersPage = lazy(() => import('@/pages/CareersPage'));
 const DataPartnershipsPage = lazy(() => import('@/pages/DataPartnershipsPage'));
 
 // Redirect Pages (with HTML meta refresh for crawlers)
@@ -527,12 +528,14 @@ export const AppRoutes = () => {
         <Route path="/check-if-stolen" element={<CheckIfStolenPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/careers" element={<CareersPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
         <Route path="/disclaimer" element={<DisclaimerPage />} />
+        <Route path="/cookies" element={<CookiesPage />} />
         <Route path="/transparency" element={<TransparencyPage />} />
         <Route path="/service-limitations" element={<ServiceLimitations />} />
         

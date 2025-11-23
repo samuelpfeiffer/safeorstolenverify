@@ -44,6 +44,7 @@ export const SOSFooter: React.FC = () => {
       links: [
         { label: 'About', to: '/about' },
         { label: 'Contact', to: '/contact' },
+        { label: 'Careers', to: '/careers' },
         { label: 'Press', to: '/press' },
         { label: 'For Brands', to: '/for-brands' },
         { label: 'Transparency', to: '/transparency' },
@@ -55,6 +56,7 @@ export const SOSFooter: React.FC = () => {
         { label: 'Terms of Service', to: '/terms' },
         { label: 'Privacy Policy', to: '/privacy' },
         { label: 'Disclaimer', to: '/disclaimer' },
+        { label: 'Cookies', to: '/cookies' },
         { label: 'Security', to: '/security' },
       ]
     }
