@@ -104,7 +104,6 @@ const VINVerificationCompleteGuidePage = lazy(() => import('@/pages/redirects/VI
 
 // Actual Install & Download App Pages (not redirects)
 const InstallAppPage = lazy(() => import('@/pages/InstallAppPage'));
-const DownloadAppPage = lazy(() => import('@/pages/DownloadAppPage'));
 
 // Research Stolen Items Redirect Pages
 const ResearchStolenItemsPage = lazy(() => import('@/pages/redirects/ResearchStolenItemsPage'));
@@ -922,8 +921,6 @@ export const AppRoutes = () => {
         <Route path="/imei-checker-app" element={<IMEICheckerAppPage />} />
         <Route path="/mobile-verification" element={<MobileVerificationPage />} />
         <Route path="/get-app" element={<GetAppPage />} />
-        <Route path="/install-app" element={<InstallAppPage />} />
-        <Route path="/download" element={<DownloadAppPage />} />
         <Route path="/verification-app" element={<VerificationAppPage />} />
 
         {/* Blog Post Redirects */}
