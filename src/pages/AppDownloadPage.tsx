@@ -22,7 +22,13 @@ const AppDownloadPage = () => {
       "Offline search history",
       "Push notifications for results",
       "Multi-language support"
-    ]
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
   };
 
   const features = [
@@ -65,7 +71,7 @@ const AppDownloadPage = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-sos-orange/10 border border-sos-orange/30 rounded-full text-sos-orange mb-6">
               <Star className="h-4 w-4 fill-sos-orange" />
-              <span className="font-semibold">4.8★ Rating • 12,847 Downloads</span>
+              <span className="font-semibold">Now Available • Install Our PWA</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">

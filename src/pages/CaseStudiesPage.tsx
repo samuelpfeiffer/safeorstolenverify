@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 
 const successStories = [
   {
@@ -139,6 +140,8 @@ const impactStats = [
 
 const CaseStudiesPage: React.FC = () => {
   const navigate = useNavigate();
+  
+  const serviceSchema = createServiceSchema();
 
   return (
     <>
@@ -147,6 +150,7 @@ const CaseStudiesPage: React.FC = () => {
         description="Real success stories from people who used SafeOrStolen to avoid buying stolen goods, recover stolen property, and prevent fraud. Police-verified cases with documented results."
         keywords="stolen goods success stories, fraud prevention cases, recovered stolen property, verified testimonials, police confirmed cases"
         canonical="/case-studies"
+        structuredData={serviceSchema}
       />
       
       <div className="min-h-screen bg-background">

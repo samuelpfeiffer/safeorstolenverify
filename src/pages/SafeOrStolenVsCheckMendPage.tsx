@@ -24,21 +24,26 @@ const SafeOrStolenVsCheckMendPage = () => {
     { feature: 'API Access', safeorstolen: 'Available', checkmend: 'Limited', winner: 'safeorstolen' }
   ];
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ComparisonTable",
-    "name": "SafeOrStolen vs CheckMend Comparison",
-    "description": "Detailed comparison between SafeOrStolen and CheckMend stolen phone verification services",
-    "itemListElement": comparisonData.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Thing",
-        "name": item.feature,
-        "description": `SafeOrStolen: ${item.safeorstolen}, CheckMend: ${item.checkmend}`
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "SafeOrStolen vs CheckMend Comparison",
+      "description": "Detailed comparison between SafeOrStolen and CheckMend stolen phone verification services",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": comparisonData.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Thing",
+            "name": item.feature,
+            "description": `SafeOrStolen: ${item.safeorstolen}, CheckMend: ${item.checkmend}`
+          }
+        }))
       }
-    }))
-  };
+    }
+  ];
 
   return (
     <>

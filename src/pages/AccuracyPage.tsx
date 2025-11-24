@@ -6,9 +6,12 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 
 const AccuracyPage = () => {
   const navigate = useNavigate();
+  
+  const serviceSchema = createServiceSchema();
 
   return (
     <>
@@ -17,6 +20,7 @@ const AccuracyPage = () => {
         description="Learn about SafeOrStolen's accuracy, verification methods, and service limitations for stolen item checking."
         keywords="accuracy, verification accuracy, service limitations, stolen item checker accuracy"
         canonical="/accuracy"
+        structuredData={serviceSchema}
       />
       <div className="min-h-screen bg-background">
       {/* Header */}

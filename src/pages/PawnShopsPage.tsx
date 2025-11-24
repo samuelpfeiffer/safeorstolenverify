@@ -22,6 +22,7 @@ import {
   Star,
   Lock
 } from 'lucide-react';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 
 const PawnShopsPage: React.FC = () => {
   const pawnShopBenefits = [
@@ -108,6 +109,8 @@ const PawnShopsPage: React.FC = () => {
     }
   ];
 
+  const serviceSchema = createServiceSchema();
+
   return (
     <>
       <PageSEO
@@ -115,6 +118,7 @@ const PawnShopsPage: React.FC = () => {
         description="Transform your pawn shop with SafeOrStolen.com. Instantly verify electronics, jewelry, tools, firearms. Eliminate stolen goods liability, increase loan values 40%, dominate your market."
         keywords="pawn shop verification, stolen goods protection, pawn shop software, IMEI verification pawn shop, jewelry verification, tool verification, firearms verification pawn shop"
         canonical="/pawn-shops"
+        structuredData={serviceSchema}
       />
       
       <div className="min-h-screen bg-background">
