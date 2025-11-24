@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function NorthCarolinaVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("North Carolina", "NC");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function NorthCarolinaVinLookup() {
         description="Free VIN verification for North Carolina vehicles. Check if a car is stolen in NC against NICB, NC DMV, and police databases."
         keywords="north carolina vin check, nc stolen vehicle lookup, north carolina car history, nc dmv stolen vehicle, charlotte vehicle verification"
         canonical="/north-carolina-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

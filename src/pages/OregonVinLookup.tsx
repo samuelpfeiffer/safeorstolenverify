@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function OregonVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Oregon", "OR");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function OregonVinLookup() {
         description="Free VIN verification for Oregon vehicles. Check if a car is stolen in OR against NICB, Oregon DMV, and Portland police databases."
         keywords="oregon vin check, or stolen vehicle lookup, oregon car history, oregon dmv stolen vehicle, portland vehicle verification"
         canonical="/oregon-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

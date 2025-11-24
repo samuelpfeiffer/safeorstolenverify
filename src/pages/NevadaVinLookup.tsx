@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function NevadaVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Nevada", "NV");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function NevadaVinLookup() {
         description="Free VIN verification for Nevada vehicles. Check if a car is stolen in NV against NICB, Nevada DMV, and Las Vegas police databases."
         keywords="nevada vin check, nv stolen vehicle lookup, nevada car history, nevada dmv stolen vehicle, las vegas vehicle verification"
         canonical="/nevada-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

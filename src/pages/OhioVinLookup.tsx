@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function OhioVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Ohio", "OH");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function OhioVinLookup() {
         description="Free VIN verification for Ohio vehicles. Check if a car is stolen in OH against NICB, BMV, and police databases."
         keywords="ohio vin check, oh stolen vehicle lookup, ohio car history, bmv stolen vehicle, cleveland vehicle verification"
         canonical="/ohio-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

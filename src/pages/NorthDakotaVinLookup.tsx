@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function NorthDakotaVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("North Dakota", "ND");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function NorthDakotaVinLookup() {
         description="Free VIN verification for North Dakota vehicles. Check if a car is stolen in ND against NICB, ND DOT, and police databases."
         keywords="north dakota vin check, nd stolen vehicle lookup, north dakota car history, nd dot stolen vehicle, fargo vehicle verification"
         canonical="/north-dakota-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">
