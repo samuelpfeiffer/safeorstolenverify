@@ -21,6 +21,7 @@ import {
   Rocket,
   Star
 } from 'lucide-react';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 
 const AuctionHousesPage: React.FC = () => {
   const auctionHouseNeeds = [
@@ -82,6 +83,8 @@ const AuctionHousesPage: React.FC = () => {
     }
   ];
 
+  const serviceSchema = createServiceSchema();
+
   return (
     <>
       <PageSEO
@@ -89,6 +92,7 @@ const AuctionHousesPage: React.FC = () => {
         description="Christie's, Sotheby's, Bonhams - EVERY major auction house needs SafeOrStolen.com. Eliminate stolen goods liability, increase hammer prices 35%, dominate the $20B global auction market."
         keywords="auction house verification, Christie's verification, Sotheby's authentication, stolen art detection, auction authentication, fine art verification, antique verification, auction house liability"
         canonical="/auction-houses"
+        structuredData={serviceSchema}
       />
       
       <div className="min-h-screen bg-background">

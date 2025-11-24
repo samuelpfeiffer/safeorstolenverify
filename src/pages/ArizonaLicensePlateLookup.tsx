@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import logo from '@/assets/sos-logo.png';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -75,6 +76,21 @@ export default function ArizonaLicensePlateLookup() {
     }
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Check Arizona License Plate for Theft",
+    "description": "Step-by-step guide to verify if a vehicle is stolen using Arizona's TheftAZ database",
+    "step": [
+      {"@type": "HowToStep", "name": "Enter License Plate", "text": "Input the license plate number"},
+      {"@type": "HowToStep", "name": "Select State", "text": "Choose Arizona or the issuing state"},
+      {"@type": "HowToStep", "name": "Search Database", "text": "Click to check TheftAZ database"},
+      {"@type": "HowToStep", "name": "Review Results", "text": "Check if vehicle is reported stolen"}
+    ]
+  };
+
+  const structuredData = [createServiceSchema(), howToSchema];
+
   return (
     <>
       <PageSEO
@@ -82,6 +98,7 @@ export default function ArizonaLicensePlateLookup() {
         description="Instantly check if a vehicle is stolen in Arizona. Free license plate verification using Arizona Attorney General's TheftAZ database. Search AZ stolen vehicle registry by plate number. Protect yourself before buying a used car in Arizona."
         keywords="arizona license plate check, theftaz lookup, arizona stolen vehicle search, az plate number verification, arizona attorney general theft database, check arizona stolen car, theftaz.azag.gov alternative, phoenix stolen vehicle lookup, arizona dmv stolen check, free az license plate search"
         canonical="/arizona-license-plate-lookup"
+        structuredData={structuredData}
       />
       <ServiceOfferSchema />
 

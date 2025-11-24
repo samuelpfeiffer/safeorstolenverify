@@ -3,15 +3,10 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Wrench, AlertTriangle, CheckCircle, TrendingUp } from 'lucide-react';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 
 const ForPhoneRepairShopsPage = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Stolen Item Verification for Phone Repair Shops",
-    "description": "Protect your phone repair shop from stolen devices. Verify IMEI before accepting repairs to avoid legal issues and law enforcement involvement.",
-    "url": "https://safeorstolen.com/for-phone-repair-shops"
-  };
+  const serviceSchema = createServiceSchema();
 
   return (
     <>
@@ -20,7 +15,7 @@ const ForPhoneRepairShopsPage = () => {
         description="Protect your phone repair business. Verify IMEI numbers before accepting devices to avoid stolen property legal issues, police seizures, and reputation damage."
         keywords="phone repair shop verification, IMEI checker for repair shops, stolen phone prevention, repair shop legal protection"
         canonical="/for-phone-repair-shops"
-        structuredData={structuredData}
+        structuredData={serviceSchema}
       />
 
       <main className="min-h-screen bg-background">

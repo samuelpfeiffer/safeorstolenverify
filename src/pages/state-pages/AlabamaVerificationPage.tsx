@@ -4,6 +4,7 @@ import { StateTheftLookupForm } from '@/components/state-verification/StateTheft
 import { StateTheftResults } from '@/components/state-verification/StateTheftResults';
 import { useStateTheftLookup } from '@/hooks/useStateTheftLookup';
 import { Shield, Database, MapPin } from 'lucide-react';
+import { createServiceSchema, createLocalBusinessSchema } from '@/utils/seo/structuredData';
 
 export default function AlabamaVerificationPage() {
   const [result, setResult] = useState(null);
@@ -14,6 +15,11 @@ export default function AlabamaVerificationPage() {
     setResult(lookupResult);
   };
 
+  const structuredData = [
+    createServiceSchema(),
+    createLocalBusinessSchema()
+  ];
+
   return (
     <>
       <PageSEO
@@ -21,6 +27,7 @@ export default function AlabamaVerificationPage() {
         description="Free Alabama stolen item verification. Check vehicles, phones, electronics instantly. 8,500 vehicle thefts annually. Protect yourself in Birmingham, Montgomery."
         keywords="Alabama stolen item check, Alabama VIN check, Alabama IMEI check, Birmingham stolen car, Montgomery phone theft"
         canonical="/alabama-stolen-item-check"
+        structuredData={structuredData}
       />
 
       <div className="container mx-auto px-4 py-12 space-y-12">
