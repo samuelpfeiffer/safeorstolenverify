@@ -1,8 +1,10 @@
 /**
- * URL Redirect Configuration
- * Handles 404s, duplicates, and legacy URLs from Google Search Console
- * Last updated: 2025-11-13
+ * URL Redirect Configuration - SITE CONSOLIDATION
+ * Handles 280+ page redirects to 9 core SaaS pages
+ * Last updated: 2025-11-24
  */
+
+import { CONSOLIDATION_REDIRECT_MAP } from '@/config/consolidation-redirects';
 
 export interface RedirectRule {
   from: string;
@@ -11,9 +13,9 @@ export interface RedirectRule {
 }
 
 /**
- * Redirect Rules - Fixes for GSC Indexing Issues
+ * Legacy Redirect Rules - For backward compatibility
  */
-export const REDIRECT_RULES: RedirectRule[] = [
+export const LEGACY_REDIRECT_RULES: RedirectRule[] = [
   // ===== DUPLICATE APP URLS =====
   { from: '/imei-checker-app', to: '/mobile-app', permanent: true },
   { from: '/mobile-verification', to: '/mobile-app', permanent: true },
@@ -79,11 +81,19 @@ export const REDIRECT_RULES: RedirectRule[] = [
 
 /**
  * Find matching redirect for a given path
+ * Checks consolidation redirects first, then legacy rules
  */
 export function findRedirect(path: string): string | null {
   const cleanPath = path.toLowerCase().trim();
   
-  for (const rule of REDIRECT_RULES) {
+  // Check consolidation redirects first (280+ pages)
+  const consolidationRedirect = CONSOLIDATION_REDIRECT_MAP[cleanPath];
+  if (consolidationRedirect) {
+    return consolidationRedirect;
+  }
+  
+  // Check legacy redirect rules
+  for (const rule of LEGACY_REDIRECT_RULES) {
     if (rule.from === cleanPath) {
       return rule.to;
     }

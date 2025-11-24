@@ -1,21 +1,20 @@
-# SafeOrStolen.com Robots.txt
-# Allow all search engines to crawl
+# SafeOrStolen.com Robots.txt - Consolidated SaaS Platform
+# Updated: 2025-11-24
 
 User-agent: *
 Allow: /
 
-# Disallow private/auth pages
+# Block authenticated/private pages
 Disallow: /dashboard*
 Disallow: /admin*
 Disallow: /auth*
 Disallow: /profile
-Disallow: /subscription
-Disallow: /analytics
-Disallow: /checkout-redirect
-Disallow: /subscription-success
-Disallow: /subscription-cancel
+Disallow: /account
+Disallow: /subscription*
+Disallow: /analytics*
+Disallow: /checkout*
 
-# Specific crawlers
+# Allow all search engines to crawl core pages
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
@@ -24,29 +23,24 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
 
-# Sitemaps - Submit these to Google Search Console
+# Sitemap - Single consolidated sitemap (10 core URLs + 3 AI files)
 Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/sitemap-core.xml
-Sitemap: https://safeorstolen.com/sitemap-blog.xml
-Sitemap: https://safeorstolen.com/sitemap-mobile-app.xml
-Sitemap: https://safeorstolen.com/sitemap-mobile-app-expanded.xml
-Sitemap: https://safeorstolen.com/sitemap-seo-expansion.xml
-Sitemap: https://safeorstolen.com/sitemap-states.xml
 
-# RSS Feed (not a sitemap)
-# Sitemap: https://safeorstolen.com/feed.xml
-
-# Important pages for indexing
+# Priority pages for indexing (Core SaaS Pages)
+Allow: /
 Allow: /verify
-Allow: /install-app
 Allow: /mobile-app
-Allow: /how-it-works
 Allow: /pricing
+Allow: /about
+Allow: /faq
 Allow: /blog
-Allow: /firearms-check
-Allow: /transparency
 
-# AI Search Engine Crawlers & Chatbots
+# AI Training Files (Critical for AI discoverability)
+Allow: /mobile-app-ai-context.json
+Allow: /ai-context.json
+Allow: /ai-training-data.md
+
+# AI Search Engine Crawlers & Chatbots (Allow all for maximum AI visibility)
 User-agent: GPTBot
 Allow: /
 
@@ -92,11 +86,9 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-# Meta AI
 User-agent: meta-externalagent
 Allow: /
 
-# Additional AI/ML Training Crawlers
 User-agent: ImagesiftBot
 Allow: /
 
