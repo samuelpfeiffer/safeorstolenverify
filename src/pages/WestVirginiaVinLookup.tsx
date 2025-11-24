@@ -48,7 +48,10 @@ export default function WestVirginiaVinLookup() {
     setIsLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke('verify-item', {
-        body: { identifier: vin, itemType: 'vin' }
+        body: { identifier: vin, itemType: 'vin', state: 'west-virginia' }
+      }).catch((err) => {
+        console.error('Edge function invocation error:', err);
+        return { data: { status: 'unknown', message: 'Verification service temporarily unavailable' }, error: null };
       });
 
       if (error) throw error;

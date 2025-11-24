@@ -6,8 +6,9 @@ export const ServiceLimitations: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Service Limitations - Safe Or Stolen"
-        description="Understanding the limitations and scope of our verification services for stolen item checking."
+        title="Service Limitations & Disclaimer - SafeOrStolen Verification Service"
+        description="Understanding SafeOrStolen verification service limitations: database coverage, accuracy factors, legal considerations, and technical constraints. Learn how to use our service effectively."
+        keywords="service limitations, verification disclaimer, database coverage, accuracy notice, legal considerations"
         canonical="/service-limitations"
       />
       

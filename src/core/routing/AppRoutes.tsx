@@ -880,6 +880,11 @@ export const AppRoutes = () => {
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/reviews" element={<TestimonialsPage />} />
         <Route path="/security" element={<SecurityPage />} />
+        <Route path="/check-phone" element={<CheckPhonePage />} />
+        <Route path="/for-consumers" element={<ForConsumersPage />} />
+        <Route path="/auction-houses" element={<AuctionHousesPage />} />
+        <Route path="/accuracy" element={<AccuracyPage />} />
+        <Route path="/service-limitations" element={<ServiceLimitations />} />
         
         {/* Additional Public Pages - From Sitemaps */}
         <Route path="/api-docs" element={<ApiDocsPage />} />
