@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function OklahomaVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Oklahoma", "OK");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function OklahomaVinLookup() {
         description="Free VIN verification for Oklahoma vehicles. Check if a car is stolen in OK against NICB, OK DPS, and police databases."
         keywords="oklahoma vin check, ok stolen vehicle lookup, oklahoma car history, ok dps stolen vehicle, okc vehicle verification"
         canonical="/oklahoma-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

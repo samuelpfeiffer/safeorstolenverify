@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function MinnesotaVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Minnesota", "MN");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function MinnesotaVinLookup() {
         description="Free VIN verification for Minnesota vehicles. Check if a car is stolen in MN against NICB, DVS, and Minneapolis police databases."
         keywords="minnesota vin check, mn stolen vehicle lookup, minnesota car history, mn dvs stolen vehicle, minneapolis vehicle verification"
         canonical="/minnesota-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

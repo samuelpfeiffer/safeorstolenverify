@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function NebraskaVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Nebraska", "NE");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function NebraskaVinLookup() {
         description="Free VIN verification for Nebraska vehicles. Check if a car is stolen in NE against NICB, NE DMV, and police databases."
         keywords="nebraska vin check, ne stolen vehicle lookup, nebraska car history, ne dmv stolen vehicle, omaha vehicle verification"
         canonical="/nebraska-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

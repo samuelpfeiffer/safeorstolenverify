@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createArticleSchema } from '@/utils/seo/structuredData';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,7 +8,7 @@ import { ShieldAlert, AlertTriangle, CheckCircle, XCircle, ShoppingBag, Facebook
 import { Link } from 'react-router-dom';
 
 const MarketplaceSafetyPage = () => {
-  const structuredData = {
+  const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'Ultimate Guide to Secondhand Marketplace Safety',
@@ -19,6 +20,8 @@ const MarketplaceSafetyPage = () => {
     datePublished: '2025-01-01',
     dateModified: new Date().toISOString().split('T')[0]
   };
+  
+  const structuredData = [articleSchema];
 
   return (
     <>

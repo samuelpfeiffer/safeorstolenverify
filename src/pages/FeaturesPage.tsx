@@ -7,12 +7,26 @@ import { ItemRegistration } from '@/components/registration/ItemRegistration';
 import { HighImpactFAQ } from '@/components/seo/HighImpactFAQ';
 
 const FeaturesPage = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeOrStolen Mobile App",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "SecurityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
     <>
       <PageSEO
         title="SafeOrStolen Mobile App Features - IMEI, VIN & Serial Number Verification"
         description="Download the SafeOrStolen mobile app for iOS & Android. Features include instant IMEI verification, VIN checks, serial number lookup, barcode scanning, and offline verification. The only app buyers and sellers need for secondhand safety."
         keywords="stolen item app features, IMEI checker app, VIN verification mobile app, serial number scanner, marketplace safety app, download verification app, anti-fraud app features, mobile stolen checker"
+        structuredData={structuredData}
       />
       
       <div className="min-h-screen bg-background">

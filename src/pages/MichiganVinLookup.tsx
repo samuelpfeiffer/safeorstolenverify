@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function MichiganVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("Michigan", "MI");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function MichiganVinLookup() {
         description="Free VIN verification for Michigan vehicles. Check if a car is stolen in MI against NICB, MI SOS, and Detroit police databases."
         keywords="michigan vin check, mi stolen vehicle lookup, michigan car history, mi sos stolen vehicle, detroit vehicle verification"
         canonical="/michigan-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">

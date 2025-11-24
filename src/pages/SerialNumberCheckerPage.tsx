@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createServiceSchema } from '@/utils/seo/structuredData';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,7 +8,8 @@ import { Hash, Search, AlertTriangle, Shield, Laptop, Camera, Watch } from 'luci
 import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
 
 const SerialNumberCheckerPage: React.FC = () => {
-  const structuredData = {
+  const serviceSchema = createServiceSchema();
+  const structuredData = [{
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Serial Number Checker - Verify if Item is Stolen",
@@ -20,14 +22,14 @@ const SerialNumberCheckerPage: React.FC = () => {
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com"
     }
-  };
+  }, serviceSchema];
 
   return (
     <>
       <PageSEO
         title="Free Serial Number Checker - Verify if Item is Stolen | SafeOrStolen"
         description="Check if electronics, bikes, or other items are stolen before buying with our free serial number checker. Verify against theft databases to avoid stolen goods."
-        keywords="serial number checker, stolen goods checker, electronics verification, bike serial check, laptop serial checker, stolen item verification"
+        keywords="serial number lookup, check electronics serial number, laptop serial number verification, verify bike serial number, serial number stolen check"
         canonical="/serial-number-checker"
         structuredData={structuredData}
       />

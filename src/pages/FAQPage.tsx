@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { createFAQSchema } from '@/utils/seo/structuredData';
 
 const FAQPage = () => {
   const faqCategories = [
@@ -109,7 +110,7 @@ const FAQPage = () => {
     }
   ];
 
-  const structuredData = {
+  const pageFAQStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqCategories.flatMap(category => 
@@ -123,6 +124,8 @@ const FAQPage = () => {
       }))
     )
   };
+  
+  const structuredData = [createFAQSchema(), pageFAQStructuredData];
 
   return (
     <>

@@ -1,4 +1,5 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';

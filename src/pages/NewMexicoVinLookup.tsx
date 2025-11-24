@@ -1,10 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 import { Shield, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 
 export default function NewMexicoVinLookup() {
   const navigate = useNavigate();
+  const structuredData = createStatePageSchema("New Mexico", "NM");
 
   return (
     <>
@@ -13,6 +15,7 @@ export default function NewMexicoVinLookup() {
         description="Free VIN verification for New Mexico vehicles. Check if a car is stolen in NM against NICB, NM MVD, and police databases."
         keywords="new mexico vin check, nm stolen vehicle lookup, new mexico car history, nm mvd stolen vehicle, albuquerque vehicle verification"
         canonical="/new-mexico-vin-lookup"
+        structuredData={structuredData}
       />
       <main className="min-h-screen bg-background py-12 px-4">
         <div className="container mx-auto max-w-4xl">
