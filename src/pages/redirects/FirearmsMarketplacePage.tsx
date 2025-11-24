@@ -15,6 +15,7 @@ const FirearmsMarketplacePage = () => {
         title="Firearms Marketplace Verification | SafeOrStolen"
         description="Verify firearms serial numbers before buying. Check if guns are stolen with our firearms marketplace verification service."
         keywords="firearms verification, gun serial number check, stolen gun lookup, firearms marketplace verification"
+        canonical="/firearms-check"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/firearms-check" delay={0} />

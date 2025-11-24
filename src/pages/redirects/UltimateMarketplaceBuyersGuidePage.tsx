@@ -15,6 +15,7 @@ const UltimateMarketplaceBuyersGuidePage = () => {
         title="Ultimate Marketplace Buyers Guide | SafeOrStolen Blog"
         description="The ultimate guide to buying safely on online marketplaces. Learn how to verify items and avoid scams on eBay, Facebook Marketplace, and more."
         keywords="marketplace buyers guide, online marketplace safety, buy safely online, marketplace verification"
+        canonical="/blog"
         noIndex={true}
       />
       <MetaRefreshRedirect to="/blog" delay={0} />
