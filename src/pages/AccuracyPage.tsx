@@ -16,6 +16,7 @@ const AccuracyPage = () => {
         title="Accuracy & Limitations - SafeOrStolen"
         description="Learn about SafeOrStolen's accuracy, verification methods, and service limitations for stolen item checking."
         keywords="accuracy, verification accuracy, service limitations, stolen item checker accuracy"
+        canonical="/accuracy"
       />
       <div className="min-h-screen bg-background">
       {/* Header */}

@@ -24,6 +24,7 @@ const ForConsumersPage: React.FC = () => {
         title="Consumer Protection from Stolen Goods - Safe or Stolen"
         description="Protect yourself from stolen goods when buying second-hand. Verify IMEI, VIN, serial numbers instantly. Check if something is stolen before you buy."
         keywords="consumer protection, stolen goods verification, check if stolen, verify before buying, second-hand safety, how to check if something is stolen, where to check if something is stolen"
+        canonical="/for-consumers"
       />
       
       <div className="min-h-screen bg-background">
