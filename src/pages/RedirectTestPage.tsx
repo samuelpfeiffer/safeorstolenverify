@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { REDIRECT_RULES, findRedirect } from '@/utils/redirects';
+import { LEGACY_REDIRECT_RULES, findRedirect } from '@/utils/redirects';
+import { CONSOLIDATION_REDIRECT_MAP } from '@/config/consolidation-redirects';
 import { CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
 
 interface TestResult {
@@ -20,14 +21,31 @@ export default function RedirectTestPage() {
     setIsRunning(true);
     const results: TestResult[] = [];
 
-    // Test all static redirect rules
-    REDIRECT_RULES.forEach(rule => {
+    // Test all legacy redirect rules
+    LEGACY_REDIRECT_RULES.forEach(rule => {
       const actualTo = findRedirect(rule.from);
       results.push({
         from: rule.from,
         expectedTo: rule.to,
         actualTo,
         status: actualTo === rule.to ? 'pass' : 'fail'
+      });
+    });
+
+    // Test consolidation redirects (sample 20 random ones for UI performance)
+    const consolidationEntries = Object.entries(CONSOLIDATION_REDIRECT_MAP);
+    const sampleSize = Math.min(20, consolidationEntries.length);
+    const sampledEntries = consolidationEntries
+      .sort(() => Math.random() - 0.5)
+      .slice(0, sampleSize);
+
+    sampledEntries.forEach(([from, to]) => {
+      const actualTo = findRedirect(from);
+      results.push({
+        from,
+        expectedTo: to,
+        actualTo,
+        status: actualTo === to ? 'pass' : 'fail'
       });
     });
 
@@ -69,7 +87,7 @@ export default function RedirectTestPage() {
             Redirect Rules Test Suite
           </CardTitle>
           <CardDescription>
-            Testing all {REDIRECT_RULES.length} static redirect rules + timestamp pattern matching
+            Testing {LEGACY_REDIRECT_RULES.length} legacy rules + {Object.keys(CONSOLIDATION_REDIRECT_MAP).length} consolidation redirects (sampled) + timestamp patterns
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
