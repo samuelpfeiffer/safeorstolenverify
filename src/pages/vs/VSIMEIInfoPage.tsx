@@ -4,9 +4,19 @@ import { Card } from '@/components/ui/card';
 import { Check, X, Shield, Database, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { createComparisonPageSchema } from '@/utils/seo/comparisonPageSchema';
 
 export default function VSIMEIInfoPage() {
   const navigate = useNavigate();
+
+  const comparisonData = [
+    { feature: 'Stolen/Lost Status', ours: true, theirs: 'Limited' },
+    { feature: 'Police Database', ours: true, theirs: false },
+    { feature: 'Insurance Blacklist', ours: true, theirs: false },
+    { feature: 'Carrier Lock Status', ours: true, theirs: true }
+  ];
+
+  const structuredData = createComparisonPageSchema('SafeOrStolen', 'IMEI.info', comparisonData);
 
   return (
     <>
@@ -16,6 +26,7 @@ export default function VSIMEIInfoPage() {
         canonical="/vs-imeiinfo"
         image="https://safeorstolen.com/og-vs-imeiinfo.png"
         keywords="SafeOrStolen vs IMEI.info, IMEI checker comparison, free IMEI check, phone verification, stolen phone check, carrier unlock check"
+        structuredData={structuredData}
       />
       <CompetitorComparisonSchema competitor="imeiinfo" />
 

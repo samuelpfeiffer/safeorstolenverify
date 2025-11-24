@@ -4,9 +4,21 @@ import { Card } from '@/components/ui/card';
 import { Check, X, AlertCircle, DollarSign, Clock, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { createComparisonPageSchema } from '@/utils/seo/comparisonPageSchema';
 
 export default function VSCheckMendPage() {
   const navigate = useNavigate();
+
+  const comparisonData = [
+    { feature: 'Single Check Price', ours: '$0.50', theirs: '£4.99 (~$6.30)' },
+    { feature: 'Free Searches', ours: true, theirs: false },
+    { feature: 'Global Coverage', ours: true, theirs: 'UK-focused' },
+    { feature: 'Mobile App', ours: true, theirs: false },
+    { feature: 'API Access', ours: true, theirs: 'Limited' },
+    { feature: 'Response Time', ours: 'Instant', theirs: '24-48 hours' }
+  ];
+
+  const structuredData = createComparisonPageSchema('SafeOrStolen', 'CheckMEND', comparisonData);
 
   return (
     <>
@@ -16,6 +28,7 @@ export default function VSCheckMendPage() {
         canonical="/vs-checkmend"
         image="https://safeorstolen.com/og-vs-checkmend.png"
         keywords="SafeOrStolen vs CheckMEND, CheckMEND alternative, IMEI check comparison, stolen item verification comparison, CheckMEND pricing, free IMEI check"
+        structuredData={structuredData}
       />
       <CompetitorComparisonSchema competitor="checkmend" />
 

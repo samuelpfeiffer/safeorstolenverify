@@ -4,9 +4,19 @@ import { Car, CheckCircle, XCircle, DollarSign, Smartphone } from 'lucide-react'
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { createComparisonPageSchema } from '@/utils/seo/comparisonPageSchema';
 
 export default function VSCarfaxPage() {
   const navigate = useNavigate();
+
+  const comparisonData = [
+    { feature: 'Stolen Vehicle Check', ours: true, theirs: true },
+    { feature: 'Free Searches', ours: '2 free', theirs: 'None' },
+    { feature: 'Cost per Report', ours: 'FREE', theirs: '$39.99' },
+    { feature: 'Multi-Item Support', ours: true, theirs: false }
+  ];
+
+  const structuredData = createComparisonPageSchema('SafeOrStolen', 'Carfax', comparisonData);
 
   return (
     <>
@@ -15,6 +25,7 @@ export default function VSCarfaxPage() {
         description="Comprehensive comparison of SafeOrStolen and Carfax. Discover which service offers better value, coverage, and features for vehicle history reports and stolen vehicle checks."
         keywords="safeorstolen vs carfax, carfax alternative, free carfax, vehicle history comparison, vin check comparison, stolen car check"
         canonical="/vs-carfax"
+        structuredData={structuredData}
       />
       <CompetitorComparisonSchema competitor="carfax" />
 

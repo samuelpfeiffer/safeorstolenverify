@@ -4,10 +4,12 @@ import { StateTheftLookupForm } from '@/components/state-verification/StateTheft
 import { StateTheftResults } from '@/components/state-verification/StateTheftResults';
 import { useStateTheftLookup } from '@/hooks/useStateTheftLookup';
 import { Shield, Database, MapPin } from 'lucide-react';
+import { createStatePageSchema } from '@/utils/seo/statePageSchema';
 
 export default function AlaskaVerificationPage() {
   const [result, setResult] = useState(null);
   const { checkStateSpecific, isLoading } = useStateTheftLookup();
+  const structuredData = createStatePageSchema('Alaska', 'AK');
 
   const handleSubmit = async (data: { stateCode: string; type: string; value: string }) => {
     const lookupResult = await checkStateSpecific(data.stateCode, data.type as 'vin' | 'license_plate', data.value);
