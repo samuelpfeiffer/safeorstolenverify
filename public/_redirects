@@ -1,6 +1,6 @@
 # Lovable Platform Redirects for Safe Or Stolen
 # Corrected redirects to fix Google Search Console canonical tag issues
-# Last updated: 2025-11-13
+# Last updated: 2025-11-24
 
 # ============================================
 # FORCE CANONICAL DOMAIN (non-www, HTTPS)
@@ -38,6 +38,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # BLOG POST REDIRECTS (GSC 404s)
 # ============================================
+/blog/protect-yourself-buying-used-electronics                 /blog            301!
 /blog/ultimate-marketplace-buyers-guide                        /blog            301!
 /blog/complete-imei-guide-protect-yourself                     /blog            301!
 /blog/safeorstolen-firearms-marketplace-verification           /firearms-check  301!
@@ -50,6 +51,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/verification-data-privacy                                /privacy         301!
 /blog/serial-numbers-stolen-goods-101                          /blog            301!
 /blog/enterprise-security                                      /for-brands      301!
+/blog/red-flags-buying-used-electronics                        /blog            301!
+/blog/buyer-protection-research                                /buyer-guide     301!
 
 # Blog posts with timestamps (pattern match)
 /blog/*-:timestamp      /blog  301!
@@ -77,6 +80,23 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /enterprise-demo                                    /for-brands        301!
 /for-consumers                                      /                  301!
 /fastercapital/tech-cofounder                       /fastercapital/raise-capital  301!
+/check-stolen-before-buying                         /verify            301!
+/complete-guide-verify-imei                         /imei-check        301!
+/vin-verification-complete-guide                    /vin-checker       301!
+/auction-verification                               /for-auction-houses 301!
+/pawnshop-verification                              /for-pawn-shops    301!
+/ebay-verification                                  /ebay-stolen-item-checker 301!
+/facebook-marketplace-checker                       /facebook-marketplace-stolen-check 301!
+/offerup-safety                                     /offerup-safety-verification 301!
+/secondhand-research-app                            /mobile-app        301!
+/research-stolen-car                                /check-car         301!
+/research-stolen-phone                              /check-phone       301!
+/research-stolen-items                              /verify            301!
+/investigate-stolen-property                        /verify            301!
+/lookup-stolen-items                                /verify            301!
+/stolen-database-search                             /data-sources      301!
+/stolen-item-scanner                                /mobile-app        301!
+/carfax-alternative                                 /vs-carfax         301!
 
 # URL variations for legal pages
 /terms-of-service       /terms       301!
