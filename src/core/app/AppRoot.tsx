@@ -25,6 +25,7 @@ import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 import { TemporaryGreeting } from '@/components/layout/TemporaryGreeting';
+import { MobileAppHeroBar } from '@/components/layout/MobileAppHeroBar';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -64,6 +65,7 @@ const AuthAwareContent: React.FC = () => {
         <RedirectHandler />
         <SchemaValidationMonitor />
         <CriticalResourceLoader />
+        <MobileAppHeroBar />
         
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <TopNavigation />
