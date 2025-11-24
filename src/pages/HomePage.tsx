@@ -24,33 +24,38 @@ import { ComprehensiveFAQ } from '@/components/seo/ComprehensiveFAQ';
 import HotGunzWidget from '@/components/integrations/HotGunzWidget';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { ServiceOfferSchema } from '@/components/seo/ServiceOfferSchema';
+import { MobileAppSchema } from '@/components/seo/MobileAppSchema';
+import { 
+  createOrganizationSchema, 
+  createWebsiteSchema, 
+  createServiceSchema, 
+  createLocalBusinessSchema, 
+  createFAQSchema 
+} from '@/utils/seo/structuredData';
+
 const HomePage = () => {
   const navigate = useNavigate();
-  const homePageStructuredData = [{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SafeOrStolen - Stolen Item Checker",
-    "alternateName": "Safe or Stolen",
-    "url": "https://safeorstolen.com",
-    "description": "Global hub for secondhand market safety - protect both buyers and sellers by verifying IMEI, VIN, and serial numbers against stolen goods databases",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://safeorstolen.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "sameAs": ["https://safeorstolen.com"]
-  }, {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "SafeOrStolen Stolen Item Checker",
-    "description": "Global hub for secondhand market safety - verify IMEI, serial numbers, and VIN to protect both buyers and sellers from stolen goods risks",
-    "url": "https://safeorstolen.com",
-    "applicationCategory": "SecurityApplication",
-    "applicationSubCategory": "Verification Tool",
-    "operatingSystem": "Web Browser",
-    "browserRequirements": "Chrome, Firefox, Safari, Edge",
-    "featureList": ["IMEI stolen check", "VIN stolen verification", "Serial number stolen lookup", "Phone stolen check", "Car stolen verification", "Electronics stolen check"]
-  }];
+  
+  // Comprehensive structured data for homepage
+  const homePageStructuredData = [
+    createOrganizationSchema(),
+    createWebsiteSchema(),
+    createServiceSchema(),
+    createLocalBusinessSchema(),
+    createFAQSchema(),
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SafeOrStolen Stolen Item Checker",
+      "description": "Global hub for secondhand market safety - verify IMEI, serial numbers, and VIN to protect both buyers and sellers from stolen goods risks",
+      "url": "https://safeorstolen.com",
+      "applicationCategory": "SecurityApplication",
+      "applicationSubCategory": "Verification Tool",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Chrome, Firefox, Safari, Edge",
+      "featureList": ["IMEI stolen check", "VIN stolen verification", "Serial number stolen lookup", "Phone stolen check", "Car stolen verification", "Electronics stolen check"]
+    }
+  ];
   return <>
       <StatusCodeHandler statusCode={200} />
       <GlobalAnalytics />
@@ -58,6 +63,7 @@ const HomePage = () => {
       <OptimizedTitles pageType="home" />
       <PageSEO title="Protect Buyers & Sellers - Global Verification Hub | SafeOrStolen" description="Global hub protecting both buyers and sellers in secondhand markets. Verify IMEI, VIN & serial numbers to safely buy and resell items - avoid legal trouble from stolen goods." keywords="buyer seller protection, secondhand market safety, verify before buying, verify before selling, IMEI VIN check, stolen goods verification, resale protection, marketplace safety" canonical="/" structuredData={homePageStructuredData} />
       <ServiceOfferSchema />
+      <MobileAppSchema />
       <div className="min-h-screen">
           <ConversionTracker />
           <AppDownloadBot />
