@@ -3,13 +3,31 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 const TermsPage: React.FC = () => {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms of Service - SafeOrStolen",
+    "description": "Terms of service and user agreement for SafeOrStolen verification platform.",
+    "url": "https://safeorstolen.com/terms",
+    "lastReviewed": "2024-01-01",
+    "about": {
+      "@type": "Service",
+      "name": "SafeOrStolen Verification Service",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen.com"
+      }
+    }
+  };
+
   return (
     <>
       <PageSEO
-        title="Terms of Service - Safe or Stolen"
-        description="Terms of service and user agreement for Safe or Stolen verification platform. Read our service terms and conditions."
-        keywords="terms of service, user agreement, safe or stolen terms, legal terms"
+        title="Terms of Service - SafeOrStolen"
+        description="Terms of service and user agreement for SafeOrStolen verification platform. Read our service terms and conditions."
+        keywords="terms of service, user agreement, safeorstolen terms, legal terms"
         canonical="/terms"
+        structuredData={[webPageSchema]}
       />
       <div className="min-h-screen bg-sos text-white py-12">
       <div className="max-w-4xl mx-auto px-6">
