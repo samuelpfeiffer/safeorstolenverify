@@ -18,7 +18,7 @@ export const SchemaValidationMonitor = () => {
   useEffect(() => {
     if (!isDevelopment) return;
 
-    // Wait for all schemas to be rendered
+    // Wait longer for Helmet to inject canonical tags (especially on page load)
     const timer = setTimeout(() => {
       const schemaElements = document.querySelectorAll('script[type="application/ld+json"]');
       const schemas: any[] = [];
@@ -43,20 +43,22 @@ export const SchemaValidationMonitor = () => {
       // Log schema validation to console
       console.log(formatValidationReport(result));
       
-      // Also validate canonical URL
-      const canonicalResult = validateCanonical();
-      console.log(formatCanonicalReport(canonicalResult));
-      
-      // Store canonical result globally
-      (window as any).__canonicalValidation = canonicalResult;
-      
-      // Show critical canonical errors
-      if (!canonicalResult.isValid) {
-        toast.error(`Canonical URL Error: ${canonicalResult.errors[0]}`, {
-          description: 'Check console for details',
-          duration: 10000,
-        });
-      }
+      // Wait a bit more before validating canonical (Helmet needs time to inject)
+      setTimeout(() => {
+        const canonicalResult = validateCanonical();
+        console.log(formatCanonicalReport(canonicalResult));
+        
+        // Store canonical result globally
+        (window as any).__canonicalValidation = canonicalResult;
+        
+        // Show critical canonical errors (but not on first page load with hot reload)
+        if (!canonicalResult.isValid && canonicalResult.errors.length > 0) {
+          toast.error(`Canonical URL Error: ${canonicalResult.errors[0]}`, {
+            description: 'Check console for details',
+            duration: 10000,
+          });
+        }
+      }, 1000); // Extra 1s for canonical validation
       
       // Show toast notifications for critical errors
       if (result.errors.length > 0) {
@@ -83,7 +85,7 @@ export const SchemaValidationMonitor = () => {
       
       // Expose validation result globally for debugging
       (window as any).__schemaValidation = result;
-    }, 2000); // Wait 2s for all schemas to render
+    }, 3000); // Increased from 2s to 3s for Helmet injection
 
     return () => clearTimeout(timer);
   }, [isDevelopment]);
