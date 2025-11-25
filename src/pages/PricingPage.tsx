@@ -242,6 +242,39 @@ const PricingPage = () => {
     },
     {
       "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "SafeOrStolen Verification Plans",
+      "description": "Comprehensive pricing options for stolen item verification services",
+      "url": "https://safeorstolen.com/pricing",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Free Trial",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "2 free verification searches",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Personal Plan",
+          "price": "9.99",
+          "priceCurrency": "USD",
+          "description": "10 verification searches per month",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Professional Plan",
+          "price": "49.99",
+          "priceCurrency": "USD",
+          "description": "100 verification searches per month with priority support",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
