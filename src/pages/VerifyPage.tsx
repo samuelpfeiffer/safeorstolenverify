@@ -119,13 +119,13 @@ const VerifyPage = () => {
     }
   };
 
-  // Comprehensive verification schemas with HowTo + Service + SoftwareApplication
+  // Comprehensive verification schemas - MOVED from Homepage
   const verificationServiceSchema = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Stolen Item Verification Service",
-      "description": "Instant verification service to check if items are stolen using IMEI, VIN, or serial numbers against law enforcement databases",
+      "description": "Instant verification service to check if items are stolen using IMEI, VIN, or serial numbers",
       "provider": {
         "@type": "Organization",
         "name": "SafeOrStolen",
@@ -162,6 +162,60 @@ const VerifyPage = () => {
             }
           }
         ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "IMEI Verification Service",
+      "description": "Check if phones are stolen using IMEI numbers",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Phone Verification Service",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "VIN Verification Service",
+      "description": "Check if vehicles are stolen using VIN numbers",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Vehicle Verification Service",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Serial Number Verification Service",
+      "description": "Verify electronics and equipment using serial numbers",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Electronics Verification Service",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31"
       }
     },
     {
