@@ -29,6 +29,14 @@ const FAQPage = () => {
         {
           question: "Can I check items that were stolen outside the United States?",
           answer: "Yes, our international partnerships allow us to search stolen property databases in over 45 countries, including Canada, UK, Australia, and most European Union nations."
+        },
+        {
+          question: "What items can I verify?",
+          answer: "You can verify phones (IMEI), vehicles (VIN), electronics (serial numbers), bicycles, firearms, and any item with a unique identifier."
+        },
+        {
+          question: "Why should I check before buying secondhand?",
+          answer: "Every year, $13 billion worth of stolen goods are sold to unsuspecting buyers. Checking protects you from financial loss, legal trouble, and ensures you're not supporting criminal activity."
         }
       ]
     },

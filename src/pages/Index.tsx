@@ -8,19 +8,15 @@ import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
-import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
-import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
-import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWorksSection';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
-import { HomepageFAQ } from '@/components/home/HomepageFAQ';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 
-  // Page-specific structured data only (WebSite and Organization are in MasterSEO)
+  // ONLY 3 homepage-specific schemas (WebSite and Organization are in MasterSEO)
   const homeStructuredData = [
     {
       "@context": "https://schema.org",
@@ -35,72 +31,6 @@ const Index = () => {
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://safeorstolen.com/pricing"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "IMEI Verification Service",
-      "description": "Check if phones are stolen using IMEI numbers against global stolen device databases",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen"
-      },
-      "serviceType": "Phone Verification Service",
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://safeorstolen.com/check-phone"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "VIN Verification Service",
-      "description": "Check if vehicles are stolen using VIN numbers against law enforcement databases",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen"
-      },
-      "serviceType": "Vehicle Verification Service",
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://safeorstolen.com/check-car"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Serial Number Verification Service",
-      "description": "Verify electronics and equipment using serial numbers against stolen property registries",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen"
-      },
-      "serviceType": "Electronics Verification Service",
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://safeorstolen.com/check-electronics"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31"
       }
     },
     {
@@ -125,51 +55,11 @@ const Index = () => {
         },
         {
           "@type": "Question",
-          "name": "What items can I verify?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can verify phones (IMEI), vehicles (VIN), electronics (serial numbers), bicycles, firearms, and any item with a unique identifier."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "Does SafeOrStolen have a mobile app?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes, SafeOrStolen is the ONLY stolen item verification service with a mobile app for iOS and Android. Download free at safeorstolen.com/mobile-app"
           }
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Check if an Item is Stolen",
-      "description": "Step-by-step guide to verify if phones, cars, electronics are stolen before buying",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Find the Identifier",
-          "text": "Locate the IMEI (phones), VIN (vehicles), or serial number (electronics) on the item you want to check."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Enter Number",
-          "text": "Type or scan the identifier into SafeOrStolen's verification tool at safeorstolen.com/verify"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Get Results",
-          "text": "Receive instant results in 3 seconds showing if the item is stolen, safe, or has alerts."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Make Decision",
-          "text": "If safe, proceed with purchase. If stolen, report to police and avoid transaction."
         }
       ]
     },
@@ -269,14 +159,9 @@ const Index = () => {
       <div className="min-h-screen">
         <Hero />
         <PressMediaSection />
-        <WhyCheckBeforeBuying />
         <WhatYouCanVerify />
-        <HowSafeOrStolenWorksSection />
-        <MarketplaceSafetySection />
         <WhyChooseSafeOrStolen />
-        <HowItWorks />
         <CompactTestimonials />
-        <HomepageFAQ />
         <CompactMobileAppCTA />
         <TrustSignals />
       </div>

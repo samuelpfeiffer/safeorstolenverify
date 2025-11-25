@@ -6,15 +6,56 @@ import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
+import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWorksSection';
+import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
 
 const HowItWorksPage = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Verify if an Item is Stolen",
-    "description": "Step-by-step guide to checking IMEI, VIN, and serial numbers against stolen goods databases",
-    "totalTime": "PT30S"
-  };
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Verify if an Item is Stolen",
+      "description": "Step-by-step guide to checking IMEI, VIN, and serial numbers against stolen goods databases",
+      "totalTime": "PT30S",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Find Identifier",
+          "text": "Locate IMEI (phones), VIN (vehicles), or serial number (electronics)"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter Number",
+          "text": "Type or scan identifier into SafeOrStolen verification tool"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Get Results",
+          "text": "Receive instant results showing stolen/safe status"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Make Decision",
+          "text": "If safe, proceed with purchase. If stolen, report to police."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Stolen Item Verification Methodology",
+      "description": "Comprehensive verification service checking multiple databases",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Verification Methodology Service"
+    }
+  ];
 
   return (
     <>
@@ -341,6 +382,12 @@ const HowItWorksPage = () => {
           </div>
         </section>
 
+        {/* How SafeOrStolen Works - Detailed Section */}
+        <HowSafeOrStolenWorksSection />
+        
+        {/* Marketplace Safety Section */}
+        <MarketplaceSafetySection />
+        
         {/* Statistics */}
         <section className="py-12">
           <div className="container mx-auto px-4">

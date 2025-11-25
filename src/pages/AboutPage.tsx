@@ -5,10 +5,7 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { FounderStory } from '@/components/story/FounderStory';
-import { SuccessStories } from '@/components/story/SuccessStories';
-import { MarketplacePartners } from '@/components/marketplace/MarketplacePartners';
-import { ItemRegistration } from '@/components/registration/ItemRegistration';
-import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
+import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 
 const AboutPage = () => {
   const teamMembers = [
@@ -175,6 +172,9 @@ const AboutPage = () => {
           </div>
         </section>
 
+        {/* Why Check Before Buying - From Homepage */}
+        <WhyCheckBeforeBuying />
+        
         {/* Mission (Simplified) */}
         <section className="py-12">
           <div className="container mx-auto px-4">
