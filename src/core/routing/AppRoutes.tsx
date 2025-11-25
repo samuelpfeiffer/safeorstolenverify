@@ -27,14 +27,14 @@ export const AppRoutes = () => {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/account" element={<Navigate to="/profile" replace />} />
-        <Route path="/mobile-app" element={<MobileAppPage />} />
-        <Route path="/app" element={<Navigate to="/mobile-app" replace />} />
+        <Route path="/app" element={<MobileAppPage />} />
+        <Route path="/mobile-app" element={<Navigate to="/app" replace />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/how-it-works" element={<Navigate to="/about" replace />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/auth" element={<AuthPage />} />
 
         {/* ALL OTHER ROUTES → 301 REDIRECTS TO APPROPRIATE CORE PAGES */}
@@ -76,21 +76,18 @@ export const AppRoutes = () => {
         <Route path="/check-stolen-database" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-items-list" element={<Navigate to="/verify" replace />} />
         
-        {/* App downloads → /mobile-app */}
-        <Route path="/install-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/download" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/download-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/get-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/app/download" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/ios-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/android-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/pwa-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/verification-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/imei-checker-app" element={<Navigate to="/mobile-app" replace />} />
-        <Route path="/mobile-verification" element={<Navigate to="/mobile-app" replace />} />
-        
-        {/* All /app/* routes → /mobile-app */}
-        <Route path="/app/*" element={<Navigate to="/mobile-app" replace />} />
+        {/* App downloads → /app */}
+        <Route path="/install-app" element={<Navigate to="/app" replace />} />
+        <Route path="/download" element={<Navigate to="/app" replace />} />
+        <Route path="/download-app" element={<Navigate to="/app" replace />} />
+        <Route path="/get-app" element={<Navigate to="/app" replace />} />
+        <Route path="/app/download" element={<Navigate to="/app" replace />} />
+        <Route path="/ios-app" element={<Navigate to="/app" replace />} />
+        <Route path="/android-app" element={<Navigate to="/app" replace />} />
+        <Route path="/pwa-app" element={<Navigate to="/app" replace />} />
+        <Route path="/verification-app" element={<Navigate to="/app" replace />} />
+        <Route path="/imei-checker-app" element={<Navigate to="/app" replace />} />
+        <Route path="/mobile-verification" element={<Navigate to="/app" replace />} />
         
         {/* Comparison pages → /pricing */}
         <Route path="/vs-carfax" element={<Navigate to="/pricing" replace />} />
