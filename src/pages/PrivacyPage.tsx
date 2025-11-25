@@ -1,8 +1,34 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const PrivacyPage: React.FC = () => {
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy - SafeOrStolen",
+    "description": "Privacy policy for SafeOrStolen verification platform. Learn how we protect your data.",
+    "url": "https://safeorstolen.com/privacy",
+    "lastReviewed": "2024-01-01",
+    "about": {
+      "@type": "Service",
+      "name": "SafeOrStolen Verification Service",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen.com"
+      }
+    }
+  };
+
   return (
+    <>
+      <PageSEO
+        title="Privacy Policy - SafeOrStolen"
+        description="Privacy policy for SafeOrStolen verification platform. Learn how we collect, use, and protect your personal information."
+        keywords="privacy policy, data protection, safeorstolen privacy, user data security"
+        canonical="/privacy"
+        structuredData={[webPageSchema]}
+      />
     <div className="min-h-screen bg-sos text-white py-12">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
@@ -156,6 +182,7 @@ const PrivacyPage: React.FC = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 
