@@ -119,50 +119,97 @@ const VerifyPage = () => {
     }
   };
 
-  // Structured data for verification service
-  const verificationServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Stolen Item Verification Service",
-    "description": "Instantly verify if items are stolen by checking IMEI, VIN, and serial numbers across multiple databases",
-    "provider": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com"
+  // Comprehensive verification schemas with HowTo + Service + SoftwareApplication
+  const verificationServiceSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Stolen Item Verification Service",
+      "description": "Instant verification service to check if items are stolen using IMEI, VIN, or serial numbers against law enforcement databases",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
+      },
+      "serviceType": "Verification Service",
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Verification Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "IMEI Check",
+              "description": "Verify if mobile phone is stolen"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "VIN Verification",
+              "description": "Check if vehicle is stolen"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Serial Number Lookup",
+              "description": "Verify electronics and other items"
+            }
+          }
+        ]
+      }
     },
-    "serviceType": "Verification Service",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Verification Services",
-      "itemListElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Verify if an Item is Stolen",
+      "description": "Step-by-step guide to check IMEI, VIN, and serial numbers",
+      "totalTime": "PT3M",
+      "step": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "IMEI Check",
-            "description": "Verify if mobile phone is stolen"
-          }
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Enter Item Identifier",
+          "text": "Input IMEI, VIN, or serial number in the verification form"
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "VIN Verification",
-            "description": "Check if vehicle is stolen"
-          }
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Select Item Type",
+          "text": "Choose the type of item (phone, vehicle, electronics, etc.)"
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Serial Number Lookup",
-            "description": "Verify electronics and other items"
-          }
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Click Verify",
+          "text": "Submit the form to search across 150+ databases instantly"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Review Results",
+          "text": "Get instant results showing if item is safe or stolen with detailed report"
         }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SafeOrStolen Verification Tool",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
-  };
+  ];
 
   return (
     <>
