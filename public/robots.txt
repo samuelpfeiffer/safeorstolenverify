@@ -1,13 +1,14 @@
-# SafeOrStolen.com Robots.txt - Consolidated Site
+# SafeOrStolen.com Robots.txt - 9-Page Lean SaaS
 
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /profile/
-Disallow: /api/
 
-# Sitemap - ONLY 10 Core SaaS Pages
+# Block user-specific pages
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /auth
+
+# Sitemap - 9 Public Pages Only
 Sitemap: https://safeorstolen.com/sitemap.xml
 
 # AI Search Engine Crawlers
