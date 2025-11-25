@@ -40,18 +40,138 @@ const Index = () => {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Stolen Item Verification Service",
-      "description": "Free verification service to check if items are stolen using IMEI, VIN, or serial numbers",
+      "name": "IMEI Verification Service",
+      "description": "Check if phones are stolen using IMEI numbers against global stolen device databases",
       "provider": {
         "@type": "Organization",
         "name": "SafeOrStolen"
       },
-      "serviceType": "Stolen Item Verification Service",
+      "serviceType": "Phone Verification Service",
       "areaServed": "Worldwide",
       "availableChannel": {
         "@type": "ServiceChannel",
-        "serviceUrl": "https://safeorstolen.com"
+        "serviceUrl": "https://safeorstolen.com/check-phone"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "VIN Verification Service",
+      "description": "Check if vehicles are stolen using VIN numbers against law enforcement databases",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Vehicle Verification Service",
+      "areaServed": "Worldwide",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://safeorstolen.com/check-car"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Serial Number Verification Service",
+      "description": "Verify electronics and equipment using serial numbers against stolen property registries",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Electronics Verification Service",
+      "areaServed": "Worldwide",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://safeorstolen.com/check-electronics"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check if an item is stolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter the IMEI, VIN, or serial number into SafeOrStolen's verification tool. Results appear in 3 seconds showing if the item is stolen or safe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SafeOrStolen free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, SafeOrStolen offers 2 free verification searches. Additional searches available with paid plans starting at $9.99/month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What items can I verify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can verify phones (IMEI), vehicles (VIN), electronics (serial numbers), bicycles, firearms, and any item with a unique identifier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SafeOrStolen have a mobile app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, SafeOrStolen is the ONLY stolen item verification service with a mobile app for iOS and Android. Download free at safeorstolen.com/mobile-app"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check if an Item is Stolen",
+      "description": "Step-by-step guide to verify if phones, cars, electronics are stolen before buying",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Find the Identifier",
+          "text": "Locate the IMEI (phones), VIN (vehicles), or serial number (electronics) on the item you want to check."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter Number",
+          "text": "Type or scan the identifier into SafeOrStolen's verification tool at safeorstolen.com/verify"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Get Results",
+          "text": "Receive instant results in 3 seconds showing if the item is stolen, safe, or has alerts."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Make Decision",
+          "text": "If safe, proceed with purchase. If stolen, report to police and avoid transaction."
+        }
+      ]
     },
     {
       "@context": "https://schema.org",
