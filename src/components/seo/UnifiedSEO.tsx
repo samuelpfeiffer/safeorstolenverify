@@ -2,6 +2,8 @@
  * ⚠️ DEPRECATED: Use PageSEO instead
  * This component is maintained for backward compatibility only.
  * New pages should use the PageSEO component from '@/components/seo/PageSEO'
+ * 
+ * IMPORTANT: Global Organization schema moved to MasterSEO to prevent duplicates
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -30,7 +32,6 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
 }) => {
   const location = useSafeLocation();
   
-  // Ensure consistent canonical URL generation
   const getCanonicalUrl = (path: string): string => {
     const cleanPath = path === '/' ? '/' : path.replace(/\/+$/, '');
     const normalizedPath = cleanPath.startsWith('/') ? cleanPath : `/${cleanPath}`;
@@ -44,106 +45,12 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
   const fullTitle = title.includes('Safe or Stolen') ? title : `${title} | Safe or Stolen`;
   const imageUrl = image.startsWith('http') ? image : `https://safeorstolen.com${image}`;
 
-  // Normalize structured data
+  // Normalize structured data (DO NOT add Organization schema - it's in MasterSEO)
   const normalizedStructuredData = structuredData 
     ? Array.isArray(structuredData) 
       ? structuredData.filter(Boolean) 
       : [structuredData]
     : [];
-
-  // Enhanced organization schema for better AI/Google understanding
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "Corporation", "SoftwareApplication"],
-    "name": "Safe or Stolen",
-    "legalName": "Safe or Stolen Corp.",
-    "alternateName": ["SOS Verification", "SafeOrStolen", "Safe Or Stolen Platform"],
-    "url": "https://safeorstolen.com",
-    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    "description": "Real-time stolen goods verification platform protecting consumers from unknowingly purchasing stolen items. Free worldwide database checks for phones, cars, electronics using IMEI, VIN, serial numbers.",
-    "foundingDate": "2024",
-    "slogan": "Verify Before You Buy - Fighting the $13B Stolen Goods Crisis",
-    "knowsAbout": [
-      "Stolen goods verification",
-      "IMEI lookup", 
-      "VIN lookup",
-      "Serial number check",
-      "Consumer protection",
-      "Marketplace fraud prevention",
-      "Secondhand item verification",
-      "Property legitimacy verification"
-    ],
-    "serviceArea": "Worldwide",
-    "areaServed": {
-      "@type": "Place",
-      "name": "Global"
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "contactType": "customer service", 
-        "email": "support@safeorstolen.com",
-        "availableLanguage": "English"
-      },
-      {
-        "@type": "ContactPoint",
-        "contactType": "technical support",
-        "email": "support@safeorstolen.com"
-      }
-    ],
-    "sameAs": [
-      "https://twitter.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Stolen Goods Verification Services",
-      "numberOfItems": 3,
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service", 
-            "name": "Free IMEI Phone Check",
-            "description": "Check if a phone is stolen using IMEI lookup"
-          },
-          "price": "0",
-          "priceCurrency": "USD",
-          "priceValidUntil": "2026-12-31",
-          "availability": "https://schema.org/InStock",
-          "url": "https://safeorstolen.com/pricing"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Free VIN Car Check", 
-            "description": "Verify if a vehicle is stolen using VIN lookup"
-          },
-          "price": "0",
-          "priceCurrency": "USD",
-          "priceValidUntil": "2026-12-31",
-          "availability": "https://schema.org/InStock",
-          "url": "https://safeorstolen.com/pricing"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Electronics Serial Number Check",
-            "description": "Verify electronics using serial number against stolen databases"
-          },
-          "price": "0",
-          "priceCurrency": "USD",
-          "priceValidUntil": "2026-12-31",
-          "availability": "https://schema.org/InStock",
-          "url": "https://safeorstolen.com/pricing"
-        }
-      ]
-    }
-  };
-
-  const allStructuredData = [organizationSchema, ...normalizedStructuredData];
 
   return (
     <Helmet>
@@ -166,7 +73,7 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
 
-      {/* Robots Meta Tags - CRITICAL FOR INDEXING */}
+      {/* Robots Meta Tags */}
       {!noindex && (
         <>
           <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30" />
@@ -182,15 +89,12 @@ export const UnifiedSEO: React.FC<UnifiedSEOProps> = ({
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co" />
 
-      {/* Structured Data */}
-      {allStructuredData.map((schema, index) => (
+      {/* Page-specific structured data only */}
+      {normalizedStructuredData.map((schema, index) => (
         <script key={index} type="application/ld+json">
           {JSON.stringify(schema)}
         </script>
       ))}
-
-      {/* Sitemap Reference */}
-      <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />
     </Helmet>
   );
 };

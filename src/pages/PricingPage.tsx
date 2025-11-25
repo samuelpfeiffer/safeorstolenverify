@@ -30,12 +30,9 @@ const PricingPage = () => {
   const { toast } = useToast();
   const { createOneTimePayment, isLoading: reportLoading } = useOneTimePayment();
 
-  // Remove duplicate price IDs - using centralized pricing config
-
   const handleSubscribe = useCallback(async (tier: string) => {
     console.log('handleSubscribe called with tier:', tier);
     
-    // Handle free tier - check by name directly
     if (tier === 'Free Trial' || tier.toLowerCase().includes('free')) {
       handleFreeStart();
       return;
@@ -62,7 +59,6 @@ const PricingPage = () => {
       console.log('[SUBSCRIPTION-DEBUG] Tier data found:', tierData);
       console.log('[SUBSCRIPTION-DEBUG] Price ID:', priceId || 'undefined (will use product name matching)');
       
-      // Price ID is optional - edge function can match by product name
       if (!tierData) {
         console.error('[SUBSCRIPTION-DEBUG] ERROR: No tier data found for:', tier);
         console.error('[SUBSCRIPTION-DEBUG] Available tiers:', Object.keys(SUBSCRIPTION_TIERS));
@@ -75,25 +71,21 @@ const PricingPage = () => {
         return;
       }
 
-      // Determine if this is a subscription or one-time payment based on interval
       const isSubscription = tierData.interval === 'month';
 
       console.log('[SUBSCRIPTION-DEBUG] Preparing checkout redirect');
       
-      // Build checkout URL params - use planName for product matching if no price ID
       const params = new URLSearchParams({
         planName: tierData.name || tier,
         isSubscription: String(isSubscription),
       });
       
-      // Only add priceId if it exists
       if (priceId) {
         params.append('priceId', priceId);
       }
       
       console.log('[SUBSCRIPTION-DEBUG] Navigating to checkout:', params.toString());
       
-      // Direct navigation - works in all contexts including iframes
       navigate(`/checkout-redirect?${params.toString()}`);
       
     } catch (error: any) {
@@ -128,34 +120,28 @@ const PricingPage = () => {
     }
   }, [isAuthenticated, navigate, createOneTimePayment, toast]);
 
-  // Check for automatic subscription trigger after authentication
   useEffect(() => {
     const subscribeParam = searchParams.get('subscribe');
     if (subscribeParam && isAuthenticated) {
-      // Remove the URL parameter and trigger subscription
       navigate('/pricing', { replace: true });
-      // Add small delay to prevent race conditions
       const timeoutId = setTimeout(() => {
         handleSubscribe(subscribeParam);
       }, 500);
       
       return () => clearTimeout(timeoutId);
     }
-  }, [searchParams.get('subscribe'), isAuthenticated, navigate]); // Removed handleSubscribe to prevent infinite loops
+  }, [searchParams.get('subscribe'), isAuthenticated, navigate]);
 
-  // Auto-run pending actions after authentication
   useEffect(() => {
     if (!isAuthenticated) return;
 
-    // Pending subscription tier from localStorage
     const pending = localStorage.getItem('pendingSubscription');
     if (pending) {
       localStorage.removeItem('pendingSubscription');
       setTimeout(() => handleSubscribe(pending), 300);
-      return; // don't process report in same tick
+      return;
     }
 
-    // Pending one-time report purchase
     const pendingReport = localStorage.getItem('pendingReport');
     if (pendingReport === '1') {
       localStorage.removeItem('pendingReport');
@@ -177,148 +163,137 @@ const PricingPage = () => {
     }
   };
 
+  // Comprehensive pricing schemas with all required fields
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Safe or Stolen Verification Service",
-      "description": "IMEI, serial number, and VIN verification service with multiple pricing tiers",
+      "name": "Free Trial - Stolen Item Verification",
+      "description": "Free trial with 2 verification searches for IMEI, VIN, and serial numbers",
       "provider": {
         "@type": "Organization",
-        "name": "Safe or Stolen",
-        "url": "https://safeorstolen.com"
+        "name": "SafeOrStolen"
       },
-      "serviceType": "Security Verification Service",
-      "areaServed": "Worldwide"
+      "serviceType": "Stolen Item Verification Service",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://safeorstolen.com/pricing",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Free Trial Verification",
+          "description": "2 free verification searches for phones, vehicles, and electronics"
+        }
+      }
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Safe or Stolen Verification Services",
-      "description": "Professional stolen item verification service with flexible pricing plans for consumers and businesses",
+      "name": "Personal Plan - Stolen Item Verification",
+      "description": "10 verification searches per month for personal buyers and sellers",
       "provider": {
         "@type": "Organization",
-        "name": "Safe or Stolen",
-        "url": "https://safeorstolen.com"
+        "name": "SafeOrStolen"
       },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Verification Service Plans",
-        "numberOfItems": 3,
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Free Verification Plan",
-              "description": "Basic verification service with 2 free searches (14-day trial) for consumer protection"
-            },
-            "price": "0",
-            "priceCurrency": "USD",
-            "priceValidUntil": "2026-12-31",
-            "availability": "https://schema.org/InStock",
-            "url": "https://safeorstolen.com/pricing"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Personal Verification Plan",
-              "description": "Unlimited verification service for personal use with priority support"
-            },
-            "price": formatPrice(SUBSCRIPTION_TIERS.personal.price).replace('$', ''),
-            "priceCurrency": "USD",
-            "priceValidUntil": "2026-12-31",
-            "availability": "https://schema.org/InStock",
-            "url": "https://safeorstolen.com/pricing"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Professional Verification Plan",
-              "description": "Unlimited verification service for professionals and businesses with API access"
-            },
-            "price": formatPrice(SUBSCRIPTION_TIERS.professional.price).replace('$', ''),
-            "priceCurrency": "USD",
-            "priceValidUntil": "2026-12-31",
-            "availability": "https://schema.org/InStock",
-            "url": "https://safeorstolen.com/pricing"
-          }
-        ]
-      },
+      "serviceType": "Stolen Item Verification Service",
       "areaServed": "Worldwide",
-      "serviceType": "Stolen Item Verification Service"
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://safeorstolen.com/pricing",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Personal Verification Plan",
+          "description": "10 monthly verifications for IMEI, VIN, serial numbers with instant results"
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Professional Plan - Stolen Item Verification",
+      "description": "100 verification searches per month for resellers and small businesses",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Stolen Item Verification Service",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "49.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://safeorstolen.com/pricing",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Professional Verification Plan",
+          "description": "100 monthly verifications with priority support and API access"
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept all major credit cards, debit cards, and digital payment methods through our secure Stripe payment processing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I cancel my subscription anytime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can cancel your SafeOrStolen subscription at any time. No contracts, no cancellation fees. Your service continues until the end of your billing period."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in each plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All plans include IMEI, VIN, and serial number verification. Personal plan: 10 searches/month. Professional: 100 searches/month with priority support and API access."
+          }
+        }
+      ]
     }
   ];
 
-  const ErrorState = () => (
-    <Card className="max-w-md mx-auto">
-      <CardContent className="p-6 text-center space-y-4">
-        <AlertTriangle className="h-8 w-8 mx-auto text-destructive" />
-        <div>
-          <h3 className="font-semibold mb-2">Service Error</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            {subscriptionError || 'Unable to load pricing information'}
-          </p>
-          <Button onClick={async () => {
-            setHasError(false);
-            // Force reload subscription data
-            window.location.href = '/pricing';
-          }} variant="outline">
-            Refresh Page
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
-
-  const limitReached = searchParams.get('reason') === 'limit-reached';
-
   return (
-    <ErrorBoundary>
+    <>
       <PageSEO
-        title="Pricing: Never Buy Stolen Goods Again | Free Trial + Paid Plans"
-        description="Protect yourself from scams and stolen goods. FREE plan: 4 checks/day. Paid plans from $7.99/mo with unlimited IMEI, VIN, serial number verification. Money-back guarantee. Join 50K+ protected buyers."
-        keywords="how much does stolen goods verification cost, free IMEI check pricing, marketplace protection subscription, avoid scams membership, buyer protection cost, check if stolen price, Facebook Marketplace safety plan"
+        title="Pricing Plans - SafeOrStolen Verification Service"
+        description="Flexible pricing for stolen item verification. Free trial with 2 searches. Personal: $9.99/mo (10 searches). Professional: $49.99/mo (100 searches). Verify IMEI, VIN, serial numbers instantly."
+        keywords="pricing plans, verification pricing, stolen item checker cost, IMEI verification price, VIN check cost"
         canonical="/pricing"
         structuredData={structuredData}
       />
-      <div className="min-h-screen bg-background">
-        {limitReached && (
-          <div className="bg-destructive/10 border-b-2 border-destructive/30 py-6">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-2xl font-bold text-foreground mb-2">
-                🔒 You've Used Your 2 Free Searches
-              </p>
-              <p className="text-lg text-muted-foreground mb-3">
-                Don't risk buying stolen goods! Upgrade now for unlimited verifications
-              </p>
-              <p className="text-sm font-semibold text-sos-orange">
-                ⚠️ 87 stolen items found in the last 24 hours
-              </p>
-            </div>
-          </div>
-        )}
-        
-        <UrgencyBanner />
-        
+
+      <ErrorBoundary>
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'Pricing', href: '/pricing' }]} />
         </div>
-        
-        <ConversionOptimizedPricing 
-          onSubscribe={handleSubscribe}
-        />
-        
-        {/* Temporary validation section */}
-        {searchParams.get('test') === 'true' && (
-          <div className="container mx-auto mt-8">
-            <AppValidator />
-          </div>
-        )}
-      </div>
-    </ErrorBoundary>
+        <UrgencyBanner />
+        <div className="min-h-screen">
+          <ConversionOptimizedPricing 
+            onSubscribe={handleSubscribe}
+          />
+        </div>
+      </ErrorBoundary>
+    </>
   );
 };
 

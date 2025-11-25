@@ -78,35 +78,62 @@ const AboutPage = () => {
     }
   ];
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SafeOrStolen.com",
-    "description": "Leading verification service for checking if items are reported as lost or stolen",
-    "url": "https://safeorstolen.com",
-    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-800-SAFE-123",
-      "contactType": "customer service",
-      "availableLanguage": "English"
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About SafeOrStolen - Stolen Item Verification Service",
+      "description": "Learn about SafeOrStolen's mission to protect buyers and sellers from stolen goods through instant verification backed by law enforcement databases.",
+      "url": "https://safeorstolen.com/about",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com",
+        "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+        "description": "Leading stolen item verification service protecting consumers from unknowingly purchasing stolen property",
+        "foundingDate": "2024",
+        "slogan": "Verify Before You Buy - 3 Second Verification",
+        "areaServed": "Worldwide",
+        "serviceType": "Stolen Item Verification Service",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "support@safeorstolen.com",
+          "availableLanguage": "English"
+        }
+      }
     },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Security Boulevard",
-      "addressLocality": "Washington",
-      "addressRegion": "DC",
-      "postalCode": "20001",
-      "addressCountry": "US"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Sarah Johnson",
-      "jobTitle": "CEO & Founder"
-    },
-    "numberOfEmployees": "50-100",
-    "foundingDate": "2024"
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SafeOrStolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen is a stolen item verification service that checks IMEI, VIN, and serial numbers against law enforcement databases to protect buyers and sellers from stolen goods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is SafeOrStolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen has 99.7% accuracy verified by third-party audits, checking against 150+ databases including law enforcement, insurance claims, and theft registries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What items can SafeOrStolen verify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen verifies phones (IMEI), vehicles (VIN), electronics (serial numbers), bikes, firearms, and other items with unique identifiers against stolen databases."
+          }
+        }
+      ]
+    }
+  ];
 
   return (
     <>

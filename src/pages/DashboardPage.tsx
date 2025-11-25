@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import { useAuth } from '@/lib/auth';
@@ -30,6 +30,7 @@ import { NotificationSettings } from '@/components/settings/NotificationSettings
 import { QuickStatsCard } from '@/components/dashboard/QuickStatsCard';
 import { RecentActivityCard } from '@/components/dashboard/RecentActivityCard';
 import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatusCard';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
@@ -51,6 +52,26 @@ const DashboardPage = () => {
     type: string;
     intent: string;
   } | null>(null);
+
+  // Dashboard structured data
+  const dashboardSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SafeOrStolen User Dashboard",
+    "applicationCategory": "SecurityApplication",
+    "description": "Manage your verification history, subscriptions, and account settings",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    }
+  };
 
   useEffect(() => {
     if (user) {
