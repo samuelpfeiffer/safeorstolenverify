@@ -7,7 +7,7 @@ const Index = lazy(() => import('@/pages/Index'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
-const MobileAppPage = lazy(() => import('@/pages/MobileAppPage'));
+const AppPage = lazy(() => import('@/pages/AppPage'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
@@ -27,7 +27,7 @@ export const AppRoutes = () => {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/account" element={<Navigate to="/profile" replace />} />
-        <Route path="/app" element={<MobileAppPage />} />
+        <Route path="/app" element={<AppPage />} />
         <Route path="/mobile-app" element={<Navigate to="/app" replace />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />

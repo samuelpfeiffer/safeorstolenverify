@@ -144,9 +144,9 @@ const Index = () => {
 
       {/* SEO Optimization */}
       <PageSEO
-        title="Safe Or Stolen - #1 Free Stolen Item Checker | Verify IMEI, VIN, Serial Numbers"
-        description="SafeOrStolen.com - The ONLY stolen item verification service with a mobile app. Check if phones, cars, electronics, guns are stolen FREE in 3 seconds. Download our mobile app for iOS/Android. Trusted by millions. 2 FREE searches."
-        keywords="safe or stolen, safeorstolen, stolen item checker, IMEI check, VIN verification, free stolen check, how to check if stolen, verify serial number, stolen phone check, stolen car check, stolen gun check, mobile app stolen checker, safeorstolen.com, safeorstolen app"
+        title="Free IMEI Checker, VIN Lookup, Serial Number Verification | Check If Stolen in 3 Seconds"
+        description="FREE IMEI checker, VIN lookup, serial number verification. Check if phones, cars, electronics are stolen before buying. 50M+ database searches. Mobile app with barcode scanner. 2 free checks. Better than CheckMEND/Carfax."
+        keywords="free imei checker, free vin check, serial number lookup, check if phone stolen free, vin check stolen vehicle, imei check online, stolen item checker, verify serial number, safe or stolen, safeorstolen"
         canonical="/"
         structuredData={homeStructuredData}
       />

@@ -15,6 +15,18 @@ const FAQPage = () => {
       icon: HelpCircle,
       faqs: [
         {
+          question: "How do I check if something is stolen?",
+          answer: "Enter the IMEI, VIN, or serial number into our free verification tool at safeorstolen.com/verify. We search 50M+ records across law enforcement, insurance, and stolen goods databases. Results appear in 3 seconds showing if the item is safe or stolen."
+        },
+        {
+          question: "How do I know if a phone is stolen before I buy it?",
+          answer: "Find the phone's IMEI number (dial *#06# or check Settings → About Phone), enter it into our free IMEI checker at safeorstolen.com/verify, and we'll check it against global carrier blacklists, stolen phone databases, and insurance claims in 3 seconds."
+        },
+        {
+          question: "Can I check if a car is stolen using the VIN number?",
+          answer: "Yes. Enter the 17-character VIN number into our free VIN lookup tool at safeorstolen.com/verify. We check NICB databases, state DMV records, and insurance theft reports to verify if the vehicle has been reported stolen."
+        },
+        {
           question: "How accurate is SafeOrStolen.com's verification process?",
           answer: "Our verification system maintains a 99.7% accuracy rate, verified through independent third-party audits. We cross-reference multiple law enforcement databases including NCIC, FBI databases, and international stolen property registries to ensure comprehensive coverage."
         },
@@ -37,6 +49,14 @@ const FAQPage = () => {
         {
           question: "Why should I check before buying secondhand?",
           answer: "Every year, $13 billion worth of stolen goods are sold to unsuspecting buyers. Checking protects you from financial loss, legal trouble, and ensures you're not supporting criminal activity."
+        },
+        {
+          question: "How do I find my phone's IMEI number?",
+          answer: "Dial *#06# on your phone to instantly display the IMEI. Alternatively, go to Settings → About Phone → IMEI Information, or check the original box or SIM card tray. The IMEI is 15 digits long."
+        },
+        {
+          question: "Where can I find my car's VIN number?",
+          answer: "Your VIN is located on the dashboard near the windshield (driver's side), on the driver's side door jamb sticker, or on your vehicle registration and insurance card. The VIN is 17 characters long."
         }
       ]
     },
@@ -73,6 +93,10 @@ const FAQPage = () => {
         {
           question: "Do you support international device identifiers?",
           answer: "Yes, we support IMEI numbers for international devices, European Article Numbers (EAN), and various international product identification systems used across different countries."
+        },
+        {
+          question: "Can I check if a laptop is stolen using its serial number?",
+          answer: "Yes. Find the serial number on the bottom of the laptop or in Settings → About, then enter it into our serial number checker at safeorstolen.com/verify to check against stolen property databases."
         }
       ]
     },
@@ -95,6 +119,10 @@ const FAQPage = () => {
         {
           question: "What if I find an error in the results?",
           answer: "If you believe there's an error, contact our support team immediately. We offer a dispute resolution process and will re-verify items free of charge if documentation proves an error occurred."
+        },
+        {
+          question: "Is the verification free?",
+          answer: "Yes! New users get 2 free verification checks (valid for 14 days). After that, you can purchase additional checks or subscribe to unlimited monthly verification for $9.99/month."
         }
       ]
     },
@@ -112,7 +140,7 @@ const FAQPage = () => {
         },
         {
           question: "Is there a free trial available?",
-          answer: "New users receive 1 free verification to test our service. No credit card required for the trial verification."
+          answer: "New users receive 2 free verifications (14-day trial) to test our service. No credit card required for the trial verification."
         }
       ]
     }
@@ -138,9 +166,9 @@ const FAQPage = () => {
   return (
     <>
       <PageSEO
-        title="FAQ - Frequently Asked Questions About Stolen Item Verification"
-        description="Get answers to common questions about SafeOrStolen.com's verification process, accuracy rates, supported items, privacy policy, and pricing. 99.7% accuracy guaranteed."
-        keywords="safeorstolen FAQ, stolen item verification questions, IMEI check questions, VIN verification help, serial number verification guide"
+        title="FAQ - How Do I Check if Something is Stolen? | Free IMEI & VIN Verification Help"
+        description="Common questions: How do I check if a phone/car is stolen? What is IMEI/VIN verification? How accurate are stolen item checks? Free answers to all verification questions. 99.7% accuracy."
+        keywords="how do i check if stolen, is my phone stolen checker, free imei check faq, vin verification questions, how to verify serial number, stolen item checker help, safeorstolen faq"
         canonical="/faq"
         structuredData={structuredData}
       />
