@@ -60,9 +60,9 @@ const HowItWorksPage = () => {
   return (
     <>
       <PageSEO
-        title="How to Check if a Phone/Car is Stolen Before Buying | 3 Simple Steps"
-        description="Step-by-step guide: How do I know if something is stolen? Enter IMEI/VIN/serial → We scan 50M+ stolen goods databases → Get instant Safe or Stolen status. Works for phones, cars, electronics."
-        keywords="how do I check if phone is stolen, how to verify car not stolen, can I check if something is stolen, IMEI check tutorial, VIN verification guide, stolen goods database search, check before buying used items"
+        title="How to Check if Phone/Car/Item is Stolen | Free IMEI & VIN Verification Guide 2025"
+        description="Learn how to check if items are stolen: Enter IMEI, VIN, or serial number → We search 50M+ stolen goods databases → Get instant results. Free guide for phones, cars, electronics. Avoid buying stolen items."
+        keywords="how to check if phone is stolen, how to verify vin number, how to check if item is stolen, imei check guide, vin lookup tutorial, stolen item verification process, check before buying secondhand"
         canonical="/how-it-works"
         structuredData={[structuredData]}
       />

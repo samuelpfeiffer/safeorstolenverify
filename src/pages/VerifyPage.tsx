@@ -270,9 +270,9 @@ const VerifyPage = () => {
       {/* SEO Components - Critical for Google indexing */}
       <StatusCodeHandler statusCode={200} />
       <PageSEO
-        title="Verify Item Status - Check If Stolen Before Buying | SafeOrStolen"
-        description="Instantly verify if an item is stolen. Check IMEI, VIN, serial numbers across multiple databases. Protect yourself before buying secondhand items. Free verification available."
-        keywords="verify stolen item, IMEI check, VIN verification, serial number lookup, stolen item database, check if stolen, secondhand verification, used item safety"
+        title="Free IMEI Checker, VIN Lookup & Serial Number Verification Tool | Instant Results"
+        description="Verify if items are stolen FREE. Check IMEI numbers (phones), VIN numbers (cars), serial numbers (electronics), license plates. 50M+ stolen goods database. Results in 3 seconds. Barcode scanner available."
+        keywords="free imei checker, free vin lookup, serial number verification, check if phone is stolen, verify vin number, stolen item lookup, license plate check, imei check online free"
         canonical="/verify"
         structuredData={verificationServiceSchema}
       />
