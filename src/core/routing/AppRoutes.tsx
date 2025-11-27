@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 
-// ONLY 10 CORE PAGES - Site Consolidation Complete + 1 Competitor Page
+// ONLY 10 CORE PAGES - Site Consolidation Complete + 3 Competitor Pages (SEO Strategy)
 const Index = lazy(() => import('@/pages/Index'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
@@ -17,6 +17,8 @@ const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
+const VsIMEIInfoPage = lazy(() => import('@/pages/VsIMEIInfoPage'));
+const VsSwappaPage = lazy(() => import('@/pages/VsSwappaPage'));
 
 export const AppRoutes = () => {
   return (
@@ -90,10 +92,11 @@ export const AppRoutes = () => {
         <Route path="/imei-checker-app" element={<Navigate to="/app" replace />} />
         <Route path="/mobile-verification" element={<Navigate to="/app" replace />} />
         
-        {/* Comparison pages - RESTORED for SEO */}
+        {/* Comparison pages - SEO competitor keyword hijacking strategy */}
         <Route path="/vs-carfax" element={<Navigate to="/pricing" replace />} />
         <Route path="/vs-checkmend" element={<VsCheckMendPage />} />
-        <Route path="/vs-imeiinfo" element={<Navigate to="/pricing" replace />} />
+        <Route path="/vs-imeiinfo" element={<VsIMEIInfoPage />} />
+        <Route path="/vs-swappa" element={<VsSwappaPage />} />
         <Route path="/vs-stolenregister" element={<Navigate to="/pricing" replace />} />
         <Route path="/vs-nicb" element={<Navigate to="/pricing" replace />} />
         <Route path="/carfax-alternative" element={<Navigate to="/pricing" replace />} />
