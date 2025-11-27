@@ -33,7 +33,7 @@ const TermsPage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 gradient-text">Terms of Service</h1>
-          <p className="text-gray-300">Last updated: January 2024</p>
+          <p className="text-gray-300">Last updated: November 2025</p>
         </div>
 
         <Card className="bg-sos-dark border-sos-orange/20">

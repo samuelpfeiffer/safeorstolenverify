@@ -16,20 +16,6 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 
-  const homeStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "SafeOrStolen",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": ["Android", "iOS", "Web"],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "The only mobile app to verify if items are stolen. Instant barcode scanning, offline mode, 3-second verification."
-  };
-
   return (
     <>
       {/* Bot-visible content for search engines */}
@@ -103,7 +89,6 @@ const Index = () => {
         description="FREE IMEI checker, VIN lookup, serial number verification. Check if phones, cars, electronics are stolen before buying. 50M+ database searches. Mobile app with barcode scanner. 2 free checks. Better than CheckMEND/Carfax."
         keywords="free imei checker, free vin check, serial number lookup, check if phone stolen free, vin check stolen vehicle, imei check online, stolen item checker, verify serial number, safe or stolen, safeorstolen"
         canonical="/"
-        structuredData={homeStructuredData}
       />
       
       <TrustHeaderBar />
