@@ -56,6 +56,14 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- BLOG INDEX -->
+  <url>
+    <loc>https://safeorstolen.com/blog</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ITEM LANDING PAGES - High SEO Value -->
   <url>
     <loc>https://safeorstolen.com/imei-checker</loc>
@@ -440,7 +448,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- BLOG ARTICLES - 10 High-Value Content Pages -->
+  <!-- BLOG ARTICLES - 12 High-Value Content Pages -->
   <url>
     <loc>https://safeorstolen.com/blog/how-to-check-if-phone-is-stolen</loc>
     <lastmod>2025-01-27</lastmod>

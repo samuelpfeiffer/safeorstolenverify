@@ -19,24 +19,24 @@ export const SOSFooter: React.FC = () => {
       ]
     },
     {
-      title: 'Marketplaces',
+      title: 'For Businesses',
       links: [
-        { label: 'eBay Verification', to: '/verify/ebay' },
-        { label: 'Facebook Marketplace', to: '/verify/facebook-marketplace' },
-        { label: 'OfferUp Safety', to: '/verify/offerup' },
-        { label: 'Auction Houses', to: '/verify/auctions' },
-        { label: 'Pawn Shops', to: '/verify/pawnshops' },
+        { label: 'Pawn Shops', to: '/for-pawn-shops' },
+        { label: 'Dealers', to: '/for-dealers' },
+        { label: 'Marketplaces', to: '/for-marketplaces' },
+        { label: 'Auction Houses', to: '/for-auction-houses' },
+        { label: 'All Businesses', to: '/for-businesses' },
       ]
     },
     {
       title: 'Resources',
       links: [
-        { label: 'Blog', to: '/blog' },
-        { label: 'Video Tutorials', to: '/videos' },
+        { label: 'Blog & Guides', to: '/blog' },
         { label: 'How It Works', to: '/how-it-works' },
         { label: 'FAQ', to: '/faq' },
-        { label: 'Statistics', to: '/stolen-goods-statistics-2025' },
-        { label: 'Testimonials', to: '/testimonials' },
+        { label: 'State VIN Lookups', to: '/california-vin-lookup' },
+        { label: 'Verification Guide', to: '/blog/complete-verification-guide' },
+        { label: 'Safety Tips', to: '/blog/ultimate-marketplace-buyers-guide' },
       ]
     },
     {

@@ -86,7 +86,8 @@ const WestVirginiaVinLookup = lazy(() => import('@/pages/WestVirginiaVinLookup')
 const WisconsinVinLookup = lazy(() => import('@/pages/WisconsinVinLookup'));
 const WyomingVinLookup = lazy(() => import('@/pages/WyomingVinLookup'));
 
-// Blog Articles (10 High-Value SEO Content Pages)
+// Blog Index & Articles (12 High-Value SEO Content Pages)
+const BlogIndexPage = lazy(() => import('@/pages/BlogIndexPage'));
 const HowToCheckPhoneStolen = lazy(() => import('@/pages/blog/HowToCheckPhoneStolen'));
 const CompleteVinGuide = lazy(() => import('@/pages/blog/CompleteVinGuide'));
 const ProtectYourselfBuyingUsedElectronics = lazy(() => import('@/pages/blog/ProtectYourselfBuyingUsedElectronics'));
@@ -264,7 +265,8 @@ export const AppRoutes = () => {
         <Route path="/data-sources" element={<Navigate to="/about" replace />} />
         <Route path="/accuracy" element={<Navigate to="/about" replace />} />
         
-        {/* Blog Articles - 10 High-Value SEO Content Pages */}
+        {/* Blog Index & Articles - 12 High-Value SEO Content Pages */}
+        <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/how-to-check-if-phone-is-stolen" element={<HowToCheckPhoneStolen />} />
         <Route path="/blog/complete-vin-guide" element={<CompleteVinGuide />} />
         <Route path="/blog/protect-yourself-buying-used-electronics" element={<ProtectYourselfBuyingUsedElectronics />} />
@@ -284,9 +286,6 @@ export const AppRoutes = () => {
         <Route path="/for-marketplaces" element={<ForMarketplaces />} />
         <Route path="/for-auction-houses" element={<ForAuctionHouses />} />
         <Route path="/for-businesses" element={<ForBusinesses />} />
-        
-        {/* Blog index redirect */}
-        <Route path="/blog" element={<Navigate to="/about" replace />} />
         
         
         {/* License plate lookups → /verify */}
