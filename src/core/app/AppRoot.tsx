@@ -24,7 +24,6 @@ import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
-import { TemporaryGreeting } from '@/components/layout/TemporaryGreeting';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -81,7 +80,6 @@ const AuthAwareContent: React.FC = () => {
         <MobileNavigation />
         <SchemaValidationIndicator />
         <AISafetyAdvisor />
-        <TemporaryGreeting />
         <Toaster />
       </PWAProvider>
     </GA4Provider>
