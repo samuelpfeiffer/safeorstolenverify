@@ -2,6 +2,7 @@ import { useSafeSearchParams } from '@/hooks/useSafeSearchParams';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { getHomePageStructuredData } from '@/components/home/HomeStructuredData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
@@ -93,6 +94,7 @@ const Index = () => {
         description="FREE IMEI checker, VIN lookup, serial number verification. Check if phones, cars, electronics are stolen before buying. 50M+ database searches. Mobile app with barcode scanner. 2 free checks. Better than CheckMEND/Carfax."
         keywords="free imei checker, free vin check, serial number lookup, check if phone stolen free, vin check stolen vehicle, imei check online, stolen item checker, verify serial number, safe or stolen, safeorstolen"
         canonical="/"
+        structuredData={getHomePageStructuredData()}
       />
       
       <TrustHeaderBar />

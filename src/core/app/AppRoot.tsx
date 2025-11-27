@@ -24,6 +24,7 @@ import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
+import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -60,6 +61,7 @@ const AuthAwareContent: React.FC = () => {
       <PWAProvider>
         <MasterSEO />
         <GlobalAISEO />
+        <AdvancedSchemaGenerator />
         <RedirectHandler />
         <SchemaValidationMonitor />
         <CriticalResourceLoader />

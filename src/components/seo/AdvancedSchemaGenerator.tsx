@@ -6,146 +6,8 @@ import { Helmet } from 'react-helmet-async';
  */
 
 export const AdvancedSchemaGenerator = () => {
-  // Knowledge Graph entities for SafeOrStolen
-  const entitySchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://safeorstolen.com/#organization",
-        "name": "SafeOrStolen",
-        "url": "https://safeorstolen.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-          "width": 512,
-          "height": 512
-        },
-        "description": "The only stolen goods verification platform with mobile apps for iOS and Android. Check IMEI, VIN, serial numbers, and firearms.",
-        "foundingDate": "2024",
-        "sameAs": [
-          "https://twitter.com/safeorstolen",
-          "https://facebook.com/safeorstolen",
-          "https://linkedin.com/company/safeorstolen"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "support@safeorstolen.com",
-          "availableLanguage": ["English"]
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://safeorstolen.com/#website",
-        "url": "https://safeorstolen.com",
-        "name": "SafeOrStolen",
-        "publisher": { "@id": "https://safeorstolen.com/#organization" },
-        "inLanguage": "en-US",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://safeorstolen.com/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://safeorstolen.com/#mobileapp",
-        "name": "SafeOrStolen - Stolen Goods Checker",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": ["iOS", "Android"],
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "priceValidUntil": "2026-12-31",
-          "availability": "https://schema.org/InStock",
-          "url": "https://safeorstolen.com/mobile-app"
-        },
-        "downloadUrl": [
-          "https://apps.apple.com/app/safeorstolen",
-          "https://play.google.com/store/apps/details?id=com.safeorstolen"
-        ],
-        "screenshot": [
-          "https://safeorstolen.com/screenshots/imei-check.jpg",
-          "https://safeorstolen.com/screenshots/vin-verification.jpg",
-          "https://safeorstolen.com/screenshots/firearm-check.jpg"
-        ],
-        "featureList": [
-          "IMEI verification",
-          "VIN checking",
-          "Firearm serial number lookup",
-          "Camera scanning",
-          "Barcode reader",
-          "Offline history",
-          "4 free searches"
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://safeorstolen.com/#service",
-        "serviceType": "Stolen Goods Verification",
-        "provider": { "@id": "https://safeorstolen.com/#organization" },
-        "areaServed": {
-          "@type": "Country",
-          "name": "United States"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Verification Services",
-          "numberOfItems": 3,
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "IMEI Verification",
-                "description": "Check if a phone or mobile device IMEI number is stolen"
-              },
-              "price": "0",
-              "priceCurrency": "USD",
-              "priceValidUntil": "2026-12-31",
-              "availability": "https://schema.org/InStock",
-              "url": "https://safeorstolen.com/pricing"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "VIN Verification",
-                "description": "Verify vehicle identification numbers for stolen cars"
-              },
-              "price": "0",
-              "priceCurrency": "USD",
-              "priceValidUntil": "2026-12-31",
-              "availability": "https://schema.org/InStock",
-              "url": "https://safeorstolen.com/pricing"
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Firearm Serial Number Check",
-                "description": "Check gun serial numbers against stolen firearms databases"
-              },
-              "price": "0",
-              "priceCurrency": "USD",
-              "priceValidUntil": "2026-12-31",
-              "availability": "https://schema.org/InStock",
-              "url": "https://safeorstolen.com/pricing"
-            }
-          ]
-        }
-      },
-      {
-        "@type": "Brand",
-        "@id": "https://safeorstolen.com/#brand",
-        "name": "SafeOrStolen",
-        "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-        "slogan": "Verify Before You Buy - Mobile Apps for iOS & Android"
-      }
-    ]
-  };
+  // Only unique schemas NOT in index.html
+  // Removed: Organization, WebSite (already in index.html static schemas)
 
   // HowTo Schema for featured snippets
   const howToSchemas = [
@@ -271,9 +133,6 @@ export const AdvancedSchemaGenerator = () => {
 
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(entitySchema)}
-      </script>
       {howToSchemas.map((schema, index) => (
         <script key={`howto-${index}`} type="application/ld+json">
           {JSON.stringify(schema)}
