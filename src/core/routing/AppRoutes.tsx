@@ -157,13 +157,6 @@ export const AppRoutes = () => {
         <Route path="/blog" element={<Navigate to="/about" replace />} />
         <Route path="/blog/*" element={<Navigate to="/about" replace />} />
         
-        {/* State VIN lookups → /verify */}
-        <Route path="/arizona-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/california-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/texas-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/florida-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/new-york-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/*-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
         
         {/* License plate lookups → /verify */}
         <Route path="/arizona-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
