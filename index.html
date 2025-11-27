@@ -17,20 +17,64 @@
     
     <link rel="icon" href="/sos-logo.png" type="image/png">
     
-    <!-- Structured Data -->
+    <!-- Global Structured Data - Visible to Googlebot without JavaScript -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "Organization",
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com",
-      "description": "Free stolen item verification platform. Check IMEI numbers, VIN numbers, and serial numbers instantly.",
+      "logo": "https://safeorstolen.com/sos-logo.png",
+      "description": "Free stolen item verification platform. Check IMEI, VIN, and serial numbers instantly against 50+ million records.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Sam Pfeiffer"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@safeorstolen.com",
+        "contactType": "Customer Support"
+      },
+      "sameAs": [
+        "https://safeorstolen.com"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "description": "Free verification tool to check if phones, vehicles, electronics are stolen. 3-second results from 50+ million records.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://safeorstolen.com/verify?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SafeOrStolen Mobile App",
       "applicationCategory": "SecurityApplication",
+      "operatingSystem": ["iOS", "Android", "Web Browser"],
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
-      }
+        "priceCurrency": "USD",
+        "description": "2 free verification checks, 14-day trial"
+      },
+      "featureList": [
+        "Barcode scanning for 3-second verification",
+        "Offline mode with cached database",
+        "IMEI, VIN, serial number verification",
+        "License plate lookup (all 50 US states)",
+        "Firearm serial verification"
+      ]
     }
     </script>
     <!-- Default SEO Meta Tags (Enhanced for Crawlers) -->
