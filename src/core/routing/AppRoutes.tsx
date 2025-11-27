@@ -34,12 +34,78 @@ const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 
-// State VIN Pages (Top 5 High-Population States - Additional 45 available via template)
+// All 50 State VIN Pages (Complete Nationwide Coverage)
+const AlabamaVinLookup = lazy(() => import('@/pages/AlabamaVinLookup'));
+const AlaskaVinLookup = lazy(() => import('@/pages/AlaskaVinLookup'));
+const ArizonaVinLookup = lazy(() => import('@/pages/ArizonaVinLookup'));
+const ArkansasVinLookup = lazy(() => import('@/pages/ArkansasVinLookup'));
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
-const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
+const ColoradoVinLookup = lazy(() => import('@/pages/ColoradoVinLookup'));
+const ConnecticutVinLookup = lazy(() => import('@/pages/ConnecticutVinLookup'));
+const DelawareVinLookup = lazy(() => import('@/pages/DelawareVinLookup'));
 const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
+const GeorgiaVinLookup = lazy(() => import('@/pages/GeorgiaVinLookup'));
+const HawaiiVinLookup = lazy(() => import('@/pages/HawaiiVinLookup'));
+const IdahoVinLookup = lazy(() => import('@/pages/IdahoVinLookup'));
+const IllinoisVinLookup = lazy(() => import('@/pages/IllinoisVinLookup'));
+const IndianaVinLookup = lazy(() => import('@/pages/IndianaVinLookup'));
+const IowaVinLookup = lazy(() => import('@/pages/IowaVinLookup'));
+const KansasVinLookup = lazy(() => import('@/pages/KansasVinLookup'));
+const KentuckyVinLookup = lazy(() => import('@/pages/KentuckyVinLookup'));
+const LouisianaVinLookup = lazy(() => import('@/pages/LouisianaVinLookup'));
+const MaineVinLookup = lazy(() => import('@/pages/MaineVinLookup'));
+const MarylandVinLookup = lazy(() => import('@/pages/MarylandVinLookup'));
+const MassachusettsVinLookup = lazy(() => import('@/pages/MassachusettsVinLookup'));
+const MichiganVinLookup = lazy(() => import('@/pages/MichiganVinLookup'));
+const MinnesotaVinLookup = lazy(() => import('@/pages/MinnesotaVinLookup'));
+const MississippiVinLookup = lazy(() => import('@/pages/MississippiVinLookup'));
+const MissouriVinLookup = lazy(() => import('@/pages/MissouriVinLookup'));
+const MontanaVinLookup = lazy(() => import('@/pages/MontanaVinLookup'));
+const NebraskaVinLookup = lazy(() => import('@/pages/NebraskaVinLookup'));
+const NevadaVinLookup = lazy(() => import('@/pages/NevadaVinLookup'));
+const NewHampshireVinLookup = lazy(() => import('@/pages/NewHampshireVinLookup'));
+const NewJerseyVinLookup = lazy(() => import('@/pages/NewJerseyVinLookup'));
+const NewMexicoVinLookup = lazy(() => import('@/pages/NewMexicoVinLookup'));
 const NewYorkVinLookup = lazy(() => import('@/pages/NewYorkVinLookup'));
+const NorthCarolinaVinLookup = lazy(() => import('@/pages/NorthCarolinaVinLookup'));
+const NorthDakotaVinLookup = lazy(() => import('@/pages/NorthDakotaVinLookup'));
+const OhioVinLookup = lazy(() => import('@/pages/OhioVinLookup'));
+const OklahomaVinLookup = lazy(() => import('@/pages/OklahomaVinLookup'));
+const OregonVinLookup = lazy(() => import('@/pages/OregonVinLookup'));
 const PennsylvaniaVinLookup = lazy(() => import('@/pages/PennsylvaniaVinLookup'));
+const RhodeIslandVinLookup = lazy(() => import('@/pages/RhodeIslandVinLookup'));
+const SouthCarolinaVinLookup = lazy(() => import('@/pages/SouthCarolinaVinLookup'));
+const SouthDakotaVinLookup = lazy(() => import('@/pages/SouthDakotaVinLookup'));
+const TennesseeVinLookup = lazy(() => import('@/pages/TennesseeVinLookup'));
+const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
+const UtahVinLookup = lazy(() => import('@/pages/UtahVinLookup'));
+const VermontVinLookup = lazy(() => import('@/pages/VermontVinLookup'));
+const VirginiaVinLookup = lazy(() => import('@/pages/VirginiaVinLookup'));
+const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
+const WestVirginiaVinLookup = lazy(() => import('@/pages/WestVirginiaVinLookup'));
+const WisconsinVinLookup = lazy(() => import('@/pages/WisconsinVinLookup'));
+const WyomingVinLookup = lazy(() => import('@/pages/WyomingVinLookup'));
+
+// Blog Articles (10 High-Value SEO Content Pages)
+const HowToCheckPhoneStolen = lazy(() => import('@/pages/blog/HowToCheckPhoneStolen'));
+const CompleteVinGuide = lazy(() => import('@/pages/blog/CompleteVinGuide'));
+const ProtectYourselfBuyingUsedElectronics = lazy(() => import('@/pages/blog/ProtectYourselfBuyingUsedElectronics'));
+const DataSourceCredibilityStolenGoods = lazy(() => import('@/pages/blog/DataSourceCredibilityStolenGoods'));
+const UltimateMarketplaceBuyersGuide = lazy(() => import('@/pages/blog/UltimateMarketplaceBuyersGuide'));
+const CompleteImeiGuide = lazy(() => import('@/pages/blog/CompleteImeiGuide'));
+const ScammerTacticsExposed = lazy(() => import('@/pages/blog/ScammerTacticsExposed'));
+const PhoneVerificationGuide = lazy(() => import('@/pages/blog/PhoneVerificationGuide'));
+const TheftTrendsReport2024 = lazy(() => import('@/pages/blog/TheftTrendsReport2024'));
+const VerificationMethodology = lazy(() => import('@/pages/blog/VerificationMethodology'));
+const RealUserStories = lazy(() => import('@/pages/blog/RealUserStories'));
+const CompleteVerificationGuide = lazy(() => import('@/pages/blog/CompleteVerificationGuide'));
+
+// Business Pages (5 B2B Landing Pages)
+const ForPawnShops = lazy(() => import('@/pages/business/ForPawnShops'));
+const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
+const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
+const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
+const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 
 export const AppRoutes = () => {
   return (
@@ -73,12 +139,57 @@ export const AppRoutes = () => {
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         
-        {/* State VIN Pages - Top 5 High-Traffic States for Local SEO */}
+        {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}
+        <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
+        <Route path="/alaska-vin-lookup" element={<AlaskaVinLookup />} />
+        <Route path="/arizona-vin-lookup" element={<ArizonaVinLookup />} />
+        <Route path="/arkansas-vin-lookup" element={<ArkansasVinLookup />} />
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
-        <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
+        <Route path="/colorado-vin-lookup" element={<ColoradoVinLookup />} />
+        <Route path="/connecticut-vin-lookup" element={<ConnecticutVinLookup />} />
+        <Route path="/delaware-vin-lookup" element={<DelawareVinLookup />} />
         <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
+        <Route path="/georgia-vin-lookup" element={<GeorgiaVinLookup />} />
+        <Route path="/hawaii-vin-lookup" element={<HawaiiVinLookup />} />
+        <Route path="/idaho-vin-lookup" element={<IdahoVinLookup />} />
+        <Route path="/illinois-vin-lookup" element={<IllinoisVinLookup />} />
+        <Route path="/indiana-vin-lookup" element={<IndianaVinLookup />} />
+        <Route path="/iowa-vin-lookup" element={<IowaVinLookup />} />
+        <Route path="/kansas-vin-lookup" element={<KansasVinLookup />} />
+        <Route path="/kentucky-vin-lookup" element={<KentuckyVinLookup />} />
+        <Route path="/louisiana-vin-lookup" element={<LouisianaVinLookup />} />
+        <Route path="/maine-vin-lookup" element={<MaineVinLookup />} />
+        <Route path="/maryland-vin-lookup" element={<MarylandVinLookup />} />
+        <Route path="/massachusetts-vin-lookup" element={<MassachusettsVinLookup />} />
+        <Route path="/michigan-vin-lookup" element={<MichiganVinLookup />} />
+        <Route path="/minnesota-vin-lookup" element={<MinnesotaVinLookup />} />
+        <Route path="/mississippi-vin-lookup" element={<MississippiVinLookup />} />
+        <Route path="/missouri-vin-lookup" element={<MissouriVinLookup />} />
+        <Route path="/montana-vin-lookup" element={<MontanaVinLookup />} />
+        <Route path="/nebraska-vin-lookup" element={<NebraskaVinLookup />} />
+        <Route path="/nevada-vin-lookup" element={<NevadaVinLookup />} />
+        <Route path="/new-hampshire-vin-lookup" element={<NewHampshireVinLookup />} />
+        <Route path="/new-jersey-vin-lookup" element={<NewJerseyVinLookup />} />
+        <Route path="/new-mexico-vin-lookup" element={<NewMexicoVinLookup />} />
         <Route path="/new-york-vin-lookup" element={<NewYorkVinLookup />} />
+        <Route path="/north-carolina-vin-lookup" element={<NorthCarolinaVinLookup />} />
+        <Route path="/north-dakota-vin-lookup" element={<NorthDakotaVinLookup />} />
+        <Route path="/ohio-vin-lookup" element={<OhioVinLookup />} />
+        <Route path="/oklahoma-vin-lookup" element={<OklahomaVinLookup />} />
+        <Route path="/oregon-vin-lookup" element={<OregonVinLookup />} />
         <Route path="/pennsylvania-vin-lookup" element={<PennsylvaniaVinLookup />} />
+        <Route path="/rhode-island-vin-lookup" element={<RhodeIslandVinLookup />} />
+        <Route path="/south-carolina-vin-lookup" element={<SouthCarolinaVinLookup />} />
+        <Route path="/south-dakota-vin-lookup" element={<SouthDakotaVinLookup />} />
+        <Route path="/tennessee-vin-lookup" element={<TennesseeVinLookup />} />
+        <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
+        <Route path="/utah-vin-lookup" element={<UtahVinLookup />} />
+        <Route path="/vermont-vin-lookup" element={<VermontVinLookup />} />
+        <Route path="/virginia-vin-lookup" element={<VirginiaVinLookup />} />
+        <Route path="/washington-vin-lookup" element={<WashingtonVinLookup />} />
+        <Route path="/west-virginia-vin-lookup" element={<WestVirginiaVinLookup />} />
+        <Route path="/wisconsin-vin-lookup" element={<WisconsinVinLookup />} />
+        <Route path="/wyoming-vin-lookup" element={<WyomingVinLookup />} />
         
         {/* Item-specific check redirects → main pages */}
         <Route path="/imei-check" element={<Navigate to="/imei-checker" replace />} />
@@ -153,9 +264,29 @@ export const AppRoutes = () => {
         <Route path="/data-sources" element={<Navigate to="/about" replace />} />
         <Route path="/accuracy" element={<Navigate to="/about" replace />} />
         
-        {/* Blog pages → /about */}
+        {/* Blog Articles - 10 High-Value SEO Content Pages */}
+        <Route path="/blog/how-to-check-if-phone-is-stolen" element={<HowToCheckPhoneStolen />} />
+        <Route path="/blog/complete-vin-guide" element={<CompleteVinGuide />} />
+        <Route path="/blog/protect-yourself-buying-used-electronics" element={<ProtectYourselfBuyingUsedElectronics />} />
+        <Route path="/blog/data-source-credibility-stolen-goods-verification" element={<DataSourceCredibilityStolenGoods />} />
+        <Route path="/blog/ultimate-marketplace-buyers-guide" element={<UltimateMarketplaceBuyersGuide />} />
+        <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteImeiGuide />} />
+        <Route path="/blog/scammer-tactics-exposed" element={<ScammerTacticsExposed />} />
+        <Route path="/blog/phone-verification-guide" element={<PhoneVerificationGuide />} />
+        <Route path="/blog/theft-trends-report-2024" element={<TheftTrendsReport2024 />} />
+        <Route path="/blog/verification-methodology" element={<VerificationMethodology />} />
+        <Route path="/blog/real-user-stories" element={<RealUserStories />} />
+        <Route path="/blog/complete-verification-guide" element={<CompleteVerificationGuide />} />
+        
+        {/* Business Pages - 5 B2B Landing Pages */}
+        <Route path="/for-pawn-shops" element={<ForPawnShops />} />
+        <Route path="/for-dealers" element={<ForDealers />} />
+        <Route path="/for-marketplaces" element={<ForMarketplaces />} />
+        <Route path="/for-auction-houses" element={<ForAuctionHouses />} />
+        <Route path="/for-businesses" element={<ForBusinesses />} />
+        
+        {/* Blog index redirect */}
         <Route path="/blog" element={<Navigate to="/about" replace />} />
-        <Route path="/blog/*" element={<Navigate to="/about" replace />} />
         
         
         {/* License plate lookups → /verify */}
