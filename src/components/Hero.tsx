@@ -27,14 +27,11 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-sos via-sos-dark to-sos">
-      {/* Animated gradient mesh background */}
+      {/* Animated gradient mesh background - reduced complexity for mobile LCP */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-br from-sos-orange/20 via-transparent to-sos-lime/10 animate-gradient-slow bg-200" />
+        <div className="absolute inset-0 bg-gradient-to-br from-sos-orange/20 via-transparent to-sos-lime/10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,51,0,0.1),transparent)]" />
       </div>
-      
-      {/* Glassmorphism overlay */}
-      <div className="absolute inset-0 backdrop-blur-[1px]" />
       
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
@@ -181,7 +178,7 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* Verification in Action Image with modern frame */}
+          {/* Verification in Action Image with modern frame - LCP optimized */}
           <div className="max-w-4xl mx-auto mt-16">
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-sos-orange/30 to-sos-lime/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
@@ -190,6 +187,10 @@ const Hero = () => {
                 alt="SafeOrStolen verification app on mobile and desktop showing item verified status" 
                 className="relative w-full h-auto rounded-2xl shadow-2xl border border-sos-orange/30 group-hover:scale-[1.02] transition-transform"
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1200}
+                height={675}
               />
             </div>
           </div>
