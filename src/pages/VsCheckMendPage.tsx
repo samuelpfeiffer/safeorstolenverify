@@ -1,256 +1,398 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Check, X, Smartphone, Zap, DollarSign, Globe, Shield, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Check, X, Star, TrendingUp, Shield, Zap, DollarSign } from 'lucide-react';
 
 const VsCheckMendPage = () => {
-  const comparisonData = [
+  const comparisonFeatures = [
     {
-      category: 'Pricing',
-      safeorstolen: { text: '$1.00 per check or $7.99/month unlimited', icon: Check, highlight: true },
-      checkmend: { text: '$2.99+ per check', icon: X }
+      feature: "Mobile App",
+      safeorstolen: { has: true, detail: "iOS & Android with barcode scanning" },
+      checkmend: { has: false, detail: "No mobile app available" }
     },
     {
-      category: 'Free Checks',
-      safeorstolen: { text: '4 free verifications', icon: Check, highlight: true },
-      checkmend: { text: 'No free checks', icon: X }
+      feature: "Verification Speed",
+      safeorstolen: { has: true, detail: "3 seconds with barcode scan" },
+      checkmend: { has: true, detail: "30+ seconds manual typing" }
     },
     {
-      category: 'Database Coverage',
-      safeorstolen: { text: '50M+ global records', icon: Check, highlight: true },
-      checkmend: { text: '30M+ records (UK focused)', icon: Check }
+      feature: "Free Checks",
+      safeorstolen: { has: true, detail: "2 free verifications (14-day trial)" },
+      checkmend: { has: false, detail: "$3.99 per check (£1.99 UK)" }
     },
     {
-      category: 'Check Speed',
-      safeorstolen: { text: '<30 seconds', icon: Check, highlight: true },
-      checkmend: { text: '1-2 minutes', icon: Check }
+      feature: "Firearms Verification",
+      safeorstolen: { has: true, detail: "Serial number + NCIC checks" },
+      checkmend: { has: false, detail: "Not supported" }
     },
     {
-      category: 'Mobile App',
-      safeorstolen: { text: 'iOS & Android available', icon: Check, highlight: true },
-      checkmend: { text: 'Web only', icon: X }
+      feature: "License Plate Lookup",
+      safeorstolen: { has: true, detail: "All 50 US states + international" },
+      checkmend: { has: false, detail: "Not supported" }
     },
     {
-      category: 'Item Types',
-      safeorstolen: { text: 'Phones, cars, electronics, tools, bikes, more', icon: Check, highlight: true },
-      checkmend: { text: 'Phones, tablets, some electronics', icon: Check }
+      feature: "Offline Mode",
+      safeorstolen: { has: true, detail: "Works without internet" },
+      checkmend: { has: false, detail: "Online only" }
     },
     {
-      category: 'API Access',
-      safeorstolen: { text: 'Available on Business plan', icon: Check, highlight: true },
-      checkmend: { text: 'Enterprise only', icon: X }
+      feature: "Barcode Scanner",
+      safeorstolen: { has: true, detail: "Built-in camera scanner" },
+      checkmend: { has: false, detail: "Manual entry only" }
     },
     {
-      category: 'Bulk Checking',
-      safeorstolen: { text: 'Up to 50 items at once', icon: Check, highlight: true },
-      checkmend: { text: 'Limited', icon: X }
+      feature: "Consumer Focus",
+      safeorstolen: { has: true, detail: "Built for everyday buyers" },
+      checkmend: { has: true, detail: "Mixed B2B/B2C focus" }
     },
     {
-      category: 'Customer Support',
-      safeorstolen: { text: '24/7 email + priority support', icon: Check, highlight: true },
-      checkmend: { text: 'Business hours only', icon: Check }
+      feature: "Global Coverage",
+      safeorstolen: { has: true, detail: "150+ countries, 50M+ records" },
+      checkmend: { has: true, detail: "Global (£13.8B checked)" }
     },
     {
-      category: 'Money-Back Guarantee',
-      safeorstolen: { text: '30-day guarantee', icon: Check, highlight: true },
-      checkmend: { text: 'No refunds', icon: X }
+      feature: "Item Types",
+      safeorstolen: { has: true, detail: "Phones, cars, firearms, electronics, boats, appliances" },
+      checkmend: { has: true, detail: "Phones, cars, electronics, bikes" }
     }
   ];
 
-  const structuredData = [
+  const pricingComparison = [
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Safe or Stolen vs CheckMend: Which Verification Service is Better?",
-      "description": "Comprehensive comparison of Safe or Stolen and CheckMend for IMEI and stolen goods verification",
-      "author": {
-        "@type": "Organization",
-        "name": "Safe or Stolen"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Safe or Stolen",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://safeorstolen.com/logo.png"
-        }
-      },
-      "datePublished": "2025-01-01"
+      plan: "Free Trial",
+      safeorstolen: "$0 - 2 checks",
+      checkmend: "No free tier"
+    },
+    {
+      plan: "Single Check",
+      safeorstolen: "$2.99",
+      checkmend: "$3.99 (£1.99 UK)"
+    },
+    {
+      plan: "Monthly Plan",
+      safeorstolen: "$9 - 25 checks",
+      checkmend: "$50+ (business only)"
+    },
+    {
+      plan: "Unlimited",
+      safeorstolen: "$99/month",
+      checkmend: "Contact sales"
     }
   ];
 
   return (
     <>
       <PageSEO
-        title="Safe or Stolen vs CheckMend: Comparison 2025 | Which is Better?"
-        description="Compare Safe or Stolen and CheckMend for IMEI verification. See pricing, features, and why 25,000+ users chose Safe or Stolen over CheckMend."
-        keywords="safe or stolen vs checkmend, checkmend alternative, imei checker comparison, best stolen goods verifier, checkmend vs safe or stolen"
+        title="SafeOrStolen vs CheckMEND: Why We Have The Mobile App They Don't | Free Alternative 2025"
+        description="CheckMEND alternative with FREE mobile app for iOS & Android. Get 2 free checks vs CheckMEND's $3.99/check. Barcode scanning, firearms verification, offline mode. The only stolen verification app CheckMEND lacks."
+        keywords="checkmend alternative, checkmend app, free checkmend, checkmend vs safeorstolen, stolen item checker app, checkmend mobile app, better than checkmend, checkmend free trial, imei checker app"
         canonical="/vs-checkmend"
-        structuredData={structuredData}
       />
 
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>CheckMEND Alternative with Free Mobile App | SafeOrStolen vs CheckMEND</h1>
+          <p>
+            Looking for a CheckMEND alternative? SafeOrStolen is the only stolen verification service with a mobile app. 
+            CheckMEND has no iOS or Android app despite processing £13.8 billion in checks. Get 2 free verifications 
+            vs CheckMEND's $3.99 per check.
+          </p>
+          
+          <h2>Why Doesn't CheckMEND Have a Mobile App?</h2>
+          <p>
+            Despite being a major player in stolen item verification, CheckMEND has never released a mobile app. 
+            This means users must manually type IMEI numbers, VINs, and serial numbers on their website every time. 
+            SafeOrStolen offers instant barcode scanning on iOS and Android, making verification 10x faster.
+          </p>
+          
+          <h2>SafeOrStolen vs CheckMEND: Key Differences</h2>
+          <ul>
+            <li><strong>Mobile App:</strong> SafeOrStolen has iOS/Android apps with barcode scanning. CheckMEND has no app.</li>
+            <li><strong>Free Checks:</strong> SafeOrStolen gives 2 free verifications. CheckMEND charges $3.99 immediately.</li>
+            <li><strong>Verification Speed:</strong> SafeOrStolen takes 3 seconds with barcode scan. CheckMEND requires manual typing (30+ seconds).</li>
+            <li><strong>Firearms:</strong> SafeOrStolen verifies firearms. CheckMEND doesn't support firearms.</li>
+            <li><strong>License Plates:</strong> SafeOrStolen checks license plates across all 50 states. CheckMEND doesn't.</li>
+            <li><strong>Offline Mode:</strong> SafeOrStolen works without internet. CheckMEND is online only.</li>
+          </ul>
+          
+          <h2>Pricing: SafeOrStolen vs CheckMEND</h2>
+          <p>
+            SafeOrStolen is more affordable than CheckMEND. Get 2 free checks to start (no credit card required). 
+            Single checks cost $2.99 vs CheckMEND's $3.99. Monthly plans start at $9 for 25 checks. 
+            CheckMEND's business plans start at $50+/month.
+          </p>
+          
+          <h2>Who Should Use SafeOrStolen Instead of CheckMEND?</h2>
+          <ul>
+            <li><strong>Mobile Users:</strong> If you want to scan barcodes instead of typing, use SafeOrStolen's app.</li>
+            <li><strong>Budget Buyers:</strong> If you want free checks before committing, SafeOrStolen gives 2 free.</li>
+            <li><strong>Gun Owners:</strong> If you buy/sell firearms, CheckMEND can't help. SafeOrStolen verifies firearms.</li>
+            <li><strong>Casual Buyers:</strong> If you buy from Facebook Marketplace, OfferUp, Craigslist - SafeOrStolen is faster.</li>
+          </ul>
+          
+          <h2>Download SafeOrStolen Mobile App (Not Available on CheckMEND)</h2>
+          <p>
+            Install SafeOrStolen for free on iOS and Android. Scan barcodes, verify items offline, 
+            and get instant results. The mobile app CheckMEND should have built years ago.
+          </p>
+        </div>
+      </noscript>
+
       <div className="min-h-screen bg-background">
-        {/* Hero */}
-        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto px-4 text-center">
-            <Badge className="mb-4" variant="outline">Updated for 2025</Badge>
-            <h1 className="text-5xl font-bold mb-6">
-              Safe or Stolen vs CheckMend
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Independent comparison of features, pricing, and accuracy. See why thousands 
-              of buyers switched from CheckMend to Safe or Stolen.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link to="/auth?tab=signup">Try Safe or Stolen Free</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/pricing">View Pricing</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Quick Summary */}
-        <section className="py-16">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-sos via-sos-dark to-sos text-white py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <DollarSign className="h-12 w-12 mx-auto mb-4 text-green-500" />
-                  <h3 className="font-bold text-2xl mb-2">50% Cheaper</h3>
-                  <p className="text-muted-foreground">Save money with lower per-check costs</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center border-primary border-2">
-                <CardContent className="pt-6">
-                  <Zap className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-bold text-2xl mb-2">2x Faster</h3>
-                  <p className="text-muted-foreground">Results in {"<"}30 seconds vs 1-2 minutes</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Shield className="h-12 w-12 mx-auto mb-4 text-blue-500" />
-                  <h3 className="font-bold text-2xl mb-2">More Coverage</h3>
-                  <p className="text-muted-foreground">20M+ more records globally</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Detailed Comparison */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-4xl font-bold text-center mb-12">Feature-by-Feature Comparison</h2>
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <div className="inline-flex items-center gap-2 bg-sos-orange/20 border border-sos-orange/40 rounded-full px-6 py-2">
+                <Smartphone className="w-4 h-4" />
+                <span className="text-sm font-semibold">The Mobile App CheckMEND Doesn't Have</span>
+              </div>
               
-              <Card>
-                <CardHeader>
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div></div>
-                    <div>
-                      <Badge className="bg-primary">Recommended</Badge>
-                      <h3 className="text-xl font-bold mt-2">Safe or Stolen</h3>
-                      <div className="flex items-center justify-center gap-1 mt-1">
-                        {[1,2,3,4,5].map(i => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                        <span className="text-sm text-muted-foreground ml-1">(4.9/5)</span>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mt-6">CheckMend</h3>
-                      <div className="flex items-center justify-center gap-1 mt-1">
-                        {[1,2,3,4].map(i => (
-                          <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                        <Star className="h-4 w-4 text-gray-300" />
-                        <span className="text-sm text-muted-foreground ml-1">(4.2/5)</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  {comparisonData.map((row, index) => (
-                    <div key={index} className={`grid grid-cols-3 gap-4 py-4 ${index !== comparisonData.length - 1 ? 'border-b' : ''}`}>
-                      <div className="font-semibold flex items-center">{row.category}</div>
-                      <div className={`flex items-center gap-2 ${row.safeorstolen.highlight ? 'bg-green-50 dark:bg-green-950/20 p-2 rounded' : ''}`}>
-                        <row.safeorstolen.icon className={`h-5 w-5 flex-shrink-0 ${row.safeorstolen.icon === Check ? 'text-green-500' : 'text-red-500'}`} />
-                        <span className="text-sm">{row.safeorstolen.text}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <row.checkmend.icon className={`h-5 w-5 flex-shrink-0 ${row.checkmend.icon === Check ? 'text-green-500' : 'text-red-500'}`} />
-                        <span className="text-sm">{row.checkmend.text}</span>
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* User Reviews */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">What Switchers Say</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center gap-1 mb-3">
-                      {[1,2,3,4,5].map(i => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      "Switched from CheckMend after they charged me $3 per check. Safe or Stolen 
-                      gives me unlimited checks for $7.99/month. Saved hundreds already!"
-                    </p>
-                    <p className="font-semibold">- Sarah M., eBay Seller</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center gap-1 mb-3">
-                      {[1,2,3,4,5].map(i => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      "CheckMend's UK focus didn't help me buying phones in the US. Safe or Stolen 
-                      checks global databases and found stolen devices CheckMend missed."
-                    </p>
-                    <p className="font-semibold">- Mike T., Phone Flipper</p>
-                  </CardContent>
-                </Card>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                CheckMEND Alternative with <span className="text-sos-orange">Free Mobile App</span>
+              </h1>
+              
+              <p className="text-xl text-sos-light max-w-3xl mx-auto">
+                CheckMEND has processed <strong>£13.8 billion</strong> in checks but still has <strong>no mobile app</strong>. 
+                SafeOrStolen gives you iOS & Android apps with barcode scanning, 2 free checks, and faster verification.
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4 pt-4">
+                <Button size="lg" asChild className="bg-sos-orange hover:bg-sos-orange/90">
+                  <Link to="/app">
+                    <Download className="w-5 h-5 mr-2" />
+                    Download Free App
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10">
+                  <Link to="/verify">
+                    Try 2 Free Checks
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-primary/10 to-orange-500/10">
-          <div className="container mx-auto px-4 text-center">
-            <TrendingUp className="h-16 w-16 mx-auto mb-6 text-primary" />
-            <h2 className="text-4xl font-bold mb-4">
-              Join 25,000+ Smart Buyers Who Switched
+        {/* Why No CheckMEND App? */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-3xl text-center">
+                    Why Doesn't CheckMEND Have a Mobile App?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-lg">
+                  <p>
+                    Despite being a major player in stolen item verification (processing billions in checks annually), 
+                    <strong> CheckMEND has never released a mobile app</strong> for iOS or Android.
+                  </p>
+                  <p>
+                    This means users must manually type IMEI numbers, VIN numbers, and serial numbers on their website 
+                    every single time—a tedious process that takes 30+ seconds per check.
+                  </p>
+                  <p>
+                    <strong>SafeOrStolen solved this problem</strong> by building the first mobile app with built-in barcode scanning. 
+                    Verification now takes just 3 seconds instead of 30+ seconds with manual typing.
+                  </p>
+                  <div className="bg-sos-orange/10 border border-sos-orange/30 rounded-lg p-6 mt-6">
+                    <p className="text-center text-xl font-semibold text-sos-orange">
+                      <Zap className="w-6 h-6 inline mr-2" />
+                      10x Faster: Barcode Scanning vs Manual Typing
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature Comparison Table */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              SafeOrStolen vs CheckMEND: Complete Comparison
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Start with 4 free verifications. No credit card required. 
-              See why Safe or Stolen is rated higher than CheckMend.
+            
+            <div className="max-w-6xl mx-auto overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-muted">
+                    <th className="p-4 text-left font-semibold border">Feature</th>
+                    <th className="p-4 text-center font-semibold border bg-sos-orange/10">
+                      <div className="flex items-center justify-center gap-2">
+                        <Shield className="w-5 h-5 text-sos-orange" />
+                        SafeOrStolen
+                      </div>
+                    </th>
+                    <th className="p-4 text-center font-semibold border">CheckMEND</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonFeatures.map((row, idx) => (
+                    <tr key={idx} className="border-b hover:bg-muted/50">
+                      <td className="p-4 font-medium border">{row.feature}</td>
+                      <td className="p-4 text-center border bg-sos-orange/5">
+                        <div className="flex flex-col items-center gap-2">
+                          {row.safeorstolen.has ? (
+                            <Check className="w-6 h-6 text-green-500" />
+                          ) : (
+                            <X className="w-6 h-6 text-red-500" />
+                          )}
+                          <span className="text-sm text-muted-foreground">{row.safeorstolen.detail}</span>
+                        </div>
+                      </td>
+                      <td className="p-4 text-center border">
+                        <div className="flex flex-col items-center gap-2">
+                          {row.checkmend.has ? (
+                            <Check className="w-6 h-6 text-green-500" />
+                          ) : (
+                            <X className="w-6 h-6 text-red-500" />
+                          )}
+                          <span className="text-sm text-muted-foreground">{row.checkmend.detail}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Comparison */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Pricing: SafeOrStolen vs CheckMEND
+            </h2>
+            
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+              {/* SafeOrStolen Pricing */}
+              <Card className="border-2 border-sos-orange">
+                <CardHeader className="bg-sos-orange/10">
+                  <CardTitle className="text-2xl text-center">
+                    <Shield className="w-6 h-6 inline mr-2 text-sos-orange" />
+                    SafeOrStolen
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-6 space-y-4">
+                  {pricingComparison.map((tier, idx) => (
+                    <div key={idx} className="flex justify-between items-center border-b pb-3">
+                      <span className="font-medium">{tier.plan}</span>
+                      <span className="text-sos-orange font-bold">{tier.safeorstolen}</span>
+                    </div>
+                  ))}
+                  <Button className="w-full mt-6 bg-sos-orange hover:bg-sos-orange/90" asChild>
+                    <Link to="/pricing">View All Plans</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* CheckMEND Pricing */}
+              <Card>
+                <CardHeader className="bg-muted">
+                  <CardTitle className="text-2xl text-center">CheckMEND</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-6 space-y-4">
+                  {pricingComparison.map((tier, idx) => (
+                    <div key={idx} className="flex justify-between items-center border-b pb-3">
+                      <span className="font-medium">{tier.plan}</span>
+                      <span className="font-bold">{tier.checkmend}</span>
+                    </div>
+                  ))}
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-6 text-center">
+                    <p className="text-sm text-red-700 font-medium">No mobile app available</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Should Switch? */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12">
+              Who Should Use SafeOrStolen Instead of CheckMEND?
+            </h2>
+            
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: Smartphone,
+                  title: "Mobile Users",
+                  description: "If you want to scan barcodes instead of typing, SafeOrStolen's mobile app is the only option. CheckMEND has no app."
+                },
+                {
+                  icon: DollarSign,
+                  title: "Budget Buyers",
+                  description: "Get 2 free checks with SafeOrStolen (no credit card required). CheckMEND charges $3.99 from the first check."
+                },
+                {
+                  icon: Shield,
+                  title: "Gun Owners & Dealers",
+                  description: "CheckMEND doesn't verify firearms. SafeOrStolen checks firearm serial numbers against NCIC and ATF databases."
+                },
+                {
+                  icon: Zap,
+                  title: "Casual Marketplace Buyers",
+                  description: "Buying from Facebook Marketplace, OfferUp, Craigslist? SafeOrStolen's 3-second barcode scanning is 10x faster than CheckMEND's manual typing."
+                },
+                {
+                  icon: Globe,
+                  title: "International Users",
+                  description: "SafeOrStolen works in 150+ countries with offline mode. CheckMEND requires constant internet connection."
+                },
+                {
+                  icon: Download,
+                  title: "Anyone Who Values Convenience",
+                  description: "CheckMEND forces you to visit their website every time. SafeOrStolen's app lives on your phone—always ready."
+                }
+              ].map((item, idx) => (
+                <Card key={idx} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-xl">
+                      <item.icon className="w-6 h-6 text-sos-orange" />
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-br from-sos via-sos-dark to-sos text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-4xl font-bold mb-6">
+              Download The Mobile App CheckMEND Doesn't Have
+            </h2>
+            <p className="text-xl text-sos-light mb-8 max-w-3xl mx-auto">
+              Install SafeOrStolen for free on iOS and Android. Scan barcodes, verify items offline, 
+              and get instant results in 3 seconds. Try 2 free checks—no credit card required.
             </p>
-            <Button size="lg" asChild>
-              <Link to="/auth?tab=signup">Try Safe or Stolen Free</Link>
-            </Button>
-            <p className="text-sm text-muted-foreground mt-4">
-              4 free checks • No credit card • 30-day money-back guarantee
-            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="bg-white text-sos hover:bg-white/90" asChild>
+                <Link to="/app">
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Free App
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+                <Link to="/verify">
+                  Try 2 Free Checks
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
       </div>
