@@ -28,11 +28,11 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "SafeOrStolen",
-          "url": "https://safeor.stolen",
+          "url": "https://safeorstolen.com",
           "description": "Global platform for verifying stolen goods and preventing marketplace fraud",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://safeor.stolen/stolen-item-checker?q={search_term_string}",
+            "target": "https://safeorstolen.com/stolen-item-checker?q={search_term_string}",
             "query-input": "required name=search_term_string"
           },
           "sameAs": [
@@ -72,7 +72,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
           "@type": "HowTo",
           "name": "How to Check if a Phone is Stolen",
           "description": "Complete guide for verifying phone legitimacy before purchase",
-          "image": "https://safeor.stolen/images/phone-verification-guide.jpg",
+          "image": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
           "step": [
             {
               "@type": "HowToStep",
@@ -153,8 +153,8 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SafeOrStolen",
-    "url": "https://safeor.stolen",
-    "logo": "https://safeor.stolen/logo.png",
+    "url": "https://safeorstolen.com",
+    "logo": "https://safeorstolen.com/sos-logo.png",
     "description": "Global platform for verifying stolen goods and preventing marketplace fraud",
     "address": {
       "@type": "PostalAddress",
@@ -191,7 +191,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       <meta property="og:description" content={finalDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={typeof window !== 'undefined' ? `https://safeorstolen.com${window.location.pathname.split('?')[0].split('#')[0]}` : 'https://safeorstolen.com'} />
-      <meta property="og:image" content="https://safeor.stolen/images/og-image.jpg" />
+      <meta property="og:image" content="https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
       <meta property="og:image:alt" content="SafeOrStolen - Verify stolen goods and protect your purchases" />
       <meta property="og:site_name" content="SafeOrStolen" />
       <meta property="og:locale" content="en_US" />
@@ -200,7 +200,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
-      <meta name="twitter:image" content="https://safeor.stolen/images/twitter-image.jpg" />
+      <meta name="twitter:image" content="https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
       <meta name="twitter:image:alt" content="SafeOrStolen verification platform" />
       <meta name="twitter:site" content="@safeorstolen" />
       <meta name="twitter:creator" content="@safeorstolen" />
@@ -252,7 +252,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://safeor.stolen"
+                "item": "https://safeorstolen.com"
               }
             ]
           }

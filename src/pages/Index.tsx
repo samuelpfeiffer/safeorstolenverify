@@ -15,6 +15,7 @@ import { TrustSignals } from '@/components/seo/TrustSignals';
 import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
 import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
+import { HeroBanner } from '@/components/hero/HeroBanner';
 
 const Index = () => {
   const [searchParams] = useSafeSearchParams();
@@ -104,6 +105,7 @@ const Index = () => {
       
       <div className="min-h-screen">
         <Hero />
+        <HeroBanner />
         <PressMediaSection />
         <WhatYouCanVerify />
         <WhyChooseSafeOrStolen />

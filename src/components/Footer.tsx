@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone } from 'lucide-react';
+import sosLogo from '@/assets/sos-logo.png';
 const Footer = () => {
   const quickLinks = [{
     label: 'How It Works',
@@ -52,7 +53,7 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <img 
-                  src="/images/sos-logo.png" 
+                  src={sosLogo} 
                   alt="SafeOrStolen logo - stolen goods verification platform for checking IMEI, VIN, and serial numbers" 
                   className="h-12 w-12 filter drop-shadow-lg"
                   width="48"
