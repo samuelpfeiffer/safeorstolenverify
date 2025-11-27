@@ -14,16 +14,6 @@ export const TrustHeaderBar: React.FC = () => {
       color: "text-blue-400"
     },
     {
-      icon: Award,
-      text: "SOC 2 Type II",
-      color: "text-purple-400"
-    },
-    {
-      icon: CheckCircle,
-      text: "GDPR Compliant",
-      color: "text-emerald-400"
-    },
-    {
       icon: Globe,
       text: "Trusted Globally",
       color: "text-cyan-400"
