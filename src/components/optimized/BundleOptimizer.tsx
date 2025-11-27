@@ -16,20 +16,6 @@ export const LazyDashboardPage = withLazyLoading(
   </div>
 );
 
-export const LazyBlogPage = withLazyLoading(
-  () => import('@/pages/BlogPage'),
-  <div className="min-h-screen bg-sos flex items-center justify-center">
-    <div className="text-white">Loading blog...</div>
-  </div>
-);
-
-export const LazyAdminPage = withLazyLoading(
-  () => import('@/pages/AdminPage'),
-  <div className="min-h-screen bg-sos flex items-center justify-center">
-    <div className="text-white">Loading admin...</div>
-  </div>
-);
-
 // Bundle analyzer component for development
 export const BundleAnalyzer = memo(() => {
   if (import.meta.env.PROD) return null;

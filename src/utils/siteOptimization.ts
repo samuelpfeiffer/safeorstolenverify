@@ -27,8 +27,7 @@ export class SiteOptimizer {
     const criticalRoutes = [
       '/pricing',
       '/auth',
-      '/dashboard',
-      '/subscription'
+      '/dashboard'
     ];
 
     return Promise.allSettled(
@@ -48,9 +47,6 @@ export class SiteOptimizer {
           break;
         case '/dashboard':
           await import('@/pages/DashboardPage');
-          break;
-        case '/subscription':
-          await import('@/pages/SubscriptionPage');
           break;
         default:
           console.log(`No preload defined for route: ${route}`);
