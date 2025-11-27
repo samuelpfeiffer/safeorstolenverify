@@ -56,11 +56,30 @@ const AboutPage = () => {
 
   return (
     <>
+      <PageSEO
+        title="About SafeOrStolen - Preventing Stolen Goods Transactions Since 2024"
+        description="SafeOrStolen verifies if items are stolen using 50M+ records from law enforcement and insurance databases. Our mobile app checks IMEI, VIN, serial numbers in 3 seconds."
+        keywords="about SafeOrStolen, stolen goods verification service, IMEI checker company, VIN verification platform"
+        canonical="https://safeorstolen.com/about"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "SafeOrStolen",
+              "url": "https://safeorstolen.com",
+              "logo": "https://safeorstolen.com/logo.png",
+              "description": "Leading stolen item verification service with mobile app for checking IMEI, VIN, serial numbers against 50M+ records"
+            }
+          }
+        ]}
+      />
     <PageSEO
       title="About SafeOrStolen - Crime Reduction Ecosystem"
       description="SafeOrStolen was founded by Sam Pfeiffer to create a Crime Reduction Ecosystem. Verify if second-hand items are stolen before buying or selling."
       keywords="about SafeOrStolen, Sam Pfeiffer, stolen item verification, crime reduction"
-      canonical="/about"
+      canonical="https://safeorstolen.com/about"
       structuredData={[
         {
           "@context": "https://schema.org",
