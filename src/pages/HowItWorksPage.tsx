@@ -16,7 +16,7 @@ const HowItWorksPage = () => {
         title="How to Check if Something is Stolen - SafeOrStolen Explained"
         description="Learn how SafeOrStolen verifies if items are stolen. We check 50+ million records from law enforcement, insurance companies, and manufacturer blacklists in 3 seconds."
         keywords="how to check if stolen, verify stolen goods, stolen item database, IMEI verification process"
-        canonical="/how-it-works"
+        canonical="https://safeorstolen.com/how-it-works"
         structuredData={[
           {
             "@context": "https://schema.org",

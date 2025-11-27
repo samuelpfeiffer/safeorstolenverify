@@ -81,12 +81,27 @@ export const AppRoutes = () => {
         <Route path="/check-stolen-database" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-items-list" element={<Navigate to="/verify" replace />} />
         
-        {/* App downloads → /app */}
+        {/* App downloads & all app subroutes → /app */}
         <Route path="/install-app" element={<Navigate to="/app" replace />} />
         <Route path="/download" element={<Navigate to="/app" replace />} />
         <Route path="/download-app" element={<Navigate to="/app" replace />} />
         <Route path="/get-app" element={<Navigate to="/app" replace />} />
         <Route path="/app/download" element={<Navigate to="/app" replace />} />
+        <Route path="/app/electronics-checker" element={<Navigate to="/app" replace />} />
+        <Route path="/app/features/barcode-scanner" element={<Navigate to="/app" replace />} />
+        <Route path="/app/features/history" element={<Navigate to="/app" replace />} />
+        <Route path="/app/features/*" element={<Navigate to="/app" replace />} />
+        <Route path="/app/firearms-checker" element={<Navigate to="/app" replace />} />
+        <Route path="/app/houston" element={<Navigate to="/app" replace />} />
+        <Route path="/app/law-enforcement" element={<Navigate to="/app" replace />} />
+        <Route path="/app/philadelphia" element={<Navigate to="/app" replace />} />
+        <Route path="/app/pwa" element={<Navigate to="/app" replace />} />
+        <Route path="/app/sellers" element={<Navigate to="/app" replace />} />
+        <Route path="/app/vs-carfax" element={<Navigate to="/pricing" replace />} />
+        <Route path="/app/vs-imeiinfo" element={<VsIMEIInfoPage />} />
+        <Route path="/app/vs-imeipro" element={<Navigate to="/pricing" replace />} />
+        <Route path="/app/vs-stolen-register" element={<Navigate to="/pricing" replace />} />
+        <Route path="/app/*" element={<Navigate to="/app" replace />} />
         <Route path="/ios-app" element={<Navigate to="/app" replace />} />
         <Route path="/android-app" element={<Navigate to="/app" replace />} />
         <Route path="/pwa-app" element={<Navigate to="/app" replace />} />
@@ -102,6 +117,8 @@ export const AppRoutes = () => {
         <Route path="/vs-stolenregister" element={<Navigate to="/pricing" replace />} />
         <Route path="/vs-nicb" element={<Navigate to="/pricing" replace />} />
         <Route path="/carfax-alternative" element={<Navigate to="/pricing" replace />} />
+        <Route path="/comparison-checkmend" element={<VsCheckMendPage />} />
+        <Route path="/competitor-alternatives" element={<Navigate to="/pricing" replace />} />
         
         {/* Marketplace pages → /about */}
         <Route path="/marketplace-safety" element={<Navigate to="/about" replace />} />
@@ -126,18 +143,72 @@ export const AppRoutes = () => {
         <Route path="/trust-verification" element={<Navigate to="/about" replace />} />
         <Route path="/data-sources" element={<Navigate to="/about" replace />} />
         <Route path="/accuracy" element={<Navigate to="/about" replace />} />
+        <Route path="/case-studies" element={<Navigate to="/about" replace />} />
+        <Route path="/case-studies/*" element={<Navigate to="/about" replace />} />
+        <Route path="/auction-houses" element={<Navigate to="/about" replace />} />
+        <Route path="/for-pawn-shops" element={<Navigate to="/about" replace />} />
+        <Route path="/for-resellers" element={<Navigate to="/about" replace />} />
+        <Route path="/law-enforcement" element={<Navigate to="/about" replace />} />
         
         {/* Blog pages → /about */}
         <Route path="/blog" element={<Navigate to="/about" replace />} />
         <Route path="/blog/*" element={<Navigate to="/about" replace />} />
         
         {/* State VIN lookups → /verify */}
+        <Route path="/alabama-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/alaska-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
         <Route path="/arizona-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/arkansas-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
         <Route path="/california-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/texas-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/colorado-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/connecticut-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/delaware-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
         <Route path="/florida-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/georgia-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/hawaii-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/idaho-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/illinois-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/indiana-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/iowa-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/kansas-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/kentucky-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/louisiana-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/maine-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/maryland-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/massachusetts-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/michigan-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/minnesota-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/mississippi-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/missouri-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/montana-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/nebraska-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/nevada-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/new-hampshire-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/new-jersey-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/new-mexico-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
         <Route path="/new-york-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/north-carolina-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/north-dakota-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/ohio-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/oklahoma-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/oregon-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/pennsylvania-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/rhode-island-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/south-carolina-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/south-dakota-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/tennessee-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/texas-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/utah-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/vermont-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/virginia-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/washington-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/west-virginia-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/wisconsin-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/wyoming-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/australia-vin-check" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/canada-vin-check" element={<Navigate to="/verify?type=vehicle" replace />} />
         <Route path="/*-vin-lookup" element={<Navigate to="/verify?type=vehicle" replace />} />
+        <Route path="/*-vin-check" element={<Navigate to="/verify?type=vehicle" replace />} />
         
         {/* License plate lookups → /verify */}
         <Route path="/arizona-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
