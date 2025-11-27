@@ -2,6 +2,7 @@ export const STATE_VIN_DATA_PART10 = {
   southcarolina: {
     state: "South Carolina",
     stateCode: "SC",
+    slug: "south-carolina-vin-lookup",
     title: "South Carolina VIN Lookup - Free SC Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free South Carolina VIN lookup and stolen vehicle verification. Check SC car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -24,6 +25,7 @@ export const STATE_VIN_DATA_PART10 = {
   southdakota: {
     state: "South Dakota",
     stateCode: "SD",
+    slug: "south-dakota-vin-lookup",
     title: "South Dakota VIN Lookup - Free SD Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free South Dakota VIN lookup and stolen vehicle verification. Check SD car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -46,6 +48,7 @@ export const STATE_VIN_DATA_PART10 = {
   tennessee: {
     state: "Tennessee",
     stateCode: "TN",
+    slug: "tennessee-vin-lookup",
     title: "Tennessee VIN Lookup - Free TN Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Tennessee VIN lookup and stolen vehicle verification. Check TN car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -68,6 +71,7 @@ export const STATE_VIN_DATA_PART10 = {
   utah: {
     state: "Utah",
     stateCode: "UT",
+    slug: "utah-vin-lookup",
     title: "Utah VIN Lookup - Free UT Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Utah VIN lookup and stolen vehicle verification. Check UT car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -90,6 +94,7 @@ export const STATE_VIN_DATA_PART10 = {
   vermont: {
     state: "Vermont",
     stateCode: "VT",
+    slug: "vermont-vin-lookup",
     title: "Vermont VIN Lookup - Free VT Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Vermont VIN lookup and stolen vehicle verification. Check VT car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -112,6 +117,7 @@ export const STATE_VIN_DATA_PART10 = {
   virginia: {
     state: "Virginia",
     stateCode: "VA",
+    slug: "virginia-vin-lookup",
     title: "Virginia VIN Lookup - Free VA Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Virginia VIN lookup and stolen vehicle verification. Check VA car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -122,7 +128,7 @@ export const STATE_VIN_DATA_PART10 = {
     dmvLink: "https://www.dmv.virginia.gov/",
     content: {
       intro: "Verify any Virginia vehicle's history instantly with our free VIN lookup. Check if a VA car is stolen, has title issues, or accident history before you buy.",
-      wheyCheck: "Virginia reports over 11,900 vehicle thefts annually, with Norfolk and Richmond having high theft rates. Virginia's proximity to major ports makes it a hub for stolen vehicle export. Running a VIN check protects you from buying stolen vehicles, salvage titles, or cars with hidden damage.",
+      whyCheck: "Virginia reports over 11,900 vehicle thefts annually, with Norfolk and Richmond having high theft rates. Virginia's proximity to major ports makes it a hub for stolen vehicle export. Running a VIN check protects you from buying stolen vehicles, salvage titles, or cars with hidden damage.",
       localLaws: "Virginia Code §18.2-108 makes receiving stolen property valued over $1,000 a felony with penalties up to 20 years in prison. Virginia requires title transfers within 30 days. The Virginia DMV maintains all VIN and title records for verification."
     },
     faqs: [
@@ -134,6 +140,7 @@ export const STATE_VIN_DATA_PART10 = {
   washington: {
     state: "Washington",
     stateCode: "WA",
+    slug: "washington-vin-lookup",
     title: "Washington VIN Lookup - Free WA Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Washington VIN lookup and stolen vehicle verification. Check WA car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -156,6 +163,7 @@ export const STATE_VIN_DATA_PART10 = {
   westvirginia: {
     state: "West Virginia",
     stateCode: "WV",
+    slug: "west-virginia-vin-lookup",
     title: "West Virginia VIN Lookup - Free WV Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free West Virginia VIN lookup and stolen vehicle verification. Check WV car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -178,6 +186,7 @@ export const STATE_VIN_DATA_PART10 = {
   wisconsin: {
     state: "Wisconsin",
     stateCode: "WI",
+    slug: "wisconsin-vin-lookup",
     title: "Wisconsin VIN Lookup - Free WI Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Wisconsin VIN lookup and stolen vehicle verification. Check WI car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -200,6 +209,7 @@ export const STATE_VIN_DATA_PART10 = {
   wyoming: {
     state: "Wyoming",
     stateCode: "WY",
+    slug: "wyoming-vin-lookup",
     title: "Wyoming VIN Lookup - Free WY Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Wyoming VIN lookup and stolen vehicle verification. Check WY car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {

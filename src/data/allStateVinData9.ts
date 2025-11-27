@@ -2,6 +2,7 @@ export const STATE_VIN_DATA_PART9 = {
   northdakota: {
     state: "North Dakota",
     stateCode: "ND",
+    slug: "north-dakota-vin-lookup",
     title: "North Dakota VIN Lookup - Free ND Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free North Dakota VIN lookup and stolen vehicle verification. Check ND car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -24,6 +25,7 @@ export const STATE_VIN_DATA_PART9 = {
   ohio: {
     state: "Ohio",
     stateCode: "OH",
+    slug: "ohio-vin-lookup",
     title: "Ohio VIN Lookup - Free OH Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Ohio VIN lookup and stolen vehicle verification. Check OH car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -46,6 +48,7 @@ export const STATE_VIN_DATA_PART9 = {
   oklahoma: {
     state: "Oklahoma",
     stateCode: "OK",
+    slug: "oklahoma-vin-lookup",
     title: "Oklahoma VIN Lookup - Free OK Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Oklahoma VIN lookup and stolen vehicle verification. Check OK car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -68,6 +71,7 @@ export const STATE_VIN_DATA_PART9 = {
   oregon: {
     state: "Oregon",
     stateCode: "OR",
+    slug: "oregon-vin-lookup",
     title: "Oregon VIN Lookup - Free OR Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Oregon VIN lookup and stolen vehicle verification. Check OR car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -90,6 +94,7 @@ export const STATE_VIN_DATA_PART9 = {
   rhodeisland: {
     state: "Rhode Island",
     stateCode: "RI",
+    slug: "rhode-island-vin-lookup",
     title: "Rhode Island VIN Lookup - Free RI Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Rhode Island VIN lookup and stolen vehicle verification. Check RI car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {

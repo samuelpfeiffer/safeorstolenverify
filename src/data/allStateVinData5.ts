@@ -2,6 +2,7 @@ export const STATE_VIN_DATA_PART5 = {
   illinois: {
     state: "Illinois",
     stateCode: "IL",
+    slug: "illinois-vin-lookup",
     title: "Illinois VIN Lookup - Free IL Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Illinois VIN lookup and stolen vehicle verification. Check IL car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -24,6 +25,7 @@ export const STATE_VIN_DATA_PART5 = {
   indiana: {
     state: "Indiana",
     stateCode: "IN",
+    slug: "indiana-vin-lookup",
     title: "Indiana VIN Lookup - Free IN Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Indiana VIN lookup and stolen vehicle verification. Check IN car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -46,6 +48,7 @@ export const STATE_VIN_DATA_PART5 = {
   iowa: {
     state: "Iowa",
     stateCode: "IA",
+    slug: "iowa-vin-lookup",
     title: "Iowa VIN Lookup - Free IA Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Iowa VIN lookup and stolen vehicle verification. Check IA car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -68,6 +71,7 @@ export const STATE_VIN_DATA_PART5 = {
   kansas: {
     state: "Kansas",
     stateCode: "KS",
+    slug: "kansas-vin-lookup",
     title: "Kansas VIN Lookup - Free KS Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Kansas VIN lookup and stolen vehicle verification. Check KS car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -90,6 +94,7 @@ export const STATE_VIN_DATA_PART5 = {
   kentucky: {
     state: "Kentucky",
     stateCode: "KY",
+    slug: "kentucky-vin-lookup",
     title: "Kentucky VIN Lookup - Free KY Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Kentucky VIN lookup and stolen vehicle verification. Check KY car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
