@@ -49,9 +49,39 @@ export const MasterSEO: React.FC = () => {
                      !location.pathname.includes('/receipts') && // Private user receipts
                      !location.pathname.includes('/search-history'); // Private search history
 
-  // REMOVED: Global schemas now in index.html to guarantee Google crawling
-  // Organization and WebSite schemas are static in index.html
-  // This prevents duplicate schema issues and ensures immediate visibility
+  // Base structured data for all pages
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Safe Or Stolen",
+    "url": "https://safeorstolen.com",
+    "description": "Free stolen item lookup service. Check IMEI, VIN, serial numbers against stolen databases. Verify electronics, vehicles, phones before buying.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://safeorstolen.com/stolen-item-checker?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Safe Or Stolen",
+    "url": "https://safeorstolen.com",
+    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+    "description": "Leading stolen item verification service protecting buyers and sellers in secondhand markets.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "support@safeorstolen.com",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.youtube.com/@safeorstolenofficially",
+      "https://twitter.com/safeorstolen",
+      "https://facebook.com/safeorstolen"
+    ]
+  };
 
   return (
     <Helmet>
@@ -72,8 +102,13 @@ export const MasterSEO: React.FC = () => {
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       <meta name="msvalidate.01" content="safeorstolen-bing-verification" />
       
-      {/* NOTE: Global schemas (Organization, WebSite) now in index.html */}
-      {/* This prevents duplicates and ensures Googlebot sees them without JavaScript */}
+      {/* Structured data */}
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(organizationSchema)}
+      </script>
       
       {/* Technical directives */}
       <meta name="referrer" content="strict-origin-when-cross-origin" />

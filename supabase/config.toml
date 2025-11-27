@@ -1,26 +1,5 @@
 project_id = "lxrdzbknktwlubbmlsqe"
 
-[functions.ai-seo-content-generator]
-verify_jwt = false
-
-[functions.ai-seo-backlink-finder]
-verify_jwt = false
-
-[functions.ai-seo-rank-tracker]
-verify_jwt = false
-
-[functions.ai-seo-competitor-monitor]
-verify_jwt = false
-
-[functions.ai-seo-technical-bot]
-verify_jwt = false
-
-[functions.ai-seo-orchestrator]
-verify_jwt = false
-
-[functions.ai-seo-initialize]
-verify_jwt = false
-
 [functions.api-v1-check]
 verify_jwt = false
 
