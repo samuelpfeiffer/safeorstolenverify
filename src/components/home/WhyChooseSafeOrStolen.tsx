@@ -21,8 +21,8 @@ export const WhyChooseSafeOrStolen = () => {
     },
     {
       icon: Shield,
-      title: 'Most Comprehensive Database',
-      description: 'We\'re the ONLY platform checking phones, vehicles, electronics, bikes, AND firearms. Competitors specialize in one category. We check 50M+ records across all categories.',
+      title: 'Multi-Source Database',
+      description: 'We\'re the ONLY platform checking phones, vehicles, electronics, bikes, AND firearms. Competitors specialize in one category. We access 150+ databases across all categories.',
       badge: 'All-in-One',
       color: 'from-green-500 to-emerald-500'
     },
@@ -120,7 +120,7 @@ export const WhyChooseSafeOrStolen = () => {
             The #1 Verification Platform for Marketplace Buyers
           </h3>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Used by thousands daily to protect against fraud on Facebook Marketplace, eBay, Craigslist, OfferUp, pawn shops, and auctions. Don't buy without checking first.
+            Protect yourself against fraud on Facebook Marketplace, eBay, Craigslist, OfferUp, pawn shops, and auctions. Don't buy without checking first.
           </p>
         </div>
       </div>
