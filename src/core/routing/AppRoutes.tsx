@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 
-// ONLY 10 CORE PAGES - Site Consolidation Complete + 3 Competitor Pages (SEO Strategy)
+// CORE 10 PAGES + STRATEGIC SEO PAGES (45+ Total for Traffic Generation)
 const Index = lazy(() => import('@/pages/Index'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
@@ -16,9 +16,30 @@ const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
+
+// Competitor Comparison Pages (SEO Strategy)
 const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
 const VsIMEIInfoPage = lazy(() => import('@/pages/VsIMEIInfoPage'));
 const VsSwappaPage = lazy(() => import('@/pages/VsSwappaPage'));
+
+// Item Landing Pages (High-Value SEO)
+const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
+const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
+const SerialNumberCheckerPage = lazy(() => import('@/pages/SerialNumberCheckerPage'));
+const CheckPhonePage = lazy(() => import('@/pages/CheckPhonePage'));
+const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
+const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
+const CheckLaptopPage = lazy(() => import('@/pages/CheckLaptopPage'));
+const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
+const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
+const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
+
+// State VIN Pages (Top 5 High-Population States - Additional 45 available via template)
+const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
+const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
+const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
+const NewYorkVinLookup = lazy(() => import('@/pages/NewYorkVinLookup'));
+const PennsylvaniaVinLookup = lazy(() => import('@/pages/PennsylvaniaVinLookup'));
 
 export const AppRoutes = () => {
   return (
@@ -40,25 +61,32 @@ export const AppRoutes = () => {
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/auth" element={<AuthPage />} />
 
-        {/* ALL OTHER ROUTES → 301 REDIRECTS TO APPROPRIATE CORE PAGES */}
+        {/* STRATEGIC SEO PAGES - Item Landing Pages with 1500+ word content */}
+        <Route path="/imei-checker" element={<IMEICheckerPage />} />
+        <Route path="/vin-checker" element={<VINCheckerPage />} />
+        <Route path="/serial-number-checker" element={<SerialNumberCheckerPage />} />
+        <Route path="/check-phone" element={<CheckPhonePage />} />
+        <Route path="/check-car" element={<CheckCarPage />} />
+        <Route path="/check-bike" element={<CheckBikePage />} />
+        <Route path="/check-laptop" element={<CheckLaptopPage />} />
+        <Route path="/check-electronics" element={<CheckElectronicsPage />} />
+        <Route path="/firearms-check" element={<FirearmsCheckPage />} />
+        <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         
-        {/* Item-specific checks → /verify */}
-        <Route path="/check-phone" element={<Navigate to="/verify?type=smartphone" replace />} />
-        <Route path="/check-car" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/check-bike" element={<Navigate to="/verify?type=bicycle" replace />} />
-        <Route path="/check-electronics" element={<Navigate to="/verify?type=electronics" replace />} />
-        <Route path="/check-firearm" element={<Navigate to="/verify?type=firearm" replace />} />
-        <Route path="/check-laptop" element={<Navigate to="/verify?type=laptop" replace />} />
-        <Route path="/check-gaming-console" element={<Navigate to="/verify?type=electronics" replace />} />
-        <Route path="/check-android-phone" element={<Navigate to="/verify?type=smartphone" replace />} />
-        <Route path="/firearms-check" element={<Navigate to="/verify?type=firearm" replace />} />
-        <Route path="/imei-checker" element={<Navigate to="/verify?type=smartphone" replace />} />
-        <Route path="/imei-check" element={<Navigate to="/verify?type=smartphone" replace />} />
-        <Route path="/vin-checker" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/vin-check" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/serial-number-checker" element={<Navigate to="/verify?type=electronics" replace />} />
-        <Route path="/license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
-        <Route path="/license-plates-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
+        {/* State VIN Pages - Top 5 High-Traffic States for Local SEO */}
+        <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
+        <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
+        <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
+        <Route path="/new-york-vin-lookup" element={<NewYorkVinLookup />} />
+        <Route path="/pennsylvania-vin-lookup" element={<PennsylvaniaVinLookup />} />
+        
+        {/* Item-specific check redirects → main pages */}
+        <Route path="/imei-check" element={<Navigate to="/imei-checker" replace />} />
+        <Route path="/vin-check" element={<Navigate to="/vin-checker" replace />} />
+        <Route path="/check-firearm" element={<Navigate to="/firearms-check" replace />} />
+        <Route path="/check-gaming-console" element={<Navigate to="/check-electronics" replace />} />
+        <Route path="/check-android-phone" element={<Navigate to="/check-phone" replace />} />
+        <Route path="/license-plates-lookup" element={<Navigate to="/license-plate-lookup" replace />} />
         
         {/* Stolen check variations → /verify */}
         <Route path="/check-if-stolen" element={<Navigate to="/verify" replace />} />
