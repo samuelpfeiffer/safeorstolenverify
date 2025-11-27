@@ -26,6 +26,7 @@ interface StateVinPageProps {
     localLaws: string;
   };
   faqs: { question: string; answer: string }[];
+  slug?: string;
 }
 
 export const StateVinPageTemplate = ({
@@ -36,8 +37,13 @@ export const StateVinPageTemplate = ({
   theftStats,
   dmvLink,
   content,
-  faqs
+  faqs,
+  slug
 }: StateVinPageProps) => {
+  // Use slug if provided, otherwise extract from current URL
+  const urlPath = slug || window.location.pathname.replace(/^\//, '');
+  const canonicalUrl = `https://safeorstolen.com/${urlPath}`;
+  
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -75,7 +81,8 @@ export const StateVinPageTemplate = ({
         <title>{title}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification`} />
-        <link rel="canonical" href={`https://safeorstolen.com${window.location.pathname}`} />
+        <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
+        <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
