@@ -21,122 +21,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com",
-          "logo": "https://safeorstolen.com/sos-logo.png",
-          "description": "Stolen item verification SaaS. Check IMEI, VIN, and serial numbers before you buy.",
-          "foundingDate": "2024",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "support@safeorstolen.com",
-            "contactType": "Customer Support"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com",
-          "description": "Verify if phones, vehicles, electronics or other second-hand items are safe or stolen.",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://safeorstolen.com/verify?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Stolen Item Verification Service",
-          "provider": {
-            "@type": "Organization",
-            "name": "SafeOrStolen",
-            "url": "https://safeorstolen.com"
-          },
-          "url": "https://safeorstolen.com/verify",
-          "description": "Online service to verify IMEI, VIN, serial numbers, license plates and firearms before buying.",
-          "areaServed": "Worldwide",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "Free trial with 2 verification checks in 14 days"
-          }
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "SafeOrStolen Mobile App",
-          "applicationCategory": "SecurityApplication",
-          "operatingSystem": ["iOS", "Android", "Web"],
-          "downloadUrl": "https://safeorstolen.com/app/download",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "featureList": [
-            "Barcode scanning for instant verification",
-            "Offline mode with cached results",
-            "IMEI, VIN, serial and firearm checks",
-            "License plate lookup for all US states"
-          ]
-        },
-        {
-          "@type": "WebApplication",
-          "name": "SafeOrStolen Web App",
-          "applicationCategory": "SecurityApplication",
-          "url": "https://safeorstolen.com/verify",
-          "operatingSystem": "Any",
-          "browserRequirements": "Requires JavaScript. Works best in modern browsers.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "url": "https://safeorstolen.com/faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is SafeOrStolen?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "SafeOrStolen is a stolen-item verification service that checks IMEI, VIN, serial numbers and more against multiple databases so you can safely buy and sell second-hand items."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is SafeOrStolen free?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You get two free verification checks during a 14-day trial. After that you can upgrade to a paid plan or buy additional checks."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What can I check with SafeOrStolen?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can verify phones, vehicles, bikes, firearms, electronics and other items using IMEI, VIN, serial numbers and license plates."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "AboutPage",
-          "url": "https://safeorstolen.com/about",
-          "name": "About SafeOrStolen",
-          "description": "Learn how SafeOrStolen helps buyers, sellers and businesses avoid stolen goods and legal trouble."
-        },
-        {
-          "@type": "WebPage",
-          "url": "https://safeorstolen.com/pricing",
-          "name": "SafeOrStolen Pricing",
-          "description": "Plans and verification credit bundles for individuals and businesses using SafeOrStolen."
-        }
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "logo": "https://safeorstolen.com/sos-logo.png",
+      "description": "Free stolen item verification platform. Check IMEI, VIN, and serial numbers instantly against 50+ million records.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Sam Pfeiffer"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@safeorstolen.com",
+        "contactType": "Customer Support"
+      },
+      "sameAs": [
+        "https://safeorstolen.com"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "description": "Free verification tool to check if phones, vehicles, electronics are stolen. 3-second results from 50+ million records.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://safeorstolen.com/verify?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SafeOrStolen Mobile App",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": ["iOS", "Android", "Web Browser"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "2 free verification checks, 14-day trial"
+      },
+      "featureList": [
+        "Barcode scanning for 3-second verification",
+        "Offline mode with cached database",
+        "IMEI, VIN, serial number verification",
+        "License plate lookup (all 50 US states)",
+        "Firearm serial verification"
       ]
     }
     </script>
