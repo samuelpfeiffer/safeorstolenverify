@@ -31,7 +31,7 @@
         "@type": "ImageObject",
         "url": "https://safeorstolen.com/sos-logo.png"
       },
-      "description": "Stolen item verification service with mobile app",
+      "description": "SafeOrStolen is a stolen item verification service that checks IMEI, VIN, and serial numbers so buyers and sellers can avoid stolen goods.",
       "foundingDate": "2024",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -48,8 +48,8 @@
       "@type": "WebSite",
       "@id": "https://safeorstolen.com/#website",
       "url": "https://safeorstolen.com",
-      "name": "SafeOrStolen",
-      "description": "Verify if secondhand items are stolen before you buy",
+      "name": "SafeOrStolen.com",
+      "description": "Free stolen item checker to verify IMEI, VIN, and serial numbers before buying secondhand items.",
       "publisher": {
         "@id": "https://safeorstolen.com/#organization"
       },
@@ -60,42 +60,17 @@
       }
     },
     {
-      "@type": "WebApplication",
-      "@id": "https://safeorstolen.com/#webapp",
-      "name": "SafeOrStolen Web App",
-      "url": "https://safeorstolen.com/verify",
+      "@type": "SoftwareApplication",
+      "@id": "https://safeorstolen.com/#app",
+      "name": "SafeOrStolen Stolen Item Verification",
       "applicationCategory": "SecurityApplication",
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires JavaScript",
+      "operatingSystem": ["iOS", "Android", "Web"],
+      "url": "https://safeorstolen.com",
+      "installUrl": "https://safeorstolen.com/app/download",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "MobileApplication",
-      "@id": "https://safeorstolen.com/#mobileapp",
-      "name": "SafeOrStolen Mobile App",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": ["iOS", "Android"],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://safeorstolen.com/#service",
-      "serviceType": "Stolen Item Verification",
-      "provider": {
-        "@id": "https://safeorstolen.com/#organization"
-      },
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://safeorstolen.com/verify"
       }
     }
   ]
