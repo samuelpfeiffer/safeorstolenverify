@@ -21,7 +21,7 @@ const Hero = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue.trim()) {
-      navigate(`/dashboard?q=${encodeURIComponent(searchValue)}${itemType ? `&type=${itemType}` : ''}`);
+      navigate(`/verify?q=${encodeURIComponent(searchValue)}${itemType ? `&type=${itemType}` : ''}`);
     }
   };
 
@@ -40,7 +40,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-sos-orange/10 to-sos-lime/10 backdrop-blur-sm border border-sos-orange/30 rounded-full px-6 py-2 shadow-lg">
             <div className="w-2 h-2 bg-sos-orange rounded-full animate-pulse" />
             <p className="text-sm md:text-base font-semibold bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text text-transparent">
-              AI-Powered Verification • 50M+ Records • Instant Results
+              AI-Powered Verification • Multi-Source Database • Instant Results
             </p>
           </div>
 
@@ -48,15 +48,15 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-3">
             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-sos-orange/20 shadow-lg hover:bg-white/10 transition-all">
               <Shield className="w-4 h-4 text-sos-orange" />
-              <span className="text-sm font-medium text-sos-light">Verified Secure</span>
+              <span className="text-sm font-medium text-sos-light">256-bit SSL</span>
             </div>
             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-sos-orange/20 shadow-lg hover:bg-white/10 transition-all">
               <Database className="w-4 h-4 text-sos-lime" />
-              <span className="text-sm font-medium text-sos-light">50M+ Records</span>
+              <span className="text-sm font-medium text-sos-light">Multi-Database</span>
             </div>
             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-sos-orange/20 shadow-lg hover:bg-white/10 transition-all">
               <Zap className="w-4 h-4 text-sos-orange" />
-              <span className="text-sm font-medium text-sos-light">Instant Results</span>
+              <span className="text-sm font-medium text-sos-light">3-Sec Results</span>
             </div>
           </div>
 
@@ -144,32 +144,19 @@ const Hero = () => {
               </div>
               
               <p className="text-sm text-sos-gray-300 text-center">
-                <span className="text-sos-orange font-bold">2 FREE</span> searches • 
-                <span className="text-sos-lime font-bold"> 50M+</span> records • 
-                Instant verification • No credit card required
+                <span className="text-sos-orange font-bold">2 FREE</span> verifications • 
+                <span className="text-sos-lime font-bold">Instant</span> results • 
+                Multi-database search • No credit card required
               </p>
             </form>
           </div>
 
-          {/* CTA buttons */}
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <Button 
-              size="lg" 
-              onClick={() => navigate('/mobile-app')}
-              className="gap-2"
-            >
-              <Smartphone className="w-5 h-5" />
-              Download App
-            </Button>
-          </div>
-
           {/* Modern stats with glassmorphism */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto pt-8">
             {[
-              { value: "2M+", label: "Items Verified" },
-              { value: "50K+", label: "Active Users" },
-              { value: "99.9%", label: "Accuracy" },
-              { value: "24/7", label: "Support" }
+              { value: "New", label: "Early Access" },
+              { value: "150+", label: "Databases" },
+              { value: "24/7", label: "Available" }
             ].map((stat, i) => (
               <div key={i} className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-sos-orange/20 hover:bg-white/10 hover:border-sos-orange/40 transition-all shadow-lg group">
                 <div className="text-3xl font-bold bg-gradient-to-br from-sos-orange to-sos-lime bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">{stat.value}</div>
