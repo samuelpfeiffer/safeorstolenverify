@@ -27,7 +27,6 @@ async function generateStaticSchemaHTML() {
 
   // Generate HTML for each core page from schema definitions
   for (const page of PAGE_SCHEMA_DEFINITIONS) {
-  for (const page of PAGE_SCHEMA_DEFINITIONS) {
     let pageHtml = baseHtml;
 
     // Generate schema script tags

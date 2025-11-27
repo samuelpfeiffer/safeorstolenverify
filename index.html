@@ -17,65 +17,224 @@
     
     <link rel="icon" href="/sos-logo.png" type="image/png">
     
-    <!-- Global Structured Data - Visible to Googlebot without JavaScript -->
+    <!-- CRITICAL: All 12 core schemas in static HTML for guaranteed Google crawling -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://safeorstolen.com/#organization",
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/sos-logo.png",
-      "description": "Free stolen item verification platform. Check IMEI, VIN, and serial numbers instantly against 50+ million records.",
-      "foundingDate": "2024",
-      "founder": {
-        "@type": "Person",
-        "name": "Sam Pfeiffer"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://safeorstolen.com/sos-logo.png",
+        "width": "512",
+        "height": "512"
       },
+      "description": "SafeOrStolen is a stolen item verification service that checks IMEI, VIN, and serial numbers so buyers and sellers can avoid stolen goods.",
+      "foundingDate": "2024",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "support@safeorstolen.com",
         "contactType": "Customer Support"
       },
       "sameAs": [
-        "https://safeorstolen.com"
+        "https://www.youtube.com/@safeorstolenofficially",
+        "https://twitter.com/safeorstolen",
+        "https://facebook.com/safeorstolen"
       ]
-    }
-    </script>
-    <script type="application/ld+json">
+    },
     {
-      "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "SafeOrStolen",
+      "@id": "https://safeorstolen.com/#website",
       "url": "https://safeorstolen.com",
-      "description": "Free verification tool to check if phones, vehicles, electronics are stolen. 3-second results from 50+ million records.",
+      "name": "SafeOrStolen.com",
+      "description": "Free stolen item checker to verify IMEI, VIN, and serial numbers before buying secondhand items.",
+      "publisher": {
+        "@id": "https://safeorstolen.com/#organization"
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://safeorstolen.com/verify?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
-    }
-    </script>
-    <script type="application/ld+json">
+    },
     {
-      "@context": "https://schema.org",
       "@type": "SoftwareApplication",
+      "@id": "https://safeorstolen.com/#softwareapp",
+      "name": "SafeOrStolen Verification Platform",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": ["iOS", "Android", "Web"],
+      "url": "https://safeorstolen.com",
+      "installUrl": "https://safeorstolen.com/app/download",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://safeorstolen.com/#mobileapp",
       "name": "SafeOrStolen Mobile App",
       "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["iOS", "Android", "Web Browser"],
+      "operatingSystem": ["iOS", "Android"],
+      "url": "https://safeorstolen.com/app/download",
+      "installUrl": "https://safeorstolen.com/app/download",
+      "description": "Verify stolen items instantly with barcode scanning, offline mode, and 3-second results.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1247"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://safeorstolen.com/#service",
+      "name": "Stolen Item Verification Service",
+      "description": "Verify if secondhand items are stolen by checking IMEI, VIN, and serial numbers against global databases.",
+      "provider": {
+        "@id": "https://safeorstolen.com/#organization"
+      },
+      "serviceType": "Stolen Item Verification",
+      "areaServed": "Worldwide",
+      "url": "https://safeorstolen.com",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "2 free verification checks, 14-day trial"
-      },
-      "featureList": [
-        "Barcode scanning for 3-second verification",
-        "Offline mode with cached database",
-        "IMEI, VIN, serial number verification",
-        "License plate lookup (all 50 US states)",
-        "Firearm serial verification"
+        "description": "2 free searches, then affordable verification plans"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://safeorstolen.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check if an item is stolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter the IMEI, VIN, or serial number into SafeOrStolen's verification tool. We search 50+ million records from law enforcement and insurance databases to instantly tell you if the item is reported stolen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SafeOrStolen free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! SafeOrStolen offers 2 free searches within a 14-day trial period. No credit card required. After that, affordable verification plans are available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What items can I verify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can verify smartphones, tablets, vehicles, bicycles, firearms, laptops, cameras, power tools, and any item with an IMEI, VIN, or serial number."
+          }
+        }
       ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://safeorstolen.com/#howto",
+      "name": "How to Verify If an Item Is Stolen",
+      "description": "Step-by-step guide to checking if secondhand items are stolen using SafeOrStolen",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Find the identifier",
+          "text": "Locate the IMEI number (for phones), VIN (for vehicles), or serial number on the item you want to verify."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Enter into SafeOrStolen",
+          "text": "Go to SafeOrStolen.com and enter the identifier into the verification tool."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Get instant results",
+          "text": "Our system searches 50+ million records and provides instant results showing whether the item is safe or stolen."
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://safeorstolen.com/#webapp",
+      "name": "SafeOrStolen Web App",
+      "description": "Progressive web app for verifying stolen items with offline capability",
+      "applicationCategory": "SecurityApplication",
+      "url": "https://safeorstolen.com",
+      "browserRequirements": "Requires JavaScript. Modern browser recommended.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://safeorstolen.com/#professionalservice",
+      "name": "SafeOrStolen Professional Verification",
+      "description": "Professional stolen item verification for businesses, pawnshops, and dealers",
+      "provider": {
+        "@id": "https://safeorstolen.com/#organization"
+      },
+      "areaServed": "Worldwide",
+      "url": "https://safeorstolen.com/pricing"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://safeorstolen.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://safeorstolen.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Verify Item",
+          "item": "https://safeorstolen.com/verify"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mobile App",
+          "item": "https://safeorstolen.com/app/download"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://safeorstolen.com/#freeoffer",
+      "name": "2 Free Verification Searches",
+      "description": "Try SafeOrStolen free with 2 complimentary verification searches",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://safeorstolen.com/verify"
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://safeorstolen.com/#brand",
+      "name": "SafeOrStolen",
+      "logo": "https://safeorstolen.com/sos-logo.png",
+      "url": "https://safeorstolen.com",
+      "description": "The trusted brand for stolen item verification worldwide"
     }
+  ]
+}
     </script>
     <!-- Default SEO Meta Tags (Enhanced for Crawlers) -->
     <title>SafeOrStolen - Verify Stolen Items Instantly | IMEI, VIN &amp; Serial Number Checker</title>
