@@ -146,23 +146,6 @@ const FAQPage = () => {
     }
   ];
 
-  const pageFAQStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqCategories.flatMap(category => 
-      category.faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    )
-  };
-  
-  const structuredData = [createFAQSchema(), pageFAQStructuredData];
-
   return (
     <>
       <PageSEO

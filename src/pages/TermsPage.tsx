@@ -9,7 +9,7 @@ const TermsPage: React.FC = () => {
     "name": "Terms of Service - SafeOrStolen",
     "description": "Terms of service and user agreement for SafeOrStolen verification platform.",
     "url": "https://safeorstolen.com/terms",
-    "lastReviewed": "2024-01-01",
+    "lastReviewed": "2025-11-27",
     "about": {
       "@type": "Service",
       "name": "SafeOrStolen Verification Service",
