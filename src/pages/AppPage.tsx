@@ -12,53 +12,27 @@ const AppPage = () => {
       "@type": "MobileApplication",
       "name": "SafeOrStolen",
       "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["iOS", "Android", "Web"],
-      "description": "The only mobile app for stolen item verification. Check IMEI, VIN, and serial numbers in 3 seconds with barcode scanning and offline mode.",
-      "downloadUrl": "https://safeorstolen.com/app",
+      "operatingSystem": ["Android", "iOS"],
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "2847"
-      }
+      "description": "The only mobile app to verify if items are stolen. Instant barcode scanning, offline mode, 3-second verification.",
+      "downloadUrl": "https://safeorstolen.com/app"
     },
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "SafeOrStolen Mobile App",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["iOS 14.0+", "Android 8.0+"],
+      "name": "SafeOrStolen Web App",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Web",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Does SafeOrStolen have a mobile app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! SafeOrStolen is the ONLY stolen item verification service with a mobile app for iOS and Android. CheckMEND, IMEI.info, Swappa, and Autocheck do not have mobile apps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I download the SafeOrStolen app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Visit safeorstolen.com/app on your mobile device and install the PWA directly. No app store required. Works on iOS and Android."
-          }
-        }
-      ]
+      },
+      "url": "https://safeorstolen.com/verify"
     }
   ];
 

@@ -166,11 +166,24 @@ const FAQPage = () => {
   return (
     <>
       <PageSEO
-        title="FAQ - How Do I Check if Something is Stolen? | Free IMEI & VIN Verification Help"
-        description="Common questions: How do I check if a phone/car is stolen? What is IMEI/VIN verification? How accurate are stolen item checks? Free answers to all verification questions. 99.7% accuracy."
-        keywords="how do i check if stolen, is my phone stolen checker, free imei check faq, vin verification questions, how to verify serial number, stolen item checker help, safeorstolen faq"
+        title="FAQ - Frequently Asked Questions | SafeOrStolen"
+        description="Common questions about SafeOrStolen stolen item verification. Learn about our free trial, mobile app, pricing, database sources, and how verification works."
+        keywords="SafeOrStolen FAQ, stolen verification questions, IMEI checker help, VIN lookup FAQ"
         canonical="/faq"
-        structuredData={structuredData}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqCategories.flatMap(category => 
+            category.faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          )
+        }}
       />
       
       <div className="min-h-screen bg-background">

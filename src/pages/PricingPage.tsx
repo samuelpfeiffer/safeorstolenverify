@@ -309,10 +309,106 @@ const PricingPage = () => {
     <>
       <PageSEO
         title="Pricing Plans - SafeOrStolen Verification Service"
-        description="Flexible pricing for stolen item verification. Free trial with 2 searches. Personal: $9.99/mo (10 searches). Professional: $49.99/mo (100 searches). Verify IMEI, VIN, serial numbers instantly."
-        keywords="pricing plans, verification pricing, stolen item checker cost, IMEI verification price, VIN check cost"
+        description="Choose your SafeOrStolen plan. 2 free verification checks included. Personal, Business, and Enterprise plans available."
+        keywords="SafeOrStolen pricing, verification pricing, IMEI checker cost, VIN lookup pricing"
         canonical="/pricing"
-        structuredData={structuredData}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Free Trial",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "2 free verification checks, 14-day trial"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Starter Plan",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "2.99",
+              "priceCurrency": "USD",
+              "billingIncrement": "P1M",
+              "description": "10 verification checks per month"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Personal Plan",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "4.99",
+              "priceCurrency": "USD",
+              "billingIncrement": "P1M",
+              "description": "Unlimited verification checks"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Pro Plan",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "9",
+              "priceCurrency": "USD",
+              "billingIncrement": "P1M",
+              "description": "Unlimited checks, bulk verification, priority support"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Business Plan",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "29.99",
+              "priceCurrency": "USD",
+              "billingIncrement": "P1M",
+              "description": "Everything in Pro plus team features, API access, white-label option"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Enterprise Plan",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "99",
+              "priceCurrency": "USD",
+              "billingIncrement": "P1M",
+              "description": "Custom integration, dedicated support, unlimited API calls, SLA guarantee"
+            }
+          }
+        ]}
       />
 
       <ErrorBoundary>

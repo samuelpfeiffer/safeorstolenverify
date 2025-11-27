@@ -134,13 +134,46 @@ const AboutPage = () => {
 
   return (
     <>
-      <PageSEO
-        title="About SafeOrStolen - Trusted Stolen Item Verification"
-        description="Industry-leading verification service checking IMEI, VIN, and serial numbers against law enforcement databases. 99.7% accuracy, instant results, trusted by 500K+ users worldwide."
-        keywords="about safeorstolen, stolen item verification, IMEI checker, VIN verification, secondhand safety"
-        canonical="/about"
-        structuredData={structuredData}
-      />
+    <PageSEO
+      title="About SafeOrStolen - Crime Reduction Ecosystem"
+      description="SafeOrStolen was founded by Sam Pfeiffer to create a Crime Reduction Ecosystem. Verify if second-hand items are stolen before buying or selling."
+      keywords="about SafeOrStolen, Sam Pfeiffer, stolen item verification, crime reduction"
+      canonical="/about"
+      structuredData={[
+        {
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About SafeOrStolen",
+          "description": "Learn about SafeOrStolen's mission to reduce crime through stolen item verification",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "SafeOrStolen",
+            "founder": {
+              "@type": "Person",
+              "name": "Sam Pfeiffer"
+            },
+            "description": "Crime Reduction Ecosystem",
+            "url": "https://safeorstolen.com"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "SafeOrStolen",
+          "url": "https://safeorstolen.com",
+          "logo": "https://safeorstolen.com/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@safeorstolen.com",
+            "contactType": "Customer Support"
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Sam Pfeiffer"
+          }
+        }
+      ]}
+    />
       
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
