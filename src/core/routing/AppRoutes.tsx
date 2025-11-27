@@ -8,6 +8,7 @@ const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
 const AppPage = lazy(() => import('@/pages/AppPage'));
+const AISEODashboard = lazy(() => import('@/pages/AISEODashboard'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
@@ -28,6 +29,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/verify" element={<VerifyPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/dashboard/ai-seo" element={<AISEODashboard />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/account" element={<Navigate to="/profile" replace />} />
         <Route path="/app" element={<AppPage />} />
