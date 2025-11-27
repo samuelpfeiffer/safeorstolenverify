@@ -16,62 +16,47 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 
-  // ONLY 3 homepage-specific schemas (WebSite and Organization are in MasterSEO)
   const homeStructuredData = [
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SafeOrStolen Verification App",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["iOS", "Android", "Web"],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
-        "url": "https://safeorstolen.com/pricing"
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "logo": "https://safeorstolen.com/logo.png",
+      "description": "Crime Reduction Ecosystem - Verify if second-hand items (phones, vehicles, firearms, electronics) are stolen before buying or selling.",
+      "founder": {
+        "@type": "Person",
+        "name": "Sam Pfeiffer"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@safeorstolen.com",
+        "contactType": "Customer Support"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do I check if an item is stolen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Enter the IMEI, VIN, or serial number into SafeOrStolen's verification tool. Results appear in 3 seconds showing if the item is stolen or safe."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is SafeOrStolen free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, SafeOrStolen offers 2 free verification searches. Additional searches available with paid plans starting at $9.99/month."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does SafeOrStolen have a mobile app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, SafeOrStolen is the ONLY stolen item verification service with a mobile app for iOS and Android. Download free at safeorstolen.com/mobile-app"
-          }
-        }
-      ]
+      "@type": "WebSite",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://safeorstolen.com/verify?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://safeorstolen.com/"
-      }]
+      "@type": "SoftwareApplication",
+      "name": "SafeOrStolen",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": ["Android", "iOS", "Web"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "The only mobile app to verify if items are stolen. Instant barcode scanning, offline mode, 3-second verification."
     }
   ];
 

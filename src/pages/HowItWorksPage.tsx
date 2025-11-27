@@ -60,11 +60,38 @@ const HowItWorksPage = () => {
   return (
     <>
       <PageSEO
-        title="How to Check if Phone/Car/Item is Stolen | Free IMEI & VIN Verification Guide 2025"
-        description="Learn how to check if items are stolen: Enter IMEI, VIN, or serial number → We search 50M+ stolen goods databases → Get instant results. Free guide for phones, cars, electronics. Avoid buying stolen items."
-        keywords="how to check if phone is stolen, how to verify vin number, how to check if item is stolen, imei check guide, vin lookup tutorial, stolen item verification process, check before buying secondhand"
+        title="How to Check if Something is Stolen - SafeOrStolen Explained"
+        description="Learn how SafeOrStolen verifies if items are stolen. We check 50+ million records from law enforcement, insurance companies, and manufacturer blacklists in 3 seconds."
+        keywords="how to check if stolen, verify stolen goods, stolen item database, IMEI verification process"
         canonical="/how-it-works"
-        structuredData={[structuredData]}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Verify if an Item is Stolen",
+          "description": "Step-by-step guide to verify if phones, vehicles, electronics, and other items are stolen using SafeOrStolen",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Enter Item Identifier",
+              "text": "Enter the IMEI number (phones), VIN (vehicles), serial number (electronics), or license plate into the verification tool."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Automatic Database Search",
+              "text": "SafeOrStolen searches 50+ million records from law enforcement databases, insurance claims, manufacturer blacklists, and user reports."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Instant Results",
+              "text": "Receive verification results in 3 seconds showing if the item is safe, stolen, or flagged."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "View Detailed Report",
+              "text": "Access detailed report including theft date, location, police case number (if available), and recommended actions."
+            }
+          ]
+        }}
       />
       
       {/* Bot-visible content for search engines */}
