@@ -2,6 +2,7 @@ export const STATE_VIN_DATA_PART8 = {
   nevada: {
     state: "Nevada",
     stateCode: "NV",
+    slug: "nevada-vin-lookup",
     title: "Nevada VIN Lookup - Free NV Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Nevada VIN lookup and stolen vehicle verification. Check NV car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -24,6 +25,7 @@ export const STATE_VIN_DATA_PART8 = {
   newhampshire: {
     state: "New Hampshire",
     stateCode: "NH",
+    slug: "new-hampshire-vin-lookup",
     title: "New Hampshire VIN Lookup - Free NH Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free New Hampshire VIN lookup and stolen vehicle verification. Check NH car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -46,6 +48,7 @@ export const STATE_VIN_DATA_PART8 = {
   newjersey: {
     state: "New Jersey",
     stateCode: "NJ",
+    slug: "new-jersey-vin-lookup",
     title: "New Jersey VIN Lookup - Free NJ Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free New Jersey VIN lookup and stolen vehicle verification. Check NJ car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -68,6 +71,7 @@ export const STATE_VIN_DATA_PART8 = {
   newmexico: {
     state: "New Mexico",
     stateCode: "NM",
+    slug: "new-mexico-vin-lookup",
     title: "New Mexico VIN Lookup - Free NM Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free New Mexico VIN lookup and stolen vehicle verification. Check NM car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -90,6 +94,7 @@ export const STATE_VIN_DATA_PART8 = {
   northcarolina: {
     state: "North Carolina",
     stateCode: "NC",
+    slug: "north-carolina-vin-lookup",
     title: "North Carolina VIN Lookup - Free NC Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free North Carolina VIN lookup and stolen vehicle verification. Check NC car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {

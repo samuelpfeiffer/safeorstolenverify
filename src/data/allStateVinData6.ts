@@ -2,6 +2,7 @@ export const STATE_VIN_DATA_PART6 = {
   louisiana: {
     state: "Louisiana",
     stateCode: "LA",
+    slug: "louisiana-vin-lookup",
     title: "Louisiana VIN Lookup - Free LA Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Louisiana VIN lookup and stolen vehicle verification. Check LA car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -24,6 +25,7 @@ export const STATE_VIN_DATA_PART6 = {
   maine: {
     state: "Maine",
     stateCode: "ME",
+    slug: "maine-vin-lookup",
     title: "Maine VIN Lookup - Free ME Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Maine VIN lookup and stolen vehicle verification. Check ME car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -46,6 +48,7 @@ export const STATE_VIN_DATA_PART6 = {
   maryland: {
     state: "Maryland",
     stateCode: "MD",
+    slug: "maryland-vin-lookup",
     title: "Maryland VIN Lookup - Free MD Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Maryland VIN lookup and stolen vehicle verification. Check MD car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -68,6 +71,7 @@ export const STATE_VIN_DATA_PART6 = {
   massachusetts: {
     state: "Massachusetts",
     stateCode: "MA",
+    slug: "massachusetts-vin-lookup",
     title: "Massachusetts VIN Lookup - Free MA Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Massachusetts VIN lookup and stolen vehicle verification. Check MA car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -90,6 +94,7 @@ export const STATE_VIN_DATA_PART6 = {
   michigan: {
     state: "Michigan",
     stateCode: "MI",
+    slug: "michigan-vin-lookup",
     title: "Michigan VIN Lookup - Free MI Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Michigan VIN lookup and stolen vehicle verification. Check MI car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {

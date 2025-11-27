@@ -2,6 +2,7 @@ export const STATE_VIN_DATA_PART7 = {
   minnesota: {
     state: "Minnesota",
     stateCode: "MN",
+    slug: "minnesota-vin-lookup",
     title: "Minnesota VIN Lookup - Free MN Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Minnesota VIN lookup and stolen vehicle verification. Check MN car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -24,6 +25,7 @@ export const STATE_VIN_DATA_PART7 = {
   mississippi: {
     state: "Mississippi",
     stateCode: "MS",
+    slug: "mississippi-vin-lookup",
     title: "Mississippi VIN Lookup - Free MS Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Mississippi VIN lookup and stolen vehicle verification. Check MS car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -46,6 +48,7 @@ export const STATE_VIN_DATA_PART7 = {
   missouri: {
     state: "Missouri",
     stateCode: "MO",
+    slug: "missouri-vin-lookup",
     title: "Missouri VIN Lookup - Free MO Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Missouri VIN lookup and stolen vehicle verification. Check MO car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -68,6 +71,7 @@ export const STATE_VIN_DATA_PART7 = {
   montana: {
     state: "Montana",
     stateCode: "MT",
+    slug: "montana-vin-lookup",
     title: "Montana VIN Lookup - Free MT Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Montana VIN lookup and stolen vehicle verification. Check MT car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
@@ -90,6 +94,7 @@ export const STATE_VIN_DATA_PART7 = {
   nebraska: {
     state: "Nebraska",
     stateCode: "NE",
+    slug: "nebraska-vin-lookup",
     title: "Nebraska VIN Lookup - Free NE Stolen Vehicle Check | SafeOrStolen",
     metaDescription: "Free Nebraska VIN lookup and stolen vehicle verification. Check NE car history, theft records, and title status before buying. Instant results from SafeOrStolen.",
     theftStats: {
