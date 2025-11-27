@@ -3,6 +3,12 @@ import { StateVinData, ALL_STATE_VIN_DATA } from './allStateVinData';
 import { ALL_STATE_VIN_DATA_PART2 } from './allStateVinData2';
 import { ALL_STATE_VIN_DATA_PART3 } from './allStateVinData3';
 import { ALL_STATE_VIN_DATA_PART4 } from './allStateVinData4';
+import { STATE_VIN_DATA_PART5 } from './allStateVinData5';
+import { STATE_VIN_DATA_PART6 } from './allStateVinData6';
+import { STATE_VIN_DATA_PART7 } from './allStateVinData7';
+import { STATE_VIN_DATA_PART8 } from './allStateVinData8';
+import { STATE_VIN_DATA_PART9 } from './allStateVinData9';
+import { STATE_VIN_DATA_PART10 } from './allStateVinData10';
 
 // Merge all state data (50 states total)
 export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
@@ -17,6 +23,12 @@ export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
   ...ALL_STATE_VIN_DATA_PART2,
   ...ALL_STATE_VIN_DATA_PART3,
   ...ALL_STATE_VIN_DATA_PART4,
+  ...STATE_VIN_DATA_PART5,
+  ...STATE_VIN_DATA_PART6,
+  ...STATE_VIN_DATA_PART7,
+  ...STATE_VIN_DATA_PART8,
+  ...STATE_VIN_DATA_PART9,
+  ...STATE_VIN_DATA_PART10,
 };
 
 export const ALL_50_STATES = Object.keys(COMPLETE_STATE_VIN_DATA);
