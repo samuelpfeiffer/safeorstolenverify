@@ -11,44 +11,7 @@ interface SchemaMarkupProps {
  */
 export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkupProps) => {
   const getSchemas = () => {
-    const baseSchemas: any[] = [
-      // Organization Schema
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "SafeOrStolen",
-        "url": "https://safeorstolen.com",
-        "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-        "description": "Global stolen item verification service. Check IMEI, VIN, serial numbers against police databases. Free mobile app for iOS & Android.",
-        "foundingDate": "2024",
-        "contactPoint": [{
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "email": "support@safeorstolen.com",
-          "availableLanguage": ["English"],
-          "areaServed": "US"
-        }],
-        "sameAs": [
-          "https://twitter.com/safeorstolen",
-          "https://www.facebook.com/safeorstolen"
-        ]
-      },
-      // WebSite Schema
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "SafeOrStolen - Verify Before You Buy",
-        "url": "https://safeorstolen.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://safeorstolen.com/dashboard?q={search_term_string}"
-          },
-          "query-input": "required name=search_term_string"
-        }
-      }
-    ];
+    const baseSchemas: any[] = [];
 
     // Page-specific schemas
     if (pageType === 'home') {
