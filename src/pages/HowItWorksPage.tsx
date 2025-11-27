@@ -10,53 +10,6 @@ import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWo
 import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
 
 const HowItWorksPage = () => {
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Verify if an Item is Stolen",
-      "description": "Step-by-step guide to checking IMEI, VIN, and serial numbers against stolen goods databases",
-      "totalTime": "PT30S",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Find Identifier",
-          "text": "Locate IMEI (phones), VIN (vehicles), or serial number (electronics)"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Enter Number",
-          "text": "Type or scan identifier into SafeOrStolen verification tool"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Get Results",
-          "text": "Receive instant results showing stolen/safe status"
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Make Decision",
-          "text": "If safe, proceed with purchase. If stolen, report to police."
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Stolen Item Verification Methodology",
-      "description": "Comprehensive verification service checking multiple databases",
-      "provider": {
-        "@type": "Organization",
-        "name": "SafeOrStolen"
-      },
-      "serviceType": "Verification Methodology Service"
-    }
-  ];
-
   return (
     <>
       <PageSEO
@@ -64,34 +17,47 @@ const HowItWorksPage = () => {
         description="Learn how SafeOrStolen verifies if items are stolen. We check 50+ million records from law enforcement, insurance companies, and manufacturer blacklists in 3 seconds."
         keywords="how to check if stolen, verify stolen goods, stolen item database, IMEI verification process"
         canonical="/how-it-works"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          "name": "How to Verify if an Item is Stolen",
-          "description": "Step-by-step guide to verify if phones, vehicles, electronics, and other items are stolen using SafeOrStolen",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "name": "Enter Item Identifier",
-              "text": "Enter the IMEI number (phones), VIN (vehicles), serial number (electronics), or license plate into the verification tool."
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Verify if an Item is Stolen",
+            "description": "Step-by-step guide to verify if phones, vehicles, electronics, and other items are stolen using SafeOrStolen",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Enter Item Identifier",
+                "text": "Enter the IMEI number (phones), VIN (vehicles), serial number (electronics), or license plate into the verification tool."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Automatic Database Search",
+                "text": "SafeOrStolen searches 50+ million records from law enforcement databases, insurance claims, manufacturer blacklists, and user reports."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Instant Results",
+                "text": "Receive verification results in 3 seconds showing if the item is safe, stolen, or flagged."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "View Detailed Report",
+                "text": "Access detailed report including theft date, location, police case number (if available), and recommended actions."
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Stolen Item Verification Methodology",
+            "description": "Comprehensive verification service checking multiple databases",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
             },
-            {
-              "@type": "HowToStep",
-              "name": "Automatic Database Search",
-              "text": "SafeOrStolen searches 50+ million records from law enforcement databases, insurance claims, manufacturer blacklists, and user reports."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Instant Results",
-              "text": "Receive verification results in 3 seconds showing if the item is safe, stolen, or flagged."
-            },
-            {
-              "@type": "HowToStep",
-              "name": "View Detailed Report",
-              "text": "Access detailed report including theft date, location, police case number (if available), and recommended actions."
-            }
-          ]
-        }}
+            "serviceType": "Verification Methodology Service"
+          }
+        ]}
       />
       
       {/* Bot-visible content for search engines */}
@@ -314,7 +280,7 @@ const HowItWorksPage = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span>Valid for 1 week</span>
+                      <span>Valid for 14 days</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-green-500" />

@@ -9,7 +9,7 @@ const PrivacyPage: React.FC = () => {
     "name": "Privacy Policy - SafeOrStolen",
     "description": "Privacy policy for SafeOrStolen verification platform. Learn how we protect your data.",
     "url": "https://safeorstolen.com/privacy",
-    "lastReviewed": "2024-01-01",
+    "lastReviewed": "2025-11-27",
     "about": {
       "@type": "Service",
       "name": "SafeOrStolen Verification Service",

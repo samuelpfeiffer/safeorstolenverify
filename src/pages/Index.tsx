@@ -16,49 +16,19 @@ const Index = () => {
   const verificationId = searchParams.get('verificationId');
   const serialNumber = searchParams.get('serialNumber');
 
-  const homeStructuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/logo.png",
-      "description": "Crime Reduction Ecosystem - Verify if second-hand items (phones, vehicles, firearms, electronics) are stolen before buying or selling.",
-      "founder": {
-        "@type": "Person",
-        "name": "Sam Pfeiffer"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "support@safeorstolen.com",
-        "contactType": "Customer Support"
-      }
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeOrStolen",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": ["Android", "iOS", "Web"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://safeorstolen.com/verify?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SafeOrStolen",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["Android", "iOS", "Web"],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "The only mobile app to verify if items are stolen. Instant barcode scanning, offline mode, 3-second verification."
-    }
-  ];
+    "description": "The only mobile app to verify if items are stolen. Instant barcode scanning, offline mode, 3-second verification."
+  };
 
   return (
     <>
