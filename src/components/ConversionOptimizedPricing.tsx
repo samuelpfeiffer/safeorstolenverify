@@ -139,7 +139,7 @@ export const ConversionOptimizedPricing = ({
           Start with 2 free verifications • Valid for 14 days • No credit card required
         </p>
         <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-          Pay only for what you need • Cancel anytime • Join 50,000+ protected buyers & sellers
+          Pay only for what you need • Cancel anytime • Growing community of protected buyers & sellers
         </p>
       </div>
 
@@ -167,23 +167,23 @@ export const ConversionOptimizedPricing = ({
         </div>
       </div>
 
-      {/* Social Proof & Trust Indicators */}
+      {/* Trust Indicators */}
       <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center mb-16">
         <div className="p-6 rounded-lg bg-card border border-border">
-          <div className="text-4xl font-bold text-sos-lime mb-2">127M+</div>
-          <p className="text-muted-foreground">Items Tracked</p>
+          <div className="text-4xl font-bold text-sos-lime mb-2">Growing</div>
+          <p className="text-muted-foreground">Database Daily</p>
         </div>
         <div className="p-6 rounded-lg bg-card border border-border">
           <div className="text-4xl font-bold text-sos-lime mb-2">Free</div>
-          <p className="text-muted-foreground">Starting Price</p>
+          <p className="text-muted-foreground">To Start</p>
         </div>
         <div className="p-6 rounded-lg bg-card border border-border">
-          <div className="text-4xl font-bold text-sos-lime mb-2">50K+</div>
-          <p className="text-muted-foreground">Verified Sellers</p>
+          <div className="text-4xl font-bold text-sos-lime mb-2">150+</div>
+          <p className="text-muted-foreground">Data Sources</p>
         </div>
         <div className="p-6 rounded-lg bg-card border border-border">
-          <div className="text-4xl font-bold text-sos-lime mb-2">99.9%</div>
-          <p className="text-muted-foreground">Accuracy Rate</p>
+          <div className="text-4xl font-bold text-sos-lime mb-2">24/7</div>
+          <p className="text-muted-foreground">Available</p>
         </div>
       </div>
 

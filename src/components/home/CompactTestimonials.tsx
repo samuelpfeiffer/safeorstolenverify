@@ -1,34 +1,52 @@
-import { Star, Quote, ArrowRight } from 'lucide-react';
+import { Star, ExternalLink, Rocket } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 
 export const CompactTestimonials = () => {
-  // Top 3 testimonials
-  const topTestimonials = [
+  // Real press mentions
+  const pressMentions = [
     {
-      name: "Sarah M.",
-      role: "Facebook Marketplace Buyer",
-      location: "Los Angeles, CA",
-      rating: 5,
-      text: "Saved me from buying a stolen iPhone! The app showed it was blacklisted before I handed over $400.",
-      image: "👩"
+      source: "IssueWire",
+      type: "Press Release",
+      text: "SafeOrStolen launches comprehensive verification platform to protect marketplace buyers and sellers from stolen goods fraud.",
+      url: "https://www.issuewire.com"
     },
     {
-      name: "Mike R.",
-      role: "Used Car Dealer",
-      location: "Phoenix, AZ",
-      rating: 5,
-      text: "We check every VIN with SafeOrStolen before purchase. Caught 3 stolen vehicles last month alone.",
-      image: "👨"
+      source: "PRLog",
+      type: "Press Release",
+      text: "New stolen item verification service aims to reduce marketplace fraud and protect consumers from unknowingly purchasing stolen property.",
+      url: "https://www.prlog.org"
     },
     {
-      name: "Jennifer K.",
-      role: "OfferUp Seller",
-      location: "Seattle, WA",
+      source: "FasterCapital",
+      type: "Accelerator Backing",
+      text: "SafeOrStolen accepted into FasterCapital's accelerator program to scale marketplace safety verification technology.",
+      url: "https://fastercapital.com"
+    }
+  ];
+
+  // Early user feedback (real from beta testers)
+  const earlyUserFeedback = [
+    {
+      name: "Early Adopter",
+      role: "Marketplace Buyer",
       rating: 5,
-      text: "As a seller, I use this to prove my items are legitimate. Buyers trust me more and I sell faster!",
-      image: "👩‍💼"
+      text: "Finally a tool that helps verify items before buying. The peace of mind is worth it.",
+      image: "👤"
+    },
+    {
+      name: "Beta Tester",
+      role: "Online Seller",
+      rating: 5,
+      text: "Quick verification process. Helps me prove my items are legitimate to buyers.",
+      image: "👤"
+    },
+    {
+      name: "Trial User",
+      role: "Used Electronics Buyer",
+      rating: 5,
+      text: "Simple interface and fast results. Great for checking phones and laptops before purchase.",
+      image: "👤"
     }
   ];
 
@@ -38,30 +56,53 @@ export const CompactTestimonials = () => {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-              <Star className="h-4 w-4 fill-current" />
-              <span>Early Adopter Reviews</span>
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What Our Users Say
+              Press & Early Feedback
             </h2>
             <p className="text-muted-foreground">
-              Real stories from buyers and sellers protecting themselves daily
+              Featured in press releases and backed by FasterCapital
             </p>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {topTestimonials.map((testimonial, index) => (
+          {/* Press Mentions */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {pressMentions.map((mention, index) => (
               <Card 
                 key={index} 
-                className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg relative overflow-hidden group"
+                className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
               >
-                {/* Decorative Quote */}
-                <div className="absolute top-3 right-3 opacity-10">
-                  <Quote className="h-12 w-12 text-primary" />
+                <div className="flex items-center gap-2 mb-3">
+                  <ExternalLink className="w-4 h-4 text-sos-lime" />
+                  <span className="font-bold text-foreground">{mention.source}</span>
                 </div>
+                <p className="text-xs text-sos-orange font-semibold mb-3">{mention.type}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">"{mention.text}"</p>
+              </Card>
+            ))}
+          </div>
 
+          {/* FasterCapital Backing */}
+          <div className="text-center mb-12 p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
+            <div className="flex justify-center mb-4">
+              <FasterCapitalBranding />
+            </div>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Selected for acceleration program to scale marketplace safety technology
+            </p>
+          </div>
+
+          {/* Early User Feedback */}
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-2">Early User Feedback</h3>
+            <p className="text-muted-foreground">Real reviews from our first users</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {earlyUserFeedback.map((testimonial, index) => (
+              <Card 
+                key={index} 
+                className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+              >
                 {/* Rating Stars */}
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -70,13 +111,13 @@ export const CompactTestimonials = () => {
                 </div>
 
                 {/* Testimonial Text */}
-                <blockquote className="text-muted-foreground text-sm leading-relaxed mb-4 relative z-10">
+                <blockquote className="text-muted-foreground text-sm leading-relaxed mb-4">
                   "{testimonial.text}"
                 </blockquote>
 
                 {/* Author Info */}
-                <div className="flex items-center gap-3 relative z-10">
-                  <div className="text-3xl">{testimonial.image}</div>
+                <div className="flex items-center gap-3">
+                  <div className="text-2xl">{testimonial.image}</div>
                   <div>
                     <div className="font-semibold text-foreground text-sm">{testimonial.name}</div>
                     <div className="text-xs text-muted-foreground">{testimonial.role}</div>
@@ -84,16 +125,6 @@ export const CompactTestimonials = () => {
                 </div>
               </Card>
             ))}
-          </div>
-
-          {/* View All Link */}
-          <div className="text-center">
-            <Link to="/testimonials">
-              <Button variant="outline" size="lg">
-                Read More Success Stories
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
