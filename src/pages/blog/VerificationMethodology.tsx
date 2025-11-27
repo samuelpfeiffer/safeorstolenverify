@@ -270,7 +270,7 @@ export default function VerificationMethodology() {
                 </Card>
 
                 <Card className="p-6 bg-gray-50 dark:bg-gray-950/20">
-                  <h3 className="text-xl font-bold mb-2 text-gray-700 dark:text-gray-400">INCONCLUSIVE Status (<70% Confidence)</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-700 dark:text-gray-400">INCONCLUSIVE Status (&lt;70% Confidence)</h3>
                   <ul className="space-y-1 text-gray-900 dark:text-gray-100">
                     <li>? Invalid or improperly formatted identifier</li>
                     <li>? Multiple conflicting data sources</li>
