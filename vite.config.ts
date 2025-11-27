@@ -14,17 +14,17 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
-    // Prerender hook runs after build to generate bot-friendly HTML
+    // Static schema generator - embeds all 30+ schemas directly into HTML
     {
-      name: 'post-build-prerender',
+      name: 'post-build-static-schemas',
       closeBundle: async () => {
         if (mode === 'production') {
-          console.log('🤖 Generating prerendered HTML for bots...');
+          console.log('🤖 Generating static HTML with embedded schemas...');
           const { execSync } = await import('child_process');
           try {
-            execSync('tsx scripts/generate-prerender.ts', { stdio: 'inherit' });
+            execSync('tsx scripts/generate-static-schemas.ts', { stdio: 'inherit' });
           } catch (error) {
-            console.error('⚠️  Prerender generation failed:', error);
+            console.error('⚠️  Static schema generation failed:', error);
           }
         }
       }
