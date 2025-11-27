@@ -412,6 +412,71 @@
 }
     </script>
     
+    <!-- Schema 21: Offer - Free Tier -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://safeorstolen.com/#offer-free",
+  "name": "Free Trial",
+  "description": "2 free verification searches within 14-day trial period",
+  "price": "0",
+  "priceCurrency": "USD",
+  "availability": "https://schema.org/InStock",
+  "url": "https://safeorstolen.com/pricing",
+  "seller": {
+    "@id": "https://safeorstolen.com/#organization"
+  },
+  "itemOffered": {
+    "@id": "https://safeorstolen.com/#service"
+  }
+}
+    </script>
+    
+    <!-- Schema 22: Offer - Pro Tier -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://safeorstolen.com/#offer-pro",
+  "name": "Pro Plan",
+  "description": "Unlimited verification searches with advanced AI analysis",
+  "price": "9.99",
+  "priceCurrency": "USD",
+  "availability": "https://schema.org/InStock",
+  "url": "https://safeorstolen.com/pricing",
+  "priceValidUntil": "2025-12-31",
+  "seller": {
+    "@id": "https://safeorstolen.com/#organization"
+  },
+  "itemOffered": {
+    "@id": "https://safeorstolen.com/#service"
+  }
+}
+    </script>
+    
+    <!-- Schema 23: AggregateOffer -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AggregateOffer",
+  "@id": "https://safeorstolen.com/#aggregateoffer",
+  "name": "SafeOrStolen Pricing Plans",
+  "description": "Flexible verification plans from free to unlimited",
+  "lowPrice": "0",
+  "highPrice": "9.99",
+  "priceCurrency": "USD",
+  "offerCount": "2",
+  "url": "https://safeorstolen.com/pricing",
+  "seller": {
+    "@id": "https://safeorstolen.com/#organization"
+  },
+  "itemOffered": {
+    "@id": "https://safeorstolen.com/#service"
+  }
+}
+    </script>
+    
     <!-- Default SEO Meta Tags (Enhanced for Crawlers) -->
     <title>SafeOrStolen - Verify Stolen Items Instantly | IMEI, VIN &amp; Serial Number Checker</title>
     <meta name="description" content="Free instant verification of stolen items. Check IMEI, VIN, and serial numbers against global databases. Protect yourself from fraud when buying secondhand electronics, cars, bikes, and more.">
