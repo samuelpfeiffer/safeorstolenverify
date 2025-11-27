@@ -25,7 +25,8 @@ async function generateStaticSchemaHTML() {
   const baseHtml = fs.readFileSync(indexPath, 'utf-8');
   let totalGeneratedSchemas = 0;
 
-  // Generate HTML for each core page
+  // Generate HTML for each core page from schema definitions
+  for (const page of PAGE_SCHEMA_DEFINITIONS) {
   for (const page of PAGE_SCHEMA_DEFINITIONS) {
     let pageHtml = baseHtml;
 
@@ -66,7 +67,9 @@ async function generateStaticSchemaHTML() {
         ? 'mobile-app.html'
         : page.path === '/app'
           ? 'app.html'
-          : `${page.path.slice(1)}.html`;
+          : page.path === '/account'
+            ? 'account.html'
+            : `${page.path.slice(1)}.html`;
     
     const outputPath = path.join(distDir, filename);
 
