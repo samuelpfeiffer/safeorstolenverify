@@ -230,6 +230,80 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
     ]
   },
   {
+    path: '/app',
+    title: 'Download App - SafeOrStolen Mobile PWA',
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "SafeOrStolen Mobile App",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": ["iOS", "Android", "Web Browser"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Barcode scanning",
+          "Offline verification mode",
+          "3-second results",
+          "IMEI, VIN, serial verification",
+          "License plate lookup"
+        ],
+        "screenshot": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SafeOrStolen PWA",
+        "applicationCategory": "SecurityApplication",
+        "installUrl": "https://safeorstolen.com/mobile-app",
+        "operatingSystem": "Progressive Web App"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the mobile app free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Download the SafeOrStolen mobile app for free with 2 free verification searches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The app includes offline mode with cached database for verification without internet."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Mobile App",
+            "item": "https://safeorstolen.com/mobile-app"
+          }
+        ]
+      }
+    ]
+  },
+  {
     path: '/pricing',
     title: 'Pricing Plans - SafeOrStolen Verification Credits',
     schemas: [
@@ -453,6 +527,37 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
             "position": 2,
             "name": "Dashboard",
             "item": "https://safeorstolen.com/dashboard"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/account',
+    title: 'Account Settings - SafeOrStolen',
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SafeOrStolen Account Settings",
+        "applicationCategory": "Security Dashboard",
+        "description": "Manage your account, subscription, and preferences."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Account",
+            "item": "https://safeorstolen.com/account"
           }
         ]
       }
