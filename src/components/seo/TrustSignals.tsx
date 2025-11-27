@@ -9,18 +9,18 @@ const trustBadges = [
   },
   {
     icon: Award,
-    text: "Industry Leader",
-    description: "Trusted since 2024"
+    text: "Backed by FasterCapital",
+    description: "Accelerator program"
   },
   {
     icon: Users,
-    text: "250k+ Users",
-    description: "Verified daily"
+    text: "Early Access",
+    description: "New platform"
   },
   {
     icon: Lock,
     text: "Privacy Protected",
-    description: "GDPR compliant"
+    description: "No data tracking"
   }
 ];
 

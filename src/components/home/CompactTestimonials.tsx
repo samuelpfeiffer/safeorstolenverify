@@ -40,7 +40,7 @@ export const CompactTestimonials = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
               <Star className="h-4 w-4 fill-current" />
-              <span>Trusted by 100,000+ Users</span>
+              <span>Early Adopter Reviews</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               What Our Users Say

@@ -102,16 +102,16 @@ export const WhyChooseSafeOrStolen = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           <Card className="p-6 text-center">
-            <div className="text-4xl font-bold text-primary mb-2">500K+</div>
-            <div className="text-sm text-muted-foreground">Users Trust Us</div>
-          </Card>
-          <Card className="p-6 text-center">
-            <div className="text-4xl font-bold text-primary mb-2">50M+</div>
-            <div className="text-sm text-muted-foreground">Database Records</div>
+            <div className="text-4xl font-bold text-primary mb-2">New</div>
+            <div className="text-sm text-muted-foreground">Early Access Platform</div>
           </Card>
           <Card className="p-6 text-center">
             <div className="text-4xl font-bold text-primary mb-2">150+</div>
-            <div className="text-sm text-muted-foreground">Countries Covered</div>
+            <div className="text-sm text-muted-foreground">Database Sources</div>
+          </Card>
+          <Card className="p-6 text-center">
+            <div className="text-4xl font-bold text-primary mb-2">Global</div>
+            <div className="text-sm text-muted-foreground">Worldwide Coverage</div>
           </Card>
         </div>
 

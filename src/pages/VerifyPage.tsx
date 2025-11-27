@@ -67,11 +67,6 @@ const VerifyPage = () => {
 
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!isAuthenticated) {
-      navigate('/auth?redirect=/verify');
-      return;
-    }
 
     // If license plate selected, use universal-state-lookup
     if (itemType === 'license_plate') {
