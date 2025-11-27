@@ -274,29 +274,7 @@ const VerifyPage = () => {
         description="Verify if any item is stolen in 3 seconds. Check phones (IMEI), cars (VIN), electronics (serial numbers), license plates. Free instant verification with our universal search tool."
         keywords="verify stolen item, IMEI check, VIN check, serial number verification, license plate lookup, stolen goods check"
         canonical="/verify"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "SafeOrStolen Universal Verification Tool",
-          "url": "https://safeorstolen.com/verify",
-          "applicationCategory": "SecurityApplication",
-          "description": "Verify if items are stolen by entering IMEI, VIN, serial number, or license plate. Instant results from 50+ million records.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "2 free verification checks during 14-day trial"
-          },
-          "featureList": [
-            "IMEI phone verification",
-            "VIN vehicle lookup",
-            "Serial number checker",
-            "License plate verification",
-            "Firearm serial verification",
-            "Barcode scanning (mobile app)",
-            "Offline mode (mobile app)"
-          ]
-        }}
+        structuredData={verificationServiceSchema}
       />
       <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="space-y-8">
