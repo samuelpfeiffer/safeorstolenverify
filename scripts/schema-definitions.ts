@@ -564,6 +564,220 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
     ]
   },
   {
+    path: '/how-it-works',
+    title: 'How It Works - SafeOrStolen Verification Process',
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How SafeOrStolen Works",
+        "description": "Complete guide to verifying if items are stolen using SafeOrStolen",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Enter Item Information",
+            "text": "Enter the IMEI, VIN, serial number, or license plate of the item you want to verify."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Instant Database Search",
+            "text": "Our system searches 50+ million records from law enforcement, insurance, and global databases."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Get Results in 3 Seconds",
+            "text": "Receive instant verification showing if the item is safe or reported stolen, with detailed report."
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SafeOrStolen Verification Process",
+        "serviceType": "Stolen Item Verification",
+        "provider": { "@type": "Organization", "name": "SafeOrStolen" },
+        "description": "3-second verification process checking IMEI, VIN, serial numbers against global theft databases."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "How It Works",
+            "item": "https://safeorstolen.com/how-it-works"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/vs-checkmend',
+    title: 'CheckMEND Alternative with Mobile App | SafeOrStolen',
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SafeOrStolen vs CheckMEND",
+        "serviceType": "Stolen Item Verification",
+        "provider": { "@type": "Organization", "name": "SafeOrStolen" },
+        "description": "Free mobile app alternative to CheckMEND with barcode scanning and 3-second verification.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "2 free searches vs CheckMEND's £3.99 per check"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why doesn't CheckMEND have a mobile app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Despite processing £13.8 billion in checks, CheckMEND has not launched a mobile app. SafeOrStolen is the only stolen verification service with a mobile app featuring barcode scanning."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "CheckMEND Alternative",
+            "item": "https://safeorstolen.com/vs-checkmend"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/vs-imeiinfo',
+    title: 'IMEI.info Alternative with Mobile App | SafeOrStolen',
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SafeOrStolen vs IMEI.info",
+        "serviceType": "IMEI Verification",
+        "provider": { "@type": "Organization", "name": "SafeOrStolen" },
+        "description": "Mobile app for IMEI verification with barcode scanning - IMEI.info has no app.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "2 free IMEI checks with mobile app"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does IMEI.info have a mobile app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. IMEI.info is web-only. SafeOrStolen offers the only mobile app for IMEI verification with instant barcode scanning."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "IMEI.info Alternative",
+            "item": "https://safeorstolen.com/vs-imeiinfo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/vs-swappa',
+    title: 'Swappa Alternative - Faster Verification | SafeOrStolen',
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SafeOrStolen vs Swappa",
+        "serviceType": "Device Verification",
+        "provider": { "@type": "Organization", "name": "SafeOrStolen" },
+        "description": "3-second verification with mobile app vs Swappa's manual process. Verify any device instantly.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "2 free device verifications"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is SafeOrStolen faster than Swappa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. SafeOrStolen delivers results in 3 seconds with barcode scanning, while Swappa requires manual IMEI entry and slower processing."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Swappa Alternative",
+            "item": "https://safeorstolen.com/vs-swappa"
+          }
+        ]
+      }
+    ]
+  },
+  {
     path: '/terms',
     title: 'Terms of Service - SafeOrStolen',
     schemas: [
