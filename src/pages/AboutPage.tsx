@@ -8,27 +8,6 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 
 const AboutPage = () => {
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO & Founder",
-      experience: "15+ years in cybersecurity and fraud prevention",
-      credentials: "Certified Information Systems Security Professional (CISSP)"
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      experience: "12+ years in database management and verification systems",
-      credentials: "Former FBI Digital Forensics Specialist"
-    },
-    {
-      name: "Detective Lisa Rodriguez",
-      role: "Law Enforcement Liaison",
-      experience: "20+ years in stolen property recovery",
-      credentials: "IACP Certified Property Recovery Specialist"
-    }
-  ];
-
   const partnerships = [
     {
       name: "National Crime Information Center (NCIC)",
