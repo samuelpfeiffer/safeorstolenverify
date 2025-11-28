@@ -112,6 +112,7 @@ const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 
 // Admin Pages
 const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
+const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDashboard'));
 
 export const AppRoutes = () => {
   return (
@@ -159,7 +160,7 @@ export const AppRoutes = () => {
         <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/fastercapital/tech-cofounder" element={<Navigate to="/about" replace />} />
         <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
-        <Route path="/service-limitations" element={<Navigate to="/about" replace />} />
+        <Route path="/service-limitations" element={<Navigate to="/terms" replace />} />
         
         {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}
         <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
@@ -242,6 +243,7 @@ export const AppRoutes = () => {
         <Route path="/check-stolen-database" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-items-list" element={<Navigate to="/verify" replace />} />
         <Route path="/avoid-stolen-goods" element={<Navigate to="/verify" replace />} />
+        <Route path="/avoid-buying-stolen-goods" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-items-database" element={<Navigate to="/verify" replace />} />
         <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/verify" replace />} />
         
@@ -313,16 +315,12 @@ export const AppRoutes = () => {
         {/* Educational/business pages → /about */}
         <Route path="/buyer-guide" element={<Navigate to="/about" replace />} />
         <Route path="/comprehensive-guide" element={<Navigate to="/about" replace />} />
-        <Route path="/avoid-stolen-goods" element={<Navigate to="/about" replace />} />
-        <Route path="/avoid-buying-stolen-goods" element={<Navigate to="/about" replace />} />
         <Route path="/resellers" element={<Navigate to="/about" replace />} />
         <Route path="/pawn-shops" element={<Navigate to="/about" replace />} />
-        <Route path="/for-consumers" element={<Navigate to="/about" replace />} />
         <Route path="/for-phone-repair-shops" element={<Navigate to="/about" replace />} />
         <Route path="/features" element={<Navigate to="/about" replace />} />
         <Route path="/trust-verification" element={<Navigate to="/about" replace />} />
         <Route path="/data-sources" element={<Navigate to="/about" replace />} />
-        <Route path="/accuracy" element={<Navigate to="/about" replace />} />
         
         {/* Blog Index & Articles - 12 High-Value SEO Content Pages */}
         <Route path="/blog" element={<BlogIndexPage />} />
@@ -373,7 +371,6 @@ export const AppRoutes = () => {
         <Route path="/disclaimer" element={<Navigate to="/terms" replace />} />
         <Route path="/cookies" element={<Navigate to="/privacy" replace />} />
         <Route path="/transparency" element={<Navigate to="/about" replace />} />
-        <Route path="/service-limitations" element={<Navigate to="/terms" replace />} />
         
         {/* Contact/support → /about */}
         <Route path="/contact" element={<Navigate to="/about" replace />} />
@@ -382,6 +379,7 @@ export const AppRoutes = () => {
         
         {/* Admin Routes */}
         <Route path="/admin/autonomous-ai" element={<AutonomousAIDashboard />} />
+        <Route path="/admin/gsc-status" element={<GSCMonitoringDashboard />} />
         
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />
