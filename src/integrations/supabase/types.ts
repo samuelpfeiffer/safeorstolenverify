@@ -1492,6 +1492,138 @@ export type Database = {
         }
         Relationships: []
       }
+      gsc_oauth_tokens: {
+        Row: {
+          access_token: string
+          created_at: string | null
+          expires_at: string
+          id: string
+          refresh_token: string
+          scopes: string[] | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          access_token: string
+          created_at?: string | null
+          expires_at: string
+          id?: string
+          refresh_token: string
+          scopes?: string[] | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          access_token?: string
+          created_at?: string | null
+          expires_at?: string
+          id?: string
+          refresh_token?: string
+          scopes?: string[] | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      gsc_performance_cache: {
+        Row: {
+          data: Json
+          data_type: string
+          expires_at: string
+          fetched_at: string | null
+          id: string
+          query_params: Json | null
+        }
+        Insert: {
+          data: Json
+          data_type: string
+          expires_at: string
+          fetched_at?: string | null
+          id?: string
+          query_params?: Json | null
+        }
+        Update: {
+          data?: Json
+          data_type?: string
+          expires_at?: string
+          fetched_at?: string | null
+          id?: string
+          query_params?: Json | null
+        }
+        Relationships: []
+      }
+      gsc_url_status: {
+        Row: {
+          checked_at: string | null
+          coverage_state: string | null
+          crawled_as: string | null
+          google_canonical: string | null
+          id: string
+          indexing_state: string | null
+          last_crawl_time: string | null
+          page_fetch_state: string | null
+          robots_txt_state: string | null
+          updated_at: string | null
+          url: string
+          user_canonical: string | null
+          verdict: string | null
+        }
+        Insert: {
+          checked_at?: string | null
+          coverage_state?: string | null
+          crawled_as?: string | null
+          google_canonical?: string | null
+          id?: string
+          indexing_state?: string | null
+          last_crawl_time?: string | null
+          page_fetch_state?: string | null
+          robots_txt_state?: string | null
+          updated_at?: string | null
+          url: string
+          user_canonical?: string | null
+          verdict?: string | null
+        }
+        Update: {
+          checked_at?: string | null
+          coverage_state?: string | null
+          crawled_as?: string | null
+          google_canonical?: string | null
+          id?: string
+          indexing_state?: string | null
+          last_crawl_time?: string | null
+          page_fetch_state?: string | null
+          robots_txt_state?: string | null
+          updated_at?: string | null
+          url?: string
+          user_canonical?: string | null
+          verdict?: string | null
+        }
+        Relationships: []
+      }
+      indexnow_submissions: {
+        Row: {
+          id: string
+          response: Json | null
+          status: string
+          submitted_at: string | null
+          urls: string[]
+        }
+        Insert: {
+          id?: string
+          response?: Json | null
+          status: string
+          submitted_at?: string | null
+          urls: string[]
+        }
+        Update: {
+          id?: string
+          response?: Json | null
+          status?: string
+          submitted_at?: string | null
+          urls?: string[]
+        }
+        Relationships: []
+      }
       internet_search_results: {
         Row: {
           confidence: number | null
