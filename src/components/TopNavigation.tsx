@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -72,8 +72,17 @@ const TopNavigation = () => {
             ))}
           </div>
 
-          {/* Desktop Auth */}
+          {/* Desktop Auth + Social */}
           <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://www.youtube.com/@safeorstolen"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="SafeOrStolen YouTube channel"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors mr-2"
+            >
+              <Youtube className="w-4 h-4 text-muted-foreground hover:text-primary" />
+            </a>
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

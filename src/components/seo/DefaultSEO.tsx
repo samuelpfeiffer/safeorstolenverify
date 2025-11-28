@@ -32,7 +32,7 @@ export const DefaultSEO: React.FC = () => {
     "url": "https://safeorstolen.com",
     "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
     "sameAs": [
-      "https://www.youtube.com/@safeorstolenofficially"
+      "https://www.youtube.com/@safeorstolen"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
