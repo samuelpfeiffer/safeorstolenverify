@@ -25,7 +25,6 @@ import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
-import { AntigravityEffect } from '@/components/effects/AntigravityEffect';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -83,7 +82,6 @@ const AuthAwareContent: React.FC = () => {
         <MobileNavigation />
         <SchemaValidationIndicator />
         <AISafetyAdvisor />
-        <AntigravityEffect />
         <Toaster />
       </PWAProvider>
     </GA4Provider>

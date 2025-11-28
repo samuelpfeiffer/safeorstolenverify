@@ -86,15 +86,21 @@ serve(async (req) => {
           throw new Error(`Token exchange failed: ${JSON.stringify(tokens)}`);
         }
 
-        // Get user ID
+        // Get user ID from service role key (since callback happens without auth header)
+        const supabaseAdmin = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        );
+
+        // Get user from auth header if present, otherwise error
         const { data: { user } } = await supabaseClient.auth.getUser();
         if (!user) {
-          throw new Error('User not authenticated');
+          throw new Error('User not authenticated - please log in first');
         }
 
         // Store tokens
         const expiresAt = new Date(Date.now() + tokens.expires_in * 1000);
-        await supabaseClient.from('gsc_oauth_tokens').upsert({
+        await supabaseAdmin.from('gsc_oauth_tokens').upsert({
           user_id: user.id,
           access_token: tokens.access_token,
           refresh_token: tokens.refresh_token,
@@ -110,7 +116,8 @@ serve(async (req) => {
       }
 
       case 'url-inspection': {
-        const { inspectionUrl } = await req.json();
+        const body = await req.json();
+        const { inspectionUrl } = body;
         
         // Get access token
         const accessToken = await getAccessToken(supabaseClient);
@@ -161,7 +168,8 @@ serve(async (req) => {
       }
 
       case 'search-analytics': {
-        const { startDate, endDate, dimensions } = await req.json();
+        const body = await req.json();
+        const { startDate, endDate, dimensions } = body;
         
         const accessToken = await getAccessToken(supabaseClient);
         
