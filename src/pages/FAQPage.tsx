@@ -153,6 +153,18 @@ const FAQPage = () => {
         {
           question: "How is SafeOrStolen like Carfax?",
           answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type, not just cars."
+        },
+        {
+          question: "Can I check license plates?",
+          answer: "Yes! Enter any US license plate number into our free license plate lookup at safeorstolen.com/verify to check if the vehicle is reported stolen across all 50 states. We search state DMV records, NICB databases, and law enforcement reports."
+        },
+        {
+          question: "Do you have state-specific VIN checkers?",
+          answer: "Yes, we offer dedicated VIN lookup pages for all 50 US states with state-specific theft statistics and local laws. Visit safeorstolen.com/california-vin-lookup (or any state) for tailored verification and local vehicle theft data."
+        },
+        {
+          question: "Can I use the mobile app offline?",
+          answer: "Yes! The SafeOrStolen mobile app includes offline mode for barcode scanning and cached database searches. Download the app at safeorstolen.com/app to verify items even without internet connection."
         }
       ]
     }
@@ -237,6 +249,15 @@ const FAQPage = () => {
               <p className="text-muted-foreground mb-6">
                 Contact us at <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>
               </p>
+              <div className="flex flex-wrap justify-center gap-4 mt-6">
+                <a href="/verify" className="text-primary hover:underline font-medium">Start Verification</a>
+                <span className="text-muted-foreground">•</span>
+                <a href="/app" className="text-primary hover:underline font-medium">Download Mobile App</a>
+                <span className="text-muted-foreground">•</span>
+                <a href="/how-it-works" className="text-primary hover:underline font-medium">How It Works</a>
+                <span className="text-muted-foreground">•</span>
+                <a href="/pricing" className="text-primary hover:underline font-medium">View Pricing</a>
+              </div>
             </div>
           </div>
         </section>

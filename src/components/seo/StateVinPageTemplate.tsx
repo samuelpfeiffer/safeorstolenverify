@@ -40,9 +40,11 @@ export const StateVinPageTemplate = ({
   faqs,
   slug
 }: StateVinPageProps) => {
-  // Use slug if provided, otherwise extract from current URL
-  const urlPath = slug || window.location.pathname.replace(/^\//, '');
-  const canonicalUrl = `https://safeorstolen.com/${urlPath}`;
+  // Error boundary for state VIN pages to prevent 5xx errors
+  try {
+    // Use slug if provided, otherwise extract from current URL
+    const urlPath = slug || window.location.pathname.replace(/^\//, '');
+    const canonicalUrl = `https://safeorstolen.com/${urlPath}`;
   
   const schema = {
     "@context": "https://schema.org",
@@ -212,4 +214,20 @@ export const StateVinPageTemplate = ({
       </div>
     </>
   );
+  } catch (error) {
+    console.error('StateVinPageTemplate error:', error);
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <div className="text-center max-w-md">
+          <h1 className="text-2xl font-bold mb-4">Page Temporarily Unavailable</h1>
+          <p className="text-muted-foreground mb-4">
+            We're experiencing technical difficulties loading this page. Please try again later.
+          </p>
+          <Link to="/verify">
+            <Button variant="default">Return to Verification Page</Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 };
