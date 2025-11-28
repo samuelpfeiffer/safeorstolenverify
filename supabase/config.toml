@@ -51,37 +51,10 @@ verify_jwt = true
 [functions.nicb-vincheck]
 verify_jwt = true
 
-[functions.gsma-device-check]
-verify_jwt = true
-
-[functions.immobilize-lookup]
-verify_jwt = true
-
-[functions.carfax-vin-lookup]
-verify_jwt = true
-
-[functions.imei-info-lookup]
-verify_jwt = true
-
-[functions.marketplace-sync]
-verify_jwt = true
-
-[functions.database-optimizer]
-verify_jwt = true
-
-[functions.enrich-blog-content]
-verify_jwt = true
-
 [functions.schedule-blog-enrichment]
 verify_jwt = true
 
-[functions.fix-blog-slugs]
-verify_jwt = false
-
 [functions.autonomous-content-generator]
-verify_jwt = false
-
-[functions.auto-fix-content-issues]
 verify_jwt = false
 
 [functions.schedule-content-generation]
@@ -116,18 +89,6 @@ verify_jwt = false
 
 [functions.web-crawler]
 verify_jwt = true
-
-[functions.web-scraper-verification]
-verify_jwt = true
-
-[functions.ai-search-suggestions]
-verify_jwt = false
-
-[functions.ai-item-identification]
-verify_jwt = true
-
-[functions.ai-safety-advisor]
-verify_jwt = false
 
 [functions.florida-theft-lookup]
 verify_jwt = true
