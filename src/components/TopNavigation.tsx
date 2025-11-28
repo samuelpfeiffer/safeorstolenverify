@@ -27,7 +27,7 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/how-it-works', label: 'How It Works' },
-    { to: '/app', label: 'Download App', featured: true },
+    { to: '/app/download', label: 'Download App', featured: true },
     { to: '/blog', label: 'Blog' },
   ];
 
