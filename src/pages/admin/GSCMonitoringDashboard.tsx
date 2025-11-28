@@ -2,65 +2,86 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
-
-const PRIORITY_URLS = [
-  { url: '/', priority: 'Critical', day: 1 },
-  { url: '/verify', priority: 'Critical', day: 1 },
-  { url: '/imei-checker', priority: 'Critical', day: 1 },
-  { url: '/vin-checker', priority: 'Critical', day: 1 },
-  { url: '/app', priority: 'Critical', day: 1 },
-  { url: '/serial-number-checker', priority: 'High', day: 2 },
-  { url: '/how-it-works', priority: 'High', day: 2 },
-  { url: '/check-phone', priority: 'High', day: 3 },
-  { url: '/check-car', priority: 'High', day: 3 },
-  { url: '/pricing', priority: 'High', day: 3 },
-  { url: '/california-vin-lookup', priority: 'Medium', day: 4 },
-  { url: '/texas-vin-lookup', priority: 'Medium', day: 4 },
-  { url: '/florida-vin-lookup', priority: 'Medium', day: 5 },
-  { url: '/new-york-vin-lookup', priority: 'Medium', day: 5 },
-  { url: '/check-bike', priority: 'Medium', day: 6 },
-  { url: '/faq', priority: 'Medium', day: 6 },
-  { url: '/about', priority: 'Medium', day: 7 },
-];
+import { ExternalLink, Plug, CheckCircle2 } from 'lucide-react';
+import { useGSCConnection } from '@/hooks/useGSCData';
+import { useNavigate } from 'react-router-dom';
+import GSCSearchAnalytics from '@/components/admin/GSCSearchAnalytics';
+import GSCIndexCoverage from '@/components/admin/GSCIndexCoverage';
+import GSCAISuggestions from '@/components/admin/GSCAISuggestions';
 
 export default function GSCMonitoringDashboard() {
-  const [submittedUrls, setSubmittedUrls] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { isConnected, isCheckingConnection } = useGSCConnection();
+  const [activeTab, setActiveTab] = useState('overview');
 
-  const handleIndexNowSubmit = async (urls: string[]) => {
-    setLoading(true);
-    try {
-      const { data, error } = await supabase.functions.invoke('indexnow-submit', {
-        body: { urls }
-      });
-      
-      if (error) throw error;
-      
-      console.log('IndexNow submission result:', data);
-      const newSubmitted = [...new Set([...submittedUrls, ...urls])];
-      setSubmittedUrls(newSubmitted);
-      localStorage.setItem('gsc-submitted-urls', JSON.stringify(newSubmitted));
-    } catch (error) {
-      console.error('IndexNow submission error:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (isCheckingConnection) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" />
+          <p className="text-muted-foreground">Checking GSC connection...</p>
+        </div>
+      </div>
+    );
+  }
 
-  const handleToggleSubmitted = (url: string) => {
-    const updated = submittedUrls.includes(url)
-      ? submittedUrls.filter(u => u !== url)
-      : [...submittedUrls, url];
-    setSubmittedUrls(updated);
-    localStorage.setItem('gsc-submitted-urls', JSON.stringify(updated));
-  };
+  if (!isConnected) {
+    return (
+      <>
+        <Helmet>
+          <title>GSC Monitoring Dashboard | SafeOrStolen Admin</title>
+          <meta name="robots" content="noindex,nofollow" />
+        </Helmet>
 
-  const todayUrls = PRIORITY_URLS.filter(item => item.day === 1);
-  const weekUrls = PRIORITY_URLS.filter(item => item.day > 1 && item.day <= 7);
+        <div className="min-h-screen bg-background p-6">
+          <div className="max-w-2xl mx-auto">
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Plug className="w-6 h-6" />
+                  <CardTitle>Google Search Console Not Connected</CardTitle>
+                </div>
+                <CardDescription>
+                  Connect your Google Search Console account to access real-time search analytics and indexing data
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-muted p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2">What you'll get:</h4>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-green-600" />
+                        <span>Real-time search performance analytics (clicks, impressions, CTR)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-green-600" />
+                        <span>URL indexing status monitoring</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-green-600" />
+                        <span>AI-powered SEO recommendations</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-green-600" />
+                        <span>Automated URL inspection</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <Button onClick={() => navigate('/admin/gsc-connect')} className="w-full">
+                    <Plug className="w-4 h-4 mr-2" />
+                    Connect Google Search Console
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -70,11 +91,18 @@ export default function GSCMonitoringDashboard() {
       </Helmet>
 
       <div className="min-h-screen bg-background p-6">
-        <div className="max-w-6xl mx-auto space-y-6">
+        <div className="max-w-7xl mx-auto space-y-6">
+          {/* Header */}
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Google Search Console Monitoring</h1>
-              <p className="text-muted-foreground">Track indexing progress and submit priority URLs</p>
+              <div className="flex items-center gap-2">
+                <h1 className="text-3xl font-bold">Google Search Console</h1>
+                <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                  <CheckCircle2 className="w-3 h-3 mr-1" />
+                  Connected
+                </Badge>
+              </div>
+              <p className="text-muted-foreground">Real-time search analytics and indexing monitoring</p>
             </div>
             <Button
               onClick={() => window.open('https://search.google.com/search-console', '_blank')}
@@ -85,172 +113,132 @@ export default function GSCMonitoringDashboard() {
             </Button>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Total Priority URLs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{PRIORITY_URLS.length}</div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Submitted</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-green-600">
-                  {submittedUrls.length}
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Remaining</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-orange-600">
-                  {PRIORITY_URLS.length - submittedUrls.length}
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Progress</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">
-                  {Math.round((submittedUrls.length / PRIORITY_URLS.length) * 100)}%
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {/* Tabbed Interface */}
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="coverage">Coverage</TabsTrigger>
+              <TabsTrigger value="suggestions">AI Suggestions</TabsTrigger>
+            </TabsList>
 
-          {/* Today's URLs */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-red-600" />
-                Critical - Submit Today (Day 1)
-              </CardTitle>
-              <CardDescription>
-                Submit these high-priority URLs immediately via GSC URL Inspection tool
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                {todayUrls.map(item => (
-                  <div key={item.url} className="flex items-center justify-between p-3 border rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <Checkbox
-                        checked={submittedUrls.includes(item.url)}
-                        onCheckedChange={() => handleToggleSubmitted(item.url)}
-                      />
-                      <code className="text-sm font-mono">{item.url}</code>
-                      <Badge variant={item.priority === 'Critical' ? 'destructive' : 'default'}>
-                        {item.priority}
-                      </Badge>
-                    </div>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => window.open(
-                        `https://search.google.com/search-console/inspect?resource_id=sc-domain:safeorstolen.com&url=https://safeorstolen.com${item.url}`,
-                        '_blank'
-                      )}
+            <TabsContent value="overview" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Quick Actions</CardTitle>
+                    <CardDescription>Common GSC monitoring tasks</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => setActiveTab('analytics')}
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Inspect
+                      View Search Performance
                     </Button>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4">
-                <Button 
-                  onClick={() => handleIndexNowSubmit(todayUrls.map(u => u.url))}
-                  disabled={loading}
-                >
-                  {loading ? 'Submitting...' : 'Submit All via IndexNow'}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* This Week's URLs */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-orange-600" />
-                High Priority - This Week (Days 2-7)
-              </CardTitle>
-              <CardDescription>
-                Submit 2-3 URLs per day using GSC URL Inspection tool
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                {weekUrls.map(item => (
-                  <div key={item.url} className="flex items-center justify-between p-3 border rounded-lg">
-                    <div className="flex items-center gap-3">
-                      <Checkbox
-                        checked={submittedUrls.includes(item.url)}
-                        onCheckedChange={() => handleToggleSubmitted(item.url)}
-                      />
-                      <code className="text-sm font-mono">{item.url}</code>
-                      <Badge variant="secondary">Day {item.day}</Badge>
-                      <Badge variant="outline">{item.priority}</Badge>
-                    </div>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => window.open(
-                        `https://search.google.com/search-console/inspect?resource_id=sc-domain:safeorstolen.com&url=https://safeorstolen.com${item.url}`,
-                        '_blank'
-                      )}
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => setActiveTab('coverage')}
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Inspect
+                      Check URL Indexing Status
                     </Button>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => setActiveTab('suggestions')}
+                    >
+                      Get AI Recommendations
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => window.open('https://search.google.com/search-console/performance', '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Open GSC Performance
+                    </Button>
+                  </CardContent>
+                </Card>
 
-          {/* Instructions */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Daily GSC Workflow</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h3 className="font-semibold mb-2">1. Manual URL Inspection (Daily)</h3>
-                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                  <li>Click "Inspect" button next to each URL</li>
-                  <li>Click "Request Indexing" in GSC</li>
-                  <li>Maximum 10 URLs per day (GSC limit)</li>
-                  <li>Mark URLs as submitted using checkboxes</li>
-                </ul>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Daily Workflow</CardTitle>
+                    <CardDescription>Best practices for GSC monitoring</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ol className="space-y-3 text-sm">
+                      <li className="flex gap-2">
+                        <span className="font-semibold text-primary">1.</span>
+                        <span>Check search analytics for traffic changes</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="font-semibold text-primary">2.</span>
+                        <span>Review URL coverage for indexing issues</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="font-semibold text-primary">3.</span>
+                        <span>Apply AI suggestions to improve SEO</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="font-semibold text-primary">4.</span>
+                        <span>Submit new URLs via IndexNow API</span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="font-semibold text-primary">5.</span>
+                        <span>Monitor for crawl errors and fix immediately</span>
+                      </li>
+                    </ol>
+                  </CardContent>
+                </Card>
               </div>
-              <div>
-                <h3 className="font-semibold mb-2">2. Check Coverage Report</h3>
-                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                  <li>Review "Indexed" vs "Not indexed" pages</li>
-                  <li>Fix any "Server error 5xx" immediately</li>
-                  <li>Address "Soft 404" and "Duplicate canonical" issues</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">3. Monitor Performance</h3>
-                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                  <li>Check clicks and impressions daily</li>
-                  <li>Compare week-over-week growth</li>
-                  <li>Identify new indexing opportunities</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>System Status</CardTitle>
+                  <CardDescription>Integration health and connectivity</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-green-600" />
+                      <div>
+                        <p className="font-medium">GSC Connected</p>
+                        <p className="text-xs text-muted-foreground">OAuth authenticated</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-green-600" />
+                      <div>
+                        <p className="font-medium">IndexNow Active</p>
+                        <p className="text-xs text-muted-foreground">URL submission enabled</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-green-600" />
+                      <div>
+                        <p className="font-medium">AI Suggestions</p>
+                        <p className="text-xs text-muted-foreground">Data analysis active</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="analytics">
+              <GSCSearchAnalytics />
+            </TabsContent>
+
+            <TabsContent value="coverage">
+              <GSCIndexCoverage />
+            </TabsContent>
+
+            <TabsContent value="suggestions">
+              <GSCAISuggestions />
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </>
