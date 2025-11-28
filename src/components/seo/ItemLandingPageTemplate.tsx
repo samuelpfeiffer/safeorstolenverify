@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 
 interface ItemLandingPageProps {
   title: string;
@@ -80,6 +81,41 @@ export const ItemLandingPageTemplate = ({
         <link rel="canonical" href={`https://safeorstolen.com${window.location.pathname}`} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
+
+      {/* Bot-visible content for search engines */}
+      <BotVisibleContent>
+        <h1>{h1}</h1>
+        <p>{content.intro}</p>
+        
+        <h2>What is {itemType} Verification?</h2>
+        <p>{content.whatIs}</p>
+        
+        <h2>How It Works</h2>
+        <p>{content.howItWorks}</p>
+        <ul>
+          {content.process.map((step, idx) => (
+            <li key={idx}>{step}</li>
+          ))}
+        </ul>
+        
+        <h2>Why Check Before Buying?</h2>
+        <p>{content.whyCheck}</p>
+        <ul>
+          {content.benefits.map((benefit, idx) => (
+            <li key={idx}>{benefit}</li>
+          ))}
+        </ul>
+        
+        <h2>Frequently Asked Questions</h2>
+        {content.faqs.map((faq, idx) => (
+          <div key={idx}>
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+        
+        <p>Start your free trial - 2 verification checks. Visit https://safeorstolen.com/verify to get started.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}

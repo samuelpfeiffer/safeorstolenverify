@@ -152,6 +152,14 @@ export const AppRoutes = () => {
         <Route path="/case-studies" element={<Navigate to="/testimonials" replace />} />
         <Route path="/auction-houses" element={<Navigate to="/for-auction-houses" replace />} />
         <Route path="/accuracy" element={<Navigate to="/about" replace />} />
+        <Route path="/our-story" element={<Navigate to="/about" replace />} />
+        <Route path="/contact" element={<Navigate to="/about" replace />} />
+        <Route path="/enterprise-demo" element={<Navigate to="/pricing" replace />} />
+        <Route path="/disclaimer" element={<Navigate to="/terms" replace />} />
+        <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
+        <Route path="/fastercapital/tech-cofounder" element={<Navigate to="/about" replace />} />
+        <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
+        <Route path="/service-limitations" element={<Navigate to="/about" replace />} />
         
         {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}
         <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
@@ -207,8 +215,10 @@ export const AppRoutes = () => {
         
         {/* Item-specific check redirects → main pages */}
         <Route path="/imei-check" element={<Navigate to="/imei-checker" replace />} />
+        <Route path="/imei" element={<Navigate to="/imei-checker" replace />} />
         <Route path="/vin-check" element={<Navigate to="/vin-checker" replace />} />
         <Route path="/check-firearm" element={<Navigate to="/firearms-check" replace />} />
+        <Route path="/firearm-serial-check" element={<Navigate to="/firearms-check" replace />} />
         <Route path="/check-gaming-console" element={<Navigate to="/check-electronics" replace />} />
         <Route path="/check-android-phone" element={<Navigate to="/check-phone" replace />} />
         <Route path="/license-plates-lookup" element={<Navigate to="/license-plate-lookup" replace />} />
@@ -231,6 +241,9 @@ export const AppRoutes = () => {
         <Route path="/stolen-property-check" element={<Navigate to="/verify" replace />} />
         <Route path="/check-stolen-database" element={<Navigate to="/verify" replace />} />
         <Route path="/stolen-items-list" element={<Navigate to="/verify" replace />} />
+        <Route path="/avoid-stolen-goods" element={<Navigate to="/verify" replace />} />
+        <Route path="/stolen-items-database" element={<Navigate to="/verify" replace />} />
+        <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/verify" replace />} />
         
         {/* App downloads → /app */}
         <Route path="/install-app" element={<Navigate to="/app" replace />} />
@@ -253,6 +266,8 @@ export const AppRoutes = () => {
         <Route path="/vs-stolenregister" element={<Navigate to="/pricing" replace />} />
         <Route path="/vs-nicb" element={<Navigate to="/pricing" replace />} />
         <Route path="/carfax-alternative" element={<Navigate to="/pricing" replace />} />
+        <Route path="/comparison-checkmend" element={<Navigate to="/vs-checkmend" replace />} />
+        <Route path="/competitor-alternatives" element={<Navigate to="/pricing" replace />} />
         
         {/* Marketplace pages → /about */}
         <Route path="/marketplace-safety" element={<Navigate to="/about" replace />} />
@@ -261,6 +276,38 @@ export const AppRoutes = () => {
         <Route path="/verify/facebook-marketplace" element={<Navigate to="/verify" replace />} />
         <Route path="/verify/offerup" element={<Navigate to="/verify" replace />} />
         <Route path="/verify/auctions" element={<Navigate to="/verify" replace />} />
+        
+        {/* City pages → /verify */}
+        <Route path="/city/*" element={<Navigate to="/verify" replace />} />
+        
+        {/* App subpages → /app */}
+        <Route path="/app/install-guide" element={<Navigate to="/app" replace />} />
+        <Route path="/app/phoenix" element={<Navigate to="/app" replace />} />
+        <Route path="/app/houston" element={<Navigate to="/app" replace />} />
+        <Route path="/app/miami" element={<Navigate to="/app" replace />} />
+        <Route path="/app/philadelphia" element={<Navigate to="/app" replace />} />
+        <Route path="/app/pwa" element={<Navigate to="/app" replace />} />
+        <Route path="/app/electronics-checker" element={<Navigate to="/app" replace />} />
+        <Route path="/app/firearms-checker" element={<Navigate to="/app" replace />} />
+        <Route path="/app/law-enforcement" element={<Navigate to="/app" replace />} />
+        <Route path="/app/sellers" element={<Navigate to="/app" replace />} />
+        <Route path="/app/features/*" element={<Navigate to="/app" replace />} />
+        <Route path="/app/vs-carfax" element={<Navigate to="/vs-carfax" replace />} />
+        <Route path="/app/vs-imeiinfo" element={<Navigate to="/vs-imeiinfo" replace />} />
+        <Route path="/app/vs-imeipro" element={<Navigate to="/vs-imeiinfo" replace />} />
+        <Route path="/app/vs-stolen-register" element={<Navigate to="/pricing" replace />} />
+        
+        {/* International VIN checks → /verify */}
+        <Route path="/australia-vin-check" element={<Navigate to="/verify" replace />} />
+        <Route path="/canada-vin-check" element={<Navigate to="/verify" replace />} />
+        <Route path="/uk-vehicle-check" element={<Navigate to="/verify" replace />} />
+        
+        {/* Blog posts that don't exist → blog index */}
+        <Route path="/blog/industry-insights-2024" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog/what-to-do-if-you-bought-stolen" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog/ai-verification-technology" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog/verification-data-privacy" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog/serial-numbers-stolen-goods-101" element={<Navigate to="/blog" replace />} />
         <Route path="/verify/pawnshops" element={<Navigate to="/verify" replace />} />
         
         {/* Educational/business pages → /about */}
