@@ -1,7 +1,7 @@
 project_id = "lxrdzbknktwlubbmlsqe"
 
-[functions.api-v1-check]
-verify_jwt = false
+[functions.gsc-api]
+verify_jwt = true
 
 [functions.create-checkout]
 verify_jwt = true
@@ -15,75 +15,41 @@ verify_jwt = true
 [functions.stripe-webhook]
 verify_jwt = false
 
-[functions.verify-firearm-hotgunz]
+[functions.universal-state-lookup]
 verify_jwt = true
 
-[functions.verify-checkmend]
+[functions.nicb-vincheck]
 verify_jwt = true
 
-[functions.verify-claude-analysis]
+[functions.indexnow-submit]
+verify_jwt = false
+
+[functions.sitemap-xml]
+verify_jwt = false
+
+[functions.consume-credit]
 verify_jwt = true
 
-[functions.enhanced-verification]
-verify_jwt = true
+[functions.api-v1-check]
+verify_jwt = false
+
+[functions.api-verify]
+verify_jwt = false
+
+[functions.badge-widget]
+verify_jwt = false
+
+[functions.send-stolen-item-alert]
+verify_jwt = false
+
+[functions.send-stolen-alert-email]
+verify_jwt = false
+
+[functions.process-stolen-notifications]
+verify_jwt = false
 
 [functions.enterprise-api]
 verify_jwt = true
 
 [functions.marketplace-integration]
 verify_jwt = true
-
-[functions.sitemap-xml]
-verify_jwt = false
-
-[functions.badge-widget]
-verify_jwt = false
-
-[functions.api-verify]
-verify_jwt = false
-
-[functions.consume-credit]
-verify_jwt = true
-
-[functions.arizona-theft-lookup]
-verify_jwt = true
-
-[functions.nicb-vincheck]
-verify_jwt = true
-
-[functions.send-stolen-item-alert]
-verify_jwt = false
-
-[functions.process-stolen-notifications]
-verify_jwt = false
-
-[functions.ai-html-parser]
-verify_jwt = true
-
-[functions.send-stolen-alert-email]
-verify_jwt = false
-
-[functions.web-crawler]
-verify_jwt = true
-
-[functions.florida-theft-lookup]
-verify_jwt = true
-
-[functions.texas-theft-lookup]
-verify_jwt = true
-
-[functions.california-theft-lookup]
-verify_jwt = true
-
-[functions.new-york-theft-lookup]
-verify_jwt = true
-
-[functions.universal-state-lookup]
-verify_jwt = true
-
-[functions.indexnow-submit]
-verify_jwt = false
-
-[functions.gsc-api]
-verify_jwt = true
-

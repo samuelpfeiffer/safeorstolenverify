@@ -24,11 +24,11 @@ export const useArizonaTheftLookup = () => {
     setResult(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('arizona-theft-lookup', {
+      const { data, error } = await supabase.functions.invoke('universal-state-lookup', {
         body: {
+          stateCode: 'AZ',
           type: 'license_plate',
-          value: plate,
-          state: state
+          value: plate
         }
       });
 
@@ -57,8 +57,9 @@ export const useArizonaTheftLookup = () => {
     setResult(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('arizona-theft-lookup', {
+      const { data, error } = await supabase.functions.invoke('universal-state-lookup', {
         body: {
+          stateCode: 'AZ',
           type: 'vin',
           value: vin
         }

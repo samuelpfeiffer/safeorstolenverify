@@ -21,7 +21,7 @@ export const useRealVerification = () => {
     try {
       console.log('Starting verification for:', serialNumber, itemType);
       
-      const { data, error } = await supabase.functions.invoke('verify-item', {
+      const { data, error } = await supabase.functions.invoke('universal-state-lookup', {
         body: {
           serialNumber: serialNumber.trim(),
           itemType: itemType

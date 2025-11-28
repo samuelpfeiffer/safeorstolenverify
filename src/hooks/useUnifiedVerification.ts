@@ -41,60 +41,23 @@ export const useUnifiedVerification = () => {
         });
       }
 
-      // Route to appropriate providers based on detected type
-      if (detectedType === 'vehicle' || /^[A-HJ-NPR-Z0-9]{17}$/i.test(sanitizedInput)) {
-        // VIN detected - check multiple vehicle databases
-        const [nicbResult, arizonaResult, carfaxResult] = await Promise.allSettled([
-          supabase.functions.invoke('nicb-vincheck', { body: { vin: sanitizedInput } }),
-          supabase.functions.invoke('arizona-theft-lookup', { body: { type: 'vin', value: sanitizedInput } }),
-          supabase.functions.invoke('carfax-vin-lookup', { body: { vin: sanitizedInput } })
-        ]);
+      // Use universal-state-lookup for all verification types
+      const { data, error } = await supabase.functions.invoke('universal-state-lookup', {
+        body: {
+          identifier: sanitizedInput,
+          itemType: detectedType
+        }
+      });
 
-        if (nicbResult.status === 'fulfilled' && nicbResult.value.data) {
-          providers.push({ name: 'NICB VINCheck', result: nicbResult.value.data });
-        }
-        if (arizonaResult.status === 'fulfilled' && arizonaResult.value.data) {
-          providers.push({ name: 'Arizona TheftAZ', result: arizonaResult.value.data });
-        }
-        if (carfaxResult.status === 'fulfilled' && carfaxResult.value.data) {
-          providers.push({ name: 'CarFax', result: carfaxResult.value.data });
-        }
-      }
-      else if (detectedType === 'smartphone' || /^\d{14,15}$/.test(sanitizedInput)) {
-        // IMEI detected - check phone databases
-        const [gsmaResult, checkmendResult, imeiInfoResult] = await Promise.allSettled([
-          supabase.functions.invoke('gsma-device-check', { body: { imei: sanitizedInput } }),
-          supabase.functions.invoke('verify-checkmend', { body: { serialNumber: sanitizedInput, itemType: 'smartphone' } }),
-          supabase.functions.invoke('imei-info-lookup', { body: { imei: sanitizedInput } })
-        ]);
-
-        if (gsmaResult.status === 'fulfilled' && gsmaResult.value.data) {
-          providers.push({ name: 'GSMA Device Check', result: gsmaResult.value.data });
-        }
-        if (checkmendResult.status === 'fulfilled' && checkmendResult.value.data) {
-          providers.push({ name: 'CheckMEND', result: checkmendResult.value.data });
-        }
-        if (imeiInfoResult.status === 'fulfilled' && imeiInfoResult.value.data) {
-          providers.push({ name: 'IMEI.info', result: imeiInfoResult.value.data });
-        }
-      }
-      else {
-        // Generic serial number - check multiple databases
-        const [immobilizeResult, checkmendResult, bikeResult] = await Promise.allSettled([
-          supabase.functions.invoke('immobilize-lookup', { body: { serialNumber: sanitizedInput, itemType: detectedType } }),
-          supabase.functions.invoke('verify-checkmend', { body: { serialNumber: sanitizedInput, itemType: detectedType } }),
-          supabase.functions.invoke('verify-item', { body: { serialNumber: sanitizedInput, itemType: 'bike' } })
-        ]);
-
-        if (immobilizeResult.status === 'fulfilled' && immobilizeResult.value.data) {
-          providers.push({ name: 'Immobilize Registry', result: immobilizeResult.value.data });
-        }
-        if (checkmendResult.status === 'fulfilled' && checkmendResult.value.data) {
-          providers.push({ name: 'CheckMEND', result: checkmendResult.value.data });
-        }
-        if (bikeResult.status === 'fulfilled' && bikeResult.value.data?.result) {
-          providers.push({ name: 'Bike Index', result: bikeResult.value.data.result });
-        }
+      if (data?.success) {
+        providers.push({ 
+          name: 'Universal State Lookup', 
+          result: {
+            status: data.status,
+            message: data.message,
+            details: data.details
+          }
+        });
       }
 
       if (providers.length === 0) {

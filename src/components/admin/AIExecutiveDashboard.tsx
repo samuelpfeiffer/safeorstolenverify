@@ -86,13 +86,11 @@ export const AIExecutiveDashboard = () => {
   const runAutonomousSystem = async () => {
     setIsRunning(true);
     try {
-      const { data, error } = await supabase.functions.invoke('autonomous-master-scheduler');
-
-      if (error) throw error;
-
+      // Autonomous system temporarily disabled during cleanup
       toast({
-        title: "✅ AI Executive System Complete",
-        description: data?.summary ? `${data.summary.successful}/${data.summary.total_operations} operations successful` : "System running",
+        title: "System Temporarily Unavailable",
+        description: "AI Executive System is being optimized",
+        variant: "destructive",
       });
 
       setTimeout(loadDashboardData, 2000);

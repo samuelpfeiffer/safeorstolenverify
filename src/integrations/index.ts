@@ -16,41 +16,32 @@ export const EdgeFunctions = {
   stripeWebhook: 'stripe-webhook',
   
   // Verification Functions
-  verifyFirearm: 'verify-firearm-hotgunz',
-  verifyCheckmend: 'verify-checkmend',
-  verifyClaudeAnalysis: 'verify-claude-analysis',
-  enhancedVerification: 'enhanced-verification',
-  
-  // External Source Scrapers
-  stolenRegisterCheck: 'stolen-register-check',
-  stolen911Check: 'stolen911-check',
-  stolenPropertyCheck: 'stolen-property-check',
-  stolenlostfoundCheck: 'stolenlostfound-check',
-  bikeIndexApi: 'bike-index-api',
-  webScraperVerification: 'web-scraper-verification',
+  universalStateLookup: 'universal-state-lookup',
+  nicbVincheck: 'nicb-vincheck',
   
   // API Functions
   apiV1Check: 'api-v1-check',
+  apiVerify: 'api-verify',
   enterpriseApi: 'enterprise-api',
+  consumeCredit: 'consume-credit',
   
   // Integration Functions
   marketplaceIntegration: 'marketplace-integration',
   
   // SEO Functions
   sitemapXml: 'sitemap-xml',
-  aiCompetitorAnalysis: 'ai-competitor-analysis',
-  aiContentOptimizer: 'ai-content-optimizer',
-  aiRankingAnalyzer: 'ai-ranking-analyzer',
+  indexnowSubmit: 'indexnow-submit',
   
-  // AI Parsing Functions
-  aiHtmlParser: 'ai-html-parser',
+  // Widget Functions
+  badgeWidget: 'badge-widget',
   
-  // State Theft Lookup Functions
-  floridaTheftLookup: 'florida-theft-lookup',
-  texasTheftLookup: 'texas-theft-lookup',
-  californiaTheftLookup: 'california-theft-lookup',
-  newYorkTheftLookup: 'new-york-theft-lookup',
-  universalStateLookup: 'universal-state-lookup',
+  // Notification Functions
+  sendStolenItemAlert: 'send-stolen-item-alert',
+  sendStolenAlertEmail: 'send-stolen-alert-email',
+  processStolenNotifications: 'process-stolen-notifications',
+  
+  // GSC Integration
+  gscApi: 'gsc-api',
 } as const;
 
 /**
