@@ -57,7 +57,7 @@ export const ItemLandingPageTemplate = ({
           "name": step
         }))
       },
-      {
+      ...(content.faqs && content.faqs.length > 0 ? [{
         "@type": "FAQPage",
         "mainEntity": content.faqs.map(faq => ({
           "@type": "Question",
@@ -67,7 +67,7 @@ export const ItemLandingPageTemplate = ({
             "text": faq.answer
           }
         }))
-      }
+      }] : [])
     ]
   };
 
