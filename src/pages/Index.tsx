@@ -7,11 +7,13 @@ import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
+import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Smartphone, Car, Laptop, Shield, Zap, Globe, Download, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/good_photo_for_sos-8.png';
+import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 
 const Index = () => {
   return (
@@ -83,6 +85,7 @@ const Index = () => {
               </div>
               
               <div className="flex flex-wrap justify-center gap-4 pt-4">
+                <LiveStatsCounter />
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="h-5 w-5 text-primary" />
                   Processing 5,000+ Checks
@@ -175,6 +178,9 @@ const Index = () => {
         {/* Trust Signals */}
         <TrustSignals />
       </div>
+      
+      {/* Exit Intent Popup */}
+      <ExitIntentPopup />
     </>
   );
 };

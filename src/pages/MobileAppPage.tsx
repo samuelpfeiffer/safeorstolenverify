@@ -52,15 +52,20 @@ const MobileAppPage = () => {
                 Barcode scanning in 3 seconds vs 30+ seconds typing. Works in all 50 US states + international coverage.
               </p>
               
-              <div className="flex flex-wrap justify-center gap-4 pt-6">
-                <Button size="lg" className="px-8">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download for iOS
-                </Button>
-                <Button size="lg" variant="outline" className="px-8">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download for Android
-                </Button>
+              <div className="space-y-4 pt-6">
+                <p className="text-sm text-muted-foreground">
+                  SafeOrStolen is a Progressive Web App (PWA) - install directly from your browser!
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <Button size="lg" className="px-8" onClick={() => window.location.href = '/install-app'}>
+                    <Smartphone className="mr-2 h-5 w-5" />
+                    Install on iOS
+                  </Button>
+                  <Button size="lg" variant="outline" className="px-8" onClick={() => window.location.href = '/install-app'}>
+                    <Smartphone className="mr-2 h-5 w-5" />
+                    Install on Android
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -172,15 +177,18 @@ const MobileAppPage = () => {
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" className="px-8">
-                  <Download className="mr-2 h-5 w-5" />
-                  iOS App Store
+                <Button size="lg" className="px-8" onClick={() => window.location.href = '/install-app'}>
+                  <Smartphone className="mr-2 h-5 w-5" />
+                  Install PWA on iOS
                 </Button>
-                <Button size="lg" variant="outline" className="px-8">
-                  <Download className="mr-2 h-5 w-5" />
-                  Google Play Store
+                <Button size="lg" variant="outline" className="px-8" onClick={() => window.location.href = '/install-app'}>
+                  <Smartphone className="mr-2 h-5 w-5" />
+                  Install PWA on Android
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground mt-4">
+                No app stores needed - install directly from Safari (iOS) or Chrome (Android)
+              </p>
             </div>
           </div>
         </section>

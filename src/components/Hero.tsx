@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useImageOptimization } from '@/hooks/useImageOptimization';
 import heroDeviceImage from '@/assets/good_photo_for_sos-8.png';
+import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 
 // Import hero background
 const heroBackground = '/generated-assets/hero-background.jpg';
@@ -36,12 +37,15 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 py-16">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          {/* AI-Powered Badge */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-sos-orange/10 to-sos-lime/10 backdrop-blur-sm border border-sos-orange/30 rounded-full px-6 py-2 shadow-lg">
-            <div className="w-2 h-2 bg-sos-orange rounded-full animate-pulse" />
-            <p className="text-sm md:text-base font-semibold bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text text-transparent">
-              AI-Powered Verification • Multi-Source Database • Instant Results
-            </p>
+          {/* AI-Powered Badge + Live Stats */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-sos-orange/10 to-sos-lime/10 backdrop-blur-sm border border-sos-orange/30 rounded-full px-6 py-2 shadow-lg">
+              <div className="w-2 h-2 bg-sos-orange rounded-full animate-pulse" />
+              <p className="text-sm md:text-base font-semibold bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text text-transparent">
+                AI-Powered Verification • Multi-Source Database • Instant Results
+              </p>
+            </div>
+            <LiveStatsCounter />
           </div>
 
           {/* Trust badges with glassmorphism */}
