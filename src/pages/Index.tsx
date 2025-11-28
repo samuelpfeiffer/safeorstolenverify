@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Smartphone, Car, Laptop, Shield, Zap, Globe, Download, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import heroImage from '@/assets/good_photo_for_sos-8.png';
 
 const Index = () => {
   const structuredData = [
@@ -121,6 +122,21 @@ const Index = () => {
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="h-5 w-5 text-primary" />
                   All 50 States + International
+                </div>
+              </div>
+
+              {/* Hero Image */}
+              <div className="mt-12 max-w-4xl mx-auto">
+                <div className="relative group">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
+                  <img 
+                    src={heroImage} 
+                    alt="SafeOrStolen verification app showing item verified status" 
+                    className="relative w-full h-auto rounded-2xl shadow-2xl border border-primary/30"
+                    loading="eager"
+                    width={1200}
+                    height={675}
+                  />
                 </div>
               </div>
             </div>
