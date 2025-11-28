@@ -267,7 +267,6 @@ export const AppRoutes = () => {
         <Route path="/avoid-buying-stolen-goods" element={<Navigate to="/about" replace />} />
         <Route path="/resellers" element={<Navigate to="/about" replace />} />
         <Route path="/pawn-shops" element={<Navigate to="/about" replace />} />
-        <Route path="/for-businesses" element={<Navigate to="/about" replace />} />
         <Route path="/for-consumers" element={<Navigate to="/about" replace />} />
         <Route path="/for-phone-repair-shops" element={<Navigate to="/about" replace />} />
         <Route path="/features" element={<Navigate to="/about" replace />} />
@@ -298,9 +297,8 @@ export const AppRoutes = () => {
         <Route path="/for-businesses" element={<ForBusinesses />} />
         
         
-        {/* License plate lookups → /verify */}
+        {/* License plate lookups → /verify (wildcard catch-all only) */}
         <Route path="/arizona-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
-        <Route path="/florida-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
         <Route path="/texas-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
         <Route path="/california-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
         <Route path="/new-york-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
