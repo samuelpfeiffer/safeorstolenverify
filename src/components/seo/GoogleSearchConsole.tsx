@@ -20,40 +20,6 @@ export const GoogleSearchConsole: React.FC = () => {
       <meta name="rating" content="general" />
       <meta name="distribution" content="global" />
       
-      {/* Structured Data for Enhanced Search Results */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How do I check if something is stolen?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Enter the item's IMEI, serial number, or VIN into our verification system. We'll instantly check against global stolen goods databases to tell you if it's safe to buy."
-              }
-            },
-            {
-              "@type": "Question", 
-              "name": "Is the stolen goods check free?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, we offer free verification checks for IMEI, serial numbers, and VIN numbers. Premium features are available for enhanced verification."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What types of items can I verify?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can verify phones (IMEI), cars (VIN), bikes, electronics, firearms, and any item with a serial number. We support verification for all major categories of secondhand goods."
-              }
-            }
-          ]
-        })}
-      </script>
-
       {/* Breadcrumb Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify({

@@ -15,7 +15,10 @@ export const SOSFooter: React.FC = () => {
         { label: 'IMEI Checker', to: '/imei-checker' },
         { label: 'VIN Checker', to: '/vin-checker' },
         { label: 'Serial Checker', to: '/serial-number-checker' },
-        { label: 'Mobile App', to: '/mobile-app' },
+        { label: 'Check Phone', to: '/check-phone' },
+        { label: 'Check Car', to: '/check-car' },
+        { label: 'Check Bike', to: '/check-bike' },
+        { label: 'Mobile App', to: '/app' },
       ]
     },
     {
@@ -34,6 +37,8 @@ export const SOSFooter: React.FC = () => {
         { label: 'Blog & Guides', to: '/blog' },
         { label: 'How It Works', to: '/how-it-works' },
         { label: 'FAQ', to: '/faq' },
+        { label: 'Pricing', to: '/pricing' },
+        { label: 'Testimonials', to: '/testimonials' },
         { label: 'State VIN Lookups', to: '/california-vin-lookup' },
         { label: 'Verification Guide', to: '/blog/complete-verification-guide' },
         { label: 'Safety Tips', to: '/blog/ultimate-marketplace-buyers-guide' },
