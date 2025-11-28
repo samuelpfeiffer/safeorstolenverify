@@ -131,7 +131,7 @@ export const SOSFooter: React.FC = () => {
             {/* Social Media Links */}
             <div className="flex items-center gap-4">
               <button
-                onClick={() => handleExternalNavigation('https://www.youtube.com/@safeorstolenofficially', true)}
+                onClick={() => handleExternalNavigation('https://www.youtube.com/@safeorstolen', true)}
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Visit SafeOrStolen YouTube channel"
               >
