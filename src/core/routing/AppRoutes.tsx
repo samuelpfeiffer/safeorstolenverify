@@ -114,6 +114,7 @@ const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
 const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDashboard'));
 const GSCConnectPage = lazy(() => import('@/pages/admin/GSCConnectPage'));
+const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
 const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
 
 export const AppRoutes = () => {
@@ -383,6 +384,7 @@ export const AppRoutes = () => {
         <Route path="/admin/autonomous-ai" element={<AutonomousAIDashboard />} />
         <Route path="/admin/gsc-status" element={<GSCMonitoringDashboard />} />
         <Route path="/admin/gsc-connect" element={<GSCConnectPage />} />
+        <Route path="/admin/gsc-callback" element={<GSCCallbackPage />} />
         <Route path="/admin/indexnow" element={<TriggerIndexNowPage />} />
         
         {/* 404 for everything else */}
