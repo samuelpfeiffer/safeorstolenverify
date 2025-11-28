@@ -17,7 +17,7 @@ export interface PageSEOConfig {
  * Generate SEO-optimized title with brand consistency
  */
 export const generateSEOTitle = (pageTitle: string, includeBrand = true): string => {
-  const brand = 'Safe or Stolen';
+  const brand = 'SafeOrStolen';
   const maxLength = 60;
   
   if (!includeBrand) return pageTitle.slice(0, maxLength);
