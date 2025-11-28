@@ -43,7 +43,7 @@ export const createOrganizationSchema = () => ({
   "sameAs": [
     "https://twitter.com/safeorstolen",
     "https://linkedin.com/company/safeorstolen",
-    "https://www.youtube.com/@safeorstolenofficially",
+    "https://www.youtube.com/@safeorstolen",
     "https://facebook.com/safeorstolen"
   ],
   "areaServed": [
@@ -56,8 +56,7 @@ export const createOrganizationSchema = () => ({
     { "@type": "Country", "name": "Spain" },
     { "@type": "Country", "name": "Italy" },
     { "@type": "Country", "name": "Japan" },
-    { "@type": "Country", "name": "India" },
-    { "@type": "Place", "name": "Worldwide" }
+    { "@type": "Country", "name": "India" }
   ],
   "serviceArea": {
     "@type": "Place",
@@ -70,7 +69,6 @@ export const createOrganizationSchema = () => ({
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "+1-800-SOS-CHECK",
       "contactType": "customer service",
       "email": "support@safeorstolen.com",
       "availableLanguage": "English"
@@ -112,7 +110,6 @@ export const createOrganizationSchema = () => ({
     "International Marketplace Safety Pioneer"
   ],
   "globalLocationNumber": "Worldwide Service Provider",
-  "duns": "[DUNS_NUMBER_PLACEHOLDER]", // D-U-N-S Number if available
   "naics": "518210", // Data Processing, Hosting, and Related Services
   "isicV4": "6311", // Data processing and hosting services
   "numberOfEmployees": {
@@ -157,7 +154,6 @@ export const createServiceSchema = () => ({
   },
   "serviceType": "Consumer Protection and Multi-Database Stolen Goods Verification",
   "areaServed": [
-    "Worldwide",
     { "@type": "Country", "name": "United States" },
     { "@type": "Country", "name": "Canada" },
     { "@type": "Country", "name": "United Kingdom" },
@@ -171,8 +167,7 @@ export const createServiceSchema = () => ({
     { "@type": "Country", "name": "South Korea" },
     { "@type": "Country", "name": "India" },
     { "@type": "Country", "name": "Brazil" },
-    { "@type": "Country", "name": "Mexico" },
-    { "@type": "Place", "name": "Global" }
+    { "@type": "Country", "name": "Mexico" }
   ],
   "audience": {
     "@type": "Audience",
@@ -244,11 +239,15 @@ export const createLocalBusinessSchema = () => ({
   "legalName": "Safe or Stolen Corp.",
   "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
-  "telephone": "+1-800-SOS-CHECK",
   "email": "support@safeorstolen.com",
   "foundingDate": "2025-08",
   "taxID": "39-3892151",
-  "areaServed": "Worldwide",
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Country", "name": "Australia" }
+  ],
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": {
@@ -266,7 +265,6 @@ export const createLocalBusinessSchema = () => ({
     "streetAddress": "9303 W Gold Dust Ave",
     "postalCode": "85345"
   },
-  "openingHours": "Mo-Fr 09:00-17:00",
   "currenciesAccepted": "USD",
   "paymentAccepted": "Credit Card, Debit Card",
   "priceRange": "$",
