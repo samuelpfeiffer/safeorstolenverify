@@ -70,7 +70,7 @@ export const EnhancedPageSEO: React.FC<EnhancedPageSEOProps> = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/png" />
-      <meta property="og:site_name" content="Safe or Stolen" />
+      <meta property="og:site_name" content="SafeOrStolen" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card */}
@@ -83,8 +83,8 @@ export const EnhancedPageSEO: React.FC<EnhancedPageSEOProps> = ({
       
       {/* Additional Meta Tags */}
       <meta name="author" content="Safe or Stolen Team" />
-      <meta name="publisher" content="Safe or Stolen" />
-      <meta name="copyright" content="© 2024 Safe or Stolen. All rights reserved." />
+      <meta name="publisher" content="SafeOrStolen" />
+      <meta name="copyright" content="© 2024 SafeOrStolen. All rights reserved." />
       <meta name="theme-color" content="#1a1625" />
       
       {/* Alternate URLs for internationalization */}

@@ -1,8 +1,8 @@
 
 {
-  "name": "Safe or Stolen - Verify Before You Buy",
+  "name": "SafeOrStolen - Verify Before You Buy",
   "short_name": "SafeOrStolen",
-  "description": "Instantly verify if items are stolen before purchase. Protect yourself from fraud with real-time IMEI, VIN, and serial number verification.",
+  "description": "Instantly verify if items are safe or stolen before purchase. Protect yourself from fraud with real-time IMEI, VIN, and serial number verification.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#111827",

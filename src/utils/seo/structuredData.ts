@@ -6,9 +6,9 @@ import type { BlogPost } from './types';
 export const createOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Corporation",
-  "name": SITE_CONFIG.name,
-  "legalName": "Safe or Stolen Corp.",
-  "alternateName": ["SOS Verification Platform", "SafeOrStolen", "Trusted Verification Service"],
+  "name": "SafeOrStolen",
+  "legalName": "SAFEORSTOLEN",
+  "alternateName": ["Safe Or Stolen", "Safe or Stolen", "SOS", "safe or stolen"],
   "description": "Fast-growing stolen goods verification platform serving customers across the United States with international expansion underway. Multi-database IMEI, VIN, and serial number verification protecting consumers from unknowingly purchasing stolen items across all categories: vehicles, electronics, firearms, machinery, and specialty equipment. Checks via NICB, GSMA, CheckMEND, Bike Index and growing database partnerships.",
   "slogan": "Complete Multi-Database Verification - Protect Every Purchase",
   "url": SITE_CONFIG.url,
@@ -122,8 +122,8 @@ export const createOrganizationSchema = () => ({
 export const createWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": SITE_CONFIG.name,
-  "alternateName": "World's Leading Verification Platform",
+  "name": "SafeOrStolen",
+  "alternateName": ["Safe Or Stolen", "Safe or Stolen", "World's Leading Verification Platform"],
   "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
   "inLanguage": ["en", "es", "fr", "de", "ja", "pt", "it", "zh"],
@@ -149,7 +149,8 @@ export const createServiceSchema = () => ({
   "description": "Trusted stolen item verification service serving customers across the United States with expanding international coverage. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment. Check any IMEI, VIN, or serial number against verified databases including NICB, GSMA, CheckMEND, and Bike Index. Fast results in 30 seconds.",
   "provider": {
     "@type": "Organization",
-    "name": SITE_CONFIG.name,
+    "name": "SafeOrStolen",
+    "alternateName": ["Safe Or Stolen", "Safe or Stolen"],
     "url": SITE_CONFIG.url
   },
   "serviceType": "Consumer Protection and Multi-Database Stolen Goods Verification",
@@ -235,8 +236,9 @@ export const createLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${SITE_CONFIG.url}/#localbusiness`,
-  "name": SITE_CONFIG.name,
-  "legalName": "Safe or Stolen Corp.",
+  "name": "SafeOrStolen",
+  "legalName": "SAFEORSTOLEN",
+  "alternateName": ["Safe Or Stolen", "Safe or Stolen"],
   "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
   "email": "support@safeorstolen.com",
@@ -367,12 +369,12 @@ export const createArticleSchema = (post: BlogPost) => ({
   "dateModified": post.updated_at,
   "author": {
     "@type": "Organization",
-    "name": SITE_CONFIG.name,
+    "name": "SafeOrStolen",
     "url": SITE_CONFIG.url
   },
   "publisher": {
     "@type": "Organization",
-    "name": SITE_CONFIG.name,
+    "name": "SafeOrStolen",
     "logo": {
       "@type": "ImageObject",
       "url": `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`
