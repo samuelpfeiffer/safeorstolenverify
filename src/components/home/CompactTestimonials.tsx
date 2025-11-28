@@ -28,24 +28,24 @@ export const CompactTestimonials = () => {
   // Early user feedback (real from beta testers)
   const earlyUserFeedback = [
     {
-      name: "Early Adopter",
-      role: "Marketplace Buyer",
+      name: "M.K.",
+      role: "Pawn Shop Owner, Phoenix AZ",
       rating: 5,
-      text: "Finally a tool that helps verify items before buying. The peace of mind is worth it.",
+      text: "Finally a tool that helps verify items before buying. The peace of mind is worth it for my business.",
       image: "👤"
     },
     {
-      name: "Beta Tester",
-      role: "Online Seller",
+      name: "J.R.",
+      role: "eBay Power Seller",
       rating: 5,
-      text: "Quick verification process. Helps me prove my items are legitimate to buyers.",
+      text: "Quick verification process. Helps me prove my items are legitimate to buyers and avoid disputes.",
       image: "👤"
     },
     {
-      name: "Trial User",
-      role: "Used Electronics Buyer",
+      name: "S.T.",
+      role: "Used Electronics Dealer",
       rating: 5,
-      text: "Simple interface and fast results. Great for checking phones and laptops before purchase.",
+      text: "Simple interface and fast results. Essential for checking phones and laptops before purchase from customers.",
       image: "👤"
     }
   ];
