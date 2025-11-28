@@ -171,11 +171,7 @@ const PrivacyPage: React.FC = () => {
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
                 <br />
-                Email: <a href="mailto:safeorstolenmail@gmail.com" className="text-sos-orange hover:underline">safeorstolenmail@gmail.com</a>
-                <br />
-                Phone: <a href="tel:+12062492203" className="text-sos-orange hover:underline">(206) 249-2203</a>
-                <br />
-                Founder: Sam Pfeiffer
+                Email: <a href="mailto:support@safeorstolen.com" className="text-sos-orange hover:underline">support@safeorstolen.com</a>
               </p>
             </section>
           </CardContent>

@@ -152,7 +152,7 @@ const FAQPage = () => {
         },
         {
           question: "How is SafeOrStolen like Carfax?",
-          answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect you from buying stolen goods of any type, not just cars."
+          answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type, not just cars."
         }
       ]
     }
@@ -235,7 +235,7 @@ const FAQPage = () => {
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-4 text-foreground">Need More Help?</h2>
               <p className="text-muted-foreground mb-6">
-                Contact us at <a href="mailto:safeorstolenmail@gmail.com" className="text-primary hover:underline">safeorstolenmail@gmail.com</a> or <a href="tel:+12062492203" className="text-primary hover:underline">(206) 249-2203</a>
+                Contact us at <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>
               </p>
             </div>
           </div>
