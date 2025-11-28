@@ -169,9 +169,34 @@ serve(async (req) => {
 
       case 'search-analytics': {
         const body = await req.json();
-        const { startDate, endDate, dimensions } = body;
+        const { 
+          startDate, 
+          endDate, 
+          dimensions,
+          type,
+          dimensionFilterGroups,
+          aggregationType,
+          rowLimit,
+          startRow,
+          dataState
+        } = body;
         
         const accessToken = await getAccessToken(supabaseClient);
+        
+        // Build request body according to Google API specification
+        const requestBody: any = {
+          startDate,
+          endDate,
+          dimensions: dimensions || ['query', 'page'],
+          rowLimit: rowLimit || 1000,
+        };
+
+        // Add optional parameters if provided
+        if (type) requestBody.type = type;
+        if (dimensionFilterGroups) requestBody.dimensionFilterGroups = dimensionFilterGroups;
+        if (aggregationType) requestBody.aggregationType = aggregationType;
+        if (startRow !== undefined) requestBody.startRow = startRow;
+        if (dataState) requestBody.dataState = dataState;
         
         const response = await fetch(
           `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(GSC_PROPERTY_URL)}/searchAnalytics/query`,
@@ -181,12 +206,7 @@ serve(async (req) => {
               'Authorization': `Bearer ${accessToken}`,
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              startDate,
-              endDate,
-              dimensions: dimensions || ['query', 'page'],
-              rowLimit: 1000,
-            }),
+            body: JSON.stringify(requestBody),
           }
         );
 
@@ -199,7 +219,7 @@ serve(async (req) => {
         // Cache result
         await supabaseClient.from('gsc_performance_cache').insert({
           data_type: 'search_analytics',
-          query_params: { startDate, endDate, dimensions },
+          query_params: requestBody,
           data: result,
           expires_at: new Date(Date.now() + 3600000).toISOString(), // 1 hour cache
         });
