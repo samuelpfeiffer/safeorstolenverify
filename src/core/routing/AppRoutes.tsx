@@ -113,6 +113,7 @@ const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 // Admin Pages
 const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
 const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDashboard'));
+const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
 
 export const AppRoutes = () => {
   return (
@@ -380,6 +381,7 @@ export const AppRoutes = () => {
         {/* Admin Routes */}
         <Route path="/admin/autonomous-ai" element={<AutonomousAIDashboard />} />
         <Route path="/admin/gsc-status" element={<GSCMonitoringDashboard />} />
+        <Route path="/admin/indexnow" element={<TriggerIndexNowPage />} />
         
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />
