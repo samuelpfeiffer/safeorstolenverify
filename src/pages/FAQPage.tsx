@@ -151,8 +151,8 @@ const FAQPage = () => {
           answer: "Yes! SafeOrStolen offers full verification coverage across all 50 US states plus international support for 45+ countries including Canada, UK, Australia, and most European Union nations. We check against Interpol databases and international stolen property registries for comprehensive global coverage."
         },
         {
-          question: "How is SafeOrStolen like Carfax?",
-          answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type, not just cars."
+          question: "How fast is SafeOrStolen verification?",
+          answer: "SafeOrStolen verifies if secondhand items are stolen in just 3 seconds. We check phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools against multiple stolen goods databases simultaneously. Unlike other services that only check one item type or take 30+ seconds, our universal platform provides instant verification for all item types to protect buyers and sellers."
         }
       ]
     }

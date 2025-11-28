@@ -20,7 +20,7 @@ const Index = () => {
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com",
       "logo": "https://safeorstolen.com/logo.png",
-      "description": "Like Carfax for everything. Verify serial numbers, IMEI, VIN, license plates globally across all 50 US states + international. Protect buyers and sellers.",
+      "description": "Check if secondhand items are stolen in 3 seconds. Verify serial numbers, IMEI, VIN, license plates globally across all 50 US states + international. Protect buyers and sellers.",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "support@safeorstolen.com",
@@ -43,9 +43,9 @@ const Index = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen: Carfax for Everything | Verify IMEI VIN Serial Numbers Globally"
-        description="Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. Protect buyers and sellers. 2 free checks."
-        keywords="like carfax for everything, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide, protect buyers and sellers"
+        title="SafeOrStolen: Check If Secondhand Items Are Stolen in 3 Seconds | Verify IMEI VIN Serial Numbers"
+        description="Check if secondhand items are stolen in 3 seconds. Verify phones, vehicles, boats, firearms, electronics. Serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. Protect buyers and sellers. 2 free checks."
+        keywords="check if stolen, secondhand items verification, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide, protect buyers and sellers"
         canonical="/"
         structuredData={structuredData}
       />
@@ -53,8 +53,8 @@ const Index = () => {
       {/* Bot-visible content */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen: Carfax for Everything - Verify Serial Numbers Globally</h1>
-          <p>Like Carfax but for phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools, equipment. Verify serial numbers, IMEI, VIN, license plates in all 50 US states + international coverage. Protect buyers and sellers.</p>
+          <h1>SafeOrStolen: Check If Secondhand Items Are Stolen in 3 Seconds</h1>
+          <p>Verify if secondhand items are stolen in 3 seconds. Check phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools, equipment. Verify serial numbers, IMEI, VIN, license plates in all 50 US states + international coverage. Protect buyers and sellers.</p>
           
           <h2>The Only Mobile App with Barcode Scanning</h2>
           <p>SafeOrStolen is the only global verification service with a mobile app. CheckMEND, IMEI.info, IMEIPro, LeadsOnline - none have apps. Download for iOS and Android.</p>
@@ -88,7 +88,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Carfax for Everything
+                Check If Secondhand Items Are Stolen in 3 Seconds
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
                 Verify Any Item Before You Buy and Sell
@@ -138,22 +138,22 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Like Carfax, But For Everything</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Universal Verification for All Items</h2>
                 <p className="text-lg text-muted-foreground">
-                  Carfax checks car history. We check ANY item's history.
+                  Instantly verify any secondhand item before you buy or sell.
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <Card>
                   <CardContent className="pt-6">
-                    <h3 className="font-bold text-xl mb-4">Carfax</h3>
+                    <h3 className="font-bold text-xl mb-4">Other Services</h3>
                     <ul className="space-y-2 text-muted-foreground">
-                      <li>✓ Vehicles only</li>
-                      <li>✓ VIN checks</li>
-                      <li>✓ Charges per report</li>
+                      <li>✗ Single item type only</li>
+                      <li>✗ Slow verification (30+ seconds)</li>
+                      <li>✗ Charges per report</li>
                       <li>✗ No mobile app</li>
-                      <li>✗ Limited item types</li>
+                      <li>✗ Limited coverage</li>
                     </ul>
                   </CardContent>
                 </Card>
