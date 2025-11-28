@@ -87,6 +87,18 @@ async function determineBlogGenerationSchedule(supabase: any) {
   const now = new Date();
   const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const todayEnd = new Date(todayStart.getTime() + 24 * 60 * 60 * 1000);
+  const dayOfWeek = now.getDay(); // 0 = Sunday, 1 = Monday, 3 = Wednesday, 5 = Friday
+
+  // STRICT M/W/F SCHEDULE: Only generate on Monday, Wednesday, Friday
+  const targetDays = [1, 3, 5]; // Monday, Wednesday, Friday
+  
+  if (!targetDays.includes(dayOfWeek)) {
+    return {
+      generate: false,
+      reason: 'Not a scheduled posting day (only Monday, Wednesday, Friday)',
+      nextGeneration: getNextTargetDay(now, targetDays).toISOString()
+    };
+  }
 
   // Check if we already generated a post today
   const { data: todayPosts } = await supabase
@@ -99,56 +111,14 @@ async function determineBlogGenerationSchedule(supabase: any) {
     return {
       generate: false,
       reason: 'Blog post already generated today',
-      nextGeneration: new Date(todayEnd.getTime()).toISOString()
+      nextGeneration: getNextTargetDay(now, targetDays).toISOString()
     };
   }
 
-  // Check posting frequency (don't post on weekends unless it's a special topic)
-  const dayOfWeek = now.getDay(); // 0 = Sunday, 6 = Saturday
-  const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-
-  if (isWeekend) {
-    // Only generate weekend posts occasionally (20% chance)
-    if (Math.random() > 0.2) {
-      return {
-        generate: false,
-        reason: 'Weekend - limited posting schedule',
-        nextGeneration: getNextMonday(now).toISOString()
-      };
-    }
-  }
-
-  // Check recent posting frequency (don't overwhelm readers)
-  const lastWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const { data: recentPosts } = await supabase
-    .from('blog_posts')
-    .select('id')
-    .gte('created_at', lastWeek.toISOString())
-    .eq('status', 'published');
-
-  if (recentPosts && recentPosts.length >= 5) {
-    return {
-      generate: false,
-      reason: 'Too many recent posts - maintaining quality over quantity',
-      nextGeneration: new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000).toISOString()
-    };
-  }
-
-  // Generate based on optimal posting time (Tuesday-Thursday perform best)
-  const optimalDays = [2, 3, 4]; // Tuesday, Wednesday, Thursday
-  if (optimalDays.includes(dayOfWeek)) {
-    return { generate: true, reason: 'Optimal posting day' };
-  }
-
-  // Generate with reduced probability on other weekdays
-  if (Math.random() > 0.4) {
-    return { generate: true, reason: 'Regular weekday posting' };
-  }
-
-  return {
-    generate: false,
-    reason: 'Scheduled for better engagement day',
-    nextGeneration: getNextOptimalDay(now).toISOString()
+  // It's M/W/F and no post today - GENERATE!
+  return { 
+    generate: true, 
+    reason: 'Scheduled posting day - Monday, Wednesday, or Friday at 9am UTC' 
   };
 }
 
@@ -182,15 +152,15 @@ function getNextMonday(date: Date): Date {
   return nextMonday;
 }
 
-function getNextOptimalDay(date: Date): Date {
-  const optimalDays = [2, 3, 4]; // Tuesday, Wednesday, Thursday
+function getNextTargetDay(date: Date, targetDays: number[]): Date {
   let nextDate = new Date(date);
   nextDate.setDate(date.getDate() + 1);
   
-  while (!optimalDays.includes(nextDate.getDay())) {
+  // Find next Monday, Wednesday, or Friday
+  while (!targetDays.includes(nextDate.getDay())) {
     nextDate.setDate(nextDate.getDate() + 1);
   }
   
-  nextDate.setHours(10, 0, 0, 0); // 10 AM posting time
+  nextDate.setHours(9, 0, 0, 0); // 9 AM UTC posting time
   return nextDate;
 }
