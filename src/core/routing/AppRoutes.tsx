@@ -110,6 +110,9 @@ const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 
+// Admin Pages
+const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
+
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<AppLoadingScreen />}>
@@ -329,6 +332,9 @@ export const AppRoutes = () => {
         <Route path="/contact" element={<Navigate to="/about" replace />} />
         <Route path="/support" element={<Navigate to="/about" replace />} />
         <Route path="/help" element={<Navigate to="/faq" replace />} />
+        
+        {/* Admin Routes */}
+        <Route path="/admin/autonomous-ai" element={<AutonomousAIDashboard />} />
         
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />
