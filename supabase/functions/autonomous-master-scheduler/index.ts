@@ -15,11 +15,12 @@ serve(async (req) => {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
-    console.log('[MASTER-SCHEDULER] Starting autonomous business operations...');
+    console.log('[MASTER-SCHEDULER] Starting enhanced autonomous business operations...');
 
     const results: any = {
       timestamp: new Date().toISOString(),
       operations: [],
+      schedule_type: 'master_orchestration',
     };
 
     // 1. Collect Metrics (runs every hour)
@@ -36,6 +37,38 @@ serve(async (req) => {
       results.operations.push({ step: 'metrics_collection', success: true, data: metricsResult });
     } catch (error) {
       results.operations.push({ step: 'metrics_collection', success: false, error: error.message });
+    }
+
+    // 1.5. SEO Executor (runs daily)
+    console.log('[MASTER-SCHEDULER] Step 1.5: Running SEO automation...');
+    try {
+      const seoResponse = await fetch(`${supabaseUrl}/functions/v1/seo-executor`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${supabaseServiceKey}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      const seoResult = await seoResponse.json();
+      results.operations.push({ step: 'seo_execution', success: true, data: seoResult });
+    } catch (error) {
+      results.operations.push({ step: 'seo_execution', success: false, error: error.message });
+    }
+
+    // 1.6. Competitor Tracking (runs weekly)
+    console.log('[MASTER-SCHEDULER] Step 1.6: Tracking competitors...');
+    try {
+      const competitorResponse = await fetch(`${supabaseUrl}/functions/v1/competitor-tracker`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${supabaseServiceKey}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      const competitorResult = await competitorResponse.json();
+      results.operations.push({ step: 'competitor_tracking', success: true, data: competitorResult });
+    } catch (error) {
+      results.operations.push({ step: 'competitor_tracking', success: false, error: error.message });
     }
 
     // 2. Generate Content (runs every 6 hours)
