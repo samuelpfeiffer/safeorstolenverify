@@ -33,6 +33,8 @@ const CheckLaptopPage = lazy(() => import('@/pages/CheckLaptopPage'));
 const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
+const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
+const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
 // All 50 State VIN Pages (Complete Nationwide Coverage)
 const AlabamaVinLookup = lazy(() => import('@/pages/AlabamaVinLookup'));
@@ -139,6 +141,14 @@ export const AppRoutes = () => {
         <Route path="/check-electronics" element={<CheckElectronicsPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
+        <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        
+        {/* Legacy URL redirects - Google has indexed these */}
+        <Route path="/for-consumers" element={<Navigate to="/about" replace />} />
+        <Route path="/case-studies" element={<Navigate to="/testimonials" replace />} />
+        <Route path="/auction-houses" element={<Navigate to="/for-auction-houses" replace />} />
+        <Route path="/accuracy" element={<Navigate to="/about" replace />} />
         
         {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}
         <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
