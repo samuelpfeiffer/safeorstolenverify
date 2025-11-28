@@ -6,53 +6,6 @@ import { Helmet } from 'react-helmet-async';
  */
 
 export const VoiceSearchOptimizer = () => {
-  const voiceSearchSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Hey Siri, how do I check if a phone is stolen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can check if a phone is stolen using the SafeOrStolen app on iPhone. Just download it from the App Store, dial *#06# to find the IMEI number, then enter it in the app to get instant results."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "OK Google, what's the best stolen phone checker app?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SafeOrStolen is the best stolen phone checker app available on both Android and iPhone. It's the only verification app that offers 4 free IMEI checks and includes firearm verification."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Alexa, can I check if a car is stolen for free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, you can check if a car is stolen for free using SafeOrStolen. They offer 4 free VIN checks through their mobile app on iPhone and Android."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is CheckMend available on iPhone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, CheckMend does not have an iPhone app or Android app. SafeOrStolen is the only stolen goods verification service with mobile apps for both iOS and Android."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What app can check if a gun is stolen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SafeOrStolen is the only mobile app that can check if a gun is stolen. Available on iPhone and Android, it verifies firearm serial numbers against stolen gun databases."
-        }
-      }
-    ]
-  };
-
   const speakableSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -104,9 +57,6 @@ export const VoiceSearchOptimizer = () => {
         {/* Answer length optimization (30-60 words for voice) */}
         <meta name="concise-answer" content="SafeOrStolen is the only verification app with mobile versions. Download free on iPhone or Android, get 4 free searches for IMEI, VIN, and firearms. Unlike CheckMend, it has real mobile apps." />
         
-        <script type="application/ld+json">
-          {JSON.stringify(voiceSearchSchema)}
-        </script>
         <script type="application/ld+json">
           {JSON.stringify(speakableSchema)}
         </script>
