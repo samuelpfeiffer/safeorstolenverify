@@ -4,6 +4,12 @@ import { Badge } from '@/components/ui/badge';
 import { Smartphone, Car, Laptop, Bike, Shield, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import mobileAppPreview from '@/assets/thumbnails/mobile-app-preview.jpg';
+import vinCheck from '@/assets/thumbnails/vin-check.jpg';
+import verificationSuccess from '@/assets/thumbnails/verification-success.jpg';
+import securityShield from '@/assets/thumbnails/security-shield.jpg';
+import aiPowered from '@/assets/thumbnails/ai-powered.jpg';
+import marketplaceSafety from '@/assets/thumbnails/marketplace-safety.jpg';
 
 export const WhatYouCanVerify = () => {
   const verificationTypes = [
@@ -13,7 +19,8 @@ export const WhatYouCanVerify = () => {
       subtitle: 'IMEI/ESN/MEID Verification',
       description: 'Verify any iPhone, Samsung, Google Pixel, or Android device. Check blacklist status, carrier lock, and theft reports across global databases.',
       items: ['iPhones (all models)', 'Samsung Galaxy', 'Google Pixel', 'OnePlus, Xiaomi, Huawei', 'iPads with cellular'],
-      link: '/imei-checker'
+      link: '/imei-checker',
+      image: mobileAppPreview
     },
     {
       icon: Car,
@@ -22,7 +29,8 @@ export const WhatYouCanVerify = () => {
       description: 'Check cars, trucks, motorcycles, RVs for stolen status, accident history, title issues, and odometer fraud. Free alternative to Carfax.',
       items: ['Cars & Trucks', 'Motorcycles', 'RVs & Trailers', 'ATVs & Boats', 'Classic vehicles'],
       link: '/vin-checker',
-      badge: 'Carfax Alternative'
+      badge: 'Carfax Alternative',
+      image: vinCheck
     },
     {
       icon: Laptop,
@@ -30,7 +38,8 @@ export const WhatYouCanVerify = () => {
       subtitle: 'Serial Number Verification',
       description: 'Verify laptops, cameras, gaming consoles, smartwatches, drones. Check against police databases and manufacturer records.',
       items: ['Laptops (Dell, HP, MacBook)', 'Cameras (Canon, Nikon, Sony)', 'Gaming consoles', 'Smartwatches', 'Drones & Tech'],
-      link: '/serial-number-checker'
+      link: '/serial-number-checker',
+      image: verificationSuccess
     },
     {
       icon: Bike,
@@ -38,7 +47,8 @@ export const WhatYouCanVerify = () => {
       subtitle: 'Frame Number Verification',
       description: 'Check bike frame numbers against BikeIndex, 529 Garage, and police stolen bike registries. Essential for expensive road and mountain bikes.',
       items: ['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX & Fixed gear', 'Vintage bicycles'],
-      link: '/serial-number-checker'
+      link: '/serial-number-checker',
+      image: marketplaceSafety
     },
     {
       icon: Shield,
@@ -47,7 +57,8 @@ export const WhatYouCanVerify = () => {
       description: 'Verify firearms serial numbers - the ONLY service that checks guns. Essential for pawn shops, gun shows, and private sales.',
       items: ['Handguns', 'Rifles', 'Shotguns', 'Antique firearms', 'Accessories'],
       link: '/firearms-check',
-      badge: 'Exclusive'
+      badge: 'Exclusive',
+      image: securityShield
     }
   ];
 
@@ -66,21 +77,31 @@ export const WhatYouCanVerify = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {verificationTypes.map((type, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-start justify-between mb-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
-                  <type.icon className="h-6 w-6 text-primary" />
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={type.image} 
+                  alt={type.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-start justify-between">
+                  <div className="bg-background/90 backdrop-blur-sm p-2 rounded-lg">
+                    <type.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  {type.badge && (
+                    <Badge variant="outline" className="border-primary text-primary bg-background/90 backdrop-blur-sm">
+                      {type.badge}
+                    </Badge>
+                  )}
                 </div>
-                {type.badge && (
-                  <Badge variant="outline" className="border-primary text-primary">
-                    {type.badge}
-                  </Badge>
-                )}
               </div>
               
-              <h3 className="text-xl font-semibold mb-2">{type.title}</h3>
-              <p className="text-sm text-muted-foreground font-medium mb-3">{type.subtitle}</p>
-              <p className="text-sm text-muted-foreground mb-4">{type.description}</p>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{type.title}</h3>
+                <p className="text-sm text-muted-foreground font-medium mb-3">{type.subtitle}</p>
+                <p className="text-sm text-muted-foreground mb-4">{type.description}</p>
               
               <div className="space-y-1 mb-4">
                 {type.items.map((item, idx) => (
@@ -91,11 +112,12 @@ export const WhatYouCanVerify = () => {
                 ))}
               </div>
 
-              <Button asChild variant="outline" className="w-full" size="sm">
-                <Link to={type.link}>
-                  Learn More →
-                </Link>
-              </Button>
+                <Button asChild variant="outline" className="w-full" size="sm">
+                  <Link to={type.link}>
+                    Learn More →
+                  </Link>
+                </Button>
+              </div>
             </Card>
           ))}
         </div>
