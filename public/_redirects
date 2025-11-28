@@ -36,6 +36,117 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-item-checker    /verify      301!
 
 # ============================================
+# LEGACY VERIFICATION URLS (Additional)
+# ============================================
+/how-do-i-check-if-stolen           /verify  301!
+/avoid-stolen-goods                 /verify  301!
+/stolen-goods-checker               /verify  301!
+/how-to-check-if-item-stolen        /verify  301!
+/check-stolen-database              /verify  301!
+/stolen-items-list                  /verify  301!
+/stolen-property-check              /verify  301!
+/stolen-property-lookup             /verify  301!
+/check-stolen-before-buying         /verify  301!
+/research-stolen-items              /verify  301!
+/investigate-stolen-property        /verify  301!
+/lookup-stolen-items                /verify  301!
+/stolen-database-search             /data-sources  301!
+/stolen-item-scanner                /app  301!
+
+# ============================================
+# BUSINESS/INFO PAGES → /about
+# ============================================
+/trust-verification                 /about  301!
+/accuracy                          /about  301!
+/pawn-shops                        /for-pawn-shops  301!
+/auction-houses                    /for-auction-houses  301!
+/resellers                         /about  301!
+/for-phone-repair-shops            /about  301!
+/data-sources                      /about  301!
+/features                          /about  301!
+/contact                           /about  301!
+/marketplace-integration           /about  301!
+/how-it-works-detailed             /how-it-works  301!
+/our-story                         /about  301!
+/for-consumers                     /  301!
+/stolen-items-database             /data-sources  301!
+
+# ============================================
+# CASE STUDIES/TESTIMONIALS
+# ============================================
+/case-studies                      /testimonials  301!
+
+# ============================================
+# APP DOWNLOAD VARIATIONS
+# ============================================
+/pwa-app                           /app  301!
+/app/install-guide                 /app  301!
+/app/phoenix                       /app  301!
+/app/houston                       /app  301!
+/app/miami                         /app  301!
+/app/download                      /app  301!
+/secondhand-research-app           /app  301!
+
+# ============================================
+# COMPARISON/COMPETITOR PAGES → /pricing
+# ============================================
+/vs-carfax                         /pricing  301!
+/vs-stolenregister                 /pricing  301!
+/vs-nicb                           /pricing  301!
+/carfax-alternative                /vs-carfax  301!
+/competitor-alternatives           /pricing  301!
+/cheaper-than-carfax               /vs-carfax  301!
+/free-vin-check-alternative        /vs-carfax  301!
+
+# ============================================
+# ITEM-SPECIFIC VARIATIONS → CANONICAL PAGES
+# ============================================
+/check-iphone                      /check-phone  301!
+/check-iphone-14                   /check-phone  301!
+/check-iphone-15                   /check-phone  301!
+/check-samsung-phone               /check-phone  301!
+/check-android-phone               /check-phone  301!
+/check-xbox                        /check-electronics  301!
+/check-playstation                 /check-electronics  301!
+/check-nintendo-switch             /check-electronics  301!
+/check-camera                      /check-electronics  301!
+/check-ipad                        /check-electronics  301!
+/check-tablet                      /check-electronics  301!
+/check-macbook                     /check-laptop  301!
+/check-apple-watch                 /check-electronics  301!
+/check-toyota                      /check-car  301!
+/check-honda                       /check-car  301!
+/check-ford                        /check-car  301!
+/check-bmw                         /check-car  301!
+/check-mercedes                    /check-car  301!
+/check-tesla                       /check-car  301!
+/check-motorcycle                  /check-car  301!
+
+# ============================================
+# HOW-TO VARIATIONS → ITEM PAGES
+# ============================================
+/how-to-verify-phone-not-stolen                    /check-phone  301!
+/how-to-check-if-iphone-is-stolen                  /check-phone  301!
+/how-to-avoid-buying-stolen-iphone                 /check-phone  301!
+/how-to-check-if-car-is-stolen-before-buying       /check-car    301!
+
+# ============================================
+# MARKETPLACE VERIFICATION PAGES
+# ============================================
+/craigslist-verification-guide                      /verify  301!
+/subscriptions                                      /pricing  301!
+/refunds                                           /terms  301!
+/for-used-car-dealers                              /for-dealers  301!
+
+# ============================================
+# WILDCARD REDIRECTS (MUST BE NEAR END)
+# ============================================
+/guides/*                          /about  301!
+/city/*                            /verify  301!
+/state/*                           /verify  301!
+/statistics/*                      /about  301!
+
+# ============================================
 # BLOG POST REDIRECTS (GSC 404s)
 # ============================================
 /blog/protect-yourself-buying-used-electronics                 /blog            301!
