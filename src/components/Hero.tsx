@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useImageOptimization } from '@/hooks/useImageOptimization';
-import heroDeviceImage from '@/assets/hero-verification-device.png';
+import heroDeviceImage from '@/assets/hero-verified-item.jpg';
 
 // Import hero background
 const heroBackground = '/generated-assets/hero-background.jpg';
