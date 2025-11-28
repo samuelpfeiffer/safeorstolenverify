@@ -177,10 +177,16 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Free Trial",
+            "description": "2 free verification checks, 14-day trial period for stolen item verification",
+            "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
               "name": "SafeOrStolen"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "0",
@@ -192,10 +198,16 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Starter Plan",
+            "description": "10 verification checks per month for stolen item verification",
+            "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
               "name": "SafeOrStolen"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "2.99",
@@ -208,10 +220,16 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Personal Plan",
+            "description": "Unlimited verification checks for stolen item verification",
+            "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
               "name": "SafeOrStolen"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "4.99",
@@ -224,10 +242,16 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Pro Plan",
+            "description": "Unlimited checks, bulk verification, priority support for stolen item verification",
+            "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
               "name": "SafeOrStolen"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "9",
@@ -240,10 +264,16 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Business Plan",
+            "description": "Everything in Pro plus team features, API access, white-label option for stolen item verification",
+            "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
               "name": "SafeOrStolen"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "29.99",
@@ -256,10 +286,16 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Enterprise Plan",
+            "description": "Custom integration, dedicated support, unlimited API calls, SLA guarantee for stolen item verification",
+            "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
               "name": "SafeOrStolen"
             },
+            "areaServed": [
+              { "@type": "Country", "name": "United States" },
+              { "@type": "Country", "name": "Canada" }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "99",

@@ -193,6 +193,91 @@ export const validateBreadcrumbListSchema = (schema: any): SchemaValidationResul
 };
 
 /**
+ * Validates Organization schema
+ */
+export const validateOrganizationSchema = (schema: any): SchemaValidationResult => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  // Required fields
+  if (!schema.name) errors.push('Organization schema missing required field: name');
+  if (!schema.url) errors.push('Organization schema missing required field: url');
+  
+  // Check for placeholder values
+  if (JSON.stringify(schema).includes('PLACEHOLDER')) {
+    errors.push('Organization schema contains placeholder values that must be replaced');
+  }
+  
+  // Recommended fields
+  if (!schema.logo) warnings.push('Organization schema missing recommended field: logo');
+  if (!schema.description) warnings.push('Organization schema missing recommended field: description');
+  if (!schema.contactPoint) warnings.push('Organization schema missing recommended field: contactPoint');
+  
+  // Validate telephone format if present
+  if (schema.contactPoint && Array.isArray(schema.contactPoint)) {
+    schema.contactPoint.forEach((contact: any, index: number) => {
+      if (contact.telephone && !/^\+\d{1,3}-\d{3}-\d{3}-\d{4}$/.test(contact.telephone)) {
+        warnings.push(`Contact point ${index} has invalid telephone format (should be +1-XXX-XXX-XXXX)`);
+      }
+    });
+  }
+  
+  // Validate URLs
+  if (schema.sameAs && Array.isArray(schema.sameAs)) {
+    schema.sameAs.forEach((url: string) => {
+      try {
+        new URL(url);
+      } catch {
+        errors.push(`Invalid social media URL: ${url}`);
+      }
+    });
+  }
+
+  return {
+    isValid: errors.length === 0,
+    errors,
+    warnings
+  };
+};
+
+/**
+ * Validates FAQPage schema
+ */
+export const validateFAQPageSchema = (schema: any): SchemaValidationResult => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (!schema.mainEntity) {
+    errors.push('FAQPage schema missing required field: mainEntity');
+  } else if (!Array.isArray(schema.mainEntity)) {
+    errors.push('FAQPage mainEntity must be an array');
+  } else {
+    schema.mainEntity.forEach((item: any, index: number) => {
+      if (item['@type'] !== 'Question') {
+        errors.push(`FAQ item ${index} must have @type: "Question"`);
+      }
+      if (!item.name) errors.push(`FAQ question ${index} missing required field: name`);
+      if (!item.acceptedAnswer) {
+        errors.push(`FAQ question ${index} missing required field: acceptedAnswer`);
+      } else {
+        if (item.acceptedAnswer['@type'] !== 'Answer') {
+          errors.push(`FAQ question ${index} acceptedAnswer must have @type: "Answer"`);
+        }
+        if (!item.acceptedAnswer.text) {
+          errors.push(`FAQ question ${index} acceptedAnswer missing required field: text`);
+        }
+      }
+    });
+  }
+
+  return {
+    isValid: errors.length === 0,
+    errors,
+    warnings
+  };
+};
+
+/**
  * Validates all common schema types
  */
 export const validateSchema = (schema: any): SchemaValidationResult => {
@@ -215,6 +300,12 @@ export const validateSchema = (schema: any): SchemaValidationResult => {
       return validateSoftwareApplicationSchema(schema);
     case 'BreadcrumbList':
       return validateBreadcrumbListSchema(schema);
+    case 'Organization':
+    case 'Corporation':
+    case 'ProfessionalService':
+      return validateOrganizationSchema(schema);
+    case 'FAQPage':
+      return validateFAQPageSchema(schema);
     default:
       return {
         isValid: true,

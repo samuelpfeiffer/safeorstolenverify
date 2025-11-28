@@ -14,33 +14,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/good_photo_for_sos-8.png';
 
 const Index = () => {
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/logo.png",
-      "description": "Like Carfax for everything. Verify serial numbers, IMEI, VIN, license plates globally across all 50 US states + international. Protect buyers and sellers.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "support@safeorstolen.com",
-        "contactType": "Customer Support"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SafeOrStolen",
-      "url": "https://safeorstolen.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://safeorstolen.com/verify?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  ];
-
   return (
     <>
       <PageSEO
@@ -48,7 +21,6 @@ const Index = () => {
         description="Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. Protect buyers and sellers. 2 free checks."
         keywords="like carfax for everything, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide, protect buyers and sellers"
         canonical="/"
-        structuredData={structuredData}
       />
       
       {/* Bot-visible content */}
