@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook } from 'lucide-react';
 import sosLogo from '@/assets/sos-logo.png';
 const Footer = () => {
   const quickLinks = [{
@@ -92,6 +92,24 @@ const Footer = () => {
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Twitter className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@safeorstolen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Safe or Stolen on YouTube"
+                  className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
+                >
+                  <Youtube className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
+                </a>
+                <a
+                  href="https://www.facebook.com/safeorstolen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Safe or Stolen on Facebook"
+                  className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
+                >
+                  <Facebook className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/safeorstolen/"
