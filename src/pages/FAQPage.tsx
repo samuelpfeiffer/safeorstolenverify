@@ -141,6 +141,18 @@ const FAQPage = () => {
         {
           question: "Is there a free trial available?",
           answer: "New users receive 2 free verifications (14-day trial) to test our service. No credit card required for the trial verification."
+        },
+        {
+          question: "How do I download the SafeOrStolen mobile app?",
+          answer: "Visit safeorstolen.com/app to download our mobile app. The app is available as a Progressive Web App (PWA) for both iOS and Android. Click 'Install' or 'Add to Home Screen' when prompted by your browser. The app offers exclusive features like barcode scanning for instant verification in 3 seconds."
+        },
+        {
+          question: "Does SafeOrStolen work internationally?",
+          answer: "Yes! SafeOrStolen offers full verification coverage across all 50 US states plus international support for 45+ countries including Canada, UK, Australia, and most European Union nations. We check against Interpol databases and international stolen property registries for comprehensive global coverage."
+        },
+        {
+          question: "How is SafeOrStolen like Carfax?",
+          answer: "SafeOrStolen is 'Carfax for Everything'—while Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items (phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools) against stolen goods databases. We provide the same instant verification concept but expanded to protect you from buying stolen goods of any type, not just cars."
         }
       ]
     }
@@ -223,7 +235,7 @@ const FAQPage = () => {
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold mb-4 text-foreground">Need More Help?</h2>
               <p className="text-muted-foreground mb-6">
-                Contact us at support@safeorstolen.com or (206) 249-2203
+                Contact us at <a href="mailto:safeorstolenmail@gmail.com" className="text-primary hover:underline">safeorstolenmail@gmail.com</a> or <a href="tel:+12062492203" className="text-primary hover:underline">(206) 249-2203</a>
               </p>
             </div>
           </div>

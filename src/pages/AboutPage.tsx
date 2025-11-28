@@ -86,7 +86,8 @@ const AboutPage = () => {
           "logo": "https://safeorstolen.com/logo.png",
           "contactPoint": {
             "@type": "ContactPoint",
-            "email": "support@safeorstolen.com",
+            "email": "safeorstolenmail@gmail.com",
+            "telephone": "+1-206-249-2203",
             "contactType": "Customer Support"
           },
           "founder": {
@@ -111,7 +112,7 @@ const AboutPage = () => {
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
                 SafeOrStolen verifies items instantly against law enforcement databases. 
-                Founded by cybersecurity experts, backed by partnerships with police departments nationwide.
+                Founded by Sam Pfeiffer, backed by FasterCapital partnership and police departments nationwide.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Badge variant="secondary" className="px-3 py-1">
@@ -120,7 +121,11 @@ const AboutPage = () => {
                 </Badge>
                 <Badge variant="secondary" className="px-3 py-1">
                   <Users className="h-4 w-4 mr-2" />
-                  500K+ Checks
+                  5,000+ Checks Processed
+                </Badge>
+                <Badge variant="secondary" className="px-3 py-1">
+                  <Building className="h-4 w-4 mr-2" />
+                  FasterCapital Partnership
                 </Badge>
               </div>
             </div>
@@ -136,10 +141,19 @@ const AboutPage = () => {
             <div className="max-w-4xl mx-auto">
               <Card className="p-6">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-4">
                   Protect consumers and businesses from stolen goods through instant, accurate verification 
                   backed by law enforcement databases and cutting-edge technology.
                 </p>
+                <div className="border-t pt-4 mt-4">
+                  <h3 className="font-semibold mb-2 text-foreground">Founded by Sam Pfeiffer</h3>
+                  <p className="text-muted-foreground text-sm mb-2">
+                    Contact: <a href="mailto:safeorstolenmail@gmail.com" className="text-primary hover:underline">safeorstolenmail@gmail.com</a> | <a href="tel:+12062492203" className="text-primary hover:underline">(206) 249-2203</a>
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    Backed by FasterCapital partnership · 5,000+ checks processed · 3 press releases published
+                  </p>
+                </div>
               </Card>
             </div>
           </div>
