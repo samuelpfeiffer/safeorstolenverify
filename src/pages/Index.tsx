@@ -20,15 +20,10 @@ const Index = () => {
       "name": "SafeOrStolen",
       "url": "https://safeorstolen.com",
       "logo": "https://safeorstolen.com/logo.png",
-      "description": "Like Carfax for everything. Verify serial numbers, IMEI, VIN, license plates globally across all 50 US states + international.",
-      "founder": {
-        "@type": "Person",
-        "name": "Sam Pfeiffer"
-      },
+      "description": "Like Carfax for everything. Verify serial numbers, IMEI, VIN, license plates globally across all 50 US states + international. Protect buyers and sellers.",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-206-249-2203",
-        "email": "safeorstolenmail@gmail.com",
+        "email": "support@safeorstolen.com",
         "contactType": "Customer Support"
       }
     },
@@ -49,8 +44,8 @@ const Index = () => {
     <>
       <PageSEO
         title="SafeOrStolen: Carfax for Everything | Verify IMEI VIN Serial Numbers Globally"
-        description="Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. 2 free checks."
-        keywords="like carfax for everything, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide"
+        description="Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. Protect buyers and sellers. 2 free checks."
+        keywords="like carfax for everything, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide, protect buyers and sellers"
         canonical="/"
         structuredData={structuredData}
       />
@@ -59,7 +54,7 @@ const Index = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>SafeOrStolen: Carfax for Everything - Verify Serial Numbers Globally</h1>
-          <p>Like Carfax but for phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools, equipment. Verify serial numbers, IMEI, VIN, license plates in all 50 US states + international coverage.</p>
+          <p>Like Carfax but for phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools, equipment. Verify serial numbers, IMEI, VIN, license plates in all 50 US states + international coverage. Protect buyers and sellers.</p>
           
           <h2>The Only Mobile App with Barcode Scanning</h2>
           <p>SafeOrStolen is the only global verification service with a mobile app. CheckMEND, IMEI.info, IMEIPro, LeadsOnline - none have apps. Download for iOS and Android.</p>
@@ -96,7 +91,7 @@ const Index = () => {
                 Carfax for Everything
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Verify Any Item Before You Buy
+                Verify Any Item Before You Buy and Sell
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Serial numbers, IMEI, VIN, license plates - all 50 US states + international coverage

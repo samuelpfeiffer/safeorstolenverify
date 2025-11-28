@@ -58,8 +58,8 @@ const AboutPage = () => {
     <>
     <PageSEO
       title="About SafeOrStolen - Crime Reduction Ecosystem"
-      description="SafeOrStolen was founded by Sam Pfeiffer to create a Crime Reduction Ecosystem. Verify if second-hand items are stolen before buying or selling."
-      keywords="about SafeOrStolen, Sam Pfeiffer, stolen item verification, crime reduction"
+      description="SafeOrStolen creates a Crime Reduction Ecosystem. Verify if second-hand items are stolen before buying and selling. Protect buyers and sellers."
+      keywords="about SafeOrStolen, stolen item verification, crime reduction, protect buyers and sellers"
       canonical="/about"
       structuredData={[
         {
@@ -70,11 +70,7 @@ const AboutPage = () => {
           "mainEntity": {
             "@type": "Organization",
             "name": "SafeOrStolen",
-            "founder": {
-              "@type": "Person",
-              "name": "Sam Pfeiffer"
-            },
-            "description": "Crime Reduction Ecosystem",
+            "description": "Crime Reduction Ecosystem protecting buyers and sellers",
             "url": "https://safeorstolen.com"
           }
         },
@@ -86,13 +82,8 @@ const AboutPage = () => {
           "logo": "https://safeorstolen.com/logo.png",
           "contactPoint": {
             "@type": "ContactPoint",
-            "email": "safeorstolenmail@gmail.com",
-            "telephone": "+1-206-249-2203",
+            "email": "support@safeorstolen.com",
             "contactType": "Customer Support"
-          },
-          "founder": {
-            "@type": "Person",
-            "name": "Sam Pfeiffer"
           }
         }
       ]}
@@ -112,7 +103,7 @@ const AboutPage = () => {
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
                 SafeOrStolen verifies items instantly against law enforcement databases. 
-                Founded by Sam Pfeiffer, backed by FasterCapital partnership and police departments nationwide.
+                Backed by FasterCapital partnership and police departments nationwide. Protecting buyers and sellers.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Badge variant="secondary" className="px-3 py-1">
@@ -142,14 +133,10 @@ const AboutPage = () => {
               <Card className="p-6">
                 <h2 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Protect consumers and businesses from stolen goods through instant, accurate verification 
+                  Protect buyers, sellers, consumers and businesses from stolen goods through instant, accurate verification 
                   backed by law enforcement databases and cutting-edge technology.
                 </p>
                 <div className="border-t pt-4 mt-4">
-                  <h3 className="font-semibold mb-2 text-foreground">Founded by Sam Pfeiffer</h3>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Contact: <a href="mailto:safeorstolenmail@gmail.com" className="text-primary hover:underline">safeorstolenmail@gmail.com</a> | <a href="tel:+12062492203" className="text-primary hover:underline">(206) 249-2203</a>
-                  </p>
                   <p className="text-muted-foreground text-sm">
                     Backed by FasterCapital partnership · 5,000+ checks processed · 3 press releases published
                   </p>
