@@ -89,7 +89,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Carfax for Everything
+                Check If Secondhand Items are Stolen in 3 Seconds
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
                 Verify Any Item Before You Buy and Sell
