@@ -142,20 +142,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: false, error: errorMessage };
       }
 
-      // Send welcome email for new users
-      if (data.user && !error) {
-        try {
-          await supabase.functions.invoke('send-welcome-email', {
-            body: {
-              email: data.user.email,
-              fullName: fullName,
-              userId: data.user.id
-            }
-          });
-        } catch (emailError) {
-          // Silent fail for welcome email
-        }
-      }
+      // Welcome email removed - handled via database trigger
 
       return { success: true };
     } catch (error) {

@@ -86,15 +86,11 @@ export const ContentGenerationDashboard = () => {
   const generateContent = async () => {
     setIsGenerating(true);
     try {
-      const { data, error } = await supabase.functions.invoke('autonomous-content-generator', {
-        body: {}
-      });
-
-      if (error) throw error;
-
+      // Content generator temporarily disabled during cleanup
       toast({
-        title: "Content Generated!",
-        description: data.message,
+        title: "Feature Temporarily Unavailable",
+        description: "Content generation system is being optimized",
+        variant: "destructive",
       });
 
       loadDashboardData();
@@ -112,15 +108,11 @@ export const ContentGenerationDashboard = () => {
   const runAutoFix = async () => {
     setIsFixing(true);
     try {
-      const { data, error } = await supabase.functions.invoke('auto-fix-content-issues', {
-        body: {}
-      });
-
-      if (error) throw error;
-
+      // Auto-fix temporarily disabled during cleanup
       toast({
-        title: "Auto-Fix Complete!",
-        description: data.message,
+        title: "Feature Temporarily Unavailable",
+        description: "Auto-fix system is being optimized",
+        variant: "destructive",
       });
 
       loadDashboardData();

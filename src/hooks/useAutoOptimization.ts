@@ -44,12 +44,8 @@ export const useAutoOptimization = (config?: Partial<OptimizationConfig>) => {
         }
       };
 
-      // Run each optimization action
-      for (const action of defaultConfig.actions) {
-        await supabase.functions.invoke('ai-site-optimizer', {
-          body: { action, pageData }
-        });
-      }
+      // Auto-optimization temporarily disabled during cleanup
+      console.log('[AUTO-OPTIMIZER] Feature temporarily disabled');
 
       setLastOptimized(new Date());
       console.log('[AUTO-OPTIMIZER] Completed');
