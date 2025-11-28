@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -74,15 +74,45 @@ const TopNavigation = () => {
 
           {/* Desktop Auth + Social */}
           <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://www.youtube.com/@safeorstolen"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="SafeOrStolen YouTube channel"
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors mr-2"
-            >
-              <Youtube className="w-4 h-4 text-muted-foreground hover:text-primary" />
-            </a>
+            {/* Social Media Links */}
+            <div className="flex items-center gap-2 mr-2">
+              <a
+                href="https://twitter.com/safeorstolen"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SafeOrStolen on X/Twitter"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
+              >
+                <Twitter className="w-4 h-4 text-muted-foreground hover:text-primary" />
+              </a>
+              <a
+                href="https://www.facebook.com/safeorstolen"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SafeOrStolen on Facebook"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
+              >
+                <Facebook className="w-4 h-4 text-muted-foreground hover:text-primary" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/safeorstolen"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SafeOrStolen on LinkedIn"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary" />
+              </a>
+              <a
+                href="https://www.youtube.com/@safeorstolen"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SafeOrStolen on YouTube"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
+              >
+                <Youtube className="w-4 h-4 text-muted-foreground hover:text-primary" />
+              </a>
+            </div>
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -250,6 +280,22 @@ const TopNavigation = () => {
                   </Button>
                 </>
               )}
+            </div>
+            
+            {/* Mobile Social Links */}
+            <div className="flex items-center justify-center gap-4 pt-4 border-t border-border/50 mt-4">
+              <a href="https://twitter.com/safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
+                <Twitter className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              </a>
+              <a href="https://www.facebook.com/safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              </a>
+              <a href="https://www.linkedin.com/company/safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              </a>
+              <a href="https://www.youtube.com/@safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <Youtube className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+              </a>
             </div>
           </div>
         )}
