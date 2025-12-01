@@ -265,9 +265,9 @@ const VerifyPage = () => {
       {/* SEO Components - Critical for Google indexing */}
       <StatusCodeHandler statusCode={200} />
       <PageSEO
-        title="Free Verification Tool - Check IMEI, VIN, Serial Numbers | SafeOrStolen"
-        description="Verify if any item is stolen in 3 seconds. Check phones (IMEI), cars (VIN), electronics (serial numbers), license plates. Free instant verification with our universal search tool."
-        keywords="verify stolen item, IMEI check, VIN check, serial number verification, license plate lookup, stolen goods check"
+        title="Instant Stolen Verification - Barcode Stolen Checker | 3 Second IMEI Check"
+        description="Instant stolen verification in 3 seconds with barcode scanning. Check if phones (IMEI), cars (VIN), electronics (serial numbers), license plates are stolen. The only stolen item scanner app. Free instant verification."
+        keywords="instant stolen verification, barcode stolen checker, 3 second IMEI check, scan serial number stolen, stolen verification app, fast stolen item checker, quick VIN verification"
         canonical="/verify"
         structuredData={verificationServiceSchema}
       />
@@ -283,10 +283,10 @@ const VerifyPage = () => {
         {/* Header */}
         <div className="text-center space-y-3">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            Verify Item Status
+            Instant Stolen Verification - 3 Seconds with Barcode Scanning
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Check if an item is stolen or safe across multiple databases
+            Scan serial numbers, IMEI, VIN instantly. 10x faster than CheckMEND's website.
           </p>
         </div>
 

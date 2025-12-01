@@ -19,9 +19,9 @@ const Index = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen: Carfax for Everything | Verify IMEI VIN Serial Numbers Globally"
-        description="Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. Protect buyers and sellers. 2 free checks."
-        keywords="like carfax for everything, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide, protect buyers and sellers"
+        title="The Only Stolen Verification App | SafeOrStolen - Like Carfax for Everything"
+        description="SafeOrStolen is the ONLY stolen verification app with barcode scanning. CheckMEND, IMEI.info, Swappa have NO app. Download FREE for iOS/Android. Instant verification in 3 seconds. Like Carfax but for phones, vehicles, boats, firearms, electronics - all 50 states + international."
+        keywords="stolen verification app, stolen item scanner app, barcode stolen checker, IMEI checker app, VIN checker app, CheckMEND app, like carfax for everything, instant stolen verification, verify serial numbers"
         canonical="/"
         structuredData={[
           {
@@ -72,11 +72,11 @@ const Index = () => {
       {/* Bot-visible content */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen: Carfax for Everything - Verify Serial Numbers Globally</h1>
-          <p>Like Carfax but for phones, vehicles, boats, firearms, electronics, appliances, jewelry, tools, equipment. Verify serial numbers, IMEI, VIN, license plates in all 50 US states + international coverage. Protect buyers and sellers.</p>
+          <h1>The Only Stolen Verification App - SafeOrStolen | Like Carfax for Everything</h1>
+          <p>SafeOrStolen is the ONLY stolen verification app with instant barcode scanning. CheckMEND, IMEI.info, Swappa have NO mobile app - we do. Download FREE for iOS/Android. Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify IMEI, VIN, serial numbers, license plates in 3 seconds across all 50 US states + international coverage.</p>
           
-          <h2>The Only Mobile App with Barcode Scanning</h2>
-          <p>SafeOrStolen is the only global verification service with a mobile app. CheckMEND, IMEI.info, IMEIPro, LeadsOnline - none have apps. Download for iOS and Android.</p>
+          <h2>CheckMEND Has No App - SafeOrStolen is the Only Stolen Item Scanner App</h2>
+          <p>SafeOrStolen is the ONLY stolen verification app globally. Competitors (CheckMEND, IMEI.info, IMEIPro, Swappa, LeadsOnline) have NO mobile apps - only slow websites. Our app features instant barcode scanning, 3-second verification, offline mode, and free download for iOS and Android.</p>
           
           <h2>Coverage: All 50 US States + International</h2>
           <p>We verify items across all 50 US states plus international databases. Processing 5,000+ checks daily. Partnered with FasterCapital (selected from 5,000+ applicants). Featured in 3 press releases.</p>
@@ -107,24 +107,24 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Check If Secondhand Items are Stolen in 3 Seconds
+                The Only Stolen Verification App | Like Carfax for Everything
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Verify Any Item Before You Buy and Sell
+                Instant Barcode Scanning - CheckMEND Has No App. We Do.
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Serial numbers, IMEI, VIN, license plates - all 50 US states + international coverage
+                Download the only stolen item scanner app with 3-second verification. IMEI, VIN, serial numbers, license plates - all 50 US states + international coverage
               </p>
               
               <div className="flex flex-wrap justify-center gap-4 pt-6">
                 <Button asChild size="lg" className="px-8">
-                  <Link to="/verify">Start Free Trial - 2 Checks</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="px-8">
                   <Link to="/app">
                     <Download className="mr-2 h-5 w-5" />
-                    The Only Mobile App
+                    Download The Only App
                   </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="px-8">
+                  <Link to="/verify">Verify Now - 2 Free Checks</Link>
                 </Button>
               </div>
               

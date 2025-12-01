@@ -147,6 +147,22 @@ const FAQPage = () => {
           answer: "Visit safeorstolen.com/app to download our mobile app. The app is available as a Progressive Web App (PWA) for both iOS and Android. Click 'Install' or 'Add to Home Screen' when prompted by your browser. The app offers exclusive features like barcode scanning for instant verification in 3 seconds."
         },
         {
+          question: "Is there a stolen verification app?",
+          answer: "Yes, SafeOrStolen is the ONLY stolen verification app. CheckMEND, IMEI.info, Swappa, and other competitors have NO mobile apps - they only have websites. SafeOrStolen is the first and only stolen item scanner app with barcode scanning, instant 3-second verification, offline mode, and free download for iOS/Android."
+        },
+        {
+          question: "Does CheckMEND have an app?",
+          answer: "No, CheckMEND does NOT have a mobile app. They only offer a slow website with manual typing. SafeOrStolen is the only stolen verification app with instant barcode scanning and 3-second results. Download FREE at safeorstolen.com/app - we're the CheckMEND alternative with an actual mobile app."
+        },
+        {
+          question: "What's like Carfax but for phones?",
+          answer: "SafeOrStolen is 'Carfax for Everything.' While Carfax only checks vehicle history, SafeOrStolen verifies ALL secondhand items - phones (IMEI), vehicles (VIN), boats, firearms, electronics, appliances, jewelry, tools. We provide the same instant verification concept but expanded to protect buyers and sellers from stolen goods of any type across all 50 states + international."
+        },
+        {
+          question: "Is there a free IMEI checker app?",
+          answer: "Yes, SafeOrStolen offers a FREE IMEI checker app with 2 free checks (14-day trial). We're the only IMEI checker with a mobile app featuring barcode scanning for instant verification. CheckMEND charges $3.99 per check and has NO app. Download FREE at safeorstolen.com/app."
+        },
+        {
           question: "Does SafeOrStolen work internationally?",
           answer: "Yes! SafeOrStolen offers full verification coverage across all 50 US states plus international support for 45+ countries including Canada, UK, Australia, and most European Union nations. We check against Interpol databases and international stolen property registries for comprehensive global coverage."
         },
