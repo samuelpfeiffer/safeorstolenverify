@@ -9,113 +9,15 @@ export const generateSitemap = (): string => {
   const baseUrl = 'https://safeorstolen.com';
   const currentDate = new Date().toISOString().split('T')[0];
 
-  const urls: SitemapUrl[] = [
-    // Core pages
-    {
-      url: `${baseUrl}/`,
-      lastmod: currentDate,
-      changefreq: 'daily',
-      priority: 1.0
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastmod: currentDate,
-      changefreq: 'yearly',
-      priority: 0.5
-    },
-    {
-      url: `${baseUrl}/terms-of-service`,
-      lastmod: currentDate,
-      changefreq: 'yearly',
-      priority: 0.5
-    },
-    
-    // High-value SEO pages
-    {
-      url: `${baseUrl}/imei-checker`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.9
-    },
-    {
-      url: `${baseUrl}/vin-verification`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.9
-    },
-    {
-      url: `${baseUrl}/serial-number-checker`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.9
-    },
-    
-    // Business/Dashboard pages
-    {
-      url: `${baseUrl}/pricing`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/dashboard`,
-      lastmod: currentDate,
-      changefreq: 'daily',
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/ai-seo`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/seo-strategy`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    
-    // Verification pages
-    {
-      url: `${baseUrl}/verify`,
-      lastmod: currentDate,
-      changefreq: 'daily',
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/bulk-verify`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.7
-    },
-    
-    // Support pages
-    {
-      url: `${baseUrl}/help`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: 0.6
-    }
-  ];
+  // Import from centralized sitemap config
+  const { SITEMAP_URLS } = require('@/config/sitemap-urls');
+
+  const urls: SitemapUrl[] = SITEMAP_URLS.map((item: any) => ({
+    url: `${baseUrl}${item.path}`,
+    lastmod: currentDate,
+    changefreq: item.changefreq,
+    priority: item.priority
+  }));
 
   const xmlHeader = '<?xml version="1.0" encoding="UTF-8"?>';
   const urlsetOpen = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
