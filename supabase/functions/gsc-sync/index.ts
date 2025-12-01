@@ -19,6 +19,7 @@ const PRIORITY_URLS = [
   'https://safeorstolen.com/faq',
   'https://safeorstolen.com/terms',
   'https://safeorstolen.com/privacy',
+  'https://safeorstolen.com/service-limitations', // Soft 404 - needs reinspection
 ];
 
 serve(async (req) => {
