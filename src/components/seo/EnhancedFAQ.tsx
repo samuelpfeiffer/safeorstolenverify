@@ -89,26 +89,13 @@ export const EnhancedFAQ: React.FC<EnhancedFAQProps> = ({
     trackSEOInteraction('faq_expansion', `FAQ ${index + 1}: ${allFAQs[index].question.slice(0, 50)}...`);
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": allFAQs.map((faq, index) => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer", 
-        "text": faq.answer
-      }
-    }))
-  };
+  // FAQ schema removed to prevent duplicates - FAQPage schemas are now centralized
 
   return (
     <div className="w-full max-w-4xl mx-auto">
       {includeSchema && (
         <Helmet>
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema)}
-          </script>
+          {/* FAQ Schema removed to prevent duplicates */}
           <meta name="keywords" content={allFAQs.flatMap(faq => faq.keywords || []).join(', ')} />
         </Helmet>
       )}
