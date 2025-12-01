@@ -206,9 +206,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /state/*                           /verify  301!
 /statistics/*                      /about  301!
 /offerup-verification              /verify  301!
-/check-bike                        /verify  301!
 /ultimate-guide                    /about   301!
-/avoid-stolen-goods                /about   301!
 /stolen-items-database             /verify  301!
 
 # ============================================
