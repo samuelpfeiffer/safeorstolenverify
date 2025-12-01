@@ -1,0 +1,3 @@
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+
+export default () => <ItemLandingPageTemplate title="Michigan License Plate Lookup - Check MI Stolen Vehicle" metaDescription="Michigan license plate lookup. Free MI plate search." h1="Michigan License Plate Lookup" itemType="Vehicle" keywords={['michigan license plate lookup', 'MI plate search', 'detroit vehicle check']} content={{intro: "Verify Michigan vehicles. Detroit coverage.", whatIs: "MI plate lookup.", howItWorks: "Query MI DMV.", whyCheck: "Screen MI vehicles.", benefits: ["Free"], process: ["Record MI plate"], faqs: [{question: "Check MI?", answer: "Yes."}]}} />;
