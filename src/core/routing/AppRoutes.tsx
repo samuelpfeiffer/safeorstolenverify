@@ -18,9 +18,9 @@ const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 // Competitor Comparison Pages (SEO Strategy)
-const VsCheckMendPage = lazy(() => import('@/pages/VsCheckMendPage'));
-const VsIMEIInfoPage = lazy(() => import('@/pages/VsIMEIInfoPage'));
-const VsSwappaPage = lazy(() => import('@/pages/VsSwappaPage'));
+const VsCheckMendPage = lazy(() => import('@/pages/ComparisonCheckmend'));
+const VsIMEIInfoPage = lazy(() => import('@/pages/ComparisonIMEIInfo'));
+const VsSwappaPage = lazy(() => import('@/pages/ComparisonSwappa'));
 
 // Item Landing Pages (High-Value SEO)
 const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
