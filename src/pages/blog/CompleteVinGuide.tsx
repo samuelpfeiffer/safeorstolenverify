@@ -30,6 +30,7 @@ export default function CompleteVinGuide() {
         title="Complete VIN Check Guide: How to Verify Vehicle History (2026)"
         description="Comprehensive guide to VIN verification, decoding vehicle history, checking for stolen cars, and avoiding title washing fraud. Free alternatives to Carfax."
         keywords="VIN check, vehicle history report, stolen car check, VIN decoder, Carfax alternative, title check"
+        canonical="/blog/complete-vin-guide"
         structuredData={structuredData}
       />
 

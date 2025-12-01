@@ -32,6 +32,7 @@ export default function CompleteVerificationGuide() {
         title="Complete Verification Guide: How to Check If Anything Is Stolen | SafeOrStolen"
         description="Master guide to verifying phones, vehicles, electronics, bikes, tools, and more. Comprehensive tutorial for protecting yourself from buying stolen goods."
         keywords="verification guide, check stolen items, how to verify, IMEI check, VIN check, serial number verification"
+        canonical="/blog/complete-verification-guide"
         structuredData={structuredData}
       />
 

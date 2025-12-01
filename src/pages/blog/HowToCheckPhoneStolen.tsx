@@ -30,6 +30,7 @@ export default function HowToCheckPhoneStolen() {
         title="How to Check if a Phone is Stolen Before Buying (2026 Guide)"
         description="Complete guide to verifying if a used phone is stolen using IMEI checker, carrier blacklist lookup, and other verification methods. Protect yourself from buying stolen phones."
         keywords="check stolen phone, IMEI checker, phone blacklist lookup, verify used phone, stolen phone check"
+        canonical="/blog/how-to-check-if-phone-stolen"
         structuredData={structuredData}
       />
 
