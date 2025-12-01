@@ -12,14 +12,14 @@ export interface PageSchemaConfig {
 
 export const SCHEMA_REGISTRY: PageSchemaConfig[] = [
   // Core Pages (Critical - 10 schemas minimum)
-  { path: '/', schemaTypes: ['Organization', 'WebSite', 'SoftwareApplication', 'Service'], priority: 'critical', implemented: true },
+  { path: '/', schemaTypes: ['Service', 'SoftwareApplication'], priority: 'critical', implemented: true }, // Organization+WebSite in MasterSEO
   { path: '/verify', schemaTypes: ['Service', 'SoftwareApplication', 'HowTo'], priority: 'critical', implemented: true },
-  { path: '/pricing', schemaTypes: ['Service', 'Offer', 'PriceSpecification'], priority: 'critical', implemented: false },
-  { path: '/about', schemaTypes: ['Organization', 'AboutPage'], priority: 'critical', implemented: false },
+  { path: '/pricing', schemaTypes: ['Service', 'Offer'], priority: 'critical', implemented: true }, // 6 schemas
+  { path: '/about', schemaTypes: ['AboutPage', 'Organization'], priority: 'critical', implemented: true },
   { path: '/how-it-works', schemaTypes: ['HowTo', 'Service'], priority: 'critical', implemented: false },
-  { path: '/faq', schemaTypes: ['FAQPage'], priority: 'critical', implemented: false },
+  { path: '/faq', schemaTypes: ['FAQPage'], priority: 'critical', implemented: true },
   { path: '/contact', schemaTypes: ['ContactPage', 'ContactPoint'], priority: 'critical', implemented: false },
-  { path: '/app', schemaTypes: ['SoftwareApplication', 'MobileApplication'], priority: 'critical', implemented: false },
+  { path: '/app', schemaTypes: ['SoftwareApplication'], priority: 'critical', implemented: true },
   { path: '/terms', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
   { path: '/privacy', schemaTypes: ['WebPage'], priority: 'critical', implemented: false },
 

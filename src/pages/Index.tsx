@@ -23,6 +23,50 @@ const Index = () => {
         description="Like Carfax but for phones, vehicles, boats, firearms, electronics. Verify serial numbers, IMEI, VIN, license plates in all 50 states + international coverage. Protect buyers and sellers. 2 free checks."
         keywords="like carfax for everything, verify serial numbers, IMEI checker all 50 states, VIN verification global, license plate check all states, stolen item verification worldwide, protect buyers and sellers"
         canonical="/"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "SafeOrStolen Stolen Item Verification Service",
+            "description": "Universal verification service like Carfax but for everything - check phones, vehicles, boats, firearms, electronics against stolen goods databases",
+            "serviceType": "Stolen Item Verification Service",
+            "provider": {
+              "@type": "Organization",
+              "name": "SafeOrStolen"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Worldwide"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "2 free verification checks, 14-day trial"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "SafeOrStolen Mobile App",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": ["iOS", "Android"],
+            "description": "Only mobile app with barcode scanning for instant stolen item verification. Verify IMEI, VIN, serial numbers in 3 seconds.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": [
+              "Barcode scanning",
+              "Offline mode",
+              "All 50 states coverage",
+              "International databases",
+              "3-second verification",
+              "Push notifications"
+            ]
+          }
+        ]}
       />
       
       {/* Bot-visible content */}
