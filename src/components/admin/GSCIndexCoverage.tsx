@@ -9,16 +9,16 @@ import { useToast } from '@/hooks/use-toast';
 const PRIORITY_URLS = [
   { url: 'https://safeorstolen.com/', priority: 'Critical' },
   { url: 'https://safeorstolen.com/verify', priority: 'Critical' },
-  { url: 'https://safeorstolen.com/imei-checker', priority: 'Critical' },
-  { url: 'https://safeorstolen.com/vin-checker', priority: 'Critical' },
+  { url: 'https://safeorstolen.com/check-phone', priority: 'Critical' },
+  { url: 'https://safeorstolen.com/check-car', priority: 'Critical' },
   { url: 'https://safeorstolen.com/app', priority: 'Critical' },
   { url: 'https://safeorstolen.com/serial-number-checker', priority: 'High' },
   { url: 'https://safeorstolen.com/how-it-works', priority: 'High' },
-  { url: 'https://safeorstolen.com/check-phone', priority: 'High' },
-  { url: 'https://safeorstolen.com/check-car', priority: 'High' },
   { url: 'https://safeorstolen.com/pricing', priority: 'High' },
   { url: 'https://safeorstolen.com/about', priority: 'Medium' },
   { url: 'https://safeorstolen.com/faq', priority: 'Medium' },
+  { url: 'https://safeorstolen.com/terms', priority: 'Medium' },
+  { url: 'https://safeorstolen.com/privacy', priority: 'Medium' },
 ];
 
 export default function GSCIndexCoverage() {

@@ -164,7 +164,7 @@ export const AppRoutes = () => {
         <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/fastercapital/tech-cofounder" element={<Navigate to="/about" replace />} />
         <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
-        <Route path="/service-limitations" element={<Navigate to="/terms" replace />} />
+        {/* /service-limitations removed - server-side 301 redirect only (public/_redirects line 230) */}
         
         {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}
         <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />

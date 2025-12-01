@@ -12,6 +12,7 @@ import GSCIndexCoverage from '@/components/admin/GSCIndexCoverage';
 import GSCAISuggestions from '@/components/admin/GSCAISuggestions';
 import { GSCSyncMonitor } from '@/components/admin/GSCSyncMonitor';
 import { GSCFixSoft404 } from '@/components/admin/GSCFixSoft404';
+import { GSCErrorSummary } from '@/components/admin/GSCErrorSummary';
 
 export default function GSCMonitoringDashboard() {
   const navigate = useNavigate();
@@ -196,7 +197,10 @@ export default function GSCMonitoringDashboard() {
                 </Card>
               </div>
 
-              {/* Active Issues */}
+              {/* GSC Error Status - Zero Errors */}
+              <GSCErrorSummary />
+
+              {/* Active Issues & Redirect Strategy */}
               <GSCFixSoft404 />
 
               {/* Automated Sync Monitor */}

@@ -32,7 +32,7 @@ export const validateRoutes = () => {
     '/trust-verification',
     '/data-sources',
     '/transparency',
-    '/service-limitations',
+    // '/service-limitations', // Removed - server-side 301 redirect only  
     '/accuracy',
     '/verification-hub',
     '/ultimate-guide',

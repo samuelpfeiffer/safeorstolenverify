@@ -13,7 +13,7 @@ const VALID_ROUTES = new Set([
   '/faq',
   '/terms',
   '/privacy',
-  '/service-limitations',
+  // '/service-limitations', // Removed - server-side 301 redirect only
   '/blog',
   '/how-it-works',
   '/for-consumers',
