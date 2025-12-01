@@ -32,6 +32,7 @@ export default function VerificationMethodology() {
         title="Verification Methodology: How SafeOrStolen Works | Data Sources & Accuracy"
         description="Complete transparency about SafeOrStolen's verification methodology, data sources, AI analysis, and accuracy rates. Learn how we verify stolen items."
         keywords="verification methodology, how SafeOrStolen works, data sources, AI verification, accuracy rates, stolen item database"
+        canonical="/blog/verification-methodology"
         structuredData={structuredData}
       />
 

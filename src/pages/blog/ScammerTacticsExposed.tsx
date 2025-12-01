@@ -32,6 +32,7 @@ export default function ScammerTacticsExposed() {
         title="Scammer Tactics Exposed: How Criminals Sell Stolen Goods | SafeOrStolen"
         description="Learn the deceptive tactics scammers use to sell stolen goods on marketplaces. Protect yourself from fraud with our comprehensive guide to recognizing red flags."
         keywords="scammer tactics, stolen goods scams, marketplace fraud, online scams, protect from scammers"
+        canonical="/blog/scammer-tactics-exposed"
         structuredData={structuredData}
       />
 

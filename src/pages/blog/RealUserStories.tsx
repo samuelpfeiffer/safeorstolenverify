@@ -32,6 +32,7 @@ export default function RealUserStories() {
         title="Real User Stories: How SafeOrStolen Saved Buyers From Fraud | Testimonials"
         description="True stories from SafeOrStolen users who avoided buying stolen goods, recovered property, and saved thousands. Real testimonials and success stories."
         keywords="SafeOrStolen reviews, user testimonials, success stories, prevented fraud, saved money, real experiences"
+        canonical="/blog/real-user-stories"
         structuredData={structuredData}
       />
 

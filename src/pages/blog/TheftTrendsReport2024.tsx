@@ -32,6 +32,7 @@ export default function TheftTrendsReport2024() {
         title="2024 Theft Trends Report: Most Stolen Items & Protection Guide | SafeOrStolen"
         description="Comprehensive analysis of 2024 theft trends, most stolen items, hot spots, and protection strategies. Based on real police data and insurance claims."
         keywords="theft trends 2024, most stolen items, theft statistics, crime report, theft prevention, stolen goods data"
+        canonical="/blog/theft-trends-report-2024"
         structuredData={structuredData}
       />
 

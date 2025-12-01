@@ -32,6 +32,7 @@ export default function PhoneVerificationGuide() {
         title="Phone Verification Guide: IMEI Check & Stolen Phone Lookup | SafeOrStolen"
         description="Complete guide to verifying phones before purchase. Learn how to check IMEI numbers, identify stolen smartphones, and protect yourself from phone fraud."
         keywords="phone verification, IMEI check, stolen phone lookup, verify phone, check IMEI number, phone fraud protection"
+        canonical="/blog/phone-verification-guide"
         structuredData={structuredData}
       />
 
