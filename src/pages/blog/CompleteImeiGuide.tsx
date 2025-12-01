@@ -37,6 +37,7 @@ export default function CompleteImeiGuide() {
         title="Complete IMEI Guide 2026: Check if Phone is Stolen | SafeOrStolen"
         description="Ultimate guide to IMEI numbers, how to find your IMEI, check if a phone is stolen or blacklisted, and protect yourself when buying used smartphones in 2026."
         keywords="IMEI check, IMEI number lookup, check if phone stolen, IMEI blacklist check, phone verification guide"
+        canonical="/blog/complete-imei-guide-protect-yourself"
         structuredData={structuredData}
       />
 

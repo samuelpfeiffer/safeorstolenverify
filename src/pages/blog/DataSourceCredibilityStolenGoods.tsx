@@ -34,6 +34,7 @@ export default function DataSourceCredibilityStolenGoods() {
         title="Data Source Credibility in Stolen Goods Verification | SafeOrStolen"
         description="Comprehensive analysis of data sources used for stolen goods verification, their credibility, accuracy, and how to evaluate verification services in 2026."
         keywords="stolen goods verification accuracy, data source credibility, verification database reliability, IMEI database accuracy, VIN verification sources"
+        canonical="/blog/data-source-credibility-stolen-goods-verification"
         structuredData={structuredData}
       />
 

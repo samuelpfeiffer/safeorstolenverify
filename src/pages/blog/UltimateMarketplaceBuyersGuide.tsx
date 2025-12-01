@@ -37,6 +37,7 @@ export default function UltimateMarketplaceBuyersGuide() {
         title="Ultimate Marketplace Buyers Guide 2026 | SafeOrStolen"
         description="Complete guide to safely buying on Facebook Marketplace, eBay, Craigslist, and OfferUp. Learn how to avoid stolen goods, scams, and fraud when shopping secondhand in 2026."
         keywords="Facebook Marketplace safety, eBay buyer protection, Craigslist safety tips, avoid marketplace scams, secondhand buying guide"
+        canonical="/blog/ultimate-marketplace-buyers-guide"
         structuredData={structuredData}
       />
 
