@@ -1,0 +1,3 @@
+import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+
+export default () => <ItemLandingPageTemplate title="Minnesota License Plate Lookup - Check MN Stolen Vehicle" metaDescription="Minnesota license plate lookup. Free MN plate search." h1="Minnesota License Plate Lookup" itemType="Vehicle" keywords={['minnesota license plate lookup', 'MN plate search']} content={{intro: "Verify Minnesota vehicles.", whatIs: "MN plate lookup.", howItWorks: "Query MN DMV.", whyCheck: "Screen MN vehicles.", benefits: ["Free"], process: ["Record MN plate"], faqs: [{question: "Check MN?", answer: "Yes."}]}} />;

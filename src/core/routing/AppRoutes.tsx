@@ -34,7 +34,17 @@ const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
+const AlabamaLicensePlateLookupPage = lazy(() => import('@/pages/AlabamaLicensePlateLookupPage'));
+const AlaskaLicensePlateLookupPage = lazy(() => import('@/pages/AlaskaLicensePlateLookupPage'));
+const ArizonaLicensePlateLookupPage = lazy(() => import('@/pages/ArizonaLicensePlateLookupPage'));
+const ArkansasLicensePlateLookupPage = lazy(() => import('@/pages/ArkansasLicensePlateLookupPage'));
+const CaliforniaLicensePlateLookupPage = lazy(() => import('@/pages/CaliforniaLicensePlateLookupPage'));
+const ColoradoLicensePlateLookupPage = lazy(() => import('@/pages/ColoradoLicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
+
+// NEW COMPETITOR COMPARISON PAGES
+const ComparisonCarfax = lazy(() => import('@/pages/ComparisonCarfax'));
+const ComparisonAutocheck = lazy(() => import('@/pages/ComparisonAutocheck'));
 
 // All 50 State VIN Pages (Complete Nationwide Coverage)
 const AlabamaVinLookup = lazy(() => import('@/pages/AlabamaVinLookup'));
@@ -155,7 +165,17 @@ export const AppRoutes = () => {
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
+        <Route path="/alabama-license-plate-lookup" element={<AlabamaLicensePlateLookupPage />} />
+        <Route path="/alaska-license-plate-lookup" element={<AlaskaLicensePlateLookupPage />} />
+        <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookupPage />} />
+        <Route path="/arkansas-license-plate-lookup" element={<ArkansasLicensePlateLookupPage />} />
+        <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookupPage />} />
+        <Route path="/colorado-license-plate-lookup" element={<ColoradoLicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
+        
+        {/* NEW Competitor Comparison Pages */}
+        <Route path="/vs-carfax" element={<ComparisonCarfax />} />
+        <Route path="/vs-autocheck" element={<ComparisonAutocheck />} />
         
         {/* Legacy URL redirects - Google has indexed these */}
         <Route path="/for-consumers" element={<Navigate to="/about" replace />} />
