@@ -106,7 +106,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/data-sources', priority: 0.7, changefreq: 'monthly' },
   { path: '/transparency', priority: 0.7, changefreq: 'monthly' },
   { path: '/accuracy', priority: 0.7, changefreq: 'monthly' },
-  { path: '/service-limitations', priority: 0.6, changefreq: 'monthly' },
+  // Removed /service-limitations (redirects to /terms, should not be in sitemap)
   
   // Guides & Educational Content
   { path: '/guides/how-to-check-stolen-items', priority: 0.8, changefreq: 'monthly' },

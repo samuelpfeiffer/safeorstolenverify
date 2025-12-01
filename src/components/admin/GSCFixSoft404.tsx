@@ -78,30 +78,24 @@ export function GSCFixSoft404() {
           </div>
         </div>
 
-        <div className="bg-blue-50 dark:bg-blue-950 p-4 rounded-lg space-y-2">
-          <p className="text-sm font-medium text-blue-900 dark:text-blue-100">Current Status (Dec 1, 2025):</p>
-          <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
-            <li>✓ Page is available to Google</li>
-            <li>✓ Page can be indexed</li>
-            <li>⚠️ Has issues preventing full enhancements eligibility</li>
-            <li>• Video detected on page</li>
+        <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg space-y-2">
+          <p className="text-sm font-medium text-green-900 dark:text-green-100">Resolution Complete:</p>
+          <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+            <li>✓ Soft 404 resolved - URL available to Google</li>
+            <li>✓ 301 redirect working correctly</li>
+            <li>✓ Removed from sitemap (redirects shouldn't be indexed)</li>
+            <li>• "Has issues" status is expected for redirect URLs</li>
           </ul>
+          <p className="text-xs text-green-700 dark:text-green-300 mt-2">
+            No further action needed - Google recognizes this as a proper redirect.
+          </p>
         </div>
 
         <div className="flex gap-2">
           <Button 
-            onClick={handleFixSoft404}
-            disabled={isFixing}
-            className="flex-1"
-            variant="outline"
-          >
-            <RefreshCw className={`h-4 w-4 mr-2 ${isFixing ? 'animate-spin' : ''}`} />
-            {isFixing ? 'Revalidating...' : 'Revalidate Now'}
-          </Button>
-          
-          <Button 
             variant="outline"
             onClick={() => window.open('https://search.google.com/search-console/index?resource_id=sc-domain:safeorstolen.com', '_blank')}
+            className="flex-1"
           >
             <ExternalLink className="h-4 w-4 mr-2" />
             View in GSC
