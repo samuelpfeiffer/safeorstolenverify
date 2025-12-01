@@ -1,38 +1,25 @@
-import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { AlertTriangle, CheckCircle, ExternalLink, RefreshCw } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+import { CheckCircle, ExternalLink } from 'lucide-react';
 
 export function GSCFixSoft404() {
-  const [isFixing, setIsFixing] = useState(false);
-  const { toast } = useToast();
-
-  const SOFT_404_URL = 'https://safeorstolen.com/service-limitations';
-
-  const handleFixSoft404 = async () => {
-    setIsFixing(true);
-    try {
-      const { data, error } = await supabase.functions.invoke('fix-soft-404');
-      
-      if (error) throw error;
-
-      toast({
-        title: 'Fix Initiated',
-        description: `${data.actions.length} actions completed. Google will recrawl within 24-48 hours.`,
-      });
-    } catch (error: any) {
-      toast({
-        title: 'Fix Failed',
-        description: error.message,
-        variant: 'destructive',
-      });
-    } finally {
-      setIsFixing(false);
-    }
-  };
+  const REMOVED_REDIRECT_URLS = [
+    '/verify-not-stolen → /verify',
+    '/verification-hub → /verify',
+    '/stolen-property-lookup → /verify',
+    '/stolen-merchandise-check → /verify',
+    '/avoid-buying-stolen-goods → /how-it-works',
+    '/stolen-items-database → /data-sources',
+    '/how-to-check-if-anything-is-stolen-before-you-buy → /how-it-works',
+    '/disclaimer → /terms',
+    '/our-story → /about',
+    '/enterprise-demo → /for-brands',
+    '/for-consumers → /',
+    '/terms-of-service → /terms',
+    '/privacy-policy → /privacy',
+    '/service-limitations → /terms',
+  ];
 
   return (
     <Card>
@@ -41,54 +28,44 @@ export function GSCFixSoft404() {
           <div>
             <CardTitle className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-green-500" />
-              URL Indexing Status
+              Sitemap Redirect Cleanup
             </CardTitle>
             <CardDescription>
-              /service-limitations - Monitoring remaining enhancement issues
+              All redirect URLs removed from sitemap.xml
             </CardDescription>
           </div>
           <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
             <CheckCircle className="h-3 w-3 mr-1" />
-            Soft 404 Fixed
+            {REMOVED_REDIRECT_URLS.length} Redirects Cleaned
           </Badge>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg space-y-2">
+          <p className="text-sm font-medium text-green-900 dark:text-green-100">Cleanup Complete (Dec 1, 2025):</p>
+          <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
+            <li>✓ Removed {REMOVED_REDIRECT_URLS.length} redirect URLs from sitemap.xml</li>
+            <li>✓ All redirects remain functional via public/_redirects</li>
+            <li>✓ Only canonical destination pages in sitemap</li>
+            <li>✓ Prevents "Alternate page with proper canonical tag" GSC errors</li>
+          </ul>
+          <p className="text-xs text-green-700 dark:text-green-300 mt-2">
+            Google will recrawl sitemap within 24-48 hours and remove redirect URLs from index.
+          </p>
+        </div>
+
         <div className="bg-muted p-4 rounded-lg space-y-3">
           <div className="flex items-start gap-2">
             <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
             <div className="space-y-1">
-              <p className="text-sm font-medium">✓ Soft 404 Resolved (Dec 1, 2025):</p>
-              <p className="text-sm text-muted-foreground">
-                <code className="bg-background px-1.5 py-0.5 rounded text-xs">
-                  /service-limitations
-                </code> is now "available to Google" - 301 redirect recognized
-              </p>
+              <p className="text-sm font-medium">Removed Redirect URLs:</p>
+              <div className="text-xs text-muted-foreground space-y-0.5 max-h-48 overflow-y-auto">
+                {REMOVED_REDIRECT_URLS.map((redirect, i) => (
+                  <div key={i} className="font-mono">{redirect}</div>
+                ))}
+              </div>
             </div>
           </div>
-
-          <div className="flex items-start gap-2">
-            <AlertTriangle className="h-4 w-4 text-yellow-500 mt-0.5 flex-shrink-0" />
-            <div className="space-y-1">
-              <p className="text-sm font-medium">Remaining Issues:</p>
-              <p className="text-sm text-muted-foreground">
-                "Has issues" status - investigating enhancements eligibility blockers
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg space-y-2">
-          <p className="text-sm font-medium text-green-900 dark:text-green-100">Resolution Complete:</p>
-          <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
-            <li>✓ Soft 404 resolved - URL available to Google</li>
-            <li>✓ 301 redirect working correctly</li>
-            <li>✓ Removed from sitemap (redirects shouldn't be indexed)</li>
-            <li>• "Has issues" status is expected for redirect URLs</li>
-          </ul>
-          <p className="text-xs text-green-700 dark:text-green-300 mt-2">
-            No further action needed - Google recognizes this as a proper redirect.
-          </p>
         </div>
 
         <div className="flex gap-2">
@@ -104,21 +81,21 @@ export function GSCFixSoft404() {
 
         <div className="text-xs text-muted-foreground space-y-2">
           <div>
-            <p className="font-medium mb-1">Technical Details:</p>
+            <p className="font-medium mb-1">Why This Matters:</p>
             <ul className="space-y-0.5">
-              <li>• Redirect: <code>/service-limitations → /terms 301!</code></li>
-              <li>• Location: <code>public/_redirects</code> line 230</li>
-              <li>• Status: Active, recognized by Google</li>
-              <li>• Last tested: Dec 1, 2025, 1:50 AM</li>
+              <li>• Redirect URLs in sitemap cause GSC "Alternate page with proper canonical tag" errors</li>
+              <li>• Google prefers sitemaps contain only canonical destination URLs</li>
+              <li>• Client-side redirects remain functional - only removed from sitemap</li>
+              <li>• Server-side 301 redirects in <code>public/_redirects</code> still active</li>
             </ul>
           </div>
           <div>
-            <p className="font-medium mb-1">Possible Issue Sources:</p>
+            <p className="font-medium mb-1">Next Steps:</p>
             <ul className="space-y-0.5">
-              <li>• Mobile usability (check responsive design)</li>
-              <li>• Core Web Vitals (check page speed)</li>
-              <li>• Structured data errors (check schema validation)</li>
-              <li>• Video enhancement eligibility</li>
+              <li>• Monitor GSC Index Coverage for reduction in "Alternate page" errors</li>
+              <li>• Expect full cleanup within 24-48 hours after Google recrawls</li>
+              <li>• All redirect URLs should show "Crawled - not indexed" status (expected)</li>
+              <li>• Destination canonical pages should remain fully indexed</li>
             </ul>
           </div>
         </div>
