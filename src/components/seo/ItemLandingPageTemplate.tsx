@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Shield, Search, CheckCircle, Clock, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -35,6 +35,8 @@ export const ItemLandingPageTemplate = ({
   keywords,
   content
 }: ItemLandingPageProps) => {
+  const location = useLocation();
+  
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -78,7 +80,7 @@ export const ItemLandingPageTemplate = ({
         <title>{title}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={keywords.join(', ')} />
-        <link rel="canonical" href={`https://safeorstolen.com${window.location.pathname}`} />
+        <link rel="canonical" href={`https://safeorstolen.com${location.pathname}`} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
