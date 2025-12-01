@@ -85,6 +85,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /trust-verification          /about  301!
 /accuracy                    /about  301!
 /for-consumers               /about  301!
+/for-businesses              /for-dealers  301!
 /our-story                   /about  301!
 /contact                     /about  301!
 /features                    /about  301!
@@ -96,6 +97,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /how-it-works-detailed       /how-it-works  301!
 /stolen-items-database       /about  301!
 /data-sources                /about  301!
+/seller-guide                /about  301!
+/seo-strategy                /about  301!
 
 # ============================================
 # CASE STUDIES/TESTIMONIALS (GSC Errors)
@@ -187,6 +190,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /craigslist-verification-guide                      /verify  301!
 /facebook-marketplace-stolen-check                  /verify  301!
+/facebook-marketplace-verification                  /verify  301!
 /ebay-stolen-item-checker                           /verify  301!
 /subscriptions                                      /pricing  301!
 /refunds                                           /terms  301!
