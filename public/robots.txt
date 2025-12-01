@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+# ============================================
+# LEGACY REDIRECTS - Deprecated URLs (Not indexed, correct behavior)
+# Google marks these as "Page with redirect" which is CORRECT
+# These URLs redirect to canonical pages and should NOT be indexed
+# ============================================
+
 # Private/Authenticated Areas
 Disallow: /dashboard
 Disallow: /dashboard/*

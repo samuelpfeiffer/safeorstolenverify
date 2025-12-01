@@ -47,20 +47,21 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /how-to-check-if-anything-is-stolen-before-you-buy /verify 301!
 
 # ============================================
-# ITEM CHECKER URLS (GSC "Soft 404" Errors)
+# ITEM CHECKER URLS (GSC "Page with redirect" Fixes)
 # ============================================
-/imei-checker            /imei-check  301!
-/imei                    /imei-check  301!
-/vin-verification        /vin-checker 301!
-/vin-check               /vin-checker 301!
-/vin                     /check-car   301!
-/serial-number-checker   /verify      301!
+# Real pages: /imei-checker, /vin-checker, /serial-number-checker (do NOT redirect)
+# Redirects TO real pages:
+/imei-check              /imei-checker  301!
+/imei                    /imei-checker  301!
+/check-imei-before-buying /imei-checker 301!
+/vin-check               /vin-checker   301!
+/vin-verification        /vin-checker   301!
+/vin                     /check-car     301!
 /check-firearm           /firearms-check 301!
 /firearm-serial-check    /firearms-check 301!
 /check-gaming-console    /check-electronics 301!
-/check-android-phone     /check-phone 301!
-/check-android           /check-phone 301!
-/check-imei-before-buying /imei-check 301!
+/check-android-phone     /check-phone   301!
+/check-android           /check-phone   301!
 /pawn-shops              /for-pawn-shops 301!
 /license-plates-lookup   /license-plate-lookup 301!
 
@@ -83,18 +84,17 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-item-scanner                /app  301!
 
 # ============================================
-# BUSINESS/INFO PAGES (GSC "Alternate page" Errors)
+# BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
 # ============================================
 /trust-verification          /about  301!
 /accuracy                    /about  301!
-/for-consumers               /about  301!
+/for-consumers               /pricing  301!
 /for-businesses              /for-dealers  301!
 /our-story                   /about  301!
 /contact                     /about  301!
 /features                    /about  301!
 /resellers                   /about  301!
-/for-phone-repair-shops      /about  301!
-/for-pawn-shops              /about  301!
+/for-phone-repair-shops      /for-dealers  301!
 /offerup-safety-verification /verify  301!
 /marketplace-integration     /about  301!
 /how-it-works-detailed       /how-it-works  301!
