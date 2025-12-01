@@ -39,9 +39,9 @@ const AppPage = () => {
   return (
     <>
       <PageSEO
-        title="Download SafeOrStolen Mobile App - The Only Stolen Item Checker App (iOS/Android)"
-        description="SafeOrStolen is the ONLY mobile app for stolen item verification. CheckMEND, IMEI.info, Swappa have no app. Download FREE for iOS/Android. Barcode scanning, offline mode, 3-second verification. Better than competitors."
-        keywords="safeorstolen app, safeorstolen mobile app, stolen item checker app, imei checker app, vin lookup app, serial number scanner app, download safeorstolen, safeorstolen ios, safeorstolen android"
+        title="The Only Stolen Verification App - CheckMEND Has No App | SafeOrStolen"
+        description="SafeOrStolen is the ONLY stolen verification app. CheckMEND has NO app. IMEI.info has NO app. Swappa has NO app. We're the first and only mobile app with barcode scanning, instant stolen item verification in 3 seconds. Download FREE for iOS/Android. Better than CheckMEND."
+        keywords="stolen verification app, CheckMEND app, IMEI checker app, VIN checker app, stolen item scanner app, barcode stolen checker, CheckMEND alternative, instant stolen verification, free IMEI checker app"
         canonical="/app"
         structuredData={appSchema}
       />
@@ -105,13 +105,13 @@ const AppPage = () => {
                 The Only Stolen Item Verification App
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Download SafeOrStolen Mobile App
+                The Only Stolen Verification App
               </h1>
               <p className="text-xl text-muted-foreground mb-4">
-                CheckMEND, IMEI.info, Swappa, and Autocheck have <strong>NO mobile app</strong>.
+                <strong>CheckMEND Has NO App</strong> | <strong>IMEI.info Has NO App</strong> | <strong>Swappa Has NO App</strong>
               </p>
               <p className="text-lg text-muted-foreground mb-8">
-                We do. Download FREE for iOS and Android. Verify items in 3 seconds with barcode scanning.
+                SafeOrStolen is the FIRST stolen item scanner app with instant barcode scanning. Download FREE for iOS/Android. 3-second verification. CheckMEND alternative.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center">

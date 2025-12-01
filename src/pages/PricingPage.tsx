@@ -168,9 +168,9 @@ const PricingPage = () => {
   return (
     <>
       <PageSEO
-        title="Pricing Plans - SafeOrStolen Verification Service"
-        description="Choose your SafeOrStolen plan. 2 free verification checks included. Personal, Business, and Enterprise plans available."
-        keywords="SafeOrStolen pricing, verification pricing, IMEI checker cost, VIN lookup pricing"
+        title="Free IMEI Checker App | CheckMEND Alternative - SafeOrStolen Pricing"
+        description="FREE stolen verification app - CheckMEND alternative with 2 free checks. SafeOrStolen is cheaper than CheckMEND ($2.99 vs $3.99). The only IMEI checker app with barcode scanning. Download FREE."
+        keywords="free IMEI checker app, CheckMEND alternative, cheaper than CheckMEND, free stolen phone checker, free VIN verification app, no subscription stolen checker, affordable IMEI checker"
         canonical="/pricing"
         structuredData={[
           {
