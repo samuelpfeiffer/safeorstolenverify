@@ -27,17 +27,24 @@ serve(async (req) => {
     );
 
     // Get GSC configuration from secrets
-    const GSC_CLIENT_ID = Deno.env.get('GSC_CLIENT_ID');
-    const GSC_CLIENT_SECRET = Deno.env.get('GSC_CLIENT_SECRET');
-    const GSC_REDIRECT_URI = Deno.env.get('GSC_REDIRECT_URI');
-    const GSC_PROPERTY_URL = Deno.env.get('GSC_PROPERTY_URL') || 'sc-domain:safeorstolen.com';
+    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || Deno.env.get('GSC_CLIENT_ID');
+    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || Deno.env.get('GSC_CLIENT_SECRET');
+    const GSC_REDIRECT_URI = 'https://safeorstolen.com/admin/gsc-callback';
+    const GSC_PROPERTY_URL = 'sc-domain:safeorstolen.com';
+
+    console.log('[gsc-api] Client ID configured:', !!GSC_CLIENT_ID);
+    console.log('[gsc-api] Client Secret configured:', !!GSC_CLIENT_SECRET);
 
     // Check if GSC secrets are configured
     if (!GSC_CLIENT_ID || !GSC_CLIENT_SECRET) {
+      console.error('[gsc-api] Missing credentials:', {
+        hasClientId: !!GSC_CLIENT_ID,
+        hasClientSecret: !!GSC_CLIENT_SECRET
+      });
       return new Response(
         JSON.stringify({
           error: 'GSC API credentials not configured',
-          message: 'Please add GSC_CLIENT_ID and GSC_CLIENT_SECRET secrets',
+          message: 'Please add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET secrets in Supabase',
           needsSetup: true
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 503 }
@@ -296,8 +303,8 @@ async function getAccessToken(supabaseClient: any): Promise<string> {
   const expiresAt = new Date(tokenData.expires_at);
   if (expiresAt < new Date()) {
     // Refresh token
-    const GSC_CLIENT_ID = Deno.env.get('GSC_CLIENT_ID')!;
-    const GSC_CLIENT_SECRET = Deno.env.get('GSC_CLIENT_SECRET')!;
+    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || Deno.env.get('GSC_CLIENT_ID')!;
+    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || Deno.env.get('GSC_CLIENT_SECRET')!;
 
     const response = await fetch('https://oauth2.googleapis.com/token', {
       method: 'POST',
