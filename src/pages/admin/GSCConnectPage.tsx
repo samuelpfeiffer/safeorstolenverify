@@ -5,6 +5,7 @@ import { useGSCConnection } from '@/hooks/useGSCData';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2, ExternalLink, Loader2, XCircle } from 'lucide-react';
+import { GSCSyncMonitor } from '@/components/admin/GSCSyncMonitor';
 
 const GSCConnectPage: React.FC = () => {
   const navigate = useNavigate();
@@ -158,6 +159,13 @@ const GSCConnectPage: React.FC = () => {
             )}
           </CardContent>
         </Card>
+
+        {/* Sync Monitor - only show when connected */}
+        {isConnected && (
+          <div className="mt-6">
+            <GSCSyncMonitor />
+          </div>
+        )}
       </div>
     </>
   );
