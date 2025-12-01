@@ -27,14 +27,18 @@ serve(async (req) => {
     );
 
     // Get GSC configuration from secrets
-    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || Deno.env.get('SOS Google sign in client I.d.');
-    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || Deno.env.get('Google auth');
+    // Try standard names first, then fall back to existing secret names
+    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || 
+                          Deno.env.get('SOS Google sign in client I.d.') ||
+                          '579001486748-rlo6gji3qq5rv8q6bkq6gncu9j2rd069.apps.googleusercontent.com';
+    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || 
+                              Deno.env.get('Google auth');
     const GSC_REDIRECT_URI = 'https://safeorstolen.com/admin/gsc-callback';
     const GSC_PROPERTY_URL = 'sc-domain:safeorstolen.com';
 
     console.log('[gsc-api] Action:', action);
-    console.log('[gsc-api] Client ID starts with:', GSC_CLIENT_ID?.substring(0, 15));
-    console.log('[gsc-api] Client Secret starts with:', GSC_CLIENT_SECRET?.substring(0, 8));
+    console.log('[gsc-api] Client ID:', GSC_CLIENT_ID);
+    console.log('[gsc-api] Client Secret configured:', !!GSC_CLIENT_SECRET);
 
     // Check if GSC secrets are configured
     if (!GSC_CLIENT_ID || !GSC_CLIENT_SECRET) {
