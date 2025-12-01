@@ -31,6 +31,10 @@ const CheckCarPage = lazy(() => import('@/pages/CheckCarPage'));
 const CheckBikePage = lazy(() => import('@/pages/CheckBikePage'));
 const CheckLaptopPage = lazy(() => import('@/pages/CheckLaptopPage'));
 const CheckElectronicsPage = lazy(() => import('@/pages/CheckElectronicsPage'));
+const CheckEBikePage = lazy(() => import('@/pages/CheckEBikePage'));
+const CheckAppliancesPage = lazy(() => import('@/pages/CheckAppliancesPage'));
+const CheckToolsPage = lazy(() => import('@/pages/CheckToolsPage'));
+const CheckJewelryPage = lazy(() => import('@/pages/CheckJewelryPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
@@ -205,6 +209,10 @@ export const AppRoutes = () => {
         <Route path="/check-bike" element={<CheckBikePage />} />
         <Route path="/check-laptop" element={<CheckLaptopPage />} />
         <Route path="/check-electronics" element={<CheckElectronicsPage />} />
+        <Route path="/check-ebike" element={<CheckEBikePage />} />
+        <Route path="/check-appliances" element={<CheckAppliancesPage />} />
+        <Route path="/check-tools" element={<CheckToolsPage />} />
+        <Route path="/check-jewelry" element={<CheckJewelryPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
