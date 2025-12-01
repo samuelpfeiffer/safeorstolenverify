@@ -44,77 +44,78 @@ export const EnhancedNavigation: React.FC = () => {
   // SEO-optimized navigation structure
   const verificationServices: NavigationItem[] = [
     {
-      label: 'IMEI Check',
-      href: '/verify',
-      description: 'Verify phone legitimacy instantly',
+      label: 'IMEI Checker App',
+      href: '/imei-check',
+      description: 'Instant phone verification with barcode scanning',
       icon: Shield,
-      keywords: ['IMEI verification', 'stolen phone check', 'mobile device verification']
+      keywords: ['IMEI checker app', 'stolen phone check', 'mobile device verification']
     },
     {
-      label: 'VIN Verification', 
-      href: '/verify',
-      description: 'Check vehicle history and theft status',
+      label: 'VIN Checker', 
+      href: '/vin-checker',
+      description: 'Check vehicle theft status instantly',
       icon: Search,
-      keywords: ['VIN lookup', 'stolen car check', 'vehicle verification']
+      keywords: ['VIN checker app', 'stolen car check', 'vehicle verification']
     },
     {
       label: 'Serial Number Lookup',
-      href: '/verify',
-      description: 'Verify electronics and equipment',
+      href: '/serial-number-checker',
+      description: 'Verify electronics with barcode scanner',
       icon: FileText,
-      keywords: ['serial number check', 'electronics verification', 'device authentication']
+      keywords: ['serial number check', 'barcode stolen checker', 'instant verification']
     },
     {
-      label: 'Check Phone',
-      href: '/check-phone',
-      description: 'Comprehensive mobile device verification',
-      keywords: ['phone verification', 'mobile safety check', 'device legitimacy']
+      label: 'Barcode Stolen Checker',
+      href: '/verify',
+      description: 'Instant scanning - 3 second verification',
+      keywords: ['barcode stolen checker', 'instant stolen verification', 'scan serial number']
     },
     {
-      label: 'Check Car',
-      href: '/check-car', 
-      description: 'Vehicle verification and history',
-      keywords: ['car verification', 'auto safety check', 'vehicle legitimacy']
+      label: 'License Plate Lookup',
+      href: '/license-plate-lookup',
+      description: 'All 50 US states coverage',
+      keywords: ['license plate lookup', 'stolen car check', 'vehicle plate verification']
     },
     {
-      label: 'Check Electronics',
-      href: '/check-electronics',
-      description: 'Electronics and gadgets verification',
-      keywords: ['electronics check', 'gadget verification', 'tech safety']
+      label: 'Firearms Verification',
+      href: '/firearms-check',
+      description: 'Only app with gun serial verification',
+      keywords: ['firearms verification', 'gun serial check', 'firearms stolen checker']
     }
   ];
 
   const resourcesAndGuides: NavigationItem[] = [
     {
+      label: 'Download Stolen Verification App',
+      href: '/app',
+      description: 'FREE iOS/Android app with barcode scanning',
+      icon: Download,
+      keywords: ['stolen verification app download', 'IMEI checker app', 'mobile app']
+    },
+    {
       label: 'How It Works',
       href: '/how-it-works',
-      description: 'Learn our verification process',
+      description: 'Learn our instant verification process',
       icon: Settings,
       keywords: ['how verification works', 'stolen goods process', 'safety guide']
     },
     {
-      label: 'Ultimate Buying Guide',
-      href: '/ultimate-guide-buying-safely',
-      description: '2025 guide to safe purchasing',
-      keywords: ['safe buying guide', 'avoid stolen goods', 'purchase protection']
+      label: 'CheckMEND Alternative',
+      href: '/vs-checkmend',
+      description: 'Why we\'re better (and have an app)',
+      keywords: ['CheckMEND alternative', 'better than CheckMEND', 'free CheckMEND']
+    },
+    {
+      label: 'Blog - Verification Guides',
+      href: '/blog',
+      description: 'Expert guides and tips',
+      keywords: ['verification guides', 'stolen item tips', 'safety articles']
     },
     {
       label: 'FAQ',
       href: '/faq',
       description: 'Common questions answered',
       keywords: ['verification FAQ', 'stolen goods questions', 'help center']
-    },
-    {
-      label: 'Blog & Insights',
-      href: '/blog',
-      description: 'Latest fraud prevention insights',
-      keywords: ['fraud prevention blog', 'theft trends', 'safety insights']
-    },
-    {
-      label: 'Case Studies',
-      href: '/case-studies',
-      description: 'Real prevention success stories',
-      keywords: ['fraud prevention cases', 'success stories', 'theft prevention']
     },
     {
       label: 'Statistics 2024',
@@ -126,35 +127,29 @@ export const EnhancedNavigation: React.FC = () => {
 
   const businessSolutions: NavigationItem[] = [
     {
-      label: 'For Marketplaces',
-      href: '/marketplace-integration',
-      description: 'API integration for platforms',
-      icon: Globe,
-      keywords: ['marketplace API', 'business integration', 'enterprise verification']
-    },
-    {
       label: 'For Pawn Shops',
-      href: '/pawn-shops',
-      description: 'Specialized pawn industry tools',
+      href: '/for-pawn-shops',
+      description: 'Instant verification for pawn businesses',
+      icon: Globe,
       keywords: ['pawn shop verification', 'retail fraud prevention', 'business tools']
     },
     {
+      label: 'For Dealers',
+      href: '/for-dealers',
+      description: 'Vehicle & electronics dealer protection',
+      keywords: ['dealer verification', 'business protection', 'dealer tools']
+    },
+    {
+      label: 'For Marketplaces',
+      href: '/for-marketplaces',
+      description: 'API integration for platforms',
+      keywords: ['marketplace API', 'business integration', 'enterprise verification']
+    },
+    {
       label: 'For Auction Houses',
-      href: '/auction-houses',
+      href: '/for-auction-houses',
       description: 'Auction verification services',
       keywords: ['auction verification', 'consignment safety', 'high-value authentication']
-    },
-    {
-      label: 'Enterprise Demo',
-      href: '/enterprise-demo',
-      description: 'See enterprise features',
-      keywords: ['enterprise demo', 'business verification', 'API preview']
-    },
-    {
-      label: 'API Documentation',
-      href: '/api-docs',
-      description: 'Developer integration guide',
-      keywords: ['verification API', 'developer docs', 'integration guide']
     }
   ];
 
@@ -162,20 +157,20 @@ export const EnhancedNavigation: React.FC = () => {
     {
       label: 'About SafeOrStolen',
       href: '/about',
-      description: 'Our mission and story',
+      description: 'The only stolen verification app globally',
       keywords: ['about SafeOrStolen', 'company mission', 'fraud prevention leader']
     },
     {
-      label: 'Our Story',
-      href: '/our-story',
-      description: '$2.3M in prevented fraud',
-      keywords: ['SafeOrStolen story', 'fraud prevention success', 'company history']
+      label: 'Pricing - Free Trial',
+      href: '/pricing',
+      description: '2 free checks - no credit card',
+      keywords: ['free trial', 'pricing plans', 'CheckMEND alternative pricing']
     },
     {
-      label: 'Trust & Transparency',
-      href: '/transparency',
-      description: 'How we maintain accuracy',
-      keywords: ['data transparency', 'verification accuracy', 'trust factors']
+      label: 'FAQ',
+      href: '/faq',
+      description: 'Common questions answered',
+      keywords: ['verification FAQ', 'stolen goods questions', 'help center']
     },
     {
       label: 'Contact Us',
@@ -321,9 +316,9 @@ export const EnhancedNavigation: React.FC = () => {
 
             {/* Download App Link - NEW */}
             <Link
-              to="/install-app"
+              to="/app"
               className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-sm"
-              onClick={() => handleNavigationClick({ label: 'Download App', href: '/install-app' })}
+              onClick={() => handleNavigationClick({ label: 'Download Stolen Verification App', href: '/app' })}
             >
               <Smartphone className="w-4 h-4" />
               Download App

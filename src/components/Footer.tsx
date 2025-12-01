@@ -5,23 +5,26 @@ import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, C
 import sosLogo from '@/assets/sos-logo.png';
 const Footer = () => {
   const quickLinks = [{
-    label: 'How It Works',
+    label: 'Instant Stolen Verification',
+    href: '/verify'
+  }, {
+    label: 'IMEI Checker App',
+    href: '/imei-check'
+  }, {
+    label: 'VIN Checker',
+    href: '/vin-checker'
+  }, {
+    label: 'Download Stolen Verification App',
+    href: '/app'
+  }, {
+    label: 'Barcode Scanner - 3 Seconds',
+    href: '/verify'
+  }, {
+    label: 'CheckMEND Alternative (Free)',
+    href: '/pricing'
+  }, {
+    label: 'Like Carfax for Everything',
     href: '/how-it-works'
-  }, {
-    label: 'For Consumers',
-    href: '/for-consumers'
-  }, {
-    label: 'For Brands',
-    href: '/for-brands'
-  }, {
-    label: 'About the Problem',
-    href: '/about-problem'
-  }, {
-    label: 'Our Story',
-    href: '/our-story'
-  }, {
-    label: 'Contact Us',
-    href: '/contact'
   }];
   const legalLinks = [{
     label: 'Terms & Conditions',
@@ -54,7 +57,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 mb-6">
                 <img 
                   src={sosLogo} 
-                  alt="SafeOrStolen logo - stolen goods verification platform for checking IMEI, VIN, and serial numbers" 
+                  alt="SafeOrStolen - the only stolen verification app with barcode scanning for IMEI checker, VIN checker, serial number lookup - CheckMEND has no app" 
                   className="h-12 w-12 filter drop-shadow-lg"
                   width="48"
                   height="48"
@@ -67,8 +70,7 @@ const Footer = () => {
               </div>
               
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                The world's first real-time stolen goods verification platform. 
-                Protecting consumers and businesses from fraud since 2024.
+                The ONLY stolen verification app with instant barcode scanning. CheckMEND has NO app. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. Like Carfax for everything. All 50 states + international.
               </p>
 
               <div className="space-y-3 mb-6">
