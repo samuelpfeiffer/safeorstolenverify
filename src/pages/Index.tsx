@@ -150,7 +150,7 @@ const Index = () => {
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
                   <img 
                     src={heroImage} 
-                    alt="SafeOrStolen verification app showing item verified status" 
+                    alt="SafeOrStolen - the only stolen verification app with barcode scanning - IMEI checker, VIN checker, stolen item scanner app showing instant verification results in 3 seconds" 
                     className="relative w-full h-auto rounded-2xl shadow-2xl border border-primary/30"
                     loading="eager"
                     width={1200}

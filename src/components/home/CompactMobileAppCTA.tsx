@@ -16,15 +16,15 @@ export const CompactMobileAppCTA = () => {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-sm font-bold bg-accent text-accent-foreground px-2 py-0.5 rounded">
-                    EXCLUSIVE
+                    ONLY APP
                   </span>
-                  <span className="text-sm font-medium">Only App with Firearms Verification</span>
+                  <span className="text-sm font-medium">CheckMEND Has No App - We Do</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-1">
-                  Download Our Mobile App
+                  Download The Only Stolen Verification App
                 </h3>
                 <p className="text-primary-foreground/90">
-                  Verify phones, cars, guns & more on-the-go • iOS & Android
+                  Instant barcode scanning • IMEI, VIN, Serial checker • 3-second verification • iOS & Android
                 </p>
               </div>
             </div>

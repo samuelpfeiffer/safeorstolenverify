@@ -2,6 +2,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
+import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from 'react-router-dom';
 import { X, Check, AlertTriangle, Download } from 'lucide-react';
 
@@ -33,6 +34,31 @@ const CheckMendHasNoApp = () => {
         structuredData={blogPostSchema}
       />
 
+      <BlogFAQSchema 
+        faqs={[
+          {
+            question: "Does CheckMEND have a mobile app?",
+            answer: "No, CheckMEND does NOT have a mobile app. Despite being in business since 2004, CheckMEND only offers a website. There is no CheckMEND app for iOS or Android. SafeOrStolen is the only CheckMEND alternative with a real mobile app."
+          },
+          {
+            question: "Why doesn't CheckMEND have an app?",
+            answer: "CheckMEND hasn't developed a mobile app due to technical complexity, outdated infrastructure built in the early 2000s, and their business model focused on expensive per-check pricing ($3.99). Building a modern app with barcode scanning would require a complete rebuild."
+          },
+          {
+            question: "What is the best CheckMEND alternative with an app?",
+            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), 2 FREE checks (vs CheckMEND's $3.99), offline mode, and coverage for all item types."
+          },
+          {
+            question: "Is SafeOrStolen cheaper than CheckMEND?",
+            answer: "Yes, SafeOrStolen is cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers 2 FREE checks, then $2.99 per check - 25% cheaper. Plus you get a mobile app with barcode scanning that CheckMEND doesn't offer."
+          },
+          {
+            question: "Can I scan barcodes with CheckMEND?",
+            answer: "No, CheckMEND does not support barcode scanning because they don't have a mobile app. You must manually type serial numbers, IMEI, or VIN on their website. SafeOrStolen's app has instant barcode scanning - just point and scan."
+          }
+        ]}
+      />
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation 

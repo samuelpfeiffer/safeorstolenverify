@@ -2,6 +2,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
+import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from 'react-router-dom';
 import { Smartphone, Car, Shield, CheckCircle, Download } from 'lucide-react';
 
@@ -33,6 +34,31 @@ const LikeCarfaxForPhones = () => {
         structuredData={blogPostSchema}
       />
 
+      <BlogFAQSchema 
+        faqs={[
+          {
+            question: "What is 'Carfax for Everything'?",
+            answer: "SafeOrStolen is 'Carfax for Everything' - a universal verification platform that checks phones (IMEI), vehicles (VIN), electronics, firearms, boats, and more. Like Carfax checks car history, we check the history of ANY item to determine if it's stolen or safe."
+          },
+          {
+            question: "How is SafeOrStolen like Carfax?",
+            answer: "SafeOrStolen works like Carfax but for all items: enter an identifier (IMEI, VIN, serial number), get instant history report showing if item is stolen, blacklisted, or safe. Carfax only checks vehicles. SafeOrStolen checks everything - phones, vehicles, electronics, firearms, boats."
+          },
+          {
+            question: "Can I check phones like Carfax checks cars?",
+            answer: "Yes, SafeOrStolen checks phones using IMEI numbers just like Carfax checks cars using VIN. Enter the phone's IMEI (dial *#06#), get instant verification in 3 seconds showing if it's blacklisted, stolen, or safe to buy."
+          },
+          {
+            question: "Is SafeOrStolen better than Carfax?",
+            answer: "SafeOrStolen offers broader coverage than Carfax. Carfax only checks vehicles. SafeOrStolen checks phones, vehicles, electronics, firearms, boats, appliances - everything. We also offer a mobile app with barcode scanning (Carfax doesn't), 3-second results (vs Carfax's slow reports), and 2 FREE checks."
+          },
+          {
+            question: "Does SafeOrStolen work in all 50 states?",
+            answer: "Yes, SafeOrStolen works across all 50 US states plus international coverage. Like Carfax provides nationwide vehicle reports, SafeOrStolen provides nationwide and international verification for all item types. Access to 150+ databases globally."
+          }
+        ]}
+      />
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation 

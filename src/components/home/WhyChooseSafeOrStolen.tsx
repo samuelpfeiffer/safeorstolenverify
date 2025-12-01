@@ -7,16 +7,16 @@ export const WhyChooseSafeOrStolen = () => {
   const advantages = [
     {
       icon: Smartphone,
-      title: 'Only Service with Mobile App',
-      description: 'We\'re the ONLY verification service offering a dedicated mobile app (iOS & Android). Verify items at meetups, even offline. Competitors force you to use clunky websites.',
-      badge: 'Exclusive',
+      title: 'Only Stolen Verification App',
+      description: 'We\'re the ONLY stolen verification app with barcode scanning (iOS & Android). CheckMEND has NO app. IMEI.info has NO app. Swappa has NO app. We\'re the first and only stolen item scanner app that works offline.',
+      badge: 'Exclusive App',
       color: 'from-blue-500 to-purple-500'
     },
     {
       icon: Zap,
-      title: 'Fastest Results: 3 Seconds',
-      description: 'Competitors take 24+ hours to email reports. We deliver instant results in 3 seconds. Perfect for meetups where you need immediate verification before handing over cash.',
-      badge: '100x Faster',
+      title: 'Instant Stolen Verification - 3 Seconds',
+      description: 'CheckMEND takes 30+ seconds. We deliver instant stolen verification in 3 seconds with barcode scanning. No manual typing. Perfect for meetups - scan the IMEI or VIN, get results instantly.',
+      badge: '10x Faster',
       color: 'from-yellow-500 to-orange-500'
     },
     {
@@ -28,9 +28,9 @@ export const WhyChooseSafeOrStolen = () => {
     },
     {
       icon: Award,
-      title: 'FREE Basic Checks',
-      description: 'Carfax charges $39.99, CheckMend $25. We offer free basic verification. Only pay for advanced features if needed. No subscriptions, no recurring charges.',
-      badge: '$0 Cost',
+      title: 'Free IMEI Checker App - 2 Checks',
+      description: 'CheckMEND charges $3.99 per check. We offer 2 FREE verification checks. Better than CheckMEND and it\'s a real mobile app, not a slow website. Free stolen verification app beats expensive competitors.',
+      badge: 'Free Alternative',
       color: 'from-pink-500 to-red-500'
     },
     {
@@ -69,10 +69,10 @@ export const WhyChooseSafeOrStolen = () => {
         <div className="text-center mb-12">
           <Badge className="mb-4">Why We're Different</Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose SafeOrStolen Over Competitors?
+            Why SafeOrStolen is Better Than CheckMEND, IMEI.info, Swappa
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We didn't create "just another" verification service. We built what buyers actually need - fast, comprehensive, and mobile-first.
+            We're the only stolen verification app with barcode scanning. CheckMEND has NO app. Better than CheckMEND in every way - faster, cheaper, and mobile-first with instant stolen verification.
           </p>
         </div>
 
