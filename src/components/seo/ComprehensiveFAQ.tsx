@@ -179,33 +179,11 @@ export const ComprehensiveFAQ: React.FC<ComprehensiveFAQProps> = ({
     technical: 'Technical Questions'
   };
 
-  // Generate FAQ Schema with proper validation
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage", 
-    "mainEntity": faqs.map(faq => {
-      // Ensure text is properly formatted and under 5000 characters
-      const cleanAnswer = faq.answer.trim().substring(0, 5000);
-      const cleanQuestion = faq.question.trim().substring(0, 300);
-      
-      return {
-        "@type": "Question",
-        "name": cleanQuestion,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": cleanAnswer
-        }
-      };
-    })
-  };
+  // FAQ schema removed to prevent duplicates - FAQPage schemas are now centralized
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      {/* FAQ Schema removed to prevent duplicates */}
 
       <section className="py-16 bg-muted/30" data-seo="faq-section">
         <div className="container mx-auto px-4">

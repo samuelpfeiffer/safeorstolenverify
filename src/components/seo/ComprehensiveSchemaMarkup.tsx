@@ -111,38 +111,7 @@ export const ComprehensiveSchemaMarkup = ({ pageType, customData }: SchemaMarkup
       });
     }
 
-    if (pageType === 'faq') {
-      baseSchemas.push({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": customData?.faqs || [
-          {
-            "@type": "Question",
-            "name": "How do I check if a phone is stolen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Enter the IMEI number (dial *#06# or check Settings) into our free verification tool. We check against global police databases, manufacturer blacklists, and theft reports."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is the stolen item checker really free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Get 4 FREE verifications when you sign up. Check phones, laptops, cars, bikes, and any electronics with serial numbers. Premium plans available for unlimited searches."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What items can I verify?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Verify phones (IMEI), cars/trucks (VIN), laptops, computers, cameras, power tools, bikes, firearms, watches, jewelry, and any item with a serial number."
-            }
-          }
-        ]
-      });
-    }
+    // FAQ schema removed to prevent duplicates - FAQPage schemas are now centralized in page-specific implementations
 
     if (pageType === 'article') {
       baseSchemas.push({

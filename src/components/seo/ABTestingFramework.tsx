@@ -114,31 +114,7 @@ export const ABTestingFramework: React.FC<ABTestingFrameworkProps> = ({
       localStorage.setItem('ab_test_faq_schema', testVariant);
     }
 
-    if (testVariant === 'B') {
-      // Inject enhanced FAQ schema for variant B
-      const faqSchemaData = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": Array.from(faqElements).map((faq, index) => {
-          const question = faq.querySelector('h3, .faq-question')?.textContent || `FAQ ${index + 1}`;
-          const answer = faq.querySelector('.faq-answer, p')?.textContent || 'Answer not available';
-          
-          return {
-            "@type": "Question",
-            "name": question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": answer
-            }
-          };
-        })
-      };
-
-      const schemaScript = document.createElement('script');
-      schemaScript.type = 'application/ld+json';
-      schemaScript.textContent = JSON.stringify(faqSchemaData);
-      document.head.appendChild(schemaScript);
-    }
+    // FAQ schema injection removed to prevent duplicates - FAQPage schemas are now centralized
 
     trackSEOABTest('faq_schema_enhancement', testVariant, 'schema_markup');
   };

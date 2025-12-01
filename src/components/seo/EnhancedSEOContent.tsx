@@ -200,23 +200,7 @@ export const EnhancedSEOContent: React.FC<EnhancedSEOContentProps> = ({
             </div>
           </div>
 
-          {/* FAQ Schema Markup */}
-          <Helmet>
-            <script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqData.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                  }
-                }))
-              })}
-            </script>
-          </Helmet>
+          {/* FAQ Schema removed to prevent duplicates - FAQPage schemas are centralized */}
         </section>
       )}
 

@@ -117,39 +117,7 @@ export const AdvancedSEOManager = () => {
         })}
       </script>
 
-      {/* FAQ Schema for rich results */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How do I check if an item is stolen?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Enter the serial number, IMEI, or VIN into our verification system. We check against 50+ million records in 30 seconds to verify if the item is reported as stolen, lost, or safe to buy."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is the verification service free?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! We offer 2 free verifications (14-day trial) to start. After that, you can use pay-per-check ($0.99) or subscribe to unlimited plans starting at $9.99/month."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What items can I verify?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can verify phones (IMEI), vehicles (VIN), firearms (serial), laptops, cameras, power tools, bikes, and any item with a unique serial number."
-              }
-            }
-          ]
-        })}
-      </script>
+      {/* FAQ Schema removed to prevent duplicates - FAQPage schemas are centralized */}
     </Helmet>
   );
 };

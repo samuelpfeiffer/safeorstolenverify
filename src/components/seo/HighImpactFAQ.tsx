@@ -53,26 +53,11 @@ export const HighImpactFAQ: React.FC = () => {
     }
   ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
+  // FAQ schema removed to prevent duplicates - FAQPage schemas are now centralized
 
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      {/* FAQ Schema removed to prevent duplicates */}
 
       <Card className="bg-slate-800/50 border-slate-700">
         <CardHeader>
