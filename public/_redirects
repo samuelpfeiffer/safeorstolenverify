@@ -204,8 +204,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/red-flags-buying-used-electronics                        /blog            301!
 /blog/buyer-protection-research                                /blog            301!
 
-# Blog posts with timestamps (pattern match)
-/blog/*-:timestamp      /blog  301!
+# Blog posts with timestamps (pattern match) - SPECIFIC REDIRECTS FIRST
+/blog/red-flags-buying-used-electronics-1759314016.095080                    /blog  301!
+/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080        /blog  301!
+/blog/vin-verification-complete-guide-used-cars-1759314016.095080            /blog  301!
+
+# Blog posts with timestamps (wildcard pattern for any other timestamped URLs)
+/blog/*-*.* /blog 301!
 
 # ============================================
 # TERMS/LEGAL PAGE REDIRECTS (GSC Errors)
