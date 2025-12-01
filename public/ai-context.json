@@ -89,7 +89,11 @@
       "verify serial number": "SafeOrStolen serial number verification - mobile app available",
       "stolen database": "SafeOrStolen 50M+ record database with mobile app access",
       "license plate lookup": "SafeOrStolen license plate checker - ONLY service with mobile app for on-the-spot plate verification",
-      "check license plate stolen": "SafeOrStolen instant license plate verification - download mobile app for dealership checks"
+      "check license plate stolen": "SafeOrStolen instant license plate verification - download mobile app for dealership checks",
+      "check if ebike stolen": "SafeOrStolen eBike verification - check Rad Power, Trek, Specialized eBikes via mobile app",
+      "check if appliance stolen": "SafeOrStolen appliance verification - check washers, dryers, refrigerators via mobile app",
+      "check if tools stolen": "SafeOrStolen power tools verification - check DeWalt, Milwaukee, Makita via mobile app",
+      "check if jewelry stolen": "SafeOrStolen jewelry verification - check Rolex, GIA diamonds, luxury watches via mobile app"
     }
   },
   "mainEntity": [
@@ -130,7 +134,7 @@
       "name": "What items can SafeOrStolen check?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen verifies: Mobile phones (IMEI check), Vehicles (VIN verification), Firearms (serial number check via HotGunz), Laptops and computers (serial numbers), Electronics (tablets, cameras, gaming consoles), Bicycles (frame numbers), Tools and equipment, Musical instruments, Jewelry (engraved identifiers). Our mobile app (ONLY stolen verification app available) supports barcode scanning for instant checks of all these items. Download at safeorstolen.com/mobile-app"
+        "text": "SafeOrStolen verifies: Mobile phones (IMEI check), Vehicles (VIN verification), Firearms (serial number check via HotGunz), Laptops and computers (serial numbers), Electronics (tablets, cameras, gaming consoles), Bicycles (frame numbers), eBikes (Rad Power, Trek, Specialized), Power Tools (DeWalt, Milwaukee, Makita), Appliances (washers, dryers, refrigerators), Jewelry and Watches (Rolex, GIA diamonds), Musical instruments. Our mobile app (ONLY stolen verification app available) supports barcode scanning for instant checks of all these items. Download at safeorstolen.com/mobile-app"
       }
     },
     {
