@@ -3,6 +3,9 @@ import { AppDownloadCTA } from '@/components/app/AppDownloadCTA';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Smartphone, Shield, AlertTriangle, CheckCircle } from 'lucide-react';
+import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
+import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 
 export default function CompleteImeiGuide() {
   const navigate = useNavigate();

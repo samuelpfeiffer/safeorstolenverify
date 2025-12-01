@@ -12,120 +12,50 @@ export interface SitemapURL {
 
 export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
-  // 10 CORE PAGES
+  // CORE PAGES (9)
   // ============================================
   { path: '/', priority: 1.0, changefreq: 'daily' },
   { path: '/verify', priority: 0.9, changefreq: 'daily' },
   { path: '/pricing', priority: 0.9, changefreq: 'weekly' },
-  { path: '/dashboard', priority: 0.8, changefreq: 'weekly' },
-  { path: '/account', priority: 0.7, changefreq: 'monthly' },
+  { path: '/dashboard', priority: 0.7, changefreq: 'weekly' },
+  { path: '/account', priority: 0.6, changefreq: 'monthly' },
   { path: '/app', priority: 0.9, changefreq: 'weekly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.8, changefreq: 'monthly' },
-  { path: '/terms', priority: 0.6, changefreq: 'yearly' },
-  { path: '/privacy', priority: 0.6, changefreq: 'yearly' },
+  { path: '/terms', priority: 0.5, changefreq: 'yearly' },
+  { path: '/privacy', priority: 0.5, changefreq: 'yearly' },
 
   // ============================================
-  // 12 ITEM LANDING PAGES
+  // BLOG ARTICLES (12)
   // ============================================
-  { path: '/check-phone', priority: 0.9, changefreq: 'weekly' },
-  { path: '/check-laptop', priority: 0.9, changefreq: 'weekly' },
-  { path: '/check-bike', priority: 0.9, changefreq: 'weekly' },
-  { path: '/check-vehicle', priority: 0.9, changefreq: 'weekly' },
-  { path: '/check-boat', priority: 0.9, changefreq: 'weekly' },
-  { path: '/check-jewelry', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-electronics', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-tools', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-firearm', priority: 0.9, changefreq: 'weekly' },
-  { path: '/check-camera', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-watch', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-appliance', priority: 0.8, changefreq: 'weekly' },
-
-  // ============================================
-  // 3 COMPETITOR COMPARISON PAGES
-  // ============================================
-  { path: '/vs-checkmend', priority: 0.8, changefreq: 'monthly' },
-  { path: '/vs-imei-info', priority: 0.8, changefreq: 'monthly' },
-  { path: '/vs-swappa', priority: 0.8, changefreq: 'monthly' },
-
-  // ============================================
-  // 50 STATE VIN CHECKER PAGES
-  // ============================================
-  { path: '/vin-check/alabama', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/alaska', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/arizona', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/arkansas', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/california', priority: 0.8, changefreq: 'monthly' },
-  { path: '/vin-check/colorado', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/connecticut', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/delaware', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/florida', priority: 0.8, changefreq: 'monthly' },
-  { path: '/vin-check/georgia', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/hawaii', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/idaho', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/illinois', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/indiana', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/iowa', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/kansas', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/kentucky', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/louisiana', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/maine', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/maryland', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/massachusetts', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/michigan', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/minnesota', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/mississippi', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/missouri', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/montana', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/nebraska', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/nevada', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/new-hampshire', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/new-jersey', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/new-mexico', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/new-york', priority: 0.8, changefreq: 'monthly' },
-  { path: '/vin-check/north-carolina', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/north-dakota', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/ohio', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/oklahoma', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/oregon', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/pennsylvania', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/rhode-island', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/south-carolina', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/south-dakota', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/tennessee', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/texas', priority: 0.8, changefreq: 'monthly' },
-  { path: '/vin-check/utah', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/vermont', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/virginia', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/washington', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/west-virginia', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/wisconsin', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vin-check/wyoming', priority: 0.7, changefreq: 'monthly' },
-
-  // ============================================
-  // 12 BLOG ARTICLES
-  // ============================================
-  { path: '/blog/protect-yourself-buying-used-electronics', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/protect-yourself-buying-used-electronics', priority: 0.8, changefreq: 'monthly' },
   { path: '/blog/data-source-credibility-stolen-goods-verification', priority: 0.7, changefreq: 'monthly' },
   { path: '/blog/ultimate-marketplace-buyers-guide', priority: 0.8, changefreq: 'monthly' },
   { path: '/blog/complete-imei-guide-protect-yourself', priority: 0.8, changefreq: 'monthly' },
-  { path: '/blog/safeorstolen-firearms-marketplace-verification', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/buying-used-cars-avoid-stolen-vehicles', priority: 0.8, changefreq: 'monthly' },
-  { path: '/blog/stolen-goods-statistics-what-buyers-need-know', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/pawnshop-buyers-guide-verify-before-purchase', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/mobile-app-barcode-scanning-verification', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/business-guide-preventing-stolen-goods', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/international-verification-global-coverage', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/how-safeorstolen-works-comprehensive-guide', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/how-to-check-if-phone-stolen', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/complete-verification-guide', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/complete-vin-guide', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/verification-methodology', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/real-user-stories', priority: 0.7, changefreq: 'weekly' },
+  { path: '/blog/scammer-tactics-exposed', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/theft-trends-report-2024', priority: 0.7, changefreq: 'yearly' },
+  { path: '/blog/phone-verification-guide', priority: 0.7, changefreq: 'monthly' },
 
   // ============================================
-  // 5 BUSINESS PAGES
+  // BUSINESS PAGES (5)
   // ============================================
   { path: '/for-businesses', priority: 0.8, changefreq: 'monthly' },
   { path: '/for-pawnshops', priority: 0.8, changefreq: 'monthly' },
   { path: '/for-dealers', priority: 0.8, changefreq: 'monthly' },
-  { path: '/marketplace-safety', priority: 0.8, changefreq: 'monthly' },
-  { path: '/legal-guide', priority: 0.7, changefreq: 'monthly' },
+  { path: '/for-auction-houses', priority: 0.7, changefreq: 'monthly' },
+  { path: '/for-marketplaces', priority: 0.7, changefreq: 'monthly' },
+
+  // ============================================
+  // COMPETITOR COMPARISON (3)
+  // ============================================
+  { path: '/vs-checkmend', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vs-imei-info', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vs-swappa', priority: 0.8, changefreq: 'monthly' },
 ];
 
 /**

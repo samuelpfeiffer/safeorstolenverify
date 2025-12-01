@@ -3,6 +3,8 @@ import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Zap, Users, TrendingUp, FileCheck, Clock } from 'lucide-react';
+import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 
 export default function ForDealers() {
   const structuredData = {
