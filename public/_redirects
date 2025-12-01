@@ -1,39 +1,65 @@
-# Lovable Platform Redirects for Safe Or Stolen
-# Corrected redirects to fix Google Search Console canonical tag issues
-# Last updated: 2025-11-24
+# SafeOrStolen Server-Side Redirects
+# Comprehensive 301 redirects to fix Google Search Console indexing issues
+# Last updated: 2025-01-17
 
 # ============================================
-# FORCE CANONICAL DOMAIN (non-www, HTTPS)
+# FORCE CANONICAL DOMAIN (non-www, HTTPS) - HIGHEST PRIORITY
 # ============================================
 http://safeorstolen.com/* https://safeorstolen.com/:splat 301!
 http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
-# DUPLICATE APP URLS (GSC Errors)
+# APP URLS → /app (GSC "Alternate page" errors)
 # ============================================
-/imei-checker-app       /mobile-app  301!
-/mobile-verification    /mobile-app  301!
-/get-app                /mobile-app  301!
-/install-app            /mobile-app  301!
-/verification-app       /mobile-app  301!
-/android-app            /mobile-app  301!
-/ios-app                /mobile-app  301!
+/mobile-app             /app  301!
+/imei-checker-app       /app  301!
+/mobile-verification    /app  301!
+/get-app                /app  301!
+/install-app            /app  301!
+/verification-app       /app  301!
+/android-app            /app  301!
+/ios-app                /app  301!
+/pwa-app                /app  301!
+/secondhand-research-app /app  301!
+/stolen-item-scanner    /app  301!
 
 # ============================================
-# LEGACY VERIFICATION URLS (GSC Errors)
+# LEGACY VERIFICATION URLS → /verify (GSC Errors)
 # ============================================
-/verify-not-stolen          /verify  301!
-/stolen-merchandise-check   /verify  301!
-/verification-hub           /verify  301!
+/verify-not-stolen           /verify  301!
+/stolen-merchandise-check    /verify  301!
+/verification-hub            /verify  301!
+/stolen-property-lookup      /verify  301!
+/bulk                        /verify  301!
+/check-if-stolen             /verify  301!
+/stolen-item-checker         /verify  301!
+/stolen-item-lookup          /verify  301!
+/check-stolen-item           /verify  301!
+/stolen-goods-search         /verify  301!
+/free-stolen-check           /verify  301!
+/how-do-i-check-if-stolen    /verify  301!
+/stolen-property-check       /verify  301!
+/check-stolen-database       /verify  301!
+/stolen-items-list           /verify  301!
+/avoid-stolen-goods          /verify  301!
+/avoid-buying-stolen-goods   /verify  301!
+/how-to-check-if-anything-is-stolen-before-you-buy /verify 301!
 
 # ============================================
-# LEGACY CHECKER URLS (GSC Errors)
+# ITEM CHECKER URLS (GSC "Soft 404" Errors)
 # ============================================
-/imei-checker           /imei-check  301!
-/vin-verification       /check-car   301!
-/serial-number-checker  /verify      301!
-/stolen-item-checker    /verify      301!
+/imei-checker            /imei-check  301!
+/imei                    /imei-check  301!
+/vin-verification        /vin-checker 301!
+/vin-check               /vin-checker 301!
+/vin                     /check-car   301!
+/serial-number-checker   /verify      301!
+/check-firearm           /firearms-check 301!
+/firearm-serial-check    /firearms-check 301!
+/check-gaming-console    /check-electronics 301!
+/check-android-phone     /check-phone 301!
+/license-plates-lookup   /license-plate-lookup 301!
 
 # ============================================
 # LEGACY VERIFICATION URLS (Additional)
@@ -54,49 +80,60 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-item-scanner                /app  301!
 
 # ============================================
-# BUSINESS/INFO PAGES → /about
+# BUSINESS/INFO PAGES (GSC "Alternate page" Errors)
 # ============================================
-/trust-verification                 /about  301!
-/accuracy                          /about  301!
-/pawn-shops                        /for-pawn-shops  301!
-/auction-houses                    /for-auction-houses  301!
-/resellers                         /about  301!
-/for-phone-repair-shops            /about  301!
-/data-sources                      /about  301!
-/features                          /about  301!
-/contact                           /about  301!
-/marketplace-integration           /about  301!
-/how-it-works-detailed             /how-it-works  301!
-/our-story                         /about  301!
-/for-consumers                     /  301!
-/stolen-items-database             /data-sources  301!
+/trust-verification          /about  301!
+/accuracy                    /about  301!
+/for-consumers               /about  301!
+/our-story                   /about  301!
+/contact                     /about  301!
+/features                    /about  301!
+/resellers                   /about  301!
+/for-phone-repair-shops      /about  301!
+/marketplace-integration     /about  301!
+/how-it-works-detailed       /how-it-works  301!
+/stolen-items-database       /about  301!
+/data-sources                /about  301!
 
 # ============================================
-# CASE STUDIES/TESTIMONIALS
+# CASE STUDIES/TESTIMONIALS (GSC Errors)
 # ============================================
-/case-studies                      /testimonials  301!
+/case-studies  /testimonials  301!
 
 # ============================================
-# APP DOWNLOAD VARIATIONS
+# APP SUBDIRECTORY REDIRECTS (GSC "Page with redirect" Errors)
 # ============================================
-/pwa-app                           /app  301!
-/app/install-guide                 /app  301!
-/app/phoenix                       /app  301!
-/app/houston                       /app  301!
-/app/miami                         /app  301!
-/app/download                      /app  301!
-/secondhand-research-app           /app  301!
+/app/install-guide                  /app  301!
+/app/download                       /app  301!
+/app/phoenix                        /app  301!
+/app/houston                        /app  301!
+/app/miami                          /app  301!
+/app/research-stolen-car            /app  301!
+/app/research-stolen-phone          /app  301!
+/app/research-stolen-items          /app  301!
+/app/buyer-protection-research      /app  301!
+/app/facebook-marketplace-checker   /app  301!
+/app/pawnshop-verification          /app  301!
+/app/offerup-safety                 /app  301!
 
 # ============================================
-# COMPARISON/COMPETITOR PAGES → /pricing
+# MARKETPLACE VERIFICATION REDIRECTS (GSC "Page with redirect")
+# ============================================
+/verify/facebook-marketplace  /verify  301!
+/verify/ebay                  /verify  301!
+/verify/pawnshops             /verify  301!
+/verify/offerup               /verify  301!
+
+# ============================================
+# COMPARISON/COMPETITOR PAGES
 # ============================================
 /vs-carfax                         /pricing  301!
 /vs-stolenregister                 /pricing  301!
 /vs-nicb                           /pricing  301!
-/carfax-alternative                /vs-carfax  301!
+/carfax-alternative                /pricing  301!
 /competitor-alternatives           /pricing  301!
-/cheaper-than-carfax               /vs-carfax  301!
-/free-vin-check-alternative        /vs-carfax  301!
+/cheaper-than-carfax               /pricing  301!
+/free-vin-check-alternative        /pricing  301!
 
 # ============================================
 # ITEM-SPECIFIC VARIATIONS → CANONICAL PAGES
@@ -147,76 +184,49 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /statistics/*                      /about  301!
 
 # ============================================
-# BLOG POST REDIRECTS (GSC 404s)
+# BLOG POST REDIRECTS (GSC "Alternate page" Errors)
 # ============================================
 /blog/protect-yourself-buying-used-electronics                 /blog            301!
 /blog/ultimate-marketplace-buyers-guide                        /blog            301!
 /blog/complete-imei-guide-protect-yourself                     /blog            301!
-/blog/safeorstolen-firearms-marketplace-verification           /firearms-check  301!
-/blog/complete-verification-guide-stolen-goods-check           /how-it-works    301!
-/blog/data-source-credibility-stolen-goods-verification        /data-sources    301!
-/blog/mobile-app-features                                      /mobile-app      301!
+/blog/safeorstolen-firearms-marketplace-verification           /blog            301!
+/blog/complete-verification-guide-stolen-goods-check           /blog            301!
+/blog/complete-verification-guide                              /blog            301!
+/blog/data-source-credibility-stolen-goods-verification        /blog            301!
+/blog/mobile-app-features                                      /blog            301!
 /blog/industry-insights-2024                                   /blog            301!
 /blog/what-to-do-if-you-bought-stolen                          /blog            301!
 /blog/ai-verification-technology                               /blog            301!
-/blog/verification-data-privacy                                /privacy         301!
+/blog/verification-data-privacy                                /blog            301!
 /blog/serial-numbers-stolen-goods-101                          /blog            301!
-/blog/enterprise-security                                      /for-brands      301!
+/blog/enterprise-security                                      /blog            301!
+/blog/business-guide-preventing-stolen-goods                   /blog            301!
 /blog/red-flags-buying-used-electronics                        /blog            301!
-/blog/buyer-protection-research                                /buyer-guide     301!
+/blog/buyer-protection-research                                /blog            301!
 
 # Blog posts with timestamps (pattern match)
 /blog/*-:timestamp      /blog  301!
 
 # ============================================
-# SOFT 404 REDIRECTS (GSC Errors)
+# TERMS/LEGAL PAGE REDIRECTS (GSC Errors)
 # ============================================
-/bulk                   /verify      301!
-/stolen-property-lookup /verify      301!
-/vin                    /check-car   301!
+/terms-of-service    /terms   301!
+/privacy-policy      /privacy 301!
+/disclaimer          /terms   301!
+/service-limitations /terms   301!
 
 # ============================================
-# LEGACY CHECKER URLS CONTINUATION
+# ADDITIONAL REDIRECTS FROM APPROUTES
 # ============================================
-/imei                   /check-phone 301!
+/account             /profile     301!
+/enterprise-demo     /pricing     301!
+/for-used-car-dealers /for-dealers 301!
 
 # ============================================
-# OTHER LEGACY URLS
+# FASTERCAPITAL REDIRECT
 # ============================================
-/avoid-buying-stolen-goods                          /how-it-works      301!
-/stolen-items-database                              /data-sources      301!
-/how-to-check-if-anything-is-stolen-before-you-buy  /how-it-works      301!
-/disclaimer                                         /terms             301!
-/our-story                                          /about             301!
-/enterprise-demo                                    /for-brands        301!
-/for-consumers                                      /                  301!
-/fastercapital/tech-cofounder                       /fastercapital/raise-capital  301!
-/check-stolen-before-buying                         /verify            301!
-/complete-guide-verify-imei                         /imei-check        301!
-/vin-verification-complete-guide                    /vin-checker       301!
-/auction-verification                               /for-auction-houses 301!
-/pawnshop-verification                              /for-pawn-shops    301!
-/ebay-verification                                  /ebay-stolen-item-checker 301!
-/facebook-marketplace-checker                       /facebook-marketplace-stolen-check 301!
-/offerup-safety                                     /offerup-safety-verification 301!
-/secondhand-research-app                            /mobile-app        301!
-/research-stolen-car                                /check-car         301!
-/research-stolen-phone                              /check-phone       301!
-/research-stolen-items                              /verify            301!
-/investigate-stolen-property                        /verify            301!
-/lookup-stolen-items                                /verify            301!
-/stolen-database-search                             /data-sources      301!
-/stolen-item-scanner                                /mobile-app        301!
-/carfax-alternative                                 /vs-carfax         301!
+/fastercapital/tech-cofounder  /about  301!
 
-# URL variations for legal pages
-/terms-of-service       /terms       301!
-/privacy-policy         /privacy     301!
-
-# ============================================
-# LEGACY REDIRECTS (Keep for compatibility)
-# ============================================
-/terms  /terms           200
 
 # ============================================
 # RSS & SITEMAP REWRITES
