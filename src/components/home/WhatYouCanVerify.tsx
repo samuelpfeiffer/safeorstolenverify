@@ -96,6 +96,16 @@ export const WhatYouCanVerify = () => {
       link: '/check-jewelry',
       badge: 'High Value',
       image: aiPowered
+    },
+    {
+      icon: Car,
+      title: 'Boats & Watercraft',
+      subtitle: 'HIN Verification',
+      description: 'Verify boats, yachts, jet skis, personal watercraft worth $15,000-$500,000+. Check Hull ID numbers against Coast Guard and state DNR databases.',
+      items: ['Boats & Yachts', 'Jet Skis', 'Sailboats', 'Fishing boats', 'Personal watercraft'],
+      link: '/check-boat',
+      badge: 'Marine Theft',
+      image: vinCheck
     }
   ];
 

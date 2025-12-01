@@ -35,6 +35,7 @@ const CheckEBikePage = lazy(() => import('@/pages/CheckEBikePage'));
 const CheckAppliancesPage = lazy(() => import('@/pages/CheckAppliancesPage'));
 const CheckToolsPage = lazy(() => import('@/pages/CheckToolsPage'));
 const CheckJewelryPage = lazy(() => import('@/pages/CheckJewelryPage'));
+const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
@@ -213,6 +214,7 @@ export const AppRoutes = () => {
         <Route path="/check-appliances" element={<CheckAppliancesPage />} />
         <Route path="/check-tools" element={<CheckToolsPage />} />
         <Route path="/check-jewelry" element={<CheckJewelryPage />} />
+        <Route path="/check-boat" element={<CheckBoatPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
