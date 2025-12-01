@@ -17,28 +17,10 @@ export const EdgeFunctions = {
   
   // Verification Functions
   universalStateLookup: 'universal-state-lookup',
-  nicbVincheck: 'nicb-vincheck',
-  
-  // API Functions
-  apiV1Check: 'api-v1-check',
-  apiVerify: 'api-verify',
-  enterpriseApi: 'enterprise-api',
-  consumeCredit: 'consume-credit',
-  
-  // Integration Functions
-  marketplaceIntegration: 'marketplace-integration',
   
   // SEO Functions
-  sitemapXml: 'sitemap-xml',
   indexnowSubmit: 'indexnow-submit',
-  
-  // Widget Functions
-  badgeWidget: 'badge-widget',
-  
-  // Notification Functions
-  sendStolenItemAlert: 'send-stolen-item-alert',
-  sendStolenAlertEmail: 'send-stolen-alert-email',
-  processStolenNotifications: 'process-stolen-notifications',
+  batchIndexAllUrls: 'batch-index-all-urls',
   
   // GSC Integration
   gscApi: 'gsc-api',
