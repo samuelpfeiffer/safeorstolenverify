@@ -36,9 +36,9 @@ const GSCCallbackPage: React.FC = () => {
 
       try {
         // Exchange code for tokens via edge function
-        const { data, error: invokeError } = await supabase.functions.invoke(
-          `gsc-api?action=oauth-callback&code=${encodeURIComponent(code)}`
-        );
+        const { data, error: invokeError } = await supabase.functions.invoke('gsc-api', {
+          body: { action: 'oauth-callback', code },
+        });
 
         if (invokeError) throw invokeError;
 

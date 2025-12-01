@@ -13,8 +13,8 @@ serve(async (req) => {
   }
 
   try {
-    const url = new URL(req.url);
-    const action = url.searchParams.get('action');
+    const body = await req.json();
+    const { action, code, inspectionUrl, startDate, endDate, dimensions, type, dimensionFilterGroups, aggregationType, rowLimit, startRow, dataState } = body;
     
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
@@ -27,20 +27,18 @@ serve(async (req) => {
     );
 
     // Get GSC configuration from secrets
-    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || Deno.env.get('GSC_CLIENT_ID');
-    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || Deno.env.get('GSC_CLIENT_SECRET');
+    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || Deno.env.get('579001486748-rlo6gji3qq5rv8q6bkq6gncu9j2rd069.apps.googleusercontent.com');
+    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || Deno.env.get('0df6e021b3f4e58b5d5e49d838b4d1be');
     const GSC_REDIRECT_URI = 'https://safeorstolen.com/admin/gsc-callback';
     const GSC_PROPERTY_URL = 'sc-domain:safeorstolen.com';
 
+    console.log('[gsc-api] Action:', action);
     console.log('[gsc-api] Client ID configured:', !!GSC_CLIENT_ID);
     console.log('[gsc-api] Client Secret configured:', !!GSC_CLIENT_SECRET);
 
     // Check if GSC secrets are configured
     if (!GSC_CLIENT_ID || !GSC_CLIENT_SECRET) {
-      console.error('[gsc-api] Missing credentials:', {
-        hasClientId: !!GSC_CLIENT_ID,
-        hasClientSecret: !!GSC_CLIENT_SECRET
-      });
+      console.error('[gsc-api] Missing credentials');
       return new Response(
         JSON.stringify({
           error: 'GSC API credentials not configured',
@@ -56,12 +54,13 @@ serve(async (req) => {
         // Generate OAuth URL
         const authUrl = new URL('https://accounts.google.com/o/oauth2/v2/auth');
         authUrl.searchParams.set('client_id', GSC_CLIENT_ID);
-        authUrl.searchParams.set('redirect_uri', GSC_REDIRECT_URI!);
+        authUrl.searchParams.set('redirect_uri', GSC_REDIRECT_URI);
         authUrl.searchParams.set('response_type', 'code');
         authUrl.searchParams.set('scope', 'https://www.googleapis.com/auth/webmasters.readonly');
         authUrl.searchParams.set('access_type', 'offline');
         authUrl.searchParams.set('prompt', 'consent');
         
+        console.log('[gsc-api] Generated auth URL');
         return new Response(
           JSON.stringify({ authUrl: authUrl.toString() }),
           { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -69,10 +68,11 @@ serve(async (req) => {
       }
 
       case 'oauth-callback': {
-        const code = url.searchParams.get('code');
         if (!code) {
           throw new Error('No authorization code provided');
         }
+
+        console.log('[gsc-api] Exchanging code for tokens');
 
         // Exchange code for tokens
         const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
@@ -82,7 +82,7 @@ serve(async (req) => {
             code,
             client_id: GSC_CLIENT_ID,
             client_secret: GSC_CLIENT_SECRET,
-            redirect_uri: GSC_REDIRECT_URI!,
+            redirect_uri: GSC_REDIRECT_URI,
             grant_type: 'authorization_code',
           }),
         });
@@ -90,24 +90,26 @@ serve(async (req) => {
         const tokens = await tokenResponse.json();
         
         if (!tokenResponse.ok) {
+          console.error('[gsc-api] Token exchange failed:', tokens);
           throw new Error(`Token exchange failed: ${JSON.stringify(tokens)}`);
         }
 
-        // Get user ID from service role key (since callback happens without auth header)
-        const supabaseAdmin = createClient(
-          Deno.env.get('SUPABASE_URL') ?? '',
-          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-        );
+        console.log('[gsc-api] Token exchange successful');
 
-        // Get user from auth header if present, otherwise error
+        // Get user from auth header
         const { data: { user } } = await supabaseClient.auth.getUser();
         if (!user) {
           throw new Error('User not authenticated - please log in first');
         }
 
-        // Store tokens
+        // Store tokens using service role key
+        const supabaseAdmin = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        );
+
         const expiresAt = new Date(Date.now() + tokens.expires_in * 1000);
-        await supabaseAdmin.from('gsc_oauth_tokens').upsert({
+        const { error: upsertError } = await supabaseAdmin.from('gsc_oauth_tokens').upsert({
           user_id: user.id,
           access_token: tokens.access_token,
           refresh_token: tokens.refresh_token,
@@ -116,6 +118,13 @@ serve(async (req) => {
           updated_at: new Date().toISOString(),
         });
 
+        if (upsertError) {
+          console.error('[gsc-api] Failed to store tokens:', upsertError);
+          throw upsertError;
+        }
+
+        console.log('[gsc-api] Tokens stored successfully');
+
         return new Response(
           JSON.stringify({ success: true, message: 'GSC connected successfully' }),
           { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -123,11 +132,8 @@ serve(async (req) => {
       }
 
       case 'url-inspection': {
-        const body = await req.json();
-        const { inspectionUrl } = body;
-        
         // Get access token
-        const accessToken = await getAccessToken(supabaseClient);
+        const accessToken = await getAccessToken(supabaseClient, GSC_CLIENT_ID, GSC_CLIENT_SECRET);
         
         // Call URL Inspection API
         const response = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
@@ -149,10 +155,15 @@ serve(async (req) => {
           throw new Error(`URL Inspection failed: ${JSON.stringify(result)}`);
         }
 
-        // Store result
+        // Store result using service role
+        const supabaseAdmin = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        );
+
         const indexStatus = result.inspectionResult?.indexStatusResult;
         if (indexStatus) {
-          await supabaseClient.from('gsc_url_status').upsert({
+          await supabaseAdmin.from('gsc_url_status').upsert({
             url: inspectionUrl,
             verdict: indexStatus.verdict,
             indexing_state: indexStatus.indexingState,
@@ -175,20 +186,7 @@ serve(async (req) => {
       }
 
       case 'search-analytics': {
-        const body = await req.json();
-        const { 
-          startDate, 
-          endDate, 
-          dimensions,
-          type,
-          dimensionFilterGroups,
-          aggregationType,
-          rowLimit,
-          startRow,
-          dataState
-        } = body;
-        
-        const accessToken = await getAccessToken(supabaseClient);
+        const accessToken = await getAccessToken(supabaseClient, GSC_CLIENT_ID, GSC_CLIENT_SECRET);
         
         // Build request body according to Google API specification
         const requestBody: any = {
@@ -223,8 +221,13 @@ serve(async (req) => {
           throw new Error(`Search Analytics failed: ${JSON.stringify(result)}`);
         }
 
-        // Cache result
-        await supabaseClient.from('gsc_performance_cache').insert({
+        // Cache result using service role
+        const supabaseAdmin = createClient(
+          Deno.env.get('SUPABASE_URL') ?? '',
+          Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+        );
+
+        await supabaseAdmin.from('gsc_performance_cache').insert({
           data_type: 'search_analytics',
           query_params: requestBody,
           data: result,
@@ -238,7 +241,7 @@ serve(async (req) => {
       }
 
       case 'sitemaps-list': {
-        const accessToken = await getAccessToken(supabaseClient);
+        const accessToken = await getAccessToken(supabaseClient, GSC_CLIENT_ID, GSC_CLIENT_SECRET);
         
         const response = await fetch(
           `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(GSC_PROPERTY_URL)}/sitemaps`,
@@ -258,7 +261,12 @@ serve(async (req) => {
       case 'disconnect': {
         const { data: { user } } = await supabaseClient.auth.getUser();
         if (user) {
-          await supabaseClient
+          const supabaseAdmin = createClient(
+            Deno.env.get('SUPABASE_URL') ?? '',
+            Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+          );
+          
+          await supabaseAdmin
             .from('gsc_oauth_tokens')
             .delete()
             .eq('user_id', user.id);
@@ -275,7 +283,7 @@ serve(async (req) => {
     }
 
   } catch (error) {
-    console.error('GSC API error:', error);
+    console.error('[gsc-api] Error:', error);
     return new Response(
       JSON.stringify({ error: error.message }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
@@ -283,7 +291,7 @@ serve(async (req) => {
   }
 });
 
-async function getAccessToken(supabaseClient: any): Promise<string> {
+async function getAccessToken(supabaseClient: any, clientId: string, clientSecret: string): Promise<string> {
   const { data: { user } } = await supabaseClient.auth.getUser();
   if (!user) {
     throw new Error('User not authenticated');
@@ -296,22 +304,21 @@ async function getAccessToken(supabaseClient: any): Promise<string> {
     .single();
 
   if (error || !tokenData) {
-    throw new Error('No GSC credentials found. Please connect your Google account.');
+    throw new Error('No GSC credentials found. Please connect your Google account first.');
   }
 
   // Check if token is expired
   const expiresAt = new Date(tokenData.expires_at);
   if (expiresAt < new Date()) {
+    console.log('[gsc-api] Token expired, refreshing...');
+    
     // Refresh token
-    const GSC_CLIENT_ID = Deno.env.get('GOOGLE_CLIENT_ID') || Deno.env.get('GSC_CLIENT_ID')!;
-    const GSC_CLIENT_SECRET = Deno.env.get('GOOGLE_CLIENT_SECRET') || Deno.env.get('GSC_CLIENT_SECRET')!;
-
     const response = await fetch('https://oauth2.googleapis.com/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
-        client_id: GSC_CLIENT_ID,
-        client_secret: GSC_CLIENT_SECRET,
+        client_id: clientId,
+        client_secret: clientSecret,
         refresh_token: tokenData.refresh_token,
         grant_type: 'refresh_token',
       }),
@@ -320,8 +327,11 @@ async function getAccessToken(supabaseClient: any): Promise<string> {
     const newTokens = await response.json();
     
     if (!response.ok) {
+      console.error('[gsc-api] Token refresh failed:', newTokens);
       throw new Error(`Token refresh failed: ${JSON.stringify(newTokens)}`);
     }
+
+    console.log('[gsc-api] Token refreshed successfully');
 
     // Update stored tokens
     const newExpiresAt = new Date(Date.now() + newTokens.expires_in * 1000);
