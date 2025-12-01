@@ -116,6 +116,7 @@ const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDas
 const GSCConnectPage = lazy(() => import('@/pages/admin/GSCConnectPage'));
 const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
 const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
+const BatchIndexPage = lazy(() => import('@/pages/admin/BatchIndexPage'));
 
 export const AppRoutes = () => {
   return (
@@ -386,6 +387,7 @@ export const AppRoutes = () => {
         <Route path="/admin/gsc-connect" element={<GSCConnectPage />} />
         <Route path="/admin/gsc-callback" element={<GSCCallbackPage />} />
         <Route path="/admin/indexnow" element={<TriggerIndexNowPage />} />
+        <Route path="/admin/batch-index" element={<BatchIndexPage />} />
         
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />
