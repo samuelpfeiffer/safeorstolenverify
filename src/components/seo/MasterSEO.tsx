@@ -49,10 +49,59 @@ export const MasterSEO: React.FC = () => {
                      !location.pathname.includes('/receipts') && // Private user receipts
                      !location.pathname.includes('/search-history'); // Private search history
 
+  // Global Organization Schema (only in MasterSEO)
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SafeOrStolen",
+    "alternateName": ["Safe Or Stolen", "SOS", "Safe or Stolen"],
+    "url": "https://safeorstolen.com",
+    "logo": "https://safeorstolen.com/logo.png",
+    "description": "Carfax for Everything - Universal stolen item verification service for phones, vehicles, boats, firearms, electronics. Free 2-check trial.",
+    "foundingDate": "2024",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@safeorstolen.com",
+      "contactType": "Customer Support",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://twitter.com/safeorstolen",
+      "https://facebook.com/safeorstolen",
+      "https://linkedin.com/company/safeorstolen"
+    ]
+  };
+
+  // Global WebSite Schema (only in MasterSEO)
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SafeOrStolen",
+    "alternateName": "Safe Or Stolen",
+    "url": "https://safeorstolen.com",
+    "description": "Carfax for Everything - Verify serial numbers, IMEI, VIN, license plates globally. All 50 states + international coverage.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://safeorstolen.com/verify?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <Helmet>
       {/* NOTE: Canonical tags are handled by PageSEO/OptimizedSEOHead on each page */}
       {/* Removing canonical from here to prevent duplicates (caused 98 indexing errors in GSC) */}
+      
+      {/* Global Structured Data - Organization + WebSite */}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
       
       {/* Robots directives - clear and specific */}
       <meta name="robots" content={shouldIndex ? 
