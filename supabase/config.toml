@@ -23,3 +23,6 @@ verify_jwt = false
 
 [functions.batch-index-all-urls]
 verify_jwt = false
+
+[functions.gsc-sync]
+verify_jwt = false
