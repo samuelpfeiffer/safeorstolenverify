@@ -40,50 +40,52 @@ export function GSCFixSoft404() {
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-yellow-500" />
-              Soft 404 Issue
+              <CheckCircle className="h-5 w-5 text-green-500" />
+              URL Indexing Status
             </CardTitle>
             <CardDescription>
-              Fix cached soft 404 error on /service-limitations
+              /service-limitations - Monitoring remaining enhancement issues
             </CardDescription>
           </div>
-          <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
-            Active Issue
+          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+            <CheckCircle className="h-3 w-3 mr-1" />
+            Soft 404 Fixed
           </Badge>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="bg-muted p-4 rounded-lg space-y-3">
           <div className="flex items-start gap-2">
-            <AlertTriangle className="h-4 w-4 text-yellow-500 mt-0.5 flex-shrink-0" />
+            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
             <div className="space-y-1">
-              <p className="text-sm font-medium">Problem:</p>
+              <p className="text-sm font-medium">✓ Soft 404 Resolved (Dec 1, 2025):</p>
               <p className="text-sm text-muted-foreground">
                 <code className="bg-background px-1.5 py-0.5 rounded text-xs">
                   /service-limitations
-                </code> was showing Soft 404 error (first detected Sept 9, 2025)
+                </code> is now "available to Google" - 301 redirect recognized
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-2">
-            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+            <AlertTriangle className="h-4 w-4 text-yellow-500 mt-0.5 flex-shrink-0" />
             <div className="space-y-1">
-              <p className="text-sm font-medium">Fix Applied:</p>
+              <p className="text-sm font-medium">Remaining Issues:</p>
               <p className="text-sm text-muted-foreground">
-                Server-side 301 redirect to <code className="bg-background px-1.5 py-0.5 rounded text-xs">/terms</code> is now active
+                "Has issues" status - investigating enhancements eligibility blockers
               </p>
             </div>
           </div>
         </div>
 
         <div className="bg-blue-50 dark:bg-blue-950 p-4 rounded-lg space-y-2">
-          <p className="text-sm font-medium text-blue-900 dark:text-blue-100">Automated Fix Actions:</p>
-          <ol className="text-sm text-blue-800 dark:text-blue-200 space-y-1 list-decimal list-inside">
-            <li>Submit URL to IndexNow (notify Bing, Yandex immediately)</li>
-            <li>Request GSC URL inspection (update Google cache)</li>
-            <li>Issue should resolve within 24-48 hours</li>
-          </ol>
+          <p className="text-sm font-medium text-blue-900 dark:text-blue-100">Current Status (Dec 1, 2025):</p>
+          <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
+            <li>✓ Page is available to Google</li>
+            <li>✓ Page can be indexed</li>
+            <li>⚠️ Has issues preventing full enhancements eligibility</li>
+            <li>• Video detected on page</li>
+          </ul>
         </div>
 
         <div className="flex gap-2">
@@ -91,9 +93,10 @@ export function GSCFixSoft404() {
             onClick={handleFixSoft404}
             disabled={isFixing}
             className="flex-1"
+            variant="outline"
           >
             <RefreshCw className={`h-4 w-4 mr-2 ${isFixing ? 'animate-spin' : ''}`} />
-            {isFixing ? 'Fixing...' : 'Fix Soft 404 Now'}
+            {isFixing ? 'Revalidating...' : 'Revalidate Now'}
           </Button>
           
           <Button 
@@ -105,13 +108,25 @@ export function GSCFixSoft404() {
           </Button>
         </div>
 
-        <div className="text-xs text-muted-foreground">
-          <p className="font-medium mb-1">Technical Details:</p>
-          <ul className="space-y-0.5">
-            <li>• Redirect: <code>/service-limitations → /terms 301!</code></li>
-            <li>• Location: <code>public/_redirects</code> line 230</li>
-            <li>• Status: Server-side redirect active</li>
-          </ul>
+        <div className="text-xs text-muted-foreground space-y-2">
+          <div>
+            <p className="font-medium mb-1">Technical Details:</p>
+            <ul className="space-y-0.5">
+              <li>• Redirect: <code>/service-limitations → /terms 301!</code></li>
+              <li>• Location: <code>public/_redirects</code> line 230</li>
+              <li>• Status: Active, recognized by Google</li>
+              <li>• Last tested: Dec 1, 2025, 1:50 AM</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Possible Issue Sources:</p>
+            <ul className="space-y-0.5">
+              <li>• Mobile usability (check responsive design)</li>
+              <li>• Core Web Vitals (check page speed)</li>
+              <li>• Structured data errors (check schema validation)</li>
+              <li>• Video enhancement eligibility</li>
+            </ul>
+          </div>
         </div>
       </CardContent>
     </Card>
