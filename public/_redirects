@@ -90,6 +90,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /features                    /about  301!
 /resellers                   /about  301!
 /for-phone-repair-shops      /about  301!
+/for-pawn-shops              /about  301!
 /marketplace-integration     /about  301!
 /how-it-works-detailed       /how-it-works  301!
 /stolen-items-database       /about  301!
@@ -191,6 +192,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # WILDCARD REDIRECTS (MUST BE NEAR END)
 # ============================================
+/guides/imei-blacklist-guide       /about  301!
 /guides/*                          /about  301!
 /city/*                            /verify  301!
 /state/*                           /verify  301!
