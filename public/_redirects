@@ -91,6 +91,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /resellers                   /about  301!
 /for-phone-repair-shops      /about  301!
 /for-pawn-shops              /about  301!
+/offerup-safety-verification /verify  301!
 /marketplace-integration     /about  301!
 /how-it-works-detailed       /how-it-works  301!
 /stolen-items-database       /about  301!
@@ -201,6 +202,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # BLOG POST REDIRECTS (GSC "Alternate page" Errors)
 # ============================================
+/blog/2025-stolen-goods-statistics                    /blog            301!
 /blog/how-to-use-imei-checker-app                              /blog            301!
 /blog/safeorstolen-firearms-marketplace-verification           /blog            301!
 /blog/complete-verification-guide-stolen-goods-check           /blog            301!
