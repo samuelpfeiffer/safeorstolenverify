@@ -103,6 +103,11 @@ const VerificationMethodology = lazy(() => import('@/pages/blog/VerificationMeth
 const RealUserStories = lazy(() => import('@/pages/blog/RealUserStories'));
 const CompleteVerificationGuide = lazy(() => import('@/pages/blog/CompleteVerificationGuide'));
 
+// TIER 1 Target Keyword Blog Posts
+const StolenVerificationAppGuide = lazy(() => import('@/pages/blog/StolenVerificationAppGuide'));
+const CheckMendHasNoApp = lazy(() => import('@/pages/blog/CheckMendHasNoApp'));
+const LikeCarfaxForPhones = lazy(() => import('@/pages/blog/LikeCarfaxForPhones'));
+
 // Business Pages (5 B2B Landing Pages)
 const ForPawnShops = lazy(() => import('@/pages/business/ForPawnShops'));
 const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
@@ -340,6 +345,11 @@ export const AppRoutes = () => {
         <Route path="/blog/verification-methodology" element={<VerificationMethodology />} />
         <Route path="/blog/real-user-stories" element={<RealUserStories />} />
         <Route path="/blog/complete-verification-guide" element={<CompleteVerificationGuide />} />
+        
+        {/* TIER 1 Target Keyword Blog Posts - High Priority SEO */}
+        <Route path="/blog/stolen-verification-app-guide" element={<StolenVerificationAppGuide />} />
+        <Route path="/blog/checkmend-has-no-app" element={<CheckMendHasNoApp />} />
+        <Route path="/blog/like-carfax-for-phones" element={<LikeCarfaxForPhones />} />
         
         {/* Business Pages - 5 B2B Landing Pages */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />
