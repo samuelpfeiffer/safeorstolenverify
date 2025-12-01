@@ -13,23 +13,32 @@ import {
 const BASE_URL = 'https://safeorstolen.com';
 const CURRENT_DATE = new Date().toISOString().split('T')[0];
 
-// Core pages (highest priority)
+// Core pages (highest priority) - ONLY canonical destination pages, NO redirects
 const CORE_PAGES = [
   { url: '/', priority: 1.0, changefreq: 'daily' },
+  { url: '/verify', priority: 1.0, changefreq: 'daily' },
   { url: '/app', priority: 1.0, changefreq: 'weekly' },
-  { url: '/download-app', priority: 1.0, changefreq: 'weekly' },
-  { url: '/mobile-app', priority: 1.0, changefreq: 'weekly' },
-  { url: '/ios-app', priority: 0.9, changefreq: 'weekly' },
-  { url: '/android-app', priority: 0.9, changefreq: 'weekly' },
+  { url: '/pricing', priority: 0.9, changefreq: 'weekly' },
+  { url: '/about', priority: 0.9, changefreq: 'monthly' },
+  { url: '/faq', priority: 0.8, changefreq: 'monthly' },
+  { url: '/terms', priority: 0.5, changefreq: 'yearly' },
+  { url: '/privacy', priority: 0.5, changefreq: 'yearly' },
   { url: '/imei-checker', priority: 0.9, changefreq: 'weekly' },
-  { url: '/vin-verification', priority: 0.9, changefreq: 'weekly' },
+  { url: '/vin-checker', priority: 0.9, changefreq: 'weekly' },
   { url: '/serial-number-checker', priority: 0.9, changefreq: 'weekly' },
-  { url: '/stolen-item-checker', priority: 0.9, changefreq: 'daily' },
   { url: '/check-phone', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-car', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-electronics', priority: 0.9, changefreq: 'weekly' },
   { url: '/check-bike', priority: 0.9, changefreq: 'weekly' },
+  { url: '/check-laptop', priority: 0.8, changefreq: 'weekly' },
   { url: '/firearms-check', priority: 0.9, changefreq: 'weekly' },
+  { url: '/license-plate-lookup', priority: 0.8, changefreq: 'weekly' },
+  { url: '/for-pawn-shops', priority: 0.8, changefreq: 'monthly' },
+  { url: '/for-dealers', priority: 0.8, changefreq: 'monthly' },
+  { url: '/for-businesses', priority: 0.8, changefreq: 'monthly' },
+  { url: '/how-it-works', priority: 0.8, changefreq: 'monthly' },
+  { url: '/testimonials', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog', priority: 0.8, changefreq: 'weekly' },
 ];
 
 /**
