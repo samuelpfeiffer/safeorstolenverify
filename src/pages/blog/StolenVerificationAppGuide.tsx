@@ -2,6 +2,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
+import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from 'react-router-dom';
 import { Shield, Smartphone, Scan, Zap, Download, CheckCircle } from 'lucide-react';
 
@@ -37,6 +38,31 @@ const StolenVerificationAppGuide = () => {
         structuredData={blogPostSchema}
       />
 
+      <BlogFAQSchema 
+        faqs={[
+          {
+            question: "Is SafeOrStolen really the only stolen verification app?",
+            answer: "Yes, SafeOrStolen is the ONLY mobile app globally for stolen item verification. CheckMEND, IMEI.info, Swappa, IMEIPro, and all competitors only offer websites. We're the first and only app with barcode scanning for instant verification."
+          },
+          {
+            question: "Does CheckMEND have a mobile app?",
+            answer: "No, CheckMEND does NOT have a mobile app. Despite being in business since 2004, they only offer a slow website. SafeOrStolen is the first CheckMEND alternative with a real mobile app featuring barcode scanning and instant verification."
+          },
+          {
+            question: "How does SafeOrStolen's barcode scanning work?",
+            answer: "Open the SafeOrStolen app, tap the barcode scanner, point at any barcode or serial number, and get instant verification results in 3 seconds. The app automatically reads IMEI, VINs, product codes, and serial numbers without manual typing."
+          },
+          {
+            question: "Is the SafeOrStolen app free?",
+            answer: "Yes, the SafeOrStolen app is FREE to download for iOS and Android. You get 2 free verification checks. Paid plans start at $2.99 for additional checks, which is still cheaper than CheckMEND's $3.99 per check."
+          },
+          {
+            question: "Can I use the stolen verification app offline?",
+            answer: "Yes, SafeOrStolen's mobile app has offline mode. The app caches databases and verification results, allowing you to check items without internet connection. Perfect for meetups in areas with poor signal or rural locations."
+          }
+        ]}
+      />
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation 

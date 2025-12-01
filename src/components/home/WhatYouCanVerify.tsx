@@ -81,7 +81,7 @@ export const WhatYouCanVerify = () => {
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={type.image} 
-                  alt={type.title}
+                  alt={`${type.title} verification - stolen item scanner app checking ${type.subtitle} with barcode scanning and instant verification`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
