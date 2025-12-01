@@ -59,6 +59,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /firearm-serial-check    /firearms-check 301!
 /check-gaming-console    /check-electronics 301!
 /check-android-phone     /check-phone 301!
+/check-android           /check-phone 301!
+/check-imei-before-buying /imei-check 301!
+/pawn-shops              /for-pawn-shops 301!
 /license-plates-lookup   /license-plate-lookup 301!
 
 # ============================================
