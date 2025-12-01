@@ -13,6 +13,7 @@ import GSCAISuggestions from '@/components/admin/GSCAISuggestions';
 import { GSCSyncMonitor } from '@/components/admin/GSCSyncMonitor';
 import { GSCFixSoft404 } from '@/components/admin/GSCFixSoft404';
 import { GSCErrorSummary } from '@/components/admin/GSCErrorSummary';
+import { SchemaAuditDashboard } from '@/components/admin/SchemaAuditDashboard';
 
 export default function GSCMonitoringDashboard() {
   const navigate = useNavigate();
@@ -118,11 +119,12 @@ export default function GSCMonitoringDashboard() {
 
           {/* Tabbed Interface */}
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-4">
+            <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="analytics">Analytics</TabsTrigger>
               <TabsTrigger value="coverage">Coverage</TabsTrigger>
               <TabsTrigger value="suggestions">AI Suggestions</TabsTrigger>
+              <TabsTrigger value="schemas">Schemas</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="space-y-6">
@@ -249,6 +251,10 @@ export default function GSCMonitoringDashboard() {
 
             <TabsContent value="suggestions">
               <GSCAISuggestions />
+            </TabsContent>
+
+            <TabsContent value="schemas">
+              <SchemaAuditDashboard />
             </TabsContent>
           </Tabs>
         </div>
