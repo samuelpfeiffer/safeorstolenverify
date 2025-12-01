@@ -21,7 +21,7 @@ export const SCHEMA_REGISTRY: PageSchemaConfig[] = [
   { path: '/contact', schemaTypes: ['ContactPage', 'ContactPoint'], priority: 'critical', implemented: false },
   { path: '/app', schemaTypes: ['SoftwareApplication'], priority: 'critical', implemented: true },
   { path: '/terms', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
-  { path: '/privacy', schemaTypes: ['WebPage'], priority: 'critical', implemented: false },
+  { path: '/privacy', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
 
   // Item-Specific Verification Pages (High - 10 schemas)
   { path: '/check-phone', schemaTypes: ['Service', 'HowTo'], priority: 'high', implemented: false },
