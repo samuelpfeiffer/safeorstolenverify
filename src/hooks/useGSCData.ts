@@ -37,7 +37,9 @@ export function useGSCConnection() {
 
   const connectMutation = useMutation({
     mutationFn: async () => {
-      const { data, error } = await supabase.functions.invoke('gsc-api?action=oauth-start');
+      const { data, error } = await supabase.functions.invoke('gsc-api', {
+        body: { action: 'oauth-start' },
+      });
 
       if (error) throw error;
       
@@ -58,7 +60,9 @@ export function useGSCConnection() {
 
   const disconnectMutation = useMutation({
     mutationFn: async () => {
-      const { error } = await supabase.functions.invoke('gsc-api?action=disconnect');
+      const { error } = await supabase.functions.invoke('gsc-api', {
+        body: { action: 'disconnect' },
+      });
 
       if (error) throw error;
     },
@@ -86,8 +90,8 @@ export function useURLInspection() {
 
   return useMutation({
     mutationFn: async (url: string) => {
-      const { data, error } = await supabase.functions.invoke('gsc-api?action=url-inspection', {
-        body: { inspectionUrl: url },
+      const { data, error } = await supabase.functions.invoke('gsc-api', {
+        body: { action: 'url-inspection', inspectionUrl: url },
       });
 
       if (error) throw error;
@@ -135,8 +139,9 @@ export function useSearchAnalytics(startDate: string, endDate: string) {
   return useQuery({
     queryKey: ['gsc-search-analytics', startDate, endDate],
     queryFn: async () => {
-      const { data, error } = await supabase.functions.invoke('gsc-api?action=search-analytics', {
+      const { data, error } = await supabase.functions.invoke('gsc-api', {
         body: {
+          action: 'search-analytics',
           startDate,
           endDate,
           dimensions: ['query', 'page'],
