@@ -105,11 +105,22 @@ export async function submitBatchToIndexNow(urls: string[]): Promise<IndexNowRes
 }
 
 /**
- * Get all sitemap URLs for IndexNow submission
+ * Get all 158 sitemap URLs for IndexNow submission
  */
 export function getAllSitemapUrls(): string[] {
+  const states = [
+    'alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut',
+    'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 'indiana', 'iowa',
+    'kansas', 'kentucky', 'louisiana', 'maine', 'maryland', 'massachusetts', 'michigan',
+    'minnesota', 'mississippi', 'missouri', 'montana', 'nebraska', 'nevada', 'new-hampshire',
+    'new-jersey', 'new-mexico', 'new-york', 'north-carolina', 'north-dakota', 'ohio',
+    'oklahoma', 'oregon', 'pennsylvania', 'rhode-island', 'south-carolina', 'south-dakota',
+    'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington', 'west-virginia',
+    'wisconsin', 'wyoming'
+  ];
+
   return [
-    // Core pages
+    // Core pages (10)
     '/',
     '/verify',
     '/app',
@@ -121,7 +132,7 @@ export function getAllSitemapUrls(): string[] {
     '/terms',
     '/privacy',
     
-    // Item Checker Pages
+    // Main Item Checker Pages (15)
     '/imei-checker',
     '/vin-checker',
     '/serial-number-checker',
@@ -138,20 +149,26 @@ export function getAllSitemapUrls(): string[] {
     '/firearms-check',
     '/license-plate-lookup',
     
-    // Business Pages
+    // Business Pages (3)
     '/for-pawn-shops',
     '/for-dealers',
     '/for-businesses',
     
-    // Comparison Pages
+    // Comparison Pages (5)
     '/vs-checkmend',
     '/vs-imeiinfo',
     '/vs-swappa',
     '/vs-carfax',
     '/vs-autocheck',
     
-    // Blog
+    // Blog (1)
     '/blog',
+    
+    // 50 State License Plate Pages
+    ...states.map(state => `/${state}-license-plate-lookup`),
+    
+    // 50 State VIN Pages
+    ...states.map(state => `/${state}-vin-lookup`),
   ];
 }
 
