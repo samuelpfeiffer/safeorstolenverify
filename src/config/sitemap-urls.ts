@@ -58,7 +58,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // Natural Language Question-Based Routes (High SEO Value)
   { path: '/how-do-i-check-if-stolen', priority: 0.9, changefreq: 'weekly' },
   { path: '/is-this-stolen', priority: 0.9, changefreq: 'daily' },
-  { path: '/verify-not-stolen', priority: 0.9, changefreq: 'daily' },
+  // Removed /verify-not-stolen (redirects to /verify)
   { path: '/check-if-phone-was-stolen', priority: 0.9, changefreq: 'daily' },
   { path: '/check-if-car-was-stolen', priority: 0.9, changefreq: 'daily' },
   
@@ -112,9 +112,9 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/guides/how-to-check-stolen-items', priority: 0.8, changefreq: 'monthly' },
   { path: '/guides/imei-blacklist-explained', priority: 0.8, changefreq: 'monthly' },
   { path: '/ultimate-guide', priority: 0.8, changefreq: 'monthly' },
-  { path: '/verification-hub', priority: 0.7, changefreq: 'weekly' },
+  // Removed /verification-hub (redirects to /verify)
   { path: '/how-to-check-if-item-stolen', priority: 0.8, changefreq: 'monthly' },
-  { path: '/how-to-check-if-anything-is-stolen-before-you-buy', priority: 0.8, changefreq: 'monthly' },
+  // Removed /how-to-check-if-anything-is-stolen-before-you-buy (redirects to /how-it-works)
   { path: '/comprehensive-guide', priority: 0.7, changefreq: 'monthly' },
   { path: '/ultimate-guide-buying-safely', priority: 0.8, changefreq: 'monthly' },
   { path: '/guide/buying-safely', priority: 0.8, changefreq: 'monthly' },
@@ -128,12 +128,12 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/safe-way-to-buy-used-gadgets', priority: 0.7, changefreq: 'monthly' },
   
   // Stolen Goods Information
-  { path: '/stolen-items-database', priority: 0.8, changefreq: 'daily' },
-  { path: '/stolen-property-lookup', priority: 0.8, changefreq: 'daily' },
+  // Removed /stolen-items-database (redirects to /data-sources)
+  // Removed /stolen-property-lookup (redirects to /verify)
   { path: '/check-if-stolen', priority: 0.8, changefreq: 'daily' },
   { path: '/stolen-goods-checker', priority: 0.8, changefreq: 'daily' },
-  { path: '/stolen-merchandise-check', priority: 0.8, changefreq: 'daily' },
-  { path: '/avoid-buying-stolen-goods', priority: 0.8, changefreq: 'monthly' },
+  // Removed /stolen-merchandise-check (redirects to /verify)
+  // Removed /avoid-buying-stolen-goods (redirects to /how-it-works)
   { path: '/avoid-stolen-goods', priority: 0.8, changefreq: 'monthly' },
   { path: '/ultimate-guide-not-buying-stolen-goods', priority: 0.8, changefreq: 'monthly' },
   { path: '/stolen-goods-statistics-2024', priority: 0.7, changefreq: 'monthly' },
@@ -151,7 +151,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/blog/2024-theft-trends-report', priority: 0.7, changefreq: 'yearly' },
   
   // Company Pages
-  { path: '/our-story', priority: 0.7, changefreq: 'monthly' },
+  // Removed /our-story (redirects to /about)
   { path: '/our-team', priority: 0.7, changefreq: 'monthly' },
   { path: '/about-problem', priority: 0.7, changefreq: 'monthly' },
   { path: '/case-studies', priority: 0.7, changefreq: 'monthly' },
@@ -170,7 +170,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/company-verification', priority: 0.95, changefreq: 'monthly' },
   
   // Target Audiences
-  { path: '/for-consumers', priority: 0.7, changefreq: 'monthly' },
+  // Removed /for-consumers (redirects to /)
   { path: '/for-brands', priority: 0.7, changefreq: 'monthly' },
   { path: '/auction-houses', priority: 0.6, changefreq: 'monthly' },
   { path: '/pawn-shops', priority: 0.6, changefreq: 'monthly' },
@@ -178,7 +178,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // Enterprise & Integrations
   { path: '/integrations', priority: 0.7, changefreq: 'weekly' },
   { path: '/marketplace-integration', priority: 0.7, changefreq: 'monthly' },
-  { path: '/enterprise-demo', priority: 0.7, changefreq: 'monthly' },
+  // Removed /enterprise-demo (redirects to /for-brands)
   { path: '/api-docs', priority: 0.7, changefreq: 'weekly' },
   
   // Comparison Pages
@@ -197,10 +197,10 @@ export const SITEMAP_URLS: SitemapURL[] = [
   
   // Legal Pages
   { path: '/terms', priority: 0.5, changefreq: 'yearly' },
-  { path: '/terms-of-service', priority: 0.5, changefreq: 'yearly' },
+  // Removed /terms-of-service (redirects to /terms)
   { path: '/privacy', priority: 0.5, changefreq: 'yearly' },
-  { path: '/privacy-policy', priority: 0.5, changefreq: 'yearly' },
-  { path: '/disclaimer', priority: 0.5, changefreq: 'yearly' },
+  // Removed /privacy-policy (redirects to /privacy)
+  // Removed /disclaimer (redirects to /terms)
   { path: '/cookies', priority: 0.5, changefreq: 'yearly' },
   { path: '/refunds', priority: 0.5, changefreq: 'yearly' },
   
