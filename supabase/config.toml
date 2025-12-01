@@ -53,3 +53,9 @@ verify_jwt = true
 
 [functions.marketplace-integration]
 verify_jwt = true
+
+[functions.submit-indexnow]
+verify_jwt = false
+
+[functions.batch-index-all-urls]
+verify_jwt = false
