@@ -1,14 +1,49 @@
 User-agent: *
 Allow: /
 
+# Private/Authenticated Areas
 Disallow: /dashboard
+Disallow: /dashboard/*
 Disallow: /auth
+Disallow: /auth/*
+Disallow: /account
+Disallow: /account/*
+Disallow: /profile
+Disallow: /search-history
+Disallow: /receipts
+Disallow: /purchase-history
 
+# Admin & API
+Disallow: /admin/
+Disallow: /api/
+
+# Query Parameters (Avoid Duplicate Content)
+Disallow: /*?*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+# Dynamic Routes
+Disallow: /*/edit
+Disallow: /*/delete
+Disallow: /*&
+
+# Success/Cancel Pages (No SEO Value)
+Disallow: /subscription-success
+Disallow: /subscription-cancel
+Disallow: /payment-success
+Disallow: /payment-cancel
+
+# Sitemap Location (Critical for Indexing)
 Sitemap: https://safeorstolen.com/sitemap.xml
 
-# AI Search Engine Crawlers
+# Crawl Optimization
+Crawl-delay: 1
+
+# AI Search Engine Crawlers - Maximum Access for AI Discoverability
 User-agent: GPTBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: ChatGPT-User
 Allow: /
@@ -18,15 +53,18 @@ Allow: /
 
 User-agent: anthropic-ai
 Allow: /
+Crawl-delay: 1
 
 User-agent: ClaudeBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Claude-Web
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Applebot-Extended
 Allow: /
@@ -59,4 +97,22 @@ User-agent: ImagesiftBot
 Allow: /
 
 User-agent: Timpibot
+Allow: /
+
+# Search Engine Bots - Optimized Crawling
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
 Allow: /

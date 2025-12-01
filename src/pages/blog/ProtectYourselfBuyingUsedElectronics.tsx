@@ -3,6 +3,9 @@ import { AppDownloadCTA } from '@/components/app/AppDownloadCTA';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Shield, AlertTriangle, CheckCircle, Smartphone } from 'lucide-react';
+import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
+import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 
 export default function ProtectYourselfBuyingUsedElectronics() {
   const navigate = useNavigate();
@@ -24,17 +27,82 @@ export default function ProtectYourselfBuyingUsedElectronics() {
         url: 'https://safeorstolen.com/logo.png'
       }
     },
-    datePublished: '2026-01-15',
-    dateModified: '2026-01-15'
+    datePublished: '2025-01-17',
+    dateModified: '2025-01-17',
+    image: 'https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
+    wordCount: 1800,
+    keywords: ['buying used electronics', 'secondhand electronics safety', 'avoid stolen phones', 'used laptop verification']
   };
+
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+    { name: 'Protect Yourself Buying Used Electronics', url: '/blog/protect-yourself-buying-used-electronics' }
+  ];
+
+  const faqs = [
+    {
+      question: 'Can I get arrested for buying a stolen device?',
+      answer: 'Generally no, if you did not know it was stolen. However, law enforcement can still seize the device and return it to the original owner, leaving you with no device and no refund.'
+    },
+    {
+      question: 'Are eBay and Amazon purchases safe?',
+      answer: 'Safer than Craigslist/Facebook, but not risk-free. Always verify serial numbers even on major platforms. eBay/Amazon may offer buyer protection, but disputes take weeks to resolve.'
+    },
+    {
+      question: 'How accurate is SafeOrStolen verification?',
+      answer: 'SafeOrStolen checks 50+ databases including FBI NCIC, carrier blacklists, insurance claims, and manufacturer reports. While no system is 100%, we provide the most comprehensive verification available.'
+    }
+  ];
+
+  const howToSteps = [
+    {
+      name: 'Request Serial Number or IMEI',
+      text: 'Before meeting, ask the seller for the device serial number (laptops, tablets) or IMEI (smartphones). If they refuse, walk away immediately. Legitimate sellers provide this information freely.'
+    },
+    {
+      name: 'Verify with SafeOrStolen',
+      text: 'Run the serial number or IMEI through SafeOrStolen database to check against law enforcement records, carrier blacklists, and stolen item databases. This takes 3 seconds.',
+      url: 'https://safeorstolen.com/verify'
+    },
+    {
+      name: 'Check Device Activation Lock Status',
+      text: 'For iPhones/iPads, ensure Find My iPhone is disabled. For Android, ensure Factory Reset Protection is off. If still locked to previous owner account, the device is likely stolen.'
+    },
+    {
+      name: 'Inspect Physical Condition',
+      text: 'Check for signs of forced entry (scratches around screws, pry marks), replaced serial number stickers, or mismatched components. Stolen devices are often tampered with.'
+    },
+    {
+      name: 'Test Device Functionality',
+      text: 'Turn on the device, test all buttons, ports, cameras, and speakers. Check if it connects to WiFi. A device that will not power on or has disabled features may be blacklisted.'
+    },
+    {
+      name: 'Request Proof of Purchase',
+      text: 'Ask for original receipt, email confirmation, or credit card statement showing purchase. While not required, legitimate sellers can usually provide some proof of ownership.'
+    },
+    {
+      name: 'Meet in Safe Public Location',
+      text: 'Meet at police station parking lots (many have designated safe exchange zones), bank lobbies, or busy coffee shops with security cameras. Avoid private homes or secluded parking lots.'
+    }
+  ];
 
   return (
     <>
       <PageSEO
         title="How to Protect Yourself When Buying Used Electronics | SafeOrStolen"
-        description="Complete guide to safely purchasing secondhand electronics, avoiding stolen goods, and protecting yourself from fraud when buying used phones, laptops, and devices in 2026."
+        description="Complete guide to safely purchasing secondhand electronics, avoiding stolen goods, and protecting yourself from fraud when buying used phones, laptops, and devices in 2025."
         keywords="buying used electronics, secondhand electronics safety, avoid stolen phones, used laptop verification, electronics fraud prevention"
+        canonical="/blog/protect-yourself-buying-used-electronics"
         structuredData={structuredData}
+      />
+      <BreadcrumbSchema items={breadcrumbs} />
+      <FAQSchema faqs={faqs} />
+      <HowToSchema 
+        name="7-Step Verification Process for Buying Used Electronics"
+        description="Complete step-by-step guide to verify and safely purchase secondhand electronics without buying stolen goods"
+        totalTime="PT10M"
+        steps={howToSteps}
       />
 
       <div className="min-h-screen bg-background">
