@@ -5,6 +5,45 @@ import { Check, X, Smartphone, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ComparisonSwappa = () => {
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SafeOrStolen vs Swappa - Mobile App Comparison",
+    "description": "SafeOrStolen has a mobile app. Swappa does not. Compare verification services.",
+    "specialty": "comparison",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "SafeOrStolen Verification Service",
+          "url": "https://safeorstolen.com",
+          "description": "Dedicated verification service with mobile app (iOS/Android), all item types, offline mode, 3-second verification",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mobile App Features",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen App", "operatingSystem": "iOS, Android" } }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Swappa",
+          "description": "Marketplace with basic verification (no mobile app)",
+          "provider": {
+            "@type": "Organization",
+            "name": "Swappa"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
       <PageSEO
@@ -12,6 +51,7 @@ const ComparisonSwappa = () => {
         description="Swappa has NO mobile app. SafeOrStolen has a full iOS/Android app with comprehensive verification. Better than Swappa. Download SafeOrStolen app free. Swappa alternative with mobile app. Best verification app 2025."
         keywords="Swappa alternative, Swappa app, Swappa has no app, SafeOrStolen vs Swappa, better than Swappa, Swappa mobile app, verification app, download safeorstolen app, Swappa IMEI check alternative"
         canonical="/vs-swappa"
+        structuredData={comparisonSchema}
       />
 
       <noscript>

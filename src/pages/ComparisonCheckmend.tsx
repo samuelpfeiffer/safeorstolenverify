@@ -7,31 +7,41 @@ import { Link } from 'react-router-dom';
 const ComparisonCheckmend = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
-    "@type": "ComparisonPage",
+    "@type": "WebPage",
     "name": "SafeOrStolen vs CheckMEND - Mobile App Comparison",
     "description": "SafeOrStolen has a mobile app. CheckMEND does not. Compare stolen item verification services.",
-    "itemOffered": [
-      {
-        "@type": "Service",
-        "name": "SafeOrStolen",
-        "url": "https://safeorstolen.com",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Mobile App Available",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen App" } }
-          ]
+    "specialty": "comparison",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "SafeOrStolen Verification Service",
+          "url": "https://safeorstolen.com",
+          "description": "Stolen item verification with mobile app (iOS/Android), barcode scanning, offline mode, 3-second verification",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mobile App Features",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen App", "operatingSystem": "iOS, Android" } }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "CheckMEND Verification Service",
+          "description": "Web-only stolen item verification (no mobile app)",
+          "provider": {
+            "@type": "Organization",
+            "name": "CheckMEND"
+          }
         }
-      },
-      {
-        "@type": "Service",
-        "name": "CheckMEND",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "No Mobile App"
-        }
-      }
-    ]
+      ]
+    }
   };
 
   return (
