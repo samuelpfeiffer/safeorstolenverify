@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, X, Smartphone, Zap, DollarSign, Globe, Shield, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 
 const VsCheckMendPage = () => {
   const comparisonFeatures = [
