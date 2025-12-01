@@ -5,6 +5,45 @@ import { Check, X, Smartphone, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ComparisonIMEIInfo = () => {
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SafeOrStolen vs IMEI.info - Mobile App Comparison",
+    "description": "SafeOrStolen has a mobile app. IMEI.info does not. Compare IMEI checkers.",
+    "specialty": "comparison",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "SafeOrStolen IMEI Verification",
+          "url": "https://safeorstolen.com",
+          "description": "IMEI checker with mobile app (iOS/Android), barcode scanning, offline mode, comprehensive database",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mobile App Features",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "MobileApplication", "name": "SafeOrStolen IMEI Checker App", "operatingSystem": "iOS, Android" } }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "IMEI.info",
+          "description": "Web-only IMEI checker (no mobile app)",
+          "provider": {
+            "@type": "Organization",
+            "name": "IMEI.info"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
       <PageSEO
@@ -12,6 +51,7 @@ const ComparisonIMEIInfo = () => {
         description="IMEI.info has NO mobile app. SafeOrStolen has a full iOS/Android app with barcode scanning for IMEI checks. Better than IMEI.info. Download SafeOrStolen IMEI checker app free. IMEI.info alternative with mobile app. Best IMEI checker app 2025."
         keywords="IMEI.info alternative, IMEI.info app, IMEI.info has no app, SafeOrStolen vs IMEI.info, better than IMEI.info, IMEI.info mobile app, IMEI checker app, download safeorstolen app, IMEI verification app, IMEI.info vs SafeOrStolen"
         canonical="/vs-imeiinfo"
+        structuredData={comparisonSchema}
       />
 
       <noscript>
