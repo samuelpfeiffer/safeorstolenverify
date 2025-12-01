@@ -37,7 +37,8 @@ export const ItemLandingPageTemplate = ({
 }: ItemLandingPageProps) => {
   const location = useLocation();
   
-  const schema = {
+  // Service and HowTo schemas in @graph
+  const serviceSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -59,20 +60,23 @@ export const ItemLandingPageTemplate = ({
           "position": index + 1,
           "name": step
         }))
-      },
-      ...(content.faqs && content.faqs.length > 0 ? [{
-        "@type": "FAQPage",
-        "mainEntity": content.faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      }] : [])
+      }
     ]
   };
+
+  // FAQPage must be SEPARATE root-level schema (not nested in @graph)
+  const faqSchema = content.faqs && content.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": content.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
 
   return (
     <>
@@ -81,7 +85,18 @@ export const ItemLandingPageTemplate = ({
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={keywords.join(', ')} />
         <link rel="canonical" href={`https://safeorstolen.com${location.pathname}`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        
+        {/* Service + HowTo schemas in @graph */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        
+        {/* FAQPage as separate root-level schema (Google requirement) */}
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       {/* Bot-visible content for search engines */}
