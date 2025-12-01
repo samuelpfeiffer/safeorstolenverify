@@ -186,6 +186,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # MARKETPLACE VERIFICATION PAGES
 # ============================================
 /craigslist-verification-guide                      /verify  301!
+/facebook-marketplace-stolen-check                  /verify  301!
+/ebay-stolen-item-checker                           /verify  301!
 /subscriptions                                      /pricing  301!
 /refunds                                           /terms  301!
 /for-used-car-dealers                              /for-dealers  301!
@@ -203,6 +205,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # BLOG POST REDIRECTS (GSC "Alternate page" Errors)
 # ============================================
 /blog/2025-stolen-goods-statistics                    /blog            301!
+/blog/most-stolen-items-2025                          /statistics/stolen-goods 301!
 /blog/how-to-use-imei-checker-app                              /blog            301!
 /blog/safeorstolen-firearms-marketplace-verification           /blog            301!
 /blog/complete-verification-guide-stolen-goods-check           /blog            301!
