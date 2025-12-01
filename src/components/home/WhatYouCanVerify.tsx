@@ -59,6 +59,43 @@ export const WhatYouCanVerify = () => {
       link: '/firearms-check',
       badge: 'Exclusive',
       image: securityShield
+    },
+    {
+      icon: Bike,
+      title: 'eBikes & E-Scooters',
+      subtitle: 'Frame & Battery Verification',
+      description: 'Check electric bikes and e-scooters worth $1,500-$10,000. Verify Rad Power, Trek, Specialized, Aventon eBikes against BikeIndex and police databases.',
+      items: ['Rad Power eBikes', 'Trek Verve+', 'Specialized Turbo', 'Aventon Level', 'E-scooters'],
+      link: '/check-ebike',
+      image: marketplaceSafety
+    },
+    {
+      icon: Laptop,
+      title: 'Appliances',
+      subtitle: 'Serial Number Verification',
+      description: 'Verify washers, dryers, refrigerators, stoves worth $500-$5,000. Check Samsung, LG, Whirlpool, GE appliances against theft databases.',
+      items: ['Washers & Dryers', 'Refrigerators', 'Stoves & Ovens', 'Dishwashers', 'Smart appliances'],
+      link: '/check-appliances',
+      image: verificationSuccess
+    },
+    {
+      icon: Laptop,
+      title: 'Power Tools',
+      subtitle: 'Serial Number Verification',
+      description: 'Check power tools worth $100-$5,000. Verify DeWalt, Milwaukee, Makita, Bosch tools - the #1 most stolen item from construction sites.',
+      items: ['DeWalt tools', 'Milwaukee M18', 'Makita combo kits', 'Bosch power tools', 'Generators'],
+      link: '/check-tools',
+      image: securityShield
+    },
+    {
+      icon: Shield,
+      title: 'Jewelry & Watches',
+      subtitle: 'Serial & GIA Verification',
+      description: 'Verify luxury watches and jewelry worth $1,000-$100,000+. Check Rolex, Cartier, GIA diamonds against pawn shop and theft databases.',
+      items: ['Rolex watches', 'GIA diamonds', 'Designer jewelry', 'Engagement rings', 'Gold jewelry'],
+      link: '/check-jewelry',
+      badge: 'High Value',
+      image: aiPowered
     }
   ];
 
