@@ -108,6 +108,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/phoenix                        /app  301!
 /app/houston                        /app  301!
 /app/miami                          /app  301!
+/app/philadelphia                   /app  301!
 /app/research-stolen-car            /app  301!
 /app/research-stolen-phone          /app  301!
 /app/research-stolen-items          /app  301!
@@ -115,6 +116,14 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/facebook-marketplace-checker   /app  301!
 /app/pawnshop-verification          /app  301!
 /app/offerup-safety                 /app  301!
+/app/pwa                            /app  301!
+/app/electronics-checker            /app  301!
+/app/firearms-checker               /app  301!
+/app/law-enforcement                /app  301!
+/app/sellers                        /app  301!
+/app/vs-carfax                      /vs-carfax  301!
+/app/vs-imeiinfo                    /vs-imeiinfo  301!
+/app/features/*                     /app  301!
 
 # ============================================
 # MARKETPLACE VERIFICATION REDIRECTS (GSC "Page with redirect")
