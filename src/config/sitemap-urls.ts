@@ -11,211 +11,121 @@ export interface SitemapURL {
 }
 
 export const SITEMAP_URLS: SitemapURL[] = [
-  // License Plate Lookup (Target: "license plate lookup")
-  { path: '/license-plate-lookup', priority: 1.0, changefreq: 'daily' },
-  { path: '/license-plates-lookup', priority: 0.9, changefreq: 'daily' },
-  
-  // Homepage - Highest Priority (Brand: "safe or stolen")
+  // ============================================
+  // 10 CORE PAGES
+  // ============================================
   { path: '/', priority: 1.0, changefreq: 'daily' },
-  
-  // Core Verification Pages
   { path: '/verify', priority: 0.9, changefreq: 'daily' },
-  { path: '/serial-number-checker', priority: 0.9, changefreq: 'daily' },
-  { path: '/check', priority: 0.9, changefreq: 'daily' },
-  
-  // Comprehensive Stolen Item Search Pages (High SEO Priority)
-  { path: '/stolen-item-lookup', priority: 0.9, changefreq: 'daily' },
-  { path: '/check-stolen-item', priority: 0.9, changefreq: 'daily' },
-  { path: '/stolen-items-list', priority: 0.9, changefreq: 'daily' },
-  { path: '/check-stolen-database', priority: 0.9, changefreq: 'daily' },
-  
-  // Vehicle-Related Stolen Check Pages
-  { path: '/stolen-vehicle-database', priority: 0.9, changefreq: 'daily' },
-  { path: '/vin-check-lookup', priority: 0.9, changefreq: 'daily' },
-  { path: '/check-stolen-car', priority: 0.9, changefreq: 'daily' },
-  { path: '/search-stolen-vehicle', priority: 0.9, changefreq: 'daily' },
-  { path: '/check-vehicle-stolen', priority: 0.9, changefreq: 'daily' },
-  { path: '/stolen-car-vin', priority: 0.9, changefreq: 'daily' },
-  { path: '/vehicles-by-license-plate', priority: 0.9, changefreq: 'daily' },
-  { path: '/search-stolen-cars', priority: 0.9, changefreq: 'daily' },
-  { path: '/car-by-vin', priority: 0.9, changefreq: 'daily' },
-  
-  // Phone-Related Stolen Check Pages
-  { path: '/stolen-phone-check', priority: 0.9, changefreq: 'daily' },
-  { path: '/search-stolen-phone', priority: 0.9, changefreq: 'daily' },
-  { path: '/search-stolen-mobile', priority: 0.9, changefreq: 'daily' },
-  { path: '/search-stolen-iphone', priority: 0.9, changefreq: 'daily' },
-  
-  // Firearms-Related Stolen Check Pages
-  { path: '/search-stolen-firearms', priority: 0.8, changefreq: 'weekly' },
-  { path: '/search-stolen-guns', priority: 0.8, changefreq: 'weekly' },
-  { path: '/stolen-gun-database', priority: 0.8, changefreq: 'weekly' },
-  
-  // Bike-Related Stolen Check Pages
-  { path: '/search-stolen-bikes', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-bike-stolen', priority: 0.8, changefreq: 'weekly' },
-  
-  // Natural Language Question-Based Routes (High SEO Value)
-  { path: '/how-do-i-check-if-stolen', priority: 0.9, changefreq: 'weekly' },
-  { path: '/is-this-stolen', priority: 0.9, changefreq: 'daily' },
-  // Removed /verify-not-stolen (redirects to /verify)
-  { path: '/check-if-phone-was-stolen', priority: 0.9, changefreq: 'daily' },
-  { path: '/check-if-car-was-stolen', priority: 0.9, changefreq: 'daily' },
-  
-  // Additional Common Search Terms
-  { path: '/stolen-goods-search', priority: 0.9, changefreq: 'daily' },
-  { path: '/free-stolen-check', priority: 0.9, changefreq: 'daily' },
-  { path: '/stolen-property-check', priority: 0.9, changefreq: 'daily' },
-  { path: '/stolen-item-search', priority: 0.9, changefreq: 'daily' },
-  { path: '/check-stolen-goods', priority: 0.9, changefreq: 'daily' },
-  { path: '/stolen-check-free', priority: 0.9, changefreq: 'daily' },
-  { path: '/verify-serial-number', priority: 0.9, changefreq: 'daily' },
-  { path: '/imei-stolen-check', priority: 0.9, changefreq: 'daily' },
-  { path: '/vin-stolen-check', priority: 0.9, changefreq: 'daily' },
-  
-  // Item-Specific Verification
-  { path: '/check-electronics', priority: 0.8, changefreq: 'weekly' },
-  { path: '/check-bike', priority: 0.8, changefreq: 'weekly' },
-  { path: '/item-categories', priority: 0.8, changefreq: 'weekly' },
-  
-  // Authentication & Account
-  { path: '/auth', priority: 0.7, changefreq: 'monthly' },
-  { path: '/dashboard', priority: 0.7, changefreq: 'weekly' },
-  { path: '/profile', priority: 0.6, changefreq: 'monthly' },
-  { path: '/search-history', priority: 0.6, changefreq: 'weekly' },
-  { path: '/receipts', priority: 0.6, changefreq: 'weekly' },
-  { path: '/purchase-history', priority: 0.6, changefreq: 'weekly' },
-  
-  // Pricing & Subscriptions
-  { path: '/pricing', priority: 0.8, changefreq: 'weekly' },
-  { path: '/subscriptions', priority: 0.8, changefreq: 'weekly' },
-  { path: '/subscription-success', priority: 0.5, changefreq: 'monthly' },
-  { path: '/subscription-cancel', priority: 0.5, changefreq: 'monthly' },
-  
-  // Main Information Pages
+  { path: '/pricing', priority: 0.9, changefreq: 'weekly' },
+  { path: '/dashboard', priority: 0.8, changefreq: 'weekly' },
+  { path: '/account', priority: 0.7, changefreq: 'monthly' },
+  { path: '/app', priority: 0.9, changefreq: 'weekly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
-  { path: '/how-it-works', priority: 0.8, changefreq: 'monthly' },
-  { path: '/how-it-works-detailed', priority: 0.7, changefreq: 'monthly' },
-  { path: '/contact', priority: 0.7, changefreq: 'monthly' },
-  { path: '/services', priority: 0.8, changefreq: 'weekly' },
-  { path: '/features', priority: 0.8, changefreq: 'weekly' },
-  { path: '/faq', priority: 0.7, changefreq: 'monthly' },
-  
-  // Trust & Credibility Pages
-  { path: '/trust-verification', priority: 0.9, changefreq: 'weekly' },
-  { path: '/data-sources', priority: 0.7, changefreq: 'monthly' },
-  { path: '/transparency', priority: 0.7, changefreq: 'monthly' },
-  { path: '/accuracy', priority: 0.7, changefreq: 'monthly' },
-  // Removed /service-limitations (redirects to /terms, should not be in sitemap)
-  
-  // Guides & Educational Content
-  { path: '/guides/how-to-check-stolen-items', priority: 0.8, changefreq: 'monthly' },
-  { path: '/guides/imei-blacklist-explained', priority: 0.8, changefreq: 'monthly' },
-  { path: '/ultimate-guide', priority: 0.8, changefreq: 'monthly' },
-  // Removed /verification-hub (redirects to /verify)
-  { path: '/how-to-check-if-item-stolen', priority: 0.8, changefreq: 'monthly' },
-  // Removed /how-to-check-if-anything-is-stolen-before-you-buy (redirects to /how-it-works)
-  { path: '/comprehensive-guide', priority: 0.7, changefreq: 'monthly' },
-  { path: '/ultimate-guide-buying-safely', priority: 0.8, changefreq: 'monthly' },
-  { path: '/guide/buying-safely', priority: 0.8, changefreq: 'monthly' },
-  { path: '/buyer-guide', priority: 0.8, changefreq: 'monthly' },
-  { path: '/guide/buyers', priority: 0.8, changefreq: 'monthly' },
-  { path: '/seller-guide', priority: 0.8, changefreq: 'monthly' },
-  { path: '/guide/sellers', priority: 0.8, changefreq: 'monthly' },
-  { path: '/how-to-check-if-laptop-stolen', priority: 0.7, changefreq: 'monthly' },
-  { path: '/laptop-serial-number-check', priority: 0.7, changefreq: 'monthly' },
-  { path: '/buy-used-electronics-safely', priority: 0.7, changefreq: 'monthly' },
-  { path: '/safe-way-to-buy-used-gadgets', priority: 0.7, changefreq: 'monthly' },
-  
-  // Stolen Goods Information
-  // Removed /stolen-items-database (redirects to /data-sources)
-  // Removed /stolen-property-lookup (redirects to /verify)
-  { path: '/check-if-stolen', priority: 0.8, changefreq: 'daily' },
-  { path: '/stolen-goods-checker', priority: 0.8, changefreq: 'daily' },
-  // Removed /stolen-merchandise-check (redirects to /verify)
-  // Removed /avoid-buying-stolen-goods (redirects to /how-it-works)
-  { path: '/avoid-stolen-goods', priority: 0.8, changefreq: 'monthly' },
-  { path: '/ultimate-guide-not-buying-stolen-goods', priority: 0.8, changefreq: 'monthly' },
-  { path: '/stolen-goods-statistics-2024', priority: 0.7, changefreq: 'monthly' },
-  { path: '/statistics/stolen-goods-2024', priority: 0.7, changefreq: 'monthly' },
-  
-  // Blog Pages
-  { path: '/blog', priority: 0.8, changefreq: 'daily' },
-  { path: '/blog/data-source-credibility', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/verification-methodology', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/real-user-stories', priority: 0.7, changefreq: 'weekly' },
-  { path: '/blog/complete-verification-guide', priority: 0.8, changefreq: 'monthly' },
-  { path: '/blog/how-to-check-if-device-is-safe-stolen', priority: 0.8, changefreq: 'monthly' },
-  { path: '/blog/enterprise-security', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/mobile-app-features', priority: 0.7, changefreq: 'monthly' },
-  { path: '/blog/2024-theft-trends-report', priority: 0.7, changefreq: 'yearly' },
-  
-  // Company Pages
-  // Removed /our-story (redirects to /about)
-  { path: '/our-team', priority: 0.7, changefreq: 'monthly' },
-  { path: '/about-problem', priority: 0.7, changefreq: 'monthly' },
-  { path: '/case-studies', priority: 0.7, changefreq: 'monthly' },
-  { path: '/partnerships', priority: 0.6, changefreq: 'monthly' },
-  { path: '/press-release', priority: 0.8, changefreq: 'yearly' },
-  // Stolen Search Console - Analytics Platform
-  { path: '/stolen-search-console', priority: 0.9, changefreq: 'daily' },
-  { path: '/search-console', priority: 0.8, changefreq: 'daily' },
-  { path: '/analytics', priority: 0.7, changefreq: 'weekly' },
-  { path: '/search-trends', priority: 0.7, changefreq: 'daily' },
-  
-  // Trust & Company Pages
-  { path: '/about-company', priority: 0.9, changefreq: 'monthly' },
-  { path: '/transparency', priority: 0.8, changefreq: 'monthly' },
-  { path: '/roadmap', priority: 0.7, changefreq: 'weekly' },
-  { path: '/company-verification', priority: 0.95, changefreq: 'monthly' },
-  
-  // Target Audiences
-  // Removed /for-consumers (redirects to /)
-  { path: '/for-brands', priority: 0.7, changefreq: 'monthly' },
-  { path: '/auction-houses', priority: 0.6, changefreq: 'monthly' },
-  { path: '/pawn-shops', priority: 0.6, changefreq: 'monthly' },
-  
-  // Enterprise & Integrations
-  { path: '/integrations', priority: 0.7, changefreq: 'weekly' },
-  { path: '/marketplace-integration', priority: 0.7, changefreq: 'monthly' },
-  // Removed /enterprise-demo (redirects to /for-brands)
-  { path: '/api-docs', priority: 0.7, changefreq: 'weekly' },
-  
-  // Comparison Pages
-  { path: '/vs-checkmend', priority: 0.7, changefreq: 'monthly' },
-  { path: '/vs/checkmend', priority: 0.7, changefreq: 'monthly' },
-  { path: '/comparison/checkmend', priority: 0.7, changefreq: 'monthly' },
-  
-  // Mobile App
-  { path: '/download-app', priority: 0.7, changefreq: 'monthly' },
-  { path: '/app', priority: 0.7, changefreq: 'monthly' },
-  
-  // Community & Social
-  { path: '/community', priority: 0.6, changefreq: 'weekly' },
-  { path: '/community-watch', priority: 0.6, changefreq: 'weekly' },
-  { path: '/referral', priority: 0.6, changefreq: 'monthly' },
-  
-  // Legal Pages
-  { path: '/terms', priority: 0.5, changefreq: 'yearly' },
-  // Removed /terms-of-service (redirects to /terms)
-  { path: '/privacy', priority: 0.5, changefreq: 'yearly' },
-  // Removed /privacy-policy (redirects to /privacy)
-  // Removed /disclaimer (redirects to /terms)
-  { path: '/cookies', priority: 0.5, changefreq: 'yearly' },
-  { path: '/refunds', priority: 0.5, changefreq: 'yearly' },
-  
-  // Firearms Verification (Target: "how to check if gun is stolen")
-  { path: '/firearms-check', priority: 1.0, changefreq: 'daily' },
-  
-  // Utilities
-  { path: '/sitemap', priority: 0.5, changefreq: 'monthly' },
-  { path: '/security', priority: 0.6, changefreq: 'monthly' },
-  { path: '/feed.xml', priority: 0.6, changefreq: 'daily' },
-  { path: '/rss', priority: 0.6, changefreq: 'daily' },
-  
-  // FasterCapital Partnership
-  { path: '/fastercapital/raise-capital', priority: 0.5, changefreq: 'monthly' },
-  { path: '/fastercapital/tech-cofounder', priority: 0.5, changefreq: 'monthly' },
+  { path: '/faq', priority: 0.8, changefreq: 'monthly' },
+  { path: '/terms', priority: 0.6, changefreq: 'yearly' },
+  { path: '/privacy', priority: 0.6, changefreq: 'yearly' },
+
+  // ============================================
+  // 12 ITEM LANDING PAGES
+  // ============================================
+  { path: '/check-phone', priority: 0.9, changefreq: 'weekly' },
+  { path: '/check-laptop', priority: 0.9, changefreq: 'weekly' },
+  { path: '/check-bike', priority: 0.9, changefreq: 'weekly' },
+  { path: '/check-vehicle', priority: 0.9, changefreq: 'weekly' },
+  { path: '/check-boat', priority: 0.9, changefreq: 'weekly' },
+  { path: '/check-jewelry', priority: 0.8, changefreq: 'weekly' },
+  { path: '/check-electronics', priority: 0.8, changefreq: 'weekly' },
+  { path: '/check-tools', priority: 0.8, changefreq: 'weekly' },
+  { path: '/check-firearm', priority: 0.9, changefreq: 'weekly' },
+  { path: '/check-camera', priority: 0.8, changefreq: 'weekly' },
+  { path: '/check-watch', priority: 0.8, changefreq: 'weekly' },
+  { path: '/check-appliance', priority: 0.8, changefreq: 'weekly' },
+
+  // ============================================
+  // 3 COMPETITOR COMPARISON PAGES
+  // ============================================
+  { path: '/vs-checkmend', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vs-imei-info', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vs-swappa', priority: 0.8, changefreq: 'monthly' },
+
+  // ============================================
+  // 50 STATE VIN CHECKER PAGES
+  // ============================================
+  { path: '/vin-check/alabama', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/alaska', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/arizona', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/arkansas', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/california', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vin-check/colorado', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/connecticut', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/delaware', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/florida', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vin-check/georgia', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/hawaii', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/idaho', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/illinois', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/indiana', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/iowa', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/kansas', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/kentucky', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/louisiana', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/maine', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/maryland', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/massachusetts', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/michigan', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/minnesota', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/mississippi', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/missouri', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/montana', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/nebraska', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/nevada', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/new-hampshire', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/new-jersey', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/new-mexico', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/new-york', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vin-check/north-carolina', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/north-dakota', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/ohio', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/oklahoma', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/oregon', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/pennsylvania', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/rhode-island', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/south-carolina', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/south-dakota', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/tennessee', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/texas', priority: 0.8, changefreq: 'monthly' },
+  { path: '/vin-check/utah', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/vermont', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/virginia', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/washington', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/west-virginia', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/wisconsin', priority: 0.7, changefreq: 'monthly' },
+  { path: '/vin-check/wyoming', priority: 0.7, changefreq: 'monthly' },
+
+  // ============================================
+  // 12 BLOG ARTICLES
+  // ============================================
+  { path: '/blog/protect-yourself-buying-used-electronics', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/data-source-credibility-stolen-goods-verification', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/ultimate-marketplace-buyers-guide', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/complete-imei-guide-protect-yourself', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/safeorstolen-firearms-marketplace-verification', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/buying-used-cars-avoid-stolen-vehicles', priority: 0.8, changefreq: 'monthly' },
+  { path: '/blog/stolen-goods-statistics-what-buyers-need-know', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/pawnshop-buyers-guide-verify-before-purchase', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/mobile-app-barcode-scanning-verification', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/business-guide-preventing-stolen-goods', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/international-verification-global-coverage', priority: 0.7, changefreq: 'monthly' },
+  { path: '/blog/how-safeorstolen-works-comprehensive-guide', priority: 0.8, changefreq: 'monthly' },
+
+  // ============================================
+  // 5 BUSINESS PAGES
+  // ============================================
+  { path: '/for-businesses', priority: 0.8, changefreq: 'monthly' },
+  { path: '/for-pawnshops', priority: 0.8, changefreq: 'monthly' },
+  { path: '/for-dealers', priority: 0.8, changefreq: 'monthly' },
+  { path: '/marketplace-safety', priority: 0.8, changefreq: 'monthly' },
+  { path: '/legal-guide', priority: 0.7, changefreq: 'monthly' },
 ];
 
 /**
