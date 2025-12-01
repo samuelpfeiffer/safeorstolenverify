@@ -14,6 +14,7 @@ import { GSCSyncMonitor } from '@/components/admin/GSCSyncMonitor';
 import { GSCFixSoft404 } from '@/components/admin/GSCFixSoft404';
 import { GSCErrorSummary } from '@/components/admin/GSCErrorSummary';
 import { SchemaAuditDashboard } from '@/components/admin/SchemaAuditDashboard';
+import { SchemaValidationReport } from '@/components/admin/SchemaValidationReport';
 
 export default function GSCMonitoringDashboard() {
   const navigate = useNavigate();
@@ -253,7 +254,8 @@ export default function GSCMonitoringDashboard() {
               <GSCAISuggestions />
             </TabsContent>
 
-            <TabsContent value="schemas">
+            <TabsContent value="schemas" className="space-y-6">
+              <SchemaValidationReport />
               <SchemaAuditDashboard />
             </TabsContent>
           </Tabs>
