@@ -85,11 +85,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
+# Real pages: /for-businesses, /for-dealers, /for-pawn-shops (do NOT redirect)
 # ============================================
 /trust-verification          /about  301!
 /accuracy                    /about  301!
 /for-consumers               /pricing  301!
-/for-businesses              /for-dealers  301!
 /our-story                   /about  301!
 /contact                     /about  301!
 /features                    /about  301!

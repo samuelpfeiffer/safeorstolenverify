@@ -284,8 +284,10 @@ export const AppRoutes = () => {
         <Route path="/disclaimer" element={<Navigate to="/terms" replace />} />
         <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
         <Route path="/fastercapital/tech-cofounder" element={<Navigate to="/about" replace />} />
-        <Route path="/stolen-property-lookup" element={<Navigate to="/verify" replace />} />
-        {/* /service-limitations removed - server-side 301 redirect only (public/_redirects line 230) */}
+        {/* Removed duplicate redirects - all handled server-side in public/_redirects:
+        /stolen-property-lookup, /service-limitations, /firearm-serial-check, 
+        /seller-guide, /seo-strategy, /facebook-marketplace-verification */}
+        
         
         {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}
         <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
@@ -344,7 +346,7 @@ export const AppRoutes = () => {
         <Route path="/imei" element={<Navigate to="/imei-checker" replace />} />
         <Route path="/vin-check" element={<Navigate to="/vin-checker" replace />} />
         <Route path="/check-firearm" element={<Navigate to="/firearms-check" replace />} />
-        <Route path="/firearm-serial-check" element={<Navigate to="/firearms-check" replace />} />
+        {/* /firearm-serial-check removed - server-side 301 redirect only */}
         <Route path="/check-gaming-console" element={<Navigate to="/check-electronics" replace />} />
         <Route path="/check-android-phone" element={<Navigate to="/check-phone" replace />} />
         <Route path="/license-plates-lookup" element={<Navigate to="/license-plate-lookup" replace />} />
