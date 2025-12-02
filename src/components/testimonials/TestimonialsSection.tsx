@@ -67,19 +67,19 @@ const businessStats = [
     description: "Based on 10,000+ reviews"
   },
   {
-    number: "$2.3M",
+    number: "Growing",
     label: "Losses Prevented",
     description: "In stolen merchandise"
   },
   {
-    number: "15,000+",
-    label: "Businesses Trust Us",
+    number: "New",
+    label: "Businesses Joining",
     description: "Across North America"
   },
   {
-    number: "500K+",
+    number: "Daily",
     label: "Items Verified",
-    description: "With 99.7% accuracy"
+    description: "With high accuracy"
   }
 ];
 

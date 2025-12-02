@@ -39,7 +39,7 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
       buttonLink: "/enterprise-demo", 
       icon: Shield,
       badge: "Enterprise Solution",
-      stats: "$2.3M in loss prevention for our clients"
+      stats: "Helping prevent fraud for businesses"
     },
     protection: {
       title: "Stop Losing Money to Scams",

@@ -12,15 +12,15 @@ export const ImpactMetricsSection = () => {
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      metric: "$2.1M",
+      metric: "Growing",
       label: "Consumer losses prevented",
-      description: "Estimated value of prevented fraudulent purchases"
+      description: "Helping prevent fraudulent purchases"
     },
     {
       icon: <Users className="h-8 w-8" />,
-      metric: "50K+",
+      metric: "New",
       label: "Protected consumers",
-      description: "Users who avoided purchasing stolen items"
+      description: "Users avoiding purchasing stolen items"
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,

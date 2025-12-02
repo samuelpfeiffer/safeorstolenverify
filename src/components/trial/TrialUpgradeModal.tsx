@@ -41,9 +41,9 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
   };
 
   const socialProof = [
-    { icon: Users, text: '25,000+ Protected Buyers', color: 'text-blue-500' },
-    { icon: Shield, text: '$2.3M in Scams Prevented', color: 'text-green-500' },
-    { icon: TrendingUp, text: '127M+ Items Tracked', color: 'text-orange-500' },
+    { icon: Users, text: 'Growing Community of Smart Buyers', color: 'text-blue-500' },
+    { icon: Shield, text: 'Helping Prevent Fraud Daily', color: 'text-green-500' },
+    { icon: TrendingUp, text: 'Items Verified Every Day', color: 'text-orange-500' },
   ];
 
   const urgencyReasons = [

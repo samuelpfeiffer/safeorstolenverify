@@ -44,7 +44,7 @@ export const TrustBadgeStrip: React.FC = () => {
                 <div className="font-semibold text-sm mb-1">Success Stories</div>
                 <div className="text-xs text-muted-foreground mb-2">Police Case Numbers</div>
                 <Badge className="text-xs bg-blue-100 text-blue-800">
-                  $2.3M+ Fraud Stopped
+                  Fraud Prevention
                 </Badge>
               </CardContent>
             </Card>

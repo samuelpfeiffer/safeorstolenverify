@@ -138,19 +138,19 @@ export const EnhancedFooterLinks: React.FC = () => {
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-300">
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-green-400" />
-                <span>$2.3M in Scams Prevented</span>
+                <span>Helping Prevent Scams</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-blue-400" />
-                <span>125K+ Users Protected</span>
+                <span>Growing Community</span>
               </div>
               <div className="flex items-center gap-2">
                 <Search className="h-4 w-4 text-yellow-400" />
-                <span>450K+ Items Verified</span>
+                <span>Items Verified Daily</span>
               </div>
               <div className="flex items-center gap-2">
                 <FileText className="h-4 w-4 text-purple-400" />
-                <span>98.7% Accuracy Rate</span>
+                <span>Real-time Results</span>
               </div>
             </div>
           </div>

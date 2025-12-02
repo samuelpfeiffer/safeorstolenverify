@@ -77,8 +77,8 @@ export const TrustSignalsSection = () => {
                   <div className="text-xs text-muted-foreground">Countries</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary mb-1">127M+</div>
-                  <div className="text-xs text-muted-foreground">Items Tracked</div>
+                  <div className="text-2xl font-bold text-primary mb-1">Daily</div>
+                  <div className="text-xs text-muted-foreground">Items Checked</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary mb-1">24/7</div>

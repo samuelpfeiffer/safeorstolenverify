@@ -20,10 +20,10 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
   const getOptimizedContent = (type: string) => {
     const contentMap = {
       homepage: {
-        title: "Verify Stolen Goods Instantly - $2.3M in Scams Prevented | SafeOrStolen",
-        description: "Check if phone, car or device is stolen in 30 seconds. Enter IMEI, VIN, or serial number to verify with SafeOrStolen's global theft database. Shop with confidence.",
+        title: "Verify Stolen Goods Instantly | SafeOrStolen",
+        description: "Check if phone, car or device is stolen in 3 seconds. Enter IMEI, VIN, or serial number to verify with SafeOrStolen's theft database. Shop with confidence.",
         keywords: ["verify stolen goods", "IMEI check stolen", "VIN verification", "stolen phone checker", "marketplace safety", "prevent scam buying"],
-        h1: "Verify Before You Buy - Protect Against $2.3M in Prevented Scams",
+        h1: "Verify Before You Buy - Protect Yourself from Stolen Goods",
         schema: {
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -96,7 +96,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
         title: "Enterprise Verification API - Marketplace Protection for Brands | SafeOrStolen",
         description: "Integrate stolen goods verification into your marketplace. API access, bulk verification, and real-time fraud protection for e-commerce platforms.",
         keywords: ["marketplace verification API", "enterprise fraud protection", "bulk IMEI verification", "business verification service"],
-        h1: "Enterprise Verification Solutions - Protect Your Marketplace from $2.3M in Fraud",
+        h1: "Enterprise Verification Solutions - Protect Your Marketplace from Fraud",
         schema: {
           "@context": "https://schema.org",
           "@type": "Service",
@@ -112,9 +112,9 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       },
       about: {
         title: "About SafeOrStolen - Leaders in Marketplace Safety & Fraud Prevention",
-        description: "SafeOrStolen protects consumers and businesses from stolen goods fraud. Learn about our mission, technology, and $2.3M in prevented scams.",
+        description: "SafeOrStolen protects consumers and businesses from stolen goods fraud. Learn about our mission and technology.",
         keywords: ["SafeOrStolen company", "marketplace safety leader", "fraud prevention technology", "stolen goods database"],
-        h1: "Protecting Buyers & Sellers - $2.3M in Scams Prevented and Growing",
+        h1: "Protecting Buyers & Sellers - Preventing Scams and Growing",
         schema: {
           "@context": "https://schema.org",
           "@type": "AboutPage",

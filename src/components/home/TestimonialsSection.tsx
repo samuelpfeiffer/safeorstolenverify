@@ -68,7 +68,7 @@ export const TestimonialsSection = () => {
             <span>Real Stories from Real Users</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Trusted by 100,000+ Users
+            Trusted by Smart Buyers & Sellers
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Join thousands of buyers, sellers, and businesses who verify items every day on Facebook Marketplace, OfferUp, Craigslist, and eBay

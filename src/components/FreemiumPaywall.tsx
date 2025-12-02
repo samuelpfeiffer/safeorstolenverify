@@ -106,7 +106,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
 
         <div className="text-xs text-muted-foreground space-y-1">
           <p>✓ Instant activation • ✓ No setup fees • ✓ Bank-level security</p>
-          <p className="font-medium">Join 25,000+ smart buyers who refuse to buy stolen goods</p>
+          <p className="font-medium">Join smart buyers who refuse to buy stolen goods</p>
         </div>
       </CardContent>
     </Card>

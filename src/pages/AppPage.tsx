@@ -24,13 +24,6 @@ const AppPage = () => {
       "installUrl": "https://safeorstolen.com/app",
       "screenshot": "https://safeorstolen.com/og-image.jpg",
       "softwareVersion": "2.0",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "featureList": [
         "Barcode scanning for instant IMEI/serial verification",
         "Offline mode - works without internet",
