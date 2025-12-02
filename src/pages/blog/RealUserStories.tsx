@@ -285,22 +285,22 @@ export default function RealUserStories() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">$2.4M</div>
-                  <p className="text-lg font-bold">Total Fraud Prevented</p>
-                  <p className="text-sm text-muted-foreground">Verified user savings in 2024</p>
+                  <div className="text-4xl font-bold text-primary mb-2">Growing</div>
+                  <p className="text-lg font-bold">Fraud Prevention</p>
+                  <p className="text-sm text-muted-foreground">Helping protect users daily</p>
                 </Card>
                 <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">8,400+</div>
-                  <p className="text-lg font-bold">Stolen Items Identified</p>
+                  <div className="text-4xl font-bold text-primary mb-2">Daily</div>
+                  <p className="text-lg font-bold">Items Verified</p>
                   <p className="text-sm text-muted-foreground">Before purchase</p>
                 </Card>
                 <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">230</div>
-                  <p className="text-lg font-bold">Arrests Assisted</p>
+                  <div className="text-4xl font-bold text-primary mb-2">Active</div>
+                  <p className="text-lg font-bold">Law Enforcement Support</p>
                   <p className="text-sm text-muted-foreground">Based on user reports</p>
                 </Card>
                 <Card className="p-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">97%</div>
+                  <div className="text-4xl font-bold text-primary mb-2">High</div>
                   <p className="text-lg font-bold">User Satisfaction</p>
                   <p className="text-sm text-muted-foreground">Would recommend to friends</p>
                 </Card>
@@ -365,8 +365,8 @@ export default function RealUserStories() {
                   <li>2 free verifications - no credit card required</li>
                   <li>3-second instant results during transactions</li>
                   <li>Mobile app with barcode scanning</li>
-                  <li>97.3% accuracy guarantee</li>
-                  <li>Protected over $2.4M in fraud attempts</li>
+                  <li>High accuracy verification system</li>
+                  <li>Helping prevent fraud daily</li>
                 </ul>
                 <div className="flex gap-4">
                   <Button asChild size="lg">

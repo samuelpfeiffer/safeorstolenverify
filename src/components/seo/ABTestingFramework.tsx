@@ -51,7 +51,7 @@ export const ABTestingFramework: React.FC<ABTestingFrameworkProps> = ({
         element: 'h2[data-testid="verification-headline"]',
         variants: {
           A: 'How SafeOrStolen Protects Your Purchase',
-          B: '$2.3M in Scams Prevented - Here\'s How We Do It'
+          B: 'Helping Prevent Scams - Here\'s How We Do It'
         }
       }
     ];

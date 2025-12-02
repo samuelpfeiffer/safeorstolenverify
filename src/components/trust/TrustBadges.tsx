@@ -25,7 +25,7 @@ export const TrustBadges: React.FC = () => {
     },
     {
       icon: CheckCircle,
-      title: '$2.3M+ Protected',
+      title: 'Fraud Prevention',
       description: 'Scams prevented',
       color: 'text-green-500'
     },

@@ -6,15 +6,15 @@ export const StatisticsSection = () => {
   const stats = [
     {
       icon: <DollarSign className="h-8 w-8" />,
-      number: "$13B",
-      label: "Annual stolen goods market",
-      source: "National Insurance Crime Bureau"
+      number: "$13B+",
+      label: "Estimated annual stolen goods market",
+      source: "FBI Crime Reports"
     },
     {
       icon: <Users className="h-8 w-8" />,
-      number: "2.3M",
-      label: "Americans unknowingly buy stolen goods yearly",
-      source: "FBI Crime Statistics"
+      number: "Millions",
+      label: "At risk of buying stolen goods yearly",
+      source: "Industry Research"
     },
     {
       icon: <AlertTriangle className="h-8 w-8" />,
@@ -24,9 +24,9 @@ export const StatisticsSection = () => {
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      number: "0%",
-      label: "Current verification tools for consumers",
-      source: "Market Research Analysis"
+      number: "1st",
+      label: "Mobile app for stolen item verification",
+      source: "SafeOrStolen Innovation"
     }
   ];
 

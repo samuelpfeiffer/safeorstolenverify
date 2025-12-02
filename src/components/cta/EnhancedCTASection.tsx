@@ -45,7 +45,7 @@ export const EnhancedCTASection: React.FC = () => {
         {/* Main CTA */}
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-6 border-sos-orange text-sos-orange">
-            Join 500K+ Protected Users
+            Join Protected Users
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Stop Buying <span className="text-sos-orange">Stolen Goods</span> Today
@@ -67,7 +67,7 @@ export const EnhancedCTASection: React.FC = () => {
             </span>
             <span className="flex items-center gap-2">
               <Users className="h-4 w-4 text-sos-lime" />
-              500K+ Protected Users
+              Growing Community
             </span>
           </div>
         </div>

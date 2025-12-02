@@ -54,7 +54,7 @@ const transparencyMetrics = [
   },
   {
     metric: "250k+",
-    label: "Items Verified",
+    label: "Items Checked",
     description: "Trusted by consumers and businesses"
   }
 ];

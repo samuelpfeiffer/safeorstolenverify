@@ -16,7 +16,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
               Don't Risk Your Money. Verify Every Purchase.
             </h2>
             <p className="text-lg mb-6 text-primary-foreground/90">
-              Join 25,000+ smart buyers who refuse to buy stolen goods. Start protecting yourself today.
+              Join smart buyers who refuse to buy stolen goods. Start protecting yourself today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

@@ -20,7 +20,7 @@ interface EnhancedSEOProps {
 
 export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   title = 'SafeOrStolen - Verify Before You Buy or Sell Second-Hand Items',
-  description = 'Protect yourself from buying or selling stolen goods. Check IMEI, VIN, and serial numbers instantly. Trusted by 100,000+ users worldwide. Free verification for buyers and sellers.',
+  description = 'Protect yourself from buying or selling stolen goods. Check IMEI, VIN, and serial numbers instantly. Free verification for buyers and sellers. 2 free searches included.',
   keywords = [
     'verify before you buy',
     'verify before you sell',

@@ -12,13 +12,13 @@ interface Stat {
 const stats: Stat[] = [
   {
     icon: Shield,
-    value: '1.2M+',
+    value: 'Growing',
     label: 'Items Verified',
     color: 'text-neon-cyan',
   },
   {
     icon: Users,
-    value: '250K+',
+    value: 'New',
     label: 'Active Users',
     color: 'text-neon-green',
   },

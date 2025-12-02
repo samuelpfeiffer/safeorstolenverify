@@ -115,7 +115,7 @@ export const ContentMarketing: React.FC<ContentMarketingProps> = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 <Users className="mr-2 h-5 w-5" />
-                Join 125K+ Protected Users
+                Join Our Growing Community
               </Button>
               <Button size="lg" variant="outline">
                 <FileText className="mr-2 h-5 w-5" />

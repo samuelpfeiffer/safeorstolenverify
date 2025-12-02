@@ -77,10 +77,10 @@ export const EnhancedSEOContent: React.FC<EnhancedSEOContentProps> = ({
   ];
 
   const impactStats = [
-    { number: '$2.3M', label: 'Fraud Prevented', icon: Shield },
-    { number: '450K+', label: 'Items Verified', icon: CheckCircle },
-    { number: '98.7%', label: 'Accuracy Rate', icon: TrendingUp },
-    { number: '125K+', label: 'Users Protected', icon: Users }
+    { number: 'Growing', label: 'Fraud Prevention', icon: Shield },
+    { number: 'Daily', label: 'Items Verified', icon: CheckCircle },
+    { number: 'Real-time', label: 'Verification', icon: TrendingUp },
+    { number: 'Free Trial', label: '2 Searches Included', icon: Users }
   ];
 
   const faqData = [
