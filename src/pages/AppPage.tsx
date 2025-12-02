@@ -10,20 +10,38 @@ const AppPage = () => {
     {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
-      "name": "SafeOrStolen",
+      "name": "SafeOrStolen - Stolen Item Checker App",
       "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["Android", "iOS"],
+      "operatingSystem": ["Android", "iOS", "Web"],
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
       },
-      "description": "The only mobile app to verify if items are stolen. Instant barcode scanning, offline mode, 3-second verification.",
-      "downloadUrl": "https://safeorstolen.com/app"
+      "description": "Download the only mobile app to check if items are stolen before you buy. Instant barcode scanning, IMEI checker, VIN checker, offline verification. Free download for iOS and Android.",
+      "downloadUrl": "https://safeorstolen.com/app",
+      "installUrl": "https://safeorstolen.com/app",
+      "screenshot": "https://safeorstolen.com/og-image.jpg",
+      "softwareVersion": "2.0",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "featureList": [
+        "Barcode scanning for instant IMEI/serial verification",
+        "Offline mode - works without internet",
+        "3-second stolen verification results",
+        "Check phones, cars, bikes, electronics, firearms",
+        "Free to download with 2 free searches"
+      ]
     },
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "WebApplication",
       "name": "SafeOrStolen Web App",
       "applicationCategory": "WebApplication",
       "operatingSystem": "Web",
@@ -93,9 +111,9 @@ const AppPage = () => {
   return (
     <>
       <PageSEO
-        title="Download SafeOrStolen App - Best Stolen Item Checker App 2025 | CheckMEND Has No App"
-        description="Download the ONLY stolen item verification app. SafeOrStolen has barcode scanning, offline mode, 3-second verification. CheckMEND has NO app. IMEI.info has NO app. FREE download for iOS/Android. Best stolen goods checker app, IMEI checker app, VIN verification app, serial number scanner. 2 free searches. Works offline."
-        keywords="download safeorstolen app, stolen item checker app, stolen verification app download, IMEI checker app download, VIN checker app, serial number scanner app, CheckMEND app alternative, best stolen goods checker app, free IMEI checker app, barcode stolen checker, stolen item scanner app, how to download safeorstolen, safeorstolen mobile app, stolen goods verification app"
+        title="Download Stolen Item Checker App - Free IMEI & VIN Verification | SafeOrStolen"
+        description="Download the FREE stolen item checker app for iOS & Android. Verify if items are stolen in 3 seconds with barcode scanning. IMEI checker app, VIN checker app, serial number scanner. Works offline. Only app - CheckMEND has NO app."
+        keywords="download stolen item checker app, stolen verification app, IMEI checker app, VIN checker app, free stolen goods checker app, barcode stolen scanner, serial number verification app, check if stolen app, SafeOrStolen app download, stolen item scanner app iOS Android"
         canonical="/app"
         structuredData={appSchema}
       />
