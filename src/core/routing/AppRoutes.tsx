@@ -388,13 +388,13 @@ export const AppRoutes = () => {
         <Route path="/mobile-verification" element={<Navigate to="/app" replace />} />
         
         {/* Comparison pages - SEO competitor keyword hijacking strategy */}
-        <Route path="/vs-carfax" element={<Navigate to="/pricing" replace />} />
+        {/* Note: /vs-carfax and /vs-autocheck are defined above as real pages (lines 273-274) */}
         <Route path="/vs-checkmend" element={<VsCheckMendPage />} />
         <Route path="/vs-imeiinfo" element={<VsIMEIInfoPage />} />
         <Route path="/vs-swappa" element={<VsSwappaPage />} />
         <Route path="/vs-stolenregister" element={<Navigate to="/pricing" replace />} />
         <Route path="/vs-nicb" element={<Navigate to="/pricing" replace />} />
-        <Route path="/carfax-alternative" element={<Navigate to="/pricing" replace />} />
+        <Route path="/carfax-alternative" element={<Navigate to="/vs-carfax" replace />} />
         <Route path="/comparison-checkmend" element={<Navigate to="/vs-checkmend" replace />} />
         <Route path="/competitor-alternatives" element={<Navigate to="/pricing" replace />} />
         
