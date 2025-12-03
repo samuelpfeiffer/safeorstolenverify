@@ -166,6 +166,31 @@ const StolenVerificationAppGuide = lazy(() => import('@/pages/blog/StolenVerific
 const CheckMendHasNoApp = lazy(() => import('@/pages/blog/CheckMendHasNoApp'));
 const LikeCarfaxForPhones = lazy(() => import('@/pages/blog/LikeCarfaxForPhones'));
 
+// NEW Traffic Generation Blog Posts
+const PawnShopStolenItemVerification = lazy(() => import('@/pages/blog/PawnShopStolenItemVerification'));
+const IMEICheckerAppDownload = lazy(() => import('@/pages/blog/IMEICheckerAppDownload'));
+const FirearmSerialNumberVerification = lazy(() => import('@/pages/blog/FirearmSerialNumberVerification'));
+const BicycleStolenSerialNumberCheck = lazy(() => import('@/pages/blog/BicycleStolenSerialNumberCheck'));
+const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeMeetup'));
+
+// Marketplace Landing Pages
+const FacebookMarketplaceStolenCheck = lazy(() => import('@/pages/marketplace/FacebookMarketplaceStolenCheck'));
+const CraigslistSafetyVerification = lazy(() => import('@/pages/marketplace/CraigslistSafetyVerification'));
+const OfferupVerifyNotStolen = lazy(() => import('@/pages/marketplace/OfferupVerifyNotStolen'));
+const EbayStolenItemCheck = lazy(() => import('@/pages/marketplace/EbayStolenItemCheck'));
+
+// City Pages
+const StolenCheckLosAngeles = lazy(() => import('@/pages/city/StolenCheckLosAngeles'));
+const StolenCheckNewYorkCity = lazy(() => import('@/pages/city/StolenCheckNewYorkCity'));
+const StolenCheckChicago = lazy(() => import('@/pages/city/StolenCheckChicago'));
+const StolenCheckHouston = lazy(() => import('@/pages/city/StolenCheckHouston'));
+const StolenCheckPhoenix = lazy(() => import('@/pages/city/StolenCheckPhoenix'));
+const StolenCheckPhiladelphia = lazy(() => import('@/pages/city/StolenCheckPhiladelphia'));
+const StolenCheckSanAntonio = lazy(() => import('@/pages/city/StolenCheckSanAntonio'));
+const StolenCheckSanDiego = lazy(() => import('@/pages/city/StolenCheckSanDiego'));
+const StolenCheckDallas = lazy(() => import('@/pages/city/StolenCheckDallas'));
+const StolenCheckSanJose = lazy(() => import('@/pages/city/StolenCheckSanJose'));
+
 // Business Pages (5 B2B Landing Pages)
 const ForPawnShops = lazy(() => import('@/pages/business/ForPawnShops'));
 const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
