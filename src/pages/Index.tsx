@@ -14,6 +14,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/good_photo_for_sos-8.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
+import { EmailCapture } from '@/components/marketing/EmailCapture';
 
 const Index = () => {
   return (
@@ -221,6 +222,13 @@ const Index = () => {
 
         {/* Why Choose Us */}
         <WhyChooseSafeOrStolen />
+
+        {/* Email Capture - List Building */}
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <EmailCapture />
+          </div>
+        </section>
 
         {/* Testimonials */}
         <CompactTestimonials />
