@@ -75,6 +75,7 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
       "url": "https://safeorstolen.com",
       "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
       "sameAs": [
+        "https://www.youtube.com/@safeorstolen",
         "https://www.linkedin.com/company/safeorstolen",
         "https://twitter.com/safeorstolen",
         "https://www.facebook.com/safeorstolen"
