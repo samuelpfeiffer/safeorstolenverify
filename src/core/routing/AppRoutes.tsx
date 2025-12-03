@@ -198,6 +198,10 @@ const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 
+// App Feature & Download Pages
+const DownloadApp = lazy(() => import('@/pages/DownloadApp'));
+const AppFeatures = lazy(() => import('@/pages/app/AppFeatures'));
+
 // Admin Pages
 const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
 const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDashboard'));
@@ -399,10 +403,13 @@ export const AppRoutes = () => {
         <Route path="/stolen-items-database" element={<Navigate to="/verify" replace />} />
         <Route path="/how-to-check-if-anything-is-stolen-before-you-buy" element={<Navigate to="/verify" replace />} />
         
-        {/* App downloads → /app */}
-        <Route path="/install-app" element={<Navigate to="/app" replace />} />
-        <Route path="/download" element={<Navigate to="/app" replace />} />
-        <Route path="/download-app" element={<Navigate to="/app" replace />} />
+        {/* App Feature Pages - HIGH PRIORITY SEO */}
+        <Route path="/download" element={<DownloadApp />} />
+        <Route path="/app/features" element={<AppFeatures />} />
+        
+        {/* App downloads redirects */}
+        <Route path="/install-app" element={<Navigate to="/download" replace />} />
+        <Route path="/download-app" element={<Navigate to="/download" replace />} />
         <Route path="/get-app" element={<Navigate to="/app" replace />} />
         <Route path="/app/download" element={<Navigate to="/app" replace />} />
         <Route path="/ios-app" element={<Navigate to="/app" replace />} />
