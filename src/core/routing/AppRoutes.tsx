@@ -19,6 +19,7 @@ const NotFound = lazy(() => import('@/pages/NotFound'));
 
 // Competitor Comparison Pages (SEO Strategy)
 const Compare = lazy(() => import('@/pages/Compare'));
+const FreeTools = lazy(() => import('@/pages/FreeTools'));
 const VsCheckMendPage = lazy(() => import('@/pages/ComparisonCheckmend'));
 const VsIMEIInfoPage = lazy(() => import('@/pages/ComparisonIMEIInfo'));
 const VsSwappaPage = lazy(() => import('@/pages/ComparisonSwappa'));
@@ -306,6 +307,7 @@ export const AppRoutes = () => {
         
         {/* NEW Competitor Comparison Pages */}
         <Route path="/compare" element={<Compare />} />
+        <Route path="/free-tools" element={<FreeTools />} />
         <Route path="/vs-carfax" element={<ComparisonCarfax />} />
         <Route path="/vs-autocheck" element={<ComparisonAutocheck />} />
         
