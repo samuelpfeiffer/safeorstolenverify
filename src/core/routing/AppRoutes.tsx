@@ -168,6 +168,10 @@ const StolenVerificationAppGuide = lazy(() => import('@/pages/blog/StolenVerific
 const CheckMendHasNoApp = lazy(() => import('@/pages/blog/CheckMendHasNoApp'));
 const LikeCarfaxForPhones = lazy(() => import('@/pages/blog/LikeCarfaxForPhones'));
 
+// NEW HIGH-TRAFFIC BLOG POSTS - December 2024
+const HowToCheckIfIphoneStolen = lazy(() => import('@/pages/blog/HowToCheckIfIphoneStolen'));
+const FacebookMarketplaceScams = lazy(() => import('@/pages/blog/FacebookMarketplaceScams'));
+
 // NEW Traffic Generation Blog Posts
 const PawnShopStolenItemVerification = lazy(() => import('@/pages/blog/PawnShopStolenItemVerification'));
 const IMEICheckerAppDownload = lazy(() => import('@/pages/blog/IMEICheckerAppDownload'));
@@ -512,6 +516,10 @@ export const AppRoutes = () => {
         <Route path="/blog/stolen-verification-app-guide" element={<StolenVerificationAppGuide />} />
         <Route path="/blog/checkmend-has-no-app" element={<CheckMendHasNoApp />} />
         <Route path="/blog/like-carfax-for-phones" element={<LikeCarfaxForPhones />} />
+        
+        {/* NEW HIGH-TRAFFIC BLOG POSTS - December 2024 */}
+        <Route path="/blog/how-to-check-if-iphone-stolen" element={<HowToCheckIfIphoneStolen />} />
+        <Route path="/blog/facebook-marketplace-scams" element={<FacebookMarketplaceScams />} />
         
         {/* Business Pages - 5 B2B Landing Pages */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />
