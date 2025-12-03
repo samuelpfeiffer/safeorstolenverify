@@ -17,33 +17,41 @@ interface SimplifiedCheckoutProps {
 export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutProps) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { user } = useUnifiedAuth();
+  const { user, session } = useUnifiedAuth();
   const navigate = useNavigate();
 
   const handleQuickCheckout = async () => {
-    if (!email && !user) {
-      toast.error('Please enter your email');
+    // Require authentication for checkout
+    if (!session) {
+      toast.error('Please sign in to continue', {
+        description: 'You need to be signed in to purchase a verification.'
+      });
+      navigate('/auth?redirect=/pricing');
       return;
     }
 
     setIsLoading(true);
 
     try {
-      // Call Stripe checkout
+      // Call Stripe checkout with correct parameters
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 single verification
-          successUrl: `${window.location.origin}/verify?session_id={CHECKOUT_SESSION_ID}${itemNumber ? `&item=${itemNumber}` : ''}`,
-          cancelUrl: `${window.location.origin}/pricing`,
-          customerEmail: email || user?.email,
-          metadata: {
-            item_number: itemNumber || '',
-            item_type: itemType || 'general'
-          }
-        }
+          serialNumber: itemNumber || '',
+          itemType: itemType || 'general',
+          redirectUrl: window.location.origin,
+          isSubscription: false,
+          planName: 'Single Verification'
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Checkout error:', error);
+        throw new Error(error.message || 'Failed to create checkout session');
+      }
 
       if (data?.url) {
         window.location.href = data.url;
@@ -61,18 +69,18 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
   };
 
   return (
-    <Card className="p-6 bg-gradient-to-br from-card to-sos-orange/5 border-2 border-sos-orange/30">
+    <Card className="p-6 bg-gradient-to-br from-card to-primary/5 border-2 border-primary/30">
       <div className="space-y-6">
         {/* Header */}
         <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-sos-orange/20 to-sos-lime/20 rounded-full flex items-center justify-center">
-            <Zap className="w-8 h-8 text-sos-orange" />
+          <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center">
+            <Zap className="w-8 h-8 text-primary" />
           </div>
           <h3 className="text-2xl font-black mb-2">
             Verify This Item Now
           </h3>
           <p className="text-muted-foreground">
-            Get instant results in 3 seconds. No signup required.
+            Get instant results in 3 seconds.
           </p>
         </div>
 
@@ -83,25 +91,17 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
             <span className="text-4xl font-black text-foreground">$2.99</span>
             <span className="text-sm text-muted-foreground line-through">$9.99</span>
           </div>
-          <p className="text-xs text-sos-orange font-semibold mt-2">
-            ⏰ 48-Hour Special Pricing
+          <p className="text-xs text-primary font-semibold mt-2">
+            ⏰ Limited Time Pricing
           </p>
         </div>
 
-        {/* Email Input (if not logged in) */}
+        {/* Sign in prompt if not logged in */}
         {!user && (
-          <div>
-            <Label htmlFor="email" className="text-sm font-semibold">
-              Email for Receipt
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-2"
-            />
+          <div className="text-center p-4 bg-muted/50 rounded-lg">
+            <p className="text-sm text-muted-foreground">
+              Please <button onClick={() => navigate('/auth?redirect=/pricing')} className="text-primary underline font-semibold">sign in</button> to continue with checkout
+            </p>
           </div>
         )}
 
@@ -110,19 +110,19 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
           <p className="text-sm font-semibold">What You Get:</p>
           <div className="space-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-sos-lime" />
+              <ShieldCheck className="w-4 h-4 text-accent" />
               <span>Instant verification results</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-sos-lime" />
+              <ShieldCheck className="w-4 h-4 text-accent" />
               <span>50M+ stolen item database check</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-sos-lime" />
+              <ShieldCheck className="w-4 h-4 text-accent" />
               <span>Downloadable verification receipt</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-sos-lime" />
+              <ShieldCheck className="w-4 h-4 text-accent" />
               <span>Safe badge if item is clear</span>
             </div>
           </div>
@@ -131,14 +131,19 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
         {/* Checkout Button */}
         <Button
           onClick={handleQuickCheckout}
-          disabled={isLoading}
+          disabled={isLoading || !session}
           size="lg"
-          className="w-full bg-gradient-to-r from-sos-orange to-sos-lime text-white font-bold text-lg py-6 hover:shadow-xl transition-all hover:scale-105"
+          className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold text-lg py-6 hover:shadow-xl transition-all hover:scale-105"
         >
           {isLoading ? (
             <>
               <Loader2 className="w-5 h-5 mr-2 animate-spin" />
               Processing...
+            </>
+          ) : !session ? (
+            <>
+              <ShieldCheck className="w-5 h-5 mr-2" />
+              Sign In to Verify
             </>
           ) : (
             <>
