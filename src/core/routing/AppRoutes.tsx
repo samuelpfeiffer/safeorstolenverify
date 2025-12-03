@@ -198,6 +198,11 @@ const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
 
+// App Landing Pages (High-Priority SEO)
+const StolenPhoneCheckerApp = lazy(() => import('@/pages/app/StolenPhoneCheckerApp'));
+const VinCheckerApp = lazy(() => import('@/pages/app/VinCheckerApp'));
+const BarcodeScanner = lazy(() => import('@/pages/app/BarcodeScanner'));
+
 // App Feature & Download Pages
 const DownloadApp = lazy(() => import('@/pages/DownloadApp'));
 const AppFeatures = lazy(() => import('@/pages/app/AppFeatures'));
@@ -406,6 +411,9 @@ export const AppRoutes = () => {
         {/* App Feature Pages - HIGH PRIORITY SEO */}
         <Route path="/download" element={<DownloadApp />} />
         <Route path="/app/features" element={<AppFeatures />} />
+        <Route path="/app/stolen-phone-checker" element={<StolenPhoneCheckerApp />} />
+        <Route path="/app/vin-checker" element={<VinCheckerApp />} />
+        <Route path="/app/barcode-scanner" element={<BarcodeScanner />} />
         
         {/* App downloads redirects */}
         <Route path="/install-app" element={<Navigate to="/download" replace />} />
@@ -416,7 +424,7 @@ export const AppRoutes = () => {
         <Route path="/android-app" element={<Navigate to="/app" replace />} />
         <Route path="/pwa-app" element={<Navigate to="/app" replace />} />
         <Route path="/verification-app" element={<Navigate to="/app" replace />} />
-        <Route path="/imei-checker-app" element={<Navigate to="/app" replace />} />
+        <Route path="/imei-checker-app" element={<Navigate to="/app/stolen-phone-checker" replace />} />
         <Route path="/mobile-verification" element={<Navigate to="/app" replace />} />
         
         {/* Comparison pages - SEO competitor keyword hijacking strategy */}

@@ -43,14 +43,21 @@
     <mobile:mobile/>
   </url>
   <url>
-    <loc>https://safeorstolen.com/app/download</loc>
+    <loc>https://safeorstolen.com/app/stolen-phone-checker</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <mobile:mobile/>
   </url>
   <url>
-    <loc>https://safeorstolen.com/mobile-app</loc>
+    <loc>https://safeorstolen.com/app/vin-checker</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/app/barcode-scanner</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
