@@ -163,6 +163,54 @@ const AppPage = () => {
           "@type": "Answer",
           "text": "You can check phones (IMEI), vehicles (VIN), electronics (serial numbers), firearms, boats, bicycles, motorcycles, RVs, musical instruments, power tools, cameras, jewelry, and any item with a barcode or unique identifier. If it has a number, we can check if it's stolen."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I check if a phone is stolen using IMEI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the SafeOrStolen app, tap 'IMEI Check', then either scan the phone's barcode or manually enter the 15-digit IMEI number (dial *#06# on the phone to find it). Results show instantly if the phone is clean, stolen, or blacklisted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I verify if a car is stolen using VIN?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open SafeOrStolen, select 'VIN Check', and enter the 17-character VIN found on the dashboard or door frame. Our app checks stolen vehicle databases from all 50 states and shows results in 3 seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does SafeOrStolen work in all 50 US states?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! SafeOrStolen covers all 50 US states including California, Texas, Florida, New York, and more. Our stolen item database includes records from nationwide sources, making it the most comprehensive verification app available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can pawn shops use SafeOrStolen for business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! SafeOrStolen is perfect for pawn shops, secondhand stores, and resellers. Verify every item before purchasing with our fast 3-second verification. Business plans available for high-volume users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast are SafeOrStolen verification results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SafeOrStolen delivers results in just 3 seconds - the fastest in the industry. Compare that to CheckMEND which takes 30+ seconds per check. Our instant barcode scanning makes verification even faster."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is SafeOrStolen safe and secure to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! SafeOrStolen uses encrypted connections and doesn't store your search history on external servers. Your verification searches are private and secure. We're trusted by thousands of users across the US."
+        }
       }
     ]
   };
@@ -362,6 +410,138 @@ const AppPage = () => {
     "specialty": "Stolen Item Verification App Download"
   };
 
+  // Use Cases ItemList Schema
+  const useCasesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "SafeOrStolen Use Cases",
+    "description": "When to use SafeOrStolen stolen item verification app",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Facebook Marketplace Purchases",
+        "description": "Verify items before buying from Facebook Marketplace sellers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Craigslist Meetups",
+        "description": "Check items on the spot when meeting Craigslist sellers"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "OfferUp Transactions",
+        "description": "Verify OfferUp items before completing purchase"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Used Car Purchases",
+        "description": "Check VIN before buying used vehicles privately"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Pawn Shop Verification",
+        "description": "Verify all items before purchasing for resale"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Secondhand Store Inventory",
+        "description": "Check inventory before listing items for sale"
+      }
+    ]
+  };
+
+  // Competitor Comparison ItemList Schema
+  const comparisonSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Stolen Item Checker Comparison",
+    "description": "Compare SafeOrStolen to other stolen item verification services",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "SafeOrStolen",
+        "description": "Mobile app with barcode scanning, offline mode, 3-second results, free download"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "CheckMEND",
+        "description": "No mobile app, web only, requires internet, paid per check"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "IMEI.info",
+        "description": "No mobile app, basic web checker, limited features"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Swappa",
+        "description": "No mobile app, website only, limited to phones"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Carfax/Autocheck",
+        "description": "No mobile app, expensive, vehicles only"
+      }
+    ]
+  };
+
+  // Item Types Supported Schema
+  const itemTypesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Supported Item Types for Stolen Verification",
+    "description": "Types of items you can verify with SafeOrStolen",
+    "numberOfItems": 12,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Smartphones", "description": "iPhone, Samsung, Android phones - IMEI verification" },
+      { "@type": "ListItem", "position": 2, "name": "Vehicles", "description": "Cars, trucks, SUVs - VIN lookup" },
+      { "@type": "ListItem", "position": 3, "name": "Motorcycles", "description": "All motorcycle brands - VIN verification" },
+      { "@type": "ListItem", "position": 4, "name": "Laptops", "description": "MacBooks, Windows laptops - serial number check" },
+      { "@type": "ListItem", "position": 5, "name": "Tablets", "description": "iPads, Android tablets - serial verification" },
+      { "@type": "ListItem", "position": 6, "name": "Cameras", "description": "DSLR, mirrorless cameras - serial number lookup" },
+      { "@type": "ListItem", "position": 7, "name": "Firearms", "description": "Guns, rifles - serial number verification" },
+      { "@type": "ListItem", "position": 8, "name": "Bicycles", "description": "Bikes of all types - serial number check" },
+      { "@type": "ListItem", "position": 9, "name": "Boats", "description": "Watercraft - HIN verification" },
+      { "@type": "ListItem", "position": 10, "name": "RVs", "description": "Recreational vehicles - VIN check" },
+      { "@type": "ListItem", "position": 11, "name": "Power Tools", "description": "DeWalt, Milwaukee, Makita - serial lookup" },
+      { "@type": "ListItem", "position": 12, "name": "Musical Instruments", "description": "Guitars, keyboards - serial verification" }
+    ]
+  };
+
+  // Geographic Coverage Schema
+  const geoCoverageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "SafeOrStolen US Coverage",
+    "description": "States and cities covered by SafeOrStolen stolen item database",
+    "numberOfItems": 10,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "California", "description": "Los Angeles, San Francisco, San Diego, San Jose" },
+      { "@type": "ListItem", "position": 2, "name": "Texas", "description": "Houston, Dallas, Austin, San Antonio" },
+      { "@type": "ListItem", "position": 3, "name": "Florida", "description": "Miami, Orlando, Tampa, Jacksonville" },
+      { "@type": "ListItem", "position": 4, "name": "New York", "description": "New York City, Buffalo, Albany" },
+      { "@type": "ListItem", "position": 5, "name": "Illinois", "description": "Chicago, Springfield, Rockford" },
+      { "@type": "ListItem", "position": 6, "name": "Pennsylvania", "description": "Philadelphia, Pittsburgh, Allentown" },
+      { "@type": "ListItem", "position": 7, "name": "Arizona", "description": "Phoenix, Tucson, Mesa, Scottsdale" },
+      { "@type": "ListItem", "position": 8, "name": "Washington", "description": "Seattle, Tacoma, Spokane" },
+      { "@type": "ListItem", "position": 9, "name": "Colorado", "description": "Denver, Colorado Springs, Aurora" },
+      { "@type": "ListItem", "position": 10, "name": "Nevada", "description": "Las Vegas, Reno, Henderson" }
+    ]
+  };
+
   const appSchema = [
     mobileAppSchema, 
     howToSchema, 
@@ -372,7 +552,11 @@ const AppPage = () => {
     breadcrumbSchema,
     featuresListSchema,
     serviceSchema,
-    webPageSchema
+    webPageSchema,
+    useCasesSchema,
+    comparisonSchema,
+    itemTypesSchema,
+    geoCoverageSchema
   ];
 
   return (
