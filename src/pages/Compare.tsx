@@ -1,0 +1,319 @@
+import { PageSEO } from '@/components/seo/PageSEO';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
+import { Check, X, Smartphone, Shield, Zap, Users, Building2, Download } from 'lucide-react';
+
+const Compare = () => {
+  const competitors = [
+    {
+      name: 'SafeOrStolen',
+      highlight: true,
+      features: {
+        mobileApp: true,
+        freeChecks: '2 free',
+        speed: '3 seconds',
+        imei: true,
+        vin: true,
+        serial: true,
+        firearms: true,
+        boats: true,
+        barcode: true,
+        offline: true,
+        forBuyers: true,
+        forSellers: true,
+        forBusinesses: true,
+      }
+    },
+    {
+      name: 'CheckMEND',
+      highlight: false,
+      features: {
+        mobileApp: false,
+        freeChecks: 'Paid only',
+        speed: '30+ seconds',
+        imei: true,
+        vin: true,
+        serial: true,
+        firearms: false,
+        boats: false,
+        barcode: false,
+        offline: false,
+        forBuyers: true,
+        forSellers: false,
+        forBusinesses: true,
+      }
+    },
+    {
+      name: 'IMEI.info',
+      highlight: false,
+      features: {
+        mobileApp: false,
+        freeChecks: 'Limited',
+        speed: '10+ seconds',
+        imei: true,
+        vin: false,
+        serial: false,
+        firearms: false,
+        boats: false,
+        barcode: false,
+        offline: false,
+        forBuyers: true,
+        forSellers: false,
+        forBusinesses: false,
+      }
+    },
+    {
+      name: 'Swappa',
+      highlight: false,
+      features: {
+        mobileApp: false,
+        freeChecks: 'Platform only',
+        speed: 'Varies',
+        imei: true,
+        vin: false,
+        serial: false,
+        firearms: false,
+        boats: false,
+        barcode: false,
+        offline: false,
+        forBuyers: true,
+        forSellers: true,
+        forBusinesses: false,
+      }
+    },
+    {
+      name: 'Carfax',
+      highlight: false,
+      features: {
+        mobileApp: false,
+        freeChecks: 'Paid only',
+        speed: '5+ seconds',
+        imei: false,
+        vin: true,
+        serial: false,
+        firearms: false,
+        boats: false,
+        barcode: false,
+        offline: false,
+        forBuyers: true,
+        forSellers: true,
+        forBusinesses: true,
+      }
+    },
+  ];
+
+  const featureRows = [
+    { key: 'mobileApp', label: 'Mobile App', icon: Smartphone },
+    { key: 'freeChecks', label: 'Free Checks', icon: Shield },
+    { key: 'speed', label: 'Verification Speed', icon: Zap },
+    { key: 'barcode', label: 'Barcode Scanning', icon: Smartphone },
+    { key: 'offline', label: 'Offline Mode', icon: Shield },
+    { key: 'imei', label: 'IMEI Check (Phones)', icon: Smartphone },
+    { key: 'vin', label: 'VIN Check (Vehicles)', icon: Shield },
+    { key: 'serial', label: 'Serial Numbers', icon: Shield },
+    { key: 'firearms', label: 'Firearms', icon: Shield },
+    { key: 'boats', label: 'Boats & Marine', icon: Shield },
+    { key: 'forBuyers', label: 'For Buyers', icon: Users },
+    { key: 'forSellers', label: 'For Sellers', icon: Users },
+    { key: 'forBusinesses', label: 'For Businesses', icon: Building2 },
+  ];
+
+  const renderFeatureValue = (value: boolean | string) => {
+    if (typeof value === 'boolean') {
+      return value ? (
+        <Check className="h-5 w-5 text-primary mx-auto" />
+      ) : (
+        <X className="h-5 w-5 text-muted-foreground/50 mx-auto" />
+      );
+    }
+    return <span className="text-sm">{value}</span>;
+  };
+
+  return (
+    <>
+      <PageSEO
+        title="SafeOrStolen vs CheckMEND vs IMEI.info vs Carfax - Best Stolen Item Checker Comparison"
+        description="Compare SafeOrStolen with CheckMEND, IMEI.info, Swappa, and Carfax. See why SafeOrStolen is the best stolen item checker with the only mobile app, free checks, and coverage for phones, vehicles, firearms, and more."
+        keywords="CheckMEND alternative, better than IMEI.info, Swappa alternative, Carfax alternative, best stolen item checker, IMEI checker comparison, VIN lookup comparison, stolen verification app"
+        canonical="/compare"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Stolen Item Checker Comparison - SafeOrStolen vs Competitors",
+          "description": "Compare SafeOrStolen with CheckMEND, IMEI.info, Swappa, and Carfax",
+          "specialty": "comparison"
+        }}
+      />
+
+      {/* Bot-visible content */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1>SafeOrStolen vs CheckMEND vs IMEI.info vs Carfax - Stolen Item Checker Comparison</h1>
+          <p>Looking for a CheckMEND alternative? IMEI.info alternative? SafeOrStolen is the best stolen item checker with the only mobile app available.</p>
+          
+          <h2>Why SafeOrStolen is Better Than CheckMEND</h2>
+          <p>CheckMEND has no mobile app. SafeOrStolen has the only mobile app with barcode scanning and offline mode. CheckMEND is paid-only, SafeOrStolen offers 2 free checks.</p>
+          
+          <h2>Why SafeOrStolen is Better Than IMEI.info</h2>
+          <p>IMEI.info only checks phones. SafeOrStolen checks phones, vehicles, boats, firearms, electronics, and more. IMEI.info has no mobile app.</p>
+          
+          <h2>Why SafeOrStolen is Better Than Carfax</h2>
+          <p>Carfax only checks vehicles. SafeOrStolen is like Carfax for everything - phones, vehicles, boats, firearms, electronics. SafeOrStolen has a mobile app, Carfax does not.</p>
+          
+          <h2>SafeOrStolen Advantages</h2>
+          <ul>
+            <li>Only mobile app for stolen item verification</li>
+            <li>Barcode scanning for instant lookup</li>
+            <li>Offline mode - check items anywhere</li>
+            <li>2 free checks included</li>
+            <li>3-second verification</li>
+            <li>For buyers, sellers, AND businesses</li>
+          </ul>
+        </div>
+      </noscript>
+
+      <div className="min-h-screen bg-background">
+        {/* Hero */}
+        <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+          <div className="container mx-auto px-4 text-center">
+            <Badge variant="secondary" className="mb-4">Comparison</Badge>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              SafeOrStolen vs The Competition
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+              See why SafeOrStolen is the #1 stolen item checker for buyers, sellers, and businesses
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg">
+                <Link to="/verify">
+                  <Shield className="mr-2 h-5 w-5" />
+                  Try Free - 2 Checks Included
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/app">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download the Only App
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Table */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr>
+                    <th className="text-left p-4 border-b">Feature</th>
+                    {competitors.map((c) => (
+                      <th 
+                        key={c.name} 
+                        className={`text-center p-4 border-b ${c.highlight ? 'bg-primary/10' : ''}`}
+                      >
+                        <span className={c.highlight ? 'font-bold text-primary' : ''}>
+                          {c.name}
+                        </span>
+                        {c.highlight && (
+                          <Badge variant="default" className="ml-2 text-xs">Best</Badge>
+                        )}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {featureRows.map((row) => (
+                    <tr key={row.key} className="hover:bg-muted/50">
+                      <td className="p-4 border-b font-medium">{row.label}</td>
+                      {competitors.map((c) => (
+                        <td 
+                          key={`${c.name}-${row.key}`} 
+                          className={`p-4 border-b text-center ${c.highlight ? 'bg-primary/5' : ''}`}
+                        >
+                          {renderFeatureValue(c.features[row.key as keyof typeof c.features])}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Advantages */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Why Choose SafeOrStolen?
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Card>
+                <CardHeader>
+                  <Smartphone className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>The Only Mobile App</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    CheckMEND, IMEI.info, Swappa, and Carfax have NO mobile apps. 
+                    SafeOrStolen is the only one with barcode scanning and offline mode.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <Shield className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Covers Everything</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Phones, vehicles, boats, firearms, electronics, tools. 
+                    Like Carfax, but for EVERYTHING - not just cars.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <Users className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>For Everyone</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Buyers verify before purchasing. Sellers prove legitimacy. 
+                    Businesses reduce risk. One platform serves all.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Try the Best?</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              2 free checks. No credit card required. Results in 3 seconds.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg">
+                <Link to="/verify">Start Free Verification</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/pricing">View Pricing</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+export default Compare;
