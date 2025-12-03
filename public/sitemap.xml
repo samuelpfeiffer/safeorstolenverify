@@ -483,6 +483,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+  
+  <!-- NEW HIGH-TRAFFIC BLOG POSTS - December 2024 -->
+  <url>
+    <loc>https://safeorstolen.com/blog/how-to-check-if-iphone-stolen</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/facebook-marketplace-scams</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/free-tools</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <!-- STATE LICENSE PLATE LOOKUP PAGES - All 50 States -->
   <url>
