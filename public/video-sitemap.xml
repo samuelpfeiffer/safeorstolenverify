@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage with Video Content -->
+  <url>
+    <loc>https://safeorstolen.com/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Er_PXY0oMgE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>The $13 Billion Problem Explained - SafeOrStolen</video:title>
+      <video:description>Understanding the scope of the stolen goods crisis and how it affects innocent consumers. SafeOrStolen protects both buyers AND sellers from financial loss and legal trouble.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Er_PXY0oMgE</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/Er_PXY0oMgE</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2025-11-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- App Download Page -->
+  <url>
+    <loc>https://safeorstolen.com/app</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Er_PXY0oMgE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>How SafeOrStolen App Works - 3 Second Verification</video:title>
+      <video:description>See how the SafeOrStolen mobile app verifies if items are stolen in just 3 seconds using barcode scanning. The ONLY stolen verification app available - protects buyers AND sellers.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Er_PXY0oMgE</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/Er_PXY0oMgE</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2025-11-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- Download Page -->
+  <url>
+    <loc>https://safeorstolen.com/download</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Er_PXY0oMgE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Download SafeOrStolen - Free Stolen Item Checker App</video:title>
+      <video:description>Download the only stolen verification app. Check IMEI, VIN, serial numbers instantly with barcode scanning. Works offline. Protects both buyers AND sellers.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Er_PXY0oMgE</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/Er_PXY0oMgE</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2025-11-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://safeorstolen.com/about</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Er_PXY0oMgE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>About SafeOrStolen - Protecting Buyers and Sellers</video:title>
+      <video:description>Learn about SafeOrStolen's mission to protect both buyers AND sellers from the $13 billion stolen goods crisis. Our mobile app provides instant verification.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Er_PXY0oMgE</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/Er_PXY0oMgE</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2025-11-15</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+</urlset>

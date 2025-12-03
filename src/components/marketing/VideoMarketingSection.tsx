@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Play, Shield, Users, TrendingUp } from 'lucide-react';
+import { Play, Shield, Users, TrendingUp, Youtube } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const extractVideoId = (url: string): string => {
   const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^"&?\/\s]{11})/;
@@ -8,34 +9,76 @@ const extractVideoId = (url: string): string => {
   return match ? match[1] : '';
 };
 
+// Generate VideoObject schema for SEO
+const generateVideoSchema = (videos: typeof videoContent) => {
+  return videos
+    .filter(v => v.youtubeUrl)
+    .map(video => {
+      const videoId = extractVideoId(video.youtubeUrl!);
+      return {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": video.title,
+        "description": video.description,
+        "thumbnailUrl": `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+        "uploadDate": "2025-11-15",
+        "duration": video.duration === "0:59" ? "PT59S" : `PT${video.duration.replace(':', 'M')}S`,
+        "contentUrl": video.youtubeUrl,
+        "embedUrl": `https://www.youtube.com/embed/${videoId}`,
+        "publisher": {
+          "@type": "Organization",
+          "name": "SafeOrStolen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://safeorstolen.com/logo.png"
+          },
+          "url": "https://safeorstolen.com",
+          "sameAs": "https://www.youtube.com/@safeorstolen"
+        }
+      };
+    });
+};
+
+const videoContent = [
+  {
+    title: "The $13 Billion Problem Explained",
+    description: "Understanding the scope of the stolen goods crisis and how SafeOrStolen protects both buyers AND sellers from financial loss",
+    youtubeUrl: "https://YouTube.com/shorts/Er_PXY0oMgE?si=nhhHl7uKYXWfJcwZ",
+    duration: "0:59",
+    category: "Problem Awareness"
+  },
+  {
+    title: "How SafeOrStolen Works",
+    description: "See our real-time verification technology protecting buyers AND sellers in action",
+    thumbnail: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png", 
+    duration: "2:30",
+    category: "Platform Demo"
+  },
+  {
+    title: "Customer Success Stories",
+    description: "Real users sharing how we've protected them - both buyers AND sellers - from stolen goods",
+    thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+    duration: "4:15",
+    category: "Testimonials"
+  }
+];
+
 export const VideoMarketingSection = () => {
-  const videoContent = [
-    {
-      title: "The $13 Billion Problem Explained",
-      description: "Understanding the scope of the stolen goods crisis and how it affects innocent consumers",
-      youtubeUrl: "https://YouTube.com/shorts/Er_PXY0oMgE?si=nhhHl7uKYXWfJcwZ",
-      duration: "0:59",
-      category: "Problem Awareness"
-    },
-    {
-      title: "How Safe or Stolen Works",
-      description: "See our real-time verification technology in action",
-      thumbnail: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png", 
-      duration: "2:30",
-      category: "Platform Demo"
-    },
-    {
-      title: "Customer Success Stories",
-      description: "Real users sharing how we've protected them from stolen goods",
-      thumbnail: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
-      duration: "4:15",
-      category: "Testimonials"
-    }
-  ];
+  const videoSchemas = generateVideoSchema(videoContent);
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-sos to-sos/95">
-      <div className="container mx-auto max-w-6xl">
+    <>
+      {/* VideoObject Schema for SEO */}
+      <Helmet>
+        {videoSchemas.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+      </Helmet>
+
+      <section className="py-24 px-6 bg-gradient-to-b from-sos to-sos/95">
+        <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-6 bg-sos-lime/20 text-sos-lime border-sos-lime/30">
             <Play className="h-4 w-4 mr-2" />
@@ -136,5 +179,6 @@ export const VideoMarketingSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
