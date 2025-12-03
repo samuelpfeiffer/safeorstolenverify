@@ -6,11 +6,14 @@ import { Smartphone, Scan, Wifi, Shield, Zap, Download, Apple, Chrome, MapPin, S
 import { Link } from 'react-router-dom';
 
 const AppPage = () => {
-  // HowTo Schema for Featured Snippets
+  // TIER 1 KEYWORDS: stolen verification app, stolen item scanner app, barcode stolen checker
+  // These keywords have ZERO competition - SafeOrStolen is the ONLY app
+  
+  // HowTo Schema for Featured Snippets - optimized for TIER 1 keywords
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Check if an Item is Stolen Before You Buy",
+    "name": "How to Use the Stolen Verification App to Check Items Before Buying",
     "description": "Verify any item using the SafeOrStolen app in 3 simple steps. Works for phones, vehicles, electronics, and more.",
     "totalTime": "PT10S",
     "step": [

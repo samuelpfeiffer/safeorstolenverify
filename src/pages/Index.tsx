@@ -19,9 +19,9 @@ const Index = () => {
   return (
     <>
       <PageSEO
-        title="Check If Items Are Stolen Before You Buy | Free Stolen Item Checker - SafeOrStolen"
-        description="Free stolen item checker - verify IMEI, VIN, serial numbers in 3 seconds. Don't get scammed buying stolen phones, cars, electronics, bikes, tools, appliances. CheckMEND has NO app. SafeOrStolen has FREE mobile app with barcode scanning. Protect yourself from buying stolen goods - all 50 states + international."
-        keywords="check if stolen, stolen item checker free, verify IMEI VIN serial number, avoid buying stolen goods, stolen phone check, stolen car VIN lookup, how to check if item is stolen, free stolen goods checker, SafeOrStolen app"
+        title="Check If Items Are Stolen Before You Buy | Free IMEI VIN Serial Checker - SafeOrStolen"
+        description="Free stolen goods checker - verify any IMEI, VIN, serial number before buying used phones, cars, electronics. Avoid buying stolen items on Facebook Marketplace, eBay, Craigslist. 3-second verification across all 50 US states. Like Carfax but for everything. 2 free checks included."
+        keywords="check if stolen before buying, free stolen goods checker, verify used items, avoid buying stolen, how to check if item is stolen, IMEI VIN serial lookup free, stolen property database, secondhand verification, Facebook Marketplace safety"
         canonical="/"
         structuredData={[
           {
