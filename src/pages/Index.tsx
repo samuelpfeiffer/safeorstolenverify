@@ -104,10 +104,10 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Protect Buyers & Sellers - Stop Stolen Goods
+                Check If Secondhand Items Are Safe Or Stolen
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Every Search Makes Stolen Items Harder to Sell
+                Verify Before You Buy - Protect Yourself in Seconds
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Our mobile app is only available from SafeOrStolen.com - the exclusive gateway to instant IMEI, VIN & serial verification. 
