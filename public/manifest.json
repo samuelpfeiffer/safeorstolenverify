@@ -1,24 +1,25 @@
-
 {
-  "name": "SafeOrStolen - Verify Before You Buy",
+  "name": "SafeOrStolen - Stolen Item Verification App",
   "short_name": "SafeOrStolen",
-  "description": "Instantly verify if items are safe or stolen before purchase. Protect yourself from fraud with real-time IMEI, VIN, and serial number verification.",
-  "start_url": "/",
+  "description": "Check if any item is stolen before you buy. Verify phones (IMEI), vehicles (VIN), electronics, firearms. Instant barcode scanning. Works offline. Protect buyers AND sellers from fraud.",
+  "start_url": "/app?source=pwa",
+  "id": "com.safeorstolen.app",
   "display": "standalone",
-  "background_color": "#111827",
+  "display_override": ["standalone", "window-controls-overlay"],
+  "background_color": "#0d0d0d",
   "theme_color": "#FF6B35",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
   "dir": "ltr",
-  "categories": ["shopping", "security", "utilities", "finance"],
+  "categories": ["security", "utilities", "productivity", "business", "shopping"],
   "screenshots": [
     {
       "src": "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
       "sizes": "1200x630",
       "type": "image/png",
       "platform": "wide",
-      "label": "Safe or Stolen verification platform"
+      "label": "SafeOrStolen stolen item verification platform"
     }
   ],
   "icons": [
@@ -52,60 +53,54 @@
   ],
   "shortcuts": [
     {
-      "name": "Quick Verify",
-      "short_name": "Verify",
-      "description": "Quickly verify if an item is stolen",
-      "url": "/mobile-verify",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "name": "Check IMEI",
+      "short_name": "IMEI Check",
+      "description": "Check if phone is stolen by IMEI",
+      "url": "/verify?type=imei&source=shortcut",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Scan Camera",
+      "name": "Check VIN",
+      "short_name": "VIN Check",
+      "description": "Check if vehicle is stolen by VIN",
+      "url": "/verify?type=vin&source=shortcut",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Scan Barcode",
       "short_name": "Scan",
-      "description": "Scan item with camera",
-      "url": "/mobile-verify",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "description": "Scan item barcode with camera",
+      "url": "/verify?scan=true&source=shortcut",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     },
     {
-      "name": "History",
+      "name": "Verification History",
       "short_name": "History",
-      "description": "View verification history",
-      "url": "/mobile-dashboard",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Blog",
-      "short_name": "Blog",
-      "description": "Read safety tips and guides",
-      "url": "/blog",
-      "icons": [
-        {
-          "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "description": "View your verification history",
+      "url": "/dashboard?source=shortcut",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
     }
   ],
   "related_applications": [],
   "prefer_related_applications": false,
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
   "edge_side_panel": {
     "preferred_width": 400
   },
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  }
+  "share_target": {
+    "action": "/verify",
+    "method": "GET",
+    "params": {
+      "text": "q"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+safeorstolen",
+      "url": "/verify?q=%s"
+    }
+  ]
 }
