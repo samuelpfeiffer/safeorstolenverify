@@ -70,21 +70,13 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating subscription checkout for plan:", priceId);
-      
-      // Since we now use plan names as priceId, we can pass it directly as planName
-      // The priceId parameter now contains the actual plan name from our pricing tiers
-      // Note: Stripe calls their pricing tiers "products" but these are subscription plans for our SaaS service
-      const planName = priceId; // This is a plan name like "Smart Buyer", "Savvy Shopper", etc.
-      
-      console.log("Using plan name for Stripe matching:", planName);
+      console.log("Creating subscription checkout for priceId:", priceId);
       
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: null, // Let the edge function resolve the actual Stripe price ID
-          planName: planName, // Use the plan name for dynamic matching
+          priceId: priceId, // Pass the actual Stripe Price ID
           isSubscription: true,
-          redirectUrl: `${window.location.origin}/subscriptions?success=true`,
+          redirectUrl: window.location.origin,
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,
