@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { escapeIframeAndNavigate } from '@/utils/navigationUtils';
+import { supabase } from '@/integrations/supabase/client';
 
 interface SubscriptionCheckoutProps {
   priceId: string;
@@ -39,12 +40,6 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
     console.log('[SUBSCRIPTION-DIRECT] Calling Stripe directly...');
 
     try {
-      const { createClient } = await import('@supabase/supabase-js');
-      const supabase = createClient(
-        'https://lxrdzbknktwlubbmlsqe.supabase.co',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4cmR6Ymtua3R3bHViYm1sc3FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0NzE3MjAsImV4cCI6MjA2MjA0NzcyMH0.0ic5cOvgvV-tRy-tLAgGfXNJSEOkZD6-RwbG_3Gq2uI'
-      );
-
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId,
@@ -96,7 +91,7 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
     <Button
       onClick={handleSubscribe}
       disabled={disabled || loading || isProcessing}
-      className="w-full bg-sos-orange hover:bg-sos-orange/90 text-white"
+      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
     >
       {isProcessing ? 'Processing...' : loading ? 'Loading...' : `Subscribe to ${planName}`}
     </Button>
