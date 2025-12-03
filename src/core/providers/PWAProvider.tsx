@@ -1,11 +1,17 @@
-import React, { useEffect, createContext, useContext, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 import { usePWA } from '@/hooks/usePWA';
+import { useAppInstallTracking } from '@/hooks/useAppInstallTracking';
 
 interface PWAContextType {
   isInstallAvailable: boolean;
   isInstalled: boolean;
   isOnline: boolean;
   showInstallPrompt: () => Promise<boolean>;
+  installOutcome: 'accepted' | 'dismissed' | null;
+  isIOS: boolean;
+  isAndroid: boolean;
+  isSafari: boolean;
+  needsManualInstall: boolean;
 }
 
 const PWAContext = createContext<PWAContextType | undefined>(undefined);
@@ -23,13 +29,21 @@ interface PWAProviderProps {
 }
 
 export const PWAProvider: React.FC<PWAProviderProps> = ({ children }) => {
-  const { isInstallAvailable, isInstalled, isOnline, showInstallPrompt } = usePWA();
+  const pwa = usePWA();
+  
+  // Initialize app install tracking
+  useAppInstallTracking();
 
   const value: PWAContextType = {
-    isInstallAvailable,
-    isInstalled,
-    isOnline,
-    showInstallPrompt,
+    isInstallAvailable: pwa.isInstallAvailable,
+    isInstalled: pwa.isInstalled,
+    isOnline: pwa.isOnline,
+    showInstallPrompt: pwa.showInstallPrompt,
+    installOutcome: pwa.installOutcome,
+    isIOS: pwa.isIOS,
+    isAndroid: pwa.isAndroid,
+    isSafari: pwa.isSafari,
+    needsManualInstall: pwa.needsManualInstall,
   };
 
   return (
