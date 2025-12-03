@@ -57,21 +57,23 @@ const AboutPage = () => {
   return (
     <>
     <PageSEO
-      title="About SafeOrStolen - Crime Reduction Ecosystem"
-      description="SafeOrStolen creates a Crime Reduction Ecosystem. Verify if second-hand items are stolen before buying and selling. Protect buyers and sellers."
-      keywords="about SafeOrStolen, stolen item verification, crime reduction, protect buyers and sellers"
+      title="About SafeOrStolen - Protect Buyers & Sellers, Stop Stolen Goods"
+      description="SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - reducing crime globally. Mobile app only at SafeOrStolen.com."
+      keywords="about SafeOrStolen, stolen item verification, crime reduction, protect buyers sellers, stop stolen goods, reduce crime"
       canonical="/about"
       structuredData={[
         {
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "name": "About SafeOrStolen",
-          "description": "Learn about SafeOrStolen's mission to reduce crime through stolen item verification",
+          "name": "About SafeOrStolen - Protect Buyers & Sellers",
+          "description": "SafeOrStolen protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally.",
           "mainEntity": {
             "@type": "Organization",
             "name": "SafeOrStolen",
-            "description": "Crime Reduction Ecosystem protecting buyers and sellers",
-            "url": "https://safeorstolen.com"
+            "alternateName": ["Safe Or Stolen", "SOS"],
+            "description": "Protects buyers AND sellers from stolen goods. Mobile app exclusively available from SafeOrStolen.com.",
+            "url": "https://safeorstolen.com",
+            "slogan": "Protect Buyers & Sellers - Stop Stolen Goods at the Source"
           }
         },
         {
@@ -80,6 +82,7 @@ const AboutPage = () => {
           "name": "SafeOrStolen",
           "url": "https://safeorstolen.com",
           "logo": "https://safeorstolen.com/logo.png",
+          "slogan": "Every Search Makes Stolen Items Harder to Sell",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@safeorstolen.com",
@@ -99,11 +102,11 @@ const AboutPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Protecting Buyers & Sellers Since 2024
+                Protect Buyers & Sellers - Stop Stolen Goods at the Source
               </h1>
               <p className="text-lg text-muted-foreground mb-6">
-                SafeOrStolen verifies items instantly against law enforcement databases. 
-                Backed by FasterCapital partnership and police departments nationwide. Protecting buyers and sellers.
+                SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - 
+                reducing crime globally. Mobile app exclusively available from SafeOrStolen.com.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Badge variant="secondary" className="px-3 py-1">
@@ -131,14 +134,18 @@ const AboutPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Card className="p-6">
-                <h2 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h2>
+                <h2 className="text-2xl font-bold mb-4 text-foreground">Our Mission: Stop Stolen Goods at the Source</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Protect buyers, sellers, consumers and businesses from stolen goods through instant, accurate verification 
-                  backed by law enforcement databases and cutting-edge technology.
+                  We protect BOTH buyers AND sellers from stolen goods. By giving honest people a simple way to verify items, 
+                  we make it dramatically harder for thieves to fence stolen goods. Every search makes stolen items harder to sell.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Our mobile app is our golden ticket - exclusively available at SafeOrStolen.com. Download it to check items anywhere, 
+                  anytime, even offline.
                 </p>
                 <div className="border-t pt-4 mt-4">
                   <p className="text-muted-foreground text-sm">
-                    Backed by FasterCapital partnership · 5,000+ checks processed · 3 press releases published
+                    Backed by FasterCapital partnership · 5,000+ checks processed · Reducing crime globally
                   </p>
                 </div>
               </Card>

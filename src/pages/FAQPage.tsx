@@ -48,7 +48,15 @@ const FAQPage = () => {
         },
         {
           question: "Why should I check before buying secondhand?",
-          answer: "Every year, $13 billion worth of stolen goods are sold to unsuspecting buyers. Checking protects you from financial loss, legal trouble, and ensures you're not supporting criminal activity."
+          answer: "Every year, $13 billion worth of stolen goods are sold to unsuspecting buyers. SafeOrStolen protects BOTH buyers AND sellers - buyers avoid financial loss and legal trouble, while sellers can prove items are legitimate. Every search makes stolen items harder to sell, reducing crime globally."
+        },
+        {
+          question: "How does SafeOrStolen protect sellers too?",
+          answer: "Sellers can verify their items before listing to prove legitimacy and build buyer trust. This protects sellers from being falsely associated with stolen property and increases buyer confidence. Our verification certificate provides proof of clean status."
+        },
+        {
+          question: "How does SafeOrStolen reduce crime?",
+          answer: "Every search makes stolen items harder to sell. When buyers routinely verify items, thieves can't easily fence stolen goods on marketplaces. SafeOrStolen creates a Crime Reduction Ecosystem - the more people check, the less attractive stealing becomes."
         },
         {
           question: "How do I find my phone's IMEI number?",
@@ -189,9 +197,9 @@ const FAQPage = () => {
   return (
     <>
       <PageSEO
-        title="FAQ - Frequently Asked Questions | SafeOrStolen"
-        description="Common questions about SafeOrStolen stolen item verification. Learn about our free trial, mobile app, pricing, database sources, and how verification works."
-        keywords="SafeOrStolen FAQ, stolen verification questions, IMEI checker help, VIN lookup FAQ"
+        title="FAQ - Protect Buyers & Sellers | SafeOrStolen"
+        description="How SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell. Mobile app exclusively at SafeOrStolen.com."
+        keywords="protect buyers sellers FAQ, stolen verification questions, stop stolen goods, mobile app FAQ, crime reduction"
         canonical="/faq"
         structuredData={{
           "@context": "https://schema.org",
@@ -219,10 +227,10 @@ const FAQPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-                Common Questions
+                Protect Buyers & Sellers - Common Questions
               </h1>
               <p className="text-lg text-muted-foreground">
-                Quick answers about our verification service
+                How SafeOrStolen stops stolen goods and protects everyone
               </p>
             </div>
           </div>
