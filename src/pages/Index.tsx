@@ -207,6 +207,14 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </div>
+              
+              <div className="text-center mt-8">
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/compare">
+                    See Full Comparison vs CheckMEND, IMEI.info, Swappa & More →
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
