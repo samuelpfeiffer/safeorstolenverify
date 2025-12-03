@@ -16,28 +16,28 @@ export const CompactMobileAppCTA = () => {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-sm font-bold bg-accent text-accent-foreground px-2 py-0.5 rounded">
-                    ONLY APP
+                    GOLDEN TICKET
                   </span>
-                  <span className="text-sm font-medium">CheckMEND Has No App - We Do</span>
+                  <span className="text-sm font-medium">Only Available on SafeOrStolen.com</span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-1">
-                  Download The Only Stolen Verification App
+                  Protect Buyers & Sellers - Reduce Crime
                 </h3>
                 <p className="text-primary-foreground/90">
-                  Instant barcode scanning • IMEI, VIN, Serial checker • 3-second verification • iOS & Android
+                  Every search makes stolen items harder to sell • Instant verification • iOS & Android
                 </p>
               </div>
             </div>
 
             {/* Right Side - CTA Button */}
-            <Link to="/install-app">
+            <Link to="/app">
               <Button 
                 size="lg" 
                 variant="secondary"
                 className="whitespace-nowrap"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Install App
+                Download App
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

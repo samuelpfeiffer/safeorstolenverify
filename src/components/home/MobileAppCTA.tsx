@@ -17,15 +17,15 @@ export const MobileAppCTA = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-black leading-tight">
-                Verify On-The-Go with
+                Our Golden Ticket:
                 <span className="block text-transparent bg-gradient-to-r from-sos-orange to-sos-lime bg-clip-text">
-                  Our Mobile App
+                  Mobile App Exclusive to SafeOrStolen.com
                 </span>
               </h2>
 
               <p className="text-lg text-muted-foreground">
-                Install SafeOrStolen directly from your browser - no app store needed. 
-                Check items instantly while shopping at Facebook Marketplace, OfferUp, pawn shops, or anywhere.
+                <strong>Protect buyers AND sellers</strong> - prove items are clean before money changes hands. 
+                Every verification makes it harder for criminals to resell stolen goods. Help reduce crime globally.
               </p>
 
               <div className="space-y-3">

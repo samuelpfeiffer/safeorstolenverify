@@ -6,31 +6,31 @@ import { Smartphone, Zap, Shield, Globe, Award, Download, FileCheck, Lock } from
 export const WhyChooseSafeOrStolen = () => {
   const advantages = [
     {
-      icon: Smartphone,
-      title: 'Only Stolen Verification App',
-      description: 'We\'re the ONLY stolen verification app with barcode scanning (iOS & Android). CheckMEND has NO app. IMEI.info has NO app. Swappa has NO app. We\'re the first and only stolen item scanner app that works offline.',
-      badge: 'Exclusive App',
-      color: 'from-blue-500 to-purple-500'
-    },
-    {
-      icon: Zap,
-      title: 'Instant Stolen Verification - 3 Seconds',
-      description: 'CheckMEND takes 30+ seconds. We deliver instant stolen verification in 3 seconds with barcode scanning. No manual typing. Perfect for meetups - scan the IMEI or VIN, get results instantly.',
-      badge: '10x Faster',
-      color: 'from-yellow-500 to-orange-500'
-    },
-    {
       icon: Shield,
-      title: 'Multi-Source Database',
-      description: 'We\'re the ONLY platform checking phones, vehicles, electronics, bikes, AND firearms. Competitors specialize in one category. We access 150+ databases across all categories.',
-      badge: 'All-in-One',
+      title: 'Protects BOTH Buyers & Sellers',
+      description: 'Buyers avoid unknowingly purchasing stolen goods and the financial/legal nightmare. Sellers can prove items are clean, build trust, and avoid false associations with stolen property.',
+      badge: 'Dual Protection',
       color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: Award,
-      title: 'Free IMEI Checker App - 2 Checks',
-      description: 'CheckMEND charges $3.99 per check. We offer 2 FREE verification checks. Better than CheckMEND and it\'s a real mobile app, not a slow website. Free stolen verification app beats expensive competitors.',
-      badge: 'Free Alternative',
+      icon: Globe,
+      title: 'Global Crime Deterrent',
+      description: 'Every verification makes it harder for criminals to resell stolen goods. We\'re building a safer secondhand ecosystem and shrinking the market for stolen items globally.',
+      badge: 'Reduce Crime',
+      color: 'from-blue-500 to-purple-500'
+    },
+    {
+      icon: Smartphone,
+      title: 'Golden Ticket: Only Mobile App',
+      description: 'Our app is ONLY available from SafeOrStolen.com - the exclusive gateway. CheckMEND has NO app. IMEI.info has NO app. We\'re the first and only stolen item scanner app with barcode scanning.',
+      badge: 'Exclusive App',
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      icon: Zap,
+      title: 'Instant Verification - 3 Seconds',
+      description: 'CheckMEND takes 30+ seconds. We deliver instant stolen verification in 3 seconds with barcode scanning. No manual typing. Perfect for meetups - scan and verify instantly.',
+      badge: '10x Faster',
       color: 'from-pink-500 to-red-500'
     },
     {
@@ -41,16 +41,16 @@ export const WhyChooseSafeOrStolen = () => {
       color: 'from-cyan-500 to-blue-500'
     },
     {
-      icon: Globe,
-      title: 'Global Coverage: 150+ Countries',
-      description: 'Check items from anywhere in the world. We query databases in 150+ countries including US, Canada, UK, EU, Australia, Asia. Most competitors are US-only.',
-      badge: 'Worldwide',
+      icon: Award,
+      title: 'Free IMEI Checker App - 2 Checks',
+      description: 'CheckMEND charges $3.99 per check. We offer 2 FREE verification checks within 14 days. Better than CheckMEND - a real mobile app, not a slow website.',
+      badge: 'Free Alternative',
       color: 'from-indigo-500 to-purple-500'
     },
     {
       icon: Lock,
       title: 'Privacy-First: No Data Logging',
-      description: 'We don\'t log, track, or store your searches. Completely anonymous verification. Competitors track and sell your data to advertisers and brokers.',
+      description: 'We don\'t log, track, or store your searches. Completely anonymous verification. Competitors track and sell your data to advertisers.',
       badge: 'Private',
       color: 'from-gray-500 to-slate-500'
     },
@@ -117,10 +117,10 @@ export const WhyChooseSafeOrStolen = () => {
 
         <div className="mt-12 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-lg p-8 text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-3">
-            The #1 Verification Platform for Marketplace Buyers
+            Stop Stolen Goods at the Source
           </h3>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Protect yourself against fraud on Facebook Marketplace, eBay, Craigslist, OfferUp, pawn shops, and auctions. Don't buy without checking first.
+            Every search makes stolen items harder to sell. Protect yourself on Facebook Marketplace, eBay, Craigslist, OfferUp, pawn shops, and auctions. Download the app from SafeOrStolen.com to check items anywhere.
           </p>
         </div>
       </div>

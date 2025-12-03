@@ -19,16 +19,16 @@ const Index = () => {
   return (
     <>
       <PageSEO
-        title="Check If Items Are Stolen Before You Buy | Free IMEI VIN Serial Checker - SafeOrStolen"
-        description="Free stolen goods checker - verify any IMEI, VIN, serial number before buying used phones, cars, electronics. Avoid buying stolen items on Facebook Marketplace, eBay, Craigslist. 3-second verification across all 50 US states. Like Carfax but for everything. 2 free checks included."
-        keywords="check if stolen before buying, free stolen goods checker, verify used items, avoid buying stolen, how to check if item is stolen, IMEI VIN serial lookup free, stolen property database, secondhand verification, Facebook Marketplace safety"
+        title="Protect Buyers & Sellers - Stop Stolen Goods | Free IMEI VIN Serial Checker - SafeOrStolen"
+        description="SafeOrStolen protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reduce crime globally. Free IMEI, VIN, serial verification. Our mobile app is ONLY available from SafeOrStolen.com. 2 free checks included."
+        keywords="protect buyers sellers stolen goods, stop stolen items, reduce crime stolen goods, free stolen goods checker, verify used items, IMEI VIN serial lookup free, stolen property database, secondhand verification, Facebook Marketplace safety"
         canonical="/"
         structuredData={[
           {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "SafeOrStolen Stolen Item Verification Service",
-            "description": "Universal verification service like Carfax but for everything - check phones, vehicles, boats, firearms, electronics against stolen goods databases",
+            "description": "Protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally. Mobile app exclusively available from SafeOrStolen.com.",
             "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
@@ -51,19 +51,19 @@ const Index = () => {
             "name": "SafeOrStolen Mobile App",
             "applicationCategory": "SecurityApplication",
             "operatingSystem": ["iOS", "Android"],
-            "description": "Only mobile app with barcode scanning for instant stolen item verification. Verify IMEI, VIN, serial numbers in 3 seconds.",
+            "description": "ONLY mobile app for stolen item verification - exclusively available from SafeOrStolen.com. Protect buyers AND sellers. Every search makes stolen items harder to sell.",
             "offers": {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD"
             },
             "featureList": [
+              "Protects BOTH buyers AND sellers",
+              "Reduces crime globally",
               "Barcode scanning",
               "Offline mode",
-              "All 50 states coverage",
-              "International databases",
-              "3-second verification",
-              "Push notifications"
+              "Exclusive to SafeOrStolen.com",
+              "3-second verification"
             ]
           }
         ]}
@@ -72,30 +72,27 @@ const Index = () => {
       {/* Bot-visible content */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>Check If Items Are Stolen Before You Buy - Free Stolen Item Checker</h1>
-          <p>Don't get scammed by stolen goods. SafeOrStolen is the FREE stolen item checker that verifies IMEI, VIN, serial numbers in 3 seconds. Check phones, cars, electronics, bikes, tools, appliances, jewelry before buying. We're the ONLY mobile app with barcode scanning - CheckMEND has NO app. Protect yourself from buying stolen items across all 50 US states + international databases.</p>
+          <h1>Protect Buyers & Sellers - Stop Stolen Goods at the Source</h1>
+          <p>SafeOrStolen protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - helping reduce crime globally. Our mobile app is ONLY available from SafeOrStolen.com, making the website the exclusive gateway to instant IMEI, VIN, serial verification.</p>
           
-          <h2>CheckMEND Has No App - SafeOrStolen is the Only Stolen Item Scanner App</h2>
-          <p>SafeOrStolen is the ONLY stolen verification app globally. Competitors (CheckMEND, IMEI.info, IMEIPro, Swappa, LeadsOnline) have NO mobile apps - only slow websites. Our app features instant barcode scanning, 3-second verification, offline mode, and free download for iOS and Android.</p>
+          <h2>Our Mission: Build a Safer Secondhand Ecosystem</h2>
+          <p>We don't just check serial numbers - we're shrinking the market for stolen goods globally. Buyers avoid unknowingly purchasing stolen items and the financial/legal nightmare. Sellers prove legitimacy and build trust. Criminals think twice because more buyers check first.</p>
           
-          <h2>Coverage: All 50 US States + International</h2>
-          <p>We verify items across all 50 US states plus international databases. Processing 5,000+ checks daily. Partnered with FasterCapital (selected from 5,000+ applicants). Featured in 3 press releases.</p>
+          <h2>Golden Ticket: The Only Mobile App (Exclusive to SafeOrStolen.com)</h2>
+          <p>CheckMEND has NO app. IMEI.info has NO app. Swappa has NO app. Our mobile app is exclusively available from SafeOrStolen.com with instant barcode scanning, 3-second verification, and offline mode.</p>
           
           <h2>What You Can Verify</h2>
           <ul>
-            <li>Phones & Tablets (IMEI, serial numbers)</li>
-            <li>Vehicles (VIN, license plates - all 50 states)</li>
+            <li>Phones & Tablets (IMEI verification)</li>
+            <li>Vehicles (VIN lookup - all 50 states)</li>
             <li>Boats & Marine Equipment</li>
             <li>Firearms</li>
-            <li>Electronics (laptops, cameras, TVs, appliances)</li>
-            <li>Jewelry & Watches</li>
+            <li>Electronics & Appliances</li>
             <li>Power Tools & Equipment</li>
-            <li>Musical Instruments</li>
-            <li>RC Vehicles & E-bikes</li>
           </ul>
           
-          <h2>Start Free Trial - 2 Checks</h2>
-          <p>Get 2 free verification checks (14 days). No credit card required. Like Carfax for everything.</p>
+          <h2>Start Free Trial - Protect Yourself Today</h2>
+          <p>2 free verification checks. Protect yourself as a buyer OR seller. Download from SafeOrStolen.com to check items anywhere.</p>
         </div>
       </noscript>
 
@@ -107,24 +104,28 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Check If Items Are Stolen Before You Buy
+                Protect Buyers & Sellers - Stop Stolen Goods
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Free Instant Verification - Don't Get Scammed By Stolen Goods
+                Every Search Makes Stolen Items Harder to Sell
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Download the only stolen item scanner app with 3-second verification. IMEI, VIN, serial numbers, license plates - all 50 US states + international coverage
+                Our mobile app is only available from SafeOrStolen.com - the exclusive gateway to instant IMEI, VIN & serial verification. 
+                Protect yourself from financial loss & legal risk. Help reduce crime globally.
               </p>
               
               <div className="flex flex-wrap justify-center gap-4 pt-6">
                 <Button asChild size="lg" className="px-8">
                   <Link to="/app">
                     <Download className="mr-2 h-5 w-5" />
-                    Download The Only App
+                    Download App - Exclusive to SafeOrStolen.com
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="px-8">
-                  <Link to="/verify">Verify Now - 2 Free Checks</Link>
+                  <Link to="/verify">
+                    <Shield className="mr-2 h-5 w-5" />
+                    Protect Yourself Now
+                  </Link>
                 </Button>
               </div>
               
@@ -132,15 +133,15 @@ const Index = () => {
                 <LiveStatsCounter />
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  Processing 5,000+ Checks
+                  Protects Buyers & Sellers
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  FasterCapital Partner
+                  Reduces Crime Globally
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  All 50 States + International
+                  App Only on SafeOrStolen.com
                 </div>
               </div>
 

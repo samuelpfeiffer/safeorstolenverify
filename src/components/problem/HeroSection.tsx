@@ -5,13 +5,13 @@ export const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">
-            Only Mobile App to Verify & Check Stolen Items - Protect Buyers & Sellers
-            <br />Prevent Financial Loss, Legal Issues & Reduce Crime
+            Protect Buyers & Sellers - Stop Stolen Goods at the Source
+            <br />Prevent Financial Loss, Legal Issues & Reduce Crime Globally
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            SafeOrStolen is the only mobile verification app that protects both buyers and sellers from financial 
-            loss and legal consequences. Check & verify IMEI, VIN, serial numbers instantly on your phone at Facebook Marketplace, 
-            OfferUp, eBay, pawn shops. Free database search. Our mission: make secondhand markets safer and reduce crime globally.
+            SafeOrStolen's mobile app is ONLY available from SafeOrStolen.com - the exclusive gateway to instant verification. 
+            Protect yourself from financial loss & legal risk whether buying OR selling. Every search makes stolen items harder to sell. 
+            Check IMEI, VIN, serial numbers at Facebook Marketplace, OfferUp, eBay, pawn shops. Our mission: build a safer secondhand ecosystem globally.
           </p>
         </div>
       </div>

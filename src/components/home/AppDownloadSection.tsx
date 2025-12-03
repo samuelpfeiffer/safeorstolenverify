@@ -19,11 +19,11 @@ export const AppDownloadSection = () => {
 
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">
-              Verify Phones, Cars, Guns & More On-The-Go
+              Protect Buyers & Sellers - Stop Stolen Goods at the Source
             </h2>
             <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              CheckMend doesn't have it. IMEIinfo doesn't have it. Stolen Register doesn't have it. 
-              <span className="block mt-2 font-bold">Only SafeOrStolen offers complete mobile verification - IMEI, VIN, Serial Numbers & Firearms!</span>
+              Our app is <strong>only available from SafeOrStolen.com</strong> - making this website your exclusive gateway. 
+              <span className="block mt-2 font-bold">Every search makes stolen items harder to sell. Help reduce crime globally!</span>
             </p>
           </div>
 
