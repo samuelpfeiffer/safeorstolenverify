@@ -27,11 +27,11 @@ const ComparisonCarfax = () => {
             "@type": "OfferCatalog",
             "name": "Verification Types",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "IMEI Phone Verification" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "VIN Vehicle Verification" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Firearms Serial Verification" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bicycle Serial Verification" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Electronics Serial Verification" } }
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IMEI Phone Verification" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "VIN Vehicle Verification" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Firearms Serial Verification" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bicycle Serial Verification" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electronics Serial Verification" } }
             ]
           }
         },
