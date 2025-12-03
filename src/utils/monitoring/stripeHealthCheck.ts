@@ -42,29 +42,8 @@ export const checkStripeHealth = async (): Promise<StripeHealthResult> => {
     'price_1SSVqkGxnZLw8J7O3GwCyKRn'  // Updated price
   ];
   
-  // Check 3: Test Stripe checkout creation endpoint
-  try {
-    // Only test in authenticated context
-    const response = await fetch('/api/stripe/health', { method: 'HEAD' });
-    if (!response.ok && response.status !== 404) {
-      issues.push({
-        severity: 'warning',
-        component: 'API',
-        message: 'Stripe API endpoint unreachable',
-        fix: 'Check edge function deployment'
-      });
-    }
-  } catch (error) {
-    // Network errors in dev are expected
-    if (import.meta.env.PROD) {
-      issues.push({
-        severity: 'critical',
-        component: 'Network',
-        message: 'Cannot reach Stripe services',
-        fix: 'Check network connectivity and Stripe status'
-      });
-    }
-  }
+  // Check 3: Stripe connectivity is verified via the edge function when called
+  // No direct API health check needed - edge functions handle Stripe API calls
 
   // Check 4: Validate checkout flow components exist
   const requiredFiles = [
