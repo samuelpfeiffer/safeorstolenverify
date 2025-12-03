@@ -83,53 +83,8 @@ export const AdvancedSchemaGenerator = () => {
     }
   ];
 
-  // FAQ Schema optimized for voice search
-  const voiceSearchFAQ = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does CheckMend have a mobile app?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, CheckMend does not have a mobile app for iOS or Android. SafeOrStolen is the only verification service with mobile apps, offering IMEI, VIN, and firearm checking on iPhone and Android devices."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's better than CheckMend?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SafeOrStolen is better than CheckMend because it offers mobile apps for iOS and Android, includes 4 free searches, and is the only service that verifies firearms. CheckMend has no mobile app and requires payment upfront."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I check if a gun is stolen on my phone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, SafeOrStolen is the only mobile app for iOS and Android that lets you check firearm serial numbers against stolen gun databases. Download the free app and get 4 free searches."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is there a free IMEI checker app?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, SafeOrStolen offers a free IMEI checker app for iOS and Android with 4 free IMEI checks included. IMEIinfo and CheckMend do not have mobile apps."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I check if something is stolen before buying?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use the SafeOrStolen mobile app to check IMEI numbers (phones), VIN numbers (vehicles), or serial numbers (electronics and firearms). Get instant verification results showing if items are stolen, lost, or safe to buy."
-        }
-      }
-    ]
-  };
+  // Note: FAQPage schema removed to prevent duplicates with page-specific FAQs
+  // HowTo schemas are kept as they don't duplicate
 
   return (
     <Helmet>
@@ -138,9 +93,6 @@ export const AdvancedSchemaGenerator = () => {
           {JSON.stringify(schema)}
         </script>
       ))}
-      <script type="application/ld+json">
-        {JSON.stringify(voiceSearchFAQ)}
-      </script>
     </Helmet>
   );
 };
