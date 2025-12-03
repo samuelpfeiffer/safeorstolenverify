@@ -19,7 +19,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/pricing', priority: 0.9, changefreq: 'weekly' },
   { path: '/dashboard', priority: 0.7, changefreq: 'weekly' },
   { path: '/account', priority: 0.6, changefreq: 'monthly' },
-  { path: '/app', priority: 0.9, changefreq: 'weekly' },
+  { path: '/app', priority: 1.0, changefreq: 'weekly' },
   { path: '/about', priority: 0.8, changefreq: 'monthly' },
   { path: '/faq', priority: 0.8, changefreq: 'monthly' },
   { path: '/terms', priority: 0.5, changefreq: 'yearly' },
