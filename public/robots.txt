@@ -1,10 +1,19 @@
+# ============================================
+# SafeOrStolen Robots.txt
+# Mission: Protect Buyers & Sellers - Stop Stolen Goods
+# Updated: 2025-12-03
+# ============================================
+
 User-agent: *
 Allow: /
 
+# Sitemaps
+Sitemap: https://safeorstolen.com/sitemap.xml
+Sitemap: https://safeorstolen.com/video-sitemap.xml
+Sitemap: https://safeorstolen.com/sitemap-index.xml
+
 # ============================================
-# LEGACY REDIRECTS - Deprecated URLs (Not indexed, correct behavior)
-# Google marks these as "Page with redirect" which is CORRECT
-# These URLs redirect to canonical pages and should NOT be indexed
+# PRIVATE AREAS - Do Not Index
 # ============================================
 
 # Private/Authenticated Areas
@@ -39,9 +48,6 @@ Disallow: /subscription-success
 Disallow: /subscription-cancel
 Disallow: /payment-success
 Disallow: /payment-cancel
-
-# Sitemap Location (Critical for Indexing)
-Sitemap: https://safeorstolen.com/sitemap.xml
 
 # Crawl Optimization
 Crawl-delay: 1
