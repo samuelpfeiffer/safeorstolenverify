@@ -25,7 +25,7 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
 
     setIsLoading(true);
     try {
-      const finalPriceId = priceId || 'price_1Rz83i2eGaMDLFHonAmu86lS'; // $10 Report price ID as default
+      const finalPriceId = priceId || 'price_1SSVqkGxnZLw8J7O3GwCyKRn'; // $2.99 Single Verification price ID
       const finalPlanName = planName || 'Single Verification';
       
       console.log("Creating one-time payment checkout with priceId:", finalPriceId);
