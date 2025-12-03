@@ -565,9 +565,9 @@ const AppPage = () => {
   return (
     <>
       <PageSEO
-        title="Download Free Stolen Item Checker App | Verify IMEI, VIN, Serial Numbers"
-        description="Free mobile app to check if any item is stolen before you buy. Verify phones (IMEI), vehicles (VIN), electronics, firearms. Instant barcode scanning. Works offline in all 50 US states."
-        keywords="stolen item checker, verify stolen phone, check IMEI stolen, VIN stolen check, serial number verification, stolen item app, barcode scanner stolen, check before buying, Facebook Marketplace stolen check, stolen verification app download"
+        title="Download Free Stolen Verification App | Protect Buyers & Sellers - SafeOrStolen"
+        description="Our mobile app is ONLY available from SafeOrStolen.com. Protect BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell. Free IMEI, VIN, serial checker with barcode scanning."
+        keywords="stolen verification app, protect buyers sellers, stop stolen goods, reduce crime, IMEI checker app, VIN checker app, serial number verification, stolen item scanner, barcode scanner stolen"
         canonical="/app"
         structuredData={appSchema}
       />
@@ -575,21 +575,24 @@ const AppPage = () => {
       {/* Bot-visible content */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>Download SafeOrStolen App - Best Stolen Item Checker App 2025</h1>
+          <h1>Download SafeOrStolen App - Protect Buyers & Sellers</h1>
           <p>
-            Download the SafeOrStolen mobile app - the ONLY stolen item verification app with barcode scanning and offline mode. 
-            CheckMEND has NO app. IMEI.info has NO app. Swappa has NO app. We're the first stolen goods checker app 
-            with instant 3-second verification. Download FREE for iOS and Android. Best IMEI checker app, VIN checker app, 
-            serial number scanner, and stolen item verification tool. 2 free searches included. Works without internet.
+            Our mobile app is ONLY available from SafeOrStolen.com - making this website the exclusive gateway to stolen item verification. 
+            We protect BOTH buyers AND sellers: buyers avoid financial loss and legal nightmares, sellers prove items are clean and build trust.
+            Every search makes stolen items harder to sell - helping reduce crime globally. Download FREE for iOS and Android.
           </p>
           
-          <h2>Check Stolen Items Anywhere in the US</h2>
+          <h2>Our Mission: Stop Stolen Goods at the Source</h2>
           <p>
-            SafeOrStolen works in all 50 states including: Check stolen items in Los Angeles, verify IMEI in New York, 
-            VIN lookup in Chicago, stolen phone check in Houston, serial verification in Phoenix, check items in San Francisco,
-            IMEI check in Philadelphia, VIN check in Miami, verify in Denver, check items in Nashville, stolen check in Seattle,
-            verify items in Las Vegas, check in Washington D.C., IMEI check in Boston, verify in New Orleans, check items in Dallas,
-            VIN lookup in Portland, verify in Detroit, check in Salt Lake City, IMEI check in Atlanta.
+            SafeOrStolen isn't just a serial number checker - we're building a safer secondhand ecosystem. By giving honest people 
+            a simple way to verify items, we make it dramatically harder for thieves to fence stolen goods. The existence and visibility 
+            of SafeOrStolen forces criminals to think twice because more buyers will check first.
+          </p>
+          
+          <h2>The ONLY Stolen Verification App</h2>
+          <p>
+            CheckMEND has NO app. IMEI.info has NO app. Swappa has NO app. Carfax has NO app. We're the first and only stolen goods 
+            checker app with instant 3-second barcode scanning verification. Works offline. 2 free searches included.
           </p>
           
           <h2>When to Use SafeOrStolen</h2>

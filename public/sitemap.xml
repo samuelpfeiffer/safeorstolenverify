@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SafeOrStolen Main Sitemap - Updated 2025-12-03 -->
-<!-- Video sitemap available at /video-sitemap.xml -->
+<!-- Mission: Protect Buyers & Sellers - Stop Stolen Goods at the Source -->
+<!-- Video sitemap: /video-sitemap.xml -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- CORE PAGES - Highest Priority -->
   <url>
