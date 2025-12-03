@@ -25,10 +25,9 @@ const TopNavigation = () => {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/verify', label: 'Verify' },
+    { to: '/compare', label: 'Compare' },
     { to: '/pricing', label: 'Pricing' },
-    { to: '/how-it-works', label: 'How It Works' },
     { to: '/app/download', label: 'Download App', featured: true },
-    { to: '/blog', label: 'Blog' },
   ];
 
   const authenticatedLinks = [
