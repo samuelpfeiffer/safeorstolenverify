@@ -167,7 +167,213 @@ const AppPage = () => {
     ]
   };
 
-  const appSchema = [mobileAppSchema, howToSchema, downloadActionSchema, faqSchema];
+  // SoftwareApplication Schema (additional for iOS/Android)
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeOrStolen - Stolen Item Verification",
+    "applicationCategory": "UtilitiesApplication",
+    "applicationSubCategory": "Security",
+    "operatingSystem": "iOS, Android, Windows, macOS, Linux",
+    "url": "https://safeorstolen.com/app",
+    "downloadUrl": "https://safeorstolen.com/app",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-12-31"
+    },
+    "description": "Free stolen item checker app. Verify IMEI, VIN, serial numbers before buying. Barcode scanning, offline mode. Works on all devices.",
+    "softwareVersion": "2.0.0",
+    "datePublished": "2024-01-01",
+    "author": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    }
+  };
+
+  // Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SafeOrStolen",
+    "alternateName": ["Safe Or Stolen", "SOS", "SafeOrStolen.com"],
+    "url": "https://safeorstolen.com",
+    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+    "description": "The only mobile app to verify if items are stolen before buying. IMEI checker, VIN lookup, serial number verification.",
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://twitter.com/safeorstolen",
+      "https://facebook.com/safeorstolen",
+      "https://linkedin.com/company/safeorstolen"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": "English"
+    }
+  };
+
+  // BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://safeorstolen.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Download App",
+        "item": "https://safeorstolen.com/app"
+      }
+    ]
+  };
+
+  // ItemList Schema for App Features
+  const featuresListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "SafeOrStolen App Features",
+    "description": "Key features of the SafeOrStolen stolen item verification app",
+    "numberOfItems": 8,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Barcode Scanner",
+        "description": "Instant IMEI, serial number, and QR code scanning"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "IMEI Checker",
+        "description": "Verify if phones are stolen using IMEI number"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "VIN Lookup",
+        "description": "Check if vehicles are stolen using VIN"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Serial Number Verification",
+        "description": "Verify electronics, firearms, bikes by serial number"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Offline Mode",
+        "description": "Works without internet connection"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "3-Second Results",
+        "description": "Fastest stolen verification in the industry"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "All 50 States Coverage",
+        "description": "Comprehensive US stolen item database"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Free Download",
+        "description": "2 free verification checks included"
+      }
+    ]
+  };
+
+  // Service Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Stolen Item Verification Service",
+    "description": "Professional stolen goods verification for IMEI, VIN, and serial numbers. Protects buyers from purchasing stolen items.",
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    },
+    "serviceType": "Stolen Item Verification",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Verification Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Free Trial",
+            "description": "2 free verification checks"
+          },
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Monthly Plan",
+            "description": "Unlimited verification checks"
+          },
+          "price": "4.99",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  };
+
+  // WebPage Schema
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Download SafeOrStolen App - Stolen Item Verification",
+    "description": "Download the only mobile app for stolen item verification. Check IMEI, VIN, serial numbers before buying.",
+    "url": "https://safeorstolen.com/app",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    },
+    "mainEntity": {
+      "@type": "MobileApplication",
+      "name": "SafeOrStolen"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2", ".hero-description"]
+    },
+    "specialty": "Stolen Item Verification App Download"
+  };
+
+  const appSchema = [
+    mobileAppSchema, 
+    howToSchema, 
+    downloadActionSchema, 
+    faqSchema,
+    softwareAppSchema,
+    organizationSchema,
+    breadcrumbSchema,
+    featuresListSchema,
+    serviceSchema,
+    webPageSchema
+  ];
 
   return (
     <>
