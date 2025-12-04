@@ -4,6 +4,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { toast } from 'sonner';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 
 const CheckoutRedirectPage = () => {
   const [searchParams] = useSearchParams();
@@ -11,6 +13,7 @@ const CheckoutRedirectPage = () => {
   const { user, session, loading: authLoading } = useUnifiedAuth();
   const [isProcessing, setIsProcessing] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [stripeUrl, setStripeUrl] = useState<string | null>(null);
 
   const planName = searchParams.get('planName');
   const isSubscription = searchParams.get('isSubscription') === 'true';
@@ -60,12 +63,30 @@ const CheckoutRedirectPage = () => {
 
         if (data?.url) {
           console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
-          // CRITICAL: Escape iframe context for Stripe checkout
-          if (window.top && window.top !== window) {
-            window.top.location.href = data.url;
-          } else {
-            window.location.href = data.url;
+          setStripeUrl(data.url);
+          
+          // Try multiple redirect methods
+          try {
+            // Method 1: Try window.top for iframe escape
+            if (window.top && window.top !== window) {
+              window.top.location.href = data.url;
+              return;
+            }
+          } catch (e) {
+            console.log('[CHECKOUT-REDIRECT] window.top blocked, trying alternatives');
           }
+          
+          try {
+            // Method 2: Direct location change
+            window.location.href = data.url;
+          } catch (e) {
+            console.log('[CHECKOUT-REDIRECT] Direct redirect blocked');
+          }
+          
+          // Method 3: Show manual button after 2 seconds if still on page
+          setTimeout(() => {
+            setIsProcessing(false);
+          }, 2000);
         } else if (data?.error) {
           throw new Error(data.error);
         } else {
@@ -82,13 +103,39 @@ const CheckoutRedirectPage = () => {
     createCheckoutSession();
   }, [user, session, authLoading, priceId, planName, isSubscription, navigate, searchParams]);
 
-  if (authLoading || isProcessing) {
+  if (authLoading || (isProcessing && !stripeUrl)) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center space-y-4">
           <AppLoadingScreen />
           <p className="text-muted-foreground">
             {authLoading ? 'Checking authentication...' : 'Preparing secure checkout...'}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show manual redirect button if automatic redirect didn't work
+  if (stripeUrl && !isProcessing) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center space-y-6 max-w-md mx-auto p-6">
+          <h1 className="text-2xl font-bold">Complete Your Purchase</h1>
+          <p className="text-muted-foreground">
+            Click the button below to continue to secure checkout.
+          </p>
+          <a 
+            href={stripeUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-lg font-semibold"
+          >
+            Continue to Stripe Checkout
+            <ExternalLink className="h-5 w-5" />
+          </a>
+          <p className="text-sm text-muted-foreground">
+            You'll be redirected to Stripe's secure payment page.
           </p>
         </div>
       </div>
