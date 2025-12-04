@@ -257,6 +257,13 @@ export const AppRoutes = () => {
         <Route path="/check-boat" element={<CheckBoatPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
+        
+        {/* Marketplace Landing Pages - HIGH VALUE SEO */}
+        <Route path="/facebook-marketplace-stolen-check" element={<FacebookMarketplaceStolenCheck />} />
+        <Route path="/craigslist-safety-verification" element={<CraigslistSafetyVerification />} />
+        <Route path="/offerup-verify-not-stolen" element={<OfferupVerifyNotStolen />} />
+        <Route path="/ebay-stolen-item-check" element={<EbayStolenItemCheck />} />
+        
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
         <Route path="/alabama-license-plate-lookup" element={<AlabamaLicensePlateLookupPage />} />
         <Route path="/alaska-license-plate-lookup" element={<AlaskaLicensePlateLookupPage />} />
