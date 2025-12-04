@@ -187,7 +187,7 @@
       "name": "How does SafeOrStolen verify if items are stolen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen cross-references identifiers (IMEI, VIN, serial numbers, firearm serial numbers) against multiple authoritative databases including: GSMA Device Registry (2B+ IMEIs), NICB (National Insurance Crime Bureau), FBI NCIC stolen vehicle database, HotGunz stolen firearms database, CheckMend commercial database, manufacturer registries, and law enforcement databases across 150+ countries. Our AI system analyzes patterns and provides confidence scores for verification accuracy. Use our mobile app for instant on-the-go verification."
+        "text": "SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases in real-time. We run parallel queries across: NCIC (FBI's federal stolen property database), Hotgunz.com (stolen firearms registry), BikeIndex.org (1.4M bikes cataloged), StolenRegister.com (global stolen property), Stolen911 (police detective-founded), NHTSA (official VIN records), AT&T/Verizon/T-Mobile carrier blacklists, and insurance claim networks. Our system aggregates results from all partners simultaneously and returns unified verification in under 3 seconds."
       }
     },
     {

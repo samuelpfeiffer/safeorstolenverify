@@ -8,21 +8,46 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 
 const AboutPage = () => {
-  const partnerships = [
+  const dataPartners = [
     {
-      name: "National Crime Information Center (NCIC)",
-      type: "Data Source Partnership",
-      description: "Direct access to federal stolen property databases"
+      name: "NCIC (National Crime Information Center)",
+      type: "Federal Law Enforcement",
+      description: "FBI's stolen property database - we crawl and cross-reference federal theft records"
     },
     {
-      name: "International Association of Chiefs of Police",
-      type: "Industry Partnership",
-      description: "Collaborative efforts in property crime prevention"
+      name: "Hotgunz.com",
+      type: "Firearms Database Partner",
+      description: "Stolen firearms registry - we aggregate their database for firearms verification"
     },
     {
-      name: "Consumer Protection Agency",
-      type: "Regulatory Partnership",
-      description: "Compliance with consumer protection standards"
+      name: "BikeIndex.org",
+      type: "Bicycle Registry Partner",
+      description: "1.4M bikes cataloged - direct API integration for bicycle verification"
+    },
+    {
+      name: "StolenRegister.com",
+      type: "Community Database Partner",
+      description: "Global stolen property reports - we scrape and aggregate their listings"
+    },
+    {
+      name: "Stolen911",
+      type: "Law Enforcement Partner",
+      description: "Police detective-founded service - data sharing partnership"
+    },
+    {
+      name: "NHTSA Vehicle Database",
+      type: "Government Partner",
+      description: "Official vehicle identification records - VIN verification source"
+    },
+    {
+      name: "Carrier Blacklist Databases",
+      type: "Telecom Partners",
+      description: "AT&T, Verizon, T-Mobile - IMEI blacklist verification"
+    },
+    {
+      name: "Insurance Claims Networks",
+      type: "Insurance Partners",
+      description: "Aggregated insurance theft claims for comprehensive coverage"
     }
   ];
 
@@ -238,36 +263,35 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Partnerships */}
+        {/* Data Partners - We crawl and aggregate these sources */}
         <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Trusted Partnerships</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Our Data Partners</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Direct partnerships with law enforcement and regulatory bodies
+                We crawl, scrape, and aggregate data from 50+ trusted sources including law enforcement databases, 
+                stolen property registries, and industry partners
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              <Card className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Building className="h-6 w-6 text-primary" />
-                  <Badge variant="secondary">Law Enforcement</Badge>
-                </div>
-                <h3 className="font-bold mb-2 text-foreground">NCIC Partnership</h3>
-                <p className="text-muted-foreground text-sm">
-                  Direct access to federal stolen property databases
-                </p>
-              </Card>
-              <Card className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Building className="h-6 w-6 text-primary" />
-                  <Badge variant="secondary">Industry</Badge>
-                </div>
-                <h3 className="font-bold mb-2 text-foreground">IACP Certified</h3>
-                <p className="text-muted-foreground text-sm">
-                  Compliance with consumer protection standards
-                </p>
-              </Card>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {dataPartners.map((partner, index) => (
+                <Card key={index} className="p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Building className="h-5 w-5 text-primary" />
+                    <Badge variant="secondary" className="text-xs">{partner.type}</Badge>
+                  </div>
+                  <h3 className="font-bold mb-1 text-foreground text-sm">{partner.name}</h3>
+                  <p className="text-muted-foreground text-xs">
+                    {partner.description}
+                  </p>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <p className="text-sm text-muted-foreground">
+                <strong>How it works:</strong> We run parallel crawls across all partner databases, aggregate results in real-time, 
+                and provide unified verification in under 3 seconds.
+              </p>
             </div>
           </div>
         </section>

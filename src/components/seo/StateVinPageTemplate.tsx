@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import {
   Accordion,
   AccordionContent,
@@ -82,11 +83,39 @@ export const StateVinPageTemplate = ({
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification`} />
+        <meta name="keywords" content={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database`} />
         <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
+
+      {/* Bot-visible content for search engines */}
+      <BotVisibleContent>
+        <h1>{title}</h1>
+        <p>{content.intro}</p>
+        
+        <h2>{state} Vehicle Theft Statistics</h2>
+        <p>{state} sees {theftStats.vehiclesStolen} vehicles stolen annually with a {theftStats.recoveryRate} recovery rate. Top cities for vehicle theft: {theftStats.topCities.join(', ')}.</p>
+        
+        <h2>Why Check VINs in {state}?</h2>
+        <p>{content.whyCheck}</p>
+        
+        <h2>{state} Laws on Stolen Vehicles</h2>
+        <p>{content.localLaws}</p>
+        
+        <h2>How SafeOrStolen Verifies {state} Vehicles</h2>
+        <p>We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NHTSA, insurance networks, and state DMV records. When you check a VIN, we query all partners simultaneously and return unified results in under 3 seconds.</p>
+        
+        <h2>Frequently Asked Questions</h2>
+        {faqs.map((faq, idx) => (
+          <div key={idx}>
+            <h3>{faq.question}</h3>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+        
+        <p>Check any {state} VIN free at SafeOrStolen.com. 2 free verifications, results in 3 seconds.</p>
+      </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
