@@ -6,6 +6,15 @@ import { toast } from 'sonner';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 import { ExternalLink, CreditCard } from 'lucide-react';
 
+// Safe iframe detection
+const checkIsInIframe = (): boolean => {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true; // If we can't access window.top, we're likely in a cross-origin iframe
+  }
+};
+
 const CheckoutRedirectPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -14,13 +23,11 @@ const CheckoutRedirectPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [stripeUrl, setStripeUrl] = useState<string | null>(null);
   const [showManualButton, setShowManualButton] = useState(false);
+  const [isInIframe] = useState(() => checkIsInIframe());
 
   const planName = searchParams.get('planName');
   const isSubscription = searchParams.get('isSubscription') === 'true';
   const priceId = searchParams.get('priceId');
-
-  // Detect if running in iframe
-  const isInIframe = window !== window.top;
 
   useEffect(() => {
     const createCheckoutSession = async () => {
@@ -66,27 +73,16 @@ const CheckoutRedirectPage = () => {
           console.log('[CHECKOUT-REDIRECT] Got Stripe URL:', data.url);
           setStripeUrl(data.url);
           setIsProcessing(false);
+          setShowManualButton(true);
           
-          // If in iframe, show manual button immediately
-          if (isInIframe) {
-            console.log('[CHECKOUT-REDIRECT] In iframe - showing manual button');
-            setShowManualButton(true);
-            return;
+          // Only try auto-redirect if NOT in iframe
+          if (!isInIframe) {
+            try {
+              window.location.href = data.url;
+            } catch (e) {
+              console.log('[CHECKOUT-REDIRECT] Auto redirect failed');
+            }
           }
-          
-          // Not in iframe - try automatic redirect
-          try {
-            window.location.href = data.url;
-          } catch (e) {
-            console.log('[CHECKOUT-REDIRECT] Auto redirect failed, showing button');
-            setShowManualButton(true);
-          }
-          
-          // Fallback: show button after 1.5s if still on page
-          setTimeout(() => {
-            setShowManualButton(true);
-          }, 1500);
-          
         } else if (data?.error) {
           throw new Error(data.error);
         } else {
@@ -116,7 +112,7 @@ const CheckoutRedirectPage = () => {
   }
 
   // Show manual redirect button when we have URL
-  if (stripeUrl && (showManualButton || !isProcessing)) {
+  if (stripeUrl && showManualButton) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center space-y-6 max-w-md mx-auto p-6">
@@ -125,10 +121,7 @@ const CheckoutRedirectPage = () => {
           </div>
           <h1 className="text-2xl font-bold text-foreground">Complete Your Purchase</h1>
           <p className="text-muted-foreground">
-            {isInIframe 
-              ? "Click below to open Stripe checkout in a new tab."
-              : "Click the button below to continue to secure checkout."
-            }
+            Click below to open secure Stripe checkout.
           </p>
           <a 
             href={stripeUrl} 
@@ -142,11 +135,6 @@ const CheckoutRedirectPage = () => {
           <p className="text-sm text-muted-foreground">
             Secure payment powered by Stripe
           </p>
-          {isInIframe && (
-            <p className="text-xs text-muted-foreground/70">
-              For the best experience, open SafeOrStolen.com directly in your browser.
-            </p>
-          )}
         </div>
       </div>
     );
@@ -183,7 +171,15 @@ const CheckoutRedirectPage = () => {
     );
   }
 
-  return null;
+  // Fallback loading
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center space-y-4">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+        <p className="text-foreground">Loading...</p>
+      </div>
+    </div>
+  );
 };
 
 export default CheckoutRedirectPage;
