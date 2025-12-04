@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Download, Shield, Smartphone, Wifi, WifiOff, Camera, Clock, CheckCircle, Star, Users, Zap, Globe, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,58 +16,43 @@ const DownloadApp = () => {
     }
   };
 
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeOrStolen - Stolen Item Checker",
+    "operatingSystem": "iOS, Android, Web",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Free app to check if items are stolen before buying or selling. Verify IMEI, VIN, serial numbers instantly. Protects both buyers AND sellers from stolen goods.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Instant IMEI verification",
+      "VIN stolen check",
+      "Serial number lookup",
+      "Barcode scanning",
+      "Works offline",
+      "Protects buyers AND sellers",
+      "3-second verification",
+      "Free to download"
+    ],
+    "potentialAction": {
+      "@type": "DownloadAction",
+      "target": "https://safeorstolen.com/download"
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Download FREE Stolen Item Checker App | SafeOrStolen - Verify Before You Buy or Sell</title>
-        <meta name="description" content="Download the FREE SafeOrStolen app to instantly check if items are stolen before buying OR selling. Verify IMEI, VIN, serial numbers in 3 seconds. Works offline. Protects buyers AND sellers on Facebook Marketplace, OfferUp, eBay, Craigslist." />
-        <meta name="keywords" content="download stolen checker app, free IMEI app download, stolen verification app, VIN checker app free, serial number checker app, marketplace safety app, stolen item scanner, barcode stolen checker, offline stolen checker, buyer seller protection app" />
-        <link rel="canonical" href="https://safeorstolen.com/download" />
-        
-        <meta property="og:title" content="Download FREE Stolen Item Checker App | SafeOrStolen" />
-        <meta property="og:description" content="Instantly verify if items are stolen before buying OR selling. Free app with barcode scanning, offline mode. Protects buyers AND sellers." />
-        <meta property="og:url" content="https://safeorstolen.com/download" />
-        <meta property="og:type" content="website" />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Download FREE Stolen Item Checker App" />
-        <meta name="twitter:description" content="Verify items aren't stolen in 3 seconds. Free app protects buyers AND sellers." />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "SafeOrStolen - Stolen Item Checker",
-            "operatingSystem": "iOS, Android, Web",
-            "applicationCategory": "UtilitiesApplication",
-            "description": "Free app to check if items are stolen before buying or selling. Verify IMEI, VIN, serial numbers instantly. Protects both buyers AND sellers from stolen goods.",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "127"
-            },
-            "featureList": [
-              "Instant IMEI verification",
-              "VIN stolen check",
-              "Serial number lookup",
-              "Barcode scanning",
-              "Works offline",
-              "Protects buyers AND sellers",
-              "3-second verification",
-              "Free to download"
-            ],
-            "potentialAction": {
-              "@type": "DownloadAction",
-              "target": "https://safeorstolen.com/download"
-            }
-          })}
-        </script>
-      </Helmet>
+      <PageSEO
+        title="Download FREE Stolen Item Checker App | SafeOrStolen - Verify Before You Buy or Sell"
+        description="Download the FREE SafeOrStolen app to instantly check if items are stolen before buying OR selling. Verify IMEI, VIN, serial numbers in 3 seconds. Works offline. Protects buyers AND sellers on Facebook Marketplace, OfferUp, eBay, Craigslist."
+        keywords="download stolen checker app, free IMEI app download, stolen verification app, VIN checker app free, serial number checker app, marketplace safety app, stolen item scanner, barcode stolen checker, offline stolen checker, buyer seller protection app"
+        canonical="/download"
+        structuredData={softwareAppSchema}
+      />
 
       <div className="min-h-screen bg-background">
         
