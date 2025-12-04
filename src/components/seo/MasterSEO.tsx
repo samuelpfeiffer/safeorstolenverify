@@ -114,15 +114,8 @@ export const MasterSEO: React.FC = () => {
         {JSON.stringify(websiteSchema)}
       </script>
       
-      {/* Robots directives - clear and specific */}
-      <meta name="robots" content={shouldIndex ? 
-        "index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30" : 
-        "noindex, nofollow"
-      } />
-      <meta name="googlebot" content={shouldIndex ? 
-        "index, follow, max-snippet:160, max-image-preview:large, max-video-preview:30" : 
-        "noindex, nofollow"
-      } />
+      {/* NOTE: Robots meta tags are now handled ONLY by OptimizedSEOHead per-page */}
+      {/* Removed duplicate robots tags to fix GSC indexing issues */}
       
       {/* Site verification */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
