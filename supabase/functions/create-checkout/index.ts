@@ -54,8 +54,15 @@ serve(async (req) => {
     console.log(`[CREATE-CHECKOUT] User authenticated: ${user.email}`);
 
     // Parse the request body
-    const { priceId, serialNumber, itemType, redirectUrl, isSubscription, planName } = await req.json();
-    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription });
+    const body = await req.json();
+    const { priceId, serialNumber, itemType, isSubscription, planName } = body;
+    
+    // Support both redirectUrl and successUrl/cancelUrl patterns
+    const baseUrl = body.redirectUrl || body.successUrl?.split('/dashboard')[0] || 'https://safeorstolen.com';
+    const successUrl = body.successUrl || `${baseUrl}/dashboard?checkout=success`;
+    const cancelUrl = body.cancelUrl || `${baseUrl}/pricing?checkout=cancelled`;
+    
+    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription, baseUrl });
 
     // SECURITY FIX: Validate credit pack purchases
     const VALID_CREDIT_PACKS: Record<string, { credits: number; minPrice: number }> = {
@@ -243,8 +250,8 @@ serve(async (req) => {
     let sessionConfig: any = {
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
-      success_url: `${redirectUrl}/subscription-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${redirectUrl}/subscription-cancel`,
+      success_url: successUrl.includes('{CHECKOUT_SESSION_ID}') ? successUrl : `${successUrl}&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: cancelUrl,
       metadata: {
         user_id: user.id,
         item_type: itemType || 'subscription',
@@ -313,8 +320,8 @@ serve(async (req) => {
           },
         ],
         success_url: verificationId 
-          ? `${redirectUrl}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
-          : `${redirectUrl}/subscription-success?session_id={CHECKOUT_SESSION_ID}`,
+          ? `${baseUrl}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
+          : successUrl.includes('{CHECKOUT_SESSION_ID}') ? successUrl : `${successUrl}&session_id={CHECKOUT_SESSION_ID}`,
         metadata: {
           ...sessionConfig.metadata,
           verification_id: verificationId || undefined,
