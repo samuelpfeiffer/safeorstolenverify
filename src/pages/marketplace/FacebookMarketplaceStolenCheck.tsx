@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Smartphone, Car, Laptop, Clock, Download, MapPin, Users } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const FacebookMarketplaceStolenCheck = () => {
   const faqs = [
@@ -64,18 +64,13 @@ const FacebookMarketplaceStolenCheck = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Facebook Marketplace Stolen Item Check - Free Verification | SafeOrStolen</title>
-        <meta name="description" content="Check if items on Facebook Marketplace are stolen before buying. Free IMEI, VIN, and serial number verification. Download our app to verify items at meetup locations." />
-        <meta name="keywords" content="facebook marketplace stolen, check stolen before buying facebook, verify facebook marketplace item, facebook marketplace scam check, stolen item checker facebook" />
-        <link rel="canonical" href="https://safeorstolen.com/facebook-marketplace-stolen-check" />
-        <meta property="og:title" content="Facebook Marketplace Stolen Item Check - Free Verification" />
-        <meta property="og:description" content="Protect yourself from buying stolen items on Facebook Marketplace. Free verification tool checks IMEI, VIN, and serial numbers instantly." />
-        <meta property="og:url" content="https://safeorstolen.com/facebook-marketplace-stolen-check" />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Facebook Marketplace Stolen Item Check - Free Verification | SafeOrStolen"
+        description="Check if items on Facebook Marketplace are stolen before buying. Free IMEI, VIN, and serial number verification. Download our app to verify items at meetup locations."
+        keywords="facebook marketplace stolen, check stolen before buying facebook, verify facebook marketplace item, facebook marketplace scam check, stolen item checker facebook"
+        canonical="/facebook-marketplace-stolen-check"
+        structuredData={[webPageSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

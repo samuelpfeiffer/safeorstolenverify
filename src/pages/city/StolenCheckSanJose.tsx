@@ -1,17 +1,18 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Shield, MapPin, Download } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const StolenCheckSanJose = () => {
   return (
     <>
-      <Helmet>
-        <title>San Jose Stolen Item Check - Verify Before Buying | SafeOrStolen</title>
-        <meta name="description" content="Check if items are stolen in San Jose. Free IMEI, VIN, and serial number verification. Silicon Valley sees high electronics theft." />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-check-san-jose" />
-      </Helmet>
+      <PageSEO
+        title="San Jose Stolen Item Check - Verify Before Buying | SafeOrStolen"
+        description="Check if items are stolen in San Jose. Free IMEI, VIN, and serial number verification. Silicon Valley sees high electronics theft."
+        keywords="san jose stolen item check, stolen car check san jose, verify stolen silicon valley"
+        canonical="/stolen-check-san-jose"
+      />
 
       <div className="min-h-screen bg-background">
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">

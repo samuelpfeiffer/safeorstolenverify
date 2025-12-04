@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, AlertTriangle, Phone, Car, Download, Train } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const StolenCheckNewYorkCity = () => {
   const faqs = [
@@ -41,13 +41,13 @@ const StolenCheckNewYorkCity = () => {
 
   return (
     <>
-      <Helmet>
-        <title>New York City Stolen Item Check - Verify Before Buying in NYC | SafeOrStolen</title>
-        <meta name="description" content="Check if items are stolen in New York City. Free IMEI, VIN, and serial number verification for NYC buyers. Verify before buying on Facebook Marketplace or Craigslist." />
-        <meta name="keywords" content="nyc stolen item check, new york stolen car check, verify stolen nyc, check IMEI new york, VIN check NYC, stolen phone new york" />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-check-new-york-city" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="New York City Stolen Item Check - Verify Before Buying in NYC | SafeOrStolen"
+        description="Check if items are stolen in New York City. Free IMEI, VIN, and serial number verification for NYC buyers. Verify before buying on Facebook Marketplace or Craigslist."
+        keywords="nyc stolen item check, new york stolen car check, verify stolen nyc, check IMEI new york, VIN check NYC, stolen phone new york"
+        canonical="/stolen-check-new-york-city"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero */}

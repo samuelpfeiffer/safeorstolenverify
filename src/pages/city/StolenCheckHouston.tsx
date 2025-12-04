@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const StolenCheckHouston = () => {
   const faqs = [
@@ -37,13 +37,13 @@ const StolenCheckHouston = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Houston Stolen Item Check - Verify Before Buying | SafeOrStolen</title>
-        <meta name="description" content="Check if items are stolen in Houston. Free IMEI, VIN, and serial number verification. Houston has 35,000+ vehicle thefts annually." />
-        <meta name="keywords" content="houston stolen item check, stolen car check houston, verify stolen houston, VIN check houston" />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-check-houston" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Houston Stolen Item Check - Verify Before Buying | SafeOrStolen"
+        description="Check if items are stolen in Houston. Free IMEI, VIN, and serial number verification. Houston has 35,000+ vehicle thefts annually."
+        keywords="houston stolen item check, stolen car check houston, verify stolen houston, VIN check houston"
+        canonical="/stolen-check-houston"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
