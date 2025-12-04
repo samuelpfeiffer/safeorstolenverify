@@ -176,8 +176,70 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Partnerships (Simplified) */}
+        {/* Press & Media Section */}
         <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Press & Media</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Featured in leading business platforms and trusted by verified reviewers
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <a
+                href="https://www.trustpilot.com/review/safeorstolen.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
+                  <div className="text-3xl mb-2">⭐</div>
+                  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">Trustpilot</h3>
+                  <p className="text-sm text-muted-foreground">4.1★ Rating · 5 Reviews</p>
+                </Card>
+              </a>
+              <a
+                href="https://www.crunchbase.com/organization/safe-or-stolen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
+                  <div className="text-3xl mb-2">📊</div>
+                  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">Crunchbase</h3>
+                  <p className="text-sm text-muted-foreground">Company Profile</p>
+                </Card>
+              </a>
+              <a
+                href="https://biz.prlog.org/SafeOrStolen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
+                  <div className="text-3xl mb-2">📰</div>
+                  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">PRLog</h3>
+                  <p className="text-sm text-muted-foreground">Press Releases</p>
+                </Card>
+              </a>
+              <a
+                href="https://fastercapital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
+              >
+                <Card className="p-6 text-center h-full hover:border-primary/50 transition-colors">
+                  <div className="text-3xl mb-2">🚀</div>
+                  <h3 className="font-bold mb-1 text-foreground group-hover:text-primary">FasterCapital</h3>
+                  <p className="text-sm text-muted-foreground">Acceleration Partner</p>
+                </Card>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Partnerships */}
+        <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Trusted Partnerships</h2>

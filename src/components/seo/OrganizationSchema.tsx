@@ -31,6 +31,11 @@ export const OrganizationSchema = () => {
         "@type": "Person",
         "name": "Samuel Pfeiffer",
         "jobTitle": "Founder & CEO"
+      },
+      {
+        "@type": "Person",
+        "name": "Kelly McEvoy",
+        "jobTitle": "Co-Founder"
       }
     ],
     "address": {
@@ -59,7 +64,11 @@ export const OrganizationSchema = () => {
     "sameAs": [
       "https://twitter.com/safeorstolen",
       "https://facebook.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen"
+      "https://linkedin.com/company/safeorstolen",
+      "https://www.youtube.com/@safeorstolen",
+      "https://www.crunchbase.com/organization/safe-or-stolen",
+      "https://www.trustpilot.com/review/safeorstolen.com",
+      "https://biz.prlog.org/SafeOrStolen/"
     ],
     "areaServed": {
       "@type": "Place",
