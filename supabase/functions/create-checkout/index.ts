@@ -57,12 +57,29 @@ serve(async (req) => {
     const body = await req.json();
     const { priceId, serialNumber, itemType, isSubscription, planName } = body;
     
-    // Support both redirectUrl and successUrl/cancelUrl patterns
-    const baseUrl = body.redirectUrl || body.successUrl?.split('/dashboard')[0] || 'https://safeorstolen.com';
-    const successUrl = body.successUrl || `${baseUrl}/dashboard?checkout=success`;
-    const cancelUrl = body.cancelUrl || `${baseUrl}/pricing?checkout=cancelled`;
+    // Determine base URL with proper validation
+    let baseUrl = 'https://safeorstolen.com';
+    if (body.redirectUrl && body.redirectUrl.startsWith('https://')) {
+      baseUrl = body.redirectUrl;
+    } else if (body.successUrl && body.successUrl.startsWith('https://')) {
+      // Extract origin from successUrl
+      try {
+        const urlObj = new URL(body.successUrl);
+        baseUrl = urlObj.origin;
+      } catch (e) {
+        console.log(`[CREATE-CHECKOUT] Failed to parse successUrl, using default`);
+      }
+    }
     
-    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription, baseUrl });
+    // Use provided URLs or construct from base
+    const successUrl = (body.successUrl && body.successUrl.startsWith('https://')) 
+      ? body.successUrl 
+      : `${baseUrl}/dashboard?checkout=success`;
+    const cancelUrl = (body.cancelUrl && body.cancelUrl.startsWith('https://')) 
+      ? body.cancelUrl 
+      : `${baseUrl}/pricing?checkout=cancelled`;
+    
+    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription, baseUrl, successUrl, cancelUrl });
 
     // SECURITY FIX: Validate credit pack purchases
     const VALID_CREDIT_PACKS: Record<string, { credits: number; minPrice: number }> = {
