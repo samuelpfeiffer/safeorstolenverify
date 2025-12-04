@@ -83,6 +83,11 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
         "https://www.trustpilot.com/review/safeorstolen.com",
         "https://biz.prlog.org/SafeOrStolen/"
       ],
+      "funder": {
+        "@type": "Organization",
+        "name": "FasterCapital",
+        "url": "https://fastercapital.com"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-206-249-2203",
