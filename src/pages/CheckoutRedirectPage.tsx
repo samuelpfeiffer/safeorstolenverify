@@ -43,13 +43,13 @@ const CheckoutRedirectPage = () => {
           userId: user.id
         });
 
+        // BULLETPROOF: Use hardcoded production URLs
         const { data, error: fnError } = await supabase.functions.invoke('create-checkout', {
           body: {
             priceId,
             planName: planName || 'Subscription',
             isSubscription,
-            successUrl: `${window.location.origin}/dashboard?checkout=success`,
-            cancelUrl: `${window.location.origin}/pricing?checkout=cancelled`
+            redirectUrl: 'https://safeorstolen.com'
           }
         });
 

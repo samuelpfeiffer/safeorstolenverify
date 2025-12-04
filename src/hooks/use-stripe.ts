@@ -34,7 +34,8 @@ export function useStripe() {
           priceId,
           serialNumber,
           itemType,
-          redirectUrl: window.location.origin,
+          // BULLETPROOF: Use hardcoded production URL
+          redirectUrl: 'https://safeorstolen.com',
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,

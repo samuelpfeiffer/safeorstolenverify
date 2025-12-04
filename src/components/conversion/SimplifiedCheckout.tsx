@@ -39,7 +39,8 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
           priceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 single verification
           serialNumber: itemNumber || '',
           itemType: itemType || 'general',
-          redirectUrl: window.location.origin,
+          // BULLETPROOF: Use hardcoded production URL
+          redirectUrl: 'https://safeorstolen.com',
           isSubscription: false,
           planName: 'Single Verification'
         },

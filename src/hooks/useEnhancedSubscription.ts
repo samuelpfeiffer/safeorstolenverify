@@ -111,7 +111,8 @@ export const useEnhancedSubscription = (): UseEnhancedSubscriptionReturn => {
             body: {
               priceId,
               isSubscription: true,
-              redirectUrl: window.location.origin,
+              // BULLETPROOF: Use hardcoded production URL
+              redirectUrl: 'https://safeorstolen.com',
               planName,
             },
             headers: {

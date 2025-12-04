@@ -74,9 +74,10 @@ export const useSubscription = (): UseSubscriptionReturn => {
       
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: priceId, // Pass the actual Stripe Price ID
+          priceId: priceId,
           isSubscription: true,
-          redirectUrl: window.location.origin,
+          // BULLETPROOF: Use hardcoded production URL
+          redirectUrl: 'https://safeorstolen.com',
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,
