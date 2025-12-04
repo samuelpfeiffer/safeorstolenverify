@@ -4,8 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { toast } from 'sonner';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, CreditCard } from 'lucide-react';
 
 const CheckoutRedirectPage = () => {
   const [searchParams] = useSearchParams();
@@ -14,17 +13,19 @@ const CheckoutRedirectPage = () => {
   const [isProcessing, setIsProcessing] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [stripeUrl, setStripeUrl] = useState<string | null>(null);
+  const [showManualButton, setShowManualButton] = useState(false);
 
   const planName = searchParams.get('planName');
   const isSubscription = searchParams.get('isSubscription') === 'true';
   const priceId = searchParams.get('priceId');
 
+  // Detect if running in iframe
+  const isInIframe = window !== window.top;
+
   useEffect(() => {
     const createCheckoutSession = async () => {
-      // Wait for auth to load
       if (authLoading) return;
 
-      // Redirect to auth if not logged in
       if (!user || !session) {
         const returnUrl = `/checkout-redirect?${searchParams.toString()}`;
         navigate(`/auth?redirect=${encodeURIComponent(returnUrl)}`);
@@ -43,10 +44,10 @@ const CheckoutRedirectPage = () => {
           planName,
           isSubscription,
           priceId,
-          userId: user.id
+          userId: user.id,
+          isInIframe
         });
 
-        // BULLETPROOF: Use hardcoded production URLs
         const { data, error: fnError } = await supabase.functions.invoke('create-checkout', {
           body: {
             priceId,
@@ -62,31 +63,30 @@ const CheckoutRedirectPage = () => {
         }
 
         if (data?.url) {
-          console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
+          console.log('[CHECKOUT-REDIRECT] Got Stripe URL:', data.url);
           setStripeUrl(data.url);
+          setIsProcessing(false);
           
-          // Try multiple redirect methods
-          try {
-            // Method 1: Try window.top for iframe escape
-            if (window.top && window.top !== window) {
-              window.top.location.href = data.url;
-              return;
-            }
-          } catch (e) {
-            console.log('[CHECKOUT-REDIRECT] window.top blocked, trying alternatives');
+          // If in iframe, show manual button immediately
+          if (isInIframe) {
+            console.log('[CHECKOUT-REDIRECT] In iframe - showing manual button');
+            setShowManualButton(true);
+            return;
           }
           
+          // Not in iframe - try automatic redirect
           try {
-            // Method 2: Direct location change
             window.location.href = data.url;
           } catch (e) {
-            console.log('[CHECKOUT-REDIRECT] Direct redirect blocked');
+            console.log('[CHECKOUT-REDIRECT] Auto redirect failed, showing button');
+            setShowManualButton(true);
           }
           
-          // Method 3: Show manual button after 2 seconds if still on page
+          // Fallback: show button after 1.5s if still on page
           setTimeout(() => {
-            setIsProcessing(false);
-          }, 2000);
+            setShowManualButton(true);
+          }, 1500);
+          
         } else if (data?.error) {
           throw new Error(data.error);
         } else {
@@ -101,9 +101,9 @@ const CheckoutRedirectPage = () => {
     };
 
     createCheckoutSession();
-  }, [user, session, authLoading, priceId, planName, isSubscription, navigate, searchParams]);
+  }, [user, session, authLoading, priceId, planName, isSubscription, navigate, searchParams, isInIframe]);
 
-  // Loading state
+  // Loading auth state
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -115,45 +115,57 @@ const CheckoutRedirectPage = () => {
     );
   }
 
-  // Processing state - show spinner with proper background
-  if (isProcessing && !stripeUrl && !error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center space-y-4">
-          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-foreground font-medium">Preparing secure checkout...</p>
-          <p className="text-sm text-muted-foreground">Please wait while we connect to Stripe</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Show manual redirect button if automatic redirect didn't work
-  if (stripeUrl && !isProcessing) {
+  // Show manual redirect button when we have URL
+  if (stripeUrl && (showManualButton || !isProcessing)) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center space-y-6 max-w-md mx-auto p-6">
-          <h1 className="text-2xl font-bold">Complete Your Purchase</h1>
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+            <CreditCard className="h-8 w-8 text-primary" />
+          </div>
+          <h1 className="text-2xl font-bold text-foreground">Complete Your Purchase</h1>
           <p className="text-muted-foreground">
-            Click the button below to continue to secure checkout.
+            {isInIframe 
+              ? "Click below to open Stripe checkout in a new tab."
+              : "Click the button below to continue to secure checkout."
+            }
           </p>
           <a 
             href={stripeUrl} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-lg font-semibold"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-lg font-semibold shadow-lg"
           >
             Continue to Stripe Checkout
             <ExternalLink className="h-5 w-5" />
           </a>
           <p className="text-sm text-muted-foreground">
-            You'll be redirected to Stripe's secure payment page.
+            Secure payment powered by Stripe
           </p>
+          {isInIframe && (
+            <p className="text-xs text-muted-foreground/70">
+              For the best experience, open SafeOrStolen.com directly in your browser.
+            </p>
+          )}
         </div>
       </div>
     );
   }
 
+  // Processing state
+  if (isProcessing && !error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center space-y-4">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-foreground font-medium">Preparing secure checkout...</p>
+          <p className="text-sm text-muted-foreground">Connecting to Stripe</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
