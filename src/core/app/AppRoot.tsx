@@ -20,6 +20,7 @@ import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceL
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
+import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
@@ -62,6 +63,7 @@ const AuthAwareContent: React.FC = () => {
       <PWAProvider>
         <MasterSEO />
         <GlobalAISEO />
+        <DomainAuthorityBooster />
         <AdvancedSchemaGenerator />
         <RedirectHandler />
         <SchemaValidationMonitor />
