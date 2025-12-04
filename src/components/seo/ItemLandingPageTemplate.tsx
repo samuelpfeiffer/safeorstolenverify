@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
 import { Shield, Search, CheckCircle, Clock, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 interface ItemLandingPageProps {
   title: string;
@@ -78,26 +78,18 @@ export const ItemLandingPageTemplate = ({
     }))
   } : null;
 
+  // Combine schemas for PageSEO
+  const structuredData = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
+
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={keywords.join(', ')} />
-        <link rel="canonical" href={`https://safeorstolen.com${location.pathname}`} />
-        
-        {/* Service + HowTo schemas in @graph */}
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-        
-        {/* FAQPage as separate root-level schema (Google requirement) */}
-        {faqSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema)}
-          </script>
-        )}
-      </Helmet>
+      <PageSEO
+        title={title}
+        description={metaDescription}
+        keywords={keywords.join(', ')}
+        canonical={location.pathname}
+        structuredData={structuredData}
+      />
 
       {/* Bot-visible content for search engines */}
       <BotVisibleContent>

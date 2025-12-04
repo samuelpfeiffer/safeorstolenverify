@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const StolenCheckPhiladelphia = () => {
   const faqs = [
@@ -33,13 +33,13 @@ const StolenCheckPhiladelphia = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Philadelphia Stolen Item Check - Verify Before Buying | SafeOrStolen</title>
-        <meta name="description" content="Check if items are stolen in Philadelphia. Free IMEI, VIN, and serial number verification for Philly buyers." />
-        <meta name="keywords" content="philadelphia stolen item check, stolen car check philly, verify stolen philadelphia, VIN check philadelphia" />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-check-philadelphia" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Philadelphia Stolen Item Check - Verify Before Buying | SafeOrStolen"
+        description="Check if items are stolen in Philadelphia. Free IMEI, VIN, and serial number verification for Philly buyers."
+        keywords="philadelphia stolen item check, stolen car check philly, verify stolen philadelphia, VIN check philadelphia"
+        canonical="/stolen-check-philadelphia"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">

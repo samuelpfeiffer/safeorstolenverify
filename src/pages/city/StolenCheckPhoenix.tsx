@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const StolenCheckPhoenix = () => {
   const faqs = [
@@ -37,13 +37,13 @@ const StolenCheckPhoenix = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Phoenix Stolen Item Check - Verify Before Buying | SafeOrStolen</title>
-        <meta name="description" content="Check if items are stolen in Phoenix. Free IMEI, VIN, and serial number verification. Phoenix ranks top 10 for vehicle theft." />
-        <meta name="keywords" content="phoenix stolen item check, stolen car check phoenix, verify stolen phoenix, VIN check phoenix arizona" />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-check-phoenix" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Phoenix Stolen Item Check - Verify Before Buying | SafeOrStolen"
+        description="Check if items are stolen in Phoenix. Free IMEI, VIN, and serial number verification. Phoenix ranks top 10 for vehicle theft."
+        keywords="phoenix stolen item check, stolen car check phoenix, verify stolen phoenix, VIN check phoenix arizona"
+        canonical="/stolen-check-phoenix"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">

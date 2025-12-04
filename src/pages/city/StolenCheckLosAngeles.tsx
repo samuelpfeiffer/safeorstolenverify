@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, AlertTriangle, Phone, Car, Download } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const StolenCheckLosAngeles = () => {
   const cityStats = {
@@ -63,16 +63,13 @@ const StolenCheckLosAngeles = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Los Angeles Stolen Item Check - Verify Before Buying in LA | SafeOrStolen</title>
-        <meta name="description" content="Check if items are stolen in Los Angeles. Free IMEI, VIN, and serial number verification for LA buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist." />
-        <meta name="keywords" content="los angeles stolen item check, LA stolen car check, verify stolen LA, check IMEI los angeles, VIN check LA, stolen phone los angeles" />
-        <link rel="canonical" href="https://safeorstolen.com/stolen-check-los-angeles" />
-        <meta property="og:title" content="Los Angeles Stolen Item Check - Free Verification" />
-        <meta property="og:description" content="Verify items aren't stolen in Los Angeles. Free VIN, IMEI, and serial number checks for LA buyers." />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Los Angeles Stolen Item Check - Verify Before Buying in LA | SafeOrStolen"
+        description="Check if items are stolen in Los Angeles. Free IMEI, VIN, and serial number verification for LA buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist."
+        keywords="los angeles stolen item check, LA stolen car check, verify stolen LA, check IMEI los angeles, VIN check LA, stolen phone los angeles"
+        canonical="/stolen-check-los-angeles"
+        structuredData={[faqSchema, localBusinessSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero */}
