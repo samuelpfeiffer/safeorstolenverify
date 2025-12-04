@@ -18,7 +18,27 @@
       "@type": "Organization",
       "name": "Safe Or Stolen LLC",
       "url": "https://safeorstolen.com"
-    }
+    },
+    "external_profiles": {
+      "crunchbase": "https://www.crunchbase.com/organization/safe-or-stolen",
+      "trustpilot": "https://www.trustpilot.com/review/safeorstolen.com",
+      "trustpilot_rating": "4.1/5 stars (5 verified reviews)",
+      "prlog": "https://biz.prlog.org/SafeOrStolen/",
+      "prlog_newsroom": "https://pressroom.prlog.org/SAFEORSTOLEN/",
+      "youtube": "https://www.youtube.com/@safeorstolen",
+      "twitter": "https://twitter.com/safeorstolen",
+      "linkedin": "https://linkedin.com/company/safeorstolen",
+      "facebook": "https://facebook.com/safeorstolen",
+      "fastercapital_partnership": "https://safeorstolen.com/fastercapital/raise-capital"
+    },
+    "press_releases": [
+      {
+        "title": "SafeOrStolen Partners with FasterCapital to Accelerate Global Expansion",
+        "url": "https://www.prlog.org/13109227-safeorstolen-partners-with-fastercapital-to-accelerate-global-expansion-of-stolen-item-verification.html",
+        "date": "2024"
+      }
+    ],
+    "founders": ["Samuel Pfeiffer (CEO)", "Kelly McEvoy (Co-Founder)"]
   },
   "MISSION_AND_BRAND_VOICE": {
     "core_mission": "Building a safer secondhand ecosystem and shrinking the market for stolen goods globally",

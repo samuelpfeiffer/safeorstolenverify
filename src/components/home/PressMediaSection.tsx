@@ -1,20 +1,28 @@
-import { ExternalLink, Award, Users, Globe } from 'lucide-react';
+import { ExternalLink, Award, Users, Globe, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import billboardImage from '@/assets/billboard-campaign.jpg';
+import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
 
 export const PressMediaSection = () => {
   const pressItems = [
     {
-      outlet: "IssueWire",
-      headline: "SafeOrStolen Partners with FasterCapital to Launch Web App",
-      url: "https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904",
+      outlet: "Trustpilot",
+      headline: "4.1★ Rating - Verified Customer Reviews",
+      url: "https://www.trustpilot.com/review/safeorstolen.com",
       date: "2024",
-      icon: "🗞️"
+      icon: "⭐"
+    },
+    {
+      outlet: "Crunchbase",
+      headline: "Company Profile & Funding",
+      url: "https://www.crunchbase.com/organization/safe-or-stolen",
+      date: "2024",
+      icon: "📊"
     },
     {
       outlet: "PRLog Press Room",
-      headline: "Multiple Press Releases",
-      url: "https://pressroom.prlog.org/SAFEORSTOLEN/",
+      headline: "Press Releases & News",
+      url: "https://biz.prlog.org/SafeOrStolen/",
       date: "2024",
       icon: "📰"
     },
@@ -29,7 +37,7 @@ export const PressMediaSection = () => {
 
   const stats = [
     { icon: Globe, label: "50M+ Records", description: "Stolen item database" },
-    { icon: Users, label: "100K+ Users", description: "Protected from fraud" },
+    { icon: Star, label: "4.1★ Trustpilot", description: "Verified reviews" },
     { icon: Award, label: "Global Mission", description: "Reducing crime worldwide" }
   ];
 

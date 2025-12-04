@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Twitter, Linkedin, Mail, Shield } from 'lucide-react';
+import { Youtube, Twitter, Linkedin, Mail, Shield, ExternalLink } from 'lucide-react';
 import { handleExternalNavigation } from '@/utils/navigationUtils';
 import { Logo } from '@/components/common/Logo';
+import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
 
 export const SOSFooter: React.FC = () => {
   const year = new Date().getFullYear();
@@ -108,32 +109,52 @@ export const SOSFooter: React.FC = () => {
           </div>
         </div>
 
-        {/* Partner Section */}
+        {/* Featured In Section */}
         <div className="border-t border-border py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="text-center sm:text-left">
-                <p className="text-xs text-muted-foreground mb-1">Accelerated By</p>
-                <a
-                  href="https://fastercapital.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-semibold hover:text-primary transition-colors fc-gradient-text"
-                  title="FasterCapital - Accelerating our mission"
-                  aria-label="Visit FasterCapital website"
-                >
-                  FasterCapital
-                </a>
-              </div>
+          <div className="text-center mb-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Featured In & Verified By</p>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            <TrustpilotBadge variant="footer" />
+            <button
+              onClick={() => handleExternalNavigation('https://www.crunchbase.com/organization/safe-or-stolen', true)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border"
+              aria-label="View SafeOrStolen on Crunchbase"
+            >
+              <span className="text-xs font-bold text-blue-500">Crunchbase</span>
+              <ExternalLink className="h-3 w-3 text-muted-foreground" />
+            </button>
+            <button
+              onClick={() => handleExternalNavigation('https://biz.prlog.org/SafeOrStolen/', true)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border"
+              aria-label="View SafeOrStolen Press Room"
+            >
+              <span className="text-xs font-bold text-purple-500">PRLog</span>
+              <ExternalLink className="h-3 w-3 text-muted-foreground" />
+            </button>
+            <div className="flex items-center gap-2">
               <img
                 src="/images/partners/fastercapital-logo.png"
                 alt="FasterCapital official logo"
-                className="w-12 h-12 object-contain"
+                className="w-8 h-8 object-contain"
                 loading="lazy"
               />
+              <a
+                href="https://fastercapital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold hover:text-primary transition-colors fc-gradient-text"
+                title="FasterCapital - Accelerating our mission"
+              >
+                FasterCapital
+              </a>
             </div>
+          </div>
+        </div>
 
-            {/* Social Media Links */}
+        {/* Social Media Links */}
+        <div className="border-t border-border py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <button
                 onClick={() => handleExternalNavigation('https://www.youtube.com/@safeorstolen', true)}
@@ -164,6 +185,9 @@ export const SOSFooter: React.FC = () => {
                 <Mail className="h-5 w-5" />
               </Link>
             </div>
+            <p className="text-xs text-muted-foreground">
+              Follow us for updates and safety tips
+            </p>
           </div>
         </div>
 
