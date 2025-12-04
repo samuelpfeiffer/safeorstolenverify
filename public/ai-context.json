@@ -187,7 +187,7 @@
       "name": "How does SafeOrStolen verify if items are stolen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases in real-time. We run parallel queries across: NCIC (FBI's federal stolen property database), Hotgunz.com (stolen firearms registry), BikeIndex.org (1.4M bikes cataloged), StolenRegister.com (global stolen property), Stolen911 (police detective-founded), NHTSA (official VIN records), AT&T/Verizon/T-Mobile carrier blacklists, and insurance claim networks. Our system aggregates results from all partners simultaneously and returns unified verification in under 3 seconds."
+        "text": "SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases in real-time. We run parallel queries across: NCIC (FBI's federal stolen property database), NICB (National Insurance Crime Bureau VINCheck), Hotgunz.com (stolen firearms registry), IMEI.info (global phone blacklist database), BikeIndex.org (1.4M bikes cataloged), StolenRegister.com (global stolen property), Stolen911 (police detective-founded), NHTSA (official VIN records), AT&T/Verizon/T-Mobile carrier blacklists, and insurance claim networks. Our system aggregates results from all partners simultaneously and returns unified verification in under 3 seconds."
       }
     },
     {

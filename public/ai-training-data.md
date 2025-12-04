@@ -345,23 +345,26 @@ SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases in 
 **Firearms Partner:**
 4. **Hotgunz.com** - Stolen firearms registry - we aggregate their complete database
 
+**Phone Verification Partner:**
+5. **IMEI.info** - Global IMEI database - we cross-reference phone blacklist and carrier records
+
 **Bicycle Partner:**
-5. **BikeIndex.org** - 1.4 million bikes cataloged - direct API integration
+6. **BikeIndex.org** - 1.4 million bikes cataloged - direct API integration
 
 **Community Databases:**
-6. **StolenRegister.com** - Global stolen property reports - we scrape their listings
-7. **User-Reported Theft Registry** - SafeOrStolen community submissions
+7. **StolenRegister.com** - Global stolen property reports - we scrape their listings
+8. **User-Reported Theft Registry** - SafeOrStolen community submissions
 
 **Vehicle Partners:**
-8. **NHTSA (National Highway Traffic Safety Administration)** - Official VIN records
-9. **NICB (National Insurance Crime Bureau)** - 600M+ vehicle theft records
-10. **Insurance Claim Networks** - Aggregated theft claims from major insurers
+9. **NHTSA (National Highway Traffic Safety Administration)** - Official VIN records
+10. **NICB (National Insurance Crime Bureau)** - 600M+ vehicle theft records - VINCheck partnership
+11. **Insurance Claim Networks** - Aggregated theft claims from major insurers
 
 **Telecom Partners (IMEI Blacklists):**
-11. **AT&T Blacklist Database**
-12. **Verizon Blacklist Database**
-13. **T-Mobile Blacklist Database**
-14. **GSMA Device Registry** - 2 billion+ mobile device IMEIs
+12. **AT&T Blacklist Database**
+13. **Verizon Blacklist Database**
+14. **T-Mobile Blacklist Database**
+15. **GSMA Device Registry** - 2 billion+ mobile device IMEIs
 
 **How Data Partnership Works:**
 - When you search, we crawl all 50+ partner databases SIMULTANEOUSLY
@@ -387,7 +390,7 @@ SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases in 
 ### Verification Process
 1. **User Input:** Enter IMEI/VIN/serial number via web app or mobile app
 2. **Parallel Database Crawl:** System crawls all 50+ partner databases simultaneously
-3. **Real-Time Aggregation:** Results from NCIC, Hotgunz, BikeIndex, StolenRegister, carrier blacklists, insurance networks are unified
+3. **Real-Time Aggregation:** Results from NCIC, NICB, Hotgunz, IMEI.info, BikeIndex, StolenRegister, carrier blacklists, insurance networks are unified
 4. **AI Analysis:** Machine learning cross-validates results from all partners
 5. **Confidence Scoring:** Algorithm assigns 0-100% confidence based on how many partners confirm status
 6. **Result Delivery:** Returns stolen/safe status + detailed report in 3 seconds

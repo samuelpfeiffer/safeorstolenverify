@@ -63,11 +63,13 @@ const HowItWorksPage = () => {
       {/* Bot-visible content for search engines */}
       <BotVisibleContent>
         <h1>How SafeOrStolen Works - Data Partners & Verification</h1>
-        <p>SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases including NCIC (FBI), Hotgunz, BikeIndex, StolenRegister, carrier blacklists, and insurance networks. We verify IMEI, VIN, serial numbers, and license plates in under 3 seconds.</p>
+        <p>SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases including NCIC (FBI), NICB, Hotgunz, IMEI.info, BikeIndex, StolenRegister, carrier blacklists, and insurance networks. We verify IMEI, VIN, serial numbers, and license plates in under 3 seconds.</p>
         
         <h2>Our Data Partners</h2>
         <p>NCIC (National Crime Information Center): FBI's federal stolen property database - law enforcement data partnership.</p>
+        <p>NICB (National Insurance Crime Bureau): VINCheck database and vehicle theft records partnership.</p>
         <p>Hotgunz.com: Stolen firearms registry - we aggregate their database for firearms verification.</p>
+        <p>IMEI.info: Global IMEI database - we cross-reference phone blacklist and carrier records.</p>
         <p>BikeIndex.org: 1.4 million bikes cataloged - direct API integration for bicycle verification.</p>
         <p>StolenRegister.com: Global stolen property reports - we scrape and aggregate their listings.</p>
         <p>Stolen911: Police detective-founded service - data sharing partnership.</p>
@@ -82,8 +84,8 @@ const HowItWorksPage = () => {
         <p>Step 4: Instant Verification - Receive safe/stolen status in under 3 seconds.</p>
         
         <h2>What We Verify</h2>
-        <p>Phones & Tablets: IMEI verification against carrier blacklists and theft databases.</p>
-        <p>Vehicles: VIN checks against NCIC, NHTSA, and insurance theft records.</p>
+        <p>Phones & Tablets: IMEI verification against carrier blacklists, IMEI.info, and theft databases.</p>
+        <p>Vehicles: VIN checks against NCIC, NICB, NHTSA, and insurance theft records.</p>
         <p>Firearms: Serial number verification through Hotgunz partnership and law enforcement data.</p>
         <p>Bicycles: BikeIndex API integration plus StolenRegister aggregation.</p>
         <p>Electronics: Serial number checks against manufacturer and insurance databases.</p>
@@ -182,16 +184,26 @@ const HowItWorksPage = () => {
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
               We crawl, scrape, and aggregate data from 50+ partner databases in real-time
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
               <DataSourceCard
                 title="NCIC (FBI)"
                 description="Federal stolen property database - law enforcement partnership"
                 icon="🏛️"
               />
               <DataSourceCard
+                title="NICB"
+                description="National Insurance Crime Bureau - VINCheck and theft records"
+                icon="🛡️"
+              />
+              <DataSourceCard
                 title="Hotgunz.com"
                 description="Stolen firearms registry - firearms verification partner"
                 icon="🔫"
+              />
+              <DataSourceCard
+                title="IMEI.info"
+                description="Global IMEI database - phone blacklist verification"
+                icon="📲"
               />
               <DataSourceCard
                 title="BikeIndex.org"
