@@ -65,8 +65,8 @@ export const Footer: React.FC = () => {
       title: 'Support',
       links: [
         { name: 'FAQ', href: '/faq' },
-        { name: 'For Consumers', href: '/for-consumers' },
-        { name: 'Contact Support', href: '/contact' },
+        { name: 'About Us', href: '/about' },
+        { name: 'How It Works', href: '/how-it-works' },
         { name: 'Blog', href: '/blog' },
         { name: 'Community', href: '/community' },
         { name: 'Cookies Policy', href: '/cookies' },

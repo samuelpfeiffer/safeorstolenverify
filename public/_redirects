@@ -89,9 +89,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /trust-verification          /about  301!
 /accuracy                    /about  301!
-/for-consumers               /pricing  301!
+/for-consumers               /about  301!
 /our-story                   /about  301!
 /contact                     /about  301!
+/case-studies                /testimonials  301!
+/auction-houses              /for-auction-houses  301!
 /features                    /about  301!
 /resellers                   /about  301!
 /for-phone-repair-shops      /for-dealers  301!
