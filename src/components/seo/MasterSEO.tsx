@@ -75,6 +75,11 @@ export const MasterSEO: React.FC = () => {
       "https://www.trustpilot.com/review/safeorstolen.com",
       "https://biz.prlog.org/SafeOrStolen/"
     ],
+    "funder": {
+      "@type": "Organization",
+      "name": "FasterCapital",
+      "url": "https://fastercapital.com"
+    },
     "knowsAbout": [
       "Stolen item verification",
       "IMEI checking",

@@ -42,11 +42,15 @@ export const SEO_CONFIG = {
     'mobile app',
   ] as const,
   
-  // Social
+  // Social & External Profiles
   social: {
     twitter: 'https://twitter.com/safeorstolen',
     facebook: 'https://facebook.com/safeorstolen',
     linkedin: 'https://linkedin.com/company/safeorstolen',
+    youtube: 'https://www.youtube.com/@safeorstolen',
+    crunchbase: 'https://www.crunchbase.com/organization/safe-or-stolen',
+    trustpilot: 'https://www.trustpilot.com/review/safeorstolen.com',
+    prlog: 'https://biz.prlog.org/SafeOrStolen/',
   },
 } as const;
 
