@@ -122,9 +122,10 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/miami                          /app  301!
 /app/philadelphia                   /app  301!
 /app/chicago                        /app  301!
+# /app/serial-number-checker - NO PAGE EXISTS, redirect to main checker
 /app/serial-number-checker          /serial-number-checker  301!
-/app/vin-checker                    /vin-checker  301!
-/app/imei-checker                   /imei-check  301!
+# NOTE: /app/vin-checker is a REAL page (VinCheckerApp.tsx) - DO NOT REDIRECT
+/app/imei-checker                   /imei-checker  301!
 /app/research-stolen-car            /app  301!
 /app/research-stolen-phone          /app  301!
 /app/research-stolen-items          /app  301!
