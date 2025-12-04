@@ -103,14 +103,26 @@ const CheckoutRedirectPage = () => {
     createCheckoutSession();
   }, [user, session, authLoading, priceId, planName, isSubscription, navigate, searchParams]);
 
-  if (authLoading || (isProcessing && !stripeUrl)) {
+  // Loading state
+  if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center space-y-4">
           <AppLoadingScreen />
-          <p className="text-muted-foreground">
-            {authLoading ? 'Checking authentication...' : 'Preparing secure checkout...'}
-          </p>
+          <p className="text-muted-foreground">Checking authentication...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Processing state - show spinner with proper background
+  if (isProcessing && !stripeUrl && !error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center space-y-4">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-foreground font-medium">Preparing secure checkout...</p>
+          <p className="text-sm text-muted-foreground">Please wait while we connect to Stripe</p>
         </div>
       </div>
     );
