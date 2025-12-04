@@ -60,7 +60,12 @@ const CheckoutRedirectPage = () => {
 
         if (data?.url) {
           console.log('[CHECKOUT-REDIRECT] Redirecting to Stripe:', data.url);
-          window.location.href = data.url;
+          // CRITICAL: Escape iframe context for Stripe checkout
+          if (window.top && window.top !== window) {
+            window.top.location.href = data.url;
+          } else {
+            window.location.href = data.url;
+          }
         } else if (data?.error) {
           throw new Error(data.error);
         } else {
