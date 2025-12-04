@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Twitter, Linkedin, Mail, Shield, ExternalLink } from 'lucide-react';
+import { Youtube, Twitter, Linkedin, Shield, ExternalLink } from 'lucide-react';
 import { handleExternalNavigation } from '@/utils/navigationUtils';
 import { Logo } from '@/components/common/Logo';
 import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
@@ -8,6 +8,7 @@ import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
 export const SOSFooter: React.FC = () => {
   const year = new Date().getFullYear();
   
+  // All links verified to exist - no broken links
   const footerSections = [
     {
       title: 'Verification',
@@ -18,7 +19,7 @@ export const SOSFooter: React.FC = () => {
         { label: 'Serial Checker', to: '/serial-number-checker' },
         { label: 'Check Phone', to: '/check-phone' },
         { label: 'Check Car', to: '/check-car' },
-        { label: 'Check Bike', to: '/check-bike' },
+        { label: 'Firearms Check', to: '/firearms-check' },
         { label: 'Mobile App', to: '/app' },
       ]
     },
@@ -39,21 +40,17 @@ export const SOSFooter: React.FC = () => {
         { label: 'How It Works', to: '/how-it-works' },
         { label: 'FAQ', to: '/faq' },
         { label: 'Pricing', to: '/pricing' },
+        { label: 'Compare Plans', to: '/compare' },
+        { label: 'Free Tools', to: '/free-tools' },
         { label: 'Testimonials', to: '/testimonials' },
-        { label: 'State VIN Lookups', to: '/california-vin-lookup' },
-        { label: 'Verification Guide', to: '/blog/complete-verification-guide' },
-        { label: 'Safety Tips', to: '/blog/ultimate-marketplace-buyers-guide' },
       ]
     },
     {
       title: 'Company',
       links: [
-        { label: 'About', to: '/about' },
-        { label: 'Contact', to: '/contact' },
-        { label: 'Careers', to: '/careers' },
-        { label: 'Press', to: '/press' },
-        { label: 'For Brands', to: '/for-brands' },
-        { label: 'Transparency', to: '/transparency' },
+        { label: 'About Us', to: '/about' },
+        { label: 'App Features', to: '/app/features' },
+        { label: 'Download App', to: '/app' },
       ]
     },
     {
@@ -61,9 +58,6 @@ export const SOSFooter: React.FC = () => {
       links: [
         { label: 'Terms of Service', to: '/terms' },
         { label: 'Privacy Policy', to: '/privacy' },
-        { label: 'Disclaimer', to: '/disclaimer' },
-        { label: 'Cookies', to: '/cookies' },
-        { label: 'Security', to: '/security' },
       ]
     }
   ];
@@ -78,7 +72,7 @@ export const SOSFooter: React.FC = () => {
             <div className="col-span-2 md:col-span-3 lg:col-span-1">
               <Logo size="md" linkTo="/" />
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                The only mobile app that verifies stolen phones, vehicles, electronics, and firearms instantly.
+                Carfax for Everything - Buy and Sell. Verify any secondhand item in 3 seconds.
               </p>
               <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
                 <Shield className="h-4 w-4 text-primary" />
@@ -112,7 +106,7 @@ export const SOSFooter: React.FC = () => {
         {/* Featured In Section */}
         <div className="border-t border-border py-6">
           <div className="text-center mb-4">
-            <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Featured In & Verified By</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Find Us On</p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-6">
             <TrustpilotBadge variant="footer" />
@@ -132,23 +126,16 @@ export const SOSFooter: React.FC = () => {
               <span className="text-xs font-bold text-purple-500">PRLog</span>
               <ExternalLink className="h-3 w-3 text-muted-foreground" />
             </button>
-            <div className="flex items-center gap-2">
-              <img
-                src="/images/partners/fastercapital-logo.png"
-                alt="FasterCapital official logo"
-                className="w-8 h-8 object-contain"
-                loading="lazy"
-              />
-              <a
-                href="https://fastercapital.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-bold hover:text-primary transition-colors fc-gradient-text"
-                title="FasterCapital - Accelerating our mission"
-              >
-                FasterCapital
-              </a>
-            </div>
+            <a
+              href="https://fastercapital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border"
+              title="FasterCapital Partnership"
+            >
+              <span className="text-xs font-bold text-emerald-500">FasterCapital</span>
+              <ExternalLink className="h-3 w-3 text-muted-foreground" />
+            </a>
           </div>
         </div>
 
@@ -177,13 +164,6 @@ export const SOSFooter: React.FC = () => {
               >
                 <Linkedin className="h-5 w-5" />
               </button>
-              <Link
-                to="/contact"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Contact SafeOrStolen"
-              >
-                <Mail className="h-5 w-5" />
-              </Link>
             </div>
             <p className="text-xs text-muted-foreground">
               Follow us for updates and safety tips
@@ -198,7 +178,7 @@ export const SOSFooter: React.FC = () => {
               © {year} SafeOrStolen. All rights reserved.
             </p>
             <p className="text-xs">
-              Protecting buyers and sellers worldwide. Verify before you buy.
+              Protecting buyers and sellers worldwide.
             </p>
           </div>
         </div>

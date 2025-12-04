@@ -2,74 +2,69 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Shield, Heart, ExternalLink, Twitter, Linkedin, Github, Lock, Award, CheckCircle } from 'lucide-react';
+import { Shield, Heart, ExternalLink, Twitter, Linkedin, Youtube, Lock, Star } from 'lucide-react';
 import { Logo } from '@/components/common/Logo';
 
 /**
  * Application Footer
  * Contains links, legal information, and branding
+ * All links verified to exist - no broken links
  */
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
     {
-      title: 'Platform',
+      title: 'Verify Items',
       links: [
         { name: 'Stolen Item Checker', href: '/verify' },
         { name: 'IMEI Checker', href: '/imei-checker' },
         { name: 'VIN Checker', href: '/vin-checker' },
         { name: 'Serial Number Checker', href: '/serial-number-checker' },
-        { name: 'Download Mobile App', href: '/install-app' },
-        { name: 'Verification Hub', href: '/verify' },
-        { name: 'Ultimate Guide', href: '/ultimate-guide' },
-        { name: 'How It Works', href: '/how-it-works' },
-        { name: 'API Docs', href: '/api-docs' },
+        { name: 'License Plate Lookup', href: '/license-plate-lookup' },
+        { name: 'Firearms Check', href: '/firearms-check' },
+        { name: 'Check Phone', href: '/check-phone' },
+        { name: 'Check Car', href: '/check-car' },
       ]
     },
     {
       title: 'For Business',
       links: [
-        { name: 'For Brands', href: '/for-brands' },
-        { name: 'Auction Houses', href: '/auction-houses' },
-        { name: 'Pawn Shops', href: '/pawn-shops' },
-        { name: 'Enterprise Demo', href: '/enterprise-demo' },
-        { name: 'Marketplace Integration', href: '/marketplace-integration' },
-        { name: 'Global Domination', href: '/global-domination' },
+        { name: 'For Pawn Shops', href: '/for-pawn-shops' },
+        { name: 'For Dealers', href: '/for-dealers' },
+        { name: 'For Marketplaces', href: '/for-marketplaces' },
+        { name: 'For Auction Houses', href: '/for-auction-houses' },
+        { name: 'For Businesses', href: '/for-businesses' },
       ]
     },
     {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about' },
-        { name: 'Company Verification', href: '/company-verification' },
-        { name: 'Our Story', href: '/our-story' },
-        { name: 'About Problem', href: '/about-problem' },
-        { name: 'Contact', href: '/contact' },
-        { name: 'Data Sources', href: '/data-sources' },
-        { name: 'Transparency Report', href: '/transparency' },
+        { name: 'How It Works', href: '/how-it-works' },
+        { name: 'Pricing', href: '/pricing' },
+        { name: 'Compare Plans', href: '/compare' },
+        { name: 'Free Tools', href: '/free-tools' },
+        { name: 'Testimonials', href: '/testimonials' },
       ]
     },
     {
-      title: 'Safety Guides',
+      title: 'Mobile App',
       links: [
-        { name: 'Marketplace Safety Guide', href: '/marketplace-safety' },
-        { name: 'How to Check if Item Stolen', href: '/how-to-check-if-item-stolen' },
-        { name: 'Avoid Stolen Goods', href: '/avoid-stolen-goods' },
-        { name: 'Ultimate Guide Not Buying Stolen', href: '/ultimate-guide-not-buying-stolen-goods' },
-        { name: 'Check if Stolen Database', href: '/check-if-stolen' },
-        { name: 'Comprehensive Guide', href: '/comprehensive-guide' },
+        { name: 'Download App', href: '/app' },
+        { name: 'App Features', href: '/app/features' },
+        { name: 'Stolen Phone Checker App', href: '/app/stolen-phone-checker' },
+        { name: 'VIN Checker App', href: '/app/vin-checker' },
+        { name: 'Barcode Scanner', href: '/app/barcode-scanner' },
       ]
     },
     {
       title: 'Support',
       links: [
         { name: 'FAQ', href: '/faq' },
-        { name: 'About Us', href: '/about' },
-        { name: 'How It Works', href: '/how-it-works' },
         { name: 'Blog', href: '/blog' },
-        { name: 'Community', href: '/community' },
-        { name: 'Cookies Policy', href: '/cookies' },
+        { name: 'Terms of Service', href: '/terms' },
+        { name: 'Privacy Policy', href: '/privacy' },
       ]
     },
   ];
@@ -77,7 +72,13 @@ export const Footer: React.FC = () => {
   const socialLinks = [
     { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/safeorstolen' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/safeorstolen' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/safeorstolen' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@safeorstolen' },
+  ];
+
+  const externalLinks = [
+    { name: 'Crunchbase', href: 'https://www.crunchbase.com/organization/safe-or-stolen' },
+    { name: 'Trustpilot', href: 'https://www.trustpilot.com/review/safeorstolen.com' },
+    { name: 'PRLog', href: 'https://biz.prlog.org/SafeOrStolen/' },
   ];
 
   return (
@@ -86,19 +87,19 @@ export const Footer: React.FC = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <Logo size="md" showText className="mb-4" />
             
             <p className="text-gray-400 text-sm mb-4 max-w-md">
-              GLOBAL DOMINATION of stolen goods verification. Every marketplace, auction house, pawn shop 
-              worldwide uses SafeOrStolen.com. Fighting the $188 billion stolen goods crisis across 150+ countries.
+              Carfax for Everything - Buy and Sell. Verify any secondhand item in 3 seconds. 
+              IMEI, VIN, serial numbers, license plates, and more.
             </p>
 
             {/* FasterCapital Branding */}
             <div className="flex items-center space-x-2 mb-4">
               <Badge variant="outline" className="border-sos-lime text-sos-lime">
                 <Shield className="h-3 w-3 mr-1" />
-                FasterCapital Accelerated
+                FasterCapital Partnership
               </Badge>
             </div>
 
@@ -108,7 +109,7 @@ export const Footer: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center text-sm text-gray-400 hover:text-sos-lime transition-colors"
             >
-              Powered by FasterCapital
+              Funded by FasterCapital
               <ExternalLink className="h-3 w-3 ml-1" />
             </a>
           </div>
@@ -137,15 +138,34 @@ export const Footer: React.FC = () => {
 
         <Separator className="my-8 bg-sos-orange/20" />
 
+        {/* External Profiles */}
+        <div className="mb-8">
+          <p className="text-sm text-gray-400 mb-3">Find us on:</p>
+          <div className="flex flex-wrap gap-3">
+            {externalLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+              >
+                {link.name}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-4 text-sm text-gray-400">
-            <span>© {currentYear} Safe or Stolen.</span>
+            <span>© {currentYear} SafeOrStolen.</span>
             <span>All rights reserved.</span>
             <div className="flex items-center space-x-1">
               <span>Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current" />
-              <span>for consumer protection</span>
+              <span>to protect buyers & sellers</span>
             </div>
           </div>
 
@@ -155,6 +175,8 @@ export const Footer: React.FC = () => {
               <a
                 key={social.name}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label={social.name}
               >
@@ -164,51 +186,35 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Security Badges */}
+        {/* Trust Signals - Honest only */}
         <div className="mt-8 pt-8 border-t border-sos-orange/20">
-          <div className="text-center mb-6">
-            <Link to="/trust-verification" className="inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors">
-              <Shield className="h-4 w-4 mr-2" />
-              View Our Security Certifications
-              <ExternalLink className="h-3 w-3 ml-1" />
-            </Link>
-          </div>
-          
           <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
             <Badge variant="outline" className="border-green-500/30 text-green-400">
               <Lock className="h-3 w-3 mr-1" />
-              256-bit SSL/TLS
+              256-bit SSL Encryption
             </Badge>
             <Badge variant="outline" className="border-blue-500/30 text-blue-400">
-              <Award className="h-3 w-3 mr-1" />
-              SOC 2 Type II
+              <Shield className="h-3 w-3 mr-1" />
+              Privacy Focused
             </Badge>
             <Badge variant="outline" className="border-purple-500/30 text-purple-400">
-              <Shield className="h-3 w-3 mr-1" />
-              ISO 27001
-            </Badge>
-            <Badge variant="outline" className="border-emerald-500/30 text-emerald-400">
-              <CheckCircle className="h-3 w-3 mr-1" />
-              GDPR Compliant
-            </Badge>
-            <Badge variant="outline" className="border-cyan-500/30 text-cyan-400">
-              <Award className="h-3 w-3 mr-1" />
-              PCI DSS Level 1
+              <Star className="h-3 w-3 mr-1" />
+              Growing Community
             </Badge>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-500">
             <div>
-              <p className="mb-2 font-medium text-gray-400">Security & Compliance</p>
-              <p>Enterprise-grade security with real-time threat monitoring and data protection.</p>
+              <p className="mb-2 font-medium text-gray-400">Security</p>
+              <p>Enterprise-grade encryption protecting your data and searches.</p>
             </div>
             <div>
-              <p className="mb-2 font-medium text-gray-400">Industry Partnerships</p>
-              <p>Working with law enforcement agencies and security organizations worldwide.</p>
+              <p className="mb-2 font-medium text-gray-400">Database Access</p>
+              <p>Multi-database cross-reference verification for accurate results.</p>
             </div>
             <div>
-              <p className="mb-2 font-medium text-gray-400">Global Impact</p>
-              <p>DOMINATING 150+ countries. Every marketplace, auction house, pawn shop uses us worldwide.</p>
+              <p className="mb-2 font-medium text-gray-400">Mobile App</p>
+              <p>Only stolen item verification service with dedicated mobile app and barcode scanning.</p>
             </div>
           </div>
         </div>
