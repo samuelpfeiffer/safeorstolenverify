@@ -532,6 +532,18 @@ export const AppRoutes = () => {
         <Route path="/for-auction-houses" element={<ForAuctionHouses />} />
         <Route path="/for-businesses" element={<ForBusinesses />} />
         
+        {/* City Pages - Top 10 Cities Local SEO */}
+        <Route path="/stolen-check-los-angeles" element={<StolenCheckLosAngeles />} />
+        <Route path="/stolen-check-new-york-city" element={<StolenCheckNewYorkCity />} />
+        <Route path="/stolen-check-chicago" element={<StolenCheckChicago />} />
+        <Route path="/stolen-check-houston" element={<StolenCheckHouston />} />
+        <Route path="/stolen-check-phoenix" element={<StolenCheckPhoenix />} />
+        <Route path="/stolen-check-philadelphia" element={<StolenCheckPhiladelphia />} />
+        <Route path="/stolen-check-san-antonio" element={<StolenCheckSanAntonio />} />
+        <Route path="/stolen-check-san-diego" element={<StolenCheckSanDiego />} />
+        <Route path="/stolen-check-dallas" element={<StolenCheckDallas />} />
+        <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
+        
         
         {/* License plate lookups → /verify (wildcard catch-all only) */}
         <Route path="/arizona-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
