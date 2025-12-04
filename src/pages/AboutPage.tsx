@@ -15,9 +15,19 @@ const AboutPage = () => {
       description: "FBI's stolen property database - we crawl and cross-reference federal theft records"
     },
     {
+      name: "NICB (National Insurance Crime Bureau)",
+      type: "Insurance Crime Database",
+      description: "VINCheck and theft records - we aggregate insurance crime data for vehicle verification"
+    },
+    {
       name: "Hotgunz.com",
       type: "Firearms Database Partner",
       description: "Stolen firearms registry - we aggregate their database for firearms verification"
+    },
+    {
+      name: "IMEI.info",
+      type: "Phone Verification Partner",
+      description: "Global IMEI database - we cross-reference phone blacklist and carrier records"
     },
     {
       name: "BikeIndex.org",

@@ -74,12 +74,14 @@ const Index = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>Stolen Item Checker for Buyers, Sellers & Businesses</h1>
-          <p>SafeOrStolen protects buyers, sellers, and businesses from stolen goods. We crawl and aggregate data from 50+ partner databases including NCIC (FBI), Hotgunz, BikeIndex, StolenRegister, carrier blacklists, and insurance networks. Verify IMEI numbers, VIN numbers, and serial numbers in 3 seconds. The only mobile app for stolen item verification.</p>
+          <p>SafeOrStolen protects buyers, sellers, and businesses from stolen goods. We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NICB (National Insurance Crime Bureau), Hotgunz, IMEI.info, BikeIndex, StolenRegister, carrier blacklists, and insurance networks. Verify IMEI numbers, VIN numbers, and serial numbers in 3 seconds. The only mobile app for stolen item verification.</p>
           
           <h2>Our Data Partners - We Crawl & Aggregate 50+ Databases</h2>
           <ul>
             <li>NCIC (National Crime Information Center) - FBI's federal stolen property database</li>
+            <li>NICB (National Insurance Crime Bureau) - VINCheck and vehicle theft records</li>
             <li>Hotgunz.com - Stolen firearms registry partner</li>
+            <li>IMEI.info - Global IMEI database and phone blacklist verification</li>
             <li>BikeIndex.org - 1.4M bikes cataloged, direct API integration</li>
             <li>StolenRegister.com - Global stolen property, we scrape their listings</li>
             <li>Stolen911 - Police detective-founded service, data sharing partner</li>

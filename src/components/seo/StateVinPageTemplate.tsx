@@ -104,7 +104,7 @@ export const StateVinPageTemplate = ({
         <p>{content.localLaws}</p>
         
         <h2>How SafeOrStolen Verifies {state} Vehicles</h2>
-        <p>We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NHTSA, insurance networks, and state DMV records. When you check a VIN, we query all partners simultaneously and return unified results in under 3 seconds.</p>
+        <p>We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NICB (National Insurance Crime Bureau), NHTSA, Hotgunz, IMEI.info, BikeIndex, carrier blacklists, and insurance networks. When you check a VIN, we query all partners simultaneously and return unified results in under 3 seconds.</p>
         
         <h2>Frequently Asked Questions</h2>
         {faqs.map((faq, idx) => (
