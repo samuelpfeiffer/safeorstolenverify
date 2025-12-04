@@ -78,7 +78,10 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
         "https://www.youtube.com/@safeorstolen",
         "https://www.linkedin.com/company/safeorstolen",
         "https://twitter.com/safeorstolen",
-        "https://www.facebook.com/safeorstolen"
+        "https://www.facebook.com/safeorstolen",
+        "https://www.crunchbase.com/organization/safe-or-stolen",
+        "https://www.trustpilot.com/review/safeorstolen.com",
+        "https://biz.prlog.org/SafeOrStolen/"
       ],
       "contactPoint": {
         "@type": "ContactPoint",

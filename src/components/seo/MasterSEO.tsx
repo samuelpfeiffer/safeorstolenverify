@@ -70,7 +70,10 @@ export const MasterSEO: React.FC = () => {
       "https://www.youtube.com/@safeorstolen",
       "https://twitter.com/safeorstolen",
       "https://facebook.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen"
+      "https://linkedin.com/company/safeorstolen",
+      "https://www.crunchbase.com/organization/safe-or-stolen",
+      "https://www.trustpilot.com/review/safeorstolen.com",
+      "https://biz.prlog.org/SafeOrStolen/"
     ],
     "knowsAbout": [
       "Stolen item verification",

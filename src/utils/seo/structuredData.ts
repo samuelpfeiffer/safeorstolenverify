@@ -44,7 +44,10 @@ export const createOrganizationSchema = () => ({
     "https://twitter.com/safeorstolen",
     "https://linkedin.com/company/safeorstolen",
     "https://www.youtube.com/@safeorstolen",
-    "https://facebook.com/safeorstolen"
+    "https://facebook.com/safeorstolen",
+    "https://www.crunchbase.com/organization/safe-or-stolen",
+    "https://www.trustpilot.com/review/safeorstolen.com",
+    "https://biz.prlog.org/SafeOrStolen/"
   ],
   "areaServed": [
     { "@type": "Country", "name": "United States" },

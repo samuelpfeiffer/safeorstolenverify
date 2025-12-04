@@ -85,7 +85,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3">
                 <a
                   href="https://x.com/safeorstolen"
                   target="_blank"
@@ -121,6 +121,24 @@ const Footer = () => {
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Linkedin className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
+                </a>
+                <a
+                  href="https://www.crunchbase.com/organization/safe-or-stolen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="SafeOrStolen on Crunchbase"
+                  className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
+                >
+                  <span className="text-xs font-bold text-muted-foreground hover:text-sos-orange">CB</span>
+                </a>
+                <a
+                  href="https://www.trustpilot.com/review/safeorstolen.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="SafeOrStolen reviews on Trustpilot"
+                  className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
+                >
+                  <span className="text-xs font-bold text-muted-foreground hover:text-sos-orange">★</span>
                 </a>
               </div>
             </div>
