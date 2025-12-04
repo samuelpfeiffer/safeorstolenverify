@@ -27,7 +27,7 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/compare', label: 'Compare' },
     { to: '/pricing', label: 'Pricing' },
-    { to: '/app/download', label: 'Download App', featured: true },
+    { to: '/app', label: 'Download App', featured: true },
   ];
 
   const authenticatedLinks = [
