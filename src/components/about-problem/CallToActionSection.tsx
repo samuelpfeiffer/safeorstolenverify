@@ -52,7 +52,7 @@ export const CallToActionSection = () => {
               asChild
               className="border-sos-lime text-sos-lime hover:bg-sos-lime/10"
             >
-              <Link to="/for-consumers">For Consumers</Link>
+              <Link to="/about">Learn More</Link>
             </Button>
           </div>
         </div>

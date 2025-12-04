@@ -315,20 +315,17 @@ export const AppRoutes = () => {
         <Route path="/vs-carfax" element={<ComparisonCarfax />} />
         <Route path="/vs-autocheck" element={<ComparisonAutocheck />} />
         
-        {/* Legacy URL redirects - Google has indexed these */}
-        <Route path="/for-consumers" element={<Navigate to="/about" replace />} />
-        <Route path="/case-studies" element={<Navigate to="/testimonials" replace />} />
-        <Route path="/auction-houses" element={<Navigate to="/for-auction-houses" replace />} />
-        <Route path="/accuracy" element={<Navigate to="/about" replace />} />
-        <Route path="/our-story" element={<Navigate to="/about" replace />} />
-        <Route path="/contact" element={<Navigate to="/about" replace />} />
-        <Route path="/enterprise-demo" element={<Navigate to="/pricing" replace />} />
-        <Route path="/disclaimer" element={<Navigate to="/terms" replace />} />
-        <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
-        <Route path="/fastercapital/tech-cofounder" element={<Navigate to="/about" replace />} />
-        {/* Removed duplicate redirects - all handled server-side in public/_redirects:
-        /stolen-property-lookup, /service-limitations, /firearm-serial-check, 
-        /seller-guide, /seo-strategy, /facebook-marketplace-verification */}
+        {/* ALL legacy redirects now handled server-side in public/_redirects only
+            This prevents React 302 redirects conflicting with server-side 301 redirects
+            which caused GSC "Page with redirect" errors.
+            
+            Server-side redirects (301) are SEO-correct, React Navigate (302) are not.
+            
+            Removed: /for-consumers, /case-studies, /auction-houses, /accuracy, 
+            /our-story, /contact, /enterprise-demo, /disclaimer, /terms-of-service,
+            /fastercapital/tech-cofounder, /stolen-property-lookup, /service-limitations,
+            /firearm-serial-check, /seller-guide, /seo-strategy, /facebook-marketplace-verification
+        */}
         
         
         {/* All 50 State VIN Pages - Complete Nationwide Local SEO Coverage */}

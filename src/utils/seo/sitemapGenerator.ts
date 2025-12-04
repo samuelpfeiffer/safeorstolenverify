@@ -11,53 +11,49 @@ const BASE_URL = 'https://safeorstolen.com';
 const STATIC_PAGES = [
   // High Priority Pages (0.9-1.0)
   '/',
+  '/verify',
+  '/app',
   '/dashboard',
-  '/stolen-item-checker', 
-  '/imei-check',
-  '/vin-verification',
+  '/imei-checker',
+  '/vin-checker',
   '/serial-number-checker',
   '/check-phone',
   '/check-car',
   '/check-electronics',
   '/check-bike',
+  '/check-laptop',
   '/firearms-check',
-  '/comprehensive-guide',
-  '/how-to-check-if-item-stolen',
-  '/how-to-check-if-anything-is-stolen-before-you-buy',
-  '/ultimate-guide-not-buying-stolen-goods',
   
   // Important Service Pages (0.7-0.8)
   '/how-it-works',
-  '/for-brands',
-  '/for-consumers', 
   '/about',
-  '/api-docs',
-  '/transparency',
-  '/data-sources',
-  '/accuracy',
-  '/subscriptions',
   '/pricing',
-  
-  // Content & Support Pages (0.6-0.7)
-  '/blog',
-  '/contact',
   '/faq',
-  '/case-studies',
-  '/partnerships',
-  '/community',
-  '/ultimate-guide',
+  '/testimonials',
   
-  // Specialized Markets (0.4-0.5)
-  '/auction-houses',
-  '/pawn-shops',
-  '/marketplace-integration',
-  '/enterprise-demo',
-  '/real-time-verification',
+  // Business Pages (0.6-0.7)
+  '/for-businesses',
+  '/for-pawn-shops',
+  '/for-dealers',
+  '/for-auction-houses',
+  '/for-marketplaces',
   
-  // Legal Pages (0.2-0.3)
-  '/privacy-policy',
-  '/terms-of-service',
-  '/disclaimer',
+  // Comparison Pages (0.6)
+  '/vs-carfax',
+  '/vs-checkmend',
+  '/vs-imeiinfo',
+  '/vs-swappa',
+  '/vs-autocheck',
+  '/compare',
+  
+  // Content Pages (0.5-0.6)
+  '/blog',
+  '/free-tools',
+  '/statistics/stolen-goods',
+  
+  // Legal Pages (0.3)
+  '/privacy',
+  '/terms',
   '/cookies',
   '/refunds'
 ];
