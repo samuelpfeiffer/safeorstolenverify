@@ -196,9 +196,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # MARKETPLACE VERIFICATION PAGES
+# NOTE: facebook-marketplace-stolen-check, craigslist-safety-verification,
+# offerup-verify-not-stolen, ebay-stolen-item-check are REAL pages - DO NOT REDIRECT
 # ============================================
-/craigslist-verification-guide                      /verify  301!
-/facebook-marketplace-stolen-check                  /verify  301!
 /facebook-marketplace-verification                  /verify  301!
 /ebay-stolen-item-checker                           /verify  301!
 /subscriptions                                      /pricing  301!
@@ -207,16 +207,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # WILDCARD REDIRECTS (MUST BE NEAR END)
+# NOTE: /city/* removed - city pages now have dedicated routes
 # ============================================
 /guides/imei-blacklist-guide       /about  301!
 /guides/*                          /about  301!
-/city/*                            /verify  301!
 /los-angeles/vin-check             /california-vin-lookup  301!
 /state/*                           /verify  301!
 /statistics/*                      /about  301!
 /offerup-verification              /verify  301!
 /ultimate-guide                    /about   301!
-/stolen-items-database             /verify  301!
 
 # ============================================
 # BLOG POST REDIRECTS (GSC "Alternate page" Errors)
