@@ -1902,6 +1902,7 @@ export type Database = {
           search_count: number
           search_count_reset_at: string | null
           stripe_customer_id: string | null
+          subscription_end: string | null
           subscription_interval: string | null
           subscription_tier: string | null
           terms_accepted: boolean | null
@@ -1929,6 +1930,7 @@ export type Database = {
           search_count?: number
           search_count_reset_at?: string | null
           stripe_customer_id?: string | null
+          subscription_end?: string | null
           subscription_interval?: string | null
           subscription_tier?: string | null
           terms_accepted?: boolean | null
@@ -1956,6 +1958,7 @@ export type Database = {
           search_count?: number
           search_count_reset_at?: string | null
           stripe_customer_id?: string | null
+          subscription_end?: string | null
           subscription_interval?: string | null
           subscription_tier?: string | null
           terms_accepted?: boolean | null
