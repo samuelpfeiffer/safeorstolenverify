@@ -16,6 +16,7 @@ const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
+const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 
 // Competitor Comparison Pages (SEO Strategy)
 const Compare = lazy(() => import('@/pages/Compare'));
@@ -240,6 +241,7 @@ export const AppRoutes = () => {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/checkout-redirect" element={<CheckoutRedirectPage />} />
 
         {/* STRATEGIC SEO PAGES - Item Landing Pages with 1500+ word content */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
