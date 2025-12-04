@@ -269,6 +269,32 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- MARKETPLACE SAFETY PAGES -->
+  <url>
+    <loc>https://safeorstolen.com/facebook-marketplace-stolen-check</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/craigslist-safety-verification</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/offerup-verify-not-stolen</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/ebay-stolen-item-check</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
   <!-- CITY PAGES - Top 10 Cities -->
   <url>
     <loc>https://safeorstolen.com/stolen-check-los-angeles</loc>
