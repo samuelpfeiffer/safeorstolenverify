@@ -70,6 +70,11 @@ export const OrganizationSchema = () => {
       "https://www.trustpilot.com/review/safeorstolen.com",
       "https://biz.prlog.org/SafeOrStolen/"
     ],
+    "funder": {
+      "@type": "Organization",
+      "name": "FasterCapital",
+      "url": "https://fastercapital.com"
+    },
     "areaServed": {
       "@type": "Place",
       "name": "Worldwide"
