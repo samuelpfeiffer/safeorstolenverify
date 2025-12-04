@@ -545,12 +545,8 @@ export const AppRoutes = () => {
         <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
         
         
-        {/* License plate lookups → /verify (wildcard catch-all only) */}
-        <Route path="/arizona-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
-        <Route path="/texas-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
-        <Route path="/california-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
-        <Route path="/new-york-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
-        <Route path="/*-license-plate-lookup" element={<Navigate to="/verify?type=license_plate" replace />} />
+        {/* NOTE: All 50 state license plate lookups have dedicated pages defined above */}
+        {/* NOTE: All 50 state VIN lookups have dedicated pages defined above */}
         
         {/* City pages → /verify */}
         <Route path="/*-stolen-item-check" element={<Navigate to="/verify" replace />} />
