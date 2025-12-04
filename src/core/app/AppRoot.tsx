@@ -25,6 +25,7 @@ import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
+import { ExitIntentPopup, SocialProofBanner, StickyMobileAppCTA, UrgencyBanner } from '@/components/growth';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -67,6 +68,7 @@ const AuthAwareContent: React.FC = () => {
         <CriticalResourceLoader />
         
         <div className="min-h-screen bg-background text-foreground flex flex-col">
+          <UrgencyBanner />
           <TopNavigation />
           <main className="flex-1 pt-20">
             <RouteErrorRecovery>
@@ -82,6 +84,9 @@ const AuthAwareContent: React.FC = () => {
         <MobileNavigation />
         <SchemaValidationIndicator />
         <AISafetyAdvisor />
+        <ExitIntentPopup />
+        <SocialProofBanner />
+        <StickyMobileAppCTA />
         <Toaster />
       </PWAProvider>
     </GA4Provider>

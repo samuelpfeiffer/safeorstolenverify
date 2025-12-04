@@ -6,7 +6,7 @@ import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
-import { ExitIntentPopup } from '@/components/conversion/ExitIntentPopup';
+// ExitIntentPopup is now global in AppRoot
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle } from 'lucide-react';
@@ -240,8 +240,7 @@ const Index = () => {
         <TrustSignals />
       </div>
       
-      {/* Exit Intent Popup */}
-      <ExitIntentPopup />
+      {/* ExitIntentPopup is now rendered globally in AppRoot */}
     </>
   );
 };
