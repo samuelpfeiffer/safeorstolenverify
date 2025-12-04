@@ -61,69 +61,8 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
 
   const contentSignals = getContentDepthSignals();
 
-  // Enhanced E-A-T (Expertise, Authoritativeness, Trustworthiness) signals
-  const eatSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Safe Or Stolen",
-    "alternateName": "SafeOrStolen.com",
-    "url": "https://safeorstolen.com",
-    "description": "Professional stolen item verification service with law enforcement partnerships",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Safe Or Stolen",
-      "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-      "sameAs": [
-        "https://www.youtube.com/@safeorstolen",
-        "https://www.linkedin.com/company/safeorstolen",
-        "https://twitter.com/safeorstolen",
-        "https://www.facebook.com/safeorstolen",
-        "https://www.crunchbase.com/organization/safe-or-stolen",
-        "https://www.trustpilot.com/review/safeorstolen.com",
-        "https://biz.prlog.org/SafeOrStolen/"
-      ],
-      "funder": {
-        "@type": "Organization",
-        "name": "FasterCapital",
-        "url": "https://fastercapital.com"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-206-249-2203",
-        "contactType": "customer service",
-        "availableLanguage": "English",
-        "areaServed": "US"
-      },
-      "foundingDate": "2024",
-      "numberOfEmployees": "10-50",
-      "industry": "Security Services",
-      "expertise": contentSignals.expertise
-    },
-    "mainEntity": {
-      "@type": "Service",
-      "name": "Stolen Item Verification",
-      "description": "Professional verification service to check if items are reported stolen",
-      "provider": {
-        "@type": "Organization",
-        "name": "Safe Or Stolen"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United States"
-      },
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "Law Enforcement Partnership Certification"
-        },
-        {
-          "@type": "EducationalOccupationalCredential", 
-          "name": "Data Security Compliance Certification"
-        }
-      ]
-    }
-  };
+  // NOTE: Organization/WebSite schemas removed to prevent duplication with MasterSEO
+  // E-A-T signals are now provided via meta tags only
 
   return (
     <Helmet>
@@ -134,10 +73,10 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
       <meta name="article-section" content={contentSignals.articleSection} />
       
       {/* Authority and trust signals */}
-      <meta name="security-certified" content="SOC2, GDPR, CCPA" />
-      <meta name="data-sources" content="FBI NCIC, Law Enforcement Databases" />
-      <meta name="verification-accuracy" content="99.7%" />
-      <meta name="industry-partnerships" content="Law Enforcement, Consumer Protection" />
+      <meta name="security-certified" content="Secure encryption, privacy focused" />
+      <meta name="data-sources" content="Multiple law enforcement and manufacturer databases" />
+      <meta name="verification-accuracy" content="High accuracy verification system" />
+      <meta name="industry-partnerships" content="Database providers, Security services" />
       
       {/* Content freshness and update frequency */}
       <meta name="content-update-frequency" content="daily" />
@@ -146,28 +85,22 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
       {/* Professional credentials and certifications */}
       <meta name="business-verification" content="verified" />
       <meta name="professional-service" content="true" />
-      <meta name="regulated-industry" content="true" />
-      
-      {/* Enhanced structured data for authority */}
-      <script type="application/ld+json">
-        {JSON.stringify(eatSchema)}
-      </script>
-      
-      {/* DNS prefetch for authority domains */}
-      {authorityLinks.map((link) => (
-        <link key={link} rel="dns-prefetch" href={link} />
-      ))}
       
       {/* Additional trust signals */}
-      <meta name="company-size" content="established" />
+      <meta name="company-size" content="growing" />
       <meta name="service-availability" content="24/7" />
       <meta name="customer-support" content="professional" />
       <meta name="data-protection" content="enterprise-grade" />
       
       {/* Geographic and market authority */}
-      <meta name="service-area" content="United States" />
+      <meta name="service-area" content="United States + International" />
       <meta name="market-leader" content="stolen-item-verification" />
       <meta name="industry-expertise" content="fraud-prevention,security-services" />
+      
+      {/* DNS prefetch for authority domains */}
+      {authorityLinks.map((link) => (
+        <link key={link} rel="dns-prefetch" href={link} />
+      ))}
     </Helmet>
   );
 };

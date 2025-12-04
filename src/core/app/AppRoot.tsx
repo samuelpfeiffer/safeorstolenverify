@@ -21,6 +21,7 @@ import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
 import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
+import { EEATSignals } from '@/components/seo/EEATSignals';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
@@ -64,6 +65,7 @@ const AuthAwareContent: React.FC = () => {
         <MasterSEO />
         <GlobalAISEO />
         <DomainAuthorityBooster />
+        <EEATSignals />
         <AdvancedSchemaGenerator />
         <RedirectHandler />
         <SchemaValidationMonitor />
