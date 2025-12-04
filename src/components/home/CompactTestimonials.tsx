@@ -1,9 +1,11 @@
-import { Star, ExternalLink, Rocket } from 'lucide-react';
+import { ExternalLink, Rocket, Shield, CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 export const CompactTestimonials = () => {
-  // Real press mentions
+  // Real press mentions only - no fake testimonials
   const pressMentions = [
     {
       source: "IssueWire",
@@ -25,28 +27,22 @@ export const CompactTestimonials = () => {
     }
   ];
 
-  // Early user feedback (real from beta testers)
-  const earlyUserFeedback = [
+  // Real value propositions instead of fake testimonials
+  const valueProps = [
     {
-      name: "M.K.",
-      role: "Pawn Shop Owner, Phoenix AZ",
-      rating: 5,
-      text: "Finally a tool that helps verify items before buying. The peace of mind is worth it for my business.",
-      image: "👤"
+      icon: Shield,
+      title: "Protects Buyers",
+      text: "Verify items before purchase to avoid stolen goods and legal trouble"
     },
     {
-      name: "J.R.",
-      role: "eBay Power Seller",
-      rating: 5,
-      text: "Quick verification process. Helps me prove my items are legitimate to buyers and avoid disputes.",
-      image: "👤"
+      icon: CheckCircle,
+      title: "Helps Sellers",
+      text: "Prove your items are legitimate to build trust and close deals faster"
     },
     {
-      name: "S.T.",
-      role: "Used Electronics Dealer",
-      rating: 5,
-      text: "Simple interface and fast results. Essential for checking phones and laptops before purchase from customers.",
-      image: "👤"
+      icon: Rocket,
+      title: "Serves Businesses",
+      text: "Pawn shops, dealers, and resellers use SafeOrStolen for due diligence"
     }
   ];
 
@@ -57,7 +53,7 @@ export const CompactTestimonials = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Press & Early Feedback
+              Press & Recognition
             </h2>
             <p className="text-muted-foreground">
               Featured in press releases and backed by FasterCapital
@@ -91,40 +87,32 @@ export const CompactTestimonials = () => {
             </p>
           </div>
 
-          {/* Early User Feedback */}
+          {/* Real Value Props Instead of Fake Testimonials */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-2">Early User Feedback</h3>
-            <p className="text-muted-foreground">Real reviews from our first users</p>
+            <h3 className="text-2xl font-bold mb-2">Who We Serve</h3>
+            <p className="text-muted-foreground">Real protection for real people</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {earlyUserFeedback.map((testimonial, index) => (
+            {valueProps.map((prop, index) => (
               <Card 
                 key={index} 
                 className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
               >
-                {/* Rating Stars */}
-                <div className="flex items-center gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <blockquote className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  "{testimonial.text}"
-                </blockquote>
-
-                {/* Author Info */}
-                <div className="flex items-center gap-3">
-                  <div className="text-2xl">{testimonial.image}</div>
-                  <div>
-                    <div className="font-semibold text-foreground text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                </div>
+                <prop.icon className="w-10 h-10 text-primary mb-4" />
+                <h4 className="font-bold text-foreground mb-2">{prop.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {prop.text}
+                </p>
               </Card>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <Button asChild>
+              <Link to="/verify">Try Free Verification</Link>
+            </Button>
           </div>
         </div>
       </div>

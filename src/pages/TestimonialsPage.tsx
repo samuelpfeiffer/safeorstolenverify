@@ -1,45 +1,46 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Star, Shield, CheckCircle } from 'lucide-react';
+import { Shield, ExternalLink, Rocket, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
 
 const TestimonialsPage = () => {
-  const testimonials = [
+  // Real press mentions and partnerships only
+  const realCredentials = [
     {
-      name: "Michael R.",
-      location: "Tampa, FL",
-      itemType: "iPhone 15 Pro",
-      story: "Almost bought a 'mint condition' iPhone 15 Pro from Facebook Marketplace for $600. SafeOrStolen's check showed it was reported stolen 3 days earlier. Saved me $600 and potential legal trouble.",
-      outcome: "Avoided stolen purchase"
+      type: "Accelerator Backing",
+      source: "FasterCapital",
+      description: "Selected for FasterCapital's accelerator program to scale marketplace safety verification technology.",
+      url: "https://fastercapital.com"
     },
     {
-      name: "Sarah P.",
-      location: "Austin, TX",
-      itemType: "2021 Honda Civic",
-      story: "Seller had clean title and VIN looked legit. SafeOrStolen flagged it as stolen with outstanding insurance claim. Police confirmed it was part of a title washing scheme. Thank you for saving me!",
-      outcome: "Prevented fraud"
+      type: "Press Release",
+      source: "PRLog",
+      description: "SafeOrStolen launches comprehensive verification platform to protect marketplace buyers and sellers from stolen goods fraud.",
+      url: "https://www.prlog.org"
     },
     {
-      name: "James K.",
-      location: "Seattle, WA",
-      itemType: "MacBook Pro",
-      story: "Craigslist seller wanted cash only and seemed nervous. Checked the serial number on SafeOrStolen - reported stolen from a university 2 weeks prior. Reported to police instead of buying.",
-      outcome: "Reported to authorities"
+      type: "Press Release",
+      source: "IssueWire",
+      description: "New stolen item verification service aims to reduce marketplace fraud and protect consumers.",
+      url: "https://www.issuewire.com"
     }
   ];
 
   return (
     <>
       <PageSEO
-        title="Real User Stories - SafeOrStolen Testimonials"
-        description="Read real stories from buyers who used SafeOrStolen to verify items before purchase. See how our verification service helped prevent fraud and theft."
-        keywords="SafeOrStolen testimonials, user stories, verification success, prevented theft"
+        title="Press & Credentials - SafeOrStolen"
+        description="SafeOrStolen is backed by FasterCapital and featured in press releases. A real SaaS startup protecting buyers, sellers, and businesses from stolen goods."
+        keywords="SafeOrStolen press, FasterCapital, stolen item verification, marketplace safety"
         canonical="/testimonials"
         structuredData={[
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "SafeOrStolen User Testimonials",
-            "description": "Real stories from users who verified items with SafeOrStolen"
+            "name": "SafeOrStolen Press & Credentials",
+            "description": "Real press coverage and accelerator backing for SafeOrStolen"
           }
         ]}
       />
@@ -48,38 +49,63 @@ const TestimonialsPage = () => {
         <div className="container mx-auto px-4 pt-24 pb-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Real User Stories</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Press & Credentials</h1>
               <p className="text-xl text-muted-foreground">
-                See how SafeOrStolen helped buyers avoid stolen goods and fraud
+                Real press coverage and accelerator backing
               </p>
             </div>
 
-            <div className="space-y-6">
-              {testimonials.map((testimonial, index) => (
+            {/* FasterCapital Feature */}
+            <div className="mb-12 p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl border border-blue-500/20">
+              <div className="flex justify-center mb-4">
+                <FasterCapitalBranding />
+              </div>
+              <h2 className="text-2xl font-bold text-center mb-2">Backed by FasterCapital</h2>
+              <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+                SafeOrStolen was selected for FasterCapital's accelerator program to scale marketplace safety verification technology worldwide.
+              </p>
+            </div>
+
+            {/* Real Credentials */}
+            <div className="space-y-6 mb-12">
+              {realCredentials.map((credential, index) => (
                 <Card key={index} className="p-6">
                   <div className="flex items-start gap-4">
-                    <Shield className="w-10 h-10 text-primary flex-shrink-0" />
+                    <ExternalLink className="w-8 h-8 text-primary flex-shrink-0" />
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <p className="font-bold">{testimonial.name}</p>
-                        <span className="text-sm text-muted-foreground">• {testimonial.location}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">Verified: {testimonial.itemType}</p>
-                      <p className="mb-4">{testimonial.story}</p>
-                      <div className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-primary" />
-                        <span className="font-medium">{testimonial.outcome}</span>
-                      </div>
+                      <p className="text-xs font-semibold text-primary mb-1">{credential.type}</p>
+                      <p className="font-bold text-lg mb-2">{credential.source}</p>
+                      <p className="text-muted-foreground">{credential.description}</p>
                     </div>
                   </div>
                 </Card>
               ))}
             </div>
 
+            {/* Call to Action for Real Testimonials */}
+            <Card className="p-8 bg-primary/5 border-primary/20">
+              <div className="text-center">
+                <MessageSquare className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h2 className="text-2xl font-bold mb-2">Share Your Experience</h2>
+                <p className="text-muted-foreground mb-6">
+                  Used SafeOrStolen to verify an item? We'd love to hear your real story.
+                </p>
+                <Button asChild>
+                  <a href="mailto:safeorstolenmail@gmail.com?subject=My SafeOrStolen Experience">
+                    Share Your Story
+                  </a>
+                </Button>
+              </div>
+            </Card>
+
+            {/* Early Stage Transparency */}
             <div className="mt-12 text-center">
-              <p className="text-muted-foreground mb-4">
-                These are real user experiences. Protect yourself before buying used items.
+              <p className="text-sm text-muted-foreground">
+                SafeOrStolen is an early-stage startup. As we grow, we'll feature real user testimonials here.
               </p>
+              <Button asChild variant="outline" className="mt-4">
+                <Link to="/verify">Try Free Verification</Link>
+              </Button>
             </div>
           </div>
         </div>
