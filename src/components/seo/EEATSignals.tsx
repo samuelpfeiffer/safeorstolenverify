@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 /**
  * E-E-A-T Signals - Experience, Expertise, Authoritativeness, Trustworthiness
  * Critical for ranking in YMYL (Your Money Your Life) niches like security/verification
+ * 
+ * IMPORTANT: All claims must be honest and verifiable. No fake credentials.
  */
 
 export const EEATSignals = () => {
@@ -10,89 +12,66 @@ export const EEATSignals = () => {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "mainEntity": {
-      "@type": "Person",
-      "name": "SafeOrStolen Security Team",
-      "jobTitle": "Stolen Goods Verification Experts",
-      "description": "Team of security professionals and law enforcement consultants with 50+ years combined experience in theft prevention and verification systems",
-      "alumniOf": [
-        {
-          "@type": "Organization",
-          "name": "FBI Cyber Crimes Division"
-        },
-        {
-          "@type": "Organization",
-          "name": "National Insurance Crime Bureau"
-        }
-      ],
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "description": "Growing verification service focused on protecting buyers and sellers from stolen goods",
       "knowsAbout": [
         "IMEI verification",
         "VIN checking",
-        "Firearm serial number verification",
+        "Serial number verification",
         "Stolen property databases",
-        "Law enforcement databases",
-        "NCIC access protocols"
+        "Marketplace safety"
       ]
     }
   };
 
   const expertiseSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": "https://safeorstolen.com/expertise",
-    "headline": "Verified by Law Enforcement: SafeOrStolen's Expertise in Stolen Goods Detection",
-    "author": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "expertise": "Stolen goods verification and theft prevention"
-    },
+    "@type": "WebPage",
+    "@id": "https://safeorstolen.com/about",
+    "name": "About SafeOrStolen - Stolen Item Verification Service",
     "about": {
       "@type": "Thing",
       "name": "Stolen Property Verification",
-      "description": "Professional verification services backed by law enforcement partnerships and 12+ database integrations"
-    },
-    "reviewedBy": {
-      "@type": "Organization",
-      "name": "National Insurance Crime Bureau",
-      "sameAs": "https://www.nicb.org"
+      "description": "Verification service connecting to multiple databases to check if items are reported stolen"
     }
   };
 
   return (
     <>
       <Helmet>
-        {/* E-E-A-T Meta Tags */}
-        <meta name="expertise" content="stolen goods verification, IMEI checking, VIN verification, firearm serial number lookup" />
-        <meta name="authoritativeness" content="law enforcement database access, trusted verification service" />
-        <meta name="trustworthiness" content="secure encryption, privacy compliant" />
-        <meta name="experience" content="professional verification service, security technology" />
+        {/* E-E-A-T Meta Tags - Honest claims only */}
+        <meta name="expertise" content="stolen goods verification, IMEI checking, VIN verification, serial number lookup" />
+        <meta name="authoritativeness" content="database verification service, growing platform" />
+        <meta name="trustworthiness" content="secure encryption, privacy focused" />
+        <meta name="experience" content="verification service, security technology" />
         
-        {/* Trust Indicators */}
-        <meta name="verified-by" content="Law Enforcement Databases" />
+        {/* Trust Indicators - Verified only */}
+        <meta name="verified-by" content="Multiple verification databases" />
         <meta name="certifications" content="Secure encryption, privacy focused" />
-        <meta name="partnerships" content="Database providers across 50 states" />
+        <meta name="partnerships" content="FasterCapital funded startup" />
         
-        {/* Credentials */}
-        <meta name="founder-credentials" content="Security technology experts" />
-        <meta name="security-team" content="Certified security professionals" />
+        {/* Credentials - Honest */}
+        <meta name="company-status" content="Growing startup, FasterCapital backed" />
+        <meta name="team" content="Security-focused development team" />
         
-        {/* Proof of Expertise */}
-        <meta name="databases-accessed" content="Multiple law enforcement and manufacturer databases" />
-        <meta name="verification-accuracy" content="High accuracy verification system" />
-        <meta name="user-testimonials" content="Growing community of satisfied users" />
+        {/* Proof of Service */}
+        <meta name="databases-accessed" content="Multiple verification databases" />
+        <meta name="verification-method" content="Multi-database cross-reference" />
+        <meta name="user-status" content="Growing community of users" />
         
         {/* Transparency Signals */}
-        <meta name="contact-info" content="support@safeorstolen.com, customer support" />
+        <meta name="contact-info" content="support@safeorstolen.com" />
         <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
         <meta name="terms-of-service" content="https://safeorstolen.com/terms" />
         
-        {/* Competitive E-E-A-T Advantages */}
-        <meta name="vs-checkmend-trust" content="SafeOrStolen: Law enforcement partnerships, CheckMend: No verifiable credentials" />
-        <meta name="vs-imeiinfo-expertise" content="SafeOrStolen: Ex-FBI founders, IMEIinfo: Unknown ownership" />
-        <meta name="unique-expertise" content="Only service with firearm verification expertise and mobile apps" />
+        {/* Competitive Advantages - Factual */}
+        <meta name="unique-features" content="Mobile app with barcode scanning, broader item coverage including firearms" />
+        <meta name="mobile-app" content="Only stolen item verification service with dedicated mobile app" />
         
-        {/* Social Proof */}
-        <meta name="featured-in" content="TechCrunch, Forbes, Security Today, Police Chief Magazine" />
-        <meta name="awards" content="Best Security App 2024, Innovation in Law Enforcement Technology Award" />
+        {/* Verified External Presence */}
+        <meta name="external-profiles" content="Crunchbase, Trustpilot, PRLog, YouTube" />
+        <meta name="funding" content="FasterCapital partnership" />
         
         <script type="application/ld+json">
           {JSON.stringify(authorSchema)}
@@ -102,13 +81,12 @@ export const EEATSignals = () => {
         </script>
       </Helmet>
       
-      {/* Visible Trust Badges - renders on page for user confidence */}
+      {/* Visible Trust Badges - Honest claims only */}
       <div className="hidden">
         <div itemScope itemType="https://schema.org/Organization">
           <meta itemProp="name" content="SafeOrStolen" />
-          <meta itemProp="expertise" content="Stolen goods verification with law enforcement partnerships" />
-          <div itemProp="award">Best Security Application 2024</div>
-          <div itemProp="award">Innovation in Law Enforcement Technology</div>
+          <meta itemProp="description" content="Stolen goods verification service protecting buyers and sellers" />
+          <div itemProp="funder">FasterCapital</div>
         </div>
       </div>
     </>
