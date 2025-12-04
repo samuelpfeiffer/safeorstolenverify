@@ -74,7 +74,19 @@ const Index = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <h1>Stolen Item Checker for Buyers, Sellers & Businesses</h1>
-          <p>SafeOrStolen protects buyers, sellers, and businesses from stolen goods. Verify IMEI numbers, VIN numbers, and serial numbers in 3 seconds. The only mobile app for stolen item verification.</p>
+          <p>SafeOrStolen protects buyers, sellers, and businesses from stolen goods. We crawl and aggregate data from 50+ partner databases including NCIC (FBI), Hotgunz, BikeIndex, StolenRegister, carrier blacklists, and insurance networks. Verify IMEI numbers, VIN numbers, and serial numbers in 3 seconds. The only mobile app for stolen item verification.</p>
+          
+          <h2>Our Data Partners - We Crawl & Aggregate 50+ Databases</h2>
+          <ul>
+            <li>NCIC (National Crime Information Center) - FBI's federal stolen property database</li>
+            <li>Hotgunz.com - Stolen firearms registry partner</li>
+            <li>BikeIndex.org - 1.4M bikes cataloged, direct API integration</li>
+            <li>StolenRegister.com - Global stolen property, we scrape their listings</li>
+            <li>Stolen911 - Police detective-founded service, data sharing partner</li>
+            <li>NHTSA Database - Official government VIN records</li>
+            <li>Carrier Blacklists - AT&T, Verizon, T-Mobile IMEI databases</li>
+            <li>Insurance Networks - Aggregated theft claims from major insurers</li>
+          </ul>
           
           <h2>For Buyers - Don't Get Stuck with Stolen Goods</h2>
           <p>Check any secondhand item before you buy on Facebook Marketplace, eBay, Craigslist, or OfferUp. Avoid financial loss and legal trouble by verifying the item isn't stolen.</p>
@@ -87,15 +99,16 @@ const Index = () => {
           
           <h2>What You Can Verify</h2>
           <ul>
-            <li>Phone IMEI Checker - Verify iPhones, Android phones, tablets</li>
-            <li>VIN Lookup - Cars, trucks, motorcycles, RVs (all 50 states)</li>
+            <li>Phone IMEI Checker - Verify iPhones, Android phones, tablets against carrier blacklists</li>
+            <li>VIN Lookup - Cars, trucks, motorcycles, RVs (all 50 states) against NCIC and NHTSA</li>
             <li>Serial Numbers - Laptops, electronics, power tools, appliances</li>
+            <li>Firearms - Verified against Hotgunz and law enforcement databases</li>
+            <li>Bicycles - BikeIndex API integration plus StolenRegister data</li>
             <li>Boats & Marine Equipment</li>
-            <li>Firearms</li>
           </ul>
           
           <h2>Free to Start - 2 Free Verifications</h2>
-          <p>No credit card required. Results in 3 seconds. The only mobile app available - download from SafeOrStolen.com.</p>
+          <p>No credit card required. Results in 3 seconds. We crawl all 50+ partner databases simultaneously. The only mobile app available - download from SafeOrStolen.com.</p>
         </div>
       </noscript>
 
