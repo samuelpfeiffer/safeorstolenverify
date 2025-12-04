@@ -33,8 +33,9 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId: finalPriceId,
-          isSubscription: false, // This is a one-time payment
-          redirectUrl: window.location.origin,
+          isSubscription: false,
+          // BULLETPROOF: Use hardcoded production URL
+          redirectUrl: 'https://safeorstolen.com',
           planName: finalPlanName,
         },
         headers: {

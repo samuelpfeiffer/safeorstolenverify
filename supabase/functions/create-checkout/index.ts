@@ -4,6 +4,9 @@ import Stripe from "https://esm.sh/stripe@16.0.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
 
+// BULLETPROOF: Always use production URLs - NEVER trust client-provided URLs
+const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
+
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
   if (corsPreFlight) return corsPreFlight;
@@ -57,29 +60,12 @@ serve(async (req) => {
     const body = await req.json();
     const { priceId, serialNumber, itemType, isSubscription, planName } = body;
     
-    // Determine base URL with proper validation
-    let baseUrl = 'https://safeorstolen.com';
-    if (body.redirectUrl && body.redirectUrl.startsWith('https://')) {
-      baseUrl = body.redirectUrl;
-    } else if (body.successUrl && body.successUrl.startsWith('https://')) {
-      // Extract origin from successUrl
-      try {
-        const urlObj = new URL(body.successUrl);
-        baseUrl = urlObj.origin;
-      } catch (e) {
-        console.log(`[CREATE-CHECKOUT] Failed to parse successUrl, using default`);
-      }
-    }
+    // BULLETPROOF URL HANDLING - Always use production URLs
+    const successUrl = `${PRODUCTION_BASE_URL}/dashboard?checkout=success`;
+    const cancelUrl = `${PRODUCTION_BASE_URL}/pricing?checkout=cancelled`;
     
-    // Use provided URLs or construct from base
-    const successUrl = (body.successUrl && body.successUrl.startsWith('https://')) 
-      ? body.successUrl 
-      : `${baseUrl}/dashboard?checkout=success`;
-    const cancelUrl = (body.cancelUrl && body.cancelUrl.startsWith('https://')) 
-      ? body.cancelUrl 
-      : `${baseUrl}/pricing?checkout=cancelled`;
-    
-    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription, baseUrl, successUrl, cancelUrl });
+    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription });
+    console.log(`[CREATE-CHECKOUT] URLs (hardcoded production):`, { successUrl, cancelUrl });
 
     // SECURITY FIX: Validate credit pack purchases
     const VALID_CREDIT_PACKS: Record<string, { credits: number; minPrice: number }> = {
@@ -267,7 +253,7 @@ serve(async (req) => {
     let sessionConfig: any = {
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
-      success_url: successUrl.includes('{CHECKOUT_SESSION_ID}') ? successUrl : `${successUrl}&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${successUrl}&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: cancelUrl,
       metadata: {
         user_id: user.id,
@@ -327,6 +313,11 @@ serve(async (req) => {
 
       const resolvedPrice = await resolvePriceId(priceId, planName);
 
+      // Use verification-success page if we have a verification, otherwise dashboard
+      const oneTimeSuccessUrl = verificationId 
+        ? `${PRODUCTION_BASE_URL}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
+        : `${successUrl}&session_id={CHECKOUT_SESSION_ID}`;
+
       sessionConfig = {
         ...sessionConfig,
         mode: "payment",
@@ -336,9 +327,7 @@ serve(async (req) => {
             quantity: 1,
           },
         ],
-        success_url: verificationId 
-          ? `${baseUrl}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
-          : successUrl.includes('{CHECKOUT_SESSION_ID}') ? successUrl : `${successUrl}&session_id={CHECKOUT_SESSION_ID}`,
+        success_url: oneTimeSuccessUrl,
         metadata: {
           ...sessionConfig.metadata,
           verification_id: verificationId || undefined,

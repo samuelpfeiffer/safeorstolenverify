@@ -79,10 +79,10 @@ export const useSecureStripe = (options: SecureStripeOptions = {}) => {
     }
 
     try {
-      // Prepare request body
+      // Prepare request body - BULLETPROOF: Use hardcoded production URL
       const requestBody = {
         priceId,
-        redirectUrl: window.location.origin,
+        redirectUrl: 'https://safeorstolen.com',
         isSubscription,
         ...(isSubscription ? {} : {
           serialNumber: enableInputValidation && serialValidation?.sanitizedValue ? 
