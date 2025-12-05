@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { toast } from 'sonner';
-import { ExternalLink, CreditCard, Loader2, AlertCircle } from 'lucide-react';
+import { ExternalLink, CreditCard, Loader2, AlertCircle, Shield, Lock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const CheckoutRedirectPage = () => {
@@ -13,6 +13,7 @@ const CheckoutRedirectPage = () => {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [stripeUrl, setStripeUrl] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string>('');
+  const [redirectAttempted, setRedirectAttempted] = useState(false);
 
   const planName = searchParams.get('planName');
   const isSubscription = searchParams.get('isSubscription') === 'true';
@@ -30,8 +31,8 @@ const CheckoutRedirectPage = () => {
         return;
       }
 
-      // Missing price
-      if (!priceId) {
+      // Need at least priceId OR planName
+      if (!priceId && !planName) {
         setErrorMsg('Missing price information');
         setStatus('error');
         return;
@@ -53,13 +54,18 @@ const CheckoutRedirectPage = () => {
         setStripeUrl(data.url);
         setStatus('ready');
 
-        // Try auto-redirect for non-iframe
-        try {
-          if (window.self === window.top) {
-            window.location.href = data.url;
-          }
-        } catch (e) {
-          // Iframe - button will be shown
+        // Aggressive auto-redirect for better conversion
+        if (!redirectAttempted) {
+          setRedirectAttempted(true);
+          setTimeout(() => {
+            try {
+              // Try same-window redirect first (best UX)
+              window.location.href = data.url;
+            } catch (e) {
+              // Fallback - button will be shown
+              console.log('Auto-redirect blocked, showing button');
+            }
+          }, 100);
         }
       } catch (err: any) {
         console.error('Checkout error:', err);
@@ -70,7 +76,7 @@ const CheckoutRedirectPage = () => {
     };
 
     createCheckout();
-  }, [user, session, authLoading, priceId, planName, isSubscription, navigate, searchParams]);
+  }, [user, session, authLoading, priceId, planName, isSubscription, navigate, searchParams, redirectAttempted]);
 
   // ALWAYS render something visible
   return (
@@ -99,7 +105,7 @@ const CheckoutRedirectPage = () => {
               <p className="text-muted-foreground">Click below to proceed to secure checkout</p>
             </div>
             <Button asChild size="lg" className="w-full text-lg py-6">
-              <a href={stripeUrl} target="_blank" rel="noopener noreferrer">
+              <a href={stripeUrl}>
                 Continue to Stripe
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>
