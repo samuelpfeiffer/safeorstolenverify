@@ -222,6 +222,7 @@ const GSCConnectPage = lazy(() => import('@/pages/admin/GSCConnectPage'));
 const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
 const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
 const BatchIndexPage = lazy(() => import('@/pages/admin/BatchIndexPage'));
+const StripeAdminPage = lazy(() => import('@/pages/admin/StripeAdminPage'));
 
 export const AppRoutes = () => {
   return (
@@ -584,6 +585,7 @@ export const AppRoutes = () => {
         <Route path="/admin/gsc-callback" element={<GSCCallbackPage />} />
         <Route path="/admin/indexnow" element={<TriggerIndexNowPage />} />
         <Route path="/admin/batch-index" element={<BatchIndexPage />} />
+        <Route path="/admin/stripe" element={<StripeAdminPage />} />
         
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />
