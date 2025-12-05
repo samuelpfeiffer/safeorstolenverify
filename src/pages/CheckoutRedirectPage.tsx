@@ -88,9 +88,9 @@ const CheckoutRedirectPage = () => {
           <div className="text-center space-y-4">
             <Loader2 className="h-12 w-12 animate-spin text-primary mx-auto" />
             <h2 className="text-xl font-semibold text-foreground">
-              {authLoading ? 'Checking authentication...' : 'Preparing checkout...'}
+              {authLoading ? 'Checking authentication...' : 'Preparing secure checkout...'}
             </h2>
-            <p className="text-muted-foreground">Please wait</p>
+            <p className="text-muted-foreground">This only takes a moment</p>
           </div>
         )}
 
@@ -101,18 +101,41 @@ const CheckoutRedirectPage = () => {
               <CreditCard className="h-8 w-8 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">Complete Your Purchase</h2>
-              <p className="text-muted-foreground">Click below to proceed to secure checkout</p>
+              <h2 className="text-2xl font-bold text-foreground mb-2">Almost There!</h2>
+              <p className="text-muted-foreground">
+                Click below to complete your {planName || 'subscription'} securely with Stripe
+              </p>
             </div>
-            <Button asChild size="lg" className="w-full text-lg py-6">
+            
+            {/* Trust indicators */}
+            <div className="flex justify-center gap-4 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1">
+                <Lock className="w-3 h-3" /> SSL Encrypted
+              </span>
+              <span className="flex items-center gap-1">
+                <Shield className="w-3 h-3" /> Secure Payment
+              </span>
+              <span className="flex items-center gap-1">
+                <CheckCircle className="w-3 h-3" /> Instant Access
+              </span>
+            </div>
+            
+            <Button asChild size="lg" className="w-full text-lg py-6 bg-gradient-to-r from-sos-lime to-sos-orange hover:opacity-90 text-black font-bold">
               <a href={stripeUrl}>
-                Continue to Stripe
+                Complete Secure Checkout
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <p className="text-sm text-muted-foreground">
-              🔒 Secure payment powered by Stripe
-            </p>
+            
+            <div className="space-y-2">
+              <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+                <Lock className="w-4 h-4" />
+                Powered by Stripe • 256-bit encryption
+              </p>
+              <p className="text-xs text-muted-foreground">
+                30-day money-back guarantee • Cancel anytime
+              </p>
+            </div>
           </div>
         )}
 
@@ -122,11 +145,16 @@ const CheckoutRedirectPage = () => {
             <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto">
               <AlertCircle className="h-8 w-8 text-destructive" />
             </div>
-            <h2 className="text-xl font-semibold text-foreground">Checkout Error</h2>
+            <h2 className="text-xl font-semibold text-foreground">Something went wrong</h2>
             <p className="text-muted-foreground">{errorMsg}</p>
-            <Button onClick={() => navigate('/pricing')} variant="outline">
-              Return to Pricing
-            </Button>
+            <div className="space-y-2">
+              <Button onClick={() => window.location.reload()} className="w-full">
+                Try Again
+              </Button>
+              <Button onClick={() => navigate('/pricing')} variant="outline" className="w-full">
+                Return to Pricing
+              </Button>
+            </div>
           </div>
         )}
 
