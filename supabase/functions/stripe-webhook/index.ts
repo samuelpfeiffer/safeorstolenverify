@@ -11,6 +11,116 @@ serve(async (req) => {
   if (corsPreFlight) return corsPreFlight;
   
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
+
+  // DIAGNOSTIC MODE: GET request returns status and syncs stuck payments
+  if (req.method === 'GET') {
+    try {
+      const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
+      const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
+      const supabaseUrl = Deno.env.get("SUPABASE_URL");
+      const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+      if (!stripeSecretKey || !supabaseUrl || !supabaseServiceKey) {
+        return new Response(JSON.stringify({ error: "Missing configuration" }), {
+          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" }
+        });
+      }
+
+      const stripe = new Stripe(stripeSecretKey, { apiVersion: "2023-10-16" });
+      const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+      // Get recent checkout sessions from Stripe
+      const sessions = await stripe.checkout.sessions.list({ limit: 20 });
+      
+      // Get pending purchases from our DB
+      const { data: pendingPurchases } = await supabase
+        .from('purchases')
+        .select('*')
+        .eq('status', 'pending')
+        .order('created_at', { ascending: false });
+
+      // Sync each pending purchase with Stripe's actual status
+      const syncResults = [];
+      for (const purchase of pendingPurchases || []) {
+        const stripeSession = sessions.data.find(s => s.id === purchase.stripe_session_id);
+        
+        if (stripeSession && stripeSession.payment_status === 'paid' && purchase.status === 'pending') {
+          // SYNC: Update our DB to match Stripe's paid status
+          await supabase
+            .from('purchases')
+            .update({ 
+              status: 'completed',
+              stripe_customer_id: stripeSession.customer as string,
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', purchase.id);
+          
+          // Update user profile for subscriptions
+          if (stripeSession.mode === 'subscription' && stripeSession.subscription) {
+            const subscription = await stripe.subscriptions.retrieve(stripeSession.subscription as string);
+            const customer = await stripe.customers.retrieve(stripeSession.customer as string);
+            
+            if (!customer.deleted) {
+              await supabase
+                .from('profiles')
+                .update({
+                  stripe_customer_id: customer.id,
+                  subscription_tier: 'starter',
+                  subscription_end: new Date(subscription.current_period_end * 1000).toISOString(),
+                  is_trial_expired: true,
+                  updated_at: new Date().toISOString()
+                })
+                .eq('id', purchase.user_id);
+            }
+          }
+          
+          syncResults.push({
+            session_id: purchase.stripe_session_id,
+            action: 'SYNCED',
+            customer: stripeSession.customer_details?.email
+          });
+        } else if (stripeSession) {
+          syncResults.push({
+            session_id: purchase.stripe_session_id,
+            stripe_status: stripeSession.payment_status,
+            action: stripeSession.payment_status === 'paid' ? 'ALREADY_SYNCED' : 'UNPAID'
+          });
+        }
+      }
+
+      // Check webhook endpoints in Stripe
+      let webhookEndpoints = [];
+      try {
+        const endpoints = await stripe.webhookEndpoints.list();
+        webhookEndpoints = endpoints.data.map(e => ({
+          url: e.url,
+          status: e.status,
+          events: e.enabled_events?.length || 0
+        }));
+      } catch (e) {
+        console.log("Could not fetch webhook endpoints");
+      }
+
+      return new Response(JSON.stringify({
+        status: 'ok',
+        config: {
+          stripe_key: stripeSecretKey?.startsWith('sk_live_') ? 'LIVE' : 'TEST',
+          webhook_secret: webhookSecret?.startsWith('whsec_') ? 'CONFIGURED' : 'MISSING',
+          expected_url: 'https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/stripe-webhook'
+        },
+        webhook_endpoints: webhookEndpoints,
+        pending_count: pendingPurchases?.length || 0,
+        synced: syncResults.filter(r => r.action === 'SYNCED').length,
+        sync_results: syncResults
+      }, null, 2), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" }
+      });
+    } catch (error) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" }
+      });
+    }
+  }
   
   try {
 
