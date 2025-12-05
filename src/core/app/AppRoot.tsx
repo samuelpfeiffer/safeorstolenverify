@@ -51,11 +51,15 @@ const queryClient = new QueryClient({
  */
 /**
  * Auth-aware content wrapper - handles loading states
+ * Checkout routes bypass loading screen for faster payment flow
  */
 const AuthAwareContent: React.FC = () => {
   const { loading, initialized } = useAuth();
   
-  if (!initialized || loading) {
+  // Bypass loading screen for checkout routes - they handle their own auth
+  const isCheckoutRoute = window.location.pathname.includes('checkout');
+  
+  if (!isCheckoutRoute && (!initialized || loading)) {
     return <AppLoadingScreen />;
   }
   
