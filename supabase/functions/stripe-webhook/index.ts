@@ -212,14 +212,16 @@ serve(async (req) => {
         case "checkout.session.completed": {
           const session = event.data.object;
           console.log(`Processing checkout completion for session ${session.id}`);
+          console.log(`Session mode: ${session.mode}, payment_status: ${session.payment_status}`);
+          console.log(`Customer email: ${session.customer_details?.email}, Customer ID: ${session.customer}`);
           
           // REVENUE FIX: Grant credits for credit pack purchases
           const metadata = session.metadata || {};
           const purchaseType = metadata.purchase_type || 'subscription';
+          const userId = metadata.user_id;
           
           if (purchaseType === 'credit_pack') {
             const creditsAmount = parseInt(metadata.credits_amount || '0');
-            const userId = metadata.user_id;
             
             if (creditsAmount > 0 && userId) {
               console.log(`Granting ${creditsAmount} credits to user ${userId}`);
@@ -255,6 +257,88 @@ serve(async (req) => {
                   stripe_session_id: session.id
                 });
               }
+            }
+          }
+          
+          // CRITICAL FIX: Update user profile for ALL successful checkouts
+          const customerEmail = session.customer_details?.email?.toLowerCase();
+          
+          if (session.payment_status === 'paid') {
+            console.log(`Payment confirmed paid, updating user profile...`);
+            
+            // Try to find user by metadata user_id first, then by email
+            let profileId = userId;
+            
+            if (!profileId && customerEmail) {
+              console.log(`Looking up profile by email: ${customerEmail}`);
+              const { data: profileByEmail } = await supabaseClient
+                .from('profiles')
+                .select('id')
+                .ilike('email', customerEmail) // Case-insensitive match
+                .single();
+              
+              if (profileByEmail) {
+                profileId = profileByEmail.id;
+                console.log(`Found profile by email: ${profileId}`);
+              }
+            }
+            
+            if (profileId) {
+              // Determine tier from session
+              let subscriptionTier = 'starter';
+              let monthlyLimit = 15;
+              
+              if (session.mode === 'subscription' && session.subscription) {
+                // Get subscription details
+                const subscription = await stripe.subscriptions.retrieve(session.subscription as string);
+                const priceId = subscription.items.data[0]?.price.id;
+                
+                const TIER_MAPPING: Record<string, { tier: string; limit: number | null }> = {
+                  'price_starter_monthly_499': { tier: 'starter', limit: 15 },
+                  'price_personal_monthly_999': { tier: 'personal', limit: 50 },
+                  'price_professional_monthly_2999': { tier: 'professional', limit: null },
+                  'price_enterprise_custom': { tier: 'enterprise', limit: null },
+                  "price_1Rz7rm2eGaMDLFHojH9Vch1Y": { tier: 'starter', limit: 15 },
+                  "price_1Rz7xu2eGaMDLFHoqGT0Pyjk": { tier: 'personal', limit: 50 },
+                  "price_1Rz80X2eGaMDLFHozeZyChte": { tier: 'professional', limit: null },
+                  "price_1Rz83i2eGaMDLFHonAmu86lS": { tier: 'professional', limit: null }
+                };
+                
+                const tierInfo = TIER_MAPPING[priceId] || { tier: 'starter', limit: 15 };
+                subscriptionTier = tierInfo.tier;
+                monthlyLimit = tierInfo.limit;
+                
+                console.log(`Subscription tier determined: ${subscriptionTier}, limit: ${monthlyLimit}`);
+              } else if (session.mode === 'payment') {
+                // One-time payment - grant single verification credit
+                subscriptionTier = 'pay_per_use';
+                monthlyLimit = 1;
+              }
+              
+              // Update the profile
+              const { error: profileUpdateError } = await supabaseClient
+                .from('profiles')
+                .update({
+                  stripe_customer_id: session.customer as string,
+                  subscription_tier: subscriptionTier,
+                  monthly_verification_limit: monthlyLimit,
+                  verifications_used_this_month: 0,
+                  billing_cycle_start_date: new Date().toISOString(),
+                  is_trial_expired: true,
+                  subscription_end: session.mode === 'subscription' && session.subscription
+                    ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
+                    : null,
+                  updated_at: new Date().toISOString()
+                })
+                .eq('id', profileId);
+              
+              if (profileUpdateError) {
+                console.error(`Error updating profile: ${profileUpdateError.message}`);
+              } else {
+                console.log(`SUCCESS: Updated profile ${profileId} with tier ${subscriptionTier}`);
+              }
+            } else {
+              console.error(`CRITICAL: Could not find profile for checkout. Email: ${customerEmail}, UserId: ${userId}`);
             }
           }
           
@@ -371,29 +455,43 @@ serve(async (req) => {
             
             console.log(`Subscription interval: ${interval}, tier: ${subscriptionTier}`);
             
-            // REVENUE FIX: Update profiles table with subscription_interval
-            const { data: profile } = await supabaseClient
+            // REVENUE FIX: Update profiles table with subscription_interval (case-insensitive)
+            const customerEmail = customer.email?.toLowerCase();
+            console.log(`Looking up profile for subscription update. Email: ${customerEmail}`);
+            
+            const { data: profile, error: profileLookupError } = await supabaseClient
               .from('profiles')
               .select('id')
-              .eq('email', customer.email)
+              .ilike('email', customerEmail || '') // Case-insensitive match
               .single();
             
+            if (profileLookupError) {
+              console.error(`Profile lookup error: ${profileLookupError.message}`);
+            }
+            
             if (profile) {
-              await supabaseClient
+              const { error: updateError } = await supabaseClient
                 .from('profiles')
                 .update({
+                  stripe_customer_id: customer.id,
                   subscription_tier: subscriptionTier,
                   subscription_interval: interval,
                   subscription_end: new Date(subscription.current_period_end * 1000).toISOString(),
                   monthly_verification_limit: monthlyLimit,
                   verifications_used_this_month: 0,
                   billing_cycle_start_date: new Date().toISOString(),
-                  is_trial_expired: true, // End trial when subscription starts
+                  is_trial_expired: true,
                   updated_at: new Date().toISOString()
                 })
                 .eq('id', profile.id);
               
-              console.log(`Updated profile with tier: ${subscriptionTier}, limit: ${monthlyLimit}`);
+              if (updateError) {
+                console.error(`Profile update error: ${updateError.message}`);
+              } else {
+                console.log(`SUCCESS: Updated profile ${profile.id} with tier: ${subscriptionTier}, limit: ${monthlyLimit}`);
+              }
+            } else {
+              console.error(`CRITICAL: No profile found for email: ${customerEmail}`);
             }
             
             // Update subscriber record with error handling
