@@ -6,6 +6,8 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
+import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
+import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 
 const AboutPage = () => {
   const dataPartners = [
@@ -305,6 +307,12 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Why Choose SafeOrStolen */}
+        <WhyChooseSafeOrStolen />
+
+        {/* Testimonials */}
+        <CompactTestimonials />
       </div>
     </>
   );
