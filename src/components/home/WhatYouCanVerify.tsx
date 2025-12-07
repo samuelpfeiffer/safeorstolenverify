@@ -10,6 +10,7 @@ import verificationSuccess from '@/assets/thumbnails/verification-success.jpg';
 import securityShield from '@/assets/thumbnails/security-shield.jpg';
 import aiPowered from '@/assets/thumbnails/ai-powered.jpg';
 import marketplaceSafety from '@/assets/thumbnails/marketplace-safety.jpg';
+import firearmsVerification from '@/assets/firearms-verification.jpg';
 
 export const WhatYouCanVerify = () => {
   const verificationTypes = [
@@ -58,7 +59,7 @@ export const WhatYouCanVerify = () => {
       items: ['Handguns', 'Rifles', 'Shotguns', 'Antique firearms', 'Accessories'],
       link: '/firearms-check',
       badge: 'Exclusive',
-      image: securityShield
+      image: firearmsVerification
     },
     {
       icon: Bike,
