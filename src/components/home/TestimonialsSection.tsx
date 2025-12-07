@@ -71,7 +71,7 @@ export const TestimonialsSection = () => {
             Trusted by Smart Buyers & Sellers
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Join thousands of buyers, sellers, and businesses who verify items every day on Facebook Marketplace, OfferUp, Craigslist, and eBay
+            Our growing community of buyers, sellers, and businesses verifying items on Facebook Marketplace, OfferUp, Craigslist, and eBay
           </p>
         </div>
 
@@ -121,23 +121,23 @@ export const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Trust Stats */}
+        {/* Trust Stats - Honest Early-Stage Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto mt-20 pt-12 border-t border-border">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">4.8/5</div>
-            <div className="text-sm text-muted-foreground">Average Rating</div>
+            <div className="text-4xl font-bold text-primary mb-2">4.1/5</div>
+            <div className="text-sm text-muted-foreground">Trustpilot Rating</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">100K+</div>
-            <div className="text-sm text-muted-foreground">Active Users</div>
+            <div className="text-4xl font-bold text-primary mb-2">New</div>
+            <div className="text-sm text-muted-foreground">Growing Daily</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">50M+</div>
-            <div className="text-sm text-muted-foreground">Items Verified</div>
+            <div className="text-4xl font-bold text-primary mb-2">150+</div>
+            <div className="text-sm text-muted-foreground">Database Sources</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">98%</div>
-            <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
+            <div className="text-4xl font-bold text-primary mb-2">3 sec</div>
+            <div className="text-sm text-muted-foreground">Verification Time</div>
           </div>
         </div>
       </div>
