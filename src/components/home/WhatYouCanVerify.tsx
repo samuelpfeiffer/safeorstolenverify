@@ -11,6 +11,9 @@ import securityShield from '@/assets/thumbnails/security-shield.jpg';
 import aiPowered from '@/assets/thumbnails/ai-powered.jpg';
 import marketplaceSafety from '@/assets/thumbnails/marketplace-safety.jpg';
 import firearmsVerification from '@/assets/firearms-verification.jpg';
+import ebikesEscooters from '@/assets/thumbnails/ebikes-escooters.jpg';
+import appliances from '@/assets/thumbnails/appliances.jpg';
+import powerTools from '@/assets/thumbnails/power-tools.jpg';
 
 export const WhatYouCanVerify = () => {
   const verificationTypes = [
@@ -68,7 +71,7 @@ export const WhatYouCanVerify = () => {
       description: 'Check electric bikes and e-scooters worth $1,500-$10,000. Verify Rad Power, Trek, Specialized, Aventon eBikes against BikeIndex and police databases.',
       items: ['Rad Power eBikes', 'Trek Verve+', 'Specialized Turbo', 'Aventon Level', 'E-scooters'],
       link: '/check-ebike',
-      image: marketplaceSafety
+      image: ebikesEscooters
     },
     {
       icon: Laptop,
@@ -77,7 +80,7 @@ export const WhatYouCanVerify = () => {
       description: 'Verify washers, dryers, refrigerators, stoves worth $500-$5,000. Check Samsung, LG, Whirlpool, GE appliances against theft databases.',
       items: ['Washers & Dryers', 'Refrigerators', 'Stoves & Ovens', 'Dishwashers', 'Smart appliances'],
       link: '/check-appliances',
-      image: verificationSuccess
+      image: appliances
     },
     {
       icon: Laptop,
@@ -86,7 +89,7 @@ export const WhatYouCanVerify = () => {
       description: 'Check power tools worth $100-$5,000. Verify DeWalt, Milwaukee, Makita, Bosch tools - the #1 most stolen item from construction sites.',
       items: ['DeWalt tools', 'Milwaukee M18', 'Makita combo kits', 'Bosch power tools', 'Generators'],
       link: '/check-tools',
-      image: securityShield
+      image: powerTools
     },
     {
       icon: Shield,
