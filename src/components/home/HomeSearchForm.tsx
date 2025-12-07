@@ -19,23 +19,23 @@ export const HomeSearchForm = () => {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      {/* Clear labels for what can be entered */}
-      <div className="flex flex-wrap justify-center gap-3 mb-4">
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
-          <Smartphone className="h-4 w-4" />
+      {/* Clear labels for what can be entered - mobile optimized */}
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 mb-4 px-2">
+        <div className="flex items-center justify-center gap-1 px-2 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-medium text-primary">
+          <Smartphone className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           IMEI
         </div>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
-          <Car className="h-4 w-4" />
+        <div className="flex items-center justify-center gap-1 px-2 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-medium text-primary">
+          <Car className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           VIN
         </div>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
-          <CreditCard className="h-4 w-4" />
-          License Plate
+        <div className="flex items-center justify-center gap-1 px-2 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-medium text-primary">
+          <CreditCard className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+          Plate
         </div>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
-          <Hash className="h-4 w-4" />
-          Serial Number
+        <div className="flex items-center justify-center gap-1 px-2 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs sm:text-sm font-medium text-primary">
+          <Hash className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+          Serial #
         </div>
       </div>
 
