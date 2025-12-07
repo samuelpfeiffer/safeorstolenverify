@@ -138,22 +138,53 @@ export const Footer: React.FC = () => {
 
         <Separator className="my-8 bg-sos-orange/20" />
 
-        {/* External Profiles */}
+        {/* Social Media & External Profiles Section */}
         <div className="mb-8">
-          <p className="text-sm text-gray-400 mb-3">Find us on:</p>
+          <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect With Us</p>
           <div className="flex flex-wrap gap-3">
-            {externalLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1"
-              >
-                {link.name}
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            ))}
+            {/* YouTube Button */}
+            <a
+              href="https://www.youtube.com/@safeorstolen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium text-sm"
+            >
+              <Youtube className="h-5 w-5" />
+              YouTube
+            </a>
+            
+            {/* Crunchbase Button */}
+            <a
+              href="https://www.crunchbase.com/organization/safe-or-stolen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium text-sm"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Crunchbase
+            </a>
+            
+            {/* Trustpilot Button */}
+            <a
+              href="https://www.trustpilot.com/review/safeorstolen.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-medium text-sm"
+            >
+              <Star className="h-4 w-4" />
+              Trustpilot
+            </a>
+            
+            {/* PRLog Button */}
+            <a
+              href="https://biz.prlog.org/SafeOrStolen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors font-medium text-sm"
+            >
+              <ExternalLink className="h-4 w-4" />
+              PRLog
+            </a>
           </div>
         </div>
 
