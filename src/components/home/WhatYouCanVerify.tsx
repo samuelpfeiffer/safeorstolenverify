@@ -4,16 +4,16 @@ import { Badge } from '@/components/ui/badge';
 import { Smartphone, Car, Laptop, Bike, Shield, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import mobileAppPreview from '@/assets/thumbnails/mobile-app-preview.jpg';
-import vinCheck from '@/assets/thumbnails/vin-check.jpg';
-import verificationSuccess from '@/assets/thumbnails/verification-success.jpg';
-import securityShield from '@/assets/thumbnails/security-shield.jpg';
-import aiPowered from '@/assets/thumbnails/ai-powered.jpg';
-import marketplaceSafety from '@/assets/thumbnails/marketplace-safety.jpg';
 import firearmsVerification from '@/assets/firearms-verification.jpg';
 import ebikesEscooters from '@/assets/thumbnails/ebikes-escooters.jpg';
 import appliances from '@/assets/thumbnails/appliances.jpg';
 import powerTools from '@/assets/thumbnails/power-tools.jpg';
+import phonesTablets from '@/assets/thumbnails/phones-tablets.jpg';
+import electronicsLaptops from '@/assets/thumbnails/electronics-laptops.jpg';
+import bicycles from '@/assets/thumbnails/bicycles.jpg';
+import jewelryWatches from '@/assets/thumbnails/jewelry-watches.jpg';
+import boatsWatercraft from '@/assets/thumbnails/boats-watercraft.jpg';
+import vehiclesCars from '@/assets/thumbnails/vehicles-cars.jpg';
 
 export const WhatYouCanVerify = () => {
   const verificationTypes = [
@@ -24,7 +24,7 @@ export const WhatYouCanVerify = () => {
       description: 'Verify any iPhone, Samsung, Google Pixel, or Android device. Check blacklist status, carrier lock, and theft reports across global databases.',
       items: ['iPhones (all models)', 'Samsung Galaxy', 'Google Pixel', 'OnePlus, Xiaomi, Huawei', 'iPads with cellular'],
       link: '/imei-checker',
-      image: mobileAppPreview
+      image: phonesTablets
     },
     {
       icon: Car,
@@ -34,7 +34,7 @@ export const WhatYouCanVerify = () => {
       items: ['Cars & Trucks', 'Motorcycles', 'RVs & Trailers', 'ATVs & Boats', 'Classic vehicles'],
       link: '/vin-checker',
       badge: 'Carfax Alternative',
-      image: vinCheck
+      image: vehiclesCars
     },
     {
       icon: Laptop,
@@ -43,7 +43,7 @@ export const WhatYouCanVerify = () => {
       description: 'Verify laptops, cameras, gaming consoles, smartwatches, drones. Check against police databases and manufacturer records.',
       items: ['Laptops (Dell, HP, MacBook)', 'Cameras (Canon, Nikon, Sony)', 'Gaming consoles', 'Smartwatches', 'Drones & Tech'],
       link: '/serial-number-checker',
-      image: verificationSuccess
+      image: electronicsLaptops
     },
     {
       icon: Bike,
@@ -52,7 +52,7 @@ export const WhatYouCanVerify = () => {
       description: 'Check bike frame numbers against BikeIndex, 529 Garage, and police stolen bike registries. Essential for expensive road and mountain bikes.',
       items: ['Road bikes', 'Mountain bikes', 'E-bikes', 'BMX & Fixed gear', 'Vintage bicycles'],
       link: '/serial-number-checker',
-      image: marketplaceSafety
+      image: bicycles
     },
     {
       icon: Shield,
@@ -99,7 +99,7 @@ export const WhatYouCanVerify = () => {
       items: ['Rolex watches', 'GIA diamonds', 'Designer jewelry', 'Engagement rings', 'Gold jewelry'],
       link: '/check-jewelry',
       badge: 'High Value',
-      image: aiPowered
+      image: jewelryWatches
     },
     {
       icon: Car,
@@ -109,7 +109,7 @@ export const WhatYouCanVerify = () => {
       items: ['Boats & Yachts', 'Jet Skis', 'Sailboats', 'Fishing boats', 'Personal watercraft'],
       link: '/check-boat',
       badge: 'Marine Theft',
-      image: vinCheck
+      image: boatsWatercraft
     }
   ];
 
