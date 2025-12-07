@@ -1,21 +1,14 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
-import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
-import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
-import { CompactTestimonials } from '@/components/home/CompactTestimonials';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
-// ExitIntentPopup is now global in AppRoot
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/good_photo_for_sos-8.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
-import { EmailCapture } from '@/components/marketing/EmailCapture';
-import { ViralShareWidget, ReferralProgram } from '@/components/growth';
 
 const Index = () => {
   return (
@@ -231,84 +224,32 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Press Section */}
-        <PressMediaSection />
-
         {/* What You Can Verify */}
         <WhatYouCanVerify />
 
-        {/* Like Carfax Comparison */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Like Carfax, But For Everything</h2>
-                <p className="text-lg text-muted-foreground">
-                  Carfax checks car history. We check ANY item's history.
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="font-bold text-xl mb-4">Carfax</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>✓ Vehicles only</li>
-                      <li>✓ VIN checks</li>
-                      <li>✓ Charges per report</li>
-                      <li>✗ No mobile app</li>
-                      <li>✗ Limited item types</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-primary border-2">
-                  <CardContent className="pt-6">
-                    <h3 className="font-bold text-xl mb-4">SafeOrStolen</h3>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li>✓ Phones, vehicles, boats, firearms, electronics</li>
-                      <li>✓ IMEI, VIN, Serial, License Plates</li>
-                      <li>✓ 2 free checks + unlimited plans</li>
-                      <li>✓ Mobile app with barcode scanning</li>
-                      <li>✓ All 50 states + international</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-              
-              <div className="text-center mt-8">
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/compare">
-                    See Full Comparison vs CheckMEND, IMEI.info, Swappa & More →
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us */}
-        <WhyChooseSafeOrStolen />
-
-        {/* Email Capture - List Building */}
-        <section className="py-8">
-          <div className="container mx-auto px-4">
-            <EmailCapture />
-          </div>
-        </section>
-
-        {/* Referral & Viral Sharing */}
+        {/* Quick Trust Stats */}
         <section className="py-8 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-              <ReferralProgram />
-              <ViralShareWidget />
+            <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div className="text-2xl font-bold text-primary">150+</div>
+                <div className="text-sm text-muted-foreground">Database Sources</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">3 sec</div>
+                <div className="text-sm text-muted-foreground">Verification Time</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">50</div>
+                <div className="text-sm text-muted-foreground">US States</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">Free</div>
+                <div className="text-sm text-muted-foreground">2 Trial Checks</div>
+              </div>
             </div>
           </div>
         </section>
-
-        {/* Testimonials */}
-        <CompactTestimonials />
 
         {/* Mobile App CTA */}
         <CompactMobileAppCTA />
