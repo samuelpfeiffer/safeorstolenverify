@@ -16,6 +16,12 @@ const LicensePlateLookupPage = () => {
   const [selectedState, setSelectedState] = useState('');
   const [plateNumber, setPlateNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Optional cross-reference fields to detect plate swapping
+  const [vehicleMake, setVehicleMake] = useState('');
+  const [vehicleModel, setVehicleModel] = useState('');
+  const [vehicleColor, setVehicleColor] = useState('');
+  const [showCrossRef, setShowCrossRef] = useState(false);
 
   const handleVerify = () => {
     if (!plateNumber.trim()) {
@@ -29,7 +35,18 @@ const LicensePlateLookupPage = () => {
     
     setIsLoading(true);
     const stateName = US_STATES.find(s => s.code === selectedState)?.name || selectedState;
-    navigate(`/verify?q=${encodeURIComponent(plateNumber)}&type=plate&state=${selectedState}`);
+    
+    // Build query with optional cross-reference data
+    const params = new URLSearchParams({
+      q: plateNumber,
+      type: 'plate',
+      state: selectedState,
+    });
+    if (vehicleMake) params.set('make', vehicleMake);
+    if (vehicleModel) params.set('model', vehicleModel);
+    if (vehicleColor) params.set('color', vehicleColor);
+    
+    navigate(`/verify?${params.toString()}`);
     toast.success(`Searching ${stateName} vehicle databases...`);
   };
 
@@ -131,6 +148,68 @@ const LicensePlateLookupPage = () => {
                   />
                 </div>
 
+                {/* Cross-Reference Toggle */}
+                <div className="border-t border-border pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowCrossRef(!showCrossRef)}
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors w-full justify-between"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Shield className="h-4 w-4" />
+                      Cross-Reference Vehicle Details (Detect Plate Swapping)
+                    </span>
+                    <span className="text-xs bg-muted px-2 py-0.5 rounded">{showCrossRef ? 'Hide' : 'Optional'}</span>
+                  </button>
+                  
+                  {showCrossRef && (
+                    <div className="mt-4 p-4 rounded-lg bg-muted/50 border border-border space-y-4">
+                      <p className="text-xs text-muted-foreground">
+                        <strong>Why cross-reference?</strong> Criminals steal plates and put them on different vehicles. 
+                        If the plate is registered to a Honda Civic but you're looking at a Ford F-150, it's likely stolen plates.
+                      </p>
+                      
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-1">
+                          <Label htmlFor="make" className="text-xs">Vehicle Make</Label>
+                          <Input
+                            id="make"
+                            placeholder="e.g., Honda, Ford"
+                            value={vehicleMake}
+                            onChange={(e) => setVehicleMake(e.target.value)}
+                            className="h-10 bg-background"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <Label htmlFor="model" className="text-xs">Model</Label>
+                          <Input
+                            id="model"
+                            placeholder="e.g., Civic, F-150"
+                            value={vehicleModel}
+                            onChange={(e) => setVehicleModel(e.target.value)}
+                            className="h-10 bg-background"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-1">
+                        <Label htmlFor="color" className="text-xs">Color</Label>
+                        <Input
+                          id="color"
+                          placeholder="e.g., Black, Silver, Red"
+                          value={vehicleColor}
+                          onChange={(e) => setVehicleColor(e.target.value)}
+                          className="h-10 bg-background"
+                        />
+                      </div>
+                      
+                      <p className="text-xs text-green-600 dark:text-green-400 flex items-center gap-1">
+                        <CheckCircle2 className="h-3 w-3" />
+                        We'll alert you if the registered vehicle doesn't match what you entered
+                      </p>
+                    </div>
+                  )}
+                </div>
                 {/* Verify Button */}
                 <Button 
                   onClick={handleVerify}
