@@ -58,11 +58,12 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/verification-hub', to: '/verify', permanent: true },
 
   // ===== LEGACY CHECKER URLS =====
-  { from: '/imei-checker', to: '/imei-check', permanent: true },
-  { from: '/vin-verification', to: '/check-car', permanent: true },
-  { from: '/serial-number-checker', to: '/verify', permanent: true },
+  // Note: /imei-checker, /vin-checker, /serial-number-checker are real pages - DO NOT redirect
+  { from: '/imei-check', to: '/imei-checker', permanent: true },
+  { from: '/vin-verification', to: '/vin-checker', permanent: true },
+  { from: '/vin-check', to: '/vin-checker', permanent: true },
   { from: '/stolen-item-checker', to: '/verify', permanent: true },
-  { from: '/imei', to: '/check-phone', permanent: true },
+  { from: '/imei', to: '/imei-checker', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
