@@ -27,7 +27,7 @@ import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
-import { ExitIntentPopup, SocialProofBanner, StickyMobileAppCTA, UrgencyBanner } from '@/components/growth';
+import { ExitIntentPopup, SocialProofBanner, StickyMobileAppCTA, UrgencyBanner, LiveActivityToast, ViralShareWidget } from '@/components/growth';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -95,6 +95,7 @@ const AuthAwareContent: React.FC = () => {
         <ExitIntentPopup />
         <SocialProofBanner />
         <StickyMobileAppCTA />
+        <LiveActivityToast />
         <Toaster />
       </PWAProvider>
     </GA4Provider>

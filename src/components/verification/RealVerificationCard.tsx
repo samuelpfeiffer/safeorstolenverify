@@ -18,6 +18,7 @@ import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
 import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
 import { CertifiedSafeBadge } from './CertifiedSafeBadge';
 import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
+import { ShareAfterVerification } from '@/components/growth';
 
 interface RealVerificationCardProps {
   verificationResult?: VerificationResult;
@@ -304,6 +305,13 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
           )}
         </CardContent>
       </Card>
+
+      {/* Viral Share Widget */}
+      <ShareAfterVerification 
+        itemType={itemTypeDisplay}
+        result={verificationResult.status === 'safe' ? 'safe' : verificationResult.status === 'unknown' ? 'unknown' : 'flagged'}
+        serialNumber={verificationResult.serial_number}
+      />
     </div>
   );
 };
