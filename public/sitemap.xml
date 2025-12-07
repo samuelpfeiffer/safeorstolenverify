@@ -62,6 +62,20 @@
     <priority>0.70</priority>
   </url>
 
+  <!-- SOCIAL MEDIA & EXTERNAL PROFILE PAGES -->
+  <url>
+    <loc>https://safeorstolen.com/youtube</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/crunchbase</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
   <!-- APP DOWNLOAD PAGES - HIGH PRIORITY -->
   <url>
     <loc>https://safeorstolen.com/app</loc>

@@ -215,6 +215,10 @@ const BarcodeScanner = lazy(() => import('@/pages/app/BarcodeScanner'));
 const DownloadApp = lazy(() => import('@/pages/DownloadApp'));
 const AppFeatures = lazy(() => import('@/pages/app/AppFeatures'));
 
+// Social Media & External Profile Pages
+const YouTubePage = lazy(() => import('@/pages/YouTubePage'));
+const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
+
 // Admin Pages
 const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
 const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDashboard'));
@@ -577,6 +581,10 @@ export const AppRoutes = () => {
         <Route path="/contact" element={<Navigate to="/about" replace />} />
         <Route path="/support" element={<Navigate to="/about" replace />} />
         <Route path="/help" element={<Navigate to="/faq" replace />} />
+        
+        {/* Social Media & External Profile Pages */}
+        <Route path="/youtube" element={<YouTubePage />} />
+        <Route path="/crunchbase" element={<CrunchbasePage />} />
         
         {/* Admin Routes */}
         <Route path="/admin/autonomous-ai" element={<AutonomousAIDashboard />} />

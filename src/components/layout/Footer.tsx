@@ -142,27 +142,23 @@ export const Footer: React.FC = () => {
         <div className="mb-8">
           <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect With Us</p>
           <div className="flex flex-wrap gap-3">
-            {/* YouTube Button */}
-            <a
-              href="https://www.youtube.com/@safeorstolen"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* YouTube Button - links to indexable page */}
+            <Link
+              to="/youtube"
               className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium text-sm"
             >
               <Youtube className="h-5 w-5" />
               YouTube
-            </a>
+            </Link>
             
-            {/* Crunchbase Button */}
-            <a
-              href="https://www.crunchbase.com/organization/safe-or-stolen"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Crunchbase Button - links to indexable page */}
+            <Link
+              to="/crunchbase"
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium text-sm"
             >
               <ExternalLink className="h-4 w-4" />
               Crunchbase
-            </a>
+            </Link>
             
             {/* Trustpilot Button */}
             <a

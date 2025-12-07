@@ -76,6 +76,8 @@ const VALID_ROUTES = new Set([
   '/admin',
   '/subscription-success',
   '/subscription-cancel',
+  '/youtube',
+  '/crunchbase',
   '/404'
 ]);
 
