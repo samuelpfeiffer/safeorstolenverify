@@ -95,24 +95,24 @@ export const SuccessStories = () => {
         <Card className="p-8 bg-accent/5 border-accent/20 max-w-4xl mx-auto">
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4 text-foreground">
-              Join Thousands of Protected Buyers and Sellers
+              Join Our Growing Community of Protected Buyers & Sellers
             </h3>
             <p className="text-muted-foreground mb-6">
-              Over 500,000 verifications performed. Millions of dollars in losses prevented. 
-              Countless legal troubles avoided.
+              New platform, real protection. Every verification helps build a safer secondhand marketplace
+              and makes it harder for stolen goods to be resold.
             </p>
             <div className="grid grid-cols-3 gap-6">
               <div>
-                <div className="text-3xl font-bold text-primary">500K+</div>
-                <div className="text-sm text-muted-foreground">Verifications</div>
+                <div className="text-3xl font-bold text-primary">New</div>
+                <div className="text-sm text-muted-foreground">Growing Daily</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-accent">$23M+</div>
-                <div className="text-sm text-muted-foreground">Losses Prevented</div>
+                <div className="text-3xl font-bold text-accent">150+</div>
+                <div className="text-sm text-muted-foreground">Database Sources</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-secondary">99.7%</div>
-                <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+                <div className="text-3xl font-bold text-secondary">3 sec</div>
+                <div className="text-sm text-muted-foreground">Verification Time</div>
               </div>
             </div>
           </div>

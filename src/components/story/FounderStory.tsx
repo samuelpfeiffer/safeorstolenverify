@@ -52,7 +52,7 @@ export const FounderStory = () => {
               <Users className="h-12 w-12 text-primary mx-auto mb-4" />
               <h4 className="font-bold mb-2 text-foreground">The Impact</h4>
               <p className="text-sm text-muted-foreground">
-                Protecting hundreds of thousands of transactions monthly
+                Building a safer secondhand marketplace, one verification at a time
               </p>
             </Card>
           </div>
