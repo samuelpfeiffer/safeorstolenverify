@@ -3100,7 +3100,7 @@ export type Database = {
           item_type: string
           result: Json | null
           serial_number: string
-          user_id: string
+          user_id: string | null
         }
         Insert: {
           created_at?: string
@@ -3108,7 +3108,7 @@ export type Database = {
           item_type: string
           result?: Json | null
           serial_number: string
-          user_id: string
+          user_id?: string | null
         }
         Update: {
           created_at?: string
@@ -3116,7 +3116,7 @@ export type Database = {
           item_type?: string
           result?: Json | null
           serial_number?: string
-          user_id?: string
+          user_id?: string | null
         }
         Relationships: []
       }
