@@ -1,78 +1,297 @@
-import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { Shield, MapPin, Search, CheckCircle2, Car, AlertTriangle, Clock, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { US_STATES } from '@/data/stateVerificationData';
+import { toast } from 'sonner';
+import { Link } from 'react-router-dom';
 
 const LicensePlateLookupPage = () => {
+  const navigate = useNavigate();
+  const [selectedState, setSelectedState] = useState('');
+  const [plateNumber, setPlateNumber] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleVerify = () => {
+    if (!plateNumber.trim()) {
+      toast.error('Please enter a license plate number');
+      return;
+    }
+    if (!selectedState) {
+      toast.error('Please select a state');
+      return;
+    }
+    
+    setIsLoading(true);
+    const stateName = US_STATES.find(s => s.code === selectedState)?.name || selectedState;
+    navigate(`/verify?q=${encodeURIComponent(plateNumber)}&type=plate&state=${selectedState}`);
+    toast.success(`Searching ${stateName} vehicle databases...`);
+  };
+
+  const topStates = [
+    { code: 'CA', name: 'California', thefts: '173,000+' },
+    { code: 'TX', name: 'Texas', thefts: '85,000+' },
+    { code: 'FL', name: 'Florida', thefts: '42,000+' },
+    { code: 'NY', name: 'New York', thefts: '14,000+' },
+    { code: 'IL', name: 'Illinois', thefts: '23,000+' },
+    { code: 'GA', name: 'Georgia', thefts: '27,000+' },
+    { code: 'PA', name: 'Pennsylvania', thefts: '12,000+' },
+    { code: 'OH', name: 'Ohio', thefts: '18,000+' },
+    { code: 'NC', name: 'North Carolina', thefts: '16,000+' },
+    { code: 'WA', name: 'Washington', thefts: '32,000+' },
+  ];
+
+  const faqs = [
+    {
+      question: "Can I check if a car is stolen using just the license plate?",
+      answer: "Yes, but it's a first step. License plates can be swapped, so always verify the VIN as a follow-up before purchasing. Our lookup resolves the plate to VIN and checks theft databases."
+    },
+    {
+      question: "What information do I get from a license plate lookup?",
+      answer: "You'll see: registered owner name, vehicle make/model/year, VIN, registration status (valid/expired), title info, and theft status from DMV and law enforcement databases."
+    },
+    {
+      question: "Is license plate lookup free?",
+      answer: "Yes, SafeOrStolen offers 2 free license plate lookups. We search both DMV registration AND stolen vehicle databases simultaneously in 3 seconds."
+    },
+    {
+      question: "What if the registered owner doesn't match the seller?",
+      answer: "This is a major red flag. The vehicle could be stolen, or the seller may not have authority to sell. Always ask for documentation and verify the VIN before proceeding."
+    }
+  ];
+
   return (
-    <ItemLandingPageTemplate
-      title="License Plate Lookup - Free Stolen Vehicle Check by Plate Number"
-      metaDescription="Check if a vehicle is stolen using license plate number. Free license plate lookup from DMV and law enforcement databases. Verify cars, trucks, and motorcycles instantly."
-      h1="License Plate Lookup - Check if Vehicle is Stolen"
-      itemType="Vehicle"
-      keywords={[
-        'license plate lookup',
-        'check license plate stolen',
-        'license plate search',
-        'stolen car plate lookup',
-        'verify plate number'
-      ]}
-      content={{
-        intro: "Verify vehicles using license plate number in 3 seconds. Free license plate lookup from DMV and law enforcement databases. Check if cars, trucks, or motorcycles are stolen before buying from private sellers or used car lots.",
-        whatIs: "License plate lookup is a service that verifies whether a vehicle is reported stolen by checking the license plate number against DMV registration databases and law enforcement stolen vehicle records. While license plates can be swapped or faked (making VIN verification more reliable), license plate lookups are useful for quick initial screenings, verifying seller information matches registration, and checking vehicles when you can't easily access the VIN. SafeOrStolen's license plate checker instantly searches state DMV registration records, NICB VINCheck database (after resolving plate to VIN), law enforcement stolen vehicle reports, and insurance databases to determine if a vehicle associated with that plate has been reported stolen, has title issues, or registration problems.",
-        howItWorks: "Our license plate lookup system works in two steps. First, we query state DMV databases to resolve the license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and registration status. Second, we search the resolved VIN against stolen vehicle databases including NICB VINCheck, FBI NCIC (when available), state law enforcement records, and insurance theft claims. Within 3 seconds, you receive a report showing: (1) Whether the vehicle is reported stolen, (2) Registered owner information (to verify seller is legitimate owner), (3) Vehicle make, model, year (to verify it matches what's being sold), (4) Registration status (expired, suspended, valid), (5) Title issues (salvage, rebuilt, flood damage). IMPORTANT: Always follow up with VIN verification for final purchase - license plates can be swapped but VINs cannot.",
-        whyCheck: "License plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase. (1) Verify the seller is the registered owner - if names don't match, it could be stolen or they don't have authority to sell, (2) Detect stolen plates - thieves often swap plates from similar vehicles to avoid detection, (3) Check registration status - expired or suspended registration suggests unpaid fines or legal issues, (4) Verify vehicle information - make sure the plate matches the actual vehicle (thieves put plates from clean cars onto stolen cars), (5) Quick screening tool - check multiple vehicles quickly before doing detailed VIN checks. However, license plates alone are NOT sufficient for final verification - always check the VIN before purchase because plates can be easily swapped. Use license plate lookup as Step 1, then verify VIN as Step 2 before buying.",
-        benefits: [
-          "Quick vehicle screening using license plate number",
-          "Verify seller is the registered owner before viewing",
-          "Check registration status (valid, expired, suspended)",
-          "Resolve plate number to VIN for full verification",
-          "Works for all 50 states and US territories",
-          "Check cars, trucks, motorcycles, RVs, and trailers",
-          "Free license plate lookup - 2 free searches",
-          "Instant 3-second results from DMV databases"
-        ],
-        process: [
-          "Record the license plate number including all letters, numbers, and the state/province",
-          "Note the vehicle's make, model, color, and year for comparison",
-          "Enter the plate number and state into our verification tool at SafeOrStolen.com/verify",
-          "Review the report showing registered owner, vehicle information, and theft status",
-          "Verify the registered owner name matches the seller's ID - if names don't match, MAJOR red flag",
-          "After initial screening, ALWAYS verify the vehicle's VIN before final purchase - license plates can be swapped but VINs cannot be changed"
-        ],
-        faqs: [
-          {
-            question: "Can I check if a car is stolen using just the license plate?",
-            answer: "Yes, you can do an initial check using the license plate number, but it's NOT sufficient for final verification. Here's why: (1) License plates can be easily swapped - thieves put plates from clean vehicles onto stolen vehicles, (2) Plates can be faked or cloned, (3) Registration may not be updated if recently stolen. Use license plate lookup as Step 1 to screen vehicles and verify the seller is the registered owner, but ALWAYS verify the VIN as Step 2 before purchase. SafeOrStolen's plate lookup will resolve the plate to the VIN and then check the VIN against stolen vehicle databases for comprehensive results."
-          },
-          {
-            question: "How do I find a vehicle's license plate number?",
-            answer: "License plates are located: (1) Rear of vehicle - back bumper (all vehicles), (2) Front of vehicle - front bumper (required in some states, not all). Simply record all letters and numbers on the plate along with the state. Example: California plate 7ABC123. If the seller won't provide the plate number or it's obscured in photos, that's a red flag. Also note: temporary plates (paper tags) are harder to verify - proceed with extra caution and always check VIN."
-          },
-          {
-            question: "What information can I get from a license plate lookup?",
-            answer: "A license plate lookup provides: (1) Registered owner name (to verify seller is legitimate owner), (2) Vehicle make, model, year (to verify it matches what's being sold), (3) VIN (after resolving plate number), (4) Registration status (valid, expired, suspended), (5) Title information (clean, salvage, rebuilt), (6) Theft status (whether vehicle is reported stolen), (7) State of registration. This information helps you quickly screen vehicles and detect fraud BEFORE scheduling a viewing or test drive."
-          },
-          {
-            question: "Is license plate lookup really free?",
-            answer: "Yes, SafeOrStolen offers 2 free license plate lookups. Some states also offer free online registration lookups through their DMV websites, but these usually don't check theft status. Our tool searches both DMV registration AND stolen vehicle databases simultaneously in 3 seconds. Additional lookups require a paid plan, but our free tier protects casual buyers checking one or two vehicles."
-          },
-          {
-            question: "What if the registered owner doesn't match the seller?",
-            answer: "If the registered owner name doesn't match the seller's name, this is a MAJOR red flag. Possible explanations: (1) Vehicle is stolen, (2) Seller doesn't have legal authority to sell (borrowed car, family member's car), (3) Seller is a dealer/flipper who hasn't transferred title yet (risky), (4) Registration is outdated (seller recently bought but hasn't updated DMV yet). ALWAYS ask why names don't match. Legitimate explanations include: recent purchase (ask for bill of sale), inherited vehicle (ask for estate documents), or power of attorney (ask for documentation). If the seller can't provide documentation proving authority to sell, walk away - it's likely stolen or there are liens."
-          },
-          {
-            question: "Can license plates be faked or cloned?",
-            answer: "Yes, license plate cloning is a common fraud tactic. Thieves: (1) Steal plates from similar vehicles (same make/model/color), (2) Make fake plates using online templates and printing, (3) Alter existing plates by changing numbers/letters. Signs of fake/cloned plates: (1) Plate looks new/pristine on an old vehicle, (2) Plate screws look fresh or mismatched, (3) Plate information doesn't match registration documents, (4) Seller has temporary/paper plates for an old vehicle, (5) Plate from a different state than seller's location. Always verify the plate physically matches the registration documents and check the VIN - VINs cannot be easily faked like plates."
-          },
-          {
-            question: "How long does a license plate lookup take?",
-            answer: "Our license plate lookup takes only 3 seconds. Enter the plate number and state, click verify, and receive instant results showing registered owner, vehicle information, registration status, and theft status from DMV and law enforcement databases."
-          },
-          {
-            question: "What should I do if the plate lookup shows the vehicle is stolen?",
-            answer: "If our plate lookup shows the vehicle is reported stolen: (1) Do NOT meet with the seller or view the vehicle, (2) Screenshot the listing and record seller information, (3) Report the listing to the platform (Craigslist, Facebook Marketplace, etc.), (4) File a tip with local police and NICB at 800-TEL-NICB (800-835-6422) including the license plate, VIN (if available), listing URL, and seller details, (5) Do NOT confront the seller - they may be dangerous. If you're already at a meeting, leave immediately without explanation. Your safety is more important than catching a thief."
-          }
-        ]
-      }}
-    />
+    <>
+      <Helmet>
+        <title>License Plate Lookup - Free Stolen Vehicle Check by Plate Number | SafeOrStolen</title>
+        <meta name="description" content="Check if a vehicle is stolen using license plate number. Free license plate lookup from DMV and law enforcement databases across all 50 states. Verify instantly." />
+        <link rel="canonical" href="https://safeorstolen.com/license-plate-lookup" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="py-12 md:py-20 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-10">
+              <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+                License Plate Lookup
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground">
+                Check if a vehicle is stolen using the license plate number. Select your state and verify instantly against DMV and law enforcement databases.
+              </p>
+            </div>
+
+            {/* Main Search Card */}
+            <Card className="max-w-2xl mx-auto shadow-xl border-primary/20">
+              <CardHeader className="text-center pb-4">
+                <div className="mx-auto p-3 rounded-full bg-primary/10 w-fit mb-3">
+                  <Car className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl">Verify Vehicle by Plate</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* State Selector */}
+                <div className="space-y-2">
+                  <Label htmlFor="state" className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                    Select State <span className="text-destructive">*</span>
+                  </Label>
+                  <Select value={selectedState} onValueChange={setSelectedState}>
+                    <SelectTrigger id="state" className="bg-background h-12 text-base">
+                      <SelectValue placeholder="Choose the vehicle's state..." />
+                    </SelectTrigger>
+                    <SelectContent className="bg-popover border-border max-h-[300px]">
+                      {US_STATES.map(state => (
+                        <SelectItem key={state.code} value={state.code}>
+                          {state.name} ({state.code})
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Plate Number Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="plate" className="flex items-center gap-2">
+                    <Search className="h-4 w-4 text-muted-foreground" />
+                    License Plate Number <span className="text-destructive">*</span>
+                  </Label>
+                  <Input
+                    id="plate"
+                    placeholder="Enter plate number (e.g., ABC1234)"
+                    value={plateNumber}
+                    onChange={(e) => setPlateNumber(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))}
+                    className="h-12 text-lg font-mono bg-background"
+                    maxLength={8}
+                  />
+                </div>
+
+                {/* Verify Button */}
+                <Button 
+                  onClick={handleVerify}
+                  className="w-full h-14 text-lg"
+                  size="lg"
+                  disabled={isLoading || !plateNumber.trim() || !selectedState}
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground mr-2" />
+                      Searching...
+                    </>
+                  ) : (
+                    <>
+                      <Shield className="mr-2 h-5 w-5" />
+                      Verify Plate - Free
+                    </>
+                  )}
+                </Button>
+
+                {/* Trust Badges */}
+                <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-2">
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    All 50 States
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    DMV Records
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <CheckCircle2 className="h-3 w-3 text-green-500" />
+                    3-Second Results
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Quick State Links */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-8">Popular State Lookups</h2>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+              {topStates.map((state) => (
+                <Link
+                  key={state.code}
+                  to={`/${state.name.toLowerCase().replace(' ', '-')}-license-plate-lookup`}
+                  className="p-4 rounded-lg border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all text-center group"
+                >
+                  <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {state.name}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {state.thefts} thefts/yr
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold text-center mb-8">How License Plate Lookup Works</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center p-6 rounded-lg border border-border bg-card">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-primary">1</span>
+                </div>
+                <h3 className="font-semibold mb-2">Enter Plate & State</h3>
+                <p className="text-sm text-muted-foreground">
+                  Select the state and enter the license plate number from the vehicle.
+                </p>
+              </div>
+              <div className="text-center p-6 rounded-lg border border-border bg-card">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-primary">2</span>
+                </div>
+                <h3 className="font-semibold mb-2">We Search Databases</h3>
+                <p className="text-sm text-muted-foreground">
+                  We query DMV records, NICB, and law enforcement databases in 3 seconds.
+                </p>
+              </div>
+              <div className="text-center p-6 rounded-lg border border-border bg-card">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-xl font-bold text-primary">3</span>
+                </div>
+                <h3 className="font-semibold mb-2">Get Instant Results</h3>
+                <p className="text-sm text-muted-foreground">
+                  See theft status, registered owner, vehicle info, and registration status.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Warning Section */}
+        <section className="py-8 bg-yellow-50 dark:bg-yellow-900/10 border-y border-yellow-200 dark:border-yellow-800">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="h-6 w-6 text-yellow-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+                  Important: License Plates Can Be Swapped
+                </h3>
+                <p className="text-sm text-yellow-700 dark:text-yellow-300">
+                  While license plate lookup is a great first step, plates can be stolen or swapped. 
+                  Always verify the VIN before purchasing. Use license plate lookup as Step 1, then{' '}
+                  <Link to="/vin-checker" className="underline font-medium hover:text-yellow-900">
+                    verify the VIN as Step 2
+                  </Link>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index}>
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
+                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-12 bg-primary/5">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-2xl font-bold mb-4">Ready to Verify?</h2>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+              Don't risk buying a stolen vehicle. Check the license plate and VIN before you buy.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <Search className="mr-2 h-5 w-5" />
+                Check License Plate
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/vin-checker">
+                  <Car className="mr-2 h-5 w-5" />
+                  VIN Lookup
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 
