@@ -15,6 +15,7 @@ import heroImage from '@/assets/good_photo_for_sos-8.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
 import { EmailCapture } from '@/components/marketing/EmailCapture';
+import { ViralShareWidget, ReferralProgram } from '@/components/growth';
 
 const Index = () => {
   return (
@@ -293,6 +294,16 @@ const Index = () => {
         <section className="py-8">
           <div className="container mx-auto px-4">
             <EmailCapture />
+          </div>
+        </section>
+
+        {/* Referral & Viral Sharing */}
+        <section className="py-8 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+              <ReferralProgram />
+              <ViralShareWidget />
+            </div>
           </div>
         </section>
 
