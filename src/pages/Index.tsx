@@ -4,6 +4,7 @@ import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
+import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle } from 'lucide-react';
@@ -257,6 +258,9 @@ const Index = () => {
 
         {/* Mobile App CTA */}
         <CompactMobileAppCTA />
+
+        {/* YouTube Channel Section */}
+        <YouTubeChannelSection />
 
         {/* Trust Signals */}
         <TrustSignals />
