@@ -41,8 +41,13 @@ serve(async (req) => {
 
       // Sync each pending purchase with Stripe's actual status
       const syncResults = [];
+      const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+      let expiredCount = 0;
+      
       for (const purchase of pendingPurchases || []) {
         const stripeSession = sessions.data.find(s => s.id === purchase.stripe_session_id);
+        const purchaseDate = new Date(purchase.created_at);
+        const isStale = purchaseDate < twentyFourHoursAgo;
         
         if (stripeSession && stripeSession.payment_status === 'paid' && purchase.status === 'pending') {
           // SYNC: Update our DB to match Stripe's paid status
@@ -79,6 +84,22 @@ serve(async (req) => {
             action: 'SYNCED',
             customer: stripeSession.customer_details?.email
           });
+        } else if (isStale && (!stripeSession || stripeSession.payment_status !== 'paid')) {
+          // CLEANUP: Expire stale checkouts older than 24 hours
+          await supabase
+            .from('purchases')
+            .update({ 
+              status: 'expired',
+              updated_at: new Date().toISOString()
+            })
+            .eq('id', purchase.id);
+          
+          expiredCount++;
+          syncResults.push({
+            session_id: purchase.stripe_session_id,
+            action: 'EXPIRED',
+            age_hours: Math.round((Date.now() - purchaseDate.getTime()) / (1000 * 60 * 60))
+          });
         } else if (stripeSession) {
           syncResults.push({
             session_id: purchase.stripe_session_id,
@@ -111,7 +132,8 @@ serve(async (req) => {
         webhook_endpoints: webhookEndpoints,
         pending_count: pendingPurchases?.length || 0,
         synced: syncResults.filter(r => r.action === 'SYNCED').length,
-        sync_results: syncResults
+        expired: expiredCount,
+        sync_results: syncResults.slice(0, 20) // Limit to first 20 for response size
       }, null, 2), {
         headers: { ...corsHeaders, "Content-Type": "application/json" }
       });
