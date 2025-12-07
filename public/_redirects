@@ -1,6 +1,6 @@
 # SafeOrStolen Server-Side Redirects
 # Comprehensive 301 redirects to fix Google Search Console indexing issues
-# Last updated: 2025-01-17
+# Last updated: 2025-12-07
 
 # ============================================
 # FORCE CANONICAL DOMAIN (non-www, HTTPS) - HIGHEST PRIORITY
@@ -49,8 +49,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # ITEM CHECKER URLS (GSC "Page with redirect" Fixes)
 # ============================================
-# Real pages: /imei-checker, /vin-checker, /serial-number-checker (do NOT redirect)
-# Redirects TO real pages:
 /imei-check              /imei-checker  301!
 /imei                    /imei-checker  301!
 /check-imei-before-buying /imei-checker 301!
@@ -64,6 +62,98 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-android           /check-phone   301!
 /pawn-shops              /for-pawn-shops 301!
 /license-plates-lookup   /license-plate-lookup 301!
+
+# ============================================
+# STATE PAGE CONSOLIDATION - SEO OPTIMIZATION
+# Keep only 10 high-value states with unique content
+# Redirect remaining 40 states to main pages
+# ============================================
+
+# KEPT VIN STATES (10): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington
+# REDIRECTED VIN STATES (40):
+/alabama-vin-lookup         /vin-checker  301!
+/alaska-vin-lookup          /vin-checker  301!
+/arizona-vin-lookup         /vin-checker  301!
+/arkansas-vin-lookup        /vin-checker  301!
+/colorado-vin-lookup        /vin-checker  301!
+/connecticut-vin-lookup     /vin-checker  301!
+/delaware-vin-lookup        /vin-checker  301!
+/hawaii-vin-lookup          /vin-checker  301!
+/idaho-vin-lookup           /vin-checker  301!
+/indiana-vin-lookup         /vin-checker  301!
+/iowa-vin-lookup            /vin-checker  301!
+/kansas-vin-lookup          /vin-checker  301!
+/kentucky-vin-lookup        /vin-checker  301!
+/louisiana-vin-lookup       /vin-checker  301!
+/maine-vin-lookup           /vin-checker  301!
+/maryland-vin-lookup        /vin-checker  301!
+/massachusetts-vin-lookup   /vin-checker  301!
+/michigan-vin-lookup        /vin-checker  301!
+/minnesota-vin-lookup       /vin-checker  301!
+/mississippi-vin-lookup     /vin-checker  301!
+/missouri-vin-lookup        /vin-checker  301!
+/montana-vin-lookup         /vin-checker  301!
+/nebraska-vin-lookup        /vin-checker  301!
+/nevada-vin-lookup          /vin-checker  301!
+/new-hampshire-vin-lookup   /vin-checker  301!
+/new-jersey-vin-lookup      /vin-checker  301!
+/new-mexico-vin-lookup      /vin-checker  301!
+/north-dakota-vin-lookup    /vin-checker  301!
+/oklahoma-vin-lookup        /vin-checker  301!
+/oregon-vin-lookup          /vin-checker  301!
+/rhode-island-vin-lookup    /vin-checker  301!
+/south-carolina-vin-lookup  /vin-checker  301!
+/south-dakota-vin-lookup    /vin-checker  301!
+/tennessee-vin-lookup       /vin-checker  301!
+/utah-vin-lookup            /vin-checker  301!
+/vermont-vin-lookup         /vin-checker  301!
+/virginia-vin-lookup        /vin-checker  301!
+/west-virginia-vin-lookup   /vin-checker  301!
+/wisconsin-vin-lookup       /vin-checker  301!
+/wyoming-vin-lookup         /vin-checker  301!
+
+# KEPT LICENSE PLATE STATES (10): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington
+# REDIRECTED LICENSE PLATE STATES (40):
+/alabama-license-plate-lookup         /license-plate-lookup  301!
+/alaska-license-plate-lookup          /license-plate-lookup  301!
+/arizona-license-plate-lookup         /license-plate-lookup  301!
+/arkansas-license-plate-lookup        /license-plate-lookup  301!
+/colorado-license-plate-lookup        /license-plate-lookup  301!
+/connecticut-license-plate-lookup     /license-plate-lookup  301!
+/delaware-license-plate-lookup        /license-plate-lookup  301!
+/hawaii-license-plate-lookup          /license-plate-lookup  301!
+/idaho-license-plate-lookup           /license-plate-lookup  301!
+/indiana-license-plate-lookup         /license-plate-lookup  301!
+/iowa-license-plate-lookup            /license-plate-lookup  301!
+/kansas-license-plate-lookup          /license-plate-lookup  301!
+/kentucky-license-plate-lookup        /license-plate-lookup  301!
+/louisiana-license-plate-lookup       /license-plate-lookup  301!
+/maine-license-plate-lookup           /license-plate-lookup  301!
+/maryland-license-plate-lookup        /license-plate-lookup  301!
+/massachusetts-license-plate-lookup   /license-plate-lookup  301!
+/michigan-license-plate-lookup        /license-plate-lookup  301!
+/minnesota-license-plate-lookup       /license-plate-lookup  301!
+/mississippi-license-plate-lookup     /license-plate-lookup  301!
+/missouri-license-plate-lookup        /license-plate-lookup  301!
+/montana-license-plate-lookup         /license-plate-lookup  301!
+/nebraska-license-plate-lookup        /license-plate-lookup  301!
+/nevada-license-plate-lookup          /license-plate-lookup  301!
+/new-hampshire-license-plate-lookup   /license-plate-lookup  301!
+/new-jersey-license-plate-lookup      /license-plate-lookup  301!
+/new-mexico-license-plate-lookup      /license-plate-lookup  301!
+/north-dakota-license-plate-lookup    /license-plate-lookup  301!
+/oklahoma-license-plate-lookup        /license-plate-lookup  301!
+/oregon-license-plate-lookup          /license-plate-lookup  301!
+/rhode-island-license-plate-lookup    /license-plate-lookup  301!
+/south-carolina-license-plate-lookup  /license-plate-lookup  301!
+/south-dakota-license-plate-lookup    /license-plate-lookup  301!
+/tennessee-license-plate-lookup       /license-plate-lookup  301!
+/utah-license-plate-lookup            /license-plate-lookup  301!
+/vermont-license-plate-lookup         /license-plate-lookup  301!
+/virginia-license-plate-lookup        /license-plate-lookup  301!
+/west-virginia-license-plate-lookup   /license-plate-lookup  301!
+/wisconsin-license-plate-lookup       /license-plate-lookup  301!
+/wyoming-license-plate-lookup         /license-plate-lookup  301!
 
 # ============================================
 # LEGACY VERIFICATION URLS (Additional)
@@ -85,7 +175,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
-# Real pages: /for-businesses, /for-dealers, /for-pawn-shops (do NOT redirect)
 # ============================================
 /trust-verification          /about  301!
 /accuracy                    /about  301!
@@ -106,11 +195,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /seo-strategy                /about  301!
 
 # ============================================
-# CASE STUDIES/TESTIMONIALS (GSC Errors)
-# ============================================
-/case-studies  /testimonials  301!
-
-# ============================================
 # APP SUBDIRECTORY REDIRECTS (GSC "Page with redirect" Errors)
 # ============================================
 /app/install-guide                  /app  301!
@@ -122,9 +206,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/miami                          /app  301!
 /app/philadelphia                   /app  301!
 /app/chicago                        /app  301!
-# /app/serial-number-checker - NO PAGE EXISTS, redirect to main checker
 /app/serial-number-checker          /serial-number-checker  301!
-# NOTE: /app/vin-checker is a REAL page (VinCheckerApp.tsx) - DO NOT REDIRECT
 /app/imei-checker                   /imei-checker  301!
 /app/research-stolen-car            /app  301!
 /app/research-stolen-phone          /app  301!
@@ -143,7 +225,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/features/*                     /app  301!
 
 # ============================================
-# MARKETPLACE VERIFICATION REDIRECTS (GSC "Page with redirect")
+# MARKETPLACE VERIFICATION REDIRECTS
 # ============================================
 /verify/facebook-marketplace  /verify  301!
 /verify/ebay                  /verify  301!
@@ -152,8 +234,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # COMPARISON/COMPETITOR PAGES
-# Note: /vs-carfax, /vs-checkmend, /vs-imeiinfo, /vs-swappa, /vs-autocheck are REAL pages
-# Only redirect legacy/non-existent comparison URLs
 # ============================================
 /vs-stolenregister                 /pricing  301!
 /vs-nicb                           /pricing  301!
@@ -196,8 +276,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # MARKETPLACE VERIFICATION PAGES
-# NOTE: facebook-marketplace-stolen-check, craigslist-safety-verification,
-# offerup-verify-not-stolen, ebay-stolen-item-check are REAL pages - DO NOT REDIRECT
 # ============================================
 /facebook-marketplace-verification                  /verify  301!
 /ebay-stolen-item-checker                           /verify  301!
@@ -207,7 +285,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # WILDCARD REDIRECTS (MUST BE NEAR END)
-# NOTE: /city/* removed - city pages now have dedicated routes
 # ============================================
 /guides/imei-blacklist-guide       /about  301!
 /guides/*                          /about  301!
@@ -236,12 +313,10 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog            301!
 
-# Blog posts with timestamps (pattern match) - SPECIFIC REDIRECTS FIRST
+# Blog posts with timestamps (pattern match)
 /blog/red-flags-buying-used-electronics-1759314016.095080                    /blog  301!
 /blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080        /blog  301!
 /blog/vin-verification-complete-guide-used-cars-1759314016.095080            /blog  301!
-
-# Blog posts with timestamps (wildcard pattern for any other timestamped URLs)
 /blog/*-*.* /blog 301!
 
 # ============================================
@@ -263,7 +338,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # FASTERCAPITAL REDIRECT
 # ============================================
 /fastercapital/tech-cofounder  /about  301!
-
 
 # ============================================
 # RSS & SITEMAP REWRITES
