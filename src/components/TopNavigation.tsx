@@ -102,15 +102,13 @@ const TopNavigation = () => {
               >
                 <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary" />
               </a>
-              <a
-                href="https://www.youtube.com/@safeorstolen"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/youtube"
                 aria-label="SafeOrStolen on YouTube"
                 className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
               >
                 <Youtube className="w-4 h-4 text-muted-foreground hover:text-primary" />
-              </a>
+              </Link>
             </div>
             {isAuthenticated ? (
               <DropdownMenu>
