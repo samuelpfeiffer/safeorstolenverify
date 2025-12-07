@@ -28,25 +28,29 @@ export const useFreemiumFlow = () => {
     try {
       setIsLoading(true);
 
-      // Check subscription status
+      // Check subscription status from subscribers table
       const { data: subscription } = await supabase
         .from('subscribers')
         .select('subscribed')
         .eq('user_id', user.id)
         .single();
 
-      if (subscription?.subscribed) {
+      // Also check profile for paid tier (pay_per_use purchases update profiles, not subscribers)
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('subscription_tier, monthly_verification_limit, search_count, created_at')
+        .eq('id', user.id)
+        .single();
+
+      // User is paid if they have active subscription OR have a paid tier
+      const paidTiers = ['pay_per_use', 'starter', 'personal', 'professional', 'enterprise'];
+      const hasPaidTier = profile?.subscription_tier && paidTiers.includes(profile.subscription_tier);
+
+      if (subscription?.subscribed || hasPaidTier) {
         setIsSubscribed(true);
         setIsLoading(false);
         return;
       }
-
-      // Get user profile with search count and created_at for trial tracking
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('search_count, created_at')
-        .eq('id', user.id)
-        .single();
 
       const currentCount = profile?.search_count || 0;
       setSearchCount(currentCount);
