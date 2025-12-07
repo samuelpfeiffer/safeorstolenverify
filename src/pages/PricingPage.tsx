@@ -16,6 +16,7 @@ import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPric
 import { isInIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
 import { UrgencyBanner } from '@/components/pricing/UrgencyBanner';
+import { EmailCapture } from '@/components/marketing/EmailCapture';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -316,6 +317,11 @@ const PricingPage = () => {
           <ConversionOptimizedPricing 
             onSubscribe={handleSubscribe}
           />
+          
+          {/* Email Capture for non-ready users */}
+          <div className="container mx-auto px-4 py-12">
+            <EmailCapture />
+          </div>
         </div>
       </ErrorBoundary>
     </>

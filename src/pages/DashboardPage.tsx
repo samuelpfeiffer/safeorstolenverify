@@ -31,6 +31,7 @@ import { QuickStatsCard } from '@/components/dashboard/QuickStatsCard';
 import { RecentActivityCard } from '@/components/dashboard/RecentActivityCard';
 import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatusCard';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { ReferralProgram, ViralShareWidget } from '@/components/growth';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
@@ -271,6 +272,12 @@ const DashboardPage = () => {
               <SubscriptionStatusCard />
             </div>
             <RecentActivityCard />
+            
+            {/* Growth Tools */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <ReferralProgram />
+              <ViralShareWidget />
+            </div>
           </div>
         );
 
