@@ -1,5 +1,6 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
+import { PressMediaSection } from '@/components/home/PressMediaSection';
 import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
@@ -223,6 +224,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Press & Trust Partners */}
+        <PressMediaSection />
 
         {/* What You Can Verify */}
         <WhatYouCanVerify />
