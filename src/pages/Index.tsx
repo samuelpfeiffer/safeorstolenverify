@@ -11,6 +11,9 @@ import { Download, CheckCircle } from 'lucide-react';
 import heroImage from '@/assets/good_photo_for_sos-8.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
+import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
+import { RealTimeStats } from '@/components/traffic/RealTimeStats';
+import { StructuredDataForTraffic } from '@/components/seo/StructuredDataForTraffic';
 
 const Index = () => {
   return (
@@ -256,6 +259,20 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Real-Time Stats */}
+        <section className="py-12">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <RealTimeStats />
+          </div>
+        </section>
+
+        {/* Email Capture */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-2xl">
+            <EmailCaptureHero />
+          </div>
+        </section>
+
         {/* Mobile App CTA */}
         <CompactMobileAppCTA />
 
@@ -264,6 +281,9 @@ const Index = () => {
 
         {/* Trust Signals */}
         <TrustSignals />
+        
+        {/* Additional SEO Schema */}
+        <StructuredDataForTraffic />
       </div>
       
       {/* ExitIntentPopup is now rendered globally in AppRoot */}

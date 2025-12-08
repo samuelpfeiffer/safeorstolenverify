@@ -95,6 +95,13 @@ const FirearmSerialNumberVerification = lazy(() => import('@/pages/blog/FirearmS
 const BicycleStolenSerialNumberCheck = lazy(() => import('@/pages/blog/BicycleStolenSerialNumberCheck'));
 const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeMeetup'));
 
+// Traffic Generation Landing Pages
+const CheckStolenPhonePage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenPhone })));
+const CheckStolenCarPage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenCar })));
+const CheckStolenLaptopPage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenLaptop })));
+const CheckStolenBikePage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenBike })));
+const CheckStolenFirearmPage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenFirearm })));
+
 // Marketplace Landing Pages
 const FacebookMarketplaceStolenCheck = lazy(() => import('@/pages/marketplace/FacebookMarketplaceStolenCheck'));
 const CraigslistSafetyVerification = lazy(() => import('@/pages/marketplace/CraigslistSafetyVerification'));
@@ -286,6 +293,17 @@ export const AppRoutes = () => {
         {/* ALL OTHER STATE PAGES REDIRECT TO MAIN PAGES (Server-side 301s in _redirects handle these) */}
         {/* Remaining 40 VIN states → /vin-checker */}
         {/* Remaining 40 License Plate states → /license-plate-lookup */}
+
+        {/* HIGH-TRAFFIC SEARCH LANDING PAGES */}
+        <Route path="/is-my-phone-stolen" element={<CheckStolenPhonePage />} />
+        <Route path="/is-this-car-stolen" element={<CheckStolenCarPage />} />
+        <Route path="/is-this-laptop-stolen" element={<CheckStolenLaptopPage />} />
+        <Route path="/is-this-bike-stolen" element={<CheckStolenBikePage />} />
+        <Route path="/is-this-gun-stolen" element={<CheckStolenFirearmPage />} />
+        <Route path="/check-stolen-phone" element={<CheckStolenPhonePage />} />
+        <Route path="/check-stolen-car" element={<CheckStolenCarPage />} />
+        <Route path="/stolen-phone-check" element={<CheckStolenPhonePage />} />
+        <Route path="/stolen-car-check" element={<CheckStolenCarPage />} />
 
         {/* LEGACY REDIRECTS (kept for React Router fallback) */}
         <Route path="/imei-check" element={<Navigate to="/imei-checker" replace />} />
