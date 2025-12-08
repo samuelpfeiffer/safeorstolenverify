@@ -68,6 +68,12 @@ const VerifyPage = () => {
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // CRITICAL: Require authentication for all verifications
+    if (!isAuthenticated) {
+      navigate('/auth?redirect=/verify');
+      return;
+    }
+
     // If license plate selected, use universal-state-lookup
     if (itemType === 'license_plate') {
       if (!stateCode) {
@@ -289,6 +295,27 @@ const VerifyPage = () => {
             Every search makes stolen items harder to sell. Check IMEI, VIN, serial numbers in 3 seconds.
           </p>
         </div>
+
+        {/* Auth Gate - Sign up prompt for unauthenticated users */}
+        {!isAuthenticated && (
+          <Card className="border-primary bg-gradient-to-r from-primary/10 to-primary/5">
+            <CardContent className="py-6">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="text-center md:text-left">
+                  <h3 className="text-lg font-semibold">Get 2 Free Verifications</h3>
+                  <p className="text-muted-foreground">Sign up in 30 seconds. No credit card required.</p>
+                </div>
+                <Button 
+                  onClick={() => navigate('/auth?redirect=/verify')} 
+                  size="lg"
+                  className="min-w-[200px]"
+                >
+                  Sign Up Free
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Search Form */}
         <Card>
