@@ -1,92 +1,87 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, Users, Shield, Clock } from 'lucide-react';
+import { TrendingUp, Users, Shield, Zap } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 
 export const RealTimeStats = () => {
   const [stats, setStats] = useState({
-    totalChecks: 5247,
-    checksToday: 127,
-    usersOnline: 23,
-    itemsSaved: 1893
+    totalChecks: 0,
+    totalUsers: 0,
+    isLoading: true
   });
 
   useEffect(() => {
-    // Fetch real stats from database
     const fetchStats = async () => {
       try {
-        // Get total verifications
+        // Get REAL total verifications only
         const { count: totalChecks } = await supabase
           .from('verification_results')
           .select('*', { count: 'exact', head: true });
         
-        // Get today's verifications
-        const today = new Date().toISOString().split('T')[0];
-        const { count: checksToday } = await supabase
-          .from('verification_results')
-          .select('*', { count: 'exact', head: true })
-          .gte('created_at', today);
-        
-        // Get user count
-        const { count: userCount } = await supabase
+        // Get REAL user count
+        const { count: totalUsers } = await supabase
           .from('profiles')
           .select('*', { count: 'exact', head: true });
         
         setStats({
-          totalChecks: (totalChecks || 0) + 5000, // Base + actual
-          checksToday: (checksToday || 0) + 50, // Base + actual
-          usersOnline: Math.floor(Math.random() * 20) + 15,
-          itemsSaved: Math.floor((totalChecks || 0) * 0.36) + 1500 // 36% are flagged
+          totalChecks: totalChecks || 0,
+          totalUsers: totalUsers || 0,
+          isLoading: false
         });
       } catch (error) {
         console.error('Error fetching stats:', error);
+        setStats(prev => ({ ...prev, isLoading: false }));
       }
     };
 
     fetchStats();
-    const interval = setInterval(fetchStats, 30000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-6 md:p-8">
-      <h3 className="text-xl font-bold text-center mb-6">
-        Real-Time Protection Stats
+      <h3 className="text-xl font-bold text-center mb-2">
+        Join Our Growing Community
       </h3>
+      <p className="text-sm text-muted-foreground text-center mb-6">
+        Real numbers. Real protection. Growing daily.
+      </p>
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-card rounded-xl p-4 text-center border">
           <TrendingUp className="h-8 w-8 mx-auto mb-2 text-primary" />
           <div className="text-2xl md:text-3xl font-bold text-foreground">
-            {stats.totalChecks.toLocaleString()}+
+            {stats.isLoading ? '...' : stats.totalChecks.toLocaleString()}
           </div>
-          <div className="text-sm text-muted-foreground">Total Checks</div>
-        </div>
-        
-        <div className="bg-card rounded-xl p-4 text-center border">
-          <Clock className="h-8 w-8 mx-auto mb-2 text-yellow-500" />
-          <div className="text-2xl md:text-3xl font-bold text-foreground">
-            {stats.checksToday}
-          </div>
-          <div className="text-sm text-muted-foreground">Checks Today</div>
+          <div className="text-sm text-muted-foreground">Verifications</div>
         </div>
         
         <div className="bg-card rounded-xl p-4 text-center border">
           <Users className="h-8 w-8 mx-auto mb-2 text-green-500" />
-          <div className="text-2xl md:text-3xl font-bold text-foreground flex items-center justify-center gap-2">
-            <span className="inline-block h-2 w-2 bg-green-500 rounded-full animate-pulse" />
-            {stats.usersOnline}
+          <div className="text-2xl md:text-3xl font-bold text-foreground">
+            {stats.isLoading ? '...' : stats.totalUsers.toLocaleString()}
           </div>
-          <div className="text-sm text-muted-foreground">Users Online</div>
+          <div className="text-sm text-muted-foreground">Users</div>
         </div>
         
         <div className="bg-card rounded-xl p-4 text-center border">
-          <Shield className="h-8 w-8 mx-auto mb-2 text-red-500" />
+          <Zap className="h-8 w-8 mx-auto mb-2 text-yellow-500" />
           <div className="text-2xl md:text-3xl font-bold text-foreground">
-            ${(stats.itemsSaved * 450).toLocaleString()}
+            3 sec
           </div>
-          <div className="text-sm text-muted-foreground">Saved From Fraud</div>
+          <div className="text-sm text-muted-foreground">Verification Speed</div>
+        </div>
+        
+        <div className="bg-card rounded-xl p-4 text-center border">
+          <Shield className="h-8 w-8 mx-auto mb-2 text-primary" />
+          <div className="text-2xl md:text-3xl font-bold text-foreground">
+            FREE
+          </div>
+          <div className="text-sm text-muted-foreground">2 Trial Checks</div>
         </div>
       </div>
+      
+      <p className="text-xs text-center text-muted-foreground mt-4">
+        New platform, growing fast. Be an early adopter!
+      </p>
     </div>
   );
 };
