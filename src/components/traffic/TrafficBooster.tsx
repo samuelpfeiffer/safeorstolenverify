@@ -2,26 +2,22 @@ import React from 'react';
 import { ViralShareWidget } from './ViralShareWidget';
 import { SocialProofPopup } from './SocialProofPopup';
 import { UrgencyBanner } from './UrgencyBanner';
-import { FloatingCTA } from './FloatingCTA';
 
 /**
- * TrafficBooster - Aggregates all traffic generation components
- * Includes viral sharing, social proof, urgency messaging, and CTAs
+ * TrafficBooster - Clean, honest traffic generation
+ * No fake popups or annoying CTAs - just helpful sharing
  */
 export const TrafficBooster = () => {
   return (
     <>
-      {/* Sticky urgency banner at top */}
+      {/* Sticky urgency banner at top - honest messaging */}
       <UrgencyBanner />
       
       {/* Left-side social share widget */}
       <ViralShareWidget />
       
-      {/* Social proof popups showing recent activity */}
+      {/* Social proof popup - shows REAL recent activity only */}
       <SocialProofPopup />
-      
-      {/* Floating app download CTA */}
-      <FloatingCTA />
     </>
   );
 };

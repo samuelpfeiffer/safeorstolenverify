@@ -235,12 +235,12 @@ const Index = () => {
         {/* What You Can Verify */}
         <WhatYouCanVerify />
 
-        {/* Quick Trust Stats */}
+        {/* Quick Trust Stats - HONEST numbers only */}
         <section className="py-8 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-2xl font-bold text-primary">150+</div>
+                <div className="text-2xl font-bold text-primary">50+</div>
                 <div className="text-sm text-muted-foreground">Database Sources</div>
               </div>
               <div>
