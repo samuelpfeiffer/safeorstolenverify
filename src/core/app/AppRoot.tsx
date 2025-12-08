@@ -28,6 +28,7 @@ import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
 import { ExitIntentPopup, SocialProofBanner, StickyMobileAppCTA, UrgencyBanner, LiveActivityToast, ViralShareWidget } from '@/components/growth';
+import { AggressiveConversionBanner } from '@/components/conversion/AggressiveConversionBanner';
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -96,6 +97,7 @@ const AuthAwareContent: React.FC = () => {
         <SocialProofBanner />
         <StickyMobileAppCTA />
         <LiveActivityToast />
+        <AggressiveConversionBanner />
         <Toaster />
       </PWAProvider>
     </GA4Provider>
