@@ -3,7 +3,7 @@ import { TrendingUp } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 
 /**
- * Shows REAL stats from database - 100% honest
+ * Shows REAL stats from database - 100% honest, no fake numbers
  */
 export const LiveStatsCounter = () => {
   const [count, setCount] = useState<number | null>(null);
