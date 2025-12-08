@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Loader2, Star, Zap, Shield, ArrowRight } from 'lucide-react';
+import { CheckCircle, Loader2, Star, Zap, Shield, ArrowRight, AlertTriangle } from 'lucide-react';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { TrustSignals } from '@/components/pricing/TrustSignals';
 import { MoneyBackGuarantee } from '@/components/pricing/MoneyBackGuarantee';
@@ -200,6 +200,36 @@ export const ConversionOptimizedPricing = ({
 
   return (
     <section className="w-full py-16 px-4">
+      {/* Urgent Call to Action */}
+      <div className="max-w-xl mx-auto mb-12 p-6 bg-gradient-to-r from-destructive/20 to-destructive/5 border-2 border-destructive rounded-xl text-center">
+        <h3 className="text-xl font-bold mb-2">⚠️ Don't Risk Buying Stolen Goods</h3>
+        <p className="text-muted-foreground mb-4">
+          Every day buyers lose hundreds of dollars on stolen items. Protect yourself now.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Button 
+            onClick={() => handleSubscribeClick('Starter Plan')}
+            disabled={loadingTier === 'Starter Plan'}
+            size="lg"
+            className="bg-destructive hover:bg-destructive/90 text-white font-bold"
+          >
+            {loadingTier === 'Starter Plan' ? (
+              <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Processing...</>
+            ) : (
+              <>Get Protected - $4.99/mo</>
+            )}
+          </Button>
+          <Button 
+            onClick={() => handleSubscribeClick('Single Verification')}
+            disabled={loadingTier === 'Single Verification'}
+            variant="outline"
+            size="lg"
+          >
+            Just 1 Check - $2.99
+          </Button>
+        </div>
+      </div>
+
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
           Protect Your Purchase Today
