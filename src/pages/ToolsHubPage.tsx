@@ -5,21 +5,24 @@ import {
   Car, 
   Bike, 
   Shield, 
-  Brain, 
   Mic, 
   AlertTriangle,
-  ArrowRight
+  ArrowRight,
+  Camera
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
+
+
+// All verification tools redirect to unified /verify page with pre-selected type
 const tools = [
   {
     id: 'imei-check',
     title: 'IMEI Checker',
     description: 'Verify phone/tablet blacklist status using IMEI.info API',
     icon: Smartphone,
-    href: '/tools/imei-check',
+    href: '/verify?type=smartphone',
     color: 'text-blue-500',
     bgColor: 'bg-blue-500/10'
   },
@@ -28,7 +31,7 @@ const tools = [
     title: 'VIN Verification',
     description: 'Check vehicle theft history via NICB/NHTSA databases',
     icon: Car,
-    href: '/tools/vin-check',
+    href: '/verify?type=vehicle',
     color: 'text-emerald-500',
     bgColor: 'bg-emerald-500/10'
   },
@@ -37,7 +40,7 @@ const tools = [
     title: 'Bike Serial Lookup',
     description: 'Search Bike Index stolen bicycle registry',
     icon: Bike,
-    href: '/tools/bike-check',
+    href: '/verify?type=bicycle',
     color: 'text-orange-500',
     bgColor: 'bg-orange-500/10'
   },
@@ -46,25 +49,25 @@ const tools = [
     title: 'Firearm Serial Check',
     description: 'Verify against HotGunz stolen firearms database',
     icon: Shield,
-    href: '/tools/firearm-check',
+    href: '/verify?type=firearm',
     color: 'text-red-500',
     bgColor: 'bg-red-500/10'
   },
   {
-    id: 'ai-analyzer',
-    title: 'AI Fraud Analyzer',
-    description: 'AI-powered risk assessment and fraud pattern detection',
-    icon: Brain,
-    href: '/tools/ai-analyzer',
-    color: 'text-purple-500',
-    bgColor: 'bg-purple-500/10'
+    id: 'barcode-scanner',
+    title: 'Barcode Scanner',
+    description: 'Scan IMEI, VIN, and serial number barcodes instantly',
+    icon: Camera,
+    href: '/verify?scan=true',
+    color: 'text-green-500',
+    bgColor: 'bg-green-500/10'
   },
   {
     id: 'voice-search',
     title: 'Voice Search',
     description: 'Hands-free verification using voice commands',
     icon: Mic,
-    href: '/tools/voice-search',
+    href: '/verify',
     color: 'text-cyan-500',
     bgColor: 'bg-cyan-500/10'
   },
@@ -73,7 +76,7 @@ const tools = [
     title: 'Report Stolen Item',
     description: 'Report a stolen item to help protect other buyers',
     icon: AlertTriangle,
-    href: '/tools/report-stolen',
+    href: '/report-stolen',
     color: 'text-yellow-500',
     bgColor: 'bg-yellow-500/10'
   }
@@ -121,11 +124,11 @@ const ToolsHubPage = () => {
 
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-4">
-              Need to verify an item quickly? Use our universal search.
+              All verification tools use our unified verification engine with parallel database checks.
             </p>
             <Link to="/verify">
               <Button size="lg">
-                Go to Universal Verification
+                Go to Universal Verification Hub
               </Button>
             </Link>
           </div>
