@@ -217,6 +217,54 @@ const FAQPage = () => {
         }}
       />
       
+      {/* Bot-visible comprehensive content for indexing */}
+      <div className="sr-only" aria-hidden="false">
+        <article itemScope itemType="https://schema.org/FAQPage">
+          <h1>Frequently Asked Questions - SafeOrStolen Stolen Item Verification</h1>
+          <p>Complete FAQ guide for SafeOrStolen - the only stolen item verification platform with a mobile app. Learn how to check if items are stolen before buying, protect yourself from fraud, and verify IMEI numbers, VIN numbers, and serial numbers for free.</p>
+          
+          <section>
+            <h2>How to Check if Something is Stolen</h2>
+            <p>SafeOrStolen checks items against 50+ databases including NCIC (FBI's National Crime Information Center), NICB (National Insurance Crime Bureau), carrier blacklists (AT&T, Verizon, T-Mobile), IMEI.info, BikeIndex, Hotgunz, and international stolen property registries. Enter any IMEI number, VIN number, or serial number and get results in 3 seconds.</p>
+            
+            <h3>How do I check if a phone is stolen using IMEI?</h3>
+            <p>Find your phone's IMEI by dialing *#06# or checking Settings → About Phone. Enter the 15-digit IMEI number at SafeOrStolen.com/verify. We check against global carrier blacklists, GSMA databases, and insurance theft records to determine if the phone has been reported stolen or is blacklisted.</p>
+            
+            <h3>How do I check if a car is stolen using VIN?</h3>
+            <p>Locate the 17-character VIN on the dashboard near the windshield or on the driver's door jamb. Enter it at SafeOrStolen.com/verify. We verify against NCIC, NICB VINCheck, state DMV records, and insurance databases to check if the vehicle is reported stolen, salvaged, or has title issues.</p>
+            
+            <h3>What items can SafeOrStolen verify?</h3>
+            <p>SafeOrStolen verifies: Mobile phones (IMEI), Vehicles including cars, trucks, motorcycles (VIN), Bicycles (serial number via BikeIndex), Firearms (serial number via Hotgunz), Electronics including laptops, tablets, gaming consoles, cameras (serial numbers), Boats and watercraft (HIN), Tools and equipment, Jewelry and watches, Appliances, and any item with a unique identifier.</p>
+          </section>
+          
+          <section>
+            <h2>SafeOrStolen Mobile App</h2>
+            <p>SafeOrStolen is the ONLY stolen verification platform with a mobile app. CheckMEND, IMEI.info, Swappa, and all other competitors have NO mobile apps - they only offer slow websites. Our app features instant barcode scanning, 3-second verification, offline mode, and works on iOS and Android. Download free at safeorstolen.com/app.</p>
+            
+            <h3>Does CheckMEND have an app?</h3>
+            <p>No, CheckMEND does NOT have a mobile app. They only offer a website where you manually type serial numbers. SafeOrStolen is the only alternative with an actual mobile app featuring barcode scanning for instant verification.</p>
+            
+            <h3>Is there a free IMEI checker app?</h3>
+            <p>Yes, SafeOrStolen offers a FREE IMEI checker app with 2 free checks (14-day trial). We're the only IMEI checker with a mobile app featuring barcode scanning. Download free at safeorstolen.com/app.</p>
+          </section>
+          
+          <section>
+            <h2>Pricing and Free Trial</h2>
+            <p>SafeOrStolen offers 2 free verification checks during a 14-day trial period. No credit card required. After the trial: Starter Plan $4.99/month (15 checks), Personal Plan $9.99/month (50 checks), Professional Plan $29.99/month (unlimited checks), Pay Per Use $0.50 per check.</p>
+          </section>
+          
+          <section>
+            <h2>Security and Privacy</h2>
+            <p>SafeOrStolen uses 256-bit SSL encryption and maintains a zero-data retention policy. Serial numbers, IMEI numbers, and VIN numbers are deleted immediately after providing results. We never share search data with third parties.</p>
+          </section>
+          
+          <section>
+            <h2>Contact and Support</h2>
+            <p>Contact SafeOrStolen support at support@safeorstolen.com. Visit safeorstolen.com/verify to start checking items, safeorstolen.com/app to download our mobile app, or safeorstolen.com/pricing for plan details.</p>
+          </section>
+        </article>
+      </div>
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'FAQ', href: '/faq' }]} />
