@@ -21,13 +21,6 @@ export const StructuredDataForTraffic = () => {
           "priceCurrency": "USD",
           "description": "Free trial with 2 verification checks"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.1",
-          "ratingCount": "5",
-          "reviewCount": "5",
-          "bestRating": "5"
-        },
         "description": "Check if phones, cars, laptops, and other items are stolen before buying. Free IMEI check, VIN lookup, and serial number verification.",
         "downloadUrl": "https://safeorstolen.com/app",
         "featureList": [
