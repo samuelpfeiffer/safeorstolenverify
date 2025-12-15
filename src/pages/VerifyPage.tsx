@@ -1,5 +1,6 @@
 /**
- * Verification Page - Production Ready with Parallel API Calls
+ * Verification Page - Unified Verification Hub
+ * All verification happens here with item type cards, scanner, and voice search
  */
 
 import { useState, useEffect } from 'react';
@@ -7,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, Loader2, Shield, AlertTriangle, Camera } from 'lucide-react';
+import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, Monitor, CircuitBoard, Crosshair, FileText, Mic, MicOff } from 'lucide-react';
 import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
@@ -17,7 +18,19 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
+import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import type { AggregatedResult } from '@/services/VerificationService';
+
+// Item type configuration for quick-select cards
+const ITEM_TYPES = [
+  { id: 'smartphone', label: 'Phone/IMEI', icon: Smartphone, color: 'text-blue-500', bgColor: 'bg-blue-500/10', description: 'Check IMEI blacklist' },
+  { id: 'vehicle', label: 'Vehicle/VIN', icon: Car, color: 'text-emerald-500', bgColor: 'bg-emerald-500/10', description: 'Verify VIN history' },
+  { id: 'bicycle', label: 'Bicycle', icon: Bike, color: 'text-orange-500', bgColor: 'bg-orange-500/10', description: 'Search Bike Index' },
+  { id: 'firearm', label: 'Firearm', icon: Crosshair, color: 'text-red-500', bgColor: 'bg-red-500/10', description: 'Check HotGunz DB' },
+  { id: 'laptop', label: 'Laptop', icon: Monitor, color: 'text-purple-500', bgColor: 'bg-purple-500/10', description: 'Verify serial number' },
+  { id: 'electronics', label: 'Electronics', icon: CircuitBoard, color: 'text-cyan-500', bgColor: 'bg-cyan-500/10', description: 'Check equipment' },
+  { id: 'license_plate', label: 'License Plate', icon: FileText, color: 'text-yellow-500', bgColor: 'bg-yellow-500/10', description: 'State DMV lookup' },
+] as const;
 
 const VerifyPage = () => {
   const [searchParams] = useSearchParams();
@@ -30,13 +43,24 @@ const VerifyPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const navigate = useNavigate();
 
+  // Voice search integration
+  const { isListening, isSupported: voiceSupported, startListening, stopListening } = useVoiceSearch({
+    onResult: (text) => {
+      setIdentifier(text);
+    }
+  });
+
   const result = customResult || hookResult;
 
-  // Set item type from URL params (e.g., ?type=license_plate)
+  // Set item type from URL params (e.g., ?type=smartphone) and auto-open scanner
   useEffect(() => {
     const typeParam = searchParams.get('type');
+    const scanParam = searchParams.get('scan');
     if (typeParam) {
       setItemType(typeParam);
+    }
+    if (scanParam === 'true') {
+      setIsScannerOpen(true);
     }
   }, [searchParams]);
 
@@ -352,6 +376,27 @@ const VerifyPage = () => {
           </p>
         </div>
 
+        {/* Quick-Select Item Type Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+          {ITEM_TYPES.map((type) => (
+            <button
+              key={type.id}
+              onClick={() => setItemType(type.id)}
+              className={`p-3 rounded-lg border transition-all text-left ${
+                itemType === type.id 
+                  ? 'border-primary bg-primary/10 ring-2 ring-primary/20' 
+                  : 'border-border hover:border-primary/50 hover:bg-muted/50'
+              }`}
+            >
+              <div className={`w-8 h-8 rounded-md ${type.bgColor} flex items-center justify-center mb-2`}>
+                <type.icon className={`w-4 h-4 ${type.color}`} />
+              </div>
+              <p className="font-medium text-sm">{type.label}</p>
+              <p className="text-xs text-muted-foreground">{type.description}</p>
+            </button>
+          ))}
+        </div>
+
         {/* Auth Gate - Sign up prompt for unauthenticated users */}
         {!isAuthenticated && (
           <Card className="border-primary bg-gradient-to-r from-primary/10 to-primary/5">
@@ -398,14 +443,27 @@ const VerifyPage = () => {
                     <Button
                       type="button"
                       variant="outline"
-                      size="icon"
                       onClick={() => setIsScannerOpen(true)}
                       disabled={isLoading}
-                      className="h-auto py-6 px-4"
-                      title="Scan QR code or barcode"
+                      className="h-auto py-6 px-4 gap-2"
+                      title="Scan barcode"
                     >
                       <Camera className="w-5 h-5" />
+                      <span className="hidden sm:inline">Scan</span>
                     </Button>
+                    {voiceSupported && (
+                      <Button
+                        type="button"
+                        variant={isListening ? "default" : "outline"}
+                        onClick={isListening ? stopListening : startListening}
+                        disabled={isLoading}
+                        className={`h-auto py-6 px-4 gap-2 ${isListening ? 'bg-red-500 hover:bg-red-600' : ''}`}
+                        title={isListening ? "Stop listening" : "Voice search"}
+                      >
+                        {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+                        <span className="hidden sm:inline">{isListening ? 'Stop' : 'Voice'}</span>
+                      </Button>
+                    )}
                   </div>
                 </div>
                 <Select value={itemType} onValueChange={setItemType} disabled={isLoading}>
