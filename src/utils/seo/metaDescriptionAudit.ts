@@ -14,7 +14,7 @@ export interface MetaDescriptionIssue {
 export const OPTIMAL_META_LENGTH = { min: 150, max: 160 };
 
 export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
-  '/': 'ONLY verification mobile app for iOS & Android. Check phones, cars, guns & items. 4 FREE verifications. Download now!',
+  '/': 'ONLY verification mobile app for iOS & Android. Check phones, cars, guns & items. 2 FREE verifications. Download now!',
   '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics, and firearms in 30 seconds. Check IMEI, VIN, serial numbers across global databases.',
   '/pricing': 'Simple pricing: 2 free searches, $0.50 per check, or unlimited plans from $4.99/month. No hidden fees. Cancel anytime.',
   '/imei-check': 'Free IMEI checker. Verify if a phone is stolen, blacklisted, or clean before buying. Works for iPhone, Samsung, Android devices.',

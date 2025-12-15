@@ -21,7 +21,7 @@ export const OptimizedTitles: React.FC<OptimizedTitlesProps> = ({
       case 'home':
         return {
           title: customTitle || `Free IMEI VIN Check - Verify & Search Stolen Items Database${locationSuffix}`,
-          description: customDescription || `Free stolen item verification. Check & verify phones, cars, electronics before buying${locationSuffix}. Search our database: IMEI, VIN, serial numbers. 4 free checks.`
+          description: customDescription || `Free stolen item verification. Check & verify phones, cars, electronics before buying${locationSuffix}. Search our database: IMEI, VIN, serial numbers. 2 free checks.`
         };
       
       case 'check-phone':

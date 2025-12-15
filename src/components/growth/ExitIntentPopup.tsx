@@ -61,7 +61,7 @@ export const ExitIntentPopup: React.FC = () => {
 
       toast({
         title: "You're in!",
-        description: "Check your email for 3 free verification credits.",
+        description: "Check your email for 2 free verification credits.",
       });
       setIsVisible(false);
     } catch (error) {
@@ -92,7 +92,7 @@ export const ExitIntentPopup: React.FC = () => {
           </div>
 
           <h2 className="mb-2 text-2xl font-bold text-foreground">
-            Wait! Get 3 Free Checks
+            Wait! Get 2 Free Checks
           </h2>
           
           <p className="mb-6 text-muted-foreground">
