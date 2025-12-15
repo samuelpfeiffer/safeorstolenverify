@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { runParallelVerification } from '../_shared/parallel-verification.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -12,18 +13,7 @@ interface VerificationRequest {
   userId?: string;
 }
 
-interface ProviderResult {
-  provider: string;
-  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
-  confidence: number;
-  message: string;
-  details?: any;
-  responseTime: number;
-  url?: string;
-}
-
 serve(async (req) => {
-  // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -47,7 +37,7 @@ serve(async (req) => {
     );
 
     const cleanIdentifier = identifier.trim().toUpperCase();
-    const providers: ProviderResult[] = [];
+    const providers: any[] = [];
 
     // 1. Check internal stolen_items database first
     try {
@@ -77,16 +67,43 @@ serve(async (req) => {
       }
     } catch (dbError) {
       console.error('[verify-item] Database check error:', dbError);
-      providers.push({
-        provider: 'SafeOrStolen Database',
-        status: 'error',
-        confidence: 0,
-        message: 'Database check unavailable',
-        responseTime: Date.now() - startTime,
-      });
     }
 
-    // 2. Check external verification cache
+    // 2. Run parallel verification with web scraping + AI
+    try {
+      const parallelResult = await runParallelVerification(supabaseClient, {
+        identifier: cleanIdentifier,
+        itemType: itemType || 'unknown',
+        includeWebScraping: true,
+        includeAI: true,
+        additionalSources: []
+      });
+
+      // Add results from parallel verification
+      if (parallelResult.details?.all_sources) {
+        for (const source of parallelResult.details.all_sources) {
+          providers.push({
+            provider: source.source,
+            status: source.status,
+            confidence: source.confidence,
+            message: source.message,
+            responseTime: Date.now() - startTime,
+          });
+        }
+      } else {
+        providers.push({
+          provider: parallelResult.source,
+          status: parallelResult.status,
+          confidence: parallelResult.confidence,
+          message: parallelResult.message,
+          responseTime: Date.now() - startTime,
+        });
+      }
+    } catch (parallelError) {
+      console.error('[verify-item] Parallel verification error:', parallelError);
+    }
+
+    // 3. Check external verification cache
     try {
       const { data: cachedResult } = await supabaseClient
         .from('external_verification_cache')
@@ -110,29 +127,10 @@ serve(async (req) => {
       // Cache miss is fine, continue
     }
 
-    // 3. Simulate additional database checks (these represent real integrations)
-    const simulatedChecks = [
-      { provider: 'NCIC Database', weight: 0.95 },
-      { provider: 'International Property Registry', weight: 0.85 },
-      { provider: 'Community Reports', weight: 0.70 },
-    ];
-
-    for (const check of simulatedChecks) {
-      // In production, these would be real API calls
-      // For now, return safe with appropriate confidence
-      providers.push({
-        provider: check.provider,
-        status: 'safe',
-        confidence: Math.round(check.weight * 80),
-        message: `No reports found in ${check.provider}`,
-        responseTime: Date.now() - startTime,
-      });
-    }
-
     // Aggregate results
     const hasStolenReport = providers.some(p => p.status === 'stolen');
     const hasLostReport = providers.some(p => p.status === 'lost');
-    const successfulChecks = providers.filter(p => p.status !== 'error');
+    const successfulChecks = providers.filter(p => p.status !== 'error' && p.confidence > 0);
     const avgConfidence = successfulChecks.length > 0
       ? Math.round(successfulChecks.reduce((sum, p) => sum + p.confidence, 0) / successfulChecks.length)
       : 0;
@@ -152,7 +150,7 @@ serve(async (req) => {
     } else if (successfulChecks.length > 0) {
       finalStatus = 'safe';
       riskLevel = 'low';
-      message = `✅ SAFE: Checked ${successfulChecks.length} database(s). No theft reports found.`;
+      message = `✅ SAFE: Checked ${successfulChecks.length} source(s). No theft reports found.`;
     } else {
       finalStatus = 'unknown';
       riskLevel = 'medium';
@@ -171,7 +169,7 @@ serve(async (req) => {
       timestamp: new Date().toISOString(),
     };
 
-    // Store result in database using service role
+    // Store result in database
     try {
       await supabaseClient
         .from('verification_results')
