@@ -89,7 +89,7 @@ export const StateVinPageTemplate = ({
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
-      {/* Bot-visible content for search engines */}
+      {/* Bot-visible content for search engines - Enhanced keyword-rich content */}
       <BotVisibleContent>
         <h1>{title}</h1>
         <p>{content.intro}</p>
@@ -104,7 +104,16 @@ export const StateVinPageTemplate = ({
         <p>{content.localLaws}</p>
         
         <h2>How SafeOrStolen Verifies {state} Vehicles</h2>
-        <p>We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NICB (National Insurance Crime Bureau), NHTSA, Hotgunz, IMEI.info, BikeIndex, carrier blacklists, and insurance networks. When you check a VIN, we query all partners simultaneously and return unified results in under 3 seconds.</p>
+        <p>SafeOrStolen is the Carfax for Everything - the comprehensive verification platform for all secondhand items. We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NICB (National Insurance Crime Bureau), NHTSA, state DMV records, Hotgunz, IMEI.info, BikeIndex, carrier blacklists, and insurance networks. When you check a VIN in {state}, we query all partners simultaneously and return unified results in under 3 seconds.</p>
+        
+        <h2>Free {state} VIN Check - How It Works</h2>
+        <p>To check if a {state} vehicle is stolen: 1) Enter the 17-digit VIN on SafeOrStolen.com or use our mobile app's barcode scanner. 2) Our system searches NCIC, NICB, {state} DMV, and 47 other databases simultaneously. 3) Receive instant verification showing if the vehicle is reported stolen, has title issues, or is safe to purchase. SafeOrStolen offers 2 free verifications to try the service.</p>
+        
+        <h2>What Is a VIN Number?</h2>
+        <p>A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every vehicle manufactured since 1981. The VIN contains information about the manufacturer, vehicle specifications, and year of production. In {state}, you can find the VIN on the dashboard near the windshield, driver's door jamb, vehicle title, and registration documents. Always verify the VIN physically matches all documentation before purchasing any {state} vehicle.</p>
+        
+        <h2>{state} Stolen Vehicle Database Sources</h2>
+        <p>SafeOrStolen searches these databases for {state} VIN verification: NCIC (National Crime Information Center) - FBI's database of stolen vehicles reported by {state} law enforcement. NICB (National Insurance Crime Bureau) - Insurance industry database of total loss and theft claims. NMVTIS (National Motor Vehicle Title Information System) - Federal database tracking title history across all 50 states including {state}. {state} DMV records - Official state registration and title records.</p>
         
         <h2>Frequently Asked Questions</h2>
         {faqs.map((faq, idx) => (
@@ -114,7 +123,10 @@ export const StateVinPageTemplate = ({
           </div>
         ))}
         
-        <p>Check any {state} VIN free at SafeOrStolen.com. 2 free verifications, results in 3 seconds.</p>
+        <h2>Why Choose SafeOrStolen for {state} VIN Checks?</h2>
+        <p>SafeOrStolen is the only stolen item verification service with a mobile app featuring barcode scanning. Unlike competitors like CheckMEND, Carfax, or IMEI.info, SafeOrStolen verifies ALL types of items - cars, phones, electronics, bikes, boats, firearms, jewelry, and more. Our {state} VIN lookup is free to try with 2 verifications, results in 3 seconds, and searches more databases than any competitor. Download the SafeOrStolen app at safeorstolen.com/app for instant {state} vehicle verification.</p>
+        
+        <p>Check any {state} VIN free at SafeOrStolen.com. 2 free verifications, results in 3 seconds. Protect yourself from buying a stolen vehicle in {state}.</p>
       </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
