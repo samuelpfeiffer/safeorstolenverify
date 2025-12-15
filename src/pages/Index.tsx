@@ -146,10 +146,42 @@ const Index = () => {
             
             <h2>Trust & Security</h2>
             <p>SafeOrStolen uses 256-bit SSL encryption, never stores your payment data, and processes all verifications securely. We're backed by FasterCapital and featured in multiple press releases. Join thousands of users protecting themselves from stolen goods.</p>
+            
+            <h2>Frequently Asked Questions</h2>
+            <h3>How do I check if a phone is stolen before buying?</h3>
+            <p>Enter the IMEI number on SafeOrStolen.com. The IMEI is found in Settings or by dialing *#06#. We check against carrier blacklists, NCIC, and international databases. Results appear in 3 seconds showing if the phone is clear or flagged as stolen.</p>
+            
+            <h3>How do I check if a car is stolen before buying?</h3>
+            <p>Enter the 17-character VIN on SafeOrStolen.com. The VIN is located on the dashboard near the windshield or driver's door jamb. We verify against NCIC, NICB, and state DMV records to confirm the vehicle isn't stolen, salvaged, or has title issues.</p>
+            
+            <h3>Is SafeOrStolen free?</h3>
+            <p>Yes, SafeOrStolen offers 2 free verification checks during a 14-day trial. No credit card required. After the trial, choose from affordable plans starting at $4.99/month or pay-per-use at $0.50 per check.</p>
+            
+            <h3>What's the difference between SafeOrStolen and CheckMEND?</h3>
+            <p>SafeOrStolen offers a mobile app with barcode scanning (CheckMEND doesn't), covers more item types (phones, cars, boats, firearms, electronics), and provides 2 free checks. CheckMEND charges per report with no free tier.</p>
+            
+            <h3>Can I check firearms on SafeOrStolen?</h3>
+            <p>Yes, SafeOrStolen verifies firearms against the Hotgunz stolen firearms registry and other law enforcement databases. Enter the serial number to check if a firearm has been reported stolen.</p>
+            
+            <h3>What databases does SafeOrStolen check?</h3>
+            <p>We aggregate 50+ sources including NCIC (FBI), NICB, IMEI.info, carrier blacklists (AT&T, Verizon, T-Mobile), BikeIndex, Hotgunz, StolenRegister, and international theft databases.</p>
+            
+            <h2>Popular Verification Types</h2>
+            <ul>
+              <li>IMEI Checker - Verify if a phone is stolen or blacklisted before buying</li>
+              <li>VIN Lookup - Check if a vehicle is stolen, salvaged, or has title issues</li>
+              <li>Serial Number Checker - Verify electronics, tools, and equipment</li>
+              <li>Firearm Verification - Check if a gun has been reported stolen</li>
+              <li>Boat HIN Check - Verify watercraft against theft databases</li>
+              <li>Bicycle Verification - Check BikeIndex and stolen bike registries</li>
+            </ul>
+            
+            <h2>Service Areas</h2>
+            <p>SafeOrStolen provides verification services across all 50 US states including California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, and Washington. We also cover international databases for worldwide verification.</p>
           </section>
           
           <footer>
-            <p>© 2024 SafeOrStolen. The #1 stolen item verification platform. Check IMEI, VIN, serial numbers free.</p>
+            <p>© 2024 SafeOrStolen. The #1 stolen item verification platform. Check IMEI, VIN, serial numbers free. Carfax for everything - buy and sell with confidence.</p>
           </footer>
         </article>
       </div>

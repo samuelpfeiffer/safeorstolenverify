@@ -73,7 +73,8 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/our-story', to: '/about', permanent: true },
   { from: '/enterprise-demo', to: '/for-brands', permanent: true },
   { from: '/for-consumers', to: '/', permanent: true },
-  { from: '/fastercapital/tech-cofounder', to: '/fastercapital/raise-capital', permanent: true },
+  { from: '/fastercapital/tech-cofounder', to: '/about', permanent: true },
+  { from: '/enterprise-demo', to: '/about', permanent: true },
   { from: '/terms-of-service', to: '/terms', permanent: true },
   { from: '/privacy-policy', to: '/privacy', permanent: true },
 ];

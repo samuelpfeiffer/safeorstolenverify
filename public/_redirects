@@ -193,6 +193,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /data-sources                /about  301!
 /seller-guide                /about  301!
 /seo-strategy                /about  301!
+/fastercapital/tech-cofounder /about 301!
+/enterprise-demo             /about  301!
 
 # ============================================
 # APP SUBDIRECTORY REDIRECTS (GSC "Page with redirect" Errors)
