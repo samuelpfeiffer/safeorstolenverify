@@ -15,6 +15,7 @@ const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
+const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
@@ -167,6 +168,7 @@ export const AppRoutes = () => {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/report-stolen" element={<ReportStolenPage />} />
         <Route path="/checkout-redirect" element={<CheckoutRedirectPage />} />
         <Route path="/verification-success" element={<VerificationSuccessPage />} />
 
