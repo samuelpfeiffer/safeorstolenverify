@@ -139,7 +139,7 @@ export const createWebsiteSchema = () => ({
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": `${SITE_CONFIG.url}/?serialNumber={search_term_string}`,
+    "target": `${SITE_CONFIG.url}/verify`,
     "query-input": "required name=search_term_string"
   }
 });
