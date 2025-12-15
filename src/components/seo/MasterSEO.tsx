@@ -112,10 +112,7 @@ export const MasterSEO: React.FC = () => {
     "description": "Carfax for Everything - Verify serial numbers, IMEI, VIN, license plates globally. All 50 states + international coverage.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://safeorstolen.com/verify?q={search_term_string}"
-      },
+      "target": "https://safeorstolen.com/verify",
       "query-input": "required name=search_term_string"
     }
   };

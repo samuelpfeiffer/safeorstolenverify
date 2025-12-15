@@ -284,9 +284,30 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /for-used-car-dealers                              /for-dealers  301!
 
 # ============================================
+# CITY SUBDIRECTORY REDIRECTS (GSC "Alternate page" errors)
+# ============================================
+/city/los-angeles-ca/vin-verification     /stolen-check-los-angeles     301!
+/city/los-angeles-ca/imei-check           /stolen-check-los-angeles     301!
+/city/los-angeles-ca/stolen-item-checker  /stolen-check-los-angeles     301!
+/city/new-york-ny/vin-verification        /stolen-check-new-york-city   301!
+/city/new-york-ny/imei-check              /stolen-check-new-york-city   301!
+/city/new-york-ny/stolen-item-checker     /stolen-check-new-york-city   301!
+/city/*                                   /verify                       301!
+
+# ============================================
+# STATE SUBDIRECTORY REDIRECTS (GSC "Alternate page" errors)
+# ============================================
+/state/texas/stolen-item-checker          /texas-vin-lookup             301!
+/state/california/stolen-item-checker     /california-vin-lookup        301!
+/state/florida/stolen-item-checker        /florida-vin-lookup           301!
+/state/new-york/stolen-item-checker       /new-york-vin-lookup          301!
+/state/illinois/stolen-item-checker       /illinois-vin-lookup          301!
+
+# ============================================
 # WILDCARD REDIRECTS (MUST BE NEAR END)
 # ============================================
 /guides/imei-blacklist-guide       /about  301!
+/guides/imei-blacklist-explained   /about  301!
 /guides/*                          /about  301!
 /los-angeles/vin-check             /california-vin-lookup  301!
 /state/*                           /verify  301!
@@ -298,8 +319,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # BLOG POST REDIRECTS (GSC "Alternate page" Errors)
 # ============================================
 /blog/2025-stolen-goods-statistics                              /blog            301!
-/blog/most-stolen-items-2025                                    /statistics/stolen-goods 301!
+/blog/most-stolen-items-2025                                    /blog            301!
 /blog/how-to-use-imei-checker-app                               /blog            301!
+/blog/business-guide-preventing-stolen-goods                    /blog            301!
 /blog/safeorstolen-firearms-marketplace-verification            /blog            301!
 /blog/complete-verification-guide-stolen-goods-check            /blog            301!
 /blog/data-source-credibility-stolen-goods-verification         /about           301!

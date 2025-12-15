@@ -49,10 +49,7 @@ export const WebSiteSchema = () => {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://safeorstolen.com/?q={search_term_string}"
-      },
+      "target": "https://safeorstolen.com/verify",
       "query-input": "required name=search_term_string"
     },
     "mainEntity": {
