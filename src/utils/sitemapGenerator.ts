@@ -61,6 +61,9 @@ Allow: /pricing
 Allow: /about
 Allow: /contact
 
+# Block all query parameter URLs
+Disallow: /*?*
+
 # Block admin and private areas
 Disallow: /admin/
 Disallow: /api/

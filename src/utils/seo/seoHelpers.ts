@@ -373,7 +373,7 @@ export const generatePageStructuredData = (pageType: string, customData?: Record
           "url": baseUrl,
           "potentialAction": {
             "@type": "SearchAction",
-            "target": `${baseUrl}/?q={search_term_string}`,
+            "target": `${baseUrl}/verify`,
             "query-input": "required name=search_term_string"
           }
         }
