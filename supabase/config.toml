@@ -3,6 +3,18 @@ project_id = "lxrdzbknktwlubbmlsqe"
 [functions.verify-item]
 verify_jwt = false
 
+[functions.verify-bikeindex]
+verify_jwt = false
+
+[functions.verify-imei]
+verify_jwt = false
+
+[functions.verify-hotgunz]
+verify_jwt = false
+
+[functions.verify-vehicle]
+verify_jwt = false
+
 [functions.web-scraper-verification]
 verify_jwt = false
 
