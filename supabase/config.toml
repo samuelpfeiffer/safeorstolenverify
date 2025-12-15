@@ -1,5 +1,8 @@
 project_id = "lxrdzbknktwlubbmlsqe"
 
+[functions.verify-item]
+verify_jwt = false
+
 [functions.gsc-api]
 verify_jwt = true
 
