@@ -3221,15 +3221,15 @@ export type Database = {
           }
       validate_oauth_token_access:
         | {
-            Args: { token_id: string; token_user_id: string }
-            Returns: boolean
-          }
-        | {
             Args: {
               operation_type: string
               requesting_user_id: string
               resource_user_id: string
             }
+            Returns: boolean
+          }
+        | {
+            Args: { token_id: string; token_user_id: string }
             Returns: boolean
           }
       validate_serial_number_enhanced: {

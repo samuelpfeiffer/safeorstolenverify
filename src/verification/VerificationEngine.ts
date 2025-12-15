@@ -121,9 +121,9 @@ class VerificationEngine {
   private async primaryVerification(request: VerificationRequest): Promise<Partial<VerificationResult>> {
     const { data, error } = await supabase.functions.invoke('verify-item', {
       body: {
-        serialNumber: request.serialNumber,
+        identifier: request.serialNumber,
         itemType: request.itemType,
-        metadata: request.metadata
+        userId: request.metadata?.user_id
       }
     });
 
@@ -131,16 +131,17 @@ class VerificationEngine {
       throw new Error(`Primary verification failed: ${error.message}`);
     }
 
-    if (!data?.success) {
-      throw new Error(data?.error || 'Primary verification returned no data');
+    // Handle the new response format from verify-item
+    if (data?.error) {
+      throw new Error(data.error);
     }
 
     return {
-      status: this.normalizeStatus(data.result.status),
-      confidence: data.result.confidence || 0,
-      source: data.result.source || 'SOS_PRIMARY',
-      details: data.result.details,
-      message: data.result.message || 'Verification completed'
+      status: this.normalizeStatus(data.finalStatus || 'unknown'),
+      confidence: data.confidence || 0,
+      source: 'verify-item',
+      details: data.providers || data.details,
+      message: data.message || 'Verification completed'
     };
   }
 
