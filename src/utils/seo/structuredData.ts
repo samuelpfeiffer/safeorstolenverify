@@ -196,7 +196,7 @@ export const createServiceSchema = () => ({
         "itemOffered": {
           "@type": "Service",
           "name": "Free Consumer Verification",
-          "description": "Basic stolen goods verification protecting innocent consumers with 4 free searches per day"
+          "description": "Basic stolen goods verification protecting innocent consumers with 2 free searches per day"
         },
         "price": "0",
         "priceCurrency": "USD",

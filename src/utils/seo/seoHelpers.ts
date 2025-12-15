@@ -242,7 +242,7 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
   },
   'free-stolen-check': {
     title: 'Free Stolen Check - IMEI, VIN & Serial Verification',
-    description: 'Free stolen item checks. Verify phones, cars, electronics instantly. No credit card required. 4 free searches for new users.',
+    description: 'Free stolen item checks. Verify phones, cars, electronics instantly. No credit card required. 2 free searches for new users.',
     keywords: 'free stolen check, free IMEI check, free VIN check, free verification, no cost stolen check',
     type: 'website'
   },

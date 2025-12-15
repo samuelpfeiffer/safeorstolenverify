@@ -137,7 +137,7 @@ export const SubscriptionStatus = () => {
       <CardContent className="space-y-4">
         <div className="flex items-center gap-2 text-sm text-gray-400">
           <Clock className="h-4 w-4" />
-          4 free searches per account (one-time)
+          2 free searches per account (one-time)
         </div>
         
         {remainingSearches === 0 ? (

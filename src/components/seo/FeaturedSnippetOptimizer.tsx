@@ -61,13 +61,13 @@ export const FeaturedSnippetOptimizer = () => {
         <meta name="question" content="How to check if a phone is stolen?" />
         <meta name="answer" content="Use SafeOrStolen's free mobile app: 1) Find IMEI by dialing *#06#, 2) Open app on iOS or Android, 3) Enter IMEI, 4) Get instant results. Only service with mobile apps." />
         
-        <meta name="quick-answer" content="SafeOrStolen is the only stolen goods checker with mobile apps for iOS and Android, offering 4 free searches for IMEI, VIN, and firearm verification." />
+        <meta name="quick-answer" content="SafeOrStolen is the only stolen goods checker with mobile apps for iOS and Android, offering 2 free searches for IMEI, VIN, and firearm verification." />
         
         {/* List-type featured snippets */}
         <meta name="how-to-steps" content="1. Find IMEI number (*#06#), 2. Download SafeOrStolen app (iOS/Android), 3. Enter IMEI or scan barcode, 4. View instant verification results" />
         
         {/* Comparison table data */}
-        <meta name="comparison-safeorstolen" content="Mobile apps: YES, Free searches: 4, Firearms checking: YES, Platforms: iOS+Android" />
+        <meta name="comparison-safeorstolen" content="Mobile apps: YES, Free searches: 2, Firearms checking: YES, Platforms: iOS+Android" />
         <meta name="comparison-checkmend" content="Mobile apps: NO, Free searches: 0, Firearms checking: NO, Platforms: Web only" />
         <meta name="comparison-imeiinfo" content="Mobile apps: NO, Free searches: Limited, Firearms checking: NO, Platforms: Web only" />
         
