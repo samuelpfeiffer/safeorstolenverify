@@ -235,6 +235,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # COMPARISON/COMPETITOR PAGES
 # ============================================
+/comparison-checkmend              /vs-checkmend  301!
 /vs-stolenregister                 /pricing  301!
 /vs-nicb                           /pricing  301!
 /carfax-alternative                /vs-carfax  301!
@@ -302,6 +303,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /state/florida/stolen-item-checker        /florida-vin-lookup           301!
 /state/new-york/stolen-item-checker       /new-york-vin-lookup          301!
 /state/illinois/stolen-item-checker       /illinois-vin-lookup          301!
+
+# ============================================
+# INTERNATIONAL VIN CHECK PAGES
+# ============================================
+/australia-vin-check               /vin-checker  301!
+/canada-vin-check                  /vin-checker  301!
 
 # ============================================
 # WILDCARD REDIRECTS (MUST BE NEAR END)
