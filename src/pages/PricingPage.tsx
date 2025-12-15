@@ -309,6 +309,36 @@ const PricingPage = () => {
       />
 
       <ErrorBoundary>
+        {/* Keyword-rich content for search engine crawling */}
+        <article className="sr-only">
+          <h1>SafeOrStolen Pricing - Stolen Item Verification Plans</h1>
+          <p>SafeOrStolen offers affordable stolen item verification plans for buyers, sellers, and businesses. Check if phones, cars, electronics, firearms, and bikes are stolen before you buy.</p>
+          
+          <h2>Free Trial - 2 Free Searches</h2>
+          <p>Start with 2 free verification checks within 14 days. No credit card required. Verify IMEI numbers, VIN numbers, and serial numbers instantly. SafeOrStolen free trial lets you check if items are stolen before committing to a paid plan.</p>
+          
+          <h2>Starter Plan - $2.99/month</h2>
+          <p>10 verification checks per month. Perfect for occasional marketplace buyers on Facebook Marketplace, Craigslist, OfferUp, and eBay. Check IMEI for stolen phones, VIN for stolen cars, serial numbers for electronics.</p>
+          
+          <h2>Personal Plan - $4.99/month</h2>
+          <p>Unlimited stolen item verification checks. Best value for frequent secondhand buyers and sellers. Verify unlimited phones, vehicles, electronics, bikes, and more. Full search history included.</p>
+          
+          <h2>Pro Plan - $9/month</h2>
+          <p>Unlimited checks with bulk verification and priority support. Ideal for power users and small resellers. Batch verify multiple items at once. Export verification reports.</p>
+          
+          <h2>Business Plan - $29.99/month</h2>
+          <p>Everything in Pro plus team features, API access, and white-label options. Perfect for pawn shops, secondhand stores, and dealerships. Verify inventory before purchasing.</p>
+          
+          <h2>CheckMEND Alternative Pricing</h2>
+          <p>SafeOrStolen is the affordable CheckMEND alternative. CheckMEND charges $5-10 per check with no mobile app. SafeOrStolen offers unlimited checks from $4.99/month with a free mobile app, barcode scanning, and offline mode. We're the only stolen verification app available.</p>
+          
+          <h2>Why Choose SafeOrStolen Over Competitors</h2>
+          <p>Unlike CheckMEND, IMEI.info, Swappa, Carfax, and Autocheck, SafeOrStolen offers: mobile app with barcode scanner, 3-second verification results, offline mode, broader item coverage (phones, cars, electronics, firearms, boats, bikes, jewelry, tools), and all 50 US states coverage. We aggregate data from NCIC, NICB, Hotgunz, BikeIndex, carrier blacklists, and insurance databases.</p>
+          
+          <h2>Protect Buyers and Sellers</h2>
+          <p>SafeOrStolen protects both buyers from purchasing stolen goods and sellers proving item legitimacy. Every verification makes stolen items harder to sell, reducing theft crime. Join thousands of users protecting themselves from financial loss and legal trouble.</p>
+        </article>
+        
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'Pricing', href: '/pricing' }]} />
         </div>

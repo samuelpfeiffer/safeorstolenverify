@@ -287,6 +287,44 @@ const AppPage = () => {
     ]
   };
 
+  // Keyword-rich sr-only content for SEO
+  const seoContent = `
+    SafeOrStolen is the only stolen item verification app available for download. CheckMEND has no app, IMEI.info has no app, Swappa has no app, Carfax has no app, and Autocheck has no app. SafeOrStolen is the FIRST and ONLY mobile app for checking if items are stolen before you buy.
+
+    Download the SafeOrStolen stolen item checker app free for iOS and Android. Install directly from safeorstolen.com/app - no App Store or Google Play required. The app includes 2 free verification searches with no credit card needed.
+
+    Key Features of the SafeOrStolen App:
+    - Barcode scanner for instant IMEI, serial number, and QR code scanning
+    - IMEI checker to verify if phones are stolen or blacklisted
+    - VIN lookup to check if vehicles are reported stolen
+    - Serial number verification for electronics, firearms, bikes, and more
+    - Offline mode - works without internet connection
+    - 3-second verification results - fastest in the industry
+    - All 50 US states coverage with nationwide stolen item database
+
+    How to Use the Stolen Verification App:
+    Step 1: Download the SafeOrStolen app from safeorstolen.com/app
+    Step 2: Scan barcode or enter IMEI, VIN, or serial number
+    Step 3: Get instant results showing if the item is stolen or safe
+
+    Perfect For:
+    - Facebook Marketplace buyers verifying items before purchase
+    - Craigslist meetups to check items on the spot
+    - OfferUp transactions to ensure items are legitimate
+    - Used car purchases with VIN verification
+    - Pawn shop owners verifying inventory
+    - Secondhand store operators checking incoming items
+    - Individual buyers protecting themselves from stolen goods
+
+    Why SafeOrStolen vs CheckMEND, IMEI.info, Swappa:
+    - SafeOrStolen: Mobile app with barcode scanning, offline mode, 3-second results
+    - CheckMEND: NO app, web only, 30+ seconds per check, $5-10 per verification
+    - IMEI.info: NO app, phones only, no VIN or serial number checking
+    - Swappa: NO app, limited to phones, marketplace focused
+
+    Download the SafeOrStolen stolen item checker app today. Protect yourself from buying stolen phones, cars, electronics, firearms, boats, bikes, jewelry, and tools. Free to download with 2 free searches included.
+  `;
+
   // ItemList Schema for App Features
   const featuresListSchema = {
     "@context": "https://schema.org",
@@ -641,6 +679,33 @@ const AppPage = () => {
           </p>
         </div>
       </noscript>
+
+      {/* Keyword-rich sr-only content for search engines with JS enabled */}
+      <article className="sr-only">
+        <h1>Download SafeOrStolen - The Only Stolen Item Verification App</h1>
+        <p>SafeOrStolen is the only stolen item verification app available for download. CheckMEND has no app, IMEI.info has no app, Swappa has no app, Carfax has no app, and Autocheck has no app. SafeOrStolen is the FIRST and ONLY mobile app for checking if items are stolen before you buy.</p>
+        
+        <h2>Download the SafeOrStolen App Free</h2>
+        <p>Download the SafeOrStolen stolen item checker app free for iOS and Android. Install directly from safeorstolen.com/app - no App Store or Google Play required. The app includes 2 free verification searches with no credit card needed. Works on iPhone, iPad, Android phones, tablets, and desktop browsers.</p>
+        
+        <h2>Key Features of the SafeOrStolen Mobile App</h2>
+        <p>Barcode scanner for instant IMEI, serial number, and QR code scanning. IMEI checker to verify if phones are stolen or blacklisted. VIN lookup to check if vehicles are reported stolen. Serial number verification for electronics, firearms, bikes, and more. Offline mode works without internet connection. 3-second verification results - fastest in the industry. All 50 US states coverage with nationwide stolen item database.</p>
+        
+        <h2>How to Use the Stolen Verification App</h2>
+        <p>Step 1: Download the SafeOrStolen app from safeorstolen.com/app. Step 2: Scan barcode or enter IMEI, VIN, or serial number. Step 3: Get instant results showing if the item is stolen or safe. Results appear in 3 seconds. Works offline once installed.</p>
+        
+        <h2>Perfect For Facebook Marketplace, Craigslist, OfferUp Buyers</h2>
+        <p>SafeOrStolen is perfect for Facebook Marketplace buyers verifying items before purchase, Craigslist meetups to check items on the spot, OfferUp transactions to ensure items are legitimate, used car purchases with VIN verification, pawn shop owners verifying inventory, and secondhand store operators checking incoming items.</p>
+        
+        <h2>Why SafeOrStolen is Better Than CheckMEND, IMEI.info, Swappa</h2>
+        <p>SafeOrStolen has a mobile app with barcode scanning, offline mode, and 3-second results. CheckMEND has NO app, is web only, takes 30+ seconds per check, and costs $5-10 per verification. IMEI.info has NO app, is phones only, and has no VIN or serial number checking. Swappa has NO app, is limited to phones, and is marketplace focused.</p>
+        
+        <h2>What Items Can You Check With SafeOrStolen?</h2>
+        <p>Check phones using IMEI (iPhone, Samsung, Android), vehicles using VIN (cars, trucks, motorcycles, boats, RVs), electronics using serial numbers (laptops, tablets, cameras, gaming consoles), firearms using serial numbers, bicycles using serial numbers, power tools, musical instruments, jewelry, and any item with a unique identifier. If it has a number, we can check if it's stolen.</p>
+        
+        <h2>All 50 US States Coverage</h2>
+        <p>SafeOrStolen covers all 50 US states including California (Los Angeles, San Francisco), Texas (Houston, Dallas), Florida (Miami, Orlando), New York City, Chicago, Phoenix, Philadelphia, Seattle, Denver, and more. Our nationwide stolen item database aggregates data from law enforcement, insurance companies, carrier blacklists, and partner registries.</p>
+      </article>
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 pt-24 pb-4">
