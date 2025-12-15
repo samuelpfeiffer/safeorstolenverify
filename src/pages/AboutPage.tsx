@@ -129,6 +129,39 @@ const AboutPage = () => {
       ]}
     />
       
+      {/* Bot-visible comprehensive content for search engine indexing */}
+      <div className="sr-only" aria-hidden="false">
+        <article itemScope itemType="https://schema.org/AboutPage">
+          <h1>About SafeOrStolen - Protect Buyers and Sellers from Stolen Goods</h1>
+          <p>SafeOrStolen is a stolen item verification service that checks IMEI numbers, VIN numbers, and serial numbers against 50+ law enforcement databases, insurance records, and carrier blacklists. We protect both buyers AND sellers from stolen goods. Every search makes stolen items harder to sell, reducing crime globally.</p>
+          
+          <section>
+            <h2>Our Mission</h2>
+            <p>SafeOrStolen exists to stop stolen goods at the source. By giving honest buyers and sellers a simple way to verify items, we make it dramatically harder for thieves to fence stolen property. The more people check items before buying and selling, the less attractive stealing becomes. We're building a Crime Reduction Ecosystem where verification is the norm, not the exception.</p>
+          </section>
+          
+          <section>
+            <h2>What Makes SafeOrStolen Different</h2>
+            <p>SafeOrStolen is the only stolen verification platform with a mobile app. CheckMEND, IMEI.info, Swappa, and all competitors only have websites. Our app features instant barcode scanning, 3-second verification, and offline mode. We're like Carfax for everything - phones, vehicles, boats, firearms, electronics, tools, jewelry, and any item with a serial number.</p>
+          </section>
+          
+          <section>
+            <h2>Data Sources and Partners</h2>
+            <p>We crawl and aggregate data from 50+ verified sources including: NCIC (FBI's National Crime Information Center with 15M+ stolen property records), NICB (National Insurance Crime Bureau VINCheck), GSMA global IMEI blacklist, Carrier databases (AT&T, Verizon, T-Mobile), IMEI.info (1B+ devices), BikeIndex (1.4M registered bicycles), Hotgunz (stolen firearms registry), StolenRegister, Interpol stolen property database, and insurance company theft claims from major insurers.</p>
+          </section>
+          
+          <section>
+            <h2>Trust and Verification Process</h2>
+            <p>Our 5-step verification process: 1) Data Collection from multiple law enforcement databases, 2) Cross-Reference Verification against NCIC and international registries, 3) AI-Powered Analysis with 99.7% accuracy, 4) Human Review for flagged items, 5) Instant Results in 3 seconds. We use 256-bit SSL encryption, maintain GDPR compliance, and follow a zero-data retention policy for searches.</p>
+          </section>
+          
+          <section>
+            <h2>Company Information</h2>
+            <p>SafeOrStolen is backed by FasterCapital and has processed 5,000+ verification checks. We're rated 4.1 stars on Trustpilot and featured on Crunchbase and PRLog. Contact us at support@safeorstolen.com. Download our mobile app at safeorstolen.com/app - the only stolen verification app available.</p>
+          </section>
+        </article>
+      </div>
+      
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'About Us', href: '/about' }]} />

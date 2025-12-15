@@ -277,6 +277,62 @@ const VerifyPage = () => {
         canonical="/verify"
         structuredData={verificationServiceSchema}
       />
+      
+      {/* Bot-visible comprehensive content for search engine indexing */}
+      <div className="sr-only" aria-hidden="false">
+        <article itemScope itemType="https://schema.org/Article">
+          <h1>Free Stolen Item Verification - Check IMEI, VIN, Serial Numbers</h1>
+          <p>SafeOrStolen's instant verification tool checks if items are stolen in 3 seconds. Enter any IMEI number, VIN number, or serial number to search 50+ databases including NCIC, NICB, carrier blacklists, and international theft registries. Protect buyers and sellers from stolen goods.</p>
+          
+          <section>
+            <h2>How to Check if an Item is Stolen</h2>
+            <p>Step 1: Enter the item's unique identifier (IMEI for phones, VIN for vehicles, serial number for electronics). Step 2: Select the item type or let our system auto-detect. Step 3: Click Verify to search across 150+ databases instantly. Step 4: Get results in 3 seconds showing if the item is safe or stolen.</p>
+            
+            <h3>IMEI Verification for Phones</h3>
+            <p>Check if a phone is stolen by entering its 15-digit IMEI number. Find IMEI by dialing *#06# on any phone. We check against GSMA global blacklists, AT&T/Verizon/T-Mobile carrier databases, IMEI.info lost device registry, insurance theft claims, and international stolen phone databases. A blacklisted IMEI means the phone may be stolen and could be blocked from network use.</p>
+            
+            <h3>VIN Verification for Vehicles</h3>
+            <p>Check if a car, truck, or motorcycle is stolen by entering its 17-character VIN. Find VIN on the dashboard near windshield or driver's door jamb. We verify against NCIC (FBI's National Crime Information Center), NICB VINCheck, state DMV records, insurance databases, and salvage title records. Covers all 50 US states plus international databases.</p>
+            
+            <h3>Serial Number Verification</h3>
+            <p>Check electronics, bicycles, firearms, tools, and equipment by serial number. We search: BikeIndex (1.4M+ registered bikes), Hotgunz (stolen firearms registry), manufacturer databases, insurance claims, and police stolen property reports.</p>
+          </section>
+          
+          <section>
+            <h2>Databases We Check</h2>
+            <ul>
+              <li>NCIC - FBI's National Crime Information Center (15M+ stolen property records)</li>
+              <li>NICB - National Insurance Crime Bureau VINCheck</li>
+              <li>GSMA - Global mobile device blacklist</li>
+              <li>IMEI.info - International IMEI database (1B+ devices)</li>
+              <li>Carrier Blacklists - AT&T, Verizon, T-Mobile, Sprint</li>
+              <li>BikeIndex - Largest stolen bike registry (1.4M bikes)</li>
+              <li>Hotgunz - Stolen firearms database (100K+ records)</li>
+              <li>CheckMEND - UK/EU electronics registry</li>
+              <li>StolenRegister - International stolen property reports</li>
+              <li>Insurance Networks - Aggregated theft claims from major insurers</li>
+            </ul>
+          </section>
+          
+          <section>
+            <h2>Who Uses SafeOrStolen Verification</h2>
+            <h3>Buyers</h3>
+            <p>Before purchasing on Facebook Marketplace, eBay, Craigslist, OfferUp, or from private sellers, verify items aren't stolen. Protect yourself from financial loss and legal trouble. If police recover a stolen item you purchased, you lose both the item and your money.</p>
+            
+            <h3>Sellers</h3>
+            <p>Prove your items are legitimate by sharing SafeOrStolen verification results with buyers. Build trust, close deals faster, and command better prices.</p>
+            
+            <h3>Businesses</h3>
+            <p>Pawn shops, secondhand dealers, auction houses, and resellers use SafeOrStolen for due diligence. API access available for high-volume verification.</p>
+          </section>
+          
+          <section>
+            <h2>Free Trial</h2>
+            <p>New users get 2 free verification checks (14-day trial). No credit card required. After trial: Starter $4.99/month (15 checks), Personal $9.99/month (50 checks), Professional $29.99/month (unlimited). Pay per use: $0.50 per check.</p>
+          </section>
+        </article>
+      </div>
+      
       <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="space-y-8">
         {/* Breadcrumb Navigation */}
