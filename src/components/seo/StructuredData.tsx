@@ -42,7 +42,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
           url: 'https://safeorstolen.com',
           potentialAction: {
             '@type': 'SearchAction',
-            target: 'https://safeorstolen.com/verify?q={search_term_string}',
+            target: 'https://safeorstolen.com/verify',
             'query-input': 'required name=search_term_string'
           },
           ...data

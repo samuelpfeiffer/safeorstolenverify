@@ -94,10 +94,7 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
               },
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": `${siteUrl}/?q={search_term_string}`
-                },
+                "target": `${siteUrl}/verify`,
                 "query-input": "required name=search_term_string"
               }
             },
