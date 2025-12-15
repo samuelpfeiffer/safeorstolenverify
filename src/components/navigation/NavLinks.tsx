@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { Youtube } from 'lucide-react';
 
 interface NavLinksProps {
   currentPath: string;
@@ -57,38 +58,19 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
       >
         Pricing
       </Link>
-      <Link 
-        to="/data-sources" 
-        className={cn("transition-colors", 
-          currentPath === "/data-sources" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+      <a
+        href="https://www.youtube.com/@SafeOrStolen"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "transition-colors flex items-center gap-1",
+          currentPath === "/youtube" ? "text-red-500" : "text-white hover:text-red-500"
         )}
+        aria-label="SafeOrStolen YouTube Channel"
       >
-        Data Sources
-      </Link>
-      <Link 
-        to="/transparency" 
-        className={cn("transition-colors", 
-          currentPath === "/transparency" ? "text-sos-orange" : "text-white hover:text-sos-orange"
-        )}
-      >
-        Transparency
-      </Link>
-      <Link 
-        to="/social-media-monitoring" 
-        className={cn("transition-colors", 
-          currentPath === "/social-media-monitoring" ? "text-sos-orange" : "text-white hover:text-sos-orange"
-        )}
-      >
-        Social Monitoring
-      </Link>
-      <Link 
-        to="/community-watch" 
-        className={cn("transition-colors", 
-          currentPath === "/community-watch" ? "text-sos-orange" : "text-white hover:text-sos-orange"
-        )}
-      >
-        Community Watch
-      </Link>
+        <Youtube className="w-4 h-4" />
+        Videos
+      </a>
       <Link 
         to="/contact" 
         className={cn("transition-colors", 
