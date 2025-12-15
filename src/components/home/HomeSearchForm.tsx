@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Shield, Smartphone, Car, Hash, CreditCard } from 'lucide-react';
+import { Search, Shield, Smartphone, Car, Hash, CreditCard, Camera } from 'lucide-react';
+import { QRScanner } from '@/components/futuristic/QRScanner';
 
 export const HomeSearchForm = () => {
   const [searchValue, setSearchValue] = useState('');
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -15,6 +17,12 @@ export const HomeSearchForm = () => {
     } else {
       navigate('/verify');
     }
+  };
+
+  const handleScanResult = (result: string) => {
+    setSearchValue(result);
+    setIsScannerOpen(false);
+    navigate(`/verify?q=${encodeURIComponent(result)}`);
   };
 
   return (
@@ -37,6 +45,10 @@ export const HomeSearchForm = () => {
           <Hash className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           Serial #
         </div>
+        <div className="flex items-center justify-center gap-1 px-2 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm font-medium text-emerald-500">
+          <Camera className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+          Scan
+        </div>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -52,20 +64,39 @@ export const HomeSearchForm = () => {
                 className="pl-12 h-14 text-lg border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/70"
               />
             </div>
-            <Button 
-              type="submit" 
-              size="lg" 
-              className="h-14 px-8 text-lg font-semibold shrink-0"
-            >
-              <Shield className="mr-2 h-5 w-5" />
-              Check Now - Free
-            </Button>
+            <div className="flex gap-2 shrink-0">
+              <Button 
+                type="button"
+                variant="outline"
+                size="icon"
+                onClick={() => setIsScannerOpen(true)}
+                className="h-14 w-14 border-emerald-500/30 hover:bg-emerald-500/10 hover:border-emerald-500/50"
+                title="Scan Barcode"
+              >
+                <Camera className="h-5 w-5 text-emerald-500" />
+              </Button>
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="h-14 px-8 text-lg font-semibold"
+              >
+                <Shield className="mr-2 h-5 w-5" />
+                Check Now - Free
+              </Button>
+            </div>
           </div>
         </div>
         <p className="text-sm text-muted-foreground mt-3 text-center">
           ✓ 2 free checks included • ✓ No credit card required • ✓ Results in 3 seconds
         </p>
       </form>
+
+      {/* QR Scanner Modal */}
+      <QRScanner
+        isOpen={isScannerOpen}
+        onScan={handleScanResult}
+        onClose={() => setIsScannerOpen(false)}
+      />
     </div>
   );
 };
