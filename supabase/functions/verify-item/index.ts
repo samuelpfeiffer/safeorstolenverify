@@ -69,26 +69,32 @@ serve(async (req) => {
       console.error('[verify-item] Database check error:', dbError);
     }
 
-    // 2. Run parallel verification with web scraping + AI
+    // 2. Run enhanced parallel verification with item-type-specific sources
     try {
+      console.log(`[verify-item] Running enhanced parallel verification for ${itemType}...`);
+      
       const parallelResult = await runParallelVerification(supabaseClient, {
         identifier: cleanIdentifier,
         itemType: itemType || 'unknown',
         includeWebScraping: true,
-        includeAI: true,
-        additionalSources: []
+        includeAI: true
       });
 
       // Add results from parallel verification
       if (parallelResult.details?.all_sources) {
         for (const source of parallelResult.details.all_sources) {
-          providers.push({
-            provider: source.source,
-            status: source.status,
-            confidence: source.confidence,
-            message: source.message,
-            responseTime: Date.now() - startTime,
-          });
+          // Avoid duplicate providers
+          const existingProvider = providers.find(p => p.provider === source.source);
+          if (!existingProvider) {
+            providers.push({
+              provider: source.source,
+              status: source.status,
+              confidence: source.confidence,
+              message: source.message,
+              details: source.details,
+              responseTime: source.responseTime || (Date.now() - startTime),
+            });
+          }
         }
       } else {
         providers.push({
@@ -96,9 +102,12 @@ serve(async (req) => {
           status: parallelResult.status,
           confidence: parallelResult.confidence,
           message: parallelResult.message,
+          details: parallelResult.details,
           responseTime: Date.now() - startTime,
         });
       }
+      
+      console.log(`[verify-item] Parallel verification added ${providers.length - 1} additional sources`);
     } catch (parallelError) {
       console.error('[verify-item] Parallel verification error:', parallelError);
     }

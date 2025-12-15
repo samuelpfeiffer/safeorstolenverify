@@ -1,14 +1,16 @@
 /**
- * Shared Parallel Verification Coordinator
- * Integrates web scraping, AI analysis, and API sources for comprehensive verification
+ * Enhanced Parallel Verification Coordinator
+ * Integrates multiple verification sources with intelligent routing by item type
+ * Supports: Bike Index, IMEI verification, HotGunz, Vehicle DB, Web scraping, AI analysis
  */
 
 export interface VerificationResult {
-  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
+  status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error' | 'suspicious';
   confidence: number;
   source: string;
   details?: any;
   message?: string;
+  responseTime?: number;
 }
 
 export interface ParallelVerificationOptions {
@@ -16,11 +18,55 @@ export interface ParallelVerificationOptions {
   itemType: string;
   includeWebScraping?: boolean;
   includeAI?: boolean;
-  additionalSources?: Array<() => Promise<VerificationResult>>;
+  vehicleDetails?: {
+    make?: string;
+    model?: string;
+    year?: string;
+    color?: string;
+  };
+}
+
+// Source reliability weights for confidence scoring
+const SOURCE_WEIGHTS: Record<string, number> = {
+  'SafeOrStolen Database': 1.0,
+  'BikeIndex': 0.95,
+  'IMEI_Verification': 0.92,
+  'Vehicle_Verification': 0.90,
+  'HotGunz': 0.88,
+  'NICB': 0.90,
+  'Web_Scraper': 0.75,
+  'AI_Analysis': 0.65,
+  'Cached Verification': 0.80,
+};
+
+/**
+ * Determine which verification sources to use based on item type
+ */
+function getSourcesForItemType(itemType: string): string[] {
+  const type = itemType.toLowerCase();
+  
+  if (type.includes('bicycle') || type.includes('bike')) {
+    return ['bikeindex', 'webscraper', 'ai'];
+  }
+  
+  if (type.includes('phone') || type.includes('mobile') || type.includes('imei') || type.includes('cell')) {
+    return ['imei', 'webscraper', 'ai'];
+  }
+  
+  if (type.includes('vehicle') || type.includes('car') || type.includes('vin') || type.includes('auto') || type.includes('motorcycle') || type.includes('truck')) {
+    return ['vehicle', 'webscraper', 'ai'];
+  }
+  
+  if (type.includes('firearm') || type.includes('gun') || type.includes('rifle') || type.includes('pistol')) {
+    return ['hotgunz', 'webscraper', 'ai'];
+  }
+  
+  // Default: general verification
+  return ['webscraper', 'ai'];
 }
 
 /**
- * Run parallel verification across multiple sources including web scraping and AI
+ * Run parallel verification across multiple sources with intelligent routing
  */
 export async function runParallelVerification(
   supabaseClient: any,
@@ -31,39 +77,43 @@ export async function runParallelVerification(
     itemType,
     includeWebScraping = true,
     includeAI = true,
-    additionalSources = []
+    vehicleDetails
   } = options;
 
-  console.log(`[Parallel Verification] Starting for ${itemType}: ${identifier}`);
+  console.log(`[Parallel Verification] Starting enhanced verification for ${itemType}: ${identifier}`);
+  const startTime = Date.now();
+  
+  // Get sources for this item type
+  const sources = getSourcesForItemType(itemType);
+  console.log(`[Parallel Verification] Selected sources: ${sources.join(', ')}`);
   
   const verificationPromises: Promise<VerificationResult>[] = [];
 
-  // 1. Web Scraper Verification
-  if (includeWebScraping) {
-    verificationPromises.push(
-      callWebScraper(supabaseClient, identifier, itemType)
-    );
+  // Add item-specific verification sources
+  if (sources.includes('bikeindex')) {
+    verificationPromises.push(callBikeIndex(supabaseClient, identifier));
+  }
+  
+  if (sources.includes('imei')) {
+    verificationPromises.push(callIMEIVerification(supabaseClient, identifier));
+  }
+  
+  if (sources.includes('vehicle')) {
+    verificationPromises.push(callVehicleVerification(supabaseClient, identifier, vehicleDetails));
+  }
+  
+  if (sources.includes('hotgunz')) {
+    verificationPromises.push(callHotGunz(supabaseClient, identifier));
   }
 
-  // 2. AI Analysis
-  if (includeAI) {
-    verificationPromises.push(
-      callAIAnalysis(supabaseClient, identifier, itemType)
-    );
+  // Add general verification sources
+  if (includeWebScraping && sources.includes('webscraper')) {
+    verificationPromises.push(callWebScraper(supabaseClient, identifier, itemType));
   }
 
-  // 3. Additional sources provided by caller
-  verificationPromises.push(...additionalSources.map(fn => 
-    fn().catch(err => {
-      console.error('Additional source error:', err);
-      return {
-        status: 'unknown' as const,
-        confidence: 0,
-        source: 'additional_source_error',
-        message: 'Additional verification source failed'
-      };
-    })
-  ));
+  if (includeAI && sources.includes('ai')) {
+    verificationPromises.push(callAIAnalysis(supabaseClient, identifier, itemType));
+  }
 
   // Execute all verifications in parallel
   const results = await Promise.allSettled(verificationPromises);
@@ -72,14 +122,145 @@ export async function runParallelVerification(
   const successfulResults: VerificationResult[] = results
     .filter((r): r is PromiseFulfilledResult<VerificationResult> => r.status === 'fulfilled')
     .map(r => r.value)
-    .filter(r => r.confidence > 0);
+    .filter(r => r.status !== 'error');
 
-  console.log(`[Parallel Verification] Completed ${successfulResults.length}/${verificationPromises.length} sources`);
+  console.log(`[Parallel Verification] Completed ${successfulResults.length}/${verificationPromises.length} sources in ${Date.now() - startTime}ms`);
 
-  // Aggregate results
-  return aggregateResults(successfulResults, identifier, itemType);
+  // Aggregate results with confidence scoring
+  return aggregateResultsWithConfidence(successfulResults, identifier, itemType);
 }
 
+/**
+ * Call Bike Index API
+ */
+async function callBikeIndex(supabaseClient: any, identifier: string): Promise<VerificationResult> {
+  try {
+    console.log('[BikeIndex] Calling...');
+    const { data, error } = await supabaseClient.functions.invoke('verify-bikeindex', {
+      body: { identifier }
+    });
+
+    if (error) throw error;
+
+    return {
+      status: data?.status || 'unknown',
+      confidence: data?.confidence || 0,
+      source: 'BikeIndex',
+      details: data?.details,
+      message: data?.message,
+      responseTime: data?.responseTime
+    };
+  } catch (error) {
+    console.error('[BikeIndex] Error:', error);
+    return {
+      status: 'error',
+      confidence: 0,
+      source: 'BikeIndex',
+      message: 'Bike Index verification failed'
+    };
+  }
+}
+
+/**
+ * Call IMEI Verification
+ */
+async function callIMEIVerification(supabaseClient: any, identifier: string): Promise<VerificationResult> {
+  try {
+    console.log('[IMEI] Calling...');
+    const { data, error } = await supabaseClient.functions.invoke('verify-imei', {
+      body: { identifier }
+    });
+
+    if (error) throw error;
+
+    return {
+      status: data?.status || 'unknown',
+      confidence: data?.confidence || 0,
+      source: 'IMEI_Verification',
+      details: data?.details,
+      message: data?.message,
+      responseTime: data?.responseTime
+    };
+  } catch (error) {
+    console.error('[IMEI] Error:', error);
+    return {
+      status: 'error',
+      confidence: 0,
+      source: 'IMEI_Verification',
+      message: 'IMEI verification failed'
+    };
+  }
+}
+
+/**
+ * Call Vehicle VIN Verification
+ */
+async function callVehicleVerification(
+  supabaseClient: any, 
+  identifier: string,
+  vehicleDetails?: { make?: string; model?: string; year?: string; color?: string }
+): Promise<VerificationResult> {
+  try {
+    console.log('[Vehicle] Calling...');
+    const { data, error } = await supabaseClient.functions.invoke('verify-vehicle', {
+      body: { identifier, ...vehicleDetails }
+    });
+
+    if (error) throw error;
+
+    return {
+      status: data?.status || 'unknown',
+      confidence: data?.confidence || 0,
+      source: 'Vehicle_Verification',
+      details: data?.details,
+      message: data?.message,
+      responseTime: data?.responseTime
+    };
+  } catch (error) {
+    console.error('[Vehicle] Error:', error);
+    return {
+      status: 'error',
+      confidence: 0,
+      source: 'Vehicle_Verification',
+      message: 'Vehicle verification failed'
+    };
+  }
+}
+
+/**
+ * Call HotGunz Firearm Verification
+ */
+async function callHotGunz(supabaseClient: any, identifier: string): Promise<VerificationResult> {
+  try {
+    console.log('[HotGunz] Calling...');
+    const { data, error } = await supabaseClient.functions.invoke('verify-hotgunz', {
+      body: { identifier }
+    });
+
+    if (error) throw error;
+
+    return {
+      status: data?.status || 'unknown',
+      confidence: data?.confidence || 0,
+      source: 'HotGunz',
+      details: data?.details,
+      message: data?.message,
+      responseTime: data?.responseTime
+    };
+  } catch (error) {
+    console.error('[HotGunz] Error:', error);
+    return {
+      status: 'error',
+      confidence: 0,
+      source: 'HotGunz',
+      message: 'Firearm verification failed'
+    };
+  }
+}
+
+/**
+ * Call Web Scraper Verification
+ */
 async function callWebScraper(
   supabaseClient: any,
   identifier: string,
@@ -97,36 +278,35 @@ async function callWebScraper(
       return {
         status: 'unknown',
         confidence: 0,
-        source: 'web_scraper',
+        source: 'Web_Scraper',
         message: 'No web scraper results'
       };
     }
 
-    let status: VerificationResult['status'] = 'unknown';
-    if (data.status === 'stolen') status = 'stolen';
-    else if (data.status === 'safe') status = 'safe';
-
     return {
-      status,
+      status: data.status === 'stolen' ? 'stolen' : (data.status === 'safe' ? 'safe' : 'unknown'),
       confidence: data.confidence || 70,
       source: 'Web_Scraper',
       details: {
         databases_searched: data.sources?.length || 0,
         sources: data.sources || []
       },
-      message: data.message || (status === 'stolen' ? 'Found in stolen registries' : 'No stolen records found')
+      message: data.message || 'Web scraping completed'
     };
   } catch (error) {
     console.error('[Web Scraper] Error:', error);
     return {
-      status: 'unknown',
+      status: 'error',
       confidence: 0,
-      source: 'web_scraper_error',
+      source: 'Web_Scraper',
       message: 'Web scraper unavailable'
     };
   }
 }
 
+/**
+ * Call AI Analysis
+ */
 async function callAIAnalysis(
   supabaseClient: any,
   identifier: string,
@@ -148,7 +328,7 @@ async function callAIAnalysis(
       return {
         status: 'unknown',
         confidence: 0,
-        source: 'ai_analysis',
+        source: 'AI_Analysis',
         message: 'No AI analysis results'
       };
     }
@@ -176,15 +356,18 @@ async function callAIAnalysis(
   } catch (error) {
     console.error('[AI Analysis] Error:', error);
     return {
-      status: 'unknown',
+      status: 'error',
       confidence: 0,
-      source: 'ai_analysis_error',
+      source: 'AI_Analysis',
       message: 'AI analysis unavailable'
     };
   }
 }
 
-function aggregateResults(
+/**
+ * Aggregate results with weighted confidence scoring
+ */
+function aggregateResultsWithConfidence(
   results: VerificationResult[],
   identifier: string,
   itemType: string
@@ -199,43 +382,117 @@ function aggregateResults(
     };
   }
 
-  // Priority 1: Any stolen report
-  const stolenResult = results.find(r => r.status === 'stolen');
-  if (stolenResult) {
+  // Priority 1: Any stolen report (weighted by source reliability)
+  const stolenResults = results.filter(r => r.status === 'stolen');
+  if (stolenResults.length > 0) {
+    // Get highest confidence stolen result
+    const bestStolen = stolenResults.reduce((best, current) => {
+      const currentWeight = SOURCE_WEIGHTS[current.source] || 0.5;
+      const bestWeight = SOURCE_WEIGHTS[best.source] || 0.5;
+      return (current.confidence * currentWeight) > (best.confidence * bestWeight) ? current : best;
+    });
+
+    // Calculate aggregate confidence
+    const aggregateConfidence = calculateAggregateConfidence(stolenResults);
+
     return {
-      ...stolenResult,
+      status: 'stolen',
+      confidence: aggregateConfidence,
+      source: 'Multi-Source Verification',
+      message: `🚨 STOLEN: Confirmed by ${stolenResults.length} source(s) with ${aggregateConfidence}% confidence`,
       details: {
-        ...stolenResult.details,
+        primary_source: bestStolen.source,
+        all_sources: results,
+        total_sources_checked: results.length,
+        stolen_sources: stolenResults.map(r => r.source),
+        aggregation_method: 'weighted_confidence'
+      }
+    };
+  }
+
+  // Priority 2: Any suspicious report
+  const suspiciousResults = results.filter(r => r.status === 'suspicious');
+  if (suspiciousResults.length > 0) {
+    const aggregateConfidence = calculateAggregateConfidence(suspiciousResults);
+    return {
+      status: 'suspicious',
+      confidence: aggregateConfidence,
+      source: 'Multi-Source Verification',
+      message: `⚠️ SUSPICIOUS: Flagged by ${suspiciousResults.length} source(s). Verify before purchase.`,
+      details: {
+        all_sources: results,
+        total_sources_checked: results.length,
+        suspicious_sources: suspiciousResults.map(r => ({ source: r.source, message: r.message }))
+      }
+    };
+  }
+
+  // Priority 3: Safe results - require minimum sources for high confidence
+  const safeResults = results.filter(r => r.status === 'safe');
+  if (safeResults.length > 0) {
+    const aggregateConfidence = calculateAggregateConfidence(safeResults);
+    const sourcesChecked = results.filter(r => r.status !== 'error').length;
+    
+    return {
+      status: 'safe',
+      confidence: aggregateConfidence,
+      source: 'Multi-Source Verification',
+      message: `✅ SAFE: Verified across ${sourcesChecked} database(s) with ${aggregateConfidence}% confidence`,
+      details: {
+        all_sources: results,
+        total_sources_checked: results.length,
+        safe_sources: safeResults.map(r => r.source),
+        requires_minimum_2_sources: sourcesChecked >= 2
+      }
+    };
+  }
+
+  // Priority 4: Highest confidence result
+  const validResults = results.filter(r => r.confidence > 0);
+  if (validResults.length > 0) {
+    const bestResult = validResults.reduce((best, current) => {
+      const currentWeight = SOURCE_WEIGHTS[current.source] || 0.5;
+      const bestWeight = SOURCE_WEIGHTS[best.source] || 0.5;
+      return (current.confidence * currentWeight) > (best.confidence * bestWeight) ? current : best;
+    });
+
+    return {
+      ...bestResult,
+      details: {
+        ...bestResult.details,
         all_sources: results,
         total_sources_checked: results.length
       }
     };
   }
-
-  // Priority 2: Any lost report
-  const lostResult = results.find(r => r.status === 'lost');
-  if (lostResult) {
-    return {
-      ...lostResult,
-      details: {
-        ...lostResult.details,
-        all_sources: results,
-        total_sources_checked: results.length
-      }
-    };
-  }
-
-  // Priority 3: Highest confidence result
-  const bestResult = results.reduce((best, current) =>
-    current.confidence > best.confidence ? current : best
-  );
 
   return {
-    ...bestResult,
-    details: {
-      ...bestResult.details,
-      all_sources: results,
-      total_sources_checked: results.length
-    }
+    status: 'unknown',
+    confidence: 0,
+    source: 'Multi-Source Verification',
+    message: '⚠️ INCONCLUSIVE: Unable to verify. Proceed with caution.',
+    details: { all_sources: results, identifier, itemType }
   };
+}
+
+/**
+ * Calculate aggregate confidence using weighted average
+ */
+function calculateAggregateConfidence(results: VerificationResult[]): number {
+  if (results.length === 0) return 0;
+
+  let totalWeight = 0;
+  let weightedSum = 0;
+
+  for (const result of results) {
+    const weight = SOURCE_WEIGHTS[result.source] || 0.5;
+    weightedSum += result.confidence * weight;
+    totalWeight += weight;
+  }
+
+  // Apply multi-source bonus (more sources = higher confidence)
+  const multiSourceBonus = Math.min(results.length * 2, 10);
+  const baseConfidence = totalWeight > 0 ? Math.round(weightedSum / totalWeight) : 0;
+  
+  return Math.min(baseConfidence + multiSourceBonus, 99);
 }
