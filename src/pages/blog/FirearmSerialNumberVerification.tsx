@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -52,14 +52,13 @@ const FirearmSerialNumberVerification = () => {
 
   return (
     <>
-      <Helmet>
-        <title>How to Check If a Gun Is Stolen - Firearm Serial Number Verification | SafeOrStolen</title>
-        <meta name="description" content="Learn how to verify firearms aren't stolen before buying. Check gun serial numbers against stolen property databases. Protect yourself from federal crimes." />
-        <meta name="keywords" content="check if gun is stolen, firearm serial number lookup, stolen gun check, verify gun not stolen, gun serial number verification" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/firearm-serial-number-verification" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="How to Check If a Gun Is Stolen - Firearm Serial Number Verification | SafeOrStolen"
+        description="Learn how to verify firearms aren't stolen before buying. Check gun serial numbers against stolen property databases. Protect yourself from federal crimes."
+        keywords="check if gun is stolen, firearm serial number lookup, stolen gun check, verify gun not stolen, gun serial number verification"
+        canonical="/blog/firearm-serial-number-verification"
+        structuredData={[articleSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">

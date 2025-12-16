@@ -66,7 +66,7 @@ const VerificationSuccessPage = () => {
       <PageSEO
         title="Payment Successful | SafeOrStolen"
         description="Your payment was successful. View your verification results."
-        canonical="https://safeorstolen.com/verification-success"
+        canonical="/verification-success"
       />
       
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex items-center justify-center p-4">
