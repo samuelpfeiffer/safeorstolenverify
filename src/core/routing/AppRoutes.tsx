@@ -137,6 +137,8 @@ const AppFeatures = lazy(() => import('@/pages/app/AppFeatures'));
 
 // Social Media & External Profile Pages
 const YouTubePage = lazy(() => import('@/pages/YouTubePage'));
+const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
+const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
 
 // Admin Pages
