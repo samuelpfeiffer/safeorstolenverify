@@ -7,7 +7,7 @@ import { TrustSignals } from '@/components/seo/TrustSignals';
 import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Download, CheckCircle } from 'lucide-react';
+import { Download, CheckCircle, Trophy } from 'lucide-react';
 import heroImage from '@/assets/good_photo_for_sos-8.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
@@ -257,6 +257,26 @@ const Index = () => {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OneValley / EWC Recognition Strip */}
+        <section className="py-4 bg-gradient-to-r from-amber-500/5 via-background to-amber-500/5 border-y border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+              <Trophy className="h-5 w-5 text-amber-500 flex-shrink-0" />
+              <p className="text-sm text-muted-foreground">
+                Recognized by <strong className="text-foreground">OneValley</strong> and the{' '}
+                <strong className="text-foreground">Entrepreneurship World Cup 2020</strong> for innovative 
+                SaaS/Enterprise disruption · Representing the United States
+              </p>
+              <Link 
+                to="/news/onevalley-recognition" 
+                className="text-xs text-primary hover:underline whitespace-nowrap"
+              >
+                Learn more →
+              </Link>
             </div>
           </div>
         </section>
