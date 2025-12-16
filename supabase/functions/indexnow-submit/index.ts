@@ -25,7 +25,8 @@ serve(async (req) => {
 
     const host = 'safeorstolen.com';
     const keyLocation = `https://${host}/indexnow-key.txt`;
-    const key = Deno.env.get('INDEXNOW_KEY') || 'generate-random-key-and-store-in-secrets';
+    // Key must match the content of /indexnow-key.txt file exactly
+    const key = Deno.env.get('INDEXNOW_KEY') || 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6';
 
     // Fetch current sitemap to detect new URLs
     let sitemapUrls: string[] = [];
@@ -42,8 +43,10 @@ serve(async (req) => {
       console.error('Error fetching sitemap:', error);
     }
 
-    // Submit to IndexNow API (supported by Bing, Yandex)
+    // Submit to IndexNow API (supported by Bing, Yandex, Seznam, Naver)
     const fullUrls = urls.map(url => `https://${host}${url}`);
+    
+    // Submit to Bing/Microsoft IndexNow
     const indexNowResponse = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -54,9 +57,22 @@ serve(async (req) => {
         urlList: fullUrls
       })
     });
-
     const indexNowStatus = indexNowResponse.status;
-    console.log('IndexNow submission:', { urls, status: indexNowStatus });
+    console.log('IndexNow (Bing) submission:', { urls, status: indexNowStatus });
+
+    // Submit directly to Yandex IndexNow endpoint
+    const yandexResponse = await fetch('https://yandex.com/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        host,
+        key,
+        keyLocation,
+        urlList: fullUrls
+      })
+    });
+    const yandexStatus = yandexResponse.status;
+    console.log('IndexNow (Yandex) submission:', { urls, status: yandexStatus });
 
     // Ping Google sitemap
     const sitemapPingResponse = await fetch(
@@ -78,6 +94,7 @@ serve(async (req) => {
         status: indexNowStatus === 200 ? 'success' : 'failed',
         response: {
           indexNowStatus,
+          yandexStatus,
           googlePingStatus: sitemapPingResponse.status,
           bingPingStatus: bingSitemapResponse.status,
           sitemapUrlCount: sitemapUrls.length,
@@ -102,6 +119,7 @@ serve(async (req) => {
         message: `Submitted ${urls.length} URLs to search engines`,
         details: {
           indexNowStatus,
+          yandexStatus,
           googlePingStatus: sitemapPingResponse.status,
           bingPingStatus: bingSitemapResponse.status,
           sitemapDetection: {
