@@ -238,7 +238,7 @@ export const AppRoutes = () => {
 
         {/* BLOG PAGES */}
         <Route path="/blog" element={<BlogIndexPage />} />
-        <Route path="/blog/how-to-check-if-phone-is-stolen" element={<HowToCheckPhoneStolen />} />
+        <Route path="/blog/how-to-check-if-phone-stolen" element={<HowToCheckPhoneStolen />} />
         <Route path="/blog/complete-vin-guide" element={<CompleteVinGuide />} />
         <Route path="/blog/protect-yourself-buying-used-electronics" element={<ProtectYourselfBuyingUsedElectronics />} />
         <Route path="/blog/data-source-credibility-stolen-goods-verification" element={<DataSourceCredibilityStolenGoods />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -52,14 +52,13 @@ const BicycleStolenSerialNumberCheck = () => {
 
   return (
     <>
-      <Helmet>
-        <title>How to Check If a Bike Is Stolen - Serial Number Lookup | SafeOrStolen</title>
-        <meta name="description" content="Check if a bicycle is stolen by serial number. Free verification for bikes, e-bikes, and motorcycles. Find where to locate serial numbers and verify before buying." />
-        <meta name="keywords" content="check if bike is stolen, bike serial number lookup, stolen bicycle check, e-bike verification, bicycle serial number" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/bicycle-stolen-serial-number-check" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="How to Check If a Bike Is Stolen - Serial Number Lookup | SafeOrStolen"
+        description="Check if a bicycle is stolen by serial number. Free verification for bikes, e-bikes, and motorcycles. Find where to locate serial numbers and verify before buying."
+        keywords="check if bike is stolen, bike serial number lookup, stolen bicycle check, e-bike verification, bicycle serial number"
+        canonical="/blog/bicycle-stolen-serial-number-check"
+        structuredData={[articleSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">
