@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Users, Award, Lock, CheckCircle, Building } from 'lucide-react';
+import { Shield, Users, Award, Lock, CheckCircle, Building, Trophy, Calendar, Smartphone, Rocket } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card } from '@/components/ui/card';
@@ -219,6 +219,85 @@ const AboutPage = () => {
                   </p>
                 </div>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Milestones & Recognition Section */}
+        <section className="py-12 bg-gradient-to-br from-amber-500/5 via-background to-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground flex items-center justify-center gap-2">
+                  <Trophy className="h-7 w-7 text-amber-500" />
+                  Milestones & Recognition
+                </h2>
+                <p className="text-muted-foreground">
+                  Key moments in SafeOrStolen's journey to protect buyers and sellers worldwide
+                </p>
+              </div>
+              <div className="space-y-4">
+                <Card className="p-4 border-l-4 border-l-amber-500">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-full bg-amber-500/10 flex-shrink-0">
+                      <Award className="h-5 w-5 text-amber-500" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge variant="secondary" className="text-xs">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          2020
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-foreground">Entrepreneurship World Cup Recognition</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Selected to participate in the Entrepreneurship World Cup 2020, representing the United States, 
+                        and recognized by OneValley for "innovative solutions and approach to disruption in the SaaS/Enterprise Software space."
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-4 border-l-4 border-l-primary">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
+                      <Rocket className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge variant="secondary" className="text-xs">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          2024
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-foreground">FasterCapital Partnership</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Partnered with FasterCapital for global acceleration, expanding our reach and capabilities 
+                        to protect more buyers and sellers worldwide.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-4 border-l-4 border-l-green-500">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-full bg-green-500/10 flex-shrink-0">
+                      <Smartphone className="h-5 w-5 text-green-500" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge variant="secondary" className="text-xs">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          2024
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-foreground">Mobile App Launch</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Launched the only mobile app for stolen item verification with barcode scanning, 
+                        offline mode, and 3-second verification — exclusively available at SafeOrStolen.com.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
         </section>

@@ -140,6 +140,7 @@ const YouTubePage = lazy(() => import('@/pages/YouTubePage'));
 const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
 const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
+const OneValleyRecognitionPage = lazy(() => import('@/pages/news/OneValleyRecognitionPage'));
 
 // Admin Pages
 const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
@@ -281,6 +282,9 @@ export const AppRoutes = () => {
         <Route path="/stolen-check-san-diego" element={<StolenCheckSanDiego />} />
         <Route path="/stolen-check-dallas" element={<StolenCheckDallas />} />
         <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
+
+        {/* NEWS PAGES */}
+        <Route path="/news/onevalley-recognition" element={<OneValleyRecognitionPage />} />
 
         {/* SOCIAL MEDIA & EXTERNAL PROFILE PAGES */}
         <Route path="/youtube" element={<YouTubePage />} />
