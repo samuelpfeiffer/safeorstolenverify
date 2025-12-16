@@ -16,7 +16,7 @@ import { Helmet } from '@/lib/helmet-shim';
 const VERIFICATION_CODES = {
   // Bing Webmaster Tools verification code
   // Get from: https://www.bing.com/webmasters → Add Site → Verify
-  BING_VERIFICATION: 'YOUR_BING_VERIFICATION_CODE',
+  BING_VERIFICATION: '9e97e42ca4313db0',
   
   // Yandex Webmaster verification code  
   // Get from: https://webmaster.yandex.com → Add Site → Verify
