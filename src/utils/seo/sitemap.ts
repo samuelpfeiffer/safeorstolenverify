@@ -219,7 +219,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Target Audience Pages
   {
-    url: 'https://safeorstolen.com/for-consumers',
+    url: 'https://safeorstolen.com/verify',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.7,
@@ -247,7 +247,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Enterprise Services
   {
-    url: 'https://safeorstolen.com/enterprise-demo',
+    url: 'https://safeorstolen.com/for-businesses',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.7
@@ -291,7 +291,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     priority: 0.6
   },
   {
-    url: 'https://safeorstolen.com/about-problem',
+    url: 'https://safeorstolen.com/about',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.6
@@ -299,7 +299,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Support & Trust Pages
   {
-    url: 'https://safeorstolen.com/contact',
+    url: 'https://safeorstolen.com/about',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
     priority: 0.5
@@ -363,13 +363,13 @@ export const generateSitemapEntries = (blogPosts: any[] = []): SitemapEntry[] =>
   // Add new blog post entries for canonical fix
   const newBlogEntries: SitemapEntry[] = [
     {
-      url: 'https://safeorstolen.com/blog/enterprise-security',
+      url: 'https://safeorstolen.com/app/features',
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: 'monthly',
       priority: 0.7
     },
     {
-      url: 'https://safeorstolen.com/blog/mobile-app-features', 
+      url: 'https://safeorstolen.com/download',
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: 'monthly',
       priority: 0.7
@@ -454,15 +454,14 @@ Disallow: /*.json$
 
 # Allow important public pages
 Allow: /blog/
-Allow: /real-time-verification
 Allow: /firearms-check
 Allow: /how-it-works
-Allow: /for-consumers
-Allow: /for-brands
-Allow: /about-problem
-Allow: /our-story
+Allow: /verify
+Allow: /app
+Allow: /app/features
+Allow: /download
 Allow: /pricing
-Allow: /contact
+Allow: /about
 Allow: /faq
 
 # Allow verification type pages - high SEO value

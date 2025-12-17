@@ -54,12 +54,12 @@ Allow: /
 
 # Important pages for SEO
 Allow: /imei-checker
-Allow: /vin-verification
+Allow: /vin-checker
 Allow: /serial-number-checker
 Allow: /verify
 Allow: /pricing
 Allow: /about
-Allow: /contact
+Allow: /faq
 
 # Block all query parameter URLs
 Disallow: /*?*

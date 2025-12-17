@@ -31,7 +31,7 @@ export const InternalLinkingOptimizer: React.FC<InternalLinkingOptimizerProps> =
         { url: "/ultimate-guide-buying-safely", anchor: "protection guide", priority: "high" },
         { url: "/dashboard", anchor: "verify items now", priority: "high" },
         { url: "/about", anchor: "our methodology", priority: "medium" },
-        { url: "/contact", anchor: "report stolen goods", priority: "low" }
+        { url: "/report-stolen", anchor: "report stolen goods", priority: "low" }
       ],
       service: [
         { url: "/ultimate-guide-buying-safely", anchor: "buyer protection guide", priority: "high" },
