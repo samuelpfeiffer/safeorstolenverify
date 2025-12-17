@@ -285,7 +285,9 @@ export const AppRoutes = () => {
         {/* NEWS PAGES */}
         <Route path="/news/onevalley-recognition" element={<OneValleyRecognitionPage />} />
 
-        {/* SOCIAL MEDIA & EXTERNAL PROFILE PAGES */}
+        {/* PRESS & SOCIAL PAGES */}
+        <Route path="/press-kit" element={<PressKitPage />} />
+        <Route path="/product-hunt" element={<ProductHuntPage />} />
         <Route path="/youtube" element={<YouTubePage />} />
         <Route path="/crunchbase" element={<CrunchbasePage />} />
 
