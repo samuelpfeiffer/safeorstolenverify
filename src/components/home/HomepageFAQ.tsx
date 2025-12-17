@@ -69,7 +69,7 @@ export const HomepageFAQ = () => {
               View Full FAQ
             </a>
             <a 
-              href="/contact" 
+              href="/faq" 
               className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
             >
               Contact Support

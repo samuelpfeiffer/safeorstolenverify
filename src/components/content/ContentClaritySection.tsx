@@ -149,7 +149,7 @@ export const ContentClaritySection: React.FC = () => {
                 </div>
               </div>
               <div className="pt-4 border-t">
-                <Link to="/real-time-verification" className="w-full">
+                <Link to="/verify" className="w-full">
                   <Button className="w-full bg-sos-orange hover:bg-sos-orange/90">
                     Protect Yourself Now
                     <ArrowRight className="ml-2 h-4 w-4" />

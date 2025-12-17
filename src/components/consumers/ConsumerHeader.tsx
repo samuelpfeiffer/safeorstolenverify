@@ -15,7 +15,7 @@ export const ConsumerHeader = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/for-consumers">For Consumers</BreadcrumbLink>
+            <BreadcrumbLink href="/about">For Consumers</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

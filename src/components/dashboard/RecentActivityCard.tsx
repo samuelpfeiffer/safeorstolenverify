@@ -111,7 +111,7 @@ export const RecentActivityCard = () => {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-lg">Recent Activity</CardTitle>
-        <Link to="/search-history">
+        <Link to="/dashboard">
           <Button variant="ghost" size="sm">
             View All <ArrowRight className="w-4 h-4 ml-1" />
           </Button>

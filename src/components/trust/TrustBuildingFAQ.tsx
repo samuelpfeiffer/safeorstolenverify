@@ -138,7 +138,7 @@ export const TrustBuildingFAQ = () => {
           <div className="text-center mt-8">
             <p className="text-muted-foreground mb-4">Have more questions? We're here to help.</p>
             <a
-              href="/contact"
+              href="/faq"
               className="inline-flex items-center gap-2 text-sos-orange hover:text-sos-orange/80 font-semibold"
             >
               Contact Our Team
