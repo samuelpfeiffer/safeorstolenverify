@@ -34,7 +34,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
                 size="lg" 
                 variant="outline"
               >
-                <Link to="/for-brands">
+                <Link to="/for-businesses">
                   <Building className="mr-2 h-5 w-5" />
                   Enterprise Solutions
                 </Link>
@@ -78,12 +78,12 @@ export const ConversionOptimizedFooter: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-foreground">For Consumers</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/verification-hub" className="hover:text-foreground transition-colors">Check an Item</Link></li>
-                <li><Link to="/ultimate-guide-not-buying-stolen-goods" className="hover:text-foreground transition-colors">Buyer Protection Guide</Link></li>
-                <li><Link to="/how-to-check-if-anything-is-stolen-before-you-buy" className="hover:text-foreground transition-colors">Verification Methods</Link></li>
-                <li><Link to="/subscriptions" className="hover:text-foreground transition-colors">Subscription Plans</Link></li>
-                <li><Link to="/check-phone" className="hover:text-foreground transition-colors">IMEI Check</Link></li>
-                <li><Link to="/check-car" className="hover:text-foreground transition-colors">VIN Check</Link></li>
+                <li><Link to="/verify" className="hover:text-foreground transition-colors">Check an Item</Link></li>
+                <li><Link to="/how-it-works" className="hover:text-foreground transition-colors">Buyer Protection Guide</Link></li>
+                <li><Link to="/faq" className="hover:text-foreground transition-colors">Verification Methods</Link></li>
+                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Subscription Plans</Link></li>
+                <li><Link to="/imei-checker" className="hover:text-foreground transition-colors">IMEI Check</Link></li>
+                <li><Link to="/vin-checker" className="hover:text-foreground transition-colors">VIN Check</Link></li>
               </ul>
             </div>
 
@@ -91,12 +91,12 @@ export const ConversionOptimizedFooter: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4 text-foreground">For Businesses</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/for-brands" className="hover:text-foreground transition-colors">Enterprise API</Link></li>
-                <li><Link to="/enterprise-demo" className="hover:text-foreground transition-colors">Schedule Demo</Link></li>
-                <li><Link to="/api-docs" className="hover:text-foreground transition-colors">API Documentation</Link></li>
-                <li><Link to="/marketplace-integration" className="hover:text-foreground transition-colors">Marketplace Integration</Link></li>
-                <li><Link to="/pawn-shops" className="hover:text-foreground transition-colors">Pawn Shop Solutions</Link></li>
-                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact Sales</Link></li>
+                <li><Link to="/for-businesses" className="hover:text-foreground transition-colors">Business Solutions</Link></li>
+                <li><Link to="/for-dealers" className="hover:text-foreground transition-colors">Dealer Solutions</Link></li>
+                <li><Link to="/for-marketplaces" className="hover:text-foreground transition-colors">Marketplace Integration</Link></li>
+                <li><Link to="/for-pawn-shops" className="hover:text-foreground transition-colors">Pawn Shop Solutions</Link></li>
+                <li><Link to="/for-auction-houses" className="hover:text-foreground transition-colors">Auction Houses</Link></li>
+                <li><Link to="/about" className="hover:text-foreground transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
@@ -105,11 +105,11 @@ export const ConversionOptimizedFooter: React.FC = () => {
               <h3 className="text-lg font-semibold mb-4 text-foreground">Support & Legal</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link to="/faq" className="hover:text-foreground transition-colors">FAQ</Link></li>
-                <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact Support</Link></li>
-                <li><Link to="/transparency" className="hover:text-foreground transition-colors">Transparency Report</Link></li>
+                <li><Link to="/about" className="hover:text-foreground transition-colors">Contact Support</Link></li>
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
                 <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
-                <li><Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms & Conditions</Link></li>
+                <li><Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-foreground transition-colors">Terms & Conditions</Link></li>
               </ul>
             </div>
           </div>

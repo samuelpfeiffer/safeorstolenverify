@@ -177,10 +177,10 @@ export const MethodologyTransparency: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                onClick={() => navigate('/data-sources')}
+                onClick={() => navigate('/about')}
                 className="bg-primary hover:bg-primary/90"
               >
-                View Our Data Sources
+                Learn About Our Data Sources
               </Button>
               <Button 
                 variant="outline"

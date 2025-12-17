@@ -16,7 +16,7 @@ export const InternalLinkingSchema: React.FC = () => {
       {
         "@type": "SiteNavigationElement",
         "name": "Verification Services",
-        "url": "https://safeorstolen.com/stolen-item-checker",
+        "url": "https://safeorstolen.com/verify",
         "description": "Free stolen item verification services"
       },
       {
@@ -28,32 +28,32 @@ export const InternalLinkingSchema: React.FC = () => {
       {
         "@type": "SiteNavigationElement",
         "name": "IMEI Check",
-        "url": "https://safeorstolen.com/imei-check", 
+        "url": "https://safeorstolen.com/imei-checker", 
         "description": "Verify phone IMEI numbers and blacklist status"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "VIN Verification", 
-        "url": "https://safeorstolen.com/vin-verification",
+        "url": "https://safeorstolen.com/vin-checker",
         "description": "Check vehicle VIN numbers for theft reports"
       },
       {
         "@type": "SiteNavigationElement",
         "name": "Safety Guides",
-        "url": "https://safeorstolen.com/how-to-check-if-item-stolen",
+        "url": "https://safeorstolen.com/how-it-works",
         "description": "Comprehensive guides on avoiding stolen goods"
       },
       {
         "@type": "SiteNavigationElement",
-        "name": "Data Sources",
-        "url": "https://safeorstolen.com/data-sources",
+        "name": "About Us",
+        "url": "https://safeorstolen.com/about",
         "description": "Information about our verification data sources"
       },
       {
         "@type": "SiteNavigationElement",
-        "name": "Transparency Report",
-        "url": "https://safeorstolen.com/transparency",
-        "description": "Transparency and accountability information"
+        "name": "Pricing",
+        "url": "https://safeorstolen.com/pricing",
+        "description": "Transparent pricing information"
       },
       {
         "@type": "SiteNavigationElement",
@@ -63,9 +63,9 @@ export const InternalLinkingSchema: React.FC = () => {
       },
       {
         "@type": "SiteNavigationElement",
-        "name": "API Documentation",
-        "url": "https://safeorstolen.com/api-docs",
-        "description": "Developer API documentation and integration guides"
+        "name": "Mobile App",
+        "url": "https://safeorstolen.com/app",
+        "description": "Download the SafeOrStolen mobile app"
       }
     ]
   };
@@ -84,13 +84,13 @@ export const InternalLinkingSchema: React.FC = () => {
         "@type": "ListItem", 
         "position": 2,
         "name": "Verification Services",
-        "item": "https://safeorstolen.com/stolen-item-checker"
+        "item": "https://safeorstolen.com/verify"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Safety Guides", 
-        "item": "https://safeorstolen.com/how-to-check-if-item-stolen"
+        "name": "How It Works", 
+        "item": "https://safeorstolen.com/how-it-works"
       },
       {
         "@type": "ListItem",

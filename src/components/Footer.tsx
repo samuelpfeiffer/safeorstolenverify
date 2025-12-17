@@ -167,7 +167,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/download" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                  <Link to="/app" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
                     <span>Install Guide</span>
                   </Link>
                 </li>

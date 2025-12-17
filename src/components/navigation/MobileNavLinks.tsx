@@ -38,19 +38,19 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
         How It Works
       </Link>
       <Link 
-        to="/our-story" 
+        to="/about" 
         onClick={closeMenu} 
         className={cn("py-2 transition-colors", 
-          currentPath === "/our-story" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/about" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
-        Our Story
+        About Us
       </Link>
       <Link 
-        to="/for-brands" 
+        to="/for-businesses" 
         onClick={closeMenu} 
-        className={cn("py-2 transition-colors", 
-          currentPath === "/for-brands" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+        className={cn("py-2 transition-colors",
+          currentPath === "/for-businesses" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         For Business
@@ -74,13 +74,13 @@ export const MobileNavLinks = ({ currentPath, closeMenu }: MobileNavLinksProps) 
         About
       </Link>
       <Link 
-        to="/contact" 
+        to="/faq" 
         onClick={closeMenu} 
         className={cn("py-2 transition-colors", 
-          currentPath === "/contact" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/faq" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
-        Contact
+        Help
       </Link>
     </>
   );

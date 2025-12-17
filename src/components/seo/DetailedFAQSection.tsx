@@ -286,7 +286,7 @@ export const DetailedFAQSection: React.FC = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/faq">
               <Button size="lg" variant="outline">
                 Contact Support
                 <HelpCircle className="ml-2 h-4 w-4" />

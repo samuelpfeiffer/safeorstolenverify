@@ -44,7 +44,7 @@ export const CallToActionSection = () => {
               asChild
               className="border-white text-white hover:bg-white/10"
             >
-              <Link to="/our-story">Read Our Story</Link>
+              <Link to="/about">Read Our Story</Link>
             </Button>
             <Button 
               size="lg"

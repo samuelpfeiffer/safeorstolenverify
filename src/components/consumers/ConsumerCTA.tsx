@@ -9,7 +9,7 @@ interface ConsumerCTAProps {
 export const ConsumerCTA = ({ onScrollToSubscriptions }: ConsumerCTAProps) => {
   return (
     <div className="flex justify-center gap-4 mb-12">
-      <Link to="/contact">
+      <Link to="/auth">
         <Button size="lg" className="bg-sos-orange hover:bg-sos-orange/90 text-white">
           Create A Free Account
         </Button>

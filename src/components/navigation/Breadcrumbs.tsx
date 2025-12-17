@@ -36,36 +36,35 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     // Route-specific breadcrumb mapping
     const routeMapping: Record<string, string> = {
       // Verification Services
-      'stolen-item-checker': 'Stolen Item Checker',
-      'imei-check': 'IMEI Verification',
-      'vin-verification': 'VIN Verification',
+      'verify': 'Verify Item',
+      'imei-checker': 'IMEI Checker',
+      'vin-checker': 'VIN Checker',
       'serial-number-checker': 'Serial Number Lookup',
       'check-phone': 'Phone Verification',
       'check-car': 'Car Verification', 
       'check-electronics': 'Electronics Check',
       'check-bike': 'Bike Verification',
+      'firearms-check': 'Firearms Check',
+      'license-plate-lookup': 'License Plate Lookup',
       
       // Guides and Resources
       'how-it-works': 'How It Works',
-      'ultimate-guide-buying-safely': 'Ultimate Buying Guide',
       'faq': 'Frequently Asked Questions',
       'blog': 'Blog & Insights',
-      'case-studies': 'Case Studies',
-      'stolen-goods-statistics-2024': 'Theft Statistics 2024',
       
       // Business Solutions
-      'marketplace-integration': 'Marketplace Integration',
-      'pawn-shops': 'Pawn Shop Solutions',
-      'auction-houses': 'Auction House Tools',
-      'enterprise-demo': 'Enterprise Demo',
-      'api-docs': 'API Documentation',
+      'for-businesses': 'Business Solutions',
+      'for-pawn-shops': 'Pawn Shop Solutions',
+      'for-dealers': 'Dealer Solutions',
+      'for-auction-houses': 'Auction House Tools',
+      'for-marketplaces': 'Marketplace Integration',
       
       // Company Pages
       'about': 'About SafeOrStolen',
-      'our-story': 'Our Story',
-      'transparency': 'Trust & Transparency',
-      'contact': 'Contact Us',
+      'testimonials': 'Testimonials',
       'pricing': 'Pricing',
+      'terms': 'Terms of Service',
+      'privacy': 'Privacy Policy',
       
       // User Pages
       'auth': 'Sign In',

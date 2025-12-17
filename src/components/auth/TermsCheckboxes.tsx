@@ -30,7 +30,7 @@ export const TermsCheckboxes = ({
         <Label htmlFor="terms" className="text-sm text-foreground/90 leading-relaxed">
           I agree to the{' '}
           <Link
-            to="/terms-of-service"
+            to="/terms"
             target="_blank"
             className="text-sos-orange hover:underline"
           >
@@ -50,7 +50,7 @@ export const TermsCheckboxes = ({
         <Label htmlFor="privacy" className="text-sm text-foreground/90 leading-relaxed">
           I agree to the{' '}
           <Link
-            to="/privacy-policy"
+            to="/privacy"
             target="_blank"
             className="text-sos-orange hover:underline"
           >

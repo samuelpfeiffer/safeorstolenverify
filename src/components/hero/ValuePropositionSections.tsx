@@ -158,7 +158,7 @@ export const ValuePropositionSections = () => {
                   size="lg" 
                   variant="outline"
                   className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
-                  onClick={() => navigate('/for-brands')}
+                  onClick={() => navigate('/for-businesses')}
                 >
                   Learn More
                 </Button>
