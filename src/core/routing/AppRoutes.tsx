@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 
 // CORE 10 PAGES + STRATEGIC SEO PAGES
@@ -314,26 +314,9 @@ export const AppRoutes = () => {
         <Route path="/stolen-phone-check" element={<CheckStolenPhonePage />} />
         <Route path="/stolen-car-check" element={<CheckStolenCarPage />} />
 
-        {/* TOOLS REDIRECTS - All verification consolidated to /verify */}
-        <Route path="/tools" element={<Navigate to="/verify" replace />} />
-        <Route path="/tools/imei-check" element={<Navigate to="/verify?type=smartphone" replace />} />
-        <Route path="/tools/vin-check" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/tools/bike-check" element={<Navigate to="/verify?type=bicycle" replace />} />
-        <Route path="/tools/firearm-check" element={<Navigate to="/verify?type=firearm" replace />} />
-        <Route path="/tools/ai-analyzer" element={<Navigate to="/verify" replace />} />
-        <Route path="/tools/voice-search" element={<Navigate to="/verify" replace />} />
-        <Route path="/tools/report-stolen" element={<Navigate to="/report-stolen" replace />} />
-
-        {/* LEGACY REDIRECTS (kept for React Router fallback) */}
-        <Route path="/imei-check" element={<Navigate to="/verify?type=smartphone" replace />} />
-        <Route path="/vin-check" element={<Navigate to="/verify?type=vehicle" replace />} />
-        <Route path="/check-if-stolen" element={<Navigate to="/verify" replace />} />
-        <Route path="/stolen-item-checker" element={<Navigate to="/verify" replace />} />
-        <Route path="/verify-not-stolen" element={<Navigate to="/verify" replace />} />
-        <Route path="/terms-of-service" element={<Navigate to="/terms" replace />} />
-        <Route path="/privacy-policy" element={<Navigate to="/privacy" replace />} />
-        <Route path="/contact" element={<Navigate to="/about" replace />} />
-        <Route path="/help" element={<Navigate to="/faq" replace />} />
+        {/* ALL REDIRECTS HANDLED BY SERVER-SIDE _redirects FILE */}
+        {/* React Navigate components removed to prevent duplicate redirect handling */}
+        {/* Server-side 301s are respected by Google; client-side Navigate is not */}
 
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />

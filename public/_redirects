@@ -1,6 +1,6 @@
 # SafeOrStolen Server-Side Redirects
 # Comprehensive 301 redirects to fix Google Search Console indexing issues
-# Last updated: 2025-12-07
+# Last updated: 2025-12-17
 
 # ============================================
 # FORCE CANONICAL DOMAIN (non-www, HTTPS) - HIGHEST PRIORITY
@@ -23,6 +23,20 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /pwa-app                /app  301!
 /secondhand-research-app /app  301!
 /stolen-item-scanner    /app  301!
+
+# ============================================
+# TOOLS REDIRECTS → /verify (GSC consolidation)
+# ============================================
+/tools                   /verify  301!
+/tools/imei-check        /verify  301!
+/tools/vin-check         /verify  301!
+/tools/bike-check        /verify  301!
+/tools/firearm-check     /verify  301!
+/tools/ai-analyzer       /verify  301!
+/tools/voice-search      /verify  301!
+/tools/report-stolen     /report-stolen  301!
+/tools/*                 /verify  301!
+/help                    /faq     301!
 
 # ============================================
 # LEGACY VERIFICATION URLS → /verify (GSC Errors)
