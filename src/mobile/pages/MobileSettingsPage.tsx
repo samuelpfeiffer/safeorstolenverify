@@ -204,10 +204,10 @@ const MobileSettingsPage: React.FC = () => {
           {/* Legal */}
           <div className="text-center text-xs text-muted-foreground space-y-2">
             <div className="flex justify-center gap-4">
-              <a href="/privacy-policy" className="hover:underline">
+              <a href="/privacy" className="hover:underline">
                 Privacy Policy
               </a>
-              <a href="/terms-of-service" className="hover:underline">
+              <a href="/terms" className="hover:underline">
                 Terms of Service
               </a>
             </div>

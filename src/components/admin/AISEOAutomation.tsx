@@ -100,11 +100,11 @@ const AISEOAutomation: React.FC = () => {
           action: 'auto_optimize',
           pages: [
             '/',
-            '/stolen-item-checker',
+            '/verify',
             '/check-phone',
             '/check-car',
             '/imei-checker',
-            '/vin-verification'
+            '/vin-checker'
           ]
         }
       });

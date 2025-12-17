@@ -186,12 +186,12 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
         </div>
         
         <div className="flex flex-wrap justify-center gap-4">
-          <Link to="/how-it-works-detailed">
+          <Link to="/how-it-works">
             <Button variant="outline" className="border-sos-orange text-sos-orange hover:bg-sos-orange/10">
               How Our Verification Works
             </Button>
           </Link>
-          <Link to="/data-sources">
+          <Link to="/about">
             <Button variant="outline" className="border-white text-white hover:bg-white/10">
               View Data Sources
             </Button>

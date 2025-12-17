@@ -325,7 +325,7 @@ export default function UltimateMarketplaceBuyersGuide() {
                   <Shield className="h-5 w-5" />
                   Verify Item Now
                 </Button>
-                <Button onClick={() => navigate('/mobile-app')} size="lg" variant="outline" className="gap-2">
+                <Button onClick={() => navigate('/app')} size="lg" variant="outline" className="gap-2">
                   Download Mobile App
                 </Button>
               </div>

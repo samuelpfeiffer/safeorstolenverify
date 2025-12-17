@@ -92,7 +92,7 @@ export const EnhancedResultsCard: React.FC<EnhancedResultsCardProps> = ({
                 <li><strong>Do not purchase</strong> this item under any circumstances</li>
                 <li>If you already possess it, contact your local law enforcement non-emergency line</li>
                 <li>Consider reporting suspicious sellers to the marketplace platform</li>
-                <li><a href="/resources/police-report" className="text-primary hover:underline">Learn how to file a police report</a></li>
+                <li><a href="/faq" className="text-primary hover:underline">Learn more in our FAQ</a></li>
               </ul>
             </div>
           </div>

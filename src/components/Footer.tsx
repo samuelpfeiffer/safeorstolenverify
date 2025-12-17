@@ -9,7 +9,7 @@ const Footer = () => {
     href: '/verify'
   }, {
     label: 'IMEI Checker App',
-    href: '/imei-check'
+    href: '/imei-checker'
   }, {
     label: 'VIN Checker',
     href: '/vin-checker'
@@ -28,23 +28,23 @@ const Footer = () => {
   }];
   const legalLinks = [{
     label: 'Terms & Conditions',
-    href: '/terms-of-service'
+    href: '/terms'
   }, {
     label: 'Privacy Policy',
-    href: '/privacy-policy'
+    href: '/privacy'
   }];
   const supportLinks = [{
     label: 'Help Center',
-    href: '/contact'
+    href: '/faq'
   }, {
     label: 'API Documentation',
-    href: '/contact'
+    href: '/about'
   }, {
     label: 'System Status',
-    href: '/contact'
+    href: '/about'
   }, {
     label: 'Report Issue',
-    href: '/contact'
+    href: '/about'
   }];
   const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
   return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
@@ -157,22 +157,22 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/ios" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
-                    <span>iOS App</span>
+                  <Link to="/app/features" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                    <span>App Features</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/android" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
-                    <span>Android App</span>
+                  <Link to="/app/barcode-scanner" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                    <span>Barcode Scanner</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/install-guide" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                  <Link to="/download" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
                     <span>Install Guide</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app/firearms-checker" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-1 group">
+                  <Link to="/firearms-check" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-1 group">
                     <Badge variant="outline" className="bg-sos-orange/20 text-sos-orange border-sos-orange/40 text-xs">Exclusive</Badge>
                     <span>Firearms Checker</span>
                   </Link>

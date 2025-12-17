@@ -21,11 +21,11 @@ export const AppDownloadCTA = ({ variant = 'default', showBenefits = false }: Ap
   if (variant === 'compact') {
     return (
       <div className="flex flex-col sm:flex-row gap-3">
-        <Button size="lg" onClick={() => navigate('/mobile-app')} className="gap-2">
+        <Button size="lg" onClick={() => navigate('/app')} className="gap-2">
           <Download className="h-5 w-5" />
           Download App
         </Button>
-        <Button size="lg" variant="outline" onClick={() => navigate('/app/install-guide')} className="gap-2">
+        <Button size="lg" variant="outline" onClick={() => navigate('/download')} className="gap-2">
           Learn More
         </Button>
       </div>
@@ -36,11 +36,11 @@ export const AppDownloadCTA = ({ variant = 'default', showBenefits = false }: Ap
     return (
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/mobile-app')}>
+          <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/app')}>
             <Apple className="h-5 w-5" />
             iOS & Web
           </Button>
-          <Button size="lg" variant="outline" className="px-8 gap-2" onClick={() => navigate('/mobile-app')}>
+          <Button size="lg" variant="outline" className="px-8 gap-2" onClick={() => navigate('/app')}>
             <PlayCircle className="h-5 w-5" />
             Android & Web
           </Button>
@@ -70,11 +70,11 @@ export const AppDownloadCTA = ({ variant = 'default', showBenefits = false }: Ap
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/mobile-app')}>
+          <Button size="lg" className="px-8 gap-2" onClick={() => navigate('/app')}>
             <Apple className="h-5 w-5" />
             Install for iOS
           </Button>
-          <Button size="lg" variant="outline" className="px-8 gap-2" onClick={() => navigate('/mobile-app')}>
+          <Button size="lg" variant="outline" className="px-8 gap-2" onClick={() => navigate('/app')}>
             <PlayCircle className="h-5 w-5" />
             Install for Android
           </Button>
