@@ -284,7 +284,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
                 </p>
                 {hasReachedLimit && (
                   <Button asChild size="sm">
-                    <Link to="/subscriptions">Upgrade for Unlimited</Link>
+                    <Link to="/pricing">Upgrade for Unlimited</Link>
                   </Button>
                 )}
               </div>

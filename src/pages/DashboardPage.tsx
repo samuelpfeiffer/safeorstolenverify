@@ -475,7 +475,7 @@ const DashboardPage = () => {
                       Update Profile
                     </Button>
                     <Button asChild className="w-full">
-                      <Link to="/subscriptions">
+                      <Link to="/pricing">
                         {isSubscribed ? 'Manage Subscription' : 'Upgrade Account'}
                       </Link>
                     </Button>
@@ -513,7 +513,7 @@ const DashboardPage = () => {
               Search Usage: <span className="font-medium">{searchCount}/2 free searches used (14-day trial)</span>
             </div>
             {!isSubscribed && (
-              <Link to="/subscriptions" className="text-sos-orange hover:underline text-sm font-medium">
+              <Link to="/pricing" className="text-sos-orange hover:underline text-sm font-medium">
                 Upgrade for unlimited
               </Link>
             )}
