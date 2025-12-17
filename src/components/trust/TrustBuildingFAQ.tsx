@@ -84,7 +84,7 @@ export const TrustBuildingFAQ = () => {
                         <li>Manufacturer recall databases</li>
                         <li>Partner verification services like CheckMEND for phones</li>
                       </ul>
-                      <p>We're completely transparent about our sources and limitations. View our full methodology on our <a href="/data-sources" className="text-sos-orange hover:underline">Data Sources page</a>.</p>
+                      <p>We're completely transparent about our sources and limitations. View our full methodology on our <a href="/about" className="text-sos-orange hover:underline">About page</a>.</p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>

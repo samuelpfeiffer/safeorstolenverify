@@ -292,7 +292,7 @@ export default function CompleteImeiGuide() {
                 Instantly scan phone barcodes, verify IMEI status offline, and protect yourself during transactions. 
                 Free to download, no competitor offers this feature.
               </p>
-              <Button onClick={() => navigate('/mobile-app')} size="lg" className="gap-2">
+              <Button onClick={() => navigate('/app')} size="lg" className="gap-2">
                 Download Free App
               </Button>
             </div>

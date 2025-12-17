@@ -9,14 +9,12 @@ import {
   Shield,
   TrendingUp,
   Users,
-  BookOpen,
-  Video,
-  FileText
+  BookOpen
 } from 'lucide-react';
 
 /**
  * Rich Content Hub - Deep content structure for AI and search discovery
- * Implements topical authority with comprehensive guides and resources
+ * All links verified to exist in AppRoutes
  */
 export const RichContentHub = () => {
   const contentSections = [
@@ -25,14 +23,14 @@ export const RichContentHub = () => {
       icon: Shield,
       description: "Expert guides to protect yourself when buying secondhand",
       links: [
-        { text: "Complete Buyer's Guide 2025", url: "/guides/buyer" },
-        { text: "How to Check Phone is Stolen", url: "/how-to-check-if-phone-is-stolen" },
-        { text: "Verify Stolen Laptop Guide", url: "/how-to-check-if-laptop-is-stolen" },
-        { text: "Car VIN Verification Guide", url: "/how-to-verify-car-vin" },
-        { text: "Facebook Marketplace Safety", url: "/guides/facebook-marketplace" },
-        { text: "OfferUp Scam Prevention", url: "/guides/offerup-safety" },
-        { text: "Craigslist Buying Safety Tips", url: "/guides/craigslist-safety" },
-        { text: "eBay Verification Checklist", url: "/guides/ebay-verification" }
+        { text: "Complete Verification Guide", url: "/blog/complete-verification-guide" },
+        { text: "How to Check Phone is Stolen", url: "/blog/how-to-check-if-phone-stolen" },
+        { text: "How to Check iPhone is Stolen", url: "/blog/how-to-check-if-iphone-stolen" },
+        { text: "Complete VIN Guide", url: "/blog/complete-vin-guide" },
+        { text: "Facebook Marketplace Safety", url: "/facebook-marketplace-stolen-check" },
+        { text: "OfferUp Safety", url: "/offerup-verify-not-stolen" },
+        { text: "Craigslist Safety", url: "/craigslist-safety-verification" },
+        { text: "eBay Safety", url: "/ebay-stolen-item-check" }
       ]
     },
     {
@@ -40,14 +38,14 @@ export const RichContentHub = () => {
       icon: Smartphone,
       description: "Detailed verification guides for every type of item",
       links: [
-        { text: "Phone IMEI Lookup Guide", url: "/verify/phones" },
-        { text: "iPhone Stolen Check", url: "/verify/iphone" },
-        { text: "Android Phone Verification", url: "/verify/android" },
-        { text: "Samsung Phone IMEI Check", url: "/verify/samsung" },
-        { text: "Laptop Serial Number Lookup", url: "/verify/laptops" },
-        { text: "MacBook Verification", url: "/verify/macbook" },
-        { text: "iPad Stolen Check", url: "/verify/ipad" },
-        { text: "Camera Serial Check", url: "/verify/cameras" }
+        { text: "Phone IMEI Checker", url: "/imei-checker" },
+        { text: "Check Phone", url: "/check-phone" },
+        { text: "Check Laptop", url: "/check-laptop" },
+        { text: "Check Electronics", url: "/check-electronics" },
+        { text: "Check E-Bike", url: "/check-ebike" },
+        { text: "Check Appliances", url: "/check-appliances" },
+        { text: "Check Tools", url: "/check-tools" },
+        { text: "Check Jewelry", url: "/check-jewelry" }
       ]
     },
     {
@@ -55,29 +53,14 @@ export const RichContentHub = () => {
       icon: Car,
       description: "Comprehensive vehicle history and theft checking",
       links: [
-        { text: "VIN Number Lookup", url: "/verify/vin" },
-        { text: "Used Car Buying Guide", url: "/guides/buy-used-car" },
-        { text: "Motorcycle VIN Check", url: "/verify/motorcycle" },
-        { text: "RV & Trailer Verification", url: "/verify/rv-trailer" },
-        { text: "Boat Hull ID Lookup", url: "/verify/boats" },
-        { text: "ATV Stolen Check", url: "/verify/atv" },
-        { text: "Truck VIN Verification", url: "/guides/truck-vin" },
-        { text: "Classic Car Verification", url: "/guides/classic-car" }
-      ]
-    },
-    {
-      title: "Tools & Equipment",
-      icon: Wrench,
-      description: "Verify power tools, equipment, and professional gear",
-      links: [
-        { text: "Power Tools Serial Check", url: "/verify/power-tools" },
-        { text: "DeWalt Tool Verification", url: "/verify/dewalt" },
-        { text: "Milwaukee Tools Check", url: "/verify/milwaukee" },
-        { text: "Makita Serial Lookup", url: "/verify/makita" },
-        { text: "Construction Equipment", url: "/verify/construction" },
-        { text: "Professional Camera Gear", url: "/verify/camera-gear" },
-        { text: "Music Instruments Check", url: "/verify/instruments" },
-        { text: "Garden Equipment Verification", url: "/verify/garden-tools" }
+        { text: "VIN Number Checker", url: "/vin-checker" },
+        { text: "Check Car", url: "/check-car" },
+        { text: "Check Boat", url: "/check-boat" },
+        { text: "License Plate Lookup", url: "/license-plate-lookup" },
+        { text: "California VIN Lookup", url: "/california-vin-lookup" },
+        { text: "Texas VIN Lookup", url: "/texas-vin-lookup" },
+        { text: "Florida VIN Lookup", url: "/florida-vin-lookup" },
+        { text: "New York VIN Lookup", url: "/new-york-vin-lookup" }
       ]
     },
     {
@@ -85,14 +68,10 @@ export const RichContentHub = () => {
       icon: Bike,
       description: "Bicycle and sports equipment verification",
       links: [
-        { text: "Bike Serial Number Check", url: "/verify/bikes" },
-        { text: "E-Bike Verification", url: "/verify/ebikes" },
-        { text: "Mountain Bike Lookup", url: "/verify/mountain-bikes" },
-        { text: "Road Bike Verification", url: "/verify/road-bikes" },
-        { text: "Golf Club Serial Check", url: "/verify/golf" },
-        { text: "Ski Equipment Verification", url: "/verify/ski-equipment" },
-        { text: "Surfboard Serial Check", url: "/verify/surfboards" },
-        { text: "Fishing Gear Lookup", url: "/verify/fishing" }
+        { text: "Check Bike", url: "/check-bike" },
+        { text: "Check E-Bike", url: "/check-ebike" },
+        { text: "Serial Number Checker", url: "/serial-number-checker" },
+        { text: "Bicycle Stolen Check Guide", url: "/blog/bicycle-stolen-serial-number-check" }
       ]
     },
     {
@@ -100,14 +79,25 @@ export const RichContentHub = () => {
       icon: ShoppingBag,
       description: "Platform-specific safety guides and verification tips",
       links: [
-        { text: "Facebook Marketplace Verification", url: "/marketplace/facebook" },
-        { text: "OfferUp Safety Guide", url: "/marketplace/offerup" },
-        { text: "Craigslist Scam Prevention", url: "/marketplace/craigslist" },
-        { text: "eBay Buyer Protection", url: "/marketplace/ebay" },
-        { text: "Mercari Verification Tips", url: "/marketplace/mercari" },
-        { text: "Letgo Safety Checklist", url: "/marketplace/letgo" },
-        { text: "Poshmark Authentication", url: "/marketplace/poshmark" },
-        { text: "Local Classifieds Safety", url: "/marketplace/local" }
+        { text: "Facebook Marketplace", url: "/facebook-marketplace-stolen-check" },
+        { text: "OfferUp Safety", url: "/offerup-verify-not-stolen" },
+        { text: "Craigslist Safety", url: "/craigslist-safety-verification" },
+        { text: "eBay Check", url: "/ebay-stolen-item-check" },
+        { text: "Scammer Tactics Exposed", url: "/blog/scammer-tactics-exposed" },
+        { text: "Verify Before Meetup", url: "/blog/verify-item-before-meetup" }
+      ]
+    },
+    {
+      title: "Business Solutions",
+      icon: Users,
+      description: "Enterprise verification for businesses",
+      links: [
+        { text: "For Pawn Shops", url: "/for-pawn-shops" },
+        { text: "For Dealers", url: "/for-dealers" },
+        { text: "For Marketplaces", url: "/for-marketplaces" },
+        { text: "For Auction Houses", url: "/for-auction-houses" },
+        { text: "For Businesses", url: "/for-businesses" },
+        { text: "Pricing", url: "/pricing" }
       ]
     },
     {
@@ -115,29 +105,10 @@ export const RichContentHub = () => {
       icon: TrendingUp,
       description: "Protect your items and recover stolen property",
       links: [
-        { text: "How to Register Your Items", url: "/prevention/register" },
         { text: "Report Stolen Property", url: "/report-stolen" },
-        { text: "Theft Prevention Tips", url: "/prevention/tips" },
-        { text: "Home Security Guide", url: "/prevention/home-security" },
-        { text: "Car Theft Prevention", url: "/prevention/car-theft" },
-        { text: "Phone Loss Prevention", url: "/prevention/phone-security" },
-        { text: "Recovery Success Stories", url: "/community" },
-        { text: "Insurance Claim Guide", url: "/guides/insurance-claims" }
-      ]
-    },
-    {
-      title: "For Sellers",
-      icon: Users,
-      description: "Build trust and sell faster with verification",
-      links: [
-        { text: "Seller's Verification Guide", url: "/guides/seller" },
-        { text: "Get Verification Certificate", url: "/seller/certificate" },
-        { text: "Increase Sales with Verification", url: "/seller/benefits" },
-        { text: "Prove Item Legitimacy", url: "/seller/prove-legitimacy" },
-        { text: "Protect Against False Claims", url: "/seller/protection" },
-        { text: "Seller Best Practices", url: "/seller/best-practices" },
-        { text: "Marketplace Seller Tips", url: "/seller/marketplace-tips" },
-        { text: "Business Seller Program", url: "/business" }
+        { text: "Firearms Check", url: "/firearms-check" },
+        { text: "Pawn Shop Verification Guide", url: "/blog/pawn-shop-stolen-item-verification" },
+        { text: "Firearm Serial Verification", url: "/blog/firearm-serial-number-verification" }
       ]
     },
     {
@@ -145,43 +116,12 @@ export const RichContentHub = () => {
       icon: BookOpen,
       description: "Learn about theft trends, statistics, and prevention",
       links: [
-        { text: "2025 Theft Trends Report", url: "/blog/theft-trends" },
-        { text: "Most Stolen Items by State", url: "/statistics/by-state" },
-        { text: "Phone Theft Statistics", url: "/statistics/phone-theft" },
-        { text: "Car Theft Hotspots", url: "/statistics/car-theft" },
-        { text: "Pawn Shop Verification", url: "/guides/pawn-shops" },
-        { text: "Serial Number Database", url: "/database" },
-        { text: "Theft Prevention Blog", url: "/blog" },
-        { text: "Security News & Updates", url: "/news" }
-      ]
-    },
-    {
-      title: "Video Tutorials",
-      icon: Video,
-      description: "Step-by-step video guides for verification",
-      links: [
-        { text: "How to Find IMEI Number", url: "/videos/find-imei" },
-        { text: "VIN Number Location Guide", url: "/videos/find-vin" },
-        { text: "Serial Number Lookup Demo", url: "/videos/serial-lookup" },
-        { text: "Mobile App Tutorial", url: "/videos/app-tutorial" },
-        { text: "Barcode Scanner Guide", url: "/videos/barcode-scanner" },
-        { text: "Facebook Marketplace Tips", url: "/videos/facebook-safety" },
-        { text: "Spotting Fake Listings", url: "/videos/spot-fakes" },
-        { text: "Police Report Filing", url: "/videos/police-report" }
-      ]
-    },
-    {
-      title: "Legal & Documentation",
-      icon: FileText,
-      description: "Legal guides and documentation resources",
-      links: [
-        { text: "Buyer Legal Rights", url: "/legal/buyer-rights" },
-        { text: "What If I Bought Stolen Goods", url: "/legal/bought-stolen" },
-        { text: "Police Cooperation Guide", url: "/legal/police" },
-        { text: "Insurance Documentation", url: "/legal/insurance" },
-        { text: "Dispute Resolution", url: "/legal/disputes" },
-        { text: "Terms & Conditions", url: "/terms-of-service" },
-        { text: "Privacy Policy", url: "/privacy-policy" }
+        { text: "2024 Theft Trends Report", url: "/blog/theft-trends-report-2024" },
+        { text: "Verification Methodology", url: "/blog/verification-methodology" },
+        { text: "Real User Stories", url: "/blog/real-user-stories" },
+        { text: "Blog", url: "/blog" },
+        { text: "FAQ", url: "/faq" },
+        { text: "How It Works", url: "/how-it-works" }
       ]
     }
   ];
@@ -194,11 +134,11 @@ export const RichContentHub = () => {
             Complete Verification Resource Center
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to verify items, avoid scams, and buy safely. Over 150+ guides, tutorials, and resources.
+            Everything you need to verify items, avoid scams, and buy safely.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {contentSections.map((section, index) => (
             <div key={index} className="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4 mb-4">
@@ -229,13 +169,13 @@ export const RichContentHub = () => {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
-            Looking for something specific? Use our comprehensive search
+            Ready to verify an item?
           </p>
           <Link
-            to="/dashboard"
+            to="/verify"
             className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
           >
-            Search All Resources
+            Start Verification Now
           </Link>
         </div>
       </div>

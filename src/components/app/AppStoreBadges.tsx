@@ -32,7 +32,7 @@ export const AppStoreBadges = ({
       <Button 
         variant={variant}
         className={`gap-2 ${sizeClasses[size]}`}
-        onClick={() => navigate('/mobile-app')}
+        onClick={() => navigate('/app')}
       >
         <Apple className={iconSizes[size]} />
         <span className="flex flex-col items-start">
@@ -44,7 +44,7 @@ export const AppStoreBadges = ({
       <Button 
         variant={variant}
         className={`gap-2 ${sizeClasses[size]}`}
-        onClick={() => navigate('/mobile-app')}
+        onClick={() => navigate('/app')}
       >
         <PlayCircle className={iconSizes[size]} />
         <span className="flex flex-col items-start">
@@ -57,7 +57,7 @@ export const AppStoreBadges = ({
         <Button 
           variant="outline"
           className={`gap-2 ${sizeClasses[size]}`}
-          onClick={() => navigate('/app/pwa')}
+          onClick={() => navigate('/download')}
         >
           <Download className={iconSizes[size]} />
           <span className="flex flex-col items-start">

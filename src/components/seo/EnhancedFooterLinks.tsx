@@ -18,9 +18,9 @@ export const EnhancedFooterLinks: React.FC = () => {
       title: 'Quick Verify',
       icon: <Search className="h-5 w-5" />,
       links: [
-        { href: '/verify', text: 'IMEI Check - Verify Phone' },
-        { href: '/verify', text: 'VIN Check - Verify Car' },
-        { href: '/verify', text: 'Serial Number Checker' },
+        { href: '/imei-checker', text: 'IMEI Check - Verify Phone' },
+        { href: '/vin-checker', text: 'VIN Check - Verify Car' },
+        { href: '/serial-number-checker', text: 'Serial Number Checker' },
         { href: '/verify', text: 'General Item Checker' },
         { href: '/check-electronics', text: 'Check Electronics' }
       ]
@@ -29,22 +29,22 @@ export const EnhancedFooterLinks: React.FC = () => {
       title: 'Safety Guides',
       icon: <Shield className="h-5 w-5" />,
       links: [
-        { href: '/how-to-check-if-item-stolen', text: 'How to Check if Stolen' },
-        { href: '/avoid-stolen-goods', text: 'Avoid Stolen Goods' },
-        { href: '/ultimate-guide-not-buying-stolen-goods', text: 'Ultimate Safety Guide' },
-        { href: '/stolen-goods-statistics-2024', text: '2025 Theft Statistics' },
-        { href: '/comprehensive-guide', text: 'Comprehensive Guide' }
+        { href: '/blog/how-to-check-if-phone-stolen', text: 'How to Check if Stolen' },
+        { href: '/blog/scammer-tactics-exposed', text: 'Avoid Stolen Goods' },
+        { href: '/blog/complete-verification-guide', text: 'Ultimate Safety Guide' },
+        { href: '/blog/theft-trends-report-2024', text: '2025 Theft Statistics' },
+        { href: '/how-it-works', text: 'Comprehensive Guide' }
       ]
     },
     {
       title: 'User Stories',
       icon: <Users className="h-5 w-5" />,
       links: [
-        { href: '/case-studies', text: 'Success Stories' },
+        { href: '/testimonials', text: 'Success Stories' },
         { href: '/blog/real-user-stories', text: 'Real User Stories' },
-        { href: '/transparency', text: 'Transparency Report' },
-        { href: '/data-sources', text: 'Data Sources' },
-        { href: '/accuracy', text: 'Accuracy Guarantee' }
+        { href: '/about', text: 'About Us' },
+        { href: '/about', text: 'Data Sources' },
+        { href: '/about', text: 'Accuracy Guarantee' }
       ]
     },
     {
@@ -53,19 +53,19 @@ export const EnhancedFooterLinks: React.FC = () => {
       links: [
         { href: '/faq', text: 'FAQ - Common Questions' },
         { href: '/how-it-works', text: 'How It Works' },
-        { href: '/contact', text: 'Contact Support' },
-        { href: '/api-docs', text: 'API Documentation' }
+        { href: '/about', text: 'Contact Support' },
+        { href: '/about', text: 'API Documentation' }
       ]
     },
     {
       title: 'Business Solutions',
       icon: <Users className="h-5 w-5" />,
       links: [
-        { href: '/enterprise-demo', text: 'Enterprise Demo' },
-        { href: '/marketplace-integration', text: 'Marketplace Integration' },
+        { href: '/for-businesses', text: 'Enterprise Demo' },
+        { href: '/for-marketplaces', text: 'Marketplace Integration' },
         { href: '/pricing', text: 'Pricing Plans' },
-        { href: '/partnerships', text: 'Partnerships' },
-        { href: '/api-docs', text: 'Developer API' }
+        { href: '/for-dealers', text: 'Partnerships' },
+        { href: '/about', text: 'Developer API' }
       ]
     }
   ];
@@ -168,13 +168,13 @@ export const EnhancedFooterLinks: React.FC = () => {
               </p>
             </div>
             <div className="flex gap-6 text-sm text-gray-300">
-              <Link to="/terms-of-service" className="hover:text-white transition-colors">
+              <Link to="/terms" className="hover:text-white transition-colors">
                 Terms & Conditions
               </Link>
-              <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              <Link to="/privacy" className="hover:text-white transition-colors">
                 Privacy
               </Link>
-              <Link to="/contact" className="hover:text-white transition-colors">
+              <Link to="/about" className="hover:text-white transition-colors">
                 Contact
               </Link>
             </div>

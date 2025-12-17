@@ -287,7 +287,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <p className="text-muted-foreground mb-4">
                 Scan barcodes instantly, verify offline, and protect yourself during in-person transactions.
               </p>
-              <Button onClick={() => navigate('/mobile-app')} size="lg" className="gap-2">
+              <Button onClick={() => navigate('/app')} size="lg" className="gap-2">
                 Download Free App
               </Button>
             </div>
