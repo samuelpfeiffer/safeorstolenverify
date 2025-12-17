@@ -15,7 +15,7 @@ export const SearchHistoryHeader = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/search-history">History</BreadcrumbLink>
+            <BreadcrumbLink href="/dashboard">History</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

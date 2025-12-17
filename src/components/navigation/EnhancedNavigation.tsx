@@ -347,7 +347,7 @@ export const EnhancedNavigation: React.FC = () => {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/search-history" className="flex items-center gap-2">
+                    <Link to="/dashboard" className="flex items-center gap-2">
                       <Search className="w-4 h-4" />
                       Search History
                     </Link>
@@ -444,10 +444,10 @@ export const EnhancedNavigation: React.FC = () => {
               {/* Download App - NEW */}
               <div className="pt-2 border-t border-gray-200 dark:border-gray-800">
                 <Link
-                  to="/install-app"
+                  to="/app"
                   className="flex items-center justify-center gap-2 mx-3 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-sm"
                   onClick={() => {
-                    handleNavigationClick({ label: 'Download App', href: '/install-app' });
+                    handleNavigationClick({ label: 'Download App', href: '/app' });
                     setIsMobileMenuOpen(false);
                   }}
                 >

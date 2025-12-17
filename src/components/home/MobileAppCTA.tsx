@@ -66,7 +66,7 @@ export const MobileAppCTA = () => {
                   size="lg"
                   className="bg-gradient-to-r from-sos-orange to-sos-lime text-white font-bold hover:shadow-xl transition-all hover:scale-105"
                 >
-                  <Link to="/install-app">
+                  <Link to="/app">
                     <Download className="w-5 h-5 mr-2" />
                     Install App Now
                   </Link>

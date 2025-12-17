@@ -15,7 +15,7 @@ export const PurchaseHistoryHeader = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/purchase-history">Purchase History</BreadcrumbLink>
+            <BreadcrumbLink href="/dashboard">Purchase History</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
