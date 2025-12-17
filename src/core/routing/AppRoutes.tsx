@@ -161,9 +161,8 @@ export const AppRoutes = () => {
         <Route path="/verify" element={<VerifyPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/account" element={<Navigate to="/profile" replace />} />
+        {/* /account and /mobile-app handled by server-side _redirects - removed duplicate Navigate */}
         <Route path="/app" element={<AppPage />} />
-        <Route path="/mobile-app" element={<Navigate to="/app" replace />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FAQPage />} />
