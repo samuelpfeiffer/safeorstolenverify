@@ -126,7 +126,7 @@ const AppFeatures = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6" asChild>
-                <Link to="/download">
+                <Link to="/app">
                   <Download className="w-5 h-5 mr-2" />
                   Download FREE App
                 </Link>
@@ -439,7 +439,7 @@ const AppFeatures = () => {
                 className="text-lg px-12 py-6"
                 asChild
               >
-                <Link to="/download">
+                <Link to="/app">
                   <Download className="w-5 h-5 mr-2" />
                   Download FREE App
                 </Link>

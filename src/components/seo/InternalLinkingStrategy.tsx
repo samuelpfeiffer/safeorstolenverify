@@ -111,7 +111,7 @@ export const InternalLinkingStrategy: React.FC = () => {
               {' • '}<Link to="/firearms-check" className="hover:text-primary">gun serial number check</Link>
               {' • '}<Link to="/serial-number-checker" className="hover:text-primary">serial number lookup</Link>
               {' • '}<Link to="/verify" className="hover:text-primary">verify any item</Link>
-              {' • '}<Link to="/download" className="hover:text-primary">mobile app download</Link>
+              {' • '}<Link to="/app" className="hover:text-primary">mobile app download</Link>
               {' • '}<Link to="/vs-checkmend" className="hover:text-primary">CheckMend alternative</Link>
               {' • '}<Link to="/vs-imeiinfo" className="hover:text-primary">IMEIinfo alternative</Link>
             </p>

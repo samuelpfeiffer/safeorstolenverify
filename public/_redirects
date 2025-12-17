@@ -215,6 +215,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /app/install-guide                  /app  301!
 /app/download                       /app  301!
+/download                           /app  301!
 /app/ios                            /app  301!
 /app/android                        /app  301!
 /app/phoenix                        /app  301!

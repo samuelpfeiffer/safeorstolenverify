@@ -151,7 +151,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
               <p className="text-sm text-muted-foreground">
                 Need help getting started? 
                 <Button variant="link" className="p-0 ml-1 h-auto text-sm" asChild>
-                  <Link to="/contact">Contact our support team</Link>
+                  <Link to="/faq">Contact our support team</Link>
                 </Button>
               </p>
             </div>

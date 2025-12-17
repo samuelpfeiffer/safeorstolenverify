@@ -183,7 +183,7 @@ export const EnhancedFAQSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              to="/contact" 
+              to="/about" 
               className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all min-h-[56px]"
             >
               Contact Support

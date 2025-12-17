@@ -35,17 +35,17 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
         How It Works
       </Link>
       <Link 
-        to="/our-story" 
+        to="/about" 
         className={cn("transition-colors", 
-          currentPath === "/our-story" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/about" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
-        Our Story
+        About Us
       </Link>
       <Link 
-        to="/for-brands" 
+        to="/for-businesses" 
         className={cn("transition-colors", 
-          currentPath === "/for-brands" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/for-businesses" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         For Business
@@ -72,12 +72,12 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
         Videos
       </a>
       <Link 
-        to="/contact" 
+        to="/faq" 
         className={cn("transition-colors", 
-          currentPath === "/contact" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/faq" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
-        Contact
+        Help
       </Link>
     </div>
   );

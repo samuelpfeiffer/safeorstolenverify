@@ -10,11 +10,11 @@ const HeroActionButtons = memo(() => {
   const isMobile = useIsMobile();
 
   const handleConsumerNavigation = useCallback(() => {
-    navigate('/for-consumers');
+    navigate('/verify');
   }, [navigate]);
 
   const handleBrandNavigation = useCallback(() => {
-    navigate('/for-brands');
+    navigate('/for-businesses');
   }, [navigate]);
 
   return (

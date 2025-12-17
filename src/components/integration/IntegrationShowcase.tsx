@@ -129,7 +129,7 @@ export const IntegrationShowcase: React.FC = () => {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
+              <Link to="/for-businesses">
                 <Button className="bg-sos-orange hover:bg-sos-orange/90">
                   Get API Access
                   <ArrowRight className="ml-2 h-4 w-4" />

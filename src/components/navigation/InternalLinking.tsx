@@ -289,7 +289,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
               </p>
             </div>
             <Link
-              to="/stolen-item-checker"
+              to="/verify"
               className="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
               onClick={() => trackSEOInteraction('cta_click', 'Verify Now - Internal Linking')}
             >
