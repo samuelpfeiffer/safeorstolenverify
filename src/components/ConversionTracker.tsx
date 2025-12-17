@@ -53,10 +53,10 @@ export const ConversionTracker: React.FC = () => {
     
     if (path === '/') {
       trackEvent('landing_page_view');
-    } else if (path === '/verification-hub') {
+    } else if (path === '/verify') {
       trackEvent('verification_page_view');
-    } else if (path === '/subscriptions') {
-      trackEvent('subscriptions_page_view');
+    } else if (path === '/pricing') {
+      trackEvent('pricing_page_view');
     } else if (path === '/auth') {
       trackEvent('signup_page_view');
     } else if (path === '/for-brands') {

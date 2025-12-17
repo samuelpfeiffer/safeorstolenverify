@@ -27,7 +27,7 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
       title: "Don't Risk Buying Stolen Goods",
       description: "Use SafeOrStolen to verify any item in seconds before you purchase. Join 25,000+ smart buyers who protect their money.",
       buttonText: "Check an Item Now",
-      buttonLink: "/verification-hub",
+      buttonLink: "/verify",
       icon: Shield,
       badge: "Free Verification",
       stats: "2,847 stolen items found this month"
@@ -36,7 +36,7 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
       title: "Protect Your Business from Liability",
       description: "Integrate our enterprise API to eliminate stolen goods from your marketplace. Reduce liability and build customer trust.",
       buttonText: "Schedule Demo",
-      buttonLink: "/enterprise-demo", 
+      buttonLink: "/for-businesses", 
       icon: Shield,
       badge: "Enterprise Solution",
       stats: "Helping prevent fraud for businesses"
@@ -45,7 +45,7 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
       title: "Stop Losing Money to Scams",
       description: "Every verification could save you hundreds or thousands. Start protecting your purchases today.",
       buttonText: "Start Protecting Yourself",
-      buttonLink: "/subscriptions",
+      buttonLink: "/pricing",
       icon: Shield,
       badge: "Money-Back Guarantee",
       stats: "Recommended by law enforcement"

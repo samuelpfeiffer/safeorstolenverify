@@ -19,9 +19,9 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
         Home
       </Link>
       <Link 
-        to="/about-problem" 
+        to="/about" 
         className={cn("transition-colors", 
-          currentPath === "/about-problem" ? "text-sos-orange" : "text-white hover:text-sos-orange"
+          currentPath === "/about" ? "text-sos-orange" : "text-white hover:text-sos-orange"
         )}
       >
         About the Problem

@@ -38,7 +38,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
       title: "Upgrade Anytime",
       description: "Need more searches? Upgrade to unlimited verifications for just $4.99/month.",
       action: "View Subscriptions",
-      onClick: () => navigate('/subscriptions')
+      onClick: () => navigate('/pricing')
     }
   ];
 

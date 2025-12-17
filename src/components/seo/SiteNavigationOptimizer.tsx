@@ -73,12 +73,12 @@ export const SiteNavigationOptimizer: React.FC = () => {
     priority: 'medium'
   }];
   const businessSolutions: NavigationLink[] = [{
-    href: '/enterprise-demo',
+    href: '/for-businesses',
     text: 'Enterprise Verification Solutions',
     description: 'Business API and bulk verification tools',
     priority: 'medium'
   }, {
-    href: '/marketplace-integration',
+    href: '/for-marketplaces',
     text: 'Marketplace Integration',
     description: 'Integrate verification into your platform',
     priority: 'medium'

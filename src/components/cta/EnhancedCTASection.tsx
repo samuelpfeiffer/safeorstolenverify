@@ -28,12 +28,12 @@ export const EnhancedCTASection: React.FC = () => {
       icon: Building2,
       primaryAction: {
         text: "Schedule Demo",
-        href: "/contact",
+        href: "/about",
         variant: "outline" as const
       },
       secondaryAction: {
-        text: "View Subscriptions",
-        href: "/subscriptions"
+        text: "View Plans",
+        href: "/pricing"
       },
       highlight: "99.9% Uptime"
     }
