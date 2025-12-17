@@ -84,7 +84,7 @@ export default function HowToCheckPhoneStolen() {
             </li>
           </ol>
           <p className="bg-muted p-4 rounded-lg my-6">
-            <strong>💡 Pro Tip:</strong> Download the <Link to="/mobile-app" className="text-primary hover:underline">SafeOrStolen mobile app</Link> to scan phone barcodes instantly at the point of sale. No typing required.
+            <strong>💡 Pro Tip:</strong> Download the <Link to="/app" className="text-primary hover:underline">SafeOrStolen mobile app</Link> to scan phone barcodes instantly at the point of sale. No typing required.
           </p>
 
           <h3>Method 2: Check Carrier Blacklists Directly</h3>

@@ -169,7 +169,7 @@ export default function ScammerTacticsExposed() {
                   <Link to="/verify">Verify an Item Now</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/mobile-app">Download Mobile App</Link>
+                  <Link to="/app">Download Mobile App</Link>
                 </Button>
               </div>
             </section>
@@ -247,7 +247,7 @@ export default function ScammerTacticsExposed() {
                     <Link to="/verify">Verify Item Now</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/mobile-app">Download App</Link>
+                    <Link to="/app">Download App</Link>
                   </Button>
                 </div>
               </div>

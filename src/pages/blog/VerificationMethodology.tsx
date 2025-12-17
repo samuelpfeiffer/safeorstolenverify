@@ -380,7 +380,7 @@ export default function VerificationMethodology() {
                     <Link to="/verify">Verify Item Now</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/mobile-app">Download App</Link>
+                    <Link to="/app">Download App</Link>
                   </Button>
                 </div>
               </div>

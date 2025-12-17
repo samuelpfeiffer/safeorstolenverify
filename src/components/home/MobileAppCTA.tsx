@@ -78,7 +78,7 @@ export const MobileAppCTA = () => {
                   variant="outline"
                   className="border-sos-orange/30 hover:border-sos-orange hover:bg-sos-orange/5"
                 >
-                  <Link to="/mobile-app">
+                  <Link to="/app">
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>

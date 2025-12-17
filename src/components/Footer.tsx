@@ -151,7 +151,7 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/mobile-app" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
+                  <Link to="/app" className="text-muted-foreground hover:text-sos-orange transition-colors duration-200 flex items-center gap-2 group">
                     <span>Download App</span>
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>

@@ -32,7 +32,7 @@ export const AppLoadingScreen: React.FC = () => {
           <a href="/verify">Verify Items</a>
           <a href="/pricing">Pricing</a>
           <a href="/how-it-works">How It Works</a>
-          <a href="/mobile-app">Mobile App</a>
+          <a href="/app">Mobile App</a>
         </nav>
       </div>
       
