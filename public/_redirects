@@ -333,7 +333,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/business-guide-preventing-stolen-goods                    /blog            301!
 /blog/safeorstolen-firearms-marketplace-verification            /blog            301!
 /blog/complete-verification-guide-stolen-goods-check            /blog            301!
-/blog/data-source-credibility-stolen-goods-verification         /about           301!
+# REMOVED: /blog/data-source-credibility-stolen-goods-verification - has real page in AppRoutes
 /blog/mobile-app-features                                       /app             301!
 /blog/industry-insights-2024                                    /blog            301!
 /blog/what-to-do-if-you-bought-stolen                           /blog            301!

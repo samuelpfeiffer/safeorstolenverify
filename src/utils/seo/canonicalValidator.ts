@@ -176,10 +176,10 @@ export const startCanonicalMonitoring = (): (() => void) => {
     return () => {}; // No-op in production
   }
 
-  // Check on page load
+  // Check on page load - delay increased to allow React Helmet to render
   setTimeout(() => {
     logCanonicalValidation();
-  }, 2000);
+  }, 3500);
 
   // Check on URL changes (for SPAs)
   let lastPathname = window.location.pathname;
