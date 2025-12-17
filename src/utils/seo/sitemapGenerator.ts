@@ -179,22 +179,21 @@ export const generateRobotsTxt = (): string => {
 Allow: /
 
 # High priority public pages for maximum crawling
-Allow: /stolen-item-checker
-Allow: /imei-check  
-Allow: /vin-verification
+Allow: /verify
+Allow: /imei-checker
+Allow: /vin-checker
 Allow: /serial-number-checker
 Allow: /check-phone
 Allow: /check-car
 Allow: /check-electronics
 Allow: /how-it-works
-Allow: /comprehensive-guide
-Allow: /for-brands
+Allow: /for-businesses
 Allow: /about
-Allow: /contact
 Allow: /faq
 Allow: /blog/
-Allow: /guides/
 Allow: /api-docs
+Allow: /download
+Allow: /app/features
 
 # Block admin and user-specific pages  
 Disallow: /admin/

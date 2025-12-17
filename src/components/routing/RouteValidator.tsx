@@ -1,84 +1,12 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
+import { VALID_ROUTES as VALID_APP_ROUTES } from '@/utils/seo/sitemapRouteValidator';
 
 // Define valid routes for validation
-const VALID_ROUTES = new Set([
-  '/',
-  '/auth',
-  '/subscriptions',
-  '/pricing',
-  '/about',
-  '/contact',
-  '/faq',
-  '/terms',
-  '/privacy',
-  // '/service-limitations', // Removed - server-side 301 redirect only
-  '/blog',
-  '/how-it-works',
-  '/for-consumers',
-  '/for-brands',
-  '/our-story',
-  '/privacy-policy',
-  '/terms-of-service',
-  '/cookies',
-  '/refunds',
-  '/enterprise-demo',
-  '/referral',
-  '/api-docs',
-  '/sitemap',
-  '/community',
-  '/case-studies',
-  '/trust-verification',
-  '/data-sources',
-  '/accuracy',
-  '/verification-hub',
-  '/ultimate-guide',
-  '/auction-houses',
-  '/pawn-shops',
-  '/global-domination',
-  '/marketplace-integration',
-  '/how-to-check-if-item-stolen',
-  '/stolen-items-database',
-  '/check-if-stolen',
-  '/stolen-goods-checker',
-  '/stolen-merchandise-check',
-  '/avoid-buying-stolen-goods',
-  '/avoid-stolen-goods',
-  '/ultimate-guide-not-buying-stolen-goods',
-  '/how-to-check-if-anything-is-stolen-before-you-buy',
-  '/firearms-check',
-  '/check-phone',
-  '/check-car',
-  '/check-electronics',
-  '/check-bike',
-  '/item-categories',
-  '/problem',
-  '/arizona-license-plate-lookup',
-  '/arizona-vin-lookup',
-  '/theftaz',
-  '/arizona-stolen-vehicle-check',
-  '/verify',
-  '/stolen-item-checker',
-  '/vin-check',
-  '/imei-check',
-  '/dashboard',
-  '/profile',
-  '/subscription',
-  '/analytics',
-  '/search-history',
-  '/receipts',
-  '/mobile-app',
-  '/purchase-history',
-  '/activity',
-  '/pricing',
-  '/security-settings',
-  '/admin',
-  '/subscription-success',
-  '/subscription-cancel',
-  '/youtube',
-  '/crunchbase',
-  '/404'
+const VALID_ROUTES = new Set<string>([
+  ...Array.from(VALID_APP_ROUTES),
+  '/404',
 ]);
 
 // Routes that support dynamic segments
@@ -131,17 +59,43 @@ export const RouteValidator: React.FC = () => {
       '/signin': '/auth',
       '/signup': '/auth',
       '/register': '/auth',
-      '/price': '/subscriptions',
-      '/prices': '/subscriptions',
-      '/plans': '/subscriptions',
-      '/auth/subscription': '/subscription',
-      '/history': '/search-history',
+
+      // Pricing
+      '/price': '/pricing',
+      '/prices': '/pricing',
+      '/plans': '/pricing',
+      '/subscriptions': '/pricing',
+
+      // Verification
+      '/stolen-item-checker': '/verify',
+      '/verification-hub': '/verify',
+      '/for-consumers': '/verify',
+      '/imei-check': '/imei-checker',
+      '/vin-check': '/vin-checker',
+      '/vin-verification': '/vin-checker',
+
+      // Support / info
       '/help': '/faq',
-      '/support': '/contact',
+      '/support': '/faq',
+      '/contact': '/about',
+      '/contact-us': '/about',
+      '/about-problem': '/about',
       '/about-us': '/about',
-      '/contact-us': '/contact',
-      '/privacy-policy-page': '/privacy-policy',
-      '/terms-of-service-page': '/terms-of-service'
+
+      // Business
+      '/enterprise-demo': '/for-businesses',
+      '/marketplace-integration': '/for-marketplaces',
+
+      // Mobile app legacy
+      '/mobile-app': '/download',
+      '/get-app': '/download',
+      '/install-app': '/download',
+
+      // Legacy policy pages
+      '/privacy-policy': '/privacy',
+      '/privacy-policy-page': '/privacy',
+      '/terms-of-service': '/terms',
+      '/terms-of-service-page': '/terms',
     };
     
     const redirectTo = redirectMap[currentPath.toLowerCase()];

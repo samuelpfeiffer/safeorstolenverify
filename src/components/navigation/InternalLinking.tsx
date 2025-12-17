@@ -82,14 +82,14 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
     
     // Business solutions
     {
-      href: '/marketplace-integration',
+      href: '/for-marketplaces',
       text: 'Marketplace API Integration',
       description: 'Protect your platform from stolen goods',
       category: 'business',
       keywords: ['marketplace API', 'business integration', 'fraud prevention']
     },
     {
-      href: '/pawn-shops',
+      href: '/for-pawn-shops',
       text: 'Pawn Shop Verification Tools',
       description: 'Specialized tools for pawn industry',
       category: 'business',

@@ -22,17 +22,17 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     // Core Pages
     '/': [],
     '/about': [{ name: 'About Us', href: '/about' }],
-    '/contact': [{ name: 'Contact', href: '/contact' }],
+    '/contact': [{ name: 'About & Support', href: '/about' }],
     '/faq': [{ name: 'FAQ', href: '/faq' }],
     '/pricing': [{ name: 'Pricing', href: '/pricing' }],
     '/how-it-works': [{ name: 'How It Works', href: '/how-it-works' }],
-    '/for-brands': [{ name: 'For Brands', href: '/for-brands' }],
-    '/terms-of-service': [{ name: 'Terms of Service', href: '/terms-of-service' }],
-    '/privacy-policy': [{ name: 'Privacy Policy', href: '/privacy-policy' }],
+    '/for-brands': [{ name: 'For Business', href: '/for-businesses' }],
+    '/terms-of-service': [{ name: 'Terms', href: '/terms' }],
+    '/privacy-policy': [{ name: 'Privacy', href: '/privacy' }],
     
     // Verification Tools
     '/verify': [{ name: 'Verify Item', href: '/verify' }],
-    '/stolen-item-checker': [{ name: 'Stolen Item Checker', href: '/stolen-item-checker' }],
+    '/stolen-item-checker': [{ name: 'Verify Item', href: '/verify' }],
     '/check-phone': [{ name: 'Check Phone', href: '/check-phone' }],
     '/check-car': [{ name: 'Check Car', href: '/check-car' }],
     '/check-bike': [{ name: 'Check Bike', href: '/check-bike' }],
@@ -46,69 +46,69 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     
     // Guides
     '/how-to-check-anything-stolen': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'How to Check Anything Stolen', href: '/how-to-check-anything-stolen' }
     ],
     '/ultimate-guide-not-buying-stolen': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Ultimate Guide', href: '/ultimate-guide-not-buying-stolen' }
     ],
     '/comprehensive-guide': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Comprehensive Guide', href: '/comprehensive-guide' }
     ],
     '/how-to-check-if-item-stolen': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Check If Item Stolen', href: '/how-to-check-if-item-stolen' }
     ],
     '/how-to-check-laptop-stolen': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Check Laptop Stolen', href: '/how-to-check-laptop-stolen' }
     ],
     '/buyer-guide': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Buyer Guide', href: '/buyer-guide' }
     ],
     '/seller-guide': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Seller Guide', href: '/seller-guide' }
     ],
     '/avoid-stolen-goods': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Avoid Stolen Goods', href: '/avoid-stolen-goods' }
     ],
     '/buy-used-electronics-safely': [
-      { name: 'Guides', href: '/guides' },
+      { name: 'Guides', href: '/blog' },
       { name: 'Buy Electronics Safely', href: '/buy-used-electronics-safely' }
     ],
     
     // Competitor Comparisons
     '/safeorstolen-vs-carfax': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs Carfax', href: '/safeorstolen-vs-carfax' }
     ],
     '/safeorstolen-vs-checkmend': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs CheckMEND', href: '/safeorstolen-vs-checkmend' }
     ],
     '/safeorstolen-vs-ebay': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs eBay', href: '/safeorstolen-vs-ebay' }
     ],
     '/safeorstolen-vs-greyscout': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs GreyScout', href: '/safeorstolen-vs-greyscout' }
     ],
     '/safeorstolen-vs-imeiinfo': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs IMEI.info', href: '/safeorstolen-vs-imeiinfo' }
     ],
     '/safeorstolen-vs-imeipro': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs IMEIpro', href: '/safeorstolen-vs-imeipro' }
     ],
     '/safeorstolen-vs-swappa': [
-      { name: 'Comparisons', href: '/comparisons' },
+      { name: 'Comparisons', href: '/compare' },
       { name: 'vs Swappa', href: '/safeorstolen-vs-swappa' }
     ],
     '/competitor-alternatives': [
@@ -117,24 +117,24 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     
     // Business Pages
     '/enterprise-demo': [
-      { name: 'Business', href: '/business' },
-      { name: 'Enterprise Demo', href: '/enterprise-demo' }
+      { name: 'Business', href: '/for-businesses' },
+      { name: 'Business Solutions', href: '/for-businesses' }
     ],
     '/marketplace': [
-      { name: 'Business', href: '/business' },
-      { name: 'Marketplace Integration', href: '/marketplace' }
+      { name: 'Business', href: '/for-businesses' },
+      { name: 'For Marketplaces', href: '/for-marketplaces' }
     ],
     '/integrations': [
-      { name: 'Business', href: '/business' },
-      { name: 'Integrations', href: '/integrations' }
+      { name: 'Business', href: '/for-businesses' },
+      { name: 'Integrations', href: '/for-businesses' }
     ],
     '/api-docs': [
-      { name: 'Business', href: '/business' },
-      { name: 'API Documentation', href: '/api-docs' }
+      { name: 'Business', href: '/for-businesses' },
+      { name: 'API Documentation', href: '/for-businesses' }
     ],
     '/partnerships': [
-      { name: 'Business', href: '/business' },
-      { name: 'Partnerships', href: '/partnerships' }
+      { name: 'Business', href: '/for-businesses' },
+      { name: 'Partnerships', href: '/for-businesses' }
     ],
     
     // Company Pages
