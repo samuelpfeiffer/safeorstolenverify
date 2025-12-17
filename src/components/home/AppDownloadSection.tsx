@@ -96,7 +96,7 @@ export const AppDownloadSection = () => {
               {/* Download Buttons */}
               <div className="pt-6 space-y-4">
                 <Link 
-                  to="/download-app" 
+                  to="/download" 
                   className="block w-full bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-bold py-4 px-8 rounded-xl text-center transition-all hover:scale-105 shadow-xl"
                 >
                   📱 Download for iOS & Android - Verify Phones, Cars & Guns!

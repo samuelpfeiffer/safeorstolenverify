@@ -54,7 +54,7 @@ export const SEOContentSection = () => {
                       Verify smartphones and tablets using their unique 15-digit IMEI number. Our IMEI checker 
                       searches carrier blacklists and stolen phone databases instantly.
                     </p>
-                    <Link to="/imei-check" className="text-primary hover:underline font-medium">
+                    <Link to="/imei-checker" className="text-primary hover:underline font-medium">
                       Check IMEI Number →
                     </Link>
                   </div>
@@ -72,7 +72,7 @@ export const SEOContentSection = () => {
                       Check vehicle history reports using the 17-character VIN (Vehicle Identification Number). 
                       Verify cars, motorcycles, and trucks for theft records.
                     </p>
-                    <Link to="/vin-verification" className="text-secondary hover:underline font-medium">
+                    <Link to="/vin-checker" className="text-secondary hover:underline font-medium">
                       Verify VIN Number →
                     </Link>
                   </div>
@@ -108,7 +108,7 @@ export const SEOContentSection = () => {
                       Access our comprehensive stolen items database covering phones, vehicles, electronics, 
                       jewelry, bikes, and more from law enforcement reports.
                     </p>
-                    <Link to="/stolen-items-database" className="text-primary hover:underline font-medium">
+                    <Link to="/verify" className="text-primary hover:underline font-medium">
                       Search Database →
                     </Link>
                   </div>
@@ -173,16 +173,16 @@ export const SEOContentSection = () => {
                 <Link to="/check-car" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Verify car is not stolen
                 </Link>
-                <Link to="/check-laptop-stolen" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/check-laptop" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Laptop serial number check
                 </Link>
-                <Link to="/imei-check" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/imei-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Free IMEI checker
                 </Link>
-                <Link to="/vin-verification" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/vin-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   VIN stolen check
                 </Link>
-                <Link to="/stolen-goods-checker" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/verify" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Stolen goods database
                 </Link>
               </div>

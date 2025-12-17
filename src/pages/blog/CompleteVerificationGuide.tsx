@@ -297,7 +297,7 @@ export default function CompleteVerificationGuide() {
                   <Link to="/verify">Start Free Verification</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/mobile-app">Download Mobile App</Link>
+                  <Link to="/app">Download Mobile App</Link>
                 </Button>
               </div>
             </section>
@@ -368,7 +368,7 @@ export default function CompleteVerificationGuide() {
                     <Link to="/verify">Verify Any Item Now</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/mobile-app">Get Mobile App</Link>
+                    <Link to="/app">Get Mobile App</Link>
                   </Button>
                 </div>
               </div>

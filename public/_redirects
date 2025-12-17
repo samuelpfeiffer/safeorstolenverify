@@ -380,6 +380,21 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /for-used-car-dealers /for-dealers 301!
 
 # ============================================
+# BROKEN LINK FIXES (Audit 2025-12-17)
+# ============================================
+/app/download         /download   301!
+/download-app         /download   301!
+/imei-check           /imei-checker  301!
+/vin-verification     /vin-checker   301!
+/stolen-items-database /verify     301!
+/stolen-goods-checker /verify      301!
+/check-laptop-stolen  /check-laptop  301!
+/vs/checkmend         /vs-checkmend  301!
+/vs/imeiinfo          /vs-imeiinfo   301!
+/vs/stolen-register   /compare       301!
+/buyer-guide          /how-it-works  301!
+
+# ============================================
 # FASTERCAPITAL REDIRECT
 # ============================================
 /fastercapital/tech-cofounder  /about  301!

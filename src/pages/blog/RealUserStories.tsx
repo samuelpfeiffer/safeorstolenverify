@@ -373,7 +373,7 @@ export default function RealUserStories() {
                     <Link to="/verify">Start Free Trial</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/mobile-app">Download App</Link>
+                    <Link to="/app">Download App</Link>
                   </Button>
                 </div>
               </div>

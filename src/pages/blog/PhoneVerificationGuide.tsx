@@ -298,7 +298,7 @@ export default function PhoneVerificationGuide() {
 
               <div className="flex gap-4">
                 <Button asChild size="lg">
-                  <Link to="/mobile-app">Download SafeOrStolen App</Link>
+                  <Link to="/app">Download SafeOrStolen App</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/verify">Verify IMEI on Web</Link>
@@ -348,7 +348,7 @@ export default function PhoneVerificationGuide() {
                     <Link to="/verify">Verify Phone Now</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/mobile-app">Download Mobile App</Link>
+                    <Link to="/app">Download Mobile App</Link>
                   </Button>
                 </div>
               </div>
