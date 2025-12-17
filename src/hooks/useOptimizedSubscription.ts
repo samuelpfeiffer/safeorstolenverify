@@ -188,7 +188,7 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
           priceId: null, // Let the edge function resolve the actual Stripe price ID
           planName: priceId, // Use the plan name for Stripe matching (Stripe calls their pricing tiers "products")
           isSubscription: true,
-          redirectUrl: `${window.location.origin}/subscriptions?success=true`,
+          redirectUrl: `${window.location.origin}/pricing?success=true`,
         },
         headers: {
           Authorization: `Bearer ${session.access_token}`,

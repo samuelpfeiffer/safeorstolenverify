@@ -28,7 +28,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
 
   const handleExploreSubscriptions = () => {
     onClose();
-    navigate('/subscriptions');
+    navigate('/pricing');
   };
 
   return (

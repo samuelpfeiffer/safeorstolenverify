@@ -96,7 +96,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
       keywords: ['pawn shop tools', 'retail verification', 'business solutions']
     },
     {
-      href: '/enterprise-demo',
+      href: '/for-businesses',
       text: 'Enterprise Demo',
       description: 'See our business verification features',
       category: 'business',

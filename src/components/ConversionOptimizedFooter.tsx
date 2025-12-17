@@ -24,7 +24,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
                 size="lg" 
                 variant="secondary"
               >
-                <Link to="/verification-hub">
+                <Link to="/verify">
                   <Shield className="mr-2 h-5 w-5" />
                   Protect Your Purchase Now
                 </Link>

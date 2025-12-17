@@ -45,7 +45,7 @@ export const ValuePropositionSections = () => {
                 <Button 
                   size="lg" 
                   className="bg-sos-lime text-sos-dark hover:bg-sos-lime/90 font-semibold"
-                  onClick={() => navigate('/subscriptions')}
+                  onClick={() => navigate('/pricing')}
                 >
                   View Buyer Plans
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -54,7 +54,7 @@ export const ValuePropositionSections = () => {
                   size="lg" 
                   variant="outline"
                   className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark"
-                  onClick={() => navigate('/for-consumers')}
+                  onClick={() => navigate('/verify')}
                 >
                   Try Free Check
                 </Button>
@@ -97,7 +97,7 @@ export const ValuePropositionSections = () => {
                 <Button 
                   size="lg" 
                   className="bg-sos-orange text-white hover:bg-sos-orange/90 font-semibold"
-                  onClick={() => navigate('/subscriptions')}
+                  onClick={() => navigate('/pricing')}
                 >
                   View Seller Plans
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -149,7 +149,7 @@ export const ValuePropositionSections = () => {
                 <Button 
                   size="lg" 
                   className="bg-blue-500 text-white hover:bg-blue-500/90 font-semibold"
-                  onClick={() => navigate('/subscriptions')}
+                  onClick={() => navigate('/pricing')}
                 >
                   View Business Plans
                   <ArrowRight className="ml-2 h-5 w-5" />

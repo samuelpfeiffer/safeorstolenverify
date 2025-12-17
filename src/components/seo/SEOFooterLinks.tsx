@@ -16,9 +16,9 @@ export const SEOFooterLinks = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/check-phone" className="text-muted-foreground hover:text-primary">Check Phone (IMEI)</Link></li>
               <li><Link to="/check-laptop" className="text-muted-foreground hover:text-primary">Check Laptop</Link></li>
-              <li><Link to="/check-vehicle" className="text-muted-foreground hover:text-primary">Check Vehicle (VIN)</Link></li>
+              <li><Link to="/check-car" className="text-muted-foreground hover:text-primary">Check Vehicle (VIN)</Link></li>
               <li><Link to="/check-bike" className="text-muted-foreground hover:text-primary">Check Bike</Link></li>
-              <li><Link to="/check-firearm" className="text-muted-foreground hover:text-primary">Check Firearm</Link></li>
+              <li><Link to="/firearms-check" className="text-muted-foreground hover:text-primary">Check Firearm</Link></li>
               <li><Link to="/check-jewelry" className="text-muted-foreground hover:text-primary">Check Jewelry</Link></li>
             </ul>
           </div>
@@ -27,12 +27,12 @@ export const SEOFooterLinks = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-3">State VIN Checks</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/vin-check/california" className="text-muted-foreground hover:text-primary">California VIN Check</Link></li>
-              <li><Link to="/vin-check/texas" className="text-muted-foreground hover:text-primary">Texas VIN Check</Link></li>
-              <li><Link to="/vin-check/florida" className="text-muted-foreground hover:text-primary">Florida VIN Check</Link></li>
-              <li><Link to="/vin-check/new-york" className="text-muted-foreground hover:text-primary">New York VIN Check</Link></li>
-              <li><Link to="/vin-check/arizona" className="text-muted-foreground hover:text-primary">Arizona VIN Check</Link></li>
-              <li><Link to="/vin-check" className="text-muted-foreground hover:text-primary">All 50 States →</Link></li>
+              <li><Link to="/california-vin-lookup" className="text-muted-foreground hover:text-primary">California VIN Check</Link></li>
+              <li><Link to="/texas-vin-lookup" className="text-muted-foreground hover:text-primary">Texas VIN Check</Link></li>
+              <li><Link to="/florida-vin-lookup" className="text-muted-foreground hover:text-primary">Florida VIN Check</Link></li>
+              <li><Link to="/new-york-vin-lookup" className="text-muted-foreground hover:text-primary">New York VIN Check</Link></li>
+              <li><Link to="/ohio-vin-lookup" className="text-muted-foreground hover:text-primary">Ohio VIN Check</Link></li>
+              <li><Link to="/vin-checker" className="text-muted-foreground hover:text-primary">All 50 States →</Link></li>
             </ul>
           </div>
 
@@ -43,8 +43,8 @@ export const SEOFooterLinks = () => {
               <li><Link to="/blog/protect-yourself-buying-used-electronics" className="text-muted-foreground hover:text-primary">Buying Used Electronics</Link></li>
               <li><Link to="/blog/ultimate-marketplace-buyers-guide" className="text-muted-foreground hover:text-primary">Marketplace Safety Guide</Link></li>
               <li><Link to="/blog/complete-imei-guide-protect-yourself" className="text-muted-foreground hover:text-primary">Complete IMEI Guide</Link></li>
-              <li><Link to="/marketplace-safety" className="text-muted-foreground hover:text-primary">Marketplace Safety</Link></li>
-              <li><Link to="/legal-guide" className="text-muted-foreground hover:text-primary">Legal Guide</Link></li>
+              <li><Link to="/faq" className="text-muted-foreground hover:text-primary">FAQs & Help</Link></li>
+              <li><Link to="/how-it-works" className="text-muted-foreground hover:text-primary">How It Works</Link></li>
             </ul>
           </div>
 
@@ -53,10 +53,10 @@ export const SEOFooterLinks = () => {
             <h3 className="font-semibold text-foreground mb-3">For Business</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/for-businesses" className="text-muted-foreground hover:text-primary">Enterprise Solutions</Link></li>
-              <li><Link to="/for-pawnshops" className="text-muted-foreground hover:text-primary">For Pawnshops</Link></li>
+              <li><Link to="/for-pawn-shops" className="text-muted-foreground hover:text-primary">For Pawnshops</Link></li>
               <li><Link to="/for-dealers" className="text-muted-foreground hover:text-primary">For Dealers</Link></li>
               <li><Link to="/vs-checkmend" className="text-muted-foreground hover:text-primary">vs CheckMEND</Link></li>
-              <li><Link to="/vs-imei-info" className="text-muted-foreground hover:text-primary">vs IMEI.info</Link></li>
+              <li><Link to="/vs-imeiinfo" className="text-muted-foreground hover:text-primary">vs IMEI.info</Link></li>
               <li><Link to="/pricing" className="text-muted-foreground hover:text-primary">Pricing</Link></li>
             </ul>
           </div>

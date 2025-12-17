@@ -42,7 +42,7 @@ export const SignInWelcome = ({ userName, onContinue, isLoading = false }: SignI
       title: "Upgrade Account",
       description: "Get unlimited searches for $4.99/month",
       action: "View Plans",
-      onClick: () => navigate('/subscriptions')
+      onClick: () => navigate('/pricing')
     }
   ];
 
