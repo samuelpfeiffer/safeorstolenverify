@@ -1,4 +1,3 @@
-import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
@@ -34,10 +33,10 @@ serve(async (req) => {
   const startTime = Date.now();
 
   try {
-    const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
+    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     
-    if (!openAIApiKey) {
-      console.error('[AI Safety Advisor] OPENAI_API_KEY not configured');
+    if (!LOVABLE_API_KEY) {
+      console.error('[AI Safety Advisor] LOVABLE_API_KEY not configured');
       return new Response(
         JSON.stringify({
           success: false,
@@ -66,7 +65,6 @@ serve(async (req) => {
 
     console.log(`[AI Safety Advisor] Analyzing ${itemType}: ${identifier}`);
 
-    // Build context-aware prompt
     const systemPrompt = `You are SafeOrStolen's AI Safety Advisor, an expert in identifying potentially stolen goods. 
 Your job is to analyze identifiers (serial numbers, IMEI, VIN, etc.) and provide risk assessment.
 
@@ -95,46 +93,52 @@ Provide your analysis in this JSON format:
   "verification_tips": ["tip1", "tip2"]
 }`;
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${openAIApiKey}`,
+        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'google/gemini-2.5-flash',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt }
         ],
-        temperature: 0.3,
-        max_tokens: 1000,
-        response_format: { type: "json_object" }
       }),
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`[AI Safety Advisor] OpenAI error: ${response.status} - ${errorText}`);
+      if (response.status === 429) {
+        console.error('[AI Safety Advisor] Rate limit exceeded');
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error: 'Rate limit exceeded',
+            analysis: getFallbackAnalysis()
+          }),
+          { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (response.status === 402) {
+        console.error('[AI Safety Advisor] Payment required');
+        return new Response(
+          JSON.stringify({
+            success: false,
+            error: 'AI service quota exceeded',
+            analysis: getFallbackAnalysis()
+          }),
+          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
       
-      // Return fallback analysis
+      const errorText = await response.text();
+      console.error(`[AI Safety Advisor] API error: ${response.status} - ${errorText}`);
+      
       return new Response(
         JSON.stringify({
           success: true,
-          analysis: {
-            risk_level: 'medium',
-            confidence: 50,
-            reasoning: ['AI analysis temporarily unavailable', 'Fallback assessment provided'],
-            recommendation: 'Proceed with caution. Verify item history independently.',
-            summary: 'Unable to complete full AI analysis. Manual verification recommended.',
-            red_flags: [],
-            verification_tips: [
-              'Request proof of purchase from seller',
-              'Check item condition matches description',
-              'Verify seller identity and history',
-              'Consider using escrow service for high-value items'
-            ]
-          },
+          analysis: getFallbackAnalysis(),
           responseTime: Date.now() - startTime
         }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -142,18 +146,32 @@ Provide your analysis in this JSON format:
     }
 
     const data = await response.json();
-    const content = data.choices[0]?.message?.content;
+    const content = data.choices?.[0]?.message?.content;
 
     if (!content) {
       throw new Error('No response content from AI');
     }
 
+    // Extract JSON from response
+    let jsonContent = content;
+    const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (jsonMatch) {
+      jsonContent = jsonMatch[1].trim();
+    }
+
     let analysis;
     try {
-      analysis = JSON.parse(content);
+      analysis = JSON.parse(jsonContent);
     } catch (parseError) {
       console.error('[AI Safety Advisor] Failed to parse AI response:', content);
-      throw new Error('Invalid AI response format');
+      return new Response(
+        JSON.stringify({
+          success: true,
+          analysis: getFallbackAnalysis(),
+          responseTime: Date.now() - startTime
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
     }
 
     // Validate and normalize the analysis
@@ -189,18 +207,27 @@ Provide your analysis in this JSON format:
     return new Response(
       JSON.stringify({
         success: false,
-        analysis: {
-          risk_level: 'medium',
-          confidence: 30,
-          reasoning: [`Analysis error: ${error.message}`],
-          recommendation: 'Manual verification required due to system error',
-          summary: 'AI analysis encountered an error',
-          red_flags: [],
-          verification_tips: ['Contact support if issue persists', 'Try verification again later']
-        },
+        analysis: getFallbackAnalysis(),
         responseTime: Date.now() - startTime
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
 });
+
+function getFallbackAnalysis() {
+  return {
+    risk_level: 'medium' as const,
+    confidence: 50,
+    reasoning: ['AI analysis temporarily unavailable', 'Fallback assessment provided'],
+    recommendation: 'Proceed with caution. Verify item history independently.',
+    summary: 'Unable to complete full AI analysis. Manual verification recommended.',
+    red_flags: [],
+    verification_tips: [
+      'Request proof of purchase from seller',
+      'Check item condition matches description',
+      'Verify seller identity and history',
+      'Consider using escrow service for high-value items'
+    ]
+  };
+}

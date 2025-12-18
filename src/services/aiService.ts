@@ -1,9 +1,6 @@
-// AI Service for SafeOrStolen - Synthetic AI Implementation
+// AI Service for SafeOrStolen - Real AI Integration via Lovable AI Gateway
 
-/**
- * Comprehensive AI Service for SafeOrStolen
- * Provides synthetic AI capabilities across all platform features
- */
+import { supabase } from '@/integrations/supabase/client';
 
 export interface AIVerificationAnalysis {
   riskScore: number;
@@ -27,51 +24,53 @@ export interface AIChatResponse {
   confidence: number;
 }
 
-class AIService {
-  private readonly apiKey = process.env.OPENAI_API_KEY;
+export interface AISafetyAnalysis {
+  risk_level: 'low' | 'medium' | 'high' | 'critical';
+  confidence: number;
+  reasoning: string[];
+  recommendation: string;
+  summary: string;
+  red_flags: string[];
+  verification_tips: string[];
+}
 
+class AIService {
   /**
-   * AI-powered verification analysis
+   * AI-powered verification analysis using real AI
    */
   async analyzeVerification(data: {
     serialNumber: string;
     itemType: string;
     category: string;
-    dbResults: any[];
+    dbResults?: any[];
     metadata?: Record<string, any>;
   }): Promise<AIVerificationAnalysis> {
     try {
-      const prompt = `
-        Analyze this product verification for stolen goods risk:
-        
-        Item: ${data.itemType} (${data.category})
-        Serial/ID: ${data.serialNumber}
-        Database Results: ${JSON.stringify(data.dbResults, null, 2)}
-        Additional Info: ${JSON.stringify(data.metadata || {}, null, 2)}
-        
-        Provide a comprehensive AI analysis including:
-        1. Risk score (0-100, where 100 = definitely stolen)
-        2. Confidence level (0-100)
-        3. Specific fraud indicators found
-        4. Actionable recommendations for buyer
-        5. Narrative summary for user
-        6. Additional verification steps needed
-        
-        Focus on practical advice and clear risk assessment.
-      `;
+      const { data: response, error } = await supabase.functions.invoke('ai-verify-item', {
+        body: {
+          serialNumber: data.serialNumber,
+          itemType: data.itemType,
+          category: data.category,
+          dbResults: data.dbResults || [],
+          metadata: data.metadata || {}
+        }
+      });
 
-      // Simulate AI analysis with sophisticated logic
-      const riskFactors = this.calculateRiskFactors(data);
-      const confidence = this.calculateConfidence(data);
-      
-      return {
-        riskScore: riskFactors.score,
-        confidence,
-        fraudIndicators: riskFactors.indicators,
-        recommendations: this.generateRiskRecommendations(riskFactors.score, data),
-        narrativeSummary: this.generateNarrativeSummary(riskFactors, data),
-        additionalChecks: this.suggestAdditionalChecks(data)
-      };
+      if (error) {
+        console.error('AI verification failed:', error);
+        return this.getFallbackAnalysis(data);
+      }
+
+      if (response?.success && response?.analysis) {
+        return response.analysis;
+      }
+
+      // Use fallback if provided
+      if (response?.fallback) {
+        return response.fallback;
+      }
+
+      return this.getFallbackAnalysis(data);
     } catch (error) {
       console.error('AI verification analysis failed:', error);
       return this.getFallbackAnalysis(data);
@@ -87,14 +86,36 @@ class AIService {
     userContext?: any;
   }): Promise<AIContentGeneration> {
     try {
-      const baseContent = this.generateBaseContent(data);
-      
-      return {
-        productDescription: baseContent.description,
-        riskAssessment: baseContent.risk,
-        buyerAdvice: baseContent.advice,
-        marketAnalysis: baseContent.market
-      };
+      const { data: response, error } = await supabase.functions.invoke('ai-content-generator', {
+        body: {
+          type: 'report',
+          itemData: {
+            category: data.product?.category,
+            itemType: data.product?.itemType || data.product?.name,
+            serialNumber: data.product?.serialNumber,
+            brand: data.product?.brand,
+            model: data.product?.model
+          },
+          verificationResult: data.verificationResult,
+          userContext: data.userContext
+        }
+      });
+
+      if (error) {
+        console.error('AI content generation failed:', error);
+        return this.getFallbackContent(data);
+      }
+
+      if (response?.success && response?.content) {
+        return {
+          productDescription: response.content.productDescription || '',
+          riskAssessment: response.content.riskAssessment || '',
+          buyerAdvice: response.content.buyerAdvice || '',
+          marketAnalysis: response.content.marketAnalysis || ''
+        };
+      }
+
+      return this.getFallbackContent(data);
     } catch (error) {
       console.error('AI content generation failed:', error);
       return this.getFallbackContent(data);
@@ -102,24 +123,102 @@ class AIService {
   }
 
   /**
-   * AI chat assistant for user queries
+   * AI chat assistant for user queries - streaming
    */
   async chatAssistant(query: string, context?: any): Promise<AIChatResponse> {
     try {
-      const responses = this.generateChatResponses(query, context);
-      
-      return {
-        message: responses.message,
-        suggestedActions: responses.actions,
-        confidence: responses.confidence
-      };
+      const { data: response, error } = await supabase.functions.invoke('ai-safety-advisor', {
+        body: {
+          identifier: context?.serialNumber || query,
+          itemType: context?.itemType || 'general',
+          additionalContext: query
+        }
+      });
+
+      if (error) {
+        console.error('AI chat failed:', error);
+        return this.getFallbackChatResponse(query);
+      }
+
+      if (response?.success && response?.analysis) {
+        return {
+          message: response.analysis.summary || response.analysis.recommendation,
+          suggestedActions: response.analysis.verification_tips || [],
+          confidence: (response.analysis.confidence || 70) / 100
+        };
+      }
+
+      return this.getFallbackChatResponse(query);
     } catch (error) {
       console.error('AI chat failed:', error);
-      return {
-        message: "I'm here to help with verification questions. Could you please rephrase your question?",
-        suggestedActions: ["Check item verification", "Review safety tips", "Contact support"],
-        confidence: 0.5
-      };
+      return this.getFallbackChatResponse(query);
+    }
+  }
+
+  /**
+   * Stream chat messages for real-time conversation
+   */
+  async streamChat(
+    messages: Array<{ role: 'user' | 'assistant'; content: string }>,
+    context?: any,
+    onDelta: (text: string) => void = () => {},
+    onDone: () => void = () => {}
+  ): Promise<void> {
+    const CHAT_URL = `https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/ai-chat`;
+
+    try {
+      const resp = await fetch(CHAT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ messages, context }),
+      });
+
+      if (!resp.ok || !resp.body) {
+        throw new Error('Failed to start stream');
+      }
+
+      const reader = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let textBuffer = '';
+      let streamDone = false;
+
+      while (!streamDone) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        textBuffer += decoder.decode(value, { stream: true });
+
+        let newlineIndex: number;
+        while ((newlineIndex = textBuffer.indexOf('\n')) !== -1) {
+          let line = textBuffer.slice(0, newlineIndex);
+          textBuffer = textBuffer.slice(newlineIndex + 1);
+
+          if (line.endsWith('\r')) line = line.slice(0, -1);
+          if (line.startsWith(':') || line.trim() === '') continue;
+          if (!line.startsWith('data: ')) continue;
+
+          const jsonStr = line.slice(6).trim();
+          if (jsonStr === '[DONE]') {
+            streamDone = true;
+            break;
+          }
+
+          try {
+            const parsed = JSON.parse(jsonStr);
+            const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+            if (content) onDelta(content);
+          } catch {
+            textBuffer = line + '\n' + textBuffer;
+            break;
+          }
+        }
+      }
+
+      onDone();
+    } catch (error) {
+      console.error('Stream chat error:', error);
+      onDone();
     }
   }
 
@@ -136,36 +235,40 @@ class AIService {
     patterns: string[];
     warnings: string[];
   }> {
-    const patterns = [];
-    const warnings = [];
-    let fraudScore = 0;
+    try {
+      const { data: response, error } = await supabase.functions.invoke('ai-safety-advisor', {
+        body: {
+          identifier: data.itemDetails?.serialNumber || 'unknown',
+          itemType: data.itemDetails?.category || 'general',
+          additionalContext: JSON.stringify({
+            seller: data.sellerInfo,
+            price: data.pricePoint,
+            location: data.location
+          })
+        }
+      });
 
-    // Analyze pricing anomalies
-    if (data.pricePoint && data.itemDetails) {
-      const priceAnalysis = this.analyzePricing(data.pricePoint, data.itemDetails);
-      fraudScore += priceAnalysis.suspicionScore;
-      patterns.push(...priceAnalysis.patterns);
+      if (error || !response?.success) {
+        return this.getFallbackFraudAnalysis();
+      }
+
+      const analysis = response.analysis;
+      const riskToScore: Record<string, number> = {
+        'low': 20,
+        'medium': 50,
+        'high': 75,
+        'critical': 95
+      };
+
+      return {
+        fraudScore: riskToScore[analysis.risk_level] || 50,
+        patterns: analysis.red_flags || [],
+        warnings: analysis.reasoning || []
+      };
+    } catch (error) {
+      console.error('Fraud detection failed:', error);
+      return this.getFallbackFraudAnalysis();
     }
-
-    // Analyze seller behavior patterns
-    if (data.sellerInfo) {
-      const sellerAnalysis = this.analyzeSellerBehavior(data.sellerInfo);
-      fraudScore += sellerAnalysis.riskScore;
-      warnings.push(...sellerAnalysis.warnings);
-    }
-
-    // Geographic risk analysis
-    if (data.location) {
-      const locationRisk = this.analyzeLocationRisk(data.location);
-      fraudScore += locationRisk.score;
-      patterns.push(...locationRisk.patterns);
-    }
-
-    return {
-      fraudScore: Math.min(fraudScore, 100),
-      patterns,
-      warnings
-    };
   }
 
   /**
@@ -176,9 +279,34 @@ class AIService {
     itemSuggestions: string[];
     riskAlerts: string[];
   }> {
-    const safetyTips = this.generatePersonalizedSafetyTips(userProfile, verificationHistory);
-    const itemSuggestions = this.generatePersonalizedItemSuggestions(verificationHistory);
-    const riskAlerts = this.generatePersonalizedRiskAlerts(verificationHistory);
+    // Generate personalized recommendations based on history
+    const safetyTips = [
+      'Always meet sellers in public, well-lit locations',
+      'Bring a friend when making high-value purchases',
+      'Trust your instincts - if something feels wrong, walk away',
+      'Keep records of all verification checks',
+      'Report suspicious listings to authorities'
+    ];
+
+    const itemSuggestions = [
+      'Consider certified pre-owned options for electronics',
+      'Look for items with warranty coverage',
+      'Check manufacturer refurbished items',
+      'Verify authenticity certificates for luxury items'
+    ];
+
+    const riskAlerts: string[] = [];
+    
+    // Analyze verification history for patterns
+    if (verificationHistory?.length > 0) {
+      const highRiskItems = verificationHistory.filter((v: any) => 
+        v.riskScore > 50 || v.risk_level === 'high' || v.risk_level === 'critical'
+      );
+      
+      if (highRiskItems.length > 0) {
+        riskAlerts.push(`${highRiskItems.length} of your recent checks showed elevated risk`);
+      }
+    }
 
     return {
       safetyTips,
@@ -187,232 +315,83 @@ class AIService {
     };
   }
 
-  // Private helper methods for AI analysis
-  private calculateRiskFactors(data: any): { score: number; indicators: string[] } {
-    let score = 0;
-    const indicators = [];
+  /**
+   * Get safety analysis for an identifier
+   */
+  async getSafetyAnalysis(identifier: string, itemType: string): Promise<AISafetyAnalysis> {
+    try {
+      const { data: response, error } = await supabase.functions.invoke('ai-safety-advisor', {
+        body: {
+          identifier,
+          itemType
+        }
+      });
 
-    // Analyze database matches
-    if (data.dbResults?.some((result: any) => result.status === 'stolen')) {
-      score += 90;
-      indicators.push('Direct match in stolen goods database');
-    }
+      if (error || !response?.success) {
+        return this.getFallbackSafetyAnalysis();
+      }
 
-    if (data.dbResults?.some((result: any) => result.status === 'lost')) {
-      score += 70;
-      indicators.push('Item reported as lost or missing');
-    }
-
-    // Serial number pattern analysis
-    if (this.isSerialNumberSuspicious(data.serialNumber)) {
-      score += 30;
-      indicators.push('Serial number shows irregular patterns');
-    }
-
-    // Category-specific risk factors
-    const categoryRisk = this.getCategoryRiskScore(data.category);
-    score += categoryRisk.score;
-    indicators.push(...categoryRisk.indicators);
-
-    return { score: Math.min(score, 100), indicators };
-  }
-
-  private calculateConfidence(data: any): number {
-    let confidence = 50; // Base confidence
-
-    // More data sources = higher confidence
-    if (data.dbResults?.length > 0) confidence += 20;
-    if (data.metadata && Object.keys(data.metadata).length > 3) confidence += 15;
-    if (data.serialNumber?.length > 8) confidence += 10;
-
-    return Math.min(confidence, 100);
-  }
-
-  private generateRiskRecommendations(riskScore: number, data: any): string[] {
-    const recommendations = [];
-
-    if (riskScore > 80) {
-      recommendations.push('❌ DO NOT PURCHASE - High theft risk detected');
-      recommendations.push('Report this item to local authorities');
-      recommendations.push('Notify the marketplace/seller platform');
-    } else if (riskScore > 50) {
-      recommendations.push('⚠️ PROCEED WITH CAUTION - Moderate risk detected');
-      recommendations.push('Request additional documentation from seller');
-      recommendations.push('Meet in a public, safe location');
-      recommendations.push('Consider professional inspection');
-    } else if (riskScore > 20) {
-      recommendations.push('✅ LOW RISK - Standard precautions recommended');
-      recommendations.push('Verify seller identity and contact information');
-      recommendations.push('Check item condition thoroughly');
-    } else {
-      recommendations.push('✅ SAFE TO PROCEED - No significant risks detected');
-      recommendations.push('Follow standard purchase best practices');
-    }
-
-    return recommendations;
-  }
-
-  private generateNarrativeSummary(riskFactors: any, data: any): string {
-    const { score, indicators } = riskFactors;
-    
-    if (score > 80) {
-      return `Our AI analysis indicates a HIGH RISK (${score}%) that this ${data.category} may be stolen or fraudulent. ${indicators.length} red flags were detected, including ${indicators[0]}. We strongly recommend avoiding this purchase.`;
-    } else if (score > 50) {
-      return `Our AI analysis shows MODERATE RISK (${score}%) for this ${data.category}. While not definitively stolen, ${indicators.length} concerning patterns were identified. Exercise caution and verify authenticity before purchasing.`;
-    } else if (score > 20) {
-      return `Our AI analysis indicates LOW RISK (${score}%) for this ${data.category}. Minor concerns were noted but the item appears legitimate. Follow standard buying precautions.`;
-    } else {
-      return `Our AI analysis shows VERY LOW RISK (${score}%) for this ${data.category}. No significant theft indicators were detected. The item appears safe to purchase with normal precautions.`;
+      return response.analysis;
+    } catch (error) {
+      console.error('Safety analysis failed:', error);
+      return this.getFallbackSafetyAnalysis();
     }
   }
 
-  private suggestAdditionalChecks(data: any): string[] {
-    const checks = [];
-    
-    checks.push('Verify seller identity and reputation');
-    checks.push('Request proof of ownership documentation');
-    checks.push('Check manufacturer warranty status');
-    
-    if (data.category === 'Electronics') {
-      checks.push('Verify IMEI/serial with manufacturer');
-      checks.push('Check device unlock/blacklist status');
-    }
-    
-    if (data.category === 'Vehicles') {
-      checks.push('Run VIN through additional databases');
-      checks.push('Verify title and registration');
-    }
-
-    return checks;
-  }
-
-  private isSerialNumberSuspicious(serial: string): boolean {
-    if (!serial) return true;
-    
-    // Check for common suspicious patterns
-    const suspiciousPatterns = [
-      /^0+$/, // All zeros
-      /^1+$/, // All ones
-      /(.)\1{5,}/, // Repeated characters
-      /^(test|demo|sample)/i, // Test/demo units
-    ];
-
-    return suspiciousPatterns.some(pattern => pattern.test(serial));
-  }
-
-  private getCategoryRiskScore(category: string): { score: number; indicators: string[] } {
-    const categoryRisks: Record<string, { score: number; indicators: string[] }> = {
-      'Electronics': { score: 25, indicators: ['High-value electronics frequently targeted by thieves'] },
-      'Vehicles': { score: 30, indicators: ['Vehicle theft is common for this category'] },
-      'Jewelry': { score: 35, indicators: ['Jewelry commonly stolen and resold'] },
-      'Tools': { score: 20, indicators: ['Power tools often stolen from job sites'] },
-      'Bicycles': { score: 20, indicators: ['Bicycle theft is prevalent in urban areas'] },
-      'Default': { score: 10, indicators: ['Standard theft risk for this category'] }
-    };
-
-    return categoryRisks[category] || categoryRisks['Default'];
-  }
-
-  private generateBaseContent(data: any): any {
-    return {
-      description: `AI-Enhanced Analysis: This ${data.item?.category || data.category || 'item'} has been processed through our advanced verification algorithms, cross-referencing multiple databases and applying machine learning patterns for comprehensive risk assessment.`,
-      risk: `Our AI system has evaluated this item using 50+ risk factors including database matches, serial number patterns, seller behavior analysis, and market price comparisons to provide you with an intelligent risk assessment.`,
-      advice: `Based on AI analysis, we recommend following our suggested safety protocols. Our algorithms have identified the most relevant precautions for this specific item type and risk profile.`,
-      market: `AI Market Intelligence: Current market trends and pricing patterns have been analyzed to help you make an informed purchasing decision. Unusual pricing or listing patterns have been flagged for your attention.`
-    };
-  }
-
-  private analyzePricing(price: number, itemDetails: any): any {
-    return {
-      suspicionScore: price < 100 ? 20 : 0,
-      patterns: price < 100 ? ['Unusually low pricing may indicate stolen goods'] : []
-    };
-  }
-
-  private analyzeSellerBehavior(sellerInfo: any): any {
-    return {
-      riskScore: 0,
-      warnings: ['Verify seller reputation and history']
-    };
-  }
-
-  private analyzeLocationRisk(location: string): any {
-    return {
-      score: 5,
-      patterns: ['Standard location-based risk assessment applied']
-    };
-  }
-
-  private generatePersonalizedSafetyTips(userProfile: any, history: any[]): string[] {
-    return [
-      'Always meet sellers in public, well-lit locations',
-      'Bring a friend when making high-value purchases',
-      'Trust your instincts - if something feels wrong, walk away',
-      'Keep records of all verification checks',
-      'Report suspicious listings to authorities'
-    ];
-  }
-
-  private generatePersonalizedItemSuggestions(history: any[]): string[] {
-    return [
-      'Consider certified pre-owned options for electronics',
-      'Look for items with warranty coverage',
-      'Check manufacturer refurbished items',
-      'Verify authenticity certificates for luxury items'
-    ];
-  }
-
-  private generatePersonalizedRiskAlerts(history: any[]): string[] {
-    return [
-      'Be extra cautious with high-value electronics',
-      'Watch for sellers with limited history',
-      'Verify serial numbers before final purchase'
-    ];
-  }
-
-  private generateChatResponses(query: string, context?: any): any {
-    const lowerQuery = query.toLowerCase();
-    
-    if (lowerQuery.includes('stolen') || lowerQuery.includes('safe')) {
-      return {
-        message: "I can help you verify if an item is stolen or safe to buy. Please provide the serial number, IMEI, or VIN and I'll run a comprehensive AI analysis across multiple databases.",
-        actions: ['Start Verification', 'Learn More', 'View Safety Tips'],
-        confidence: 0.9
-      };
-    }
-    
-    if (lowerQuery.includes('price') || lowerQuery.includes('worth')) {
-      return {
-        message: "Our AI can analyze pricing patterns to detect unusually low prices that might indicate stolen goods. What type of item are you looking at?",
-        actions: ['Price Analysis', 'Market Comparison', 'Risk Assessment'],
-        confidence: 0.8
-      };
-    }
-
-    return {
-      message: "I'm SafeOrStolen's AI assistant. I can help with item verification, safety advice, and fraud detection. What would you like to know?",
-      actions: ['Verify Item', 'Safety Tips', 'Report Fraud'],
-      confidence: 0.7
-    };
-  }
-
+  // Private fallback methods
   private getFallbackAnalysis(data: any): AIVerificationAnalysis {
     return {
       riskScore: 25,
-      confidence: 60,
-      fraudIndicators: ['Standard verification protocols applied'],
-      recommendations: ['Follow basic safety precautions when purchasing'],
-      narrativeSummary: `Basic analysis completed for this ${data.category}. No major red flags detected, but standard precautions are recommended.`,
-      additionalChecks: ['Verify seller identity', 'Check item condition', 'Meet in safe location']
+      confidence: 50,
+      fraudIndicators: ['AI analysis temporarily unavailable'],
+      recommendations: [
+        'Verify seller identity and reputation',
+        'Request proof of purchase documentation',
+        'Meet in a public, safe location'
+      ],
+      narrativeSummary: `Basic verification completed for this ${data.category || 'item'}. AI analysis was limited - please use standard precautions.`,
+      additionalChecks: [
+        'Verify serial number with manufacturer',
+        'Check local police records',
+        'Research market pricing'
+      ]
     };
   }
 
   private getFallbackContent(data: any): AIContentGeneration {
     return {
-      productDescription: `Standard verification completed for this ${data.product?.category || 'item'}.`,
-      riskAssessment: 'Basic risk assessment protocols have been applied.',
+      productDescription: `Verification report for ${data.product?.category || 'item'}.`,
+      riskAssessment: 'Standard risk assessment protocols applied.',
       buyerAdvice: 'Follow standard purchasing safety guidelines.',
-      marketAnalysis: 'Standard market analysis has been performed.'
+      marketAnalysis: 'Market analysis based on standard data.'
+    };
+  }
+
+  private getFallbackChatResponse(query: string): AIChatResponse {
+    return {
+      message: "I can help you verify items and stay safe from stolen goods. What would you like to check?",
+      suggestedActions: ['Verify an Item', 'Learn Safety Tips', 'Report Suspicious Activity'],
+      confidence: 0.7
+    };
+  }
+
+  private getFallbackFraudAnalysis() {
+    return {
+      fraudScore: 30,
+      patterns: ['Standard verification applied'],
+      warnings: ['Unable to complete full AI analysis']
+    };
+  }
+
+  private getFallbackSafetyAnalysis(): AISafetyAnalysis {
+    return {
+      risk_level: 'medium',
+      confidence: 50,
+      reasoning: ['AI analysis temporarily unavailable'],
+      recommendation: 'Proceed with standard verification',
+      summary: 'Unable to complete full AI analysis',
+      red_flags: [],
+      verification_tips: ['Verify seller identity', 'Request documentation']
     };
   }
 }
