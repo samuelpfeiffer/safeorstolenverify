@@ -62,13 +62,9 @@ async function generateStaticSchemaHTML() {
     // Determine output filename
     const filename = page.path === '/' 
       ? 'index.html' 
-      : page.path === '/mobile-app'
-        ? 'mobile-app.html'
-        : page.path === '/app'
-          ? 'app.html'
-          : page.path === '/account'
-            ? 'account.html'
-            : `${page.path.slice(1)}.html`;
+      : page.path === '/app'
+        ? 'app.html'
+        : `${page.path.slice(1)}.html`;
     
     const outputPath = path.join(distDir, filename);
 

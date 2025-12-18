@@ -129,23 +129,7 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
       { name: 'Partnerships', href: '/for-businesses' }
     ],
     
-    // Company Pages
-    '/our-story': [
-      { name: 'About', href: '/about' },
-      { name: 'Our Story', href: '/our-story' }
-    ],
-    '/our-team': [
-      { name: 'About', href: '/about' },
-      { name: 'Our Team', href: '/our-team' }
-    ],
-    '/our-mission': [
-      { name: 'About', href: '/about' },
-      { name: 'Our Mission', href: '/our-mission' }
-    ],
-    '/case-studies': [
-      { name: 'Resources', href: '/resources' },
-      { name: 'Case Studies', href: '/case-studies' }
-    ],
+    // Company Pages - redirected to /about
     '/press': [
       { name: 'Resources', href: '/resources' },
       { name: 'Press', href: '/press' }
@@ -240,10 +224,10 @@ export const getPageCategory = (pathname: string): string => {
   if (pathname.startsWith('/safeorstolen-vs-') || pathname === '/competitor-alternatives') {
     return 'comparisons';
   }
-  if (['/enterprise-demo', '/marketplace', '/integrations', '/api-docs'].includes(pathname)) {
+  if (['/for-businesses', '/for-pawn-shops', '/for-dealers', '/for-marketplaces', '/for-auction-houses'].includes(pathname)) {
     return 'business';
   }
-  if (['/about', '/our-story', '/our-team', '/our-mission'].includes(pathname)) {
+  if (['/about'].includes(pathname)) {
     return 'company';
   }
   if (['/how-to-', '/buyer-guide', '/seller-guide', '/avoid-', '/buy-used-'].some(prefix => pathname.includes(prefix))) {

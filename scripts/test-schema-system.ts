@@ -97,7 +97,7 @@ if (duplicates.length === 0) {
 // Test 4: Verify all core pages are covered
 console.log('\n\nTEST 4: Core Page Coverage');
 console.log('─'.repeat(80));
-const expectedPages = ['/', '/verify', '/dashboard', '/account', '/mobile-app', '/app', '/pricing', '/about', '/faq', '/terms', '/privacy'];
+const expectedPages = ['/', '/verify', '/app', '/pricing', '/about', '/faq', '/terms', '/privacy', '/how-it-works'];
 const definedPages = PAGE_SCHEMA_DEFINITIONS.map(p => p.path);
 
 const missingPages = expectedPages.filter(p => !definedPages.includes(p));

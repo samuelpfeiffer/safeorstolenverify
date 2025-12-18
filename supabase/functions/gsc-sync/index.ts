@@ -13,13 +13,14 @@ const PRIORITY_URLS = [
   'https://safeorstolen.com/verify',
   'https://safeorstolen.com/pricing',
   'https://safeorstolen.com/about',
-  'https://safeorstolen.com/mobile-app',
-  'https://safeorstolen.com/app/download',
-  'https://safeorstolen.com/dashboard',
+  'https://safeorstolen.com/app',
+  'https://safeorstolen.com/download',
   'https://safeorstolen.com/faq',
   'https://safeorstolen.com/terms',
   'https://safeorstolen.com/privacy',
-  'https://safeorstolen.com/service-limitations', // Soft 404 - needs reinspection
+  'https://safeorstolen.com/how-it-works',
+  'https://safeorstolen.com/imei-checker',
+  'https://safeorstolen.com/vin-checker',
 ];
 
 serve(async (req) => {

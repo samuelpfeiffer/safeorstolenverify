@@ -5,69 +5,57 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Routes to prerender
+// Routes to prerender - ONLY valid routes from AppRoutes.tsx
 const routes = [
   '/',
   '/verify',
-  '/install-app',
-  '/mobile-app',
-  '/check-phone',
-  '/check-car',
-  '/check-electronics',
-  '/check-bike',
-  // Tier 3: Important conversion pages
+  '/app',
+  '/download',
   '/pricing',
   '/how-it-works',
+  '/about',
+  '/faq',
+  
+  // High-value landing pages
+  '/imei-checker',
+  '/vin-checker',
+  '/serial-number-checker',
+  '/check-phone',
+  '/check-car',
+  '/check-bike',
+  '/check-laptop',
+  '/check-electronics',
   '/firearms-check',
+  '/license-plate-lookup',
+  
+  // Business pages
   '/for-businesses',
-  '/fastercapital/raise-capital',
+  '/for-pawn-shops',
+  '/for-dealers',
   
-  // Statistics & Data Pages
-  '/statistics/stolen-goods',
+  // Comparison pages
+  '/compare',
+  '/vs-checkmend',
+  '/vs-imeiinfo',
+  '/vs-swappa',
+  '/vs-carfax',
+  '/vs-autocheck',
   
-  // Marketplace Guides (CRITICAL - Fix Soft 404)
-  '/guides/ebay-buyer-protection',
-  '/guides/offerup-verification',
-  '/guides/pawnshop-buying-tips',
-  '/guides/auction-house-safety',
-  '/guides/check-facebook-marketplace-items',
-  '/guides/verify-craigslist-items',
-  '/guides/offerup-scam-protection',
-  
-  // Mobile App Comparison Pages
-  '/mobile-app/vs-carfax',
-  '/mobile-app/vs-checkmend',
-  '/mobile-app/vs-autocheck',
-  
-  // State VIN Lookup Pages
-  '/arizona-vin-lookup',
+  // Top state VIN pages
   '/california-vin-lookup',
   '/texas-vin-lookup',
   '/florida-vin-lookup',
-  '/utah-vin-lookup',
-  '/virginia-vin-lookup',
-  '/wyoming-vin-lookup',
-  '/wisconsin-vin-lookup',
+  '/new-york-vin-lookup',
   '/washington-vin-lookup',
-  '/south-dakota-vin-lookup',
-  
-  // International Pages
-  '/uk-vehicle-check',
-  '/canada-vin-lookup',
-  '/australia-vehicle-check',
-  
-  // Comparison Pages
-  '/comparison-checkmend',
-  '/competitor-alternatives',
   
   // Blog
   '/blog',
-  '/blog/facebook-marketplace-safety',
+  '/blog/how-to-check-if-phone-stolen',
+  '/blog/complete-vin-guide',
   
   // Legal Pages
   '/terms',
   '/privacy',
-  '/transparency'
 ];
 
 async function generatePrerenderPlaceholders() {

@@ -1,77 +1,63 @@
 // Prerender configuration for bot-friendly static HTML generation
+// Only includes VALID routes that exist in AppRoutes.tsx
 export const prerenderRoutes = [
   // Tier 1: Critical pages
   '/',
   '/verify',
+  '/app',
+  '/download',
+  '/pricing',
   
-  // Tier 2: High-value pages
-  '/install-app',
-  '/mobile-app',
+  // Tier 2: High-value landing pages
+  '/imei-checker',
+  '/vin-checker',
+  '/serial-number-checker',
   '/check-phone',
   '/check-car',
-  '/check-electronics',
   '/check-bike',
-  '/crime-prevention-impact',
-  
-  // Tier 3: Important conversion pages
-  '/pricing',
-  '/how-it-works',
+  '/check-laptop',
+  '/check-electronics',
   '/firearms-check',
+  '/license-plate-lookup',
+  
+  // Tier 3: Important informational pages
+  '/how-it-works',
+  '/about',
+  '/faq',
   '/for-businesses',
-  '/fastercapital/raise-capital',
-  
-  // Statistics & Data Pages
-  '/statistics/stolen-goods',
-  
-  // Marketplace Guides (CRITICAL - Fix Soft 404)
-  '/guides/ebay-buyer-protection',
-  '/guides/offerup-verification',
-  '/guides/pawnshop-buying-tips',
-  '/guides/auction-house-safety',
-  '/guides/check-facebook-marketplace-items',
-  '/guides/verify-craigslist-items',
-  '/guides/offerup-scam-protection',
-  
-  // Mobile App Comparison Pages
-  '/mobile-app/vs-carfax',
-  '/mobile-app/vs-checkmend',
-  '/mobile-app/vs-autocheck',
-  
-  // Top state pages (VIN + License Plate)
-  '/arizona-vin-lookup',
-  '/arizona-license-plate-lookup',
-  '/california-vin-lookup',
-  '/california-license-plate-lookup',
-  '/texas-vin-lookup',
-  '/texas-license-plate-lookup',
-  '/florida-vin-lookup',
-  '/florida-license-plate-lookup',
-  '/new-york-vin-lookup',
-  '/new-york-license-plate-lookup',
-  '/utah-vin-lookup',
-  '/virginia-vin-lookup',
-  '/wyoming-vin-lookup',
-  '/wisconsin-vin-lookup',
-  '/washington-vin-lookup',
-  '/south-dakota-vin-lookup',
-  
-  // International pages
-  '/uk-vehicle-check',
-  '/canada-vin-lookup',
-  '/australia-vehicle-check',
+  '/for-pawn-shops',
+  '/for-dealers',
   
   // Comparison pages
-  '/comparison-checkmend',
-  '/competitor-alternatives',
+  '/compare',
+  '/vs-checkmend',
+  '/vs-imeiinfo',
+  '/vs-swappa',
+  '/vs-carfax',
+  '/vs-autocheck',
   
-  // Blog (CRITICAL - Fix Soft 404)
+  // Top state VIN pages
+  '/california-vin-lookup',
+  '/texas-vin-lookup',
+  '/florida-vin-lookup',
+  '/new-york-vin-lookup',
+  '/illinois-vin-lookup',
+  '/georgia-vin-lookup',
+  '/pennsylvania-vin-lookup',
+  '/ohio-vin-lookup',
+  '/north-carolina-vin-lookup',
+  '/washington-vin-lookup',
+  
+  // Blog
   '/blog',
-  '/blog/facebook-marketplace-safety',
+  '/blog/how-to-check-if-phone-stolen',
+  '/blog/complete-vin-guide',
+  '/blog/facebook-marketplace-scams',
+  '/blog/how-to-check-if-iphone-stolen',
   
   // Legal
   '/terms',
   '/privacy',
-  '/transparency'
 ];
 
 export const botUserAgents = [

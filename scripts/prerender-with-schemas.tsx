@@ -18,15 +18,15 @@ const __dirname = path.dirname(__filename);
 const CORE_ROUTES = [
   { path: '/', title: 'SafeOrStolen - Free Stolen Item Checker' },
   { path: '/verify', title: 'Verify Items - SafeOrStolen' },
-  { path: '/dashboard', title: 'Dashboard - SafeOrStolen' },
-  { path: '/account', title: 'Account Settings - SafeOrStolen' },
-  { path: '/mobile-app', title: 'Mobile App - SafeOrStolen' },
   { path: '/app', title: 'Download App - SafeOrStolen' },
   { path: '/pricing', title: 'Pricing Plans - SafeOrStolen' },
   { path: '/about', title: 'About Us - SafeOrStolen' },
   { path: '/faq', title: 'FAQ - SafeOrStolen' },
   { path: '/terms', title: 'Terms of Service - SafeOrStolen' },
   { path: '/privacy', title: 'Privacy Policy - SafeOrStolen' },
+  { path: '/how-it-works', title: 'How It Works - SafeOrStolen' },
+  { path: '/imei-checker', title: 'IMEI Checker - SafeOrStolen' },
+  { path: '/vin-checker', title: 'VIN Checker - SafeOrStolen' },
 ];
 
 /**
