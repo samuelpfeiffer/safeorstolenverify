@@ -8,6 +8,7 @@ import { CheckCircle2, XCircle, AlertTriangle, Clock } from 'lucide-react';
 import type { AggregatedResult } from '@/services/VerificationService';
 import { SourceCard } from './SourceCard';
 import { TrustBadge } from './TrustBadge';
+import { DownloadReportButton } from './DownloadReportButton';
 
 interface Props {
   result: AggregatedResult;
@@ -69,9 +70,18 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
               {getRiskIcon()}
               <span>Verification Result</span>
             </div>
-            <Badge variant="outline" className={getRiskColor()}>
-              {result.riskLevel.toUpperCase()} RISK
-            </Badge>
+            <div className="flex items-center gap-2">
+              <DownloadReportButton 
+                result={result} 
+                identifier={result.identifier} 
+                itemType={result.itemType}
+                variant="outline"
+                size="sm"
+              />
+              <Badge variant="outline" className={getRiskColor()}>
+                {result.riskLevel.toUpperCase()} RISK
+              </Badge>
+            </div>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">

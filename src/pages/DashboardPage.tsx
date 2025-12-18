@@ -32,6 +32,7 @@ import { RecentActivityCard } from '@/components/dashboard/RecentActivityCard';
 import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatusCard';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ReferralProgram, ViralShareWidget } from '@/components/growth';
+import { WatchlistSection } from '@/components/dashboard/WatchlistSection';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
@@ -489,6 +490,9 @@ const DashboardPage = () => {
             <NotificationSettings />
           </div>
         );
+
+      case 'watchlist':
+        return <WatchlistSection />;
 
       default:
         return <VerificationSection />;
