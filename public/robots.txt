@@ -37,6 +37,13 @@ Disallow: /api/
 Disallow: /analytics
 Disallow: /seo-strategy
 
+# AI Context Files (Not for Google indexing)
+Disallow: /ai-context.json
+Disallow: /ai-training-data.md
+Disallow: /mobile-app-ai-context.json
+Disallow: /*.json$
+Disallow: /*.md$
+
 # Query Parameters (Avoid Duplicate Content)
 Disallow: /*?*
 Disallow: /*?utm_*

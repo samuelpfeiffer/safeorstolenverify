@@ -214,6 +214,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /analytics                   /dashboard  301!
 
 # ============================================
+# GSC "Crawled not indexed" FIXES (December 2025)
+# ============================================
+/chicago/imei-check          /imei-checker  301!
+/app/buyers                  /app  301!
+/check-drone                 /verify  301!
+/can-police-track-stolen-phone /faq  301!
+
 # GSC NOINDEX/SOFT404 FIXES (December 2025)
 # ============================================
 # State abbreviation pages
@@ -346,7 +353,19 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /city/new-york-ny/stolen-item-checker     /stolen-check-new-york-city   301!
 /city/*                                   /verify                       301!
 
-# ============================================
+# City-name pattern redirects (cityname/service format)
+/chicago/*                                /verify  301!
+/los-angeles/*                            /verify  301!
+/new-york/*                               /verify  301!
+/houston/*                                /verify  301!
+/phoenix/*                                /verify  301!
+/philadelphia/*                           /verify  301!
+/san-antonio/*                            /verify  301!
+/san-diego/*                              /verify  301!
+/dallas/*                                 /verify  301!
+/san-jose/*                               /verify  301!
+/miami/*                                  /verify  301!
+
 # STATE SUBDIRECTORY REDIRECTS (GSC "Alternate page" errors)
 # ============================================
 /state/texas/stolen-item-checker          /texas-vin-lookup             301!
