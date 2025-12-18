@@ -588,6 +588,38 @@ export type Database = {
         }
         Relationships: []
       }
+      shared_reports: {
+        Row: {
+          created_at: string | null
+          id: string
+          share_code: string
+          stolen_item_id: string | null
+          views: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          share_code: string
+          stolen_item_id?: string | null
+          views?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          share_code?: string
+          stolen_item_id?: string | null
+          views?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shared_reports_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       stolen_items: {
         Row: {
           brand: string | null
@@ -686,6 +718,36 @@ export type Database = {
           created_at?: string
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_watchlist: {
+        Row: {
+          alert_email: boolean | null
+          created_at: string | null
+          description: string | null
+          id: string
+          identifier: string
+          item_type: string
+          user_id: string
+        }
+        Insert: {
+          alert_email?: boolean | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          identifier: string
+          item_type: string
+          user_id: string
+        }
+        Update: {
+          alert_email?: boolean | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          identifier?: string
+          item_type?: string
           user_id?: string
         }
         Relationships: []
