@@ -45,7 +45,7 @@ export const EnhancedNavigation: React.FC = () => {
   const verificationServices: NavigationItem[] = [
     {
       label: 'IMEI Checker App',
-      href: '/imei-check',
+      href: '/imei-checker',
       description: 'Instant phone verification with barcode scanning',
       icon: Shield,
       keywords: ['IMEI checker app', 'stolen phone check', 'mobile device verification']
@@ -174,7 +174,7 @@ export const EnhancedNavigation: React.FC = () => {
     },
     {
       label: 'Contact Us',
-      href: '/contact',
+      href: '/about',
       description: 'Get expert help',
       keywords: ['contact support', 'expert help', 'fraud assistance']
     }

@@ -212,7 +212,7 @@ export const trackSEOInteraction = (action: string, element: string, value?: str
     schema_types: schemaValidation.schemaTypes.join(','),
     schema_validation_errors: schemaValidation.validationErrors.length,
     faq_schema_present: schemaValidation.hasFAQSchema,
-    service_schema_present: schemaValidation.hasProductSchema,
+    service_schema_present: schemaValidation.hasServiceSchema,
     review_schema_present: schemaValidation.hasReviewSchema,
     howto_schema_present: schemaValidation.hasHowToSchema,
     
@@ -403,17 +403,17 @@ const getContentGroup = (pathname: string): string => {
   const groupMap: Record<string, string> = {
     '/': 'Landing Pages',
     '/dashboard': 'App Pages',
-    '/stolen-item-checker': 'Verification Tools',
-    '/imei-check': 'Verification Tools',
-    '/vin-verification': 'Verification Tools',
+    '/verify': 'Verification Tools',
+    '/imei-checker': 'Verification Tools',
+    '/vin-checker': 'Verification Tools',
     '/check-phone': 'Verification Tools',
     '/check-car': 'Verification Tools',
     '/how-it-works': 'Information Pages',
-    '/for-brands': 'Business Pages',
+    '/for-businesses': 'Business Pages',
     '/about': 'Company Pages',
-    '/contact': 'Support Pages',
     '/blog': 'Content Pages',
-    '/faq': 'Support Pages'
+    '/faq': 'Support Pages',
+    '/pricing': 'Checkout Pages'
   };
   
   for (const [path, group] of Object.entries(groupMap)) {
@@ -434,8 +434,8 @@ const getPageType = (pathname: string): string => {
 const getUserIntent = (pathname: string): string => {
   if (pathname.includes('check') || pathname.includes('verify')) return 'verification';
   if (pathname.includes('how') || pathname.includes('guide')) return 'informational';
-  if (pathname.includes('for-brands') || pathname.includes('pricing')) return 'commercial';
-  if (pathname.includes('about') || pathname.includes('contact')) return 'navigational';
+  if (pathname.includes('for-businesses') || pathname.includes('pricing')) return 'commercial';
+  if (pathname.includes('about')) return 'navigational';
   return 'informational';
 };
 
@@ -737,7 +737,7 @@ const validateSchemaMarkup = (schemaElements: NodeListOf<Element>) => {
     schemaTypes: [] as string[],
     validationErrors: [] as string[],
     hasFAQSchema: false,
-    hasProductSchema: false,
+    hasServiceSchema: false,
     hasReviewSchema: false,
     hasHowToSchema: false
   };
@@ -746,16 +746,16 @@ const validateSchemaMarkup = (schemaElements: NodeListOf<Element>) => {
     try {
       const data = JSON.parse(script.textContent || '{}');
       const schemaType = data['@type'] || 'unknown';
-      
+
       validationResults.schemaTypes.push(schemaType);
       validationResults.hasValidSchema = true;
-      
+
       // Check for specific schema types
       if (schemaType === 'FAQPage' || (Array.isArray(data) && data.some(item => item['@type'] === 'Question'))) {
         validationResults.hasFAQSchema = true;
       }
-      if (schemaType === 'Product') {
-        validationResults.hasProductSchema = true;
+      if (schemaType === 'Service' || schemaType === 'SoftwareApplication') {
+        validationResults.hasServiceSchema = true;
       }
       if (schemaType === 'Review' || schemaType === 'AggregateRating') {
         validationResults.hasReviewSchema = true;
@@ -763,7 +763,7 @@ const validateSchemaMarkup = (schemaElements: NodeListOf<Element>) => {
       if (schemaType === 'HowTo') {
         validationResults.hasHowToSchema = true;
       }
-      
+
     } catch (error) {
       validationResults.validationErrors.push(`Schema ${index + 1}: Invalid JSON`);
     }
@@ -775,15 +775,14 @@ const validateSchemaMarkup = (schemaElements: NodeListOf<Element>) => {
 const getDetailedPageType = (pathname: string): string => {
   const typeMapping: Record<string, string> = {
     '/': 'landing',
-    '/stolen-item-checker': 'verification_tool',
-    '/imei-check': 'verification_tool', 
-    '/vin-verification': 'verification_tool',
+    '/verify': 'verification_tool',
+    '/imei-checker': 'verification_tool',
+    '/vin-checker': 'verification_tool',
     '/check-phone': 'verification_tool',
     '/check-car': 'verification_tool',
     '/how-it-works': 'guide',
-    '/for-brands': 'business_landing',
+    '/for-businesses': 'business_landing',
     '/pricing': 'checkout',
-    '/contact': 'support',
     '/about': 'company_info',
     '/faq': 'support'
   };

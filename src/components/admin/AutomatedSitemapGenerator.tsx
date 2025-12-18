@@ -57,7 +57,7 @@ const AutomatedSitemapGenerator: React.FC = () => {
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/stolen-item-checker</loc>
+    <loc>https://safeorstolen.com/verify</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
