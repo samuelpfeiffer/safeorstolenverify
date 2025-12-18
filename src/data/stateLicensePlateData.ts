@@ -1,4 +1,5 @@
 // COMPLETE 50-STATE LICENSE PLATE DATA - REAL CONTENT FOR ALL US STATES
+// NOTE: theftStats contain historical reference data - specific numbers should be treated as general indicators, not exact current figures
 
 export interface StateLicensePlateData {
   state: string;
@@ -7,9 +8,9 @@ export interface StateLicensePlateData {
   dmvName: string;
   dmvLink: string;
   topCities: string[];
-  theftStats: {
-    annualThefts: string;
-    recoveryRate: string;
+  theftStats?: {
+    annualThefts?: string;
+    recoveryRate?: string;
     ranking?: string;
   };
   uniqueConcerns: string[];
