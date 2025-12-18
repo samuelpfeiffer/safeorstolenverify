@@ -25,7 +25,7 @@ export const AppDownloadCTA = ({ variant = 'default', showBenefits = false }: Ap
           <Download className="h-5 w-5" />
           Download App
         </Button>
-        <Button size="lg" variant="outline" onClick={() => navigate('/download')} className="gap-2">
+        <Button size="lg" variant="outline" onClick={() => navigate('/app')} className="gap-2">
           Learn More
         </Button>
       </div>

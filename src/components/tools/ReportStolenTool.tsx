@@ -119,8 +119,8 @@ const ReportStolenTool = () => {
               <Button onClick={() => { setSubmitted(false); setFormData({ ...formData, serialNumber: '', brand: '', model: '', description: '' }); }}>
                 Report Another Item
               </Button>
-              <Button variant="outline" onClick={() => navigate('/tools')}>
-                Back to Tools
+              <Button variant="outline" onClick={() => navigate('/verify')}>
+                Back to Verification
               </Button>
             </div>
           </div>

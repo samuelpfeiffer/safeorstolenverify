@@ -12,19 +12,19 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-foreground">Safe Secondhand Buying</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <Link to="/check-if-stolen" className="block hover:text-primary">
+              <Link to="/verify" className="block hover:text-primary">
                 Check If Item Is Stolen
               </Link>
-              <Link to="/verify-before-buying" className="block hover:text-primary">
+              <Link to="/how-it-works" className="block hover:text-primary">
                 Check if Stolen Before Buying
               </Link>
-              <Link to="/secondhand-verification" className="block hover:text-primary">
+              <Link to="/verify" className="block hover:text-primary">
                 Secondhand Item Verification
               </Link>
-              <Link to="/buy-used-safely" className="block hover:text-primary">
+              <Link to="/how-it-works" className="block hover:text-primary">
                 Buy Used Safely Online
               </Link>
-              <Link to="/protect-buyers-sellers" className="block hover:text-primary">
+              <Link to="/about" className="block hover:text-primary">
                 Protect Buyers and Sellers
               </Link>
             </div>
@@ -43,10 +43,10 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
               <Link to="/check-electronics" className="block hover:text-primary">
                 Serial Number Lookup
               </Link>
-              <Link to="/electronics-background-check" className="block hover:text-primary">
+              <Link to="/serial-number-checker" className="block hover:text-primary">
                 Electronics Background Check
               </Link>
-              <Link to="/secondhand-car-check" className="block hover:text-primary">
+              <Link to="/vin-checker" className="block hover:text-primary">
                 Secondhand Car Check
               </Link>
             </div>
@@ -56,19 +56,19 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-foreground">Trust & Security</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <Link to="/trusted-verification" className="block hover:text-primary">
+              <Link to="/verify" className="block hover:text-primary">
                 Trusted Item Verification
               </Link>
-              <Link to="/stolen-property-database" className="block hover:text-primary">
+              <Link to="/verify" className="block hover:text-primary">
                 Global Stolen Property Database
               </Link>
-              <Link to="/secure-marketplace" className="block hover:text-primary">
+              <Link to="/facebook-marketplace-stolen-check" className="block hover:text-primary">
                 Secure Marketplace Tool
               </Link>
-              <Link to="/scam-prevention" className="block hover:text-primary">
+              <Link to="/blog/scammer-tactics-exposed" className="block hover:text-primary">
                 Scam Prevention Tool
               </Link>
-              <Link to="/property-history" className="block hover:text-primary">
+              <Link to="/verify" className="block hover:text-primary">
                 Property History Reports
               </Link>
             </div>

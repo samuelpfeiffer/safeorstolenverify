@@ -75,7 +75,7 @@ export default function GSCMonitoringDashboard() {
                       </li>
                     </ul>
                   </div>
-                  <Button onClick={() => navigate('/admin/gsc-connect')} className="w-full">
+                  <Button onClick={() => navigate('/dashboard')} className="w-full">
                     <Plug className="w-4 h-4 mr-2" />
                     Connect Google Search Console
                   </Button>
