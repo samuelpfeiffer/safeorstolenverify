@@ -212,7 +212,7 @@ export const AutonomousSystemDashboard: React.FC = () => {
             </Button>
             
             <Button
-              onClick={() => navigate('/ai-optimizer')}
+              onClick={() => navigate('/dashboard')}
               variant="outline"
               className="w-full"
             >
@@ -221,7 +221,7 @@ export const AutonomousSystemDashboard: React.FC = () => {
             </Button>
             
             <Button
-              onClick={() => navigate('/ai-executives')}
+              onClick={() => navigate('/dashboard')}
               variant="default"
               className="w-full md:col-span-2"
             >
