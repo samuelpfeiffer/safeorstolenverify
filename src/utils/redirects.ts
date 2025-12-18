@@ -33,15 +33,36 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/verify-not-stolen', to: '/verify', permanent: true },
   { from: '/stolen-merchandise-check', to: '/verify', permanent: true },
   { from: '/verification-hub', to: '/verify', permanent: true },
+  { from: '/craigslist-verification', to: '/verify', permanent: true },
+  { from: '/ebay-verification', to: '/verify', permanent: true },
+  { from: '/mesa-stolen-item-check', to: '/verify', permanent: true },
+  { from: '/stolen-phone-database', to: '/verify', permanent: true },
+  { from: '/stolen-car-database', to: '/verify', permanent: true },
+  { from: '/verify-vin-before-purchase', to: '/vin-checker', permanent: true },
 
   // ===== LEGACY CHECKER URLS =====
-  // Note: /imei-checker, /vin-checker, /serial-number-checker are real pages - DO NOT redirect
   { from: '/imei-check', to: '/imei-checker', permanent: true },
   { from: '/vin-verification', to: '/vin-checker', permanent: true },
   { from: '/vin-check', to: '/vin-checker', permanent: true },
+  { from: '/vin-lookup', to: '/vin-checker', permanent: true },
   { from: '/stolen-item-checker', to: '/verify', permanent: true },
   { from: '/imei', to: '/imei-checker', permanent: true },
   { from: '/vin', to: '/check-car', permanent: true },
+  { from: '/check-samsung', to: '/check-phone', permanent: true },
+  { from: '/check-scooter', to: '/check-ebike', permanent: true },
+  { from: '/check-bicycle', to: '/check-bike', permanent: true },
+  { from: '/firearm-serial-check', to: '/firearms-check', permanent: true },
+  { from: '/how-to-verify-car-not-stolen', to: '/check-car', permanent: true },
+  { from: '/how-to-check-if-phone-is-stolen', to: '/check-phone', permanent: true },
+
+  // ===== STATE ABBREVIATION PAGES =====
+  { from: '/texas', to: '/texas-vin-lookup', permanent: true },
+  { from: '/florida', to: '/florida-vin-lookup', permanent: true },
+  { from: '/new-york', to: '/new-york-vin-lookup', permanent: true },
+
+  // ===== COMPETITOR COMPARISON PAGES =====
+  { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
+  { from: '/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
@@ -55,6 +76,11 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/fastercapital/tech-cofounder', to: '/about', permanent: true },
   { from: '/terms-of-service', to: '/terms', permanent: true },
   { from: '/privacy-policy', to: '/privacy', permanent: true },
+  { from: '/database', to: '/about', permanent: true },
+  { from: '/analytics', to: '/dashboard', permanent: true },
+  { from: '/for-businesses', to: '/for-pawn-shops', permanent: true },
+  { from: '/seo-strategy', to: '/about', permanent: true },
+  { from: '/seller-guide', to: '/about', permanent: true },
 ];
 
 /**
