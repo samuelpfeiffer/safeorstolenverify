@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Gift, Users, Share2, Trophy } from 'lucide-react';
+import { Gift, Users, Share2, Trophy, Loader2 } from 'lucide-react';
 import { CopyButton } from '@/components/common/CopyButton';
 import { useAuth } from '@/lib/auth';
+import { supabase } from '@/integrations/supabase/client';
 
 interface ReferralStats {
   referralsCount: number;
@@ -18,16 +19,49 @@ interface ReferralStats {
 
 export const ReferralProgram = () => {
   const { user } = useAuth();
-  const [stats] = useState<ReferralStats>({
-    referralsCount: 3,
-    pendingRewards: 25,
-    totalEarned: 75,
-    nextMilestone: 5,
-    referralCode: user?.id ? `SOS${user.id.slice(0, 8).toUpperCase()}` : 'SOSREF123'
+  const [isLoading, setIsLoading] = useState(true);
+  const [stats, setStats] = useState<ReferralStats>({
+    referralsCount: 0,
+    pendingRewards: 0,
+    totalEarned: 0,
+    nextMilestone: 1,
+    referralCode: ''
   });
 
+  // Fetch real referral stats from database
+  useEffect(() => {
+    const fetchReferralStats = async () => {
+      if (!user?.id) {
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        // Generate referral code from user ID
+        const referralCode = `SOS${user.id.slice(0, 8).toUpperCase()}`;
+        
+        // Query real referral data - count profiles that signed up with this referral code
+        // Note: This would require a referral_code column in profiles table
+        // For now, start with zero until referral system is implemented
+        setStats({
+          referralsCount: 0,
+          pendingRewards: 0,
+          totalEarned: 0,
+          nextMilestone: 1,
+          referralCode
+        });
+      } catch (error) {
+        console.error('Error fetching referral stats:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchReferralStats();
+  }, [user?.id]);
+
   const referralUrl = `https://safeorstolen.com/signup?ref=${stats.referralCode}`;
-  const progressToNext = (stats.referralsCount / stats.nextMilestone) * 100;
+  const progressToNext = stats.nextMilestone > 0 ? (stats.referralsCount / stats.nextMilestone) * 100 : 0;
 
   const shareOnSocial = (platform: string) => {
     const message = "Check out Safe Or Stolen - verify if items are stolen before you buy! Use my referral link to get 5 free verifications:";
@@ -58,11 +92,36 @@ export const ReferralProgram = () => {
     { referrals: 50, reward: "1 Year Premium", icon: "🌟" }
   ];
 
+  if (isLoading) {
+    return (
+      <div className="container mx-auto py-12 flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="container mx-auto py-12">
+        <Card className="max-w-md mx-auto p-8 text-center">
+          <Trophy className="h-12 w-12 text-primary mx-auto mb-4" />
+          <h2 className="text-2xl font-bold mb-2">Join the Referral Program</h2>
+          <p className="text-muted-foreground mb-6">
+            Sign up to get your unique referral link and start earning rewards.
+          </p>
+          <Button asChild>
+            <a href="/auth">Sign Up Now</a>
+          </Button>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white mb-4">Referral Program</h1>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground mb-4">Referral Program</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Earn rewards by helping others stay safe from stolen goods. 
           Get free verifications and premium features for every successful referral!
         </p>
@@ -71,47 +130,47 @@ export const ReferralProgram = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
         {/* Current Stats */}
         <div className="lg:col-span-2 space-y-6">
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-sos-orange" />
+              <CardTitle className="text-foreground flex items-center gap-2">
+                <Trophy className="h-5 w-5 text-primary" />
                 Your Referral Stats
               </CardTitle>
               <CardDescription>Track your progress and rewards</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div className="text-center p-4 bg-gray-800 rounded-lg">
-                  <div className="text-3xl font-bold text-sos-orange">{stats.referralsCount}</div>
-                  <div className="text-sm text-gray-400">Successful Referrals</div>
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-3xl font-bold text-primary">{stats.referralsCount}</div>
+                  <div className="text-sm text-muted-foreground">Successful Referrals</div>
                 </div>
-                <div className="text-center p-4 bg-gray-800 rounded-lg">
-                  <div className="text-3xl font-bold text-yellow-400">{stats.pendingRewards}</div>
-                  <div className="text-sm text-gray-400">Pending Verifications</div>
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-3xl font-bold text-yellow-500">{stats.pendingRewards}</div>
+                  <div className="text-sm text-muted-foreground">Pending Verifications</div>
                 </div>
-                <div className="text-center p-4 bg-gray-800 rounded-lg">
-                  <div className="text-3xl font-bold text-green-400">{stats.totalEarned}</div>
-                  <div className="text-sm text-gray-400">Total Earned</div>
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-3xl font-bold text-green-500">{stats.totalEarned}</div>
+                  <div className="text-sm text-muted-foreground">Total Earned</div>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <div className="flex justify-between text-sm">
-                  <span className="text-white">Progress to next milestone</span>
-                  <span className="text-gray-400">{stats.referralsCount}/{stats.nextMilestone} referrals</span>
+                  <span className="text-foreground">Progress to next milestone</span>
+                  <span className="text-muted-foreground">{stats.referralsCount}/{stats.nextMilestone} referrals</span>
                 </div>
                 <Progress value={progressToNext} className="h-3" />
-                <div className="text-center text-sm text-gray-400">
-                  {stats.nextMilestone - stats.referralsCount} more referrals to unlock 20 free verifications!
+                <div className="text-center text-sm text-muted-foreground">
+                  {stats.nextMilestone - stats.referralsCount} more referrals to unlock your first reward!
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Share2 className="h-5 w-5 text-sos-orange" />
+              <CardTitle className="text-foreground flex items-center gap-2">
+                <Share2 className="h-5 w-5 text-primary" />
                 Share Your Referral Link
               </CardTitle>
               <CardDescription>Share with friends and earn rewards together</CardDescription>
@@ -121,12 +180,12 @@ export const ReferralProgram = () => {
                 <Input
                   value={referralUrl}
                   readOnly
-                  className="bg-gray-800 border-gray-600 text-white"
+                  className="bg-muted border-border text-foreground"
                 />
                 <CopyButton
                   text={referralUrl}
                   variant="outline"
-                  className="border-gray-600 text-white hover:bg-gray-700"
+                  className="border-border text-foreground hover:bg-muted"
                   successMessage="Link copied! Share it with friends to earn rewards."
                 />
               </div>
@@ -135,29 +194,29 @@ export const ReferralProgram = () => {
                 <Button
                   onClick={() => shareOnSocial('twitter')}
                   variant="outline"
-                  className="flex-1 border-gray-600 text-white hover:bg-blue-900/20"
+                  className="flex-1 border-border text-foreground hover:bg-muted"
                 >
                   Twitter
                 </Button>
                 <Button
                   onClick={() => shareOnSocial('facebook')}
                   variant="outline"
-                  className="flex-1 border-gray-600 text-white hover:bg-blue-800/20"
+                  className="flex-1 border-border text-foreground hover:bg-muted"
                 >
                   Facebook
                 </Button>
                 <Button
                   onClick={() => shareOnSocial('linkedin')}
                   variant="outline"
-                  className="flex-1 border-gray-600 text-white hover:bg-blue-700/20"
+                  className="flex-1 border-border text-foreground hover:bg-muted"
                 >
                   LinkedIn
                 </Button>
               </div>
 
-              <div className="p-4 bg-gray-800 rounded-lg">
-                <h4 className="text-white font-medium mb-2">How it works:</h4>
-                <ol className="text-sm text-gray-300 space-y-1 list-decimal list-inside">
+              <div className="p-4 bg-muted rounded-lg">
+                <h4 className="text-foreground font-medium mb-2">How it works:</h4>
+                <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
                   <li>Share your unique referral link</li>
                   <li>Friend signs up and makes their first verification</li>
                   <li>You both get 5 free verifications!</li>
@@ -170,10 +229,10 @@ export const ReferralProgram = () => {
 
         {/* Milestones & Rewards */}
         <div className="space-y-6">
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Gift className="h-5 w-5 text-sos-orange" />
+              <CardTitle className="text-foreground flex items-center gap-2">
+                <Gift className="h-5 w-5 text-primary" />
                 Reward Milestones
               </CardTitle>
               <CardDescription>Unlock bigger rewards as you refer more friends</CardDescription>
@@ -184,66 +243,63 @@ export const ReferralProgram = () => {
                   key={index}
                   className={`p-3 rounded-lg border ${
                     stats.referralsCount >= milestone.referrals
-                      ? 'bg-green-900/20 border-green-500/30'
+                      ? 'bg-green-500/10 border-green-500/30'
                       : stats.referralsCount >= milestone.referrals - 2
-                      ? 'bg-yellow-900/20 border-yellow-500/30'
-                      : 'bg-gray-800 border-gray-600'
+                      ? 'bg-yellow-500/10 border-yellow-500/30'
+                      : 'bg-muted border-border'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <span className="text-lg">{milestone.icon}</span>
-                      <span className="font-medium text-white">{milestone.referrals} Referrals</span>
+                      <span className="font-medium text-foreground">{milestone.referrals} Referrals</span>
                     </div>
                     {stats.referralsCount >= milestone.referrals && (
                       <Badge className="bg-green-600 text-white">Earned</Badge>
                     )}
                   </div>
-                  <div className="text-sm text-gray-300">{milestone.reward}</div>
+                  <div className="text-sm text-muted-foreground">{milestone.reward}</div>
                 </div>
               ))}
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 border-gray-700">
+          <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Users className="h-5 w-5 text-sos-orange" />
+              <CardTitle className="text-foreground flex items-center gap-2">
+                <Users className="h-5 w-5 text-primary" />
                 Recent Activity
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-sm text-gray-300 p-2 bg-gray-800 rounded">
-                <div className="font-medium">John D. signed up</div>
-                <div className="text-gray-400">+5 verifications • 2 days ago</div>
-              </div>
-              <div className="text-sm text-gray-300 p-2 bg-gray-800 rounded">
-                <div className="font-medium">Sarah M. verified first item</div>
-                <div className="text-gray-400">+5 verifications • 1 week ago</div>
-              </div>
-              <div className="text-sm text-gray-300 p-2 bg-gray-800 rounded">
-                <div className="font-medium">Mike R. signed up</div>
-                <div className="text-gray-400">+5 verifications • 2 weeks ago</div>
-              </div>
+            <CardContent>
+              {stats.referralsCount === 0 ? (
+                <p className="text-sm text-muted-foreground text-center py-4">
+                  No referrals yet. Share your link to get started!
+                </p>
+              ) : (
+                <p className="text-sm text-muted-foreground text-center py-4">
+                  You have {stats.referralsCount} successful referral(s).
+                </p>
+              )}
             </CardContent>
           </Card>
         </div>
       </div>
 
-      <Card className="bg-gradient-to-r from-sos-orange/20 to-yellow-500/20 border-sos-orange/30">
+      <Card className="bg-gradient-to-r from-primary/20 to-yellow-500/20 border-primary/30">
         <CardContent className="p-8 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Limited Time: Double Rewards! 🚀
+          <h3 className="text-2xl font-bold text-foreground mb-4">
+            Start Earning Rewards Today! 🚀
           </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            For the next 30 days, earn DOUBLE rewards for every successful referral. 
-            That's 10 free verifications per referral instead of 5!
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Share your referral link and earn free verifications for every friend who signs up. 
+            Both of you get 5 free verifications!
           </p>
           <CopyButton
             text={referralUrl}
-            className="bg-sos-orange hover:bg-sos-orange/90 text-white font-semibold px-8 py-3"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-3"
             showText={true}
-            successMessage="Link copied! Share it to earn double rewards."
+            successMessage="Link copied! Share it to earn rewards."
           />
         </CardContent>
       </Card>
