@@ -307,8 +307,7 @@ export const AppRoutes = () => {
         <Route path="/is-this-gun-stolen" element={<CheckStolenFirearmPage />} />
         <Route path="/check-stolen-phone" element={<CheckStolenPhonePage />} />
         <Route path="/check-stolen-car" element={<CheckStolenCarPage />} />
-        <Route path="/stolen-phone-check" element={<CheckStolenPhonePage />} />
-        <Route path="/stolen-car-check" element={<CheckStolenCarPage />} />
+        {/* /stolen-phone-check and /stolen-car-check handled by server-side _redirects */}
 
         {/* ALL REDIRECTS HANDLED BY SERVER-SIDE _redirects FILE */}
         {/* React Navigate components removed to prevent duplicate redirect handling */}

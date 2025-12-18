@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SafeOrStolen Main Sitemap - Updated 2025-12-17 -->
+<!-- SafeOrStolen Main Sitemap - Updated 2025-12-18 -->
 <!-- SEO Optimized: Contains only REAL routed pages with unique content -->
 <!-- All redirect URLs have been REMOVED to prevent GSC errors -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -8,55 +8,55 @@
   <!-- CORE PAGES - Highest Priority -->
   <url>
     <loc>https://safeorstolen.com/</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/verify</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/pricing</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/how-it-works</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/about</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/faq</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/terms</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/privacy</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/testimonials</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -64,35 +64,35 @@
   <!-- APP DOWNLOAD PAGES - HIGH PRIORITY -->
   <url>
     <loc>https://safeorstolen.com/app</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/app/features</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/app/stolen-phone-checker</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/app/barcode-scanner</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/download</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <mobile:mobile/>
@@ -663,15 +663,47 @@
   <!-- PRESS & SOCIAL PAGES -->
   <url>
     <loc>https://safeorstolen.com/press-kit</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/product-hunt</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/youtube</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/crunchbase</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <!-- ADDITIONAL TRAFFIC LANDING PAGES -->
+  <url>
+    <loc>https://safeorstolen.com/check-stolen-phone</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/check-stolen-car</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/report-stolen</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
 
 </urlset>
