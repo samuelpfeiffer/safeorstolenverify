@@ -26,9 +26,9 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     '/faq': [{ name: 'FAQ', href: '/faq' }],
     '/pricing': [{ name: 'Pricing', href: '/pricing' }],
     '/how-it-works': [{ name: 'How It Works', href: '/how-it-works' }],
-    '/for-brands': [{ name: 'For Business', href: '/for-businesses' }],
-    '/terms-of-service': [{ name: 'Terms', href: '/terms' }],
-    '/privacy-policy': [{ name: 'Privacy', href: '/privacy' }],
+    '/for-businesses': [{ name: 'For Business', href: '/for-businesses' }],
+    '/terms': [{ name: 'Terms', href: '/terms' }],
+    '/privacy': [{ name: 'Privacy', href: '/privacy' }],
     
     // Verification Tools
     '/verify': [{ name: 'Verify Item', href: '/verify' }],
@@ -56,14 +56,6 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     '/comprehensive-guide': [
       { name: 'Guides', href: '/blog' },
       { name: 'Comprehensive Guide', href: '/comprehensive-guide' }
-    ],
-    '/how-to-check-if-item-stolen': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Check If Item Stolen', href: '/how-to-check-if-item-stolen' }
-    ],
-    '/how-to-check-laptop-stolen': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Check Laptop Stolen', href: '/how-to-check-laptop-stolen' }
     ],
     '/buyer-guide': [
       { name: 'Guides', href: '/blog' },

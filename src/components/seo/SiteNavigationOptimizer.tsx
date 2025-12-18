@@ -16,12 +16,12 @@ export const SiteNavigationOptimizer: React.FC = () => {
   
   if (!location) return null;
   const primaryServices: NavigationLink[] = [{
-    href: '/imei-check',
+    href: '/imei-checker',
     text: 'IMEI Check - Verify Phone Not Stolen',
     description: 'Free iPhone, Android IMEI verification tool',
     priority: 'high'
   }, {
-    href: '/vin-verification',
+    href: '/vin-checker',
     text: 'VIN Check - Verify Car Not Stolen',
     description: 'Free vehicle VIN stolen verification',
     priority: 'high'
@@ -41,13 +41,13 @@ export const SiteNavigationOptimizer: React.FC = () => {
     description: 'Verify electronics, laptops, devices',
     priority: 'medium'
   }, {
-    href: '/stolen-item-checker',
+    href: '/verify',
     text: 'General Stolen Item Checker',
     description: 'All-in-one verification tool',
     priority: 'medium'
   }];
   const guidesAndResources: NavigationLink[] = [{
-    href: '/how-to-check-if-item-stolen',
+    href: '/how-it-works',
     text: 'How to Check if Items are Stolen',
     description: 'Complete guide to stolen goods verification',
     priority: 'high'
@@ -57,12 +57,12 @@ export const SiteNavigationOptimizer: React.FC = () => {
     description: 'Essential marketplace safety tips',
     priority: 'high'
   }, {
-    href: '/ultimate-guide-not-buying-stolen-goods',
+    href: '/ultimate-guide',
     text: 'Ultimate Stolen Goods Prevention Guide',
     description: 'Comprehensive safety and verification guide',
     priority: 'medium'
   }, {
-    href: '/stolen-goods-statistics-2024',
+    href: '/blog',
     text: '2025 Theft Trends & Statistics',
     description: 'Latest data on stolen goods and fraud',
     priority: 'medium'

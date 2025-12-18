@@ -7,31 +7,25 @@ export const LinkBuildingSignals = () => {
   // Internal linking structure for topical authority
   const topicalClusters = [
     {
-      pillar: '/imei-check',
+      pillar: '/imei-checker',
       supporting: [
-        '/imei-check/iphone',
-        '/imei-check/android',
-        '/imei-check/samsung',
-        '/imei-check/blacklist',
-        '/imei-check/free'
+        '/check-phone',
+        '/verify?type=phone',
+        '/verify?type=tablet'
       ]
     },
     {
-      pillar: '/vin-verification',
+      pillar: '/vin-checker',
       supporting: [
-        '/vin-verification/used-cars',
-        '/vin-verification/motorcycles',
-        '/vin-verification/stolen-vehicles',
-        '/vin-verification/carfax-alternative'
+        '/check-car',
+        '/verify?type=vehicle',
+        '/verify?type=motorcycle'
       ]
     },
     {
       pillar: '/firearms-check',
       supporting: [
-        '/firearms-check/gun-serial-number',
-        '/firearms-check/stolen-firearms',
-        '/firearms-check/atf-database',
-        '/firearms-check/gun-shows'
+        '/verify?type=firearm'
       ]
     }
   ];
@@ -109,13 +103,13 @@ export const LinkBuildingSignals = () => {
               "@type": "ListItem",
               "position": 2,
               "name": "IMEI Verification",
-              "item": "https://safeorstolen.com/imei-check"
+              "item": "https://safeorstolen.com/imei-checker"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": "VIN Verification",
-              "item": "https://safeorstolen.com/vin-verification"
+              "item": "https://safeorstolen.com/vin-checker"
             }
           ]
         })}

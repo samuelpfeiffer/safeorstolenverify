@@ -15,13 +15,14 @@ export interface RedirectRule {
  */
 export const REDIRECT_RULES: RedirectRule[] = [
   // ===== DUPLICATE APP URLS =====
-  { from: '/imei-checker-app', to: '/mobile-app', permanent: true },
-  { from: '/mobile-verification', to: '/mobile-app', permanent: true },
-  { from: '/get-app', to: '/mobile-app', permanent: true },
-  { from: '/install-app', to: '/mobile-app', permanent: true },
-  { from: '/verification-app', to: '/mobile-app', permanent: true },
-  { from: '/android-app', to: '/mobile-app', permanent: true },
-  { from: '/ios-app', to: '/mobile-app', permanent: true },
+  { from: '/imei-checker-app', to: '/app', permanent: true },
+  { from: '/mobile-verification', to: '/app', permanent: true },
+  { from: '/get-app', to: '/app', permanent: true },
+  { from: '/install-app', to: '/app', permanent: true },
+  { from: '/verification-app', to: '/app', permanent: true },
+  { from: '/android-app', to: '/app', permanent: true },
+  { from: '/ios-app', to: '/app', permanent: true },
+  { from: '/mobile-app', to: '/app', permanent: true },
 
   // ===== BLOG POSTS WITH TIMESTAMPS (404s) =====
   // Note: Timestamp pattern is handled by findRedirect() function
@@ -36,13 +37,13 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/safeorstolen-firearms-marketplace-verification', to: '/firearms-check', permanent: true },
   { from: '/blog/complete-verification-guide-stolen-goods-check', to: '/how-it-works', permanent: true },
   { from: '/blog/data-source-credibility-stolen-goods-verification', to: '/data-sources', permanent: true },
-  { from: '/blog/mobile-app-features', to: '/mobile-app', permanent: true },
+  { from: '/blog/mobile-app-features', to: '/app', permanent: true },
   { from: '/blog/industry-insights-2024', to: '/blog', permanent: true },
   { from: '/blog/what-to-do-if-you-bought-stolen', to: '/blog', permanent: true },
   { from: '/blog/ai-verification-technology', to: '/blog', permanent: true },
   { from: '/blog/verification-data-privacy', to: '/privacy', permanent: true },
   { from: '/blog/serial-numbers-stolen-goods-101', to: '/blog', permanent: true },
-  { from: '/blog/enterprise-security', to: '/for-brands', permanent: true },
+  { from: '/blog/enterprise-security', to: '/for-businesses', permanent: true },
 
   // ===== SOFT 404 REDIRECTS =====
   { from: '/bulk', to: '/verify', permanent: true },
@@ -69,12 +70,12 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
   { from: '/stolen-items-database', to: '/data-sources', permanent: true },
   { from: '/how-to-check-if-anything-is-stolen-before-you-buy', to: '/how-it-works', permanent: true },
-  { from: '/disclaimer', to: '/terms-of-service', permanent: true },
+  { from: '/disclaimer', to: '/terms', permanent: true },
   { from: '/our-story', to: '/about', permanent: true },
-  { from: '/enterprise-demo', to: '/for-brands', permanent: true },
+  { from: '/enterprise-demo', to: '/for-businesses', permanent: true },
+  { from: '/for-brands', to: '/for-businesses', permanent: true },
   { from: '/for-consumers', to: '/', permanent: true },
   { from: '/fastercapital/tech-cofounder', to: '/about', permanent: true },
-  { from: '/enterprise-demo', to: '/about', permanent: true },
   { from: '/terms-of-service', to: '/terms', permanent: true },
   { from: '/privacy-policy', to: '/privacy', permanent: true },
 ];

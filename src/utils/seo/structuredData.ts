@@ -185,7 +185,7 @@ export const createServiceSchema = () => ({
     "availableLanguage": ["English"]
   },
   "serviceOutput": "Verification Results Across All Item Categories",
-  "termsOfService": `${SITE_CONFIG.url}/terms-of-service`,
+  "termsOfService": `${SITE_CONFIG.url}/terms`,
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Verification Services",
