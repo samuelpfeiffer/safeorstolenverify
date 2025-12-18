@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Shield, CheckCircle, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Activity {
   id: string;
@@ -10,35 +11,115 @@ interface Activity {
   status: 'safe' | 'verified';
 }
 
-const mockActivities: Activity[] = [
-  { id: '1', type: 'iPhone 14 Pro', location: 'New York, NY', timeAgo: '2m ago', status: 'safe' },
-  { id: '2', type: 'Toyota Camry', location: 'Los Angeles, CA', timeAgo: '5m ago', status: 'verified' },
-  { id: '3', type: 'MacBook Pro', location: 'Chicago, IL', timeAgo: '8m ago', status: 'safe' },
-  { id: '4', type: 'Samsung Galaxy', location: 'Houston, TX', timeAgo: '12m ago', status: 'verified' },
-  { id: '5', type: 'Ford F-150', location: 'Miami, FL', timeAgo: '15m ago', status: 'safe' },
-];
-
+/**
+ * Shows REAL verification activity from database only
+ */
 export const LiveActivityFeed = () => {
-  const [activities, setActivities] = useState<Activity[]>(mockActivities);
+  const [activities, setActivities] = useState<Activity[]>([]);
   const [visibleCount, setVisibleCount] = useState(3);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate new activities coming in
-    const interval = setInterval(() => {
-      setActivities(prev => {
-        const newActivity: Activity = {
-          id: Date.now().toString(),
-          type: ['iPhone 15', 'Tesla Model 3', 'iPad Pro', 'Honda Civic'][Math.floor(Math.random() * 4)],
-          location: ['Boston, MA', 'Seattle, WA', 'Austin, TX', 'Denver, CO'][Math.floor(Math.random() * 4)],
-          timeAgo: 'Just now',
-          status: Math.random() > 0.5 ? 'safe' : 'verified'
-        };
-        return [newActivity, ...prev.slice(0, 4)];
-      });
-    }, 8000);
+    const fetchRecentVerifications = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('verification_results')
+          .select('id, item_type, property_address, created_at, verification_status')
+          .order('created_at', { ascending: false })
+          .limit(10);
 
-    return () => clearInterval(interval);
+        if (error) {
+          console.error('Error fetching verifications:', error);
+          setIsLoading(false);
+          return;
+        }
+
+        if (data && data.length > 0) {
+          const formattedActivities: Activity[] = data.map(item => ({
+            id: item.id,
+            type: formatItemType(item.item_type),
+            location: item.property_address || 'Verified',
+            timeAgo: getTimeAgo(new Date(item.created_at)),
+            status: item.verification_status === 'clean' ? 'safe' : 'verified'
+          }));
+          setActivities(formattedActivities);
+        }
+      } catch (err) {
+        console.error('Error:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchRecentVerifications();
+
+    // Subscribe to real-time updates
+    const channel = supabase
+      .channel('verification_updates')
+      .on(
+        'postgres_changes',
+        { event: 'INSERT', schema: 'public', table: 'verification_results' },
+        (payload) => {
+          const newItem = payload.new as any;
+          const newActivity: Activity = {
+            id: newItem.id,
+            type: formatItemType(newItem.item_type),
+            location: newItem.property_address || 'Verified',
+            timeAgo: 'Just now',
+            status: newItem.verification_status === 'clean' ? 'safe' : 'verified'
+          };
+          setActivities(prev => [newActivity, ...prev.slice(0, 9)]);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
+
+  const formatItemType = (type: string): string => {
+    if (!type) return 'Item';
+    return type.charAt(0).toUpperCase() + type.slice(1).replace(/_/g, ' ');
+  };
+
+  const getTimeAgo = (date: Date): string => {
+    const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
+    if (seconds < 60) return 'Just now';
+    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+    return `${Math.floor(seconds / 86400)}d ago`;
+  };
+
+  if (isLoading) {
+    return (
+      <div className="bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 p-6 shadow-elegant">
+        <div className="flex items-center gap-2 mb-4">
+          <Shield className="w-5 h-5 text-sos-orange" />
+          <h3 className="font-bold text-foreground">Live Verifications</h3>
+        </div>
+        <div className="space-y-3">
+          {[1, 2, 3].map(i => (
+            <div key={i} className="animate-pulse h-16 bg-secondary/30 rounded-lg" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (activities.length === 0) {
+    return (
+      <div className="bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 p-6 shadow-elegant">
+        <div className="flex items-center gap-2 mb-4">
+          <Shield className="w-5 h-5 text-sos-orange" />
+          <h3 className="font-bold text-foreground">Live Verifications</h3>
+        </div>
+        <div className="text-center py-4 text-muted-foreground">
+          <p className="text-sm">Verifications will appear here in real-time</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 p-6 shadow-elegant">

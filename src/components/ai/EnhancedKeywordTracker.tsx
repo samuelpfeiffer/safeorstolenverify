@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { TrendingUp, TrendingDown, Minus, Plus, Search, Target } from 'lucide-react';
+import { TrendingUp, TrendingDown, Minus, Plus, Search, Target, AlertCircle } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 interface KeywordData {
@@ -19,90 +19,34 @@ interface KeywordData {
   last_checked: string;
 }
 
+/**
+ * Keyword tracker - shows empty state until real data is connected
+ * Real keyword data requires Google Search Console API integration
+ */
 export const EnhancedKeywordTracker: React.FC = () => {
   const { toast } = useToast();
   const [keywords, setKeywords] = useState<KeywordData[]>([]);
   const [newKeyword, setNewKeyword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Mock data for demonstration
-  useEffect(() => {
-    const mockKeywords: KeywordData[] = [
-      {
-        id: '1',
-        keyword: 'stolen item checker',
-        current_rank: 15,
-        previous_rank: 18,
-        target_rank: 1,
-        search_volume: 2400,
-        difficulty: 45,
-        trend: 'up',
-        last_checked: new Date().toISOString()
-      },
-      {
-        id: '2', 
-        keyword: 'IMEI checker free',
-        current_rank: 8,
-        previous_rank: 12,
-        target_rank: 3,
-        search_volume: 8100,
-        difficulty: 38,
-        trend: 'up',
-        last_checked: new Date().toISOString()
-      },
-      {
-        id: '3',
-        keyword: 'VIN verification tool',
-        current_rank: 25,
-        previous_rank: 23,
-        target_rank: 5,
-        search_volume: 1900,
-        difficulty: 52,
-        trend: 'down',
-        last_checked: new Date().toISOString()
-      },
-      {
-        id: '4',
-        keyword: 'check if phone is stolen',
-        current_rank: 12,
-        previous_rank: 12,
-        target_rank: 1,
-        search_volume: 5200,
-        difficulty: 41,
-        trend: 'stable',
-        last_checked: new Date().toISOString()
-      },
-      {
-        id: '5',
-        keyword: 'serial number lookup',
-        current_rank: null,
-        previous_rank: null,
-        target_rank: 10,
-        search_volume: 3600,
-        difficulty: 35,
-        trend: 'stable',
-        last_checked: new Date().toISOString()
-      }
-    ];
-    setKeywords(mockKeywords);
-  }, []);
+  // No mock data - start with empty state
+  // Real implementation would connect to Google Search Console API
 
   const addKeyword = async () => {
     if (!newKeyword.trim()) return;
 
     setIsLoading(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      // Add keyword to tracking list (stored in local state for now)
+      // Real implementation would save to database and connect to GSC API
       const newKeywordData: KeywordData = {
         id: Date.now().toString(),
         keyword: newKeyword.toLowerCase(),
-        current_rank: null,
+        current_rank: null, // Will be populated when GSC API is connected
         previous_rank: null,
         target_rank: 10,
-        search_volume: Math.floor(Math.random() * 5000) + 500,
-        difficulty: Math.floor(Math.random() * 60) + 20,
+        search_volume: 0, // Requires API to get real data
+        difficulty: 0,
         trend: 'stable',
         last_checked: new Date().toISOString()
       };
@@ -112,7 +56,7 @@ export const EnhancedKeywordTracker: React.FC = () => {
       
       toast({
         title: "Keyword Added",
-        description: `Now tracking "${newKeyword}" for ranking changes.`,
+        description: `"${newKeyword}" added. Connect Google Search Console for ranking data.`,
       });
     } catch (error) {
       toast({
@@ -126,23 +70,15 @@ export const EnhancedKeywordTracker: React.FC = () => {
   };
 
   const getTrendIcon = (trend: string, currentRank: number | null, previousRank: number | null) => {
-    if (currentRank === null) return <Minus className="h-4 w-4 text-gray-400" />;
-    
-    if (previousRank === null) return <Minus className="h-4 w-4 text-gray-400" />;
-    
+    if (currentRank === null) return <Minus className="h-4 w-4 text-muted-foreground" />;
+    if (previousRank === null) return <Minus className="h-4 w-4 text-muted-foreground" />;
     if (currentRank < previousRank) return <TrendingUp className="h-4 w-4 text-green-500" />;
     if (currentRank > previousRank) return <TrendingDown className="h-4 w-4 text-red-500" />;
-    return <Minus className="h-4 w-4 text-gray-400" />;
-  };
-
-  const getDifficultyColor = (difficulty: number) => {
-    if (difficulty <= 30) return 'bg-green-500';
-    if (difficulty <= 50) return 'bg-yellow-500';
-    return 'bg-red-500';
+    return <Minus className="h-4 w-4 text-muted-foreground" />;
   };
 
   const getRankColor = (rank: number | null, target: number) => {
-    if (rank === null) return 'text-gray-400';
+    if (rank === null) return 'text-muted-foreground';
     if (rank <= target) return 'text-green-500';
     if (rank <= target * 2) return 'text-yellow-500';
     return 'text-red-500';
@@ -157,7 +93,7 @@ export const EnhancedKeywordTracker: React.FC = () => {
             Keyword Ranking Tracker
           </CardTitle>
           <CardDescription>
-            Monitor your target keywords and track ranking improvements over time
+            Track your target keywords. Connect Google Search Console for real ranking data.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -175,63 +111,65 @@ export const EnhancedKeywordTracker: React.FC = () => {
             </Button>
           </div>
 
-          <div className="space-y-4">
-            {keywords.map((keyword) => (
-              <Card key={keyword.id} className="p-4">
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center">
-                  <div className="md:col-span-2">
-                    <h3 className="font-semibold text-sm">{keyword.keyword}</h3>
-                    <p className="text-xs text-muted-foreground">
-                      Volume: {keyword.search_volume.toLocaleString()}/mo
-                    </p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-1">
-                      {getTrendIcon(keyword.trend, keyword.current_rank, keyword.previous_rank)}
-                      <span className={`text-lg font-bold ${getRankColor(keyword.current_rank, keyword.target_rank)}`}>
-                        {keyword.current_rank || 'N/A'}
-                      </span>
+          {keywords.length > 0 ? (
+            <div className="space-y-4">
+              {keywords.map((keyword) => (
+                <Card key={keyword.id} className="p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center">
+                    <div className="md:col-span-2">
+                      <h3 className="font-semibold text-sm">{keyword.keyword}</h3>
+                      <p className="text-xs text-muted-foreground">
+                        {keyword.search_volume > 0 
+                          ? `Volume: ${keyword.search_volume.toLocaleString()}/mo`
+                          : 'Connect GSC for volume data'}
+                      </p>
                     </div>
-                    <p className="text-xs text-muted-foreground">Current Rank</p>
-                  </div>
-
-                  <div className="text-center">
-                    <span className="text-lg font-bold text-primary">#{keyword.target_rank}</span>
-                    <p className="text-xs text-muted-foreground">Target</p>
-                  </div>
-
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs">Difficulty</span>
-                      <Badge variant="outline" className="text-xs">
-                        {keyword.difficulty}%
-                      </Badge>
+                    
+                    <div className="text-center">
+                      <div className="flex items-center justify-center gap-1">
+                        {getTrendIcon(keyword.trend, keyword.current_rank, keyword.previous_rank)}
+                        <span className={`text-lg font-bold ${getRankColor(keyword.current_rank, keyword.target_rank)}`}>
+                          {keyword.current_rank || '—'}
+                        </span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Current Rank</p>
                     </div>
-                    <Progress 
-                      value={keyword.difficulty} 
-                      className="h-2"
-                      style={{
-                        backgroundColor: '#f1f5f9'
-                      }}
-                    />
-                  </div>
 
-                  <div className="text-right">
-                    <Button size="sm" variant="outline">
-                      <Search className="h-3 w-3 mr-1" />
-                      Check
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+                    <div className="text-center">
+                      <span className="text-lg font-bold text-primary">#{keyword.target_rank}</span>
+                      <p className="text-xs text-muted-foreground">Target</p>
+                    </div>
 
-          {keywords.length === 0 && (
-            <div className="text-center py-8 text-muted-foreground">
-              <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <p>No keywords tracked yet. Add your first keyword above.</p>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs">Difficulty</span>
+                        <Badge variant="outline" className="text-xs">
+                          {keyword.difficulty > 0 ? `${keyword.difficulty}%` : '—'}
+                        </Badge>
+                      </div>
+                      <Progress 
+                        value={keyword.difficulty} 
+                        className="h-2"
+                      />
+                    </div>
+
+                    <div className="text-right">
+                      <Button size="sm" variant="outline" disabled>
+                        <Search className="h-3 w-3 mr-1" />
+                        Check
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <AlertCircle className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" />
+              <p className="text-muted-foreground font-medium">No keywords tracked yet</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Add keywords above to start tracking. Connect Google Search Console for real ranking data.
+              </p>
             </div>
           )}
         </CardContent>
