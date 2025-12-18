@@ -13,6 +13,8 @@ import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useSearchLimits } from '@/hooks/useSearchLimits';
+import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
@@ -41,6 +43,7 @@ const VerifyPage = () => {
   const [isScannerOpen, setIsScannerOpen] = useState(false);
   const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
   const { isAuthenticated } = useUnifiedAuth();
+  const { remainingSearches, isSubscribed } = useSearchLimits();
   const navigate = useNavigate();
 
   // Voice search integration
@@ -564,7 +567,17 @@ const VerifyPage = () => {
         )}
 
         {/* Results */}
-        {result && <ParallelVerificationDisplay result={result} />}
+        {result && (
+          <>
+            <ParallelVerificationDisplay result={result} />
+            <PostVerificationUpsell 
+              verificationStatus={result.finalStatus}
+              remainingSearches={remainingSearches}
+              isSubscribed={isSubscribed}
+              onUpgrade={() => navigate('/pricing')}
+            />
+          </>
+        )}
       </div>
       
       {/* QR/Barcode Scanner Modal */}
