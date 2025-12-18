@@ -15,7 +15,7 @@ export const ReceiptsHeader = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/receipts">Receipts</BreadcrumbLink>
+            <BreadcrumbLink href="/dashboard">Receipts</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

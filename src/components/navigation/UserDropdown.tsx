@@ -34,21 +34,21 @@ export const UserDropdown = () => {
             <DropdownMenuSeparator className="bg-gray-800" />
             <DropdownMenuItem 
               className="hover:bg-gray-800 cursor-pointer text-white focus:bg-gray-800 focus:text-white" 
-              onClick={() => navigate('/search-history')}
+              onClick={() => navigate('/dashboard')}
             >
               <Search size={16} className="mr-2" />
               Search History
             </DropdownMenuItem>
             <DropdownMenuItem 
               className="hover:bg-gray-800 cursor-pointer text-white focus:bg-gray-800 focus:text-white" 
-              onClick={() => navigate('/purchase-history')}
+              onClick={() => navigate('/dashboard')}
             >
               <ShoppingBag size={16} className="mr-2" />
               Purchase History
             </DropdownMenuItem>
             <DropdownMenuItem 
               className="hover:bg-gray-800 cursor-pointer text-white focus:bg-gray-800 focus:text-white" 
-              onClick={() => navigate('/receipts')}
+              onClick={() => navigate('/dashboard')}
             >
               <Receipt size={16} className="mr-2" />
               Saved Receipts

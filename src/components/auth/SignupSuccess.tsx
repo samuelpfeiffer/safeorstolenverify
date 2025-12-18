@@ -88,7 +88,7 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
                   Learn how to safely buy and sell secondhand items with our comprehensive guides.
                 </p>
                 <Button variant="outline" size="sm" className="mt-2" asChild>
-                  <Link to="/resource-center" onClick={onClose}>
+                  <Link to="/blog" onClick={onClose}>
                     <BookOpen className="h-4 w-4 mr-2" />
                     View Guides
                   </Link>
