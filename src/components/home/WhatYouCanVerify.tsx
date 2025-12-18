@@ -129,12 +129,16 @@ export const WhatYouCanVerify = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {verificationTypes.map((type, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
-              <div className="relative h-48 overflow-hidden">
+              {/* Fixed aspect-ratio container for CLS prevention */}
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
                 <img 
                   src={type.image} 
                   alt={`${type.title} verification - stolen item scanner app checking ${type.subtitle} with barcode scanning and instant verification`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width={400}
+                  height={225}
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-start justify-between">
