@@ -83,8 +83,8 @@ export const SiteNavigationOptimizer: React.FC = () => {
     description: 'Integrate verification into your platform',
     priority: 'medium'
   }, {
-    href: '/api-docs',
-    text: 'API Documentation',
+    href: '/for-businesses',
+    text: 'API & Business Solutions',
     description: 'Developer resources and integration guides',
     priority: 'low'
   }, {
