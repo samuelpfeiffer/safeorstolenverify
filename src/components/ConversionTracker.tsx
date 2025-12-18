@@ -59,7 +59,7 @@ export const ConversionTracker: React.FC = () => {
       trackEvent('pricing_page_view');
     } else if (path === '/auth') {
       trackEvent('signup_page_view');
-    } else if (path === '/for-brands') {
+    } else if (path === '/for-businesses') {
       trackEvent('b2b_page_view');
     } else if (path === '/enterprise-demo') {
       trackEvent('demo_page_view');

@@ -28,7 +28,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Primary Verification Services - Critical for SEO
   {
-    url: 'https://safeorstolen.com/real-time-verification',
+    url: 'https://safeorstolen.com/verify',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'always',
     priority: 0.9,
@@ -112,7 +112,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Additional Core Verification Services
   {
-    url: 'https://safeorstolen.com/stolen-item-checker',
+    url: 'https://safeorstolen.com/verify',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'always',
     priority: 0.9,
@@ -138,7 +138,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
   {
-    url: 'https://safeorstolen.com/imei-check',
+    url: 'https://safeorstolen.com/imei-checker',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'always',
     priority: 0.9,
@@ -151,7 +151,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
   {
-    url: 'https://safeorstolen.com/vin-verification',
+    url: 'https://safeorstolen.com/vin-checker',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'always',
     priority: 0.9,
@@ -253,25 +253,25 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     priority: 0.7
   },
   {
-    url: 'https://safeorstolen.com/api-docs',
+    url: 'https://safeorstolen.com/for-marketplaces',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.6
   },
   {
-    url: 'https://safeorstolen.com/seo-strategy',
+    url: 'https://safeorstolen.com/blog',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.5
   },
   {
-    url: 'https://safeorstolen.com/transparency',
+    url: 'https://safeorstolen.com/about',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.6
   },
   {
-    url: 'https://safeorstolen.com/data-sources',
+    url: 'https://safeorstolen.com/how-it-works',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.6
@@ -313,7 +313,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Marketing & Growth
   {
-    url: 'https://safeorstolen.com/referral',
+    url: 'https://safeorstolen.com/pricing',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.5
@@ -333,7 +333,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     priority: 0.4
   },
   {
-    url: 'https://safeorstolen.com/refunds',
+    url: 'https://safeorstolen.com/terms',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
     priority: 0.3

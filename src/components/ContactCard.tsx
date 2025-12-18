@@ -36,7 +36,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
           <Button
             variant="outline"
             className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
-            onClick={() => window.open('/contact', '_blank')}
+            onClick={() => window.open('/about', '_blank')}
           >
             <MessageCircle className="h-4 w-4 mr-2" />
             Contact Form
