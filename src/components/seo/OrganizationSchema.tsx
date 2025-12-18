@@ -91,7 +91,7 @@ export const OrganizationSchema = () => {
     "slogan": "Verify Before You Buy - Protect Yourself from Stolen Goods",
     "keywords": "SafeOrStolen, Safe or Stolen, IMEI check, VIN verification, serial number lookup, stolen item checker",
     "isAccessibleForFree": true,
-    "publishingPrinciples": "https://safeorstolen.com/transparency",
+    "publishingPrinciples": "https://safeorstolen.com/about",
     "subOrganization": {
       "@type": "Organization",
       "name": "Safe or Stolen LLC",
