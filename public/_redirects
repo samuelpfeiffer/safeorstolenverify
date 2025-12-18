@@ -276,6 +276,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /verify/ebay                  /verify  301!
 /verify/pawnshops             /verify  301!
 /verify/offerup               /verify  301!
+/verify/auctions              /verify  301!
+/verify/craigslist            /verify  301!
 
 # ============================================
 # COMPARISON/COMPETITOR PAGES
@@ -388,6 +390,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/enterprise-security                                       /blog            301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog            301!
+/blog/best-imei-checker-tools-2025                              /imei-checker    301!
 /blog/how-to-check-phone-stolen                                 /check-phone     301!
 /blog/why-verify-serial-numbers                                 /blog            301!
 /blog/complete-marketplace-buyers-checklist                     /blog            301!
