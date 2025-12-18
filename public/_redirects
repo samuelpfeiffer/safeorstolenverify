@@ -184,8 +184,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /research-stolen-items              /verify  301!
 /investigate-stolen-property        /verify  301!
 /lookup-stolen-items                /verify  301!
-/stolen-database-search             /data-sources  301!
-/stolen-item-scanner                /app  301!
+/stolen-database-search             /about   301!
+/stolen-item-scanner                /app     301!
 
 # ============================================
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)

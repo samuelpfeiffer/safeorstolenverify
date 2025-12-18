@@ -28,7 +28,7 @@ export const SolutionSection = () => {
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white/10"
-              onClick={() => navigate('/our-story')}
+              onClick={() => navigate('/about')}
             >
               Read Our Mission
             </Button>

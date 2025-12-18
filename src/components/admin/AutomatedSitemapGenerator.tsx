@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
+import { generateStaticSitemapEntries, generateSitemapXML } from '@/utils/seo/sitemap';
 import { 
   FileText, 
   Download, 
@@ -13,69 +14,53 @@ import {
   Calendar
 } from 'lucide-react';
 
+
 const AutomatedSitemapGenerator: React.FC = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [lastGenerated, setLastGenerated] = useState<Date | null>(null);
-  const [sitemapStats, setSitemapStats] = useState({
-    totalPages: 500,
-    lastUpdated: new Date(Date.now() - 3600000).toLocaleString(),
-    staticPages: 45,
-    dynamicPages: 455,
-    cityPages: 50
-  });
 
-  const generateSitemap = async () => {
+  const sitemapStats = useMemo(() => {
+    const entries = generateStaticSitemapEntries();
+    return {
+      totalPages: entries.length,
+      lastUpdated: (lastGenerated ?? new Date()).toLocaleString(),
+      staticPages: entries.length,
+      dynamicPages: 0,
+      cityPages: 0,
+    };
+  }, [lastGenerated]);
+
+  const refreshSitemap = async () => {
     setIsGenerating(true);
     try {
-      // In a real implementation, this would call the automated-sitemap edge function
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate generation
-      
       setLastGenerated(new Date());
-      setSitemapStats(prev => ({
-        ...prev,
-        lastUpdated: new Date().toLocaleString(),
-        totalPages: prev.totalPages + Math.floor(Math.random() * 5)
-      }));
-      
-      toast.success('Sitemap generated successfully!');
+      toast.success('Sitemap refreshed from current routes.');
     } catch (error) {
-      console.error('Sitemap generation error:', error);
-      toast.error('Failed to generate sitemap');
+      console.error('Sitemap refresh error:', error);
+      toast.error('Failed to refresh sitemap');
     } finally {
       setIsGenerating(false);
     }
   };
 
   const downloadSitemap = () => {
-    // Create sample sitemap XML
-    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://safeorstolen.com/</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/verify</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- Additional URLs would be generated automatically -->
-</urlset>`;
+    try {
+      const xml = generateSitemapXML(generateStaticSitemapEntries());
+      const blob = new Blob([xml], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'sitemap.xml';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
 
-    const blob = new Blob([sitemapXml], { type: 'application/xml' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'sitemap.xml';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    toast.success('Sitemap downloaded!');
+      toast.success('Sitemap downloaded.');
+    } catch (error) {
+      console.error('Sitemap download error:', error);
+      toast.error('Failed to download sitemap');
+    }
   };
 
   return (
@@ -92,19 +77,19 @@ const AutomatedSitemapGenerator: React.FC = () => {
         </div>
         <div className="flex gap-2">
           <Button 
-            onClick={generateSitemap} 
+            onClick={refreshSitemap} 
             disabled={isGenerating}
             className="bg-primary hover:bg-primary/90"
           >
             {isGenerating ? (
               <>
                 <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-                Generating...
+                Refreshing...
               </>
             ) : (
               <>
                 <RefreshCw className="w-4 h-4 mr-2" />
-                Generate Sitemap
+                Refresh Sitemap
               </>
             )}
           </Button>
