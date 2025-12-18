@@ -4,7 +4,7 @@ const NewYorkLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="New York License Plate Lookup - Check NY Stolen Vehicle by Plate"
-      metaDescription="New York license plate lookup to verify if a vehicle is stolen. Free NY license plate search from NY DMV and law enforcement databases. Instant results in 3 seconds. Check vehicles in NYC, Buffalo, Rochester."
+      metaDescription="New York license plate lookup to verify if a vehicle is stolen. Free NY license plate search from NY DMV and law enforcement databases. Check vehicles in NYC, Buffalo, Rochester."
       h1="New York License Plate Lookup - Check NY Vehicles"
       itemType="Vehicle"
       keywords={[
@@ -19,10 +19,10 @@ const NewYorkLicensePlateLookupPage = () => {
         'queens plate lookup'
       ]}
       content={{
-        intro: "Verify New York vehicles using license plate number in 3 seconds. Free New York license plate lookup from NY DMV and law enforcement databases. Check if cars, trucks, or motorcycles with NY plates are stolen before buying from private sellers or used car lots in New York City, Buffalo, Rochester, Yonkers, and anywhere in New York State. New York reports 35,000+ vehicle thefts annually with a 62% recovery rate, ranking #4 nationally.",
-        whatIs: "New York license plate lookup is a service that verifies whether a vehicle registered in New York is reported stolen by checking the NY license plate number against New York DMV registration databases and law enforcement stolen vehicle records. New York requires both front and rear plates with unique formats managed by the NY DMV. SafeOrStolen's New York license plate checker instantly searches NY DMV registration records, NYPD and state law enforcement stolen vehicle reports, NICB VINCheck database, and insurance databases to determine if a vehicle with that NY plate has been reported stolen. Key New York-specific concerns include: NYC organized theft rings, port export operations through Port of New York/New Jersey, luxury vehicle targeting in Manhattan and Long Island, and insurance fraud schemes.",
-        howItWorks: "Our New York license plate lookup system queries NY DMV databases to resolve the New York license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and New York registration status. Within 3 seconds, you receive a report showing whether the vehicle is reported stolen in New York or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference NICB VINCheck, FBI NCIC stolen vehicle records, NYPD databases, and New York State Police records for comprehensive results.",
-        whyCheck: "New York's dense population and international ports make it a prime target for organized vehicle theft. New York license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the NY market. Verify the seller is the registered owner with NY DMV, detect stolen plates, check New York registration status, and identify NY-specific concerns. Watch for: NYC organized theft rings using sophisticated key cloning; Port of New York/New Jersey vehicle export operations; luxury vehicle targeting in Manhattan, Brooklyn, and Long Island. Always verify VIN before final purchase - plates can be swapped but VINs cannot.",
+        intro: "Verify New York vehicles using license plate number. Free New York license plate lookup from NY DMV and law enforcement databases. Check if cars, trucks, or motorcycles with NY plates are stolen before buying from private sellers or used car lots in New York City, Buffalo, Rochester, Yonkers, and anywhere in New York State. New York is among the top states for vehicle theft nationally.",
+        whatIs: "New York license plate lookup is a service that verifies whether a vehicle registered in New York is reported stolen by checking the NY license plate number against New York DMV registration databases and law enforcement stolen vehicle records. New York requires both front and rear plates with unique formats managed by the NY DMV. SafeOrStolen's New York license plate checker searches NY DMV registration records, NYPD and state law enforcement stolen vehicle reports, NICB VINCheck database, and insurance databases to determine if a vehicle with that NY plate has been reported stolen. Key New York-specific concerns include: NYC organized theft rings, port export operations through Port of New York/New Jersey, luxury vehicle targeting in Manhattan and Long Island, and insurance fraud schemes.",
+        howItWorks: "Our New York license plate lookup system queries NY DMV databases to resolve the New York license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and New York registration status. You receive a report showing whether the vehicle is reported stolen in New York or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference NICB VINCheck, FBI NCIC stolen vehicle records, NYPD databases, and New York State Police records for comprehensive results.",
+        whyCheck: "New York's dense population and international ports make it a target for organized vehicle theft. New York license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the NY market. Verify the seller is the registered owner with NY DMV, detect stolen plates, check New York registration status, and identify NY-specific concerns. Watch for: NYC organized theft rings using sophisticated key cloning; Port of New York/New Jersey vehicle export operations; luxury vehicle targeting in Manhattan, Brooklyn, and Long Island. Always verify VIN before final purchase - plates can be swapped but VINs cannot.",
         benefits: [
           "Quick New York vehicle screening using NY license plate number",
           "Verify seller is the NY DMV registered owner before viewing",
@@ -31,8 +31,7 @@ const NewYorkLicensePlateLookupPage = () => {
           "Coverage for NYC (all 5 boroughs), Buffalo, Rochester, Yonkers, and all NY cities",
           "Detect organized theft ring activity and port export risk",
           "Check cars, trucks, motorcycles from New York sellers",
-          "Free New York license plate lookup - 2 free searches",
-          "Instant 3-second results from NY DMV databases"
+          "Free New York license plate lookup - 2 free searches"
         ],
         process: [
           "Record the New York license plate number - NY requires both front and rear plates",
@@ -46,7 +45,7 @@ const NewYorkLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "Can I check if a car is stolen in New York using just the license plate?",
-            answer: "Yes, you can do an initial New York vehicle check using the NY license plate number, but it's NOT sufficient for final verification. New York license plates can be swapped - organized theft rings in NYC are known for sophisticated plate swapping operations. Use New York license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase, especially for high-value vehicles in Manhattan, Brooklyn, and Long Island."
+            answer: "Yes, you can do an initial New York vehicle check using the NY license plate number, but it's NOT sufficient for final verification. New York license plates can be swapped - organized theft rings in NYC are known for plate swapping operations. Use New York license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase, especially for high-value vehicles in Manhattan, Brooklyn, and Long Island."
           },
           {
             question: "How do I find a vehicle's New York license plate number?",
@@ -58,19 +57,19 @@ const NewYorkLicensePlateLookupPage = () => {
           },
           {
             question: "Is New York license plate lookup really free?",
-            answer: "Yes, SafeOrStolen offers 2 free New York license plate lookups. Our tool searches both NY DMV registration AND stolen vehicle databases simultaneously in 3 seconds. Additional New York lookups require a paid plan, but our free tier protects casual buyers shopping in the competitive New York used vehicle market."
+            answer: "Yes, SafeOrStolen offers 2 free New York license plate lookups. Our tool searches both NY DMV registration AND stolen vehicle databases simultaneously. Additional New York lookups require a paid plan, but our free tier protects casual buyers shopping in the competitive New York used vehicle market."
           },
           {
             question: "What if the New York registered owner doesn't match the seller?",
-            answer: "If the NY DMV registered owner name doesn't match the seller's name, this is a MAJOR red flag in New York transactions. New York has strict title requirements and mismatched names often indicate stolen vehicles or title issues. ALWAYS ask why names don't match, request documentation including power of attorney or estate papers if applicable, and walk away if explanations seem suspicious."
+            answer: "If the NY DMV registered owner name doesn't match the seller's name, this is a MAJOR red flag in New York transactions. New York has strict title requirements and mismatched names may indicate stolen vehicles or title issues. ALWAYS ask why names don't match, request documentation including power of attorney or estate papers if applicable, and walk away if explanations seem suspicious."
           },
           {
             question: "What are New York-specific concerns when buying used vehicles?",
-            answer: "New York has unique vehicle risks: (1) NYC organized theft rings use sophisticated key cloning and signal jamming to steal modern vehicles, (2) Port of New York/New Jersey facilitates international export of stolen vehicles, (3) Luxury vehicles (BMW, Mercedes, Range Rover) are heavily targeted in Manhattan and Long Island, (4) Insurance fraud schemes are prevalent with staged accidents and title washing, (5) Out-of-state titles brought to NY to hide problems. Always verify New York title is clean, check NICB database, and verify VIN matches NY DMV records."
+            answer: "New York has unique vehicle risks: (1) NYC organized theft rings use sophisticated key cloning and signal jamming to steal modern vehicles, (2) Port of New York/New Jersey can facilitate international export of stolen vehicles, (3) Luxury vehicles (BMW, Mercedes, Range Rover) are targeted in Manhattan and Long Island, (4) Insurance fraud schemes are present with staged accidents and title washing, (5) Out-of-state titles brought to NY to hide problems. Always verify New York title is clean, check NICB database, and verify VIN matches NY DMV records."
           },
           {
-            question: "How long does a New York license plate lookup take?",
-            answer: "Our New York license plate lookup takes only 3 seconds. Enter the NY plate number, select New York as the state, click verify, and receive instant results showing NY DMV registered owner, vehicle information, and theft status from statewide databases."
+            question: "How does the New York license plate lookup work?",
+            answer: "Our New York license plate lookup queries NY DMV databases and cross-references stolen vehicle records. Enter the NY plate number, select New York as the state, click verify, and receive results showing NY DMV registered owner, vehicle information, and theft status from statewide databases."
           },
           {
             question: "Does SafeOrStolen cover all areas of New York?",

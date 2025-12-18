@@ -1,13 +1,10 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
-import { STATE_LICENSE_PLATE_DATA } from '@/data/stateLicensePlateData';
 
 const PennsylvaniaLicensePlateLookupPage = () => {
-  const stateData = STATE_LICENSE_PLATE_DATA.pennsylvania;
-  
   return (
     <ItemLandingPageTemplate
       title="Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription={`Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen. ${stateData.theftStats.annualThefts} vehicles stolen annually. Verify before buying in Philadelphia, Pittsburgh, Allentown.`}
+      metaDescription="Free Pennsylvania license plate lookup. Check if a PA vehicle is stolen. Verify before buying in Philadelphia, Pittsburgh, Allentown. Search PennDOT and law enforcement databases."
       h1="Pennsylvania License Plate Lookup - Verify PA Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
@@ -21,13 +18,13 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         'PA vehicle stolen database'
       ]}
       content={{
-        intro: `Pennsylvania experiences ${stateData.theftStats.annualThefts} vehicle thefts annually, concentrated in Philadelphia and Pittsburgh metro areas. Before buying any used vehicle in Pennsylvania, verify the license plate against our comprehensive database that includes PennDOT records, NCIC, and law enforcement databases. Get instant results in 3 seconds.`,
+        intro: "Pennsylvania experiences notable vehicle theft, concentrated in Philadelphia and Pittsburgh metro areas. Before buying any used vehicle in Pennsylvania, verify the license plate against our comprehensive database that includes PennDOT records, NCIC, and law enforcement databases.",
         
-        whatIs: `A Pennsylvania license plate lookup allows you to verify if a vehicle registered in PA has been reported stolen, salvaged, or has title issues. By entering the PA license plate number, our system cross-references the Pennsylvania Department of Transportation (PennDOT), National Crime Information Center (NCIC), Pennsylvania State Police records, and insurance databases. This verification is essential when purchasing vehicles in Philadelphia, Pittsburgh, Allentown, Erie, and throughout Pennsylvania's used vehicle market.`,
+        whatIs: "A Pennsylvania license plate lookup allows you to verify if a vehicle registered in PA has been reported stolen, salvaged, or has title issues. By entering the PA license plate number, our system cross-references the Pennsylvania Department of Transportation (PennDOT), National Crime Information Center (NCIC), Pennsylvania State Police records, and insurance databases. This verification is essential when purchasing vehicles in Philadelphia, Pittsburgh, Allentown, Erie, and throughout Pennsylvania's used vehicle market.",
         
-        howItWorks: `Our Pennsylvania license plate lookup works by querying multiple databases simultaneously: (1) PennDOT vehicle registration records to verify the plate is actively registered, (2) NCIC stolen vehicle database for federal theft reports, (3) Pennsylvania State Police records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt, salvage, or junk designations. Within 3 seconds, you receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.`,
+        howItWorks: "Our Pennsylvania license plate lookup works by querying multiple databases simultaneously: (1) PennDOT vehicle registration records to verify the plate is actively registered, (2) NCIC stolen vehicle database for federal theft reports, (3) Pennsylvania State Police records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt, salvage, or junk designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
         
-        whyCheck: `Pennsylvania's location between major metropolitan areas (NYC, DC, Baltimore) makes it a transit corridor for stolen vehicles. The I-76, I-95, and Pennsylvania Turnpike are frequently used by theft rings moving vehicles between states. Philadelphia has one of the highest vehicle theft rates in the Northeast. Additionally, flood-damaged vehicles from neighboring states are sometimes resold in PA with clean titles. Always verify before purchasing.`,
+        whyCheck: "Pennsylvania's location between major metropolitan areas (NYC, DC, Baltimore) makes it a transit corridor for stolen vehicles. The I-76, I-95, and Pennsylvania Turnpike are used by theft rings moving vehicles between states. Philadelphia has notable vehicle theft activity. Additionally, flood-damaged vehicles from neighboring states are sometimes resold in PA with clean titles. Always verify before purchasing.",
         
         benefits: [
           "Comprehensive PennDOT database coverage",
@@ -36,8 +33,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           "Verify seller is registered owner in Pennsylvania",
           "Access NCIC and Pennsylvania State Police records",
           "Detect cloned plates and VIN switching",
-          "Free Pennsylvania license plate lookup",
-          "Instant 3-second results"
+          "Free Pennsylvania license plate lookup"
         ],
         
         process: [
@@ -56,11 +52,11 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           },
           {
             question: "How accurate is the Pennsylvania license plate stolen vehicle check?",
-            answer: "Our Pennsylvania license plate lookup is highly accurate for registered vehicles. We check official PennDOT records, NCIC (FBI's database), and Pennsylvania State Police records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+            answer: "Our Pennsylvania license plate lookup is accurate for registered vehicles. We check official PennDOT records, NCIC (FBI's database), and Pennsylvania State Police records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
           },
           {
             question: "Does the lookup work for vehicles in Pittsburgh and western Pennsylvania?",
-            answer: "Yes, our database covers all Pennsylvania counties including Allegheny County (Pittsburgh), Westmoreland, Washington, and Butler counties. Pittsburgh has its own vehicle theft patterns, and verification is crucial when buying in western PA."
+            answer: "Yes, our database covers all Pennsylvania counties including Allegheny County (Pittsburgh), Westmoreland, Washington, and Butler counties. Pittsburgh has its own vehicle theft patterns, and verification is important when buying in western PA."
           },
           {
             question: "What if the Pennsylvania plate comes back as stolen?",
@@ -76,7 +72,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           },
           {
             question: "What are Pennsylvania's laws on buying stolen vehicles?",
-            answer: `Under 18 Pa. C.S. § 3925, receiving stolen property (including vehicles) is a felony in Pennsylvania. Even unknowing possession can result in vehicle confiscation and prosecution. Always verify vehicles before purchase to protect yourself legally.`
+            answer: "Under 18 Pa. C.S. § 3925, receiving stolen property (including vehicles) is a felony in Pennsylvania. Even unknowing possession can result in vehicle confiscation and prosecution. Always verify vehicles before purchase to protect yourself legally."
           },
           {
             question: "Is the Pennsylvania license plate lookup free?",

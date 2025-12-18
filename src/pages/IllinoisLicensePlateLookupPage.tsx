@@ -4,7 +4,7 @@ const IllinoisLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Illinois License Plate Lookup - Check IL Stolen Vehicle by Plate"
-      metaDescription="Illinois license plate lookup to verify if a vehicle is stolen. Free IL license plate search from Illinois Secretary of State and law enforcement databases. Instant results in 3 seconds. Check vehicles in Chicago, Aurora."
+      metaDescription="Illinois license plate lookup to verify if a vehicle is stolen. Free IL license plate search from Illinois Secretary of State and law enforcement databases. Check vehicles in Chicago, Aurora, Naperville."
       h1="Illinois License Plate Lookup - Check IL Vehicles"
       itemType="Vehicle"
       keywords={[
@@ -19,10 +19,10 @@ const IllinoisLicensePlateLookupPage = () => {
         'naperville plate lookup'
       ]}
       content={{
-        intro: "Verify Illinois vehicles using license plate number in 3 seconds. Free Illinois license plate lookup from Illinois Secretary of State and law enforcement databases. Check if cars, trucks, or motorcycles with IL plates are stolen before buying from private sellers or used car lots in Chicago, Aurora, Rockford, Naperville, and anywhere in Illinois. Illinois reports 31,000+ vehicle thefts annually with a 50% recovery rate, ranking #6 nationally. Chicago has become a national carjacking hotspot with organized theft rings operating throughout the metro area.",
-        whatIs: "Illinois license plate lookup is a service that verifies whether a vehicle registered in Illinois is reported stolen by checking the IL license plate number against Illinois Secretary of State registration databases and law enforcement stolen vehicle records. Illinois requires both front and rear plates with unique formats. SafeOrStolen's Illinois license plate checker instantly searches Illinois Secretary of State registration records, Chicago Police, Illinois State Police, and suburban law enforcement stolen vehicle reports, NICB VINCheck database, and insurance databases to determine if a vehicle with that IL plate has been reported stolen. Key Illinois-specific concerns include: Chicago carjacking epidemic, organized theft rings, and Indiana border trafficking.",
-        howItWorks: "Our Illinois license plate lookup system queries Illinois Secretary of State databases to resolve the Illinois license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and Illinois registration status. Within 3 seconds, you receive a report showing whether the vehicle is reported stolen in Illinois or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference NICB VINCheck, FBI NCIC stolen vehicle records, Chicago Police Department records, and Illinois State Police databases for comprehensive results.",
-        whyCheck: "Illinois, particularly the Chicago metropolitan area, has one of the nation's most serious vehicle theft problems. Illinois license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the IL market. Verify the seller is the registered owner with Illinois Secretary of State, detect stolen plates, check Illinois registration status, and identify IL-specific concerns. Watch for: Chicago carjacking epidemic (among the worst in the nation); organized theft rings; Indiana border trafficking (stolen vehicles quickly moved across state lines). Always verify VIN before final purchase - plates can be swapped but VINs cannot.",
+        intro: "Verify Illinois vehicles using license plate number. Free Illinois license plate lookup from Illinois Secretary of State and law enforcement databases. Check if cars, trucks, or motorcycles with IL plates are stolen before buying from private sellers or used car lots in Chicago, Aurora, Rockford, Naperville, and anywhere in Illinois. Chicago has significant vehicle theft concerns with organized theft rings operating throughout the metro area.",
+        whatIs: "Illinois license plate lookup is a service that verifies whether a vehicle registered in Illinois is reported stolen by checking the IL license plate number against Illinois Secretary of State registration databases and law enforcement stolen vehicle records. Illinois requires both front and rear plates with unique formats. SafeOrStolen's Illinois license plate checker searches Illinois Secretary of State registration records, Chicago Police, Illinois State Police, and suburban law enforcement stolen vehicle reports, NICB VINCheck database, and insurance databases to determine if a vehicle with that IL plate has been reported stolen. Key Illinois-specific concerns include: Chicago carjacking concerns, organized theft rings, and Indiana border trafficking.",
+        howItWorks: "Our Illinois license plate lookup system queries Illinois Secretary of State databases to resolve the Illinois license plate number to the vehicle's VIN and registration information. This tells us the registered owner, vehicle make/model/year, and Illinois registration status. You receive a report showing whether the vehicle is reported stolen in Illinois or nationwide, plus registered owner information to verify seller legitimacy. We cross-reference NICB VINCheck, FBI NCIC stolen vehicle records, Chicago Police Department records, and Illinois State Police databases for comprehensive results.",
+        whyCheck: "Illinois, particularly the Chicago metropolitan area, has notable vehicle theft concerns. Illinois license plate lookups help you quickly screen vehicles and detect red flags before committing to a purchase in the IL market. Verify the seller is the registered owner with Illinois Secretary of State, detect stolen plates, check Illinois registration status, and identify IL-specific concerns. Watch for: Chicago carjacking concerns; organized theft rings; Indiana border trafficking (stolen vehicles may be moved across state lines). Always verify VIN before final purchase - plates can be swapped but VINs cannot.",
         benefits: [
           "Quick Illinois vehicle screening using IL license plate number",
           "Verify seller is the Illinois Secretary of State registered owner before viewing",
@@ -31,8 +31,7 @@ const IllinoisLicensePlateLookupPage = () => {
           "Coverage for Chicago (all neighborhoods), Aurora, Rockford, Naperville, and all Illinois cities",
           "Detect organized theft ring activity and carjacking victims",
           "Check cars, trucks, motorcycles from Illinois sellers",
-          "Free Illinois license plate lookup - 2 free searches",
-          "Instant 3-second results from Illinois databases"
+          "Free Illinois license plate lookup - 2 free searches"
         ],
         process: [
           "Record the Illinois license plate number - IL requires both front and rear plates",
@@ -40,13 +39,13 @@ const IllinoisLicensePlateLookupPage = () => {
           "Enter the IL plate number into our verification tool (select Illinois as state)",
           "Review the report showing Illinois registered owner, vehicle information, and theft status",
           "Verify the Illinois registered owner name matches the seller's Illinois ID",
-          "Be extra cautious with vehicles from Chicago and Cook County due to high theft rates",
+          "Be extra cautious with vehicles from Chicago and Cook County due to higher theft activity",
           "After initial screening, ALWAYS verify the vehicle's VIN before final purchase"
         ],
         faqs: [
           {
             question: "Can I check if a car is stolen in Illinois using just the license plate?",
-            answer: "Yes, you can do an initial Illinois vehicle check using the IL license plate number, but it's NOT sufficient for final verification. Illinois license plates can be swapped - a major concern given Chicago's carjacking epidemic where stolen vehicles quickly enter the used market. Use Illinois license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase."
+            answer: "Yes, you can do an initial Illinois vehicle check using the IL license plate number, but it's NOT sufficient for final verification. Illinois license plates can be swapped - a concern given Chicago's vehicle theft activity where stolen vehicles may quickly enter the used market. Use Illinois license plate lookup as Step 1 to screen vehicles, but ALWAYS verify the VIN as Step 2 before purchase."
           },
           {
             question: "How do I find a vehicle's Illinois license plate number?",
@@ -58,19 +57,19 @@ const IllinoisLicensePlateLookupPage = () => {
           },
           {
             question: "Is Illinois license plate lookup really free?",
-            answer: "Yes, SafeOrStolen offers 2 free Illinois license plate lookups. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously in 3 seconds. Additional Illinois lookups require a paid plan, but our free tier protects casual buyers in the Chicago metro and greater Illinois markets."
+            answer: "Yes, SafeOrStolen offers 2 free Illinois license plate lookups. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Additional Illinois lookups require a paid plan, but our free tier protects casual buyers in the Chicago metro and greater Illinois markets."
           },
           {
-            question: "Why is Chicago particularly high-risk for vehicle theft?",
-            answer: "Chicago has experienced a carjacking epidemic, ranking among the worst cities in America for vehicle theft. Organized theft rings operate throughout the metro area, targeting specific makes and models. Stolen vehicles are quickly transported to Indiana or sold in the used market. Kia and Hyundai vehicles are particularly targeted. If buying a used vehicle in the Chicago area, ALWAYS conduct thorough verification including VIN checks and ownership verification."
+            question: "Why is Chicago a concern for vehicle theft?",
+            answer: "Chicago has experienced notable vehicle theft activity, including carjacking incidents. Organized theft rings operate throughout the metro area, targeting specific makes and models. Stolen vehicles may be quickly transported to Indiana or sold in the used market. Kia and Hyundai vehicles are particularly targeted in some areas. If buying a used vehicle in the Chicago area, conduct thorough verification including VIN checks and ownership verification."
           },
           {
             question: "What if the Illinois registered owner doesn't match the seller?",
-            answer: "If the Illinois Secretary of State registered owner name doesn't match the seller's name, this is a MAJOR red flag in Illinois transactions. Given Chicago's vehicle theft crisis, mismatched names often indicate stolen vehicles or title jumping fraud. ALWAYS ask why names don't match, request documentation, and walk away if explanations seem suspicious."
+            answer: "If the Illinois Secretary of State registered owner name doesn't match the seller's name, this is a MAJOR red flag in Illinois transactions. Given Chicago's vehicle theft concerns, mismatched names may indicate stolen vehicles or title jumping fraud. ALWAYS ask why names don't match, request documentation, and walk away if explanations seem suspicious."
           },
           {
             question: "What are Illinois-specific concerns when buying used vehicles?",
-            answer: "Illinois has unique vehicle risks: (1) Chicago carjacking epidemic means many stolen vehicles enter the used market, (2) Organized theft rings target specific makes and models, (3) Indiana border trafficking allows quick movement of stolen vehicles across state lines, (4) Title jumping and curbstoning are prevalent in suburban Chicago markets. Always verify Illinois title is clean, check NICB database for theft records, and verify VIN matches Illinois records."
+            answer: "Illinois has unique vehicle risks: (1) Chicago has notable vehicle theft activity with stolen vehicles entering the used market, (2) Organized theft rings target specific makes and models, (3) Indiana border allows movement of stolen vehicles across state lines, (4) Title jumping and curbstoning occur in suburban Chicago markets. Always verify Illinois title is clean, check NICB database for theft records, and verify VIN matches Illinois records."
           },
           {
             question: "Does SafeOrStolen cover all cities in Illinois?",
