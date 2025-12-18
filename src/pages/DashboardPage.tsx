@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
-import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
+// import { useReceiptGenerator } from '@/hooks/useReceiptGenerator'; // Removed - receipts table dropped
 import { supabase } from '@/integrations/supabase/client';
 import { DashboardSidebar } from '@/components/dashboard/DashboardSidebar';
 import { VerificationSection } from '@/components/dashboard/VerificationSection';
@@ -39,7 +39,7 @@ const DashboardPage = () => {
   const [searchParams] = useSafeSearchParams();
   const { remainingSearches, hasReachedLimit, isSubscribed, refreshLimits } = useSearchLimits();
   const { searchHistory, isLoading: historyLoading } = useSearchHistory();
-  const { getReceipts } = useReceiptGenerator();
+  // Receipt generation removed - table dropped
   const { pendingVerification, clearPendingVerification } = usePendingVerification();
   const { showPaywall, hidePaywall, searchCount, isLoading: freemiumLoading } = useFreemiumFlow();
   const { toast } = useToast();
@@ -179,9 +179,8 @@ const DashboardPage = () => {
 
       setRecentVerifications(verifications || []);
 
-      // Load receipts
-      const userReceipts = await getReceipts();
-      setReceipts(userReceipts);
+      // Receipts table removed during cleanup
+      setReceipts([]);
 
       // Load purchases
       const { data: purchaseData } = await supabase

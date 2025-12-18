@@ -29,33 +29,31 @@ export const useSearchLimits = () => {
     try {
       setIsLoading(true);
 
-      // Check subscription status
-      const { data: subscription } = await supabase
-        .from('subscribers')
-        .select('subscribed, subscription_tier')
-        .eq('user_id', user.id)
-        .single();
-
-      if (subscription?.subscribed) {
-        setIsSubscribed(true);
-        setRemainingSearches(999); // Unlimited for subscribers
-        setHasReachedLimit(false);
-        return;
-      }
-
-      // Check profile for promotion status
+      // Check profile for subscription status
       const { data: profile } = await supabase
         .from('profiles')
-        .select('is_promotion_winner, promotion_searches_remaining, promotion_expires_at, search_count, created_at')
+        .select('subscription_tier, subscription_end, is_promotion_winner, promotion_searches_remaining, promotion_expires_at, search_count, created_at')
         .eq('id', user.id)
         .single();
 
+      const paidTiers = ['pay_per_use', 'starter', 'personal', 'professional', 'enterprise'];
+      const hasPaidTier = profile?.subscription_tier && paidTiers.includes(profile.subscription_tier);
+
+      if (hasPaidTier) {
+        setIsSubscribed(true);
+        setRemainingSearches(999); // Unlimited for subscribers
+        setHasReachedLimit(false);
+        setIsLoading(false);
+        return;
+      }
+      // Check promotion status from same profile query above
       if (profile?.is_promotion_winner && 
           profile?.promotion_searches_remaining > 0 && 
           profile?.promotion_expires_at && 
           new Date(profile.promotion_expires_at) > new Date()) {
         setRemainingSearches(profile.promotion_searches_remaining);
         setHasReachedLimit(false);
+        setIsLoading(false);
         return;
       }
 

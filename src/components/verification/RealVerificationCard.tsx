@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { VerificationResult } from '@/utils/typeGuards';
 import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
-import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
+// import { useReceiptGenerator } from '@/hooks/useReceiptGenerator'; // Removed - receipts table dropped
 import { CertifiedSafeBadge } from './CertifiedSafeBadge';
 import { EmbeddableSafeBadge } from '@/components/badges/EmbeddableSafeBadge';
 import { ShareAfterVerification } from '@/components/growth';
@@ -25,7 +25,8 @@ interface RealVerificationCardProps {
 }
 
 const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps) => {
-  const { generateReceipt, isGenerating } = useReceiptGenerator();
+  // Receipt generation removed - table dropped
+  const isGenerating = false;
 
   // Show placeholder when no verification result is provided
   if (!verificationResult) {
@@ -127,11 +128,8 @@ const RealVerificationCard = ({ verificationResult }: RealVerificationCardProps)
   const itemTypeDisplay = getItemTypeDisplayName(verificationResult.item_type);
 
   const handleGenerateReceipt = async () => {
-    await generateReceipt(
-      verificationResult.id, 
-      verificationResult.serial_number, 
-      verificationResult.item_type
-    );
+    // Receipt generation removed - table dropped
+    console.log('Receipt generation disabled');
   };
 
   return (

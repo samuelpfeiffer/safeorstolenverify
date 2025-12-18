@@ -69,20 +69,22 @@ export const StripeStatusDashboard = () => {
         value: eventCount || 0
       });
 
-      // Check 3: Paid subscribers
-      const { count: subCount } = await supabase
-        .from('subscribers')
+      // Check 3: Paid subscribers (from profiles table)
+      const { data: paidProfilesCheck } = await supabase
+        .from('profiles')
         .select('*', { count: 'exact' })
-        .eq('subscribed', true);
+        .not('subscription_tier', 'is', null)
+        .not('subscription_tier', 'eq', 'free');
       
-      setPaidSubscribers(subCount || 0);
+      const subCount = paidProfilesCheck?.length || 0;
+      setPaidSubscribers(subCount);
       newChecks.push({
         name: 'Paid Subscribers',
-        status: (subCount || 0) === 0 ? 'warning' : 'ok',
-        message: (subCount || 0) === 0
+        status: subCount === 0 ? 'warning' : 'ok',
+        message: subCount === 0
           ? 'No paid subscribers yet'
           : `${subCount} active subscribers`,
-        value: subCount || 0
+        value: subCount
       });
 
       // Check 4: Users on paid tiers
