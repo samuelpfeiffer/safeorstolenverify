@@ -28,10 +28,14 @@ Disallow: /profile
 Disallow: /search-history
 Disallow: /receipts
 Disallow: /purchase-history
+Disallow: /checkout-redirect
+Disallow: /verification-success
 
-# Admin & API
+# Admin & Internal Pages
 Disallow: /admin/
 Disallow: /api/
+Disallow: /analytics
+Disallow: /seo-strategy
 
 # Query Parameters (Avoid Duplicate Content)
 Disallow: /*?*

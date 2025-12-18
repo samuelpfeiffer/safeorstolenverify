@@ -209,6 +209,34 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /seo-strategy                /about  301!
 /fastercapital/tech-cofounder /about 301!
 /enterprise-demo             /about  301!
+/for-businesses              /for-pawn-shops  301!
+/database                    /about  301!
+/analytics                   /dashboard  301!
+
+# ============================================
+# GSC NOINDEX/SOFT404 FIXES (December 2025)
+# ============================================
+# State abbreviation pages
+/texas                       /texas-vin-lookup      301!
+/florida                     /florida-vin-lookup    301!
+/new-york                    /new-york-vin-lookup   301!
+
+# Missing verification URLs  
+/craigslist-verification     /verify                301!
+/check-samsung               /check-phone           301!
+/mesa-stolen-item-check      /verify                301!
+/vin-lookup                  /vin-checker           301!
+/stolen-phone-database       /verify                301!
+/stolen-car-database         /verify                301!
+/verify-vin-before-purchase  /vin-checker           301!
+/how-to-verify-car-not-stolen /check-car            301!
+/how-to-check-if-phone-is-stolen /check-phone       301!
+/ebay-verification           /verify                301!
+
+# Missing item check URLs
+/check-scooter               /check-ebike           301!
+/check-bicycle               /check-bike            301!
+/firearm-serial-check        /firearms-check        301!
 
 # ============================================
 # APP SUBDIRECTORY REDIRECTS (GSC "Page with redirect" Errors)
@@ -259,6 +287,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /competitor-alternatives           /pricing  301!
 /cheaper-than-carfax               /vs-carfax  301!
 /free-vin-check-alternative        /vin-checker  301!
+/vs-stolenphonechecker             /compare  301!
+/vs-imeipro                        /vs-imeiinfo  301!
 
 # ============================================
 # ITEM-SPECIFIC VARIATIONS → CANONICAL PAGES
@@ -358,6 +388,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/enterprise-security                                       /blog            301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog            301!
+/blog/how-to-check-phone-stolen                                 /check-phone     301!
+/blog/why-verify-serial-numbers                                 /blog            301!
+/blog/complete-marketplace-buyers-checklist                     /blog            301!
+/blog/playstation-5-serial-number-verification-guide-*          /blog            301!
+/blog/how-pawn-shops-can-prevent-buying-stolen-goods-*          /blog            301!
+/blog/tesla-model-3-vin-verification-*                          /blog            301!
 
 # Blog posts with timestamps (pattern match)
 /blog/red-flags-buying-used-electronics-1759314016.095080                    /blog  301!
