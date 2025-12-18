@@ -164,6 +164,16 @@ export const REDIRECT_URLS = new Set([
   '/imei-check',
   '/vin-check',
   '/vin-verification',
+  // GSC December 2025 validation failures
+  '/verify/ebay',
+  '/verify/pawnshops',
+  '/app/features/history',
+  '/canada-vin-check',
+  '/california',
+  '/marketplace-integration',
+  '/check-android',
+  '/blog/best-imei-checker-tools-2025',
+  '/check-imei-before-buying',
 ]);
 
 export interface ValidationResult {

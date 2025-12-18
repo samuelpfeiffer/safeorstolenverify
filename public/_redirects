@@ -227,6 +227,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /texas                       /texas-vin-lookup      301!
 /florida                     /florida-vin-lookup    301!
 /new-york                    /new-york-vin-lookup   301!
+/california                  /california-vin-lookup 301!
+
+# International VIN checks → main checker
+/canada-vin-check            /vin-checker           301!
+/uk-vin-check                /vin-checker           301!
+/mexico-vin-check            /vin-checker           301!
 
 # Missing verification URLs  
 /craigslist-verification     /verify                301!
@@ -239,6 +245,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /how-to-verify-car-not-stolen /check-car            301!
 /how-to-check-if-phone-is-stolen /check-phone       301!
 /ebay-verification           /verify                301!
+
+# GSC December 2025 validation failures
+/blog/best-imei-checker-tools-2025  /blog/complete-imei-guide-protect-yourself  301!
 
 # Missing item check URLs
 /check-scooter               /check-ebike           301!
@@ -276,6 +285,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/sellers                        /app  301!
 /app/vs-carfax                      /vs-carfax  301!
 /app/vs-imeiinfo                    /vs-imeiinfo  301!
+/app/features/history               /app  301!
 /app/features/*                     /app  301!
 
 # ============================================
