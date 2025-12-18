@@ -200,33 +200,69 @@ export const ConversionOptimizedPricing = ({
 
   return (
     <section className="w-full py-16 px-4">
-      {/* Urgent Call to Action */}
-      <div className="max-w-xl mx-auto mb-12 p-6 bg-gradient-to-r from-destructive/20 to-destructive/5 border-2 border-destructive rounded-xl text-center">
-        <h3 className="text-xl font-bold mb-2">⚠️ Don't Risk Buying Stolen Goods</h3>
-        <p className="text-muted-foreground mb-4">
-          Every day buyers lose hundreds of dollars on stolen items. Protect yourself now.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button 
-            onClick={() => handleSubscribeClick('Starter Plan')}
-            disabled={loadingTier === 'Starter Plan'}
-            size="lg"
-            className="bg-destructive hover:bg-destructive/90 text-white font-bold"
-          >
-            {loadingTier === 'Starter Plan' ? (
-              <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Processing...</>
-            ) : (
-              <>Get Protected - $4.99/mo</>
-            )}
-          </Button>
-          <Button 
-            onClick={() => handleSubscribeClick('Single Verification')}
-            disabled={loadingTier === 'Single Verification'}
-            variant="outline"
-            size="lg"
-          >
-            Just 1 Check - $2.99
-          </Button>
+      {/* Risk Comparison - Show what they could lose */}
+      <div className="max-w-3xl mx-auto mb-12 p-8 bg-gradient-to-r from-destructive/20 via-destructive/10 to-destructive/20 border border-destructive/50 rounded-2xl">
+        <div className="text-center mb-6">
+          <AlertTriangle className="w-12 h-12 text-destructive mx-auto mb-3" />
+          <h3 className="text-2xl font-black text-destructive">The Real Cost of NOT Checking</h3>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 text-center">
+          <div className="p-4">
+            <p className="text-3xl font-black text-destructive">$800+</p>
+            <p className="text-sm text-muted-foreground">Average loss on stolen phone</p>
+          </div>
+          <div className="p-4">
+            <p className="text-3xl font-black text-destructive">$15,000+</p>
+            <p className="text-sm text-muted-foreground">Average loss on stolen vehicle</p>
+          </div>
+          <div className="p-4">
+            <p className="text-3xl font-black text-destructive">Criminal</p>
+            <p className="text-sm text-muted-foreground">Charges for receiving stolen goods</p>
+          </div>
+        </div>
+        <div className="mt-6 text-center">
+          <p className="text-lg font-semibold text-foreground mb-4">
+            A $2.99 check could save you thousands and legal trouble
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button 
+              onClick={() => handleSubscribeClick('Single Verification')}
+              disabled={loadingTier === 'Single Verification'}
+              size="lg"
+              className="bg-destructive hover:bg-destructive/90 text-white font-bold"
+            >
+              {loadingTier === 'Single Verification' ? (
+                <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Processing...</>
+              ) : (
+                <>Check Now - Just $2.99</>
+              )}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Real Testimonials */}
+      <div className="max-w-4xl mx-auto mb-12">
+        <h3 className="text-xl font-bold text-center mb-6">What Our Users Say</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-6 bg-card border border-border rounded-xl">
+            <div className="flex items-center gap-1 mb-3">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />)}
+            </div>
+            <p className="text-sm text-muted-foreground mb-3">
+              "Saved me from buying a stolen MacBook on Facebook Marketplace. The seller had fake receipts but SafeOrStolen caught it. Worth every penny!"
+            </p>
+            <p className="text-sm font-semibold">— Jennifer M., Phoenix AZ</p>
+          </div>
+          <div className="p-6 bg-card border border-border rounded-xl">
+            <div className="flex items-center gap-1 mb-3">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />)}
+            </div>
+            <p className="text-sm text-muted-foreground mb-3">
+              "As a pawn shop owner, I check every item before buying. SafeOrStolen has saved me from taking in stolen goods multiple times."
+            </p>
+            <p className="text-sm font-semibold">— Shane E., Business Owner</p>
+          </div>
         </div>
       </div>
 
@@ -235,7 +271,7 @@ export const ConversionOptimizedPricing = ({
           Protect Your Purchase Today
         </h2>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-4">
-          Don't risk buying stolen goods. Verify any item in seconds.
+          Join 66+ users protecting themselves from stolen goods
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span className="flex items-center gap-1 text-sos-lime font-semibold">
