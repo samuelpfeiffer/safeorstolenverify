@@ -269,7 +269,7 @@ const VerifyPage = () => {
           "@type": "HowToStep",
           "position": 3,
           "name": "Click Verify",
-          "text": "Submit the form to search across 150+ databases instantly"
+          "text": "Submit the form to search multiple verification databases"
         },
         {
           "@type": "HowToStep",
@@ -309,11 +309,11 @@ const VerifyPage = () => {
       <div className="sr-only" aria-hidden="false">
         <article itemScope itemType="https://schema.org/Article">
           <h1>Free Stolen Item Verification - Check IMEI, VIN, Serial Numbers</h1>
-          <p>SafeOrStolen's instant verification tool checks if items are stolen in 3 seconds. Enter any IMEI number, VIN number, or serial number to search 50+ databases including NCIC, NICB, carrier blacklists, and international theft registries. Protect buyers and sellers from stolen goods.</p>
+          <p>SafeOrStolen's instant verification tool checks if items are stolen. Enter any IMEI number, VIN number, or serial number to search publicly available stolen property databases and theft registries. Protect buyers and sellers from stolen goods.</p>
           
           <section>
             <h2>How to Check if an Item is Stolen</h2>
-            <p>Step 1: Enter the item's unique identifier (IMEI for phones, VIN for vehicles, serial number for electronics). Step 2: Select the item type or let our system auto-detect. Step 3: Click Verify to search across 150+ databases instantly. Step 4: Get results in 3 seconds showing if the item is safe or stolen.</p>
+            <p>Step 1: Enter the item's unique identifier (IMEI for phones, VIN for vehicles, serial number for electronics). Step 2: Select the item type or let our system auto-detect. Step 3: Click Verify to search multiple databases. Step 4: Get results quickly showing if the item is safe or stolen.</p>
             
             <h3>IMEI Verification for Phones</h3>
             <p>Check if a phone is stolen by entering its 15-digit IMEI number. Find IMEI by dialing *#06# on any phone. We check against GSMA global blacklists, AT&T/Verizon/T-Mobile carrier databases, IMEI.info lost device registry, insurance theft claims, and international stolen phone databases. A blacklisted IMEI means the phone may be stolen and could be blocked from network use.</p>

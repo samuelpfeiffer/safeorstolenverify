@@ -1,4 +1,5 @@
-export const STATE_VIN_DATA_PART5 = {
+// Type for legacy format - converted to new format in completeStateVinData.ts
+export const STATE_VIN_DATA_PART5: Record<string, any> = {
   illinois: {
     state: "Illinois",
     stateCode: "IL",

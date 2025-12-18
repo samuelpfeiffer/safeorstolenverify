@@ -51,16 +51,16 @@ const LicensePlateLookupPage = () => {
   };
 
   const topStates = [
-    { code: 'CA', name: 'California', thefts: '173,000+' },
-    { code: 'TX', name: 'Texas', thefts: '85,000+' },
-    { code: 'FL', name: 'Florida', thefts: '42,000+' },
-    { code: 'NY', name: 'New York', thefts: '14,000+' },
-    { code: 'IL', name: 'Illinois', thefts: '23,000+' },
-    { code: 'GA', name: 'Georgia', thefts: '27,000+' },
-    { code: 'PA', name: 'Pennsylvania', thefts: '12,000+' },
-    { code: 'OH', name: 'Ohio', thefts: '18,000+' },
-    { code: 'NC', name: 'North Carolina', thefts: '16,000+' },
-    { code: 'WA', name: 'Washington', thefts: '32,000+' },
+    { code: 'CA', name: 'California', note: 'High theft area' },
+    { code: 'TX', name: 'Texas', note: 'Major market' },
+    { code: 'FL', name: 'Florida', note: 'High theft area' },
+    { code: 'NY', name: 'New York', note: 'Major market' },
+    { code: 'IL', name: 'Illinois', note: 'Chicago metro' },
+    { code: 'GA', name: 'Georgia', note: 'High theft area' },
+    { code: 'PA', name: 'Pennsylvania', note: 'Major market' },
+    { code: 'OH', name: 'Ohio', note: 'Midwest hub' },
+    { code: 'NC', name: 'North Carolina', note: 'Growing market' },
+    { code: 'WA', name: 'Washington', note: 'Pacific Northwest' },
   ];
 
   const faqs = [
@@ -74,7 +74,7 @@ const LicensePlateLookupPage = () => {
     },
     {
       question: "Is license plate lookup free?",
-      answer: "Yes, SafeOrStolen offers 2 free license plate lookups. We search both DMV registration AND stolen vehicle databases simultaneously in 3 seconds."
+      answer: "Yes, SafeOrStolen offers 2 free license plate lookups. We search both DMV registration AND stolen vehicle databases simultaneously."
     },
     {
       question: "What if the registered owner doesn't match the seller?",
@@ -256,7 +256,7 @@ const LicensePlateLookupPage = () => {
                   </span>
                   <span className="flex items-center gap-1">
                     <CheckCircle2 className="h-3 w-3 text-green-500" />
-                    3-Second Results
+                    Fast Results
                   </span>
                 </div>
               </CardContent>
@@ -279,7 +279,7 @@ const LicensePlateLookupPage = () => {
                     {state.name}
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    {state.thefts} thefts/yr
+                    {state.note}
                   </p>
                 </Link>
               ))}
@@ -307,7 +307,7 @@ const LicensePlateLookupPage = () => {
                 </div>
                 <h3 className="font-semibold mb-2">We Search Databases</h3>
                 <p className="text-sm text-muted-foreground">
-                  We query DMV records, NICB, and law enforcement databases in 3 seconds.
+                  We query DMV records and law enforcement databases quickly.
                 </p>
               </div>
               <div className="text-center p-6 rounded-lg border border-border bg-card">

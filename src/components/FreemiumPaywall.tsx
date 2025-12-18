@@ -164,7 +164,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
         <div className="grid md:grid-cols-3 gap-3 text-sm">
           <div className="flex items-center gap-2 justify-center">
             <CheckCircle className="h-4 w-4 text-accent" />
-            <span>NCIC + NICB Access</span>
+            <span>Theft Database Access</span>
           </div>
           <div className="flex items-center gap-2 justify-center">
             <CheckCircle className="h-4 w-4 text-accent" />
