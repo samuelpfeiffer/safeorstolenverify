@@ -10,335 +10,58 @@ export interface SitemapEntry {
   }>;
 }
 
-export const generateStaticSitemapEntries = (): SitemapEntry[] => [
-  // Core Pages - Maximum Priority
-  {
-    url: 'https://safeorstolen.com/',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 1.0,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
-        caption: 'Safe Or Stolen - Global IMEI, Serial & VIN Verification Service',
-        title: 'Safe Or Stolen Global Verification Service'
-      }
-    ]
-  },
-  
-  // Primary Verification Services - Critical for SEO
-  {
-    url: 'https://safeorstolen.com/verify',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.9,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/real-time-verification-image.png',
-        caption: 'Real-time IMEI, Serial Number and VIN verification across global databases',
-        title: 'Safe Or Stolen Real-time Verification'
-      }
-    ]
-  },
-  
-  // Verification Type Pages - High SEO Value for Targeted Keywords
-  {
-    url: 'https://safeorstolen.com/check-phone',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/phone-verification-image.png',
-        caption: 'IMEI and ESN phone verification - Check if phone is stolen',
-        title: 'Safe Or Stolen Phone IMEI Verification'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/check-car',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/car-verification-image.png',
-        caption: 'VIN number verification - Check if car is stolen',
-        title: 'Safe Or Stolen Car VIN Verification'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/check-electronics',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/electronics-verification-image.png',
-        caption: 'Serial number verification for electronics - Check if stolen',
-        title: 'Safe Or Stolen Electronics Verification'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/check-bike',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/bike-verification-image.png',
-        caption: 'Bicycle serial number verification - Check if bike is stolen',
-        title: 'Safe Or Stolen Bike Verification'
-      }
-    ]
-  },
-  
-  // Firearms Check - Specialized Service
-  {
-    url: 'https://safeorstolen.com/firearms-check',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/firearms-verification-image.png',
-        caption: 'Firearm serial number verification - Check if firearm is stolen',
-        title: 'Safe Or Stolen Firearms Verification'
-      }
-    ]
-  },
-  
-  // Additional Core Verification Services
-  {
-    url: 'https://safeorstolen.com/verify',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.9,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/stolen-item-checker-image.png',
-        caption: 'Free stolen item checker - verify serial numbers, IMEI, and VIN numbers instantly',
-        title: 'Safe Or Stolen Item Checker'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/serial-number-checker',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.9,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/serial-checker-image.png',
-        caption: 'Serial number checker - verify if electronics and bikes are stolen',
-        title: 'Serial Number Checker'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/imei-checker',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.9,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/imei-check-image.png',
-        caption: 'IMEI checker - verify phone blacklist status and theft reports',
-        title: 'IMEI Check Service'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/vin-checker',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'always',
-    priority: 0.9,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/vin-verification-image.png',
-        caption: 'VIN verification - check if vehicle is stolen or has liens',
-        title: 'VIN Verification Service'
-      }
-    ]
-  },
-  
-  // How It Works - Essential for User Education & SEO
-  {
-    url: 'https://safeorstolen.com/how-it-works',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/how-it-works-image.png',
-        caption: 'How IMEI, Serial Number and VIN verification works globally - 4 simple steps',
-        title: 'Safe Or Stolen Global Verification Process'
-      }
-    ]
-  },
-  
-  // Core Business Pages
-  {
-    url: 'https://safeorstolen.com/pricing',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8
-  },
-  
-  // Content Marketing Hub
-  {
-    url: 'https://safeorstolen.com/blog',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'daily',
-    priority: 0.9,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/og-image-blog.png',
-        caption: 'Safe Or Stolen Blog - Verification news, guides, and safety tips',
-        title: 'Verification Blog and News'
-      }
-    ]
-  },
-  
-  // High-Value Blog Posts
-  {
-    url: 'https://safeorstolen.com/blog/how-to-check-if-device-is-safe-stolen',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.8,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/device-safety-guide.jpg',
-        caption: 'Complete guide to verify IMEI, serial numbers, and VIN before buying',
-        title: 'Device Safety Verification Guide'
-      }
-    ]
-  },
-  
-  // Target Audience Pages
-  {
-    url: 'https://safeorstolen.com/verify',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/consumers-image.png',
-        caption: 'Safe Or Stolen for consumers worldwide - Verify IMEI, Serial Numbers, VIN before buying',
-        title: 'Global Consumer Protection Services'
-      }
-    ]
-  },
-  {
-    url: 'https://safeorstolen.com/for-businesses',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7,
-    images: [
-      {
-        loc: 'https://safeorstolen.com/brands-image.png',
-        caption: 'Safe Or Stolen for brands worldwide - Global brand protection services',
-        title: 'Global Brand Protection Services'
-      }
-    ]
-  },
-  
-  // Enterprise Services
-  {
-    url: 'https://safeorstolen.com/for-businesses',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.7
-  },
-  {
-    url: 'https://safeorstolen.com/for-marketplaces',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/blog',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.5
-  },
-  {
-    url: 'https://safeorstolen.com/about',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/how-it-works',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  
-  // Company Information
-  {
-    url: 'https://safeorstolen.com/about',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/our-story',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.6
-  },
-  {
-    url: 'https://safeorstolen.com/about',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.6
-  },
-  
-  // Support & Trust Pages
-  {
-    url: 'https://safeorstolen.com/about',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.5
-  },
-  {
-    url: 'https://safeorstolen.com/faq',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.5
-  },
-  
-  // Marketing & Growth
-  {
-    url: 'https://safeorstolen.com/pricing',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'monthly',
-    priority: 0.5
-  },
-  
-  // Legal Pages - Important for Trust & Compliance
-  {
-    url: 'https://safeorstolen.com/privacy',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.4
-  },
-  {
-    url: 'https://safeorstolen.com/terms',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.4
-  },
-  {
-    url: 'https://safeorstolen.com/terms',
-    lastmod: new Date().toISOString().split('T')[0],
-    changefreq: 'yearly',
-    priority: 0.3
-  }
-];
+import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
+
+export const generateStaticSitemapEntries = (): SitemapEntry[] => {
+  const today = new Date().toISOString().split('T')[0];
+  const base = 'https://safeorstolen.com';
+
+  const isIndexable = (path: string) => {
+    // Not indexable / private routes
+    if (path === '/auth') return false;
+    if (path === '/dashboard') return false;
+    if (path === '/profile') return false;
+    if (path === '/checkout-redirect') return false;
+    if (path === '/verification-success') return false;
+    if (path.startsWith('/admin')) return false;
+    return true;
+  };
+
+  const priorityFor = (path: string): number => {
+    if (path === '/') return 1.0;
+    if (path === '/verify') return 0.95;
+    if (path === '/download' || path === '/app') return 0.9;
+    if (path === '/pricing') return 0.85;
+    if (path === '/how-it-works' || path === '/about') return 0.8;
+    if (path === '/blog') return 0.8;
+
+    // High-intent landing pages
+    if (
+      path === '/imei-checker' ||
+      path === '/vin-checker' ||
+      path === '/serial-number-checker'
+    ) return 0.8;
+
+    // Everything else
+    return 0.65;
+  };
+
+  const changefreqFor = (path: string): SitemapEntry['changefreq'] => {
+    if (path === '/' || path === '/verify') return 'daily';
+    if (path === '/blog') return 'daily';
+    return 'weekly';
+  };
+
+  return Array.from(VALID_ROUTES)
+    .filter(isIndexable)
+    .map((path) => ({
+      url: `${base}${path === '/' ? '/' : path}`,
+      lastmod: today,
+      changefreq: changefreqFor(path),
+      priority: priorityFor(path),
+    }))
+    .sort((a, b) => (b.priority || 0) - (a.priority || 0));
+};
 
 export const generateBlogSitemapEntries = (blogPosts: any[]): SitemapEntry[] => {
   return blogPosts.map(post => ({
@@ -359,24 +82,14 @@ export const generateBlogSitemapEntries = (blogPosts: any[]): SitemapEntry[] => 
 export const generateSitemapEntries = (blogPosts: any[] = []): SitemapEntry[] => {
   const staticEntries = generateStaticSitemapEntries();
   const blogEntries = generateBlogSitemapEntries(blogPosts);
-  
-  // Add new blog post entries for canonical fix
-  const newBlogEntries: SitemapEntry[] = [
-    {
-      url: 'https://safeorstolen.com/app/features',
-      lastmod: new Date().toISOString().split('T')[0],
-      changefreq: 'monthly',
-      priority: 0.7
-    },
-    {
-      url: 'https://safeorstolen.com/download',
-      lastmod: new Date().toISOString().split('T')[0],
-      changefreq: 'monthly',
-      priority: 0.7
-    }
-  ];
-  
-  return [...staticEntries, ...blogEntries, ...newBlogEntries];
+
+  // De-dupe by URL (prevents duplicates if a blog post is both statically routed + stored in DB)
+  const map = new Map<string, SitemapEntry>();
+  [...staticEntries, ...blogEntries].forEach((e) => {
+    map.set(e.url, e);
+  });
+
+  return Array.from(map.values());
 };
 
 export const generateSitemapXML = (entries: SitemapEntry[]): string => {
