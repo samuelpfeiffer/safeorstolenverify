@@ -32,7 +32,7 @@ export const ConversionOptimizer: React.FC = () => {
   const getFunnelStep = (path: string): string => {
     const funnelMap: Record<string, string> = {
       '/': 'awareness',
-      '/problem': 'problem_aware',
+      '/about': 'problem_aware',
       '/how-it-works': 'solution_aware',
       '/check-phone': 'service_aware',
       '/check-car': 'service_aware',

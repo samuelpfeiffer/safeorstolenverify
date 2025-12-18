@@ -22,7 +22,6 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     // Core Pages
     '/': [],
     '/about': [{ name: 'About Us', href: '/about' }],
-    '/contact': [{ name: 'About & Support', href: '/about' }],
     '/faq': [{ name: 'FAQ', href: '/faq' }],
     '/pricing': [{ name: 'Pricing', href: '/pricing' }],
     '/how-it-works': [{ name: 'How It Works', href: '/how-it-works' }],
@@ -32,7 +31,6 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     
     // Verification Tools
     '/verify': [{ name: 'Verify Item', href: '/verify' }],
-    '/stolen-item-checker': [{ name: 'Verify Item', href: '/verify' }],
     '/check-phone': [{ name: 'Check Phone', href: '/check-phone' }],
     '/check-car': [{ name: 'Check Car', href: '/check-car' }],
     '/check-bike': [{ name: 'Check Bike', href: '/check-bike' }],
@@ -164,7 +162,7 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
  */
 export const getPageCategory = (pathname: string): string => {
   if (pathname === '/') return 'home';
-  if (pathname.startsWith('/check-') || pathname === '/verify' || pathname === '/stolen-item-checker') {
+  if (pathname.startsWith('/check-') || pathname === '/verify') {
     return 'verification-tools';
   }
   if (pathname.includes('-vin-lookup') || pathname.includes('-vin-check')) {

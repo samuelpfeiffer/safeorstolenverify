@@ -41,7 +41,7 @@ export const ExitIntentPopup = () => {
 
   const handleInstallApp = () => {
     setIsVisible(false);
-    navigate('/install-app');
+    navigate('/app');
   };
 
   if (!isVisible) return null;

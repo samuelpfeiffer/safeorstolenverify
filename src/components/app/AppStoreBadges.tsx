@@ -57,7 +57,7 @@ export const AppStoreBadges = ({
         <Button 
           variant="outline"
           className={`gap-2 ${sizeClasses[size]}`}
-          onClick={() => navigate('/download')}
+          onClick={() => navigate('/app')}
         >
           <Download className={iconSizes[size]} />
           <span className="flex flex-col items-start">

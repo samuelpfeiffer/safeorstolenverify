@@ -59,7 +59,7 @@ export const ArizonaTheftSection = () => {
                 className="w-full bg-sos-orange hover:bg-sos-orange/90"
                 size="lg"
               >
-                <Link to="/arizona-license-plate-lookup">
+                <Link to="/license-plate-lookup">
                   <Car className="h-4 w-4 mr-2" />
                   Check License Plate Now
                   <ExternalLink className="h-4 w-4 ml-2" />
@@ -105,7 +105,7 @@ export const ArizonaTheftSection = () => {
                 className="w-full bg-sos-orange hover:bg-sos-orange/90"
                 size="lg"
               >
-                <Link to="/arizona-vin-lookup">
+                <Link to="/vin-checker">
                   <FileText className="h-4 w-4 mr-2" />
                   Check VIN Now
                   <ExternalLink className="h-4 w-4 ml-2" />

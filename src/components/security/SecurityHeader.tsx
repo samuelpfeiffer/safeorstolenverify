@@ -22,7 +22,7 @@ export const SecurityHeader = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate('/security-settings')}
+              onClick={() => navigate('/profile')}
               className="text-gray-300 hover:text-sos-orange"
             >
               <Settings className="h-4 w-4 mr-1" />
@@ -32,7 +32,7 @@ export const SecurityHeader = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate('/search-history')}
+              onClick={() => navigate('/dashboard')}
               className="text-gray-300 hover:text-sos-orange"
             >
               <Activity className="h-4 w-4 mr-1" />
@@ -42,7 +42,7 @@ export const SecurityHeader = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate('/security-settings')}
+              onClick={() => navigate('/profile')}
               className="text-gray-300 hover:text-sos-orange"
             >
               <Database className="h-4 w-4 mr-1" />

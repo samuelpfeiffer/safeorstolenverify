@@ -62,7 +62,7 @@ export const PurchaseCard = ({ item }: PurchaseCardProps) => {
           variant="outline" 
           size="sm" 
           className="w-full border-sos-orange text-sos-orange hover:bg-sos-orange/10"
-          onClick={() => navigate('/receipts')}
+          onClick={() => navigate('/dashboard')}
         >
           View Certificate
         </Button>

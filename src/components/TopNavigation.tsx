@@ -31,7 +31,7 @@ const TopNavigation = () => {
   ];
 
   const authenticatedLinks = [
-    { to: '/analytics', label: 'Analytics', icon: 'BarChart' },
+    { to: '/dashboard', label: 'Analytics', icon: 'BarChart' },
     { to: '/report-stolen', label: 'Report Stolen', icon: 'AlertCircle' },
   ];
 
@@ -129,11 +129,11 @@ const TopNavigation = () => {
                   <DropdownMenuItem onClick={() => navigate('/profile')}>
                     Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/search-history')}>
+                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>
                     History
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => navigate('/analytics')}>
+                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>
                     <BarChart className="w-4 h-4 mr-2" />
                     Analytics
                   </DropdownMenuItem>
@@ -224,7 +224,7 @@ const TopNavigation = () => {
                     variant="outline"
                     className="w-full justify-start gap-2"
                     onClick={() => {
-                      navigate('/analytics');
+                      navigate('/dashboard');
                       setIsMobileMenuOpen(false);
                     }}
                   >

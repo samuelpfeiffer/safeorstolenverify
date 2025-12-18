@@ -75,7 +75,7 @@ export const TrustBadgeStrip: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="sm" 
-              onClick={() => navigate('/trust-verification')}
+              onClick={() => navigate('/about')}
               className="bg-red-600 hover:bg-red-700 text-white"
             >
               <ExternalLink className="h-4 w-4 mr-2" />
