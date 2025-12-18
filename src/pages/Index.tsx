@@ -8,7 +8,8 @@ import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle, Trophy } from 'lucide-react';
-import heroImage from '@/assets/good_photo_for_sos-8.png';
+// Use public folder for better caching - preloaded in index.html
+const heroImage = '/images/hero-device.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';

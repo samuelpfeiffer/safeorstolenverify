@@ -5,8 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useImageOptimization } from '@/hooks/useImageOptimization';
-import heroDeviceImage from '@/assets/good_photo_for_sos-8.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
+
+// Use public folder for better caching - preloaded in index.html
+const heroDeviceImage = '/images/hero-device.png';
 
 // Import hero background
 const heroBackground = '/generated-assets/hero-background.jpg';

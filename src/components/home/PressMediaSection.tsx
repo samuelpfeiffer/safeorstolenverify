@@ -1,7 +1,9 @@
 import { ExternalLink, Award, Users, Globe, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import billboardImage from '@/assets/billboard-campaign.jpg';
 import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
+
+// Use public folder for better caching
+const billboardImage = '/images/billboard-campaign.jpg';
 
 export const PressMediaSection = () => {
   const pressItems = [
