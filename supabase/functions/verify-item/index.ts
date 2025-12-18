@@ -178,7 +178,29 @@ serve(async (req) => {
       timestamp: new Date().toISOString(),
     };
 
-    // Store result in database
+    // Store result in verification_searches (main search log)
+    try {
+      await supabaseClient
+        .from('verification_searches')
+        .insert({
+          user_id: userId || null,
+          serial_number: cleanIdentifier,
+          item_type: itemType || 'unknown',
+          result: { 
+            status: finalStatus, 
+            confidence: avgConfidence,
+            riskLevel,
+            message,
+            providers: providers.map(p => ({ provider: p.provider, status: p.status, confidence: p.confidence })),
+            checkedSources: providers.map(p => p.provider)
+          },
+        });
+      console.log('[verify-item] Search recorded in verification_searches');
+    } catch (searchError) {
+      console.error('[verify-item] Failed to store search:', searchError);
+    }
+
+    // Also store in verification_results for detailed analysis
     try {
       await supabaseClient
         .from('verification_results')
