@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Loader2, Star, Zap, Shield, ArrowRight, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Loader2, Star, Zap, Shield, ArrowRight, AlertTriangle, Tag, X } from 'lucide-react';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
 import { TrustSignals } from '@/components/pricing/TrustSignals';
 import { MoneyBackGuarantee } from '@/components/pricing/MoneyBackGuarantee';
@@ -147,7 +148,39 @@ interface ConversionOptimizedPricingProps {
 export const ConversionOptimizedPricing = ({
   onSubscribe
 }: ConversionOptimizedPricingProps) => {
+  const [searchParams] = useSearchParams();
   const [loadingTier, setLoadingTier] = useState<string | null>(null);
+  const [discountCode, setDiscountCode] = useState<string | null>(null);
+  const [discountPercent, setDiscountPercent] = useState<number>(0);
+  const [showDiscountBanner, setShowDiscountBanner] = useState(false);
+
+  // Valid discount codes
+  const VALID_DISCOUNTS: Record<string, number> = {
+    'EXIT20': 20,
+    'COMEBACK20': 20,
+    'WELCOME10': 10,
+    'LAUNCH25': 25,
+  };
+
+  // Check for discount code in URL
+  useEffect(() => {
+    const code = searchParams.get('discount')?.toUpperCase();
+    if (code && VALID_DISCOUNTS[code]) {
+      setDiscountCode(code);
+      setDiscountPercent(VALID_DISCOUNTS[code]);
+      setShowDiscountBanner(true);
+      // Store in session so it persists through checkout
+      sessionStorage.setItem('discount_code', code);
+    } else {
+      // Check session storage
+      const storedCode = sessionStorage.getItem('discount_code')?.toUpperCase();
+      if (storedCode && VALID_DISCOUNTS[storedCode]) {
+        setDiscountCode(storedCode);
+        setDiscountPercent(VALID_DISCOUNTS[storedCode]);
+        setShowDiscountBanner(true);
+      }
+    }
+  }, [searchParams]);
   
   const handleSubscribeClick = async (tierName: string) => {
     setLoadingTier(tierName);
@@ -156,6 +189,13 @@ export const ConversionOptimizedPricing = ({
     } finally {
       setTimeout(() => setLoadingTier(null), 3000);
     }
+  };
+
+  const applyDiscount = (price: number) => {
+    if (discountPercent > 0) {
+      return price * (1 - discountPercent / 100);
+    }
+    return price;
   };
 
   const casualTiers = [
@@ -200,6 +240,35 @@ export const ConversionOptimizedPricing = ({
 
   return (
     <section className="w-full py-16 px-4">
+      {/* Discount Code Banner */}
+      {showDiscountBanner && discountCode && (
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gradient-to-r from-accent/20 via-accent/30 to-accent/20 border-2 border-accent rounded-xl p-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Tag className="w-6 h-6 text-accent" />
+              <div>
+                <p className="font-bold text-lg text-accent">
+                  🎉 {discountPercent}% OFF Applied!
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Code <span className="font-mono font-bold">{discountCode}</span> automatically applied to your purchase
+                </p>
+              </div>
+            </div>
+            <button 
+              onClick={() => {
+                setShowDiscountBanner(false);
+                setDiscountCode(null);
+                setDiscountPercent(0);
+                sessionStorage.removeItem('discount_code');
+              }}
+              className="text-muted-foreground hover:text-foreground p-1"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      )}
       {/* Risk Comparison - Show what they could lose */}
       <div className="max-w-3xl mx-auto mb-12 p-8 bg-gradient-to-r from-destructive/20 via-destructive/10 to-destructive/20 border border-destructive/50 rounded-2xl">
         <div className="text-center mb-6">
