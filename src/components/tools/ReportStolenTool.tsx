@@ -40,7 +40,7 @@ const ReportStolenTool = () => {
         description: 'Please sign in to report a stolen item',
         variant: 'destructive'
       });
-      navigate('/auth', { state: { redirect: '/tools/report-stolen' } });
+      navigate('/auth', { state: { redirect: '/report-stolen' } });
       return;
     }
 
