@@ -85,11 +85,12 @@ export const RouteValidator: React.FC = () => {
       // Business
       '/enterprise-demo': '/for-businesses',
       '/marketplace-integration': '/for-marketplaces',
+      '/for-brands': '/for-businesses',
 
       // Mobile app legacy
-      '/mobile-app': '/download',
-      '/get-app': '/download',
-      '/install-app': '/download',
+      '/mobile-app': '/app',
+      '/get-app': '/app',
+      '/install-app': '/app',
 
       // Legacy policy pages
       '/privacy-policy': '/privacy',

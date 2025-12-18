@@ -78,12 +78,12 @@ export const getSitemapPriority = (pathname: string): number => {
   if (pathname === '/') return 1.0;
   
   // Main verification tools
-  if (pathname.includes('/check-') || pathname.includes('/verify') || pathname === '/stolen-item-checker') {
+  if (pathname.includes('/check-') || pathname.includes('/verify') || pathname.includes('-checker')) {
     return 0.9;
   }
   
   // Important info pages
-  if (pathname === '/how-it-works' || pathname === '/for-brands') {
+  if (pathname === '/how-it-works' || pathname === '/for-brands' || pathname === '/for-businesses') {
     return 0.8;
   }
   
@@ -91,7 +91,7 @@ export const getSitemapPriority = (pathname: string): number => {
   if (pathname.includes('/blog/')) return 0.7;
   
   // Other pages
-  if (pathname === '/about' || pathname === '/contact' || pathname === '/faq') {
+  if (pathname === '/about' || pathname === '/faq') {
     return 0.6;
   }
   
@@ -112,12 +112,12 @@ export const getChangeFrequency = (pathname: string): string => {
   if (pathname.includes('/blog/')) return 'monthly';
   
   // Main tools and features change occasionally
-  if (pathname.includes('/check-') || pathname.includes('/verify')) {
+  if (pathname.includes('/check-') || pathname.includes('/verify') || pathname.includes('-checker')) {
     return 'weekly';
   }
   
   // Static info pages change rarely
-  if (pathname === '/about' || pathname === '/contact' || pathname === '/how-it-works') {
+  if (pathname === '/about' || pathname === '/faq' || pathname === '/how-it-works') {
     return 'yearly';
   }
   

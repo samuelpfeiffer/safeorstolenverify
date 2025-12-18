@@ -232,7 +232,7 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
     ]
   },
   {
-    url: 'https://safeorstolen.com/for-brands',
+    url: 'https://safeorstolen.com/for-businesses',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'monthly',
     priority: 0.7,
@@ -321,19 +321,19 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => [
   
   // Legal Pages - Important for Trust & Compliance
   {
-    url: 'https://safeorstolen.com/privacy-policy',
+    url: 'https://safeorstolen.com/privacy',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
     priority: 0.4
   },
   {
-    url: 'https://safeorstolen.com/terms-of-service',
+    url: 'https://safeorstolen.com/terms',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
     priority: 0.4
   },
   {
-    url: 'https://safeorstolen.com/disclaimer',
+    url: 'https://safeorstolen.com/refunds',
     lastmod: new Date().toISOString().split('T')[0],
     changefreq: 'yearly',
     priority: 0.3

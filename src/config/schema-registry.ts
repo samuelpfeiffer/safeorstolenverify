@@ -18,10 +18,10 @@ export const SCHEMA_REGISTRY: PageSchemaConfig[] = [
   { path: '/about', schemaTypes: ['AboutPage', 'Organization'], priority: 'critical', implemented: true },
   { path: '/how-it-works', schemaTypes: ['HowTo', 'Service'], priority: 'critical', implemented: false },
   { path: '/faq', schemaTypes: ['FAQPage'], priority: 'critical', implemented: true },
-  { path: '/contact', schemaTypes: ['ContactPage', 'ContactPoint'], priority: 'critical', implemented: false },
   { path: '/app', schemaTypes: ['SoftwareApplication'], priority: 'critical', implemented: true },
   { path: '/terms', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
   { path: '/privacy', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
+  { path: '/auth', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
 
   // Item-Specific Verification Pages (High - 10 schemas)
   { path: '/check-phone', schemaTypes: ['Service', 'HowTo'], priority: 'high', implemented: false },
@@ -61,10 +61,10 @@ export const SCHEMA_REGISTRY: PageSchemaConfig[] = [
 
   // Business Pages (Medium - 10 schemas)
   { path: '/for-brands', schemaTypes: ['Service', 'Offer'], priority: 'medium', implemented: false },
+  { path: '/for-businesses', schemaTypes: ['Service', 'Offer'], priority: 'medium', implemented: false },
+  { path: '/for-marketplaces', schemaTypes: ['Service'], priority: 'medium', implemented: false },
+  { path: '/for-pawn-shops', schemaTypes: ['Service'], priority: 'medium', implemented: false },
   { path: '/auction-houses', schemaTypes: ['Service'], priority: 'medium', implemented: false },
-  { path: '/pawn-shops', schemaTypes: ['Service'], priority: 'medium', implemented: false },
-  { path: '/integrations', schemaTypes: ['SoftwareApplication'], priority: 'medium', implemented: false },
-  { path: '/marketplace-integration', schemaTypes: ['Service'], priority: 'medium', implemented: false },
   { path: '/api-docs', schemaTypes: ['TechArticle'], priority: 'medium', implemented: false },
   { path: '/partnerships', schemaTypes: ['WebPage'], priority: 'medium', implemented: false },
   { path: '/case-studies', schemaTypes: ['CollectionPage'], priority: 'medium', implemented: false },
