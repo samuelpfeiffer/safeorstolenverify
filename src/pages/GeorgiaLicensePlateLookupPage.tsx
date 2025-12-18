@@ -1,13 +1,10 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
-import { STATE_LICENSE_PLATE_DATA } from '@/data/stateLicensePlateData';
 
 const GeorgiaLicensePlateLookupPage = () => {
-  const stateData = STATE_LICENSE_PLATE_DATA.georgia;
-  
   return (
     <ItemLandingPageTemplate
       title="Georgia License Plate Lookup - Free GA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription={`Free Georgia license plate lookup. Check if a GA vehicle is stolen. ${stateData.theftStats.annualThefts} vehicles stolen annually in Georgia. Verify before buying in Atlanta, Savannah, Augusta.`}
+      metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is stolen. Verify before buying in Atlanta, Savannah, Augusta. Search Georgia DDS and law enforcement databases."
       h1="Georgia License Plate Lookup - Verify GA Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
@@ -21,13 +18,13 @@ const GeorgiaLicensePlateLookupPage = () => {
         'GA vehicle stolen database'
       ]}
       content={{
-        intro: `Georgia sees ${stateData.theftStats.annualThefts} vehicle thefts annually, with Atlanta accounting for the majority of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our comprehensive database that includes Georgia DDS records, NCIC, and law enforcement databases. Get instant results in 3 seconds.`,
+        intro: "Georgia experiences notable vehicle theft, with Atlanta accounting for a significant portion of stolen vehicles. Before buying any used vehicle in Georgia, verify the license plate against our comprehensive database that includes Georgia DDS records, NCIC, and law enforcement databases.",
         
-        whatIs: `A Georgia license plate lookup allows you to verify if a vehicle registered in Georgia has been reported stolen, salvaged, or has title issues. By entering the GA license plate number, our system cross-references the Georgia Department of Driver Services (DDS), National Crime Information Center (NCIC), insurance databases, and local law enforcement records. This verification is essential when purchasing vehicles in Atlanta, Savannah, Augusta, Columbus, and throughout Georgia's active used vehicle market.`,
+        whatIs: "A Georgia license plate lookup allows you to verify if a vehicle registered in Georgia has been reported stolen, salvaged, or has title issues. By entering the GA license plate number, our system cross-references the Georgia Department of Driver Services (DDS), National Crime Information Center (NCIC), insurance databases, and local law enforcement records. This verification is essential when purchasing vehicles in Atlanta, Savannah, Augusta, Columbus, and throughout Georgia's active used vehicle market.",
         
-        howItWorks: `Our Georgia license plate lookup works by querying multiple databases simultaneously: (1) Georgia DDS vehicle registration records to verify the plate is actively registered, (2) NCIC stolen vehicle database for federal theft reports, (3) Georgia Bureau of Investigation records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt or junked designations. Within 3 seconds, you receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.`,
+        howItWorks: "Our Georgia license plate lookup works by querying multiple databases simultaneously: (1) Georgia DDS vehicle registration records to verify the plate is actively registered, (2) NCIC stolen vehicle database for federal theft reports, (3) Georgia Bureau of Investigation records, (4) Insurance claim databases for salvage and total loss history, (5) Title brand databases for rebuilt or junked designations. You receive a comprehensive report showing the vehicle's theft status, registration validity, and any red flags.",
         
-        whyCheck: `Georgia ranks among the top 15 states for vehicle theft, with Atlanta being a major hotspot. The I-85 and I-75 corridors are used by organized theft rings to transport stolen vehicles between states. Georgia's proximity to ports in Savannah makes it a target for vehicle export schemes. Additionally, flood-damaged vehicles from coastal storms are sometimes resold with clean titles. Always verify before purchasing any vehicle in Georgia.`,
+        whyCheck: "Georgia has notable vehicle theft activity, with Atlanta being a hotspot. The I-85 and I-75 corridors are used by theft rings to transport stolen vehicles between states. Georgia's proximity to ports in Savannah makes it a potential target for vehicle export schemes. Additionally, flood-damaged vehicles from coastal storms are sometimes resold with clean titles. Always verify before purchasing any vehicle in Georgia.",
         
         benefits: [
           "Comprehensive Georgia DDS database coverage",
@@ -36,8 +33,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           "Verify seller is registered owner in Georgia",
           "Access NCIC and Georgia Bureau of Investigation records",
           "Detect cloned plates and VIN switching",
-          "Free Georgia license plate lookup",
-          "Instant 3-second results"
+          "Free Georgia license plate lookup"
         ],
         
         process: [
@@ -56,7 +52,7 @@ const GeorgiaLicensePlateLookupPage = () => {
           },
           {
             question: "How accurate is the Georgia license plate stolen vehicle check?",
-            answer: "Our Georgia license plate lookup is highly accurate for registered vehicles. We check official Georgia DDS records, NCIC (FBI's database), and Georgia Bureau of Investigation records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
+            answer: "Our Georgia license plate lookup is accurate for registered vehicles. We check official Georgia DDS records, NCIC (FBI's database), and Georgia Bureau of Investigation records. However, we always recommend following up with a full VIN check for complete vehicle history before finalizing any purchase."
           },
           {
             question: "Does the lookup work for vehicles in Savannah and coastal Georgia?",
@@ -75,8 +71,8 @@ const GeorgiaLicensePlateLookupPage = () => {
             answer: "Use SafeOrStolen to verify the license plate, then confirm the seller's name matches the registered owner on the Georgia title. Ask to see their Georgia driver's license and compare the name and address. If anything doesn't match, investigate further before purchasing."
           },
           {
-            question: "What's the vehicle theft rate in Atlanta vs other Georgia cities?",
-            answer: `Atlanta has the highest vehicle theft rate in Georgia, followed by Augusta, Columbus, and Savannah. The entire state sees ${stateData.theftStats.annualThefts} vehicle thefts annually with a ${stateData.theftStats.recoveryRate} recovery rate. Always verify before buying anywhere in Georgia.`
+            question: "What cities does the Georgia license plate lookup cover?",
+            answer: "Our Georgia license plate lookup covers all cities statewide including Atlanta, Savannah, Augusta, Columbus, Macon, Athens, Sandy Springs, Roswell, and every other city, town, and county in Georgia."
           },
           {
             question: "Is the Georgia license plate lookup free?",
