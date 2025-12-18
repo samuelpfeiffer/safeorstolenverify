@@ -209,7 +209,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /seo-strategy                /about  301!
 /fastercapital/tech-cofounder /about 301!
 /enterprise-demo             /about  301!
-/for-businesses              /for-pawn-shops  301!
+# /for-businesses has real page in AppRoutes - DO NOT REDIRECT
 /database                    /about  301!
 /analytics                   /dashboard  301!
 
@@ -373,6 +373,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /state/florida/stolen-item-checker        /florida-vin-lookup           301!
 /state/new-york/stolen-item-checker       /new-york-vin-lookup          301!
 /state/illinois/stolen-item-checker       /illinois-vin-lookup          301!
+
+# ============================================
+# DUPLICATE CONTENT REDIRECTS (SEO Canonical)
+# ============================================
+/stolen-phone-check                /check-stolen-phone  301!
+/stolen-car-check                  /check-stolen-car    301!
 
 # ============================================
 # INTERNATIONAL VIN CHECK PAGES

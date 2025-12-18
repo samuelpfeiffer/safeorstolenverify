@@ -54,6 +54,8 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/firearm-serial-check', to: '/firearms-check', permanent: true },
   { from: '/how-to-verify-car-not-stolen', to: '/check-car', permanent: true },
   { from: '/how-to-check-if-phone-is-stolen', to: '/check-phone', permanent: true },
+  { from: '/stolen-phone-check', to: '/check-stolen-phone', permanent: true },
+  { from: '/stolen-car-check', to: '/check-stolen-car', permanent: true },
 
   // ===== STATE ABBREVIATION PAGES =====
   { from: '/texas', to: '/texas-vin-lookup', permanent: true },
