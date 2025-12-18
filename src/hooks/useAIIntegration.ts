@@ -1,13 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { aiService, type AIVerificationAnalysis, type AIContentGeneration } from '@/services/aiService';
+import { toast } from '@/hooks/use-toast';
 
 export interface AIIntegrationState {
   isEnabled: boolean;
   isLoading: boolean;
   currentAnalysis: AIVerificationAnalysis | null;
   contentGeneration: AIContentGeneration | null;
-  chatHistory: any[];
-  recommendations: any[];
+  chatHistory: Array<{
+    type: 'user' | 'ai';
+    content: string;
+    suggestedActions?: string[];
+    confidence?: number;
+    timestamp: Date;
+  }>;
+  recommendations: Array<{
+    type: 'safety' | 'item' | 'risk';
+    content: string;
+  }>;
+  error: string | null;
 }
 
 export const useAIIntegration = (itemData?: any) => {
@@ -17,18 +28,46 @@ export const useAIIntegration = (itemData?: any) => {
     currentAnalysis: null,
     contentGeneration: null,
     chatHistory: [],
-    recommendations: []
+    recommendations: [],
+    error: null
   });
 
   // Auto-analyze when item data changes
   useEffect(() => {
-    if (itemData && state.isEnabled) {
+    if (itemData && state.isEnabled && itemData.serialNumber) {
       performAIAnalysis(itemData);
     }
-  }, [itemData, state.isEnabled]);
+  }, [itemData?.serialNumber, state.isEnabled]);
 
-  const performAIAnalysis = async (data: any) => {
-    setState(prev => ({ ...prev, isLoading: true }));
+  const handleError = useCallback((error: any, context: string) => {
+    console.error(`AI ${context} failed:`, error);
+    
+    // Check for specific error types
+    const errorMessage = error?.message || String(error);
+    
+    if (errorMessage.includes('429') || errorMessage.includes('rate limit')) {
+      toast({
+        title: "Rate Limit Reached",
+        description: "Too many requests. Please wait a moment and try again.",
+        variant: "destructive"
+      });
+      setState(prev => ({ ...prev, error: 'Rate limit exceeded' }));
+    } else if (errorMessage.includes('402') || errorMessage.includes('quota')) {
+      toast({
+        title: "AI Service Quota Exceeded",
+        description: "AI analysis quota reached. Basic verification still available.",
+        variant: "destructive"
+      });
+      setState(prev => ({ ...prev, error: 'Quota exceeded' }));
+    } else {
+      setState(prev => ({ ...prev, error: errorMessage }));
+    }
+  }, []);
+
+  const performAIAnalysis = useCallback(async (data: any) => {
+    if (!data?.serialNumber) return null;
+    
+    setState(prev => ({ ...prev, isLoading: true, error: null }));
     
     try {
       const analysis = await aiService.analyzeVerification({
@@ -39,30 +78,33 @@ export const useAIIntegration = (itemData?: any) => {
         metadata: {
           color: data.color,
           price: data.price,
-          location: data.location
+          location: data.location,
+          brand: data.brand,
+          model: data.model
         }
       });
 
       setState(prev => ({
         ...prev,
         currentAnalysis: analysis,
-        isLoading: false
+        isLoading: false,
+        error: null
       }));
 
       return analysis;
     } catch (error) {
-      console.error('AI analysis failed:', error);
+      handleError(error, 'analysis');
       setState(prev => ({ ...prev, isLoading: false }));
       return null;
     }
-  };
+  }, [handleError]);
 
-  const generateAIContent = async (itemData: any, verificationResult: any) => {
-    setState(prev => ({ ...prev, isLoading: true }));
+  const generateAIContent = useCallback(async (itemData: any, verificationResult: any) => {
+    setState(prev => ({ ...prev, isLoading: true, error: null }));
     
     try {
       const content = await aiService.generateContent({
-        product: itemData, // Note: External API field name (their terminology, not ours)
+        product: itemData,
         verificationResult,
         userContext: {}
       });
@@ -70,21 +112,27 @@ export const useAIIntegration = (itemData?: any) => {
       setState(prev => ({
         ...prev,
         contentGeneration: content,
-        isLoading: false
+        isLoading: false,
+        error: null
       }));
 
       return content;
     } catch (error) {
-      console.error('AI content generation failed:', error);
+      handleError(error, 'content generation');
       setState(prev => ({ ...prev, isLoading: false }));
       return null;
     }
-  };
+  }, [handleError]);
 
-  const sendChatMessage = async (message: string, context?: any) => {
+  const sendChatMessage = useCallback(async (message: string, context?: any) => {
     setState(prev => ({ 
       ...prev, 
-      chatHistory: [...prev.chatHistory, { type: 'user', content: message, timestamp: new Date() }]
+      chatHistory: [...prev.chatHistory, { 
+        type: 'user', 
+        content: message, 
+        timestamp: new Date() 
+      }],
+      error: null
     }));
 
     try {
@@ -103,71 +151,125 @@ export const useAIIntegration = (itemData?: any) => {
 
       return response;
     } catch (error) {
-      console.error('AI chat failed:', error);
+      handleError(error, 'chat');
       return null;
     }
-  };
+  }, [handleError]);
 
-  const detectFraudPatterns = async (fraudData: any) => {
-    setState(prev => ({ ...prev, isLoading: true }));
+  const streamChatMessage = useCallback(async (
+    message: string, 
+    context?: any,
+    onDelta?: (text: string) => void
+  ) => {
+    const messages = [
+      ...state.chatHistory.map(msg => ({
+        role: msg.type === 'user' ? 'user' as const : 'assistant' as const,
+        content: msg.content
+      })),
+      { role: 'user' as const, content: message }
+    ];
+
+    setState(prev => ({ 
+      ...prev, 
+      chatHistory: [...prev.chatHistory, { 
+        type: 'user', 
+        content: message, 
+        timestamp: new Date() 
+      }],
+      error: null
+    }));
+
+    let fullResponse = '';
+
+    await aiService.streamChat(
+      messages,
+      context,
+      (delta) => {
+        fullResponse += delta;
+        onDelta?.(delta);
+      },
+      () => {
+        setState(prev => ({
+          ...prev,
+          chatHistory: [...prev.chatHistory, { 
+            type: 'ai', 
+            content: fullResponse, 
+            timestamp: new Date() 
+          }]
+        }));
+      }
+    );
+
+    return fullResponse;
+  }, [state.chatHistory]);
+
+  const detectFraudPatterns = useCallback(async (fraudData: any) => {
+    setState(prev => ({ ...prev, isLoading: true, error: null }));
     
     try {
       const fraudAnalysis = await aiService.detectFraudPatterns(fraudData);
       setState(prev => ({ ...prev, isLoading: false }));
       return fraudAnalysis;
     } catch (error) {
-      console.error('Fraud detection failed:', error);
+      handleError(error, 'fraud detection');
       setState(prev => ({ ...prev, isLoading: false }));
       return null;
     }
-  };
+  }, [handleError]);
 
-  const getPersonalizedRecommendations = async (userProfile: any, history: any[]) => {
+  const getPersonalizedRecommendations = useCallback(async (userProfile: any, history: any[]) => {
     try {
       const recommendations = await aiService.generateRecommendations(userProfile, history);
       
       setState(prev => ({
         ...prev,
         recommendations: [
-          ...recommendations.safetyTips.map(tip => ({ type: 'safety', content: tip })),
-          ...recommendations.itemSuggestions.map(suggestion => ({ type: 'item', content: suggestion })),
-          ...recommendations.riskAlerts.map(alert => ({ type: 'risk', content: alert }))
+          ...recommendations.safetyTips.map(tip => ({ type: 'safety' as const, content: tip })),
+          ...recommendations.itemSuggestions.map(suggestion => ({ type: 'item' as const, content: suggestion })),
+          ...recommendations.riskAlerts.map(alert => ({ type: 'risk' as const, content: alert }))
         ]
       }));
 
       return recommendations;
     } catch (error) {
-      console.error('Recommendations failed:', error);
+      handleError(error, 'recommendations');
       return null;
     }
-  };
+  }, [handleError]);
 
-  const toggleAI = (enabled: boolean) => {
+  const toggleAI = useCallback((enabled: boolean) => {
     setState(prev => ({ ...prev, isEnabled: enabled }));
-  };
+  }, []);
 
-  const clearChatHistory = () => {
+  const clearChatHistory = useCallback(() => {
     setState(prev => ({ ...prev, chatHistory: [] }));
-  };
+  }, []);
 
-  const resetAnalysis = () => {
+  const resetAnalysis = useCallback(() => {
     setState(prev => ({
       ...prev,
       currentAnalysis: null,
       contentGeneration: null,
-      recommendations: []
+      recommendations: [],
+      error: null
     }));
-  };
+  }, []);
+
+  const clearError = useCallback(() => {
+    setState(prev => ({ ...prev, error: null }));
+  }, []);
 
   return {
     ...state,
     performAIAnalysis,
     generateAIContent,
     sendChatMessage,
+    streamChatMessage,
     detectFraudPatterns,
     getPersonalizedRecommendations,
     toggleAI,
     clearChatHistory,
-    resetAnalysis
+    resetAnalysis,
+    clearError
   };
 };
