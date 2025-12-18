@@ -21,24 +21,20 @@ export const SubscriptionStatusCard = () => {
 
       const { data: profile } = await supabase
         .from('profiles')
-        .select('subscription_tier, created_at, trial_end_date')
+        .select('subscription_tier, subscription_end, created_at, trial_end_date')
         .eq('id', user.id)
-        .single();
-
-      const { data: subscriber } = await supabase
-        .from('subscribers')
-        .select('subscribed, subscription_end')
-        .eq('user_id', user.id)
         .single();
 
       const trialDaysRemaining = profile?.created_at
         ? Math.max(0, 14 - Math.floor((Date.now() - new Date(profile.created_at).getTime()) / (1000 * 60 * 60 * 24)))
         : 0;
 
+      const isPaid = profile?.subscription_tier && profile.subscription_tier !== 'free' && profile.subscription_tier !== 'starter';
+
       return {
         tier: profile?.subscription_tier || 'starter',
-        isSubscribed: subscriber?.subscribed || false,
-        subscriptionEndDate: subscriber?.subscription_end,
+        isSubscribed: isPaid || false,
+        subscriptionEndDate: profile?.subscription_end,
         trialDaysRemaining,
         createdAt: profile?.created_at
       };

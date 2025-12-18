@@ -25,7 +25,7 @@ export * from './useVerification';
 export * from './useSearchFormLogic';
 export * from './usePendingVerification';
 export * from './useSearchHistory';
-export * from './useReceiptGenerator';
+// export * from './useReceiptGenerator'; // Removed - receipts table dropped
 
 // Security Hooks
 export * from './useSecureProfileOperations';
@@ -35,7 +35,7 @@ export * from './useSecureVerificationOperations';
 export * from './useBlogPosts';
 
 // System Hooks
-export * from './useSystemConfiguration';
+// export * from './useSystemConfiguration'; // Removed - system_configuration table dropped
 export * from './useTermsAcceptance';
 export * from './usePromotion';
 export * from './useComponentLifecycle';

@@ -3,7 +3,7 @@ import { VerificationItemType } from '@/utils/verificationUtils';
 import { ShieldCheck, ShieldAlert, ShieldX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
-import { useReceiptGenerator } from '@/hooks/useReceiptGenerator';
+// import { useReceiptGenerator } from '@/hooks/useReceiptGenerator'; // Removed - receipts table dropped
 
 interface ReceiptDialogProps {
   open: boolean;
@@ -12,7 +12,8 @@ interface ReceiptDialogProps {
 }
 
 const ReceiptDialog = ({ open, onOpenChange, activeItem }: ReceiptDialogProps) => {
-  const { generateReceipt, isGenerating } = useReceiptGenerator();
+  // Receipt generation removed - table dropped
+  const isGenerating = false;
 
   if (!activeItem) return null;
   
@@ -30,17 +31,9 @@ const ReceiptDialog = ({ open, onOpenChange, activeItem }: ReceiptDialogProps) =
   };
 
   const handleSaveReceipt = async () => {
-    if (!activeItem.serialNumber) return;
-    
-    const receipt = await generateReceipt(
-      activeItem.id, 
-      activeItem.serialNumber, 
-      activeItem.category
-    );
-    
-    if (receipt) {
-      onOpenChange(false);
-    }
+    // Receipt generation removed - table dropped
+    console.log('Receipt generation disabled');
+    onOpenChange(false);
   };
 
   return (

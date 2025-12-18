@@ -3,7 +3,7 @@ import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useToast } from '@/hooks/use-toast';
 import { verificationEngine, type VerificationRequest, type VerificationResult } from '../VerificationEngine';
 import { logAuditEvent, AUDIT_ACTIONS } from '@/utils/auditLogging';
-import { useSecuritySettings } from '@/hooks/useSecuritySettings';
+// import { useSecuritySettings } from '@/hooks/useSecuritySettings'; // Removed - table dropped
 
 export const useAdvancedVerification = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +11,8 @@ export const useAdvancedVerification = () => {
   const [history, setHistory] = useState<VerificationResult[]>([]);
   const { user } = useUnifiedAuth();
   const { toast } = useToast();
-  const { settings } = useSecuritySettings();
+  // Security settings removed - table dropped
+  const settings = { maxVerificationsPerDay: 100 };
 
   const verifyItem = useCallback(async (
     serialNumber: string,
@@ -76,8 +77,8 @@ export const useAdvancedVerification = () => {
         variant: config.variant
       });
 
-      // Audit logging
-      if (settings?.enableAuditLogging) {
+      // Audit logging - always enabled for security
+      if (true) {
         await logAuditEvent({
           action: AUDIT_ACTIONS.VERIFICATION_CREATED,
           tableName: 'verification_results',

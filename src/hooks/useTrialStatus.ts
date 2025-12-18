@@ -44,24 +44,18 @@ export const useTrialStatus = () => {
     try {
       setIsLoading(true);
 
-      // Check if user is subscribed via subscribers table OR has a paid tier in profiles
-      const { data: subscription } = await supabase
-        .from('subscribers')
-        .select('subscribed')
-        .eq('user_id', user.id)
-        .single();
-
+      // Check profile for subscription status
       const { data: profile } = await supabase
         .from('profiles')
-        .select('subscription_tier, monthly_verification_limit, created_at')
+        .select('subscription_tier, subscription_end, monthly_verification_limit, created_at')
         .eq('id', user.id)
         .single();
 
-      // User is paid if they have active subscription OR have a paid tier (pay_per_use, starter, personal, professional, enterprise)
+      // User is paid if they have a paid tier
       const paidTiers = ['pay_per_use', 'starter', 'personal', 'professional', 'enterprise'];
       const hasPaidTier = profile?.subscription_tier && paidTiers.includes(profile.subscription_tier);
       
-      if (subscription?.subscribed || hasPaidTier) {
+      if (hasPaidTier) {
         // No trial needed for subscribers or paid users
         const limit = profile?.monthly_verification_limit || 999;
         setTrialStatus({

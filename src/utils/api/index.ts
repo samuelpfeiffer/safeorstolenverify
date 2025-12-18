@@ -10,9 +10,9 @@ export { supabase } from '@/integrations/supabase/client';
 export * from '../enhancedSecurityAudit';
 export * from '../errorHandling';
 
-// Configuration & System
-export * from '../configurationUtils';
-export * from '../dataRetention';
+// Configuration & System - removed (tables dropped)
+// export * from '../configurationUtils';
+// export * from '../dataRetention';
 
 // Analytics & Tracking
 export * from '../auditLogging';

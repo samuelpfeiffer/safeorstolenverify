@@ -143,9 +143,6 @@ const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
 const OneValleyRecognitionPage = lazy(() => import('@/pages/news/OneValleyRecognitionPage'));
 
 // Admin Pages
-const AutonomousAIDashboard = lazy(() => import('@/pages/admin/AutonomousAIDashboard'));
-const GSCMonitoringDashboard = lazy(() => import('@/pages/admin/GSCMonitoringDashboard'));
-const GSCConnectPage = lazy(() => import('@/pages/admin/GSCConnectPage'));
 const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
 const MarketingDashboard = lazy(() => import('@/pages/admin/MarketingDashboard'));
 const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
@@ -291,10 +288,7 @@ export const AppRoutes = () => {
         <Route path="/youtube" element={<YouTubePage />} />
         <Route path="/crunchbase" element={<CrunchbasePage />} />
 
-        {/* ADMIN ROUTES */}
-        <Route path="/admin/autonomous-ai" element={<AutonomousAIDashboard />} />
-        <Route path="/admin/gsc-status" element={<GSCMonitoringDashboard />} />
-        <Route path="/admin/gsc-connect" element={<GSCConnectPage />} />
+        {/* ADMIN ROUTES - Note: Some pages removed during database cleanup */}
         <Route path="/admin/gsc-callback" element={<GSCCallbackPage />} />
         <Route path="/admin/indexnow" element={<TriggerIndexNowPage />} />
         <Route path="/admin/batch-index" element={<BatchIndexPage />} />
