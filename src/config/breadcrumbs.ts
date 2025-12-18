@@ -44,117 +44,67 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
     // Blog
     '/blog': [{ name: 'Blog', href: '/blog' }],
     
-    // Guides
-    '/how-to-check-anything-stolen': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'How to Check Anything Stolen', href: '/how-to-check-anything-stolen' }
+    // Guides - redirect to blog
+    '/blog/complete-verification-guide': [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Complete Verification Guide', href: '/blog/complete-verification-guide' }
     ],
-    '/ultimate-guide-not-buying-stolen': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Ultimate Guide', href: '/ultimate-guide-not-buying-stolen' }
+    '/blog/how-to-check-if-phone-stolen': [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Phone Verification Guide', href: '/blog/how-to-check-if-phone-stolen' }
     ],
-    '/comprehensive-guide': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Comprehensive Guide', href: '/comprehensive-guide' }
+    '/blog/complete-vin-guide': [
+      { name: 'Blog', href: '/blog' },
+      { name: 'VIN Guide', href: '/blog/complete-vin-guide' }
     ],
-    '/buyer-guide': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Buyer Guide', href: '/buyer-guide' }
-    ],
-    '/seller-guide': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Seller Guide', href: '/seller-guide' }
-    ],
-    '/avoid-stolen-goods': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Avoid Stolen Goods', href: '/avoid-stolen-goods' }
-    ],
-    '/buy-used-electronics-safely': [
-      { name: 'Guides', href: '/blog' },
-      { name: 'Buy Electronics Safely', href: '/buy-used-electronics-safely' }
+    '/blog/protect-yourself-buying-used-electronics': [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Electronics Safety', href: '/blog/protect-yourself-buying-used-electronics' }
     ],
     
     // Competitor Comparisons
-    '/safeorstolen-vs-carfax': [
+    '/vs-carfax': [
       { name: 'Comparisons', href: '/compare' },
-      { name: 'vs Carfax', href: '/safeorstolen-vs-carfax' }
+      { name: 'vs Carfax', href: '/vs-carfax' }
     ],
-    '/safeorstolen-vs-checkmend': [
+    '/vs-checkmend': [
       { name: 'Comparisons', href: '/compare' },
-      { name: 'vs CheckMEND', href: '/safeorstolen-vs-checkmend' }
+      { name: 'vs CheckMEND', href: '/vs-checkmend' }
     ],
-    '/safeorstolen-vs-ebay': [
+    '/vs-imeiinfo': [
       { name: 'Comparisons', href: '/compare' },
-      { name: 'vs eBay', href: '/safeorstolen-vs-ebay' }
+      { name: 'vs IMEI.info', href: '/vs-imeiinfo' }
     ],
-    '/safeorstolen-vs-greyscout': [
+    '/vs-swappa': [
       { name: 'Comparisons', href: '/compare' },
-      { name: 'vs GreyScout', href: '/safeorstolen-vs-greyscout' }
+      { name: 'vs Swappa', href: '/vs-swappa' }
     ],
-    '/safeorstolen-vs-imeiinfo': [
+    '/vs-autocheck': [
       { name: 'Comparisons', href: '/compare' },
-      { name: 'vs IMEI.info', href: '/safeorstolen-vs-imeiinfo' }
-    ],
-    '/safeorstolen-vs-imeipro': [
-      { name: 'Comparisons', href: '/compare' },
-      { name: 'vs IMEIpro', href: '/safeorstolen-vs-imeipro' }
-    ],
-    '/safeorstolen-vs-swappa': [
-      { name: 'Comparisons', href: '/compare' },
-      { name: 'vs Swappa', href: '/safeorstolen-vs-swappa' }
-    ],
-    '/competitor-alternatives': [
-      { name: 'Comparisons', href: '/competitor-alternatives' }
+      { name: 'vs AutoCheck', href: '/vs-autocheck' }
     ],
     
     // Business Pages
-    '/enterprise-demo': [
+    '/for-pawn-shops': [
       { name: 'Business', href: '/for-businesses' },
-      { name: 'Business Solutions', href: '/for-businesses' }
+      { name: 'For Pawn Shops', href: '/for-pawn-shops' }
     ],
-    '/marketplace': [
+    '/for-dealers': [
+      { name: 'Business', href: '/for-businesses' },
+      { name: 'For Dealers', href: '/for-dealers' }
+    ],
+    '/for-marketplaces': [
       { name: 'Business', href: '/for-businesses' },
       { name: 'For Marketplaces', href: '/for-marketplaces' }
     ],
-    '/integrations': [
+    '/for-auction-houses': [
       { name: 'Business', href: '/for-businesses' },
-      { name: 'Integrations', href: '/for-businesses' }
-    ],
-    '/api-docs': [
-      { name: 'Business', href: '/for-businesses' },
-      { name: 'API Documentation', href: '/for-businesses' }
-    ],
-    '/partnerships': [
-      { name: 'Business', href: '/for-businesses' },
-      { name: 'Partnerships', href: '/for-businesses' }
+      { name: 'For Auction Houses', href: '/for-auction-houses' }
     ],
     
-    // Company Pages - redirected to /about
-    '/press': [
-      { name: 'Resources', href: '/resources' },
-      { name: 'Press', href: '/press' }
-    ],
-    
-    // Regional Pages
-    '/region/uk': [
-      { name: 'Regions', href: '/regions' },
-      { name: 'United Kingdom', href: '/region/uk' }
-    ],
-    '/region/brazil': [
-      { name: 'Regions', href: '/regions' },
-      { name: 'Brazil', href: '/region/brazil' }
-    ],
-    '/region/india': [
-      { name: 'Regions', href: '/regions' },
-      { name: 'India', href: '/region/india' }
-    ],
-    '/australia-vin-check': [
-      { name: 'VIN Lookup', href: '/vin-lookup' },
-      { name: 'Australia', href: '/australia-vin-check' }
-    ],
-    '/canada-vin-check': [
-      { name: 'VIN Lookup', href: '/vin-lookup' },
-      { name: 'Canada', href: '/canada-vin-check' }
+    // Press Kit
+    '/press-kit': [
+      { name: 'Press', href: '/press-kit' }
     ],
   };
 
@@ -173,7 +123,7 @@ export const getBreadcrumbsForPath = (pathname: string): BreadcrumbConfig[] => {
       .join(' ');
     
     return [
-      { name: 'VIN Lookup', href: '/vin-lookup' },
+      { name: 'VIN Checker', href: '/vin-checker' },
       { name: stateName, href: cleanPath }
     ];
   }
@@ -221,7 +171,7 @@ export const getPageCategory = (pathname: string): string => {
     return 'regional-vin';
   }
   if (pathname.startsWith('/blog')) return 'blog';
-  if (pathname.startsWith('/safeorstolen-vs-') || pathname === '/competitor-alternatives') {
+  if (pathname.startsWith('/vs-') || pathname === '/compare') {
     return 'comparisons';
   }
   if (['/for-businesses', '/for-pawn-shops', '/for-dealers', '/for-marketplaces', '/for-auction-houses'].includes(pathname)) {
@@ -230,7 +180,7 @@ export const getPageCategory = (pathname: string): string => {
   if (['/about'].includes(pathname)) {
     return 'company';
   }
-  if (['/how-to-', '/buyer-guide', '/seller-guide', '/avoid-', '/buy-used-'].some(prefix => pathname.includes(prefix))) {
+  if (pathname.startsWith('/blog/') && pathname !== '/blog') {
     return 'guides';
   }
   

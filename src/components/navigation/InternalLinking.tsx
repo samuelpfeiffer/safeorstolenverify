@@ -58,7 +58,7 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
     
     // Essential guides
     {
-      href: '/ultimate-guide-buying-safely',
+      href: '/blog/complete-verification-guide',
       text: 'Ultimate Safe Buying Guide 2025',
       description: 'Complete protection from stolen goods fraud',
       category: 'guides',

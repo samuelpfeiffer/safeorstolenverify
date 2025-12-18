@@ -15,26 +15,26 @@ export const InternalLinkingOptimizer: React.FC<InternalLinkingOptimizerProps> =
   const getRelevantLinks = (page: string) => {
     const linkStrategies = {
       homepage: [
-        { url: "/ultimate-guide-buying-safely", anchor: "how to check if something is stolen", priority: "high" },
-        { url: "/stolen-goods-statistics-2024", anchor: "stolen goods statistics", priority: "high" },
+        { url: "/blog/complete-verification-guide", anchor: "how to check if something is stolen", priority: "high" },
+        { url: "/blog/theft-trends-report-2024", anchor: "stolen goods statistics", priority: "high" },
         { url: "/check-phone", anchor: "IMEI checker", priority: "medium" },
         { url: "/check-car", anchor: "VIN verification", priority: "medium" },
-        { url: "/services", anchor: "our verification services", priority: "medium" }
+        { url: "/pricing", anchor: "our verification services", priority: "medium" }
       ],
       guide: [
         { url: "/dashboard", anchor: "free verification tool", priority: "high" },
-        { url: "/stolen-goods-statistics-2024", anchor: "latest theft statistics", priority: "high" },
+        { url: "/blog/theft-trends-report-2024", anchor: "latest theft statistics", priority: "high" },
         { url: "/check-phone", anchor: "phone verification", priority: "medium" },
         { url: "/how-it-works", anchor: "verification process", priority: "medium" }
       ],
       statistics: [
-        { url: "/ultimate-guide-buying-safely", anchor: "protection guide", priority: "high" },
+        { url: "/blog/complete-verification-guide", anchor: "protection guide", priority: "high" },
         { url: "/dashboard", anchor: "verify items now", priority: "high" },
         { url: "/about", anchor: "our methodology", priority: "medium" },
         { url: "/report-stolen", anchor: "report stolen goods", priority: "low" }
       ],
       service: [
-        { url: "/ultimate-guide-buying-safely", anchor: "buyer protection guide", priority: "high" },
+        { url: "/blog/complete-verification-guide", anchor: "buyer protection guide", priority: "high" },
         { url: "/pricing", anchor: "pricing plans", priority: "medium" },
         { url: "/how-it-works", anchor: "how verification works", priority: "medium" }
       ]

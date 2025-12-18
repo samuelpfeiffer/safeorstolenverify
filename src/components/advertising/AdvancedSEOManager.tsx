@@ -43,8 +43,8 @@ export const AdvancedSEOManager = () => {
       '/check-car': 'VIN check free, stolen vehicle lookup, car history report, title check, ' + baseKeywords,
       '/pricing': 'affordable verification, buyer protection plans, anti-fraud subscription, ' + baseKeywords,
       '/firearms-check': 'firearm serial check, gun stolen database, ATF verification, ' + baseKeywords,
-      '/problem': 'stolen goods crisis, fraud statistics, buyer protection needed, ' + baseKeywords,
-      '/buyer-guide': 'safe buying tips, avoid scams, verification guide, secondhand shopping, ' + baseKeywords,
+      '/about': 'stolen goods crisis, fraud statistics, buyer protection needed, ' + baseKeywords,
+      '/blog/complete-verification-guide': 'safe buying tips, avoid scams, verification guide, secondhand shopping, ' + baseKeywords,
       '/how-it-works': 'verification process, stolen item database, how to check, ' + baseKeywords,
     };
 
@@ -61,8 +61,8 @@ export const AdvancedSEOManager = () => {
       '/check-car': 'FREE VIN lookup - check if vehicle is stolen. Instant verification against NICB database. Avoid buying stolen cars, save thousands in legal fees.',
       '/pricing': 'Affordable verification plans starting FREE. Protect yourself from buying stolen goods. 2 free checks (14-day trial), unlimited plans available. Money-back guarantee.',
       '/firearms-check': 'Check firearm serial numbers FREE - verify gun not stolen before purchase. Legal protection, ATF database check. Avoid federal charges.',
-      '/problem': 'The $13B stolen goods crisis explained. Learn how 2.3M people unknowingly buy stolen items yearly. Protect yourself with verification.',
-      '/buyer-guide': 'Ultimate guide to safe secondhand shopping. Learn to spot scams, verify items, protect yourself from fraud on any marketplace.',
+      '/about': 'The $13B stolen goods crisis explained. Learn how 2.3M people unknowingly buy stolen items yearly. Protect yourself with verification.',
+      '/blog/complete-verification-guide': 'Ultimate guide to safe secondhand shopping. Learn to spot scams, verify items, protect yourself from fraud on any marketplace.',
       '/how-it-works': 'How our verification works: Enter serial/IMEI/VIN → Check 50M+ records → Get instant results in 30 seconds. Simple, fast, accurate.',
     };
 

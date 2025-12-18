@@ -52,12 +52,12 @@ export const SiteNavigationOptimizer: React.FC = () => {
     description: 'Complete guide to stolen goods verification',
     priority: 'high'
   }, {
-    href: '/avoid-stolen-goods',
+    href: '/how-it-works',
     text: 'How to Avoid Buying Stolen Goods',
     description: 'Essential marketplace safety tips',
     priority: 'high'
   }, {
-    href: '/ultimate-guide',
+    href: '/blog/complete-verification-guide',
     text: 'Ultimate Stolen Goods Prevention Guide',
     description: 'Comprehensive safety and verification guide',
     priority: 'medium'
