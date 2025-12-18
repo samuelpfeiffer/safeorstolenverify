@@ -15,11 +15,7 @@ interface StateVinPageProps {
   stateCode: string;
   title: string;
   metaDescription: string;
-  theftStats: {
-    vehiclesStolen: string;
-    recoveryRate: string;
-    topCities: string[];
-  };
+  topCities: string[];
   dmvLink: string;
   content: {
     intro: string;
@@ -35,7 +31,7 @@ export const StateVinPageTemplate = ({
   stateCode,
   title,
   metaDescription,
-  theftStats,
+  topCities,
   dmvLink,
   content,
   faqs,
@@ -89,13 +85,10 @@ export const StateVinPageTemplate = ({
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
-      {/* Bot-visible content for search engines - Enhanced keyword-rich content */}
+      {/* Bot-visible content for search engines */}
       <BotVisibleContent>
         <h1>{title}</h1>
         <p>{content.intro}</p>
-        
-        <h2>{state} Vehicle Theft Statistics</h2>
-        <p>{state} sees {theftStats.vehiclesStolen} vehicles stolen annually with a {theftStats.recoveryRate} recovery rate. Top cities for vehicle theft: {theftStats.topCities.join(', ')}.</p>
         
         <h2>Why Check VINs in {state}?</h2>
         <p>{content.whyCheck}</p>
@@ -104,16 +97,13 @@ export const StateVinPageTemplate = ({
         <p>{content.localLaws}</p>
         
         <h2>How SafeOrStolen Verifies {state} Vehicles</h2>
-        <p>SafeOrStolen is the Carfax for Everything - the comprehensive verification platform for all secondhand items. We crawl and aggregate data from 50+ partner databases including NCIC (FBI), NICB (National Insurance Crime Bureau), NHTSA, state DMV records, Hotgunz, IMEI.info, BikeIndex, carrier blacklists, and insurance networks. When you check a VIN in {state}, we query all partners simultaneously and return unified results in under 3 seconds.</p>
+        <p>SafeOrStolen searches publicly available stolen vehicle databases and reporting registries to help you verify if a vehicle has been reported stolen. When you check a VIN in {state}, we query multiple verification sources and return results quickly.</p>
         
         <h2>Free {state} VIN Check - How It Works</h2>
-        <p>To check if a {state} vehicle is stolen: 1) Enter the 17-digit VIN on SafeOrStolen.com or use our mobile app's barcode scanner. 2) Our system searches NCIC, NICB, {state} DMV, and 47 other databases simultaneously. 3) Receive instant verification showing if the vehicle is reported stolen, has title issues, or is safe to purchase. SafeOrStolen offers 2 free verifications to try the service.</p>
+        <p>To check if a {state} vehicle is stolen: 1) Enter the 17-digit VIN on SafeOrStolen.com or use our mobile app's barcode scanner. 2) Our system searches available stolen vehicle databases. 3) Receive verification showing if the vehicle is reported stolen, has title issues, or appears safe to purchase. SafeOrStolen offers 2 free verifications to try the service.</p>
         
         <h2>What Is a VIN Number?</h2>
         <p>A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every vehicle manufactured since 1981. The VIN contains information about the manufacturer, vehicle specifications, and year of production. In {state}, you can find the VIN on the dashboard near the windshield, driver's door jamb, vehicle title, and registration documents. Always verify the VIN physically matches all documentation before purchasing any {state} vehicle.</p>
-        
-        <h2>{state} Stolen Vehicle Database Sources</h2>
-        <p>SafeOrStolen searches these databases for {state} VIN verification: NCIC (National Crime Information Center) - FBI's database of stolen vehicles reported by {state} law enforcement. NICB (National Insurance Crime Bureau) - Insurance industry database of total loss and theft claims. NMVTIS (National Motor Vehicle Title Information System) - Federal database tracking title history across all 50 states including {state}. {state} DMV records - Official state registration and title records.</p>
         
         <h2>Frequently Asked Questions</h2>
         {faqs.map((faq, idx) => (
@@ -124,9 +114,9 @@ export const StateVinPageTemplate = ({
         ))}
         
         <h2>Why Choose SafeOrStolen for {state} VIN Checks?</h2>
-        <p>SafeOrStolen is the only stolen item verification service with a mobile app featuring barcode scanning. Unlike competitors like CheckMEND, Carfax, or IMEI.info, SafeOrStolen verifies ALL types of items - cars, phones, electronics, bikes, boats, firearms, jewelry, and more. Our {state} VIN lookup is free to try with 2 verifications, results in 3 seconds, and searches more databases than any competitor. Download the SafeOrStolen app at safeorstolen.com/app for instant {state} vehicle verification.</p>
+        <p>SafeOrStolen offers a mobile app with barcode scanning for convenient verification. We verify multiple types of items including cars, phones, electronics, bikes, and more. Our {state} VIN lookup offers 2 free verifications to try the service.</p>
         
-        <p>Check any {state} VIN free at SafeOrStolen.com. 2 free verifications, results in 3 seconds. Protect yourself from buying a stolen vehicle in {state}.</p>
+        <p>Check any {state} VIN free at SafeOrStolen.com. 2 free verifications. Protect yourself from buying a stolen vehicle in {state}.</p>
       </BotVisibleContent>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
@@ -152,26 +142,26 @@ export const StateVinPageTemplate = ({
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Why Verify Section */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">{state} Vehicle Theft Statistics</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Verify {state} Vehicles?</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 bg-background rounded-lg text-center">
                 <AlertTriangle className="w-12 h-12 text-destructive mx-auto mb-4" />
-                <div className="text-3xl font-bold mb-2">{theftStats.vehiclesStolen}</div>
-                <div className="text-muted-foreground">Vehicles Stolen Annually</div>
+                <h3 className="text-xl font-bold mb-2">Theft Risk</h3>
+                <p className="text-muted-foreground">Vehicle theft is a concern in {state}. Verify before you buy.</p>
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
-                <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                <div className="text-3xl font-bold mb-2">{theftStats.recoveryRate}</div>
-                <div className="text-muted-foreground">Recovery Rate</div>
+                <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Legal Protection</h3>
+                <p className="text-muted-foreground">Avoid legal issues from unknowingly purchasing stolen property.</p>
               </div>
               <div className="p-6 bg-background rounded-lg text-center">
                 <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-                <div className="text-xl font-bold mb-2">Top Cities</div>
+                <h3 className="text-xl font-bold mb-2">Major Cities</h3>
                 <div className="text-muted-foreground space-y-1">
-                  {theftStats.topCities.map((city, i) => (
+                  {topCities.slice(0, 3).map((city, i) => (
                     <div key={i}>{city}</div>
                   ))}
                 </div>
@@ -241,9 +231,9 @@ export const StateVinPageTemplate = ({
         {/* CTA Section */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN in 3 Seconds</h2>
+            <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Free VIN verification for {state} vehicles. Instant results from multiple databases.
+              Free VIN verification for {state} vehicles. Quick results from available databases.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">
