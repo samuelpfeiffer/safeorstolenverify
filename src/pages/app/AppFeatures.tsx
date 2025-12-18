@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { 
   Shield, Smartphone, Camera, WifiOff, Clock, CheckCircle, Star, 
@@ -59,46 +58,41 @@ const AppFeatures = () => {
     { icon: <FileCheck className="w-6 h-6" />, name: "Tools", description: "Power tools, equipment, machinery" }
   ];
 
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeOrStolen",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "iOS, Android, Web",
+    "description": "Mobile app for verifying if items are stolen. Features barcode scanning, offline mode, 3-second verification. Protects both buyers AND sellers.",
+    "featureList": [
+      "Barcode & QR code scanner",
+      "Offline verification mode",
+      "3-second instant results",
+      "IMEI phone verification",
+      "VIN vehicle verification",
+      "Serial number lookup",
+      "Buyer protection",
+      "Seller verification certificates",
+      "All 50 US states coverage",
+      "Encrypted & private searches"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>SafeOrStolen App Features | Barcode Scanner, Offline Mode, Instant Verification</title>
-        <meta name="description" content="Explore SafeOrStolen app features: barcode scanning, offline verification, 3-second checks, buyer AND seller protection. The only stolen item checker with a mobile app. Free download." />
-        <meta name="keywords" content="stolen verification app features, IMEI checker app, VIN checker app, barcode scanner stolen items, offline stolen checker, mobile verification app, buyer seller protection, stolen item scanner features" />
-        <link rel="canonical" href="https://safeorstolen.com/app/features" />
-        
-        <meta property="og:title" content="SafeOrStolen App Features | Mobile Stolen Item Checker" />
-        <meta property="og:description" content="Barcode scanning, offline mode, 3-second verification. The only stolen item checker app that protects buyers AND sellers." />
-        <meta property="og:url" content="https://safeorstolen.com/app/features" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "SafeOrStolen",
-            "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": "iOS, Android, Web",
-            "description": "Mobile app for verifying if items are stolen. Features barcode scanning, offline mode, 3-second verification. Protects both buyers AND sellers.",
-            "featureList": [
-              "Barcode & QR code scanner",
-              "Offline verification mode",
-              "3-second instant results",
-              "IMEI phone verification",
-              "VIN vehicle verification",
-              "Serial number lookup",
-              "Buyer protection",
-              "Seller verification certificates",
-              "All 50 US states coverage",
-              "Encrypted & private searches"
-            ],
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            }
-          })}
-        </script>
-      </Helmet>
+      <PageSEO
+        title="SafeOrStolen App Features | Barcode Scanner, Offline Mode, Instant Verification"
+        description="Explore SafeOrStolen app features: barcode scanning, offline verification, 3-second checks, buyer AND seller protection. The only stolen item checker with a mobile app. Free download."
+        keywords="stolen verification app features, IMEI checker app, VIN checker app, barcode scanner stolen items, offline stolen checker, mobile verification app, buyer seller protection, stolen item scanner features"
+        canonical="/app/features"
+        structuredData={softwareSchema}
+      />
 
       <div className="min-h-screen bg-background">
 
@@ -375,42 +369,21 @@ const AppFeatures = () => {
                     <td className="text-center p-4 text-red-500">✗</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-4 font-medium">Phones (IMEI)</td>
+                    <td className="p-4 font-medium">Free Basic Checks</td>
                     <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center p-4 text-red-500">✗</td>
                     <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
                     <td className="text-center p-4 text-red-500">✗</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-4 font-medium">Vehicles (VIN)</td>
+                    <td className="p-4 font-medium">Phones + Vehicles + Electronics</td>
                     <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
                     <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center p-4 text-red-500">Phones only</td>
+                    <td className="text-center p-4 text-red-500">Vehicles only</td>
                   </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Electronics</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Firearms</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                    <td className="text-center p-4 text-red-500">✗</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Free Trial</td>
-                    <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗ Paid</td>
-                    <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
-                    <td className="text-center p-4 text-red-500">✗ Paid</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="p-4 font-medium">Protects Sellers</td>
+                  <tr>
+                    <td className="p-4 font-medium">Seller Certificates</td>
                     <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
                     <td className="text-center p-4 text-red-500">✗</td>
                     <td className="text-center p-4 text-red-500">✗</td>
@@ -422,42 +395,32 @@ const AppFeatures = () => {
           </div>
         </section>
 
-        {/* Final CTA */}
+        {/* Download CTA */}
         <section className="py-20 px-4 bg-primary text-primary-foreground">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Protect Yourself?
+            <Download className="w-16 h-16 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Download SafeOrStolen Free
             </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Download the FREE SafeOrStolen app and verify items in seconds. 
-              Protects buyers AND sellers on every marketplace.
+            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+              Join thousands of smart buyers and sellers who verify items before transactions. 
+              Available on iOS, Android, and as a Progressive Web App.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="text-lg px-12 py-6"
-                asChild
-              >
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
                 <Link to="/app">
                   <Download className="w-5 h-5 mr-2" />
-                  Download FREE App
+                  Get the App
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="text-lg px-12 py-6 border-primary-foreground/20 hover:bg-primary-foreground/10"
-                asChild
-              >
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent border-primary-foreground hover:bg-primary-foreground/10" asChild>
                 <Link to="/verify">
-                  Try Web Version First
+                  Try Web Version
                 </Link>
               </Button>
             </div>
           </div>
         </section>
-
       </div>
     </>
   );

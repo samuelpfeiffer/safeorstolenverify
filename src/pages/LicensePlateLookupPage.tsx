@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { Shield, MapPin, Search, CheckCircle2, Car, AlertTriangle, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { US_STATES } from '@/data/stateVerificationData';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const LicensePlateLookupPage = () => {
   const navigate = useNavigate();
@@ -82,13 +82,27 @@ const LicensePlateLookupPage = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
-      <Helmet>
-        <title>License Plate Lookup - Free Stolen Vehicle Check by Plate Number | SafeOrStolen</title>
-        <meta name="description" content="Check if a vehicle is stolen using license plate number. Free license plate lookup from DMV and law enforcement databases across all 50 states. Verify instantly." />
-        <link rel="canonical" href="https://safeorstolen.com/license-plate-lookup" />
-      </Helmet>
+      <PageSEO
+        title="License Plate Lookup - Free Stolen Vehicle Check by Plate Number | SafeOrStolen"
+        description="Check if a vehicle is stolen using license plate number. Free license plate lookup from DMV and law enforcement databases across all 50 states. Verify instantly."
+        canonical="/license-plate-lookup"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

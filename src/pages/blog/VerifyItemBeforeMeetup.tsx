@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Clock, AlertTriangle, CheckCircle, Download, Users } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const VerifyItemBeforeMeetup = () => {
   const articleSchema = {
@@ -52,14 +52,13 @@ const VerifyItemBeforeMeetup = () => {
 
   return (
     <>
-      <Helmet>
-        <title>How to Verify Items Before Meeting Sellers - Meetup Safety Guide | SafeOrStolen</title>
-        <meta name="description" content="Complete guide to safely verifying items before meeting marketplace sellers. Check if items are stolen and protect yourself at meetup locations." />
-        <meta name="keywords" content="verify before meetup, marketplace safety, check stolen before meeting seller, safe exchange, verify at meetup" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/verify-item-before-meetup" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="How to Verify Items Before Meeting Sellers - Meetup Safety Guide | SafeOrStolen"
+        description="Complete guide to safely verifying items before meeting marketplace sellers. Check if items are stolen and protect yourself at meetup locations."
+        keywords="verify before meetup, marketplace safety, check stolen before meeting seller, safe exchange, verify at meetup"
+        canonical="/blog/verify-item-before-meetup"
+        structuredData={[articleSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">

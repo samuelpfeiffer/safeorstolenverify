@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, Smartphone, Clock } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const OfferupVerifyNotStolen = () => {
   const faqs = [
@@ -48,15 +48,13 @@ const OfferupVerifyNotStolen = () => {
 
   return (
     <>
-      <Helmet>
-        <title>OfferUp Stolen Item Check - Verify Before You Buy | SafeOrStolen</title>
-        <meta name="description" content="Check if OfferUp items are stolen before buying. Free IMEI, VIN, and serial number verification. Protect yourself from stolen goods on OfferUp." />
-        <meta name="keywords" content="offerup stolen item check, verify offerup item, offerup scam check, check if stolen offerup, offerup safety" />
-        <link rel="canonical" href="https://safeorstolen.com/offerup-verify-not-stolen" />
-        <meta property="og:title" content="OfferUp Stolen Item Check - Verify Before You Buy" />
-        <meta property="og:description" content="Don't risk buying stolen goods on OfferUp. Free verification tool checks IMEI, VIN, and serial numbers instantly." />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="OfferUp Stolen Item Check - Verify Before You Buy | SafeOrStolen"
+        description="Check if OfferUp items are stolen before buying. Free IMEI, VIN, and serial number verification. Protect yourself from stolen goods on OfferUp."
+        keywords="offerup stolen item check, verify offerup item, offerup scam check, check if stolen offerup, offerup safety"
+        canonical="/offerup-verify-not-stolen"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero */}

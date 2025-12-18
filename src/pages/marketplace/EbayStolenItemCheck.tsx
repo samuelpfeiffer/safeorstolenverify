@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, CreditCard, Package } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const EbayStolenItemCheck = () => {
   const faqs = [
@@ -48,15 +48,13 @@ const EbayStolenItemCheck = () => {
 
   return (
     <>
-      <Helmet>
-        <title>eBay Stolen Item Check - Verify Before Bidding | SafeOrStolen</title>
-        <meta name="description" content="Check if eBay items are stolen before bidding. Verify IMEI, VIN, and serial numbers to protect yourself from stolen goods on eBay." />
-        <meta name="keywords" content="ebay stolen item check, verify ebay item, ebay scam protection, check if ebay item stolen, ebay serial number check" />
-        <link rel="canonical" href="https://safeorstolen.com/ebay-stolen-item-check" />
-        <meta property="og:title" content="eBay Stolen Item Check - Verify Before Bidding" />
-        <meta property="og:description" content="Protect yourself from stolen goods on eBay. Free verification tool to check IMEI, VIN, and serial numbers before you bid." />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="eBay Stolen Item Check - Verify Before Bidding | SafeOrStolen"
+        description="Check if eBay items are stolen before bidding. Verify IMEI, VIN, and serial numbers to protect yourself from stolen goods on eBay."
+        keywords="ebay stolen item check, verify ebay item, ebay scam protection, check if ebay item stolen, ebay serial number check"
+        canonical="/ebay-stolen-item-check"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero */}

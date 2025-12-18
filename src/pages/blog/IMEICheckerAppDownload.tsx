@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download, Smartphone, Shield, Zap, Wifi, CheckCircle } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const IMEICheckerAppDownload = () => {
   const articleSchema = {
@@ -66,15 +66,13 @@ const IMEICheckerAppDownload = () => {
 
   return (
     <>
-      <Helmet>
-        <title>IMEI Checker App Download - Free Stolen Phone Verification | SafeOrStolen</title>
-        <meta name="description" content="Download the free SafeOrStolen IMEI checker app. Verify phones aren't stolen before buying. Works offline, scans barcodes in 3 seconds. iOS, Android, and web." />
-        <meta name="keywords" content="IMEI checker app download, stolen phone app, free IMEI check app, IMEI scanner app, phone verification app" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/imei-checker-app-download" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="IMEI Checker App Download - Free Stolen Phone Verification | SafeOrStolen"
+        description="Download the free SafeOrStolen IMEI checker app. Verify phones aren't stolen before buying. Works offline, scans barcodes in 3 seconds. iOS, Android, and web."
+        keywords="IMEI checker app download, stolen phone app, free IMEI check app, IMEI scanner app, phone verification app"
+        canonical="/blog/imei-checker-app-download"
+        structuredData={[articleSchema, softwareSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">
