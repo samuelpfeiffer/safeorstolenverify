@@ -21,6 +21,24 @@ verify_jwt = false
 [functions.ai-safety-advisor]
 verify_jwt = false
 
+[functions.ai-search-suggestions]
+verify_jwt = false
+
+[functions.ai-item-identification]
+verify_jwt = false
+
+[functions.ai-blog-generator]
+verify_jwt = true
+
+[functions.ai-seo-optimizer]
+verify_jwt = true
+
+[functions.ai-site-optimizer]
+verify_jwt = true
+
+[functions.ai-error-handler]
+verify_jwt = false
+
 [functions.gsc-api]
 verify_jwt = true
 
