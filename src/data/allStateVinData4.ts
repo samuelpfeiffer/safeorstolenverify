@@ -1,7 +1,6 @@
-import { StateVinData } from './allStateVinData';
-
 // FINAL: States North Dakota through Wyoming
-export const ALL_STATE_VIN_DATA_PART4: Record<string, StateVinData> = {
+// Note: theftStats will be converted to topCities in completeStateVinData.ts
+export const ALL_STATE_VIN_DATA_PART4 = {
   northdakota: {
     state: "North Dakota", stateCode: "ND", slug: "north-dakota-vin-lookup",
     title: "North Dakota VIN Lookup - Free ND Stolen Vehicle Check | SafeOrStolen",
