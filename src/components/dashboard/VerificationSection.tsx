@@ -10,6 +10,7 @@ import { useAuth } from '@/lib/auth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { ContactCard } from '@/components/ContactCard';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 interface VerificationSectionProps {
   prePopulatedData?: {
@@ -76,20 +77,72 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
       return;
     }
 
-    setIsVerifying(true);
-    
-    // Show contact card instead of fake verification
-    setTimeout(() => {
-      setVerificationResult(null);
-      setShowContactCard(true);
-      setIsVerifying(false);
-      
+    if (!user) {
       toast({
-        title: "Verification Request Received",
-        description: "We only provide real database results. Please contact us for manual verification assistance.",
-        variant: "default",
+        title: "Sign In Required",
+        description: "Please sign in to verify items.",
+        variant: "destructive",
       });
-    }, 1500);
+      return;
+    }
+
+    setIsVerifying(true);
+    setShowContactCard(false);
+    
+    try {
+      // Call the real verify-item edge function
+      const { data, error } = await supabase.functions.invoke('verify-item', {
+        body: {
+          identifier: searchQuery.trim(),
+          itemType: selectedItemType || 'general',
+          userId: user.id
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.status === 'stolen' || data?.status === 'lost') {
+        setVerificationResult({
+          status: data.status,
+          item: {
+            name: data.itemType || selectedItemType || 'Item',
+            image: '/placeholder.svg',
+            description: data.message || 'This item has been reported.',
+            serialNumber: searchQuery
+          }
+        });
+      } else if (data?.status === 'safe') {
+        setVerificationResult({
+          status: 'safe',
+          item: {
+            name: data.itemType || selectedItemType || 'Item',
+            image: '/placeholder.svg',
+            description: 'No theft reports found for this item.',
+            serialNumber: searchQuery
+          }
+        });
+      } else {
+        // Unknown status - show contact card for manual verification
+        setShowContactCard(true);
+      }
+
+      toast({
+        title: data?.status === 'safe' ? "Item Verified Safe" : data?.status === 'stolen' ? "WARNING: Stolen Item" : "Verification Complete",
+        description: data?.message || "Verification completed.",
+        variant: data?.status === 'stolen' ? "destructive" : "default",
+      });
+
+    } catch (error: any) {
+      console.error('Verification error:', error);
+      toast({
+        title: "Verification Error",
+        description: error.message || "Unable to verify item. Please try again.",
+        variant: "destructive",
+      });
+      setShowContactCard(true);
+    } finally {
+      setIsVerifying(false);
+    }
   };
 
   const handleQrScan = (result: string) => {
