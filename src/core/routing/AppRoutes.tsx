@@ -149,6 +149,11 @@ const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
 const BatchIndexPage = lazy(() => import('@/pages/admin/BatchIndexPage'));
 const StripeAdminPage = lazy(() => import('@/pages/admin/StripeAdminPage'));
 
+// Stolen Database & Shared Report Pages
+const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
+const StolenItemDetailPage = lazy(() => import('@/pages/StolenItemDetailPage'));
+const SharedReportPage = lazy(() => import('@/pages/SharedReportPage'));
+
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<AppLoadingScreen />}>
@@ -170,6 +175,11 @@ export const AppRoutes = () => {
         <Route path="/report-stolen" element={<ReportStolenPage />} />
         <Route path="/checkout-redirect" element={<CheckoutRedirectPage />} />
         <Route path="/verification-success" element={<VerificationSuccessPage />} />
+
+        {/* STOLEN DATABASE & SHARED REPORTS */}
+        <Route path="/stolen-database" element={<StolenDatabasePage />} />
+        <Route path="/item/:slug" element={<StolenItemDetailPage />} />
+        <Route path="/shared/:shareCode" element={<SharedReportPage />} />
 
         {/* ITEM LANDING PAGES */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
