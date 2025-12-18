@@ -17,17 +17,18 @@ export const SEO_CONFIG = {
   gscPropertyUrl: 'sc-domain:safeorstolen.com',
   gscSitemapUrl: 'https://safeorstolen.com/sitemap.xml',
   
-  // Core pages for GSC monitoring
+  // Core pages for monitoring (must be real, indexable routes)
   priorityUrls: [
     '/',
     '/verify',
-    '/dashboard', 
-    '/account',
-    '/mobile-app',
     '/pricing',
     '/about',
+    '/how-it-works',
     '/faq',
-    '/app/download',
+    '/app',
+    '/download',
+    '/blog',
+    '/testimonials',
   ] as const,
   
   // Keywords

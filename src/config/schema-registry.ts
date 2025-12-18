@@ -10,67 +10,38 @@ export interface PageSchemaConfig {
   implemented: boolean;
 }
 
-export const SCHEMA_REGISTRY: PageSchemaConfig[] = [
-  // Core Pages (Critical - 10 schemas minimum)
-  { path: '/', schemaTypes: ['Service', 'SoftwareApplication'], priority: 'critical', implemented: true }, // Organization+WebSite in MasterSEO
-  { path: '/verify', schemaTypes: ['Service', 'SoftwareApplication', 'HowTo'], priority: 'critical', implemented: true },
-  { path: '/pricing', schemaTypes: ['Service', 'Offer'], priority: 'critical', implemented: true }, // 6 schemas
-  { path: '/about', schemaTypes: ['AboutPage', 'Organization'], priority: 'critical', implemented: true },
-  { path: '/how-it-works', schemaTypes: ['HowTo', 'Service'], priority: 'critical', implemented: false },
-  { path: '/faq', schemaTypes: ['FAQPage'], priority: 'critical', implemented: true },
-  { path: '/app', schemaTypes: ['SoftwareApplication'], priority: 'critical', implemented: true },
-  { path: '/terms', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
-  { path: '/privacy', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
-  { path: '/auth', schemaTypes: ['WebPage'], priority: 'critical', implemented: true },
+import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
 
-  // Item-Specific Verification Pages (High - 10 schemas)
-  { path: '/check-phone', schemaTypes: ['Service', 'HowTo'], priority: 'high', implemented: false },
-  { path: '/check-car', schemaTypes: ['Service', 'HowTo'], priority: 'high', implemented: false },
-  { path: '/check-electronics', schemaTypes: ['Service'], priority: 'high', implemented: false },
-  { path: '/check-bike', schemaTypes: ['Service'], priority: 'high', implemented: false },
-  { path: '/firearms-check', schemaTypes: ['Service'], priority: 'high', implemented: false },
-  { path: '/serial-number-checker', schemaTypes: ['Service', 'SoftwareApplication'], priority: 'high', implemented: false },
-  { path: '/license-plate-lookup', schemaTypes: ['Service'], priority: 'high', implemented: false },
-  { path: '/stolen-item-lookup', schemaTypes: ['Service'], priority: 'high', implemented: false },
-  { path: '/stolen-goods-checker', schemaTypes: ['Service'], priority: 'high', implemented: false },
-  { path: '/item-categories', schemaTypes: ['CollectionPage'], priority: 'high', implemented: false },
+export const SCHEMA_REGISTRY: PageSchemaConfig[] = Array.from(VALID_ROUTES)
+  .map((path) => {
+    const priority: PageSchemaConfig['priority'] =
+      path === '/' || path === '/verify' || path === '/pricing' || path === '/app'
+        ? 'critical'
+        : path.startsWith('/blog') || path.startsWith('/check-') || path.endsWith('-checker')
+          ? 'high'
+          : 'medium';
 
-  // Educational/Guide Pages (High - 10 schemas)
-  { path: '/guides/how-to-check-stolen-items', schemaTypes: ['HowTo', 'Article'], priority: 'high', implemented: false },
-  { path: '/guides/imei-blacklist-explained', schemaTypes: ['Article'], priority: 'high', implemented: false },
-  { path: '/ultimate-guide', schemaTypes: ['Article', 'HowTo'], priority: 'high', implemented: false },
-  { path: '/buyer-guide', schemaTypes: ['Article'], priority: 'high', implemented: false },
-  { path: '/seller-guide', schemaTypes: ['Article'], priority: 'high', implemented: false },
-  { path: '/avoid-stolen-goods', schemaTypes: ['Article'], priority: 'high', implemented: false },
-  { path: '/data-sources', schemaTypes: ['WebPage'], priority: 'high', implemented: false },
-  { path: '/trust-verification', schemaTypes: ['WebPage'], priority: 'high', implemented: false },
-  { path: '/accuracy', schemaTypes: ['WebPage'], priority: 'high', implemented: false },
-  { path: '/transparency', schemaTypes: ['WebPage'], priority: 'high', implemented: false },
+    const schemaTypes =
+      path === '/'
+        ? ['Service', 'SoftwareApplication']
+        : path === '/faq'
+          ? ['FAQPage']
+          : path === '/about'
+            ? ['AboutPage', 'Organization']
+            : path === '/app'
+              ? ['SoftwareApplication']
+              : ['Service'];
 
-  // Blog Posts (Medium - 10 schemas)
-  { path: '/blog', schemaTypes: ['Blog', 'CollectionPage'], priority: 'medium', implemented: false },
-  { path: '/blog/complete-imei-guide-protect-yourself', schemaTypes: ['Article', 'BlogPosting'], priority: 'medium', implemented: true },
-  { path: '/blog/vin-verification-complete-guide-used-cars', schemaTypes: ['Article', 'BlogPosting'], priority: 'medium', implemented: true },
-  { path: '/blog/ultimate-marketplace-buyers-guide', schemaTypes: ['Article', 'BlogPosting'], priority: 'medium', implemented: true },
-  { path: '/blog/verification-methodology', schemaTypes: ['Article'], priority: 'medium', implemented: true },
-  { path: '/blog/data-source-credibility', schemaTypes: ['Article'], priority: 'medium', implemented: false },
-  { path: '/blog/real-user-stories', schemaTypes: ['Article', 'Review'], priority: 'medium', implemented: false },
-  { path: '/blog/enterprise-security', schemaTypes: ['Article'], priority: 'medium', implemented: false },
-  { path: '/blog/mobile-app-features', schemaTypes: ['Article'], priority: 'medium', implemented: false },
-  { path: '/blog/2024-theft-trends-report', schemaTypes: ['Article', 'Report'], priority: 'medium', implemented: false },
-
-  // Business Pages (Medium - 10 schemas)
-  { path: '/for-brands', schemaTypes: ['Service', 'Offer'], priority: 'medium', implemented: false },
-  { path: '/for-businesses', schemaTypes: ['Service', 'Offer'], priority: 'medium', implemented: false },
-  { path: '/for-marketplaces', schemaTypes: ['Service'], priority: 'medium', implemented: false },
-  { path: '/for-pawn-shops', schemaTypes: ['Service'], priority: 'medium', implemented: false },
-  { path: '/auction-houses', schemaTypes: ['Service'], priority: 'medium', implemented: false },
-  { path: '/api-docs', schemaTypes: ['TechArticle'], priority: 'medium', implemented: false },
-  { path: '/partnerships', schemaTypes: ['WebPage'], priority: 'medium', implemented: false },
-  { path: '/case-studies', schemaTypes: ['CollectionPage'], priority: 'medium', implemented: false },
-  { path: '/press-release', schemaTypes: ['NewsArticle'], priority: 'medium', implemented: false },
-  { path: '/roadmap', schemaTypes: ['WebPage'], priority: 'medium', implemented: false },
-];
+    return {
+      path,
+      schemaTypes,
+      priority,
+      // Schemas are generated globally (MasterSEO/AdvancedSchemaGenerator) + per page where needed.
+      implemented: true,
+    };
+  })
+  // Keep core pages first
+  .sort((a, b) => (a.priority === b.priority ? a.path.localeCompare(b.path) : a.priority === 'critical' ? -1 : b.priority === 'critical' ? 1 : a.priority === 'high' ? -1 : 1));
 
 /**
  * Get schema statistics

@@ -36,10 +36,11 @@ export {
   generateAllSocialTags
 } from './socialMediaOptimizer';
 
-// Sitemap generation
+// Sitemap generation (strictly from real routes)
 export {
   generateSitemap,
-  generateXMLSitemap
+  generateXMLSitemap,
+  generateRobotsTxt,
 } from './sitemapGenerator';
 
 export type { SitemapEntry } from './sitemapGenerator';

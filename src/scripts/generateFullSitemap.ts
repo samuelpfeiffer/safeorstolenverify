@@ -24,10 +24,7 @@ function generateSitemapXML(): string {
   const corePages = [
     { url: '/', priority: 1.0, changefreq: 'daily' },
     { url: '/app', priority: 1.0, changefreq: 'weekly' },
-    { url: '/download-app', priority: 1.0, changefreq: 'weekly' },
-    { url: '/mobile-app', priority: 1.0, changefreq: 'weekly' },
-    { url: '/ios-app', priority: 0.9, changefreq: 'weekly' },
-    { url: '/android-app', priority: 0.9, changefreq: 'weekly' },
+    { url: '/download', priority: 1.0, changefreq: 'weekly' },
   ];
 
   // Add core pages
