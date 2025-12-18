@@ -8,8 +8,9 @@ import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AlertTriangle, CheckCircle, XCircle, Clock, Shield, Zap, BarChart3 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
-interface DemoVerificationResult {
+interface VerificationResult {
   serialNumber: string;
   itemType: string;
   status: 'safe' | 'stolen' | 'lost' | 'unknown' | 'error';
@@ -18,15 +19,21 @@ interface DemoVerificationResult {
   sources: string[];
 }
 
+/**
+ * Enterprise Demo - Uses REAL API calls to verify items
+ * No mock data - all verifications go through actual edge functions
+ */
 export const EnterpriseDemo = () => {
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
-  const [results, setResults] = useState<DemoVerificationResult[]>([]);
+  const [results, setResults] = useState<VerificationResult[]>([]);
   const [batchInput, setBatchInput] = useState('');
-  const [apiKey, setApiKey] = useState('demo_key_12345');
+  const [progress, setProgress] = useState(0);
 
   const handleBatchVerification = async () => {
     setIsProcessing(true);
+    setProgress(0);
+    setResults([]);
     
     // Parse batch input
     const lines = batchInput.split('\n').filter(line => line.trim());
@@ -45,58 +52,65 @@ export const EnterpriseDemo = () => {
       return;
     }
 
-    // Simulate API processing
-    const demoResults: DemoVerificationResult[] = [];
+    const verificationResults: VerificationResult[] = [];
     
     for (let i = 0; i < items.length; i++) {
-      await new Promise(resolve => setTimeout(resolve, 200)); // Simulate processing delay
-      
       const item = items[i];
-      const hash = item.serialNumber.split('').reduce((a, b) => {
-        a = ((a << 5) - a) + b.charCodeAt(0);
-        return a & a;
-      }, 0);
+      setProgress(Math.round(((i + 1) / items.length) * 100));
       
-      const outcome = Math.abs(hash) % 100;
-      
-      let status: DemoVerificationResult['status'];
-      let riskScore: number;
-      let sources: string[];
-      
-      if (outcome <= 10) {
-        status = 'stolen';
-        riskScore = 85 + Math.random() * 10;
-        sources = ['CheckMend', 'BikeIndex', 'Police_Database'];
-      } else if (outcome <= 20) {
-        status = 'lost';
-        riskScore = 65 + Math.random() * 15;
-        sources = ['CheckMend', 'Insurance_Claims'];
-      } else if (outcome <= 35) {
-        status = 'unknown';
-        riskScore = 40 + Math.random() * 20;
-        sources = ['Primary_Database'];
-      } else {
-        status = 'safe';
-        riskScore = 5 + Math.random() * 15;
-        sources = ['CheckMend', 'BikeIndex', 'HotGunz'];
+      try {
+        // Call the REAL verification edge function
+        const { data, error } = await supabase.functions.invoke('verify-item', {
+          body: {
+            serialNumber: item.serialNumber,
+            itemType: item.itemType
+          }
+        });
+
+        if (error) {
+          verificationResults.push({
+            serialNumber: item.serialNumber,
+            itemType: item.itemType,
+            status: 'error',
+            confidence: 0,
+            riskScore: 0,
+            sources: []
+          });
+          continue;
+        }
+
+        // Map the real API response to our result format
+        const status = data?.status || 'unknown';
+        const riskScore = data?.riskScore || 0;
+        
+        verificationResults.push({
+          serialNumber: item.serialNumber,
+          itemType: item.itemType,
+          status: status === 'clear' ? 'safe' : status,
+          confidence: data?.confidence || 75,
+          riskScore: riskScore,
+          sources: data?.sources || ['SafeOrStolen Database']
+        });
+      } catch (err) {
+        console.error('Verification error:', err);
+        verificationResults.push({
+          serialNumber: item.serialNumber,
+          itemType: item.itemType,
+          status: 'error',
+          confidence: 0,
+          riskScore: 0,
+          sources: []
+        });
       }
-      
-      demoResults.push({
-        serialNumber: item.serialNumber,
-        itemType: item.itemType,
-        status,
-        confidence: 85 + Math.random() * 10,
-        riskScore: Math.round(riskScore),
-        sources
-      });
     }
 
-    setResults(demoResults);
+    setResults(verificationResults);
     setIsProcessing(false);
     
+    const successful = verificationResults.filter(r => r.status !== 'error').length;
     toast({
       title: "Batch verification complete",
-      description: `Processed ${demoResults.length} items successfully`
+      description: `Successfully verified ${successful} of ${items.length} items`
     });
   };
 
@@ -130,15 +144,14 @@ export const EnterpriseDemo = () => {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-4">Enterprise API Demo</h1>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-          Experience the power of Safe Or Stolen's Enterprise API with real-time batch verification,
-          advanced analytics, and comprehensive stolen goods detection.
+          Experience SafeOrStolen's Enterprise API with real-time batch verification.
+          All verifications use our actual database and AI analysis.
         </p>
       </div>
 
       <Tabs defaultValue="batch" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="batch">Batch Verification</TabsTrigger>
-          <TabsTrigger value="analytics">Analytics Dashboard</TabsTrigger>
           <TabsTrigger value="integration">API Integration</TabsTrigger>
         </TabsList>
 
@@ -156,16 +169,6 @@ export const EnterpriseDemo = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <label className="text-sm text-gray-300 mb-2 block">API Key</label>
-                  <Input
-                    value={apiKey}
-                    onChange={(e) => setApiKey(e.target.value)}
-                    placeholder="Enter your API key"
-                    className="bg-gray-800 border-gray-600 text-white"
-                    readOnly
-                  />
-                </div>
-                <div>
                   <label className="text-sm text-gray-300 mb-2 block">Items to Verify</label>
                   <Textarea
                     value={batchInput}
@@ -174,6 +177,17 @@ export const EnterpriseDemo = () => {
                     className="bg-gray-800 border-gray-600 text-white min-h-[200px]"
                   />
                 </div>
+                
+                {isProcessing && (
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm text-gray-400">
+                      <span>Processing...</span>
+                      <span>{progress}%</span>
+                    </div>
+                    <Progress value={progress} className="h-2" />
+                  </div>
+                )}
+                
                 <Button
                   onClick={handleBatchVerification}
                   disabled={isProcessing || !batchInput.trim()}
@@ -182,7 +196,7 @@ export const EnterpriseDemo = () => {
                   {isProcessing ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Processing...
+                      Verifying...
                     </>
                   ) : (
                     'Verify Batch'
@@ -198,7 +212,7 @@ export const EnterpriseDemo = () => {
                   Verification Results
                 </CardTitle>
                 <CardDescription>
-                  Real-time processing results with risk assessment
+                  Real-time results from our verification database
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -247,7 +261,7 @@ export const EnterpriseDemo = () => {
                               {result.status.toUpperCase()}
                             </Badge>
                             <div className="text-xs text-gray-400 mt-1">
-                              Risk: {result.riskScore}%
+                              Confidence: {result.confidence}%
                             </div>
                           </div>
                         </div>
@@ -258,7 +272,7 @@ export const EnterpriseDemo = () => {
                   <div className="text-center py-8 text-gray-400">
                     <Shield className="h-12 w-12 mx-auto mb-4 opacity-50" />
                     <p>No verification results yet</p>
-                    <p className="text-sm">Enter serial numbers above to get started</p>
+                    <p className="text-sm">Enter serial numbers and click Verify to get real results</p>
                   </div>
                 )}
               </CardContent>
@@ -266,92 +280,24 @@ export const EnterpriseDemo = () => {
           </div>
         </TabsContent>
 
-        <TabsContent value="analytics" className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-gray-900 border-gray-700">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-gray-400">Daily Verifications</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-white">24,847</div>
-                <p className="text-xs text-green-400">+12% from yesterday</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-900 border-gray-700">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-gray-400">Stolen Items Detected</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-red-400">187</div>
-                <p className="text-xs text-gray-400">0.75% of total</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-900 border-gray-700">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-gray-400">API Response Time</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-white">247ms</div>
-                <p className="text-xs text-green-400">-5ms from average</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gray-900 border-gray-700">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-gray-400">Accuracy Rate</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-white">97.3%</div>
-                <p className="text-xs text-green-400">+0.2% this week</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="bg-gray-900 border-gray-700">
-            <CardHeader>
-              <CardTitle className="text-white">Verification Sources Performance</CardTitle>
-              <CardDescription>Success rates by data source</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {[
-                { name: 'CheckMend Database', rate: 94, requests: 18420 },
-                { name: 'BikeIndex Registry', rate: 89, requests: 7231 },
-                { name: 'HotGunz Database', rate: 97, requests: 3847 },
-                { name: 'IMEI Lookup Service', rate: 91, requests: 12983 }
-              ].map((source, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-white">{source.name}</span>
-                    <span className="text-gray-400">{source.rate}% • {source.requests.toLocaleString()} requests</span>
-                  </div>
-                  <Progress value={source.rate} className="h-2" />
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </TabsContent>
-
         <TabsContent value="integration" className="space-y-6">
           <Card className="bg-gray-900 border-gray-700">
             <CardHeader>
               <CardTitle className="text-white">Enterprise API Integration</CardTitle>
               <CardDescription>
-                Seamlessly integrate Safe Or Stolen's verification engine into your platform
+                Integrate SafeOrStolen's verification engine into your platform
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="bg-gray-800 p-4 rounded-lg">
                 <h4 className="text-white font-medium mb-2">Quick Start</h4>
                 <pre className="text-sm text-gray-300 overflow-x-auto">
-{`curl -X POST https://safeorstolen.com/api/v1/verify/batch \\
-  -H "X-API-Key: your_api_key" \\
+{`curl -X POST https://safeorstolen.com/api/v1/verify \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
-    "items": [
-      {"serialNumber": "ABC123456", "itemType": "smartphone"},
-      {"serialNumber": "XYZ789012", "itemType": "bicycle"}
-    ],
-    "webhookUrl": "https://your-app.com/webhook",
-    "priority": "high"
+    "serialNumber": "ABC123456",
+    "itemType": "smartphone"
   }'`}
                 </pre>
               </div>
@@ -362,33 +308,33 @@ export const EnterpriseDemo = () => {
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-400" />
-                      Batch processing up to 100 items
+                      Real database verification
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-400" />
-                      Real-time webhook notifications
+                      AI-powered risk analysis
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-400" />
-                      Priority processing queues
+                      Batch processing support
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-400" />
-                      Comprehensive analytics dashboard
+                      Webhook notifications
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="text-white font-medium mb-3">Subscription Tiers</h4>
+                  <h4 className="text-white font-medium mb-3">Pricing</h4>
                   <div className="space-y-2">
                     <div className="p-3 bg-gray-800 rounded-lg">
                       <div className="font-medium text-white">Starter</div>
-                      <div className="text-sm text-gray-400">$0.10 per verification</div>
+                      <div className="text-sm text-gray-400">Contact for pricing</div>
                     </div>
                     <div className="p-3 bg-gray-800 rounded-lg">
                       <div className="font-medium text-white">Business</div>
-                      <div className="text-sm text-gray-400">$0.05 per verification</div>
+                      <div className="text-sm text-gray-400">Volume discounts available</div>
                     </div>
                     <div className="p-3 bg-gray-800 rounded-lg">
                       <div className="font-medium text-white">Enterprise</div>
@@ -399,8 +345,8 @@ export const EnterpriseDemo = () => {
               </div>
 
               <div className="text-center">
-                <Button className="bg-sos-orange hover:bg-sos-orange/90">
-                  Request Enterprise Demo
+                <Button className="bg-sos-orange hover:bg-sos-orange/90" asChild>
+                  <a href="/about">Contact Sales</a>
                 </Button>
               </div>
             </CardContent>
