@@ -1,7 +1,6 @@
-import { StateVinData } from './allStateVinData';
-
 // CONTINUED: States Minnesota through South Dakota
-export const ALL_STATE_VIN_DATA_PART3: Record<string, StateVinData> = {
+// Note: theftStats will be converted to topCities in completeStateVinData.ts
+export const ALL_STATE_VIN_DATA_PART3 = {
   minnesota: {
     state: "Minnesota", stateCode: "MN", slug: "minnesota-vin-lookup",
     title: "Minnesota VIN Lookup - Free MN Stolen Vehicle Check | SafeOrStolen",

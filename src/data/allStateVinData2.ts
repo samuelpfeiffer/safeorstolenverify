@@ -1,7 +1,6 @@
-import { StateVinData } from './allStateVinData';
-
 // CONTINUED: States Illinois through North Carolina
-export const ALL_STATE_VIN_DATA_PART2: Record<string, StateVinData> = {
+// Note: theftStats will be converted to topCities in completeStateVinData.ts
+export const ALL_STATE_VIN_DATA_PART2 = {
   illinois: {
     state: "Illinois", stateCode: "IL", slug: "illinois-vin-lookup",
     title: "Illinois VIN Lookup - Free IL Stolen Vehicle Check | SafeOrStolen",
