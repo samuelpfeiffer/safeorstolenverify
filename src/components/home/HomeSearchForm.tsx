@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, Shield, Smartphone, Car, Hash, CreditCard, Camera } from 'lucide-react';
-import { QRScanner } from '@/components/futuristic/QRScanner';
+
+// Lazy load QRScanner - only loads when user clicks scan button (~200KB saved from initial bundle)
+const QRScanner = React.lazy(() => 
+  import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner }))
+);
 
 export const HomeSearchForm = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -91,12 +95,16 @@ export const HomeSearchForm = () => {
         </p>
       </form>
 
-      {/* QR Scanner Modal */}
-      <QRScanner
-        isOpen={isScannerOpen}
-        onScan={handleScanResult}
-        onClose={() => setIsScannerOpen(false)}
-      />
+      {/* QR Scanner Modal - Lazy loaded only when opened */}
+      {isScannerOpen && (
+        <Suspense fallback={<div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"><div className="text-white">Loading scanner...</div></div>}>
+          <QRScanner
+            isOpen={isScannerOpen}
+            onScan={handleScanResult}
+            onClose={() => setIsScannerOpen(false)}
+          />
+        </Suspense>
+      )}
     </div>
   );
 };

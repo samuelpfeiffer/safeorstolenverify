@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HelmetProvider } from 'react-helmet-async';
@@ -27,9 +27,14 @@ import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
 import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
-import { ExitIntentPopup, SocialProofBanner, StickyMobileAppCTA, LiveActivityToast } from '@/components/growth';
-import { AggressiveConversionBanner } from '@/components/conversion/AggressiveConversionBanner';
-import { TrafficBooster } from '@/components/traffic/TrafficBooster';
+
+// Lazy load non-critical growth/conversion components for better performance
+const ExitIntentPopup = React.lazy(() => import('@/components/growth').then(m => ({ default: m.ExitIntentPopup })));
+const SocialProofBanner = React.lazy(() => import('@/components/growth').then(m => ({ default: m.SocialProofBanner })));
+const StickyMobileAppCTA = React.lazy(() => import('@/components/growth').then(m => ({ default: m.StickyMobileAppCTA })));
+const LiveActivityToast = React.lazy(() => import('@/components/growth').then(m => ({ default: m.LiveActivityToast })));
+const AggressiveConversionBanner = React.lazy(() => import('@/components/conversion/AggressiveConversionBanner').then(m => ({ default: m.AggressiveConversionBanner })));
+const TrafficBooster = React.lazy(() => import('@/components/traffic/TrafficBooster').then(m => ({ default: m.TrafficBooster })));
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -57,6 +62,15 @@ const queryClient = new QueryClient({
  */
 const AuthAwareContent: React.FC = () => {
   const { loading, initialized } = useAuth();
+  const [showGrowthComponents, setShowGrowthComponents] = useState(false);
+  
+  // Delay loading growth/conversion components by 3 seconds for better initial performance
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowGrowthComponents(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
   
   // Bypass loading screen for checkout routes - they handle their own auth
   const isCheckoutRoute = window.location.pathname.includes('checkout');
@@ -77,7 +91,13 @@ const AuthAwareContent: React.FC = () => {
         <SchemaValidationMonitor />
         <CriticalResourceLoader />
         
-        <TrafficBooster />
+        {/* Lazy load traffic booster after delay */}
+        {showGrowthComponents && (
+          <Suspense fallback={null}>
+            <TrafficBooster />
+          </Suspense>
+        )}
+        
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <TopNavigation />
           <main className="flex-1 pt-20">
@@ -94,11 +114,18 @@ const AuthAwareContent: React.FC = () => {
         <MobileNavigation />
         <SchemaValidationIndicator />
         <AISafetyAdvisor />
-        <ExitIntentPopup />
-        <SocialProofBanner />
-        <StickyMobileAppCTA />
-        <LiveActivityToast />
-        <AggressiveConversionBanner />
+        
+        {/* Lazy load growth/conversion components after 3 second delay */}
+        {showGrowthComponents && (
+          <Suspense fallback={null}>
+            <ExitIntentPopup />
+            <SocialProofBanner />
+            <StickyMobileAppCTA />
+            <LiveActivityToast />
+            <AggressiveConversionBanner />
+          </Suspense>
+        )}
+        
         <Toaster />
       </PWAProvider>
     </GA4Provider>
