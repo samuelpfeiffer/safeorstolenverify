@@ -105,21 +105,21 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
     
     // Company and trust
     {
-      href: '/case-studies',
-      text: 'Success Stories & Case Studies',
+      href: '/testimonials',
+      text: 'Success Stories & Testimonials',
       description: 'Real fraud prevention success stories',
       category: 'company',
-      keywords: ['case studies', 'success stories', 'fraud prevention results']
+      keywords: ['testimonials', 'success stories', 'fraud prevention results']
     },
     {
-      href: '/transparency',
-      text: 'Trust & Data Transparency',
-      description: 'How we maintain 99.7% accuracy',
+      href: '/about',
+      text: 'Trust & Company Info',
+      description: 'How we maintain accuracy and trust',
       category: 'company',
-      keywords: ['data transparency', 'accuracy', 'trust factors']
+      keywords: ['about us', 'accuracy', 'trust factors']
     },
     {
-      href: '/stolen-goods-statistics-2024',
+      href: '/blog/theft-trends-report-2024',
       text: 'Theft Statistics 2024',
       description: 'Latest fraud and theft data insights',
       category: 'company',
