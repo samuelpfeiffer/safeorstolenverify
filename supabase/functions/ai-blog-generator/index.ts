@@ -1,0 +1,129 @@
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
+
+serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    if (!LOVABLE_API_KEY) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'AI service not configured' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const { topic, keywords, targetLength, tone, includeSchema } = await req.json();
+
+    if (!topic) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Topic is required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    console.log(`[AI Blog Generator] Generating: "${topic}"`);
+
+    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'google/gemini-2.5-flash',
+        messages: [
+          {
+            role: 'system',
+            content: `You are SafeOrStolen's content writer, expert in stolen goods verification, consumer protection, and marketplace safety. 
+
+Write SEO-optimized blog posts that:
+1. Help buyers avoid stolen goods
+2. Educate about IMEI, VIN, and serial number verification
+3. Promote SafeOrStolen as "Carfax for Everything - Buy and Sell"
+4. Include actionable tips and real-world scenarios
+5. Never use the word "product" - use "item", "service", or "plan" instead
+
+Respond with JSON:
+{
+  "title": "SEO-optimized title",
+  "metaDescription": "150-160 character meta description",
+  "metaKeywords": ["keyword1", "keyword2"],
+  "excerpt": "2-3 sentence excerpt",
+  "content": "Full HTML blog content with proper headings (h2, h3)",
+  "readingTime": minutes,
+  "suggestedSlug": "url-friendly-slug",
+  "schema": { Article schema object if requested }
+}`
+          },
+          {
+            role: 'user',
+            content: `Write a blog post about: "${topic}"
+${keywords ? `Target keywords: ${keywords.join(', ')}` : ''}
+${targetLength ? `Target length: ${targetLength} words` : 'Target length: 1500 words'}
+${tone ? `Tone: ${tone}` : 'Tone: Professional but approachable'}
+${includeSchema ? 'Include Article schema markup' : ''}`
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 4000,
+      }),
+    });
+
+    if (!response.ok) {
+      if (response.status === 429) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Rate limit exceeded' }),
+          { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (response.status === 402) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'AI service temporarily unavailable' }),
+          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      throw new Error(`AI gateway error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const content = data.choices?.[0]?.message?.content || '{}';
+
+    let result;
+    try {
+      const jsonMatch = content.match(/\{[\s\S]*\}/);
+      result = jsonMatch ? JSON.parse(jsonMatch[0]) : {};
+    } catch {
+      // If JSON parsing fails, treat content as raw blog content
+      result = {
+        title: topic,
+        content: content,
+        metaDescription: `Learn about ${topic} with SafeOrStolen`,
+        readingTime: Math.ceil(content.split(' ').length / 200)
+      };
+    }
+
+    console.log(`[AI Blog Generator] Generated: "${result.title}", ${result.readingTime} min read`);
+
+    return new Response(
+      JSON.stringify({
+        success: true,
+        blog: result
+      }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
+
+  } catch (error) {
+    console.error('[AI Blog Generator] Error:', error);
+    return new Response(
+      JSON.stringify({ success: false, error: error.message }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
+  }
+});
