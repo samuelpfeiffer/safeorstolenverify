@@ -118,8 +118,8 @@ export const EnhancedNavigation: React.FC = () => {
       keywords: ['verification FAQ', 'stolen goods questions', 'help center']
     },
     {
-      label: 'Statistics 2024',
-      href: '/stolen-goods-statistics-2024',
+      label: 'Theft Trends 2024',
+      href: '/blog/theft-trends-report-2024',
       description: 'Current theft and fraud data',
       keywords: ['theft statistics', 'fraud data', 'crime prevention stats']
     }

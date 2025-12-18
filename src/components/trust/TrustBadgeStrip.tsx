@@ -84,10 +84,10 @@ export const TrustBadgeStrip: React.FC = () => {
             <Button 
               size="sm" 
               variant="outline"
-              onClick={() => navigate('/case-studies')}
+              onClick={() => navigate('/testimonials')}
             >
               <Phone className="h-4 w-4 mr-2" />
-              View Police-Verified Cases
+              View Success Stories
             </Button>
           </div>
 

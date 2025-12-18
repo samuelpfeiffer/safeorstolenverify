@@ -54,7 +54,7 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
       title: "Get the Complete Buyer Protection Guide",
       description: "Learn professional verification techniques used by security experts. Never buy stolen goods again.",
       buttonText: "Read Full Guide",
-      buttonLink: "/ultimate-guide-not-buying-stolen-goods",
+      buttonLink: "/blog/complete-verification-guide",
       icon: CheckCircle,
       badge: "Expert Guide",
       stats: "Used by thousands of smart buyers"
