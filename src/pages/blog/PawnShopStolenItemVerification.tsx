@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, Store, AlertTriangle, CheckCircle, Scale, Download } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const PawnShopStolenItemVerification = () => {
   const articleSchema = {
@@ -52,14 +52,13 @@ const PawnShopStolenItemVerification = () => {
 
   return (
     <>
-      <Helmet>
-        <title>How Pawn Shops Check If Items Are Stolen - Complete Guide | SafeOrStolen</title>
-        <meta name="description" content="Learn how pawn shops verify items aren't stolen and how you can use the same tools. Complete guide to pawn shop verification and stolen item checking." />
-        <meta name="keywords" content="how do pawn shops check if items are stolen, pawn shop verification, pawn shop stolen goods, check pawn shop items" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/pawn-shop-stolen-item-verification" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="How Pawn Shops Check If Items Are Stolen - Complete Guide | SafeOrStolen"
+        description="Learn how pawn shops verify items aren't stolen and how you can use the same tools. Complete guide to pawn shop verification and stolen item checking."
+        keywords="how do pawn shops check if items are stolen, pawn shop verification, pawn shop stolen goods, check pawn shop items"
+        canonical="/blog/pawn-shop-stolen-item-verification"
+        structuredData={[articleSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Article Header */}

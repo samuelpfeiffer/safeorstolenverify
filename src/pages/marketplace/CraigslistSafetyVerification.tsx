@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, MapPin, Clock } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 const CraigslistSafetyVerification = () => {
   const faqs = [
@@ -48,16 +48,13 @@ const CraigslistSafetyVerification = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Craigslist Safety Check - Verify Items Aren't Stolen | SafeOrStolen</title>
-        <meta name="description" content="Stay safe on Craigslist. Verify items aren't stolen before meeting sellers. Free IMEI, VIN, and serial number verification to protect yourself from stolen goods." />
-        <meta name="keywords" content="craigslist safety, craigslist scam check, verify craigslist item, craigslist stolen item check, safe craigslist buying" />
-        <link rel="canonical" href="https://safeorstolen.com/craigslist-safety-verification" />
-        <meta property="og:title" content="Craigslist Safety Check - Verify Items Aren't Stolen" />
-        <meta property="og:description" content="Protect yourself when buying on Craigslist. Free verification tool to check if items are stolen before meeting sellers." />
-        <meta property="og:url" content="https://safeorstolen.com/craigslist-safety-verification" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Craigslist Safety Check - Verify Items Aren't Stolen | SafeOrStolen"
+        description="Stay safe on Craigslist. Verify items aren't stolen before meeting sellers. Free IMEI, VIN, and serial number verification to protect yourself from stolen goods."
+        keywords="craigslist safety, craigslist scam check, verify craigslist item, craigslist stolen item check, safe craigslist buying"
+        canonical="/craigslist-safety-verification"
+        structuredData={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero */}
