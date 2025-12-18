@@ -60,109 +60,104 @@ const CORE_PAGES = [
   // Blog
   { url: '/blog', priority: 0.8, changefreq: 'weekly' },
   
-  // 50 State License Plate Lookup Pages
-  { url: '/alabama-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/alaska-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/arizona-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/arkansas-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  // TOP 10 STATE LICENSE PLATE LOOKUP PAGES (Real pages, not redirects)
   { url: '/california-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/colorado-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/connecticut-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/delaware-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/florida-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/georgia-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/hawaii-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/idaho-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/illinois-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/indiana-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/iowa-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/kansas-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/kentucky-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/louisiana-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/maine-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/maryland-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/massachusetts-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/michigan-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/minnesota-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/mississippi-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/missouri-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/montana-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/nebraska-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/nevada-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-hampshire-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-jersey-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-mexico-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-york-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/north-carolina-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/north-dakota-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/ohio-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/oklahoma-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/oregon-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/pennsylvania-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/rhode-island-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/south-carolina-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/south-dakota-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/tennessee-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
   { url: '/texas-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/utah-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/vermont-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/virginia-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/florida-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/new-york-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/illinois-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/georgia-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/pennsylvania-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/ohio-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/north-carolina-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
   { url: '/washington-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/west-virginia-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/wisconsin-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/wyoming-license-plate-lookup', priority: 0.7, changefreq: 'monthly' },
   
-  // 50 State VIN Lookup Pages
-  { url: '/alabama-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/alaska-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/arizona-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/arkansas-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  // TOP 10 STATE VIN LOOKUP PAGES (Real pages, not redirects)
   { url: '/california-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/colorado-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/connecticut-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/delaware-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/florida-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/georgia-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/hawaii-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/idaho-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/illinois-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/indiana-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/iowa-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/kansas-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/kentucky-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/louisiana-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/maine-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/maryland-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/massachusetts-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/michigan-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/minnesota-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/mississippi-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/missouri-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/montana-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/nebraska-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/nevada-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-hampshire-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-jersey-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-mexico-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/new-york-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/north-carolina-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/north-dakota-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/ohio-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/oklahoma-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/oregon-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/pennsylvania-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/rhode-island-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/south-carolina-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/south-dakota-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/tennessee-vin-lookup', priority: 0.7, changefreq: 'monthly' },
   { url: '/texas-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/utah-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/vermont-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/virginia-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/florida-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/new-york-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/illinois-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/georgia-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/pennsylvania-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/ohio-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  { url: '/north-carolina-vin-lookup', priority: 0.7, changefreq: 'monthly' },
   { url: '/washington-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/west-virginia-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/wisconsin-vin-lookup', priority: 0.7, changefreq: 'monthly' },
-  { url: '/wyoming-vin-lookup', priority: 0.7, changefreq: 'monthly' },
+  
+  // Marketplace Pages (Real pages)
+  { url: '/facebook-marketplace-stolen-check', priority: 0.8, changefreq: 'weekly' },
+  { url: '/craigslist-safety-verification', priority: 0.8, changefreq: 'weekly' },
+  { url: '/offerup-verify-not-stolen', priority: 0.8, changefreq: 'weekly' },
+  { url: '/ebay-stolen-item-check', priority: 0.8, changefreq: 'weekly' },
+  
+  // City Pages (Top 10 Cities - Real pages)
+  { url: '/stolen-check-los-angeles', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-new-york-city', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-chicago', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-houston', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-phoenix', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-philadelphia', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-san-antonio', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-san-diego', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-dallas', priority: 0.7, changefreq: 'monthly' },
+  { url: '/stolen-check-san-jose', priority: 0.7, changefreq: 'monthly' },
+  
+  // Traffic Pages (Real pages)
+  { url: '/check-stolen-phone', priority: 0.8, changefreq: 'weekly' },
+  { url: '/check-stolen-car', priority: 0.8, changefreq: 'weekly' },
+  { url: '/check-stolen-laptop', priority: 0.8, changefreq: 'weekly' },
+  { url: '/check-stolen-bike', priority: 0.8, changefreq: 'weekly' },
+  { url: '/check-stolen-firearm', priority: 0.8, changefreq: 'weekly' },
+  
+  // App Pages (Real pages)
+  { url: '/app/features', priority: 0.7, changefreq: 'monthly' },
+  { url: '/app/stolen-phone-checker', priority: 0.7, changefreq: 'monthly' },
+  { url: '/app/vin-checker', priority: 0.7, changefreq: 'monthly' },
+  { url: '/app/barcode-scanner', priority: 0.7, changefreq: 'monthly' },
+  { url: '/download', priority: 0.8, changefreq: 'monthly' },
+  
+  // News/External Pages (Real pages)
+  { url: '/youtube', priority: 0.6, changefreq: 'monthly' },
+  { url: '/product-hunt', priority: 0.6, changefreq: 'monthly' },
+  { url: '/press-kit', priority: 0.6, changefreq: 'monthly' },
+  { url: '/crunchbase', priority: 0.6, changefreq: 'monthly' },
+  { url: '/news/onevalley-recognition', priority: 0.7, changefreq: 'monthly' },
+  
+  // Compare & Free Tools (Real pages)
+  { url: '/compare', priority: 0.8, changefreq: 'monthly' },
+  { url: '/free-tools', priority: 0.8, changefreq: 'monthly' },
+  
+  // Business Pages (Real pages)
+  { url: '/for-auction-houses', priority: 0.7, changefreq: 'monthly' },
+  { url: '/for-marketplaces', priority: 0.7, changefreq: 'monthly' },
+  
+  // Auth & Dashboard
+  { url: '/auth', priority: 0.6, changefreq: 'monthly' },
+  { url: '/report-stolen', priority: 0.7, changefreq: 'monthly' },
+  
+  // Blog Posts (Real pages - only include existing ones)
+  { url: '/blog/how-to-check-if-phone-stolen', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/complete-vin-guide', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/protect-yourself-buying-used-electronics', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/data-source-credibility-stolen-goods-verification', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/ultimate-marketplace-buyers-guide', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/complete-imei-guide-protect-yourself', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/scammer-tactics-exposed', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/phone-verification-guide', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/theft-trends-report-2024', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/verification-methodology', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/real-user-stories', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/complete-verification-guide', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/stolen-verification-app-guide', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/checkmend-has-no-app', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/like-carfax-for-phones', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/how-to-check-if-iphone-stolen', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/facebook-marketplace-scams', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/pawn-shop-stolen-item-verification', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/imei-checker-app-download', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/firearm-serial-number-verification', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/bicycle-stolen-serial-number-check', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/verify-item-before-meetup', priority: 0.7, changefreq: 'monthly' },
 ];
 
 /**
@@ -190,16 +185,13 @@ export function generateMassiveSitemap(): string {
 
   const entries: string[] = [];
 
-  // Add core pages
+  // Add core pages ONLY (no SEO expansion pages - those are redirects)
   CORE_PAGES.forEach(page => {
     entries.push(generateURLEntry(page.url, CURRENT_DATE, page.changefreq, page.priority));
   });
 
-  // Add all SEO expansion pages
-  const allSEOPages = getAllSEOPages();
-  allSEOPages.forEach(page => {
-    entries.push(generateURLEntry(page.path, CURRENT_DATE, page.changefreq, page.priority));
-  });
+  // NOTE: Removed getAllSEOPages() - those URLs are handled by _redirects
+  // Only include pages that have actual React components/routes
 
   return `${xmlHeader}\n${urlsetOpen}\n${entries.join('\n')}\n${urlsetClose}`;
 }
@@ -208,27 +200,9 @@ export function generateMassiveSitemap(): string {
  * Get sitemap statistics
  */
 export function getSitemapStats() {
-  const allPages = getAllSEOPages();
-  
   return {
-    total: CORE_PAGES.length + allPages.length,
-    byCategory: {
-      core: CORE_PAGES.length,
-      electronics: ITEM_VERIFICATION_PAGES.filter(p => p.category === 'electronics').length,
-      vehicles: ITEM_VERIFICATION_PAGES.filter(p => p.category === 'vehicles').length,
-      guides: LONG_TAIL_PAGES.filter(p => p.category === 'guide').length,
-      marketplace: LONG_TAIL_PAGES.filter(p => p.category === 'marketplace').length,
-      comparison: LONG_TAIL_PAGES.filter(p => p.category === 'comparison').length,
-      business: USE_CASE_PAGES.filter(p => p.category === 'business').length,
-      location: generateLocationPages().length,
-      blog: BLOG_CONTENT_PAGES.length,
-    },
-    byPriority: {
-      priority_1_0: allPages.filter(p => p.priority === 1.0).length + CORE_PAGES.filter(p => p.priority === 1.0).length,
-      priority_0_9: allPages.filter(p => p.priority === 0.9).length + CORE_PAGES.filter(p => p.priority === 0.9).length,
-      priority_0_8: allPages.filter(p => p.priority === 0.8).length,
-      priority_0_7: allPages.filter(p => p.priority === 0.7).length,
-    }
+    total: CORE_PAGES.length,
+    message: 'Sitemap only includes pages with real React components (no redirects)',
   };
 }
 
@@ -237,8 +211,7 @@ export function getSitemapStats() {
  */
 export function logSitemapGeneration() {
   const stats = getSitemapStats();
-  console.log('🚀 MASSIVE SITEMAP GENERATED');
+  console.log('🚀 OPTIMIZED SITEMAP GENERATED');
   console.log(`📊 Total URLs: ${stats.total}`);
-  console.log('📁 By Category:', stats.byCategory);
-  console.log('⭐ By Priority:', stats.byPriority);
+  console.log(`ℹ️ ${stats.message}`);
 }

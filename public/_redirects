@@ -385,6 +385,22 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /australia-vin-check               /vin-checker  301!
 /canada-vin-check                  /vin-checker  301!
+/uk-vin-check                      /vin-checker  301!
+/mexico-vin-check                  /vin-checker  301!
+
+# ============================================
+# STATE ABBREVIATION PAGES (GSC Dec 2025)
+# ============================================
+/california                        /california-vin-lookup  301!
+/ca                               /california-vin-lookup  301!
+/tx                               /texas-vin-lookup       301!
+/fl                               /florida-vin-lookup     301!
+/ny                               /new-york-vin-lookup    301!
+
+# ============================================
+# APP FEATURE HISTORY PAGE (GSC Dec 2025)
+# ============================================
+/app/features/history              /app/features  301!
 
 # ============================================
 # WILDCARD REDIRECTS (MUST BE NEAR END)
