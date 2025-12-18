@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, Zap, Lock } from 'lucide-react';
+import { Shield, CheckCircle, Zap, Lock, Loader2, Star, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -13,17 +15,48 @@ interface PaywallModalProps {
 
 export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearches }: PaywallModalProps) => {
   const navigate = useNavigate();
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState<string | null>(null);
 
-  const handleUpgrade = (plan: string) => {
-    setSelectedPlan(plan);
-    onClose();
-    navigate(`/checkout-redirect?planName=${encodeURIComponent(plan)}&isSubscription=true`);
-  };
+  // Direct checkout - no redirect page friction
+  const handleDirectCheckout = async (planName: string, isSubscription: boolean) => {
+    setIsLoading(planName);
+    
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        onClose();
+        navigate('/auth?redirect=/pricing');
+        return;
+      }
 
-  const handleSingleCheck = () => {
-    onClose();
-    navigate(`/checkout-redirect?planName=Single%20Verification&isSubscription=false`);
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          planName,
+          isSubscription,
+          redirectUrl: 'https://safeorstolen.com'
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`
+        }
+      });
+
+      if (error) throw error;
+      if (!data?.url) throw new Error('No checkout URL returned');
+
+      // Direct redirect to Stripe - no intermediate page
+      window.location.href = data.url;
+      
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      toast({
+        title: 'Checkout Error',
+        description: err.message || 'Failed to start checkout. Please try again.',
+        variant: 'destructive'
+      });
+      setIsLoading(null);
+    }
   };
 
   return (
@@ -31,58 +64,79 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <div className="flex justify-center mb-4">
-            <div className="p-3 bg-destructive/10 rounded-full">
+            <div className="p-3 bg-destructive/10 rounded-full animate-pulse">
               <Lock className="h-8 w-8 text-destructive" />
             </div>
           </div>
           <DialogTitle className="text-2xl text-center">
-            Free Searches Used Up
+            🔒 Don't Risk Buying Stolen Goods
           </DialogTitle>
           <DialogDescription className="text-center text-base">
-            You've used all {maxFreeSearches} free verification checks. 
-            Upgrade now to continue protecting yourself from stolen goods.
+            You've used your {maxFreeSearches} free checks. Continue protecting yourself from scams and legal trouble.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-4 mt-4">
-          {/* Best Value Option */}
+        {/* Social Proof Banner */}
+        <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 flex items-center gap-2 justify-center">
+          <TrendingUp className="h-4 w-4 text-accent" />
+          <span className="text-sm font-medium">5,000+ items verified this week</span>
+        </div>
+
+        <div className="space-y-4 mt-2">
+          {/* Best Value Option - Starter Plan */}
           <div 
-            className="p-4 border-2 border-primary rounded-lg bg-primary/5 cursor-pointer hover:bg-primary/10 transition-colors"
-            onClick={() => handleUpgrade('Starter Plan')}
+            className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
+              isLoading === 'Starter Plan' 
+                ? 'border-primary bg-primary/10 opacity-75' 
+                : 'border-primary bg-primary/5 hover:bg-primary/10 hover:scale-[1.02]'
+            }`}
+            onClick={() => !isLoading && handleDirectCheckout('Starter Plan', true)}
           >
             <div className="flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-lg">Starter Plan</span>
-                  <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs rounded-full">BEST VALUE</span>
+                  <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs rounded-full font-semibold">
+                    BEST VALUE
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground">15 checks/month • Only $0.33 each</p>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold">$4.99</div>
-                <div className="text-xs text-muted-foreground">/month</div>
+                {isLoading === 'Starter Plan' ? (
+                  <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                ) : (
+                  <>
+                    <div className="text-2xl font-bold text-primary">$4.99</div>
+                    <div className="text-xs text-muted-foreground">/month</div>
+                  </>
+                )}
               </div>
             </div>
             <ul className="mt-3 space-y-1 text-sm">
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-primary" />
+                <CheckCircle className="h-4 w-4 text-accent" />
+                <span><strong>7-day FREE trial</strong> - cancel anytime</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-accent" />
                 15 verifications per month
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-primary" />
-                7-day free trial included
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-primary" />
-                Cancel anytime
+                <CheckCircle className="h-4 w-4 text-accent" />
+                Access to all databases (NCIC, NICB, IMEI)
               </li>
             </ul>
           </div>
 
           {/* Single Check Option */}
           <div 
-            className="p-4 border border-border rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
-            onClick={handleSingleCheck}
+            className={`p-4 border rounded-lg cursor-pointer transition-all ${
+              isLoading === 'Single Verification'
+                ? 'border-border bg-muted/50 opacity-75'
+                : 'border-border hover:bg-muted/50 hover:border-muted-foreground/30'
+            }`}
+            onClick={() => !isLoading && handleDirectCheckout('Single Verification', false)}
           >
             <div className="flex items-center justify-between">
               <div>
@@ -90,28 +144,52 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
                 <p className="text-sm text-muted-foreground">Single verification - no subscription</p>
               </div>
               <div className="text-right">
-                <div className="text-xl font-bold">$2.99</div>
-                <div className="text-xs text-muted-foreground">one-time</div>
+                {isLoading === 'Single Verification' ? (
+                  <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                ) : (
+                  <>
+                    <div className="text-xl font-bold">$2.99</div>
+                    <div className="text-xs text-muted-foreground">one-time</div>
+                  </>
+                )}
               </div>
             </div>
           </div>
 
           {/* View All Plans */}
           <Button 
-            variant="outline" 
-            className="w-full"
+            variant="ghost" 
+            className="w-full text-muted-foreground"
             onClick={() => {
               onClose();
               navigate('/pricing');
             }}
+            disabled={!!isLoading}
           >
-            View All Plans
+            Compare All Plans →
           </Button>
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-4">
-          🔒 Secure payment via Stripe • Cancel anytime • 30-day money-back guarantee
-        </p>
+        {/* Trust Signals */}
+        <div className="border-t pt-4 space-y-2">
+          <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <Lock className="h-3 w-3" />
+              Secure Stripe
+            </span>
+            <span className="flex items-center gap-1">
+              <Shield className="h-3 w-3" />
+              30-day guarantee
+            </span>
+            <span className="flex items-center gap-1">
+              <Star className="h-3 w-3" />
+              4.1★ Trustpilot
+            </span>
+          </div>
+          <p className="text-center text-xs text-muted-foreground">
+            <strong>⚠️ Risk Warning:</strong> Buying stolen goods can result in losing the item AND your money.
+          </p>
+        </div>
       </DialogContent>
     </Dialog>
   );
