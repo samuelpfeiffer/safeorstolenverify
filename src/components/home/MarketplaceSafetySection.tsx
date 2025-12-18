@@ -64,7 +64,7 @@ export const MarketplaceSafetySection = () => {
               <p className="text-muted-foreground mb-4">
                 Buying at auctions or pawn shops? Verify items on-site with our mobile app. Instant stolen goods verification.
               </p>
-              <Button variant="outline" onClick={() => navigate('/mobile-app')}>
+              <Button variant="outline" onClick={() => navigate('/app')}>
                 Download App
               </Button>
             </CardContent>

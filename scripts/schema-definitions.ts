@@ -156,7 +156,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
     ]
   },
   {
-    path: '/mobile-app',
+    path: '/app',
     title: 'Mobile App - Download SafeOrStolen | iOS & Android PWA',
     schemas: [
       {
@@ -184,7 +184,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
         "@type": "SoftwareApplication",
         "name": "SafeOrStolen PWA",
         "applicationCategory": "SecurityApplication",
-        "installUrl": "https://safeorstolen.com/mobile-app",
+        "installUrl": "https://safeorstolen.com/app",
         "operatingSystem": "Progressive Web App"
       },
       {
@@ -223,7 +223,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
             "@type": "ListItem",
             "position": 2,
             "name": "Mobile App",
-            "item": "https://safeorstolen.com/mobile-app"
+            "item": "https://safeorstolen.com/app"
           }
         ]
       }
@@ -258,8 +258,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
         "@type": "SoftwareApplication",
         "name": "SafeOrStolen PWA",
         "applicationCategory": "SecurityApplication",
-        "installUrl": "https://safeorstolen.com/mobile-app",
-        "operatingSystem": "Progressive Web App"
+        "installUrl": "https://safeorstolen.com/app",
       },
       {
         "@context": "https://schema.org",
@@ -297,7 +296,7 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
             "@type": "ListItem",
             "position": 2,
             "name": "Mobile App",
-            "item": "https://safeorstolen.com/mobile-app"
+            "item": "https://safeorstolen.com/app"
           }
         ]
       }
