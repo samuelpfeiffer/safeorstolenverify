@@ -86,16 +86,53 @@ export const OrganizationSchema = () => {
       "Stolen goods detection",
       "Marketplace safety",
       "Fraud prevention",
-      "Second-hand item verification"
+      "Second-hand item verification",
+      // AI/ML Technology
+      "Machine learning fraud detection",
+      "AI-powered verification systems",
+      "Predictive analytics for stolen goods",
+      "Computer vision serial recognition",
+      // Circular Economy
+      "Circular economy trust infrastructure",
+      "Secondhand market safety",
+      "Resale market verification",
+      "Sustainable commerce enablement"
+    ],
+    // Industry classifications for Crunchbase & investors
+    "industry": [
+      "Security Software",
+      "Machine Learning & AI",
+      "Circular Economy",
+      "Secondhand Marketplace Technology",
+      "Fraud Prevention",
+      "Consumer Protection"
     ],
     "slogan": "Verify Before You Buy - Protect Yourself from Stolen Goods",
-    "keywords": "SafeOrStolen, Safe or Stolen, IMEI check, VIN verification, serial number lookup, stolen item checker",
+    "keywords": "SafeOrStolen, Safe or Stolen, IMEI check, VIN verification, serial number lookup, stolen item checker, AI fraud detection, circular economy, secondhand market",
     "isAccessibleForFree": true,
     "publishingPrinciples": "https://safeorstolen.com/about",
+    // Market opportunity for investors
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Total Addressable Market",
+        "value": "$367 billion global secondhand market by 2029"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Market Growth Rate",
+        "value": "10.7% annual growth"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Technology Stack",
+        "value": "AI/ML-powered fraud detection with multi-database verification"
+      }
+    ],
     "subOrganization": {
       "@type": "Organization",
       "name": "Safe or Stolen LLC",
-      "description": "Arizona Limited Liability Company"
+      "description": "Arizona Limited Liability Company - AI-powered circular economy infrastructure"
     }
   };
 
