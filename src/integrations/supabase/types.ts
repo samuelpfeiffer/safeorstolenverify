@@ -871,32 +871,53 @@ export type Database = {
       stolen_item_notifications: {
         Row: {
           created_at: string | null
+          error_message: string | null
           id: string
           is_read: boolean | null
           message: string | null
+          notification_data: Json | null
           notification_type: string
           read_at: string | null
+          search_date: string | null
+          searched_identifier: string | null
+          sent_at: string | null
+          status: string | null
           stolen_item_id: string | null
+          updated_at: string | null
           user_id: string
         }
         Insert: {
           created_at?: string | null
+          error_message?: string | null
           id?: string
           is_read?: boolean | null
           message?: string | null
+          notification_data?: Json | null
           notification_type: string
           read_at?: string | null
+          search_date?: string | null
+          searched_identifier?: string | null
+          sent_at?: string | null
+          status?: string | null
           stolen_item_id?: string | null
+          updated_at?: string | null
           user_id: string
         }
         Update: {
           created_at?: string | null
+          error_message?: string | null
           id?: string
           is_read?: boolean | null
           message?: string | null
+          notification_data?: Json | null
           notification_type?: string
           read_at?: string | null
+          search_date?: string | null
+          searched_identifier?: string | null
+          sent_at?: string | null
+          status?: string | null
           stolen_item_id?: string | null
+          updated_at?: string | null
           user_id?: string
         }
         Relationships: [
