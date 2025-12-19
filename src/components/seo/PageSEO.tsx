@@ -12,6 +12,8 @@ interface PageSEOProps {
   noIndex?: boolean;
   canonical?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
+  /** Set to true for dedicated video watch pages to enable video indexing */
+  isVideoPage?: boolean;
 }
 
 export const PageSEO: React.FC<PageSEOProps> = ({
@@ -22,7 +24,8 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   type = 'website',
   noIndex = false,
   canonical: customCanonical,
-  structuredData
+  structuredData,
+  isVideoPage = false
 }) => {
   const location = useSafeLocation();
   
@@ -50,6 +53,7 @@ export const PageSEO: React.FC<PageSEOProps> = ({
       type={type}
       noIndex={noIndex}
       structuredData={normalizedStructuredData}
+      isVideoPage={isVideoPage}
     />
   );
 };
