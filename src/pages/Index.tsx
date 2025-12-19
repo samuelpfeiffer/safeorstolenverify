@@ -43,11 +43,19 @@ const Index = () => {
             "@type": "Organization",
             "name": "SafeOrStolen",
             "url": "https://safeorstolen.com",
+            "description": "SafeOrStolen is a stolen item verification service that helps buyers, sellers, and businesses verify IMEI, VIN, and serial numbers against 50+ databases in 3 seconds.",
             "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@safeorstolen.com",
+              "availableLanguage": "English"
+            },
             "sameAs": [
               "https://twitter.com/safeorstolen",
               "https://facebook.com/safeorstolen",
-              "https://linkedin.com/company/safeorstolen"
+              "https://linkedin.com/company/safeorstolen",
+              "https://www.youtube.com/@safeorstolen"
             ]
           }
         ]}
