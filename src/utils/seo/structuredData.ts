@@ -1,8 +1,28 @@
+/**
+ * Structured Data Utilities for SafeOrStolen
+ * 
+ * ⚠️ IMPORTANT: Global schemas (Organization, WebSite, Service) are in index.html
+ * 
+ * DO NOT call createOrganizationSchema(), createWebsiteSchema(), or createServiceSchema()
+ * on pages - they will create duplicate structured data errors in GSC.
+ * 
+ * These functions are kept for:
+ * - Reference/documentation
+ * - Edge functions or server-side rendering if needed
+ * - Historical compatibility
+ * 
+ * For page-specific schemas, use:
+ * - createArticleSchema() for blog posts
+ * - createBreadcrumbSchema() for breadcrumbs
+ * - createVerificationResultSchema() for verification results
+ * - createFAQSchema() ONLY on the dedicated /faq page (NOT homepage)
+ */
 
 import { SITE_CONFIG } from './metadata';
 import type { BlogPost } from './types';
 
 // Enhanced Organization Schema - Corporation Status
+// NOTE: This is now in index.html for guaranteed crawling - DO NOT use on pages
 export const createOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Corporation",

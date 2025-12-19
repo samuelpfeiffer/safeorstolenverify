@@ -129,28 +129,28 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
   );
 };
 
-// Preset structured data configurations
-export const OrganizationStructuredData = () => (
-  <StructuredData
-    type="Organization"
-    data={{
-      foundingDate: '2024',
-      numberOfEmployees: '25',
-      slogan: 'Buy Safe, Sell Secure'
-    }}
-  />
-);
+/**
+ * @deprecated OrganizationStructuredData - Organization schema is now in index.html
+ * DO NOT use - causes duplicate structured data errors in GSC
+ */
+export const OrganizationStructuredData = () => {
+  console.warn('OrganizationStructuredData is deprecated. Schema is in index.html.');
+  return null;
+};
 
-export const WebAppStructuredData = () => (
-  <StructuredData
-    type="WebSite"
-    data={{
-      description: 'Check if items are stolen across 6+ global databases',
-      inLanguage: 'en-US'
-    }}
-  />
-);
+/**
+ * @deprecated WebAppStructuredData - WebSite schema is now in index.html
+ * DO NOT use - causes duplicate structured data errors in GSC
+ */
+export const WebAppStructuredData = () => {
+  console.warn('WebAppStructuredData is deprecated. Schema is in index.html.');
+  return null;
+};
 
+/**
+ * VerificationFAQData - This is PAGE-SPECIFIC and should only be used on FAQ page
+ * Note: Homepage FAQ is handled by index.html HowTo schema
+ */
 export const VerificationFAQData = () => (
   <StructuredData
     type="FAQPage"
