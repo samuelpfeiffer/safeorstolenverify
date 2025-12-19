@@ -1,12 +1,15 @@
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { useSearchFormLogic } from '@/hooks/useSearchFormLogic';
 import { UnifiedSearchInput } from './UnifiedSearchInput';
 import { UnifiedSearchButton } from './UnifiedSearchButton';
+import { MarketplaceUrlAnalyzer } from './MarketplaceUrlAnalyzer';
 import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { QrCode, Shield, Zap, CheckCircle } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { QrCode, Shield, Link2, Hash } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface UnifiedSearchFormProps {
   variant?: 'default' | 'hero' | 'compact' | 'simple';
@@ -34,13 +37,23 @@ const UnifiedSearchFormComponent = ({
     isAuthenticated
   } = useSearchFormLogic();
 
+  const navigate = useNavigate();
+  const [searchMode, setSearchMode] = useState<'direct' | 'url'>('direct');
+
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !isLoading) {
       handleSearch();
     }
   };
 
-  // Compact variant - minimal inline form
+  // Handler when URL analyzer finds an identifier to verify
+  const handleIdentifierFromUrl = (identifier: string, type: string) => {
+    // Navigate to verification results with the identifier
+    const encodedIdentifier = encodeURIComponent(identifier);
+    navigate(`/results?serial=${encodedIdentifier}&type=${type}`);
+  };
+
+  // Compact variant - minimal inline form (no tabs)
   if (variant === 'compact') {
     return (
       <div className={`space-y-3 ${className}`}>
@@ -86,48 +99,70 @@ const UnifiedSearchFormComponent = ({
     );
   }
 
-  // Hero variant - prominent, large form
+  // Hero variant - prominent, large form with tabs
   if (variant === 'hero') {
     return (
       <div className={`space-y-4 ${className}`}>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
-            <UnifiedSearchInput
-              value={input}
-              onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
-              placeholder="👉 Enter your IMEI, VIN, or Serial Number here..."
-              isLoading={isLoading}
-              variant="hero"
-              error={error}
-              autoFocus
+        <Tabs value={searchMode} onValueChange={(v) => setSearchMode(v as 'direct' | 'url')} className="w-full">
+          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-4 bg-background/50 backdrop-blur">
+            <TabsTrigger value="direct" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <Hash className="h-4 w-4" />
+              Enter ID
+            </TabsTrigger>
+            <TabsTrigger value="url" className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <Link2 className="h-4 w-4" />
+              Paste URL
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="direct" className="mt-0">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-1">
+                <UnifiedSearchInput
+                  value={input}
+                  onChange={handleInputChange}
+                  onKeyPress={handleKeyPress}
+                  placeholder="👉 Enter your IMEI, VIN, or Serial Number here..."
+                  isLoading={isLoading}
+                  variant="hero"
+                  error={error}
+                  autoFocus
+                />
+              </div>
+              <div className="flex gap-3">
+                {onOpenQrScanner && (
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={onOpenQrScanner}
+                    disabled={isLoading}
+                    className="h-16 px-6 border-2 border-primary/30 hover:bg-primary/10 hover:border-primary transition-all min-h-[64px] active:scale-[0.98] touch-manipulation"
+                    aria-label="Scan QR Code"
+                  >
+                    <QrCode className="h-5 w-5 mr-2" />
+                    <span className="hidden sm:inline">Scan</span>
+                  </Button>
+                )}
+                <UnifiedSearchButton
+                  onClick={handleSearch}
+                  isLoading={isLoading}
+                  disabled={!input.trim()}
+                  variant="hero"
+                  isAuthenticated={isAuthenticated}
+                  hasReachedLimit={hasReachedLimit}
+                  isSubscribed={isSubscribed}
+                />
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="url" className="mt-0">
+            <MarketplaceUrlAnalyzer 
+              onIdentifierFound={handleIdentifierFromUrl}
             />
-          </div>
-          <div className="flex gap-3">
-            {onOpenQrScanner && (
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={onOpenQrScanner}
-                disabled={isLoading}
-                className="h-16 px-6 border-2 border-primary/30 hover:bg-primary/10 hover:border-primary transition-all min-h-[64px] active:scale-[0.98] touch-manipulation"
-                aria-label="Scan QR Code"
-              >
-                <QrCode className="h-5 w-5 mr-2" />
-                <span className="hidden sm:inline">Scan</span>
-              </Button>
-            )}
-            <UnifiedSearchButton
-              onClick={handleSearch}
-              isLoading={isLoading}
-              disabled={!input.trim()}
-              variant="hero"
-              isAuthenticated={isAuthenticated}
-              hasReachedLimit={hasReachedLimit}
-              isSubscribed={isSubscribed}
-            />
-          </div>
-        </div>
+          </TabsContent>
+        </Tabs>
+
         <SearchLimitDisplay 
           hasReachedLimit={hasReachedLimit}
           remainingSearches={remainingSearches}
@@ -214,7 +249,7 @@ const UnifiedSearchFormComponent = ({
     );
   }
 
-  // Default variant - full featured with card
+  // Default variant - full featured with card and tabs
   return (
     <Card className={`p-6 bg-gradient-to-br from-background to-background/50 border-2 border-primary/20 shadow-xl hover:shadow-2xl transition-shadow ${className}`}>
       <div className="space-y-4">
@@ -231,44 +266,73 @@ const UnifiedSearchFormComponent = ({
           </p>
         </div>
 
-        <div className="flex gap-3">
-          <div className="flex-1 relative">
-            <UnifiedSearchInput
-              value={input}
-              onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
-              placeholder="👉 Type VIN, IMEI, License Plate, or Serial Number..."
-              isLoading={isLoading}
-              variant="default"
-              error={error}
-              showIcon
-            />
-          </div>
-          
-          {onOpenQrScanner && (
-            <Button 
-              variant="outline" 
-              size="icon"
-              onClick={onOpenQrScanner}
-              disabled={isLoading}
-              title="Scan QR Code or Barcode"
-              className="h-14 w-14 border-2 hover:bg-primary/10 min-h-[56px] active:scale-[0.98] transition-transform touch-manipulation"
-              aria-label="Scan QR Code"
-            >
-              <QrCode className="h-5 w-5" />
-            </Button>
-          )}
+        <Tabs value={searchMode} onValueChange={(v) => setSearchMode(v as 'direct' | 'url')} className="w-full">
+          <TabsList className="grid w-full grid-cols-2 mb-4">
+            <TabsTrigger value="direct" className="flex items-center gap-2">
+              <Hash className="h-4 w-4" />
+              Enter ID Directly
+            </TabsTrigger>
+            <TabsTrigger value="url" className="flex items-center gap-2">
+              <Link2 className="h-4 w-4" />
+              Paste Listing URL
+            </TabsTrigger>
+          </TabsList>
 
-          <UnifiedSearchButton
-            onClick={handleSearch}
-            isLoading={isLoading}
-            disabled={!input.trim()}
-            variant="default"
-            isAuthenticated={isAuthenticated}
-            hasReachedLimit={hasReachedLimit}
-            isSubscribed={isSubscribed}
-          />
-        </div>
+          <TabsContent value="direct" className="mt-0 space-y-4">
+            <div className="flex gap-3">
+              <div className="flex-1 relative">
+                <UnifiedSearchInput
+                  value={input}
+                  onChange={handleInputChange}
+                  onKeyPress={handleKeyPress}
+                  placeholder="👉 Type VIN, IMEI, License Plate, or Serial Number..."
+                  isLoading={isLoading}
+                  variant="default"
+                  error={error}
+                  showIcon
+                />
+              </div>
+              
+              {onOpenQrScanner && (
+                <Button 
+                  variant="outline" 
+                  size="icon"
+                  onClick={onOpenQrScanner}
+                  disabled={isLoading}
+                  title="Scan QR Code or Barcode"
+                  className="h-14 w-14 border-2 hover:bg-primary/10 min-h-[56px] active:scale-[0.98] transition-transform touch-manipulation"
+                  aria-label="Scan QR Code"
+                >
+                  <QrCode className="h-5 w-5" />
+                </Button>
+              )}
+
+              <UnifiedSearchButton
+                onClick={handleSearch}
+                isLoading={isLoading}
+                disabled={!input.trim()}
+                variant="default"
+                isAuthenticated={isAuthenticated}
+                hasReachedLimit={hasReachedLimit}
+                isSubscribed={isSubscribed}
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-2 text-xs">
+              <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚗 Vehicles (VIN)</span>
+              <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">📱 Phones (IMEI)</span>
+              <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚲 Bikes</span>
+              <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">💻 Electronics</span>
+              <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🔑 Any Serial #</span>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="url" className="mt-0">
+            <MarketplaceUrlAnalyzer 
+              onIdentifierFound={handleIdentifierFromUrl}
+            />
+          </TabsContent>
+        </Tabs>
 
         <SearchLimitDisplay 
           hasReachedLimit={hasReachedLimit}
@@ -276,14 +340,6 @@ const UnifiedSearchFormComponent = ({
           isSubscribed={isSubscribed}
           isAuthenticated={isAuthenticated}
         />
-
-        <div className="flex flex-wrap gap-2 text-xs">
-          <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚗 Vehicles (VIN)</span>
-          <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">📱 Phones (IMEI)</span>
-          <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🚲 Bikes</span>
-          <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">💻 Electronics</span>
-          <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full font-medium">🔑 Any Serial #</span>
-        </div>
       </div>
     </Card>
   );

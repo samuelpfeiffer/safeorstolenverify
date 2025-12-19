@@ -110,3 +110,6 @@ verify_jwt = false
 
 [functions.ai-learning-agent]
 verify_jwt = false
+
+[functions.marketplace-url-analyzer]
+verify_jwt = false
