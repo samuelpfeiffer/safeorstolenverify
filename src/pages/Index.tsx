@@ -14,7 +14,7 @@ import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
 import { RealTimeStats } from '@/components/traffic/RealTimeStats';
-import { StructuredDataForTraffic } from '@/components/seo/StructuredDataForTraffic';
+
 
 const Index = () => {
   return (
@@ -27,171 +27,37 @@ const Index = () => {
         structuredData={[
           {
             "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SafeOrStolen Stolen Item Verification Service",
-            "description": "Protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally. Mobile app exclusively available from SafeOrStolen.com.",
-            "serviceType": "Stolen Item Verification Service",
-            "provider": {
-              "@type": "Organization",
-              "name": "SafeOrStolen"
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Worldwide"
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD",
-              "description": "2 free verification checks, 14-day trial"
+            "@type": "WebSite",
+            "name": "SafeOrStolen",
+            "url": "https://safeorstolen.com",
+            "description": "Stolen item verification service for buyers, sellers & businesses",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://safeorstolen.com/verify?q={search_term_string}",
+              "query-input": "required name=search_term_string"
             }
           },
           {
             "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "SafeOrStolen Mobile App",
-            "applicationCategory": "SecurityApplication",
-            "operatingSystem": ["iOS", "Android"],
-            "description": "ONLY mobile app for stolen item verification - exclusively available from SafeOrStolen.com. Protect buyers AND sellers. Every search makes stolen items harder to sell.",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "featureList": [
-              "Protects BOTH buyers AND sellers",
-              "Reduces crime globally",
-              "Barcode scanning",
-              "Offline mode",
-              "Exclusive to SafeOrStolen.com",
-              "3-second verification"
+            "@type": "Organization",
+            "name": "SafeOrStolen",
+            "url": "https://safeorstolen.com",
+            "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
+            "sameAs": [
+              "https://twitter.com/safeorstolen",
+              "https://facebook.com/safeorstolen",
+              "https://linkedin.com/company/safeorstolen"
             ]
           }
         ]}
       />
       
-      {/* Bot-visible SEO content - comprehensive for indexing */}
-      <div className="sr-only" aria-hidden="false">
-        <article itemScope itemType="https://schema.org/Article">
-          <header>
-            <h1 itemProp="headline">Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
-            <p itemProp="description">SafeOrStolen is the #1 stolen item verification platform trusted by buyers, sellers, and businesses. Check if any secondhand item is stolen before you buy or sell. Free instant verification with results in 3 seconds.</p>
-          </header>
-          
-          <section itemProp="articleBody">
-            <h2>Why Use a Stolen Item Checker?</h2>
-            <p>Every year, millions of stolen items are resold on marketplaces like Facebook Marketplace, eBay, Craigslist, and OfferUp. Buyers unknowingly purchase stolen goods and face financial loss when items are seized by police. Sellers who cannot prove legitimacy lose deals and trust. SafeOrStolen solves this problem by providing instant verification against 50+ databases.</p>
-            
-            <h2>What is SafeOrStolen?</h2>
-            <p>SafeOrStolen is a stolen item verification service that checks IMEI numbers, VIN numbers, serial numbers, and more against law enforcement databases, insurance records, and carrier blacklists. Unlike competitors like CheckMEND or IMEI.info, SafeOrStolen offers the only mobile app with barcode scanning, making verification instant and convenient.</p>
-            
-            <h2>How Does IMEI Verification Work?</h2>
-            <p>IMEI (International Mobile Equipment Identity) is a unique 15-digit number assigned to every mobile phone. When a phone is reported stolen, carriers add its IMEI to blacklists. SafeOrStolen checks IMEI numbers against AT&T, Verizon, T-Mobile blacklists plus international databases. A blacklisted IMEI means the phone may be stolen and could be blocked from network use.</p>
-            
-            <h2>How Does VIN Lookup Work?</h2>
-            <p>VIN (Vehicle Identification Number) is a unique 17-character code for every vehicle. SafeOrStolen checks VINs against NCIC (FBI's National Crime Information Center), NICB (National Insurance Crime Bureau), and NHTSA records. We verify vehicles in all 50 US states plus international databases. A flagged VIN indicates the vehicle may be stolen, salvaged, or have title issues.</p>
-            
-            <h2>Database Sources We Check</h2>
-            <ul>
-              <li>NCIC - FBI's National Crime Information Center with 15+ million stolen property records</li>
-              <li>NICB - National Insurance Crime Bureau VINCheck and theft records</li>
-              <li>IMEI.info - Global IMEI database covering 1 billion+ devices</li>
-              <li>Carrier Blacklists - AT&T, Verizon, T-Mobile, Sprint device blacklists</li>
-              <li>BikeIndex - 1.4 million registered bicycles with theft alerts</li>
-              <li>Hotgunz - Stolen firearms registry with 100,000+ firearms</li>
-              <li>StolenRegister - International stolen property database</li>
-              <li>NHTSA - US government vehicle records and recalls</li>
-              <li>Insurance Networks - Aggregated theft claims from major insurers</li>
-            </ul>
-            
-            <h2>Who Uses SafeOrStolen?</h2>
-            <h3>For Buyers</h3>
-            <p>Before purchasing any secondhand item on Facebook Marketplace, eBay, Craigslist, OfferUp, or from private sellers, use SafeOrStolen to verify the item isn't stolen. Protect yourself from financial loss and potential legal trouble. If police recover a stolen item you purchased, you lose both the item and your money.</p>
-            
-            <h3>For Sellers</h3>
-            <p>Prove your items are legitimate by sharing SafeOrStolen verification results with potential buyers. Build trust, close deals faster, and command better prices. A verified clean history gives buyers confidence to purchase from you.</p>
-            
-            <h3>For Businesses</h3>
-            <p>Pawn shops, secondhand dealers, auction houses, and resellers use SafeOrStolen for due diligence. Protect your business from receiving stolen goods. Business plans include bulk verification, API access, and compliance documentation.</p>
-            
-            <h2>SafeOrStolen vs Competitors</h2>
-            <h3>SafeOrStolen vs CheckMEND</h3>
-            <p>CheckMEND charges per report and has no mobile app. SafeOrStolen offers 2 free checks, unlimited subscription plans, and the only mobile app with barcode scanning.</p>
-            
-            <h3>SafeOrStolen vs IMEI.info</h3>
-            <p>IMEI.info only checks phones. SafeOrStolen verifies phones, vehicles, boats, firearms, electronics, and more - all in one platform.</p>
-            
-            <h3>SafeOrStolen vs Carfax</h3>
-            <p>Carfax only checks vehicles. SafeOrStolen is like Carfax for everything - phones, cars, boats, firearms, electronics, and any item with a serial number.</p>
-            
-            <h2>The Only Mobile App for Stolen Item Verification</h2>
-            <p>SafeOrStolen is the only platform offering a mobile app for stolen item verification. Our app features barcode scanning for instant IMEI and serial number capture, offline verification queue, 3-second results, and cross-platform sync. Download the SafeOrStolen app at safeorstolen.com/app.</p>
-            
-            <h2>Pricing Plans</h2>
-            <ul>
-              <li>Free Trial - 2 free verifications, 14-day period, no credit card required</li>
-              <li>Starter Plan - $4.99/month for 15 checks per month</li>
-              <li>Personal Plan - $9.99/month for 50 checks per month</li>
-              <li>Professional Plan - $29.99/month for unlimited checks</li>
-              <li>Pay Per Use - $0.50 per verification, no subscription required</li>
-            </ul>
-            
-            <h2>How to Check if an Item is Stolen</h2>
-            <ol>
-              <li>Go to SafeOrStolen.com or download the mobile app</li>
-              <li>Enter the IMEI, VIN, or serial number</li>
-              <li>Select the item type (phone, vehicle, firearm, etc.)</li>
-              <li>Get instant results in 3 seconds</li>
-              <li>Share verification results with buyers or sellers</li>
-            </ol>
-            
-            <h2>Trust & Security</h2>
-            <p>SafeOrStolen uses 256-bit SSL encryption, never stores your payment data, and processes all verifications securely. We're backed by FasterCapital and featured in multiple press releases. Join thousands of users protecting themselves from stolen goods.</p>
-            
-            <h2>Frequently Asked Questions</h2>
-            <h3>How do I check if a phone is stolen before buying?</h3>
-            <p>Enter the IMEI number on SafeOrStolen.com. The IMEI is found in Settings or by dialing *#06#. We check against carrier blacklists, NCIC, and international databases. Results appear in 3 seconds showing if the phone is clear or flagged as stolen.</p>
-            
-            <h3>How do I check if a car is stolen before buying?</h3>
-            <p>Enter the 17-character VIN on SafeOrStolen.com. The VIN is located on the dashboard near the windshield or driver's door jamb. We verify against NCIC, NICB, and state DMV records to confirm the vehicle isn't stolen, salvaged, or has title issues.</p>
-            
-            <h3>Is SafeOrStolen free?</h3>
-            <p>Yes, SafeOrStolen offers 2 free verification checks during a 14-day trial. No credit card required. After the trial, choose from affordable plans starting at $4.99/month or pay-per-use at $0.50 per check.</p>
-            
-            <h3>What's the difference between SafeOrStolen and CheckMEND?</h3>
-            <p>SafeOrStolen offers a mobile app with barcode scanning (CheckMEND doesn't), covers more item types (phones, cars, boats, firearms, electronics), and provides 2 free checks. CheckMEND charges per report with no free tier.</p>
-            
-            <h3>Can I check firearms on SafeOrStolen?</h3>
-            <p>Yes, SafeOrStolen verifies firearms against the Hotgunz stolen firearms registry and other law enforcement databases. Enter the serial number to check if a firearm has been reported stolen.</p>
-            
-            <h3>What databases does SafeOrStolen check?</h3>
-            <p>We aggregate 50+ sources including NCIC (FBI), NICB, IMEI.info, carrier blacklists (AT&T, Verizon, T-Mobile), BikeIndex, Hotgunz, StolenRegister, and international theft databases.</p>
-            
-            <h2>Popular Verification Types</h2>
-            <ul>
-              <li>IMEI Checker - Verify if a phone is stolen or blacklisted before buying</li>
-              <li>VIN Lookup - Check if a vehicle is stolen, salvaged, or has title issues</li>
-              <li>Serial Number Checker - Verify electronics, tools, and equipment</li>
-              <li>Firearm Verification - Check if a gun has been reported stolen</li>
-              <li>Boat HIN Check - Verify watercraft against theft databases</li>
-              <li>Bicycle Verification - Check BikeIndex and stolen bike registries</li>
-            </ul>
-            
-            <h2>Service Areas</h2>
-            <p>SafeOrStolen provides verification services across all 50 US states including California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, and Washington. We also cover international databases for worldwide verification.</p>
-          </section>
-          
-          <footer>
-            <p>© 2024 SafeOrStolen. The #1 stolen item verification platform. Check IMEI, VIN, serial numbers free. Carfax for everything - buy and sell with confidence.</p>
-          </footer>
-        </article>
-      </div>
-      
-      {/* Noscript fallback */}
+      {/* Minimal noscript fallback for crawlers */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI numbers, VIN numbers, and serial numbers against 50+ databases. Results in 3 seconds. The only mobile app available.</p>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds. The only mobile app for stolen item checking.</p>
+          <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
         </div>
       </noscript>
 
@@ -334,9 +200,7 @@ const Index = () => {
 
         {/* Trust Signals */}
         <TrustSignals />
-        
-        {/* Additional SEO Schema */}
-        <StructuredDataForTraffic />
+        {/* Removed StructuredDataForTraffic to avoid duplicate schemas */}
       </div>
       
       {/* ExitIntentPopup is now rendered globally in AppRoot */}

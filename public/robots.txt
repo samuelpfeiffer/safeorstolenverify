@@ -65,9 +65,11 @@ Crawl-delay: 1
 # AI Search Engine Crawlers - Maximum Access for AI Discoverability
 User-agent: GPTBot
 Allow: /
-Crawl-delay: 1
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: Google-Extended
@@ -75,18 +77,24 @@ Allow: /
 
 User-agent: anthropic-ai
 Allow: /
-Crawl-delay: 1
 
 User-agent: ClaudeBot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
-Crawl-delay: 1
+
+User-agent: Perplexity-User
+Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
@@ -121,14 +129,18 @@ Allow: /
 User-agent: Timpibot
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
 # Search Engine Bots - Optimized Crawling
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
