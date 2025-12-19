@@ -20,45 +20,12 @@ import { RealTimeStats } from '@/components/traffic/RealTimeStats';
 const Index = () => {
   return (
     <>
+        {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
         <PageSEO
         title="Stolen Item Checker for Buyers, Sellers & Businesses | Free IMEI VIN Serial Verification | SafeOrStolen"
         description="Protect buyers, sellers & businesses from stolen goods. Buyers verify before purchasing. Sellers prove legitimacy. Businesses reduce risk. Free IMEI, VIN, serial number verification in 3 seconds. The only mobile app available."
         keywords="stolen item checker, verify before buying, prove item not stolen, pawn shop verification, business stolen goods check, IMEI checker free, VIN lookup, serial number verification, secondhand verification, reseller protection"
         canonical="/"
-        structuredData={[
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "SafeOrStolen",
-            "url": "https://safeorstolen.com",
-            "description": "Stolen item verification service for buyers, sellers & businesses",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://safeorstolen.com/verify?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "SafeOrStolen",
-            "url": "https://safeorstolen.com",
-            "description": "SafeOrStolen is a stolen item verification service that helps buyers, sellers, and businesses verify IMEI, VIN, and serial numbers against 50+ databases in 3 seconds.",
-            "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer support",
-              "email": "support@safeorstolen.com",
-              "availableLanguage": "English"
-            },
-            "sameAs": [
-              "https://twitter.com/safeorstolen",
-              "https://facebook.com/safeorstolen",
-              "https://linkedin.com/company/safeorstolen",
-              "https://www.youtube.com/@safeorstolen"
-            ]
-          }
-        ]}
       />
       
       {/* Minimal noscript fallback for crawlers */}

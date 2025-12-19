@@ -23,36 +23,7 @@ export const AdvertisingStrategy = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@safeorstolen" />
       
-      {/* Schema.org markup for ads visibility */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Safe Or Stolen Verification Service",
-          "description": "Verify if items are stolen before buying - protect yourself from fraud",
-          "serviceType": "Security Verification Service",
-          "provider": {
-            "@type": "Organization",
-            "name": "Safe Or Stolen"
-          },
-          "areaServed": "Worldwide"
-        })}
-      </script>
-      
-      {/* Remarketing tags placeholder */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Safe Or Stolen",
-          "url": "https://safeorstolen.com",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://safeorstolen.com/verify",
-            "query-input": "required name=search_term_string"
-          }
-        })}
-      </script>
+      {/* NOTE: Schema.org markup (WebSite, Service, Organization) is defined in index.html - DO NOT duplicate */}
     </Helmet>
   );
 };

@@ -54,72 +54,7 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
       <meta name="theme-color" content="#1a1625" />
       <meta name="color-scheme" content="dark" />
       
-      {/* Enhanced Structured Data for Google */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Organization",
-              "@id": `${siteUrl}/#organization`,
-              "name": "Safe Or Stolen",
-              "url": siteUrl,
-              "logo": {
-                "@type": "ImageObject",
-                "url": `${siteUrl}/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png`,
-                "width": 512,
-                "height": 512
-              },
-              "description": "Global verification service for IMEI, serial numbers, and VIN to check if items are stolen or safe to buy",
-              "sameAs": [
-                "https://twitter.com/safeorstolen",
-                "https://facebook.com/safeorstolen",
-                "https://linkedin.com/company/safeorstolen"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Customer Service",
-                "email": "support@safeorstolen.com",
-                "availableLanguage": "English"
-              }
-            },
-            {
-              "@type": "WebSite",
-              "@id": `${siteUrl}/#website`,
-              "url": siteUrl,
-              "name": "Safe Or Stolen",
-              "description": "Verify IMEI, serial numbers, and VIN instantly. Check if phones, cars, bikes, electronics are stolen before buying.",
-              "publisher": {
-                "@id": `${siteUrl}/#organization`
-              },
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": `${siteUrl}/verify`,
-                "query-input": "required name=search_term_string"
-              }
-            },
-            {
-              "@type": "Service",
-              "@id": `${siteUrl}/#service`,
-              "serviceType": "Stolen Goods Verification",
-              "provider": {
-                "@id": `${siteUrl}/#organization`
-              },
-              "areaServed": "Worldwide",
-              "description": "Real-time verification service to check if IMEI, serial numbers, and VIN are reported as stolen",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "priceValidUntil": "2026-12-31",
-                "availability": "https://schema.org/InStock",
-                "url": "https://safeorstolen.com/pricing",
-                "description": "Free stolen goods verification"
-              }
-            }
-          ]
-        })}
-      </script>
+      {/* NOTE: Organization, WebSite, and Service schemas are defined in index.html - DO NOT duplicate */}
 
       {/* Performance Resource Hints */}
       <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />

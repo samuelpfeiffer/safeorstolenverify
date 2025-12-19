@@ -17,27 +17,8 @@ export const TrustStructuredData = () => {
     }
   };
 
-  const organizationTrustSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Safe or Stolen",
-    "url": "https://safeorstolen.com",
-    "knowsAbout": [
-      "Data Security",
-      "Privacy Protection",
-      "Compliance Certification",
-      "SOC 2 Type II",
-      "ISO 27001",
-      "GDPR Compliance",
-      "PCI DSS Level 1"
-    ],
-    "slogan": "Trusted, Verified, Secure",
-    "award": [
-      "SOC 2 Type II Certified",
-      "ISO 27001 Certified",
-      "PCI DSS Level 1 Compliant"
-    ]
-  };
+  // NOTE: Organization schema is defined in index.html - this adds trust-specific attributes only
+  // Using @id reference to main organization instead of duplicate schema
 
   const securityActionSchema = {
     "@context": "https://schema.org",
@@ -68,9 +49,7 @@ export const TrustStructuredData = () => {
       <script type="application/ld+json">
         {JSON.stringify(trustSchema)}
       </script>
-      <script type="application/ld+json">
-        {JSON.stringify(organizationTrustSchema)}
-      </script>
+      {/* Organization schema removed - defined in index.html */}
       <script type="application/ld+json">
         {JSON.stringify(securityActionSchema)}
       </script>
