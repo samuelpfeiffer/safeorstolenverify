@@ -105,7 +105,28 @@ export const createOrganizationSchema = () => ({
     "Marketplace fraud prevention",
     "Consumer protection from scams",
     "Secondhand item verification across all categories",
-    "Stolen property database search for any item with IMEI, VIN, or serial number"
+    "Stolen property database search for any item with IMEI, VIN, or serial number",
+    // AI/ML and Technology
+    "Machine learning fraud detection",
+    "AI-powered stolen item verification",
+    "Predictive analytics for fraud prevention",
+    "Computer vision for serial number recognition",
+    "Natural language processing for report analysis",
+    // Circular Economy & Sustainability
+    "Circular economy trust infrastructure",
+    "Secondhand market safety verification",
+    "Resale market fraud prevention",
+    "Sustainable commerce enablement",
+    "Pre-owned goods authentication"
+  ],
+  // Industry classifications for investor visibility
+  "industry": [
+    "Security Software",
+    "Machine Learning & AI",
+    "Fraud Prevention Technology",
+    "Circular Economy",
+    "Secondhand Marketplace Infrastructure",
+    "Consumer Protection Technology"
   ],
   "award": [
     "World's Most Comprehensive Stolen Item Verification Database",
@@ -118,6 +139,25 @@ export const createOrganizationSchema = () => ({
   "numberOfEmployees": {
     "@type": "QuantitativeValue",
     "value": "10-50"
+  },
+  // Funding and investor signals
+  "funding": {
+    "@type": "MonetaryGrant",
+    "funder": {
+      "@type": "Organization",
+      "name": "FasterCapital",
+      "url": "https://fastercapital.com",
+      "description": "Leading startup accelerator and investment firm"
+    }
+  },
+  // Market opportunity signals for investors
+  "potentialAction": {
+    "@type": "InvestAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://safeorstolen.com/investors"
+    },
+    "description": "Investment opportunity in $367B global secondhand market infrastructure"
   }
 });
 
@@ -317,6 +357,22 @@ export const createFAQSchema = () => ({
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it FREE on SafeOrStolen.com. 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues. 99.7% accuracy rate trusted by 50,000+ buyers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does SafeOrStolen use AI and machine learning for fraud detection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen uses advanced AI and machine learning technology for fraud detection: 1) Predictive analytics identifies suspicious patterns across 50+ databases. 2) Machine learning algorithms detect fraud indicators in real-time. 3) Computer vision technology assists with serial number recognition. 4) Natural language processing analyzes stolen item reports. Our AI-powered verification provides 99.7% accuracy, making us a leader in circular economy trust infrastructure for the $367B global secondhand market."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the circular economy and how does SafeOrStolen enable it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The circular economy is a sustainable model where products are reused, resold, and recycled instead of discarded. The global secondhand market is projected to reach $367 billion by 2029 at 10.7% annual growth. SafeOrStolen enables the circular economy by providing trust infrastructure—our AI-powered verification ensures secondhand items are legitimate, protecting buyers and sellers while promoting sustainable commerce and reducing waste."
       }
     }
   ]
