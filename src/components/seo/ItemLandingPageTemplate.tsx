@@ -44,12 +44,17 @@ export const ItemLandingPageTemplate = ({
       {
         "@type": "Service",
         "name": `${itemType} Verification Service`,
+        "url": `https://safeorstolen.com${location.pathname}`,
         "provider": {
           "@type": "Organization",
-          "name": "SafeOrStolen"
+          "name": "SafeOrStolen",
+          "url": "https://safeorstolen.com"
         },
         "serviceType": `${itemType} Theft Verification`,
-        "areaServed": "US",
+        "areaServed": {
+          "@type": "Place",
+          "name": "Worldwide"
+        },
         "description": metaDescription
       },
       {

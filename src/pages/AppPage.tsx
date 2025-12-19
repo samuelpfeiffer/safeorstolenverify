@@ -41,61 +41,33 @@ const AppPage = () => {
     ]
   };
 
-  // Enhanced MobileApplication Schema
+  // Enhanced MobileApplication Schema - fixed with required url
   const mobileAppSchema = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "SafeOrStolen - Stolen Item Checker App",
     "applicationCategory": "SecurityApplication",
-    "operatingSystem": ["Android", "iOS", "Web"],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "description": "Free mobile app to verify if any item is stolen before you buy. Check phones (IMEI), vehicles (VIN), electronics (serial numbers), firearms, boats, bikes, and more. Instant barcode scanning works offline.",
+    "operatingSystem": "Android, iOS",
+    "url": "https://safeorstolen.com/app",
     "downloadUrl": "https://safeorstolen.com/app",
-    "installUrl": "https://safeorstolen.com/app",
-    "screenshot": "https://safeorstolen.com/og-image.jpg",
+    "description": "Free mobile app to verify if any item is stolen before you buy. Check phones (IMEI), vehicles (VIN), electronics (serial numbers).",
     "softwareVersion": "2.0",
     "featureList": [
-      "Barcode scanner for instant IMEI/serial verification",
-      "IMEI checker for stolen phones",
-      "VIN lookup for stolen vehicles",
-      "Serial number verification for electronics",
-      "Works offline after installation",
-      "Covers all 50 US states",
-      "Free verification checks included",
-      "3-second stolen verification results"
+      "Barcode scanner for instant verification",
+      "IMEI checker for phones",
+      "VIN lookup for vehicles",
+      "Works offline"
     ]
   };
 
-  // WebApplication with DownloadAction Schema
+  // Simplified WebApplication Schema
   const downloadActionSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "SafeOrStolen Web App",
     "applicationCategory": "WebApplication",
     "operatingSystem": "Web",
-    "url": "https://safeorstolen.com/app",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "potentialAction": {
-      "@type": "DownloadAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://safeorstolen.com/app",
-        "actionPlatform": [
-          "http://schema.org/DesktopWebPlatform",
-          "http://schema.org/IOSPlatform",
-          "http://schema.org/AndroidPlatform"
-        ]
-      }
-    }
+    "url": "https://safeorstolen.com/app"
   };
 
   // FAQPage Schema
