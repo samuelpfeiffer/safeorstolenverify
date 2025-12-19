@@ -555,6 +555,20 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /account                          /dashboard        301!
 /testimonials                     /about            301!
 
+# Missing "Crawled not indexed" URLs (Dec 2025)
+/our-mission                      /about            301!
+/blog/how-to-check-if-device-is-safe-stolen         /blog/how-to-check-if-phone-stolen  301!
+/blog/the-cost-of-secondhand-market-fraud-in-2025-* /blog  301!
+/blog/verification-methodology-how-we-check-stolen-items /about  301!
+/blog/phone-verification-guide    /blog/how-to-check-if-phone-stolen  301!
+/blog/verification-methodology    /about  301!
+/city/phoenix                     /verify  301!
+/city/los-angeles                 /stolen-check-los-angeles  301!
+/city/chicago                     /verify  301!
+/city/miami                       /verify  301!
+/city/houston                     /verify  301!
+/city/new-york                    /stolen-check-new-york-city  301!
+
 # Guides directory
 /guides/verify-craigslist-items   /verify  301!
 /guides/offerup-scam-protection   /verify  301!
