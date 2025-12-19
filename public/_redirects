@@ -449,11 +449,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog            301!
 /blog/best-imei-checker-tools-2025                              /imei-checker    301!
-/blog/how-to-check-phone-stolen                                 /check-phone     301!
+/blog/how-to-check-phone-stolen                                 /blog/how-to-check-if-phone-stolen  301!
 /blog/why-verify-serial-numbers                                 /blog            301!
 /blog/complete-marketplace-buyers-checklist                     /blog            301!
-/blog/playstation-5-serial-number-verification-guide-*          /blog            301!
-/blog/how-pawn-shops-can-prevent-buying-stolen-goods-*          /blog            301!
+# Specific timestamped blog URLs (before wildcards)
+/blog/playstation-5-serial-number-verification-guide-1          /serial-number-checker  301!
+/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229  /blog/pawn-shop-stolen-item-verification  301!
+# Wildcard patterns for other timestamped versions
+/blog/playstation-5-serial-number-verification-guide-*          /serial-number-checker  301!
+/blog/how-pawn-shops-can-prevent-buying-stolen-goods-*          /blog/pawn-shop-stolen-item-verification  301!
 /blog/tesla-model-3-vin-verification-*                          /blog            301!
 /blog/scan-and-verify-using-safeorstolen-camera-feature-*       /app             301!
 /blog/imei-checker-guide-2025                                   /blog/complete-imei-guide-protect-yourself  301!
