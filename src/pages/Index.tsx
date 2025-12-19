@@ -5,6 +5,7 @@ import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
 import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
+import { InternalLinksSection } from '@/components/home/InternalLinksSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle, Trophy } from 'lucide-react';
@@ -197,6 +198,9 @@ const Index = () => {
 
         {/* YouTube Channel Section */}
         <YouTubeChannelSection />
+
+        {/* Internal Links for SEO */}
+        <InternalLinksSection />
 
         {/* Trust Signals */}
         <TrustSignals />
