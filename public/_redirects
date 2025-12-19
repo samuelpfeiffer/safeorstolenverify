@@ -361,6 +361,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /city/new-york-ny/vin-verification        /stolen-check-new-york-city   301!
 /city/new-york-ny/imei-check              /stolen-check-new-york-city   301!
 /city/new-york-ny/stolen-item-checker     /stolen-check-new-york-city   301!
+/city/chicago-il/imei-check               /imei-checker                 301!
+/city/chicago-il/stolen-item-checker      /verify                       301!
 /city/*                                   /verify                       301!
 
 # City-name pattern redirects (cityname/service format)
