@@ -1,42 +1,16 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Play, Shield, Users, TrendingUp, Youtube } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+
+// NOTE: VideoObject schema REMOVED from this component.
+// Google requires VideoObject schema ONLY on dedicated "watch pages" (like /youtube).
+// Having VideoObject on non-watch pages causes "Video isn't on a watch page" indexing errors.
+// See: https://developers.google.com/search/docs/appearance/video
 
 const extractVideoId = (url: string): string => {
   const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/|youtube\.com\/shorts\/)([^"&?\/\s]{11})/;
   const match = url.match(regex);
   return match ? match[1] : '';
-};
-
-// Generate VideoObject schema for SEO
-const generateVideoSchema = (videos: typeof videoContent) => {
-  return videos
-    .filter(v => v.youtubeUrl)
-    .map(video => {
-      const videoId = extractVideoId(video.youtubeUrl!);
-      return {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": video.title,
-        "description": video.description,
-        "thumbnailUrl": `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-        "uploadDate": "2025-11-15",
-        "duration": video.duration === "0:59" ? "PT59S" : `PT${video.duration.replace(':', 'M')}S`,
-        "contentUrl": video.youtubeUrl,
-        "embedUrl": `https://www.youtube.com/embed/${videoId}`,
-        "publisher": {
-          "@type": "Organization",
-          "name": "SafeOrStolen",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://safeorstolen.com/logo.png"
-          },
-          "url": "https://safeorstolen.com",
-          "sameAs": "https://www.youtube.com/@safeorstolen"
-        }
-      };
-    });
 };
 
 const videoContent = [
@@ -64,18 +38,9 @@ const videoContent = [
 ];
 
 export const VideoMarketingSection = () => {
-  const videoSchemas = generateVideoSchema(videoContent);
-
   return (
     <>
-      {/* VideoObject Schema for SEO */}
-      <Helmet>
-        {videoSchemas.map((schema, index) => (
-          <script key={index} type="application/ld+json">
-            {JSON.stringify(schema)}
-          </script>
-        ))}
-      </Helmet>
+      {/* NOTE: No VideoObject schema here - only on dedicated watch pages like /youtube */}
 
       <section className="py-24 px-6 bg-gradient-to-b from-sos to-sos/95">
         <div className="container mx-auto max-w-6xl">

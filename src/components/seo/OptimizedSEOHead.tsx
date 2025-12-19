@@ -13,6 +13,8 @@ interface OptimizedSEOHeadProps {
   type?: string;
   structuredData?: Record<string, any> | object[];
   noIndex?: boolean;
+  /** Set to true for dedicated video watch pages to enable video indexing */
+  isVideoPage?: boolean;
 }
 
 export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
@@ -23,7 +25,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   image = '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
   type = 'website',
   structuredData,
-  noIndex = false
+  noIndex = false,
+  isVideoPage = false
 }) => {
   const location = useSafeLocation();
   
@@ -71,8 +74,8 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       {/* Canonical URL - CRITICAL: Always render for SEO */}
       <link rel="canonical" href={fullCanonicalUrl} />
       
-      {/* Robots Meta Tag - only noindex if explicitly requested */}
-      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
+      {/* Robots Meta Tag - max-video-preview:-1 only for dedicated video pages */}
+      <meta name="robots" content={noIndex ? "noindex, nofollow" : `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:${isVideoPage ? '-1' : '0'}`} />
       
       {/* Enhanced SEO Meta Tags */}
       <meta name="author" content="SafeOrStolen.com" />
