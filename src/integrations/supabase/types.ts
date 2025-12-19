@@ -585,6 +585,42 @@ export type Database = {
           },
         ]
       }
+      gsc_oauth_tokens: {
+        Row: {
+          access_token: string
+          created_at: string | null
+          expires_at: string | null
+          id: string
+          refresh_token: string | null
+          scope: string | null
+          token_type: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          access_token: string
+          created_at?: string | null
+          expires_at?: string | null
+          id?: string
+          refresh_token?: string | null
+          scope?: string | null
+          token_type?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          access_token?: string
+          created_at?: string | null
+          expires_at?: string | null
+          id?: string
+          refresh_token?: string | null
+          scope?: string | null
+          token_type?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           created_at: string
@@ -825,6 +861,47 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "shared_reports_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      stolen_item_notifications: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_read: boolean | null
+          message: string | null
+          notification_type: string
+          read_at: string | null
+          stolen_item_id: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message?: string | null
+          notification_type: string
+          read_at?: string | null
+          stolen_item_id?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message?: string | null
+          notification_type?: string
+          read_at?: string | null
+          stolen_item_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "stolen_item_notifications_stolen_item_id_fkey"
             columns: ["stolen_item_id"]
             isOneToOne: false
             referencedRelation: "stolen_items"
