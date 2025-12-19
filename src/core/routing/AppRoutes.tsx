@@ -13,6 +13,7 @@ const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'));
+const SitemapPage = lazy(() => import('@/pages/SitemapPage'));
 const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
@@ -171,6 +172,7 @@ export const AppRoutes = () => {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/sitemap" element={<SitemapPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/report-stolen" element={<ReportStolenPage />} />
