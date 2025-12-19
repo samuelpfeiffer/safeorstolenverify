@@ -70,10 +70,10 @@ export const InternalLinksSection = () => {
       icon: BookOpen,
       links: [
         { to: "/blog", label: "Blog" },
+        { to: "/blog/carfax-vs-free-vin-alternatives", label: "Free Carfax Alternatives" },
         { to: "/how-it-works", label: "How It Works" },
         { to: "/faq", label: "FAQ" },
         { to: "/facebook-marketplace-stolen-check", label: "Marketplace Safety" },
-        { to: "/testimonials", label: "Testimonials" },
         { to: "/sitemap", label: "Full Sitemap" },
       ]
     },
