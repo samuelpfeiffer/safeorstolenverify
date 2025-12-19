@@ -95,11 +95,12 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/stolen-check-san-jose', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
-  // BLOG ARTICLES (20+)
+  // BLOG ARTICLES (22)
   // ============================================
   { path: '/blog', priority: 0.80, changefreq: 'weekly' },
   { path: '/blog/how-to-check-if-phone-stolen', priority: 0.75, changefreq: 'monthly' },
   { path: '/blog/complete-vin-guide', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/data-source-credibility-stolen-goods-verification', priority: 0.75, changefreq: 'monthly' },
   { path: '/blog/protect-yourself-buying-used-electronics', priority: 0.75, changefreq: 'monthly' },
   { path: '/blog/ultimate-marketplace-buyers-guide', priority: 0.75, changefreq: 'monthly' },
   { path: '/blog/complete-imei-guide-protect-yourself', priority: 0.75, changefreq: 'monthly' },
@@ -124,6 +125,27 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // FREE TOOLS (1)
   // ============================================
   { path: '/free-tools', priority: 0.85, changefreq: 'weekly' },
+
+  // ============================================
+  // HIGH-TRAFFIC SEARCH LANDING PAGES (7)
+  // ============================================
+  { path: '/is-my-phone-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/is-this-car-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/is-this-laptop-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/is-this-bike-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/is-this-gun-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-stolen-phone', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-stolen-car', priority: 0.85, changefreq: 'weekly' },
+  { path: '/report-stolen', priority: 0.70, changefreq: 'monthly' },
+
+  // ============================================
+  // NEWS & PRESS PAGES (5)
+  // ============================================
+  { path: '/news/onevalley-recognition', priority: 0.60, changefreq: 'yearly' },
+  { path: '/press-kit', priority: 0.60, changefreq: 'monthly' },
+  { path: '/product-hunt', priority: 0.60, changefreq: 'monthly' },
+  { path: '/youtube', priority: 0.55, changefreq: 'monthly' },
+  { path: '/crunchbase', priority: 0.55, changefreq: 'monthly' },
 
   // ============================================
   // TOP 10 STATE LICENSE PLATE LOOKUPS (have actual routes)
