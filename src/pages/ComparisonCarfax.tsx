@@ -258,6 +258,23 @@ const ComparisonCarfax = () => {
               </CardContent>
             </Card>
 
+            {/* Related Article */}
+            <Card className="mb-12 border-primary/20">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-bold mb-3">Related Guide</h3>
+                <Link 
+                  to="/blog/carfax-vs-free-vin-alternatives" 
+                  className="text-primary hover:underline font-medium flex items-center gap-2"
+                >
+                  <Zap className="w-4 h-4" />
+                  Carfax vs Free VIN Alternatives: Complete 2025 Guide →
+                </Link>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Learn about all your options for vehicle verification - comparing costs, features, and databases.
+                </p>
+              </CardContent>
+            </Card>
+
             {/* CTA */}
             <Card className="bg-gradient-to-br from-primary/10 to-secondary/10">
               <CardContent className="pt-6 text-center">
