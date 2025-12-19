@@ -453,6 +453,24 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/playstation-5-serial-number-verification-guide-*          /blog            301!
 /blog/how-pawn-shops-can-prevent-buying-stolen-goods-*          /blog            301!
 /blog/tesla-model-3-vin-verification-*                          /blog            301!
+/blog/imei-checker-guide-2025                                   /blog/complete-imei-guide-protect-yourself  301!
+/blog/imei-check-everything                                     /blog/complete-imei-guide-protect-yourself  301!
+/blog/vin-verification-guide                                    /blog/complete-vin-guide  301!
+/blog/imei-blacklist-guide                                      /blog/complete-imei-guide-protect-yourself  301!
+/blog/verify-used-electronics-before-buying                     /blog/protect-yourself-buying-used-electronics  301!
+/blog/buying-used-phones-red-flags                              /blog/protect-yourself-buying-used-electronics  301!
+/blog/buying-used-bikes-verification-guide                      /blog  301!
+/blog/safer-buying-workflow                                     /blog/ultimate-marketplace-buyers-guide  301!
+
+# City stolen-item-check redirects (GSC duplicates)
+/michigan-stolen-item-check                                     /verify  301!
+/tennessee-stolen-item-check                                    /verify  301!
+/oakland-stolen-item-check                                      /verify  301!
+/las-vegas-stolen-item-check                                    /verify  301!
+/los-angeles-stolen-item-check                                  /stolen-check-los-angeles  301!
+
+# Referral page redirect
+/referral                                                       /pricing  301!
 
 # Blog posts with timestamps (pattern match)
 /blog/red-flags-buying-used-electronics-1759314016.095080                    /blog  301!
