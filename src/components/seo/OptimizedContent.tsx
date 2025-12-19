@@ -224,17 +224,16 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
       
-      {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(content.schema)}
-      </script>
-      
-      {/* Business Schema (if enabled) */}
-      {includeBusinessSchema && (
+      {/* NOTE: Core schemas (WebSite, Organization, Service) are defined in index.html
+          Page-specific schemas like HowTo, AboutPage, ContactPage are allowed here
+          but WebSite and Organization schemas would be duplicates - only rendering page-specific ones */}
+      {content.schema['@type'] !== 'WebSite' && content.schema['@type'] !== 'Organization' && (
         <script type="application/ld+json">
-          {JSON.stringify(businessSchema)}
+          {JSON.stringify(content.schema)}
         </script>
       )}
+      
+      {/* Business Schema REMOVED - Organization schema is in index.html */}
       
       {/* Enhanced Analytics Configuration */}
       <script type="application/ld+json">

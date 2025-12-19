@@ -39,20 +39,7 @@ export const GoogleRequirements: React.FC = () => {
       <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <link rel="manifest" href="/manifest.json" />
       
-      {/* Structured Data for Rich Results */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Safe or Stolen",
-          "url": "https://safeorstolen.com",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://safeorstolen.com/verify",
-            "query-input": "required name=search_term_string"
-          }
-        })}
-      </script>
+      {/* NOTE: Structured Data (WebSite, Organization) is defined in index.html - DO NOT duplicate */}
       
       {/* Preload Critical Resources */}
       <link rel="preload" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" as="image" />
