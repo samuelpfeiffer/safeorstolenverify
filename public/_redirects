@@ -417,6 +417,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /guides/imei-blacklist-guide       /about  301!
 /guides/imei-blacklist-explained   /about  301!
+/guides/ebay-buyer-protection      /verify  301!
 /guides/*                          /about  301!
 /los-angeles/vin-check             /california-vin-lookup  301!
 /state/*                           /verify  301!
