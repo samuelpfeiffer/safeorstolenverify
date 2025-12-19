@@ -14,6 +14,171 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_agent_learnings: {
+        Row: {
+          agent_name: string
+          confidence_score: number | null
+          created_at: string
+          failure_count: number | null
+          id: string
+          pattern_data: Json
+          pattern_type: string
+          success_count: number | null
+          updated_at: string
+        }
+        Insert: {
+          agent_name: string
+          confidence_score?: number | null
+          created_at?: string
+          failure_count?: number | null
+          id?: string
+          pattern_data: Json
+          pattern_type: string
+          success_count?: number | null
+          updated_at?: string
+        }
+        Update: {
+          agent_name?: string
+          confidence_score?: number | null
+          created_at?: string
+          failure_count?: number | null
+          id?: string
+          pattern_data?: Json
+          pattern_type?: string
+          success_count?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      ai_agent_runs: {
+        Row: {
+          agent_name: string
+          completed_at: string | null
+          cost_estimate: number | null
+          created_at: string
+          error_message: string | null
+          id: string
+          input_data: Json | null
+          output_data: Json | null
+          started_at: string | null
+          status: string
+          tokens_used: number | null
+        }
+        Insert: {
+          agent_name: string
+          completed_at?: string | null
+          cost_estimate?: number | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          input_data?: Json | null
+          output_data?: Json | null
+          started_at?: string | null
+          status?: string
+          tokens_used?: number | null
+        }
+        Update: {
+          agent_name?: string
+          completed_at?: string | null
+          cost_estimate?: number | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          input_data?: Json | null
+          output_data?: Json | null
+          started_at?: string | null
+          status?: string
+          tokens_used?: number | null
+        }
+        Relationships: []
+      }
+      ai_content_queue: {
+        Row: {
+          content: string | null
+          content_type: string
+          created_at: string
+          created_by: string | null
+          id: string
+          metadata: Json | null
+          published_at: string | null
+          reviewed_by: string | null
+          scheduled_publish_at: string | null
+          seo_score: number | null
+          status: string
+          title: string | null
+        }
+        Insert: {
+          content?: string | null
+          content_type: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          metadata?: Json | null
+          published_at?: string | null
+          reviewed_by?: string | null
+          scheduled_publish_at?: string | null
+          seo_score?: number | null
+          status?: string
+          title?: string | null
+        }
+        Update: {
+          content?: string | null
+          content_type?: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          metadata?: Json | null
+          published_at?: string | null
+          reviewed_by?: string | null
+          scheduled_publish_at?: string | null
+          seo_score?: number | null
+          status?: string
+          title?: string | null
+        }
+        Relationships: []
+      }
+      ai_recommendations: {
+        Row: {
+          action_data: Json | null
+          agent_name: string
+          category: string
+          created_at: string
+          description: string | null
+          id: string
+          priority: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          title: string
+        }
+        Insert: {
+          action_data?: Json | null
+          agent_name: string
+          category: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          priority?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          title: string
+        }
+        Update: {
+          action_data?: Json | null
+          agent_name?: string
+          category?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          priority?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          title?: string
+        }
+        Relationships: []
+      }
       audit_logs: {
         Row: {
           action: string
@@ -372,6 +537,53 @@ export type Database = {
           user_id?: string | null
         }
         Relationships: []
+      }
+      fraud_analysis: {
+        Row: {
+          auto_action_taken: string | null
+          created_at: string
+          fraud_probability: number
+          id: string
+          indicators: Json | null
+          recommendation: string | null
+          report_id: string | null
+          reviewed: boolean | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+        }
+        Insert: {
+          auto_action_taken?: string | null
+          created_at?: string
+          fraud_probability?: number
+          id?: string
+          indicators?: Json | null
+          recommendation?: string | null
+          report_id?: string | null
+          reviewed?: boolean | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+        }
+        Update: {
+          auto_action_taken?: string | null
+          created_at?: string
+          fraud_probability?: number
+          id?: string
+          indicators?: Json | null
+          recommendation?: string | null
+          report_id?: string | null
+          reviewed?: boolean | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fraud_analysis_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       newsletter_subscribers: {
         Row: {
