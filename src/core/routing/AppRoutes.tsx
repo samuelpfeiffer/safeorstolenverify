@@ -96,6 +96,7 @@ const IMEICheckerAppDownload = lazy(() => import('@/pages/blog/IMEICheckerAppDow
 const FirearmSerialNumberVerification = lazy(() => import('@/pages/blog/FirearmSerialNumberVerification'));
 const BicycleStolenSerialNumberCheck = lazy(() => import('@/pages/blog/BicycleStolenSerialNumberCheck'));
 const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeMeetup'));
+const CarfaxVsFreeVinAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFreeVinAlternatives'));
 
 // Traffic Generation Landing Pages
 const CheckStolenPhonePage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenPhone })));
@@ -272,6 +273,7 @@ export const AppRoutes = () => {
         <Route path="/blog/firearm-serial-number-verification" element={<FirearmSerialNumberVerification />} />
         <Route path="/blog/bicycle-stolen-serial-number-check" element={<BicycleStolenSerialNumberCheck />} />
         <Route path="/blog/verify-item-before-meetup" element={<VerifyItemBeforeMeetup />} />
+        <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVinAlternatives />} />
 
         {/* BUSINESS PAGES */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />

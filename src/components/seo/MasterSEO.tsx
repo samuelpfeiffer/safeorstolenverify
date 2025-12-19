@@ -6,11 +6,11 @@ import { useSafeLocation } from '@/hooks/useSafeLocation';
  * Master SEO Component - Global SEO configuration
  * 
  * IMPORTANT: This component handles ONLY global SEO elements:
- * - Robots meta tags
- * - Global structured data (Organization, WebSite schemas)
  * - Site verification tags
  * - DNS prefetch hints
+ * - AI context meta tags
  * 
+ * NOTE: Organization and WebSite schemas are in index.html for guaranteed Google crawling
  * Page-specific SEO (title, description, canonical) is handled by PageSEO component
  */
 export const MasterSEO: React.FC = () => {
@@ -38,100 +38,13 @@ export const MasterSEO: React.FC = () => {
       }
     }
   }, []);
-  
-  // Determine indexing status - exclude private/user-specific pages
-  const shouldIndex = !location.pathname.includes('/admin') && 
-                     !location.pathname.includes('/auth') && 
-                     !location.pathname.includes('/test') &&
-                     !location.pathname.includes('/profile') &&
-                     !location.pathname.includes('/subscription') &&
-                     !location.pathname.includes('/dashboard') && // Private user dashboard
-                     !location.pathname.includes('/receipts') && // Private user receipts
-                     !location.pathname.includes('/search-history'); // Private search history
-
-  // Global Organization Schema (only in MasterSEO)
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SafeOrStolen",
-    "alternateName": ["Safe Or Stolen", "SOS", "Safe or Stolen"],
-    "url": "https://safeorstolen.com",
-    "logo": "https://safeorstolen.com/logo.png",
-    "description": "Protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally. Mobile app exclusively available from SafeOrStolen.com.",
-    "foundingDate": "2024",
-    "slogan": "Protect Buyers & Sellers - Stop Stolen Goods at the Source",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "support@safeorstolen.com",
-      "contactType": "Customer Support",
-      "availableLanguage": "English"
-    },
-    "sameAs": [
-      "https://www.youtube.com/@safeorstolen",
-      "https://twitter.com/safeorstolen",
-      "https://facebook.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen",
-      "https://www.crunchbase.com/organization/safe-or-stolen",
-      "https://www.trustpilot.com/review/safeorstolen.com",
-      "https://biz.prlog.org/SafeOrStolen/"
-    ],
-    "funder": {
-      "@type": "Organization",
-      "name": "FasterCapital",
-      "url": "https://fastercapital.com"
-    },
-    "knowsAbout": [
-      "Stolen item verification",
-      "IMEI checking",
-      "VIN lookup",
-      "Serial number verification",
-      "Buyer protection",
-      "Seller protection",
-      "Crime reduction",
-      "NCIC database access",
-      "NICB insurance crime data",
-      "Hotgunz firearms verification",
-      "IMEI.info phone verification",
-      "BikeIndex integration",
-      "Carrier blacklist checking",
-      "Insurance theft records"
-    ],
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Worldwide - All 50 US States + International"
-    }
-  };
-
-  // Global WebSite Schema (only in MasterSEO)
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SafeOrStolen",
-    "alternateName": "Safe Or Stolen",
-    "url": "https://safeorstolen.com",
-    "description": "Carfax for Everything - Verify serial numbers, IMEI, VIN, license plates globally. All 50 states + international coverage.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://safeorstolen.com/verify",
-      "query-input": "required name=search_term_string"
-    }
-  };
 
   return (
     <Helmet>
-      {/* NOTE: Canonical tags are handled by PageSEO/OptimizedSEOHead on each page */}
-      {/* Removing canonical from here to prevent duplicates (caused 98 indexing errors in GSC) */}
+      {/* NOTE: Organization and WebSite schemas are in index.html for guaranteed Google crawling */}
+      {/* Removed duplicate schemas here to fix GSC duplicate schema warnings */}
       
-      {/* Global Structured Data - Organization + WebSite */}
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(websiteSchema)}
-      </script>
-      
-      {/* NOTE: Robots meta tags are now handled ONLY by OptimizedSEOHead per-page */}
-      {/* Removed duplicate robots tags to fix GSC indexing issues */}
+      {/* NOTE: Robots meta tags are handled ONLY by OptimizedSEOHead per-page */}
       
       {/* Site verification */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
