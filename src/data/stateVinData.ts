@@ -126,5 +126,90 @@ export const STATE_VIN_DATA: Record<string, StateVinData> = {
       { question: "Are pickup trucks targeted in Pennsylvania?", answer: "Pickup trucks (Chevrolet Silverado, Ford F-150) are commonly stolen vehicles in Pennsylvania. If buying a used pickup, VIN verification is especially important." },
       { question: "What happens if I buy a stolen car in Pennsylvania?", answer: "Under Pennsylvania law, the vehicle will be confiscated and returned to the rightful owner. You lose both the vehicle and money with no compensation. You may also face criminal investigation depending on circumstances." }
     ]
+  },
+  illinois: {
+    state: "Illinois",
+    stateCode: "IL",
+    title: "Illinois VIN Lookup - Free IL Stolen Vehicle Check | SafeOrStolen",
+    metaDescription: "Free Illinois VIN lookup verifies if IL vehicles are stolen. Check cars, trucks against IL SOS and available databases. Chicago and statewide coverage.",
+    topCities: ["Chicago", "Aurora", "Naperville", "Rockford", "Joliet"],
+    dmvLink: "https://www.ilsos.gov",
+    content: {
+      intro: "Illinois has significant vehicle theft activity, particularly in Chicago and surrounding Cook County. Verify any IL vehicle's VIN against available databases before buying.",
+      whyCheck: "Chicago is a major metropolitan area with vehicle theft concerns. Illinois's extensive highway system connects to neighboring states, making stolen vehicles harder to track. The state's large used vehicle market requires verification before purchase.",
+      localLaws: "Under Illinois Criminal Code 625 ILCS 5/4-103, theft of a motor vehicle is a Class 2 felony. Receiving or possessing a stolen vehicle carries similar penalties. Even unknowing buyers lose the vehicle when recovered."
+    },
+    faqs: [
+      { question: "How do I check if an Illinois car is stolen?", answer: "Use SafeOrStolen's free VIN checker to search available databases. Also verify the Illinois title with the Secretary of State." },
+      { question: "What areas in Illinois have the most vehicle theft?", answer: "Chicago and Cook County account for most vehicle theft in Illinois. However, stolen vehicles are sold throughout the state." }
+    ]
+  },
+  georgia: {
+    state: "Georgia",
+    stateCode: "GA",
+    title: "Georgia VIN Lookup - Free GA Stolen Vehicle Check | SafeOrStolen",
+    metaDescription: "Free Georgia VIN lookup verifies if GA vehicles are stolen. Check cars, trucks against GA DDS and available databases. Atlanta metro coverage.",
+    topCities: ["Atlanta", "Augusta", "Columbus", "Savannah", "Macon"],
+    dmvLink: "https://dds.georgia.gov",
+    content: {
+      intro: "Georgia has vehicle theft activity, particularly in Atlanta and surrounding metro areas. Verify any GA vehicle's VIN against available databases before purchasing.",
+      whyCheck: "Atlanta's position as a major Southeast hub creates theft opportunities. Georgia's proximity to multiple state borders allows quick movement of stolen vehicles. The Port of Savannah is a potential export point.",
+      localLaws: "Under Georgia Code § 16-8-2, theft by taking of a motor vehicle is a felony. Under § 16-8-7, theft by receiving stolen property carries the same penalties. Unknowing possession still results in vehicle confiscation."
+    },
+    faqs: [
+      { question: "How do I verify a Georgia vehicle title?", answer: "Use SafeOrStolen's VIN checker and verify with Georgia DDS. Check that all VINs match the title documentation." },
+      { question: "Is Atlanta a high-theft area?", answer: "Atlanta metro area accounts for significant vehicle theft in Georgia. Always verify VINs when buying in the Atlanta area." }
+    ]
+  },
+  ohio: {
+    state: "Ohio",
+    stateCode: "OH",
+    title: "Ohio VIN Lookup - Free OH Stolen Vehicle Check | SafeOrStolen",
+    metaDescription: "Free Ohio VIN lookup verifies if OH vehicles are stolen. Check cars, trucks against Ohio BMV and available databases. Cleveland, Columbus, Cincinnati coverage.",
+    topCities: ["Columbus", "Cleveland", "Cincinnati", "Toledo", "Akron"],
+    dmvLink: "https://bmv.ohio.gov",
+    content: {
+      intro: "Ohio has vehicle theft activity in major cities including Cleveland, Columbus, and Cincinnati. Verify any OH vehicle's VIN before purchasing.",
+      whyCheck: "Ohio's position connecting the Midwest to the East Coast creates transit opportunities for stolen vehicles. The state's three major metropolitan areas (Cleveland, Columbus, Cincinnati) see notable theft activity.",
+      localLaws: "Under Ohio Revised Code § 2913.02, theft of a motor vehicle is typically a felony. Receiving stolen property under § 2913.51 carries similar penalties. Unknowing buyers lose the vehicle upon recovery."
+    },
+    faqs: [
+      { question: "How do I check if an Ohio car is stolen?", answer: "Use SafeOrStolen's free VIN checker. Also verify with Ohio BMV for title status and lien information." },
+      { question: "What vehicles are commonly stolen in Ohio?", answer: "Honda Civic, Honda Accord, Chevrolet Silverado, and Ford F-150 are commonly stolen in Ohio. Always verify VINs for these models." }
+    ]
+  },
+  northcarolina: {
+    state: "North Carolina",
+    stateCode: "NC",
+    title: "North Carolina VIN Lookup - Free NC Stolen Vehicle Check | SafeOrStolen",
+    metaDescription: "Free North Carolina VIN lookup verifies if NC vehicles are stolen. Check cars, trucks against NC DMV and available databases. Charlotte, Raleigh coverage.",
+    topCities: ["Charlotte", "Raleigh", "Greensboro", "Durham", "Winston-Salem"],
+    dmvLink: "https://www.ncdot.gov/dmv",
+    content: {
+      intro: "North Carolina has vehicle theft activity, particularly in Charlotte and the Research Triangle area. Verify any NC vehicle's VIN before purchasing.",
+      whyCheck: "North Carolina's growing population and expanding metropolitan areas see vehicle theft. The state's position along I-95 and I-85 corridors facilitates movement of stolen vehicles. Charlotte and Raleigh-Durham are primary areas of concern.",
+      localLaws: "Under North Carolina G.S. § 14-72, larceny of a motor vehicle is a Class H felony. Receiving stolen goods under G.S. § 14-71 carries similar penalties. Unknowing buyers lose the vehicle and have no compensation."
+    },
+    faqs: [
+      { question: "How do I verify a North Carolina vehicle?", answer: "Use SafeOrStolen's VIN checker and verify with NC DMV. Ensure VINs match all documentation." },
+      { question: "Which NC cities have vehicle theft concerns?", answer: "Charlotte, Raleigh, and Greensboro see notable vehicle theft. Always verify VINs when buying in these areas." }
+    ]
+  },
+  washington: {
+    state: "Washington",
+    stateCode: "WA",
+    title: "Washington VIN Lookup - Free WA Stolen Vehicle Check | SafeOrStolen",
+    metaDescription: "Free Washington VIN lookup verifies if WA vehicles are stolen. Check cars, trucks against WA DOL and available databases. Seattle, Tacoma coverage.",
+    topCities: ["Seattle", "Spokane", "Tacoma", "Vancouver", "Bellevue"],
+    dmvLink: "https://www.dol.wa.gov",
+    content: {
+      intro: "Washington has vehicle theft activity, particularly in Seattle and the Puget Sound region. Verify any WA vehicle's VIN before purchasing.",
+      whyCheck: "Seattle and Tacoma see significant vehicle theft. Washington's proximity to the Canadian border and access to Pacific shipping ports creates potential export routes. The state's large tech industry presence means valuable vehicles are common targets.",
+      localLaws: "Under RCW 9A.56.065, theft of a motor vehicle is a Class B felony in Washington. Possessing stolen property under RCW 9A.56.140 carries similar penalties. Even unknowing possession results in vehicle confiscation."
+    },
+    faqs: [
+      { question: "How do I check if a Washington car is stolen?", answer: "Use SafeOrStolen's free VIN checker. Also verify with Washington DOL for title and registration status." },
+      { question: "Is Seattle a high-theft area?", answer: "Seattle and the greater Puget Sound region account for most vehicle theft in Washington. Catalytic converter theft is also common. Always verify VINs before purchase." }
+    ]
   }
 };

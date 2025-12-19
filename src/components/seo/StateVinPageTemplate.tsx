@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
+
 import {
   Accordion,
   AccordionContent,
@@ -85,39 +85,10 @@ export const StateVinPageTemplate = ({
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
-      {/* Bot-visible content for search engines */}
-      <BotVisibleContent>
-        <h1>{title}</h1>
-        <p>{content.intro}</p>
-        
-        <h2>Why Check VINs in {state}?</h2>
-        <p>{content.whyCheck}</p>
-        
-        <h2>{state} Laws on Stolen Vehicles</h2>
-        <p>{content.localLaws}</p>
-        
-        <h2>How SafeOrStolen Verifies {state} Vehicles</h2>
-        <p>SafeOrStolen searches publicly available stolen vehicle databases and reporting registries to help you verify if a vehicle has been reported stolen. When you check a VIN in {state}, we query multiple verification sources and return results quickly.</p>
-        
-        <h2>Free {state} VIN Check - How It Works</h2>
-        <p>To check if a {state} vehicle is stolen: 1) Enter the 17-digit VIN on SafeOrStolen.com or use our mobile app's barcode scanner. 2) Our system searches available stolen vehicle databases. 3) Receive verification showing if the vehicle is reported stolen, has title issues, or appears safe to purchase. SafeOrStolen offers 2 free verifications to try the service.</p>
-        
-        <h2>What Is a VIN Number?</h2>
-        <p>A Vehicle Identification Number (VIN) is a unique 17-character code assigned to every vehicle manufactured since 1981. The VIN contains information about the manufacturer, vehicle specifications, and year of production. In {state}, you can find the VIN on the dashboard near the windshield, driver's door jamb, vehicle title, and registration documents. Always verify the VIN physically matches all documentation before purchasing any {state} vehicle.</p>
-        
-        <h2>Frequently Asked Questions</h2>
-        {faqs.map((faq, idx) => (
-          <div key={idx}>
-            <h3>{faq.question}</h3>
-            <p>{faq.answer}</p>
-          </div>
-        ))}
-        
-        <h2>Why Choose SafeOrStolen for {state} VIN Checks?</h2>
-        <p>SafeOrStolen offers a mobile app with barcode scanning for convenient verification. We verify multiple types of items including cars, phones, electronics, bikes, and more. Our {state} VIN lookup offers 2 free verifications to try the service.</p>
-        
-        <p>Check any {state} VIN free at SafeOrStolen.com. 2 free verifications. Protect yourself from buying a stolen vehicle in {state}.</p>
-      </BotVisibleContent>
+      {/* Minimal SEO fallback - no duplicate H1 */}
+      <noscript>
+        <p>{title} - {content.intro}</p>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
