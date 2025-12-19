@@ -490,6 +490,41 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /buyer-guide          /how-it-works  301!
 
 # ============================================
+# GSC NOINDEX FIXES (December 2025) - 49 URLs
+# ============================================
+# App subpages missing routes
+/app/stolen-database-search     /stolen-database  301!
+/app/investigate-stolen-property /verify          301!
+/app/lookup-stolen-items        /verify           301!
+/app/check-stolen-before-buying /verify           301!
+/app/carfax-alternative         /vs-carfax        301!
+/app/features/barcode-scanner   /app/barcode-scanner  301!
+
+# Missing top-level pages
+/transparency                   /about            301!
+/mobile                         /app              301!
+/check                          /verify           301!
+/for-pawnshops                  /for-pawn-shops   301!
+
+# Blog posts with suffixes (timestamps/versions)
+/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-* /blog  301!
+/blog/los-angeles-imei-verification-phone-fraud-protection-*     /blog  301!
+/blog/understanding-imei-blacklists-and-what-they-mean-*         /blog  301!
+/blog/how-law-enforcement-tracks-stolen-goods-*                  /blog  301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog  301!
+/blog/craigslist-scam-prevention-item-verification-checklist     /blog  301!
+
+# Blog posts without matching routes
+/blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
+/blog/5-signs-used-phone-might-be-stolen                         /blog/how-to-check-if-phone-stolen  301!
+/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
+/blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
+
+# Guides directory
+/guides/verify-craigslist-items   /verify  301!
+/guides/offerup-scam-protection   /verify  301!
+
+# ============================================
 # FASTERCAPITAL REDIRECT
 # ============================================
 /fastercapital/tech-cofounder  /about  301!
