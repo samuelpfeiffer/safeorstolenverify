@@ -55,14 +55,8 @@ const ComparisonSwappa = () => {
       />
 
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen vs Swappa: Swappa Has NO Mobile App</h1>
-          <p>
-            Swappa does NOT have a mobile app. SafeOrStolen is the ONLY dedicated verification service with a full mobile app 
-            for iOS and Android. Download the SafeOrStolen app at safeorstolen.com/app for instant verification. Swappa is 
-            a marketplace first, verification second. SafeOrStolen is dedicated verification with mobile app, offline mode, 
-            and all item types (phones, cars, guns, bikes, electronics).
-          </p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <p><strong>SafeOrStolen vs Swappa</strong> - Swappa has no mobile app. SafeOrStolen offers the only verification app.</p>
         </div>
       </noscript>
 
