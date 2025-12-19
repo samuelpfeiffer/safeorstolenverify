@@ -7,7 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 interface ItemLandingPageProps {
@@ -96,40 +95,14 @@ export const ItemLandingPageTemplate = ({
         structuredData={structuredData}
       />
 
-      {/* Bot-visible content for search engines */}
-      <BotVisibleContent>
-        <h1>{h1}</h1>
-        <p>{content.intro}</p>
-        
-        <h2>What is {itemType} Verification?</h2>
-        <p>{content.whatIs}</p>
-        
-        <h2>How It Works</h2>
-        <p>{content.howItWorks}</p>
-        <ul>
-          {content.process.map((step, idx) => (
-            <li key={idx}>{step}</li>
-          ))}
-        </ul>
-        
-        <h2>Why Check Before Buying?</h2>
-        <p>{content.whyCheck}</p>
-        <ul>
-          {content.benefits.map((benefit, idx) => (
-            <li key={idx}>{benefit}</li>
-          ))}
-        </ul>
-        
-        <h2>Frequently Asked Questions</h2>
-        {content.faqs.map((faq, idx) => (
-          <div key={idx}>
-            <h3>{faq.question}</h3>
-            <p>{faq.answer}</p>
-          </div>
-        ))}
-        
-        <p>Start your free trial - 2 verification checks. Visit https://safeorstolen.com/verify to get started.</p>
-      </BotVisibleContent>
+      {/* Minimal noscript fallback - no H1 to avoid duplicate with visible H1 */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <p><strong>{h1}</strong></p>
+          <p>{content.intro}</p>
+          <p>Visit safeorstolen.com/verify to check any {itemType.toLowerCase()}.</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}

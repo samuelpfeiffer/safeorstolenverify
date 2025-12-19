@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { BotVisibleContent } from '@/components/seo/BotVisibleContent';
+
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
@@ -60,39 +60,13 @@ const HowItWorksPage = () => {
         ]}
       />
       
-      {/* Bot-visible content for search engines */}
-      <BotVisibleContent>
-        <h1>How SafeOrStolen Works - Data Partners & Verification</h1>
-        <p>SafeOrStolen crawls, scrapes, and aggregates data from 50+ partner databases including NCIC (FBI), NICB, Hotgunz, IMEI.info, BikeIndex, StolenRegister, carrier blacklists, and insurance networks. We verify IMEI, VIN, serial numbers, and license plates in under 3 seconds.</p>
-        
-        <h2>Our Data Partners</h2>
-        <p>NCIC (National Crime Information Center): FBI's federal stolen property database - law enforcement data partnership.</p>
-        <p>NICB (National Insurance Crime Bureau): VINCheck database and vehicle theft records partnership.</p>
-        <p>Hotgunz.com: Stolen firearms registry - we aggregate their database for firearms verification.</p>
-        <p>IMEI.info: Global IMEI database - we cross-reference phone blacklist and carrier records.</p>
-        <p>BikeIndex.org: 1.4 million bikes cataloged - direct API integration for bicycle verification.</p>
-        <p>StolenRegister.com: Global stolen property reports - we scrape and aggregate their listings.</p>
-        <p>Stolen911: Police detective-founded service - data sharing partnership.</p>
-        <p>NHTSA: Official government vehicle identification records - VIN verification source.</p>
-        <p>Carrier Blacklists: AT&T, Verizon, T-Mobile IMEI blacklist databases.</p>
-        <p>Insurance Networks: Aggregated theft claims from major insurance companies.</p>
-        
-        <h2>The Verification Process</h2>
-        <p>Step 1: Enter Identifier - Input the IMEI, VIN, serial number, or license plate.</p>
-        <p>Step 2: Real-Time Crawl - We simultaneously query all 50+ partner databases.</p>
-        <p>Step 3: Aggregate Results - Data is unified and cross-referenced for accuracy.</p>
-        <p>Step 4: Instant Verification - Receive safe/stolen status in under 3 seconds.</p>
-        
-        <h2>What We Verify</h2>
-        <p>Phones & Tablets: IMEI verification against carrier blacklists, IMEI.info, and theft databases.</p>
-        <p>Vehicles: VIN checks against NCIC, NICB, NHTSA, and insurance theft records.</p>
-        <p>Firearms: Serial number verification through Hotgunz partnership and law enforcement data.</p>
-        <p>Bicycles: BikeIndex API integration plus StolenRegister aggregation.</p>
-        <p>Electronics: Serial number checks against manufacturer and insurance databases.</p>
-        
-        <h2>Why Partner Data Matters</h2>
-        <p>Unlike single-source checkers, SafeOrStolen aggregates data from multiple partners simultaneously. This comprehensive approach catches items that single databases might miss, providing the most accurate verification available.</p>
-      </BotVisibleContent>
+      {/* Minimal noscript fallback */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <p><strong>How SafeOrStolen Works</strong></p>
+          <p>SafeOrStolen verifies items against 50+ databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
+        </div>
+      </noscript>
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 pt-24 pb-4">

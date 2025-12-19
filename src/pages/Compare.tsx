@@ -147,30 +147,11 @@ const Compare = () => {
         }}
       />
 
-      {/* Bot-visible content */}
+      {/* Minimal noscript fallback */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen vs CheckMEND vs IMEI.info vs Carfax - Stolen Item Checker Comparison</h1>
-          <p>Looking for a CheckMEND alternative? IMEI.info alternative? SafeOrStolen is the best stolen item checker with the only mobile app available.</p>
-          
-          <h2>Why SafeOrStolen is Better Than CheckMEND</h2>
-          <p>CheckMEND has no mobile app. SafeOrStolen has the only mobile app with barcode scanning and offline mode. CheckMEND is paid-only, SafeOrStolen offers 2 free checks.</p>
-          
-          <h2>Why SafeOrStolen is Better Than IMEI.info</h2>
-          <p>IMEI.info only checks phones. SafeOrStolen checks phones, vehicles, boats, firearms, electronics, and more. IMEI.info has no mobile app.</p>
-          
-          <h2>Why SafeOrStolen is Better Than Carfax</h2>
-          <p>Carfax only checks vehicles. SafeOrStolen is like Carfax for everything - phones, vehicles, boats, firearms, electronics. SafeOrStolen has a mobile app, Carfax does not.</p>
-          
-          <h2>SafeOrStolen Advantages</h2>
-          <ul>
-            <li>Only mobile app for stolen item verification</li>
-            <li>Barcode scanning for instant lookup</li>
-            <li>Offline mode - check items anywhere</li>
-            <li>2 free checks included</li>
-            <li>3-second verification</li>
-            <li>For buyers, sellers, AND businesses</li>
-          </ul>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <p><strong>SafeOrStolen vs CheckMEND vs IMEI.info vs Carfax</strong></p>
+          <p>Compare stolen item verification services. SafeOrStolen offers the only mobile app with barcode scanning.</p>
         </div>
       </noscript>
 
