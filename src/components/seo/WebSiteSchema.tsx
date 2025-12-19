@@ -1,73 +1,12 @@
-import { Helmet } from 'react-helmet-async';
-
+/**
+ * @deprecated WebSiteSchema is now in index.html for guaranteed Google crawling.
+ * DO NOT use this component - it creates duplicate structured data errors in GSC.
+ * 
+ * If you need WebSite schema, it's already in index.html (static).
+ * This component is kept only for backward compatibility and will be removed.
+ */
 export const WebSiteSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Safe or Stolen",
-    "alternateName": ["SafeOrStolen", "SafeOrStolen.com", "Safe or Stolen Verification", "Trusted Verification Service", "Multi-Database Stolen Item Verification"],
-    "url": "https://safeorstolen.com",
-    "description": "Trusted stolen item verification service serving customers across the United States with international expansion. Multi-database verification for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, electric bikes, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, specialty equipment. Verification via NICB, GSMA, CheckMEND, Bike Index for IMEI, VIN, and serial numbers.",
-    "inLanguage": ["en", "es", "fr", "de", "ja", "pt", "it", "zh"],
-    "audience": {
-      "@type": "Audience",
-      "geographicArea": {
-        "@type": "Place",
-        "name": "Worldwide"
-      }
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "Stolen Vehicle Verification",
-        "description": "Verify cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, electric bikes, and bicycles using VIN numbers"
-      },
-      {
-        "@type": "Thing",
-        "name": "Stolen Electronics Verification",
-        "description": "Verify phones, tablets, laptops, computers, TVs, radios, cameras, and watches using IMEI and serial numbers"
-      },
-      {
-        "@type": "Thing",
-        "name": "Stolen Firearms Verification",
-        "description": "Verify firearms and guns using serial numbers against stolen databases"
-      },
-      {
-        "@type": "Thing",
-        "name": "Stolen Equipment Verification",
-        "description": "Verify machinery, engines, tools, home appliances, furniture, RC cars, and specialty equipment using serial numbers"
-      }
-    ],
-    "keywords": "stolen item checker, IMEI checker, VIN checker, serial number verification, stolen phone checker, stolen car checker, stolen motorcycle checker, stolen boat checker, stolen jet ski checker, stolen firearm checker, stolen gun database, stolen laptop checker, stolen electronics verification, stolen tools checker, stolen watch verification, stolen bike checker, stolen equipment verification",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Safe or Stolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://safeorstolen.com/verify",
-      "query-input": "required name=search_term_string"
-    },
-    "mainEntity": {
-      "@type": "WebApplication",
-      "name": "Safe or Stolen Multi-Database Verification Tool",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": "Any",
-      "featureList": "Complete multi-database verification: Verify IMEI numbers, VIN numbers, serial numbers via NICB, GSMA, CheckMEND, Bike Index for vehicles (cars, motorcycles, boats, jet skis, sidebysides, dirt bikes, mopeds, bicycles), electronics (phones, tablets, laptops, computers, TVs, radios, cameras, watches), firearms, machinery, engines, tools, home appliances, furniture, and specialty equipment. Serving the United States with international expansion.",
-      "availableOnDevice": "Desktop, Mobile, Tablet",
-      "countriesSupported": "United States (expanding internationally)"
-    }
-  };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
-    </Helmet>
-  );
+  // Return null - schema is in index.html
+  console.warn('WebSiteSchema is deprecated. WebSite schema is now in index.html.');
+  return null;
 };
