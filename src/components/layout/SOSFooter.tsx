@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Twitter, Linkedin, Shield, ExternalLink } from 'lucide-react';
+import { Youtube, Twitter, Linkedin, Shield, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import { handleExternalNavigation } from '@/utils/navigationUtils';
 import { Logo } from '@/components/common/Logo';
 import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
 
 export const SOSFooter: React.FC = () => {
   const year = new Date().getFullYear();
+  const [showAllLinks, setShowAllLinks] = useState(false);
   
-  // All links verified to exist - no broken links
+  // Main footer sections - always visible
   const footerSections = [
     {
       title: 'Verification',
@@ -50,7 +51,8 @@ export const SOSFooter: React.FC = () => {
       links: [
         { label: 'About Us', to: '/about' },
         { label: 'App Features', to: '/app/features' },
-        { label: 'Download App', to: '/app' },
+        { label: 'Download App', to: '/download' },
+        { label: 'Press Kit', to: '/press-kit' },
       ]
     },
     {
@@ -60,6 +62,114 @@ export const SOSFooter: React.FC = () => {
         { label: 'Privacy Policy', to: '/privacy' },
       ]
     }
+  ];
+
+  // Comprehensive sitemap links - shown when expanded
+  const sitemapSections = [
+    {
+      title: 'State VIN Checks',
+      links: [
+        { label: 'California VIN', to: '/california-vin-lookup' },
+        { label: 'Texas VIN', to: '/texas-vin-lookup' },
+        { label: 'Florida VIN', to: '/florida-vin-lookup' },
+        { label: 'New York VIN', to: '/new-york-vin-lookup' },
+        { label: 'Illinois VIN', to: '/illinois-vin-lookup' },
+        { label: 'Georgia VIN', to: '/georgia-vin-lookup' },
+        { label: 'Pennsylvania VIN', to: '/pennsylvania-vin-lookup' },
+        { label: 'Ohio VIN', to: '/ohio-vin-lookup' },
+        { label: 'North Carolina VIN', to: '/north-carolina-vin-lookup' },
+        { label: 'Washington VIN', to: '/washington-vin-lookup' },
+      ]
+    },
+    {
+      title: 'License Plate Lookup',
+      links: [
+        { label: 'California Plates', to: '/california-license-plate-lookup' },
+        { label: 'Texas Plates', to: '/texas-license-plate-lookup' },
+        { label: 'Florida Plates', to: '/florida-license-plate-lookup' },
+        { label: 'New York Plates', to: '/new-york-license-plate-lookup' },
+        { label: 'Illinois Plates', to: '/illinois-license-plate-lookup' },
+        { label: 'Georgia Plates', to: '/georgia-license-plate-lookup' },
+        { label: 'Pennsylvania Plates', to: '/pennsylvania-license-plate-lookup' },
+        { label: 'Ohio Plates', to: '/ohio-license-plate-lookup' },
+        { label: 'NC Plates', to: '/north-carolina-license-plate-lookup' },
+        { label: 'Washington Plates', to: '/washington-license-plate-lookup' },
+      ]
+    },
+    {
+      title: 'City Verification',
+      links: [
+        { label: 'Los Angeles', to: '/stolen-check-los-angeles' },
+        { label: 'New York City', to: '/stolen-check-new-york-city' },
+        { label: 'Chicago', to: '/stolen-check-chicago' },
+        { label: 'Houston', to: '/stolen-check-houston' },
+        { label: 'Phoenix', to: '/stolen-check-phoenix' },
+        { label: 'Philadelphia', to: '/stolen-check-philadelphia' },
+        { label: 'San Antonio', to: '/stolen-check-san-antonio' },
+        { label: 'San Diego', to: '/stolen-check-san-diego' },
+        { label: 'Dallas', to: '/stolen-check-dallas' },
+        { label: 'San Jose', to: '/stolen-check-san-jose' },
+      ]
+    },
+    {
+      title: 'Marketplace Safety',
+      links: [
+        { label: 'Facebook Marketplace', to: '/facebook-marketplace-stolen-check' },
+        { label: 'Craigslist Safety', to: '/craigslist-safety-verification' },
+        { label: 'OfferUp Verify', to: '/offerup-verify-not-stolen' },
+        { label: 'eBay Check', to: '/ebay-stolen-item-check' },
+      ]
+    },
+    {
+      title: 'Item Checks',
+      links: [
+        { label: 'Check Bike', to: '/check-bike' },
+        { label: 'Check Laptop', to: '/check-laptop' },
+        { label: 'Check Electronics', to: '/check-electronics' },
+        { label: 'Check E-Bike', to: '/check-ebike' },
+        { label: 'Check Tools', to: '/check-tools' },
+        { label: 'Check Jewelry', to: '/check-jewelry' },
+        { label: 'Check Boat', to: '/check-boat' },
+        { label: 'Check Appliances', to: '/check-appliances' },
+        { label: 'License Plates', to: '/license-plate-lookup' },
+      ]
+    },
+    {
+      title: 'Compare Services',
+      links: [
+        { label: 'vs CheckMEND', to: '/vs-checkmend' },
+        { label: 'vs IMEI.info', to: '/vs-imeiinfo' },
+        { label: 'vs Swappa', to: '/vs-swappa' },
+        { label: 'vs Carfax', to: '/vs-carfax' },
+        { label: 'vs AutoCheck', to: '/vs-autocheck' },
+      ]
+    },
+    {
+      title: 'Popular Guides',
+      links: [
+        { label: 'Check if Phone Stolen', to: '/blog/how-to-check-if-phone-stolen' },
+        { label: 'Check if iPhone Stolen', to: '/blog/how-to-check-if-iphone-stolen' },
+        { label: 'Complete VIN Guide', to: '/blog/complete-vin-guide' },
+        { label: 'Complete IMEI Guide', to: '/blog/complete-imei-guide-protect-yourself' },
+        { label: 'Marketplace Safety', to: '/blog/ultimate-marketplace-buyers-guide' },
+        { label: 'FB Marketplace Scams', to: '/blog/facebook-marketplace-scams' },
+        { label: 'Scammer Tactics', to: '/blog/scammer-tactics-exposed' },
+        { label: 'Pawn Shop Guide', to: '/blog/pawn-shop-stolen-item-verification' },
+      ]
+    },
+    {
+      title: 'More Resources',
+      links: [
+        { label: 'Is My Phone Stolen?', to: '/is-my-phone-stolen' },
+        { label: 'Is This Car Stolen?', to: '/is-this-car-stolen' },
+        { label: 'Is This Laptop Stolen?', to: '/is-this-laptop-stolen' },
+        { label: 'Is This Bike Stolen?', to: '/is-this-bike-stolen' },
+        { label: 'Is This Gun Stolen?', to: '/is-this-gun-stolen' },
+        { label: 'Report Stolen', to: '/report-stolen' },
+        { label: 'Stolen Database', to: '/database' },
+        { label: 'YouTube Channel', to: '/youtube' },
+      ]
+    },
   ];
 
   return (
@@ -101,6 +211,50 @@ export const SOSFooter: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Expanded Sitemap Links */}
+        <div className="border-t border-border">
+          <button
+            onClick={() => setShowAllLinks(!showAllLinks)}
+            className="w-full py-4 flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            {showAllLinks ? (
+              <>
+                <ChevronUp className="h-4 w-4" />
+                Hide Site Map
+              </>
+            ) : (
+              <>
+                <ChevronDown className="h-4 w-4" />
+                View Full Site Map (100+ Pages)
+              </>
+            )}
+          </button>
+          
+          {showAllLinks && (
+            <div className="py-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
+              {sitemapSections.map((section, idx) => (
+                <div key={idx}>
+                  <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-3">
+                    {section.title}
+                  </h4>
+                  <ul className="space-y-2">
+                    {section.links.map((link, linkIdx) => (
+                      <li key={linkIdx}>
+                        <Link
+                          to={link.to}
+                          className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Featured In Section */}
