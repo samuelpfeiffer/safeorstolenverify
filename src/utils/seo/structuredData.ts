@@ -22,8 +22,11 @@ import { SITE_CONFIG } from './metadata';
 import type { BlogPost } from './types';
 
 // Enhanced Organization Schema - Corporation Status
-// NOTE: This is now in index.html for guaranteed crawling - DO NOT use on pages
-export const createOrganizationSchema = () => ({
+// ⚠️ DEPRECATED: This is in index.html - calling this creates duplicate GSC errors
+/** @deprecated Use the schema in index.html instead */
+export const createOrganizationSchema = () => {
+  console.warn('⚠️ createOrganizationSchema() is DEPRECATED. Organization schema is in index.html. Remove this call to fix GSC duplicate errors.');
+  return {
   "@context": "https://schema.org",
   "@type": "Corporation",
   "name": "SafeOrStolen",
@@ -179,7 +182,8 @@ export const createOrganizationSchema = () => ({
     },
     "description": "Investment opportunity in $367B global secondhand market infrastructure"
   }
-});
+  };
+};
 
 // Website Schema
 export const createWebsiteSchema = () => ({

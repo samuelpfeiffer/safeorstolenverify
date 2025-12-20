@@ -217,27 +217,7 @@ const AppPage = () => {
     }
   };
 
-  // Organization Schema
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SafeOrStolen",
-    "alternateName": ["Safe Or Stolen", "SOS", "SafeOrStolen.com"],
-    "url": "https://safeorstolen.com",
-    "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-    "description": "The only mobile app to verify if items are stolen before buying. IMEI checker, VIN lookup, serial number verification.",
-    "foundingDate": "2024",
-    "sameAs": [
-      "https://twitter.com/safeorstolen",
-      "https://facebook.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "availableLanguage": "English"
-    }
-  };
+  // NOTE: Organization Schema is in index.html - DO NOT add here to avoid GSC duplicate errors
 
   // BreadcrumbList Schema
   const breadcrumbSchema = {
@@ -561,7 +541,7 @@ const AppPage = () => {
     downloadActionSchema, 
     faqSchema,
     softwareAppSchema,
-    organizationSchema,
+    // NOTE: organizationSchema removed - it's in index.html to avoid GSC duplicate errors
     breadcrumbSchema,
     featuresListSchema,
     serviceSchema,
