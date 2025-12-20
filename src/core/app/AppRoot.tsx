@@ -67,6 +67,7 @@ const AuthAwareContent: React.FC = () => {
   const [showGrowthComponents, setShowGrowthComponents] = useState(false);
   const [showSEOComponents, setShowSEOComponents] = useState(false);
   const [showAIChat, setShowAIChat] = useState(false);
+  const [authTimeout, setAuthTimeout] = useState(false);
   
   // Delay loading SEO components by 1.5 seconds - they don't affect LCP
   useEffect(() => {
@@ -84,10 +85,23 @@ const AuthAwareContent: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Bypass loading screen for checkout routes - they handle their own auth
-  const isCheckoutRoute = window.location.pathname.includes('checkout');
+  // Auth timeout - show content after 2 seconds even if auth isn't ready
+  // This prevents pages from being stuck on loading forever
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAuthTimeout(true);
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
   
-  if (!isCheckoutRoute && (!initialized || loading)) {
+  // Bypass loading screen for:
+  // 1. Checkout routes (they handle their own auth)
+  // 2. After 2 second timeout (prevents stuck loading)
+  // 3. When auth is ready
+  const isCheckoutRoute = window.location.pathname.includes('checkout');
+  const authReady = initialized && !loading;
+  
+  if (!isCheckoutRoute && !authTimeout && !authReady) {
     return <AppLoadingScreen />;
   }
   
