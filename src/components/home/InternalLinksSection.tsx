@@ -12,9 +12,9 @@ export const InternalLinksSection = () => {
         { to: "/imei-checker", label: "IMEI Checker" },
         { to: "/vin-checker", label: "VIN Checker" },
         { to: "/serial-number-checker", label: "Serial Number Checker" },
+        { to: "/firearms-check", label: "Gun Serial Lookup" },
         { to: "/check-phone", label: "Check Phone" },
         { to: "/check-car", label: "Check Car" },
-        { to: "/check-bike", label: "Check Bike" },
       ]
     },
     {
