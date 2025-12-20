@@ -66,6 +66,14 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
       isHighPriority: true
     },
     {
+      href: '/blog/carfax-vs-free-vin-alternatives',
+      text: 'Carfax vs Free VIN Alternatives',
+      description: 'Compare Carfax to free VIN check services',
+      category: 'guides',
+      keywords: ['carfax alternative', 'free carfax', 'free vin check'],
+      isHighPriority: true
+    },
+    {
       href: '/how-it-works',
       text: 'How SafeOrStolen Works',
       description: 'Learn our verification process',

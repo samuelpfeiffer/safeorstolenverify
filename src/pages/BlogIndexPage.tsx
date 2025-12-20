@@ -5,6 +5,14 @@ import { ArrowRight, Clock, Tag } from 'lucide-react';
 
 const blogArticles = [
   {
+    title: 'Carfax vs Free VIN Alternatives: Complete 2025 Guide',
+    slug: 'carfax-vs-free-vin-alternatives',
+    excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives. Learn which vehicle history service is best for checking if a car is stolen. Free VIN theft checks available.',
+    category: 'Vehicle Safety',
+    readTime: '10 min',
+    keywords: ['carfax alternative', 'free vin check', 'carfax vs safeorstolen']
+  },
+  {
     title: 'How to Check if a Phone is Stolen Before Buying',
     slug: 'how-to-check-if-phone-is-stolen',
     excerpt: 'Complete guide to verifying smartphone legitimacy with IMEI checks, carrier blacklist verification, and red flags to watch for when buying used phones.',
