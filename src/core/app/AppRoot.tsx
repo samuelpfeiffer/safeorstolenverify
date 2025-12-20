@@ -85,12 +85,12 @@ const AuthAwareContent: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Auth timeout - show content after 2 seconds even if auth isn't ready
-  // This prevents pages from being stuck on loading forever
+  // Auth timeout - show content after 800ms even if auth isn't ready
+  // Reduced from 2s to improve LCP - prevents stuck loading
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAuthTimeout(true);
-    }, 2000);
+    }, 800);
     return () => clearTimeout(timeout);
   }, []);
   
@@ -177,8 +177,6 @@ const AuthAwareContent: React.FC = () => {
 };
 
 export const AppRoot: React.FC = () => {
-  console.log('[AppRoot] ✓ Rendering application root');
-  
   return (
     <ErrorBoundary>
       <HelmetProvider>
