@@ -47,42 +47,34 @@ export const AdvancedSchemaGenerator = () => {
     };
   };
 
-  // LocalBusiness Schema for local SEO
-  const localBusinessSchema = {
+  // ProfessionalService Schema (more accurate than LocalBusiness for online service)
+  const professionalServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://safeorstolen.com/#localbusiness",
+    "@type": "ProfessionalService",
+    "@id": "https://safeorstolen.com/#service",
     "name": "SafeOrStolen",
     "description": "Stolen item verification service checking IMEI, VIN, and serial numbers against 50+ databases",
     "url": "https://safeorstolen.com",
     "logo": "https://safeorstolen.com/sos-logo.png",
     "image": "https://safeorstolen.com/sos-logo.png",
     "priceRange": "Free - $9.99",
-    "telephone": "+1-800-SAFE-BUY",
     "email": "support@safeorstolen.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "37.7749",
-      "longitude": "-122.4194"
-    },
     "areaServed": {
       "@type": "Country",
       "name": "United States"
     },
+    "serviceType": ["Stolen Item Verification", "IMEI Check", "VIN Lookup", "Serial Number Verification"],
     "sameAs": [
       "https://twitter.com/safeorstolen",
       "https://facebook.com/safeorstolen",
-      "https://linkedin.com/company/safeorstolen"
+      "https://linkedin.com/company/safeorstolen",
+      "https://www.youtube.com/@safeorstolen"
     ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://safeorstolen.com/verify",
+      "serviceType": "Online verification service",
+      "availableLanguage": "English"
     }
   };
 
@@ -314,9 +306,9 @@ export const AdvancedSchemaGenerator = () => {
         </script>
       )}
 
-      {/* LocalBusiness Schema */}
+      {/* ProfessionalService Schema */}
       <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
+        {JSON.stringify(professionalServiceSchema)}
       </script>
 
       {/* Product Schema */}
