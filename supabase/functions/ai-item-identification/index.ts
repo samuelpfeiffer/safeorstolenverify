@@ -11,8 +11,8 @@ serve(async (req) => {
   }
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
+    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
+    if (!ANTHROPIC_API_KEY) {
       return new Response(
         JSON.stringify({ success: false, error: 'AI service not configured' }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -30,10 +30,52 @@ serve(async (req) => {
 
     console.log('[AI Item Identification] Processing image/description');
 
-    const messages: any[] = [
-      {
-        role: 'system',
-        content: `You are SafeOrStolen's item identification expert. Analyze images or descriptions to identify:
+    const messageContent: any[] = [];
+
+    if (imageBase64 || imageUrl) {
+      messageContent.push({
+        type: 'text',
+        text: description 
+          ? `Identify this item. Additional context: ${description}`
+          : 'Identify this item and extract any visible identifiers (serial numbers, IMEI, VIN).'
+      });
+      
+      if (imageBase64) {
+        messageContent.push({
+          type: 'image',
+          source: {
+            type: 'base64',
+            media_type: 'image/jpeg',
+            data: imageBase64
+          }
+        });
+      } else if (imageUrl) {
+        messageContent.push({
+          type: 'image',
+          source: {
+            type: 'url',
+            url: imageUrl
+          }
+        });
+      }
+    } else {
+      messageContent.push({
+        type: 'text',
+        text: `Based on this description, identify the item type and suggest verification steps: "${description}"`
+      });
+    }
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 1000,
+        system: `You are SafeOrStolen's item identification expert. Analyze images or descriptions to identify:
 1. Item type (phone, laptop, vehicle, bicycle, firearm, jewelry, etc.)
 2. Brand and model if visible
 3. Any visible serial numbers, IMEI, or VIN
@@ -54,46 +96,13 @@ Respond with JSON only:
   "features": ["feature1", "feature2"],
   "confidence": 0-100,
   "verificationTips": ["tip1", "tip2"]
-}`
-      }
-    ];
-
-    if (imageBase64 || imageUrl) {
-      messages.push({
-        role: 'user',
-        content: [
+}`,
+        messages: [
           {
-            type: 'text',
-            text: description 
-              ? `Identify this item. Additional context: ${description}`
-              : 'Identify this item and extract any visible identifiers (serial numbers, IMEI, VIN).'
-          },
-          {
-            type: 'image_url',
-            image_url: {
-              url: imageBase64 ? `data:image/jpeg;base64,${imageBase64}` : imageUrl
-            }
+            role: 'user',
+            content: messageContent
           }
-        ]
-      });
-    } else {
-      messages.push({
-        role: 'user',
-        content: `Based on this description, identify the item type and suggest verification steps: "${description}"`
-      });
-    }
-
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages,
-        temperature: 0.3,
-        max_tokens: 1000,
+        ],
       }),
     });
 
@@ -104,17 +113,11 @@ Respond with JSON only:
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ success: false, error: 'AI service temporarily unavailable' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
       throw new Error(`AI gateway error: ${response.status}`);
     }
 
     const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || '{}';
+    const content = data.content?.[0]?.text || '{}';
 
     let result;
     try {

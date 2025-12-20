@@ -11,8 +11,8 @@ serve(async (req) => {
   }
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
+    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
+    if (!ANTHROPIC_API_KEY) {
       return new Response(
         JSON.stringify({ success: false, error: 'AI service not configured' }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -30,18 +30,17 @@ serve(async (req) => {
 
     console.log(`[AI Blog Generator] Generating: "${topic}"`);
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          {
-            role: 'system',
-            content: `You are SafeOrStolen's content writer, expert in stolen goods verification, consumer protection, and marketplace safety. 
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 4096,
+        system: `You are SafeOrStolen's content writer, expert in stolen goods verification, consumer protection, and marketplace safety. 
 
 Write SEO-optimized blog posts that:
 1. Help buyers avoid stolen goods
@@ -60,8 +59,8 @@ Respond with JSON:
   "readingTime": minutes,
   "suggestedSlug": "url-friendly-slug",
   "schema": { Article schema object if requested }
-}`
-          },
+}`,
+        messages: [
           {
             role: 'user',
             content: `Write a blog post about: "${topic}"
@@ -71,8 +70,6 @@ ${tone ? `Tone: ${tone}` : 'Tone: Professional but approachable'}
 ${includeSchema ? 'Include Article schema markup' : ''}`
           }
         ],
-        temperature: 0.7,
-        max_tokens: 4000,
       }),
     });
 
@@ -83,24 +80,17 @@ ${includeSchema ? 'Include Article schema markup' : ''}`
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ success: false, error: 'AI service temporarily unavailable' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
       throw new Error(`AI gateway error: ${response.status}`);
     }
 
     const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || '{}';
+    const content = data.content?.[0]?.text || '{}';
 
     let result;
     try {
       const jsonMatch = content.match(/\{[\s\S]*\}/);
       result = jsonMatch ? JSON.parse(jsonMatch[0]) : {};
     } catch {
-      // If JSON parsing fails, treat content as raw blog content
       result = {
         title: topic,
         content: content,

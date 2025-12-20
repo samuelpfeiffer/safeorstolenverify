@@ -14,9 +14,8 @@ serve(async (req) => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
   const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const lovableApiKey = Deno.env.get('LOVABLE_API_KEY');
+  const anthropicApiKey = Deno.env.get('ANTHROPIC_API_KEY');
 
-  // Create agent run record
   const { data: agentRun } = await supabase
     .from('ai_agent_runs')
     .insert({
@@ -30,18 +29,16 @@ serve(async (req) => {
   console.log('[ai-content-agent] Starting content generation...');
 
   try {
-    if (!lovableApiKey) {
-      throw new Error('LOVABLE_API_KEY not configured');
+    if (!anthropicApiKey) {
+      throw new Error('ANTHROPIC_API_KEY not configured');
     }
 
-    // Get request body for optional topic override
     let requestedTopic: string | null = null;
     try {
       const body = await req.json();
       requestedTopic = body?.topic;
     } catch { }
 
-    // Content topics for stolen item prevention
     const topics = [
       'How to verify if a used iPhone is stolen before buying',
       '10 red flags when buying second-hand electronics',
@@ -55,19 +52,17 @@ serve(async (req) => {
 
     const topic = requestedTopic || topics[Math.floor(Math.random() * topics.length)];
 
-    // Generate blog post
-    const blogResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const blogResponse = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${lovableApiKey}`,
+        'x-api-key': anthropicApiKey,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          {
-            role: 'system',
-            content: `You are an expert content writer for SafeOrStolen.com, a platform that helps people verify if items are stolen before buying.
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 4096,
+        system: `You are an expert content writer for SafeOrStolen.com, a platform that helps people verify if items are stolen before buying.
 
 Write comprehensive, SEO-optimized blog posts. Return JSON:
 {
@@ -77,8 +72,8 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
   "excerpt": "Brief summary (2-3 sentences)",
   "content": "Full HTML content with h2, h3 headings, lists, and paragraphs. 1500+ words. Include practical tips, statistics, and clear CTAs to use SafeOrStolen.com.",
   "seo_score": 85
-}`
-          },
+}`,
+        messages: [
           {
             role: 'user',
             content: `Write a comprehensive blog post about: "${topic}"`
@@ -95,7 +90,7 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
     }
 
     const blogData = await blogResponse.json();
-    const blogContent = blogData.choices?.[0]?.message?.content || '';
+    const blogContent = blogData.content?.[0]?.text || '';
 
     let parsedBlog: any = null;
     try {
@@ -110,7 +105,6 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
     const contentItems: any[] = [];
 
     if (parsedBlog) {
-      // Add blog post to queue
       contentItems.push({
         content_type: 'blog',
         title: parsedBlog.title,
@@ -127,24 +121,22 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
       });
     }
 
-    // Generate social media posts
-    const socialResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const socialResponse = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${lovableApiKey}`,
+        'x-api-key': anthropicApiKey,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          {
-            role: 'system',
-            content: `Create engaging social media posts for SafeOrStolen.com. Return JSON array:
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 1024,
+        system: `Create engaging social media posts for SafeOrStolen.com. Return JSON array:
 [
   {"platform": "twitter", "content": "Tweet (280 chars max)", "hashtags": ["tag1", "tag2"]},
   {"platform": "linkedin", "content": "Professional post (300 chars)", "hashtags": []}
-]`
-          },
+]`,
+        messages: [
           {
             role: 'user',
             content: `Create 2 social posts about: "${topic}"`
@@ -155,7 +147,7 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
 
     if (socialResponse.ok) {
       const socialData = await socialResponse.json();
-      const socialContent = socialData.choices?.[0]?.message?.content || '';
+      const socialContent = socialData.content?.[0]?.text || '';
 
       try {
         const jsonMatch = socialContent.match(/\[[\s\S]*\]/);
@@ -179,7 +171,6 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
       } catch { }
     }
 
-    // Insert content items
     if (contentItems.length > 0) {
       const { error: contentError } = await supabase
         .from('ai_content_queue')
@@ -190,7 +181,6 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
       }
     }
 
-    // Update agent run
     if (agentRun?.id) {
       await supabase
         .from('ai_agent_runs')
@@ -201,7 +191,7 @@ Write comprehensive, SEO-optimized blog posts. Return JSON:
             topic,
             content_items_created: contentItems.length,
           },
-          tokens_used: blogData.usage?.total_tokens || 0,
+          tokens_used: blogData.usage?.input_tokens + blogData.usage?.output_tokens || 0,
         })
         .eq('id', agentRun.id);
     }

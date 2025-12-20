@@ -25,10 +25,10 @@ serve(async (req) => {
   }
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
     
-    if (!LOVABLE_API_KEY) {
-      console.error('[AI Chat] LOVABLE_API_KEY not configured');
+    if (!ANTHROPIC_API_KEY) {
+      console.error('[AI Chat] ANTHROPIC_API_KEY not configured');
       return new Response(
         JSON.stringify({ error: 'AI service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -53,18 +53,24 @@ ${context ? `Current context:
 
 Be helpful, clear, and prioritize user safety. If unsure, recommend additional verification.`;
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    // Convert messages format for Anthropic API
+    const anthropicMessages = messages.map(m => ({
+      role: m.role === 'system' ? 'user' : m.role,
+      content: m.content
+    }));
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          ...messages
-        ],
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 4096,
+        system: systemPrompt,
+        messages: anthropicMessages,
         stream: true,
       }),
     });
@@ -74,12 +80,6 @@ Be helpful, clear, and prioritize user safety. If unsure, recommend additional v
         return new Response(
           JSON.stringify({ error: 'Rate limit exceeded, please try again later' }),
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ error: 'AI service quota exceeded' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
       
