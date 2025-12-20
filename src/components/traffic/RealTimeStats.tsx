@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { TrendingUp, Users, Shield, Zap } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 
+/**
+ * RealTimeStats - Displays REAL stats from database
+ * Database queries deferred by 3 seconds to improve LCP/FCP
+ */
 export const RealTimeStats = () => {
   const [stats, setStats] = useState({
     totalChecks: 0,
@@ -10,7 +14,8 @@ export const RealTimeStats = () => {
   });
 
   useEffect(() => {
-    const fetchStats = async () => {
+    // Defer database query by 3 seconds to not block initial render/LCP
+    const timer = setTimeout(async () => {
       try {
         // Get REAL total verifications only
         const { count: totalChecks } = await supabase
@@ -31,9 +36,9 @@ export const RealTimeStats = () => {
         console.error('Error fetching stats:', error);
         setStats(prev => ({ ...prev, isLoading: false }));
       }
-    };
+    }, 3000);
 
-    fetchStats();
+    return () => clearTimeout(timer);
   }, []);
 
   return (

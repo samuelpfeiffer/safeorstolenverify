@@ -4,12 +4,14 @@ import { supabase } from '@/integrations/supabase/client';
 
 /**
  * Shows REAL stats from database - 100% honest, no fake numbers
+ * Database query deferred by 3 seconds to improve LCP/FCP
  */
 export const LiveStatsCounter = () => {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchCount = async () => {
+    // Defer database query by 3 seconds to not block initial render
+    const timer = setTimeout(async () => {
       try {
         const { count: total } = await supabase
           .from('verification_results')
@@ -18,8 +20,9 @@ export const LiveStatsCounter = () => {
       } catch {
         setCount(null);
       }
-    };
-    fetchCount();
+    }, 3000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
