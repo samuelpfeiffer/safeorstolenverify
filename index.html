@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Critical inline CSS -->
+    <!-- Critical inline CSS for instant FCP -->
     <style>
       html,body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#0d0d0d;color:#fafafa;min-height:100vh;}
       #root{min-height:100vh;}
@@ -15,439 +15,10 @@
     
     <link rel="icon" href="/sos-logo.png" type="image/png">
     
-    <!-- CRITICAL: All 20 core schemas in static HTML for guaranteed Google crawling -->
-    <!-- Schema 1: Organization -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://safeorstolen.com/#organization",
-  "name": "SafeOrStolen",
-  "legalName": "SafeOrStolen LLC",
-  "url": "https://safeorstolen.com",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://safeorstolen.com/sos-logo.png",
-    "width": "512",
-    "height": "512"
-  },
-  "description": "SafeOrStolen is a stolen item verification service that checks IMEI, VIN, and serial numbers so buyers and sellers can avoid stolen goods.",
-  "foundingDate": "2024",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "support@safeorstolen.com",
-    "contactType": "Customer Support"
-  },
-  "sameAs": [
-    "https://www.youtube.com/@safeorstolen",
-    "https://twitter.com/safeorstolen",
-    "https://facebook.com/safeorstolen"
-  ]
-}
-    </script>
-    
-    <!-- Schema 2: WebSite -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://safeorstolen.com/#website",
-  "url": "https://safeorstolen.com",
-  "name": "SafeOrStolen.com",
-  "description": "Free stolen item checker to verify IMEI, VIN, and serial numbers before buying secondhand items.",
-  "publisher": {
-    "@id": "https://safeorstolen.com/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://safeorstolen.com/verify?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-    </script>
-    
-    <!-- Schema 3: SoftwareApplication -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": "https://safeorstolen.com/#softwareapp",
-  "name": "SafeOrStolen Verification Platform",
-  "applicationCategory": "SecurityApplication",
-  "operatingSystem": ["iOS", "Android", "Web"],
-  "url": "https://safeorstolen.com",
-  "installUrl": "https://safeorstolen.com/app/download",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-    </script>
-    
-    <!-- Schema 4: MobileApplication -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "@id": "https://safeorstolen.com/#mobileapp",
-  "name": "SafeOrStolen Mobile App",
-  "applicationCategory": "SecurityApplication",
-  "operatingSystem": ["iOS", "Android"],
-  "url": "https://safeorstolen.com/app/download",
-  "installUrl": "https://safeorstolen.com/app/download",
-  "description": "Verify stolen items instantly with barcode scanning, offline mode, and 3-second results.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-    </script>
-    
-    <!-- Schema 5: Service -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://safeorstolen.com/#service",
-  "name": "Stolen Item Verification Service",
-  "description": "Verify if secondhand items are stolen by checking IMEI, VIN, and serial numbers against global databases.",
-  "provider": {
-    "@id": "https://safeorstolen.com/#organization"
-  },
-  "serviceType": "Stolen Item Verification",
-  "areaServed": "Worldwide",
-  "url": "https://safeorstolen.com",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "2 free searches, then affordable verification plans"
-  }
-}
-    </script>
-    
-    <!-- Note: FAQPage schemas are page-specific to prevent Google duplicate warnings -->
-    <!-- Each page (e.g., /faq, /app, blog posts) has its own FAQPage schema with relevant questions -->
-    
-    <!-- Schema 7: HowTo -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "@id": "https://safeorstolen.com/#howto",
-  "name": "How to Verify If an Item Is Stolen",
-  "description": "Step-by-step guide to checking if secondhand items are stolen using SafeOrStolen",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Find the identifier",
-      "text": "Locate the IMEI number (for phones), VIN (for vehicles), or serial number on the item you want to verify."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Enter into SafeOrStolen",
-      "text": "Go to SafeOrStolen.com and enter the identifier into the verification tool."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Get instant results",
-      "text": "Our system searches 50+ million records and provides instant results showing whether the item is safe or stolen."
-    }
-  ]
-}
-    </script>
-    
-    <!-- Schema 8: BreadcrumbList -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "@id": "https://safeorstolen.com/#breadcrumb",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://safeorstolen.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Verify Item",
-      "item": "https://safeorstolen.com/verify"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Mobile App",
-      "item": "https://safeorstolen.com/app/download"
-    }
-  ]
-}
-    </script>
-    
-    <!-- Schema 9: LocalBusiness -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://safeorstolen.com/#localbusiness",
-  "name": "SafeOrStolen",
-  "image": "https://safeorstolen.com/sos-logo.png",
-  "email": "support@safeorstolen.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "US"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "opens": "00:00",
-    "closes": "23:59"
-  },
-  "priceRange": "Free - $$"
-}
-    </script>
-    
-    <!-- Schema 10: Corporation -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Corporation",
-  "@id": "https://safeorstolen.com/#corporation",
-  "name": "SafeOrStolen LLC",
-  "alternateName": "SOS",
-  "url": "https://safeorstolen.com",
-  "logo": "https://safeorstolen.com/sos-logo.png",
-  "foundingDate": "2024"
-}
-    </script>
-    
-    <!-- Schema 11: ItemList -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "@id": "https://safeorstolen.com/#itemlist",
-  "name": "Verification Services",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "IMEI Checker",
-      "url": "https://safeorstolen.com/verify"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "VIN Checker",
-      "url": "https://safeorstolen.com/verify"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Serial Number Verification",
-      "url": "https://safeorstolen.com/verify"
-    }
-  ]
-}
-    </script>
-    
-    <!-- Schema 12: SearchAction -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SearchAction",
-  "@id": "https://safeorstolen.com/#searchaction",
-  "target": {
-    "@type": "EntryPoint",
-    "urlTemplate": "https://safeorstolen.com/verify?q={search_term_string}"
-  },
-  "query-input": "required name=search_term_string"
-}
-    </script>
-    
-    <!-- Schema 13: WebPage -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://safeorstolen.com/#webpage",
-  "url": "https://safeorstolen.com/",
-  "name": "SafeOrStolen - Stolen Item Verification",
-  "description": "Verify if items are stolen before you buy with our mobile app and web platform",
-  "isPartOf": {
-    "@id": "https://safeorstolen.com/#website"
-  },
-  "about": {
-    "@id": "https://safeorstolen.com/#service"
-  }
-}
-    </script>
-    
-    <!-- Schema 14: AboutPage -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "@id": "https://safeorstolen.com/about#aboutpage",
-  "url": "https://safeorstolen.com/about",
-  "name": "About SafeOrStolen",
-  "description": "Learn how SafeOrStolen protects buyers and sellers",
-  "mainEntity": {
-    "@id": "https://safeorstolen.com/#organization"
-  }
-}
-    </script>
-    
-    <!-- Schema 15: ContactPage -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "@id": "https://safeorstolen.com/#contactpage",
-  "url": "https://safeorstolen.com/about",
-  "name": "Contact SafeOrStolen"
-}
-    </script>
-    
-    <!-- Schema 16: CollectionPage -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://safeorstolen.com/verify#collection",
-  "url": "https://safeorstolen.com/verify",
-  "name": "Verification Services"
-}
-    </script>
-    
-    <!-- Schema 17: ImageObject -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ImageObject",
-  "@id": "https://safeorstolen.com/#logo-image",
-  "url": "https://safeorstolen.com/sos-logo.png",
-  "width": "512",
-  "height": "512",
-  "caption": "SafeOrStolen Logo"
-}
-    </script>
-    
-    <!-- Schema 18: VideoObject -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "@id": "https://safeorstolen.com/#demo-video",
-  "name": "SafeOrStolen Mobile App Demo",
-  "description": "See how SafeOrStolen verifies stolen items in 3 seconds",
-  "thumbnailUrl": "https://safeorstolen.com/sos-logo.png",
-  "uploadDate": "2024-01-01"
-}
-    </script>
-    
-    <!-- Schema 19: Dataset -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  "@id": "https://safeorstolen.com/#dataset",
-  "name": "Stolen Items Database",
-  "description": "Comprehensive database of stolen goods including IMEI, VIN, and serial numbers",
-  "creator": {
-    "@id": "https://safeorstolen.com/#organization"
-  }
-}
-    </script>
-    
-    <!-- Schema 20: Brand -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Brand",
-  "@id": "https://safeorstolen.com/#brand",
-  "name": "SafeOrStolen",
-  "alternateName": "SOS",
-  "logo": "https://safeorstolen.com/sos-logo.png",
-  "slogan": "Verify Before You Buy"
-}
-    </script>
-    
-    <!-- Schema 21: Offer - Free Tier -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://safeorstolen.com/#offer-free",
-  "name": "Free Trial",
-  "description": "2 free verification searches within 14-day trial period",
-  "price": "0",
-  "priceCurrency": "USD",
-  "availability": "https://schema.org/InStock",
-  "url": "https://safeorstolen.com/pricing",
-  "seller": {
-    "@id": "https://safeorstolen.com/#organization"
-  },
-  "itemOffered": {
-    "@id": "https://safeorstolen.com/#service"
-  }
-}
-    </script>
-    
-    <!-- Schema 22: Offer - Pro Tier -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://safeorstolen.com/#offer-pro",
-  "name": "Pro Plan",
-  "description": "Unlimited verification searches with advanced AI analysis",
-  "price": "9.99",
-  "priceCurrency": "USD",
-  "availability": "https://schema.org/InStock",
-  "url": "https://safeorstolen.com/pricing",
-  "priceValidUntil": "2025-12-31",
-  "seller": {
-    "@id": "https://safeorstolen.com/#organization"
-  },
-  "itemOffered": {
-    "@id": "https://safeorstolen.com/#service"
-  }
-}
-    </script>
-    
-    <!-- Schema 23: AggregateOffer -->
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AggregateOffer",
-  "@id": "https://safeorstolen.com/#aggregateoffer",
-  "name": "SafeOrStolen Pricing Plans",
-  "description": "Flexible verification plans from free to unlimited",
-  "lowPrice": "0",
-  "highPrice": "9.99",
-  "priceCurrency": "USD",
-  "offerCount": "2",
-  "url": "https://safeorstolen.com/pricing",
-  "seller": {
-    "@id": "https://safeorstolen.com/#organization"
-  },
-  "itemOffered": {
-    "@id": "https://safeorstolen.com/#service"
-  }
-}
-    </script>
-    
-    <!-- SEO Meta Tags - Static for Lighthouse (React Helmet overrides per page) -->
+    <!-- SEO Meta Tags -->
     <title>Stolen Item Checker - Free IMEI & VIN Verification | SafeOrStolen</title>
     <meta name="description" content="Check if items are stolen before you buy. Free IMEI checker, VIN lookup, serial number verification. Instant results. Mobile app available.">
     <meta name="keywords" content="stolen item checker, IMEI checker, VIN lookup, serial number verification, stolen phone check, stolen car check, secondhand verification, free stolen item checker">
-    
-    <!-- Canonical URL dynamically handled by React Helmet per page -->
     
     <!-- Robots -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -476,7 +47,7 @@
     <meta name="twitter:site" content="@safeorstolen">
     
     <!-- Preload critical hero image for LCP optimization -->
-    <link rel="preload" as="image" href="/images/hero-device.png">
+    <link rel="preload" as="image" href="/images/hero-device.png" fetchpriority="high">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
@@ -509,24 +80,11 @@
     <meta name="msapplication-navbutton-color" content="#FF6B35">
     
     <!-- Search Engine Webmaster Verification -->
-    <!-- Bing Webmaster Tools: https://www.bing.com/webmasters -->
     <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
-    
-    <!-- Yandex Webmaster: https://webmaster.yandex.com -->
     <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE">
     
     <!-- IndexNow Key Reference for instant indexing -->
     <link rel="indexnow" href="https://safeorstolen.com/indexnow-key.txt">
-    
-    <!-- Microsoft Clarity Analytics - Free heatmaps & session recordings -->
-    <!-- Get your Project ID from: https://clarity.microsoft.com -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "YOUR_CLARITY_PROJECT_ID");
-    </script>
 </head>
 
   <body>
@@ -560,33 +118,7 @@
         <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
           <h1>SafeOrStolen - Free Stolen Item Checker & Verification Service</h1>
           <h2>Verify IMEI, VIN, and Serial Numbers Instantly</h2>
-          <p>SafeOrStolen is the world's leading free stolen item verification platform. Check if phones, cars, bikes, and electronics are stolen before you buy. Get instant results from our database of over 50 million stolen items.</p>
-          <h3>Key Features</h3>
-          <ul>
-            <li>2 Free Searches - 14-day trial period</li>
-            <li>IMEI Number Check for smartphones and tablets</li>
-            <li>VIN Number Verification for vehicles</li>
-            <li>Serial Number Lookup for electronics and equipment</li>
-            <li>50M+ stolen item records from global databases</li>
-            <li>Instant verification results</li>
-            <li>Mobile app available for iOS and Android</li>
-          </ul>
-          <h3>How It Works</h3>
-          <ol>
-            <li>Enter the IMEI, VIN, or serial number of the item you want to verify</li>
-            <li>Our system searches through 50+ million records from law enforcement and insurance databases</li>
-            <li>Get instant results showing whether the item is safe or reported stolen</li>
-          </ol>
-          <h3>Why Use SafeOrStolen?</h3>
-          <p>Protect yourself from buying stolen goods. Avoid legal troubles and financial loss. SafeOrStolen helps buyers verify secondhand items before purchase, protecting both individuals and businesses from fraud.</p>
-          <h3>Popular Verification Services</h3>
-          <ul>
-            <li><a href="/check-phone">Phone IMEI Check</a> - Verify smartphones and mobile devices</li>
-            <li><a href="/check-car">Vehicle VIN Check</a> - Check car history and theft status</li>
-            <li><a href="/check-bike">Bicycle Serial Number Check</a> - Verify bike ownership</li>
-            <li><a href="/check-electronics">Electronics Serial Check</a> - Verify laptops, cameras, and gadgets</li>
-          </ul>
-          <p><strong>Start your free verification now - no credit card required!</strong></p>
+          <p>SafeOrStolen is the world's leading free stolen item verification platform. Check if phones, cars, bikes, and electronics are stolen before you buy.</p>
         </div>
       </div>
     </div>
@@ -594,5 +126,82 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- JSON-LD Schemas - Moved to body for non-blocking render -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://safeorstolen.com/#organization",
+          "name": "SafeOrStolen",
+          "legalName": "SafeOrStolen LLC",
+          "url": "https://safeorstolen.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://safeorstolen.com/sos-logo.png",
+            "width": "512",
+            "height": "512"
+          },
+          "description": "SafeOrStolen is a stolen item verification service that checks IMEI, VIN, and serial numbers.",
+          "foundingDate": "2024",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@safeorstolen.com",
+            "contactType": "Customer Support"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://safeorstolen.com/#website",
+          "url": "https://safeorstolen.com",
+          "name": "SafeOrStolen.com",
+          "description": "Free stolen item checker to verify IMEI, VIN, and serial numbers before buying secondhand items.",
+          "publisher": {"@id": "https://safeorstolen.com/#organization"},
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://safeorstolen.com/verify?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "SafeOrStolen Verification Platform",
+          "applicationCategory": "SecurityApplication",
+          "operatingSystem": ["iOS", "Android", "Web"],
+          "url": "https://safeorstolen.com",
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+        },
+        {
+          "@type": "Service",
+          "@id": "https://safeorstolen.com/#service",
+          "name": "Stolen Item Verification Service",
+          "description": "Verify if secondhand items are stolen by checking IMEI, VIN, and serial numbers.",
+          "provider": {"@id": "https://safeorstolen.com/#organization"},
+          "serviceType": "Stolen Item Verification",
+          "areaServed": "Worldwide"
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Verify If an Item Is Stolen",
+          "step": [
+            {"@type": "HowToStep", "name": "Find the identifier", "text": "Locate the IMEI, VIN, or serial number on the item."},
+            {"@type": "HowToStep", "name": "Enter into SafeOrStolen", "text": "Go to SafeOrStolen.com and enter the identifier."},
+            {"@type": "HowToStep", "name": "Get instant results", "text": "Our system searches 50+ million records instantly."}
+          ]
+        },
+        {
+          "@type": "AggregateOffer",
+          "name": "SafeOrStolen Pricing Plans",
+          "lowPrice": "0",
+          "highPrice": "9.99",
+          "priceCurrency": "USD",
+          "offerCount": "2",
+          "url": "https://safeorstolen.com/pricing"
+        }
+      ]
+    }
+    </script>
   </body>
 </html>

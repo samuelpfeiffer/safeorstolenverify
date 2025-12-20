@@ -84,19 +84,19 @@ const Index = () => {
                 </Button>
               </div>
 
-              {/* Hero Image - Performance Optimized */}
-              <div className="mt-12 max-w-4xl mx-auto">
-                <div className="relative group">
+              {/* Hero Image - LCP Optimized with explicit dimensions */}
+              <div className="mt-12 max-w-4xl mx-auto" style={{ aspectRatio: '16/9' }}>
+                <div className="relative group h-full">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
                   <img 
                     src={heroImage} 
-                    alt="SafeOrStolen - the only stolen verification app with barcode scanning - IMEI checker, VIN checker, stolen item scanner app showing instant verification results in 3 seconds" 
-                    className="relative w-full h-auto rounded-2xl shadow-2xl border border-primary/30"
+                    alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
+                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
                     loading="eager"
                     fetchPriority="high"
-                    decoding="async"
-                    width={1200}
-                    height={675}
+                    decoding="sync"
+                    width="1200"
+                    height="675"
                   />
                 </div>
               </div>
