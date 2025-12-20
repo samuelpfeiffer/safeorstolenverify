@@ -11,8 +11,8 @@ serve(async (req) => {
   }
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
+    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
+    if (!ANTHROPIC_API_KEY) {
       return new Response(
         JSON.stringify({ suggestions: [], error: 'AI service not configured' }),
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -30,18 +30,17 @@ serve(async (req) => {
 
     console.log(`[AI Search Suggestions] Query: "${query}", Type: ${itemType || 'auto'}`);
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          {
-            role: 'system',
-            content: `You are SafeOrStolen's search assistant. Analyze user input and provide:
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 500,
+        system: `You are SafeOrStolen's search assistant. Analyze user input and provide:
 1. Detected identifier type (IMEI, VIN, serial number, etc.)
 2. Format validation feedback
 3. Smart suggestions to complete or correct the input
@@ -54,15 +53,13 @@ Respond with JSON only:
   "formatFeedback": "string",
   "suggestions": ["suggestion1", "suggestion2"],
   "expectedFormat": "description of expected format"
-}`
-          },
+}`,
+        messages: [
           {
             role: 'user',
             content: `Analyze this identifier input: "${query}"${itemType ? ` (expected type: ${itemType})` : ''}`
           }
         ],
-        temperature: 0.2,
-        max_tokens: 500,
       }),
     });
 
@@ -73,21 +70,14 @@ Respond with JSON only:
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ suggestions: [], error: 'AI service temporarily unavailable' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
       throw new Error(`AI gateway error: ${response.status}`);
     }
 
     const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || '{}';
+    const content = data.content?.[0]?.text || '{}';
 
     let result;
     try {
-      // Try to extract JSON from the response
       const jsonMatch = content.match(/\{[\s\S]*\}/);
       result = jsonMatch ? JSON.parse(jsonMatch[0]) : { suggestions: [] };
     } catch {

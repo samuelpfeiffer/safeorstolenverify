@@ -26,10 +26,10 @@ serve(async (req) => {
   const startTime = Date.now();
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
     
-    if (!LOVABLE_API_KEY) {
-      console.error('[AI Content Generator] LOVABLE_API_KEY not configured');
+    if (!ANTHROPIC_API_KEY) {
+      console.error('[AI Content Generator] ANTHROPIC_API_KEY not configured');
       return new Response(
         JSON.stringify({ success: false, error: 'AI service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -97,16 +97,18 @@ Generate JSON with:
 }`;
     }
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 2048,
+        system: systemPrompt,
         messages: [
-          { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt }
         ],
       }),
@@ -119,12 +121,6 @@ Generate JSON with:
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ success: false, error: 'AI service quota exceeded' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
       
       const errorText = await response.text();
       console.error(`[AI Content Generator] API error: ${response.status} - ${errorText}`);
@@ -135,13 +131,12 @@ Generate JSON with:
     }
 
     const data = await response.json();
-    const content = data.choices?.[0]?.message?.content;
+    const content = data.content?.[0]?.text;
 
     if (!content) {
       throw new Error('No response content from AI');
     }
 
-    // Extract JSON from response
     let jsonContent = content;
     const jsonMatch = content.match(/```(?:json)?\s*([\s\S]*?)```/);
     if (jsonMatch) {
@@ -150,7 +145,8 @@ Generate JSON with:
 
     let generatedContent;
     try {
-      generatedContent = JSON.parse(jsonContent);
+      const cleanMatch = jsonContent.match(/\{[\s\S]*\}/);
+      generatedContent = cleanMatch ? JSON.parse(cleanMatch[0]) : JSON.parse(jsonContent);
     } catch (parseError) {
       console.error('[AI Content Generator] Failed to parse response:', content);
       generatedContent = { 

@@ -14,11 +14,10 @@ serve(async (req) => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
   const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const lovableApiKey = Deno.env.get('LOVABLE_API_KEY');
+  const anthropicApiKey = Deno.env.get('ANTHROPIC_API_KEY');
 
   console.log('[ai-analytics-agent] Starting analytics analysis...');
 
-  // Create agent run record
   const { data: agentRun } = await supabase
     .from('ai_agent_runs')
     .insert({
@@ -31,10 +30,8 @@ serve(async (req) => {
 
   try {
     const now = new Date();
-    const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
     const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
-    // Gather analytics data
     const [
       { count: totalUsers },
       { count: newUsersThisWeek },
@@ -53,13 +50,11 @@ serve(async (req) => {
       supabase.from('stolen_items').select('location'),
     ]);
 
-    // Calculate theft patterns by type
     const typeBreakdown: Record<string, number> = {};
     for (const item of itemsByType || []) {
       typeBreakdown[item.item_type] = (typeBreakdown[item.item_type] || 0) + 1;
     }
 
-    // Calculate location patterns
     const locationBreakdown: Record<string, number> = {};
     for (const item of itemsByLocation || []) {
       if (item.location) {
@@ -68,7 +63,6 @@ serve(async (req) => {
       }
     }
 
-    // Sort by count
     const topLocations = Object.entries(locationBreakdown)
       .sort(([, a], [, b]) => b - a)
       .slice(0, 10);
@@ -97,24 +91,22 @@ serve(async (req) => {
 
     const recommendations: any[] = [];
 
-    // AI-powered insights
-    if (lovableApiKey) {
+    if (anthropicApiKey) {
       try {
-        const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+        const aiResponse = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${lovableApiKey}`,
+            'x-api-key': anthropicApiKey,
+            'anthropic-version': '2023-06-01',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'google/gemini-2.5-flash',
-            messages: [
-              {
-                role: 'system',
-                content: `You are a business intelligence analyst for SafeOrStolen.com.
+            model: 'claude-sonnet-4-5-20250514',
+            max_tokens: 2048,
+            system: `You are a business intelligence analyst for SafeOrStolen.com.
 Analyze data and provide actionable insights.
-Return JSON: { "insights": [{"category": "", "title": "", "description": "", "recommendation": "", "priority": "high|medium|low"}] }`
-              },
+Return JSON: { "insights": [{"category": "", "title": "", "description": "", "recommendation": "", "priority": "high|medium|low"}] }`,
+            messages: [
               {
                 role: 'user',
                 content: `Analyze this platform data and provide business insights:
@@ -126,7 +118,7 @@ ${JSON.stringify(analyticsData, null, 2)}`
 
         if (aiResponse.ok) {
           const aiData = await aiResponse.json();
-          const aiContent = aiData.choices?.[0]?.message?.content || '';
+          const aiContent = aiData.content?.[0]?.text || '';
           
           try {
             const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
@@ -155,7 +147,6 @@ ${JSON.stringify(analyticsData, null, 2)}`
       }
     }
 
-    // Add automatic insights
     if (topItemTypes.length > 0) {
       const [topType, topCount] = topItemTypes[0];
       recommendations.push({
@@ -189,12 +180,10 @@ ${JSON.stringify(analyticsData, null, 2)}`
       });
     }
 
-    // Insert recommendations
     if (recommendations.length > 0) {
       await supabase.from('ai_recommendations').insert(recommendations);
     }
 
-    // Store analytics as learning
     await supabase.from('ai_agent_learnings').insert({
       agent_name: 'ai-analytics-agent',
       pattern_type: 'daily_analytics',
@@ -202,7 +191,6 @@ ${JSON.stringify(analyticsData, null, 2)}`
       confidence_score: 90,
     });
 
-    // Update agent run
     if (agentRun?.id) {
       await supabase
         .from('ai_agent_runs')

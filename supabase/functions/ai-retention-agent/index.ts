@@ -14,12 +14,11 @@ serve(async (req) => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
   const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const lovableApiKey = Deno.env.get('LOVABLE_API_KEY');
+  const anthropicApiKey = Deno.env.get('ANTHROPIC_API_KEY');
   const resendApiKey = Deno.env.get('RESEND_API_KEY');
 
   console.log('[ai-retention-agent] Starting retention analysis...');
 
-  // Create agent run record
   const { data: agentRun } = await supabase
     .from('ai_agent_runs')
     .insert({
@@ -31,7 +30,6 @@ serve(async (req) => {
     .single();
 
   try {
-    // Get users with their activity
     const { data: profiles, error: profilesError } = await supabase
       .from('profiles')
       .select('id, email, full_name, search_count, created_at, updated_at, subscription_tier')
@@ -55,7 +53,6 @@ serve(async (req) => {
       let churnRisk = 0;
       const riskFactors: string[] = [];
 
-      // Check inactivity
       if (lastActive < thirtyDaysAgo) {
         churnRisk += 40;
         riskFactors.push(`Inactive for ${daysSinceActive} days`);
@@ -64,7 +61,6 @@ serve(async (req) => {
         riskFactors.push(`Last active ${daysSinceActive} days ago`);
       }
 
-      // Check search activity
       if (user.search_count === 0) {
         churnRisk += 30;
         riskFactors.push('Never performed a search');
@@ -73,7 +69,6 @@ serve(async (req) => {
         riskFactors.push('Low search activity');
       }
 
-      // Free tier users are higher risk
       if (user.subscription_tier === 'free' || !user.subscription_tier) {
         churnRisk += 10;
         riskFactors.push('Free tier user');
@@ -93,23 +88,21 @@ serve(async (req) => {
 
     console.log(`[ai-retention-agent] Found ${atRiskUsers.length} at-risk users`);
 
-    // Generate retention strategies with AI
-    if (lovableApiKey && atRiskUsers.length > 0) {
+    if (anthropicApiKey && atRiskUsers.length > 0) {
       try {
-        const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+        const aiResponse = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${lovableApiKey}`,
+            'x-api-key': anthropicApiKey,
+            'anthropic-version': '2023-06-01',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'google/gemini-2.5-flash',
+            model: 'claude-sonnet-4-5-20250514',
+            max_tokens: 2048,
+            system: `You are a user retention expert for SafeOrStolen.com. Generate personalized re-engagement strategies.
+Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_preview": "", "key_message": "", "cta": ""}] }`,
             messages: [
-              {
-                role: 'system',
-                content: `You are a user retention expert for SafeOrStolen.com. Generate personalized re-engagement strategies.
-Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_preview": "", "key_message": "", "cta": ""}] }`
-              },
               {
                 role: 'user',
                 content: `Generate retention strategies for these at-risk user segments:
@@ -123,7 +116,7 @@ Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_p
 
         if (aiResponse.ok) {
           const aiData = await aiResponse.json();
-          const aiContent = aiData.choices?.[0]?.message?.content || '';
+          const aiContent = aiData.content?.[0]?.text || '';
           
           try {
             const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
@@ -154,7 +147,6 @@ Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_p
       }
     }
 
-    // Create recommendation for review
     if (atRiskUsers.length > 0) {
       recommendations.push({
         agent_name: 'ai-retention-agent',
@@ -174,12 +166,10 @@ Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_p
       });
     }
 
-    // Insert recommendations
     if (recommendations.length > 0) {
       await supabase.from('ai_recommendations').insert(recommendations);
     }
 
-    // Store learnings about churn patterns
     const churnPatterns = {
       inactive_30_days: atRiskUsers.filter(u => u.days_inactive >= 30).length,
       never_searched: atRiskUsers.filter(u => u.risk_factors.includes('Never performed a search')).length,
@@ -193,7 +183,6 @@ Return JSON: { "strategies": [{"user_segment": "", "email_subject": "", "email_p
       confidence_score: 75,
     });
 
-    // Update agent run
     if (agentRun?.id) {
       await supabase
         .from('ai_agent_runs')

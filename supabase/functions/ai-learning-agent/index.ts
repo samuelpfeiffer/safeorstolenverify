@@ -14,11 +14,10 @@ serve(async (req) => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
   const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const lovableApiKey = Deno.env.get('LOVABLE_API_KEY');
+  const anthropicApiKey = Deno.env.get('ANTHROPIC_API_KEY');
 
   console.log('[ai-learning-agent] Starting learning cycle...');
 
-  // Create agent run record
   const { data: agentRun } = await supabase
     .from('ai_agent_runs')
     .insert({
@@ -33,7 +32,6 @@ serve(async (req) => {
     const now = new Date();
     const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 
-    // 1. Analyze agent run history
     const { data: recentRuns, error: runsError } = await supabase
       .from('ai_agent_runs')
       .select('*')
@@ -42,7 +40,6 @@ serve(async (req) => {
 
     if (runsError) throw runsError;
 
-    // Calculate success rates per agent
     const agentStats: Record<string, { total: number; success: number; failed: number; avgDuration: number }> = {};
     
     for (const run of recentRuns || []) {
@@ -66,7 +63,6 @@ serve(async (req) => {
       }
     }
 
-    // 2. Analyze recommendation effectiveness
     const { data: recommendations } = await supabase
       .from('ai_recommendations')
       .select('*')
@@ -80,7 +76,6 @@ serve(async (req) => {
       pending: recommendations?.filter(r => r.status === 'pending').length || 0,
     };
 
-    // 3. Analyze content generation quality
     const { data: contentItems } = await supabase
       .from('ai_content_queue')
       .select('*')
@@ -95,7 +90,6 @@ serve(async (req) => {
         : 0,
     };
 
-    // 4. Analyze fraud detection accuracy
     const { data: fraudAnalysis } = await supabase
       .from('fraud_analysis')
       .select('*')
@@ -107,8 +101,7 @@ serve(async (req) => {
       reviewed: fraudAnalysis?.filter(f => f.reviewed).length || 0,
     };
 
-    // 5. Compile learnings
-    const learnings = {
+    const learnings: any = {
       agent_performance: agentStats,
       recommendation_effectiveness: recStats,
       content_quality: contentStats,
@@ -116,25 +109,23 @@ serve(async (req) => {
       timestamp: now.toISOString(),
     };
 
-    // 6. AI-powered pattern analysis
     const insights: any[] = [];
     
-    if (lovableApiKey) {
+    if (anthropicApiKey) {
       try {
-        const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+        const aiResponse = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${lovableApiKey}`,
+            'x-api-key': anthropicApiKey,
+            'anthropic-version': '2023-06-01',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'google/gemini-2.5-flash',
+            model: 'claude-sonnet-4-5-20250514',
+            max_tokens: 2048,
+            system: `You are a machine learning optimization expert. Analyze AI agent performance data and suggest improvements.
+Return JSON: { "insights": [{"agent": "", "issue": "", "improvement": "", "priority": "high|medium|low"}], "system_health": "good|warning|critical" }`,
             messages: [
-              {
-                role: 'system',
-                content: `You are a machine learning optimization expert. Analyze AI agent performance data and suggest improvements.
-Return JSON: { "insights": [{"agent": "", "issue": "", "improvement": "", "priority": "high|medium|low"}], "system_health": "good|warning|critical" }`
-              },
               {
                 role: 'user',
                 content: `Analyze this AI system performance data and suggest improvements:
@@ -146,7 +137,7 @@ ${JSON.stringify(learnings, null, 2)}`
 
         if (aiResponse.ok) {
           const aiData = await aiResponse.json();
-          const aiContent = aiData.choices?.[0]?.message?.content || '';
+          const aiContent = aiData.content?.[0]?.text || '';
           
           try {
             const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
@@ -162,7 +153,6 @@ ${JSON.stringify(learnings, null, 2)}`
       }
     }
 
-    // 7. Store learnings
     await supabase.from('ai_agent_learnings').insert({
       agent_name: 'ai-learning-agent',
       pattern_type: 'daily_system_analysis',
@@ -170,11 +160,10 @@ ${JSON.stringify(learnings, null, 2)}`
       confidence_score: 85,
     });
 
-    // 8. Create recommendations from insights
-    const recommendations: any[] = [];
+    const newRecommendations: any[] = [];
     
     for (const insight of insights) {
-      recommendations.push({
+      newRecommendations.push({
         agent_name: 'ai-learning-agent',
         category: 'system_optimization',
         priority: insight.priority || 'medium',
@@ -185,12 +174,11 @@ ${JSON.stringify(learnings, null, 2)}`
       });
     }
 
-    // Check for agents with high failure rates
     for (const [agentName, stats] of Object.entries(agentStats)) {
       const successRate = stats.total > 0 ? (stats.success / stats.total) * 100 : 100;
       
       if (successRate < 80 && stats.total >= 2) {
-        recommendations.push({
+        newRecommendations.push({
           agent_name: 'ai-learning-agent',
           category: 'system_optimization',
           priority: successRate < 50 ? 'critical' : 'high',
@@ -202,11 +190,10 @@ ${JSON.stringify(learnings, null, 2)}`
       }
     }
 
-    if (recommendations.length > 0) {
-      await supabase.from('ai_recommendations').insert(recommendations);
+    if (newRecommendations.length > 0) {
+      await supabase.from('ai_recommendations').insert(newRecommendations);
     }
 
-    // Update agent run
     if (agentRun?.id) {
       await supabase
         .from('ai_agent_runs')
@@ -217,20 +204,20 @@ ${JSON.stringify(learnings, null, 2)}`
             agents_analyzed: Object.keys(agentStats).length,
             total_runs_analyzed: recentRuns?.length || 0,
             insights_generated: insights.length,
-            recommendations_created: recommendations.length,
+            recommendations_created: newRecommendations.length,
             system_health: learnings['system_health'] || 'unknown',
           },
         })
         .eq('id', agentRun.id);
     }
 
-    console.log(`[ai-learning-agent] Complete - ${insights.length} insights, ${recommendations.length} recommendations`);
+    console.log(`[ai-learning-agent] Complete - ${insights.length} insights, ${newRecommendations.length} recommendations`);
 
     return new Response(JSON.stringify({
       success: true,
       agents_analyzed: Object.keys(agentStats).length,
       insights: insights.length,
-      recommendations: recommendations.length,
+      recommendations: newRecommendations.length,
       learnings,
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
