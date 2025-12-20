@@ -112,9 +112,10 @@ export const ItemLandingPageTemplate = ({
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
                 {h1}
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                {content.intro}
-              </p>
+              <p 
+                className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
+                dangerouslySetInnerHTML={{ __html: content.intro }}
+              />
               <Link to="/verify">
                 <Button size="lg" className="gap-2">
                   Check {itemType} Now <ArrowRight className="w-4 h-4" />
@@ -148,7 +149,10 @@ export const ItemLandingPageTemplate = ({
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">What is {itemType} Verification?</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">{content.whatIs}</p>
+            <p 
+              className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
+              dangerouslySetInnerHTML={{ __html: content.whatIs }}
+            />
           </div>
         </section>
 
