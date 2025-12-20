@@ -14,7 +14,7 @@ serve(async (req) => {
   const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
   const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const lovableApiKey = Deno.env.get('LOVABLE_API_KEY');
+  const anthropicApiKey = Deno.env.get('ANTHROPIC_API_KEY');
 
   // Create agent run record
   const { data: agentRun, error: runError } = await supabase
@@ -31,7 +31,7 @@ serve(async (req) => {
     console.error('[ai-seo-agent] Failed to create run record:', runError);
   }
 
-  console.log('[ai-seo-agent] Starting SEO analysis...');
+  console.log('[ai-seo-agent] Starting comprehensive SEO analysis with Claude...');
 
   try {
     // Fetch published blog posts for SEO analysis
@@ -45,7 +45,7 @@ serve(async (req) => {
 
     const recommendations: any[] = [];
 
-    // Analyze each post with AI
+    // Analyze each post with basic checks
     for (const post of blogPosts || []) {
       const issues: string[] = [];
 
@@ -89,51 +89,101 @@ serve(async (req) => {
       }
     }
 
-    // AI-powered deeper analysis if we have API key
-    if (lovableApiKey && blogPosts && blogPosts.length > 0) {
+    // AI-powered deeper analysis with Claude
+    if (anthropicApiKey && blogPosts && blogPosts.length > 0) {
       try {
-        const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+        const response = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${lovableApiKey}`,
+            'x-api-key': anthropicApiKey,
+            'anthropic-version': '2023-06-01',
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            model: 'google/gemini-2.5-flash',
-            messages: [
-              {
-                role: 'system',
-                content: `You are an SEO expert. Analyze the blog content and provide strategic SEO recommendations. Focus on:
-1. Keyword opportunities
-2. Content gaps
-3. Internal linking opportunities
-4. Title/meta optimization
-Return JSON: { "strategic_recommendations": [{"title": "", "description": "", "priority": "high|medium|low"}] }`
-              },
-              {
-                role: 'user',
-                content: `Analyze these blog posts for SEO opportunities:\n${JSON.stringify(blogPosts.slice(0, 5).map(p => ({ title: p.title, excerpt: p.excerpt, keywords: p.meta_keywords })))}`
-              }
-            ],
-          }),
+            model: 'claude-sonnet-4-5-20250514',
+            max_tokens: 4000,
+            system: `You are SafeOrStolen's SEO strategist. SafeOrStolen is a stolen item verification service (like Carfax for everything) that checks IMEI, VIN, and serial numbers.
+
+Analyze the blog content and provide strategic SEO recommendations focusing on:
+1. Keyword opportunities for stolen item verification
+2. Content gaps in the secondhand marketplace safety niche
+3. Internal linking opportunities between related posts
+4. Title/meta optimization for higher CTR
+5. Featured snippet opportunities
+6. E-E-A-T signal improvements
+
+Return JSON only:
+{
+  "strategic_recommendations": [
+    {
+      "title": "Recommendation title",
+      "description": "Detailed recommendation with specific action steps",
+      "priority": "high|medium|low",
+      "category": "keywords|content|linking|meta|snippet|eeat",
+      "estimated_impact": "Description of expected benefit"
+    }
+  ],
+  "content_gaps": ["topic 1", "topic 2"],
+  "keyword_opportunities": ["keyword 1", "keyword 2"],
+  "quick_wins": ["quick action 1", "quick action 2"]
+}`,
+          messages: [
+            {
+              role: 'user',
+              content: `Analyze these blog posts for SEO opportunities:\n${JSON.stringify(blogPosts.slice(0, 5).map(p => ({ 
+                title: p.title, 
+                excerpt: p.excerpt, 
+                keywords: p.meta_keywords,
+                slug: p.slug 
+              })))}`
+            }
+          ]
         });
 
         if (response.ok) {
           const aiData = await response.json();
-          const aiContent = aiData.choices?.[0]?.message?.content || '';
+          const aiContent = aiData.content?.[0]?.text || '';
           
           try {
             const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
             if (jsonMatch) {
               const parsed = JSON.parse(jsonMatch[0]);
+              
+              // Add strategic recommendations
               for (const rec of parsed.strategic_recommendations || []) {
                 recommendations.push({
                   agent_name: 'ai-seo-agent',
-                  category: 'seo_strategy',
+                  category: rec.category || 'seo_strategy',
                   priority: rec.priority || 'medium',
                   title: rec.title,
-                  description: rec.description,
-                  action_data: { ai_generated: true },
+                  description: rec.description + (rec.estimated_impact ? ` Expected impact: ${rec.estimated_impact}` : ''),
+                  action_data: { ai_generated: true, category: rec.category },
+                  status: 'pending',
+                });
+              }
+              
+              // Add content gap recommendations
+              if (parsed.content_gaps && parsed.content_gaps.length > 0) {
+                recommendations.push({
+                  agent_name: 'ai-seo-agent',
+                  category: 'content_strategy',
+                  priority: 'high',
+                  title: 'Content Gaps Identified',
+                  description: `Topics to cover: ${parsed.content_gaps.join(', ')}`,
+                  action_data: { ai_generated: true, content_gaps: parsed.content_gaps },
+                  status: 'pending',
+                });
+              }
+              
+              // Add quick wins
+              if (parsed.quick_wins && parsed.quick_wins.length > 0) {
+                recommendations.push({
+                  agent_name: 'ai-seo-agent',
+                  category: 'quick_wins',
+                  priority: 'high',
+                  title: 'Quick SEO Wins Available',
+                  description: parsed.quick_wins.join('. '),
+                  action_data: { ai_generated: true, quick_wins: parsed.quick_wins },
                   status: 'pending',
                 });
               }
@@ -141,6 +191,8 @@ Return JSON: { "strategic_recommendations": [{"title": "", "description": "", "p
           } catch (parseError) {
             console.log('[ai-seo-agent] Could not parse AI response');
           }
+        } else if (response.status === 429) {
+          console.log('[ai-seo-agent] Rate limited, skipping AI analysis');
         }
       } catch (aiError) {
         console.error('[ai-seo-agent] AI analysis error:', aiError);
@@ -168,6 +220,7 @@ Return JSON: { "strategic_recommendations": [{"title": "", "description": "", "p
           output_data: {
             posts_analyzed: blogPosts?.length || 0,
             recommendations_created: recommendations.length,
+            ai_powered: !!anthropicApiKey,
           },
         })
         .eq('id', agentRun.id);
@@ -179,6 +232,7 @@ Return JSON: { "strategic_recommendations": [{"title": "", "description": "", "p
       success: true,
       posts_analyzed: blogPosts?.length || 0,
       recommendations: recommendations.length,
+      ai_powered: !!anthropicApiKey,
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
