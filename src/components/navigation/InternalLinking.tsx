@@ -155,6 +155,14 @@ export const InternalLinking: React.FC<InternalLinkingProps> = ({
       description: 'Verify gadgets and electronics legitimacy',
       category: 'verification',
       keywords: ['electronics check', 'gadget verification', 'tech safety']
+    },
+    {
+      href: '/firearms-check',
+      text: 'Gun Serial Number Lookup Free',
+      description: 'Free pistol and firearm serial number verification',
+      category: 'verification',
+      keywords: ['gun serial number lookup', 'firearm check', 'pistol serial lookup'],
+      isHighPriority: true
     }
   ];
 
