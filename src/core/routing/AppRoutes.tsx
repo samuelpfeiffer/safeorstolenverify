@@ -97,6 +97,7 @@ const FirearmSerialNumberVerification = lazy(() => import('@/pages/blog/FirearmS
 const BicycleStolenSerialNumberCheck = lazy(() => import('@/pages/blog/BicycleStolenSerialNumberCheck'));
 const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeMeetup'));
 const CarfaxVsFreeVinAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFreeVinAlternatives'));
+const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
 
 // Traffic Generation Landing Pages
 const CheckStolenPhonePage = lazy(() => import('@/pages/traffic/StolenCheckPages').then(m => ({ default: m.CheckStolenPhone })));
@@ -274,6 +275,9 @@ export const AppRoutes = () => {
         <Route path="/blog/bicycle-stolen-serial-number-check" element={<BicycleStolenSerialNumberCheck />} />
         <Route path="/blog/verify-item-before-meetup" element={<VerifyItemBeforeMeetup />} />
         <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVinAlternatives />} />
+        
+        {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
+        <Route path="/blog/:slug" element={<DynamicBlogPost />} />
 
         {/* BUSINESS PAGES */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />
