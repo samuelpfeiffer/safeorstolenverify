@@ -19,15 +19,16 @@ import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceL
 
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
-import { GlobalAISEO } from '@/components/seo/GlobalAISEO';
-import { DomainAuthorityBooster } from '@/components/seo/DomainAuthorityBooster';
-import { EEATSignals } from '@/components/seo/EEATSignals';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
-import { SchemaValidationMonitor, SchemaValidationIndicator } from '@/components/seo/SchemaValidationMonitor';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
-import { AdvancedSchemaGenerator } from '@/components/seo/AdvancedSchemaGenerator';
 import { AIChatAssistant } from '@/components/ai/AIChatAssistant';
+
+// Lazy load SEO components - NOT needed for initial render/LCP
+const GlobalAISEO = React.lazy(() => import('@/components/seo/GlobalAISEO').then(m => ({ default: m.GlobalAISEO })));
+const DomainAuthorityBooster = React.lazy(() => import('@/components/seo/DomainAuthorityBooster').then(m => ({ default: m.DomainAuthorityBooster })));
+const EEATSignals = React.lazy(() => import('@/components/seo/EEATSignals').then(m => ({ default: m.EEATSignals })));
+const AdvancedSchemaGenerator = React.lazy(() => import('@/components/seo/AdvancedSchemaGenerator').then(m => ({ default: m.AdvancedSchemaGenerator })));
 
 // Lazy load non-critical growth/conversion components for better performance
 const ExitIntentPopup = React.lazy(() => import('@/components/growth').then(m => ({ default: m.ExitIntentPopup })));
@@ -64,7 +65,16 @@ const queryClient = new QueryClient({
 const AuthAwareContent: React.FC = () => {
   const { loading, initialized } = useAuth();
   const [showGrowthComponents, setShowGrowthComponents] = useState(false);
+  const [showSEOComponents, setShowSEOComponents] = useState(false);
   const [showAIChat, setShowAIChat] = useState(false);
+  
+  // Delay loading SEO components by 1.5 seconds - they don't affect LCP
+  useEffect(() => {
+    const seoTimer = setTimeout(() => {
+      setShowSEOComponents(true);
+    }, 1500);
+    return () => clearTimeout(seoTimer);
+  }, []);
   
   // Delay loading growth/conversion components by 3 seconds for better initial performance
   useEffect(() => {
@@ -85,13 +95,18 @@ const AuthAwareContent: React.FC = () => {
     <GA4Provider>
       <PWAProvider>
         <MasterSEO />
-        <GlobalAISEO />
-        <DomainAuthorityBooster />
-        <EEATSignals />
-        <AdvancedSchemaGenerator />
         <RedirectHandler />
-        <SchemaValidationMonitor />
         <CriticalResourceLoader />
+        
+        {/* Lazy load SEO meta components - not needed for LCP */}
+        {showSEOComponents && (
+          <Suspense fallback={null}>
+            <GlobalAISEO />
+            <DomainAuthorityBooster />
+            <EEATSignals />
+            <AdvancedSchemaGenerator />
+          </Suspense>
+        )}
         
         {/* Lazy load traffic booster after delay */}
         {showGrowthComponents && (
@@ -114,7 +129,6 @@ const AuthAwareContent: React.FC = () => {
         <PWAInstallManager />
         <AppDownloadBot />
         <MobileNavigation />
-        <SchemaValidationIndicator />
         <AISafetyAdvisor />
         
         {/* Floating AI Chat Assistant */}

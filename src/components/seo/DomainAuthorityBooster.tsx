@@ -5,19 +5,14 @@ interface DomainAuthorityBoosterProps {
   pageType?: 'homepage' | 'service' | 'blog' | 'guide';
 }
 
+/**
+ * DomainAuthorityBooster - E-A-T meta signals only
+ * NOTE: DNS prefetches REMOVED - they hurt performance without benefit
+ * Schemas are defined in index.html to avoid duplication
+ */
 export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({ 
   pageType = 'homepage' 
 }) => {
-  // High-authority external links for domain credibility
-  const authorityLinks = [
-    'https://www.ncic.fbi.gov',
-    'https://www.ic3.gov',
-    'https://www.consumer.ftc.gov',
-    'https://www.bbb.org',
-    'https://schema.org',
-    'https://www.w3.org'
-  ];
-
   // Content depth signals for search engines
   const getContentDepthSignals = () => {
     switch (pageType) {
@@ -61,9 +56,6 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
 
   const contentSignals = getContentDepthSignals();
 
-  // NOTE: Organization/WebSite schemas removed to prevent duplication with MasterSEO
-  // E-A-T signals are now provided via meta tags only
-
   return (
     <Helmet>
       {/* Enhanced E-A-T signals */}
@@ -97,10 +89,7 @@ export const DomainAuthorityBooster: React.FC<DomainAuthorityBoosterProps> = ({
       <meta name="market-leader" content="stolen-item-verification" />
       <meta name="industry-expertise" content="fraud-prevention,security-services" />
       
-      {/* DNS prefetch for authority domains */}
-      {authorityLinks.map((link) => (
-        <link key={link} rel="dns-prefetch" href={link} />
-      ))}
+      {/* NOTE: DNS prefetch removed - hurts LCP without benefit */}
     </Helmet>
   );
 };
