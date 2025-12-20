@@ -49,7 +49,6 @@ serve(async (req) => {
     for (const post of blogPosts || []) {
       const issues: string[] = [];
 
-      // Basic SEO checks
       if (!post.meta_title || post.meta_title.length < 30) {
         issues.push('Meta title is missing or too short (< 30 chars)');
       }
@@ -82,7 +81,7 @@ serve(async (req) => {
           action_data: {
             post_id: post.id,
             post_slug: post.slug,
-            issues,
+            issues: issues,
           },
           status: 'pending',
         });
@@ -92,6 +91,13 @@ serve(async (req) => {
     // AI-powered deeper analysis with Claude
     if (anthropicApiKey && blogPosts && blogPosts.length > 0) {
       try {
+        const postsForAnalysis = blogPosts.slice(0, 5).map(p => ({
+          title: p.title,
+          excerpt: p.excerpt,
+          keywords: p.meta_keywords,
+          slug: p.slug
+        }));
+
         const response = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
@@ -102,80 +108,49 @@ serve(async (req) => {
           body: JSON.stringify({
             model: 'claude-sonnet-4-5-20250514',
             max_tokens: 4000,
-            system: `You are SafeOrStolen's SEO strategist. SafeOrStolen is a stolen item verification service (like Carfax for everything) that checks IMEI, VIN, and serial numbers.
-
-Analyze the blog content and provide strategic SEO recommendations focusing on:
-1. Keyword opportunities for stolen item verification
-2. Content gaps in the secondhand marketplace safety niche
-3. Internal linking opportunities between related posts
-4. Title/meta optimization for higher CTR
-5. Featured snippet opportunities
-6. E-E-A-T signal improvements
-
-Return JSON only:
-{
-  "strategic_recommendations": [
-    {
-      "title": "Recommendation title",
-      "description": "Detailed recommendation with specific action steps",
-      "priority": "high|medium|low",
-      "category": "keywords|content|linking|meta|snippet|eeat",
-      "estimated_impact": "Description of expected benefit"
-    }
-  ],
-  "content_gaps": ["topic 1", "topic 2"],
-  "keyword_opportunities": ["keyword 1", "keyword 2"],
-  "quick_wins": ["quick action 1", "quick action 2"]
-}`,
-          messages: [
-            {
-              role: 'user',
-              content: `Analyze these blog posts for SEO opportunities:\n${JSON.stringify(blogPosts.slice(0, 5).map(p => ({ 
-                title: p.title, 
-                excerpt: p.excerpt, 
-                keywords: p.meta_keywords,
-                slug: p.slug 
-              })))}`
-            }
-          ]
+            system: `You are SafeOrStolen's SEO strategist. Analyze blog content and provide strategic SEO recommendations. Return JSON only with: strategic_recommendations array, content_gaps array, keyword_opportunities array, quick_wins array.`,
+            messages: [
+              {
+                role: 'user',
+                content: 'Analyze these blog posts for SEO opportunities:\n' + JSON.stringify(postsForAnalysis)
+              }
+            ]
+          }),
         });
 
         if (response.ok) {
           const aiData = await response.json();
           const aiContent = aiData.content?.[0]?.text || '';
-          
+
           try {
             const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
             if (jsonMatch) {
               const parsed = JSON.parse(jsonMatch[0]);
-              
-              // Add strategic recommendations
+
               for (const rec of parsed.strategic_recommendations || []) {
                 recommendations.push({
                   agent_name: 'ai-seo-agent',
                   category: rec.category || 'seo_strategy',
                   priority: rec.priority || 'medium',
                   title: rec.title,
-                  description: rec.description + (rec.estimated_impact ? ` Expected impact: ${rec.estimated_impact}` : ''),
-                  action_data: { ai_generated: true, category: rec.category },
+                  description: rec.description,
+                  action_data: { ai_generated: true },
                   status: 'pending',
                 });
               }
-              
-              // Add content gap recommendations
+
               if (parsed.content_gaps && parsed.content_gaps.length > 0) {
                 recommendations.push({
                   agent_name: 'ai-seo-agent',
                   category: 'content_strategy',
                   priority: 'high',
                   title: 'Content Gaps Identified',
-                  description: `Topics to cover: ${parsed.content_gaps.join(', ')}`,
+                  description: 'Topics to cover: ' + parsed.content_gaps.join(', '),
                   action_data: { ai_generated: true, content_gaps: parsed.content_gaps },
                   status: 'pending',
                 });
               }
-              
-              // Add quick wins
+
               if (parsed.quick_wins && parsed.quick_wins.length > 0) {
                 recommendations.push({
                   agent_name: 'ai-seo-agent',
@@ -226,7 +201,7 @@ Return JSON only:
         .eq('id', agentRun.id);
     }
 
-    console.log(`[ai-seo-agent] Complete - ${recommendations.length} recommendations created`);
+    console.log('[ai-seo-agent] Complete - ' + recommendations.length + ' recommendations created');
 
     return new Response(JSON.stringify({
       success: true,
