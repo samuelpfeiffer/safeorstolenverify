@@ -18,22 +18,26 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
-    const root = window.document.documentElement;
+    const root = window?.document?.documentElement;
     
-    // Safety check: Ensure DOM is ready
-    if (!root) {
-      console.error('[ThemeProvider] DOM not ready');
+    // Safety check: Ensure DOM is ready and classList exists
+    if (!root || !root.classList) {
+      console.warn('[ThemeProvider] DOM not ready, deferring theme application');
       return;
     }
     
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const activeTheme = theme === 'system' ? systemTheme : theme;
-    setResolvedTheme(activeTheme);
-    
-    root.classList.remove('light', 'dark');
-    root.classList.add(activeTheme);
-    
-    localStorage.setItem('theme', theme);
+    try {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const activeTheme = theme === 'system' ? systemTheme : theme;
+      setResolvedTheme(activeTheme);
+      
+      root.classList.remove('light', 'dark');
+      root.classList.add(activeTheme);
+      
+      localStorage.setItem('theme', theme);
+    } catch (error) {
+      console.warn('[ThemeProvider] Error applying theme:', error);
+    }
   }, [theme]);
 
   const value = {
