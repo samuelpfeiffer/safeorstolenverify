@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link, ArrowRight, Shield, AlertTriangle, CheckCircle2, Zap, Link2, Sparkles } from 'lucide-react';
+import { ArrowRight, Shield, AlertTriangle, CheckCircle2, Link2, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
