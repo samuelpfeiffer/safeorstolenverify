@@ -16,6 +16,12 @@ import { HomeSearchForm } from '@/components/home/HomeSearchForm';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
 import { RealTimeStats } from '@/components/traffic/RealTimeStats';
 
+// Marketing components for visibility and conversions
+import { TrustBadgesStrip } from '@/components/marketing/TrustBadgesStrip';
+import { ValueProposition } from '@/components/marketing/ValueProposition';
+import { CompetitorComparison } from '@/components/marketing/CompetitorComparison';
+import { TestimonialsCarousel } from '@/components/marketing/TestimonialsCarousel';
+
 
 const Index = () => {
   return (
@@ -124,11 +130,17 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Trust Badges Strip */}
+        <TrustBadgesStrip />
+
         {/* Press & Trust Partners */}
         <PressMediaSection />
 
         {/* What You Can Verify */}
         <WhatYouCanVerify />
+
+        {/* Value Proposition Section */}
+        <ValueProposition />
 
         {/* Quick Trust Stats - HONEST numbers only */}
         <section className="py-8 bg-muted/30">
@@ -153,6 +165,12 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Competitor Comparison */}
+        <CompetitorComparison />
+
+        {/* Testimonials Carousel */}
+        <TestimonialsCarousel />
 
         {/* Real-Time Stats */}
         <section className="py-12">
