@@ -15,6 +15,8 @@ import { ParallelVerificationDisplay } from '@/components/verification/ParallelV
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
+import { WhySignUpCard } from '@/components/conversion/WhySignUpCard';
+import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
@@ -256,13 +258,14 @@ const VerifyPage = () => {
           ]}
         />
 
-        {/* Header */}
+        {/* Header with Social Proof */}
         <div className="text-center space-y-3">
+          <SocialProofBanner />
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            Protect Buyers & Sellers - Instant Stolen Verification
+            Check Any Item in 3 Seconds
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Every search makes stolen items harder to sell. Check IMEI, VIN, serial numbers in 3 seconds.
+            100+ databases checked instantly. The only service with a mobile app.
           </p>
         </div>
 
@@ -287,25 +290,9 @@ const VerifyPage = () => {
           ))}
         </div>
 
-        {/* Auth Gate - Sign up prompt for unauthenticated users */}
+        {/* Auth Gate - More compelling sign up prompt */}
         {!isAuthenticated && (
-          <Card className="border-primary bg-gradient-to-r from-primary/10 to-primary/5">
-            <CardContent className="py-6">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="text-center md:text-left">
-                  <h3 className="text-lg font-semibold">Get 2 Free Verifications</h3>
-                  <p className="text-muted-foreground">Sign up in 30 seconds. No credit card required.</p>
-                </div>
-                <Button 
-                  onClick={() => navigate('/auth?redirect=/verify')} 
-                  size="lg"
-                  className="min-w-[200px]"
-                >
-                  Sign Up Free
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <WhySignUpCard />
         )}
 
         {/* Search Form */}
