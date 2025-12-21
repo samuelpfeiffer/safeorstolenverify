@@ -6,6 +6,7 @@ import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
 import { TrustSignals } from '@/components/seo/TrustSignals';
 import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
 import { InternalLinksSection } from '@/components/home/InternalLinksSection';
+import { DataSourcesSection } from '@/components/home/DataSourcesSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle, Trophy, ArrowRight } from 'lucide-react';
@@ -133,6 +134,9 @@ const Index = () => {
 
         {/* Trust Badges Strip */}
         <TrustBadgesStrip />
+
+        {/* Data Sources - How We Verify */}
+        <DataSourcesSection />
 
         {/* Press & Trust Partners */}
         <PressMediaSection />
