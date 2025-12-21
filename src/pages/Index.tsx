@@ -64,7 +64,7 @@ const Index = () => {
                 The trusted verification service for buyers, sellers, and businesses worldwide
               </p>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                The <strong>only service</strong> that can analyze marketplace URLs. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, serial. Verified against 100+ databases in 3 seconds.
+                Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
               
               {/* Quick Value Proof - Shows credibility fast */}
