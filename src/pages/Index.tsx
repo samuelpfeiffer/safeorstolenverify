@@ -8,13 +8,17 @@ import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
 import { InternalLinksSection } from '@/components/home/InternalLinksSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Download, CheckCircle, Trophy } from 'lucide-react';
+import { Download, CheckCircle, Trophy, ArrowRight } from 'lucide-react';
 // Use public folder for better caching - preloaded in index.html
 const heroImage = '/images/hero-device.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchForm } from '@/components/home/HomeSearchForm';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
 import { RealTimeStats } from '@/components/traffic/RealTimeStats';
+
+// High-conversion components
+import { QuickValueProof } from '@/components/conversion/QuickValueProof';
+import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 
 // Marketing components for visibility and conversions
 import { TrustBadgesStrip } from '@/components/marketing/TrustBadgesStrip';
@@ -46,52 +50,46 @@ const Index = () => {
       <TrustHeaderBar />
       
       <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        {/* Hero Section - Focused on Immediate Action */}
+        <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto text-center space-y-6">
+            <div className="max-w-5xl mx-auto text-center space-y-5">
+              {/* Social Proof Banner - Shows activity */}
+              <SocialProofBanner />
+              
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Stolen Item Checker for Buyers, Sellers & Businesses
+                Is It Stolen? Check Before You Buy.
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
-                Verify IMEI, VIN & Serial Numbers - Free in 3 Seconds
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                <strong>Buyers:</strong> Don't get stuck with stolen goods. <strong>Sellers:</strong> Prove your items are legitimate. <strong>Businesses:</strong> Protect your reputation and reduce risk. The only mobile app for verification.
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                The <strong>only service with a mobile app</strong>. Verify phones, cars, bikes, electronics against 100+ databases in 3 seconds. Protect yourself now.
               </p>
               
-              {/* Search Form */}
-              <div className="pt-6">
+              {/* Quick Value Proof - Shows credibility fast */}
+              <QuickValueProof />
+              
+              {/* Search Form - Primary Action */}
+              <div className="pt-4">
                 <HomeSearchForm />
               </div>
               
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <LiveStatsCounter />
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  For Buyers
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  For Sellers
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  For Businesses
-                </div>
-              </div>
-              
+              {/* Secondary CTAs */}
               <div className="flex flex-wrap justify-center gap-3 pt-2">
-                <Button asChild variant="outline" size="sm">
+                <Button asChild size="lg" variant="outline">
                   <Link to="/app">
                     <Download className="mr-2 h-4 w-4" />
                     Download App
                   </Link>
                 </Button>
+                <Button asChild size="lg" variant="ghost">
+                  <Link to="/how-it-works">
+                    Learn How It Works
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
 
               {/* Hero Image - LCP Optimized with explicit dimensions */}
-              <div className="mt-12 max-w-4xl mx-auto" style={{ aspectRatio: '16/9' }}>
+              <div className="mt-8 max-w-4xl mx-auto" style={{ aspectRatio: '16/9' }}>
                 <div className="relative group h-full">
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
                   <img 
@@ -142,26 +140,11 @@ const Index = () => {
         {/* Value Proposition Section */}
         <ValueProposition />
 
-        {/* Quick Trust Stats - HONEST numbers only */}
-        <section className="py-8 bg-muted/30">
+        {/* Simplified Stats - Trust Building */}
+        <section className="py-6 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-2xl font-bold text-primary">50+</div>
-                <div className="text-sm text-muted-foreground">Database Sources</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">3 sec</div>
-                <div className="text-sm text-muted-foreground">Verification Time</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">50</div>
-                <div className="text-sm text-muted-foreground">US States</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">Free</div>
-                <div className="text-sm text-muted-foreground">2 Trial Checks</div>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <LiveStatsCounter />
             </div>
           </div>
         </section>
