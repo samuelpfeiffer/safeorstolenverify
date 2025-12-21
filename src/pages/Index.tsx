@@ -28,9 +28,9 @@ const Index = () => {
     <>
         {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
         <PageSEO
-        title="Stolen Item Checker for Buyers, Sellers & Businesses | Free IMEI VIN Serial Verification | SafeOrStolen"
-        description="Protect buyers, sellers & businesses from stolen goods. Buyers verify before purchasing. Sellers prove legitimacy. Businesses reduce risk. Free IMEI, VIN, serial number verification in 3 seconds. The only mobile app available."
-        keywords="stolen item checker, verify before buying, prove item not stolen, pawn shop verification, business stolen goods check, IMEI checker free, VIN lookup, serial number verification, secondhand verification, reseller protection"
+        title="Free Stolen Item Checker App - IMEI VIN Serial Verification | Only Mobile App | SafeOrStolen"
+        description="The ONLY stolen item checker with a mobile app. Protect buyers, sellers, pawn shops & resale businesses. Free IMEI, VIN, serial verification. 100+ databases. More comprehensive than CheckMEND, IMEI.info, Carfax, Swappa. Download free."
+        keywords="stolen item checker app, IMEI checker app free, VIN checker app free, serial number verification app, stolen phone checker app, stolen car check app, pawn shop verification, resale business protection, CheckMEND alternative app, Carfax alternative app, IMEI.info alternative, Swappa alternative, only stolen item app, free stolen goods checker"
         canonical="/"
       />
       
