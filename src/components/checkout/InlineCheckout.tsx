@@ -5,11 +5,13 @@
  */
 
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Lock, CreditCard, CheckCircle, Loader2, AlertTriangle, Zap } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { STRIPE_CONFIG } from '@/config/stripe';
 
 interface InlineCheckoutProps {
@@ -27,9 +29,24 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { isAuthenticated, session } = useUnifiedAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCheckout = async () => {
     setIsLoading(true);
+
+    if (!isAuthenticated || !session) {
+      toast({
+        title: 'Sign in required',
+        description: 'Please sign in to complete secure checkout.',
+        variant: 'destructive',
+      });
+      const returnTo = `${location.pathname}${location.search}`;
+      navigate(`/auth?redirect=${encodeURIComponent(returnTo)}`);
+      setIsLoading(false);
+      return;
+    }
 
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
@@ -39,13 +56,17 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
           itemType: itemType || 'unknown',
           isSubscription: false,
           planName: 'Single Verification',
-        }
+          redirectUrl: 'https://safeorstolen.com',
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
       });
 
       if (error) throw error;
 
       if (data?.url) {
-        window.location.href = data.url;
+        window.location.assign(data.url);
       } else {
         throw new Error('No checkout URL returned');
       }

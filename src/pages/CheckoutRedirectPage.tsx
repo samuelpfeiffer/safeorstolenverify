@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -10,16 +10,28 @@ const CheckoutRedirectPage = () => {
   const navigate = useNavigate();
   const [status, setStatus] = useState<'loading' | 'redirecting' | 'error'>('loading');
   const [errorMsg, setErrorMsg] = useState<string>('');
+  const [checkoutUrl, setCheckoutUrl] = useState<string>('');
+  const [showManualRedirect, setShowManualRedirect] = useState(false);
+  const manualTimerRef = useRef<number | null>(null);
 
   const planName = searchParams.get('planName');
   const isSubscription = searchParams.get('isSubscription') === 'true';
   const priceId = searchParams.get('priceId');
 
   useEffect(() => {
+    const cleanup = () => {
+      if (manualTimerRef.current) {
+        window.clearTimeout(manualTimerRef.current);
+        manualTimerRef.current = null;
+      }
+    };
+
     const createCheckout = async () => {
       // Check auth status directly without waiting for global provider
-      const { data: { session } } = await supabase.auth.getSession();
-      
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
       // Not logged in - redirect to auth
       if (!session) {
         const returnUrl = `/checkout-redirect?${searchParams.toString()}`;
@@ -36,14 +48,17 @@ const CheckoutRedirectPage = () => {
 
       try {
         console.log('[Checkout] Creating checkout session...');
-        
+
         const { data, error } = await supabase.functions.invoke('create-checkout', {
           body: {
             priceId,
             planName: planName || 'Subscription',
             isSubscription,
-            redirectUrl: 'https://safeorstolen.com'
-          }
+            redirectUrl: 'https://safeorstolen.com',
+          },
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+          },
         });
 
         if (error) throw error;
@@ -51,25 +66,32 @@ const CheckoutRedirectPage = () => {
 
         console.log('[Checkout] Redirecting to Stripe:', data.url);
         setStatus('redirecting');
-        
-        // Immediate redirect - no delay
-        window.location.href = data.url;
-        
+        setCheckoutUrl(data.url);
+
+        // If the browser blocks navigation or something interrupts, show a manual CTA.
+        manualTimerRef.current = window.setTimeout(() => {
+          setShowManualRedirect(true);
+        }, 2500);
+
+        window.location.assign(data.url);
       } catch (err: any) {
         console.error('Checkout error:', err);
         setErrorMsg(err.message || 'Failed to create checkout');
         setStatus('error');
         toast.error('Checkout failed. Please try again.');
+        cleanup();
       }
     };
 
+    cleanup();
     createCheckout();
+
+    return cleanup;
   }, [priceId, planName, isSubscription, navigate, searchParams]);
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-card border border-border rounded-xl p-8 shadow-lg text-center">
-        
         {/* Loading/Redirecting State */}
         {(status === 'loading' || status === 'redirecting') && (
           <div className="space-y-4">
@@ -80,6 +102,20 @@ const CheckoutRedirectPage = () => {
             <p className="text-muted-foreground text-sm">
               You'll be redirected to secure payment in a moment
             </p>
+
+            {showManualRedirect && checkoutUrl && (
+              <div className="space-y-2 pt-2">
+                <Button onClick={() => window.location.assign(checkoutUrl)} className="w-full">
+                  Open secure Stripe checkout
+                </Button>
+                <Button onClick={() => navigate('/pricing')} variant="outline" className="w-full">
+                  Return to Pricing
+                </Button>
+                <p className="text-xs text-muted-foreground">
+                  If you're not being redirected, your browser may be blocking automatic navigation.
+                </p>
+              </div>
+            )}
           </div>
         )}
 
@@ -105,3 +141,4 @@ const CheckoutRedirectPage = () => {
 };
 
 export default CheckoutRedirectPage;
+
