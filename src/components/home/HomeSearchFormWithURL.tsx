@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
+import { useTypingAnimation } from '@/hooks/useTypingAnimation';
 
 // Lazy load QR Scanner for performance
 const QRScanner = React.lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
@@ -19,6 +20,18 @@ const SUPPORTED_MARKETPLACES = [
   { name: 'Poshmark', icon: '👗' },
 ];
 
+// Words to cycle through in the typing animation
+const PLACEHOLDER_WORDS = [
+  'Serial Number',
+  'VIN',
+  'IMEI',
+  'License Plate',
+  'Phone IMEI',
+  'Vehicle VIN',
+  'Laptop Serial',
+  'Bike Serial',
+];
+
 interface HomeSearchFormWithURLProps {
   className?: string;
 }
@@ -29,6 +42,13 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
   const [urlValue, setUrlValue] = useState('');
   const [isScannerOpen, setIsScannerOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'search' | 'url'>('url');
+
+  const typingText = useTypingAnimation({
+    words: PLACEHOLDER_WORDS,
+    typingSpeed: 80,
+    deletingSpeed: 40,
+    pauseTime: 1500,
+  });
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -131,7 +151,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
                 type="text"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
-                placeholder="Enter IMEI, VIN, or Serial Number..."
+                placeholder={`Enter ${typingText}...`}
                 className="pl-12 pr-4 h-14 text-lg bg-card border-2 border-border focus:border-primary transition-colors rounded-xl"
               />
             </div>
