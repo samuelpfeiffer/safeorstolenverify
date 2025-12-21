@@ -337,6 +337,8 @@ export const AppRoutes = () => {
         {/* React Navigate components removed to prevent duplicate redirect handling */}
         {/* Server-side 301s are respected by Google; client-side Navigate is not */}
 
+        <Route path="/404" element={<NotFound />} />
+
         {/* 404 for everything else */}
         <Route path="*" element={<NotFound />} />
       </Routes>

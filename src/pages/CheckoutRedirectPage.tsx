@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Loader2, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { isInIframe, navigateOutOfIframe } from '@/utils/navigationUtils';
 
 const CheckoutRedirectPage = () => {
   const [searchParams] = useSearchParams();
@@ -73,7 +74,9 @@ const CheckoutRedirectPage = () => {
           setShowManualRedirect(true);
         }, 2500);
 
-        window.location.assign(data.url);
+        // Stripe Checkout cannot be embedded in iframes; Lovable preview runs in an iframe.
+        // Open in a new tab when inside an iframe; otherwise navigate normally.
+        navigateOutOfIframe(data.url, isInIframe());
       } catch (err: any) {
         console.error('Checkout error:', err);
         setErrorMsg(err.message || 'Failed to create checkout');
@@ -105,7 +108,7 @@ const CheckoutRedirectPage = () => {
 
             {showManualRedirect && checkoutUrl && (
               <div className="space-y-2 pt-2">
-                <Button onClick={() => window.location.assign(checkoutUrl)} className="w-full">
+                <Button onClick={() => navigateOutOfIframe(checkoutUrl, isInIframe())} className="w-full">
                   Open secure Stripe checkout
                 </Button>
                 <Button onClick={() => navigate('/pricing')} variant="outline" className="w-full">
