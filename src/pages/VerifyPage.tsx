@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, Monitor, CircuitBoard, Crosshair, FileText, Mic, MicOff } from 'lucide-react';
+import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, Monitor, CircuitBoard, Crosshair, FileText, Mic, MicOff, Link2, Sparkles } from 'lucide-react';
 import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
@@ -24,6 +24,8 @@ import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
+import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 // Item type configuration for quick-select cards
@@ -44,6 +46,8 @@ const VerifyPage = () => {
   const [stateCode, setStateCode] = useState('');
   const [customResult, setCustomResult] = useState<AggregatedResult | null>(null);
   const [isScannerOpen, setIsScannerOpen] = useState(false);
+  const [urlFromParams, setUrlFromParams] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<'manual' | 'url'>('manual');
   const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
   const { isAuthenticated } = useUnifiedAuth();
   const { remainingSearches, isSubscribed } = useSearchLimits();
@@ -64,6 +68,7 @@ const VerifyPage = () => {
     const typeParam = searchParams.get('type');
     const scanParam = searchParams.get('scan');
     const qParam = searchParams.get('q');
+    const urlParam = searchParams.get('url');
 
     if (typeParam) {
       setItemType(typeParam);
@@ -71,6 +76,11 @@ const VerifyPage = () => {
 
     if (qParam) {
       setIdentifier(decodeURIComponent(qParam));
+    }
+
+    if (urlParam) {
+      setUrlFromParams(decodeURIComponent(urlParam));
+      setActiveTab('url');
     }
 
     if (scanParam === 'true') {
@@ -262,12 +272,55 @@ const VerifyPage = () => {
         <div className="text-center space-y-3">
           <SocialProofBanner />
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            Check Any Item in 3 Seconds
+            Paste URL or Enter ID — Check in Seconds
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            100+ databases checked instantly. The only service with a mobile app.
+            <strong className="text-secondary">Only SafeOrStolen</strong> can analyze marketplace listing URLs. Or manually enter IMEI, VIN, serial numbers.
           </p>
         </div>
+
+        {/* Input Method Tabs */}
+        <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'manual' | 'url')} className="w-full">
+          <TabsList className="grid w-full grid-cols-2 mb-6 bg-muted/50 p-1 h-auto">
+            <TabsTrigger 
+              value="url" 
+              className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span className="font-semibold">Paste Listing URL</span>
+              <span className="hidden sm:inline text-xs bg-secondary/20 px-2 py-0.5 rounded-full">UNIQUE</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="manual" 
+              className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Search className="w-4 h-4" />
+              <span className="font-semibold">Enter ID Manually</span>
+            </TabsTrigger>
+          </TabsList>
+
+          {/* URL PASTE TAB */}
+          <TabsContent value="url" className="mt-0">
+            <Card className="border-2 border-secondary/30">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Link2 className="w-5 h-5 text-secondary" />
+                  Analyze Marketplace Listing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <MarketplaceUrlAnalyzer 
+                  onIdentifierFound={(id) => {
+                    setIdentifier(id);
+                    setActiveTab('manual');
+                  }}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* MANUAL ENTRY TAB */}
+          <TabsContent value="manual" className="mt-0 space-y-6">
 
         {/* Quick-Select Item Type Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
@@ -439,6 +492,8 @@ const VerifyPage = () => {
             </CardContent>
           </Card>
         )}
+          </TabsContent>
+        </Tabs>
 
         {/* Results */}
         {result && (

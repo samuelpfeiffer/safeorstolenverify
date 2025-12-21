@@ -12,7 +12,7 @@ import { Download, CheckCircle, Trophy, ArrowRight } from 'lucide-react';
 // Use public folder for better caching - preloaded in index.html
 const heroImage = '/images/hero-device.png';
 import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
-import { HomeSearchForm } from '@/components/home/HomeSearchForm';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
 import { RealTimeStats } from '@/components/traffic/RealTimeStats';
 
@@ -58,18 +58,18 @@ const Index = () => {
               <SocialProofBanner />
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Is It Stolen? Check Before You Buy.
+                Paste Any Listing. Check if Stolen.
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                The <strong>only service with a mobile app</strong>. Verify phones, cars, bikes, electronics against 100+ databases in 3 seconds. Protect yourself now.
+                The <strong>only service</strong> that can analyze marketplace URLs. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, serial. Verified against 100+ databases in 3 seconds.
               </p>
               
               {/* Quick Value Proof - Shows credibility fast */}
               <QuickValueProof />
               
-              {/* Search Form - Primary Action */}
+              {/* Search Form with URL Paste - Primary Action */}
               <div className="pt-4">
-                <HomeSearchForm />
+                <HomeSearchFormWithURL />
               </div>
               
               {/* Secondary CTAs */}

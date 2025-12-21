@@ -111,6 +111,7 @@ const FacebookMarketplaceStolenCheck = lazy(() => import('@/pages/marketplace/Fa
 const CraigslistSafetyVerification = lazy(() => import('@/pages/marketplace/CraigslistSafetyVerification'));
 const OfferupVerifyNotStolen = lazy(() => import('@/pages/marketplace/OfferupVerifyNotStolen'));
 const EbayStolenItemCheck = lazy(() => import('@/pages/marketplace/EbayStolenItemCheck'));
+const MarketplaceURLChecker = lazy(() => import('@/pages/MarketplaceURLChecker'));
 
 // City Pages (Top 10 Cities)
 const StolenCheckLosAngeles = lazy(() => import('@/pages/city/StolenCheckLosAngeles'));
@@ -205,6 +206,7 @@ export const AppRoutes = () => {
         <Route path="/testimonials" element={<TestimonialsPage />} />
         
         {/* MARKETPLACE PAGES */}
+        <Route path="/marketplace-url-checker" element={<MarketplaceURLChecker />} />
         <Route path="/facebook-marketplace-stolen-check" element={<FacebookMarketplaceStolenCheck />} />
         <Route path="/craigslist-safety-verification" element={<CraigslistSafetyVerification />} />
         <Route path="/offerup-verify-not-stolen" element={<OfferupVerifyNotStolen />} />
