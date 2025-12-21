@@ -3,18 +3,21 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const IMEICheckerPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free IMEI Checker - Verify Phone Not Stolen | SafeOrStolen"
-      metaDescription="Check if a phone is stolen with our free IMEI checker. Instant verification from multiple databases. Protect yourself when buying used phones on Marketplace, eBay, or Craigslist."
-      h1="Free IMEI Checker - Verify Phone Not Stolen"
+      title="Free IMEI Checker App - Verify Phone Not Stolen | Only Mobile App | SafeOrStolen"
+      metaDescription="The ONLY IMEI checker with a mobile app. Check if phones are stolen free. Instant verification from 100+ databases. Better than CheckMEND, IMEI.info. Download our app. Protects buyers, sellers, pawn shops."
+      h1="Free IMEI Checker - The ONLY Mobile App"
       itemType="Phone"
       keywords={[
-        'IMEI checker',
+        'IMEI checker app',
+        'IMEI checker free',
         'check IMEI stolen',
-        'free IMEI check',
         'verify phone not stolen',
-        'IMEI lookup',
-        'stolen phone check',
-        'IMEI verification'
+        'IMEI lookup app',
+        'stolen phone checker app',
+        'CheckMEND alternative app',
+        'IMEI.info alternative',
+        'pawn shop IMEI checker',
+        'reseller phone verification'
       ]}
       content={{
         intro: "Verify any phone's IMEI number in 3 seconds. Check if a smartphone is reported stolen, lost, or blacklisted before buying. Free IMEI verification from multiple databases including GSMA, carriers, and law enforcement.",
