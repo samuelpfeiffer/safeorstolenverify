@@ -60,6 +60,9 @@ const Index = () => {
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Check If Any Secondhand Item Is Safe Or Stolen
               </h1>
+              <p className="text-xl md:text-2xl font-medium text-foreground/80">
+                Protect yourself from financial loss and legal trouble before you buy or sell
+              </p>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 The <strong>only service</strong> that can analyze marketplace URLs. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, serial. Verified against 100+ databases in 3 seconds.
               </p>
