@@ -61,7 +61,7 @@ const Index = () => {
                 Check If Any Secondhand Item Is Safe Or Stolen
               </h1>
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
-                Protect yourself from financial loss and legal trouble before you buy or sell
+                The trusted verification service for buyers, sellers, and businesses worldwide
               </p>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 The <strong>only service</strong> that can analyze marketplace URLs. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, serial. Verified against 100+ databases in 3 seconds.
