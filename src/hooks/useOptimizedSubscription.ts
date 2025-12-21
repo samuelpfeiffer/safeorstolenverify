@@ -80,9 +80,7 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
     }
     lastRequestTimeRef.current = now;
 
-    // Check circuit breaker
     if (!checkCircuitBreaker()) {
-      console.log("Circuit breaker is open, skipping subscription check");
       setError("Service temporarily unavailable");
       return;
     }
@@ -104,8 +102,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
     requestCountRef.current++;
     
     try {
-      console.log(`Subscription check #${requestCountRef.current} - Starting with timeout`);
-      
       const subscriptionPromise = supabase.functions.invoke('check-subscription', {
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -122,7 +118,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
         throw new Error(error.message || 'Subscription check failed');
       }
 
-      console.log(`Subscription check #${requestCountRef.current} - Success:`, data);
       setSubscriptionData(data);
       setError(null);
       
@@ -131,11 +126,9 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
       
     } catch (error: any) {
       if (error.name === 'AbortError') {
-        console.log(`Subscription check #${requestCountRef.current} - Aborted`);
         return;
       }
       
-      console.error(`Subscription check #${requestCountRef.current} - Error:`, error);
       recordFailure();
       
       const errorMessage = error.message || 'Failed to check subscription';
@@ -181,8 +174,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
     const abortController = new AbortController();
     
     try {
-      console.log("Creating subscription checkout for plan:", priceId);
-      
       const checkoutPromise = supabase.functions.invoke('create-checkout', {
         body: {
           priceId: null, // Let the edge function resolve the actual Stripe price ID
@@ -204,7 +195,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
         throw new Error(error.message || 'Checkout creation failed');
       }
 
-      console.log("Checkout created successfully:", data.url);
       return data.url;
       
     } catch (error: any) {
@@ -212,7 +202,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
         return null;
       }
       
-      console.error("Failed to create checkout:", error);
       recordFailure();
       
       toast({
@@ -249,8 +238,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
     const abortController = new AbortController();
     
     try {
-      console.log("Opening customer portal with timeout...");
-      
       const portalPromise = supabase.functions.invoke('customer-portal', {
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -266,7 +253,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
         throw new Error(error.message || 'Portal access failed');
       }
 
-      console.log("Opening portal:", data.url);
       window.open(data.url, '_blank');
       
     } catch (error: any) {
@@ -274,7 +260,6 @@ export const useOptimizedSubscription = (): UseOptimizedSubscriptionReturn => {
         return;
       }
       
-      console.error("Failed to open customer portal:", error);
       recordFailure();
       
       toast({

@@ -24,8 +24,6 @@ export const useUnifiedVerification = () => {
     try {
       const sanitizedInput = input.trim().toUpperCase();
       const detectedType = detectItemType(sanitizedInput);
-      
-      console.log(`[UNIFIED-VERIFICATION] Detected type: ${detectedType} for input: ${sanitizedInput}`);
 
       let providers: Array<{name: string; result: any}> = [];
       

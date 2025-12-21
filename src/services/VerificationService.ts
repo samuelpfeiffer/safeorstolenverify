@@ -41,8 +41,6 @@ class VerificationService {
     const startTime = Date.now();
     const { identifier, itemType, userId } = request;
 
-    console.log(`[VerificationService] Starting verification for ${itemType}:`, identifier);
-
     try {
       const { data, error } = await supabase.functions.invoke('verify-item', {
         body: { 
@@ -53,13 +51,9 @@ class VerificationService {
       });
 
       if (error) {
-        console.error('[VerificationService] Edge function error:', error);
         throw new Error(error.message || 'Verification failed');
       }
-
-      console.log(`[VerificationService] Complete in ${Date.now() - startTime}ms`);
       
-      // Ensure we have a valid result
       if (!data || typeof data !== 'object') {
         throw new Error('Invalid response from verification service');
       }
