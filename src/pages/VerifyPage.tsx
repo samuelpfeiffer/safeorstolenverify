@@ -26,6 +26,7 @@ import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useTypingAnimation } from '@/hooks/useTypingAnimation';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 // Item type configuration for quick-select cards
@@ -59,6 +60,14 @@ const VerifyPage = () => {
     onResult: (text) => {
       setIdentifier(text);
     }
+  });
+
+  // Typing animation for placeholder
+  const typingText = useTypingAnimation({
+    words: ['Serial Number', 'VIN', 'IMEI', 'License Plate', 'Phone IMEI', 'Vehicle VIN', 'Laptop Serial'],
+    typingSpeed: 80,
+    deletingSpeed: 40,
+    pauseTime: 1500,
   });
 
   const result = customResult || hookResult;
@@ -363,7 +372,7 @@ const VerifyPage = () => {
                   <div className="flex gap-2">
                     <Input
                       type="text"
-                      placeholder={itemType === 'license_plate' ? 'License Plate Number' : 'Serial Number, IMEI, VIN, License Plate, etc.'}
+                      placeholder={itemType === 'license_plate' ? 'License Plate Number' : `Enter ${typingText}...`}
                       value={identifier}
                       onChange={(e) => setIdentifier(e.target.value)}
                       disabled={isLoading}
