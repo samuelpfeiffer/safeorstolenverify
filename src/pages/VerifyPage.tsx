@@ -21,6 +21,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
+import { usePendingVerification } from '@/hooks/usePendingVerification';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 // Item type configuration for quick-select cards
@@ -44,6 +45,7 @@ const VerifyPage = () => {
   const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
   const { isAuthenticated } = useUnifiedAuth();
   const { remainingSearches, isSubscribed } = useSearchLimits();
+  const { pendingVerification, savePendingVerification } = usePendingVerification();
   const navigate = useNavigate();
 
   // Voice search integration
@@ -55,17 +57,37 @@ const VerifyPage = () => {
 
   const result = customResult || hookResult;
 
-  // Set item type from URL params (e.g., ?type=smartphone) and auto-open scanner
+  // Set item type / identifier from URL params (e.g., ?type=smartphone&q=123...) and auto-open scanner
   useEffect(() => {
     const typeParam = searchParams.get('type');
     const scanParam = searchParams.get('scan');
+    const qParam = searchParams.get('q');
+
     if (typeParam) {
       setItemType(typeParam);
     }
+
+    if (qParam) {
+      setIdentifier(decodeURIComponent(qParam));
+    }
+
     if (scanParam === 'true') {
       setIsScannerOpen(true);
     }
   }, [searchParams]);
+
+  // If the user typed an identifier before signup/signin, restore it after auth
+  useEffect(() => {
+    if (!pendingVerification) return;
+
+    if (!identifier) {
+      setIdentifier(pendingVerification.serial_number);
+    }
+
+    if (!itemType && pendingVerification.item_type) {
+      setItemType(pendingVerification.item_type);
+    }
+  }, [pendingVerification, identifier, itemType]);
 
   const US_STATES = [
     { code: 'AL', name: 'Alabama' }, { code: 'AK', name: 'Alaska' }, { code: 'AZ', name: 'Arizona' },
@@ -97,7 +119,17 @@ const VerifyPage = () => {
 
     // CRITICAL: Require authentication for all verifications
     if (!isAuthenticated) {
-      navigate('/auth?redirect=/verify');
+      const trimmed = identifier.trim();
+
+      // Best-effort: save the user's typed identifier so we can restore it post-auth
+      if (trimmed) {
+        savePendingVerification(trimmed, itemType || undefined, 'buyer').catch(() => {
+          // Ignore errors here; URL redirect still preserves the value
+        });
+      }
+
+      const redirect = `/verify?q=${encodeURIComponent(trimmed)}${itemType ? `&type=${encodeURIComponent(itemType)}` : ''}`;
+      navigate(`/auth?tab=signup&redirect=${encodeURIComponent(redirect)}`);
       return;
     }
 

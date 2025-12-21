@@ -24,7 +24,7 @@ import { DashboardSidebar } from '@/components/dashboard/DashboardSidebar';
 import { VerificationSection } from '@/components/dashboard/VerificationSection';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { useFreemiumFlow } from '@/hooks/useFreemiumFlow';
-import { PaywallModal } from '@/components/dashboard/PaywallModal';
+import { PaywallModal as ConversionPaywallModal } from '@/components/conversion/PaywallModal';
 import { useToast } from '@/hooks/use-toast';
 import { NotificationSettings } from '@/components/settings/NotificationSettings';
 import { QuickStatsCard } from '@/components/dashboard/QuickStatsCard';
@@ -623,7 +623,12 @@ const DashboardPage = () => {
         )}
 
         {/* Paywall Modal */}
-        <PaywallModal isOpen={showPaywall} onClose={hidePaywall} />
+        <ConversionPaywallModal 
+          isOpen={showPaywall} 
+          onClose={hidePaywall} 
+          freeSearchesUsed={searchCount}
+          maxFreeSearches={2}
+        />
       </div>
     </div>
   );
