@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
-import { escapeIframeAndNavigate } from '@/utils/navigationUtils';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 
 interface SubscriptionCheckoutProps {
@@ -17,6 +17,7 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
   disabled = false,
 }) => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const { session, loading, isAuthenticated } = useUnifiedAuth();
   const [isProcessing, setIsProcessing] = React.useState(false);
 
@@ -31,7 +32,7 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
         planName,
         isSubscription: 'true',
       });
-      escapeIframeAndNavigate(`/auth?redirect=${encodeURIComponent(`/checkout-redirect?${params.toString()}`)}`);
+      navigate(`/auth?redirect=${encodeURIComponent(`/checkout-redirect?${params.toString()}`)}`);
       return;
     }
 

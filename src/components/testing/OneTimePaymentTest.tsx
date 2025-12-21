@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,17 +11,15 @@ import { formatPrice, SUBSCRIPTION_TIERS } from '@/features/pricing';
 import { ShieldCheck, Receipt } from 'lucide-react';
 
 const OneTimePaymentTest: React.FC = () => {
+  const navigate = useNavigate();
   const { isAuthenticated } = useUnifiedAuth();
   const [serialNumber, setSerialNumber] = useState('');
   const [itemType, setItemType] = useState('phone');
 
   const handlePurchase = () => {
     if (!serialNumber.trim()) return;
-    
-    // CRITICAL FIX: Redirect to checkout page OUTSIDE iframe
-    // This page will then create the Stripe session and redirect to Stripe
-    const { escapeIframeAndNavigate } = require('@/utils/navigationUtils');
-    
+
+    // Use client-side navigation to avoid preview-host 404s on deep links
     const params = new URLSearchParams({
       priceId: 'price_1Rz83i2eGaMDLFHonAmu86lS', // $10 Report
       planName: 'Single Verification',
@@ -28,8 +27,8 @@ const OneTimePaymentTest: React.FC = () => {
       serialNumber,
       itemType,
     });
-    
-    escapeIframeAndNavigate(`/checkout-redirect?${params.toString()}`);
+
+    navigate(`/checkout-redirect?${params.toString()}`);
   };
 
   const paymentPlan = SUBSCRIPTION_TIERS.payPerUse; // Single payment option
