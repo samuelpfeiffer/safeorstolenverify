@@ -27,6 +27,8 @@ import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTypingAnimation } from '@/hooks/useTypingAnimation';
+import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
+import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 // Item type configuration for quick-select cards
@@ -286,6 +288,7 @@ const VerifyPage = () => {
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             <strong className="text-secondary">Only SafeOrStolen</strong> can analyze marketplace listing URLs. Or manually enter IMEI, VIN, serial numbers.
           </p>
+          <DataPartnerBadges variant="minimal" className="mt-4" />
         </div>
 
         {/* Input Method Tabs */}
@@ -517,6 +520,9 @@ const VerifyPage = () => {
           </>
         )}
       </div>
+      
+      {/* Credibility Bar Before Footer */}
+      <SitewideCredibilityBar className="mt-12" />
       
       {/* QR/Barcode Scanner Modal */}
       <QRScanner

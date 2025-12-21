@@ -17,6 +17,8 @@ import { isInIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
 import { UrgencyBanner } from '@/components/pricing/UrgencyBanner';
 import { EmailCapture } from '@/components/marketing/EmailCapture';
+import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 
 const PricingPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
@@ -325,6 +327,14 @@ const PricingPage = () => {
           <ConversionOptimizedPricing 
             onSubscribe={handleSubscribe}
           />
+          
+          {/* Data Partners for Trust */}
+          <div className="container mx-auto px-4 py-8">
+            <DataPartnerBadges variant="full" />
+          </div>
+          
+          {/* Credibility Bar */}
+          <SitewideCredibilityBar />
           
           {/* Email Capture for non-ready users */}
           <div className="container mx-auto px-4 py-12">
