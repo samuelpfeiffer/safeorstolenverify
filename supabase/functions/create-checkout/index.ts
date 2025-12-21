@@ -4,8 +4,57 @@ import Stripe from "https://esm.sh/stripe@16.0.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
 
-// BULLETPROOF: Always use production URLs - NEVER trust client-provided URLs
+// BULLETPROOF: Always use production URLs
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
+
+// HARDCODED STRIPE PRICE IDS - NO FUZZY MATCHING
+const STRIPE_PRICES = {
+  // One-time payment
+  singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99
+
+  // Subscriptions
+  starter: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',       // $4.99/month
+  personal: 'price_1SHEUQGxnZLw8J7OinyVqNMK',      // $9.99/month
+  professional: 'price_1SHEiuGxnZLw8J7OszscBBk7',  // $29.99/month
+  enterprise: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',    // $99/month
+} as const;
+
+// Map any incoming plan name to our known price IDs
+const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: boolean): string => {
+  // If direct price ID provided and it's in our list, use it
+  if (priceId && Object.values(STRIPE_PRICES).includes(priceId as any)) {
+    return priceId;
+  }
+
+  // Default: single verification for one-time, starter for subscription
+  if (!planName) {
+    return isSubscription ? STRIPE_PRICES.starter : STRIPE_PRICES.singleVerification;
+  }
+
+  const name = planName.toLowerCase();
+
+  // One-time payment keywords
+  if (name.includes('single') || name.includes('pay per') || name.includes('one-time') || name.includes('verification')) {
+    return STRIPE_PRICES.singleVerification;
+  }
+
+  // Subscription tier matching
+  if (name.includes('enterprise') || name.includes('business pro')) {
+    return STRIPE_PRICES.enterprise;
+  }
+  if (name.includes('professional') || name.includes('pro') || name.includes('savvy')) {
+    return STRIPE_PRICES.professional;
+  }
+  if (name.includes('personal') || name.includes('smart buyer') || name.includes('individual')) {
+    return STRIPE_PRICES.personal;
+  }
+  if (name.includes('starter') || name.includes('basic') || name.includes('entry')) {
+    return STRIPE_PRICES.starter;
+  }
+
+  // Fallback
+  return isSubscription ? STRIPE_PRICES.starter : STRIPE_PRICES.singleVerification;
+};
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -14,370 +63,161 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
-    console.log(`[CREATE-CHECKOUT] Request started - Method: ${req.method}`);
+    console.log(`[CREATE-CHECKOUT] Request started`);
     
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
     );
 
-    // Get the authorization header from the request
+    // Auth check
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) {
-      console.log(`[CREATE-CHECKOUT] ERROR: No authorization header`);
+      console.log(`[CREATE-CHECKOUT] No auth header`);
       return new Response(
-        JSON.stringify({ 
-          error: "No authorization header",
-          details: "Please ensure you are logged in and try again"
-        }),
+        JSON.stringify({ error: "Please sign in to continue", code: "NO_AUTH" }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    // Get the JWT from the authorization header
     const jwt = authHeader.replace("Bearer ", "");
-
-    // Verify the JWT and get the user
-    const {
-      data: { user },
-      error: userError,
-    } = await supabaseClient.auth.getUser(jwt);
+    const { data: { user }, error: userError } = await supabaseClient.auth.getUser(jwt);
 
     if (userError || !user) {
-      console.log(`[CREATE-CHECKOUT] ERROR: Invalid token`, userError);
+      console.log(`[CREATE-CHECKOUT] Invalid token`);
       return new Response(
-        JSON.stringify({ 
-          error: "Invalid token",
-          details: "Please sign in again and try again"
-        }),
+        JSON.stringify({ error: "Please sign in again", code: "INVALID_TOKEN" }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    console.log(`[CREATE-CHECKOUT] User authenticated: ${user.email}`);
+    console.log(`[CREATE-CHECKOUT] User: ${user.email}`);
 
-    // Parse the request body
+    // Parse request
     const body = await req.json();
     const { priceId, serialNumber, itemType, isSubscription, planName } = body;
     
-    // BULLETPROOF URL HANDLING - Always use production URLs
-    const successUrl = `${PRODUCTION_BASE_URL}/dashboard?checkout=success`;
-    const cancelUrl = `${PRODUCTION_BASE_URL}/pricing?checkout=cancelled`;
-    
-    console.log(`[CREATE-CHECKOUT] Request data:`, { priceId, planName, isSubscription });
-    console.log(`[CREATE-CHECKOUT] URLs (hardcoded production):`, { successUrl, cancelUrl });
+    console.log(`[CREATE-CHECKOUT] Request:`, { priceId, planName, isSubscription });
 
-    // SECURITY FIX: Validate credit pack purchases
-    const VALID_CREDIT_PACKS: Record<string, { credits: number; minPrice: number }> = {
-      'creditPack5': { credits: 5, minPrice: 400 },
-      'creditPack10': { credits: 10, minPrice: 800 },
-      'creditPack25': { credits: 25, minPrice: 1800 }
-    };
-
-    // Validate credit pack type
-    if (!isSubscription && planName?.toLowerCase().includes('credit')) {
-      const packKey = Object.keys(VALID_CREDIT_PACKS).find(key => 
-        planName.toLowerCase().includes(key.toLowerCase().replace('creditpack', 'credit pack'))
-      );
-      
-      if (!packKey && !planName.toLowerCase().includes('subscription')) {
-        console.log(`[CREATE-CHECKOUT] ERROR: Invalid credit pack type: ${planName}`);
-        throw new Error(`Invalid credit pack type: ${planName}. Valid options: 5, 10, or 25 credits`);
-      }
-      
-      if (packKey) {
-        console.log(`[CREATE-CHECKOUT] Validated credit pack: ${packKey} (${VALID_CREDIT_PACKS[packKey].credits} credits)`);
-      }
-    }
-
-    // Enhanced Stripe secret key validation with test/live mode support
-    const getStripeKey = () => {
-      console.log(`[CREATE-CHECKOUT] Starting Stripe key validation...`);
-      const key = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
-      console.log(`[CREATE-CHECKOUT] Key found: ${key ? 'YES' : 'NO'}`);
-      
-      if (!key) {
-        console.log(`[CREATE-CHECKOUT] ERROR: No STRIPE_SECRET_KEY found in Supabase secrets`);
-        return null;
-      }
-      
-      const isLiveKey = key.startsWith("sk_live_");
-      const isTestKey = key.startsWith("sk_test_");
-      
-      console.log(`[CREATE-CHECKOUT] Key type: ${isLiveKey ? 'LIVE' : isTestKey ? 'TEST' : 'UNKNOWN'}`);
-      
-      if (!isLiveKey && !isTestKey) {
-        console.log(`[CREATE-CHECKOUT] ERROR: Key is neither live nor test format`);
-        return null;
-      }
-      
-      console.log(`[CREATE-CHECKOUT] SUCCESS: Valid Stripe key found (${isLiveKey ? 'live' : 'test'} mode)`);
-      return key;
-    };
-    
-    const stripeKey = getStripeKey();
-    
-    if (!stripeKey) {
-      const errorMsg = "❌ STRIPE CONFIGURATION ERROR: Please configure a valid Stripe secret key:\n1. Go to your Stripe Dashboard\n2. Copy your secret key (starts with sk_live_ or sk_test_)\n3. Add it to Supabase secrets as 'STRIPE_SECRET_KEY'\n4. Try again";
-      console.log(`[CREATE-CHECKOUT] ${errorMsg}`);
+    // Get Stripe key
+    const stripeKey = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
+    if (!stripeKey || (!stripeKey.startsWith("sk_live_") && !stripeKey.startsWith("sk_test_"))) {
+      console.log(`[CREATE-CHECKOUT] Invalid Stripe key`);
       return new Response(
-        JSON.stringify({ 
-          error: "Stripe configuration error", 
-          details: "Invalid or missing Stripe secret key",
-          action: "Please configure your Stripe secret key in Supabase secrets"
-        }),
+        JSON.stringify({ error: "Payment system configuration error", code: "STRIPE_CONFIG" }),
         { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
     
-    const stripe = new Stripe(stripeKey, {
-      apiVersion: "2023-10-16",
-    });
+    const stripe = new Stripe(stripeKey, { apiVersion: "2023-10-16" });
 
-    // Check if customer exists in Stripe
-    console.log(`[CREATE-CHECKOUT] Looking for existing customer: ${user.email}`);
+    // Get or create customer
     const customers = await stripe.customers.list({ email: user.email, limit: 1 });
-    let customerId;
-    if (customers.data.length > 0) {
-      customerId = customers.data[0].id;
-      console.log(`[CREATE-CHECKOUT] Found existing customer: ${customerId}`);
-    } else {
-      console.log(`[CREATE-CHECKOUT] No existing customer found, will create one during checkout`);
+    const customerId = customers.data.length > 0 ? customers.data[0].id : undefined;
+    console.log(`[CREATE-CHECKOUT] Customer: ${customerId || 'will create'}`);
+
+    // RESOLVE PRICE ID - Simple, deterministic
+    const resolvedPriceId = resolvePriceId(priceId, planName, isSubscription);
+    console.log(`[CREATE-CHECKOUT] Resolved price: ${resolvedPriceId}`);
+
+    // Verify price exists in Stripe
+    try {
+      const price = await stripe.prices.retrieve(resolvedPriceId);
+      if (!price.active) {
+        throw new Error(`Price ${resolvedPriceId} is not active`);
+      }
+      console.log(`[CREATE-CHECKOUT] Price verified: ${price.id}`);
+    } catch (e) {
+      console.log(`[CREATE-CHECKOUT] Price verification failed:`, e);
+      return new Response(
+        JSON.stringify({ error: "Invalid pricing configuration", code: "INVALID_PRICE" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
-    // Enhanced Price ID resolution that works with any Stripe account
-    const resolvePriceId = async (maybePriceId?: string, maybePlanName?: string): Promise<string> => {
-      console.log(`[CREATE-CHECKOUT] Resolving price for:`, { priceId: maybePriceId, planName: maybePlanName });
-      
-      // Try direct retrieve first if an ID was sent
-      if (maybePriceId) {
-        try {
-          console.log(`[CREATE-CHECKOUT] Attempting to retrieve price: ${maybePriceId}`);
-          const p = await stripe.prices.retrieve(maybePriceId);
-          if (p && p.id && p.active) {
-            console.log(`[CREATE-CHECKOUT] Successfully found price: ${p.id}`);
-            return p.id;
-          } else {
-            console.log(`[CREATE-CHECKOUT] Price found but not active: ${p.id}, active: ${p.active}`);
-          }
-        } catch (e) {
-          console.log(`[CREATE-CHECKOUT] Failed to retrieve price ${maybePriceId}:`, e);
-          // Fall through to plan name resolution
-        }
-      }
-      
-      // Get all active prices and try to match by product name
-      console.log(`[CREATE-CHECKOUT] Fetching all active prices for matching...`);
-      const prices = await stripe.prices.list({ active: true, limit: 100, expand: ['data.product'] });
-      console.log(`[CREATE-CHECKOUT] Found ${prices.data.length} active prices`);
-      
-      // Log all available products for debugging
-      const availableProducts = prices.data.map(p => {
-        const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) 
-          ? (p.product as any).name 
-          : 'Unknown';
-        return { priceId: p.id, productName, type: p.type, interval: p.recurring?.interval };
-      });
-      console.log(`[CREATE-CHECKOUT] Available products:`, availableProducts);
-      
-      // Map plan names to flexible search terms - includes actual Stripe product names
-      const planNameMap: Record<string, string[]> = {
-        'personal plan': ['personal plan', 'personal', 'individual', 'smart buyer', 'basic'],
-        'professional plan': ['professional plan', 'professional', 'pro', 'savvy shopper', 'premium'],
-        'enterprise plan': ['enterprise plan', 'enterprise', 'business pro', 'business'],
-        'single verification': ['single verification', 'pay per use', 'pay per check', 'pay per lookup', 'single', 'one-time'],
-        'smart buyer': ['smart buyer', 'basic plan', 'basic', 'starter', 'individual', 'personal plan'],
-        'savvy shopper': ['savvy shopper', 'premium plan', 'premium', 'pro', 'popular', 'professional plan'],  
-        'business pro': ['business pro', 'enterprise plan', 'enterprise', 'business'],
-        'entry level': ['entry level', 'entry', 'individual', 'starter'],
-        'pay per check': ['pay per check', 'pay per lookup', 'single', 'one-time', 'per check', 'lookup', 'single verification'],
-        'pay per lookup': ['pay per lookup', 'pay per check', 'single', 'one-time', 'per check', 'lookup', 'single verification'],
-        'personal use': ['personal use', 'personal', 'instantly check', 'personal plan'],
-        'professional': ['professional', 'stolen item lookup', 'pro', 'professional plan'],
-        'report': ['certified stolen', 'report', 'single report', 'verification', 'single verification']
-      };
-      
-      let searchTerms: string[] = [];
-      if (maybePlanName) {
-        const normalizedName = maybePlanName.toLowerCase();
-        console.log(`[CREATE-CHECKOUT] Attempting to match planName: "${normalizedName}"`);
-        console.log(`[CREATE-CHECKOUT] Normalized plan name: ${normalizedName}`);
-        
-        // Find matching search terms
-        for (const [key, terms] of Object.entries(planNameMap)) {
-          if (terms.some(term => normalizedName.includes(term) || term.includes(normalizedName))) {
-            searchTerms = terms;
-            console.log(`[CREATE-CHECKOUT] Found matching terms for "${normalizedName}":`, searchTerms);
-            break;
-          }
-        }
-        
-        if (searchTerms.length === 0) {
-          searchTerms = [normalizedName];
-          console.log(`[CREATE-CHECKOUT] Using direct plan name as search term: ${normalizedName}`);
-        }
-      }
-      
-      if (searchTerms.length > 0) {
-        const match = prices.data.find((p: any) => {
-          const productName = (typeof p.product === 'object' && p.product && 'name' in p.product) 
-            ? (p.product as any).name 
-            : undefined;
-          if (!productName) return false;
-          
-          const nameMatch = searchTerms.some(term => 
-            productName.toLowerCase().includes(term.toLowerCase()) ||
-            term.toLowerCase().includes(productName.toLowerCase())
-          );
-          
-          // For subscriptions, prefer monthly recurring prices
-          const typeMatch = isSubscription ? 
-            (p.recurring?.interval === 'month' || p.type === 'recurring') :
-            (p.type === 'one_time');
-            
-          console.log(`[CREATE-CHECKOUT] Checking product "${productName}":`, { nameMatch, typeMatch, type: p.type, interval: p.recurring?.interval });
-          
-          return nameMatch && typeMatch;
-        });
-        
-        if (match) {
-          console.log(`[CREATE-CHECKOUT] Successfully matched price: ${match.id} for product: ${(match.product as any)?.name}`);
-          return match.id;
-        }
-      }
-      
-      console.log(`[CREATE-CHECKOUT] ERROR: No matching price found. Available products:`, availableProducts);
-      throw new Error(`❌ STRIPE PRODUCT ERROR: Unable to find matching Stripe product for "${maybePlanName || maybePriceId}"\n\nAvailable products in your Stripe account:\n${availableProducts.map(p => `• ${p.productName} (${p.priceId})`).join('\n')}\n\nPlease ensure you have the correct products set up in your Stripe dashboard.`);
-    };
+    // Create verification record for one-time payments
+    let verificationId: string | undefined;
+    if (!isSubscription && serialNumber?.trim()) {
+      const { data: verification, error } = await supabaseClient
+        .from("verification_searches")
+        .insert({
+          user_id: user.id,
+          serial_number: serialNumber.trim(),
+          item_type: itemType || 'unknown',
+        })
+        .select()
+        .single();
 
-    let sessionConfig: any = {
+      if (!error && verification) {
+        verificationId = verification.id;
+        console.log(`[CREATE-CHECKOUT] Verification created: ${verificationId}`);
+      }
+    }
+
+    // Build checkout session
+    const successUrl = verificationId 
+      ? `${PRODUCTION_BASE_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
+      : `${PRODUCTION_BASE_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`;
+    
+    const cancelUrl = `${PRODUCTION_BASE_URL}/verify?checkout=cancelled`;
+
+    const sessionConfig: any = {
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
-      success_url: `${successUrl}&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: successUrl,
       cancel_url: cancelUrl,
+      mode: isSubscription ? "subscription" : "payment",
+      line_items: [{ price: resolvedPriceId, quantity: 1 }],
       metadata: {
         user_id: user.id,
-        item_type: itemType || 'subscription',
-        serial_number: serialNumber || 'subscription',
-        plan_name: planName || undefined,
+        item_type: itemType || 'unknown',
+        serial_number: serialNumber || '',
+        verification_id: verificationId || '',
+        plan_name: planName || '',
       },
     };
 
+    // Add trial for subscriptions
     if (isSubscription) {
-      // Subscription mode with 7-day free trial
-      console.log(`[CREATE-CHECKOUT] Setting up subscription checkout...`);
-      const resolvedPrice = await resolvePriceId(priceId, planName);
-      
-      sessionConfig = {
-        ...sessionConfig,
-        mode: "subscription",
-        line_items: [
-          {
-            price: resolvedPrice,
-            quantity: 1,
-          },
-        ],
-        subscription_data: {
-          trial_period_days: 7,
-        },
-      };
-      
-      console.log(`[CREATE-CHECKOUT] Subscription config ready with 7-day trial`);
-    } else {
-      // One-time payment mode for verification
-      console.log(`[CREATE-CHECKOUT] Setting up one-time payment...`);
-      
-      // Only create verification record if serial number is provided
-      let verificationId: string | undefined;
-      if (serialNumber && serialNumber.trim()) {
-        console.log(`[CREATE-CHECKOUT] Creating verification record for serial: ${serialNumber}`);
-        const verificationData = await supabaseClient
-          .from("verification_searches")
-          .insert({
-            user_id: user.id,
-            serial_number: serialNumber,
-            item_type: itemType,
-          })
-          .select()
-          .single();
-
-        if (verificationData.error) {
-          console.log(`[CREATE-CHECKOUT] ERROR creating verification record:`, verificationData.error);
-          throw verificationData.error;
-        }
-        verificationId = verificationData.data.id;
-        console.log(`[CREATE-CHECKOUT] Verification record created: ${verificationId}`);
-      } else {
-        console.log(`[CREATE-CHECKOUT] No serial number provided - skipping verification record creation`);
-      }
-
-      const resolvedPrice = await resolvePriceId(priceId, planName);
-
-      // Use verification-success page if we have a verification, otherwise dashboard
-      const oneTimeSuccessUrl = verificationId 
-        ? `${PRODUCTION_BASE_URL}/verification-success?session_id={CHECKOUT_SESSION_ID}&verification_id=${verificationId}`
-        : `${successUrl}&session_id={CHECKOUT_SESSION_ID}`;
-
-      sessionConfig = {
-        ...sessionConfig,
-        mode: "payment",
-        line_items: [
-          {
-            price: resolvedPrice,
-            quantity: 1,
-          },
-        ],
-        success_url: oneTimeSuccessUrl,
-        metadata: {
-          ...sessionConfig.metadata,
-          verification_id: verificationId || undefined,
-        },
-      };
-
-      // Create purchase record for one-time payments
-      await supabaseClient.from("purchases").insert({
-        user_id: user.id,
-        stripe_session_id: "pending", // Will be updated after session creation
-        amount: 0, // Will be updated by webhook
-        currency: "usd",
-        verification_id: verificationId || null,
-      });
-      
-      console.log(`[CREATE-CHECKOUT] One-time payment config ready`);
+      sessionConfig.subscription_data = { trial_period_days: 7 };
     }
 
-    // Create Checkout Session
-    console.log(`[CREATE-CHECKOUT] Creating Stripe checkout session...`);
+    // Create purchase record
+    const { error: purchaseError } = await supabaseClient.from("purchases").insert({
+      user_id: user.id,
+      stripe_session_id: "pending",
+      amount: 0,
+      currency: "usd",
+      verification_id: verificationId || null,
+      status: 'pending',
+    });
+    
+    if (purchaseError) {
+      console.log(`[CREATE-CHECKOUT] Purchase record error:`, purchaseError);
+    }
+
+    // Create Stripe session
     const session = await stripe.checkout.sessions.create(sessionConfig);
-    console.log(`[CREATE-CHECKOUT] Checkout session created: ${session.id}`);
+    console.log(`[CREATE-CHECKOUT] Session created: ${session.id}`);
 
-    // Update purchase record with session ID for one-time payments
-    if (!isSubscription) {
-      await supabaseClient
-        .from("purchases")
-        .update({ stripe_session_id: session.id })
-        .eq("user_id", user.id)
-        .eq("stripe_session_id", "pending");
-      console.log(`[CREATE-CHECKOUT] Updated purchase record with session ID`);
-    }
+    // Update purchase with session ID
+    await supabaseClient
+      .from("purchases")
+      .update({ stripe_session_id: session.id })
+      .eq("user_id", user.id)
+      .eq("stripe_session_id", "pending");
 
-    console.log(`[CREATE-CHECKOUT] SUCCESS: Returning checkout URL`);
     return new Response(
-      JSON.stringify({ url: session.url }),
-      { 
-        status: 200,
-        headers: { ...corsHeaders, "Content-Type": "application/json" } 
-      }
+      JSON.stringify({ url: session.url, sessionId: session.id }),
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
+
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.log(`[CREATE-CHECKOUT] ERROR:`, message);
+    console.log(`[CREATE-CHECKOUT] Error:`, message);
     return createErrorResponse(
       error,
-      {
-        functionName: 'create-checkout',
-        operation: 'checkout_creation',
-      },
+      { functionName: 'create-checkout', operation: 'checkout_creation' },
       corsHeaders
     );
   }

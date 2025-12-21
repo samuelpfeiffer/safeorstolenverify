@@ -20,6 +20,7 @@ const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
+const PaymentSuccessPage = lazy(() => import('@/pages/PaymentSuccessPage'));
 
 // Competitor Comparison Pages (SEO Strategy)
 const Compare = lazy(() => import('@/pages/Compare'));
@@ -181,6 +182,7 @@ export const AppRoutes = () => {
         <Route path="/report-stolen" element={<ReportStolenPage />} />
         <Route path="/checkout-redirect" element={<CheckoutRedirectPage />} />
         <Route path="/verification-success" element={<VerificationSuccessPage />} />
+        <Route path="/payment-success" element={<PaymentSuccessPage />} />
 
         {/* STOLEN DATABASE & SHARED REPORTS */}
         <Route path="/stolen-database" element={<StolenDatabasePage />} />
