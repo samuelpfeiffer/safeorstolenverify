@@ -8,7 +8,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
+import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
+import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 interface ItemLandingPageProps {
   title: string;
   metaDescription: string;
@@ -145,14 +147,18 @@ export const ItemLandingPageTemplate = ({
           </div>
         </section>
 
+        {/* Credibility Bar */}
+        <SitewideCredibilityBar />
+
         {/* What Is Section */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">What is {itemType} Verification?</h2>
             <p 
-              className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
+              className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
               dangerouslySetInnerHTML={{ __html: content.whatIs }}
             />
+            <DataPartnerBadges variant="compact" />
           </div>
         </section>
 
@@ -208,6 +214,9 @@ export const ItemLandingPageTemplate = ({
             </Accordion>
           </div>
         </section>
+
+        {/* Authority Signals Before CTA */}
+        <AuthoritySignals variant="banner" className="mb-0" />
 
         {/* CTA Section */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">

@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
 import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWorksSection';
 import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
+import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import { VerificationStats } from '@/components/trust/VerificationStats';
 
 const HowItWorksPage = () => {
   return (
@@ -82,8 +84,12 @@ const HowItWorksPage = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Verify items before you buy with our comprehensive multi-source verification system
             </p>
+            <VerificationStats variant="horizontal" className="mt-8 max-w-3xl mx-auto" />
           </div>
         </section>
+
+        {/* Credibility Bar */}
+        <SitewideCredibilityBar />
 
         {/* Main Process */}
         <section className="py-12">

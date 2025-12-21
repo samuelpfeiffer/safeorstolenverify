@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
-import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook } from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, ExternalLink, Twitter, Linkedin, Github, CheckCircle, Smartphone, Youtube, Facebook, Database, Lock, Award, Globe, Zap } from 'lucide-react';
 import sosLogo from '@/assets/sos-logo.png';
+
+const DATA_PARTNERS = [
+  { name: 'NCIC (FBI)', verified: true },
+  { name: 'NICB', verified: true },
+  { name: 'GSMA', verified: true },
+  { name: 'BikeIndex', verified: true },
+  { name: 'Hotgunz', verified: true },
+  { name: 'NHTSA', verified: true },
+];
+
 const Footer = () => {
   const quickLinks = [{
     label: 'Instant Stolen Verification',
@@ -240,6 +250,51 @@ const Footer = () => {
                   Real-time database connections verified and secure.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Data Partners Section */}
+        <div className="border-t border-border py-6">
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Database className="h-4 w-4 text-primary" />
+              <span className="text-sm font-semibold text-foreground">Verified Data Partners</span>
+              <Badge variant="secondary" className="text-xs">50+ Sources</Badge>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {DATA_PARTNERS.map((partner, index) => (
+                <div key={index} className="flex items-center gap-1.5 px-2 py-1 bg-card border border-border rounded text-xs">
+                  <CheckCircle className="h-3 w-3 text-sos-lime" />
+                  <span className="font-medium text-muted-foreground">{partner.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Authority Signals */}
+        <div className="border-t border-border py-4 bg-muted/20">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Lock className="h-3.5 w-3.5 text-primary" />
+              <span>256-bit SSL</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Award className="h-3.5 w-3.5 text-sos-orange" />
+              <span>SOC 2 Compliant</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Globe className="h-3.5 w-3.5 text-primary" />
+              <span>All 50 States</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Zap className="h-3.5 w-3.5 text-sos-lime" />
+              <span>3-Second Checks</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Shield className="h-3.5 w-3.5 text-primary" />
+              <span>GDPR Compliant</span>
             </div>
           </div>
         </div>
