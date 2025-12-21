@@ -74,9 +74,16 @@ const CheckoutRedirectPage = () => {
           setShowManualRedirect(true);
         }, 2500);
 
-        // Stripe Checkout cannot be embedded in iframes; Lovable preview runs in an iframe.
-        // Open in a new tab when inside an iframe; otherwise navigate normally.
-        navigateOutOfIframe(data.url, isInIframe());
+        // IMPORTANT: Lovable preview runs inside an iframe and browsers will block
+        // automatic popups/navigation to Stripe without a user gesture.
+        // So in iframe: show the manual button immediately.
+        if (isInIframe()) {
+          setShowManualRedirect(true);
+          return;
+        }
+
+        // Normal site: redirect immediately.
+        window.location.assign(data.url);
       } catch (err: any) {
         console.error('Checkout error:', err);
         setErrorMsg(err.message || 'Failed to create checkout');
@@ -108,14 +115,14 @@ const CheckoutRedirectPage = () => {
 
             {showManualRedirect && checkoutUrl && (
               <div className="space-y-2 pt-2">
-                <Button onClick={() => navigateOutOfIframe(checkoutUrl, isInIframe())} className="w-full">
+                <Button onClick={() => navigateOutOfIframe(checkoutUrl, true)} className="w-full">
                   Open secure Stripe checkout
                 </Button>
                 <Button onClick={() => navigate('/pricing')} variant="outline" className="w-full">
                   Return to Pricing
                 </Button>
                 <p className="text-xs text-muted-foreground">
-                  If you're not being redirected, your browser may be blocking automatic navigation.
+                  If you’re in the Lovable preview, browsers block auto-redirects—clicking the button opens Stripe in a new tab.
                 </p>
               </div>
             )}
