@@ -584,12 +584,43 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /fastercapital/tech-cofounder  /about  301!
 
 # ============================================
-# RSS & SITEMAP REWRITES
+# CITY PAGES CONSOLIDATION (GSC Soft 404 Fixes)
+# Keep top 5 cities, redirect others to /verify
+# ============================================
+/stolen-check-philadelphia     /verify  301!
+/stolen-check-san-antonio      /verify  301!
+/stolen-check-san-diego        /verify  301!
+/stolen-check-dallas           /verify  301!
+/stolen-check-san-jose         /verify  301!
+
+# ============================================
+# LICENSE PLATE PAGES CONSOLIDATION
+# Keep main page, redirect state pages
+# ============================================
+/california-license-plate-lookup   /license-plate-lookup  301!
+/texas-license-plate-lookup        /license-plate-lookup  301!
+/florida-license-plate-lookup      /license-plate-lookup  301!
+/new-york-license-plate-lookup     /license-plate-lookup  301!
+/illinois-license-plate-lookup     /license-plate-lookup  301!
+/georgia-license-plate-lookup      /license-plate-lookup  301!
+/pennsylvania-license-plate-lookup /license-plate-lookup  301!
+/ohio-license-plate-lookup         /license-plate-lookup  301!
+/north-carolina-license-plate-lookup /license-plate-lookup  301!
+/washington-license-plate-lookup   /license-plate-lookup  301!
+
+# ============================================
+# APP SUBDIRECTORY CONSOLIDATION
+# ============================================
+/app/stolen-phone-checker      /app  301!
+/app/vin-checker               /app  301!
+/app/barcode-scanner           /app  301!
+
+# ============================================
+# RSS REWRITES
 # ============================================
 /feed.xml    /rss      200
 /rss.xml     /rss      200  
 /atom.xml    /rss      200
-/sitemap.xml /sitemap  200
 
 # ============================================
 # STATIC ASSETS (Don't redirect)

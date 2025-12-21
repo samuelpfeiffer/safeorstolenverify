@@ -1,23 +1,20 @@
 # ============================================
 # SafeOrStolen Robots.txt
 # Mission: Protect Buyers & Sellers - Stop Stolen Goods
-# Updated: 2025-12-17
-# ============================================
+# Updated: 2025-12-21
 # ============================================
 
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Single consolidated sitemap
 Sitemap: https://safeorstolen.com/sitemap.xml
-Sitemap: https://safeorstolen.com/video-sitemap.xml
-Sitemap: https://safeorstolen.com/sitemap-index.xml
 
 # ============================================
 # PRIVATE AREAS - Do Not Index
 # ============================================
 
-# Private/Authenticated Areas
+# Authenticated/Private Pages
 Disallow: /dashboard
 Disallow: /dashboard/*
 Disallow: /auth
@@ -30,39 +27,51 @@ Disallow: /receipts
 Disallow: /purchase-history
 Disallow: /checkout-redirect
 Disallow: /verification-success
+Disallow: /sitemap
 
 # Admin & Internal Pages
 Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 Disallow: /analytics
 Disallow: /seo-strategy
 
-# AI Context Files (Not for Google indexing)
+# AI Context Files
 Disallow: /ai-context.json
 Disallow: /ai-training-data.md
 Disallow: /mobile-app-ai-context.json
 
-# Query Parameters (Avoid Duplicate Content) - Allow verification queries
+# Query Parameters (Duplicate Content Prevention)
 Disallow: /*?utm_*
 Disallow: /*?ref=*
 Disallow: /*?source=*
 Disallow: /*?session_id=*
-# NOTE: We allow ?q= and ?type= for verification flow
+Disallow: /*?checkout=*
+
 # Dynamic Routes
 Disallow: /*/edit
 Disallow: /*/delete
 Disallow: /*&
 
-# Success/Cancel Pages (No SEO Value)
+# Payment Flow Pages (No SEO Value)
 Disallow: /subscription-success
 Disallow: /subscription-cancel
 Disallow: /payment-success
 Disallow: /payment-cancel
 
-# Crawl Optimization
+# Social Profile Pages (External is canonical)
+Disallow: /youtube
+Disallow: /product-hunt
+Disallow: /crunchbase
+
+# ============================================
+# CRAWL OPTIMIZATION
+# ============================================
 Crawl-delay: 1
 
-# AI Search Engine Crawlers - Maximum Access for AI Discoverability
+# ============================================
+# AI SEARCH ENGINE CRAWLERS
+# ============================================
 User-agent: GPTBot
 Allow: /
 
@@ -84,12 +93,6 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-User-agent: Claude-User
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
 
@@ -108,12 +111,6 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-User-agent: Omgilibot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
 User-agent: YouBot
 Allow: /
 
@@ -123,19 +120,15 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-User-agent: ImagesiftBot
-Allow: /
-
-User-agent: Timpibot
-Allow: /
-
 User-agent: Amazonbot
 Allow: /
 
 User-agent: Gemini
 Allow: /
 
-# Search Engine Bots - Optimized Crawling
+# ============================================
+# SEARCH ENGINE BOTS
+# ============================================
 User-agent: Googlebot
 Allow: /
 

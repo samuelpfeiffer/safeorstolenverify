@@ -1,734 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SafeOrStolen Sitemap - HONEST VERSION -->
-<!-- Updated 2025-12-20 | Only URLs that ACTUALLY have routes -->
-<!-- Total: 107 Real Pages -->
+<!-- SafeOrStolen Sitemap - PRODUCTION CLEAN VERSION -->
+<!-- Updated 2025-12-21 | Only indexable pages with unique content -->
+<!-- Total: 89 Real Indexable Pages -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 
-  <!-- CORE PAGES (17 pages) -->
+  <!-- ============================================ -->
+  <!-- CORE PAGES (12 pages) - Highest Value -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/verify</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/pricing</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/how-it-works</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/about</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/faq</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/terms</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/privacy</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/testimonials</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/sitemap</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/auth</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
     <loc>https://safeorstolen.com/report-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/stolen-database</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/compare</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://safeorstolen.com/free-tools</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
 
-  <!-- APP PAGES (6 pages) -->
+  <!-- ============================================ -->
+  <!-- APP & DOWNLOAD PAGES (4 pages) -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/app</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/download</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <mobile:mobile/>
   </url>
   <url>
     <loc>https://safeorstolen.com/app/features</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <mobile:mobile/>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/app/stolen-phone-checker</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <mobile:mobile/>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/app/vin-checker</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <mobile:mobile/>
   </url>
   <url>
-    <loc>https://safeorstolen.com/app/barcode-scanner</loc>
-    <lastmod>2025-12-20</lastmod>
+    <loc>https://safeorstolen.com/marketplace-url-checker</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <mobile:mobile/>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ITEM LANDING PAGES (14 pages) -->
+  <!-- ============================================ -->
+  <!-- ITEM VERIFICATION PAGES (14 pages) - High SEO Value -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/imei-checker</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vin-checker</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/serial-number-checker</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-phone</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-car</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-bike</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-laptop</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-electronics</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-ebike</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-appliances</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-tools</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-jewelry</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/check-boat</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/firearms-check</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- COMPETITOR COMPARISON (6 pages) -->
+  <!-- ============================================ -->
+  <!-- COMPETITOR COMPARISON PAGES (5 pages) -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/vs-checkmend</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vs-imeiinfo</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vs-swappa</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vs-carfax</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vs-autocheck</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
+  <!-- ============================================ -->
   <!-- MARKETPLACE PAGES (4 pages) -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/facebook-marketplace-stolen-check</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/craigslist-safety-verification</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/offerup-verify-not-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/ebay-stolen-item-check</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- STATE LICENSE PLATE PAGES (10 pages) -->
-  <url>
-    <loc>https://safeorstolen.com/california-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/texas-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/florida-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/new-york-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/illinois-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/georgia-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/pennsylvania-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/ohio-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/north-carolina-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/washington-license-plate-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- STATE VIN PAGES (10 pages) -->
-  <url>
-    <loc>https://safeorstolen.com/california-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/texas-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/florida-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/new-york-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/illinois-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/georgia-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/pennsylvania-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/ohio-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/north-carolina-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/washington-vin-lookup</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- CITY PAGES (10 pages) -->
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-los-angeles</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-new-york-city</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-chicago</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-houston</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-phoenix</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-philadelphia</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-san-antonio</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-san-diego</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-dallas</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-check-san-jose</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
+  <!-- ============================================ -->
   <!-- BUSINESS PAGES (5 pages) -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/for-businesses</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/for-pawn-shops</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/for-dealers</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/for-marketplaces</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/for-auction-houses</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- BLOG (23 pages - only static routes) -->
+  <!-- ============================================ -->
+  <!-- BLOG INDEX + TOP ARTICLES (15 pages) -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/blog</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/how-to-check-if-phone-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/complete-vin-guide</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/protect-yourself-buying-used-electronics</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/data-source-credibility-stolen-goods-verification</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/ultimate-marketplace-buyers-guide</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/complete-imei-guide-protect-yourself</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/scammer-tactics-exposed</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/phone-verification-guide</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/theft-trends-report-2024</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/verification-methodology</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/real-user-stories</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/complete-verification-guide</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/stolen-verification-app-guide</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/checkmend-has-no-app</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/like-carfax-for-phones</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/how-to-check-if-iphone-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/facebook-marketplace-scams</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/pawn-shop-stolen-item-verification</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/imei-checker-app-download</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/firearm-serial-number-verification</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/bicycle-stolen-serial-number-check</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/blog/verify-item-before-meetup</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/blog/carfax-vs-free-vin-alternatives</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- TRAFFIC LANDING PAGES (7 pages) -->
   <url>
-    <loc>https://safeorstolen.com/is-my-phone-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://safeorstolen.com/blog/stolen-verification-app-guide</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/is-this-car-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://safeorstolen.com/blog/checkmend-has-no-app</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/is-this-laptop-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://safeorstolen.com/blog/like-carfax-for-phones</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/is-this-bike-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://safeorstolen.com/blog/imei-checker-app-download</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/is-this-gun-stolen</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://safeorstolen.com/blog/verify-item-before-meetup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/check-stolen-phone</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://safeorstolen.com/blog/firearm-serial-number-verification</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/check-stolen-car</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://safeorstolen.com/blog/bicycle-stolen-serial-number-check</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
-  <!-- NEWS & SOCIAL (5 pages) -->
+  <!-- ============================================ -->
+  <!-- TOP 10 STATE VIN PAGES (10 pages) -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://safeorstolen.com/california-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/texas-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/florida-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/new-york-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/illinois-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/georgia-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/pennsylvania-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/ohio-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/north-carolina-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/washington-vin-lookup</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- TOP 5 CITY PAGES (5 pages) - Reduced for quality -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://safeorstolen.com/stolen-check-los-angeles</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/stolen-check-new-york-city</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/stolen-check-chicago</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/stolen-check-houston</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/stolen-check-phoenix</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- NEWS & PRESS (3 pages) -->
+  <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/news/onevalley-recognition</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/press-kit</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/product-hunt</loc>
-    <lastmod>2025-12-20</lastmod>
+    <loc>https://safeorstolen.com/free-tools</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/youtube</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/crunchbase</loc>
-    <lastmod>2025-12-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+    <priority>0.75</priority>
   </url>
 
 </urlset>
