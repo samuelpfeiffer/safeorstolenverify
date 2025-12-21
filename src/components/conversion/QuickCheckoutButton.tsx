@@ -50,7 +50,10 @@ export const QuickCheckoutButton = ({
           planName,
           isSubscription,
           redirectUrl: 'https://safeorstolen.com'
-        }
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
       });
 
       if (error) throw error;

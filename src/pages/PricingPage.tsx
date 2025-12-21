@@ -19,9 +19,10 @@ import { UrgencyBanner } from '@/components/pricing/UrgencyBanner';
 import { EmailCapture } from '@/components/marketing/EmailCapture';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
+import { supabase } from '@/integrations/supabase/client';
 
 const PricingPage = () => {
-  const { isAuthenticated } = useUnifiedAuth();
+  const { isAuthenticated, session } = useUnifiedAuth();
   const { 
     isLoading: subscriptionLoading,
     error: subscriptionError 
@@ -76,21 +77,35 @@ const PricingPage = () => {
 
       const isSubscription = tierData.interval === 'month';
 
-      console.log('[SUBSCRIPTION-DEBUG] Preparing checkout redirect');
-      
-      const params = new URLSearchParams({
-        planName: tierData.name || tier,
-        isSubscription: String(isSubscription),
-      });
-      
-      if (priceId) {
-        params.append('priceId', priceId);
+      console.log('[SUBSCRIPTION-DEBUG] Creating checkout session (direct)...');
+
+      if (!session) {
+        toast({
+          title: 'Authentication required',
+          description: 'Please sign in again to subscribe.',
+        });
+        navigate('/auth?tab=signin&redirect=/pricing');
+        setLoadingTier(null);
+        return;
       }
-      
-      console.log('[SUBSCRIPTION-DEBUG] Navigating to checkout:', params.toString());
-      
-      navigate(`/checkout-redirect?${params.toString()}`);
-      
+
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          priceId,
+          planName: tierData.name || tier,
+          isSubscription,
+          redirectUrl: 'https://safeorstolen.com',
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
+
+      if (error) throw error;
+      if (!data?.url) throw new Error('No checkout URL returned');
+
+      window.location.assign(data.url);
+
     } catch (error: any) {
       console.error('Subscription error:', error);
       
@@ -102,7 +117,7 @@ const PricingPage = () => {
       
       setLoadingTier(null);
     }
-  }, [isAuthenticated, navigate, toast]);
+  }, [isAuthenticated, session, navigate, toast]);
 
   const handleReport = useCallback(async () => {
     if (!isAuthenticated) {
