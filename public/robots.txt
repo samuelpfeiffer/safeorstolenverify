@@ -42,12 +42,12 @@ Disallow: /ai-context.json
 Disallow: /ai-training-data.md
 Disallow: /mobile-app-ai-context.json
 
-# Query Parameters (Avoid Duplicate Content)
-Disallow: /*?*
+# Query Parameters (Avoid Duplicate Content) - Allow verification queries
 Disallow: /*?utm_*
 Disallow: /*?ref=*
 Disallow: /*?source=*
-
+Disallow: /*?session_id=*
+# NOTE: We allow ?q= and ?type= for verification flow
 # Dynamic Routes
 Disallow: /*/edit
 Disallow: /*/delete

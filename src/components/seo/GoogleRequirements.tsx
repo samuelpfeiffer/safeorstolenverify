@@ -4,19 +4,10 @@ import { Helmet } from 'react-helmet-async';
 export const GoogleRequirements: React.FC = () => {
   return (
     <Helmet>
-      {/* Google Search Console Verification */}
-      <meta name="google-site-verification" content="pending" />
+      {/* Google Search Console Verification - using HTML file method, meta backup */}
+      <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       
-      {/* Google Analytics 4 */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'GA_MEASUREMENT_ID');
-        `}
-      </script>
+      {/* NOTE: Google Analytics 4 is configured in GA4Provider.tsx with G-0T59FF9N6Z */}
       
       {/* Core Web Vitals Optimization */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
