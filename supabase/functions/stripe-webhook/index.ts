@@ -122,10 +122,11 @@ serve(async (req) => {
       let webhookEndpoints = [];
       try {
         const endpoints = await stripe.webhookEndpoints.list();
-        webhookEndpoints = endpoints.data.map(e => ({
+        webhookEndpoints = endpoints.data.map((e) => ({
           url: e.url,
           status: e.status,
-          events: e.enabled_events?.length || 0
+          events: e.enabled_events?.length || 0,
+          enabled_events: e.enabled_events,
         }));
       } catch (e) {
         console.log("Could not fetch webhook endpoints");
