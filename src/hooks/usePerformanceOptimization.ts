@@ -113,11 +113,12 @@ export const usePerformanceOptimization = () => {
           pageUrl: window.location.href
         })
       }).then(res => res.json())
-        .then(data => {
-          // Performance recommendations received (not stored in localStorage)
-          console.log('Performance analysis complete');
+        .then(() => {
+          // Performance recommendations received
         })
-        .catch(err => console.error('AI analysis error:', err));
+        .catch(() => {
+          // Performance analysis failed silently
+        });
     } catch (error) {
       console.error('Performance analysis error:', error);
     } finally {

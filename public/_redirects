@@ -23,6 +23,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /pwa-app                /app  301!
 /secondhand-research-app /app  301!
 /stolen-item-scanner    /app  301!
+/download-app           /app  301!
 
 # ============================================
 # TOOLS REDIRECTS → /verify (GSC consolidation)

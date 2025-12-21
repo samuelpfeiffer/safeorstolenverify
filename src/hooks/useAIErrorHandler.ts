@@ -46,9 +46,8 @@ export const useAIErrorHandler = () => {
         setAnalysis(data.analysis);
         toast({
           title: "AI Analysis Complete",
-          description: "Check the console or error panel for detailed analysis",
+          description: "Check the error panel for detailed analysis",
         });
-        console.log("🤖 AI Error Analysis:", data.analysis);
         return data.analysis;
       }
     } catch (err) {

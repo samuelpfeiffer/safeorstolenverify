@@ -27,8 +27,6 @@ export function useStripe() {
     setIsLoading(true);
 
     try {
-      console.log("Creating checkout session with:", { serialNumber, itemType, priceId });
-      
       const { data, error } = await supabase.functions.invoke("create-checkout", {
         body: {
           priceId,
@@ -43,7 +41,6 @@ export function useStripe() {
       });
 
       if (error) {
-        console.error("Supabase function error:", error);
         throw error;
       }
 
@@ -51,10 +48,8 @@ export function useStripe() {
         throw new Error("No checkout URL received from server");
       }
 
-      console.log("Checkout session created successfully:", data.url);
       return data.url;
     } catch (error: any) {
-      console.error("Error creating checkout session:", error);
       toast({
         title: "Payment error",
         description: error.message || "Failed to create checkout session",
@@ -68,14 +63,11 @@ export function useStripe() {
 
   const processVerification = async (verificationId: string) => {
     if (!verificationId) {
-      console.error("No verification ID provided");
       return null;
     }
 
     setIsLoading(true);
     try {
-      console.log("Processing verification for ID:", verificationId);
-      
       const { data, error } = await supabase
         .from("verification_searches")
         .select("*, purchases(*)")
@@ -83,14 +75,11 @@ export function useStripe() {
         .maybeSingle();
 
       if (error) {
-        console.error("Database error:", error);
         throw error;
       }
 
-      console.log("Verification processed successfully:", data);
       return data;
     } catch (error: any) {
-      console.error("Error processing verification:", error);
       toast({
         title: "Verification error",
         description: error.message || "Failed to process verification",

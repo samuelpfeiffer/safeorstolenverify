@@ -26,14 +26,12 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
   const checkSubscription = async () => {
     if (!session || !isAuthenticated) {
-      console.log("No session, setting subscribed to false");
       setSubscriptionData({ subscribed: false, subscription_tier: null, subscription_end: null });
       return;
     }
 
     setIsLoading(true);
     try {
-      console.log("Checking subscription status...");
       const { data, error } = await supabase.functions.invoke('check-subscription', {
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -41,16 +39,12 @@ export const useSubscription = (): UseSubscriptionReturn => {
       });
 
       if (error) {
-        console.error("Error checking subscription:", error);
-        // Don't show toast for subscription check errors - handle gracefully
         setSubscriptionData({ subscribed: false, subscription_tier: null, subscription_end: null });
         return;
       }
 
-      console.log("Subscription check result:", data);
       setSubscriptionData(data || { subscribed: false, subscription_tier: null, subscription_end: null });
     } catch (error: any) {
-      console.error("Failed to check subscription:", error);
       // Handle gracefully without showing error toast for subscription checks
       setSubscriptionData({ subscribed: false, subscription_tier: null, subscription_end: null });
     } finally {
@@ -70,8 +64,6 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Creating subscription checkout for priceId:", priceId);
-      
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
           priceId: priceId,
@@ -85,8 +77,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
       });
 
       if (error) {
-        console.error("Error creating checkout:", error);
-        const errorMessage = typeof error === 'object' && error.details 
+        const errorMessage = typeof error === 'object' && error.details
           ? error.details 
           : error.message || "Unknown error occurred";
         
@@ -99,7 +90,6 @@ export const useSubscription = (): UseSubscriptionReturn => {
       }
 
       if (!data?.url) {
-        console.error("No URL received from checkout session:", data);
         toast({
           title: "Checkout error", 
           description: "No checkout URL received from server. Please try again.",
@@ -108,10 +98,8 @@ export const useSubscription = (): UseSubscriptionReturn => {
         return null;
       }
 
-      console.log("Checkout created successfully:", data.url);
       return data.url;
     } catch (error: any) {
-      console.error("Failed to create checkout:", error);
       
       // Enhanced error handling with specific messages
       let errorMessage = "Failed to create checkout session";
@@ -155,7 +143,6 @@ export const useSubscription = (): UseSubscriptionReturn => {
 
     setIsLoading(true);
     try {
-      console.log("Opening customer portal...");
       const { data, error } = await supabase.functions.invoke('customer-portal', {
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -163,8 +150,7 @@ export const useSubscription = (): UseSubscriptionReturn => {
       });
 
       if (error) {
-        console.error("Error opening customer portal:", error);
-        const errorMessage = typeof error === 'object' && error.details 
+        const errorMessage = typeof error === 'object' && error.details
           ? error.details 
           : error.message || "Failed to open customer portal";
         
@@ -177,7 +163,6 @@ export const useSubscription = (): UseSubscriptionReturn => {
       }
 
       if (!data?.url) {
-        console.error("No URL received from customer portal:", data);
         toast({
           title: "Portal Error",
           description: "No portal URL received. Please try again.",
@@ -186,10 +171,8 @@ export const useSubscription = (): UseSubscriptionReturn => {
         return;
       }
 
-      console.log("Opening portal:", data.url);
       window.open(data.url, '_blank');
     } catch (error: any) {
-      console.error("Failed to open customer portal:", error);
       toast({
         title: "Portal Error",
         description: error.message || "Failed to open customer portal",
