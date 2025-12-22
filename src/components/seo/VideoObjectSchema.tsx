@@ -10,6 +10,36 @@ interface VideoObjectSchemaProps {
   embedUrl?: string;
 }
 
+// Helper to ensure proper ISO 8601 datetime format with timezone
+const formatUploadDate = (date: string): string => {
+  // If already has 'T' and timezone info, validate and return
+  if (date.includes('T') && (date.endsWith('Z') || date.includes('+') || date.includes('-', 10))) {
+    return date;
+  }
+  
+  // If has 'T' but no timezone, add Z
+  if (date.includes('T')) {
+    return date + 'Z';
+  }
+  
+  // Date only format (YYYY-MM-DD) - add time and timezone
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    return `${date}T00:00:00Z`;
+  }
+  
+  // Fallback: try to parse and format
+  try {
+    const parsed = new Date(date);
+    if (!isNaN(parsed.getTime())) {
+      return parsed.toISOString();
+    }
+  } catch {
+    // If parsing fails, add default time and timezone
+  }
+  
+  return `${date}T00:00:00Z`;
+};
+
 export const VideoObjectSchema = ({
   name,
   description,
@@ -19,8 +49,13 @@ export const VideoObjectSchema = ({
   contentUrl,
   embedUrl
 }: VideoObjectSchemaProps) => {
-  // Ensure uploadDate has timezone if not already present
-  const formattedUploadDate = uploadDate.includes('T') ? uploadDate : `${uploadDate}T00:00:00Z`;
+  // Ensure at least one URL is provided - this is required by Google
+  if (!contentUrl && !embedUrl) {
+    console.warn('VideoObjectSchema: Either contentUrl or embedUrl must be provided');
+    return null;
+  }
+  
+  const formattedUploadDate = formatUploadDate(uploadDate);
   
   const schema = {
     "@context": "https://schema.org",
@@ -62,27 +97,28 @@ export const generateVideoListSchema = (videos: Array<{
   contentUrl?: string;
   embedUrl?: string;
 }>) => {
-  return videos.map(video => {
-    // Ensure uploadDate has timezone
-    const formattedDate = video.uploadDate.includes('T') ? video.uploadDate : `${video.uploadDate}T00:00:00Z`;
-    return {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": video.name,
-      "description": video.description,
-      "thumbnailUrl": video.thumbnailUrl,
-      "uploadDate": formattedDate,
-      ...(video.duration && { "duration": video.duration }),
-      ...(video.contentUrl && { "contentUrl": video.contentUrl }),
-      ...(video.embedUrl && { "embedUrl": video.embedUrl }),
-      "publisher": {
-        "@type": "Organization",
-        "name": "SafeOrStolen",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://safeorstolen.com/logo.png"
+  return videos
+    .filter(video => video.contentUrl || video.embedUrl) // Filter out videos without URLs
+    .map(video => {
+      const formattedDate = formatUploadDate(video.uploadDate);
+      return {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": video.name,
+        "description": video.description,
+        "thumbnailUrl": video.thumbnailUrl,
+        "uploadDate": formattedDate,
+        ...(video.duration && { "duration": video.duration }),
+        ...(video.contentUrl && { "contentUrl": video.contentUrl }),
+        ...(video.embedUrl && { "embedUrl": video.embedUrl }),
+        "publisher": {
+          "@type": "Organization",
+          "name": "SafeOrStolen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://safeorstolen.com/logo.png"
+          }
         }
-      }
-    };
-  });
+      };
+    });
 };
