@@ -15,7 +15,7 @@ import { ErrorBoundary } from '@/components/error/ErrorBoundary';
 import { ConversionOptimizedPricing } from '@/components/ConversionOptimizedPricing';
 import { isInIframe } from '@/utils/navigationUtils';
 import { AppValidator } from '@/components/testing/AppValidator';
-import { UrgencyBanner } from '@/components/pricing/UrgencyBanner';
+
 import { EmailCapture } from '@/components/marketing/EmailCapture';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
@@ -337,7 +337,7 @@ const PricingPage = () => {
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'Pricing', href: '/pricing' }]} />
         </div>
-        <UrgencyBanner />
+        
         <div className="min-h-screen">
           <ConversionOptimizedPricing 
             onSubscribe={handleSubscribe}
