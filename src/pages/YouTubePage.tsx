@@ -13,6 +13,7 @@ import {
   getYouTubeShortsUrl,
   getFeaturedVideo 
 } from '@/config/videoData';
+import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
 
 const YouTubePage: React.FC = () => {
   const handleVisitChannel = () => {
@@ -189,13 +190,20 @@ const YouTubePage: React.FC = () => {
                 >
                   <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                     <div className="relative aspect-video">
-                      <img 
-                        src={getYouTubeThumbnail(video.videoId, 'hq')}
-                        alt={video.title}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                      {hasCustomThumbnail(video.slug) ? (
+                        <ThumbnailFactory 
+                          slug={video.slug} 
+                          className="w-full h-full rounded-none"
+                        />
+                      ) : (
+                        <img 
+                          src={getYouTubeThumbnail(video.videoId, 'hq')}
+                          alt={video.title}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/10 transition-colors">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 group-hover:scale-110 transition-transform">
                           <Play className="w-8 h-8 text-white" />
                         </div>
