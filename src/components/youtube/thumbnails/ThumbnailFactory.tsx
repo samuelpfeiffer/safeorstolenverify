@@ -3,6 +3,7 @@ import { ThumbnailQuickStart } from './ThumbnailQuickStart';
 import { ThumbnailMarketplace } from './ThumbnailMarketplace';
 import { ThumbnailVIN } from './ThumbnailVIN';
 import { ThumbnailIMEI } from './ThumbnailIMEI';
+import { ThumbnailMarketplaceProtection } from './ThumbnailMarketplaceProtection';
 
 /**
  * Map video slugs to their custom thumbnail components
@@ -12,6 +13,7 @@ const thumbnailMap: Record<string, React.FC<{ className?: string }>> = {
   'marketplace-safety': ThumbnailMarketplace,
   'vin-check': ThumbnailVIN,
   'imei-check': ThumbnailIMEI,
+  'marketplace-protection': ThumbnailMarketplaceProtection,
 };
 
 interface ThumbnailFactoryProps {

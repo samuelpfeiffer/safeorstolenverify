@@ -79,6 +79,21 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
     category: 'IMEI Check',
     tags: ['IMEI checker', 'stolen phone check', 'blacklisted phone', 'iPhone check', 'Android check'],
     slug: 'imei-check'
+  },
+  {
+    id: '5',
+    videoId: 'YOUR_VIDEO_ID_HERE', // Replace with actual YouTube video ID
+    title: 'How to Avoid Buying Stolen Items on Facebook Marketplace',
+    seoTitle: 'How to Avoid Buying Stolen Items on Facebook Marketplace (Free Verification)',
+    description: 'Learn the warning signs of stolen goods and how to verify ANY item before you meet the seller on Facebook Marketplace.',
+    seoDescription: 'Avoid buying stolen items on Facebook Marketplace! Learn red flags, verification steps, and how to use SafeOrStolen to check IMEI, VIN, and serial numbers before you buy.',
+    duration: '1:15',
+    durationISO: 'PT1M15S',
+    durationSeconds: 75,
+    uploadDate: '2024-12-20T00:00:00Z',
+    category: 'Marketplace Safety',
+    tags: ['facebook marketplace', 'stolen items', 'scam prevention', 'marketplace safety', 'verify before buying', 'secondhand shopping', 'buyer protection'],
+    slug: 'marketplace-protection'
   }
 ];
 
@@ -88,8 +103,8 @@ export const YOUTUBE_CHANNEL = {
   url: 'https://www.youtube.com/@safeorstolen',
   subscribeUrl: 'https://www.youtube.com/@safeorstolen?sub_confirmation=1',
   channelId: 'UCi0H8IK1dH0PhgVT9v2t9sw',
-  videoCount: 4,
-  viewCount: '2.8K+',
+  videoCount: 5,
+  viewCount: '3.5K+',
   description: 'Free video tutorials on verifying secondhand items before buying. Quick tips to avoid stolen goods on Facebook Marketplace, eBay, and Craigslist.'
 };
 
