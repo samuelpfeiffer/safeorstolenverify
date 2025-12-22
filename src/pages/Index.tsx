@@ -1,38 +1,47 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
-import { PressMediaSection } from '@/components/home/PressMediaSection';
-import { WhatYouCanVerify } from '@/components/home/WhatYouCanVerify';
-import { CompactMobileAppCTA } from '@/components/home/CompactMobileAppCTA';
-import { TrustSignals } from '@/components/seo/TrustSignals';
-import { YouTubeChannelSection } from '@/components/home/YouTubeChannelSection';
-import { InternalLinksSection } from '@/components/home/InternalLinksSection';
-import { DataSourcesSection } from '@/components/home/DataSourcesSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Download, CheckCircle, Trophy, ArrowRight } from 'lucide-react';
-// Use public folder for better caching - preloaded in index.html
+import { Download, Trophy, ArrowRight } from 'lucide-react';
+import { lazy, Suspense } from 'react';
+
+// Critical above-fold components - loaded immediately
 const heroImage = '/images/hero-device.png';
-import { LiveStatsCounter } from '@/components/conversion/LiveStatsCounter';
 import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
-import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
-import { RealTimeStats } from '@/components/traffic/RealTimeStats';
 
-// High-conversion components
-import { QuickValueProof } from '@/components/conversion/QuickValueProof';
-import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
+// Lazy loaded components for below-fold content
+import { LazySection } from '@/components/performance/LazySection';
 
-// Marketing components for visibility and conversions
-import { TrustBadgesStrip } from '@/components/marketing/TrustBadgesStrip';
-import { ValueProposition } from '@/components/marketing/ValueProposition';
-import { CompetitorComparison } from '@/components/marketing/CompetitorComparison';
-import { TestimonialsCarousel } from '@/components/marketing/TestimonialsCarousel';
+// Dynamic imports for heavy components (reduces initial JS bundle)
+const TrustBadgesStrip = lazy(() => import('@/components/marketing/TrustBadgesStrip').then(m => ({ default: m.TrustBadgesStrip })));
+const DataSourcesSection = lazy(() => import('@/components/home/DataSourcesSection').then(m => ({ default: m.DataSourcesSection })));
+const PressMediaSection = lazy(() => import('@/components/home/PressMediaSection').then(m => ({ default: m.PressMediaSection })));
+const WhatYouCanVerify = lazy(() => import('@/components/home/WhatYouCanVerify').then(m => ({ default: m.WhatYouCanVerify })));
+const ValueProposition = lazy(() => import('@/components/marketing/ValueProposition').then(m => ({ default: m.ValueProposition })));
+const LiveStatsCounter = lazy(() => import('@/components/conversion/LiveStatsCounter').then(m => ({ default: m.LiveStatsCounter })));
+const CompetitorComparison = lazy(() => import('@/components/marketing/CompetitorComparison').then(m => ({ default: m.CompetitorComparison })));
+const TestimonialsCarousel = lazy(() => import('@/components/marketing/TestimonialsCarousel').then(m => ({ default: m.TestimonialsCarousel })));
+const RealTimeStats = lazy(() => import('@/components/traffic/RealTimeStats').then(m => ({ default: m.RealTimeStats })));
+const EmailCaptureHero = lazy(() => import('@/components/traffic/EmailCaptureHero').then(m => ({ default: m.EmailCaptureHero })));
+const CompactMobileAppCTA = lazy(() => import('@/components/home/CompactMobileAppCTA').then(m => ({ default: m.CompactMobileAppCTA })));
+const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChannelSection').then(m => ({ default: m.YouTubeChannelSection })));
+const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
+const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
 
+// Deferred above-fold components (loaded after hero but before user interaction)
+const SocialProofBanner = lazy(() => import('@/components/conversion/SocialProofBanner').then(m => ({ default: m.SocialProofBanner })));
+const QuickValueProof = lazy(() => import('@/components/conversion/QuickValueProof').then(m => ({ default: m.QuickValueProof })));
+
+// Loading skeleton for sections
+const SectionSkeleton = () => (
+  <div className="animate-pulse bg-muted/30 rounded-lg h-32" />
+);
 
 const Index = () => {
   return (
     <>
-        {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
-        <PageSEO
+      {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
+      <PageSEO
         title="Free Stolen Item Checker App - IMEI VIN Serial Verification | Only Mobile App | SafeOrStolen"
         description="The ONLY stolen item checker with a mobile app. Protect buyers, sellers, pawn shops & resale businesses. Free IMEI, VIN, serial verification. 100+ databases. More comprehensive than CheckMEND, IMEI.info, Carfax, Swappa. Download free."
         keywords="stolen item checker app, IMEI checker app free, VIN checker app free, serial number verification app, stolen phone checker app, stolen car check app, pawn shop verification, resale business protection, CheckMEND alternative app, Carfax alternative app, IMEI.info alternative, Swappa alternative, only stolen item app, free stolen goods checker"
@@ -51,12 +60,14 @@ const Index = () => {
       <TrustHeaderBar />
       
       <div className="min-h-screen">
-        {/* Hero Section - Focused on Immediate Action */}
+        {/* Hero Section - Optimized for LCP */}
         <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-5">
-              {/* Social Proof Banner - Shows activity */}
-              <SocialProofBanner />
+              {/* Deferred Social Proof - loads after hero renders */}
+              <Suspense fallback={<div className="h-10" />}>
+                <SocialProofBanner />
+              </Suspense>
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Check If Any Secondhand Item Is Safe Or Stolen
@@ -68,10 +79,12 @@ const Index = () => {
                 Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
               
-              {/* Quick Value Proof - Shows credibility fast */}
-              <QuickValueProof />
+              {/* Deferred Quick Value Proof */}
+              <Suspense fallback={<div className="h-20" />}>
+                <QuickValueProof />
+              </Suspense>
               
-              {/* Search Form with URL Paste - Primary Action */}
+              {/* Search Form - Primary Action (critical, loaded eagerly) */}
               <div className="pt-4">
                 <HomeSearchFormWithURL />
               </div>
@@ -92,10 +105,12 @@ const Index = () => {
                 </Button>
               </div>
 
-              {/* Hero Image - LCP Optimized with explicit dimensions */}
-              <div className="mt-8 max-w-4xl mx-auto" style={{ aspectRatio: '16/9' }}>
+              {/* Hero Image - LCP Optimized with explicit dimensions, simplified gradient on mobile */}
+              <div className="mt-8 max-w-4xl mx-auto" style={{ aspectRatio: '16/9', minHeight: '300px' }}>
                 <div className="relative group h-full">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity" />
+                  {/* Simplified gradient on mobile (no blur), full blur on desktop */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" />
                   <img 
                     src={heroImage} 
                     alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
@@ -112,7 +127,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* OneValley / EWC Recognition Strip */}
+        {/* OneValley / EWC Recognition Strip - Static, minimal JS */}
         <section className="py-4 bg-gradient-to-r from-amber-500/5 via-background to-amber-500/5 border-y border-border/50">
           <div className="container mx-auto px-4">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
@@ -132,62 +147,105 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Trust Badges Strip */}
-        <TrustBadgesStrip />
+        {/* Below-fold content - All lazy loaded */}
+        <LazySection minHeight="80px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <TrustBadgesStrip />
+          </Suspense>
+        </LazySection>
 
-        {/* Data Sources - How We Verify */}
-        <DataSourcesSection />
+        <LazySection minHeight="300px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <DataSourcesSection />
+          </Suspense>
+        </LazySection>
 
-        {/* Press & Trust Partners */}
-        <PressMediaSection />
+        <LazySection minHeight="200px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <PressMediaSection />
+          </Suspense>
+        </LazySection>
 
-        {/* What You Can Verify */}
-        <WhatYouCanVerify />
+        <LazySection minHeight="400px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <WhatYouCanVerify />
+          </Suspense>
+        </LazySection>
 
-        {/* Value Proposition Section */}
-        <ValueProposition />
+        <LazySection minHeight="300px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <ValueProposition />
+          </Suspense>
+        </LazySection>
 
-        {/* Simplified Stats - Trust Building */}
-        <section className="py-6 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <LiveStatsCounter />
+        {/* Simplified Stats */}
+        <LazySection minHeight="100px">
+          <section className="py-6 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <Suspense fallback={<SectionSkeleton />}>
+                  <LiveStatsCounter />
+                </Suspense>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </LazySection>
 
-        {/* Competitor Comparison */}
-        <CompetitorComparison />
+        <LazySection minHeight="400px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <CompetitorComparison />
+          </Suspense>
+        </LazySection>
 
-        {/* Testimonials Carousel */}
-        <TestimonialsCarousel />
+        <LazySection minHeight="300px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <TestimonialsCarousel />
+          </Suspense>
+        </LazySection>
 
-        {/* Real-Time Stats */}
-        <section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <RealTimeStats />
-          </div>
-        </section>
+        <LazySection minHeight="200px">
+          <section className="py-12">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <Suspense fallback={<SectionSkeleton />}>
+                <RealTimeStats />
+              </Suspense>
+            </div>
+          </section>
+        </LazySection>
 
-        {/* Email Capture */}
-        <section className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-2xl">
-            <EmailCaptureHero />
-          </div>
-        </section>
+        <LazySection minHeight="200px">
+          <section className="py-12 bg-muted/30">
+            <div className="container mx-auto px-4 max-w-2xl">
+              <Suspense fallback={<SectionSkeleton />}>
+                <EmailCaptureHero />
+              </Suspense>
+            </div>
+          </section>
+        </LazySection>
 
-        {/* Mobile App CTA */}
-        <CompactMobileAppCTA />
+        <LazySection minHeight="150px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <CompactMobileAppCTA />
+          </Suspense>
+        </LazySection>
 
-        {/* YouTube Channel Section */}
-        <YouTubeChannelSection />
+        <LazySection minHeight="300px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <YouTubeChannelSection />
+          </Suspense>
+        </LazySection>
 
-        {/* Internal Links for SEO */}
-        <InternalLinksSection />
+        <LazySection minHeight="200px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <InternalLinksSection />
+          </Suspense>
+        </LazySection>
 
-        {/* Trust Signals */}
-        <TrustSignals />
-        {/* Removed StructuredDataForTraffic to avoid duplicate schemas */}
+        <LazySection minHeight="100px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <TrustSignals />
+          </Suspense>
+        </LazySection>
       </div>
       
       {/* ExitIntentPopup is now rendered globally in AppRoot */}
