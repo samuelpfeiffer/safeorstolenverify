@@ -113,3 +113,6 @@ verify_jwt = false
 
 [functions.marketplace-url-analyzer]
 verify_jwt = false
+
+[functions.stripe-reconcile-purchases]
+verify_jwt = false

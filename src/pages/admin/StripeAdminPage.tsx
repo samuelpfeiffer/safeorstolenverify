@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { StripeStatusDashboard } from '@/components/admin/StripeStatusDashboard';
 import { WarmLeadsOutreach } from '@/components/admin/WarmLeadsOutreach';
+import { StripeReconcileButton } from '@/components/admin/StripeReconcileButton';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function StripeAdminPage() {
@@ -15,11 +16,16 @@ export default function StripeAdminPage() {
         <Tabs defaultValue="payments" className="space-y-6">
           <TabsList>
             <TabsTrigger value="payments">Payment Status</TabsTrigger>
+            <TabsTrigger value="sync">Sync Payments</TabsTrigger>
             <TabsTrigger value="outreach">Warm Leads</TabsTrigger>
           </TabsList>
           
           <TabsContent value="payments">
             <StripeStatusDashboard />
+          </TabsContent>
+          
+          <TabsContent value="sync">
+            <StripeReconcileButton />
           </TabsContent>
           
           <TabsContent value="outreach">
