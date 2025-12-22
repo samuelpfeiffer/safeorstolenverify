@@ -131,6 +131,7 @@
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- JSON-LD Schemas - Moved to body for non-blocking render -->
+    <!-- Core @graph schema (Organization, WebSite, Service, HowTo) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -173,40 +174,6 @@
             "target": "https://safeorstolen.com/verify?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
-        },
-        {
-          "@type": "MobileApplication",
-          "name": "SafeOrStolen Mobile App",
-          "description": "The ONLY mobile app for stolen item verification. Check IMEI, VIN, and serial numbers on the go. Download free. Works on iOS and Android. No competitor offers a mobile app.",
-          "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": ["iOS", "Android"],
-          "url": "https://safeorstolen.com/app",
-          "downloadUrl": "https://safeorstolen.com/download",
-          "featureList": [
-            "ONLY mobile app for stolen item checking",
-            "Camera scanning for barcodes and serial numbers",
-            "100+ database sources",
-            "Works for buyers, sellers, and businesses",
-            "Pawn shop compliance",
-            "Resale business verification",
-            "Push notifications for watchlist",
-            "Offline capability"
-          ],
-          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "127"
-          }
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "SafeOrStolen Verification Platform",
-          "applicationCategory": "SecurityApplication",
-          "operatingSystem": ["iOS", "Android", "Web"],
-          "url": "https://safeorstolen.com",
-          "description": "Comprehensive stolen item verification for buyers, sellers, pawn shops, and resale businesses. The only service with a mobile app. Checks phones, cars, bikes, electronics, tools, and more.",
-          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
         },
         {
           "@type": "Service",
@@ -262,35 +229,79 @@
           "priceCurrency": "USD",
           "offerCount": "3",
           "url": "https://safeorstolen.com/pricing"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- MobileApplication schema (standalone, no aggregateRating) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "SafeOrStolen Mobile App",
+      "description": "The ONLY mobile app for stolen item verification. Check IMEI, VIN, and serial numbers on the go. Download free. Works on iOS and Android. No competitor offers a mobile app.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": ["iOS", "Android"],
+      "url": "https://safeorstolen.com/app",
+      "downloadUrl": "https://safeorstolen.com/download",
+      "featureList": [
+        "ONLY mobile app for stolen item checking",
+        "Camera scanning for barcodes and serial numbers",
+        "100+ database sources",
+        "Works for buyers, sellers, and businesses",
+        "Pawn shop compliance",
+        "Resale business verification",
+        "Push notifications for watchlist",
+        "Offline capability"
+      ],
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    }
+    </script>
+    
+    <!-- SoftwareApplication schema (standalone) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SafeOrStolen Verification Platform",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": ["iOS", "Android", "Web"],
+      "url": "https://safeorstolen.com",
+      "description": "Comprehensive stolen item verification for buyers, sellers, pawn shops, and resale businesses. The only service with a mobile app. Checks phones, cars, bikes, electronics, tools, and more.",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+    }
+    </script>
+    
+    <!-- FAQPage schema (standalone - REQUIRED for Google FAQ rich results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does SafeOrStolen have a mobile app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! SafeOrStolen is the ONLY stolen item verification service with a mobile app. Download it free on iOS and Android. No competitor (CheckMEND, IMEI.info, Swappa, Carfax) offers a mobile app."
+          }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Does SafeOrStolen have a mobile app?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! SafeOrStolen is the ONLY stolen item verification service with a mobile app. Download it free on iOS and Android. No competitor (CheckMEND, IMEI.info, Swappa, Carfax) offers a mobile app."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Who can use SafeOrStolen?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "SafeOrStolen protects everyone: Buyers verify items before purchasing. Sellers prove their items are legitimate. Pawn shops and resale businesses verify inventory and stay compliant."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How is SafeOrStolen different from CheckMEND or Carfax?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "SafeOrStolen offers more: We're the ONLY service with a mobile app. We verify ALL item types (phones, cars, bikes, electronics, tools, jewelry). We check 100+ databases. Carfax only does vehicles. CheckMEND has no mobile app."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "Who can use SafeOrStolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen protects everyone: Buyers verify items before purchasing. Sellers prove their items are legitimate. Pawn shops and resale businesses verify inventory and stay compliant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is SafeOrStolen different from CheckMEND or Carfax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen offers more: We're the ONLY service with a mobile app. We verify ALL item types (phones, cars, bikes, electronics, tools, jewelry). We check 100+ databases. Carfax only does vehicles. CheckMEND has no mobile app."
+          }
         }
       ]
     }
