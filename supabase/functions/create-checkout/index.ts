@@ -182,30 +182,46 @@ serve(async (req) => {
       sessionConfig.subscription_data = { trial_period_days: 7 };
     }
 
-    // Create purchase record
-    const { error: purchaseError } = await supabaseClient.from("purchases").insert({
-      user_id: user.id,
-      stripe_session_id: "pending",
-      amount: 0,
-      currency: "usd",
-      verification_id: verificationId || null,
-      status: 'pending',
-    });
+    // INTEGRITY FIX: Insert purchase and get the ID, then update by ID (not user_id + pending)
+    const { data: purchaseRecord, error: purchaseError } = await supabaseClient
+      .from("purchases")
+      .insert({
+        user_id: user.id,
+        stripe_session_id: "creating", // Temporary - will be updated
+        amount: 0,
+        currency: "usd",
+        verification_id: verificationId || null,
+        status: 'pending',
+      })
+      .select('id')
+      .single();
     
     if (purchaseError) {
       console.log(`[CREATE-CHECKOUT] Purchase record error:`, purchaseError);
+      // Don't fail - continue with checkout
     }
+    
+    const purchaseId = purchaseRecord?.id;
+    console.log(`[CREATE-CHECKOUT] Purchase created with ID: ${purchaseId}`);
 
     // Create Stripe session
     const session = await stripe.checkout.sessions.create(sessionConfig);
     console.log(`[CREATE-CHECKOUT] Session created: ${session.id}`);
 
-    // Update purchase with session ID
-    await supabaseClient
-      .from("purchases")
-      .update({ stripe_session_id: session.id })
-      .eq("user_id", user.id)
-      .eq("stripe_session_id", "pending");
+    // Update purchase with session ID using the specific purchase ID
+    if (purchaseId) {
+      await supabaseClient
+        .from("purchases")
+        .update({ stripe_session_id: session.id })
+        .eq("id", purchaseId);
+    } else {
+      // Fallback: update by user_id if we couldn't get the ID
+      await supabaseClient
+        .from("purchases")
+        .update({ stripe_session_id: session.id })
+        .eq("user_id", user.id)
+        .eq("stripe_session_id", "creating");
+    }
 
     return new Response(
       JSON.stringify({ url: session.url, sessionId: session.id }),

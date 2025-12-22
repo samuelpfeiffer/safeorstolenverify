@@ -195,16 +195,43 @@ serve(async (req) => {
     let event;
 
     try {
-      console.log("Verifying webhook signature...");
+      console.log("[WEBHOOK] Verifying signature...");
+      console.log(`[WEBHOOK] Signature prefix: ${signature?.substring(0, 20)}...`);
+      console.log(`[WEBHOOK] Body length: ${body.length}`);
+      console.log(`[WEBHOOK] Secret prefix: ${webhookSecret?.substring(0, 10)}...`);
+      
       event = await stripe.webhooks.constructEventAsync(
         body,
         signature,
         webhookSecret
       );
-      console.log(`Webhook signature verified successfully for event: ${event.type}`);
+      console.log(`[WEBHOOK] ✓ Signature verified for event: ${event.type} (${event.id})`);
     } catch (err) {
-      console.error(`Webhook signature verification failed: ${err.message}`);
-      return new Response(JSON.stringify({ error: `Webhook Error: ${err.message}` }), { 
+      // OBSERVABILITY: Log detailed signature failure info
+      console.error(`[WEBHOOK] ✗ SIGNATURE VERIFICATION FAILED`);
+      console.error(`[WEBHOOK] Error: ${err.message}`);
+      console.error(`[WEBHOOK] Timestamp: ${new Date().toISOString()}`);
+      console.error(`[WEBHOOK] Signature header present: ${!!signature}`);
+      console.error(`[WEBHOOK] Secret configured: ${!!webhookSecret}`);
+      console.error(`[WEBHOOK] Secret starts with whsec_: ${webhookSecret?.startsWith('whsec_')}`);
+      
+      // Log to audit for admin visibility
+      const supabaseClient = createClient(supabaseUrl!, supabaseServiceKey!);
+      await supabaseClient.from('audit_logs').insert({
+        action: 'WEBHOOK_SIGNATURE_FAILURE',
+        table_name: 'stripe_webhook_events',
+        new_values: {
+          error: err.message,
+          timestamp: new Date().toISOString(),
+          signature_present: !!signature,
+          secret_configured: !!webhookSecret
+        }
+      });
+      
+      return new Response(JSON.stringify({ 
+        error: `Webhook signature verification failed`,
+        hint: "Ensure STRIPE_WEBHOOK_SECRET matches the signing secret from your Stripe webhook endpoint"
+      }), { 
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" }, 
       });
@@ -326,7 +353,15 @@ serve(async (req) => {
                 const subscription = await stripe.subscriptions.retrieve(session.subscription as string);
                 const priceId = subscription.items.data[0]?.price.id;
                 
+                // UPDATED: Use real live price IDs
                 const TIER_MAPPING: Record<string, { tier: string; limit: number | null }> = {
+                  // Current live price IDs
+                  'price_1SSVqkGxnZLw8J7O3GwCyKRn': { tier: 'pay_per_use', limit: 1 },
+                  'price_1SHEOxGxnZLw8J7O2zzfPVBK': { tier: 'starter', limit: 15 },
+                  'price_1SHEUQGxnZLw8J7OinyVqNMK': { tier: 'personal', limit: 50 },
+                  'price_1SHEiuGxnZLw8J7OszscBBk7': { tier: 'professional', limit: null },
+                  'price_1SHEnFGxnZLw8J7Oq1PM96Eo': { tier: 'enterprise', limit: null },
+                  // Legacy support
                   'price_starter_monthly_499': { tier: 'starter', limit: 15 },
                   'price_personal_monthly_999': { tier: 'personal', limit: 50 },
                   'price_professional_monthly_2999': { tier: 'professional', limit: null },
@@ -339,6 +374,7 @@ serve(async (req) => {
                 
                 const tierInfo = TIER_MAPPING[priceId] || { tier: 'starter', limit: 15 };
                 subscriptionTier = tierInfo.tier;
+                console.log(`[WEBHOOK] Subscription priceId: ${priceId} -> tier: ${subscriptionTier}`);
                 monthlyLimit = tierInfo.limit;
                 
                 console.log(`Subscription tier determined: ${subscriptionTier}, limit: ${monthlyLimit}`);
@@ -460,14 +496,20 @@ serve(async (req) => {
             // Determine subscription tier and interval from price
             const priceId = subscription.items.data[0].price.id;
             const interval = subscription.items.data[0].price.recurring?.interval || 'month';
-            // Map Stripe Price IDs to new subscription tiers
+            // UPDATED: Map Stripe Price IDs to tiers - includes real live price IDs
             const TIER_MAPPING: Record<string, string> = {
+              // Current live price IDs
+              'price_1SSVqkGxnZLw8J7O3GwCyKRn': 'pay_per_use',
+              'price_1SHEOxGxnZLw8J7O2zzfPVBK': 'starter',
+              'price_1SHEUQGxnZLw8J7OinyVqNMK': 'personal',
+              'price_1SHEiuGxnZLw8J7OszscBBk7': 'professional',
+              'price_1SHEnFGxnZLw8J7Oq1PM96Eo': 'enterprise',
+              // Legacy support
               'price_starter_monthly_499': 'starter',
               'price_personal_monthly_999': 'personal',
               'price_professional_monthly_2999': 'professional',
               'price_enterprise_custom': 'enterprise',
               'price_pay_per_use_50': 'pay_per_use',
-              // Legacy support for old price IDs
               "price_1Rz7rm2eGaMDLFHojH9Vch1Y": "starter",
               "price_1Rz7xu2eGaMDLFHoqGT0Pyjk": "personal",
               "price_1Rz80X2eGaMDLFHozeZyChte": "professional",
