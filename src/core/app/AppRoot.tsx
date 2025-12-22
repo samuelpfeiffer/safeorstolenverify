@@ -39,8 +39,6 @@ const AggressiveConversionBanner = React.lazy(() => import('@/components/convers
 const TrafficBooster = React.lazy(() => import('@/components/traffic/TrafficBooster').then(m => ({ default: m.TrafficBooster })));
 
 // Marketing components for conversion
-const UrgentCTABanner = React.lazy(() => import('@/components/marketing/UrgentCTABanner').then(m => ({ default: m.UrgentCTABanner })));
-const SocialProofTicker = React.lazy(() => import('@/components/marketing/SocialProofTicker').then(m => ({ default: m.SocialProofTicker })));
 const FloatingCTA = React.lazy(() => import('@/components/marketing/FloatingCTA').then(m => ({ default: m.FloatingCTA })));
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
@@ -167,13 +165,11 @@ const AuthAwareContent: React.FC = () => {
         {/* Lazy load growth/conversion components after 3 second delay */}
         {showGrowthComponents && (
           <Suspense fallback={null}>
-            <UrgentCTABanner />
             <ExitIntentPopup />
             <SocialProofBanner />
             <StickyMobileAppCTA />
             <LiveActivityToast />
             <AggressiveConversionBanner />
-            <SocialProofTicker />
             <FloatingCTA />
           </Suspense>
         )}
