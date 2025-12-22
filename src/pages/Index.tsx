@@ -32,9 +32,9 @@ const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m =
 const SocialProofBanner = lazy(() => import('@/components/conversion/SocialProofBanner').then(m => ({ default: m.SocialProofBanner })));
 const QuickValueProof = lazy(() => import('@/components/conversion/QuickValueProof').then(m => ({ default: m.QuickValueProof })));
 
-// Loading skeleton for sections
-const SectionSkeleton = () => (
-  <div className="animate-pulse bg-muted/30 rounded-lg h-32" />
+// Loading skeleton for sections - with fixed heights to prevent CLS
+const SectionSkeleton = ({ height = '8rem' }: { height?: string }) => (
+  <div className="animate-pulse bg-muted/30 rounded-lg" style={{ minHeight: height }} />
 );
 
 const Index = () => {
@@ -64,10 +64,12 @@ const Index = () => {
         <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-5">
-              {/* Deferred Social Proof - loads after hero renders */}
-              <Suspense fallback={<div className="h-10" />}>
-                <SocialProofBanner />
-              </Suspense>
+              {/* Deferred Social Proof - fixed height container to prevent CLS */}
+              <div style={{ minHeight: '40px' }}>
+                <Suspense fallback={<div className="h-10" />}>
+                  <SocialProofBanner />
+                </Suspense>
+              </div>
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Check If Any Secondhand Item Is Safe Or Stolen
@@ -79,10 +81,12 @@ const Index = () => {
                 Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
               
-              {/* Deferred Quick Value Proof */}
-              <Suspense fallback={<div className="h-20" />}>
-                <QuickValueProof />
-              </Suspense>
+              {/* Deferred Quick Value Proof - fixed height to prevent CLS */}
+              <div style={{ minHeight: '80px' }}>
+                <Suspense fallback={<div className="h-20" />}>
+                  <QuickValueProof />
+                </Suspense>
+              </div>
               
               {/* Search Form - Primary Action (critical, loaded eagerly) */}
               <div className="pt-4">
@@ -105,8 +109,12 @@ const Index = () => {
                 </Button>
               </div>
 
-              {/* Hero Image - LCP Optimized with explicit dimensions, simplified gradient on mobile */}
-              <div className="mt-8 max-w-4xl mx-auto" style={{ aspectRatio: '16/9', minHeight: '300px' }}>
+              {/* Hero Image - LCP Optimized with explicit dimensions for CLS prevention */}
+              <div 
+                className="mt-8 max-w-4xl mx-auto" 
+                style={{ aspectRatio: '16/9', minHeight: '200px' }}
+                data-hero-img
+              >
                 <div className="relative group h-full">
                   {/* Simplified gradient on mobile (no blur), full blur on desktop */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
@@ -120,6 +128,7 @@ const Index = () => {
                     decoding="sync"
                     width="1200"
                     height="675"
+                    style={{ aspectRatio: '16/9' }}
                   />
                 </div>
               </div>
