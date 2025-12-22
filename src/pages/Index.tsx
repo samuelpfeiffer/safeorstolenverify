@@ -72,7 +72,7 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Check If Any Secondhand Item Is Safe Or Stolen
+                Stolen Item Checker – Verify IMEI, VIN & Serial Numbers Instantly
               </h1>
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
                 The trusted verification service for buyers, sellers, and businesses worldwide
