@@ -15,6 +15,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /mobile-app             /app  301!
 /imei-checker-app       /app  301!
 /mobile-verification    /app  301!
+/mobile-verify          /app  301!
 /get-app                /app  301!
 /install-app            /app  301!
 /verification-app       /app  301!
