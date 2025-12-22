@@ -31,11 +31,9 @@ const EEATSignals = React.lazy(() => import('@/components/seo/EEATSignals').then
 const AdvancedSchemaGenerator = React.lazy(() => import('@/components/seo/AdvancedSchemaGenerator').then(m => ({ default: m.AdvancedSchemaGenerator })));
 
 // Lazy load non-critical growth/conversion components for better performance
+// Note: SocialProofBanner, StickyMobileAppCTA, AggressiveConversionBanner removed to fix CLS on mobile
 const ExitIntentPopup = React.lazy(() => import('@/components/growth').then(m => ({ default: m.ExitIntentPopup })));
-const SocialProofBanner = React.lazy(() => import('@/components/growth').then(m => ({ default: m.SocialProofBanner })));
-const StickyMobileAppCTA = React.lazy(() => import('@/components/growth').then(m => ({ default: m.StickyMobileAppCTA })));
 const LiveActivityToast = React.lazy(() => import('@/components/growth').then(m => ({ default: m.LiveActivityToast })));
-const AggressiveConversionBanner = React.lazy(() => import('@/components/conversion/AggressiveConversionBanner').then(m => ({ default: m.AggressiveConversionBanner })));
 const TrafficBooster = React.lazy(() => import('@/components/traffic/TrafficBooster').then(m => ({ default: m.TrafficBooster })));
 
 // Marketing components for conversion
@@ -80,11 +78,11 @@ const AuthAwareContent: React.FC = () => {
     return () => clearTimeout(seoTimer);
   }, []);
   
-  // Delay loading growth/conversion components by 3 seconds for better initial performance
+  // Delay loading growth/conversion components by 5 seconds to improve CLS and mobile performance
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowGrowthComponents(true);
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
   
@@ -162,14 +160,12 @@ const AuthAwareContent: React.FC = () => {
         </button>
         <AIChatAssistant isOpen={showAIChat} onClose={() => setShowAIChat(false)} />
         
-        {/* Lazy load growth/conversion components after 3 second delay */}
+        {/* Lazy load growth/conversion components after 5 second delay */}
+        {/* Removed SocialProofBanner (handled in Index.tsx), StickyMobileAppCTA, AggressiveConversionBanner to fix CLS */}
         {showGrowthComponents && (
           <Suspense fallback={null}>
             <ExitIntentPopup />
-            <SocialProofBanner />
-            <StickyMobileAppCTA />
             <LiveActivityToast />
-            <AggressiveConversionBanner />
             <FloatingCTA />
           </Suspense>
         )}
