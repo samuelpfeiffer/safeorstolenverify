@@ -110,6 +110,15 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 				display: ['Inter', 'system-ui', 'sans-serif'],
+				anton: ['Anton', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+				'black-ops': ['"Black Ops One"', 'cursive'],
+				bebas: ['"Bebas Neue"', 'sans-serif'],
+				oswald: ['Oswald', 'sans-serif'],
+				teko: ['Teko', 'sans-serif'],
+				orbitron: ['Orbitron', 'sans-serif'],
+				rajdhani: ['Rajdhani', 'sans-serif'],
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],

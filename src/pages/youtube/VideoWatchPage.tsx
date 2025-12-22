@@ -13,6 +13,7 @@ import {
   getYouTubeThumbnail,
   getYouTubeShortsUrl
 } from '@/config/videoData';
+import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
 
 const VideoWatchPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -217,13 +218,22 @@ const VideoWatchPage: React.FC = () => {
                     <Card className="overflow-hidden hover:shadow-lg transition-all">
                       <div className="flex gap-3">
                         <div className="relative w-40 flex-shrink-0">
-                          <img 
-                            src={getYouTubeThumbnail(relatedVideo.videoId, 'mq')}
-                            alt={relatedVideo.title}
-                            className="w-full h-24 object-cover"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                          {hasCustomThumbnail(relatedVideo.slug) ? (
+                            <div className="w-full h-24">
+                              <ThumbnailFactory 
+                                slug={relatedVideo.slug} 
+                                className="w-full h-full rounded-none"
+                              />
+                            </div>
+                          ) : (
+                            <img 
+                              src={getYouTubeThumbnail(relatedVideo.videoId, 'mq')}
+                              alt={relatedVideo.title}
+                              className="w-full h-24 object-cover"
+                              loading="lazy"
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/10 transition-colors">
                             <Play className="w-6 h-6 text-white" />
                           </div>
                           <Badge className="absolute bottom-1 right-1 bg-black/70 text-white text-xs">
