@@ -442,6 +442,66 @@ const DashboardPage = () => {
           </Card>
         );
 
+      case 'activity':
+        return (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Clock className="h-5 w-5" />
+                Activity Timeline
+              </CardTitle>
+              <CardDescription>
+                Your recent verification activity and account events
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {recentVerifications.length > 0 ? (
+                <div className="space-y-4">
+                  {recentVerifications.map((verification, index) => (
+                    <div key={verification.id} className="flex gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className={`w-3 h-3 rounded-full ${
+                          verification.verification_status === 'safe' 
+                            ? 'bg-green-500' 
+                            : verification.verification_status === 'stolen' || verification.verification_status === 'lost'
+                            ? 'bg-red-500'
+                            : 'bg-yellow-500'
+                        }`} />
+                        {index < recentVerifications.length - 1 && (
+                          <div className="w-0.5 h-full bg-border mt-1" />
+                        )}
+                      </div>
+                      <div className="flex-1 pb-4">
+                        <div className="flex items-center justify-between">
+                          <p className="font-medium">{verification.item_type} Verification</p>
+                          <span className="text-xs text-muted-foreground">
+                            {new Date(verification.created_at).toLocaleDateString()}
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Serial: {verification.serial_number}
+                        </p>
+                        <Badge 
+                          variant={verification.verification_status === 'safe' ? 'default' : 'destructive'}
+                          className="mt-1"
+                        >
+                          {verification.verification_status}
+                        </Badge>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <Clock className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                  <p>No activity yet</p>
+                  <p className="text-sm mt-2">Your verification history will appear here</p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        );
+
       case 'settings':
         return (
           <div className="space-y-6">
