@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Font loading moved to index.html for better LCP - using font-display: swap */
+/* Fallback font stack ensures text is visible immediately */
 
 @tailwind base;
 @tailwind components;

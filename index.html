@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Critical inline CSS for instant FCP -->
+    <!-- Critical inline CSS for instant FCP + CLS prevention -->
     <style>
-      html,body{margin:0;padding:0;font-family:system-ui,-apple-system,sans-serif;background:#0d0d0d;color:#fafafa;min-height:100vh;}
+      /* Font fallback - prevents FOUT/CLS */
+      html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#1f1f1f;color:#fafafa;min-height:100vh;-webkit-font-smoothing:antialiased;}
       #root{min-height:100vh;}
       .loading{display:flex;align-items:center;justify-content:center;min-height:100vh;}
-      .spinner{width:40px;height:40px;border:4px solid #ff6b35;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
+      .spinner{width:40px;height:40px;border:4px solid #ef4444;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
       @keyframes spin{to{transform:rotate(360deg);}}
+      /* CLS prevention - reserve space for common elements */
+      img{max-width:100%;height:auto;}
+      [data-hero-img]{aspect-ratio:16/9;min-height:200px;background:#2a2a2a;}
+      h1{font-size:clamp(1.75rem,5vw,3.5rem);line-height:1.2;font-weight:700;}
+      /* Font loading optimization */
+      @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:local('Inter');}
     </style>
     
     <link rel="icon" href="/sos-logo.png" type="image/png">
@@ -56,6 +63,12 @@
     <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Optimized font loading with font-display: swap for better LCP -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
     <!-- DNS prefetch for Stripe payment processing -->
     <link rel="dns-prefetch" href="https://js.stripe.com">
     <link rel="dns-prefetch" href="https://api.stripe.com">
