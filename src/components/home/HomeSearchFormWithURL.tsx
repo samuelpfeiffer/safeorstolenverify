@@ -20,7 +20,7 @@ const SUPPORTED_MARKETPLACES = [
   { name: 'Poshmark', icon: '👗' },
 ];
 
-// Words to cycle through in the typing animation
+// Words to cycle through in the typing animation for manual search
 const PLACEHOLDER_WORDS = [
   'Serial Number',
   'VIN',
@@ -30,6 +30,13 @@ const PLACEHOLDER_WORDS = [
   'Vehicle VIN',
   'Laptop Serial',
   'Bike Serial',
+];
+
+// Words to cycle through for URL input
+const URL_PLACEHOLDER_WORDS = [
+  'Serial Numbers',
+  'IMEI Numbers',
+  'VIN Numbers',
 ];
 
 interface HomeSearchFormWithURLProps {
@@ -45,6 +52,13 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
 
   const typingText = useTypingAnimation({
     words: PLACEHOLDER_WORDS,
+    typingSpeed: 80,
+    deletingSpeed: 40,
+    pauseTime: 1500,
+  });
+
+  const urlTypingText = useTypingAnimation({
+    words: URL_PLACEHOLDER_WORDS,
     typingSpeed: 80,
     deletingSpeed: 40,
     pauseTime: 1500,
@@ -100,7 +114,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
                 type="url"
                 value={urlValue}
                 onChange={(e) => setUrlValue(e.target.value)}
-                placeholder="Paste Facebook Marketplace, eBay, or Craigslist URL..."
+                placeholder={`Input ${urlTypingText}...`}
                 className="pl-12 pr-4 h-14 text-lg bg-card border-2 border-border focus:border-primary transition-colors rounded-xl"
               />
             </div>
