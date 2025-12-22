@@ -2,21 +2,27 @@ import { Youtube, Bell, Users, Video, Play, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
+import { 
+  YOUTUBE_VIDEOS, 
+  YOUTUBE_CHANNEL,
+  getYouTubeThumbnail,
+  getFeaturedVideo
+} from '@/config/videoData';
 
 export const YouTubeChannelSection = () => {
   const handleSubscribe = () => {
-    window.open('https://www.youtube.com/@safeorstolen?sub_confirmation=1', '_blank');
+    window.open(YOUTUBE_CHANNEL.subscribeUrl, '_blank');
   };
 
-  // Use confirmed Short video ID from the channel
-  const mainVideoId = "Er_PXY0oMgE";
+  const featuredVideo = getFeaturedVideo();
 
   // NOTE: VideoObject schema removed - this component is used on non-video pages
   // VideoObject schema is only on /youtube page which IS a dedicated video watch page
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center mb-10">
           <Badge className="mb-4 bg-red-600 hover:bg-red-700 text-white">
@@ -27,7 +33,7 @@ export const YouTubeChannelSection = () => {
             Protect Yourself on <span className="text-red-600">YouTube</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Quick tips to avoid buying stolen goods. Subscribe for weekly updates.
+            {YOUTUBE_CHANNEL.description}
           </p>
         </div>
 
@@ -39,11 +45,11 @@ export const YouTubeChannelSection = () => {
           </div>
           <div className="flex items-center gap-2">
             <Video className="w-4 h-4 text-red-600" />
-            <span className="text-muted-foreground">8+ Videos</span>
+            <span className="text-muted-foreground">{YOUTUBE_VIDEOS.length} Videos</span>
           </div>
           <div className="flex items-center gap-2">
             <Play className="w-4 h-4 text-red-600" />
-            <span className="text-muted-foreground">2.8K+ Views</span>
+            <span className="text-muted-foreground">{YOUTUBE_CHANNEL.viewCount} Views</span>
           </div>
         </div>
 
@@ -51,8 +57,8 @@ export const YouTubeChannelSection = () => {
         <Card className="overflow-hidden shadow-xl mb-8 border-2 border-red-600/20">
           <div className="aspect-video">
             <iframe
-              src={`https://www.youtube.com/embed/${mainVideoId}?rel=0&modestbranding=1`}
-              title="The $13 Billion Stolen Goods Problem - SafeOrStolen"
+              src={`https://www.youtube.com/embed/${featuredVideo.videoId}?rel=0&modestbranding=1`}
+              title={featuredVideo.seoTitle}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="w-full h-full"
@@ -60,6 +66,30 @@ export const YouTubeChannelSection = () => {
             />
           </div>
         </Card>
+
+        {/* Video Thumbnails Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {YOUTUBE_VIDEOS.map((video) => (
+            <Link
+              key={video.id}
+              to={`/youtube/${video.slug}`}
+              className="group relative rounded-lg overflow-hidden aspect-video"
+            >
+              <img
+                src={getYouTubeThumbnail(video.videoId, 'mq')}
+                alt={video.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                <Play className="w-8 h-8 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+              </div>
+              <Badge className="absolute bottom-2 right-2 bg-black/70 text-white text-xs">
+                {video.duration}
+              </Badge>
+            </Link>
+          ))}
+        </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -71,15 +101,16 @@ export const YouTubeChannelSection = () => {
             <Bell className="w-5 h-5 mr-2" />
             Subscribe for Tips
           </Button>
-          <Button 
-            size="lg" 
-            variant="outline"
-            onClick={() => window.open('https://www.youtube.com/@safeorstolen', '_blank')}
-            className="border-red-600 text-red-600 hover:bg-red-600/10 px-8 py-6 text-lg font-semibold"
-          >
-            <ExternalLink className="w-5 h-5 mr-2" />
-            View All Videos
-          </Button>
+          <Link to="/youtube">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-red-600 text-red-600 hover:bg-red-600/10 px-8 py-6 text-lg font-semibold"
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              View All Videos
+            </Button>
+          </Link>
         </div>
 
         <p className="text-center text-muted-foreground mt-6 text-sm">

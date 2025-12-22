@@ -2,18 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   
-  <!-- Only dedicated video watch page - /youtube is the primary video content page -->
+  <!-- Video 1: The $13 Billion Problem - Main Featured Video -->
   <url>
     <loc>https://safeorstolen.com/youtube</loc>
-    <lastmod>2025-12-17</lastmod>
+    <lastmod>2025-12-22</lastmod>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Er_PXY0oMgE/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>The $13 Billion Stolen Goods Problem - SafeOrStolen</video:title>
-      <video:description>Learn about the massive stolen goods market in America and how SafeOrStolen helps buyers and sellers verify items aren't stolen before purchase. Watch tutorials on IMEI checking, VIN lookup, and serial number verification.</video:description>
+      <video:title>How to Check if Items Are Stolen Before Buying (Free Tool)</video:title>
+      <video:description>Verify items aren't stolen in 30 seconds with SafeOrStolen. Check IMEI, VIN, and serial numbers FREE before buying on Facebook Marketplace, Craigslist, eBay, and OfferUp. SafeOrStolen checks against police stolen goods databases, insurance claim records, NCIC stolen property files, and global IMEI blacklists.</video:description>
       <video:content_loc>https://www.youtube.com/shorts/Er_PXY0oMgE</video:content_loc>
       <video:player_loc>https://www.youtube.com/embed/Er_PXY0oMgE</video:player_loc>
       <video:duration>59</video:duration>
       <video:publication_date>2024-12-01T00:00:00Z</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- Video 2: Facebook Marketplace Safety -->
+  <url>
+    <loc>https://safeorstolen.com/youtube/marketplace-safety</loc>
+    <lastmod>2025-12-22</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/8SC44GuLi-M/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Facebook Marketplace Safety: Verify Items Before Meeting Seller</video:title>
+      <video:description>Don't buy stolen items on Facebook Marketplace! Use SafeOrStolen to verify EVERY item before you meet the seller. Check electronics IMEI and serial numbers, vehicles VIN numbers, tools and jewelry serial numbers. Learn red flags: price too good to be true, seller won't meet in public, no serial numbers visible, pressuring quick sale.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/8SC44GuLi-M</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/8SC44GuLi-M</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2024-12-05T00:00:00Z</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- Video 3: VIN Check Guide -->
+  <url>
+    <loc>https://safeorstolen.com/youtube/vin-check</loc>
+    <lastmod>2025-12-22</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/yYXVcsr7yfI/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>How to Check if a Car is Stolen Using VIN Number (Free Method)</video:title>
+      <video:description>Buying a used car? Check the VIN FIRST! SafeOrStolen verifies vehicles against NCIC stolen vehicle database, insurance theft claims, police reports, and state DMV records. VIN check reveals stolen status, salvage title, flood damage, and odometer fraud. Find VIN on dashboard driver's side, driver's door jamb, title document, insurance card, or vehicle registration.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/yYXVcsr7yfI</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/yYXVcsr7yfI</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2024-12-10T00:00:00Z</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- Video 4: IMEI Checker Guide -->
+  <url>
+    <loc>https://safeorstolen.com/youtube/imei-check</loc>
+    <lastmod>2025-12-22</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/-3INS_aSCzw/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Free IMEI Checker - Verify Your Phone Isn't Stolen or Blacklisted</video:title>
+      <video:description>Buying a used iPhone or Android? Check the IMEI first! SafeOrStolen IMEI checker shows stolen status, blacklisted carriers, insurance claims, activation lock status, and iCloud lock. Find your IMEI by dialing *#06#, in Settings About Phone, back of device, SIM tray, or original box. Protect yourself from buying stolen or blacklisted phones.</video:description>
+      <video:content_loc>https://www.youtube.com/shorts/-3INS_aSCzw</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/-3INS_aSCzw</video:player_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2024-12-15T00:00:00Z</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:uploader info="https://www.youtube.com/@safeorstolen">SafeOrStolen</video:uploader>
       <video:live>no</video:live>

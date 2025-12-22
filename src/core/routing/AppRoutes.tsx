@@ -142,6 +142,7 @@ const AppFeatures = lazy(() => import('@/pages/app/AppFeatures'));
 
 // Social Media & External Profile Pages
 const YouTubePage = lazy(() => import('@/pages/YouTubePage'));
+const VideoWatchPage = lazy(() => import('@/pages/youtube/VideoWatchPage'));
 const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
 const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
@@ -309,6 +310,7 @@ export const AppRoutes = () => {
         <Route path="/press-kit" element={<PressKitPage />} />
         <Route path="/product-hunt" element={<ProductHuntPage />} />
         <Route path="/youtube" element={<YouTubePage />} />
+        <Route path="/youtube/:slug" element={<VideoWatchPage />} />
         <Route path="/crunchbase" element={<CrunchbasePage />} />
 
         {/* ADMIN ROUTES - Note: Some pages removed during database cleanup */}
