@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Loader2, ShieldCheck, CreditCard, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 interface SimplifiedCheckoutProps {
   itemNumber?: string;
@@ -15,13 +14,11 @@ interface SimplifiedCheckoutProps {
 }
 
 export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutProps) => {
-  const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { user, session } = useUnifiedAuth();
   const navigate = useNavigate();
 
   const handleQuickCheckout = async () => {
-    // Require authentication for checkout
     if (!session) {
       toast.error('Please sign in to continue', {
         description: 'You need to be signed in to purchase a verification.'
@@ -33,13 +30,11 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
     setIsLoading(true);
 
     try {
-      // Call Stripe checkout with correct parameters
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 single verification
+          priceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn',
           serialNumber: itemNumber || '',
           itemType: itemType || 'general',
-          // BULLETPROOF: Use hardcoded production URL
           redirectUrl: 'https://safeorstolen.com',
           isSubscription: false,
           planName: 'Single Verification'
@@ -55,7 +50,7 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
       }
 
       if (data?.url) {
-        window.location.href = data.url;
+        redirectToStripe(data.url);
       } else {
         throw new Error('No checkout URL returned');
       }
@@ -64,11 +59,9 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
       toast.error('Checkout failed', {
         description: error.message || 'Please try again'
       });
-    } finally {
       setIsLoading(false);
     }
   };
-
   return (
     <Card className="p-6 bg-gradient-to-br from-card to-primary/5 border-2 border-primary/30">
       <div className="space-y-6">

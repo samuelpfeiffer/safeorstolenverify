@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { STRIPE_CONFIG } from '@/config/stripe';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 interface InlineCheckoutProps {
   serialNumber?: string;
@@ -66,7 +67,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
       if (error) throw error;
 
       if (data?.url) {
-        window.location.assign(data.url);
+        redirectToStripe(data.url);
       } else {
         throw new Error('No checkout URL returned');
       }
@@ -77,11 +78,9 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
         description: error.message || "Unable to start checkout. Please try again.",
         variant: "destructive"
       });
-    } finally {
       setIsLoading(false);
     }
   };
-
   if (variant === 'compact') {
     return (
       <Button
