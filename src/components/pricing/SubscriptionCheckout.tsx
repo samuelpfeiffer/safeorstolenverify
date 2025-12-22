@@ -4,6 +4,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 interface SubscriptionCheckoutProps {
   priceId: string;
@@ -22,11 +23,10 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
   const [isProcessing, setIsProcessing] = React.useState(false);
 
   const handleSubscribe = async () => {
-    console.log('[SUBSCRIPTION-DIRECT] Subscribe clicked:', { planName, priceId, isAuthenticated, hasSession: !!session });
+    console.log('[SUBSCRIPTION] Subscribe clicked:', { planName, priceId, isAuthenticated, hasSession: !!session });
 
-    // If not authenticated, redirect to auth first
     if (!isAuthenticated || !session) {
-      console.log('[SUBSCRIPTION-DIRECT] Not authenticated, redirecting to auth...');
+      console.log('[SUBSCRIPTION] Not authenticated, redirecting to auth...');
       const params = new URLSearchParams({
         priceId,
         planName,
@@ -36,9 +36,8 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
       return;
     }
 
-    // DIRECT CHECKOUT - Skip redirect page
     setIsProcessing(true);
-    console.log('[SUBSCRIPTION-DIRECT] Calling Stripe directly...');
+    console.log('[SUBSCRIPTION] Calling Stripe...');
 
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
@@ -46,7 +45,6 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
           priceId,
           planName,
           isSubscription: true,
-          // BULLETPROOF: Use hardcoded production URL
           redirectUrl: 'https://safeorstolen.com',
         },
         headers: {
@@ -54,7 +52,7 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
         },
       });
 
-      console.log('[SUBSCRIPTION-DIRECT] Response:', { data, error });
+      console.log('[SUBSCRIPTION] Response:', { data, error });
 
       if (error) {
         toast({
@@ -76,10 +74,10 @@ export const SubscriptionCheckout: React.FC<SubscriptionCheckoutProps> = ({
         return;
       }
 
-      console.log('[SUBSCRIPTION-DIRECT] Redirecting to Stripe:', data.url);
-      window.location.href = data.url;
+      // Use safe redirect that works in iframes
+      redirectToStripe(data.url);
     } catch (err: any) {
-      console.error('[SUBSCRIPTION-DIRECT] Error:', err);
+      console.error('[SUBSCRIPTION] Error:', err);
       toast({
         title: 'Error',
         description: err.message || 'An unexpected error occurred',

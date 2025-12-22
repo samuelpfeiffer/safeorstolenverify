@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Loader2, CreditCard, Zap } from 'lucide-react';
+import { Loader2, CreditCard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 interface QuickCheckoutButtonProps {
   planName: string;
@@ -30,7 +31,6 @@ export const QuickCheckoutButton = ({
   const { isAuthenticated, session } = useUnifiedAuth();
 
   const handleClick = async () => {
-    // If not authenticated, redirect to auth first
     if (!isAuthenticated || !session) {
       const params = new URLSearchParams({
         planName,
@@ -41,7 +41,6 @@ export const QuickCheckoutButton = ({
       return;
     }
 
-    // Direct checkout
     setLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
@@ -59,7 +58,7 @@ export const QuickCheckoutButton = ({
       if (error) throw error;
       if (!data?.url) throw new Error('No checkout URL');
 
-      window.location.href = data.url;
+      redirectToStripe(data.url);
     } catch (err: any) {
       console.error('Checkout error:', err);
       toast.error(err.message || 'Checkout failed. Please try again.');

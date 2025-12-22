@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, Zap, Lock, Loader2, Star, TrendingUp } from 'lucide-react';
+import { Shield, CheckCircle, Lock, Loader2, Star, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -18,7 +19,6 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState<string | null>(null);
 
-  // Direct checkout - no redirect page friction
   const handleDirectCheckout = async (planName: string, isSubscription: boolean) => {
     setIsLoading(planName);
     
@@ -45,8 +45,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
       if (error) throw error;
       if (!data?.url) throw new Error('No checkout URL returned');
 
-      // Direct redirect to Stripe - no intermediate page
-      window.location.href = data.url;
+      redirectToStripe(data.url);
       
     } catch (err: any) {
       console.error('Checkout error:', err);
@@ -58,7 +57,6 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
       setIsLoading(null);
     }
   };
-
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-lg">
