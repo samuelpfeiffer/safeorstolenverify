@@ -3,6 +3,9 @@ import { Card } from '@/components/ui/card';
 import { Shield, Smartphone, Car, Laptop, Bike, Wrench, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 export default function CompleteVerificationGuide() {
   const structuredData = {
@@ -36,6 +39,7 @@ export default function CompleteVerificationGuide() {
         structuredData={structuredData}
       />
 
+      <TopNavigation />
       <div className="min-h-screen bg-background py-12">
         <div className="container max-w-4xl mx-auto px-4">
           <article className="prose prose-lg max-w-none">
@@ -376,6 +380,8 @@ export default function CompleteVerificationGuide() {
           </article>
         </div>
       </div>
+      <RelatedPagesSection currentPage="/blog/complete-verification-guide" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 }

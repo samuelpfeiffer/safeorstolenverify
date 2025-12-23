@@ -6,6 +6,9 @@ import { ShoppingCart, Shield, AlertTriangle, CheckCircle } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 export default function UltimateMarketplaceBuyersGuide() {
   const navigate = useNavigate();
@@ -41,6 +44,7 @@ export default function UltimateMarketplaceBuyersGuide() {
         structuredData={structuredData}
       />
 
+      <TopNavigation />
       <div className="min-h-screen bg-background">
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <div className="mb-8">
@@ -337,6 +341,8 @@ export default function UltimateMarketplaceBuyersGuide() {
           <AppDownloadCTA variant="default" showBenefits={true} />
         </div>
       </div>
+      <RelatedPagesSection currentPage="/blog/ultimate-marketplace-buyers-guide" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 }
