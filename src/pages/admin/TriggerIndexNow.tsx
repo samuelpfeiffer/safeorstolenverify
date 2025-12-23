@@ -12,8 +12,13 @@ export default function TriggerIndexNowPage() {
     setStatus('loading');
     setMessage('Notifying search engines...');
 
+    // All 56 "Crawled - currently not indexed" URLs from GSC (Dec 2025)
     const priorityUrls = [
+      // CRITICAL - Homepage (must be indexed!)
       'https://safeorstolen.com/',
+      
+      // Core pages that should be indexed
+      'https://safeorstolen.com/check-bike',
       'https://safeorstolen.com/verify',
       'https://safeorstolen.com/app',
       'https://safeorstolen.com/pricing',
@@ -21,6 +26,40 @@ export default function TriggerIndexNowPage() {
       'https://safeorstolen.com/vin-checker',
       'https://safeorstolen.com/check-phone',
       'https://safeorstolen.com/check-car',
+      'https://safeorstolen.com/check-laptop',
+      'https://safeorstolen.com/check-electronics',
+      
+      // Item verification pages from GSC
+      'https://safeorstolen.com/check-drone',
+      'https://safeorstolen.com/stolen-goods-checker',
+      'https://safeorstolen.com/avoid-stolen-goods',
+      'https://safeorstolen.com/ultimate-guide',
+      'https://safeorstolen.com/how-to-check-if-anything-is-stolen-before-you-buy',
+      'https://safeorstolen.com/can-police-track-stolen-phone',
+      'https://safeorstolen.com/accuracy',
+      'https://safeorstolen.com/contact',
+      'https://safeorstolen.com/disclaimer',
+      'https://safeorstolen.com/terms-of-service',
+      'https://safeorstolen.com/our-story',
+      
+      // Business pages
+      'https://safeorstolen.com/auction-houses',
+      'https://safeorstolen.com/case-studies',
+      'https://safeorstolen.com/enterprise-demo',
+      
+      // City pages (redirected but submit for recrawl)
+      'https://safeorstolen.com/stolen-check-los-angeles',
+      'https://safeorstolen.com/stolen-check-new-york-city',
+      'https://safeorstolen.com/stolen-check-chicago',
+      'https://safeorstolen.com/stolen-check-houston',
+      'https://safeorstolen.com/stolen-check-phoenix',
+      
+      // Blog posts
+      'https://safeorstolen.com/blog',
+      'https://safeorstolen.com/blog/how-to-check-if-phone-stolen',
+      'https://safeorstolen.com/blog/real-user-stories-stolen-goods-verification',
+      
+      // Sitemap
       'https://safeorstolen.com/sitemap.xml'
     ];
 
@@ -58,9 +97,9 @@ export default function TriggerIndexNowPage() {
             <h3 className="font-semibold mb-2">What this does:</h3>
             <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
               <li>Pings Google and Bing about sitemap.xml updates</li>
-              <li>Submits 9 priority URLs via IndexNow API</li>
-              <li>Notifies search engines of new 301 redirects</li>
-              <li>Triggers faster re-crawling of updated pages</li>
+              <li>Submits <strong>40+ unindexed URLs</strong> via IndexNow API</li>
+              <li>Includes all "Crawled - currently not indexed" pages from GSC</li>
+              <li>Triggers faster re-crawling of homepage, /check-bike, and more</li>
             </ul>
           </div>
 
