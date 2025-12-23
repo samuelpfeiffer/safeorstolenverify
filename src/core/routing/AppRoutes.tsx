@@ -31,6 +31,13 @@ const VsSwappaPage = lazy(() => import('@/pages/ComparisonSwappa'));
 const ComparisonCarfax = lazy(() => import('@/pages/ComparisonCarfax'));
 const ComparisonAutocheck = lazy(() => import('@/pages/ComparisonAutocheck'));
 
+// NEW Comparison Pages (High-Value SEO)
+const SafeOrStolenVsIMEIInfo = lazy(() => import('@/pages/comparisons/SafeOrStolenVsIMEIInfo'));
+const SafeOrStolenVsSwappa = lazy(() => import('@/pages/comparisons/SafeOrStolenVsSwappa'));
+const NICBVINCheckAlternative = lazy(() => import('@/pages/comparisons/NICBVINCheckAlternative'));
+const BestFreeIMEICheckers2025 = lazy(() => import('@/pages/comparisons/BestFreeIMEICheckers2025'));
+const TopVINCheckServices2025 = lazy(() => import('@/pages/comparisons/TopVINCheckServices2025'));
+
 // Item Landing Pages (High-Value SEO)
 const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
@@ -294,6 +301,13 @@ export const AppRoutes = () => {
         <Route path="/vs-swappa" element={<VsSwappaPage />} />
         <Route path="/vs-carfax" element={<ComparisonCarfax />} />
         <Route path="/vs-autocheck" element={<ComparisonAutocheck />} />
+        
+        {/* NEW HIGH-VALUE COMPARISON PAGES */}
+        <Route path="/comparisons/safeorstolen-vs-imei-info" element={<SafeOrStolenVsIMEIInfo />} />
+        <Route path="/comparisons/safeorstolen-vs-swappa" element={<SafeOrStolenVsSwappa />} />
+        <Route path="/comparisons/nicb-vincheck-alternative" element={<NICBVINCheckAlternative />} />
+        <Route path="/comparisons/best-free-imei-checkers-2025" element={<BestFreeIMEICheckers2025 />} />
+        <Route path="/comparisons/top-vin-check-services-2025" element={<TopVINCheckServices2025 />} />
 
         {/* APP FEATURE PAGES */}
         <Route path="/download" element={<DownloadApp />} />
