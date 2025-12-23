@@ -55,6 +55,26 @@ const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
 const CarVINStolenCheck = lazy(() => import('@/pages/items/CarVINStolenCheck'));
 const LaptopSerialCheck = lazy(() => import('@/pages/items/LaptopSerialCheck'));
 const BicycleSerialCheck = lazy(() => import('@/pages/items/BicycleSerialCheck'));
+const GamingConsoleCheck = lazy(() => import('@/pages/items/GamingConsoleCheck'));
+const WatchSerialCheck = lazy(() => import('@/pages/items/WatchSerialCheck'));
+const CameraEquipmentCheck = lazy(() => import('@/pages/items/CameraEquipmentCheck'));
+const PowerToolsCheck = lazy(() => import('@/pages/items/PowerToolsCheck'));
+const AndroidPhoneCheck = lazy(() => import('@/pages/items/AndroidPhoneCheck'));
+const MotorcycleVINCheck = lazy(() => import('@/pages/items/MotorcycleVINCheck'));
+const TabletCheck = lazy(() => import('@/pages/items/TabletCheck'));
+const FirearmSerialCheck = lazy(() => import('@/pages/items/FirearmSerialCheck'));
+const JewelryCheck = lazy(() => import('@/pages/items/JewelryCheck'));
+
+// Marketplace Landing Pages
+const MercariStolenCheck = lazy(() => import('@/pages/marketplace/MercariStolenCheck'));
+const PoshmarkStolenCheck = lazy(() => import('@/pages/marketplace/PoshmarkStolenCheck'));
+const StockXVerification = lazy(() => import('@/pages/marketplace/StockXVerification'));
+const LetgoStolenCheck = lazy(() => import('@/pages/marketplace/LetgoStolenCheck'));
+
+// Business/Industry Landing Pages
+const ForElectronicsResellers = lazy(() => import('@/pages/business/ForElectronicsResellers'));
+const ForInsuranceCompanies = lazy(() => import('@/pages/business/ForInsuranceCompanies'));
+const ForLawEnforcement = lazy(() => import('@/pages/business/ForLawEnforcement'));
 
 // TOP 10 STATE LICENSE PLATE PAGES ONLY (High-Value States)
 const CaliforniaLicensePlateLookupPage = lazy(() => import('@/pages/CaliforniaLicensePlateLookupPage'));
