@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -27,8 +27,14 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/compare', label: 'Compare' },
     { to: '/pricing', label: 'Pricing' },
-    { to: '/blog', label: 'Blog' },
     { to: '/app', label: 'Download App', featured: true },
+  ];
+
+  const resourceLinks = [
+    { to: '/blog', label: 'Blog', icon: BookOpen },
+    { to: '/faq', label: 'Help & FAQ', icon: HelpCircle },
+    { to: '/how-it-works', label: 'How It Works', icon: FileText },
+    { to: '/for-businesses', label: 'For Business', icon: Building2 },
   ];
 
   const authenticatedLinks = [
@@ -55,7 +61,7 @@ const TopNavigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -70,6 +76,22 @@ const TopNavigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+            
+            {/* Resources Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 outline-none">
+                Resources
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-48 bg-background border border-border shadow-lg">
+                {resourceLinks.map((link) => (
+                  <DropdownMenuItem key={link.to} onClick={() => navigate(link.to)} className="cursor-pointer">
+                    <link.icon className="w-4 h-4 mr-2" />
+                    {link.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Desktop Auth + Social */}
@@ -198,6 +220,21 @@ const TopNavigation = () => {
               </Link>
             ))}
             
+            {/* Resources Section */}
+            <div className="px-4 pt-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Resources</p>
+              {resourceLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 px-2 py-3 min-h-[44px] text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
+                >
+                  <link.icon className="w-4 h-4 text-muted-foreground" />
+                  {link.label}
+                </Link>
+              ))}
+            </div>
             <div className="pt-4 px-4 space-y-2 border-t border-border/50 mt-4">
               {isAuthenticated ? (
                 <>
