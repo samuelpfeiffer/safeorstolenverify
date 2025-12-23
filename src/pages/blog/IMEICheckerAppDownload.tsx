@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download, Smartphone, Shield, Zap, Wifi, CheckCircle } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const IMEICheckerAppDownload = () => {
   const articleSchema = {
@@ -74,6 +77,7 @@ const IMEICheckerAppDownload = () => {
         structuredData={[articleSchema, softwareSchema, faqSchema]}
       />
 
+      <TopNavigation />
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">
           <header className="mb-12 text-center">
@@ -251,6 +255,8 @@ const IMEICheckerAppDownload = () => {
           </section>
         </article>
       </div>
+      <RelatedPagesSection currentPage="/blog/imei-checker-app-download" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 };
