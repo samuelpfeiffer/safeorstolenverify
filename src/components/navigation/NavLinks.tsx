@@ -58,6 +58,14 @@ export const NavLinks = ({ currentPath }: NavLinksProps) => {
       >
         Pricing
       </Link>
+      <Link 
+        to="/blog" 
+        className={cn("transition-colors", 
+          currentPath === "/blog" || currentPath.startsWith("/blog/") ? "text-sos-orange" : "text-white hover:text-sos-orange"
+        )}
+      >
+        Blog
+      </Link>
       <a
         href="https://www.youtube.com/@SafeOrStolen"
         target="_blank"
