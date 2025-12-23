@@ -349,7 +349,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # MARKETPLACE VERIFICATION PAGES
 # ============================================
 /facebook-marketplace-verification                  /verify  301!
+/facebook-marketplace-stolen-check                  /verify  301!
 /ebay-stolen-item-checker                           /verify  301!
+/craigslist-verification-guide                      /verify  301!
 /subscriptions                                      /pricing  301!
 /refunds                                           /terms  301!
 /for-used-car-dealers                              /for-dealers  301!
