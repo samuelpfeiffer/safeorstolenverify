@@ -4,6 +4,8 @@ import { ArrowLeft, CheckCircle, XCircle, DollarSign, Shield, Zap, Car, AlertTri
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { SOSFooter } from '@/components/layout/SOSFooter';
+import TopNavigation from '@/components/TopNavigation';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const CarfaxVsFreeVinAlternatives = () => {
   const faqSchema = {
@@ -103,6 +105,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         structuredData={[faqSchema, articleSchema]}
       />
 
+      <TopNavigation />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Breadcrumb */}
@@ -316,6 +319,7 @@ const CarfaxVsFreeVinAlternatives = () => {
           </div>
         </div>
 
+        <RelatedPagesSection currentPage="/blog/carfax-vs-free-vin-alternatives" currentCategory="blog" maxLinks={5} />
         <SOSFooter />
       </div>
     </>

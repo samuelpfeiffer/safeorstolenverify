@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, AlertTriangle, Shield, Search, Clock, ArrowRight, Gamepad2, AlertCircle } from 'lucide-react';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const PS5StolenCheckGuide = () => {
   const publishDate = "2024-12-23";
@@ -84,6 +87,7 @@ const PS5StolenCheckGuide = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
+      <TopNavigation />
       <article className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
         <header className="pt-24 pb-12 px-4">
@@ -451,6 +455,8 @@ const PS5StolenCheckGuide = () => {
           </div>
         </section>
       </article>
+      <RelatedPagesSection currentPage="/blog/ps5-stolen-check-guide" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 };

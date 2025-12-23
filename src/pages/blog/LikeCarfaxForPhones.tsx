@@ -5,6 +5,9 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from 'react-router-dom';
 import { Smartphone, Car, Shield, CheckCircle, Download } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const LikeCarfaxForPhones = () => {
   const blogPostSchema = {
@@ -59,6 +62,7 @@ const LikeCarfaxForPhones = () => {
         ]}
       />
       
+      <TopNavigation />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation 
@@ -425,6 +429,8 @@ const LikeCarfaxForPhones = () => {
           </div>
         </article>
       </div>
+      <RelatedPagesSection currentPage="/blog/like-carfax-for-phones" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 };
