@@ -5,6 +5,9 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { BlogFAQSchema } from '@/components/seo/BlogFAQSchema';
 import { Link } from 'react-router-dom';
 import { Shield, Smartphone, Scan, Zap, Download, CheckCircle } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const StolenVerificationAppGuide = () => {
   const blogPostSchema = {
@@ -63,6 +66,7 @@ const StolenVerificationAppGuide = () => {
         ]}
       />
       
+      <TopNavigation />
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation 
@@ -363,6 +367,8 @@ const StolenVerificationAppGuide = () => {
           </div>
         </article>
       </div>
+      <RelatedPagesSection currentPage="/blog/stolen-verification-app-guide" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 };

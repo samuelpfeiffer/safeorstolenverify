@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bike, Shield, AlertTriangle, CheckCircle, Download, Search } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const BicycleStolenSerialNumberCheck = () => {
   const articleSchema = {
@@ -60,6 +63,7 @@ const BicycleStolenSerialNumberCheck = () => {
         structuredData={[articleSchema, faqSchema]}
       />
 
+      <TopNavigation />
       <div className="min-h-screen bg-background">
         <article className="max-w-4xl mx-auto px-4 py-16">
           <header className="mb-12">
@@ -293,6 +297,8 @@ const BicycleStolenSerialNumberCheck = () => {
           </section>
         </article>
       </div>
+      <RelatedPagesSection currentPage="/blog/bicycle-stolen-serial-number-check" currentCategory="blog" maxLinks={5} />
+      <Footer />
     </>
   );
 };
