@@ -235,19 +235,32 @@ export const AppRoutes = () => {
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         
-        {/* NEW SEO ITEM PAGES (Phase 1) */}
+        {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
         <Route path="/check-samsung-stolen" element={<SamsungIMEICheck />} />
+        <Route path="/check-android-phone-stolen" element={<AndroidPhoneCheck />} />
         <Route path="/check-car-stolen-vin" element={<CarVINStolenCheck />} />
+        <Route path="/check-motorcycle-stolen-vin" element={<MotorcycleVINCheck />} />
         <Route path="/check-laptop-stolen" element={<LaptopSerialCheck />} />
+        <Route path="/check-tablet-stolen" element={<TabletCheck />} />
         <Route path="/check-bicycle-stolen" element={<BicycleSerialCheck />} />
+        <Route path="/check-gaming-console-stolen" element={<GamingConsoleCheck />} />
+        <Route path="/check-watch-stolen" element={<WatchSerialCheck />} />
+        <Route path="/check-camera-stolen" element={<CameraEquipmentCheck />} />
+        <Route path="/check-power-tools-stolen" element={<PowerToolsCheck />} />
+        <Route path="/check-firearm-serial" element={<FirearmSerialCheck />} />
+        <Route path="/check-jewelry-stolen" element={<JewelryCheck />} />
         
-        {/* MARKETPLACE PAGES */}
+        {/* MARKETPLACE PAGES (All 8 Marketplaces) */}
         <Route path="/marketplace-url-checker" element={<MarketplaceURLChecker />} />
         <Route path="/facebook-marketplace-stolen-check" element={<FacebookMarketplaceStolenCheck />} />
         <Route path="/craigslist-safety-verification" element={<CraigslistSafetyVerification />} />
         <Route path="/offerup-verify-not-stolen" element={<OfferupVerifyNotStolen />} />
         <Route path="/ebay-stolen-item-check" element={<EbayStolenItemCheck />} />
+        <Route path="/mercari-stolen-check" element={<MercariStolenCheck />} />
+        <Route path="/poshmark-stolen-check" element={<PoshmarkStolenCheck />} />
+        <Route path="/stockx-verification" element={<StockXVerification />} />
+        <Route path="/letgo-stolen-check" element={<LetgoStolenCheck />} />
 
         {/* TOP 10 STATE LICENSE PLATE PAGES */}
         <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookupPage />} />
@@ -318,12 +331,15 @@ export const AppRoutes = () => {
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
 
-        {/* BUSINESS PAGES */}
+        {/* BUSINESS PAGES (All 8 Business Types) */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />
         <Route path="/for-dealers" element={<ForDealers />} />
         <Route path="/for-marketplaces" element={<ForMarketplaces />} />
         <Route path="/for-auction-houses" element={<ForAuctionHouses />} />
         <Route path="/for-businesses" element={<ForBusinesses />} />
+        <Route path="/for-electronics-resellers" element={<ForElectronicsResellers />} />
+        <Route path="/for-insurance-companies" element={<ForInsuranceCompanies />} />
+        <Route path="/for-law-enforcement" element={<ForLawEnforcement />} />
 
         {/* CITY PAGES */}
         <Route path="/stolen-check-los-angeles" element={<StolenCheckLosAngeles />} />
