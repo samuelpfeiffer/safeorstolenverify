@@ -3,10 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { AlertTriangle, Shield, CheckCircle, ArrowRight, Download, Users, DollarSign, Lock } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const FacebookMarketplaceScams = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Facebook Marketplace Scams to Avoid in 2024 (Stolen Items, Fake Sellers)"
         description="Protect yourself from Facebook Marketplace scams. Learn how to spot stolen items, fake sellers, and fraud. Free verification tool to check before you buy."
@@ -195,7 +199,14 @@ const FacebookMarketplaceScams = () => {
 
           </div>
         </article>
+        
+        <RelatedPagesSection 
+          currentPage="/blog/facebook-marketplace-scams" 
+          currentCategory="blog" 
+          maxLinks={5}
+        />
       </div>
+      <Footer />
     </>
   );
 };

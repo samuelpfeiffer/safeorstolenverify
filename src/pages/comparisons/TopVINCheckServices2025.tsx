@@ -7,6 +7,7 @@ import { Check, X, Crown, Shield, Star, Car, Database, DollarSign, FileText } fr
 import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const TopVINCheckServices2025 = () => {
   const listSchema = {
@@ -531,6 +532,12 @@ const TopVINCheckServices2025 = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPagesSection 
+          currentPage="/comparisons/top-vin-check-services-2025" 
+          currentCategory="comparison" 
+          maxLinks={6}
+        />
       </main>
       
       <Footer />

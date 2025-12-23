@@ -7,6 +7,7 @@ import { Check, X, Crown, Shield, Star, Smartphone, Database, DollarSign, Clock 
 import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const BestFreeIMEICheckers2025 = () => {
   const listSchema = {
@@ -483,6 +484,12 @@ const BestFreeIMEICheckers2025 = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPagesSection 
+          currentPage="/comparisons/best-free-imei-checkers-2025" 
+          currentCategory="comparison" 
+          maxLinks={6}
+        />
       </main>
       
       <Footer />
