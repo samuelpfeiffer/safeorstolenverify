@@ -1,5 +1,8 @@
 project_id = "lxrdzbknktwlubbmlsqe"
 
+# =====================================================
+# VERIFICATION FUNCTIONS - Public with rate limiting
+# =====================================================
 [functions.verify-item]
 verify_jwt = false
 
@@ -18,14 +21,17 @@ verify_jwt = false
 [functions.web-scraper-verification]
 verify_jwt = false
 
+# =====================================================
+# AI FUNCTIONS - Require authentication (cost money)
+# =====================================================
 [functions.ai-safety-advisor]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-search-suggestions]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-item-identification]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-blog-generator]
 verify_jwt = true
@@ -37,17 +43,50 @@ verify_jwt = true
 verify_jwt = true
 
 [functions.ai-error-handler]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-verify-item]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-chat]
-verify_jwt = false
+verify_jwt = true
 
 [functions.ai-content-generator]
-verify_jwt = false
+verify_jwt = true
 
+[functions.ai-item-analysis]
+verify_jwt = true
+
+[functions.ai-smart-search]
+verify_jwt = true
+
+[functions.ai-assistant]
+verify_jwt = true
+
+[functions.ai-seo-agent]
+verify_jwt = true
+
+[functions.ai-content-agent]
+verify_jwt = true
+
+[functions.ai-fraud-detector]
+verify_jwt = true
+
+[functions.ai-retention-agent]
+verify_jwt = true
+
+[functions.ai-analytics-agent]
+verify_jwt = true
+
+[functions.ai-compliance-agent]
+verify_jwt = true
+
+[functions.ai-learning-agent]
+verify_jwt = true
+
+# =====================================================
+# PAYMENT FUNCTIONS - Require authentication
+# =====================================================
 [functions.gsc-api]
 verify_jwt = true
 
@@ -60,12 +99,21 @@ verify_jwt = true
 [functions.customer-portal]
 verify_jwt = true
 
-[functions.stripe-webhook]
-verify_jwt = false
-
 [functions.universal-state-lookup]
 verify_jwt = true
 
+[functions.stripe-reconcile-purchases]
+verify_jwt = true
+
+# =====================================================
+# WEBHOOK FUNCTIONS - No JWT (use signature verification)
+# =====================================================
+[functions.stripe-webhook]
+verify_jwt = false
+
+# =====================================================
+# PUBLIC UTILITY FUNCTIONS
+# =====================================================
 [functions.indexnow-submit]
 verify_jwt = false
 
@@ -75,44 +123,11 @@ verify_jwt = false
 [functions.gsc-sync]
 verify_jwt = false
 
-[functions.ai-item-analysis]
-verify_jwt = false
-
-[functions.ai-smart-search]
-verify_jwt = false
-
-[functions.ai-assistant]
-verify_jwt = false
-
 [functions.generate-report-link]
 verify_jwt = false
 
 [functions.check-watchlist-matches]
-verify_jwt = false
-
-[functions.ai-seo-agent]
-verify_jwt = false
-
-[functions.ai-content-agent]
-verify_jwt = false
-
-[functions.ai-fraud-detector]
-verify_jwt = false
-
-[functions.ai-retention-agent]
-verify_jwt = false
-
-[functions.ai-analytics-agent]
-verify_jwt = false
-
-[functions.ai-compliance-agent]
-verify_jwt = false
-
-[functions.ai-learning-agent]
-verify_jwt = false
+verify_jwt = true
 
 [functions.marketplace-url-analyzer]
-verify_jwt = false
-
-[functions.stripe-reconcile-purchases]
 verify_jwt = false

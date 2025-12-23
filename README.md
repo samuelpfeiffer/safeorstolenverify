@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# SafeOrStolen.com
 
-## Project info
+**Protect yourself from buying stolen goods.** SafeOrStolen is a comprehensive stolen item verification service that helps buyers and sellers check if second-hand items are reported lost, stolen, or safe to handle.
 
-**URL**: https://lovable.dev/projects/8cf94511-ea1d-4f6d-af14-e06fcc955dc9
+## 🎯 What It Does
 
-## How can I edit this code?
+- **Serial Number Verification**: Check electronics, phones, laptops, and more
+- **IMEI Lookup**: Verify mobile device status and blacklist checks
+- **VIN Verification**: Check vehicle history and theft records
+- **Bike Index Integration**: Verify bicycles against the stolen bike database
+- **Firearm Verification**: Check firearms against HotGunz database
 
-There are several ways of editing your application.
+## 🛡️ Key Features
 
-**Use Lovable**
+- **AI-Powered Safety Advisor**: Get real-time guidance on suspicious listings
+- **Smart Search Suggestions**: Intelligent autocomplete for faster verification
+- **Photo Item Identification**: Upload photos to extract serial numbers automatically
+- **Community Stories**: Learn from real experiences of theft recovery
+- **Watchlist Alerts**: Get notified when your items are searched
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8cf94511-ea1d-4f6d-af14-e06fcc955dc9) and start prompting.
+## 🚀 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Backend**: Supabase (PostgreSQL, Edge Functions, Auth)
+- **Payments**: Stripe (Subscriptions & Credits)
+- **AI**: OpenAI GPT-4 for smart features
+- **SEO**: React Helmet, JSON-LD structured data
 
-**Use your preferred IDE**
+## 📦 Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```
+src/
+├── components/     # Reusable UI components
+├── features/       # Feature-specific modules
+├── hooks/          # Custom React hooks
+├── lib/            # Core utilities (auth, etc.)
+├── pages/          # Route pages
+├── integrations/   # Supabase client & types
+└── utils/          # Helper functions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+supabase/
+├── functions/      # Edge functions (API endpoints)
+├── migrations/     # Database migrations
+└── config.toml     # Function configuration
 ```
 
-**Edit a file directly in GitHub**
+## 🔐 Security
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Row-Level Security (RLS) on all tables
+- JWT authentication on sensitive endpoints
+- Rate limiting on verification APIs
+- Audit logging for compliance
 
-**Use GitHub Codespaces**
+## 🌐 Live Site
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**URL**: [https://safeorstolen.com](https://safeorstolen.com)
 
-## What technologies are used for this project?
+## 📄 License
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8cf94511-ea1d-4f6d-af14-e06fcc955dc9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Private - All rights reserved.
