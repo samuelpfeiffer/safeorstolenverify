@@ -49,6 +49,13 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
+// NEW SEO Landing Pages (Phase 1 - Priority Items)
+const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
+const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
+const CarVINStolenCheck = lazy(() => import('@/pages/items/CarVINStolenCheck'));
+const LaptopSerialCheck = lazy(() => import('@/pages/items/LaptopSerialCheck'));
+const BicycleSerialCheck = lazy(() => import('@/pages/items/BicycleSerialCheck'));
+
 // TOP 10 STATE LICENSE PLATE PAGES ONLY (High-Value States)
 const CaliforniaLicensePlateLookupPage = lazy(() => import('@/pages/CaliforniaLicensePlateLookupPage'));
 const TexasLicensePlateLookupPage = lazy(() => import('@/pages/TexasLicensePlateLookupPage'));
@@ -207,6 +214,13 @@ export const AppRoutes = () => {
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
+        
+        {/* NEW SEO ITEM PAGES (Phase 1) */}
+        <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
+        <Route path="/check-samsung-stolen" element={<SamsungIMEICheck />} />
+        <Route path="/check-car-stolen-vin" element={<CarVINStolenCheck />} />
+        <Route path="/check-laptop-stolen" element={<LaptopSerialCheck />} />
+        <Route path="/check-bicycle-stolen" element={<BicycleSerialCheck />} />
         
         {/* MARKETPLACE PAGES */}
         <Route path="/marketplace-url-checker" element={<MarketplaceURLChecker />} />
