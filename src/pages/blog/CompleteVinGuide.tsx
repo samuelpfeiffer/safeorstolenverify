@@ -1,6 +1,9 @@
 import { PageSEO } from '@/components/seo/PageSEO';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 export default function CompleteVinGuide() {
   const structuredData = {
@@ -26,6 +29,7 @@ export default function CompleteVinGuide() {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Complete VIN Check Guide: How to Verify Vehicle History (2026)"
         description="Comprehensive guide to VIN verification, decoding vehicle history, checking for stolen cars, and avoiding title washing fraud. Free alternatives to Carfax."
@@ -302,6 +306,13 @@ export default function CompleteVinGuide() {
           <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
         </footer>
       </article>
+      
+      <RelatedPagesSection 
+        currentPage="/blog/complete-vin-guide" 
+        currentCategory="blog" 
+        maxLinks={5}
+      />
+      <Footer />
     </>
   );
 }

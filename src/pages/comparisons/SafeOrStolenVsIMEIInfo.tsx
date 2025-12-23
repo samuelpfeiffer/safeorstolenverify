@@ -7,6 +7,7 @@ import { Check, X, Crown, Shield, Smartphone, Database, Clock, DollarSign } from
 import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const SafeOrStolenVsIMEIInfo = () => {
   const comparisonSchema = {
@@ -416,6 +417,12 @@ const SafeOrStolenVsIMEIInfo = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPagesSection 
+          currentPage="/comparisons/safeorstolen-vs-imeiinfo" 
+          currentCategory="comparison" 
+          maxLinks={6}
+        />
       </main>
       
       <Footer />

@@ -7,6 +7,7 @@ import { Check, X, Crown, Shield, Car, Database, Clock, AlertTriangle } from 'lu
 import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const NICBVINCheckAlternative = () => {
   const comparisonSchema = {
@@ -428,6 +429,12 @@ const NICBVINCheckAlternative = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPagesSection 
+          currentPage="/comparisons/nicb-vincheck-alternative" 
+          currentCategory="comparison" 
+          maxLinks={6}
+        />
       </main>
       
       <Footer />

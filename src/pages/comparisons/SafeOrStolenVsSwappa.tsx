@@ -7,6 +7,7 @@ import { Check, X, Crown, Shield, ShoppingBag, Database, Smartphone, Car } from 
 import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
+import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 
 const SafeOrStolenVsSwappa = () => {
   const comparisonSchema = {
@@ -447,6 +448,12 @@ const SafeOrStolenVsSwappa = () => {
             </div>
           </div>
         </section>
+
+        <RelatedPagesSection 
+          currentPage="/comparisons/safeorstolen-vs-swappa" 
+          currentCategory="comparison" 
+          maxLinks={6}
+        />
       </main>
       
       <Footer />

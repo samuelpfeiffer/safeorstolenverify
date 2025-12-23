@@ -54,7 +54,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/license-plate-lookup', priority: 0.80, changefreq: 'weekly' },
 
   // ============================================
-  // COMPETITOR COMPARISON PAGES (6)
+  // COMPETITOR COMPARISON PAGES (11)
   // ============================================
   { path: '/compare', priority: 0.85, changefreq: 'monthly' },
   { path: '/vs-checkmend', priority: 0.80, changefreq: 'monthly' },
@@ -62,6 +62,12 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/vs-swappa', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-carfax', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-autocheck', priority: 0.80, changefreq: 'monthly' },
+  // New detailed comparison pages (December 2025)
+  { path: '/comparisons/safeorstolen-vs-imeiinfo', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
+  { path: '/comparisons/safeorstolen-vs-swappa', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
+  { path: '/comparisons/nicb-vincheck-alternative', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
+  { path: '/comparisons/best-free-imei-checkers-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
+  { path: '/comparisons/top-vin-check-services-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
 
   // ============================================
   // BUSINESS PAGES (5)
