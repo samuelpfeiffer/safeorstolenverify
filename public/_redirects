@@ -569,7 +569,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/the-cost-of-secondhand-market-fraud-in-2025-* /blog  301!
 /blog/verification-methodology-how-we-check-stolen-items /about  301!
 /blog/phone-verification-guide    /blog/how-to-check-if-phone-stolen  301!
-/blog/verification-methodology    /about  301!
+/blog/verification-methodology    /blog            301!
+/blog/data-source-credibility     /blog/data-source-credibility-stolen-goods-verification  301!
+/blog/industry-insights-2024      /blog            301!
+/blog/what-to-do-if-you-bought-stolen  /blog        301!
+/blog/ai-verification-technology  /blog            301!
+/blog/verification-data-privacy   /blog            301!
+/blog/serial-numbers-stolen-goods-101  /blog        301!
 /city/phoenix                     /verify  301!
 /city/los-angeles                 /stolen-check-los-angeles  301!
 /city/chicago                     /verify  301!
