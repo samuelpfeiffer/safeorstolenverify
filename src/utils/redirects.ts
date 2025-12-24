@@ -86,7 +86,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/indiana-vin-lookup', to: '/vin-checker', permanent: true },
   { from: '/new-mexico-vin-lookup', to: '/vin-checker', permanent: true },
   { from: '/oklahoma-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/arizona-license-plate-lookup', to: '/license-plate-lookup', permanent: true },
+  // Note: /arizona-license-plate-lookup now has dedicated page - removed redirect
 
   // ===== CRAWLED NOT INDEXED - Dec 2025 GSC =====
   { from: '/app/buyers', to: '/app', permanent: true },

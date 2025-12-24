@@ -94,7 +94,8 @@ const PennsylvaniaLicensePlateLookupPage = lazy(() => import('@/pages/Pennsylvan
 const OhioLicensePlateLookupPage = lazy(() => import('@/pages/OhioLicensePlateLookupPage'));
 const NorthCarolinaLicensePlateLookupPage = lazy(() => import('@/pages/NorthCarolinaLicensePlateLookupPage'));
 const WashingtonLicensePlateLookupPage = lazy(() => import('@/pages/WashingtonLicensePlateLookupPage'));
-
+const ArizonaLicensePlateLookupPage = lazy(() => import('@/pages/ArizonaLicensePlateLookupPage'));
+const ArizonaVinLookupPage = lazy(() => import('@/pages/ArizonaVinLookupPage'));
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
@@ -280,6 +281,7 @@ export const AppRoutes = () => {
         <Route path="/ohio-license-plate-lookup" element={<OhioLicensePlateLookupPage />} />
         <Route path="/north-carolina-license-plate-lookup" element={<NorthCarolinaLicensePlateLookupPage />} />
         <Route path="/washington-license-plate-lookup" element={<WashingtonLicensePlateLookupPage />} />
+        <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookupPage />} />
 
         {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
@@ -292,6 +294,7 @@ export const AppRoutes = () => {
         <Route path="/ohio-vin-lookup" element={<OhioVinLookup />} />
         <Route path="/north-carolina-vin-lookup" element={<NorthCarolinaVinLookup />} />
         <Route path="/washington-vin-lookup" element={<WashingtonVinLookup />} />
+        <Route path="/arizona-vin-lookup" element={<ArizonaVinLookupPage />} />
 
         {/* COMPETITOR COMPARISON PAGES */}
         <Route path="/compare" element={<Compare />} />

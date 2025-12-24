@@ -92,6 +92,8 @@ export const VALID_ROUTES = new Set([
   '/ohio-license-plate-lookup',
   '/north-carolina-license-plate-lookup',
   '/washington-license-plate-lookup',
+  '/arizona-license-plate-lookup',
+  '/arizona-vin-lookup',
   
   // City pages
   '/stolen-check-los-angeles',
