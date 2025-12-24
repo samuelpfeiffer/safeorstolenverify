@@ -26,6 +26,14 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/android-app', to: '/app', permanent: true },
   { from: '/ios-app', to: '/app', permanent: true },
   { from: '/mobile-app', to: '/app', permanent: true },
+  { from: '/app/ios', to: '/app', permanent: true },
+  { from: '/app/android', to: '/app', permanent: true },
+  { from: '/app/serial-number-checker', to: '/serial-number-checker', permanent: true },
+
+  // ===== SOFT 404 BLOG REDIRECTS (Dec 2025 GSC) =====
+  { from: '/blog/best-stolen-item-checker-apps-2025', to: '/blog/stolen-verification-app-guide', permanent: true },
+  { from: '/blog/why-verify-serial-numbers', to: '/blog/complete-verification-guide', permanent: true },
+  { from: '/blog/complete-marketplace-buyers-checklist', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
 
   // ===== SOFT 404 / LEGACY VERIFICATION URLS =====
   { from: '/bulk', to: '/verify', permanent: true },
