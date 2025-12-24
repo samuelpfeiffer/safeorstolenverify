@@ -83,6 +83,27 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/texas', to: '/texas-vin-lookup', permanent: true },
   { from: '/florida', to: '/florida-vin-lookup', permanent: true },
   { from: '/new-york', to: '/new-york-vin-lookup', permanent: true },
+  { from: '/indiana-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/new-mexico-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/oklahoma-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/arizona-license-plate-lookup', to: '/license-plate-lookup', permanent: true },
+
+  // ===== NOINDEX PAGES - Dec 2025 GSC =====
+  { from: '/transparency', to: '/about', permanent: true },
+  { from: '/features', to: '/how-it-works', permanent: true },
+  { from: '/app/sellers', to: '/app', permanent: true },
+  { from: '/app/vs-carfax', to: '/vs-carfax', permanent: true },
+  { from: '/app/features/barcode-scanner', to: '/app/barcode-scanner', permanent: true },
+  { from: '/app/stolen-database-search', to: '/stolen-database', permanent: true },
+  { from: '/app/investigate-stolen-property', to: '/verify', permanent: true },
+  { from: '/app/lookup-stolen-items', to: '/verify', permanent: true },
+  { from: '/app/vs-imeiinfo', to: '/vs-imeiinfo', permanent: true },
+  { from: '/app/check-stolen-before-buying', to: '/verify', permanent: true },
+  { from: '/guides/verify-craigslist-items', to: '/craigslist-safety-verification', permanent: true },
+  { from: '/app/philadelphia', to: '/stolen-check-philadelphia', permanent: true },
+  { from: '/guides/offerup-scam-protection', to: '/offerup-verify-not-stolen', permanent: true },
+  { from: '/app/carfax-alternative', to: '/vs-carfax', permanent: true },
+  { from: '/blog/how-to-use-imei-checker-app', to: '/blog/imei-checker-app-download', permanent: true },
 
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
