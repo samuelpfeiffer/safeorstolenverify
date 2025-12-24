@@ -88,6 +88,14 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/oklahoma-vin-lookup', to: '/vin-checker', permanent: true },
   { from: '/arizona-license-plate-lookup', to: '/license-plate-lookup', permanent: true },
 
+  // ===== CRAWLED NOT INDEXED - Dec 2025 GSC =====
+  { from: '/app/buyers', to: '/app', permanent: true },
+  { from: '/auction-houses', to: '/for-auction-houses', permanent: true },
+  { from: '/case-studies', to: '/testimonials', permanent: true },
+  { from: '/accuracy', to: '/how-it-works', permanent: true },
+  { from: '/avoid-stolen-goods', to: '/how-it-works', permanent: true },
+  { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
+
   // ===== NOINDEX PAGES - Dec 2025 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
   { from: '/features', to: '/how-it-works', permanent: true },
