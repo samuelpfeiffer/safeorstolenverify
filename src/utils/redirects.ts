@@ -41,6 +41,13 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/state/california/stolen-item-checker', to: '/verify', permanent: true },
   { from: '/state/texas/stolen-item-checker', to: '/verify', permanent: true },
   { from: '/state/florida/stolen-item-checker', to: '/verify', permanent: true },
+  { from: '/city/chicago-il/stolen-item-checker', to: '/stolen-check-chicago', permanent: true },
+  { from: '/city/los-angeles-ca/stolen-item-checker', to: '/stolen-check-los-angeles', permanent: true },
+  { from: '/city/new-york-ny/stolen-item-checker', to: '/stolen-check-new-york-city', permanent: true },
+
+  // ===== MARKETPLACE VERIFICATION URLS =====
+  { from: '/offerup-verification', to: '/offerup-verify-not-stolen', permanent: true },
+  { from: '/facebook-marketplace-verification', to: '/facebook-marketplace-stolen-check', permanent: true },
 
   // ===== SOFT 404 / LEGACY VERIFICATION URLS =====
   { from: '/bulk', to: '/verify', permanent: true },
@@ -98,6 +105,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/for-businesses', to: '/for-pawn-shops', permanent: true },
   { from: '/seo-strategy', to: '/about', permanent: true },
   { from: '/seller-guide', to: '/about', permanent: true },
+  { from: '/service-limitations', to: '/terms', permanent: true },
 ];
 
 /**
