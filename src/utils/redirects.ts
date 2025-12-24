@@ -34,6 +34,13 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/best-stolen-item-checker-apps-2025', to: '/blog/stolen-verification-app-guide', permanent: true },
   { from: '/blog/why-verify-serial-numbers', to: '/blog/complete-verification-guide', permanent: true },
   { from: '/blog/complete-marketplace-buyers-checklist', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
+  { from: '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1', to: '/blog/complete-vin-guide', permanent: true },
+
+  // ===== STATE PATTERN URLS =====
+  { from: '/state/new-york/stolen-item-checker', to: '/verify', permanent: true },
+  { from: '/state/california/stolen-item-checker', to: '/verify', permanent: true },
+  { from: '/state/texas/stolen-item-checker', to: '/verify', permanent: true },
+  { from: '/state/florida/stolen-item-checker', to: '/verify', permanent: true },
 
   // ===== SOFT 404 / LEGACY VERIFICATION URLS =====
   { from: '/bulk', to: '/verify', permanent: true },
