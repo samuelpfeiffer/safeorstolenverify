@@ -12,6 +12,7 @@ import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, 
 import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
+import { VerificationProgress } from '@/components/verification/VerificationProgress';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
@@ -467,13 +468,15 @@ const VerifyPage = () => {
                 )}
               </Button>
 
-              {progress && (
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-pulse">
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  {progress}
-                </div>
-              )}
             </form>
+
+            {/* Real-time Progress Indicator */}
+            {isLoading && (
+              <VerificationProgress 
+                itemType={itemType || 'general'} 
+                isActive={isLoading} 
+              />
+            )}
           </CardContent>
         </Card>
 
