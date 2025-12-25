@@ -42,15 +42,15 @@ export const InternalLinksSection = () => {
       ]
     },
     {
-      title: "City Verification",
+      title: "For Business",
       icon: Building2,
       links: [
-        { to: "/stolen-check-los-angeles", label: "Los Angeles" },
-        { to: "/stolen-check-new-york-city", label: "New York City" },
-        { to: "/stolen-check-chicago", label: "Chicago" },
-        { to: "/stolen-check-houston", label: "Houston" },
-        { to: "/stolen-check-phoenix", label: "Phoenix" },
-        { to: "/stolen-check-dallas", label: "Dallas" },
+        { to: "/for-buyers", label: "For Buyers" },
+        { to: "/for-sellers", label: "For Sellers" },
+        { to: "/for-pawn-shops", label: "For Pawn Shops" },
+        { to: "/for-dealers", label: "For Car Dealers" },
+        { to: "/for-resellers", label: "For Resellers" },
+        { to: "/for-marketplaces", label: "For Marketplaces" },
       ]
     },
     {
