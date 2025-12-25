@@ -29,6 +29,19 @@ export const VALID_ROUTES = new Set([
   '/free-tools',
   '/stolen-database',
   '/marketplace-url-checker',
+  '/contact',
+  '/accuracy',
+  '/disclaimer',
+  '/our-story',
+  '/avoid-stolen-goods',
+  '/ultimate-guide',
+  '/how-to-check-if-anything-is-stolen-before-you-buy',
+  '/can-police-track-stolen-phone',
+  '/check-drone',
+  '/stolen-goods-checker',
+  '/auction-houses',
+  '/case-studies',
+  '/enterprise-demo',
   
   // Mobile routes
   '/mobile-verify',
@@ -182,6 +195,7 @@ export const VALID_ROUTES = new Set([
   '/blog/carfax-vs-free-vin-alternatives',
   '/blog/arizona-theftaz-guide',
   '/blog/ps5-stolen-check-guide',
+  '/blog/real-user-stories-stolen-goods-verification',
   
   // News & social
   '/news/onevalley-recognition',
