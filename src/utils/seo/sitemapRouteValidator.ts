@@ -16,15 +16,19 @@ export const VALID_ROUTES = new Set([
   '/faq',
   '/terms',
   '/privacy',
+  '/sitemap',
   '/how-it-works',
   '/auth',
   '/report-stolen',
   '/checkout-redirect',
   '/verification-success',
+  '/payment-success',
   '/testimonials',
   '/download',
   '/compare',
   '/free-tools',
+  '/stolen-database',
+  '/marketplace-url-checker',
   
   // Mobile routes
   '/mobile-verify',
@@ -48,12 +52,33 @@ export const VALID_ROUTES = new Set([
   '/firearms-check',
   '/license-plate-lookup',
   
+  // NEW SEO item pages
+  '/check-iphone-stolen',
+  '/check-samsung-stolen',
+  '/check-android-phone-stolen',
+  '/check-car-stolen-vin',
+  '/check-motorcycle-stolen-vin',
+  '/check-laptop-stolen',
+  '/check-tablet-stolen',
+  '/check-bicycle-stolen',
+  '/check-gaming-console-stolen',
+  '/check-watch-stolen',
+  '/check-camera-stolen',
+  '/check-power-tools-stolen',
+  '/check-firearm-serial',
+  '/check-jewelry-stolen',
+  
   // Competitor comparisons
   '/vs-checkmend',
   '/vs-imeiinfo',
   '/vs-swappa',
   '/vs-carfax',
   '/vs-autocheck',
+  '/comparisons/safeorstolen-vs-imei-info',
+  '/comparisons/safeorstolen-vs-swappa',
+  '/comparisons/nicb-vincheck-alternative',
+  '/comparisons/best-free-imei-checkers-2025',
+  '/comparisons/top-vin-check-services-2025',
   
   // App pages
   '/app/features',
@@ -67,12 +92,19 @@ export const VALID_ROUTES = new Set([
   '/for-marketplaces',
   '/for-auction-houses',
   '/for-businesses',
+  '/for-electronics-resellers',
+  '/for-insurance-companies',
+  '/for-law-enforcement',
   
-  // Marketplace pages
+  // Marketplace pages (all 8)
   '/facebook-marketplace-stolen-check',
   '/craigslist-safety-verification',
   '/offerup-verify-not-stolen',
   '/ebay-stolen-item-check',
+  '/mercari-stolen-check',
+  '/poshmark-stolen-check',
+  '/stockx-verification',
+  '/letgo-stolen-check',
   
   // Top 10 state VIN pages
   '/california-vin-lookup',
@@ -85,6 +117,7 @@ export const VALID_ROUTES = new Set([
   '/ohio-vin-lookup',
   '/north-carolina-vin-lookup',
   '/washington-vin-lookup',
+  '/arizona-vin-lookup',
   
   // Top 10 state license plate pages
   '/california-license-plate-lookup',
@@ -98,7 +131,6 @@ export const VALID_ROUTES = new Set([
   '/north-carolina-license-plate-lookup',
   '/washington-license-plate-lookup',
   '/arizona-license-plate-lookup',
-  '/arizona-vin-lookup',
   
   // City pages
   '/stolen-check-los-angeles',
@@ -147,6 +179,8 @@ export const VALID_ROUTES = new Set([
   '/blog/firearm-serial-number-verification',
   '/blog/bicycle-stolen-serial-number-check',
   '/blog/verify-item-before-meetup',
+  '/blog/carfax-vs-free-vin-alternatives',
+  '/blog/arizona-theftaz-guide',
   
   // News & social
   '/news/onevalley-recognition',

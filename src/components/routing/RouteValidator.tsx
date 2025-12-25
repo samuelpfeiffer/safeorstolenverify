@@ -15,7 +15,10 @@ const DYNAMIC_ROUTE_PATTERNS = [
   /^\/blog\/category\/[^\/]+$/,
   /^\/verification-results\/[^\/]+$/,
   /^\/admin\/[^\/]+$/,
-  /^\/fastercapital\/[^\/]+$/
+  /^\/fastercapital\/[^\/]+$/,
+  /^\/item\/[^\/]+$/,
+  /^\/shared\/[^\/]+$/,
+  /^\/youtube\/[^\/]+$/,
 ];
 
 export const RouteValidator: React.FC = () => {

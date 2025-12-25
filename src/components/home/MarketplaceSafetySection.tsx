@@ -36,7 +36,7 @@ export const MarketplaceSafetySection = () => {
               <p className="text-muted-foreground mb-4">
                 Protect yourself when buying on eBay, Facebook Marketplace, OfferUp, or Craigslist. Verify phones, electronics, and items instantly.
               </p>
-              <Button variant="outline" onClick={() => navigate('/app/ebay-verification')}>
+              <Button variant="outline" onClick={() => navigate('/ebay-stolen-item-check')}>
                 Learn More
               </Button>
             </CardContent>
@@ -50,7 +50,7 @@ export const MarketplaceSafetySection = () => {
               <p className="text-muted-foreground mb-4">
                 Don't pay $39.99 for Carfax. Check VIN numbers and stolen vehicle status 100% FREE. Download our app or verify online.
               </p>
-              <Button onClick={() => navigate('/carfax-alternative')}>
+              <Button onClick={() => navigate('/vs-carfax')}>
                 Try Free Alternative
               </Button>
             </CardContent>
