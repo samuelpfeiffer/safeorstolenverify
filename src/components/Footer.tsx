@@ -47,14 +47,14 @@ const Footer = () => {
     label: 'Help Center',
     href: '/faq'
   }, {
-    label: 'API Documentation',
-    href: '/about'
+    label: 'Contact Us',
+    href: '/contact'
   }, {
-    label: 'System Status',
-    href: '/about'
+    label: 'For Buyers',
+    href: '/for-buyers'
   }, {
-    label: 'Report Issue',
-    href: '/about'
+    label: 'For Sellers',
+    href: '/for-sellers'
   }];
   const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
   return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
