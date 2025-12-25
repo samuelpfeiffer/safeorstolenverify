@@ -128,11 +128,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /wisconsin-vin-lookup       /vin-checker  301!
 /wyoming-vin-lookup         /vin-checker  301!
 
-# KEPT LICENSE PLATE STATES (10): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington
-# REDIRECTED LICENSE PLATE STATES (40):
+# KEPT LICENSE PLATE STATES (11): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington, Arizona
+# NOTE: These 11 states have REAL pages in AppRoutes - DO NOT REDIRECT
+# REDIRECTED LICENSE PLATE STATES (39):
 /alabama-license-plate-lookup         /license-plate-lookup  301!
 /alaska-license-plate-lookup          /license-plate-lookup  301!
-/arizona-license-plate-lookup         /license-plate-lookup  301!
+# /arizona-license-plate-lookup has REAL page - DO NOT REDIRECT
 /arkansas-license-plate-lookup        /license-plate-lookup  301!
 /colorado-license-plate-lookup        /license-plate-lookup  301!
 /connecticut-license-plate-lookup     /license-plate-lookup  301!
