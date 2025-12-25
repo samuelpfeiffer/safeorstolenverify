@@ -80,30 +80,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://safeorstolen.com/contact</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/accuracy</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/disclaimer</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.40</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/our-story</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.60</priority>
-  </url>
+  <!-- Note: contact, accuracy, disclaimer, our-story need page components before adding to sitemap -->
 
   <!-- ============================================ -->
   <!-- APP & DOWNLOAD PAGES (4 pages) -->
@@ -229,46 +206,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://safeorstolen.com/check-drone</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/stolen-goods-checker</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- ============================================ -->
-  <!-- EDUCATIONAL & GUIDE PAGES (4 pages) - From GSC unindexed -->
-  <!-- ============================================ -->
-  <url>
-    <loc>https://safeorstolen.com/avoid-stolen-goods</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/ultimate-guide</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/how-to-check-if-anything-is-stolen-before-you-buy</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/can-police-track-stolen-phone</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
+  <!-- Note: check-drone, stolen-goods-checker need page components -->
+  <!-- Note: avoid-stolen-goods, ultimate-guide, how-to-check-if-anything-is-stolen-before-you-buy, can-police-track-stolen-phone need page components -->
 
   <!-- ============================================ -->
   <!-- COMPETITOR COMPARISON PAGES (5 pages) -->
@@ -365,24 +304,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-  <url>
-    <loc>https://safeorstolen.com/auction-houses</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/case-studies</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/enterprise-demo</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
+  <!-- Note: auction-houses, case-studies, enterprise-demo need page components -->
 
   <!-- ============================================ -->
   <!-- BLOG INDEX + TOP ARTICLES (17 pages) -->
