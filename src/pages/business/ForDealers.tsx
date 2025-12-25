@@ -1,11 +1,20 @@
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Zap, Users, TrendingUp, FileCheck, Clock } from 'lucide-react';
-import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 
 export default function ForDealers() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com/" },
+      { "@type": "ListItem", "position": 2, "name": "For Car Dealers", "item": "https://safeorstolen.com/for-dealers" }
+    ]
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -29,10 +38,12 @@ export default function ForDealers() {
         title="SafeOrStolen for Car Dealers - Instant VIN Verification"
         description="Enterprise VIN verification for car dealerships. Check title status, stolen vehicles, and wholesale integrity in 3 seconds. Protect your inventory, build customer trust, reduce legal risk."
         keywords="car dealer VIN check, dealership VIN verification, wholesale vehicle verification, dealer title check, automotive inventory verification"
-        structuredData={structuredData}
+        structuredData={[breadcrumbSchema, structuredData]}
+        canonical="/for-dealers"
       />
 
       <div className="container mx-auto px-4 py-12">
+        <BreadcrumbNavigation items={[{ name: 'For Car Dealers', href: '/for-dealers' }]} className="mb-8" />
         <section className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">SafeOrStolen for Car Dealers</h1>
           <p className="text-2xl text-muted-foreground mb-8">Verify Every Vehicle in 3 Seconds. Eliminate Wholesale Risk. Build Customer Trust.</p>
