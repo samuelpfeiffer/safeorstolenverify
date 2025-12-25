@@ -14,7 +14,7 @@ const blogArticles = [
   },
   {
     title: 'How to Check if a Phone is Stolen Before Buying',
-    slug: 'how-to-check-if-phone-is-stolen',
+    slug: 'how-to-check-if-phone-stolen',
     excerpt: 'Complete guide to verifying smartphone legitimacy with IMEI checks, carrier blacklist verification, and red flags to watch for when buying used phones.',
     category: 'Buying Guides',
     readTime: '8 min',

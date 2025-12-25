@@ -245,7 +245,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-car-database         /verify                301!
 /verify-vin-before-purchase  /vin-checker           301!
 /how-to-verify-car-not-stolen /check-car            301!
-/how-to-check-if-phone-is-stolen /check-phone       301!
+/how-to-check-if-phone-is-stolen /blog/how-to-check-if-phone-stolen       301!
 /ebay-verification           /verify                301!
 
 # GSC December 2025 validation failures
@@ -555,6 +555,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # Blog posts without matching routes
 /blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
 /blog/5-signs-used-phone-might-be-stolen                         /blog/how-to-check-if-phone-stolen  301!
+/blog/how-to-check-if-phone-is-stolen                            /blog/how-to-check-if-phone-stolen  301!
 /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
 /blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
 
@@ -569,8 +570,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/how-to-check-if-device-is-safe-stolen         /blog/how-to-check-if-phone-stolen  301!
 /blog/the-cost-of-secondhand-market-fraud-in-2025-* /blog  301!
 /blog/verification-methodology-how-we-check-stolen-items /about  301!
-/blog/phone-verification-guide    /blog/how-to-check-if-phone-stolen  301!
-/blog/verification-methodology    /blog            301!
+# /blog/phone-verification-guide has real route - DO NOT REDIRECT
+# /blog/verification-methodology has real route - DO NOT REDIRECT
 /blog/data-source-credibility     /blog/data-source-credibility-stolen-goods-verification  301!
 /blog/industry-insights-2024      /blog            301!
 /blog/what-to-do-if-you-bought-stolen  /blog        301!
