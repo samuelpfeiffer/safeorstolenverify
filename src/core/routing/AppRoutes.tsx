@@ -174,6 +174,11 @@ const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
 const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
+const ForBuyers = lazy(() => import('@/pages/business/ForBuyers'));
+const ForSellers = lazy(() => import('@/pages/business/ForSellers'));
+
+// Contact Page
+const ContactPage = lazy(() => import('@/pages/ContactPage'));
 
 // App Landing Pages
 const StolenPhoneCheckerApp = lazy(() => import('@/pages/app/StolenPhoneCheckerApp'));
@@ -362,7 +367,7 @@ export const AppRoutes = () => {
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
 
-        {/* BUSINESS PAGES (All 8 Business Types) */}
+        {/* BUSINESS PAGES (All 10 Business Types) */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />
         <Route path="/for-dealers" element={<ForDealers />} />
         <Route path="/for-marketplaces" element={<ForMarketplaces />} />
@@ -371,6 +376,11 @@ export const AppRoutes = () => {
         <Route path="/for-electronics-resellers" element={<ForElectronicsResellers />} />
         <Route path="/for-insurance-companies" element={<ForInsuranceCompanies />} />
         <Route path="/for-law-enforcement" element={<ForLawEnforcement />} />
+        <Route path="/for-buyers" element={<ForBuyers />} />
+        <Route path="/for-sellers" element={<ForSellers />} />
+        
+        {/* CONTACT PAGE */}
+        <Route path="/contact" element={<ContactPage />} />
 
         {/* CITY PAGES */}
         <Route path="/stolen-check-los-angeles" element={<StolenCheckLosAngeles />} />

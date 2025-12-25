@@ -381,7 +381,7 @@
   </url>
 
   <!-- ============================================ -->
-  <!-- BUSINESS PAGES (8 pages) -->
+  <!-- BUSINESS PAGES (10 pages) -->
   <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/for-businesses</loc>
@@ -430,6 +430,24 @@
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/for-buyers</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/for-sellers</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/contact</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
 
   <!-- ============================================ -->
