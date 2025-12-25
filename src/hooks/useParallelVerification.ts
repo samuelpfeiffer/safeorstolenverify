@@ -4,7 +4,6 @@
  */
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { useUnifiedAuth } from './useUnifiedAuth';
 import { verificationService, type AggregatedResult } from '@/services/VerificationService';
@@ -17,7 +16,6 @@ export const useParallelVerification = () => {
   const [progress, setProgress] = useState<string>('');
   const { user } = useUnifiedAuth();
   const { toast } = useToast();
-  const navigate = useNavigate();
 
   const verify = async (identifier: string, itemType?: string) => {
     if (!identifier || identifier.trim().length === 0) {
@@ -29,85 +27,6 @@ export const useParallelVerification = () => {
       return null;
     }
 
-    // CRITICAL: Require authentication - no free anonymous searches
-    if (!user?.id) {
-      toast({
-        title: "Sign Up Required",
-        description: "Create a free account to verify items. Get 2 free searches!",
-        variant: "default",
-      });
-      // Use navigate instead of window.location to preserve state
-      navigate('/auth', { state: { redirect: '/verify', pendingSearch: identifier } });
-      return null;
-    }
-
-    // Check free search limit for non-subscribed users
-    try {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('free_searches_used, trial_started_at, subscription_tier')
-        .eq('id', user.id)
-        .single();
-
-      const isSubscribed = profile?.subscription_tier && 
-        !['free', 'starter'].includes(profile.subscription_tier);
-
-      if (!isSubscribed) {
-        const searchesUsed = profile?.free_searches_used || 0;
-        const trialStarted = profile?.trial_started_at;
-        
-        // Check if trial expired (14 days)
-        if (trialStarted) {
-          const trialStart = new Date(trialStarted);
-          const now = new Date();
-          const daysSinceStart = (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24);
-          
-          if (daysSinceStart > 14) {
-            toast({
-              title: "Trial Expired",
-              description: "Your 14-day trial has ended. Subscribe to continue verifying items.",
-              variant: "destructive",
-            });
-            navigate('/pricing', { state: { reason: 'trial-expired' } });
-            return null;
-          }
-        }
-
-        // Check if used all free searches
-        if (searchesUsed >= 2) {
-          toast({
-            title: "Free Searches Used",
-            description: "You've used your 2 free searches. Subscribe for just $4.99/mo to continue.",
-            variant: "destructive",
-          });
-          navigate('/pricing', { state: { reason: 'limit-reached' } });
-          return null;
-        }
-
-        // Increment free search counter
-        const newCount = searchesUsed + 1;
-        await supabase
-          .from('profiles')
-          .update({ 
-            free_searches_used: newCount,
-            trial_started_at: trialStarted || new Date().toISOString()
-          })
-          .eq('id', user.id);
-
-        // Show warning on last free search
-        if (newCount === 2) {
-          toast({
-            title: "Last Free Search Used",
-            description: "Subscribe now for just $4.99/mo to keep protecting yourself from stolen items.",
-            variant: "default",
-          });
-        }
-      }
-    } catch (profileError) {
-      console.error('[useParallelVerification] Profile check error:', profileError);
-      // Continue with verification even if profile check fails
-    }
-
     setIsLoading(true);
     setResult(null);
     setProgress('Detecting item type...');
@@ -117,7 +36,7 @@ export const useParallelVerification = () => {
       const detectedType = itemType || detectItemType(identifier);
       setProgress(`Checking ${detectedType} across multiple databases...`);
 
-      // Call verification service
+      // Call verification service (works for both authenticated and anonymous users)
       const verificationResult = await verificationService.verifyItem({
         identifier: identifier.trim(),
         itemType: detectedType,
@@ -137,6 +56,46 @@ export const useParallelVerification = () => {
         description: verificationResult.message,
         variant: toastVariant,
       });
+
+      // AFTER showing results: handle free search tracking for authenticated users
+      if (user?.id) {
+        try {
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('free_searches_used, trial_started_at, subscription_tier')
+            .eq('id', user.id)
+            .single();
+
+          const isSubscribed = profile?.subscription_tier && 
+            !['free', 'starter'].includes(profile.subscription_tier);
+
+          if (!isSubscribed) {
+            const searchesUsed = profile?.free_searches_used || 0;
+            const trialStarted = profile?.trial_started_at;
+            
+            // Track the search
+            const newCount = searchesUsed + 1;
+            await supabase
+              .from('profiles')
+              .update({ 
+                free_searches_used: newCount,
+                trial_started_at: trialStarted || new Date().toISOString()
+              })
+              .eq('id', user.id);
+
+            // Show warning on last free search
+            if (newCount >= 2) {
+              toast({
+                title: "Free Searches Used",
+                description: "Subscribe for just $4.99/mo to continue protecting yourself from stolen items.",
+                variant: "default",
+              });
+            }
+          }
+        } catch (profileError) {
+          console.error('[useParallelVerification] Profile tracking error:', profileError);
+        }
+      }
 
       return verificationResult;
 

@@ -141,21 +141,8 @@ const VerifyPage = () => {
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // CRITICAL: Require authentication for all verifications
-    if (!isAuthenticated) {
-      const trimmed = identifier.trim();
-
-      // Best-effort: save the user's typed identifier so we can restore it post-auth
-      if (trimmed) {
-        savePendingVerification(trimmed, itemType || undefined, 'buyer').catch(() => {
-          // Ignore errors here; URL redirect still preserves the value
-        });
-      }
-
-      const redirect = `/verify?q=${encodeURIComponent(trimmed)}${itemType ? `&type=${encodeURIComponent(itemType)}` : ''}`;
-      navigate(`/auth?tab=signup&redirect=${encodeURIComponent(redirect)}`);
-      return;
-    }
+    // Clear previous results
+    setCustomResult(null);
 
     // If license plate selected, use universal-state-lookup
     if (itemType === 'license_plate') {
