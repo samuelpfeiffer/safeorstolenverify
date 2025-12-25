@@ -1,20 +1,34 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, CheckCircle, AlertTriangle, Smartphone, DollarSign, Scale, Search, Star, ArrowRight } from 'lucide-react';
 
 const ForBuyers = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Buyer Protection - Check Items Before Purchase | SafeOrStolen</title>
-        <meta name="description" content="Protect yourself from buying stolen goods. Verify IMEI, VIN, serial numbers before purchasing secondhand phones, cars, electronics. 2 free searches. Instant results." />
-        <meta name="keywords" content="buyer protection, verify before buying, check if stolen, IMEI check buyer, VIN check before purchase, secondhand buyer safety, avoid stolen goods" />
-        <link rel="canonical" href="https://safeorstolen.com/for-buyers" />
-        <meta property="og:title" content="Buyer Protection - Check Items Before Purchase | SafeOrStolen" />
-        <meta property="og:description" content="Protect yourself from buying stolen goods. Verify any item before purchase with instant database checks." />
-        <meta property="og:url" content="https://safeorstolen.com/for-buyers" />
-      </Helmet>
+    <>
+      <PageSEO
+        title="Buyer Protection - Check Items Before Purchase | SafeOrStolen"
+        description="Protect yourself from buying stolen goods. Verify IMEI, VIN, serial numbers before purchasing secondhand phones, cars, electronics. 2 free searches. Instant results."
+        keywords="buyer protection, verify before buying, check if stolen, IMEI check buyer, VIN check before purchase, secondhand buyer safety, avoid stolen goods"
+        canonical="/for-buyers"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Buyer Protection Service",
+          "description": "Verify items before purchasing to protect yourself from stolen goods",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "serviceType": "Buyer Verification Service"
+        }}
+      />
+      
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'For Buyers', href: '/for-buyers' }]} />
+        </div>
 
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-background via-background to-green-950/20">
@@ -211,7 +225,8 @@ const ForBuyers = () => {
           </Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

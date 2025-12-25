@@ -1,4 +1,5 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -30,16 +31,36 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Contact Us - SafeOrStolen Support</title>
-        <meta name="description" content="Contact SafeOrStolen for support, partnership inquiries, or feedback. We respond within 24 hours. Email support@safeorstolen.com or use our contact form." />
-        <meta name="keywords" content="contact safeorstolen, safeorstolen support, stolen item checker help, IMEI checker support" />
-        <link rel="canonical" href="https://safeorstolen.com/contact" />
-        <meta property="og:title" content="Contact Us - SafeOrStolen Support" />
-        <meta property="og:description" content="Contact SafeOrStolen for support, partnership inquiries, or feedback. We respond within 24 hours." />
-        <meta property="og:url" content="https://safeorstolen.com/contact" />
-      </Helmet>
+    <>
+      <PageSEO
+        title="Contact Us - SafeOrStolen Support"
+        description="Contact SafeOrStolen for support, partnership inquiries, or feedback. We respond within 24 hours. Email support@safeorstolen.com or use our contact form."
+        keywords="contact safeorstolen, safeorstolen support, stolen item checker help, IMEI checker support"
+        canonical="/contact"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact SafeOrStolen",
+          "description": "Get in touch with SafeOrStolen for support, partnerships, or feedback",
+          "url": "https://safeorstolen.com/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "SafeOrStolen",
+            "email": "support@safeorstolen.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "support@safeorstolen.com",
+              "contactType": "Customer Support",
+              "availableLanguage": ["English"]
+            }
+          }
+        }}
+      />
+      
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'Contact Us', href: '/contact' }]} />
+        </div>
 
       {/* Hero Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-background to-primary/5">
@@ -202,7 +223,8 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

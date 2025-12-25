@@ -1,20 +1,34 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, CheckCircle, BadgeCheck, Smartphone, TrendingUp, FileCheck, Search, Star, ArrowRight, Share2 } from 'lucide-react';
 
 const ForSellers = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Seller Protection - Prove Your Items Are Legitimate | SafeOrStolen</title>
-        <meta name="description" content="Build buyer trust by proving your items aren't stolen. Get verified seller badges. Share verification certificates. Sell faster on Facebook Marketplace, eBay, Craigslist." />
-        <meta name="keywords" content="seller protection, prove item not stolen, verification certificate, verified seller, marketplace trust, sell faster, legitimate seller proof" />
-        <link rel="canonical" href="https://safeorstolen.com/for-sellers" />
-        <meta property="og:title" content="Seller Protection - Prove Your Items Are Legitimate | SafeOrStolen" />
-        <meta property="og:description" content="Build buyer trust by proving your items aren't stolen. Get verification certificates and sell faster." />
-        <meta property="og:url" content="https://safeorstolen.com/for-sellers" />
-      </Helmet>
+    <>
+      <PageSEO
+        title="Seller Protection - Prove Your Items Are Legitimate | SafeOrStolen"
+        description="Build buyer trust by proving your items aren't stolen. Get verified seller badges. Share verification certificates. Sell faster on Facebook Marketplace, eBay, Craigslist."
+        keywords="seller protection, prove item not stolen, verification certificate, verified seller, marketplace trust, sell faster, legitimate seller proof"
+        canonical="/for-sellers"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Seller Verification Service",
+          "description": "Prove your items are legitimate with verification certificates to build buyer trust",
+          "provider": {
+            "@type": "Organization",
+            "name": "SafeOrStolen"
+          },
+          "serviceType": "Seller Verification Service"
+        }}
+      />
+      
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pt-24 pb-4">
+          <BreadcrumbNavigation items={[{ name: 'For Sellers', href: '/for-sellers' }]} />
+        </div>
 
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-background via-background to-blue-950/20">
@@ -228,7 +242,8 @@ const ForSellers = () => {
           </Button>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
