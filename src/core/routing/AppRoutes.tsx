@@ -202,6 +202,7 @@ const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
 const BatchIndexPage = lazy(() => import('@/pages/admin/BatchIndexPage'));
 const StripeAdminPage = lazy(() => import('@/pages/admin/StripeAdminPage'));
 const AIOrchestrator = lazy(() => import('@/pages/admin/AIOrchestrator'));
+const UserOutreachPage = lazy(() => import('@/pages/admin/UserOutreachPage'));
 
 // Stolen Database & Shared Report Pages
 const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
@@ -411,6 +412,7 @@ export const AppRoutes = () => {
         <Route path="/admin/stripe" element={<StripeAdminPage />} />
         <Route path="/admin/marketing" element={<MarketingDashboard />} />
         <Route path="/admin/ai-orchestrator" element={<AIOrchestrator />} />
+        <Route path="/admin/user-outreach" element={<UserOutreachPage />} />
 
         {/* ALL OTHER STATE PAGES REDIRECT TO MAIN PAGES (Server-side 301s in _redirects handle these) */}
         {/* Remaining 40 VIN states → /vin-checker */}
