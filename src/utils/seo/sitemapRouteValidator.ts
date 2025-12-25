@@ -181,6 +181,7 @@ export const VALID_ROUTES = new Set([
   '/blog/verify-item-before-meetup',
   '/blog/carfax-vs-free-vin-alternatives',
   '/blog/arizona-theftaz-guide',
+  '/blog/ps5-stolen-check-guide',
   
   // News & social
   '/news/onevalley-recognition',
@@ -215,6 +216,7 @@ export const REDIRECT_URLS = new Set([
   '/check-android',
   '/blog/best-imei-checker-tools-2025',
   '/check-imei-before-buying',
+  '/results',
 ]);
 
 export interface ValidationResult {

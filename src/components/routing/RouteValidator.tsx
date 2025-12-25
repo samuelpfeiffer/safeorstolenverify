@@ -100,6 +100,9 @@ export const RouteValidator: React.FC = () => {
       '/privacy-policy-page': '/privacy',
       '/terms-of-service': '/terms',
       '/terms-of-service-page': '/terms',
+      
+      // Results page redirect
+      '/results': '/verify',
     };
     
     const redirectTo = redirectMap[currentPath.toLowerCase()];
