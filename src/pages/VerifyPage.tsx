@@ -271,10 +271,10 @@ const VerifyPage = () => {
         <div className="text-center space-y-3">
           <SocialProofBanner />
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            Paste URL or Enter ID — Check in Seconds
+            Verify Any Item Instantly
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            <strong className="text-secondary">Only SafeOrStolen</strong> can analyze marketplace listing URLs. Or manually enter IMEI, VIN, serial numbers.
+            Check IMEI, VIN, or serial numbers against 100+ databases in seconds.
           </p>
           <DataPartnerBadges variant="minimal" className="mt-4" />
         </div>
