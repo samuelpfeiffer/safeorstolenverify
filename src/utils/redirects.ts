@@ -32,6 +32,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
 
   // ===== SOFT 404 BLOG REDIRECTS (Dec 2025 GSC) =====
   { from: '/blog/best-stolen-item-checker-apps-2025', to: '/blog/stolen-verification-app-guide', permanent: true },
+  { from: '/blog/enterprise-security', to: '/for-businesses', permanent: true },
   { from: '/blog/why-verify-serial-numbers', to: '/blog/complete-verification-guide', permanent: true },
   { from: '/blog/complete-marketplace-buyers-checklist', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
   { from: '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1', to: '/blog/complete-vin-guide', permanent: true },
