@@ -78,72 +78,49 @@ export const AdvancedSchemaGenerator = () => {
     }
   };
 
-  // Product Schema for the verification service
-  const productSchema = {
+  // Service Schema for verification service (NOT Product - we are a service, not a product marketplace)
+  // NOTE: aggregateRating and review removed - Google requires real reviews, not fake ones
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "SafeOrStolen Verification Service",
     "description": "Instant stolen item verification checking IMEI, VIN, and serial numbers against 50+ global databases including NCIC, NICB, carrier blacklists",
-    "brand": {
-      "@type": "Brand",
-      "name": "SafeOrStolen"
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
     },
-    "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "0",
-      "highPrice": "9.99",
-      "priceCurrency": "USD",
-      "offerCount": "3",
-      "offers": [
+    "serviceType": "Stolen Item Verification",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Verification Plans",
+      "itemListElement": [
         {
           "@type": "Offer",
-          "name": "Free Plan",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Free Plan"
+          },
           "price": "0",
           "priceCurrency": "USD",
           "description": "2 free verifications"
         },
         {
           "@type": "Offer",
-          "name": "Pro Plan",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pro Plan"
+          },
           "price": "9.99",
           "priceCurrency": "USD",
           "description": "Unlimited verifications per month"
         }
       ]
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "2547",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Sarah M."
-        },
-        "reviewBody": "Saved me from buying a stolen iPhone on Facebook Marketplace. Instant results!"
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Mike T."
-        },
-        "reviewBody": "Essential for any used car purchase. Found out the VIN was flagged before I wasted my money."
-      }
-    ]
+    }
   };
 
   // HowTo Schema for featured snippets
@@ -311,9 +288,9 @@ export const AdvancedSchemaGenerator = () => {
         {JSON.stringify(professionalServiceSchema)}
       </script>
 
-      {/* Product Schema */}
+      {/* Service Schema */}
       <script type="application/ld+json">
-        {JSON.stringify(productSchema)}
+        {JSON.stringify(serviceSchema)}
       </script>
 
       {/* HowTo Schemas */}
