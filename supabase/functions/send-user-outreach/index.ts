@@ -161,7 +161,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (testEmail) {
       const template = getEmailTemplate(templateType, "Test User");
       const result = await resend.emails.send({
-        from: "SafeOrStolen <noreply@safeorstolen.com>",
+        from: "SafeOrStolen <onboarding@resend.dev>",
         to: [testEmail],
         subject: template.subject,
         html: template.html,
@@ -212,7 +212,7 @@ const handler = async (req: Request): Promise<Response> => {
       
       try {
         const emailResult = await resend.emails.send({
-          from: "SafeOrStolen <noreply@safeorstolen.com>",
+          from: "SafeOrStolen <onboarding@resend.dev>",
           to: [user.email],
           subject: template.subject,
           html: template.html,
