@@ -304,7 +304,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="text-sm text-muted-foreground">
-                © 2024 SafeOrStolen. All rights reserved.
+                © 2025 SafeOrStolen. All rights reserved.
               </div>
               <FasterCapitalBranding />
             </div>
