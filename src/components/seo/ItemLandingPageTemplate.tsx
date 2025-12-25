@@ -8,9 +8,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { PageSEO } from '@/components/seo/PageSEO';
+import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+
 interface ItemLandingPageProps {
   title: string;
   metaDescription: string;
@@ -38,6 +40,33 @@ export const ItemLandingPageTemplate = ({
 }: ItemLandingPageProps) => {
   const location = useLocation();
   
+  // Generate breadcrumb name from pathname
+  const breadcrumbName = location.pathname
+    .replace(/^\//, '')
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+  // BreadcrumbList schema for navigation
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://safeorstolen.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": breadcrumbName,
+        "item": `https://safeorstolen.com${location.pathname}`
+      }
+    ]
+  };
+
   // Service and HowTo schemas in @graph
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -84,8 +113,10 @@ export const ItemLandingPageTemplate = ({
     }))
   } : null;
 
-  // Combine schemas for PageSEO
-  const structuredData = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
+  // Combine schemas for PageSEO - include breadcrumb schema
+  const structuredData = faqSchema 
+    ? [breadcrumbSchema, serviceSchema, faqSchema] 
+    : [breadcrumbSchema, serviceSchema];
 
   return (
     <>
@@ -107,8 +138,13 @@ export const ItemLandingPageTemplate = ({
       </noscript>
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
+        {/* Breadcrumb Navigation */}
+        <div className="container mx-auto px-4 pt-20 pb-2">
+          <BreadcrumbNavigation items={[{ name: breadcrumbName, href: location.pathname }]} />
+        </div>
+
         {/* Hero Section */}
-        <section className="pt-24 pb-16 px-4">
+        <section className="pb-16 pt-4 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
