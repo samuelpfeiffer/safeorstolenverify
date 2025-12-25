@@ -585,13 +585,12 @@ const DashboardPage = () => {
           {/* Quick Access Tools */}
           <div className="flex justify-center gap-4 mb-6 flex-wrap">
             <Button 
-              asChild
               variant="outline" 
-              size="sm">
-              <Link to="/activity">
-                <Clock className="h-4 w-4 mr-2" />
-                Activity Timeline
-              </Link>
+              size="sm"
+              onClick={() => navigate('/dashboard')}
+            >
+              <Clock className="h-4 w-4 mr-2" />
+              Activity Timeline
             </Button>
             <Button 
               variant="outline" 
