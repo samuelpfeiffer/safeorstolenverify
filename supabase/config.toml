@@ -131,3 +131,6 @@ verify_jwt = true
 
 [functions.marketplace-url-analyzer]
 verify_jwt = false
+
+[functions.send-user-outreach]
+verify_jwt = false
