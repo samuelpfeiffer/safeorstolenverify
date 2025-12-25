@@ -28,7 +28,7 @@ const MobileDashboardPage: React.FC = () => {
     setTimeout(() => setRefreshing(false), 500);
   };
 
-  const gestures = useGestures({
+  const { handleTouchStart, handleTouchEnd } = useGestures({
     onSwipeDown: handleRefresh
   });
 
@@ -88,7 +88,8 @@ const MobileDashboardPage: React.FC = () => {
 
       <div 
         className="min-h-screen bg-gradient-to-b from-background to-muted pb-20"
-        {...gestures}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="container mx-auto px-4 py-6">
           {/* Header */}

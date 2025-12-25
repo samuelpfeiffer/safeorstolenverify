@@ -1,7 +1,17 @@
-import { useState, useEffect, useCallback } from 'react';
-import { PushNotifications, Token, ActionPerformed } from '@capacitor/push-notifications';
-import { Capacitor } from '@capacitor/core';
+import { useState, useCallback } from 'react';
 import { useToast } from '@/hooks/use-toast';
+
+// Safe check for native platform without importing Capacitor at top level
+const isNative = () => {
+  try {
+    // Only true if running in Capacitor native context
+    return typeof window !== 'undefined' && 
+           'Capacitor' in window && 
+           (window as any).Capacitor?.isNativePlatform?.();
+  } catch {
+    return false;
+  }
+};
 
 export const usePushNotifications = () => {
   const [token, setToken] = useState<string | null>(null);
@@ -9,12 +19,15 @@ export const usePushNotifications = () => {
   const { toast } = useToast();
 
   const initializePushNotifications = useCallback(async () => {
-    if (!Capacitor.isNativePlatform()) {
+    if (!isNative()) {
       console.log('Push notifications only work on native platforms');
       return;
     }
 
     try {
+      // Dynamic import to avoid breaking web builds
+      const { PushNotifications } = await import('@capacitor/push-notifications');
+      
       // Request permission
       const permission = await PushNotifications.requestPermissions();
       
@@ -24,9 +37,9 @@ export const usePushNotifications = () => {
       }
 
       // Listen for registration
-      await PushNotifications.addListener('registration', (token: Token) => {
-        console.log('Push registration success, token:', token.value);
-        setToken(token.value);
+      await PushNotifications.addListener('registration', (tokenData) => {
+        console.log('Push registration success, token:', tokenData.value);
+        setToken(tokenData.value);
       });
 
       // Listen for errors
@@ -49,7 +62,7 @@ export const usePushNotifications = () => {
       });
 
       // Handle notification action
-      await PushNotifications.addListener('pushNotificationActionPerformed', (notification: ActionPerformed) => {
+      await PushNotifications.addListener('pushNotificationActionPerformed', (notification) => {
         console.log('Push notification action performed:', notification);
       });
 
@@ -59,9 +72,10 @@ export const usePushNotifications = () => {
   }, [toast]);
 
   const disablePushNotifications = useCallback(async () => {
-    if (!Capacitor.isNativePlatform()) return;
+    if (!isNative()) return;
     
     try {
+      const { PushNotifications } = await import('@capacitor/push-notifications');
       await PushNotifications.removeAllListeners();
       setIsEnabled(false);
       setToken(null);
