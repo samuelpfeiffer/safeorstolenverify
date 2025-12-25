@@ -22,6 +22,11 @@ const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
 const PaymentSuccessPage = lazy(() => import('@/pages/PaymentSuccessPage'));
 
+// Mobile Pages
+const MobileVerifyPage = lazy(() => import('@/mobile/pages/MobileVerifyPage'));
+const MobileDashboardPage = lazy(() => import('@/mobile/pages/MobileDashboardPage'));
+const MobileSettingsPage = lazy(() => import('@/mobile/pages/MobileSettingsPage'));
+
 // Competitor Comparison Pages (SEO Strategy)
 const Compare = lazy(() => import('@/pages/Compare'));
 const FreeTools = lazy(() => import('@/pages/FreeTools'));
@@ -220,6 +225,11 @@ export const AppRoutes = () => {
         <Route path="/checkout-redirect" element={<CheckoutRedirectPage />} />
         <Route path="/verification-success" element={<VerificationSuccessPage />} />
         <Route path="/payment-success" element={<PaymentSuccessPage />} />
+
+        {/* MOBILE ROUTES */}
+        <Route path="/mobile-verify" element={<MobileVerifyPage />} />
+        <Route path="/mobile-dashboard" element={<MobileDashboardPage />} />
+        <Route path="/mobile-settings" element={<MobileSettingsPage />} />
 
         {/* STOLEN DATABASE & SHARED REPORTS */}
         <Route path="/stolen-database" element={<StolenDatabasePage />} />

@@ -26,6 +26,11 @@ export const VALID_ROUTES = new Set([
   '/compare',
   '/free-tools',
   
+  // Mobile routes
+  '/mobile-verify',
+  '/mobile-dashboard',
+  '/mobile-settings',
+  
   // Item checkers
   '/imei-checker',
   '/vin-checker',
