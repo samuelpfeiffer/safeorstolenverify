@@ -67,6 +67,7 @@ const PaymentSuccessPage = () => {
         title="Payment Successful | SafeOrStolen"
         description="Your payment was successful. Continue to your verification."
         canonical="/payment-success"
+        noIndex={true}
       />
 
       <div className="container mx-auto px-4 py-16 max-w-lg">
