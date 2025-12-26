@@ -111,9 +111,9 @@ const SitemapPage = () => {
       icon: BookOpen,
       links: [
         { to: "/blog", label: "All Blog Posts" },
-        { to: "/blog/how-to-check-if-phone-is-stolen", label: "How to Check if Phone is Stolen" },
-        { to: "/blog/complete-vin-verification-guide", label: "Complete VIN Guide" },
-        { to: "/blog/imei-verification-guide", label: "IMEI Verification Guide" },
+        { to: "/blog/how-to-check-if-phone-stolen", label: "How to Check if Phone is Stolen" },
+        { to: "/blog/complete-vin-guide", label: "Complete VIN Guide" },
+        { to: "/blog/complete-imei-guide-protect-yourself", label: "IMEI Verification Guide" },
         { to: "/blog/facebook-marketplace-scams", label: "Facebook Marketplace Scams" },
         { to: "/blog/pawn-shop-stolen-item-verification", label: "Pawn Shop Verification" },
         { to: "/blog/bicycle-stolen-serial-number-check", label: "Bicycle Serial Number Check" },
