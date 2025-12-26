@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SafeOrStolen Sitemap - PRODUCTION CLEAN VERSION -->
-<!-- Updated 2025-12-26 | GSC indexing fixes applied | Only indexable pages with unique content -->
-<!-- Total: 88 Real Indexable Pages -->
+<!-- Updated 2025-12-26T15:00:00Z | EMERGENCY FIX: Added static SEO content for crawlers -->
+<!-- Total: 88 Real Indexable Pages | Priority: Homepage + Item Pages -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 
