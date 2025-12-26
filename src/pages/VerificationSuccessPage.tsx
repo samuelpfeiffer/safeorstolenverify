@@ -67,6 +67,7 @@ const VerificationSuccessPage = () => {
         title="Payment Successful | SafeOrStolen"
         description="Your payment was successful. View your verification results."
         canonical="/verification-success"
+        noIndex={true}
       />
       
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex items-center justify-center p-4">
