@@ -199,69 +199,11 @@
       </article>
     </noscript>
     
-    <!-- SEO-critical static content visible to all crawlers (not hidden, not off-screen) -->
-    <!-- This content is replaced by React app after hydration -->
     <div id="root">
       <div class="loading">
         <div class="spinner"></div>
       </div>
-      
-      <!-- Static SEO content visible during initial load - Google sees this immediately -->
-      <article id="seo-content" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, sans-serif;">
-        <header>
-          <h1>Check If Secondhand Items Are Safe Or Stolen</h1>
-          <p style="font-size: 1.25rem; color: #aaa;">The trusted verification service for buyers, sellers, and businesses worldwide. The ONLY stolen item checker with a mobile app.</p>
-        </header>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Why Verify Before You Buy?</h2>
-          <p>Every year, millions of stolen items are sold on Facebook Marketplace, eBay, Craigslist, and OfferUp. Buying stolen property—even unknowingly—can result in losing both the item and your money when police recover it. SafeOrStolen protects you by instantly checking IMEI numbers, VIN numbers, and serial numbers against over 100 global databases including police records, NICB, insurance claims, and stolen property registries.</p>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>What Can You Verify?</h2>
-          <p><strong>Phones & Tablets</strong> - Check IMEI for blacklist, activation lock, carrier status. <strong>Cars & Vehicles</strong> - VIN lookup for theft, salvage, odometer fraud. <strong>Bikes & Bicycles</strong> - Serial number verification against bike registries. <strong>Laptops & Computers</strong> - Serial checks for stolen electronics. <strong>Power Tools</strong> - Verify DeWalt, Milwaukee, Makita tools. <strong>Cameras & Electronics</strong> - Check valuable equipment. <strong>Jewelry & Watches</strong> - Luxury item verification. <strong>Firearms</strong> - ATF database checks.</p>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>How SafeOrStolen Works</h2>
-          <p>1. Find the IMEI, VIN, or serial number on the item. 2. Enter or scan using our website or mobile app with camera scanning. 3. Get instant results - we check 100+ databases in 3 seconds. 4. Buy with confidence knowing the item is safe.</p>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Who Uses SafeOrStolen?</h2>
-          <p><strong>Buyers</strong> protect themselves from scams on Facebook Marketplace, eBay, Craigslist. <strong>Sellers</strong> prove items are legitimate to close sales faster. <strong>Pawn Shops</strong> achieve compliance with state regulations. <strong>Resale Businesses</strong> verify inventory before purchasing. <strong>Car Dealerships</strong> run VIN checks on trade-ins. <strong>Electronics Resellers</strong> verify IMEI for phone inventory.</p>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Why Choose SafeOrStolen?</h2>
-          <p>✓ The ONLY mobile app for stolen item checking. ✓ 100+ database sources - more comprehensive than alternatives. ✓ 3-second results - instant verification while shopping. ✓ Free to start - 2 free searches, no credit card required. ✓ All item types - phones, cars, bikes, laptops, tools. ✓ Camera scanning for barcodes and serial numbers.</p>
-        </section>
-        
-        <nav style="margin: 2rem 0;">
-          <a href="/verify">Verify Any Item</a> | 
-          <a href="/check-phone">Check Phone IMEI</a> | 
-          <a href="/check-car">Check Car VIN</a> | 
-          <a href="/check-bike">Check Bike</a> | 
-          <a href="/check-laptop">Check Laptop</a> | 
-          <a href="/app">Download App</a> | 
-          <a href="/pricing">Pricing</a> |
-          <a href="/blog">Blog</a> |
-          <a href="/for-pawn-shops">For Pawn Shops</a> |
-          <a href="/for-resellers">For Resellers</a>
-        </nav>
-      </article>
     </div>
-    
-    <!-- Hide static SEO content after React hydrates -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var seoContent = document.getElementById('seo-content');
-        if (seoContent) {
-          setTimeout(function() { seoContent.style.display = 'none'; }, 100);
-        }
-      });
-    </script>
     
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>

@@ -8,6 +8,7 @@ import { lazy, Suspense } from 'react';
 // Critical above-fold components - loaded immediately
 const heroImage = '/images/hero-device.png';
 import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
+import { HomeSEOBodyContent } from '@/components/home/HomeSEOBodyContent';
 
 // Lazy loaded components for below-fold content
 import { LazySection } from '@/components/performance/LazySection';
@@ -155,6 +156,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Substantial, user-visible body content (not lazy loaded) */}
+        <HomeSEOBodyContent />
 
         {/* Below-fold content - All lazy loaded */}
         <LazySection minHeight="80px">
