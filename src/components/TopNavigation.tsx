@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2 } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Smartphone, Car, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -35,6 +35,12 @@ const TopNavigation = () => {
     { to: '/faq', label: 'Help & FAQ', icon: HelpCircle },
     { to: '/how-it-works', label: 'How It Works', icon: FileText },
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
+  ];
+
+  const checkItemLinks = [
+    { to: '/check-phone', label: 'Check Phone (IMEI)', icon: Smartphone },
+    { to: '/check-car', label: 'Check Car (VIN)', icon: Car },
+    { to: '/check-laptop', label: 'Check Laptop', icon: Laptop },
   ];
 
   const authenticatedLinks = [
@@ -76,6 +82,22 @@ const TopNavigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+            
+            {/* Check Items Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 outline-none">
+                Check Items
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-48 bg-background border border-border shadow-lg">
+                {checkItemLinks.map((link) => (
+                  <DropdownMenuItem key={link.to} onClick={() => navigate(link.to)} className="cursor-pointer">
+                    <link.icon className="w-4 h-4 mr-2" />
+                    {link.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             {/* Resources Dropdown */}
             <DropdownMenu>
@@ -219,6 +241,22 @@ const TopNavigation = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Check Items Section */}
+            <div className="px-4 pt-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Check Items</p>
+              {checkItemLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 px-2 py-3 min-h-[44px] text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
+                >
+                  <link.icon className="w-4 h-4 text-muted-foreground" />
+                  {link.label}
+                </Link>
+              ))}
+            </div>
             
             {/* Resources Section */}
             <div className="px-4 pt-2">

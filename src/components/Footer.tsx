@@ -18,23 +18,23 @@ const Footer = () => {
     label: 'Instant Stolen Verification',
     href: '/verify'
   }, {
-    label: 'IMEI Checker App',
-    href: '/imei-checker'
+    label: 'Check Phone (IMEI)',
+    href: '/check-phone'
+  }, {
+    label: 'Check Car (VIN)',
+    href: '/check-car'
+  }, {
+    label: 'Check Laptop',
+    href: '/check-laptop'
   }, {
     label: 'VIN Checker',
     href: '/vin-checker'
   }, {
-    label: 'Download Stolen Verification App',
+    label: 'Download Mobile App',
     href: '/app'
   }, {
-    label: 'Barcode Scanner - 3 Seconds',
-    href: '/verify'
-  }, {
-    label: 'CheckMEND Alternative (Free)',
+    label: 'Free vs Paid Plans',
     href: '/pricing'
-  }, {
-    label: 'Like Carfax for Everything',
-    href: '/how-it-works'
   }];
   const legalLinks = [{
     label: 'Terms & Conditions',
@@ -56,7 +56,7 @@ const Footer = () => {
     label: 'For Sellers',
     href: '/for-sellers'
   }];
-  const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
+  const trustIndicators = ["256-bit SSL Encryption", "Secure Verification", "Real-time Database Access", "Privacy Protected"];
   return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
       <div className="container mx-auto container-padding">
         {/* Main Footer Content */}
@@ -281,10 +281,6 @@ const Footer = () => {
               <span>256-bit SSL</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Award className="h-3.5 w-3.5 text-sos-orange" />
-              <span>SOC 2 Compliant</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <Globe className="h-3.5 w-3.5 text-primary" />
               <span>All 50 States</span>
             </div>
@@ -294,7 +290,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <Shield className="h-3.5 w-3.5 text-primary" />
-              <span>GDPR Compliant</span>
+              <span>Secure Verification</span>
             </div>
           </div>
         </div>
