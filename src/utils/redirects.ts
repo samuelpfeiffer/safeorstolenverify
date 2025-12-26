@@ -144,7 +144,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/verify/pawnshops', to: '/verify', permanent: true },
   { from: '/verify/offerup', to: '/verify', permanent: true },
   { from: '/verify/craigslist', to: '/verify', permanent: true },
-  { from: '/app/features/history', to: '/app/features', permanent: true },
+  { from: '/app/features/history', to: '/app', permanent: true },
   { from: '/canada-vin-check', to: '/vin-checker', permanent: true },
   { from: '/blog/best-imei-checker-tools-2025', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
   { from: '/app/research-stolen-car', to: '/app', permanent: true },
