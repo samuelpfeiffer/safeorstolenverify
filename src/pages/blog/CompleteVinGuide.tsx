@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function CompleteVinGuide() {
   const structuredData = {
@@ -305,6 +306,8 @@ export default function CompleteVinGuide() {
         <footer className="mt-12 pt-8 border-t">
           <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
         </footer>
+
+        <AuthorBio />
       </article>
       
       <RelatedPagesSection 

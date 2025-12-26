@@ -9,6 +9,7 @@ import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function CompleteImeiGuide() {
   const navigate = useNavigate();
@@ -318,6 +319,8 @@ export default function CompleteImeiGuide() {
         <div className="container mx-auto px-4 py-12">
           <AppDownloadCTA variant="default" showBenefits={true} />
         </div>
+
+        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/complete-imei-guide-protect-yourself" currentCategory="blog" maxLinks={5} />
       <Footer />
