@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function HowToCheckPhoneStolen() {
   const structuredData = {
@@ -231,6 +232,7 @@ export default function HowToCheckPhoneStolen() {
           <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
         </footer>
       </article>
+      <AuthorBio />
       <RelatedPagesSection currentPage="/blog/how-to-check-if-phone-stolen" currentCategory="blog" maxLinks={5} />
       <Footer />
     </>

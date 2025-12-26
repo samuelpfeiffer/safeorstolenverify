@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function RealUserStories() {
   const structuredData = {
@@ -384,6 +385,7 @@ export default function RealUserStories() {
             </section>
           </article>
         </div>
+        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/real-user-stories" currentCategory="blog" maxLinks={5} />
       <Footer />

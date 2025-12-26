@@ -19,6 +19,8 @@ import { AppValidator } from '@/components/testing/AppValidator';
 import { EmailCapture } from '@/components/marketing/EmailCapture';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
+import { CompetitorPricingComparison } from '@/components/pricing/CompetitorPricingComparison';
+import { PricingFAQSection } from '@/components/pricing/PricingFAQSection';
 import { supabase } from '@/integrations/supabase/client';
 
 const PricingPage = () => {
@@ -348,8 +350,18 @@ const PricingPage = () => {
             <DataPartnerBadges variant="full" />
           </div>
           
+          {/* Competitor Comparison */}
+          <div className="container mx-auto px-4">
+            <CompetitorPricingComparison />
+          </div>
+          
           {/* Credibility Bar */}
           <SitewideCredibilityBar />
+          
+          {/* Extended FAQ Section */}
+          <div className="container mx-auto px-4">
+            <PricingFAQSection />
+          </div>
           
           {/* Email Capture for non-ready users */}
           <div className="container mx-auto px-4 py-12">
