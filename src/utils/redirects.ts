@@ -177,17 +177,101 @@ export function findRedirect(path: string): string | null {
     return null;
   }
 
+  // Check explicit redirect rules first
   for (const rule of REDIRECT_RULES) {
     if (rule.from === cleanPath) {
       return rule.to;
     }
   }
 
-  // Handle blog post timestamp pattern - strip timestamp and redirect to clean slug
+  // ===== PATTERN-BASED REDIRECTS =====
+  // These catch legacy URL patterns that Google may have discovered
+
+  // Blog post timestamp pattern - strip timestamp and redirect to /blog
   const timestampMatch = cleanPath.match(/^\/blog\/(.+)-[\d.]+$/);
   if (timestampMatch) {
-    const cleanSlug = timestampMatch[1];
-    return `/blog/${cleanSlug}`;
+    return '/blog';
+  }
+
+  // App subdirectory patterns → /app
+  if (cleanPath.startsWith('/app/') && !VALID_ROUTES.has(cleanPath)) {
+    return '/app';
+  }
+
+  // Verify subdirectory patterns → /verify
+  if (cleanPath.startsWith('/verify/') && !VALID_ROUTES.has(cleanPath)) {
+    return '/verify';
+  }
+
+  // State patterns → /verify or appropriate state page
+  if (cleanPath.startsWith('/state/') || cleanPath.match(/^\/[a-z-]+-stolen-item-check$/)) {
+    return '/verify';
+  }
+
+  // City patterns → /verify
+  if (cleanPath.startsWith('/city/') || cleanPath.match(/^\/[a-z-]+-stolen-check$/)) {
+    return '/verify';
+  }
+
+  // Guides patterns → /blog
+  if (cleanPath.startsWith('/guides/')) {
+    return '/blog';
+  }
+
+  // Tools patterns → /verify
+  if (cleanPath.startsWith('/tools/')) {
+    return '/verify';
+  }
+
+  // Statistics patterns → /about
+  if (cleanPath.startsWith('/statistics/')) {
+    return '/about';
+  }
+
+  // Check-* patterns without existing routes → /verify
+  if (cleanPath.startsWith('/check-') && !VALID_ROUTES.has(cleanPath)) {
+    // Map to appropriate checker based on item type
+    if (cleanPath.includes('phone') || cleanPath.includes('iphone') || cleanPath.includes('samsung') || cleanPath.includes('android')) {
+      return '/check-phone';
+    }
+    if (cleanPath.includes('car') || cleanPath.includes('vehicle') || cleanPath.includes('auto')) {
+      return '/check-car';
+    }
+    if (cleanPath.includes('bike') || cleanPath.includes('bicycle')) {
+      return '/check-bike';
+    }
+    if (cleanPath.includes('laptop') || cleanPath.includes('computer') || cleanPath.includes('macbook')) {
+      return '/check-laptop';
+    }
+    if (cleanPath.includes('firearm') || cleanPath.includes('gun')) {
+      return '/firearms-check';
+    }
+    return '/verify';
+  }
+
+  // VIN lookup patterns for states without dedicated pages → /vin-checker
+  if (cleanPath.match(/^\/[a-z-]+-vin-lookup$/) && !VALID_ROUTES.has(cleanPath)) {
+    return '/vin-checker';
+  }
+
+  // License plate patterns for states without dedicated pages → /license-plate-lookup
+  if (cleanPath.match(/^\/[a-z-]+-license-plate-lookup$/) && !VALID_ROUTES.has(cleanPath)) {
+    return '/license-plate-lookup';
+  }
+
+  // Blog patterns without specific redirects → /blog
+  if (cleanPath.startsWith('/blog/') && !VALID_ROUTES.has(cleanPath)) {
+    return '/blog';
+  }
+
+  // vs-* comparison patterns → /compare
+  if (cleanPath.startsWith('/vs-') && !VALID_ROUTES.has(cleanPath)) {
+    return '/compare';
+  }
+
+  // for-* business patterns → /for-pawn-shops (main business page)
+  if (cleanPath.startsWith('/for-') && !VALID_ROUTES.has(cleanPath)) {
+    return '/for-pawn-shops';
   }
 
   return null;
