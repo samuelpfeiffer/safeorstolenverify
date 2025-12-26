@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { SOSFooter } from '@/components/layout/SOSFooter';
 import TopNavigation from '@/components/TopNavigation';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const CarfaxVsFreeVinAlternatives = () => {
   const faqSchema = {
@@ -318,6 +319,8 @@ const CarfaxVsFreeVinAlternatives = () => {
             </div>
           </div>
         </div>
+
+        <AuthorBio />
 
         <RelatedPagesSection currentPage="/blog/carfax-vs-free-vin-alternatives" currentCategory="blog" maxLinks={5} />
         <SOSFooter />
