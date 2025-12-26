@@ -220,9 +220,13 @@ export const REDIRECT_URLS = new Set([
   '/imei-check',
   '/vin-check',
   '/vin-verification',
-  // GSC December 2025 validation failures
+  // GSC December 2025 validation failures - Page with redirect errors
   '/verify/ebay',
   '/verify/pawnshops',
+  '/verify/auctions',
+  '/verify/facebook-marketplace',
+  '/verify/offerup',
+  '/verify/craigslist',
   '/app/features/history',
   '/canada-vin-check',
   '/california',
@@ -231,6 +235,22 @@ export const REDIRECT_URLS = new Set([
   '/blog/best-imei-checker-tools-2025',
   '/check-imei-before-buying',
   '/results',
+  '/app/research-stolen-car',
+  '/app/buyer-protection-research',
+  '/app/research-stolen-phone',
+  '/app/facebook-marketplace-checker',
+  '/app/pawnshop-verification',
+  '/app/research-stolen-items',
+  '/app/offerup-safety',
+  '/app/ebay-verification',
+  '/app/secondhand-research-app',
+  '/blog/mobile-app-features',
+  '/app/ios',
+  '/app/android',
+  '/service-limitations',
+  '/analytics',
+  '/blog/best-stolen-item-checker-apps-2025',
+  '/app/serial-number-checker',
 ]);
 
 export interface ValidationResult {
