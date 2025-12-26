@@ -453,11 +453,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/enterprise-security                                       /blog            301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog/stolen-verification-app-guide  301!
-/blog/imei-checker-app-comparison                               /imei-checker    301!
-/blog/best-imei-checker-tools-2025                              /imei-checker    301!
+/blog/imei-checker-app-comparison                               /blog/imei-checker-app-download  301!
+/blog/best-imei-checker-tools-2025                              /blog/complete-imei-guide-protect-yourself  301!
+# GSC has /blog/how-to-check-if-phone-is-stolen (with "is"), real route is /blog/how-to-check-if-phone-stolen
+/blog/how-to-check-if-phone-is-stolen                           /blog/how-to-check-if-phone-stolen  301!
 /blog/how-to-check-phone-stolen                                 /blog/how-to-check-if-phone-stolen  301!
-/blog/why-verify-serial-numbers                                 /blog            301!
-/blog/complete-marketplace-buyers-checklist                     /blog            301!
+/blog/why-verify-serial-numbers                                 /blog/complete-verification-guide  301!
+/blog/complete-marketplace-buyers-checklist                     /blog/ultimate-marketplace-buyers-guide  301!
+/blog/imei-verification-guide                                   /blog/complete-imei-guide-protect-yourself  301!
+/blog/complete-vin-verification-guide                           /blog/complete-vin-guide  301!
 # Specific timestamped blog URLs (before wildcards)
 /blog/playstation-5-serial-number-verification-guide-1          /serial-number-checker  301!
 /blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229  /blog/pawn-shop-stolen-item-verification  301!

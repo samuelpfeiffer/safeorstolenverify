@@ -36,6 +36,12 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/why-verify-serial-numbers', to: '/blog/complete-verification-guide', permanent: true },
   { from: '/blog/complete-marketplace-buyers-checklist', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
   { from: '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1', to: '/blog/complete-vin-guide', permanent: true },
+  // NEW: Missing blog URL variations causing Soft 404s
+  { from: '/blog/how-to-check-if-phone-is-stolen', to: '/blog/how-to-check-if-phone-stolen', permanent: true },
+  { from: '/blog/imei-checker-app-comparison', to: '/blog/imei-checker-app-download', permanent: true },
+  { from: '/blog/imei-verification-guide', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
+  { from: '/blog/complete-vin-verification-guide', to: '/blog/complete-vin-guide', permanent: true },
+  { from: '/blog/mobile-app-features', to: '/app', permanent: true },
 
   // ===== STATE PATTERN URLS =====
   { from: '/state/new-york/stolen-item-checker', to: '/verify', permanent: true },
