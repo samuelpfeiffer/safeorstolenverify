@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Download, Trophy, ArrowRight } from 'lucide-react';
 import { lazy, Suspense } from 'react';
+import { VoiceSearchFAQSchema } from '@/components/seo/VoiceSearchFAQSchema';
+import { IMEICheckHowTo, VINCheckHowTo } from '@/components/seo/HowToSchema';
 
 // Critical above-fold components - loaded immediately
 const heroImage = '/images/hero-device.png';
@@ -48,6 +50,11 @@ const Index = () => {
         keywords="stolen item checker app, IMEI checker app free, VIN checker app free, serial number verification app, stolen phone checker app, stolen car check app, pawn shop verification, resale business protection, CheckMEND alternative app, Carfax alternative app, IMEI.info alternative, Swappa alternative, only stolen item app, free stolen goods checker"
         canonical="/"
       />
+      
+      {/* Voice Search & HowTo Schemas for enhanced search visibility */}
+      <VoiceSearchFAQSchema pageType="homepage" />
+      <IMEICheckHowTo />
+      <VINCheckHowTo />
       
       {/* Minimal noscript fallback for crawlers */}
       <noscript>
