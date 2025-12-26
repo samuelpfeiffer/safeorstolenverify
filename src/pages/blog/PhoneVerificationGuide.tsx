@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function PhoneVerificationGuide() {
   const structuredData = {
@@ -359,6 +360,7 @@ export default function PhoneVerificationGuide() {
             </section>
           </article>
         </div>
+        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/phone-verification-guide" currentCategory="blog" maxLinks={5} />
       <Footer />

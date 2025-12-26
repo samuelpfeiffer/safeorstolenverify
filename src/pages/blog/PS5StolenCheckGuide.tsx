@@ -6,6 +6,7 @@ import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 
@@ -457,6 +458,7 @@ const PS5StolenCheckGuide = () => {
           </div>
         </section>
       </article>
+      <AuthorBio />
       <RelatedPagesSection currentPage="/blog/ps5-stolen-check-guide" currentCategory="blog" maxLinks={5} />
       <Footer />
     </>

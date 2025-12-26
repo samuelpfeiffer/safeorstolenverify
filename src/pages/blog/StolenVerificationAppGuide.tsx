@@ -8,6 +8,7 @@ import { Shield, Smartphone, Scan, Zap, Download, CheckCircle } from 'lucide-rea
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const StolenVerificationAppGuide = () => {
   const blogPostSchema = {
@@ -366,6 +367,7 @@ const StolenVerificationAppGuide = () => {
             </div>
           </div>
         </article>
+        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/stolen-verification-app-guide" currentCategory="blog" maxLinks={5} />
       <Footer />

@@ -7,6 +7,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const IMEICheckerAppDownload = () => {
   const articleSchema = {
@@ -254,6 +255,7 @@ const IMEICheckerAppDownload = () => {
             </Button>
           </section>
         </article>
+        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/imei-checker-app-download" currentCategory="blog" maxLinks={5} />
       <Footer />
