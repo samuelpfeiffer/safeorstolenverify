@@ -136,6 +136,27 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/seo-strategy', to: '/about', permanent: true },
   { from: '/seller-guide', to: '/about', permanent: true },
   { from: '/service-limitations', to: '/terms', permanent: true },
+
+  // ===== GSC PAGE WITH REDIRECT ERRORS (Dec 2025) =====
+  { from: '/verify/auctions', to: '/verify', permanent: true },
+  { from: '/verify/facebook-marketplace', to: '/verify', permanent: true },
+  { from: '/verify/ebay', to: '/verify', permanent: true },
+  { from: '/verify/pawnshops', to: '/verify', permanent: true },
+  { from: '/verify/offerup', to: '/verify', permanent: true },
+  { from: '/verify/craigslist', to: '/verify', permanent: true },
+  { from: '/app/features/history', to: '/app/features', permanent: true },
+  { from: '/canada-vin-check', to: '/vin-checker', permanent: true },
+  { from: '/blog/best-imei-checker-tools-2025', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
+  { from: '/app/research-stolen-car', to: '/app', permanent: true },
+  { from: '/app/buyer-protection-research', to: '/app', permanent: true },
+  { from: '/app/research-stolen-phone', to: '/app', permanent: true },
+  { from: '/app/facebook-marketplace-checker', to: '/app', permanent: true },
+  { from: '/app/pawnshop-verification', to: '/app', permanent: true },
+  { from: '/app/research-stolen-items', to: '/app', permanent: true },
+  { from: '/app/offerup-safety', to: '/app', permanent: true },
+  { from: '/app/ebay-verification', to: '/app', permanent: true },
+  { from: '/app/secondhand-research-app', to: '/app', permanent: true },
+  { from: '/blog/mobile-app-features', to: '/app', permanent: true },
 ];
 
 /**
