@@ -27,9 +27,27 @@ export function HomeSEOBodyContent() {
               Why this matters (and why “I didn’t know” doesn’t help)
             </h3>
             <p className="text-muted-foreground">
-              Stolen goods move fast online. Listings can look legitimate, sellers can provide convincing stories,
-              and receipts can be fake or unrelated. If an item is later recovered, you can lose the item even if you
-              paid for it. That means the real cost is the purchase price, the time you spent, and the stress of dealing
+              Stolen goods move fast online. According to the{' '}
+              <a 
+                href="https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                FBI's Uniform Crime Reporting Program
+              </a>
+              , property crimes result in billions of dollars in losses annually. Listings can look legitimate, 
+              sellers can provide convincing stories, and receipts can be fake or unrelated. If an item is later 
+              recovered, you can lose the item even if you paid for it—a principle established under{' '}
+              <a 
+                href="https://www.law.cornell.edu/wex/stolen_property" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                U.S. stolen property law
+              </a>
+              . That means the real cost is the purchase price, the time you spent, and the stress of dealing
               with a bad situation.
             </p>
             <p className="text-muted-foreground">
@@ -51,19 +69,25 @@ export function HomeSEOBodyContent() {
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">Phones & tablets (IMEI)</p>
                 <p className="text-sm text-muted-foreground">
-                  Check for blacklist or risk signals before you hand over cash. Useful for iPhone and Android purchases.
+                  Check for blacklist or risk signals before you hand over cash. The{' '}
+                  <a href="https://www.gsma.com/aboutus/workinggroups/device-check" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GSMA</a>
+                  {' '}maintains global IMEI databases that track stolen devices across 200+ countries.
                 </p>
               </li>
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">Cars & vehicles (VIN)</p>
                 <p className="text-sm text-muted-foreground">
-                  Verify a VIN before a deposit or test drive. Reduce theft and paperwork surprises.
+                  The{' '}
+                  <a href="https://www.nicb.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">NICB</a>
+                  {' '}(National Insurance Crime Bureau) reports over 800,000 vehicles stolen annually in the US. VIN checks reduce risk.
                 </p>
               </li>
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">Bikes & e-bikes (serial)</p>
                 <p className="text-sm text-muted-foreground">
-                  Bikes are heavily targeted for theft. A serial check is one of the fastest ways to spot red flags.
+                  According to{' '}
+                  <a href="https://bikeindex.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Bike Index</a>
+                  , a bike is stolen every 30 seconds in the US. Serial verification is the fastest way to spot red flags.
                 </p>
               </li>
               <li className="rounded-lg border border-border/60 p-4">
