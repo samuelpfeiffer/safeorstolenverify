@@ -9,6 +9,7 @@ import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function UltimateMarketplaceBuyersGuide() {
   const navigate = useNavigate();
@@ -340,6 +341,8 @@ export default function UltimateMarketplaceBuyersGuide() {
         <div className="container mx-auto px-4 py-12">
           <AppDownloadCTA variant="default" showBenefits={true} />
         </div>
+
+        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/ultimate-marketplace-buyers-guide" currentCategory="blog" maxLinks={5} />
       <Footer />

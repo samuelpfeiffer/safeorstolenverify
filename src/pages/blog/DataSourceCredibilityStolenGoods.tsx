@@ -6,6 +6,7 @@ import { Database, Shield, CheckCircle, AlertTriangle } from 'lucide-react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { AuthorBio } from '@/components/blog/AuthorBio';
 
 export default function DataSourceCredibilityStolenGoods() {
   const navigate = useNavigate();
@@ -338,6 +339,8 @@ export default function DataSourceCredibilityStolenGoods() {
         <div className="container mx-auto px-4 py-12">
           <AppDownloadCTA variant="default" showBenefits={true} />
         </div>
+
+        <AuthorBio />
       </div>
       <RelatedPagesSection 
         currentPage="/blog/data-source-credibility-stolen-goods-verification" 
