@@ -38,6 +38,7 @@ const TrafficBooster = React.lazy(() => import('@/components/traffic/TrafficBoos
 
 // Marketing components for conversion
 const FloatingCTA = React.lazy(() => import('@/components/marketing/FloatingCTA').then(m => ({ default: m.FloatingCTA })));
+const LiveNotifications = React.lazy(() => import('@/components/conversion/LiveNotifications').then(m => ({ default: m.LiveNotifications })));
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -166,6 +167,7 @@ const AuthAwareContent: React.FC = () => {
           <Suspense fallback={null}>
             <ExitIntentPopup />
             <LiveActivityToast />
+            <LiveNotifications position="bottom-left" />
             <FloatingCTA />
           </Suspense>
         )}
