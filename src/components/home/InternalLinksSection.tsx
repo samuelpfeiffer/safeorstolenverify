@@ -6,15 +6,29 @@ import {
 export const InternalLinksSection = () => {
   const linkCategories = [
     {
-      title: "Verification Tools",
+      title: "Item Verification",
       icon: Smartphone,
       links: [
-        { to: "/imei-checker", label: "IMEI Checker" },
-        { to: "/vin-checker", label: "VIN Checker" },
-        { to: "/serial-number-checker", label: "Serial Number Checker" },
-        { to: "/firearms-check", label: "Gun Serial Lookup" },
         { to: "/check-phone", label: "Check Phone" },
         { to: "/check-car", label: "Check Car" },
+        { to: "/check-laptop", label: "Check Laptop" },
+        { to: "/check-bike", label: "Check Bike" },
+        { to: "/check-electronics", label: "Check Electronics" },
+        { to: "/check-ebike", label: "Check E-Bike" },
+        { to: "/firearms-check", label: "Check Firearm" },
+        { to: "/check-jewelry", label: "Check Jewelry" },
+      ]
+    },
+    {
+      title: "Identifier Tools",
+      icon: Scale,
+      links: [
+        { to: "/verify", label: "Universal Checker" },
+        { to: "/imei-checker", label: "IMEI Checker" },
+        { to: "/vin-checker", label: "VIN Checker" },
+        { to: "/serial-number-checker", label: "Serial Checker" },
+        { to: "/license-plate-lookup", label: "Plate Lookup" },
+        { to: "/marketplace-url-checker", label: "URL Checker" },
       ]
     },
     {
@@ -30,51 +44,39 @@ export const InternalLinksSection = () => {
       ]
     },
     {
-      title: "License Plate Lookup",
+      title: "Marketplace Safety",
       icon: MapPin,
       links: [
-        { to: "/arizona-license-plate-lookup", label: "Arizona" },
-        { to: "/california-license-plate-lookup", label: "California" },
-        { to: "/texas-license-plate-lookup", label: "Texas" },
-        { to: "/florida-license-plate-lookup", label: "Florida" },
-        { to: "/new-york-license-plate-lookup", label: "New York" },
-        { to: "/ohio-license-plate-lookup", label: "Ohio" },
+        { to: "/facebook-marketplace-stolen-check", label: "Facebook Marketplace" },
+        { to: "/ebay-stolen-item-checker", label: "eBay" },
+        { to: "/craigslist-safety-verification", label: "Craigslist" },
+        { to: "/offerup-verify-not-stolen", label: "OfferUp" },
+        { to: "/stolen-check-chicago", label: "Chicago" },
+        { to: "/stolen-check-los-angeles", label: "Los Angeles" },
       ]
     },
     {
       title: "For Business",
       icon: Building2,
       links: [
-        { to: "/for-buyers", label: "For Buyers" },
-        { to: "/for-sellers", label: "For Sellers" },
-        { to: "/for-pawn-shops", label: "For Pawn Shops" },
-        { to: "/for-dealers", label: "For Car Dealers" },
-        { to: "/for-resellers", label: "For Resellers" },
-        { to: "/for-marketplaces", label: "For Marketplaces" },
+        { to: "/for-pawn-shops", label: "Pawn Shops" },
+        { to: "/for-dealers", label: "Car Dealers" },
+        { to: "/for-resellers", label: "Resellers" },
+        { to: "/for-auction-houses", label: "Auction Houses" },
+        { to: "/for-buyers", label: "Buyers" },
+        { to: "/for-sellers", label: "Sellers" },
       ]
     },
     {
-      title: "Compare Services",
-      icon: Scale,
-      links: [
-        { to: "/compare", label: "Compare All" },
-        { to: "/vs-checkmend", label: "vs CheckMEND" },
-        { to: "/vs-carfax", label: "vs CARFAX" },
-        { to: "/vs-swappa", label: "vs Swappa" },
-        { to: "/vs-imeiinfo", label: "vs IMEI.info" },
-        { to: "/vs-autocheck", label: "vs AutoCheck" },
-      ]
-    },
-    {
-      title: "Guides & Resources",
+      title: "Resources",
       icon: BookOpen,
       links: [
         { to: "/blog", label: "Blog" },
-        { to: "/blog/carfax-vs-free-vin-alternatives", label: "Free Carfax Alternatives" },
+        { to: "/compare", label: "Compare Services" },
         { to: "/how-it-works", label: "How It Works" },
+        { to: "/app", label: "Download App" },
         { to: "/faq", label: "FAQ" },
-        { to: "/facebook-marketplace-stolen-check", label: "Marketplace Safety" },
-        { to: "/sitemap", label: "Full Sitemap" },
+        { to: "/pricing", label: "Pricing" },
       ]
     },
   ];

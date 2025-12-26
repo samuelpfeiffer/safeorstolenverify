@@ -183,6 +183,20 @@ export const ItemLandingPageTemplate = ({
           </div>
         </section>
 
+        {/* E-E-A-T Signals: Author & Freshness */}
+        <aside className="py-4 px-4 border-y border-border/50 bg-muted/20">
+          <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <span>Written by</span>
+              <Link to="/about" className="font-medium text-foreground hover:text-primary">SafeOrStolen Research Team</Link>
+            </div>
+            <div className="flex items-center gap-4">
+              <span>Last updated: December 2025</span>
+              <Link to="/how-it-works" className="text-primary hover:underline">How we verify</Link>
+            </div>
+          </div>
+        </aside>
+
         {/* Credibility Bar */}
         <SitewideCredibilityBar />
 
@@ -253,6 +267,62 @@ export const ItemLandingPageTemplate = ({
 
         {/* Authority Signals Before CTA */}
         <AuthoritySignals variant="banner" className="mb-0" />
+
+        {/* Internal Linking Section - Critical for SEO */}
+        <section className="py-12 px-4 bg-card/30">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Related Verification Tools</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              {itemType !== 'Phone' && (
+                <Link to="/check-phone" className="p-4 bg-card rounded-lg hover:bg-card/80 transition-colors">
+                  <h3 className="font-semibold mb-1">Check Phone</h3>
+                  <p className="text-sm text-muted-foreground">IMEI verification for iPhone & Android</p>
+                </Link>
+              )}
+              {itemType !== 'Car' && (
+                <Link to="/check-car" className="p-4 bg-card rounded-lg hover:bg-card/80 transition-colors">
+                  <h3 className="font-semibold mb-1">Check Car</h3>
+                  <p className="text-sm text-muted-foreground">VIN lookup for vehicles</p>
+                </Link>
+              )}
+              {itemType !== 'Bike' && (
+                <Link to="/check-bike" className="p-4 bg-card rounded-lg hover:bg-card/80 transition-colors">
+                  <h3 className="font-semibold mb-1">Check Bike</h3>
+                  <p className="text-sm text-muted-foreground">Serial number check for bicycles</p>
+                </Link>
+              )}
+              {itemType !== 'Laptop' && (
+                <Link to="/check-laptop" className="p-4 bg-card rounded-lg hover:bg-card/80 transition-colors">
+                  <h3 className="font-semibold mb-1">Check Laptop</h3>
+                  <p className="text-sm text-muted-foreground">MacBook & PC serial verification</p>
+                </Link>
+              )}
+              {itemType !== 'Electronics' && (
+                <Link to="/check-electronics" className="p-4 bg-card rounded-lg hover:bg-card/80 transition-colors">
+                  <h3 className="font-semibold mb-1">Check Electronics</h3>
+                  <p className="text-sm text-muted-foreground">Cameras, consoles & equipment</p>
+                </Link>
+              )}
+              <Link to="/verify" className="p-4 bg-card rounded-lg hover:bg-card/80 transition-colors">
+                <h3 className="font-semibold mb-1">Universal Checker</h3>
+                <p className="text-sm text-muted-foreground">Check any item type</p>
+              </Link>
+            </div>
+            
+            <h3 className="text-lg font-semibold mb-4">Popular Marketplace Safety Guides</h3>
+            <nav className="flex flex-wrap gap-3 text-sm" aria-label="Related marketplace guides">
+              <Link to="/facebook-marketplace-stolen-check" className="text-primary underline hover:text-primary/80">Facebook Marketplace</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link to="/ebay-stolen-item-checker" className="text-primary underline hover:text-primary/80">eBay</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link to="/craigslist-safety-verification" className="text-primary underline hover:text-primary/80">Craigslist</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link to="/offerup-verify-not-stolen" className="text-primary underline hover:text-primary/80">OfferUp</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link to="/for-pawn-shops" className="text-primary underline hover:text-primary/80">Pawn Shop Verification</Link>
+            </nav>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
