@@ -95,13 +95,25 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/oklahoma-vin-lookup', to: '/vin-checker', permanent: true },
   // Note: /arizona-license-plate-lookup now has dedicated page - removed redirect
 
-  // ===== CRAWLED NOT INDEXED - Dec 2025 GSC =====
+  // ===== CRAWLED NOT INDEXED - Dec 2025 GSC EMERGENCY FIX =====
+  { from: '/check-camera', to: '/check-camera-stolen', permanent: true },
+  { from: '/check-xbox', to: '/check-gaming-console-stolen', permanent: true },
+  { from: '/check-playstation', to: '/check-gaming-console-stolen', permanent: true },
+  { from: '/check-nintendo', to: '/check-gaming-console-stolen', permanent: true },
+  { from: '/check-console', to: '/check-gaming-console-stolen', permanent: true },
+  { from: '/check-tablet', to: '/check-tablet-stolen', permanent: true },
+  { from: '/check-watch', to: '/check-watch-stolen', permanent: true },
+  { from: '/check-tools', to: '/check-power-tools-stolen', permanent: true },
+  { from: '/check-firearm', to: '/firearms-check', permanent: true },
+  { from: '/check-gun', to: '/firearms-check', permanent: true },
+  { from: '/chicago/imei-check', to: '/stolen-check-chicago', permanent: true },
   { from: '/app/buyers', to: '/app', permanent: true },
   { from: '/auction-houses', to: '/for-auction-houses', permanent: true },
   { from: '/case-studies', to: '/testimonials', permanent: true },
   { from: '/accuracy', to: '/how-it-works', permanent: true },
   { from: '/avoid-stolen-goods', to: '/how-it-works', permanent: true },
   { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
+  { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
 
   // ===== NOINDEX PAGES - Dec 2025 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
