@@ -18,6 +18,7 @@ const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
+const RedirectPage = lazy(() => import('@/pages/RedirectPage'));
 const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
 const PaymentSuccessPage = lazy(() => import('@/pages/PaymentSuccessPage'));
@@ -428,14 +429,13 @@ export const AppRoutes = () => {
         <Route path="/check-stolen-car" element={<CheckStolenCarPage />} />
         {/* /stolen-phone-check and /stolen-car-check handled by server-side _redirects */}
 
-        {/* ALL REDIRECTS HANDLED BY SERVER-SIDE _redirects FILE */}
-        {/* React Navigate components removed to prevent duplicate redirect handling */}
-        {/* Server-side 301s are respected by Google; client-side Navigate is not */}
-
+        {/* EXPLICIT 404 PAGE */}
         <Route path="/404" element={<NotFound />} />
 
-        {/* 404 for everything else */}
-        <Route path="*" element={<NotFound />} />
+        {/* CATCH-ALL: Check for redirects FIRST, then show 404 */}
+        {/* RedirectPage checks findRedirect() and either redirects or forwards to /404 */}
+        {/* This prevents noindex from ever being rendered for redirect URLs */}
+        <Route path="*" element={<RedirectPage />} />
       </Routes>
     </Suspense>
   );
