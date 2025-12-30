@@ -13,124 +13,112 @@ export function HomeSEOBodyContent() {
         <article className="mx-auto max-w-4xl space-y-10">
           <header className="space-y-3">
             <h2 id="home-seo" className="text-2xl md:text-3xl font-bold tracking-tight">
-              Verify stolen items before you buy or sell
+              How to Check If a Phone, Car, or Item Is Stolen Before Buying
             </h2>
             <p className="text-base md:text-lg text-muted-foreground">
-              SafeOrStolen is a comprehensive stolen property verification service that checks IMEI numbers, VIN numbers, 
-              and serial numbers against 100+ databases worldwide. Whether you are shopping on{' '}
+              Buying a used iPhone on Facebook Marketplace? That $300 "great deal" could be a stolen phone. 
+              Before you meet the seller and hand over cash, take 2 seconds to check if it's stolen. 
+              SafeOrStolen verifies phones, cars, laptops, bikes, and more against police databases, 
+              carrier blacklists, and insurance claims. Works for{' '}
               <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>,{' '}
-              <Link to="/ebay-stolen-check" className="text-primary hover:underline">eBay</Link>, or{' '}
+              <Link to="/ebay-stolen-check" className="text-primary hover:underline">eBay</Link>,{' '}
               <Link to="/craigslist-stolen-check" className="text-primary hover:underline">Craigslist</Link>, 
-              meeting a stranger in a parking lot, or buying inventory for resale, a quick 3-second check 
-              can protect you from financial loss, legal trouble, and the stress of unknowingly handling stolen goods.
+              OfferUp, or any private sale.
             </p>
           </header>
 
-          {/* Problem Section - 200+ words */}
           <section className="space-y-3" aria-labelledby="home-seo-problem">
             <h3 id="home-seo-problem" className="text-xl md:text-2xl font-semibold">
-              The hidden danger of buying secondhand
+              What Happens If You Buy a Stolen Phone or Car?
             </h3>
             <p className="text-muted-foreground">
-              Every year, millions of stolen items enter the secondhand market. According to the{' '}
+              Here's the scary truth: <strong>Even if you didn't know it was stolen, you're still in trouble.</strong> 
+              Police can take the item back — you lose the phone AND your money. In many states, you can face 
+              criminal charges for "receiving stolen property." The seller disappears, and you have no recourse. 
+              If it's a phone, carriers will blacklist it — making it completely unusable.
+            </p>
+            <p className="text-muted-foreground">
+              According to the{' '}
               <a 
                 href="https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
-                FBI's Uniform Crime Reporting Program
+                FBI's crime data
               </a>
-              , property crimes result in over $15.8 billion in losses annually in the United States alone. 
-              Smartphones, vehicles, laptops, and bicycles are among the most commonly stolen items that end up 
-              for sale on online marketplaces.
-            </p>
-            <p className="text-muted-foreground">
-              The legal reality is stark: under{' '}
-              <a 
-                href="https://www.law.cornell.edu/wex/stolen_property" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                U.S. stolen property law
-              </a>
-              , you cannot legally own stolen property even if you paid for it in good faith. If police recover a stolen 
-              item in your possession, you lose both the item and the money you paid. In some jurisdictions, you may even 
-              face criminal charges for receiving stolen property, regardless of your knowledge at the time of purchase. 
-              The average loss for buyers of stolen phones is $800, while stolen vehicle purchases can result in losses 
-              exceeding $25,000.
+              , property crimes result in over $15.8 billion in losses annually. Thousands of stolen phones, 
+              cars, and electronics end up on Facebook Marketplace, Craigslist, and OfferUp every day. 
+              The average loss for buyers of stolen phones? <strong>$800</strong>. For stolen cars? 
+              <strong>$25,000+</strong>.
             </p>
           </section>
 
-          {/* Solution Section - 200+ words */}
+          {/* Solution Section */}
           <section className="space-y-3" aria-labelledby="home-seo-solution">
             <h3 id="home-seo-solution" className="text-xl md:text-2xl font-semibold">
-              How SafeOrStolen protects you
+              How to Protect Yourself When Buying Used
             </h3>
             <p className="text-muted-foreground">
-              SafeOrStolen provides instant verification by cross-referencing identifiers against authoritative databases 
-              including the NCIC (National Crime Information Center), GSMA global IMEI blacklist, NICB (National Insurance 
-              Crime Bureau), state DMV records from all 50 states, international law enforcement databases, and insurance 
-              company claims records. Our verification process takes just 3 seconds and provides a clear risk assessment.
+              <strong>Step 1:</strong> Before meeting the seller, ask for the serial number (phones: dial *#06# for IMEI, 
+              cars: VIN on dashboard). Enter it above — takes 2 seconds.
             </p>
             <p className="text-muted-foreground">
-              What makes SafeOrStolen different is our multi-category approach. While competitors like CheckMEND focus only 
-              on phones, and Carfax only covers vehicles, SafeOrStolen verifies phones, cars, laptops, bikes, gaming consoles, 
-              cameras, power tools, firearms, boats, and more—all from a single platform. We also offer the only mobile app 
-              with barcode scanning for instant verification at meetups, pawn shops, and dealerships. Our free tier provides 
-              2 verification checks at no cost, making due diligence accessible to everyone.
+              <strong>Step 2:</strong> We check police databases, NICB stolen vehicle records, GSMA carrier blacklists, 
+              insurance claims, and 100+ other sources in real-time.
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Step 3:</strong> Get your answer: <strong className="text-green-600">SAFE ✅</strong> means proceed with the purchase. 
+              <strong className="text-red-600">STOLEN ❌</strong> means walk away immediately and report the listing.
             </p>
           </section>
 
           {/* What We Check Section */}
           <section className="space-y-4" aria-labelledby="home-seo-what">
             <h3 id="home-seo-what" className="text-xl md:text-2xl font-semibold">
-              What SafeOrStolen checks
+              What Items Can You Check for Stolen Status?
             </h3>
             <p className="text-muted-foreground">
-              Different item categories use different identifiers. SafeOrStolen is built to support multiple verification paths
-              so you can check what you actually have in hand.
+              Whether you're buying a used iPhone, a Craigslist car, or a Facebook Marketplace laptop — 
+              we check it all. Just get the serial number from the seller and enter it above.
             </p>
             <ul className="grid gap-3 md:grid-cols-2">
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">
-                  <Link to="/check-phone" className="hover:text-primary">Phones & tablets (IMEI)</Link>
+                  <Link to="/check-phone" className="hover:text-primary">📱 iPhones & Phones</Link>
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Check for blacklist or risk signals before you hand over cash. The{' '}
-                  <a href="https://www.gsma.com/aboutus/workinggroups/device-check" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GSMA</a>
-                  {' '}maintains global IMEI databases that track stolen devices across 200+ countries.
-                  <Link to="/check-iphone" className="block mt-1 text-primary hover:underline text-xs">→ Check iPhone specifically</Link>
+                  Is this iPhone stolen? Check before buying. Works for all iPhones, Samsung Galaxy, Android phones. 
+                  Just dial *#06# on the phone to get the IMEI, then check it here.
+                  <Link to="/check-iphone" className="block mt-1 text-primary hover:underline text-xs">→ How to check if an iPhone is stolen</Link>
                 </p>
               </li>
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">
-                  <Link to="/check-car" className="hover:text-primary">Cars & vehicles (VIN)</Link>
+                  <Link to="/check-car" className="hover:text-primary">🚗 Cars & Vehicles</Link>
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  The{' '}
-                  <a href="https://www.nicb.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">NICB</a>
-                  {' '}(National Insurance Crime Bureau) reports over 800,000 vehicles stolen annually in the US. VIN checks reduce risk.
-                  <Link to="/vin-checker" className="block mt-1 text-primary hover:underline text-xs">→ Free VIN checker tool</Link>
+                  Is this car stolen? Check the VIN before buying from Craigslist, Facebook Marketplace, or any private sale.
+                  800,000+ vehicles are stolen annually in the US alone.
+                  <Link to="/vin-checker" className="block mt-1 text-primary hover:underline text-xs">→ How to check if a car is stolen</Link>
                 </p>
               </li>
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">
-                  <Link to="/check-bike" className="hover:text-primary">Bikes & e-bikes (serial)</Link>
+                  <Link to="/check-bike" className="hover:text-primary">🚲 Bikes & E-bikes</Link>
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  According to{' '}
-                  <a href="https://bikeindex.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Bike Index</a>
-                  , a bike is stolen every 30 seconds in the US. Serial verification is the fastest way to spot red flags.
+                  Is this bike stolen? A bike is stolen every 30 seconds in the US. Check the serial number 
+                  (under the bottom bracket) before buying from OfferUp, Facebook, or any seller.
                 </p>
               </li>
               <li className="rounded-lg border border-border/60 p-4">
                 <p className="font-medium">
-                  <Link to="/check-laptop" className="hover:text-primary">Laptops & electronics (serial)</Link>
+                  <Link to="/check-laptop" className="hover:text-primary">💻 Laptops & MacBooks</Link>
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  High-value electronics including MacBooks, gaming consoles, and cameras are common in resale scams. 
+                  Is this MacBook stolen? Check before buying used laptops, gaming PCs, or tablets.
+                  Find the serial number in System Settings or on the bottom of the device.
                   <Link to="/check-electronics" className="block mt-1 text-primary hover:underline text-xs">→ Check all electronics</Link>
                 </p>
               </li>

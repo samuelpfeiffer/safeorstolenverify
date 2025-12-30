@@ -5,28 +5,36 @@ import { Card } from '@/components/ui/card';
 export const HomepageFAQ = () => {
   const faqs = [
     {
-      question: 'How do I find my phone\'s IMEI number?',
-      answer: 'The fastest way is to dial *#06# on any phone - the IMEI displays instantly. You can also find it in Settings > About Phone (Android) or Settings > General > About (iPhone). It\'s also printed on the original box and SIM tray.'
-    },
-    {
-      question: 'Is it legal to buy used phones and electronics?',
-      answer: 'Yes, buying used items is legal. However, buying STOLEN property (even unknowingly) is illegal in most jurisdictions. That\'s why verification is critical - it protects you legally by proving you took reasonable steps to ensure the item wasn\'t stolen.'
+      question: 'How do I check if a phone is stolen before buying?',
+      answer: 'Get the serial number or IMEI from the seller (ask them to dial *#06# on the phone or check Settings > About). Enter it above. In 2 seconds, we check police databases, carrier blacklists, and insurance claims. If it shows SAFE ✅, you\'re good. If STOLEN ❌, walk away immediately.'
     },
     {
       question: 'What happens if I accidentally buy a stolen phone?',
-      answer: 'Police can confiscate it as evidence without compensating you. The original owner may pursue civil action to recover it. You lose all money paid, and in some jurisdictions, you may face criminal charges for receiving stolen property even if you didn\'t know it was stolen.'
+      answer: 'Police can confiscate it as evidence without compensating you. The original owner may pursue civil action. You lose all money paid AND may face criminal charges for receiving stolen property - even if you didn\'t know it was stolen. That\'s why checking BEFORE you buy is critical.'
     },
     {
-      question: 'How accurate is SafeOrStolen?',
-      answer: 'We query official databases including NICB (National Insurance Crime Bureau), GSMA Device Registry, national police databases, and carrier blacklists. Our data is 99.9% accurate as it comes directly from law enforcement and carrier sources. We update our databases in real-time.'
+      question: 'Is this really free?',
+      answer: 'Yes! Your first 2 checks are completely free. No credit card required. Just enter the serial number and get instant results. If you need more checks (dealers, pawn shops, frequent buyers), it\'s $4.99/month for unlimited.'
     },
     {
-      question: 'Do you report searches to police?',
-      answer: 'No. Your searches are completely private and anonymous. We don\'t log, track, or store search data. We don\'t report to police unless legally required by court order. However, we strongly encourage users who find stolen items to report sellers to both the marketplace and law enforcement.'
+      question: 'Does this work for cars too?',
+      answer: 'Absolutely. Enter the VIN number (17 digits on the dashboard or door jamb). We check NICB stolen vehicle database, police records, insurance claims, and DMV records. Perfect for Craigslist, Facebook Marketplace, or any private car sale.'
     },
     {
-      question: 'Can I check items from other countries?',
-      answer: 'Yes! SafeOrStolen works globally with coverage in 150+ countries. We query international databases including INTERPOL stolen property database, GSMA global registry, and national police databases worldwide. Perfect for checking items from international sellers.'
+      question: 'What if the seller won\'t give me the serial number?',
+      answer: 'Red flag. Any legitimate seller will provide the serial number, IMEI, or VIN when asked. If they refuse, make excuses, or get defensive - walk away. Scammers know their items are flagged in databases, so they avoid verification.'
+    },
+    {
+      question: 'Can I use this at Facebook Marketplace or eBay meetups?',
+      answer: 'That\'s exactly what it\'s for. Before you meet the seller, ask for the serial number and check it here. If it\'s clean, proceed with the meetup (at a police station parking lot for safety). If it\'s stolen, cancel and report the listing.'
+    },
+    {
+      question: 'Can sellers use this to prove their item isn\'t stolen?',
+      answer: 'Yes! Smart sellers run a check and share the "SAFE" result with buyers. It builds trust and helps you sell faster. You can even get a verification badge for your listings.'
+    },
+    {
+      question: 'How accurate is this?',
+      answer: 'We query official databases including NICB (National Insurance Crime Bureau), GSMA global registry, national police databases, and carrier blacklists. Our data comes directly from law enforcement and carrier sources, updated in real-time. 99.9% accuracy.'
     }
   ];
 
@@ -35,10 +43,10 @@ export const HomepageFAQ = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently Asked Questions
+            Common Questions About Checking Stolen Items
           </h2>
           <p className="text-xl text-muted-foreground">
-            Common questions about verification and stolen item checking
+            Real answers to what buyers ask before purchasing used phones, cars, and electronics
           </p>
         </div>
 
