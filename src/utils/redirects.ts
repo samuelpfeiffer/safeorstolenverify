@@ -17,6 +17,9 @@ export interface RedirectRule {
  * IMPORTANT: Real routes must never be redirected (guarded in findRedirect()).
  */
 export const REDIRECT_RULES: RedirectRule[] = [
+  // ===== PRESS REDIRECT =====
+  { from: '/press', to: '/press-kit', permanent: true },
+
   // ===== DUPLICATE APP URLS =====
   { from: '/imei-checker-app', to: '/app', permanent: true },
   { from: '/mobile-verification', to: '/app', permanent: true },

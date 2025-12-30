@@ -11,6 +11,7 @@ import { IMEICheckHowTo, VINCheckHowTo } from '@/components/seo/HowToSchema';
 const heroImage = '/images/hero-device.png';
 import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 import { HomeSEOBodyContent } from '@/components/home/HomeSEOBodyContent';
+import { HeroTrustSignals } from '@/components/home/HeroTrustSignals';
 
 // Lazy loaded components for below-fold content
 import { LazySection } from '@/components/performance/LazySection';
@@ -30,6 +31,9 @@ const CompactMobileAppCTA = lazy(() => import('@/components/home/CompactMobileAp
 const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChannelSection').then(m => ({ default: m.YouTubeChannelSection })));
 const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
 const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
+const CrimeReductionSection = lazy(() => import('@/components/home/CrimeReductionSection').then(m => ({ default: m.CrimeReductionSection })));
+const BuyerSellerProtection = lazy(() => import('@/components/home/BuyerSellerProtection').then(m => ({ default: m.BuyerSellerProtection })));
+const HomepageFAQ = lazy(() => import('@/components/home/HomepageFAQ').then(m => ({ default: m.HomepageFAQ })));
 
 // Deferred above-fold components (loaded after hero but before user interaction)
 const SocialProofBanner = lazy(() => import('@/components/conversion/SocialProofBanner').then(m => ({ default: m.SocialProofBanner })));
@@ -85,6 +89,10 @@ const Index = () => {
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
                 The trusted verification service for buyers, sellers, and businesses worldwide
               </p>
+              
+              {/* Trust Signals - Above Fold */}
+              <HeroTrustSignals />
+              
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
@@ -166,6 +174,20 @@ const Index = () => {
 
         {/* Substantial, user-visible body content (not lazy loaded) */}
         <HomeSEOBodyContent />
+
+        {/* Crime Reduction Section - Mission & Impact */}
+        <LazySection minHeight="400px">
+          <Suspense fallback={<SectionSkeleton height="400px" />}>
+            <CrimeReductionSection />
+          </Suspense>
+        </LazySection>
+
+        {/* Buyer AND Seller Protection - Both Sides Value Prop */}
+        <LazySection minHeight="500px">
+          <Suspense fallback={<SectionSkeleton height="500px" />}>
+            <BuyerSellerProtection />
+          </Suspense>
+        </LazySection>
 
         {/* Below-fold content - All lazy loaded */}
         <LazySection minHeight="80px">
@@ -258,6 +280,13 @@ const Index = () => {
         <LazySection minHeight="200px">
           <Suspense fallback={<SectionSkeleton />}>
             <InternalLinksSection />
+          </Suspense>
+        </LazySection>
+
+        {/* Homepage FAQ Section */}
+        <LazySection minHeight="400px">
+          <Suspense fallback={<SectionSkeleton height="400px" />}>
+            <HomepageFAQ />
           </Suspense>
         </LazySection>
 
