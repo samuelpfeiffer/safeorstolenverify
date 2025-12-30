@@ -9,14 +9,14 @@ import { useTypingAnimation } from '@/hooks/useTypingAnimation';
 // Lazy load QR Scanner for performance
 const QRScanner = React.lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
 
-// Words to cycle through in the typing animation
+// Words to cycle through in the typing animation - customer language
 const PLACEHOLDER_WORDS = [
-  'Serial Number',
-  'IMEI Number',
-  'VIN Number',
-  'eBay URL',
-  'Facebook Marketplace URL',
-  'Craigslist URL',
+  'iPhone serial number',
+  'Phone IMEI (dial *#06#)',
+  'Car VIN number',
+  'Samsung phone IMEI',
+  'Laptop serial',
+  'Bike serial number',
 ];
 
 interface HomeSearchFormWithURLProps {
@@ -84,7 +84,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
             className="flex-1 h-14 text-lg font-bold bg-primary hover:bg-primary/90 rounded-xl group"
             disabled={!inputValue.trim()}
           >
-            Check Now
+            Check If It's Stolen - Free
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           
@@ -100,12 +100,12 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
         </div>
       </form>
 
-      {/* Supported inputs */}
+      {/* Supported items - customer language */}
       <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-        <span className="px-3 py-1 bg-muted/30 rounded-full">📱 IMEI</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🚗 VIN</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🔢 Serial</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🔗 Listing URL</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">📱 iPhones & Phones</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">🚗 Cars & Vehicles</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">💻 Laptops</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">🚲 Bikes</span>
       </div>
 
       {/* QR Scanner Modal */}

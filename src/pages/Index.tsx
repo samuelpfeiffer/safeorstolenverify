@@ -49,9 +49,9 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Free Stolen Item Checker App - IMEI VIN Serial Verification | Only Mobile App | SafeOrStolen"
-        description="The ONLY stolen item checker with a mobile app. Protect buyers, sellers, pawn shops & resale businesses. Free IMEI, VIN, serial verification. 100+ databases. More comprehensive than CheckMEND, IMEI.info, Carfax, Swappa. Download free."
-        keywords="stolen item checker app, IMEI checker app free, VIN checker app free, serial number verification app, stolen phone checker app, stolen car check app, pawn shop verification, resale business protection, CheckMEND alternative app, Carfax alternative app, IMEI.info alternative, Swappa alternative, only stolen item app, free stolen goods checker"
+        title="Is This Phone Stolen? Check iPhones, Cars & Items Before Buying | SafeOrStolen"
+        description="Check if phones, cars, bikes are stolen before buying. Free instant verification - just enter the serial number. Used on Facebook Marketplace, eBay, Craigslist. Protect yourself."
+        keywords="is this phone stolen, how to check if phone is stolen, check if car is stolen, is my phone stolen, how to tell if iPhone is stolen, check serial number before buying, facebook marketplace stolen phone check, buying used iPhone what to check"
         canonical="/"
       />
       
@@ -84,17 +84,17 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Check If Secondhand Items Are Safe Or Stolen
+                Is This iPhone Stolen? Check Used Phones, Cars & Items Before You Buy
               </h1>
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
-                The trusted verification service for buyers, sellers, and businesses worldwide
+                Buying used on Facebook Marketplace or Craigslist? Find out if it's stolen in 2 seconds — before you hand over cash.
               </p>
               
               {/* Trust Signals - Above Fold */}
               <HeroTrustSignals />
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
+                Just enter the serial number, IMEI, or VIN. We check <strong>police databases</strong>, <strong>carrier blacklists</strong>, and <strong>insurance claims</strong>. Works for phones, cars, bikes, laptops, and more. Free to try.
               </p>
               
               {/* Deferred Quick Value Proof - fixed height to prevent CLS */}
