@@ -30,7 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import UnifiedHeroSearch from '@/components/verification/UnifiedHeroSearch';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const SamsungIMEICheck = () => {
   const structuredData = [
@@ -141,7 +141,7 @@ const SamsungIMEICheck = () => {
 
             {/* Search Box */}
             <div className="max-w-2xl mx-auto">
-              <UnifiedHeroSearch defaultItemType="phone" />
+              <HomeSearchFormWithURL />
             </div>
           </div>
         </section>

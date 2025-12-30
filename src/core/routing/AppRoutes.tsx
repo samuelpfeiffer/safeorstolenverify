@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 
 // CORE 10 PAGES + STRATEGIC SEO PAGES
@@ -122,7 +122,7 @@ const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
 const BlogIndexPage = lazy(() => import('@/pages/BlogIndexPage'));
 const HowToCheckPhoneStolen = lazy(() => import('@/pages/blog/HowToCheckPhoneStolen'));
 const CompleteVinGuide = lazy(() => import('@/pages/blog/CompleteVinGuide'));
-const ProtectYourselfBuyingUsedElectronics = lazy(() => import('@/pages/blog/ProtectYourselfBuyingUsedElectronics'));
+// ProtectYourselfBuyingUsedElectronics - Removed: Redirects to UltimateMarketplaceBuyersGuide (GSC canonical fix)
 const DataSourceCredibilityStolenGoods = lazy(() => import('@/pages/blog/DataSourceCredibilityStolenGoods'));
 const UltimateMarketplaceBuyersGuide = lazy(() => import('@/pages/blog/UltimateMarketplaceBuyersGuide'));
 const CompleteImeiGuide = lazy(() => import('@/pages/blog/CompleteImeiGuide'));
@@ -350,7 +350,7 @@ export const AppRoutes = () => {
         <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/how-to-check-if-phone-stolen" element={<HowToCheckPhoneStolen />} />
         <Route path="/blog/complete-vin-guide" element={<CompleteVinGuide />} />
-        <Route path="/blog/protect-yourself-buying-used-electronics" element={<ProtectYourselfBuyingUsedElectronics />} />
+        <Route path="/blog/protect-yourself-buying-used-electronics" element={<Navigate to="/blog/ultimate-marketplace-buyers-guide" replace />} />
         <Route path="/blog/data-source-credibility-stolen-goods-verification" element={<DataSourceCredibilityStolenGoods />} />
         <Route path="/blog/ultimate-marketplace-buyers-guide" element={<UltimateMarketplaceBuyersGuide />} />
         <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteImeiGuide />} />

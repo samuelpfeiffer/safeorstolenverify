@@ -29,7 +29,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import UnifiedHeroSearch from '@/components/verification/UnifiedHeroSearch';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const LaptopSerialCheck = () => {
   const structuredData = [
@@ -140,7 +140,7 @@ const LaptopSerialCheck = () => {
 
             {/* Search Box */}
             <div className="max-w-2xl mx-auto">
-              <UnifiedHeroSearch defaultItemType="electronics" />
+              <HomeSearchFormWithURL />
             </div>
           </div>
         </section>

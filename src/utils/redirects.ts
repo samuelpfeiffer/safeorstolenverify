@@ -45,6 +45,17 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/imei-verification-guide', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
   { from: '/blog/complete-vin-verification-guide', to: '/blog/complete-vin-guide', permanent: true },
   { from: '/blog/mobile-app-features', to: '/app', permanent: true },
+  
+  // ===== DUPLICATE BLOG POST CONSOLIDATION (GSC Canonical Fix - Dec 2025) =====
+  // IMEI Posts → Consolidate to /blog/complete-imei-guide-protect-yourself
+  { from: '/blog/imei-checker-guide-2025', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
+  { from: '/blog/imei-check-everything', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
+  { from: '/blog/imei-blacklist-guide', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
+  
+  // "Buying Used" Posts → Consolidate to /blog/ultimate-marketplace-buyers-guide
+  { from: '/blog/protect-yourself-buying-used-electronics', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
+  { from: '/blog/verify-used-electronics-before-buying', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
+  { from: '/blog/safer-buying-workflow', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
 
   // ===== STATE PATTERN URLS =====
   { from: '/state/new-york/stolen-item-checker', to: '/verify', permanent: true },
