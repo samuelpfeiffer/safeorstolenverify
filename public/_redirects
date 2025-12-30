@@ -476,8 +476,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/imei-check-everything                                     /blog/complete-imei-guide-protect-yourself  301!
 /blog/vin-verification-guide                                    /blog/complete-vin-guide  301!
 /blog/imei-blacklist-guide                                      /blog/complete-imei-guide-protect-yourself  301!
-/blog/verify-used-electronics-before-buying                     /blog/protect-yourself-buying-used-electronics  301!
-/blog/buying-used-phones-red-flags                              /blog/protect-yourself-buying-used-electronics  301!
+
+# ============================================
+# DUPLICATE BLOG CONSOLIDATION (GSC Canonical Fix - Dec 2025)
+# ============================================
+# "Buying Used Electronics" Posts → Consolidate to /blog/ultimate-marketplace-buyers-guide
+/blog/protect-yourself-buying-used-electronics                  /blog/ultimate-marketplace-buyers-guide  301!
+/blog/verify-used-electronics-before-buying                     /blog/ultimate-marketplace-buyers-guide  301!
+/blog/safer-buying-workflow                                     /blog/ultimate-marketplace-buyers-guide  301!
+/blog/buying-used-phones-red-flags                              /blog/ultimate-marketplace-buyers-guide  301!
 /blog/buying-used-bikes-verification-guide                      /blog  301!
 /blog/safer-buying-workflow                                     /blog/ultimate-marketplace-buyers-guide  301!
 
