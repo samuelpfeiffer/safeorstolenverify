@@ -71,12 +71,12 @@ export const InternalLinksSection = () => {
       title: "Resources",
       icon: BookOpen,
       links: [
+        { to: "/resource-center", label: "Resource Center" },
+        { to: "/features", label: "All Features" },
+        { to: "/check", label: "Check Any Item" },
         { to: "/blog", label: "Blog" },
-        { to: "/compare", label: "Compare Services" },
+        { to: "/guides/ebay-buyer-protection", label: "eBay Guide" },
         { to: "/how-it-works", label: "How It Works" },
-        { to: "/app", label: "Download App" },
-        { to: "/faq", label: "FAQ" },
-        { to: "/pricing", label: "Pricing" },
       ]
     },
   ];
