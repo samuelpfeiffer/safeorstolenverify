@@ -46,6 +46,7 @@ export const VALID_ROUTES = new Set([
   '/auction-houses',
   '/case-studies',
   '/enterprise-demo',
+  '/press-kit',
   
   // Mobile routes
   '/mobile-verify',

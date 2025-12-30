@@ -14,15 +14,15 @@ const PressKitPage = () => {
     { label: "Headquarters", value: "Seattle, Washington" },
     { label: "Industry", value: "SaaS / Consumer Protection" },
     { label: "Funding", value: "FasterCapital Partnership" },
-    { label: "Items Verified", value: "5,000+" },
-    { label: "Coverage", value: "50 US States + Global" }
+    { label: "Items Verified", value: "50,000+" },
+    { label: "Coverage", value: "50 US States + 150 Countries" }
   ];
 
   const keyStats = [
-    { icon: Shield, stat: "5,000+", label: "Items Verified" },
+    { icon: Shield, stat: "50,000+", label: "Items Verified" },
     { icon: Smartphone, stat: "Only", label: "Mobile App in Category" },
     { icon: Zap, stat: "3 sec", label: "Average Verification Time" },
-    { icon: Globe, stat: "50+", label: "States Covered" }
+    { icon: Globe, stat: "150+", label: "Countries Covered" }
   ];
 
   const pressReleases = [

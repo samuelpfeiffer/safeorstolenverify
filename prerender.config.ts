@@ -30,6 +30,8 @@ export const prerenderRoutes = [
   '/for-businesses',
   '/for-pawn-shops',
   '/for-dealers',
+  '/press-kit',
+  '/testimonials',
   
   // Comparison pages
   '/compare',
