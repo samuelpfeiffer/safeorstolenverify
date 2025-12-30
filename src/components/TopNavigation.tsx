@@ -49,20 +49,20 @@ const TopNavigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b border-border/50 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/98 backdrop-blur-xl border-b border-border shadow-md">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
               src={sosLogo} 
               alt="SafeOrStolen Logo" 
-              className="h-12 w-auto transition-transform group-hover:scale-105"
+              className="h-10 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-2xl font-black tracking-tight">
+            <span className="text-xl font-bold tracking-tight">
               <span className="text-foreground">Safe</span>
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Or</span>
-              <span className="bg-gradient-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">Stolen</span>
+              <span className="text-primary">Or</span>
+              <span className="text-success">Stolen</span>
             </span>
           </Link>
 
@@ -199,14 +199,14 @@ const TopNavigation = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => navigate('/auth')}
-                  className="text-foreground hover:text-sos-orange transition-colors"
+                  className="text-foreground hover:text-primary transition-colors"
                 >
                   Sign In
                 </Button>
                 <Button
                   size="sm"
                   onClick={() => navigate('/auth?mode=signup')}
-                  className="sos-gradient hover:opacity-90 text-white font-bold shadow-orange transition-all"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-primary transition-all"
                 >
                   Get Started
                 </Button>
@@ -343,7 +343,7 @@ const TopNavigation = () => {
                     Sign In
                   </Button>
                   <Button
-                    className="w-full sos-gradient hover:opacity-90 text-white font-bold"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                     onClick={() => {
                       navigate('/auth?mode=signup');
                       setIsMobileMenuOpen(false);

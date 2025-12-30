@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-sos-dark border-t border-sos-orange/20">
+    <footer className="bg-foreground border-t border-border">
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
@@ -91,14 +91,14 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <Logo size="md" showText className="mb-4" />
             
-            <p className="text-gray-400 text-sm mb-4 max-w-md">
+            <p className="text-muted text-sm mb-4 max-w-md">
               Carfax for Everything - Buy and Sell. Verify any secondhand item in 3 seconds. 
               IMEI, VIN, serial numbers, license plates, and more.
             </p>
 
             {/* FasterCapital Branding */}
             <div className="flex items-center space-x-2 mb-4">
-              <Badge variant="outline" className="border-sos-lime text-sos-lime">
+              <Badge variant="outline" className="border-success text-success">
                 <Shield className="h-3 w-3 mr-1" />
                 FasterCapital Partnership
               </Badge>
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
               href="https://fastercapital.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-gray-400 hover:text-sos-lime transition-colors"
+              className="inline-flex items-center text-sm text-muted hover:text-success transition-colors"
             >
               Funded by FasterCapital
               <ExternalLink className="h-3 w-3 ml-1" />
@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-background uppercase tracking-wider mb-4">
                 {section.title}
               </h3>
               <ul className="space-y-2">
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                      className="text-sm text-muted hover:text-background transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -137,16 +137,16 @@ export const Footer: React.FC = () => {
           ))}
         </div>
 
-        <Separator className="my-8 bg-sos-orange/20" />
+        <Separator className="my-8 bg-border" />
 
         {/* Social Media & External Profiles Section */}
         <div className="mb-8">
-          <p className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect With Us</p>
+          <p className="text-sm font-semibold text-background uppercase tracking-wider mb-4">Connect With Us</p>
           <div className="flex flex-wrap gap-3">
             {/* YouTube Button - links to indexable page */}
             <Link
               to="/youtube"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-destructive hover:bg-destructive/90 text-destructive-foreground rounded-lg transition-colors font-medium text-sm"
             >
               <Youtube className="h-5 w-5" />
               YouTube
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
             {/* Crunchbase Button - links to indexable page */}
             <Link
               to="/crunchbase"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-colors font-medium text-sm"
             >
               <ExternalLink className="h-4 w-4" />
               Crunchbase
@@ -166,7 +166,7 @@ export const Footer: React.FC = () => {
               href="https://www.trustpilot.com/review/safeorstolen.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-medium text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-success hover:bg-success/90 text-success-foreground rounded-lg transition-colors font-medium text-sm"
             >
               <Star className="h-4 w-4" />
               Trustpilot
@@ -177,7 +177,7 @@ export const Footer: React.FC = () => {
               href="https://biz.prlog.org/SafeOrStolen/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors font-medium text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-muted hover:bg-muted/80 text-muted-foreground rounded-lg transition-colors font-medium text-sm"
             >
               <ExternalLink className="h-4 w-4" />
               PRLog
@@ -187,12 +187,12 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex items-center space-x-4 text-sm text-gray-400">
+          <div className="flex items-center space-x-4 text-sm text-muted">
             <span>© {currentYear} SafeOrStolen.</span>
             <span>All rights reserved.</span>
             <div className="flex items-center space-x-1">
               <span>Made with</span>
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
+              <Heart className="h-4 w-4 text-destructive fill-current" />
               <span>to protect buyers & sellers</span>
             </div>
           </div>
@@ -205,7 +205,7 @@ export const Footer: React.FC = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-muted hover:text-background transition-colors"
                 aria-label={social.name}
               >
                 <social.icon className="h-5 w-5" />
@@ -214,34 +214,34 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Trust Signals - Honest only */}
-        <div className="mt-8 pt-8 border-t border-sos-orange/20">
+        {/* Trust Signals */}
+        <div className="mt-8 pt-8 border-t border-border">
           <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
-            <Badge variant="outline" className="border-green-500/30 text-green-400">
+            <Badge variant="outline" className="border-success/30 text-success">
               <Lock className="h-3 w-3 mr-1" />
               256-bit SSL Encryption
             </Badge>
-            <Badge variant="outline" className="border-blue-500/30 text-blue-400">
+            <Badge variant="outline" className="border-primary/30 text-primary">
               <Shield className="h-3 w-3 mr-1" />
               Privacy Focused
             </Badge>
-            <Badge variant="outline" className="border-purple-500/30 text-purple-400">
+            <Badge variant="outline" className="border-warning/30 text-warning">
               <Star className="h-3 w-3 mr-1" />
               Growing Community
             </Badge>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-muted">
             <div>
-              <p className="mb-2 font-medium text-gray-400">Security</p>
+              <p className="mb-2 font-medium text-muted">Security</p>
               <p>Enterprise-grade encryption protecting your data and searches.</p>
             </div>
             <div>
-              <p className="mb-2 font-medium text-gray-400">Database Access</p>
+              <p className="mb-2 font-medium text-muted">Database Access</p>
               <p>Multi-database cross-reference verification for accurate results.</p>
             </div>
             <div>
-              <p className="mb-2 font-medium text-gray-400">Mobile App</p>
+              <p className="mb-2 font-medium text-muted">Mobile App</p>
               <p>Only stolen item verification service with dedicated mobile app and barcode scanning.</p>
             </div>
           </div>
