@@ -284,9 +284,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/electronics-checker            /app  301!
 /app/firearms-checker               /app  301!
 /app/law-enforcement                /app  301!
-/app/sellers                        /app  301!
+/app/sellers                        /for-sellers  301!
+/app/buyers                         /for-buyers  301!
 /app/vs-carfax                      /vs-carfax  301!
 /app/vs-imeiinfo                    /vs-imeiinfo  301!
+/app/vs-imeipro                     /vs-imeiinfo  301!
+/app/carfax-alternative             /vs-carfax  301!
 /app/features/history               /app  301!
 /app/features/*                     /app  301!
 
@@ -538,7 +541,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # Missing top-level pages
 /transparency                   /about            301!
 /mobile                         /app              301!
-/check                          /verify           301!
+# /check has real page now - REMOVED redirect
 /for-pawnshops                  /for-pawn-shops   301!
 
 # Blog posts with suffixes (timestamps/versions)
@@ -548,13 +551,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/how-law-enforcement-tracks-stolen-goods-*                  /blog  301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog  301!
 /blog/craigslist-scam-prevention-item-verification-checklist     /blog  301!
-/blog/theft-trends-report-2024                                   /blog  301!
-/blog/bicycle-stolen-serial-number-check                         /check-bike  301!
-/blog/firearm-serial-number-verification                         /firearms-check  301!
-/blog/verify-item-before-meetup                                  /blog/ultimate-marketplace-buyers-guide  301!
-/blog/pawn-shop-stolen-item-verification                         /blog  301!
-/blog/how-to-use-imei-checker-app                                /app  301!
-/blog/imei-checker-app-download                                  /app  301!
+# /blog/theft-trends-report-2024 - has real page, do NOT redirect
+# /blog/bicycle-stolen-serial-number-check - has real page, do NOT redirect  
+# /blog/firearm-serial-number-verification - has real page, do NOT redirect
+# /blog/verify-item-before-meetup - has real page, do NOT redirect
+# /blog/pawn-shop-stolen-item-verification - has real page, do NOT redirect
+/blog/how-to-use-imei-checker-app                                /blog/imei-checker-app-download  301!
+# /blog/imei-checker-app-download - has real page, do NOT redirect
 
 # Blog posts without matching routes
 /blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
@@ -563,11 +566,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
 /blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
 
-# Features page redirect
-/features                         /about            301!
+# Legacy redirects - Note: /features, /testimonials, /contact now have real pages
 /database                         /about            301!
 /account                          /dashboard        301!
-/testimonials                     /about            301!
 
 # Missing "Crawled not indexed" URLs (Dec 2025)
 /our-mission                      /about            301!
