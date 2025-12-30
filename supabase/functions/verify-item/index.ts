@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { runParallelVerification } from '../_shared/parallel-verification.ts';
+import { validateSerialNumber, validateVIN, validateIMEI, checkRateLimit } from '../_shared/validation.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -11,6 +12,16 @@ interface VerificationRequest {
   identifier: string;
   itemType: string;
   userId?: string;
+}
+
+/**
+ * Escapes special characters for ILIKE patterns to prevent pattern injection
+ */
+function escapeILikePattern(input: string): string {
+  return input
+    .replace(/\\/g, '\\\\')
+    .replace(/%/g, '\\%')
+    .replace(/_/g, '\\_');
 }
 
 serve(async (req) => {
@@ -28,7 +39,40 @@ serve(async (req) => {
       );
     }
 
-    console.log(`[verify-item] Starting verification for ${itemType}: ${identifier}`);
+    // Validate input based on item type
+    const itemTypeLower = (itemType || '').toLowerCase();
+    let cleanIdentifier: string;
+
+    if (itemTypeLower === 'vehicle' || itemTypeLower === 'car' || itemTypeLower === 'motorcycle') {
+      const vinValidation = validateVIN(identifier);
+      if (!vinValidation.success) {
+        return new Response(
+          JSON.stringify({ error: vinValidation.error }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      cleanIdentifier = vinValidation.data!;
+    } else if (itemTypeLower === 'phone' || itemTypeLower === 'smartphone') {
+      const imeiValidation = validateIMEI(identifier);
+      if (!imeiValidation.success) {
+        return new Response(
+          JSON.stringify({ error: imeiValidation.error }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      cleanIdentifier = imeiValidation.data!;
+    } else {
+      const serialValidation = validateSerialNumber(identifier);
+      if (!serialValidation.success) {
+        return new Response(
+          JSON.stringify({ error: serialValidation.error }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      cleanIdentifier = serialValidation.data!;
+    }
+
+    console.log(`[verify-item] Validated identifier: ${cleanIdentifier} (type: ${itemTypeLower})`);
     const startTime = Date.now();
 
     const supabaseClient = createClient(
@@ -36,18 +80,50 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    const cleanIdentifier = identifier.trim().toUpperCase();
+    // Rate limiting check
+    const rateLimitId = userId || req.headers.get('CF-Connecting-IP') || req.headers.get('X-Forwarded-For') || 'anonymous';
+    const rateLimit = await checkRateLimit(supabaseClient, rateLimitId, 'verify_item', 20, 60);
+    if (!rateLimit.allowed) {
+      console.log(`[verify-item] Rate limit exceeded for ${rateLimitId}`);
+      return new Response(
+        JSON.stringify({ 
+          error: 'Too many verification requests. Please try again later.',
+          remaining: 0
+        }),
+        { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     const providers: any[] = [];
 
-    // 1. Check internal stolen_items database first
+    // Escape special ILIKE characters to prevent pattern injection
+    const escapedIdentifier = escapeILikePattern(cleanIdentifier);
+
+    // 1. Check internal stolen_items database first (exact match first, then pattern)
     try {
-      const { data: stolenItems, error } = await supabaseClient
+      // Try exact match first for better performance and security
+      const { data: exactMatches, error: exactError } = await supabaseClient
         .from('stolen_items')
         .select('*')
-        .or(`serial_number.ilike.%${cleanIdentifier}%,imei.ilike.%${cleanIdentifier}%,vin.ilike.%${cleanIdentifier}%`)
+        .or(`serial_number.eq.${cleanIdentifier},imei.eq.${cleanIdentifier},vin.eq.${cleanIdentifier}`)
         .limit(5);
 
-      if (!error && stolenItems && stolenItems.length > 0) {
+      let stolenItems = exactMatches;
+
+      // Only do pattern search if no exact matches found
+      if (!exactError && (!exactMatches || exactMatches.length === 0)) {
+        const { data: patternMatches, error: patternError } = await supabaseClient
+          .from('stolen_items')
+          .select('*')
+          .or(`serial_number.ilike.%${escapedIdentifier}%,imei.ilike.%${escapedIdentifier}%,vin.ilike.%${escapedIdentifier}%`)
+          .limit(5);
+        
+        if (!patternError) {
+          stolenItems = patternMatches;
+        }
+      }
+
+      if (stolenItems && stolenItems.length > 0) {
         providers.push({
           provider: 'SafeOrStolen Database',
           status: 'stolen',
