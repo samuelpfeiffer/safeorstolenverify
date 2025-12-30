@@ -17,11 +17,11 @@ export const Footer: React.FC = () => {
     {
       title: 'Verify Items',
       links: [
+        { name: 'Check Any Item', href: '/check' },
         { name: 'Stolen Item Checker', href: '/verify' },
         { name: 'IMEI Checker', href: '/imei-checker' },
         { name: 'VIN Checker', href: '/vin-checker' },
         { name: 'Serial Number Checker', href: '/serial-number-checker' },
-        { name: 'License Plate Lookup', href: '/license-plate-lookup' },
         { name: 'Firearms Check', href: '/firearms-check' },
         { name: 'Check Phone', href: '/check-phone' },
         { name: 'Check Car', href: '/check-car' },
@@ -42,10 +42,10 @@ export const Footer: React.FC = () => {
       links: [
         { name: 'About Us', href: '/about' },
         { name: 'How It Works', href: '/how-it-works' },
+        { name: 'Features', href: '/features' },
         { name: 'Pricing', href: '/pricing' },
-        { name: 'Compare Plans', href: '/compare' },
-        { name: 'Free Tools', href: '/free-tools' },
         { name: 'Testimonials', href: '/testimonials' },
+        { name: 'Resource Center', href: '/resource-center' },
       ]
     },
     {
@@ -63,6 +63,7 @@ export const Footer: React.FC = () => {
       links: [
         { name: 'FAQ', href: '/faq' },
         { name: 'Blog', href: '/blog' },
+        { name: 'eBay Buyer Guide', href: '/guides/ebay-buyer-protection' },
         { name: 'Terms of Service', href: '/terms' },
         { name: 'Privacy Policy', href: '/privacy' },
       ]
