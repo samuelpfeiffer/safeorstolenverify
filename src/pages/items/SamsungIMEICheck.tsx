@@ -3,112 +3,112 @@ import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTempl
 const SamsungIMEICheck = () => {
   return (
     <SEOLandingPageTemplate
-      title="Check if Samsung Phone is Stolen - Free IMEI Verification | SafeOrStolen"
-      metaDescription="Verify any Samsung Galaxy phone isn't stolen before buying. Free IMEI check against 50M+ database. Instant results for Galaxy S24, S23, Z Fold, Z Flip, A series."
-      h1="Check if Samsung Galaxy is Stolen - Free IMEI Check"
+      title="Is This Samsung Phone Stolen? Check Before Buying | SafeOrStolen"
+      metaDescription="Buying a used Samsung Galaxy? Check if it's stolen before you pay. Free verification for S24, Z Fold, Z Flip, A series. Works on Facebook Marketplace, OfferUp."
+      h1="Is This Samsung Stolen? Check Before You Buy"
       keywords={[
-        'samsung imei check',
-        'check if samsung is stolen',
-        'galaxy phone stolen check',
-        'samsung stolen database',
-        'verify samsung not stolen',
-        'samsung s24 imei check',
+        'is this samsung stolen',
+        'how to check if samsung is stolen',
+        'samsung galaxy stolen check',
+        'check samsung before buying',
+        'samsung s24 stolen check',
+        'z fold stolen check',
         'used samsung verification',
-        'samsung galaxy imei lookup',
-        'is my samsung stolen',
-        'samsung z fold stolen check'
+        'samsung blacklist check free',
+        'facebook marketplace samsung stolen',
+        'how to tell if samsung is stolen'
       ]}
       canonical="/check-samsung-stolen"
       itemType="Samsung Phone"
       identifierType="IMEI"
-      heroBadge="Samsung Device Verification"
-      heroSubtitle="Samsung Galaxy phones are the second most stolen smartphones in America. Before buying used, verify the IMEI isn't blacklisted or reported stolen. Free instant check."
+      heroBadge="Protect Yourself Before Buying"
+      heroSubtitle="Samsung Galaxy phones are the second-most stolen smartphones in America. That 'great deal' on an S24 or Z Fold could cost you everything. Check before you meet the seller."
       stats={[
         { value: "800K+", label: "Samsung Phones Stolen Yearly" },
-        { value: "3 sec", label: "Verification Time" },
-        { value: "50M+", label: "Devices in Database" },
-        { value: "Free", label: "First 2 Checks" }
+        { value: "2 sec", label: "To Check" },
+        { value: "Free", label: "First 2 Checks" },
+        { value: "$900+", label: "Average Loss Avoided" }
       ]}
-      whatIsTitle="What is Samsung IMEI Verification?"
-      whatIsContent="Every Samsung Galaxy phone has a unique 15-digit IMEI (International Mobile Equipment Identity) number. When a Samsung device is reported stolen, lost, or has unpaid financing, the IMEI gets added to carrier blacklists and global stolen device databases. Our verification service instantly checks your Samsung's IMEI against GSMA, carrier blacklists (AT&T, Verizon, T-Mobile), and law enforcement records. A blacklisted Samsung won't work on cellular networks, making it essentially worthless."
+      whatIsTitle="How Do I Know If a Samsung Is Stolen?"
+      whatIsContent="Every Samsung Galaxy has a unique 15-digit serial number (IMEI). When a phone is reported stolen, carriers blacklist it so it can't connect to any network. Our free checker searches these blacklists plus police databases. If the Samsung is stolen, you'll know before you hand over your money."
       howItWorksSteps={[
-        "Find the Samsung IMEI: Dial *#06# on the phone, go to Settings > About Phone > Status > IMEI, or check the original box",
-        "Enter the 15-digit IMEI number into our free verification tool",
-        "Our system checks 50+ million records across global databases in real-time",
-        "Get instant results - know if your Samsung is SAFE, STOLEN, or BLACKLISTED"
+        "Ask the seller for the IMEI (or dial *#06# on the Samsung)",
+        "Enter the 15-digit number above - takes 2 seconds",
+        "See if it's SAFE ✅ or BLACKLISTED ❌",
+        "If safe, proceed with the meeting. If blacklisted, walk away."
       ]}
-      howItWorksDescription="We check multiple databases simultaneously including GSMA Device Registry, US carrier blacklists, Samsung's Find My Mobile reports, law enforcement records, and insurance claim databases. Our comprehensive check ensures you're protected from purchasing a stolen or financed device."
-      whyVerifyTitle="Why Verify Samsung Phones Before Buying?"
-      whyVerifyContent="Samsung Galaxy devices, especially flagship models like the S24 Ultra, Z Fold, and Z Flip, are high-value targets for thieves. With prices exceeding $1,000 for premium models, the financial risk of buying stolen is significant."
+      howItWorksDescription="We check carrier blacklists, Samsung's Find My Mobile reports, police databases, and insurance claims. Covers all Galaxy models - S24, S23, S22, Z Fold, Z Flip, A series, and older phones."
+      whyVerifyTitle="What Happens If I Buy a Stolen Samsung?"
+      whyVerifyContent="Samsung Galaxy phones - especially flagships like the S24 Ultra and Z Fold - are worth $1,000+. Here's what happens if you buy one that's stolen:"
       whyVerifyBenefits={[
-        "Blacklisted Samsung phones won't work on any US carrier network",
-        "Samsung's Find My Mobile can remotely lock and wipe stolen devices",
-        "Stolen devices may have unpaid financing that could become your problem",
-        "Police can confiscate stolen property - you lose the phone AND your money",
-        "Factory Reset Protection (FRP) can lock you out permanently",
-        "No warranty coverage for stolen or blacklisted devices",
-        "Possession of stolen property is a crime in all 50 states",
-        "Private sellers offer no refunds if you discover it's stolen later"
+        "Phone won't work - blacklisted Samsungs can't connect to AT&T, Verizon, T-Mobile, or any carrier",
+        "Samsung lock - Find My Mobile can remotely lock and wipe the device",
+        "FRP trap - Factory Reset Protection locks you out if owner didn't sign out",
+        "Police seizure - stolen property gets confiscated, you get nothing back",
+        "Criminal charges - receiving stolen property is a crime in all states",
+        "No warranty - Samsung won't touch stolen devices",
+        "Can't resell - no one will buy a blacklisted phone",
+        "Total loss - your money is gone, the seller blocked you"
       ]}
       useCases={[
         {
-          title: "Buying Samsung Galaxy S24/S23",
-          description: "Premium Samsung flagships are theft targets. Verify the IMEI before paying premium prices for used models."
+          title: "Galaxy S24 Ultra Deal",
+          description: "A $600 S24 Ultra on Facebook? That's half price for a reason. Check before you get scammed."
         },
         {
-          title: "Samsung Z Fold & Z Flip Buyers",
-          description: "Foldable phones cost $1,500+. The small investment in verification can save you from a costly mistake."
+          title: "Z Fold or Z Flip",
+          description: "These $1,500+ phones are prime theft targets. Always verify before buying used."
         },
         {
-          title: "Budget Samsung A Series",
-          description: "Even mid-range Samsung phones like the Galaxy A54 are frequently stolen. Always verify before buying."
+          title: "Budget Galaxy A Series",
+          description: "Even mid-range phones like the A54 get stolen and resold. A quick check protects you."
         }
       ]}
       testimonial={{
-        quote: "The Galaxy Z Fold I found on OfferUp was too good to be true - and it was. SafeOrStolen showed it was reported stolen. Saved me $1,200!",
+        quote: "The Z Fold 5 on OfferUp looked perfect - still in box, great price. Checked here and it was reported stolen in Miami. Seller had driven from Florida to sell it here. Unbelievable.",
         author: "Jennifer T.",
-        role: "SafeOrStolen User, Miami"
+        role: "Atlanta"
       }}
       faqs={[
         {
-          question: "How do I find the IMEI on a Samsung Galaxy phone?",
-          answer: "Multiple ways: 1) Dial *#06# from the phone dialer, 2) Go to Settings > About Phone > Status > IMEI information, 3) Check the original retail box, or 4) Look under the battery on older removable-battery models. Always verify the IMEI on the device matches what the seller provides."
+          question: "How do I find the IMEI on a Samsung?",
+          answer: "Dial *#06# from the phone dialer. Or go to Settings > About Phone > Status > IMEI information. It's also on the original box and SIM card tray."
         },
         {
           question: "What Samsung models can I check?",
-          answer: "Our IMEI checker works for ALL Samsung Galaxy models including: Galaxy S24, S23, S22 series, Galaxy Z Fold and Z Flip series, Galaxy A series (A54, A34, etc.), Galaxy Note series, and older models. Any Samsung with an IMEI can be verified."
+          answer: "All of them! Galaxy S24, S23, S22, S21, Z Fold, Z Flip, A series (A54, A34, A14), Note series, and older models. Any Samsung with an IMEI."
         },
         {
-          question: "What is Samsung FRP (Factory Reset Protection)?",
-          answer: "FRP is Samsung's anti-theft feature. If the previous owner didn't properly sign out of their Samsung account before factory reset, you'll be locked out. While our IMEI check can't detect FRP directly, a stolen phone often has FRP enabled. Always ask the seller to sign out of their Samsung account in front of you."
+          question: "What is Samsung FRP lock?",
+          answer: "Factory Reset Protection - if the previous owner didn't sign out of their Samsung account before reset, you're locked out forever. Scammers often say 'I forgot my password' - red flag."
         },
         {
-          question: "Can a Samsung IMEI be changed or cloned?",
-          answer: "Tampering with IMEI numbers is illegal. While technically possible, it's extremely difficult on modern Samsung devices with Knox security. However, scammers may provide fake IMEI numbers. Always verify by dialing *#06# on the actual device."
+          question: "What if the seller won't give me the IMEI?",
+          answer: "Walk away immediately. Legitimate sellers provide it without hesitation. No IMEI = stolen phone."
         },
         {
-          question: "What does it mean if a Samsung is blacklisted?",
-          answer: "A blacklisted Samsung has been reported to carriers as stolen, lost, or has unpaid bills. The device is blocked from connecting to AT&T, Verizon, T-Mobile, and other carrier networks. It's essentially a WiFi-only tablet at that point."
+          question: "Can sellers fake an IMEI number?",
+          answer: "They can send you a fake number, but can't change the phone's actual IMEI. Always verify by dialing *#06# on the actual phone when you meet them."
         },
         {
-          question: "How quickly do stolen Samsung phones get blacklisted?",
-          answer: "This varies. Some carriers blacklist within hours of a stolen report, while others may take days. A clean IMEI check today doesn't guarantee it won't be blacklisted tomorrow - which is why verifying recent theft reports is crucial."
+          question: "What does 'blacklisted' mean?",
+          answer: "The phone was reported to carriers as stolen, lost, or having unpaid bills. It can't connect to any carrier network - it's basically an expensive WiFi tablet."
         },
         {
-          question: "Should I still check if buying from Swappa or eBay?",
-          answer: "Yes! While Swappa performs some verification, it's not comprehensive. eBay sellers may not be verified at all. Our database includes sources that marketplace verification may miss. Always do your own due diligence."
+          question: "Is this really free?",
+          answer: "Yes! 2 free checks, no credit card required. Enough to verify before any purchase."
         },
         {
-          question: "What if the IMEI check shows the Samsung is stolen?",
-          answer: "Do NOT purchase the device. Walk away immediately. Report the listing to the marketplace and consider notifying local police. Never confront the seller about stolen property."
+          question: "What if the phone shows as stolen?",
+          answer: "Don't buy it. Don't meet. Report the listing to Facebook/OfferUp/Craigslist. Consider notifying police - you might help catch a thief."
         }
       ]}
-      ctaTitle="Protect Yourself Before Buying a Used Samsung"
-      ctaDescription="A 3-second IMEI check could save you from buying a stolen Galaxy phone. Start your free verification now."
+      ctaTitle="Check Before You Pay"
+      ctaDescription="A stolen Samsung is worthless. Enter the IMEI and know in 2 seconds. It's free."
       relatedLinks={[
-        { title: "iPhone IMEI Check", href: "/check-iphone-stolen" },
-        { title: "All Phone Verification", href: "/imei-checker" },
-        { title: "Craigslist Safety", href: "/craigslist-safety-verification" }
+        { title: "Is This iPhone Stolen?", href: "/check-iphone-stolen" },
+        { title: "Is This Android Stolen?", href: "/check-android-stolen" },
+        { title: "OfferUp Safety Tips", href: "/offerup-verify-not-stolen" }
       ]}
     />
   );
