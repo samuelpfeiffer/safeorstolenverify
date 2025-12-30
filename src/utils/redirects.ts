@@ -115,9 +115,9 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
   { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
 
-  // ===== NOINDEX PAGES - Dec 2025 GSC =====
+  // ===== LEGACY PAGES - Dec 2025 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
-  { from: '/features', to: '/how-it-works', permanent: true },
+  // NOTE: /features now has a real page - DO NOT REDIRECT
   { from: '/app/sellers', to: '/app', permanent: true },
   { from: '/app/vs-carfax', to: '/vs-carfax', permanent: true },
   { from: '/app/features/barcode-scanner', to: '/app/barcode-scanner', permanent: true },
@@ -225,8 +225,8 @@ export function findRedirect(path: string): string | null {
     return '/verify';
   }
 
-  // Guides patterns → /blog
-  if (cleanPath.startsWith('/guides/')) {
+  // Guides patterns → /blog (only if no real route exists)
+  if (cleanPath.startsWith('/guides/') && !VALID_ROUTES.has(cleanPath)) {
     return '/blog';
   }
 

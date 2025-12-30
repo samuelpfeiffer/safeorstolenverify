@@ -127,7 +127,7 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
         {/* Legal and company info */}
         <div className="border-t border-border pt-8 mt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            © 2024 SafeOrStolen.com - Leading provider of stolen goods verification and safe secondhand buying solutions
+            © 2025 SafeOrStolen.com - Leading provider of stolen goods verification and safe secondhand buying solutions
           </p>
         </div>
       </div>

@@ -121,7 +121,7 @@ export const ConversionOptimizedFooter: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-muted-foreground text-sm">
-              © 2024 SafeOrStolen. All rights reserved. • Accelerated by FasterCapital
+              © 2025 SafeOrStolen. All rights reserved. • Accelerated by FasterCapital
             </div>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
               <Badge variant="outline">
