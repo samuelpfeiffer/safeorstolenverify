@@ -2,34 +2,42 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, AlertTriangle, CheckCircle, Smartphone, Car, Laptop, Clock, Download, MapPin, Users } from 'lucide-react';
+import { Shield, AlertTriangle, CheckCircle, Smartphone, Car, Laptop, Clock, Download, MapPin, Users, XCircle } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 
 const FacebookMarketplaceStolenCheck = () => {
   const faqs = [
     {
-      question: "How do I check if an item on Facebook Marketplace is stolen?",
-      answer: "Use SafeOrStolen's free verification tool. Enter the item's IMEI (for phones), VIN (for vehicles), or serial number (for electronics) to instantly check against stolen property databases before meeting the seller."
+      question: "How do I check if something on Facebook Marketplace is stolen?",
+      answer: "Ask the seller for the serial number (or IMEI for phones, VIN for cars). Enter it into SafeOrStolen's free checker - you'll know in 2 seconds if it's stolen. Do this BEFORE you meet the seller."
     },
     {
-      question: "Can I verify items before meeting a Facebook Marketplace seller?",
-      answer: "Yes! Download the SafeOrStolen app to verify items instantly at meetup locations. Our mobile app works offline and can scan barcodes in just 3 seconds."
+      question: "What if the Facebook Marketplace seller won't give me the serial number?",
+      answer: "That's a huge red flag! Legitimate sellers have nothing to hide. If they refuse, make excuses, or pressure you to buy without checking - walk away. They're almost certainly selling stolen goods."
     },
     {
-      question: "What types of items can I verify on Facebook Marketplace?",
-      answer: "SafeOrStolen verifies phones (IMEI), vehicles (VIN), laptops, electronics, bikes, tools, firearms, boats, jewelry, and appliances using serial numbers."
-    },
-    {
-      question: "Is it illegal to buy stolen items on Facebook Marketplace?",
-      answer: "Yes. In most jurisdictions, receiving stolen property is a crime even if you didn't know it was stolen. You can face criminal charges and will lose the item when recovered by police."
+      question: "Is it illegal to buy stolen items even if I didn't know?",
+      answer: "Yes. In all 50 states, receiving stolen property is a crime - even if you had no idea it was stolen. You can face criminal charges, and police will confiscate the item with no refund."
     },
     {
       question: "How common are stolen items on Facebook Marketplace?",
-      answer: "Studies show that 1 in 5 secondhand electronics may have a questionable history. Facebook Marketplace's ease of use makes it a target for stolen goods resale."
+      answer: "More common than you think. Studies show 1 in 5 secondhand electronics may have a questionable history. Facebook's ease of use and lack of verification makes it a hotspot for stolen goods."
     },
     {
-      question: "What should I do if I discover an item is stolen?",
-      answer: "Do not complete the purchase. Report the listing to Facebook and contact local police. Never confront the seller directly about stolen property."
+      question: "What happens if I already bought something stolen on Facebook?",
+      answer: "Contact local police immediately - you're a victim too. Keep all messages from the seller as evidence. Unfortunately, you likely won't get your money back, which is why checking BEFORE buying is so important."
+    },
+    {
+      question: "Can I check if an iPhone is stolen on Facebook Marketplace?",
+      answer: "Yes! Ask the seller to send you the IMEI (they can find it by dialing *#06# on the phone). Enter the IMEI in SafeOrStolen's checker. We'll tell you if it's blacklisted or reported stolen."
+    },
+    {
+      question: "What about checking cars on Facebook Marketplace?",
+      answer: "Absolutely. Ask for the VIN (17 characters, visible on the dashboard through the windshield). We check against stolen vehicle databases, NICB records, and insurance claims."
+    },
+    {
+      question: "How do I report a stolen item I found on Facebook Marketplace?",
+      answer: "Don't confront the seller. Report the listing to Facebook through their 'Report' feature. You can also file a report with local police if you have evidence (like a stolen serial number result)."
     }
   ];
 
@@ -65,9 +73,9 @@ const FacebookMarketplaceStolenCheck = () => {
   return (
     <>
       <PageSEO
-        title="Facebook Marketplace Stolen Item Check - Free Verification | SafeOrStolen"
-        description="Check if items on Facebook Marketplace are stolen before buying. Free IMEI, VIN, and serial number verification. Download our app to verify items at meetup locations."
-        keywords="facebook marketplace stolen, check stolen before buying facebook, verify facebook marketplace item, facebook marketplace scam check, stolen item checker facebook"
+        title="Is This Facebook Marketplace Item Stolen? Check Before Buying | SafeOrStolen"
+        description="Buying on Facebook Marketplace? Check if phones, cars, bikes are stolen before meeting the seller. Free 2-second verification. Don't become a victim of stolen goods."
+        keywords="facebook marketplace stolen, is this stolen facebook marketplace, check before buying facebook marketplace, facebook marketplace scam, how to check if phone is stolen facebook"
         canonical="/facebook-marketplace-stolen-check"
         structuredData={[webPageSchema, faqSchema]}
       />
@@ -82,12 +90,12 @@ const FacebookMarketplaceStolenCheck = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Check if Items Are Stolen on Facebook Marketplace
+              Is This Facebook Marketplace Item Stolen? Check Before You Buy
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Before you meet that seller, verify the item isn't stolen. Our free tool checks IMEI numbers, 
-              VIN codes, and serial numbers against stolen property databases in seconds.
+              That "great deal" on Facebook Marketplace could cost you everything. Before you meet the seller 
+              and hand over cash, take 2 seconds to check if it's stolen. <strong>Free</strong> and <strong>instant</strong>.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

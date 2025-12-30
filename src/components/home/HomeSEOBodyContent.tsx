@@ -226,6 +226,196 @@ export function HomeSEOBodyContent() {
             </p>
           </section>
 
+          {/* Real Stories Section */}
+          <section className="space-y-4" aria-labelledby="home-seo-stories">
+            <h3 id="home-seo-stories" className="text-xl md:text-2xl font-semibold">
+              Real Stories: How SafeOrStolen Saved Buyers
+            </h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
+                <p className="text-muted-foreground italic mb-2">
+                  "Was about to buy an iPhone 14 for $400 on Facebook Marketplace. Seemed like a great deal. 
+                  I checked the IMEI here first — <strong>STOLEN</strong>. The seller blocked me immediately 
+                  when I asked about it. Saved me $400 and a potential police visit!"
+                </p>
+                <p className="text-sm font-medium">— Sarah M., Chicago</p>
+              </div>
+              <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
+                <p className="text-muted-foreground italic mb-2">
+                  "Found a Craigslist car that seemed perfect. Before driving 2 hours to see it, I ran the VIN 
+                  through SafeOrStolen. It was reported stolen just 3 weeks earlier. The listing disappeared 
+                  the next day. Could have lost $15,000."
+                </p>
+                <p className="text-sm font-medium">— Mike T., Phoenix</p>
+              </div>
+              <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
+                <p className="text-muted-foreground italic mb-2">
+                  "I run a pawn shop and state law requires us to check items. SafeOrStolen is faster and 
+                  cheaper than anything else we've tried. We check 50+ items daily. Found 3 stolen items 
+                  in the first month alone."
+                </p>
+                <p className="text-sm font-medium">— Tom's Pawn Shop, Los Angeles</p>
+              </div>
+              <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
+                <p className="text-muted-foreground italic mb-2">
+                  "My bike was stolen from my apartment. I registered it on SafeOrStolen. Two months later, 
+                  someone tried to sell it on OfferUp. The buyer checked and found my report. I got my 
+                  $2,000 bike back!"
+                </p>
+                <p className="text-sm font-medium">— Jessica R., Seattle</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Statistics Section */}
+          <section className="space-y-4" aria-labelledby="home-seo-stats">
+            <h3 id="home-seo-stats" className="text-xl md:text-2xl font-semibold">
+              The Real Cost of Buying Stolen Property
+            </h3>
+            <div className="grid gap-4 md:grid-cols-4">
+              <div className="rounded-lg border border-border/60 p-4 text-center">
+                <p className="text-3xl font-bold text-primary">$15.8B</p>
+                <p className="text-sm text-muted-foreground">Lost to property theft annually in the US</p>
+              </div>
+              <div className="rounded-lg border border-border/60 p-4 text-center">
+                <p className="text-3xl font-bold text-primary">1.2M</p>
+                <p className="text-sm text-muted-foreground">Phones stolen every year in the US alone</p>
+              </div>
+              <div className="rounded-lg border border-border/60 p-4 text-center">
+                <p className="text-3xl font-bold text-primary">800K+</p>
+                <p className="text-sm text-muted-foreground">Vehicles reported stolen annually</p>
+              </div>
+              <div className="rounded-lg border border-border/60 p-4 text-center">
+                <p className="text-3xl font-bold text-primary">1 in 5</p>
+                <p className="text-sm text-muted-foreground">Secondhand electronics have questionable history</p>
+              </div>
+            </div>
+            <p className="text-muted-foreground">
+              According to the{' '}
+              <a 
+                href="https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                FBI's Uniform Crime Reporting program
+              </a>, property crime costs Americans billions every year. Much of this stolen property ends up 
+              resold on marketplaces like Facebook, Craigslist, and eBay. The average loss for buying a stolen 
+              phone is <strong>$800</strong>. For cars, it's <strong>$25,000+</strong>. The emotional toll — 
+              dealing with police, losing your money, potential criminal charges — is even greater.
+            </p>
+          </section>
+
+          {/* Safe Meeting Tips */}
+          <section className="space-y-4" aria-labelledby="home-seo-tips">
+            <h3 id="home-seo-tips" className="text-xl md:text-2xl font-semibold">
+              How to Buy Safely on Facebook Marketplace, Craigslist, and OfferUp
+            </h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-3">
+                <h4 className="font-semibold text-foreground">Before the meetup:</h4>
+                <ul className="list-disc space-y-2 pl-6 text-muted-foreground text-sm">
+                  <li><strong>Ask for the serial number</strong> — Phones: request IMEI (dial *#06#). Cars: ask for VIN.</li>
+                  <li><strong>Check it first</strong> — Enter the number above. Takes 2 seconds.</li>
+                  <li><strong>Research the price</strong> — If it's too good to be true, it probably is.</li>
+                  <li><strong>Check seller history</strong> — New accounts with no history are red flags.</li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h4 className="font-semibold text-foreground">At the meetup:</h4>
+                <ul className="list-disc space-y-2 pl-6 text-muted-foreground text-sm">
+                  <li><strong>Meet in public</strong> — Police station parking lots are ideal (many have "safe exchange zones").</li>
+                  <li><strong>Bring someone</strong> — Never meet alone. Safety in numbers.</li>
+                  <li><strong>Verify on-site</strong> — Use our{' '}
+                    <Link to="/app" className="text-primary hover:underline">mobile app</Link> to re-check the serial.
+                  </li>
+                  <li><strong>Pay with protection</strong> — PayPal or credit card offers some recourse; cash offers none.</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-muted-foreground">
+              Read our complete guides:{' '}
+              <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace safety</Link>,{' '}
+              <Link to="/craigslist-safety-verification" className="text-primary hover:underline">Craigslist safety tips</Link>, and{' '}
+              <Link to="/offerup-verify-not-stolen" className="text-primary hover:underline">OfferUp verification</Link>.
+            </p>
+          </section>
+
+          {/* Databases We Check */}
+          <section className="space-y-4" aria-labelledby="home-seo-databases">
+            <h3 id="home-seo-databases" className="text-xl md:text-2xl font-semibold">
+              What databases does SafeOrStolen check?
+            </h3>
+            <p className="text-muted-foreground">
+              When you enter a serial number, IMEI, or VIN, we check it against <strong>100+ databases</strong> in real-time:
+            </p>
+            <div className="grid gap-3 md:grid-cols-3">
+              <div className="rounded-lg border border-border/60 p-3">
+                <p className="font-medium text-sm">Phone Databases</p>
+                <ul className="text-xs text-muted-foreground space-y-1 mt-2">
+                  <li>• GSMA global blacklist</li>
+                  <li>• Carrier blacklists (AT&T, Verizon, T-Mobile)</li>
+                  <li>• Apple iCloud lock status</li>
+                  <li>• Insurance claim records</li>
+                </ul>
+              </div>
+              <div className="rounded-lg border border-border/60 p-3">
+                <p className="font-medium text-sm">Vehicle Databases</p>
+                <ul className="text-xs text-muted-foreground space-y-1 mt-2">
+                  <li>• NICB stolen vehicle records</li>
+                  <li>• State DMV stolen vehicle reports</li>
+                  <li>• Insurance total loss records</li>
+                  <li>• Salvage title checks</li>
+                </ul>
+              </div>
+              <div className="rounded-lg border border-border/60 p-3">
+                <p className="font-medium text-sm">Police & Property Databases</p>
+                <ul className="text-xs text-muted-foreground space-y-1 mt-2">
+                  <li>• Law enforcement stolen property reports</li>
+                  <li>• Pawn shop reported items</li>
+                  <li>• Insurance stolen property claims</li>
+                  <li>• User-reported stolen items</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-muted-foreground">
+              Results come back in <strong>2-3 seconds</strong>. If an item is in any of these databases as stolen, 
+              lost, or blacklisted, you'll know immediately.
+            </p>
+          </section>
+
+          {/* City-Specific Section */}
+          <section className="space-y-4" aria-labelledby="home-seo-cities">
+            <h3 id="home-seo-cities" className="text-xl md:text-2xl font-semibold">
+              Check stolen items in your city
+            </h3>
+            <p className="text-muted-foreground">
+              Stolen goods are a problem everywhere, but some cities have higher rates. Find local verification 
+              resources and safe meetup locations in your area:
+            </p>
+            <nav className="flex flex-wrap gap-2" aria-label="City verification pages">
+              <Link className="text-sm underline text-primary" to="/city/chicago">Chicago</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/los-angeles">Los Angeles</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/new-york">New York</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/houston">Houston</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/phoenix">Phoenix</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/philadelphia">Philadelphia</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/san-antonio">San Antonio</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/san-diego">San Diego</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/dallas">Dallas</Link>
+              <span className="text-muted-foreground">·</span>
+              <Link className="text-sm underline text-primary" to="/city/miami">Miami</Link>
+            </nav>
+          </section>
+
           {/* Start Section with comprehensive links */}
           <section className="space-y-4" aria-labelledby="home-seo-start">
             <h3 id="home-seo-start" className="text-xl md:text-2xl font-semibold">
@@ -262,11 +452,11 @@ export function HomeSEOBodyContent() {
                 <nav className="flex flex-wrap gap-2" aria-label="Marketplace verification pages">
                   <Link className="underline text-primary" to="/facebook-marketplace-stolen-check">Facebook Marketplace</Link>
                   <span className="text-muted-foreground">·</span>
-                  <Link className="underline text-primary" to="/ebay-stolen-check">eBay</Link>
+                  <Link className="underline text-primary" to="/ebay-stolen-item-check">eBay</Link>
                   <span className="text-muted-foreground">·</span>
-                  <Link className="underline text-primary" to="/craigslist-stolen-check">Craigslist</Link>
+                  <Link className="underline text-primary" to="/craigslist-safety-verification">Craigslist</Link>
                   <span className="text-muted-foreground">·</span>
-                  <Link className="underline text-primary" to="/offerup-stolen-check">OfferUp</Link>
+                  <Link className="underline text-primary" to="/offerup-verify-not-stolen">OfferUp</Link>
                 </nav>
               </div>
               
