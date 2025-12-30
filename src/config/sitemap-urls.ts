@@ -23,6 +23,10 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/terms', priority: 0.40, changefreq: 'yearly' },
   { path: '/privacy', priority: 0.40, changefreq: 'yearly' },
   { path: '/testimonials', priority: 0.70, changefreq: 'monthly' },
+  { path: '/features', priority: 0.85, changefreq: 'monthly' },
+  { path: '/resource-center', priority: 0.80, changefreq: 'weekly' },
+  { path: '/check', priority: 0.90, changefreq: 'weekly' },
+  { path: '/guides/ebay-buyer-protection', priority: 0.75, changefreq: 'monthly' },
 
   // ============================================
   // APP PAGES (6)

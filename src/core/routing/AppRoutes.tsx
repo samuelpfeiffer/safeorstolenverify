@@ -61,6 +61,10 @@ const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
+const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
+const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
+const CheckPage = lazy(() => import('@/pages/CheckPage'));
+const EbayBuyerProtectionGuide = lazy(() => import('@/pages/guides/EbayBuyerProtectionGuide'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
@@ -261,6 +265,10 @@ export const AppRoutes = () => {
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/resource-center" element={<ResourceCenterPage />} />
+        <Route path="/check" element={<CheckPage />} />
+        <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtectionGuide />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
