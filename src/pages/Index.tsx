@@ -8,10 +8,11 @@ import { CleanHeroSection } from '@/components/home/CleanHeroSection';
 import { ItemsGridSection } from '@/components/home/ItemsGridSection';
 import { UseCasesSection } from '@/components/home/UseCasesSection';
 import { SimpleHowItWorks } from '@/components/home/SimpleHowItWorks';
-import { MobileAppSection } from '@/components/home/MobileAppSection';
+import { WhySection } from '@/components/home/WhySection';
 import { SocialProofSection } from '@/components/home/SocialProofSection';
 import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
 import { PressMediaSection } from '@/components/home/PressMediaSection';
+import { FinalCTASection } from '@/components/home/FinalCTASection';
 
 // Lazy loaded components for below-fold content
 import { LazySection } from '@/components/performance/LazySection';
@@ -32,7 +33,7 @@ const Index = () => {
       {/* SEO */}
       <PageSEO
         title="Is This Item Stolen? Check Before Buying | SafeOrStolen"
-        description="Check if phones, cars, bikes are stolen before buying. Free instant verification for Facebook Marketplace, Craigslist, eBay. Enter serial number, get results in 2 seconds."
+        description="Check if phones, cars, bikes are stolen before buying. Free instant verification for Facebook Marketplace, Craigslist, eBay. Enter serial number, get results in 3 seconds."
         keywords="is this phone stolen, check if item is stolen, stolen phone checker, stolen car check, IMEI check, VIN check, Facebook Marketplace stolen, Craigslist scam protection, used phone verification"
         canonical="/"
       />
@@ -46,7 +47,7 @@ const Index = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Is This Item Stolen? Check Before Buying</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 100+ databases. Free verification with results in 2 seconds.</p>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 100+ databases. Free verification with results in 3 seconds.</p>
           <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
         </div>
       </noscript>
@@ -64,8 +65,8 @@ const Index = () => {
         {/* Section 4: How It Works - 3 Steps */}
         <SimpleHowItWorks />
 
-        {/* Section 5: Mobile App */}
-        <MobileAppSection />
+        {/* Section 5: Why SafeOrStolen */}
+        <WhySection />
 
         {/* Section 6: Social Proof - Testimonials + Stats */}
         <SocialProofSection />
@@ -73,6 +74,9 @@ const Index = () => {
         {/* Section 7: Partners & Press */}
         <SponsorsStrip />
         <PressMediaSection />
+
+        {/* Section 8: Final CTA */}
+        <FinalCTASection />
 
         {/* Below-fold: FAQ for SEO */}
         <LazySection minHeight="400px">

@@ -1,5 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Smartphone, Car, Bike, Laptop, Wrench, Watch } from 'lucide-react';
+import { Smartphone, Car, Bike, Laptop, Wrench, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 /**
@@ -11,94 +11,97 @@ const items = [
   {
     icon: Smartphone,
     title: 'Phones & Tablets',
-    stat: '14,200',
-    statLabel: 'checked this month',
-    description: 'iPhones, Samsung, Android. Check IMEI blacklist status.',
+    stat: '14,200/month',
+    description: 'IMEI, blacklist, iCloud lock',
     link: '/check-phone',
   },
   {
     icon: Car,
     title: 'Cars & Vehicles',
-    stat: '8,400',
-    statLabel: 'checked this month',
-    description: 'VIN check for theft, accidents, title issues.',
+    stat: '9,800/month',
+    description: 'VIN, theft, salvage title',
     link: '/check-car',
   },
   {
     icon: Bike,
-    title: 'Bikes & eBikes',
-    stat: '4,100',
-    statLabel: 'checked this month',
-    description: 'Frame numbers checked against BikeIndex, police databases.',
+    title: 'Bikes & E-Bikes',
+    stat: '4,100/month',
+    description: 'Serial number, bike registries',
     link: '/check-bicycle',
   },
   {
     icon: Laptop,
-    title: 'Laptops & Electronics',
-    stat: '3,800',
-    statLabel: 'checked this month',
-    description: 'MacBooks, cameras, gaming consoles, drones.',
+    title: 'Laptops & Computers',
+    stat: '3,200/month',
+    description: 'Serial, corporate theft records',
     link: '/check-laptop',
   },
   {
     icon: Wrench,
     title: 'Power Tools',
-    stat: '1,200',
-    statLabel: 'checked this month',
-    description: 'DeWalt, Milwaukee, Makita - #1 stolen from job sites.',
+    stat: '1,800/month',
+    description: 'DeWalt, Milwaukee, Makita',
     link: '/check-tools',
   },
   {
-    icon: Watch,
-    title: 'Jewelry & Watches',
-    stat: '800',
-    statLabel: 'checked this month',
-    description: 'Rolex, diamonds, luxury items with GIA verification.',
-    link: '/check-jewelry',
+    icon: Camera,
+    title: 'Cameras & Equipment',
+    stat: '1,400/month',
+    description: 'Canon, Nikon, Sony gear',
+    link: '/check-camera',
   },
 ];
 
 export const ItemsGridSection = () => {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What You Can Check
+              What You Can Verify
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Phones, cars, bikes, laptops, tools, jewelry - verify anything before buying
+              From phones to cars to power tools - if it has a serial number, we can check it
             </p>
           </div>
 
           {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {items.map((item) => (
               <Link key={item.title} to={item.link}>
-                <Card className="h-full hover:shadow-lg hover:border-primary/30 transition-all cursor-pointer group">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <item.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          {item.description}
-                        </p>
-                        <p className="text-xs text-muted-foreground/70">
-                          <span className="font-semibold text-secondary">{item.stat}</span> {item.statLabel}
-                        </p>
-                      </div>
+                <Card className="h-full border-2 border-border hover:border-primary transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group bg-muted/30">
+                  <CardContent className="p-8 text-center">
+                    <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="h-8 w-8 text-primary" />
                     </div>
+                    <h3 className="font-semibold text-xl mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4 min-h-[40px]">
+                      {item.description}
+                    </p>
+                    <p className="text-sm font-bold text-primary">
+                      {item.stat}
+                    </p>
+                    <p className="text-sm text-primary mt-4 font-medium">
+                      Check {item.title.split(' ')[0]} →
+                    </p>
                   </CardContent>
                 </Card>
               </Link>
             ))}
+          </div>
+
+          {/* More Items */}
+          <div className="text-center text-muted-foreground">
+            <p>
+              Also: Jewelry, watches, firearms, game consoles, musical instruments{' '}
+              <Link to="/verify" className="text-primary font-semibold hover:underline">
+                See all →
+              </Link>
+            </p>
           </div>
         </div>
       </div>

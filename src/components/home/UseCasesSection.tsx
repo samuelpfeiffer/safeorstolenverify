@@ -1,125 +1,121 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ShoppingCart, RefreshCw, Building2, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ShoppingCart, Briefcase, Building2, Check } from 'lucide-react';
 
 /**
- * Use Cases Section - All Visible (No Tabs!)
- * 3 cards for buyers, resellers, businesses
- * Scenario quotes + real user counts
+ * Use Cases Section - 3 Visual Cards
+ * Buyers, Resellers, Businesses - all visible (no tabs)
  */
 
 const useCases = [
   {
     icon: ShoppingCart,
-    title: 'For Buyers',
-    scenario: '"I\'m buying an iPhone on Facebook Marketplace. Is it stolen?"',
-    description: 'Check any item before meeting up. Avoid buying stolen goods, losing money, and legal trouble.',
+    badge: null,
+    stat: '4,200 this month',
+    title: 'Smart Buyers',
+    scenario: '"I\'m buying a used iPhone on Facebook Marketplace for $400. Is it stolen?"',
     benefits: [
-      'Verify IMEI/VIN/serial in seconds',
-      'Scan marketplace listings directly',
-      'Use mobile app at meetups',
+      'Check before meeting seller',
+      'Avoid legal trouble',
+      'Mobile app with camera scanning',
     ],
-    stat: '4,200',
-    statLabel: 'buyers this month',
-    cta: 'Check an Item',
-    link: '/verify',
-    color: 'primary',
+    price: 'First 2 free, then $2.99/check',
   },
   {
-    icon: RefreshCw,
-    title: 'For Resellers',
-    scenario: '"I flip phones and electronics. I need to verify before I buy inventory."',
-    description: 'Protect your business. Verify items before purchasing to avoid buying stolen merchandise.',
+    icon: Briefcase,
+    badge: 'Most Popular',
+    stat: '950 this month',
+    title: 'Resellers & Flippers',
+    scenario: '"I buy phones to resell on eBay. I need to verify 100+ items per month."',
     benefits: [
-      'Bulk verification for inventory',
-      'Proof of verification for buyers',
-      'Reduce return/dispute rates',
+      'Bulk CSV upload',
+      'Prove items are legitimate',
+      'API access available',
     ],
-    stat: '1,800',
-    statLabel: 'resellers this month',
-    cta: 'Start Verifying',
-    link: '/for-resellers',
-    color: 'secondary',
+    price: '$19.99/month, 50 checks included',
+    featured: true,
   },
   {
     icon: Building2,
-    title: 'For Businesses',
-    scenario: '"Our pawn shop needs to verify 50+ items per day."',
-    description: 'API access and bulk verification for pawn shops, dealerships, and retailers.',
+    badge: null,
+    stat: '480 businesses',
+    title: 'Pawn Shops & Dealers',
+    scenario: '"State law requires us to check all items. We need API integration with our POS."',
     benefits: [
-      'API integration',
-      'Compliance documentation',
-      'Volume discounts',
+      'Unlimited verifications',
+      'POS system integration',
+      'Multi-location support',
     ],
-    stat: '340',
-    statLabel: 'businesses this month',
-    cta: 'Business Plans',
-    link: '/for-businesses',
-    color: 'accent',
+    price: 'Custom enterprise pricing',
   },
 ];
 
 export const UseCasesSection = () => {
   return (
-    <section className="py-16">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Who Uses SafeOrStolen?
+              Who's Using SafeOrStolen Right Now
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whether you're buying one phone or running a business, we help you verify before you buy
-            </p>
           </div>
 
-          {/* Cards - All Visible */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Grid - All 3 visible */}
+          <div className="grid md:grid-cols-3 gap-8">
             {useCases.map((useCase) => (
-              <Card key={useCase.title} className="h-full border-border/50 hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 flex flex-col h-full">
-                  {/* Icon + Title */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`p-3 rounded-lg bg-${useCase.color}/10`}>
-                      <useCase.icon className={`h-6 w-6 text-${useCase.color}`} />
-                    </div>
-                    <h3 className="font-bold text-xl">{useCase.title}</h3>
+              <Card 
+                key={useCase.title} 
+                className={`relative border-2 ${
+                  useCase.featured 
+                    ? 'border-primary border-[3px]' 
+                    : 'border-border'
+                } hover:border-primary transition-all hover:-translate-y-1 hover:shadow-lg`}
+              >
+                {/* Popular Badge */}
+                {useCase.badge && (
+                  <div className="absolute -top-3.5 right-6 bg-secondary text-secondary-foreground px-4 py-1.5 rounded-full text-xs font-bold uppercase">
+                    {useCase.badge}
                   </div>
-
+                )}
+                
+                <CardContent className="p-8">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-4">
+                    <useCase.icon className="h-9 w-9 text-primary" />
+                    <span className="text-sm font-semibold text-primary">
+                      {useCase.stat}
+                    </span>
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold mb-4">
+                    {useCase.title}
+                  </h3>
+                  
                   {/* Scenario Quote */}
-                  <blockquote className="text-sm italic text-muted-foreground border-l-2 border-primary/30 pl-3 mb-4">
-                    {useCase.scenario}
-                  </blockquote>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground mb-4">
-                    {useCase.description}
-                  </p>
-
+                  <div className="bg-muted/50 border-l-4 border-primary p-4 rounded mb-6">
+                    <p className="text-muted-foreground italic text-sm leading-relaxed">
+                      {useCase.scenario}
+                    </p>
+                  </div>
+                  
                   {/* Benefits */}
-                  <ul className="space-y-2 mb-6 flex-1">
+                  <ul className="space-y-3 mb-6">
                     {useCase.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-start gap-2 text-sm">
-                        <span className="h-1.5 w-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
-                        <span>{benefit}</span>
+                        <Check className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground">{benefit}</span>
                       </li>
                     ))}
                   </ul>
-
-                  {/* Stat */}
-                  <p className="text-xs text-muted-foreground/70 mb-4">
-                    <span className="font-semibold text-foreground">{useCase.stat}</span> {useCase.statLabel}
-                  </p>
-
-                  {/* CTA */}
-                  <Button asChild variant={useCase.color === 'primary' ? 'default' : 'outline'} className="w-full">
-                    <Link to={useCase.link}>
-                      {useCase.cta}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  
+                  {/* Price */}
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm font-semibold text-primary">
+                      {useCase.price}
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
