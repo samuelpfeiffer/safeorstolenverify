@@ -1,10 +1,11 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, useCallback, useTransition } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ScanLine, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { useTypingAnimation } from '@/hooks/useTypingAnimation';
+import { useDebouncedCallback } from '@/hooks/useDebounce';
 
 // Lazy load QR Scanner for performance
 const QRScanner = React.lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
@@ -37,6 +38,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState('');
   const [isScannerOpen, setIsScannerOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const typingText = useTypingAnimation({
     words: PLACEHOLDER_WORDS,
@@ -45,23 +47,39 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
     pauseTime: 1500,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Debounced input handler to reduce re-renders and improve INP
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Use startTransition for non-urgent updates to improve INP
+    startTransition(() => {
+      setInputValue(value);
+    });
+  }, []);
+
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = inputValue.trim();
     if (trimmed) {
-      if (isURL(trimmed)) {
-        navigate(`/verify?url=${encodeURIComponent(trimmed)}`);
-      } else {
-        navigate(`/verify?q=${encodeURIComponent(trimmed)}`);
-      }
+      // Use startTransition for navigation to not block interaction
+      startTransition(() => {
+        if (isURL(trimmed)) {
+          navigate(`/verify?url=${encodeURIComponent(trimmed)}`);
+        } else {
+          navigate(`/verify?q=${encodeURIComponent(trimmed)}`);
+        }
+      });
     }
-  };
+  }, [inputValue, navigate]);
 
-  const handleScanResult = (result: string) => {
+  const handleScanResult = useCallback((result: string) => {
     setIsScannerOpen(false);
     setInputValue(result);
-    navigate(`/verify?q=${encodeURIComponent(result)}`);
-  };
+    startTransition(() => {
+      navigate(`/verify?q=${encodeURIComponent(result)}`);
+    });
+  }, [navigate]);
+
+  const openScanner = useCallback(() => setIsScannerOpen(true), []);
 
   return (
     <div className={cn('w-full max-w-2xl mx-auto', className)}>
@@ -71,7 +89,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
           <Input
             type="text"
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={handleInputChange}
             placeholder={`Enter ${typingText}...`}
             className="pl-12 pr-4 h-14 text-lg bg-card border-2 border-border focus:border-primary transition-colors rounded-xl"
           />
@@ -92,8 +110,8 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
             type="button"
             variant="outline"
             size="lg"
-            onClick={() => setIsScannerOpen(true)}
-            className="h-14 px-6 rounded-xl border-2"
+            onClick={openScanner}
+            className="h-14 px-6 rounded-xl border-2 transition-all duration-200 hover:scale-105"
           >
             <ScanLine className="w-5 h-5" />
           </Button>
