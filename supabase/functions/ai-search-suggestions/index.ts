@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { requireAuth, unauthorizedResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -8,6 +9,13 @@ const corsHeaders = {
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // SECURITY: Require user authentication
+  const { user, error: authError } = await requireAuth(req);
+  if (authError) {
+    console.warn('[AI Search Suggestions] Unauthorized access attempt');
+    return unauthorizedResponse('Please sign in to use AI search suggestions');
   }
 
   try {
@@ -28,7 +36,7 @@ serve(async (req) => {
       );
     }
 
-    console.log(`[AI Search Suggestions] Query: "${query}", Type: ${itemType || 'auto'}`);
+    console.log(`[AI Search Suggestions] User ${user.id} query: "${query}", Type: ${itemType || 'auto'}`);
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
