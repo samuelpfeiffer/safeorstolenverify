@@ -69,43 +69,26 @@ const AuthAwareContent: React.FC = () => {
   const [showGrowthComponents, setShowGrowthComponents] = useState(false);
   const [showSEOComponents, setShowSEOComponents] = useState(false);
   const [showAIChat, setShowAIChat] = useState(false);
-  const [authTimeout, setAuthTimeout] = useState(false);
   
-  // Delay loading SEO components by 1.5 seconds - they don't affect LCP
+  // Delay loading SEO components by 2 seconds - they don't affect LCP
   useEffect(() => {
     const seoTimer = setTimeout(() => {
       setShowSEOComponents(true);
-    }, 1500);
+    }, 2000);
     return () => clearTimeout(seoTimer);
   }, []);
   
-  // Delay loading growth/conversion components by 5 seconds to improve CLS and mobile performance
+  // Delay loading growth/conversion components by 6 seconds to improve LCP and mobile performance
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowGrowthComponents(true);
-    }, 5000);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
   
-  // Auth timeout - show content after 800ms even if auth isn't ready
-  // Reduced from 2s to improve LCP - prevents stuck loading
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setAuthTimeout(true);
-    }, 800);
-    return () => clearTimeout(timeout);
-  }, []);
-  
-  // Bypass loading screen for:
-  // 1. Checkout routes (they handle their own auth)
-  // 2. After 2 second timeout (prevents stuck loading)
-  // 3. When auth is ready
-  const isCheckoutRoute = window.location.pathname.includes('checkout');
-  const authReady = initialized && !loading;
-  
-  if (!isCheckoutRoute && !authTimeout && !authReady) {
-    return <AppLoadingScreen />;
-  }
+  // CRITICAL LCP FIX: Never block initial render with loading screen
+  // Auth state is handled by individual routes that need it
+  // This allows hero section to paint immediately
   
   return (
     <GA4Provider>
