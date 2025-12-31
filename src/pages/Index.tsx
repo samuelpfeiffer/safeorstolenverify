@@ -49,9 +49,9 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Is This Phone Stolen? Check iPhones, Cars & Items Before Buying | SafeOrStolen"
-        description="Check if phones, cars, bikes are stolen before buying. Free instant verification - just enter the serial number. Used on Facebook Marketplace, eBay, Craigslist. Protect yourself."
-        keywords="is this phone stolen, how to check if phone is stolen, check if car is stolen, is my phone stolen, how to tell if iPhone is stolen, check serial number before buying, facebook marketplace stolen phone check, buying used iPhone what to check"
+        title="Is This Used Item Stolen? Check Before Buying | SafeOrStolen"
+        description="Verify phones, cars, bikes, laptops, tools in 2 seconds. Free instant check for Facebook Marketplace, Craigslist, eBay. Enter serial number, get results."
+        keywords="is this phone stolen, check if item is stolen, stolen phone checker, stolen car check, IMEI check, VIN check, Facebook Marketplace stolen, Craigslist scam protection, used phone verification, secondhand safety"
         canonical="/"
       />
       
