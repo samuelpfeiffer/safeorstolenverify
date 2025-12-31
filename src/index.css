@@ -418,3 +418,35 @@
   .card-spacing { @apply p-6 md:p-8; }
   .card-gap { @apply gap-6 md:gap-8; }
 }
+
+/* === CLS PREVENTION STYLES === */
+@layer base {
+  /* Ensure all images have intrinsic sizing to prevent layout shift */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Explicit aspect-ratio on images with width/height prevents CLS */
+  img[width][height] {
+    aspect-ratio: attr(width) / attr(height);
+  }
+  
+  /* Reserve space for common dynamic elements */
+  .skeleton-loader {
+    @apply animate-pulse bg-muted;
+    min-height: 100px;
+  }
+  
+  /* Fixed positioning for notifications/banners to prevent push */
+  .fixed-banner {
+    @apply fixed bottom-0 left-0 right-0;
+    /* Doesn't push content - overlays instead */
+  }
+  
+  /* Container for dynamic content with minimum height */
+  .dynamic-container {
+    min-height: var(--min-height, 100px);
+    contain: layout;
+  }
+}
