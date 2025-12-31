@@ -39,10 +39,9 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
     : `https://safeorstolen.com${currentPath}`;
   const imageUrl = image.startsWith('http') ? image : `https://safeorstolen.com${image}`;
 
-  const robotsContent = [
-    noindex ? 'noindex' : 'index',
-    nofollow ? 'nofollow' : 'follow'
-  ].join(', ');
+  const robotsContent = noindex 
+    ? 'noindex, nofollow' 
+    : 'index, follow, max-snippet:-1, max-image-preview:large';
 
   return (
     <Helmet>
@@ -51,6 +50,7 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="author" content={author} />
+      <meta name="robots" content={robotsContent} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
