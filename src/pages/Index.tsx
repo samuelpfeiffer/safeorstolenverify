@@ -10,7 +10,8 @@ import { UseCasesSection } from '@/components/home/UseCasesSection';
 import { SimpleHowItWorks } from '@/components/home/SimpleHowItWorks';
 import { MobileAppSection } from '@/components/home/MobileAppSection';
 import { SocialProofSection } from '@/components/home/SocialProofSection';
-import { FinalCTASection } from '@/components/home/FinalCTASection';
+import { SponsorsStrip } from '@/components/marketing/SponsorsStrip';
+import { PressMediaSection } from '@/components/home/PressMediaSection';
 
 // Lazy loaded components for below-fold content
 import { LazySection } from '@/components/performance/LazySection';
@@ -69,8 +70,9 @@ const Index = () => {
         {/* Section 6: Social Proof - Testimonials + Stats */}
         <SocialProofSection />
 
-        {/* Section 7: Final CTA */}
-        <FinalCTASection />
+        {/* Section 7: Partners & Press */}
+        <SponsorsStrip />
+        <PressMediaSection />
 
         {/* Below-fold: FAQ for SEO */}
         <LazySection minHeight="400px">
