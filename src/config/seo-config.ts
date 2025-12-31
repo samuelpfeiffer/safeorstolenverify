@@ -10,7 +10,7 @@ export const SEO_CONFIG = {
   titleTemplate: '%s | SafeOrStolen',
   defaultDescription: 'Check if phones, cars, bikes are stolen before buying. Free instant verification - just enter the serial number. Used on Facebook Marketplace, eBay, Craigslist. Protect yourself.',
   defaultImage: '/og-image.jpg',
-  twitterHandle: '@safeorstolen',
+  twitterHandle: '@safeorstolen123',
   facebookAppId: '',
   
   // GSC Configuration
@@ -45,7 +45,7 @@ export const SEO_CONFIG = {
   
   // Social & External Profiles
   social: {
-    twitter: 'https://twitter.com/safeorstolen',
+    twitter: 'https://x.com/safeorstolen123',
     facebook: 'https://facebook.com/safeorstolen',
     linkedin: 'https://linkedin.com/company/safeorstolen',
     youtube: 'https://www.youtube.com/@safeorstolen',
