@@ -84,10 +84,10 @@ const Index = () => {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Is This iPhone Stolen? Check Used Phones, Cars & Items Before You Buy
+                Is This Used Item Stolen? Check Before Buying
               </h1>
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
-                Buying used on Facebook Marketplace or Craigslist? Find out if it's stolen in 2 seconds — before you hand over cash.
+                Verify phones, cars, bikes, laptops, tools in 2 seconds. Free instant check for Facebook Marketplace, Craigslist, eBay.
               </p>
               
               {/* Trust Signals - Above Fold */}
