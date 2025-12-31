@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { requireAdmin, forbiddenResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -23,6 +24,13 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // SECURITY: Require admin authentication
+  const { user, error: authError, isAdmin } = await requireAdmin(req);
+  if (authError || !isAdmin) {
+    console.warn('[AI Content Generator] Unauthorized access attempt');
+    return forbiddenResponse(authError || 'Admin access required');
+  }
+
   const startTime = Date.now();
 
   try {
@@ -38,7 +46,7 @@ serve(async (req) => {
 
     const { type, itemData, verificationResult, userContext } = await req.json() as ContentRequest;
 
-    console.log(`[AI Content Generator] Generating ${type} content for ${itemData.category || 'item'}`);
+    console.log(`[AI Content Generator] Admin ${user.id} generating ${type} content for ${itemData.category || 'item'}`);
 
     const systemPrompt = `You are SafeOrStolen's content writer. Generate clear, professional content for verification reports and buyer guidance.
 

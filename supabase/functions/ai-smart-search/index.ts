@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { requireAuth, unauthorizedResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -34,6 +35,13 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // SECURITY: Require user authentication
+  const { user, error: authError } = await requireAuth(req);
+  if (authError) {
+    console.warn('[AI Smart Search] Unauthorized access attempt');
+    return unauthorizedResponse('Please sign in to use AI smart search');
+  }
+
   try {
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) {
@@ -41,7 +49,7 @@ serve(async (req) => {
     }
 
     const { query }: SmartSearchRequest = await req.json();
-    console.log('[AI Smart Search] Processing query:', query);
+    console.log(`[AI Smart Search] User ${user.id} processing query:`, query);
 
     if (!query || query.trim().length < 3) {
       return new Response(JSON.stringify({ 
