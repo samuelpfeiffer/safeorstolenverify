@@ -10,7 +10,6 @@ import { SignupSuccess } from '@/components/auth/SignupSuccess';
 import { AuthForm } from '@/components/auth/AuthForm';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
 type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success' | 'signin-welcome';
 
@@ -126,12 +125,7 @@ const AuthPage = () => {
 
   // Main auth form
   return (
-    <>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-        <title>Sign In | SafeOrStolen</title>
-      </Helmet>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center p-4">
       <div className="absolute top-4 left-4">
         <Button 
           variant="ghost" 
@@ -160,7 +154,6 @@ const AuthPage = () => {
         </CardContent>
       </Card>
     </div>
-    </>
   );
 };
 

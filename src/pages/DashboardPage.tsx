@@ -560,14 +560,7 @@ const DashboardPage = () => {
   };
 
   return (
-    <>
-      <PageSEO
-        title="Dashboard | SafeOrStolen"
-        description="Your SafeOrStolen account dashboard."
-        canonical="/dashboard"
-        noIndex={true}
-      />
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
       {/* Header removed to avoid duplication with AppLayout's SOSHeader */}
 
       <div className="container mx-auto px-4 py-8">
@@ -697,7 +690,6 @@ const DashboardPage = () => {
         />
       </div>
     </div>
-    </>
   );
 };
 
