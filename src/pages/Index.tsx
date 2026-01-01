@@ -6,7 +6,7 @@ import { IMEICheckHowTo, VINCheckHowTo } from '@/components/seo/HowToSchema';
 // New streamlined components - loaded eagerly for above-fold
 import { CleanHeroSection } from '@/components/home/CleanHeroSection';
 import { ItemsGridSection } from '@/components/home/ItemsGridSection';
-import { UseCasesSection } from '@/components/home/UseCasesSection';
+import { WhoUsesSection } from '@/components/home/WhoUsesSection';
 import { SimpleHowItWorks } from '@/components/home/SimpleHowItWorks';
 import { WhySection } from '@/components/home/WhySection';
 import { SocialProofSection } from '@/components/home/SocialProofSection';
@@ -59,8 +59,8 @@ const Index = () => {
         {/* Section 2: Items Grid - What You Can Check */}
         <ItemsGridSection />
 
-        {/* Section 3: Use Cases - Buyers, Resellers, Businesses */}
-        <UseCasesSection />
+        {/* Section 3: Who Uses - Buyers, Resellers, Businesses (Tabbed) */}
+        <WhoUsesSection />
 
         {/* Section 4: How It Works - 3 Steps */}
         <SimpleHowItWorks />
