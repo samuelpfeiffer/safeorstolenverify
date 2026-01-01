@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
               
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                The ONLY stolen verification app with instant barcode scanning. CheckMEND has NO app. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. Like Carfax for everything. All 50 states + international.
+                Reducing global crime through verification. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. 32,000+ items verified monthly across 50+ countries.
               </p>
 
               <div className="space-y-3 mb-6">

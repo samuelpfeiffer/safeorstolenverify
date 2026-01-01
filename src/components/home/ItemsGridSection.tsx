@@ -1,10 +1,12 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Smartphone, Car, Bike, Laptop, Wrench, Camera } from 'lucide-react';
+import { Smartphone, Car, CarFront, Bike, Laptop, Wrench, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Badge } from '@/components/ui/badge';
 
 /**
- * Items Grid Section - 6 Visual Cards
+ * Items Grid Section - 7 Visual Cards
  * Shows what can be verified with real monthly stats
+ * License Plate added as HIGH DEMAND item
  */
 
 const items = [
@@ -21,6 +23,14 @@ const items = [
     stat: '9,800/month',
     description: 'VIN, theft, salvage title',
     link: '/check-car',
+  },
+  {
+    icon: CarFront,
+    title: 'License Plates',
+    stat: '33,100/month',
+    description: 'Vehicle ownership, theft records, registration',
+    link: '/license-plate-lookup',
+    featured: true,
   },
   {
     icon: Bike,
@@ -50,7 +60,7 @@ const items = [
     description: 'Canon, Nikon, Sony gear',
     link: '/check-camera',
   },
-];
+] as const;
 
 export const ItemsGridSection = () => {
   return (
@@ -71,21 +81,36 @@ export const ItemsGridSection = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {items.map((item) => (
               <Link key={item.title} to={item.link}>
-                <Card className="h-full border-2 border-border hover:border-primary transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group bg-muted/30">
+                <Card className={`h-full border-2 transition-all hover:-translate-y-1 hover:shadow-lg cursor-pointer group relative ${
+                  'featured' in item && item.featured 
+                    ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 hover:border-emerald-600' 
+                    : 'border-border hover:border-primary bg-muted/30'
+                }`}>
+                  {'featured' in item && item.featured && (
+                    <Badge className="absolute -top-3 right-4 bg-emerald-600 text-white text-xs font-bold">
+                      HIGH DEMAND
+                    </Badge>
+                  )}
                   <CardContent className="p-8 text-center">
-                    <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="h-8 w-8 text-primary" />
+                    <div className={`inline-flex items-center justify-center p-4 rounded-full mb-4 transition-colors ${
+                      'featured' in item && item.featured
+                        ? 'bg-emerald-100 dark:bg-emerald-900/30 group-hover:bg-emerald-200 dark:group-hover:bg-emerald-900/50'
+                        : 'bg-primary/10 group-hover:bg-primary/20'
+                    }`}>
+                      <item.icon className={`h-8 w-8 ${'featured' in item && item.featured ? 'text-emerald-600' : 'text-primary'}`} />
                     </div>
-                    <h3 className="font-semibold text-xl mb-2 group-hover:text-primary transition-colors">
+                    <h3 className={`font-semibold text-xl mb-2 transition-colors ${
+                      'featured' in item && item.featured ? 'group-hover:text-emerald-600' : 'group-hover:text-primary'
+                    }`}>
                       {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4 min-h-[40px]">
                       {item.description}
                     </p>
-                    <p className="text-sm font-bold text-primary">
+                    <p className={`text-sm font-bold ${'featured' in item && item.featured ? 'text-emerald-600' : 'text-primary'}`}>
                       {item.stat}
                     </p>
-                    <p className="text-sm text-primary mt-4 font-medium">
+                    <p className={`text-sm mt-4 font-medium ${'featured' in item && item.featured ? 'text-emerald-600' : 'text-primary'}`}>
                       Check {item.title.split(' ')[0]} →
                     </p>
                   </CardContent>

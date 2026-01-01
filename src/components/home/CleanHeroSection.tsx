@@ -27,14 +27,15 @@ export const CleanHeroSection = () => {
               fontWeight: 700,
             }}
           >
-            Is This Item Stolen?{' '}
-            <span className="block mt-2 text-white/95">Find Out in 3 Seconds</span>
+            Reducing Global Crime,{' '}
+            <span className="block mt-2 text-white/95">One Verification at a Time</span>
           </h1>
           
-          {/* Subheadline - Renders with hero */}
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Free verification for phones, cars, bikes, laptops, tools.{' '}
-            <span className="font-semibold">Used by 5,000+ buyers, sellers, and businesses.</span>
+          {/* Mission Statement - Crime Reduction Focus */}
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Every year, $15 billion in stolen property circulates through Facebook Marketplace, 
+            eBay, and Craigslist. When thieves can't sell stolen items, they stop stealing. 
+            <span className="font-semibold block mt-2">We make theft unprofitable by helping you verify items before purchase.</span>
           </p>
           
           {/* Search Box Container */}
@@ -42,19 +43,19 @@ export const CleanHeroSection = () => {
             <HomeSearchFormWithURL />
           </div>
           
-          {/* Trust Signals - Lightweight, no external dependencies */}
+          {/* Trust Signals - Crime Reduction Focus */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-6 text-white/90 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-emerald-400" aria-hidden="true" />
-              <span>32,000+ items verified</span>
+              <span>32,000+ verified monthly</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-emerald-400" aria-hidden="true" />
-              <span>100+ databases checked</span>
+              <span>100+ global databases</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-emerald-400" aria-hidden="true" />
-              <span>Results in 3 seconds</span>
+              <span>Operating in 50+ countries</span>
             </div>
           </div>
           
