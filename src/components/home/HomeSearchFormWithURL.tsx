@@ -1,23 +1,22 @@
-import React, { useState, Suspense, useCallback, useTransition } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ScanLine, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { useTypingAnimation } from '@/hooks/useTypingAnimation';
-import { useDebouncedCallback } from '@/hooks/useDebounce';
 
 // Lazy load QR Scanner for performance
 const QRScanner = React.lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
 
-// Words to cycle through in the typing animation - customer language
+// Words to cycle through in the typing animation
 const PLACEHOLDER_WORDS = [
-  'iPhone serial number',
-  'Phone IMEI (dial *#06#)',
-  'Car VIN number',
-  'Samsung phone IMEI',
-  'Laptop serial',
-  'Bike serial number',
+  'Serial Number',
+  'IMEI Number',
+  'VIN Number',
+  'eBay URL',
+  'Facebook Marketplace URL',
+  'Craigslist URL',
 ];
 
 interface HomeSearchFormWithURLProps {
@@ -38,7 +37,6 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState('');
   const [isScannerOpen, setIsScannerOpen] = useState(false);
-  const [isPending, startTransition] = useTransition();
 
   const typingText = useTypingAnimation({
     words: PLACEHOLDER_WORDS,
@@ -47,39 +45,23 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
     pauseTime: 1500,
   });
 
-  // Debounced input handler to reduce re-renders and improve INP
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    // Use startTransition for non-urgent updates to improve INP
-    startTransition(() => {
-      setInputValue(value);
-    });
-  }, []);
-
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = inputValue.trim();
     if (trimmed) {
-      // Use startTransition for navigation to not block interaction
-      startTransition(() => {
-        if (isURL(trimmed)) {
-          navigate(`/verify?url=${encodeURIComponent(trimmed)}`);
-        } else {
-          navigate(`/verify?q=${encodeURIComponent(trimmed)}`);
-        }
-      });
+      if (isURL(trimmed)) {
+        navigate(`/verify?url=${encodeURIComponent(trimmed)}`);
+      } else {
+        navigate(`/verify?q=${encodeURIComponent(trimmed)}`);
+      }
     }
-  }, [inputValue, navigate]);
+  };
 
-  const handleScanResult = useCallback((result: string) => {
+  const handleScanResult = (result: string) => {
     setIsScannerOpen(false);
     setInputValue(result);
-    startTransition(() => {
-      navigate(`/verify?q=${encodeURIComponent(result)}`);
-    });
-  }, [navigate]);
-
-  const openScanner = useCallback(() => setIsScannerOpen(true), []);
+    navigate(`/verify?q=${encodeURIComponent(result)}`);
+  };
 
   return (
     <div className={cn('w-full max-w-2xl mx-auto', className)}>
@@ -89,7 +71,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
           <Input
             type="text"
             value={inputValue}
-            onChange={handleInputChange}
+            onChange={(e) => setInputValue(e.target.value)}
             placeholder={`Enter ${typingText}...`}
             className="pl-12 pr-4 h-14 text-lg bg-card border-2 border-border focus:border-primary transition-colors rounded-xl"
           />
@@ -102,7 +84,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
             className="flex-1 h-14 text-lg font-bold bg-primary hover:bg-primary/90 rounded-xl group"
             disabled={!inputValue.trim()}
           >
-            Check If It's Stolen - Free
+            Check Now
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           
@@ -110,20 +92,20 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
             type="button"
             variant="outline"
             size="lg"
-            onClick={openScanner}
-            className="h-14 px-6 rounded-xl border-2 transition-all duration-200 hover:scale-105"
+            onClick={() => setIsScannerOpen(true)}
+            className="h-14 px-6 rounded-xl border-2"
           >
             <ScanLine className="w-5 h-5" />
           </Button>
         </div>
       </form>
 
-      {/* Supported items - customer language */}
+      {/* Supported inputs */}
       <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-        <span className="px-3 py-1 bg-muted/30 rounded-full">📱 iPhones & Phones</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🚗 Cars & Vehicles</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">💻 Laptops</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🚲 Bikes</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">📱 IMEI</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">🚗 VIN</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">🔢 Serial</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full">🔗 Listing URL</span>
       </div>
 
       {/* QR Scanner Modal */}

@@ -7,7 +7,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const VerifyItemBeforeMeetup = () => {
   const articleSchema = {
@@ -312,7 +311,6 @@ const VerifyItemBeforeMeetup = () => {
             </div>
           </section>
         </article>
-        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/verify-item-before-meetup" currentCategory="blog" maxLinks={5} />
       <Footer />

@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { requireAuth, unauthorizedResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -44,13 +43,6 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // SECURITY: Require user authentication
-  const { user, error: authError } = await requireAuth(req);
-  if (authError) {
-    console.warn('[AI Item Analysis] Unauthorized access attempt');
-    return unauthorizedResponse('Please sign in to use AI item analysis');
-  }
-
   try {
     const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
     if (!ANTHROPIC_API_KEY) {
@@ -58,7 +50,7 @@ serve(async (req) => {
     }
 
     const request: AnalysisRequest = await req.json();
-    console.log(`[AI Item Analysis] User ${user.id} analyzing item:`, request.category);
+    console.log('[AI Item Analysis] Analyzing item:', request.category);
 
     const systemPrompt = `You are an expert fraud detection specialist and stolen property investigator with 20 years of experience. Analyze item listings with extreme attention to detail to help users avoid purchasing stolen goods.
 

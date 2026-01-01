@@ -19,9 +19,6 @@ export const prerenderRoutes = [
   '/check-electronics',
   '/firearms-check',
   '/license-plate-lookup',
-  '/features',
-  '/resource-center',
-  '/check',
   
   // Tier 3: Important informational pages
   '/how-it-works',
@@ -30,8 +27,6 @@ export const prerenderRoutes = [
   '/for-businesses',
   '/for-pawn-shops',
   '/for-dealers',
-  '/press-kit',
-  '/testimonials',
   
   // Comparison pages
   '/compare',

@@ -26,10 +26,6 @@ export const VALID_ROUTES = new Set([
   '/testimonials',
   '/download',
   '/compare',
-  '/features',
-  '/resource-center',
-  '/check',
-  '/guides/ebay-buyer-protection',
   '/free-tools',
   '/stolen-database',
   '/marketplace-url-checker',
@@ -46,7 +42,6 @@ export const VALID_ROUTES = new Set([
   '/auction-houses',
   '/case-studies',
   '/enterprise-demo',
-  '/press-kit',
   
   // Mobile routes
   '/mobile-verify',

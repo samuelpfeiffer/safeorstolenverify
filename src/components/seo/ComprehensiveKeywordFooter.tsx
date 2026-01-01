@@ -75,34 +75,8 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
           </div>
         </div>
 
-        {/* Popular Locations - Internal linking for city pages */}
-        <div className="border-t border-border pt-8 mt-8">
-          <h3 className="text-lg font-semibold mb-4 text-foreground text-center">Verification by Location</h3>
-          <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground" aria-label="Popular city pages">
-            <Link to="/city/new-york" className="hover:text-primary">New York</Link>
-            <span>•</span>
-            <Link to="/city/los-angeles" className="hover:text-primary">Los Angeles</Link>
-            <span>•</span>
-            <Link to="/city/chicago" className="hover:text-primary">Chicago</Link>
-            <span>•</span>
-            <Link to="/city/houston" className="hover:text-primary">Houston</Link>
-            <span>•</span>
-            <Link to="/city/phoenix" className="hover:text-primary">Phoenix</Link>
-            <span>•</span>
-            <Link to="/city/philadelphia" className="hover:text-primary">Philadelphia</Link>
-            <span>•</span>
-            <Link to="/city/san-antonio" className="hover:text-primary">San Antonio</Link>
-            <span>•</span>
-            <Link to="/city/san-diego" className="hover:text-primary">San Diego</Link>
-            <span>•</span>
-            <Link to="/city/dallas" className="hover:text-primary">Dallas</Link>
-            <span>•</span>
-            <Link to="/city/austin" className="hover:text-primary">Austin</Link>
-          </nav>
-        </div>
-
         {/* Keyword-rich description */}
-        <div className="border-t border-border pt-8 mt-8">
+        <div className="border-t border-border pt-8">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm text-muted-foreground mb-4">
               SafeOrStolen provides comprehensive stolen goods verification services for safe secondhand buying. 
@@ -127,7 +101,7 @@ export const ComprehensiveKeywordFooter: React.FC = () => {
         {/* Legal and company info */}
         <div className="border-t border-border pt-8 mt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            © 2025 SafeOrStolen.com - Leading provider of stolen goods verification and safe secondhand buying solutions
+            © 2024 SafeOrStolen.com - Leading provider of stolen goods verification and safe secondhand buying solutions
           </p>
         </div>
       </div>

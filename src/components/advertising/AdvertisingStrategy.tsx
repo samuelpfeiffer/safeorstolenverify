@@ -21,7 +21,7 @@ export const AdvertisingStrategy = () => {
       
       {/* Twitter Card for social sharing */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@safeorstolen123" />
+      <meta name="twitter:site" content="@safeorstolen" />
       
       {/* NOTE: Schema.org markup (WebSite, Service, Organization) is defined in index.html - DO NOT duplicate */}
     </Helmet>

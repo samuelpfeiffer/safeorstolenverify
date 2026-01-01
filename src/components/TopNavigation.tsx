@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Smartphone, Car, Laptop } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -37,32 +37,26 @@ const TopNavigation = () => {
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
   ];
 
-  const checkItemLinks = [
-    { to: '/check-phone', label: 'Check Phone (IMEI)', icon: Smartphone },
-    { to: '/check-car', label: 'Check Car (VIN)', icon: Car },
-    { to: '/check-laptop', label: 'Check Laptop', icon: Laptop },
-  ];
-
   const authenticatedLinks = [
     { to: '/dashboard', label: 'Analytics', icon: 'BarChart' },
     { to: '/report-stolen', label: 'Report Stolen', icon: 'AlertCircle' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/98 backdrop-blur-xl border-b border-border shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b border-border/50 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
               src={sosLogo} 
               alt="SafeOrStolen Logo" 
-              className="h-10 w-auto transition-transform group-hover:scale-105"
+              className="h-12 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-xl font-bold tracking-tight">
+            <span className="text-2xl font-black tracking-tight">
               <span className="text-foreground">Safe</span>
-              <span className="text-primary">Or</span>
-              <span className="text-success">Stolen</span>
+              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Or</span>
+              <span className="bg-gradient-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">Stolen</span>
             </span>
           </Link>
 
@@ -82,22 +76,6 @@ const TopNavigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            
-            {/* Check Items Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 outline-none">
-                Check Items
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-48 bg-background border border-border shadow-lg">
-                {checkItemLinks.map((link) => (
-                  <DropdownMenuItem key={link.to} onClick={() => navigate(link.to)} className="cursor-pointer">
-                    <link.icon className="w-4 h-4 mr-2" />
-                    {link.label}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
             
             {/* Resources Dropdown */}
             <DropdownMenu>
@@ -199,14 +177,14 @@ const TopNavigation = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => navigate('/auth')}
-                  className="text-foreground hover:text-primary transition-colors"
+                  className="text-foreground hover:text-sos-orange transition-colors"
                 >
                   Sign In
                 </Button>
                 <Button
                   size="sm"
                   onClick={() => navigate('/auth?mode=signup')}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-primary transition-all"
+                  className="sos-gradient hover:opacity-90 text-white font-bold shadow-orange transition-all"
                 >
                   Get Started
                 </Button>
@@ -241,22 +219,6 @@ const TopNavigation = () => {
                 {link.label}
               </Link>
             ))}
-            
-            {/* Check Items Section */}
-            <div className="px-4 pt-2">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Check Items</p>
-              {checkItemLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-2 py-3 min-h-[44px] text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
-                >
-                  <link.icon className="w-4 h-4 text-muted-foreground" />
-                  {link.label}
-                </Link>
-              ))}
-            </div>
             
             {/* Resources Section */}
             <div className="px-4 pt-2">
@@ -343,7 +305,7 @@ const TopNavigation = () => {
                     Sign In
                   </Button>
                   <Button
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                    className="w-full sos-gradient hover:opacity-90 text-white font-bold"
                     onClick={() => {
                       navigate('/auth?mode=signup');
                       setIsMobileMenuOpen(false);

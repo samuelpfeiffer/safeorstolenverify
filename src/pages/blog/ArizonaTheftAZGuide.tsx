@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 import { Shield, Car, Search, AlertTriangle, CheckCircle, Database, MapPin } from 'lucide-react';
 
 export default function ArizonaTheftAZGuide() {
@@ -290,8 +289,6 @@ export default function ArizonaTheftAZGuide() {
           <p>For complete protection, use SafeOrStolen's <Link to="/arizona-vin-lookup" className="text-primary hover:underline">Arizona VIN Lookup</Link> or <Link to="/arizona-license-plate-lookup" className="text-primary hover:underline">Arizona License Plate Lookup</Link> to check TheftAZ alongside national databases. A 3-second check can save you from a $12,000+ loss and potential legal trouble.</p>
           <p>Don't become another Arizona vehicle fraud statistic—verify every VIN before you buy.</p>
         </div>
-
-        <AuthorBio />
 
         <div className="mt-12">
           <RelatedPagesSection 

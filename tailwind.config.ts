@@ -15,7 +15,7 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1200px'
+				'2xl': '1400px'
 			}
 		},
 		extend: {
@@ -36,14 +36,6 @@ export default {
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				warning: {
-					DEFAULT: 'hsl(var(--warning))',
-					foreground: 'hsl(var(--warning-foreground))'
-				},
-				success: {
-					DEFAULT: 'hsl(var(--success))',
-					foreground: 'hsl(var(--success-foreground))'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
@@ -72,77 +64,76 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				sos: {
-					DEFAULT: 'hsl(var(--sos))',
-					dark: 'hsl(var(--sos-dark))',
-					light: 'hsl(var(--sos-light))',
-					primary: {
-						DEFAULT: 'hsl(207 89% 28%)',
-						50: 'hsl(207 60% 96%)',
-						100: 'hsl(207 60% 92%)',
-						200: 'hsl(207 70% 80%)',
-						300: 'hsl(207 80% 65%)',
-						400: 'hsl(207 85% 50%)',
-						500: 'hsl(207 89% 40%)',
-						600: 'hsl(207 89% 28%)',
-						700: 'hsl(207 70% 21%)',
-						800: 'hsl(207 60% 15%)',
-						900: 'hsl(207 50% 10%)'
-					},
+					DEFAULT: 'hsl(0 0% 5%)', // Deep black background
+					dark: 'hsl(0 0% 7%)',    // Near black
+					light: 'hsl(0 0% 98%)',   // White for text
 					orange: {
-						DEFAULT: 'hsl(32 95% 44%)',
-						50: 'hsl(32 95% 95%)',
-						100: 'hsl(32 95% 90%)',
-						200: 'hsl(32 95% 80%)',
-						300: 'hsl(32 95% 70%)',
-						400: 'hsl(32 95% 55%)',
-						500: 'hsl(32 95% 44%)',
-						600: 'hsl(32 95% 38%)',
-						700: 'hsl(32 95% 30%)',
-						800: 'hsl(32 95% 22%)',
-						900: 'hsl(32 95% 15%)'
+						DEFAULT: 'hsl(0 84% 55%)', // Red replacing orange
+						50: 'hsl(0 84% 95%)',
+						100: 'hsl(0 84% 90%)',
+						200: 'hsl(0 84% 80%)',
+						300: 'hsl(0 84% 70%)',
+						400: 'hsl(0 84% 60%)',
+						500: 'hsl(0 84% 55%)',
+						600: 'hsl(0 84% 50%)',
+						700: 'hsl(0 84% 45%)',
+						800: 'hsl(0 84% 40%)',
+						900: 'hsl(0 84% 35%)'
 					},
 					lime: {
-						DEFAULT: 'hsl(160 84% 18%)',
-						50: 'hsl(160 84% 96%)',
-						100: 'hsl(160 84% 90%)',
-						200: 'hsl(160 84% 75%)',
-						300: 'hsl(160 84% 55%)',
-						400: 'hsl(160 84% 35%)',
-						500: 'hsl(160 84% 25%)',
-						600: 'hsl(160 84% 18%)',
-						700: 'hsl(160 84% 15%)',
-						800: 'hsl(160 84% 12%)',
-						900: 'hsl(160 84% 8%)'
+						DEFAULT: 'hsl(142 76% 45%)', // Modern emerald green
+						50: 'hsl(142 76% 95%)',
+						100: 'hsl(142 76% 90%)',
+						200: 'hsl(142 76% 80%)',
+						300: 'hsl(142 76% 70%)',
+						400: 'hsl(142 76% 60%)',
+						500: 'hsl(142 76% 50%)',
+						600: 'hsl(142 76% 45%)',
+						700: 'hsl(142 76% 40%)',
+						800: 'hsl(142 76% 35%)',
+						900: 'hsl(142 76% 30%)'
 					},
 					gray: {
-						50: 'hsl(210 40% 98%)',
-						100: 'hsl(210 40% 96%)',
-						200: 'hsl(214 32% 91%)',
-						300: 'hsl(214 32% 80%)',
-						400: 'hsl(215 16% 65%)',
-						500: 'hsl(215 16% 47%)',
-						600: 'hsl(217 19% 35%)',
-						700: 'hsl(217 19% 27%)',
-						800: 'hsl(222 47% 11%)',
-						900: 'hsl(222 47% 8%)'
+						50: 'hsl(0 0% 98%)',
+						100: 'hsl(0 0% 95%)',
+						200: 'hsl(0 0% 85%)',
+						300: 'hsl(0 0% 75%)',
+						400: 'hsl(0 0% 65%)',
+						500: 'hsl(0 0% 50%)',
+						600: 'hsl(0 0% 40%)',
+						700: 'hsl(0 0% 30%)',
+						800: 'hsl(0 0% 20%)',
+						900: 'hsl(0 0% 10%)'
 					}
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-				display: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['Inter', 'system-ui', 'sans-serif'],
+				anton: ['Anton', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+				'black-ops': ['"Black Ops One"', 'cursive'],
+				bebas: ['"Bebas Neue"', 'sans-serif'],
+				oswald: ['Oswald', 'sans-serif'],
+				teko: ['Teko', 'sans-serif'],
+				orbitron: ['Orbitron', 'sans-serif'],
+				rajdhani: ['Rajdhani', 'sans-serif'],
 			},
 			fontSize: {
 				'xs': ['0.75rem', { lineHeight: '1rem' }],
 				'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-				'base': ['1rem', { lineHeight: '1.7' }],
+				'base': ['1rem', { lineHeight: '1.5rem' }],
 				'lg': ['1.125rem', { lineHeight: '1.75rem' }],
 				'xl': ['1.25rem', { lineHeight: '1.75rem' }],
 				'2xl': ['1.5rem', { lineHeight: '2rem' }],
 				'3xl': ['1.875rem', { lineHeight: '2.25rem' }],
 				'4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-				'5xl': ['3rem', { lineHeight: '1.2' }],
+				'5xl': ['3rem', { lineHeight: '1.16' }],
 				'6xl': ['3.75rem', { lineHeight: '1.1' }],
+				'7xl': ['4.5rem', { lineHeight: '1.05' }],
+				'8xl': ['6rem', { lineHeight: '1' }],
+				'9xl': ['8rem', { lineHeight: '1' }],
 			},
 			spacing: {
 				'18': '4.5rem',
@@ -158,23 +149,28 @@ export default {
 				'3xl': '1.5rem',
 			},
 			boxShadow: {
-				'sm': 'var(--shadow-sm)',
-				'DEFAULT': 'var(--shadow-md)',
-				'md': 'var(--shadow-md)',
-				'lg': 'var(--shadow-lg)',
-				'xl': 'var(--shadow-xl)',
-				'elegant': 'var(--shadow-elegant)',
-				'primary': 'var(--shadow-primary)',
-				'success': 'var(--shadow-success)',
+				'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+				'DEFAULT': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+				'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+				'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+				'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
 			},
 			keyframes: {
 				'accordion-down': {
-					from: { height: '0' },
-					to: { height: 'var(--radix-accordion-content-height)' }
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
 				},
 				'accordion-up': {
-					from: { height: 'var(--radix-accordion-content-height)' },
-					to: { height: '0' }
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
 				},
 				'fadeIn': {
 					'0%': { opacity: '0' },

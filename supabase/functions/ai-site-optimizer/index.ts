@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { requireAdmin, forbiddenResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -9,13 +8,6 @@ const corsHeaders = {
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
-  }
-
-  // SECURITY: Require admin authentication
-  const { user, error: authError, isAdmin } = await requireAdmin(req);
-  if (authError || !isAdmin) {
-    console.warn('[AI Site Optimizer] Unauthorized access attempt');
-    return forbiddenResponse(authError || 'Admin access required');
   }
 
   try {
@@ -29,7 +21,7 @@ serve(async (req) => {
 
     const { metrics, userBehavior, conversionData, pageViews } = await req.json();
 
-    console.log(`[AI Site Optimizer] Admin ${user.id} analyzing site performance`);
+    console.log('[AI Site Optimizer] Analyzing site performance');
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',

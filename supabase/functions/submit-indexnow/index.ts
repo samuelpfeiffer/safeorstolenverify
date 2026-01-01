@@ -19,14 +19,11 @@ const PRIORITY_URLS = [
   '/faq',
   '/how-it-works',
   '/app',
-  '/features',
-  '/resource-center',
-  '/check',
-  '/contact',
-  '/testimonials',
   
-  // Guides
-  '/guides/ebay-buyer-protection',
+  // New SEO landing pages
+  '/is-my-iphone-stolen',
+  '/check-car-stolen-by-vin',
+  '/imei-stolen-phone-check',
   
   // High-value item pages
   '/imei-checker',
@@ -70,10 +67,9 @@ const PRIORITY_URLS = [
   '/texas-license-plate-lookup',
   
   // Business pages
-  '/for-pawn-shops',
-  '/for-dealers',
-  '/for-marketplaces',
-  '/for-businesses',
+  '/business/pawn-shops',
+  '/business/dealers',
+  '/business/marketplaces',
 ];
 
 async function submitToIndexNow(urls: string[]): Promise<{ success: boolean; submitted: number; errors: string[] }> {

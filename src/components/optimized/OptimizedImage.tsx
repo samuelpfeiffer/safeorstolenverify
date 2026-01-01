@@ -7,18 +7,8 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   priority?: boolean;
   aspectRatio?: string;
   blurDataURL?: string;
-  /** Explicit width for CLS prevention */
-  width?: number | string;
-  /** Explicit height for CLS prevention */
-  height?: number | string;
 }
 
-/**
- * OptimizedImage - CLS-optimized image component
- * - Uses aspectRatio to reserve space before load
- * - Supports explicit width/height for intrinsic sizing
- * - Lazy loads non-priority images with IntersectionObserver
- */
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
@@ -27,8 +17,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   aspectRatio,
   blurDataURL,
   loading,
-  width,
-  height,
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -47,7 +35,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
           }
         });
       },
-      { rootMargin: '50px' }
+      {
+        rootMargin: '50px',
+      }
     );
 
     if (imgRef.current) {
@@ -61,17 +51,10 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     setIsLoaded(true);
   };
 
-  // Container style for CLS prevention
-  const containerStyle: React.CSSProperties = {
-    ...(aspectRatio ? { aspectRatio } : {}),
-    // Ensure minimum dimensions to prevent CLS
-    minHeight: height ? undefined : (aspectRatio ? '1px' : undefined),
-  };
-
   return (
     <div
       className={cn('relative overflow-hidden', className)}
-      style={containerStyle}
+      style={aspectRatio ? { aspectRatio } : undefined}
     >
       {/* Blur placeholder */}
       {blurDataURL && !isLoaded && (
@@ -83,7 +66,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
       
-      {/* Main image with explicit dimensions for CLS prevention */}
+      {/* Main image */}
       <img
         ref={imgRef}
         src={isInView || priority ? src : undefined}
@@ -91,9 +74,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         loading={priority ? 'eager' : loading || 'lazy'}
         decoding={priority ? 'sync' : 'async'}
         onLoad={handleLoad}
-        width={width}
-        height={height}
-        style={aspectRatio ? { aspectRatio } : undefined}
         className={cn(
           'w-full h-full object-cover transition-opacity duration-300',
           isLoaded ? 'opacity-100' : 'opacity-0'

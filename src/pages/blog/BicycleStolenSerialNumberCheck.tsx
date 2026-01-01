@@ -7,7 +7,6 @@ import { Bike, Shield, AlertTriangle, CheckCircle, Download, Search } from 'luci
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const BicycleStolenSerialNumberCheck = () => {
   const articleSchema = {
@@ -297,7 +296,6 @@ const BicycleStolenSerialNumberCheck = () => {
             </div>
           </section>
         </article>
-        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/bicycle-stolen-serial-number-check" currentCategory="blog" maxLinks={5} />
       <Footer />

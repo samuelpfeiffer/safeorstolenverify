@@ -17,9 +17,6 @@ export interface RedirectRule {
  * IMPORTANT: Real routes must never be redirected (guarded in findRedirect()).
  */
 export const REDIRECT_RULES: RedirectRule[] = [
-  // ===== PRESS REDIRECT =====
-  { from: '/press', to: '/press-kit', permanent: true },
-
   // ===== DUPLICATE APP URLS =====
   { from: '/imei-checker-app', to: '/app', permanent: true },
   { from: '/mobile-verification', to: '/app', permanent: true },
@@ -45,17 +42,6 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/imei-verification-guide', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
   { from: '/blog/complete-vin-verification-guide', to: '/blog/complete-vin-guide', permanent: true },
   { from: '/blog/mobile-app-features', to: '/app', permanent: true },
-  
-  // ===== DUPLICATE BLOG POST CONSOLIDATION (GSC Canonical Fix - Dec 2025) =====
-  // IMEI Posts → Consolidate to /blog/complete-imei-guide-protect-yourself
-  { from: '/blog/imei-checker-guide-2025', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
-  { from: '/blog/imei-check-everything', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
-  { from: '/blog/imei-blacklist-guide', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
-  
-  // "Buying Used" Posts → Consolidate to /blog/ultimate-marketplace-buyers-guide
-  { from: '/blog/protect-yourself-buying-used-electronics', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
-  { from: '/blog/verify-used-electronics-before-buying', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
-  { from: '/blog/safer-buying-workflow', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
 
   // ===== STATE PATTERN URLS =====
   { from: '/state/new-york/stolen-item-checker', to: '/verify', permanent: true },
@@ -129,9 +115,9 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
   { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
 
-  // ===== LEGACY PAGES - Dec 2025 GSC =====
+  // ===== NOINDEX PAGES - Dec 2025 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
-  // NOTE: /features now has a real page - DO NOT REDIRECT
+  { from: '/features', to: '/how-it-works', permanent: true },
   { from: '/app/sellers', to: '/app', permanent: true },
   { from: '/app/vs-carfax', to: '/vs-carfax', permanent: true },
   { from: '/app/features/barcode-scanner', to: '/app/barcode-scanner', permanent: true },
@@ -239,8 +225,8 @@ export function findRedirect(path: string): string | null {
     return '/verify';
   }
 
-  // Guides patterns → /blog (only if no real route exists)
-  if (cleanPath.startsWith('/guides/') && !VALID_ROUTES.has(cleanPath)) {
+  // Guides patterns → /blog
+  if (cleanPath.startsWith('/guides/')) {
     return '/blog';
   }
 

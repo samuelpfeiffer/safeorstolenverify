@@ -8,7 +8,6 @@ import { Smartphone, Car, Shield, CheckCircle, Download } from 'lucide-react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const LikeCarfaxForPhones = () => {
   const blogPostSchema = {
@@ -429,7 +428,6 @@ const LikeCarfaxForPhones = () => {
             </p>
           </div>
         </article>
-        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/like-carfax-for-phones" currentCategory="blog" maxLinks={5} />
       <Footer />

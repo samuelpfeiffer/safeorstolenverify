@@ -38,7 +38,6 @@ const TrafficBooster = React.lazy(() => import('@/components/traffic/TrafficBoos
 
 // Marketing components for conversion
 const FloatingCTA = React.lazy(() => import('@/components/marketing/FloatingCTA').then(m => ({ default: m.FloatingCTA })));
-const LiveNotifications = React.lazy(() => import('@/components/conversion/LiveNotifications').then(m => ({ default: m.LiveNotifications })));
 
 // Optimized QueryClient configuration - MOVED OUTSIDE COMPONENT
 // This prevents recreation on HMR and ensures stable React context
@@ -69,26 +68,43 @@ const AuthAwareContent: React.FC = () => {
   const [showGrowthComponents, setShowGrowthComponents] = useState(false);
   const [showSEOComponents, setShowSEOComponents] = useState(false);
   const [showAIChat, setShowAIChat] = useState(false);
+  const [authTimeout, setAuthTimeout] = useState(false);
   
-  // Delay loading SEO components by 2 seconds - they don't affect LCP
+  // Delay loading SEO components by 1.5 seconds - they don't affect LCP
   useEffect(() => {
     const seoTimer = setTimeout(() => {
       setShowSEOComponents(true);
-    }, 2000);
+    }, 1500);
     return () => clearTimeout(seoTimer);
   }, []);
   
-  // Delay loading growth/conversion components by 6 seconds to improve LCP and mobile performance
+  // Delay loading growth/conversion components by 5 seconds to improve CLS and mobile performance
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowGrowthComponents(true);
-    }, 6000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
   
-  // CRITICAL LCP FIX: Never block initial render with loading screen
-  // Auth state is handled by individual routes that need it
-  // This allows hero section to paint immediately
+  // Auth timeout - show content after 800ms even if auth isn't ready
+  // Reduced from 2s to improve LCP - prevents stuck loading
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAuthTimeout(true);
+    }, 800);
+    return () => clearTimeout(timeout);
+  }, []);
+  
+  // Bypass loading screen for:
+  // 1. Checkout routes (they handle their own auth)
+  // 2. After 2 second timeout (prevents stuck loading)
+  // 3. When auth is ready
+  const isCheckoutRoute = window.location.pathname.includes('checkout');
+  const authReady = initialized && !loading;
+  
+  if (!isCheckoutRoute && !authTimeout && !authReady) {
+    return <AppLoadingScreen />;
+  }
   
   return (
     <GA4Provider>
@@ -150,7 +166,6 @@ const AuthAwareContent: React.FC = () => {
           <Suspense fallback={null}>
             <ExitIntentPopup />
             <LiveActivityToast />
-            <LiveNotifications position="bottom-left" />
             <FloatingCTA />
           </Suspense>
         )}

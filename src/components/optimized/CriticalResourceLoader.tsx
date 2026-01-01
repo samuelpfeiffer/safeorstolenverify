@@ -1,31 +1,44 @@
 import { useEffect } from 'react';
+import { preloadResource } from '@/utils/performance';
 
-/**
- * CriticalResourceLoader - Optimized for LCP
- * Only preloads truly critical resources, defers everything else
- * DNS prefetch already handled in index.html
- */
 export const CriticalResourceLoader = () => {
   useEffect(() => {
-    // Only run after initial paint to not block LCP
-    // Use requestIdleCallback or setTimeout as fallback
-    const schedulePreload = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+    // Preload critical fonts
+    preloadResource('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', 'style');
     
-    schedulePreload(() => {
-      // DNS prefetch for domains we'll use later (not during LCP)
-      const deferredDomains = [
-        'https://js.stripe.com', // Only needed on checkout
-        'https://www.google-analytics.com'
+    // Preload critical images
+    preloadResource('/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png', 'image');
+    
+    // Preload critical JavaScript chunks
+    if ('modulepreload' in HTMLLinkElement.prototype) {
+      const criticalModules = [
+        '/src/main.tsx',
+        '/src/core/app/AppRoot.tsx',
       ];
       
-      deferredDomains.forEach(domain => {
+      criticalModules.forEach(module => {
         const link = document.createElement('link');
-        link.rel = 'dns-prefetch';
-        link.href = domain;
+        link.rel = 'modulepreload';
+        link.href = module;
         document.head.appendChild(link);
       });
+    }
+    
+    // DNS prefetch for external domains
+    const externalDomains = [
+      'https://fonts.googleapis.com',
+      'https://fonts.gstatic.com',
+      'https://js.stripe.com',
+      'https://www.google-analytics.com'
+    ];
+    
+    externalDomains.forEach(domain => {
+      const link = document.createElement('link');
+      link.rel = 'dns-prefetch';
+      link.href = domain;
+      document.head.appendChild(link);
     });
   }, []);
 
-  return null;
+  return null; // This component doesn't render anything
 };

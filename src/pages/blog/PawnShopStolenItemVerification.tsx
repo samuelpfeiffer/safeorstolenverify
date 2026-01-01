@@ -7,7 +7,6 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const PawnShopStolenItemVerification = () => {
   const articleSchema = {
@@ -275,8 +274,6 @@ const PawnShopStolenItemVerification = () => {
               </Button>
             </div>
           </footer>
-
-          <AuthorBio />
         </article>
       </div>
       <RelatedPagesSection currentPage="/blog/pawn-shop-stolen-item-verification" currentCategory="blog" maxLinks={5} />

@@ -6,7 +6,6 @@ import { CheckCircle, AlertTriangle, Smartphone, Shield, ArrowRight, Download } 
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const HowToCheckIfIphoneStolen = () => {
   return (
@@ -208,8 +207,6 @@ const HowToCheckIfIphoneStolen = () => {
 
           </div>
         </article>
-        
-        <AuthorBio />
         
         <RelatedPagesSection 
           currentPage="/blog/how-to-check-if-iphone-stolen" 

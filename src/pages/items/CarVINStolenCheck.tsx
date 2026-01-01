@@ -3,113 +3,113 @@ import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTempl
 const CarVINStolenCheck = () => {
   return (
     <SEOLandingPageTemplate
-      title="Is This Car Stolen? Check the VIN Before Buying | SafeOrStolen"
-      metaDescription="Buying a used car? Check if it's stolen before you pay. Free VIN check - enter the 17-digit number. Works for cars, trucks, SUVs on Facebook Marketplace, Craigslist."
-      h1="Is This Car Stolen? Check the VIN Before You Buy"
+      title="Check if Car is Stolen by VIN - Free VIN Verification | SafeOrStolen"
+      metaDescription="Free VIN check to verify if a car is stolen before buying. Search stolen vehicle database instantly. Works for all makes - Toyota, Honda, Ford, BMW, Tesla. Better than Carfax."
+      h1="Check if Car is Stolen by VIN Number - Free Verification"
       keywords={[
-        'is this car stolen',
-        'how to check if car is stolen',
-        'check car before buying',
+        'check if car is stolen by vin',
+        'vin stolen car check',
+        'stolen vehicle database',
+        'vin number lookup stolen',
         'is my car stolen',
-        'how to tell if car is stolen',
-        'check vin for stolen',
-        'buying used car what to check',
-        'facebook marketplace car stolen',
-        'craigslist car stolen check',
-        'free vin stolen check'
+        'free vin check stolen',
+        'verify car not stolen',
+        'stolen car checker',
+        'vin verification',
+        'carfax alternative free'
       ]}
       canonical="/check-car-stolen-vin"
       itemType="Vehicle"
       identifierType="VIN"
-      heroBadge="Don't Buy a Stolen Car"
-      heroSubtitle="That great deal on a used car could be stolen property. Check the VIN before you test drive - it takes 2 seconds. If the car is stolen, police WILL seize it and you'll lose everything."
+      heroBadge="Vehicle Theft Verification"
+      heroSubtitle="Before buying a used car, truck, or SUV, verify the VIN isn't linked to a stolen vehicle. Our free VIN check searches stolen vehicle databases instantly. Don't risk losing your car AND your money."
       stats={[
-        { value: "810K+", label: "Cars Stolen in 2024" },
-        { value: "2 sec", label: "To Check VIN" },
-        { value: "Free", label: "First 2 Checks" },
-        { value: "$15K+", label: "Average Loss Avoided" }
+        { value: "810K+", label: "Vehicles Stolen in US (2024)" },
+        { value: "3 sec", label: "VIN Check Time" },
+        { value: "50M+", label: "Records Searched" },
+        { value: "Free", label: "First 2 Checks" }
       ]}
-      whatIsTitle="How Do I Know If a Car Is Stolen?"
-      whatIsContent="Every car has a unique 17-character VIN (Vehicle Identification Number). When a car is stolen, the VIN gets reported to police databases and the NICB (National Insurance Crime Bureau). If you buy that car, it WILL be traced back to the theft - and police will take it from you. No exceptions. Our free checker lets you verify the VIN isn't linked to a stolen vehicle before you hand over thousands of dollars."
+      whatIsTitle="What is VIN Stolen Vehicle Verification?"
+      whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is stolen, the VIN is reported to the NICB (National Insurance Crime Bureau), NMVTIS (National Motor Vehicle Title Information System), and law enforcement databases. Our VIN verification instantly searches these databases to determine if a vehicle has been reported stolen, has a salvage title, or has other title issues. Unlike Carfax which costs $44.99, our stolen check is FREE."
       howItWorksSteps={[
-        "Find the VIN: Look through the windshield at the driver's side dashboard, or on the driver's door jamb sticker",
-        "Enter the 17 characters above - takes 2 seconds",
-        "See if it's CLEAR ✅ or STOLEN ❌",
-        "If clear, proceed with the purchase. If stolen, walk away and report it."
+        "Find the VIN: Check the dashboard (driver's side, visible through windshield), driver's door jamb, vehicle registration, or title",
+        "Enter the 17-character VIN into our free verification tool",
+        "Our system searches NICB, NMVTIS, law enforcement, and insurance databases instantly",
+        "Get results in 3 seconds - see if the vehicle is CLEAR or REPORTED STOLEN"
       ]}
-      howItWorksDescription="We check NICB (National Insurance Crime Bureau), NMVTIS, police databases, and insurance records. All in 2 seconds. Unlike Carfax ($44.99), we focus specifically on stolen status - completely free."
-      whyVerifyTitle="What Happens If I Buy a Stolen Car?"
-      whyVerifyContent="Buying a stolen car is one of the worst financial mistakes you can make. Even if you paid full price and had no idea it was stolen, here's what happens:"
+      howItWorksDescription="We search multiple authoritative databases including the NICB stolen vehicle database, NMVTIS title records, state DMV records, law enforcement databases, and insurance company records. Our comprehensive check identifies stolen vehicles, title washing, odometer fraud, and salvage titles."
+      whyVerifyTitle="Why Check VIN Before Buying a Used Car?"
+      whyVerifyContent="Vehicle theft is a $6 billion annual problem in America. Over 810,000 vehicles were stolen in 2024, with many eventually sold to unsuspecting buyers through private sales, Facebook Marketplace, and Craigslist. The consequences of buying a stolen car are severe:"
       whyVerifyBenefits={[
-        "Police WILL seize it - the car gets returned to the original owner or insurance company. Period.",
-        "You lose everything - your money is gone, and you have no legal claim to the car",
-        "Criminal charges are possible - receiving stolen property is a felony in most states",
-        "No insurance coverage - your policy won't cover a stolen vehicle you purchased",
-        "Title problems - stolen cars often have fake or 'washed' titles that fall apart later",
-        "VIN cloning - thieves copy VINs from similar legitimate cars to hide the theft",
-        "Financing nightmare - if you financed the purchase, you still owe the loan",
-        "Permanent record - a receiving stolen property charge follows you forever"
+        "Stolen vehicles WILL be seized by police - you lose the car entirely",
+        "You have NO legal claim to a stolen vehicle, even if you paid for it",
+        "Title washing hides a vehicle's stolen or salvage history",
+        "VIN cloning puts a stolen car's identity on a legitimate vehicle",
+        "You could face criminal charges for possession of stolen property",
+        "Insurance won't cover claims on vehicles with fraudulent titles",
+        "Financing becomes impossible if the true ownership is revealed",
+        "Private sellers don't offer refunds - your money is gone"
       ]}
       useCases={[
         {
-          title: "Found a Car on Facebook Marketplace",
-          description: "Before you drive across town to see it, check the VIN. Scammers list stolen cars with 'too good to be true' prices to attract buyers fast."
+          title: "Private Party Car Sales",
+          description: "Most stolen cars are sold through private sales. Always verify the VIN before handing over cash."
         },
         {
-          title: "Private Seller on Craigslist",
-          description: "Private sales have zero protection. Once you hand over cash, you're on your own. A 2-second VIN check could save you $15,000+."
+          title: "Facebook Marketplace Vehicles",
+          description: "Vehicle scams are rampant on FB Marketplace. Our VIN check protects you from stolen cars."
         },
         {
-          title: "Small Used Car Lot",
-          description: "Not all dealers verify their inventory properly. Always do your own VIN check, even when buying from a business."
+          title: "Dealership Verification",
+          description: "While most dealers check VINs, some don't. Verify any used car purchase, regardless of source."
         }
       ]}
       testimonial={{
-        quote: "Found a BMW 3 Series for $8,000 on Craigslist - seemed like a steal. Checked here first and it showed stolen in New Jersey. I was about to drive 2 hours to buy it. This saved me from a disaster.",
+        quote: "The BMW 3 Series I found on Craigslist for $8,000 seemed like a steal - turns out it literally was stolen. SafeOrStolen flagged it immediately. I can't imagine what would have happened if I'd bought it.",
         author: "David K.",
-        role: "Chicago"
+        role: "SafeOrStolen User, Chicago"
       }}
       faqs={[
         {
-          question: "Where do I find the VIN on a car?",
-          answer: "Look through the windshield at the driver's side dashboard - there's a small metal plate with the 17-character VIN. It's also on a sticker inside the driver's door jamb, and on the title/registration documents. All three should match."
+          question: "Where do I find the VIN on a vehicle?",
+          answer: "The VIN can be found in several places: 1) Dashboard on the driver's side (visible through the windshield), 2) Driver's door jamb sticker, 3) Vehicle registration card, 4) Insurance documents, 5) Vehicle title. The VIN should match in all locations - mismatches are a major red flag."
         },
         {
           question: "How is this different from Carfax?",
-          answer: "Carfax costs $44.99 and focuses on accident history, service records, and ownership. We focus specifically on STOLEN STATUS - and we're free. Use us first to make sure it's not stolen, then consider Carfax for the full history."
+          answer: "Carfax focuses on vehicle history (accidents, service records, ownership) and costs $44.99 per report. SafeOrStolen specifically checks if the vehicle is reported STOLEN, which is free. We recommend using both for a complete picture - our free stolen check plus a history report if the vehicle passes."
         },
         {
-          question: "What if the VIN shows the car is stolen?",
-          answer: "DO NOT buy it. Don't test drive it. Don't go to the meeting. Report the listing to the platform and consider notifying local police. You may have helped catch a car thief."
+          question: "What is VIN cloning?",
+          answer: "VIN cloning is when thieves copy a VIN from a legitimate vehicle (often from a parking lot) and attach it to a stolen car of the same make/model. This makes the stolen car appear legitimate on paper. Our comprehensive check helps identify VIN cloning by cross-referencing multiple databases."
         },
         {
-          question: "Can someone fake or change a VIN?",
-          answer: "VIN cloning is a real scam - thieves copy VINs from legitimate similar vehicles. Our database cross-references multiple sources to help catch cloned VINs. Also verify the VIN plate isn't tampered with (scratches, different rivets, etc.)."
+          question: "What if the VIN comes back as stolen?",
+          answer: "Do NOT purchase the vehicle. Walk away and contact local police - you may have uncovered an active theft. Do not confront the seller. Report the listing to the marketplace."
         },
         {
-          question: "What about rebuilt or salvage titles?",
-          answer: "Our check focuses on stolen status. We may flag salvage or rebuilt titles as well. For a complete history including accidents and flood damage, combine our free stolen check with a Carfax or AutoCheck report."
+          question: "Can I check a motorcycle or RV VIN?",
+          answer: "Yes! Our VIN verification works for all vehicles including motorcycles, RVs, boats, ATVs, and trailers. Any vehicle with a VIN can be checked."
         },
         {
-          question: "Should I check even at a dealership?",
-          answer: "Major franchised dealers (Toyota dealer, Ford dealer, etc.) typically verify their inventory. But independent used car lots vary widely. When in doubt, spend 2 seconds to check."
+          question: "How quickly are stolen vehicles added to databases?",
+          answer: "Most stolen vehicles are added to NICB and law enforcement databases within 24-48 hours of being reported. However, some reports take longer. If a vehicle was very recently stolen, it may not yet appear in databases."
         },
         {
-          question: "What about motorcycles, RVs, or boats?",
-          answer: "Yes! Our VIN check works for all vehicles with a VIN - motorcycles, RVs, campers, trailers, boats, ATVs, and more. Same process, same protection."
+          question: "What other issues does the VIN check find?",
+          answer: "Beyond stolen status, our check can identify salvage titles, flood damage, odometer rollback, title washing (moving a title through multiple states to hide history), and vehicles reported as total losses by insurance companies."
         },
         {
-          question: "Is this really free?",
-          answer: "Yes! You get 2 free VIN checks, no credit card required. That's enough to verify any car before you buy. Need more? We have affordable plans for dealers and frequent buyers."
+          question: "Is the VIN check really free?",
+          answer: "Yes! SafeOrStolen offers 2 free VIN checks. This lets you verify any vehicle before purchase at no cost. For high-volume users (dealers, businesses), we offer affordable subscription plans."
         }
       ]}
-      ctaTitle="Check the VIN Before You Pay"
-      ctaDescription="2 seconds could save you $15,000 and a criminal charge. Enter the VIN and know if the car is stolen. It's free."
+      ctaTitle="Don't Risk Buying a Stolen Vehicle"
+      ctaDescription="A free VIN check takes 3 seconds and could save you thousands of dollars and a lot of legal trouble."
       relatedLinks={[
-        { title: "California VIN Check", href: "/california-vin-lookup" },
+        { title: "California VIN Lookup", href: "/california-vin-lookup" },
         { title: "Texas VIN Check", href: "/texas-vin-lookup" },
-        { title: "Is This Motorcycle Stolen?", href: "/check-bike" },
-        { title: "Better Than Carfax", href: "/vs-carfax" }
+        { title: "Motorcycle VIN Check", href: "/check-bike" },
+        { title: "vs Carfax", href: "/vs-carfax" }
       ]}
     />
   );

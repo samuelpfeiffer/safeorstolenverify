@@ -6,7 +6,6 @@ import { AlertTriangle, Shield, CheckCircle, ArrowRight, Download, Users, Dollar
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const FacebookMarketplaceScams = () => {
   return (
@@ -200,8 +199,6 @@ const FacebookMarketplaceScams = () => {
 
           </div>
         </article>
-        
-        <AuthorBio />
         
         <RelatedPagesSection 
           currentPage="/blog/facebook-marketplace-scams" 

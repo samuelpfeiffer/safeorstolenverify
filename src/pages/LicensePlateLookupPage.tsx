@@ -98,11 +98,11 @@ const LicensePlateLookupPage = () => {
   return (
     <>
       <PageSEO
-        title="License Plate Lookup - Free Stolen Vehicle Check by Plate | SafeOrStolen"
-        description="Free license plate lookup for all 50 states. Check if a vehicle is stolen by plate number. Verify ownership, theft records, registration. Results in 3 seconds. 33,100 monthly searches."
+        title="License Plate Lookup - Free Stolen Vehicle Check by Plate Number | TheftAZ & All 50 States"
+        description="Check if a vehicle is stolen using license plate number. Free license plate lookup from TheftAZ (Arizona), DMV and law enforcement databases across all 50 states. Verify instantly."
         canonical="/license-plate-lookup"
         structuredData={faqSchema}
-        keywords="license plate lookup, license plate check, plate number search, verify vehicle, car theft check, vehicle ownership check, free plate lookup, theftaz, arizona license plate lookup"
+        keywords="license plate lookup, theftaz, arizona license plate lookup, az license plate lookup, stolen vehicle check, police stolen vehicle database arizona"
       />
 
       <div className="min-h-screen bg-background">

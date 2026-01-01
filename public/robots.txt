@@ -1,13 +1,13 @@
 # ============================================
 # SafeOrStolen Robots.txt
 # Mission: Protect Buyers & Sellers - Stop Stolen Goods
-# Updated: 2025-12-31
+# Updated: 2025-12-25
 # ============================================
 
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Single consolidated sitemap
 Sitemap: https://safeorstolen.com/sitemap.xml
 
 # ============================================
@@ -16,50 +16,63 @@ Sitemap: https://safeorstolen.com/sitemap.xml
 
 # Authenticated/Private Pages
 Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /auth
+Disallow: /auth/*
 Disallow: /account
+Disallow: /account/*
 Disallow: /profile
 Disallow: /search-history
 Disallow: /receipts
 Disallow: /purchase-history
 Disallow: /checkout-redirect
 Disallow: /verification-success
-Disallow: /payment-success
-Disallow: /payment-cancel
-Disallow: /subscription-success
-Disallow: /subscription-cancel
-Disallow: /auth
+Disallow: /sitemap
 
 # Admin & Internal Pages
-Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
 Disallow: /api/
 Disallow: /analytics
 Disallow: /seo-strategy
-Disallow: /sitemap
 
-# Enterprise/Demo
-Disallow: /enterprise-demo
-Disallow: /subscriptions
-
-# ============================================
-# Query Parameters (Duplicate Content)
-# ============================================
-Disallow: /*?*
-Disallow: /*&
-
-# ============================================
-# Technical Files (No SEO Value)
-# ============================================
+# AI Context Files
 Disallow: /ai-context.json
 Disallow: /ai-training-data.md
 Disallow: /mobile-app-ai-context.json
-Disallow: /llms.txt
 
-# ============================================
-# Social Redirect Pages (External canonical)
-# ============================================
+# Query Parameters (Duplicate Content Prevention)
+# Block ALL query parameter variations
+Disallow: /*?*
+Disallow: /*?type=*
+Disallow: /*?q=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?session_id=*
+Disallow: /*?checkout=*
+Disallow: /*?search_term_string*
+
+# Dynamic Routes
+Disallow: /*/edit
+Disallow: /*/delete
+Disallow: /*&
+
+# Payment Flow Pages (No SEO Value)
+Disallow: /subscription-success
+Disallow: /subscription-cancel
+Disallow: /payment-success
+Disallow: /payment-cancel
+
+# Social Profile Pages (External is canonical)
 Disallow: /youtube
 Disallow: /product-hunt
 Disallow: /crunchbase
+
+# ============================================
+# CRAWL OPTIMIZATION
+# ============================================
+Crawl-delay: 1
 
 # ============================================
 # AI SEARCH ENGINE CRAWLERS
@@ -86,6 +99,9 @@ User-agent: Claude-Web
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Applebot-Extended

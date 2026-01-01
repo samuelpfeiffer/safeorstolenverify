@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { requireAdmin, forbiddenResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -9,13 +8,6 @@ const corsHeaders = {
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
-  }
-
-  // SECURITY: Require admin authentication
-  const { user, error: authError, isAdmin } = await requireAdmin(req);
-  if (authError || !isAdmin) {
-    console.warn('[AI SEO Optimizer] Unauthorized access attempt');
-    return forbiddenResponse(authError || 'Admin access required');
   }
 
   try {
@@ -29,7 +21,7 @@ serve(async (req) => {
 
     const { url, title, description, content, keywords, competitors, pageType } = await req.json();
 
-    console.log(`[AI SEO Optimizer] Admin ${user.id} analyzing: ${url || 'content'}`);
+    console.log(`[AI SEO Optimizer] Analyzing: ${url || 'content'}`);
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',

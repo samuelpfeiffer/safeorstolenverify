@@ -7,7 +7,6 @@ import { Shield, AlertTriangle, Scale, CheckCircle, Download } from 'lucide-reac
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const FirearmSerialNumberVerification = () => {
   const articleSchema = {
@@ -275,8 +274,6 @@ const FirearmSerialNumberVerification = () => {
               </Button>
             </div>
           </section>
-
-          <AuthorBio />
         </article>
       </div>
       <RelatedPagesSection currentPage="/blog/firearm-serial-number-verification" currentCategory="blog" maxLinks={5} />

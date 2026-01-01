@@ -19,8 +19,6 @@ import { AppValidator } from '@/components/testing/AppValidator';
 import { EmailCapture } from '@/components/marketing/EmailCapture';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
-import { CrimeReductionSection } from '@/components/home/CrimeReductionSection';
-import { PricingFAQSection } from '@/components/pricing/PricingFAQSection';
 import { supabase } from '@/integrations/supabase/client';
 
 const PricingPage = () => {
@@ -350,16 +348,8 @@ const PricingPage = () => {
             <DataPartnerBadges variant="full" />
           </div>
           
-          {/* Crime Reduction Impact - Replaces Competitor Comparison */}
-          <CrimeReductionSection />
-          
           {/* Credibility Bar */}
           <SitewideCredibilityBar />
-          
-          {/* Extended FAQ Section */}
-          <div className="container mx-auto px-4">
-            <PricingFAQSection />
-          </div>
           
           {/* Email Capture for non-ready users */}
           <div className="container mx-auto px-4 py-12">

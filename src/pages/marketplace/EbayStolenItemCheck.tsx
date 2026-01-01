@@ -49,9 +49,9 @@ const EbayStolenItemCheck = () => {
   return (
     <>
       <PageSEO
-        title="Is This eBay Item Stolen? Check Before Bidding | SafeOrStolen"
-        description="Buying on eBay? eBay's buyer protection may NOT cover stolen items. Check if phones, laptops, cameras are stolen before bidding. Free 2-second verification."
-        keywords="ebay stolen, is this ebay item stolen, ebay scam protection, how to check if ebay item stolen, ebay phone stolen check, ebay buyer protection stolen"
+        title="eBay Stolen Item Check - Verify Before Bidding | SafeOrStolen"
+        description="Check if eBay items are stolen before bidding. Verify IMEI, VIN, and serial numbers to protect yourself from stolen goods on eBay."
+        keywords="ebay stolen item check, verify ebay item, ebay scam protection, check if ebay item stolen, ebay serial number check"
         canonical="/ebay-stolen-item-check"
         structuredData={faqSchema}
       />
@@ -66,12 +66,12 @@ const EbayStolenItemCheck = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Is This eBay Item Stolen? Check Before You Bid
+              eBay Stolen Item Check - Verify Before Bidding
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              <strong>eBay's buyer protection may NOT cover stolen items.</strong> If police seize your purchase, 
-              you could lose both the item and your money. Check before bidding - it takes 2 seconds.
+              Don't bid blind. Verify any eBay item's IMEI, VIN, or serial number before placing 
+              your bid. eBay Buyer Protection may not cover stolen goods.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -6,11 +6,11 @@
 export const SEO_CONFIG = {
   siteName: 'SafeOrStolen',
   siteUrl: 'https://safeorstolen.com',
-  defaultTitle: 'Is This Phone Stolen? Check iPhones, Cars & Items Before Buying | SafeOrStolen',
+  defaultTitle: 'SafeOrStolen - Carfax for Everything - Buy and Sell',
   titleTemplate: '%s | SafeOrStolen',
-  defaultDescription: 'Check if phones, cars, bikes are stolen before buying. Free instant verification - just enter the serial number. Used on Facebook Marketplace, eBay, Craigslist. Protect yourself.',
+  defaultDescription: '3-second verification for all secondhand items. Check serial numbers, IMEI, VIN, license plates, firearms. Mobile app with barcode scanning. Free trial.',
   defaultImage: '/og-image.jpg',
-  twitterHandle: '@safeorstolen123',
+  twitterHandle: '@safeorstolen',
   facebookAppId: '',
   
   // GSC Configuration
@@ -31,21 +31,21 @@ export const SEO_CONFIG = {
     '/testimonials',
   ] as const,
   
-  // Keywords - Natural language (how real customers search)
+  // Keywords
   primaryKeywords: [
-    'is this phone stolen',
-    'how to check if phone is stolen',
-    'check if car is stolen',
-    'is my phone stolen',
-    'how to tell if iPhone is stolen',
-    'check serial number before buying',
-    'facebook marketplace stolen phone check',
-    'buying used iPhone what to check',
+    'stolen item checker',
+    'verify serial number',
+    'IMEI checker',
+    'VIN checker',
+    'license plate lookup',
+    'firearms verification',
+    'secondhand verification',
+    'mobile app',
   ] as const,
   
   // Social & External Profiles
   social: {
-    twitter: 'https://x.com/safeorstolen123',
+    twitter: 'https://twitter.com/safeorstolen',
     facebook: 'https://facebook.com/safeorstolen',
     linkedin: 'https://linkedin.com/company/safeorstolen',
     youtube: 'https://www.youtube.com/@safeorstolen',

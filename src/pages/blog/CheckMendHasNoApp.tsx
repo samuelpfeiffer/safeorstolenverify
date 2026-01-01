@@ -8,7 +8,6 @@ import { X, Check, AlertTriangle, Download } from 'lucide-react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
-import { AuthorBio } from '@/components/blog/AuthorBio';
 
 const CheckMendHasNoApp = () => {
   const blogPostSchema = {
@@ -345,7 +344,6 @@ const CheckMendHasNoApp = () => {
             </p>
           </div>
         </article>
-        <AuthorBio />
       </div>
       <RelatedPagesSection currentPage="/blog/checkmend-has-no-app" currentCategory="blog" maxLinks={5} />
       <Footer />

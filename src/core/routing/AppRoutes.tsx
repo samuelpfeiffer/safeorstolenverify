@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
 
 // CORE 10 PAGES + STRATEGIC SEO PAGES
@@ -61,10 +61,6 @@ const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
-const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
-const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
-const CheckPage = lazy(() => import('@/pages/CheckPage'));
-const EbayBuyerProtectionGuide = lazy(() => import('@/pages/guides/EbayBuyerProtectionGuide'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
@@ -122,7 +118,7 @@ const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
 const BlogIndexPage = lazy(() => import('@/pages/BlogIndexPage'));
 const HowToCheckPhoneStolen = lazy(() => import('@/pages/blog/HowToCheckPhoneStolen'));
 const CompleteVinGuide = lazy(() => import('@/pages/blog/CompleteVinGuide'));
-// ProtectYourselfBuyingUsedElectronics - Removed: Redirects to UltimateMarketplaceBuyersGuide (GSC canonical fix)
+const ProtectYourselfBuyingUsedElectronics = lazy(() => import('@/pages/blog/ProtectYourselfBuyingUsedElectronics'));
 const DataSourceCredibilityStolenGoods = lazy(() => import('@/pages/blog/DataSourceCredibilityStolenGoods'));
 const UltimateMarketplaceBuyersGuide = lazy(() => import('@/pages/blog/UltimateMarketplaceBuyersGuide'));
 const CompleteImeiGuide = lazy(() => import('@/pages/blog/CompleteImeiGuide'));
@@ -265,10 +261,6 @@ export const AppRoutes = () => {
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
-        <Route path="/features" element={<FeaturesPage />} />
-        <Route path="/resource-center" element={<ResourceCenterPage />} />
-        <Route path="/check" element={<CheckPage />} />
-        <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtectionGuide />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
@@ -350,7 +342,7 @@ export const AppRoutes = () => {
         <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/how-to-check-if-phone-stolen" element={<HowToCheckPhoneStolen />} />
         <Route path="/blog/complete-vin-guide" element={<CompleteVinGuide />} />
-        <Route path="/blog/protect-yourself-buying-used-electronics" element={<Navigate to="/blog/ultimate-marketplace-buyers-guide" replace />} />
+        <Route path="/blog/protect-yourself-buying-used-electronics" element={<ProtectYourselfBuyingUsedElectronics />} />
         <Route path="/blog/data-source-credibility-stolen-goods-verification" element={<DataSourceCredibilityStolenGoods />} />
         <Route path="/blog/ultimate-marketplace-buyers-guide" element={<UltimateMarketplaceBuyersGuide />} />
         <Route path="/blog/complete-imei-guide-protect-yourself" element={<CompleteImeiGuide />} />

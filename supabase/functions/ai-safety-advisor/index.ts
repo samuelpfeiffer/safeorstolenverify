@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { requireAuth, unauthorizedResponse } from "../_shared/auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -16,13 +15,6 @@ interface AnalysisRequest {
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
-  }
-
-  // SECURITY: Require user authentication
-  const { user, error: authError } = await requireAuth(req);
-  if (authError) {
-    console.warn('[AI Safety Advisor] Unauthorized access attempt');
-    return unauthorizedResponse('Please sign in to use AI safety analysis');
   }
 
   const startTime = Date.now();
@@ -58,7 +50,7 @@ serve(async (req) => {
       );
     }
 
-    console.log(`[AI Safety Advisor] User ${user.id} analyzing ${itemType}: ${identifier.substring(0, 8)}...`);
+    console.log(`[AI Safety Advisor] Analyzing ${itemType}: ${identifier}`);
 
     const systemPrompt = `You are SafeOrStolen's AI Safety Advisor, an expert in identifying potentially stolen goods. 
 Your job is to analyze identifiers (serial numbers, IMEI, VIN, etc.) and provide risk assessment.

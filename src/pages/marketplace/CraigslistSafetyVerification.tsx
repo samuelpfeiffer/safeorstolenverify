@@ -49,9 +49,9 @@ const CraigslistSafetyVerification = () => {
   return (
     <>
       <PageSEO
-        title="Is This Craigslist Item Stolen? Check Before Buying | SafeOrStolen"
-        description="Buying on Craigslist? Check if it's stolen before meeting the seller. Free verification for phones, cars, bikes. No buyer protection on Craigslist - verify first!"
-        keywords="craigslist stolen, is this stolen craigslist, craigslist scam check, how to check if craigslist item is stolen, craigslist car stolen, craigslist phone stolen"
+        title="Craigslist Safety Check - Verify Items Aren't Stolen | SafeOrStolen"
+        description="Stay safe on Craigslist. Verify items aren't stolen before meeting sellers. Free IMEI, VIN, and serial number verification to protect yourself from stolen goods."
+        keywords="craigslist safety, craigslist scam check, verify craigslist item, craigslist stolen item check, safe craigslist buying"
         canonical="/craigslist-safety-verification"
         structuredData={faqSchema}
       />
@@ -66,12 +66,12 @@ const CraigslistSafetyVerification = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Is This Craigslist Item Stolen? Check Before You Buy
+              Craigslist Safety Check - Verify Items Before Meeting Sellers
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Craigslist has <strong>zero buyer protection</strong>. Once you pay cash, you're on your own. 
-              Before meeting a seller, take 2 seconds to check if the item is stolen. Free. Instant. Could save you thousands.
+              Don't become a victim of stolen goods. Verify any item's IMEI, VIN, or serial number 
+              before meeting a Craigslist seller. Free, instant results.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

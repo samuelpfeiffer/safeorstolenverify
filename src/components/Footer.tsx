@@ -18,23 +18,23 @@ const Footer = () => {
     label: 'Instant Stolen Verification',
     href: '/verify'
   }, {
-    label: 'Check Phone (IMEI)',
-    href: '/check-phone'
-  }, {
-    label: 'Check Car (VIN)',
-    href: '/check-car'
-  }, {
-    label: 'Check Laptop',
-    href: '/check-laptop'
+    label: 'IMEI Checker App',
+    href: '/imei-checker'
   }, {
     label: 'VIN Checker',
     href: '/vin-checker'
   }, {
-    label: 'Download Mobile App',
+    label: 'Download Stolen Verification App',
     href: '/app'
   }, {
-    label: 'Free vs Paid Plans',
+    label: 'Barcode Scanner - 3 Seconds',
+    href: '/verify'
+  }, {
+    label: 'CheckMEND Alternative (Free)',
     href: '/pricing'
+  }, {
+    label: 'Like Carfax for Everything',
+    href: '/how-it-works'
   }];
   const legalLinks = [{
     label: 'Terms & Conditions',
@@ -56,7 +56,7 @@ const Footer = () => {
     label: 'For Sellers',
     href: '/for-sellers'
   }];
-  const trustIndicators = ["256-bit SSL Encryption", "Secure Verification", "Real-time Database Access", "Privacy Protected"];
+  const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
   return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
       <div className="container mx-auto container-padding">
         {/* Main Footer Content */}
@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
               
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Reducing global crime through verification. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. 32,000+ items verified monthly across 50+ countries.
+                The ONLY stolen verification app with instant barcode scanning. CheckMEND has NO app. Verify phones (IMEI), vehicles (VIN), electronics, firearms in 3 seconds. Like Carfax for everything. All 50 states + international.
               </p>
 
               <div className="space-y-3 mb-6">
@@ -281,6 +281,10 @@ const Footer = () => {
               <span>256-bit SSL</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Award className="h-3.5 w-3.5 text-sos-orange" />
+              <span>SOC 2 Compliant</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <Globe className="h-3.5 w-3.5 text-primary" />
               <span>All 50 States</span>
             </div>
@@ -290,7 +294,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <Shield className="h-3.5 w-3.5 text-primary" />
-              <span>Secure Verification</span>
+              <span>GDPR Compliant</span>
             </div>
           </div>
         </div>
