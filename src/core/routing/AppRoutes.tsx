@@ -59,7 +59,9 @@ const CheckToolsPage = lazy(() => import('@/pages/CheckToolsPage'));
 const CheckJewelryPage = lazy(() => import('@/pages/CheckJewelryPage'));
 const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
+const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
+const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternativePage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
@@ -259,7 +261,9 @@ export const AppRoutes = () => {
         <Route path="/check-jewelry" element={<CheckJewelryPage />} />
         <Route path="/check-boat" element={<CheckBoatPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
+        <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
+        <Route path="/free-carfax-alternative" element={<FreeCarfaxAlternativePage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}

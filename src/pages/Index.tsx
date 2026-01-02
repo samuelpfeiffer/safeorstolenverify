@@ -43,9 +43,9 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Free Stolen Item Checker App - IMEI VIN Serial Verification | Only Mobile App | SafeOrStolen"
-        description="The ONLY stolen item checker with a mobile app. Protect buyers, sellers, pawn shops & resale businesses. Free IMEI, VIN, serial verification. 100+ databases. More comprehensive than CheckMEND, IMEI.info, Carfax, Swappa. Download free."
-        keywords="stolen item checker app, IMEI checker app free, VIN checker app free, serial number verification app, stolen phone checker app, stolen car check app, pawn shop verification, resale business protection, CheckMEND alternative app, Carfax alternative app, IMEI.info alternative, Swappa alternative, only stolen item app, free stolen goods checker"
+        title="Free Carfax Alternative - Check If Items Are Stolen | SafeOrStolen"
+        description="Free alternative to Carfax. Check if phones, cars, bikes, guns are stolen. License plate lookup, VIN check, IMEI verification. 100+ databases, 3-second results."
+        keywords="free carfax alternative, stolen item checker app, IMEI checker free, VIN checker free, license plate lookup free, gun serial number lookup, stolen phone checker, stolen car check, pawn shop verification, CheckMEND alternative, Carfax alternative"
         canonical="/"
       />
       
