@@ -98,11 +98,11 @@ const LicensePlateLookupPage = () => {
   return (
     <>
       <PageSEO
-        title="Free License Plate Lookup - All 50 States | SafeOrStolen"
-        description="Free license plate lookup. Check vehicle ownership, theft records, registration. PA, CA, TX, FL, NY - all states. Instant results from DMV and law enforcement."
+        title="License Plate Lookup - Vehicle Ownership & Theft Verification | SafeOrStolen"
+        description="Check any license plate. Verify vehicle ownership, theft records, registration status. All 50 states. Police databases, DMV records. Instant results."
         canonical="/license-plate-lookup"
         structuredData={faqSchema}
-        keywords="license plate lookup free, pa license plate lookup, free license plate lookup, stolen vehicle check, license plate search, vehicle registration lookup"
+        keywords="license plate lookup, pa license plate lookup, vehicle ownership check, stolen vehicle check, license plate search, DMV records lookup"
       />
 
       <div className="min-h-screen bg-background">
