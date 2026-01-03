@@ -60,9 +60,28 @@ export const WhatYouCanVerify = () => {
       subtitle: 'Serial Number Verification',
       description: 'Verify firearms serial numbers - the ONLY service that checks guns. Essential for pawn shops, gun shows, and private sales.',
       items: ['Handguns', 'Rifles', 'Shotguns', 'Antique firearms', 'Accessories'],
-      link: '/firearms-check',
+      link: '/gun-serial-number-lookup',
       badge: 'Exclusive',
       image: firearmsVerification
+    },
+    {
+      icon: Shield,
+      title: 'Luxury Watches',
+      subtitle: 'Rolex & High-End Verification',
+      description: 'Verify luxury watches like Rolex, Patek Philippe, Omega against theft databases and insurance claims before paying thousands.',
+      items: ['Rolex (all models)', 'Patek Philippe', 'Audemars Piguet', 'Omega', 'Cartier'],
+      link: '/rolex-serial-number-check',
+      badge: 'High Value',
+      image: jewelryWatches
+    },
+    {
+      icon: Laptop,
+      title: 'Gaming Consoles',
+      subtitle: 'PS5, Xbox, Nintendo Verification',
+      description: 'Check PlayStation 5, Xbox Series X, Nintendo Switch consoles against theft reports. Essential for Facebook Marketplace purchases.',
+      items: ['PlayStation 5', 'Xbox Series X/S', 'Nintendo Switch', 'Steam Deck', 'Gaming PCs'],
+      link: '/ps5-serial-number-check',
+      image: electronicsLaptops
     },
     {
       icon: Bike,
