@@ -63,6 +63,9 @@ const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLook
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternativePage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
+const PS5SerialNumberCheckPage = lazy(() => import('@/pages/PS5SerialNumberCheckPage'));
+const IMEICheckFreePage = lazy(() => import('@/pages/IMEICheckFreePage'));
+const StolenVehicleDatabaseArizonaPage = lazy(() => import('@/pages/StolenVehicleDatabaseArizonaPage'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
@@ -308,6 +311,9 @@ export const AppRoutes = () => {
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/free-carfax-alternative" element={<FreeCarfaxAlternativePage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
+        <Route path="/ps5-serial-number-check" element={<PS5SerialNumberCheckPage />} />
+        <Route path="/imei-check-free" element={<IMEICheckFreePage />} />
+        <Route path="/stolen-vehicle-database-arizona" element={<StolenVehicleDatabaseArizonaPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
