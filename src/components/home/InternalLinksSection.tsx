@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { 
-  Car, Smartphone, MapPin, Building2, Scale, BookOpen, ChevronRight 
+  Car, Smartphone, MapPin, Building2, Scale, BookOpen, ChevronRight, Watch, Gamepad2, Shield, Search
 } from 'lucide-react';
 
 export const InternalLinksSection = () => {
@@ -14,9 +14,9 @@ export const InternalLinksSection = () => {
         { to: "/check-laptop", label: "Check Laptop" },
         { to: "/check-bike", label: "Check Bike" },
         { to: "/check-electronics", label: "Check Electronics" },
-        { to: "/check-ebike", label: "Check E-Bike" },
+        { to: "/ps5-serial-number-check", label: "PS5 Check" },
         { to: "/firearms-check", label: "Check Firearm" },
-        { to: "/check-jewelry", label: "Check Jewelry" },
+        { to: "/rolex-serial-number-check", label: "Rolex Check" },
       ]
     },
     {
@@ -25,22 +25,24 @@ export const InternalLinksSection = () => {
       links: [
         { to: "/verify", label: "Universal Checker" },
         { to: "/imei-checker", label: "IMEI Checker" },
+        { to: "/imei-check-free", label: "Free IMEI Check" },
         { to: "/vin-checker", label: "VIN Checker" },
+        { to: "/unlimited-vin-checks", label: "Unlimited VIN" },
         { to: "/serial-number-checker", label: "Serial Checker" },
-        { to: "/license-plate-lookup", label: "Plate Lookup" },
-        { to: "/marketplace-url-checker", label: "URL Checker" },
+        { to: "/partial-serial-number-search", label: "Partial Serial" },
+        { to: "/gun-serial-number-lookup", label: "Gun Serial Lookup" },
       ]
     },
     {
-      title: "State VIN Lookup",
+      title: "State Databases",
       icon: Car,
       links: [
-        { to: "/arizona-vin-lookup", label: "Arizona" },
-        { to: "/california-vin-lookup", label: "California" },
-        { to: "/texas-vin-lookup", label: "Texas" },
-        { to: "/florida-vin-lookup", label: "Florida" },
-        { to: "/new-york-vin-lookup", label: "New York" },
-        { to: "/georgia-vin-lookup", label: "Georgia" },
+        { to: "/arizona-stolen-property-database", label: "Arizona Database" },
+        { to: "/stolen-vehicle-database-arizona", label: "AZ Vehicles" },
+        { to: "/arizona-vin-lookup", label: "Arizona VIN" },
+        { to: "/california-vin-lookup", label: "California VIN" },
+        { to: "/texas-vin-lookup", label: "Texas VIN" },
+        { to: "/florida-vin-lookup", label: "Florida VIN" },
       ]
     },
     {
@@ -48,7 +50,7 @@ export const InternalLinksSection = () => {
       icon: MapPin,
       links: [
         { to: "/facebook-marketplace-stolen-check", label: "Facebook Marketplace" },
-        { to: "/ebay-stolen-item-checker", label: "eBay" },
+        { to: "/ebay-stolen-item-check", label: "eBay" },
         { to: "/craigslist-safety-verification", label: "Craigslist" },
         { to: "/offerup-verify-not-stolen", label: "OfferUp" },
         { to: "/stolen-check-chicago", label: "Chicago" },
@@ -61,7 +63,7 @@ export const InternalLinksSection = () => {
       links: [
         { to: "/for-pawn-shops", label: "Pawn Shops" },
         { to: "/for-dealers", label: "Car Dealers" },
-        { to: "/for-resellers", label: "Resellers" },
+        { to: "/for-electronics-resellers", label: "Resellers" },
         { to: "/for-auction-houses", label: "Auction Houses" },
         { to: "/for-buyers", label: "Buyers" },
         { to: "/for-sellers", label: "Sellers" },
