@@ -128,49 +128,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /wisconsin-vin-lookup       /vin-checker  301!
 /wyoming-vin-lookup         /vin-checker  301!
 
-# KEPT LICENSE PLATE STATES (11): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington, Arizona
-# NOTE: These 11 states have REAL pages in AppRoutes - DO NOT REDIRECT
-# REDIRECTED LICENSE PLATE STATES (39):
-/alabama-license-plate-lookup         /license-plate-lookup  301!
-/alaska-license-plate-lookup          /license-plate-lookup  301!
-# /arizona-license-plate-lookup has REAL page - DO NOT REDIRECT
-/arkansas-license-plate-lookup        /license-plate-lookup  301!
-/colorado-license-plate-lookup        /license-plate-lookup  301!
-/connecticut-license-plate-lookup     /license-plate-lookup  301!
-/delaware-license-plate-lookup        /license-plate-lookup  301!
-/hawaii-license-plate-lookup          /license-plate-lookup  301!
-/idaho-license-plate-lookup           /license-plate-lookup  301!
-/indiana-license-plate-lookup         /license-plate-lookup  301!
-/iowa-license-plate-lookup            /license-plate-lookup  301!
-/kansas-license-plate-lookup          /license-plate-lookup  301!
-/kentucky-license-plate-lookup        /license-plate-lookup  301!
-/louisiana-license-plate-lookup       /license-plate-lookup  301!
-/maine-license-plate-lookup           /license-plate-lookup  301!
-/maryland-license-plate-lookup        /license-plate-lookup  301!
-/massachusetts-license-plate-lookup   /license-plate-lookup  301!
-/michigan-license-plate-lookup        /license-plate-lookup  301!
-/minnesota-license-plate-lookup       /license-plate-lookup  301!
-/mississippi-license-plate-lookup     /license-plate-lookup  301!
-/missouri-license-plate-lookup        /license-plate-lookup  301!
-/montana-license-plate-lookup         /license-plate-lookup  301!
-/nebraska-license-plate-lookup        /license-plate-lookup  301!
-/nevada-license-plate-lookup          /license-plate-lookup  301!
-/new-hampshire-license-plate-lookup   /license-plate-lookup  301!
-/new-jersey-license-plate-lookup      /license-plate-lookup  301!
-/new-mexico-license-plate-lookup      /license-plate-lookup  301!
-/north-dakota-license-plate-lookup    /license-plate-lookup  301!
-/oklahoma-license-plate-lookup        /license-plate-lookup  301!
-/oregon-license-plate-lookup          /license-plate-lookup  301!
-/rhode-island-license-plate-lookup    /license-plate-lookup  301!
-/south-carolina-license-plate-lookup  /license-plate-lookup  301!
-/south-dakota-license-plate-lookup    /license-plate-lookup  301!
-/tennessee-license-plate-lookup       /license-plate-lookup  301!
-/utah-license-plate-lookup            /license-plate-lookup  301!
-/vermont-license-plate-lookup         /license-plate-lookup  301!
-/virginia-license-plate-lookup        /license-plate-lookup  301!
-/west-virginia-license-plate-lookup   /license-plate-lookup  301!
-/wisconsin-license-plate-lookup       /license-plate-lookup  301!
-/wyoming-license-plate-lookup         /license-plate-lookup  301!
+# ALL 50 STATE LICENSE PLATE PAGES NOW HAVE REAL ROUTES - NO REDIRECTS NEEDED
+# All state license plate pages are indexed and have unique SEO content
+# See AppRoutes.tsx for full list of state routes
 
 # ============================================
 # LEGACY VERIFICATION URLS (Additional)

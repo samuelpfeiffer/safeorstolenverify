@@ -91,7 +91,7 @@ const ForElectronicsResellers = lazy(() => import('@/pages/business/ForElectroni
 const ForInsuranceCompanies = lazy(() => import('@/pages/business/ForInsuranceCompanies'));
 const ForLawEnforcement = lazy(() => import('@/pages/business/ForLawEnforcement'));
 
-// TOP 10 STATE LICENSE PLATE PAGES ONLY (High-Value States)
+// TOP 11 STATE LICENSE PLATE PAGES (Dedicated Components)
 const CaliforniaLicensePlateLookupPage = lazy(() => import('@/pages/CaliforniaLicensePlateLookupPage'));
 const TexasLicensePlateLookupPage = lazy(() => import('@/pages/TexasLicensePlateLookupPage'));
 const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
@@ -104,6 +104,49 @@ const NorthCarolinaLicensePlateLookupPage = lazy(() => import('@/pages/NorthCaro
 const WashingtonLicensePlateLookupPage = lazy(() => import('@/pages/WashingtonLicensePlateLookupPage'));
 const ArizonaLicensePlateLookupPage = lazy(() => import('@/pages/ArizonaLicensePlateLookupPage'));
 const ArizonaVinLookupPage = lazy(() => import('@/pages/ArizonaVinLookupPage'));
+
+// REMAINING 39 STATE LICENSE PLATE PAGES (Dynamic Components)
+import {
+  AlabamaLicensePlate,
+  AlaskaLicensePlate,
+  ArkansasLicensePlate,
+  ColoradoLicensePlate,
+  ConnecticutLicensePlate,
+  DelawareLicensePlate,
+  HawaiiLicensePlate,
+  IdahoLicensePlate,
+  IndianaLicensePlate,
+  IowaLicensePlate,
+  KansasLicensePlate,
+  KentuckyLicensePlate,
+  LouisianaLicensePlate,
+  MaineLicensePlate,
+  MarylandLicensePlate,
+  MassachusettsLicensePlate,
+  MichiganLicensePlate,
+  MinnesotaLicensePlate,
+  MississippiLicensePlate,
+  MissouriLicensePlate,
+  MontanaLicensePlate,
+  NebraskaLicensePlate,
+  NevadaLicensePlate,
+  NewHampshireLicensePlate,
+  NewJerseyLicensePlate,
+  NewMexicoLicensePlate,
+  NorthDakotaLicensePlate,
+  OklahomaLicensePlate,
+  OregonLicensePlate,
+  RhodeIslandLicensePlate,
+  SouthCarolinaLicensePlate,
+  SouthDakotaLicensePlate,
+  TennesseeLicensePlate,
+  UtahLicensePlate,
+  VermontLicensePlate,
+  VirginiaLicensePlate,
+  WestVirginiaLicensePlate,
+  WisconsinLicensePlate,
+  WyomingLicensePlate,
+} from '@/pages/state-license-plates';
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
@@ -293,7 +336,7 @@ export const AppRoutes = () => {
         <Route path="/stockx-verification" element={<StockXVerification />} />
         <Route path="/letgo-stolen-check" element={<LetgoStolenCheck />} />
 
-        {/* TOP 10 STATE LICENSE PLATE PAGES */}
+        {/* TOP 11 STATE LICENSE PLATE PAGES (Dedicated Components) */}
         <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookupPage />} />
         <Route path="/texas-license-plate-lookup" element={<TexasLicensePlateLookupPage />} />
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
@@ -305,6 +348,47 @@ export const AppRoutes = () => {
         <Route path="/north-carolina-license-plate-lookup" element={<NorthCarolinaLicensePlateLookupPage />} />
         <Route path="/washington-license-plate-lookup" element={<WashingtonLicensePlateLookupPage />} />
         <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookupPage />} />
+
+        {/* REMAINING 39 STATE LICENSE PLATE PAGES (Dynamic Components - All Indexed) */}
+        <Route path="/alabama-license-plate-lookup" element={<AlabamaLicensePlate />} />
+        <Route path="/alaska-license-plate-lookup" element={<AlaskaLicensePlate />} />
+        <Route path="/arkansas-license-plate-lookup" element={<ArkansasLicensePlate />} />
+        <Route path="/colorado-license-plate-lookup" element={<ColoradoLicensePlate />} />
+        <Route path="/connecticut-license-plate-lookup" element={<ConnecticutLicensePlate />} />
+        <Route path="/delaware-license-plate-lookup" element={<DelawareLicensePlate />} />
+        <Route path="/hawaii-license-plate-lookup" element={<HawaiiLicensePlate />} />
+        <Route path="/idaho-license-plate-lookup" element={<IdahoLicensePlate />} />
+        <Route path="/indiana-license-plate-lookup" element={<IndianaLicensePlate />} />
+        <Route path="/iowa-license-plate-lookup" element={<IowaLicensePlate />} />
+        <Route path="/kansas-license-plate-lookup" element={<KansasLicensePlate />} />
+        <Route path="/kentucky-license-plate-lookup" element={<KentuckyLicensePlate />} />
+        <Route path="/louisiana-license-plate-lookup" element={<LouisianaLicensePlate />} />
+        <Route path="/maine-license-plate-lookup" element={<MaineLicensePlate />} />
+        <Route path="/maryland-license-plate-lookup" element={<MarylandLicensePlate />} />
+        <Route path="/massachusetts-license-plate-lookup" element={<MassachusettsLicensePlate />} />
+        <Route path="/michigan-license-plate-lookup" element={<MichiganLicensePlate />} />
+        <Route path="/minnesota-license-plate-lookup" element={<MinnesotaLicensePlate />} />
+        <Route path="/mississippi-license-plate-lookup" element={<MississippiLicensePlate />} />
+        <Route path="/missouri-license-plate-lookup" element={<MissouriLicensePlate />} />
+        <Route path="/montana-license-plate-lookup" element={<MontanaLicensePlate />} />
+        <Route path="/nebraska-license-plate-lookup" element={<NebraskaLicensePlate />} />
+        <Route path="/nevada-license-plate-lookup" element={<NevadaLicensePlate />} />
+        <Route path="/new-hampshire-license-plate-lookup" element={<NewHampshireLicensePlate />} />
+        <Route path="/new-jersey-license-plate-lookup" element={<NewJerseyLicensePlate />} />
+        <Route path="/new-mexico-license-plate-lookup" element={<NewMexicoLicensePlate />} />
+        <Route path="/north-dakota-license-plate-lookup" element={<NorthDakotaLicensePlate />} />
+        <Route path="/oklahoma-license-plate-lookup" element={<OklahomaLicensePlate />} />
+        <Route path="/oregon-license-plate-lookup" element={<OregonLicensePlate />} />
+        <Route path="/rhode-island-license-plate-lookup" element={<RhodeIslandLicensePlate />} />
+        <Route path="/south-carolina-license-plate-lookup" element={<SouthCarolinaLicensePlate />} />
+        <Route path="/south-dakota-license-plate-lookup" element={<SouthDakotaLicensePlate />} />
+        <Route path="/tennessee-license-plate-lookup" element={<TennesseeLicensePlate />} />
+        <Route path="/utah-license-plate-lookup" element={<UtahLicensePlate />} />
+        <Route path="/vermont-license-plate-lookup" element={<VermontLicensePlate />} />
+        <Route path="/virginia-license-plate-lookup" element={<VirginiaLicensePlate />} />
+        <Route path="/west-virginia-license-plate-lookup" element={<WestVirginiaLicensePlate />} />
+        <Route path="/wisconsin-license-plate-lookup" element={<WisconsinLicensePlate />} />
+        <Route path="/wyoming-license-plate-lookup" element={<WyomingLicensePlate />} />
 
         {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
