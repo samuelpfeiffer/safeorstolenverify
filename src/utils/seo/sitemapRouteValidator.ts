@@ -63,7 +63,16 @@ export const VALID_ROUTES = new Set([
   '/check-jewelry',
   '/check-boat',
   '/firearms-check',
+  '/gun-serial-number-lookup',
   '/license-plate-lookup',
+  '/free-carfax-alternative',
+  '/ps5-serial-number-check',
+  '/imei-check-free',
+  '/stolen-vehicle-database-arizona',
+  '/rolex-serial-number-check',
+  '/arizona-stolen-property-database',
+  '/unlimited-vin-checks',
+  '/partial-serial-number-search',
   
   // NEW SEO item pages
   '/check-iphone-stolen',
