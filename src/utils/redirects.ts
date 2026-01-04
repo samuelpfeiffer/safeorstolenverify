@@ -86,10 +86,11 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/stolen-phone-check', to: '/check-stolen-phone', permanent: true },
   { from: '/stolen-car-check', to: '/check-stolen-car', permanent: true },
 
-  // ===== STATE ABBREVIATION PAGES =====
-  { from: '/texas', to: '/texas-vin-lookup', permanent: true },
-  { from: '/florida', to: '/florida-vin-lookup', permanent: true },
-  { from: '/new-york', to: '/new-york-vin-lookup', permanent: true },
+  // ===== STATE ABBREVIATION PAGES (Soft 404 Fix - redirect to license plate pages) =====
+  { from: '/texas', to: '/texas-license-plate-lookup', permanent: true },
+  { from: '/florida', to: '/florida-license-plate-lookup', permanent: true },
+  { from: '/new-york', to: '/new-york-license-plate-lookup', permanent: true },
+  { from: '/california', to: '/california-license-plate-lookup', permanent: true },
   { from: '/indiana-vin-lookup', to: '/vin-checker', permanent: true },
   { from: '/new-mexico-vin-lookup', to: '/vin-checker', permanent: true },
   { from: '/oklahoma-vin-lookup', to: '/vin-checker', permanent: true },

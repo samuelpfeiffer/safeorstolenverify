@@ -186,11 +186,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # GSC NOINDEX/SOFT404 FIXES (December 2025)
 # ============================================
-# State abbreviation pages
-/texas                       /texas-vin-lookup      301!
-/florida                     /florida-vin-lookup    301!
-/new-york                    /new-york-vin-lookup   301!
-/california                  /california-vin-lookup 301!
+# State abbreviation pages → License plate pages (Soft 404 Fix)
+/texas                       /texas-license-plate-lookup      301!
+/florida                     /florida-license-plate-lookup    301!
+/new-york                    /new-york-license-plate-lookup   301!
+/california                  /california-license-plate-lookup 301!
 
 # International VIN checks → main checker
 /canada-vin-check            /vin-checker           301!
@@ -366,13 +366,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /mexico-vin-check                  /vin-checker  301!
 
 # ============================================
-# STATE ABBREVIATION PAGES (GSC Dec 2025)
+# STATE ABBREVIATION PAGES (GSC Soft 404 Fix - Jan 2026)
 # ============================================
-/california                        /california-vin-lookup  301!
-/ca                               /california-vin-lookup  301!
-/tx                               /texas-vin-lookup       301!
-/fl                               /florida-vin-lookup     301!
-/ny                               /new-york-vin-lookup    301!
+/ca                               /california-license-plate-lookup  301!
+/tx                               /texas-license-plate-lookup       301!
+/fl                               /florida-license-plate-lookup     301!
+/ny                               /new-york-license-plate-lookup    301!
 
 # ============================================
 # APP FEATURE HISTORY PAGE (GSC Dec 2025)
