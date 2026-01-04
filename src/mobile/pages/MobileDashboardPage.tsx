@@ -83,7 +83,8 @@ const MobileDashboardPage: React.FC = () => {
       <PageSEO
         title="Mobile Dashboard - Verification History"
         description="View your verification history"
-        canonical="/mobile-dashboard"
+        canonical="/dashboard"
+        noIndex={true}
       />
 
       <div 

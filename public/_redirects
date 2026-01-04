@@ -15,7 +15,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /mobile-app             /app  301!
 /imei-checker-app       /app  301!
 /mobile-verification    /app  301!
-/mobile-verify          /app  301!
+# NOTE: /mobile-verify is a real route - DO NOT redirect
 /get-app                /app  301!
 /install-app            /app  301!
 /verification-app       /app  301!
@@ -409,7 +409,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/serial-numbers-stolen-goods-101                           /blog            301!
 /blog/real-user-stories-stolen-goods-verification               /blog/real-user-stories  301!
 /blog/data-source-credibility                                   /blog/data-source-credibility-stolen-goods-verification  301!
-/blog/enterprise-security                                       /blog            301!
+/blog/enterprise-security                                       /for-pawn-shops  301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog/stolen-verification-app-guide  301!
 /blog/imei-checker-app-comparison                               /blog/imei-checker-app-download  301!
