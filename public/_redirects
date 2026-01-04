@@ -569,26 +569,26 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-check-san-jose         /verify  301!
 
 # ============================================
-# LICENSE PLATE PAGES CONSOLIDATION
-# Keep main page, redirect state pages
+# LICENSE PLATE PAGES - REAL ROUTES EXIST
+# DO NOT REDIRECT - these have dedicated pages in AppRoutes
 # ============================================
-/california-license-plate-lookup   /license-plate-lookup  301!
-/texas-license-plate-lookup        /license-plate-lookup  301!
-/florida-license-plate-lookup      /license-plate-lookup  301!
-/new-york-license-plate-lookup     /license-plate-lookup  301!
-/illinois-license-plate-lookup     /license-plate-lookup  301!
-/georgia-license-plate-lookup      /license-plate-lookup  301!
-/pennsylvania-license-plate-lookup /license-plate-lookup  301!
-/ohio-license-plate-lookup         /license-plate-lookup  301!
-/north-carolina-license-plate-lookup /license-plate-lookup  301!
-/washington-license-plate-lookup   /license-plate-lookup  301!
+# /california-license-plate-lookup - HAS REAL PAGE
+# /texas-license-plate-lookup - HAS REAL PAGE
+# /florida-license-plate-lookup - HAS REAL PAGE
+# /new-york-license-plate-lookup - HAS REAL PAGE
+# /illinois-license-plate-lookup - HAS REAL PAGE
+# /georgia-license-plate-lookup - HAS REAL PAGE
+# /pennsylvania-license-plate-lookup - HAS REAL PAGE
+# /ohio-license-plate-lookup - HAS REAL PAGE
+# /north-carolina-license-plate-lookup - HAS REAL PAGE
+# /washington-license-plate-lookup - HAS REAL PAGE
 
 # ============================================
 # APP SUBDIRECTORY CONSOLIDATION
 # ============================================
 /app/stolen-phone-checker      /app  301!
 /app/vin-checker               /app  301!
-/app/barcode-scanner           /app  301!
+# /app/barcode-scanner - HAS REAL PAGE - DO NOT REDIRECT
 
 # ============================================
 # RSS REWRITES

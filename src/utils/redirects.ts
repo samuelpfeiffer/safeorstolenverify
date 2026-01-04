@@ -151,7 +151,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/privacy-policy', to: '/privacy', permanent: true },
   { from: '/database', to: '/about', permanent: true },
   { from: '/analytics', to: '/dashboard', permanent: true },
-  { from: '/for-businesses', to: '/for-pawn-shops', permanent: true },
+  // NOTE: /for-businesses has real page - removed redirect
   { from: '/seo-strategy', to: '/about', permanent: true },
   { from: '/seller-guide', to: '/about', permanent: true },
   { from: '/service-limitations', to: '/terms', permanent: true },
