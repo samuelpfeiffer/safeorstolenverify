@@ -154,27 +154,37 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
 # ============================================
 /trust-verification          /about  301!
-/accuracy                    /about  301!
-/for-consumers               /about  301!
+/accuracy                    /how-it-works  301!
+/for-consumers               /for-buyers  301!
 /our-story                   /about  301!
-/contact                     /about  301!
+# NOTE: /contact has real page in AppRoutes - DO NOT REDIRECT
 /case-studies                /testimonials  301!
 /auction-houses              /for-auction-houses  301!
-/features                    /about  301!
-/resellers                   /about  301!
+/features                    /how-it-works  301!
+/resellers                   /for-dealers  301!
 /for-phone-repair-shops      /for-dealers  301!
 /offerup-safety-verification /verify  301!
-/marketplace-integration     /about  301!
+/marketplace-integration     /verify  301!
 /how-it-works-detailed       /how-it-works  301!
-/stolen-items-database       /about  301!
+/stolen-items-database       /verify  301!
 /data-sources                /about  301!
-/seller-guide                /about  301!
+/seller-guide                /for-sellers  301!
 /seo-strategy                /about  301!
 /fastercapital/tech-cofounder /about 301!
-/enterprise-demo             /about  301!
-# /for-businesses has real page in AppRoutes - DO NOT REDIRECT
-/database                    /about  301!
+/enterprise-demo             /for-businesses  301!
+# NOTE: /for-businesses has real page in AppRoutes - DO NOT REDIRECT
+/database                    /stolen-database  301!
 /analytics                   /dashboard  301!
+
+# ============================================
+# PHANTOM ROUTE REDIRECTS (Routes that were in sitemap but never existed)
+# CRITICAL: These prevent Soft 404 errors
+# ============================================
+/disclaimer                  /terms  301!
+/ultimate-guide              /how-it-works  301!
+/blog/real-user-stories-stolen-goods-verification /blog/real-user-stories 301!
+/stolen-phone-check          /check-stolen-phone  301!
+/stolen-car-check            /check-stolen-car  301!
 
 # ============================================
 # GSC "Crawled not indexed" FIXES (December 2025)
