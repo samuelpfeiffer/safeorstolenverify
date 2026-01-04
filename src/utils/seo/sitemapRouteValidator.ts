@@ -73,6 +73,7 @@ export const VALID_ROUTES = new Set([
   '/arizona-stolen-property-database',
   '/unlimited-vin-checks',
   '/partial-serial-number-search',
+  '/how-to-check-serial-number',
   
   // NEW SEO item pages
   '/check-iphone-stolen',
