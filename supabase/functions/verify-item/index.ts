@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { runParallelVerification } from '../_shared/parallel-verification.ts';
+import { escapeILikePattern } from '../_shared/validation.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -37,6 +38,8 @@ serve(async (req) => {
     );
 
     const cleanIdentifier = identifier.trim().toUpperCase();
+    // Escape ILIKE special characters to prevent pattern injection attacks
+    const escapedIdentifier = escapeILikePattern(cleanIdentifier);
     const providers: any[] = [];
 
     // 1. Check internal stolen_items database first
@@ -44,7 +47,7 @@ serve(async (req) => {
       const { data: stolenItems, error } = await supabaseClient
         .from('stolen_items')
         .select('*')
-        .or(`serial_number.ilike.%${cleanIdentifier}%,imei.ilike.%${cleanIdentifier}%,vin.ilike.%${cleanIdentifier}%`)
+        .or(`serial_number.ilike.%${escapedIdentifier}%,imei.ilike.%${escapedIdentifier}%,vin.ilike.%${escapedIdentifier}%`)
         .limit(5);
 
       if (!error && stolenItems && stolenItems.length > 0) {
