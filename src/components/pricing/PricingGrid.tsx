@@ -60,7 +60,7 @@ export const PricingGrid = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
+        <h2 className="text-4xl font-bold mb-4">Subscription Plans</h2>
         <p className="text-xl text-muted-foreground">Start free, upgrade as you grow</p>
       </div>
       
