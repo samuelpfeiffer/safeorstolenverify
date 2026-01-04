@@ -488,7 +488,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /vin-verification     /vin-checker   301!
 /stolen-items-database /verify     301!
 /stolen-goods-checker /verify      301!
-/check-laptop-stolen  /check-laptop  301!
+# REMOVED - REAL PAGE EXISTS: /check-laptop-stolen has dedicated route in AppRoutes
 /vs/checkmend         /vs-checkmend  301!
 /vs/imeiinfo          /vs-imeiinfo   301!
 /vs/stolen-register   /compare       301!
@@ -518,13 +518,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/how-law-enforcement-tracks-stolen-goods-*                  /blog  301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog  301!
 /blog/craigslist-scam-prevention-item-verification-checklist     /blog  301!
-/blog/theft-trends-report-2024                                   /blog  301!
-/blog/bicycle-stolen-serial-number-check                         /check-bike  301!
-/blog/firearm-serial-number-verification                         /firearms-check  301!
-/blog/verify-item-before-meetup                                  /blog/ultimate-marketplace-buyers-guide  301!
-/blog/pawn-shop-stolen-item-verification                         /blog  301!
-/blog/how-to-use-imei-checker-app                                /app  301!
-/blog/imei-checker-app-download                                  /app  301!
+# REMOVED - REAL PAGES EXIST (have dedicated routes in AppRoutes):
+# /blog/theft-trends-report-2024
+# /blog/bicycle-stolen-serial-number-check  
+# /blog/firearm-serial-number-verification
+# /blog/verify-item-before-meetup
+# /blog/pawn-shop-stolen-item-verification
+# /blog/imei-checker-app-download
 
 # Blog posts without matching routes
 /blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
@@ -537,7 +537,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /features                         /about            301!
 /database                         /about            301!
 /account                          /dashboard        301!
-/testimonials                     /about            301!
+# REMOVED - REAL PAGE EXISTS: /testimonials has dedicated route in AppRoutes
 
 # Missing "Crawled not indexed" URLs (Dec 2025)
 /our-mission                      /about            301!
@@ -572,11 +572,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # CITY PAGES CONSOLIDATION (GSC Soft 404 Fixes)
 # Keep top 5 cities, redirect others to /verify
 # ============================================
-/stolen-check-philadelphia     /verify  301!
-/stolen-check-san-antonio      /verify  301!
-/stolen-check-san-diego        /verify  301!
-/stolen-check-dallas           /verify  301!
-/stolen-check-san-jose         /verify  301!
+# REMOVED - REAL PAGES EXIST (have dedicated routes in AppRoutes):
+# /stolen-check-philadelphia
+# /stolen-check-san-antonio
+# /stolen-check-san-diego
+# /stolen-check-dallas
+# /stolen-check-san-jose
 
 # ============================================
 # LICENSE PLATE PAGES - REAL ROUTES EXIST
@@ -596,8 +597,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # APP SUBDIRECTORY CONSOLIDATION
 # ============================================
-/app/stolen-phone-checker      /app  301!
-/app/vin-checker               /app  301!
+# REMOVED - REAL PAGES EXIST (have dedicated routes in AppRoutes):
+# /app/stolen-phone-checker
+# /app/vin-checker
 # /app/barcode-scanner - HAS REAL PAGE - DO NOT REDIRECT
 
 # ============================================
