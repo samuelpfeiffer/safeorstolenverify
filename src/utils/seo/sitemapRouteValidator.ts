@@ -300,6 +300,13 @@ export const REDIRECT_URLS = new Set([
   '/analytics',
   '/blog/best-stolen-item-checker-apps-2025',
   '/app/serial-number-checker',
+  '/texas',
+  '/florida',
+  '/new-york',
+  '/california',
+  '/mesa-stolen-item-check',
+  '/craigslist-verification',
+  '/check-samsung',
 ]);
 
 export interface ValidationResult {
