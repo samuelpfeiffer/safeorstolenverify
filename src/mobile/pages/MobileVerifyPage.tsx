@@ -61,7 +61,8 @@ const MobileVerifyPage: React.FC = () => {
       <PageSEO
         title="Mobile Verify - Quick Item Verification"
         description="Verify items instantly on your mobile device"
-        canonical="/mobile-verify"
+        canonical="/verify"
+        noIndex={true}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted pb-20">

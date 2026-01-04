@@ -43,10 +43,10 @@ export const VALID_ROUTES = new Set([
   '/case-studies',
   '/enterprise-demo',
   
-  // Mobile routes
-  '/mobile-verify',
-  '/mobile-dashboard',
-  '/mobile-settings',
+  // NOTE: Mobile routes excluded from sitemap (noindex pages)
+  // '/mobile-verify', '/mobile-dashboard', '/mobile-settings' are real routes but NOT for indexing
+  
+  // Item checkers
   
   // Item checkers
   '/imei-checker',
@@ -307,6 +307,18 @@ export const REDIRECT_URLS = new Set([
   '/mesa-stolen-item-check',
   '/craigslist-verification',
   '/check-samsung',
+  // Mobile pages (real routes but noindexed)
+  '/mobile-verify',
+  '/mobile-dashboard',
+  '/mobile-settings',
+  // GSC "Alternate page" errors - Jan 2026
+  '/comparison-checkmend',
+  '/blog/enterprise-security',
+  '/stolen-merchandise-check',
+  '/ios-app',
+  '/avoid-buying-stolen-goods',
+  '/city/los-angeles-ca/vin-verification',
+  '/city/new-york-ny/imei-check',
 ]);
 
 export interface ValidationResult {

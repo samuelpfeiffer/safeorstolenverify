@@ -68,7 +68,8 @@ const MobileSettingsPage: React.FC = () => {
       <PageSEO
         title="Mobile Settings"
         description="Configure your mobile app settings"
-        canonical="/mobile-settings"
+        canonical="/profile"
+        noIndex={true}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted pb-20">
