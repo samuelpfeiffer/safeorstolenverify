@@ -73,6 +73,7 @@ export const InternalLinksSection = () => {
       title: "Resources",
       icon: BookOpen,
       links: [
+        { to: "/how-to-check-serial-number", label: "Serial Number Guide" },
         { to: "/blog", label: "Blog" },
         { to: "/compare", label: "Compare Services" },
         { to: "/how-it-works", label: "How It Works" },

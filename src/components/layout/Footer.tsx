@@ -63,6 +63,7 @@ export const Footer: React.FC = () => {
     {
       title: 'Support',
       links: [
+        { name: 'Serial Number Guide', href: '/how-to-check-serial-number' },
         { name: 'FAQ', href: '/faq' },
         { name: 'Blog', href: '/blog' },
         { name: 'Terms of Service', href: '/terms' },
