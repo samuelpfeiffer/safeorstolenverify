@@ -1,10 +1,12 @@
 /**
  * URL Redirect Configuration
  * Handles 404s, duplicates, and legacy URLs from Google Search Console
- * Last updated: 2025-12-18
+ * 
+ * IMPORTANT: Keep in sync with public/_redirects for server-side 301s
+ * Last updated: 2026-01-04
  */
 
-import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
+import { VALID_ROUTES, REDIRECT_URLS } from '@/utils/seo/sitemapRouteValidator';
 
 export interface RedirectRule {
   from: string;
@@ -115,6 +117,19 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/avoid-stolen-goods', to: '/how-it-works', permanent: true },
   { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
   { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
+  
+  // PHANTOM ROUTES - Routes that were in sitemap but never had real pages
+  { from: '/disclaimer', to: '/terms', permanent: true },
+  { from: '/our-story', to: '/about', permanent: true },
+  { from: '/ultimate-guide', to: '/how-it-works', permanent: true },
+  { from: '/how-to-check-if-anything-is-stolen-before-you-buy', to: '/how-it-works', permanent: true },
+  { from: '/can-police-track-stolen-phone', to: '/faq', permanent: true },
+  { from: '/check-drone', to: '/verify', permanent: true },
+  { from: '/stolen-goods-checker', to: '/verify', permanent: true },
+  { from: '/enterprise-demo', to: '/for-businesses', permanent: true },
+  { from: '/blog/real-user-stories-stolen-goods-verification', to: '/blog/real-user-stories', permanent: true },
+  { from: '/stolen-phone-check', to: '/check-stolen-phone', permanent: true },
+  { from: '/stolen-car-check', to: '/check-stolen-car', permanent: true },
 
   // ===== NOINDEX PAGES - Dec 2025 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
