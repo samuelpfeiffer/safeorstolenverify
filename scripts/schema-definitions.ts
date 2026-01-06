@@ -627,10 +627,157 @@ export const PAGE_SCHEMA_DEFINITIONS: PageSchemas[] = [
 ];
 
 /**
+ * State License Plate Page Schema Generator
+ * Generates consistent schemas for all 50 state license plate pages
+ */
+const US_STATES = [
+  { name: 'Alabama', abbr: 'AL', slug: 'alabama' },
+  { name: 'Alaska', abbr: 'AK', slug: 'alaska' },
+  { name: 'Arizona', abbr: 'AZ', slug: 'arizona' },
+  { name: 'Arkansas', abbr: 'AR', slug: 'arkansas' },
+  { name: 'California', abbr: 'CA', slug: 'california' },
+  { name: 'Colorado', abbr: 'CO', slug: 'colorado' },
+  { name: 'Connecticut', abbr: 'CT', slug: 'connecticut' },
+  { name: 'Delaware', abbr: 'DE', slug: 'delaware' },
+  { name: 'Florida', abbr: 'FL', slug: 'florida' },
+  { name: 'Georgia', abbr: 'GA', slug: 'georgia' },
+  { name: 'Hawaii', abbr: 'HI', slug: 'hawaii' },
+  { name: 'Idaho', abbr: 'ID', slug: 'idaho' },
+  { name: 'Illinois', abbr: 'IL', slug: 'illinois' },
+  { name: 'Indiana', abbr: 'IN', slug: 'indiana' },
+  { name: 'Iowa', abbr: 'IA', slug: 'iowa' },
+  { name: 'Kansas', abbr: 'KS', slug: 'kansas' },
+  { name: 'Kentucky', abbr: 'KY', slug: 'kentucky' },
+  { name: 'Louisiana', abbr: 'LA', slug: 'louisiana' },
+  { name: 'Maine', abbr: 'ME', slug: 'maine' },
+  { name: 'Maryland', abbr: 'MD', slug: 'maryland' },
+  { name: 'Massachusetts', abbr: 'MA', slug: 'massachusetts' },
+  { name: 'Michigan', abbr: 'MI', slug: 'michigan' },
+  { name: 'Minnesota', abbr: 'MN', slug: 'minnesota' },
+  { name: 'Mississippi', abbr: 'MS', slug: 'mississippi' },
+  { name: 'Missouri', abbr: 'MO', slug: 'missouri' },
+  { name: 'Montana', abbr: 'MT', slug: 'montana' },
+  { name: 'Nebraska', abbr: 'NE', slug: 'nebraska' },
+  { name: 'Nevada', abbr: 'NV', slug: 'nevada' },
+  { name: 'New Hampshire', abbr: 'NH', slug: 'new-hampshire' },
+  { name: 'New Jersey', abbr: 'NJ', slug: 'new-jersey' },
+  { name: 'New Mexico', abbr: 'NM', slug: 'new-mexico' },
+  { name: 'New York', abbr: 'NY', slug: 'new-york' },
+  { name: 'North Carolina', abbr: 'NC', slug: 'north-carolina' },
+  { name: 'North Dakota', abbr: 'ND', slug: 'north-dakota' },
+  { name: 'Ohio', abbr: 'OH', slug: 'ohio' },
+  { name: 'Oklahoma', abbr: 'OK', slug: 'oklahoma' },
+  { name: 'Oregon', abbr: 'OR', slug: 'oregon' },
+  { name: 'Pennsylvania', abbr: 'PA', slug: 'pennsylvania' },
+  { name: 'Rhode Island', abbr: 'RI', slug: 'rhode-island' },
+  { name: 'South Carolina', abbr: 'SC', slug: 'south-carolina' },
+  { name: 'South Dakota', abbr: 'SD', slug: 'south-dakota' },
+  { name: 'Tennessee', abbr: 'TN', slug: 'tennessee' },
+  { name: 'Texas', abbr: 'TX', slug: 'texas' },
+  { name: 'Utah', abbr: 'UT', slug: 'utah' },
+  { name: 'Vermont', abbr: 'VT', slug: 'vermont' },
+  { name: 'Virginia', abbr: 'VA', slug: 'virginia' },
+  { name: 'Washington', abbr: 'WA', slug: 'washington' },
+  { name: 'West Virginia', abbr: 'WV', slug: 'west-virginia' },
+  { name: 'Wisconsin', abbr: 'WI', slug: 'wisconsin' },
+  { name: 'Wyoming', abbr: 'WY', slug: 'wyoming' }
+];
+
+/**
+ * Generate schema definitions for a state license plate page
+ */
+function generateStateLicensePlateSchemas(state: typeof US_STATES[0]): PageSchemas {
+  return {
+    path: `/${state.slug}-license-plate-lookup`,
+    title: `${state.name} License Plate Lookup - Check ${state.abbr} Vehicle Theft Status | SafeOrStolen`,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": `${state.name} License Plate Verification`,
+        "serviceType": "Vehicle Theft Verification",
+        "provider": {
+          "@type": "Organization",
+          "name": "SafeOrStolen"
+        },
+        "areaServed": {
+          "@type": "State",
+          "name": state.name,
+          "containedIn": {
+            "@type": "Country",
+            "name": "United States"
+          }
+        },
+        "description": `Verify ${state.name} license plates and check vehicle theft status. Free ${state.abbr} plate lookup against stolen vehicle databases.`
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": `How do I check if a ${state.name} vehicle is stolen?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Enter the ${state.abbr} license plate number or VIN into SafeOrStolen's verification tool. We check against ${state.name} DMV records, NICB databases, and national stolen vehicle registries for instant results.`
+            }
+          },
+          {
+            "@type": "Question",
+            "name": `Is ${state.name} license plate lookup free?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `Yes! SafeOrStolen offers 2 free verification searches including ${state.name} license plate lookups. Check any ${state.abbr} vehicle before buying.`
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://safeorstolen.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "License Plate Lookup",
+            "item": "https://safeorstolen.com/license-plate-lookup"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": `${state.name} License Plate Lookup`,
+            "item": `https://safeorstolen.com/${state.slug}-license-plate-lookup`
+          }
+        ]
+      }
+    ]
+  };
+}
+
+/**
+ * All 50 state license plate page schemas
+ */
+export const STATE_LICENSE_PLATE_SCHEMAS: PageSchemas[] = US_STATES.map(generateStateLicensePlateSchemas);
+
+/**
+ * Combined page schemas including state pages
+ */
+export const ALL_PAGE_SCHEMAS: PageSchemas[] = [
+  ...PAGE_SCHEMA_DEFINITIONS,
+  ...STATE_LICENSE_PLATE_SCHEMAS
+];
+
+/**
  * Calculate total schemas
  */
 export function getTotalSchemaCount(): number {
-  const pageSchemas = PAGE_SCHEMA_DEFINITIONS.reduce((sum, page) => sum + page.schemas.length, 0);
+  const pageSchemas = ALL_PAGE_SCHEMAS.reduce((sum, page) => sum + page.schemas.length, 0);
   return pageSchemas + GLOBAL_SCHEMAS.length; // Add 3 global schemas from index.html
 }
 
@@ -638,6 +785,11 @@ export function getTotalSchemaCount(): number {
  * Get schemas for a specific page
  */
 export function getSchemasForPage(path: string): any[] {
-  const page = PAGE_SCHEMA_DEFINITIONS.find(p => p.path === path);
+  const page = ALL_PAGE_SCHEMAS.find(p => p.path === path);
   return page?.schemas || [];
 }
+
+/**
+ * Export state data for use in other files
+ */
+export { US_STATES };

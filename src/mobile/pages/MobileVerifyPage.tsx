@@ -59,10 +59,9 @@ const MobileVerifyPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Mobile Verify - Quick Item Verification"
-        description="Verify items instantly on your mobile device"
-        canonical="/verify"
-        noIndex={true}
+        title="Mobile Verify - Quick Item Verification | SafeOrStolen"
+        description="Verify items instantly on your mobile device. Scan barcodes, check IMEI, VIN, and serial numbers against stolen databases in seconds."
+        canonical="/mobile-verify"
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted pb-20">
