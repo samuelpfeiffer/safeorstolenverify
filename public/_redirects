@@ -603,6 +603,19 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # /app/barcode-scanner - HAS REAL PAGE - DO NOT REDIRECT
 
 # ============================================
+# GSC NOINDEX FIXES - January 2026
+# Pages returning 404 (hitting NotFound which has noindex)
+# ============================================
+/press                          /press-kit        301!
+/press-release                  /press-kit        301!
+/community                      /about            301!
+/real-time-verification         /verify           301!
+/how-to-check-if-laptop-stolen  /check-laptop     301!
+/transparency                   /about            301!
+/data-sources                   /about            301!
+/mobile                         /app              301!
+
+# ============================================
 # RSS REWRITES
 # ============================================
 /feed.xml    /rss      200
