@@ -248,6 +248,9 @@ const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
 const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
 const OneValleyRecognitionPage = lazy(() => import('@/pages/news/OneValleyRecognitionPage'));
+const ReviewsPage = lazy(() => import('@/pages/ReviewsPage'));
+const NewsPage = lazy(() => import('@/pages/NewsPage'));
+const VideosPage = lazy(() => import('@/pages/VideosPage'));
 
 // Admin Pages
 const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
@@ -501,10 +504,13 @@ export const AppRoutes = () => {
         <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
 
         {/* NEWS PAGES */}
+        <Route path="/news" element={<NewsPage />} />
         <Route path="/news/onevalley-recognition" element={<OneValleyRecognitionPage />} />
 
         {/* PRESS & SOCIAL PAGES */}
         <Route path="/press-kit" element={<PressKitPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/videos" element={<VideosPage />} />
         <Route path="/product-hunt" element={<ProductHuntPage />} />
         <Route path="/youtube" element={<YouTubePage />} />
         <Route path="/youtube/:slug" element={<VideoWatchPage />} />

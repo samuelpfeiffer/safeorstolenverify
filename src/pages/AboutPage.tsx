@@ -197,6 +197,34 @@ const AboutPage = () => {
           </div>
         </section>
 
+        {/* Leadership Section */}
+        <section className="py-12 bg-gradient-to-br from-primary/5 via-background to-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground flex items-center justify-center gap-2">
+                <Users className="h-7 w-7 text-primary" />
+                Leadership
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              <Card className="p-6 text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-primary">SP</span>
+                </div>
+                <h3 className="font-bold text-lg">Samuel Pfeiffer</h3>
+                <p className="text-muted-foreground">Founder & CEO</p>
+              </Card>
+              <Card className="p-6 text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-primary">KM</span>
+                </div>
+                <h3 className="font-bold text-lg">Kelly McEvoy</h3>
+                <p className="text-muted-foreground">Co-Founder & CMO/CFO</p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Milestones & Recognition Section */}
         <section className="py-12 bg-gradient-to-br from-amber-500/5 via-background to-primary/5">
           <div className="container mx-auto px-4">
@@ -211,6 +239,25 @@ const AboutPage = () => {
                 </p>
               </div>
               <div className="space-y-4">
+                <Card className="p-4 border-l-4 border-l-primary">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
+                      <Building className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge variant="secondary" className="text-xs">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          2017
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-foreground">Company Founded</h3>
+                      <p className="text-sm text-muted-foreground">
+                        SafeOrStolen founded with a mission to protect secondhand buyers and sellers from stolen goods.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
                 <Card className="p-4 border-l-4 border-l-amber-500">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-full bg-amber-500/10 flex-shrink-0">
@@ -234,13 +281,32 @@ const AboutPage = () => {
                 <Card className="p-4 border-l-4 border-l-primary">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
+                      <Building className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge variant="secondary" className="text-xs">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          2025
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-foreground">Arizona Incorporation</h3>
+                      <p className="text-sm text-muted-foreground">
+                        SafeOrStolen LLC officially incorporated in Arizona, establishing our legal foundation for growth.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="p-4 border-l-4 border-l-primary">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
                       <Rocket className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <Badge variant="secondary" className="text-xs">
                           <Calendar className="h-3 w-3 mr-1" />
-                          2024
+                          2025
                         </Badge>
                       </div>
                       <h3 className="font-semibold text-foreground">FasterCapital Partnership</h3>
@@ -260,7 +326,7 @@ const AboutPage = () => {
                       <div className="flex items-center gap-2 mb-1">
                         <Badge variant="secondary" className="text-xs">
                           <Calendar className="h-3 w-3 mr-1" />
-                          2024
+                          2025
                         </Badge>
                       </div>
                       <h3 className="font-semibold text-foreground">Mobile App Launch</h3>
@@ -272,6 +338,32 @@ const AboutPage = () => {
                   </div>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Backing & Partnerships */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Backing & Partnerships</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <Card className="p-6 text-center">
+                <Rocket className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold mb-2">FasterCapital</h3>
+                <p className="text-sm text-muted-foreground">Accelerated by FasterCapital's LaunchUp Program</p>
+              </Card>
+              <Card className="p-6 text-center">
+                <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold mb-2">Law Enforcement</h3>
+                <p className="text-sm text-muted-foreground">Partnerships in 3+ states</p>
+              </Card>
+              <Card className="p-6 text-center">
+                <Lock className="h-10 w-10 text-primary mx-auto mb-3" />
+                <h3 className="font-bold mb-2">Security</h3>
+                <p className="text-sm text-muted-foreground">ISO 27001-accredited infrastructure</p>
+              </Card>
             </div>
           </div>
         </section>
