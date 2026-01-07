@@ -73,9 +73,9 @@ export const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/safeorstolen' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/safeorstolen' },
-    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@safeorstolen' },
+    { name: 'X', icon: Twitter, href: 'https://x.com/safeorstolen' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/verifysafeorstolen/' },
+    { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@SafeOrStolen' },
   ];
 
   const externalLinks = [

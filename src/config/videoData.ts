@@ -82,29 +82,44 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
   },
   {
     id: '5',
-    videoId: 'YOUR_VIDEO_ID_HERE', // Replace with actual YouTube video ID
-    title: 'How to Avoid Buying Stolen Items on Facebook Marketplace',
-    seoTitle: 'How to Avoid Buying Stolen Items on Facebook Marketplace (Free Verification)',
-    description: 'Learn the warning signs of stolen goods and how to verify ANY item before you meet the seller on Facebook Marketplace.',
-    seoDescription: 'Avoid buying stolen items on Facebook Marketplace! Learn red flags, verification steps, and how to use SafeOrStolen to check IMEI, VIN, and serial numbers before you buy.',
-    duration: '1:15',
-    durationISO: 'PT1M15S',
-    durationSeconds: 75,
-    uploadDate: '2024-12-20T00:00:00Z',
-    category: 'Marketplace Safety',
-    tags: ['facebook marketplace', 'stolen items', 'scam prevention', 'marketplace safety', 'verify before buying', 'secondhand shopping', 'buyer protection'],
-    slug: 'marketplace-protection'
+    videoId: 'KM_VIDEO_1', // Placeholder - needs actual YouTube ID from Kelly McEvoy's video
+    title: 'I got to call Jessica hmm...safeorstolen.com',
+    seoTitle: 'Real Life Stolen Item Verification - SafeOrStolen Demo',
+    description: 'Watch a real-life demonstration of verifying items using SafeOrStolen before buying.',
+    seoDescription: 'See SafeOrStolen in action! Real verification demo showing how to check if items are stolen before buying on Facebook Marketplace.',
+    duration: '0:32',
+    durationISO: 'PT32S',
+    durationSeconds: 32,
+    uploadDate: '2025-11-01T00:00:00Z',
+    category: 'Demo',
+    tags: ['safeorstolen demo', 'verification example', 'marketplace safety', 'stolen item check', 'real demo'],
+    slug: 'real-demo-jessica'
+  },
+  {
+    id: '6',
+    videoId: 'KM_VIDEO_2', // Placeholder - needs actual YouTube ID from Kelly McEvoy's video
+    title: 'Too good to be true...?safeorstolen.com',
+    seoTitle: 'When a Deal is Too Good to Be True - Verify with SafeOrStolen',
+    description: 'Deal too good to be true? It probably is. Learn how to verify before you buy.',
+    seoDescription: 'Is that deal too good to be true? Use SafeOrStolen to verify items before buying. Don\'t fall for stolen goods scams on Facebook Marketplace.',
+    duration: '0:45',
+    durationISO: 'PT45S',
+    durationSeconds: 45,
+    uploadDate: '2025-11-01T00:00:00Z',
+    category: 'Tips',
+    tags: ['too good to be true', 'scam prevention', 'stolen goods', 'verification', 'marketplace tips'],
+    slug: 'too-good-to-be-true'
   }
 ];
 
 export const YOUTUBE_CHANNEL = {
   name: 'SafeOrStolen',
-  handle: '@safeorstolen',
-  url: 'https://www.youtube.com/@safeorstolen',
-  subscribeUrl: 'https://www.youtube.com/@safeorstolen?sub_confirmation=1',
+  handle: '@SafeOrStolen',
+  url: 'https://www.youtube.com/@SafeOrStolen',
+  subscribeUrl: 'https://www.youtube.com/@SafeOrStolen?sub_confirmation=1',
   channelId: 'UCi0H8IK1dH0PhgVT9v2t9sw',
-  videoCount: 5,
-  viewCount: '3.5K+',
+  videoCount: 6,
+  viewCount: '5K+',
   description: 'Free video tutorials on verifying secondhand items before buying. Quick tips to avoid stolen goods on Facebook Marketplace, eBay, and Craigslist.'
 };
 
