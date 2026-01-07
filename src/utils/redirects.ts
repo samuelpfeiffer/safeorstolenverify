@@ -145,6 +145,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/guides/verify-craigslist-items', to: '/craigslist-safety-verification', permanent: true },
   { from: '/app/philadelphia', to: '/stolen-check-philadelphia', permanent: true },
   { from: '/guides/offerup-scam-protection', to: '/offerup-verify-not-stolen', permanent: true },
+  { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
   { from: '/app/carfax-alternative', to: '/vs-carfax', permanent: true },
   { from: '/blog/how-to-use-imei-checker-app', to: '/blog/imei-checker-app-download', permanent: true },
 

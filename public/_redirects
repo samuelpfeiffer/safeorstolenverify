@@ -79,6 +79,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /pawn-shops              /for-pawn-shops 301!
 /license-plates-lookup   /license-plate-lookup 301!
 
+# GUIDES DIRECTORY REDIRECTS (Before wildcards)
+/guides/ebay-buyer-protection     /ebay-stolen-item-check  301!
+/guides/verify-craigslist-items   /craigslist-safety-verification  301!
+/guides/offerup-scam-protection   /offerup-verify-not-stolen  301!
+/guides/*                         /blog  301!
+
 # ============================================
 # STATE PAGE CONSOLIDATION - SEO OPTIMIZATION
 # Keep only 10 high-value states with unique content
@@ -473,9 +479,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /service-limitations /terms   301!
 
 # ============================================
-# ADDITIONAL REDIRECTS FROM APPROUTES
+# ADDITIONAL REDIRECTS FROM APPROUTES  
 # ============================================
-/account             /profile     301!
+/account             /dashboard   301!
 /enterprise-demo     /pricing     301!
 /for-used-car-dealers /for-dealers 301!
 
@@ -534,10 +540,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
 
 # Features page redirect
-/features                         /about            301!
-/database                         /about            301!
-/account                          /dashboard        301!
-# REMOVED - REAL PAGE EXISTS: /testimonials has dedicated route in AppRoutes
+/features                         /how-it-works     301!
+/database                         /stolen-database  301!
 
 # Missing "Crawled not indexed" URLs (Dec 2025)
 /our-mission                      /about            301!
