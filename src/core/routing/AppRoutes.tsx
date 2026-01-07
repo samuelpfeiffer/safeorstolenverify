@@ -155,7 +155,7 @@ import {
   WisconsinLicensePlate,
   WyomingLicensePlate,
 } from '@/pages/state-license-plates';
-// TOP 10 STATE VIN PAGES ONLY (High-Value States)
+// TOP 11 STATE VIN PAGES (Dedicated Components)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
 const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
@@ -166,6 +166,50 @@ const PennsylvaniaVinLookup = lazy(() => import('@/pages/PennsylvaniaVinLookup')
 const OhioVinLookup = lazy(() => import('@/pages/OhioVinLookup'));
 const NorthCarolinaVinLookup = lazy(() => import('@/pages/NorthCarolinaVinLookup'));
 const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
+// ArizonaVinLookupPage is defined above with license plate pages
+
+// REMAINING 39 STATE VIN PAGES (Dynamic Components)
+import {
+  AlabamaVin,
+  AlaskaVin,
+  ArkansasVin,
+  ColoradoVin,
+  ConnecticutVin,
+  DelawareVin,
+  HawaiiVin,
+  IdahoVin,
+  IndianaVin,
+  IowaVin,
+  KansasVin,
+  KentuckyVin,
+  LouisianaVin,
+  MaineVin,
+  MarylandVin,
+  MassachusettsVin,
+  MichiganVin,
+  MinnesotaVin,
+  MississippiVin,
+  MissouriVin,
+  MontanaVin,
+  NebraskaVin,
+  NevadaVin,
+  NewHampshireVin,
+  NewJerseyVin,
+  NewMexicoVin,
+  NorthDakotaVin,
+  OklahomaVin,
+  OregonVin,
+  RhodeIslandVin,
+  SouthCarolinaVin,
+  SouthDakotaVin,
+  TennesseeVin,
+  UtahVin,
+  VermontVin,
+  VirginiaVin,
+  WestVirginiaVin,
+  WisconsinVin,
+  WyomingVin,
+} from '@/pages/state-vin-lookups';
 
 // Blog Index & Articles
 const BlogIndexPage = lazy(() => import('@/pages/BlogIndexPage'));
@@ -410,7 +454,7 @@ export const AppRoutes = () => {
         <Route path="/wisconsin-license-plate-lookup" element={<WisconsinLicensePlate />} />
         <Route path="/wyoming-license-plate-lookup" element={<WyomingLicensePlate />} />
 
-        {/* TOP 10 STATE VIN PAGES */}
+        {/* TOP 11 STATE VIN PAGES (Dedicated Components) */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
         <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
         <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
@@ -422,6 +466,47 @@ export const AppRoutes = () => {
         <Route path="/north-carolina-vin-lookup" element={<NorthCarolinaVinLookup />} />
         <Route path="/washington-vin-lookup" element={<WashingtonVinLookup />} />
         <Route path="/arizona-vin-lookup" element={<ArizonaVinLookupPage />} />
+
+        {/* REMAINING 39 STATE VIN PAGES (Dynamic Components) */}
+        <Route path="/alabama-vin-lookup" element={<AlabamaVin />} />
+        <Route path="/alaska-vin-lookup" element={<AlaskaVin />} />
+        <Route path="/arkansas-vin-lookup" element={<ArkansasVin />} />
+        <Route path="/colorado-vin-lookup" element={<ColoradoVin />} />
+        <Route path="/connecticut-vin-lookup" element={<ConnecticutVin />} />
+        <Route path="/delaware-vin-lookup" element={<DelawareVin />} />
+        <Route path="/hawaii-vin-lookup" element={<HawaiiVin />} />
+        <Route path="/idaho-vin-lookup" element={<IdahoVin />} />
+        <Route path="/indiana-vin-lookup" element={<IndianaVin />} />
+        <Route path="/iowa-vin-lookup" element={<IowaVin />} />
+        <Route path="/kansas-vin-lookup" element={<KansasVin />} />
+        <Route path="/kentucky-vin-lookup" element={<KentuckyVin />} />
+        <Route path="/louisiana-vin-lookup" element={<LouisianaVin />} />
+        <Route path="/maine-vin-lookup" element={<MaineVin />} />
+        <Route path="/maryland-vin-lookup" element={<MarylandVin />} />
+        <Route path="/massachusetts-vin-lookup" element={<MassachusettsVin />} />
+        <Route path="/michigan-vin-lookup" element={<MichiganVin />} />
+        <Route path="/minnesota-vin-lookup" element={<MinnesotaVin />} />
+        <Route path="/mississippi-vin-lookup" element={<MississippiVin />} />
+        <Route path="/missouri-vin-lookup" element={<MissouriVin />} />
+        <Route path="/montana-vin-lookup" element={<MontanaVin />} />
+        <Route path="/nebraska-vin-lookup" element={<NebraskaVin />} />
+        <Route path="/nevada-vin-lookup" element={<NevadaVin />} />
+        <Route path="/new-hampshire-vin-lookup" element={<NewHampshireVin />} />
+        <Route path="/new-jersey-vin-lookup" element={<NewJerseyVin />} />
+        <Route path="/new-mexico-vin-lookup" element={<NewMexicoVin />} />
+        <Route path="/north-dakota-vin-lookup" element={<NorthDakotaVin />} />
+        <Route path="/oklahoma-vin-lookup" element={<OklahomaVin />} />
+        <Route path="/oregon-vin-lookup" element={<OregonVin />} />
+        <Route path="/rhode-island-vin-lookup" element={<RhodeIslandVin />} />
+        <Route path="/south-carolina-vin-lookup" element={<SouthCarolinaVin />} />
+        <Route path="/south-dakota-vin-lookup" element={<SouthDakotaVin />} />
+        <Route path="/tennessee-vin-lookup" element={<TennesseeVin />} />
+        <Route path="/utah-vin-lookup" element={<UtahVin />} />
+        <Route path="/vermont-vin-lookup" element={<VermontVin />} />
+        <Route path="/virginia-vin-lookup" element={<VirginiaVin />} />
+        <Route path="/west-virginia-vin-lookup" element={<WestVirginiaVin />} />
+        <Route path="/wisconsin-vin-lookup" element={<WisconsinVin />} />
+        <Route path="/wyoming-vin-lookup" element={<WyomingVin />} />
 
         {/* COMPETITOR COMPARISON PAGES */}
         <Route path="/compare" element={<Compare />} />
