@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SafeOrStolen Sitemap - PRODUCTION CLEAN VERSION -->
-<!-- Updated 2025-12-26T16:00:00Z | Content quality + internal linking improvements -->
-<!-- Total: 88 Real Indexable Pages | E-E-A-T signals added -->
+<!-- Updated 2026-01-07T00:00:00Z | SEO cleanup + mobile pages added -->
+<!-- Total: 91 Real Indexable Pages | E-E-A-T signals added -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 
@@ -1036,9 +1036,34 @@
   </url>
   <url>
     <loc>https://safeorstolen.com/free-tools</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- MOBILE PAGES (3 pages) - Added January 2026 -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://safeorstolen.com/mobile-verify</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/mobile-dashboard</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/mobile-settings</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <mobile:mobile/>
   </url>
 
 </urlset>

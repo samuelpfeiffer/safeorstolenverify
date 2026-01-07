@@ -186,9 +186,9 @@ const PricingPage = () => {
   return (
     <>
       <PageSEO
-        title="Protect Buyers & Sellers | Free Stolen Verification App - SafeOrStolen Pricing"
-        description="Protect BOTH buyers AND sellers with SafeOrStolen. 2 free checks, then $2.99/mo. Every search makes stolen items harder to sell. Mobile app only at SafeOrStolen.com."
-        keywords="protect buyers sellers, free stolen verification app, stop stolen goods, CheckMEND alternative, IMEI checker app, reduce crime, verify stolen items"
+        title="SafeOrStolen Pricing - Subscription Plans"
+        description="Affordable stolen item verification plans. Free trial with 2 checks. Starter $2.99/mo. Personal $4.99/mo. Business from $29.99/mo. The only mobile app."
+        keywords="stolen item verification pricing, IMEI checker subscription, VIN checker plans, pawn shop verification, SafeOrStolen pricing"
         canonical="/pricing"
         structuredData={[
           {
