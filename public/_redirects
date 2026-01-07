@@ -86,53 +86,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /guides/*                         /blog  301!
 
 # ============================================
-# STATE PAGE CONSOLIDATION - SEO OPTIMIZATION
-# Keep only 10 high-value states with unique content
-# Redirect remaining 40 states to main pages
+# STATE PAGE ROUTING - VIN PAGES
 # ============================================
-
-# KEPT VIN STATES (10): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington
-# REDIRECTED VIN STATES (40):
-/alabama-vin-lookup         /vin-checker  301!
-/alaska-vin-lookup          /vin-checker  301!
-/arizona-vin-lookup         /vin-checker  301!
-/arkansas-vin-lookup        /vin-checker  301!
-/colorado-vin-lookup        /vin-checker  301!
-/connecticut-vin-lookup     /vin-checker  301!
-/delaware-vin-lookup        /vin-checker  301!
-/hawaii-vin-lookup          /vin-checker  301!
-/idaho-vin-lookup           /vin-checker  301!
-/indiana-vin-lookup         /vin-checker  301!
-/iowa-vin-lookup            /vin-checker  301!
-/kansas-vin-lookup          /vin-checker  301!
-/kentucky-vin-lookup        /vin-checker  301!
-/louisiana-vin-lookup       /vin-checker  301!
-/maine-vin-lookup           /vin-checker  301!
-/maryland-vin-lookup        /vin-checker  301!
-/massachusetts-vin-lookup   /vin-checker  301!
-/michigan-vin-lookup        /vin-checker  301!
-/minnesota-vin-lookup       /vin-checker  301!
-/mississippi-vin-lookup     /vin-checker  301!
-/missouri-vin-lookup        /vin-checker  301!
-/montana-vin-lookup         /vin-checker  301!
-/nebraska-vin-lookup        /vin-checker  301!
-/nevada-vin-lookup          /vin-checker  301!
-/new-hampshire-vin-lookup   /vin-checker  301!
-/new-jersey-vin-lookup      /vin-checker  301!
-/new-mexico-vin-lookup      /vin-checker  301!
-/north-dakota-vin-lookup    /vin-checker  301!
-/oklahoma-vin-lookup        /vin-checker  301!
-/oregon-vin-lookup          /vin-checker  301!
-/rhode-island-vin-lookup    /vin-checker  301!
-/south-carolina-vin-lookup  /vin-checker  301!
-/south-dakota-vin-lookup    /vin-checker  301!
-/tennessee-vin-lookup       /vin-checker  301!
-/utah-vin-lookup            /vin-checker  301!
-/vermont-vin-lookup         /vin-checker  301!
-/virginia-vin-lookup        /vin-checker  301!
-/west-virginia-vin-lookup   /vin-checker  301!
-/wisconsin-vin-lookup       /vin-checker  301!
-/wyoming-vin-lookup         /vin-checker  301!
+# ALL 50 STATE VIN LOOKUP PAGES NOW HAVE REAL ROUTES - NO REDIRECTS NEEDED
+# All 11 dedicated pages + 39 dynamic pages are implemented
+# See AppRoutes.tsx for full list of state VIN routes
 
 # ALL 50 STATE LICENSE PLATE PAGES NOW HAVE REAL ROUTES - NO REDIRECTS NEEDED
 # All state license plate pages are indexed and have unique SEO content
