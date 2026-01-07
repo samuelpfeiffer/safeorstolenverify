@@ -148,6 +148,30 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/app/carfax-alternative', to: '/vs-carfax', permanent: true },
   { from: '/blog/how-to-use-imei-checker-app', to: '/blog/imei-checker-app-download', permanent: true },
 
+  // ===== NOINDEX PAGES - Jan 2026 GSC (77 URLs) =====
+  { from: '/how-to-check-if-item-stolen', to: '/how-it-works', permanent: true },
+  { from: '/how-to-check-if-laptop-stolen', to: '/check-laptop-stolen', permanent: true },
+  { from: '/pawn-shops', to: '/for-pawn-shops', permanent: true },
+  { from: '/for-pawnshops', to: '/for-pawn-shops', permanent: true },
+  { from: '/press-release', to: '/about', permanent: true },
+  { from: '/mobile', to: '/app', permanent: true },
+  { from: '/community', to: '/testimonials', permanent: true },
+  { from: '/data-sources', to: '/how-it-works', permanent: true },
+  { from: '/comprehensive-guide', to: '/how-it-works', permanent: true },
+  { from: '/buy-used-electronics-safely', to: '/check-electronics', permanent: true },
+  { from: '/statistics', to: '/about', permanent: true },
+  { from: '/trust-verification', to: '/how-it-works', permanent: true },
+  { from: '/resource-center', to: '/blog', permanent: true },
+  { from: '/check', to: '/verify', permanent: true },
+  { from: '/app/download', to: '/download', permanent: true },
+  { from: '/vs-stolenregister', to: '/compare', permanent: true },
+  { from: '/app/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
+  { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
+  
+  // State VIN pages that were redirecting (now have dedicated pages or redirect properly)
+  { from: '/alaska-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/connecticut-vin-lookup', to: '/vin-checker', permanent: true },
+
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
   { from: '/vs-imeipro', to: '/vs-imeiinfo', permanent: true },

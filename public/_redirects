@@ -603,18 +603,36 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # /app/barcode-scanner - HAS REAL PAGE - DO NOT REDIRECT
 
 # ============================================
-# GSC NOINDEX FIXES - January 2026
+# GSC NOINDEX FIXES - January 2026 (77 URLs)
 # Pages returning 404 (hitting NotFound which has noindex)
 # ============================================
 /press                          /press-kit        301!
 /press-release                  /press-kit        301!
-/community                      /about            301!
+/community                      /testimonials     301!
 /real-time-verification         /verify           301!
-/how-to-check-if-laptop-stolen  /check-laptop     301!
+/how-to-check-if-laptop-stolen  /check-laptop-stolen  301!
 /transparency                   /about            301!
-/data-sources                   /about            301!
+/data-sources                   /how-it-works     301!
 /mobile                         /app              301!
 /check-drone                    /verify           301!
+/comprehensive-guide            /how-it-works     301!
+/buy-used-electronics-safely    /check-electronics    301!
+/statistics                     /about            301!
+/trust-verification             /how-it-works     301!
+/resource-center                /blog             301!
+/vs-stolenregister              /compare          301!
+/app/vs-imeipro                 /vs-imeiinfo      301!
+/for-pawnshops                  /for-pawn-shops   301!
+/how-to-check-if-item-stolen    /how-it-works     301!
+
+# Blog posts with timestamps (GSC noindex fixes)
+/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983  /blog  301!
+/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027  /blog  301!
+/blog/how-law-enforcement-tracks-stolen-goods-1759827620043           /blog  301!
+/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229    /blog/pawn-shop-stolen-item-verification  301!
+/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1      /blog  301!
+/blog/los-angeles-imei-verification-phone-fraud-protection-1          /blog  301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1  /blog  301!
 
 # ============================================
 # RSS REWRITES
