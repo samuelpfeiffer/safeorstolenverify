@@ -2,41 +2,25 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Youtube, Play, ExternalLink, Bell, ThumbsUp, Users } from 'lucide-react';
+import { Youtube, Play, ExternalLink, Bell, ThumbsUp, Users, Film } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
+import { YOUTUBE_VIDEOS, YOUTUBE_SHORTS, YOUTUBE_CHANNEL, getYouTubeWatchUrl, getYouTubeShortsUrl } from '@/config/videoData';
 
 const VideosPage = () => {
-  const featuredVideos = [
-    {
-      title: "I got to call Jessica hmm...safeorstolen.com",
-      description: "Watch a real-life demonstration of verifying items using SafeOrStolen before buying. Perfect. Oh my gosh. Yes. Good deal.",
-      videoId: "Er_PXY0oMgE",
-      duration: "0:32",
-      views: "1.3K",
-      author: "Kelly McEvoy"
-    },
-    {
-      title: "Too good to be true...?safeorstolen.com",
-      description: "Deal too good to be true? It probably is... Learn how to verify before you buy with SafeOrStolen.",
-      videoId: "8SC44GuLi-M",
-      duration: "0:45",
-      views: "1K",
-      author: "Kelly McEvoy"
-    },
-    {
-      title: "How to Check if Items Are Stolen Before Buying",
-      description: "Understanding the scope of the stolen goods crisis and how SafeOrStolen protects buyers AND sellers.",
-      videoId: "Er_PXY0oMgE",
-      duration: "0:59",
-      views: "2.1K",
-      author: "SafeOrStolen"
-    }
-  ];
+  // Take first 3 videos for featured section
+  const featuredVideos = YOUTUBE_VIDEOS.slice(0, 3).map(video => ({
+    title: video.title,
+    description: video.description,
+    videoId: video.videoId,
+    duration: video.duration,
+    views: video.category === 'Demo' ? '986' : '500+',
+    author: video.id === '1' || video.id === '2' ? 'Kelly McEvoy' : 'SafeOrStolen'
+  }));
 
   const channelStats = [
     { icon: Users, value: "Growing", label: "Subscribers" },
-    { icon: Play, value: "10+", label: "Videos" },
+    { icon: Play, value: `${YOUTUBE_CHANNEL.videoCount}+`, label: "Videos" },
     { icon: ThumbsUp, value: "Safe Buying", label: "Tips & Tricks" }
   ];
 
@@ -179,6 +163,60 @@ const VideosPage = () => {
                   <ExternalLink className="h-4 w-4" />
                   View All Videos
                 </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* YouTube Shorts Section */}
+        <section className="py-16 bg-gradient-to-r from-red-500/5 to-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Badge className="bg-red-600 text-white">
+                <Youtube className="h-3 w-3 mr-1" />
+                Shorts
+              </Badge>
+            </div>
+            <h2 className="text-3xl font-bold text-center mb-4">Quick Tips in 60 Seconds</h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-xl mx-auto">
+              Watch our YouTube Shorts for fast verification tips
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8">
+              {YOUTUBE_SHORTS.slice(0, 3).map((short) => (
+                <a
+                  key={short.id}
+                  href={getYouTubeShortsUrl(short.videoId)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <div className="relative aspect-[9/16] bg-muted rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                    <img 
+                      src={`https://img.youtube.com/vi/${short.videoId}/mqdefault.jpg`}
+                      alt={short.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                      <div className="p-3 bg-red-600 rounded-full group-hover:scale-110 transition-transform">
+                        <Play className="h-6 w-6 text-white fill-white" />
+                      </div>
+                    </div>
+                    <Badge className="absolute top-2 left-2 bg-red-600 text-white text-xs">
+                      Short
+                    </Badge>
+                  </div>
+                </a>
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <Button variant="outline" asChild>
+                <Link to="/shorts" className="gap-2">
+                  <Film className="h-4 w-4" />
+                  View All Shorts
+                </Link>
               </Button>
             </div>
           </div>
