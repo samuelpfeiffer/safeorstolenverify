@@ -176,22 +176,26 @@ export const SEOLandingPageTemplate = ({
       />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
-        {/* Hero Section */}
-        <section className="pt-24 pb-16 px-4">
+        {/* Hero Section - CLS optimized with fixed heights */}
+        <section className="pt-24 pb-12 md:pb-16 px-4" style={{ contain: 'layout style' }}>
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 md:mb-12">
               {heroBadge && (
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full mb-4 md:mb-6" style={{ minHeight: '40px' }}>
                   <Shield className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium">{heroBadge}</span>
                 </div>
               )}
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
+              {/* H1 with fixed min-height to prevent CLS */}
+              <h1 
+                className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent"
+                style={{ minHeight: 'clamp(2.5rem, 8vw, 4rem)', contain: 'layout style' }}
+              >
                 {h1}
               </h1>
               
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8">
                 {heroSubtitle}
               </p>
               
