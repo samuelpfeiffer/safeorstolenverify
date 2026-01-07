@@ -9,25 +9,28 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 const VideosPage = () => {
   const featuredVideos = [
     {
-      title: "How to Check if a Phone is Stolen",
-      description: "Learn how to verify any phone's IMEI number before buying on Facebook Marketplace or eBay.",
-      thumbnail: "/images/video-thumb-phone.png",
-      duration: "2:30",
-      views: "1.2K"
+      title: "I got to call Jessica hmm...safeorstolen.com",
+      description: "Watch a real-life demonstration of verifying items using SafeOrStolen before buying. Perfect. Oh my gosh. Yes. Good deal.",
+      videoId: "Er_PXY0oMgE",
+      duration: "0:32",
+      views: "1.3K",
+      author: "Kelly McEvoy"
     },
     {
-      title: "VIN Lookup Tutorial - Verify Any Vehicle",
-      description: "Step-by-step guide to checking if a used car, motorcycle, or truck is stolen.",
-      thumbnail: "/images/video-thumb-car.png",
-      duration: "3:15",
-      views: "800"
+      title: "Too good to be true...?safeorstolen.com",
+      description: "Deal too good to be true? It probably is... Learn how to verify before you buy with SafeOrStolen.",
+      videoId: "8SC44GuLi-M",
+      duration: "0:45",
+      views: "1K",
+      author: "Kelly McEvoy"
     },
     {
-      title: "SafeOrStolen App Demo",
-      description: "Watch how easy it is to scan barcodes and serial numbers with our mobile app.",
-      thumbnail: "/images/video-thumb-app.png",
-      duration: "1:45",
-      views: "2.1K"
+      title: "How to Check if Items Are Stolen Before Buying",
+      description: "Understanding the scope of the stolen goods crisis and how SafeOrStolen protects buyers AND sellers.",
+      videoId: "Er_PXY0oMgE",
+      duration: "0:59",
+      views: "2.1K",
+      author: "SafeOrStolen"
     }
   ];
 
@@ -129,24 +132,37 @@ const VideosPage = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {featuredVideos.map((video, index) => (
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
-                  <div className="relative aspect-video bg-muted">
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                      <div className="p-4 bg-red-600 rounded-full group-hover:scale-110 transition-transform">
-                        <Play className="h-8 w-8 text-white fill-white" />
+                  <a 
+                    href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="relative aspect-video bg-muted">
+                      <img 
+                        src={`https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                        <div className="p-4 bg-red-600 rounded-full group-hover:scale-110 transition-transform">
+                          <Play className="h-8 w-8 text-white fill-white" />
+                        </div>
                       </div>
+                      <Badge className="absolute bottom-2 right-2 bg-black/80">
+                        {video.duration}
+                      </Badge>
                     </div>
-                    <Badge className="absolute bottom-2 right-2 bg-black/80">
-                      {video.duration}
-                    </Badge>
-                  </div>
+                  </a>
                   <CardContent className="pt-4">
                     <h3 className="font-bold mb-2 line-clamp-2">{video.title}</h3>
                     <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
                       {video.description}
                     </p>
-                    <p className="text-xs text-muted-foreground">
-                      {video.views} views
-                    </p>
+                    <div className="flex justify-between items-center text-xs text-muted-foreground">
+                      <span>{video.views} views</span>
+                      <span>{video.author}</span>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
