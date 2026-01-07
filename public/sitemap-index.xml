@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SafeOrStolen Sitemap Index - Updated 2025-12-25 -->
+<!-- SafeOrStolen Sitemap Index - Updated 2026-01-07 -->
 <!-- Mission: Protect Buyers & Sellers - Stop Stolen Goods at the Source -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- Main sitemap with all pages -->
+  <!-- Main sitemap with all pages (~180 URLs) -->
   <sitemap>
     <loc>https://safeorstolen.com/sitemap.xml</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-07</lastmod>
   </sitemap>
   
-  <!-- Video sitemap for YouTube content -->
+  <!-- Video sitemap for YouTube content (10 video entries) -->
   <sitemap>
     <loc>https://safeorstolen.com/video-sitemap.xml</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-07</lastmod>
   </sitemap>
   
 </sitemapindex>
