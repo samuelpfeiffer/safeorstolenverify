@@ -44,7 +44,7 @@ const Index = () => {
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
         title="Stolen Item Checker - Free IMEI, VIN & Serial Lookup | SafeOrStolen"
-        description="THE ONLY stolen item checker with a mobile app. Check phones, cars, bikes, guns, license plates against 100+ databases. 3-second results. Used by pawn shops & police."
+        description="THE ONLY stolen item checker with a mobile app. Verify phones, cars, bikes & more against 100+ databases. 3-second results. Trusted by pawn shops & police."
         keywords="stolen item checker, IMEI checker free, VIN checker free, serial number lookup, stolen phone check, stolen car check, pawn shop verification, mobile app"
         canonical="/"
       />

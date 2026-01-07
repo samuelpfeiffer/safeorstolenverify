@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SafeOrStolen Sitemap - PRODUCTION CLEAN VERSION -->
-<!-- Updated 2026-01-07T00:00:00Z | SEO cleanup + mobile pages added -->
-<!-- Total: 91 Real Indexable Pages | E-E-A-T signals added -->
+<!-- Updated 2026-01-07T00:00:00Z | SEO cleanup complete -->
+<!-- All public pages indexed | E-E-A-T signals added -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 
   <!-- ============================================ -->
-  <!-- CORE PAGES (12 pages) - Highest Value -->
+  <!-- CORE PAGES - Highest Value -->
   <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/verify</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
