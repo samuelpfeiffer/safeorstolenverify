@@ -35,8 +35,8 @@ export default function ForPawnShops() {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen for Pawn Shops - Verify Every Item Instantly"
-        description="Enterprise stolen goods verification for pawn shops. Check IMEI, VIN, serial numbers against 100+ databases. Reduce legal risk, ensure compliance, protect your business from stolen property."
+        title="Pawn Shop Stolen Goods Checker - Compliance Tool | SafeOrStolen"
+        description="Enterprise stolen goods verification for pawn shops. Check IMEI, VIN, serial numbers against 100+ databases. Reduce legal risk, ensure compliance, protect your business."
         keywords="pawn shop verification, stolen goods checker for pawn shops, IMEI verification pawn, VIN check pawn shop, serial number lookup pawn, pawn compliance software"
         structuredData={[breadcrumbSchema, structuredData]}
         canonical="/for-pawn-shops"

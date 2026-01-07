@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPhonePage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Phone Stolen Check - IMEI Blacklist Verification | SafeOrStolen"
-      metaDescription="Verify phone isn't stolen, blacklisted, or iCloud locked. Check IMEI against police databases, carrier blacklists, insurance claims. Works globally. 3-second results."
-      h1="Phone Stolen Check - Verify Before You Buy"
+      title="Free IMEI Checker - Is This Phone Stolen? | SafeOrStolen"
+      metaDescription="Check if phone is stolen or blacklisted before buying. Free IMEI lookup against carrier blacklists, police databases, insurance claims. Works for iPhone & Android. 3-second results."
+      h1="Free IMEI Checker - Is This Phone Stolen?"
       itemType="Phone"
       keywords={[
         'check if phone stolen',

@@ -43,9 +43,9 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Verify Items Aren't Stolen - Global Crime Reduction Platform | SafeOrStolen"
-        description="THE verification platform. Check phones, cars, bikes, guns, license plates against 100+ global databases. Only mobile app. 32,000+ verified monthly. 3-second results."
-        keywords="stolen item verification, IMEI checker, VIN checker, license plate lookup, gun serial number lookup, stolen phone check, stolen car check, pawn shop verification, global verification platform"
+        title="Stolen Item Checker - Free IMEI, VIN & Serial Lookup | SafeOrStolen"
+        description="THE ONLY stolen item checker with a mobile app. Check phones, cars, bikes, guns, license plates against 100+ databases. 3-second results. Used by pawn shops & police."
+        keywords="stolen item checker, IMEI checker free, VIN checker free, serial number lookup, stolen phone check, stolen car check, pawn shop verification, mobile app"
         canonical="/"
       />
       
@@ -76,8 +76,13 @@ const Index = () => {
                 Check If Secondhand Items Are Safe Or Stolen
               </h1>
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
-                The trusted verification service for buyers, sellers, and businesses worldwide
+                The <strong>ONLY</strong> Stolen Item Checker With A Mobile App
               </p>
+              <div className="flex flex-wrap justify-center gap-2 text-sm font-medium text-muted-foreground">
+                <span className="bg-primary/10 px-3 py-1 rounded-full">100+ Databases</span>
+                <span className="bg-primary/10 px-3 py-1 rounded-full">3-Second Results</span>
+                <span className="bg-primary/10 px-3 py-1 rounded-full">Used by Pawn Shops & Police</span>
+              </div>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>

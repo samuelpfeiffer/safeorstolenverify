@@ -1,13 +1,13 @@
 # ============================================
 # SafeOrStolen Robots.txt
 # Mission: Protect Buyers & Sellers - Stop Stolen Goods
-# Updated: 2025-12-25
+# Updated: 2026-01-07
 # ============================================
 
 User-agent: *
 Allow: /
 
-# Single consolidated sitemap
+# Sitemap
 Sitemap: https://safeorstolen.com/sitemap.xml
 
 # ============================================

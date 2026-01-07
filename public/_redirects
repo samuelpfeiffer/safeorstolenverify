@@ -614,6 +614,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /transparency                   /about            301!
 /data-sources                   /about            301!
 /mobile                         /app              301!
+/check-drone                    /verify           301!
 
 # ============================================
 # RSS REWRITES
