@@ -169,9 +169,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/app/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
   { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
   
-  // State VIN pages that were redirecting (now have dedicated pages or redirect properly)
-  { from: '/alaska-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/connecticut-vin-lookup', to: '/vin-checker', permanent: true },
+  // NOTE: All 50 state VIN pages now have REAL routes - removed redirects
 
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
@@ -264,6 +262,17 @@ export function findRedirect(path: string): string | null {
   // City patterns → /verify
   if (cleanPath.startsWith('/city/') || cleanPath.match(/^\/[a-z-]+-stolen-check$/)) {
     return '/verify';
+  }
+
+  // City-name subdirectory patterns (e.g., /chicago/imei-check, /los-angeles/vin-check)
+  const cityPattern = /^\/(chicago|los-angeles|new-york|houston|phoenix|philadelphia|miami|dallas|san-antonio|san-diego|san-jose)\/.+$/;
+  if (cityPattern.test(cleanPath)) {
+    return '/verify';
+  }
+
+  // FasterCapital patterns
+  if (cleanPath.startsWith('/fastercapital/')) {
+    return '/about';
   }
 
   // Guides patterns → /blog
