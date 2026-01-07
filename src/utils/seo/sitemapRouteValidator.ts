@@ -414,12 +414,35 @@ export const REDIRECT_URLS = new Set([
   '/app/carfax-alternative',
   '/blog/how-to-use-imei-checker-app',
   
-  // State VIN pages that redirect (not real routes)
-  '/alaska-vin-lookup',
-  '/connecticut-vin-lookup',
-  '/new-mexico-vin-lookup',
-  '/oklahoma-vin-lookup',
-  '/arizona-vin-lookup',
+  // NOTE: All 50 state VIN pages and license plate pages now have REAL routes
+  // The routes below are phantom patterns that should redirect
+  '/chicago/imei-check',
+  '/bulk',
+  '/for-consumers',
+  '/imei-check',
+  '/verification-app',
+  '/vin-check',
+  '/verify/auctions',
+  '/imei-checker-app',
+  '/stolen-items-database',
+  '/app/features/history',
+  '/canada-vin-check',
+  '/marketplace-integration',
+  '/stolen-item-checker',
+  '/app/research-stolen-car',
+  '/app/buyer-protection-research',
+  '/app/research-stolen-phone',
+  '/app/facebook-marketplace-checker',
+  '/app/pawnshop-verification',
+  '/verify/facebook-marketplace',
+  '/app/research-stolen-items',
+  '/app/offerup-safety',
+  '/blog/scan-and-verify-using-safeorstolen-camera-feature-1',
+  '/app/secondhand-research-app',
+  '/blog/mobile-app-features',
+  '/verify-not-stolen',
+  '/vin-verification',
+  '/verification-hub',
 ]);
 
 export interface ValidationResult {
