@@ -22,21 +22,51 @@ export interface VideoData {
 export const YOUTUBE_VIDEOS: VideoData[] = [
   {
     id: '1',
-    videoId: 'Er_PXY0oMgE',
-    title: 'How to Check if Items Are Stolen Before Buying',
-    seoTitle: 'How to Check if Items Are Stolen Before Buying (Free Tool)',
-    description: 'Understanding the scope of the stolen goods crisis and how SafeOrStolen protects both buyers AND sellers from financial loss.',
-    seoDescription: 'Verify items aren\'t stolen in 30 seconds with SafeOrStolen. Check IMEI, VIN, and serial numbers FREE before buying on Facebook Marketplace, Craigslist, eBay, and OfferUp.',
-    duration: '0:59',
-    durationISO: 'PT59S',
-    durationSeconds: 59,
-    uploadDate: '2024-12-01T00:00:00Z',
-    category: 'Introduction',
-    tags: ['stolen goods check', 'safeorstolen', 'IMEI checker', 'VIN lookup', 'serial number verification'],
-    slug: 'stolen-item-check'
+    videoId: 'yYXVcsr7yfI',
+    title: 'HELP! I think the cops are looking for me....safeorstolen.com',
+    seoTitle: 'HELP! I think the cops are looking for me - SafeOrStolen Demo',
+    description: 'Watch what happens when you might have purchased stolen goods. SafeOrStolen helps you verify items BEFORE buying.',
+    seoDescription: 'Real-life scenario: what if the cops are looking for your purchase? Verify items aren\'t stolen with SafeOrStolen before buying on Facebook Marketplace.',
+    duration: '0:58',
+    durationISO: 'PT58S',
+    durationSeconds: 58,
+    uploadDate: '2025-10-01T00:00:00Z',
+    category: 'Demo',
+    tags: ['stolen goods check', 'safeorstolen', 'marketplace safety', 'police', 'verification'],
+    slug: 'cops-looking-for-me'
   },
   {
     id: '2',
+    videoId: 'QCReOWUfGaU',
+    title: 'these clowns are legit scary!🤡Safeorstolen.com',
+    seoTitle: 'Scary Clown Deals - Verify Before Buying with SafeOrStolen',
+    description: 'When a deal seems too crazy to be true, it probably is. Use SafeOrStolen to verify before buying from strangers.',
+    seoDescription: 'Don\'t let scary deals fool you! Use SafeOrStolen to verify items before buying on Facebook Marketplace, OfferUp, and Craigslist.',
+    duration: '0:27',
+    durationISO: 'PT27S',
+    durationSeconds: 27,
+    uploadDate: '2025-10-01T00:00:00Z',
+    category: 'Tips',
+    tags: ['scam prevention', 'marketplace safety', 'stolen goods', 'verification', 'funny'],
+    slug: 'scary-clowns'
+  },
+  {
+    id: '3',
+    videoId: 'Er_PXY0oMgE',
+    title: 'Instant Stolen Item Lookup',
+    seoTitle: 'Instant Stolen Item Lookup - SafeOrStolen Demo',
+    description: 'See how fast and easy it is to verify items using SafeOrStolen. Instant results to protect your purchase.',
+    seoDescription: 'Instant stolen item verification with SafeOrStolen. Check IMEI, VIN, and serial numbers in seconds. Free to use, no signup required.',
+    duration: '0:59',
+    durationISO: 'PT59S',
+    durationSeconds: 59,
+    uploadDate: '2025-10-01T00:00:00Z',
+    category: 'Demo',
+    tags: ['stolen item lookup', 'instant verification', 'IMEI check', 'VIN lookup', 'serial number'],
+    slug: 'instant-lookup'
+  },
+  {
+    id: '4',
     videoId: '8SC44GuLi-M',
     title: 'Facebook Marketplace Safety: Verify Items Before Meeting',
     seoTitle: 'Facebook Marketplace Safety: Verify Items Before Meeting Seller',
@@ -51,22 +81,7 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
     slug: 'marketplace-safety'
   },
   {
-    id: '3',
-    videoId: 'yYXVcsr7yfI',
-    title: 'How to Check if a Car is Stolen Using VIN',
-    seoTitle: 'How to Check if a Car is Stolen Using VIN Number (Free Method)',
-    description: 'Buying a used car? Check the VIN FIRST! Learn where to find VIN and what a VIN check reveals about vehicle history.',
-    seoDescription: 'Buying a used car? Check the VIN FIRST! SafeOrStolen verifies vehicles against NCIC stolen vehicle database, insurance theft claims, police reports, and state DMV records.',
-    duration: '0:59',
-    durationISO: 'PT59S',
-    durationSeconds: 59,
-    uploadDate: '2024-12-10T00:00:00Z',
-    category: 'VIN Check',
-    tags: ['VIN check', 'stolen car check', 'used car buying', 'vehicle history', 'VIN lookup'],
-    slug: 'vin-check'
-  },
-  {
-    id: '4',
+    id: '5',
     videoId: '-3INS_aSCzw',
     title: 'Free IMEI Checker - Verify Your Phone',
     seoTitle: 'Free IMEI Checker - Verify Your Phone Isn\'t Stolen or Blacklisted',
@@ -79,36 +94,47 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
     category: 'IMEI Check',
     tags: ['IMEI checker', 'stolen phone check', 'blacklisted phone', 'iPhone check', 'Android check'],
     slug: 'imei-check'
+  }
+];
+
+// YouTube Shorts - vertical format videos
+export interface ShortData {
+  id: string;
+  videoId: string;
+  title: string;
+  description: string;
+  views: string;
+  author: string;
+  authorHandle: string;
+}
+
+export const YOUTUBE_SHORTS: ShortData[] = [
+  {
+    id: '1',
+    videoId: 'yYXVcsr7yfI',
+    title: 'HELP! I think the cops are looking for me....safeorstolen.com',
+    description: 'What happens when you might have bought stolen goods?',
+    views: '858',
+    author: 'Kelly McEvoy',
+    authorHandle: '@safeorstolenoffically'
   },
   {
-    id: '5',
-    videoId: 'KM_VIDEO_1', // Placeholder - needs actual YouTube ID from Kelly McEvoy's video
-    title: 'I got to call Jessica hmm...safeorstolen.com',
-    seoTitle: 'Real Life Stolen Item Verification - SafeOrStolen Demo',
-    description: 'Watch a real-life demonstration of verifying items using SafeOrStolen before buying.',
-    seoDescription: 'See SafeOrStolen in action! Real verification demo showing how to check if items are stolen before buying on Facebook Marketplace.',
-    duration: '0:32',
-    durationISO: 'PT32S',
-    durationSeconds: 32,
-    uploadDate: '2025-11-01T00:00:00Z',
-    category: 'Demo',
-    tags: ['safeorstolen demo', 'verification example', 'marketplace safety', 'stolen item check', 'real demo'],
-    slug: 'real-demo-jessica'
+    id: '2',
+    videoId: 'QCReOWUfGaU',
+    title: 'these clowns are legit scary!🤡Safeorstolen.com',
+    description: 'When a deal is too good to be true...',
+    views: '20',
+    author: 'Kelly McEvoy',
+    authorHandle: '@safeorstolenoffically'
   },
   {
-    id: '6',
-    videoId: 'KM_VIDEO_2', // Placeholder - needs actual YouTube ID from Kelly McEvoy's video
-    title: 'Too good to be true...?safeorstolen.com',
-    seoTitle: 'When a Deal is Too Good to Be True - Verify with SafeOrStolen',
-    description: 'Deal too good to be true? It probably is. Learn how to verify before you buy.',
-    seoDescription: 'Is that deal too good to be true? Use SafeOrStolen to verify items before buying. Don\'t fall for stolen goods scams on Facebook Marketplace.',
-    duration: '0:45',
-    durationISO: 'PT45S',
-    durationSeconds: 45,
-    uploadDate: '2025-11-01T00:00:00Z',
-    category: 'Tips',
-    tags: ['too good to be true', 'scam prevention', 'stolen goods', 'verification', 'marketplace tips'],
-    slug: 'too-good-to-be-true'
+    id: '3',
+    videoId: 'Er_PXY0oMgE',
+    title: 'Instant Stolen Item Lookup',
+    description: 'See how fast SafeOrStolen verifies items',
+    views: '986',
+    author: 'SafeOrStolen',
+    authorHandle: '@SafeOrStolen'
   }
 ];
 
@@ -118,9 +144,17 @@ export const YOUTUBE_CHANNEL = {
   url: 'https://www.youtube.com/@SafeOrStolen',
   subscribeUrl: 'https://www.youtube.com/@SafeOrStolen?sub_confirmation=1',
   channelId: 'UCi0H8IK1dH0PhgVT9v2t9sw',
-  videoCount: 6,
-  viewCount: '5K+',
+  videoCount: 10,
+  viewCount: '2K+',
   description: 'Free video tutorials on verifying secondhand items before buying. Quick tips to avoid stolen goods on Facebook Marketplace, eBay, and Craigslist.'
+};
+
+export const KELLY_CHANNEL = {
+  name: 'Kelly McEvoy',
+  handle: '@safeorstolenoffically',
+  url: 'https://www.youtube.com/@safeorstolenoffically',
+  subscribers: 4,
+  description: 'check out safeorstolen.com, protecting both buyer and seller.'
 };
 
 export const getVideoById = (videoId: string): VideoData | undefined => {
