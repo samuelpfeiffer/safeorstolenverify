@@ -43,18 +43,31 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Stolen Item Checker - Free IMEI, VIN & Serial Lookup | SafeOrStolen"
-        description="THE ONLY stolen item checker with a mobile app. Verify phones, cars, bikes & more against 100+ databases. 3-second results. Trusted by pawn shops & police."
-        keywords="stolen item checker, IMEI checker free, VIN checker free, serial number lookup, stolen phone check, stolen car check, pawn shop verification, mobile app"
+        title="Check If Items Are Stolen Before You Buy | Free IMEI & VIN Lookup"
+        description="Instantly verify if phones, cars, bikes are stolen. Check IMEI, VIN, serial numbers against 100+ databases. 3-second results. Free trial - the only mobile app."
+        keywords="check if stolen, IMEI checker free, VIN checker free, stolen phone check, stolen car check, verify before buying, secondhand verification"
         canonical="/"
       />
       
-      {/* Minimal noscript fallback for crawlers */}
+      {/* Enhanced noscript fallback for crawlers and JS-disabled users */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <h1>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds. The only mobile app for stolen item checking.</p>
-          <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Check If Items Are Stolen Before You Buy</h1>
+          <p style={{ marginBottom: '12px' }}>SafeOrStolen is the only stolen item checker with a mobile app. Verify phones, cars, bikes, electronics against 100+ law enforcement and insurance databases.</p>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What You Can Check:</h2>
+          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+            <li><strong>Phones & Tablets:</strong> Enter IMEI number (dial *#06# to find it)</li>
+            <li><strong>Cars & Vehicles:</strong> Enter VIN (found on dashboard or door jamb)</li>
+            <li><strong>Bikes & Electronics:</strong> Enter serial number</li>
+          </ul>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>How It Works:</h2>
+          <ol style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+            <li>Enter identifier (IMEI, VIN, or serial number)</li>
+            <li>We check 100+ databases including NCIC, NICB, carrier blacklists</li>
+            <li>Get instant results showing if item is safe or flagged</li>
+          </ol>
+          <p style={{ marginBottom: '12px' }}><strong>Free Trial:</strong> 2 free checks, no credit card required.</p>
+          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>View Pricing</a> | <a href="/faq" style={{ color: '#0066cc' }}>FAQ</a></p>
         </div>
       </noscript>
 

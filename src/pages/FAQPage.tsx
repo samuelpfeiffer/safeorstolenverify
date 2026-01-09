@@ -197,9 +197,9 @@ const FAQPage = () => {
   return (
     <>
       <PageSEO
-        title="FAQ - Protect Buyers & Sellers | SafeOrStolen"
-        description="How SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell. Mobile app exclusively at SafeOrStolen.com."
-        keywords="protect buyers sellers FAQ, stolen verification questions, stop stolen goods, mobile app FAQ, crime reduction"
+        title="Frequently Asked Questions - IMEI, VIN, Serial Checks | SafeOrStolen"
+        description="How to check if a phone is stolen (IMEI), verify car VIN, find serial numbers. Free trial, 3-second results, 100+ databases. All your questions answered."
+        keywords="how to check if phone stolen, IMEI checker FAQ, VIN verification questions, stolen item check help, SafeOrStolen FAQ"
         canonical="/faq"
         structuredData={{
           "@context": "https://schema.org",
@@ -217,11 +217,19 @@ const FAQPage = () => {
         }}
       />
       
-      {/* Minimal noscript fallback */}
+      {/* Enhanced noscript fallback with key FAQs */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <p><strong>SafeOrStolen FAQ</strong></p>
-          <p>Common questions about stolen item verification. Check IMEI, VIN, and serial numbers for free.</p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Frequently Asked Questions</h1>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '8px' }}>How do I check if a phone is stolen?</h2>
+          <p style={{ marginBottom: '12px' }}>Find the IMEI (dial *#06# or check Settings → About Phone), enter it at safeorstolen.com/verify. We check carrier blacklists and stolen databases in 3 seconds.</p>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '8px' }}>Can I check if a car is stolen using VIN?</h2>
+          <p style={{ marginBottom: '12px' }}>Yes. Enter the 17-character VIN from the dashboard or door jamb. We check NICB, DMV records, and insurance theft reports.</p>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '8px' }}>Is SafeOrStolen free?</h2>
+          <p style={{ marginBottom: '12px' }}>New users get 2 free checks (14-day trial). Unlimited plans start at $4.99/month.</p>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '8px' }}>Is there a mobile app?</h2>
+          <p style={{ marginBottom: '12px' }}>Yes! SafeOrStolen is the ONLY stolen item checker with a mobile app. Download free at safeorstolen.com/app.</p>
+          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>Pricing</a> | <a href="/how-it-works" style={{ color: '#0066cc' }}>How It Works</a></p>
         </div>
       </noscript>
       
