@@ -94,23 +94,36 @@ const AboutPage = () => {
   return (
     <>
     <PageSEO
-      title="About SafeOrStolen - AI-Powered Stolen Item Verification"
-      description="SafeOrStolen uses AI to verify items against 100+ databases. The only stolen item checker with a mobile app. Trusted by pawn shops, dealers & police."
-      keywords="about SafeOrStolen, stolen item verification, crime reduction, protect buyers sellers, stop stolen goods, reduce crime"
+      title="About Us - Our Story, Mission & Team | SafeOrStolen"
+      description="Founded 2017, FasterCapital accelerated. Meet our team: Samuel Pfeiffer (CEO), Kelly McEvoy (CMO/CFO). EWC 2020 recognized. Protecting 10,000+ users from stolen goods."
+      keywords="about SafeOrStolen, company story, Samuel Pfeiffer, Kelly McEvoy, FasterCapital, Entrepreneurship World Cup, stolen item verification"
       canonical="/about"
       structuredData={[
         {
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "name": "About SafeOrStolen - Protect Buyers & Sellers",
-          "description": "SafeOrStolen protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally.",
+          "name": "About SafeOrStolen - Our Story & Team",
+          "description": "Founded in 2017 by Samuel Pfeiffer. FasterCapital accelerated in 2025. Recognized at Entrepreneurship World Cup 2020.",
           "mainEntity": {
             "@type": "Organization",
             "name": "SafeOrStolen",
             "alternateName": ["Safe Or Stolen", "SOS"],
-            "description": "Protects buyers AND sellers from stolen goods. Mobile app exclusively available from SafeOrStolen.com.",
+            "foundingDate": "2017",
+            "founders": [
+              {
+                "@type": "Person",
+                "name": "Samuel Pfeiffer",
+                "jobTitle": "Founder & CEO"
+              },
+              {
+                "@type": "Person",
+                "name": "Kelly McEvoy",
+                "jobTitle": "Co-Founder & CMO/CFO"
+              }
+            ],
+            "description": "Stolen item verification protecting buyers and sellers. The only mobile app for IMEI, VIN, and serial number verification.",
             "url": "https://safeorstolen.com",
-            "slogan": "Protect Buyers & Sellers - Stop Stolen Goods at the Source"
+            "slogan": "Every Search Makes Stolen Items Harder to Sell"
           }
         },
         {
@@ -119,7 +132,12 @@ const AboutPage = () => {
           "name": "SafeOrStolen",
           "url": "https://safeorstolen.com",
           "logo": "https://safeorstolen.com/logo.png",
-          "slogan": "Every Search Makes Stolen Items Harder to Sell",
+          "foundingDate": "2017",
+          "founders": [
+            {"@type": "Person", "name": "Samuel Pfeiffer"},
+            {"@type": "Person", "name": "Kelly McEvoy"}
+          ],
+          "award": "Entrepreneurship World Cup 2020 - SaaS/Enterprise Innovation Recognition",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@safeorstolen.com",
@@ -128,11 +146,27 @@ const AboutPage = () => {
         }
       ]}
     />
-      {/* Minimal noscript fallback */}
+      {/* Enhanced noscript fallback with full company info */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <p><strong>About SafeOrStolen</strong></p>
-          <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 50+ databases. The only mobile app for verification.</p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>About SafeOrStolen</h1>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Our Story</h2>
+          <p style={{ marginBottom: '12px' }}>Founded in 2017 by Samuel Pfeiffer after witnessing the devastating impact of stolen goods on innocent buyers. We built the only stolen item checker with a mobile app.</p>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Leadership Team</h2>
+          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+            <li><strong>Samuel Pfeiffer</strong> - Founder & CEO</li>
+            <li><strong>Kelly McEvoy</strong> - Co-Founder & CMO/CFO</li>
+          </ul>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Milestones</h2>
+          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+            <li>2017: Company founded</li>
+            <li>2020: Entrepreneurship World Cup recognition (SaaS/Enterprise innovation)</li>
+            <li>2025: FasterCapital partnership & Arizona incorporation</li>
+            <li>2025: Mobile app launch - the only stolen verification app</li>
+          </ul>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What We Do</h2>
+          <p style={{ marginBottom: '12px' }}>We verify items against 100+ databases including NCIC, NICB, carrier blacklists, and international registries. 5,000+ checks processed with 99.7% accuracy.</p>
+          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>Pricing</a> | <a href="/contact" style={{ color: '#0066cc' }}>Contact Us</a></p>
         </div>
       </noscript>
       

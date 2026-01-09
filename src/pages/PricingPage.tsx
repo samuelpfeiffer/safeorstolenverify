@@ -186,9 +186,9 @@ const PricingPage = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Pricing - Subscription Plans"
-        description="Affordable stolen item verification plans. Free trial with 2 checks. Starter $2.99/mo. Personal $4.99/mo. Business from $29.99/mo. The only mobile app."
-        keywords="stolen item verification pricing, IMEI checker subscription, VIN checker plans, pawn shop verification, SafeOrStolen pricing"
+        title="Pricing Plans - Free Trial, $2.99/mo Starter | SafeOrStolen"
+        description="Start free with 2 checks. Starter $2.99/mo (10 checks). Personal $4.99/mo (unlimited). Business $29.99/mo (API access). Cancel anytime. The only mobile app."
+        keywords="stolen item verification pricing, IMEI checker cost, VIN checker price, free trial, pawn shop verification pricing"
         canonical="/pricing"
         structuredData={[
           {
@@ -326,11 +326,27 @@ const PricingPage = () => {
       />
 
       <ErrorBoundary>
-        {/* Minimal noscript fallback */}
+        {/* Enhanced noscript fallback with pricing details */}
         <noscript>
-          <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-            <p><strong>SafeOrStolen Pricing</strong></p>
-            <p>Affordable stolen item verification plans. Free trial with 2 checks. Unlimited plans from $4.99/month.</p>
+          <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+            <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>SafeOrStolen Pricing Plans</h1>
+            <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Choose Your Plan</h2>
+            <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+              <li style={{ marginBottom: '8px' }}><strong>Free Trial:</strong> 2 free checks, 14-day trial. No credit card required.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Starter ($2.99/mo):</strong> 10 verification checks per month.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Personal ($4.99/mo):</strong> Unlimited verification checks.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Pro ($9/mo):</strong> Unlimited checks, bulk verification, priority support.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Business ($29.99/mo):</strong> Everything in Pro plus team features and API access.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Enterprise ($99/mo):</strong> Custom integration, dedicated support, SLA guarantee.</li>
+            </ul>
+            <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What You Get</h2>
+            <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+              <li>Check IMEI, VIN, serial numbers against 100+ databases</li>
+              <li>Results in 3 seconds</li>
+              <li>The only mobile app for stolen item verification</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <p><a href="/verify" style={{ color: '#0066cc' }}>Try Free →</a> | <a href="/auth?tab=signup" style={{ color: '#0066cc' }}>Create Account</a> | <a href="/faq" style={{ color: '#0066cc' }}>FAQ</a></p>
           </div>
         </noscript>
         

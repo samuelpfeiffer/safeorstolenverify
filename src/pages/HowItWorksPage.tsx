@@ -15,9 +15,9 @@ const HowItWorksPage = () => {
   return (
     <>
       <PageSEO
-        title="How to Check if Something is Stolen - SafeOrStolen Explained"
-        description="Learn how SafeOrStolen verifies if items are stolen. We check 50+ million records from law enforcement, insurance companies, and manufacturer blacklists in 3 seconds."
-        keywords="how to check if stolen, verify stolen goods, stolen item database, IMEI verification process"
+        title="How It Works - 4-Step Stolen Item Verification | SafeOrStolen"
+        description="Step 1: Enter IMEI/VIN/serial. Step 2: We check 100+ databases (NCIC, NICB, carriers). Step 3: Get results in 3 seconds. Step 4: Buy with confidence."
+        keywords="how to check if item stolen, IMEI verification steps, VIN check process, stolen item database search"
         canonical="/how-it-works"
         structuredData={[
           {
@@ -25,48 +25,79 @@ const HowItWorksPage = () => {
             "@type": "HowTo",
             "name": "How to Verify if an Item is Stolen",
             "description": "Step-by-step guide to verify if phones, vehicles, electronics, and other items are stolen using SafeOrStolen",
+            "totalTime": "PT30S",
+            "estimatedCost": {
+              "@type": "MonetaryAmount",
+              "currency": "USD",
+              "value": "0"
+            },
             "step": [
               {
                 "@type": "HowToStep",
-                "name": "Enter Item Identifier",
-                "text": "Enter the IMEI number (phones), VIN (vehicles), serial number (electronics), or license plate into the verification tool."
+                "position": 1,
+                "name": "Get the Identifier",
+                "text": "Find the IMEI (dial *#06# on phone), VIN (dashboard or door jamb), or serial number (device label or settings)."
               },
               {
                 "@type": "HowToStep",
-                "name": "Automatic Database Search",
-                "text": "SafeOrStolen searches 50+ million records from law enforcement databases, insurance claims, manufacturer blacklists, and user reports."
+                "position": 2,
+                "name": "Enter at SafeOrStolen",
+                "text": "Go to safeorstolen.com/verify and enter the identifier. Or use our mobile app to scan barcodes."
               },
               {
                 "@type": "HowToStep",
-                "name": "Instant Results",
-                "text": "Receive verification results in 3 seconds showing if the item is safe, stolen, or flagged."
+                "position": 3,
+                "name": "Database Search",
+                "text": "We search 100+ databases including NCIC, NICB, carrier blacklists, BikeIndex, and international registries."
               },
               {
                 "@type": "HowToStep",
-                "name": "View Detailed Report",
-                "text": "Access detailed report including theft date, location, police case number (if available), and recommended actions."
+                "position": 4,
+                "name": "Get Instant Results",
+                "text": "Receive verification in 3 seconds showing Safe (clear), Flagged (potential issue), or Stolen (confirmed theft report)."
               }
             ]
           },
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Stolen Item Verification Methodology",
-            "description": "Comprehensive verification service checking multiple databases",
+            "name": "SafeOrStolen Verification Service",
+            "description": "Multi-source verification checking law enforcement, insurance, and manufacturer databases",
             "provider": {
               "@type": "Organization",
-              "name": "SafeOrStolen"
+              "name": "SafeOrStolen",
+              "url": "https://safeorstolen.com"
             },
-            "serviceType": "Verification Methodology Service"
+            "serviceType": "Stolen Item Verification"
           }
         ]}
       />
       
-      {/* Minimal noscript fallback */}
+      {/* Enhanced noscript fallback with complete how-to guide */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <p><strong>How SafeOrStolen Works</strong></p>
-          <p>SafeOrStolen verifies items against 50+ databases in 3 seconds. Enter any IMEI, VIN, or serial number.</p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
+          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>How SafeOrStolen Works</h1>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>4 Simple Steps to Verify Any Item</h2>
+          <ol style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+            <li style={{ marginBottom: '12px' }}><strong>Step 1: Get the Identifier</strong>
+              <ul style={{ paddingLeft: '20px', marginTop: '4px' }}>
+                <li>Phones: Dial *#06# or check Settings → About Phone → IMEI</li>
+                <li>Vehicles: Look on dashboard near windshield or door jamb sticker</li>
+                <li>Electronics: Check device label or Settings → About → Serial Number</li>
+              </ul>
+            </li>
+            <li style={{ marginBottom: '12px' }}><strong>Step 2: Enter at SafeOrStolen.com</strong> - Type the identifier into our verification tool or scan with our mobile app</li>
+            <li style={{ marginBottom: '12px' }}><strong>Step 3: We Search 100+ Databases</strong> - NCIC, NICB, carrier blacklists, BikeIndex, StolenRegister, and more</li>
+            <li style={{ marginBottom: '12px' }}><strong>Step 4: Get Results in 3 Seconds</strong> - Safe (clear), Flagged (needs attention), or Stolen (confirmed theft)</li>
+          </ol>
+          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What We Check</h2>
+          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
+            <li>Phones & Tablets (IMEI) - Carrier blacklists, stolen phone databases</li>
+            <li>Cars & Vehicles (VIN) - NICB, DMV records, insurance claims</li>
+            <li>Bikes (Serial) - BikeIndex, police registries</li>
+            <li>Electronics (Serial) - Manufacturer databases, theft reports</li>
+          </ul>
+          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>Pricing</a> | <a href="/faq" style={{ color: '#0066cc' }}>FAQ</a></p>
         </div>
       </noscript>
 
