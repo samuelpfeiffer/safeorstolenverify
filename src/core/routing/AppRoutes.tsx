@@ -106,6 +106,10 @@ const WomanSavedFromStolenCar = lazy(() => import('@/pages/stories/WomanSavedFro
 const PawnShopStolenLaptop = lazy(() => import('@/pages/stories/PawnShopStolenLaptop'));
 const RecoveredStolenBike = lazy(() => import('@/pages/stories/RecoveredStolenBike'));
 
+// NEW Hub Pages & AI-Optimized Content
+const LicensePlateLookupHub = lazy(() => import('@/pages/LicensePlateLookupHub'));
+const AIOptimizedLandingPage = lazy(() => import('@/pages/AIOptimizedLandingPage'));
+
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
 const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
@@ -678,6 +682,24 @@ export const AppRoutes = () => {
         <Route path="/stories/woman-saved-from-stolen-car" element={<WomanSavedFromStolenCar />} />
         <Route path="/stories/pawn-shop-stolen-laptop" element={<PawnShopStolenLaptop />} />
         <Route path="/stories/recovered-stolen-bike" element={<RecoveredStolenBike />} />
+        
+        {/* HUB & AI-OPTIMIZED PAGES */}
+        <Route path="/license-plate-lookup-by-state" element={<LicensePlateLookupHub />} />
+        <Route path="/check-stolen-items" element={<AIOptimizedLandingPage />} />
+        
+        {/* NEW TRAFFIC DOMINATION ROUTES */}
+        <Route path="/facebook-marketplace-safety-guide" element={<FacebookMarketplaceSafetyGuide />} />
+        <Route path="/imei-check-plus" element={<IMEICheckPlusPage />} />
+        <Route path="/vin-check-complete" element={<VINCheckCompletePage />} />
+        
+        {/* GAMING CONSOLE CHECKS - EXPANDED */}
+        <Route path="/ps5-stolen-check" element={<PS5StolenCheckPage />} />
+        <Route path="/xbox-series-x-stolen-check" element={<XboxSeriesXStolenCheck />} />
+        <Route path="/nintendo-switch-stolen-check" element={<NintendoSwitchStolenCheck />} />
+        
+        {/* TOOL/EQUIPMENT CHECKS */}
+        <Route path="/dewalt-serial-number-check" element={<DeWaltSerialNumberCheck />} />
+        <Route path="/milwaukee-tool-verification" element={<MilwaukeeToolVerification />} />
         
         {/* /stolen-phone-check and /stolen-car-check handled by server-side _redirects */}
 
