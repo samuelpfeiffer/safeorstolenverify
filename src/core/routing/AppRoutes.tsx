@@ -65,6 +65,12 @@ const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternati
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 const PS5SerialNumberCheckPage = lazy(() => import('@/pages/PS5SerialNumberCheckPage'));
 const IMEICheckFreePage = lazy(() => import('@/pages/IMEICheckFreePage'));
+
+// NEW Conversational Question-Based Pages
+const IsMyGunStolenPage = lazy(() => import('@/pages/IsMyGunStolenPage'));
+const DidIBuyStolenPropertyPage = lazy(() => import('@/pages/DidIBuyStolenPropertyPage'));
+const StolenVehicleCheckPage = lazy(() => import('@/pages/StolenVehicleCheckPage'));
+const PawnShopSerialCheckPage = lazy(() => import('@/pages/PawnShopSerialCheckPage'));
 const StolenVehicleDatabaseArizonaPage = lazy(() => import('@/pages/StolenVehicleDatabaseArizonaPage'));
 const RolexSerialNumberCheckPage = lazy(() => import('@/pages/RolexSerialNumberCheckPage'));
 const ArizonaStolenPropertyDatabasePage = lazy(() => import('@/pages/ArizonaStolenPropertyDatabasePage'));
@@ -372,6 +378,12 @@ export const AppRoutes = () => {
         <Route path="/unlimited-vin-checks" element={<UnlimitedVINChecksPage />} />
         <Route path="/partial-serial-number-search" element={<PartialSerialNumberSearchPage />} />
         <Route path="/how-to-check-serial-number" element={<HowToCheckSerialNumberPage />} />
+        
+        {/* NEW CONVERSATIONAL QUESTION-BASED PAGES */}
+        <Route path="/is-my-gun-stolen" element={<IsMyGunStolenPage />} />
+        <Route path="/check-if-bought-stolen-property" element={<DidIBuyStolenPropertyPage />} />
+        <Route path="/stolen-vehicle-check" element={<StolenVehicleCheckPage />} />
+        <Route path="/pawn-shop-serial-number-check" element={<PawnShopSerialCheckPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
