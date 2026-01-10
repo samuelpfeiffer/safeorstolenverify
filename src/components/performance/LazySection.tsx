@@ -74,21 +74,19 @@ export const LazySection: React.FC<LazySectionProps> = ({
   return (
     <div
       ref={sectionRef}
-      className={`lazy-section ${className}`}
+      className={className}
       style={{ 
         minHeight: minHeight,
-        // CSS containment improves rendering performance
-        contain: 'layout style',
-        // content-visibility: auto helps with rendering performance
+        // content-visibility: auto helps with rendering performance and provides intrinsic sizing
         ...(useContentVisibility && !isVisible ? { 
           contentVisibility: 'auto',
-          containIntrinsicSize: `auto ${minHeight}`,
+          containIntrinsicSize: `0 ${minHeight}`,
         } : {})
       }}
     >
       {isVisible ? (
         <div
-          className={`transition-opacity duration-150 ${
+          className={`transition-opacity duration-200 ${
             hasLoaded ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -97,7 +95,7 @@ export const LazySection: React.FC<LazySectionProps> = ({
       ) : (
         fallback || (
           <div 
-            className="bg-muted/5 rounded-lg" 
+            className="bg-muted/10 animate-pulse rounded-lg" 
             style={{ minHeight }}
             aria-hidden="true"
           />

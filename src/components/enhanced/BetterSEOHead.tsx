@@ -1,9 +1,3 @@
-/**
- * @deprecated Use PageSEO component instead.
- * This component is kept for reference but is NOT used anywhere in the codebase.
- * The active SEO flow is: PageSEO → OptimizedSEOHead → Helmet
- * Last audit: January 2026
- */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 

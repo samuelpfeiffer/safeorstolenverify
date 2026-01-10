@@ -1,13 +1,13 @@
 # ============================================
 # SafeOrStolen Robots.txt
 # Mission: Protect Buyers & Sellers - Stop Stolen Goods
-# Updated: 2026-01-07
+# Updated: 2025-12-25
 # ============================================
 
 User-agent: *
 Allow: /
 
-# Sitemap
+# Single consolidated sitemap
 Sitemap: https://safeorstolen.com/sitemap.xml
 
 # ============================================
@@ -42,7 +42,16 @@ Disallow: /ai-training-data.md
 Disallow: /mobile-app-ai-context.json
 
 # Query Parameters (Duplicate Content Prevention)
+# Block ALL query parameter variations
 Disallow: /*?*
+Disallow: /*?type=*
+Disallow: /*?q=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?session_id=*
+Disallow: /*?checkout=*
+Disallow: /*?search_term_string*
 
 # Dynamic Routes
 Disallow: /*/edit
@@ -54,6 +63,16 @@ Disallow: /subscription-success
 Disallow: /subscription-cancel
 Disallow: /payment-success
 Disallow: /payment-cancel
+
+# Social Profile Pages (External is canonical)
+Disallow: /youtube
+Disallow: /product-hunt
+Disallow: /crunchbase
+
+# ============================================
+# CRAWL OPTIMIZATION
+# ============================================
+Crawl-delay: 1
 
 # ============================================
 # AI SEARCH ENGINE CRAWLERS
@@ -67,22 +86,22 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: ClaudeBot
+User-agent: Google-Extended
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Applebot-Extended

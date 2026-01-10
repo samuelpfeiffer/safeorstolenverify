@@ -43,76 +43,47 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Free Gun Serial Number Lookup, IMEI Check & VIN Verification | SafeOrStolen"
-        description="Free gun serial number lookup, IMEI checker, VIN verification. Check if phones, cars, firearms are stolen. Search 100+ databases including NCIC. 3-second results. The only mobile app."
-        keywords="gun serial number lookup free, IMEI checker free, VIN check free, stolen gun database, firearm serial number checker, stolen vehicle check, stolen phone check, safeorstolen"
+        title="Verify Items Aren't Stolen - Global Crime Reduction Platform | SafeOrStolen"
+        description="THE verification platform. Check phones, cars, bikes, guns, license plates against 100+ global databases. Only mobile app. 32,000+ verified monthly. 3-second results."
+        keywords="stolen item verification, IMEI checker, VIN checker, license plate lookup, gun serial number lookup, stolen phone check, stolen car check, pawn shop verification, global verification platform"
         canonical="/"
       />
       
-      {/* Enhanced noscript fallback for crawlers and JS-disabled users */}
+      {/* Minimal noscript fallback for crawlers */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
-          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Free Gun Serial Number Lookup, IMEI Check & VIN Verification</h1>
-          <p style={{ marginBottom: '12px' }}>SafeOrStolen is the only stolen item checker with a mobile app. Check gun serial numbers, IMEI numbers, and VINs against 100+ law enforcement and insurance databases including the NCIC stolen gun database.</p>
-          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What You Can Check:</h2>
-          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-            <li><strong>Firearms:</strong> Gun serial number lookup against NCIC, ATF, and state stolen databases</li>
-            <li><strong>Phones & Tablets:</strong> IMEI checker for carrier blacklists and stolen reports</li>
-            <li><strong>Cars & Vehicles:</strong> VIN verification against NICB, insurance, and police records</li>
-            <li><strong>Bikes & Electronics:</strong> Serial number verification for stolen property</li>
-          </ul>
-          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>How It Works:</h2>
-          <ol style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-            <li>Enter identifier (gun serial number, IMEI, VIN, or serial)</li>
-            <li>We check 100+ databases including NCIC, NICB, carrier blacklists</li>
-            <li>Get instant results showing if item is safe or flagged as stolen</li>
-          </ol>
-          <p style={{ marginBottom: '12px' }}><strong>Free Trial:</strong> 2 free checks, no credit card required.</p>
-          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>View Pricing</a> | <a href="/blog/gun-serial-number-lookup-free" style={{ color: '#0066cc' }}>Gun Serial Lookup Guide</a></p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <h1>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds. The only mobile app for stolen item checking.</p>
+          <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
         </div>
       </noscript>
 
       <TrustHeaderBar />
       
       <div className="min-h-screen">
-        {/* Hero Section - Optimized for Mobile LCP */}
-        <section className="py-8 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        {/* Hero Section - Optimized for LCP */}
+        <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto text-center space-y-4 md:space-y-5">
-              {/* MOBILE LCP FIX: Static social proof on mobile, deferred on desktop */}
-              <div className="h-10 flex items-center justify-center" style={{ minHeight: '40px', contain: 'layout' }}>
-                <Suspense fallback={
-                  <div className="text-sm text-muted-foreground">✓ Trusted by 10,000+ users</div>
-                }>
+            <div className="max-w-5xl mx-auto text-center space-y-5">
+              {/* Deferred Social Proof - fixed height container to prevent CLS */}
+              <div style={{ minHeight: '40px' }}>
+                <Suspense fallback={<div className="h-10" />}>
                   <SocialProofBanner />
                 </Suspense>
               </div>
               
-              {/* H1 - Critical for LCP, fixed height to prevent CLS */}
-              <h1 
-                className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-                style={{ minHeight: 'clamp(2.5rem, 8vw, 4rem)', contain: 'layout style' }}
-              >
-                Free Gun Serial Number, IMEI & VIN Lookup
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Check If Secondhand Items Are Safe Or Stolen
               </h1>
-              <p className="text-lg md:text-2xl font-medium text-foreground/80">
-                Check If Items Are Stolen — The <strong>ONLY</strong> Mobile App For Verification
+              <p className="text-xl md:text-2xl font-medium text-foreground/80">
+                The trusted verification service for buyers, sellers, and businesses worldwide
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
               
-              {/* Static badges - no JS required, helps LCP */}
-              <div className="flex flex-wrap justify-center gap-2 text-xs md:text-sm font-medium text-muted-foreground">
-                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">Gun Serial Lookup</span>
-                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">IMEI Checker</span>
-                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">VIN Verification</span>
-                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full hidden sm:inline-flex">Used by Pawn Shops & Police</span>
-              </div>
-              
-              <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Cross-references <strong>NCIC stolen gun database</strong>, <strong>carrier blacklists</strong>, <strong>NICB vehicle records</strong>, and <strong>100+ global sources</strong> in 3 seconds.
-              </p>
-              
-              {/* MOBILE CLS FIX: Fixed height container for QuickValueProof */}
-              <div style={{ minHeight: '80px', contain: 'layout' }}>
+              {/* Deferred Quick Value Proof - fixed height to prevent CLS */}
+              <div style={{ minHeight: '80px' }}>
                 <Suspense fallback={<div className="h-20" />}>
                   <QuickValueProof />
                 </Suspense>
@@ -139,33 +110,26 @@ const Index = () => {
                 </Button>
               </div>
 
-              {/* Hero Image - CRITICAL LCP Element with explicit mobile optimizations */}
+              {/* Hero Image - LCP Optimized with explicit dimensions for CLS prevention */}
               <div 
-                className="mt-6 md:mt-8 max-w-4xl mx-auto" 
-                style={{ 
-                  aspectRatio: '16/9', 
-                  minHeight: '180px',
-                  contain: 'layout style paint',
-                }}
+                className="mt-8 max-w-4xl mx-auto" 
+                style={{ aspectRatio: '16/9', minHeight: '200px' }}
                 data-hero-img
               >
                 <div className="relative group h-full">
-                  {/* Simplified gradient on mobile (no blur), full blur on desktop for performance */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" aria-hidden="true" />
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" aria-hidden="true" />
+                  {/* Simplified gradient on mobile (no blur), full blur on desktop */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" />
                   <img 
                     src={heroImage} 
                     alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
                     className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
                     loading="eager"
                     fetchPriority="high"
-                    decoding="async"
+                    decoding="sync"
                     width="1200"
                     height="675"
-                    style={{ 
-                      aspectRatio: '16/9',
-                      contain: 'layout style',
-                    }}
+                    style={{ aspectRatio: '16/9' }}
                   />
                 </div>
               </div>

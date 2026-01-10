@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckLaptopPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Laptop Serial Number Check - Verify Before Buying | SafeOrStolen"
-      metaDescription="Check if laptop is stolen before buying. Free serial number verification for MacBook, Dell, HP, Lenovo, and all laptops. Search iCloud and manufacturer databases."
-      h1="Laptop Serial Number Check - Verify Before Buying"
+      title="Check if Laptop is Stolen - Free MacBook & PC Serial Number Check"
+      metaDescription="Check if a laptop is stolen before buying. Free serial number verification for MacBook, Dell, HP, Lenovo, and all laptops. Search Apple iCloud and manufacturer databases."
+      h1="Check if Laptop is Stolen Before Buying"
       itemType="Laptop"
       keywords={[
         'check if laptop stolen',

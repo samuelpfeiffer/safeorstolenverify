@@ -10,14 +10,10 @@ import { Link } from 'react-router-dom';
 
 const PressKitPage = () => {
   const companyFacts = [
-    { label: "Founded", value: "2017" },
-    { label: "Incorporated", value: "Arizona, 2025" },
-    { label: "Headquarters", value: "Peoria, Arizona" },
-    { label: "Founder & CEO", value: "Samuel Pfeiffer" },
-    { label: "Co-Founder & CMO/CFO", value: "Kelly McEvoy" },
+    { label: "Founded", value: "2024" },
+    { label: "Headquarters", value: "Seattle, Washington" },
     { label: "Industry", value: "SaaS / Consumer Protection" },
-    { label: "Funding", value: "$25,000 raised, seeking $500,000" },
-    { label: "Accelerator", value: "FasterCapital LaunchUp Program" },
+    { label: "Funding", value: "FasterCapital Partnership" },
     { label: "Items Verified", value: "5,000+" },
     { label: "Coverage", value: "50 US States + Global" }
   ];
@@ -31,30 +27,16 @@ const PressKitPage = () => {
 
   const pressReleases = [
     {
-      title: "SafeOrStolen Partners with FasterCapital to Secure Secondhand Market Worldwide",
-      date: "September 11, 2025",
+      title: "SafeOrStolen Partners with FasterCapital",
+      date: "December 2024",
       outlet: "PRLog",
-      url: "https://www.prlog.org/13098918-safeorstolen-partners-with-fastercapital-to-secure-secondhand-market-worldwide.html"
+      url: "https://www.prlog.org/13053545-safeorstolen-partners-with-fastercapital.html"
     },
     {
-      title: "SafeOrStolen Launches Mobile App for Instant Stolen Item Verification",
-      date: "August 2025",
-      outlet: "PRLog Business",
-      url: "https://biz.prlog.org/SafeOrStolen/"
-    },
-    {
-      title: "FasterCapital Partnership Coverage",
-      date: "October 2025",
-      outlet: "Issuewire",
-      url: "https://www.issuewire.com"
-    }
-  ];
-
-  const mediaCoverage = [
-    {
-      title: "Crunchbase Company Profile",
-      outlet: "Crunchbase",
-      url: "https://www.crunchbase.com/organization/safe-or-stolen"
+      title: "SafeOrStolen Launches Revolutionary Verification Platform",
+      date: "December 2024",
+      outlet: "IssueWire",
+      url: "https://www.issuewire.com/safeorstolen-launches-platform"
     }
   ];
 

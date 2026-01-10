@@ -1,20 +1,17 @@
 /**
  * Dynamic Blog Post Page
  * Renders blog posts from the database by slug
- * 
- * IMPORTANT: Returns proper 404 signals for missing posts to prevent Soft 404s
  */
 
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ArrowLeft, Clock, Calendar, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
-import { Helmet } from 'react-helmet-async';
 
 interface BlogPost {
   id: string;
@@ -67,45 +64,25 @@ export default function DynamicBlogPost() {
     );
   }
 
-  // CRITICAL: Return proper 404 signals for missing posts
-  // This prevents Soft 404 errors in Google Search Console
   if (error || !post) {
     return (
-      <>
-        {/* SEO: Signal this is a real 404 to crawlers */}
-        <Helmet>
-          <meta name="robots" content="noindex, follow" />
-          <meta name="prerender-status-code" content="404" />
-          <title>Article Not Found | SafeOrStolen Blog</title>
-        </Helmet>
-
-        <div className="min-h-screen bg-background flex items-center justify-center">
-          <Card className="max-w-md border-destructive/20">
-            <CardContent className="p-8 text-center">
-              <AlertTriangle className="h-12 w-12 text-destructive mx-auto mb-4" />
-              <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
-              <p className="text-muted-foreground mb-6">
-                The blog post you're looking for doesn't exist or has been removed.
-              </p>
-              <div className="flex flex-col gap-3">
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  Browse All Articles
-                </Link>
-                <Link
-                  to="/verify"
-                  className="inline-flex items-center justify-center gap-2 text-primary hover:underline"
-                >
-                  Verify an Item Instead
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Card className="max-w-md">
+          <CardContent className="p-8 text-center">
+            <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
+            <p className="text-muted-foreground mb-6">
+              The blog post you're looking for doesn't exist or has been removed.
+            </p>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-primary hover:underline"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 

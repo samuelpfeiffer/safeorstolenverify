@@ -132,8 +132,7 @@ const AuthAwareContent: React.FC = () => {
         
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <TopNavigation />
-          {/* Main content with fixed padding to prevent CLS from nav */}
-          <main className="flex-1" style={{ paddingTop: '80px', contain: 'layout style' }}>
+          <main className="flex-1 pt-20">
             <RouteErrorRecovery>
               <Suspense fallback={<AppLoadingScreen />}>
                 <AppRoutes />

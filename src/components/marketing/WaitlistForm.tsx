@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { Mail, Gift, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { checkRateLimit } from '@/utils/simpleValidation';
 
 export const WaitlistForm: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,26 +15,12 @@ export const WaitlistForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const trimmedEmail = email.trim().toLowerCase();
-    
-    // Client-side rate limiting
-    const allowed = await checkRateLimit('newsletter_subscribe');
-    if (!allowed) {
-      toast({
-        title: "Too many attempts",
-        description: "Please try again in a few minutes.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
     setIsSubmitting(true);
 
     try {
       // Use secure Supabase function for newsletter subscription
       const { data, error } = await supabase.rpc('subscribe_to_newsletter', {
-        user_email: trimmedEmail
+        user_email: email.trim().toLowerCase()
       });
 
       if (error) {
@@ -50,19 +35,8 @@ export const WaitlistForm: React.FC = () => {
           title: "Welcome to the waitlist!",
           description: "You'll get 10 free scans when we launch your tier.",
         });
-      } else if (result.message === 'Invalid email format') {
-        toast({
-          title: "Invalid email",
-          description: "Please enter a valid email address.",
-          variant: "destructive"
-        });
       } else {
-        // Already subscribed - still show success
-        setIsSubmitted(true);
-        toast({
-          title: "You're already on the list!",
-          description: "We'll notify you when your tier is ready.",
-        });
+        throw new Error(result.message || 'Subscription failed');
       }
     } catch (error) {
       console.error('Newsletter subscription error:', error);

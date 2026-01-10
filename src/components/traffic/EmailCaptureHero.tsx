@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { checkRateLimit } from '@/utils/simpleValidation';
 
 export const EmailCaptureHero = () => {
   const [email, setEmail] = useState('');
@@ -13,42 +12,26 @@ export const EmailCaptureHero = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const trimmedEmail = email.trim().toLowerCase();
-    if (!trimmedEmail) return;
-    
-    // Client-side rate limiting
-    const allowed = await checkRateLimit('newsletter_subscribe');
-    if (!allowed) {
-      toast.error('Too many attempts. Please try again in a few minutes.');
-      return;
-    }
+    if (!email) return;
     
     setIsLoading(true);
     try {
-      // Use secure RPC function instead of direct insert
-      const { data, error } = await supabase.rpc('subscribe_to_newsletter', {
-        user_email: trimmedEmail
-      });
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert({ email, is_subscribed: true });
       
-      if (error) throw error;
+      if (error && error.code !== '23505') throw error;
       
-      const result = data as { success: boolean; message: string };
+      setIsSubscribed(true);
+      toast.success('Welcome! Check your email for 2 FREE verification checks!');
       
-      if (result.success || result.message?.includes('subscribed')) {
-        setIsSubscribed(true);
-        toast.success('Welcome! Check your email for 2 FREE verification checks!');
-        
-        // Track conversion
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'lead_capture', {
-            event_category: 'conversion',
-            event_label: 'email_signup',
-            value: 1
-          });
-        }
-      } else if (result.message === 'Invalid email format') {
-        toast.error('Please enter a valid email address');
+      // Track conversion
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'lead_capture', {
+          event_category: 'conversion',
+          event_label: 'email_signup',
+          value: 1
+        });
       }
     } catch (error) {
       console.error('Signup error:', error);

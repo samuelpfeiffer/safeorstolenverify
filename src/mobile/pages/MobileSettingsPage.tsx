@@ -66,8 +66,8 @@ const MobileSettingsPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Mobile Settings - App Configuration | SafeOrStolen"
-        description="Configure your SafeOrStolen mobile app settings. Manage notifications, camera preferences, and data storage options."
+        title="Mobile Settings"
+        description="Configure your mobile app settings"
         canonical="/mobile-settings"
       />
 

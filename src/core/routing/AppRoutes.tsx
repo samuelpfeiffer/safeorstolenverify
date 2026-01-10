@@ -65,50 +65,12 @@ const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternati
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 const PS5SerialNumberCheckPage = lazy(() => import('@/pages/PS5SerialNumberCheckPage'));
 const IMEICheckFreePage = lazy(() => import('@/pages/IMEICheckFreePage'));
-
-// NEW Conversational Question-Based Pages
-const IsMyGunStolenPage = lazy(() => import('@/pages/IsMyGunStolenPage'));
-const DidIBuyStolenPropertyPage = lazy(() => import('@/pages/DidIBuyStolenPropertyPage'));
-const StolenVehicleCheckPage = lazy(() => import('@/pages/StolenVehicleCheckPage'));
-const PawnShopSerialCheckPage = lazy(() => import('@/pages/PawnShopSerialCheckPage'));
 const StolenVehicleDatabaseArizonaPage = lazy(() => import('@/pages/StolenVehicleDatabaseArizonaPage'));
 const RolexSerialNumberCheckPage = lazy(() => import('@/pages/RolexSerialNumberCheckPage'));
 const ArizonaStolenPropertyDatabasePage = lazy(() => import('@/pages/ArizonaStolenPropertyDatabasePage'));
 const UnlimitedVINChecksPage = lazy(() => import('@/pages/UnlimitedVINChecksPage'));
 const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNumberSearchPage'));
 const HowToCheckSerialNumberPage = lazy(() => import('@/pages/HowToCheckSerialNumberPage'));
-
-// NEW TRAFFIC DOMINATION PAGES (Market Domination Strategy)
-const FacebookMarketplaceSafetyGuide = lazy(() => import('@/pages/FacebookMarketplaceSafetyGuide'));
-const IMEICheckPlusPage = lazy(() => import('@/pages/IMEICheckPlusPage'));
-const VINCheckCompletePage = lazy(() => import('@/pages/VINCheckCompletePage'));
-
-// Gaming Console Verification Hub
-const PS5StolenCheckPage = lazy(() => import('@/pages/gaming/PS5StolenCheckPage'));
-const XboxSeriesXStolenCheck = lazy(() => import('@/pages/gaming/XboxSeriesXStolenCheck'));
-const NintendoSwitchStolenCheck = lazy(() => import('@/pages/gaming/NintendoSwitchStolenCheck'));
-
-// Tool/Equipment Theft Hub
-const DeWaltSerialNumberCheck = lazy(() => import('@/pages/tools/DeWaltSerialNumberCheck'));
-const MilwaukeeToolVerification = lazy(() => import('@/pages/tools/MilwaukeeToolVerification'));
-
-// Marketplace Safety Guides
-const CraigslistSafetyGuide = lazy(() => import('@/pages/CraigslistSafetyGuide'));
-const OfferUpSafetyGuide = lazy(() => import('@/pages/OfferUpSafetyGuide'));
-const WhatHappensIfIBoughtStolenProperty = lazy(() => import('@/pages/WhatHappensIfIBoughtStolenProperty'));
-const HowToAvoidBuyingStolenGoods = lazy(() => import('@/pages/HowToAvoidBuyingStolenGoods'));
-
-// Gaming Console Pages
-const SteamDeckStolenCheck = lazy(() => import('@/pages/gaming/SteamDeckStolenCheck'));
-
-// Story Pages
-const WomanSavedFromStolenCar = lazy(() => import('@/pages/stories/WomanSavedFromStolenCar'));
-const PawnShopStolenLaptop = lazy(() => import('@/pages/stories/PawnShopStolenLaptop'));
-const RecoveredStolenBike = lazy(() => import('@/pages/stories/RecoveredStolenBike'));
-
-// NEW Hub Pages & AI-Optimized Content
-const LicensePlateLookupHub = lazy(() => import('@/pages/LicensePlateLookupHub'));
-const AIOptimizedLandingPage = lazy(() => import('@/pages/AIOptimizedLandingPage'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
@@ -193,7 +155,7 @@ import {
   WisconsinLicensePlate,
   WyomingLicensePlate,
 } from '@/pages/state-license-plates';
-// TOP 11 STATE VIN PAGES (Dedicated Components)
+// TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
 const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
@@ -204,50 +166,6 @@ const PennsylvaniaVinLookup = lazy(() => import('@/pages/PennsylvaniaVinLookup')
 const OhioVinLookup = lazy(() => import('@/pages/OhioVinLookup'));
 const NorthCarolinaVinLookup = lazy(() => import('@/pages/NorthCarolinaVinLookup'));
 const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
-// ArizonaVinLookupPage is defined above with license plate pages
-
-// REMAINING 39 STATE VIN PAGES (Dynamic Components)
-import {
-  AlabamaVin,
-  AlaskaVin,
-  ArkansasVin,
-  ColoradoVin,
-  ConnecticutVin,
-  DelawareVin,
-  HawaiiVin,
-  IdahoVin,
-  IndianaVin,
-  IowaVin,
-  KansasVin,
-  KentuckyVin,
-  LouisianaVin,
-  MaineVin,
-  MarylandVin,
-  MassachusettsVin,
-  MichiganVin,
-  MinnesotaVin,
-  MississippiVin,
-  MissouriVin,
-  MontanaVin,
-  NebraskaVin,
-  NevadaVin,
-  NewHampshireVin,
-  NewJerseyVin,
-  NewMexicoVin,
-  NorthDakotaVin,
-  OklahomaVin,
-  OregonVin,
-  RhodeIslandVin,
-  SouthCarolinaVin,
-  SouthDakotaVin,
-  TennesseeVin,
-  UtahVin,
-  VermontVin,
-  VirginiaVin,
-  WestVirginiaVin,
-  WisconsinVin,
-  WyomingVin,
-} from '@/pages/state-vin-lookups';
 
 // Blog Index & Articles
 const BlogIndexPage = lazy(() => import('@/pages/BlogIndexPage'));
@@ -330,10 +248,6 @@ const ProductHuntPage = lazy(() => import('@/pages/ProductHuntPage'));
 const PressKitPage = lazy(() => import('@/pages/PressKitPage'));
 const CrunchbasePage = lazy(() => import('@/pages/CrunchbasePage'));
 const OneValleyRecognitionPage = lazy(() => import('@/pages/news/OneValleyRecognitionPage'));
-const ReviewsPage = lazy(() => import('@/pages/ReviewsPage'));
-const NewsPage = lazy(() => import('@/pages/NewsPage'));
-const VideosPage = lazy(() => import('@/pages/VideosPage'));
-const ShortsPage = lazy(() => import('@/pages/ShortsPage'));
 
 // Admin Pages
 const GSCCallbackPage = lazy(() => import('@/pages/admin/GSCCallbackPage'));
@@ -410,12 +324,6 @@ export const AppRoutes = () => {
         <Route path="/unlimited-vin-checks" element={<UnlimitedVINChecksPage />} />
         <Route path="/partial-serial-number-search" element={<PartialSerialNumberSearchPage />} />
         <Route path="/how-to-check-serial-number" element={<HowToCheckSerialNumberPage />} />
-        
-        {/* NEW CONVERSATIONAL QUESTION-BASED PAGES */}
-        <Route path="/is-my-gun-stolen" element={<IsMyGunStolenPage />} />
-        <Route path="/check-if-bought-stolen-property" element={<DidIBuyStolenPropertyPage />} />
-        <Route path="/stolen-vehicle-check" element={<StolenVehicleCheckPage />} />
-        <Route path="/pawn-shop-serial-number-check" element={<PawnShopSerialCheckPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
@@ -498,7 +406,7 @@ export const AppRoutes = () => {
         <Route path="/wisconsin-license-plate-lookup" element={<WisconsinLicensePlate />} />
         <Route path="/wyoming-license-plate-lookup" element={<WyomingLicensePlate />} />
 
-        {/* TOP 11 STATE VIN PAGES (Dedicated Components) */}
+        {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
         <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
         <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
@@ -510,47 +418,6 @@ export const AppRoutes = () => {
         <Route path="/north-carolina-vin-lookup" element={<NorthCarolinaVinLookup />} />
         <Route path="/washington-vin-lookup" element={<WashingtonVinLookup />} />
         <Route path="/arizona-vin-lookup" element={<ArizonaVinLookupPage />} />
-
-        {/* REMAINING 39 STATE VIN PAGES (Dynamic Components) */}
-        <Route path="/alabama-vin-lookup" element={<AlabamaVin />} />
-        <Route path="/alaska-vin-lookup" element={<AlaskaVin />} />
-        <Route path="/arkansas-vin-lookup" element={<ArkansasVin />} />
-        <Route path="/colorado-vin-lookup" element={<ColoradoVin />} />
-        <Route path="/connecticut-vin-lookup" element={<ConnecticutVin />} />
-        <Route path="/delaware-vin-lookup" element={<DelawareVin />} />
-        <Route path="/hawaii-vin-lookup" element={<HawaiiVin />} />
-        <Route path="/idaho-vin-lookup" element={<IdahoVin />} />
-        <Route path="/indiana-vin-lookup" element={<IndianaVin />} />
-        <Route path="/iowa-vin-lookup" element={<IowaVin />} />
-        <Route path="/kansas-vin-lookup" element={<KansasVin />} />
-        <Route path="/kentucky-vin-lookup" element={<KentuckyVin />} />
-        <Route path="/louisiana-vin-lookup" element={<LouisianaVin />} />
-        <Route path="/maine-vin-lookup" element={<MaineVin />} />
-        <Route path="/maryland-vin-lookup" element={<MarylandVin />} />
-        <Route path="/massachusetts-vin-lookup" element={<MassachusettsVin />} />
-        <Route path="/michigan-vin-lookup" element={<MichiganVin />} />
-        <Route path="/minnesota-vin-lookup" element={<MinnesotaVin />} />
-        <Route path="/mississippi-vin-lookup" element={<MississippiVin />} />
-        <Route path="/missouri-vin-lookup" element={<MissouriVin />} />
-        <Route path="/montana-vin-lookup" element={<MontanaVin />} />
-        <Route path="/nebraska-vin-lookup" element={<NebraskaVin />} />
-        <Route path="/nevada-vin-lookup" element={<NevadaVin />} />
-        <Route path="/new-hampshire-vin-lookup" element={<NewHampshireVin />} />
-        <Route path="/new-jersey-vin-lookup" element={<NewJerseyVin />} />
-        <Route path="/new-mexico-vin-lookup" element={<NewMexicoVin />} />
-        <Route path="/north-dakota-vin-lookup" element={<NorthDakotaVin />} />
-        <Route path="/oklahoma-vin-lookup" element={<OklahomaVin />} />
-        <Route path="/oregon-vin-lookup" element={<OregonVin />} />
-        <Route path="/rhode-island-vin-lookup" element={<RhodeIslandVin />} />
-        <Route path="/south-carolina-vin-lookup" element={<SouthCarolinaVin />} />
-        <Route path="/south-dakota-vin-lookup" element={<SouthDakotaVin />} />
-        <Route path="/tennessee-vin-lookup" element={<TennesseeVin />} />
-        <Route path="/utah-vin-lookup" element={<UtahVin />} />
-        <Route path="/vermont-vin-lookup" element={<VermontVin />} />
-        <Route path="/virginia-vin-lookup" element={<VirginiaVin />} />
-        <Route path="/west-virginia-vin-lookup" element={<WestVirginiaVin />} />
-        <Route path="/wisconsin-vin-lookup" element={<WisconsinVin />} />
-        <Route path="/wyoming-vin-lookup" element={<WyomingVin />} />
 
         {/* COMPETITOR COMPARISON PAGES */}
         <Route path="/compare" element={<Compare />} />
@@ -634,14 +501,10 @@ export const AppRoutes = () => {
         <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
 
         {/* NEWS PAGES */}
-        <Route path="/news" element={<NewsPage />} />
         <Route path="/news/onevalley-recognition" element={<OneValleyRecognitionPage />} />
 
         {/* PRESS & SOCIAL PAGES */}
         <Route path="/press-kit" element={<PressKitPage />} />
-        <Route path="/reviews" element={<ReviewsPage />} />
-        <Route path="/videos" element={<VideosPage />} />
-        <Route path="/shorts" element={<ShortsPage />} />
         <Route path="/product-hunt" element={<ProductHuntPage />} />
         <Route path="/youtube" element={<YouTubePage />} />
         <Route path="/youtube/:slug" element={<VideoWatchPage />} />
@@ -668,39 +531,6 @@ export const AppRoutes = () => {
         <Route path="/is-this-gun-stolen" element={<CheckStolenFirearmPage />} />
         <Route path="/check-stolen-phone" element={<CheckStolenPhonePage />} />
         <Route path="/check-stolen-car" element={<CheckStolenCarPage />} />
-        
-        {/* MARKETPLACE SAFETY GUIDES */}
-        <Route path="/craigslist-safety-guide" element={<CraigslistSafetyGuide />} />
-        <Route path="/offerup-safety-guide" element={<OfferUpSafetyGuide />} />
-        <Route path="/what-happens-if-i-bought-stolen-property" element={<WhatHappensIfIBoughtStolenProperty />} />
-        <Route path="/how-to-avoid-buying-stolen-goods" element={<HowToAvoidBuyingStolenGoods />} />
-        
-        {/* GAMING CONSOLE CHECKS */}
-        <Route path="/steam-deck-stolen-check" element={<SteamDeckStolenCheck />} />
-        
-        {/* STORY PAGES */}
-        <Route path="/stories/woman-saved-from-stolen-car" element={<WomanSavedFromStolenCar />} />
-        <Route path="/stories/pawn-shop-stolen-laptop" element={<PawnShopStolenLaptop />} />
-        <Route path="/stories/recovered-stolen-bike" element={<RecoveredStolenBike />} />
-        
-        {/* HUB & AI-OPTIMIZED PAGES */}
-        <Route path="/license-plate-lookup-by-state" element={<LicensePlateLookupHub />} />
-        <Route path="/check-stolen-items" element={<AIOptimizedLandingPage />} />
-        
-        {/* NEW TRAFFIC DOMINATION ROUTES */}
-        <Route path="/facebook-marketplace-safety-guide" element={<FacebookMarketplaceSafetyGuide />} />
-        <Route path="/imei-check-plus" element={<IMEICheckPlusPage />} />
-        <Route path="/vin-check-complete" element={<VINCheckCompletePage />} />
-        
-        {/* GAMING CONSOLE CHECKS - EXPANDED */}
-        <Route path="/ps5-stolen-check" element={<PS5StolenCheckPage />} />
-        <Route path="/xbox-series-x-stolen-check" element={<XboxSeriesXStolenCheck />} />
-        <Route path="/nintendo-switch-stolen-check" element={<NintendoSwitchStolenCheck />} />
-        
-        {/* TOOL/EQUIPMENT CHECKS */}
-        <Route path="/dewalt-serial-number-check" element={<DeWaltSerialNumberCheck />} />
-        <Route path="/milwaukee-tool-verification" element={<MilwaukeeToolVerification />} />
-        
         {/* /stolen-phone-check and /stolen-car-check handled by server-side _redirects */}
 
         {/* EXPLICIT 404 PAGE */}

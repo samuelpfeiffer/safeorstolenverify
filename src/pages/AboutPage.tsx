@@ -94,36 +94,23 @@ const AboutPage = () => {
   return (
     <>
     <PageSEO
-      title="About Us - Our Story, Mission & Team | SafeOrStolen"
-      description="Founded 2017, FasterCapital accelerated. Meet our team: Samuel Pfeiffer (CEO), Kelly McEvoy (CMO/CFO). EWC 2020 recognized. Protecting 10,000+ users from stolen goods."
-      keywords="about SafeOrStolen, company story, Samuel Pfeiffer, Kelly McEvoy, FasterCapital, Entrepreneurship World Cup, stolen item verification"
+      title="About SafeOrStolen - Protect Buyers & Sellers, Stop Stolen Goods"
+      description="SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - reducing crime globally. Mobile app only at SafeOrStolen.com."
+      keywords="about SafeOrStolen, stolen item verification, crime reduction, protect buyers sellers, stop stolen goods, reduce crime"
       canonical="/about"
       structuredData={[
         {
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "name": "About SafeOrStolen - Our Story & Team",
-          "description": "Founded in 2017 by Samuel Pfeiffer. FasterCapital accelerated in 2025. Recognized at Entrepreneurship World Cup 2020.",
+          "name": "About SafeOrStolen - Protect Buyers & Sellers",
+          "description": "SafeOrStolen protects BOTH buyers AND sellers from stolen goods. Every search makes stolen items harder to sell - reducing crime globally.",
           "mainEntity": {
             "@type": "Organization",
             "name": "SafeOrStolen",
             "alternateName": ["Safe Or Stolen", "SOS"],
-            "foundingDate": "2017",
-            "founders": [
-              {
-                "@type": "Person",
-                "name": "Samuel Pfeiffer",
-                "jobTitle": "Founder & CEO"
-              },
-              {
-                "@type": "Person",
-                "name": "Kelly McEvoy",
-                "jobTitle": "Co-Founder & CMO/CFO"
-              }
-            ],
-            "description": "Stolen item verification protecting buyers and sellers. The only mobile app for IMEI, VIN, and serial number verification.",
+            "description": "Protects buyers AND sellers from stolen goods. Mobile app exclusively available from SafeOrStolen.com.",
             "url": "https://safeorstolen.com",
-            "slogan": "Every Search Makes Stolen Items Harder to Sell"
+            "slogan": "Protect Buyers & Sellers - Stop Stolen Goods at the Source"
           }
         },
         {
@@ -132,12 +119,7 @@ const AboutPage = () => {
           "name": "SafeOrStolen",
           "url": "https://safeorstolen.com",
           "logo": "https://safeorstolen.com/logo.png",
-          "foundingDate": "2017",
-          "founders": [
-            {"@type": "Person", "name": "Samuel Pfeiffer"},
-            {"@type": "Person", "name": "Kelly McEvoy"}
-          ],
-          "award": "Entrepreneurship World Cup 2020 - SaaS/Enterprise Innovation Recognition",
+          "slogan": "Every Search Makes Stolen Items Harder to Sell",
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@safeorstolen.com",
@@ -146,27 +128,11 @@ const AboutPage = () => {
         }
       ]}
     />
-      {/* Enhanced noscript fallback with full company info */}
+      {/* Minimal noscript fallback */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
-          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>About SafeOrStolen</h1>
-          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Our Story</h2>
-          <p style={{ marginBottom: '12px' }}>Founded in 2017 by Samuel Pfeiffer after witnessing the devastating impact of stolen goods on innocent buyers. We built the only stolen item checker with a mobile app.</p>
-          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Leadership Team</h2>
-          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-            <li><strong>Samuel Pfeiffer</strong> - Founder & CEO</li>
-            <li><strong>Kelly McEvoy</strong> - Co-Founder & CMO/CFO</li>
-          </ul>
-          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>Milestones</h2>
-          <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-            <li>2017: Company founded</li>
-            <li>2020: Entrepreneurship World Cup recognition (SaaS/Enterprise innovation)</li>
-            <li>2025: FasterCapital partnership & Arizona incorporation</li>
-            <li>2025: Mobile app launch - the only stolen verification app</li>
-          </ul>
-          <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What We Do</h2>
-          <p style={{ marginBottom: '12px' }}>We verify items against 100+ databases including NCIC, NICB, carrier blacklists, and international registries. 5,000+ checks processed with 99.7% accuracy.</p>
-          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>Pricing</a> | <a href="/contact" style={{ color: '#0066cc' }}>Contact Us</a></p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <p><strong>About SafeOrStolen</strong></p>
+          <p>Stolen item verification service. Check IMEI, VIN, serial numbers against 50+ databases. The only mobile app for verification.</p>
         </div>
       </noscript>
       
@@ -231,34 +197,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Leadership Section */}
-        <section className="py-12 bg-gradient-to-br from-primary/5 via-background to-muted/20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground flex items-center justify-center gap-2">
-                <Users className="h-7 w-7 text-primary" />
-                Leadership
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              <Card className="p-6 text-center">
-                <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary">SP</span>
-                </div>
-                <h3 className="font-bold text-lg">Samuel Pfeiffer</h3>
-                <p className="text-muted-foreground">Founder & CEO</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary">KM</span>
-                </div>
-                <h3 className="font-bold text-lg">Kelly McEvoy</h3>
-                <p className="text-muted-foreground">Co-Founder & CMO/CFO</p>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Milestones & Recognition Section */}
         <section className="py-12 bg-gradient-to-br from-amber-500/5 via-background to-primary/5">
           <div className="container mx-auto px-4">
@@ -273,25 +211,6 @@ const AboutPage = () => {
                 </p>
               </div>
               <div className="space-y-4">
-                <Card className="p-4 border-l-4 border-l-primary">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
-                      <Building className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="secondary" className="text-xs">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          2017
-                        </Badge>
-                      </div>
-                      <h3 className="font-semibold text-foreground">Company Founded</h3>
-                      <p className="text-sm text-muted-foreground">
-                        SafeOrStolen founded with a mission to protect secondhand buyers and sellers from stolen goods.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
                 <Card className="p-4 border-l-4 border-l-amber-500">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-full bg-amber-500/10 flex-shrink-0">
@@ -315,32 +234,13 @@ const AboutPage = () => {
                 <Card className="p-4 border-l-4 border-l-primary">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
-                      <Building className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <Badge variant="secondary" className="text-xs">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          2025
-                        </Badge>
-                      </div>
-                      <h3 className="font-semibold text-foreground">Arizona Incorporation</h3>
-                      <p className="text-sm text-muted-foreground">
-                        SafeOrStolen LLC officially incorporated in Arizona, establishing our legal foundation for growth.
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-                <Card className="p-4 border-l-4 border-l-primary">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-full bg-primary/10 flex-shrink-0">
                       <Rocket className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <Badge variant="secondary" className="text-xs">
                           <Calendar className="h-3 w-3 mr-1" />
-                          2025
+                          2024
                         </Badge>
                       </div>
                       <h3 className="font-semibold text-foreground">FasterCapital Partnership</h3>
@@ -360,7 +260,7 @@ const AboutPage = () => {
                       <div className="flex items-center gap-2 mb-1">
                         <Badge variant="secondary" className="text-xs">
                           <Calendar className="h-3 w-3 mr-1" />
-                          2025
+                          2024
                         </Badge>
                       </div>
                       <h3 className="font-semibold text-foreground">Mobile App Launch</h3>
@@ -372,32 +272,6 @@ const AboutPage = () => {
                   </div>
                 </Card>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Backing & Partnerships */}
-        <section className="py-12">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Backing & Partnerships</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <Card className="p-6 text-center">
-                <Rocket className="h-10 w-10 text-primary mx-auto mb-3" />
-                <h3 className="font-bold mb-2">FasterCapital</h3>
-                <p className="text-sm text-muted-foreground">Accelerated by FasterCapital's LaunchUp Program</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Shield className="h-10 w-10 text-primary mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Law Enforcement</h3>
-                <p className="text-sm text-muted-foreground">Partnerships in 3+ states</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Lock className="h-10 w-10 text-primary mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Security</h3>
-                <p className="text-sm text-muted-foreground">ISO 27001-accredited infrastructure</p>
-              </Card>
             </div>
           </div>
         </section>

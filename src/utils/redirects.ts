@@ -1,12 +1,10 @@
 /**
  * URL Redirect Configuration
  * Handles 404s, duplicates, and legacy URLs from Google Search Console
- * 
- * IMPORTANT: Keep in sync with public/_redirects for server-side 301s
- * Last updated: 2026-01-04
+ * Last updated: 2025-12-18
  */
 
-import { VALID_ROUTES, REDIRECT_URLS } from '@/utils/seo/sitemapRouteValidator';
+import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
 
 export interface RedirectRule {
   from: string;
@@ -117,19 +115,6 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/avoid-stolen-goods', to: '/how-it-works', permanent: true },
   { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
   { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
-  
-  // PHANTOM ROUTES - Routes that were in sitemap but never had real pages
-  { from: '/disclaimer', to: '/terms', permanent: true },
-  { from: '/our-story', to: '/about', permanent: true },
-  { from: '/ultimate-guide', to: '/how-it-works', permanent: true },
-  { from: '/how-to-check-if-anything-is-stolen-before-you-buy', to: '/how-it-works', permanent: true },
-  { from: '/can-police-track-stolen-phone', to: '/faq', permanent: true },
-  { from: '/check-drone', to: '/verify', permanent: true },
-  { from: '/stolen-goods-checker', to: '/verify', permanent: true },
-  { from: '/enterprise-demo', to: '/for-businesses', permanent: true },
-  { from: '/blog/real-user-stories-stolen-goods-verification', to: '/blog/real-user-stories', permanent: true },
-  { from: '/stolen-phone-check', to: '/check-stolen-phone', permanent: true },
-  { from: '/stolen-car-check', to: '/check-stolen-car', permanent: true },
 
   // ===== NOINDEX PAGES - Dec 2025 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
@@ -145,31 +130,8 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/guides/verify-craigslist-items', to: '/craigslist-safety-verification', permanent: true },
   { from: '/app/philadelphia', to: '/stolen-check-philadelphia', permanent: true },
   { from: '/guides/offerup-scam-protection', to: '/offerup-verify-not-stolen', permanent: true },
-  { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
   { from: '/app/carfax-alternative', to: '/vs-carfax', permanent: true },
   { from: '/blog/how-to-use-imei-checker-app', to: '/blog/imei-checker-app-download', permanent: true },
-
-  // ===== NOINDEX PAGES - Jan 2026 GSC (77 URLs) =====
-  { from: '/how-to-check-if-item-stolen', to: '/how-it-works', permanent: true },
-  { from: '/how-to-check-if-laptop-stolen', to: '/check-laptop-stolen', permanent: true },
-  { from: '/pawn-shops', to: '/for-pawn-shops', permanent: true },
-  { from: '/for-pawnshops', to: '/for-pawn-shops', permanent: true },
-  { from: '/press-release', to: '/about', permanent: true },
-  { from: '/mobile', to: '/app', permanent: true },
-  { from: '/community', to: '/testimonials', permanent: true },
-  { from: '/data-sources', to: '/how-it-works', permanent: true },
-  { from: '/comprehensive-guide', to: '/how-it-works', permanent: true },
-  { from: '/buy-used-electronics-safely', to: '/check-electronics', permanent: true },
-  { from: '/statistics', to: '/about', permanent: true },
-  { from: '/trust-verification', to: '/how-it-works', permanent: true },
-  { from: '/resource-center', to: '/blog', permanent: true },
-  { from: '/check', to: '/verify', permanent: true },
-  { from: '/app/download', to: '/download', permanent: true },
-  { from: '/vs-stolenregister', to: '/compare', permanent: true },
-  { from: '/app/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
-  { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
-  
-  // NOTE: All 50 state VIN pages now have REAL routes - removed redirects
 
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
@@ -189,7 +151,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/privacy-policy', to: '/privacy', permanent: true },
   { from: '/database', to: '/about', permanent: true },
   { from: '/analytics', to: '/dashboard', permanent: true },
-  // NOTE: /for-businesses has real page - removed redirect
+  { from: '/for-businesses', to: '/for-pawn-shops', permanent: true },
   { from: '/seo-strategy', to: '/about', permanent: true },
   { from: '/seller-guide', to: '/about', permanent: true },
   { from: '/service-limitations', to: '/terms', permanent: true },
@@ -262,17 +224,6 @@ export function findRedirect(path: string): string | null {
   // City patterns → /verify
   if (cleanPath.startsWith('/city/') || cleanPath.match(/^\/[a-z-]+-stolen-check$/)) {
     return '/verify';
-  }
-
-  // City-name subdirectory patterns (e.g., /chicago/imei-check, /los-angeles/vin-check)
-  const cityPattern = /^\/(chicago|los-angeles|new-york|houston|phoenix|philadelphia|miami|dallas|san-antonio|san-diego|san-jose)\/.+$/;
-  if (cityPattern.test(cleanPath)) {
-    return '/verify';
-  }
-
-  // FasterCapital patterns
-  if (cleanPath.startsWith('/fastercapital/')) {
-    return '/about';
   }
 
   // Guides patterns → /blog

@@ -15,7 +15,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /mobile-app             /app  301!
 /imei-checker-app       /app  301!
 /mobile-verification    /app  301!
-# NOTE: /mobile-verify is a real route - DO NOT redirect
+/mobile-verify          /app  301!
 /get-app                /app  301!
 /install-app            /app  301!
 /verification-app       /app  301!
@@ -79,18 +79,54 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /pawn-shops              /for-pawn-shops 301!
 /license-plates-lookup   /license-plate-lookup 301!
 
-# GUIDES DIRECTORY REDIRECTS (Before wildcards)
-/guides/ebay-buyer-protection     /ebay-stolen-item-check  301!
-/guides/verify-craigslist-items   /craigslist-safety-verification  301!
-/guides/offerup-scam-protection   /offerup-verify-not-stolen  301!
-/guides/*                         /blog  301!
+# ============================================
+# STATE PAGE CONSOLIDATION - SEO OPTIMIZATION
+# Keep only 10 high-value states with unique content
+# Redirect remaining 40 states to main pages
+# ============================================
 
-# ============================================
-# STATE PAGE ROUTING - VIN PAGES
-# ============================================
-# ALL 50 STATE VIN LOOKUP PAGES NOW HAVE REAL ROUTES - NO REDIRECTS NEEDED
-# All 11 dedicated pages + 39 dynamic pages are implemented
-# See AppRoutes.tsx for full list of state VIN routes
+# KEPT VIN STATES (10): California, Texas, Florida, New York, Illinois, Georgia, Pennsylvania, Ohio, North Carolina, Washington
+# REDIRECTED VIN STATES (40):
+/alabama-vin-lookup         /vin-checker  301!
+/alaska-vin-lookup          /vin-checker  301!
+/arizona-vin-lookup         /vin-checker  301!
+/arkansas-vin-lookup        /vin-checker  301!
+/colorado-vin-lookup        /vin-checker  301!
+/connecticut-vin-lookup     /vin-checker  301!
+/delaware-vin-lookup        /vin-checker  301!
+/hawaii-vin-lookup          /vin-checker  301!
+/idaho-vin-lookup           /vin-checker  301!
+/indiana-vin-lookup         /vin-checker  301!
+/iowa-vin-lookup            /vin-checker  301!
+/kansas-vin-lookup          /vin-checker  301!
+/kentucky-vin-lookup        /vin-checker  301!
+/louisiana-vin-lookup       /vin-checker  301!
+/maine-vin-lookup           /vin-checker  301!
+/maryland-vin-lookup        /vin-checker  301!
+/massachusetts-vin-lookup   /vin-checker  301!
+/michigan-vin-lookup        /vin-checker  301!
+/minnesota-vin-lookup       /vin-checker  301!
+/mississippi-vin-lookup     /vin-checker  301!
+/missouri-vin-lookup        /vin-checker  301!
+/montana-vin-lookup         /vin-checker  301!
+/nebraska-vin-lookup        /vin-checker  301!
+/nevada-vin-lookup          /vin-checker  301!
+/new-hampshire-vin-lookup   /vin-checker  301!
+/new-jersey-vin-lookup      /vin-checker  301!
+/new-mexico-vin-lookup      /vin-checker  301!
+/north-dakota-vin-lookup    /vin-checker  301!
+/oklahoma-vin-lookup        /vin-checker  301!
+/oregon-vin-lookup          /vin-checker  301!
+/rhode-island-vin-lookup    /vin-checker  301!
+/south-carolina-vin-lookup  /vin-checker  301!
+/south-dakota-vin-lookup    /vin-checker  301!
+/tennessee-vin-lookup       /vin-checker  301!
+/utah-vin-lookup            /vin-checker  301!
+/vermont-vin-lookup         /vin-checker  301!
+/virginia-vin-lookup        /vin-checker  301!
+/west-virginia-vin-lookup   /vin-checker  301!
+/wisconsin-vin-lookup       /vin-checker  301!
+/wyoming-vin-lookup         /vin-checker  301!
 
 # ALL 50 STATE LICENSE PLATE PAGES NOW HAVE REAL ROUTES - NO REDIRECTS NEEDED
 # All state license plate pages are indexed and have unique SEO content
@@ -118,37 +154,27 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
 # ============================================
 /trust-verification          /about  301!
-/accuracy                    /how-it-works  301!
-/for-consumers               /for-buyers  301!
+/accuracy                    /about  301!
+/for-consumers               /about  301!
 /our-story                   /about  301!
-# NOTE: /contact has real page in AppRoutes - DO NOT REDIRECT
+/contact                     /about  301!
 /case-studies                /testimonials  301!
 /auction-houses              /for-auction-houses  301!
-/features                    /how-it-works  301!
-/resellers                   /for-dealers  301!
+/features                    /about  301!
+/resellers                   /about  301!
 /for-phone-repair-shops      /for-dealers  301!
 /offerup-safety-verification /verify  301!
-/marketplace-integration     /verify  301!
+/marketplace-integration     /about  301!
 /how-it-works-detailed       /how-it-works  301!
-/stolen-items-database       /verify  301!
+/stolen-items-database       /about  301!
 /data-sources                /about  301!
-/seller-guide                /for-sellers  301!
+/seller-guide                /about  301!
 /seo-strategy                /about  301!
 /fastercapital/tech-cofounder /about 301!
-/enterprise-demo             /for-businesses  301!
-# NOTE: /for-businesses has real page in AppRoutes - DO NOT REDIRECT
-/database                    /stolen-database  301!
+/enterprise-demo             /about  301!
+# /for-businesses has real page in AppRoutes - DO NOT REDIRECT
+/database                    /about  301!
 /analytics                   /dashboard  301!
-
-# ============================================
-# PHANTOM ROUTE REDIRECTS (Routes that were in sitemap but never existed)
-# CRITICAL: These prevent Soft 404 errors
-# ============================================
-/disclaimer                  /terms  301!
-/ultimate-guide              /how-it-works  301!
-/blog/real-user-stories-stolen-goods-verification /blog/real-user-stories 301!
-/stolen-phone-check          /check-stolen-phone  301!
-/stolen-car-check            /check-stolen-car  301!
 
 # ============================================
 # GSC "Crawled not indexed" FIXES (December 2025)
@@ -383,7 +409,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/serial-numbers-stolen-goods-101                           /blog            301!
 /blog/real-user-stories-stolen-goods-verification               /blog/real-user-stories  301!
 /blog/data-source-credibility                                   /blog/data-source-credibility-stolen-goods-verification  301!
-/blog/enterprise-security                                       /for-pawn-shops  301!
+/blog/enterprise-security                                       /blog            301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog/stolen-verification-app-guide  301!
 /blog/imei-checker-app-comparison                               /blog/imei-checker-app-download  301!
@@ -437,9 +463,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /service-limitations /terms   301!
 
 # ============================================
-# ADDITIONAL REDIRECTS FROM APPROUTES  
+# ADDITIONAL REDIRECTS FROM APPROUTES
 # ============================================
-/account             /dashboard   301!
+/account             /profile     301!
 /enterprise-demo     /pricing     301!
 /for-used-car-dealers /for-dealers 301!
 
@@ -452,7 +478,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /vin-verification     /vin-checker   301!
 /stolen-items-database /verify     301!
 /stolen-goods-checker /verify      301!
-# REMOVED - REAL PAGE EXISTS: /check-laptop-stolen has dedicated route in AppRoutes
+/check-laptop-stolen  /check-laptop  301!
 /vs/checkmend         /vs-checkmend  301!
 /vs/imeiinfo          /vs-imeiinfo   301!
 /vs/stolen-register   /compare       301!
@@ -482,13 +508,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/how-law-enforcement-tracks-stolen-goods-*                  /blog  301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog  301!
 /blog/craigslist-scam-prevention-item-verification-checklist     /blog  301!
-# REMOVED - REAL PAGES EXIST (have dedicated routes in AppRoutes):
-# /blog/theft-trends-report-2024
-# /blog/bicycle-stolen-serial-number-check  
-# /blog/firearm-serial-number-verification
-# /blog/verify-item-before-meetup
-# /blog/pawn-shop-stolen-item-verification
-# /blog/imei-checker-app-download
+/blog/theft-trends-report-2024                                   /blog  301!
+/blog/bicycle-stolen-serial-number-check                         /check-bike  301!
+/blog/firearm-serial-number-verification                         /firearms-check  301!
+/blog/verify-item-before-meetup                                  /blog/ultimate-marketplace-buyers-guide  301!
+/blog/pawn-shop-stolen-item-verification                         /blog  301!
+/blog/how-to-use-imei-checker-app                                /app  301!
+/blog/imei-checker-app-download                                  /app  301!
 
 # Blog posts without matching routes
 /blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
@@ -498,8 +524,10 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
 
 # Features page redirect
-/features                         /how-it-works     301!
-/database                         /stolen-database  301!
+/features                         /about            301!
+/database                         /about            301!
+/account                          /dashboard        301!
+/testimonials                     /about            301!
 
 # Missing "Crawled not indexed" URLs (Dec 2025)
 /our-mission                      /about            301!
@@ -534,67 +562,33 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # CITY PAGES CONSOLIDATION (GSC Soft 404 Fixes)
 # Keep top 5 cities, redirect others to /verify
 # ============================================
-# REMOVED - REAL PAGES EXIST (have dedicated routes in AppRoutes):
-# /stolen-check-philadelphia
-# /stolen-check-san-antonio
-# /stolen-check-san-diego
-# /stolen-check-dallas
-# /stolen-check-san-jose
+/stolen-check-philadelphia     /verify  301!
+/stolen-check-san-antonio      /verify  301!
+/stolen-check-san-diego        /verify  301!
+/stolen-check-dallas           /verify  301!
+/stolen-check-san-jose         /verify  301!
 
 # ============================================
-# LICENSE PLATE PAGES - REAL ROUTES EXIST
-# DO NOT REDIRECT - these have dedicated pages in AppRoutes
+# LICENSE PLATE PAGES CONSOLIDATION
+# Keep main page, redirect state pages
 # ============================================
-# /california-license-plate-lookup - HAS REAL PAGE
-# /texas-license-plate-lookup - HAS REAL PAGE
-# /florida-license-plate-lookup - HAS REAL PAGE
-# /new-york-license-plate-lookup - HAS REAL PAGE
-# /illinois-license-plate-lookup - HAS REAL PAGE
-# /georgia-license-plate-lookup - HAS REAL PAGE
-# /pennsylvania-license-plate-lookup - HAS REAL PAGE
-# /ohio-license-plate-lookup - HAS REAL PAGE
-# /north-carolina-license-plate-lookup - HAS REAL PAGE
-# /washington-license-plate-lookup - HAS REAL PAGE
+/california-license-plate-lookup   /license-plate-lookup  301!
+/texas-license-plate-lookup        /license-plate-lookup  301!
+/florida-license-plate-lookup      /license-plate-lookup  301!
+/new-york-license-plate-lookup     /license-plate-lookup  301!
+/illinois-license-plate-lookup     /license-plate-lookup  301!
+/georgia-license-plate-lookup      /license-plate-lookup  301!
+/pennsylvania-license-plate-lookup /license-plate-lookup  301!
+/ohio-license-plate-lookup         /license-plate-lookup  301!
+/north-carolina-license-plate-lookup /license-plate-lookup  301!
+/washington-license-plate-lookup   /license-plate-lookup  301!
 
 # ============================================
 # APP SUBDIRECTORY CONSOLIDATION
 # ============================================
-# REMOVED - REAL PAGES EXIST (have dedicated routes in AppRoutes):
-# /app/stolen-phone-checker
-# /app/vin-checker
-# /app/barcode-scanner - HAS REAL PAGE - DO NOT REDIRECT
-
-# ============================================
-# GSC NOINDEX FIXES - January 2026 (77 URLs)
-# Pages returning 404 (hitting NotFound which has noindex)
-# ============================================
-/press                          /press-kit        301!
-/press-release                  /press-kit        301!
-/community                      /testimonials     301!
-/real-time-verification         /verify           301!
-/how-to-check-if-laptop-stolen  /check-laptop-stolen  301!
-/transparency                   /about            301!
-/data-sources                   /how-it-works     301!
-/mobile                         /app              301!
-/check-drone                    /verify           301!
-/comprehensive-guide            /how-it-works     301!
-/buy-used-electronics-safely    /check-electronics    301!
-/statistics                     /about            301!
-/trust-verification             /how-it-works     301!
-/resource-center                /blog             301!
-/vs-stolenregister              /compare          301!
-/app/vs-imeipro                 /vs-imeiinfo      301!
-/for-pawnshops                  /for-pawn-shops   301!
-/how-to-check-if-item-stolen    /how-it-works     301!
-
-# Blog posts with timestamps (GSC noindex fixes)
-/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983  /blog  301!
-/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027  /blog  301!
-/blog/how-law-enforcement-tracks-stolen-goods-1759827620043           /blog  301!
-/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229    /blog/pawn-shop-stolen-item-verification  301!
-/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1      /blog  301!
-/blog/los-angeles-imei-verification-phone-fraud-protection-1          /blog  301!
-/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1  /blog  301!
+/app/stolen-phone-checker      /app  301!
+/app/vin-checker               /app  301!
+/app/barcode-scanner           /app  301!
 
 # ============================================
 # RSS REWRITES

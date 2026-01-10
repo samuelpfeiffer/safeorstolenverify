@@ -69,17 +69,47 @@ const Hero = () => {
           {/* Main headline with modern gradient text */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-              <span className="block text-sos-light drop-shadow-lg">Verify Items Before</span>
+              <span className="block text-sos-light drop-shadow-lg">Verify Before You Buy</span>
               <span className="block mt-3 bg-gradient-to-r from-sos-orange via-sos-orange to-sos-lime bg-clip-text text-transparent drop-shadow-2xl">
-                You Buy or Sell
+                AI-Powered Protection
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-sos-gray-200 max-w-3xl mx-auto font-light leading-relaxed">
-              Instant stolen item checks across FBI, police, and insurance databases.
-              <br className="hidden md:block" />
-              Protect yourself on Facebook Marketplace, Craigslist, OfferUp.
+              The only mobile app that verifies phones, cars, electronics, AND firearms. Competitors have no app. Install free on iOS & Android.
             </p>
+            
+            {/* Press credential badge */}
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <span>As seen in</span>
+              <a 
+                href="https://www.issuewire.com/safeorstolen-partners-with-fastercapital-to-launch-web-app-platform-for-trusted-secondhand-verification-1845387637096904" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                IssueWire
+              </a>
+              <span>&</span>
+              <a 
+                href="https://pressroom.prlog.org/SAFEORSTOLEN/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                PRLog
+              </a>
+              <span className="mx-2">|</span>
+              <span>Backed by</span>
+              <a 
+                href="https://fastercapital.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:underline font-medium"
+              >
+                FasterCapital
+              </a>
+            </div>
           </div>
 
           {/* Modern glassmorphic search form */}
@@ -89,7 +119,7 @@ const Hero = () => {
                 <div className="flex flex-col md:flex-row gap-3">
                   <Input 
                     type="text" 
-                    placeholder="Enter VIN, IMEI, or Serial Number..." 
+                    placeholder="Enter IMEI, VIN, Serial Number..." 
                     value={searchValue} 
                     onChange={e => setSearchValue(e.target.value)} 
                     className="flex-1 h-14 text-base bg-white/10 border-sos-orange/30 text-sos-light placeholder:text-sos-gray-400 focus:bg-white/15"

@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Gift, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
-import { checkRateLimit } from '@/utils/simpleValidation';
 
 export const EmailCapture = () => {
   const [email, setEmail] = useState('');
@@ -15,43 +14,28 @@ export const EmailCapture = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const trimmedEmail = email.trim().toLowerCase();
-    
-    if (!trimmedEmail || !trimmedEmail.includes('@')) {
+    if (!email || !email.includes('@')) {
       toast.error('Please enter a valid email');
-      return;
-    }
-
-    // Client-side rate limiting
-    const allowed = await checkRateLimit('newsletter_subscribe');
-    if (!allowed) {
-      toast.error('Too many attempts. Please try again in a few minutes.');
       return;
     }
 
     setIsLoading(true);
     
     try {
-      // Use secure RPC function instead of direct insert
-      const { data, error } = await supabase.rpc('subscribe_to_newsletter', {
-        user_email: trimmedEmail
-      });
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert({ email: email.trim().toLowerCase() });
 
       if (error) {
-        throw error;
-      }
-
-      const result = data as { success: boolean; message: string };
-      
-      if (result.success) {
+        if (error.code === '23505') {
+          toast.info('You\'re already subscribed!');
+          setIsSubscribed(true);
+        } else {
+          throw error;
+        }
+      } else {
         setIsSubscribed(true);
         toast.success('Welcome! Check your email for tips on avoiding stolen goods.');
-      } else if (result.message === 'Invalid email format') {
-        toast.error('Please enter a valid email address');
-      } else {
-        // Already subscribed case
-        setIsSubscribed(true);
-        toast.info("You're already subscribed!");
       }
     } catch (error) {
       console.error('Subscription error:', error);

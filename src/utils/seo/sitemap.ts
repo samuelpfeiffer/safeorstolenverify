@@ -10,63 +10,47 @@ export interface SitemapEntry {
   }>;
 }
 
-import { VALID_ROUTES, REDIRECT_URLS } from '@/utils/seo/sitemapRouteValidator';
-
-/**
- * Check if a path should be indexed
- * CRITICAL: Only returns true for REAL pages with content
- */
-const isIndexable = (path: string): boolean => {
-  // Private/auth routes - never index
-  if (path === '/auth') return false;
-  if (path === '/dashboard') return false;
-  if (path === '/profile') return false;
-  if (path === '/checkout-redirect') return false;
-  if (path === '/verification-success') return false;
-  if (path === '/payment-success') return false;
-  if (path.startsWith('/admin')) return false;
-  
-  // Check if it's a redirect URL (should never be indexed)
-  if (REDIRECT_URLS.has(path)) return false;
-  
-  return true;
-};
-
-const priorityFor = (path: string): number => {
-  if (path === '/') return 1.0;
-  if (path === '/verify') return 0.95;
-  if (path === '/download' || path === '/app') return 0.9;
-  if (path === '/pricing') return 0.85;
-  if (path === '/how-it-works' || path === '/about') return 0.8;
-  if (path === '/blog') return 0.8;
-
-  // High-intent landing pages
-  if (
-    path === '/imei-checker' ||
-    path === '/vin-checker' ||
-    path === '/serial-number-checker'
-  ) return 0.8;
-
-  // State pages (good SEO value)
-  if (path.includes('-license-plate-lookup') || path.includes('-vin-lookup')) return 0.7;
-
-  // Blog posts
-  if (path.startsWith('/blog/')) return 0.65;
-
-  // Everything else
-  return 0.6;
-};
-
-const changefreqFor = (path: string): SitemapEntry['changefreq'] => {
-  if (path === '/' || path === '/verify') return 'daily';
-  if (path === '/blog') return 'daily';
-  if (path.startsWith('/blog/')) return 'weekly';
-  return 'weekly';
-};
+import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
 
 export const generateStaticSitemapEntries = (): SitemapEntry[] => {
   const today = new Date().toISOString().split('T')[0];
   const base = 'https://safeorstolen.com';
+
+  const isIndexable = (path: string) => {
+    // Not indexable / private routes
+    if (path === '/auth') return false;
+    if (path === '/dashboard') return false;
+    if (path === '/profile') return false;
+    if (path === '/checkout-redirect') return false;
+    if (path === '/verification-success') return false;
+    if (path.startsWith('/admin')) return false;
+    return true;
+  };
+
+  const priorityFor = (path: string): number => {
+    if (path === '/') return 1.0;
+    if (path === '/verify') return 0.95;
+    if (path === '/download' || path === '/app') return 0.9;
+    if (path === '/pricing') return 0.85;
+    if (path === '/how-it-works' || path === '/about') return 0.8;
+    if (path === '/blog') return 0.8;
+
+    // High-intent landing pages
+    if (
+      path === '/imei-checker' ||
+      path === '/vin-checker' ||
+      path === '/serial-number-checker'
+    ) return 0.8;
+
+    // Everything else
+    return 0.65;
+  };
+
+  const changefreqFor = (path: string): SitemapEntry['changefreq'] => {
+    if (path === '/' || path === '/verify') return 'daily';
+    if (path === '/blog') return 'daily';
+    return 'weekly';
+  };
 
   return Array.from(VALID_ROUTES)
     .filter(isIndexable)

@@ -1,16 +1,11 @@
 /**
  * Sitemap-Route Validator
- * SINGLE SOURCE OF TRUTH for all valid routes
- * 
- * CRITICAL: Every route here MUST have a corresponding <Route> in AppRoutes.tsx
- * If you add a route here without a real page, it becomes a Soft 404.
- * 
- * Last synced with AppRoutes.tsx: 2026-01-04
+ * Automatically validates that all sitemap URLs have corresponding routes
+ * Prevents GSC indexing errors by catching mismatches early
  */
 
-// All REAL routes from AppRoutes.tsx - MUST match exactly
+// All routes from AppRoutes.tsx - must be kept in sync
 export const VALID_ROUTES = new Set([
-  // === CORE ROUTES ===
   '/',
   '/verify',
   '/dashboard',
@@ -35,12 +30,25 @@ export const VALID_ROUTES = new Set([
   '/stolen-database',
   '/marketplace-url-checker',
   '/contact',
-  '/reviews',
-  '/news',
-  '/videos',
-  '/shorts',
-
-  // === ITEM LANDING PAGES ===
+  '/accuracy',
+  '/disclaimer',
+  '/our-story',
+  '/avoid-stolen-goods',
+  '/ultimate-guide',
+  '/how-to-check-if-anything-is-stolen-before-you-buy',
+  '/can-police-track-stolen-phone',
+  '/check-drone',
+  '/stolen-goods-checker',
+  '/auction-houses',
+  '/case-studies',
+  '/enterprise-demo',
+  
+  // Mobile routes
+  '/mobile-verify',
+  '/mobile-dashboard',
+  '/mobile-settings',
+  
+  // Item checkers
   '/imei-checker',
   '/vin-checker',
   '/serial-number-checker',
@@ -66,8 +74,8 @@ export const VALID_ROUTES = new Set([
   '/unlimited-vin-checks',
   '/partial-serial-number-search',
   '/how-to-check-serial-number',
-
-  // === NEW SEO ITEM PAGES (Phase 1 - All 14) ===
+  
+  // NEW SEO item pages
   '/check-iphone-stolen',
   '/check-samsung-stolen',
   '/check-android-phone-stolen',
@@ -82,8 +90,36 @@ export const VALID_ROUTES = new Set([
   '/check-power-tools-stolen',
   '/check-firearm-serial',
   '/check-jewelry-stolen',
-
-  // === MARKETPLACE PAGES (All 8) ===
+  
+  // Competitor comparisons
+  '/vs-checkmend',
+  '/vs-imeiinfo',
+  '/vs-swappa',
+  '/vs-carfax',
+  '/vs-autocheck',
+  '/comparisons/safeorstolen-vs-imei-info',
+  '/comparisons/safeorstolen-vs-swappa',
+  '/comparisons/nicb-vincheck-alternative',
+  '/comparisons/best-free-imei-checkers-2025',
+  '/comparisons/top-vin-check-services-2025',
+  
+  // App pages
+  '/app/features',
+  '/app/stolen-phone-checker',
+  '/app/vin-checker',
+  '/app/barcode-scanner',
+  
+  // Business pages
+  '/for-pawn-shops',
+  '/for-dealers',
+  '/for-marketplaces',
+  '/for-auction-houses',
+  '/for-businesses',
+  '/for-electronics-resellers',
+  '/for-insurance-companies',
+  '/for-law-enforcement',
+  
+  // Marketplace pages (all 8)
   '/facebook-marketplace-stolen-check',
   '/craigslist-safety-verification',
   '/offerup-verify-not-stolen',
@@ -92,29 +128,34 @@ export const VALID_ROUTES = new Set([
   '/poshmark-stolen-check',
   '/stockx-verification',
   '/letgo-stolen-check',
-
-  // === TOP 11 STATE LICENSE PLATE PAGES ===
-  '/california-license-plate-lookup',
-  '/texas-license-plate-lookup',
-  '/florida-license-plate-lookup',
-  '/new-york-license-plate-lookup',
-  '/illinois-license-plate-lookup',
-  '/georgia-license-plate-lookup',
-  '/pennsylvania-license-plate-lookup',
-  '/ohio-license-plate-lookup',
-  '/north-carolina-license-plate-lookup',
-  '/washington-license-plate-lookup',
-  '/arizona-license-plate-lookup',
-
-  // === REMAINING 39 STATE LICENSE PLATE PAGES ===
+  
+  // Top 10 state VIN pages
+  '/california-vin-lookup',
+  '/texas-vin-lookup',
+  '/florida-vin-lookup',
+  '/new-york-vin-lookup',
+  '/illinois-vin-lookup',
+  '/georgia-vin-lookup',
+  '/pennsylvania-vin-lookup',
+  '/ohio-vin-lookup',
+  '/north-carolina-vin-lookup',
+  '/washington-vin-lookup',
+  '/arizona-vin-lookup',
+  
+  // ALL 50 state license plate pages (fully indexed)
   '/alabama-license-plate-lookup',
   '/alaska-license-plate-lookup',
+  '/arizona-license-plate-lookup',
   '/arkansas-license-plate-lookup',
+  '/california-license-plate-lookup',
   '/colorado-license-plate-lookup',
   '/connecticut-license-plate-lookup',
   '/delaware-license-plate-lookup',
+  '/florida-license-plate-lookup',
+  '/georgia-license-plate-lookup',
   '/hawaii-license-plate-lookup',
   '/idaho-license-plate-lookup',
+  '/illinois-license-plate-lookup',
   '/indiana-license-plate-lookup',
   '/iowa-license-plate-lookup',
   '/kansas-license-plate-lookup',
@@ -133,103 +174,27 @@ export const VALID_ROUTES = new Set([
   '/new-hampshire-license-plate-lookup',
   '/new-jersey-license-plate-lookup',
   '/new-mexico-license-plate-lookup',
+  '/new-york-license-plate-lookup',
+  '/north-carolina-license-plate-lookup',
   '/north-dakota-license-plate-lookup',
+  '/ohio-license-plate-lookup',
   '/oklahoma-license-plate-lookup',
   '/oregon-license-plate-lookup',
+  '/pennsylvania-license-plate-lookup',
   '/rhode-island-license-plate-lookup',
   '/south-carolina-license-plate-lookup',
   '/south-dakota-license-plate-lookup',
   '/tennessee-license-plate-lookup',
+  '/texas-license-plate-lookup',
   '/utah-license-plate-lookup',
   '/vermont-license-plate-lookup',
   '/virginia-license-plate-lookup',
+  '/washington-license-plate-lookup',
   '/west-virginia-license-plate-lookup',
   '/wisconsin-license-plate-lookup',
   '/wyoming-license-plate-lookup',
-
-  // === ALL 50 STATE VIN PAGES ===
-  '/california-vin-lookup',
-  '/texas-vin-lookup',
-  '/florida-vin-lookup',
-  '/new-york-vin-lookup',
-  '/illinois-vin-lookup',
-  '/georgia-vin-lookup',
-  '/pennsylvania-vin-lookup',
-  '/ohio-vin-lookup',
-  '/north-carolina-vin-lookup',
-  '/washington-vin-lookup',
-  '/arizona-vin-lookup',
-  '/alabama-vin-lookup',
-  '/alaska-vin-lookup',
-  '/arkansas-vin-lookup',
-  '/colorado-vin-lookup',
-  '/connecticut-vin-lookup',
-  '/delaware-vin-lookup',
-  '/hawaii-vin-lookup',
-  '/idaho-vin-lookup',
-  '/indiana-vin-lookup',
-  '/iowa-vin-lookup',
-  '/kansas-vin-lookup',
-  '/kentucky-vin-lookup',
-  '/louisiana-vin-lookup',
-  '/maine-vin-lookup',
-  '/maryland-vin-lookup',
-  '/massachusetts-vin-lookup',
-  '/michigan-vin-lookup',
-  '/minnesota-vin-lookup',
-  '/mississippi-vin-lookup',
-  '/missouri-vin-lookup',
-  '/montana-vin-lookup',
-  '/nebraska-vin-lookup',
-  '/nevada-vin-lookup',
-  '/new-hampshire-vin-lookup',
-  '/new-jersey-vin-lookup',
-  '/new-mexico-vin-lookup',
-  '/north-dakota-vin-lookup',
-  '/oklahoma-vin-lookup',
-  '/oregon-vin-lookup',
-  '/rhode-island-vin-lookup',
-  '/south-carolina-vin-lookup',
-  '/south-dakota-vin-lookup',
-  '/tennessee-vin-lookup',
-  '/utah-vin-lookup',
-  '/vermont-vin-lookup',
-  '/virginia-vin-lookup',
-  '/west-virginia-vin-lookup',
-  '/wisconsin-vin-lookup',
-  '/wyoming-vin-lookup',
-
-  // === COMPETITOR COMPARISON PAGES ===
-  '/vs-checkmend',
-  '/vs-imeiinfo',
-  '/vs-swappa',
-  '/vs-carfax',
-  '/vs-autocheck',
-  '/comparisons/safeorstolen-vs-imei-info',
-  '/comparisons/safeorstolen-vs-swappa',
-  '/comparisons/nicb-vincheck-alternative',
-  '/comparisons/best-free-imei-checkers-2025',
-  '/comparisons/top-vin-check-services-2025',
-
-  // === APP FEATURE PAGES ===
-  '/app/features',
-  '/app/stolen-phone-checker',
-  '/app/vin-checker',
-  '/app/barcode-scanner',
-
-  // === BUSINESS PAGES (All 10) ===
-  '/for-pawn-shops',
-  '/for-dealers',
-  '/for-marketplaces',
-  '/for-auction-houses',
-  '/for-businesses',
-  '/for-electronics-resellers',
-  '/for-insurance-companies',
-  '/for-law-enforcement',
-  '/for-buyers',
-  '/for-sellers',
-
-  // === CITY PAGES (Top 10) ===
+  
+  // City pages
   '/stolen-check-los-angeles',
   '/stolen-check-new-york-city',
   '/stolen-check-chicago',
@@ -240,8 +205,8 @@ export const VALID_ROUTES = new Set([
   '/stolen-check-san-diego',
   '/stolen-check-dallas',
   '/stolen-check-san-jose',
-
-  // === TRAFFIC LANDING PAGES ===
+  
+  // Traffic landing pages
   '/is-my-phone-stolen',
   '/is-this-car-stolen',
   '/is-this-laptop-stolen',
@@ -249,8 +214,10 @@ export const VALID_ROUTES = new Set([
   '/is-this-gun-stolen',
   '/check-stolen-phone',
   '/check-stolen-car',
-
-  // === BLOG (Static routes only - dynamic /blog/:slug handled separately) ===
+  '/stolen-phone-check',
+  '/stolen-car-check',
+  
+  // Blog
   '/blog',
   '/blog/how-to-check-if-phone-stolen',
   '/blog/complete-vin-guide',
@@ -277,8 +244,9 @@ export const VALID_ROUTES = new Set([
   '/blog/carfax-vs-free-vin-alternatives',
   '/blog/arizona-theftaz-guide',
   '/blog/ps5-stolen-check-guide',
-
-  // === NEWS & SOCIAL PAGES ===
+  '/blog/real-user-stories-stolen-goods-verification',
+  
+  // News & social
   '/news/onevalley-recognition',
   '/press-kit',
   '/product-hunt',
@@ -286,17 +254,8 @@ export const VALID_ROUTES = new Set([
   '/crunchbase',
 ]);
 
-// Dynamic route patterns (validated at runtime)
-export const DYNAMIC_ROUTE_PATTERNS = [
-  /^\/blog\/[a-z0-9-]+$/, // Dynamic blog posts from DB
-  /^\/item\/[a-z0-9-]+$/, // Stolen item detail pages
-  /^\/shared\/[a-z0-9-]+$/, // Shared report pages
-  /^\/youtube\/[a-z0-9-]+$/, // YouTube video pages
-];
-
-// URLs that should redirect (NEVER in sitemap)
+// URLs that should redirect (not be in sitemap)
 export const REDIRECT_URLS = new Set([
-  // Legacy/duplicate URLs
   '/mobile-app',
   '/account',
   '/imei-checker-app',
@@ -310,8 +269,7 @@ export const REDIRECT_URLS = new Set([
   '/imei-check',
   '/vin-check',
   '/vin-verification',
-  
-  // GSC December 2025 validation failures
+  // GSC December 2025 validation failures - Page with redirect errors
   '/verify/ebay',
   '/verify/pawnshops',
   '/verify/auctions',
@@ -345,104 +303,10 @@ export const REDIRECT_URLS = new Set([
   '/texas',
   '/florida',
   '/new-york',
+  '/california',
   '/mesa-stolen-item-check',
   '/craigslist-verification',
   '/check-samsung',
-  
-  // Mobile pages (real routes but noindexed)
-  '/mobile-verify',
-  '/mobile-dashboard',
-  '/mobile-settings',
-  
-  // GSC "Alternate page" errors - Jan 2026
-  '/comparison-checkmend',
-  '/blog/enterprise-security',
-  '/ios-app',
-  '/avoid-buying-stolen-goods',
-  '/city/los-angeles-ca/vin-verification',
-  '/city/new-york-ny/imei-check',
-  
-  // Previously phantom routes (no real pages)
-  '/accuracy',
-  '/disclaimer',
-  '/our-story',
-  '/avoid-stolen-goods',
-  '/ultimate-guide',
-  '/how-to-check-if-anything-is-stolen-before-you-buy',
-  '/can-police-track-stolen-phone',
-  '/check-drone',
-  '/stolen-goods-checker',
-  '/auction-houses',
-  '/case-studies',
-  '/enterprise-demo',
-  '/blog/real-user-stories-stolen-goods-verification',
-  '/stolen-phone-check',
-  '/stolen-car-check',
-  
-  // GSC NOINDEX FIXES - January 2026 (77 URLs)
-  '/how-to-check-if-item-stolen',
-  '/how-to-check-if-laptop-stolen',
-  '/pawn-shops',
-  '/for-pawnshops',
-  '/press-release',
-  '/mobile',
-  '/community',
-  '/data-sources',
-  '/comprehensive-guide',
-  '/buy-used-electronics-safely',
-  '/statistics',
-  '/trust-verification',
-  '/resource-center',
-  '/check',
-  '/app/download',
-  '/vs-stolenregister',
-  '/app/vs-imeipro',
-  '/guides/ebay-buyer-protection',
-  '/transparency',
-  '/features',
-  '/app/sellers',
-  '/app/vs-carfax',
-  '/app/features/barcode-scanner',
-  '/app/stolen-database-search',
-  '/app/investigate-stolen-property',
-  '/app/lookup-stolen-items',
-  '/app/vs-imeiinfo',
-  '/app/check-stolen-before-buying',
-  '/guides/verify-craigslist-items',
-  '/app/philadelphia',
-  '/guides/offerup-scam-protection',
-  '/app/carfax-alternative',
-  '/blog/how-to-use-imei-checker-app',
-  
-  // NOTE: All 50 state VIN pages and license plate pages now have REAL routes
-  // The routes below are phantom patterns that should redirect
-  '/chicago/imei-check',
-  '/bulk',
-  '/for-consumers',
-  '/imei-check',
-  '/verification-app',
-  '/vin-check',
-  '/verify/auctions',
-  '/imei-checker-app',
-  '/stolen-items-database',
-  '/app/features/history',
-  '/canada-vin-check',
-  '/marketplace-integration',
-  '/stolen-item-checker',
-  '/app/research-stolen-car',
-  '/app/buyer-protection-research',
-  '/app/research-stolen-phone',
-  '/app/facebook-marketplace-checker',
-  '/app/pawnshop-verification',
-  '/verify/facebook-marketplace',
-  '/app/research-stolen-items',
-  '/app/offerup-safety',
-  '/blog/scan-and-verify-using-safeorstolen-camera-feature-1',
-  '/app/secondhand-research-app',
-  '/blog/mobile-app-features',
-  '/verify-not-stolen',
-  '/vin-verification',
-  '/verification-hub',
 ]);
 
 export interface ValidationResult {
@@ -451,16 +315,6 @@ export interface ValidationResult {
   warnings: string[];
 }
 
-/**
- * Check if a path matches a dynamic route pattern
- */
-export function matchesDynamicPattern(path: string): boolean {
-  return DYNAMIC_ROUTE_PATTERNS.some(pattern => pattern.test(path));
-}
-
-/**
- * Validate a single URL for sitemap inclusion
- */
 export function validateSitemapUrl(url: string): ValidationResult {
   const result: ValidationResult = {
     isValid: true,
@@ -478,25 +332,15 @@ export function validateSitemapUrl(url: string): ValidationResult {
     return result;
   }
 
-  // Check static routes first
-  if (VALID_ROUTES.has(path)) {
-    return result;
+  // Check if URL has a valid route
+  if (!VALID_ROUTES.has(path)) {
+    result.isValid = false;
+    result.errors.push(`URL "${path}" has no corresponding route in AppRoutes`);
   }
 
-  // Check dynamic route patterns
-  if (matchesDynamicPattern(path)) {
-    return result;
-  }
-
-  // No match found
-  result.isValid = false;
-  result.errors.push(`URL "${path}" has no corresponding route in AppRoutes`);
   return result;
 }
 
-/**
- * Run full validation and report
- */
 export function runFullValidation(): ValidationResult {
   console.log('🔍 Running sitemap-route validation...');
   
@@ -506,8 +350,9 @@ export function runFullValidation(): ValidationResult {
     warnings: [],
   };
 
-  console.log(`✅ ${VALID_ROUTES.size} valid static routes registered`);
-  console.log(`✅ ${DYNAMIC_ROUTE_PATTERNS.length} dynamic route patterns registered`);
+  // This would parse sitemap.xml and validate each URL
+  // For now, log the validation check
+  console.log(`✅ ${VALID_ROUTES.size} valid routes registered`);
   console.log(`⚠️ ${REDIRECT_URLS.size} redirect URLs blocked from sitemap`);
 
   return result;

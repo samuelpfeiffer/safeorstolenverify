@@ -273,7 +273,7 @@ export const ConversionOptimizedPricing = ({
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
-          Subscription Plans
+          Protect Your Purchase Today
         </h2>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-4">
           Join 66+ users protecting themselves from stolen goods
