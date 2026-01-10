@@ -12,7 +12,7 @@ export interface SitemapURL {
 
 export const SITEMAP_URLS: SitemapURL[] = [
   // ============================================
-  // CORE PAGES (10)
+  // CORE PAGES (13)
   // ============================================
   { path: '/', priority: 1.0, changefreq: 'daily' },
   { path: '/verify', priority: 0.95, changefreq: 'daily' },
@@ -23,6 +23,10 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/terms', priority: 0.40, changefreq: 'yearly' },
   { path: '/privacy', priority: 0.40, changefreq: 'yearly' },
   { path: '/testimonials', priority: 0.70, changefreq: 'monthly' },
+  { path: '/report-stolen', priority: 0.70, changefreq: 'monthly' },
+  { path: '/stolen-database', priority: 0.75, changefreq: 'daily' },
+  { path: '/compare', priority: 0.85, changefreq: 'monthly' },
+  { path: '/contact', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
   // APP PAGES (6)
@@ -35,7 +39,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/app/vin-checker', priority: 0.85, changefreq: 'weekly' },
 
   // ============================================
-  // ITEM LANDING PAGES (15)
+  // ITEM LANDING PAGES (24)
   // ============================================
   { path: '/imei-checker', priority: 0.90, changefreq: 'weekly' },
   { path: '/vin-checker', priority: 0.90, changefreq: 'weekly' },
@@ -52,39 +56,73 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/check-boat', priority: 0.80, changefreq: 'weekly' },
   { path: '/firearms-check', priority: 0.80, changefreq: 'weekly' },
   { path: '/license-plate-lookup', priority: 0.80, changefreq: 'weekly' },
+  { path: '/gun-serial-number-lookup', priority: 0.80, changefreq: 'weekly' },
+  { path: '/free-carfax-alternative', priority: 0.85, changefreq: 'weekly' },
+  { path: '/ps5-serial-number-check', priority: 0.80, changefreq: 'weekly' },
+  { path: '/imei-check-free', priority: 0.85, changefreq: 'weekly' },
+  { path: '/rolex-serial-number-check', priority: 0.80, changefreq: 'weekly' },
+  { path: '/unlimited-vin-checks', priority: 0.80, changefreq: 'weekly' },
+  { path: '/partial-serial-number-search', priority: 0.75, changefreq: 'weekly' },
+  { path: '/how-to-check-serial-number', priority: 0.80, changefreq: 'weekly' },
+  { path: '/marketplace-url-checker', priority: 0.85, changefreq: 'weekly' },
 
   // ============================================
-  // COMPETITOR COMPARISON PAGES (11)
+  // NEW SEO ITEM PAGES (14)
   // ============================================
-  { path: '/compare', priority: 0.85, changefreq: 'monthly' },
+  { path: '/check-iphone-stolen', priority: 0.90, changefreq: 'weekly' },
+  { path: '/check-samsung-stolen', priority: 0.90, changefreq: 'weekly' },
+  { path: '/check-android-phone-stolen', priority: 0.90, changefreq: 'weekly' },
+  { path: '/check-car-stolen-vin', priority: 0.90, changefreq: 'weekly' },
+  { path: '/check-motorcycle-stolen-vin', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-laptop-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-tablet-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-bicycle-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-gaming-console-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-watch-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-camera-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-power-tools-stolen', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-firearm-serial', priority: 0.85, changefreq: 'weekly' },
+  { path: '/check-jewelry-stolen', priority: 0.85, changefreq: 'weekly' },
+
+  // ============================================
+  // COMPETITOR COMPARISON PAGES (10)
+  // ============================================
   { path: '/vs-checkmend', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-imeiinfo', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-swappa', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-carfax', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-autocheck', priority: 0.80, changefreq: 'monthly' },
-  // New detailed comparison pages (December 2025)
-  { path: '/comparisons/safeorstolen-vs-imeiinfo', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/safeorstolen-vs-swappa', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/nicb-vincheck-alternative', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/best-free-imei-checkers-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/top-vin-check-services-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
+  { path: '/comparisons/safeorstolen-vs-imei-info', priority: 0.80, changefreq: 'monthly' },
+  { path: '/comparisons/safeorstolen-vs-swappa', priority: 0.80, changefreq: 'monthly' },
+  { path: '/comparisons/nicb-vincheck-alternative', priority: 0.80, changefreq: 'monthly' },
+  { path: '/comparisons/best-free-imei-checkers-2025', priority: 0.80, changefreq: 'monthly' },
+  { path: '/comparisons/top-vin-check-services-2025', priority: 0.80, changefreq: 'monthly' },
 
   // ============================================
-  // BUSINESS PAGES (5)
+  // BUSINESS PAGES (10)
   // ============================================
   { path: '/for-businesses', priority: 0.80, changefreq: 'monthly' },
   { path: '/for-pawn-shops', priority: 0.80, changefreq: 'monthly' },
   { path: '/for-dealers', priority: 0.80, changefreq: 'monthly' },
   { path: '/for-marketplaces', priority: 0.75, changefreq: 'monthly' },
   { path: '/for-auction-houses', priority: 0.75, changefreq: 'monthly' },
+  { path: '/for-electronics-resellers', priority: 0.80, changefreq: 'monthly' },
+  { path: '/for-insurance-companies', priority: 0.80, changefreq: 'monthly' },
+  { path: '/for-law-enforcement', priority: 0.80, changefreq: 'monthly' },
+  { path: '/for-buyers', priority: 0.85, changefreq: 'monthly' },
+  { path: '/for-sellers', priority: 0.85, changefreq: 'monthly' },
 
   // ============================================
-  // MARKETPLACE SAFETY PAGES (4)
+  // MARKETPLACE SAFETY PAGES (8)
   // ============================================
   { path: '/facebook-marketplace-stolen-check', priority: 0.80, changefreq: 'weekly' },
   { path: '/craigslist-safety-verification', priority: 0.80, changefreq: 'weekly' },
   { path: '/offerup-verify-not-stolen', priority: 0.80, changefreq: 'weekly' },
   { path: '/ebay-stolen-item-check', priority: 0.80, changefreq: 'weekly' },
+  { path: '/mercari-stolen-check', priority: 0.80, changefreq: 'weekly' },
+  { path: '/poshmark-stolen-check', priority: 0.80, changefreq: 'weekly' },
+  { path: '/stockx-verification', priority: 0.80, changefreq: 'weekly' },
+  { path: '/letgo-stolen-check', priority: 0.80, changefreq: 'weekly' },
 
   // ============================================
   // CITY PAGES - TOP 10 (10)
@@ -101,38 +139,34 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/stolen-check-san-jose', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
-  // BLOG ARTICLES (22)
+  // BLOG ARTICLES (26)
   // ============================================
-  { path: '/blog', priority: 0.80, changefreq: 'weekly', lastmod: '2025-12-23' },
-  { path: '/blog/how-to-check-if-phone-stolen', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/complete-vin-guide', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/data-source-credibility-stolen-goods-verification', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/protect-yourself-buying-used-electronics', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/ultimate-marketplace-buyers-guide', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/complete-imei-guide-protect-yourself', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/scammer-tactics-exposed', priority: 0.70, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/phone-verification-guide', priority: 0.70, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/theft-trends-report-2024', priority: 0.70, changefreq: 'yearly', lastmod: '2025-12-23' },
-  { path: '/blog/verification-methodology', priority: 0.70, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/real-user-stories', priority: 0.70, changefreq: 'weekly', lastmod: '2025-12-23' },
-  { path: '/blog/complete-verification-guide', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/stolen-verification-app-guide', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/checkmend-has-no-app', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/like-carfax-for-phones', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/pawn-shop-stolen-item-verification', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/imei-checker-app-download', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/firearm-serial-number-verification', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/bicycle-stolen-serial-number-check', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/verify-item-before-meetup', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/how-to-check-if-iphone-stolen', priority: 0.90, changefreq: 'weekly', lastmod: '2025-12-23' },
-  { path: '/blog/facebook-marketplace-scams', priority: 0.90, changefreq: 'weekly', lastmod: '2025-12-23' },
-  { path: '/blog/ps5-stolen-check-guide', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/blog/carfax-vs-free-vin-alternatives', priority: 0.75, changefreq: 'monthly', lastmod: '2025-12-23' },
-
-  // ============================================
-  // FREE TOOLS (1)
-  // ============================================
-  { path: '/free-tools', priority: 0.85, changefreq: 'weekly' },
+  { path: '/blog', priority: 0.80, changefreq: 'weekly' },
+  { path: '/blog/how-to-check-if-phone-stolen', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/complete-vin-guide', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/data-source-credibility-stolen-goods-verification', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/protect-yourself-buying-used-electronics', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/ultimate-marketplace-buyers-guide', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/complete-imei-guide-protect-yourself', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/scammer-tactics-exposed', priority: 0.70, changefreq: 'monthly' },
+  { path: '/blog/phone-verification-guide', priority: 0.70, changefreq: 'monthly' },
+  { path: '/blog/theft-trends-report-2024', priority: 0.70, changefreq: 'yearly' },
+  { path: '/blog/verification-methodology', priority: 0.70, changefreq: 'monthly' },
+  { path: '/blog/real-user-stories', priority: 0.70, changefreq: 'weekly' },
+  { path: '/blog/complete-verification-guide', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/stolen-verification-app-guide', priority: 0.80, changefreq: 'monthly' },
+  { path: '/blog/checkmend-has-no-app', priority: 0.80, changefreq: 'monthly' },
+  { path: '/blog/like-carfax-for-phones', priority: 0.80, changefreq: 'monthly' },
+  { path: '/blog/pawn-shop-stolen-item-verification', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/imei-checker-app-download', priority: 0.80, changefreq: 'monthly' },
+  { path: '/blog/firearm-serial-number-verification', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/bicycle-stolen-serial-number-check', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/verify-item-before-meetup', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/how-to-check-if-iphone-stolen', priority: 0.90, changefreq: 'weekly' },
+  { path: '/blog/facebook-marketplace-scams', priority: 0.90, changefreq: 'weekly' },
+  { path: '/blog/ps5-stolen-check-guide', priority: 0.80, changefreq: 'monthly' },
+  { path: '/blog/carfax-vs-free-vin-alternatives', priority: 0.75, changefreq: 'monthly' },
+  { path: '/blog/arizona-theftaz-guide', priority: 0.75, changefreq: 'monthly' },
 
   // ============================================
   // HIGH-TRAFFIC SEARCH LANDING PAGES (7)
@@ -144,23 +178,31 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/is-this-gun-stolen', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-stolen-phone', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-stolen-car', priority: 0.85, changefreq: 'weekly' },
-  { path: '/report-stolen', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
-  // NEWS & PRESS PAGES (5)
+  // FREE TOOLS & RESOURCES (2)
+  // ============================================
+  { path: '/free-tools', priority: 0.85, changefreq: 'weekly' },
+  { path: '/youtube', priority: 0.75, changefreq: 'weekly' },
+
+  // ============================================
+  // NEWS & PRESS PAGES (4)
   // ============================================
   { path: '/news/onevalley-recognition', priority: 0.60, changefreq: 'yearly' },
   { path: '/press-kit', priority: 0.60, changefreq: 'monthly' },
   { path: '/product-hunt', priority: 0.60, changefreq: 'monthly' },
-  { path: '/youtube', priority: 0.75, changefreq: 'weekly' },
-  { path: '/youtube/stolen-item-check', priority: 0.70, changefreq: 'weekly' },
-  { path: '/youtube/marketplace-safety', priority: 0.70, changefreq: 'weekly' },
-  { path: '/youtube/vin-check', priority: 0.70, changefreq: 'weekly' },
-  { path: '/youtube/imei-check', priority: 0.70, changefreq: 'weekly' },
   { path: '/crunchbase', priority: 0.55, changefreq: 'monthly' },
 
   // ============================================
-  // TOP 10 STATE LICENSE PLATE LOOKUPS (have actual routes)
+  // ARIZONA SPECIAL PAGES (3)
+  // ============================================
+  { path: '/stolen-vehicle-database-arizona', priority: 0.75, changefreq: 'monthly' },
+  { path: '/arizona-stolen-property-database', priority: 0.75, changefreq: 'monthly' },
+  { path: '/arizona-license-plate-lookup', priority: 0.70, changefreq: 'monthly' },
+  { path: '/arizona-vin-lookup', priority: 0.70, changefreq: 'monthly' },
+
+  // ============================================
+  // TOP 10 STATE LICENSE PLATE LOOKUPS
   // ============================================
   { path: '/california-license-plate-lookup', priority: 0.75, changefreq: 'monthly' },
   { path: '/texas-license-plate-lookup', priority: 0.75, changefreq: 'monthly' },
@@ -174,7 +216,50 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/washington-license-plate-lookup', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
-  // TOP 10 STATE VIN LOOKUPS (have actual routes)
+  // ALL 50 STATE LICENSE PLATE LOOKUPS
+  // ============================================
+  { path: '/alabama-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/alaska-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/arkansas-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/colorado-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/connecticut-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/delaware-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/hawaii-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/idaho-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/indiana-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/iowa-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/kansas-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/kentucky-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/louisiana-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/maine-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/maryland-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/massachusetts-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/michigan-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/minnesota-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/mississippi-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/missouri-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/montana-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/nebraska-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/nevada-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/new-hampshire-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/new-jersey-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/new-mexico-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/north-dakota-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/oklahoma-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/oregon-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/rhode-island-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/south-carolina-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/south-dakota-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/tennessee-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/utah-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/vermont-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/virginia-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/west-virginia-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/wisconsin-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+  { path: '/wyoming-license-plate-lookup', priority: 0.65, changefreq: 'monthly' },
+
+  // ============================================
+  // TOP 10 STATE VIN LOOKUPS
   // ============================================
   { path: '/california-vin-lookup', priority: 0.75, changefreq: 'monthly' },
   { path: '/texas-vin-lookup', priority: 0.75, changefreq: 'monthly' },
