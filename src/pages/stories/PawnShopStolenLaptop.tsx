@@ -1,7 +1,5 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Heart, Store, Laptop, Scale, FileText } from 'lucide-react';
@@ -27,23 +25,15 @@ const PawnShopStolenLaptop = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Pawn Shop Owner Avoids $15K Lawsuit - Serial Number Check Story | SafeOrStolen</title>
-        <meta name="description" content="Real story: Rodriguez Family Pawn implemented serial number checks after almost buying stolen laptops. Now they use SafeOrStolen for every transaction." />
-        <meta name="keywords" content="pawn shop stolen items, serial number check pawn shop, pawn shop liability, stolen laptop pawn, safeorstolen pawn shop" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/stories/pawn-shop-stolen-laptop" />
-        <meta property="og:title" content="Pawn Shop Owner Avoids $15,000 Lawsuit by Checking Serial Numbers" />
-        <meta property="og:description" content="How implementing serial number checks saved a family pawn shop from buying stolen merchandise." />
-        <meta property="og:url" content="https://safeorstolen.com/stories/pawn-shop-stolen-laptop" />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Pawn Shop Owner Avoids $15K Lawsuit - Serial Number Check Story | SafeOrStolen"
+        description="Real story: Rodriguez Family Pawn implemented serial number checks after almost buying stolen laptops. Now they use SafeOrStolen for every transaction."
+        keywords="pawn shop stolen items, serial number check pawn shop, pawn shop liability, stolen laptop pawn, safeorstolen pawn shop"
+        canonical="/stories/pawn-shop-stolen-laptop"
+        structuredData={[articleSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-16 px-4 bg-gradient-to-br from-amber-900/20 via-background to-background">
           <div className="container mx-auto max-w-3xl">
@@ -295,9 +285,7 @@ const PawnShopStolenLaptop = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

@@ -1,10 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Search, Gamepad2, HelpCircle } from 'lucide-react';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const SteamDeckStolenCheck = () => {
   const faqs = [
@@ -45,22 +44,15 @@ const SteamDeckStolenCheck = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Steam Deck Stolen Check - Free Serial Number Verification | SafeOrStolen</title>
-        <meta name="description" content="Check if a Steam Deck is stolen before buying used. Free serial number lookup against police databases. Find serial number location and verify authenticity." />
-        <meta name="keywords" content="steam deck stolen check, steam deck serial number, is my steam deck stolen, used steam deck verification, steam deck serial lookup" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/steam-deck-stolen-check" />
-        <meta property="og:title" content="Steam Deck Stolen Check - Free Serial Number Verification" />
-        <meta property="og:description" content="Verify a Steam Deck isn't stolen before buying. Free serial number check against police databases." />
-        <meta property="og:url" content="https://safeorstolen.com/steam-deck-stolen-check" />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Steam Deck Stolen Check - Free Serial Number Verification | SafeOrStolen"
+        description="Check if a Steam Deck is stolen before buying used. Free serial number lookup against police databases. Find serial number location and verify authenticity."
+        keywords="steam deck stolen check, steam deck serial number, is my steam deck stolen, used steam deck verification, steam deck serial lookup"
+        canonical="/steam-deck-stolen-check"
+        structuredData={[faqSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-indigo-900/20 via-background to-background">
           <div className="container mx-auto max-w-4xl text-center">
@@ -290,9 +282,7 @@ const SteamDeckStolenCheck = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

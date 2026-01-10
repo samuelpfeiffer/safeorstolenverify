@@ -1,7 +1,5 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Heart, Bike, Bell, MapPin, Clock, Search } from 'lucide-react';
@@ -27,23 +25,15 @@ const RecoveredStolenBike = () => {
 
   return (
     <>
-      <Helmet>
-        <title>College Student Recovers Stolen Bike - Alert System Success | SafeOrStolen</title>
-        <meta name="description" content="Emily's $2,000 mountain bike was stolen from ASU campus. 3 weeks later, a SafeOrStolen user tried to verify it - and she got it back. Read her story." />
-        <meta name="keywords" content="stolen bike recovered, bicycle theft recovery, safeorstolen alert, stolen bike found, mountain bike stolen" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/stories/recovered-stolen-bike" />
-        <meta property="og:title" content="College Student Recovers Stolen Bike Thanks to Alert System" />
-        <meta property="og:description" content="How a stolen bike alert helped Emily get her $2,000 mountain bike back after it was listed for sale." />
-        <meta property="og:url" content="https://safeorstolen.com/stories/recovered-stolen-bike" />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="College Student Recovers Stolen Bike - Alert System Success | SafeOrStolen"
+        description="Emily's $2,000 mountain bike was stolen from ASU campus. 3 weeks later, a SafeOrStolen user tried to verify it - and she got it back. Read her story."
+        keywords="stolen bike recovered, bicycle theft recovery, safeorstolen alert, stolen bike found, mountain bike stolen"
+        canonical="/stories/recovered-stolen-bike"
+        structuredData={[articleSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-16 px-4 bg-gradient-to-br from-blue-900/20 via-background to-background">
           <div className="container mx-auto max-w-3xl">
@@ -295,9 +285,7 @@ const RecoveredStolenBike = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

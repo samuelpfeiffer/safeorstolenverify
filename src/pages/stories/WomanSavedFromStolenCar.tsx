@@ -1,7 +1,5 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Heart, DollarSign, Car, Clock, MapPin, Phone } from 'lucide-react';
@@ -27,23 +25,15 @@ const WomanSavedFromStolenCar = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Woman Saves $8,000 by Checking VIN Before Buying - True Story | SafeOrStolen</title>
-        <meta name="description" content="Real story: Sarah almost lost $8,000 on a stolen car. A free 30-second VIN check revealed the truth. Read how she avoided financial disaster." />
-        <meta name="keywords" content="stolen car story, vin check saved money, buying stolen car story, used car scam story, safeorstolen success story" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/stories/woman-saved-from-stolen-car" />
-        <meta property="og:title" content="Woman Saves $8,000 by Checking VIN Before Buying Used Car" />
-        <meta property="og:description" content="A free VIN check saved Sarah from buying a stolen Honda Accord. Read her story." />
-        <meta property="og:url" content="https://safeorstolen.com/stories/woman-saved-from-stolen-car" />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Woman Saves $8,000 by Checking VIN Before Buying - True Story | SafeOrStolen"
+        description="Real story: Sarah almost lost $8,000 on a stolen car. A free 30-second VIN check revealed the truth. Read how she avoided financial disaster."
+        keywords="stolen car story, vin check saved money, buying stolen car story, used car scam story, safeorstolen success story"
+        canonical="/stories/woman-saved-from-stolen-car"
+        structuredData={[articleSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-16 px-4 bg-gradient-to-br from-green-900/20 via-background to-background">
           <div className="container mx-auto max-w-3xl">
@@ -288,9 +278,7 @@ const WomanSavedFromStolenCar = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

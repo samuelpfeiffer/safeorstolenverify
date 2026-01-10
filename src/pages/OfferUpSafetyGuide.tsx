@@ -1,10 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Search, MapPin, MessageSquare, DollarSign, Star, Truck } from 'lucide-react';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const OfferUpSafetyGuide = () => {
   const faqs = [
@@ -45,22 +44,15 @@ const OfferUpSafetyGuide = () => {
 
   return (
     <>
-      <Helmet>
-        <title>OfferUp Safety Guide 2025 - Avoid Scams & Stolen Items | SafeOrStolen</title>
-        <meta name="description" content="Stay safe on OfferUp with our complete buyer's guide. Learn to spot scams, verify items aren't stolen, use TruYou, and find Community MeetUp Spots." />
-        <meta name="keywords" content="offerup safety, offerup scams, buying on offerup safely, offerup stolen goods, offerup truyou, offerup community meetup" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/offerup-safety-guide" />
-        <meta property="og:title" content="OfferUp Safety Guide 2025 - Avoid Scams & Stolen Items" />
-        <meta property="og:description" content="Complete guide to staying safe on OfferUp. Avoid scams, verify items, use TruYou verification." />
-        <meta property="og:url" content="https://safeorstolen.com/offerup-safety-guide" />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="OfferUp Safety Guide 2026 - Avoid Scams & Stolen Items | SafeOrStolen"
+        description="Stay safe on OfferUp with our complete buyer's guide. Learn to spot scams, verify items aren't stolen, use TruYou, and find Community MeetUp Spots."
+        keywords="offerup safety, offerup scams, buying on offerup safely, offerup stolen goods, offerup truyou, offerup community meetup"
+        canonical="/offerup-safety-guide"
+        structuredData={[faqSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-teal-900/20 via-background to-background">
           <div className="container mx-auto max-w-4xl text-center">
@@ -375,9 +367,7 @@ const OfferUpSafetyGuide = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

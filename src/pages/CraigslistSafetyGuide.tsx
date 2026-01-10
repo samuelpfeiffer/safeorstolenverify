@@ -1,10 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, MapPin, Camera, MessageSquare, DollarSign, Phone, Users, FileText, Search, Clock } from 'lucide-react';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const CraigslistSafetyGuide = () => {
   const faqs = [
@@ -58,26 +57,15 @@ const CraigslistSafetyGuide = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Craigslist Safety Guide 2025 - Avoid Scams & Stolen Goods | SafeOrStolen</title>
-        <meta name="description" content="Stay safe on Craigslist with our complete buyer's guide. Learn to spot scams, verify items aren't stolen, and avoid dangerous meetups. Free safety tips." />
-        <meta name="keywords" content="craigslist safety, craigslist scams, buying on craigslist safely, craigslist stolen goods, craigslist meetup safety, how to avoid craigslist scams" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/craigslist-safety-guide" />
-        <meta property="og:title" content="Craigslist Safety Guide 2025 - Avoid Scams & Stolen Goods" />
-        <meta property="og:description" content="Stay safe on Craigslist. Learn to spot scams, verify items aren't stolen, and avoid dangerous meetups." />
-        <meta property="og:url" content="https://safeorstolen.com/craigslist-safety-guide" />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Craigslist Safety Guide 2025" />
-        <meta name="twitter:description" content="Complete guide to staying safe on Craigslist. Avoid scams, stolen goods, and dangerous situations." />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="Craigslist Safety Guide 2026 - Avoid Scams & Stolen Goods | SafeOrStolen"
+        description="Stay safe on Craigslist with our complete buyer's guide. Learn to spot scams, verify items aren't stolen, and avoid dangerous meetups. Free safety tips."
+        keywords="craigslist safety, craigslist scams, buying on craigslist safely, craigslist stolen goods, craigslist meetup safety, how to avoid craigslist scams"
+        canonical="/craigslist-safety-guide"
+        structuredData={[faqSchema, webPageSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-orange-900/20 via-background to-background">
           <div className="container mx-auto max-w-4xl text-center">
@@ -462,9 +450,7 @@ const CraigslistSafetyGuide = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };

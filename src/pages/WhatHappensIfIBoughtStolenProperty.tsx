@@ -1,10 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Scale, Phone, FileText, HelpCircle, DollarSign, Clock, Gavel } from 'lucide-react';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const WhatHappensIfIBoughtStolenProperty = () => {
   const faqs = [
@@ -45,22 +44,15 @@ const WhatHappensIfIBoughtStolenProperty = () => {
 
   return (
     <>
-      <Helmet>
-        <title>What Happens If I Bought Stolen Property? Legal Guide 2025 | SafeOrStolen</title>
-        <meta name="description" content="Accidentally bought something stolen? Here's exactly what happens, your legal rights, and step-by-step what to do next. Don't panic - read this first." />
-        <meta name="keywords" content="bought stolen property what now, accidentally bought stolen goods, receiving stolen property laws, bought stolen item consequences, unknowingly bought stolen property" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/what-happens-if-i-bought-stolen-property" />
-        <meta property="og:title" content="What Happens If I Bought Stolen Property? Legal Guide" />
-        <meta property="og:description" content="Accidentally bought something stolen? Here's exactly what happens and what to do next." />
-        <meta property="og:url" content="https://safeorstolen.com/what-happens-if-i-bought-stolen-property" />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="What Happens If I Bought Stolen Property? Legal Guide 2026 | SafeOrStolen"
+        description="Accidentally bought something stolen? Here's exactly what happens, your legal rights, and step-by-step what to do next. Don't panic - read this first."
+        keywords="bought stolen property what now, accidentally bought stolen goods, receiving stolen property laws, bought stolen item consequences, unknowingly bought stolen property"
+        canonical="/what-happens-if-i-bought-stolen-property"
+        structuredData={[faqSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-red-900/20 via-background to-background">
           <div className="container mx-auto max-w-4xl text-center">
@@ -353,9 +345,7 @@ const WhatHappensIfIBoughtStolenProperty = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };
