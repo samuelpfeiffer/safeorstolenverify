@@ -186,9 +186,9 @@ const PricingPage = () => {
   return (
     <>
       <PageSEO
-        title="Pricing Plans - Free Trial, $2.99/mo Starter | SafeOrStolen"
-        description="Start free with 2 checks. Starter $2.99/mo (10 checks). Personal $4.99/mo (unlimited). Business $29.99/mo (API access). Cancel anytime. The only mobile app."
-        keywords="stolen item verification pricing, IMEI checker cost, VIN checker price, free trial, pawn shop verification pricing"
+        title="Gun Serial Number Lookup Pricing - Free Trial, $2.99/mo | SafeOrStolen"
+        description="Free gun serial number lookup trial. Check firearms, IMEI, VIN for stolen status. Free: 2 checks. Starter: $2.99/mo. Personal: $4.99/mo unlimited. Trusted by pawn shops and police."
+        keywords="gun serial number lookup free, stolen gun database subscription, IMEI checker pricing, VIN check cost, firearm verification service, pawn shop verification"
         canonical="/pricing"
         structuredData={[
           {

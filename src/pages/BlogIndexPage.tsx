@@ -4,13 +4,55 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Clock, Tag } from 'lucide-react';
 
 const blogArticles = [
+  // HIGH-PRIORITY: Gun Serial Number Content (Top GSC queries)
   {
-    title: 'Carfax vs Free VIN Alternatives: Complete 2025 Guide',
+    title: 'Gun Serial Number Lookup Free: Complete 2026 Guide',
+    slug: 'gun-serial-number-lookup-free',
+    excerpt: 'Free gun serial number lookup tools and databases. Check if a firearm is stolen using NCIC, ATF, and state databases. Verify before buying from private sellers.',
+    category: 'Firearm Verification',
+    readTime: '12 min',
+    keywords: ['gun serial number lookup', 'gun serial number lookup free', 'firearm verification']
+  },
+  {
+    title: 'FBI Lost and Stolen Gun Serial Number Database: How to Check',
+    slug: 'fbi-lost-stolen-gun-database',
+    excerpt: 'Access the FBI NCIC stolen gun database. Learn how to check if a firearm is stolen, what the NCIC contains, and free alternatives for private gun sales.',
+    category: 'Firearm Verification',
+    readTime: '10 min',
+    keywords: ['fbi stolen gun database', 'national stolen gun database', 'ncic gun check']
+  },
+  {
+    title: 'How to Check if a Gun is Stolen: Serial Number Verification Guide',
+    slug: 'how-to-check-if-gun-stolen',
+    excerpt: 'Step-by-step guide to verify if a firearm is stolen before buying. Check gun serial numbers against stolen databases, state records, and law enforcement systems.',
+    category: 'Firearm Verification',
+    readTime: '15 min',
+    keywords: ['check if gun stolen', 'stolen gun check', 'verify gun serial number']
+  },
+  {
+    title: 'Stolen Gun Database Search: Free Tools and Methods',
+    slug: 'stolen-gun-database-search',
+    excerpt: 'How to search stolen gun databases for free. Compare NCIC, state databases, and third-party services. Protect yourself from buying stolen firearms.',
+    category: 'Firearm Verification',
+    readTime: '11 min',
+    keywords: ['stolen gun database', 'search stolen firearms', 'gun theft check']
+  },
+  // Existing high-performing articles
+  {
+    title: 'Carfax vs Free VIN Alternatives: Complete 2026 Guide',
     slug: 'carfax-vs-free-vin-alternatives',
     excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives. Learn which vehicle history service is best for checking if a car is stolen. Free VIN theft checks available.',
     category: 'Vehicle Safety',
     readTime: '10 min',
     keywords: ['carfax alternative', 'free vin check', 'carfax vs safeorstolen']
+  },
+  {
+    title: 'Arizona TheftAZ: Official Stolen Vehicle Database Guide',
+    slug: 'arizona-theftaz-guide',
+    excerpt: 'Complete guide to using Arizona TheftAZ (theftaz.gov) for stolen vehicle checks. How it compares to SafeOrStolen for AZ car buyers.',
+    category: 'Vehicle Safety',
+    readTime: '8 min',
+    keywords: ['theftaz', 'arizona stolen vehicle', 'theftaz.gov']
   },
   {
     title: 'How to Check if a Phone is Stolen Before Buying',
@@ -29,6 +71,14 @@ const blogArticles = [
     keywords: ['VIN decoder', 'vehicle history', 'car verification']
   },
   {
+    title: 'Free Stolen Vehicle Check: How to Verify Before Buying',
+    slug: 'free-stolen-vehicle-check',
+    excerpt: 'Free ways to check if a car is stolen. Compare VIN lookup tools, police databases, and when to use paid services for comprehensive vehicle history.',
+    category: 'Vehicle Safety',
+    readTime: '9 min',
+    keywords: ['free stolen vehicle check', 'stolen car lookup', 'vin check free']
+  },
+  {
     title: 'Ultimate Marketplace Buyer\'s Guide',
     slug: 'ultimate-marketplace-buyers-guide',
     excerpt: 'Protect yourself on eBay, Facebook Marketplace, OfferUp, and Craigslist with this comprehensive safety guide for secondhand purchases.',
@@ -45,6 +95,14 @@ const blogArticles = [
     keywords: ['IMEI lookup', 'phone blacklist', 'mobile security']
   },
   {
+    title: 'Firearm Serial Number Checker: Free Online Tools',
+    slug: 'firearm-serial-number-checker',
+    excerpt: 'Free firearm serial number checker tools. Verify guns before buying from private sellers. Access stolen weapon databases and avoid legal trouble.',
+    category: 'Firearm Verification',
+    readTime: '10 min',
+    keywords: ['firearm serial number checker', 'gun check online', 'weapon verification']
+  },
+  {
     title: 'Complete Verification Guide',
     slug: 'complete-verification-guide',
     excerpt: 'Master guide to verifying any secondhand item - from phones to vehicles to electronics. Learn our comprehensive verification methodology.',
@@ -59,6 +117,30 @@ const blogArticles = [
     category: 'Electronics Safety',
     readTime: '8 min',
     keywords: ['electronics verification', 'used tech', 'buyer protection']
+  },
+  {
+    title: 'PS5 Stolen Check: How to Verify PlayStation Serial Numbers',
+    slug: 'ps5-stolen-check-guide',
+    excerpt: 'How to check if a PS5 is stolen before buying. Sony serial number verification, what to look for, and protecting yourself from stolen gaming consoles.',
+    category: 'Electronics Safety',
+    readTime: '7 min',
+    keywords: ['ps5 stolen check', 'playstation serial number', 'sony verification']
+  },
+  {
+    title: 'Stolen Bike Serial Number Check: Protect Your Purchase',
+    slug: 'stolen-bike-serial-number-check',
+    excerpt: 'How to check if a bicycle is stolen using serial numbers. Bike Index, police databases, and verification tools for used bike purchases.',
+    category: 'Verification',
+    readTime: '8 min',
+    keywords: ['stolen bike check', 'bicycle serial number', 'bike theft verification']
+  },
+  {
+    title: 'Rolex Serial Number Check: Avoid Stolen Luxury Watches',
+    slug: 'rolex-serial-number-check-stolen',
+    excerpt: 'How to verify Rolex serial numbers and check if a watch is stolen. Authentication tips for buying luxury watches from private sellers.',
+    category: 'Luxury Goods',
+    readTime: '9 min',
+    keywords: ['rolex serial number check', 'stolen watch check', 'luxury watch verification']
   },
   {
     title: 'Data Source Credibility in Stolen Goods Verification',
@@ -112,32 +194,34 @@ const blogArticles = [
 
 const categories = [
   'All Articles',
-  'Buying Guides',
+  'Firearm Verification',
   'Vehicle Safety',
   'Phone Security',
+  'Buying Guides',
   'Marketplace Safety',
+  'Electronics Safety',
+  'Luxury Goods',
   'Fraud Prevention',
   'Technology',
+  'Verification',
   'Industry Insights',
-  'Case Studies',
-  'Electronics Safety',
-  'Verification'
+  'Case Studies'
 ];
 
 export default function BlogIndexPage() {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Blog - Verification Guides, Safety Tips & Industry Insights"
-        description="Expert guides on verifying secondhand items, avoiding stolen goods, marketplace safety tips, and theft prevention strategies. Learn how to protect yourself when buying used items."
-        keywords="verification guides, stolen goods prevention, marketplace safety, IMEI verification, VIN checks, buying guides, fraud prevention"
-        canonical="https://safeorstolen.com/blog"
+        title="Gun Serial Number Lookup, IMEI Check, VIN Verification Guides | SafeOrStolen Blog"
+        description="Free gun serial number lookup guides, IMEI checker tutorials, VIN verification tips. Learn how to check if items are stolen before buying. Expert guides for firearms, phones, vehicles."
+        keywords="gun serial number lookup free, stolen gun database, IMEI check, VIN verification, firearm serial number checker, stolen vehicle check, stolen phone check"
+        canonical="/blog"
         type="website"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
-          name: 'SafeOrStolen Blog',
-          description: 'Expert guides on verifying secondhand items and avoiding stolen goods',
+          name: 'SafeOrStolen Blog - Verification Guides',
+          description: 'Free gun serial number lookup guides, IMEI checker tutorials, VIN verification tips, and stolen item prevention guides',
           publisher: {
             '@type': 'Organization',
             name: 'SafeOrStolen',

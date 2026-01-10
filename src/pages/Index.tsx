@@ -43,31 +43,32 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Check If Items Are Stolen Before You Buy | Free IMEI & VIN Lookup"
-        description="Instantly verify if phones, cars, bikes are stolen. Check IMEI, VIN, serial numbers against 100+ databases. 3-second results. Free trial - the only mobile app."
-        keywords="check if stolen, IMEI checker free, VIN checker free, stolen phone check, stolen car check, verify before buying, secondhand verification"
+        title="Free Gun Serial Number Lookup, IMEI Check & VIN Verification | SafeOrStolen"
+        description="Free gun serial number lookup, IMEI checker, VIN verification. Check if phones, cars, firearms are stolen. Search 100+ databases including NCIC. 3-second results. The only mobile app."
+        keywords="gun serial number lookup free, IMEI checker free, VIN check free, stolen gun database, firearm serial number checker, stolen vehicle check, stolen phone check, safeorstolen"
         canonical="/"
       />
       
       {/* Enhanced noscript fallback for crawlers and JS-disabled users */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif' }}>
-          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Check If Items Are Stolen Before You Buy</h1>
-          <p style={{ marginBottom: '12px' }}>SafeOrStolen is the only stolen item checker with a mobile app. Verify phones, cars, bikes, electronics against 100+ law enforcement and insurance databases.</p>
+          <h1 style={{ fontSize: '24px', marginBottom: '16px' }}>Free Gun Serial Number Lookup, IMEI Check & VIN Verification</h1>
+          <p style={{ marginBottom: '12px' }}>SafeOrStolen is the only stolen item checker with a mobile app. Check gun serial numbers, IMEI numbers, and VINs against 100+ law enforcement and insurance databases including the NCIC stolen gun database.</p>
           <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>What You Can Check:</h2>
           <ul style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-            <li><strong>Phones & Tablets:</strong> Enter IMEI number (dial *#06# to find it)</li>
-            <li><strong>Cars & Vehicles:</strong> Enter VIN (found on dashboard or door jamb)</li>
-            <li><strong>Bikes & Electronics:</strong> Enter serial number</li>
+            <li><strong>Firearms:</strong> Gun serial number lookup against NCIC, ATF, and state stolen databases</li>
+            <li><strong>Phones & Tablets:</strong> IMEI checker for carrier blacklists and stolen reports</li>
+            <li><strong>Cars & Vehicles:</strong> VIN verification against NICB, insurance, and police records</li>
+            <li><strong>Bikes & Electronics:</strong> Serial number verification for stolen property</li>
           </ul>
           <h2 style={{ fontSize: '18px', marginTop: '20px', marginBottom: '12px' }}>How It Works:</h2>
           <ol style={{ marginBottom: '16px', paddingLeft: '20px' }}>
-            <li>Enter identifier (IMEI, VIN, or serial number)</li>
+            <li>Enter identifier (gun serial number, IMEI, VIN, or serial)</li>
             <li>We check 100+ databases including NCIC, NICB, carrier blacklists</li>
-            <li>Get instant results showing if item is safe or flagged</li>
+            <li>Get instant results showing if item is safe or flagged as stolen</li>
           </ol>
           <p style={{ marginBottom: '12px' }}><strong>Free Trial:</strong> 2 free checks, no credit card required.</p>
-          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>View Pricing</a> | <a href="/faq" style={{ color: '#0066cc' }}>FAQ</a></p>
+          <p><a href="/verify" style={{ color: '#0066cc' }}>Start Verification →</a> | <a href="/pricing" style={{ color: '#0066cc' }}>View Pricing</a> | <a href="/blog/gun-serial-number-lookup-free" style={{ color: '#0066cc' }}>Gun Serial Lookup Guide</a></p>
         </div>
       </noscript>
 
@@ -92,21 +93,22 @@ const Index = () => {
                 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
                 style={{ minHeight: 'clamp(2.5rem, 8vw, 4rem)', contain: 'layout style' }}
               >
-                Check If Secondhand Items Are Safe Or Stolen
+                Free Gun Serial Number, IMEI & VIN Lookup
               </h1>
               <p className="text-lg md:text-2xl font-medium text-foreground/80">
-                The <strong>ONLY</strong> Stolen Item Checker With A Mobile App
+                Check If Items Are Stolen — The <strong>ONLY</strong> Mobile App For Verification
               </p>
               
               {/* Static badges - no JS required, helps LCP */}
               <div className="flex flex-wrap justify-center gap-2 text-xs md:text-sm font-medium text-muted-foreground">
-                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">100+ Databases</span>
-                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">3-Second Results</span>
+                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">Gun Serial Lookup</span>
+                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">IMEI Checker</span>
+                <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full">VIN Verification</span>
                 <span className="bg-primary/10 px-2 md:px-3 py-1 rounded-full hidden sm:inline-flex">Used by Pawn Shops & Police</span>
               </div>
               
               <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time.
+                Cross-references <strong>NCIC stolen gun database</strong>, <strong>carrier blacklists</strong>, <strong>NICB vehicle records</strong>, and <strong>100+ global sources</strong> in 3 seconds.
               </p>
               
               {/* MOBILE CLS FIX: Fixed height container for QuickValueProof */}
