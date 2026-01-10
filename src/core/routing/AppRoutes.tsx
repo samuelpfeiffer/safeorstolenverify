@@ -92,6 +92,20 @@ const NintendoSwitchStolenCheck = lazy(() => import('@/pages/gaming/NintendoSwit
 const DeWaltSerialNumberCheck = lazy(() => import('@/pages/tools/DeWaltSerialNumberCheck'));
 const MilwaukeeToolVerification = lazy(() => import('@/pages/tools/MilwaukeeToolVerification'));
 
+// Marketplace Safety Guides
+const CraigslistSafetyGuide = lazy(() => import('@/pages/CraigslistSafetyGuide'));
+const OfferUpSafetyGuide = lazy(() => import('@/pages/OfferUpSafetyGuide'));
+const WhatHappensIfIBoughtStolenProperty = lazy(() => import('@/pages/WhatHappensIfIBoughtStolenProperty'));
+const HowToAvoidBuyingStolenGoods = lazy(() => import('@/pages/HowToAvoidBuyingStolenGoods'));
+
+// Gaming Console Pages
+const SteamDeckStolenCheck = lazy(() => import('@/pages/gaming/SteamDeckStolenCheck'));
+
+// Story Pages
+const WomanSavedFromStolenCar = lazy(() => import('@/pages/stories/WomanSavedFromStolenCar'));
+const PawnShopStolenLaptop = lazy(() => import('@/pages/stories/PawnShopStolenLaptop'));
+const RecoveredStolenBike = lazy(() => import('@/pages/stories/RecoveredStolenBike'));
+
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
 const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
@@ -650,6 +664,21 @@ export const AppRoutes = () => {
         <Route path="/is-this-gun-stolen" element={<CheckStolenFirearmPage />} />
         <Route path="/check-stolen-phone" element={<CheckStolenPhonePage />} />
         <Route path="/check-stolen-car" element={<CheckStolenCarPage />} />
+        
+        {/* MARKETPLACE SAFETY GUIDES */}
+        <Route path="/craigslist-safety-guide" element={<CraigslistSafetyGuide />} />
+        <Route path="/offerup-safety-guide" element={<OfferUpSafetyGuide />} />
+        <Route path="/what-happens-if-i-bought-stolen-property" element={<WhatHappensIfIBoughtStolenProperty />} />
+        <Route path="/how-to-avoid-buying-stolen-goods" element={<HowToAvoidBuyingStolenGoods />} />
+        
+        {/* GAMING CONSOLE CHECKS */}
+        <Route path="/steam-deck-stolen-check" element={<SteamDeckStolenCheck />} />
+        
+        {/* STORY PAGES */}
+        <Route path="/stories/woman-saved-from-stolen-car" element={<WomanSavedFromStolenCar />} />
+        <Route path="/stories/pawn-shop-stolen-laptop" element={<PawnShopStolenLaptop />} />
+        <Route path="/stories/recovered-stolen-bike" element={<RecoveredStolenBike />} />
+        
         {/* /stolen-phone-check and /stolen-car-check handled by server-side _redirects */}
 
         {/* EXPLICIT 404 PAGE */}

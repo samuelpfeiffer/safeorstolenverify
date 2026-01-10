@@ -1,10 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Search, MessageSquare, MapPin, DollarSign, Camera, FileText, Eye, ThumbsDown } from 'lucide-react';
+import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 const HowToAvoidBuyingStolenGoods = () => {
   const faqs = [
@@ -74,23 +73,15 @@ const HowToAvoidBuyingStolenGoods = () => {
 
   return (
     <>
-      <Helmet>
-        <title>How to Avoid Buying Stolen Goods - Complete 2025 Guide | SafeOrStolen</title>
-        <meta name="description" content="Don't get stuck with stolen property. Learn the 10 red flags, how to verify serial numbers, and protect yourself when buying used items online." />
-        <meta name="keywords" content="avoid buying stolen goods, how to tell if something is stolen, red flags stolen property, verify before buying, stolen item warning signs" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/how-to-avoid-buying-stolen-goods" />
-        <meta property="og:title" content="How to Avoid Buying Stolen Goods - Complete Guide" />
-        <meta property="og:description" content="Learn the warning signs of stolen property and how to protect yourself when buying used items." />
-        <meta property="og:url" content="https://safeorstolen.com/how-to-avoid-buying-stolen-goods" />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
-      </Helmet>
+      <PageSEO
+        title="How to Avoid Buying Stolen Goods - Complete 2026 Guide | SafeOrStolen"
+        description="Don't get stuck with stolen property. Learn the 10 red flags, how to verify serial numbers, and protect yourself when buying used items online."
+        keywords="avoid buying stolen goods, how to tell if something is stolen, red flags stolen property, verify before buying, stolen item warning signs"
+        canonical="/how-to-avoid-buying-stolen-goods"
+        structuredData={[faqSchema, howToSchema]}
+      />
 
-      <Navbar />
-
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         {/* Hero */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-green-900/20 via-background to-background">
           <div className="container mx-auto max-w-4xl text-center">
@@ -430,9 +421,7 @@ const HowToAvoidBuyingStolenGoods = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 };
