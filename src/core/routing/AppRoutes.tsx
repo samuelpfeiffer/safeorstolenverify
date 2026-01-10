@@ -78,6 +78,20 @@ const UnlimitedVINChecksPage = lazy(() => import('@/pages/UnlimitedVINChecksPage
 const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNumberSearchPage'));
 const HowToCheckSerialNumberPage = lazy(() => import('@/pages/HowToCheckSerialNumberPage'));
 
+// NEW TRAFFIC DOMINATION PAGES (Market Domination Strategy)
+const FacebookMarketplaceSafetyGuide = lazy(() => import('@/pages/FacebookMarketplaceSafetyGuide'));
+const IMEICheckPlusPage = lazy(() => import('@/pages/IMEICheckPlusPage'));
+const VINCheckCompletePage = lazy(() => import('@/pages/VINCheckCompletePage'));
+
+// Gaming Console Verification Hub
+const PS5StolenCheckPage = lazy(() => import('@/pages/gaming/PS5StolenCheckPage'));
+const XboxSeriesXStolenCheck = lazy(() => import('@/pages/gaming/XboxSeriesXStolenCheck'));
+const NintendoSwitchStolenCheck = lazy(() => import('@/pages/gaming/NintendoSwitchStolenCheck'));
+
+// Tool/Equipment Theft Hub
+const DeWaltSerialNumberCheck = lazy(() => import('@/pages/tools/DeWaltSerialNumberCheck'));
+const MilwaukeeToolVerification = lazy(() => import('@/pages/tools/MilwaukeeToolVerification'));
+
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
 const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
