@@ -60,7 +60,10 @@ const CheckJewelryPage = lazy(() => import('@/pages/CheckJewelryPage'));
 const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
+const CheckGunPage = lazy(() => import('@/pages/CheckGunPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
+const ReviewsPage = lazy(() => import('@/pages/ReviewsPage'));
+const NewsPage = lazy(() => import('@/pages/NewsPage'));
 const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternativePage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 const PS5SerialNumberCheckPage = lazy(() => import('@/pages/PS5SerialNumberCheckPage'));
@@ -427,6 +430,9 @@ export const AppRoutes = () => {
         <Route path="/vs-swappa" element={<VsSwappaPage />} />
         <Route path="/vs-carfax" element={<ComparisonCarfax />} />
         <Route path="/vs-autocheck" element={<ComparisonAutocheck />} />
+        <Route path="/check-gun" element={<CheckGunPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/news" element={<NewsPage />} />
         
         {/* NEW HIGH-VALUE COMPARISON PAGES */}
         <Route path="/comparisons/safeorstolen-vs-imei-info" element={<SafeOrStolenVsIMEIInfo />} />

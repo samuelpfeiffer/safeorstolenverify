@@ -559,6 +559,46 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /fastercapital/tech-cofounder  /about  301!
 
 # ============================================
+# TASK 1 REDIRECTS (January 2026)
+# ============================================
+/real-time-verification         /verify           301!
+/how-to-check-if-item-stolen    /verify           301!
+/transparency                   /about            301!
+/how-to-check-if-laptop-stolen  /check-laptop     301!
+/press-release                  /press-kit        301!
+/community                      /about            301!
+/comprehensive-guide            /about            301!
+/buy-used-electronics-safely    /verify           301!
+/statistics                     /about            301!
+/for-pawnshops                  /for-pawn-shops   301!
+/app/vs-imeipro                 /app              301!
+/app/vs-imeiinfo                /app              301!
+/buyer-guide                    /verify           301!
+/referral                       /pricing          301!
+/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983    /blog/understanding-imei-blacklists    301!
+/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027    /blog/understanding-imei-blacklists    301!
+/blog/how-law-enforcement-tracks-stolen-goods-1759827620043             /blog/how-law-enforcement-tracks-stolen-goods    301!
+/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229      /blog/pawn-shop-stolen-item-verification    301!
+/blog/playstation-5-serial-number-verification-guide-1                  /blog/playstation-5-serial-number-verification-guide    301!
+/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1        /blog/stolen-item-checker-new-york    301!
+/blog/los-angeles-imei-verification-phone-fraud-protection-1            /blog/los-angeles-imei-verification    301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide /blog/iphone-imei-check-guide    301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1 /blog/iphone-imei-check-guide    301!
+/blog/how-law-enforcement-tracks-stolen-goods-2                         /blog/how-law-enforcement-tracks-stolen-goods    301!
+/blog/imei-checker-guide-2025                   /blog/how-to-use-imei-checker-app    301!
+/blog/imei-check-everything                     /blog/how-to-use-imei-checker-app    301!
+/blog/protect-yourself-buying-used-electronics  /blog/avoid-buying-stolen-laptops    301!
+/blog/verify-used-electronics-before-buying     /blog/avoid-buying-stolen-laptops    301!
+/blog/buying-used-phones-red-flags              /blog/5-signs-used-phone-might-be-stolen    301!
+/blog/buying-used-bikes-verification-guide      /blog/bicycle-stolen-serial-number-check    301!
+/blog/safer-buying-workflow                     /verify                              301!
+/blog/data-source-credibility-stolen-goods-verification  /about                      301!
+/blog/ultimate-marketplace-buyers-guide         /verify                              301!
+/blog/complete-imei-guide-protect-yourself      /blog/how-to-use-imei-checker-app    301!
+/blog/safeorstolen-firearms-marketplace-verification     /check-gun                  301!
+/vs-stolenregister                 /vs/stolen-register               301!
+
+# ============================================
 # CITY PAGES CONSOLIDATION (GSC Soft 404 Fixes)
 # Keep top 5 cities, redirect others to /verify
 # ============================================
