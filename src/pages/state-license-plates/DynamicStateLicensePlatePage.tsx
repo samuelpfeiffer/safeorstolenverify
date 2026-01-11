@@ -32,9 +32,9 @@ const DynamicStateLicensePlatePage = ({ stateKey }: DynamicStateLicensePlatePage
   const stateData = STATE_LICENSE_PLATE_DATA[key];
   const { state, stateCode, slug, dmvName, dmvLink, topCities, theftStats, uniqueConcerns, requiresFrontPlate } = stateData;
 
-  const title = `${state} License Plate Lookup - Check ${stateCode} Vehicle Theft Status | SafeOrStolen`;
-  const metaDescription = `${state} license plate lookup to verify if a vehicle is stolen. Check ${stateCode} plates against ${dmvName} and law enforcement databases. Covers ${topCities.slice(0, 3).join(', ')}. Instant results.`;
-  const h1 = `${state} License Plate Lookup - Verify ${stateCode} Vehicles`;
+  const title = `Free ${state} License Plate Lookup - Check If Vehicle Is Stolen | SafeOrStolen`;
+  const metaDescription = `Free ${state} license plate lookup. Check if a car is stolen before buying. Instant ${stateCode} vehicle verification.`;
+  const h1 = `Free ${state} License Plate Lookup - Check If Vehicle Is Stolen`;
   const breadcrumbName = `${state} License Plate Lookup`;
 
   // Generate FAQs specific to this state

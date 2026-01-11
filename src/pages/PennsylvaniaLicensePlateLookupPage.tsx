@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const PennsylvaniaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Pennsylvania License Plate Lookup - Free PA Plate Search | SafeOrStolen"
-      metaDescription="Free Pennsylvania license plate lookup. Check PA vehicle ownership, theft records, registration status. Instant results from PA DMV database. Philadelphia, Pittsburgh, Allentown."
-      h1="Pennsylvania License Plate Lookup - Verify PA Vehicles Aren't Stolen"
+      title="Free Pennsylvania License Plate Lookup - Check If Vehicle Is Stolen | SafeOrStolen"
+      metaDescription="Free PA license plate lookup. Verify any Pennsylvania vehicle isn't stolen. Instant PennDOT records check."
+      h1="Free Pennsylvania License Plate Lookup - Check If Vehicle Is Stolen"
       itemType="Vehicle"
       keywords={[
         'pennsylvania license plate lookup',
