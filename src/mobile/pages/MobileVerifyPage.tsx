@@ -59,8 +59,8 @@ const MobileVerifyPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Mobile Verify - Quick Item Verification"
-        description="Verify items instantly on your mobile device"
+        title="Mobile Verify - Quick Item Verification | SafeOrStolen"
+        description="Verify items instantly on your mobile device. Check IMEI, VIN, and serial numbers with the SafeOrStolen mobile app."
         canonical="/mobile-verify"
       />
 
