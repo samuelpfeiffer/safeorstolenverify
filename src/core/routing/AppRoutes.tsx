@@ -37,6 +37,13 @@ const VsSwappaPage = lazy(() => import('@/pages/ComparisonSwappa'));
 const ComparisonCarfax = lazy(() => import('@/pages/ComparisonCarfax'));
 const ComparisonAutocheck = lazy(() => import('@/pages/ComparisonAutocheck'));
 
+// NEW VS Comparison Pages
+const TheftAZPage = lazy(() => import('@/pages/vs/TheftAZPage'));
+const StolenRegisterPage = lazy(() => import('@/pages/vs/StolenRegisterPage'));
+const CheckMendPage = lazy(() => import('@/pages/vs/CheckMendPage'));
+const CarfaxPage = lazy(() => import('@/pages/vs/CarfaxPage'));
+const NICBPage = lazy(() => import('@/pages/vs/NICBPage'));
+
 // NEW Comparison Pages (High-Value SEO)
 const SafeOrStolenVsIMEIInfo = lazy(() => import('@/pages/comparisons/SafeOrStolenVsIMEIInfo'));
 const SafeOrStolenVsSwappa = lazy(() => import('@/pages/comparisons/SafeOrStolenVsSwappa'));
@@ -316,7 +323,17 @@ export const AppRoutes = () => {
         <Route path="/check-boat" element={<CheckBoatPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
+        <Route path="/check-gun" element={<CheckGunPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        
+        {/* VS COMPARISON PAGES */}
+        <Route path="/vs/theftaz" element={<TheftAZPage />} />
+        <Route path="/vs/stolen-register" element={<StolenRegisterPage />} />
+        <Route path="/vs/checkmend" element={<CheckMendPage />} />
+        <Route path="/vs/carfax" element={<CarfaxPage />} />
+        <Route path="/vs/nicb" element={<NICBPage />} />
         <Route path="/free-carfax-alternative" element={<FreeCarfaxAlternativePage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/ps5-serial-number-check" element={<PS5SerialNumberCheckPage />} />

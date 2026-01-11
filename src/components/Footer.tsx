@@ -124,7 +124,7 @@ const Footer = () => {
                   <Facebook className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/safeorstolen/"
+                  href="https://www.linkedin.com/in/verifysafeorstolen/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Safe or Stolen on LinkedIn"

@@ -28,6 +28,7 @@ const CompactMobileAppCTA = lazy(() => import('@/components/home/CompactMobileAp
 const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChannelSection').then(m => ({ default: m.YouTubeChannelSection })));
 const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
 const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
+const SocialProofSection = lazy(() => import('@/components/home/SocialProofSection').then(m => ({ default: m.SocialProofSection })));
 
 // Deferred above-fold components (loaded after hero but before user interaction)
 const SocialProofBanner = lazy(() => import('@/components/conversion/SocialProofBanner').then(m => ({ default: m.SocialProofBanner })));
@@ -159,6 +160,13 @@ const Index = () => {
 
         {/* Substantial, user-visible body content (not lazy loaded) */}
         <HomeSEOBodyContent />
+
+        {/* Social Proof Section */}
+        <LazySection minHeight="200px">
+          <Suspense fallback={<SectionSkeleton />}>
+            <SocialProofSection />
+          </Suspense>
+        </LazySection>
 
         {/* Below-fold content - All lazy loaded */}
         <LazySection minHeight="80px">

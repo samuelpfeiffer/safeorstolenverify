@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const ArizonaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Arizona License Plate Lookup - Free TheftAZ Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free Arizona license plate lookup using TheftAZ database. Check if AZ vehicles are stolen via Arizona Attorney General's official database. Verify Phoenix, Tucson, Mesa vehicles instantly."
-      h1="Arizona License Plate Lookup - TheftAZ Stolen Vehicle Check"
+      title="Free Arizona License Plate Lookup - Check If Vehicle Is Stolen | SafeOrStolen"
+      metaDescription="Free Arizona license plate and VIN lookup. Check if a car is stolen. Search AZ DMV and police databases."
+      h1="Free Arizona License Plate Lookup - Check If Vehicle Is Stolen"
       itemType="Vehicle"
       keywords={[
         'theftaz',
