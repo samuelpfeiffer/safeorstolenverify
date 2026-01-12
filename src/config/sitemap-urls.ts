@@ -139,7 +139,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/stolen-check-san-jose', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
-  // BLOG ARTICLES (26)
+  // BLOG ARTICLES (32) - Including real pages that should be indexed
   // ============================================
   { path: '/blog', priority: 0.80, changefreq: 'weekly' },
   { path: '/blog/how-to-check-if-phone-stolen', priority: 0.75, changefreq: 'monthly' },
@@ -167,6 +167,10 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/blog/ps5-stolen-check-guide', priority: 0.80, changefreq: 'monthly' },
   { path: '/blog/carfax-vs-free-vin-alternatives', priority: 0.75, changefreq: 'monthly' },
   { path: '/blog/arizona-theftaz-guide', priority: 0.75, changefreq: 'monthly' },
+  // Real blog pages that should NOT redirect - ensure they're indexed
+  { path: '/blog/data-source-credibility', priority: 0.75, changefreq: 'monthly' },
+  { path: '/contact', priority: 0.70, changefreq: 'monthly' },
+  { path: '/stolen-database', priority: 0.75, changefreq: 'daily' },
 
   // ============================================
   // HIGH-TRAFFIC SEARCH LANDING PAGES (7)

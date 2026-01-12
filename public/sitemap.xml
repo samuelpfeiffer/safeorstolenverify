@@ -672,6 +672,55 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+  <!-- Real blog pages that should be indexed (removed from redirects) -->
+  <url>
+    <loc>https://safeorstolen.com/blog/like-carfax-for-phones</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/phone-verification-guide</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/real-user-stories</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/verification-methodology</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/data-source-credibility</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/imei-checker-app-download</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/contact</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/stolen-database</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.75</priority>
+  </url>
 
   <!-- ============================================ -->
   <!-- FREE TOOLS & RESOURCES -->
