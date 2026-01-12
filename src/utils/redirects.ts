@@ -174,6 +174,12 @@ export const REDIRECT_RULES: RedirectRule[] = [
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
   { from: '/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
+  { from: '/vs-imei pro', to: '/vs-imeiinfo', permanent: true },
+
+  // ===== SOFT 404 FIX - Jan 2026 GSC Validation =====
+  { from: '/blog/safer-buying-workflow', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
+  { from: '/our-mission', to: '/about', permanent: true },
+  { from: '/check-ebike', to: '/check-bike', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
