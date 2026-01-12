@@ -425,8 +425,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /blog/2025-stolen-goods-statistics                              /blog            301!
 /blog/most-stolen-items-2025                                    /blog            301!
-/blog/how-to-use-imei-checker-app                               /blog            301!
-/blog/business-guide-preventing-stolen-goods                    /blog            301!
+/blog/business-guide-preventing-stolen-goods                    /for-pawn-shops  301!
 /blog/mobile-app-features                                       /app             301!
 /blog/industry-insights-2024                                    /blog            301!
 /blog/what-to-do-if-you-bought-stolen                           /blog            301!
@@ -441,7 +440,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/imei-checker-app-comparison                               /blog/imei-checker-app-download  301!
 /blog/best-imei-checker-tools-2025                              /blog/complete-imei-guide-protect-yourself  301!
 /blog/how-to-check-if-phone-is-stolen                           /blog/how-to-check-if-phone-stolen  301!
-/blog/how-to-check-phone-stolen                                 /blog/how-to-check-if-phone-stolen  301!
 /blog/why-verify-serial-numbers                                 /blog/complete-verification-guide  301!
 /blog/complete-marketplace-buyers-checklist                     /blog/ultimate-marketplace-buyers-guide  301!
 /blog/imei-verification-guide                                   /blog/complete-imei-guide-protect-yourself  301!
@@ -452,25 +450,16 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/scan-and-verify-using-safeorstolen-camera-feature-*       /app             301!
 /blog/stolen-item-checker-in-new-york-city-complete-2025-guide-* /blog  301!
 /blog/los-angeles-imei-verification-phone-fraud-protection-*     /blog  301!
-/blog/understanding-imei-blacklists-and-what-they-mean-*         /blog  301!
-/blog/how-law-enforcement-tracks-stolen-goods-*                  /blog  301!
-/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog  301!
-/blog/craigslist-scam-prevention-item-verification-checklist     /blog  301!
-/blog/theft-trends-report-2024                                   /blog  301!
-/blog/bicycle-stolen-serial-number-check                         /check-bike  301!
-/blog/firearm-serial-number-verification                         /firearms-check  301!
-/blog/verify-item-before-meetup                                  /blog/ultimate-marketplace-buyers-guide  301!
-/blog/pawn-shop-stolen-item-verification                         /blog  301!
-/blog/imei-checker-app-download                                  /app  301!
-/blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
-/blog/5-signs-used-phone-might-be-stolen                         /blog/how-to-check-if-phone-stolen  301!
+/blog/understanding-imei-blacklists-and-what-they-mean-*         /blog/understanding-imei-blacklists  301!
+/blog/how-law-enforcement-tracks-stolen-goods-*                  /blog/how-law-enforcement-tracks-stolen-goods  301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog/iphone-imei-check-guide  301!
+/blog/craigslist-scam-prevention-item-verification-checklist     /verify  301!
 /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
-/blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
+/blog/verify-item-before-meetup                                  /verify  301!
 /blog/our-mission                      /about            301!
 /blog/how-to-check-if-device-is-safe-stolen         /blog/how-to-check-if-phone-stolen  301!
 /blog/the-cost-of-secondhand-market-fraud-in-2025-* /blog  301!
 /blog/verification-methodology-how-we-check-stolen-items /about  301!
-/blog/*-*.* /blog 301!
 
 # ============================================
 # TERMS/LEGAL PAGE REDIRECTS
