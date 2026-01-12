@@ -86,12 +86,13 @@ const AuthAwareContent: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Auth timeout - show content after 800ms even if auth isn't ready
-  // Reduced from 2s to improve LCP - prevents stuck loading
+  // Auth timeout - show content after 500ms even if auth isn't ready
+  // Reduced from 800ms to improve FCP/LCP for Googlebot
+  // Googlebot only waits ~5 seconds for JS execution
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAuthTimeout(true);
-    }, 800);
+    }, 500);
     return () => clearTimeout(timeout);
   }, []);
   
