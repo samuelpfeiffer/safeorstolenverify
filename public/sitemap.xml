@@ -221,6 +221,12 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/check-trailer</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/firearms-check</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>weekly</changefreq>

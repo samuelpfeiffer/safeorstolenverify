@@ -65,6 +65,7 @@ const CheckAppliancesPage = lazy(() => import('@/pages/CheckAppliancesPage'));
 const CheckToolsPage = lazy(() => import('@/pages/CheckToolsPage'));
 const CheckJewelryPage = lazy(() => import('@/pages/CheckJewelryPage'));
 const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
+const CheckTrailerPage = lazy(() => import('@/pages/CheckTrailerPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
 const CheckGunPage = lazy(() => import('@/pages/CheckGunPage'));
@@ -327,6 +328,7 @@ export const AppRoutes = () => {
         <Route path="/check-tools" element={<CheckToolsPage />} />
         <Route path="/check-jewelry" element={<CheckJewelryPage />} />
         <Route path="/check-boat" element={<CheckBoatPage />} />
+        <Route path="/check-trailer" element={<CheckTrailerPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
         <Route path="/check-gun" element={<CheckGunPage />} />
