@@ -29,7 +29,9 @@ serve(async (req) => {
       );
     }
 
-    console.log(`[verify-item] Starting verification for ${itemType}: ${identifier}`);
+    // Security: Log only sanitized identifier prefix (no full values)
+    const identifierPreview = identifier.substring(0, 4) + '***';
+    console.log(`[verify-item] Starting verification for ${itemType}: ${identifierPreview}`);
     const startTime = Date.now();
 
     const supabaseClient = createClient(
@@ -38,17 +40,50 @@ serve(async (req) => {
     );
 
     const cleanIdentifier = identifier.trim().toUpperCase();
+    
+    // Security: Validate identifier format before any database operations
+    // Only allow alphanumeric characters, hyphens, and underscores
+    if (!/^[A-Z0-9\-_]+$/i.test(cleanIdentifier)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid identifier format. Only letters, numbers, hyphens, and underscores are allowed.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // Additional length validation
+    if (cleanIdentifier.length < 3 || cleanIdentifier.length > 50) {
+      return new Response(
+        JSON.stringify({ error: 'Identifier must be between 3 and 50 characters' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
     // Escape ILIKE special characters to prevent pattern injection attacks
     const escapedIdentifier = escapeILikePattern(cleanIdentifier);
     const providers: any[] = [];
 
-    // 1. Check internal stolen_items database first
+    // 1. Check internal stolen_items database first using exact match for better security
     try {
-      const { data: stolenItems, error } = await supabaseClient
+      // Use exact match queries instead of ILIKE pattern matching for primary check
+      const { data: exactMatches, error: exactError } = await supabaseClient
         .from('stolen_items')
         .select('*')
-        .or(`serial_number.ilike.%${escapedIdentifier}%,imei.ilike.%${escapedIdentifier}%,vin.ilike.%${escapedIdentifier}%`)
+        .or(`serial_number.eq.${cleanIdentifier},imei.eq.${cleanIdentifier},vin.eq.${cleanIdentifier}`)
         .limit(5);
+      
+      // Fallback to partial match only if exact match finds nothing (with properly escaped pattern)
+      let stolenItems = exactMatches;
+      let error = exactError;
+      
+      if (!exactError && (!exactMatches || exactMatches.length === 0)) {
+        const { data: partialMatches, error: partialError } = await supabaseClient
+          .from('stolen_items')
+          .select('*')
+          .or(`serial_number.ilike.%${escapedIdentifier}%,imei.ilike.%${escapedIdentifier}%,vin.ilike.%${escapedIdentifier}%`)
+          .limit(5);
+        stolenItems = partialMatches;
+        error = partialError;
+      }
 
       if (!error && stolenItems && stolenItems.length > 0) {
         providers.push({
