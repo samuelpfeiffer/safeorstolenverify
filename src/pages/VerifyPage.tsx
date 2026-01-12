@@ -3,17 +3,15 @@
  * All verification happens here with item type cards, scanner, and voice search
  */
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, Monitor, CircuitBoard, Crosshair, FileText, Mic, MicOff, Link2, ExternalLink, CheckCircle, ShieldAlert, Tag } from 'lucide-react';
+import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, Monitor, CircuitBoard, Crosshair, FileText, Mic, MicOff, Link2, Sparkles } from 'lucide-react';
 import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
-import { VerificationProgress } from '@/components/verification/VerificationProgress';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
@@ -26,11 +24,11 @@ import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
+import { MarketplaceUrlAnalyzer } from '@/components/search/MarketplaceUrlAnalyzer';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTypingAnimation } from '@/hooks/useTypingAnimation';
-import { useMarketplaceUrlAnalyzer } from '@/hooks/useMarketplaceUrlAnalyzer';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import { cn } from '@/lib/utils';
 import type { AggregatedResult } from '@/services/VerificationService';
 
 // Item type configuration for quick-select cards
@@ -51,41 +49,13 @@ const VerifyPage = () => {
   const [stateCode, setStateCode] = useState('');
   const [customResult, setCustomResult] = useState<AggregatedResult | null>(null);
   const [isScannerOpen, setIsScannerOpen] = useState(false);
-  const { verify, isLoading: verifyLoading, result: hookResult, progress } = useParallelVerification();
+  const [urlFromParams, setUrlFromParams] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<'manual' | 'url'>('manual');
+  const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
   const { isAuthenticated } = useUnifiedAuth();
   const { remainingSearches, isSubscribed } = useSearchLimits();
   const { pendingVerification, savePendingVerification } = usePendingVerification();
   const navigate = useNavigate();
-
-  // Marketplace URL analyzer integration
-  const {
-    isAnalyzing: urlAnalyzing,
-    analysis: urlAnalysis,
-    analyzeUrl,
-    reset: resetUrlAnalysis,
-    detectMarketplaceFromUrl,
-    supportedMarketplaces
-  } = useMarketplaceUrlAnalyzer();
-
-  // Combined loading state
-  const isLoading = verifyLoading || urlAnalyzing;
-
-  // Detect if input is a URL
-  const isUrl = useMemo(() => {
-    const trimmed = identifier.trim().toLowerCase();
-    return trimmed.startsWith('http://') || trimmed.startsWith('https://') || 
-           trimmed.includes('facebook.com') || trimmed.includes('ebay.com') ||
-           trimmed.includes('craigslist.org') || trimmed.includes('offerup.com') ||
-           trimmed.includes('mercari.com') || trimmed.includes('poshmark.com');
-  }, [identifier]);
-
-  // Detect marketplace from URL input
-  const detectedMarketplace = useMemo(() => {
-    if (isUrl) {
-      return detectMarketplaceFromUrl(identifier);
-    }
-    return null;
-  }, [identifier, isUrl, detectMarketplaceFromUrl]);
 
   // Voice search integration
   const { isListening, isSupported: voiceSupported, startListening, stopListening } = useVoiceSearch({
@@ -96,7 +66,7 @@ const VerifyPage = () => {
 
   // Typing animation for placeholder
   const typingText = useTypingAnimation({
-    words: ['Serial Number', 'VIN', 'IMEI', 'License Plate', 'Marketplace URL', 'eBay Link', 'FB Marketplace'],
+    words: ['Serial Number', 'VIN', 'IMEI', 'License Plate', 'Phone IMEI', 'Vehicle VIN', 'Laptop Serial'],
     typingSpeed: 80,
     deletingSpeed: 40,
     pauseTime: 1500,
@@ -109,6 +79,7 @@ const VerifyPage = () => {
     const typeParam = searchParams.get('type');
     const scanParam = searchParams.get('scan');
     const qParam = searchParams.get('q');
+    const urlParam = searchParams.get('url');
 
     if (typeParam) {
       setItemType(typeParam);
@@ -116,6 +87,11 @@ const VerifyPage = () => {
 
     if (qParam) {
       setIdentifier(decodeURIComponent(qParam));
+    }
+
+    if (urlParam) {
+      setUrlFromParams(decodeURIComponent(urlParam));
+      setActiveTab('url');
     }
 
     if (scanParam === 'true') {
@@ -164,13 +140,19 @@ const VerifyPage = () => {
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Clear previous results
-    setCustomResult(null);
-    resetUrlAnalysis();
+    // CRITICAL: Require authentication for all verifications
+    if (!isAuthenticated) {
+      const trimmed = identifier.trim();
 
-    // If input is a URL, analyze it first
-    if (isUrl) {
-      await analyzeUrl(identifier.trim());
+      // Best-effort: save the user's typed identifier so we can restore it post-auth
+      if (trimmed) {
+        savePendingVerification(trimmed, itemType || undefined, 'buyer').catch(() => {
+          // Ignore errors here; URL redirect still preserves the value
+        });
+      }
+
+      const redirect = `/verify?q=${encodeURIComponent(trimmed)}${itemType ? `&type=${encodeURIComponent(itemType)}` : ''}`;
+      navigate(`/auth?tab=signup&redirect=${encodeURIComponent(redirect)}`);
       return;
     }
 
@@ -301,16 +283,56 @@ const VerifyPage = () => {
         <div className="text-center space-y-3">
           <SocialProofBanner />
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            Verify Any Item Instantly
+            Paste URL or Enter ID — Check in Seconds
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Check IMEI, VIN, or serial numbers against 100+ databases in seconds.
+            <strong className="text-secondary">Only SafeOrStolen</strong> can analyze marketplace listing URLs. Or manually enter IMEI, VIN, serial numbers.
           </p>
           <DataPartnerBadges variant="minimal" className="mt-4" />
         </div>
 
-        {/* Search Section */}
-        <div className="space-y-6">
+        {/* Input Method Tabs */}
+        <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'manual' | 'url')} className="w-full">
+          <TabsList className="grid w-full grid-cols-2 mb-6 bg-muted/50 p-1 h-auto">
+            <TabsTrigger 
+              value="url" 
+              className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span className="font-semibold">Paste Listing URL</span>
+              <span className="hidden sm:inline text-xs bg-secondary/20 px-2 py-0.5 rounded-full">UNIQUE</span>
+            </TabsTrigger>
+            <TabsTrigger 
+              value="manual" 
+              className="flex items-center gap-2 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              <Search className="w-4 h-4" />
+              <span className="font-semibold">Enter ID Manually</span>
+            </TabsTrigger>
+          </TabsList>
+
+          {/* URL PASTE TAB */}
+          <TabsContent value="url" className="mt-0">
+            <Card className="border-2 border-secondary/30">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Link2 className="w-5 h-5 text-secondary" />
+                  Analyze Marketplace Listing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <MarketplaceUrlAnalyzer 
+                  onIdentifierFound={(id) => {
+                    setIdentifier(id);
+                    setActiveTab('manual');
+                  }}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* MANUAL ENTRY TAB */}
+          <TabsContent value="manual" className="mt-0 space-y-6">
 
         {/* Quick-Select Item Type Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
@@ -339,148 +361,103 @@ const VerifyPage = () => {
         )}
 
         {/* Search Form */}
-        <Card className={cn(isUrl && "border-2 border-secondary/50")}>
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              {isUrl ? (
-                <>
-                  <Link2 className="w-5 h-5 text-secondary" />
-                  Analyze Marketplace Listing
-                </>
-              ) : (
-                <>
-                  <Shield className="w-5 h-5" />
-                  Enter Item Information
-                </>
-              )}
+              <Shield className="w-5 h-5" />
+              Enter Item Information
             </CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleVerify} className="space-y-4">
-              {/* Unified Input - Detects URL vs Identifier */}
-              <div className="space-y-2">
-                <div className="flex gap-2">
-                  <div className="relative flex-1">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="md:col-span-2 relative">
+                  <div className="flex gap-2">
                     <Input
                       type="text"
-                      placeholder={itemType === 'license_plate' ? 'License Plate Number' : `Enter ${typingText} or paste URL...`}
+                      placeholder={itemType === 'license_plate' ? 'License Plate Number' : `Enter ${typingText}...`}
                       value={identifier}
-                      onChange={(e) => {
-                        setIdentifier(e.target.value);
-                        // Reset URL analysis when input changes
-                        if (urlAnalysis) resetUrlAnalysis();
-                      }}
+                      onChange={(e) => setIdentifier(e.target.value)}
                       disabled={isLoading}
-                      className={cn(
-                        "text-lg py-6 pr-24",
-                        isUrl && "border-secondary focus:ring-secondary"
-                      )}
+                      className="text-lg py-6 flex-1"
                       required
                     />
-                    {/* Detection Badge */}
-                    {identifier.trim() && (
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                        {isUrl ? (
-                          <Badge variant="secondary" className="bg-secondary/20 text-secondary">
-                            {detectedMarketplace || 'URL'}
-                          </Badge>
-                        ) : (
-                          <Badge variant="outline" className="text-xs">
-                            ID
-                          </Badge>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => setIsScannerOpen(true)}
-                    disabled={isLoading}
-                    className="h-auto py-6 px-4 gap-2"
-                    title="Scan barcode"
-                  >
-                    <Camera className="w-5 h-5" />
-                    <span className="hidden sm:inline">Scan</span>
-                  </Button>
-                  {voiceSupported && (
                     <Button
                       type="button"
-                      variant={isListening ? "default" : "outline"}
-                      onClick={isListening ? stopListening : startListening}
+                      variant="outline"
+                      onClick={() => setIsScannerOpen(true)}
                       disabled={isLoading}
-                      className={cn(
-                        "h-auto py-6 px-4 gap-2",
-                        isListening && "bg-red-500 hover:bg-red-600"
-                      )}
-                      title={isListening ? "Stop listening" : "Voice search"}
+                      className="h-auto py-6 px-4 gap-2"
+                      title="Scan barcode"
                     >
-                      {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
-                      <span className="hidden sm:inline">{isListening ? 'Stop' : 'Voice'}</span>
+                      <Camera className="w-5 h-5" />
+                      <span className="hidden sm:inline">Scan</span>
                     </Button>
-                  )}
+                    {voiceSupported && (
+                      <Button
+                        type="button"
+                        variant={isListening ? "default" : "outline"}
+                        onClick={isListening ? stopListening : startListening}
+                        disabled={isLoading}
+                        className={`h-auto py-6 px-4 gap-2 ${isListening ? 'bg-red-500 hover:bg-red-600' : ''}`}
+                        title={isListening ? "Stop listening" : "Voice search"}
+                      >
+                        {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+                        <span className="hidden sm:inline">{isListening ? 'Stop' : 'Voice'}</span>
+                      </Button>
+                    )}
+                  </div>
                 </div>
-                
-                {/* Supported Marketplaces hint when URL mode */}
-                {isUrl && (
-                  <p className="text-xs text-muted-foreground flex items-center gap-1">
-                    <CheckCircle className="w-3 h-3 text-green-500" />
-                    Supports: Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark
-                  </p>
-                )}
+                <Select value={itemType} onValueChange={setItemType} disabled={isLoading}>
+                  <SelectTrigger className="py-6">
+                    <SelectValue placeholder="Auto-detect type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="smartphone">Mobile Phone</SelectItem>
+                    <SelectItem value="vehicle">Vehicle (VIN)</SelectItem>
+                    <SelectItem value="license_plate">License Plate</SelectItem>
+                    <SelectItem value="laptop">Laptop</SelectItem>
+                    <SelectItem value="bicycle">Bicycle</SelectItem>
+                    <SelectItem value="electronics">Electronics</SelectItem>
+                    <SelectItem value="firearm">Firearm</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
-              {/* Item Type Selector - Only for non-URL mode */}
-              {!isUrl && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Select value={itemType} onValueChange={setItemType} disabled={isLoading}>
-                    <SelectTrigger className="py-6">
-                      <SelectValue placeholder="Auto-detect type" />
+              {/* State selector - only shown for license plates */}
+              {itemType === 'license_plate' && (
+                <div className="space-y-2">
+                  <label htmlFor="state-select" className="text-sm font-medium">
+                    Select State *
+                  </label>
+                  <Select value={stateCode} onValueChange={setStateCode} disabled={isLoading} required>
+                    <SelectTrigger id="state-select" className="py-6">
+                      <SelectValue placeholder="Choose a state" />
                     </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="smartphone">Mobile Phone</SelectItem>
-                      <SelectItem value="vehicle">Vehicle (VIN)</SelectItem>
-                      <SelectItem value="license_plate">License Plate</SelectItem>
-                      <SelectItem value="laptop">Laptop</SelectItem>
-                      <SelectItem value="bicycle">Bicycle</SelectItem>
-                      <SelectItem value="electronics">Electronics</SelectItem>
-                      <SelectItem value="firearm">Firearm</SelectItem>
+                    <SelectContent className="max-h-[300px]">
+                      {US_STATES.map((state) => (
+                        <SelectItem key={state.code} value={state.code}>
+                          {state.name} ({state.code})
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
-                  
-                  {/* State selector - only shown for license plates */}
-                  {itemType === 'license_plate' && (
-                    <Select value={stateCode} onValueChange={setStateCode} disabled={isLoading} required>
-                      <SelectTrigger className="py-6">
-                        <SelectValue placeholder="Select State *" />
-                      </SelectTrigger>
-                      <SelectContent className="max-h-[300px]">
-                        {US_STATES.map((state) => (
-                          <SelectItem key={state.code} value={state.code}>
-                            {state.name} ({state.code})
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  )}
+                  <p className="text-xs text-muted-foreground">
+                    License plate checks use state-specific databases and parallel verification
+                  </p>
                 </div>
               )}
 
               <Button
                 type="submit"
                 size="lg"
-                disabled={isLoading || !identifier.trim() || (!isUrl && itemType === 'license_plate' && !stateCode)}
-                className={cn("w-full", isUrl && "bg-secondary hover:bg-secondary/90")}
+                disabled={isLoading || !identifier.trim() || (itemType === 'license_plate' && !stateCode)}
+                className="w-full"
               >
                 {isLoading ? (
                   <>
                     <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                    {isUrl ? 'Analyzing...' : 'Verifying...'}
-                  </>
-                ) : isUrl ? (
-                  <>
-                    <Link2 className="w-5 h-5 mr-2" />
-                    Analyze Listing
+                    Verifying...
                   </>
                 ) : (
                   <>
@@ -490,163 +467,18 @@ const VerifyPage = () => {
                 )}
               </Button>
 
+              {progress && (
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground animate-pulse">
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  {progress}
+                </div>
+              )}
             </form>
-
-            {/* Real-time Progress Indicator */}
-            {isLoading && !isUrl && (
-              <VerificationProgress 
-                itemType={itemType || 'general'} 
-                isActive={isLoading} 
-              />
-            )}
-
-            {/* URL Analysis Results */}
-            {urlAnalysis && urlAnalysis.success && (
-              <div className="mt-6 space-y-4 p-4 border-2 border-secondary/30 rounded-lg bg-secondary/5">
-                {/* Header */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="bg-secondary/20">
-                      {urlAnalysis.marketplace?.name}
-                    </Badge>
-                    {urlAnalysis.aiAnalyzed && (
-                      <Badge variant="outline" className="text-xs">
-                        AI Analyzed
-                      </Badge>
-                    )}
-                  </div>
-                  <a 
-                    href={urlAnalysis.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1"
-                  >
-                    View Original <ExternalLink className="h-3 w-3" />
-                  </a>
-                </div>
-
-                {/* Item Details */}
-                {urlAnalysis.itemDetails && (
-                  <div className="space-y-2">
-                    {(urlAnalysis.itemDetails.title || urlAnalysis.itemDetails.sourceTitle) && (
-                      <h4 className="font-semibold text-foreground">
-                        {urlAnalysis.itemDetails.title || urlAnalysis.itemDetails.sourceTitle}
-                      </h4>
-                    )}
-                    {urlAnalysis.itemDetails.price && (
-                      <div className="flex items-center gap-2">
-                        <Tag className="h-4 w-4 text-muted-foreground" />
-                        <span className="font-medium text-lg">{urlAnalysis.itemDetails.price}</span>
-                      </div>
-                    )}
-                    {urlAnalysis.itemDetails.seller && (
-                      <p className="text-sm text-muted-foreground">
-                        Seller: {urlAnalysis.itemDetails.seller}
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {/* Identifiers Found - Click to Verify */}
-                {urlAnalysis.identifiers && urlAnalysis.identifiers.length > 0 && (
-                  <div className="space-y-2">
-                    <h5 className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600" />
-                      Identifiers Found - Click to Verify
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
-                      {urlAnalysis.identifiers.map((id: { value: string; type: string }, index: number) => (
-                        <Button
-                          key={index}
-                          variant="outline"
-                          size="sm"
-                          onClick={() => {
-                            setIdentifier(id.value);
-                            setItemType(id.type === 'IMEI' ? 'smartphone' : id.type === 'VIN' ? 'vehicle' : '');
-                            resetUrlAnalysis();
-                          }}
-                          className="flex items-center gap-2 border-green-200 hover:border-green-400 hover:bg-green-50"
-                        >
-                          <Badge variant="secondary" className="text-xs">
-                            {id.type}
-                          </Badge>
-                          <span className="font-mono text-sm">{id.value}</span>
-                          <Search className="h-3 w-3" />
-                          Verify
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Risk Factors */}
-                {urlAnalysis.riskFactors && urlAnalysis.riskFactors.length > 0 && (
-                  <div className="space-y-2">
-                    <h5 className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <ShieldAlert className="h-4 w-4 text-yellow-600" />
-                      Risk Factors ({urlAnalysis.riskFactors.length})
-                    </h5>
-                    <div className="p-3 rounded-lg bg-yellow-100">
-                      <ul className="space-y-1">
-                        {urlAnalysis.riskFactors.map((risk: string, index: number) => (
-                          <li key={index} className="flex items-start gap-2 text-sm">
-                            <AlertTriangle className="h-4 w-4 mt-0.5 flex-shrink-0 text-yellow-600" />
-                            <span>{risk}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-
-                {/* No Identifiers Warning */}
-                {(!urlAnalysis.identifiers || urlAnalysis.identifiers.length === 0) && (
-                  <div className="p-3 rounded-lg bg-yellow-50 border border-yellow-200">
-                    <div className="flex items-start gap-2">
-                      <AlertTriangle className="h-4 w-4 text-yellow-600 mt-0.5" />
-                      <div>
-                        <p className="text-sm font-medium text-yellow-800">No identifiers found</p>
-                        <p className="text-xs text-yellow-700 mt-1">
-                          This listing doesn't include visible serial numbers, IMEIs, or VINs. 
-                          Ask the seller for the identifier before purchasing.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Action Buttons */}
-                <div className="flex gap-2 pt-2">
-                  <Button variant="outline" size="sm" onClick={() => {
-                    setIdentifier('');
-                    resetUrlAnalysis();
-                  }}>
-                    Analyze Another
-                  </Button>
-                </div>
-              </div>
-            )}
-
-            {/* URL Analysis Error */}
-            {urlAnalysis && !urlAnalysis.success && (
-              <div className="mt-4 p-4 border border-destructive/50 bg-destructive/5 rounded-lg">
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-destructive">Analysis Failed</p>
-                    <p className="text-sm text-muted-foreground mt-1">{urlAnalysis.error}</p>
-                    <Button variant="outline" size="sm" onClick={resetUrlAnalysis} className="mt-3">
-                      Try Again
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            )}
           </CardContent>
         </Card>
 
         {/* Info Card */}
-        {!result && !isLoading && !urlAnalysis && (
+        {!result && !isLoading && (
           <Card className="bg-muted/50">
             <CardContent className="pt-6">
               <div className="flex items-start gap-4">
@@ -663,17 +495,17 @@ const VerifyPage = () => {
                     <li>• HotGunz (US Firearms Database)</li>
                     <li>• StolenRegister.com (Worldwide Property)</li>
                     <li>• Immobilize (US Property Registry)</li>
-                    <li>• <strong>Marketplace URL Analysis</strong> (Facebook, eBay, Craigslist, OfferUp, Mercari)</li>
                   </ul>
                   <p className="text-xs text-muted-foreground pt-2">
-                    Paste a marketplace URL or enter an identifier directly. All checks are performed in parallel.
+                    All checks are performed in parallel for fast results. Some databases may require manual verification via redirect.
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
         )}
-        </div>
+          </TabsContent>
+        </Tabs>
 
         {/* Results */}
         {result && (

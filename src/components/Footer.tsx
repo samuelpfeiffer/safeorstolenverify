@@ -47,14 +47,14 @@ const Footer = () => {
     label: 'Help Center',
     href: '/faq'
   }, {
-    label: 'Contact Us',
-    href: '/contact'
+    label: 'API Documentation',
+    href: '/about'
   }, {
-    label: 'For Buyers',
-    href: '/for-buyers'
+    label: 'System Status',
+    href: '/about'
   }, {
-    label: 'For Sellers',
-    href: '/for-sellers'
+    label: 'Report Issue',
+    href: '/about'
   }];
   const trustIndicators = ["SOC 2 Type II Compliant", "256-bit SSL Encryption", "GDPR Compliant", "Real-time Database Access"];
   return <footer className="bg-gradient-to-b from-card/20 to-card/40 border-t border-border">
@@ -124,7 +124,7 @@ const Footer = () => {
                   <Facebook className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/verifysafeorstolen/"
+                  href="https://www.linkedin.com/company/safeorstolen/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Safe or Stolen on LinkedIn"
@@ -304,7 +304,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="text-sm text-muted-foreground">
-                © 2025 SafeOrStolen. All rights reserved.
+                © 2024 SafeOrStolen. All rights reserved.
               </div>
               <FasterCapitalBranding />
             </div>

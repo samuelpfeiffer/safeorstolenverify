@@ -28,7 +28,7 @@ const MobileDashboardPage: React.FC = () => {
     setTimeout(() => setRefreshing(false), 500);
   };
 
-  const { handleTouchStart, handleTouchEnd } = useGestures({
+  const gestures = useGestures({
     onSwipeDown: handleRefresh
   });
 
@@ -81,16 +81,14 @@ const MobileDashboardPage: React.FC = () => {
   return (
     <>
       <PageSEO
-        title="Mobile Dashboard - Verification History | SafeOrStolen"
-        description="View your verification history and track all your IMEI, VIN, and serial number checks on the SafeOrStolen mobile app."
+        title="Mobile Dashboard - Verification History"
+        description="View your verification history"
         canonical="/mobile-dashboard"
-        noIndex={false}
       />
 
       <div 
         className="min-h-screen bg-gradient-to-b from-background to-muted pb-20"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        {...gestures}
       >
         <div className="container mx-auto px-4 py-6">
           {/* Header */}

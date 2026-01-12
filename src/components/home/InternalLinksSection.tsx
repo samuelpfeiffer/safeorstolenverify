@@ -1,85 +1,80 @@
 import { Link } from 'react-router-dom';
 import { 
-  Car, Smartphone, MapPin, Building2, Scale, BookOpen, ChevronRight, Watch, Gamepad2, Shield, Search
+  Car, Smartphone, MapPin, Building2, Scale, BookOpen, ChevronRight 
 } from 'lucide-react';
 
 export const InternalLinksSection = () => {
   const linkCategories = [
     {
-      title: "Item Verification",
+      title: "Verification Tools",
       icon: Smartphone,
       links: [
+        { to: "/imei-checker", label: "IMEI Checker" },
+        { to: "/vin-checker", label: "VIN Checker" },
+        { to: "/serial-number-checker", label: "Serial Number Checker" },
+        { to: "/firearms-check", label: "Gun Serial Lookup" },
         { to: "/check-phone", label: "Check Phone" },
         { to: "/check-car", label: "Check Car" },
-        { to: "/check-laptop", label: "Check Laptop" },
-        { to: "/check-bike", label: "Check Bike" },
-        { to: "/check-electronics", label: "Check Electronics" },
-        { to: "/ps5-serial-number-check", label: "PS5 Check" },
-        { to: "/firearms-check", label: "Check Firearm" },
-        { to: "/rolex-serial-number-check", label: "Rolex Check" },
       ]
     },
     {
-      title: "Identifier Tools",
-      icon: Scale,
-      links: [
-        { to: "/verify", label: "Universal Checker" },
-        { to: "/imei-checker", label: "IMEI Checker" },
-        { to: "/imei-check-free", label: "Free IMEI Check" },
-        { to: "/vin-checker", label: "VIN Checker" },
-        { to: "/unlimited-vin-checks", label: "Unlimited VIN" },
-        { to: "/serial-number-checker", label: "Serial Checker" },
-        { to: "/how-to-check-serial-number", label: "Serial Guide" },
-        { to: "/gun-serial-number-lookup", label: "Gun Serial Lookup" },
-      ]
-    },
-    {
-      title: "State Databases",
+      title: "State VIN Lookup",
       icon: Car,
       links: [
-        { to: "/arizona-stolen-property-database", label: "Arizona Database" },
-        { to: "/stolen-vehicle-database-arizona", label: "AZ Vehicles" },
-        { to: "/arizona-vin-lookup", label: "Arizona VIN" },
-        { to: "/california-vin-lookup", label: "California VIN" },
-        { to: "/texas-vin-lookup", label: "Texas VIN" },
-        { to: "/florida-vin-lookup", label: "Florida VIN" },
+        { to: "/california-vin-lookup", label: "California" },
+        { to: "/texas-vin-lookup", label: "Texas" },
+        { to: "/florida-vin-lookup", label: "Florida" },
+        { to: "/new-york-vin-lookup", label: "New York" },
+        { to: "/illinois-vin-lookup", label: "Illinois" },
+        { to: "/georgia-vin-lookup", label: "Georgia" },
       ]
     },
     {
-      title: "Marketplace Safety",
+      title: "License Plate Lookup",
       icon: MapPin,
       links: [
-        { to: "/facebook-marketplace-stolen-check", label: "Facebook Marketplace" },
-        { to: "/ebay-stolen-item-check", label: "eBay" },
-        { to: "/craigslist-safety-verification", label: "Craigslist" },
-        { to: "/offerup-verify-not-stolen", label: "OfferUp" },
-        { to: "/stolen-check-chicago", label: "Chicago" },
-        { to: "/stolen-check-los-angeles", label: "Los Angeles" },
+        { to: "/california-license-plate-lookup", label: "California" },
+        { to: "/texas-license-plate-lookup", label: "Texas" },
+        { to: "/florida-license-plate-lookup", label: "Florida" },
+        { to: "/new-york-license-plate-lookup", label: "New York" },
+        { to: "/ohio-license-plate-lookup", label: "Ohio" },
+        { to: "/pennsylvania-license-plate-lookup", label: "Pennsylvania" },
       ]
     },
     {
-      title: "For Business",
+      title: "City Verification",
       icon: Building2,
       links: [
-        { to: "/for-pawn-shops", label: "Pawn Shops" },
-        { to: "/for-dealers", label: "Car Dealers" },
-        { to: "/for-electronics-resellers", label: "Resellers" },
-        { to: "/for-auction-houses", label: "Auction Houses" },
-        { to: "/for-buyers", label: "Buyers" },
-        { to: "/for-sellers", label: "Sellers" },
+        { to: "/stolen-check-los-angeles", label: "Los Angeles" },
+        { to: "/stolen-check-new-york-city", label: "New York City" },
+        { to: "/stolen-check-chicago", label: "Chicago" },
+        { to: "/stolen-check-houston", label: "Houston" },
+        { to: "/stolen-check-phoenix", label: "Phoenix" },
+        { to: "/stolen-check-dallas", label: "Dallas" },
       ]
     },
     {
-      title: "Resources",
+      title: "Compare Services",
+      icon: Scale,
+      links: [
+        { to: "/compare", label: "Compare All" },
+        { to: "/vs-checkmend", label: "vs CheckMEND" },
+        { to: "/vs-carfax", label: "vs CARFAX" },
+        { to: "/vs-swappa", label: "vs Swappa" },
+        { to: "/vs-imeiinfo", label: "vs IMEI.info" },
+        { to: "/vs-autocheck", label: "vs AutoCheck" },
+      ]
+    },
+    {
+      title: "Guides & Resources",
       icon: BookOpen,
       links: [
-        { to: "/how-to-check-serial-number", label: "Serial Number Guide" },
         { to: "/blog", label: "Blog" },
-        { to: "/compare", label: "Compare Services" },
+        { to: "/blog/carfax-vs-free-vin-alternatives", label: "Free Carfax Alternatives" },
         { to: "/how-it-works", label: "How It Works" },
-        { to: "/app", label: "Download App" },
         { to: "/faq", label: "FAQ" },
-        { to: "/pricing", label: "Pricing" },
+        { to: "/facebook-marketplace-stolen-check", label: "Marketplace Safety" },
+        { to: "/sitemap", label: "Full Sitemap" },
       ]
     },
   ];

@@ -1,20 +1,12 @@
 import { PageSEO } from '@/components/seo/PageSEO';
-import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { AppStoreBadges } from '@/components/app/AppStoreBadges';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Zap, DollarSign, Scale, Clock, TrendingUp } from 'lucide-react';
+import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 
 export default function ForPawnShops() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com/" },
-      { "@type": "ListItem", "position": 2, "name": "For Pawn Shops", "item": "https://safeorstolen.com/for-pawn-shops" }
-    ]
-  };
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -38,12 +30,10 @@ export default function ForPawnShops() {
         title="SafeOrStolen for Pawn Shops - Verify Every Item Instantly"
         description="Enterprise stolen goods verification for pawn shops. Check IMEI, VIN, serial numbers against 100+ databases. Reduce legal risk, ensure compliance, protect your business from stolen property."
         keywords="pawn shop verification, stolen goods checker for pawn shops, IMEI verification pawn, VIN check pawn shop, serial number lookup pawn, pawn compliance software"
-        structuredData={[breadcrumbSchema, structuredData]}
-        canonical="/for-pawn-shops"
+        structuredData={structuredData}
       />
 
       <div className="container mx-auto px-4 py-12">
-        <BreadcrumbNavigation items={[{ name: 'For Pawn Shops', href: '/for-pawn-shops' }]} className="mb-8" />
         <section className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">SafeOrStolen for Pawn Shops</h1>
           <p className="text-2xl text-muted-foreground mb-8">Verify Every Item in 3 Seconds. Eliminate Legal Risk. Stay Compliant.</p>

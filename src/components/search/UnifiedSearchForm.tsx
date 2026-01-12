@@ -48,9 +48,9 @@ const UnifiedSearchFormComponent = ({
 
   // Handler when URL analyzer finds an identifier to verify
   const handleIdentifierFromUrl = (identifier: string, type: string) => {
-    // Navigate to verification page with the search query
+    // Navigate to verification results with the identifier
     const encodedIdentifier = encodeURIComponent(identifier);
-    navigate(`/verify?q=${encodedIdentifier}&type=${type}`);
+    navigate(`/results?serial=${encodedIdentifier}&type=${type}`);
   };
 
   // Compact variant - minimal inline form (no tabs)

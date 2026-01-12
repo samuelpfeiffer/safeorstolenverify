@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const FirearmsCheckPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Gun Serial Number Lookup - Firearm Theft Verification | SafeOrStolen"
-      metaDescription="Verify firearm isn't stolen. Check gun serial number against ATF database, FBI NCIC, police records. Required for legal gun transfers. 3-second results."
-      h1="Gun Serial Number Lookup - Verify Before You Buy"
+      title="Gun Serial Number Lookup Free - Pistol & Firearm Serial Number Check"
+      metaDescription="Free gun serial number lookup to check if firearm is stolen. Checking firearm serial numbers against ATF, FBI NCIC databases. Pistol serial number lookup & serial number lookup gun verification."
+      h1="Free Gun Serial Number Lookup - Check Firearm Serial Numbers"
       itemType="Firearm"
       keywords={[
         'gun serial number lookup free',

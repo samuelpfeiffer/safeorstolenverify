@@ -10,17 +10,6 @@ export const GlobalSEOProvider: React.FC = () => {
     // Handle client-side canonical domain enforcement
     if (typeof window !== 'undefined') {
       const currentUrl = window.location.href;
-      const hostname = window.location.hostname;
-      const pathname = window.location.pathname;
-      const search = window.location.search;
-      const hash = window.location.hash;
-      
-      // Force any lovable.app domain to production
-      if (hostname.includes('.lovable.app') || hostname.includes('preview-')) {
-        const productionUrl = `https://safeorstolen.com${pathname}${search}${hash}`;
-        window.location.replace(productionUrl);
-        return;
-      }
       
       // Force www to non-www redirect
       if (currentUrl.includes('://www.safeorstolen.com')) {

@@ -60,28 +60,9 @@ export const WhatYouCanVerify = () => {
       subtitle: 'Serial Number Verification',
       description: 'Verify firearms serial numbers - the ONLY service that checks guns. Essential for pawn shops, gun shows, and private sales.',
       items: ['Handguns', 'Rifles', 'Shotguns', 'Antique firearms', 'Accessories'],
-      link: '/gun-serial-number-lookup',
+      link: '/firearms-check',
       badge: 'Exclusive',
       image: firearmsVerification
-    },
-    {
-      icon: Shield,
-      title: 'Luxury Watches',
-      subtitle: 'Rolex & High-End Verification',
-      description: 'Verify luxury watches like Rolex, Patek Philippe, Omega against theft databases and insurance claims before paying thousands.',
-      items: ['Rolex (all models)', 'Patek Philippe', 'Audemars Piguet', 'Omega', 'Cartier'],
-      link: '/rolex-serial-number-check',
-      badge: 'High Value',
-      image: jewelryWatches
-    },
-    {
-      icon: Laptop,
-      title: 'Gaming Consoles',
-      subtitle: 'PS5, Xbox, Nintendo Verification',
-      description: 'Check PlayStation 5, Xbox Series X, Nintendo Switch consoles against theft reports. Essential for Facebook Marketplace purchases.',
-      items: ['PlayStation 5', 'Xbox Series X/S', 'Nintendo Switch', 'Steam Deck', 'Gaming PCs'],
-      link: '/ps5-serial-number-check',
-      image: electronicsLaptops
     },
     {
       icon: Bike,
@@ -133,17 +114,17 @@ export const WhatYouCanVerify = () => {
   ];
 
   return (
-    <section className="py-16 px-4" aria-labelledby="verify-types-heading">
+    <section className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <header className="text-center mb-12">
+        <div className="text-center mb-12">
           <Badge className="mb-4">Most Comprehensive Verification</Badge>
-          <h2 id="verify-types-heading" className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What You Can Verify With SafeOrStolen
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From phones to firearms, vehicles to bikes - verify any item before buying. We're the only platform that checks everything.
           </p>
-        </header>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {verificationTypes.map((type, index) => (

@@ -51,7 +51,6 @@ const LicensePlateLookupPage = () => {
   };
 
   const topStates = [
-    { code: 'AZ', name: 'Arizona', note: 'TheftAZ Database' },
     { code: 'CA', name: 'California', note: 'High theft area' },
     { code: 'TX', name: 'Texas', note: 'Major market' },
     { code: 'FL', name: 'Florida', note: 'High theft area' },
@@ -61,6 +60,7 @@ const LicensePlateLookupPage = () => {
     { code: 'PA', name: 'Pennsylvania', note: 'Major market' },
     { code: 'OH', name: 'Ohio', note: 'Midwest hub' },
     { code: 'NC', name: 'North Carolina', note: 'Growing market' },
+    { code: 'WA', name: 'Washington', note: 'Pacific Northwest' },
   ];
 
   const faqs = [
@@ -98,11 +98,10 @@ const LicensePlateLookupPage = () => {
   return (
     <>
       <PageSEO
-        title="License Plate Lookup - Vehicle Ownership & Theft Verification | SafeOrStolen"
-        description="Check any license plate. Verify vehicle ownership, theft records, registration status. All 50 states. Police databases, DMV records. Instant results."
+        title="License Plate Lookup - Free Stolen Vehicle Check by Plate Number | SafeOrStolen"
+        description="Check if a vehicle is stolen using license plate number. Free license plate lookup from DMV and law enforcement databases across all 50 states. Verify instantly."
         canonical="/license-plate-lookup"
         structuredData={faqSchema}
-        keywords="license plate lookup, pa license plate lookup, vehicle ownership check, stolen vehicle check, license plate search, DMV records lookup"
       />
 
       <div className="min-h-screen bg-background">

@@ -18,15 +18,9 @@ const HowItWorksPage = lazy(() => import('@/pages/HowItWorksPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
-const RedirectPage = lazy(() => import('@/pages/RedirectPage'));
 const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
 const PaymentSuccessPage = lazy(() => import('@/pages/PaymentSuccessPage'));
-
-// Mobile Pages
-const MobileVerifyPage = lazy(() => import('@/mobile/pages/MobileVerifyPage'));
-const MobileDashboardPage = lazy(() => import('@/mobile/pages/MobileDashboardPage'));
-const MobileSettingsPage = lazy(() => import('@/mobile/pages/MobileSettingsPage'));
 
 // Competitor Comparison Pages (SEO Strategy)
 const Compare = lazy(() => import('@/pages/Compare'));
@@ -36,13 +30,6 @@ const VsIMEIInfoPage = lazy(() => import('@/pages/ComparisonIMEIInfo'));
 const VsSwappaPage = lazy(() => import('@/pages/ComparisonSwappa'));
 const ComparisonCarfax = lazy(() => import('@/pages/ComparisonCarfax'));
 const ComparisonAutocheck = lazy(() => import('@/pages/ComparisonAutocheck'));
-
-// NEW VS Comparison Pages
-const TheftAZPage = lazy(() => import('@/pages/vs/TheftAZPage'));
-const StolenRegisterPage = lazy(() => import('@/pages/vs/StolenRegisterPage'));
-const CheckMendPage = lazy(() => import('@/pages/vs/CheckMendPage'));
-const CarfaxPage = lazy(() => import('@/pages/vs/CarfaxPage'));
-const NICBPage = lazy(() => import('@/pages/vs/NICBPage'));
 
 // NEW Comparison Pages (High-Value SEO)
 const SafeOrStolenVsIMEIInfo = lazy(() => import('@/pages/comparisons/SafeOrStolenVsIMEIInfo'));
@@ -65,24 +52,9 @@ const CheckAppliancesPage = lazy(() => import('@/pages/CheckAppliancesPage'));
 const CheckToolsPage = lazy(() => import('@/pages/CheckToolsPage'));
 const CheckJewelryPage = lazy(() => import('@/pages/CheckJewelryPage'));
 const CheckBoatPage = lazy(() => import('@/pages/CheckBoatPage'));
-const CheckTrailerPage = lazy(() => import('@/pages/CheckTrailerPage'));
 const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
-const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
-const CheckGunPage = lazy(() => import('@/pages/CheckGunPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
-const ReviewsPage = lazy(() => import('@/pages/ReviewsPage'));
-const NewsPage = lazy(() => import('@/pages/NewsPage'));
-const DataPartnersPage = lazy(() => import('@/pages/DataPartnersPage'));
-const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternativePage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
-const PS5SerialNumberCheckPage = lazy(() => import('@/pages/PS5SerialNumberCheckPage'));
-const IMEICheckFreePage = lazy(() => import('@/pages/IMEICheckFreePage'));
-const StolenVehicleDatabaseArizonaPage = lazy(() => import('@/pages/StolenVehicleDatabaseArizonaPage'));
-const RolexSerialNumberCheckPage = lazy(() => import('@/pages/RolexSerialNumberCheckPage'));
-const ArizonaStolenPropertyDatabasePage = lazy(() => import('@/pages/ArizonaStolenPropertyDatabasePage'));
-const UnlimitedVINChecksPage = lazy(() => import('@/pages/UnlimitedVINChecksPage'));
-
-const HowToCheckSerialNumberPage = lazy(() => import('@/pages/HowToCheckSerialNumberPage'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
@@ -111,7 +83,7 @@ const ForElectronicsResellers = lazy(() => import('@/pages/business/ForElectroni
 const ForInsuranceCompanies = lazy(() => import('@/pages/business/ForInsuranceCompanies'));
 const ForLawEnforcement = lazy(() => import('@/pages/business/ForLawEnforcement'));
 
-// TOP 11 STATE LICENSE PLATE PAGES (Dedicated Components)
+// TOP 10 STATE LICENSE PLATE PAGES ONLY (High-Value States)
 const CaliforniaLicensePlateLookupPage = lazy(() => import('@/pages/CaliforniaLicensePlateLookupPage'));
 const TexasLicensePlateLookupPage = lazy(() => import('@/pages/TexasLicensePlateLookupPage'));
 const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
@@ -122,51 +94,7 @@ const PennsylvaniaLicensePlateLookupPage = lazy(() => import('@/pages/Pennsylvan
 const OhioLicensePlateLookupPage = lazy(() => import('@/pages/OhioLicensePlateLookupPage'));
 const NorthCarolinaLicensePlateLookupPage = lazy(() => import('@/pages/NorthCarolinaLicensePlateLookupPage'));
 const WashingtonLicensePlateLookupPage = lazy(() => import('@/pages/WashingtonLicensePlateLookupPage'));
-const ArizonaLicensePlateLookupPage = lazy(() => import('@/pages/ArizonaLicensePlateLookupPage'));
-const ArizonaVinLookupPage = lazy(() => import('@/pages/ArizonaVinLookupPage'));
 
-// REMAINING 39 STATE LICENSE PLATE PAGES (Dynamic Components)
-import {
-  AlabamaLicensePlate,
-  AlaskaLicensePlate,
-  ArkansasLicensePlate,
-  ColoradoLicensePlate,
-  ConnecticutLicensePlate,
-  DelawareLicensePlate,
-  HawaiiLicensePlate,
-  IdahoLicensePlate,
-  IndianaLicensePlate,
-  IowaLicensePlate,
-  KansasLicensePlate,
-  KentuckyLicensePlate,
-  LouisianaLicensePlate,
-  MaineLicensePlate,
-  MarylandLicensePlate,
-  MassachusettsLicensePlate,
-  MichiganLicensePlate,
-  MinnesotaLicensePlate,
-  MississippiLicensePlate,
-  MissouriLicensePlate,
-  MontanaLicensePlate,
-  NebraskaLicensePlate,
-  NevadaLicensePlate,
-  NewHampshireLicensePlate,
-  NewJerseyLicensePlate,
-  NewMexicoLicensePlate,
-  NorthDakotaLicensePlate,
-  OklahomaLicensePlate,
-  OregonLicensePlate,
-  RhodeIslandLicensePlate,
-  SouthCarolinaLicensePlate,
-  SouthDakotaLicensePlate,
-  TennesseeLicensePlate,
-  UtahLicensePlate,
-  VermontLicensePlate,
-  VirginiaLicensePlate,
-  WestVirginiaLicensePlate,
-  WisconsinLicensePlate,
-  WyomingLicensePlate,
-} from '@/pages/state-license-plates';
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
@@ -204,13 +132,6 @@ const FirearmSerialNumberVerification = lazy(() => import('@/pages/blog/FirearmS
 const BicycleStolenSerialNumberCheck = lazy(() => import('@/pages/blog/BicycleStolenSerialNumberCheck'));
 const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeMeetup'));
 const CarfaxVsFreeVinAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFreeVinAlternatives'));
-const ArizonaTheftAZGuide = lazy(() => import('@/pages/blog/ArizonaTheftAZGuide'));
-const PS5StolenCheckGuide = lazy(() => import('@/pages/blog/PS5StolenCheckGuide'));
-const UnderstandingIMEIBlacklists = lazy(() => import('@/pages/blog/UnderstandingIMEIBlacklists'));
-const HowLawEnforcementTracksStolen = lazy(() => import('@/pages/blog/HowLawEnforcementTracksStolen'));
-const IPhoneIMEICheckGuide = lazy(() => import('@/pages/blog/IPhoneIMEICheckGuide'));
-const StolenItemCheckerNewYork = lazy(() => import('@/pages/blog/StolenItemCheckerNewYork'));
-const LosAngelesIMEIVerification = lazy(() => import('@/pages/blog/LosAngelesIMEIVerification'));
 const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
 
 // Traffic Generation Landing Pages
@@ -245,11 +166,6 @@ const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
 const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
-const ForBuyers = lazy(() => import('@/pages/business/ForBuyers'));
-const ForSellers = lazy(() => import('@/pages/business/ForSellers'));
-
-// Contact Page
-const ContactPage = lazy(() => import('@/pages/ContactPage'));
 
 // App Landing Pages
 const StolenPhoneCheckerApp = lazy(() => import('@/pages/app/StolenPhoneCheckerApp'));
@@ -273,7 +189,6 @@ const TriggerIndexNowPage = lazy(() => import('@/pages/admin/TriggerIndexNow'));
 const BatchIndexPage = lazy(() => import('@/pages/admin/BatchIndexPage'));
 const StripeAdminPage = lazy(() => import('@/pages/admin/StripeAdminPage'));
 const AIOrchestrator = lazy(() => import('@/pages/admin/AIOrchestrator'));
-const UserOutreachPage = lazy(() => import('@/pages/admin/UserOutreachPage'));
 
 // Stolen Database & Shared Report Pages
 const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
@@ -304,11 +219,6 @@ export const AppRoutes = () => {
         <Route path="/verification-success" element={<VerificationSuccessPage />} />
         <Route path="/payment-success" element={<PaymentSuccessPage />} />
 
-        {/* MOBILE ROUTES */}
-        <Route path="/mobile-verify" element={<MobileVerifyPage />} />
-        <Route path="/mobile-dashboard" element={<MobileDashboardPage />} />
-        <Route path="/mobile-settings" element={<MobileSettingsPage />} />
-
         {/* STOLEN DATABASE & SHARED REPORTS */}
         <Route path="/stolen-database" element={<StolenDatabasePage />} />
         <Route path="/item/:slug" element={<StolenItemDetailPage />} />
@@ -328,31 +238,9 @@ export const AppRoutes = () => {
         <Route path="/check-tools" element={<CheckToolsPage />} />
         <Route path="/check-jewelry" element={<CheckJewelryPage />} />
         <Route path="/check-boat" element={<CheckBoatPage />} />
-        <Route path="/check-trailer" element={<CheckTrailerPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
-        <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
-        <Route path="/check-gun" element={<CheckGunPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
-        <Route path="/reviews" element={<ReviewsPage />} />
-        <Route path="/news" element={<NewsPage />} />
-        <Route path="/data-partners" element={<DataPartnersPage />} />
-        
-        {/* VS COMPARISON PAGES */}
-        <Route path="/vs/theftaz" element={<TheftAZPage />} />
-        <Route path="/vs/stolen-register" element={<StolenRegisterPage />} />
-        <Route path="/vs/checkmend" element={<CheckMendPage />} />
-        <Route path="/vs/carfax" element={<CarfaxPage />} />
-        <Route path="/vs/nicb" element={<NICBPage />} />
-        <Route path="/free-carfax-alternative" element={<FreeCarfaxAlternativePage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
-        <Route path="/ps5-serial-number-check" element={<PS5SerialNumberCheckPage />} />
-        <Route path="/imei-check-free" element={<IMEICheckFreePage />} />
-        <Route path="/stolen-vehicle-database-arizona" element={<StolenVehicleDatabaseArizonaPage />} />
-        <Route path="/rolex-serial-number-check" element={<RolexSerialNumberCheckPage />} />
-        <Route path="/arizona-stolen-property-database" element={<ArizonaStolenPropertyDatabasePage />} />
-        <Route path="/unlimited-vin-checks" element={<UnlimitedVINChecksPage />} />
-        
-        <Route path="/how-to-check-serial-number" element={<HowToCheckSerialNumberPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
@@ -381,7 +269,7 @@ export const AppRoutes = () => {
         <Route path="/stockx-verification" element={<StockXVerification />} />
         <Route path="/letgo-stolen-check" element={<LetgoStolenCheck />} />
 
-        {/* TOP 11 STATE LICENSE PLATE PAGES (Dedicated Components) */}
+        {/* TOP 10 STATE LICENSE PLATE PAGES */}
         <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookupPage />} />
         <Route path="/texas-license-plate-lookup" element={<TexasLicensePlateLookupPage />} />
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
@@ -392,48 +280,6 @@ export const AppRoutes = () => {
         <Route path="/ohio-license-plate-lookup" element={<OhioLicensePlateLookupPage />} />
         <Route path="/north-carolina-license-plate-lookup" element={<NorthCarolinaLicensePlateLookupPage />} />
         <Route path="/washington-license-plate-lookup" element={<WashingtonLicensePlateLookupPage />} />
-        <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookupPage />} />
-
-        {/* REMAINING 39 STATE LICENSE PLATE PAGES (Dynamic Components - All Indexed) */}
-        <Route path="/alabama-license-plate-lookup" element={<AlabamaLicensePlate />} />
-        <Route path="/alaska-license-plate-lookup" element={<AlaskaLicensePlate />} />
-        <Route path="/arkansas-license-plate-lookup" element={<ArkansasLicensePlate />} />
-        <Route path="/colorado-license-plate-lookup" element={<ColoradoLicensePlate />} />
-        <Route path="/connecticut-license-plate-lookup" element={<ConnecticutLicensePlate />} />
-        <Route path="/delaware-license-plate-lookup" element={<DelawareLicensePlate />} />
-        <Route path="/hawaii-license-plate-lookup" element={<HawaiiLicensePlate />} />
-        <Route path="/idaho-license-plate-lookup" element={<IdahoLicensePlate />} />
-        <Route path="/indiana-license-plate-lookup" element={<IndianaLicensePlate />} />
-        <Route path="/iowa-license-plate-lookup" element={<IowaLicensePlate />} />
-        <Route path="/kansas-license-plate-lookup" element={<KansasLicensePlate />} />
-        <Route path="/kentucky-license-plate-lookup" element={<KentuckyLicensePlate />} />
-        <Route path="/louisiana-license-plate-lookup" element={<LouisianaLicensePlate />} />
-        <Route path="/maine-license-plate-lookup" element={<MaineLicensePlate />} />
-        <Route path="/maryland-license-plate-lookup" element={<MarylandLicensePlate />} />
-        <Route path="/massachusetts-license-plate-lookup" element={<MassachusettsLicensePlate />} />
-        <Route path="/michigan-license-plate-lookup" element={<MichiganLicensePlate />} />
-        <Route path="/minnesota-license-plate-lookup" element={<MinnesotaLicensePlate />} />
-        <Route path="/mississippi-license-plate-lookup" element={<MississippiLicensePlate />} />
-        <Route path="/missouri-license-plate-lookup" element={<MissouriLicensePlate />} />
-        <Route path="/montana-license-plate-lookup" element={<MontanaLicensePlate />} />
-        <Route path="/nebraska-license-plate-lookup" element={<NebraskaLicensePlate />} />
-        <Route path="/nevada-license-plate-lookup" element={<NevadaLicensePlate />} />
-        <Route path="/new-hampshire-license-plate-lookup" element={<NewHampshireLicensePlate />} />
-        <Route path="/new-jersey-license-plate-lookup" element={<NewJerseyLicensePlate />} />
-        <Route path="/new-mexico-license-plate-lookup" element={<NewMexicoLicensePlate />} />
-        <Route path="/north-dakota-license-plate-lookup" element={<NorthDakotaLicensePlate />} />
-        <Route path="/oklahoma-license-plate-lookup" element={<OklahomaLicensePlate />} />
-        <Route path="/oregon-license-plate-lookup" element={<OregonLicensePlate />} />
-        <Route path="/rhode-island-license-plate-lookup" element={<RhodeIslandLicensePlate />} />
-        <Route path="/south-carolina-license-plate-lookup" element={<SouthCarolinaLicensePlate />} />
-        <Route path="/south-dakota-license-plate-lookup" element={<SouthDakotaLicensePlate />} />
-        <Route path="/tennessee-license-plate-lookup" element={<TennesseeLicensePlate />} />
-        <Route path="/utah-license-plate-lookup" element={<UtahLicensePlate />} />
-        <Route path="/vermont-license-plate-lookup" element={<VermontLicensePlate />} />
-        <Route path="/virginia-license-plate-lookup" element={<VirginiaLicensePlate />} />
-        <Route path="/west-virginia-license-plate-lookup" element={<WestVirginiaLicensePlate />} />
-        <Route path="/wisconsin-license-plate-lookup" element={<WisconsinLicensePlate />} />
-        <Route path="/wyoming-license-plate-lookup" element={<WyomingLicensePlate />} />
 
         {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
@@ -446,7 +292,6 @@ export const AppRoutes = () => {
         <Route path="/ohio-vin-lookup" element={<OhioVinLookup />} />
         <Route path="/north-carolina-vin-lookup" element={<NorthCarolinaVinLookup />} />
         <Route path="/washington-vin-lookup" element={<WashingtonVinLookup />} />
-        <Route path="/arizona-vin-lookup" element={<ArizonaVinLookupPage />} />
 
         {/* COMPETITOR COMPARISON PAGES */}
         <Route path="/compare" element={<Compare />} />
@@ -456,9 +301,6 @@ export const AppRoutes = () => {
         <Route path="/vs-swappa" element={<VsSwappaPage />} />
         <Route path="/vs-carfax" element={<ComparisonCarfax />} />
         <Route path="/vs-autocheck" element={<ComparisonAutocheck />} />
-        <Route path="/check-gun" element={<CheckGunPage />} />
-        <Route path="/reviews" element={<ReviewsPage />} />
-        <Route path="/news" element={<NewsPage />} />
         
         {/* NEW HIGH-VALUE COMPARISON PAGES */}
         <Route path="/comparisons/safeorstolen-vs-imei-info" element={<SafeOrStolenVsIMEIInfo />} />
@@ -499,18 +341,11 @@ export const AppRoutes = () => {
         <Route path="/blog/bicycle-stolen-serial-number-check" element={<BicycleStolenSerialNumberCheck />} />
         <Route path="/blog/verify-item-before-meetup" element={<VerifyItemBeforeMeetup />} />
         <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVinAlternatives />} />
-        <Route path="/blog/arizona-theftaz-guide" element={<ArizonaTheftAZGuide />} />
-        <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
-        <Route path="/blog/understanding-imei-blacklists" element={<UnderstandingIMEIBlacklists />} />
-        <Route path="/blog/how-law-enforcement-tracks-stolen-goods" element={<HowLawEnforcementTracksStolen />} />
-        <Route path="/blog/iphone-imei-check-guide" element={<IPhoneIMEICheckGuide />} />
-        <Route path="/blog/stolen-item-checker-new-york" element={<StolenItemCheckerNewYork />} />
-        <Route path="/blog/los-angeles-imei-verification" element={<LosAngelesIMEIVerification />} />
         
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
 
-        {/* BUSINESS PAGES (All 10 Business Types) */}
+        {/* BUSINESS PAGES (All 8 Business Types) */}
         <Route path="/for-pawn-shops" element={<ForPawnShops />} />
         <Route path="/for-dealers" element={<ForDealers />} />
         <Route path="/for-marketplaces" element={<ForMarketplaces />} />
@@ -519,11 +354,6 @@ export const AppRoutes = () => {
         <Route path="/for-electronics-resellers" element={<ForElectronicsResellers />} />
         <Route path="/for-insurance-companies" element={<ForInsuranceCompanies />} />
         <Route path="/for-law-enforcement" element={<ForLawEnforcement />} />
-        <Route path="/for-buyers" element={<ForBuyers />} />
-        <Route path="/for-sellers" element={<ForSellers />} />
-        
-        {/* CONTACT PAGE */}
-        <Route path="/contact" element={<ContactPage />} />
 
         {/* CITY PAGES */}
         <Route path="/stolen-check-los-angeles" element={<StolenCheckLosAngeles />} />
@@ -554,7 +384,6 @@ export const AppRoutes = () => {
         <Route path="/admin/stripe" element={<StripeAdminPage />} />
         <Route path="/admin/marketing" element={<MarketingDashboard />} />
         <Route path="/admin/ai-orchestrator" element={<AIOrchestrator />} />
-        <Route path="/admin/user-outreach" element={<UserOutreachPage />} />
 
         {/* ALL OTHER STATE PAGES REDIRECT TO MAIN PAGES (Server-side 301s in _redirects handle these) */}
         {/* Remaining 40 VIN states → /vin-checker */}
@@ -570,13 +399,14 @@ export const AppRoutes = () => {
         <Route path="/check-stolen-car" element={<CheckStolenCarPage />} />
         {/* /stolen-phone-check and /stolen-car-check handled by server-side _redirects */}
 
-        {/* EXPLICIT 404 PAGE */}
+        {/* ALL REDIRECTS HANDLED BY SERVER-SIDE _redirects FILE */}
+        {/* React Navigate components removed to prevent duplicate redirect handling */}
+        {/* Server-side 301s are respected by Google; client-side Navigate is not */}
+
         <Route path="/404" element={<NotFound />} />
 
-        {/* CATCH-ALL: Check for redirects FIRST, then show 404 */}
-        {/* RedirectPage checks findRedirect() and either redirects or forwards to /404 */}
-        {/* This prevents noindex from ever being rendered for redirect URLs */}
-        <Route path="*" element={<RedirectPage />} />
+        {/* 404 for everything else */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

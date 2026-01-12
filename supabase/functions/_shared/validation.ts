@@ -185,16 +185,3 @@ export function sanitizeError(error: any): string {
   
   return 'Operation failed. Please try again.';
 }
-
-/**
- * Escapes special ILIKE pattern characters (% and _) to prevent SQL pattern injection
- * Use this before passing user input to ILIKE queries
- */
-export function escapeILikePattern(input: string): string {
-  if (!input || typeof input !== 'string') return '';
-  // Escape backslash first, then % and _ characters
-  return input
-    .replace(/\\/g, '\\\\')
-    .replace(/%/g, '\\%')
-    .replace(/_/g, '\\_');
-}

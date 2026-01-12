@@ -1,11 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppRoot } from '@/core/app/AppRoot';
-import { initPerformanceOptimizations } from '@/utils/performanceOptimization';
 import './index.css';
-
-// Initialize performance optimizations immediately for Googlebot
-initPerformanceOptimizations();
 
 console.log('🚀 SafeOrStolen');
 console.log(`Version: ${import.meta.env.MODE}-${Date.now()}`);

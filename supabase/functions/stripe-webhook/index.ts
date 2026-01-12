@@ -3,7 +3,6 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 import Stripe from "https://esm.sh/stripe@16.0.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
-import { redactEmail, redactStripeId, redactUserId } from '../_shared/logging.ts';
 
 // Tier configuration with quotas
 const TIER_CONFIG: Record<string, { tier: string; limit: number | null }> = {
@@ -61,7 +60,7 @@ serve(async (req) => {
         
         if (stripeSession && stripeSession.payment_status === 'paid') {
           // SYNC: Payment was successful but we missed the webhook
-          console.log(`[SYNC] Found paid session ${redactStripeId(stripeSession.id)} - syncing...`);
+          console.log(`[SYNC] Found paid session ${stripeSession.id} - syncing...`);
           
           await supabase
             .from('purchases')
@@ -91,14 +90,14 @@ serve(async (req) => {
               })
               .eq('id', userId);
             
-            console.log(`[SYNC] Updated profile ${redactUserId(userId)} with tier ${tierInfo?.tier}`);
+            console.log(`[SYNC] Updated profile ${userId} with tier ${tierInfo?.tier}`);
           }
           
           syncedCount++;
           syncResults.push({
-            session_id: redactStripeId(purchase.stripe_session_id),
+            session_id: purchase.stripe_session_id,
             action: 'SYNCED',
-            customer: redactEmail(stripeSession.customer_details?.email)
+            customer: stripeSession.customer_details?.email
           });
         } else if (isStale && (!stripeSession || stripeSession.payment_status !== 'paid')) {
           // CLEANUP: Expire stale unpaid checkouts
@@ -112,7 +111,7 @@ serve(async (req) => {
           
           expiredCount++;
           syncResults.push({
-            session_id: redactStripeId(purchase.stripe_session_id),
+            session_id: purchase.stripe_session_id,
             action: 'EXPIRED',
             age_hours: Math.round((Date.now() - purchaseDate.getTime()) / (1000 * 60 * 60))
           });
@@ -239,7 +238,7 @@ serve(async (req) => {
     }
 
     const supabaseClient = createClient(supabaseUrl, supabaseServiceKey);
-    console.log(`Processing Stripe event: ${event.type} (ID: ${redactStripeId(event.id)})`);
+    console.log(`Processing Stripe event: ${event.type} (ID: ${event.id})`);
 
     // SECURITY FIX: Insert idempotency record BEFORE processing
     const { data: existingEvent, error: checkError } = await supabaseClient
@@ -249,7 +248,7 @@ serve(async (req) => {
       .single();
 
     if (existingEvent && existingEvent.processed_at) {
-      console.log(`Event ${redactStripeId(event.id)} already processed - returning success`);
+      console.log(`Event ${event.id} already processed - returning success`);
       return new Response(
         JSON.stringify({ received: true, already_processed: true }),
         { 
@@ -272,10 +271,9 @@ serve(async (req) => {
       switch (event.type) {
         case "checkout.session.completed": {
           const session = event.data.object;
-          console.log(`Processing checkout completion for session ${redactStripeId(session.id)}`);
+          console.log(`Processing checkout completion for session ${session.id}`);
           console.log(`Session mode: ${session.mode}, payment_status: ${session.payment_status}`);
-          // Security: Redact PII in logs
-          console.log(`Customer: ${redactEmail(session.customer_details?.email)}, ID: ${redactStripeId(session.customer as string)}`);
+          console.log(`Customer email: ${session.customer_details?.email}, Customer ID: ${session.customer}`);
           
           // REVENUE FIX: Grant credits for credit pack purchases
           const metadata = session.metadata || {};
@@ -286,7 +284,7 @@ serve(async (req) => {
             const creditsAmount = parseInt(metadata.credits_amount || '0');
             
             if (creditsAmount > 0 && userId) {
-              console.log(`Granting ${creditsAmount} credits to user ${redactUserId(userId)}`);
+              console.log(`Granting ${creditsAmount} credits to user ${userId}`);
               
               // Get current balance
               const { data: profile } = await supabaseClient
@@ -332,7 +330,7 @@ serve(async (req) => {
             let profileId = userId;
             
             if (!profileId && customerEmail) {
-              console.log(`Looking up profile by email: ${redactEmail(customerEmail)}`);
+              console.log(`Looking up profile by email: ${customerEmail}`);
               const { data: profileByEmail } = await supabaseClient
                 .from('profiles')
                 .select('id')
@@ -341,7 +339,7 @@ serve(async (req) => {
               
               if (profileByEmail) {
                 profileId = profileByEmail.id;
-                console.log(`Found profile by email: ${redactUserId(profileId)}`);
+                console.log(`Found profile by email: ${profileId}`);
               }
             }
             
@@ -376,7 +374,7 @@ serve(async (req) => {
                 
                 const tierInfo = TIER_MAPPING[priceId] || { tier: 'starter', limit: 15 };
                 subscriptionTier = tierInfo.tier;
-                console.log(`[WEBHOOK] Subscription tier: ${subscriptionTier}`);
+                console.log(`[WEBHOOK] Subscription priceId: ${priceId} -> tier: ${subscriptionTier}`);
                 monthlyLimit = tierInfo.limit;
                 
                 console.log(`Subscription tier determined: ${subscriptionTier}, limit: ${monthlyLimit}`);
@@ -406,10 +404,10 @@ serve(async (req) => {
               if (profileUpdateError) {
                 console.error(`Error updating profile: ${profileUpdateError.message}`);
               } else {
-                console.log(`SUCCESS: Updated profile ${redactUserId(profileId)} with tier ${subscriptionTier}`);
+                console.log(`SUCCESS: Updated profile ${profileId} with tier ${subscriptionTier}`);
               }
             } else {
-              console.error(`CRITICAL: Could not find profile for checkout. Email: ${redactEmail(customerEmail)}, UserId: ${redactUserId(userId)}`);
+              console.error(`CRITICAL: Could not find profile for checkout. Email: ${customerEmail}, UserId: ${userId}`);
             }
           }
           
@@ -427,7 +425,7 @@ serve(async (req) => {
             if (purchaseError) {
               console.error(`Error updating purchase: ${purchaseError.message}`);
             } else {
-              console.log(`Successfully updated purchase for session ${redactStripeId(session.id)}`);
+              console.log(`Successfully updated purchase for session ${session.id}`);
             }
           } catch (purchaseUpdateError) {
             console.error(`Exception updating purchase: ${purchaseUpdateError.message}`);
@@ -485,7 +483,7 @@ serve(async (req) => {
         case "customer.subscription.created":
         case "customer.subscription.updated": {
           const subscription = event.data.object;
-          console.log(`Processing subscription ${event.type} for subscription ${redactStripeId(subscription.id)}`);
+          console.log(`Processing subscription ${event.type} for subscription ${subscription.id}`);
           
           try {
             // Get customer details
@@ -519,7 +517,7 @@ serve(async (req) => {
             };
             
             const subscriptionTier = TIER_MAPPING[priceId] || 'starter';
-            console.log(`Subscription tier mapped: ${subscriptionTier}`);
+            console.log(`Mapped price ID ${priceId} to tier: ${subscriptionTier}`);
             
             // Determine quota based on tier
             const quotaMapping: Record<string, number | null> = {
@@ -534,7 +532,7 @@ serve(async (req) => {
             
             // REVENUE FIX: Update profiles table with subscription_interval (case-insensitive)
             const customerEmail = customer.email?.toLowerCase();
-            console.log(`Looking up profile for subscription update. Email: ${redactEmail(customerEmail)}`);
+            console.log(`Looking up profile for subscription update. Email: ${customerEmail}`);
             
             const { data: profile, error: profileLookupError } = await supabaseClient
               .from('profiles')
@@ -565,10 +563,10 @@ serve(async (req) => {
               if (updateError) {
                 console.error(`Profile update error: ${updateError.message}`);
               } else {
-                console.log(`SUCCESS: Updated profile ${redactUserId(profile.id)} with tier: ${subscriptionTier}, limit: ${monthlyLimit}`);
+                console.log(`SUCCESS: Updated profile ${profile.id} with tier: ${subscriptionTier}, limit: ${monthlyLimit}`);
               }
             } else {
-              console.error(`CRITICAL: No profile found for email: ${redactEmail(customerEmail)}`);
+              console.error(`CRITICAL: No profile found for email: ${customerEmail}`);
             }
             
             // Update subscriber record with error handling
@@ -586,7 +584,7 @@ serve(async (req) => {
             if (subscriptionError) {
               console.error(`Error updating subscriber: ${subscriptionError.message}`);
             } else {
-              console.log(`Successfully updated subscriber record for ${redactEmail(customer.email)}`);
+              console.log(`Successfully updated subscriber record for ${customer.email}`);
             }
           } catch (subscriptionUpdateError) {
             console.error(`Exception processing subscription: ${subscriptionUpdateError.message}`);
@@ -596,7 +594,7 @@ serve(async (req) => {
         
         case "customer.subscription.deleted": {
           const subscription = event.data.object;
-          console.log(`Processing subscription deletion for subscription ${redactStripeId(subscription.id)}`);
+          console.log(`Processing subscription deletion for subscription ${subscription.id}`);
           
           try {
             // Get customer details
@@ -639,7 +637,7 @@ serve(async (req) => {
             if (cancellationError) {
               console.error(`Error updating cancelled subscription: ${cancellationError.message}`);
             } else {
-              console.log(`Successfully updated subscriber record for cancelled subscription: ${redactEmail(customer.email)}`);
+              console.log(`Successfully updated subscriber record for cancelled subscription: ${customer.email}`);
             }
           } catch (cancellationError) {
             console.error(`Exception processing subscription deletion: ${cancellationError.message}`);
@@ -663,7 +661,7 @@ serve(async (req) => {
         }
       }
 
-      console.log(`Successfully processed event ${event.type} (ID: ${redactStripeId(event.id)})`);
+      console.log(`Successfully processed event ${event.type} (ID: ${event.id})`);
       
       // Mark event as processed
       await supabaseClient
@@ -671,7 +669,7 @@ serve(async (req) => {
         .update({ processed_at: new Date().toISOString() })
         .eq('stripe_event_id', event.id);
       
-      console.log(`Marked event ${redactStripeId(event.id)} as processed`);
+      console.log(`Marked event ${event.id} as processed`);
       
       return new Response(JSON.stringify({ received: true, event_id: event.id }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },

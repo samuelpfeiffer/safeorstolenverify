@@ -10,12 +10,11 @@ import { Link } from 'react-router-dom';
 
 const PressKitPage = () => {
   const companyFacts = [
-    { label: "Founded", value: "2017" },
-    { label: "Incorporated", value: "Arizona, 2025" },
-    { label: "Headquarters", value: "Peoria, Arizona" },
-    { label: "Founders", value: "Samuel Pfeiffer (CEO), Kelly McEvoy (CMO/CFO)" },
-    { label: "Funding", value: "$25,000 via FasterCapital (Seeking $500,000)" },
-    { label: "Accelerator", value: "FasterCapital LaunchUp Program" },
+    { label: "Founded", value: "2024" },
+    { label: "Headquarters", value: "Seattle, Washington" },
+    { label: "Industry", value: "SaaS / Consumer Protection" },
+    { label: "Funding", value: "FasterCapital Partnership" },
+    { label: "Items Verified", value: "5,000+" },
     { label: "Coverage", value: "50 US States + Global" }
   ];
 
@@ -28,22 +27,16 @@ const PressKitPage = () => {
 
   const pressReleases = [
     {
-      title: "SafeOrStolen Partners with FasterCapital to Secure Secondhand Market Worldwide",
-      date: "September 11, 2025",
+      title: "SafeOrStolen Partners with FasterCapital",
+      date: "December 2024",
       outlet: "PRLog",
-      url: "https://www.prlog.org/13098918"
+      url: "https://www.prlog.org/13053545-safeorstolen-partners-with-fastercapital.html"
     },
     {
-      title: "SafeOrStolen Launches Mobile App for Instant Stolen Item Verification",
-      date: "August 2025",
-      outlet: "SafeOrStolen",
-      url: "/app"
-    },
-    {
-      title: "SafeOrStolen Featured on Issuewire",
-      date: "October 2025",
+      title: "SafeOrStolen Launches Revolutionary Verification Platform",
+      date: "December 2024",
       outlet: "IssueWire",
-      url: "#"
+      url: "https://www.issuewire.com/safeorstolen-launches-platform"
     }
   ];
 
@@ -111,8 +104,8 @@ const PressKitPage = () => {
   return (
     <>
       <PageSEO
-        title="Press & Media | SafeOrStolen"
-        description="SafeOrStolen press releases, media coverage, and company news. Download press kit and brand assets."
+        title="Press Kit | SafeOrStolen Media Resources"
+        description="Download SafeOrStolen press materials including logos, screenshots, company facts, and story angles. Media resources for journalists and publications."
         canonical="https://safeorstolen.com/press-kit"
       />
       

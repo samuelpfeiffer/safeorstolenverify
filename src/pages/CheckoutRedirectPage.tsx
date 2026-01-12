@@ -5,7 +5,6 @@ import { toast } from 'sonner';
 import { Loader2, AlertCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { isInIframe, redirectToStripe } from '@/utils/stripeRedirect';
-import { Helmet } from 'react-helmet-async';
 
 const CheckoutRedirectPage = () => {
   const [searchParams] = useSearchParams();
@@ -81,13 +80,8 @@ const CheckoutRedirectPage = () => {
   };
 
   return (
-    <>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-        <title>Checkout | SafeOrStolen</title>
-      </Helmet>
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-card border border-border rounded-xl p-8 shadow-lg text-center">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-card border border-border rounded-xl p-8 shadow-lg text-center">
         {/* Loading State */}
         {status === 'loading' && (
           <div className="space-y-4">
@@ -139,9 +133,8 @@ const CheckoutRedirectPage = () => {
             </div>
           </div>
         )}
-        </div>
       </div>
-    </>
+    </div>
   );
 };
 

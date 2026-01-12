@@ -8,7 +8,6 @@ import { lazy, Suspense } from 'react';
 // Critical above-fold components - loaded immediately
 const heroImage = '/images/hero-device.png';
 import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
-import { HomeSEOBodyContent } from '@/components/home/HomeSEOBodyContent';
 
 // Lazy loaded components for below-fold content
 import { LazySection } from '@/components/performance/LazySection';
@@ -28,7 +27,6 @@ const CompactMobileAppCTA = lazy(() => import('@/components/home/CompactMobileAp
 const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChannelSection').then(m => ({ default: m.YouTubeChannelSection })));
 const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
 const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
-const SocialProofSection = lazy(() => import('@/components/home/SocialProofSection').then(m => ({ default: m.SocialProofSection })));
 
 // Deferred above-fold components (loaded after hero but before user interaction)
 const SocialProofBanner = lazy(() => import('@/components/conversion/SocialProofBanner').then(m => ({ default: m.SocialProofBanner })));
@@ -44,14 +42,20 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Free Stolen Item Checker - IMEI, VIN, Serial Lookup | SafeOrStolen"
-        description="Check if items are stolen before buying. Free IMEI checker, VIN lookup, serial verification against 100+ databases. 3-second results. The only mobile app."
-        keywords="stolen item verification, IMEI checker, VIN checker, license plate lookup, gun serial number lookup, stolen phone check, stolen car check, pawn shop verification, global verification platform"
+        title="Free Stolen Item Checker App - IMEI VIN Serial Verification | Only Mobile App | SafeOrStolen"
+        description="The ONLY stolen item checker with a mobile app. Protect buyers, sellers, pawn shops & resale businesses. Free IMEI, VIN, serial verification. 100+ databases. More comprehensive than CheckMEND, IMEI.info, Carfax, Swappa. Download free."
+        keywords="stolen item checker app, IMEI checker app free, VIN checker app free, serial number verification app, stolen phone checker app, stolen car check app, pawn shop verification, resale business protection, CheckMEND alternative app, Carfax alternative app, IMEI.info alternative, Swappa alternative, only stolen item app, free stolen goods checker"
         canonical="/"
       />
       
-      {/* Static visible content for Googlebot - no noscript needed, this renders with JS */}
-      {/* Googlebot renders JavaScript but needs fast content delivery */}
+      {/* Minimal noscript fallback for crawlers */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+          <h1>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds. The only mobile app for stolen item checking.</p>
+          <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
+        </div>
+      </noscript>
 
       <TrustHeaderBar />
       
@@ -106,26 +110,25 @@ const Index = () => {
               </div>
 
               {/* Hero Image - LCP Optimized with explicit dimensions for CLS prevention */}
-              {/* fetchPriority="high" and decoding="sync" ensure fastest possible render */}
               <div 
                 className="mt-8 max-w-4xl mx-auto" 
-                style={{ aspectRatio: '16/9', minHeight: '200px', contain: 'layout' }}
+                style={{ aspectRatio: '16/9', minHeight: '200px' }}
                 data-hero-img
               >
                 <div className="relative group h-full">
                   {/* Simplified gradient on mobile (no blur), full blur on desktop */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" aria-hidden="true" />
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" aria-hidden="true" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" />
                   <img 
                     src={heroImage} 
-                    alt="SafeOrStolen stolen item verification app showing IMEI checker, VIN checker with instant 3 second verification results for phones, cars, bikes, and electronics" 
+                    alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
                     className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
                     loading="eager"
                     fetchPriority="high"
                     decoding="sync"
                     width="1200"
                     height="675"
-                    style={{ aspectRatio: '16/9', contentVisibility: 'auto' }}
+                    style={{ aspectRatio: '16/9' }}
                   />
                 </div>
               </div>
@@ -152,16 +155,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        {/* Substantial, user-visible body content (not lazy loaded) */}
-        <HomeSEOBodyContent />
-
-        {/* Social Proof Section */}
-        <LazySection minHeight="200px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <SocialProofSection />
-          </Suspense>
-        </LazySection>
 
         {/* Below-fold content - All lazy loaded */}
         <LazySection minHeight="80px">

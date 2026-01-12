@@ -16,7 +16,6 @@ import { SOSFooter } from '@/components/layout/SOSFooter';
 import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
-import { HostGuard } from '@/components/routing/HostGuard';
 
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
@@ -87,13 +86,12 @@ const AuthAwareContent: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Auth timeout - show content after 500ms even if auth isn't ready
-  // Reduced from 800ms to improve FCP/LCP for Googlebot
-  // Googlebot only waits ~5 seconds for JS execution
+  // Auth timeout - show content after 800ms even if auth isn't ready
+  // Reduced from 2s to improve LCP - prevents stuck loading
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAuthTimeout(true);
-    }, 500);
+    }, 800);
     return () => clearTimeout(timeout);
   }, []);
   
@@ -134,7 +132,7 @@ const AuthAwareContent: React.FC = () => {
         
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <TopNavigation />
-          <main className="flex-1 pt-28 md:pt-28">
+          <main className="flex-1 pt-20">
             <RouteErrorRecovery>
               <Suspense fallback={<AppLoadingScreen />}>
                 <AppRoutes />
@@ -180,20 +178,18 @@ const AuthAwareContent: React.FC = () => {
 
 export const AppRoot: React.FC = () => {
   return (
-    <HostGuard>
-      <ErrorBoundary>
-        <HelmetProvider>
-          <Router>
-            <ThemeProvider>
-              <QueryClientProvider client={queryClient}>
-                <AuthProvider>
-                  <AuthAwareContent />
-                </AuthProvider>
-              </QueryClientProvider>
-            </ThemeProvider>
-          </Router>
-        </HelmetProvider>
-      </ErrorBoundary>
-    </HostGuard>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <Router>
+          <ThemeProvider>
+            <QueryClientProvider client={queryClient}>
+              <AuthProvider>
+                <AuthAwareContent />
+              </AuthProvider>
+            </QueryClientProvider>
+          </ThemeProvider>
+        </Router>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 };

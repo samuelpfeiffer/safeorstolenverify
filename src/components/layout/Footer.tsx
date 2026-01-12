@@ -19,14 +19,12 @@ export const Footer: React.FC = () => {
       links: [
         { name: 'Stolen Item Checker', href: '/verify' },
         { name: 'IMEI Checker', href: '/imei-checker' },
-        { name: 'Free IMEI Check', href: '/imei-check-free' },
         { name: 'VIN Checker', href: '/vin-checker' },
-        { name: 'Unlimited VIN Checks', href: '/unlimited-vin-checks' },
         { name: 'Serial Number Checker', href: '/serial-number-checker' },
-        { name: 'Serial Number Guide', href: '/how-to-check-serial-number' },
-        { name: 'Gun Serial Lookup', href: '/gun-serial-number-lookup' },
-        { name: 'PS5 Serial Check', href: '/ps5-serial-number-check' },
-        { name: 'Rolex Serial Check', href: '/rolex-serial-number-check' },
+        { name: 'License Plate Lookup', href: '/license-plate-lookup' },
+        { name: 'Firearms Check', href: '/firearms-check' },
+        { name: 'Check Phone', href: '/check-phone' },
+        { name: 'Check Car', href: '/check-car' },
       ]
     },
     {
@@ -45,9 +43,9 @@ export const Footer: React.FC = () => {
         { name: 'About Us', href: '/about' },
         { name: 'How It Works', href: '/how-it-works' },
         { name: 'Pricing', href: '/pricing' },
+        { name: 'Compare Plans', href: '/compare' },
+        { name: 'Free Tools', href: '/free-tools' },
         { name: 'Testimonials', href: '/testimonials' },
-        { name: 'Arizona Stolen Database', href: '/arizona-stolen-property-database' },
-        { name: 'AZ Stolen Vehicles', href: '/stolen-vehicle-database-arizona' },
       ]
     },
     {
@@ -63,7 +61,6 @@ export const Footer: React.FC = () => {
     {
       title: 'Support',
       links: [
-        { name: 'Serial Number Guide', href: '/how-to-check-serial-number' },
         { name: 'FAQ', href: '/faq' },
         { name: 'Blog', href: '/blog' },
         { name: 'Terms of Service', href: '/terms' },

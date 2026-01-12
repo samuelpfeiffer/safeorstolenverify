@@ -1,12 +1,10 @@
 /**
  * Service Worker for SafeOrStolen PWA
  * Enables offline functionality, caching, and improved performance
- * v6 - Aggressive cache clearing, auto-update on activation
  */
 
-const CACHE_VERSION = '6';
-const CACHE_NAME = `safeorstolen-v${CACHE_VERSION}`;
-const RUNTIME_CACHE = `safeorstolen-runtime-v${CACHE_VERSION}`;
+const CACHE_NAME = 'safeorstolen-v4';
+const RUNTIME_CACHE = 'safeorstolen-runtime-v4';
 
 // Critical assets to cache immediately
 const PRECACHE_URLS = [
@@ -18,7 +16,7 @@ const PRECACHE_URLS = [
 
 // Install event - precache critical assets
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing service worker v5...');
+  console.log('[SW] Installing service worker...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -29,40 +27,32 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - AGGRESSIVELY clean up ALL old caches and take control immediately
+// Activate event - clean up old caches intelligently
 self.addEventListener('activate', (event) => {
-  console.log(`[SW] Activating service worker v${CACHE_VERSION}...`);
+  console.log('[SW] Activating service worker v3...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
-        console.log('[SW] Found caches:', cacheNames);
+        // Only delete OLD cache versions, keep current ones
         return Promise.all(
-          cacheNames.map(cacheName => {
-            // Delete ANY cache that doesn't match our current version
-            if (!cacheName.includes(`v${CACHE_VERSION}`)) {
+          cacheNames
+            .filter(cacheName => {
+              return cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE;
+            })
+            .map(cacheName => {
               console.log('[SW] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
-            }
-            return Promise.resolve();
-          })
+            })
         );
       })
       .then(() => {
-        console.log('[SW] Activation complete, claiming all clients.');
+        console.log('[SW] Activation complete, taking control.');
         return self.clients.claim();
-      })
-      .then(() => {
-        // Notify all clients to reload for fresh content
-        return self.clients.matchAll({ type: 'window' }).then(clients => {
-          clients.forEach(client => {
-            client.postMessage({ type: 'SW_ACTIVATED', version: CACHE_VERSION });
-          });
-        });
       })
   );
 });
 
-// Fetch event - Network-first for navigation, cache-first for static assets
+// Fetch event - cache static assets only, let JS load normally
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -77,33 +67,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip API calls
-  if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
-    return;
-  }
-
-  // NETWORK FIRST for navigation requests (HTML documents)
-  // This ensures users always get the latest version
-  if (request.mode === 'navigate') {
-    event.respondWith(
-      fetch(request)
-        .then(response => {
-          // Cache the fresh response
-          if (response && response.status === 200) {
-            const responseToCache = response.clone();
-            caches.open(RUNTIME_CACHE)
-              .then(cache => cache.put(request, responseToCache));
-          }
-          return response;
-        })
-        .catch(() => {
-          // Network failed, try cache
-          return caches.match('/index.html');
-        })
-    );
-    return;
-  }
-
   // NEVER cache JavaScript files - let them load fresh always
   if (url.pathname.endsWith('.js') || 
       url.pathname.endsWith('.jsx') || 
@@ -112,10 +75,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // CACHE FIRST for static assets (images, CSS, fonts)
+  // Skip API calls
+  if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
+    return;
+  }
+
   event.respondWith(
     caches.match(request)
       .then(cachedResponse => {
+        // Return cached response if available
         if (cachedResponse) {
           // Update cache in background
           fetch(request)
@@ -125,7 +93,9 @@ self.addEventListener('fetch', (event) => {
                   .then(cache => cache.put(request, response.clone()));
               }
             })
-            .catch(() => {});
+            .catch(() => {
+              // Network error, cached response already returned
+            });
           
           return cachedResponse;
         }
@@ -133,18 +103,22 @@ self.addEventListener('fetch', (event) => {
         // Fetch from network and cache
         return fetch(request)
           .then(response => {
+            // Check if valid response
             if (!response || response.status !== 200 || response.type === 'error') {
               return response;
             }
 
+            // Clone response to cache
             const responseToCache = response.clone();
             caches.open(RUNTIME_CACHE)
-              .then(cache => cache.put(request, responseToCache));
+              .then(cache => {
+                cache.put(request, responseToCache);
+              });
 
             return response;
           })
           .catch(() => {
-            // Network error and no cache
+            // Network error and no cache - return offline page
             if (request.destination === 'document') {
               return caches.match('/index.html');
             }

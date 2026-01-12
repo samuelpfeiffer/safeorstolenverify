@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const OhioLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free Ohio License Plate Lookup - Check If Vehicle Is Stolen | SafeOrStolen"
-      metaDescription="Free Ohio license plate lookup. Check if a car is stolen, has liens, or title issues before buying. Instant OH vehicle verification."
-      h1="Free Ohio License Plate Lookup - Check If Vehicle Is Stolen"
+      title="Ohio Plate Lookup - Free OH License Plate Search | SafeOrStolen"
+      metaDescription="Ohio plate lookup to verify if a vehicle is stolen. Free OH license plate search using official Ohio BMV databases. Secure gov-grade verification for Columbus, Cleveland, Cincinnati vehicles."
+      h1="Ohio Plate Lookup - Free License Plate Search"
       itemType="Vehicle"
       keywords={[
         'ohio plate lookup',

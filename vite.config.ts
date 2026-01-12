@@ -14,20 +14,17 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
-    // Static HTML generation for bots (prerender + schemas)
+    // Static schema generator - embeds all 30+ schemas directly into HTML
     {
-      name: 'post-build-seo-static-html',
+      name: 'post-build-static-schemas',
       closeBundle: async () => {
         if (mode === 'production') {
-          console.log('🤖 Generating bot prerendered HTML (+ Helmet) …');
+          console.log('🤖 Generating static HTML with embedded schemas...');
           const { execSync } = await import('child_process');
           try {
-            // 1) Generate static schema pages in dist/*.html (existing behavior)
             execSync('tsx scripts/generate-static-schemas.ts', { stdio: 'inherit' });
-            // 2) Generate SSR HTML into dist/_prerendered/* (served to bots via .htaccess)
-            execSync('tsx scripts/prerender-with-schemas.tsx', { stdio: 'inherit' });
           } catch (error) {
-            console.error('⚠️  Static SEO HTML generation failed:', error);
+            console.error('⚠️  Static schema generation failed:', error);
           }
         }
       }

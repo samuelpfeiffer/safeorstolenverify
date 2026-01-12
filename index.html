@@ -4,29 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Critical inline CSS for instant FCP + CLS prevention - Googlebot optimized -->
+    <!-- Critical inline CSS for instant FCP + CLS prevention -->
     <style>
       /* Font fallback - prevents FOUT/CLS */
-      html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#1f1f1f;color:#fafafa;min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-      #root{min-height:100vh;display:block;}
-      /* Critical above-fold layout - render immediately for Googlebot */
-      .container{max-width:1280px;margin:0 auto;padding:0 1rem;}
-      header,main,footer,section,article{display:block;}
-      /* Loading state */
+      html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#1f1f1f;color:#fafafa;min-height:100vh;-webkit-font-smoothing:antialiased;}
+      #root{min-height:100vh;}
       .loading{display:flex;align-items:center;justify-content:center;min-height:100vh;}
       .spinner{width:40px;height:40px;border:4px solid #ef4444;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
       @keyframes spin{to{transform:rotate(360deg);}}
       /* CLS prevention - reserve space for common elements */
-      img{max-width:100%;height:auto;display:block;}
+      img{max-width:100%;height:auto;}
       [data-hero-img]{aspect-ratio:16/9;min-height:200px;background:#2a2a2a;}
-      h1{font-size:clamp(1.75rem,5vw,3.5rem);line-height:1.2;font-weight:700;margin:0;}
-      h2{font-size:clamp(1.25rem,3vw,2rem);line-height:1.3;font-weight:600;margin:0;}
-      h3{font-size:clamp(1rem,2vw,1.5rem);line-height:1.4;font-weight:600;margin:0;}
-      p{line-height:1.6;margin:0 0 1rem;}
-      /* Semantic structure for Googlebot */
-      nav{display:flex;}
-      ul,ol{margin:0;padding:0 0 0 1.5rem;}
-      a{color:#FF6B35;text-decoration:underline;}
+      h1{font-size:clamp(1.75rem,5vw,3.5rem);line-height:1.2;font-weight:700;}
       /* Font loading optimization */
       @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:local('Inter');}
     </style>
@@ -34,8 +23,8 @@
     <link rel="icon" href="/sos-logo.png" type="image/png">
     
     <!-- SEO Meta Tags -->
-    <title>Free Stolen Item Checker - IMEI, VIN, License Plate & Serial Number Lookup | SafeOrStolen</title>
-    <meta name="description" content="Verify items aren't stolen before buying or selling. Check phones, cars, bikes, guns, tools, appliances, and more. Free mobile app at SafeOrStolen.com. The ONLY stolen item checker with a mobile app.">
+    <title>Free Stolen Item Checker - IMEI VIN Serial Lookup | Only Mobile App | SafeOrStolen</title>
+    <meta name="description" content="The ONLY stolen item checker with a mobile app. Protect buyers, sellers & resale businesses. Free IMEI checker, VIN lookup, serial number verification. 100+ databases. Instant results. More comprehensive than CheckMEND, IMEI.info, Carfax.">
     <meta name="keywords" content="stolen item checker app, IMEI checker free, VIN lookup free, serial number verification, stolen phone checker app, stolen car check, secondhand verification, pawn shop verification, resale business protection, CheckMEND alternative, Carfax alternative, IMEI.info alternative, Swappa alternative, stolen goods database, buy used safely">
     
     <!-- Robots -->
@@ -66,23 +55,19 @@
     <meta name="twitter:image" content="https://safeorstolen.com/sos-logo.png">
     <meta name="twitter:site" content="@safeorstolen">
     
-    <!-- Preload critical hero image for LCP optimization - highest priority -->
-    <link rel="preload" as="image" href="/images/hero-device.png" fetchpriority="high" type="image/png">
+    <!-- Preload critical hero image for LCP optimization -->
+    <link rel="preload" as="image" href="/images/hero-device.png" fetchpriority="high">
     
-    <!-- Preconnect for performance - ordered by priority -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
     <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Critical fonts only - Inter for body text (reduce font requests for faster LCP) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    
-    <!-- Secondary fonts - deferred loading for non-critical display fonts -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" fetchpriority="low">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <!-- Optimized font loading with font-display: swap for better LCP -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"></noscript>
     
     <!-- DNS prefetch for Stripe payment processing -->
     <link rel="dns-prefetch" href="https://js.stripe.com">
@@ -116,113 +101,41 @@
     
     <!-- IndexNow Key Reference for instant indexing -->
     <link rel="indexnow" href="https://safeorstolen.com/indexnow-key.txt">
-    
-    <!-- Cache Control - Force fresh content -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
 </head>
 
   <body>
-    <!-- Static HTML content for Googlebot - renders immediately without JS -->
-    <!-- This content is visible to ALL crawlers and provides SEO value -->
+    <!-- Noscript fallback for crawlers without JavaScript -->
     <noscript>
-      <article style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, sans-serif; line-height: 1.6;" itemscope itemtype="https://schema.org/WebPage">
-        <header>
-          <h1 itemprop="name" style="font-size: 2.5rem; margin-bottom: 1rem;">SafeOrStolen - Check If Secondhand Items Are Safe Or Stolen</h1>
-          <p itemprop="description" style="font-size: 1.25rem; color: #666;">The trusted verification service for buyers, sellers, and businesses worldwide. The ONLY stolen item checker with a mobile app. Check IMEI, VIN, and serial numbers against 100+ databases in 3 seconds.</p>
-        </header>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Why Verify Before You Buy?</h2>
-          <p>Every year, millions of stolen items are sold on Facebook Marketplace, eBay, Craigslist, and OfferUp. Buying stolen property—even unknowingly—can result in losing both the item and your money when police recover it. Worse, you could face legal consequences.</p>
-          <p>SafeOrStolen protects you by instantly checking IMEI numbers (phones), VIN numbers (vehicles), and serial numbers (electronics, bikes, tools) against over 100 global databases including police records, NICB, insurance claims, and stolen property registries.</p>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>What Can You Verify?</h2>
-          <ul style="list-style: disc; padding-left: 2rem;">
-            <li><strong>Phones & Tablets</strong> - Check IMEI for blacklist, activation lock, carrier status</li>
-            <li><strong>Cars & Vehicles</strong> - VIN lookup for theft, salvage, odometer fraud</li>
-            <li><strong>Bikes & Bicycles</strong> - Serial number verification against bike registries</li>
-            <li><strong>Laptops & Computers</strong> - Serial checks for stolen electronics</li>
-            <li><strong>Power Tools</strong> - Verify DeWalt, Milwaukee, Makita tools</li>
-            <li><strong>Cameras & Electronics</strong> - Check valuable equipment</li>
-            <li><strong>Jewelry & Watches</strong> - Luxury item verification</li>
-            <li><strong>Firearms</strong> - ATF database checks</li>
-          </ul>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>How It Works</h2>
-          <ol style="padding-left: 2rem;">
-            <li><strong>Find the identifier</strong> - Locate the IMEI, VIN, or serial number on the item</li>
-            <li><strong>Enter or scan</strong> - Use our website or mobile app with camera scanning</li>
-            <li><strong>Get instant results</strong> - We check 100+ databases in 3 seconds</li>
-            <li><strong>Buy with confidence</strong> - Know the item is safe before paying</li>
-          </ol>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Who Uses SafeOrStolen?</h2>
-          <ul style="list-style: disc; padding-left: 2rem;">
-            <li><strong>Buyers</strong> - Protect yourself from scams on Facebook Marketplace, eBay, Craigslist</li>
-            <li><strong>Sellers</strong> - Prove your items are legitimate to close sales faster</li>
-            <li><strong>Pawn Shops</strong> - Compliance with state regulations requiring stolen goods checks</li>
-            <li><strong>Resale Businesses</strong> - Verify inventory before purchasing for resale</li>
-            <li><strong>Car Dealerships</strong> - VIN checks on trade-ins and inventory</li>
-            <li><strong>Electronics Resellers</strong> - IMEI verification for phone and tablet inventory</li>
-          </ul>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Why SafeOrStolen?</h2>
-          <ul style="list-style: none; padding: 0;">
-            <li>✓ <strong>The ONLY mobile app</strong> - No competitor offers a mobile app</li>
-            <li>✓ <strong>100+ database sources</strong> - More comprehensive than alternatives</li>
-            <li>✓ <strong>3-second results</strong> - Instant verification while shopping</li>
-            <li>✓ <strong>Free to start</strong> - 2 free searches, no credit card required</li>
-            <li>✓ <strong>All item types</strong> - Phones, cars, bikes, laptops, tools, and more</li>
-            <li>✓ <strong>Camera scanning</strong> - Scan barcodes and serial numbers</li>
-          </ul>
-        </section>
-        
-        <section style="margin: 2rem 0;">
-          <h2>Compare to Competitors</h2>
-          <p>SafeOrStolen offers more comprehensive coverage than CheckMEND, IMEI.info, Carfax, Swappa, and NICB VINCheck:</p>
-          <ul style="list-style: disc; padding-left: 2rem;">
-            <li><strong>vs CheckMEND</strong> - We cover all item types, not just phones</li>
-            <li><strong>vs IMEI.info</strong> - We check actual stolen databases, not just specifications</li>
-            <li><strong>vs Carfax</strong> - We verify stolen status, not just accident history</li>
-            <li><strong>vs Swappa</strong> - We're a dedicated verification service, not a marketplace</li>
-            <li><strong>vs NICB</strong> - We cover all items, not just vehicles</li>
-          </ul>
-        </section>
-        
-        <nav style="margin: 2rem 0; padding: 1rem; background: #f5f5f5; border-radius: 8px;">
-          <h3>Start Verifying Now</h3>
-          <p>
-            <a href="/verify" style="color: #FF6B35; font-weight: bold;">Verify Any Item</a> | 
-            <a href="/check-phone" style="color: #FF6B35;">Check Phone IMEI</a> | 
-            <a href="/check-car" style="color: #FF6B35;">Check Car VIN</a> | 
-            <a href="/check-bike" style="color: #FF6B35;">Check Bike</a> | 
-            <a href="/check-laptop" style="color: #FF6B35;">Check Laptop</a> | 
-            <a href="/app" style="color: #FF6B35;">Download App</a> | 
-            <a href="/pricing" style="color: #FF6B35;">Pricing</a> |
-            <a href="/blog" style="color: #FF6B35;">Blog</a>
-          </p>
+      <div style="padding: 40px; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>SafeOrStolen - Verify If Secondhand Items Are Stolen</h1>
+        <p>Instantly verify if secondhand items (phones, cars, bikes, electronics) are safe or stolen.</p>
+        <p>Check IMEI numbers, VIN numbers, and serial numbers against global databases.</p>
+        <ul style="list-style: none; padding: 0;">
+          <li>✓ 2 Free Searches</li>
+          <li>✓ No Credit Card Required</li>
+          <li>✓ Instant Results</li>
+          <li>✓ Global Database Access</li>
+        </ul>
+        <p><strong>Please enable JavaScript to use SafeOrStolen</strong></p>
+        <nav>
+          <a href="/verify">Verify Item</a> | 
+          <a href="/verify?type=smartphone">Check Phone</a> | 
+          <a href="/verify?type=vehicle">Check Car</a> | 
+          <a href="/app">Install App</a> | 
+          <a href="/pricing">Pricing</a>
         </nav>
-        
-        <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; color: #666;">
-          <p>© 2025 SafeOrStolen. Recognized by OneValley and the Entrepreneurship World Cup 2020. Trusted by buyers, sellers, and businesses worldwide.</p>
-          <p>Enable JavaScript for the full interactive experience with camera scanning and instant verification.</p>
-        </footer>
-      </article>
+      </div>
     </noscript>
     
     <div id="root">
       <div class="loading">
         <div class="spinner"></div>
+        <!-- SEO-friendly fallback content for crawlers -->
+        <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
+          <h1>SafeOrStolen - Free Stolen Item Checker & Verification Service</h1>
+          <h2>Verify IMEI, VIN, and Serial Numbers Instantly</h2>
+          <p>SafeOrStolen is the world's leading free stolen item verification platform. Check if phones, cars, bikes, and electronics are stolen before you buy.</p>
+        </div>
       </div>
     </div>
     
@@ -258,11 +171,8 @@
             "contactType": "Customer Support"
           },
           "sameAs": [
-            "https://www.youtube.com/@SafeOrStolen",
-            "https://x.com/safeorstolen",
-            "https://www.linkedin.com/in/verifysafeorstolen/",
-            "https://www.trustpilot.com/review/safeorstolen.com",
-            "https://www.crunchbase.com/organization/safe-or-stolen"
+            "https://twitter.com/safeorstolen",
+            "https://www.youtube.com/@safeorstolen"
           ]
         },
         {

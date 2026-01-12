@@ -278,7 +278,7 @@ const NICBVINCheckAlternative = () => {
                       <Link to="/verify">Check VIN Free Now</Link>
                     </Button>
                     <Button asChild variant="outline" size="lg">
-                      <Link to="/vin-checker">Learn More About VIN Checks</Link>
+                      <Link to="/car-vin-check">Learn More About VIN Checks</Link>
                     </Button>
                   </div>
                 </CardContent>

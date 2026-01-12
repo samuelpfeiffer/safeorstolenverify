@@ -1,7 +1,7 @@
 /**
  * URL Redirect Configuration
  * Handles 404s, duplicates, and legacy URLs from Google Search Console
- * Last updated: 2026-01-12
+ * Last updated: 2025-12-18
  */
 
 import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
@@ -26,35 +26,6 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/android-app', to: '/app', permanent: true },
   { from: '/ios-app', to: '/app', permanent: true },
   { from: '/mobile-app', to: '/app', permanent: true },
-  { from: '/app/ios', to: '/app', permanent: true },
-  { from: '/app/android', to: '/app', permanent: true },
-  { from: '/app/serial-number-checker', to: '/serial-number-checker', permanent: true },
-
-  // ===== SOFT 404 BLOG REDIRECTS (Dec 2025 GSC) =====
-  { from: '/blog/best-stolen-item-checker-apps-2025', to: '/blog/stolen-verification-app-guide', permanent: true },
-  { from: '/blog/enterprise-security', to: '/for-businesses', permanent: true },
-  { from: '/blog/why-verify-serial-numbers', to: '/blog/complete-verification-guide', permanent: true },
-  { from: '/blog/complete-marketplace-buyers-checklist', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
-  { from: '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1', to: '/blog/complete-vin-guide', permanent: true },
-  // NEW: Missing blog URL variations causing Soft 404s
-  { from: '/blog/how-to-check-if-phone-is-stolen', to: '/blog/how-to-check-if-phone-stolen', permanent: true },
-  { from: '/blog/imei-checker-app-comparison', to: '/blog/imei-checker-app-download', permanent: true },
-  { from: '/blog/imei-verification-guide', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
-  { from: '/blog/complete-vin-verification-guide', to: '/blog/complete-vin-guide', permanent: true },
-  { from: '/blog/mobile-app-features', to: '/app', permanent: true },
-
-  // ===== STATE PATTERN URLS =====
-  { from: '/state/new-york/stolen-item-checker', to: '/verify', permanent: true },
-  { from: '/state/california/stolen-item-checker', to: '/verify', permanent: true },
-  { from: '/state/texas/stolen-item-checker', to: '/verify', permanent: true },
-  { from: '/state/florida/stolen-item-checker', to: '/verify', permanent: true },
-  { from: '/city/chicago-il/stolen-item-checker', to: '/stolen-check-chicago', permanent: true },
-  { from: '/city/los-angeles-ca/stolen-item-checker', to: '/stolen-check-los-angeles', permanent: true },
-  { from: '/city/new-york-ny/stolen-item-checker', to: '/stolen-check-new-york-city', permanent: true },
-
-  // ===== MARKETPLACE VERIFICATION URLS =====
-  { from: '/offerup-verification', to: '/offerup-verify-not-stolen', permanent: true },
-  { from: '/facebook-marketplace-verification', to: '/facebook-marketplace-stolen-check', permanent: true },
 
   // ===== SOFT 404 / LEGACY VERIFICATION URLS =====
   { from: '/bulk', to: '/verify', permanent: true },
@@ -86,100 +57,14 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/stolen-phone-check', to: '/check-stolen-phone', permanent: true },
   { from: '/stolen-car-check', to: '/check-stolen-car', permanent: true },
 
-  // ===== STATE ABBREVIATION PAGES (Soft 404 Fix - redirect to license plate pages) =====
-  { from: '/texas', to: '/texas-license-plate-lookup', permanent: true },
-  { from: '/florida', to: '/florida-license-plate-lookup', permanent: true },
-  { from: '/new-york', to: '/new-york-license-plate-lookup', permanent: true },
-  { from: '/california', to: '/california-license-plate-lookup', permanent: true },
-  { from: '/indiana-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/new-mexico-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/oklahoma-vin-lookup', to: '/vin-checker', permanent: true },
-  // Note: /arizona-license-plate-lookup now has dedicated page - removed redirect
-
-  // ===== CRAWLED NOT INDEXED - Dec 2025 GSC EMERGENCY FIX =====
-  { from: '/check-camera', to: '/check-camera-stolen', permanent: true },
-  { from: '/check-xbox', to: '/check-gaming-console-stolen', permanent: true },
-  { from: '/check-playstation', to: '/check-gaming-console-stolen', permanent: true },
-  { from: '/check-nintendo', to: '/check-gaming-console-stolen', permanent: true },
-  { from: '/check-console', to: '/check-gaming-console-stolen', permanent: true },
-  { from: '/check-tablet', to: '/check-tablet-stolen', permanent: true },
-  { from: '/check-watch', to: '/check-watch-stolen', permanent: true },
-  { from: '/check-tools', to: '/check-power-tools-stolen', permanent: true },
-  { from: '/check-firearm', to: '/firearms-check', permanent: true },
-  { from: '/check-gun', to: '/firearms-check', permanent: true },
-  { from: '/chicago/imei-check', to: '/stolen-check-chicago', permanent: true },
-  { from: '/app/buyers', to: '/app', permanent: true },
-  { from: '/auction-houses', to: '/for-auction-houses', permanent: true },
-  { from: '/case-studies', to: '/testimonials', permanent: true },
-  { from: '/accuracy', to: '/how-it-works', permanent: true },
-  { from: '/avoid-stolen-goods', to: '/how-it-works', permanent: true },
-  { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
-  { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
-
-  // ===== NOINDEX PAGES - Dec 2025 / Jan 2026 GSC =====
-  { from: '/transparency', to: '/about', permanent: true },
-  { from: '/features', to: '/how-it-works', permanent: true },
-  { from: '/app/sellers', to: '/app', permanent: true },
-  { from: '/app/vs-carfax', to: '/vs-carfax', permanent: true },
-  { from: '/app/features/barcode-scanner', to: '/app/barcode-scanner', permanent: true },
-  { from: '/app/stolen-database-search', to: '/stolen-database', permanent: true },
-  { from: '/app/investigate-stolen-property', to: '/verify', permanent: true },
-  { from: '/app/lookup-stolen-items', to: '/verify', permanent: true },
-  { from: '/app/vs-imeiinfo', to: '/vs-imeiinfo', permanent: true },
-  { from: '/app/check-stolen-before-buying', to: '/verify', permanent: true },
-  { from: '/guides/verify-craigslist-items', to: '/craigslist-safety-verification', permanent: true },
-  { from: '/app/philadelphia', to: '/stolen-check-philadelphia', permanent: true },
-  { from: '/guides/offerup-scam-protection', to: '/offerup-verify-not-stolen', permanent: true },
-  { from: '/app/carfax-alternative', to: '/vs-carfax', permanent: true },
-  { from: '/blog/how-to-use-imei-checker-app', to: '/blog/imei-checker-app-download', permanent: true },
-  
-  // ===== NOINDEX PAGES - Jan 2026 GSC Validation =====
-  { from: '/real-time-verification', to: '/verify', permanent: true },
-  { from: '/developer-portal', to: '/for-businesses', permanent: true },
-  { from: '/how-to-check-if-item-stolen', to: '/how-it-works', permanent: true },
-  { from: '/pawn-shops', to: '/for-pawn-shops', permanent: true },
-  { from: '/community', to: '/about', permanent: true },
-  { from: '/data-sources', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
-  { from: '/comprehensive-guide', to: '/blog/complete-verification-guide', permanent: true },
-  { from: '/trust-verification', to: '/verify', permanent: true },
-  { from: '/resource-center', to: '/blog', permanent: true },
-  { from: '/mobile', to: '/app', permanent: true },
-  { from: '/press-release', to: '/press-kit', permanent: true },
-  { from: '/for-pawnshops', to: '/for-pawn-shops', permanent: true },
-  { from: '/check', to: '/verify', permanent: true },
-  { from: '/app/download', to: '/download', permanent: true },
-  { from: '/vs-stolenregister', to: '/compare', permanent: true },
-  { from: '/check-android', to: '/check-android-phone-stolen', permanent: true },
-  { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
-  
-  // State VIN lookups without dedicated pages → /vin-checker
-  { from: '/alaska-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/connecticut-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/new-mexico-vin-lookup', to: '/vin-checker', permanent: true },
-  
-  // Blog duplicates with -1, -2 suffixes or long titles
-  { from: '/blog/how-law-enforcement-tracks-stolen-goods-2', to: '/blog/how-law-enforcement-tracks-stolen-goods', permanent: true },
-  { from: '/blog/playstation-5-serial-number-verification-guide-1', to: '/blog/ps5-stolen-check-guide', permanent: true },
-  { from: '/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1', to: '/stolen-check-new-york-city', permanent: true },
-  { from: '/blog/los-angeles-imei-verification-phone-fraud-protection-1', to: '/stolen-check-los-angeles', permanent: true },
-  { from: '/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide', to: '/blog/how-to-check-if-iphone-stolen', permanent: true },
-  { from: '/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1', to: '/blog/how-to-check-if-iphone-stolen', permanent: true },
-  { from: '/blog/5-signs-used-phone-might-be-stolen', to: '/blog/how-to-check-if-phone-stolen', permanent: true },
-  { from: '/blog/craigslist-scam-prevention-item-verification-checklist', to: '/craigslist-safety-verification', permanent: true },
-  { from: '/blog/business-guide-preventing-stolen-goods', to: '/for-businesses', permanent: true },
-  { from: '/blog/avoid-buying-stolen-laptops', to: '/check-laptop', permanent: true },
-  { from: '/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification', to: '/app', permanent: true },
-  { from: '/blog/how-to-check-phone-stolen', to: '/blog/how-to-check-if-phone-stolen', permanent: true },
+  // ===== STATE ABBREVIATION PAGES =====
+  { from: '/texas', to: '/texas-vin-lookup', permanent: true },
+  { from: '/florida', to: '/florida-vin-lookup', permanent: true },
+  { from: '/new-york', to: '/new-york-vin-lookup', permanent: true },
 
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
   { from: '/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
-  { from: '/vs-imei pro', to: '/vs-imeiinfo', permanent: true },
-
-  // ===== SOFT 404 FIX - Jan 2026 GSC Validation =====
-  { from: '/blog/safer-buying-workflow', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
-  { from: '/our-mission', to: '/about', permanent: true },
-  { from: '/check-ebike', to: '/check-bike', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
@@ -198,58 +83,6 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/for-businesses', to: '/for-pawn-shops', permanent: true },
   { from: '/seo-strategy', to: '/about', permanent: true },
   { from: '/seller-guide', to: '/about', permanent: true },
-  { from: '/service-limitations', to: '/terms', permanent: true },
-
-  // ===== GSC PAGE WITH REDIRECT ERRORS (Dec 2025) =====
-  { from: '/verify/auctions', to: '/verify', permanent: true },
-  { from: '/verify/facebook-marketplace', to: '/verify', permanent: true },
-  { from: '/verify/ebay', to: '/verify', permanent: true },
-  { from: '/verify/pawnshops', to: '/verify', permanent: true },
-  { from: '/verify/offerup', to: '/verify', permanent: true },
-  { from: '/verify/craigslist', to: '/verify', permanent: true },
-  { from: '/app/features/history', to: '/app', permanent: true },
-  { from: '/canada-vin-check', to: '/vin-checker', permanent: true },
-  { from: '/blog/best-imei-checker-tools-2025', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
-  { from: '/app/research-stolen-car', to: '/app', permanent: true },
-  { from: '/app/buyer-protection-research', to: '/app', permanent: true },
-  { from: '/app/research-stolen-phone', to: '/app', permanent: true },
-  { from: '/app/facebook-marketplace-checker', to: '/app', permanent: true },
-  { from: '/app/pawnshop-verification', to: '/app', permanent: true },
-  { from: '/app/research-stolen-items', to: '/app', permanent: true },
-  { from: '/app/offerup-safety', to: '/app', permanent: true },
-  { from: '/app/ebay-verification', to: '/app', permanent: true },
-  { from: '/app/secondhand-research-app', to: '/app', permanent: true },
-  { from: '/blog/mobile-app-features', to: '/app', permanent: true },
-
-  // ===== JAN 2026 GSC "PAGE WITH REDIRECT" FIX (65 URLs) =====
-  // Blog posts that no longer exist
-  { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature-1', to: '/app/barcode-scanner', permanent: true },
-  { from: '/blog/los-angeles-imei-verification-phone-fraud-protection', to: '/stolen-check-los-angeles', permanent: true },
-  { from: '/blog/how-law-enforcement-tracks-stolen-goods-1760086814875', to: '/blog/how-law-enforcement-tracks-stolen-goods', permanent: true },
-  { from: '/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
-  { from: '/blog/playstation-5-serial-number-verification-guide', to: '/blog/ps5-stolen-check-guide', permanent: true },
-  { from: '/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
-  
-  // State VIN lookups without pages
-  { from: '/wyoming-vin-lookup', to: '/vin-checker', permanent: true },
-  { from: '/kentucky-vin-lookup', to: '/vin-checker', permanent: true },
-  
-  // YouTube landing pages
-  { from: '/youtube/vin-check', to: '/youtube', permanent: true },
-  
-  // Legacy press/marketing pages
-  { from: '/press', to: '/press-kit', permanent: true },
-  { from: '/marketplace-integration', to: '/for-marketplaces', permanent: true },
-  
-  // Drone checker (redirect to electronics)
-  { from: '/check-drone', to: '/check-electronics', permanent: true },
-  
-  // IMEI/check-before pages
-  { from: '/check-imei-before-buying', to: '/imei-checker', permanent: true },
-  
-  // Stolen goods checker duplicates
-  { from: '/stolen-goods-checker', to: '/verify', permanent: true },
-  { from: '/stolen-items-database', to: '/stolen-database', permanent: true },
 ];
 
 /**
@@ -264,103 +97,17 @@ export function findRedirect(path: string): string | null {
     return null;
   }
 
-  // Check explicit redirect rules first
   for (const rule of REDIRECT_RULES) {
     if (rule.from === cleanPath) {
       return rule.to;
     }
   }
 
-  // ===== PATTERN-BASED REDIRECTS =====
-  // These catch legacy URL patterns that Google may have discovered
-
-  // Blog post timestamp pattern - strip timestamp suffix and redirect to clean slug
-  // Example: /blog/red-flags-buying-used-electronics-1759314016.095080 → /blog/red-flags-buying-used-electronics
-  const timestampMatch = cleanPath.match(/^\/blog\/(.+)-\d{10,}\.?\d*$/);
+  // Handle blog post timestamp pattern - strip timestamp and redirect to clean slug
+  const timestampMatch = cleanPath.match(/^\/blog\/(.+)-[\d.]+$/);
   if (timestampMatch) {
     const cleanSlug = timestampMatch[1];
     return `/blog/${cleanSlug}`;
-  }
-
-  // App subdirectory patterns → /app
-  if (cleanPath.startsWith('/app/') && !VALID_ROUTES.has(cleanPath)) {
-    return '/app';
-  }
-
-  // Verify subdirectory patterns → /verify
-  if (cleanPath.startsWith('/verify/') && !VALID_ROUTES.has(cleanPath)) {
-    return '/verify';
-  }
-
-  // State patterns → /verify or appropriate state page
-  if (cleanPath.startsWith('/state/') || cleanPath.match(/^\/[a-z-]+-stolen-item-check$/)) {
-    return '/verify';
-  }
-
-  // City patterns → /verify
-  if (cleanPath.startsWith('/city/') || cleanPath.match(/^\/[a-z-]+-stolen-check$/)) {
-    return '/verify';
-  }
-
-  // Guides patterns → /blog
-  if (cleanPath.startsWith('/guides/')) {
-    return '/blog';
-  }
-
-  // Tools patterns → /verify
-  if (cleanPath.startsWith('/tools/')) {
-    return '/verify';
-  }
-
-  // Statistics patterns → /about
-  if (cleanPath.startsWith('/statistics/')) {
-    return '/about';
-  }
-
-  // Check-* patterns without existing routes → /verify
-  if (cleanPath.startsWith('/check-') && !VALID_ROUTES.has(cleanPath)) {
-    // Map to appropriate checker based on item type
-    if (cleanPath.includes('phone') || cleanPath.includes('iphone') || cleanPath.includes('samsung') || cleanPath.includes('android')) {
-      return '/check-phone';
-    }
-    if (cleanPath.includes('car') || cleanPath.includes('vehicle') || cleanPath.includes('auto')) {
-      return '/check-car';
-    }
-    if (cleanPath.includes('bike') || cleanPath.includes('bicycle')) {
-      return '/check-bike';
-    }
-    if (cleanPath.includes('laptop') || cleanPath.includes('computer') || cleanPath.includes('macbook')) {
-      return '/check-laptop';
-    }
-    if (cleanPath.includes('firearm') || cleanPath.includes('gun')) {
-      return '/firearms-check';
-    }
-    return '/verify';
-  }
-
-  // VIN lookup patterns for states without dedicated pages → /vin-checker
-  if (cleanPath.match(/^\/[a-z-]+-vin-lookup$/) && !VALID_ROUTES.has(cleanPath)) {
-    return '/vin-checker';
-  }
-
-  // License plate patterns for states without dedicated pages → /license-plate-lookup
-  if (cleanPath.match(/^\/[a-z-]+-license-plate-lookup$/) && !VALID_ROUTES.has(cleanPath)) {
-    return '/license-plate-lookup';
-  }
-
-  // Blog patterns without specific redirects → /blog
-  if (cleanPath.startsWith('/blog/') && !VALID_ROUTES.has(cleanPath)) {
-    return '/blog';
-  }
-
-  // vs-* comparison patterns → /compare
-  if (cleanPath.startsWith('/vs-') && !VALID_ROUTES.has(cleanPath)) {
-    return '/compare';
-  }
-
-  // for-* business patterns → /for-pawn-shops (main business page)
-  if (cleanPath.startsWith('/for-') && !VALID_ROUTES.has(cleanPath)) {
-    return '/for-pawn-shops';
   }
 
   return null;

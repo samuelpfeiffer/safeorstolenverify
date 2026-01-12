@@ -3,9 +3,9 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckBikePage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free Bicycle & E-Bike Serial Number Check | SafeOrStolen"
-      metaDescription="Free bicycle and e-bike serial number check for buyers and sellers. Verify a bike isn't stolen before buying or selling. Instant results."
-      h1="Free Bicycle & E-Bike Serial Number Check"
+      title="Check if Bike is Stolen - Free Bicycle Serial Number Verification"
+      metaDescription="Check if a bicycle is stolen before buying. Free serial number verification for road bikes, mountain bikes, and e-bikes. Search bike registries and police databases."
+      h1="Check if Bicycle is Stolen Before Buying"
       itemType="Bicycle"
       keywords={[
         'check if bike stolen',
