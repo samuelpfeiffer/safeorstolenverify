@@ -79,8 +79,8 @@ const CheckGunPage = () => {
   return (
     <>
       <PageSEO
-        title="Free Gun Serial Number Lookup - Check If Firearm Is Stolen | SafeOrStolen"
-        description="Free gun serial number lookup. Check if a firearm is stolen before buying. Search NCIC, ATF, and state stolen gun databases. Instant results."
+        title="Free Gun Serial Number Lookup - Check If Stolen | SafeOrStolen"
+        description="Free gun serial number lookup for buyers and sellers. Check if a firearm is stolen. Search NCIC, ATF, and state databases instantly."
         keywords="gun serial number lookup, check if gun is stolen, firearm serial number check, stolen gun database, NCIC gun check, ATF firearm verification"
         canonical="/check-gun"
         structuredData={pageSchema}
