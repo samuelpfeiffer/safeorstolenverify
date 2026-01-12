@@ -298,25 +298,32 @@ export const SOSFooter: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <button
-                onClick={() => handleExternalNavigation('https://www.youtube.com/@safeorstolen', true)}
+                onClick={() => handleExternalNavigation('https://www.youtube.com/@SafeOrStolen', true)}
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Visit SafeOrStolen YouTube channel"
               >
                 <Youtube className="h-5 w-5" />
               </button>
               <button
-                onClick={() => handleExternalNavigation('https://x.com/SafeOrStolen123', true)}
+                onClick={() => handleExternalNavigation('https://x.com/safeorstolen', true)}
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Follow SafeOrStolen on X"
               >
                 <Twitter className="h-5 w-5" />
               </button>
               <button
-                onClick={() => handleExternalNavigation('https://linkedin.com/company/safeorstolen', true)}
+                onClick={() => handleExternalNavigation('https://www.linkedin.com/in/verifysafeorstolen/', true)}
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Visit SafeOrStolen on LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => handleExternalNavigation('https://www.trustpilot.com/review/safeorstolen.com', true)}
+                className="flex items-center gap-1 px-2 py-1 rounded bg-green-600/10 text-green-500 hover:bg-green-600/20 transition-colors"
+                aria-label="View SafeOrStolen on Trustpilot"
+              >
+                <span className="text-xs font-bold">★ Trustpilot</span>
               </button>
             </div>
             <p className="text-xs text-muted-foreground">
