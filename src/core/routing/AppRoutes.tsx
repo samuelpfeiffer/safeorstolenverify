@@ -205,6 +205,11 @@ const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeM
 const CarfaxVsFreeVinAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFreeVinAlternatives'));
 const ArizonaTheftAZGuide = lazy(() => import('@/pages/blog/ArizonaTheftAZGuide'));
 const PS5StolenCheckGuide = lazy(() => import('@/pages/blog/PS5StolenCheckGuide'));
+const UnderstandingIMEIBlacklists = lazy(() => import('@/pages/blog/UnderstandingIMEIBlacklists'));
+const HowLawEnforcementTracksStolen = lazy(() => import('@/pages/blog/HowLawEnforcementTracksStolen'));
+const IPhoneIMEICheckGuide = lazy(() => import('@/pages/blog/IPhoneIMEICheckGuide'));
+const StolenItemCheckerNewYork = lazy(() => import('@/pages/blog/StolenItemCheckerNewYork'));
+const LosAngelesIMEIVerification = lazy(() => import('@/pages/blog/LosAngelesIMEIVerification'));
 const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
 
 // Traffic Generation Landing Pages
@@ -494,6 +499,11 @@ export const AppRoutes = () => {
         <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVinAlternatives />} />
         <Route path="/blog/arizona-theftaz-guide" element={<ArizonaTheftAZGuide />} />
         <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
+        <Route path="/blog/understanding-imei-blacklists" element={<UnderstandingIMEIBlacklists />} />
+        <Route path="/blog/how-law-enforcement-tracks-stolen-goods" element={<HowLawEnforcementTracksStolen />} />
+        <Route path="/blog/iphone-imei-check-guide" element={<IPhoneIMEICheckGuide />} />
+        <Route path="/blog/stolen-item-checker-new-york" element={<StolenItemCheckerNewYork />} />
+        <Route path="/blog/los-angeles-imei-verification" element={<LosAngelesIMEIVerification />} />
         
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
