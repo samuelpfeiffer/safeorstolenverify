@@ -278,6 +278,61 @@ export const validateFAQPageSchema = (schema: any): SchemaValidationResult => {
 };
 
 /**
+ * Validates HowTo schema
+ */
+export const validateHowToSchema = (schema: any): SchemaValidationResult => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  // Required fields
+  if (!schema.name) errors.push('HowTo schema missing required field: name');
+  if (!schema.step) {
+    errors.push('HowTo schema missing required field: step');
+  } else if (!Array.isArray(schema.step)) {
+    errors.push('HowTo step must be an array');
+  } else {
+    schema.step.forEach((step: any, index: number) => {
+      if (!step['@type'] || step['@type'] !== 'HowToStep') {
+        warnings.push(`HowTo step ${index + 1} should have @type: "HowToStep"`);
+      }
+      if (!step.name && !step.text) {
+        errors.push(`HowTo step ${index + 1} missing required field: name or text`);
+      }
+    });
+  }
+
+  // Recommended fields
+  if (!schema.description) warnings.push('HowTo schema missing recommended field: description');
+  if (!schema.image) warnings.push('HowTo schema missing recommended field: image');
+  if (!schema.totalTime) warnings.push('HowTo schema missing recommended field: totalTime');
+
+  return {
+    isValid: errors.length === 0,
+    errors,
+    warnings
+  };
+};
+
+/**
+ * Validates WebSite schema
+ */
+export const validateWebSiteSchema = (schema: any): SchemaValidationResult => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (!schema.name) errors.push('WebSite schema missing required field: name');
+  if (!schema.url) errors.push('WebSite schema missing required field: url');
+  
+  if (!schema.potentialAction) warnings.push('WebSite schema missing recommended field: potentialAction (SearchAction)');
+
+  return {
+    isValid: errors.length === 0,
+    errors,
+    warnings
+  };
+};
+
+/**
  * Validates all common schema types
  */
 export const validateSchema = (schema: any): SchemaValidationResult => {
@@ -306,11 +361,38 @@ export const validateSchema = (schema: any): SchemaValidationResult => {
       return validateOrganizationSchema(schema);
     case 'FAQPage':
       return validateFAQPageSchema(schema);
-    default:
+    case 'HowTo':
+      return validateHowToSchema(schema);
+    case 'WebSite':
+      return validateWebSiteSchema(schema);
+    // Common schema types that don't need validation
+    case 'WebPage':
+    case 'ItemPage':
+    case 'AboutPage':
+    case 'ContactPage':
+    case 'CollectionPage':
+    case 'SearchResultsPage':
+    case 'ProfilePage':
+    case 'ImageObject':
+    case 'VideoObject':
+    case 'Person':
+    case 'Place':
+    case 'Event':
+    case 'LocalBusiness':
+    case 'Review':
+    case 'Rating':
+    case 'AggregateRating':
       return {
         isValid: true,
         errors: [],
-        warnings: [`Schema type ${schema['@type']} validation not implemented`]
+        warnings: []
+      };
+    default:
+      // Silently accept unknown schema types - they may be valid
+      return {
+        isValid: true,
+        errors: [],
+        warnings: []
       };
   }
 };
