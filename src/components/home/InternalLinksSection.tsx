@@ -29,7 +29,7 @@ export const InternalLinksSection = () => {
         { to: "/vin-checker", label: "VIN Checker" },
         { to: "/unlimited-vin-checks", label: "Unlimited VIN" },
         { to: "/serial-number-checker", label: "Serial Checker" },
-        { to: "/partial-serial-number-search", label: "Partial Serial" },
+        { to: "/how-to-check-serial-number", label: "Serial Guide" },
         { to: "/gun-serial-number-lookup", label: "Gun Serial Lookup" },
       ]
     },

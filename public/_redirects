@@ -14,6 +14,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /check-stolen-car               /check-car        301!
 /comparison-checkmend           /vs-checkmend     301!
+/partial-serial-number-search   /serial-number-checker  301!
 /stolen-merchandise-check       /verify           301!
 /blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942  /blog/complete-vin-guide  301!
 /blog/vin-verification-for-used-cars-what-you-need-to-know-1760000422701  /blog/complete-vin-guide  301!

@@ -80,7 +80,7 @@ const StolenVehicleDatabaseArizonaPage = lazy(() => import('@/pages/StolenVehicl
 const RolexSerialNumberCheckPage = lazy(() => import('@/pages/RolexSerialNumberCheckPage'));
 const ArizonaStolenPropertyDatabasePage = lazy(() => import('@/pages/ArizonaStolenPropertyDatabasePage'));
 const UnlimitedVINChecksPage = lazy(() => import('@/pages/UnlimitedVINChecksPage'));
-const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNumberSearchPage'));
+
 const HowToCheckSerialNumberPage = lazy(() => import('@/pages/HowToCheckSerialNumberPage'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
@@ -349,7 +349,7 @@ export const AppRoutes = () => {
         <Route path="/rolex-serial-number-check" element={<RolexSerialNumberCheckPage />} />
         <Route path="/arizona-stolen-property-database" element={<ArizonaStolenPropertyDatabasePage />} />
         <Route path="/unlimited-vin-checks" element={<UnlimitedVINChecksPage />} />
-        <Route path="/partial-serial-number-search" element={<PartialSerialNumberSearchPage />} />
+        
         <Route path="/how-to-check-serial-number" element={<HowToCheckSerialNumberPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
