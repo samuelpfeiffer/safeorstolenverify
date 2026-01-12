@@ -131,7 +131,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-merchandise-check    /verify  301!
 /verification-hub            /verify  301!
 /stolen-property-lookup      /verify  301!
-/bulk                        /verify  301!
+/bulk                        /for-pawn-shops  301!
 /check-if-stolen             /verify  301!
 /stolen-item-checker         /verify  301!
 /stolen-item-lookup          /verify  301!
@@ -145,17 +145,20 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /avoid-stolen-goods          /verify  301!
 /avoid-buying-stolen-goods   /verify  301!
 /how-to-check-if-anything-is-stolen-before-you-buy /verify 301!
+/stolen-goods-checker        /verify  301!
+/for-consumers               /verify  301!
+/for-brands                  /for-pawn-shops  301!
 
 # ============================================
 # ITEM CHECKER URLS (GSC "Page with redirect" Fixes)
 # ============================================
-/imei-check              /imei-checker  301!
+/imei-check              /check-phone   301!
 /imei                    /imei-checker  301!
-/check-imei-before-buying /imei-checker 301!
-/vin-check               /vin-checker   301!
+/check-imei-before-buying /check-phone  301!
+/vin-check               /check-car     301!
 /vin-verification        /vin-checker   301!
 /vin                     /check-car     301!
-/firearm-serial-check    /firearms-check 301!
+/firearm-serial-check    /check-gun     301!
 /check-gaming-console    /check-electronics 301!
 /check-android-phone     /check-phone   301!
 /license-plates-lookup   /license-plate-lookup 301!
@@ -200,25 +203,18 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /wyoming-vin-lookup         /check-car  301!
 
 # ============================================
-# JANUARY 2026 - PAGE WITH REDIRECT FIXES (65 URLs)
+# JANUARY 2026 - PAGE WITH REDIRECT FIXES (Consolidated)
 # ============================================
-/bulk                           /for-pawn-shops   301!
 /get-app                        /app              301!
 /check-drone                    /verify           301!
-/check-imei-before-buying       /check-phone      301!
-/imei-check                     /check-phone      301!
-/for-consumers                  /verify           301!
 /android-app                    /app              301!
 /mobile-verification            /app              301!
 /mobile-app                     /app              301!
-/for-brands                     /for-pawn-shops   301!
 /press                          /press-kit        301!
-/vin-check                      /check-car        301!
 /imei-checker-app               /app              301!
 /stolen-items-database          /data-partners    301!
 /california                     /california-license-plate-lookup  301!
 /marketplace-integration        /for-pawn-shops   301!
-/stolen-item-checker            /verify           301!
 /canada-vin-check               /check-car        301!
 /youtube/vin-check              /check-car        301!
 /chicago/imei-check             /illinois-license-plate-lookup    301!
@@ -227,12 +223,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/offerup-safety             /app              301!
 /app/ebay-verification          /app              301!
 /app/features/history           /app              301!
-/app/research-stolen-car        /app              301!
 /app/buyer-protection-research  /app              301!
-/app/research-stolen-phone      /app              301!
 /app/facebook-marketplace-checker  /app           301!
 /app/pawnshop-verification      /app              301!
-/app/research-stolen-items      /app              301!
 /app/secondhand-research-app    /app              301!
 
 # Verify sub-page redirects
@@ -252,7 +245,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # LEGACY VERIFICATION URLS (Additional)
 # ============================================
-/stolen-goods-checker               /verify  301!
 /check-stolen-before-buying         /verify  301!
 /research-stolen-items              /verify  301!
 /investigate-stolen-property        /verify  301!
@@ -263,7 +255,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
 # ============================================
 /accuracy                    /about  301!
-/for-consumers               /about  301!
 /our-story                   /about  301!
 /contact                     /about  301!
 /case-studies                /reviews  301!
@@ -271,9 +262,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /resellers                   /about  301!
 /for-phone-repair-shops      /for-dealers  301!
 /offerup-safety-verification /verify  301!
-/marketplace-integration     /about  301!
 /how-it-works-detailed       /how-it-works  301!
-/stolen-items-database       /about  301!
 /seller-guide                /about  301!
 /seo-strategy                /about  301!
 /fastercapital/tech-cofounder /about 301!
