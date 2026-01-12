@@ -200,10 +200,12 @@ export function findRedirect(path: string): string | null {
   // ===== PATTERN-BASED REDIRECTS =====
   // These catch legacy URL patterns that Google may have discovered
 
-  // Blog post timestamp pattern - strip timestamp and redirect to /blog
-  const timestampMatch = cleanPath.match(/^\/blog\/(.+)-[\d.]+$/);
+  // Blog post timestamp pattern - strip timestamp suffix and redirect to clean slug
+  // Example: /blog/red-flags-buying-used-electronics-1759314016.095080 → /blog/red-flags-buying-used-electronics
+  const timestampMatch = cleanPath.match(/^\/blog\/(.+)-\d{10,}\.?\d*$/);
   if (timestampMatch) {
-    return '/blog';
+    const cleanSlug = timestampMatch[1];
+    return `/blog/${cleanSlug}`;
   }
 
   // App subdirectory patterns → /app
