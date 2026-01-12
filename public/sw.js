@@ -1,10 +1,11 @@
 /**
  * Service Worker for SafeOrStolen PWA
  * Enables offline functionality, caching, and improved performance
+ * v5 - Network-first for navigation, improved cache management
  */
 
-const CACHE_NAME = 'safeorstolen-v4';
-const RUNTIME_CACHE = 'safeorstolen-runtime-v4';
+const CACHE_NAME = 'safeorstolen-v5';
+const RUNTIME_CACHE = 'safeorstolen-runtime-v5';
 
 // Critical assets to cache immediately
 const PRECACHE_URLS = [
@@ -16,7 +17,7 @@ const PRECACHE_URLS = [
 
 // Install event - precache critical assets
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing service worker...');
+  console.log('[SW] Installing service worker v5...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
@@ -27,16 +28,16 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches intelligently
+// Activate event - clean up old caches and take control immediately
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating service worker v3...');
+  console.log('[SW] Activating service worker v5...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
-        // Only delete OLD cache versions, keep current ones
         return Promise.all(
           cacheNames
             .filter(cacheName => {
+              // Delete ALL old cache versions
               return cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE;
             })
             .map(cacheName => {
@@ -52,7 +53,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - cache static assets only, let JS load normally
+// Fetch event - Network-first for navigation, cache-first for static assets
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
@@ -67,6 +68,33 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip API calls
+  if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
+    return;
+  }
+
+  // NETWORK FIRST for navigation requests (HTML documents)
+  // This ensures users always get the latest version
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          // Cache the fresh response
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(RUNTIME_CACHE)
+              .then(cache => cache.put(request, responseToCache));
+          }
+          return response;
+        })
+        .catch(() => {
+          // Network failed, try cache
+          return caches.match('/index.html');
+        })
+    );
+    return;
+  }
+
   // NEVER cache JavaScript files - let them load fresh always
   if (url.pathname.endsWith('.js') || 
       url.pathname.endsWith('.jsx') || 
@@ -75,15 +103,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip API calls
-  if (url.pathname.startsWith('/api/') || url.pathname.includes('supabase')) {
-    return;
-  }
-
+  // CACHE FIRST for static assets (images, CSS, fonts)
   event.respondWith(
     caches.match(request)
       .then(cachedResponse => {
-        // Return cached response if available
         if (cachedResponse) {
           // Update cache in background
           fetch(request)
@@ -93,9 +116,7 @@ self.addEventListener('fetch', (event) => {
                   .then(cache => cache.put(request, response.clone()));
               }
             })
-            .catch(() => {
-              // Network error, cached response already returned
-            });
+            .catch(() => {});
           
           return cachedResponse;
         }
@@ -103,22 +124,18 @@ self.addEventListener('fetch', (event) => {
         // Fetch from network and cache
         return fetch(request)
           .then(response => {
-            // Check if valid response
             if (!response || response.status !== 200 || response.type === 'error') {
               return response;
             }
 
-            // Clone response to cache
             const responseToCache = response.clone();
             caches.open(RUNTIME_CACHE)
-              .then(cache => {
-                cache.put(request, responseToCache);
-              });
+              .then(cache => cache.put(request, responseToCache));
 
             return response;
           })
           .catch(() => {
-            // Network error and no cache - return offline page
+            // Network error and no cache
             if (request.destination === 'document') {
               return caches.match('/index.html');
             }

@@ -16,6 +16,7 @@ import { SOSFooter } from '@/components/layout/SOSFooter';
 import { PWAInstallManager } from '@/mobile/components/PWAInstallManager';
 import { MobileNavigation } from '@/mobile/components/MobileNavigation';
 import { CriticalResourceLoader } from '@/components/optimized/CriticalResourceLoader';
+import { HostGuard } from '@/components/routing/HostGuard';
 
 import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
@@ -179,18 +180,20 @@ const AuthAwareContent: React.FC = () => {
 
 export const AppRoot: React.FC = () => {
   return (
-    <ErrorBoundary>
-      <HelmetProvider>
-        <Router>
-          <ThemeProvider>
-            <QueryClientProvider client={queryClient}>
-              <AuthProvider>
-                <AuthAwareContent />
-              </AuthProvider>
-            </QueryClientProvider>
-          </ThemeProvider>
-        </Router>
-      </HelmetProvider>
-    </ErrorBoundary>
+    <HostGuard>
+      <ErrorBoundary>
+        <HelmetProvider>
+          <Router>
+            <ThemeProvider>
+              <QueryClientProvider client={queryClient}>
+                <AuthProvider>
+                  <AuthAwareContent />
+                </AuthProvider>
+              </QueryClientProvider>
+            </ThemeProvider>
+          </Router>
+        </HelmetProvider>
+      </ErrorBoundary>
+    </HostGuard>
   );
 };
