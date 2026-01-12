@@ -10,6 +10,13 @@ http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
+# LOVABLE PREVIEW DOMAIN REDIRECTS - Force to production
+# ============================================
+https://preview-safeorstolen.lovable.app/* https://safeorstolen.com/:splat 301!
+https://safeorstolen.lovable.app/* https://safeorstolen.com/:splat 301!
+https://*.lovable.app/* https://safeorstolen.com/:splat 301!
+
+# ============================================
 # ALTERNATE PAGE WITH CANONICAL TAG FIXES (7 URLs)
 # ============================================
 /check-stolen-car               /check-car        301!
