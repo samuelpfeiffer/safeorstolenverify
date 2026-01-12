@@ -27,6 +27,40 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /blog/vin-verification-for-used-cars-what-you-need-to-know-1760000422701  /blog/complete-vin-guide  301!
 
 # ============================================
+# PHASE 2: ORPHAN URL REDIRECTS (30 URLs)
+# Added 2026-01-12 to fix "Crawled not indexed"
+# ============================================
+/avoid-buying-stolen-goods          /verify                          301!
+/accuracy                           /about                           301!
+/our-story                          /about                           301!
+/verify-not-stolen                  /verify                          301!
+/vin-verification                   /vin-checker                     301!
+/subscriptions                      /pricing                         301!
+/partnerships                       /for-businesses                  301!
+/service-limitations                /terms                           301!
+/disclaimer                         /terms                           301!
+/terms-of-service                   /terms                           301!
+/cookies                            /privacy                         301!
+/api-docs                           /for-businesses                  301!
+/case-studies                       /reviews                         301!
+/resellers                          /for-electronics-resellers       301!
+/for-phone-repair-shops             /for-dealers                     301!
+/for-used-car-dealers               /for-dealers                     301!
+/offerup-safety-verification        /verify                          301!
+/how-it-works-detailed              /how-it-works                    301!
+/how-to-verify-phone-not-stolen     /check-phone                     301!
+/how-to-check-if-iphone-is-stolen   /blog/how-to-check-if-iphone-stolen  301!
+/how-to-check-if-car-is-stolen-before-buying  /check-car             301!
+/how-to-avoid-buying-stolen-iphone  /check-phone                     301!
+/craigslist-verification-guide      /verify                          301!
+/cheaper-than-carfax                /vs-carfax                       301!
+/free-vin-check-alternative         /vin-checker                     301!
+/ultimate-guide                     /how-it-works                    301!
+/fastercapital/tech-cofounder       /about                           301!
+/enterprise-demo                    /for-businesses                  301!
+/app/buyers                         /for-buyers                      301!
+
+# ============================================
 # PART B REDIRECTS - January 2026 SEO Overhaul
 # ============================================
 /real-time-verification         /verify           301!
@@ -144,7 +178,6 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 # ============================================
 # LEGACY VERIFICATION URLS → /verify (GSC Errors)
 # ============================================
-/verify-not-stolen           /verify  301!
 /stolen-merchandise-check    /verify  301!
 /verification-hub            /verify  301!
 /stolen-property-lookup      /verify  301!
@@ -160,7 +193,6 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /check-stolen-database       /verify  301!
 /stolen-items-list           /verify  301!
 /avoid-stolen-goods          /verify  301!
-/avoid-buying-stolen-goods   /verify  301!
 /how-to-check-if-anything-is-stolen-before-you-buy /verify 301!
 /stolen-goods-checker        /verify  301!
 /for-consumers               /verify  301!
@@ -173,7 +205,6 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /imei                    /imei-checker  301!
 /check-imei-before-buying /check-phone  301!
 /vin-check               /check-car     301!
-/vin-verification        /vin-checker   301!
 /vin                     /check-car     301!
 /firearm-serial-check    /check-gun     301!
 /check-gaming-console    /check-electronics 301!
@@ -222,13 +253,7 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 # ============================================
 # JANUARY 2026 - PAGE WITH REDIRECT FIXES (Consolidated)
 # ============================================
-/get-app                        /app              301!
-/check-drone                    /verify           301!
-/android-app                    /app              301!
-/mobile-verification            /app              301!
-/mobile-app                     /app              301!
 /press                          /press-kit        301!
-/imei-checker-app               /app              301!
 /stolen-items-database          /data-partners    301!
 /california                     /california-license-plate-lookup  301!
 /marketplace-integration        /for-pawn-shops   301!
@@ -271,37 +296,23 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 # ============================================
 # BUSINESS/INFO PAGES (GSC "Page with redirect" Fixes)
 # ============================================
-/accuracy                    /about  301!
-/our-story                   /about  301!
-/contact                     /about  301!
-/case-studies                /reviews  301!
 /auction-houses              /for-auction-houses  301!
-/resellers                   /about  301!
-/for-phone-repair-shops      /for-dealers  301!
-/offerup-safety-verification /verify  301!
-/how-it-works-detailed       /how-it-works  301!
 /seller-guide                /about  301!
 /seo-strategy                /about  301!
-/fastercapital/tech-cofounder /about 301!
-/enterprise-demo             /about  301!
 /database                    /about  301!
 /analytics                   /dashboard  301!
 
 # ============================================
 # GSC "Crawled not indexed" FIXES
 # ============================================
-/chicago/imei-check          /imei-checker  301!
-/app/buyers                  /app  301!
 /can-police-track-stolen-phone /faq  301!
 
 # GSC NOINDEX/SOFT404 FIXES
 /texas                       /texas-license-plate-lookup      301!
 /florida                     /florida-license-plate-lookup    301!
 /new-york                    /new-york-license-plate-lookup   301!
-/california                  /california-license-plate-lookup 301!
 
 # International VIN checks → main checker
-/canada-vin-check            /vin-checker           301!
 /uk-vin-check                /vin-checker           301!
 /mexico-vin-check            /vin-checker           301!
 /australia-vin-check         /vin-checker           301!
@@ -336,41 +347,29 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /app/research-stolen-car            /app  301!
 /app/research-stolen-phone          /app  301!
 /app/research-stolen-items          /app  301!
-/app/buyer-protection-research      /app  301!
-/app/facebook-marketplace-checker   /app  301!
-/app/pawnshop-verification          /app  301!
-/app/offerup-safety                 /app  301!
-/app/ebay-verification              /app  301!
-/app/secondhand-research-app        /app  301!
 /app/pwa                            /app  301!
 /app/electronics-checker            /app  301!
 /app/firearms-checker               /app  301!
 /app/law-enforcement                /app  301!
-/app/features/history               /app  301!
 /app/features/*                     /app  301!
 
 # ============================================
 # MARKETPLACE VERIFICATION REDIRECTS
 # ============================================
-/verify/facebook-marketplace  /verify  301!
 /verify/ebay                  /verify  301!
 /verify/offerup               /verify  301!
-/verify/auctions              /verify  301!
 /verify/craigslist            /verify  301!
 
 # ============================================
 # COMPARISON/COMPETITOR PAGES
 # ============================================
-/comparison-checkmend              /vs-checkmend  301!
 /carfax-alternative                /vs-carfax  301!
 /competitor-alternatives           /pricing  301!
-/cheaper-than-carfax               /vs-carfax  301!
-/free-vin-check-alternative        /vin-checker  301!
 /vs-stolenphonechecker             /compare  301!
 /vs-imeipro                        /vs-imeiinfo  301!
 
 # ============================================
-# ITEM-SPECIFIC VARIATIONS → CANONICAL PAGES
+# PHASE 3: ITEM-SPECIFIC VARIATIONS → CANONICAL PAGES
 # ============================================
 /check-iphone                      /check-phone  301!
 /check-iphone-14                   /check-phone  301!
@@ -393,42 +392,32 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /check-motorcycle                  /check-car  301!
 
 # ============================================
-# HOW-TO VARIATIONS → ITEM PAGES
-# ============================================
-/how-to-verify-phone-not-stolen                    /check-phone  301!
-/how-to-check-if-iphone-is-stolen                  /check-phone  301!
-/how-to-avoid-buying-stolen-iphone                 /check-phone  301!
-/how-to-check-if-car-is-stolen-before-buying       /check-car    301!
-
-# ============================================
 # MARKETPLACE VERIFICATION PAGES
 # ============================================
 /facebook-marketplace-verification                  /verify  301!
 /facebook-marketplace-stolen-check                  /verify  301!
 /ebay-stolen-item-checker                           /verify  301!
-/craigslist-verification-guide                      /verify  301!
-/subscriptions                                      /pricing  301!
 /refunds                                           /terms  301!
-/for-used-car-dealers                              /for-dealers  301!
 
 # ============================================
-# CITY SUBDIRECTORY REDIRECTS
+# CITY SUBDIRECTORY REDIRECTS (Deduplicated)
 # ============================================
-/city/los-angeles-ca/vin-verification     /stolen-check-los-angeles     301!
-/city/los-angeles-ca/imei-check           /stolen-check-los-angeles     301!
-/city/los-angeles-ca/stolen-item-checker  /stolen-check-los-angeles     301!
-/city/new-york-ny/vin-verification        /stolen-check-new-york-city   301!
-/city/new-york-ny/imei-check              /stolen-check-new-york-city   301!
-/city/new-york-ny/stolen-item-checker     /stolen-check-new-york-city   301!
-/city/chicago-il/imei-check               /imei-checker                 301!
-/city/chicago-il/stolen-item-checker      /verify                       301!
-/city/phoenix                     /verify  301!
-/city/los-angeles                 /stolen-check-los-angeles  301!
-/city/chicago                     /verify  301!
-/city/miami                       /verify  301!
-/city/houston                     /verify  301!
-/city/new-york                    /stolen-check-new-york-city  301!
-/city/*                                   /verify                       301!
+/city/los-angeles-ca/vin-verification     /california-license-plate-lookup     301!
+/city/los-angeles-ca/imei-check           /california-license-plate-lookup     301!
+/city/los-angeles-ca/stolen-item-checker  /california-license-plate-lookup     301!
+/city/new-york-ny/vin-verification        /new-york-license-plate-lookup       301!
+/city/new-york-ny/imei-check              /new-york-license-plate-lookup       301!
+/city/new-york-ny/stolen-item-checker     /new-york-license-plate-lookup       301!
+/city/chicago-il/imei-check               /illinois-license-plate-lookup       301!
+/city/chicago-il/stolen-item-checker      /illinois-license-plate-lookup       301!
+/city/chicago-il/vin-verification         /illinois-license-plate-lookup       301!
+/city/phoenix                             /arizona-license-plate-lookup        301!
+/city/los-angeles                         /california-license-plate-lookup     301!
+/city/chicago                             /illinois-license-plate-lookup       301!
+/city/miami                               /florida-license-plate-lookup        301!
+/city/houston                             /texas-license-plate-lookup          301!
+/city/new-york                            /new-york-license-plate-lookup       301!
+/city/*                                   /verify                              301!
 
 # City-name pattern redirects
 /chicago/*                                /verify  301!
@@ -444,12 +433,12 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /miami/*                                  /verify  301!
 
 # STATE SUBDIRECTORY REDIRECTS
-/state/texas/stolen-item-checker          /texas-vin-lookup             301!
-/state/california/stolen-item-checker     /california-vin-lookup        301!
-/state/florida/stolen-item-checker        /florida-vin-lookup           301!
-/state/new-york/stolen-item-checker       /new-york-vin-lookup          301!
-/state/illinois/stolen-item-checker       /illinois-vin-lookup          301!
-/state/*                           /verify  301!
+/state/texas/stolen-item-checker          /texas-license-plate-lookup          301!
+/state/california/stolen-item-checker     /california-license-plate-lookup     301!
+/state/florida/stolen-item-checker        /florida-license-plate-lookup        301!
+/state/new-york/stolen-item-checker       /new-york-license-plate-lookup       301!
+/state/illinois/stolen-item-checker       /illinois-license-plate-lookup       301!
+/state/*                                  /verify                              301!
 
 # ============================================
 # DUPLICATE CONTENT REDIRECTS
@@ -474,7 +463,6 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /los-angeles/vin-check             /california-vin-lookup  301!
 /statistics/*                      /about  301!
 /offerup-verification              /verify  301!
-/ultimate-guide                    /about   301!
 
 # ============================================
 # BLOG POST REDIRECTS
@@ -489,12 +477,10 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /blog/verification-data-privacy                                 /blog            301!
 /blog/serial-numbers-stolen-goods-101                           /blog            301!
 /blog/real-user-stories-stolen-goods-verification               /blog/real-user-stories  301!
-/blog/data-source-credibility                                   /blog/data-source-credibility-stolen-goods-verification  301!
 /blog/enterprise-security                                       /blog            301!
 /blog/buyer-protection-research                                 /blog            301!
 /blog/best-stolen-item-checker-apps-2025                        /blog/stolen-verification-app-guide  301!
 /blog/imei-checker-app-comparison                               /blog/imei-checker-app-download  301!
-/blog/best-imei-checker-tools-2025                              /blog/complete-imei-guide-protect-yourself  301!
 /blog/how-to-check-if-phone-is-stolen                           /blog/how-to-check-if-phone-stolen  301!
 /blog/why-verify-serial-numbers                                 /blog/complete-verification-guide  301!
 /blog/complete-marketplace-buyers-checklist                     /blog/ultimate-marketplace-buyers-guide  301!
@@ -516,22 +502,7 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /blog/how-to-check-if-device-is-safe-stolen         /blog/how-to-check-if-phone-stolen  301!
 /blog/the-cost-of-secondhand-market-fraud-in-2025-* /blog  301!
 /blog/verification-methodology-how-we-check-stolen-items /about  301!
-
-# ============================================
-# JANUARY 2026 - 106 "CRAWLED NOT INDEXED" FIXES
-# ============================================
-
-# Blog redirects - new
-/blog/like-carfax-for-phones                    /check-phone      301!
-/blog/enterprise-security                       /for-pawn-shops   301!
-/blog/how-to-check-if-device-is-safe-stolen     /verify           301!
 /blog/what-to-do-if-stolen                      /verify           301!
-/blog/real-user-stories-stolen-goods-verification  /reviews       301!
-/blog/phone-verification-guide                  /check-phone      301!
-/blog/real-user-stories                         /reviews          301!
-/blog/verification-methodology                  /about            301!
-/blog/data-source-credibility                   /data-partners    301!
-/blog/imei-checker-app-download                 /app              301!
 
 # AI/technical files - redirect away
 /ai-training-data.md                            /about            301!
@@ -541,45 +512,13 @@ https://*.lovable.app/* https://safeorstolen.com/:splat 301!
 /ai-context                                     /about            301!
 /mobile-app-ai-context                          /app              301!
 
-# Pages needing redirects
-/stolen-database                                /data-partners    301!
-/partnerships                                   /about            301!
-/cookies                                        /privacy          301!
-/api-docs                                       /about            301!
-
-# City pages - redirect to state license plate pages
-/city/los-angeles-ca/vin-verification           /california-license-plate-lookup  301!
-/city/new-york-ny/imei-check                    /new-york-license-plate-lookup    301!
-/city/los-angeles-ca/stolen-item-checker        /california-license-plate-lookup  301!
-/city/new-york-ny/vin-verification              /new-york-license-plate-lookup    301!
-/city/chicago-il/vin-verification               /illinois-license-plate-lookup    301!
-/city/los-angeles-ca/imei-check                 /california-license-plate-lookup  301!
-/city/phoenix                                   /arizona-license-plate-lookup     301!
-/city/los-angeles                               /california-license-plate-lookup  301!
-/city/chicago                                   /illinois-license-plate-lookup    301!
-/city/miami                                     /florida-license-plate-lookup     301!
-/city/houston                                   /texas-license-plate-lookup       301!
-/city/new-york                                  /new-york-license-plate-lookup    301!
-
-# State pages - redirect to license plate lookup
-/state/texas/stolen-item-checker                /texas-license-plate-lookup       301!
-
 # Search query URLs - redirect to verify
 /?q=*                                           /verify           301!
 /?search=*                                      /verify           301!
 
 # ============================================
-# TERMS/LEGAL PAGE REDIRECTS
-# ============================================
-/terms-of-service    /terms   301!
-/privacy-policy      /privacy 301!
-/disclaimer          /terms   301!
-/service-limitations /terms   301!
-
-# ============================================
 # BROKEN LINK FIXES
 # ============================================
-/download-app         /download   301!
 /stolen-items-database /verify     301!
 /check-laptop-stolen  /check-laptop  301!
 /vs/stolen-register   /compare       301!
