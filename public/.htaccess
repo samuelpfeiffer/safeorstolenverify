@@ -8,13 +8,15 @@ RewriteEngine On
 # Bot Detection & Prerendered Content
 # ===================================
 # Serve prerendered static HTML to search engine bots
-RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
+# NOTE: Includes Google Inspection Tool + other Google crawlers
+RewriteCond %{HTTP_USER_AGENT} (googlebot|google-inspectiontool|googleother|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
 RewriteCond %{REQUEST_URI} !^/_prerendered/
+RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{DOCUMENT_ROOT}/_prerendered%{REQUEST_URI}.html -f
 RewriteRule ^(.*)$ /_prerendered/$1.html [L]
 
 # Serve prerendered index for bot homepage requests
-RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
+RewriteCond %{HTTP_USER_AGENT} (googlebot|google-inspectiontool|googleother|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
 RewriteCond %{REQUEST_URI} ^/$
 RewriteCond %{DOCUMENT_ROOT}/_prerendered/index.html -f
 RewriteRule ^$ /_prerendered/index.html [L]
