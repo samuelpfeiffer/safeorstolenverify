@@ -75,22 +75,10 @@
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/stolen-database</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://safeorstolen.com/compare</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/contact</loc>
-    <lastmod>2026-01-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/news</loc>
