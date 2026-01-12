@@ -72,7 +72,7 @@
     "framer-motion": "^11.18.2",
     "html5-qrcode": "^2.3.8",
     "input-otp": "^1.2.4",
-    "jspdf": "^3.0.3",
+    "jspdf": "4.0.0",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "prerender-spa-plugin": "^3.4.0",
