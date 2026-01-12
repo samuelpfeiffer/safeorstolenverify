@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
         { name: 'VIN Checker', href: '/vin-checker' },
         { name: 'Unlimited VIN Checks', href: '/unlimited-vin-checks' },
         { name: 'Serial Number Checker', href: '/serial-number-checker' },
-        { name: 'Partial Serial Search', href: '/partial-serial-number-search' },
+        { name: 'Serial Number Guide', href: '/how-to-check-serial-number' },
         { name: 'Gun Serial Lookup', href: '/gun-serial-number-lookup' },
         { name: 'PS5 Serial Check', href: '/ps5-serial-number-check' },
         { name: 'Rolex Serial Check', href: '/rolex-serial-number-check' },

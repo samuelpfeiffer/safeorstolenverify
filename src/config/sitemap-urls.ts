@@ -62,7 +62,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/imei-check-free', priority: 0.85, changefreq: 'weekly' },
   { path: '/rolex-serial-number-check', priority: 0.80, changefreq: 'weekly' },
   { path: '/unlimited-vin-checks', priority: 0.80, changefreq: 'weekly' },
-  { path: '/partial-serial-number-search', priority: 0.75, changefreq: 'weekly' },
+  
   { path: '/how-to-check-serial-number', priority: 0.80, changefreq: 'weekly' },
   { path: '/marketplace-url-checker', priority: 0.85, changefreq: 'weekly' },
 
