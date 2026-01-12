@@ -26,28 +26,8 @@ const YouTubePage: React.FC = () => {
 
   const featuredVideo = getFeaturedVideo();
 
-  // Generate structured data for all videos
-  const videoSchemas = YOUTUBE_VIDEOS.map(video => ({
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": video.seoTitle,
-    "description": video.seoDescription,
-    "thumbnailUrl": getYouTubeThumbnail(video.videoId),
-    "uploadDate": video.uploadDate,
-    "duration": video.durationISO,
-    "contentUrl": getYouTubeShortsUrl(video.videoId),
-    "embedUrl": `https://www.youtube.com/embed/${video.videoId}`,
-    "publisher": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    }
-  }));
-
-  // ItemList schema for video collection
+  // ItemList schema for video collection (gallery page - NOT a watch page)
+  // Note: No standalone VideoObject schemas here - those belong only on dedicated watch pages
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -71,6 +51,7 @@ const YouTubePage: React.FC = () => {
             "duration": video.durationISO,
             "contentUrl": getYouTubeShortsUrl(video.videoId),
             "embedUrl": `https://www.youtube.com/embed/${video.videoId}`,
+            "url": `https://safeorstolen.com/youtube/${video.slug}`,
             "publisher": {
               "@type": "Organization",
               "name": "SafeOrStolen",
@@ -82,8 +63,7 @@ const YouTubePage: React.FC = () => {
           }
         }))
       }
-    },
-    ...videoSchemas
+    }
   ];
 
   return (
@@ -94,7 +74,7 @@ const YouTubePage: React.FC = () => {
         keywords="SafeOrStolen YouTube, stolen item checker tutorial, IMEI checker video, VIN lookup guide, serial number verification how-to, marketplace safety tips"
         canonical="/youtube"
         structuredData={structuredData}
-        isVideoPage={true}
+        isVideoPage={false}
       />
 
       <Helmet>
