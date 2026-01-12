@@ -1,7 +1,7 @@
 /**
  * URL Redirect Configuration
  * Handles 404s, duplicates, and legacy URLs from Google Search Console
- * Last updated: 2025-12-18
+ * Last updated: 2026-01-12
  */
 
 import { VALID_ROUTES } from '@/utils/seo/sitemapRouteValidator';
@@ -220,6 +220,36 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/app/ebay-verification', to: '/app', permanent: true },
   { from: '/app/secondhand-research-app', to: '/app', permanent: true },
   { from: '/blog/mobile-app-features', to: '/app', permanent: true },
+
+  // ===== JAN 2026 GSC "PAGE WITH REDIRECT" FIX (65 URLs) =====
+  // Blog posts that no longer exist
+  { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature-1', to: '/app/barcode-scanner', permanent: true },
+  { from: '/blog/los-angeles-imei-verification-phone-fraud-protection', to: '/stolen-check-los-angeles', permanent: true },
+  { from: '/blog/how-law-enforcement-tracks-stolen-goods-1760086814875', to: '/blog/how-law-enforcement-tracks-stolen-goods', permanent: true },
+  { from: '/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379', to: '/blog/complete-imei-guide-protect-yourself', permanent: true },
+  { from: '/blog/playstation-5-serial-number-verification-guide', to: '/blog/ps5-stolen-check-guide', permanent: true },
+  { from: '/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281', to: '/blog/ultimate-marketplace-buyers-guide', permanent: true },
+  
+  // State VIN lookups without pages
+  { from: '/wyoming-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/kentucky-vin-lookup', to: '/vin-checker', permanent: true },
+  
+  // YouTube landing pages
+  { from: '/youtube/vin-check', to: '/youtube', permanent: true },
+  
+  // Legacy press/marketing pages
+  { from: '/press', to: '/press-kit', permanent: true },
+  { from: '/marketplace-integration', to: '/for-marketplaces', permanent: true },
+  
+  // Drone checker (redirect to electronics)
+  { from: '/check-drone', to: '/check-electronics', permanent: true },
+  
+  // IMEI/check-before pages
+  { from: '/check-imei-before-buying', to: '/imei-checker', permanent: true },
+  
+  // Stolen goods checker duplicates
+  { from: '/stolen-goods-checker', to: '/verify', permanent: true },
+  { from: '/stolen-items-database', to: '/stolen-database', permanent: true },
 ];
 
 /**
