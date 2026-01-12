@@ -69,6 +69,7 @@ const MobileSettingsPage: React.FC = () => {
         title="Mobile Settings - SafeOrStolen App"
         description="Configure your SafeOrStolen mobile app settings including notifications, camera, and data preferences."
         canonical="/mobile-settings"
+        noIndex={false}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background to-muted pb-20">
