@@ -350,17 +350,15 @@ const TopNavigation = () => {
         </div>
       </div>
       
-      {/* Secondary Navigation Row */}
-      <div className="hidden lg:block bg-muted/50 border-t border-border/20">
+      {/* Secondary Navigation Row - Verification Links */}
+      <div className="hidden md:block bg-muted/30 border-b border-border/30">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-8 h-9 overflow-x-auto">
-            {secondaryLinks.map((link, index) => (
+          <div className="flex items-center justify-center gap-6 lg:gap-8 h-10 overflow-x-auto scrollbar-hide">
+            {secondaryLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-xs font-medium whitespace-nowrap transition-colors hover:text-primary ${
-                  index === 0 ? 'text-primary font-semibold' : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className="text-sm font-medium whitespace-nowrap transition-colors text-muted-foreground hover:text-primary"
               >
                 {link.label}
               </Link>
