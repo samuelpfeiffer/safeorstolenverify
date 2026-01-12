@@ -161,43 +161,93 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /license-plates-lookup   /license-plate-lookup 301!
 
 # ============================================
-# STATE PAGE CONSOLIDATION - SEO OPTIMIZATION
+# STATE VIN LOOKUP PAGES - Redirect to /check-car
 # ============================================
-/alabama-vin-lookup         /vin-checker  301!
-/arkansas-vin-lookup        /vin-checker  301!
-/colorado-vin-lookup        /vin-checker  301!
-/delaware-vin-lookup        /vin-checker  301!
-/hawaii-vin-lookup          /vin-checker  301!
-/idaho-vin-lookup           /vin-checker  301!
-/indiana-vin-lookup         /vin-checker  301!
-/iowa-vin-lookup            /vin-checker  301!
-/kansas-vin-lookup          /vin-checker  301!
-/kentucky-vin-lookup        /vin-checker  301!
-/louisiana-vin-lookup       /vin-checker  301!
-/maine-vin-lookup           /vin-checker  301!
-/maryland-vin-lookup        /vin-checker  301!
-/massachusetts-vin-lookup   /vin-checker  301!
-/michigan-vin-lookup        /vin-checker  301!
-/minnesota-vin-lookup       /vin-checker  301!
-/mississippi-vin-lookup     /vin-checker  301!
-/missouri-vin-lookup        /vin-checker  301!
-/montana-vin-lookup         /vin-checker  301!
-/nebraska-vin-lookup        /vin-checker  301!
-/nevada-vin-lookup          /vin-checker  301!
-/new-hampshire-vin-lookup   /vin-checker  301!
-/new-jersey-vin-lookup      /vin-checker  301!
-/north-dakota-vin-lookup    /vin-checker  301!
-/oregon-vin-lookup          /vin-checker  301!
-/rhode-island-vin-lookup    /vin-checker  301!
-/south-carolina-vin-lookup  /vin-checker  301!
-/south-dakota-vin-lookup    /vin-checker  301!
-/tennessee-vin-lookup       /vin-checker  301!
-/utah-vin-lookup            /vin-checker  301!
-/vermont-vin-lookup         /vin-checker  301!
-/virginia-vin-lookup        /vin-checker  301!
-/west-virginia-vin-lookup   /vin-checker  301!
-/wisconsin-vin-lookup       /vin-checker  301!
-/wyoming-vin-lookup         /vin-checker  301!
+/alabama-vin-lookup         /check-car  301!
+/arkansas-vin-lookup        /check-car  301!
+/colorado-vin-lookup        /check-car  301!
+/delaware-vin-lookup        /check-car  301!
+/hawaii-vin-lookup          /check-car  301!
+/idaho-vin-lookup           /check-car  301!
+/indiana-vin-lookup         /check-car  301!
+/iowa-vin-lookup            /check-car  301!
+/kansas-vin-lookup          /check-car  301!
+/kentucky-vin-lookup        /check-car  301!
+/louisiana-vin-lookup       /check-car  301!
+/maine-vin-lookup           /check-car  301!
+/maryland-vin-lookup        /check-car  301!
+/massachusetts-vin-lookup   /check-car  301!
+/michigan-vin-lookup        /check-car  301!
+/minnesota-vin-lookup       /check-car  301!
+/mississippi-vin-lookup     /check-car  301!
+/missouri-vin-lookup        /check-car  301!
+/montana-vin-lookup         /check-car  301!
+/nebraska-vin-lookup        /check-car  301!
+/nevada-vin-lookup          /check-car  301!
+/new-hampshire-vin-lookup   /check-car  301!
+/new-jersey-vin-lookup      /check-car  301!
+/north-dakota-vin-lookup    /check-car  301!
+/oregon-vin-lookup          /check-car  301!
+/rhode-island-vin-lookup    /check-car  301!
+/south-carolina-vin-lookup  /check-car  301!
+/south-dakota-vin-lookup    /check-car  301!
+/tennessee-vin-lookup       /check-car  301!
+/utah-vin-lookup            /check-car  301!
+/vermont-vin-lookup         /check-car  301!
+/virginia-vin-lookup        /check-car  301!
+/west-virginia-vin-lookup   /check-car  301!
+/wisconsin-vin-lookup       /check-car  301!
+/wyoming-vin-lookup         /check-car  301!
+
+# ============================================
+# JANUARY 2026 - PAGE WITH REDIRECT FIXES (65 URLs)
+# ============================================
+/bulk                           /for-pawn-shops   301!
+/get-app                        /app              301!
+/check-drone                    /verify           301!
+/check-imei-before-buying       /check-phone      301!
+/imei-check                     /check-phone      301!
+/for-consumers                  /verify           301!
+/android-app                    /app              301!
+/mobile-verification            /app              301!
+/mobile-app                     /app              301!
+/for-brands                     /for-pawn-shops   301!
+/press                          /press-kit        301!
+/vin-check                      /check-car        301!
+/imei-checker-app               /app              301!
+/stolen-items-database          /data-partners    301!
+/california                     /california-license-plate-lookup  301!
+/marketplace-integration        /for-pawn-shops   301!
+/stolen-item-checker            /verify           301!
+/canada-vin-check               /check-car        301!
+/youtube/vin-check              /check-car        301!
+/chicago/imei-check             /illinois-license-plate-lookup    301!
+
+# App sub-page redirects
+/app/offerup-safety             /app              301!
+/app/ebay-verification          /app              301!
+/app/features/history           /app              301!
+/app/research-stolen-car        /app              301!
+/app/buyer-protection-research  /app              301!
+/app/research-stolen-phone      /app              301!
+/app/facebook-marketplace-checker  /app           301!
+/app/pawnshop-verification      /app              301!
+/app/research-stolen-items      /app              301!
+/app/secondhand-research-app    /app              301!
+
+# Verify sub-page redirects
+/verify/auctions                /verify           301!
+/verify/facebook-marketplace    /verify           301!
+
+# Blog redirects with long IDs
+/blog/scan-and-verify-using-safeorstolen-camera-feature              /app              301!
+/blog/los-angeles-imei-verification-phone-fraud-protection           /california-license-plate-lookup  301!
+/blog/how-law-enforcement-tracks-stolen-goods-1760086814875          /blog/how-law-enforcement-tracks-stolen-goods  301!
+/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379  /check-phone  301!
+/blog/playstation-5-serial-number-verification-guide                 /verify           301!
+/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281  /verify     301!
+/blog/best-imei-checker-tools-2025                                   /check-phone      301!
+/blog/scan-and-verify-using-safeorstolen-camera-feature-1            /app              301!
 
 # ============================================
 # LEGACY VERIFICATION URLS (Additional)
