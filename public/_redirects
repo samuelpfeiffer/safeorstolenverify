@@ -462,6 +462,57 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/verification-methodology-how-we-check-stolen-items /about  301!
 
 # ============================================
+# JANUARY 2026 - 106 "CRAWLED NOT INDEXED" FIXES
+# ============================================
+
+# Blog redirects - new
+/blog/like-carfax-for-phones                    /check-phone      301!
+/blog/enterprise-security                       /for-pawn-shops   301!
+/blog/how-to-check-if-device-is-safe-stolen     /verify           301!
+/blog/what-to-do-if-stolen                      /verify           301!
+/blog/real-user-stories-stolen-goods-verification  /reviews       301!
+/blog/phone-verification-guide                  /check-phone      301!
+/blog/real-user-stories                         /reviews          301!
+/blog/verification-methodology                  /about            301!
+/blog/data-source-credibility                   /data-partners    301!
+/blog/imei-checker-app-download                 /app              301!
+
+# AI/technical files - redirect away
+/ai-training-data.md                            /about            301!
+/mobile-app-ai-context.json                     /app              301!
+/ai-context.json                                /about            301!
+/ai-training-data                               /about            301!
+/ai-context                                     /about            301!
+/mobile-app-ai-context                          /app              301!
+
+# Pages needing redirects
+/stolen-database                                /data-partners    301!
+/partnerships                                   /about            301!
+/cookies                                        /privacy          301!
+/api-docs                                       /about            301!
+
+# City pages - redirect to state license plate pages
+/city/los-angeles-ca/vin-verification           /california-license-plate-lookup  301!
+/city/new-york-ny/imei-check                    /new-york-license-plate-lookup    301!
+/city/los-angeles-ca/stolen-item-checker        /california-license-plate-lookup  301!
+/city/new-york-ny/vin-verification              /new-york-license-plate-lookup    301!
+/city/chicago-il/vin-verification               /illinois-license-plate-lookup    301!
+/city/los-angeles-ca/imei-check                 /california-license-plate-lookup  301!
+/city/phoenix                                   /arizona-license-plate-lookup     301!
+/city/los-angeles                               /california-license-plate-lookup  301!
+/city/chicago                                   /illinois-license-plate-lookup    301!
+/city/miami                                     /florida-license-plate-lookup     301!
+/city/houston                                   /texas-license-plate-lookup       301!
+/city/new-york                                  /new-york-license-plate-lookup    301!
+
+# State pages - redirect to license plate lookup
+/state/texas/stolen-item-checker                /texas-license-plate-lookup       301!
+
+# Search query URLs - redirect to verify
+/?q=*                                           /verify           301!
+/?search=*                                      /verify           301!
+
+# ============================================
 # TERMS/LEGAL PAGE REDIRECTS
 # ============================================
 /terms-of-service    /terms   301!

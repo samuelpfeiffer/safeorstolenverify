@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /ai-training-data
+Disallow: /ai-context
+Disallow: /mobile-app-ai-context
+Disallow: /*?search=
+Disallow: /*?q=
 
 User-agent: GPTBot
 Allow: /
@@ -12,8 +19,16 @@ Allow: /
 
 User-agent: Googlebot
 Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*?search=
+Disallow: /*?q=
 
 User-agent: Bingbot
 Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*?search=
+Disallow: /*?q=
 
 Sitemap: https://safeorstolen.com/sitemap.xml
