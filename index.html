@@ -4,18 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Critical inline CSS for instant FCP + CLS prevention -->
+    <!-- Critical inline CSS for instant FCP + CLS prevention - Googlebot optimized -->
     <style>
       /* Font fallback - prevents FOUT/CLS */
-      html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#1f1f1f;color:#fafafa;min-height:100vh;-webkit-font-smoothing:antialiased;}
-      #root{min-height:100vh;}
+      html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#1f1f1f;color:#fafafa;min-height:100vh;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+      #root{min-height:100vh;display:block;}
+      /* Critical above-fold layout - render immediately for Googlebot */
+      .container{max-width:1280px;margin:0 auto;padding:0 1rem;}
+      header,main,footer,section,article{display:block;}
+      /* Loading state */
       .loading{display:flex;align-items:center;justify-content:center;min-height:100vh;}
       .spinner{width:40px;height:40px;border:4px solid #ef4444;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;}
       @keyframes spin{to{transform:rotate(360deg);}}
       /* CLS prevention - reserve space for common elements */
-      img{max-width:100%;height:auto;}
+      img{max-width:100%;height:auto;display:block;}
       [data-hero-img]{aspect-ratio:16/9;min-height:200px;background:#2a2a2a;}
-      h1{font-size:clamp(1.75rem,5vw,3.5rem);line-height:1.2;font-weight:700;}
+      h1{font-size:clamp(1.75rem,5vw,3.5rem);line-height:1.2;font-weight:700;margin:0;}
+      h2{font-size:clamp(1.25rem,3vw,2rem);line-height:1.3;font-weight:600;margin:0;}
+      h3{font-size:clamp(1rem,2vw,1.5rem);line-height:1.4;font-weight:600;margin:0;}
+      p{line-height:1.6;margin:0 0 1rem;}
+      /* Semantic structure for Googlebot */
+      nav{display:flex;}
+      ul,ol{margin:0;padding:0 0 0 1.5rem;}
+      a{color:#FF6B35;text-decoration:underline;}
       /* Font loading optimization */
       @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:local('Inter');}
     </style>
@@ -55,19 +66,23 @@
     <meta name="twitter:image" content="https://safeorstolen.com/sos-logo.png">
     <meta name="twitter:site" content="@safeorstolen">
     
-    <!-- Preload critical hero image for LCP optimization -->
-    <link rel="preload" as="image" href="/images/hero-device.png" fetchpriority="high">
+    <!-- Preload critical hero image for LCP optimization - highest priority -->
+    <link rel="preload" as="image" href="/images/hero-device.png" fetchpriority="high" type="image/png">
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
-    <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
+    <!-- Preconnect for performance - ordered by priority -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
+    <link rel="dns-prefetch" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
     
-    <!-- Optimized font loading with font-display: swap for better LCP -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"></noscript>
+    <!-- Critical fonts only - Inter for body text (reduce font requests for faster LCP) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Secondary fonts - deferred loading for non-critical display fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" fetchpriority="low">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     
     <!-- DNS prefetch for Stripe payment processing -->
     <link rel="dns-prefetch" href="https://js.stripe.com">
@@ -104,12 +119,13 @@
 </head>
 
   <body>
-    <!-- Noscript fallback for crawlers without JavaScript -->
+    <!-- Static HTML content for Googlebot - renders immediately without JS -->
+    <!-- This content is visible to ALL crawlers and provides SEO value -->
     <noscript>
-      <article style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, sans-serif; line-height: 1.6;">
+      <article style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, sans-serif; line-height: 1.6;" itemscope itemtype="https://schema.org/WebPage">
         <header>
-          <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">SafeOrStolen - Check If Secondhand Items Are Safe Or Stolen</h1>
-          <p style="font-size: 1.25rem; color: #666;">The trusted verification service for buyers, sellers, and businesses worldwide. The ONLY stolen item checker with a mobile app.</p>
+          <h1 itemprop="name" style="font-size: 2.5rem; margin-bottom: 1rem;">SafeOrStolen - Check If Secondhand Items Are Safe Or Stolen</h1>
+          <p itemprop="description" style="font-size: 1.25rem; color: #666;">The trusted verification service for buyers, sellers, and businesses worldwide. The ONLY stolen item checker with a mobile app. Check IMEI, VIN, and serial numbers against 100+ databases in 3 seconds.</p>
         </header>
         
         <section style="margin: 2rem 0;">
@@ -193,7 +209,7 @@
         </nav>
         
         <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.9rem; color: #666;">
-          <p>© 2024 SafeOrStolen. Recognized by OneValley and the Entrepreneurship World Cup 2020. Trusted by buyers, sellers, and businesses worldwide.</p>
+          <p>© 2025 SafeOrStolen. Recognized by OneValley and the Entrepreneurship World Cup 2020. Trusted by buyers, sellers, and businesses worldwide.</p>
           <p>Enable JavaScript for the full interactive experience with camera scanning and instant verification.</p>
         </footer>
       </article>

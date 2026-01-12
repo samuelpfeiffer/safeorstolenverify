@@ -41,30 +41,30 @@ const dataSources = [
 
 export const DataSourcesSection = () => {
   return (
-    <section className="py-12 bg-muted/30">
+    <section className="py-12 bg-muted/30" aria-labelledby="data-sources-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+          <header className="text-center mb-10">
+            <h2 id="data-sources-heading" className="text-2xl md:text-3xl font-bold mb-3">
               How We Verify Every Item
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We cross-reference <strong>100+ databases</strong> in real-time to confirm if an item is safe to buy or sell
             </p>
-          </div>
+          </header>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 list-none p-0" role="list" aria-label="Verification data sources">
             {dataSources.map((source) => (
-              <div
+              <li
                 key={source.title}
                 className="bg-card rounded-xl p-4 md:p-5 border border-border/50 hover:border-primary/30 transition-colors"
               >
-                <source.icon className={`h-8 w-8 mb-3 ${source.color}`} />
+                <source.icon className={`h-8 w-8 mb-3 ${source.color}`} aria-hidden="true" />
                 <h3 className="font-semibold mb-1">{source.title}</h3>
                 <p className="text-sm text-muted-foreground">{source.description}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
           
           <p className="text-center text-sm text-muted-foreground mt-8">
             All checks happen in real-time — results delivered in 3 seconds or less

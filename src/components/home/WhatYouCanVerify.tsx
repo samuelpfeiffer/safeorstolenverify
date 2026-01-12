@@ -133,17 +133,17 @@ export const WhatYouCanVerify = () => {
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4" aria-labelledby="verify-types-heading">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <header className="text-center mb-12">
           <Badge className="mb-4">Most Comprehensive Verification</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 id="verify-types-heading" className="text-3xl md:text-4xl font-bold mb-4">
             What You Can Verify With SafeOrStolen
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From phones to firearms, vehicles to bikes - verify any item before buying. We're the only platform that checks everything.
           </p>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {verificationTypes.map((type, index) => (

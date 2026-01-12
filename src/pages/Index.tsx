@@ -44,20 +44,14 @@ const Index = () => {
     <>
       {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
-        title="Verify Items Aren't Stolen - Global Crime Reduction Platform | SafeOrStolen"
-        description="THE verification platform. Check phones, cars, bikes, guns, license plates against 100+ global databases. Only mobile app. 32,000+ verified monthly. 3-second results."
+        title="Free Stolen Item Checker - IMEI, VIN, Serial Lookup | SafeOrStolen"
+        description="Check if items are stolen before buying. Free IMEI checker, VIN lookup, serial verification against 100+ databases. 3-second results. The only mobile app."
         keywords="stolen item verification, IMEI checker, VIN checker, license plate lookup, gun serial number lookup, stolen phone check, stolen car check, pawn shop verification, global verification platform"
         canonical="/"
       />
       
-      {/* Minimal noscript fallback for crawlers */}
-      <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <h1>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds. The only mobile app for stolen item checking.</p>
-          <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
-        </div>
-      </noscript>
+      {/* Static visible content for Googlebot - no noscript needed, this renders with JS */}
+      {/* Googlebot renders JavaScript but needs fast content delivery */}
 
       <TrustHeaderBar />
       
@@ -112,25 +106,26 @@ const Index = () => {
               </div>
 
               {/* Hero Image - LCP Optimized with explicit dimensions for CLS prevention */}
+              {/* fetchPriority="high" and decoding="sync" ensure fastest possible render */}
               <div 
                 className="mt-8 max-w-4xl mx-auto" 
-                style={{ aspectRatio: '16/9', minHeight: '200px' }}
+                style={{ aspectRatio: '16/9', minHeight: '200px', contain: 'layout' }}
                 data-hero-img
               >
                 <div className="relative group h-full">
                   {/* Simplified gradient on mobile (no blur), full blur on desktop */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" aria-hidden="true" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" aria-hidden="true" />
                   <img 
                     src={heroImage} 
-                    alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
+                    alt="SafeOrStolen stolen item verification app showing IMEI checker, VIN checker with instant 3 second verification results for phones, cars, bikes, and electronics" 
                     className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
                     loading="eager"
                     fetchPriority="high"
                     decoding="sync"
                     width="1200"
                     height="675"
-                    style={{ aspectRatio: '16/9' }}
+                    style={{ aspectRatio: '16/9', contentVisibility: 'auto' }}
                   />
                 </div>
               </div>
