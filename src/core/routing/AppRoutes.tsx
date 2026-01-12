@@ -71,6 +71,7 @@ const CheckGunPage = lazy(() => import('@/pages/CheckGunPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const ReviewsPage = lazy(() => import('@/pages/ReviewsPage'));
 const NewsPage = lazy(() => import('@/pages/NewsPage'));
+const DataPartnersPage = lazy(() => import('@/pages/DataPartnersPage'));
 const FreeCarfaxAlternativePage = lazy(() => import('@/pages/FreeCarfaxAlternativePage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 const PS5SerialNumberCheckPage = lazy(() => import('@/pages/PS5SerialNumberCheckPage'));
@@ -327,6 +328,7 @@ export const AppRoutes = () => {
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="/data-partners" element={<DataPartnersPage />} />
         
         {/* VS COMPARISON PAGES */}
         <Route path="/vs/theftaz" element={<TheftAZPage />} />

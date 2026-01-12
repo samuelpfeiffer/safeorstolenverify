@@ -84,6 +84,7 @@ const MobileDashboardPage: React.FC = () => {
         title="Mobile Dashboard - Verification History | SafeOrStolen"
         description="View your verification history and track all your IMEI, VIN, and serial number checks on the SafeOrStolen mobile app."
         canonical="/mobile-dashboard"
+        noIndex={false}
       />
 
       <div 
