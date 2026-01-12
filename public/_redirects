@@ -10,6 +10,15 @@ http://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
+# ALTERNATE PAGE WITH CANONICAL TAG FIXES (7 URLs)
+# ============================================
+/check-stolen-car               /check-car        301!
+/comparison-checkmend           /vs-checkmend     301!
+/stolen-merchandise-check       /verify           301!
+/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942  /blog/complete-vin-guide  301!
+/blog/vin-verification-for-used-cars-what-you-need-to-know-1760000422701  /blog/complete-vin-guide  301!
+
+# ============================================
 # PART B REDIRECTS - January 2026 SEO Overhaul
 # ============================================
 /real-time-verification         /verify           301!
