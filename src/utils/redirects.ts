@@ -116,7 +116,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/blog/data-source-credibility', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
   { from: '/blog/scan-and-verify-using-safeorstolen-camera-feature', to: '/app/barcode-scanner', permanent: true },
 
-  // ===== NOINDEX PAGES - Dec 2025 GSC =====
+  // ===== NOINDEX PAGES - Dec 2025 / Jan 2026 GSC =====
   { from: '/transparency', to: '/about', permanent: true },
   { from: '/features', to: '/how-it-works', permanent: true },
   { from: '/app/sellers', to: '/app', permanent: true },
@@ -132,6 +132,44 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/guides/offerup-scam-protection', to: '/offerup-verify-not-stolen', permanent: true },
   { from: '/app/carfax-alternative', to: '/vs-carfax', permanent: true },
   { from: '/blog/how-to-use-imei-checker-app', to: '/blog/imei-checker-app-download', permanent: true },
+  
+  // ===== NOINDEX PAGES - Jan 2026 GSC Validation =====
+  { from: '/real-time-verification', to: '/verify', permanent: true },
+  { from: '/developer-portal', to: '/for-businesses', permanent: true },
+  { from: '/how-to-check-if-item-stolen', to: '/how-it-works', permanent: true },
+  { from: '/pawn-shops', to: '/for-pawn-shops', permanent: true },
+  { from: '/community', to: '/about', permanent: true },
+  { from: '/data-sources', to: '/blog/data-source-credibility-stolen-goods-verification', permanent: true },
+  { from: '/comprehensive-guide', to: '/blog/complete-verification-guide', permanent: true },
+  { from: '/trust-verification', to: '/verify', permanent: true },
+  { from: '/resource-center', to: '/blog', permanent: true },
+  { from: '/mobile', to: '/app', permanent: true },
+  { from: '/press-release', to: '/press-kit', permanent: true },
+  { from: '/for-pawnshops', to: '/for-pawn-shops', permanent: true },
+  { from: '/check', to: '/verify', permanent: true },
+  { from: '/app/download', to: '/download', permanent: true },
+  { from: '/vs-stolenregister', to: '/compare', permanent: true },
+  { from: '/check-android', to: '/check-android-phone-stolen', permanent: true },
+  { from: '/guides/ebay-buyer-protection', to: '/ebay-stolen-item-check', permanent: true },
+  
+  // State VIN lookups without dedicated pages → /vin-checker
+  { from: '/alaska-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/connecticut-vin-lookup', to: '/vin-checker', permanent: true },
+  { from: '/new-mexico-vin-lookup', to: '/vin-checker', permanent: true },
+  
+  // Blog duplicates with -1, -2 suffixes or long titles
+  { from: '/blog/how-law-enforcement-tracks-stolen-goods-2', to: '/blog/how-law-enforcement-tracks-stolen-goods', permanent: true },
+  { from: '/blog/playstation-5-serial-number-verification-guide-1', to: '/blog/ps5-stolen-check-guide', permanent: true },
+  { from: '/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1', to: '/stolen-check-new-york-city', permanent: true },
+  { from: '/blog/los-angeles-imei-verification-phone-fraud-protection-1', to: '/stolen-check-los-angeles', permanent: true },
+  { from: '/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide', to: '/blog/how-to-check-if-iphone-stolen', permanent: true },
+  { from: '/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1', to: '/blog/how-to-check-if-iphone-stolen', permanent: true },
+  { from: '/blog/5-signs-used-phone-might-be-stolen', to: '/blog/how-to-check-if-phone-stolen', permanent: true },
+  { from: '/blog/craigslist-scam-prevention-item-verification-checklist', to: '/craigslist-safety-verification', permanent: true },
+  { from: '/blog/business-guide-preventing-stolen-goods', to: '/for-businesses', permanent: true },
+  { from: '/blog/avoid-buying-stolen-laptops', to: '/check-laptop', permanent: true },
+  { from: '/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification', to: '/app', permanent: true },
+  { from: '/blog/how-to-check-phone-stolen', to: '/blog/how-to-check-if-phone-stolen', permanent: true },
 
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
