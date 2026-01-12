@@ -1,11 +1,12 @@
 /**
  * Service Worker for SafeOrStolen PWA
  * Enables offline functionality, caching, and improved performance
- * v5 - Network-first for navigation, improved cache management
+ * v6 - Aggressive cache clearing, auto-update on activation
  */
 
-const CACHE_NAME = 'safeorstolen-v5';
-const RUNTIME_CACHE = 'safeorstolen-runtime-v5';
+const CACHE_VERSION = '6';
+const CACHE_NAME = `safeorstolen-v${CACHE_VERSION}`;
+const RUNTIME_CACHE = `safeorstolen-runtime-v${CACHE_VERSION}`;
 
 // Critical assets to cache immediately
 const PRECACHE_URLS = [
@@ -28,27 +29,35 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches and take control immediately
+// Activate event - AGGRESSIVELY clean up ALL old caches and take control immediately
 self.addEventListener('activate', (event) => {
-  console.log('[SW] Activating service worker v5...');
+  console.log(`[SW] Activating service worker v${CACHE_VERSION}...`);
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
+        console.log('[SW] Found caches:', cacheNames);
         return Promise.all(
-          cacheNames
-            .filter(cacheName => {
-              // Delete ALL old cache versions
-              return cacheName !== CACHE_NAME && cacheName !== RUNTIME_CACHE;
-            })
-            .map(cacheName => {
+          cacheNames.map(cacheName => {
+            // Delete ANY cache that doesn't match our current version
+            if (!cacheName.includes(`v${CACHE_VERSION}`)) {
               console.log('[SW] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
-            })
+            }
+            return Promise.resolve();
+          })
         );
       })
       .then(() => {
-        console.log('[SW] Activation complete, taking control.');
+        console.log('[SW] Activation complete, claiming all clients.');
         return self.clients.claim();
+      })
+      .then(() => {
+        // Notify all clients to reload for fresh content
+        return self.clients.matchAll({ type: 'window' }).then(clients => {
+          clients.forEach(client => {
+            client.postMessage({ type: 'SW_ACTIVATED', version: CACHE_VERSION });
+          });
+        });
       })
   );
 });
