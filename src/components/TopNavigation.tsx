@@ -42,10 +42,23 @@ const TopNavigation = () => {
     { to: '/report-stolen', label: 'Report Stolen', icon: 'AlertCircle' },
   ];
 
+  const secondaryLinks = [
+    { to: '/blog', label: 'Blog' },
+    { to: '/check-phone', label: 'Check Phone' },
+    { to: '/check-car', label: 'Check Car' },
+    { to: '/check-bike', label: 'Check Bike' },
+    { to: '/check-gun', label: 'Check Gun' },
+    { to: '/check-laptop', label: 'Check Laptop' },
+    { to: '/reviews', label: 'Reviews' },
+    { to: '/data-partners', label: 'Data Sources' },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b border-border/50 shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-xl shadow-lg flex flex-col">
+      {/* Primary Navigation Row */}
+      <div className="border-b border-border/50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
@@ -334,6 +347,26 @@ const TopNavigation = () => {
             </div>
           </div>
         )}
+        </div>
+      </div>
+      
+      {/* Secondary Navigation Row */}
+      <div className="hidden lg:block bg-muted/50 border-t border-border/20">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center gap-8 h-9 overflow-x-auto">
+            {secondaryLinks.map((link, index) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-xs font-medium whitespace-nowrap transition-colors hover:text-primary ${
+                  index === 0 ? 'text-primary font-semibold' : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </nav>
   );
