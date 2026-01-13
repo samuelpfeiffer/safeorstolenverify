@@ -172,6 +172,14 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/ohio-license-plate-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/north-carolina-license-plate-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/washington-license-plate-lookup', priority: 0.70, changefreq: 'monthly' },
+  { path: '/arizona-license-plate-lookup', priority: 0.80, changefreq: 'monthly' },
+
+  // ============================================
+  // HIGH-VALUE SEO PAGES (NEW)
+  // ============================================
+  { path: '/check-if-stolen', priority: 0.90, changefreq: 'weekly' },
+  { path: '/theftaz', priority: 0.80, changefreq: 'monthly' },
+  { path: '/check-ps5', priority: 0.70, changefreq: 'monthly' },
 
   // ============================================
   // TOP 10 STATE VIN LOOKUPS (have actual routes)
