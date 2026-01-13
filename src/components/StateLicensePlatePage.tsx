@@ -12,8 +12,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
-import { TopNavigation } from '@/components/navigation/TopNavigation';
-import { Footer } from '@/components/Footer';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { StateData, getNeighboringStates } from '@/config/stateData';
 import { useState } from 'react';
 
