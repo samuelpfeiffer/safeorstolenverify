@@ -83,7 +83,7 @@ const ForElectronicsResellers = lazy(() => import('@/pages/business/ForElectroni
 const ForInsuranceCompanies = lazy(() => import('@/pages/business/ForInsuranceCompanies'));
 const ForLawEnforcement = lazy(() => import('@/pages/business/ForLawEnforcement'));
 
-// TOP 10 STATE LICENSE PLATE PAGES ONLY (High-Value States)
+// TOP 10 STATE LICENSE PLATE PAGES (Pre-existing individual pages)
 const CaliforniaLicensePlateLookupPage = lazy(() => import('@/pages/CaliforniaLicensePlateLookupPage'));
 const TexasLicensePlateLookupPage = lazy(() => import('@/pages/TexasLicensePlateLookupPage'));
 const FloridaLicensePlateLookupPage = lazy(() => import('@/pages/FloridaLicensePlateLookupPage'));
@@ -96,10 +96,52 @@ const NorthCarolinaLicensePlateLookupPage = lazy(() => import('@/pages/NorthCaro
 const WashingtonLicensePlateLookupPage = lazy(() => import('@/pages/WashingtonLicensePlateLookupPage'));
 const ArizonaLicensePlateLookupPage = lazy(() => import('@/pages/ArizonaLicensePlateLookupPage'));
 
+// REMAINING 39 STATE LICENSE PLATE PAGES (Generated from template)
+const AlabamaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.AlabamaLicensePlateLookup })));
+const AlaskaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.AlaskaLicensePlateLookup })));
+const ArkansasLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.ArkansasLicensePlateLookup })));
+const ColoradoLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.ColoradoLicensePlateLookup })));
+const ConnecticutLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.ConnecticutLicensePlateLookup })));
+const DelawareLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.DelawareLicensePlateLookup })));
+const HawaiiLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.HawaiiLicensePlateLookup })));
+const IdahoLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.IdahoLicensePlateLookup })));
+const IndianaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.IndianaLicensePlateLookup })));
+const IowaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.IowaLicensePlateLookup })));
+const KansasLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.KansasLicensePlateLookup })));
+const KentuckyLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.KentuckyLicensePlateLookup })));
+const LouisianaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.LouisianaLicensePlateLookup })));
+const MaineLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MaineLicensePlateLookup })));
+const MarylandLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MarylandLicensePlateLookup })));
+const MassachusettsLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MassachusettsLicensePlateLookup })));
+const MichiganLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MichiganLicensePlateLookup })));
+const MinnesotaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MinnesotaLicensePlateLookup })));
+const MississippiLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MississippiLicensePlateLookup })));
+const MissouriLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MissouriLicensePlateLookup })));
+const MontanaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.MontanaLicensePlateLookup })));
+const NebraskaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.NebraskaLicensePlateLookup })));
+const NevadaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.NevadaLicensePlateLookup })));
+const NewHampshireLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.NewHampshireLicensePlateLookup })));
+const NewJerseyLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.NewJerseyLicensePlateLookup })));
+const NewMexicoLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.NewMexicoLicensePlateLookup })));
+const NorthDakotaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.NorthDakotaLicensePlateLookup })));
+const OklahomaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.OklahomaLicensePlateLookup })));
+const OregonLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.OregonLicensePlateLookup })));
+const RhodeIslandLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.RhodeIslandLicensePlateLookup })));
+const SouthCarolinaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.SouthCarolinaLicensePlateLookup })));
+const SouthDakotaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.SouthDakotaLicensePlateLookup })));
+const TennesseeLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.TennesseeLicensePlateLookup })));
+const UtahLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.UtahLicensePlateLookup })));
+const VermontLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.VermontLicensePlateLookup })));
+const VirginiaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.VirginiaLicensePlateLookup })));
+const WestVirginiaLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.WestVirginiaLicensePlateLookup })));
+const WisconsinLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.WisconsinLicensePlateLookup })));
+const WyomingLicensePlateLookup = lazy(() => import('@/pages/states').then(m => ({ default: m.WyomingLicensePlateLookup })));
+
 // NEW SEO PAGES - High-Traffic Keywords
 const CheckIfStolenPage = lazy(() => import('@/pages/CheckIfStolenPage'));
 const TheftAZPage = lazy(() => import('@/pages/TheftAZPage'));
 const CheckPS5Page = lazy(() => import('@/pages/CheckPS5Page'));
+const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNumberSearchPage'));
 
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
@@ -275,7 +317,7 @@ export const AppRoutes = () => {
         <Route path="/stockx-verification" element={<StockXVerification />} />
         <Route path="/letgo-stolen-check" element={<LetgoStolenCheck />} />
 
-        {/* TOP 10 STATE LICENSE PLATE PAGES */}
+        {/* TOP 11 STATE LICENSE PLATE PAGES (Individual files) */}
         <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookupPage />} />
         <Route path="/texas-license-plate-lookup" element={<TexasLicensePlateLookupPage />} />
         <Route path="/florida-license-plate-lookup" element={<FloridaLicensePlateLookupPage />} />
@@ -288,10 +330,52 @@ export const AppRoutes = () => {
         <Route path="/washington-license-plate-lookup" element={<WashingtonLicensePlateLookupPage />} />
         <Route path="/arizona-license-plate-lookup" element={<ArizonaLicensePlateLookupPage />} />
 
+        {/* REMAINING 39 STATE LICENSE PLATE PAGES (Generated from template) */}
+        <Route path="/alabama-license-plate-lookup" element={<AlabamaLicensePlateLookup />} />
+        <Route path="/alaska-license-plate-lookup" element={<AlaskaLicensePlateLookup />} />
+        <Route path="/arkansas-license-plate-lookup" element={<ArkansasLicensePlateLookup />} />
+        <Route path="/colorado-license-plate-lookup" element={<ColoradoLicensePlateLookup />} />
+        <Route path="/connecticut-license-plate-lookup" element={<ConnecticutLicensePlateLookup />} />
+        <Route path="/delaware-license-plate-lookup" element={<DelawareLicensePlateLookup />} />
+        <Route path="/hawaii-license-plate-lookup" element={<HawaiiLicensePlateLookup />} />
+        <Route path="/idaho-license-plate-lookup" element={<IdahoLicensePlateLookup />} />
+        <Route path="/indiana-license-plate-lookup" element={<IndianaLicensePlateLookup />} />
+        <Route path="/iowa-license-plate-lookup" element={<IowaLicensePlateLookup />} />
+        <Route path="/kansas-license-plate-lookup" element={<KansasLicensePlateLookup />} />
+        <Route path="/kentucky-license-plate-lookup" element={<KentuckyLicensePlateLookup />} />
+        <Route path="/louisiana-license-plate-lookup" element={<LouisianaLicensePlateLookup />} />
+        <Route path="/maine-license-plate-lookup" element={<MaineLicensePlateLookup />} />
+        <Route path="/maryland-license-plate-lookup" element={<MarylandLicensePlateLookup />} />
+        <Route path="/massachusetts-license-plate-lookup" element={<MassachusettsLicensePlateLookup />} />
+        <Route path="/michigan-license-plate-lookup" element={<MichiganLicensePlateLookup />} />
+        <Route path="/minnesota-license-plate-lookup" element={<MinnesotaLicensePlateLookup />} />
+        <Route path="/mississippi-license-plate-lookup" element={<MississippiLicensePlateLookup />} />
+        <Route path="/missouri-license-plate-lookup" element={<MissouriLicensePlateLookup />} />
+        <Route path="/montana-license-plate-lookup" element={<MontanaLicensePlateLookup />} />
+        <Route path="/nebraska-license-plate-lookup" element={<NebraskaLicensePlateLookup />} />
+        <Route path="/nevada-license-plate-lookup" element={<NevadaLicensePlateLookup />} />
+        <Route path="/new-hampshire-license-plate-lookup" element={<NewHampshireLicensePlateLookup />} />
+        <Route path="/new-jersey-license-plate-lookup" element={<NewJerseyLicensePlateLookup />} />
+        <Route path="/new-mexico-license-plate-lookup" element={<NewMexicoLicensePlateLookup />} />
+        <Route path="/north-dakota-license-plate-lookup" element={<NorthDakotaLicensePlateLookup />} />
+        <Route path="/oklahoma-license-plate-lookup" element={<OklahomaLicensePlateLookup />} />
+        <Route path="/oregon-license-plate-lookup" element={<OregonLicensePlateLookup />} />
+        <Route path="/rhode-island-license-plate-lookup" element={<RhodeIslandLicensePlateLookup />} />
+        <Route path="/south-carolina-license-plate-lookup" element={<SouthCarolinaLicensePlateLookup />} />
+        <Route path="/south-dakota-license-plate-lookup" element={<SouthDakotaLicensePlateLookup />} />
+        <Route path="/tennessee-license-plate-lookup" element={<TennesseeLicensePlateLookup />} />
+        <Route path="/utah-license-plate-lookup" element={<UtahLicensePlateLookup />} />
+        <Route path="/vermont-license-plate-lookup" element={<VermontLicensePlateLookup />} />
+        <Route path="/virginia-license-plate-lookup" element={<VirginiaLicensePlateLookup />} />
+        <Route path="/west-virginia-license-plate-lookup" element={<WestVirginiaLicensePlateLookup />} />
+        <Route path="/wisconsin-license-plate-lookup" element={<WisconsinLicensePlateLookup />} />
+        <Route path="/wyoming-license-plate-lookup" element={<WyomingLicensePlateLookup />} />
+
         {/* HIGH-VALUE SEO PAGES */}
         <Route path="/check-if-stolen" element={<CheckIfStolenPage />} />
         <Route path="/theftaz" element={<TheftAZPage />} />
         <Route path="/check-ps5" element={<CheckPS5Page />} />
+        <Route path="/partial-serial-number-search" element={<PartialSerialNumberSearchPage />} />
 
         {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
