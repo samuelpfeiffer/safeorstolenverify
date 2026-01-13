@@ -66,6 +66,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
   { from: '/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
   { from: '/vs/checkmend', to: '/about', permanent: true },
+  { from: '/vs-checkmend', to: '/about', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },

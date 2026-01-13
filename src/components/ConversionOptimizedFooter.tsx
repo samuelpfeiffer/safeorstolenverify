@@ -76,40 +76,52 @@ export const ConversionOptimizedFooter: React.FC = () => {
 
             {/* For Consumers */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-foreground">For Consumers</h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Verify By Type</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/verify" className="hover:text-foreground transition-colors">Check an Item</Link></li>
-                <li><Link to="/how-it-works" className="hover:text-foreground transition-colors">Buyer Protection Guide</Link></li>
-                <li><Link to="/faq" className="hover:text-foreground transition-colors">Verification Methods</Link></li>
-                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Subscription Plans</Link></li>
-                <li><Link to="/imei-checker" className="hover:text-foreground transition-colors">IMEI Check</Link></li>
-                <li><Link to="/vin-checker" className="hover:text-foreground transition-colors">VIN Check</Link></li>
+                <li><Link to="/check-if-stolen" className="hover:text-foreground transition-colors">Check If Stolen</Link></li>
+                <li><Link to="/check-phone" className="hover:text-foreground transition-colors">Check Phone</Link></li>
+                <li><Link to="/check-car" className="hover:text-foreground transition-colors">Check Car</Link></li>
+                <li><Link to="/check-bike" className="hover:text-foreground transition-colors">Check Bike</Link></li>
+                <li><Link to="/check-laptop" className="hover:text-foreground transition-colors">Check Laptop</Link></li>
+                <li><Link to="/firearms-check" className="hover:text-foreground transition-colors">Check Firearms</Link></li>
+                <li><Link to="/check-electronics" className="hover:text-foreground transition-colors">Check Electronics</Link></li>
+                <li><Link to="/check-ps5" className="hover:text-foreground transition-colors">Check PS5</Link></li>
               </ul>
             </div>
 
-            {/* For Businesses */}
+            {/* Verify By State */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-foreground">For Businesses</h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Verify By State</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/for-businesses" className="hover:text-foreground transition-colors">Business Solutions</Link></li>
-                <li><Link to="/for-dealers" className="hover:text-foreground transition-colors">Dealer Solutions</Link></li>
-                <li><Link to="/for-marketplaces" className="hover:text-foreground transition-colors">Marketplace Integration</Link></li>
-                <li><Link to="/for-pawn-shops" className="hover:text-foreground transition-colors">Pawn Shop Solutions</Link></li>
-                <li><Link to="/for-auction-houses" className="hover:text-foreground transition-colors">Auction Houses</Link></li>
-                <li><Link to="/about" className="hover:text-foreground transition-colors">Contact Us</Link></li>
+                <li><Link to="/arizona-license-plate-lookup" className="hover:text-foreground transition-colors">Arizona</Link></li>
+                <li><Link to="/california-license-plate-lookup" className="hover:text-foreground transition-colors">California</Link></li>
+                <li><Link to="/florida-license-plate-lookup" className="hover:text-foreground transition-colors">Florida</Link></li>
+                <li><Link to="/new-york-license-plate-lookup" className="hover:text-foreground transition-colors">New York</Link></li>
+                <li><Link to="/texas-license-plate-lookup" className="hover:text-foreground transition-colors">Texas</Link></li>
+                <li><Link to="/ohio-license-plate-lookup" className="hover:text-foreground transition-colors">Ohio</Link></li>
+                <li><Link to="/license-plate-lookup" className="hover:text-foreground transition-colors">All States →</Link></li>
               </ul>
             </div>
 
-            {/* Support & Legal */}
+            {/* Tools & Resources */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-foreground">Support & Legal</h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Tools</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/faq" className="hover:text-foreground transition-colors">FAQ</Link></li>
-                <li><Link to="/about" className="hover:text-foreground transition-colors">Contact Support</Link></li>
-                <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link to="/partial-serial-number-search" className="hover:text-foreground transition-colors">Partial Serial Search</Link></li>
+                <li><Link to="/theftaz" className="hover:text-foreground transition-colors">TheftAZ Search</Link></li>
+                <li><Link to="/serial-number-checker" className="hover:text-foreground transition-colors">Serial Number Checker</Link></li>
+                <li><Link to="/imei-checker" className="hover:text-foreground transition-colors">IMEI Checker</Link></li>
+                <li><Link to="/vin-checker" className="hover:text-foreground transition-colors">VIN Checker</Link></li>
+              </ul>
+              
+              <h3 className="text-lg font-semibold mb-4 mt-6 text-foreground">Company</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><Link to="/about" className="hover:text-foreground transition-colors">About</Link></li>
+                <li><Link to="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
                 <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
-                <li><Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="hover:text-foreground transition-colors">Terms & Conditions</Link></li>
+                <li><Link to="/testimonials" className="hover:text-foreground transition-colors">Reviews</Link></li>
+                <li><Link to="/privacy" className="hover:text-foreground transition-colors">Privacy</Link></li>
+                <li><Link to="/terms" className="hover:text-foreground transition-colors">Terms</Link></li>
               </ul>
             </div>
           </div>

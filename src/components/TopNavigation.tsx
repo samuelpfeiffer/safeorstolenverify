@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2 } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -24,10 +24,11 @@ const TopNavigation = () => {
 
   const navLinks = [
     { to: '/', label: 'Home' },
+    { to: '/check-if-stolen', label: 'Check If Stolen', featured: true },
     { to: '/verify', label: 'Verify' },
     { to: '/compare', label: 'Compare' },
     { to: '/pricing', label: 'Pricing' },
-    { to: '/app', label: 'Download App', featured: true },
+    { to: '/app', label: 'Download App' },
   ];
 
   const resourceLinks = [
@@ -35,6 +36,8 @@ const TopNavigation = () => {
     { to: '/faq', label: 'Help & FAQ', icon: HelpCircle },
     { to: '/how-it-works', label: 'How It Works', icon: FileText },
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
+    { to: '/theftaz', label: 'TheftAZ Search', icon: Search },
+    { to: '/partial-serial-number-search', label: 'Partial Serial Search', icon: Search },
   ];
 
   const authenticatedLinks = [
