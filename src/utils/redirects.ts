@@ -65,6 +65,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   // ===== COMPETITOR COMPARISON PAGES =====
   { from: '/vs-stolenphonechecker', to: '/compare', permanent: true },
   { from: '/vs-imeipro', to: '/vs-imeiinfo', permanent: true },
+  { from: '/vs/checkmend', to: '/about', permanent: true },
 
   // ===== OTHER LEGACY URLS =====
   { from: '/avoid-buying-stolen-goods', to: '/how-it-works', permanent: true },
