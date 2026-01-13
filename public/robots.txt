@@ -1,7 +1,7 @@
 # ============================================
 # SafeOrStolen Robots.txt
 # Mission: Protect Buyers & Sellers - Stop Stolen Goods
-# Updated: 2025-12-21
+# Updated: 2025-01-13
 # ============================================
 
 User-agent: *
@@ -42,7 +42,6 @@ Disallow: /ai-training-data.md
 Disallow: /mobile-app-ai-context.json
 
 # Query Parameters (Duplicate Content Prevention)
-# Block ALL query parameter variations
 Disallow: /*?*
 Disallow: /*?type=*
 Disallow: /*?q=*
@@ -75,7 +74,28 @@ Disallow: /crunchbase
 Crawl-delay: 1
 
 # ============================================
-# AI SEARCH ENGINE CRAWLERS
+# SEARCH ENGINE BOTS - ALLOW ALL
+# ============================================
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ============================================
+# AI SEARCH ENGINE CRAWLERS - ALLOW ALL
 # ============================================
 User-agent: GPTBot
 Allow: /
@@ -132,19 +152,25 @@ User-agent: Gemini
 Allow: /
 
 # ============================================
-# SEARCH ENGINE BOTS
+# SOCIAL MEDIA BOTS - ALLOW ALL
 # ============================================
-User-agent: Googlebot
+User-agent: facebookexternalhit
 Allow: /
 
-User-agent: Bingbot
+User-agent: Twitterbot
 Allow: /
 
-User-agent: Slurp
+User-agent: LinkedInBot
 Allow: /
 
-User-agent: DuckDuckBot
+User-agent: WhatsApp
 Allow: /
 
-User-agent: Baiduspider
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
 Allow: /
