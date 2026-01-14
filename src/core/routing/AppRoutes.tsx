@@ -143,6 +143,15 @@ const TheftAZPage = lazy(() => import('@/pages/TheftAZPage'));
 const CheckPS5Page = lazy(() => import('@/pages/CheckPS5Page'));
 const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNumberSearchPage'));
 
+// NEW GUN PAGES - High-Value SEO
+const StolenGunDatabasePage = lazy(() => import('@/pages/StolenGunDatabasePage'));
+const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
+
+// NEW COMPETITOR ALTERNATIVE PAGES
+const FreeCarfaxAlternativePage = lazy(() => import('@/pages/comparisons/FreeCarfaxAlternativePage'));
+const NICBAlternativePage = lazy(() => import('@/pages/comparisons/NICBAlternativePage'));
+const HotGunzAlternativePage = lazy(() => import('@/pages/comparisons/HotGunzAlternativePage'));
+
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
@@ -376,6 +385,15 @@ export const AppRoutes = () => {
         <Route path="/theftaz" element={<TheftAZPage />} />
         <Route path="/check-ps5" element={<CheckPS5Page />} />
         <Route path="/partial-serial-number-search" element={<PartialSerialNumberSearchPage />} />
+        
+        {/* GUN VERIFICATION PAGES */}
+        <Route path="/stolen-gun-database" element={<StolenGunDatabasePage />} />
+        <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
+        
+        {/* COMPETITOR ALTERNATIVE PAGES */}
+        <Route path="/carfax-alternative-free" element={<FreeCarfaxAlternativePage />} />
+        <Route path="/nicb-alternative" element={<NICBAlternativePage />} />
+        <Route path="/hotgunz-alternative" element={<HotGunzAlternativePage />} />
 
         {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />

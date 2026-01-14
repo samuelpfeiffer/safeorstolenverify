@@ -19,6 +19,12 @@ export const prerenderRoutes = [
   '/check-electronics',
   '/firearms-check',
   '/license-plate-lookup',
+  '/stolen-gun-database',
+  '/gun-serial-number-lookup',
+  '/check-if-stolen',
+  '/check-electronics',
+  '/firearms-check',
+  '/license-plate-lookup',
   
   // Tier 3: Important informational pages
   '/how-it-works',

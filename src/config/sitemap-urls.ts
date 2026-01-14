@@ -181,6 +181,15 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/theftaz', priority: 0.80, changefreq: 'monthly' },
   { path: '/check-ps5', priority: 0.70, changefreq: 'monthly' },
   { path: '/partial-serial-number-search', priority: 0.70, changefreq: 'monthly' },
+  
+  // GUN VERIFICATION PAGES (HIGH-VALUE SEO)
+  { path: '/stolen-gun-database', priority: 0.90, changefreq: 'weekly' },
+  { path: '/gun-serial-number-lookup', priority: 0.85, changefreq: 'weekly' },
+  
+  // COMPETITOR ALTERNATIVE PAGES (SEO)
+  { path: '/carfax-alternative-free', priority: 0.80, changefreq: 'monthly' },
+  { path: '/nicb-alternative', priority: 0.80, changefreq: 'monthly' },
+  { path: '/hotgunz-alternative', priority: 0.80, changefreq: 'monthly' },
 
   // ============================================
   // REMAINING 39 STATE LICENSE PLATE LOOKUPS (All 50 states)
