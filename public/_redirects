@@ -492,6 +492,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/carfax-alternative         /vs-carfax        301!
 /app/features/barcode-scanner   /app/barcode-scanner  301!
 /app/sellers                    /about            301!
+/app/vs-imeipro                 /vs-imeiinfo      301!
 
 # Missing top-level pages (GSC noindex January 2026)
 /real-time-verification         /verify           301!
@@ -505,6 +506,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /comprehensive-guide            /how-it-works     301!
 /trust-verification             /about            301!
 /press-release                  /press-kit        301!
+/statistics                     /about            301!
+/buy-used-electronics-safely    /check-electronics  301!
+/how-to-check-if-laptop-stolen  /check-laptop     301!
+/stolen-merchandise-check       /verify           301!
+/comparison-checkmend           /vs-checkmend     301!
 /resource-center                /faq              301!
 
 # Blog posts with suffixes (timestamps/versions)
@@ -514,14 +520,21 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/how-law-enforcement-tracks-stolen-goods-*                  /blog  301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide* /blog  301!
 /blog/craigslist-scam-prevention-item-verification-checklist     /blog  301!
+/blog/vin-verification-for-used-cars-what-you-need-to-know-*     /blog/complete-vin-guide  301!
 # These blog posts have real routes in AppRoutes.tsx - DO NOT REDIRECT:
 # /blog/theft-trends-report-2024, /blog/bicycle-stolen-serial-number-check,
 # /blog/firearm-serial-number-verification, /blog/verify-item-before-meetup,
 # /blog/pawn-shop-stolen-item-verification, /blog/imei-checker-app-download
 /blog/how-to-use-imei-checker-app                                /blog/imei-checker-app-download  301!
 
+# GSC Duplicate Blog Posts (January 2026) - redirect to canonical versions
+/blog/protect-yourself-buying-used-electronics                   /blog/protect-yourself-from-secondhand-fraud  301!
+/blog/ultimate-marketplace-buyers-guide                          /blog  301!
+/blog/complete-imei-guide-protect-yourself                       /imei-checker  301!
+/blog/safeorstolen-firearms-marketplace-verification             /firearms-check  301!
+
 # Blog posts without matching routes
-/blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-buying-used-electronics  301!
+/blog/avoid-buying-stolen-laptops                                /blog/protect-yourself-from-secondhand-fraud  301!
 /blog/5-signs-used-phone-might-be-stolen                         /blog/how-to-check-if-phone-stolen  301!
 /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
 /blog/playstation-5-serial-number-verification-guide             /serial-number-checker  301!
