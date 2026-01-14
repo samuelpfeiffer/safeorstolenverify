@@ -190,6 +190,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/carfax-alternative-free', priority: 0.80, changefreq: 'monthly' },
   { path: '/nicb-alternative', priority: 0.80, changefreq: 'monthly' },
   { path: '/hotgunz-alternative', priority: 0.80, changefreq: 'monthly' },
+  { path: '/free-stolen-vehicle-check', priority: 0.85, changefreq: 'weekly' },
 
   // ============================================
   // REMAINING 39 STATE LICENSE PLATE LOOKUPS (All 50 states)

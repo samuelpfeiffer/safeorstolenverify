@@ -151,6 +151,7 @@ const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLook
 const FreeCarfaxAlternativePage = lazy(() => import('@/pages/comparisons/FreeCarfaxAlternativePage'));
 const NICBAlternativePage = lazy(() => import('@/pages/comparisons/NICBAlternativePage'));
 const HotGunzAlternativePage = lazy(() => import('@/pages/comparisons/HotGunzAlternativePage'));
+const FreeStolenVehicleCheckPage = lazy(() => import('@/pages/comparisons/FreeStolenVehicleCheckPage'));
 
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
@@ -394,6 +395,7 @@ export const AppRoutes = () => {
         <Route path="/carfax-alternative-free" element={<FreeCarfaxAlternativePage />} />
         <Route path="/nicb-alternative" element={<NICBAlternativePage />} />
         <Route path="/hotgunz-alternative" element={<HotGunzAlternativePage />} />
+        <Route path="/free-stolen-vehicle-check" element={<FreeStolenVehicleCheckPage />} />
 
         {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
