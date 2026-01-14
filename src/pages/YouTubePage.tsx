@@ -26,32 +26,13 @@ const YouTubePage: React.FC = () => {
 
   const featuredVideo = getFeaturedVideo();
 
-  // Generate structured data for all videos
-  const videoSchemas = YOUTUBE_VIDEOS.map(video => ({
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": video.seoTitle,
-    "description": video.seoDescription,
-    "thumbnailUrl": getYouTubeThumbnail(video.videoId),
-    "uploadDate": video.uploadDate,
-    "duration": video.durationISO,
-    "contentUrl": getYouTubeShortsUrl(video.videoId),
-    "embedUrl": `https://www.youtube.com/embed/${video.videoId}`,
-    "publisher": {
-      "@type": "Organization",
-      "name": "SafeOrStolen",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
-      }
-    }
-  }));
-
-  // ItemList schema for video collection
+  // Collection page structured data - NO VideoObject schemas here
+  // VideoObject schemas should only be on individual /youtube/{slug} watch pages
+  // This prevents "Video isn't on a watch page" error in GSC
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
+      "@type": "CollectionPage",
       "name": "SafeOrStolen YouTube Channel - Stolen Item Verification Tutorials",
       "description": YOUTUBE_CHANNEL.description,
       "url": "https://safeorstolen.com/youtube",
@@ -62,28 +43,28 @@ const YouTubePage: React.FC = () => {
         "itemListElement": YOUTUBE_VIDEOS.map((video, index) => ({
           "@type": "ListItem",
           "position": index + 1,
-          "item": {
-            "@type": "VideoObject",
-            "name": video.seoTitle,
-            "description": video.seoDescription,
-            "thumbnailUrl": getYouTubeThumbnail(video.videoId),
-            "uploadDate": video.uploadDate,
-            "duration": video.durationISO,
-            "contentUrl": getYouTubeShortsUrl(video.videoId),
-            "embedUrl": `https://www.youtube.com/embed/${video.videoId}`,
-            "publisher": {
-              "@type": "Organization",
-              "name": "SafeOrStolen",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://safeorstolen.com/logo.png"
-              }
-            }
-          }
+          "url": `https://safeorstolen.com/youtube/${video.slug}`
         }))
       }
     },
-    ...videoSchemas
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://safeorstolen.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "YouTube",
+          "item": "https://safeorstolen.com/youtube"
+        }
+      ]
+    }
   ];
 
   return (
@@ -94,15 +75,11 @@ const YouTubePage: React.FC = () => {
         keywords="SafeOrStolen YouTube, stolen item checker tutorial, IMEI checker video, VIN lookup guide, serial number verification how-to, marketplace safety tips"
         canonical="/youtube"
         structuredData={structuredData}
-        isVideoPage={true}
+        isVideoPage={false}
       />
 
-      <Helmet>
-        <meta property="og:video" content={`https://www.youtube.com/embed/${featuredVideo.videoId}`} />
-        <meta property="og:video:type" content="text/html" />
-        <meta property="og:video:width" content="1280" />
-        <meta property="og:video:height" content="720" />
-      </Helmet>
+      {/* NOTE: og:video removed - collection pages should not have video OG tags */}
+      {/* Video OG tags are only on individual /youtube/{slug} watch pages */}
 
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-16">
