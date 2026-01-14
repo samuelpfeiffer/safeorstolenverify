@@ -5,6 +5,8 @@
 
 import { searchBikeIndex, BikeIndexResult, formatBikeResult } from './bikeIndexService';
 
+export type QueryType = 'imei' | 'vin' | 'serial' | 'plate' | 'unknown';
+
 export interface AggregatedResult {
   source: string;
   sourceUrl: string;
@@ -22,17 +24,21 @@ export interface AggregatedResult {
 
 export interface SearchResults {
   query: string;
-  queryType: 'imei' | 'vin' | 'serial' | 'plate' | 'unknown';
+  queryType: QueryType;
   timestamp: Date;
   results: AggregatedResult[];
   overallStatus: 'safe' | 'stolen' | 'unknown' | 'partial_match';
-  searchDuration: number; // milliseconds
+  searchDuration: number;
+  bikeIndexResults?: BikeIndexResult[];
 }
+
+// Alias for backwards compatibility
+export type AggregatedSearchResult = SearchResults;
 
 /**
  * Detect the type of identifier being searched
  */
-export function detectQueryType(query: string): 'imei' | 'vin' | 'serial' | 'plate' | 'unknown' {
+export function detectQueryType(query: string): QueryType {
   const cleaned = query.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
   
   // IMEI is exactly 15 digits
@@ -55,6 +61,55 @@ export function detectQueryType(query: string): 'imei' | 'vin' | 'serial' | 'pla
 }
 
 /**
+ * Get human-readable name for query type
+ */
+export function getQueryTypeName(type: QueryType): string {
+  switch (type) {
+    case 'imei': return 'IMEI Number';
+    case 'vin': return 'VIN (Vehicle)';
+    case 'plate': return 'License Plate';
+    case 'serial': return 'Serial Number';
+    default: return 'Identifier';
+  }
+}
+
+/**
+ * Format the overall status for display
+ */
+export function formatStatus(status: SearchResults['overallStatus']): {
+  label: string;
+  color: 'green' | 'red' | 'yellow' | 'gray';
+  icon: string;
+} {
+  switch (status) {
+    case 'safe':
+      return { label: 'CLEAR', color: 'green', icon: '✓' };
+    case 'stolen':
+      return { label: 'STOLEN', color: 'red', icon: '⚠' };
+    case 'partial_match':
+      return { label: 'CHECK DETAILS', color: 'yellow', icon: '!' };
+    default:
+      return { label: 'UNKNOWN', color: 'gray', icon: '?' };
+  }
+}
+
+/**
+ * Get recommended action based on status
+ */
+export function getRecommendedAction(status: SearchResults['overallStatus']): string {
+  switch (status) {
+    case 'safe':
+      return 'Item appears clean. Proceed with purchase but maintain documentation.';
+    case 'stolen':
+      return 'DO NOT BUY. This item has been reported stolen. Walk away and report to authorities.';
+    case 'partial_match':
+      return 'Potential match found. Review details carefully before proceeding.';
+    default:
+      return 'No records found. Item may be safe but exercise caution with high-value purchases.';
+  }
+}
+
+/**
  * Determine overall status from aggregated results
  */
 function determineOverallStatus(results: AggregatedResult[]): 'safe' | 'stolen' | 'unknown' | 'partial_match' {
@@ -70,30 +125,54 @@ function determineOverallStatus(results: AggregatedResult[]): 'safe' | 'stolen' 
 
 /**
  * Search internal SafeOrStolen database
- * This would connect to your Supabase backend
  */
 async function searchInternalDatabase(query: string): Promise<AggregatedResult> {
-  // This is a placeholder - integrate with your actual Supabase verification
-  // For now, return a not-found result to indicate the search was attempted
-  return {
-    source: 'SafeOrStolen Database',
-    sourceUrl: 'https://safeorstolen.com',
-    found: false,
-    stolen: false,
-    data: null,
-    confidence: 'high',
-  };
+  try {
+    const { supabase } = await import('@/integrations/supabase/client');
+    
+    // Search across multiple identifier types
+    const { data, error } = await supabase
+      .from('stolen_items')
+      .select('*')
+      .or(`serial_number.ilike.%${query}%,imei.ilike.%${query}%,vin.ilike.%${query}%`)
+      .limit(10);
+    
+    if (error) {
+      throw error;
+    }
+    
+    const found = data && data.length > 0;
+    const stolen = found && data.some(item => item.status === 'stolen' || item.status === 'active');
+    
+    return {
+      source: 'SafeOrStolen Database',
+      sourceUrl: 'https://safeorstolen.com',
+      found,
+      stolen,
+      data: data || null,
+      confidence: 'high',
+    };
+  } catch (error) {
+    console.error('Internal database search error:', error);
+    return {
+      source: 'SafeOrStolen Database',
+      sourceUrl: 'https://safeorstolen.com',
+      found: false,
+      stolen: false,
+      data: null,
+      confidence: 'high',
+    };
+  }
 }
 
 /**
  * Perform aggregated search across all available sources
- * @param query - The identifier to search (IMEI, VIN, serial, plate)
- * @returns Comprehensive search results from all sources
  */
 export async function aggregatedSearch(query: string): Promise<SearchResults> {
   const startTime = Date.now();
   const queryType = detectQueryType(query);
   const results: AggregatedResult[] = [];
+  let bikeIndexResults: BikeIndexResult[] | undefined;
   
   // Search SafeOrStolen internal database
   try {
@@ -106,10 +185,10 @@ export async function aggregatedSearch(query: string): Promise<SearchResults> {
   // If it looks like a bike serial, search BikeIndex
   if (queryType === 'serial') {
     try {
-      const bikeResults = await searchBikeIndex(query);
-      if (bikeResults.length > 0) {
-        const hasStolenBike = bikeResults.some(b => b.stolen);
-        const firstBike = bikeResults[0];
+      bikeIndexResults = await searchBikeIndex(query);
+      if (bikeIndexResults.length > 0) {
+        const hasStolenBike = bikeIndexResults.some(b => b.stolen);
+        const firstBike = bikeIndexResults[0];
         const formatted = formatBikeResult(firstBike);
         
         results.push({
@@ -117,11 +196,11 @@ export async function aggregatedSearch(query: string): Promise<SearchResults> {
           sourceUrl: 'https://bikeindex.org',
           found: true,
           stolen: hasStolenBike,
-          data: bikeResults,
+          data: bikeIndexResults,
           confidence: 'high',
           displayInfo: {
             title: formatted.title,
-            description: `${bikeResults.length} bike(s) found - ${hasStolenBike ? 'STOLEN' : 'Not reported stolen'}`,
+            description: `${bikeIndexResults.length} bike(s) found - ${hasStolenBike ? 'STOLEN' : 'Not reported stolen'}`,
             imageUrl: formatted.imageUrl || undefined,
             detailUrl: formatted.detailUrl,
           },
@@ -132,12 +211,6 @@ export async function aggregatedSearch(query: string): Promise<SearchResults> {
     }
   }
   
-  // TODO: Add more source integrations here:
-  // - HotGunz for firearms
-  // - TheftAZ for Arizona items
-  // - FDLE for Florida items
-  // - Carrier blacklists for phones
-  
   const searchDuration = Date.now() - startTime;
   
   return {
@@ -147,6 +220,7 @@ export async function aggregatedSearch(query: string): Promise<SearchResults> {
     results,
     overallStatus: determineOverallStatus(results),
     searchDuration,
+    bikeIndexResults,
   };
 }
 
