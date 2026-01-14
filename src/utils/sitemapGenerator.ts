@@ -60,9 +60,12 @@ Allow: /verify
 Allow: /pricing
 Allow: /about
 Allow: /faq
-
-# Block all query parameter URLs
-Disallow: /*?*
+Allow: /firearms-check
+Allow: /check-car
+Allow: /check-phone
+Allow: /check-bike
+Allow: /license-plate-lookup
+Allow: /stolen-gun-database
 
 # Block admin and private areas
 Disallow: /admin/
@@ -70,8 +73,49 @@ Disallow: /api/
 Disallow: /dashboard/
 Disallow: /auth/
 Disallow: /*.json$
-Disallow: /*?*print*
-Disallow: /*?*utm_*
+
+# Block query parameter URLs
+Disallow: /*?*
+
+# Welcome AI Crawlers - We want AI visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
 
 # Allow important static assets
 Allow: /assets/
