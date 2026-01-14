@@ -104,6 +104,18 @@
     
     <!-- Prerender.io Token for SEO crawler pre-rendering -->
     <meta name="prerender-token" content="iiMthWrIIiQhunohL2U5">
+    
+    <!-- Prerender.io detection script for verification -->
+    <script>
+      // Prerender.io detection - signals when page is ready for caching
+      window.prerenderReady = false;
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for React to hydrate and content to render
+        setTimeout(function() {
+          window.prerenderReady = true;
+        }, 2000);
+      });
+    </script>
 </head>
 
   <body>
