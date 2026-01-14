@@ -1,0 +1,48 @@
+# ============================================
+# SafeOrStolen Netlify Configuration
+# Prerender.io Integration for SEO & AI Crawlers
+# ============================================
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# ============================================
+# Prerender.io Plugin for Dynamic Rendering
+# Serves pre-rendered HTML to search engines and AI bots
+# ============================================
+[[plugins]]
+  package = "@prerender/netlify-plugin"
+
+[plugins.inputs]
+  prerenderToken = "iiMthWrIIiQhunohL2U5"
+  prerenderServiceUrl = "https://service.prerender.io/"
+
+# ============================================
+# Build Environment
+# ============================================
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+# ============================================
+# Headers
+# ============================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Prerender-Token = "iiMthWrIIiQhunohL2U5"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# ============================================
+# Redirects for SPA
+# ============================================
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["admin", "user"]}
+
+# Note: Primary redirects are handled in public/_redirects
