@@ -267,13 +267,46 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 /comparison-checkmend              /vs-checkmend  301!
 /vs-stolenregister                 /pricing  301!
-/vs-nicb                           /pricing  301!
-/carfax-alternative                /vs-carfax  301!
-/competitor-alternatives           /pricing  301!
-/cheaper-than-carfax               /vs-carfax  301!
+/vs-nicb                           /nicb-alternative  301!
+/carfax-alternative                /carfax-alternative-free  301!
+/competitor-alternatives           /compare  301!
+/cheaper-than-carfax               /carfax-alternative-free  301!
 /free-vin-check-alternative        /vin-checker  301!
 /vs-stolenphonechecker             /compare  301!
 /vs-imeipro                        /vs-imeiinfo  301!
+/vs/checkmend                      /vs-checkmend  301!
+/vs-checkmend                      /vs-checkmend  200
+/vs/imeiinfo                       /vs-imeiinfo  301!
+/vs/carfax                         /vs-carfax  301!
+/vs/nicb                           /nicb-alternative  301!
+/vs/hotgunz                        /hotgunz-alternative  301!
+/vs-stolenregister                 /compare  301!
+
+# GUN VERIFICATION REDIRECTS
+/check-firearm                     /firearms-check  301!
+/check-gun                         /firearms-check  301!
+/gun-check                         /firearms-check  301!
+/firearm-check                     /firearms-check  301!
+
+# IMEI REDIRECTS
+/imei                              /imei-checker  301!
+/check-imei                        /imei-checker  301!
+
+# VIN REDIRECTS  
+/vin                               /vin-checker  301!
+/check-vin                         /vin-checker  301!
+
+# SERIAL REDIRECTS
+/serial                            /serial-number-checker  301!
+/serial-check                      /serial-number-checker  301!
+/check-serial                      /serial-number-checker  301!
+
+# STATE ABBREVIATION LICENSE PLATE REDIRECTS
+/az-license-plate-lookup           /arizona-license-plate-lookup  301!
+/ca-license-plate-lookup           /california-license-plate-lookup  301!
+/tx-license-plate-lookup           /texas-license-plate-lookup  301!
+/fl-license-plate-lookup           /florida-license-plate-lookup  301!
+/ny-license-plate-lookup           /new-york-license-plate-lookup  301!
 
 # ============================================
 # ITEM-SPECIFIC VARIATIONS → CANONICAL PAGES
