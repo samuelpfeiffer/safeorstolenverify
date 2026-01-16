@@ -156,6 +156,10 @@ const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNu
 const StolenGunDatabasePage = lazy(() => import('@/pages/StolenGunDatabasePage'));
 const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
 
+// NEW HIGH-VALUE SEO PAGES
+const FreeVinCheckPage = lazy(() => import('@/pages/FreeVinCheckPage'));
+const IMEIBlacklistCheckPage = lazy(() => import('@/pages/IMEIBlacklistCheckPage'));
+const NCICVehicleCheckPage = lazy(() => import('@/pages/NCICVehicleCheckPage'));
 // NEW COMPETITOR ALTERNATIVE PAGES
 const FreeCarfaxAlternativePage = lazy(() => import('@/pages/comparisons/FreeCarfaxAlternativePage'));
 const NICBAlternativePage = lazy(() => import('@/pages/comparisons/NICBAlternativePage'));
@@ -448,6 +452,11 @@ export const AppRoutes = () => {
         {/* GUN VERIFICATION PAGES */}
         <Route path="/stolen-gun-database" element={<StolenGunDatabasePage />} />
         <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
+        
+        {/* NEW HIGH-VALUE SEO PAGES */}
+        <Route path="/free-vin-check" element={<FreeVinCheckPage />} />
+        <Route path="/imei-blacklist-check" element={<IMEIBlacklistCheckPage />} />
+        <Route path="/ncic-vehicle-check" element={<NCICVehicleCheckPage />} />
         
         {/* COMPETITOR ALTERNATIVE PAGES */}
         <Route path="/carfax-alternative-free" element={<FreeCarfaxAlternativePage />} />
