@@ -45,6 +45,10 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => {
     if (path === '/imei-checker') return 0.85;
     if (path === '/vin-checker') return 0.85;
     if (path === '/serial-number-checker') return 0.85;
+    if (path === '/free-vin-check') return 0.9;
+    if (path === '/imei-blacklist-check') return 0.9;
+    if (path === '/ncic-vehicle-check') return 0.85;
+    if (path === '/for-businesses') return 0.9;
     
     // Important pages - Priority 0.8
     if (path === '/how-it-works' || path === '/about') return 0.8;
