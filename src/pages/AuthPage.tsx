@@ -11,6 +11,22 @@ import { AuthForm } from '@/components/auth/AuthForm';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
 
+/**
+ * Validates redirect URLs to prevent open redirect attacks.
+ * Only allows relative paths starting with / and blocks absolute URLs.
+ */
+function isValidRedirect(path: string): boolean {
+  // Must start with / (relative path)
+  if (!path.startsWith('/')) return false;
+  // Block protocol-relative URLs (//evil.com)
+  if (path.startsWith('//')) return false;
+  // Block URLs with protocols (https://evil.com, javascript:, etc.)
+  if (path.includes('://')) return false;
+  // Block URLs with backslashes that could be interpreted as protocols
+  if (path.includes('\\')) return false;
+  return true;
+}
+
 type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success' | 'signin-welcome';
 
 const AuthPage = () => {
@@ -34,7 +50,13 @@ const AuthPage = () => {
       if (redirectPath) {
         // Decode the redirect path (it might be URL encoded)
         const decodedPath = decodeURIComponent(redirectPath);
-        navigate(decodedPath, { replace: true });
+        // Validate redirect to prevent open redirect attacks
+        if (isValidRedirect(decodedPath)) {
+          navigate(decodedPath, { replace: true });
+        } else {
+          console.warn('Invalid redirect URL blocked:', decodedPath);
+          navigate('/', { replace: true });
+        }
       } else {
         navigate('/', { replace: true });
       }
@@ -50,7 +72,12 @@ const AuthPage = () => {
   const handleWelcomeContinue = () => {
     const redirectPath = searchParams.get('redirect');
     if (redirectPath) {
-      navigate(decodeURIComponent(redirectPath));
+      const decodedPath = decodeURIComponent(redirectPath);
+      if (isValidRedirect(decodedPath)) {
+        navigate(decodedPath);
+      } else {
+        navigate('/');
+      }
     } else {
       navigate('/');
     }
@@ -59,7 +86,12 @@ const AuthPage = () => {
   const handleSignInWelcomeContinue = () => {
     const redirectPath = searchParams.get('redirect');
     if (redirectPath) {
-      navigate(decodeURIComponent(redirectPath));
+      const decodedPath = decodeURIComponent(redirectPath);
+      if (isValidRedirect(decodedPath)) {
+        navigate(decodedPath);
+      } else {
+        navigate('/');
+      }
     } else {
       navigate('/');
     }
