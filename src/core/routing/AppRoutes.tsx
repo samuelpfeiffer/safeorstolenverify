@@ -56,6 +56,15 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
+// NEW REAL PAGES (No more redirects for these URLs)
+const IMEICheckPage = lazy(() => import('@/pages/IMEICheckPage'));
+const VINCheckPage = lazy(() => import('@/pages/VINCheckPage'));
+const IMEICheckerAppPage = lazy(() => import('@/pages/IMEICheckerAppPage'));
+const GetAppPage = lazy(() => import('@/pages/GetAppPage'));
+const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
+const PressPage = lazy(() => import('@/pages/PressPage'));
+const StolenCheckMiami = lazy(() => import('@/pages/city/StolenCheckMiami'));
+
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
 const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
@@ -284,6 +293,13 @@ export const AppRoutes = () => {
 
         {/* ITEM LANDING PAGES */}
         <Route path="/imei-checker" element={<IMEICheckerPage />} />
+        <Route path="/imei-check" element={<IMEICheckPage />} />
+        <Route path="/vin-check" element={<VINCheckPage />} />
+        <Route path="/imei-checker-app" element={<IMEICheckerAppPage />} />
+        <Route path="/get-app" element={<GetAppPage />} />
+        <Route path="/for-consumers" element={<ForConsumersPage />} />
+        <Route path="/press" element={<PressPage />} />
+        <Route path="/stolen-check-miami" element={<StolenCheckMiami />} />
         <Route path="/vin-checker" element={<VINCheckerPage />} />
         <Route path="/serial-number-checker" element={<SerialNumberCheckerPage />} />
         <Route path="/check-phone" element={<CheckPhonePage />} />
