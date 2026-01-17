@@ -516,6 +516,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /cookies                                                        /privacy  301!
 /partnerships                                                   /about  301!
 /contact                                                        /about  301!
+/testimonials                                                   /about  301!
+/trust-verification                                             /about  301!
+/vin-verification                                               /vin-checker  301!
 
 # ============================================
 # GUIDES DIRECTORY REDIRECTS
