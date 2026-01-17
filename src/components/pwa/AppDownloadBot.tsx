@@ -25,16 +25,38 @@ export const AppDownloadBot = () => {
     }
 
     if (!isInstalled && !isDismissed) {
-      // Show bot after 3 seconds with typing animation
-      const timer = setTimeout(() => {
+      let timer: ReturnType<typeof setTimeout> | null = null;
+      let scrollListener: (() => void) | null = null;
+
+      // Function to trigger the popup display
+      const showPopup = () => {
+        // Clean up listeners first
+        if (timer) clearTimeout(timer);
+        if (scrollListener) window.removeEventListener('scroll', scrollListener);
+        
         setShowTyping(true);
         setTimeout(() => {
           setShowTyping(false);
           setIsVisible(true);
-        }, 2000);
-      }, 3000);
+        }, 1500);
+      };
 
-      return () => clearTimeout(timer);
+      // Show after 8 seconds of inactivity OR on first scroll
+      // This prevents blocking initial page paint (better INP/CLS)
+      timer = setTimeout(showPopup, 8000);
+      
+      scrollListener = () => {
+        // Only trigger once user scrolls at least 100px
+        if (window.scrollY > 100) {
+          showPopup();
+        }
+      };
+      window.addEventListener('scroll', scrollListener, { passive: true });
+
+      return () => {
+        if (timer) clearTimeout(timer);
+        if (scrollListener) window.removeEventListener('scroll', scrollListener);
+      };
     }
   }, [isInstalled, isDismissed]);
 
