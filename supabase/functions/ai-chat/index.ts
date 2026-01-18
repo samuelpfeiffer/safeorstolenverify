@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -19,12 +20,142 @@ interface ChatRequest {
   };
 }
 
+// Rate limit configuration
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const MAX_REQUESTS_PER_HOUR = 50; // 50 requests per hour per user
+
+// In-memory rate limiting
+const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
+
+function checkRateLimit(userId: string): { allowed: boolean; remaining: number; resetAt: number } {
+  const now = Date.now();
+  const entry = rateLimitStore.get(userId);
+  
+  if (!entry || entry.resetAt < now) {
+    rateLimitStore.set(userId, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return { allowed: true, remaining: MAX_REQUESTS_PER_HOUR - 1, resetAt: now + RATE_LIMIT_WINDOW_MS };
+  }
+  
+  if (entry.count >= MAX_REQUESTS_PER_HOUR) {
+    return { allowed: false, remaining: 0, resetAt: entry.resetAt };
+  }
+  
+  entry.count++;
+  return { allowed: true, remaining: MAX_REQUESTS_PER_HOUR - entry.count, resetAt: entry.resetAt };
+}
+
+// Cleanup expired entries periodically
+function cleanupRateLimits() {
+  const now = Date.now();
+  for (const [key, value] of rateLimitStore.entries()) {
+    if (value.resetAt < now) {
+      rateLimitStore.delete(key);
+    }
+  }
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Cleanup occasionally
+  if (Math.random() < 0.1) cleanupRateLimits();
+
   try {
+    // ============= AUTHENTICATION REQUIRED =============
+    const authHeader = req.headers.get('Authorization');
+    
+    if (!authHeader) {
+      console.log('[AI Chat] No authorization header provided');
+      return new Response(
+        JSON.stringify({ error: 'Authentication required. Please sign in to use AI chat.' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY');
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.error('[AI Chat] Supabase configuration missing');
+      return new Response(
+        JSON.stringify({ error: 'Server configuration error' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+      global: { headers: { Authorization: authHeader } }
+    });
+
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    
+    if (authError || !user) {
+      console.log('[AI Chat] Invalid authentication:', authError?.message);
+      return new Response(
+        JSON.stringify({ error: 'Invalid or expired session. Please sign in again.' }),
+        { status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    console.log(`[AI Chat] Authenticated user: ${user.id}`);
+
+    // ============= RATE LIMITING =============
+    const rateLimitResult = checkRateLimit(user.id);
+    
+    if (!rateLimitResult.allowed) {
+      console.log(`[AI Chat] Rate limit exceeded for user ${user.id}`);
+      
+      // Log rate limit violation
+      await supabase.from('audit_logs').insert({
+        user_id: user.id,
+        action: 'AI_CHAT_RATE_LIMIT_EXCEEDED',
+        table_name: 'ai_chat',
+        new_values: {
+          timestamp: new Date().toISOString(),
+          reset_at: new Date(rateLimitResult.resetAt).toISOString()
+        }
+      });
+      
+      return new Response(
+        JSON.stringify({ 
+          error: 'Rate limit exceeded. You can send up to 50 messages per hour.',
+          retryAfter: Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000)
+        }),
+        { 
+          status: 429, 
+          headers: { 
+            ...corsHeaders, 
+            'Content-Type': 'application/json',
+            'Retry-After': Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000).toString(),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': rateLimitResult.resetAt.toString()
+          } 
+        }
+      );
+    }
+
+    // ============= INPUT VALIDATION =============
+    const { messages, context } = await req.json() as ChatRequest;
+    
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'Messages array is required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // Validate message content length to prevent abuse
+    const totalLength = messages.reduce((sum, msg) => sum + (msg.content?.length || 0), 0);
+    if (totalLength > 50000) {
+      return new Response(
+        JSON.stringify({ error: 'Message content too long. Please reduce your message size.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // ============= API KEY VALIDATION =============
     const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
     
     if (!ANTHROPIC_API_KEY) {
@@ -35,8 +166,20 @@ serve(async (req) => {
       );
     }
 
-    const { messages, context } = await req.json() as ChatRequest;
+    // ============= LOG USAGE =============
+    await supabase.from('audit_logs').insert({
+      user_id: user.id,
+      action: 'AI_CHAT_REQUEST',
+      table_name: 'ai_chat',
+      new_values: {
+        message_count: messages.length,
+        context_type: context?.itemType || null,
+        timestamp: new Date().toISOString(),
+        remaining_requests: rateLimitResult.remaining
+      }
+    });
 
+    // ============= PROCESS REQUEST =============
     const systemPrompt = `You are SafeOrStolen's AI Safety Advisor. You help users verify items, understand verification results, spot red flags, and stay safe from stolen goods.
 
 Your expertise includes:
@@ -78,7 +221,7 @@ Be helpful, clear, and prioritize user safety. If unsure, recommend additional v
     if (!response.ok) {
       if (response.status === 429) {
         return new Response(
-          JSON.stringify({ error: 'Rate limit exceeded, please try again later' }),
+          JSON.stringify({ error: 'AI service rate limit exceeded, please try again later' }),
           { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }
@@ -91,9 +234,14 @@ Be helpful, clear, and prioritize user safety. If unsure, recommend additional v
       );
     }
 
-    // Return the stream directly
+    // Return the stream directly with rate limit headers
     return new Response(response.body, {
-      headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' },
+      headers: { 
+        ...corsHeaders, 
+        'Content-Type': 'text/event-stream',
+        'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+        'X-RateLimit-Reset': rateLimitResult.resetAt.toString()
+      },
     });
 
   } catch (error) {
