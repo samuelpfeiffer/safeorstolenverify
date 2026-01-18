@@ -1,21 +1,138 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Rate limit configuration
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 10; // 10 requests per minute per IP
+const MAX_REQUESTS_AUTHENTICATED = 30; // Higher limit for authenticated users
+
+// In-memory rate limiting (resets on function cold start, but provides basic protection)
+const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
+
+/**
+ * Check rate limit for a given identifier (IP or user ID)
+ */
+function checkRateLimit(identifier: string, isAuthenticated: boolean): { allowed: boolean; remaining: number; resetAt: number } {
+  const now = Date.now();
+  const limit = isAuthenticated ? MAX_REQUESTS_AUTHENTICATED : MAX_REQUESTS_PER_WINDOW;
+  
+  const entry = rateLimitStore.get(identifier);
+  
+  if (!entry || entry.resetAt < now) {
+    // New window
+    rateLimitStore.set(identifier, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return { allowed: true, remaining: limit - 1, resetAt: now + RATE_LIMIT_WINDOW_MS };
+  }
+  
+  if (entry.count >= limit) {
+    return { allowed: false, remaining: 0, resetAt: entry.resetAt };
+  }
+  
+  entry.count++;
+  return { allowed: true, remaining: limit - entry.count, resetAt: entry.resetAt };
+}
+
+/**
+ * Clean up expired rate limit entries periodically
+ */
+function cleanupRateLimits() {
+  const now = Date.now();
+  for (const [key, value] of rateLimitStore.entries()) {
+    if (value.resetAt < now) {
+      rateLimitStore.delete(key);
+    }
+  }
+}
+
+/**
+ * Get client IP from request headers
+ */
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+         req.headers.get('x-real-ip') ||
+         req.headers.get('cf-connecting-ip') ||
+         'unknown';
+}
+
 /**
  * IMEI Verification Edge Function
  * Validates IMEI numbers and checks blacklist status
  * Uses IMEI.info API for comprehensive device verification
+ * 
+ * Security: Rate limited to prevent abuse
  */
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Cleanup expired entries periodically
+  if (Math.random() < 0.1) cleanupRateLimits();
+
   try {
+    // Get client identifier for rate limiting
+    const clientIP = getClientIP(req);
+    const authHeader = req.headers.get('authorization');
+    let userId: string | null = null;
+    let isAuthenticated = false;
+
+    // Check if user is authenticated
+    if (authHeader) {
+      try {
+        const supabaseUrl = Deno.env.get('SUPABASE_URL');
+        const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY');
+        
+        if (supabaseUrl && supabaseAnonKey) {
+          const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+            global: { headers: { Authorization: authHeader } }
+          });
+          
+          const { data: { user } } = await supabase.auth.getUser();
+          if (user) {
+            userId = user.id;
+            isAuthenticated = true;
+          }
+        }
+      } catch (authError) {
+        console.log('[IMEI] Auth check failed, treating as anonymous');
+      }
+    }
+
+    // Rate limit check
+    const rateLimitId = userId || clientIP;
+    const rateLimitResult = checkRateLimit(rateLimitId, isAuthenticated);
+    
+    if (!rateLimitResult.allowed) {
+      console.log(`[IMEI] Rate limit exceeded for ${rateLimitId}`);
+      
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Rate limit exceeded',
+          status: 'error',
+          confidence: 0,
+          source: 'IMEI_Verification',
+          message: 'Too many requests. Please wait before trying again.',
+          retryAfter: Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000)
+        }),
+        { 
+          status: 429, 
+          headers: { 
+            ...corsHeaders, 
+            'Content-Type': 'application/json',
+            'Retry-After': Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000).toString(),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': rateLimitResult.resetAt.toString()
+          } 
+        }
+      );
+    }
+
     const { identifier, itemType } = await req.json();
     const startTime = Date.now();
 
@@ -53,7 +170,7 @@ serve(async (req) => {
     // Validate IMEI checksum using Luhn algorithm
     const isValidChecksum = validateLuhn(cleanImei.substring(0, 15));
     
-    console.log(`[IMEI] Verifying IMEI: ${cleanImei.substring(0, 8)}******* (checksum valid: ${isValidChecksum})`);
+    console.log(`[IMEI] Verifying IMEI: ${cleanImei.substring(0, 8)}******* (checksum valid: ${isValidChecksum}, user: ${userId || 'anonymous'})`);
 
     // Parse TAC (Type Allocation Code) - first 8 digits identify manufacturer/model
     const tac = cleanImei.substring(0, 8);
@@ -164,7 +281,14 @@ serve(async (req) => {
 
     return new Response(
       JSON.stringify(result),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      { 
+        headers: { 
+          ...corsHeaders, 
+          'Content-Type': 'application/json',
+          'X-RateLimit-Remaining': rateLimitResult.remaining.toString(),
+          'X-RateLimit-Reset': rateLimitResult.resetAt.toString()
+        } 
+      }
     );
 
   } catch (error) {
