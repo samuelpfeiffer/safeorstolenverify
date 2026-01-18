@@ -156,17 +156,13 @@ const PartialSerialNumberSearchPage = lazy(() => import('@/pages/PartialSerialNu
 const StolenGunDatabasePage = lazy(() => import('@/pages/StolenGunDatabasePage'));
 const GunSerialNumberLookupPage = lazy(() => import('@/pages/GunSerialNumberLookupPage'));
 
-// NEW HIGH-VALUE SEO PAGES
-const FreeVinCheckPage = lazy(() => import('@/pages/FreeVinCheckPage'));
-const IMEIBlacklistCheckPage = lazy(() => import('@/pages/IMEIBlacklistCheckPage'));
-const NCICVehicleCheckPage = lazy(() => import('@/pages/NCICVehicleCheckPage'));
 // NEW COMPETITOR ALTERNATIVE PAGES
 const FreeCarfaxAlternativePage = lazy(() => import('@/pages/comparisons/FreeCarfaxAlternativePage'));
 const NICBAlternativePage = lazy(() => import('@/pages/comparisons/NICBAlternativePage'));
 const HotGunzAlternativePage = lazy(() => import('@/pages/comparisons/HotGunzAlternativePage'));
 const FreeStolenVehicleCheckPage = lazy(() => import('@/pages/comparisons/FreeStolenVehicleCheckPage'));
 
-// TOP 10 STATE VIN PAGES (Individual files for high-value states)
+// TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
 const TexasVinLookup = lazy(() => import('@/pages/TexasVinLookup'));
 const FloridaVinLookup = lazy(() => import('@/pages/FloridaVinLookup'));
@@ -177,48 +173,6 @@ const PennsylvaniaVinLookup = lazy(() => import('@/pages/PennsylvaniaVinLookup')
 const OhioVinLookup = lazy(() => import('@/pages/OhioVinLookup'));
 const NorthCarolinaVinLookup = lazy(() => import('@/pages/NorthCarolinaVinLookup'));
 const WashingtonVinLookup = lazy(() => import('@/pages/WashingtonVinLookup'));
-
-// REMAINING 40 STATE VIN PAGES (Generated from template)
-const AlabamaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.AlabamaVinLookup })));
-const AlaskaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.AlaskaVinLookup })));
-const ArizonaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.ArizonaVinLookup })));
-const ArkansasVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.ArkansasVinLookup })));
-const ColoradoVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.ColoradoVinLookup })));
-const ConnecticutVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.ConnecticutVinLookup })));
-const DelawareVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.DelawareVinLookup })));
-const HawaiiVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.HawaiiVinLookup })));
-const IdahoVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.IdahoVinLookup })));
-const IndianaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.IndianaVinLookup })));
-const IowaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.IowaVinLookup })));
-const KansasVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.KansasVinLookup })));
-const KentuckyVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.KentuckyVinLookup })));
-const LouisianaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.LouisianaVinLookup })));
-const MaineVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MaineVinLookup })));
-const MarylandVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MarylandVinLookup })));
-const MassachusettsVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MassachusettsVinLookup })));
-const MichiganVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MichiganVinLookup })));
-const MinnesotaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MinnesotaVinLookup })));
-const MississippiVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MississippiVinLookup })));
-const MissouriVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MissouriVinLookup })));
-const MontanaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.MontanaVinLookup })));
-const NebraskaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.NebraskaVinLookup })));
-const NevadaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.NevadaVinLookup })));
-const NewHampshireVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.NewHampshireVinLookup })));
-const NewJerseyVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.NewJerseyVinLookup })));
-const NewMexicoVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.NewMexicoVinLookup })));
-const NorthDakotaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.NorthDakotaVinLookup })));
-const OklahomaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.OklahomaVinLookup })));
-const OregonVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.OregonVinLookup })));
-const RhodeIslandVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.RhodeIslandVinLookup })));
-const SouthCarolinaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.SouthCarolinaVinLookup })));
-const SouthDakotaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.SouthDakotaVinLookup })));
-const TennesseeVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.TennesseeVinLookup })));
-const UtahVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.UtahVinLookup })));
-const VermontVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.VermontVinLookup })));
-const VirginiaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.VirginiaVinLookup })));
-const WestVirginiaVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.WestVirginiaVinLookup })));
-const WisconsinVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.WisconsinVinLookup })));
-const WyomingVinLookup = lazy(() => import('@/pages/states/vin').then(m => ({ default: m.WyomingVinLookup })));
 
 // Blog Index & Articles
 const BlogIndexPage = lazy(() => import('@/pages/BlogIndexPage'));
@@ -453,18 +407,13 @@ export const AppRoutes = () => {
         <Route path="/stolen-gun-database" element={<StolenGunDatabasePage />} />
         <Route path="/gun-serial-number-lookup" element={<GunSerialNumberLookupPage />} />
         
-        {/* NEW HIGH-VALUE SEO PAGES */}
-        <Route path="/free-vin-check" element={<FreeVinCheckPage />} />
-        <Route path="/imei-blacklist-check" element={<IMEIBlacklistCheckPage />} />
-        <Route path="/ncic-vehicle-check" element={<NCICVehicleCheckPage />} />
-        
         {/* COMPETITOR ALTERNATIVE PAGES */}
         <Route path="/carfax-alternative-free" element={<FreeCarfaxAlternativePage />} />
         <Route path="/nicb-alternative" element={<NICBAlternativePage />} />
         <Route path="/hotgunz-alternative" element={<HotGunzAlternativePage />} />
         <Route path="/free-stolen-vehicle-check" element={<FreeStolenVehicleCheckPage />} />
 
-        {/* TOP 10 STATE VIN PAGES (Individual files) */}
+        {/* TOP 10 STATE VIN PAGES */}
         <Route path="/california-vin-lookup" element={<CaliforniaVinLookup />} />
         <Route path="/texas-vin-lookup" element={<TexasVinLookup />} />
         <Route path="/florida-vin-lookup" element={<FloridaVinLookup />} />
@@ -475,48 +424,6 @@ export const AppRoutes = () => {
         <Route path="/ohio-vin-lookup" element={<OhioVinLookup />} />
         <Route path="/north-carolina-vin-lookup" element={<NorthCarolinaVinLookup />} />
         <Route path="/washington-vin-lookup" element={<WashingtonVinLookup />} />
-
-        {/* REMAINING 40 STATE VIN PAGES (Generated from template) */}
-        <Route path="/alabama-vin-lookup" element={<AlabamaVinLookup />} />
-        <Route path="/alaska-vin-lookup" element={<AlaskaVinLookup />} />
-        <Route path="/arizona-vin-lookup" element={<ArizonaVinLookup />} />
-        <Route path="/arkansas-vin-lookup" element={<ArkansasVinLookup />} />
-        <Route path="/colorado-vin-lookup" element={<ColoradoVinLookup />} />
-        <Route path="/connecticut-vin-lookup" element={<ConnecticutVinLookup />} />
-        <Route path="/delaware-vin-lookup" element={<DelawareVinLookup />} />
-        <Route path="/hawaii-vin-lookup" element={<HawaiiVinLookup />} />
-        <Route path="/idaho-vin-lookup" element={<IdahoVinLookup />} />
-        <Route path="/indiana-vin-lookup" element={<IndianaVinLookup />} />
-        <Route path="/iowa-vin-lookup" element={<IowaVinLookup />} />
-        <Route path="/kansas-vin-lookup" element={<KansasVinLookup />} />
-        <Route path="/kentucky-vin-lookup" element={<KentuckyVinLookup />} />
-        <Route path="/louisiana-vin-lookup" element={<LouisianaVinLookup />} />
-        <Route path="/maine-vin-lookup" element={<MaineVinLookup />} />
-        <Route path="/maryland-vin-lookup" element={<MarylandVinLookup />} />
-        <Route path="/massachusetts-vin-lookup" element={<MassachusettsVinLookup />} />
-        <Route path="/michigan-vin-lookup" element={<MichiganVinLookup />} />
-        <Route path="/minnesota-vin-lookup" element={<MinnesotaVinLookup />} />
-        <Route path="/mississippi-vin-lookup" element={<MississippiVinLookup />} />
-        <Route path="/missouri-vin-lookup" element={<MissouriVinLookup />} />
-        <Route path="/montana-vin-lookup" element={<MontanaVinLookup />} />
-        <Route path="/nebraska-vin-lookup" element={<NebraskaVinLookup />} />
-        <Route path="/nevada-vin-lookup" element={<NevadaVinLookup />} />
-        <Route path="/new-hampshire-vin-lookup" element={<NewHampshireVinLookup />} />
-        <Route path="/new-jersey-vin-lookup" element={<NewJerseyVinLookup />} />
-        <Route path="/new-mexico-vin-lookup" element={<NewMexicoVinLookup />} />
-        <Route path="/north-dakota-vin-lookup" element={<NorthDakotaVinLookup />} />
-        <Route path="/oklahoma-vin-lookup" element={<OklahomaVinLookup />} />
-        <Route path="/oregon-vin-lookup" element={<OregonVinLookup />} />
-        <Route path="/rhode-island-vin-lookup" element={<RhodeIslandVinLookup />} />
-        <Route path="/south-carolina-vin-lookup" element={<SouthCarolinaVinLookup />} />
-        <Route path="/south-dakota-vin-lookup" element={<SouthDakotaVinLookup />} />
-        <Route path="/tennessee-vin-lookup" element={<TennesseeVinLookup />} />
-        <Route path="/utah-vin-lookup" element={<UtahVinLookup />} />
-        <Route path="/vermont-vin-lookup" element={<VermontVinLookup />} />
-        <Route path="/virginia-vin-lookup" element={<VirginiaVinLookup />} />
-        <Route path="/west-virginia-vin-lookup" element={<WestVirginiaVinLookup />} />
-        <Route path="/wisconsin-vin-lookup" element={<WisconsinVinLookup />} />
-        <Route path="/wyoming-vin-lookup" element={<WyomingVinLookup />} />
 
         {/* COMPETITOR COMPARISON PAGES */}
         <Route path="/compare" element={<Compare />} />

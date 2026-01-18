@@ -29,48 +29,18 @@ export const generateStaticSitemapEntries = (): SitemapEntry[] => {
 
   const priorityFor = (path: string): number => {
     if (path === '/') return 1.0;
-    if (path === '/check-if-stolen') return 1.0;
     if (path === '/verify') return 0.95;
     if (path === '/download' || path === '/app') return 0.9;
-    
-    // High-value SEO pages - Priority 0.9
-    if (path === '/firearms-check') return 0.9;
-    if (path === '/arizona-license-plate-lookup') return 0.9;
-    if (path === '/stolen-gun-database') return 0.9;
-    if (path === '/gun-serial-number-lookup') return 0.9;
-    
-    // High-intent landing pages - Priority 0.85
     if (path === '/pricing') return 0.85;
-    if (path === '/theftaz') return 0.85;
-    if (path === '/imei-checker') return 0.85;
-    if (path === '/vin-checker') return 0.85;
-    if (path === '/serial-number-checker') return 0.85;
-    if (path === '/free-vin-check') return 0.9;
-    if (path === '/imei-blacklist-check') return 0.9;
-    if (path === '/ncic-vehicle-check') return 0.85;
-    if (path === '/for-businesses') return 0.9;
-    
-    // Important pages - Priority 0.8
     if (path === '/how-it-works' || path === '/about') return 0.8;
     if (path === '/blog') return 0.8;
-    if (path === '/check-ps5') return 0.8;
-    if (path === '/partial-serial-number-search') return 0.8;
-    if (path === '/free-stolen-vehicle-check') return 0.8;
-    
-    // State license plate pages - Priority 0.75
-    if (path.includes('-license-plate-lookup')) return 0.75;
-    
-    // State VIN pages - Priority 0.75
-    if (path.includes('-vin-lookup')) return 0.75;
-    
-    // City pages - Priority 0.7
-    if (path.startsWith('/stolen-check-')) return 0.7;
-    
-    // Item check pages - Priority 0.7
-    if (path.startsWith('/check-')) return 0.7;
-    
-    // Blog posts - Priority 0.6
-    if (path.startsWith('/blog/')) return 0.6;
+
+    // High-intent landing pages
+    if (
+      path === '/imei-checker' ||
+      path === '/vin-checker' ||
+      path === '/serial-number-checker'
+    ) return 0.8;
 
     // Everything else
     return 0.65;

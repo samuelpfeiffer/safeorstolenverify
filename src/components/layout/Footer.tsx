@@ -2,55 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Shield, Heart, ExternalLink, Twitter, Linkedin, Youtube, Lock, Star, Smartphone } from 'lucide-react';
+import { Shield, Heart, ExternalLink, Twitter, Linkedin, Youtube, Lock, Star } from 'lucide-react';
 import { Logo } from '@/components/common/Logo';
 
 /**
  * Application Footer
  * Contains links, legal information, and branding
  * All links verified to exist - no broken links
- * UPDATED: 2026-01-16 - Improved navigation per SEO requirements
  */
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
     {
-      title: 'Verify By Item',
+      title: 'Verify Items',
       links: [
-        { name: 'Check If Stolen', href: '/check-if-stolen' },
-        { name: 'Phone Check', href: '/check-phone' },
-        { name: 'Car VIN Check', href: '/check-car' },
-        { name: 'Firearms Check', href: '/firearms-check' },
-        { name: 'Bike Check', href: '/check-bike' },
-        { name: 'Laptop Check', href: '/check-laptop' },
-        { name: 'Electronics', href: '/check-electronics' },
-        { name: 'PS5 Check', href: '/check-ps5' },
-        { name: 'Tools Check', href: '/check-tools' },
-      ]
-    },
-    {
-      title: 'Verification Tools',
-      links: [
+        { name: 'Stolen Item Checker', href: '/verify' },
         { name: 'IMEI Checker', href: '/imei-checker' },
         { name: 'VIN Checker', href: '/vin-checker' },
         { name: 'Serial Number Checker', href: '/serial-number-checker' },
-        { name: 'Partial Serial Search', href: '/partial-serial-number-search' },
-        { name: 'Gun Serial Lookup', href: '/gun-serial-number-lookup' },
-        { name: 'Stolen Gun Database', href: '/stolen-gun-database' },
         { name: 'License Plate Lookup', href: '/license-plate-lookup' },
-        { name: 'TheftAZ Search', href: '/theftaz' },
-      ]
-    },
-    {
-      title: 'License Plates',
-      links: [
-        { name: 'Arizona Plates', href: '/arizona-license-plate-lookup' },
-        { name: 'California Plates', href: '/california-license-plate-lookup' },
-        { name: 'Florida Plates', href: '/florida-license-plate-lookup' },
-        { name: 'Texas Plates', href: '/texas-license-plate-lookup' },
-        { name: 'New York Plates', href: '/new-york-license-plate-lookup' },
-        { name: 'All 50 States', href: '/license-plate-lookup' },
+        { name: 'Firearms Check', href: '/firearms-check' },
+        { name: 'Check Phone', href: '/check-phone' },
+        { name: 'Check Car', href: '/check-car' },
       ]
     },
     {
@@ -71,18 +45,26 @@ export const Footer: React.FC = () => {
         { name: 'Pricing', href: '/pricing' },
         { name: 'Compare Plans', href: '/compare' },
         { name: 'Free Tools', href: '/free-tools' },
-        { name: 'Blog', href: '/blog' },
         { name: 'Testimonials', href: '/testimonials' },
       ]
     },
     {
-      title: 'Legal & Support',
+      title: 'Mobile App',
+      links: [
+        { name: 'Download App', href: '/app' },
+        { name: 'App Features', href: '/app/features' },
+        { name: 'Stolen Phone Checker App', href: '/app/stolen-phone-checker' },
+        { name: 'VIN Checker App', href: '/app/vin-checker' },
+        { name: 'Barcode Scanner', href: '/app/barcode-scanner' },
+      ]
+    },
+    {
+      title: 'Support',
       links: [
         { name: 'FAQ', href: '/faq' },
+        { name: 'Blog', href: '/blog' },
         { name: 'Terms of Service', href: '/terms' },
         { name: 'Privacy Policy', href: '/privacy' },
-        { name: 'Press Kit', href: '/press-kit' },
-        { name: 'Press', href: '/press' },
       ]
     },
   ];
@@ -93,36 +75,43 @@ export const Footer: React.FC = () => {
     { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@safeorstolen' },
   ];
 
+  const externalLinks = [
+    { name: 'Crunchbase', href: 'https://www.crunchbase.com/organization/safe-or-stolen' },
+    { name: 'Trustpilot', href: 'https://www.trustpilot.com/review/safeorstolen.com' },
+    { name: 'PRLog', href: 'https://biz.prlog.org/SafeOrStolen/' },
+  ];
+
   return (
     <footer className="bg-sos-dark border-t border-sos-orange/20">
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-1">
+          <div className="lg:col-span-1">
             <Logo size="md" showText className="mb-4" />
             
             <p className="text-gray-400 text-sm mb-4 max-w-md">
-              Carfax for Everything - Verify any secondhand item in 3 seconds. 
+              Carfax for Everything - Buy and Sell. Verify any secondhand item in 3 seconds. 
               IMEI, VIN, serial numbers, license plates, and more.
             </p>
 
-            {/* Download App CTA */}
-            <Link
-              to="/app"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-sos-orange hover:bg-sos-orange/90 text-white rounded-lg transition-colors font-medium text-sm mb-4"
-            >
-              <Smartphone className="h-4 w-4" />
-              Download App
-            </Link>
-
             {/* FasterCapital Branding */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 mb-4">
               <Badge variant="outline" className="border-sos-lime text-sos-lime">
                 <Shield className="h-3 w-3 mr-1" />
                 FasterCapital Partnership
               </Badge>
             </div>
+
+            <a 
+              href="https://fastercapital.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-gray-400 hover:text-sos-lime transition-colors"
+            >
+              Funded by FasterCapital
+              <ExternalLink className="h-3 w-3 ml-1" />
+            </a>
           </div>
 
           {/* Footer Links */}
@@ -224,7 +213,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Trust Signals */}
+        {/* Trust Signals - Honest only */}
         <div className="mt-8 pt-8 border-t border-sos-orange/20">
           <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
             <Badge variant="outline" className="border-green-500/30 text-green-400">
@@ -233,11 +222,11 @@ export const Footer: React.FC = () => {
             </Badge>
             <Badge variant="outline" className="border-blue-500/30 text-blue-400">
               <Shield className="h-3 w-3 mr-1" />
-              100+ Databases
+              Privacy Focused
             </Badge>
             <Badge variant="outline" className="border-purple-500/30 text-purple-400">
-              <Smartphone className="h-3 w-3 mr-1" />
-              Mobile App Available
+              <Star className="h-3 w-3 mr-1" />
+              Growing Community
             </Badge>
           </div>
 

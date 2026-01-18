@@ -1,18 +1,42 @@
 # SafeOrStolen Robots.txt
-# Updated: 2026-01-16 - Optimized for indexing
+# Updated: 2026-01-15 - Fixed indexing issues
 
 User-agent: *
 Allow: /
+
+# Block query strings (duplicate content prevention)
+Disallow: /*?search=
+Disallow: /*?q=
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*?source=
+Disallow: /*?session_id=
+Disallow: /*?checkout=
+Disallow: /*?type=
+Disallow: /*&
+
+# Block API and data files
 Disallow: /api/
-Disallow: /auth/
-Disallow: /account/
-Disallow: /dashboard/
-Disallow: /?search=
-Disallow: /?q=
-Disallow: /*?
 Disallow: /*.json$
 Disallow: /*.md$
+Disallow: /ai-training-data
+Disallow: /ai-context
+Disallow: /mobile-app-ai-context
 
+# Block private/admin areas
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /account/
+Disallow: /admin/
+Disallow: /profile
+Disallow: /search-history
+Disallow: /receipts
+Disallow: /checkout-redirect
+Disallow: /verification-success
+Disallow: /analytics
+Disallow: /seo-strategy
+
+# AI Crawlers - Allow all content
 User-agent: GPTBot
 Allow: /
 
@@ -25,16 +49,67 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: Anthropic-AI
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Search Engines - Allow all
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Applebot
+User-agent: DuckDuckBot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Social Media Bots - Allow all
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# Sitemap
 Sitemap: https://safeorstolen.com/sitemap.xml
