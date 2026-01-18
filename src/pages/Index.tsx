@@ -61,20 +61,18 @@ const Index = () => {
       
       <div className="min-h-screen">
         {/* Hero Section - Optimized for LCP */}
-        {/* Background uses simple CSS gradient (no blur on mobile) for faster paint */}
         <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-5">
-              {/* Social Proof deferred after first paint - fixed height prevents CLS */}
-              <div className="h-10 flex items-center justify-center">
-                <Suspense fallback={null}>
+              {/* Deferred Social Proof - fixed height container to prevent CLS */}
+              <div style={{ minHeight: '40px' }}>
+                <Suspense fallback={<div className="h-10" />}>
                   <SocialProofBanner />
                 </Suspense>
               </div>
               
-              {/* H1 rendered as plain text immediately - no font loading delay */}
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                Check If Secondhand Items Are <span className="text-primary">Safe</span> Or <span className="text-destructive">Stolen</span>
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Check If Secondhand Items Are Safe Or Stolen
               </h1>
               <p className="text-xl md:text-2xl font-medium text-foreground/80">
                 The trusted verification service for buyers, sellers, and businesses worldwide
@@ -83,9 +81,9 @@ const Index = () => {
                 Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
               
-              {/* Quick Value Proof deferred - fixed height prevents CLS */}
-              <div className="h-20 flex items-center justify-center">
-                <Suspense fallback={null}>
+              {/* Deferred Quick Value Proof - fixed height to prevent CLS */}
+              <div style={{ minHeight: '80px' }}>
+                <Suspense fallback={<div className="h-20" />}>
                   <QuickValueProof />
                 </Suspense>
               </div>
@@ -112,15 +110,15 @@ const Index = () => {
               </div>
 
               {/* Hero Image - LCP Optimized with explicit dimensions for CLS prevention */}
-              {/* Removed blur effects entirely on mobile for faster LCP */}
               <div 
-                className="mt-8 max-w-4xl mx-auto"
-                style={{ aspectRatio: '16/9', minHeight: '200px', containIntrinsicSize: '1200px 675px', contentVisibility: 'auto' }}
+                className="mt-8 max-w-4xl mx-auto" 
+                style={{ aspectRatio: '16/9', minHeight: '200px' }}
                 data-hero-img
               >
                 <div className="relative group h-full">
-                  {/* Desktop only: blur gradient glow (hidden on mobile for LCP) */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden lg:block lg:blur-2xl" aria-hidden="true" />
+                  {/* Simplified gradient on mobile (no blur), full blur on desktop */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" />
                   <img 
                     src={heroImage} 
                     alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 

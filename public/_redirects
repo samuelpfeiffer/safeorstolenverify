@@ -139,52 +139,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /ny-license-plate-lookup           /new-york-license-plate-lookup  301!
 
 # ============================================
-# STATE LICENSE PLATE REDIRECTS (GSC noindex fix - Jan 2026)
-# States without dedicated pages redirect to main license plate lookup
-# ============================================
-/connecticut-license-plate-lookup   /license-plate-lookup  301!
-/hawaii-license-plate-lookup        /license-plate-lookup  301!
-/minnesota-license-plate-lookup     /license-plate-lookup  301!
-/nebraska-license-plate-lookup      /license-plate-lookup  301!
-/kansas-license-plate-lookup        /license-plate-lookup  301!
-/mississippi-license-plate-lookup   /license-plate-lookup  301!
-/delaware-license-plate-lookup      /license-plate-lookup  301!
-/vermont-license-plate-lookup       /license-plate-lookup  301!
-/south-carolina-license-plate-lookup /license-plate-lookup  301!
-/colorado-license-plate-lookup      /license-plate-lookup  301!
-/south-dakota-license-plate-lookup  /license-plate-lookup  301!
-/rhode-island-license-plate-lookup  /license-plate-lookup  301!
-/north-dakota-license-plate-lookup  /license-plate-lookup  301!
-/alabama-license-plate-lookup       /license-plate-lookup  301!
-/alaska-license-plate-lookup        /license-plate-lookup  301!
-/arkansas-license-plate-lookup      /license-plate-lookup  301!
-/idaho-license-plate-lookup         /license-plate-lookup  301!
-/indiana-license-plate-lookup       /license-plate-lookup  301!
-/iowa-license-plate-lookup          /license-plate-lookup  301!
-/kentucky-license-plate-lookup      /license-plate-lookup  301!
-/louisiana-license-plate-lookup     /license-plate-lookup  301!
-/maine-license-plate-lookup         /license-plate-lookup  301!
-/maryland-license-plate-lookup      /license-plate-lookup  301!
-/massachusetts-license-plate-lookup /license-plate-lookup  301!
-/michigan-license-plate-lookup      /license-plate-lookup  301!
-/missouri-license-plate-lookup      /license-plate-lookup  301!
-/montana-license-plate-lookup       /license-plate-lookup  301!
-/nevada-license-plate-lookup        /license-plate-lookup  301!
-/new-hampshire-license-plate-lookup /license-plate-lookup  301!
-/new-jersey-license-plate-lookup    /license-plate-lookup  301!
-/new-mexico-license-plate-lookup    /license-plate-lookup  301!
-/north-carolina-license-plate-lookup /license-plate-lookup  301!
-/oklahoma-license-plate-lookup      /license-plate-lookup  301!
-/oregon-license-plate-lookup        /license-plate-lookup  301!
-/tennessee-license-plate-lookup     /license-plate-lookup  301!
-/utah-license-plate-lookup          /license-plate-lookup  301!
-/virginia-license-plate-lookup      /license-plate-lookup  301!
-/washington-license-plate-lookup    /license-plate-lookup  301!
-/west-virginia-license-plate-lookup /license-plate-lookup  301!
-/wisconsin-license-plate-lookup     /license-plate-lookup  301!
-/wyoming-license-plate-lookup       /license-plate-lookup  301!
-
-# ============================================
 # INTERNATIONAL VIN CHECKS (No pages)
 # ============================================
 /australia-vin-check               /vin-checker  301!
@@ -407,15 +361,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/how-to-check-if-device-is-safe-stolen                     /blog/how-to-check-if-phone-stolen  301!
 /blog/phone-verification-guide                                  /blog/how-to-check-if-phone-stolen  301!
 /blog/craigslist-scam-prevention-item-verification-checklist    /blog  301!
-/blog/theft-trends-report-2024                                  /blog  301!
-/blog/bicycle-stolen-serial-number-check                        /check-bike  301!
-/blog/firearm-serial-number-verification                        /firearms-check  301!
-/blog/verify-item-before-meetup                                 /verify  301!
-/blog/what-to-do-if-stolen                                      /blog  301!
-/blog/facebook-marketplace-scams                                /blog  301!
-/blog/like-carfax-for-phones                                    /blog  301!
-/blog/verification-methodology                                  /about  301!
-
 # Timestamped blog patterns (must be before wildcards)
 /blog/playstation-5-serial-number-verification-guide-*          /serial-number-checker  301!
 /blog/how-pawn-shops-can-prevent-buying-stolen-goods-*          /blog/pawn-shop-stolen-item-verification  301!
@@ -481,9 +426,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /mesa-stolen-item-check                                         /verify  301!
 
 # ============================================
-# OTHER LEGACY REDIRECTS (NOINDEX FIX - Jan 2026)
-# These URLs were showing as "Excluded by noindex" in GSC
-# because they hit 404 page which has noindex
+# OTHER LEGACY REDIRECTS
 # ============================================
 /referral                                                       /pricing  301!
 /our-mission                                                    /about  301!
@@ -503,19 +446,6 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /ultimate-guide                                                 /about  301!
 /offerup-verification                                           /verify  301!
 /fastercapital/tech-cofounder                                   /about  301!
-
-# GSC "Excluded by noindex" fixes (Jan 2026)
-/uk-vehicle-check                                               /vin-checker  301!
-/marketplace-integration                                        /about  301!
-/marketplace-safety                                             /verify  301!
-/careers                                                        /about  301!
-/features                                                       /about  301!
-/account                                                        /dashboard  301!
-/api-docs                                                       /about  301!
-/stolen-database                                                /verify  301!
-/cookies                                                        /privacy  301!
-/partnerships                                                   /about  301!
-/contact                                                        /about  301!
 
 # ============================================
 # GUIDES DIRECTORY REDIRECTS

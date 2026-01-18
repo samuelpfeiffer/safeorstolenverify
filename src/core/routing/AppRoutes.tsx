@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { AdminRoute } from '@/core/routing/AdminRoute';
 
 // CORE 10 PAGES + STRATEGIC SEO PAGES
 const Index = lazy(() => import('@/pages/Index'));
@@ -603,13 +602,13 @@ export const AppRoutes = () => {
         <Route path="/youtube/:slug" element={<VideoWatchPage />} />
         <Route path="/crunchbase" element={<CrunchbasePage />} />
 
-        {/* ADMIN ROUTES - Protected with server-side admin validation */}
-        <Route path="/admin/gsc-callback" element={<AdminRoute><GSCCallbackPage /></AdminRoute>} />
-        <Route path="/admin/indexnow" element={<AdminRoute><TriggerIndexNowPage /></AdminRoute>} />
-        <Route path="/admin/batch-index" element={<AdminRoute><BatchIndexPage /></AdminRoute>} />
-        <Route path="/admin/stripe" element={<AdminRoute><StripeAdminPage /></AdminRoute>} />
-        <Route path="/admin/marketing" element={<AdminRoute><MarketingDashboard /></AdminRoute>} />
-        <Route path="/admin/ai-orchestrator" element={<AdminRoute><AIOrchestrator /></AdminRoute>} />
+        {/* ADMIN ROUTES - Note: Some pages removed during database cleanup */}
+        <Route path="/admin/gsc-callback" element={<GSCCallbackPage />} />
+        <Route path="/admin/indexnow" element={<TriggerIndexNowPage />} />
+        <Route path="/admin/batch-index" element={<BatchIndexPage />} />
+        <Route path="/admin/stripe" element={<StripeAdminPage />} />
+        <Route path="/admin/marketing" element={<MarketingDashboard />} />
+        <Route path="/admin/ai-orchestrator" element={<AIOrchestrator />} />
 
         {/* ALL OTHER STATE PAGES REDIRECT TO MAIN PAGES (Server-side 301s in _redirects handle these) */}
         {/* Remaining 40 VIN states → /vin-checker */}
