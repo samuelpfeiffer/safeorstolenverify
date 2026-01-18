@@ -21,138 +21,16 @@ serve(async (req) => {
   
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
-  // GET request: Diagnostic mode + sync stuck payments
+  // GET request: Disabled for security - diagnostic info previously exposed configuration details
+  // To sync stuck payments, use an authenticated admin endpoint instead
   if (req.method === 'GET') {
-    try {
-      const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
-      const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
-      const supabaseUrl = Deno.env.get("SUPABASE_URL");
-      const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-
-      if (!stripeSecretKey || !supabaseUrl || !supabaseServiceKey) {
-        return new Response(JSON.stringify({ error: "Missing configuration" }), {
-          status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" }
-        });
-      }
-
-      const stripe = new Stripe(stripeSecretKey, { apiVersion: "2023-10-16" });
-      const supabase = createClient(supabaseUrl, supabaseServiceKey);
-
-      // Get recent checkout sessions from Stripe
-      const sessions = await stripe.checkout.sessions.list({ limit: 50 });
-      
-      // Get pending purchases from our DB
-      const { data: pendingPurchases } = await supabase
-        .from('purchases')
-        .select('*')
-        .eq('status', 'pending')
-        .order('created_at', { ascending: false });
-
-      const syncResults = [];
-      const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-      let syncedCount = 0;
-      let expiredCount = 0;
-      
-      for (const purchase of pendingPurchases || []) {
-        const stripeSession = sessions.data.find(s => s.id === purchase.stripe_session_id);
-        const purchaseDate = new Date(purchase.created_at);
-        const isStale = purchaseDate < twentyFourHoursAgo;
-        
-        if (stripeSession && stripeSession.payment_status === 'paid') {
-          // SYNC: Payment was successful but we missed the webhook
-          console.log(`[SYNC] Found paid session ${stripeSession.id} - syncing...`);
-          
-          await supabase
-            .from('purchases')
-            .update({ 
-              status: 'completed',
-              stripe_customer_id: stripeSession.customer as string,
-              amount: stripeSession.amount_total || 299,
-              updated_at: new Date().toISOString()
-            })
-            .eq('id', purchase.id);
-          
-          // Update user profile
-          const userId = stripeSession.metadata?.user_id || purchase.user_id;
-          if (userId) {
-            const priceId = stripeSession.line_items?.data?.[0]?.price?.id;
-            const tierInfo = priceId ? TIER_CONFIG[priceId] : { tier: 'pay_per_use', limit: 1 };
-            
-            await supabase
-              .from('profiles')
-              .update({
-                stripe_customer_id: stripeSession.customer as string,
-                subscription_tier: tierInfo?.tier || 'pay_per_use',
-                monthly_verification_limit: tierInfo?.limit,
-                verifications_used_this_month: 0,
-                is_trial_expired: true,
-                updated_at: new Date().toISOString()
-              })
-              .eq('id', userId);
-            
-            console.log(`[SYNC] Updated profile ${userId} with tier ${tierInfo?.tier}`);
-          }
-          
-          syncedCount++;
-          syncResults.push({
-            session_id: purchase.stripe_session_id,
-            action: 'SYNCED',
-            customer: stripeSession.customer_details?.email
-          });
-        } else if (isStale && (!stripeSession || stripeSession.payment_status !== 'paid')) {
-          // CLEANUP: Expire stale unpaid checkouts
-          await supabase
-            .from('purchases')
-            .update({ 
-              status: 'expired',
-              updated_at: new Date().toISOString()
-            })
-            .eq('id', purchase.id);
-          
-          expiredCount++;
-          syncResults.push({
-            session_id: purchase.stripe_session_id,
-            action: 'EXPIRED',
-            age_hours: Math.round((Date.now() - purchaseDate.getTime()) / (1000 * 60 * 60))
-          });
-        }
-      }
-
-      // Check webhook endpoints in Stripe
-      let webhookEndpoints = [];
-      try {
-        const endpoints = await stripe.webhookEndpoints.list();
-        webhookEndpoints = endpoints.data.map((e) => ({
-          url: e.url,
-          status: e.status,
-          events: e.enabled_events?.length || 0,
-          enabled_events: e.enabled_events,
-        }));
-      } catch (e) {
-        console.log("Could not fetch webhook endpoints");
-      }
-
-      return new Response(JSON.stringify({
-        status: 'ok',
-        message: `Synced ${syncedCount} payments, expired ${expiredCount} stale checkouts`,
-        config: {
-          stripe_key: stripeSecretKey?.startsWith('sk_live_') ? 'LIVE' : 'TEST',
-          webhook_secret: webhookSecret?.startsWith('whsec_') ? 'CONFIGURED' : 'MISSING',
-          expected_url: 'https://lxrdzbknktwlubbmlsqe.supabase.co/functions/v1/stripe-webhook'
-        },
-        webhook_endpoints: webhookEndpoints,
-        pending_count: pendingPurchases?.length || 0,
-        synced: syncedCount,
-        expired: expiredCount,
-        sync_results: syncResults.slice(0, 20)
-      }, null, 2), {
-        headers: { ...corsHeaders, "Content-Type": "application/json" }
-      });
-    } catch (error) {
-      return new Response(JSON.stringify({ error: error.message }), {
-        status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" }
-      });
-    }
+    return new Response(JSON.stringify({ 
+      error: "Method not allowed",
+      message: "This endpoint only accepts POST requests from Stripe webhooks"
+    }), {
+      status: 405, 
+      headers: { ...corsHeaders, "Content-Type": "application/json" }
+    });
   }
   
   try {
