@@ -148,6 +148,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # LEGACY BUSINESS PAGES (Redirect to existing pages)
+# GSC FIX: Added missing redirects to prevent noindex from NotFound
 # ============================================
 /trust-verification          /about  301!
 /accuracy                    /about  301!
@@ -164,6 +165,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /seo-strategy                /about  301!
 /enterprise-demo             /pricing  301!
 /for-used-car-dealers        /for-dealers  301!
+/marketplace-safety          /verify  301!
+/careers                     /about  301!
+/features                    /app/features  301!
+
+# NOTE: 39 state license plate pages HAVE REAL ROUTES in AppRoutes.tsx
+# GSC noindex issue is from old cached crawls - pages now serve proper SEO
+# These routes are defined in src/core/routing/AppRoutes.tsx (lines 358-420)
 
 # ============================================
 # COMPARISON PAGE REDIRECTS (Legacy URLs only)
@@ -427,6 +435,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # OTHER LEGACY REDIRECTS
+# GSC FIX: Added more pages that were hitting NotFound with noindex
 # ============================================
 /referral                                                       /pricing  301!
 /our-mission                                                    /about  301!
@@ -446,9 +455,26 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /ultimate-guide                                                 /about  301!
 /offerup-verification                                           /verify  301!
 /fastercapital/tech-cofounder                                   /about  301!
+/pawn-shops                                                     /for-pawn-shops  301!
+
+# ============================================
+# APP SUBDIRECTORY GSC FIX
+# Pages from GSC report that were returning noindex
+# ============================================
+/app/download                        /download  301!
+/app/sellers                         /about  301!
+/app/vs-carfax                       /vs-carfax  301!
+/app/vs-imeiinfo                     /vs-imeiinfo  301!
+/app/stolen-database-search          /stolen-database  301!
+/app/investigate-stolen-property     /verify  301!
+/app/lookup-stolen-items             /verify  301!
+/app/check-stolen-before-buying      /verify  301!
+/app/carfax-alternative              /vs-carfax  301!
+/app/philadelphia                    /stolen-check-philadelphia  301!
 
 # ============================================
 # GUIDES DIRECTORY REDIRECTS
+# GSC FIX: Blog and guide pages hitting NotFound
 # ============================================
 /guides/imei-blacklist-guide       /about  301!
 /guides/imei-blacklist-explained   /about  301!
@@ -456,6 +482,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /guides/verify-craigslist-items    /verify  301!
 /guides/offerup-scam-protection    /verify  301!
 /guides/*                          /about  301!
+
+# ============================================
+# BLOG POST REDIRECTS (GSC noindex fix)
+# Specific blog posts that were hitting NotFound
+# ============================================
+/blog/business-guide-preventing-stolen-goods              /blog  301!
+/blog/theft-trends-report-2024                            /blog  301!
+/blog/avoid-buying-stolen-laptops                         /blog  301!
+/blog/verify-item-before-meetup                           /blog  301!
 
 # ============================================
 # STATISTICS DIRECTORY REDIRECTS
