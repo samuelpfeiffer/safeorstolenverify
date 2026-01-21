@@ -65,6 +65,23 @@ const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
 const PressPage = lazy(() => import('@/pages/PressPage'));
 const StolenCheckMiami = lazy(() => import('@/pages/city/StolenCheckMiami'));
 
+// GSC FIX: Missing pages that were hitting NotFound with noindex
+const MarketplaceIntegrationPage = lazy(() => import('@/pages/MarketplaceIntegrationPage'));
+const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
+const HowToCheckIfItemStolenPage = lazy(() => import('@/pages/HowToCheckIfItemStolenPage'));
+const TransparencyPage = lazy(() => import('@/pages/TransparencyPage'));
+const PressReleasePage = lazy(() => import('@/pages/PressReleasePage'));
+const MobilePage = lazy(() => import('@/pages/MobilePage'));
+const CommunityPage = lazy(() => import('@/pages/CommunityPage'));
+const VsStolenRegisterPage = lazy(() => import('@/pages/VsStolenRegisterPage'));
+const DataSourcesPage = lazy(() => import('@/pages/DataSourcesPage'));
+const CheckAndroidPage = lazy(() => import('@/pages/CheckAndroidPage'));
+const VerifyPawnshopsPage = lazy(() => import('@/pages/VerifyPawnshopsPage'));
+const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage'));
+const CheckFirearmPage = lazy(() => import('@/pages/CheckFirearmPage'));
+const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
+const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
+
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
 const SamsungIMEICheck = lazy(() => import('@/pages/items/SamsungIMEICheck'));
@@ -315,6 +332,23 @@ export const AppRoutes = () => {
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
+        
+        {/* GSC FIX: Pages that were returning noindex */}
+        <Route path="/marketplace-integration" element={<MarketplaceIntegrationPage />} />
+        <Route path="/real-time-verification" element={<RealTimeVerificationPage />} />
+        <Route path="/how-to-check-if-item-stolen" element={<HowToCheckIfItemStolenPage />} />
+        <Route path="/transparency" element={<TransparencyPage />} />
+        <Route path="/press-release" element={<PressReleasePage />} />
+        <Route path="/mobile" element={<MobilePage />} />
+        <Route path="/community" element={<CommunityPage />} />
+        <Route path="/vs-stolenregister" element={<VsStolenRegisterPage />} />
+        <Route path="/data-sources" element={<DataSourcesPage />} />
+        <Route path="/check-android" element={<CheckAndroidPage />} />
+        <Route path="/verify/pawnshops" element={<VerifyPawnshopsPage />} />
+        <Route path="/comprehensive-guide" element={<ComprehensiveGuidePage />} />
+        <Route path="/check-firearm" element={<CheckFirearmPage />} />
+        <Route path="/resource-center" element={<ResourceCenterPage />} />
+        <Route path="/features" element={<FeaturesPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
