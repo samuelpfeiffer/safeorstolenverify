@@ -1,8 +1,39 @@
-# SafeOrStolen Robots.txt
-# Updated: 2026-01-15 - Fixed indexing issues
+# Robots.txt for SafeOrStolen.com
+# Optimized for maximum search engine and AI crawler visibility
+# Last Updated: 2026-01-23
 
 User-agent: *
 Allow: /
+
+# Important content pages - Explicit allow
+Allow: /verify
+Allow: /pricing
+Allow: /about
+Allow: /faq
+Allow: /app
+Allow: /download
+Allow: /how-it-works
+Allow: /testimonials
+Allow: /blog
+Allow: /imei-checker
+Allow: /vin-checker
+Allow: /serial-number-checker
+Allow: /check-car
+Allow: /check-phone
+Allow: /check-bike
+Allow: /check-laptop
+Allow: /check-firearm
+Allow: /license-plate-lookup
+Allow: /for-pawn-shops
+Allow: /features
+Allow: /community
+Allow: /data-sources
+Allow: /resource-center
+
+# AI Discovery Files - Explicit allow
+Allow: /llms.txt
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
 
 # Block query strings (duplicate content prevention)
 Disallow: /*?search=
@@ -12,18 +43,11 @@ Disallow: /*?ref=
 Disallow: /*?source=
 Disallow: /*?session_id=
 Disallow: /*?checkout=
-Disallow: /*?type=
 Disallow: /*&
 
-# Block API and data files
+# Block API and private areas
 Disallow: /api/
 Disallow: /*.json$
-Disallow: /*.md$
-Disallow: /ai-training-data
-Disallow: /ai-context
-Disallow: /mobile-app-ai-context
-
-# Block private/admin areas
 Disallow: /auth/
 Disallow: /dashboard/
 Disallow: /account/
@@ -34,17 +58,28 @@ Disallow: /receipts
 Disallow: /checkout-redirect
 Disallow: /verification-success
 Disallow: /analytics
-Disallow: /seo-strategy
 
-# AI Crawlers - Allow all content
+# ==================================================
+# AI & LLM Crawlers - Full Access Welcome
+# ==================================================
+
+# OpenAI Crawlers
 User-agent: GPTBot
 Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
+Allow: /llms.txt
 
 User-agent: ChatGPT-User
 Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
 
+# Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
 
 User-agent: Claude-Web
 Allow: /
@@ -52,35 +87,74 @@ Allow: /
 User-agent: Anthropic-AI
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
+# Google AI (Gemini)
 User-agent: Google-Extended
 Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
 
 User-agent: Gemini
 Allow: /
 
-User-agent: Amazonbot
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
+
+User-agent: Perplexity-User
 Allow: /
 
-User-agent: Applebot
+# Microsoft Copilot
+User-agent: Bingbot
 Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
 
-User-agent: cohere-ai
-Allow: /
-
+# Meta AI
 User-agent: meta-externalagent
 Allow: /
 
-# Search Engines - Allow all
+User-agent: facebookexternalhit
+Allow: /
+
+# Apple (Siri, AI features)
+User-agent: Applebot
+Allow: /
+Allow: /.well-known/llms.txt
+Allow: /.well-known/ai-plugin.json
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Other AI Crawlers
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ==================================================
+# Traditional Search Engine Crawlers
+# ==================================================
+
 User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
 Allow: /
 
 User-agent: DuckDuckBot
@@ -95,9 +169,9 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# Social Media Bots - Allow all
-User-agent: facebookexternalhit
-Allow: /
+# ==================================================
+# Social Media Bots
+# ==================================================
 
 User-agent: Twitterbot
 Allow: /
@@ -111,5 +185,8 @@ Allow: /
 User-agent: Discordbot
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
