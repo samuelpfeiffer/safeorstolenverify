@@ -158,16 +158,17 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /resellers                   /about  301!
 /for-phone-repair-shops      /for-dealers  301!
 /offerup-safety-verification /verify  301!
-/marketplace-integration     /about  301!
+# REMOVED - These pages now have real routes:
+# /marketplace-integration - has route in AppRoutes.tsx
+# /data-sources - has route in AppRoutes.tsx
+# /features - has route in AppRoutes.tsx
 /how-it-works-detailed       /how-it-works  301!
-/data-sources                /about  301!
 /seller-guide                /about  301!
 /seo-strategy                /about  301!
 /enterprise-demo             /pricing  301!
 /for-used-car-dealers        /for-dealers  301!
 /marketplace-safety          /verify  301!
 /careers                     /about  301!
-/features                    /app/features  301!
 
 # NOTE: 39 state license plate pages HAVE REAL ROUTES in AppRoutes.tsx
 # GSC noindex issue is from old cached crawls - pages now serve proper SEO
@@ -437,21 +438,17 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # OTHER LEGACY REDIRECTS
 # GSC FIX: Added more pages that were hitting NotFound with noindex
 # ============================================
+# REMOVED - These pages now have real routes in AppRoutes.tsx:
+# /real-time-verification, /transparency, /mobile, /community
+# /comprehensive-guide, /press-release, /resource-center, /check-android
 /referral                                                       /pricing  301!
 /our-mission                                                    /about  301!
-/real-time-verification                                         /verify  301!
 /developer-portal                                               /about  301!
-/transparency                                                   /about  301!
-/mobile                                                         /app  301!
 /check                                                          /verify  301!
 /for-pawnshops                                                  /for-pawn-shops  301!
-/community                                                      /about  301!
-/comprehensive-guide                                            /how-it-works  301!
-/press-release                                                  /press-kit  301!
 /statistics                                                     /about  301!
 /buy-used-electronics-safely                                    /check-electronics  301!
 /comparison-checkmend                                           /vs-checkmend  301!
-/resource-center                                                /faq  301!
 /ultimate-guide                                                 /about  301!
 /offerup-verification                                           /verify  301!
 /fastercapital/tech-cofounder                                   /about  301!
