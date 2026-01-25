@@ -131,3 +131,10 @@ verify_jwt = true
 
 [functions.marketplace-url-analyzer]
 verify_jwt = false
+
+# NEW VERIFICATION FUNCTIONS (Phase 1 Enhancement)
+[functions.verify-plate]
+verify_jwt = false
+
+[functions.verify-serial]
+verify_jwt = false
