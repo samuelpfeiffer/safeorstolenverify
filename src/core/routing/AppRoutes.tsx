@@ -279,6 +279,14 @@ const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
 const StolenItemDetailPage = lazy(() => import('@/pages/StolenItemDetailPage'));
 const SharedReportPage = lazy(() => import('@/pages/SharedReportPage'));
 
+// NEW HIGH-TRAFFIC SEO PAGES (Competitive Keyword Strategy 2026)
+const StolenPhoneCheckerPage = lazy(() => import('@/pages/StolenPhoneCheckerPage'));
+const PhoneBlacklistCheckPage = lazy(() => import('@/pages/PhoneBlacklistCheckPage'));
+const FacebookMarketplaceSafetyPage = lazy(() => import('@/pages/FacebookMarketplaceSafetyPage'));
+const OfferUpSafetyPage = lazy(() => import('@/pages/OfferUpSafetyPage'));
+const HowToCheckIfPhoneStolenPage = lazy(() => import('@/pages/HowToCheckIfPhoneStolenPage'));
+const HowToCheckIfCarStolenPage = lazy(() => import('@/pages/HowToCheckIfCarStolenPage'));
+
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<AppLoadingScreen />}>
@@ -349,6 +357,14 @@ export const AppRoutes = () => {
         <Route path="/check-firearm" element={<CheckFirearmPage />} />
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/features" element={<FeaturesPage />} />
+        
+        {/* NEW HIGH-TRAFFIC SEO PAGES (2026 Keyword Strategy) */}
+        <Route path="/stolen-phone-checker" element={<StolenPhoneCheckerPage />} />
+        <Route path="/phone-blacklist-check" element={<PhoneBlacklistCheckPage />} />
+        <Route path="/facebook-marketplace-safety" element={<FacebookMarketplaceSafetyPage />} />
+        <Route path="/offerup-safety" element={<OfferUpSafetyPage />} />
+        <Route path="/how-to-check-if-phone-stolen" element={<HowToCheckIfPhoneStolenPage />} />
+        <Route path="/how-to-check-if-car-stolen" element={<HowToCheckIfCarStolenPage />} />
         
         {/* NEW SEO ITEM PAGES (Phase 1 - All 14 Items) */}
         <Route path="/check-iphone-stolen" element={<IPhoneIMEICheck />} />
