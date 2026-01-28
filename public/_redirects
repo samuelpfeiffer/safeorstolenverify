@@ -1,6 +1,6 @@
 # SafeOrStolen Server-Side Redirects
 # CLEANED VERSION - Fixed Google Search Console "Page with Redirect" errors
-# Last updated: 2026-01-16
+# Last updated: 2026-01-28
 # CRITICAL: Only redirect URLs that have NO React route. Never redirect URLs in sitemap.
 
 # ============================================
@@ -424,7 +424,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /san-diego/*                              /stolen-check-san-diego  301!
 /dallas/*                                 /stolen-check-dallas  301!
 /san-jose/*                               /stolen-check-san-jose  301!
-/miami/*                                  /verify  301!
+/miami/*                                  /stolen-check-miami  301!
 
 # City stolen-item-check redirects
 /michigan-stolen-item-check                                     /verify  301!
@@ -433,10 +433,19 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /las-vegas-stolen-item-check                                    /verify  301!
 /los-angeles-stolen-item-check                                  /stolen-check-los-angeles  301!
 /mesa-stolen-item-check                                         /verify  301!
+/tampa-stolen-item-check                                        /verify  301!
+/alaska-stolen-item-check                                       /verify  301!
+/south-carolina-stolen-item-check                               /verify  301!
+/charlotte-stolen-item-check                                    /verify  301!
+/dallas-stolen-item-check                                       /stolen-check-dallas  301!
+/milwaukee-stolen-item-check                                    /verify  301!
+/baltimore-stolen-item-check                                    /verify  301!
+/florida-stolen-item-check                                      /florida-vin-lookup  301!
 
 # ============================================
 # OTHER LEGACY REDIRECTS
 # GSC FIX: Added more pages that were hitting NotFound with noindex
+# Last updated: 2026-01-28 - Added soft-404 fixes from GSC report
 # ============================================
 # REMOVED - These pages now have real routes in AppRoutes.tsx:
 # /real-time-verification, /transparency, /mobile, /community
@@ -452,6 +461,24 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /ultimate-guide                                                 /about  301!
 /offerup-verification                                           /verify  301!
 /fastercapital/tech-cofounder                                   /about  301!
+/press                                                          /press-release  301!
+/database                                                       /stolen-database  301!
+/android-app                                                    /app  301!
+/bulk                                                           /pricing  301!
+/analytics                                                      /dashboard  301!
+/imei-checker-app                                               /app  301!
+/stolen-items-database                                          /stolen-database  301!
+/contact                                                        /about  301!
+/api-docs                                                       /about  301!
+/partnerships                                                   /for-businesses  301!
+/for-consumers                                                  /verify  301!
+/mobile-verification                                            /app  301!
+/stolen-phone-database                                          /stolen-database  301!
+/stolen-car-database                                            /stolen-database  301!
+/stolen-goods-checker                                           /verify  301!
+/verify-not-stolen                                              /verify  301!
+/vin-verification                                               /vin-checker  301!
+/cookies                                                        /privacy  301!
 /pawn-shops                                                     /for-pawn-shops  301!
 
 # ============================================
