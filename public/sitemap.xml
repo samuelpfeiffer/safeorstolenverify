@@ -82,6 +82,16 @@
   </url>
 
   <!-- ============================================ -->
+  <!-- AI DISCOVERY PAGE -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://safeorstolen.com/llm.html</loc>
+    <lastmod>2026-01-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- ============================================ -->
   <!-- APP & DOWNLOAD PAGES -->
   <!-- ============================================ -->
   <url>
