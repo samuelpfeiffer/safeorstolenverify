@@ -104,41 +104,76 @@
     
     <!-- Prerender.io Token for SEO crawler pre-rendering -->
     <meta name="prerender-token" content="iiMthWrIIiQhunohL2U5">
+    <meta name="prerender-status-code" content="200">
     
-    <!-- Prerender.io detection script for verification -->
+    <!-- Enhanced Prerender.io detection for reliable bot serving -->
     <script>
       // Prerender.io detection - signals when page is ready for caching
       window.prerenderReady = false;
+      
+      // Check if this is a prerender request (bot)
+      window.isPrerendering = navigator.userAgent.toLowerCase().indexOf('prerender') !== -1;
+      
       document.addEventListener('DOMContentLoaded', function() {
         // Wait for React to hydrate and content to render
+        var checkReady = setInterval(function() {
+          // Check if React has rendered content
+          var root = document.getElementById('root');
+          if (root && root.children.length > 0 && !root.querySelector('.loading')) {
+            window.prerenderReady = true;
+            clearInterval(checkReady);
+          }
+        }, 100);
+        
+        // Safety timeout - mark ready after 5 seconds regardless
         setTimeout(function() {
           window.prerenderReady = true;
-        }, 2000);
+          clearInterval(checkReady);
+        }, 5000);
       });
     </script>
 </head>
 
   <body>
-    <!-- Noscript fallback for crawlers without JavaScript -->
+    <!-- Enhanced noscript fallback for crawlers without JavaScript -->
     <noscript>
-      <div style="padding: 40px; text-align: center; font-family: system-ui, sans-serif;">
-        <h1>SafeOrStolen - Verify If Secondhand Items Are Stolen</h1>
-        <p>Instantly verify if secondhand items (phones, cars, bikes, electronics) are safe or stolen.</p>
-        <p>Check IMEI numbers, VIN numbers, and serial numbers against global databases.</p>
-        <ul style="list-style: none; padding: 0;">
-          <li>✓ 2 Free Searches</li>
-          <li>✓ No Credit Card Required</li>
-          <li>✓ Instant Results</li>
-          <li>✓ Global Database Access</li>
+      <div style="padding: 40px; max-width: 800px; margin: 0 auto; font-family: system-ui, sans-serif; line-height: 1.6; color: #333;">
+        <h1 style="font-size: 2rem; color: #000;">SafeOrStolen - Free Stolen Item Verification</h1>
+        <p style="font-size: 1.1rem;">The ONLY stolen item verification service with a mobile app. Protect yourself before buying secondhand phones, cars, bikes, electronics, and more.</p>
+        
+        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Why Use SafeOrStolen?</h2>
+        <ul style="padding-left: 1.5rem;">
+          <li><strong>2 Free Searches</strong> - No credit card required</li>
+          <li><strong>100+ Databases</strong> - NCIC, NICB, carrier blacklists, insurance claims</li>
+          <li><strong>3-Second Results</strong> - Instant verification</li>
+          <li><strong>Mobile App</strong> - Only service with barcode scanning app</li>
+          <li><strong>All Item Types</strong> - Phones, cars, bikes, electronics, firearms, tools</li>
         </ul>
-        <p><strong>Please enable JavaScript to use SafeOrStolen</strong></p>
-        <nav>
-          <a href="/verify">Verify Item</a> | 
-          <a href="/verify?type=smartphone">Check Phone</a> | 
-          <a href="/verify?type=vehicle">Check Car</a> | 
-          <a href="/app">Install App</a> | 
-          <a href="/pricing">Pricing</a>
+        
+        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Verification Services</h2>
+        <ul style="padding-left: 1.5rem;">
+          <li><a href="/imei-checker">IMEI Checker</a> - Verify phones aren't stolen or blacklisted</li>
+          <li><a href="/vin-checker">VIN Lookup</a> - Check vehicles for theft, salvage, title issues</li>
+          <li><a href="/serial-number-checker">Serial Number Check</a> - Verify electronics, bikes, tools</li>
+          <li><a href="/firearms-check">Firearms Verification</a> - Check gun serial numbers</li>
+          <li><a href="/license-plate-lookup">License Plate Lookup</a> - Vehicle registration verification</li>
+        </ul>
+        
+        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Popular Pages</h2>
+        <nav style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <a href="/verify" style="color: #ef4444;">Verify Item Now</a>
+          <a href="/check-phone" style="color: #ef4444;">Check Phone</a>
+          <a href="/check-car" style="color: #ef4444;">Check Car</a>
+          <a href="/app" style="color: #ef4444;">Download App</a>
+          <a href="/pricing" style="color: #ef4444;">Pricing</a>
+          <a href="/how-it-works" style="color: #ef4444;">How It Works</a>
+          <a href="/faq" style="color: #ef4444;">FAQ</a>
+          <a href="/blog" style="color: #ef4444;">Blog</a>
         </nav>
+        
+        <p style="margin-top: 2rem; padding: 1rem; background: #f5f5f5; border-radius: 8px;">
+          <strong>Note:</strong> Please enable JavaScript for the best experience with SafeOrStolen's verification tools.
+        </p>
       </div>
     </noscript>
     
