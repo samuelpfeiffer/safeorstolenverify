@@ -522,6 +522,36 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /statistics/*                      /about  301!
 
 # ============================================
+# GSC SOFT-404 FIXES (2026-01-29)
+# URLs from GSC report that return 200 but appear as soft 404
+# ============================================
+# City/State with /vin-check pattern
+/new-york/vin-check                 /new-york-vin-lookup  301!
+/chicago/imei-check                 /imei-checker  301!
+/los-angeles/imei-check             /imei-checker  301!
+
+# Blog post variations
+/blog/how-to-check-if-phone-is-stolen  /blog/how-to-check-if-phone-stolen  301!
+/blog/like-carfax-for-phones        /blog  301!
+/blog/safer-buying-workflow         /blog  301!
+
+# App feature pages
+/app/features/push-notifications    /app/features  301!
+/app/auction-verification           /app  301!
+
+# Duplicate verification patterns
+/verify-vin-before-purchase        /vin-checker  301!
+/check-harley-davidson             /check-car  301!
+
+# License plate variations already in sitemap returning soft 404
+/rhode-island-license-plate-lookup /license-plate-lookup  301!
+
+# YouTube subpages without real routes
+/youtube/vin-check                 /youtube  301!
+/youtube/marketplace-safety        /youtube  301!
+/youtube/imei-check                /youtube  301!
+
+# ============================================
 # ACCOUNT REDIRECTS
 # ============================================
 /account                          /dashboard  301!

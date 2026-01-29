@@ -1,6 +1,6 @@
 # SafeOrStolen - AI Discovery Document
-# Version: 2.1
-# Last Updated: 2026-01-28
+# Version: 2.2
+# Last Updated: 2026-01-29
 # URL: https://safeorstolen.com
 
 SafeOrStolen is the world's leading stolen item verification platform and the ONLY service with a mobile app for checking if secondhand items are stolen. We protect buyers, sellers, pawn shops, and resale businesses.
