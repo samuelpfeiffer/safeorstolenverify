@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SafeOrStolen Sitemap - PRODUCTION CLEAN VERSION -->
-<!-- Updated 2026-01-28 | GSC canonical/redirect fixes complete -->
+<!-- SafeOrStolen Sitemap - SEO DOMINATION VERSION -->
+<!-- Updated 2026-01-30 | DC plate + vs-BikeIndex + llm.html added -->
 <!-- CRITICAL: Only URLs that return 200 OK (no redirects) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
@@ -870,9 +870,31 @@
   </url>
   <url>
     <loc>https://safeorstolen.com/free-tools</loc>
-    <lastmod>2026-01-28</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- NEW PAGES - January 2026 -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://safeorstolen.com/washington-dc-license-plate-lookup</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/vs-bikeindex</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/llm.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
   </url>
 
 </urlset>

@@ -178,6 +178,10 @@ const FreeCarfaxAlternativePage = lazy(() => import('@/pages/comparisons/FreeCar
 const NICBAlternativePage = lazy(() => import('@/pages/comparisons/NICBAlternativePage'));
 const HotGunzAlternativePage = lazy(() => import('@/pages/comparisons/HotGunzAlternativePage'));
 const FreeStolenVehicleCheckPage = lazy(() => import('@/pages/comparisons/FreeStolenVehicleCheckPage'));
+const VsBikeIndex = lazy(() => import('@/pages/comparisons/VsBikeIndex'));
+
+// Washington DC License Plate Page
+const WashingtonDCLicensePlateLookup = lazy(() => import('@/pages/WashingtonDCLicensePlateLookup'));
 
 // TOP 10 STATE VIN PAGES ONLY (High-Value States)
 const CaliforniaVinLookup = lazy(() => import('@/pages/CaliforniaVinLookup'));
@@ -490,6 +494,10 @@ export const AppRoutes = () => {
         <Route path="/comparisons/nicb-vincheck-alternative" element={<NICBVINCheckAlternative />} />
         <Route path="/comparisons/best-free-imei-checkers-2025" element={<BestFreeIMEICheckers2025 />} />
         <Route path="/comparisons/top-vin-check-services-2025" element={<TopVINCheckServices2025 />} />
+        <Route path="/vs-bikeindex" element={<VsBikeIndex />} />
+
+        {/* WASHINGTON DC LICENSE PLATE (51st "State") */}
+        <Route path="/washington-dc-license-plate-lookup" element={<WashingtonDCLicensePlateLookup />} />
 
         {/* APP FEATURE PAGES */}
         <Route path="/download" element={<DownloadApp />} />
