@@ -28,9 +28,8 @@ const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChanne
 const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
 const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
 
-// Deferred above-fold components (loaded after hero but before user interaction)
-const SocialProofBanner = lazy(() => import('@/components/conversion/SocialProofBanner').then(m => ({ default: m.SocialProofBanner })));
-const QuickValueProof = lazy(() => import('@/components/conversion/QuickValueProof').then(m => ({ default: m.QuickValueProof })));
+// Remove above-fold lazy components - they hurt LCP on mobile
+// SocialProofBanner and QuickValueProof moved to static content
 
 // Loading skeleton for sections - with fixed heights to prevent CLS
 const SectionSkeleton = ({ height = '8rem' }: { height?: string }) => (
@@ -64,13 +63,7 @@ const Index = () => {
         <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center space-y-5">
-              {/* Deferred Social Proof - fixed height container to prevent CLS */}
-              <div style={{ minHeight: '40px' }}>
-                <Suspense fallback={<div className="h-10" />}>
-                  <SocialProofBanner />
-                </Suspense>
-              </div>
-              
+              {/* Static H1 - no lazy loading, instant render for LCP */}
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Check If Secondhand Items Are Safe Or Stolen
               </h1>
@@ -81,11 +74,11 @@ const Index = () => {
                 Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
               </p>
               
-              {/* Deferred Quick Value Proof - fixed height to prevent CLS */}
-              <div style={{ minHeight: '80px' }}>
-                <Suspense fallback={<div className="h-20" />}>
-                  <QuickValueProof />
-                </Suspense>
+              {/* Static trust indicator - no lazy load, instant CWV win */}
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1">✓ 2 Free Searches</span>
+                <span className="flex items-center gap-1">✓ 100+ Databases</span>
+                <span className="flex items-center gap-1">✓ 3-Second Results</span>
               </div>
               
               {/* Search Form - Primary Action (critical, loaded eagerly) */}
@@ -109,27 +102,30 @@ const Index = () => {
                 </Button>
               </div>
 
-              {/* Hero Image - LCP Optimized with explicit dimensions for CLS prevention */}
+              {/* Hero Image - LCP Optimized: simpler on mobile, no blur effects */}
               <div 
                 className="mt-8 max-w-4xl mx-auto" 
                 style={{ aspectRatio: '16/9', minHeight: '200px' }}
                 data-hero-img
               >
-                <div className="relative group h-full">
-                  {/* Simplified gradient on mobile (no blur), full blur on desktop */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity hidden md:block md:blur-2xl" />
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl opacity-50 md:hidden" />
-                  <img 
-                    src={heroImage} 
-                    alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
-                    className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="sync"
-                    width="1200"
-                    height="675"
-                    style={{ aspectRatio: '16/9' }}
-                  />
+                <div className="relative h-full">
+                  {/* Desktop only: gradient glow (hidden on mobile for perf) */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 blur-2xl hidden lg:block" />
+                  <picture>
+                    {/* WebP for modern browsers */}
+                    <source srcSet="/images/hero-device.webp" type="image/webp" />
+                    {/* Fallback PNG */}
+                    <img 
+                      src={heroImage} 
+                      alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
+                      className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      width="1200"
+                      height="675"
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
