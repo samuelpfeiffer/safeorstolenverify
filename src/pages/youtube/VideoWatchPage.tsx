@@ -8,7 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Youtube, ExternalLink, Play, Bell, ArrowLeft, Share2 } from 'lucide-react';
 import { 
   YOUTUBE_VIDEOS, 
-  YOUTUBE_CHANNEL, 
+  YOUTUBE_CHANNEL,
+  YOUTUBE_CHANNEL_SECONDARY,
   getVideoBySlug,
   getYouTubeThumbnail,
   getYouTubeShortsUrl
@@ -259,18 +260,31 @@ const VideoWatchPage: React.FC = () => {
                 <div className="flex items-center gap-3 mb-3">
                   <Youtube className="w-10 h-10 text-red-600" />
                   <div>
-                    <h3 className="font-bold">SafeOrStolen</h3>
+                    <h3 className="font-bold">SafeOrStolen Channels</h3>
                     <p className="text-xs text-muted-foreground">{YOUTUBE_VIDEOS.length} videos</p>
                   </div>
                 </div>
-                <Button 
-                  onClick={handleSubscribe}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white gap-2"
-                  size="sm"
-                >
-                  <Bell className="h-4 w-4" />
-                  Subscribe
-                </Button>
+                <div className="space-y-2">
+                  <a href={YOUTUBE_CHANNEL.subscribeUrl} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button 
+                      className="w-full bg-red-600 hover:bg-red-700 text-white gap-2"
+                      size="sm"
+                    >
+                      <Bell className="h-4 w-4" />
+                      {YOUTUBE_CHANNEL.handle}
+                    </Button>
+                  </a>
+                  <a href={YOUTUBE_CHANNEL_SECONDARY.subscribeUrl} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button 
+                      variant="outline"
+                      className="w-full border-red-600 text-red-600 hover:bg-red-600/10 gap-2"
+                      size="sm"
+                    >
+                      <Bell className="h-4 w-4" />
+                      {YOUTUBE_CHANNEL_SECONDARY.handle}
+                    </Button>
+                  </a>
+                </div>
               </Card>
             </div>
           </div>

@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { 
   YOUTUBE_VIDEOS, 
   YOUTUBE_CHANNEL, 
+  YOUTUBE_CHANNEL_SECONDARY,
   getYouTubeThumbnail, 
   getYouTubeShortsUrl,
   getFeaturedVideo 
@@ -85,10 +86,20 @@ const YouTubePage: React.FC = () => {
         <div className="container mx-auto px-4 py-16">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2">
-              <Youtube className="w-4 h-4 mr-2" />
-              Watch & Learn
-            </Badge>
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              <a href={YOUTUBE_CHANNEL.url} target="_blank" rel="noopener noreferrer">
+                <Badge className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 cursor-pointer">
+                  <Youtube className="w-4 h-4 mr-2" />
+                  {YOUTUBE_CHANNEL.handle}
+                </Badge>
+              </a>
+              <a href={YOUTUBE_CHANNEL_SECONDARY.url} target="_blank" rel="noopener noreferrer">
+                <Badge className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 cursor-pointer">
+                  <Youtube className="w-4 h-4 mr-2" />
+                  {YOUTUBE_CHANNEL_SECONDARY.handle}
+                </Badge>
+              </a>
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               SafeOrStolen <span className="text-red-600">YouTube</span> Channel
             </h1>
@@ -246,19 +257,33 @@ const YouTubePage: React.FC = () => {
           {/* Subscribe CTA */}
           <div className="text-center bg-gradient-to-r from-red-600/10 to-orange-600/10 rounded-2xl p-8 border border-red-600/20">
             <Youtube className="w-16 h-16 mx-auto text-red-600 mb-4" />
-            <h2 className="text-2xl font-bold mb-4">Subscribe for Weekly Updates</h2>
+            <h2 className="text-2xl font-bold mb-4">Subscribe to Both Channels</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Get notified when we post new stolen item verification tutorials. Join buyers who are learning to protect themselves from fraud.
             </p>
-            <Button 
-              size="lg" 
-              onClick={handleSubscribe}
-              className="bg-red-600 hover:bg-red-700 text-white gap-2 px-8 py-6 text-lg"
-              aria-label="Subscribe to SafeOrStolen on YouTube"
-            >
-              <Bell className="h-5 w-5" aria-hidden="true" />
-              Subscribe Now - It's Free
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href={YOUTUBE_CHANNEL.subscribeUrl} target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  className="bg-red-600 hover:bg-red-700 text-white gap-2 px-8 py-6 text-lg"
+                  aria-label="Subscribe to @safeorstolenoffically on YouTube"
+                >
+                  <Bell className="h-5 w-5" aria-hidden="true" />
+                  {YOUTUBE_CHANNEL.handle}
+                </Button>
+              </a>
+              <a href={YOUTUBE_CHANNEL_SECONDARY.subscribeUrl} target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-red-600 text-red-600 hover:bg-red-600/10 gap-2 px-8 py-6 text-lg"
+                  aria-label="Subscribe to @safeorstolen on YouTube"
+                >
+                  <Bell className="h-5 w-5" aria-hidden="true" />
+                  {YOUTUBE_CHANNEL_SECONDARY.handle}
+                </Button>
+              </a>
+            </div>
             <p className="mt-4 text-sm text-muted-foreground">
               New tutorials weekly • Marketplace safety tips • Protect yourself from stolen goods
             </p>
