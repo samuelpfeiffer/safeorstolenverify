@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Clock, Tag } from 'lucide-react';
+import { ArrowRight, Clock, Tag, Loader2 } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { supabase } from '@/integrations/supabase/client';
 
-const blogArticles = [
+// Static articles for SEO (always shown as fallback + featured)
+const staticArticles = [
   {
     title: 'Best Stolen Item Checkers 2026: Complete Comparison Guide',
     slug: 'best-stolen-item-checkers-2026',
@@ -157,7 +160,53 @@ const categories = [
   'Verification'
 ];
 
+// Calculate reading time from content length
+function calculateReadTime(content: string | null): string {
+  if (!content) return '5 min';
+  const words = content.split(/\s+/).length;
+  const minutes = Math.max(3, Math.ceil(words / 200));
+  return `${minutes} min`;
+}
+
 export default function BlogIndexPage() {
+  // Fetch dynamic blog posts from database
+  const { data: dbArticles, isLoading } = useQuery({
+    queryKey: ['blog-posts-index'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('id, title, slug, excerpt, meta_keywords, content, reading_time, published_at')
+        .eq('status', 'published')
+        .order('published_at', { ascending: false })
+        .limit(50);
+      
+      if (error) {
+        console.error('Error fetching blog posts:', error);
+        return [];
+      }
+      return data || [];
+    },
+    staleTime: 1000 * 60 * 5, // 5 minutes cache
+  });
+
+  // Combine static and dynamic articles, removing duplicates by slug
+  const staticSlugs = new Set(staticArticles.map(a => a.slug));
+  const dynamicArticles = (dbArticles || [])
+    .filter(a => !staticSlugs.has(a.slug))
+    .map(article => ({
+      title: article.title,
+      slug: article.slug,
+      excerpt: article.excerpt || article.title,
+      category: 'Latest Articles',
+      readTime: article.reading_time ? `${article.reading_time} min` : calculateReadTime(article.content),
+      keywords: article.meta_keywords?.split(',').map((k: string) => k.trim()).slice(0, 3) || ['verification', 'safety'],
+      fromDb: true
+    }));
+
+  // Show static articles first, then dynamic ones
+  const allArticles = [...staticArticles, ...dynamicArticles];
+  const featuredArticle = staticArticles[2]; // "How to check if phone stolen"
+
   return (
     <>
       <PageSEO
@@ -187,16 +236,21 @@ export default function BlogIndexPage() {
         }}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-sos-dark/5">
+      <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/10">
         <div className="container mx-auto px-4 py-12 max-w-7xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               SafeOrStolen Blog
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Expert guides, safety tips, and industry insights to help you verify secondhand items and avoid stolen goods
             </p>
+            {dbArticles && dbArticles.length > 0 && (
+              <p className="text-sm text-muted-foreground mt-4">
+                {allArticles.length} articles available
+              </p>
+            )}
           </div>
 
           {/* Categories */}
@@ -212,35 +266,35 @@ export default function BlogIndexPage() {
           </div>
 
           {/* Featured Article */}
-          <Card className="mb-12 overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-background to-sos-dark/5">
+          <Card className="mb-12 overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-background to-muted/10">
             <CardContent className="p-8">
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold">
                   FEATURED
                 </span>
-                <span className="text-sm text-muted-foreground">{blogArticles[2].category}</span>
+                <span className="text-sm text-muted-foreground">{featuredArticle.category}</span>
               </div>
               <h2 className="text-3xl font-bold mb-4 hover:text-primary transition-colors">
-                <Link to={`/blog/${blogArticles[2].slug}`}>
-                  {blogArticles[2].title}
+                <Link to={`/blog/${featuredArticle.slug}`}>
+                  {featuredArticle.title}
                 </Link>
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                {blogArticles[2].excerpt}
+                {featuredArticle.excerpt}
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Clock className="h-4 w-4" />
-                    {blogArticles[2].readTime} read
+                    {featuredArticle.readTime} read
                   </span>
                   <div className="flex items-center gap-2">
                     <Tag className="h-4 w-4" />
-                    {blogArticles[2].keywords.slice(0, 2).join(', ')}
+                    {featuredArticle.keywords.slice(0, 2).join(', ')}
                   </div>
                 </div>
                 <Link
-                  to={`/blog/${blogArticles[2].slug}`}
+                  to={`/blog/${featuredArticle.slug}`}
                   className="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                 >
                   Read Article
@@ -250,9 +304,17 @@ export default function BlogIndexPage() {
             </CardContent>
           </Card>
 
+          {/* Loading State */}
+          {isLoading && (
+            <div className="flex items-center justify-center py-8 gap-2 text-muted-foreground">
+              <Loader2 className="h-5 w-5 animate-spin" />
+              <span>Loading more articles...</span>
+            </div>
+          )}
+
           {/* Article Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogArticles.map((article) => (
+            {allArticles.map((article) => (
               <Card key={article.slug} className="overflow-hidden hover:border-primary/40 transition-all hover:shadow-lg group">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-3">
@@ -305,7 +367,7 @@ export default function BlogIndexPage() {
                   Use SafeOrStolen's powerful verification tools to check any secondhand item in seconds
                 </p>
                 <Link to="/verify">
-                  <button className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-lg">
+                  <button className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold rounded-lg hover:opacity-90 transition-opacity text-lg">
                     Verify an Item Now
                   </button>
                 </Link>
