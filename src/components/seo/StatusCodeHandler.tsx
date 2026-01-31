@@ -51,7 +51,7 @@ export const StatusCodeHandler: React.FC<StatusCodeHandlerProps> = ({
       <meta name="robots" content={
         statusCode === 404 || noIndex ? 
         "noindex, nofollow" : 
-        "index, follow, max-snippet:160, max-image-preview:large"
+        "index, follow"
       } />
       
       {/* Canonical URL - CRITICAL: Always render for SEO regardless of status */}

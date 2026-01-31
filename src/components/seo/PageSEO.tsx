@@ -22,7 +22,7 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   keywords,
   image,
   type = 'website',
-  noIndex = false,
+  noIndex,
   canonical: customCanonical,
   structuredData,
   isVideoPage = false
