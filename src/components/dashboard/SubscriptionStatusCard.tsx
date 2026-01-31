@@ -1,13 +1,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Crown, Calendar, CreditCard, ArrowUpRight } from 'lucide-react';
+import { Crown, Calendar, CreditCard, ArrowUpRight, Zap } from 'lucide-react';
 import { useAuth } from '@/lib/auth';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
+import { FREE_SEARCH_LIMIT } from '@/features/pricing/constants';
 
 export const SubscriptionStatusCard = () => {
   const { user, session } = useAuth();
@@ -21,22 +22,25 @@ export const SubscriptionStatusCard = () => {
 
       const { data: profile } = await supabase
         .from('profiles')
-        .select('subscription_tier, subscription_end, created_at, trial_end_date')
+        .select('subscription_tier, subscription_end, search_count, verifications_used_this_month, created_at')
         .eq('id', user.id)
         .single();
 
-      const trialDaysRemaining = profile?.created_at
-        ? Math.max(0, 14 - Math.floor((Date.now() - new Date(profile.created_at).getTime()) / (1000 * 60 * 60 * 24)))
-        : 0;
+      const paidTiers = ['unlimited', 'starter', 'personal', 'professional', 'enterprise'];
+      const isPaid = profile?.subscription_tier && paidTiers.includes(profile.subscription_tier);
+      const hasActiveSubscription = isPaid && 
+        (!profile?.subscription_end || new Date(profile.subscription_end) > new Date());
 
-      const isPaid = profile?.subscription_tier && profile.subscription_tier !== 'free' && profile.subscription_tier !== 'starter';
+      const searchesUsed = profile?.search_count || 0;
+      const remainingFreeSearches = Math.max(0, FREE_SEARCH_LIMIT - searchesUsed);
 
       return {
-        tier: profile?.subscription_tier || 'starter',
-        isSubscribed: isPaid || false,
+        tier: hasActiveSubscription ? (profile?.subscription_tier || 'free') : 'free',
+        isSubscribed: hasActiveSubscription || false,
         subscriptionEndDate: profile?.subscription_end,
-        trialDaysRemaining,
-        createdAt: profile?.created_at
+        searchesUsed,
+        remainingFreeSearches,
+        monthlyUsage: profile?.verifications_used_this_month || 0
       };
     },
     enabled: !!user,
@@ -93,12 +97,14 @@ export const SubscriptionStatusCard = () => {
 
   const getTierDisplay = (tier: string) => {
     const tierMap: Record<string, { name: string; color: string }> = {
-      starter: { name: 'Free Trial', color: 'bg-gray-500/10 text-gray-500 border-gray-500/20' },
+      free: { name: 'Free', color: 'bg-muted text-muted-foreground border-border' },
+      unlimited: { name: 'Unlimited', color: 'bg-sos-lime/10 text-sos-lime border-sos-lime/20' },
+      starter: { name: 'Starter', color: 'bg-blue-500/10 text-blue-500 border-blue-500/20' },
       personal: { name: 'Personal', color: 'bg-blue-500/10 text-blue-500 border-blue-500/20' },
       professional: { name: 'Professional', color: 'bg-purple-500/10 text-purple-500 border-purple-500/20' },
-      enterprise: { name: 'Enterprise', color: 'bg-sos-lime/10 text-sos-lime border-sos-lime/20' },
+      enterprise: { name: 'Enterprise', color: 'bg-sos-orange/10 text-sos-orange border-sos-orange/20' },
     };
-    return tierMap[tier] || tierMap.starter;
+    return tierMap[tier] || tierMap.free;
   };
 
   const tierDisplay = getTierDisplay(subscription.tier);
@@ -126,6 +132,17 @@ export const SubscriptionStatusCard = () => {
                 <span className="text-muted-foreground">Status</span>
                 <span className="font-medium text-green-500">Active</span>
               </div>
+              {subscription.tier === 'unlimited' && (
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground flex items-center gap-1">
+                    <Zap className="w-4 h-4" />
+                    This Month
+                  </span>
+                  <span className="font-medium">
+                    {subscription.monthlyUsage} checks used
+                  </span>
+                </div>
+              )}
               {subscription.subscriptionEndDate && (
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground flex items-center gap-1">
@@ -138,6 +155,11 @@ export const SubscriptionStatusCard = () => {
                 </div>
               )}
             </div>
+            <CardDescription className="text-sm">
+              {subscription.tier === 'unlimited' 
+                ? 'Unlimited verifications for phones, cars, laptops, and more.'
+                : 'Your subscription is active.'}
+            </CardDescription>
             <div className="flex gap-2">
               <Button
                 onClick={handleManageBilling}
@@ -153,34 +175,23 @@ export const SubscriptionStatusCard = () => {
           <>
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Trial Status</span>
+                <span className="text-muted-foreground">Free Checks</span>
                 <span className="font-medium">
-                  {subscription.trialDaysRemaining > 0 ? 'Active' : 'Expired'}
+                  {subscription.remainingFreeSearches} of {FREE_SEARCH_LIMIT} remaining
                 </span>
               </div>
-              {subscription.trialDaysRemaining > 0 && (
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    Days Remaining
-                  </span>
-                  <span className="font-medium text-sos-lime">
-                    {subscription.trialDaysRemaining} days
-                  </span>
-                </div>
-              )}
             </div>
             <CardDescription className="text-sm">
-              {subscription.trialDaysRemaining > 0
-                ? '2 free verifications available during your trial period'
-                : 'Your free trial has ended. Upgrade to continue verifying items.'}
+              {subscription.remainingFreeSearches > 0
+                ? `You have ${subscription.remainingFreeSearches} free verification${subscription.remainingFreeSearches > 1 ? 's' : ''} remaining.`
+                : "You've used your 2 free checks. Upgrade for unlimited verifications."}
             </CardDescription>
             <Button
               onClick={() => navigate('/pricing')}
-              className="w-full"
+              className="w-full bg-gradient-to-r from-sos-lime to-sos-orange text-black hover:opacity-90"
             >
               <ArrowUpRight className="w-4 h-4 mr-2" />
-              {subscription.trialDaysRemaining > 0 ? 'Upgrade Now' : 'View Plans'}
+              {subscription.remainingFreeSearches > 0 ? 'Unlock Unlimited – $4.99/mo' : 'Upgrade Now'}
             </Button>
           </>
         )}

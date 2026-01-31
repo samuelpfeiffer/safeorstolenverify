@@ -3,7 +3,7 @@
  * Centralized TypeScript interfaces for subscription and pricing
  */
 
-export type SubscriptionTierKey = 'starter' | 'payPerUse' | 'personal' | 'professional' | 'enterprise';
+export type SubscriptionTierKey = 'unlimited' | 'starter' | 'payPerUse' | 'personal' | 'professional' | 'enterprise';
 
 export interface SubscriptionTier {
   name: string;
@@ -11,6 +11,7 @@ export interface SubscriptionTier {
   priceDisplay: string;
   interval: 'month' | 'once';
   monthlyQuota: number | 'unlimited';
+  fairUseCap?: number; // soft limit for unlimited plans
   overageRate?: number; // dollars per check
   features: string[];
   popular?: boolean;

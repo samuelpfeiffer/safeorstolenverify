@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
+import { FREE_SEARCH_LIMIT } from '@/features/pricing/constants';
 
 type SearchLimitDisplayProps = {
   hasReachedLimit: boolean;
@@ -19,7 +20,7 @@ const SearchLimitDisplayComponent = ({
     return (
       <div className="text-center mt-3 animate-in fade-in duration-300">
         <p className="text-sm text-sos-lime font-medium">
-          ✨ Unlimited searches with your subscription
+          ✨ Unlimited Plan – Verify as many items as you need
         </p>
       </div>
     );
@@ -30,10 +31,10 @@ const SearchLimitDisplayComponent = ({
     return (
       <div className="text-center mt-3 space-y-1 animate-in fade-in duration-300">
         <p className="text-sm text-sos-lime font-semibold">
-          🎁 Sign up for 2 FREE verifications
+          🎁 Sign up for {FREE_SEARCH_LIMIT} FREE verifications
         </p>
         <p className="text-xs text-muted-foreground">
-          Valid for 14 days • No credit card required
+          No credit card required
         </p>
       </div>
     );
@@ -43,16 +44,22 @@ const SearchLimitDisplayComponent = ({
     <div className="text-center mt-3 space-y-1 animate-in fade-in duration-300">
       <p className="text-sm text-muted-foreground">
         {hasReachedLimit 
-          ? "🎯 You've used your free searches" 
-          : `${remainingSearches} of 2 free verifications remaining`
+          ? "🎯 You've used your free checks" 
+          : `Free checks left: ${remainingSearches} of ${FREE_SEARCH_LIMIT}`
         }
       </p>
       {hasReachedLimit && (
-        <p className="text-xs text-sos-lime font-medium">
-          <Link to="/pricing" className="hover:underline inline-flex items-center gap-1 transition-all hover:gap-2">
-            Upgrade for unlimited verifications →
+        <div className="space-y-2">
+          <p className="text-sm font-medium text-foreground">
+            You've used your {FREE_SEARCH_LIMIT} free checks.
+          </p>
+          <Link 
+            to="/pricing" 
+            className="inline-flex items-center gap-1 text-sm text-sos-lime font-semibold hover:underline transition-all hover:gap-2"
+          >
+            Unlock Unlimited checks for $4.99/month →
           </Link>
-        </p>
+        </div>
       )}
     </div>
   );

@@ -4,11 +4,12 @@ import Stripe from "https://esm.sh/stripe@16.0.0";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
 
-// Tier configuration with quotas
+// SIMPLIFIED PRICING MODEL - Tier configuration with quotas
+// Unlimited plan ($4.99/month) uses the starter price ID with unlimited quota (300 fair-use cap)
 const TIER_CONFIG: Record<string, { tier: string; limit: number | null }> = {
   'price_1SSVqkGxnZLw8J7O3GwCyKRn': { tier: 'pay_per_use', limit: 1 },
-  'price_1SHEOxGxnZLw8J7O2zzfPVBK': { tier: 'starter', limit: 15 },
-  'price_1SHEUQGxnZLw8J7OinyVqNMK': { tier: 'personal', limit: 50 },
+  'price_1SHEOxGxnZLw8J7O2zzfPVBK': { tier: 'unlimited', limit: null }, // $4.99/month Unlimited (was starter)
+  'price_1SHEUQGxnZLw8J7OinyVqNMK': { tier: 'personal', limit: 50 },    // Legacy
   'price_1SHEiuGxnZLw8J7OszscBBk7': { tier: 'professional', limit: null },
   'price_1SHEnFGxnZLw8J7Oq1PM96Eo': { tier: 'enterprise', limit: null },
 };
