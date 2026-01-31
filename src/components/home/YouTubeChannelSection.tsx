@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { 
   YOUTUBE_VIDEOS, 
   YOUTUBE_CHANNEL,
+  YOUTUBE_CHANNEL_SECONDARY,
   getYouTubeThumbnail,
   getFeaturedVideo
 } from '@/config/videoData';
@@ -25,10 +26,20 @@ export const YouTubeChannelSection = () => {
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center mb-10">
-          <Badge className="mb-4 bg-red-600 hover:bg-red-700 text-white">
-            <Youtube className="w-4 h-4 mr-2" />
-            @safeorstolenoffically
-          </Badge>
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
+            <a href={YOUTUBE_CHANNEL.url} target="_blank" rel="noopener noreferrer">
+              <Badge className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+                <Youtube className="w-4 h-4 mr-2" />
+                {YOUTUBE_CHANNEL.handle}
+              </Badge>
+            </a>
+            <a href={YOUTUBE_CHANNEL_SECONDARY.url} target="_blank" rel="noopener noreferrer">
+              <Badge className="bg-red-600 hover:bg-red-700 text-white cursor-pointer">
+                <Youtube className="w-4 h-4 mr-2" />
+                {YOUTUBE_CHANNEL_SECONDARY.handle}
+              </Badge>
+            </a>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Watch <span className="text-red-600">Kelly McEvoy</span> on YouTube
           </h2>
@@ -36,7 +47,7 @@ export const YouTubeChannelSection = () => {
             {YOUTUBE_CHANNEL.description}
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            Subscribe to <a href={YOUTUBE_CHANNEL.url} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-medium">{YOUTUBE_CHANNEL.handle}</a> for stolen item detection tips
+            Subscribe to <a href={YOUTUBE_CHANNEL.url} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-medium">{YOUTUBE_CHANNEL.handle}</a> and <a href={YOUTUBE_CHANNEL_SECONDARY.url} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-medium">{YOUTUBE_CHANNEL_SECONDARY.handle}</a> for tips
           </p>
         </div>
 
