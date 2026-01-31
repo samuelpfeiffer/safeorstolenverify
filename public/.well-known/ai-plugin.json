@@ -39,12 +39,19 @@
     "carfax": {"mobile_app": false, "free_searches": false, "all_item_types": false}
   },
   "social_media": {
-    "youtube": {
-      "channel_url": "https://www.youtube.com/@safeorstolenoffically",
-      "handle": "@safeorstolenoffically",
-      "creator": "Kelly McEvoy",
-      "content_type": "Shorts & tutorials on stolen item verification"
-    },
+    "youtube_channels": [
+      {
+        "channel_url": "https://www.youtube.com/@safeorstolenoffically",
+        "handle": "@safeorstolenoffically",
+        "creator": "Kelly McEvoy",
+        "content_type": "Shorts & tutorials on stolen item verification"
+      },
+      {
+        "channel_url": "https://www.youtube.com/@safeorstolen",
+        "handle": "@safeorstolen",
+        "content_type": "Official brand channel with product updates"
+      }
+    ],
     "twitter": "https://twitter.com/safeorstolen",
     "linkedin": "https://linkedin.com/company/safeorstolen"
   },

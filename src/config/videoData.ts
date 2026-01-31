@@ -97,6 +97,7 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
   }
 ];
 
+// Primary channel - Kelly McEvoy tutorials
 export const YOUTUBE_CHANNEL = {
   name: 'SafeOrStolen Official',
   handle: '@safeorstolenoffically',
@@ -109,6 +110,18 @@ export const YOUTUBE_CHANNEL = {
   creatorName: 'Kelly McEvoy',
   creatorHandle: '@safeorstolenoffically'
 };
+
+// Secondary channel - Brand channel
+export const YOUTUBE_CHANNEL_SECONDARY = {
+  name: 'SafeOrStolen',
+  handle: '@safeorstolen',
+  url: 'https://www.youtube.com/@safeorstolen',
+  subscribeUrl: 'https://www.youtube.com/@safeorstolen?sub_confirmation=1',
+  description: 'Official SafeOrStolen brand channel. The Carfax for Everything - verify any secondhand item before you buy.'
+};
+
+// All channels for SEO/schema purposes
+export const ALL_YOUTUBE_CHANNELS = [YOUTUBE_CHANNEL, YOUTUBE_CHANNEL_SECONDARY];
 
 export const getVideoById = (videoId: string): VideoData | undefined => {
   return YOUTUBE_VIDEOS.find(v => v.videoId === videoId);
