@@ -256,8 +256,8 @@ const DashboardPage = () => {
         break;
     }
 
-    const subject = `${userName}'s ${type} - Safe or Stolen`;
-    const body = `${type} from Safe or Stolen verification service:\n\n${content}\n\nGenerated on: ${new Date().toLocaleDateString()}`;
+    const subject = `${userName}'s ${type} - SafeOrStolen`;
+    const body = `${type} from SafeOrStolen verification service:\n\n${content}\n\nGenerated on: ${new Date().toLocaleDateString()}`;
     
     window.open(`mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
   };

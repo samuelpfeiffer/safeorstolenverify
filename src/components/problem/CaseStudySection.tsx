@@ -16,7 +16,7 @@ export const CaseStudySection = () => {
                 The consequences aren't just financial. When someone unknowingly purchases stolen goods, they face potential legal complications, loss of the item, and the emotional stress of being caught in a situation beyond their control. This uncertainty has created a crisis of trust in secondhand markets worldwide.
               </p>
               <p className="text-yellow-400 font-medium">
-                Safe Or Stolen exists to eliminate this uncertainty and protect innocent people from becoming victims of the stolen goods crisis.
+                SafeOrStolen exists to eliminate this uncertainty and protect innocent people from becoming victims of the stolen goods crisis.
               </p>
             </CardContent>
           </Card>

@@ -8,7 +8,7 @@ export const AdminPageHeader = () => {
         <Logo size="md" linkTo="/" />
         <div>
           <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
-          <p className="text-gray-300">Monitor and manage Safe or Stolen platform</p>
+          <p className="text-gray-300">Monitor and manage SafeOrStolen platform</p>
         </div>
       </div>
       <Badge variant="outline" className="mt-2 border-sos-orange text-sos-orange">

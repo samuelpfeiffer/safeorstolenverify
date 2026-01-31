@@ -15,7 +15,7 @@ export const AdvertisingStrategy = () => {
     <Helmet>
       {/* Open Graph tags for viral social sharing */}
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Safe Or Stolen" />
+      <meta property="og:site_name" content="SafeOrStolen" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       

@@ -41,7 +41,7 @@ const TermsPage: React.FC = () => {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Acceptance of Terms</h2>
               <p className="text-gray-300 leading-relaxed">
-                By accessing and using Safe or Stolen ("the Service"), you accept and agree to be bound by the terms 
+                By accessing and using SafeOrStolen ("the Service"), you accept and agree to be bound by the terms 
                 and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
               </p>
             </section>
@@ -49,7 +49,7 @@ const TermsPage: React.FC = () => {
             <section>
             <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Service</h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Safe or Stolen provides item verification services to help users determine whether items are legitimate or stolen.
+              SafeOrStolen provides item verification services to help users determine whether items are legitimate or stolen.
               Our service includes:
             </p>
             <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
@@ -99,7 +99,7 @@ const TermsPage: React.FC = () => {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">6. Limitation of Liability</h2>
               <p className="text-gray-300 leading-relaxed">
-                Safe or Stolen shall not be liable for any direct, indirect, incidental, special, or consequential 
+                SafeOrStolen shall not be liable for any direct, indirect, incidental, special, or consequential 
                 damages resulting from the use or inability to use the service, even if we have been advised of 
                 the possibility of such damages. This includes but is not limited to damages for loss of profits, 
                 data, or other intangibles.

@@ -38,13 +38,13 @@ export const CompetitiveAnalytics: React.FC = () => {
           "description": "Industry-leading technology for real-time stolen goods verification, outperforming traditional checking services",
           "author": {
             "@type": "Organization",
-            "name": "Safe or Stolen",
+            "name": "SafeOrStolen",
             "url": "https://safeorstolen.com"
           },
           "publisher": {
             "@type": "Organization", 
-            "name": "Safe or Stolen",
-            "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
+            "name": "SafeOrStolen",
+            "logo": "https://safeorstolen.com/sos-logo.png"
           },
           "datePublished": "2024-01-01",
           "dateModified": new Date().toISOString(),

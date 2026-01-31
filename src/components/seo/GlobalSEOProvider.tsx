@@ -30,9 +30,9 @@ export const GlobalSEOProvider: React.FC = () => {
   return (
     <Helmet>
       {/* Global meta tags that apply to all pages */}
-      <meta name="author" content="Safe or Stolen" />
-      <meta name="application-name" content="Safe or Stolen" />
-      <meta name="apple-mobile-web-app-title" content="Safe or Stolen" />
+      <meta name="author" content="SafeOrStolen" />
+      <meta name="application-name" content="SafeOrStolen" />
+      <meta name="apple-mobile-web-app-title" content="SafeOrStolen" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: "Samuel Pfeiffer",
     role: "Founder & CEO",
-    bio: "Experienced entrepreneur and platform strategist who founded Safe Or Stolen after recognizing the critical need to protect innocent consumers from the $13 billion stolen goods crisis. Samuel leads the company's mission to revolutionize marketplace safety through real-time verification technology.",
+    bio: "Experienced entrepreneur and platform strategist who founded SafeOrStolen after recognizing the critical need to protect innocent consumers from the $13 billion stolen goods crisis. Samuel leads the company's mission to revolutionize marketplace safety through real-time verification technology.",
     expertise: ["Platform Strategy", "Fraud Prevention", "Business Development", "Consumer Protection", "Entrepreneurship"],
     linkedinUrl: "https://linkedin.com/in/samuelpfeiffer-safeorstolen",
     email: "samuel@safeorstolen.com",

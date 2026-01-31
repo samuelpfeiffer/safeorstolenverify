@@ -33,7 +33,7 @@ export const SolutionSection = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">Our Revolutionary Solution</h2>
             <p className="text-xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
-              Safe Or Stolen is the world's first comprehensive verification system that bridges 
+              SafeOrStolen is the world's first comprehensive verification system that bridges 
               law enforcement databases with consumer protection, creating an impenetrable shield 
               against stolen goods purchases.
             </p>

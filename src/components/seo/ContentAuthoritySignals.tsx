@@ -67,7 +67,7 @@ export const ContentAuthoritySignals: React.FC<ContentAuthoritySignalsProps> = (
     "dateModified": lastUpdated,
     "author": {
       "@type": "Organization",
-      "name": "Safe Or Stolen Expert Team",
+      "name": "SafeOrStolen Expert Team",
       "url": "https://safeorstolen.com/about",
       "expertise": authorExpertise,
       "hasCredential": [

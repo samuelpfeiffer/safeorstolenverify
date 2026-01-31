@@ -46,9 +46,9 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
       <meta name="google" content="notranslate" />
       
       {/* Rich Results Enhancement */}
-      <meta name="author" content="Safe Or Stolen Team" />
-      <meta name="publisher" content="Safe Or Stolen" />
-      <meta name="copyright" content="© 2024 Safe Or Stolen. All rights reserved." />
+      <meta name="author" content="SafeOrStolen Team" />
+      <meta name="publisher" content="SafeOrStolen" />
+      <meta name="copyright" content="© 2024 SafeOrStolen. All rights reserved." />
       
       {/* Page Experience Signals */}
       <meta name="theme-color" content="#1a1625" />
