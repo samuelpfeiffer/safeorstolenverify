@@ -33,13 +33,13 @@ import type { AggregatedResult } from '@/services/VerificationService';
 
 // Item type configuration for quick-select cards
 const ITEM_TYPES = [
-  { id: 'smartphone', label: 'Phone/IMEI', icon: Smartphone, color: 'text-blue-500', bgColor: 'bg-blue-500/10', description: 'Check IMEI blacklist' },
-  { id: 'vehicle', label: 'Vehicle/VIN', icon: Car, color: 'text-emerald-500', bgColor: 'bg-emerald-500/10', description: 'Verify VIN history' },
-  { id: 'bicycle', label: 'Bicycle', icon: Bike, color: 'text-orange-500', bgColor: 'bg-orange-500/10', description: 'Search Bike Index' },
-  { id: 'firearm', label: 'Firearm', icon: Crosshair, color: 'text-red-500', bgColor: 'bg-red-500/10', description: 'Check HotGunz DB' },
-  { id: 'laptop', label: 'Laptop', icon: Monitor, color: 'text-purple-500', bgColor: 'bg-purple-500/10', description: 'Verify serial number' },
-  { id: 'electronics', label: 'Electronics', icon: CircuitBoard, color: 'text-cyan-500', bgColor: 'bg-cyan-500/10', description: 'Check equipment' },
-  { id: 'license_plate', label: 'License Plate', icon: FileText, color: 'text-yellow-500', bgColor: 'bg-yellow-500/10', description: 'State DMV lookup' },
+  { id: 'smartphone', label: 'Phone/IMEI', icon: Smartphone, color: 'text-blue-500', bgColor: 'bg-blue-500/10', description: 'Verify device status', link: '/check-phone' },
+  { id: 'vehicle', label: 'Vehicle/VIN', icon: Car, color: 'text-emerald-500', bgColor: 'bg-emerald-500/10', description: 'Check theft history', link: '/check-vehicle' },
+  { id: 'bicycle', label: 'Bicycle', icon: Bike, color: 'text-orange-500', bgColor: 'bg-orange-500/10', description: 'Search bike registries', link: '/check-bike' },
+  { id: 'firearm', label: 'Firearm', icon: Crosshair, color: 'text-red-500', bgColor: 'bg-red-500/10', description: 'Verify firearm status', link: '/check-firearm' },
+  { id: 'laptop', label: 'Laptop', icon: Monitor, color: 'text-purple-500', bgColor: 'bg-purple-500/10', description: 'Check serial number', link: '/check-laptop' },
+  { id: 'electronics', label: 'Electronics', icon: CircuitBoard, color: 'text-cyan-500', bgColor: 'bg-cyan-500/10', description: 'Verify equipment', link: '/check-electronics' },
+  { id: 'license_plate', label: 'License Plate', icon: FileText, color: 'text-yellow-500', bgColor: 'bg-yellow-500/10', description: 'State database lookup', link: '/license-plate-lookup' },
 ] as const;
 
 const VerifyPage = () => {
@@ -334,27 +334,6 @@ const VerifyPage = () => {
           {/* MANUAL ENTRY TAB */}
           <TabsContent value="manual" className="mt-0 space-y-6">
 
-        {/* Quick-Select Item Type Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
-          {ITEM_TYPES.map((type) => (
-            <button
-              key={type.id}
-              onClick={() => setItemType(type.id)}
-              className={`p-3 rounded-lg border transition-all text-left ${
-                itemType === type.id 
-                  ? 'border-primary bg-primary/10 ring-2 ring-primary/20' 
-                  : 'border-border hover:border-primary/50 hover:bg-muted/50'
-              }`}
-            >
-              <div className={`w-8 h-8 rounded-md ${type.bgColor} flex items-center justify-center mb-2`}>
-                <type.icon className={`w-4 h-4 ${type.color}`} />
-              </div>
-              <p className="font-medium text-sm">{type.label}</p>
-              <p className="text-xs text-muted-foreground">{type.description}</p>
-            </button>
-          ))}
-        </div>
-
         {/* Auth Gate - More compelling sign up prompt */}
         {!isAuthenticated && (
           <WhySignUpCard />
@@ -482,28 +461,54 @@ const VerifyPage = () => {
           <Card className="bg-muted/50">
             <CardContent className="pt-6">
               <div className="flex items-start gap-4">
-                <AlertTriangle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                <Shield className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div className="space-y-2">
-                  <h3 className="font-semibold">What we check:</h3>
+                  <h3 className="font-semibold">Comprehensive Verification</h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• GSMA Device Check (Global IMEI Blacklist)</li>
-                    <li>• IMEI.info Lost Device Database</li>
-                    <li>• CheckMEND (UK/EU Electronics Registry)</li>
-                    <li>• NICB VINCheck (US Vehicle Database)</li>
-                    <li>• State DMV & Police Databases (License Plates - All 50 States)</li>
-                    <li>• Bike Index (Global Bicycle Registry)</li>
-                    <li>• HotGunz (US Firearms Database)</li>
-                    <li>• StolenRegister.com (Worldwide Property)</li>
-                    <li>• Immobilize (US Property Registry)</li>
+                    <li>• Global carrier blacklists & device registries</li>
+                    <li>• Federal & state law enforcement databases</li>
+                    <li>• Insurance theft & loss claim records</li>
+                    <li>• National vehicle title & history databases</li>
+                    <li>• State DMV & police records (All 50 States)</li>
+                    <li>• International bicycle registries</li>
+                    <li>• Firearms verification databases</li>
+                    <li>• Property & asset recovery networks</li>
                   </ul>
                   <p className="text-xs text-muted-foreground pt-2">
-                    All checks are performed in parallel for fast results. Some databases may require manual verification via redirect.
+                    All checks are performed in parallel across 100+ databases for fast, comprehensive results.
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
         )}
+
+        {/* Quick-Select Item Type Cards - Clickable links to dedicated pages */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+          {ITEM_TYPES.map((type) => (
+            <button
+              key={type.id}
+              onClick={() => {
+                if (type.link) {
+                  navigate(type.link);
+                } else {
+                  setItemType(type.id);
+                }
+              }}
+              className={`p-3 rounded-lg border transition-all text-left ${
+                itemType === type.id 
+                  ? 'border-primary bg-primary/10 ring-2 ring-primary/20' 
+                  : 'border-border hover:border-primary/50 hover:bg-muted/50'
+              }`}
+            >
+              <div className={`w-8 h-8 rounded-md ${type.bgColor} flex items-center justify-center mb-2`}>
+                <type.icon className={`w-4 h-4 ${type.color}`} />
+              </div>
+              <p className="font-medium text-sm">{type.label}</p>
+              <p className="text-xs text-muted-foreground">{type.description}</p>
+            </button>
+          ))}
+        </div>
           </TabsContent>
         </Tabs>
 
