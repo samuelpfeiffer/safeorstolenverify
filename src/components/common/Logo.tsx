@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield } from 'lucide-react';
+import sosLogo from '@/assets/sos-logo.png';
 
 interface LogoProps {
   className?: string;
@@ -10,10 +10,10 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: 'h-8 w-8',
-  md: 'h-10 w-10',
-  lg: 'h-14 w-14',
-  xl: 'h-20 w-20'
+  sm: 'h-8',
+  md: 'h-10',
+  lg: 'h-14',
+  xl: 'h-20'
 };
 
 export const Logo: React.FC<LogoProps> = ({ 
@@ -23,9 +23,11 @@ export const Logo: React.FC<LogoProps> = ({
   linkTo = '/'
 }) => {
   const logoImage = (
-    <div className={`${sizeClasses[size]} flex items-center justify-center bg-primary rounded-lg ${className}`}>
-      <Shield className="h-full w-full p-2 text-primary-foreground" />
-    </div>
+    <img 
+      src={sosLogo} 
+      alt="SafeOrStolen Logo" 
+      className={`${sizeClasses[size]} w-auto object-contain ${className}`}
+    />
   );
 
   const content = showText ? (
