@@ -34,6 +34,7 @@ const TopNavigation = () => {
 
   const resourceLinks = [
     { to: '/blog', label: 'Blog', icon: BookOpen },
+    { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/faq', label: 'Help & FAQ', icon: HelpCircle },
     { to: '/how-it-works', label: 'How It Works', icon: FileText },
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
