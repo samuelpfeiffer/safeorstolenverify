@@ -219,6 +219,11 @@ export const VALID_ROUTES = new Set([
   '/press-kit',
   '/product-hunt',
   '/youtube',
+  '/youtube/stolen-item-check',
+  '/youtube/marketplace-safety',
+  '/youtube/vin-check',
+  '/youtube/imei-check',
+  '/youtube/marketplace-protection',
   '/crunchbase',
 ]);
 
