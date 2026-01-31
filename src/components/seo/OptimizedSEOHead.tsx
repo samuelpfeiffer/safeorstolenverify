@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 import { validateCanonicalUrl, validateSchema, logSchemaValidation } from '@/utils/seo/schemaValidation';
 import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
+import { getRobotsContent } from '@/utils/seo/robotsPolicy';
 
 interface OptimizedSEOHeadProps {
   title: string;
@@ -25,10 +26,11 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
   image = '/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
   type = 'website',
   structuredData,
-  noIndex = false,
+  noIndex,
   isVideoPage = false
 }) => {
   const location = useSafeLocation();
+  const pathname = location?.pathname || '/';
   
   const fullImageUrl = image?.startsWith('http') ? image : `https://safeorstolen.com${image}`;
   
@@ -74,8 +76,11 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       {/* Canonical URL - CRITICAL: Always render for SEO */}
       <link rel="canonical" href={fullCanonicalUrl} />
       
-      {/* Robots Meta Tag - max-video-preview:-1 only for dedicated video pages */}
-      <meta name="robots" content={noIndex ? "noindex, nofollow" : `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:${isVideoPage ? '-1' : '0'}`} />
+      {/* Robots Meta Tag (centralized policy) */}
+      <meta
+        name="robots"
+        content={getRobotsContent({ pathname, noIndex })}
+      />
       
       {/* Enhanced SEO Meta Tags */}
       <meta name="author" content="SafeOrStolen.com" />
