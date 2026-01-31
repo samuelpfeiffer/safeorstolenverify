@@ -13,6 +13,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # LEGACY APP URL VARIANTS (No real routes - safe to redirect)
 # These are typos/old URLs that never had pages
+# GSC noindex fix 2026-01-31: Complete list
 # ============================================
 /mobile-app             /app  301!
 /install-app            /app  301!
@@ -22,6 +23,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-item-scanner    /app  301!
 /download-app           /download  301!
 /app/download           /download  301!
+/ios-app                /app  301!
+/android-app            /app  301!
+
+# GSC noindex fix 2026-01-31: Marketplace verification pages
+/for-marketplace-sellers /for-marketplaces  301!
+/mercari-verification    /verify  301!
+/what-to-do-if-i-bought-stolen-phone /faq  301!
+/for-brands              /for-businesses  301!
+/vin                     /vin-checker  301!
 
 # ============================================
 # LEGACY TOOL URL VARIANTS (No real routes)
@@ -73,6 +83,21 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /license-plates-lookup   /license-plate-lookup 301!
 /check-bicycle           /check-bike    301!
 /check-scooter           /check-ebike   301!
+
+# GSC noindex fix 2026-01-31: Guitar/instrument checks
+/check-fender-guitar     /serial-number-checker  301!
+/check-gibson-guitar     /serial-number-checker  301!
+/check-guitar            /serial-number-checker  301!
+/check-instrument        /serial-number-checker  301!
+
+# GSC noindex fix 2026-01-31: Legacy app and mobile URLs
+/ios-app                 /app  301!
+/mobile-verification     /app  301!
+/verification-app        /app  301!
+/buyer-guide             /verify  301!
+
+# GSC noindex fix 2026-01-31: UK/international vehicle checks
+/uk-vehicle-check        /vin-checker  301!
 
 # ============================================
 # STATE VIN REDIRECTS (40 states without pages → main checker)
@@ -429,7 +454,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /san-jose/*                               /stolen-check-san-jose  301!
 /miami/*                                  /stolen-check-miami  301!
 
-# City stolen-item-check redirects
+# City stolen-item-check redirects (GSC noindex fix - complete list)
 /michigan-stolen-item-check                                     /verify  301!
 /tennessee-stolen-item-check                                    /verify  301!
 /oakland-stolen-item-check                                      /verify  301!
@@ -444,6 +469,16 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /milwaukee-stolen-item-check                                    /verify  301!
 /baltimore-stolen-item-check                                    /verify  301!
 /florida-stolen-item-check                                      /florida-vin-lookup  301!
+# Additional GSC noindex fixes (2026-01-31)
+/tucson-stolen-item-check                                       /verify  301!
+/kentucky-stolen-item-check                                     /verify  301!
+/san-diego-stolen-item-check                                    /stolen-check-san-diego  301!
+/arkansas-stolen-item-check                                     /verify  301!
+/north-carolina-stolen-item-check                               /verify  301!
+/atlanta-stolen-item-check                                      /verify  301!
+
+# State stolen-item-check pattern (catch-all)
+/*-stolen-item-check                                            /verify  301!
 
 # ============================================
 # OTHER LEGACY REDIRECTS
@@ -464,6 +499,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /ultimate-guide                                                 /about  301!
 /offerup-verification                                           /verify  301!
 /fastercapital/tech-cofounder                                   /about  301!
+/fastercapital/raise-capital                                    /about  301!
 /press                                                          /press-release  301!
 /database                                                       /stolen-database  301!
 /android-app                                                    /app  301!
@@ -483,10 +519,13 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /vin-verification                                               /vin-checker  301!
 /cookies                                                        /privacy  301!
 /pawn-shops                                                     /for-pawn-shops  301!
+# GSC noindex fix 2026-01-31 - Remaining URLs from validation report
+/statistics                                                     /about  301!
 
 # ============================================
 # APP SUBDIRECTORY GSC FIX
 # Pages from GSC report that were returning noindex
+# Updated: 2026-01-31 - Complete list from GSC validation
 # ============================================
 /app/download                        /download  301!
 /app/sellers                         /about  301!
@@ -498,6 +537,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/check-stolen-before-buying      /verify  301!
 /app/carfax-alternative              /vs-carfax  301!
 /app/philadelphia                    /stolen-check-philadelphia  301!
+# GSC noindex fix 2026-01-31
+/app/ebay-verification               /verify  301!
+/app/offerup-safety                  /offerup-safety  301!
+/app/law-enforcement                 /for-law-enforcement  301!
+/app/firearms-checker                /firearms-check  301!
+/app/vs-imeipro                      /vs-imeiinfo  301!
 
 # ============================================
 # GUIDES DIRECTORY REDIRECTS
