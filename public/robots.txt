@@ -29,6 +29,7 @@ Allow: /features
 Allow: /community
 Allow: /data-sources
 Allow: /resource-center
+Allow: /youtube
 
 # AI Discovery Files - Explicit allow
 Allow: /llms.txt
