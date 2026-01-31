@@ -167,7 +167,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /seo-strategy                /about  301!
 /enterprise-demo             /pricing  301!
 /for-used-car-dealers        /for-dealers  301!
-/marketplace-safety          /verify  301!
+# REMOVED - /marketplace-safety has a real route now at /facebook-marketplace-safety
+# /marketplace-safety → Redirect to real page
+/marketplace-safety          /facebook-marketplace-safety  301!
 /careers                     /about  301!
 
 # NOTE: 39 state license plate pages HAVE REAL ROUTES in AppRoutes.tsx
@@ -178,7 +180,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # COMPARISON PAGE REDIRECTS (Legacy URLs only)
 # ============================================
 /comparison-checkmend              /vs-checkmend  301!
-/vs-stolenregister                 /pricing  301!
+# REMOVED - /vs-stolenregister has a real route now (VsStolenRegisterPage)
+# NOTE: Do not redirect - it has its own page at line 361 of AppRoutes.tsx
 /vs-nicb                           /nicb-alternative  301!
 /carfax-alternative                /carfax-alternative-free  301!
 /competitor-alternatives           /compare  301!
@@ -559,8 +562,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /verify-vin-before-purchase        /vin-checker  301!
 /check-harley-davidson             /check-car  301!
 
-# License plate variations already in sitemap returning soft 404
-/rhode-island-license-plate-lookup /license-plate-lookup  301!
+# REMOVED - rhode-island has a real route now
+# /rhode-island-license-plate-lookup has route in AppRoutes.tsx line 453
 
 # YouTube subpages without real routes
 /youtube/vin-check                 /youtube  301!
