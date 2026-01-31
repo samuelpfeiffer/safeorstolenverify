@@ -17,28 +17,28 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
         return {
           title: 'What is an IMEI Checker?',
           description: 'An IMEI checker (International Mobile Equipment Identity verifier) is a database lookup tool that searches global carrier blacklists, stolen device registries, and law enforcement databases to determine if a smartphone has been reported stolen, lost, or blacklisted.',
-          databases: 'GSMA Device Check (global carriers), CheckMEND (insurance claims), Immobilise (UK police), CTIA Stolen Phone Checker',
+          databases: 'Global carrier blacklists, insurance claims databases, law enforcement registries, and international device databases',
           stepTitle: 'How to Check if a Phone is Stolen (Step-by-Step)'
         };
       case 'vin-lookup':
         return {
           title: 'What is a VIN Checker?',
-          description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches NICB databases, DMV records, insurance claim databases, and law enforcement records to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
-          databases: 'NICB VINCheck (theft/salvage), CarFax (history), AutoCheck (title issues), Arizona TheftAZ',
+          description: 'A VIN checker (Vehicle Identification Number lookup) is a verification service that searches national theft databases, DMV records, insurance claim databases, and law enforcement records to verify if a vehicle has been reported stolen, salvaged, or has title issues.',
+          databases: 'Federal vehicle databases, state DMV records, insurance claims, and law enforcement theft registries',
           stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
         };
       case 'unified-verification':
         return {
           title: 'What is Multi-Database Verification?',
-          description: 'Multi-database verification is a comprehensive lookup service that simultaneously searches 6+ specialized databases across vehicles (VIN), phones (IMEI), bikes (serial), and electronics (serial numbers) to verify ownership legitimacy and detect stolen property.',
-          databases: 'NICB, GSMA, CheckMEND, Bike Index, Immobilise, TheftAZ, and regional law enforcement databases',
+          description: 'Multi-database verification is a comprehensive lookup service that simultaneously searches 100+ specialized databases across vehicles (VIN), phones (IMEI), bikes (serial), and electronics (serial numbers) to verify ownership legitimacy and detect stolen property.',
+          databases: 'Federal law enforcement, insurance bureaus, carrier blacklists, bicycle registries, and regional police databases',
           stepTitle: 'How to Verify Any Item (Step-by-Step)'
         };
       default:
         return {
           title: 'What is a Stolen Item Checker?',
           description: 'A stolen item checker (also called theft verification service) is a database lookup tool that instantly searches multiple law enforcement, insurance, and global property registries to determine if an item—such as a vehicle (VIN), phone (IMEI), bike, laptop, or any item with a serial number—has been reported stolen or lost.',
-          databases: 'NICB VINCheck (vehicles), GSMA Device Check (phones), CheckMEND (global electronics), Bike Index, Arizona TheftAZ, and Immobilize Registry',
+          databases: 'Federal and state law enforcement databases, national insurance bureaus, carrier blacklists, bicycle registries, and property recovery networks',
           stepTitle: 'How to Check if Something is Stolen (Step-by-Step)'
         };
     }

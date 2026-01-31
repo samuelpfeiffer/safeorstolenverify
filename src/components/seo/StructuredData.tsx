@@ -174,7 +174,7 @@ export const VerificationFAQData = () => (
         },
         {
           question: 'Can I check items internationally?',
-          answer: 'Yes. GSMA Device Check and CheckMEND provide global coverage for phones and electronics. NICB and Arizona TheftAZ cover US vehicles. Bike Index and Immobilize Registry have international records.'
+          answer: 'Yes. Our platform provides global coverage for phones and electronics through international carrier blacklists and device registries. Vehicle databases cover US vehicles nationwide. Bicycle and property registries have international records.'
         },
         {
           question: 'How much does verification cost?',
