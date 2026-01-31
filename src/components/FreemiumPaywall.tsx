@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Shield, AlertTriangle, CheckCircle, Zap, Loader2, Lock, TrendingUp } from 'lucide-react';
+import { Shield, AlertTriangle, CheckCircle, Loader2, Lock, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -19,15 +18,15 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
   onUpgrade
 }) => {
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   
   const remainingSearches = maxFreeSearches - searchCount;
   const isLastSearch = remainingSearches === 1;
   const isOverLimit = remainingSearches <= 0;
 
-  // Direct checkout without redirect page
-  const handleDirectCheckout = async (planName: string, isSubscription: boolean) => {
-    setIsLoading(planName);
+  // Direct checkout for Unlimited Plan
+  const handleDirectCheckout = async () => {
+    setIsLoading(true);
     
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -39,8 +38,8 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
 
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          planName,
-          isSubscription,
+          planName: 'Unlimited Plan',
+          isSubscription: true,
           redirectUrl: 'https://safeorstolen.com'
         },
         headers: {
@@ -60,7 +59,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
         description: err.message || 'Failed to start checkout. Please try again.',
         variant: 'destructive'
       });
-      setIsLoading(null);
+      setIsLoading(false);
     }
   };
 
@@ -120,51 +119,29 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
           <span className="text-sm font-medium">5,000+ items verified this week</span>
         </div>
 
-        {/* Quick Checkout Options */}
-        <div className="grid gap-3">
-          {/* Best Value - Starter Plan */}
-          <Button 
-            size="lg" 
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-auto py-3"
-            onClick={() => handleDirectCheckout('Starter Plan', true)}
-            disabled={!!isLoading}
-          >
-            {isLoading === 'Starter Plan' ? (
-              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            ) : (
-              <Shield className="mr-2 h-5 w-5" />
-            )}
-            <div className="flex flex-col items-start">
-              <span className="font-bold">Start 7-Day FREE Trial</span>
-              <span className="text-xs opacity-90">$4.99/mo after • 15 checks • Cancel anytime</span>
-            </div>
-          </Button>
-
-          {/* Single Check */}
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="w-full h-auto py-3"
-            onClick={() => handleDirectCheckout('Single Verification', false)}
-            disabled={!!isLoading}
-          >
-            {isLoading === 'Single Verification' ? (
-              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            ) : (
-              <Zap className="mr-2 h-5 w-5" />
-            )}
-            <div className="flex flex-col items-start">
-              <span className="font-semibold">Just Need One Check?</span>
-              <span className="text-xs text-muted-foreground">$2.99 one-time • No subscription</span>
-            </div>
-          </Button>
-        </div>
+        {/* Unlimited Plan CTA */}
+        <Button 
+          size="lg" 
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-auto py-4"
+          onClick={handleDirectCheckout}
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+          ) : (
+            <Shield className="mr-2 h-5 w-5" />
+          )}
+          <div className="flex flex-col items-start">
+            <span className="font-bold">Unlock Unlimited Verifications</span>
+            <span className="text-xs opacity-90">$4.99/mo • Unlimited checks • Cancel anytime</span>
+          </div>
+        </Button>
 
         {/* Benefits */}
         <div className="grid md:grid-cols-3 gap-3 text-sm">
           <div className="flex items-center gap-2 justify-center">
             <CheckCircle className="h-4 w-4 text-accent" />
-            <span>Theft Database Access</span>
+            <span>All Item Types</span>
           </div>
           <div className="flex items-center gap-2 justify-center">
             <CheckCircle className="h-4 w-4 text-accent" />
