@@ -1,3 +1,8 @@
+/**
+ * @deprecated This component uses the legacy multi-tier pricing structure.
+ * Use ConversionOptimizedPricing component instead for the new Free + Unlimited model.
+ * Keeping for backward compatibility only.
+ */
 import React, { useState } from 'react';
 import { PlanCard } from './PlanCard';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
@@ -26,32 +31,12 @@ export const PricingGrid = () => {
     }
   };
 
+  // Simplified to just show the Unlimited plan for legacy compatibility
   const plans = [
     {
-      ...SUBSCRIPTION_TIERS.starter,
-      price: formatPrice(SUBSCRIPTION_TIERS.starter.price),
-      priceId: SUBSCRIPTION_TIERS.starter.stripePriceId!,
-      period: 'month',
-      image: "https://i.imgur.com/6Mvijcm.png"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.personal,
-      price: formatPrice(SUBSCRIPTION_TIERS.personal.price),
-      priceId: SUBSCRIPTION_TIERS.personal.stripePriceId!,
-      period: 'month',
-      image: "https://i.imgur.com/6Mvijcm.png"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.professional,
-      price: formatPrice(SUBSCRIPTION_TIERS.professional.price),
-      priceId: SUBSCRIPTION_TIERS.professional.stripePriceId!,
-      period: 'month',
-      image: "https://i.imgur.com/6Mvijcm.png"
-    },
-    {
-      ...SUBSCRIPTION_TIERS.enterprise,
-      price: formatPrice(SUBSCRIPTION_TIERS.enterprise.price) + '+',
-      priceId: SUBSCRIPTION_TIERS.enterprise.stripePriceId!,
+      ...SUBSCRIPTION_TIERS.unlimited,
+      price: SUBSCRIPTION_TIERS.unlimited.priceDisplay,
+      priceId: SUBSCRIPTION_TIERS.unlimited.stripePriceId!,
       period: 'month',
       image: "https://i.imgur.com/6Mvijcm.png"
     }

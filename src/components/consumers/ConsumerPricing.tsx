@@ -1,36 +1,77 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { SUBSCRIPTION_TIERS, formatPrice } from "@/features/pricing";
+import { SUBSCRIPTION_TIERS } from "@/features/pricing";
 import { useAuth } from "@/lib/auth";
 import { useNavigate } from "react-router-dom";
-import { useSubscription } from "@/hooks/useSubscription";
 import { useState } from "react";
-import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { redirectToStripe } from "@/utils/stripeRedirect";
 
 interface ConsumerPricingProps {
-  onSubscribeClick: (tier: 'personal' | 'professional') => void;
-  isLoading: boolean;
+  onSubscribeClick?: (tier: 'personal' | 'professional') => void;
+  isLoading?: boolean;
 }
 
-export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricingProps) => {
+export const ConsumerPricing = ({ onSubscribeClick, isLoading: externalLoading }: ConsumerPricingProps) => {
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const navigate = useNavigate();
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFreeStart = () => {
     if (!isAuthenticated) {
       navigate('/auth?tab=signup');
     } else {
-      navigate('/');
+      navigate('/verify');
+    }
+  };
+
+  const handleUnlimitedCheckout = async () => {
+    setIsLoading(true);
+    
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        navigate('/auth?redirect=/pricing');
+        return;
+      }
+
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          planName: 'Unlimited Plan',
+          isSubscription: true,
+          redirectUrl: 'https://safeorstolen.com'
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`
+        }
+      });
+
+      if (error) throw error;
+      if (!data?.url) throw new Error('No checkout URL returned');
+
+      redirectToStripe(data.url);
+      
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      toast({
+        title: 'Checkout Error',
+        description: err.message || 'Failed to start checkout. Please try again.',
+        variant: 'destructive'
+      });
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="max-w-5xl mx-auto pt-8" id="subscriptions">
+    <div className="max-w-4xl mx-auto pt-8" id="subscriptions">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4">Transparent, Fair Subscriptions</h2>
-        <p className="text-xl mb-4">Start at just $0.99 per check. No hidden fees, no subscriptions required.</p>
+        <h2 className="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
+        <p className="text-xl mb-4">Start free, upgrade when you need more</p>
         <div className="flex justify-center items-center gap-6 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -47,38 +88,44 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Starter Plan */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Free Tier */}
         <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
           <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Starter Plan</h3>
-          <div className="text-3xl font-bold mb-2">{SUBSCRIPTION_TIERS.starter.priceDisplay}/mo</div>
-          <p className="text-gray-400 mb-6">For occasional buyers & sellers</p>
+          <h3 className="text-2xl font-bold mb-2">Free</h3>
+          <div className="text-3xl font-bold mb-2">$0</div>
+          <p className="text-gray-400 mb-6">Try before you buy</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.starter.features.map((feature, index) => (
-              <li key={index} className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
-                <span>{feature}</span>
-              </li>
-            ))}
+            <li className="flex items-center">
+              <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
+              <span>2 free verification checks</span>
+            </li>
+            <li className="flex items-center">
+              <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
+              <span>No credit card required</span>
+            </li>
+            <li className="flex items-center">
+              <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
+              <span>Instant results in 3 seconds</span>
+            </li>
           </ul>
           <Button 
-            onClick={() => navigate('/pricing')}
-            className="w-full bg-sos-orange hover:bg-sos-orange/90"
+            onClick={handleFreeStart}
+            className="w-full bg-secondary hover:bg-secondary/80"
           >
-            Get Started
+            Get Started Free
           </Button>
         </div>
         
-        {/* Personal Plan */}
+        {/* Unlimited Plan */}
         <div className="bg-secondary/50 backdrop-blur-lg rounded-xl p-8 border border-sos-orange relative overflow-hidden transform scale-105 shadow-lg shadow-sos-orange/20">
           <div className="absolute -right-6 -top-6 bg-sos-orange/20 p-10 rounded-full"></div>
-          <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mb-4">Most Popular</div>
-          <h3 className="text-2xl font-bold mb-2">Personal</h3>
-          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}<span className="text-lg font-normal">/month</span></div>
-          <p className="text-gray-300 mb-6">Unlimited searches for casual buyers</p>
+          <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mb-4">Best Value</div>
+          <h3 className="text-2xl font-bold mb-2">{SUBSCRIPTION_TIERS.unlimited.name}</h3>
+          <div className="text-3xl font-bold mb-2">{SUBSCRIPTION_TIERS.unlimited.priceDisplay}<span className="text-lg font-normal">/month</span></div>
+          <p className="text-gray-300 mb-6">Unlimited verifications for peace of mind</p>
           <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.personal.features.map((feature, index) => (
+            {SUBSCRIPTION_TIERS.unlimited.features.slice(0, 5).map((feature, index) => (
               <li key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
                 <span>{feature}</span>
@@ -86,76 +133,20 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading }: ConsumerPricing
             ))}
           </ul>
           <Button 
-            onClick={() => onSubscribeClick('personal')}
+            onClick={handleUnlimitedCheckout}
             className="w-full bg-sos-orange hover:bg-sos-orange/90"
-            disabled={isLoading}
+            disabled={isLoading || externalLoading}
           >
-            {isLoading ? "Processing..." : "Subscribe Now"}
+            {isLoading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Processing...
+              </>
+            ) : (
+              "Unlock Unlimited"
+            )}
           </Button>
         </div>
-        
-        {/* Professional Plan */}
-        <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
-          <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Professional</h3>
-          <div className="text-3xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.professional.price)}<span className="text-lg font-normal">/month</span></div>
-          <p className="text-gray-400 mb-6">For businesses and frequent buyers</p>
-          <ul className="space-y-3 mb-8">
-            {SUBSCRIPTION_TIERS.professional.features?.map((feature, index) => (
-              <li key={index} className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <Button 
-            onClick={() => onSubscribeClick('professional')}
-            className="w-full bg-secondary hover:bg-secondary/80"
-            disabled={isLoading}
-          >
-            {isLoading ? "Processing..." : "Subscribe Now"}
-          </Button>
-        </div>
-      </div>
-      
-      {/* Pay Per Use */}
-      <div className="mt-12 bg-gray-800/50 backdrop-blur-lg rounded-xl p-8 text-center border border-gray-700">
-        <h3 className="text-2xl font-bold mb-4">Flexible Options</h3>
-        <p className="text-xl mb-6">Choose the plan that works for you</p>
-        <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
-          <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40">
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.payPerUse.price)}</div>
-            <p className="text-gray-400 mb-4">Single Check</p>
-            <Button 
-              variant="outline"
-              size="sm"
-            >
-              Buy Now
-            </Button>
-          </div>
-          <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40 border-2 border-sos-orange">
-            <div className="bg-sos-orange text-white text-xs font-bold uppercase py-1 px-2 rounded-full inline-block mb-2">Best Value</div>
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}</div>
-            <p className="text-gray-400 mb-4">50 Checks/mo</p>
-            <Button 
-              className="bg-sos-orange hover:bg-sos-orange/90"
-              size="sm"
-            >
-              Subscribe
-            </Button>
-          </div>
-          <div className="text-center bg-gray-900/50 rounded-lg p-6 w-40">
-            <div className="text-2xl font-bold mb-2">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}</div>
-            <p className="text-gray-400 mb-4">50 Checks/mo</p>
-            <Button 
-              variant="outline"
-              size="sm"
-            >
-              Subscribe
-            </Button>
-          </div>
-        </div>
-        <p className="text-sm text-gray-400">All plans include instant verification</p>
       </div>
       
       {/* Trust & Transparency Section */}

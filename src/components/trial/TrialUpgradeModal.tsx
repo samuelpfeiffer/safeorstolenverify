@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Check, Shield, Star, Clock, Users, TrendingUp } from 'lucide-react';
+import { Check, Shield, Clock, Users, TrendingUp, Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
+import { SUBSCRIPTION_TIERS } from '@/features/pricing';
 import { useTrialStatus } from '@/hooks/useTrialStatus';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 interface TrialUpgradeModalProps {
   isOpen: boolean;
@@ -16,7 +18,9 @@ interface TrialUpgradeModalProps {
 
 export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: TrialUpgradeModalProps) => {
   const navigate = useNavigate();
-  const { daysRemaining, checksUsed } = useTrialStatus();
+  const { toast } = useToast();
+  const { daysRemaining } = useTrialStatus();
+  const [isLoading, setIsLoading] = useState(false);
 
   const getHeadline = () => {
     switch (trigger) {
@@ -53,14 +57,48 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
     'Law enforcement reports show marketplace fraud is rising'
   ];
 
-  const handleUpgrade = (tier: string) => {
-    navigate(`/pricing?tier=${tier}&source=trial_modal`);
-    onClose();
+  const handleUpgrade = async () => {
+    setIsLoading(true);
+    
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        onClose();
+        navigate('/auth?redirect=/pricing');
+        return;
+      }
+
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          planName: 'Unlimited Plan',
+          isSubscription: true,
+          redirectUrl: 'https://safeorstolen.com'
+        },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`
+        }
+      });
+
+      if (error) throw error;
+      if (!data?.url) throw new Error('No checkout URL returned');
+
+      redirectToStripe(data.url);
+      
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      toast({
+        title: 'Checkout Error',
+        description: err.message || 'Failed to start checkout. Please try again.',
+        variant: 'destructive'
+      });
+      setIsLoading(false);
+    }
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="text-center space-y-3">
             <Badge className="bg-sos-orange text-white px-4 py-1 text-sm">
@@ -82,82 +120,46 @@ export const TrialUpgradeModal = ({ isOpen, onClose, trigger = 'manual' }: Trial
           ))}
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mt-6">
-          {/* Personal Plan */}
-          <Card className="border-2 hover:border-primary hover:shadow-lg transition-all">
-            <CardContent className="p-6 space-y-4">
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground">For Individuals</p>
-                <h3 className="text-2xl font-bold mt-1">{SUBSCRIPTION_TIERS.personal.name}</h3>
-                <div className="mt-2">
-                  <span className="text-4xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.personal.price)}</span>
-                  <span className="text-muted-foreground">/month</span>
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  50 checks per month
-                </p>
-              </div>
-
-              <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.personal.features?.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button 
-                onClick={() => handleUpgrade('personal')}
-                className="w-full"
-                size="lg"
-              >
-                Start Personal Plan
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Professional Plan - Most Popular */}
-          <Card className="border-2 border-sos-orange shadow-lg relative">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <Badge className="bg-sos-orange text-white px-4 py-1">
-                <Star className="h-3 w-3 mr-1" />
-                Most Popular
-              </Badge>
+        {/* Unlimited Plan Card */}
+        <div className="mt-6 border-2 border-primary rounded-xl p-6 bg-primary/5">
+          <div className="text-center mb-4">
+            <Badge className="bg-sos-orange text-white px-4 py-1 mb-3">
+              Best Value
+            </Badge>
+            <h3 className="text-2xl font-bold">{SUBSCRIPTION_TIERS.unlimited.name}</h3>
+            <div className="mt-2">
+              <span className="text-4xl font-bold">{SUBSCRIPTION_TIERS.unlimited.priceDisplay}</span>
+              <span className="text-muted-foreground">/month</span>
             </div>
-            
-            <CardContent className="p-6 space-y-4">
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground">For Businesses</p>
-                <h3 className="text-2xl font-bold mt-1">{SUBSCRIPTION_TIERS.professional.name}</h3>
-                <div className="mt-2">
-                  <span className="text-4xl font-bold">{formatPrice(SUBSCRIPTION_TIERS.professional.price)}</span>
-                  <span className="text-muted-foreground">/month</span>
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Unlimited verifications
-                </p>
-              </div>
+            <p className="text-sm text-muted-foreground mt-1">
+              Unlimited verifications • Cancel anytime
+            </p>
+          </div>
 
-              <ul className="space-y-2">
-                {SUBSCRIPTION_TIERS.professional.features?.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+          <ul className="space-y-2 mb-6">
+            {SUBSCRIPTION_TIERS.unlimited.features?.slice(0, 5).map((feature, index) => (
+              <li key={index} className="flex items-start gap-2">
+                <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                <span className="text-sm">{feature}</span>
+              </li>
+            ))}
+          </ul>
 
-              <Button 
-                onClick={() => handleUpgrade('professional')}
-                className="w-full bg-sos-orange hover:bg-sos-orange/90"
-                size="lg"
-              >
-                Start Professional Plan
-              </Button>
-            </CardContent>
-          </Card>
+          <Button 
+            onClick={handleUpgrade}
+            className="w-full bg-primary hover:bg-primary/90"
+            size="lg"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Processing...
+              </>
+            ) : (
+              'Unlock Unlimited Now'
+            )}
+          </Button>
         </div>
 
         {/* Urgency Section */}

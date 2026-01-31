@@ -17,10 +17,10 @@ interface PaywallModalProps {
 export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearches }: PaywallModalProps) => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleDirectCheckout = async (planName: string, isSubscription: boolean) => {
-    setIsLoading(planName);
+  const handleDirectCheckout = async () => {
+    setIsLoading(true);
     
     try {
       const { data: { session } } = await supabase.auth.getSession();
@@ -33,8 +33,8 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
 
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          planName,
-          isSubscription,
+          planName: 'Unlimited Plan',
+          isSubscription: true,
           redirectUrl: 'https://safeorstolen.com'
         },
         headers: {
@@ -54,9 +54,10 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
         description: err.message || 'Failed to start checkout. Please try again.',
         variant: 'destructive'
       });
-      setIsLoading(null);
+      setIsLoading(false);
     }
   };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-lg">
@@ -81,27 +82,27 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
         </div>
 
         <div className="space-y-4 mt-2">
-          {/* Best Value Option - Starter Plan */}
+          {/* Unlimited Plan Option */}
           <div 
             className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
-              isLoading === 'Starter Plan' 
+              isLoading 
                 ? 'border-primary bg-primary/10 opacity-75' 
                 : 'border-primary bg-primary/5 hover:bg-primary/10 hover:scale-[1.02]'
             }`}
-            onClick={() => !isLoading && handleDirectCheckout('Starter Plan', true)}
+            onClick={() => !isLoading && handleDirectCheckout()}
           >
             <div className="flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-lg">Starter Plan</span>
+                  <span className="font-bold text-lg">Unlimited Plan</span>
                   <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs rounded-full font-semibold">
                     BEST VALUE
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">15 checks/month • Only $0.33 each</p>
+                <p className="text-sm text-muted-foreground">Unlimited checks • All item types</p>
               </div>
               <div className="text-right">
-                {isLoading === 'Starter Plan' ? (
+                {isLoading ? (
                   <Loader2 className="h-6 w-6 animate-spin text-primary" />
                 ) : (
                   <>
@@ -114,44 +115,21 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
             <ul className="mt-3 space-y-1 text-sm">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-accent" />
-                <span><strong>7-day FREE trial</strong> - cancel anytime</span>
+                <span><strong>Unlimited</strong> verifications per month</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-accent" />
-                15 verifications per month
+                All item types: phones, cars, bikes, tools & more
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-accent" />
-                Access to all databases (NCIC, NICB, IMEI)
+                IMEI, VIN, license plate & serial lookups
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-accent" />
+                PDF verification receipts & history
               </li>
             </ul>
-          </div>
-
-          {/* Single Check Option */}
-          <div 
-            className={`p-4 border rounded-lg cursor-pointer transition-all ${
-              isLoading === 'Single Verification'
-                ? 'border-border bg-muted/50 opacity-75'
-                : 'border-border hover:bg-muted/50 hover:border-muted-foreground/30'
-            }`}
-            onClick={() => !isLoading && handleDirectCheckout('Single Verification', false)}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="font-semibold">Just Need One Check?</span>
-                <p className="text-sm text-muted-foreground">Single verification - no subscription</p>
-              </div>
-              <div className="text-right">
-                {isLoading === 'Single Verification' ? (
-                  <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-                ) : (
-                  <>
-                    <div className="text-xl font-bold">$2.99</div>
-                    <div className="text-xs text-muted-foreground">one-time</div>
-                  </>
-                )}
-              </div>
-            </div>
           </div>
 
           {/* View All Plans */}
@@ -162,7 +140,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed, maxFreeSearche
               onClose();
               navigate('/pricing');
             }}
-            disabled={!!isLoading}
+            disabled={isLoading}
           >
             Compare All Plans →
           </Button>

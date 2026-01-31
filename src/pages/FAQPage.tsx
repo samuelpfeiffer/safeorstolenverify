@@ -130,7 +130,7 @@ const FAQPage = () => {
         },
         {
           question: "Is the verification free?",
-          answer: "Yes! New users get 2 free verification checks (valid for 14 days). After that, you can purchase additional checks or subscribe to unlimited monthly verification for $9.99/month."
+          answer: "Yes! New users get 2 free verification checks (valid for 14 days). After that, you can subscribe to unlimited verifications for just $4.99/month."
         }
       ]
     },
@@ -139,8 +139,8 @@ const FAQPage = () => {
       icon: HelpCircle,
       faqs: [
         {
-          question: "How much does a single verification cost?",
-          answer: "Single verifications cost $2.99 each. We also offer bulk packages: 10 checks for $19.99, 50 checks for $79.99, and unlimited monthly subscriptions starting at $29.99."
+          question: "How much does verification cost?",
+          answer: "We offer 2 free verification checks for new users, no credit card required. For unlimited verifications, subscribe to our Unlimited Plan at $4.99/month. Cancel anytime."
         },
         {
           question: "Do you offer discounts for businesses?",
