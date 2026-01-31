@@ -7,16 +7,18 @@ import { createErrorResponse } from '../_shared/errors.ts';
 // BULLETPROOF: Always use production URLs
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 
-// HARDCODED STRIPE PRICE IDS - NO FUZZY MATCHING
+// SIMPLIFIED PRICING MODEL
+// Unlimited Plan: $4.99/month - uses the starter price ID
 const STRIPE_PRICES = {
   // One-time payment
   singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99
 
-  // Subscriptions
-  starter: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',       // $4.99/month
-  personal: 'price_1SHEUQGxnZLw8J7OinyVqNMK',      // $9.99/month
-  professional: 'price_1SHEiuGxnZLw8J7OszscBBk7',  // $29.99/month
-  enterprise: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',    // $99/month
+  // Subscriptions - Unlimited is the main plan at $4.99/month
+  unlimited: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',       // $4.99/month (was starter)
+  starter: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',         // Legacy alias
+  personal: 'price_1SHEUQGxnZLw8J7OinyVqNMK',        // $9.99/month (legacy)
+  professional: 'price_1SHEiuGxnZLw8J7OszscBBk7',    // $29.99/month (legacy)
+  enterprise: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',      // $99/month (legacy)
 } as const;
 
 // Map any incoming plan name to our known price IDs
@@ -26,9 +28,9 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return priceId;
   }
 
-  // Default: single verification for one-time, starter for subscription
+  // Default: single verification for one-time, unlimited for subscription
   if (!planName) {
-    return isSubscription ? STRIPE_PRICES.starter : STRIPE_PRICES.singleVerification;
+    return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.singleVerification;
   }
 
   const name = planName.toLowerCase();
@@ -38,7 +40,12 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return STRIPE_PRICES.singleVerification;
   }
 
-  // Subscription tier matching
+  // Unlimited plan - the main subscription offering
+  if (name.includes('unlimited')) {
+    return STRIPE_PRICES.unlimited;
+  }
+
+  // Legacy subscription tier matching
   if (name.includes('enterprise') || name.includes('business pro')) {
     return STRIPE_PRICES.enterprise;
   }
@@ -49,11 +56,11 @@ const resolvePriceId = (priceId?: string, planName?: string, isSubscription?: bo
     return STRIPE_PRICES.personal;
   }
   if (name.includes('starter') || name.includes('basic') || name.includes('entry')) {
-    return STRIPE_PRICES.starter;
+    return STRIPE_PRICES.unlimited; // Map starter to unlimited
   }
 
-  // Fallback
-  return isSubscription ? STRIPE_PRICES.starter : STRIPE_PRICES.singleVerification;
+  // Fallback to unlimited for subscriptions
+  return isSubscription ? STRIPE_PRICES.unlimited : STRIPE_PRICES.singleVerification;
 };
 
 serve(async (req) => {
@@ -173,21 +180,21 @@ serve(async (req) => {
         item_type: itemType || 'unknown',
         serial_number: serialNumber || '',
         verification_id: verificationId || '',
-        plan_name: planName || '',
+        plan_name: planName || 'Unlimited Plan',
       },
     };
 
-    // Add trial for subscriptions
+    // Add trial for subscriptions (7 days)
     if (isSubscription) {
       sessionConfig.subscription_data = { trial_period_days: 7 };
     }
 
-    // INTEGRITY FIX: Insert purchase and get the ID, then update by ID (not user_id + pending)
+    // Create purchase record
     const { data: purchaseRecord, error: purchaseError } = await supabaseClient
       .from("purchases")
       .insert({
         user_id: user.id,
-        stripe_session_id: "creating", // Temporary - will be updated
+        stripe_session_id: "creating",
         amount: 0,
         currency: "usd",
         verification_id: verificationId || null,
@@ -198,7 +205,6 @@ serve(async (req) => {
     
     if (purchaseError) {
       console.log(`[CREATE-CHECKOUT] Purchase record error:`, purchaseError);
-      // Don't fail - continue with checkout
     }
     
     const purchaseId = purchaseRecord?.id;
@@ -208,14 +214,13 @@ serve(async (req) => {
     const session = await stripe.checkout.sessions.create(sessionConfig);
     console.log(`[CREATE-CHECKOUT] Session created: ${session.id}`);
 
-    // Update purchase with session ID using the specific purchase ID
+    // Update purchase with session ID
     if (purchaseId) {
       await supabaseClient
         .from("purchases")
         .update({ stripe_session_id: session.id })
         .eq("id", purchaseId);
     } else {
-      // Fallback: update by user_id if we couldn't get the ID
       await supabaseClient
         .from("purchases")
         .update({ stripe_session_id: session.id })

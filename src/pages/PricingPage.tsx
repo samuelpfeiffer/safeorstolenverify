@@ -186,16 +186,16 @@ const PricingPage = () => {
   return (
     <>
       <PageSEO
-        title="Protect Buyers & Sellers | Free Stolen Verification App - SafeOrStolen Pricing"
-        description="Protect BOTH buyers AND sellers with SafeOrStolen. 2 free checks, then $2.99/mo. Every search makes stolen items harder to sell. Mobile app only at SafeOrStolen.com."
-        keywords="protect buyers sellers, free stolen verification app, stop stolen goods, CheckMEND alternative, IMEI checker app, reduce crime, verify stolen items"
+        title="Pricing - 2 Free Checks, Then $4.99/mo Unlimited | SafeOrStolen"
+        description="Run 2 free stolen-item checks with no card. Then unlock unlimited IMEI, VIN, license plate & serial number verifications for just $4.99/month. Cancel anytime."
+        keywords="stolen item checker pricing, IMEI checker free, VIN lookup pricing, free stolen phone check, SafeOrStolen pricing"
         canonical="/pricing"
         structuredData={[
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "SafeOrStolen Free Trial",
-            "description": "2 free verification checks, 14-day trial period for stolen item verification",
+            "name": "SafeOrStolen Free Tier",
+            "description": "2 free verification checks for stolen items - phones, cars, laptops, and more",
             "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
@@ -209,36 +209,14 @@ const PricingPage = () => {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD",
-              "description": "2 free verification checks, 14-day trial"
+              "description": "2 free verification checks, no credit card required"
             }
           },
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "SafeOrStolen Starter Plan",
-            "description": "10 verification checks per month for stolen item verification",
-            "serviceType": "Stolen Item Verification Service",
-            "provider": {
-              "@type": "Organization",
-              "name": "SafeOrStolen"
-            },
-            "areaServed": [
-              { "@type": "Country", "name": "United States" },
-              { "@type": "Country", "name": "Canada" }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "price": "2.99",
-              "priceCurrency": "USD",
-              "billingIncrement": "P1M",
-              "description": "10 verification checks per month"
-            }
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SafeOrStolen Personal Plan",
-            "description": "Unlimited verification checks for stolen item verification",
+            "name": "SafeOrStolen Unlimited Plan",
+            "description": "Unlimited verification checks for phones, cars, laptops, tools, bikes, and more",
             "serviceType": "Stolen Item Verification Service",
             "provider": {
               "@type": "Organization",
@@ -253,73 +231,7 @@ const PricingPage = () => {
               "price": "4.99",
               "priceCurrency": "USD",
               "billingIncrement": "P1M",
-              "description": "Unlimited verification checks"
-            }
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SafeOrStolen Pro Plan",
-            "description": "Unlimited checks, bulk verification, priority support for stolen item verification",
-            "serviceType": "Stolen Item Verification Service",
-            "provider": {
-              "@type": "Organization",
-              "name": "SafeOrStolen"
-            },
-            "areaServed": [
-              { "@type": "Country", "name": "United States" },
-              { "@type": "Country", "name": "Canada" }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "price": "9",
-              "priceCurrency": "USD",
-              "billingIncrement": "P1M",
-              "description": "Unlimited checks, bulk verification, priority support"
-            }
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SafeOrStolen Business Plan",
-            "description": "Everything in Pro plus team features, API access, white-label option for stolen item verification",
-            "serviceType": "Stolen Item Verification Service",
-            "provider": {
-              "@type": "Organization",
-              "name": "SafeOrStolen"
-            },
-            "areaServed": [
-              { "@type": "Country", "name": "United States" },
-              { "@type": "Country", "name": "Canada" }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "price": "29.99",
-              "priceCurrency": "USD",
-              "billingIncrement": "P1M",
-              "description": "Everything in Pro plus team features, API access, white-label option"
-            }
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "SafeOrStolen Enterprise Plan",
-            "description": "Custom integration, dedicated support, unlimited API calls, SLA guarantee for stolen item verification",
-            "serviceType": "Stolen Item Verification Service",
-            "provider": {
-              "@type": "Organization",
-              "name": "SafeOrStolen"
-            },
-            "areaServed": [
-              { "@type": "Country", "name": "United States" },
-              { "@type": "Country", "name": "Canada" }
-            ],
-            "offers": {
-              "@type": "Offer",
-              "price": "99",
-              "priceCurrency": "USD",
-              "billingIncrement": "P1M",
-              "description": "Custom integration, dedicated support, unlimited API calls, SLA guarantee"
+              "description": "Unlimited verification checks for $4.99/month"
             }
           }
         ]}
@@ -330,7 +242,7 @@ const PricingPage = () => {
         <noscript>
           <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
             <p><strong>SafeOrStolen Pricing</strong></p>
-            <p>Affordable stolen item verification plans. Free trial with 2 checks. Unlimited plans from $4.99/month.</p>
+            <p>2 free stolen-item checks, no credit card required. Unlimited checks for $4.99/month. Cancel anytime.</p>
           </div>
         </noscript>
         

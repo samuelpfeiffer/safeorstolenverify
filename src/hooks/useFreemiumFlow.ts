@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { FREE_SEARCH_LIMIT, FAIR_USE_CAP } from '@/features/pricing/constants';
 
 export const useFreemiumFlow = () => {
   const { user } = useAuth();
   const { toast } = useToast();
   const [searchCount, setSearchCount] = useState(0);
+  const [monthlyUsage, setMonthlyUsage] = useState(0);
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [subscriptionTier, setSubscriptionTier] = useState<string | null>(null);
   const [showPaywall, setShowPaywall] = useState(false);
+  const [showFairUseWarning, setShowFairUseWarning] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
-  const FREE_SEARCH_LIMIT = 2; // 2 free searches during 14-day trial
-  const TRIAL_DURATION_DAYS = 14;
 
   useEffect(() => {
     if (user) {
@@ -28,38 +29,38 @@ export const useFreemiumFlow = () => {
     try {
       setIsLoading(true);
 
-      // Check profile for subscription status and paid tiers
       const { data: profile } = await supabase
         .from('profiles')
-        .select('subscription_tier, subscription_end, monthly_verification_limit, search_count, created_at')
+        .select('subscription_tier, subscription_end, search_count, verifications_used_this_month, created_at')
         .eq('id', user.id)
         .single();
 
-      // User is paid if they have a paid tier
-      const paidTiers = ['pay_per_use', 'starter', 'personal', 'professional', 'enterprise'];
+      // Check if user has an active paid subscription
+      const paidTiers = ['unlimited', 'starter', 'personal', 'professional', 'enterprise', 'pay_per_use'];
       const hasPaidTier = profile?.subscription_tier && paidTiers.includes(profile.subscription_tier);
+      const hasActiveSubscription = hasPaidTier && 
+        (!profile?.subscription_end || new Date(profile.subscription_end) > new Date());
 
-      if (hasPaidTier) {
+      if (hasActiveSubscription) {
         setIsSubscribed(true);
+        setSubscriptionTier(profile.subscription_tier);
+        setMonthlyUsage(profile.verifications_used_this_month || 0);
+        
+        // Check fair use cap for unlimited plan
+        if (profile.subscription_tier === 'unlimited' && 
+            (profile.verifications_used_this_month || 0) >= FAIR_USE_CAP) {
+          setShowFairUseWarning(true);
+        }
+        
         setIsLoading(false);
         return;
       }
 
+      // Free tier logic
       const currentCount = profile?.search_count || 0;
       setSearchCount(currentCount);
 
-      // Check if trial has expired (14 days from account creation)
-      if (profile?.created_at) {
-        const createdAt = new Date(profile.created_at);
-        const expiresAt = new Date(createdAt);
-        expiresAt.setDate(expiresAt.getDate() + TRIAL_DURATION_DAYS);
-        const isTrialExpired = new Date() > expiresAt;
-
-        // Show paywall if limit reached OR trial expired
-        if (currentCount >= FREE_SEARCH_LIMIT || isTrialExpired) {
-          setShowPaywall(true);
-        }
-      } else if (currentCount >= FREE_SEARCH_LIMIT) {
+      if (currentCount >= FREE_SEARCH_LIMIT) {
         setShowPaywall(true);
       }
 
@@ -72,41 +73,85 @@ export const useFreemiumFlow = () => {
 
   const canPerformSearch = (): boolean => {
     if (!user) return false;
-    if (isSubscribed) return true;
+    
+    if (isSubscribed) {
+      // Check fair use cap for unlimited subscribers
+      if (subscriptionTier === 'unlimited' && monthlyUsage >= FAIR_USE_CAP) {
+        return false;
+      }
+      return true;
+    }
+    
     return searchCount < FREE_SEARCH_LIMIT;
   };
 
   const getRemainingSearches = (): number => {
-    if (isSubscribed) return 999; // Unlimited
+    if (isSubscribed) {
+      if (subscriptionTier === 'unlimited') {
+        return FAIR_USE_CAP - monthlyUsage;
+      }
+      return 999; // Unlimited for other paid tiers
+    }
     return Math.max(0, FREE_SEARCH_LIMIT - searchCount);
   };
 
   const consumeSearch = async (): Promise<boolean> => {
     if (!user) {
       toast({
-        title: "Authentication Required",
-        description: "Please sign in to perform verifications.",
+        title: "Sign Up Required",
+        description: "Create a free account to get 2 free verifications.",
         variant: "destructive"
       });
       return false;
     }
 
     if (isSubscribed) {
-      return true; // Unlimited searches
+      // Check fair use cap
+      if (subscriptionTier === 'unlimited' && monthlyUsage >= FAIR_USE_CAP) {
+        setShowFairUseWarning(true);
+        toast({
+          title: "Fair Use Limit Reached",
+          description: "You've reached 300 checks this month. Contact support for a business plan.",
+          variant: "destructive"
+        });
+        return false;
+      }
+      
+      // Increment monthly usage for subscribers
+      const newUsage = monthlyUsage + 1;
+      await supabase
+        .from('profiles')
+        .update({ 
+          verifications_used_this_month: newUsage,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', user.id);
+      
+      setMonthlyUsage(newUsage);
+      
+      // Show warning when approaching fair use cap
+      if (subscriptionTier === 'unlimited' && newUsage >= FAIR_USE_CAP - 10) {
+        toast({
+          title: "Approaching Fair Use Limit",
+          description: `${FAIR_USE_CAP - newUsage} checks remaining this month.`,
+        });
+      }
+      
+      return true;
     }
 
+    // Free tier logic
     if (searchCount >= FREE_SEARCH_LIMIT) {
       setShowPaywall(true);
       toast({
-        title: "Free Searches Used Up",
-        description: "Upgrade to continue verifying items.",
+        title: "Free Checks Used",
+        description: "Upgrade to Unlimited for $4.99/month.",
         variant: "destructive"
       });
       return false;
     }
 
     try {
-      // Increment search count
       const newCount = searchCount + 1;
       
       const { error } = await supabase
@@ -119,17 +164,11 @@ export const useFreemiumFlow = () => {
 
       if (error) {
         console.error('Error updating search count:', error);
-        toast({
-          title: "Error",
-          description: "Failed to update search count. Please try again.",
-          variant: "destructive"
-        });
         return false;
       }
 
       setSearchCount(newCount);
 
-      // Show paywall if this was the last free search
       if (newCount >= FREE_SEARCH_LIMIT) {
         setShowPaywall(true);
       }
@@ -145,15 +184,24 @@ export const useFreemiumFlow = () => {
     setShowPaywall(false);
   };
 
+  const hideFairUseWarning = () => {
+    setShowFairUseWarning(false);
+  };
+
   return {
     searchCount,
     remainingSearches: getRemainingSearches(),
     isSubscribed,
+    subscriptionTier,
     showPaywall,
+    showFairUseWarning,
     isLoading,
     canPerformSearch: canPerformSearch(),
     consumeSearch,
     hidePaywall,
-    refreshStatus: checkUserStatus
+    hideFairUseWarning,
+    refreshStatus: checkUserStatus,
+    freeSearchLimit: FREE_SEARCH_LIMIT,
+    fairUseCap: FAIR_USE_CAP
   };
 };

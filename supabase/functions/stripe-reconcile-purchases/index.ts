@@ -10,11 +10,11 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
  * Call this via GET or POST to sync purchases with Stripe.
  */
 
-// Tier configuration - must match stripe-webhook and create-checkout
+// SIMPLIFIED PRICING MODEL - Tier configuration - must match stripe-webhook and create-checkout
 const TIER_CONFIG: Record<string, { tier: string; limit: number | null }> = {
   'price_1SSVqkGxnZLw8J7O3GwCyKRn': { tier: 'pay_per_use', limit: 1 },
-  'price_1SHEOxGxnZLw8J7O2zzfPVBK': { tier: 'starter', limit: 15 },
-  'price_1SHEUQGxnZLw8J7OinyVqNMK': { tier: 'personal', limit: 50 },
+  'price_1SHEOxGxnZLw8J7O2zzfPVBK': { tier: 'unlimited', limit: null }, // $4.99/month Unlimited
+  'price_1SHEUQGxnZLw8J7OinyVqNMK': { tier: 'personal', limit: 50 },    // Legacy
   'price_1SHEiuGxnZLw8J7OszscBBk7': { tier: 'professional', limit: null },
   'price_1SHEnFGxnZLw8J7Oq1PM96Eo': { tier: 'enterprise', limit: null },
 };
