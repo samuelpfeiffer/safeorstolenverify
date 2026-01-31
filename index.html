@@ -55,8 +55,8 @@
     <meta name="twitter:image" content="https://safeorstolen.com/sos-logo.png">
     <meta name="twitter:site" content="@safeorstolen">
     
-    <!-- Preload critical hero image for LCP optimization -->
-    <link rel="preload" as="image" href="/images/hero-device.png" fetchpriority="high">
+    <!-- Preload critical hero image for LCP optimization - WebP for mobile -->
+    <link rel="preload" as="image" href="/images/hero-device.webp" type="image/webp" fetchpriority="high" media="(min-width: 640px)">
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://lxrdzbknktwlubbmlsqe.supabase.co">
@@ -64,15 +64,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Optimized font loading with font-display: swap for better LCP -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&family=Black+Ops+One&family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Teko:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"></noscript>
+    <!-- OPTIMIZED: Only load Inter for CWV - other fonts loaded on demand -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Deferred decorative fonts - load after FCP -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Bebas+Neue&display=swap"></noscript>
     
-    <!-- DNS prefetch for Stripe payment processing -->
+    <!-- DNS prefetch for Stripe - defer to avoid blocking -->
     <link rel="dns-prefetch" href="https://js.stripe.com">
-    <link rel="dns-prefetch" href="https://api.stripe.com">
-    <link rel="preconnect" href="https://js.stripe.com" crossorigin>
     
     <!-- iOS Smart App Banner & PWA Support -->
     <meta name="apple-mobile-web-app-capable" content="yes">
