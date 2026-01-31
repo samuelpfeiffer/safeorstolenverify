@@ -98,14 +98,16 @@ export const YOUTUBE_VIDEOS: VideoData[] = [
 ];
 
 export const YOUTUBE_CHANNEL = {
-  name: 'SafeOrStolen',
-  handle: '@safeorstolen',
-  url: 'https://www.youtube.com/@safeorstolen',
-  subscribeUrl: 'https://www.youtube.com/@safeorstolen?sub_confirmation=1',
-  channelId: 'UCi0H8IK1dH0PhgVT9v2t9sw',
-  videoCount: 5,
-  viewCount: '3.5K+',
-  description: 'Free video tutorials on verifying secondhand items before buying. Quick tips to avoid stolen goods on Facebook Marketplace, eBay, and Craigslist.'
+  name: 'SafeOrStolen Official',
+  handle: '@safeorstolenoffically',
+  url: 'https://www.youtube.com/@safeorstolenoffically',
+  subscribeUrl: 'https://www.youtube.com/@safeorstolenoffically?sub_confirmation=1',
+  channelId: 'UCsafeorstolenoffically',
+  videoCount: 10,
+  viewCount: '2.1K+',
+  description: 'Protect yourself from stolen goods! Free tutorials on IMEI checks, VIN verification, and marketplace safety. Check safeorstolen.com before you buy.',
+  creatorName: 'Kelly McEvoy',
+  creatorHandle: '@safeorstolenoffically'
 };
 
 export const getVideoById = (videoId: string): VideoData | undefined => {

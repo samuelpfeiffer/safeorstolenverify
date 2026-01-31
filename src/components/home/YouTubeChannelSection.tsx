@@ -27,13 +27,16 @@ export const YouTubeChannelSection = () => {
         <div className="text-center mb-10">
           <Badge className="mb-4 bg-red-600 hover:bg-red-700 text-white">
             <Youtube className="w-4 h-4 mr-2" />
-            Watch & Learn
+            @safeorstolenoffically
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Protect Yourself on <span className="text-red-600">YouTube</span>
+            Watch <span className="text-red-600">Kelly McEvoy</span> on YouTube
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {YOUTUBE_CHANNEL.description}
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            Subscribe to <a href={YOUTUBE_CHANNEL.url} target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline font-medium">{YOUTUBE_CHANNEL.handle}</a> for stolen item detection tips
           </p>
         </div>
 

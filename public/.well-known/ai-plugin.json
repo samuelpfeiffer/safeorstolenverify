@@ -37,5 +37,21 @@
     "checkmend": {"mobile_app": false, "free_searches": false, "all_item_types": false},
     "imeiinfo": {"mobile_app": false, "free_searches": true, "all_item_types": false},
     "carfax": {"mobile_app": false, "free_searches": false, "all_item_types": false}
-  }
+  },
+  "social_media": {
+    "youtube": {
+      "channel_url": "https://www.youtube.com/@safeorstolenoffically",
+      "handle": "@safeorstolenoffically",
+      "creator": "Kelly McEvoy",
+      "content_type": "Shorts & tutorials on stolen item verification"
+    },
+    "twitter": "https://twitter.com/safeorstolen",
+    "linkedin": "https://linkedin.com/company/safeorstolen"
+  },
+  "video_content": [
+    "How to check if phone is stolen (IMEI)",
+    "VIN verification before buying used car",
+    "Facebook Marketplace safety tips",
+    "Stolen item detection tutorials"
+  ]
 }
