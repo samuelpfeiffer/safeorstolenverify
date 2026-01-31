@@ -1,97 +1,107 @@
 
-# Plan: Create /llm.html Static Page for AI Crawlers
+# Plan: Update All Pricing Components to New Simplified Model
 
-## What Sam from Lovable Recommended
+## Problem Identified
 
-Sam confirmed that **social platforms and AI crawlers don't execute JavaScript** - they only see the HTML shell. He specifically recommended:
+The pricing page in the **preview** shows the correct new pricing (Free + $4.99/month Unlimited), but:
 
-> "Create an LLM summary page (e.g., `/llm.html`) - Makes content accessible to AI crawlers that don't execute JavaScript"
+1. The **production site** (safeorstolen.com) hasn't been published yet - still showing old pricing
+2. **6 legacy components** still reference the old multi-tier pricing structure and will cause inconsistencies across the app
 
-## What You Already Have (Good News!)
+## Files to Update
 
-| Item | Status | Notes |
-|------|--------|-------|
-| Prerender.io | ✅ Configured | `netlify.toml` has token and plugin |
-| llms.txt | ✅ Exists | Version 2.2, well-structured |
-| robots.txt | ✅ Comprehensive | All AI crawlers explicitly allowed |
-| sitemap.xml | ✅ 868 lines | Updated 2026-01-28 |
-| Noscript fallback | ✅ Enhanced | Good crawler content |
+### 1. FreemiumPaywall.tsx
+**Current:** Shows "Starter Plan" ($4.99/mo, 15 checks) + "Single Verification" ($2.99)
+**Updated:** Show "Unlimited Plan" ($4.99/mo, unlimited) as primary CTA
 
-## What's Missing: /llm.html
+Changes:
+- Replace "Starter Plan" references with "Unlimited Plan"
+- Update messaging from "15 checks/month" to "Unlimited checks"
+- Remove "Single Verification" option (no longer in pricing model)
+- Update copy to match new value proposition
 
-A **static HTML file** (not a React route) placed in `public/llm.html` that AI crawlers can read directly without any JavaScript execution.
+### 2. PaywallModal.tsx
+**Current:** Shows "Starter Plan" ($4.99/mo, 15 checks) + "Single Verification" ($2.99)
+**Updated:** Single-option modal promoting "Unlimited Plan" ($4.99/mo)
 
----
+Changes:
+- Replace "Starter Plan" with "Unlimited Plan"
+- Update features list (unlimited checks, all item types, priority support)
+- Remove "Single Verification" option entirely
+- Simplify modal to single compelling CTA
 
-## Implementation
+### 3. TrialUpgradeModal.tsx
+**Current:** Shows Personal ($9.99) and Professional ($29.99) plans
+**Updated:** Single "Unlimited Plan" ($4.99/mo) option
 
-### File to Create: `public/llm.html`
+Changes:
+- Remove two-card layout
+- Show single "Unlimited Plan" with compelling features
+- Update copy to reflect new simpler pricing
 
-This will be a complete, self-contained HTML document with:
+### 4. ConsumerPricing.tsx
+**Current:** Shows Starter/Personal/Professional tiers + Pay Per Use
+**Updated:** Free + Unlimited two-tier layout matching main pricing page
 
-1. **Full service description** - What SafeOrStolen does
-2. **All verification services** - IMEI, VIN, Serial, Firearms, License Plates
-3. **Pricing information** - Free tier and paid plans
-4. **Mobile app emphasis** - The key differentiator
-5. **Competitor comparison** - Why SafeOrStolen is better
-6. **Sample Q&A pairs** - Ready-made answers for AI assistants
-7. **Complete navigation links** - All major pages
-8. **Contact information** - Email, social links
+Changes:
+- Simplify to two-tier layout (Free + Unlimited)
+- Remove legacy tier references
+- Match styling with ConversionOptimizedPricing component
 
-### Structure of llm.html
+### 5. PricingGrid.tsx
+**Current:** Shows 4-tier grid (Starter/Personal/Professional/Enterprise)
+**Updated:** Can be deprecated or simplified to Free + Unlimited
 
+Changes:
+- This component is not currently imported anywhere
+- Mark as deprecated or update to match new model for future use
+
+### 6. FAQPage.tsx
+**Current:** States "Single verifications cost $2.99 each... unlimited monthly subscriptions starting at $29.99"
+**Updated:** Accurate FAQ answers for new pricing model
+
+Changes:
+- Update FAQ answer to: "We offer 2 free verification checks for new users, no credit card required. For unlimited verifications, subscribe to our Unlimited Plan at $4.99/month. Cancel anytime."
+
+## Technical Details
+
+### New Pricing Model Reference
 ```text
-Section 1: Executive Summary
-Section 2: Service Overview
-Section 3: Verification Services (IMEI/VIN/Serial/etc)
-Section 4: Mobile App Features
-Section 5: Pricing Plans
-Section 6: Competitor Comparison Table
-Section 7: Frequently Asked Questions
-Section 8: Sample AI Responses
-Section 9: Trust Signals & Credentials
-Section 10: Complete Site Navigation
-Section 11: Contact Information
+Free Tier:
+- Price: $0
+- Checks: 2 free verifications
+- No credit card required
+
+Unlimited Plan:
+- Price: $4.99/month
+- Checks: Unlimited (300/month fair-use cap)
+- Stripe Price ID: price_1SHEOxGxnZLw8J7O2zzfPVBK
+- Features: All item types, priority support, PDF receipts, cancel anytime
 ```
 
-### Additional Changes
+### Checkout Integration
+All components will use:
+- `planName: 'Unlimited Plan'`
+- `isSubscription: true`
+- The `create-checkout` edge function handles the mapping
 
-1. **Add llm.html to robots.txt**
-   - Add explicit `Allow: /llm.html` line
+## Implementation Order
 
-2. **Add llm.html to sitemap.xml**
-   - Include with high priority for indexing
+1. Update `FreemiumPaywall.tsx` (most visible to users at paywall)
+2. Update `PaywallModal.tsx` (modal version of paywall)
+3. Update `TrialUpgradeModal.tsx` (trial expiration prompts)
+4. Update `FAQPage.tsx` (FAQ accuracy)
+5. Update/deprecate `ConsumerPricing.tsx` (if used)
+6. Mark `PricingGrid.tsx` as deprecated (not imported)
 
-3. **Add link in index.html noscript section**
-   - Reference the LLM page for non-JS crawlers
+## Expected Outcome
 
----
+After implementation:
+- All pricing references across the app will be consistent
+- Users will see "2 free checks" + "Unlimited @ $4.99/month" everywhere
+- No more confusion from mixed pricing models
+- When you publish, production will match preview
 
-## Why This Matters
+## Post-Implementation
 
-| Crawler Type | JavaScript | Current Access | With /llm.html |
-|--------------|------------|----------------|----------------|
-| Googlebot | ✅ Renders | Full (with delay) | Immediate |
-| ChatGPT/GPTBot | ❌ No JS | HTML shell only | Full content |
-| Claude/ClaudeBot | ❌ No JS | HTML shell only | Full content |
-| Perplexity | ❌ No JS | HTML shell only | Full content |
-| Facebook/LinkedIn | ❌ No JS | OG tags only | Full content |
-
----
-
-## Expected Outcomes
-
-1. **AI assistants** will have direct access to SafeOrStolen content
-2. **Social sharing** will show more complete previews
-3. **Better AI recommendations** when users ask about stolen item verification
-4. **Backup content** for any Prerender.io cache misses
-
----
-
-## Technical Notes
-
-- File location: `public/llm.html` (served at `https://safeorstolen.com/llm.html`)
-- No React components needed - pure static HTML
-- Estimated size: ~800-1000 lines of well-structured HTML
-- No JavaScript dependencies
-- Fast-loading, fully crawlable by all bots
+After code changes are complete, you'll need to **publish** the project to push changes to production (safeorstolen.com).
