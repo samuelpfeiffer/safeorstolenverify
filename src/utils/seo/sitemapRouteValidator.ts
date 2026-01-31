@@ -62,12 +62,42 @@ export const VALID_ROUTES = new Set([
   '/for-marketplaces',
   '/for-auction-houses',
   '/for-businesses',
+  '/for-electronics-resellers',
+  '/for-insurance-companies',
+  '/for-law-enforcement',
   
   // Marketplace pages
   '/facebook-marketplace-stolen-check',
   '/craigslist-safety-verification',
   '/offerup-verify-not-stolen',
   '/ebay-stolen-item-check',
+  '/mercari-stolen-check',
+  '/poshmark-stolen-check',
+  '/stockx-verification',
+  '/letgo-stolen-check',
+  
+  // GSC noindex fix pages (Jan 2026) - now have real routes
+  '/marketplace-integration',
+  '/real-time-verification',
+  '/how-to-check-if-item-stolen',
+  '/transparency',
+  '/press-release',
+  '/mobile',
+  '/community',
+  '/vs-stolenregister',
+  '/data-sources',
+  '/check-android',
+  '/verify/pawnshops',
+  '/comprehensive-guide',
+  '/check-firearm',
+  '/resource-center',
+  '/features',
+  '/stolen-phone-checker',
+  '/phone-blacklist-check',
+  '/facebook-marketplace-safety',
+  '/offerup-safety',
+  '/how-to-check-if-phone-stolen',
+  '/how-to-check-if-car-stolen',
   
   // Top 10 state VIN pages
   '/california-vin-lookup',
@@ -92,6 +122,49 @@ export const VALID_ROUTES = new Set([
   '/ohio-license-plate-lookup',
   '/north-carolina-license-plate-lookup',
   '/washington-license-plate-lookup',
+  '/arizona-license-plate-lookup',
+  
+  // Remaining 39 state license plate pages (GSC noindex fix - all have routes)
+  '/alabama-license-plate-lookup',
+  '/alaska-license-plate-lookup',
+  '/arkansas-license-plate-lookup',
+  '/colorado-license-plate-lookup',
+  '/connecticut-license-plate-lookup',
+  '/delaware-license-plate-lookup',
+  '/hawaii-license-plate-lookup',
+  '/idaho-license-plate-lookup',
+  '/indiana-license-plate-lookup',
+  '/iowa-license-plate-lookup',
+  '/kansas-license-plate-lookup',
+  '/kentucky-license-plate-lookup',
+  '/louisiana-license-plate-lookup',
+  '/maine-license-plate-lookup',
+  '/maryland-license-plate-lookup',
+  '/massachusetts-license-plate-lookup',
+  '/michigan-license-plate-lookup',
+  '/minnesota-license-plate-lookup',
+  '/mississippi-license-plate-lookup',
+  '/missouri-license-plate-lookup',
+  '/montana-license-plate-lookup',
+  '/nebraska-license-plate-lookup',
+  '/nevada-license-plate-lookup',
+  '/new-hampshire-license-plate-lookup',
+  '/new-jersey-license-plate-lookup',
+  '/new-mexico-license-plate-lookup',
+  '/north-dakota-license-plate-lookup',
+  '/oklahoma-license-plate-lookup',
+  '/oregon-license-plate-lookup',
+  '/rhode-island-license-plate-lookup',
+  '/south-carolina-license-plate-lookup',
+  '/south-dakota-license-plate-lookup',
+  '/tennessee-license-plate-lookup',
+  '/utah-license-plate-lookup',
+  '/vermont-license-plate-lookup',
+  '/virginia-license-plate-lookup',
+  '/west-virginia-license-plate-lookup',
+  '/wisconsin-license-plate-lookup',
+  '/wyoming-license-plate-lookup',
+  '/washington-dc-license-plate-lookup',
   
   // City pages
   '/stolen-check-los-angeles',
@@ -149,8 +222,9 @@ export const VALID_ROUTES = new Set([
   '/crunchbase',
 ]);
 
-// URLs that should redirect (not be in sitemap)
+// URLs that redirect (not be in sitemap) - GSC noindex fix list
 export const REDIRECT_URLS = new Set([
+  // Legacy app URLs
   '/mobile-app',
   '/account',
   '/imei-checker-app',
@@ -161,19 +235,53 @@ export const REDIRECT_URLS = new Set([
   '/verify-not-stolen',
   '/stolen-merchandise-check',
   '/verification-hub',
-  '/imei-check',
-  '/vin-check',
-  '/vin-verification',
-  // GSC December 2025 validation failures
-  '/verify/ebay',
-  '/verify/pawnshops',
-  '/app/features/history',
-  '/canada-vin-check',
-  '/california',
-  '/marketplace-integration',
-  '/check-android',
-  '/blog/best-imei-checker-tools-2025',
-  '/check-imei-before-buying',
+  
+  // GSC January 2026 noindex validation failures - redirect to real pages
+  '/for-pawnshops', // → /for-pawn-shops
+  '/careers', // → /about
+  '/trust-verification', // → /about
+  '/marketplace-safety', // → /facebook-marketplace-safety
+  '/pawn-shops', // → /for-pawn-shops
+  '/app/download', // → /download
+  '/app/sellers', // → /about
+  '/app/vs-carfax', // → /vs-carfax
+  '/app/vs-imeiinfo', // → /vs-imeiinfo
+  '/app/features/barcode-scanner', // → /app/barcode-scanner
+  '/app/stolen-database-search', // → /stolen-database
+  '/app/investigate-stolen-property', // → /verify
+  '/app/lookup-stolen-items', // → /verify
+  '/app/check-stolen-before-buying', // → /verify
+  '/app/carfax-alternative', // → /vs-carfax
+  '/app/philadelphia', // → /stolen-check-philadelphia
+  
+  // Blog posts with timestamps (redirected to clean versions)
+  '/blog/how-to-check-phone-stolen', // → /blog/how-to-check-if-phone-stolen
+  '/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983',
+  '/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027',
+  '/blog/how-law-enforcement-tracks-stolen-goods-1759827620043',
+  '/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229',
+  '/blog/playstation-5-serial-number-verification-guide-1',
+  '/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1',
+  '/blog/los-angeles-imei-verification-phone-fraud-protection-1',
+  '/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide',
+  '/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1',
+  '/blog/how-law-enforcement-tracks-stolen-goods-2',
+  '/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification',
+  '/blog/business-guide-preventing-stolen-goods',
+  '/blog/avoid-buying-stolen-laptops',
+  '/blog/5-signs-used-phone-might-be-stolen',
+  '/blog/craigslist-scam-prevention-item-verification-checklist',
+  '/blog/how-to-use-imei-checker-app',
+  '/blog/theft-trends-report-2024',
+  '/blog/bicycle-stolen-serial-number-check',
+  '/blog/verify-item-before-meetup',
+  
+  // State VIN pages (only top 10 have real pages)
+  '/alaska-vin-lookup',
+  '/connecticut-vin-lookup',
+  '/delaware-vin-lookup',
+  '/new-mexico-vin-lookup',
+  '/oklahoma-vin-lookup',
 ]);
 
 export interface ValidationResult {

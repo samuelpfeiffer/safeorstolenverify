@@ -509,7 +509,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # BLOG POST REDIRECTS (GSC noindex fix)
-# Specific blog posts from GSC report that don't have dedicated pages
+# Complete list from GSC "Excluded by noindex" report - Jan 2026
 # ============================================
 /blog/business-guide-preventing-stolen-goods              /blog  301!
 /blog/avoid-buying-stolen-laptops                         /blog  301!
@@ -528,6 +528,21 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide /blog/how-to-check-if-iphone-stolen  301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1 /blog/how-to-check-if-iphone-stolen  301!
 /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
+/blog/theft-trends-report-2024                            /blog  301!
+/blog/bicycle-stolen-serial-number-check                  /check-bike  301!
+/blog/verify-item-before-meetup                           /verify  301!
+
+# ============================================
+# GSC NOINDEX FIX - Jan 2026 Complete List
+# URLs from validation failed list (75 URLs)
+# ============================================
+# Careers and company pages
+/careers                                                  /about  301!
+/transparency                                             /about  301!
+/trust-verification                                       /about  301!
+
+# Real-time and marketplace (these now have routes but add fallbacks)
+/marketplace-safety                                       /facebook-marketplace-safety  301!
 
 # ============================================
 # BUSINESS PAGE REDIRECT
