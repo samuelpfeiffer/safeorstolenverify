@@ -469,13 +469,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /milwaukee-stolen-item-check                                    /verify  301!
 /baltimore-stolen-item-check                                    /verify  301!
 /florida-stolen-item-check                                      /florida-vin-lookup  301!
-# Additional GSC noindex fixes (2026-01-31)
+# Additional GSC noindex fixes (2026-01-31) - COMPLETE from both validation reports
 /tucson-stolen-item-check                                       /verify  301!
 /kentucky-stolen-item-check                                     /verify  301!
 /san-diego-stolen-item-check                                    /stolen-check-san-diego  301!
 /arkansas-stolen-item-check                                     /verify  301!
 /north-carolina-stolen-item-check                               /verify  301!
 /atlanta-stolen-item-check                                      /verify  301!
+/san-francisco-stolen-item-check                                /verify  301!
+/indianapolis-stolen-item-check                                 /verify  301!
 
 # State stolen-item-check pattern (catch-all)
 /*-stolen-item-check                                            /verify  301!
@@ -537,12 +539,14 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /app/check-stolen-before-buying      /verify  301!
 /app/carfax-alternative              /vs-carfax  301!
 /app/philadelphia                    /stolen-check-philadelphia  301!
-# GSC noindex fix 2026-01-31
+# GSC noindex/redirect fix 2026-01-31 - Complete from validation reports
 /app/ebay-verification               /verify  301!
 /app/offerup-safety                  /offerup-safety  301!
 /app/law-enforcement                 /for-law-enforcement  301!
 /app/firearms-checker                /firearms-check  301!
 /app/vs-imeipro                      /vs-imeiinfo  301!
+/app/vs-checkmend                    /vs-checkmend  301!
+/app/pawn-shops                      /for-pawn-shops  301!
 
 # ============================================
 # GUIDES DIRECTORY REDIRECTS
@@ -554,7 +558,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # BLOG POST REDIRECTS (GSC noindex fix)
-# Complete list from GSC "Excluded by noindex" report - Jan 2026
+# Complete list from GSC validation reports - Jan 2026
 # ============================================
 /blog/business-guide-preventing-stolen-goods              /blog  301!
 /blog/avoid-buying-stolen-laptops                         /blog  301!
@@ -576,6 +580,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/theft-trends-report-2024                            /blog  301!
 /blog/bicycle-stolen-serial-number-check                  /check-bike  301!
 /blog/verify-item-before-meetup                           /verify  301!
+/blog/firearm-serial-number-verification                  /firearms-check  301!
+/blog/pawn-shop-stolen-item-verification                  /for-pawn-shops  301!
+# GSC Page with redirect fix - blog posts with timestamps
+/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379 /blog/how-to-check-if-phone-stolen  301!
+/blog/playstation-5-serial-number-verification-guide      /check-ps5  301!
+/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281 /blog  301!
+/blog/how-law-enforcement-tracks-stolen-goods-1760086814875 /blog  301!
+/blog/scan-and-verify-using-safeorstolen-camera-feature   /app  301!
+/blog/los-angeles-imei-verification-phone-fraud-protection /stolen-check-los-angeles  301!
 
 # ============================================
 # GSC NOINDEX FIX - Jan 2026 Complete List
@@ -601,13 +614,16 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /statistics/*                      /about  301!
 
 # ============================================
-# GSC SOFT-404 FIXES (2026-01-29)
-# URLs from GSC report that return 200 but appear as soft 404
+# GSC SOFT-404 and PAGE WITH REDIRECT FIXES (2026-01-31)
+# Complete from both GSC validation reports
 # ============================================
 # City/State with /vin-check pattern
 /new-york/vin-check                 /new-york-vin-lookup  301!
+/new-york/imei-check                /imei-checker  301!
+/new-york/stolen-item-check         /stolen-check-new-york-city  301!
 /chicago/imei-check                 /imei-checker  301!
 /los-angeles/imei-check             /imei-checker  301!
+/los-angeles/stolen-item-check      /stolen-check-los-angeles  301!
 
 # Blog post variations
 /blog/how-to-check-if-phone-is-stolen  /blog/how-to-check-if-phone-stolen  301!
@@ -616,19 +632,55 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # App feature pages
 /app/features/push-notifications    /app/features  301!
+/app/features/history               /app/features  301!
 /app/auction-verification           /app  301!
+/app/buyer-protection-research      /app  301!
+/app/research-stolen-phone          /app  301!
+/app/facebook-marketplace-checker   /app  301!
+/app/pawnshop-verification          /app  301!
+/app/secondhand-research-app        /app  301!
 
 # Duplicate verification patterns
 /verify-vin-before-purchase        /vin-checker  301!
 /check-harley-davidson             /check-car  301!
-
-# REMOVED - rhode-island has a real route now
-# /rhode-island-license-plate-lookup has route in AppRoutes.tsx line 453
+/imei-check                        /imei-checker  301!
+/vin-check                         /vin-checker  301!
 
 # YouTube subpages without real routes
 /youtube/vin-check                 /youtube  301!
 /youtube/marketplace-safety        /youtube  301!
 /youtube/imei-check                /youtube  301!
+
+# ============================================
+# GSC PAGE WITH REDIRECT FIX - Complete list from validation
+# ============================================
+/database                          /stolen-database  301!
+/developer-portal                  /about  301!
+/bulk                              /pricing  301!
+/for-consumers                     /verify  301!
+/press                             /press-release  301!
+/stolen-goods-checker              /verify  301!
+/imei-checker-app                  /app  301!
+/stolen-items-database             /stolen-database  301!
+
+# Guides pages
+/guides/ebay-buyer-protection      /ebay-seller-verification  301!
+/guides/verify-craigslist-items    /verify  301!
+/guides/offerup-scam-protection    /offerup-safety  301!
+
+# Comparison pages  
+/vs-stolenregister                 /compare  301!
+
+# Community and misc pages
+/community                         /testimonials  301!
+/comprehensive-guide               /how-it-works  301!
+/data-sources                      /about  301!
+/resource-center                   /faq  301!
+/features                          /about  301!
+/testimonials                      /about  301!
+/mobile                            /app  301!
+/press-release                     /about  301!
+/check                             /verify  301!
 
 # ============================================
 # ACCOUNT REDIRECTS
