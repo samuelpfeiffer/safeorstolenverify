@@ -498,23 +498,39 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # ============================================
 # GUIDES DIRECTORY REDIRECTS
-# GSC FIX: Blog and guide pages hitting NotFound
+# NOTE: Real pages exist for ebay-buyer-protection, verify-craigslist-items, offerup-scam-protection
+# Only redirect non-existent guide URLs
 # ============================================
 /guides/imei-blacklist-guide       /about  301!
 /guides/imei-blacklist-explained   /about  301!
-/guides/ebay-buyer-protection      /verify  301!
-/guides/verify-craigslist-items    /verify  301!
-/guides/offerup-scam-protection    /verify  301!
-/guides/*                          /about  301!
 
 # ============================================
 # BLOG POST REDIRECTS (GSC noindex fix)
-# Specific blog posts that were hitting NotFound
+# Specific blog posts from GSC report that don't have dedicated pages
 # ============================================
 /blog/business-guide-preventing-stolen-goods              /blog  301!
-/blog/theft-trends-report-2024                            /blog  301!
 /blog/avoid-buying-stolen-laptops                         /blog  301!
-/blog/verify-item-before-meetup                           /blog  301!
+/blog/5-signs-used-phone-might-be-stolen                  /blog/how-to-check-if-phone-stolen  301!
+/blog/craigslist-scam-prevention-item-verification-checklist /guides/verify-craigslist-items  301!
+/blog/how-to-use-imei-checker-app                         /blog/imei-checker-app-download  301!
+/blog/how-law-enforcement-tracks-stolen-goods-1759827620043 /blog  301!
+/blog/how-law-enforcement-tracks-stolen-goods-2           /blog  301!
+/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983 /blog  301!
+/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027 /blog  301!
+/blog/how-pawn-shops-can-prevent-buying-stolen-goods-1759482018229 /blog/pawn-shop-stolen-item-verification  301!
+/blog/how-to-check-phone-stolen                           /blog/how-to-check-if-phone-stolen  301!
+/blog/playstation-5-serial-number-verification-guide-1    /check-ps5  301!
+/blog/stolen-item-checker-in-new-york-city-complete-2025-guide-1 /stolen-check-new-york-city  301!
+/blog/los-angeles-imei-verification-phone-fraud-protection-1 /stolen-check-los-angeles  301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide /blog/how-to-check-if-iphone-stolen  301!
+/blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1 /blog/how-to-check-if-iphone-stolen  301!
+/blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
+
+# ============================================
+# BUSINESS PAGE REDIRECT
+# GSC FIX: /for-pawnshops (no hyphen) → /for-pawn-shops (with hyphen)
+# ============================================
+/for-pawnshops                    /for-pawn-shops  301!
 
 # ============================================
 # STATISTICS DIRECTORY REDIRECTS
