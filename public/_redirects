@@ -274,23 +274,25 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /how-to-verify-car-not-stolen                      /check-car    301!
 /how-to-check-if-phone-is-stolen                   /check-phone  301!
 /how-to-check-if-laptop-stolen                     /check-laptop 301!
-/how-to-check-if-item-stolen                       /verify       301!
+# NOTE: /how-to-check-if-item-stolen has a real route in AppRoutes.tsx - DO NOT redirect
 
 # ============================================
-# MARKETPLACE VERIFICATION REDIRECTS (Legacy paths)
+# MARKETPLACE VERIFICATION REDIRECTS (Legacy paths only)
+# NOTE: These have real routes in AppRoutes.tsx - DO NOT redirect:
+# /facebook-marketplace-stolen-check, /ebay-stolen-item-check, /craigslist-safety-verification
+# /offerup-verify-not-stolen, /mercari-stolen-check, /poshmark-stolen-check, /stockx-verification, /letgo-stolen-check
 # ============================================
-/facebook-marketplace-verification                  /verify  301!
-/facebook-marketplace-stolen-check                  /verify  301!
-/ebay-stolen-item-checker                           /verify  301!
-/craigslist-verification-guide                      /verify  301!
-/craigslist-verification                            /verify  301!
-/ebay-verification                                  /verify  301!
-/verify/facebook-marketplace  /verify  301!
-/verify/ebay                  /verify  301!
-/verify/pawnshops             /verify  301!
-/verify/offerup               /verify  301!
-/verify/auctions              /verify  301!
-/verify/craigslist            /verify  301!
+/facebook-marketplace-verification                  /facebook-marketplace-stolen-check  301!
+/craigslist-verification-guide                      /craigslist-safety-verification  301!
+/craigslist-verification                            /craigslist-safety-verification  301!
+/ebay-verification                                  /ebay-stolen-item-check  301!
+/verify/facebook-marketplace  /facebook-marketplace-stolen-check  301!
+/verify/ebay                  /ebay-stolen-item-check  301!
+/verify/pawnshops             /for-pawn-shops  301!
+/verify/offerup               /offerup-verify-not-stolen  301!
+/verify/auctions              /for-auction-houses  301!
+/verify/craigslist            /craigslist-safety-verification  301!
+/ebay-stolen-item-checker     /ebay-stolen-item-check  301!
 
 # ============================================
 # TERMS/LEGAL PAGE REDIRECTS
@@ -596,7 +598,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # Careers and company pages
 /careers                                                  /about  301!
-/transparency                                             /about  301!
+# NOTE: /transparency has a real route in AppRoutes.tsx (TransparencyPage) - DO NOT redirect
 /trust-verification                                       /about  301!
 
 # Real-time and marketplace (these now have routes but add fallbacks)
@@ -663,23 +665,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /imei-checker-app                  /app  301!
 /stolen-items-database             /stolen-database  301!
 
-# Guides pages
-/guides/ebay-buyer-protection      /ebay-seller-verification  301!
-/guides/verify-craigslist-items    /verify  301!
-/guides/offerup-scam-protection    /offerup-safety  301!
+# ============================================
+# IMPORTANT: DO NOT redirect URLs that have real routes in AppRoutes.tsx
+# These pages have real React components and should NOT be redirected:
+# /guides/ebay-buyer-protection, /guides/verify-craigslist-items, /guides/offerup-scam-protection
+# /vs-stolenregister, /community, /comprehensive-guide, /data-sources
+# /resource-center, /features, /testimonials, /mobile, /press-release
+# ============================================
 
-# Comparison pages  
-/vs-stolenregister                 /compare  301!
-
-# Community and misc pages
-/community                         /testimonials  301!
-/comprehensive-guide               /how-it-works  301!
-/data-sources                      /about  301!
-/resource-center                   /faq  301!
-/features                          /about  301!
-/testimonials                      /about  301!
-/mobile                            /app  301!
-/press-release                     /about  301!
+# Only redirect legacy URLs that truly have no React route
 /check                             /verify  301!
 
 # ============================================
