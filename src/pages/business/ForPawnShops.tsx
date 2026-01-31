@@ -70,7 +70,7 @@ export default function ForPawnShops() {
         <section className="max-w-4xl mx-auto mb-16 prose prose-lg">
           <h2>Why Pawn Shops Choose SafeOrStolen</h2>
           <p>Pawn shops face unique challenges: accepting stolen goods can result in asset seizure, criminal charges, and license revocation. State laws require verification before accepting items, but manual checks are slow, incomplete, and error-prone.</p>
-          <p>SafeOrStolen automates compliance by checking 100+ databases instantly—including FBI NCIC, state law enforcement, carrier blacklists, and international theft records. Every check creates a timestamped compliance record admissible in court.</p>
+          <p>SafeOrStolen automates compliance by checking 100+ databases instantly—including federal law enforcement records, state databases, carrier blacklists, and international theft registries. Every check creates a timestamped compliance record admissible in court.</p>
 
           <h3>What We Verify for Pawn Shops</h3>
           <ul>

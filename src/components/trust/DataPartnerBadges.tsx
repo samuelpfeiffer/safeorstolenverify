@@ -8,12 +8,12 @@ interface DataPartnerBadgesProps {
 }
 
 const DATA_PARTNERS = [
-  { name: 'NCIC (FBI)', description: 'Federal Law Enforcement', icon: Shield, verified: true },
-  { name: 'NICB', description: 'Insurance Crime Bureau', icon: Lock, verified: true },
-  { name: 'GSMA', description: 'Global IMEI Registry', icon: Globe, verified: true },
-  { name: 'BikeIndex', description: '1.4M+ Bikes Cataloged', icon: Database, verified: true },
-  { name: 'Hotgunz', description: 'Firearms Registry', icon: Server, verified: true },
-  { name: 'NHTSA', description: 'Vehicle Records', icon: CheckCircle, verified: true },
+  { name: 'Federal Records', description: 'Law Enforcement Databases', icon: Shield, verified: true },
+  { name: 'Insurance Bureau', description: 'National Theft Reports', icon: Lock, verified: true },
+  { name: 'Device Registry', description: 'Global IMEI Blacklists', icon: Globe, verified: true },
+  { name: 'Bicycle Registry', description: '1.4M+ Bikes Cataloged', icon: Database, verified: true },
+  { name: 'Firearms Database', description: 'National Gun Registry', icon: Server, verified: true },
+  { name: 'Vehicle Records', description: 'VIN & Title History', icon: CheckCircle, verified: true },
 ];
 
 export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({ 

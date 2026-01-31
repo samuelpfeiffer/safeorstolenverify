@@ -240,15 +240,15 @@ const PartialSerialNumberSearchPage = () => {
             <h2 className="text-3xl font-bold mb-6">Databases with Partial Search Support</h2>
             <div className="space-y-4 mb-8">
               <div className="p-4 bg-card rounded-lg border-l-4 border-primary">
-                <h3 className="font-bold">BikeIndex (Bicycles)</h3>
+                <h3 className="font-bold">Bicycle Registries</h3>
                 <p className="text-muted-foreground">Full fuzzy matching across 1M+ registered bikes</p>
               </div>
               <div className="p-4 bg-card rounded-lg border-l-4 border-primary">
-                <h3 className="font-bold">SafeOrStolen User Reports</h3>
-                <p className="text-muted-foreground">Pattern matching on user-reported stolen items</p>
+                <h3 className="font-bold">User-Reported Stolen Items</h3>
+                <p className="text-muted-foreground">Pattern matching on community-reported stolen items</p>
               </div>
               <div className="p-4 bg-card rounded-lg border-l-4 border-primary">
-                <h3 className="font-bold">HotGunz (Firearms)</h3>
+                <h3 className="font-bold">Firearms Databases</h3>
                 <p className="text-muted-foreground">Partial matching on firearm serial numbers</p>
               </div>
             </div>
@@ -307,7 +307,7 @@ const PartialSerialNumberSearchPage = () => {
               </Link>
               <Link to="/check-bike" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
                 <h3 className="font-bold mb-2">Bike Serial Lookup</h3>
-                <p className="text-sm text-muted-foreground">BikeIndex integration</p>
+                <p className="text-sm text-muted-foreground">National bicycle registry search</p>
               </Link>
             </div>
           </div>
