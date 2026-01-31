@@ -283,6 +283,11 @@ const StolenDatabasePage = lazy(() => import('@/pages/StolenDatabasePage'));
 const StolenItemDetailPage = lazy(() => import('@/pages/StolenItemDetailPage'));
 const SharedReportPage = lazy(() => import('@/pages/SharedReportPage'));
 
+// Guide Pages
+const EbayBuyerProtection = lazy(() => import('@/pages/guides/EbayBuyerProtection'));
+const VerifyCraigslistItems = lazy(() => import('@/pages/guides/VerifyCraigslistItems'));
+const OfferupScamProtection = lazy(() => import('@/pages/guides/OfferupScamProtection'));
+
 // NEW HIGH-TRAFFIC SEO PAGES (Competitive Keyword Strategy 2026)
 const StolenPhoneCheckerPage = lazy(() => import('@/pages/StolenPhoneCheckerPage'));
 const PhoneBlacklistCheckPage = lazy(() => import('@/pages/PhoneBlacklistCheckPage'));
@@ -396,6 +401,11 @@ export const AppRoutes = () => {
         <Route path="/poshmark-stolen-check" element={<PoshmarkStolenCheck />} />
         <Route path="/stockx-verification" element={<StockXVerification />} />
         <Route path="/letgo-stolen-check" element={<LetgoStolenCheck />} />
+
+        {/* GUIDE PAGES */}
+        <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtection />} />
+        <Route path="/guides/verify-craigslist-items" element={<VerifyCraigslistItems />} />
+        <Route path="/guides/offerup-scam-protection" element={<OfferupScamProtection />} />
 
         {/* TOP 11 STATE LICENSE PLATE PAGES (Individual files) */}
         <Route path="/california-license-plate-lookup" element={<CaliforniaLicensePlateLookupPage />} />
