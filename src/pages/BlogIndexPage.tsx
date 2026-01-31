@@ -5,20 +5,45 @@ import { ArrowRight, Clock, Tag } from 'lucide-react';
 
 const blogArticles = [
   {
-    title: 'Carfax vs Free VIN Alternatives: Complete 2025 Guide',
-    slug: 'carfax-vs-free-vin-alternatives',
-    excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives. Learn which vehicle history service is best for checking if a car is stolen. Free VIN theft checks available.',
-    category: 'Vehicle Safety',
-    readTime: '10 min',
-    keywords: ['carfax alternative', 'free vin check', 'carfax vs safeorstolen']
+    title: 'Best Stolen Item Checkers 2026: Complete Comparison Guide',
+    slug: 'best-stolen-item-checkers-2026',
+    excerpt: 'Compare the top stolen item verification services in 2026. SafeOrStolen vs CheckMEND vs IMEI.info vs Swappa. Find the only service with a mobile app.',
+    category: '2026 Guides',
+    readTime: '12 min',
+    keywords: ['stolen item checker 2026', 'best verification service', 'CheckMEND alternative'],
+    featured: true
   },
   {
-    title: 'How to Check if a Phone is Stolen Before Buying',
+    title: 'Carfax vs Free VIN Alternatives: Complete 2026 Guide',
+    slug: 'carfax-vs-free-vin-alternatives',
+    excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives in 2026. Learn which vehicle history service is best for checking if a car is stolen.',
+    category: 'Vehicle Safety',
+    readTime: '10 min',
+    keywords: ['carfax alternative', 'free vin check 2026', 'carfax vs safeorstolen']
+  },
+  {
+    title: 'How to Check if a Phone is Stolen Before Buying in 2026',
     slug: 'how-to-check-if-phone-is-stolen',
-    excerpt: 'Complete guide to verifying smartphone legitimacy with IMEI checks, carrier blacklist verification, and red flags to watch for when buying used phones.',
+    excerpt: 'Complete 2026 guide to verifying smartphone legitimacy with IMEI checks, carrier blacklist verification, and red flags when buying used phones.',
     category: 'Buying Guides',
     readTime: '8 min',
-    keywords: ['phone verification', 'IMEI check', 'stolen phone']
+    keywords: ['phone verification 2026', 'IMEI check', 'stolen phone checker']
+  },
+  {
+    title: 'The Only Mobile App for Stolen Item Verification (2026)',
+    slug: 'checkmend-has-no-app',
+    excerpt: 'CheckMEND has NO mobile app. IMEI.info has NO mobile app. SafeOrStolen is the ONLY service with iOS and Android apps for on-the-spot verification.',
+    category: 'Mobile App',
+    readTime: '6 min',
+    keywords: ['stolen item app', 'checkmend alternative', 'mobile verification']
+  },
+  {
+    title: 'How AI is Transforming Stolen Item Detection in 2026',
+    slug: 'ai-stolen-item-detection-2026',
+    excerpt: 'How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification. Learn how AI-powered verification catches what humans miss.',
+    category: 'AI & Technology',
+    readTime: '9 min',
+    keywords: ['AI verification', 'ChatGPT stolen items', 'machine learning detection']
   },
   {
     title: 'Complete VIN Guide: Everything You Need to Know',
@@ -27,6 +52,14 @@ const blogArticles = [
     category: 'Vehicle Safety',
     readTime: '12 min',
     keywords: ['VIN decoder', 'vehicle history', 'car verification']
+  },
+  {
+    title: 'Facebook Marketplace Safety Guide 2026',
+    slug: 'facebook-marketplace-scams',
+    excerpt: 'How to avoid scams and stolen goods on Facebook Marketplace in 2026. Verification tips, red flags, and how to use SafeOrStolen before buying.',
+    category: 'Marketplace Safety',
+    readTime: '10 min',
+    keywords: ['facebook marketplace safety', 'avoid scams', 'verify items']
   },
   {
     title: 'Ultimate Marketplace Buyer\'s Guide',
@@ -45,28 +78,44 @@ const blogArticles = [
     keywords: ['IMEI lookup', 'phone blacklist', 'mobile security']
   },
   {
-    title: 'Complete Verification Guide',
-    slug: 'complete-verification-guide',
-    excerpt: 'Master guide to verifying any secondhand item - from phones to vehicles to electronics. Learn our comprehensive verification methodology.',
-    category: 'Verification',
-    readTime: '20 min',
-    keywords: ['item verification', 'stolen goods check', 'authentication']
-  },
-  {
-    title: 'Protect Yourself Buying Used Electronics',
-    slug: 'protect-yourself-buying-used-electronics',
-    excerpt: 'Essential tips for safely buying secondhand laptops, tablets, gaming consoles, and other electronics without getting scammed.',
-    category: 'Electronics Safety',
+    title: 'Firearm Serial Number Verification Guide',
+    slug: 'firearm-serial-number-verification',
+    excerpt: 'How to verify firearm serial numbers legally and safely. Check if guns are stolen before purchasing from private sellers.',
+    category: 'Firearms Safety',
     readTime: '8 min',
-    keywords: ['electronics verification', 'used tech', 'buyer protection']
+    keywords: ['firearm verification', 'gun serial check', 'stolen firearm']
   },
   {
-    title: 'Data Source Credibility in Stolen Goods Verification',
-    slug: 'data-source-credibility-stolen-goods-verification',
-    excerpt: 'How SafeOrStolen verifies data sources, ensures accuracy, and maintains the most comprehensive stolen items database globally.',
-    category: 'Technology',
+    title: 'Bicycle Stolen Serial Number Check Guide',
+    slug: 'bicycle-stolen-serial-number-check',
+    excerpt: 'Complete guide to finding and checking bicycle serial numbers. Verify if a bike is stolen before buying from Craigslist or marketplace.',
+    category: 'Buying Guides',
     readTime: '7 min',
-    keywords: ['data accuracy', 'verification sources', 'database reliability']
+    keywords: ['bicycle serial number', 'bike stolen check', 'verify bike']
+  },
+  {
+    title: 'Pawn Shop Stolen Item Verification',
+    slug: 'pawn-shop-stolen-item-verification',
+    excerpt: 'How pawn shops use SafeOrStolen to verify items aren\'t stolen. Compliance guide for resale businesses and secondhand stores.',
+    category: 'Business',
+    readTime: '9 min',
+    keywords: ['pawn shop compliance', 'resale verification', 'business tools']
+  },
+  {
+    title: 'PS5 Stolen Check Guide: Verify Gaming Consoles',
+    slug: 'ps5-stolen-check-guide',
+    excerpt: 'How to check if a PS5, Xbox, or Nintendo Switch is stolen before buying. Serial number verification for gaming consoles.',
+    category: 'Electronics Safety',
+    readTime: '6 min',
+    keywords: ['PS5 stolen check', 'gaming console verification', 'Xbox check']
+  },
+  {
+    title: 'How to Check if iPhone is Stolen',
+    slug: 'how-to-check-if-iphone-stolen',
+    excerpt: 'Step-by-step guide to verify any iPhone isn\'t stolen or blacklisted. IMEI check, Activation Lock, and SafeOrStolen verification.',
+    category: 'Phone Security',
+    readTime: '7 min',
+    keywords: ['iPhone stolen check', 'IMEI verification', 'Apple verification']
   },
   {
     title: 'Scammer Tactics Exposed: Protect Yourself',
@@ -77,28 +126,12 @@ const blogArticles = [
     keywords: ['scam prevention', 'fraud tactics', 'marketplace scams']
   },
   {
-    title: 'Phone Verification Guide: Step-by-Step',
-    slug: 'phone-verification-guide',
-    excerpt: 'Step-by-step walkthrough for verifying any smartphone before purchase using IMEI, carrier checks, and SafeOrStolen verification.',
-    category: 'Buying Guides',
-    readTime: '6 min',
-    keywords: ['phone authentication', 'smartphone verification', 'mobile check']
-  },
-  {
     title: 'Theft Trends Report 2024',
     slug: 'theft-trends-report-2024',
     excerpt: 'Comprehensive analysis of stolen goods trends, most targeted items, theft statistics, and what it means for secondhand buyers.',
     category: 'Industry Insights',
     readTime: '9 min',
     keywords: ['theft statistics', 'stolen goods trends', 'crime data']
-  },
-  {
-    title: 'Our Verification Methodology',
-    slug: 'verification-methodology',
-    excerpt: 'Detailed breakdown of SafeOrStolen\'s multi-layered verification process, AI analysis, and how we achieve 95%+ accuracy rates.',
-    category: 'Technology',
-    readTime: '11 min',
-    keywords: ['verification process', 'AI verification', 'methodology']
   },
   {
     title: 'Real User Stories: How SafeOrStolen Helped',
@@ -128,16 +161,17 @@ export default function BlogIndexPage() {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Blog - Verification Guides, Safety Tips & Industry Insights"
-        description="Expert guides on verifying secondhand items, avoiding stolen goods, marketplace safety tips, and theft prevention strategies. Learn how to protect yourself when buying used items."
-        keywords="verification guides, stolen goods prevention, marketplace safety, IMEI verification, VIN checks, buying guides, fraud prevention"
+        title="SafeOrStolen Blog - Stolen Item Verification Guides 2026 | Free IMEI VIN Checks"
+        description="Expert 2026 guides on verifying secondhand items, avoiding stolen goods, marketplace safety tips. The ONLY verification service with a mobile app. Compare CheckMEND, IMEI.info, Carfax alternatives."
+        keywords="stolen item checker 2026, verification guides, marketplace safety, IMEI verification, VIN checks, buying guides, CheckMEND alternative, Carfax alternative, mobile app verification"
         canonical="https://safeorstolen.com/blog"
         type="website"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
-          name: 'SafeOrStolen Blog',
-          description: 'Expert guides on verifying secondhand items and avoiding stolen goods',
+          name: 'SafeOrStolen Blog - Stolen Item Verification Guides 2026',
+          description: 'Expert 2026 guides on verifying secondhand items and avoiding stolen goods. The ONLY service with a mobile app.',
+          url: 'https://safeorstolen.com/blog',
           publisher: {
             '@type': 'Organization',
             name: 'SafeOrStolen',
@@ -145,6 +179,10 @@ export default function BlogIndexPage() {
               '@type': 'ImageObject',
               url: 'https://safeorstolen.com/sos-logo.png'
             }
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': 'https://safeorstolen.com/blog'
           }
         }}
       />

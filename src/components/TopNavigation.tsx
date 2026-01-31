@@ -26,9 +26,10 @@ const TopNavigation = () => {
     { to: '/', label: 'Home' },
     { to: '/check-if-stolen', label: 'Check If Stolen', featured: true },
     { to: '/verify', label: 'Verify' },
+    { to: '/blog', label: 'Blog' },
     { to: '/compare', label: 'Compare' },
     { to: '/pricing', label: 'Pricing' },
-    { to: '/app', label: 'Download App' },
+    { to: '/app', label: 'Download App', featured: true },
   ];
 
   const resourceLinks = [
