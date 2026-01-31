@@ -11,8 +11,8 @@ export const CompetitiveAnalytics: React.FC = () => {
       {/* Competitive Intelligence Meta Tags */}
       <meta name="competitive-analysis" content="tracking-enabled" />
       <meta name="market-position" content="stolen-goods-verification-leader" />
-      <meta name="competitor-keywords" content="checkserial, stolenproperty, imeicheck, vincheck, carfax, swappa" />
-      <meta name="seo-strategy" content="dominate-stolen-goods-verification-serps" />
+      <meta name="competitor-keywords" content="stolen item check, imei check, vin check, serial number lookup" />
+      <meta name="seo-strategy" content="stolen-goods-verification-leader" />
       
       {/* Search Engine Crawling Directives */}
       <meta name="crawl-priority" content="high" />

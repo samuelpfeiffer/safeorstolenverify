@@ -5,57 +5,57 @@ import { Shield, Database, CheckCircle, Users, Globe, Lock } from 'lucide-react'
 
 const dataSources = [
   {
-    name: "IMEI.info",
-    logo: "/lovable-uploads/a8b08d24-e3e1-4c4b-85c9-5093cb107354.png",
+    name: "Global Device Registry",
+    logo: null,
     type: "Mobile Device Database",
     description: "Official IMEI verification and stolen device registry",
     coverage: "Global mobile devices",
     verification: "Law enforcement integrated",
-    url: "https://www.imei.info"
+    url: "#"
   },
   {
-    name: "Bike Index",
-    logo: "/images/partners/bikeindex-logo.svg",
+    name: "National Bicycle Registry",
+    logo: null,
     type: "Bicycle Registry",
-    description: "World's largest open bicycle registry",
-    coverage: "500k+ registered bikes",
+    description: "Comprehensive bicycle theft database",
+    coverage: "1M+ registered bikes",
     verification: "Police department verified",
-    url: "https://bikeindex.org"
+    url: "#"
   },
   {
-    name: "HotGunz",
-    logo: "/lovable-uploads/03461ed0-873b-46ba-8871-8ed6fd1c51b2.png",
-    type: "Firearms Database",
+    name: "Firearms Database",
+    logo: null,
+    type: "Firearms Registry",
     description: "Stolen firearms verification system",
     coverage: "Federal firearm records",
-    verification: "ATF data integration",
-    url: "https://hotgunz.io"
+    verification: "Federal data integration",
+    url: "#"
   },
   {
-    name: "Recipero",
+    name: "Asset Recovery Network",
     logo: null,
     type: "Asset Recovery",
     description: "Professional asset recovery services",
     coverage: "Commercial & consumer items",
     verification: "Insurance industry partner",
-    url: "https://www.recipero.com"
+    url: "#"
   },
   {
-    name: "CheckMEND Integration",
+    name: "Electronics Verification",
     logo: null,
-    type: "Electronics Verification",
+    type: "Electronics Database",
     description: "Official electronics stolen database",
-    coverage: "UK & European electronics",
+    coverage: "Global electronics coverage",
     verification: "Police & insurance verified",
     url: "#"
   },
   {
-    name: "NCIC Network Access",
+    name: "Federal Law Enforcement",
     logo: null,
     type: "Federal Database",
-    description: "National Crime Information Center integration",
+    description: "National crime information integration",
     coverage: "Federal crime database",
-    verification: "FBI authorized access",
+    verification: "Authorized law enforcement access",
     url: "#"
   }
 ];
@@ -175,11 +175,11 @@ export const DataSourceCredibility: React.FC = () => {
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <Badge variant="secondary" className="bg-green-100 text-green-800">
                 <CheckCircle className="h-3 w-3 mr-1" />
-                NCIC Network Access
+                Federal Database Access
               </Badge>
               <Badge variant="secondary" className="bg-blue-100 text-blue-800">
                 <Database className="h-3 w-3 mr-1" />
-                Multi-Source Verification
+                100+ Verified Sources
               </Badge>
               <Badge variant="secondary" className="bg-purple-100 text-purple-800">
                 <Shield className="h-3 w-3 mr-1" />

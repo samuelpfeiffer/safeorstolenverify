@@ -137,9 +137,9 @@ const PressPage = () => {
               </p>
               
               <p className="text-lg text-muted-foreground mb-6">
-                Our platform searches over 100 databases including GSMA (global phone registry), NCIC 
-                (FBI stolen vehicle database), carrier blacklists, and law enforcement records to provide 
-                comprehensive verification in under 3 seconds.
+                Our platform searches over 100 databases including global device registries, 
+                federal law enforcement records, carrier blacklists, and insurance claims databases 
+                to provide comprehensive verification in under 3 seconds.
               </p>
               
               <p className="text-lg text-muted-foreground">

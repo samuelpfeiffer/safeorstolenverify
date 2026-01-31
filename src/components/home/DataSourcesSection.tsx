@@ -3,20 +3,20 @@ import { Shield, Building2, FileCheck, Globe, Database, Lock } from 'lucide-reac
 const dataSources = [
   {
     icon: Shield,
-    title: 'Police Databases',
-    description: 'Direct access to law enforcement stolen property records',
+    title: 'Law Enforcement',
+    description: 'Federal & state stolen property records',
     color: 'text-blue-500',
   },
   {
     icon: Building2,
-    title: 'NICB Registry',
-    description: 'National Insurance Crime Bureau theft reports',
+    title: 'Insurance Records',
+    description: 'National insurance theft & loss reports',
     color: 'text-red-500',
   },
   {
     icon: FileCheck,
-    title: 'Insurance Claims',
-    description: 'Cross-referenced with insurance loss records',
+    title: 'Claims Databases',
+    description: 'Cross-referenced insurance claim records',
     color: 'text-amber-500',
   },
   {
@@ -27,14 +27,14 @@ const dataSources = [
   },
   {
     icon: Database,
-    title: 'Carrier Records',
-    description: 'IMEI blacklists from mobile carriers worldwide',
+    title: 'Carrier Blacklists',
+    description: 'Device blacklists from mobile carriers worldwide',
     color: 'text-purple-500',
   },
   {
     icon: Lock,
-    title: 'Pawn & Resale',
-    description: 'Industry databases from pawn shops and resellers',
+    title: 'Industry Registries',
+    description: 'Pawn shop & reseller verification networks',
     color: 'text-orange-500',
   },
 ];
