@@ -38,6 +38,13 @@ const NICBVINCheckAlternative = lazy(() => import('@/pages/comparisons/NICBVINCh
 const BestFreeIMEICheckers2025 = lazy(() => import('@/pages/comparisons/BestFreeIMEICheckers2025'));
 const TopVINCheckServices2025 = lazy(() => import('@/pages/comparisons/TopVINCheckServices2025'));
 
+// 2026 Competitor Comparison Pages (Beat the Competition SEO)
+const VsDeviceCheckCA = lazy(() => import('@/pages/comparisons/VsDeviceCheckCA'));
+const VsStolenPhoneChecker = lazy(() => import('@/pages/comparisons/VsStolenPhoneChecker'));
+const VsVinCheckInfo = lazy(() => import('@/pages/comparisons/VsVinCheckInfo'));
+const VsFastBound = lazy(() => import('@/pages/comparisons/VsFastBound'));
+const BestStolenItemCheckers2026 = lazy(() => import('@/pages/comparisons/BestStolenItemCheckers2026'));
+
 // Item Landing Pages (High-Value SEO)
 const IMEICheckerPage = lazy(() => import('@/pages/IMEICheckerPage'));
 const VINCheckerPage = lazy(() => import('@/pages/VINCheckerPage'));
@@ -401,6 +408,13 @@ export const AppRoutes = () => {
         <Route path="/poshmark-stolen-check" element={<PoshmarkStolenCheck />} />
         <Route path="/stockx-verification" element={<StockXVerification />} />
         <Route path="/letgo-stolen-check" element={<LetgoStolenCheck />} />
+
+        {/* 2026 COMPETITOR COMPARISON PAGES (Beat the Competition SEO) */}
+        <Route path="/vs-devicecheck-ca" element={<VsDeviceCheckCA />} />
+        <Route path="/vs-stolenphonechecker" element={<VsStolenPhoneChecker />} />
+        <Route path="/vs-vincheck-info" element={<VsVinCheckInfo />} />
+        <Route path="/vs-fastbound" element={<VsFastBound />} />
+        <Route path="/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
 
         {/* GUIDE PAGES */}
         <Route path="/guides/ebay-buyer-protection" element={<EbayBuyerProtection />} />
