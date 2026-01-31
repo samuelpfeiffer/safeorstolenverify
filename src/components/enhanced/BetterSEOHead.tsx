@@ -24,7 +24,7 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
   image = "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
   url,
   type = "website",
-  author = "Safe or Stolen",
+  author = "SafeOrStolen",
   publishedTime,
   modifiedTime,
   canonical,
@@ -32,7 +32,7 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
   noindex = false,
   nofollow = false
 }) => {
-  const fullTitle = title.includes('Safe or Stolen') ? title : `${title} | Safe or Stolen`;
+  const fullTitle = title.includes('SafeOrStolen') ? title : `${title} | SafeOrStolen`;
   const currentPath = typeof window !== 'undefined' ? window.location.pathname.split('?')[0].split('#')[0] : '/';
   const canonicalUrl = canonical 
     ? (canonical.startsWith('http') ? canonical : `https://safeorstolen.com${canonical}`) 
@@ -58,7 +58,7 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
       <meta property="og:image" content={imageUrl} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Safe or Stolen" />
+      <meta property="og:site_name" content="SafeOrStolen" />
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
       {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
@@ -92,8 +92,8 @@ export const BetterSEOHead: React.FC<BetterSEOHeadProps> = ({
       <link rel="canonical" href={canonicalUrl} />
 
       {/* PWA Meta */}
-      <meta name="application-name" content="Safe or Stolen" />
-      <meta name="apple-mobile-web-app-title" content="Safe or Stolen" />
+      <meta name="application-name" content="SafeOrStolen" />
+      <meta name="apple-mobile-web-app-title" content="SafeOrStolen" />
     </Helmet>
   );
 };

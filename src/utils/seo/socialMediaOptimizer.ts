@@ -41,7 +41,7 @@ export const generateOpenGraphTags = (metadata: SocialMediaMetadata) => {
     'og:image:alt': imageAlt,
     'og:image:type': 'image/png',
     'og:url': url || 'https://safeorstolen.com',
-    'og:site_name': 'Safe or Stolen',
+    'og:site_name': 'SafeOrStolen',
     'og:locale': 'en_US',
     'og:locale:alternate': ['es_US', 'fr_FR', 'de_DE']
   };

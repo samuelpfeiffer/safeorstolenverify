@@ -11,7 +11,7 @@ export const AppLoadingScreen: React.FC = () => {
     <div className="min-h-screen bg-background flex items-center justify-center">
       {/* SEO-Friendly Content (Hidden from view but visible to crawlers) */}
       <div className="sr-only">
-        <h1>Safe or Stolen - Verify Serial Numbers, IMEI, and VIN Numbers</h1>
+        <h1>SafeOrStolen - Verify Serial Numbers, IMEI, and VIN Numbers</h1>
         <p>Check if phones, electronics, and vehicles are stolen before you buy.</p>
         <nav>
           <a href="/">Home</a>

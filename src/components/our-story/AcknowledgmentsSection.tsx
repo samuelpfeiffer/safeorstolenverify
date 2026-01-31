@@ -28,7 +28,7 @@ export const AcknowledgmentsSection = () => {
                     <span className="text-gray-400">Olympia, WA</span>
                   </div>
                   
-                  <p className="text-gray-300 leading-relaxed mb-4">Doug's generous contribution of $1,500 helped us take our first crucial steps toward building Safe Or Stolen. His early belief in our mission to protect innocent people like Glen gave us the foundation we needed to begin this journey.</p>
+                  <p className="text-gray-300 leading-relaxed mb-4">Doug's generous contribution of $1,500 helped us take our first crucial steps toward building SafeOrStolen. His early belief in our mission to protect innocent people like Glen gave us the foundation we needed to begin this journey.</p>
                   
                   <p className="text-sos-orange font-semibold">
                     Thank you, Doug and Max, for being part of Glen's legacy and helping us protect millions of innocent people worldwide.

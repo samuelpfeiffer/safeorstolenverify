@@ -81,7 +81,7 @@ export const LaunchTestDashboard = () => {
           <h1 className="text-3xl font-bold text-white">Launch Preparation Dashboard</h1>
         </div>
         <p className="text-gray-400">
-          Comprehensive testing and validation for Safe or Stolen production launch
+          Comprehensive testing and validation for SafeOrStolen production launch
         </p>
       </div>
 

@@ -20,7 +20,7 @@ export const LinkBuildingHelper: React.FC<LinkBuildingHelperProps> = ({
       "name": pageTitle,
       "publisher": {
         "@type": "Organization",
-        "name": "Safe Or Stolen",
+        "name": "SafeOrStolen",
         "url": "https://safeorstolen.com"
       },
       "isAccessibleForFree": true,
@@ -42,7 +42,7 @@ export const LinkBuildingHelper: React.FC<LinkBuildingHelperProps> = ({
             "IMEI or VIN number",
             "Purchase documentation"
           ],
-          "tool": "Safe Or Stolen Verification System",
+          "tool": "SafeOrStolen Verification System",
           "step": [
             {
               "@type": "HowToStep",
@@ -128,7 +128,7 @@ export const LinkBuildingHelper: React.FC<LinkBuildingHelperProps> = ({
       <meta property="og:image" content={socialMeta.image} />
       <meta property="og:url" content={socialMeta.url} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Safe Or Stolen" />
+      <meta property="og:site_name" content="SafeOrStolen" />
       
       {/* Twitter Card optimization */}
       <meta name="twitter:card" content="summary_large_image" />

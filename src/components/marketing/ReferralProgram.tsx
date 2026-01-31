@@ -64,7 +64,7 @@ export const ReferralProgram = () => {
   const progressToNext = stats.nextMilestone > 0 ? (stats.referralsCount / stats.nextMilestone) * 100 : 0;
 
   const shareOnSocial = (platform: string) => {
-    const message = "Check out Safe Or Stolen - verify if items are stolen before you buy! Use my referral link to get 5 free verifications:";
+    const message = "Check out SafeOrStolen - verify if items are stolen before you buy! Use my referral link to get 5 free verifications:";
     let url = '';
 
     switch (platform) {

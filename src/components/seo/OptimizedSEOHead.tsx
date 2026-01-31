@@ -111,7 +111,7 @@ export const OptimizedSEOHead: React.FC<OptimizedSEOHeadProps> = ({
       <meta property="og:image:alt" content="SafeOrStolen - Verify if items are stolen before buying" />
       <meta property="og:image:type" content="image/png" />
       {fullCanonicalUrl && <meta property="og:url" content={fullCanonicalUrl} />}
-      <meta property="og:site_name" content="Safe or Stolen" />
+      <meta property="og:site_name" content="SafeOrStolen" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="es_US" />
       <meta property="og:locale:alternate" content="fr_FR" />

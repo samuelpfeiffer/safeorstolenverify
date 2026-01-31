@@ -100,7 +100,7 @@ const Footer = () => {
                   href="https://x.com/safeorstolen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Safe or Stolen on X (Twitter)"
+                  aria-label="SafeOrStolen on X (Twitter)"
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Twitter className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
@@ -109,7 +109,7 @@ const Footer = () => {
                   href="https://www.youtube.com/@safeorstolen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Safe or Stolen on YouTube"
+                  aria-label="SafeOrStolen on YouTube"
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Youtube className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
@@ -118,7 +118,7 @@ const Footer = () => {
                   href="https://www.facebook.com/safeorstolen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Safe or Stolen on Facebook"
+                  aria-label="SafeOrStolen on Facebook"
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Facebook className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />
@@ -127,7 +127,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/company/safeorstolen/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Safe or Stolen on LinkedIn"
+                  aria-label="SafeOrStolen on LinkedIn"
                   className="w-10 h-10 glass-effect rounded-lg flex items-center justify-center hover:bg-sos-orange/10 transition-colors bg-card"
                 >
                   <Linkedin className="h-5 w-5 text-muted-foreground hover:text-sos-orange" />

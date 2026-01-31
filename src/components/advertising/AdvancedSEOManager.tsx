@@ -102,7 +102,7 @@ export const AdvancedSEOManager = () => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "Safe Or Stolen",
+          "name": "SafeOrStolen",
           "description": "Verification service to check if items are stolen",
           "url": "https://safeorstolen.com",
           "logo": "https://safeorstolen.com/logo.png",

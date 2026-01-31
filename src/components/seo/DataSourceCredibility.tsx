@@ -166,8 +166,9 @@ export const DataSourceCredibility: React.FC = () => {
             <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-4">Official Database Verification</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              Unlike unverified third-party services, Safe Or Stolen maintains direct 
+              Unlike unverified third-party services, SafeOrStolen maintains direct 
               integrations with official law enforcement databases, verified industry 
+              registries, and trusted data providers. Our verification methodology
               registries, and trusted data providers. Our verification methodology 
               is transparent and legally actionable.
             </p>

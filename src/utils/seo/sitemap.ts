@@ -72,7 +72,7 @@ export const generateBlogSitemapEntries = (blogPosts: any[]): SitemapEntry[] => 
     images: post.featured_image_url ? [
       {
         loc: post.featured_image_url,
-        caption: `${post.title} - Safe Or Stolen Blog`,
+        caption: `${post.title} - SafeOrStolen Blog`,
         title: post.title
       }
     ] : undefined
@@ -147,7 +147,7 @@ export const generateSitemapXML = (entries: SitemapEntry[]): string => {
 };
 
 export const generateRobotsTxt = (): string => {
-  return `# Enhanced robots.txt for Safe Or Stolen
+  return `# Enhanced robots.txt for SafeOrStolen
 User-agent: *
 Allow: /
 

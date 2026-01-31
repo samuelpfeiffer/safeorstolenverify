@@ -26,7 +26,7 @@ export const StatsSection = () => {
       icon: <Shield className="h-8 w-8" />,
       number: "0%",
       label: "Effective consumer verification tools existed",
-      source: "Market Analysis (Pre-Safe Or Stolen)"
+      source: "Market Analysis (Pre-SafeOrStolen)"
     }
   ];
 

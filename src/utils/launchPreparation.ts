@@ -438,7 +438,7 @@ const testStructuredData = async (): Promise<TestResult> => {
 };
 
 export const generateLaunchReport = (results: LaunchChecklist[]): string => {
-  let report = "# Safe or Stolen - Launch Readiness Report\n\n";
+  let report = "# SafeOrStolen - Launch Readiness Report\n\n";
   
   const totalTests = results.reduce((acc, category) => acc + category.tests.length, 0);
   const passedTests = results.reduce((acc, category) => 

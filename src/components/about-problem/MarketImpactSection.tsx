@@ -41,7 +41,7 @@ export const MarketImpactSection = () => {
                 
                 <p>
                   This crisis demanded an innovative solution—one that could bridge law enforcement 
-                  databases with consumer protection needs. That's why we built Safe Or Stolen.
+                  databases with consumer protection needs. That's why we built SafeOrStolen.
                 </p>
               </div>
             </CardContent>

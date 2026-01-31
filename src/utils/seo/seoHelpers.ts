@@ -307,27 +307,27 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
     type: 'website'
   },
   'about-company': {
-    title: 'About Safe or Stolen LLC - Company Information & Leadership',
-    description: 'Learn about Safe or Stolen LLC, our mission, leadership team, and commitment to transparency. Headquartered in Peoria, Arizona, serving users worldwide.',
-    keywords: 'Safe or Stolen company, about us, leadership team, company information, Samuel Pfeiffer, Arizona LLC',
+    title: 'About SafeOrStolen LLC - Company Information & Leadership',
+    description: 'Learn about SafeOrStolen LLC, our mission, leadership team, and commitment to transparency. Headquartered in Peoria, Arizona, serving users worldwide.',
+    keywords: 'SafeOrStolen company, about us, leadership team, company information, Samuel Pfeiffer, Arizona LLC',
     type: 'website'
   },
   'transparency': {
-    title: 'Transparency Report - Safe or Stolen | Platform Statistics & Operations',
+    title: 'Transparency Report - SafeOrStolen | Platform Statistics & Operations',
     description: 'View our quarterly transparency report including platform statistics, data handling practices, law enforcement cooperation, and operational details.',
     keywords: 'transparency report, platform statistics, data handling, privacy practices, operational transparency',
     type: 'website'
   },
   'roadmap': {
-    title: 'Platform Roadmap - Safe or Stolen | Development Timeline & Features',
+    title: 'Platform Roadmap - SafeOrStolen | Development Timeline & Features',
     description: 'View our platform development roadmap, upcoming features, and launch timeline for SafeOrStolen.com service and mobile applications.',
     keywords: 'platform roadmap, development timeline, upcoming features, mobile app launch, service updates',
     type: 'website'
   },
   'company-verification': {
-    title: 'Official Company Verification - Safe or Stolen LLC | Peoria, Arizona',
-    description: 'Official verification: Safe or Stolen LLC is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company.',
-    keywords: 'Safe or Stolen LLC, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification, Arizona business, Samuel Pfeiffer',
+    title: 'Official Company Verification - SafeOrStolen LLC | Peoria, Arizona',
+    description: 'Official verification: SafeOrStolen LLC is a legitimate Arizona corporation incorporated July 7, 2025, headquartered in Peoria, AZ. We are NOT affiliated with any Shelton, WA company.',
+    keywords: 'SafeOrStolen LLC, Peoria Arizona, Arizona corporation, company verification, legitimate business, not Shelton Washington, SafeOrStolen verification, Arizona business, Samuel Pfeiffer',
     type: 'website'
   },
   'trust-verification': {
@@ -355,9 +355,9 @@ export const generatePageStructuredData = (pageType: string, customData?: Record
       "@context": "https://schema.org",
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
-      "name": "Safe Or Stolen",
+      "name": "SafeOrStolen",
       "url": baseUrl,
-      "logo": `${baseUrl}/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png`,
+      "logo": `${baseUrl}/sos-logo.png`,
       "description": "Global verification service for IMEI, serial numbers, and VIN to check if items are stolen"
     }
   ];
@@ -369,7 +369,7 @@ export const generatePageStructuredData = (pageType: string, customData?: Record
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Safe Or Stolen",
+          "name": "SafeOrStolen",
           "url": baseUrl,
           "potentialAction": {
             "@type": "SearchAction",

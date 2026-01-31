@@ -41,7 +41,7 @@ export const PWAInstallBanner = () => {
       if (success) {
         toast({
           title: "App Installing",
-          description: "Safe Or Stolen is being installed on your device!",
+          description: "SafeOrStolen is being installed on your device!",
         });
         setIsVisible(false);
       }
@@ -75,7 +75,7 @@ export const PWAInstallBanner = () => {
           
           <div className="flex-1">
             <h3 className="text-white font-semibold text-sm mb-1">
-              Install Safe Or Stolen
+              Install SafeOrStolen
             </h3>
             <p className="text-gray-300 text-xs mb-3">
               Get faster access and work offline. Install our app for the best experience.

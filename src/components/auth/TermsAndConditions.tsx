@@ -82,7 +82,7 @@ export const TermsAndConditions = ({ onAccept, onDecline, isLoading = false }: T
                 htmlFor="disclaimer"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer text-card-foreground"
               >
-                I understand and accept that this service is for reference only, may contain errors, and that Safe or Stolen is not liable for any inaccurate results or decisions made based on this service.
+                I understand and accept that this service is for reference only, may contain errors, and that SafeOrStolen is not liable for any inaccurate results or decisions made based on this service.
               </label>
             </div>
           </div>
