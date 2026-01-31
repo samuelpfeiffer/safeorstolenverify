@@ -25,6 +25,11 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
     return true;
   }
 
+  // API routes and data files
+  if (/^\/(api)(\/|$)/i.test(path)) {
+    return true;
+  }
+
   return false;
 }
 
