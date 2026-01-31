@@ -677,6 +677,42 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check                             /verify  301!
 
 # ============================================
+# GSC "CRAWLED NOT INDEXED" FIX - 2026-01-31
+# These URLs are being crawled but not indexed - redirect to canonical pages
+# ============================================
+# Blog posts that should redirect to canonical versions
+/blog/device-safety-guide                          /blog/how-to-check-if-phone-stolen  301!
+/blog/like-carfax-for-phones                       /vs-carfax  301!
+/blog/real-user-stories                            /testimonials  301!
+/blog/data-source-credibility                      /about  301!
+/blog/what-to-do-if-stolen                         /faq  301!
+/blog/marketplace-red-flags-protection-guide       /guides/verify-craigslist-items  301!
+
+# Legacy verification URLs - REMOVED /stolen-database (has real route)
+/verify-not-stolen                                 /verify  301!
+/vin-verification                                  /vin-checker  301!
+/how-do-i-check-if-stolen                          /verify  301!
+/how-it-works-detailed                             /how-it-works  301!
+/case-studies                                      /testimonials  301!
+/accuracy                                          /about  301!
+
+# Marketplace verification legacy URLs
+# NOTE: /facebook-marketplace-stolen-check has a real route - DO NOT redirect
+# NOTE: /ebay-stolen-item-check is the real route, redirect variant
+/ebay-stolen-item-checker                          /ebay-stolen-item-check  301!
+/offerup-safety-verification                       /offerup-verify-not-stolen  301!
+/subscriptions                                     /pricing  301!
+/partnerships                                      /for-businesses  301!
+/cookies                                           /privacy  301!
+/enterprise-demo                                   /pricing  301!
+/api-docs                                          /for-businesses  301!
+/contact                                           /about  301!
+/service-limitations                               /terms  301!
+/disclaimer                                        /terms  301!
+/terms-of-service                                  /terms  301!
+/our-story                                         /about  301!
+
+# ============================================
 # ACCOUNT REDIRECTS
 # ============================================
 /account                          /dashboard  301!

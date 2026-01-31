@@ -36,19 +36,21 @@ Allow: /llm.html
 Allow: /.well-known/llms.txt
 Allow: /.well-known/ai-plugin.json
 
-# Block query strings (duplicate content prevention)
-Disallow: /*?search=
-Disallow: /*?q=
-Disallow: /*?utm_
-Disallow: /*?ref=
-Disallow: /*?source=
-Disallow: /*?session_id=
-Disallow: /*?checkout=
-Disallow: /*&
+# Block ALL query strings (duplicate content prevention - CRITICAL)
+Disallow: /*?
+Disallow: /*?*
+Disallow: /*?search=*
+Disallow: /*?q=*
+Disallow: /*?type=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?session_id=*
+Disallow: /*?checkout=*
+Disallow: /*&*
 
 # Block API and private areas
 Disallow: /api/
-Disallow: /*.json$
 Disallow: /auth/
 Disallow: /dashboard/
 Disallow: /account/
@@ -59,6 +61,13 @@ Disallow: /receipts
 Disallow: /checkout-redirect
 Disallow: /verification-success
 Disallow: /analytics
+
+# Block non-HTML data files (these are for AI crawlers, not search indexing)
+Disallow: /ai-training-data.md
+Disallow: /ai-context.json
+Disallow: /mobile-app-ai-context.json
+Disallow: /*.json$
+Disallow: /*.md$
 
 # ==================================================
 # AI & LLM Crawlers - Full Access Welcome
