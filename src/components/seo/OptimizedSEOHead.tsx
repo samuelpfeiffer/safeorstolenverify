@@ -5,6 +5,11 @@ import { validateCanonicalUrl, validateSchema, logSchemaValidation } from '@/uti
 import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
 import { getRobotsContent } from '@/utils/seo/robotsPolicy';
 
+/**
+ * OptimizedSEOHead - Internal implementation used by PageSEO
+ * For new pages, consider using SEOHead from '@/components/seo/SEOHead' directly
+ * which provides a cleaner API with the same functionality.
+ */
 interface OptimizedSEOHeadProps {
   title: string;
   description: string;

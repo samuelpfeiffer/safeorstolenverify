@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,6 +6,7 @@ import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const PS5StolenCheckGuide = () => {
   const publishDate = "2024-12-23";
@@ -73,19 +73,16 @@ const PS5StolenCheckGuide = () => {
 
   return (
     <>
-      <Helmet>
-        <title>How to Check if a Used PlayStation 5 is Stolen Before Buying | SafeOrStolen</title>
-        <meta name="description" content="Complete guide to verifying a PS5 isn't stolen before purchasing. Learn how to check serial numbers, spot red flags, and protect yourself from buying stolen gaming consoles." />
-        <meta name="keywords" content="playstation 5 console checker, ps5 stolen check, check if ps5 is stolen, ps5 serial number check, verify ps5 not stolen, used ps5 verification" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/ps5-stolen-check-guide" />
-        <meta property="og:title" content="How to Check if a Used PlayStation 5 is Stolen Before Buying" />
-        <meta property="og:description" content="Complete guide to verifying a PS5 isn't stolen. Check serial numbers, spot red flags, and protect yourself." />
-        <meta property="og:url" content="https://safeorstolen.com/blog/ps5-stolen-check-guide" />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+      <SEOHead
+        title="How to Check if a Used PlayStation 5 is Stolen Before Buying"
+        description="Complete guide to verifying a PS5 isn't stolen before purchasing. Learn how to check serial numbers, spot red flags, and protect yourself from buying stolen gaming consoles."
+        keywords="playstation 5 console checker, ps5 stolen check, check if ps5 is stolen, ps5 serial number check, verify ps5 not stolen, used ps5 verification"
+        canonical="/blog/ps5-stolen-check-guide"
+        ogType="article"
+        publishedTime={publishDate}
+        modifiedTime={modifiedDate}
+        schemaJson={[articleSchema, faqSchema]}
+      />
 
       <TopNavigation />
       <article className="min-h-screen bg-gradient-to-br from-background via-background to-muted">

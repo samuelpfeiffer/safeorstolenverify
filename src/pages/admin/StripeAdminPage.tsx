@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { StripeStatusDashboard } from '@/components/admin/StripeStatusDashboard';
 import { WarmLeadsOutreach } from '@/components/admin/WarmLeadsOutreach';
 import { StripeReconcileButton } from '@/components/admin/StripeReconcileButton';
@@ -7,10 +7,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 export default function StripeAdminPage() {
   return (
     <>
-      <Helmet>
-        <title>Stripe Payment Status | SafeOrStolen Admin</title>
-        <meta name="robots" content="noindex,nofollow" />
-      </Helmet>
+      <SEOHead
+        title="Stripe Payment Status | Admin"
+        description="Admin dashboard for Stripe payment status and reconciliation."
+        noIndex={true}
+      />
       
       <div className="container mx-auto px-4 py-8 pt-24">
         <Tabs defaultValue="payments" className="space-y-6">

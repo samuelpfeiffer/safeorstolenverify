@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { PageSEO } from '@/components/seo/PageSEO';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -102,27 +101,15 @@ const VideoWatchPage: React.FC = () => {
 
   return (
     <>
-      <PageSEO
-        title={`${video.seoTitle} | SafeOrStolen`}
+      <SEOHead
+        title={video.seoTitle}
         description={video.seoDescription}
         keywords={video.tags.join(', ')}
         canonical={`/youtube/${video.slug}`}
-        structuredData={[videoSchema, breadcrumbSchema]}
-        isVideoPage={true}
+        ogImage={getYouTubeThumbnail(video.videoId)}
+        ogType="video.other"
+        schemaJson={[videoSchema, breadcrumbSchema]}
       />
-
-      <Helmet>
-        <meta property="og:type" content="video.other" />
-        <meta property="og:video" content={`https://www.youtube.com/embed/${video.videoId}`} />
-        <meta property="og:video:type" content="text/html" />
-        <meta property="og:video:width" content="1280" />
-        <meta property="og:video:height" content="720" />
-        <meta property="og:image" content={getYouTubeThumbnail(video.videoId)} />
-        <meta name="twitter:card" content="player" />
-        <meta name="twitter:player" content={`https://www.youtube.com/embed/${video.videoId}`} />
-        <meta name="twitter:player:width" content="1280" />
-        <meta name="twitter:player:height" content="720" />
-      </Helmet>
 
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8">
