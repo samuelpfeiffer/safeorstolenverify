@@ -3,6 +3,11 @@ import { OptimizedSEOHead } from './OptimizedSEOHead';
 import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 
+/**
+ * PageSEO - Wrapper component for OptimizedSEOHead
+ * For simpler usage, consider using SEOHead from '@/components/seo/SEOHead' directly
+ * which provides a cleaner API with equivalent functionality.
+ */
 interface PageSEOProps {
   title: string;
   description: string;

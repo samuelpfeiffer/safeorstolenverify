@@ -1,6 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
+/**
+ * @deprecated Use SEOHead from '@/components/seo/SEOHead' instead.
+ * This component is kept for backwards compatibility only.
+ */
 interface BetterSEOHeadProps {
   title: string;
   description: string;

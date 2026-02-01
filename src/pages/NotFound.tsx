@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useSafeLocation } from "@/hooks/useSafeLocation";
 import { StatusCodeHandler } from "@/components/seo/StatusCodeHandler";
-import { Helmet } from "react-helmet-async";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Search, Smartphone, Car, FileText, Shield, Home, Bike, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const NotFound = () => {
   const location = useSafeLocation();
@@ -53,11 +51,11 @@ const NotFound = () => {
   return (
     <>
       <StatusCodeHandler statusCode={404} noIndex={true} />
-      <Helmet>
-        <title>404 - Page Not Found | SafeOrStolen</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Use our search to verify stolen items or explore our verification tools." />
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEOHead
+        title="404 - Page Not Found"
+        description="The page you're looking for doesn't exist. Use our search to verify stolen items or explore our verification tools."
+        noIndex={true}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto px-4 py-16 md:py-24">

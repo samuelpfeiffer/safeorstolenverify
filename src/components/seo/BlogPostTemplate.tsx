@@ -1,7 +1,7 @@
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 interface BlogPostTemplateProps {
   title: string;
@@ -20,6 +20,7 @@ interface BlogPostTemplateProps {
     conclusion: string;
   };
   relatedArticles?: { title: string; url: string }[];
+  canonical?: string;
 }
 
 export const BlogPostTemplate = ({
@@ -30,7 +31,8 @@ export const BlogPostTemplate = ({
   readingTime,
   keywords,
   content,
-  relatedArticles = []
+  relatedArticles = [],
+  canonical
 }: BlogPostTemplateProps) => {
   const schema = {
     "@context": "https://schema.org",
@@ -55,13 +57,16 @@ export const BlogPostTemplate = ({
 
   return (
     <>
-      <Helmet>
-        <title>{title} | SafeOrStolen Blog</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={keywords.join(', ')} />
-        <link rel="canonical" href={`https://safeorstolen.com${window.location.pathname}`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <SEOHead
+        title={`${title} | Blog`}
+        description={metaDescription}
+        keywords={keywords.join(', ')}
+        canonical={canonical}
+        ogType="article"
+        publishedTime={publishDate}
+        author={author}
+        schemaJson={schema}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         <article className="max-w-4xl mx-auto px-4 py-24">
