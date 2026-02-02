@@ -1,17 +1,18 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Youtube, ExternalLink, Play, Video, Users, Bell } from 'lucide-react';
+import { 
+  Youtube, ExternalLink, Play, Video, Users, Bell, 
+  CheckCircle, Shield, Smartphone, Car, ArrowRight 
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { 
   YOUTUBE_VIDEOS, 
   YOUTUBE_CHANNEL, 
   YOUTUBE_CHANNEL_SECONDARY,
   getYouTubeThumbnail, 
-  getYouTubeShortsUrl,
   getFeaturedVideo 
 } from '@/config/videoData';
 import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
@@ -63,6 +64,36 @@ const YouTubePage: React.FC = () => {
           "position": 2,
           "name": "YouTube",
           "item": "https://safeorstolen.com/youtube"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What topics do SafeOrStolen YouTube videos cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our videos cover IMEI checking for phones, VIN verification for vehicles, serial number lookup for electronics and tools, marketplace safety tips for Facebook Marketplace and OfferUp, and general stolen property awareness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is Kelly McEvoy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kelly McEvoy is the founder of SafeOrStolen and host of the @safeorstolenoffically YouTube channel. She creates educational content to help buyers avoid purchasing stolen goods and protect their investments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are SafeOrStolen YouTube tutorials free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all SafeOrStolen YouTube tutorials are completely free to watch. They teach you how to use our free stolen item verification tool to check IMEI, VIN, and serial numbers before purchasing secondhand items."
+          }
         }
       ]
     }
@@ -221,6 +252,26 @@ const YouTubePage: React.FC = () => {
             </div>
           </div>
 
+          {/* What You'll Learn Section - Unique Content */}
+          <section className="mb-16 max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">What You'll Learn on SafeOrStolen YouTube</h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground">
+              <p className="mb-6 leading-relaxed">
+                SafeOrStolen's YouTube channels provide comprehensive education on protecting yourself when buying secondhand items. 
+                Our founder Kelly McEvoy creates easy-to-follow tutorials that cover everything from basic IMEI checks to advanced 
+                marketplace safety strategies. Whether you're buying a used iPhone on Facebook Marketplace, shopping for a car on 
+                Craigslist, or picking up tools on OfferUp, our videos give you the knowledge to verify before you buy.
+              </p>
+              <p className="mb-6 leading-relaxed">
+                The secondhand market has exploded in recent years, with millions of transactions happening daily on platforms like 
+                Facebook Marketplace, OfferUp, Craigslist, and eBay. Unfortunately, this growth has attracted thieves who use these 
+                platforms to quickly sell stolen merchandise to unsuspecting buyers. When you buy stolen property—even unknowingly—you 
+                lose both your money and the item when police eventually recover it. Our videos teach you to protect yourself through 
+                verification, red flag identification, and smart buying practices.
+              </p>
+            </div>
+          </section>
+
           {/* Content Types */}
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
             <Card className="p-6 text-center hover:shadow-lg transition-shadow">
@@ -229,7 +280,7 @@ const YouTubePage: React.FC = () => {
               </div>
               <h3 className="font-semibold text-lg mb-2">YouTube Shorts</h3>
               <p className="text-muted-foreground text-sm">
-                Quick tips under 60 seconds. Perfect for learning on the go.
+                Quick tips under 60 seconds. Perfect for learning on the go. Each short covers one specific verification tip or red flag.
               </p>
             </Card>
 
@@ -239,7 +290,7 @@ const YouTubePage: React.FC = () => {
               </div>
               <h3 className="font-semibold text-lg mb-2">How-To Guides</h3>
               <p className="text-muted-foreground text-sm">
-                Step-by-step tutorials for IMEI, VIN, and serial number checks.
+                Step-by-step tutorials for IMEI, VIN, and serial number checks. Follow along as Kelly demonstrates the verification process.
               </p>
             </Card>
 
@@ -249,10 +300,122 @@ const YouTubePage: React.FC = () => {
               </div>
               <h3 className="font-semibold text-lg mb-2">Safety Tips</h3>
               <p className="text-muted-foreground text-sm">
-                Learn to spot stolen items and avoid scams when buying secondhand.
+                Learn to spot stolen items and avoid scams when buying secondhand. Real examples from actual marketplace listings.
               </p>
             </Card>
           </div>
+
+          {/* Video Topics - Additional Unique Content */}
+          <section className="mb-12 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Video Topics Covered</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="p-6">
+                <div className="flex items-start gap-4">
+                  <Smartphone className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Phone Verification</h3>
+                    <p className="text-sm text-muted-foreground">
+                      How to check IMEI numbers, identify carrier blacklists, detect iCloud locks, and verify phones aren't stolen before purchasing from private sellers.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+              <Card className="p-6">
+                <div className="flex items-start gap-4">
+                  <Car className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Vehicle Verification</h3>
+                    <p className="text-sm text-muted-foreground">
+                      VIN lookup tutorials, stolen car detection, title fraud prevention, and how to use license plate checks when buying used vehicles.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+              <Card className="p-6">
+                <div className="flex items-start gap-4">
+                  <Shield className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Marketplace Safety</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Specific guidance for Facebook Marketplace, OfferUp, Craigslist, and eBay. Learn platform-specific red flags and verification strategies.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+              <Card className="p-6">
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-8 h-8 text-red-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Serial Number Checks</h3>
+                    <p className="text-sm text-muted-foreground">
+                      How to verify laptops, tools, electronics, jewelry, and other valuable items using serial numbers before completing a purchase.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </section>
+
+          {/* Why Subscribe Section */}
+          <section className="mb-12 max-w-4xl mx-auto bg-card rounded-lg p-8">
+            <h2 className="text-2xl font-bold mb-6">Why Subscribe to SafeOrStolen YouTube?</h2>
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                <span><strong>Free Education:</strong> All videos are completely free—no paywalls, no premium content locks.</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                <span><strong>Real Examples:</strong> Kelly uses actual marketplace listings to demonstrate red flags and verification steps.</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                <span><strong>Quick Format:</strong> Most videos are under 60 seconds—learn in the time it takes to message a seller.</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                <span><strong>Regular Updates:</strong> New content weekly covering emerging scams and marketplace trends.</span>
+              </li>
+              <li className="flex gap-3">
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                <span><strong>Community:</strong> Join thousands of smart buyers learning to protect themselves and their families.</span>
+              </li>
+            </ul>
+          </section>
+
+          {/* Related Tools CTA */}
+          <section className="mb-12 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Start Verifying Now</h2>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <Link to="/verify">
+                <Card className="p-4 hover:shadow-lg transition-shadow group h-full">
+                  <h3 className="font-semibold group-hover:text-primary transition-colors mb-2">Free Verification</h3>
+                  <p className="text-sm text-muted-foreground mb-4">Check any IMEI, VIN, or serial number instantly.</p>
+                  <span className="text-sm text-primary flex items-center gap-1">
+                    Start Now <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Card>
+              </Link>
+              <Link to="/app">
+                <Card className="p-4 hover:shadow-lg transition-shadow group h-full">
+                  <h3 className="font-semibold group-hover:text-primary transition-colors mb-2">Mobile App</h3>
+                  <p className="text-sm text-muted-foreground mb-4">Verify at point-of-sale with barcode scanning.</p>
+                  <span className="text-sm text-primary flex items-center gap-1">
+                    Download <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Card>
+              </Link>
+              <Link to="/how-it-works">
+                <Card className="p-4 hover:shadow-lg transition-shadow group h-full">
+                  <h3 className="font-semibold group-hover:text-primary transition-colors mb-2">How It Works</h3>
+                  <p className="text-sm text-muted-foreground mb-4">Learn about our 100+ database verification system.</p>
+                  <span className="text-sm text-primary flex items-center gap-1">
+                    Learn More <ArrowRight className="w-4 h-4" />
+                  </span>
+                </Card>
+              </Link>
+            </div>
+          </section>
 
           {/* Subscribe CTA */}
           <div className="text-center bg-gradient-to-r from-red-600/10 to-orange-600/10 rounded-2xl p-8 border border-red-600/20">
