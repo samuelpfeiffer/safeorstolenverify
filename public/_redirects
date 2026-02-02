@@ -366,6 +366,9 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # BLOG POST REDIRECTS (Only for URLs without real routes)
 # Blog routes in AppRoutes.tsx are NOT redirected
 # ============================================
+# CRITICAL: Blog slug variations - redirect to correct routes
+/blog/how-to-check-if-phone-is-stolen                           /blog/how-to-check-if-phone-stolen  301!
+/blog/best-stolen-item-checkers-2026                            /best-stolen-item-checkers-2026  301!
 /blog/2025-stolen-goods-statistics                              /blog            301!
 /blog/most-stolen-items-2025                                    /blog            301!
 /blog/how-to-use-imei-checker-app                               /blog/imei-checker-app-download  301!
