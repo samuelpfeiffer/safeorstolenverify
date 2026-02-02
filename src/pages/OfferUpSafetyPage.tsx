@@ -146,19 +146,76 @@ const OfferUpSafetyPage = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-3">TruYou Verification</h3>
-                <p className="text-muted-foreground">Look for the TruYou badge. These sellers have verified their identity through OfferUp's background check process.</p>
+                <p className="text-muted-foreground">Look for the TruYou badge. These sellers have verified their identity through OfferUp's background check process, which includes phone number verification and optional Facebook/Google connection.</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-3">Community MeetUp Spots</h3>
-                <p className="text-muted-foreground">OfferUp partners with police stations for safe exchange zones. Always suggest meeting at these locations.</p>
+                <p className="text-muted-foreground">OfferUp partners with police stations for safe exchange zones. Always suggest meeting at these locations during daylight hours with another person.</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-3">In-App Payments</h3>
-                <p className="text-muted-foreground">Buyer protection covers shipped items paid through OfferUp. Local cash transactions have no protection.</p>
+                <p className="text-muted-foreground">Buyer protection covers shipped items paid through OfferUp. Local cash transactions have no protection—this is critical to understand.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Comprehensive OfferUp Safety Guide */}
+        <section className="mb-16 bg-card border rounded-xl p-8">
+          <h2 className="text-3xl font-bold text-center mb-6">Complete OfferUp Buyer Protection Guide</h2>
+          <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
+            <p>
+              OfferUp has become one of America's largest mobile marketplaces, with millions of users buying and selling everything from smartphones to vehicles. However, the platform's convenience also attracts scammers and individuals selling stolen goods. Understanding how to protect yourself is essential for any OfferUp transaction.
+            </p>
+            <h3 className="text-xl font-semibold text-foreground mt-6">Understanding OfferUp's Buyer Protection Limitations</h3>
+            <p>
+              Many OfferUp users mistakenly believe they have full buyer protection on all purchases. The reality is more nuanced: OfferUp's "Buyer Protection" policy only covers items that are shipped and paid for through the OfferUp app. When you meet locally and pay cash—which is how the majority of OfferUp transactions occur—you have zero protection from OfferUp. If the item turns out to be stolen, defective, or not as described, you have no recourse through the platform.
+            </p>
+            <h3 className="text-xl font-semibold text-foreground mt-6">Why Stolen Goods Appear on OfferUp</h3>
+            <p>
+              OfferUp's local marketplace model is attractive to those selling stolen property for several reasons. First, cash transactions leave no paper trail. Second, the quick meetup format means items can be sold within hours of being stolen. Third, the anonymous nature of the platform—despite TruYou verification—allows sellers to create new accounts easily. Fourth, the lack of systematic verification means stolen phones, laptops, bikes, and even vehicles can change hands without detection.
+            </p>
+            <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk Item Categories on OfferUp</h3>
+            <p>
+              Certain categories carry higher stolen item risk. Smartphones are the most common stolen items sold on OfferUp—particularly iPhones, which retain high resale value. Gaming consoles (PlayStation 5, Xbox Series X) are frequently stolen from retail shipments or homes. Laptops, especially MacBooks, are easy to steal and resell. Bicycles, particularly high-end road bikes and e-bikes, are stolen at alarming rates. Power tools from construction sites often appear on OfferUp within days of theft. Even vehicles—cars, motorcycles, ATVs—are listed on the platform.
+            </p>
+            <h3 className="text-xl font-semibold text-foreground mt-6">The Legal Consequences of Buying Stolen Items</h3>
+            <p>
+              Many buyers don't realize that purchasing stolen property—even unknowingly—can result in serious consequences. First, the item will be confiscated when discovered, with no compensation to you. Second, you may face criminal charges for "receiving stolen property" in many states, even if you didn't know it was stolen. Third, you could face civil liability to the original owner or their insurance company. Fourth, you'll have lost whatever money you paid with no way to recover it from the seller.
+            </p>
+          </div>
+        </section>
+
+        {/* Detailed Scam Types */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8">Common OfferUp Scams to Watch For</h2>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-3 text-destructive">IMEI Blacklisted Phones</h3>
+                <p className="text-muted-foreground">Phones reported lost or stolen are added to carrier blacklists. They may work on WiFi but can't be activated on any US carrier. Always check IMEI with SafeOrStolen before buying any phone on OfferUp.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-3 text-destructive">Counterfeit Electronics</h3>
+                <p className="text-muted-foreground">Fake AirPods, knockoff gaming consoles, and counterfeit brand-name items are common. Meet in well-lit areas and verify serial numbers. If the price is too good, it's likely fake or stolen.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-3 text-destructive">Vehicle Title Fraud</h3>
+                <p className="text-muted-foreground">Vehicles listed on OfferUp may have salvage titles, undisclosed liens, or be reported stolen. Always run a VIN check before considering any vehicle purchase.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-3 text-destructive">Payment Scams</h3>
+                <p className="text-muted-foreground">Sellers asking for Venmo, CashApp, Zelle, or gift cards before meetup are almost always scammers. Never send money to someone you haven't met or verified.</p>
               </CardContent>
             </Card>
           </div>
