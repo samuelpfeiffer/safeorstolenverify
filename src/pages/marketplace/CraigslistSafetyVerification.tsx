@@ -147,6 +147,36 @@ const CraigslistSafetyVerification = () => {
           </div>
         </section>
 
+        {/* Comprehensive Craigslist Safety Content */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              The Complete Guide to Craigslist Safety
+            </h2>
+            <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
+              <p>
+                Craigslist remains one of the internet's largest classified advertising platforms, facilitating millions of transactions between strangers every year. From used cars to electronics, furniture to tools, Craigslist offers incredible deals—but also carries significant risks that every buyer should understand.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">Why Craigslist is a Target for Stolen Goods</h3>
+              <p>
+                Unlike eBay, Facebook Marketplace, or OfferUp, Craigslist requires no identity verification whatsoever. Sellers can post anonymously using temporary email addresses. Cash transactions leave no digital trail. The platform's simplicity—which made it popular—is precisely what makes it attractive to those selling stolen property. Thieves can post an item within hours of stealing it and sell it the same day, pocketing cash and disappearing.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">Understanding Your Legal Risk</h3>
+              <p>
+                Many Craigslist buyers don't realize the legal jeopardy they face when purchasing stolen items. In all 50 states, "receiving stolen property" is a crime. While prosecution typically requires proving you knew or should have known an item was stolen, the burden is lower than many expect. Courts have held that unusually low prices, meeting in strange locations, sellers unable to provide documentation, and other red flags can establish "constructive knowledge." Even if you're not prosecuted, the item will be confiscated when discovered—and you have no recourse.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk Categories on Craigslist</h3>
+              <p>
+                Certain item categories carry elevated risk for stolen goods. Smartphones and tablets—especially iPhones—are the most commonly stolen items sold on Craigslist. Laptops, particularly MacBooks, are frequently stolen from homes, cars, and coffee shops. Power tools are often stolen from construction sites, with organized rings targeting specific job sites. Bicycles, including expensive road bikes and mountain bikes, are easy to steal and resell. Vehicles—cars, trucks, motorcycles—require more sophisticated theft but appear on Craigslist regularly. Even firearms, despite legal requirements for transfer, are sometimes sold illegally on Craigslist.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">Why Verification Matters More on Craigslist</h3>
+              <p>
+                Because Craigslist offers zero buyer protection—no dispute resolution, no refunds, no transaction records—you must protect yourself before any purchase. Once you hand over cash, you have no recourse through the platform if the item turns out to be stolen, broken, or not as described. This makes pre-purchase verification essential rather than optional. SafeOrStolen's free IMEI, VIN, and serial number checker allows you to verify items before you ever meet the seller, eliminating most risk.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Safe Meetup Guide */}
         <section className="py-16 px-4 bg-muted/30">
           <div className="max-w-6xl mx-auto">

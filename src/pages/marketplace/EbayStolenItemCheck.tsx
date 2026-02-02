@@ -134,6 +134,36 @@ const EbayStolenItemCheck = () => {
           </div>
         </section>
 
+        {/* Comprehensive eBay Safety Content */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              Understanding eBay Buyer Protection and Stolen Items
+            </h2>
+            <div className="prose prose-lg max-w-4xl mx-auto text-muted-foreground space-y-4">
+              <p>
+                eBay's Money Back Guarantee is one of the strongest buyer protection programs in e-commerce. However, many buyers mistakenly believe this protection extends to all situations—including purchasing stolen property. Understanding the nuances of eBay's policies can save you from significant financial loss.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">How Stolen Items Appear on eBay</h3>
+              <p>
+                Despite eBay's fraud prevention measures, stolen items still appear on the platform regularly. Professional thieves create sophisticated seller accounts that appear legitimate, sometimes using stolen identities or hacked accounts with positive feedback. Items may be listed as "new in box" when they're actually stolen retail merchandise, or as "used" when they're personal property taken from homes or vehicles. The most commonly stolen items on eBay include smartphones (particularly iPhones), laptops (especially MacBooks), cameras and photography equipment, jewelry and watches, gaming consoles, and power tools.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">Why eBay's Protection May Not Cover Stolen Goods</h3>
+              <p>
+                eBay's Money Back Guarantee focuses on items that are "not as described" or never arrive. While a stolen item could technically fall under "not as described," the reality is more complicated. If police confiscate a stolen item from you, proving to eBay that you're entitled to a refund becomes difficult—the item didn't arrive damaged or different from the listing, it arrived exactly as described but happened to be someone else's property. Additionally, eBay's return window is typically 30 days, but stolen items might not be flagged in databases for weeks or months after the theft is reported.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">The Delayed Discovery Problem</h3>
+              <p>
+                One of the most insidious risks with stolen items on eBay is delayed discovery. A stolen phone might work perfectly for months before the original owner files an insurance claim and the IMEI gets blacklisted. A stolen laptop might function fine until the owner registers a police report and the serial number enters national databases. By the time this happens, eBay's standard return period has expired, and you're left holding stolen property with no recourse.
+              </p>
+              <h3 className="text-xl font-semibold text-foreground mt-6">High-Risk eBay Categories</h3>
+              <p>
+                Cell phones and smartphones represent the highest risk category—particularly unlocked phones and devices from sellers with limited feedback. Laptops and computers, especially high-value MacBooks and gaming laptops, are frequently stolen and resold on eBay. Camera equipment, from professional DSLRs to lenses, represents significant theft targets. Jewelry and luxury watches are easy to steal and hard to trace without serial numbers. Power tools from brands like DeWalt, Milwaukee, and Makita are commonly stolen from job sites. Even bicycles, particularly high-end road and mountain bikes, appear on eBay after theft.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* How to Verify Before Bidding */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
