@@ -65,9 +65,9 @@ const OfferUpSafetyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="OfferUp Safety Tips - Avoid Scams & Stolen Items 2026 | SafeOrStolen"
-        description="Protect yourself from OfferUp scams. Learn to verify sellers, check for stolen items, and use Community MeetUp Spots. Free IMEI and VIN verification included."
-        keywords="OfferUp scams, is OfferUp safe, OfferUp safety tips, avoid OfferUp scams, OfferUp stolen items, OfferUp fraud"
+        title="OfferUp Safety - Check Items Before Buying"
+        description="Verify items on OfferUp before buying. Check if phones, electronics, or vehicles are stolen. Avoid scams with IMEI and serial number verification on OfferUp."
+        keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid scams"
         canonical="/offerup-safety"
         structuredData={faqSchema}
       />

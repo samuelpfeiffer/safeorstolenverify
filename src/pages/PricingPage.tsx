@@ -186,9 +186,9 @@ const PricingPage = () => {
   return (
     <>
       <PageSEO
-        title="Pricing - 2 Free Checks, Then $4.99/mo Unlimited | SafeOrStolen"
-        description="Run 2 free stolen-item checks with no card. Then unlock unlimited IMEI, VIN, license plate & serial number verifications for just $4.99/month. Cancel anytime."
-        keywords="stolen item checker pricing, IMEI checker free, VIN lookup pricing, free stolen phone check, SafeOrStolen pricing"
+        title="Pricing - 2 Free Checks Then $4.99/mo Unlimited"
+        description="Simple pricing: 2 free stolen item checks, then unlimited verifications for $4.99/month. Check IMEI, VIN, serial numbers. No hidden fees. Cancel anytime."
+        keywords="SafeOrStolen pricing, verification pricing, stolen item checker cost"
         canonical="/pricing"
         structuredData={[
           {

@@ -197,9 +197,9 @@ const FAQPage = () => {
   return (
     <>
       <PageSEO
-        title="FAQ - Protect Buyers & Sellers | SafeOrStolen"
-        description="How SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell. Mobile app exclusively at SafeOrStolen.com."
-        keywords="protect buyers sellers FAQ, stolen verification questions, stop stolen goods, mobile app FAQ, crime reduction"
+        title="FAQ - Frequently Asked Questions"
+        description="Frequently asked questions about SafeOrStolen. Learn about our verification process, pricing, databases checked, and how to protect yourself from theft."
+        keywords="SafeOrStolen FAQ, verification questions, stolen item checker help"
         canonical="/faq"
         structuredData={{
           "@context": "https://schema.org",

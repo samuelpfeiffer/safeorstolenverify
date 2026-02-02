@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPhonePage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Phone is Stolen - Free iPhone & Android Verification"
-      metaDescription="Check if a phone is stolen before buying. Free IMEI and serial number verification for iPhone, Samsung, Google Pixel, and all smartphones. Instant results in 3 seconds."
+      title="Check if Phone is Stolen - Free iPhone Android Verify"
+      metaDescription="Check if a phone is stolen before buying. Free IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. Free check."
       h1="Check if Phone is Stolen Before Buying"
       itemType="Phone"
       keywords={[

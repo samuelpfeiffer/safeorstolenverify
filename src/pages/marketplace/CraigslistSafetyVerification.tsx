@@ -49,9 +49,9 @@ const CraigslistSafetyVerification = () => {
   return (
     <>
       <PageSEO
-        title="Craigslist Safety Check - Verify Items Aren't Stolen | SafeOrStolen"
-        description="Stay safe on Craigslist. Verify items aren't stolen before meeting sellers. Free IMEI, VIN, and serial number verification to protect yourself from stolen goods."
-        keywords="craigslist safety, craigslist scam check, verify craigslist item, craigslist stolen item check, safe craigslist buying"
+        title="Craigslist Safety - Verify Items Before Meetup"
+        description="Check if Craigslist items are stolen before meeting the seller. Free verification for phones, cars, electronics. Stay safe with IMEI and VIN verification."
+        keywords="craigslist safety, craigslist scam check, verify craigslist item"
         canonical="/craigslist-safety-verification"
         structuredData={faqSchema}
       />
