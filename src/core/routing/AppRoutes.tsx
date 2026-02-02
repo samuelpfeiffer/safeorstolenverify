@@ -73,7 +73,7 @@ const PressPage = lazy(() => import('@/pages/PressPage'));
 const StolenCheckMiami = lazy(() => import('@/pages/city/StolenCheckMiami'));
 
 // API & News Pages (SOFT_404 fixes)
-const APIDocsPage = lazy(() => import('@/pages/APIDocsPage'));
+const APIPage = lazy(() => import('@/pages/APIPage'));
 const NewsIndexPage = lazy(() => import('@/pages/NewsIndexPage'));
 
 // GSC FIX: Missing pages that were hitting NotFound with noindex
@@ -590,10 +590,10 @@ export const AppRoutes = () => {
         <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
 
         {/* API DOCUMENTATION */}
-        <Route path="/api" element={<APIDocsPage />} />
-        <Route path="/api-docs" element={<APIDocsPage />} />
-        <Route path="/developer" element={<APIDocsPage />} />
-        <Route path="/developers" element={<APIDocsPage />} />
+        <Route path="/api" element={<APIPage />} />
+        <Route path="/api-docs" element={<APIPage />} />
+        <Route path="/developer" element={<APIPage />} />
+        <Route path="/developers" element={<APIPage />} />
 
         {/* NEWS PAGES */}
         <Route path="/news" element={<NewsIndexPage />} />
