@@ -65,8 +65,8 @@ const OfferUpSafetyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="OfferUp Safety - Check Items Before Buying"
-        description="Verify items on OfferUp before buying. Check if phones, electronics, or vehicles are stolen. Avoid scams with IMEI and serial number verification on OfferUp."
+        title="OfferUp Scam Check - Verify Items Aren't Stolen Free"
+        description="Verify OfferUp items aren't stolen before buying. Check IMEI, VIN, serial numbers. Avoid OfferUp scams with free verification."
         keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid scams"
         canonical="/offerup-safety"
         structuredData={faqSchema}

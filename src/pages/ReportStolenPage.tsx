@@ -10,8 +10,8 @@ const ReportStolenPageContent = () => {
   return (
     <>
       <PageSEO
-        title="Report a Stolen Item | SafeOrStolen"
-        description="Report your stolen phone, vehicle, laptop, or other valuable item. Help prevent others from unknowingly purchasing stolen goods."
+        title="Report Stolen Item Free - Phone, Car, Electronics"
+        description="Report your stolen phone, vehicle, laptop, or valuables. Help prevent others from unknowingly purchasing stolen goods."
         keywords="report stolen item, report stolen phone, report stolen car, report stolen laptop, stolen property report"
       />
       

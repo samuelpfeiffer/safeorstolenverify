@@ -47,9 +47,9 @@ const ComparisonSwappa = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs Swappa: Swappa Has NO Mobile App | Download SafeOrStolen App"
-        description="Swappa has NO mobile app. SafeOrStolen has a full iOS/Android app with comprehensive verification. Better than Swappa. Download SafeOrStolen app free. Swappa alternative with mobile app. Best verification app 2025."
-        keywords="Swappa alternative, Swappa app, Swappa has no app, SafeOrStolen vs Swappa, better than Swappa, Swappa mobile app, verification app, download safeorstolen app, Swappa IMEI check alternative"
+        title="SafeOrStolen vs Swappa - Swappa Has No Mobile App"
+        description="Swappa has no mobile app. SafeOrStolen offers iOS/Android app with full verification. Compare features."
+        keywords="Swappa alternative, Swappa app, SafeOrStolen vs Swappa, better than Swappa, verification app, Swappa IMEI check alternative"
         canonical="/vs-swappa"
         structuredData={comparisonSchema}
       />

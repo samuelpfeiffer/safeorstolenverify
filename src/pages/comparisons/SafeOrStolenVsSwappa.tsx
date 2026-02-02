@@ -58,8 +58,8 @@ const SafeOrStolenVsSwappa = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs Swappa IMEI Checker - Detailed Comparison (2025)"
-        description="Compare SafeOrStolen and Swappa for IMEI checking. Learn the differences between a dedicated stolen item checker and a marketplace ESN check."
+        title="SafeOrStolen vs Swappa - ESN Checker Comparison 2025"
+        description="Compare SafeOrStolen and Swappa for IMEI checking. Dedicated stolen checker vs marketplace ESN check explained."
         keywords="safeorstolen vs swappa, swappa imei checker, swappa esn check, stolen phone verification, swappa alternative"
         canonical="/comparisons/safeorstolen-vs-swappa"
         structuredData={comparisonSchema}

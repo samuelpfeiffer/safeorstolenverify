@@ -206,8 +206,8 @@ const BestFreeIMEICheckers2025 = () => {
   return (
     <>
       <PageSEO
-        title="7 Best Free IMEI Checkers in 2025 - Compared & Ranked"
-        description="Compare the best free IMEI checkers for 2025. Find out which services offer free blacklist checks, stolen phone verification, and the most comprehensive databases."
+        title="7 Best Free IMEI Checkers 2025 - Ranked & Compared"
+        description="Compare the best free IMEI checkers for 2025. Which offers free blacklist checks and stolen phone verification?"
         keywords="best free imei checker, imei checker 2025, free blacklist check, stolen phone checker, imei lookup free"
         canonical="/comparisons/best-free-imei-checkers-2025"
         structuredData={listSchema}
