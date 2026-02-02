@@ -94,9 +94,9 @@ const AboutPage = () => {
   return (
     <>
     <PageSEO
-      title="About SafeOrStolen - Protect Buyers & Sellers, Stop Stolen Goods"
-      description="SafeOrStolen protects BOTH buyers AND sellers. Every search makes stolen items harder to sell - reducing crime globally. Mobile app only at SafeOrStolen.com."
-      keywords="about SafeOrStolen, stolen item verification, crime reduction, protect buyers sellers, stop stolen goods, reduce crime"
+      title="About SafeOrStolen - Protecting Buyers and Sellers"
+      description="SafeOrStolen protects buyers and sellers from stolen goods. Over $15 billion in stolen items sold annually. Our verification service stops theft globally."
+      keywords="about SafeOrStolen, stolen item verification company, protect buyers sellers"
       canonical="/about"
       structuredData={[
         {

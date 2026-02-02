@@ -98,8 +98,9 @@ const LicensePlateLookupPage = () => {
   return (
     <>
       <PageSEO
-        title="License Plate Lookup - Free Stolen Vehicle Check by Plate Number | SafeOrStolen"
-        description="Check if a vehicle is stolen using license plate number. Free license plate lookup from DMV and law enforcement databases across all 50 states. Verify instantly."
+        title="License Plate Lookup - Free Stolen Vehicle Check"
+        description="Check if a vehicle is stolen using license plate number. Free lookup from DMV and law enforcement databases across all 50 states. Instant verification."
+        keywords="license plate lookup, plate number search, stolen vehicle check, DMV lookup"
         canonical="/license-plate-lookup"
         structuredData={faqSchema}
       />

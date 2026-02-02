@@ -255,9 +255,9 @@ const VerifyPage = () => {
       {/* SEO Components - Critical for Google indexing */}
       <StatusCodeHandler statusCode={200} />
       <PageSEO
-        title="Protect Buyers & Sellers - Instant Stolen Verification | 3 Second Check"
-        description="Protect BOTH buyers AND sellers with instant stolen verification. Every search makes stolen items harder to sell. Check IMEI, VIN, serial numbers in 3 seconds. Reduce crime globally."
-        keywords="protect buyers sellers, stop stolen goods, instant stolen verification, barcode stolen checker, 3 second IMEI check, stolen verification app, reduce crime"
+        title="Verify Items - Instant Stolen Check in 3 Seconds"
+        description="Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from buying stolen goods on marketplaces."
+        keywords="verify stolen items, instant verification, stolen goods check, marketplace safety"
         canonical="/verify"
         structuredData={verificationServiceSchema}
       />

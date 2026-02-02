@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckCarPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Car is Stolen - Free VIN Verification | SafeOrStolen"
-      metaDescription="Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax for theft checks."
+      title="Check if Car is Stolen - Free VIN Verification"
+      metaDescription="Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax for theft."
       h1="Check if Car is Stolen Before Buying"
       itemType="Car"
       keywords={[
