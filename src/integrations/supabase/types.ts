@@ -621,6 +621,30 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_rate_limits: {
+        Row: {
+          attempts: number | null
+          created_at: string | null
+          id: string
+          ip_hash: string
+          window_start: string | null
+        }
+        Insert: {
+          attempts?: number | null
+          created_at?: string | null
+          id?: string
+          ip_hash: string
+          window_start?: string | null
+        }
+        Update: {
+          attempts?: number | null
+          created_at?: string | null
+          id?: string
+          ip_hash?: string
+          window_start?: string | null
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           created_at: string
@@ -1237,6 +1261,10 @@ export type Database = {
       is_service_role_or_admin: { Args: never; Returns: boolean }
       reset_monthly_verifications: { Args: never; Returns: undefined }
       subscribe_to_newsletter: { Args: { user_email: string }; Returns: Json }
+      subscribe_to_newsletter_secure: {
+        Args: { client_ip?: string; user_email: string }
+        Returns: Json
+      }
       validate_and_track_api_usage: {
         Args: {
           p_api_key: string
