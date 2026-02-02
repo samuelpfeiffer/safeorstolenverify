@@ -43,14 +43,54 @@ serve(async (req) => {
 
     const { identifier, itemType, additionalContext } = await req.json() as AnalysisRequest;
 
-    if (!identifier) {
+    // ============= INPUT VALIDATION =============
+    // Validate identifier
+    if (!identifier || typeof identifier !== 'string') {
       return new Response(
         JSON.stringify({ success: false, error: 'Identifier is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+    
+    const trimmedIdentifier = identifier.trim();
+    if (trimmedIdentifier.length < 3) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Identifier must be at least 3 characters' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    if (trimmedIdentifier.length > 100) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Identifier too long (maximum 100 characters)' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // Check for dangerous patterns
+    const dangerousPatterns = [/<script/i, /javascript:/i, /on\w+=/i, /union\s+select/i, /drop\s+table/i];
+    for (const pattern of dangerousPatterns) {
+      if (pattern.test(trimmedIdentifier)) {
+        console.warn(`[AI Safety Advisor] Blocked dangerous input: ${pattern}`);
+        return new Response(
+          JSON.stringify({ success: false, error: 'Invalid characters detected' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
+    
+    // Validate itemType if provided
+    const validItemTypes = ['phone', 'laptop', 'tablet', 'vehicle', 'bicycle', 'firearm', 'jewelry', 'electronics', 'other'];
+    const sanitizedItemType = itemType && typeof itemType === 'string' 
+      ? (validItemTypes.includes(itemType.toLowerCase()) ? itemType.toLowerCase() : 'other')
+      : 'other';
+    
+    // Validate additionalContext if provided
+    const sanitizedContext = additionalContext && typeof additionalContext === 'string'
+      ? additionalContext.slice(0, 1000) // Limit context length
+      : undefined;
 
-    console.log(`[AI Safety Advisor] Analyzing ${itemType}: ${identifier}`);
+    console.log(`[AI Safety Advisor] Analyzing ${sanitizedItemType}: ${trimmedIdentifier.substring(0, 20)}...`);
 
     const systemPrompt = `You are SafeOrStolen's AI Safety Advisor, an expert in identifying potentially stolen goods. 
 Your job is to analyze identifiers (serial numbers, IMEI, VIN, etc.) and provide risk assessment.
@@ -64,10 +104,10 @@ You should:
 Be helpful but conservative - when in doubt, recommend additional verification.
 Always respond with valid JSON matching the expected format.`;
 
-    const userPrompt = `Analyze this ${itemType || 'item'} identifier for potential theft risk:
+    const userPrompt = `Analyze this ${sanitizedItemType} identifier for potential theft risk:
 
-Identifier: ${identifier}
-${additionalContext ? `Additional context: ${additionalContext}` : ''}
+Identifier: ${trimmedIdentifier}
+${sanitizedContext ? `Additional context: ${sanitizedContext}` : ''}
 
 Provide your analysis in this JSON format:
 {

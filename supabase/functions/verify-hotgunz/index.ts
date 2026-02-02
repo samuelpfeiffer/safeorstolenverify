@@ -10,6 +10,49 @@ const corsHeaders = {
  * Searches HotGunz.com database of 32,000+ stolen firearms
  * Uses web scraping for public stolen firearms registry
  */
+// Input validation patterns (security)
+const SERIAL_NUMBER_REGEX = /^[A-Z0-9\-_]{3,50}$/i;
+const DANGEROUS_PATTERNS = [
+  /<script/i, /javascript:/i, /on\w+=/i, /eval\(/i,
+  /union\s+select/i, /drop\s+table/i, /insert\s+into/i, /delete\s+from/i
+];
+
+function validateSerialInput(serial: string): { valid: boolean; sanitized?: string; error?: string } {
+  if (!serial || typeof serial !== 'string') {
+    return { valid: false, error: 'Serial number is required' };
+  }
+  
+  const trimmed = serial.trim();
+  if (trimmed.length === 0) {
+    return { valid: false, error: 'Serial number is required' };
+  }
+  
+  if (trimmed.length < 3) {
+    return { valid: false, error: 'Serial number too short (minimum 3 characters)' };
+  }
+  
+  if (trimmed.length > 50) {
+    return { valid: false, error: 'Serial number too long (maximum 50 characters)' };
+  }
+  
+  // Check for dangerous patterns (XSS/SQL injection)
+  for (const pattern of DANGEROUS_PATTERNS) {
+    if (pattern.test(trimmed)) {
+      console.warn(`[HotGunz] Blocked dangerous input pattern: ${pattern}`);
+      return { valid: false, error: 'Invalid characters detected' };
+    }
+  }
+  
+  // Only allow alphanumeric, hyphens, and underscores
+  const sanitized = trimmed.toUpperCase().replace(/[^A-Z0-9\-_]/g, '');
+  
+  if (!SERIAL_NUMBER_REGEX.test(sanitized)) {
+    return { valid: false, error: 'Serial number contains invalid characters. Only letters, numbers, hyphens, and underscores allowed.' };
+  }
+  
+  return { valid: true, sanitized };
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -19,11 +62,13 @@ serve(async (req) => {
     const { identifier, itemType } = await req.json();
     const startTime = Date.now();
 
-    if (!identifier || identifier.trim().length === 0) {
+    // Validate and sanitize input
+    const validation = validateSerialInput(identifier);
+    if (!validation.valid) {
       return new Response(
         JSON.stringify({ 
           success: false, 
-          error: 'Serial number is required',
+          error: validation.error,
           status: 'error',
           confidence: 0,
           source: 'HotGunz'
@@ -32,7 +77,7 @@ serve(async (req) => {
       );
     }
 
-    const cleanSerial = identifier.trim().toUpperCase();
+    const cleanSerial = validation.sanitized!;
     console.log(`[HotGunz] Searching for firearm serial: ${cleanSerial}`);
 
     // Search HotGunz public database

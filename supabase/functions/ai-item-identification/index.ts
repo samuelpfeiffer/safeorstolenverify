@@ -21,11 +21,81 @@ serve(async (req) => {
 
     const { imageBase64, imageUrl, description } = await req.json();
 
+    // ============= INPUT VALIDATION =============
     if (!imageBase64 && !imageUrl && !description) {
       return new Response(
         JSON.stringify({ success: false, error: 'Image or description required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
+    }
+    
+    // Validate imageBase64 if provided
+    if (imageBase64) {
+      if (typeof imageBase64 !== 'string') {
+        return new Response(
+          JSON.stringify({ success: false, error: 'imageBase64 must be a string' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      // Limit base64 size (roughly 10MB limit when decoded)
+      if (imageBase64.length > 14_000_000) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Image too large. Maximum size is 10MB.' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      // Validate base64 format
+      const base64Regex = /^[A-Za-z0-9+/=]+$/;
+      if (!base64Regex.test(imageBase64)) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Invalid base64 image data' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
+    
+    // Validate imageUrl if provided
+    if (imageUrl) {
+      if (typeof imageUrl !== 'string') {
+        return new Response(
+          JSON.stringify({ success: false, error: 'imageUrl must be a string' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (imageUrl.length > 2048) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Image URL too long' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      // Validate URL format and protocol
+      try {
+        const url = new URL(imageUrl);
+        if (!['http:', 'https:'].includes(url.protocol)) {
+          throw new Error('Invalid protocol');
+        }
+      } catch {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Invalid image URL format. Must be http or https.' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
+    
+    // Validate description if provided
+    if (description) {
+      if (typeof description !== 'string') {
+        return new Response(
+          JSON.stringify({ success: false, error: 'description must be a string' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (description.length > 2000) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Description too long. Maximum 2000 characters.' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
     }
 
     console.log('[AI Item Identification] Processing image/description');
