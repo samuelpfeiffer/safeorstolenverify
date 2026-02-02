@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Search, CheckCircle, Clock, Award, ArrowRight } from 'lucide-react';
+import { Shield, Search, CheckCircle, Clock, Award, ArrowRight, AlertTriangle, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -15,6 +15,7 @@ import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBa
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { StateData, getNeighboringStates } from '@/config/stateData';
+import { getStateUniqueContent, hasUniqueContent } from '@/config/stateUniqueContent';
 import { useState } from 'react';
 
 interface StateLicensePlatePageProps {
@@ -25,6 +26,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
   const location = useLocation();
   const [plateInput, setPlateInput] = useState('');
   const neighboringStates = getNeighboringStates(stateData.slug);
+  const uniqueContent = getStateUniqueContent(stateData.slug);
 
   const handleSearch = () => {
     if (plateInput.trim()) {
@@ -243,6 +245,72 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
           </div>
         </section>
 
+        {/* UNIQUE CONTENT: Vehicle Market - Only shown if unique content exists */}
+        {uniqueContent && (
+          <section className="py-16 px-4 bg-muted/30">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6">{stateData.name} Vehicle Market Overview</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {uniqueContent.vehicleMarketParagraph}
+              </p>
+              
+              <h3 className="text-2xl font-bold mb-4">Vehicle Theft Patterns in {stateData.name}</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {uniqueContent.theftPatternsParagraph}
+              </p>
+
+              {/* Common Targets */}
+              <div className="bg-card rounded-lg p-6 mb-8">
+                <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-destructive" />
+                  Most Commonly Targeted Vehicles in {stateData.name}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {uniqueContent.commonTargets.map((vehicle, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-destructive/10 text-destructive rounded-full text-sm font-medium">
+                      {vehicle}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* UNIQUE CONTENT: Legal Consequences */}
+        {uniqueContent && (
+          <section className="py-16 px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                <Scale className="w-8 h-8 text-primary" />
+                {stateData.name} Laws on Stolen Vehicles
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {uniqueContent.legalConsequencesParagraph}
+              </p>
+
+              {/* Buying Tips */}
+              <div className="bg-primary/5 rounded-lg p-6">
+                <h3 className="text-xl font-semibold mb-4">{stateData.name} Vehicle Buying Tips</h3>
+                <ul className="space-y-3">
+                  {uniqueContent.buyingTips.map((tip, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span className="text-muted-foreground">{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Verification Advice */}
+              <div className="mt-8 p-6 bg-card border-l-4 border-primary rounded-lg">
+                <h4 className="font-semibold mb-2">Expert Verification Advice</h4>
+                <p className="text-muted-foreground">{uniqueContent.verificationAdvice}</p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* For Buyers AND Sellers */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
@@ -293,7 +361,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
         {/* FAQ Section */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">{stateData.name} Vehicle Verification FAQs</h2>
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-0" className="bg-background px-6 rounded-lg">
                 <AccordionTrigger className="text-left font-semibold">
@@ -333,6 +401,17 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
                   </AccordionContent>
                 </AccordionItem>
               )}
+              {/* UNIQUE STATE FAQs */}
+              {uniqueContent?.uniqueFaqs.map((faq, idx) => (
+                <AccordionItem key={`unique-${idx}`} value={`unique-item-${idx}`} className="bg-background px-6 rounded-lg">
+                  <AccordionTrigger className="text-left font-semibold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </section>

@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getStateUniqueContent, StateUniqueContent } from '@/config/stateUniqueContent';
 
 import {
   Accordion,
@@ -42,6 +43,10 @@ export const StateVinPageTemplate = ({
     // Use slug if provided, otherwise extract from current URL
     const urlPath = slug || window.location.pathname.replace(/^\//, '');
     const canonicalUrl = `https://safeorstolen.com/${urlPath}`;
+    
+    // Get unique content for this state (using license plate slug format for compatibility)
+    const licensePlateSlug = `${state.toLowerCase().replace(/\s+/g, '-')}-license-plate-lookup`;
+    const uniqueContent: StateUniqueContent | undefined = getStateUniqueContent(licensePlateSlug);
   
   const schema = {
     "@context": "https://schema.org",
@@ -180,13 +185,75 @@ export const StateVinPageTemplate = ({
           </div>
         </section>
 
+        {/* UNIQUE CONTENT: Vehicle Market & Theft Patterns - Only shown if unique content exists */}
+        {uniqueContent && (
+          <section className="py-16 px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6">{state} Vehicle Market & Theft Overview</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {uniqueContent.vehicleMarketParagraph}
+              </p>
+              
+              <h3 className="text-2xl font-bold mb-4">Understanding {state} Vehicle Theft Patterns</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {uniqueContent.theftPatternsParagraph}
+              </p>
+
+              {/* Common Targets */}
+              <div className="bg-card rounded-lg p-6 mb-8">
+                <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-destructive" />
+                  Commonly Targeted Vehicles in {state}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {uniqueContent.commonTargets.map((vehicle, idx) => (
+                    <span key={idx} className="px-3 py-1 bg-destructive/10 text-destructive rounded-full text-sm font-medium">
+                      {vehicle}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Buying Tips */}
+              <div className="bg-primary/5 rounded-lg p-6 mb-6">
+                <h4 className="text-xl font-semibold mb-4">{state} VIN Check Tips</h4>
+                <ul className="space-y-3">
+                  {uniqueContent.buyingTips.map((tip, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span className="text-muted-foreground">{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Verification Advice */}
+              <div className="p-6 bg-card border-l-4 border-primary rounded-lg">
+                <h4 className="font-semibold mb-2">Expert VIN Verification Advice</h4>
+                <p className="text-muted-foreground">{uniqueContent.verificationAdvice}</p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* FAQ Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">{state} VIN Check FAQs</h2>
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-card px-6 rounded-lg">
+                <AccordionItem key={index} value={`item-${index}`} className="bg-background px-6 rounded-lg">
+                  <AccordionTrigger className="text-left font-semibold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+              {/* UNIQUE STATE FAQs */}
+              {uniqueContent?.uniqueFaqs.map((faq, idx) => (
+                <AccordionItem key={`unique-${idx}`} value={`unique-item-${idx}`} className="bg-background px-6 rounded-lg">
                   <AccordionTrigger className="text-left font-semibold">
                     {faq.question}
                   </AccordionTrigger>
