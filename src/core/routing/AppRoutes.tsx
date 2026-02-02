@@ -72,6 +72,10 @@ const ForConsumersPage = lazy(() => import('@/pages/ForConsumersPage'));
 const PressPage = lazy(() => import('@/pages/PressPage'));
 const StolenCheckMiami = lazy(() => import('@/pages/city/StolenCheckMiami'));
 
+// API & News Pages (SOFT_404 fixes)
+const APIDocsPage = lazy(() => import('@/pages/APIDocsPage'));
+const NewsIndexPage = lazy(() => import('@/pages/NewsIndexPage'));
+
 // GSC FIX: Missing pages that were hitting NotFound with noindex
 const MarketplaceIntegrationPage = lazy(() => import('@/pages/MarketplaceIntegrationPage'));
 const RealTimeVerificationPage = lazy(() => import('@/pages/RealTimeVerificationPage'));
@@ -585,7 +589,14 @@ export const AppRoutes = () => {
         <Route path="/stolen-check-dallas" element={<StolenCheckDallas />} />
         <Route path="/stolen-check-san-jose" element={<StolenCheckSanJose />} />
 
+        {/* API DOCUMENTATION */}
+        <Route path="/api" element={<APIDocsPage />} />
+        <Route path="/api-docs" element={<APIDocsPage />} />
+        <Route path="/developer" element={<APIDocsPage />} />
+        <Route path="/developers" element={<APIDocsPage />} />
+
         {/* NEWS PAGES */}
+        <Route path="/news" element={<NewsIndexPage />} />
         <Route path="/news/onevalley-recognition" element={<OneValleyRecognitionPage />} />
 
         {/* PRESS & SOCIAL PAGES */}
