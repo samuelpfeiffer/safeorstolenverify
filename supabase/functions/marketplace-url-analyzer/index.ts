@@ -152,6 +152,24 @@ Respond ONLY with valid JSON:
   };
 }
 
+// Security: Blocked URL patterns (SSRF prevention)
+const BLOCKED_PATTERNS = [
+  /^https?:\/\/localhost/i,
+  /^https?:\/\/127\./,
+  /^https?:\/\/192\.168\./,
+  /^https?:\/\/10\./,
+  /^https?:\/\/172\.(1[6-9]|2[0-9]|3[0-1])\./,
+  /^https?:\/\/\[::1\]/,
+  /^https?:\/\/0\.0\.0\.0/,
+  /^file:/i,
+  /^ftp:/i,
+  /^data:/i,
+];
+
+function isBlockedUrl(url: string): boolean {
+  return BLOCKED_PATTERNS.some(pattern => pattern.test(url));
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -160,15 +178,56 @@ serve(async (req) => {
   try {
     const { url } = await req.json();
     
+    // ============= INPUT VALIDATION =============
     if (!url) {
       return new Response(
         JSON.stringify({ success: false, error: 'URL is required' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+    
+    if (typeof url !== 'string') {
+      return new Response(
+        JSON.stringify({ success: false, error: 'URL must be a string' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // URL length limit
+    if (url.length > 2048) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'URL too long. Maximum 2048 characters.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
     // Validate URL format
     if (!isValidUrl(url)) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Invalid URL format' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // SSRF Prevention: Block internal/private IPs
+    if (isBlockedUrl(url)) {
+      console.warn(`[Marketplace Analyzer] Blocked SSRF attempt: ${url.substring(0, 50)}`);
+      return new Response(
+        JSON.stringify({ success: false, error: 'Invalid URL. Private/internal URLs are not allowed.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // Validate protocol
+    try {
+      const parsedUrl = new URL(url);
+      if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+        return new Response(
+          JSON.stringify({ success: false, error: 'Only HTTP and HTTPS URLs are allowed' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    } catch {
       return new Response(
         JSON.stringify({ success: false, error: 'Invalid URL format' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -187,7 +246,9 @@ serve(async (req) => {
       );
     }
 
-    console.log(`[Marketplace Analyzer] Scraping ${marketplace.name} listing: ${url}`);
+    // Log only domain, not full URL for security
+    const parsedUrl = new URL(url);
+    console.log(`[Marketplace Analyzer] Scraping ${marketplace.name} listing from: ${parsedUrl.hostname}`);
 
     // Get Firecrawl API key - check both possible env var names
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY') || Deno.env.get('FIRECRAWL_API_KEY_1');

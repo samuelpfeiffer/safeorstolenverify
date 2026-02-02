@@ -146,13 +146,67 @@ serve(async (req) => {
       );
     }
     
-    // Validate message content length to prevent abuse
+    // Validate message array length
+    if (messages.length > 100) {
+      return new Response(
+        JSON.stringify({ error: 'Too many messages. Maximum 100 messages allowed.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+    
+    // Validate each message structure
+    for (let i = 0; i < messages.length; i++) {
+      const msg = messages[i];
+      if (!msg || typeof msg !== 'object') {
+        return new Response(
+          JSON.stringify({ error: `Invalid message at index ${i}` }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (!['user', 'assistant', 'system'].includes(msg.role)) {
+        return new Response(
+          JSON.stringify({ error: `Invalid role at message ${i}. Must be user, assistant, or system.` }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (typeof msg.content !== 'string') {
+        return new Response(
+          JSON.stringify({ error: `Message content at index ${i} must be a string` }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      // Individual message length limit
+      if (msg.content.length > 10000) {
+        return new Response(
+          JSON.stringify({ error: `Message at index ${i} exceeds maximum length of 10,000 characters` }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
+    
+    // Validate total content length to prevent abuse
     const totalLength = messages.reduce((sum, msg) => sum + (msg.content?.length || 0), 0);
     if (totalLength > 50000) {
       return new Response(
-        JSON.stringify({ error: 'Message content too long. Please reduce your message size.' }),
+        JSON.stringify({ error: 'Total message content too long. Please reduce your message size.' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
+    }
+    
+    // Validate context if provided
+    if (context) {
+      if (context.itemType && (typeof context.itemType !== 'string' || context.itemType.length > 100)) {
+        return new Response(
+          JSON.stringify({ error: 'Invalid context.itemType' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+      if (context.serialNumber && (typeof context.serialNumber !== 'string' || context.serialNumber.length > 100)) {
+        return new Response(
+          JSON.stringify({ error: 'Invalid context.serialNumber' }),
+          { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
     }
 
     // ============= API KEY VALIDATION =============
