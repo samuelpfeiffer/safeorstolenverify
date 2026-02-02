@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const IMEICheckerPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free IMEI Checker App - Verify Phone Not Stolen | Only Mobile App | SafeOrStolen"
-      metaDescription="The ONLY IMEI checker with a mobile app. Check if phones are stolen free. Instant verification from 100+ databases. Better than CheckMEND, IMEI.info. Download our app. Protects buyers, sellers, pawn shops."
+      title="Free IMEI Checker App - Verify Phone Not Stolen"
+      metaDescription="Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, GSMA database. Better than CheckMEND."
       h1="Free IMEI Checker - The ONLY Mobile App"
       itemType="Phone"
       keywords={[

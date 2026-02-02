@@ -10,10 +10,10 @@ export default function DataSourcesPage() {
   return (
     <>
       <PageSEO
-        title="Data Sources - Where SafeOrStolen Gets Verification Data"
-        description="Learn about SafeOrStolen's 100+ data sources for stolen item verification. We check NCIC, GSMA, carrier blacklists, insurance databases, and more."
+        title="Data Sources - Where SafeOrStolen Gets Data"
+        description="SafeOrStolen checks 100+ data sources for stolen item verification. We query NCIC, GSMA, carrier blacklists, NICB, insurance claims databases worldwide."
         keywords="data sources, verification databases, NCIC, GSMA, stolen property database, carrier blacklist, insurance claims"
-        canonical="https://safeorstolen.com/data-sources"
+        canonical="/data-sources"
       />
       
       <TopNavigation />

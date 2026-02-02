@@ -41,21 +41,21 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   },
 
   // ========================================
-  // IMEI CHECKER (/imei-checker) - 158 chars
+  // IMEI CHECKER (/imei-checker) - 155 chars
   // ========================================
   '/imei-checker': {
-    title: 'Free IMEI Checker - Verify Phone Blacklist Status',
-    description: 'Free IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and law enforcement databases.', // 158 chars
+    title: 'Free IMEI Checker App - Verify Phone Not Stolen',
+    description: 'Free IMEI checker with the only mobile app. Verify phones not stolen in 3 seconds. Check carrier blacklists, GSMA database. Better than CheckMEND.', // 155 chars
     keywords: 'IMEI checker, phone blacklist check, stolen phone checker, IMEI lookup free',
     canonical: '/imei-checker'
   },
 
   // ========================================
-  // VIN CHECKER (/vin-checker) - 157 chars
+  // VIN CHECKER (/vin-checker) - 155 chars
   // ========================================
   '/vin-checker': {
-    title: 'Free VIN Checker - Verify Vehicle Theft History',
-    description: 'Free VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against NICB and DMV databases. Better than Carfax.', // 157 chars
+    title: 'Free VIN Checker App - Verify Vehicle Not Stolen',
+    description: 'Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check NICB, DMV, law enforcement databases. Better than Carfax.', // 155 chars
     keywords: 'VIN checker, stolen car check, vehicle history free, NICB VIN check, Carfax alternative',
     canonical: '/vin-checker'
   },
@@ -221,11 +221,11 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   },
 
   // ========================================
-  // FIREARMS CHECK (/firearms-check) - 157 chars
+  // FIREARMS CHECK (/firearms-check) - 159 chars
   // ========================================
   '/firearms-check': {
-    title: 'Firearm Serial Number Check - Verify Gun Status',
-    description: 'Verify firearm serial numbers against ATF stolen gun database. Instant background check for gun buyers, sellers, and FFL dealers. Free verification.', // 157 chars
+    title: 'Gun Serial Number Lookup Free - Firearm Serial Check',
+    description: 'Free gun serial number lookup to check if firearm is stolen. Check pistol, rifle, shotgun serial numbers against ATF, FBI NCIC databases. Instant verification.', // 159 chars
     keywords: 'firearm serial check, stolen gun lookup, ATF database check, gun verification',
     canonical: '/firearms-check'
   },

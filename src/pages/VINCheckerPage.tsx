@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const VINCheckerPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Free VIN Checker App - Verify Vehicle Not Stolen | Only Mobile App | SafeOrStolen"
-      metaDescription="The ONLY VIN checker with a mobile app. Check if cars are stolen free. Instant verification from NICB, DMV, law enforcement. Better than Carfax for theft checks. Download our app. Protects buyers, sellers, dealers."
+      title="Free VIN Checker App - Verify Vehicle Not Stolen"
+      metaDescription="Free VIN checker with the only mobile app. Verify cars not stolen in 3 seconds. Check NICB, DMV, law enforcement databases. Better than Carfax."
       h1="Free VIN Checker - The ONLY Mobile App"
       itemType="Vehicle"
       keywords={[

@@ -14,9 +14,9 @@ export default function FeaturesPage() {
     <>
       <PageSEO
         title="Features - SafeOrStolen Verification Platform"
-        description="Explore SafeOrStolen's features: mobile app, 100+ databases, instant verification, barcode scanning, offline mode, API access, and more."
+        description="Explore SafeOrStolen features: mobile app, 100+ databases, instant verification, barcode scanning, offline mode, API access. Free 2 checks included."
         keywords="SafeOrStolen features, stolen item checker features, IMEI checker features, VIN checker features, mobile app features"
-        canonical="https://safeorstolen.com/features"
+        canonical="/features"
       />
       
       <TopNavigation />
