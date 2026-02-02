@@ -10,6 +10,7 @@ import { SignupSuccess } from '@/components/auth/SignupSuccess';
 import { AuthForm } from '@/components/auth/AuthForm';
 import { useAuth } from '@/lib/auth';
 import { Shield, ArrowLeft } from 'lucide-react';
+import { PageSEO } from '@/components/seo/PageSEO';
 
 type AuthStep = 'auth' | 'terms' | 'welcome' | 'signup-success' | 'signin-welcome';
 
@@ -125,6 +126,12 @@ const AuthPage = () => {
 
   // Main auth form
   return (
+    <>
+      <PageSEO
+        title="Sign In or Create Account - SafeOrStolen"
+        description="Sign in or create your SafeOrStolen account. Access verification history, manage subscriptions, and unlock unlimited stolen item checks securely."
+        noIndex={true}
+      />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center p-4">
       <div className="absolute top-4 left-4">
         <Button 
@@ -154,6 +161,7 @@ const AuthPage = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 
