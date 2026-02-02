@@ -30,8 +30,8 @@ export default function APIPage() {
   return (
     <>
       <SEOHead
-        title="API Documentation - Developer Integration Guide"
-        description="Complete REST API documentation for stolen item verification. Integrate IMEI, VIN, and serial number checks into your apps. Code examples included."
+        title="Verification API Docs - IMEI VIN Serial Developer"
+        description="REST API documentation for stolen item verification. Integrate IMEI, VIN, serial checks. Code examples in Python, JavaScript, cURL."
         canonical="/api"
         schemaJson={articleSchema}
       />

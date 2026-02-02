@@ -128,8 +128,8 @@ const AuthPage = () => {
   return (
     <>
       <PageSEO
-        title="Sign In or Create Account - SafeOrStolen"
-        description="Sign in or create your SafeOrStolen account. Access verification history, manage subscriptions, and unlock unlimited stolen item checks securely."
+        title="Sign In or Create Account | SafeOrStolen"
+        description="Sign in or create your SafeOrStolen account. Access verification history and manage subscriptions securely."
         noIndex={true}
       />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center p-4">

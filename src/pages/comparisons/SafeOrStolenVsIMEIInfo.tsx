@@ -60,8 +60,8 @@ const SafeOrStolenVsIMEIInfo = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs IMEI.info - Which Stolen Phone Checker is Better? (2025)"
-        description="Compare SafeOrStolen and IMEI.info for stolen phone verification. See features, pricing, database size, and which IMEI checker is best for your needs."
+        title="SafeOrStolen vs IMEI.info - IMEI Checker Comparison"
+        description="Compare SafeOrStolen and IMEI.info for stolen phone verification. See features, pricing, and database differences."
         keywords="safeorstolen vs imei.info, imei.info alternative, free imei checker, stolen phone checker comparison, best imei lookup"
         canonical="/comparisons/safeorstolen-vs-imei-info"
         structuredData={comparisonSchema}

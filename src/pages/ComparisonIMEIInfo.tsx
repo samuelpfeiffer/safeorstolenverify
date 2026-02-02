@@ -47,9 +47,9 @@ const ComparisonIMEIInfo = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs IMEI.info: IMEI.info Has NO Mobile App | Download SafeOrStolen App"
-        description="IMEI.info has NO mobile app. SafeOrStolen has a full iOS/Android app with barcode scanning for IMEI checks. Better than IMEI.info. Download SafeOrStolen IMEI checker app free. IMEI.info alternative with mobile app. Best IMEI checker app 2025."
-        keywords="IMEI.info alternative, IMEI.info app, IMEI.info has no app, SafeOrStolen vs IMEI.info, better than IMEI.info, IMEI.info mobile app, IMEI checker app, download safeorstolen app, IMEI verification app, IMEI.info vs SafeOrStolen"
+        title="SafeOrStolen vs IMEI.info - Free Mobile App Comparison"
+        description="IMEI.info has no mobile app. SafeOrStolen offers iOS/Android app with barcode scanning. Compare IMEI checkers."
+        keywords="IMEI.info alternative, IMEI.info app, SafeOrStolen vs IMEI.info, better than IMEI.info, IMEI checker app, IMEI.info vs SafeOrStolen"
         canonical="/vs-imeiinfo"
         structuredData={comparisonSchema}
       />
