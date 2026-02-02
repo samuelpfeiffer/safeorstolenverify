@@ -1196,6 +1196,10 @@ export type Database = {
         }
         Returns: Json
       }
+      check_stolen_item_public: {
+        Args: { check_identifier: string; check_type?: string }
+        Returns: Json
+      }
       clean_expired_pending_verifications: { Args: never; Returns: undefined }
       generate_api_key: { Args: never; Returns: string }
       generate_unique_clean_slug: {
