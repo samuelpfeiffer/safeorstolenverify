@@ -26,7 +26,7 @@ const staticArticles = [
   },
   {
     title: 'How to Check if a Phone is Stolen Before Buying in 2026',
-    slug: 'how-to-check-if-phone-is-stolen',
+    slug: 'how-to-check-if-phone-stolen',
     excerpt: 'Complete 2026 guide to verifying smartphone legitimacy with IMEI checks, carrier blacklist verification, and red flags when buying used phones.',
     category: 'Buying Guides',
     readTime: '8 min',
