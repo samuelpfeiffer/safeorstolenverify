@@ -4,7 +4,16 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Youtube, ExternalLink, Play, Bell, ArrowLeft, Share2 } from 'lucide-react';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { 
+  Youtube, ExternalLink, Play, Bell, ArrowLeft, Share2, 
+  CheckCircle, Users, BookOpen, Lightbulb, BarChart3, ArrowRight 
+} from 'lucide-react';
 import { 
   YOUTUBE_VIDEOS, 
   YOUTUBE_CHANNEL,
@@ -13,12 +22,14 @@ import {
   getYouTubeThumbnail,
   getYouTubeShortsUrl
 } from '@/config/videoData';
+import { getVideoUniqueContent, hasVideoUniqueContent } from '@/config/youtubeUniqueContent';
 import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
 
 const VideoWatchPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   
   const video = slug ? getVideoBySlug(slug) : undefined;
+  const uniqueContent = slug ? getVideoUniqueContent(slug) : undefined;
   
   // Redirect to main YouTube page if video not found
   if (!video) {
@@ -49,7 +60,7 @@ const VideoWatchPage: React.FC = () => {
   // Get related videos (excluding current)
   const relatedVideos = YOUTUBE_VIDEOS.filter(v => v.id !== video.id).slice(0, 3);
 
-  // VideoObject schema for this specific video
+  // VideoObject schema for this specific video - REQUIRED for video watch pages
   const videoSchema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
@@ -68,11 +79,30 @@ const VideoWatchPage: React.FC = () => {
         "url": "https://safeorstolen.com/logo.png"
       }
     },
+    "author": {
+      "@type": "Person",
+      "name": YOUTUBE_CHANNEL.creatorName,
+      "url": YOUTUBE_CHANNEL.url
+    },
     "potentialAction": {
       "@type": "WatchAction",
       "target": `https://safeorstolen.com/youtube/${video.slug}`
     }
   };
+
+  // FAQ Schema if unique content has FAQs
+  const faqSchema = uniqueContent?.uniqueFaqs ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": uniqueContent.uniqueFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -99,22 +129,24 @@ const VideoWatchPage: React.FC = () => {
     ]
   };
 
+  const schemas = [videoSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+
   return (
     <>
       <SEOHead
-        title={video.seoTitle}
+        title={`${video.seoTitle} | SafeOrStolen Video Tutorial`}
         description={video.seoDescription}
         keywords={video.tags.join(', ')}
         canonical={`/youtube/${video.slug}`}
         ogImage={getYouTubeThumbnail(video.videoId)}
         ogType="video.other"
-        schemaJson={[videoSchema, breadcrumbSchema]}
+        schemaJson={schemas}
       />
 
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8">
           {/* Breadcrumb */}
-          <nav className="mb-6">
+          <nav className="mb-6" aria-label="Breadcrumb">
             <Link 
               to="/youtube" 
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -145,6 +177,7 @@ const VideoWatchPage: React.FC = () => {
                 <div className="flex flex-wrap gap-2 mb-4">
                   <Badge className="bg-red-600 text-white">{video.category}</Badge>
                   <Badge variant="outline">{video.duration}</Badge>
+                  <Badge variant="secondary">{YOUTUBE_CHANNEL.creatorName}</Badge>
                 </div>
                 
                 <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
@@ -191,6 +224,163 @@ const VideoWatchPage: React.FC = () => {
                   </Badge>
                 ))}
               </div>
+
+              {/* === UNIQUE CONTENT SECTIONS === */}
+              
+              {/* Extended Description */}
+              {uniqueContent && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <BookOpen className="w-6 h-6 text-primary" />
+                    About This Video
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-muted-foreground">
+                    <p className="leading-relaxed">{uniqueContent.extendedDescription}</p>
+                  </div>
+                </section>
+              )}
+
+              {/* Key Takeaways */}
+              {uniqueContent && (
+                <section className="mb-12 bg-primary/5 rounded-lg p-6">
+                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <CheckCircle className="w-6 h-6 text-primary" />
+                    Key Takeaways
+                  </h2>
+                  <ul className="space-y-3">
+                    {uniqueContent.keyTakeaways.map((takeaway, idx) => (
+                      <li key={idx} className="flex gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <span className="text-foreground">{takeaway}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
+              {/* Transcript Summary */}
+              {uniqueContent && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-4">Video Transcript Summary</h2>
+                  <div className="bg-card border rounded-lg p-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {uniqueContent.transcriptSummary}
+                    </p>
+                  </div>
+                </section>
+              )}
+
+              {/* Key Statistics */}
+              {uniqueContent && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <BarChart3 className="w-6 h-6 text-primary" />
+                    Key Statistics
+                  </h2>
+                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {uniqueContent.keyStatistics.map((stat, idx) => (
+                      <Card key={idx} className="p-4 text-center bg-gradient-to-br from-primary/5 to-transparent">
+                        <p className="text-sm font-medium text-foreground">{stat}</p>
+                      </Card>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* Expert Tips */}
+              {uniqueContent && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <Lightbulb className="w-6 h-6 text-yellow-500" />
+                    Expert Tips from Kelly McEvoy
+                  </h2>
+                  <Card className="p-6 border-l-4 border-yellow-500">
+                    <p className="text-muted-foreground leading-relaxed italic">
+                      "{uniqueContent.expertTips}"
+                    </p>
+                  </Card>
+                </section>
+              )}
+
+              {/* Target Audience */}
+              {uniqueContent && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <Users className="w-6 h-6 text-primary" />
+                    Who Should Watch This Video
+                  </h2>
+                  <div className="flex flex-wrap gap-2">
+                    {uniqueContent.targetAudience.map((audience, idx) => (
+                      <Badge key={idx} variant="outline" className="py-2 px-4">
+                        {audience}
+                      </Badge>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* Related Resources */}
+              {uniqueContent && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-4">Related Resources & Tools</h2>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {uniqueContent.relatedResources.map((resource, idx) => (
+                      <Link key={idx} to={resource.url}>
+                        <Card className="p-4 hover:shadow-lg transition-shadow group">
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium group-hover:text-primary transition-colors">
+                              {resource.title}
+                            </span>
+                            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                          </div>
+                        </Card>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* FAQ Section */}
+              {uniqueContent && uniqueContent.uniqueFaqs.length > 0 && (
+                <section className="mb-12">
+                  <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                  <Accordion type="single" collapsible className="space-y-4">
+                    {uniqueContent.uniqueFaqs.map((faq, index) => (
+                      <AccordionItem 
+                        key={index} 
+                        value={`item-${index}`} 
+                        className="bg-card px-6 rounded-lg border"
+                      >
+                        <AccordionTrigger className="text-left font-semibold">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </section>
+              )}
+
+              {/* CTA Section */}
+              {uniqueContent && (
+                <section className="mb-8 bg-gradient-to-r from-red-600/10 to-orange-600/10 rounded-lg p-8 text-center border border-red-600/20">
+                  <h2 className="text-xl font-bold mb-4">{uniqueContent.ctaText}</h2>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    <Link to="/verify">
+                      <Button size="lg" className="gap-2">
+                        Start Free Verification <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                    <Link to="/app">
+                      <Button size="lg" variant="outline" className="gap-2">
+                        Download Mobile App
+                      </Button>
+                    </Link>
+                  </div>
+                </section>
+              )}
             </div>
 
             {/* Sidebar - Related Videos */}
@@ -272,6 +462,19 @@ const VideoWatchPage: React.FC = () => {
                     </Button>
                   </a>
                 </div>
+              </Card>
+
+              {/* Sticky Verification CTA */}
+              <Card className="mt-6 p-4 sticky top-24">
+                <h3 className="font-bold mb-2">Ready to Verify?</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Start your free stolen item check now.
+                </p>
+                <Link to="/verify">
+                  <Button className="w-full gap-2">
+                    Verify Now <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
               </Card>
             </div>
           </div>
