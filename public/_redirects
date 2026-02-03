@@ -90,6 +90,23 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-guitar            /serial-number-checker  301!
 /check-instrument        /serial-number-checker  301!
 
+# GSC noindex fix 2026-02-02: Additional item checks
+/check-dslr-camera       /serial-number-checker  301!
+/check-violin            /serial-number-checker  301!
+/check-rolex             /serial-number-checker  301!
+/check-power-tools       /serial-number-checker  301!
+/check-piano             /serial-number-checker  301!
+/check-trumpet           /serial-number-checker  301!
+/check-saxophone         /serial-number-checker  301!
+/check-lens              /serial-number-checker  301!
+/check-canon-camera      /serial-number-checker  301!
+/check-nikon-camera      /serial-number-checker  301!
+/check-sony-camera       /serial-number-checker  301!
+/check-gopro             /serial-number-checker  301!
+/check-omega             /serial-number-checker  301!
+/check-tag-heuer         /serial-number-checker  301!
+/check-breitling         /serial-number-checker  301!
+
 # GSC noindex fix 2026-01-31: Legacy app and mobile URLs
 /ios-app                 /app  301!
 /mobile-verification     /app  301!
@@ -484,13 +501,26 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /san-francisco-stolen-item-check                                /verify  301!
 /indianapolis-stolen-item-check                                 /verify  301!
 
+# GSC noindex fix 2026-02-02: Additional city/state stolen-item-check pages
+/austin-stolen-item-check                                       /verify  301!
+/columbus-stolen-item-check                                     /verify  301!
+/hawaii-stolen-item-check                                       /verify  301!
+/vermont-stolen-item-check                                      /verify  301!
+/indiana-stolen-item-check                                      /verify  301!
+/new-york-stolen-item-check                                     /verify  301!
+/new-jersey-stolen-item-check                                   /verify  301!
+/denver-stolen-item-check                                       /verify  301!
+/seattle-stolen-item-check                                      /verify  301!
+/boston-stolen-item-check                                       /verify  301!
+/portland-stolen-item-check                                     /verify  301!
+
 # State stolen-item-check pattern (catch-all)
 /*-stolen-item-check                                            /verify  301!
 
 # ============================================
 # OTHER LEGACY REDIRECTS
 # GSC FIX: Added more pages that were hitting NotFound with noindex
-# Last updated: 2026-01-28 - Added soft-404 fixes from GSC report
+# Last updated: 2026-02-02 - Added soft-404 fixes from GSC report
 # ============================================
 # REMOVED - These pages now have real routes in AppRoutes.tsx:
 # /real-time-verification, /transparency, /mobile, /community
@@ -526,8 +556,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /vin-verification                                               /vin-checker  301!
 /cookies                                                        /privacy  301!
 /pawn-shops                                                     /for-pawn-shops  301!
-# GSC noindex fix 2026-01-31 - Remaining URLs from validation report
-/statistics                                                     /about  301!
+# GSC noindex fix 2026-02-02: Additional legacy pages from validation report
+/crime-prevention-impact                                        /about  301!
+/stolen-search-console                                          /verify  301!
+/guides/pawnshop-buying-tips                                    /for-pawn-shops  301!
+/guides/serial-number-guide                                     /serial-number-checker  301!
+/guides/imei-verification-guide                                 /imei-checker  301!
 
 # ============================================
 # APP SUBDIRECTORY GSC FIX
