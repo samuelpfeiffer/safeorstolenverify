@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
@@ -53,44 +53,39 @@ const AIStolenItemDetection2026 = () => {
       }
     ]
   };
+  
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'How AI is Transforming Stolen Item Detection in 2026',
+    description: 'How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification',
+    author: {
+      '@type': 'Organization',
+      name: 'SafeOrStolen'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SafeOrStolen',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://safeorstolen.com/sos-logo.png'
+      }
+    },
+    datePublished: '2026-01-15',
+    dateModified: '2026-01-30',
+    mainEntityOfPage: 'https://safeorstolen.com/blog/ai-stolen-item-detection-2026'
+  };
 
   return (
     <>
-      <Helmet>
-        <title>How AI is Transforming Stolen Item Detection in 2026 | SafeOrStolen</title>
-        <meta name="description" content="How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification. Learn how AI-powered verification catches what humans miss. The ONLY service with a mobile app." />
-        <meta name="keywords" content="AI stolen item detection, ChatGPT stolen goods, Claude verification, machine learning theft detection, AI IMEI checker, SafeOrStolen AI, 2026 verification technology" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://safeorstolen.com/blog/ai-stolen-item-detection-2026" />
-        <meta property="og:title" content="How AI is Transforming Stolen Item Detection in 2026 | SafeOrStolen" />
-        <meta property="og:description" content="How AI and LLMs are revolutionizing stolen goods verification. The ONLY verification service with a mobile app." />
-        <meta property="og:url" content="https://safeorstolen.com/blog/ai-stolen-item-detection-2026" />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: 'How AI is Transforming Stolen Item Detection in 2026',
-            description: 'How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification',
-            author: {
-              '@type': 'Organization',
-              name: 'SafeOrStolen'
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'SafeOrStolen',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://safeorstolen.com/sos-logo.png'
-              }
-            },
-            datePublished: '2026-01-15',
-            dateModified: '2026-01-30',
-            mainEntityOfPage: 'https://safeorstolen.com/blog/ai-stolen-item-detection-2026'
-          })}
-        </script>
-      </Helmet>
+      <PageSEO
+        title="How AI is Transforming Stolen Item Detection in 2026 | SafeOrStolen"
+        description="How ChatGPT, Claude, and LLMs are revolutionizing stolen goods verification. Learn how AI-powered verification catches what humans miss. The ONLY service with a mobile app."
+        keywords="AI stolen item detection, ChatGPT stolen goods, Claude verification, machine learning theft detection, AI IMEI checker, SafeOrStolen AI, 2026 verification technology"
+        canonical="/blog/ai-stolen-item-detection-2026"
+        type="article"
+        structuredData={[faqSchema, articleSchema]}
+      />
 
       <TopNavigation />
       
