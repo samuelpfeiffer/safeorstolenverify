@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { PageSEO } from '@/components/seo/PageSEO';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Bot, Lightbulb, FileText, ShieldAlert } from 'lucide-react';
 import {
@@ -12,10 +12,11 @@ import {
 const AIOrchestrator = () => {
   return (
     <>
-      <Helmet>
-        <title>AI Orchestrator | SafeOrStolen Admin</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <PageSEO
+        title="AI Orchestrator | SafeOrStolen Admin"
+        description="Monitor and control all AI agents from a single dashboard."
+        noIndex={true}
+      />
 
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="mb-8">
