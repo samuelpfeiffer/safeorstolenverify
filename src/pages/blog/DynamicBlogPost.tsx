@@ -66,23 +66,31 @@ export default function DynamicBlogPost() {
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Card className="max-w-md">
-          <CardContent className="p-8 text-center">
-            <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
-            <p className="text-muted-foreground mb-6">
-              The blog post you're looking for doesn't exist or has been removed.
-            </p>
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-primary hover:underline"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Blog
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
+      <>
+        <PageSEO
+          title="Blog Post Not Found | SafeOrStolen"
+          description="The blog post you're looking for doesn't exist or has been removed. Browse our blog for guides on avoiding stolen goods."
+          canonical="/blog"
+          noIndex={true}
+        />
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <Card className="max-w-md">
+            <CardContent className="p-8 text-center">
+              <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
+              <p className="text-muted-foreground mb-6">
+                The blog post you're looking for doesn't exist or has been removed.
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 text-primary hover:underline"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Blog
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+      </>
     );
   }
 

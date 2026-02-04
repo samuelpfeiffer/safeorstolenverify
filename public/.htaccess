@@ -5,6 +5,145 @@
 RewriteEngine On
 
 # ===================================
+# GSC NOINDEX FIX - 301 Redirects for Legacy URLs
+# These must come BEFORE SPA fallback to prevent NotFound/noindex
+# Last updated: 2026-02-04
+# ===================================
+
+# Legacy state stolen-item-check URLs → /verify
+RewriteRule ^arkansas-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^north-carolina-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^kentucky-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^hawaii-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^vermont-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^indiana-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^new-york-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^new-jersey-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^austin-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^tucson-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^atlanta-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^columbus-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^oakland-stolen-item-check$ /verify [R=301,L]
+RewriteRule ^san-francisco-stolen-item-check$ /verify [R=301,L]
+
+# Legacy app subdirectory URLs → appropriate pages
+RewriteRule ^app/law-enforcement$ /for-law-enforcement [R=301,L]
+RewriteRule ^app/firearms-checker$ /firearms-check [R=301,L]
+RewriteRule ^app/ebay-verification$ /verify [R=301,L]
+RewriteRule ^app/offerup-safety$ /offerup-safety [R=301,L]
+RewriteRule ^app/vs-imeipro$ /vs-imeiinfo [R=301,L]
+RewriteRule ^app/vs-checkmend$ /vs-checkmend [R=301,L]
+RewriteRule ^app/sellers$ /about [R=301,L]
+RewriteRule ^app/buyers$ /app [R=301,L]
+RewriteRule ^app/features/push-notifications$ /app/features [R=301,L]
+RewriteRule ^app/features/history$ /app/features [R=301,L]
+
+# Legacy verification and tool URLs
+RewriteRule ^verification-app$ /app [R=301,L]
+RewriteRule ^mobile-verification$ /app [R=301,L]
+RewriteRule ^ios-app$ /app [R=301,L]
+RewriteRule ^android-app$ /app [R=301,L]
+RewriteRule ^database$ /stolen-database [R=301,L]
+RewriteRule ^vin$ /vin-checker [R=301,L]
+RewriteRule ^for-brands$ /for-businesses [R=301,L]
+RewriteRule ^for-marketplace-sellers$ /for-marketplaces [R=301,L]
+RewriteRule ^mercari-verification$ /verify [R=301,L]
+RewriteRule ^buyer-guide$ /verify [R=301,L]
+
+# International VIN checks
+RewriteRule ^uk-vehicle-check$ /vin-checker [R=301,L]
+RewriteRule ^australia-vin-check$ /vin-checker [R=301,L]
+RewriteRule ^canada-vin-check$ /vin-checker [R=301,L]
+
+# Item checker legacy URLs
+RewriteRule ^check-fender-guitar$ /serial-number-checker [R=301,L]
+RewriteRule ^check-violin$ /serial-number-checker [R=301,L]
+RewriteRule ^check-rolex$ /serial-number-checker [R=301,L]
+RewriteRule ^check-power-tools$ /serial-number-checker [R=301,L]
+RewriteRule ^check-gaming-console$ /check-electronics [R=301,L]
+RewriteRule ^check-drone$ /verify [R=301,L]
+
+# Business/info page redirects
+RewriteRule ^crime-prevention-impact$ /about [R=301,L]
+RewriteRule ^ultimate-guide$ /about [R=301,L]
+RewriteRule ^stolen-search-console$ /verify [R=301,L]
+RewriteRule ^auction-houses$ /for-auction-houses [R=301,L]
+RewriteRule ^careers$ /about [R=301,L]
+RewriteRule ^trust-verification$ /about [R=301,L]
+RewriteRule ^statistics$ /about [R=301,L]
+RewriteRule ^accuracy$ /about [R=301,L]
+RewriteRule ^our-story$ /about [R=301,L]
+RewriteRule ^what-to-do-if-i-bought-stolen-phone$ /faq [R=301,L]
+
+# Guides legacy URLs
+RewriteRule ^guides/pawnshop-buying-tips$ /for-pawn-shops [R=301,L]
+
+# Developer/API
+RewriteRule ^developer-portal$ /about [R=301,L]
+
+# VIN lookup state redirects (states without dedicated pages)
+RewriteRule ^vermont-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^michigan-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^wyoming-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^alaska-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^new-mexico-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^connecticut-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^oklahoma-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^indiana-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^kentucky-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^hawaii-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^nebraska-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^minnesota-vin-lookup$ /vin-checker [R=301,L]
+RewriteRule ^mississippi-vin-lookup$ /vin-checker [R=301,L]
+
+# License plate lookup state redirects (pattern for states flagged as duplicates)
+# Note: Real pages exist - these may be for old cache issues
+# If still flagged, the real pages have proper SEO now
+
+# City subdirectory legacy
+RewriteRule ^city/miami$ /stolen-check-los-angeles [R=301,L]
+RewriteRule ^city/phoenix$ /stolen-check-phoenix [R=301,L]
+RewriteRule ^los-angeles/imei-check$ /imei-checker [R=301,L]
+RewriteRule ^chicago/imei-check$ /imei-checker [R=301,L]
+
+# Blog redirects for timestamped posts
+RewriteRule ^blog/understanding-imei-blacklists-and-what-they-mean-\d+$ /blog [R=301,L]
+RewriteRule ^blog/how-law-enforcement-tracks-stolen-goods-\d+$ /blog [R=301,L]
+RewriteRule ^blog/how-pawn-shops-can-prevent-buying-stolen-goods-\d+$ /blog/pawn-shop-stolen-item-verification [R=301,L]
+RewriteRule ^blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-\d+$ /blog [R=301,L]
+RewriteRule ^blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-\d+$ /blog/how-to-check-if-phone-stolen [R=301,L]
+RewriteRule ^blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide.*$ /blog/how-to-check-if-iphone-stolen [R=301,L]
+RewriteRule ^blog/playstation-5-serial-number-verification-guide-\d*$ /check-ps5 [R=301,L]
+
+# Other blog legacy
+RewriteRule ^blog/avoid-buying-stolen-laptops$ /blog [R=301,L]
+RewriteRule ^blog/business-guide-preventing-stolen-goods$ /blog [R=301,L]
+RewriteRule ^blog/imei-checker-guide-2025$ /blog [R=301,L]
+RewriteRule ^blog/imei-check-everything$ /blog [R=301,L]
+RewriteRule ^blog/vin-verification-guide$ /blog/complete-vin-guide [R=301,L]
+RewriteRule ^blog/imei-blacklist-guide$ /blog [R=301,L]
+RewriteRule ^blog/verify-used-electronics-before-buying$ /blog [R=301,L]
+RewriteRule ^blog/buying-used-phones-red-flags$ /blog [R=301,L]
+RewriteRule ^blog/buying-used-bikes-verification-guide$ /blog [R=301,L]
+RewriteRule ^blog/protect-yourself-buying-used-electronics$ /blog [R=301,L]
+RewriteRule ^blog/best-imei-checker-tools-2025$ /imei-checker [R=301,L]
+RewriteRule ^blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification$ /app [R=301,L]
+RewriteRule ^blog/scan-and-verify-using-safeorstolen-camera-feature$ /app [R=301,L]
+RewriteRule ^blog/scan-and-verify-using-safeorstolen-camera-feature-\d*$ /app [R=301,L]
+
+# Comparison and alternative pages
+RewriteRule ^vs-stolenregister$ /compare [R=301,L]
+RewriteRule ^referral$ /pricing [R=301,L]
+RewriteRule ^imei-checker-app$ /app [R=301,L]
+
+# FasterCapital legacy
+RewriteRule ^fastercapital/raise-capital$ /about [R=301,L]
+RewriteRule ^fastercapital/tech-cofounder$ /about [R=301,L]
+
+# Pattern-based catch-alls (place after specific rules)
+RewriteRule ^(.+)-stolen-item-check$ /verify [R=301,L]
+
+# ===================================
 # Bot Detection & Prerendered Content
 # ===================================
 # Serve prerendered static HTML to search engine bots
