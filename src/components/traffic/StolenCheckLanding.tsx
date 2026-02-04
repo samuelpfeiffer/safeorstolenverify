@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Shield, CheckCircle, AlertTriangle, Smartphone, Search, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 interface StolenCheckLandingProps {
   itemType: string;
@@ -21,22 +21,31 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
   keywords,
   faqs
 }) => {
+  const canonicalPath = `/check/${itemType.toLowerCase().replace(/\s+/g, '-')}`;
+  
+  // Build FAQ schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+  
   return (
     <>
-      <Helmet>
-        <title>{title} | SafeOrStolen - Free Stolen Item Checker</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords.join(', ')} />
-        <link rel="canonical" href={`https://safeorstolen.com/check/${itemType.toLowerCase().replace(/\s+/g, '-')}`} />
-        
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-      </Helmet>
+      <SEOHead
+        title={`${title} | SafeOrStolen - Free Stolen Item Checker`}
+        description={description}
+        keywords={keywords.join(', ')}
+        canonical={canonicalPath}
+        schemaJson={faqSchema}
+      />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}

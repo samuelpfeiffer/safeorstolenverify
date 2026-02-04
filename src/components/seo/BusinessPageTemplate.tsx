@@ -1,7 +1,7 @@
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Shield, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 interface BusinessPageTemplateProps {
   title: string;
@@ -33,6 +33,8 @@ export const BusinessPageTemplate = ({
   keywords,
   content
 }: BusinessPageTemplateProps) => {
+  const location = useLocation();
+  
   const iconMap: Record<string, any> = {
     shield: Shield,
     trending: TrendingUp,
@@ -59,13 +61,13 @@ export const BusinessPageTemplate = ({
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={keywords.join(', ')} />
-        <link rel="canonical" href={`https://safeorstolen.com${window.location.pathname}`} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <SEOHead
+        title={title}
+        description={metaDescription}
+        keywords={keywords.join(', ')}
+        canonical={location.pathname}
+        schemaJson={schema}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}

@@ -1,8 +1,8 @@
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Shield, Search, MapPin, ArrowRight, AlertTriangle, CheckCircle, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getStateUniqueContent, StateUniqueContent } from '@/config/stateUniqueContent';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 import {
   Accordion,
@@ -81,14 +81,13 @@ export const StateVinPageTemplate = ({
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database`} />
-        <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
-        <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      <SEOHead
+        title={title}
+        description={metaDescription}
+        canonical={canonicalUrl}
+        keywords={`${state} VIN check, ${stateCode} stolen car lookup, ${state} vehicle history, ${state} VIN verification, ${state} stolen vehicle database`}
+        schemaJson={schema}
+      />
 
       {/* Minimal SEO fallback - no duplicate H1 */}
       <noscript>

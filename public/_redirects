@@ -1,7 +1,8 @@
 # SafeOrStolen Server-Side Redirects
 # CLEANED VERSION - Fixed Google Search Console "Page with Redirect" errors
-# Last updated: 2026-01-28
+# Last updated: 2026-02-04 (GSC noindex comprehensive fix)
 # CRITICAL: Only redirect URLs that have NO React route. Never redirect URLs in sitemap.
+# IMPORTANT: These redirects MUST return 301 before SPA fallback to fix GSC noindex issues
 
 # ============================================
 # FORCE CANONICAL DOMAIN (non-www, HTTPS) - HIGHEST PRIORITY

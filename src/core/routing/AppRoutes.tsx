@@ -63,6 +63,11 @@ const FirearmsCheckPage = lazy(() => import('@/pages/FirearmsCheckPage'));
 const LicensePlateLookupPage = lazy(() => import('@/pages/LicensePlateLookupPage'));
 const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 
+// NEW POWERHOUSE SEO HUB PAGES (2026-02-04)
+const FirearmsSerialNumberCheckPage = lazy(() => import('@/pages/FirearmsSerialNumberCheckPage'));
+const FreeStolenVehicleCheckHubPage = lazy(() => import('@/pages/FreeStolenVehicleCheckPage'));
+const SerialNumberStolenCheckPage = lazy(() => import('@/pages/SerialNumberStolenCheckPage'));
+
 // NEW REAL PAGES (No more redirects for these URLs)
 const IMEICheckPage = lazy(() => import('@/pages/IMEICheckPage'));
 const VINCheckPage = lazy(() => import('@/pages/VINCheckPage'));
@@ -360,6 +365,9 @@ export const AppRoutes = () => {
         <Route path="/check-jewelry" element={<CheckJewelryPage />} />
         <Route path="/check-boat" element={<CheckBoatPage />} />
         <Route path="/firearms-check" element={<FirearmsCheckPage />} />
+        <Route path="/firearms-serial-number-check" element={<FirearmsSerialNumberCheckPage />} />
+        <Route path="/free-stolen-vehicle-check" element={<FreeStolenVehicleCheckHubPage />} />
+        <Route path="/serial-number-stolen-check" element={<SerialNumberStolenCheckPage />} />
         <Route path="/license-plate-lookup" element={<LicensePlateLookupPage />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
         
