@@ -34,7 +34,7 @@ import type { AggregatedResult } from '@/services/VerificationService';
 // Item type configuration for quick-select cards
 const ITEM_TYPES = [
   { id: 'smartphone', label: 'Phone/IMEI', icon: Smartphone, color: 'text-blue-500', bgColor: 'bg-blue-500/10', description: 'Verify device status', link: '/check-phone' },
-  { id: 'vehicle', label: 'Vehicle/VIN', icon: Car, color: 'text-emerald-500', bgColor: 'bg-emerald-500/10', description: 'Check theft history', link: '/check-vehicle' },
+  { id: 'vehicle', label: 'Vehicle/VIN', icon: Car, color: 'text-emerald-500', bgColor: 'bg-emerald-500/10', description: 'Check theft history', link: '/vin-checker' },
   { id: 'bicycle', label: 'Bicycle', icon: Bike, color: 'text-orange-500', bgColor: 'bg-orange-500/10', description: 'Search bike registries', link: '/check-bike' },
   { id: 'firearm', label: 'Firearm', icon: Crosshair, color: 'text-red-500', bgColor: 'bg-red-500/10', description: 'Verify firearm status', link: '/check-firearm' },
   { id: 'laptop', label: 'Laptop', icon: Monitor, color: 'text-purple-500', bgColor: 'bg-purple-500/10', description: 'Check serial number', link: '/check-laptop' },
