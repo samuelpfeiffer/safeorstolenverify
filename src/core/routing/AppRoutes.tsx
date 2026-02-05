@@ -280,6 +280,12 @@ const BarcodeScanner = lazy(() => import('@/pages/app/BarcodeScanner'));
 const DownloadApp = lazy(() => import('@/pages/DownloadApp'));
 const AppFeatures = lazy(() => import('@/pages/app/AppFeatures'));
 
+// Mobile PWA Pages (Standalone install)
+const MobileVerifyPage = lazy(() => import('@/mobile/pages/MobileVerifyPage'));
+const MobileDashboardPage = lazy(() => import('@/mobile/pages/MobileDashboardPage'));
+const MobileSettingsPage = lazy(() => import('@/mobile/pages/MobileSettingsPage'));
+const MobileOnboardingPage = lazy(() => import('@/mobile/pages/MobileOnboardingPage'));
+
 // Social Media & External Profile Pages
 const YouTubePage = lazy(() => import('@/pages/YouTubePage'));
 const VideoWatchPage = lazy(() => import('@/pages/youtube/VideoWatchPage'));
@@ -543,6 +549,12 @@ export const AppRoutes = () => {
         <Route path="/app/stolen-phone-checker" element={<StolenPhoneCheckerApp />} />
         <Route path="/app/vin-checker" element={<VinCheckerApp />} />
         <Route path="/app/barcode-scanner" element={<BarcodeScanner />} />
+
+        {/* MOBILE PWA ROUTES (Standalone install) */}
+        <Route path="/mobile-onboarding" element={<MobileOnboardingPage />} />
+        <Route path="/mobile-verify" element={<MobileVerifyPage />} />
+        <Route path="/mobile-dashboard" element={<MobileDashboardPage />} />
+        <Route path="/mobile-settings" element={<MobileSettingsPage />} />
 
         {/* BLOG PAGES */}
         <Route path="/blog" element={<BlogIndexPage />} />
