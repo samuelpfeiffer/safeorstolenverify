@@ -1,6 +1,7 @@
 /**
- * Secure CORS configuration for edge functions
+ * Secure CORS + Security Headers for edge functions
  * Restricts access to approved domains only
+ * Includes 2026-compliant security headers
  */
 
 const ALLOWED_ORIGINS = [
@@ -18,6 +19,19 @@ function isLovablePreview(origin: string): boolean {
   return origin.endsWith('.lovableproject.com') || origin.endsWith('.lovable.app');
 }
 
+/**
+ * 2026 Security Headers — applied to ALL edge function responses
+ * Prevents clickjacking, MIME-sniffing, and enforces HTTPS
+ */
+const SECURITY_HEADERS: Record<string, string> = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'X-XSS-Protection': '0',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload',
+};
+
 export function getCorsHeaders(requestOrigin?: string | null): HeadersInit {
   const origin = requestOrigin || '';
   const allowedOrigin = ALLOWED_ORIGINS.includes(origin) || isLovablePreview(origin)
@@ -29,6 +43,7 @@ export function getCorsHeaders(requestOrigin?: string | null): HeadersInit {
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-requested-with',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
     'Access-Control-Allow-Credentials': 'true',
+    ...SECURITY_HEADERS,
   };
 }
 
