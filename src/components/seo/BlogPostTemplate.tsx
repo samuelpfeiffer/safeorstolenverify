@@ -47,7 +47,7 @@ export const BlogPostTemplate = ({
       "name": author
     },
     "datePublished": publishDate,
-    "dateModified": publishDate,
+    "dateModified": "2026-02-06",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": fullUrl
@@ -55,12 +55,28 @@ export const BlogPostTemplate = ({
     "publisher": {
       "@type": "Organization",
       "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://safeorstolen.com/sos-logo.png"
       }
     },
-    "keywords": keywords.join(', ')
+    "keywords": keywords.join(', '),
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://safeorstolen.com/#website"
+    }
+  };
+
+  // Speakable schema for voice search & AI Overviews (2026 GEO critical)
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "article > .prose > p:first-of-type", ".conclusion p"]
+    },
+    "url": fullUrl
   };
 
   const breadcrumbSchema = {
@@ -73,7 +89,7 @@ export const BlogPostTemplate = ({
     ]
   };
 
-  const schemas = [articleSchema, breadcrumbSchema];
+  const schemas = [articleSchema, speakableSchema, breadcrumbSchema];
 
   return (
     <>
