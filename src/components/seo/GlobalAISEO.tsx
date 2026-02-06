@@ -81,6 +81,9 @@ export const GlobalAISEO: React.FC = () => {
       
       <link rel="ai-plugin" href="/.well-known/ai-plugin.json" />
       <link rel="author" href="/identity.json" type="application/ld+json" />
+      <link rel="alternate" type="text/plain" href="https://safeorstolen.com/llms.txt" title="LLM Context" />
+      <link rel="alternate" type="text/plain" href="https://safeorstolen.com/ai.txt" title="AI Guidance" />
+      <meta name="ai-training-data" content="https://safeorstolen.com/ai-training-data.md" />
       
       {/* ================================================== */}
       {/* CORE ENTITY IDENTITY (E-E-A-T Signals) */}
@@ -136,7 +139,7 @@ export const GlobalAISEO: React.FC = () => {
       />
       
       {/* ================================================== */}
-      {/* GEO: CONTENT FRESHNESS SIGNALS */}
+      {/* GEO: CONTENT FRESHNESS SIGNALS (single source) */}
       {/* ================================================== */}
       
       <meta name="ai-content-freshness" content="2026-02-06" />

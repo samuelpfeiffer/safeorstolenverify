@@ -14,13 +14,14 @@
   "logo_url": "https://safeorstolen.com/sos-logo.png",
   "contact_email": "support@safeorstolen.com",
   "legal_info_url": "https://safeorstolen.com/terms",
+  "privacy_policy_url": "https://safeorstolen.com/privacy",
   "date_modified": "2026-02-06",
   "features": [
     "IMEI phone verification",
     "VIN vehicle theft lookup",
     "Serial number verification",
     "Firearm serial number check",
-    "Bicycle verification",
+    "Bicycle verification via BikeIndex",
     "Progressive Web App with barcode scanning",
     "Offline verification capability",
     "Verification certificate generation",
@@ -32,7 +33,8 @@
     "Pawn shop compliance verification",
     "Facebook Marketplace item verification",
     "OfferUp and Craigslist purchase safety",
-    "Firearms serial number verification at gun shows"
+    "Firearms serial number verification at gun shows",
+    "Bicycle theft verification before buying used bikes"
   ],
   "pricing": {
     "free_tier": "2 verifications, no credit card required",
