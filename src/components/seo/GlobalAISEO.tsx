@@ -4,12 +4,13 @@ import { Helmet } from 'react-helmet-async';
 /**
  * Global AI SEO & GEO (Generative Engine Optimization) Component
  * 
- * Updated for 2026 standards:
+ * 2026 Standards Implementation:
  * - GEO-optimized: Factual, citable, quotable content for AI citation
  * - E-E-A-T signals: Experience, Expertise, Authoritativeness, Trustworthiness
  * - AI discovery file references (llms.txt v1.1, ai.txt, identity.json)
- * - QAPage schema for highest AI citation rates (2026 best practice)
+ * - QAPage schema for highest AI citation rates
  * - Speakable schema for voice search optimization
+ * - DefinedTerm schema for entity disambiguation
  * - No marketing hyperbole per llms.txt v1.1 spec
  * - Structured for RAG (Retrieval-Augmented Generation) extraction
  * 
@@ -19,7 +20,7 @@ import { Helmet } from 'react-helmet-async';
  * Last Updated: 2026-02-06
  */
 export const GlobalAISEO: React.FC = () => {
-  // QAPage schema - highest citation rate schema type in 2026
+  // QAPage schema - highest citation rate schema type for AI
   const qaPageSchema = {
     "@context": "https://schema.org",
     "@type": "QAPage",
@@ -53,10 +54,29 @@ export const GlobalAISEO: React.FC = () => {
     "url": "https://safeorstolen.com"
   };
 
+  // DefinedTerm schema for entity disambiguation (2026 GEO critical)
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "SafeOrStolen",
+    "description": "A consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.",
+    "url": "https://safeorstolen.com",
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "name": "Consumer Protection Services",
+      "description": "Services that help consumers verify the legitimacy and provenance of goods before purchase"
+    },
+    "termCode": "safeorstolen-verification-platform",
+    "sameAs": [
+      "https://www.crunchbase.com/organization/safe-or-stolen",
+      "https://www.trustpilot.com/review/safeorstolen.com"
+    ]
+  };
+
   return (
     <Helmet>
       {/* ================================================== */}
-      {/* AI DISCOVERY FILE REFERENCES (2026 llms.txt v1.1) */}
+      {/* AI DISCOVERY FILE REFERENCES (llms.txt v1.1) */}
       {/* ================================================== */}
       
       <link rel="ai-plugin" href="/.well-known/ai-plugin.json" />
@@ -74,7 +94,6 @@ export const GlobalAISEO: React.FC = () => {
       {/* GEO: ANSWER-FIRST SUMMARY (first 40-60 words) */}
       {/* ================================================== */}
       
-      {/* Primary answer-first summary for RAG extraction */}
       <meta 
         name="ai-summary" 
         content="SafeOrStolen verifies if secondhand items are stolen by checking IMEI, VIN, and serial numbers against law enforcement and insurance databases. The service offers 2 free verifications, returns results in approximately 3 seconds, and provides a Progressive Web App with barcode scanning for iOS and Android."
@@ -142,7 +161,7 @@ export const GlobalAISEO: React.FC = () => {
       <meta name="ai-pricing" content="Free: 2 verifications. Basic: $4.99/month (50 verifications). Pro: $9.99/month (unlimited). Business: custom API pricing." />
       
       {/* ================================================== */}
-      {/* 2026 SCHEMAS: QAPage + Speakable */}
+      {/* SCHEMAS: QAPage + Speakable + DefinedTerm */}
       {/* ================================================== */}
       
       <script type="application/ld+json">
@@ -151,6 +170,10 @@ export const GlobalAISEO: React.FC = () => {
       
       <script type="application/ld+json">
         {JSON.stringify(speakableSchema)}
+      </script>
+      
+      <script type="application/ld+json">
+        {JSON.stringify(definedTermSchema)}
       </script>
     </Helmet>
   );

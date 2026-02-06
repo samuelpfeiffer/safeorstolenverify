@@ -67,6 +67,8 @@ export const MasterSEO: React.FC = () => {
       
       {/* GEO 2026: llms.txt v1.1 discovery references */}
       <link rel="author" href="/identity.json" type="application/ld+json" />
+      <link rel="alternate" type="text/plain" href="https://safeorstolen.com/llms.txt" title="LLM Context" />
+      <link rel="alternate" type="text/plain" href="https://safeorstolen.com/ai.txt" title="AI Guidance" />
       
       {/* Sitemap reference */}
       <link rel="sitemap" type="application/xml" href="https://safeorstolen.com/sitemap.xml" />

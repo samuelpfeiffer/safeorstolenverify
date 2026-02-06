@@ -41,5 +41,5 @@ export function getRobotsContent(params: {
   const effectiveNoIndex =
     typeof params.noIndex === 'boolean' ? params.noIndex : isPrivateNoIndexPath(params.pathname);
 
-  return effectiveNoIndex ? 'noindex, nofollow' : 'index, follow';
+  return effectiveNoIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 }

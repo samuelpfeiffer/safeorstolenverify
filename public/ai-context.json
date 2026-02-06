@@ -29,13 +29,14 @@
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
     "lowPrice": "0",
-    "highPrice": "49.99",
+    "highPrice": "9.99",
     "offerCount": 4,
     "offers": [
       {
         "@type": "Offer",
         "name": "Free Tier",
         "price": "0",
+        "priceCurrency": "USD",
         "description": "2 verifications, no credit card required"
       },
       {
@@ -70,64 +71,6 @@
     "Verification certificate generation",
     "Push notifications for watchlist items",
     "API access for business integrations"
-  ],
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is SafeOrStolen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SafeOrStolen is a consumer protection platform that verifies if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases. The service offers 2 free verifications and returns results in approximately 3 seconds."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does SafeOrStolen verify items?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SafeOrStolen queries multiple databases simultaneously when a user enters an IMEI, VIN, or serial number. Sources include law enforcement stolen property databases, insurance claim records, carrier blacklists, and community registries such as BikeIndex. Results are aggregated and returned in approximately 3 seconds."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What items can SafeOrStolen verify?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SafeOrStolen supports verification of mobile phones (via IMEI), vehicles including cars, trucks, and motorcycles (via VIN), firearms (via serial number), bicycles (via frame number), laptops and computers, electronics, power tools, and other items with serial numbers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is SafeOrStolen free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SafeOrStolen offers 2 free verifications with no credit card required. Paid plans start at $4.99/month for 50 verifications, $9.99/month for unlimited verifications, and custom pricing for business API access."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there a SafeOrStolen mobile app?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SafeOrStolen offers a Progressive Web App (PWA) for iOS and Android. The app includes barcode scanning for instant verification, offline capability for premium users, and push notifications for watchlist items. It can be installed from safeorstolen.com/app."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I check if a phone is stolen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "To check if a phone is stolen: (1) Find the IMEI number by dialing *#06# on the phone or checking Settings > About Phone, (2) Enter the 15-digit IMEI at safeorstolen.com/imei-checker or in the SafeOrStolen app, (3) Review the verification results showing theft status from carrier blacklists and law enforcement databases."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I check if a car is stolen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "To check if a car is stolen: (1) Locate the 17-character VIN on the dashboard near the windshield or on the driver's door jamb, (2) Enter the VIN at safeorstolen.com/vin-checker or in the SafeOrStolen app, (3) Review the verification results showing theft status from NICB, NHTSA, and law enforcement databases."
-      }
-    }
   ],
   "dateModified": "2026-02-06",
   "inLanguage": "en-US"
