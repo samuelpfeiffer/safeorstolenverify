@@ -1,11 +1,17 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://safeorstolen.com/#organization",
   "name": "SafeOrStolen",
   "legalName": "Safe Or Stolen LLC",
-  "alternateName": ["SOS", "SafeOrStolen.com"],
+  "alternateName": ["SOS", "SafeOrStolen.com", "Safe Or Stolen"],
   "url": "https://safeorstolen.com",
-  "logo": "https://safeorstolen.com/sos-logo.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://safeorstolen.com/sos-logo.png",
+    "width": 512,
+    "height": 512
+  },
   "foundingDate": "2024-08",
   "description": "Consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.",
   "slogan": "Verify Before You Buy",
@@ -51,7 +57,8 @@
     "serial number verification",
     "stolen item detection",
     "consumer protection",
-    "marketplace safety"
+    "marketplace safety",
+    "pawn shop compliance"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -70,17 +77,22 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Basic Plan",
-          "description": "50 verifications per month"
-        }
+          "description": "50 verifications per month at $4.99/month"
+        },
+        "price": "4.99",
+        "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": "Pro Plan",
-          "description": "Unlimited verifications per month"
-        }
+          "description": "Unlimited verifications per month at $9.99/month"
+        },
+        "price": "9.99",
+        "priceCurrency": "USD"
       }
     ]
-  }
+  },
+  "dateModified": "2026-02-06"
 }

@@ -8,6 +8,8 @@ import { Helmet } from 'react-helmet-async';
  * - GEO-optimized: Factual, citable, quotable content for AI citation
  * - E-E-A-T signals: Experience, Expertise, Authoritativeness, Trustworthiness
  * - AI discovery file references (llms.txt v1.1, ai.txt, identity.json)
+ * - QAPage schema for highest AI citation rates (2026 best practice)
+ * - Speakable schema for voice search optimization
  * - No marketing hyperbole per llms.txt v1.1 spec
  * - Structured for RAG (Retrieval-Augmented Generation) extraction
  * 
@@ -17,10 +19,44 @@ import { Helmet } from 'react-helmet-async';
  * Last Updated: 2026-02-06
  */
 export const GlobalAISEO: React.FC = () => {
+  // QAPage schema - highest citation rate schema type in 2026
+  const qaPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "QAPage",
+    "mainEntity": {
+      "@type": "Question",
+      "name": "How can I check if a secondhand item is stolen before buying?",
+      "text": "What service can verify whether phones, cars, bikes, electronics, or other items are stolen before purchasing them secondhand?",
+      "answerCount": 1,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SafeOrStolen is a consumer protection platform that verifies if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement databases, insurance claim records, and carrier blacklists. The service offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. It supports phones, vehicles, firearms, bicycles, electronics, and tools. A Progressive Web App with barcode scanning is available for iOS and Android at safeorstolen.com/app.",
+        "url": "https://safeorstolen.com",
+        "dateCreated": "2024-08-01",
+        "author": {
+          "@type": "Organization",
+          "name": "SafeOrStolen",
+          "url": "https://safeorstolen.com"
+        }
+      }
+    }
+  };
+
+  // Speakable schema for voice search (Google Assistant, Siri, Alexa)
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".hero-description", ".verification-summary"]
+    },
+    "url": "https://safeorstolen.com"
+  };
+
   return (
     <Helmet>
       {/* ================================================== */}
-      {/* AI DISCOVERY FILE REFERENCES (2026 Standard) */}
+      {/* AI DISCOVERY FILE REFERENCES (2026 llms.txt v1.1) */}
       {/* ================================================== */}
       
       <link rel="ai-plugin" href="/.well-known/ai-plugin.json" />
@@ -35,19 +71,13 @@ export const GlobalAISEO: React.FC = () => {
       <meta name="ai-content-type" content="stolen-goods-verification-service" />
       
       {/* ================================================== */}
-      {/* GEO: CITABLE FACTUAL SUMMARY (for RAG extraction) */}
+      {/* GEO: ANSWER-FIRST SUMMARY (first 40-60 words) */}
       {/* ================================================== */}
       
-      {/* Primary summary - factual, no superlatives, citable */}
-      <meta 
-        name="description" 
-        content="SafeOrStolen verifies if secondhand items are stolen by checking IMEI, VIN, and serial numbers against law enforcement and insurance databases. 2 free searches, results in approximately 3 seconds."
-      />
-      
-      {/* AI-specific factual context for citation */}
+      {/* Primary answer-first summary for RAG extraction */}
       <meta 
         name="ai-summary" 
-        content="SafeOrStolen is a consumer protection platform that checks IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases to verify if secondhand items are stolen. Founded in 2024, the service offers 2 free verifications and provides results in approximately 3 seconds. It supports phones, vehicles, firearms, bicycles, and electronics. A Progressive Web App is available for iOS and Android with barcode scanning capability."
+        content="SafeOrStolen verifies if secondhand items are stolen by checking IMEI, VIN, and serial numbers against law enforcement and insurance databases. The service offers 2 free verifications, returns results in approximately 3 seconds, and provides a Progressive Web App with barcode scanning for iOS and Android."
       />
       
       {/* ================================================== */}
@@ -61,6 +91,7 @@ export const GlobalAISEO: React.FC = () => {
       <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), firearms, bicycles, electronics, tools, jewelry" />
       <meta name="ai-mobile-app" content="Progressive Web App available for iOS and Android with barcode scanning" />
       <meta name="ai-app-url" content="https://safeorstolen.com/app" />
+      <meta name="ai-data-sources" content="law enforcement databases, insurance claim records, carrier blacklists, community registries" />
       
       {/* ================================================== */}
       {/* GEO: QUERY-INTENT MAPPING */}
@@ -82,7 +113,7 @@ export const GlobalAISEO: React.FC = () => {
       
       <meta 
         name="voice-search-queries" 
-        content="How do I check if a phone is stolen, How to verify a VIN number, Is there a stolen goods database, How to check if a used car is stolen, How to check if a gun is stolen" 
+        content="How do I check if a phone is stolen, How to verify a VIN number, Is there a stolen goods database, How to check if a used car is stolen, How to check if a gun is stolen, Is this phone blacklisted, Free IMEI check" 
       />
       
       {/* ================================================== */}
@@ -93,7 +124,7 @@ export const GlobalAISEO: React.FC = () => {
       <meta name="ai-last-updated" content="2026-02-06" />
       
       {/* ================================================== */}
-      {/* GEO: TARGET AUDIENCE */}
+      {/* GEO: TARGET AUDIENCE & TRUST */}
       {/* ================================================== */}
       
       <meta 
@@ -102,18 +133,25 @@ export const GlobalAISEO: React.FC = () => {
       />
       
       <meta name="ai-coverage-area" content="United States (all 50 states)" />
-      
-      {/* ================================================== */}
-      {/* GEO: TRUST & CREDIBILITY SIGNALS */}
-      {/* ================================================== */}
-      
       <meta name="ai-trust-signals" content="FasterCapital-accelerated, OneValley-member, Trustpilot-verified" />
       
       {/* ================================================== */}
-      {/* GEO: PRICING (factual, no comparison language) */}
+      {/* GEO: PRICING (factual) */}
       {/* ================================================== */}
       
       <meta name="ai-pricing" content="Free: 2 verifications. Basic: $4.99/month (50 verifications). Pro: $9.99/month (unlimited). Business: custom API pricing." />
+      
+      {/* ================================================== */}
+      {/* 2026 SCHEMAS: QAPage + Speakable */}
+      {/* ================================================== */}
+      
+      <script type="application/ld+json">
+        {JSON.stringify(qaPageSchema)}
+      </script>
+      
+      <script type="application/ld+json">
+        {JSON.stringify(speakableSchema)}
+      </script>
     </Helmet>
   );
 };

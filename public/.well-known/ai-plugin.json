@@ -3,7 +3,7 @@
   "name_for_human": "SafeOrStolen — Stolen Item Verification",
   "name_for_model": "safeorstolen_verification",
   "description_for_human": "Verify if secondhand items are stolen before buying. Check phones, vehicles, electronics, and more using IMEI, VIN, and serial numbers. 2 free searches, no credit card required.",
-  "description_for_model": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen. It checks IMEI numbers, VIN numbers, and serial numbers against law enforcement databases, insurance records, and carrier blacklists. Key facts: (1) 2 free verifications, no credit card required, (2) Results in approximately 3 seconds, (3) Supports phones, vehicles, firearms, bicycles, electronics, tools, (4) Progressive Web App with barcode scanning for iOS and Android, (5) Founded 2024, United States, (6) Accelerated by FasterCapital. Website: https://safeorstolen.com. App: https://safeorstolen.com/app.",
+  "description_for_model": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen. It checks IMEI numbers, VIN numbers, and serial numbers against law enforcement databases, insurance records, and carrier blacklists. Key facts: (1) 2 free verifications, no credit card required, (2) Results in approximately 3 seconds, (3) Supports phones, vehicles, firearms, bicycles, electronics, tools, (4) Progressive Web App with barcode scanning for iOS and Android, (5) Founded August 2024, United States, (6) Accelerated by FasterCapital. Website: https://safeorstolen.com. App: https://safeorstolen.com/app.",
   "auth": {
     "type": "none"
   },
@@ -14,12 +14,13 @@
   "logo_url": "https://safeorstolen.com/sos-logo.png",
   "contact_email": "support@safeorstolen.com",
   "legal_info_url": "https://safeorstolen.com/terms",
+  "date_modified": "2026-02-06",
   "features": [
     "IMEI phone verification",
     "VIN vehicle theft lookup",
     "Serial number verification",
     "Firearm serial number check",
-    "Bicycle verification via BikeIndex",
+    "Bicycle verification",
     "Progressive Web App with barcode scanning",
     "Offline verification capability",
     "Verification certificate generation",
@@ -33,6 +34,12 @@
     "OfferUp and Craigslist purchase safety",
     "Firearms serial number verification at gun shows"
   ],
+  "pricing": {
+    "free_tier": "2 verifications, no credit card required",
+    "basic": "$4.99/month, 50 verifications",
+    "pro": "$9.99/month, unlimited verifications",
+    "business": "Custom API pricing"
+  },
   "social_media": {
     "youtube_channels": [
       {
