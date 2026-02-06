@@ -136,6 +136,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:site" content="@safeorstolen" />
       <meta name="twitter:creator" content="@safeorstolen" />
       
+      {/* LovableHTML cache control - tells proxy how long to cache this snapshot */}
+      {!noIndex && (
+        <meta name="prerender-header" content="Cache-Control: max-age=86400" />
+      )}
+      
       {/* JSON-LD Structured Data */}
       {schemaArray.map((schema, index) => (
         <script key={`schema-${index}`} type="application/ld+json">

@@ -5,73 +5,66 @@ interface StatusCodeHandlerProps {
   statusCode: 200 | 404 | 301 | 302;
   noIndex?: boolean;
   canonical?: string;
+  /** For 301/302 redirects: the destination URL */
+  redirectLocation?: string;
 }
 
 /**
- * Handles proper HTTP status codes and meta directives for different page types
- * Helps Google understand the actual status of pages to fix indexing issues
+ * Handles proper HTTP status codes and meta directives for different page types.
+ * 
+ * Emits `prerender-status-code` and `prerender-header` meta tags that
+ * LovableHTML reads to return correct HTTP status codes to search engine
+ * and AI crawlers (Googlebot, GPTBot, ClaudeBot, etc.).
  */
 export const StatusCodeHandler: React.FC<StatusCodeHandlerProps> = ({ 
   statusCode, 
   noIndex = false,
-  canonical 
+  canonical,
+  redirectLocation,
 }) => {
   useEffect(() => {
-    // Set HTTP status for crawlers and browsers
-    const statusMeta = document.createElement('meta');
-    statusMeta.httpEquiv = 'status';
-    statusMeta.content = statusCode.toString();
-    document.head.appendChild(statusMeta);
-
-    // Set cache control based on status
-    const cacheMeta = document.createElement('meta');
-    cacheMeta.httpEquiv = 'cache-control';
-    if (statusCode === 200) {
-      cacheMeta.content = 'public, max-age=3600';
-    } else if (statusCode === 404) {
-      cacheMeta.content = 'no-cache, no-store, must-revalidate';
-    } else {
-      cacheMeta.content = 'no-cache';
+    // Update the default prerender-status-code meta tag in index.html
+    const existing = document.querySelector('meta[name="prerender-status-code"]');
+    if (existing) {
+      existing.setAttribute('content', statusCode.toString());
     }
-    document.head.appendChild(cacheMeta);
-
-    return () => {
-      if (document.head.contains(statusMeta)) {
-        document.head.removeChild(statusMeta);
-      }
-      if (document.head.contains(cacheMeta)) {
-        document.head.removeChild(cacheMeta);
-      }
-    };
   }, [statusCode]);
+
+  // Build full redirect URL for LovableHTML header signal
+  const fullRedirectUrl = redirectLocation
+    ? redirectLocation.startsWith('http')
+      ? redirectLocation
+      : `https://safeorstolen.com${redirectLocation}`
+    : undefined;
 
   return (
     <Helmet>
-      {/* Set proper robots directive based on status and indexing preference */}
+      {/* Robots directive based on status and indexing preference */}
       <meta name="robots" content={
         statusCode === 404 || noIndex ? 
         "noindex, nofollow" : 
         "index, follow"
       } />
       
-      {/* Canonical URL - CRITICAL: Always render for SEO regardless of status */}
+      {/* LovableHTML status code signal - tells the proxy what HTTP status to return to bots */}
+      <meta name="prerender-status-code" content={statusCode.toString()} />
+      
+      {/* LovableHTML redirect header - for 301/302 signals */}
+      {(statusCode === 301 || statusCode === 302) && fullRedirectUrl && (
+        <meta name="prerender-header" content={`Location: ${fullRedirectUrl}`} />
+      )}
+      
+      {/* LovableHTML cache control headers */}
+      {statusCode === 200 && (
+        <meta name="prerender-header" content="Cache-Control: max-age=86400" />
+      )}
+      {statusCode === 404 && (
+        <meta name="prerender-header" content="Cache-Control: no-cache, no-store" />
+      )}
+      
+      {/* Canonical URL */}
       {canonical && (
         <link rel="canonical" href={canonical} />
-      )}
-      
-      {/* Additional status-specific meta tags */}
-      {statusCode === 200 && (
-        <>
-          <meta name="page-status" content="live" />
-          <meta name="content-status" content="published" />
-        </>
-      )}
-      
-      {statusCode === 404 && (
-        <>
-          <meta name="page-status" content="not-found" />
-          <meta name="content-status" content="missing" />
-        </>
       )}
     </Helmet>
   );

@@ -79,24 +79,24 @@
     <!-- IndexNow Key Reference for instant indexing -->
     <link rel="indexnow" href="https://safeorstolen.com/indexnow-key.txt">
     
-    <!-- Prerender.io Token for SEO crawler pre-rendering -->
-    <meta name="prerender-token" content="iiMthWrIIiQhunohL2U5">
+    <!-- LovableHTML Prerendering - Status code signal for bot serving -->
     <meta name="prerender-status-code" content="200">
     
-    <!-- Enhanced Prerender.io detection for reliable bot serving -->
+    <!-- LovableHTML page-ready detection -->
     <script>
-      // Prerender.io detection - signals when page is ready for caching
+      // LovableHTML uses this signal to know when the page is fully rendered
+      // and safe to snapshot for search engine / AI crawler serving.
       window.prerenderReady = false;
       
-      // Check if this is a prerender request (bot)
-      window.isPrerendering = navigator.userAgent.toLowerCase().indexOf('prerender') !== -1;
-      
       document.addEventListener('DOMContentLoaded', function() {
-        // Wait for React to hydrate and content to render
         var checkReady = setInterval(function() {
-          // Check if React has rendered content
           var root = document.getElementById('root');
-          if (root && root.children.length > 0 && !root.querySelector('.loading')) {
+          // Wait for React to render AND helmet-shim to inject SEO meta tags
+          var hasContent = root && root.children.length > 0 && !root.querySelector('.loading');
+          var hasTitle = document.querySelector('title') && document.title.length > 0;
+          var hasCanonical = document.querySelector('link[rel="canonical"]');
+          
+          if (hasContent && hasTitle && hasCanonical) {
             window.prerenderReady = true;
             clearInterval(checkReady);
           }
