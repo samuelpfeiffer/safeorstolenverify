@@ -13,8 +13,8 @@ const SafeOrStolenVsSwappa = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen vs Swappa IMEI Checker Comparison",
-    "description": "Compare SafeOrStolen and Swappa's IMEI checking services for buying used phones",
+    "name": "SafeOrStolen and Swappa IMEI Checker Comparison 2026",
+    "description": "Compare SafeOrStolen and Swappa IMEI checking services for buying used phones in 2026",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
@@ -58,9 +58,9 @@ const SafeOrStolenVsSwappa = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs Swappa - ESN Checker Comparison 2025"
-        description="Compare SafeOrStolen and Swappa for IMEI checking. Dedicated stolen checker vs marketplace ESN check explained."
-        keywords="safeorstolen vs swappa, swappa imei checker, swappa esn check, stolen phone verification, swappa alternative"
+        title="SafeOrStolen and Swappa IMEI Comparison 2026"
+        description="Compare SafeOrStolen and Swappa for used phone IMEI checks. See which service fits your verification needs."
+        keywords="safeorstolen swappa comparison, swappa imei checker, swappa esn check, stolen phone verification, swappa alternative"
         canonical="/comparisons/safeorstolen-vs-swappa"
         structuredData={comparisonSchema}
       />
@@ -72,14 +72,14 @@ const SafeOrStolenVsSwappa = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                2025 Comparison
+                2026 Comparison
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                SafeOrStolen vs Swappa IMEI Checker
+                SafeOrStolen and Swappa IMEI Checker Comparison
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Comparing a dedicated stolen item checker with a marketplace's built-in ESN verification. 
-                Which protects you better when buying used phones?
+                Comparing a dedicated stolen item verification platform with a marketplace's built-in ESN check. 
+                Which service fits your needs when buying used phones in 2026?
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">

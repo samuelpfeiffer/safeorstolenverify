@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Electronics Are Stolen - Free Serial Number Verification"
-      metaDescription="Check if cameras, tablets, game consoles are stolen. Free serial number verification for electronics from law enforcement databases."
+      title="Check if Electronics Are Stolen - Free Verification"
+      metaDescription="Check if cameras, tablets, or game consoles are stolen. Free serial number verification against law enforcement databases."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[

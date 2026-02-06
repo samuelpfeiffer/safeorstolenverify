@@ -101,8 +101,8 @@ const StolenPhoneCheckerPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="Free Stolen Phone Checker - IMEI Check"
-        description="Check if a phone is stolen free. IMEI verification against 100+ databases including carrier blacklists, GSMA, and police records. 3-second results."
+        title="Free Stolen Phone Checker - IMEI Lookup"
+        description="Free stolen phone checker. Verify IMEI against 100+ databases in 3 seconds. Carrier blacklists, GSMA, police records."
         keywords="stolen phone checker, check if phone is stolen, IMEI blacklist check, free phone verification, is my phone stolen, phone stolen check"
         canonical="/stolen-phone-checker"
         structuredData={[faqSchema, howToSchema]}
