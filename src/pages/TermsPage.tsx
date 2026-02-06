@@ -9,7 +9,7 @@ const TermsPage: React.FC = () => {
     "name": "Terms of Service - SafeOrStolen",
     "description": "Terms of service and user agreement for SafeOrStolen verification platform.",
     "url": "https://safeorstolen.com/terms",
-    "lastReviewed": "2025-11-27",
+    "lastReviewed": "2026-02-06",
     "about": {
       "@type": "Service",
       "name": "SafeOrStolen Verification Service",
@@ -33,7 +33,7 @@ const TermsPage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 gradient-text">Terms of Service</h1>
-          <p className="text-gray-300">Last updated: November 2025</p>
+          <p className="text-gray-300">Last updated: February 2026</p>
         </div>
 
         <Card className="bg-sos-dark border-sos-orange/20">

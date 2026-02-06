@@ -9,7 +9,7 @@ const PrivacyPage: React.FC = () => {
     "name": "Privacy Policy - SafeOrStolen",
     "description": "Privacy policy for SafeOrStolen verification platform. Learn how we protect your data.",
     "url": "https://safeorstolen.com/privacy",
-    "lastReviewed": "2025-11-27",
+    "lastReviewed": "2026-02-06",
     "about": {
       "@type": "Service",
       "name": "SafeOrStolen Verification Service",
@@ -33,7 +33,7 @@ const PrivacyPage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 gradient-text">Privacy Policy</h1>
-          <p className="text-gray-300">Last updated: November 2025</p>
+          <p className="text-gray-300">Last updated: February 2026</p>
         </div>
 
         <Card className="bg-sos-dark border-sos-orange/20">

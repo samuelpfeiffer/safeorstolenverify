@@ -66,7 +66,7 @@ export default function CompleteImeiGuide() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Why IMEI Verification Matters</h3>
                   <p className="text-muted-foreground">
-                    Over 2.1 million smartphones were reported stolen in the U.S. in 2025. IMEI verification is your 
+                    Over 2.1 million smartphones were reported stolen in the U.S. in 2026. IMEI verification is your 
                     first line of defense against buying stolen or blacklisted phones.
                   </p>
                 </div>

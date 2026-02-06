@@ -66,7 +66,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
         title: "How to Check if Phone is Stolen - Complete IMEI Verification Guide 2025",
         description: "Step-by-step guide to verify IMEI numbers and avoid buying stolen phones. Learn red flags, verification methods, and legal protection tips.",
         keywords: ["how to check stolen phone", "IMEI verification guide", "avoid buying stolen device", "phone verification steps"],
-        h1: "Complete Guide: How to Check if a Phone is Stolen in 2025",
+        h1: "Complete Guide: How to Check if a Phone is Stolen in 2026",
         schema: {
           "@context": "https://schema.org",
           "@type": "HowTo",
@@ -182,7 +182,7 @@ export const OptimizedContent: React.FC<OptimizedContentProps> = ({
       {/* Advanced SEO Tags */}
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
       <meta name="author" content="SafeOrStolen Team" />
-      <meta name="copyright" content="© 2025 SafeOrStolen. All rights reserved." />
+      <meta name="copyright" content="© 2026 SafeOrStolen. All rights reserved." />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       

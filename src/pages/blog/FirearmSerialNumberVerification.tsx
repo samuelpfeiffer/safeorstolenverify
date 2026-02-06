@@ -15,7 +15,7 @@ const FirearmSerialNumberVerification = () => {
     "headline": "How to Check If a Gun Is Stolen - Firearm Serial Number Verification",
     "description": "Complete guide to verifying firearms aren't stolen before purchase. Learn how to check gun serial numbers and protect yourself legally.",
     "datePublished": "2025-01-15",
-    "dateModified": "2025-12-03",
+    "dateModified": "2026-02-06",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen" }
   };
@@ -83,7 +83,7 @@ const FirearmSerialNumberVerification = () => {
             </p>
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Updated: December 3, 2025</span>
+              <span>Updated: February 2026</span>
               <span>•</span>
               <span>10 min read</span>
             </div>

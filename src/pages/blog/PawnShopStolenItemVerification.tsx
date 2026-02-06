@@ -15,7 +15,7 @@ const PawnShopStolenItemVerification = () => {
     "headline": "How Pawn Shops Check If Items Are Stolen - Complete Guide",
     "description": "Learn how pawn shops verify items aren't stolen and how you can protect yourself as a buyer or seller using the same verification tools.",
     "datePublished": "2025-01-15",
-    "dateModified": "2025-12-03",
+    "dateModified": "2026-02-06",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen" }
   };
@@ -84,7 +84,7 @@ const PawnShopStolenItemVerification = () => {
             </p>
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Updated: December 3, 2025</span>
+              <span>Updated: February 2026</span>
               <span>•</span>
               <span>12 min read</span>
             </div>

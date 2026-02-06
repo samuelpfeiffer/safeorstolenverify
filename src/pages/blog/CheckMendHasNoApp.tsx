@@ -24,7 +24,7 @@ const CheckMendHasNoApp = () => {
       "name": "SafeOrStolen"
     },
     "datePublished": "2025-01-17",
-    "dateModified": "2025-01-17"
+    "dateModified": "2026-02-06"
   };
 
   return (
@@ -85,7 +85,7 @@ const CheckMendHasNoApp = () => {
               Despite being a major player in stolen item verification, <strong>CheckMEND does NOT have a mobile app</strong>. SafeOrStolen is the only CheckMEND alternative with instant barcode scanning, 3-second verification, and a real mobile app.
             </p>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>January 17, 2025</span>
+              <span>Updated: February 2026</span>
               <span>•</span>
               <span>7 min read</span>
             </div>
@@ -98,7 +98,7 @@ const CheckMendHasNoApp = () => {
                 <div>
                   <h3 className="font-bold text-lg mb-2 text-yellow-900 dark:text-yellow-100">The Truth About CheckMEND</h3>
                   <p className="text-yellow-800 dark:text-yellow-200">
-                    CheckMEND has been in business since 2004, yet they still have <strong>NO mobile app</strong>. They only offer a slow website that requires manual typing and takes 30+ seconds per verification. In 2025, this is unacceptable for buyers, sellers, and businesses who need instant results.
+                    CheckMEND has been in business since 2004, yet they still have <strong>NO mobile app</strong>. They only offer a slow website that requires manual typing and takes 30+ seconds per verification. In 2026, this is unacceptable for buyers, sellers, and businesses who need instant results.
                   </p>
                 </div>
               </div>
@@ -235,7 +235,7 @@ const CheckMendHasNoApp = () => {
 
               <Card className="p-6 border-l-4 border-red-500">
                 <p className="text-muted-foreground italic">
-                  "Why doesn't CheckMEND have an app?? It's 2025. Every other verification service has mobile apps. I'm not typing 17-character VINs on a tiny phone keyboard." - Twitter complaint
+                  "Why doesn't CheckMEND have an app?? It's 2026. Every other verification service has mobile apps. I'm not typing 17-character VINs on a tiny phone keyboard." - Twitter complaint
                 </p>
               </Card>
             </div>

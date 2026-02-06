@@ -34,7 +34,7 @@ const allRelatedPages: RelatedPage[] = [
   { title: 'eBay Stolen Check', href: '/ebay-stolen-item-check', category: 'marketplace' },
   
   // Comparison pages
-  { title: 'Best IMEI Checkers 2025', href: '/comparisons/best-free-imei-checkers-2025', category: 'comparison' },
+  { title: 'Best IMEI Checkers 2026', href: '/comparisons/best-free-imei-checkers-2025', category: 'comparison' },
   { title: 'Top VIN Check Services', href: '/comparisons/top-vin-check-services-2025', category: 'comparison' },
   { title: 'SafeOrStolen vs IMEI.info', href: '/comparisons/safeorstolen-vs-imeiinfo', category: 'comparison' },
   { title: 'SafeOrStolen vs Swappa', href: '/comparisons/safeorstolen-vs-swappa', category: 'comparison' },

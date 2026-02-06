@@ -32,7 +32,7 @@ export const EnhancedFooterLinks: React.FC = () => {
         { href: '/blog/how-to-check-if-phone-stolen', text: 'How to Check if Stolen' },
         { href: '/blog/scammer-tactics-exposed', text: 'Avoid Stolen Goods' },
         { href: '/blog/complete-verification-guide', text: 'Ultimate Safety Guide' },
-        { href: '/blog/theft-trends-report-2024', text: '2025 Theft Statistics' },
+        { href: '/blog/theft-trends-report-2024', text: '2026 Theft Statistics' },
         { href: '/how-it-works', text: 'Comprehensive Guide' }
       ]
     },

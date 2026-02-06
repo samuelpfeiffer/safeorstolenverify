@@ -13,7 +13,7 @@ const BestFreeIMEICheckers2025 = () => {
   const listSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Best Free IMEI Checkers 2025",
+    "name": "Best Free IMEI Checkers 2026",
     "description": "Ranked list of the best free IMEI checker services for verifying stolen phones",
     "itemListElement": [
       {
@@ -206,9 +206,9 @@ const BestFreeIMEICheckers2025 = () => {
   return (
     <>
       <PageSEO
-        title="7 Best Free IMEI Checkers 2025 - Ranked & Compared"
-        description="Compare the best free IMEI checkers for 2025. Which offers free blacklist checks and stolen phone verification?"
-        keywords="best free imei checker, imei checker 2025, free blacklist check, stolen phone checker, imei lookup free"
+        title="7 Best Free IMEI Checkers 2026 - Ranked & Compared"
+        description="Compare the best free IMEI checkers for 2026. Which offers free blacklist checks and stolen phone verification?"
+        keywords="best free imei checker, imei checker 2026, free blacklist check, stolen phone checker, imei lookup free"
         canonical="/comparisons/best-free-imei-checkers-2025"
         structuredData={listSchema}
       />
@@ -220,10 +220,10 @@ const BestFreeIMEICheckers2025 = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                Updated December 2025
+                Updated February 2026
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                7 Best Free IMEI Checkers in 2025
+                7 Best Free IMEI Checkers in 2026
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 We tested and ranked the top IMEI checkers to find which ones actually offer 

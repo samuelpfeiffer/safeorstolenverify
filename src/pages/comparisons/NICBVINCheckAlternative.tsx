@@ -124,7 +124,7 @@ const NICBVINCheckAlternative = () => {
   return (
     <>
       <PageSEO
-        title="NICB VINCheck Alternatives 2025 - Free Multi-Item Check"
+        title="NICB VINCheck Alternatives 2026 - Free Multi-Item Check"
         description="Compare NICB VINCheck alternatives. SafeOrStolen checks phones, bikes, tools - not just cars. Free stolen vehicle verification."
         keywords="nicb vincheck alternative, nicb alternative, free vin check, stolen vehicle check, vin lookup alternative"
         canonical="/comparisons/nicb-vincheck-alternative"
@@ -138,7 +138,7 @@ const NICBVINCheckAlternative = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                2025 Comparison
+                2026 Comparison
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 Best NICB VINCheck Alternatives
