@@ -3,6 +3,7 @@ import { ExternalLink, Copy, Check, Send, MessageSquare, Globe } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { toast } from 'sonner';
 
 const platforms = {
@@ -80,7 +81,14 @@ export const MarketingDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6">
+    <>
+      <SEOHead
+        title="Marketing Command Center"
+        description="Admin marketing dashboard for SafeOrStolen."
+        canonical="/admin/marketing"
+        noIndex={true}
+      />
+      <div className="min-h-screen bg-background p-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Marketing Command Center</h1>
@@ -229,6 +237,7 @@ export const MarketingDashboard = () => {
         </Tabs>
       </div>
     </div>
+    </>
   );
 };
 

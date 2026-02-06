@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -66,13 +67,21 @@ const GSCCallbackPage: React.FC = () => {
   }, [searchParams, navigate, toast]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center space-y-4">
-        <Loader2 className="h-8 w-8 animate-spin mx-auto text-primary" />
-        <p className="text-lg font-medium">Connecting your Google Search Console...</p>
-        <p className="text-sm text-muted-foreground">Please wait while we complete the setup</p>
+    <>
+      <SEOHead
+        title="GSC OAuth Callback"
+        description="Processing Google Search Console connection."
+        canonical="/admin/gsc-callback"
+        noIndex={true}
+      />
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-primary" />
+          <p className="text-lg font-medium">Connecting your Google Search Console...</p>
+          <p className="text-sm text-muted-foreground">Please wait while we complete the setup</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Loader2, Zap, CheckCircle, ExternalLink } from 'lucide-react';
 
 export default function BatchIndexPage() {
@@ -45,8 +46,15 @@ export default function BatchIndexPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted p-8">
-      <div className="max-w-4xl mx-auto">
+    <>
+      <SEOHead
+        title="Batch URL Indexing"
+        description="Admin tool for batch URL indexing via IndexNow."
+        canonical="/admin/batch-index"
+        noIndex={true}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted p-8">
+        <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">Batch URL Indexing</h1>
           <p className="text-muted-foreground">
@@ -204,7 +212,8 @@ export default function BatchIndexPage() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

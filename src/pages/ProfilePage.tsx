@@ -1,6 +1,6 @@
-
 import { useUnifiedAuth } from "@/hooks/useUnifiedAuth";
 import { useSecureProfileOperations } from "@/hooks/useSecureProfileOperations";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -67,7 +67,14 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
+      <SEOHead
+        title="My Profile"
+        description="Manage your SafeOrStolen account profile and settings."
+        canonical="/profile"
+        noIndex={true}
+      />
+      <div className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-8">Profile</h1>
         
@@ -137,6 +144,7 @@ const ProfilePage = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 
