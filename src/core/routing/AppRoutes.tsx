@@ -106,6 +106,7 @@ const CarVINStolenCheck = lazy(() => import('@/pages/items/CarVINStolenCheck'));
 const LaptopSerialCheck = lazy(() => import('@/pages/items/LaptopSerialCheck'));
 const BicycleSerialCheck = lazy(() => import('@/pages/items/BicycleSerialCheck'));
 const GamingConsoleCheck = lazy(() => import('@/pages/items/GamingConsoleCheck'));
+const XboxStolenCheck = lazy(() => import('@/pages/items/XboxStolenCheck'));
 const WatchSerialCheck = lazy(() => import('@/pages/items/WatchSerialCheck'));
 const CameraEquipmentCheck = lazy(() => import('@/pages/items/CameraEquipmentCheck'));
 const PowerToolsCheck = lazy(() => import('@/pages/items/PowerToolsCheck'));
@@ -414,6 +415,7 @@ export const AppRoutes = () => {
         <Route path="/check-tablet-stolen" element={<TabletCheck />} />
         <Route path="/check-bicycle-stolen" element={<BicycleSerialCheck />} />
         <Route path="/check-gaming-console-stolen" element={<GamingConsoleCheck />} />
+        <Route path="/check-xbox" element={<XboxStolenCheck />} />
         <Route path="/check-watch-stolen" element={<WatchSerialCheck />} />
         <Route path="/check-camera-stolen" element={<CameraEquipmentCheck />} />
         <Route path="/check-power-tools-stolen" element={<PowerToolsCheck />} />

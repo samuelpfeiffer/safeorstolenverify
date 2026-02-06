@@ -28,6 +28,9 @@ const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChanne
 const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
 const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
 
+// Homepage content sections (static, not lazy - for SEO)
+import { HomeContentSections } from '@/components/home/HomeContentSections';
+
 // Remove above-fold lazy components - they hurt LCP on mobile
 // SocialProofBanner and QuickValueProof moved to static content
 
@@ -277,6 +280,9 @@ const Index = () => {
             <TrustSignals />
           </Suspense>
         </LazySection>
+
+        {/* Static SEO content sections - NOT lazy loaded for bot visibility */}
+        <HomeContentSections />
       </div>
       
       {/* ExitIntentPopup is now rendered globally in AppRoot */}
