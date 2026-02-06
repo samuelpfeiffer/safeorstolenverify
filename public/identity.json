@@ -94,5 +94,9 @@
       }
     ]
   },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://safeorstolen.com/"
+  },
   "dateModified": "2026-02-06"
 }
