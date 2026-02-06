@@ -4,7 +4,7 @@ const NewYorkLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="New York License Plate Lookup - Check NY Stolen Vehicle by Plate"
-      metaDescription="New York license plate lookup to verify if a vehicle is stolen. Free NY license plate search from NY DMV and law enforcement databases. Check vehicles in NYC, Buffalo, Rochester."
+      metaDescription="Free New York license plate lookup. Check if a NY vehicle is stolen before buying. Search NY DMV and law enforcement databases instantly."
       h1="New York License Plate Lookup - Check NY Vehicles"
       itemType="Vehicle"
       keywords={[

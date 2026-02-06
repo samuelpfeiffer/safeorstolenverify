@@ -4,7 +4,7 @@ const FloridaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Florida License Plate Lookup - Check FL Stolen Vehicle by Plate"
-      metaDescription="Florida license plate lookup to verify if a vehicle is stolen. Free FL license plate search from FLHSMV and law enforcement databases. Check vehicles in Miami, Tampa, Orlando, Jacksonville."
+      metaDescription="Free Florida license plate lookup. Check if a FL vehicle is stolen before buying. Verify against FLHSMV and law enforcement databases instantly."
       h1="Florida License Plate Lookup - Check FL Vehicles"
       itemType="Vehicle"
       keywords={[

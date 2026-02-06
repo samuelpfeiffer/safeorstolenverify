@@ -4,7 +4,7 @@ const IllinoisLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Illinois License Plate Lookup - Check IL Stolen Vehicle by Plate"
-      metaDescription="Illinois license plate lookup to verify if a vehicle is stolen. Free IL license plate search from Illinois Secretary of State and law enforcement databases. Check vehicles in Chicago, Aurora, Naperville."
+      metaDescription="Free Illinois license plate lookup. Check if an IL vehicle is stolen before buying. Search Secretary of State and law enforcement databases."
       h1="Illinois License Plate Lookup - Check IL Vehicles"
       itemType="Vehicle"
       keywords={[

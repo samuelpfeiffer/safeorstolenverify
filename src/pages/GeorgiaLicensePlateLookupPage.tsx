@@ -4,7 +4,7 @@ const GeorgiaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Georgia License Plate Lookup - Free GA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is stolen. Verify before buying in Atlanta, Savannah, Augusta. Search Georgia DDS and law enforcement databases."
+      metaDescription="Free Georgia license plate lookup. Check if a GA vehicle is stolen before buying. Verify against Georgia DDS and law enforcement databases."
       h1="Georgia License Plate Lookup - Verify GA Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
