@@ -35,6 +35,7 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 
 ## Company
 
+- Legal Name: SafeOrStolen LLC
 - Founded: August 2024
 - Headquarters: United States
 - Accelerated by FasterCapital
@@ -47,6 +48,27 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 - Used vehicle dealerships
 - Law enforcement agencies
 - Insurance companies
+
+## Locations
+
+- United States (all 50 states)
+- Expanding internationally
+
+## Certifications
+
+- FasterCapital Accelerator Program participant
+- OneValley startup ecosystem member
+- Trustpilot verified business
+
+## Awards
+
+- FasterCapital acceleration program selection (2024)
+
+## Partners
+
+- Recipero / CheckMEND (device verification data)
+- BikeIndex (bicycle theft database)
+- NICB (National Insurance Crime Bureau — vehicle theft data)
 
 ## Documentation
 

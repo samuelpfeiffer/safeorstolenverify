@@ -1,6 +1,6 @@
 # ============================================
 # SafeOrStolen HTTP Headers
-# Prerender.io Integration + Security + Caching
+# 2026 Compliant: Security + Caching + Prerendering
 # ============================================
 
 # Global headers for all pages
@@ -10,6 +10,8 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(self), microphone=(), geolocation=(self)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-XSS-Protection: 1; mode=block
 
 # HTML pages - no cache for fresh content
 /
@@ -32,3 +34,32 @@
 
 /robots.txt
   Cache-Control: public, max-age=3600
+
+# AI discovery files - moderate cache
+/llms.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
+
+/ai.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
+
+/ai-context.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/json; charset=utf-8
+
+/identity.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/llms.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/ai-plugin.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/json; charset=utf-8
+
+# Static HTML fallback for AI bots
+/llm.html
+  Cache-Control: public, max-age=86400
