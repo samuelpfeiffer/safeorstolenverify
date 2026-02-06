@@ -39,11 +39,11 @@ export const StatusCodeHandler: React.FC<StatusCodeHandlerProps> = ({
 
   return (
     <Helmet>
-      {/* Robots directive based on status and indexing preference */}
+      {/* Robots directive based on status and indexing preference — 2026 compliant */}
       <meta name="robots" content={
         statusCode === 404 || noIndex ? 
         "noindex, nofollow" : 
-        "index, follow"
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
       } />
       
       {/* LovableHTML status code signal - tells the proxy what HTTP status to return to bots */}

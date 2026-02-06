@@ -42,22 +42,35 @@ export const BusinessPageTemplate = ({
     check: CheckCircle
   };
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `${businessType} Verification Service`,
-    "provider": {
-      "@type": "Organization",
-      "name": "SafeOrStolen"
+  const fullUrl = `https://safeorstolen.com${location.pathname}`;
+  
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `${businessType} Verification Service`,
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
+      },
+      "serviceType": "Stolen Property Verification for Businesses",
+      "areaServed": "US",
+      "description": metaDescription,
+      "dateModified": "2026-02-06",
+      "offers": {
+        "@type": "Offer",
+        "description": content.pricing
+      }
     },
-    "serviceType": "Stolen Property Verification for Businesses",
-    "areaServed": "US",
-    "description": metaDescription,
-    "offers": {
-      "@type": "Offer",
-      "description": content.pricing
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+        { "@type": "ListItem", "position": 2, "name": `For ${businessType}`, "item": fullUrl }
+      ]
     }
-  };
+  ];
 
   return (
     <>

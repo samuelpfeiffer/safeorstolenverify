@@ -38,6 +38,8 @@ export const ItemLandingPageTemplate = ({
 }: ItemLandingPageProps) => {
   const location = useLocation();
   
+  const fullUrl = `https://safeorstolen.com${location.pathname}`;
+
   // Service and HowTo schemas in @graph
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -45,7 +47,7 @@ export const ItemLandingPageTemplate = ({
       {
         "@type": "Service",
         "name": `${itemType} Verification Service`,
-        "url": `https://safeorstolen.com${location.pathname}`,
+        "url": fullUrl,
         "provider": {
           "@type": "Organization",
           "name": "SafeOrStolen",
@@ -56,17 +58,29 @@ export const ItemLandingPageTemplate = ({
           "@type": "Place",
           "name": "Worldwide"
         },
-        "description": metaDescription
+        "description": metaDescription,
+        "dateModified": "2026-02-06"
       },
       {
         "@type": "HowTo",
         "name": `How to Check if ${itemType} is Stolen`,
+        "dateModified": "2026-02-06",
         "step": content.process.map((step, index) => ({
           "@type": "HowToStep",
           "position": index + 1,
           "name": step
         }))
       }
+    ]
+  };
+
+  // BreadcrumbList schema for navigation
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+      { "@type": "ListItem", "position": 2, "name": `${itemType} Verification`, "item": fullUrl }
     ]
   };
 
@@ -85,7 +99,7 @@ export const ItemLandingPageTemplate = ({
   } : null;
 
   // Combine schemas for PageSEO
-  const structuredData = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
+  const structuredData = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
     <>

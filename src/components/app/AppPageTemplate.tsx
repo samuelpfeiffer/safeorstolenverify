@@ -28,6 +28,20 @@ export const AppPageTemplate = ({
   h1Title,
   schemaJson
 }: AppPageTemplateProps) => {
+  // Add BreadcrumbList to existing schemas
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+      { "@type": "ListItem", "position": 2, "name": h1Title, "item": `https://safeorstolen.com${canonical}` }
+    ]
+  };
+
+  const allSchemas = schemaJson
+    ? [...(Array.isArray(schemaJson) ? schemaJson : [schemaJson]), breadcrumbSchema]
+    : [breadcrumbSchema];
+
   return (
     <>
       <SEOHead
@@ -35,7 +49,7 @@ export const AppPageTemplate = ({
         description={description}
         keywords={keywords}
         canonical={canonical}
-        schemaJson={schemaJson}
+        schemaJson={allSchemas}
       />
       <MobileAppSchema />
       
