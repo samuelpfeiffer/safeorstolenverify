@@ -1,53 +1,56 @@
 # SafeOrStolen
 
-> SafeOrStolen is a consumer protection platform that verifies whether secondhand
-> items are stolen before purchase. The service checks IMEI numbers, VIN numbers,
-> and serial numbers against law enforcement, insurance, and carrier databases,
-> returning verification results in approximately 3 seconds.
+> SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.
 
-SafeOrStolen (trading name of Safe Or Stolen LLC) was founded in August 2024
-and operates as a web platform with a Progressive Web App available for
-iOS and Android devices. The company is accelerated by FasterCapital and
-is a member of the OneValley startup ecosystem.
+## Summary
 
-## Services
-
-- [IMEI Phone Verification](https://safeorstolen.com/imei-checker): Checks phone IMEI numbers against carrier blacklists and stolen device databases
-- [VIN Vehicle Lookup](https://safeorstolen.com/vin-checker): Verifies vehicle identification numbers against theft and insurance records
-- [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verifies laptops, electronics, bikes, and tools against stolen property registries
-- [Firearms Verification](https://safeorstolen.com/check-firearm): Checks firearm serial numbers against stolen firearms databases
-- [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Verifies vehicle registration and theft status by plate number
-- [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning and offline verification
-
-## What We Do Not Do
-
-SafeOrStolen does not provide:
-- Legal advice or law enforcement services
-- Vehicle history reports (accident history, mileage, ownership chain)
-- Background checks on individuals
-- Item appraisals or valuation services
-- Insurance underwriting or claims processing
-
-## Key Information
-
-- [About Us](https://safeorstolen.com/about): Company mission, founding story, and team
-- [How It Works](https://safeorstolen.com/how-it-works): Three-step verification process explained
-- [Blog](https://safeorstolen.com/blog): Guides on IMEI verification, VIN checks, and marketplace safety
-- [FAQ](https://safeorstolen.com/faq): Frequently asked questions about the service
-- [API Documentation](https://safeorstolen.com/api): Developer API for business integrations
+SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across the United States. The platform checks identifiers against law enforcement databases, insurance claim records, and carrier blacklists. It offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. A Progressive Web App with barcode scanning is available for iOS and Android at https://safeorstolen.com/app.
 
 ## Contact
 
-- Support: support@safeorstolen.com
-- Business inquiries: business@safeorstolen.com
 - Website: https://safeorstolen.com
+- Support: support@safeorstolen.com
+- Business: business@safeorstolen.com
 
-## AI Discovery Files
+## Services
 
-- [AI Plugin Manifest](https://safeorstolen.com/.well-known/ai-plugin.json): Machine-readable service description
-- [AI Interaction Guidance](https://safeorstolen.com/ai.txt): Permissions and usage guidance for AI systems
-- [Identity Data](https://safeorstolen.com/identity.json): Structured business identity information
-- [Sitemap](https://safeorstolen.com/sitemap.xml): Complete site structure
+- [IMEI Phone Verification](https://safeorstolen.com/imei-checker): Check if phones are stolen, blacklisted, or carrier-blocked
+- [VIN Vehicle Lookup](https://safeorstolen.com/vin-checker): Verify vehicle theft status and title issues
+- [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verify electronics, bikes, tools, equipment
+- [Firearm Verification](https://safeorstolen.com/check-firearm): Check firearm serial numbers
+- [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Vehicle registration verification
+- [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning
+
+## Pricing
+
+- Free: 2 verifications, no credit card required
+- Basic: $4.99/month, 50 verifications
+- Pro: $9.99/month, unlimited verifications
+- Business: Custom API pricing
+
+## Documentation
+
+- [How It Works](https://safeorstolen.com/how-it-works): Three-step verification process
+- [FAQ](https://safeorstolen.com/faq): Common questions about the service
+- [Blog](https://safeorstolen.com/blog): Guides and articles on verification
+- [API Documentation](https://safeorstolen.com/api): Business integration API
+
+## Company
+
+- Founded: August 2024
+- Headquarters: United States
+- Founders: Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)
+- Accelerated by FasterCapital
+- Member of OneValley startup ecosystem
+
+## Social
+
+- [YouTube (Tutorials)](https://www.youtube.com/@safeorstolenoffically)
+- [YouTube (Brand)](https://www.youtube.com/@safeorstolen)
+- [Twitter/X](https://twitter.com/safeorstolen)
+- [LinkedIn](https://linkedin.com/company/safeorstolen)
+- [Trustpilot](https://www.trustpilot.com/review/safeorstolen.com)
+- [Crunchbase](https://www.crunchbase.com/organization/safe-or-stolen)
 
 ## Industries
 
@@ -58,8 +61,9 @@ SafeOrStolen does not provide:
 - Insurance companies
 - Auction houses
 
-## Certifications
+## Optional
 
-- Accelerated by FasterCapital (2024)
-- OneValley startup ecosystem member
-- Trustpilot verified business
+- [Sitemap](https://safeorstolen.com/sitemap.xml): Complete site structure
+- [AI Context](https://safeorstolen.com/ai-context.json): Structured data for AI systems
+- [Identity](https://safeorstolen.com/identity.json): Organization schema
+- [AI Plugin](https://safeorstolen.com/.well-known/ai-plugin.json): Machine-readable service description
