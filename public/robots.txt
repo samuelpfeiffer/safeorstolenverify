@@ -41,18 +41,9 @@ Allow: /ai-training-data.md
 Allow: /.well-known/llms.txt
 Allow: /.well-known/ai-plugin.json
 
-# Block ALL query strings (duplicate content prevention - CRITICAL)
+# Block duplicate content from query strings
 Disallow: /*?
-Disallow: /*?*
-Disallow: /*?search=*
-Disallow: /*?q=*
-Disallow: /*?type=*
-Disallow: /*?utm_*
-Disallow: /*?ref=*
-Disallow: /*?source=*
-Disallow: /*?session_id=*
-Disallow: /*?checkout=*
-Disallow: /*&*
+Disallow: /*&
 
 # Block API and private areas
 Disallow: /api/
@@ -67,79 +58,71 @@ Disallow: /checkout-redirect
 Disallow: /verification-success
 Disallow: /analytics
 
-# Block internal data files from search indexing (AI crawlers get them via direct allow above)
+# Block internal data files from search indexing
 Disallow: /mobile-app-ai-context.json
 
 # ==================================================
-# AI & LLM Crawlers - Full Access Welcome
+# AI & LLM Crawlers - Full Access (2026 Updated)
 # ==================================================
 
-# OpenAI Crawlers
+# OpenAI - GPTBot (training) + OAI-SearchBot (live ChatGPT search)
 User-agent: GPTBot
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
-Allow: /llms.txt
+
+User-agent: OAI-SearchBot
+Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
 
 # Anthropic (Claude)
 User-agent: ClaudeBot
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
 
 User-agent: Claude-Web
 Allow: /
 
-User-agent: Anthropic-AI
+User-agent: anthropic-ai
 Allow: /
 
-# Google AI (Gemini)
+# Google AI (Gemini / AI Overviews)
 User-agent: Google-Extended
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
 
-User-agent: Gemini
+User-agent: GoogleOther
 Allow: /
 
 # Perplexity AI
 User-agent: PerplexityBot
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
-
-User-agent: Perplexity-User
-Allow: /
 
 # Microsoft Copilot
 User-agent: Bingbot
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
 
-# Meta AI
+# Meta AI (2026 updated user-agent)
+User-agent: Meta-ExternalAgent
+Allow: /
+
 User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-# Apple (Siri, AI features)
+# Apple (Siri, Apple Intelligence)
 User-agent: Applebot
 Allow: /
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
+Applebot-Extended: Allow: /
 
 # Amazon
 User-agent: Amazonbot
 Allow: /
 
-# Other AI Crawlers
+# Other AI Crawlers (2026)
 User-agent: cohere-ai
 Allow: /
 
@@ -153,6 +136,15 @@ User-agent: Diffbot
 Allow: /
 
 User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Timpibot
 Allow: /
 
 # ==================================================
@@ -198,6 +190,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://safeorstolen.com/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1

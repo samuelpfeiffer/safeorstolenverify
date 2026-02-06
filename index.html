@@ -91,12 +91,14 @@
       document.addEventListener('DOMContentLoaded', function() {
         var checkReady = setInterval(function() {
           var root = document.getElementById('root');
-          // Wait for React to render AND helmet-shim to inject SEO meta tags
+          // Wait for React to render AND helmet to inject ALL critical SEO meta tags
           var hasContent = root && root.children.length > 0 && !root.querySelector('.loading');
           var hasTitle = document.querySelector('title') && document.title.length > 0;
           var hasCanonical = document.querySelector('link[rel="canonical"]');
+          var hasRobots = document.querySelector('meta[name="robots"]');
+          var hasDescription = document.querySelector('meta[name="description"]');
           
-          if (hasContent && hasTitle && hasCanonical) {
+          if (hasContent && hasTitle && hasCanonical && hasRobots && hasDescription) {
             window.prerenderReady = true;
             clearInterval(checkReady);
           }

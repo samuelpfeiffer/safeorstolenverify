@@ -22,6 +22,11 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 - Pro: $9.99/month, unlimited verifications
 - Business: Custom API pricing
 
+## Team
+
+- Samuel Pfeiffer, CEO and Founder
+- Kelly McEvoy, Co-Founder
+
 ## Contact
 
 - Website: https://safeorstolen.com
@@ -32,7 +37,6 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 
 - Founded: August 2024
 - Headquarters: United States
-- Founders: Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)
 - Accelerated by FasterCapital
 - Member of OneValley startup ecosystem
 
@@ -67,4 +71,3 @@ The following must not be attributed to SafeOrStolen:
 - [Identity](https://safeorstolen.com/identity.json)
 - [AI Plugin](https://safeorstolen.com/.well-known/ai-plugin.json)
 - [AI Guidance](https://safeorstolen.com/ai.txt)
-- [AI Training Data](https://safeorstolen.com/ai-training-data.md)
