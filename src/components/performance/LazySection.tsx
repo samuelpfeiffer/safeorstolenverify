@@ -14,6 +14,19 @@ interface LazySectionProps {
 }
 
 /**
+ * Detect if the current user agent is a bot/crawler/prerender service.
+ * When true, all content renders immediately so crawlers see full page content.
+ * This fixes THIN_CONTENT and DUPLICATE_BODY issues in LovableHTML audits.
+ */
+const detectBot = (): boolean => {
+  if (typeof navigator === 'undefined') return true; // SSR - render everything
+  return /bot|crawl|spider|googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot|prerender|headlesschrome|lighthouse|gptbot|claudebot|anthropic|perplexity/i.test(navigator.userAgent);
+};
+
+// Cache the result since user agent doesn't change during session
+const IS_BOT = detectBot();
+
+/**
  * LazySection - Lazy loads below-fold content using Intersection Observer
  * Improves LCP by deferring non-critical content rendering
  * Prevents CLS by maintaining consistent height during load
@@ -22,6 +35,7 @@ interface LazySectionProps {
  * - Uses content-visibility: auto for rendering optimization
  * - Smaller rootMargin on mobile (100px) vs desktop (200px) to reduce simultaneous loads
  * - Contains intrinsic size to prevent layout shifts
+ * - BOT DETECTION: Renders immediately for crawlers (LovableHTML, Googlebot, etc.)
  */
 export const LazySection: React.FC<LazySectionProps> = ({
   children,
@@ -33,11 +47,16 @@ export const LazySection: React.FC<LazySectionProps> = ({
 }) => {
   // Use smaller margin on mobile for better performance
   const computedRootMargin = rootMargin ?? (typeof window !== 'undefined' && window.innerWidth < 768 ? '50px' : '150px');
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  
+  // Bots get immediate rendering - no lazy loading
+  const [isVisible, setIsVisible] = useState(IS_BOT);
+  const [hasLoaded, setHasLoaded] = useState(IS_BOT);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Skip lazy loading for bots - already rendered
+    if (IS_BOT) return;
+    
     const element = sectionRef.current;
     if (!element) return;
 
@@ -71,6 +90,7 @@ export const LazySection: React.FC<LazySectionProps> = ({
 
   // Mark as loaded after first render to enable animations
   useEffect(() => {
+    if (IS_BOT) return; // Already loaded for bots
     if (isVisible && !hasLoaded) {
       // Small delay to ensure smooth transition
       const timer = setTimeout(() => setHasLoaded(true), 50);

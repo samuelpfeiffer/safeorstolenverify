@@ -67,6 +67,7 @@ const TestimonialsPage = lazy(() => import('@/pages/TestimonialsPage'));
 const FirearmsSerialNumberCheckPage = lazy(() => import('@/pages/FirearmsSerialNumberCheckPage'));
 const FreeStolenVehicleCheckHubPage = lazy(() => import('@/pages/FreeStolenVehicleCheckPage'));
 const SerialNumberStolenCheckPage = lazy(() => import('@/pages/SerialNumberStolenCheckPage'));
+const IsMyIPhoneStolenPage = lazy(() => import('@/pages/IsMyIPhoneStolenPage'));
 
 // NEW REAL PAGES (No more redirects for these URLs)
 const IMEICheckPage = lazy(() => import('@/pages/IMEICheckPage'));
@@ -393,6 +394,7 @@ export const AppRoutes = () => {
         <Route path="/check-firearm" element={<CheckFirearmPage />} />
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/is-my-iphone-stolen" element={<IsMyIPhoneStolenPage />} />
         
         {/* NEW HIGH-TRAFFIC SEO PAGES (2026 Keyword Strategy) */}
         <Route path="/stolen-phone-checker" element={<StolenPhoneCheckerPage />} />
