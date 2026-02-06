@@ -101,8 +101,8 @@ const StolenPhoneCheckerPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="Free Stolen Phone Checker - Verify IMEI Before Buying | SafeOrStolen"
-        description="Check if a phone is stolen in 3 seconds. Free IMEI verification against 100+ databases including carrier blacklists & GSMA. The only stolen phone checker with a mobile app."
+        title="Free Stolen Phone Checker - IMEI Check"
+        description="Check if a phone is stolen free. IMEI verification against 100+ databases including carrier blacklists, GSMA, and police records. 3-second results."
         keywords="stolen phone checker, check if phone is stolen, IMEI blacklist check, free phone verification, is my phone stolen, phone stolen check"
         canonical="/stolen-phone-checker"
         structuredData={[faqSchema, howToSchema]}
@@ -341,7 +341,7 @@ const StolenPhoneCheckerPage = () => {
             <span>•</span>
             <Link to="/check-phone" className="text-primary hover:underline">Check Phone</Link>
             <span>•</span>
-            <Link to="/iphone-imei-check" className="text-primary hover:underline">iPhone IMEI Check</Link>
+            <Link to="/check-iphone-stolen" className="text-primary hover:underline">iPhone IMEI Check</Link>
             <span>•</span>
             <Link to="/samsung-imei-check" className="text-primary hover:underline">Samsung IMEI Check</Link>
             <span>•</span>

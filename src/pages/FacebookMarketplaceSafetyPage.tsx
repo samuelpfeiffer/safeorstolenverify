@@ -309,7 +309,7 @@ const FacebookMarketplaceSafetyPage = () => {
           <div className="flex flex-wrap gap-3">
             <Link to="/offerup-safety" className="text-primary hover:underline">OfferUp Safety</Link>
             <span>•</span>
-            <Link to="/craigslist-safety" className="text-primary hover:underline">Craigslist Safety</Link>
+            <Link to="/craigslist-safety-verification" className="text-primary hover:underline">Craigslist Safety</Link>
             <span>•</span>
             <Link to="/stolen-phone-checker" className="text-primary hover:underline">Stolen Phone Checker</Link>
             <span>•</span>
