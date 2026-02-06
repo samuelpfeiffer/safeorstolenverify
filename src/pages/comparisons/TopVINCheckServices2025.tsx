@@ -454,7 +454,7 @@ const TopVINCheckServices2025 = () => {
                       <Link to="/verify">Start Free VIN Check</Link>
                     </Button>
                     <Button asChild variant="outline" size="lg">
-                      <Link to="/car-vin-check">Learn More About VIN Checks</Link>
+                      <Link to="/vin-checker">Learn More About VIN Checks</Link>
                     </Button>
                   </div>
                 </CardContent>

@@ -4,7 +4,7 @@ const CheckToolsPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Tools Are Stolen - Free Power Tool Serial Number Verification"
-      metaDescription="Check if power tools, construction equipment, or tools are stolen. Free serial number verification for DeWalt, Milwaukee, Makita, Bosch tools from law enforcement and pawn shop databases before buying used."
+      metaDescription="Check if power tools are stolen. Free serial number verification for DeWalt, Milwaukee, Makita, Bosch from law enforcement databases."
       h1="Check if Power Tools Are Stolen Before Buying"
       itemType="Tools & Equipment"
       keywords={[

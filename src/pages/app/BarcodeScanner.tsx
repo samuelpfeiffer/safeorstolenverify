@@ -8,8 +8,8 @@ const BarcodeScanner = () => {
   return (
     <>
       <PageSEO
-        title="Barcode Scanner Stolen Checker App | Scan & Verify Items - SafeOrStolen"
-        description="FREE barcode scanner stolen checker app. Point your camera at any barcode to instantly verify if items are stolen. Works for phones, electronics, vehicles. Download now."
+        title="Barcode Scanner Stolen Checker App | SafeOrStolen"
+        description="Free barcode scanner app to check if items are stolen. Scan any IMEI, VIN, or serial number barcode for instant verification."
         keywords="barcode scanner stolen checker, scan serial number stolen, barcode stolen checker app, scan IMEI app, scan VIN app, item scanner stolen check"
         canonical="/app/barcode-scanner"
         structuredData={{

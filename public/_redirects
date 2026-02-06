@@ -281,6 +281,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-vin                         /vin-checker  301!
 /vin-lookup                        /vin-checker  301!
 /vin-check                         /vin-checker  301!
+/car-vin-check                     /vin-checker  301!
 
 # ============================================
 # HOW-TO REDIRECTS

@@ -3,8 +3,8 @@ import { BusinessLandingTemplate } from '@/components/landing/BusinessLandingTem
 const ForLawEnforcement = () => {
   return (
     <BusinessLandingTemplate
-      title="Law Enforcement Stolen Property Tools | SafeOrStolen"
-      metaDescription="Verify recovered property and track stolen items. IMEI, VIN, and serial number lookup tools for police departments. Fast, accurate verification."
+      title="Law Enforcement Property Verification | SafeOrStolen"
+      metaDescription="Verify recovered property and track stolen items. IMEI, VIN, serial number lookup tools for police departments. Fast results."
       h1="Law Enforcement Property Verification Tools"
       keywords={[
         'law enforcement stolen property',
