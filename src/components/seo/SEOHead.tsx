@@ -109,6 +109,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
+      {/* GEO 2026: Content freshness signal for AI systems */}
+      {modifiedTime && <meta name="article:modified_time" content={modifiedTime} />}
+      
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={optimizedTitle} />
@@ -124,7 +127,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Article-specific Open Graph */}
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {modifiedTime && <meta property="og:updated_time" content={modifiedTime} />}
       {author && ogType === 'article' && <meta property="article:author" content={author} />}
       
       {/* Twitter Card */}

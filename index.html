@@ -115,16 +115,16 @@
     <!-- Enhanced noscript fallback for crawlers without JavaScript -->
     <noscript>
       <div style="padding: 40px; max-width: 800px; margin: 0 auto; font-family: system-ui, sans-serif; line-height: 1.6; color: #333;">
-        <h1 style="font-size: 2rem; color: #000;">SafeOrStolen - Free Stolen Item Verification</h1>
-        <p style="font-size: 1.1rem;">The ONLY stolen item verification service with a mobile app. Protect yourself before buying secondhand phones, cars, bikes, electronics, and more.</p>
+        <h1 style="font-size: 2rem; color: #000;">SafeOrStolen — Stolen Item Verification</h1>
+        <p style="font-size: 1.1rem;">SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases. 2 free verifications, results in approximately 3 seconds.</p>
         
-        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Why Use SafeOrStolen?</h2>
+        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Service Features</h2>
         <ul style="padding-left: 1.5rem;">
-          <li><strong>2 Free Searches</strong> - No credit card required</li>
-          <li><strong>100+ Databases</strong> - NCIC, NICB, carrier blacklists, insurance claims</li>
-          <li><strong>3-Second Results</strong> - Instant verification</li>
-          <li><strong>Mobile App</strong> - Only service with barcode scanning app</li>
-          <li><strong>All Item Types</strong> - Phones, cars, bikes, electronics, firearms, tools</li>
+          <li><strong>2 Free Verifications</strong> — No credit card required</li>
+          <li><strong>Multiple Database Sources</strong> — Law enforcement, insurance records, carrier blacklists</li>
+          <li><strong>Approximately 3-Second Results</strong> — Real-time verification</li>
+          <li><strong>Mobile App Available</strong> — Progressive Web App with barcode scanning for iOS and Android</li>
+          <li><strong>Multiple Item Types</strong> — Phones, vehicles, bicycles, electronics, firearms, tools</li>
         </ul>
         
         <h2 style="font-size: 1.5rem; margin-top: 2rem;">Verification Services</h2>
@@ -184,10 +184,10 @@
             "width": "512",
             "height": "512"
           },
-          "description": "SafeOrStolen is the only stolen item verification service with a mobile app. We protect buyers, sellers, and resale businesses by checking IMEI, VIN, and serial numbers against 100+ databases.",
-          "foundingDate": "2024",
-          "slogan": "The Only Mobile App for Stolen Item Verification",
-          "knowsAbout": ["stolen goods verification", "IMEI checking", "VIN lookup", "serial number verification", "pawn shop compliance", "resale business protection"],
+          "description": "SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement databases, insurance claim records, and carrier blacklists.",
+          "foundingDate": "2024-08",
+          "slogan": "Verify Before You Buy",
+          "knowsAbout": ["stolen goods verification", "IMEI checking", "VIN lookup", "serial number verification", "pawn shop compliance", "consumer protection"],
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@safeorstolen.com",
@@ -200,116 +200,93 @@
             "https://www.linkedin.com/company/safeorstolen",
             "https://www.trustpilot.com/review/safeorstolen.com",
             "https://www.crunchbase.com/organization/safe-or-stolen"
-          ]
+          ],
+          "founder": [
+            {"@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "CEO"},
+            {"@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder"}
+          ],
+          "dateModified": "2026-02-06"
         },
         {
           "@type": "WebSite",
           "@id": "https://safeorstolen.com/#website",
           "url": "https://safeorstolen.com",
-          "name": "SafeOrStolen - The Only Stolen Item Checker with Mobile App",
-          "description": "Free stolen item checker with the only mobile app. Protect buyers, sellers, and businesses. IMEI, VIN, serial number verification against 100+ databases. More comprehensive than CheckMEND, IMEI.info, Swappa, or Carfax.",
+          "name": "SafeOrStolen — Stolen Item Verification",
+          "description": "Consumer protection platform that verifies whether secondhand items are stolen. Checks IMEI, VIN, and serial numbers against law enforcement, insurance, and carrier databases. 2 free verifications, results in approximately 3 seconds.",
           "publisher": {"@id": "https://safeorstolen.com/#organization"},
           "potentialAction": {
             "@type": "SearchAction",
             "target": "https://safeorstolen.com/verify?q={search_term_string}",
             "query-input": "required name=search_term_string"
-          }
+          },
+          "dateModified": "2026-02-06"
         },
         {
           "@type": "Service",
           "@id": "https://safeorstolen.com/#service",
-          "name": "Stolen Item Verification for Buyers, Sellers & Businesses",
-          "description": "The most comprehensive stolen item verification service. Protect buyers from purchasing stolen goods. Help sellers prove legitimacy. Enable pawn shops and resale businesses to verify inventory. The only service with a mobile app.",
+          "name": "Stolen Item Verification Service",
+          "description": "SafeOrStolen verifies whether secondhand items are stolen by checking identifiers against law enforcement databases, insurance claim records, and carrier blacklists. The service supports phones (IMEI), vehicles (VIN), firearms, bicycles, electronics, and tools. Results are returned in approximately 3 seconds.",
           "provider": {"@id": "https://safeorstolen.com/#organization"},
           "serviceType": "Stolen Item Verification",
-          "areaServed": "Worldwide",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+          },
           "audience": [
-            {"@type": "Audience", "audienceType": "Buyers of secondhand goods"},
-            {"@type": "Audience", "audienceType": "Sellers on marketplaces"},
+            {"@type": "Audience", "audienceType": "Marketplace buyers"},
+            {"@type": "Audience", "audienceType": "Marketplace sellers"},
             {"@type": "Audience", "audienceType": "Pawn shops"},
-            {"@type": "Audience", "audienceType": "Resale businesses"},
-            {"@type": "Audience", "audienceType": "Car dealerships"},
-            {"@type": "Audience", "audienceType": "Electronics resellers"}
+            {"@type": "Audience", "audienceType": "Resale businesses"}
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Verification Services",
+            "name": "Verification Plans",
             "itemListElement": [
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IMEI Phone Verification"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "VIN Vehicle Lookup"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Serial Number Check"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bicycle Verification"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electronics Verification"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tool Verification"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Jewelry Verification"}},
-              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Boat & Watercraft Verification"}}
+              {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "2 verifications, no credit card required"},
+              {"@type": "Offer", "name": "Basic", "price": "4.99", "priceCurrency": "USD", "description": "50 verifications per month"},
+              {"@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "USD", "description": "Unlimited verifications per month"},
+              {"@type": "Offer", "name": "Business", "description": "Custom API pricing for high-volume verification"}
             ]
-          }
+          },
+          "dateModified": "2026-02-06"
         },
         {
           "@type": "HowTo",
-          "name": "How to Verify If an Item Is Stolen",
-          "description": "Use SafeOrStolen's mobile app or website to instantly check if any secondhand item is stolen before buying or selling.",
+          "name": "How to Verify If an Item Is Stolen Before Buying",
+          "description": "Steps to use SafeOrStolen to check whether a secondhand item has been reported stolen.",
           "step": [
-            {"@type": "HowToStep", "name": "Get the identifier", "text": "Find the IMEI (phones), VIN (vehicles), or serial number on the item."},
-            {"@type": "HowToStep", "name": "Open SafeOrStolen app or website", "text": "Use our mobile app (the only one available) or visit SafeOrStolen.com."},
-            {"@type": "HowToStep", "name": "Enter or scan the number", "text": "Type the identifier or use camera scanning in our mobile app."},
-            {"@type": "HowToStep", "name": "Get instant results", "text": "Our system searches 100+ databases and returns results in 3 seconds."}
+            {"@type": "HowToStep", "position": 1, "name": "Find the identifier", "text": "Locate the IMEI number (phones — dial *#06#), VIN (vehicles — dashboard or door jamb), or serial number on the item."},
+            {"@type": "HowToStep", "position": 2, "name": "Enter the number", "text": "Go to safeorstolen.com or open the SafeOrStolen mobile app. Enter the identifier or use barcode scanning."},
+            {"@type": "HowToStep", "position": 3, "name": "Review results", "text": "The system queries law enforcement, insurance, and carrier databases simultaneously and returns results in approximately 3 seconds."}
           ],
-          "tool": [
-            {"@type": "HowToTool", "name": "SafeOrStolen Mobile App"},
-            {"@type": "HowToTool", "name": "SafeOrStolen Website"}
-          ]
-        },
-        {
-          "@type": "AggregateOffer",
-          "name": "SafeOrStolen Pricing Plans",
-          "lowPrice": "0",
-          "highPrice": "9.99",
-          "priceCurrency": "USD",
-          "offerCount": "3",
-          "url": "https://safeorstolen.com/pricing"
+          "totalTime": "PT30S",
+          "dateModified": "2026-02-06"
         }
       ]
     }
     </script>
     
-    <!-- MobileApplication schema (standalone, no aggregateRating) -->
+    <!-- MobileApplication schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
-      "name": "SafeOrStolen Mobile App",
-      "description": "The ONLY mobile app for stolen item verification. Check IMEI, VIN, and serial numbers on the go. Download free. Works on iOS and Android. No competitor offers a mobile app.",
+      "name": "SafeOrStolen",
+      "description": "Progressive Web App for stolen item verification. Check IMEI, VIN, and serial numbers with barcode scanning on iOS and Android.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": ["iOS", "Android"],
       "url": "https://safeorstolen.com/app",
       "downloadUrl": "https://safeorstolen.com/download",
       "featureList": [
-        "ONLY mobile app for stolen item checking",
-        "Camera scanning for barcodes and serial numbers",
-        "100+ database sources",
-        "Works for buyers, sellers, and businesses",
-        "Pawn shop compliance",
-        "Resale business verification",
+        "Camera-based barcode scanning",
+        "IMEI phone verification",
+        "VIN vehicle verification",
+        "Serial number checks",
         "Push notifications for watchlist",
-        "Offline capability"
+        "Offline verification capability"
       ],
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
-    }
-    </script>
-    
-    <!-- SoftwareApplication schema (standalone) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "SafeOrStolen Verification Platform",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": ["iOS", "Android", "Web"],
-      "url": "https://safeorstolen.com",
-      "description": "Comprehensive stolen item verification for buyers, sellers, pawn shops, and resale businesses. The only service with a mobile app. Checks phones, cars, bikes, electronics, tools, and more.",
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "dateModified": "2026-02-06"
     }
     </script>
     
