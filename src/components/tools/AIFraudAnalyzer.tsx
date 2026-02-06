@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Brain, Send, Loader2, AlertTriangle, CheckCircle, Info } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -51,7 +51,12 @@ const AIFraudAnalyzer = () => {
 
   return (
     <>
-      <Helmet><title>AI Fraud Analyzer | SafeOrStolen</title></Helmet>
+      <SEOHead
+        title="AI Fraud Analyzer"
+        description="AI-powered fraud analysis tool. Assess risk levels for secondhand purchases using intelligent pattern detection."
+        canonical="/tools/ai-fraud-analyzer"
+        noIndex
+      />
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">

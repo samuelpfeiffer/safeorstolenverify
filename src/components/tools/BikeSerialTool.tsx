@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Bike, Search, CheckCircle, XCircle, AlertTriangle, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -80,10 +80,12 @@ const BikeSerialTool = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Bike Serial Lookup | SafeOrStolen</title>
-        <meta name="description" content="Check if a bicycle is stolen using the Bike Index registry. Free bike serial number lookup tool." />
-      </Helmet>
+      <SEOHead
+        title="Bike Serial Lookup"
+        description="Check if a bicycle is stolen using the Bike Index registry. Free bike serial number lookup tool."
+        canonical="/tools/bike-serial"
+        noIndex
+      />
 
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4 max-w-2xl">

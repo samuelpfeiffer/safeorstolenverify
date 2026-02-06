@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Share2, Twitter, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
@@ -84,30 +83,10 @@ export const SocialShareOptimizer = ({
 
   return (
     <>
-      <Helmet>
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={currentUrl} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="SafeOrStolen" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={currentUrl} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-        <meta name="twitter:site" content="@safeorstolen" />
-        <meta name="twitter:creator" content="@safeorstolen" />
-
-        {/* Additional social meta */}
-        <meta property="og:locale" content="en_US" />
-        <meta property="article:publisher" content="https://www.facebook.com/safeorstolen" />
-      </Helmet>
+      {/* 
+        NOTE: Open Graph and Twitter Card meta tags are managed by SEOHead component.
+        Do NOT add duplicate og:* or twitter:* tags here.
+      */}
 
       <div className="flex items-center gap-2 flex-wrap">
         <Button
