@@ -57,7 +57,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
               🎉 Thank You for Signing Up!
             </CardTitle>
             <p className="text-lg text-muted-foreground">
-              Welcome to Safe or Stolen - Your protection against stolen goods starts now!
+              Welcome to SafeOrStolen — Your protection against stolen goods starts now!
             </p>
           </CardHeader>
           

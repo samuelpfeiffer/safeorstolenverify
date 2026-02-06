@@ -35,11 +35,11 @@ const CrunchbasePage: React.FC = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "SafeOrStolen",
-      "alternateName": ["Safe or Stolen", "SOS Verification"],
-      "description": "AI-powered stolen item verification platform protecting the $367B global secondhand market. Uses machine learning for fraud detection across vehicles, electronics, and equipment.",
+      "alternateName": ["Safe Or Stolen", "SOS Verification"],
+      "description": "Consumer protection platform that verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.",
       "url": "https://safeorstolen.com",
-      "logo": "https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png",
-      "foundingDate": "2025-07-07",
+      "logo": "https://safeorstolen.com/sos-logo.png",
+      "foundingDate": "2024-08",
       "founder": [
         { "@type": "Person", "name": "Samuel Pfeiffer", "jobTitle": "Founder & CEO" },
         { "@type": "Person", "name": "Kelly McEvoy", "jobTitle": "Co-Founder" }
