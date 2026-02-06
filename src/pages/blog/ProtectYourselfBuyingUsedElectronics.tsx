@@ -31,7 +31,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
       }
     },
     datePublished: '2025-01-17',
-    dateModified: '2025-01-17',
+    dateModified: '2026-02-06',
     image: 'https://safeorstolen.com/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png',
     wordCount: 1800,
     keywords: ['buying used electronics', 'secondhand electronics safety', 'avoid stolen phones', 'used laptop verification']
@@ -94,7 +94,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     <>
       <PageSEO
         title="How to Protect Yourself When Buying Used Electronics | SafeOrStolen"
-        description="Complete guide to safely purchasing secondhand electronics, avoiding stolen goods, and protecting yourself from fraud when buying used phones, laptops, and devices in 2025."
+        description="Complete guide to safely purchasing secondhand electronics, avoiding stolen goods, and protecting yourself from fraud when buying used phones, laptops, and devices in 2026."
         keywords="buying used electronics, secondhand electronics safety, avoid stolen phones, used laptop verification, electronics fraud prevention"
         canonical="/blog/protect-yourself-buying-used-electronics"
         structuredData={structuredData}
@@ -144,7 +144,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               massive opportunities for thieves to quickly sell stolen goods.
             </p>
             <p className="text-muted-foreground mb-6">
-              In 2025, the FBI reported that electronics theft increased 34% compared to 2024, with smartphones, 
+              In 2026, the FBI reported that electronics theft increased 34% compared to 2025, with smartphones, 
               laptops, and tablets being the most commonly stolen items. Most stolen devices are sold within 48 hours 
               of being stolen, often at significantly below-market prices to attract quick buyers.
             </p>

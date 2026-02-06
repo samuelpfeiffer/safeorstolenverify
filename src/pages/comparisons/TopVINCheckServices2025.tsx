@@ -13,7 +13,7 @@ const TopVINCheckServices2025 = () => {
   const listSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Top VIN Check Services 2025",
+    "name": "Top VIN Check Services 2026",
     "description": "Comprehensive comparison of the best VIN check and vehicle history services",
     "itemListElement": [
       {
@@ -185,8 +185,8 @@ const TopVINCheckServices2025 = () => {
   return (
     <>
       <PageSEO
-        title="Top 5 VIN Check Services 2025 - Carfax vs Alternatives"
-        description="Compare the best VIN check services for 2025. Carfax, AutoCheck, NICB VINCheck alternatives ranked for stolen vehicle verification."
+        title="Top 5 VIN Check Services 2026 - Carfax Alternatives"
+        description="Compare the best VIN check services for 2026. Carfax, AutoCheck, NICB VINCheck alternatives ranked for stolen vehicle verification."
         keywords="best vin check service, vin check comparison, carfax vs autocheck, free vin check, stolen vehicle check"
         canonical="/comparisons/top-vin-check-services-2025"
         structuredData={listSchema}
@@ -199,7 +199,7 @@ const TopVINCheckServices2025 = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                Updated December 2025
+                Updated February 2026
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 Top 5 VIN Check Services Compared

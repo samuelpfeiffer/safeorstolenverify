@@ -15,7 +15,7 @@ const IMEICheckerAppDownload = () => {
     "headline": "IMEI Checker App Download - Free Stolen Phone Verification",
     "description": "Download the free SafeOrStolen IMEI checker app to verify phones aren't stolen. Works offline, scans barcodes in 3 seconds.",
     "datePublished": "2025-01-15",
-    "dateModified": "2025-12-03",
+    "dateModified": "2026-02-06",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen" }
   };

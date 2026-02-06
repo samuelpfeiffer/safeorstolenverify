@@ -150,7 +150,7 @@ export const PrivacyTransparency: React.FC = () => {
 
           <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
             <p className="text-sm text-blue-400">
-              <strong>Last Updated:</strong> October 2025 • Questions? Contact privacy@safeorstolen.com
+              <strong>Last Updated:</strong> February 2026 • Questions? Contact privacy@safeorstolen.com
             </p>
           </div>
         </DialogContent>

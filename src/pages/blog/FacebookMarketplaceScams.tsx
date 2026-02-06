@@ -12,21 +12,21 @@ const FacebookMarketplaceScams = () => {
     <>
       <TopNavigation />
       <PageSEO
-        title="Facebook Marketplace Scams to Avoid in 2024 (Stolen Items, Fake Sellers)"
+        title="Facebook Marketplace Scams to Avoid in 2026 (Stolen Items, Fake Sellers)"
         description="Protect yourself from Facebook Marketplace scams. Learn how to spot stolen items, fake sellers, and fraud. Free verification tool to check before you buy."
         keywords="facebook marketplace scams, facebook marketplace stolen items, fb marketplace fraud, how to avoid scams facebook marketplace, is facebook marketplace safe"
         canonical="/blog/facebook-marketplace-scams"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "Facebook Marketplace Scams to Avoid in 2024",
+          "headline": "Facebook Marketplace Scams to Avoid in 2026",
           "description": "Complete guide to avoiding stolen items and scams on Facebook Marketplace",
           "author": {
             "@type": "Organization",
             "name": "SafeOrStolen"
           },
           "datePublished": "2024-12-01",
-          "dateModified": "2024-12-03"
+          "dateModified": "2026-02-06"
         }}
       />
       

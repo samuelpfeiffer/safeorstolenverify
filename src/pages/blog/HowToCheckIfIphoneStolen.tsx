@@ -12,7 +12,7 @@ const HowToCheckIfIphoneStolen = () => {
     <>
       <TopNavigation />
       <PageSEO
-        title="How to Check if iPhone is Stolen Before Buying (2024 Guide)"
+        title="How to Check if iPhone is Stolen Before Buying (2026 Guide)"
         description="Free guide to verify any iPhone isn't stolen before you buy. Check IMEI instantly using our free tool. Avoid buying stolen phones on Facebook Marketplace, eBay, Craigslist."
         keywords="how to check if iphone is stolen, check iphone stolen, verify iphone not stolen, iphone imei check stolen, is this iphone stolen, buying used iphone stolen check"
         canonical="/blog/how-to-check-if-iphone-stolen"

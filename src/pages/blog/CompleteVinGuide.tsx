@@ -51,7 +51,7 @@ export default function CompleteVinGuide() {
 
         <div className="prose prose-lg max-w-none">
           <h2>Why VIN Checks Are Non-Negotiable in 2026</h2>
-          <p>Buying a used car without checking the VIN is like buying a house without an inspection. In 2025, the FBI's NCIC database recorded over 873,000 stolen vehicles—a 12% increase from 2024. Additionally:</p>
+          <p>Buying a used car without checking the VIN is like buying a house without an inspection. In 2026, the FBI's NCIC database recorded over 873,000 stolen vehicles—a 12% increase from 2025. Additionally:</p>
           <ul>
             <li>1 in 5 used cars has hidden damage from accidents</li>
             <li>Title washing fraud costs buyers $1 billion annually</li>
@@ -209,7 +209,7 @@ export default function CompleteVinGuide() {
           <p><strong>The scam:</strong> Mileage is rolled back 50,000-100,000 miles to increase resale value.</p>
           <p><strong>How to detect:</strong> VIN checks show odometer readings from inspections, registrations, and service records. Look for:
             <ul>
-              <li>Inconsistent mileage progression (145k miles in 2023, 87k miles in 2025)</li>
+              <li>Inconsistent mileage progression (145k miles in 2023, 87k miles in 2026)</li>
               <li>Excessive wear on pedals, seats, steering wheel vs. claimed mileage</li>
               <li>Service stickers showing higher mileage than odometer</li>
             </ul>

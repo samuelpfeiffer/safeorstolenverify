@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 
 const ProductHuntPage = () => {
-  const launchDate = new Date('2025-01-06');
+  const launchDate = new Date('2026-01-06');
   const today = new Date();
   const daysUntilLaunch = Math.ceil((launchDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
   const isLaunched = daysUntilLaunch <= 0;

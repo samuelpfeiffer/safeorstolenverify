@@ -51,7 +51,7 @@ export default function HowToCheckPhoneStolen() {
 
         <div className="prose prose-lg max-w-none">
           <h2>Why Checking a Phone's IMEI is Critical</h2>
-          <p>Buying a stolen phone isn't just a bad deal—it's a legal nightmare. In 2025, over 2.1 million phones were reported stolen in the US alone. When you buy a stolen device, you risk:</p>
+          <p>Buying a stolen phone isn't just a bad deal—it's a legal nightmare. In 2026, over 2.1 million phones were reported stolen in the US alone. When you buy a stolen device, you risk:</p>
           <ul>
             <li>Having the phone blacklisted and rendered useless by carriers</li>
             <li>Legal consequences for possessing stolen property</li>

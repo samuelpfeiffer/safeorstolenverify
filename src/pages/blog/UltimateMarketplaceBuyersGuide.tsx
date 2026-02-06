@@ -66,7 +66,7 @@ export default function UltimateMarketplaceBuyersGuide() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-foreground">Why This Guide Matters</h3>
                   <p className="text-muted-foreground">
-                    In 2025, over $15 billion worth of stolen goods were sold on online marketplaces. This comprehensive 
+                    In 2026, over $15 billion worth of stolen goods were sold on online marketplaces. This comprehensive 
                     guide teaches you how to shop safely and avoid becoming a victim.
                   </p>
                 </div>

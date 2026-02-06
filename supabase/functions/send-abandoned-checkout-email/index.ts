@@ -120,7 +120,7 @@ const handler = async (req: Request): Promise<Response> => {
                 Questions? Reply to this email or visit <a href="https://safeorstolen.com/faq" style="color: #dc2626;">our FAQ</a>
               </p>
               <p style="color: #9ca3af; font-size: 11px; margin: 10px 0 0;">
-                © 2025 SafeOrStolen. Carfax for Everything - Buy and Sell.
+                © 2026 SafeOrStolen. Carfax for Everything - Buy and Sell.
               </p>
             </div>
           </div>

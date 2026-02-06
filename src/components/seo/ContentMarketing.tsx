@@ -17,7 +17,7 @@ export const ContentMarketing: React.FC<ContentMarketingProps> = ({
 }) => {
   const currentTrends = [
     {
-      title: "2025 Theft Trends Report",
+      title: "2026 Theft Trends Report",
       description: "Latest statistics on stolen goods and marketplace fraud prevention",
       category: "Statistics",
       readTime: "8 min read",

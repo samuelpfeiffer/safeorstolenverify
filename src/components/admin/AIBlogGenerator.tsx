@@ -41,7 +41,7 @@ export const AIBlogGenerator: React.FC = () => {
     'How to Spot Stolen Electronics Before Buying',
     'VIN Number Verification: Complete Guide for Car Buyers',
     'IMEI Check: Protecting Yourself from Stolen Phones',
-    '2025 Theft Trends: What Consumers Need to Know',
+    '2026 Theft Trends: What Consumers Need to Know',
     'Marketplace Safety: Red Flags When Buying Secondhand',
     'Serial Number Verification for Laptops and Electronics',
     'Bike Theft Prevention and Recovery Tips',

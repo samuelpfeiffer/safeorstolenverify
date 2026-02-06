@@ -15,7 +15,7 @@ const BicycleStolenSerialNumberCheck = () => {
     "headline": "How to Check If a Bike Is Stolen - Serial Number Lookup Guide",
     "description": "Learn how to check if a bicycle is stolen using serial numbers. Complete guide to bike verification including e-bikes and motorcycles.",
     "datePublished": "2025-01-15",
-    "dateModified": "2025-12-03",
+    "dateModified": "2026-02-06",
     "author": { "@type": "Organization", "name": "SafeOrStolen" },
     "publisher": { "@type": "Organization", "name": "SafeOrStolen" }
   };
@@ -83,7 +83,7 @@ const BicycleStolenSerialNumberCheck = () => {
             </p>
 
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>Updated: December 3, 2025</span>
+              <span>Updated: February 2026</span>
               <span>•</span>
               <span>8 min read</span>
             </div>

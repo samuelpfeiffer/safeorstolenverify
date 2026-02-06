@@ -43,7 +43,8 @@ const NewsIndexPage = () => {
     { year: "2022", event: "Expanded to vehicle verification with NICB and NMVTIS integration" },
     { year: "2023", event: "Released mobile apps for iOS and Android with barcode scanning" },
     { year: "2024", event: "Reached 50M+ verified items in database, partnered with major insurers" },
-    { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" }
+    { year: "2025", event: "Launched API for marketplace integration, expanded international coverage" },
+    { year: "2026", event: "Full site-wide 2026 refresh, enhanced SEO, AI-powered verification upgrades" }
   ];
 
   return (

@@ -13,7 +13,7 @@ export default function TriggerIndexNowPage() {
     setStatus('loading');
     setMessage('Notifying search engines...');
 
-    // All 56 "Crawled - currently not indexed" URLs from GSC (Dec 2025)
+    // All 56 "Crawled - currently not indexed" URLs from GSC (Feb 2026)
     const priorityUrls = [
       // CRITICAL - Homepage (must be indexed!)
       'https://safeorstolen.com/',

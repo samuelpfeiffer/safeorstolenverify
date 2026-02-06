@@ -62,12 +62,12 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/vs-swappa', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-carfax', priority: 0.80, changefreq: 'monthly' },
   { path: '/vs-autocheck', priority: 0.80, changefreq: 'monthly' },
-  // New detailed comparison pages (December 2025)
-  { path: '/comparisons/safeorstolen-vs-imeiinfo', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/safeorstolen-vs-swappa', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/nicb-vincheck-alternative', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/best-free-imei-checkers-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
-  { path: '/comparisons/top-vin-check-services-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2025-12-23' },
+  // Detailed comparison pages (updated February 2026)
+  { path: '/comparisons/safeorstolen-vs-imeiinfo', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
+  { path: '/comparisons/safeorstolen-vs-swappa', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
+  { path: '/comparisons/nicb-vincheck-alternative', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
+  { path: '/comparisons/best-free-imei-checkers-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
+  { path: '/comparisons/top-vin-check-services-2025', priority: 0.80, changefreq: 'monthly', lastmod: '2026-02-06' },
 
   // ============================================
   // BUSINESS PAGES (5)
