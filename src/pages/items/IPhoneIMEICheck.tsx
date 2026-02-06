@@ -3,8 +3,8 @@ import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTempl
 const IPhoneIMEICheck = () => {
   return (
     <SEOLandingPageTemplate
-      title="Check if iPhone is Stolen - Free IMEI Verification | SafeOrStolen"
-      metaDescription="Verify any iPhone isn't stolen before buying. Free IMEI check against 50M+ stolen device database. Instant results in 3 seconds. Works for iPhone 15, 14, 13, SE, and all models."
+      title="Check if iPhone is Stolen - Free IMEI Check"
+      metaDescription="Verify any iPhone isn't stolen before buying. Free IMEI check against stolen device databases. Instant results for iPhone 16, 15, 14, 13, SE and all models."
       h1="Check if iPhone is Stolen - Free IMEI Verification"
       keywords={[
         'check if iphone is stolen',

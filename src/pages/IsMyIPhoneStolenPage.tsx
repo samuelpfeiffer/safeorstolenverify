@@ -4,7 +4,7 @@ const IsMyIPhoneStolenPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Is My iPhone Stolen? Free iPhone Theft Check Tool | SafeOrStolen"
-      metaDescription="Check if an iPhone is stolen before buying. Free IMEI verification for all iPhone models. Instant results show theft status, iCloud lock, and carrier blacklist."
+      metaDescription="Check if an iPhone is stolen before buying. Free IMEI verification for all models. Instant results show theft status, iCloud lock, and blacklist."
       h1="Is My iPhone Stolen? Check Any iPhone Instantly"
       itemType="iPhone"
       keywords={[

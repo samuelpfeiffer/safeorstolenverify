@@ -65,9 +65,9 @@ const OfferUpSafetyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="OfferUp Scam Check - Verify Items Aren't Stolen Free"
-        description="Verify OfferUp items aren't stolen before buying. Check IMEI, VIN, serial numbers. Avoid OfferUp scams with free verification."
-        keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid scams"
+        title="OfferUp Scam Check - Free Item Verification"
+        description="Avoid OfferUp scams with free IMEI, VIN and serial number verification. Check if items are stolen before meeting sellers. Instant results from 100+ databases."
+        keywords="OfferUp safety, OfferUp stolen check, verify OfferUp items, avoid OfferUp scams, OfferUp fraud protection"
         canonical="/offerup-safety"
         structuredData={faqSchema}
       />
@@ -301,7 +301,7 @@ const OfferUpSafetyPage = () => {
           <div className="flex flex-wrap gap-3">
             <Link to="/facebook-marketplace-safety" className="text-primary hover:underline">Facebook Marketplace Safety</Link>
             <span>•</span>
-            <Link to="/craigslist-safety" className="text-primary hover:underline">Craigslist Safety</Link>
+            <Link to="/craigslist-safety-verification" className="text-primary hover:underline">Craigslist Safety</Link>
             <span>•</span>
             <Link to="/stolen-phone-checker" className="text-primary hover:underline">Stolen Phone Checker</Link>
             <span>•</span>

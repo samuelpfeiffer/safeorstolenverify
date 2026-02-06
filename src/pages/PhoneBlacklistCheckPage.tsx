@@ -64,8 +64,8 @@ const PhoneBlacklistCheckPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="Free Phone Blacklist Check - IMEI Blacklist Verification | SafeOrStolen"
-        description="Check if a phone is blacklisted before buying. Free IMEI blacklist checker verifies against AT&T, Verizon, T-Mobile, and 50+ carrier databases. Instant results."
+        title="Free Phone Blacklist Check - IMEI Verification"
+        description="Check if a phone is blacklisted before buying. Free IMEI blacklist checker verifies against AT&T, Verizon, T-Mobile and 50+ carrier databases. Instant."
         keywords="phone blacklist check, IMEI blacklist checker, check if phone blacklisted, carrier blacklist check, phone blacklist status, blacklisted phone checker"
         canonical="/phone-blacklist-check"
         structuredData={faqSchema}
@@ -249,7 +249,7 @@ const PhoneBlacklistCheckPage = () => {
             <span>•</span>
             <Link to="/imei-checker" className="text-primary hover:underline">IMEI Checker</Link>
             <span>•</span>
-            <Link to="/iphone-imei-check" className="text-primary hover:underline">iPhone IMEI Check</Link>
+            <Link to="/check-iphone-stolen" className="text-primary hover:underline">iPhone IMEI Check</Link>
             <span>•</span>
             <Link to="/app" className="text-primary hover:underline">Download App</Link>
           </div>
