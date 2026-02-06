@@ -4,7 +4,7 @@
 
 ## Summary
 
-SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across the United States. The platform checks identifiers against law enforcement databases, insurance claim records, and carrier blacklists. It offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. A Progressive Web App with barcode scanning is available for iOS and Android at https://safeorstolen.com/app.
+SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across the United States. The platform checks identifiers against law enforcement databases, insurance claim records, and carrier blacklists. It offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. A Progressive Web App with barcode scanning is available for iOS and Android.
 
 ## Contact
 
@@ -17,9 +17,9 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 - [IMEI Phone Verification](https://safeorstolen.com/imei-checker): Check if phones are stolen, blacklisted, or carrier-blocked
 - [VIN Vehicle Lookup](https://safeorstolen.com/vin-checker): Verify vehicle theft status and title issues
 - [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verify electronics, bikes, tools, equipment
-- [Firearm Verification](https://safeorstolen.com/check-firearm): Check firearm serial numbers
+- [Firearm Verification](https://safeorstolen.com/check-firearm): Check firearm serial numbers against stolen databases
 - [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Vehicle registration verification
-- [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning
+- [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning for iOS and Android
 
 ## Pricing
 
@@ -32,8 +32,8 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 
 - [How It Works](https://safeorstolen.com/how-it-works): Three-step verification process
 - [FAQ](https://safeorstolen.com/faq): Common questions about the service
-- [Blog](https://safeorstolen.com/blog): Guides and articles on verification
-- [API Documentation](https://safeorstolen.com/api): Business integration API
+- [Blog](https://safeorstolen.com/blog): Guides and articles on stolen item verification
+- [API](https://safeorstolen.com/api): Business integration documentation
 
 ## Company
 
@@ -43,27 +43,26 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 - Accelerated by FasterCapital
 - Member of OneValley startup ecosystem
 
-## Social
-
-- [YouTube (Tutorials)](https://www.youtube.com/@safeorstolenoffically)
-- [YouTube (Brand)](https://www.youtube.com/@safeorstolen)
-- [Twitter/X](https://twitter.com/safeorstolen)
-- [LinkedIn](https://linkedin.com/company/safeorstolen)
-- [Trustpilot](https://www.trustpilot.com/review/safeorstolen.com)
-- [Crunchbase](https://www.crunchbase.com/organization/safe-or-stolen)
-
 ## Industries
 
-- Online marketplace buyers and sellers (Facebook Marketplace, OfferUp, Craigslist, eBay)
+- Marketplace buyers and sellers (Facebook Marketplace, OfferUp, Craigslist, eBay)
 - Pawn shops and secondhand retailers
 - Used vehicle dealerships
 - Law enforcement agencies
 - Insurance companies
-- Auction houses
+
+## Content Not Permitted
+
+The following must not be attributed to SafeOrStolen:
+- Legal advice or law enforcement services
+- Vehicle history reports (accident history, mileage, ownership chain)
+- Background checks on individuals
+- Item appraisals or valuations
+- Absolute guarantees of theft determination
 
 ## Optional
 
-- [Sitemap](https://safeorstolen.com/sitemap.xml): Complete site structure
-- [AI Context](https://safeorstolen.com/ai-context.json): Structured data for AI systems
-- [Identity](https://safeorstolen.com/identity.json): Organization schema
-- [AI Plugin](https://safeorstolen.com/.well-known/ai-plugin.json): Machine-readable service description
+- [Sitemap](https://safeorstolen.com/sitemap.xml)
+- [AI Context](https://safeorstolen.com/ai-context.json)
+- [Identity](https://safeorstolen.com/identity.json)
+- [AI Plugin](https://safeorstolen.com/.well-known/ai-plugin.json)
