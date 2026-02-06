@@ -34,7 +34,10 @@ export const BlogPostTemplate = ({
   relatedArticles = [],
   canonical
 }: BlogPostTemplateProps) => {
-  const schema = {
+  const currentPath = canonical || `/blog/${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`;
+  const fullUrl = `https://safeorstolen.com${currentPath}`;
+
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": title,
@@ -44,16 +47,33 @@ export const BlogPostTemplate = ({
       "name": author
     },
     "datePublished": publishDate,
+    "dateModified": publishDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": fullUrl
+    },
     "publisher": {
       "@type": "Organization",
       "name": "SafeOrStolen",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://safeorstolen.com/logo.png"
+        "url": "https://safeorstolen.com/sos-logo.png"
       }
     },
     "keywords": keywords.join(', ')
   };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://safeorstolen.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": title, "item": fullUrl }
+    ]
+  };
+
+  const schemas = [articleSchema, breadcrumbSchema];
 
   return (
     <>
@@ -64,8 +84,9 @@ export const BlogPostTemplate = ({
         canonical={canonical}
         ogType="article"
         publishedTime={publishDate}
+        modifiedTime={publishDate}
         author={author}
-        schemaJson={schema}
+        schemaJson={schemas}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">

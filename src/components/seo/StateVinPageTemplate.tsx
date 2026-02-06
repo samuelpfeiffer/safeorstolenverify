@@ -63,7 +63,8 @@ export const StateVinPageTemplate = ({
           "@type": "State",
           "name": state
         },
-        "description": metaDescription
+        "description": metaDescription,
+        "dateModified": "2026-02-06"
       },
       {
         "@type": "FAQPage",
@@ -75,6 +76,14 @@ export const StateVinPageTemplate = ({
             "text": faq.answer
           }
         }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+          { "@type": "ListItem", "position": 2, "name": "VIN Checker", "item": "https://safeorstolen.com/vin-checker" },
+          { "@type": "ListItem", "position": 3, "name": `${state} VIN Lookup`, "item": canonicalUrl }
+        ]
       }
     ]
   };

@@ -25,10 +25,8 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
     return true;
   }
 
-  // API routes and data files
-  if (/^\/(api)(\/|$)/i.test(path)) {
-    return true;
-  }
+  // NOTE: /api is NOT noindexed — it has 1200+ words of real developer docs content
+  // Only /api/* sub-routes (if any) would be blocked by server-side rules
 
   return false;
 }

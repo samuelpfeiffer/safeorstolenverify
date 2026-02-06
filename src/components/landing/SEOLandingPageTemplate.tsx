@@ -109,18 +109,20 @@ export const SEOLandingPageTemplate = ({
   const location = useLocation();
   
   // Structured Data
+  const fullUrl = `https://safeorstolen.com${canonical}`;
+  
   const serviceSchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Service",
         "name": `${itemType} Stolen Verification Service`,
-        "url": `https://safeorstolen.com${canonical}`,
+        "url": fullUrl,
         "provider": {
           "@type": "Organization",
           "name": "SafeOrStolen",
           "url": "https://safeorstolen.com",
-          "logo": "https://safeorstolen.com/logo.png"
+          "logo": "https://safeorstolen.com/sos-logo.png"
         },
         "serviceType": `${itemType} Theft Verification`,
         "areaServed": {
@@ -128,6 +130,7 @@ export const SEOLandingPageTemplate = ({
           "name": "Worldwide"
         },
         "description": metaDescription,
+        "dateModified": "2026-02-06",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -139,6 +142,7 @@ export const SEOLandingPageTemplate = ({
         "@type": "HowTo",
         "name": `How to Check if ${itemType} is Stolen`,
         "description": `Step by step guide to verify if a ${itemType.toLowerCase()} has been reported stolen`,
+        "dateModified": "2026-02-06",
         "step": howItWorksSteps.map((step, index) => ({
           "@type": "HowToStep",
           "position": index + 1,
@@ -163,7 +167,16 @@ export const SEOLandingPageTemplate = ({
     }))
   } : null;
 
-  const structuredData = faqSchema ? [serviceSchema, faqSchema] : [serviceSchema];
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+      { "@type": "ListItem", "position": 2, "name": `${itemType} Verification`, "item": fullUrl }
+    ]
+  };
+
+  const structuredData = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
     <>
