@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Loader2, AlertCircle, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { isInIframe, redirectToStripe } from '@/utils/stripeRedirect';
 
 const CheckoutRedirectPage = () => {
@@ -80,8 +81,15 @@ const CheckoutRedirectPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-card border border-border rounded-xl p-8 shadow-lg text-center">
+    <>
+      <SEOHead
+        title="Checkout"
+        description="Complete your SafeOrStolen purchase securely via Stripe."
+        canonical="/checkout-redirect"
+        noIndex={true}
+      />
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-card border border-border rounded-xl p-8 shadow-lg text-center">
         {/* Loading State */}
         {status === 'loading' && (
           <div className="space-y-4">
@@ -133,8 +141,9 @@ const CheckoutRedirectPage = () => {
             </div>
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

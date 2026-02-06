@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { submitToIndexNow, pingSitemaps } from '@/utils/indexnow';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function TriggerIndexNowPage() {
@@ -84,7 +85,14 @@ export default function TriggerIndexNowPage() {
   };
 
   return (
-    <div className="container mx-auto p-8 max-w-2xl">
+    <>
+      <SEOHead
+        title="Trigger IndexNow"
+        description="Admin tool to trigger IndexNow re-indexing."
+        canonical="/admin/trigger-indexnow"
+        noIndex={true}
+      />
+      <div className="container mx-auto p-8 max-w-2xl">
       <Card>
         <CardHeader>
           <CardTitle>IndexNow Revalidation</CardTitle>
@@ -140,5 +148,6 @@ export default function TriggerIndexNowPage() {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }
