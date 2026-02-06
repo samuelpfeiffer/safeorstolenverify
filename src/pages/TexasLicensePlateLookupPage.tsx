@@ -4,7 +4,7 @@ const TexasLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Texas License Plate Lookup - Check TX Stolen Vehicle by Plate"
-      metaDescription="Texas license plate lookup to verify if a vehicle is stolen. Free TX license plate search from Texas DMV and law enforcement databases. Check vehicles in Houston, Dallas, San Antonio, Austin."
+      metaDescription="Free Texas license plate lookup. Check if a TX vehicle is stolen before buying. Verify against TxDMV and law enforcement databases instantly."
       h1="Texas License Plate Lookup - Check TX Vehicles"
       itemType="Vehicle"
       keywords={[

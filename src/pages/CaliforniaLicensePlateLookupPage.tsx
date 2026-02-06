@@ -4,7 +4,7 @@ const CaliforniaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
       title="California License Plate Lookup - Check CA Stolen Vehicle by Plate"
-      metaDescription="California license plate lookup to verify if a vehicle is stolen. Free CA license plate search from DMV and law enforcement databases. Instant results in 3 seconds."
+      metaDescription="Free California license plate lookup. Check if a CA vehicle is stolen before buying. Search DMV and law enforcement databases instantly."
       h1="California License Plate Lookup - Check CA Vehicles"
       itemType="Vehicle"
       keywords={[
