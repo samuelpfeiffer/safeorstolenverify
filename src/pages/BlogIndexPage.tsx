@@ -210,10 +210,10 @@ export default function BlogIndexPage() {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen Blog - Stolen Item Verification Guides 2026 | Free IMEI VIN Checks"
-        description="Expert 2026 guides on verifying secondhand items, avoiding stolen goods, marketplace safety tips. The ONLY verification service with a mobile app. Compare CheckMEND, IMEI.info, Carfax alternatives."
+        title="Blog - Stolen Item Guides & Safety Tips"
+        description="Expert guides on verifying secondhand items before buying. Avoid stolen goods on marketplaces. IMEI, VIN, serial number tips from SafeOrStolen."
         keywords="stolen item checker 2026, verification guides, marketplace safety, IMEI verification, VIN checks, buying guides, CheckMEND alternative, Carfax alternative, mobile app verification"
-        canonical="https://safeorstolen.com/blog"
+        canonical="/blog"
         type="website"
         structuredData={{
           '@context': 'https://schema.org',

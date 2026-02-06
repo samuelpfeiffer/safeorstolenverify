@@ -788,6 +788,15 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /*.map    /:splat        200
 
 # ============================================
+# COMPARISON PAGE REDIRECTS (legacy non-prefixed URLs)
+# ============================================
+/top-vin-check-services-2025  /comparisons/top-vin-check-services-2025  301!
+/nicb-vin-check-alternative   /comparisons/nicb-vincheck-alternative    301!
+/safeorstolen-vs-swappa       /vs-swappa                                301!
+/safeorstolen-vs-imeiinfo     /vs-imeiinfo                              301!
+/best-free-imei-checkers-2025 /comparisons/best-free-imei-checkers-2025 301!
+
+# ============================================
 # SPA FALLBACK (MUST BE LAST)
 # ============================================
 /*  /index.html  200

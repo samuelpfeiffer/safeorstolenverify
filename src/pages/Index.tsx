@@ -132,6 +132,32 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Static SEO content - always rendered (not lazy) for bot visibility */}
+        <section className="py-8 bg-muted/20 border-y border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl font-bold mb-4 text-foreground">Why Verify Before You Buy?</h2>
+              <p className="text-muted-foreground mb-4">
+                Over $15 billion worth of property is stolen annually in the United States. When buying secondhand phones, cars, bikes, laptops, or electronics from Facebook Marketplace, Craigslist, OfferUp, or eBay, there is a real risk of purchasing stolen goods. SafeOrStolen is the only verification service with a mobile app that lets you check IMEI numbers for phones, VIN numbers for vehicles, and serial numbers for electronics against over 100 law enforcement, insurance, and manufacturer databases in just 3 seconds.
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className="p-4 rounded-lg bg-background border border-border">
+                  <h3 className="font-semibold mb-2 text-foreground">For Buyers</h3>
+                  <p className="text-muted-foreground">Protect yourself from buying stolen goods. Verify any item before paying. If stolen property is seized by police, you lose your money with no recourse.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-background border border-border">
+                  <h3 className="font-semibold mb-2 text-foreground">For Sellers</h3>
+                  <p className="text-muted-foreground">Build buyer trust with verified listings. Share a SafeOrStolen verification certificate to prove your items are legitimate and increase sale prices.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-background border border-border">
+                  <h3 className="font-semibold mb-2 text-foreground">For Businesses</h3>
+                  <p className="text-muted-foreground">Pawn shops, dealers, and resellers use SafeOrStolen to verify inventory. Bulk verification via API integration. Comply with state due diligence requirements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* OneValley / EWC Recognition Strip - Static, minimal JS */}
         <section className="py-4 bg-gradient-to-r from-amber-500/5 via-background to-amber-500/5 border-y border-border/50">
           <div className="container mx-auto px-4">

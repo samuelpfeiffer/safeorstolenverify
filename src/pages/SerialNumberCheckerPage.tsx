@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const SerialNumberCheckerPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Serial Number Checker - Verify Items Not Stolen"
-      metaDescription="Check if electronics, tools, or jewelry are stolen using serial number verification. Free instant check from law enforcement and pawn shop databases."
+      title="Serial Number Checker - Free Stolen Check"
+      metaDescription="Free serial number checker. Verify electronics, tools, jewelry aren't stolen. Instant check against law enforcement and pawn shop databases."
       h1="Serial Number Checker - Verify Items Not Stolen"
       itemType="Item"
       keywords={[
