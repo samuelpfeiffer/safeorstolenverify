@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const NorthCarolinaLicensePlateLookupPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="North Carolina License Plate Lookup - Free NC Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Free North Carolina license plate lookup. Check if a NC vehicle is stolen. Verify before buying in Charlotte, Raleigh, Greensboro. Search NCDMV and law enforcement databases."
+      title="NC License Plate Lookup - Free Stolen Check"
+      metaDescription="Free North Carolina plate lookup. Check if a NC vehicle is stolen before buying in Charlotte, Raleigh, Greensboro. Searches NCDMV databases."
       h1="North Carolina License Plate Lookup - Verify NC Vehicles Aren't Stolen"
       itemType="Vehicle"
       keywords={[
