@@ -144,19 +144,11 @@ RewriteRule ^fastercapital/tech-cofounder$ /about [R=301,L]
 RewriteRule ^(.+)-stolen-item-check$ /verify [R=301,L]
 
 # ===================================
-# Bot Detection & Prerendered Content
+# Bot Detection - HANDLED BY LovableHTML
 # ===================================
-# Serve prerendered static HTML to search engine bots
-RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
-RewriteCond %{REQUEST_URI} !^/_prerendered/
-RewriteCond %{DOCUMENT_ROOT}/_prerendered%{REQUEST_URI}.html -f
-RewriteRule ^(.*)$ /_prerendered/$1.html [L]
-
-# Serve prerendered index for bot homepage requests
-RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|linkedinbot|whatsapp|slackbot|telegrambot) [NC]
-RewriteCond %{REQUEST_URI} ^/$
-RewriteCond %{DOCUMENT_ROOT}/_prerendered/index.html -f
-RewriteRule ^$ /_prerendered/index.html [L]
+# LovableHTML intercepts bot requests at the DNS proxy level
+# and serves pre-rendered HTML snapshots automatically.
+# No server-side bot detection rules needed here.
 
 # Force HTTPS and redirect www to non-www (canonical URL)
 # Handle all combinations: http://www, https://www, http://non-www

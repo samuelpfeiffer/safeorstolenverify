@@ -8,18 +8,9 @@
   command = "npm run build"
 
 # ============================================
-# Prerender.io Plugin for Dynamic Rendering
-# Serves pre-rendered HTML to search engines and AI bots
-# ============================================
-[[plugins]]
-  package = "@prerender/netlify-plugin"
-
-[plugins.inputs]
-  prerenderToken = "iiMthWrIIiQhunohL2U5"
-  prerenderServiceUrl = "https://service.prerender.io/"
-
-# ============================================
 # Build Environment
+# Note: Prerendering is handled by LovableHTML at the DNS proxy level.
+# No server-side plugin needed.
 # ============================================
 [build.environment]
   NODE_VERSION = "18"
@@ -31,7 +22,6 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Prerender-Token = "iiMthWrIIiQhunohL2U5"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
