@@ -1,12 +1,11 @@
 import React from 'react';
-import { OptimizedSEOHead } from './OptimizedSEOHead';
+import { SEOHead } from './SEOHead';
 import { getCanonicalUrl } from '@/utils/seo/canonicalUtils';
 import { useSafeLocation } from '@/hooks/useSafeLocation';
 
 /**
- * PageSEO - Wrapper component for OptimizedSEOHead
- * For simpler usage, consider using SEOHead from '@/components/seo/SEOHead' directly
- * which provides a cleaner API with equivalent functionality.
+ * PageSEO - Wrapper component for SEOHead
+ * Normalizes props and delegates to the unified SEOHead component.
  */
 interface PageSEOProps {
   title: string;
@@ -17,8 +16,6 @@ interface PageSEOProps {
   noIndex?: boolean;
   canonical?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
-  /** Set to true for dedicated video watch pages to enable video indexing */
-  isVideoPage?: boolean;
 }
 
 export const PageSEO: React.FC<PageSEOProps> = ({
@@ -30,7 +27,6 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   noIndex,
   canonical: customCanonical,
   structuredData,
-  isVideoPage = false
 }) => {
   const location = useSafeLocation();
   
@@ -41,7 +37,7 @@ export const PageSEO: React.FC<PageSEOProps> = ({
       ? getCanonicalUrl(location.pathname)
       : getCanonicalUrl('/');
 
-  // Ensure structuredData is always an array for OptimizedSEOHead
+  // Ensure structuredData is always an array for SEOHead
   const normalizedStructuredData = structuredData 
     ? Array.isArray(structuredData) 
       ? structuredData.filter(Boolean) 
@@ -49,16 +45,15 @@ export const PageSEO: React.FC<PageSEOProps> = ({
     : undefined;
 
   return (
-    <OptimizedSEOHead
+    <SEOHead
       title={title}
       description={description}
       keywords={keywords}
       canonical={canonical}
-      image={image}
-      type={type}
+      ogImage={image}
+      ogType={type}
       noIndex={noIndex}
-      structuredData={normalizedStructuredData}
-      isVideoPage={isVideoPage}
+      schemaJson={normalizedStructuredData}
     />
   );
 };

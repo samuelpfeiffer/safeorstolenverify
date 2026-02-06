@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Mic, MicOff, Search, Loader2, Volume2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -43,10 +43,12 @@ const VoiceSearchTool = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Voice Search | SafeOrStolen</title>
-        <meta name="description" content="Hands-free verification using voice commands. Speak serial numbers for instant stolen item checks." />
-      </Helmet>
+      <SEOHead
+        title="Voice Search"
+        description="Hands-free verification using voice commands. Speak serial numbers for instant stolen item checks."
+        canonical="/tools/voice-search"
+        noIndex
+      />
 
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4 max-w-2xl">

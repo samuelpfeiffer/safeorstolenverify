@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { AlertTriangle, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -97,9 +97,11 @@ const ReportStolenTool = () => {
   if (submitted) {
     return (
       <>
-        <Helmet>
-          <title>Report Submitted | SafeOrStolen</title>
-        </Helmet>
+        <SEOHead
+          title="Report Submitted"
+          description="Your stolen item report has been submitted successfully. Thank you for helping protect other buyers."
+          noIndex
+        />
 
         <div className="min-h-screen bg-background py-12">
           <div className="container mx-auto px-4 max-w-lg text-center">
@@ -131,10 +133,12 @@ const ReportStolenTool = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Report Stolen Item | SafeOrStolen</title>
-        <meta name="description" content="Report a stolen item to help protect other buyers. Add to our community database." />
-      </Helmet>
+      <SEOHead
+        title="Report Stolen Item"
+        description="Report a stolen item to help protect other buyers. Add to our community database."
+        canonical="/report"
+        noIndex
+      />
 
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4 max-w-2xl">

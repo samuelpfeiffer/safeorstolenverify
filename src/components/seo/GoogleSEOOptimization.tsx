@@ -7,16 +7,19 @@ interface GoogleSEOOptimizationProps {
   pageUrl?: string;
 }
 
+/**
+ * GoogleSEOOptimization - Adds Google-specific performance hints and verification.
+ * 
+ * NOTE: title, description, robots, canonical, og:*, twitter:* tags are managed
+ * by SEOHead. Do NOT add those here to avoid conflicts.
+ */
 export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({ 
   pageType = 'homepage',
   pageUrl = '/'
 }) => {
-  const siteUrl = 'https://safeorstolen.com';
-  const fullUrl = pageUrl.startsWith('http') ? pageUrl : `${siteUrl}${pageUrl}`;
-
   return (
     <Helmet>
-      {/* Google Search Console Verification */}
+      {/* Google Search Console Verification - duplicated in index.html for safety */}
       <meta name="google-site-verification" content="google29952b5cc1a6a4dd" />
       
       {/* Google Analytics 4 - Managed by GA4Provider */}
@@ -27,39 +30,20 @@ export const GoogleSEOOptimization: React.FC<GoogleSEOOptimizationProps> = ({
         `}
       </script>
 
-      {/* Core Web Vitals Optimization */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      {/* Core Web Vitals Optimization - preconnects */}
       <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       
       {/* Enhanced Performance Hints */}
       <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
-      {/* Google-specific Meta Tags */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      {/* Googlebot-specific directives (supplements robots set by SEOHead) */}
       <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <meta name="google" content="nositelinksearchbox" />
       <meta name="google" content="notranslate" />
       
-      {/* Rich Results Enhancement */}
-      <meta name="author" content="SafeOrStolen Team" />
-      <meta name="publisher" content="SafeOrStolen" />
-      <meta name="copyright" content="© 2024 SafeOrStolen. All rights reserved." />
-      
-      {/* Page Experience Signals */}
-      <meta name="theme-color" content="#1a1625" />
-      <meta name="color-scheme" content="dark" />
-      
       {/* NOTE: Organization, WebSite, and Service schemas are defined in index.html - DO NOT duplicate */}
 
-      {/* Performance Resource Hints */}
-      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-      <link rel="modulepreload" href="/src/main.tsx" />
-      
       {/* Enhanced Security for Google Crawler */}
       <meta name="referrer" content="strict-origin-when-cross-origin" />
     </Helmet>

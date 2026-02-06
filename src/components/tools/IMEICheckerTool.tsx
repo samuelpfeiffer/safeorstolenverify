@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { Smartphone, Search, CheckCircle, XCircle, AlertTriangle, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -86,10 +86,12 @@ const IMEICheckerTool = () => {
 
   return (
     <>
-      <Helmet>
-        <title>IMEI Checker Tool | SafeOrStolen</title>
-        <meta name="description" content="Check if a phone or tablet is blacklisted or stolen using IMEI verification. Free IMEI lookup tool." />
-      </Helmet>
+      <SEOHead
+        title="IMEI Checker Tool"
+        description="Check if a phone or tablet is blacklisted or stolen using IMEI verification. Free IMEI lookup tool."
+        canonical="/tools/imei-checker"
+        noIndex
+      />
 
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4 max-w-2xl">
