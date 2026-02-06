@@ -107,7 +107,7 @@ const YouTubePage: React.FC = () => {
         keywords="SafeOrStolen YouTube, stolen item checker tutorial, IMEI checker video, VIN lookup guide, serial number verification how-to, marketplace safety tips"
         canonical="/youtube"
         structuredData={structuredData}
-        isVideoPage={false}
+        
       />
 
       {/* NOTE: og:video removed - collection pages should not have video OG tags */}
