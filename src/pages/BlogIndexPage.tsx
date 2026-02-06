@@ -10,19 +10,19 @@ const staticArticles = [
   {
     title: 'Best Stolen Item Checkers 2026: Complete Comparison Guide',
     slug: 'best-stolen-item-checkers-2026',
-    excerpt: 'Compare the top stolen item verification services in 2026. SafeOrStolen vs CheckMEND vs IMEI.info vs Swappa. Find the only service with a mobile app.',
+    excerpt: 'Compare the top stolen item verification services in 2026. SafeOrStolen, CheckMEND, IMEI.info, and Swappa compared. Find the only service with a mobile app.',
     category: '2026 Guides',
     readTime: '12 min',
     keywords: ['stolen item checker 2026', 'best verification service', 'CheckMEND alternative'],
     featured: true
   },
   {
-    title: 'Carfax vs Free VIN Alternatives: Complete 2026 Guide',
+    title: 'Carfax and Free VIN Alternatives: Complete 2026 Guide',
     slug: 'carfax-vs-free-vin-alternatives',
     excerpt: 'Compare Carfax ($44.99) to free VIN check alternatives in 2026. Learn which vehicle history service is best for checking if a car is stolen.',
     category: 'Vehicle Safety',
     readTime: '10 min',
-    keywords: ['carfax alternative', 'free vin check 2026', 'carfax vs safeorstolen']
+    keywords: ['carfax alternative', 'free vin check 2026', 'carfax safeorstolen comparison']
   },
   {
     title: 'How to Check if a Phone is Stolen Before Buying in 2026',

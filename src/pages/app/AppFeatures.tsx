@@ -323,12 +323,12 @@ const AppFeatures = () => {
           </div>
         </section>
 
-        {/* App vs Competitors */}
+        {/* App and Competitors */}
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                SafeOrStolen App vs. Website-Only Competitors
+                SafeOrStolen App and Website-Only Competitors
               </h2>
               <p className="text-xl text-muted-foreground">
                 See why having a mobile app makes all the difference

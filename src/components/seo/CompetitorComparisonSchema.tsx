@@ -44,7 +44,7 @@ export const CompetitorComparisonSchema: React.FC<CompetitorComparisonSchemaProp
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": `SafeOrStolen vs ${data.name}: Service Comparison`,
+    "name": `SafeOrStolen and ${data.name}: Service Comparison`,
     "description": `Compare SafeOrStolen and ${data.name} stolen item verification services. See which platform offers better coverage, features, and value.`,
     "about": {
       "@type": "Service",

@@ -53,7 +53,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Is SafeOrStolen better than Carfax?",
-            answer: "SafeOrStolen offers broader coverage than Carfax. Carfax only checks vehicles. SafeOrStolen checks phones, vehicles, electronics, firearms, boats, appliances - everything. We also offer a mobile app with barcode scanning (Carfax doesn't), 3-second results (vs Carfax's slow reports), and 2 FREE checks."
+            answer: "SafeOrStolen offers broader coverage than Carfax. Carfax only checks vehicles. SafeOrStolen checks phones, vehicles, electronics, firearms, boats, appliances - everything. We also offer a mobile app with barcode scanning (Carfax doesn't), 3-second results (compared to Carfax's slow reports), and 2 FREE checks."
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",
@@ -141,7 +141,7 @@ const LikeCarfaxForPhones = () => {
               <strong>SafeOrStolen</strong> brings the Carfax model to everything beyond cars. We're "Carfax for Everything" - verifying phones, electronics, firearms, boats, and all secondhand items using their unique identifiers.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Carfax vs SafeOrStolen: Same Concept, Expanded Coverage</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6">Carfax and SafeOrStolen: Same Concept, Expanded Coverage</h2>
 
             <div className="grid md:grid-cols-2 gap-6 my-8">
               <Card className="p-6">
@@ -368,7 +368,7 @@ const LikeCarfaxForPhones = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Affordable pricing</strong> - 2 FREE checks, $4.99/month unlimited (vs Carfax $39.99+ per report)</span>
+                  <span><strong>Affordable pricing</strong> - 2 FREE checks, $4.99/month unlimited (compared to Carfax $39.99+ per report)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

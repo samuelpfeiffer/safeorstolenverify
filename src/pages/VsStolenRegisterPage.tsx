@@ -10,9 +10,9 @@ export default function VsStolenRegisterPage() {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs StolenRegister - Comparison 2026 | Which is Better?"
+        title="Best StolenRegister Alternative 2026 | SafeOrStolen"
         description="Compare SafeOrStolen and StolenRegister for stolen item verification. See features, pricing, database coverage, and why SafeOrStolen's mobile app makes the difference."
-        keywords="SafeOrStolen vs StolenRegister, stolen register alternative, compare stolen item checkers, best stolen property database"
+        keywords="StolenRegister alternative, stolen register alternative, compare stolen item checkers, best stolen property database"
         canonical="https://safeorstolen.com/vs-stolenregister"
       />
       
@@ -24,7 +24,7 @@ export default function VsStolenRegisterPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                SafeOrStolen vs StolenRegister
+                Best StolenRegister Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Looking for the best stolen item verification service? Here's how we compare.
@@ -167,7 +167,7 @@ export default function VsStolenRegisterPage() {
                     <Globe className="h-10 w-10 text-primary mb-4" />
                     <h3 className="text-xl font-bold mb-3">More Database Coverage</h3>
                     <p className="text-muted-foreground">
-                      We check 100+ databases vs StolenRegister's 50+, including more US law enforcement and carrier databases.
+                      We check 100+ databases compared to StolenRegister's 50+, including more US law enforcement and carrier databases.
                     </p>
                   </CardContent>
                 </Card>

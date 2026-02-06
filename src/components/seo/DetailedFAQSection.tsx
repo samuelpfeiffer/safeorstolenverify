@@ -82,7 +82,7 @@ export const DetailedFAQSection: React.FC = () => {
         {
           question: "What's the difference between blacklisted and stolen phones?",
           answer: "Blacklisted phones are blocked by carriers (often for non-payment), while stolen phones are taken illegally. Stolen phones may not always be blacklisted immediately. Our service checks both scenarios - carrier blacklists AND police stolen databases for complete protection.",
-          searches: ["blacklisted vs stolen phone", "carrier blacklist vs police database", "phone verification types"]
+          searches: ["blacklisted and stolen phone", "carrier blacklist and police database", "phone verification types"]
         },
         {
           question: "Can I check if AirPods or other small electronics are stolen?",

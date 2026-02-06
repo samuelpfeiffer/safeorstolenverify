@@ -36,8 +36,8 @@ const allRelatedPages: RelatedPage[] = [
   // Comparison pages
   { title: 'Best IMEI Checkers 2026', href: '/comparisons/best-free-imei-checkers-2025', category: 'comparison' },
   { title: 'Top VIN Check Services', href: '/comparisons/top-vin-check-services-2025', category: 'comparison' },
-  { title: 'SafeOrStolen vs IMEI.info', href: '/comparisons/safeorstolen-vs-imeiinfo', category: 'comparison' },
-  { title: 'SafeOrStolen vs Swappa', href: '/comparisons/safeorstolen-vs-swappa', category: 'comparison' },
+  { title: 'SafeOrStolen and IMEI.info Comparison', href: '/comparisons/safeorstolen-vs-imeiinfo', category: 'comparison' },
+  { title: 'SafeOrStolen and Swappa Comparison', href: '/comparisons/safeorstolen-vs-swappa', category: 'comparison' },
   { title: 'NICB VINCheck Alternative', href: '/comparisons/nicb-vincheck-alternative', category: 'comparison' },
   { title: 'Compare All Checkers', href: '/compare', category: 'comparison' },
   

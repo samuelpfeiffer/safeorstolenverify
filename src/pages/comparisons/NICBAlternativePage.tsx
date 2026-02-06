@@ -104,7 +104,7 @@ const NICBAlternativePage = () => {
         {/* Comparison Table */}
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">NICB vs SafeOrStolen</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">NICB and SafeOrStolen Comparison</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-card rounded-lg overflow-hidden">
                 <thead>

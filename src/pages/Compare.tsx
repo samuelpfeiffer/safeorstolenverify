@@ -134,14 +134,14 @@ const Compare = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs CheckMEND vs IMEI.info vs Carfax"
+        title="Compare Stolen Item Checkers 2026 | SafeOrStolen"
         description="Compare SafeOrStolen with CheckMEND, IMEI.info, Swappa, Carfax. The only stolen item checker with a mobile app. Free checks for phones, cars, more."
         keywords="CheckMEND alternative, better than IMEI.info, Swappa alternative, Carfax alternative, best stolen item checker, IMEI checker comparison, VIN lookup comparison, stolen verification app"
         canonical="/compare"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "name": "Stolen Item Checker Comparison - SafeOrStolen vs Competitors",
+          "name": "Stolen Item Checker Comparison - SafeOrStolen and Competitors",
           "description": "Compare SafeOrStolen with CheckMEND, IMEI.info, Swappa, and Carfax",
           "specialty": "comparison"
         }}
@@ -150,7 +150,7 @@ const Compare = () => {
       {/* Minimal noscript fallback */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <p><strong>SafeOrStolen vs CheckMEND vs IMEI.info vs Carfax</strong></p>
+          <p><strong>SafeOrStolen, CheckMEND, IMEI.info, and Carfax Comparison</strong></p>
           <p>Compare stolen item verification services. SafeOrStolen offers the only mobile app with barcode scanning.</p>
         </div>
       </noscript>
@@ -161,7 +161,7 @@ const Compare = () => {
           <div className="container mx-auto px-4 text-center">
             <Badge variant="secondary" className="mb-4">Comparison</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              SafeOrStolen vs The Competition
+              SafeOrStolen and The Competition
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               See why SafeOrStolen is the #1 stolen item checker for buyers, sellers, and businesses

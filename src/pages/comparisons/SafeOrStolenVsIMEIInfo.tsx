@@ -13,7 +13,7 @@ const SafeOrStolenVsIMEIInfo = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen vs IMEI.info Comparison",
+    "name": "SafeOrStolen and IMEI.info Comparison",
     "description": "Detailed comparison between SafeOrStolen and IMEI.info stolen phone checker services",
     "mainEntity": {
       "@type": "ItemList",
@@ -60,9 +60,9 @@ const SafeOrStolenVsIMEIInfo = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs IMEI.info - IMEI Checker Comparison"
+        title="Best IMEI.info Alternative - IMEI Checker Comparison"
         description="Compare SafeOrStolen and IMEI.info for stolen phone verification. See features, pricing, and database differences."
-        keywords="safeorstolen vs imei.info, imei.info alternative, free imei checker, stolen phone checker comparison, best imei lookup"
+        keywords="imei.info alternative, best imei.info alternative, free imei checker, stolen phone checker comparison, best imei lookup"
         canonical="/comparisons/safeorstolen-vs-imei-info"
         structuredData={comparisonSchema}
       />
@@ -74,10 +74,10 @@ const SafeOrStolenVsIMEIInfo = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                2025 Comparison
+                2026 Comparison
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                SafeOrStolen vs IMEI.info
+                Best IMEI.info Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Which stolen phone checker should you use? We compare features, pricing, and reliability 

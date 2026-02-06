@@ -147,7 +147,7 @@ const StolenVerificationAppGuide = () => {
                     <li><strong>Full iOS and Android app</strong></li>
                     <li><strong>Instant barcode scanning</strong> - no typing required</li>
                     <li><strong>3-second verification</strong> - 10x faster than competitors</li>
-                    <li><strong>2 FREE checks</strong> vs CheckMEND's $3.99</li>
+                    <li><strong>2 FREE checks</strong> compared to CheckMEND's $3.99</li>
                     <li><strong>Offline mode</strong> - works without internet</li>
                     <li><strong>All item types</strong> - phones, vehicles, electronics, firearms, boats</li>
                   </ul>
@@ -336,7 +336,7 @@ const StolenVerificationAppGuide = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>2 FREE checks</strong> vs CheckMEND's $3.99 per check</span>
+                  <span><strong>2 FREE checks</strong> compared to CheckMEND's $3.99 per check</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

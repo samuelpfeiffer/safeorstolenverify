@@ -24,8 +24,8 @@ const VsBikeIndex = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen vs Bike Index - Bicycle Theft Verification Comparison",
-    "description": "Compare SafeOrStolen and Bike Index for stolen bicycle verification. See why SafeOrStolen's all-in-one mobile app and multi-item coverage is the better choice for secondhand buyers.",
+    "name": "SafeOrStolen: Best Bike Index Alternative - Bicycle Theft Verification",
+    "description": "Compare SafeOrStolen and Bike Index for stolen bicycle verification. SafeOrStolen's all-in-one mobile app and multi-item coverage is the better choice for secondhand buyers.",
     "url": "https://safeorstolen.com/vs-bikeindex"
   };
 
@@ -71,9 +71,9 @@ const VsBikeIndex = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs Bike Index - Bicycle Theft Verification Comparison 2026"
-        description="Compare SafeOrStolen and Bike Index for stolen bicycle verification. SafeOrStolen offers multi-item checking (bikes, phones, cars) with a mobile app. See the full comparison."
-        keywords="SafeOrStolen vs Bike Index, bicycle theft verification, stolen bike checker, bike serial number lookup, Bike Index alternative, bicycle registry comparison"
+        title="Best Bike Index Alternative 2026 | SafeOrStolen"
+        description="Compare SafeOrStolen and Bike Index for stolen bicycle verification. Multi-item checking with a mobile app. See the full comparison."
+        keywords="Bike Index alternative, bicycle theft verification, stolen bike checker, bike serial number lookup, best Bike Index alternative, bicycle registry comparison"
         canonical="/vs-bikeindex"
         structuredData={[structuredData, faqSchema]}
       />
@@ -89,7 +89,7 @@ const VsBikeIndex = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold">
-                SafeOrStolen vs Bike Index
+                Best Bike Index Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Both platforms help verify stolen bicycles - but SafeOrStolen does much more. 

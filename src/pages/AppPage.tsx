@@ -268,7 +268,7 @@ const AppPage = () => {
     - Secondhand store operators checking incoming items
     - Individual buyers protecting themselves from stolen goods
 
-    Why SafeOrStolen vs CheckMEND, IMEI.info, Swappa:
+    Why SafeOrStolen Over CheckMEND, IMEI.info, Swappa:
     - SafeOrStolen: Mobile app with barcode scanning, offline mode, 3-second results
     - CheckMEND: NO app, web only, 30+ seconds per check, $5-10 per verification
     - IMEI.info: NO app, phones only, no VIN or serial number checking
