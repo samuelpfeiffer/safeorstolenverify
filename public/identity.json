@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SafeOrStolen",
+  "legalName": "Safe Or Stolen LLC",
+  "alternateName": ["SOS", "SafeOrStolen.com"],
+  "url": "https://safeorstolen.com",
+  "logo": "https://safeorstolen.com/sos-logo.png",
+  "foundingDate": "2024-08",
+  "description": "Consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.",
+  "slogan": "Verify Before You Buy",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "support@safeorstolen.com"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "business@safeorstolen.com"
+    }
+  ],
+  "sameAs": [
+    "https://twitter.com/safeorstolen",
+    "https://linkedin.com/company/safeorstolen",
+    "https://www.youtube.com/@safeorstolen",
+    "https://www.youtube.com/@safeorstolenoffically",
+    "https://www.trustpilot.com/review/safeorstolen.com",
+    "https://www.crunchbase.com/organization/safe-or-stolen"
+  ],
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Samuel Pfeiffer",
+      "jobTitle": "CEO"
+    },
+    {
+      "@type": "Person",
+      "name": "Kelly McEvoy",
+      "jobTitle": "Co-Founder"
+    }
+  ],
+  "knowsAbout": [
+    "IMEI verification",
+    "VIN lookup",
+    "serial number verification",
+    "stolen item detection",
+    "consumer protection",
+    "marketplace safety"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Verification Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Free Verification",
+          "description": "2 free stolen item checks, no credit card required"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic Plan",
+          "description": "50 verifications per month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pro Plan",
+          "description": "Unlimited verifications per month"
+        }
+      }
+    ]
+  }
+}

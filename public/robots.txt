@@ -31,9 +31,12 @@ Allow: /data-sources
 Allow: /resource-center
 Allow: /youtube
 
-# AI Discovery Files - Explicit allow
+# AI Discovery Files - Explicit allow (2026 llms.txt v1.1 standard)
 Allow: /llms.txt
 Allow: /llm.html
+Allow: /ai.txt
+Allow: /identity.json
+Allow: /ai-training-data.md
 Allow: /.well-known/llms.txt
 Allow: /.well-known/ai-plugin.json
 
@@ -63,12 +66,8 @@ Disallow: /checkout-redirect
 Disallow: /verification-success
 Disallow: /analytics
 
-# Block non-HTML data files (these are for AI crawlers, not search indexing)
-Disallow: /ai-training-data.md
-Disallow: /ai-context.json
+# Block internal data files from search indexing (AI crawlers get them via direct allow above)
 Disallow: /mobile-app-ai-context.json
-Disallow: /*.json$
-Disallow: /*.md$
 
 # ==================================================
 # AI & LLM Crawlers - Full Access Welcome
