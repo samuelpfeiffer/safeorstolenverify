@@ -69,8 +69,8 @@ const FacebookMarketplaceSafetyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
       <PageSEO
-        title="Facebook Marketplace Safety Tips - Avoid Scams in 2026 | SafeOrStolen"
-        description="Protect yourself from Facebook Marketplace scams. Learn to spot stolen items, verify phones with IMEI checks, and avoid common fraud tactics. Free verification tool included."
+        title="Facebook Marketplace Safety - Avoid Scams | SafeOrStolen"
+        description="Protect yourself from Facebook Marketplace scams. Learn to spot stolen items, verify phones with IMEI checks, and avoid fraud."
         keywords="Facebook Marketplace scams, is Facebook Marketplace safe, Facebook Marketplace safety tips, avoid scams Facebook Marketplace, verify Facebook Marketplace items"
         canonical="/facebook-marketplace-safety"
         structuredData={faqSchema}

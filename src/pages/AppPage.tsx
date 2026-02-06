@@ -555,8 +555,8 @@ const AppPage = () => {
   return (
     <>
       <PageSEO
-        title="Download Mobile App - iOS and Android Verification"
-        description="Download the SafeOrStolen mobile app for iOS and Android. Verify IMEI, VIN, serial numbers on-the-go. The only stolen item checker with a mobile app."
+        title="Stolen Item Checker App - Free Download | SafeOrStolen"
+        description="Download the only stolen item verification app. Check IMEI, VIN, serial numbers with barcode scanning. Free for iOS and Android."
         keywords="SafeOrStolen app, mobile verification app, stolen item checker app"
         canonical="/app"
         structuredData={appSchema}

@@ -4,7 +4,7 @@ const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Electronics Are Stolen - Free Serial Number Verification"
-      metaDescription="Check if cameras, tablets, game consoles, or appliances are stolen. Free serial number verification for electronics from law enforcement and manufacturer databases."
+      metaDescription="Check if cameras, tablets, game consoles are stolen. Free serial number verification for electronics from law enforcement databases."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[
