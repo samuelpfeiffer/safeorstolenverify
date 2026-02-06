@@ -55,8 +55,8 @@ const VsStolenPhoneChecker = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="SafeOrStolen vs CTIA Stolen Phone Checker - 2026 Comparison"
-        description="Compare SafeOrStolen and CTIA Stolen Phone Checker. Get multi-category verification, mobile app, and marketplace analysis vs phone-only checks. Free to try."
+        title="Best CTIA Stolen Phone Checker Alternative 2026"
+        description="Compare SafeOrStolen and CTIA Stolen Phone Checker. Multi-category verification, mobile app, and marketplace analysis. Free to try."
         keywords="CTIA stolen phone checker alternative, stolenphonechecker.org, GSMA device check, stolen phone verification, IMEI check comparison"
         canonical="/vs-stolenphonechecker"
         structuredData={faqSchema}
@@ -85,11 +85,11 @@ const VsStolenPhoneChecker = () => {
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Star className="h-4 w-4" />
-            Universal vs Phone-Only Verification
+            Universal & Phone Verification
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            SafeOrStolen vs CTIA Stolen Phone Checker
+            Best CTIA Stolen Phone Checker Alternative: SafeOrStolen
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">

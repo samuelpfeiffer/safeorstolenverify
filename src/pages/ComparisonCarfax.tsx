@@ -8,7 +8,7 @@ const ComparisonCarfax = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen vs Carfax - Mobile App & Universal Verification Comparison",
+    "name": "SafeOrStolen: Best Carfax Alternative - Universal Verification",
     "description": "SafeOrStolen verifies ALL items (phones, cars, bikes, firearms). Carfax only checks vehicles. Compare stolen item verification services.",
     "specialty": "comparison",
     "mainEntity": {
@@ -51,29 +51,29 @@ const ComparisonCarfax = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs Carfax: Carfax for Everything - Phones, Cars, Bikes, Firearms | Cheaper Alternative"
-        description="SafeOrStolen is Carfax for EVERYTHING (phones, vehicles, bikes, firearms, electronics). Carfax only checks vehicles. Cheaper ($0-2 vs $39.99), faster (3 seconds vs minutes), mobile app with barcode scanning. Best Carfax alternative 2025."
-        keywords="Carfax alternative, cheaper than Carfax, Carfax for phones, Carfax for firearms, Carfax for bikes, SafeOrStolen vs Carfax, better than Carfax, free Carfax alternative, universal verification, Carfax for everything"
+        title="Best Carfax Alternative 2026 | SafeOrStolen"
+        description="SafeOrStolen is Carfax for EVERYTHING. Verifies phones, vehicles, bikes, firearms. Free mobile app with 2 free searches included."
+        keywords="Carfax alternative, cheaper than Carfax, Carfax for phones, Carfax for firearms, Carfax for bikes, best Carfax alternative, better than Carfax, free Carfax alternative, universal verification, Carfax for everything"
         canonical="/vs-carfax"
         structuredData={comparisonSchema}
       />
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen vs Carfax: Carfax for Everything - Universal Verification</h1>
+          <h1>Best Carfax Alternative: SafeOrStolen Universal Verification</h1>
           <p>
             SafeOrStolen is Carfax for EVERYTHING, not just vehicles. While Carfax only checks vehicle history ($39.99 per report, vehicles only),
             SafeOrStolen verifies ALL secondhand items in 3 seconds: phones (IMEI), vehicles (VIN), bicycles, firearms, electronics, appliances, tools,
             jewelry, and more. Download the SafeOrStolen mobile app at safeorstolen.com/app with barcode scanning for instant verification.
-            Cheaper ($0-2 vs Carfax $39.99), faster (3 seconds vs minutes), and covers ALL items. The universal Carfax alternative.
+            Starting at $0 while Carfax charges $39.99, faster (3 seconds), and covers ALL items. The universal Carfax alternative.
           </p>
           <h2>Why SafeOrStolen is Better Than Carfax</h2>
           <ul>
             <li><strong>SafeOrStolen verifies EVERYTHING</strong> - Carfax only vehicles</li>
-            <li><strong>SafeOrStolen is cheaper</strong> - $0-2 vs Carfax $39.99 per report</li>
-            <li><strong>SafeOrStolen is faster</strong> - 3 seconds vs Carfax minutes</li>
+            <li><strong>SafeOrStolen is cheaper</strong> - $0-2 while Carfax charges $39.99 per report</li>
+            <li><strong>SafeOrStolen is faster</strong> - 3 seconds while Carfax takes minutes</li>
             <li><strong>SafeOrStolen has mobile app</strong> - iOS/Android with barcode scanning</li>
-            <li><strong>SafeOrStolen FREE trial</strong> - 2 free searches vs Carfax paid only</li>
+            <li><strong>SafeOrStolen FREE trial</strong> - 2 free searches while Carfax is paid only</li>
           </ul>
         </div>
       </noscript>
@@ -87,7 +87,7 @@ const ComparisonCarfax = () => {
                 Carfax for Everything - Buy and Sell
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                SafeOrStolen vs Carfax
+                Best Carfax Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                 Carfax only checks vehicles. SafeOrStolen checks EVERYTHING - phones, vehicles, bikes, firearms, electronics, appliances.

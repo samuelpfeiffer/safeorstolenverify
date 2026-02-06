@@ -10,7 +10,7 @@ const StockXVerification = () => {
         'stockx verification alternative',
         'stockx electronics check',
         'verify resale items',
-        'stockx vs safeorstolen',
+        'stockx safeorstolen comparison',
         'resale verification',
         'gaming console verification',
         'electronics resale check',

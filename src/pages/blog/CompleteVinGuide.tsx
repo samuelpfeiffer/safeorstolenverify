@@ -118,7 +118,7 @@ export default function CompleteVinGuide() {
           </ul>
           <p><strong>Limitation:</strong> Only shows history within that state. A car titled in California may have prior issues from another state.</p>
 
-          <h3>Method 4: Carfax ($39.99) vs AutoCheck ($24.99)</h3>
+          <h3>Method 4: Carfax ($39.99) and AutoCheck ($24.99)</h3>
           <p>Paid commercial services provide detailed reports but have drawbacks:</p>
           <ul>
             <li>✅ Show accident history from insurance claims</li>
@@ -210,7 +210,7 @@ export default function CompleteVinGuide() {
           <p><strong>How to detect:</strong> VIN checks show odometer readings from inspections, registrations, and service records. Look for:
             <ul>
               <li>Inconsistent mileage progression (145k miles in 2023, 87k miles in 2026)</li>
-              <li>Excessive wear on pedals, seats, steering wheel vs. claimed mileage</li>
+              <li>Excessive wear on pedals, seats, steering wheel compared to claimed mileage</li>
               <li>Service stickers showing higher mileage than odometer</li>
             </ul>
           </p>

@@ -366,7 +366,7 @@ const DownloadApp = () => {
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Why SafeOrStolen vs. Competitors?
+                Why Choose SafeOrStolen Over Competitors?
               </h2>
               <p className="text-xl text-muted-foreground">
                 We're the ONLY stolen item checker with a downloadable mobile app

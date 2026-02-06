@@ -14,7 +14,7 @@ export const createComparisonPageSchema = (
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": `${ourService} vs ${competitorService} Comparison`,
+    "name": `${ourService} and ${competitorService} Comparison`,
     "description": `Detailed comparison between ${ourService} and ${competitorService} stolen item verification services`,
     "mainEntity": {
       "@type": "ItemList",

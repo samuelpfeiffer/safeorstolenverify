@@ -292,10 +292,10 @@ const FreeStolenVehicleCheckPage = () => {
           </div>
         </section>
 
-        {/* Free vs Paid */}
+        {/* Free and Paid */}
         <section className="py-16 px-4 bg-card/50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Free Options vs Paid Vehicle History Reports</h2>
+            <h2 className="text-3xl font-bold mb-8">Free Options and Paid Vehicle History Reports</h2>
             
             <div className="space-y-6">
               <div className="p-6 bg-background rounded-lg">

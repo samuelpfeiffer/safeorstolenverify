@@ -55,9 +55,9 @@ const VsDeviceCheckCA = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="SafeOrStolen vs DeviceCheck.ca - Compare IMEI Checkers 2026"
-        description="Compare SafeOrStolen and DeviceCheck Canada. Get global coverage, multi-category verification, and a mobile app vs Canada-only phone checks. Free alternative."
-        keywords="DeviceCheck.ca alternative, Canadian IMEI check, stolen phone check Canada, SafeOrStolen vs DeviceCheck, IMEI checker comparison"
+        title="Best DeviceCheck.ca Alternative 2026 | SafeOrStolen"
+        description="Compare SafeOrStolen and DeviceCheck Canada. Global coverage and multi-category verification with a mobile app. Free alternative."
+        keywords="DeviceCheck.ca alternative, Canadian IMEI check, stolen phone check Canada, best DeviceCheck alternative, IMEI checker comparison"
         canonical="/vs-devicecheck-ca"
         structuredData={faqSchema}
       />
@@ -85,11 +85,11 @@ const VsDeviceCheckCA = () => {
         <section className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Star className="h-4 w-4" />
-            Global Verification vs Canada-Only
+            Global Verification & Canada Coverage
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            SafeOrStolen vs DeviceCheck.ca
+            Best DeviceCheck.ca Alternative: SafeOrStolen
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">

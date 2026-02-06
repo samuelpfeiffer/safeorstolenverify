@@ -281,10 +281,10 @@ const HowItWorksPage = () => {
           </div>
         </section>
 
-        {/* Free vs Premium */}
+        {/* Free and Premium */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Free vs Premium</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Free and Premium Plans</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <Card className="border-2 border-border">
                 <CardHeader className="bg-muted/30">
@@ -547,10 +547,10 @@ const HowItWorksPage = () => {
           </div>
         </section>
 
-        {/* Free vs Premium */}
+        {/* Free and Premium */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Free vs Premium</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Free and Premium Plans</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <Card className="border-2 border-border">
                 <CardHeader className="bg-muted/30">

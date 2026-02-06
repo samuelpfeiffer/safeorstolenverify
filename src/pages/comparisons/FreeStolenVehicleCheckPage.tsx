@@ -24,7 +24,7 @@ const FreeStolenVehicleCheckPage = () => {
         whyCheck: "Buying a stolen vehicle can result in losing both the vehicle AND your money when it's recovered by police. You could also face legal trouble for possession of stolen property. Every year, hundreds of thousands of vehicles are stolen in the US, and many end up for sale on Facebook Marketplace, Craigslist, and OfferUp. A 3-second check before you meet with a seller can save you thousands of dollars and significant legal headaches.",
         benefits: [
           "No daily search limits (NICB limits you to 5 per day)",
-          "100+ databases vs. NICB's single database",
+          "100+ databases compared to NICB's single database",
           "Mobile app for checking vehicles at meetups",
           "Works for cars, trucks, motorcycles, RVs, boats, ATVs",
           "Instant results in 3 seconds",

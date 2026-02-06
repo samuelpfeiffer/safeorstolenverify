@@ -226,7 +226,7 @@ const NICBVINCheckAlternative = () => {
                       <ul className="space-y-2">
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />
-                          <span>50M+ items vs NICB's insurance-only data</span>
+                          <span>50M+ items compared to NICB's insurance-only data</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-green-500 mt-0.5" />

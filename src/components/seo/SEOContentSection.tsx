@@ -24,15 +24,15 @@ export const SEOContentSection = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs CheckMend:</strong> Get 2 free searches vs their paid-only service PLUS mobile app with firearms checking (they have neither!)</span>
+                   <span><strong>Better than CheckMend:</strong> Get 2 free searches compared to their paid-only service PLUS mobile app with firearms checking (they have neither!)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs IMEIinfo:</strong> Beyond just IMEI - verify ALL device types including firearms with our exclusive iOS & Android app</span>
+                   <span><strong>Better than IMEIinfo:</strong> Beyond just IMEI - verify ALL device types including firearms with our exclusive iOS & Android app</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>vs Stolen Register:</strong> Real-time mobile verification for phones, cars, electronics & firearms - they're stuck with desktop-only access</span>
+                   <span><strong>Better than Stolen Register:</strong> Real-time mobile verification for phones, cars, electronics & firearms - they're stuck with desktop-only access</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />

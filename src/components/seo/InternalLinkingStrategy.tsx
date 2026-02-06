@@ -23,7 +23,7 @@ export const InternalLinkingStrategy: React.FC = () => {
       { title: 'How It Works', path: '/how-it-works', keywords: 'safe buying tips' }
     ],
     comparisons: [
-      { title: 'SafeOrStolen vs CheckMend', path: '/vs-checkmend', keywords: 'better than CheckMend + mobile app' },
+      { title: 'Best CheckMend Alternative', path: '/vs-checkmend', keywords: 'better than CheckMend + mobile app' },
       { title: 'Free Alternative to IMEIinfo', path: '/vs-imeiinfo', keywords: 'IMEIinfo alternative with app' },
       { title: 'Compare All Services', path: '/compare', keywords: 'vs competitors + firearms' }
     ]

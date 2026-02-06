@@ -145,7 +145,7 @@ const IMEICheckerAppDownload = () => {
           {/* Competitor Comparison */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold text-center mb-8">
-              SafeOrStolen vs Other IMEI Checkers
+              SafeOrStolen and Other IMEI Checkers
             </h2>
 
             <Card>

@@ -45,7 +45,7 @@ const HotGunzAlternativePage = () => {
       <PageSEO
         title="HotGunz Alternative - More Gun Databases | SafeOrStolen"
         description="Better than HotGunz? SafeOrStolen searches HotGunz PLUS 100 additional databases for stolen firearms. Free mobile app included."
-        keywords="hotgunz alternative, hotgunz vs safeorstolen, stolen gun database, gun serial lookup, firearm verification"
+        keywords="hotgunz alternative, hotgunz safeorstolen comparison, stolen gun database, gun serial lookup, firearm verification"
         canonical={location.pathname}
         structuredData={structuredData}
       />
@@ -92,7 +92,7 @@ const HotGunzAlternativePage = () => {
         {/* Comparison */}
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">HotGunz vs SafeOrStolen</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">HotGunz and SafeOrStolen Comparison</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse bg-card rounded-lg overflow-hidden">
                 <thead>

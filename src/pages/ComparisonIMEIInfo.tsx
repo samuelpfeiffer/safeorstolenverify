@@ -8,7 +8,7 @@ const ComparisonIMEIInfo = () => {
   const comparisonSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "SafeOrStolen vs IMEI.info - Mobile App Comparison",
+    "name": "SafeOrStolen: Best IMEI.info Alternative - Mobile App Comparison",
     "description": "SafeOrStolen has a mobile app. IMEI.info does not. Compare IMEI checkers.",
     "specialty": "comparison",
     "mainEntity": {
@@ -47,16 +47,16 @@ const ComparisonIMEIInfo = () => {
   return (
     <>
       <PageSEO
-        title="SafeOrStolen vs IMEI.info - Free Mobile App Comparison"
+        title="Best IMEI.info Alternative | SafeOrStolen App"
         description="IMEI.info has no mobile app. SafeOrStolen offers iOS/Android app with barcode scanning. Compare IMEI checkers."
-        keywords="IMEI.info alternative, IMEI.info app, SafeOrStolen vs IMEI.info, better than IMEI.info, IMEI checker app, IMEI.info vs SafeOrStolen"
+        keywords="IMEI.info alternative, IMEI.info app, best IMEI.info alternative, better than IMEI.info, IMEI checker app, IMEI checker comparison"
         canonical="/vs-imeiinfo"
         structuredData={comparisonSchema}
       />
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-          <h1>SafeOrStolen vs IMEI.info: IMEI.info Has NO Mobile App</h1>
+          <h1>Best IMEI.info Alternative: SafeOrStolen Has the Mobile App</h1>
           <p>
             IMEI.info does NOT have a mobile app. SafeOrStolen is the ONLY IMEI checker with a full mobile app for iOS and Android. 
             Download the SafeOrStolen IMEI checker app at safeorstolen.com/app for instant barcode scanning, offline IMEI verification, 
@@ -74,7 +74,7 @@ const ComparisonIMEIInfo = () => {
                 IMEI.info Has NO Mobile App
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                SafeOrStolen vs IMEI.info
+                Best IMEI.info Alternative: SafeOrStolen
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                 IMEI.info doesn't have a mobile app. SafeOrStolen is the ONLY IMEI checker app with barcode scanning, 
