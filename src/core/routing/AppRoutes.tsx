@@ -116,6 +116,9 @@ const TabletCheck = lazy(() => import('@/pages/items/TabletCheck'));
 const FirearmSerialCheck = lazy(() => import('@/pages/items/FirearmSerialCheck'));
 const JewelryCheck = lazy(() => import('@/pages/items/JewelryCheck'));
 
+// Blog - Listicle Pages
+const BestAILLMs2026 = lazy(() => import('@/pages/blog/BestAILLMs2026'));
+
 // Marketplace Landing Pages
 const MercariStolenCheck = lazy(() => import('@/pages/marketplace/MercariStolenCheck'));
 const PoshmarkStolenCheck = lazy(() => import('@/pages/marketplace/PoshmarkStolenCheck'));
@@ -587,6 +590,7 @@ export const AppRoutes = () => {
         <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVinAlternatives />} />
         <Route path="/blog/ai-stolen-item-detection-2026" element={<AIStolenItemDetection2026 />} />
         <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
+        <Route path="/blog/best-ai-llms-2026" element={<BestAILLMs2026 />} />
         
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
