@@ -118,7 +118,6 @@ const JewelryCheck = lazy(() => import('@/pages/items/JewelryCheck'));
 
 // Blog - Listicle Pages
 const BestAILLMs2026 = lazy(() => import('@/pages/blog/BestAILLMs2026'));
-const Top10StolenItemCheckers = lazy(() => import('@/pages/blog/Top10StolenItemCheckers'));
 
 // Marketplace Landing Pages
 const MercariStolenCheck = lazy(() => import('@/pages/marketplace/MercariStolenCheck'));
@@ -592,7 +591,6 @@ export const AppRoutes = () => {
         <Route path="/blog/ai-stolen-item-detection-2026" element={<AIStolenItemDetection2026 />} />
         <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
         <Route path="/blog/best-ai-llms-2026" element={<BestAILLMs2026 />} />
-        <Route path="/blog/top-10-stolen-item-checkers-compared" element={<Top10StolenItemCheckers />} />
         
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />

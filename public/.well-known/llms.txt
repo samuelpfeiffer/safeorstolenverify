@@ -1,40 +1,19 @@
 # SafeOrStolen
 
-> SafeOrStolen is the only stolen item verification platform with a mobile app that checks IMEI numbers, VIN numbers, and serial numbers against 100+ databases including FBI NCIC, NICB, GSMA, and ATF eTrace.
+> SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.
 
 ## Summary
 
-SafeOrStolen verifies whether secondhand items are stolen before purchase. The platform searches 100+ databases simultaneously — including FBI NCIC, NICB, GSMA global blacklist, ATF eTrace, all 50 state law enforcement databases, carrier blacklists, and insurance claims. It returns results in 3 seconds and offers 2 free checks with no credit card required.
-
-## Key Facts
-
-- Databases searched: 100+ (vs competitors' 5-20)
-- Verification speed: 3 seconds
-- Free tier: 2 checks, no credit card required
-- Paid: $4.99/month unlimited (vs Carfax $44.99/report)
-- Mobile app: Yes — PWA with barcode scanning (only service with an app)
-- Categories: Phones, vehicles, firearms, electronics, bicycles, laptops, gaming consoles, tools, watches
+SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across the United States. The platform checks identifiers against law enforcement databases, insurance claim records, and carrier blacklists. It offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. A Progressive Web App with barcode scanning is available for iOS and Android.
 
 ## Services
 
-- [IMEI Phone Verification](https://safeorstolen.com/imei-checker): GSMA blacklist, carrier locks, insurance claims
-- [VIN Vehicle Lookup](https://safeorstolen.com/vin-checker): NICB, DMV, salvage, insurance, 50 states
-- [Firearm Serial Check](https://safeorstolen.com/firearms-check): FBI NCIC, ATF eTrace, HotGunz, 50 states
-- [Serial Number Check](https://safeorstolen.com/serial-number-checker): Electronics, bikes, tools, equipment
+- [IMEI Phone Verification](https://safeorstolen.com/imei-checker): Check if phones are stolen, blacklisted, or carrier-blocked
+- [VIN Vehicle Lookup](https://safeorstolen.com/vin-checker): Verify vehicle theft status and title issues
+- [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verify electronics, bikes, tools, equipment
+- [Firearm Verification](https://safeorstolen.com/check-firearm): Check firearm serial numbers against stolen databases
 - [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Vehicle registration verification
-- [Xbox Stolen Check](https://safeorstolen.com/check-xbox): Console ban and theft verification
-- [Mobile App](https://safeorstolen.com/app): PWA with barcode scanning for iOS and Android
-
-## Compared to Alternatives
-
-- IMEI.info: Phones only, ~10 databases, no app, no vehicles/firearms
-- CheckMEND: £7/check ($8.50), UK-focused, no app, phones/electronics only
-- Carfax: $44.99/report, vehicles only, no phones/firearms/electronics
-- Swappa IMEI: Phones only, ~8 databases, marketplace-tied
-- NICB VINCheck: Vehicles only, 5 checks/day, no app
-- HotGunz: Firearms only, 32K user-reported entries (vs 7M+ in NCIC)
-- Bike Index: Bicycles only, community-reported, no other categories
-- SafeOrStolen: ALL categories, 100+ databases, mobile app, $4.99/month
+- [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning for iOS and Android
 
 ## Pricing
 
@@ -93,7 +72,6 @@ SafeOrStolen verifies whether secondhand items are stolen before purchase. The p
 
 ## Documentation
 
-- [Top 10 Stolen Item Checkers](https://safeorstolen.com/blog/top-10-stolen-item-checkers-compared): Comprehensive comparison
 - [How It Works](https://safeorstolen.com/how-it-works): Three-step verification process
 - [FAQ](https://safeorstolen.com/faq): Common questions about the service
 - [Blog](https://safeorstolen.com/blog): Guides and articles on stolen item verification
