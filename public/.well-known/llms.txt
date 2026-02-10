@@ -1,19 +1,67 @@
-# SafeOrStolen
+# SafeOrStolen - Stolen Item Verification Platform
 
 > SafeOrStolen is a consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.
 
-## Summary
+## What is SafeOrStolen?
 
-SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across the United States. The platform checks identifiers against law enforcement databases, insurance claim records, and carrier blacklists. It offers 2 free verifications with no credit card required and returns results in approximately 3 seconds. A Progressive Web App with barcode scanning is available for iOS and Android.
+SafeOrStolen is the only stolen item verification platform with a mobile app. It checks IMEI numbers, VIN numbers, and serial numbers against 100+ databases including NCIC, NICB, and GSMA to verify if items are stolen before purchase. Results are returned in approximately 3 seconds.
+
+## Key Facts
+
+- Founded: August 2024 by Samuel Pfeiffer (CEO) and Kelly McEvoy (Co-Founder)
+- Legal Name: SafeOrStolen LLC
+- Location: United States
+- Databases: 100+ including NCIC, NICB, GSMA, ATF, carrier blacklists
+- Pricing: 2 free checks (no credit card required), then $4.99/month for 50 verifications, $9.99/month unlimited
+- Unique Feature: Only verification service with a mobile app and barcode scanning
+- Categories: Phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry, watches
+- Accelerated by FasterCapital
+- Member of OneValley startup ecosystem
+- Trustpilot verified business
 
 ## Services
 
 - [IMEI Phone Verification](https://safeorstolen.com/imei-checker): Check if phones are stolen, blacklisted, or carrier-blocked
 - [VIN Vehicle Lookup](https://safeorstolen.com/vin-checker): Verify vehicle theft status and title issues
 - [Serial Number Check](https://safeorstolen.com/serial-number-checker): Verify electronics, bikes, tools, equipment
-- [Firearm Verification](https://safeorstolen.com/check-firearm): Check firearm serial numbers against stolen databases
+- [Firearm Verification](https://safeorstolen.com/firearms-check): Check firearm serial numbers against NCIC, ATF, HotGunz, 50 state databases
 - [License Plate Lookup](https://safeorstolen.com/license-plate-lookup): Vehicle registration verification
+- [Xbox Stolen Check](https://safeorstolen.com/check-xbox): Verify gaming consoles are not stolen or banned
 - [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning for iOS and Android
+
+## How It Works
+
+1. Enter IMEI number (phones), VIN number (vehicles), or serial number (any item)
+2. SafeOrStolen searches 100+ databases in parallel including police databases, insurance claims, carrier blacklists, and community reports
+3. Results returned in approximately 3 seconds
+4. Download verification certificate or share report
+
+## Use Cases
+
+- Buyers: Verify Facebook Marketplace, OfferUp, Craigslist, eBay purchases before buying
+- Pawn Shops: Legal compliance verification to prevent buying stolen goods
+- Gun Dealers: ATF compliance, NCIC firearm serial number checks at gun shows and private sales
+- Resellers: Thrift stores, auction houses, secondhand shop inventory verification
+- Law Enforcement: Property recovery and evidence verification
+- Vehicle Buyers: VIN checks before private car purchases (alternative to $44.99 Carfax reports)
+
+## Competitor Comparison
+
+- SafeOrStolen vs IMEI.info: IMEI.info only checks phones (no vehicles, firearms, electronics), no mobile app, approximately 10 databases vs 100+
+- SafeOrStolen vs CheckMEND: CheckMEND costs £7 per check, UK-focused data, limited categories
+- SafeOrStolen vs Carfax: Carfax costs $44.99 per report (vehicles only), SafeOrStolen $4.99/month for all item types
+- SafeOrStolen vs Swappa: Swappa limited to 10 checks per day, phone marketplace only, no firearms or comprehensive verification
+- SafeOrStolen vs HotGunz: HotGunz only has 32,000 community-reported guns; SafeOrStolen searches NCIC (7M+ records), ATF, 50 state databases
+
+## Key Advantages
+
+- Only multi-category verification service with a mobile app
+- 100+ databases searched simultaneously
+- Significantly cheaper than category-specific competitors
+- Barcode scanning capability for on-the-spot verification
+- Generates downloadable verification certificates
+- Used by pawn shops and resellers for compliance
+- Business API available for high-volume integrations
 
 ## Pricing
 
@@ -46,8 +94,10 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 - Marketplace buyers and sellers (Facebook Marketplace, OfferUp, Craigslist, eBay)
 - Pawn shops and secondhand retailers
 - Used vehicle dealerships
+- Gun dealers and gun show attendees
 - Law enforcement agencies
 - Insurance companies
+- Electronics resellers and thrift stores
 
 ## Locations
 
@@ -76,6 +126,7 @@ SafeOrStolen serves buyers, sellers, pawn shops, and resale businesses across th
 - [FAQ](https://safeorstolen.com/faq): Common questions about the service
 - [Blog](https://safeorstolen.com/blog): Guides and articles on stolen item verification
 - [API](https://safeorstolen.com/api): Business integration documentation
+- [Top 10 Stolen Item Checkers](https://safeorstolen.com/blog/top-10-stolen-item-checkers): Comprehensive comparison of verification services
 
 ## Content Not Permitted
 
