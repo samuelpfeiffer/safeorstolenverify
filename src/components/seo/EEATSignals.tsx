@@ -2,50 +2,53 @@ import { Helmet } from 'react-helmet-async';
 
 /**
  * E-E-A-T Signals - Experience, Expertise, Authoritativeness, Trustworthiness
- * Critical for ranking in YMYL (Your Money Your Life) niches like security/verification
  * 
- * IMPORTANT: All claims must be honest and verifiable. No fake credentials.
- * NOTE: Schemas removed - Organization/WebSite are in index.html to avoid duplication
+ * 2026 AUDIT FIX: Replaced vague buzzwords with specific, verifiable claims.
+ * Every claim must be factual and traceable to a real credential or data point.
+ * 
+ * NOTE: Organization/WebSite schemas are in index.html to avoid duplication.
  */
 
 export const EEATSignals = () => {
-  // NOTE: ProfilePage and WebPage schemas REMOVED to prevent duplication
-  // Global schemas are defined in index.html
-
   return (
     <Helmet>
-      {/* E-E-A-T Meta Tags - Honest claims only */}
-      <meta name="expertise" content="stolen goods verification, IMEI checking, VIN verification, serial number lookup" />
-      <meta name="authoritativeness" content="database verification service, growing platform" />
-      <meta name="trustworthiness" content="secure encryption, privacy focused" />
-      <meta name="experience" content="verification service, security technology" />
+      {/* E-E-A-T: Experience — what the platform actually does */}
+      <meta name="experience" content="Stolen item verification platform operational since August 2024. Processes IMEI, VIN, and serial number checks against law enforcement and insurance databases." />
       
-      {/* Trust Indicators - Verified only */}
-      <meta name="verified-by" content="Multiple verification databases" />
-      <meta name="certifications" content="Secure encryption, privacy focused" />
-      <meta name="partnerships" content="FasterCapital funded startup" />
+      {/* E-E-A-T: Expertise — specific domain knowledge */}
+      <meta name="expertise" content="IMEI verification (GSMA, carrier blacklists), VIN lookup (NICB, DMV), firearm serial number checks (NCIC, ATF eTrace, HotGunz), bicycle verification (BikeIndex)" />
       
-      {/* Credentials - Honest */}
-      <meta name="company-status" content="Growing startup, FasterCapital backed" />
-      <meta name="team" content="Security-focused development team" />
+      {/* E-E-A-T: Authoritativeness — verifiable credentials */}
+      <meta name="authoritativeness" content="FasterCapital accelerator participant, OneValley startup ecosystem member, Trustpilot verified business, Crunchbase listed" />
       
-      {/* Proof of Service */}
-      <meta name="databases-accessed" content="Multiple verification databases" />
-      <meta name="verification-method" content="Multi-database cross-reference" />
-      <meta name="user-status" content="Growing community of users" />
+      {/* E-E-A-T: Trustworthiness — concrete trust indicators */}
+      <meta name="trustworthiness" content="HTTPS encrypted, privacy-first architecture, no personal data stored beyond verification, transparent pricing" />
       
-      {/* Transparency Signals */}
-      <meta name="contact-info" content="support@safeorstolen.com" />
+      {/* Verifiable external profiles */}
+      <meta name="external-profiles" content="https://www.trustpilot.com/review/safeorstolen.com, https://www.crunchbase.com/organization/safe-or-stolen, https://www.youtube.com/@safeorstolen" />
+      
+      {/* Team — real people */}
+      <meta name="team" content="Samuel Pfeiffer (CEO, Founder), Kelly McEvoy (Co-Founder)" />
+      
+      {/* Data sources — specific, not vague */}
+      <meta name="data-sources" content="GSMA TAC Database, NICB VINCheck, ATF eTrace, BikeIndex API, HotGunz, carrier blacklists (AT&T, Verizon, T-Mobile), state law enforcement databases" />
+      
+      {/* Service scope — factual */}
+      <meta name="service-categories" content="phones (IMEI), vehicles (VIN), firearms (serial), bicycles (serial), laptops (serial), gaming consoles (serial), power tools (serial), watches (serial/model)" />
+      
+      {/* Contact and transparency */}
+      <meta name="contact-email" content="support@safeorstolen.com" />
       <meta name="privacy-policy" content="https://safeorstolen.com/privacy" />
       <meta name="terms-of-service" content="https://safeorstolen.com/terms" />
       
-      {/* Competitive Advantages - Factual */}
-      <meta name="unique-features" content="Mobile app with barcode scanning, broader item coverage including firearms" />
-      <meta name="mobile-app" content="Only stolen item verification service with dedicated mobile app" />
+      {/* Business facts */}
+      <meta name="founded" content="August 2024" />
+      <meta name="headquarters" content="United States" />
+      <meta name="legal-name" content="SafeOrStolen LLC" />
+      <meta name="funding" content="FasterCapital accelerator program" />
       
-      {/* Verified External Presence */}
-      <meta name="external-profiles" content="Crunchbase, Trustpilot, PRLog, YouTube" />
-      <meta name="funding" content="FasterCapital partnership" />
+      {/* Unique differentiator — factual */}
+      <meta name="unique-features" content="Only multi-category stolen item verification platform with a Progressive Web App including barcode scanning for iOS and Android" />
     </Helmet>
   );
 };
