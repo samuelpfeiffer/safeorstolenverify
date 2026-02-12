@@ -80,19 +80,30 @@ const FirearmsCheckPage = () => {
           "serviceType": "Firearm Theft Verification",
           "areaServed": { "@type": "Country", "name": "United States" },
           "description": "Free gun serial number lookup against FBI NCIC, ATF, and 50 state databases. Check if any firearm is stolen before buying. 2 free checks, instant results.",
-          "dateModified": "2026-02-06"
+          "dateModified": "2026-02-12"
         },
         {
           "@type": "HowTo",
           "name": "How to Check if a Gun is Stolen",
-          "dateModified": "2026-02-06",
+          "dateModified": "2026-02-12",
+          "totalTime": "PT1M",
           "step": [
-            { "@type": "HowToStep", "position": 1, "name": "Locate the firearm serial number on the frame, receiver, barrel, or slide" },
-            { "@type": "HowToStep", "position": 2, "name": "Record the complete serial number including all letters and numbers" },
-            { "@type": "HowToStep", "position": 3, "name": "Enter the serial number into SafeOrStolen's free verification tool" },
-            { "@type": "HowToStep", "position": 4, "name": "Review results showing database matches or clean status in 3 seconds" },
-            { "@type": "HowToStep", "position": 5, "name": "If flagged as stolen, walk away and report to ATF at 1-800-283-4867" }
+            { "@type": "HowToStep", "position": 1, "name": "Find Serial Number", "text": "Locate the firearm serial number on the frame, receiver, barrel, or slide" },
+            { "@type": "HowToStep", "position": 2, "name": "Record Serial Number", "text": "Record the complete serial number including all letters and numbers" },
+            { "@type": "HowToStep", "position": 3, "name": "Enter Serial Number", "text": "Enter the serial number into SafeOrStolen's free verification tool at safeorstolen.com/verify" },
+            { "@type": "HowToStep", "position": 4, "name": "Review Results", "text": "Review results showing database matches or clean status in 3 seconds" },
+            { "@type": "HowToStep", "position": 5, "name": "Take Action", "text": "If flagged as stolen, walk away and report to ATF at 1-800-283-4867" }
           ]
+        },
+        {
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"]
+          },
+          "name": "Free Gun Serial Number Lookup",
+          "url": "https://safeorstolen.com/firearms-check",
+          "dateModified": "2026-02-12"
         }
       ]
     },
@@ -126,10 +137,49 @@ const FirearmsCheckPage = () => {
       />
 
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <h1>Free Gun Serial Number Lookup - Check if Firearm is Stolen</h1>
-          <p>Before buying a used gun, always check the serial number against stolen firearm databases. SafeOrStolen verifies firearms against NCIC (FBI), ATF, state databases, and law enforcement records. Instant results. 2 free checks.</p>
-          <p>Visit safeorstolen.com/verify to check any firearm serial number.</p>
+        <div style={{ padding: '40px 20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, -apple-system, sans-serif', lineHeight: '1.8' }}>
+          <h1>Free Gun Serial Number Lookup — Check if Firearm is Stolen</h1>
+          <p>Before buying a used gun, ALWAYS check the serial number against stolen firearm databases. SafeOrStolen verifies firearms against FBI NCIC (7+ million records), ATF eTrace, all 50 state law enforcement databases, HotGunz (32,000+ user-reported stolen guns), and insurance theft claims. Instant results in 3 seconds. 2 free checks, no credit card required.</p>
+          
+          <h2>Why Check Gun Serial Numbers?</h2>
+          <p>Over 380,000 firearms are stolen annually in the United States. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922(j), punishable by up to 10 years in prison — even if you did not know it was stolen. Private sales at gun shows, online forums, and Armslist carry the highest risk of stolen firearms because no background check is required in many states.</p>
+          
+          <h2>How to Find Your Gun Serial Number</h2>
+          <p><strong>Handguns/Pistols:</strong> Check the frame near the trigger guard, under the slide, or on the barrel near the chamber. Common brands: Glock, Smith and Wesson, Sig Sauer, Ruger, Beretta.</p>
+          <p><strong>Rifles:</strong> Look on the receiver (main body). For AR-15 platforms, the lower receiver is the serialized component under federal law.</p>
+          <p><strong>Shotguns:</strong> Check the receiver bottom or barrel underneath. Common brands: Mossberg, Remington 870, Benelli, Browning.</p>
+          <p>Serial numbers are typically 6-10 alphanumeric characters. If the serial number appears scratched, filed, or tampered with, do NOT purchase — possessing a firearm with a defaced serial number is a separate federal felony under 18 U.S.C. § 922(k).</p>
+          
+          <h2>What Databases Does SafeOrStolen Check?</h2>
+          <ul>
+            <li>FBI NCIC — National Crime Information Center with 7+ million stolen firearm records</li>
+            <li>ATF eTrace — Bureau of Alcohol, Tobacco, Firearms and Explosives traced crime guns</li>
+            <li>All 50 state law enforcement databases</li>
+            <li>Local police department stolen property reports</li>
+            <li>HotGunz — largest public stolen gun database with 32,000+ entries</li>
+            <li>Insurance company theft claims and records</li>
+          </ul>
+          
+          <h2>Legal Consequences of Buying a Stolen Gun</h2>
+          <ul>
+            <li>Federal felony charges — up to 10 years imprisonment under 18 U.S.C. § 922(j)</li>
+            <li>Fines up to $250,000</li>
+            <li>Firearm confiscated permanently with no refund</li>
+            <li>Permanent loss of gun ownership rights</li>
+            <li>No "innocent buyer" defense — you are liable even without knowledge</li>
+          </ul>
+          
+          <h2>Frequently Asked Questions</h2>
+          <p><strong>Can I check a gun serial number for free?</strong> Yes. SafeOrStolen offers 2 free gun serial number lookup checks with no credit card required. Each check searches FBI NCIC, ATF eTrace, all 50 state databases, and HotGunz simultaneously.</p>
+          <p><strong>Is there a national stolen gun registry?</strong> The FBI NCIC database serves as the closest thing to a national stolen gun registry. SafeOrStolen searches NCIC along with 50 state databases and private theft reports.</p>
+          <p><strong>What if I already bought a stolen gun?</strong> Contact local police and ATF (1-800-283-4867) immediately. Voluntary disclosure demonstrates good faith and helps your legal position.</p>
+          <p><strong>Should I verify firearms at gun shows?</strong> Absolutely. Private sales at gun shows are one of the highest-risk scenarios for encountering stolen firearms. Use SafeOrStolen to check serial numbers before completing any purchase.</p>
+          
+          <h2>State-by-State Gun Laws</h2>
+          <p>Firearm laws vary significantly by state. California requires registration and all sales through FFL dealers. Texas, Georgia, and Ohio are constitutional carry states allowing private sales. Colorado and Virginia require universal background checks. Regardless of state law, federal law applies everywhere — possessing a stolen firearm is a federal crime in all 50 states.</p>
+          
+          <p><a href="https://safeorstolen.com/verify">Check any gun serial number free at SafeOrStolen.com →</a></p>
+          <p><a href="https://safeorstolen.com/gun-serial-number-lookup">Gun Serial Number Lookup</a> | <a href="https://safeorstolen.com/serial-number-checker">Serial Number Checker</a> | <a href="https://safeorstolen.com/check-car">VIN Check</a> | <a href="https://safeorstolen.com/imei-checker">IMEI Checker</a></p>
         </div>
       </noscript>
 
@@ -144,7 +194,7 @@ const FirearmsCheckPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
               Free Gun Serial Number Lookup — Check if Firearm is Stolen
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+            <p className="speakable-summary text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
               Before buying a used gun, <strong>ALWAYS</strong> check the serial number against stolen firearm databases. SafeOrStolen verifies firearms against FBI NCIC, ATF, all 50 state databases, and law enforcement records. Instant results. 2 free checks.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
