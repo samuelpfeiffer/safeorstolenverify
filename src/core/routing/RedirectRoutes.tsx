@@ -21,6 +21,7 @@ const REDIRECT_MAP: Record<string, string> = {
   '/ios-app': '/app',
   '/mobile-verification': '/app',
   '/app/download': '/app',
+  '/app/buyers': '/app',
 
   // ===== VERIFY/CHECK CATCH-ALL =====
   '/tennessee-stolen-item-check': '/verify',
@@ -50,6 +51,17 @@ const REDIRECT_MAP: Record<string, string> = {
   '/seattle-stolen-item-check': '/verify',
   '/portland-stolen-item-check': '/verify',
   '/nashville-stolen-item-check': '/verify',
+  '/dallas-stolen-item-check': '/stolen-check-dallas',
+  '/milwaukee-stolen-item-check': '/verify',
+  '/iowa-stolen-item-check': '/verify',
+  '/stolen-item-checker': '/verify',
+  '/verify-not-stolen': '/verify',
+  '/how-do-i-check-if-stolen': '/verify',
+  '/avoid-buying-stolen-goods': '/verify',
+  '/avoid-stolen-goods': '/verify',
+  '/how-to-check-if-anything-is-stolen-before-you-buy': '/verify',
+  '/offerup-safety-verification': '/verify',
+  '/stolen-items-database': '/stolen-database',
 
   // ===== VIN CHECKER REDIRECTS =====
   '/australia-vin-check': '/vin-checker',
@@ -62,6 +74,16 @@ const REDIRECT_MAP: Record<string, string> = {
   '/connecticut-vin-lookup': '/vin-checker',
   '/oklahoma-vin-lookup': '/vin-checker',
   '/vin': '/vin-checker',
+  '/kentucky-vin-lookup': '/vin-checker',
+  '/minnesota-vin-lookup': '/vin-checker',
+  '/hawaii-vin-lookup': '/vin-checker',
+  '/nebraska-vin-lookup': '/vin-checker',
+  '/canada-vin-check': '/vin-checker',
+  '/vin-verification': '/vin-checker',
+  '/free-vin-check-alternative': '/vin-checker',
+
+  // ===== IMEI REDIRECTS =====
+  '/imei': '/imei-checker',
 
   // ===== ABOUT PAGE REDIRECTS =====
   '/crime-prevention-impact': '/about',
@@ -69,9 +91,43 @@ const REDIRECT_MAP: Record<string, string> = {
   '/statistics': '/about',
   '/careers': '/about',
   '/fastercapital/raise-capital': '/about',
+  '/fastercapital/tech-cofounder': '/about',
+  '/accuracy': '/about',
+  '/resellers': '/about',
+  '/contact': '/about',
+  '/api-docs': '/about',
+
+  // ===== ITEM VARIATION REDIRECTS =====
+  '/check-iphone': '/check-phone',
+  '/check-iphone-14': '/check-phone',
+  '/check-iphone-15': '/check-phone',
+  '/check-samsung-phone': '/check-phone',
+  '/check-android-phone': '/check-phone',
+  '/check-apple-watch': '/check-electronics',
+  '/check-playstation': '/check-electronics',
+  '/check-nintendo-switch': '/check-electronics',
+  '/check-camera': '/check-electronics',
+  '/check-ipad': '/check-electronics',
+  '/check-tablet': '/check-electronics',
+  '/check-macbook': '/check-laptop',
+  '/check-toyota': '/check-car',
+  '/check-honda': '/check-car',
+  '/check-ford': '/check-car',
+  '/check-bmw': '/check-car',
+  '/check-mercedes': '/check-car',
+  '/check-tesla': '/check-car',
+  '/check-motorcycle': '/check-car',
+  '/check-harley-davidson': '/check-car',
+
+  // ===== HOW-TO REDIRECTS =====
+  '/how-to-verify-phone-not-stolen': '/check-phone',
+  '/how-to-check-if-iphone-is-stolen': '/check-phone',
+  '/how-to-avoid-buying-stolen-iphone': '/check-phone',
+  '/how-to-check-if-car-is-stolen-before-buying': '/check-car',
 
   // ===== SPECIFIC PAGE REDIRECTS =====
   '/ultimate-guide': '/how-it-works',
+  '/how-it-works-detailed': '/how-it-works',
   '/guides/pawnshop-buying-tips': '/for-pawn-shops',
   '/app/ebay-verification': '/ebay-stolen-item-check',
   '/app/offerup-safety': '/offerup-safety',
@@ -96,6 +152,41 @@ const REDIRECT_MAP: Record<string, string> = {
   '/app/pawn-shops': '/for-pawn-shops',
   '/for-marketplace-sellers': '/for-marketplaces',
   '/cookies': '/privacy',
+  '/for-used-car-dealers': '/for-dealers',
+  '/for-phone-repair-shops': '/for-dealers',
+  '/cheaper-than-carfax': '/carfax-alternative-free',
+  '/subscriptions': '/pricing',
+  '/partnerships': '/for-businesses',
+  '/enterprise-demo': '/pricing',
+  '/case-studies': '/testimonials',
+  '/service-limitations': '/terms',
+  '/ebay-stolen-item-checker': '/ebay-stolen-item-check',
+  '/craigslist-verification-guide': '/craigslist-safety-verification',
+
+  // ===== MARKETPLACE VERIFY REDIRECTS =====
+  '/verify/auctions': '/for-auction-houses',
+  '/verify/facebook-marketplace': '/facebook-marketplace-stolen-check',
+  '/verify/pawnshops': '/for-pawn-shops',
+
+  // ===== CITY REDIRECTS =====
+  '/city/los-angeles-ca/vin-verification': '/stolen-check-los-angeles',
+  '/city/los-angeles-ca/imei-check': '/stolen-check-los-angeles',
+  '/city/los-angeles-ca/stolen-item-checker': '/stolen-check-los-angeles',
+  '/city/new-york-ny/vin-verification': '/stolen-check-new-york-city',
+  '/city/new-york-ny/imei-check': '/stolen-check-new-york-city',
+  '/city/new-york-ny/stolen-item-checker': '/stolen-check-new-york-city',
+  '/city/chicago-il/vin-verification': '/illinois-vin-lookup',
+  '/city/chicago-il/imei-check': '/imei-checker',
+  '/city/chicago-il/stolen-item-checker': '/verify',
+  '/city/phoenix': '/stolen-check-phoenix',
+  '/city/los-angeles': '/stolen-check-los-angeles',
+  '/city/chicago': '/stolen-check-chicago',
+  '/city/houston': '/stolen-check-houston',
+  '/city/new-york': '/stolen-check-new-york-city',
+
+  // ===== GUIDE REDIRECTS =====
+  '/guides/imei-blacklist-explained': '/about',
+  '/guides/imei-blacklist-guide': '/about',
 
   // ===== SERIAL NUMBER CHECKER REDIRECTS =====
   '/check-fender-guitar': '/serial-number-checker',
@@ -109,7 +200,7 @@ const REDIRECT_MAP: Record<string, string> = {
   // ===== EBIKE/SCOOTER REDIRECTS =====
   '/check-scooter': '/check-ebike',
 
-  // ===== BLOG POSTS WITH NUMERIC SUFFIXES → BASE SLUGS =====
+  // ===== BLOG REDIRECTS =====
   '/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983': '/blog/complete-imei-guide-protect-yourself',
   '/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027': '/blog/complete-imei-guide-protect-yourself',
   '/blog/how-law-enforcement-tracks-stolen-goods-1759827620043': '/blog/data-source-credibility-stolen-goods-verification',
@@ -126,6 +217,30 @@ const REDIRECT_MAP: Record<string, string> = {
   '/blog/craigslist-scam-prevention-item-verification-checklist': '/blog/scammer-tactics-exposed',
   '/blog/how-to-use-imei-checker-app': '/blog/imei-checker-app-download',
   '/blog/business-guide-preventing-stolen-goods': '/blog/pawn-shop-stolen-item-verification',
+  '/blog/how-to-check-phone-stolen': '/blog/how-to-check-if-phone-stolen',
+  '/blog/data-source-credibility': '/blog/data-source-credibility-stolen-goods-verification',
+  '/blog/scan-and-verify-using-safeorstolen-camera-feature-1': '/app',
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know-1': '/blog/complete-vin-guide',
+  '/blog/enterprise-security': '/blog',
+  '/blog/2025-stolen-goods-statistics': '/blog',
+  '/blog/most-stolen-items-2025': '/blog',
+  '/blog/real-user-stories-stolen-goods-verification': '/blog/real-user-stories',
+  '/blog/verification-methodology-how-we-check-stolen-items': '/blog/verification-methodology',
+  '/blog/what-to-do-if-stolen': '/blog',
+  '/blog/what-to-do-if-you-bought-stolen': '/blog',
+  '/blog/industry-insights-2024': '/blog',
+  '/blog/ai-verification-technology': '/blog',
+  '/blog/verification-data-privacy': '/blog',
+  '/blog/serial-numbers-stolen-goods-101': '/blog',
+  '/blog/marketplace-red-flags-protection-guide': '/blog/scammer-tactics-exposed',
+  '/blog/phone-verification-guide': '/blog/how-to-check-if-phone-stolen',
+  '/blog/bicycle-stolen-serial-number-check': '/check-bike',
+  '/blog/firearm-serial-number-verification': '/firearms-check',
+  '/blog/verify-item-before-meetup': '/verify',
+  '/blog/pawn-shop-stolen-item-verification': '/for-pawn-shops',
+  '/blog/theft-trends-report-2024': '/blog',
+  '/blog/ultimate-marketplace-buyers-guide': '/blog/facebook-marketplace-scams',
+  '/blog/like-carfax-for-phones': '/blog/complete-imei-guide-protect-yourself',
 };
 
 /**

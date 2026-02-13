@@ -689,6 +689,14 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /imei-check                        /imei-checker  301!
 /vin-check                         /vin-checker  301!
 
+# GSC "Crawled not indexed" fix 2026-02-13: Missing city/vin redirects
+/city/chicago-il/vin-verification  /illinois-vin-lookup  301!
+/app/buyers                        /app  301!
+
+# Blog redirects missing from server-side
+/blog/marketplace-red-flags-protection-guide  /blog/scammer-tactics-exposed  301!
+/blog/what-to-do-if-stolen                    /faq  301!
+
 # YouTube subpages without real routes
 /youtube/vin-check                 /youtube  301!
 /youtube/marketplace-safety        /youtube  301!

@@ -246,27 +246,76 @@ export const REDIRECT_URLS = new Set([
   '/verify-not-stolen',
   '/stolen-merchandise-check',
   '/verification-hub',
+  '/app/buyers',
   
-  // GSC January 2026 noindex validation failures - redirect to real pages
-  '/for-pawnshops', // → /for-pawn-shops
-  '/careers', // → /about
-  '/trust-verification', // → /about
-  '/marketplace-safety', // → /facebook-marketplace-safety
-  '/pawn-shops', // → /for-pawn-shops
-  '/app/download', // → /download
-  '/app/sellers', // → /about
-  '/app/vs-carfax', // → /vs-carfax
-  '/app/vs-imeiinfo', // → /vs-imeiinfo
-  '/app/features/barcode-scanner', // → /app/barcode-scanner
-  '/app/stolen-database-search', // → /stolen-database
-  '/app/investigate-stolen-property', // → /verify
-  '/app/lookup-stolen-items', // → /verify
-  '/app/check-stolen-before-buying', // → /verify
-  '/app/carfax-alternative', // → /vs-carfax
-  '/app/philadelphia', // → /stolen-check-philadelphia
+  // Item variations
+  '/check-iphone', '/check-iphone-14', '/check-iphone-15',
+  '/check-samsung-phone', '/check-android-phone',
+  '/check-apple-watch', '/check-playstation', '/check-nintendo-switch',
+  '/check-camera', '/check-ipad', '/check-tablet', '/check-macbook',
+  '/check-toyota', '/check-honda', '/check-ford', '/check-bmw',
+  '/check-mercedes', '/check-tesla', '/check-motorcycle', '/check-harley-davidson',
   
-  // Blog posts with timestamps (redirected to clean versions)
-  '/blog/how-to-check-phone-stolen', // → /blog/how-to-check-if-phone-stolen
+  // How-to redirects
+  '/how-to-verify-phone-not-stolen', '/how-to-check-if-iphone-is-stolen',
+  '/how-to-avoid-buying-stolen-iphone', '/how-to-check-if-car-is-stolen-before-buying',
+  '/how-to-check-if-anything-is-stolen-before-you-buy',
+  
+  // Verify/check catch-alls
+  '/stolen-item-checker', '/avoid-buying-stolen-goods', '/avoid-stolen-goods',
+  '/how-do-i-check-if-stolen', '/offerup-safety-verification',
+  '/stolen-items-database',
+  
+  // VIN redirects
+  '/vin-verification', '/free-vin-check-alternative', '/canada-vin-check',
+  '/kentucky-vin-lookup', '/minnesota-vin-lookup', '/hawaii-vin-lookup', '/nebraska-vin-lookup',
+  '/imei',
+  
+  // Business/info redirects
+  '/accuracy', '/resellers', '/contact', '/api-docs',
+  '/for-used-car-dealers', '/for-phone-repair-shops',
+  '/cheaper-than-carfax', '/subscriptions', '/partnerships',
+  '/enterprise-demo', '/case-studies', '/service-limitations',
+  '/how-it-works-detailed', '/ebay-stolen-item-checker',
+  '/craigslist-verification-guide', '/fastercapital/tech-cofounder',
+  
+  // City redirects
+  '/city/los-angeles-ca/vin-verification', '/city/los-angeles-ca/imei-check',
+  '/city/los-angeles-ca/stolen-item-checker',
+  '/city/new-york-ny/vin-verification', '/city/new-york-ny/imei-check',
+  '/city/new-york-ny/stolen-item-checker',
+  '/city/chicago-il/vin-verification', '/city/chicago-il/imei-check',
+  '/city/chicago-il/stolen-item-checker',
+  '/city/phoenix', '/city/los-angeles', '/city/chicago',
+  '/city/houston', '/city/new-york',
+  
+  // Verify sub-paths
+  '/verify/auctions', '/verify/facebook-marketplace',
+  
+  // Guide redirects
+  '/guides/imei-blacklist-explained', '/guides/imei-blacklist-guide',
+  
+  // GSC January 2026 noindex validation failures
+  '/for-pawnshops', '/careers', '/trust-verification',
+  '/marketplace-safety', '/pawn-shops',
+  '/app/download', '/app/sellers',
+  '/app/vs-carfax', '/app/vs-imeiinfo',
+  '/app/features/barcode-scanner', '/app/stolen-database-search',
+  '/app/investigate-stolen-property', '/app/lookup-stolen-items',
+  '/app/check-stolen-before-buying', '/app/carfax-alternative',
+  '/app/philadelphia', '/app/vs-imeipro',
+  '/app/ebay-verification', '/app/offerup-safety',
+  '/app/firearms-checker', '/app/pawn-shops',
+  '/for-marketplace-sellers', '/cookies', '/database',
+  '/for-brands', '/auction-houses',
+  '/crime-prevention-impact', '/statistics',
+  '/fastercapital/raise-capital',
+  '/buyer-guide', '/check', '/ultimate-guide',
+  '/marketplace-safety',
+  
+  // Blog post redirects
+  '/blog/how-to-check-phone-stolen',
+  '/blog/data-source-credibility',
   '/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983',
   '/blog/understanding-imei-blacklists-and-what-they-mean-1759395616027',
   '/blog/how-law-enforcement-tracks-stolen-goods-1759827620043',
@@ -283,9 +332,27 @@ export const REDIRECT_URLS = new Set([
   '/blog/5-signs-used-phone-might-be-stolen',
   '/blog/craigslist-scam-prevention-item-verification-checklist',
   '/blog/how-to-use-imei-checker-app',
-  '/blog/theft-trends-report-2024',
+  '/blog/scan-and-verify-using-safeorstolen-camera-feature-1',
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know-1',
+  '/blog/enterprise-security',
+  '/blog/2025-stolen-goods-statistics',
+  '/blog/most-stolen-items-2025',
+  '/blog/real-user-stories-stolen-goods-verification',
+  '/blog/verification-methodology-how-we-check-stolen-items',
+  '/blog/what-to-do-if-stolen',
+  '/blog/what-to-do-if-you-bought-stolen',
+  '/blog/industry-insights-2024',
+  '/blog/ai-verification-technology',
+  '/blog/verification-data-privacy',
+  '/blog/serial-numbers-stolen-goods-101',
+  '/blog/marketplace-red-flags-protection-guide',
   '/blog/bicycle-stolen-serial-number-check',
+  '/blog/firearm-serial-number-verification',
   '/blog/verify-item-before-meetup',
+  '/blog/pawn-shop-stolen-item-verification',
+  '/blog/theft-trends-report-2024',
+  '/blog/ultimate-marketplace-buyers-guide',
+  '/blog/like-carfax-for-phones',
   
   // State VIN pages (only top 10 have real pages)
   '/alaska-vin-lookup',
@@ -293,6 +360,26 @@ export const REDIRECT_URLS = new Set([
   '/delaware-vin-lookup',
   '/new-mexico-vin-lookup',
   '/oklahoma-vin-lookup',
+  '/vermont-vin-lookup',
+  '/michigan-vin-lookup',
+  '/wyoming-vin-lookup',
+  '/australia-vin-check',
+  '/uk-vehicle-check',
+  
+  // Stolen item check patterns
+  '/tennessee-stolen-item-check', '/kentucky-stolen-item-check',
+  '/austin-stolen-item-check', '/new-jersey-stolen-item-check',
+  '/oakland-stolen-item-check', '/columbus-stolen-item-check',
+  '/hawaii-stolen-item-check', '/vermont-stolen-item-check',
+  '/indiana-stolen-item-check', '/new-york-stolen-item-check',
+  '/michigan-stolen-item-check', '/florida-stolen-item-check',
+  '/tucson-stolen-item-check', '/baltimore-stolen-item-check',
+  '/indianapolis-stolen-item-check', '/san-francisco-stolen-item-check',
+  '/denver-stolen-item-check', '/seattle-stolen-item-check',
+  '/portland-stolen-item-check', '/nashville-stolen-item-check',
+  '/dallas-stolen-item-check', '/milwaukee-stolen-item-check',
+  '/iowa-stolen-item-check',
+  '/mercari-verification', '/stolen-search-console',
 ]);
 
 export interface ValidationResult {
