@@ -346,13 +346,7 @@ export const REDIRECT_URLS = new Set([
   '/blog/verification-data-privacy',
   '/blog/serial-numbers-stolen-goods-101',
   '/blog/marketplace-red-flags-protection-guide',
-  '/blog/bicycle-stolen-serial-number-check',
-  '/blog/firearm-serial-number-verification',
-  '/blog/verify-item-before-meetup',
-  '/blog/pawn-shop-stolen-item-verification',
-  '/blog/theft-trends-report-2024',
-  '/blog/ultimate-marketplace-buyers-guide',
-  '/blog/like-carfax-for-phones',
+  // REMOVED: These blog posts have REAL routes in VALID_ROUTES - not redirects
   
   // State VIN pages (only top 10 have real pages)
   '/alaska-vin-lookup',
