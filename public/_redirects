@@ -422,7 +422,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/playstation-5-serial-number-verification-guide            /serial-number-checker  301!
 /blog/our-mission                                               /about  301!
 /blog/how-to-check-if-device-is-safe-stolen                     /blog/how-to-check-if-phone-stolen  301!
-/blog/phone-verification-guide                                  /blog/how-to-check-if-phone-stolen  301!
+# REMOVED: /blog/phone-verification-guide has a real route in VALID_ROUTES - DO NOT redirect
 /blog/craigslist-scam-prevention-item-verification-checklist    /blog  301!
 # Timestamped blog patterns (must be before wildcards)
 /blog/playstation-5-serial-number-verification-guide-*          /serial-number-checker  301!
@@ -620,11 +620,10 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide /blog/how-to-check-if-iphone-stolen  301!
 /blog/iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide-1 /blog/how-to-check-if-iphone-stolen  301!
 /blog/safeorstolen-mobile-app-complete-guide-to-on-the-go-verification /app  301!
-/blog/theft-trends-report-2024                            /blog  301!
-/blog/bicycle-stolen-serial-number-check                  /check-bike  301!
-/blog/verify-item-before-meetup                           /verify  301!
-/blog/firearm-serial-number-verification                  /firearms-check  301!
-/blog/pawn-shop-stolen-item-verification                  /for-pawn-shops  301!
+# REMOVED: These blog posts have REAL routes in VALID_ROUTES - DO NOT redirect
+# /blog/theft-trends-report-2024, /blog/bicycle-stolen-serial-number-check,
+# /blog/verify-item-before-meetup, /blog/firearm-serial-number-verification,
+# /blog/pawn-shop-stolen-item-verification
 # GSC Page with redirect fix - blog posts with timestamps
 /blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379 /blog/how-to-check-if-phone-stolen  301!
 /blog/playstation-5-serial-number-verification-guide      /check-ps5  301!
@@ -670,7 +669,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # Blog post variations
 /blog/how-to-check-if-phone-is-stolen  /blog/how-to-check-if-phone-stolen  301!
-/blog/like-carfax-for-phones        /blog  301!
+# REMOVED: /blog/like-carfax-for-phones has a real route - DO NOT redirect
 /blog/safer-buying-workflow         /blog  301!
 
 # App feature pages
@@ -731,8 +730,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # ============================================
 # Blog posts that should redirect to canonical versions
 /blog/device-safety-guide                          /blog/how-to-check-if-phone-stolen  301!
-/blog/like-carfax-for-phones                       /vs-carfax  301!
-/blog/real-user-stories                            /testimonials  301!
+# REMOVED: /blog/like-carfax-for-phones and /blog/real-user-stories have REAL routes - DO NOT redirect
 /blog/data-source-credibility                      /about  301!
 /blog/what-to-do-if-stolen                         /faq  301!
 /blog/marketplace-red-flags-protection-guide       /guides/verify-craigslist-items  301!

@@ -233,14 +233,11 @@ const REDIRECT_MAP: Record<string, string> = {
   '/blog/verification-data-privacy': '/blog',
   '/blog/serial-numbers-stolen-goods-101': '/blog',
   '/blog/marketplace-red-flags-protection-guide': '/blog/scammer-tactics-exposed',
-  '/blog/phone-verification-guide': '/blog/how-to-check-if-phone-stolen',
-  '/blog/bicycle-stolen-serial-number-check': '/check-bike',
-  '/blog/firearm-serial-number-verification': '/firearms-check',
-  '/blog/verify-item-before-meetup': '/verify',
-  '/blog/pawn-shop-stolen-item-verification': '/for-pawn-shops',
-  '/blog/theft-trends-report-2024': '/blog',
-  '/blog/ultimate-marketplace-buyers-guide': '/blog/facebook-marketplace-scams',
-  '/blog/like-carfax-for-phones': '/blog/complete-imei-guide-protect-yourself',
+  // REMOVED: These blog posts have REAL routes - they must NOT be redirected
+  // /blog/phone-verification-guide, /blog/bicycle-stolen-serial-number-check,
+  // /blog/firearm-serial-number-verification, /blog/verify-item-before-meetup,
+  // /blog/pawn-shop-stolen-item-verification, /blog/theft-trends-report-2024,
+  // /blog/ultimate-marketplace-buyers-guide, /blog/like-carfax-for-phones
 };
 
 /**
