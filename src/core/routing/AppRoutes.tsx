@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AppLoadingScreen } from '@/components/common/AppLoadingScreen';
-import { RedirectRoutes } from './RedirectRoutes';
+import { getRedirectRoutes } from './RedirectRoutes';
 
 // CORE 10 PAGES + STRATEGIC SEO PAGES
 const Index = lazy(() => import('@/pages/Index'));
@@ -664,7 +664,7 @@ export const AppRoutes = () => {
         {/* Critical: Without these, prerenderer/SSR hits NotFound → noindex */}
         {/* Server-side _redirects handles direct browser requests (301) */}
         {/* React Navigate handles prerenderer/SSR path (prevents noindex) */}
-        <RedirectRoutes />
+        {getRedirectRoutes()}
 
         <Route path="/404" element={<NotFound />} />
 
