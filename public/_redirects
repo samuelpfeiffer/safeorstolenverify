@@ -694,7 +694,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 
 # Blog redirects missing from server-side
 /blog/marketplace-red-flags-protection-guide  /blog/scammer-tactics-exposed  301!
-/blog/what-to-do-if-stolen                    /faq  301!
+/blog/what-to-do-if-stolen                    /blog  301!
 
 # YouTube subpages without real routes
 /youtube/vin-check                 /youtube  301!
@@ -725,39 +725,16 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check                             /verify  301!
 
 # ============================================
-# GSC "CRAWLED NOT INDEXED" FIX - 2026-01-31
-# These URLs are being crawled but not indexed - redirect to canonical pages
+# GSC "CRAWLED NOT INDEXED" FIX - 2026-02-14 CLEANED
+# Removed all duplicates from above. Only unique entries here.
 # ============================================
-# Blog posts that should redirect to canonical versions
 /blog/device-safety-guide                          /blog/how-to-check-if-phone-stolen  301!
-# REMOVED: /blog/like-carfax-for-phones and /blog/real-user-stories have REAL routes - DO NOT redirect
-/blog/data-source-credibility                      /about  301!
-/blog/what-to-do-if-stolen                         /faq  301!
-/blog/marketplace-red-flags-protection-guide       /guides/verify-craigslist-items  301!
-
-# Legacy verification URLs - REMOVED /stolen-database (has real route)
-/verify-not-stolen                                 /verify  301!
-/vin-verification                                  /vin-checker  301!
-/how-do-i-check-if-stolen                          /verify  301!
-/how-it-works-detailed                             /how-it-works  301!
-/case-studies                                      /testimonials  301!
-/accuracy                                          /about  301!
-
-# Marketplace verification legacy URLs
-# NOTE: /facebook-marketplace-stolen-check has a real route - DO NOT redirect
-# NOTE: /ebay-stolen-item-check is the real route, redirect variant
-/ebay-stolen-item-checker                          /ebay-stolen-item-check  301!
-/offerup-safety-verification                       /offerup-verify-not-stolen  301!
-/subscriptions                                     /pricing  301!
-/partnerships                                      /for-businesses  301!
-/cookies                                           /privacy  301!
-/enterprise-demo                                   /pricing  301!
-/api-docs                                          /for-businesses  301!
-/contact                                           /about  301!
-/service-limitations                               /terms  301!
-/disclaimer                                        /terms  301!
-/terms-of-service                                  /terms  301!
-/our-story                                         /about  301!
+# NOTE: /blog/like-carfax-for-phones and /blog/real-user-stories have REAL routes - DO NOT redirect
+# NOTE: /blog/data-source-credibility already handled above (line ~404) → DO NOT duplicate
+# NOTE: /blog/what-to-do-if-stolen already handled above (line ~697) → DO NOT duplicate
+# NOTE: /blog/marketplace-red-flags-protection-guide already handled above (line ~696) → DO NOT duplicate
+# NOTE: All legacy verification, marketplace, legal URLs already handled above → DO NOT duplicate
+# /our-story already handled above (line ~199) → DO NOT duplicate
 
 # ============================================
 # ACCOUNT REDIRECTS
