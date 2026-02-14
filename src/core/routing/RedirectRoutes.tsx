@@ -244,12 +244,12 @@ const REDIRECT_MAP: Record<string, string> = {
  * Generate Route elements for all redirects.
  * Must be placed BEFORE the catch-all "*" route in AppRoutes.
  */
-export const RedirectRoutes = () => (
-  <>
-    {Object.entries(REDIRECT_MAP).map(([from, to]) => (
-      <Route key={from} path={from} element={<Navigate to={to} replace />} />
-    ))}
-  </>
-);
+export const getRedirectRoutes = () =>
+  Object.entries(REDIRECT_MAP).map(([from, to]) => (
+    <Route key={from} path={from} element={<Navigate to={to} replace />} />
+  ));
+
+/** @deprecated Use getRedirectRoutes() instead */
+export const RedirectRoutes = getRedirectRoutes;
 
 export default RedirectRoutes;
