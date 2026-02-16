@@ -5,6 +5,25 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Rate limiting
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const MAX_REQUESTS_PER_WINDOW = 10;
+const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
+
+function checkRateLimit(identifier: string): { allowed: boolean; resetAt: number } {
+  const now = Date.now();
+  const entry = rateLimitStore.get(identifier);
+  if (!entry || entry.resetAt < now) {
+    rateLimitStore.set(identifier, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return { allowed: true, resetAt: now + RATE_LIMIT_WINDOW_MS };
+  }
+  if (entry.count >= MAX_REQUESTS_PER_WINDOW) {
+    return { allowed: false, resetAt: entry.resetAt };
+  }
+  entry.count++;
+  return { allowed: true, resetAt: entry.resetAt };
+}
+
 // US States mapping
 const US_STATES: Record<string, string> = {
   "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
@@ -29,6 +48,16 @@ const US_STATES: Record<string, string> = {
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Rate limit by IP
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('cf-connecting-ip') || 'unknown';
+  const rl = checkRateLimit(clientIP);
+  if (!rl.allowed) {
+    return new Response(
+      JSON.stringify({ success: false, error: 'Rate limit exceeded', retryAfter: Math.ceil((rl.resetAt - Date.now()) / 1000) }),
+      { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json', 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    );
   }
 
   try {

@@ -196,7 +196,13 @@ function showSuggestion(textElement, matchInfo) {
   
   const suggestionText = document.createElement('p');
   suggestionText.style.cssText = 'margin: 0 0 12px 0; line-height: 1.4;';
-  suggestionText.innerHTML = 'Detected: "<strong>' + escapeHtml(matchInfo.primaryMatch) + '</strong>" - Want to share SafeOrStolen.com verification service?';
+  const textBefore = document.createTextNode('Detected: "');
+  const strongElement = document.createElement('strong');
+  strongElement.textContent = matchInfo.primaryMatch;
+  const textAfter = document.createTextNode('" - Want to share SafeOrStolen.com verification service?');
+  suggestionText.appendChild(textBefore);
+  suggestionText.appendChild(strongElement);
+  suggestionText.appendChild(textAfter);
   
   const buttonContainer = document.createElement('div');
   buttonContainer.style.cssText = 'display: flex; gap: 8px;';
@@ -232,7 +238,7 @@ function showSuggestion(textElement, matchInfo) {
     navigator.clipboard.writeText(responseTemplate);
     
     // Clear suggestion content securely
-    suggestion.innerHTML = '';
+    suggestion.replaceChildren();
     
     const successMessage = document.createElement('div');
     successMessage.style.cssText = 'display: flex; align-items: center; gap: 8px; color: #22c55e;';
