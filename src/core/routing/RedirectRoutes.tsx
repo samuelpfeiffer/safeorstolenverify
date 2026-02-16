@@ -166,7 +166,7 @@ const REDIRECT_MAP: Record<string, string> = {
   // ===== MARKETPLACE VERIFY REDIRECTS =====
   '/verify/auctions': '/for-auction-houses',
   '/verify/facebook-marketplace': '/facebook-marketplace-stolen-check',
-  '/verify/pawnshops': '/for-pawn-shops',
+  // REMOVED: /verify/pawnshops has real route (VerifyPawnshopsPage) in AppRoutes.tsx
 
   // ===== CITY REDIRECTS =====
   '/city/los-angeles-ca/vin-verification': '/stolen-check-los-angeles',
