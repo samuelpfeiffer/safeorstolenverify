@@ -83,7 +83,6 @@ const FirearmSerialTool = () => {
         title="Firearm Serial Check"
         description="Check if a firearm is reported stolen using HotGunz database. Free firearm serial number lookup."
         canonical="/tools/firearm-check"
-        noIndex
       />
 
       <div className="min-h-screen bg-background py-12">
