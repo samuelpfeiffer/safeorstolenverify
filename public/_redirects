@@ -75,11 +75,11 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-imei              /imei-checker  301!
 /check-imei-before-buying /imei-checker 301!
 /vin-verification        /vin-checker   301!
-/check-firearm           /firearms-check 301!
+# REMOVED: /check-firearm has real route (CheckFirearmPage) in AppRoutes.tsx
 /firearm-serial-check    /firearms-check 301!
 /check-gaming-console    /check-electronics 301!
 /check-android-phone     /check-phone   301!
-/check-android           /check-phone   301!
+# REMOVED: /check-android has real route (CheckAndroidPage) in AppRoutes.tsx
 /pawn-shops              /for-pawn-shops 301!
 /license-plates-lookup   /license-plate-lookup 301!
 /check-bicycle           /check-bike    301!
@@ -245,7 +245,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-iphone-14                   /check-phone  301!
 /check-iphone-15                   /check-phone  301!
 /check-samsung-phone               /check-phone  301!
-/check-xbox                        /check-electronics  301!
+# REMOVED: /check-xbox has real route (XboxStolenCheck) in AppRoutes.tsx
 /check-playstation                 /check-electronics  301!
 /check-nintendo-switch             /check-electronics  301!
 /check-camera                      /check-electronics  301!
@@ -261,12 +261,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-tesla                       /check-car  301!
 /check-motorcycle                  /check-car  301!
 /check-samsung                     /check-phone  301!
-/check-laptop-stolen               /check-laptop  301!
+# REMOVED: /check-laptop-stolen has real route (LaptopSerialCheck) in AppRoutes.tsx
 
 # ============================================
 # GUN VERIFICATION REDIRECTS
 # ============================================
-/check-firearm                     /firearms-check  301!
+# REMOVED: /check-firearm duplicate - has real route in AppRoutes.tsx
 /check-gun                         /firearms-check  301!
 /gun-check                         /firearms-check  301!
 /firearm-check                     /firearms-check  301!
@@ -280,7 +280,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /vin                               /vin-checker  301!
 /check-vin                         /vin-checker  301!
 /vin-lookup                        /vin-checker  301!
-/vin-check                         /vin-checker  301!
+# REMOVED: /vin-check has real route (VINCheckPage) in AppRoutes.tsx
 /car-vin-check                     /vin-checker  301!
 
 # ============================================
@@ -309,7 +309,7 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /ebay-verification                                  /ebay-stolen-item-check  301!
 /verify/facebook-marketplace  /facebook-marketplace-stolen-check  301!
 /verify/ebay                  /ebay-stolen-item-check  301!
-/verify/pawnshops             /for-pawn-shops  301!
+# REMOVED: /verify/pawnshops has real route (VerifyPawnshopsPage) in AppRoutes.tsx
 /verify/offerup               /offerup-verify-not-stolen  301!
 /verify/auctions              /for-auction-houses  301!
 /verify/craigslist            /craigslist-safety-verification  301!
@@ -541,17 +541,17 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /offerup-verification                                           /verify  301!
 /fastercapital/tech-cofounder                                   /about  301!
 /fastercapital/raise-capital                                    /about  301!
-/press                                                          /press-release  301!
+# REMOVED: /press has real route (PressPage) in AppRoutes.tsx
 /database                                                       /stolen-database  301!
 /android-app                                                    /app  301!
 /bulk                                                           /pricing  301!
 /analytics                                                      /dashboard  301!
-/imei-checker-app                                               /app  301!
+# REMOVED: /imei-checker-app has real route (IMEICheckerAppPage) in AppRoutes.tsx
 /stolen-items-database                                          /stolen-database  301!
 /contact                                                        /about  301!
 /api-docs                                                       /about  301!
 /partnerships                                                   /for-businesses  301!
-/for-consumers                                                  /verify  301!
+# REMOVED: /for-consumers has real route (ForConsumersPage) in AppRoutes.tsx
 /mobile-verification                                            /app  301!
 /stolen-phone-database                                          /stolen-database  301!
 /stolen-car-database                                            /stolen-database  301!
@@ -685,8 +685,8 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 # Duplicate verification patterns
 /verify-vin-before-purchase        /vin-checker  301!
 /check-harley-davidson             /check-car  301!
-/imei-check                        /imei-checker  301!
-/vin-check                         /vin-checker  301!
+# REMOVED: /imei-check has real route (IMEICheckPage) in AppRoutes.tsx
+# REMOVED: /vin-check has real route (VINCheckPage) in AppRoutes.tsx
 
 # GSC "Crawled not indexed" fix 2026-02-13: Missing city/vin redirects
 /city/chicago-il/vin-verification  /illinois-vin-lookup  301!
@@ -707,10 +707,10 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /database                          /stolen-database  301!
 /developer-portal                  /about  301!
 /bulk                              /pricing  301!
-/for-consumers                     /verify  301!
-/press                             /press-release  301!
+# REMOVED: /for-consumers duplicate - has real route in AppRoutes.tsx
+# REMOVED: /press duplicate - has real route in AppRoutes.tsx
 /stolen-goods-checker              /verify  301!
-/imei-checker-app                  /app  301!
+# REMOVED: /imei-checker-app duplicate - has real route in AppRoutes.tsx
 /stolen-items-database             /stolen-database  301!
 
 # ============================================
