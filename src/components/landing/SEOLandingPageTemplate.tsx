@@ -113,45 +113,43 @@ export const SEOLandingPageTemplate = ({
   
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": `${itemType} Stolen Verification Service`,
-        "url": fullUrl,
-        "provider": {
-          "@type": "Organization",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com",
-          "logo": "https://safeorstolen.com/sos-logo.png"
-        },
-        "serviceType": `${itemType} Theft Verification`,
-        "areaServed": {
-          "@type": "Place",
-          "name": "Worldwide"
-        },
-        "description": metaDescription,
-        "dateModified": "2026-02-06",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD",
-          "description": "2 free verifications"
-        }
-      },
-      {
-        "@type": "HowTo",
-        "name": `How to Check if ${itemType} is Stolen`,
-        "description": `Step by step guide to verify if a ${itemType.toLowerCase()} has been reported stolen`,
-        "dateModified": "2026-02-06",
-        "step": howItWorksSteps.map((step, index) => ({
-          "@type": "HowToStep",
-          "position": index + 1,
-          "name": `Step ${index + 1}`,
-          "text": step
-        })),
-        "totalTime": "PT30S"
-      }
-    ]
+    "@type": "Service",
+    "name": `${itemType} Stolen Verification Service`,
+    "url": fullUrl,
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "logo": "https://safeorstolen.com/sos-logo.png"
+    },
+    "serviceType": `${itemType} Theft Verification`,
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "description": metaDescription,
+    "dateModified": "2026-02-06",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "2 free verifications"
+    }
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How to Check if ${itemType} is Stolen`,
+    "description": `Step by step guide to verify if a ${itemType.toLowerCase()} has been reported stolen`,
+    "dateModified": "2026-02-06",
+    "step": howItWorksSteps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": `Step ${index + 1}`,
+      "text": step
+    })),
+    "totalTime": "PT30S"
   };
 
   const faqSchema = faqs && faqs.length > 0 ? {
@@ -176,7 +174,7 @@ export const SEOLandingPageTemplate = ({
     ]
   };
 
-  const structuredData = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+  const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
     <>
