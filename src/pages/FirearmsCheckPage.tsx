@@ -67,45 +67,43 @@ const FirearmsCheckPage = () => {
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": "Free Gun Serial Number Lookup",
-          "url": "https://safeorstolen.com/firearms-check",
-          "provider": {
-            "@type": "Organization",
-            "name": "SafeOrStolen",
-            "url": "https://safeorstolen.com"
-          },
-          "serviceType": "Firearm Theft Verification",
-          "areaServed": { "@type": "Country", "name": "United States" },
-          "description": "Free gun serial number lookup against FBI NCIC, ATF, and 50 state databases. Check if any firearm is stolen before buying. 2 free checks, instant results.",
-          "dateModified": "2026-02-12"
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to Check if a Gun is Stolen",
-          "dateModified": "2026-02-12",
-          "totalTime": "PT1M",
-          "step": [
-            { "@type": "HowToStep", "position": 1, "name": "Find Serial Number", "text": "Locate the firearm serial number on the frame, receiver, barrel, or slide" },
-            { "@type": "HowToStep", "position": 2, "name": "Record Serial Number", "text": "Record the complete serial number including all letters and numbers" },
-            { "@type": "HowToStep", "position": 3, "name": "Enter Serial Number", "text": "Enter the serial number into SafeOrStolen's free verification tool at safeorstolen.com/verify" },
-            { "@type": "HowToStep", "position": 4, "name": "Review Results", "text": "Review results showing database matches or clean status in 3 seconds" },
-            { "@type": "HowToStep", "position": 5, "name": "Take Action", "text": "If flagged as stolen, walk away and report to ATF at 1-800-283-4867" }
-          ]
-        },
-        {
-          "@type": "WebPage",
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", ".speakable-summary"]
-          },
-          "name": "Free Gun Serial Number Lookup",
-          "url": "https://safeorstolen.com/firearms-check",
-          "dateModified": "2026-02-12"
-        }
+      "@type": "Service",
+      "name": "Free Gun Serial Number Lookup",
+      "url": "https://safeorstolen.com/firearms-check",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
+      },
+      "serviceType": "Firearm Theft Verification",
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "description": "Free gun serial number lookup against FBI NCIC, ATF, and 50 state databases. Check if any firearm is stolen before buying. 2 free checks, instant results.",
+      "dateModified": "2026-02-12"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check if a Gun is Stolen",
+      "dateModified": "2026-02-12",
+      "totalTime": "PT1M",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Find Serial Number", "text": "Locate the firearm serial number on the frame, receiver, barrel, or slide" },
+        { "@type": "HowToStep", "position": 2, "name": "Record Serial Number", "text": "Record the complete serial number including all letters and numbers" },
+        { "@type": "HowToStep", "position": 3, "name": "Enter Serial Number", "text": "Enter the serial number into SafeOrStolen's free verification tool at safeorstolen.com/verify" },
+        { "@type": "HowToStep", "position": 4, "name": "Review Results", "text": "Review results showing database matches or clean status in 3 seconds" },
+        { "@type": "HowToStep", "position": 5, "name": "Take Action", "text": "If flagged as stolen, walk away and report to ATF at 1-800-283-4867" }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".speakable-summary"]
+      },
+      "name": "Free Gun Serial Number Lookup",
+      "url": "https://safeorstolen.com/firearms-check",
+      "dateModified": "2026-02-12"
     },
     {
       "@context": "https://schema.org",
