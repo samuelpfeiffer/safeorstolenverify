@@ -1260,6 +1260,19 @@ export type Database = {
       is_service_role: { Args: never; Returns: boolean }
       is_service_role_or_admin: { Args: never; Returns: boolean }
       reset_monthly_verifications: { Args: never; Returns: undefined }
+      retrieve_pending_verification: {
+        Args: { p_session_id: string }
+        Returns: Json
+      }
+      save_pending_verification: {
+        Args: {
+          p_item_type?: string
+          p_serial_number: string
+          p_session_id: string
+          p_user_intent?: string
+        }
+        Returns: Json
+      }
       subscribe_to_newsletter: { Args: { user_email: string }; Returns: Json }
       subscribe_to_newsletter_secure: {
         Args: { client_ip?: string; user_email: string }

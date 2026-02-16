@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
@@ -27,7 +27,7 @@ export const usePendingVerification = () => {
     return sessionId;
   };
 
-  // Save verification data before redirecting to auth
+  // Save verification data via secure RPC (session_id scoped)
   const savePendingVerification = async (
     serialNumber: string, 
     itemType?: string, 
@@ -37,14 +37,12 @@ export const usePendingVerification = () => {
       setIsLoading(true);
       const sessionId = getSessionId();
 
-      const { error } = await supabase
-        .from('pending_verifications')
-        .insert({
-          session_id: sessionId,
-          serial_number: serialNumber,
-          item_type: itemType,
-          user_intent: userIntent
-        });
+      const { error } = await supabase.rpc('save_pending_verification', {
+        p_session_id: sessionId,
+        p_serial_number: serialNumber,
+        p_item_type: itemType || null,
+        p_user_intent: userIntent || null
+      });
 
       if (error) {
         console.error('Error saving pending verification:', error);
@@ -65,43 +63,36 @@ export const usePendingVerification = () => {
     }
   };
 
-  // Retrieve pending verification after auth
+  // Retrieve pending verification via secure RPC (session_id scoped)
   const retrievePendingVerification = async (): Promise<PendingVerification | null> => {
     try {
       const sessionId = getSessionId();
       
-      const { data, error } = await supabase
-        .from('pending_verifications')
-        .select('*')
-        .eq('session_id', sessionId)
-        .gt('expires_at', new Date().toISOString())
-        .order('created_at', { ascending: false })
-        .limit(1)
-        .maybeSingle();
+      const { data, error } = await supabase.rpc('retrieve_pending_verification', {
+        p_session_id: sessionId
+      });
 
       if (error) {
         console.error('Error retrieving pending verification:', error);
         return null;
       }
 
-      if (data) {
-        // Type-safe casting of user_intent
+      if (data && typeof data === 'object' && 'id' in (data as Record<string, unknown>)) {
+        const record = data as Record<string, string>;
         const typedData: PendingVerification = {
-          ...data,
-          user_intent: data.user_intent as 'buyer' | 'seller' | null
+          id: record.id,
+          session_id: record.session_id,
+          serial_number: record.serial_number,
+          item_type: record.item_type,
+          user_intent: record.user_intent as 'buyer' | 'seller' | null,
+          created_at: record.created_at,
+          expires_at: record.expires_at
         };
         setPendingVerification(typedData);
-        // Clean up the pending verification after retrieval
-        await supabase
-          .from('pending_verifications')
-          .delete()
-          .eq('id', data.id);
+        return typedData;
       }
 
-      return data ? {
-        ...data,
-        user_intent: data.user_intent as 'buyer' | 'seller' | null
-      } : null;
+      return null;
     } catch (error) {
       console.error('Error in retrievePendingVerification:', error);
       return null;
