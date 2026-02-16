@@ -100,7 +100,6 @@ const ReportStolenTool = () => {
         <SEOHead
           title="Report Submitted"
           description="Your stolen item report has been submitted successfully. Thank you for helping protect other buyers."
-          noIndex
         />
 
         <div className="min-h-screen bg-background py-12">
@@ -137,7 +136,6 @@ const ReportStolenTool = () => {
         title="Report Stolen Item"
         description="Report a stolen item to help protect other buyers. Add to our community database."
         canonical="/report"
-        noIndex
       />
 
       <div className="min-h-screen bg-background py-12">

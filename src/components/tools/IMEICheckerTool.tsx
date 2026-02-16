@@ -90,7 +90,6 @@ const IMEICheckerTool = () => {
         title="IMEI Checker Tool"
         description="Check if a phone or tablet is blacklisted or stolen using IMEI verification. Free IMEI lookup tool."
         canonical="/tools/imei-checker"
-        noIndex
       />
 
       <div className="min-h-screen bg-background py-12">
