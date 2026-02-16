@@ -40,38 +40,38 @@ export const ItemLandingPageTemplate = ({
   
   const fullUrl = `https://safeorstolen.com${location.pathname}`;
 
-  // Service and HowTo schemas in @graph
+  // Service schema
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": `${itemType} Verification Service`,
-        "url": fullUrl,
-        "provider": {
-          "@type": "Organization",
-          "name": "SafeOrStolen",
-          "url": "https://safeorstolen.com"
-        },
-        "serviceType": `${itemType} Theft Verification`,
-        "areaServed": {
-          "@type": "Place",
-          "name": "Worldwide"
-        },
-        "description": metaDescription,
-        "dateModified": "2026-02-06"
-      },
-      {
-        "@type": "HowTo",
-        "name": `How to Check if ${itemType} is Stolen`,
-        "dateModified": "2026-02-06",
-        "step": content.process.map((step, index) => ({
-          "@type": "HowToStep",
-          "position": index + 1,
-          "name": step
-        }))
-      }
-    ]
+    "@type": "Service",
+    "name": `${itemType} Verification Service`,
+    "url": fullUrl,
+    "provider": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    },
+    "serviceType": `${itemType} Theft Verification`,
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "description": metaDescription,
+    "dateModified": "2026-02-06"
+  };
+
+  // HowTo schema - separate root-level with both name and text on steps
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How to Check if ${itemType} is Stolen`,
+    "dateModified": "2026-02-06",
+    "step": content.process.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": `Step ${index + 1}`,
+      "text": step
+    }))
   };
 
   // BreadcrumbList schema for navigation
@@ -84,7 +84,7 @@ export const ItemLandingPageTemplate = ({
     ]
   };
 
-  // FAQPage must be SEPARATE root-level schema (not nested in @graph)
+  // FAQPage - separate root-level schema with clean text (no special chars)
   const faqSchema = content.faqs && content.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -93,13 +93,13 @@ export const ItemLandingPageTemplate = ({
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer
+        "text": faq.answer.replace(/[""]/g, '"').replace(/['']/g, "'")
       }
     }))
   } : null;
 
-  // Combine schemas for PageSEO
-  const structuredData = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+  // Combine schemas for PageSEO - each as separate root-level schema
+  const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
     <>
