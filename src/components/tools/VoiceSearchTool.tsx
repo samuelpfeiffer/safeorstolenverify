@@ -47,7 +47,6 @@ const VoiceSearchTool = () => {
         title="Voice Search"
         description="Hands-free verification using voice commands. Speak serial numbers for instant stolen item checks."
         canonical="/tools/voice-search"
-        noIndex
       />
 
       <div className="min-h-screen bg-background py-12">

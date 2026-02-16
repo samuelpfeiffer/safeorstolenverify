@@ -89,7 +89,6 @@ const VINVerificationTool = () => {
         title="VIN Verification Tool"
         description="Check vehicle theft history using VIN verification. Cross-references NICB and NHTSA databases."
         canonical="/tools/vin-verification"
-        noIndex
       />
 
       <div className="min-h-screen bg-background py-12">

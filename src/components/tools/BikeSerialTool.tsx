@@ -84,7 +84,6 @@ const BikeSerialTool = () => {
         title="Bike Serial Lookup"
         description="Check if a bicycle is stolen using the Bike Index registry. Free bike serial number lookup tool."
         canonical="/tools/bike-serial"
-        noIndex
       />
 
       <div className="min-h-screen bg-background py-12">

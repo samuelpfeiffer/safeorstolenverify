@@ -55,7 +55,6 @@ const AIFraudAnalyzer = () => {
         title="AI Fraud Analyzer"
         description="AI-powered fraud analysis tool. Assess risk levels for secondhand purchases using intelligent pattern detection."
         canonical="/tools/ai-fraud-analyzer"
-        noIndex
       />
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4 max-w-3xl">
