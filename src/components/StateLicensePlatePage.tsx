@@ -49,37 +49,34 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": `${stateData.name} License Plate Lookup`,
-          "url": `https://safeorstolen.com/${stateData.slug}`,
-          "provider": {
-            "@type": "Organization",
-            "name": "SafeOrStolen",
-            "url": "https://safeorstolen.com"
-          },
-          "serviceType": "Vehicle Theft Verification",
-          "areaServed": {
-            "@type": "State",
-            "name": stateData.name,
-            "containedInPlace": {
-              "@type": "Country",
-              "name": "United States"
-            }
-          },
-          "description": metaDescription
-        },
-        {
-          "@type": "HowTo",
-          "name": `How to Check ${stateData.name} License Plate`,
-          "step": [
-            { "@type": "HowToStep", "position": 1, "name": `Record the ${stateData.abbrev} license plate number` },
-            { "@type": "HowToStep", "position": 2, "name": "Enter plate into verification tool" },
-            { "@type": "HowToStep", "position": 3, "name": "Review theft status and registration" },
-            { "@type": "HowToStep", "position": 4, "name": "Verify VIN before purchase" }
-          ]
+      "@type": "Service",
+      "name": `${stateData.name} License Plate Lookup`,
+      "url": `https://safeorstolen.com/${stateData.slug}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
+      },
+      "serviceType": "Vehicle Theft Verification",
+      "areaServed": {
+        "@type": "State",
+        "name": stateData.name,
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "United States"
         }
+      },
+      "description": metaDescription
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": `How to Check ${stateData.name} License Plate`,
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": `Record the ${stateData.abbrev} license plate number`, "text": `Record the ${stateData.abbrev} license plate number` },
+        { "@type": "HowToStep", "position": 2, "name": "Enter plate into verification tool", "text": "Enter plate into verification tool" },
+        { "@type": "HowToStep", "position": 3, "name": "Review theft status and registration", "text": "Review theft status and registration" },
+        { "@type": "HowToStep", "position": 4, "name": "Verify VIN before purchase", "text": "Verify VIN before purchase" }
       ]
     },
     {

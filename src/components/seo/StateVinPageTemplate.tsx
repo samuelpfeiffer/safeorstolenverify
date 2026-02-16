@@ -48,45 +48,45 @@ export const StateVinPageTemplate = ({
     const licensePlateSlug = `${state.toLowerCase().replace(/\s+/g, '-')}-license-plate-lookup`;
     const uniqueContent: StateUniqueContent | undefined = getStateUniqueContent(licensePlateSlug);
   
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": `${state} VIN Check Service`,
-        "provider": {
-          "@type": "Organization",
-          "name": "SafeOrStolen"
-        },
-        "serviceType": "Vehicle History Verification",
-        "areaServed": {
-          "@type": "State",
-          "name": state
-        },
-        "description": metaDescription,
-        "dateModified": "2026-02-06"
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `${state} VIN Check Service`,
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
+      "serviceType": "Vehicle History Verification",
+      "areaServed": {
+        "@type": "State",
+        "name": state
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
-          { "@type": "ListItem", "position": 2, "name": "VIN Checker", "item": "https://safeorstolen.com/vin-checker" },
-          { "@type": "ListItem", "position": 3, "name": `${state} VIN Lookup`, "item": canonicalUrl }
-        ]
-      }
-    ]
-  };
+      "description": metaDescription,
+      "dateModified": "2026-02-06"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+        { "@type": "ListItem", "position": 2, "name": "VIN Checker", "item": "https://safeorstolen.com/vin-checker" },
+        { "@type": "ListItem", "position": 3, "name": `${state} VIN Lookup`, "item": canonicalUrl }
+      ]
+    }
+  ];
 
   return (
     <>

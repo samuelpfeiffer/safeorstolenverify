@@ -29,33 +29,30 @@ const PartialSerialNumberSearchPage = () => {
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": "Partial Serial Number Search",
-          "url": "https://safeorstolen.com/partial-serial-number-search",
-          "provider": {
-            "@type": "Organization",
-            "name": "SafeOrStolen",
-            "url": "https://safeorstolen.com"
-          },
-          "serviceType": "Stolen Property Verification",
-          "areaServed": {
-            "@type": "Place",
-            "name": "Worldwide"
-          },
-          "description": "Search for stolen items with partial or incomplete serial numbers using fuzzy matching across 100+ databases."
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to Search with Partial Serial Numbers",
-          "step": [
-            { "@type": "HowToStep", "position": 1, "name": "Enter the characters you can read" },
-            { "@type": "HowToStep", "position": 2, "name": "Use * or ? for unknown characters" },
-            { "@type": "HowToStep", "position": 3, "name": "We search using fuzzy matching algorithms" },
-            { "@type": "HowToStep", "position": 4, "name": "Review potential matches from results" }
-          ]
-        }
+      "@type": "Service",
+      "name": "Partial Serial Number Search",
+      "url": "https://safeorstolen.com/partial-serial-number-search",
+      "provider": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
+      },
+      "serviceType": "Stolen Property Verification",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "description": "Search for stolen items with partial or incomplete serial numbers using fuzzy matching across 100+ databases."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Search with Partial Serial Numbers",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter known characters", "text": "Enter the characters you can read" },
+        { "@type": "HowToStep", "position": 2, "name": "Mark unknowns", "text": "Use * or ? for unknown characters" },
+        { "@type": "HowToStep", "position": 3, "name": "Fuzzy search", "text": "We search using fuzzy matching algorithms" },
+        { "@type": "HowToStep", "position": 4, "name": "Review matches", "text": "Review potential matches from results" }
       ]
     },
     {

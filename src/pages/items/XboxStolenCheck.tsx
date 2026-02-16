@@ -50,28 +50,25 @@ const XboxStolenCheck = () => {
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": "Xbox Stolen Check - Serial Number Verification",
-          "url": "https://safeorstolen.com/check-xbox",
-          "provider": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
-          "serviceType": "Gaming Console Theft Verification",
-          "areaServed": { "@type": "Country", "name": "United States" },
-          "description": "Verify Xbox Series X, Series S, and Xbox One serial numbers against stolen property databases. Free instant check before buying used gaming consoles.",
-          "dateModified": "2026-02-06"
-        },
-        {
-          "@type": "HowTo",
-          "name": "How to Check if an Xbox is Stolen",
-          "dateModified": "2026-02-06",
-          "step": [
-            { "@type": "HowToStep", "position": 1, "name": "Find the Xbox serial number on the back or bottom of the console, or in Settings → System → Console Info" },
-            { "@type": "HowToStep", "position": 2, "name": "Enter the 12-digit serial number into SafeOrStolen's free verification tool" },
-            { "@type": "HowToStep", "position": 3, "name": "We search police databases, insurance claims, pawn shop records, and Microsoft ban lists" },
-            { "@type": "HowToStep", "position": 4, "name": "Get instant results in 3 seconds showing if the Xbox is safe or reported stolen" }
-          ]
-        }
+      "@type": "Service",
+      "name": "Xbox Stolen Check - Serial Number Verification",
+      "url": "https://safeorstolen.com/check-xbox",
+      "provider": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" },
+      "serviceType": "Gaming Console Theft Verification",
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "description": "Verify Xbox Series X, Series S, and Xbox One serial numbers against stolen property databases. Free instant check before buying used gaming consoles.",
+      "dateModified": "2026-02-06"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check if an Xbox is Stolen",
+      "dateModified": "2026-02-06",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Find the Xbox serial number", "text": "Find the Xbox serial number on the back or bottom of the console, or in Settings → System → Console Info" },
+        { "@type": "HowToStep", "position": 2, "name": "Enter the serial number", "text": "Enter the 12-digit serial number into SafeOrStolen's free verification tool" },
+        { "@type": "HowToStep", "position": 3, "name": "We search databases", "text": "We search police databases, insurance claims, pawn shop records, and Microsoft ban lists" },
+        { "@type": "HowToStep", "position": 4, "name": "Get instant results", "text": "Get instant results in 3 seconds showing if the Xbox is safe or reported stolen" }
       ]
     },
     {
