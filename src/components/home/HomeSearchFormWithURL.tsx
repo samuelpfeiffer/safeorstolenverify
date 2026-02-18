@@ -64,8 +64,8 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
   };
 
   return (
-    <div className={cn('w-full max-w-2xl mx-auto', className)}>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className={cn('w-full max-w-xl mx-auto', className)}>
+      <form onSubmit={handleSubmit} className="space-y-3">
         <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
@@ -73,19 +73,19 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder={`Enter ${typingText}...`}
-            className="pl-12 pr-4 h-14 text-lg bg-card border-2 border-border focus:border-primary transition-colors rounded-xl"
+            className="pl-12 pr-4 h-14 text-base bg-muted/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all rounded-2xl"
           />
         </div>
         
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           <Button 
             type="submit" 
             size="lg" 
-            className="flex-1 h-14 text-lg font-bold bg-primary hover:bg-primary/90 rounded-xl group"
+            className="flex-1 h-12 text-base font-semibold rounded-xl button-glow group"
             disabled={!inputValue.trim()}
           >
             Check Now
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
           
           <Button
@@ -93,7 +93,7 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
             variant="outline"
             size="lg"
             onClick={() => setIsScannerOpen(true)}
-            className="h-14 px-6 rounded-xl border-2"
+            className="h-12 px-5 rounded-xl"
           >
             <ScanLine className="w-5 h-5" />
           </Button>
@@ -101,11 +101,11 @@ export const HomeSearchFormWithURL: React.FC<HomeSearchFormWithURLProps> = ({ cl
       </form>
 
       {/* Supported inputs */}
-      <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-        <span className="px-3 py-1 bg-muted/30 rounded-full">📱 IMEI</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🚗 VIN</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🔢 Serial</span>
-        <span className="px-3 py-1 bg-muted/30 rounded-full">🔗 Listing URL</span>
+      <div className="mt-5 flex flex-wrap justify-center gap-2 text-xs text-muted-foreground">
+        <span className="px-3 py-1 bg-muted/30 rounded-full border border-border/50">IMEI</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full border border-border/50">VIN</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full border border-border/50">Serial #</span>
+        <span className="px-3 py-1 bg-muted/30 rounded-full border border-border/50">Listing URL</span>
       </div>
 
       {/* QR Scanner Modal */}
