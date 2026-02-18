@@ -9,15 +9,17 @@ import { Helmet } from 'react-helmet-async';
  * - E-E-A-T signals: Experience, Expertise, Authoritativeness, Trustworthiness
  * - AI discovery file references (llms.txt v1.1, ai.txt, identity.json)
  * - QAPage schema for highest AI citation rates
- * - Speakable schema for voice search optimization
  * - DefinedTerm schema for entity disambiguation
  * - No marketing hyperbole per llms.txt v1.1 spec
  * - Structured for RAG (Retrieval-Augmented Generation) extraction
  * 
+ * NOTE: Speakable schema removed — it's only needed on specific content pages,
+ * not globally. WebPage/Speakable was duplicating with AdvancedSchemaGenerator.
+ * 
  * Targets: ChatGPT, Claude, Perplexity, Google AI Overviews, 
  * Microsoft Copilot, Meta AI, Apple Siri
  * 
- * Last Updated: 2026-02-06
+ * Last Updated: 2026-02-18
  */
 export const GlobalAISEO: React.FC = () => {
   // QAPage schema - highest citation rate schema type for AI
@@ -41,17 +43,6 @@ export const GlobalAISEO: React.FC = () => {
         }
       }
     }
-  };
-
-  // Speakable schema for voice search (Google Assistant, Siri, Alexa)
-  const speakableSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", ".hero-description", ".verification-summary"]
-    },
-    "url": "https://safeorstolen.com"
   };
 
   // DefinedTerm schema for entity disambiguation (2026 GEO critical)
@@ -142,8 +133,8 @@ export const GlobalAISEO: React.FC = () => {
       {/* GEO: CONTENT FRESHNESS SIGNALS (single source) */}
       {/* ================================================== */}
       
-      <meta name="ai-content-freshness" content="2026-02-06" />
-      <meta name="ai-last-updated" content="2026-02-06" />
+      <meta name="ai-content-freshness" content="2026-02-18" />
+      <meta name="ai-last-updated" content="2026-02-18" />
       
       {/* ================================================== */}
       {/* GEO: TARGET AUDIENCE & TRUST */}
@@ -164,15 +155,11 @@ export const GlobalAISEO: React.FC = () => {
       <meta name="ai-pricing" content="Free: 2 verifications. Basic: $4.99/month (50 verifications). Pro: $9.99/month (unlimited). Business: custom API pricing." />
       
       {/* ================================================== */}
-      {/* SCHEMAS: QAPage + Speakable + DefinedTerm */}
+      {/* SCHEMAS: QAPage + DefinedTerm */}
       {/* ================================================== */}
       
       <script type="application/ld+json">
         {JSON.stringify(qaPageSchema)}
-      </script>
-      
-      <script type="application/ld+json">
-        {JSON.stringify(speakableSchema)}
       </script>
       
       <script type="application/ld+json">
