@@ -2,17 +2,16 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Download, Trophy, ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield, Database, Zap } from 'lucide-react';
 import { lazy, Suspense } from 'react';
 
-// Critical above-fold components - loaded immediately
+// Critical above-fold components
 const heroImage = '/images/hero-device.png';
 import { HomeSearchFormWithURL } from '@/components/home/HomeSearchFormWithURL';
 
 // Lazy loaded components for below-fold content
 import { LazySection } from '@/components/performance/LazySection';
 
-// Dynamic imports for heavy components (reduces initial JS bundle)
 const TrustBadgesStrip = lazy(() => import('@/components/marketing/TrustBadgesStrip').then(m => ({ default: m.TrustBadgesStrip })));
 const DataSourcesSection = lazy(() => import('@/components/home/DataSourcesSection').then(m => ({ default: m.DataSourcesSection })));
 const PressMediaSection = lazy(() => import('@/components/home/PressMediaSection').then(m => ({ default: m.PressMediaSection })));
@@ -31,18 +30,13 @@ const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m =
 // Homepage content sections (static, not lazy - for SEO)
 import { HomeContentSections } from '@/components/home/HomeContentSections';
 
-// Remove above-fold lazy components - they hurt LCP on mobile
-// SocialProofBanner and QuickValueProof moved to static content
-
-// Loading skeleton for sections - with fixed heights to prevent CLS
 const SectionSkeleton = ({ height = '8rem' }: { height?: string }) => (
-  <div className="animate-pulse bg-muted/30 rounded-lg" style={{ minHeight: height }} />
+  <div className="animate-pulse bg-muted/20 rounded-2xl" style={{ minHeight: height }} />
 );
 
 const Index = () => {
   return (
     <>
-      {/* NOTE: WebSite and Organization schemas are in index.html - DO NOT duplicate here */}
       <PageSEO
         title="Free Stolen Item Checker - IMEI VIN Serial Verification"
         description="Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. 2 free searches. Results in 3 seconds."
@@ -50,138 +44,119 @@ const Index = () => {
         canonical="/"
       />
       
-      {/* Minimal noscript fallback for crawlers */}
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Stolen Item Checker - Free IMEI, VIN & Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds. The only mobile app for stolen item checking.</p>
-          <p>Visit safeorstolen.com/verify to check any item before buying or selling.</p>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds.</p>
         </div>
       </noscript>
 
       <TrustHeaderBar />
       
       <div className="min-h-screen">
-        {/* Hero Section - Optimized for LCP */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto text-center space-y-5">
-              {/* Static H1 - no lazy loading, instant render for LCP */}
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Check If Secondhand Items Are Safe Or Stolen
-              </h1>
-              <p className="text-xl md:text-2xl font-medium text-foreground/80">
-                The trusted verification service for buyers, sellers, and businesses worldwide
-              </p>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Cross-references <strong>police databases</strong>, <strong>NICB</strong>, <strong>insurance claims</strong>, and <strong>100+ global sources</strong> in real-time. Paste a Facebook Marketplace, eBay, or Craigslist link — or enter any IMEI, VIN, or serial number. Results in 3 seconds.
-              </p>
-              
-              {/* Static trust indicator - no lazy load, instant CWV win */}
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">✓ 2 Free Searches</span>
-                <span className="flex items-center gap-1">✓ 100+ Databases</span>
-                <span className="flex items-center gap-1">✓ 3-Second Results</span>
-              </div>
-              
-              {/* Search Form - Primary Action (critical, loaded eagerly) */}
-              <div className="pt-4">
-                <HomeSearchFormWithURL />
-              </div>
-              
-              {/* Secondary CTAs */}
-              <div className="flex flex-wrap justify-center gap-3 pt-2">
-                <Button asChild size="lg" variant="outline">
-                  <Link to="/app">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download App
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="ghost">
-                  <Link to="/how-it-works">
-                    Learn How It Works
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+        {/* ─── Hero Section ─── */}
+        <section className="relative overflow-hidden">
+          {/* Subtle gradient glow behind hero */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.03] via-transparent to-transparent pointer-events-none" />
+          
+          <div className="container mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24">
+            <div className="max-w-3xl mx-auto text-center space-y-8">
+              {/* Trust pill */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-muted/40 text-sm text-muted-foreground">
+                <Shield className="h-3.5 w-3.5 text-primary" />
+                <span>Trusted by buyers & sellers across all 50 states</span>
               </div>
 
-              {/* Hero Image - LCP Optimized: simpler on mobile, no blur effects */}
+              {/* Headline */}
+              <h1 className="text-foreground">
+                Verify any item is
+                <span className="text-gradient"> safe to buy</span>
+              </h1>
+              
+              {/* Sub-headline */}
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
+                Check IMEI, VIN, or serial numbers against 100+ law enforcement and insurance databases. Results in 3 seconds. 2 free checks.
+              </p>
+
+              {/* Search Form */}
+              <div className="pt-2">
+                <HomeSearchFormWithURL />
+              </div>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="container mx-auto px-4 pb-16 md:pb-24">
+            <div className="max-w-4xl mx-auto">
               <div 
-                className="mt-8 max-w-4xl mx-auto" 
+                className="relative rounded-2xl overflow-hidden border border-border/50"
                 style={{ aspectRatio: '16/9', minHeight: '200px' }}
                 data-hero-img
               >
-                <div className="relative h-full">
-                  {/* Desktop only: gradient glow (hidden on mobile for perf) */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-3xl opacity-75 blur-2xl hidden lg:block" />
-                  <picture>
-                    {/* WebP for modern browsers */}
-                    <source srcSet="/images/hero-device.webp" type="image/webp" />
-                    {/* Fallback PNG */}
-                    <img 
-                      src={heroImage} 
-                      alt="SafeOrStolen app - IMEI checker, VIN checker with instant 3 second verification results" 
-                      className="relative w-full h-full object-cover rounded-2xl shadow-2xl border border-primary/30"
-                      loading="eager"
-                      fetchPriority="high"
-                      decoding="async"
-                      width="1200"
-                      height="675"
-                    />
-                  </picture>
-                </div>
+                <picture>
+                  <source srcSet="/images/hero-device.webp" type="image/webp" />
+                  <img 
+                    src={heroImage} 
+                    alt="SafeOrStolen verification dashboard showing IMEI, VIN, and serial number check results" 
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width="1200"
+                    height="675"
+                  />
+                </picture>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Static SEO content - always rendered (not lazy) for bot visibility */}
-        <section className="py-8 bg-muted/20 border-y border-border/50">
+        {/* ─── Feature Strip ─── */}
+        <section className="py-12 border-y border-border/50 bg-muted/20">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">Why Verify Before You Buy?</h2>
-              <p className="text-muted-foreground mb-4">
+            <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Database,
+                  title: 'For Buyers',
+                  desc: 'Verify any item before paying. If seized by police, you lose your money with no recourse.'
+                },
+                {
+                  icon: Shield,
+                  title: 'For Sellers',
+                  desc: 'Build trust with verified listings. Share a verification certificate to prove legitimacy.'
+                },
+                {
+                  icon: Zap,
+                  title: 'For Businesses',
+                  desc: 'Pawn shops and dealers use bulk verification via API. Comply with state due diligence.'
+                }
+              ].map((item, i) => (
+                <div key={i} className="modern-card p-6 space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Static SEO content ─── */}
+        <section className="py-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="mb-4">Why Verify Before You Buy?</h2>
+              <p className="text-muted-foreground leading-relaxed">
                 Over $15 billion worth of property is stolen annually in the United States. When buying secondhand phones, cars, bikes, laptops, or electronics from Facebook Marketplace, Craigslist, OfferUp, or eBay, there is a real risk of purchasing stolen goods. SafeOrStolen is the only verification service with a mobile app that lets you check IMEI numbers for phones, VIN numbers for vehicles, and serial numbers for electronics against over 100 law enforcement, insurance, and manufacturer databases in just 3 seconds.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div className="p-4 rounded-lg bg-background border border-border">
-                  <h3 className="font-semibold mb-2 text-foreground">For Buyers</h3>
-                  <p className="text-muted-foreground">Protect yourself from buying stolen goods. Verify any item before paying. If stolen property is seized by police, you lose your money with no recourse.</p>
-                </div>
-                <div className="p-4 rounded-lg bg-background border border-border">
-                  <h3 className="font-semibold mb-2 text-foreground">For Sellers</h3>
-                  <p className="text-muted-foreground">Build buyer trust with verified listings. Share a SafeOrStolen verification certificate to prove your items are legitimate and increase sale prices.</p>
-                </div>
-                <div className="p-4 rounded-lg bg-background border border-border">
-                  <h3 className="font-semibold mb-2 text-foreground">For Businesses</h3>
-                  <p className="text-muted-foreground">Pawn shops, dealers, and resellers use SafeOrStolen to verify inventory. Bulk verification via API integration. Comply with state due diligence requirements.</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* OneValley / EWC Recognition Strip - Static, minimal JS */}
-        <section className="py-4 bg-gradient-to-r from-amber-500/5 via-background to-amber-500/5 border-y border-border/50">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-              <Trophy className="h-5 w-5 text-amber-500 flex-shrink-0" />
-              <p className="text-sm text-muted-foreground">
-                Recognized by <strong className="text-foreground">OneValley</strong> and the{' '}
-                <strong className="text-foreground">Entrepreneurship World Cup 2020</strong> for innovative 
-                SaaS/Enterprise disruption · Representing the United States
-              </p>
-              <Link 
-                to="/news/onevalley-recognition" 
-                className="text-xs text-primary hover:underline whitespace-nowrap"
-              >
-                Learn more →
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Below-fold content - All lazy loaded */}
+        {/* ─── Below-fold lazy sections ─── */}
         <LazySection minHeight="80px">
           <Suspense fallback={<SectionSkeleton />}>
             <TrustBadgesStrip />
@@ -212,15 +187,12 @@ const Index = () => {
           </Suspense>
         </LazySection>
 
-        {/* Simplified Stats */}
         <LazySection minHeight="100px">
-          <section className="py-6 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <Suspense fallback={<SectionSkeleton />}>
-                  <LiveStatsCounter />
-                </Suspense>
-              </div>
+          <section className="py-8 bg-muted/20">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <Suspense fallback={<SectionSkeleton />}>
+                <LiveStatsCounter />
+              </Suspense>
             </div>
           </section>
         </LazySection>
@@ -248,7 +220,7 @@ const Index = () => {
         </LazySection>
 
         <LazySection minHeight="200px">
-          <section className="py-12 bg-muted/30">
+          <section className="py-12 bg-muted/20">
             <div className="container mx-auto px-4 max-w-2xl">
               <Suspense fallback={<SectionSkeleton />}>
                 <EmailCaptureHero />
@@ -281,11 +253,8 @@ const Index = () => {
           </Suspense>
         </LazySection>
 
-        {/* Static SEO content sections - NOT lazy loaded for bot visibility */}
         <HomeContentSections />
       </div>
-      
-      {/* ExitIntentPopup is now rendered globally in AppRoot */}
     </>
   );
 };

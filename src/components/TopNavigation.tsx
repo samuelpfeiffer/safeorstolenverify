@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, Youtube, Twitter, Facebook, Linkedin, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -23,18 +23,15 @@ const TopNavigation = () => {
   };
 
   const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/check-if-stolen', label: 'Check If Stolen', featured: true },
     { to: '/verify', label: 'Verify' },
+    { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
     { to: '/compare', label: 'Compare' },
-    { to: '/pricing', label: 'Pricing' },
-    { to: '/app', label: 'Download App', featured: true },
+    { to: '/app', label: 'App' },
   ];
 
   const resourceLinks = [
     { to: '/blog', label: 'Blog', icon: BookOpen },
-    { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/faq', label: 'Help & FAQ', icon: HelpCircle },
     { to: '/how-it-works', label: 'How It Works', icon: FileText },
     { to: '/for-businesses', label: 'For Business', icon: Building2 },
@@ -42,56 +39,44 @@ const TopNavigation = () => {
     { to: '/partial-serial-number-search', label: 'Partial Serial Search', icon: Search },
   ];
 
-  const authenticatedLinks = [
-    { to: '/dashboard', label: 'Analytics', icon: 'BarChart' },
-    { to: '/report-stolen', label: 'Report Stolen', icon: 'AlertCircle' },
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-xl border-b border-border/50 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <img 
               src={sosLogo} 
               alt="SafeOrStolen Logo" 
-              className="h-12 w-auto transition-transform group-hover:scale-105"
+              className="h-9 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-2xl font-black tracking-tight">
-              <span className="text-foreground">Safe</span>
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Or</span>
-              <span className="bg-gradient-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">Stolen</span>
+            <span className="text-lg font-bold tracking-tight text-foreground">
+              SafeOrStolen
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-semibold transition-colors relative group py-2 ${
-                  link.featured 
-                    ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
+                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
             
             {/* Resources Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 outline-none">
+              <DropdownMenuTrigger className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 outline-none">
                 Resources
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3.5 h-3.5" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-48 bg-background border border-border shadow-lg">
+              <DropdownMenuContent align="center" className="w-52 bg-card border border-border shadow-xl rounded-xl">
                 {resourceLinks.map((link) => (
-                  <DropdownMenuItem key={link.to} onClick={() => navigate(link.to)} className="cursor-pointer">
-                    <link.icon className="w-4 h-4 mr-2" />
+                  <DropdownMenuItem key={link.to} onClick={() => navigate(link.to)} className="cursor-pointer gap-2">
+                    <link.icon className="w-4 h-4 text-muted-foreground" />
                     {link.label}
                   </DropdownMenuItem>
                 ))}
@@ -99,243 +84,103 @@ const TopNavigation = () => {
             </DropdownMenu>
           </div>
 
-          {/* Desktop Auth + Social */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Social Media Links */}
-            <div className="flex items-center gap-2 mr-2">
-              <a
-                href="https://twitter.com/safeorstolen"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="SafeOrStolen on X/Twitter"
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
-              >
-                <Twitter className="w-4 h-4 text-muted-foreground hover:text-primary" />
-              </a>
-              <a
-                href="https://www.facebook.com/safeorstolen"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="SafeOrStolen on Facebook"
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
-              >
-                <Facebook className="w-4 h-4 text-muted-foreground hover:text-primary" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/safeorstolen"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="SafeOrStolen on LinkedIn"
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
-              >
-                <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary" />
-              </a>
-              <Link
-                to="/youtube"
-                aria-label="SafeOrStolen on YouTube"
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-border/60 hover:border-primary hover:bg-primary/5 transition-colors"
-              >
-                <Youtube className="w-4 h-4 text-muted-foreground hover:text-primary" />
-              </Link>
-            </div>
+          {/* Desktop Auth */}
+          <div className="hidden md:flex items-center gap-3">
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="gap-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all"
-                  >
+                  <Button variant="outline" size="sm" className="gap-2 rounded-lg">
                     <User className="w-4 h-4" />
-                    <span>Account</span>
+                    Account
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-48">
-                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>
-                    Dashboard
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/profile')}>
-                    Profile
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>
-                    History
-                  </DropdownMenuItem>
+                <DropdownMenuContent align="end" className="w-48 rounded-xl">
+                  <DropdownMenuItem onClick={() => navigate('/dashboard')}>Dashboard</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/profile')}>Profile</DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => navigate('/dashboard')}>
-                    <BarChart className="w-4 h-4 mr-2" />
-                    Analytics
+                    <BarChart className="w-4 h-4 mr-2" />Analytics
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/report-stolen')}>
-                    <AlertCircle className="w-4 h-4 mr-2" />
-                    Report Stolen
+                    <AlertCircle className="w-4 h-4 mr-2" />Report Stolen
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleSignOut}>
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Sign Out
+                    <LogOut className="w-4 h-4 mr-2" />Sign Out
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
               <>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => navigate('/auth')}
-                  className="text-foreground hover:text-sos-orange transition-colors"
-                >
+                <Button variant="ghost" size="sm" onClick={() => navigate('/auth')} className="text-muted-foreground hover:text-foreground rounded-lg">
                   Sign In
                 </Button>
-                <Button
-                  size="sm"
-                  onClick={() => navigate('/auth?mode=signup')}
-                  className="sos-gradient hover:opacity-90 text-white font-bold shadow-orange transition-all"
-                >
+                <Button size="sm" onClick={() => navigate('/auth?mode=signup')} className="rounded-lg button-glow font-semibold">
                   Get Started
                 </Button>
               </>
             )}
           </div>
 
-          {/* Mobile menu button - 48x48 minimum tap target */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg hover:bg-muted/50 transition-colors"
+            className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-muted/50 transition-colors"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile Menu - Enhanced tap targets with 8px spacing */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border/50 py-4 space-y-2 animate-fadeIn">
+          <div className="md:hidden border-t border-border/50 py-4 space-y-1 animate-fadeIn">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-4 py-4 min-h-[48px] flex items-center text-foreground hover:bg-muted/50 rounded-lg font-semibold transition-colors"
+                className="block px-4 py-3 text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             
-            {/* Resources Section */}
-            <div className="px-4 pt-2">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Resources</p>
+            <div className="px-4 pt-3">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Resources</p>
               {resourceLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-2 py-3 min-h-[44px] text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
+                  className="flex items-center gap-3 px-2 py-3 text-foreground hover:bg-muted/50 rounded-lg font-medium transition-colors"
                 >
                   <link.icon className="w-4 h-4 text-muted-foreground" />
                   {link.label}
                 </Link>
               ))}
             </div>
-            <div className="pt-4 px-4 space-y-2 border-t border-border/50 mt-4">
+            
+            <div className="pt-4 px-4 space-y-2 border-t border-border/50 mt-3">
               {isAuthenticated ? (
                 <>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start gap-2"
-                    onClick={() => {
-                      navigate('/dashboard');
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
+                  <Button variant="outline" className="w-full justify-start gap-2 rounded-lg" onClick={() => { navigate('/dashboard'); setIsMobileMenuOpen(false); }}>
                     Dashboard
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start gap-2"
-                    onClick={() => {
-                      navigate('/profile');
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
-                    Profile
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start gap-2"
-                    onClick={() => {
-                      navigate('/dashboard');
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
-                    <BarChart className="w-4 h-4" />
-                    Analytics
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start gap-2"
-                    onClick={() => {
-                      navigate('/report-stolen');
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
-                    <AlertCircle className="w-4 h-4" />
-                    Report Stolen
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start gap-2 text-destructive"
-                    onClick={() => {
-                      handleSignOut();
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
-                    <LogOut className="w-4 h-4" />
-                    Sign Out
+                  <Button variant="outline" className="w-full justify-start gap-2 rounded-lg text-destructive" onClick={() => { handleSignOut(); setIsMobileMenuOpen(false); }}>
+                    <LogOut className="w-4 h-4" />Sign Out
                   </Button>
                 </>
               ) : (
                 <>
-                  <Button
-                    variant="outline"
-                    className="w-full"
-                    onClick={() => {
-                      navigate('/auth');
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
+                  <Button variant="outline" className="w-full rounded-lg" onClick={() => { navigate('/auth'); setIsMobileMenuOpen(false); }}>
                     Sign In
                   </Button>
-                  <Button
-                    className="w-full sos-gradient hover:opacity-90 text-white font-bold"
-                    onClick={() => {
-                      navigate('/auth?mode=signup');
-                      setIsMobileMenuOpen(false);
-                    }}
-                  >
+                  <Button className="w-full rounded-lg font-semibold" onClick={() => { navigate('/auth?mode=signup'); setIsMobileMenuOpen(false); }}>
                     Get Started
                   </Button>
                 </>
               )}
-            </div>
-            
-            {/* Mobile Social Links */}
-            <div className="flex items-center justify-center gap-4 pt-4 border-t border-border/50 mt-4">
-              <a href="https://twitter.com/safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter">
-                <Twitter className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-              </a>
-              <a href="https://www.facebook.com/safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-              </a>
-              <a href="https://www.linkedin.com/company/safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-              </a>
-              <a href="https://www.youtube.com/@safeorstolen" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <Youtube className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-              </a>
             </div>
           </div>
         )}

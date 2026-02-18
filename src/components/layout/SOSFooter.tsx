@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Youtube, Twitter, Linkedin, Shield, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+import { Youtube, Twitter, Linkedin, ChevronDown, ChevronUp } from 'lucide-react';
 import { handleExternalNavigation } from '@/utils/navigationUtils';
 import { Logo } from '@/components/common/Logo';
-import { TrustpilotBadge } from '@/components/social-proof/TrustpilotBadge';
 
 export const SOSFooter: React.FC = () => {
   const year = new Date().getFullYear();
   const [showAllLinks, setShowAllLinks] = useState(false);
   
-  // Main footer sections - always visible
   const footerSections = [
     {
       title: 'Verification',
@@ -42,7 +40,6 @@ export const SOSFooter: React.FC = () => {
         { label: 'FAQ', to: '/faq' },
         { label: 'Pricing', to: '/pricing' },
         { label: 'Compare Plans', to: '/compare' },
-        { label: 'Free Tools', to: '/free-tools' },
         { label: 'Testimonials', to: '/testimonials' },
       ]
     },
@@ -50,92 +47,50 @@ export const SOSFooter: React.FC = () => {
       title: 'Company',
       links: [
         { label: 'About Us', to: '/about' },
-        { label: 'App Features', to: '/app/features' },
-        { label: 'Download App', to: '/download' },
         { label: 'Press Kit', to: '/press-kit' },
+        { label: 'Terms', to: '/terms' },
+        { label: 'Privacy', to: '/privacy' },
       ]
     },
-    {
-      title: 'Legal',
-      links: [
-        { label: 'Terms of Service', to: '/terms' },
-        { label: 'Privacy Policy', to: '/privacy' },
-      ]
-    }
   ];
 
-  // Comprehensive sitemap links - shown when expanded
   const sitemapSections = [
     {
       title: 'State VIN Checks',
       links: [
-        { label: 'California VIN', to: '/california-vin-lookup' },
-        { label: 'Texas VIN', to: '/texas-vin-lookup' },
-        { label: 'Florida VIN', to: '/florida-vin-lookup' },
-        { label: 'New York VIN', to: '/new-york-vin-lookup' },
-        { label: 'Illinois VIN', to: '/illinois-vin-lookup' },
-        { label: 'Georgia VIN', to: '/georgia-vin-lookup' },
-        { label: 'Pennsylvania VIN', to: '/pennsylvania-vin-lookup' },
-        { label: 'Ohio VIN', to: '/ohio-vin-lookup' },
-        { label: 'North Carolina VIN', to: '/north-carolina-vin-lookup' },
-        { label: 'Washington VIN', to: '/washington-vin-lookup' },
+        { label: 'California', to: '/california-vin-lookup' },
+        { label: 'Texas', to: '/texas-vin-lookup' },
+        { label: 'Florida', to: '/florida-vin-lookup' },
+        { label: 'New York', to: '/new-york-vin-lookup' },
+        { label: 'Illinois', to: '/illinois-vin-lookup' },
+        { label: 'Georgia', to: '/georgia-vin-lookup' },
+        { label: 'Pennsylvania', to: '/pennsylvania-vin-lookup' },
+        { label: 'Ohio', to: '/ohio-vin-lookup' },
+        { label: 'North Carolina', to: '/north-carolina-vin-lookup' },
+        { label: 'Washington', to: '/washington-vin-lookup' },
       ]
     },
     {
-      title: 'License Plate Lookup',
+      title: 'License Plates',
       links: [
-        { label: 'California Plates', to: '/california-license-plate-lookup' },
-        { label: 'Texas Plates', to: '/texas-license-plate-lookup' },
-        { label: 'Florida Plates', to: '/florida-license-plate-lookup' },
-        { label: 'New York Plates', to: '/new-york-license-plate-lookup' },
-        { label: 'Illinois Plates', to: '/illinois-license-plate-lookup' },
-        { label: 'Georgia Plates', to: '/georgia-license-plate-lookup' },
-        { label: 'Pennsylvania Plates', to: '/pennsylvania-license-plate-lookup' },
-        { label: 'Ohio Plates', to: '/ohio-license-plate-lookup' },
-        { label: 'NC Plates', to: '/north-carolina-license-plate-lookup' },
-        { label: 'Washington Plates', to: '/washington-license-plate-lookup' },
+        { label: 'California', to: '/california-license-plate-lookup' },
+        { label: 'Texas', to: '/texas-license-plate-lookup' },
+        { label: 'Florida', to: '/florida-license-plate-lookup' },
+        { label: 'New York', to: '/new-york-license-plate-lookup' },
+        { label: 'Illinois', to: '/illinois-license-plate-lookup' },
       ]
     },
     {
-      title: 'City Verification',
-      links: [
-        { label: 'Los Angeles', to: '/stolen-check-los-angeles' },
-        { label: 'New York City', to: '/stolen-check-new-york-city' },
-        { label: 'Chicago', to: '/stolen-check-chicago' },
-        { label: 'Houston', to: '/stolen-check-houston' },
-        { label: 'Phoenix', to: '/stolen-check-phoenix' },
-        { label: 'Philadelphia', to: '/stolen-check-philadelphia' },
-        { label: 'San Antonio', to: '/stolen-check-san-antonio' },
-        { label: 'San Diego', to: '/stolen-check-san-diego' },
-        { label: 'Dallas', to: '/stolen-check-dallas' },
-        { label: 'San Jose', to: '/stolen-check-san-jose' },
-      ]
-    },
-    {
-      title: 'Marketplace Safety',
+      title: 'Marketplaces',
       links: [
         { label: 'Facebook Marketplace', to: '/facebook-marketplace-stolen-check' },
-        { label: 'Craigslist Safety', to: '/craigslist-safety-verification' },
-        { label: 'OfferUp Verify', to: '/offerup-verify-not-stolen' },
-        { label: 'eBay Check', to: '/ebay-stolen-item-check' },
+        { label: 'Craigslist', to: '/craigslist-safety-verification' },
+        { label: 'OfferUp', to: '/offerup-verify-not-stolen' },
+        { label: 'eBay', to: '/ebay-stolen-item-check' },
       ]
     },
     {
-      title: 'Item Checks',
-      links: [
-        { label: 'Check Bike', to: '/check-bike' },
-        { label: 'Check Laptop', to: '/check-laptop' },
-        { label: 'Check Electronics', to: '/check-electronics' },
-        { label: 'Check E-Bike', to: '/check-ebike' },
-        { label: 'Check Tools', to: '/check-tools' },
-        { label: 'Check Jewelry', to: '/check-jewelry' },
-        { label: 'Check Boat', to: '/check-boat' },
-        { label: 'Check Appliances', to: '/check-appliances' },
-        { label: 'License Plates', to: '/license-plate-lookup' },
-      ]
-    },
-    {
-      title: 'Compare Services',
+      title: 'Compare',
       links: [
         { label: 'vs CheckMEND', to: '/vs-checkmend' },
         { label: 'vs IMEI.info', to: '/vs-imeiinfo' },
@@ -144,64 +99,52 @@ export const SOSFooter: React.FC = () => {
         { label: 'vs AutoCheck', to: '/vs-autocheck' },
       ]
     },
-    {
-      title: 'Popular Guides',
-      links: [
-        { label: 'Check if Phone Stolen', to: '/blog/how-to-check-if-phone-stolen' },
-        { label: 'Check if iPhone Stolen', to: '/blog/how-to-check-if-iphone-stolen' },
-        { label: 'Complete VIN Guide', to: '/blog/complete-vin-guide' },
-        { label: 'Complete IMEI Guide', to: '/blog/complete-imei-guide-protect-yourself' },
-        { label: 'Marketplace Safety', to: '/blog/ultimate-marketplace-buyers-guide' },
-        { label: 'FB Marketplace Scams', to: '/blog/facebook-marketplace-scams' },
-        { label: 'Scammer Tactics', to: '/blog/scammer-tactics-exposed' },
-        { label: 'Pawn Shop Guide', to: '/blog/pawn-shop-stolen-item-verification' },
-      ]
-    },
-    {
-      title: 'More Resources',
-      links: [
-        { label: 'Is My Phone Stolen?', to: '/is-my-phone-stolen' },
-        { label: 'Is This Car Stolen?', to: '/is-this-car-stolen' },
-        { label: 'Is This Laptop Stolen?', to: '/is-this-laptop-stolen' },
-        { label: 'Is This Bike Stolen?', to: '/is-this-bike-stolen' },
-        { label: 'Is This Gun Stolen?', to: '/is-this-gun-stolen' },
-        { label: 'Report Stolen', to: '/report-stolen' },
-        { label: 'Stolen Database', to: '/database' },
-        { label: 'YouTube Channel', to: '/youtube' },
-      ]
-    },
   ];
 
   return (
-    <footer className="bg-sos-dark border-t border-primary/20">
+    <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="py-12">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {/* Logo & Description Column */}
-            <div className="col-span-2 md:col-span-3 lg:col-span-1">
+        {/* Main Footer */}
+        <div className="py-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
+            {/* Brand */}
+            <div className="col-span-2 md:col-span-4 lg:col-span-1">
               <Logo size="md" linkTo="/" />
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                Carfax for Everything - Buy and Sell. Verify any secondhand item in 3 seconds.
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
+                The verification platform for secondhand buyers, sellers, and businesses. Results in 3 seconds.
               </p>
-              <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-                <Shield className="h-4 w-4 text-primary" />
-                <span>Protecting buyers & sellers</span>
+              
+              {/* Social */}
+              <div className="mt-6 flex items-center gap-3">
+                {[
+                  { icon: Youtube, url: 'https://www.youtube.com/@safeorstolen', label: 'YouTube' },
+                  { icon: Twitter, url: 'https://x.com/SafeOrStolen123', label: 'X' },
+                  { icon: Linkedin, url: 'https://linkedin.com/company/safeorstolen', label: 'LinkedIn' },
+                ].map((social) => (
+                  <button
+                    key={social.label}
+                    onClick={() => handleExternalNavigation(social.url, true)}
+                    className="w-9 h-9 flex items-center justify-center rounded-lg border border-border hover:border-primary/30 hover:bg-primary/5 transition-all"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-4 h-4 text-muted-foreground" />
+                  </button>
+                ))}
               </div>
             </div>
 
-            {/* Footer Links Columns */}
+            {/* Link Columns */}
             {footerSections.map((section, idx) => (
               <div key={idx}>
-                <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-foreground mb-4">
                   {section.title}
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   {section.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         to={link.to}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -213,39 +156,27 @@ export const SOSFooter: React.FC = () => {
           </div>
         </div>
 
-        {/* Expanded Sitemap Links */}
+        {/* Expandable Sitemap */}
         <div className="border-t border-border">
           <button
             onClick={() => setShowAllLinks(!showAllLinks)}
-            className="w-full py-4 flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="w-full py-4 flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            {showAllLinks ? (
-              <>
-                <ChevronUp className="h-4 w-4" />
-                Hide Site Map
-              </>
-            ) : (
-              <>
-                <ChevronDown className="h-4 w-4" />
-                View Full Site Map (100+ Pages)
-              </>
-            )}
+            {showAllLinks ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            {showAllLinks ? 'Hide Site Map' : 'View Full Site Map'}
           </button>
           
           {showAllLinks && (
-            <div className="py-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
+            <div className="pb-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
               {sitemapSections.map((section, idx) => (
                 <div key={idx}>
-                  <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-3">
+                  <h4 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3">
                     {section.title}
                   </h4>
                   <ul className="space-y-2">
                     {section.links.map((link, linkIdx) => (
                       <li key={linkIdx}>
-                        <Link
-                          to={link.to}
-                          className="text-xs text-muted-foreground hover:text-primary transition-colors"
-                        >
+                        <Link to={link.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                           {link.label}
                         </Link>
                       </li>
@@ -257,83 +188,11 @@ export const SOSFooter: React.FC = () => {
           )}
         </div>
 
-        {/* Featured In Section */}
-        <div className="border-t border-border py-6">
-          <div className="text-center mb-4">
-            <p className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Find Us On</p>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            <TrustpilotBadge variant="footer" />
-            <button
-              onClick={() => handleExternalNavigation('https://www.crunchbase.com/organization/safe-or-stolen', true)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border"
-              aria-label="View SafeOrStolen on Crunchbase"
-            >
-              <span className="text-xs font-bold text-blue-500">Crunchbase</span>
-              <ExternalLink className="h-3 w-3 text-muted-foreground" />
-            </button>
-            <button
-              onClick={() => handleExternalNavigation('https://biz.prlog.org/SafeOrStolen/', true)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border"
-              aria-label="View SafeOrStolen Press Room"
-            >
-              <span className="text-xs font-bold text-purple-500">PRLog</span>
-              <ExternalLink className="h-3 w-3 text-muted-foreground" />
-            </button>
-            <a
-              href="https://fastercapital.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 hover:bg-background/80 transition-colors border border-border"
-              title="FasterCapital Partnership"
-            >
-              <span className="text-xs font-bold text-emerald-500">FasterCapital</span>
-              <ExternalLink className="h-3 w-3 text-muted-foreground" />
-            </a>
-          </div>
-        </div>
-
-        {/* Social Media Links */}
-        <div className="border-t border-border py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => handleExternalNavigation('https://www.youtube.com/@safeorstolen', true)}
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Visit SafeOrStolen YouTube channel"
-              >
-                <Youtube className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => handleExternalNavigation('https://x.com/SafeOrStolen123', true)}
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Follow SafeOrStolen on X"
-              >
-                <Twitter className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => handleExternalNavigation('https://linkedin.com/company/safeorstolen', true)}
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Visit SafeOrStolen on LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </button>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Follow us for updates and safety tips
-            </p>
-          </div>
-        </div>
-
-        {/* Copyright & Legal */}
+        {/* Copyright */}
         <div className="border-t border-border py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>
-              © {year} SafeOrStolen. All rights reserved.
-            </p>
-            <p className="text-xs">
-              Protecting buyers and sellers worldwide.
-            </p>
+            <p>© {year} SafeOrStolen. All rights reserved.</p>
+            <p className="text-xs">Protecting buyers and sellers across the United States.</p>
           </div>
         </div>
       </div>
