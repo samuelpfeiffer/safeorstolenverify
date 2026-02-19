@@ -12,6 +12,15 @@ export const detectItemType = (serialNumber: string): string => {
     return 'vehicle';
   }
   
+  // License Plate detection (US formats: 2-8 chars, letters/digits, optional dash/space)
+  const plateClean = serialNumber.replace(/\s+/g, '').toUpperCase();
+  if (/^[A-Z0-9]{2,8}$/.test(plateClean) && /[A-Z]/.test(plateClean) && /\d/.test(plateClean) && plateClean.length <= 8 && plateClean.length >= 4) {
+    // Disambiguate from serial numbers - plates are typically 5-8 chars with mixed alpha/digits
+    if (plateClean.length >= 5 && plateClean.length <= 8 && !/^\d{15}$/.test(plateClean)) {
+      return 'license_plate';
+    }
+  }
+  
   // Apple serial number patterns
   if (/^[A-Z0-9]{10,12}$/.test(cleaned) && /[A-Z]/.test(cleaned)) {
     return 'smartphone';
@@ -31,7 +40,8 @@ export const detectItemType = (serialNumber: string): string => {
   return 'electronics';
 };
 
-export const getItemTypeDisplayName = (itemType: string): string => {
+export const getItemTypeDisplayName = (itemType: string | null): string => {
+  if (!itemType) return 'Unknown';
   const typeMap: Record<string, string> = {
     'smartphone': 'Mobile Phone',
     'vehicle': 'Vehicle',
@@ -40,8 +50,25 @@ export const getItemTypeDisplayName = (itemType: string): string => {
     'tablet': 'Tablet',
     'watch': 'Smart Watch',
     'gaming': 'Gaming Device',
-    'audio': 'Audio Device'
+    'audio': 'Audio Device',
+    'license_plate': 'License Plate',
+    'bicycle': 'Bicycle',
+    'firearm': 'Firearm',
+    'tool': 'Power Tool',
   };
   
   return typeMap[itemType.toLowerCase()] || 'Electronic Device';
+};
+
+export const getStatusColor = (status: string): { text: string; bg: string; border: string; glow: string } => {
+  switch (status) {
+    case 'clean':
+      return { text: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', glow: 'shadow-emerald-500/20' };
+    case 'flagged':
+      return { text: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/30', glow: 'shadow-amber-500/20' };
+    case 'stolen':
+      return { text: 'text-red-400', bg: 'bg-red-500/10', border: 'border-red-500/30', glow: 'shadow-red-500/20' };
+    default:
+      return { text: 'text-muted-foreground', bg: 'bg-muted/10', border: 'border-border', glow: '' };
+  }
 };
