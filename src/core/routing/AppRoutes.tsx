@@ -327,6 +327,9 @@ const OfferUpSafetyPage = lazy(() => import('@/pages/OfferUpSafetyPage'));
 const HowToCheckIfPhoneStolenPage = lazy(() => import('@/pages/HowToCheckIfPhoneStolenPage'));
 const HowToCheckIfCarStolenPage = lazy(() => import('@/pages/HowToCheckIfCarStolenPage'));
 
+// Universal Trust Engine
+const TrustEnginePage = lazy(() => import('@/pages/TrustEnginePage'));
+
 export const AppRoutes = () => {
   return (
     <Suspense fallback={<AppLoadingScreen />}>
@@ -335,6 +338,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/verify" element={<VerifyPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/trust-engine" element={<TrustEnginePage />} />
         <Route path="/profile" element={<ProfilePage />} />
         {/* /account and /mobile-app handled by server-side _redirects - removed duplicate Navigate */}
         <Route path="/app" element={<AppPage />} />
