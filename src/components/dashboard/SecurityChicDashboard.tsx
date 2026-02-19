@@ -86,14 +86,13 @@ export const SecurityChicDashboard: React.FC = () => {
             </div>
 
             <h1 className="text-foreground leading-[1.05]">
-              Verify anything.
+              Check before you buy or sell.
               <br />
-              <span className="text-gradient">Trust everything.</span>
+              <span className="text-gradient">Safe or Stolen?</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-lg mx-auto">
-              Instant checks against 100+ law enforcement & insurance databases.
-              Get your Trust Score in 3 seconds.
+              Buyers & sellers — verify IMEI, VIN, or serial numbers against 100+ police & insurance databases before any transaction. Results in 3 seconds.
             </p>
           </motion.div>
 
