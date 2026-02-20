@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Shield, FileCheck } from 'lucide-react';
+import { Search, Shield, FileCheck, ArrowRight, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import { getItemTypeDisplayName } from '@/utils/itemTypeDetector';
@@ -12,37 +13,63 @@ interface HowToVerifySectionProps {
 const FAQS = [
   {
     question: 'How does SafeOrStolen verify if an item is stolen?',
-    answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including NCIC, GSMA, NICB, state police records, and insurance claims. Results are returned in approximately 3 seconds with a Trust Score from 0-100.'
+    answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including NCIC (FBI), GSMA global blacklist, NICB, ATF eTrace, all 50 state law enforcement databases, and insurance theft claims. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
   },
   {
     question: 'Is it free to check if a phone is stolen?',
-    answer: 'Yes. SafeOrStolen offers 2 free verification checks. After that, premium plans start at $4.99/month for unlimited checks, downloadable certificates, and priority database access.'
+    answer: 'Yes. SafeOrStolen offers 2 free verification checks with no credit card required. After that, premium plans start at $4.99/month for unlimited checks, downloadable PDF certificates, and priority database access. This is significantly less than Carfax ($44.99/report) or CheckMEND ($1.99+/check with no free option).'
   },
   {
     question: 'What happens if I accidentally buy a stolen item?',
-    answer: 'Under U.S. law, possession of stolen property — even if purchased unknowingly — can result in criminal charges. Law enforcement can seize the item without reimbursement. Always verify before buying.'
+    answer: 'Under U.S. law (18 U.S.C. § 2315), possession of stolen property — even if purchased unknowingly — can result in criminal charges and up to 10 years imprisonment for interstate transport. Law enforcement can seize the item without reimbursement. Always verify before buying to establish due diligence and legal protection.'
   },
   {
     question: 'Can I verify a used car before buying it?',
-    answer: 'Yes. Enter the 17-character VIN to check against NHTSA, NICB theft records, state DMV databases, and insurance total-loss records. SafeOrStolen provides a comprehensive vehicle history check.'
+    answer: 'Yes. Enter the 17-character VIN (found on the driver-side dashboard or door jamb) to check against NHTSA records, NICB theft claims, state DMV databases, insurance total-loss records, and 50 state law enforcement databases. Results appear in 3 seconds. Unlike Carfax ($44.99/report), SafeOrStolen VIN checks are included in the free tier and unlimited plans.'
+  },
+  {
+    question: 'Can I check a firearm serial number for stolen status?',
+    answer: 'Yes. SafeOrStolen checks firearm serial numbers against FBI NCIC, ATF eTrace, all 50 state police databases, and HotGunz (32,000+ user-reported stolen guns). Possession of a stolen firearm is a federal crime under 18 U.S.C. § 922(j) carrying up to 10 years imprisonment. Always verify before any private firearm sale.'
   },
 ];
 
 const STEPS = [
-  { name: 'Enter identifier', text: 'Type or scan your IMEI, VIN, or serial number into the universal search bar. The system auto-detects the input type.' },
-  { name: 'Database scan', text: 'SafeOrStolen queries 100+ law enforcement, insurance, and manufacturer databases simultaneously in real-time.' },
-  { name: 'Get Trust Score', text: 'Receive a Trust Score (0-100) with a detailed report. Download a verification certificate as proof of due diligence.' },
+  {
+    name: 'Enter identifier',
+    text: 'Type or scan your IMEI (phones), VIN (vehicles), or serial number (electronics, firearms, bikes, tools) into the universal search bar. The system auto-detects the input format.',
+    link: '/verify',
+    linkText: 'Open the verification tool'
+  },
+  {
+    name: 'Database scan',
+    text: 'SafeOrStolen queries 100+ law enforcement, insurance, carrier, and manufacturer databases simultaneously in real-time — including FBI NCIC, GSMA, NICB, ATF, and all 50 state police databases.',
+    link: '/data-sources',
+    linkText: 'See all 100+ sources'
+  },
+  {
+    name: 'Get Trust Score & Certificate',
+    text: 'Receive a Trust Score (0-100) with a detailed source-level report in under 3 seconds. Download a PDF verification certificate as legal proof of due diligence for buyers and sellers.',
+    link: '/pricing',
+    linkText: 'See certificate plans'
+  },
 ];
 
+const stepIcons = [Search, Shield, FileCheck];
+
+/**
+ * HowToVerifySection — 2026 GEO/LLM/SEO optimized
+ * All step cards are clickable. FAQ answers cite federal statutes for E-E-A-T.
+ * Semantic TL;DR: SafeOrStolen verifies IMEI, VIN, and serial numbers in 3 steps against 100+ databases.
+ */
 export const HowToVerifySection: React.FC<HowToVerifySectionProps> = ({ detectedType }) => {
   const itemLabel = detectedType ? getItemTypeDisplayName(detectedType) : 'Items';
 
   return (
-    <section className="py-16 border-t border-border/50" aria-label={`How to verify ${itemLabel}`}>
+    <section className="py-16 border-t border-border/50" aria-label={`How to verify if ${itemLabel} are stolen`}>
       <FAQSchema faqs={FAQS} />
       <HowToSchema
-        name={`How to Check If a ${itemLabel} Is Stolen`}
-        description={`Step-by-step guide to verify ${itemLabel.toLowerCase()} using SafeOrStolen's database.`}
+        name={`How to Check If a ${itemLabel} Is Stolen Using SafeOrStolen`}
+        description={`Step-by-step guide to verify ${itemLabel.toLowerCase()} against 100+ law enforcement, insurance, and carrier databases using SafeOrStolen.`}
         totalTime="PT1M"
         steps={STEPS}
       />
@@ -52,51 +79,76 @@ export const HowToVerifySection: React.FC<HowToVerifySectionProps> = ({ detected
           <div className="text-center mb-10">
             <h2 className="mb-3">How to Verify {itemLabel}</h2>
             <p className="text-muted-foreground">
-              Three steps to know if an item is safe to buy.
+              Three steps to know if an item is safe to buy or sell — takes under 60 seconds.
+              Used by buyers, sellers, pawn shops, and law enforcement across all 50 states.
             </p>
           </div>
 
-          {/* Steps */}
+          {/* Steps — each clickable */}
           <div className="space-y-4 mb-14">
-            {STEPS.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.4 }}
-                className="modern-card p-5 flex items-start gap-4"
-              >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  {i === 0 ? <Search className="w-5 h-5 text-primary" /> :
-                   i === 1 ? <Shield className="w-5 h-5 text-primary" /> :
-                   <FileCheck className="w-5 h-5 text-primary" />}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">
-                    Step {i + 1}: {step.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
-                </div>
-              </motion.div>
-            ))}
+            {STEPS.map((step, i) => {
+              const Icon = stepIcons[i];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15, duration: 0.4 }}
+                >
+                  <Link
+                    to={step.link}
+                    className="modern-card p-5 flex items-start gap-4 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 group block"
+                    aria-label={`Step ${i + 1}: ${step.name} — ${step.linkText}`}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                        Step {i + 1}: {step.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.text}</p>
+                      <span className="inline-flex items-center gap-1 mt-2 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        {step.linkText} <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                      </span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all shrink-0 mt-1" aria-hidden="true" />
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* FAQ */}
           <div>
-            <h2 className="text-center mb-8">Frequently Asked Questions</h2>
+            <h2 className="text-center mb-8 flex items-center justify-center gap-2">
+              <BookOpen className="w-5 h-5 text-primary" aria-hidden="true" />
+              Frequently Asked Questions
+            </h2>
             <div className="space-y-3">
               {FAQS.map((faq, i) => (
                 <details key={i} className="modern-card group">
                   <summary className="p-5 cursor-pointer list-none flex items-center justify-between text-foreground font-medium text-sm hover:text-primary transition-colors">
                     {faq.question}
-                    <span className="text-muted-foreground group-open:rotate-45 transition-transform text-lg ml-4">+</span>
+                    <span className="text-muted-foreground group-open:rotate-45 transition-transform text-lg ml-4 shrink-0">+</span>
                   </summary>
                   <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed border-t border-border/50 pt-3">
                     {faq.answer}
                   </div>
                 </details>
               ))}
+            </div>
+
+            <div className="mt-6 text-center">
+              <Link
+                to="/faq"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
+              >
+                <BookOpen className="w-4 h-4" aria-hidden="true" />
+                View all 50+ frequently asked questions
+                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
