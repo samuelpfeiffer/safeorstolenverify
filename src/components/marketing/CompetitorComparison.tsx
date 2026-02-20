@@ -28,10 +28,10 @@ export const CompetitorComparison: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 id="comparison-heading" className="text-3xl md:text-4xl font-bold mb-4">
-            See Why Users Switch to <span className="text-primary">SafeOrStolen</span>
+            SafeOrStolen vs. CheckMEND vs. Carfax
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The only all-in-one verification service with a mobile app, firearms checking, and 2 free searches
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            SafeOrStolen covers phones (IMEI), vehicles (VIN), firearms, electronics, bikes, tools, jewelry, and boats — all in one platform starting free. Carfax covers vehicles only at $39.99/report. CheckMEND covers phones and electronics with no free tier. No competitor offers a mobile app with barcode scanning.
           </p>
         </div>
 

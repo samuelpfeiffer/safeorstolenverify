@@ -2,26 +2,31 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 /**
- * Global SEO Provider that handles site-wide redirects and canonical domain enforcement
- * This should be included once at the app level
+ * GlobalSEOProvider — Site-wide SEO meta tags and domain enforcement
+ *
+ * 2026 Implementation:
+ * ✅ Canonical domain enforcement (www → non-www, HTTP → HTTPS)
+ * ✅ PWA meta tags (apple-mobile-web-app-capable)
+ * ✅ DNS prefetch for performance
+ * ✅ Preconnect to critical third-party origins
+ * ✅ Theme color for Chrome/Safari address bar
+ * ✅ Referrer policy for privacy
+ * ✅ Global AI crawler permissions (reinforces robots.txt)
  */
 export const GlobalSEOProvider: React.FC = () => {
   useEffect(() => {
-    // Handle client-side canonical domain enforcement
     if (typeof window !== 'undefined') {
       const currentUrl = window.location.href;
-      
-      // Force www to non-www redirect
+
+      // Force www → non-www
       if (currentUrl.includes('://www.safeorstolen.com')) {
-        const nonWwwUrl = currentUrl.replace('://www.safeorstolen.com', '://safeorstolen.com');
-        window.location.replace(nonWwwUrl);
+        window.location.replace(currentUrl.replace('://www.safeorstolen.com', '://safeorstolen.com'));
         return;
       }
 
-      // Force HTTP to HTTPS
+      // Force HTTP → HTTPS
       if (currentUrl.startsWith('http://safeorstolen.com')) {
-        const httpsUrl = currentUrl.replace('http://safeorstolen.com', 'https://safeorstolen.com');
-        window.location.replace(httpsUrl);
+        window.location.replace(currentUrl.replace('http://safeorstolen.com', 'https://safeorstolen.com'));
         return;
       }
     }
@@ -29,25 +34,90 @@ export const GlobalSEOProvider: React.FC = () => {
 
   return (
     <Helmet>
-      {/* Global meta tags that apply to all pages */}
-      <meta name="author" content="SafeOrStolen" />
+      {/* ─── Global Site Identity ─────────────────────── */}
+      <meta name="author" content="SafeOrStolen LLC" />
       <meta name="application-name" content="SafeOrStolen" />
+      <meta name="generator" content="SafeOrStolen Platform 2026" />
+
+      {/* ─── PWA / Mobile Web App ─────────────────────── */}
       <meta name="apple-mobile-web-app-title" content="SafeOrStolen" />
-      <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      
-      {/* Domain preferences for search engines */}
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="theme-color" content="#0f172a" />
+      <meta name="msapplication-TileColor" content="#0f172a" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+
+      {/* ─── Domain Preferences ───────────────────────── */}
       <meta name="preferred-domain" content="safeorstolen.com" />
       <meta name="canonical-domain" content="https://safeorstolen.com" />
-      
-      {/* DNS prefetch for performance */}
+
+      {/* ─── Privacy & Security ───────────────────────── */}
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+      {/* ─── Format Detection ─────────────────────────── */}
+      <meta name="format-detection" content="telephone=no" />
+
+      {/* ─── DNS Prefetch ─────────────────────────────── */}
       <link rel="dns-prefetch" href="https://js.stripe.com" />
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      
-      {/* Favicon and PWA icons */}
+      <link rel="dns-prefetch" href="https://img.youtube.com" />
+      <link rel="dns-prefetch" href="https://www.youtube.com" />
+      <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      <link rel="dns-prefetch" href="https://www.trustpilot.com" />
+
+      {/* ─── Preconnect ───────────────────────────────── */}
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://img.youtube.com" />
+
+      {/* ─── Favicon & Icons ──────────────────────────── */}
       <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" href="/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png" />
+      <link rel="manifest" href="/manifest.json" />
+
+      {/* ─── AI Crawler Allowlist ─────────────────────── */}
+      {/* Reinforces robots.txt — explicit permission for 2026 AI agents */}
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot-news" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
+      <meta name="slurp" content="index, follow" />
+      {/* OpenAI SearchBot — powers ChatGPT live search */}
+      <meta name="oai-searchbot" content="index, follow" />
+      {/* Meta AI / LLaMA crawler */}
+      <meta name="meta-externalagent" content="index, follow" />
+      {/* Apple Siri / AppleGPT */}
+      <meta name="applebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+      <meta name="applebot-extended" content="index, follow" />
+      {/* Perplexity AI */}
+      <meta name="perplexitybot" content="index, follow" />
+      {/* Anthropic Claude */}
+      <meta name="claudebot" content="index, follow" />
+      {/* You.com AI */}
+      <meta name="youbot" content="index, follow" />
+      {/* Cohere AI */}
+      <meta name="coherecrawler" content="index, follow" />
+      {/* Google Extended (Gemini training) */}
+      <meta name="google-extended" content="index, follow" />
+
+      {/* ─── Structured Data: SiteNavigationElement ──── */}
+      {/* Helps AI understand site architecture */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SiteLinksSearchBox",
+          "url": "https://safeorstolen.com",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://safeorstolen.com/verify?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
     </Helmet>
   );
 };
