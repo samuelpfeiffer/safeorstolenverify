@@ -12,6 +12,7 @@ const CompetitorComparison = lazy(() => import('@/components/marketing/Competito
 const TestimonialsCarousel = lazy(() => import('@/components/marketing/TestimonialsCarousel').then(m => ({ default: m.TestimonialsCarousel })));
 const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
 const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
+const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChannelSection').then(m => ({ default: m.YouTubeChannelSection })));
 
 import { HomeContentSections } from '@/components/home/HomeContentSections';
 
@@ -76,6 +77,13 @@ const Index = () => {
         <LazySection minHeight="300px">
           <Suspense fallback={<SectionSkeleton />}>
             <TestimonialsCarousel />
+          </Suspense>
+        </LazySection>
+
+        {/* YouTube Channel Section - SEO-critical for video discovery & E-E-A-T */}
+        <LazySection minHeight="600px">
+          <Suspense fallback={<SectionSkeleton height="600px" />}>
+            <YouTubeChannelSection />
           </Suspense>
         </LazySection>
 

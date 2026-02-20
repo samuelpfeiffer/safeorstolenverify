@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search } from 'lucide-react';
+import { Menu, X, User, LogOut, BarChart, AlertCircle, ChevronDown, BookOpen, HelpCircle, FileText, Building2, Search, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import sosLogo from '@/assets/sos-logo.png';
 import {
@@ -26,6 +26,7 @@ const TopNavigation = () => {
     { to: '/verify', label: 'Verify' },
     { to: '/pricing', label: 'Pricing' },
     { to: '/blog', label: 'Blog' },
+    { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/compare', label: 'Compare' },
     { to: '/app', label: 'App' },
   ];
@@ -61,8 +62,9 @@ const TopNavigation = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
               >
+                {'icon' in link && link.icon && <link.icon className="w-3.5 h-3.5 text-red-600" aria-hidden="true" />}
                 {link.label}
               </Link>
             ))}
