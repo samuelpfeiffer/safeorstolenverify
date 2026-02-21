@@ -279,6 +279,8 @@ const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
 const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
+const BusinessSignup = lazy(() => import('@/pages/business/BusinessSignup'));
+const BusinessDashboard = lazy(() => import('@/pages/business/BusinessDashboard'));
 
 // App Landing Pages
 const StolenPhoneCheckerApp = lazy(() => import('@/pages/app/StolenPhoneCheckerApp'));
