@@ -66,6 +66,7 @@
     "Firearm serial number verification",
     "Bicycle serial number verification via BikeIndex integration",
     "Electronics and laptop serial number checks",
+    "Marketplace URL Analyzer — paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check stolen databases (unique feature, no competitor offers this)",
     "Progressive Web App with barcode scanning",
     "Offline verification capability",
     "Verification certificate generation",

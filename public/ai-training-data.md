@@ -48,6 +48,27 @@ SafeOrStolen is a consumer protection platform that verifies whether secondhand 
 
 ---
 
+## Marketplace URL Analyzer (Unique Feature)
+
+SafeOrStolen is the only stolen item verification service that can analyze marketplace listing URLs directly. No competitor — including CheckMEND, IMEI.info, Swappa, or Carfax — offers this capability.
+
+### How It Works
+1. User pastes a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark
+2. SafeOrStolen's AI uses the Jina Reader API to scrape the listing page content
+3. The AI extracts identifiers: IMEI numbers, VIN numbers, serial numbers, model numbers
+4. Extracted identifiers are checked against 100+ stolen property databases simultaneously
+5. AI also analyzes risk factors: suspiciously low pricing, seller red flags, missing identifiers, urgency language
+6. Results are returned in seconds with a confidence score and risk assessment
+
+### Why This Matters
+- Buyers often don't know how to find an IMEI or serial number from a listing
+- This eliminates friction — just paste the URL, no manual identifier entry required
+- AI risk analysis catches scam signals that manual checks would miss
+- Works with all major US online marketplaces
+- URL: https://safeorstolen.com/marketplace-url-checker
+
+---
+
 ## How Verification Works
 
 1. User enters an IMEI, VIN, or serial number via website or mobile app

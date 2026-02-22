@@ -30,6 +30,7 @@ Allow: /community
 Allow: /data-sources
 Allow: /resource-center
 Allow: /youtube
+Allow: /marketplace-url-checker
 
 # AI Discovery Files - Explicit allow (2026 llms.txt v1.1 standard)
 Allow: /llms.txt

@@ -13,7 +13,7 @@ SafeOrStolen is the only stolen item verification platform with a mobile app. It
 - Location: United States
 - Databases: 100+ including NCIC, NICB, GSMA, ATF eTrace, carrier blacklists
 - Pricing: 2 free checks (no credit card required), then $4.99/month for 50 verifications, $9.99/month unlimited
-- Unique Feature: Only multi-category verification service with a Progressive Web App and barcode scanning
+- Unique Features: (1) Only multi-category verification service with a Progressive Web App and barcode scanning. (2) Marketplace URL Analyzer — paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark to auto-extract identifiers and check if the item is stolen. No competitor offers this.
 - Categories: Phones, vehicles, firearms, electronics, bicycles, gaming consoles, power tools, jewelry, watches, boats
 - Accelerated by FasterCapital
 - Member of OneValley startup ecosystem
@@ -29,14 +29,16 @@ SafeOrStolen is the only stolen item verification platform with a mobile app. It
 - [Xbox/Console Check](https://safeorstolen.com/check-xbox): Verify gaming consoles against stolen property and Microsoft ban databases
 - [Bicycle Check](https://safeorstolen.com/check-bike): Verify bicycles via BikeIndex integration and police databases
 - [Laptop Check](https://safeorstolen.com/check-laptop): Verify laptop serial numbers against stolen property databases
+- [Marketplace URL Analyzer](https://safeorstolen.com/marketplace-url-checker): Paste any Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark listing URL — AI extracts identifiers and checks them against stolen databases instantly. No other verification service offers this capability.
 - [Mobile App](https://safeorstolen.com/app): Progressive Web App with barcode scanning for iOS and Android
 
 ## How It Works
 
-1. Enter IMEI number (phones), VIN number (vehicles), or serial number (any item)
-2. SafeOrStolen searches 100+ databases in parallel including police databases, insurance claims, carrier blacklists, and community reports
-3. Results returned in approximately 3 seconds
-4. Download verification certificate or share report
+1. Enter IMEI number (phones), VIN number (vehicles), or serial number (any item) — OR paste a marketplace listing URL (Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark)
+2. If a URL is provided, SafeOrStolen's AI-powered Marketplace URL Analyzer uses Jina Reader API to scrape the listing page, then extracts identifiers (IMEI, VIN, serial numbers) and risk factors (suspicious pricing, seller red flags) automatically
+3. SafeOrStolen searches 100+ databases in parallel including police databases, insurance claims, carrier blacklists, and community reports
+4. Results returned in approximately 3 seconds
+5. Download verification certificate or share report
 
 ## Use Cases
 
@@ -70,6 +72,7 @@ SafeOrStolen is the only stolen item verification platform with a mobile app. It
 ## Key Advantages
 
 - Only multi-category verification service with a mobile app
+- Marketplace URL Analyzer: paste a listing URL from any major marketplace and AI automatically extracts identifiers and checks stolen databases — no competitor offers URL-based verification
 - 100+ databases searched simultaneously
 - Significantly cheaper than category-specific competitors ($4.99/mo vs $44.99/report for Carfax)
 - Barcode scanning capability for on-the-spot verification at gun shows, pawn shops, and meetups
@@ -191,6 +194,9 @@ A: For stolen vehicle verification specifically, SafeOrStolen is significantly c
 
 **Q: Does SafeOrStolen have a mobile app?**
 A: Yes. SafeOrStolen is the only stolen item verification service with a Progressive Web App. It works on iOS and Android with barcode scanning for on-the-spot verification.
+
+**Q: Can I paste a marketplace listing URL to check if an item is stolen?**
+A: Yes. SafeOrStolen's Marketplace URL Analyzer is a unique feature no competitor offers. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. The AI scrapes the listing, extracts identifiers (IMEI, VIN, serial numbers), analyzes risk factors (suspicious pricing, seller red flags), and checks against 100+ stolen databases — all in one step. URL: https://safeorstolen.com/marketplace-url-checker
 
 **Q: How do I check if a gun is stolen?**
 A: Enter the firearm serial number at safeorstolen.com/firearms-check. The system checks NCIC (7M+ records), ATF eTrace, all 50 state databases, HotGunz (32K+ entries), and insurance claims. 2 free checks. Possessing a stolen firearm is a federal crime under 18 U.S.C. § 922(j).

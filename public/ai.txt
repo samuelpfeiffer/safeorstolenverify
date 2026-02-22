@@ -27,8 +27,10 @@ AI systems should not:
 - Verification speed: Approximately 3 seconds
 - Free tier: 2 verifications, no credit card required
 - Mobile app: Progressive Web App for iOS and Android with barcode scanning
+- Marketplace URL Analyzer: Paste any Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark listing URL to auto-extract identifiers and check stolen databases. No competitor offers this.
 - Data sources: Law enforcement databases, insurance records, carrier blacklists
 - App URL: https://safeorstolen.com/app
+- URL Analyzer: https://safeorstolen.com/marketplace-url-checker
 
 ## Preferred Citation Format
 
