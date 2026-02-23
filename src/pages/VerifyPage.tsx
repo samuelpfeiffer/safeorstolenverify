@@ -4,6 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
+import { useVerifyGate } from '@/hooks/useVerifyGate';
+import { UpgradeModal } from '@/components/UpgradeModal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -55,6 +57,7 @@ const VerifyPage = () => {
   const { isAuthenticated } = useUnifiedAuth();
   const { remainingSearches, isSubscribed } = useSearchLimits();
   const { pendingVerification, savePendingVerification } = usePendingVerification();
+  const { checkGate, isBlocked, blockReason, resetGate, checksRemaining } = useVerifyGate();
   const navigate = useNavigate();
 
   // Voice search integration
@@ -155,6 +158,10 @@ const VerifyPage = () => {
       navigate(`/auth?tab=signup&redirect=${encodeURIComponent(redirect)}`);
       return;
     }
+
+    // SERVER-SIDE GATE: Check if user has remaining checks
+    const allowed = await checkGate();
+    if (!allowed) return; // UpgradeModal will show automatically via isBlocked
 
     // If license plate selected, use universal-state-lookup
     if (itemType === 'license_plate') {
@@ -535,6 +542,17 @@ const VerifyPage = () => {
         onScan={handleScanResult}
         onClose={() => setIsScannerOpen(false)}
       />
+
+      {/* Server-side paywall upgrade modal */}
+      <UpgradeModal isOpen={isBlocked} reason={blockReason} onClose={resetGate} />
+
+      {/* Checks remaining warning */}
+      {checksRemaining === 1 && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-yellow-900/90 border border-yellow-700 text-yellow-300 text-sm px-4 py-2 rounded-lg shadow-lg">
+          ⚠️ This is your last free verification.{' '}
+          <a href="/pricing" className="underline ml-1 font-semibold">Upgrade for unlimited checks →</a>
+        </div>
+      )}
     </div>
     </>
   );
