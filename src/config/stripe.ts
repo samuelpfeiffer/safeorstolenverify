@@ -11,7 +11,10 @@ export const STRIPE_CONFIG = {
   
   // Price IDs for verification services
   prices: {
-    singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 per verification
+    singleVerification: 'price_1T3nfCGxnZLw8J7OwqSRSPel', // $0.99 per verification
+    basic: 'price_1SHEOxGxnZLw8J7O2zzfPVBK', // $4.99/mo Basic
+    pro: 'price_1T3nhDGxnZLw8J7OaK2fkVM1', // $9.99/mo Pro
+    business: 'price_1T3niCGxnZLw8J7OO2aGfQ0R', // $49.99/mo Business
     legacyPrice: 'price_1SDRrMGxnZLw8J7ObJsUlp6k', // $0.50 (archived)
   },
 } as const;

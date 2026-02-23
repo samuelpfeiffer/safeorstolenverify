@@ -72,11 +72,11 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
   },
   payPerUse: {
     name: "Single Verification",
-    price: 299,
-    priceDisplay: "$2.99",
+    price: 99,
+    priceDisplay: "$0.99",
     interval: "once",
     monthlyQuota: 1,
-    stripePriceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn',
+    stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
     tier: "payPerUse",
     features: [
       "One verification check",
@@ -98,7 +98,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     interval: "month",
     monthlyQuota: 50,
     overageRate: 0.40,
-    stripePriceId: 'price_1SHEUQGxnZLw8J7OinyVqNMK',
+    stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
     tier: "personal",
     features: [
       "50 verifications per month",
@@ -119,7 +119,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: 'price_1SHEiuGxnZLw8J7OszscBBk7',
+    stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "professional",
     features: [
       "Unlimited verifications",
@@ -141,7 +141,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     priceDisplay: "$99",
     interval: "month",
     monthlyQuota: 'unlimited',
-    stripePriceId: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',
+    stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "enterprise",
     features: [
       "Unlimited verifications",
