@@ -20,7 +20,7 @@ const PLANS: Plan[] = [
   {
     id: 'single',
     name: 'Single Check',
-    price: '$2.99',
+    price: '$0.99',
     period: 'one-time',
     tagline: 'Just need one check',
     features: [
@@ -29,9 +29,9 @@ const PLANS: Plan[] = [
       'PDF certificate included',
       'No subscription needed',
     ],
-    stripePriceId: 'price_1SSVqkGxnZLw8J7O3GwCyKRn',
+    stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
     highlighted: false,
-    cta: 'Buy 1 Check — $2.99',
+    cta: 'Buy 1 Check — $0.99',
     icon: <Shield className="w-5 h-5" />,
   },
   {
@@ -66,7 +66,7 @@ const PLANS: Plan[] = [
       'Shareable report links',
       'Phone support',
     ],
-    stripePriceId: 'price_1SHEUQGxnZLw8J7OinyVqNMK',
+    stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
     highlighted: true,
     cta: 'Go Pro — $9.99/mo',
     icon: <Zap className="w-5 h-5" />,
@@ -86,7 +86,7 @@ const PLANS: Plan[] = [
       'Multi-user seats (5)',
       'Dedicated support',
     ],
-    stripePriceId: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',
+    stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     highlighted: false,
     cta: 'Get Business — $49.99/mo',
     icon: <Building2 className="w-5 h-5" />,
