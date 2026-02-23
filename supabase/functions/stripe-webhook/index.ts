@@ -284,6 +284,35 @@ serve(async (req) => {
                 console.error(`Error updating profile: ${profileUpdateError.message}`);
               } else {
                 console.log(`SUCCESS: Updated profile ${profileId} with tier ${subscriptionTier}`);
+
+                // Also upsert into subscriptions table for check-gate
+                const planMapping: Record<string, string> = {
+                  'pay_per_use': 'single',
+                  'starter': 'basic',
+                  'unlimited': 'basic',
+                  'personal': 'pro',
+                  'professional': 'pro',
+                  'enterprise': 'business',
+                };
+                const gatePlan = planMapping[subscriptionTier] || 'basic';
+                const planLimits: Record<string, number> = {
+                  single: 1, basic: 50, pro: 999999, business: 999999,
+                };
+
+                await supabaseClient
+                  .from('subscriptions')
+                  .upsert({
+                    user_id: profileId,
+                    stripe_customer_id: session.customer as string,
+                    stripe_subscription_id: (session.subscription as string) || session.id,
+                    plan: gatePlan,
+                    status: 'active',
+                    checks_used_this_month: 0,
+                    checks_limit: planLimits[gatePlan] || 50,
+                    period_end: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+                    updated_at: new Date().toISOString(),
+                  }, { onConflict: 'stripe_subscription_id' });
+                console.log(`[WEBHOOK] Upserted subscriptions table for check-gate, plan: ${gatePlan}`);
               }
             } else {
               console.error(`CRITICAL: Could not find profile for checkout. Email: ${customerEmail}, UserId: ${userId}`);

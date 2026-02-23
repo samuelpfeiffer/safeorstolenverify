@@ -395,6 +395,48 @@ export type Database = {
         }
         Relationships: []
       }
+      certificates: {
+        Row: {
+          created_at: string | null
+          fingerprint: string | null
+          id: string
+          identifier: string
+          identifier_type: string
+          pdf_url: string | null
+          share_token: string | null
+          trust_score: number | null
+          user_id: string | null
+          verdict: string
+          verification_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          fingerprint?: string | null
+          id?: string
+          identifier: string
+          identifier_type: string
+          pdf_url?: string | null
+          share_token?: string | null
+          trust_score?: number | null
+          user_id?: string | null
+          verdict: string
+          verification_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          fingerprint?: string | null
+          id?: string
+          identifier?: string
+          identifier_type?: string
+          pdf_url?: string | null
+          share_token?: string | null
+          trust_score?: number | null
+          user_id?: string | null
+          verdict?: string
+          verification_id?: string | null
+        }
+        Relationships: []
+      }
       checkout_sessions: {
         Row: {
           amount: number
@@ -535,6 +577,36 @@ export type Database = {
           id?: string
           stripe_session_id?: string
           user_id?: string | null
+        }
+        Relationships: []
+      }
+      email_leads: {
+        Row: {
+          created_at: string | null
+          email: string
+          fingerprint: string | null
+          id: string
+          identifier_type: string | null
+          source: string | null
+          verdict: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          fingerprint?: string | null
+          id?: string
+          identifier_type?: string | null
+          source?: string | null
+          verdict?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          fingerprint?: string | null
+          id?: string
+          identifier_type?: string | null
+          source?: string | null
+          verdict?: string | null
         }
         Relationships: []
       }
@@ -1032,6 +1104,81 @@ export type Database = {
           id?: string
           processed_at?: string | null
           stripe_event_id?: string
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          checks_limit: number | null
+          checks_used_this_month: number | null
+          created_at: string | null
+          fingerprint: string | null
+          id: string
+          period_end: string | null
+          plan: string | null
+          status: string | null
+          stripe_customer_id: string | null
+          stripe_price_id: string | null
+          stripe_subscription_id: string | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          checks_limit?: number | null
+          checks_used_this_month?: number | null
+          created_at?: string | null
+          fingerprint?: string | null
+          id?: string
+          period_end?: string | null
+          plan?: string | null
+          status?: string | null
+          stripe_customer_id?: string | null
+          stripe_price_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          checks_limit?: number | null
+          checks_used_this_month?: number | null
+          created_at?: string | null
+          fingerprint?: string | null
+          id?: string
+          period_end?: string | null
+          plan?: string | null
+          status?: string | null
+          stripe_customer_id?: string | null
+          stripe_price_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      usage_tracking: {
+        Row: {
+          check_count: number | null
+          created_at: string | null
+          fingerprint: string
+          id: string
+          last_check_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          check_count?: number | null
+          created_at?: string | null
+          fingerprint: string
+          id?: string
+          last_check_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          check_count?: number | null
+          created_at?: string | null
+          fingerprint?: string
+          id?: string
+          last_check_at?: string | null
+          user_id?: string | null
         }
         Relationships: []
       }
