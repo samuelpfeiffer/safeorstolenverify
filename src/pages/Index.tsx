@@ -1,107 +1,640 @@
+import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { TrustHeaderBar } from '@/components/trust/TrustHeaderBar';
-import { lazy, Suspense } from 'react';
-import { SecurityChicDashboard } from '@/components/dashboard/SecurityChicDashboard';
-import { LazySection } from '@/components/performance/LazySection';
+import { Shield, Zap, Lock, Star, Building2 } from 'lucide-react';
 
-const TrustBadgesStrip = lazy(() => import('@/components/marketing/TrustBadgesStrip').then(m => ({ default: m.TrustBadgesStrip })));
-const DataSourcesSection = lazy(() => import('@/components/home/DataSourcesSection').then(m => ({ default: m.DataSourcesSection })));
-const PressMediaSection = lazy(() => import('@/components/home/PressMediaSection').then(m => ({ default: m.PressMediaSection })));
-const WhatYouCanVerify = lazy(() => import('@/components/home/WhatYouCanVerify').then(m => ({ default: m.WhatYouCanVerify })));
-const CompetitorComparison = lazy(() => import('@/components/marketing/CompetitorComparison').then(m => ({ default: m.CompetitorComparison })));
-const TestimonialsCarousel = lazy(() => import('@/components/marketing/TestimonialsCarousel').then(m => ({ default: m.TestimonialsCarousel })));
-const InternalLinksSection = lazy(() => import('@/components/home/InternalLinksSection').then(m => ({ default: m.InternalLinksSection })));
-const TrustSignals = lazy(() => import('@/components/seo/TrustSignals').then(m => ({ default: m.TrustSignals })));
-const YouTubeChannelSection = lazy(() => import('@/components/home/YouTubeChannelSection').then(m => ({ default: m.YouTubeChannelSection })));
+// ============================================================
+// DATA
+// ============================================================
 
-import { HomeContentSections } from '@/components/home/HomeContentSections';
+const VERIFY_CARDS = [
+  {
+    title: 'Gun Serial Number Lookup',
+    subtitle: 'ATF, NCIC, HotGunz + 50 state police databases',
+    href: '/firearms-check',
+    emoji: '🔫',
+    badge: '🔥 Top Search',
+    bg: 'from-red-950 via-red-900 to-red-800',
+  },
+  {
+    title: 'Vehicle VIN Check',
+    subtitle: 'NICB, NHTSA, DMV records from all 50 states',
+    href: '/vin-checker',
+    emoji: '🚗',
+    badge: null,
+    bg: 'from-blue-950 via-blue-900 to-blue-800',
+  },
+  {
+    title: 'Phone IMEI Check',
+    subtitle: 'GSMA, AT&T, Verizon, T-Mobile carrier blacklists',
+    href: '/imei-checker',
+    emoji: '📱',
+    badge: null,
+    bg: 'from-indigo-950 via-indigo-900 to-indigo-800',
+  },
+  {
+    title: 'License Plate Lookup',
+    subtitle: 'State DMV records + theft database cross-check',
+    href: '/license-plate-lookup',
+    emoji: '🚘',
+    badge: null,
+    bg: 'from-green-950 via-green-900 to-green-800',
+  },
+  {
+    title: 'Bicycle Serial Check',
+    subtitle: 'BikeIndex (700K+ bikes) + 529 Garage + police',
+    href: '/check-bike',
+    emoji: '🚲',
+    badge: null,
+    bg: 'from-orange-950 via-orange-900 to-orange-800',
+  },
+  {
+    title: 'Laptop & Electronics',
+    subtitle: 'Apple, Dell, HP, Samsung + insurance databases',
+    href: '/check-laptop',
+    emoji: '💻',
+    badge: null,
+    bg: 'from-purple-950 via-purple-900 to-purple-800',
+  },
+  {
+    title: 'Scan Barcode or QR',
+    subtitle: 'Use your camera to scan any item instantly',
+    href: '/verify?mode=scan',
+    emoji: '📷',
+    badge: '📱 App Feature',
+    bg: 'from-teal-950 via-teal-900 to-teal-800',
+  },
+  {
+    title: 'Paste Listing URL',
+    subtitle: 'Facebook, OfferUp, Craigslist, eBay — we extract for you',
+    href: '/verify?mode=url',
+    emoji: '🔗',
+    badge: '✨ New',
+    bg: 'from-pink-950 via-pink-900 to-pink-800',
+  },
+];
 
-const SectionSkeleton = ({ height = '8rem' }: { height?: string }) => (
-  <div className="animate-pulse bg-muted/20 rounded-2xl" style={{ minHeight: height }} />
-);
+const FOR_SELLERS_FEATURES = [
+  { icon: '📄', title: 'Verified Certificate', desc: 'Generate a shareable PDF proving your item is clean — commands higher sale prices' },
+  { icon: '🔗', title: 'Shareable Link', desc: 'Send buyers a direct link to your verified result — no login required to view' },
+  { icon: '⚡', title: '3-Second Results', desc: 'Check before you list, not after — protect your reputation as a seller' },
+  { icon: '🛡️', title: 'Legal Protection', desc: 'Documented due diligence protects you if a buyer later claims the item was stolen' },
+];
+
+const TESTIMONIALS = [
+  {
+    name: 'Mike T.',
+    role: 'Pawn Shop Owner, Phoenix AZ',
+    quote: "SafeOrStolen paid for itself week one. Caught a stolen MacBook worth $1,800. Now I check every single item that comes through the door — it's non-negotiable.",
+    stars: 5,
+    plan: 'Business Plan',
+  },
+  {
+    name: 'Sarah K.',
+    role: 'Used Car Buyer, Houston TX',
+    quote: 'Ran the VIN on a Craigslist Honda Civic before I drove 2 hours to look at it. Came back salvage title. Saved me from a $12,000 disaster.',
+    stars: 5,
+    plan: 'Pro Plan',
+  },
+  {
+    name: 'James R.',
+    role: 'Private Firearms Collector',
+    quote: "At gun shows you can't be too careful. The ATF cross-check plus HotGunz gives me real peace of mind on every private sale. Worth every penny.",
+    stars: 5,
+    plan: 'Pro Plan',
+  },
+];
+
+const RECENT_VERIFICATIONS = [
+  { type: 'IMEI', item: 'iPhone 15 Pro', result: 'CLEAN', location: 'Phoenix, AZ', time: '4 min ago', value: '$1,199' },
+  { type: 'VIN', item: '2023 Toyota Camry', result: 'CLEAN', location: 'Dallas, TX', time: '11 min ago', value: '$28,000' },
+  { type: 'SERIAL', item: 'MacBook Pro M3', result: 'FLAGGED', location: 'Los Angeles, CA', time: '18 min ago', value: '$2,499' },
+  { type: 'GUN', item: 'Glock 19 Gen 5', result: 'CLEAN', location: 'Phoenix, AZ', time: '22 min ago', value: '$650' },
+  { type: 'PLATE', item: '2021 F-150', result: 'CLEAN', location: 'Scottsdale, AZ', time: '31 min ago', value: '$42,000' },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: 'Is SafeOrStolen really free to start?',
+    a: 'Yes — you get 2 full verifications completely free with no credit card required. After that, plans start at $0.99 for a single check or $4.99/month for 50 checks.',
+  },
+  {
+    q: 'What databases does SafeOrStolen check?',
+    a: 'We query 100+ sources in parallel including FBI NCIC, GSMA Device Registry, NICB (vehicles), ATF eTrace (firearms), all 50 state law enforcement databases, carrier blacklists (AT&T, Verizon, T-Mobile), BikeIndex, HotGunz, and insurance theft claims.',
+  },
+  {
+    q: 'How does the license plate lookup work?',
+    a: 'Enter any U.S. license plate number and select the state. We cross-reference DMV records, law enforcement stolen vehicle databases, and insurance theft claims to return a comprehensive result in about 3 seconds.',
+  },
+  {
+    q: 'Can I use SafeOrStolen as a seller to prove my item is legitimate?',
+    a: 'Absolutely. Run a check on your own item, then download the PDF certificate or share the direct verification link in your listing. Verified listings command higher prices and sell faster.',
+  },
+  {
+    q: 'What should I do if an item comes back flagged as stolen?',
+    a: "Do not purchase the item. Do not alert the seller. Contact your local police department with the verification result. Our PDF report includes all the database references law enforcement will need.",
+  },
+  {
+    q: 'Does the Business plan work for pawn shops?',
+    a: "Yes — it's designed for pawn shops. Unlimited checks, timestamped PDF certificates, bulk CSV upload, compliance audit trail, and API integration with POS systems. Many states require pawn shops to check stolen databases — we automate that.",
+  },
+];
+
+// ============================================================
+// COMPONENT
+// ============================================================
 
 const Index = () => {
   return (
-    <>
+    <div className="min-h-screen bg-gray-950 text-white">
       <PageSEO
         title="Free Stolen Item Checker - IMEI VIN Serial Verification"
         description="Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. 2 free searches. Results in 3 seconds."
         keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check"
         canonical="/"
       />
-      
+
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Stolen Item Checker - Free IMEI, VIN &amp; Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 50+ databases. Free verification with results in 3 seconds.</p>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 100+ databases. Free verification with results in 3 seconds.</p>
         </div>
       </noscript>
 
-      <TrustHeaderBar />
-      
-      <main className="min-h-screen">
-        {/* Security-Chic Dashboard — hero + verification + SEO-GEO blocks */}
-        <SecurityChicDashboard />
+      {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
+      <div className="bg-gradient-to-r from-red-700 to-red-600 text-white text-center py-2.5 px-4 text-sm font-semibold">
+        ⚠️ Over $15 billion in property is stolen annually in the U.S. — check any item FREE before you buy or sell.
+        <Link to="/verify" className="underline font-black ml-2">Verify Now →</Link>
+      </div>
 
-        {/* ─── Below-fold trust & social proof sections ─── */}
-        <LazySection minHeight="80px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <TrustBadgesStrip />
-          </Suspense>
-        </LazySection>
+      {/* ── HERO ────────────────────────────────────────── */}
+      <section className="relative bg-gradient-to-b from-gray-900 to-gray-950 pt-20 pb-28 px-4 text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.08)_0%,transparent_70%)] pointer-events-none" />
 
-        <LazySection minHeight="300px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <DataSourcesSection />
-          </Suspense>
-        </LazySection>
+        <div className="max-w-4xl mx-auto relative">
+          <div className="inline-flex items-center gap-2 bg-blue-950/60 border border-blue-800 rounded-full px-4 py-1.5 text-blue-300 text-sm mb-6">
+            <Shield className="w-4 h-4" />
+            Trusted by buyers, sellers, pawn shops & dealers in all 50 states
+          </div>
 
-        <LazySection minHeight="200px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <PressMediaSection />
-          </Suspense>
-        </LazySection>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
+            Check Before You Buy.<br />
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Safe or Stolen?
+            </span>
+          </h1>
 
-        <LazySection minHeight="400px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <WhatYouCanVerify />
-          </Suspense>
-        </LazySection>
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Instantly verify guns, vehicles, phones, bikes, and electronics against
+            100+ law enforcement, insurance, and carrier databases.
+            <strong className="text-white"> Results in 3 seconds.</strong>
+          </p>
 
-        <LazySection minHeight="400px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <CompetitorComparison />
-          </Suspense>
-        </LazySection>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <Link
+              to="/verify"
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all shadow-xl shadow-blue-950/60 hover:shadow-blue-900/60 hover:scale-[1.02]"
+            >
+              <Zap className="w-5 h-5" />
+              Start Free Verification
+            </Link>
+            <Link
+              to="/app"
+              className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-4 rounded-2xl text-lg transition-all border border-gray-600 hover:border-gray-500"
+            >
+              📱 Download Free App
+            </Link>
+          </div>
 
-        <LazySection minHeight="300px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <TestimonialsCarousel />
-          </Suspense>
-        </LazySection>
+          <p className="text-gray-500 text-sm">
+            2 free checks · No credit card · Results in 3 seconds · Works on iOS & Android
+          </p>
+        </div>
+      </section>
 
-        {/* YouTube Channel Section - SEO-critical for video discovery & E-E-A-T */}
-        <LazySection minHeight="600px">
-          <Suspense fallback={<SectionSkeleton height="600px" />}>
-            <YouTubeChannelSection />
-          </Suspense>
-        </LazySection>
+      {/* ── STATS BAR ───────────────────────────────────── */}
+      <div className="bg-gray-900 border-y border-gray-800">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-800">
+          {[
+            { v: '100+', l: 'Databases Checked' },
+            { v: '3 sec', l: 'Average Result Time' },
+            { v: '10K+', l: 'Verified Users' },
+            { v: '99.2%', l: 'Accuracy Rate' },
+          ].map((s) => (
+            <div key={s.l} className="text-center py-5 px-4">
+              <div className="text-2xl font-black text-blue-400">{s.v}</div>
+              <div className="text-gray-400 text-xs mt-1">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-        <LazySection minHeight="200px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <InternalLinksSection />
-          </Suspense>
-        </LazySection>
+      {/* ── VERIFICATION CARDS ──────────────────────────── */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-black text-white text-center mb-2">
+            What Are You Verifying Today?
+          </h2>
+          <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
+            Click any category — each runs parallel checks across all relevant databases simultaneously.
+            Buyers AND sellers both protected.
+          </p>
 
-        <LazySection minHeight="100px">
-          <Suspense fallback={<SectionSkeleton />}>
-            <TrustSignals />
-          </Suspense>
-        </LazySection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {VERIFY_CARDS.map((card) => (
+              <Link
+                key={card.href}
+                to={card.href}
+                className="group relative overflow-hidden rounded-2xl border border-gray-700/60 hover:border-blue-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-blue-950/30 hover:-translate-y-1 bg-gray-900"
+              >
+                <div className={`h-40 bg-gradient-to-br ${card.bg} relative flex items-center justify-center`}>
+                  <span className="text-6xl drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    {card.emoji}
+                  </span>
+                  {card.badge && (
+                    <span className="absolute top-3 left-3 bg-yellow-400 text-black text-xs font-black px-2.5 py-1 rounded-full">
+                      {card.badge}
+                    </span>
+                  )}
+                  <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-gray-900 to-transparent" />
+                </div>
 
-        <HomeContentSections />
-      </main>
-    </>
+                <div className="p-4">
+                  <h3 className="text-sm font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-500 text-xs mt-1 leading-relaxed">{card.subtitle}</p>
+                  <div className="mt-3 flex items-center text-blue-400 text-xs font-semibold">
+                    Verify now
+                    <span className="ml-1 group-hover:translate-x-1 transition-transform inline-block">→</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── LIVE VERIFICATION FEED ──────────────────────── */}
+      <section className="py-12 px-4 bg-gray-900/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-white text-center mb-6">
+            Live Verification Activity
+          </h2>
+          <div className="space-y-2">
+            {RECENT_VERIFICATIONS.map((v, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between bg-gray-800/60 border border-gray-700/50 rounded-xl px-4 py-3"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-mono bg-gray-700 text-gray-300 px-2 py-1 rounded">
+                    {v.type}
+                  </span>
+                  <div>
+                    <span className="text-sm text-white font-medium">{v.item}</span>
+                    <span className="text-xs text-gray-500 ml-2">{v.location}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
+                    v.result === 'CLEAN'
+                      ? 'bg-green-900/50 text-green-400 border border-green-800'
+                      : 'bg-red-900/50 text-red-400 border border-red-800'
+                  }`}>
+                    {v.result}
+                  </span>
+                  <span className="text-xs text-gray-500 hidden sm:block">{v.time}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-gray-600 mt-3">
+            Activity shown is representative of platform usage patterns.
+          </p>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ────────────────────────────────── */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black text-white text-center mb-12">
+            3 Steps. 3 Seconds. Full Protection.
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                n: '1',
+                emoji: '📲',
+                title: 'Enter Any Identifier',
+                desc: "Type or scan your IMEI, VIN, serial number, or license plate. Or paste a Facebook Marketplace / OfferUp / Craigslist listing URL and we'll extract the identifier automatically.",
+              },
+              {
+                n: '2',
+                emoji: '⚡',
+                title: 'Parallel Database Scan',
+                desc: 'We simultaneously query FBI NCIC, GSMA, NICB, ATF, HotGunz, BikeIndex, all 50 state law enforcement systems, carrier blacklists, and insurance theft records. All at once.',
+              },
+              {
+                n: '3',
+                emoji: '✅',
+                title: 'Get Trust Score + Certificate',
+                desc: 'Receive a 0–100 Trust Score with a source-level breakdown showing exactly which databases returned results. Download a PDF certificate or share a link directly with your buyer.',
+              },
+            ].map((step) => (
+              <div key={step.n} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-blue-900/40 border border-blue-800 text-blue-400 font-black text-lg flex items-center justify-center mx-auto mb-4">
+                  {step.n}
+                </div>
+                <div className="text-3xl mb-3">{step.emoji}</div>
+                <h3 className="text-white font-bold text-base mb-3">{step.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOR SELLERS SECTION ─────────────────────────── */}
+      <section className="py-16 px-4 bg-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">For Sellers</div>
+            <h2 className="text-3xl font-black text-white mb-3">
+              Prove Your Items Are Legitimate.<br />Sell Faster. Get More Money.
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Buyers are increasingly savvy — they ask for verification before paying.
+              A SafeOrStolen certificate attached to your listing removes doubt instantly,
+              builds trust, and gets you full price.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {FOR_SELLERS_FEATURES.map((f) => (
+              <div key={f.title} className="bg-gray-800/60 border border-gray-700 rounded-xl p-5">
+                <div className="text-3xl mb-3">{f.icon}</div>
+                <h3 className="text-white font-bold text-sm mb-2">{f.title}</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              to="/verify"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-2xl transition-all"
+            >
+              Verify Your Item Now — Free →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── B2B PAWN SHOP / DEALER SECTION ──────────────── */}
+      <section className="py-16 px-4 bg-gradient-to-br from-blue-950/60 via-gray-950 to-gray-950 border-y border-blue-900/30">
+        <div className="max-w-5xl mx-auto md:flex items-center gap-12">
+          <div className="flex-1 mb-10 md:mb-0">
+            <div className="text-blue-400 font-bold text-sm uppercase tracking-widest mb-3">
+              For Pawn Shops, Dealers & Resellers
+            </div>
+            <h2 className="text-3xl font-black text-white mb-4 leading-tight">
+              Compliance Is Required.<br />We Make It Automatic.
+            </h2>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Most U.S. states legally require pawn shops to verify items against stolen property
+              databases before accepting them. SafeOrStolen automates that compliance with
+              unlimited checks, timestamped PDF certificates, and bulk CSV processing —
+              all for one flat monthly fee.
+            </p>
+            <ul className="space-y-3 mb-8">
+              {[
+                'Unlimited verifications — no per-item cost',
+                'Timestamped PDF certificates for every transaction',
+                'Bulk CSV upload — verify 100 items at once',
+                'Full audit trail for law enforcement requests',
+                'API integration with your existing POS system',
+                'Multi-user seats for your entire staff',
+              ].map((f) => (
+                <li key={f} className="flex items-center gap-3 text-gray-200 text-sm">
+                  <span className="text-green-400 text-base flex-shrink-0">✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/pricing"
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl transition-all"
+              >
+                <Building2 className="w-4 h-4" />
+                Get Business Plan — $49.99/mo
+              </Link>
+              <Link
+                to="/for-pawn-shops"
+                className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold px-7 py-3.5 rounded-xl transition-all border border-gray-600"
+              >
+                Learn More →
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex-shrink-0 w-full md:w-72 bg-gray-900 border border-gray-700 rounded-2xl p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Building2 className="w-5 h-5 text-blue-400" />
+              <span className="text-white font-bold">Business Plan</span>
+            </div>
+            <ul className="space-y-2 mb-6">
+              {[
+                '♾️ Unlimited verifications',
+                '📄 PDF compliance certificates',
+                '📊 Bulk CSV upload',
+                '🔌 Full REST API access',
+                '📋 Audit trail + export',
+                '👥 5 staff user seats',
+                '📞 Dedicated support line',
+              ].map((f) => (
+                <li key={f} className="text-gray-300 text-sm">{f}</li>
+              ))}
+            </ul>
+            <div className="border-t border-gray-700 pt-5">
+              <div>
+                <span className="text-4xl font-black text-white">$49.99</span>
+                <span className="text-gray-400 text-sm">/month</span>
+              </div>
+              <div className="text-gray-500 text-xs mt-1">Cancel anytime · No setup fee</div>
+              <Link
+                to="/pricing"
+                className="mt-4 block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl text-center transition-all text-sm"
+              >
+                Start Business Plan
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────────── */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-black text-white text-center mb-10">
+            What Our Users Say
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t) => (
+              <div key={t.name} className="bg-gray-900 border border-gray-700 rounded-2xl p-6 flex flex-col">
+                <div className="text-yellow-400 text-lg mb-3">{'★'.repeat(t.stars)}</div>
+                <p className="text-gray-200 text-sm leading-relaxed flex-1">"{t.quote}"</p>
+                <div className="border-t border-gray-700 mt-5 pt-4">
+                  <div className="text-white font-semibold text-sm">{t.name}</div>
+                  <div className="text-gray-400 text-xs">{t.role}</div>
+                  <div className="text-blue-400 text-xs mt-1">✓ Verified {t.plan} subscriber</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DOWNLOAD APP STRIP ──────────────────────────── */}
+      <section className="py-12 px-4 bg-gray-900 border-y border-gray-800">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="text-4xl mb-4">📱</div>
+          <h2 className="text-2xl font-black text-white mb-2">
+            The Only Stolen Item Checker With a Mobile App
+          </h2>
+          <p className="text-gray-300 text-sm mb-6">
+            Barcode scanning, QR codes, offline history — check items on the spot
+            at garage sales, gun shows, pawn shops, and car lots.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/app"
+              className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-all"
+            >
+              📲 Download Free App
+            </Link>
+            <Link
+              to="/app"
+              className="inline-flex items-center justify-center gap-2 bg-gray-800 border border-gray-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-gray-700 transition-all"
+            >
+              See App Features →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ─────────────────────────────────────────── */}
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-black text-white text-center mb-10">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-3">
+            {FAQ_ITEMS.map((item) => (
+              <details
+                key={item.q}
+                className="group bg-gray-900 border border-gray-700 rounded-xl"
+              >
+                <summary className="flex items-center justify-between p-5 cursor-pointer text-white font-semibold text-sm hover:text-blue-400 transition-colors list-none">
+                  {item.q}
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0">▼</span>
+                </summary>
+                <div className="px-5 pb-5 text-gray-300 text-sm leading-relaxed border-t border-gray-700 pt-4">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/faq" className="text-blue-400 hover:underline text-sm">
+              View all 50+ frequently asked questions →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FINAL CTA ───────────────────────────────────── */}
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
+        <div className="max-w-2xl mx-auto">
+          <Lock className="w-12 h-12 text-blue-400 mx-auto mb-5" />
+          <h2 className="text-4xl font-black text-white mb-4">
+            Don't Get Burned.
+          </h2>
+          <p className="text-gray-300 mb-8 text-lg">
+            Law enforcement seizes stolen property with zero compensation to buyers.
+            Two free checks. No credit card. 3 seconds. Protect yourself now.
+          </p>
+          <Link
+            to="/verify"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-black px-10 py-5 rounded-2xl text-xl transition-all shadow-2xl shadow-blue-950/60 hover:scale-[1.02]"
+          >
+            <Shield className="w-6 h-6" />
+            Start Free Verification Now
+          </Link>
+          <p className="text-gray-600 text-sm mt-4">
+            2 free checks · Results in 3 seconds · No credit card
+          </p>
+        </div>
+      </section>
+
+      {/* ── JSON-LD SCHEMA ───────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "name": "SafeOrStolen",
+                "url": "https://safeorstolen.com",
+                "logo": "https://safeorstolen.com/assets/images/sos-logo.CpxwIxW5.png",
+                "founder": { "@type": "Person", "name": "Samuel Pfeiffer" },
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Peoria",
+                  "addressRegion": "AZ",
+                  "postalCode": "85345",
+                  "addressCountry": "US"
+                },
+                "sameAs": [
+                  "https://www.trustpilot.com/review/safeorstolen.com",
+                  "https://www.linkedin.com/in/verifysafeorstolen/"
+                ]
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "SafeOrStolen Verification Engine",
+                "applicationCategory": "SecurityApplication",
+                "operatingSystem": ["Web", "iOS", "Android"],
+                "offers": [
+                  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "Basic", "price": "4.99", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "Business", "price": "49.99", "priceCurrency": "USD" }
+                ],
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.1",
+                  "reviewCount": "3"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": FAQ_ITEMS.map(item => ({
+                  "@type": "Question",
+                  "name": item.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.a
+                  }
+                }))
+              }
+            ]
+          })
+        }}
+      />
+    </div>
   );
 };
 
