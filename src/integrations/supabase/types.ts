@@ -1110,6 +1110,7 @@ export type Database = {
       subscriptions: {
         Row: {
           checks_limit: number | null
+          checks_used: number | null
           checks_used_this_month: number | null
           created_at: string | null
           fingerprint: string | null
@@ -1125,6 +1126,7 @@ export type Database = {
         }
         Insert: {
           checks_limit?: number | null
+          checks_used?: number | null
           checks_used_this_month?: number | null
           created_at?: string | null
           fingerprint?: string | null
@@ -1140,6 +1142,7 @@ export type Database = {
         }
         Update: {
           checks_limit?: number | null
+          checks_used?: number | null
           checks_used_this_month?: number | null
           created_at?: string | null
           fingerprint?: string | null
@@ -1158,26 +1161,35 @@ export type Database = {
       usage_tracking: {
         Row: {
           check_count: number | null
+          check_type: string | null
           created_at: string | null
           fingerprint: string
           id: string
+          identifier: string | null
           last_check_at: string | null
+          result: Json | null
           user_id: string | null
         }
         Insert: {
           check_count?: number | null
+          check_type?: string | null
           created_at?: string | null
           fingerprint: string
           id?: string
+          identifier?: string | null
           last_check_at?: string | null
+          result?: Json | null
           user_id?: string | null
         }
         Update: {
           check_count?: number | null
+          check_type?: string | null
           created_at?: string | null
           fingerprint?: string
           id?: string
+          identifier?: string | null
           last_check_at?: string | null
+          result?: Json | null
           user_id?: string | null
         }
         Relationships: []
