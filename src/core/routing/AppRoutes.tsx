@@ -8,6 +8,7 @@ const Index = lazy(() => import('@/pages/Index'));
 const VerifyPage = lazy(() => import('@/pages/VerifyPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const ProfilePage = lazy(() => import('@/pages/ProfilePage'));
+const AppDownloadPage = lazy(() => import('@/pages/AppDownloadPage'));
 const AppPage = lazy(() => import('@/pages/AppPage'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
@@ -343,7 +344,9 @@ export const AppRoutes = () => {
         <Route path="/trust-engine" element={<TrustEnginePage />} />
         <Route path="/profile" element={<ProfilePage />} />
         {/* /account and /mobile-app handled by server-side _redirects - removed duplicate Navigate */}
-        <Route path="/app" element={<AppPage />} />
+        <Route path="/app" element={<AppDownloadPage />} />
+        <Route path="/download-app" element={<AppDownloadPage />} />
+        {/* Keeping old AppPage for now as redirect target or legacy */}
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FAQPage />} />
