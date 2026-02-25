@@ -1,6 +1,17 @@
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
-import { Shield, Zap, Lock, Star, Building2 } from 'lucide-react';
+import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
+import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
+import { useState } from 'react';
+
+// Images
+import firearmsImg from '@/assets/firearms-verification.jpg';
+import heroDevice from '@/assets/hero-verification-device.png';
+import multiDevice from '@/assets/multi-device-verification.png';
+import laptopChase from '@/assets/stolen-laptop-chase.png';
+import sosPhoto7 from '@/assets/good_photo_for_sos-7.png';
+import sosPhoto8 from '@/assets/good_photo_for_sos-8.png';
+import trustBadge from '@/assets/trust-badge-verified.png';
 
 // ============================================================
 // DATA
@@ -11,65 +22,57 @@ const VERIFY_CARDS = [
     title: 'Gun Serial Number Lookup',
     subtitle: 'ATF, NCIC, HotGunz + 50 state police databases',
     href: '/firearms-check',
-    emoji: '🔫',
+    image: firearmsImg,
     badge: '🔥 Top Search',
-    bg: 'from-red-950 via-red-900 to-red-800',
   },
   {
     title: 'Vehicle VIN Check',
     subtitle: 'NICB, NHTSA, DMV records from all 50 states',
     href: '/vin-checker',
-    emoji: '🚗',
+    image: sosPhoto7,
     badge: null,
-    bg: 'from-blue-950 via-blue-900 to-blue-800',
   },
   {
     title: 'Phone IMEI Check',
     subtitle: 'GSMA, AT&T, Verizon, T-Mobile carrier blacklists',
     href: '/imei-checker',
-    emoji: '📱',
+    image: heroDevice,
     badge: null,
-    bg: 'from-indigo-950 via-indigo-900 to-indigo-800',
   },
   {
     title: 'License Plate Lookup',
     subtitle: 'State DMV records + theft database cross-check',
     href: '/license-plate-lookup',
-    emoji: '🚘',
+    image: sosPhoto8,
     badge: null,
-    bg: 'from-green-950 via-green-900 to-green-800',
   },
   {
     title: 'Bicycle Serial Check',
     subtitle: 'BikeIndex (700K+ bikes) + 529 Garage + police',
     href: '/check-bike',
-    emoji: '🚲',
+    image: multiDevice,
     badge: null,
-    bg: 'from-orange-950 via-orange-900 to-orange-800',
   },
   {
     title: 'Laptop & Electronics',
     subtitle: 'Apple, Dell, HP, Samsung + insurance databases',
     href: '/check-laptop',
-    emoji: '💻',
+    image: laptopChase,
     badge: null,
-    bg: 'from-purple-950 via-purple-900 to-purple-800',
   },
   {
     title: 'Scan Barcode or QR',
     subtitle: 'Use your camera to scan any item instantly',
     href: '/verify?mode=scan',
-    emoji: '📷',
+    image: trustBadge,
     badge: '📱 App Feature',
-    bg: 'from-teal-950 via-teal-900 to-teal-800',
   },
   {
     title: 'Paste Listing URL',
     subtitle: 'Facebook, OfferUp, Craigslist, eBay — we extract for you',
     href: '/verify?mode=url',
-    emoji: '🔗',
+    image: heroDevice,
     badge: '✨ New',
-    bg: 'from-pink-950 via-pink-900 to-pink-800',
   },
 ];
 
@@ -144,8 +147,10 @@ const FAQ_ITEMS = [
 // ============================================================
 
 const Index = () => {
+  const [showScanner, setShowScanner] = useState(false);
+
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <PageSEO
         title="Free Stolen Item Checker - IMEI VIN Serial Verification"
         description="Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. 2 free searches. Results in 3 seconds."
@@ -161,59 +166,50 @@ const Index = () => {
       </noscript>
 
       {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
-      <div className="bg-gradient-to-r from-red-700 to-red-600 text-white text-center py-2.5 px-4 text-sm font-semibold">
+      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold">
         ⚠️ Over $15 billion in property is stolen annually in the U.S. — check any item FREE before you buy or sell.
         <Link to="/verify" className="underline font-black ml-2">Verify Now →</Link>
       </div>
 
-      {/* ── HERO ────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-b from-gray-900 to-gray-950 pt-20 pb-28 px-4 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.08)_0%,transparent_70%)] pointer-events-none" />
+      {/* ── HERO WITH SCANNER ──────────────────────────── */}
+      <section className="relative pt-20 pb-28 px-4 text-center overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--gradient-glow)' }} />
 
         <div className="max-w-4xl mx-auto relative">
-          <div className="inline-flex items-center gap-2 bg-blue-950/60 border border-blue-800 rounded-full px-4 py-1.5 text-blue-300 text-sm mb-6">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm mb-6">
             <Shield className="w-4 h-4" />
             Trusted by buyers, sellers, pawn shops & dealers in all 50 states
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
-            Check Before You Buy.<br />
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Safe or Stolen?
-            </span>
+            Check Before You Buy.
+            <br />
+            <span className="sos-gradient-text">Safe or Stolen?</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Instantly verify guns, vehicles, phones, bikes, and electronics against
             100+ law enforcement, insurance, and carrier databases.
-            <strong className="text-white"> Results in 3 seconds.</strong>
+            <strong className="text-foreground"> Results in 3 seconds.</strong>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Link
-              to="/verify"
-              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all shadow-xl shadow-blue-950/60 hover:shadow-blue-900/60 hover:scale-[1.02]"
-            >
-              <Zap className="w-5 h-5" />
-              Start Free Verification
-            </Link>
-            <Link
-              to="/app"
-              className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-4 rounded-2xl text-lg transition-all border border-gray-600 hover:border-gray-500"
-            >
-              📱 Download Free App
-            </Link>
+          {/* Integrated Scanner / Search Bar */}
+          <div className="max-w-2xl mx-auto mb-6">
+            <UnifiedSearchBar
+              onOpenQrScanner={() => setShowScanner(!showScanner)}
+              variant="hero"
+            />
           </div>
 
-          <p className="text-gray-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             2 free checks · No credit card · Results in 3 seconds · Works on iOS & Android
           </p>
         </div>
       </section>
 
       {/* ── STATS BAR ───────────────────────────────────── */}
-      <div className="bg-gray-900 border-y border-gray-800">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-800">
+      <div className="bg-card border-y border-border">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
           {[
             { v: '100+', l: 'Databases Checked' },
             { v: '3 sec', l: 'Average Result Time' },
@@ -221,20 +217,20 @@ const Index = () => {
             { v: '99.2%', l: 'Accuracy Rate' },
           ].map((s) => (
             <div key={s.l} className="text-center py-5 px-4">
-              <div className="text-2xl font-black text-blue-400">{s.v}</div>
-              <div className="text-gray-400 text-xs mt-1">{s.l}</div>
+              <div className="text-2xl font-black text-primary">{s.v}</div>
+              <div className="text-muted-foreground text-xs mt-1">{s.l}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── VERIFICATION CARDS ──────────────────────────── */}
+      {/* ── VERIFICATION CARDS WITH PHOTOS ──────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-black text-white text-center mb-2">
+          <h2 className="text-3xl font-black text-foreground text-center mb-2">
             What Are You Verifying Today?
           </h2>
-          <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
             Click any category — each runs parallel checks across all relevant databases simultaneously.
             Buyers AND sellers both protected.
           </p>
@@ -244,26 +240,31 @@ const Index = () => {
               <Link
                 key={card.href}
                 to={card.href}
-                className="group relative overflow-hidden rounded-2xl border border-gray-700/60 hover:border-blue-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-blue-950/30 hover:-translate-y-1 bg-gray-900"
+                className="group relative overflow-hidden rounded-2xl border border-border hover:border-primary/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card modern-card"
               >
-                <div className={`h-40 bg-gradient-to-br ${card.bg} relative flex items-center justify-center`}>
-                  <span className="text-6xl drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {card.emoji}
-                  </span>
+                <div className="h-44 relative overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    width="300"
+                    height="176"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                   {card.badge && (
-                    <span className="absolute top-3 left-3 bg-yellow-400 text-black text-xs font-black px-2.5 py-1 rounded-full">
+                    <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs font-black px-2.5 py-1 rounded-full shadow-lg">
                       {card.badge}
                     </span>
                   )}
-                  <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-gray-900 to-transparent" />
                 </div>
 
                 <div className="p-4">
-                  <h3 className="text-sm font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
+                  <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                     {card.title}
                   </h3>
-                  <p className="text-gray-500 text-xs mt-1 leading-relaxed">{card.subtitle}</p>
-                  <div className="mt-3 flex items-center text-blue-400 text-xs font-semibold">
+                  <p className="text-muted-foreground text-xs mt-1 leading-relaxed">{card.subtitle}</p>
+                  <div className="mt-3 flex items-center text-primary text-xs font-semibold">
                     Verify now
                     <span className="ml-1 group-hover:translate-x-1 transition-transform inline-block">→</span>
                   </div>
@@ -275,40 +276,40 @@ const Index = () => {
       </section>
 
       {/* ── LIVE VERIFICATION FEED ──────────────────────── */}
-      <section className="py-12 px-4 bg-gray-900/50">
+      <section className="py-12 px-4 bg-muted/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-xl font-bold text-white text-center mb-6">
+          <h2 className="text-xl font-bold text-foreground text-center mb-6">
             Live Verification Activity
           </h2>
           <div className="space-y-2">
             {RECENT_VERIFICATIONS.map((v, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between bg-gray-800/60 border border-gray-700/50 rounded-xl px-4 py-3"
+                className="flex items-center justify-between bg-card border border-border rounded-xl px-4 py-3"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-mono bg-gray-700 text-gray-300 px-2 py-1 rounded">
+                  <span className="text-xs font-mono bg-muted text-muted-foreground px-2 py-1 rounded">
                     {v.type}
                   </span>
                   <div>
-                    <span className="text-sm text-white font-medium">{v.item}</span>
-                    <span className="text-xs text-gray-500 ml-2">{v.location}</span>
+                    <span className="text-sm text-foreground font-medium">{v.item}</span>
+                    <span className="text-xs text-muted-foreground ml-2">{v.location}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
                     v.result === 'CLEAN'
-                      ? 'bg-green-900/50 text-green-400 border border-green-800'
-                      : 'bg-red-900/50 text-red-400 border border-red-800'
+                      ? 'bg-secondary/20 text-secondary border border-secondary/30'
+                      : 'bg-destructive/20 text-destructive border border-destructive/30'
                   }`}>
                     {v.result}
                   </span>
-                  <span className="text-xs text-gray-500 hidden sm:block">{v.time}</span>
+                  <span className="text-xs text-muted-foreground hidden sm:block">{v.time}</span>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-gray-600 mt-3">
+          <p className="text-center text-xs text-muted-foreground/60 mt-3">
             Activity shown is representative of platform usage patterns.
           </p>
         </div>
@@ -317,37 +318,33 @@ const Index = () => {
       {/* ── HOW IT WORKS ────────────────────────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-black text-white text-center mb-12">
+          <h2 className="text-3xl font-black text-foreground text-center mb-12">
             3 Steps. 3 Seconds. Full Protection.
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 n: '1',
-                emoji: '📲',
                 title: 'Enter Any Identifier',
                 desc: "Type or scan your IMEI, VIN, serial number, or license plate. Or paste a Facebook Marketplace / OfferUp / Craigslist listing URL and we'll extract the identifier automatically.",
               },
               {
                 n: '2',
-                emoji: '⚡',
                 title: 'Parallel Database Scan',
                 desc: 'We simultaneously query FBI NCIC, GSMA, NICB, ATF, HotGunz, BikeIndex, all 50 state law enforcement systems, carrier blacklists, and insurance theft records. All at once.',
               },
               {
                 n: '3',
-                emoji: '✅',
                 title: 'Get Trust Score + Certificate',
                 desc: 'Receive a 0–100 Trust Score with a source-level breakdown showing exactly which databases returned results. Download a PDF certificate or share a link directly with your buyer.',
               },
             ].map((step) => (
               <div key={step.n} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-blue-900/40 border border-blue-800 text-blue-400 font-black text-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 text-primary font-black text-lg flex items-center justify-center mx-auto mb-4">
                   {step.n}
                 </div>
-                <div className="text-3xl mb-3">{step.emoji}</div>
-                <h3 className="text-white font-bold text-base mb-3">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-foreground font-bold text-base mb-3">{step.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -355,14 +352,14 @@ const Index = () => {
       </section>
 
       {/* ── FOR SELLERS SECTION ─────────────────────────── */}
-      <section className="py-16 px-4 bg-gray-900">
+      <section className="py-16 px-4 bg-card">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <div className="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">For Sellers</div>
-            <h2 className="text-3xl font-black text-white mb-3">
+            <div className="text-primary text-sm font-bold uppercase tracking-widest mb-2">For Sellers</div>
+            <h2 className="text-3xl font-black text-foreground mb-3">
               Prove Your Items Are Legitimate.<br />Sell Faster. Get More Money.
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Buyers are increasingly savvy — they ask for verification before paying.
               A SafeOrStolen certificate attached to your listing removes doubt instantly,
               builds trust, and gets you full price.
@@ -371,10 +368,10 @@ const Index = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {FOR_SELLERS_FEATURES.map((f) => (
-              <div key={f.title} className="bg-gray-800/60 border border-gray-700 rounded-xl p-5">
+              <div key={f.title} className="card-enhanced p-5">
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="text-white font-bold text-sm mb-2">{f.title}</h3>
-                <p className="text-gray-400 text-xs leading-relaxed">{f.desc}</p>
+                <h3 className="text-foreground font-bold text-sm mb-2">{f.title}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -382,7 +379,7 @@ const Index = () => {
           <div className="text-center">
             <Link
               to="/verify"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-2xl transition-all"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
             >
               Verify Your Item Now — Free →
             </Link>
@@ -391,16 +388,16 @@ const Index = () => {
       </section>
 
       {/* ── B2B PAWN SHOP / DEALER SECTION ──────────────── */}
-      <section className="py-16 px-4 bg-gradient-to-br from-blue-950/60 via-gray-950 to-gray-950 border-y border-blue-900/30">
+      <section className="py-16 px-4 border-y border-primary/10" style={{ background: 'linear-gradient(135deg, hsl(25 92% 53% / 0.05) 0%, hsl(var(--background)) 40%, hsl(var(--background)) 100%)' }}>
         <div className="max-w-5xl mx-auto md:flex items-center gap-12">
           <div className="flex-1 mb-10 md:mb-0">
-            <div className="text-blue-400 font-bold text-sm uppercase tracking-widest mb-3">
+            <div className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
               For Pawn Shops, Dealers & Resellers
             </div>
-            <h2 className="text-3xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-3xl font-black text-foreground mb-4 leading-tight">
               Compliance Is Required.<br />We Make It Automatic.
             </h2>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed">
               Most U.S. states legally require pawn shops to verify items against stolen property
               databases before accepting them. SafeOrStolen automates that compliance with
               unlimited checks, timestamped PDF certificates, and bulk CSV processing —
@@ -415,8 +412,8 @@ const Index = () => {
                 'API integration with your existing POS system',
                 'Multi-user seats for your entire staff',
               ].map((f) => (
-                <li key={f} className="flex items-center gap-3 text-gray-200 text-sm">
-                  <span className="text-green-400 text-base flex-shrink-0">✓</span>
+                <li key={f} className="flex items-center gap-3 text-foreground/80 text-sm">
+                  <span className="text-primary text-base flex-shrink-0">✓</span>
                   {f}
                 </li>
               ))}
@@ -424,24 +421,24 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/pricing"
-                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-7 py-3.5 rounded-xl transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
               >
                 <Building2 className="w-4 h-4" />
                 Get Business Plan — $49.99/mo
               </Link>
               <Link
                 to="/for-pawn-shops"
-                className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold px-7 py-3.5 rounded-xl transition-all border border-gray-600"
+                className="inline-flex items-center justify-center gap-2 bg-card hover:bg-muted text-foreground font-semibold px-7 py-3.5 rounded-xl transition-all border border-border"
               >
                 Learn More →
               </Link>
             </div>
           </div>
 
-          <div className="flex-shrink-0 w-full md:w-72 bg-gray-900 border border-gray-700 rounded-2xl p-6">
+          <div className="flex-shrink-0 w-full md:w-72 modern-card p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Building2 className="w-5 h-5 text-blue-400" />
-              <span className="text-white font-bold">Business Plan</span>
+              <Building2 className="w-5 h-5 text-primary" />
+              <span className="text-foreground font-bold">Business Plan</span>
             </div>
             <ul className="space-y-2 mb-6">
               {[
@@ -453,18 +450,18 @@ const Index = () => {
                 '👥 5 staff user seats',
                 '📞 Dedicated support line',
               ].map((f) => (
-                <li key={f} className="text-gray-300 text-sm">{f}</li>
+                <li key={f} className="text-muted-foreground text-sm">{f}</li>
               ))}
             </ul>
-            <div className="border-t border-gray-700 pt-5">
+            <div className="border-t border-border pt-5">
               <div>
-                <span className="text-4xl font-black text-white">$49.99</span>
-                <span className="text-gray-400 text-sm">/month</span>
+                <span className="text-4xl font-black text-foreground">$49.99</span>
+                <span className="text-muted-foreground text-sm">/month</span>
               </div>
-              <div className="text-gray-500 text-xs mt-1">Cancel anytime · No setup fee</div>
+              <div className="text-muted-foreground text-xs mt-1">Cancel anytime · No setup fee</div>
               <Link
                 to="/pricing"
-                className="mt-4 block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl text-center transition-all text-sm"
+                className="mt-4 block w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 rounded-xl text-center transition-all text-sm"
               >
                 Start Business Plan
               </Link>
@@ -476,18 +473,18 @@ const Index = () => {
       {/* ── TESTIMONIALS ────────────────────────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-black text-white text-center mb-10">
+          <h2 className="text-3xl font-black text-foreground text-center mb-10">
             What Our Users Say
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="bg-gray-900 border border-gray-700 rounded-2xl p-6 flex flex-col">
-                <div className="text-yellow-400 text-lg mb-3">{'★'.repeat(t.stars)}</div>
-                <p className="text-gray-200 text-sm leading-relaxed flex-1">"{t.quote}"</p>
-                <div className="border-t border-gray-700 mt-5 pt-4">
-                  <div className="text-white font-semibold text-sm">{t.name}</div>
-                  <div className="text-gray-400 text-xs">{t.role}</div>
-                  <div className="text-blue-400 text-xs mt-1">✓ Verified {t.plan} subscriber</div>
+              <div key={t.name} className="modern-card p-6 flex flex-col">
+                <div className="text-primary text-lg mb-3">{'★'.repeat(t.stars)}</div>
+                <p className="text-foreground/80 text-sm leading-relaxed flex-1">"{t.quote}"</p>
+                <div className="border-t border-border mt-5 pt-4">
+                  <div className="text-foreground font-semibold text-sm">{t.name}</div>
+                  <div className="text-muted-foreground text-xs">{t.role}</div>
+                  <div className="text-primary text-xs mt-1">✓ Verified {t.plan} subscriber</div>
                 </div>
               </div>
             ))}
@@ -496,26 +493,26 @@ const Index = () => {
       </section>
 
       {/* ── DOWNLOAD APP STRIP ──────────────────────────── */}
-      <section className="py-12 px-4 bg-gray-900 border-y border-gray-800">
+      <section className="py-12 px-4 bg-card border-y border-border">
         <div className="max-w-3xl mx-auto text-center">
           <div className="text-4xl mb-4">📱</div>
-          <h2 className="text-2xl font-black text-white mb-2">
+          <h2 className="text-2xl font-black text-foreground mb-2">
             The Only Stolen Item Checker With a Mobile App
           </h2>
-          <p className="text-gray-300 text-sm mb-6">
+          <p className="text-muted-foreground text-sm mb-6">
             Barcode scanning, QR codes, offline history — check items on the spot
             at garage sales, gun shows, pawn shops, and car lots.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/app"
-              className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
             >
               📲 Download Free App
             </Link>
             <Link
               to="/app"
-              className="inline-flex items-center justify-center gap-2 bg-gray-800 border border-gray-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-gray-700 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-card border border-border text-foreground font-semibold px-7 py-3.5 rounded-xl hover:bg-muted transition-all"
             >
               See App Features →
             </Link>
@@ -526,27 +523,27 @@ const Index = () => {
       {/* ── FAQ ─────────────────────────────────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-black text-white text-center mb-10">
+          <h2 className="text-3xl font-black text-foreground text-center mb-10">
             Frequently Asked Questions
           </h2>
           <div className="space-y-3">
             {FAQ_ITEMS.map((item) => (
               <details
                 key={item.q}
-                className="group bg-gray-900 border border-gray-700 rounded-xl"
+                className="group modern-card"
               >
-                <summary className="flex items-center justify-between p-5 cursor-pointer text-white font-semibold text-sm hover:text-blue-400 transition-colors list-none">
+                <summary className="flex items-center justify-between p-5 cursor-pointer text-foreground font-semibold text-sm hover:text-primary transition-colors list-none">
                   {item.q}
-                  <span className="text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0">▼</span>
+                  <span className="text-muted-foreground group-open:rotate-180 transition-transform ml-4 flex-shrink-0">▼</span>
                 </summary>
-                <div className="px-5 pb-5 text-gray-300 text-sm leading-relaxed border-t border-gray-700 pt-4">
+                <div className="px-5 pb-5 text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
                   {item.a}
                 </div>
               </details>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link to="/faq" className="text-blue-400 hover:underline text-sm">
+            <Link to="/faq" className="text-primary hover:underline text-sm">
               View all 50+ frequently asked questions →
             </Link>
           </div>
@@ -554,24 +551,24 @@ const Index = () => {
       </section>
 
       {/* ── FINAL CTA ───────────────────────────────────── */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-gray-950 text-center">
+      <section className="py-20 px-4 text-center" style={{ background: 'var(--gradient-hero)' }}>
         <div className="max-w-2xl mx-auto">
-          <Lock className="w-12 h-12 text-blue-400 mx-auto mb-5" />
-          <h2 className="text-4xl font-black text-white mb-4">
+          <Lock className="w-12 h-12 text-primary mx-auto mb-5" />
+          <h2 className="text-4xl font-black text-foreground mb-4">
             Don't Get Burned.
           </h2>
-          <p className="text-gray-300 mb-8 text-lg">
+          <p className="text-muted-foreground mb-8 text-lg">
             Law enforcement seizes stolen property with zero compensation to buyers.
             Two free checks. No credit card. 3 seconds. Protect yourself now.
           </p>
           <Link
             to="/verify"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-black px-10 py-5 rounded-2xl text-xl transition-all shadow-2xl shadow-blue-950/60 hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-black px-10 py-5 rounded-2xl text-xl transition-all button-glow hover:scale-[1.02]"
           >
             <Shield className="w-6 h-6" />
             Start Free Verification Now
           </Link>
-          <p className="text-gray-600 text-sm mt-4">
+          <p className="text-muted-foreground/50 text-sm mt-4">
             2 free checks · Results in 3 seconds · No credit card
           </p>
         </div>
