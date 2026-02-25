@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import { Shield, Search, CheckCircle, Clock, Award, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -130,7 +131,7 @@ export const ItemLandingPageTemplate = ({
               </h1>
               <p 
                 className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80"
-                dangerouslySetInnerHTML={{ __html: content.intro }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.intro, { ALLOWED_TAGS: ['a', 'strong', 'em', 'p', 'br', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel', 'class'] }) }}
               />
               <Link to="/verify">
                 <Button size="lg" className="gap-2">
@@ -170,7 +171,7 @@ export const ItemLandingPageTemplate = ({
             <h2 className="text-3xl font-bold mb-6">What is {itemType} Verification?</h2>
             <p 
               className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
-              dangerouslySetInnerHTML={{ __html: content.whatIs }}
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.whatIs, { ALLOWED_TAGS: ['a', 'strong', 'em', 'p', 'br', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel', 'class'] }) }}
             />
             <DataPartnerBadges variant="compact" />
           </div>
