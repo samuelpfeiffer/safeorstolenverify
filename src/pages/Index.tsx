@@ -4,14 +4,15 @@ import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { useState } from 'react';
 
-// Images
-import firearmsImg from '@/assets/firearms-verification.jpg';
-import heroDevice from '@/assets/hero-verification-device.png';
-import multiDevice from '@/assets/multi-device-verification.png';
-import laptopChase from '@/assets/stolen-laptop-chase.png';
-import sosPhoto7 from '@/assets/good_photo_for_sos-7.png';
-import sosPhoto8 from '@/assets/good_photo_for_sos-8.png';
-import trustBadge from '@/assets/trust-badge-verified.png';
+// Images — unique per card, no duplicates
+import cardFirearms from '@/assets/cards/firearms-check.jpg';
+import cardVehicle from '@/assets/cards/vehicle-vin.jpg';
+import cardPhone from '@/assets/cards/phone-imei.jpg';
+import cardPlate from '@/assets/cards/license-plate.jpg';
+import cardBicycle from '@/assets/cards/bicycle-serial.jpg';
+import cardLaptop from '@/assets/cards/laptop-electronics.jpg';
+import cardBarcode from '@/assets/cards/scan-barcode.jpg';
+import cardListing from '@/assets/cards/paste-listing.jpg';
 
 // ============================================================
 // DATA
@@ -22,56 +23,56 @@ const VERIFY_CARDS = [
     title: 'Gun Serial Number Lookup',
     subtitle: 'ATF, NCIC, HotGunz + 50 state police databases',
     href: '/firearms-check',
-    image: firearmsImg,
+    image: cardFirearms,
     badge: '🔥 Top Search',
   },
   {
     title: 'Vehicle VIN Check',
     subtitle: 'NICB, NHTSA, DMV records from all 50 states',
     href: '/vin-checker',
-    image: sosPhoto7,
+    image: cardVehicle,
     badge: null,
   },
   {
     title: 'Phone IMEI Check',
     subtitle: 'GSMA, AT&T, Verizon, T-Mobile carrier blacklists',
     href: '/imei-checker',
-    image: heroDevice,
+    image: cardPhone,
     badge: null,
   },
   {
     title: 'License Plate Lookup',
     subtitle: 'State DMV records + theft database cross-check',
     href: '/license-plate-lookup',
-    image: sosPhoto8,
+    image: cardPlate,
     badge: null,
   },
   {
     title: 'Bicycle Serial Check',
     subtitle: 'BikeIndex (700K+ bikes) + 529 Garage + police',
     href: '/check-bike',
-    image: multiDevice,
+    image: cardBicycle,
     badge: null,
   },
   {
     title: 'Laptop & Electronics',
     subtitle: 'Apple, Dell, HP, Samsung + insurance databases',
     href: '/check-laptop',
-    image: laptopChase,
+    image: cardLaptop,
     badge: null,
   },
   {
     title: 'Scan Barcode or QR',
     subtitle: 'Use your camera to scan any item instantly',
     href: '/verify?mode=scan',
-    image: trustBadge,
+    image: cardBarcode,
     badge: '📱 App Feature',
   },
   {
     title: 'Paste Listing URL',
     subtitle: 'Facebook, OfferUp, Craigslist, eBay — we extract for you',
     href: '/verify?mode=url',
-    image: heroDevice,
+    image: cardListing,
     badge: '✨ New',
   },
 ];
