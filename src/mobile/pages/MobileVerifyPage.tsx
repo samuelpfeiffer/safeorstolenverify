@@ -3,28 +3,37 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Camera, Search, History, Smartphone, Car, Package } from 'lucide-react';
+import { Camera, Search, History } from 'lucide-react';
 import { CameraScanner } from '../components/CameraScanner';
 import { useAdvancedVerification } from '@/verification/hooks/useAdvancedVerification';
 import { useNavigate } from 'react-router-dom';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
+import { useSmartDetection } from '@/hooks/useSmartDetection';
+import { mapDetectedTypeToItemType } from '@/lib/aiDetection';
+import { SmartDetectionIndicator } from '@/components/verification/SmartDetectionIndicator';
 
 const MobileVerifyPage: React.FC = () => {
   const [serialNumber, setSerialNumber] = useState('');
   const [showScanner, setShowScanner] = useState(false);
-  const [selectedType, setSelectedType] = useState<string>('');
+  const [manualOverrideType, setManualOverrideType] = useState('');
+  const [showManualSelect, setShowManualSelect] = useState(false);
   const { verifyItem, isLoading } = useAdvancedVerification();
   const navigate = useNavigate();
   const haptics = useHapticFeedback();
+  const { detection, isDetecting, detectionError, detect } = useSmartDetection(500);
 
-  const itemTypes = [
-    { id: 'phone', label: 'Phone', icon: Smartphone },
-    { id: 'vehicle', label: 'Vehicle', icon: Car },
-    { id: 'electronics', label: 'Electronics', icon: Package }
-  ];
+  const effectiveType = manualOverrideType || (detection ? mapDetectedTypeToItemType(detection.type) : undefined);
+
+  const handleInputChange = (value: string) => {
+    setSerialNumber(value);
+    setManualOverrideType('');
+    setShowManualSelect(false);
+    detect(value);
+  };
 
   const handleScan = (result: string) => {
     setSerialNumber(result);
+    detect(result);
     setShowScanner(false);
     haptics.notification('success');
   };
@@ -33,7 +42,7 @@ const MobileVerifyPage: React.FC = () => {
     if (!serialNumber.trim()) return;
 
     haptics.impact('medium');
-    const result = await verifyItem(serialNumber, selectedType || undefined);
+    const result = await verifyItem(serialNumber, effectiveType || undefined);
     
     if (result) {
       if (result.risk_level === 'critical' || result.risk_level === 'high') {
@@ -41,8 +50,6 @@ const MobileVerifyPage: React.FC = () => {
       } else {
         haptics.notification('success');
       }
-      
-      // Navigate to results
       navigate('/mobile-dashboard');
     }
   };
@@ -97,39 +104,25 @@ const MobileVerifyPage: React.FC = () => {
               <CardTitle className="text-lg">Or Enter Manually</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {/* Item Type Selection */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">
-                  Item Type (Optional)
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {itemTypes.map((type) => {
-                    const Icon = type.icon;
-                    return (
-                      <Button
-                        key={type.id}
-                        variant={selectedType === type.id ? 'default' : 'outline'}
-                        onClick={() => setSelectedType(type.id)}
-                        className="h-20 flex-col gap-2"
-                      >
-                        <Icon className="h-5 w-5" />
-                        <span className="text-xs">{type.label}</span>
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
-
               {/* Serial Number Input */}
               <div>
                 <label className="text-sm font-medium mb-2 block">
                   Serial / IMEI / VIN Number
                 </label>
                 <Input
-                  placeholder="Enter number..."
+                  placeholder="Paste IMEI, VIN, Plate, or Serial Number..."
                   value={serialNumber}
-                  onChange={(e) => setSerialNumber(e.target.value)}
+                  onChange={(e) => handleInputChange(e.target.value)}
                   className="text-lg h-14"
+                />
+                <SmartDetectionIndicator
+                  isDetecting={isDetecting}
+                  detection={detection}
+                  detectionError={detectionError}
+                  showManualSelect={showManualSelect}
+                  onToggleManual={() => setShowManualSelect(!showManualSelect)}
+                  manualType={manualOverrideType}
+                  onManualTypeChange={(t) => { setManualOverrideType(t); setShowManualSelect(false); }}
                 />
               </div>
 
