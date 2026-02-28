@@ -11,6 +11,9 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, Loader2, Shield, AlertTriangle, Camera, Smartphone, Car, Bike, Monitor, CircuitBoard, Crosshair, FileText, Mic, MicOff, Link2, Sparkles } from 'lucide-react';
+import { useSmartDetection } from '@/hooks/useSmartDetection';
+import { mapDetectedTypeToItemType } from '@/lib/aiDetection';
+import { SmartDetectionIndicator } from '@/components/verification/SmartDetectionIndicator';
 import { QRScanner } from '@/components/futuristic/QRScanner';
 import { useParallelVerification } from '@/hooks/useParallelVerification';
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
@@ -48,9 +51,12 @@ const VerifyPage = () => {
   const [searchParams] = useSearchParams();
   const [identifier, setIdentifier] = useState('');
   const [itemType, setItemType] = useState('');
+  const [manualOverrideType, setManualOverrideType] = useState('');
+  const [showManualSelect, setShowManualSelect] = useState(false);
   const [stateCode, setStateCode] = useState('');
   const [customResult, setCustomResult] = useState<AggregatedResult | null>(null);
   const [isScannerOpen, setIsScannerOpen] = useState(false);
+  const { detection, isDetecting, detectionError, detect, reset: resetDetection } = useSmartDetection(500);
   const [urlFromParams, setUrlFromParams] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'manual' | 'url'>('manual');
   const { verify, isLoading, result: hookResult, progress } = useParallelVerification();
@@ -135,8 +141,24 @@ const VerifyPage = () => {
     { code: 'WI', name: 'Wisconsin' }, { code: 'WY', name: 'Wyoming' }
   ];
 
+  // Compute effective item type: manual override > AI detection > URL param
+  const effectiveItemType = manualOverrideType || (detection ? mapDetectedTypeToItemType(detection.type) : itemType);
+
+  const handleIdentifierChange = (value: string) => {
+    setIdentifier(value);
+    setManualOverrideType('');
+    setShowManualSelect(false);
+    detect(value);
+  };
+
+  const handleManualTypeOverride = (type: string) => {
+    setManualOverrideType(type);
+    setShowManualSelect(false);
+  };
+
   const handleScanResult = (scannedText: string) => {
     setIdentifier(scannedText);
+    detect(scannedText);
     setIsScannerOpen(false);
   };
 
@@ -149,12 +171,12 @@ const VerifyPage = () => {
 
       // Best-effort: save the user's typed identifier so we can restore it post-auth
       if (trimmed) {
-        savePendingVerification(trimmed, itemType || undefined, 'buyer').catch(() => {
+        savePendingVerification(trimmed, effectiveItemType || undefined, 'buyer').catch(() => {
           // Ignore errors here; URL redirect still preserves the value
         });
       }
 
-      const redirect = `/verify?q=${encodeURIComponent(trimmed)}${itemType ? `&type=${encodeURIComponent(itemType)}` : ''}`;
+      const redirect = `/verify?q=${encodeURIComponent(trimmed)}${effectiveItemType ? `&type=${encodeURIComponent(effectiveItemType)}` : ''}`;
       navigate(`/auth?tab=signup&redirect=${encodeURIComponent(redirect)}`);
       return;
     }
@@ -164,7 +186,7 @@ const VerifyPage = () => {
     if (!allowed) return; // UpgradeModal will show automatically via isBlocked
 
     // If license plate selected, use universal-state-lookup
-    if (itemType === 'license_plate') {
+    if (effectiveItemType === 'license_plate') {
       if (!stateCode) {
         return; // State is required for license plates
       }
@@ -205,7 +227,7 @@ const VerifyPage = () => {
         console.error('License plate lookup error:', error);
       }
     } else {
-      await verify(identifier, itemType || undefined);
+      await verify(identifier, effectiveItemType || undefined);
     }
   };
 
@@ -356,14 +378,13 @@ const VerifyPage = () => {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleVerify} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="md:col-span-2 relative">
+              <div className="space-y-2">
                   <div className="flex gap-2">
                     <Input
                       type="text"
-                      placeholder={itemType === 'license_plate' ? 'License Plate Number' : `Enter ${typingText}...`}
+                      placeholder={effectiveItemType === 'license_plate' ? 'License Plate Number' : `Paste IMEI, VIN, License Plate, or Serial Number...`}
                       value={identifier}
-                      onChange={(e) => setIdentifier(e.target.value)}
+                      onChange={(e) => handleIdentifierChange(e.target.value)}
                       disabled={isLoading}
                       className="text-lg py-6 flex-1"
                       required
@@ -385,7 +406,7 @@ const VerifyPage = () => {
                         variant={isListening ? "default" : "outline"}
                         onClick={isListening ? stopListening : startListening}
                         disabled={isLoading}
-                        className={`h-auto py-6 px-4 gap-2 ${isListening ? 'bg-red-500 hover:bg-red-600' : ''}`}
+                        className={`h-auto py-6 px-4 gap-2 ${isListening ? 'bg-destructive hover:bg-destructive/90' : ''}`}
                         title={isListening ? "Stop listening" : "Voice search"}
                       >
                         {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
@@ -393,25 +414,21 @@ const VerifyPage = () => {
                       </Button>
                     )}
                   </div>
-                </div>
-                <Select value={itemType} onValueChange={setItemType} disabled={isLoading}>
-                  <SelectTrigger className="py-6">
-                    <SelectValue placeholder="Auto-detect type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="smartphone">Mobile Phone</SelectItem>
-                    <SelectItem value="vehicle">Vehicle (VIN)</SelectItem>
-                    <SelectItem value="license_plate">License Plate</SelectItem>
-                    <SelectItem value="laptop">Laptop</SelectItem>
-                    <SelectItem value="bicycle">Bicycle</SelectItem>
-                    <SelectItem value="electronics">Electronics</SelectItem>
-                    <SelectItem value="firearm">Firearm</SelectItem>
-                  </SelectContent>
-                </Select>
+
+                  {/* AI Smart Detection Indicator */}
+                  <SmartDetectionIndicator
+                    isDetecting={isDetecting}
+                    detection={detection}
+                    detectionError={detectionError}
+                    showManualSelect={showManualSelect}
+                    onToggleManual={() => setShowManualSelect(!showManualSelect)}
+                    manualType={manualOverrideType}
+                    onManualTypeChange={handleManualTypeOverride}
+                  />
               </div>
 
               {/* State selector - only shown for license plates */}
-              {itemType === 'license_plate' && (
+              {effectiveItemType === 'license_plate' && (
                 <div className="space-y-2">
                   <label htmlFor="state-select" className="text-sm font-medium">
                     Select State *
@@ -437,7 +454,7 @@ const VerifyPage = () => {
               <Button
                 type="submit"
                 size="lg"
-                disabled={isLoading || !identifier.trim() || (itemType === 'license_plate' && !stateCode)}
+                disabled={isLoading || !identifier.trim() || (effectiveItemType === 'license_plate' && !stateCode)}
                 className="w-full"
               >
                 {isLoading ? (
@@ -499,11 +516,12 @@ const VerifyPage = () => {
                 if (type.link) {
                   navigate(type.link);
                 } else {
-                  setItemType(type.id);
+                  setManualOverrideType(type.id);
+                  setShowManualSelect(false);
                 }
               }}
               className={`p-3 rounded-lg border transition-all text-left ${
-                itemType === type.id 
+                effectiveItemType === type.id 
                   ? 'border-primary bg-primary/10 ring-2 ring-primary/20' 
                   : 'border-border hover:border-primary/50 hover:bg-muted/50'
               }`}

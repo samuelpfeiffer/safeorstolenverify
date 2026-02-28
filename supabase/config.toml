@@ -138,3 +138,6 @@ verify_jwt = false
 
 [functions.verify-serial]
 verify_jwt = false
+
+[functions.ai-detect-identifier]
+verify_jwt = false
