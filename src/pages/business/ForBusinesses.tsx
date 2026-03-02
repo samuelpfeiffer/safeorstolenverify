@@ -3,12 +3,41 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
-import { Shield, Building2, Smartphone, FileCheck, Users, BarChart3, Lock, Zap, CheckCircle2, Copy, Code, Globe, TrendingUp, DollarSign, AlertTriangle, Scale, Award, ArrowRight } from 'lucide-react';
+import { Shield, Building2, Smartphone, FileCheck, Users, BarChart3, Lock, Zap, CheckCircle2, Copy, Code, Globe, TrendingUp, DollarSign, AlertTriangle, Scale, Award, ArrowRight, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
+import { redirectToStripe } from '@/utils/stripeRedirect';
+import { toast } from 'sonner';
 
 export default function ForBusinesses() {
   const [copiedWidget, setCopiedWidget] = useState(false);
+
+  const [loading, setLoading] = useState<string | null>(null);
+  const [roiItems, setRoiItems] = useState(20);
+
+  async function handleBusinessCheckout(priceId: string, planName: string) {
+    setLoading(priceId);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          priceId,
+          planName,
+          isSubscription: true,
+          fingerprint: getOrCreateFingerprint(),
+        },
+        headers: user ? undefined : {},
+      });
+      if (error) throw new Error(error.message);
+      if (data?.url) redirectToStripe(data.url);
+    } catch {
+      toast.error('Something went wrong. Please try again.');
+    } finally {
+      setLoading(null);
+    }
+  }
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -389,12 +418,61 @@ export default function ForBusinesses() {
           </div>
         </section>
 
-        {/* Pricing Section */}
+        {/* Interactive ROI Calculator */}
+        <section className="py-16 bg-card border-y border-border">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-center mb-4">Calculate Your ROI</h2>
+            <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+              How many items does your business verify per day?
+            </p>
+            <div className="max-w-lg mx-auto mb-8">
+              <label className="block text-sm font-medium text-foreground mb-2">
+                Items verified per day: <span className="text-primary font-bold">{roiItems}</span>
+              </label>
+              <input
+                type="range"
+                min="5"
+                max="100"
+                value={roiItems}
+                onChange={(e) => setRoiItems(Number(e.target.value))}
+                className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-primary"
+              />
+              <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                <span>5</span><span>100</span>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-6 text-center">
+                <div className="text-sm text-muted-foreground mb-1">Manual checking cost</div>
+                <div className="text-3xl font-black text-destructive">
+                  ${((roiItems * 15 / 60) * 25 * 22).toLocaleString()}
+                </div>
+                <div className="text-xs text-muted-foreground mt-1">{roiItems} items × 15 min × $25/hr × 22 days</div>
+              </div>
+              <div className="bg-primary/5 border border-primary/30 rounded-xl p-6 text-center">
+                <div className="text-sm text-muted-foreground mb-1">With SafeOrStolen</div>
+                <div className="text-3xl font-black text-primary">$49</div>
+                <div className="text-xs text-muted-foreground mt-1">Flat monthly, unlimited checks</div>
+              </div>
+              <div className="bg-primary/10 border border-primary/30 rounded-xl p-6 text-center">
+                <div className="text-sm text-muted-foreground mb-1">Your monthly savings</div>
+                <div className="text-3xl font-black text-primary">
+                  ${((roiItems * 15 / 60) * 25 * 22 - 49).toLocaleString()}
+                </div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  ${(((roiItems * 15 / 60) * 25 * 22 - 49) * 12).toLocaleString()}/year
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section - WIRED TO STRIPE */}
         <section className="py-16 bg-muted/30" id="pricing">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-4">Simple, Predictable Pricing</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Flat monthly pricing. No per-check fees. Unlimited verifications. A pawn shop verifying 50 items/day saves $3,750+/month vs per-check pricing.
+              Flat monthly pricing. No per-check fees. Unlimited verifications.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
@@ -408,12 +486,18 @@ export default function ForBusinesses() {
                   <ul className="space-y-3">
                     {['Unlimited verifications', 'All 100+ databases', 'Widget + API access', 'Email support', 'Compliance reports', '1 location'].map(f => (
                       <li key={f} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />{f}
+                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />{f}
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full" asChild>
-                    <Link to="/business/signup?plan=starter">Start 30-Day Free Trial</Link>
+                  <Button
+                    className="w-full"
+                    onClick={() => handleBusinessCheckout('price_1T3niCGxnZLw8J7OO2aGfQ0R', 'Business Starter')}
+                    disabled={loading === 'price_1T3niCGxnZLw8J7OO2aGfQ0R'}
+                  >
+                    {loading === 'price_1T3niCGxnZLw8J7OO2aGfQ0R' ? (
+                      <span className="flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> Loading...</span>
+                    ) : 'Start 30-Day Free Trial'}
                   </Button>
                 </CardContent>
               </Card>
@@ -431,12 +515,18 @@ export default function ForBusinesses() {
                   <ul className="space-y-3">
                     {['Everything in Starter', 'Priority support (4hr)', 'Custom branding', 'Up to 5 locations', 'Advanced analytics', 'Employee accounts'].map(f => (
                       <li key={f} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />{f}
+                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />{f}
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full" asChild>
-                    <Link to="/business/signup?plan=professional">Start 30-Day Free Trial</Link>
+                  <Button
+                    className="w-full"
+                    onClick={() => handleBusinessCheckout('price_1T6fQ0GxnZLw8J7OO2aGfQ0R', 'Business Professional')}
+                    disabled={loading === 'price_1T6fQ0GxnZLw8J7OO2aGfQ0R'}
+                  >
+                    {loading === 'price_1T6fQ0GxnZLw8J7OO2aGfQ0R' ? (
+                      <span className="flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> Loading...</span>
+                    ) : 'Start 30-Day Free Trial'}
                   </Button>
                 </CardContent>
               </Card>
@@ -451,7 +541,7 @@ export default function ForBusinesses() {
                   <ul className="space-y-3">
                     {['Everything in Professional', 'Dedicated account manager', '99.9% uptime SLA', 'White-label option', 'Unlimited locations', 'Volume discounts'].map(f => (
                       <li key={f} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />{f}
+                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />{f}
                       </li>
                     ))}
                   </ul>
@@ -460,6 +550,16 @@ export default function ForBusinesses() {
                   </Button>
                 </CardContent>
               </Card>
+            </div>
+
+            {/* Cross-links */}
+            <div className="flex flex-col sm:flex-row justify-center gap-6 text-sm mb-12">
+              <Link to="/pricing" className="text-primary hover:underline flex items-center gap-1">
+                Individual buyer pricing <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link to="/for-sellers" className="text-primary hover:underline flex items-center gap-1">
+                Seller pricing from $2.99 <ArrowRight className="w-3 h-3" />
+              </Link>
             </div>
 
             {/* Competitor Comparison Table */}
@@ -497,26 +597,24 @@ export default function ForBusinesses() {
             <h2 className="text-3xl font-bold text-center mb-12">Trusted by Businesses Nationwide</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { quote: "SafeOrStolen saves us 2 hours per day on manual database checks. ROI paid for itself in the first week. We verify 40-60 items daily and haven't had a single stolen property incident since implementing it.", name: 'Mike Chen', role: 'Owner, Phoenix Pawn & Jewelry', link: '/for-pawn-shops' },
-                { quote: "We were fined $8,000 for failing to verify a stolen item. SafeOrStolen ensures we're always compliant with Texas state regulations. The compliance certificates give us legal protection we didn't have before.", name: 'Sarah Martinez', role: 'Manager, Austin Auto Sales', link: '/for-dealers' },
-                { quote: "Integration took 5 minutes — literally just pasted one line of code. Now every item is verified automatically before we list it on eBay. Our buyer dispute rate dropped 60% in the first month.", name: 'James Thompson', role: 'Electronics Reseller, Houston TX', link: '/for-electronics-resellers' },
+                { quote: "SafeOrStolen saves us 2 hours per day on manual database checks. ROI paid for itself in the first week.", name: 'Mike Chen', role: 'Owner, Phoenix Pawn & Jewelry' },
+                { quote: "We were fined $8,000 for failing to verify a stolen item. SafeOrStolen ensures we're always compliant.", name: 'Sarah Martinez', role: 'Manager, Austin Auto Sales' },
+                { quote: "Integration took 5 minutes — literally just pasted one line of code. Buyer dispute rate dropped 60%.", name: 'James Thompson', role: 'Electronics Reseller, Houston TX' },
               ].map((testimonial, i) => (
-                <Link to={testimonial.link} key={i} className="group">
-                  <Card className="h-full hover:shadow-lg transition-all group-hover:border-primary/50">
-                    <CardContent className="pt-6">
-                      <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, j) => (
-                          <Award key={j} className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground mb-4 italic leading-relaxed">"{testimonial.quote}"</p>
-                      <div className="border-t pt-3">
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                <Card key={i} className="h-full">
+                  <CardContent className="pt-6">
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, j) => (
+                        <Award key={j} className="h-4 w-4 text-primary fill-primary" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground mb-4 italic leading-relaxed">"{testimonial.quote}"</p>
+                    <div className="border-t pt-3">
+                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
