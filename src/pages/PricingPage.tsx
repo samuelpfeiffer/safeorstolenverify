@@ -12,8 +12,8 @@ const PLANS = [
     price: 0.99,
     period: 'one-time',
     description: 'Perfect for a one-time purchase',
-    color: 'border-gray-600',
-    headerBg: 'bg-gray-800',
+    color: 'border-border',
+    headerBg: 'bg-card',
     icon: <Shield className="w-6 h-6" />,
     features: [
       { text: '1 full verification', included: true },
@@ -34,8 +34,8 @@ const PLANS = [
     price: 4.99,
     period: '/month',
     description: '50 checks/month for regular buyers',
-    color: 'border-gray-600',
-    headerBg: 'bg-gray-800',
+    color: 'border-border',
+    headerBg: 'bg-card',
     icon: <Star className="w-6 h-6" />,
     features: [
       { text: '50 verifications/month', included: true },
@@ -56,8 +56,8 @@ const PLANS = [
     price: 9.99,
     period: '/month',
     description: 'Unlimited for power users & resellers',
-    color: 'border-blue-500',
-    headerBg: 'bg-blue-600',
+    color: 'border-primary',
+    headerBg: 'bg-primary',
     icon: <Zap className="w-6 h-6" />,
     badge: '⭐ Most Popular',
     features: [
@@ -79,8 +79,8 @@ const PLANS = [
     price: 49.99,
     period: '/month',
     description: 'For pawn shops, dealers & compliance',
-    color: 'border-gray-600',
-    headerBg: 'bg-gray-800',
+    color: 'border-border',
+    headerBg: 'bg-card',
     icon: <Building2 className="w-6 h-6" />,
     features: [
       { text: 'Unlimited verifications', included: true },
@@ -153,7 +153,7 @@ const PricingPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <PageSEO
         title="Pricing - Stolen Item Verification Plans"
         description="CheckMEND charges $1.99+ per check. Carfax is $44.99/report. SafeOrStolen starts at $0.99 with 100+ databases. 2 free checks included."
@@ -165,26 +165,26 @@ const PricingPage = () => {
         <h1 className="text-4xl md:text-5xl font-black mb-4">
           Simple, Honest Pricing
         </h1>
-        <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
           CheckMEND charges $1.99+ per check. Carfax is $44.99/report.
           We give you 2 free checks and plans starting at $0.99 —
           with 100+ databases vs their single source.
         </p>
 
         {/* Annual toggle */}
-        <div className="inline-flex items-center gap-3 bg-gray-800 border border-gray-700 rounded-full px-4 py-2">
+        <div className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-4 py-2">
           <button
             onClick={() => setAnnual(false)}
-            className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${!annual ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}
+            className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${!annual ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
           >
             Monthly
           </button>
           <button
             onClick={() => setAnnual(true)}
-            className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${annual ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}
+            className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${annual ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
           >
             Annual
-            <span className="ml-2 bg-green-500 text-black text-xs font-black px-1.5 py-0.5 rounded-full">-20%</span>
+            <span className="ml-2 bg-primary text-primary-foreground text-xs font-black px-1.5 py-0.5 rounded-full">-20%</span>
           </button>
         </div>
       </div>
@@ -199,44 +199,44 @@ const PricingPage = () => {
           return (
             <div
               key={plan.id}
-              className={`relative rounded-2xl border-2 ${plan.color} flex flex-col overflow-hidden ${plan.highlighted ? 'shadow-2xl shadow-blue-950/50 scale-[1.02]' : ''}`}
+              className={`relative rounded-2xl border-2 ${plan.color} flex flex-col overflow-hidden ${plan.highlighted ? 'shadow-2xl shadow-primary/20 scale-[1.02]' : ''}`}
             >
               {plan.badge && (
-                <div className="absolute top-0 left-0 right-0 text-center bg-blue-600 text-white text-xs font-black py-1.5 uppercase tracking-wide">
+                <div className="absolute top-0 left-0 right-0 text-center bg-primary text-primary-foreground text-xs font-black py-1.5 uppercase tracking-wide">
                   {plan.badge}
                 </div>
               )}
 
               <div className={`${plan.headerBg} ${plan.badge ? 'pt-8' : 'pt-5'} p-5 pb-4`}>
-                <div className="flex items-center gap-2 text-gray-300 mb-2">
+                <div className="flex items-center gap-2 text-muted-foreground mb-2">
                   {plan.icon}
                   <span className="font-bold">{plan.name}</span>
                 </div>
                 <div>
-                  <span className="text-4xl font-black text-white">${displayPrice}</span>
-                  <span className="text-gray-400 text-sm ml-1">{plan.period}</span>
+                  <span className="text-4xl font-black text-foreground">${displayPrice}</span>
+                  <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
                 </div>
                 {annual && plan.period === '/month' && (
-                  <div className="text-green-400 text-xs mt-1">
+                  <div className="text-primary text-xs mt-1">
                     Save ${(plan.price * 0.2 * 12).toFixed(0)}/year
                   </div>
                 )}
-                <p className="text-gray-400 text-xs mt-2">{plan.description}</p>
+                <p className="text-muted-foreground text-xs mt-2">{plan.description}</p>
               </div>
 
-              <div className="p-5 flex-1 bg-gray-900/50 flex flex-col">
+              <div className="p-5 flex-1 bg-muted/30 flex flex-col">
                 <ul className="space-y-2.5 flex-1 mb-5">
                   {plan.features.map((f) => (
-                    <li key={f.text} className={`flex items-start gap-2 text-xs ${f.included ? 'text-gray-200' : 'text-gray-600 line-through'}`}>
-                      <span className={`mt-0.5 flex-shrink-0 ${f.included ? 'text-green-400' : 'text-gray-600'}`}>
+                    <li key={f.text} className={`flex items-start gap-2 text-xs ${f.included ? 'text-foreground/80' : 'text-muted-foreground/40 line-through'}`}>
+                      <span className={`mt-0.5 flex-shrink-0 ${f.included ? 'text-primary' : 'text-muted-foreground/40'}`}>
                         {f.included ? '✓' : '✗'}
                       </span>
                       {f.text}
                     </li>
                   ))}
                   {plan.extras?.map((e) => (
-                    <li key={e} className="flex items-start gap-2 text-xs text-blue-300">
-                      <span className="mt-0.5 text-blue-400 flex-shrink-0">+</span>
+                    <li key={e} className="flex items-start gap-2 text-xs text-secondary">
+                      <span className="mt-0.5 text-secondary flex-shrink-0">+</span>
                       {e}
                     </li>
                   ))}
@@ -247,8 +247,8 @@ const PricingPage = () => {
                   disabled={loading === plan.id}
                   className={`w-full py-3 rounded-xl font-bold text-sm transition-all disabled:opacity-60 ${
                     plan.highlighted
-                      ? 'bg-blue-600 hover:bg-blue-500 text-white'
-                      : 'bg-gray-700 hover:bg-gray-600 text-white'
+                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                      : 'bg-muted hover:bg-muted/80 text-foreground'
                   }`}
                 >
                   {loading === plan.id ? 'Loading...' : plan.cta}
@@ -261,19 +261,19 @@ const PricingPage = () => {
 
       {/* Competitor comparison */}
       <div className="max-w-4xl mx-auto px-4 mb-16">
-        <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6 md:p-8">
-          <h2 className="text-2xl font-black text-white mb-6 text-center">
+        <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+          <h2 className="text-2xl font-black text-foreground mb-6 text-center">
             How We Compare to Alternatives
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-700">
-                  <th className="text-left py-3 pr-4 text-gray-400 font-medium">Service</th>
-                  <th className="text-center py-3 px-3 text-gray-400 font-medium">Cost</th>
-                  <th className="text-center py-3 px-3 text-gray-400 font-medium">Databases</th>
-                  <th className="text-center py-3 px-3 text-gray-400 font-medium">Asset Types</th>
-                  <th className="text-center py-3 px-3 text-gray-400 font-medium">PDF Report</th>
+                <tr className="border-b border-border">
+                  <th className="text-left py-3 pr-4 text-muted-foreground font-medium">Service</th>
+                  <th className="text-center py-3 px-3 text-muted-foreground font-medium">Cost</th>
+                  <th className="text-center py-3 px-3 text-muted-foreground font-medium">Databases</th>
+                  <th className="text-center py-3 px-3 text-muted-foreground font-medium">Asset Types</th>
+                  <th className="text-center py-3 px-3 text-muted-foreground font-medium">PDF Report</th>
                 </tr>
               </thead>
               <tbody>
@@ -285,14 +285,14 @@ const PricingPage = () => {
                   { name: 'BikeIndex', cost: 'Free (limited)', dbs: '1 (bikes only)', assets: 'Bicycles only', pdf: '✗', highlight: false },
                   { name: 'HotGunz', cost: 'Free (limited)', dbs: '1 (guns only)', assets: 'Firearms only', pdf: '✗', highlight: false },
                 ].map((row) => (
-                  <tr key={row.name} className={`border-b border-gray-800 ${row.highlight ? 'bg-blue-950/30' : ''}`}>
-                    <td className={`py-3 pr-4 font-semibold ${row.highlight ? 'text-blue-400' : 'text-gray-300'}`}>
+                  <tr key={row.name} className={`border-b border-border/50 ${row.highlight ? 'bg-primary/5' : ''}`}>
+                    <td className={`py-3 pr-4 font-semibold ${row.highlight ? 'text-primary' : 'text-muted-foreground'}`}>
                       {row.name} {row.highlight && '← You'}
                     </td>
-                    <td className="py-3 px-3 text-center text-gray-300">{row.cost}</td>
-                    <td className="py-3 px-3 text-center text-gray-300">{row.dbs}</td>
-                    <td className="py-3 px-3 text-center text-gray-300">{row.assets}</td>
-                    <td className={`py-3 px-3 text-center font-bold ${row.pdf === '✓' ? 'text-green-400' : 'text-red-500'}`}>{row.pdf}</td>
+                    <td className="py-3 px-3 text-center text-muted-foreground">{row.cost}</td>
+                    <td className="py-3 px-3 text-center text-muted-foreground">{row.dbs}</td>
+                    <td className="py-3 px-3 text-center text-muted-foreground">{row.assets}</td>
+                    <td className={`py-3 px-3 text-center font-bold ${row.pdf === '✓' ? 'text-primary' : 'text-destructive'}`}>{row.pdf}</td>
                   </tr>
                 ))}
               </tbody>
@@ -303,26 +303,26 @@ const PricingPage = () => {
 
       {/* Full comparison table */}
       <div className="max-w-5xl mx-auto px-4 mb-16">
-        <h2 className="text-2xl font-black text-white mb-6 text-center">Full Feature Comparison</h2>
-        <div className="overflow-x-auto rounded-2xl border border-gray-700">
+        <h2 className="text-2xl font-black text-foreground mb-6 text-center">Full Feature Comparison</h2>
+        <div className="overflow-x-auto rounded-2xl border border-border">
           <table className="w-full text-sm">
-            <thead className="bg-gray-800">
+            <thead className="bg-card">
               <tr>
-                <th className="text-left py-3 px-4 text-gray-300 font-semibold">Feature</th>
+                <th className="text-left py-3 px-4 text-muted-foreground font-semibold">Feature</th>
                 {['Single', 'Basic', 'Pro', 'Business'].map(h => (
-                  <th key={h} className={`text-center py-3 px-3 font-semibold ${h === 'Pro' ? 'text-blue-400' : 'text-gray-300'}`}>{h}</th>
+                  <th key={h} className={`text-center py-3 px-3 font-semibold ${h === 'Pro' ? 'text-primary' : 'text-muted-foreground'}`}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {COMPARISON_ROWS.map((row, i) => (
-                <tr key={row.feature} className={i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}>
-                  <td className="py-3 px-4 text-gray-300">{row.feature}</td>
+                <tr key={row.feature} className={i % 2 === 0 ? 'bg-card' : 'bg-card/50'}>
+                  <td className="py-3 px-4 text-muted-foreground">{row.feature}</td>
                   {[row.single, row.basic, row.pro, row.business].map((val, j) => (
                     <td key={j} className={`py-3 px-3 text-center text-xs ${
-                      val === '✓' ? 'text-green-400 font-bold text-base' :
-                      val === '—' ? 'text-gray-600' :
-                      j === 2 ? 'text-blue-300 font-semibold' : 'text-gray-300'
+                      val === '✓' ? 'text-primary font-bold text-base' :
+                      val === '—' ? 'text-muted-foreground/40' :
+                      j === 2 ? 'text-secondary font-semibold' : 'text-muted-foreground'
                     }`}>
                       {val}
                     </td>
@@ -336,15 +336,15 @@ const PricingPage = () => {
 
       {/* FAQ */}
       <div className="max-w-3xl mx-auto px-4 mb-16">
-        <h2 className="text-2xl font-black text-white mb-8 text-center">Pricing FAQ</h2>
+        <h2 className="text-2xl font-black text-foreground mb-8 text-center">Pricing FAQ</h2>
         <div className="space-y-3">
           {FAQS.map((item) => (
-            <details key={item.q} className="bg-gray-900 border border-gray-700 rounded-xl group">
-              <summary className="flex justify-between items-center p-5 cursor-pointer text-white font-semibold text-sm hover:text-blue-400 transition-colors list-none">
+            <details key={item.q} className="bg-card border border-border rounded-xl group">
+              <summary className="flex justify-between items-center p-5 cursor-pointer text-foreground font-semibold text-sm hover:text-primary transition-colors list-none">
                 {item.q}
-                <span className="text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0">▼</span>
+                <span className="text-muted-foreground group-open:rotate-180 transition-transform ml-4 flex-shrink-0">▼</span>
               </summary>
-              <div className="px-5 pb-5 text-gray-300 text-sm leading-relaxed border-t border-gray-700 pt-4">
+              <div className="px-5 pb-5 text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
                 {item.a}
               </div>
             </details>
@@ -354,15 +354,15 @@ const PricingPage = () => {
 
       {/* Bottom CTA */}
       <div className="text-center pb-20 px-4">
-        <p className="text-gray-400 mb-4">Not ready to commit? Start with 2 free verifications.</p>
+        <p className="text-muted-foreground mb-4">Not ready to commit? Start with 2 free verifications.</p>
         <Link
           to="/verify"
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-4 rounded-2xl text-lg transition-all"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-4 rounded-2xl text-lg transition-all"
         >
           <Shield className="w-5 h-5" />
           Start Free — No Credit Card
         </Link>
-        <p className="text-gray-600 text-xs mt-3">🔒 Payments secured by Stripe · Cancel anytime · No hidden fees</p>
+        <p className="text-muted-foreground/50 text-xs mt-3">🔒 Payments secured by Stripe · Cancel anytime · No hidden fees</p>
       </div>
 
       {/* JSON-LD Pricing Schema */}
