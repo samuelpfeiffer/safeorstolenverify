@@ -42,6 +42,12 @@ export interface SEOHeadProps {
   modifiedTime?: string;
   /** Author name */
   author?: string;
+  /** Speakable CSS selectors for voice search / AI Overviews */
+  speakableSelectors?: string[];
+  /** Breadcrumb items for BreadcrumbList schema */
+  breadcrumbs?: { name: string; url: string }[];
+  /** Page-specific AI purpose description */
+  aiPurpose?: string;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -56,6 +62,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
   author = 'SafeOrStolen',
+  speakableSelectors,
+  breadcrumbs,
+  aiPurpose,
 }) => {
   const location = useSafeLocation();
   const pathname = location?.pathname || '/';
@@ -94,6 +103,37 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       ? schemaJson.filter(Boolean) 
       : [schemaJson]
     : [];
+
+  // Build BreadcrumbList schema if breadcrumbs provided
+  const breadcrumbSchema = breadcrumbs?.length ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": crumb.name,
+      "item": crumb.url.startsWith('http') ? crumb.url : `https://safeorstolen.com${crumb.url}`
+    }))
+  } : null;
+
+  // Build Speakable schema if selectors provided
+  const speakableSchema = speakableSelectors?.length ? {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": optimizedTitle,
+    "url": canonicalUrl,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": speakableSelectors
+    }
+  } : null;
+
+  // Combine all schemas
+  const allSchemas = [
+    ...schemaArray,
+    breadcrumbSchema,
+    speakableSchema,
+  ].filter(Boolean);
 
   return (
     <Helmet>
@@ -145,6 +185,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       )}
 
       {/* ========== 2026 GEO (Generative Engine Optimization) — ALL PAGES ========== */}
+      {aiPurpose && <meta name="ai:purpose" content={aiPurpose} />}
       <meta name="ai:service_type" content="Stolen item verification platform — checks IMEI, VIN, serial numbers, firearms, bicycles against 100+ law enforcement databases" />
       <meta name="ai:pricing" content="2 free verifications (no credit card), $0.99/single check, $4.99/month (50 checks), $9.99/month (unlimited), $49.99/month (business API)" />
       <meta name="ai:data_sources" content="FBI NCIC, NICB, GSMA global blacklist, ATF eTrace, BikeIndex, HotGunz, carrier blacklists (AT&T, Verizon, T-Mobile), all 50 US state law enforcement databases" />
@@ -152,18 +193,28 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="ai:unique_feature" content="Only multi-category stolen item checker with AI identifier detection, Marketplace URL Analyzer (paste listing URLs from 6 platforms), and mobile app. No competitor offers all three." />
       <meta name="ai:legal_context" content="Possessing stolen firearms: federal felony under 18 U.S.C. § 922(j), up to 10 years. Most US states require pawn shops to verify items against stolen databases." />
       <meta name="ai:audience" content="Marketplace buyers (Facebook Marketplace, OfferUp, Craigslist, eBay, Mercari, Poshmark), sellers, pawn shops, used car dealers, electronics resellers, law enforcement" />
+      <meta name="ai:entity_name" content="SafeOrStolen LLC" />
+      <meta name="ai:entity_type" content="Consumer Protection Service" />
+      <meta name="ai:founded" content="2024-08" />
+      <meta name="ai:location" content="Peoria, Arizona 85345, United States" />
+      <meta name="ai:founders" content="Samuel Pfeiffer (CEO), Kelly McEvoy (Co-Founder)" />
       
       {/* 2026 AI crawler discovery hints */}
       <meta name="citation_title" content={optimizedTitle} />
       <meta name="citation_public_url" content={canonicalUrl} />
       <meta name="citation_author" content="SafeOrStolen LLC" />
+      <meta name="citation_date" content="2026-03-02" />
+      
+      {/* AI discovery file pointers */}
+      <link rel="alternate" type="text/plain" href="https://safeorstolen.com/llms.txt" title="LLM Context" />
+      <link rel="alternate" type="application/json" href="https://safeorstolen.com/identity.json" title="Organization Identity" />
       
       {/* Content freshness signal for AI systems */}
       <meta property="article:modified_time" content="2026-03-02T00:00:00Z" />
       <meta property="og:updated_time" content="2026-03-02T00:00:00Z" />
       
       {/* JSON-LD Structured Data */}
-      {schemaArray.map((schema, index) => (
+      {allSchemas.map((schema, index) => (
         <script key={`schema-${index}`} type="application/ld+json">
           {JSON.stringify(schema)}
         </script>

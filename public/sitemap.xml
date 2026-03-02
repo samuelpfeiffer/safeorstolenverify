@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SafeOrStolen Sitemap - Auto-generated from AppRoutes.tsx -->
-<!-- Last updated: 2026-02-06 -->
+<!-- Last updated: 2026-03-02 -->
 <!-- Only includes public, indexable routes with real React components -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -9,7 +9,7 @@
   <!-- ============================================ -->
   <url>
     <loc>https://safeorstolen.com/</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1516,6 +1516,40 @@
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
+  </url>
+
+  <!-- ============================================ -->
+  <!-- NEW PAGES - March 2026 -->
+  <!-- ============================================ -->
+  <url>
+    <loc>https://safeorstolen.com/for-sellers</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/how-to-sell-verified-items</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/free-vin-lookup-guide</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/facebook-marketplace-scams-guide</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/blog/check-if-phone-stolen-guide</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
 </urlset>

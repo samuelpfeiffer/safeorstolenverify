@@ -16,6 +16,11 @@ interface PageSEOProps {
   noIndex?: boolean;
   canonical?: string;
   structuredData?: Record<string, any> | Record<string, any>[];
+  speakableSelectors?: string[];
+  breadcrumbs?: { name: string; url: string }[];
+  aiPurpose?: string;
+  modifiedTime?: string;
+  publishedTime?: string;
 }
 
 export const PageSEO: React.FC<PageSEOProps> = ({
@@ -27,6 +32,11 @@ export const PageSEO: React.FC<PageSEOProps> = ({
   noIndex,
   canonical: customCanonical,
   structuredData,
+  speakableSelectors,
+  breadcrumbs,
+  aiPurpose,
+  modifiedTime,
+  publishedTime,
 }) => {
   const location = useSafeLocation();
   
@@ -54,6 +64,11 @@ export const PageSEO: React.FC<PageSEOProps> = ({
       ogType={type}
       noIndex={noIndex}
       schemaJson={normalizedStructuredData}
+      speakableSelectors={speakableSelectors}
+      breadcrumbs={breadcrumbs}
+      aiPurpose={aiPurpose}
+      modifiedTime={modifiedTime}
+      publishedTime={publishedTime}
     />
   );
 };
