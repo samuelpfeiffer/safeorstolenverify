@@ -158,15 +158,6 @@ const Index = () => {
         description="Check if phones, cars, bikes, firearms are stolen before buying or selling. Verify IMEI, VIN, serial numbers against 100+ law enforcement databases. 2 free searches. Results in 3 seconds. The only verification service with a mobile app."
         keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
         canonical="/"
-        structuredData={[
-          {
-            "@type": "WebPage",
-            "speakable": {
-              "@type": "SpeakableSpecification",
-              "cssSelector": ["h1", ".speakable-summary"]
-            }
-          }
-        ]}
       />
       <CompetitorTargetingSEO />
 
@@ -591,60 +582,68 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── JSON-LD SCHEMA ───────────────────────────────── */}
+      {/* ── JSON-LD SCHEMAS (standalone, not @graph — 2026 standard) ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "name": "SafeOrStolen",
-                "url": "https://safeorstolen.com",
-                "logo": "https://safeorstolen.com/assets/images/sos-logo.CpxwIxW5.png",
-                "founder": { "@type": "Person", "name": "Samuel Pfeiffer" },
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Peoria",
-                  "addressRegion": "AZ",
-                  "postalCode": "85345",
-                  "addressCountry": "US"
-                },
-                "sameAs": [
-                  "https://www.trustpilot.com/review/safeorstolen.com",
-                  "https://www.linkedin.com/in/verifysafeorstolen/"
-                ]
-              },
-              {
-                "@type": "SoftwareApplication",
-                "name": "SafeOrStolen Verification Engine",
-                "applicationCategory": "SecurityApplication",
-                "operatingSystem": ["Web", "iOS", "Android"],
-                "offers": [
-                  { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
-                  { "@type": "Offer", "name": "Basic", "price": "4.99", "priceCurrency": "USD" },
-                  { "@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "USD" },
-                  { "@type": "Offer", "name": "Business", "price": "49.99", "priceCurrency": "USD" }
-                ],
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.1",
-                  "reviewCount": "3"
-                }
-              },
-              {
-                "@type": "FAQPage",
-                "mainEntity": FAQ_ITEMS.map(item => ({
-                  "@type": "Question",
-                  "name": item.q,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": item.a
-                  }
-                }))
+            "@type": "WebPage",
+            "name": "Free Stolen Item Checker - IMEI VIN Serial Verification",
+            "url": "https://safeorstolen.com",
+            "description": "Check if phones, cars, bikes, firearms are stolen before buying or selling. Verify IMEI, VIN, serial numbers against 100+ law enforcement databases.",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com/" }
+              ]
+            },
+            "dateModified": "2026-03-02"
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "SafeOrStolen",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": ["Web", "iOS", "Android"],
+            "offers": [
+              { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+              { "@type": "Offer", "name": "Basic", "price": "4.99", "priceCurrency": "USD" },
+              { "@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "USD" },
+              { "@type": "Offer", "name": "Business", "price": "49.99", "priceCurrency": "USD" }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.1",
+              "reviewCount": "3"
+            },
+            "dateModified": "2026-03-02"
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": FAQ_ITEMS.map(item => ({
+              "@type": "Question",
+              "name": item.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
               }
-            ]
+            }))
           })
         }}
       />
