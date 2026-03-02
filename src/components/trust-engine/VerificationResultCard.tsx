@@ -7,6 +7,7 @@ import { getStatusColor } from '@/utils/itemTypeDetector';
 import { TrustMeter } from './TrustMeter';
 import { generateCompliancePDF } from '@/utils/complianceCertificate';
 import { AIVerificationAnalysis } from '@/components/ai/AIVerificationAnalysis';
+import { SmartRecommendations } from '@/components/ai/SmartRecommendations';
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface Props {
@@ -121,6 +122,14 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
           itemType={result.itemType}
           verificationResult={{ status: result.status, score: result.score, tldr: result.tldr }}
           sources={result.sources}
+        />
+
+        {/* Smart Recommendations */}
+        <SmartRecommendations
+          itemType={result.itemType}
+          status={result.status}
+          score={result.score}
+          identifier={result.serial}
         />
 
         {/* AI nudge */}
