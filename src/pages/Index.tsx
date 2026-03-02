@@ -500,6 +500,98 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── PRESS, TRUST & CREDENTIALS ──────────────────── */}
+      <section className="py-16 px-4 bg-muted/30 border-y border-border">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-black text-foreground text-center mb-2">
+            Backed, Listed & Verified
+          </h2>
+          <p className="text-muted-foreground text-center text-sm mb-10">
+            Independent third-party credentials you can verify yourself
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* FasterCapital */}
+            <a
+              href="https://fastercapital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
+            >
+              <img
+                src="/images/partners/fastercapital-logo.png"
+                alt="FasterCapital accelerator logo"
+                className="h-12 w-auto mb-3"
+                loading="lazy"
+              />
+              <h3 className="text-foreground font-bold text-sm mb-1">FasterCapital</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Selected for global accelerator program to scale marketplace safety technology
+              </p>
+              <span className="mt-3 text-primary text-xs font-semibold">Accelerator Partner ↗</span>
+            </a>
+
+            {/* Trustpilot */}
+            <a
+              href="https://www.trustpilot.com/review/safeorstolen.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
+            >
+              <div className="h-12 flex items-center mb-3">
+                <svg viewBox="0 0 126 31" className="h-8 w-auto" aria-label="Trustpilot logo">
+                  <path d="M33.3 12.1h-8.5l-2.6-8.1L19.5 12l-8.5.1 6.9 5-2.6 8.1 6.9-5 6.9 5-2.7-8 6.9-5.1z" fill="#00B67A"/>
+                  <path d="M28.6 19.1l-.9-2.8-5.5 4 6.4-1.2z" fill="#005128"/>
+                  <text x="40" y="22" fill="currentColor" fontSize="14" fontWeight="700" fontFamily="system-ui">Trustpilot</text>
+                </svg>
+              </div>
+              <h3 className="text-foreground font-bold text-sm mb-1">4.1★ on Trustpilot</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Real reviews from real users — read what buyers and sellers say about us
+              </p>
+              <span className="mt-3 text-primary text-xs font-semibold">Read Reviews ↗</span>
+            </a>
+
+            {/* Crunchbase */}
+            <a
+              href="https://www.crunchbase.com/organization/safe-or-stolen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
+            >
+              <div className="h-12 flex items-center mb-3">
+                <svg viewBox="0 0 20 20" className="h-8 w-8" aria-label="Crunchbase logo">
+                  <rect width="20" height="20" rx="4" fill="#0288D1"/>
+                  <text x="4" y="15" fill="#fff" fontSize="13" fontWeight="800" fontFamily="system-ui">cb</text>
+                </svg>
+              </div>
+              <h3 className="text-foreground font-bold text-sm mb-1">Crunchbase Listed</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Verified company profile — funding, team, and product information publicly documented
+              </p>
+              <span className="mt-3 text-primary text-xs font-semibold">View Profile ↗</span>
+            </a>
+
+            {/* Press Releases */}
+            <Link
+              to="/press-release"
+              className="modern-card p-5 flex flex-col items-center text-center hover:border-primary/60 transition-all hover:-translate-y-1"
+            >
+              <div className="h-12 flex items-center mb-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <span className="text-primary text-lg">📰</span>
+                </div>
+              </div>
+              <h3 className="text-foreground font-bold text-sm mb-1">Press Releases</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Featured on PRLog & IssueWire — official product launches and partnership announcements
+              </p>
+              <span className="mt-3 text-primary text-xs font-semibold">Read Press →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── DOWNLOAD APP STRIP ──────────────────────────── */}
       <section className="py-12 px-4 bg-card border-y border-border">
         <div className="max-w-3xl mx-auto text-center">
