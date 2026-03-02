@@ -63,7 +63,7 @@ export const StateVinPageTemplate = ({
         "name": state
       },
       "description": metaDescription,
-      "dateModified": "2026-02-06"
+      "dateModified": "2026-03-02"
     },
     {
       "@context": "https://schema.org",
