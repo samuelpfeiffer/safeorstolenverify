@@ -150,3 +150,12 @@ verify_jwt = false
 
 [functions.ai-marketplace-advisor]
 verify_jwt = true
+
+[functions.ai-visual-ocr]
+verify_jwt = false
+
+[functions.ai-predictive-alerts]
+verify_jwt = false
+
+[functions.ai-seller-report]
+verify_jwt = true

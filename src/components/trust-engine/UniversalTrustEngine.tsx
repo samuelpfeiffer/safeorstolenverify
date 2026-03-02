@@ -9,6 +9,7 @@ import { TrustMeter } from './TrustMeter';
 import { BatchUploadSection } from './BatchUploadSection';
 import { VerificationResultCard } from './VerificationResultCard';
 import { TrustEngineSchemas } from './TrustEngineSchemas';
+import { VisualOCRVerification } from '@/components/ai/VisualOCRVerification';
 
 const QRScanner = lazy(() => import('@/components/futuristic/QRScanner').then(m => ({ default: m.QRScanner })));
 
@@ -231,6 +232,16 @@ const UniversalTrustEngine: React.FC = () => {
                   {['IMEI', 'VIN', 'Serial #', 'License Plate', 'Barcode'].map(t => (
                     <span key={t} className="px-3 py-1 rounded-full border border-border/50 bg-muted/20">{t}</span>
                   ))}
+                </div>
+
+                {/* Visual OCR */}
+                <div className="mt-6">
+                  <VisualOCRVerification
+                    onIdentifierExtracted={(value, type) => {
+                      setInputValue(value);
+                      setDetectedType(type);
+                    }}
+                  />
                 </div>
               </motion.div>
             )}
