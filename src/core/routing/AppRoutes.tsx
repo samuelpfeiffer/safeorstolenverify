@@ -247,6 +247,8 @@ const CarfaxVsFreeVinAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFree
 const AIStolenItemDetection2026 = lazy(() => import('@/pages/blog/AIStolenItemDetection2026'));
 const HowToSellVerifiedItems = lazy(() => import('@/pages/blog/HowToSellVerifiedItems'));
 const FreeVINLookupGuide = lazy(() => import('@/pages/blog/FreeVINLookupGuide'));
+const FacebookMarketplaceScamsGuide = lazy(() => import('@/pages/blog/FacebookMarketplaceScamsGuide'));
+const CheckIfPhoneStolenGuide = lazy(() => import('@/pages/blog/CheckIfPhoneStolenGuide'));
 const PS5StolenCheckGuide = lazy(() => import('@/pages/blog/PS5StolenCheckGuide'));
 const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
 
@@ -606,6 +608,8 @@ export const AppRoutes = () => {
         <Route path="/blog/how-to-sell-verified-items" element={<HowToSellVerifiedItems />} />
         <Route path="/blog/free-vin-lookup-guide" element={<FreeVINLookupGuide />} />
         <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
+        <Route path="/blog/facebook-marketplace-scams-guide" element={<FacebookMarketplaceScamsGuide />} />
+        <Route path="/blog/check-if-phone-stolen-guide" element={<CheckIfPhoneStolenGuide />} />
         <Route path="/blog/best-ai-llms-2026" element={<BestAILLMs2026 />} />
         <Route path="/blog/top-10-stolen-item-checkers" element={<TopStolenItemCheckers />} />
         <Route path="/best-stolen-item-checkers-2026" element={<TopStolenItemCheckers />} />

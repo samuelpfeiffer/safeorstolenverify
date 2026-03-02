@@ -219,6 +219,11 @@ export const VALID_ROUTES = new Set([
   '/blog/firearm-serial-number-verification',
   '/blog/bicycle-stolen-serial-number-check',
   '/blog/verify-item-before-meetup',
+  '/blog/facebook-marketplace-scams-guide',
+  '/blog/check-if-phone-stolen-guide',
+  '/blog/how-to-sell-verified-items',
+  '/blog/free-vin-lookup-guide',
+  '/for-sellers',
   
   // News & social
   '/news/onevalley-recognition',
