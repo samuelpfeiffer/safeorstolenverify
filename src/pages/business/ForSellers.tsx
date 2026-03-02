@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, ArrowRight, Star, DollarSign, Clock, FileText, Share2, BadgeCheck, TrendingUp, Users, Lock } from 'lucide-react';
+import { Shield, CheckCircle, ArrowRight, Star, DollarSign, Clock, FileText, Share2, BadgeCheck, TrendingUp, Users, Lock, Crown, Rocket, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import { redirectToStripe } from '@/utils/stripeRedirect';
 
 const PRICING_TIERS = [
   {
