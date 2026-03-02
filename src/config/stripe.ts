@@ -22,9 +22,9 @@ export const STRIPE_CONFIG = {
     // Product: "Premium Seller" → Recurring $29.99/month
     // Product: "Business Professional" → Recurring $99/month
     // Then add price IDs here:
-    sellerListing: '', // TODO: Add Stripe price ID after creating product
-    verifiedSeller: '', // TODO: Add Stripe price ID after creating product
-    premiumSeller: '', // TODO: Add Stripe price ID after creating product
+    sellerListing: 'price_1T6fNGGxnZLw8J7OrKLSrnAx', // $2.99 one-time Seller Badge
+    verifiedSeller: 'price_1T6fOWGxnZLw8J7O2njgDUgM', // $19.99/mo Verified Seller
+    premiumSeller: 'price_1T6fQ0GxnZLw8J7Omxo2m8TS', // $29.99/mo Premium Seller
     businessPro: '', // TODO: Add Stripe price ID after creating product
   },
 } as const;
