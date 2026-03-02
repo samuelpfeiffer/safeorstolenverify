@@ -100,6 +100,7 @@ const ComprehensiveGuidePage = lazy(() => import('@/pages/ComprehensiveGuidePage
 const CheckFirearmPage = lazy(() => import('@/pages/CheckFirearmPage'));
 const ResourceCenterPage = lazy(() => import('@/pages/ResourceCenterPage'));
 const FeaturesPage = lazy(() => import('@/pages/FeaturesPage'));
+const MarketplaceAdvisorPage = lazy(() => import('@/pages/MarketplaceAdvisorPage'));
 
 // NEW SEO Landing Pages (Phase 1 - Priority Items)
 const IPhoneIMEICheck = lazy(() => import('@/pages/items/IPhoneIMEICheck'));
@@ -414,6 +415,7 @@ export const AppRoutes = () => {
         <Route path="/check-firearm" element={<CheckFirearmPage />} />
         <Route path="/resource-center" element={<ResourceCenterPage />} />
         <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/marketplace-advisor" element={<MarketplaceAdvisorPage />} />
         <Route path="/is-my-iphone-stolen" element={<IsMyIPhoneStolenPage />} />
         
         {/* NEW HIGH-TRAFFIC SEO PAGES (2026 Keyword Strategy) */}

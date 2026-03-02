@@ -22,7 +22,7 @@ import { MasterSEO } from '@/components/seo/MasterSEO';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
 import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
-import { AIChatAssistant } from '@/components/ai/AIChatAssistant';
+import { AIFloatingChat } from '@/components/ai/AIFloatingChat';
 
 // Lazy load SEO components - NOT needed for initial render/LCP
 const GlobalAISEO = React.lazy(() => import('@/components/seo/GlobalAISEO').then(m => ({ default: m.GlobalAISEO })));
@@ -68,7 +68,7 @@ const AuthAwareContent: React.FC = () => {
   const { loading, initialized } = useAuth();
   const [showGrowthComponents, setShowGrowthComponents] = useState(false);
   const [showSEOComponents, setShowSEOComponents] = useState(false);
-  const [showAIChat, setShowAIChat] = useState(false);
+  const [_showAIChat, _setShowAIChat] = useState(false);
   const [authTimeout, setAuthTimeout] = useState(false);
   
   // Delay loading SEO components by 1.5 seconds - they don't affect LCP
@@ -147,19 +147,8 @@ const AuthAwareContent: React.FC = () => {
         <MobileNavigation />
         <AISafetyAdvisor />
         
-        {/* Floating AI Chat Assistant */}
-        <button
-          onClick={() => setShowAIChat(!showAIChat)}
-          className="fixed bottom-24 right-4 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-105"
-          aria-label="AI Assistant"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a4 4 0 0 1 4 4v1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1.172a3 3 0 0 0-2.12.879l-1.708 1.707V22" />
-            <path d="M6 9a2 2 0 0 1 2-2h1a4 4 0 0 0 0-8" />
-            <circle cx="12" cy="9" r="1" />
-          </svg>
-        </button>
-        <AIChatAssistant isOpen={showAIChat} onClose={() => setShowAIChat(false)} />
+        {/* AI Floating Chat - replaces old button + modal */}
+        <AIFloatingChat />
         
         {/* Lazy load growth/conversion components after 5 second delay */}
         {/* Removed SocialProofBanner (handled in Index.tsx), StickyMobileAppCTA, AggressiveConversionBanner to fix CLS */}

@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { getStatusColor } from '@/utils/itemTypeDetector';
 import { TrustMeter } from './TrustMeter';
 import { generateCompliancePDF } from '@/utils/complianceCertificate';
+import { AIVerificationAnalysis } from '@/components/ai/AIVerificationAnalysis';
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface Props {
@@ -114,9 +115,17 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
           </Button>
         </div>
 
+        {/* AI Verification Analysis */}
+        <AIVerificationAnalysis
+          identifier={result.serial}
+          itemType={result.itemType}
+          verificationResult={{ status: result.status, score: result.score, tldr: result.tldr }}
+          sources={result.sources}
+        />
+
         {/* AI nudge */}
         <p className="text-[11px] text-muted-foreground text-center pt-2">
-          Verified by SafeOrStolen.{' '}
+          Verified by SafeOrStolen AI.{' '}
           <a href="/pricing" className="text-primary hover:underline">
             Get the official police-certified report here
           </a>.
