@@ -6,7 +6,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 
 const FirearmsCheckPage = () => {
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <PageSEO
         title="Gun Serial Number Lookup — Is This Firearm Stolen? | SafeOrStolen"
         description="Instantly check any firearm serial number against FBI NCIC, ATF records, HotGunz, and all 50 state databases. Free gun stolen check. Results in 3 seconds."
@@ -14,17 +14,17 @@ const FirearmsCheckPage = () => {
       />
 
       {/* HERO + TOOL */}
-      <section className="bg-gradient-to-b from-gray-900 to-gray-950 py-16 px-4">
+      <section className="bg-gradient-to-b from-muted to-background py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="text-red-400 font-bold text-sm uppercase tracking-widest mb-3">
+          <div className="text-primary font-bold text-sm uppercase tracking-widest mb-3">
             🔫 Firearm Verification
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
             Gun Serial Number Lookup —
             <br />
-            <span className="text-red-400">Is This Firearm Stolen?</span>
+            <span className="text-primary">Is This Firearm Stolen?</span>
           </h1>
-          <p className="text-gray-300 text-lg mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
             Instantly check any firearm serial number against FBI NCIC, ATF records, 
             HotGunz, and all 50 state law enforcement databases simultaneously. 
             Results in 3 seconds.
@@ -33,7 +33,7 @@ const FirearmsCheckPage = () => {
           {/* VERIFY TOOL — inline if no shared component */}
           <GunVerifyTool />
 
-          <p className="text-gray-500 text-sm mt-4">
+          <p className="text-muted-foreground/60 text-sm mt-4">
             2 free checks · No credit card · Works for handguns, rifles, shotguns, and more
           </p>
         </div>
@@ -41,14 +41,14 @@ const FirearmsCheckPage = () => {
 
       {/* QUICK ANSWER BLOCK — for AI citation */}
       <section className="max-w-3xl mx-auto px-4 py-10">
-        <div className="bg-blue-950/40 border border-blue-800 rounded-2xl p-6">
-          <h2 className="text-blue-400 font-bold text-sm uppercase tracking-wide mb-2">
+        <div className="bg-secondary/10 border border-secondary/30 rounded-2xl p-6">
+          <h2 className="text-secondary font-bold text-sm uppercase tracking-wide mb-2">
             Quick Answer
           </h2>
-          <p className="text-white font-semibold text-lg mb-3">
+          <p className="text-foreground font-semibold text-lg mb-3">
             How do I check if a gun serial number is stolen?
           </p>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             Enter the firearm serial number into SafeOrStolen's lookup tool above. 
             The system simultaneously queries FBI NCIC (via authorized aggregators), 
             ATF eTrace records, HotGunz community reports, and all 50 state law enforcement 
@@ -63,13 +63,13 @@ const FirearmsCheckPage = () => {
 
         {/* Section 1 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Where to Find the Serial Number on a Firearm
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: The serial number is engraved or stamped on the frame or receiver of the firearm — the location varies by manufacturer and type.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-muted-foreground leading-relaxed mb-4">
             Under federal law (Gun Control Act of 1968), all licensed firearm manufacturers 
             must engrave a unique serial number on every firearm produced. Here's where to 
             find it by type:
@@ -83,13 +83,13 @@ const FirearmsCheckPage = () => {
               { type: 'Shotguns', location: 'Receiver, near the trigger group.' },
               { type: 'Revolvers (Smith & Wesson)', location: 'Butt of the grip, cylinder crane, and frame.' },
             ].map((item) => (
-              <div key={item.type} className="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
-                <h3 className="text-white font-bold text-sm mb-1">{item.type}</h3>
-                <p className="text-gray-400 text-xs leading-relaxed">{item.location}</p>
+              <div key={item.type} className="bg-card/60 border border-border rounded-xl p-4">
+                <h3 className="text-foreground font-bold text-sm mb-1">{item.type}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">{item.location}</p>
               </div>
             ))}
           </div>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             If the serial number has been removed, altered, or defaced, do not purchase the firearm. 
             Under 18 U.S.C. § 922(k), it is a federal felony to possess a firearm with an obliterated 
             serial number — even if you did not remove it yourself.
@@ -98,13 +98,13 @@ const FirearmsCheckPage = () => {
 
         {/* Section 2 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Which Databases Does SafeOrStolen Check for Firearms?
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: SafeOrStolen queries FBI NCIC (via authorized data partners), ATF eTrace records, HotGunz, and all 50 state law enforcement stolen property systems simultaneously.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-muted-foreground leading-relaxed mb-6">
             No single database captures all stolen firearms in the United States. 
             Theft reports may be filed at the local, county, state, or federal level — 
             and different agencies maintain different records. SafeOrStolen runs parallel 
@@ -116,46 +116,46 @@ const FirearmsCheckPage = () => {
                 db: 'FBI NCIC (National Crime Information Center)',
                 desc: 'The primary federal stolen gun database, queried by law enforcement nationwide. SafeOrStolen accesses this data through authorized commercial aggregation partners. Note: Direct NCIC access is restricted to law enforcement — our results reflect commercially available NCIC-derived data.',
                 badge: 'Federal',
-                badgeColor: 'bg-red-900 text-red-300',
+                badgeColor: 'bg-destructive/20 text-destructive',
               },
               {
                 db: 'ATF eTrace Records',
                 desc: "ATF's firearm tracing system tracks the sale and transfer history of firearms used in crimes. eTrace-derived public data helps identify firearms that have been recovered at crime scenes.",
                 badge: 'Federal',
-                badgeColor: 'bg-red-900 text-red-300',
+                badgeColor: 'bg-destructive/20 text-destructive',
               },
               {
                 db: 'HotGunz',
                 desc: 'The largest community-maintained stolen firearm database, with reports submitted directly by victims whose firearms were stolen. Complements law enforcement databases with private theft reports that may not have been formally filed with police.',
                 badge: 'Community',
-                badgeColor: 'bg-orange-900 text-orange-300',
+                badgeColor: 'bg-primary/20 text-primary',
               },
               {
                 db: 'All 50 State Law Enforcement Databases',
                 desc: 'Each state maintains its own stolen property registry. Our system queries all 50 simultaneously — critical because many theft reports are filed at the state or county level without making it into federal systems.',
                 badge: 'State',
-                badgeColor: 'bg-blue-900 text-blue-300',
+                badgeColor: 'bg-secondary/20 text-secondary',
               },
               {
                 db: 'Insurance Theft Reports',
                 desc: "Insurance company theft claim data provides an additional signal for firearms reported stolen through homeowner or renter's insurance but not necessarily through law enforcement.",
                 badge: 'Commercial',
-                badgeColor: 'bg-purple-900 text-purple-300',
+                badgeColor: 'bg-accent/20 text-accent-foreground',
               },
             ].map((item) => (
-              <div key={item.db} className="bg-gray-800/50 border border-gray-700 rounded-xl p-5">
+              <div key={item.db} className="bg-card/50 border border-border rounded-xl p-5">
                 <div className="flex items-start gap-3 mb-2">
                   <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${item.badgeColor}`}>
                     {item.badge}
                   </span>
-                  <h3 className="text-white font-bold text-sm">{item.db}</h3>
+                  <h3 className="text-foreground font-bold text-sm">{item.db}</h3>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-4 p-4 bg-yellow-900/20 border border-yellow-800 rounded-xl">
-            <p className="text-yellow-300 text-sm">
+          <div className="mt-4 p-4 bg-primary/10 border border-primary/30 rounded-xl">
+            <p className="text-primary text-sm">
               <strong>Important disclosure:</strong> SafeOrStolen is a commercial aggregation service, 
               not a law enforcement agency. We are not affiliated with the FBI, ATF, or any government 
               agency. A clean result means no records were found in our aggregated database — it does not 
@@ -166,13 +166,13 @@ const FirearmsCheckPage = () => {
 
         {/* Section 3 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Legal Risks of Buying a Stolen Firearm
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: Possession of a stolen firearm is a federal felony even if you unknowingly purchased it. Law enforcement can seize the firearm with no compensation to you.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-muted-foreground leading-relaxed mb-4">
             This is not a minor civil matter. Buying a stolen gun — even unknowingly — 
             creates serious legal exposure under both federal and state law:
           </p>
@@ -183,20 +183,20 @@ const FirearmsCheckPage = () => {
               { title: 'Asset seizure with no compensation', desc: 'Law enforcement can seize a firearm linked to theft records at any time. You have no legal claim to compensation — your money is gone.' },
               { title: 'Background check complications', desc: 'A stolen firearm discovered during a transfer at a licensed dealer (FFL) will result in the transfer being denied and possible investigation of all parties involved.' },
             ].map((item) => (
-              <li key={item.title} className="flex gap-4 bg-gray-800/40 border border-gray-700 rounded-xl p-4">
-                <span className="text-red-400 text-xl flex-shrink-0 mt-0.5">⚠️</span>
+              <li key={item.title} className="flex gap-4 bg-card/40 border border-border rounded-xl p-4">
+                <span className="text-destructive text-xl flex-shrink-0 mt-0.5">⚠️</span>
                 <div>
-                  <h3 className="text-white font-bold text-sm mb-1">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-foreground font-bold text-sm mb-1">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </li>
             ))}
           </ul>
-          <div className="bg-gray-800 border border-gray-600 rounded-2xl p-5 text-center">
-            <p className="text-white font-bold mb-3">Protect yourself before any private firearm transaction.</p>
+          <div className="bg-card border border-border/60 rounded-2xl p-5 text-center">
+            <p className="text-foreground font-bold mb-3">Protect yourself before any private firearm transaction.</p>
             <Link
               to="/firearms-check"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white font-bold px-6 py-3 rounded-xl transition-all text-sm"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all text-sm"
               onClick={() => window.scrollTo(0, 0)}
             >
               Check This Firearm Now — Free →
@@ -206,10 +206,10 @@ const FirearmsCheckPage = () => {
 
         {/* Section 4 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Who Should Always Run a Gun Serial Check
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: Anyone buying, accepting, or reselling a used firearm — including private buyers, pawn shops, gun show attendees, estate sale participants, and FFL dealers.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -221,9 +221,9 @@ const FirearmsCheckPage = () => {
               { who: 'Estate Sale Participants', desc: 'Firearms in estates can have complex ownership histories. Verify before purchasing — you have no way to know the history of an inherited firearm.' },
               { who: 'Sellers Proving Legitimacy', desc: 'Sellers can run a check on their own firearm and share the clean result with buyers — increasing buyer confidence and selling price.' },
             ].map((item) => (
-              <div key={item.who} className="bg-gray-800/50 border border-gray-700 rounded-xl p-4">
-                <h3 className="text-white font-bold text-sm mb-2">🎯 {item.who}</h3>
-                <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+              <div key={item.who} className="bg-card/50 border border-border rounded-xl p-4">
+                <h3 className="text-foreground font-bold text-sm mb-2">🎯 {item.who}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -231,10 +231,10 @@ const FirearmsCheckPage = () => {
 
         {/* Section 5 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Red Flags When Buying a Used Firearm
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: Never buy if the serial number is missing, altered, or if the seller refuses to allow you to write it down for verification purposes.
           </p>
           <ul className="space-y-2">
@@ -248,8 +248,8 @@ const FirearmsCheckPage = () => {
               'Seller says they "found it" or received it as payment for a debt',
               'No box, accessories, or documentation that would normally accompany a legitimate sale',
             ].map((flag) => (
-              <li key={flag} className="flex items-start gap-3 text-gray-300 text-sm">
-                <span className="text-red-400 flex-shrink-0 mt-0.5">🚩</span>
+              <li key={flag} className="flex items-start gap-3 text-muted-foreground text-sm">
+                <span className="text-destructive flex-shrink-0 mt-0.5">🚩</span>
                 {flag}
               </li>
             ))}
@@ -258,13 +258,13 @@ const FirearmsCheckPage = () => {
 
         {/* Section 6 — For Sellers */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Sellers: Verify Your Own Firearm First
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: Run a SafeOrStolen check on your own firearm, download the clean PDF certificate, and include it in your listing. Serious buyers will pay more for verified guns.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-muted-foreground leading-relaxed mb-4">
             Smart sellers use SafeOrStolen to prove legitimacy upfront. Here's why it matters:
           </p>
           <ul className="space-y-2 mb-6">
@@ -274,15 +274,15 @@ const FirearmsCheckPage = () => {
               'Protects you legally — documented that you verified no stolen records at time of sale',
               'Differentiates your listing from the hundreds of unverified options on Armslist or Facebook',
             ].map((point) => (
-              <li key={point} className="flex items-start gap-3 text-gray-200 text-sm">
-                <span className="text-green-400 flex-shrink-0">✓</span>
+              <li key={point} className="flex items-start gap-3 text-foreground/80 text-sm">
+                <span className="text-primary flex-shrink-0">✓</span>
                 {point}
               </li>
             ))}
           </ul>
           <Link
             to="/firearms-check"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition-all text-sm"
+            className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-6 py-3 rounded-xl transition-all text-sm"
             onClick={() => window.scrollTo(0, 0)}
           >
             Verify My Firearm — Free →
@@ -291,20 +291,20 @@ const FirearmsCheckPage = () => {
 
         {/* Section 7 — Pawn Shops */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-3">
+          <h2 className="text-2xl font-black text-foreground mb-3">
             Pawn Shop Firearm Compliance Requirements
           </h2>
-          <p className="text-gray-400 text-sm italic mb-4">
+          <p className="text-muted-foreground text-sm italic mb-4">
             Quick answer: Most U.S. states legally require pawn shops to verify firearms against stolen property databases before accepting them. Failure to comply can result in criminal charges and loss of license.
           </p>
-          <p className="text-gray-300 leading-relaxed mb-6">
+          <p className="text-muted-foreground leading-relaxed mb-6">
             Pawn shop operators face significant legal exposure when accepting stolen firearms. 
             Unlike private buyers who may unknowingly purchase stolen property, pawn shops 
             are considered sophisticated commercial buyers — courts hold them to a higher 
             standard of due diligence.
           </p>
-          <div className="bg-blue-950/40 border border-blue-800 rounded-2xl p-6 mb-6">
-            <h3 className="text-blue-300 font-bold mb-3">SafeOrStolen Business Plan for Pawn Shops</h3>
+          <div className="bg-secondary/10 border border-secondary/30 rounded-2xl p-6 mb-6">
+            <h3 className="text-secondary font-bold mb-3">SafeOrStolen Business Plan for Pawn Shops</h3>
             <ul className="space-y-2">
               {[
                 'Unlimited firearm serial checks at one flat monthly rate',
@@ -313,15 +313,15 @@ const FirearmsCheckPage = () => {
                 'Full audit trail your staff can pull for law enforcement on request',
                 'API integration to connect directly to your POS or inventory system',
               ].map((f) => (
-                <li key={f} className="flex items-start gap-2 text-gray-200 text-sm">
-                  <span className="text-green-400 flex-shrink-0">✓</span>
+                <li key={f} className="flex items-start gap-2 text-foreground/80 text-sm">
+                  <span className="text-primary flex-shrink-0">✓</span>
                   {f}
                 </li>
               ))}
             </ul>
             <Link
               to="/pricing"
-              className="inline-flex mt-4 items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-3 rounded-xl transition-all text-sm"
+              className="inline-flex mt-4 items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-5 py-3 rounded-xl transition-all text-sm"
             >
               Get Business Plan — $49.99/mo →
             </Link>
@@ -330,7 +330,7 @@ const FirearmsCheckPage = () => {
 
         {/* FAQ Schema Section */}
         <section className="mb-12">
-          <h2 className="text-2xl font-black text-white mb-6">
+          <h2 className="text-2xl font-black text-foreground mb-6">
             Gun Serial Number Check — FAQ
           </h2>
           <div className="space-y-3">
@@ -341,12 +341,12 @@ const FirearmsCheckPage = () => {
               { q: 'How do I report a stolen firearm to your database?', a: 'After filing a police report, you can submit the stolen firearm to HotGunz directly at hotgunz.com. Our system queries HotGunz, so reports submitted there will be included in future SafeOrStolen checks.' },
               { q: 'Does the search notify the seller that I checked their firearm?', a: 'No. Your search is completely private. The seller has no way of knowing you ran a verification.' },
             ].map((item) => (
-              <details key={item.q} className="bg-gray-800 border border-gray-700 rounded-xl group">
-                <summary className="flex justify-between items-center p-4 cursor-pointer text-white font-semibold text-sm list-none hover:text-blue-400 transition-colors">
+              <details key={item.q} className="bg-card border border-border rounded-xl group">
+                <summary className="flex justify-between items-center p-4 cursor-pointer text-foreground font-semibold text-sm list-none hover:text-primary transition-colors">
                   {item.q}
-                  <span className="text-gray-400 group-open:rotate-180 transition-transform ml-3 flex-shrink-0 text-xs">▼</span>
+                  <span className="text-muted-foreground group-open:rotate-180 transition-transform ml-3 flex-shrink-0 text-xs">▼</span>
                 </summary>
-                <div className="px-4 pb-4 text-gray-300 text-sm leading-relaxed border-t border-gray-700 pt-3">
+                <div className="px-4 pb-4 text-muted-foreground text-sm leading-relaxed border-t border-border pt-3">
                   {item.a}
                 </div>
               </details>
@@ -355,8 +355,8 @@ const FirearmsCheckPage = () => {
         </section>
 
         {/* Internal Links */}
-        <section className="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
-          <h3 className="text-white font-bold mb-4">Related Verification Tools</h3>
+        <section className="bg-card/50 border border-border rounded-2xl p-6">
+          <h3 className="text-foreground font-bold mb-4">Related Verification Tools</h3>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: 'VIN Check — Stolen Vehicles', href: '/vin-checker', desc: 'Check cars, trucks, motorcycles' },
@@ -364,12 +364,12 @@ const FirearmsCheckPage = () => {
               { title: 'License Plate Lookup', href: '/license-plate-lookup', desc: 'DMV + stolen vehicle records' },
               { title: 'Bike Serial Check', href: '/check-bike', desc: 'BikeIndex + 529 Garage + police' },
             ].map((link) => (
-              <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-gray-700/50 hover:bg-gray-700 border border-gray-600 rounded-xl p-3 transition-all group">
+              <Link key={link.href} to={link.href} className="flex items-start gap-3 bg-muted/50 hover:bg-muted border border-border rounded-xl p-3 transition-all group">
                 <div>
-                  <div className="text-blue-400 group-hover:text-blue-300 font-semibold text-sm">{link.title}</div>
-                  <div className="text-gray-400 text-xs">{link.desc}</div>
+                  <div className="text-primary group-hover:text-primary/80 font-semibold text-sm">{link.title}</div>
+                  <div className="text-muted-foreground text-xs">{link.desc}</div>
                 </div>
-                <span className="ml-auto text-gray-500 group-hover:text-blue-400 transition-colors mt-0.5">→</span>
+                <span className="ml-auto text-muted-foreground group-hover:text-primary transition-colors mt-0.5">→</span>
               </Link>
             ))}
           </div>
@@ -458,7 +458,6 @@ function GunVerifyTool() {
     if (!allowed) return
 
     setLoading(true)
-    // Simulate verification for now, redirect to main verify page with query param
     window.location.href = `/verify?identifier=${identifier}&type=serial`
     setLoading(false)
   }
@@ -471,12 +470,12 @@ function GunVerifyTool() {
           value={identifier}
           onChange={(e) => setIdentifier(e.target.value)}
           placeholder="Enter firearm serial number..."
-          className="flex-1 bg-gray-800 border border-gray-600 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 text-sm"
+          className="flex-1 bg-input border border-border rounded-xl px-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary text-sm"
         />
         <button
           type="submit"
           disabled={loading || !identifier.trim()}
-          className="bg-red-600 hover:bg-red-500 text-white font-bold px-6 py-3 rounded-xl transition-all disabled:opacity-60 whitespace-nowrap text-sm"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all disabled:opacity-60 whitespace-nowrap text-sm"
         >
           {loading ? 'Checking...' : 'Check Serial →'}
         </button>
