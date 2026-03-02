@@ -16,6 +16,16 @@ export const STRIPE_CONFIG = {
     pro: 'price_1T3nhDGxnZLw8J7OaK2fkVM1', // $9.99/mo Pro
     business: 'price_1T3niCGxnZLw8J7OO2aGfQ0R', // $49.99/mo Business
     legacyPrice: 'price_1SDRrMGxnZLw8J7ObJsUlp6k', // $0.50 (archived)
+    // Seller plans - CREATE THESE IN STRIPE DASHBOARD:
+    // Product: "Seller Per-Listing" → One-time $2.99
+    // Product: "Verified Seller" → Recurring $19.99/month
+    // Product: "Premium Seller" → Recurring $29.99/month
+    // Product: "Business Professional" → Recurring $99/month
+    // Then add price IDs here:
+    sellerListing: '', // TODO: Add Stripe price ID after creating product
+    verifiedSeller: '', // TODO: Add Stripe price ID after creating product
+    premiumSeller: '', // TODO: Add Stripe price ID after creating product
+    businessPro: '', // TODO: Add Stripe price ID after creating product
   },
 } as const;
 

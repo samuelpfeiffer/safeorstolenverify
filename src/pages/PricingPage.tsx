@@ -2,30 +2,30 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
-import { Shield, Zap, Building2, Star, Check } from 'lucide-react';
+import { Shield, Zap, Building2, Star, Check, Users, Store, Briefcase, BadgeCheck, Crown, Rocket } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-const PLANS = [
+/* ─── plan definitions ─── */
+
+const BUYER_PLANS = [
   {
     id: 'single',
     name: 'Single Check',
     price: 0.99,
     period: 'one-time',
     description: 'Perfect for a one-time purchase',
-    color: 'border-border',
-    headerBg: 'bg-card',
     icon: <Shield className="w-6 h-6" />,
     features: [
-      { text: '1 full verification', included: true },
-      { text: 'All 100+ databases', included: true },
-      { text: 'PDF certificate', included: true },
-      { text: 'Shareable result link', included: true },
-      { text: 'Check history', included: false },
-      { text: 'API access', included: false },
-      { text: 'Bulk uploads', included: false },
+      '1 full verification',
+      'All 100+ databases',
+      'PDF certificate',
+      'Shareable result link',
     ],
     cta: 'Buy Single Check',
+    planName: 'Single Verification',
     stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
+    isSubscription: false,
     highlighted: false,
   },
   {
@@ -34,20 +34,17 @@ const PLANS = [
     price: 4.99,
     period: '/month',
     description: '50 checks/month for regular buyers',
-    color: 'border-border',
-    headerBg: 'bg-card',
     icon: <Star className="w-6 h-6" />,
     features: [
-      { text: '50 verifications/month', included: true },
-      { text: 'All 100+ databases', included: true },
-      { text: 'PDF certificates', included: true },
-      { text: 'Shareable result links', included: true },
-      { text: 'Check history (30 days)', included: true },
-      { text: 'API access', included: false },
-      { text: 'Bulk uploads', included: false },
+      '50 verifications/month',
+      'All 100+ databases',
+      'PDF certificates',
+      '30-day check history',
     ],
     cta: 'Start Basic Plan',
+    planName: 'Starter Plan',
     stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
+    isSubscription: true,
     highlighted: false,
   },
   {
@@ -56,21 +53,19 @@ const PLANS = [
     price: 9.99,
     period: '/month',
     description: 'Unlimited for power users & resellers',
-    color: 'border-primary',
-    headerBg: 'bg-primary',
     icon: <Zap className="w-6 h-6" />,
     badge: '⭐ Most Popular',
     features: [
-      { text: 'Unlimited verifications', included: true },
-      { text: 'All 100+ databases', included: true },
-      { text: 'PDF certificates', included: true },
-      { text: 'Shareable result links', included: true },
-      { text: 'Full check history', included: true },
-      { text: 'API access (100 calls/mo)', included: true },
-      { text: 'Bulk uploads', included: false },
+      'Unlimited verifications',
+      'All 100+ databases',
+      'PDF certificates',
+      'Full check history',
+      'API access (100 calls/mo)',
     ],
     cta: 'Go Pro',
+    planName: 'Personal Plan',
     stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
+    isSubscription: true,
     highlighted: true,
   },
   {
@@ -79,66 +74,186 @@ const PLANS = [
     price: 49.99,
     period: '/month',
     description: 'For pawn shops, dealers & compliance',
-    color: 'border-border',
-    headerBg: 'bg-card',
     icon: <Building2 className="w-6 h-6" />,
     features: [
-      { text: 'Unlimited verifications', included: true },
-      { text: 'All 100+ databases', included: true },
-      { text: 'Compliance PDF certificates', included: true },
-      { text: 'Shareable result links', included: true },
-      { text: 'Full check history + export', included: true },
-      { text: 'Full API access (unlimited)', included: true },
-      { text: 'Bulk CSV upload', included: true },
+      'Unlimited verifications',
+      'Compliance PDF certificates',
+      'Full API access (unlimited)',
+      'Bulk CSV upload',
+      '5 staff seats',
+      'Audit trail',
     ],
-    extras: ['5 staff user seats', 'Audit trail for law enforcement', 'Dedicated support line', 'Multi-location management'],
     cta: 'Get Business Plan',
+    planName: 'Professional Plan',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
+    isSubscription: true,
     highlighted: false,
   },
 ];
 
-const COMPARISON_ROWS = [
-  { feature: 'Verifications per month', single: '1', basic: '50', pro: 'Unlimited', business: 'Unlimited' },
-  { feature: 'Gun serial database (HotGunz)', single: '✓', basic: '✓', pro: '✓', business: '✓' },
-  { feature: 'GSMA + carrier blacklists', single: '✓', basic: '✓', pro: '✓', business: '✓' },
-  { feature: 'NICB vehicle database', single: '✓', basic: '✓', pro: '✓', business: '✓' },
-  { feature: 'All 50 state databases', single: '✓', basic: '✓', pro: '✓', business: '✓' },
-  { feature: 'PDF certificate', single: '✓', basic: '✓', pro: '✓', business: '✓' },
-  { feature: 'Check history', single: '—', basic: '30 days', pro: 'Full', business: 'Full + export' },
-  { feature: 'API access', single: '—', basic: '—', pro: '100 calls/mo', business: 'Unlimited' },
-  { feature: 'Bulk CSV upload', single: '—', basic: '—', pro: '—', business: '✓' },
-  { feature: 'Compliance audit trail', single: '—', basic: '—', pro: '—', business: '✓' },
-  { feature: 'Staff user seats', single: '1', basic: '1', pro: '1', business: '5' },
-  { feature: 'Support', single: 'Email', basic: 'Email', pro: 'Priority email', business: 'Dedicated phone' },
+const SELLER_PLANS = [
+  {
+    id: 'seller-listing',
+    name: 'Per-Listing',
+    price: 2.99,
+    period: 'per listing',
+    description: 'Verify one item & get a shareable badge',
+    icon: <BadgeCheck className="w-6 h-6" />,
+    features: [
+      '1 verified badge',
+      'Shareable verification report',
+      'QR code for in-person sales',
+      'Valid for 90 days',
+    ],
+    cta: 'Get Verified Badge — $2.99',
+    planName: 'Seller Per-Listing',
+    stripePriceId: undefined,
+    isSubscription: false,
+    highlighted: false,
+  },
+  {
+    id: 'seller-monthly',
+    name: 'Verified Seller',
+    price: 19.99,
+    period: '/month',
+    description: 'Unlimited badges + sell faster',
+    icon: <Crown className="w-6 h-6" />,
+    badge: '💰 Best Value',
+    features: [
+      'Unlimited verified badges',
+      'Unlimited verifications',
+      'Shareable reports',
+      'QR codes for in-person',
+      'Seller profile page',
+      'Cancel anytime',
+    ],
+    cta: 'Start Verified Seller — $19.99/mo',
+    planName: 'Verified Seller',
+    stripePriceId: undefined,
+    isSubscription: true,
+    highlighted: true,
+  },
+  {
+    id: 'seller-premium',
+    name: 'Premium Seller',
+    price: 29.99,
+    period: '/month',
+    description: 'Featured badges + seller directory',
+    icon: <Rocket className="w-6 h-6" />,
+    features: [
+      'Everything in Verified Seller',
+      'Featured badge (gold)',
+      'Seller directory listing',
+      'Priority in search results',
+      'Bulk verification tools',
+    ],
+    cta: 'Go Premium — $29.99/mo',
+    planName: 'Premium Seller',
+    stripePriceId: undefined,
+    isSubscription: true,
+    highlighted: false,
+  },
+];
+
+const BUSINESS_PLANS = [
+  {
+    id: 'biz-starter',
+    name: 'Starter',
+    price: 49,
+    period: '/month',
+    description: 'Single location, unlimited checks',
+    icon: <Store className="w-6 h-6" />,
+    features: [
+      'Unlimited verifications',
+      'Basic embeddable widget',
+      'Compliance reports (PDF)',
+      'Email support',
+      '1 staff seat',
+    ],
+    cta: 'Start Free Trial',
+    planName: 'Professional Plan',
+    stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
+    isSubscription: true,
+    highlighted: false,
+  },
+  {
+    id: 'biz-pro',
+    name: 'Professional',
+    price: 99,
+    period: '/month',
+    description: 'Multi-location + custom branding',
+    icon: <Briefcase className="w-6 h-6" />,
+    badge: '🏆 Most Popular',
+    features: [
+      'Everything in Starter',
+      'Custom-branded widget',
+      'Multi-location support',
+      'Priority support',
+      '10 staff seats',
+      'API access',
+    ],
+    cta: 'Start Free Trial',
+    planName: 'Business Professional',
+    stripePriceId: undefined,
+    isSubscription: true,
+    highlighted: true,
+  },
+  {
+    id: 'biz-enterprise',
+    name: 'Enterprise',
+    price: 499,
+    period: '/month',
+    description: 'White-label + dedicated support',
+    icon: <Building2 className="w-6 h-6" />,
+    features: [
+      'Everything in Professional',
+      'White-label solution',
+      'Full API (unlimited)',
+      '99.9% SLA',
+      'Dedicated account manager',
+      'Unlimited staff seats',
+    ],
+    cta: 'Contact Sales',
+    planName: 'Enterprise Plan',
+    stripePriceId: undefined,
+    isSubscription: true,
+    highlighted: false,
+  },
 ];
 
 const FAQS = [
   { q: 'Can I cancel anytime?', a: 'Yes. Cancel anytime from your account dashboard. Your plan continues until the end of the billing period with no cancellation fees.' },
   { q: 'What counts as one verification?', a: 'Each time you submit a single IMEI, VIN, serial number, license plate, or firearm serial for checking counts as one verification. Viewing the same result again does not count.' },
-  { q: 'Does the Single Check expire?', a: 'No — your single check credit never expires. Use it whenever you need it.' },
-  { q: 'Is the Business plan right for my pawn shop?', a: "Yes. The Business plan is built for pawn shops, dealers, and resellers who need compliance-ready PDF certificates, unlimited checks, bulk processing, and a full audit trail for law enforcement requests." },
-  { q: 'How accurate are the results?', a: 'We aggregate data from 100+ sources including FBI NCIC (via authorized partners), GSMA, NICB, HotGunz, BikeIndex, all 50 state databases, and carrier blacklists. Accuracy is approximately 99.2% for items currently in our aggregated databases.' },
-  { q: 'Do you offer a free trial?', a: 'All new users get 2 completely free verifications — no credit card required. This lets you experience the full result quality before committing to a plan.' },
-  { q: 'Can I upgrade or downgrade my plan?', a: "Yes. Upgrade takes effect immediately (you're charged the prorated difference). Downgrade takes effect at your next billing cycle." },
-  { q: 'What payment methods do you accept?', a: 'We accept all major credit and debit cards (Visa, Mastercard, AmEx, Discover) via Stripe. All payments are encrypted and PCI-compliant.' },
+  { q: 'Do you offer a free trial?', a: 'All new users get 2 completely free verifications — no credit card required. Business plans include a 30-day free trial.' },
+  { q: 'How accurate are the results?', a: 'We aggregate data from 100+ sources including FBI NCIC, GSMA, NICB, ATF, and all 50 state databases. Accuracy is approximately 99.2% for items in our databases.' },
+  { q: 'Can I upgrade or downgrade?', a: "Yes. Upgrade takes effect immediately (prorated). Downgrade takes effect at your next billing cycle." },
+  { q: "What's the Verified Seller badge?", a: "A digital certificate proving your item was checked against 100+ databases and found clean. Add the badge link to your marketplace listings to build buyer trust and sell 3x faster." },
+  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on all plans, no questions asked.' },
+  { q: 'What payment methods do you accept?', a: 'All major credit/debit cards (Visa, Mastercard, AmEx, Discover), Apple Pay, and Google Pay via Stripe. All payments are encrypted and PCI-compliant.' },
 ];
+
+/* ─── component ─── */
 
 const PricingPage = () => {
   const [loading, setLoading] = useState<string | null>(null);
-  const [annual, setAnnual] = useState(false);
 
-  async function handleCheckout(plan: typeof PLANS[0]) {
+  async function handleCheckout(plan: { id: string; planName: string; stripePriceId?: string; isSubscription: boolean }) {
+    if (plan.id === 'biz-enterprise') {
+      window.location.href = 'mailto:business@safeorstolen.com?subject=Enterprise%20Plan%20Inquiry';
+      return;
+    }
+
     setLoading(plan.id);
     try {
       const { data: { user } } = await supabase.auth.getUser();
 
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: plan.stripePriceId,
-          planName: plan.id,
-          isSubscription: plan.id !== 'single',
+          priceId: plan.stripePriceId || undefined,
+          planName: plan.planName,
+          isSubscription: plan.isSubscription,
           fingerprint: getOrCreateFingerprint(),
+          redirectUrl: 'https://safeorstolen.com',
         },
         headers: user ? undefined : {},
       });
@@ -152,118 +267,148 @@ const PricingPage = () => {
     }
   }
 
+  function PlanCard({ plan }: { plan: typeof BUYER_PLANS[0] }) {
+    const isHighlighted = plan.highlighted;
+    return (
+      <div className={`relative rounded-2xl border-2 flex flex-col overflow-hidden transition-all ${
+        isHighlighted ? 'border-primary shadow-2xl shadow-primary/20 scale-[1.02]' : 'border-border'
+      }`}>
+        {plan.badge && (
+          <div className="absolute top-0 left-0 right-0 text-center bg-primary text-primary-foreground text-xs font-black py-1.5 uppercase tracking-wide">
+            {plan.badge}
+          </div>
+        )}
+
+        <div className={`${plan.badge ? 'pt-8' : 'pt-5'} p-5 pb-4 ${isHighlighted ? 'bg-primary/5' : 'bg-card'}`}>
+          <div className="flex items-center gap-2 text-muted-foreground mb-2">
+            {plan.icon}
+            <span className="font-bold">{plan.name}</span>
+          </div>
+          <div>
+            <span className="text-4xl font-black text-foreground">${plan.price % 1 === 0 ? plan.price : plan.price.toFixed(2)}</span>
+            <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
+          </div>
+          <p className="text-muted-foreground text-xs mt-2">{plan.description}</p>
+        </div>
+
+        <div className="p-5 flex-1 bg-muted/30 flex flex-col">
+          <ul className="space-y-2.5 flex-1 mb-5">
+            {plan.features.map((f) => (
+              <li key={f} className="flex items-start gap-2 text-xs text-foreground/80">
+                <Check className="w-3.5 h-3.5 mt-0.5 text-primary flex-shrink-0" />
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <button
+            onClick={() => handleCheckout(plan)}
+            disabled={loading === plan.id}
+            className={`w-full py-3 rounded-xl font-bold text-sm transition-all disabled:opacity-60 ${
+              isHighlighted
+                ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                : 'bg-muted hover:bg-muted/80 text-foreground'
+            }`}
+          >
+            {loading === plan.id ? 'Loading...' : plan.cta}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Pricing - Stolen Item Verification Plans"
-        description="CheckMEND charges $1.99+ per check. Carfax is $44.99/report. SafeOrStolen starts at $0.99 with 100+ databases. 2 free checks included."
+        title="Pricing - Plans for Buyers, Sellers & Businesses"
+        description="SafeOrStolen pricing for everyone. Buyers: 2 free checks, $0.99/check, $4.99/mo. Sellers: Verified badges from $2.99. Businesses: $49/mo unlimited compliance. 30-day money-back guarantee."
         canonical="/pricing"
       />
 
       {/* Header */}
-      <div className="text-center pt-16 pb-10 px-4">
+      <div className="text-center pt-16 pb-8 px-4">
         <h1 className="text-4xl md:text-5xl font-black mb-4">
           Simple, Honest Pricing
         </h1>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-          CheckMEND charges $1.99+ per check. Carfax is $44.99/report.
-          We give you 2 free checks and plans starting at $0.99 —
-          with 100+ databases vs their single source.
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-2">
+          Plans for buyers, sellers, and businesses. Start free, upgrade when you need more.
         </p>
-
-        {/* Annual toggle */}
-        <div className="inline-flex items-center gap-3 bg-card border border-border rounded-full px-4 py-2">
-          <button
-            onClick={() => setAnnual(false)}
-            className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${!annual ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => setAnnual(true)}
-            className={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${annual ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-          >
-            Annual
-            <span className="ml-2 bg-primary text-primary-foreground text-xs font-black px-1.5 py-0.5 rounded-full">-20%</span>
-          </button>
-        </div>
+        <p className="text-muted-foreground/70 text-sm">
+          🔒 30-day money-back guarantee · Cancel anytime · No hidden fees
+        </p>
       </div>
 
-      {/* Plan Cards */}
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-        {PLANS.map((plan) => {
-          const displayPrice = annual && plan.period === '/month'
-            ? (plan.price * 0.8).toFixed(2)
-            : plan.price.toFixed(2);
+      {/* Audience Tabs */}
+      <div className="max-w-6xl mx-auto px-4 mb-16">
+        <Tabs defaultValue="buyers" className="w-full">
+          <TabsList className="grid w-full max-w-lg mx-auto grid-cols-3 mb-10 h-auto">
+            <TabsTrigger value="buyers" className="flex items-center gap-2 py-3 text-sm font-bold">
+              <Users className="w-4 h-4" />
+              For Buyers
+            </TabsTrigger>
+            <TabsTrigger value="sellers" className="flex items-center gap-2 py-3 text-sm font-bold">
+              <BadgeCheck className="w-4 h-4" />
+              For Sellers
+            </TabsTrigger>
+            <TabsTrigger value="businesses" className="flex items-center gap-2 py-3 text-sm font-bold">
+              <Building2 className="w-4 h-4" />
+              For Businesses
+            </TabsTrigger>
+          </TabsList>
 
-          return (
-            <div
-              key={plan.id}
-              className={`relative rounded-2xl border-2 ${plan.color} flex flex-col overflow-hidden ${plan.highlighted ? 'shadow-2xl shadow-primary/20 scale-[1.02]' : ''}`}
-            >
-              {plan.badge && (
-                <div className="absolute top-0 left-0 right-0 text-center bg-primary text-primary-foreground text-xs font-black py-1.5 uppercase tracking-wide">
-                  {plan.badge}
-                </div>
-              )}
-
-              <div className={`${plan.headerBg} ${plan.badge ? 'pt-8' : 'pt-5'} p-5 pb-4`}>
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  {plan.icon}
-                  <span className="font-bold">{plan.name}</span>
-                </div>
-                <div>
-                  <span className="text-4xl font-black text-foreground">${displayPrice}</span>
-                  <span className="text-muted-foreground text-sm ml-1">{plan.period}</span>
-                </div>
-                {annual && plan.period === '/month' && (
-                  <div className="text-primary text-xs mt-1">
-                    Save ${(plan.price * 0.2 * 12).toFixed(0)}/year
-                  </div>
-                )}
-                <p className="text-muted-foreground text-xs mt-2">{plan.description}</p>
-              </div>
-
-              <div className="p-5 flex-1 bg-muted/30 flex flex-col">
-                <ul className="space-y-2.5 flex-1 mb-5">
-                  {plan.features.map((f) => (
-                    <li key={f.text} className={`flex items-start gap-2 text-xs ${f.included ? 'text-foreground/80' : 'text-muted-foreground/40 line-through'}`}>
-                      <span className={`mt-0.5 flex-shrink-0 ${f.included ? 'text-primary' : 'text-muted-foreground/40'}`}>
-                        {f.included ? '✓' : '✗'}
-                      </span>
-                      {f.text}
-                    </li>
-                  ))}
-                  {plan.extras?.map((e) => (
-                    <li key={e} className="flex items-start gap-2 text-xs text-secondary">
-                      <span className="mt-0.5 text-secondary flex-shrink-0">+</span>
-                      {e}
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  onClick={() => handleCheckout(plan)}
-                  disabled={loading === plan.id}
-                  className={`w-full py-3 rounded-xl font-bold text-sm transition-all disabled:opacity-60 ${
-                    plan.highlighted
-                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
-                      : 'bg-muted hover:bg-muted/80 text-foreground'
-                  }`}
-                >
-                  {loading === plan.id ? 'Loading...' : plan.cta}
-                </button>
-              </div>
+          {/* BUYERS */}
+          <TabsContent value="buyers">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-black mb-2">Verify Before You Buy</h2>
+              <p className="text-muted-foreground">Check phones, cars, guns, bikes, electronics & more against 100+ databases in 3 seconds.</p>
+              <p className="text-primary font-semibold text-sm mt-2">✨ 2 free checks included — no credit card required</p>
             </div>
-          );
-        })}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {BUYER_PLANS.map((plan) => <PlanCard key={plan.id} plan={plan} />)}
+            </div>
+          </TabsContent>
+
+          {/* SELLERS */}
+          <TabsContent value="sellers">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-black mb-2">Verified Items Sell 3x Faster</h2>
+              <p className="text-muted-foreground">Prove your items aren't stolen. Get verified badges, shareable reports, and command higher prices.</p>
+              <p className="text-primary font-semibold text-sm mt-2">🏷️ Add "✓ Verified Safe" to your marketplace listings</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+              {SELLER_PLANS.map((plan) => <PlanCard key={plan.id} plan={plan} />)}
+            </div>
+            <div className="text-center mt-8">
+              <Link to="/for-sellers" className="text-primary hover:underline font-semibold text-sm">
+                Learn more about selling verified items →
+              </Link>
+            </div>
+          </TabsContent>
+
+          {/* BUSINESSES */}
+          <TabsContent value="businesses">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-black mb-2">Automate Compliance & Protect Your Business</h2>
+              <p className="text-muted-foreground">For pawn shops, car dealers, electronics resellers, FFLs, and auction houses.</p>
+              <p className="text-primary font-semibold text-sm mt-2">🛡️ 30-day free trial — no credit card required</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
+              {BUSINESS_PLANS.map((plan) => <PlanCard key={plan.id} plan={plan} />)}
+            </div>
+            <div className="text-center mt-8">
+              <Link to="/for-businesses" className="text-primary hover:underline font-semibold text-sm">
+                Learn more about business solutions →
+              </Link>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
 
       {/* Competitor comparison */}
       <div className="max-w-4xl mx-auto px-4 mb-16">
         <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
           <h2 className="text-2xl font-black text-foreground mb-6 text-center">
-            How We Compare to Alternatives
+            How We Compare
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -273,17 +418,16 @@ const PricingPage = () => {
                   <th className="text-center py-3 px-3 text-muted-foreground font-medium">Cost</th>
                   <th className="text-center py-3 px-3 text-muted-foreground font-medium">Databases</th>
                   <th className="text-center py-3 px-3 text-muted-foreground font-medium">Asset Types</th>
-                  <th className="text-center py-3 px-3 text-muted-foreground font-medium">PDF Report</th>
+                  <th className="text-center py-3 px-3 text-muted-foreground font-medium">Mobile App</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { name: 'SafeOrStolen (Pro)', cost: '$9.99/mo unlimited', dbs: '100+', assets: 'All types', pdf: '✓', highlight: true },
-                  { name: 'CheckMEND', cost: '$1.99–$4.99/check', dbs: 'Electronics only', assets: 'Phones/laptops', pdf: '✓', highlight: false },
-                  { name: 'Carfax', cost: '$44.99/report', dbs: 'Vehicle only', assets: 'Cars/trucks', pdf: '✓', highlight: false },
-                  { name: 'NICB VINCheck', cost: 'Free (limited)', dbs: '1 (NICB only)', assets: 'Vehicles only', pdf: '✗', highlight: false },
-                  { name: 'BikeIndex', cost: 'Free (limited)', dbs: '1 (bikes only)', assets: 'Bicycles only', pdf: '✗', highlight: false },
-                  { name: 'HotGunz', cost: 'Free (limited)', dbs: '1 (guns only)', assets: 'Firearms only', pdf: '✗', highlight: false },
+                  { name: 'SafeOrStolen', cost: 'From $0.99', dbs: '100+', assets: 'All types', app: '✓', highlight: true },
+                  { name: 'CheckMEND', cost: '£7/check', dbs: 'UK-focused', assets: 'Electronics', app: '✗', highlight: false },
+                  { name: 'Carfax', cost: '$44.99/report', dbs: 'Vehicle only', assets: 'Cars', app: '✗', highlight: false },
+                  { name: 'NICB VINCheck', cost: 'Free (5/day)', dbs: '1', assets: 'Vehicles', app: '✗', highlight: false },
+                  { name: 'HotGunz', cost: 'Free (limited)', dbs: '1', assets: 'Firearms', app: '✗', highlight: false },
                 ].map((row) => (
                   <tr key={row.name} className={`border-b border-border/50 ${row.highlight ? 'bg-primary/5' : ''}`}>
                     <td className={`py-3 pr-4 font-semibold ${row.highlight ? 'text-primary' : 'text-muted-foreground'}`}>
@@ -292,45 +436,12 @@ const PricingPage = () => {
                     <td className="py-3 px-3 text-center text-muted-foreground">{row.cost}</td>
                     <td className="py-3 px-3 text-center text-muted-foreground">{row.dbs}</td>
                     <td className="py-3 px-3 text-center text-muted-foreground">{row.assets}</td>
-                    <td className={`py-3 px-3 text-center font-bold ${row.pdf === '✓' ? 'text-primary' : 'text-destructive'}`}>{row.pdf}</td>
+                    <td className={`py-3 px-3 text-center font-bold ${row.app === '✓' ? 'text-primary' : 'text-destructive'}`}>{row.app}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
-
-      {/* Full comparison table */}
-      <div className="max-w-5xl mx-auto px-4 mb-16">
-        <h2 className="text-2xl font-black text-foreground mb-6 text-center">Full Feature Comparison</h2>
-        <div className="overflow-x-auto rounded-2xl border border-border">
-          <table className="w-full text-sm">
-            <thead className="bg-card">
-              <tr>
-                <th className="text-left py-3 px-4 text-muted-foreground font-semibold">Feature</th>
-                {['Single', 'Basic', 'Pro', 'Business'].map(h => (
-                  <th key={h} className={`text-center py-3 px-3 font-semibold ${h === 'Pro' ? 'text-primary' : 'text-muted-foreground'}`}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {COMPARISON_ROWS.map((row, i) => (
-                <tr key={row.feature} className={i % 2 === 0 ? 'bg-card' : 'bg-card/50'}>
-                  <td className="py-3 px-4 text-muted-foreground">{row.feature}</td>
-                  {[row.single, row.basic, row.pro, row.business].map((val, j) => (
-                    <td key={j} className={`py-3 px-3 text-center text-xs ${
-                      val === '✓' ? 'text-primary font-bold text-base' :
-                      val === '—' ? 'text-muted-foreground/40' :
-                      j === 2 ? 'text-secondary font-semibold' : 'text-muted-foreground'
-                    }`}>
-                      {val}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
 
@@ -373,14 +484,34 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "SafeOrStolen Verification Plans",
-            "description": "Stolen item verification for guns, vehicles, phones, and more. Check IMEI, VIN, serial numbers and license plates against 100+ law enforcement databases.",
+            "description": "Stolen item verification for buyers, sellers, and businesses. Check IMEI, VIN, serial numbers against 100+ databases.",
             "brand": { "@type": "Brand", "name": "SafeOrStolen" },
             "offers": [
               { "@type": "Offer", "name": "Single Check", "price": "0.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
               { "@type": "Offer", "name": "Basic Plan", "price": "4.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
               { "@type": "Offer", "name": "Pro Plan", "price": "9.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
-              { "@type": "Offer", "name": "Business Plan", "price": "49.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" }
+              { "@type": "Offer", "name": "Business Plan", "price": "49.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
+              { "@type": "Offer", "name": "Verified Seller Badge", "price": "2.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
+              { "@type": "Offer", "name": "Verified Seller Plan", "price": "19.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
+              { "@type": "Offer", "name": "Business Starter", "price": "49.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
+              { "@type": "Offer", "name": "Business Professional", "price": "99.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
             ]
+          })
+        }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": FAQS.map(f => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a }
+            }))
           })
         }}
       />
