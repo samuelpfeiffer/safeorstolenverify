@@ -9,6 +9,8 @@ import type { AggregatedResult } from '@/services/VerificationService';
 import { SourceCard } from './SourceCard';
 import { TrustBadge } from './TrustBadge';
 import { DownloadReportButton } from './DownloadReportButton';
+import { AIVerificationAnalysis } from '@/components/ai/AIVerificationAnalysis';
+import { SmartRecommendations } from '@/components/ai/SmartRecommendations';
 
 interface Props {
   result: AggregatedResult;
@@ -141,6 +143,22 @@ export const ParallelVerificationDisplay = ({ result }: Props) => {
           ))}
         </div>
       </div>
+
+      {/* AI Verification Analysis - shows after every verification */}
+      <AIVerificationAnalysis
+        identifier={result.identifier}
+        itemType={result.itemType}
+        verificationResult={{ status: result.finalStatus, confidence: result.confidence, message: result.message }}
+        sources={result.checkedSources}
+      />
+
+      {/* Smart Recommendations - personalized next steps */}
+      <SmartRecommendations
+        itemType={result.itemType}
+        status={result.finalStatus === 'safe' ? 'clean' : result.finalStatus === 'stolen' ? 'flagged' : result.finalStatus}
+        score={result.confidence}
+        identifier={result.identifier}
+      />
     </div>
   );
 };

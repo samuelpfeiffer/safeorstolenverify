@@ -381,62 +381,62 @@ const FirearmsCheckPage = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "name": "Gun Serial Number Lookup — Is This Firearm Stolen?",
-                "description": "Check any firearm serial number against FBI NCIC, ATF records, HotGunz, and all 50 state law enforcement databases. Results in 3 seconds.",
-                "url": "https://safeorstolen.com/firearms-check",
-                "breadcrumb": {
-                  "@type": "BreadcrumbList",
-                  "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
-                    { "@type": "ListItem", "position": 2, "name": "Gun Serial Lookup", "item": "https://safeorstolen.com/firearms-check" }
-                  ]
-                }
-              },
-              {
-                "@type": "FAQPage",
-                "mainEntity": [
-                  {
-                    "@type": "Question",
-                    "name": "How do I check if a gun serial number is stolen?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Enter the firearm serial number at SafeOrStolen.com/firearms-check. The system simultaneously queries FBI NCIC (via authorized aggregators), ATF eTrace records, HotGunz, and all 50 state law enforcement stolen property databases. Results return in approximately 3 seconds."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "Is it legal to check a gun serial number online?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service aggregating publicly available and licensed data. The service is not affiliated with any government agency."
-                    }
-                  },
-                  {
-                    "@type": "Question",
-                    "name": "What does a stolen gun result mean?",
-                    "acceptedAnswer": {
-                      "@type": "Answer",
-                      "text": "A flagged result means the serial number appears in one or more stolen property databases. Do not purchase the firearm. Contact your local law enforcement agency. SafeOrStolen will indicate which database returned the record."
-                    }
-                  }
-                ]
-              },
-              {
-                "@type": "HowTo",
-                "name": "How to Check if a Gun Serial Number is Stolen",
-                "step": [
-                  { "@type": "HowToStep", "name": "Find the serial number", "text": "Locate the serial number engraved on the frame or receiver of the firearm. The location varies by firearm type." },
-                  { "@type": "HowToStep", "name": "Enter the serial number", "text": "Go to SafeOrStolen.com/firearms-check and enter the serial number in the search field." },
-                  { "@type": "HowToStep", "name": "Review results", "text": "The system returns a Trust Score and database-by-database breakdown within 3 seconds. If flagged, do not complete the transaction." }
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Gun Serial Number Lookup — Is This Firearm Stolen?",
+              "description": "Check any firearm serial number against FBI NCIC, ATF records, HotGunz, and all 50 state law enforcement databases. Results in 3 seconds.",
+              "url": "https://safeorstolen.com/firearms-check",
+              "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Gun Serial Lookup", "item": "https://safeorstolen.com/firearms-check" }
                 ]
               }
-            ]
-          })
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do I check if a gun serial number is stolen?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter the firearm serial number at SafeOrStolen.com/firearms-check. The system simultaneously queries FBI NCIC (via authorized aggregators), ATF eTrace records, HotGunz, and all 50 state law enforcement stolen property databases. Results return in approximately 3 seconds."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is it legal to check a gun serial number online?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Checking a firearm serial number against commercial theft databases is completely legal. SafeOrStolen is a private commercial service aggregating publicly available and licensed data. The service is not affiliated with any government agency."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What does a stolen gun result mean?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A flagged result means the serial number appears in one or more stolen property databases. Do not purchase the firearm. Contact your local law enforcement agency. SafeOrStolen will indicate which database returned the record."
+                  }
+                }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to Check if a Gun Serial Number is Stolen",
+              "step": [
+                { "@type": "HowToStep", "name": "Find the serial number", "text": "Locate the serial number engraved on the frame or receiver of the firearm. The location varies by firearm type." },
+                { "@type": "HowToStep", "name": "Enter the serial number", "text": "Go to SafeOrStolen.com/firearms-check and enter the serial number in the search field." },
+                { "@type": "HowToStep", "name": "Review results", "text": "The system returns a Trust Score and database-by-database breakdown within 3 seconds. If flagged, do not complete the transaction." }
+              ]
+            }
+          ])
         }}
       />
     </div>
