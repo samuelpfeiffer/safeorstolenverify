@@ -141,3 +141,12 @@ verify_jwt = false
 
 [functions.ai-detect-identifier]
 verify_jwt = false
+
+[functions.ai-verification-analysis]
+verify_jwt = false
+
+[functions.ai-chat-stream]
+verify_jwt = false
+
+[functions.ai-marketplace-advisor]
+verify_jwt = true
