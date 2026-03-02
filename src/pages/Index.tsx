@@ -387,12 +387,18 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/verify"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
             >
               Verify Your Item Now — Free →
+            </Link>
+            <Link
+              to="/for-sellers"
+              className="inline-flex items-center gap-2 border-2 border-primary/30 hover:border-primary text-foreground font-bold px-8 py-4 rounded-2xl transition-all hover:bg-primary/5"
+            >
+              Learn More for Sellers →
             </Link>
           </div>
         </div>

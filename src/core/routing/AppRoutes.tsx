@@ -245,6 +245,8 @@ const BicycleStolenSerialNumberCheck = lazy(() => import('@/pages/blog/BicycleSt
 const VerifyItemBeforeMeetup = lazy(() => import('@/pages/blog/VerifyItemBeforeMeetup'));
 const CarfaxVsFreeVinAlternatives = lazy(() => import('@/pages/blog/CarfaxVsFreeVinAlternatives'));
 const AIStolenItemDetection2026 = lazy(() => import('@/pages/blog/AIStolenItemDetection2026'));
+const HowToSellVerifiedItems = lazy(() => import('@/pages/blog/HowToSellVerifiedItems'));
+const FreeVINLookupGuide = lazy(() => import('@/pages/blog/FreeVINLookupGuide'));
 const PS5StolenCheckGuide = lazy(() => import('@/pages/blog/PS5StolenCheckGuide'));
 const DynamicBlogPost = lazy(() => import('@/pages/blog/DynamicBlogPost'));
 
@@ -280,6 +282,7 @@ const ForDealers = lazy(() => import('@/pages/business/ForDealers'));
 const ForMarketplaces = lazy(() => import('@/pages/business/ForMarketplaces'));
 const ForAuctionHouses = lazy(() => import('@/pages/business/ForAuctionHouses'));
 const ForBusinesses = lazy(() => import('@/pages/business/ForBusinesses'));
+const ForSellers = lazy(() => import('@/pages/business/ForSellers'));
 const BusinessSignup = lazy(() => import('@/pages/business/BusinessSignup'));
 const BusinessDashboard = lazy(() => import('@/pages/business/BusinessDashboard'));
 
@@ -600,6 +603,8 @@ export const AppRoutes = () => {
         <Route path="/blog/verify-item-before-meetup" element={<VerifyItemBeforeMeetup />} />
         <Route path="/blog/carfax-vs-free-vin-alternatives" element={<CarfaxVsFreeVinAlternatives />} />
         <Route path="/blog/ai-stolen-item-detection-2026" element={<AIStolenItemDetection2026 />} />
+        <Route path="/blog/how-to-sell-verified-items" element={<HowToSellVerifiedItems />} />
+        <Route path="/blog/free-vin-lookup-guide" element={<FreeVINLookupGuide />} />
         <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
         <Route path="/blog/best-ai-llms-2026" element={<BestAILLMs2026 />} />
         <Route path="/blog/top-10-stolen-item-checkers" element={<TopStolenItemCheckers />} />
@@ -614,6 +619,7 @@ export const AppRoutes = () => {
         <Route path="/for-marketplaces" element={<ForMarketplaces />} />
         <Route path="/for-auction-houses" element={<ForAuctionHouses />} />
         <Route path="/for-businesses" element={<ForBusinesses />} />
+        <Route path="/for-sellers" element={<ForSellers />} />
         <Route path="/for-electronics-resellers" element={<ForElectronicsResellers />} />
         <Route path="/for-insurance-companies" element={<ForInsuranceCompanies />} />
         <Route path="/for-law-enforcement" element={<ForLawEnforcement />} />
