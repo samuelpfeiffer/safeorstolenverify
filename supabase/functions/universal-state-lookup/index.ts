@@ -1,11 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { runParallelVerification } from '../_shared/parallel-verification.ts';
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 
 const STATE_FUNCTIONS: Record<string, string> = {
   'AZ': 'arizona-theft-lookup',
@@ -22,9 +18,9 @@ interface UniversalLookupRequest {
 }
 
 serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
