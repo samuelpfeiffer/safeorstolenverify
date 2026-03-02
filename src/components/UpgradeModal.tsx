@@ -1,102 +1,60 @@
 import { useState } from 'react'
 import { supabase } from '@/integrations/supabase/client'
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate'
-import { X, Shield, Star, Zap, Building2 } from 'lucide-react'
-
-interface Plan {
-  id: string
-  name: string
-  price: string
-  period: string
-  tagline: string
-  features: string[]
-  stripePriceId: string
-  highlighted: boolean
-  cta: string
-  icon: React.ReactNode
-}
-
-const PLANS: Plan[] = [
-  {
-    id: 'single',
-    name: 'Single Check',
-    price: '$0.99',
-    period: 'one-time',
-    tagline: 'Just need one check',
-    features: [
-      '1 full verification',
-      'All 100+ databases',
-      'PDF certificate included',
-      'No subscription needed',
-    ],
-    stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
-    highlighted: false,
-    cta: 'Buy 1 Check — $0.99',
-    icon: <Shield className="w-5 h-5" />,
-  },
-  {
-    id: 'basic',
-    name: 'Basic',
-    price: '$4.99',
-    period: '/month',
-    tagline: '50 checks/month',
-    features: [
-      '50 verifications/month',
-      'PDF certificates',
-      'Check history',
-      'Email support',
-      'Cancel anytime',
-    ],
-    stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
-    highlighted: false,
-    cta: 'Start Basic — $4.99/mo',
-    icon: <Star className="w-5 h-5" />,
-  },
-  {
-    id: 'pro',
-    name: 'Pro',
-    price: '$9.99',
-    period: '/month',
-    tagline: 'Unlimited verifications',
-    features: [
-      'Unlimited verifications',
-      'PDF certificates + history',
-      'Priority results',
-      'API access (100 calls/mo)',
-      'Shareable report links',
-      'Phone support',
-    ],
-    stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
-    highlighted: true,
-    cta: 'Go Pro — $9.99/mo',
-    icon: <Zap className="w-5 h-5" />,
-  },
-  {
-    id: 'business',
-    name: 'Business',
-    price: '$49.99',
-    period: '/month',
-    tagline: 'For pawn shops & dealers',
-    features: [
-      'Unlimited verifications',
-      'Bulk CSV upload',
-      'Compliance PDF reports',
-      'Full API access',
-      'Audit trail + export',
-      'Multi-user seats (5)',
-      'Dedicated support',
-    ],
-    stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
-    highlighted: false,
-    cta: 'Get Business — $49.99/mo',
-    icon: <Building2 className="w-5 h-5" />,
-  },
-]
+import { redirectToStripe } from '@/utils/stripeRedirect'
+import { X, Zap, BadgeCheck, Building2 } from 'lucide-react'
 
 interface UpgradeModalProps {
   isOpen: boolean
   reason: string | null
   onClose: () => void
+}
+
+const PLANS = {
+  buyer: {
+    id: 'pro',
+    icon: <Zap className="w-5 h-5" />,
+    label: 'Unlimited Verifications',
+    price: '$9.99/month',
+    desc: 'Check unlimited items across all 6 categories. Save history, share reports, and verify with confidence.',
+    cta: 'Upgrade to Unlimited — $9.99/mo',
+    priceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
+    planName: 'Personal Plan',
+    isSub: true,
+  },
+  sellerBadge: {
+    id: 'seller-badge',
+    icon: <BadgeCheck className="w-5 h-5" />,
+    label: 'Single Verified Badge',
+    price: '$2.99 one-time',
+    desc: 'Get a shareable "✓ Verified Safe" badge for one listing. Valid 90 days.',
+    cta: 'Get Badge — $2.99',
+    priceId: 'price_1T6fNGGxnZLw8J7OrKLSrnAx',
+    planName: 'Seller Per-Listing',
+    isSub: false,
+  },
+  sellerUnlimited: {
+    id: 'seller-unlimited',
+    icon: <BadgeCheck className="w-5 h-5" />,
+    label: 'Unlimited Badges',
+    price: '$19.99/month',
+    desc: 'Unlimited verifications + badges. Seller profile page. Sell faster, earn more.',
+    cta: 'Start Selling — $19.99/mo',
+    priceId: 'price_1T6fOWGxnZLw8J7O2njgDUgM',
+    planName: 'Verified Seller',
+    isSub: true,
+  },
+  business: {
+    id: 'business',
+    icon: <Building2 className="w-5 h-5" />,
+    label: 'Business Plan',
+    price: '$49.99/month',
+    desc: 'Unlimited checks, embeddable widget, API access, compliance reporting, and 5 staff seats.',
+    cta: 'Start Free Trial — $49.99/mo',
+    priceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
+    planName: 'Professional Plan',
+    isSub: true,
+  },
 }
 
 export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
@@ -108,123 +66,116 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
     reason === 'monthly_limit'
       ? "You've Hit Your Monthly Limit"
       : reason === 'single_used'
-      ? "Your Single Check Has Been Used"
+      ? 'Your Single Check Has Been Used'
       : "You've Used Your 2 Free Checks"
 
-  const subtext =
-    reason === 'monthly_limit'
-      ? 'Upgrade to Pro or Business for unlimited verifications.'
-      : "Upgrade to keep verifying — protect yourself from stolen property and legal risk."
-
-  async function handleUpgrade(plan: Plan) {
+  async function handleCheckout(plan: typeof PLANS.buyer) {
     setLoading(plan.id)
     try {
       const { data: { user } } = await supabase.auth.getUser()
-
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: plan.stripePriceId,
-          planName: plan.id,
-          isSubscription: plan.id !== 'single',
+          priceId: plan.priceId,
+          planName: plan.planName,
+          isSubscription: plan.isSub,
           fingerprint: getOrCreateFingerprint(),
         },
         headers: user ? undefined : {},
       })
-
       if (error) throw new Error(error.message)
-      if (data?.url) window.location.href = data.url
-    } catch (err: any) {
-      console.error('Checkout error:', err)
+      if (data?.url) redirectToStripe(data.url)
+    } catch {
       alert('Something went wrong starting checkout. Please try again.')
     } finally {
       setLoading(null)
     }
   }
 
+  function PlanOption({ plan, highlight = false }: { plan: typeof PLANS.buyer; highlight?: boolean }) {
+    return (
+      <button
+        onClick={() => handleCheckout(plan)}
+        disabled={loading === plan.id}
+        className={`w-full text-left rounded-xl p-4 border-2 transition-all disabled:opacity-60 ${
+          highlight
+            ? 'border-primary bg-primary/5 hover:bg-primary/10'
+            : 'border-border bg-card hover:border-primary/40'
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <div className={`p-2 rounded-lg ${highlight ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
+            {plan.icon}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-bold text-foreground text-sm">{plan.label}</span>
+              <span className={`font-black text-sm whitespace-nowrap ${highlight ? 'text-primary' : 'text-foreground'}`}>{plan.price}</span>
+            </div>
+            <p className="text-muted-foreground text-xs mt-0.5 line-clamp-2">{plan.desc}</p>
+          </div>
+        </div>
+        <div className={`mt-3 text-center py-2.5 rounded-lg font-bold text-xs transition-all ${
+          highlight
+            ? 'bg-primary text-primary-foreground'
+            : 'bg-muted text-foreground'
+        }`}>
+          {loading === plan.id ? 'Loading...' : plan.cta}
+        </div>
+      </button>
+    )
+  }
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
-      <div className="bg-background border border-border rounded-2xl max-w-5xl w-full p-6 md:p-8 relative max-h-[95vh] overflow-y-auto">
-        
-        {/* Close button */}
+      <div className="bg-background border border-border rounded-2xl max-w-md w-full p-6 relative max-h-[95vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors p-1"
           aria-label="Close"
         >
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5" />
         </button>
 
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="text-5xl mb-4">🔒</div>
-          <h2 className="text-2xl md:text-3xl font-black text-foreground">{headline}</h2>
-          <p className="text-muted-foreground mt-2 max-w-xl mx-auto">{subtext}</p>
-          <div className="mt-3 text-sm text-muted-foreground">
-            CheckMEND charges $1.99+ per check with no free option. Carfax is $44.99/report.
-            We start at $2.99.
+        <div className="text-center mb-6">
+          <div className="text-4xl mb-3">🔒</div>
+          <h2 className="text-xl font-black text-foreground">{headline}</h2>
+          <p className="text-muted-foreground text-sm mt-1">
+            Choose the plan that fits your needs:
+          </p>
+        </div>
+
+        {/* Smart options */}
+        <div className="space-y-3 mb-5">
+          {/* Always show buyer upgrade first (highlighted) */}
+          <PlanOption plan={PLANS.buyer} highlight />
+
+          {/* Seller options */}
+          <div className="relative">
+            <div className="absolute -top-2 left-4 bg-muted text-muted-foreground text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+              Selling items?
+            </div>
+            <div className="border border-border rounded-xl p-3 pt-4 space-y-2">
+              <PlanOption plan={PLANS.sellerBadge} />
+              <PlanOption plan={PLANS.sellerUnlimited} />
+            </div>
+          </div>
+
+          {/* Business option */}
+          <div className="relative">
+            <div className="absolute -top-2 left-4 bg-muted text-muted-foreground text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+              Pawn shop or dealer?
+            </div>
+            <div className="border border-border rounded-xl p-3 pt-4">
+              <PlanOption plan={PLANS.business} />
+            </div>
           </div>
         </div>
 
-        {/* Plans */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {PLANS.map((plan) => (
-            <div
-              key={plan.id}
-              className={`relative rounded-xl flex flex-col p-5 transition-all ${
-                plan.highlighted
-                  ? 'bg-primary border-2 border-primary/80 shadow-lg shadow-primary/20'
-                  : 'bg-card border border-border hover:border-primary/40'
-              }`}
-            >
-              {plan.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap">
-                  ⭐ Most Popular
-                </div>
-              )}
-
-              <div className={`flex items-center gap-2 mb-1 ${plan.highlighted ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
-                {plan.icon}
-                <span className="font-bold text-sm">{plan.name}</span>
-              </div>
-
-              <div className="mt-2 mb-1">
-                <span className={`text-3xl font-black ${plan.highlighted ? 'text-primary-foreground' : 'text-foreground'}`}>{plan.price}</span>
-                <span className={`text-sm ml-1 ${plan.highlighted ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>
-                  {plan.period}
-                </span>
-              </div>
-              <p className={`text-xs mb-4 ${plan.highlighted ? 'text-primary-foreground/70' : 'text-muted-foreground'}`}>
-                {plan.tagline}
-              </p>
-
-              <ul className="space-y-2 flex-1 mb-5">
-                {plan.features.map((f) => (
-                  <li key={f} className={`flex items-start gap-2 text-xs ${plan.highlighted ? 'text-primary-foreground/90' : 'text-muted-foreground'}`}>
-                    <span className="text-green-400 mt-0.5 flex-shrink-0">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                onClick={() => handleUpgrade(plan)}
-                disabled={loading === plan.id}
-                className={`w-full py-3 rounded-xl font-bold text-sm transition-all disabled:opacity-60 ${
-                  plan.highlighted
-                    ? 'bg-primary-foreground text-primary hover:opacity-90'
-                    : 'bg-primary text-primary-foreground hover:opacity-90'
-                }`}
-              >
-                {loading === plan.id ? 'Loading...' : plan.cta}
-              </button>
-            </div>
-          ))}
-        </div>
-
         {/* Footer */}
-        <div className="mt-6 text-center space-y-2">
+        <div className="text-center space-y-2">
           <p className="text-muted-foreground text-xs">
-            🔒 Secured by Stripe · Cancel anytime · No hidden fees
+            🔒 Secured by Stripe · Cancel anytime · 30-day money-back guarantee
           </p>
           <p className="text-muted-foreground/60 text-xs">
             Already subscribed?{' '}
