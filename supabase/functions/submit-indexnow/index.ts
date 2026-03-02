@@ -1,9 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 
 // IndexNow key - stored in Supabase secrets
 const INDEXNOW_KEY = Deno.env.get('INDEXNOW_KEY') || 'safeorstolen-indexnow-key';
@@ -154,10 +150,10 @@ async function submitToIndexNow(urls: string[]): Promise<{ success: boolean; sub
 }
 
 serve(async (req) => {
-  // Handle CORS preflight
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
-  }
+  const corsPreFlight = handleCorsPreFlight(req);
+  if (corsPreFlight) return corsPreFlight;
+
+  const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
     const { urls, submitAll } = await req.json().catch(() => ({ urls: null, submitAll: false }));
