@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
+import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO';
 import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { useState } from 'react';
@@ -153,16 +154,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Free Stolen Item Checker - IMEI VIN Serial Verification"
-        description="Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. 2 free searches. Results in 3 seconds."
-        keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check"
+        title="Free Stolen Item Checker - IMEI VIN Serial Verification | SafeOrStolen"
+        description="Check if phones, cars, bikes, firearms are stolen before buying or selling. Verify IMEI, VIN, serial numbers against 100+ law enforcement databases. 2 free searches. Results in 3 seconds. The only verification service with a mobile app."
+        keywords="stolen item checker, IMEI checker free, VIN checker free, serial number verification, stolen phone checker, stolen car check, gun serial number lookup, marketplace safety"
         canonical="/"
+        structuredData={[
+          {
+            "@type": "WebPage",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          }
+        ]}
       />
+      <CompetitorTargetingSEO />
 
       <noscript>
         <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
           <h1>Stolen Item Checker - Free IMEI, VIN &amp; Serial Number Verification</h1>
-          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 100+ databases. Free verification with results in 3 seconds.</p>
+          <p>SafeOrStolen verifies if secondhand items are stolen. Check IMEI, VIN, and serial numbers against 100+ law enforcement databases including FBI NCIC, GSMA, NICB, and ATF. Free verification with results in 3 seconds. The only verification service with a mobile app for iOS and Android.</p>
         </div>
       </noscript>
 
@@ -188,10 +199,9 @@ const Index = () => {
             <span className="sos-gradient-text">Safe or Stolen?</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Instantly verify guns, vehicles, phones, bikes, and electronics against
-            100+ law enforcement, insurance, and carrier databases.
-            <strong className="text-foreground"> Results in 3 seconds.</strong>
+          <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            SafeOrStolen checks any secondhand item against 100+ law enforcement, insurance, and carrier databases — including FBI NCIC, GSMA, NICB, and ATF.
+            <strong className="text-foreground"> Free results in 3 seconds. No credit card.</strong>
           </p>
 
           {/* Integrated Scanner / Search Bar */}

@@ -13,11 +13,18 @@
     "height": 512
   },
   "foundingDate": "2024-08",
-  "description": "Consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases.",
+  "description": "Consumer protection platform that verifies whether secondhand items are stolen before purchase by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. The only multi-category verification service with a mobile app.",
   "slogan": "Verify Before You Buy",
   "areaServed": {
     "@type": "Country",
     "name": "United States"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Peoria",
+    "addressRegion": "AZ",
+    "postalCode": "85345",
+    "addressCountry": "US"
   },
   "contactPoint": [
     {
@@ -59,8 +66,11 @@
     "consumer protection",
     "marketplace safety",
     "marketplace URL analysis",
-    "AI-powered listing scraping",
-    "pawn shop compliance"
+    "AI-powered identifier detection",
+    "pawn shop compliance",
+    "firearms serial number verification",
+    "bicycle theft verification",
+    "seller verification badges"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -78,8 +88,18 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
+          "name": "Single Check",
+          "description": "One-time verification"
+        },
+        "price": "0.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
           "name": "Basic Plan",
-          "description": "50 verifications per month at $4.99/month"
+          "description": "50 verifications per month"
         },
         "price": "4.99",
         "priceCurrency": "USD"
@@ -89,9 +109,19 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Pro Plan",
-          "description": "Unlimited verifications per month at $9.99/month"
+          "description": "Unlimited verifications per month"
         },
         "price": "9.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business Plan",
+          "description": "Unlimited verifications, API access, compliance reports, bulk CSV"
+        },
+        "price": "49.99",
         "priceCurrency": "USD"
       }
     ]
@@ -100,5 +130,5 @@
     "@type": "WebPage",
     "@id": "https://safeorstolen.com/"
   },
-  "dateModified": "2026-02-06"
+  "dateModified": "2026-03-02"
 }
