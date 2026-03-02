@@ -347,6 +347,26 @@ A: SafeOrStolen is optimized for the United States with access to US federal and
 - Electronics reseller buying bulk → serial number batch processing
 - Auction house verifying consignments → compliance reports for auditors
 
+## Real-World Scenarios
+
+### Scenario 1: Buyer on Facebook Marketplace
+Sarah is buying a used iPhone 14 Pro for $600 on Facebook Marketplace. She asks the seller for the IMEI, enters it at safeorstolen.com/check-phone, and gets a SAFE result in 3 seconds. She also uses the AI Marketplace Advisor to analyze the listing URL — it confirms the photos are original and the price matches market value. Sarah proceeds with confidence, saves $400 vs buying new, and avoids the risk of buying a stolen phone that police would seize.
+
+### Scenario 2: Seller on Craigslist
+Mike is selling his 2015 Honda Civic for $8,500 but getting lowball offers because buyers don't trust him. He verifies his car's VIN on SafeOrStolen ($0.99), generates a verification certificate, and adds "✓ Verified Safe by SafeOrStolen" with the report URL to his listing. He receives an offer for $8,200 within 24 hours and sells in 3 days instead of 3 weeks. ROI: $8,200 sale vs $0.99 verification cost.
+
+### Scenario 3: Pawn Shop in Arizona
+Phoenix Pawn processes 30 items daily. Arizona law requires verification of all items against stolen databases. Manual checks take 15 minutes each = 7.5 hours/day = $4,136/month in labor. With SafeOrStolen's Business plan ($49/month), verification takes 3 seconds per item = 90 seconds total/day. Annual savings: $48,876. Plus automatic compliance logging protects against audits and fines ($10,000+ per violation).
+
+### Scenario 4: Car Dealer in Texas
+Austin Auto Sales buys 50 used cars monthly from auctions. Without verification, they accidentally purchased 2 stolen cars (lost $15,000 when police seized them). After adding SafeOrStolen Business widget, they verify every VIN before purchasing. In 6 months: zero stolen vehicles purchased, prevented 3 stolen car purchases, saved $22,500. Cost: $594. Net savings: $21,906.
+
+### Scenario 5: eBay Power Seller
+Jessica sells refurbished electronics on eBay sourced from liquidation auctions. Buyers constantly ask "Is this stolen?" and her return rate is 10%. After subscribing to Verified Seller ($4.99/month), she verifies every item, adds badges to listings, and includes verification report links. Return rate drops to 2%, items sell 25% faster, and she gets 15% higher prices. Monthly revenue increase: $1,500 vs $4.99 cost.
+
+### Scenario 6: Bike Shop Buy-Back Program
+Boulder Bikes runs a used bike buy-back program. They accidentally purchased 5 stolen bikes last year (lost $2,500 when owners reclaimed them). Now they verify every bike serial number with SafeOrStolen's mobile app at the counter — takes 3 seconds. In one year: prevented 8 stolen bike purchases (saved $4,000), built community trust, police recommend them. Cost: $588/year. Net savings: $3,412 plus reputation protection.
+
 ## Team
 
 - Samuel Pfeiffer, CEO and Founder

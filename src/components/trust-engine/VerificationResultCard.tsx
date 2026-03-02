@@ -8,6 +8,8 @@ import { TrustMeter } from './TrustMeter';
 import { generateCompliancePDF } from '@/utils/complianceCertificate';
 import { AIVerificationAnalysis } from '@/components/ai/AIVerificationAnalysis';
 import { SmartRecommendations } from '@/components/ai/SmartRecommendations';
+import { PredictiveTheftAlerts } from '@/components/ai/PredictiveTheftAlerts';
+import { AISellerReport } from '@/components/ai/AISellerReport';
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface Props {
@@ -122,6 +124,20 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
           itemType={result.itemType}
           verificationResult={{ status: result.status, score: result.score, tldr: result.tldr }}
           sources={result.sources}
+        />
+
+        {/* Predictive Theft Alerts */}
+        <PredictiveTheftAlerts
+          identifier={result.serial}
+          identifierType={result.itemType}
+          verificationResult={result.status}
+        />
+
+        {/* AI Seller Report (only for clean items) */}
+        <AISellerReport
+          identifier={result.serial}
+          identifierType={result.itemType}
+          verificationResult={result.status}
         />
 
         {/* Smart Recommendations */}
