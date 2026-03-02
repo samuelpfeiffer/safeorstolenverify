@@ -1,6 +1,6 @@
 # Robots.txt for SafeOrStolen.com
-# Optimized for maximum search engine and AI crawler visibility
-# Last Updated: 2026-02-06
+# Optimized for maximum search engine and AI crawler visibility (2026 GEO Standard)
+# Last Updated: 2026-03-02
 
 User-agent: *
 Allow: /
@@ -146,6 +146,22 @@ User-agent: ImagesiftBot
 Allow: /
 
 User-agent: Timpibot
+Allow: /
+
+# DeepSeek AI (2026)
+User-agent: DeepSeekBot
+Allow: /
+
+# Mistral AI (2026)
+User-agent: MistralBot
+Allow: /
+
+# xAI / Grok (2026)
+User-agent: xAI-Grok
+Allow: /
+
+# Brave Search AI
+User-agent: BraveBot
 Allow: /
 
 # ==================================================
