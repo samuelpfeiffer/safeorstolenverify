@@ -128,7 +128,7 @@ export const SEOLandingPageTemplate = ({
       "name": "Worldwide"
     },
     "description": metaDescription,
-    "dateModified": "2026-02-06",
+    "dateModified": "2026-03-02",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -142,7 +142,7 @@ export const SEOLandingPageTemplate = ({
     "@type": "HowTo",
     "name": `How to Check if ${itemType} is Stolen`,
     "description": `Step by step guide to verify if a ${itemType.toLowerCase()} has been reported stolen`,
-    "dateModified": "2026-02-06",
+    "dateModified": "2026-03-02",
     "step": howItWorksSteps.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
