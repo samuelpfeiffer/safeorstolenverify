@@ -1,11 +1,21 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { checkRateLimit } from '../_shared/rate-limit.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
   if (corsPreFlight) return corsPreFlight;
 
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
+
+  // Rate limit: 5 requests/min per IP (stricter — large payloads)
+  const clientIp = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('cf-connecting-ip');
+  const rl = checkRateLimit(clientIp, { maxRequests: 5, windowMs: 60_000 });
+  if (!rl.allowed) {
+    return new Response(JSON.stringify({ error: 'Rate limit exceeded. Please try again later.' }), {
+      status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
 
   try {
     const { imageBase64 } = await req.json();
