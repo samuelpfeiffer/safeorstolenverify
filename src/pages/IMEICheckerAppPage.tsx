@@ -62,7 +62,7 @@ const IMEICheckerAppPage = () => {
       {
         "@type": "Question",
         "name": "Is the IMEI checker app free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The SafeOrStolen app is free to download and includes 2 free IMEI checks. Additional checks require a subscription or credits. The app itself is always free." }
+        "acceptedAnswer": { "@type": "Answer", "text": "The SafeOrStolen app is free to download. Unlimited IMEI checks require a $1/month subscription. Cancel anytime." }
       }
     ]
   };

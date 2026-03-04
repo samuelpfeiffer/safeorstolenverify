@@ -25,7 +25,7 @@ const CheckBikePage = () => {
           "Search BikeIndex.org, 529 Garage, and police databases",
           "Check high-end bikes (Trek, Specialized, Giant, Cannondale, Santa Cruz)",
           "Verify vintage and custom bikes",
-          "Free serial number check - 2 free verifications",
+          "Unlimited serial number checks — $1/month",
           "Instant 3-second verification from multiple databases",
           "Contact original owner if bike is reported stolen"
         ],
@@ -43,8 +43,8 @@ const CheckBikePage = () => {
             answer: "Bicycle serial numbers are usually stamped on the frame in one of these locations: (1) Bottom bracket - under the pedals where the crank arms attach (most common), (2) Rear dropout - near where the rear wheel attaches to the frame, (3) Head tube - below the handlebars near the fork, (4) Seat tube - near where the seat post inserts, (5) Chainstay - underside of the frame near the pedals. You may need a flashlight and to clean dirt/grease. If you can't find it, check the original receipt or manufacturer documentation. No serial number is a major red flag - high-quality bikes always have serial numbers."
           },
           {
-            question: "Is checking a bike's serial number really free?",
-            answer: "Yes, SafeOrStolen offers 2 free bike serial number checks. You can also manually search BikeIndex.org (free) and 529 Garage (free), but our tool searches multiple databases simultaneously in 3 seconds versus manually checking each site separately. Additional checks require a paid plan, but our free tier is designed to protect casual buyers purchasing one or two bikes."
+            question: "How much does checking a bike's serial number cost?",
+            answer: "SafeOrStolen offers unlimited bike serial number checks for $1/month. Our tool searches multiple databases simultaneously in 3 seconds versus manually checking each site separately. Cancel anytime."
           },
           {
             question: "What should I do if the bike is reported stolen?",

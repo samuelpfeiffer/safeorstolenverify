@@ -25,8 +25,9 @@ const DownloadApp = () => {
     "description": "Free app to check if items are stolen before buying or selling. Verify IMEI, VIN, serial numbers instantly. Protects both buyers AND sellers from stolen goods.",
     "offers": {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+      "price": "1.00",
+      "priceCurrency": "USD",
+      "description": "$1/month unlimited verifications"
     },
     "featureList": [
       "Instant IMEI verification",
@@ -403,10 +404,10 @@ const DownloadApp = () => {
                     <td className="text-center p-4 text-red-500">✗</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-4 font-medium">Free Trial</td>
+                    <td className="p-4 font-medium">$1/mo Unlimited</td>
                     <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
                     <td className="text-center p-4 text-red-500">✗ Paid Only</td>
-                    <td className="text-center p-4"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
+                    <td className="text-center p-4 text-red-500">✗ Paid Only</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Protects Sellers Too</td>
@@ -438,8 +439,8 @@ const DownloadApp = () => {
                 <CardContent className="p-6">
                   <h3 className="font-bold text-lg mb-2">Is the SafeOrStolen app really free to download?</h3>
                   <p className="text-muted-foreground">
-                    Yes! The app is completely free to download and install. You get 2 free verification checks 
-                    to try the service. After that, affordable plans start at just a few dollars per month.
+                    Yes! The app is completely free to download and install. Unlimited verifications are available 
+                    for just $1/month. Cancel anytime with a 30-day money-back guarantee.
                   </p>
                 </CardContent>
               </Card>

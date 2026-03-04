@@ -131,9 +131,9 @@ export const SEOLandingPageTemplate = ({
     "dateModified": "2026-03-02",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "1.00",
       "priceCurrency": "USD",
-      "description": "2 free verifications"
+      "description": "$1/month unlimited verifications"
     }
   };
 
@@ -209,7 +209,7 @@ export const SEOLandingPageTemplate = ({
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/verify">
                   <Button size="lg" className="gap-2 w-full sm:w-auto">
-                    Check {itemType} Now - It's Free <ArrowRight className="w-4 h-4" />
+                    Check {itemType} Now <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
                 <Link to="/app">
@@ -236,7 +236,7 @@ export const SEOLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">2 Free Checks</span>
+                <span className="text-sm font-semibold text-center">$1/mo Unlimited</span>
               </div>
             </div>
           </div>
@@ -403,7 +403,7 @@ export const SEOLandingPageTemplate = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">
                 <Button size="lg" className="gap-2 w-full sm:w-auto">
-                  Start Free Verification <Search className="w-4 h-4" />
+                  Verify Now — $1/mo Unlimited <Search className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/app">

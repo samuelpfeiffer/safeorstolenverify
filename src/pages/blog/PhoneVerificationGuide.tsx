@@ -109,7 +109,7 @@ export default function PhoneVerificationGuide() {
                   <li>Only proceed with purchase if verification shows SAFE</li>
                 </ol>
                 <Button asChild size="lg" className="w-full">
-                  <Link to="/verify">Verify Phone IMEI Now - Free Trial</Link>
+                  <Link to="/verify">Verify Phone IMEI Now</Link>
                 </Button>
               </div>
 

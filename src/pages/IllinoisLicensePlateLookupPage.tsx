@@ -31,7 +31,7 @@ const IllinoisLicensePlateLookupPage = () => {
           "Coverage for Chicago (all neighborhoods), Aurora, Rockford, Naperville, and all Illinois cities",
           "Detect organized theft ring activity and carjacking victims",
           "Check cars, trucks, motorcycles from Illinois sellers",
-          "Free Illinois license plate lookup - 2 free searches"
+          "Unlimited Illinois license plate lookups — $1/month"
         ],
         process: [
           "Record the Illinois license plate number - IL requires both front and rear plates",
@@ -56,8 +56,8 @@ const IllinoisLicensePlateLookupPage = () => {
             answer: "An Illinois license plate lookup provides: Illinois Secretary of State registered owner name, vehicle make/model/year, VIN, Illinois registration status, title information (including salvage/rebuilt status), and theft status from law enforcement databases including Chicago Police and Illinois State Police. This helps you screen Illinois vehicles quickly."
           },
           {
-            question: "Is Illinois license plate lookup really free?",
-            answer: "Yes, SafeOrStolen offers 2 free Illinois license plate lookups. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Additional Illinois lookups require a paid plan, but our free tier protects casual buyers in the Chicago metro and greater Illinois markets."
+            question: "How much does Illinois license plate lookup cost?",
+            answer: "SafeOrStolen offers unlimited Illinois license plate lookups for $1/month. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Cancel anytime."
           },
           {
             question: "Why is Chicago a concern for vehicle theft?",

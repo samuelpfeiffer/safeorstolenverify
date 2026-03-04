@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckIfStolenPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check If Item Is Stolen - Free Verification | SafeOrStolen"
-      metaDescription="Free stolen item checker. Verify if phones, cars, bikes, electronics, or tools are stolen before buying. Instant results."
+      title="Check If Item Is Stolen - Instant Verification | SafeOrStolen"
+      metaDescription="Stolen item checker. Verify if phones, cars, bikes, electronics, or tools are stolen before buying. Instant results. $1/month unlimited."
       h1="Check If An Item Is Stolen"
       itemType="Any Item"
       keywords={[
@@ -23,7 +23,7 @@ const CheckIfStolenPage = () => {
         
         howItWorks: "Our universal stolen item checker works with any identifier: (1) Enter the serial number, IMEI, VIN, or license plate, (2) We automatically detect the identifier type and search the appropriate databases, (3) For phones: carrier blacklists, GSMA Device Registry, activation locks, (4) For vehicles: NCIC, NICB, DMV records, title history, (5) For electronics: manufacturer databases, user reports, police records, (6) You receive instant results showing clean status or any red flags.",
         
-        whyCheck: "Buying stolen property can result in losing your money AND facing criminal charges. You have no legal ownership of stolen goods - they can be confiscated by police at any time with zero compensation. Phones get blacklisted and become useless. Cars get impounded. Electronics get seized. Protect yourself with a free verification before any secondhand purchase.",
+        whyCheck: "Buying stolen property can result in losing your money AND facing criminal charges. You have no legal ownership of stolen goods - they can be confiscated by police at any time with zero compensation. Phones get blacklisted and become useless. Cars get impounded. Electronics get seized. Protect yourself with a verification before any secondhand purchase. SafeOrStolen offers unlimited checks for just $1/month.",
         
         benefits: [
           "Check phones - iPhone, Samsung, Android, any IMEI",
@@ -34,7 +34,7 @@ const CheckIfStolenPage = () => {
           "Check electronics - gaming consoles, cameras, tablets",
           "Check firearms - serial number verification",
           "Check jewelry - designer watches, luxury items",
-          "Free 2 verifications - no credit card required",
+          "Unlimited verifications — $1/month",
           "Instant 3-second results"
         ],
         
@@ -56,8 +56,8 @@ const CheckIfStolenPage = () => {
             answer: "For phones: Dial *#06# or check Settings > About. For vehicles: VIN is on the dashboard (driver side) or door jamb. For electronics: Check the bottom, back, or Settings > About. For bikes: Serial number is under the bottom bracket. For firearms: Serial number is on the frame/receiver. We have specific guides for each item type."
           },
           {
-            question: "Is the stolen item check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free verifications. This covers most casual buyers purchasing a used phone or checking a car before meeting a seller. Additional checks require a paid plan ($9.99/month for unlimited), but our free tier protects most users."
+            question: "How much does the stolen item check cost?",
+            answer: "SafeOrStolen offers unlimited verifications for $1/month. This covers all item types — phones, cars, bikes, electronics, firearms, and more. Cancel anytime. 30-day money-back guarantee."
           },
           {
             question: "What should I do if an item shows as stolen?",
