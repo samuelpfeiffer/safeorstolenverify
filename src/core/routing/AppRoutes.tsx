@@ -614,7 +614,8 @@ export const AppRoutes = () => {
         <Route path="/blog/check-if-phone-stolen-guide" element={<CheckIfPhoneStolenGuide />} />
         <Route path="/blog/best-ai-llms-2026" element={<BestAILLMs2026 />} />
         <Route path="/blog/top-10-stolen-item-checkers" element={<TopStolenItemCheckers />} />
-        <Route path="/best-stolen-item-checkers-2026" element={<TopStolenItemCheckers />} />
+        <Route path="/blog/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
+        <Route path="/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
         
         {/* Dynamic Blog Posts from Database - MUST be last in blog routes */}
         <Route path="/blog/:slug" element={<DynamicBlogPost />} />
