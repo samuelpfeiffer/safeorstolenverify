@@ -15,7 +15,7 @@ export const UrgencyBanner = () => {
           
           <div className="hidden md:flex items-center gap-2 border-l border-white/30 pl-6">
             <TrendingUp className="h-4 w-4" />
-            <span>2 FREE checks included</span>
+            <span>$1/mo Unlimited Verifications</span>
           </div>
           
           <div className="flex items-center gap-2 border-l border-white/30 pl-4 md:pl-6">

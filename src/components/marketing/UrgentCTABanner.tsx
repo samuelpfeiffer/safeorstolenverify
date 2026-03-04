@@ -62,7 +62,7 @@ export const UrgentCTABanner: React.FC = () => {
           <div className="flex items-center gap-2 text-sm md:text-base font-semibold">
             <span className="hidden md:inline">🔥 LIMITED OFFER:</span>
             <span className="md:hidden">🔥</span>
-            <span>2 FREE Verifications</span>
+            <span>Unlimited Verifications — $1/mo</span>
           </div>
           
           <div className="flex items-center gap-1 bg-background/20 px-3 py-1 rounded-full">
