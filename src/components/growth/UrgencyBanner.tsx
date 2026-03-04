@@ -47,8 +47,8 @@ export const UrgencyBanner: React.FC = () => {
         <Zap className="h-4 w-4 animate-pulse" />
         <span className="font-medium">
           {recentCount > 0 
-            ? `${recentCount} items verified in the last hour`
-            : 'New users get 2 FREE verifications'
+             ? `${recentCount} items verified in the last hour`
+            : 'Unlimited verifications — just $1/month'
           }
         </span>
         <Link 

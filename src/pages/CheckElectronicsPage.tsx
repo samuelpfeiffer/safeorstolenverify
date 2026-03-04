@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Electronics Are Stolen - Free Verification"
-      metaDescription="Check if cameras, tablets, or game consoles are stolen. Free serial number verification against law enforcement databases."
+      title="Check if Electronics Are Stolen - Verification"
+      metaDescription="Check if cameras, tablets, or game consoles are stolen. Serial number verification against law enforcement databases. $1/month unlimited."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[
@@ -26,7 +26,7 @@ const CheckElectronicsPage = () => {
           "Check drones - DJI, Parrot, Autel, Skydio",
           "Verify appliances - washers, dryers, refrigerators, TVs",
           "Search law enforcement and pawn shop databases",
-          "Free electronics serial number check - 2 free verifications"
+          "Instant electronics serial number check — $1/month unlimited verifications"
         ],
         process: [
           "Locate the serial number: Usually on the back, bottom, or inside battery compartment. Check product manual for exact location. For cameras: bottom plate. For tablets: back panel or Settings. For game consoles: back or bottom label.",
@@ -47,7 +47,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "Is the electronics serial number check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free electronics serial number checks. This allows you to verify devices before buying without any cost. Additional checks require a paid plan ($9.99/month for unlimited), but our free tier is designed to protect casual buyers purchasing one or two used electronics per year."
+            answer: "SafeOrStolen offers unlimited electronics serial number checks for just $1/month. This allows you to verify any device before buying. All item types are included. Cancel anytime."
           },
           {
             question: "What should I do if the electronics check shows the device is stolen?",

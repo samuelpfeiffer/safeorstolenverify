@@ -12,7 +12,7 @@ const Compare = () => {
       highlight: true,
       features: {
         mobileApp: true,
-        freeChecks: '2 free',
+        freeChecks: '$1/mo unlimited',
         speed: '3 seconds',
         imei: true,
         vin: true,
@@ -106,7 +106,7 @@ const Compare = () => {
 
   const featureRows = [
     { key: 'mobileApp', label: 'Mobile App', icon: Smartphone },
-    { key: 'freeChecks', label: 'Free Checks', icon: Shield },
+    { key: 'freeChecks', label: 'Pricing', icon: Shield },
     { key: 'speed', label: 'Verification Speed', icon: Zap },
     { key: 'barcode', label: 'Barcode Scanning', icon: Smartphone },
     { key: 'offline', label: 'Offline Mode', icon: Shield },
@@ -170,7 +170,7 @@ const Compare = () => {
               <Button asChild size="lg">
                 <Link to="/verify">
                   <Shield className="mr-2 h-5 w-5" />
-                  Try Free - 2 Checks Included
+                  Subscribe — $1/mo Unlimited
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
@@ -280,11 +280,11 @@ const Compare = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Try the Best?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              2 free checks. No credit card required. Results in 3 seconds.
+              $1/month unlimited verifications. All item types. Results in 3 seconds.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">
-                <Link to="/verify">Start Free Verification</Link>
+                <Link to="/pricing">Subscribe — $1/mo</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/pricing">View Pricing</Link>

@@ -279,11 +279,11 @@ export const StateVinPageTemplate = ({
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Check Any {state} VIN</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Free VIN verification for {state} vehicles. Quick results from available databases.
+              $1/month unlimited VIN verification for {state} vehicles. Quick results from 100+ databases.
             </p>
-            <Link to="/verify">
+            <Link to="/pricing">
               <Button size="lg" className="gap-2">
-                Start Free {state} VIN Check <Search className="w-4 h-4" />
+                Subscribe — $1/mo Unlimited <Search className="w-4 h-4" />
               </Button>
             </Link>
           </div>

@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckBoatPage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Boat is Stolen - Free HIN Verification for Watercraft"
-      metaDescription="Check if boats, jet skis, or yachts are stolen before buying. Free HIN (Hull Identification Number) verification from Coast Guard, state DNR, and law enforcement databases."
+      title="Check if Boat is Stolen - HIN Verification for Watercraft"
+      metaDescription="Check if boats, jet skis, or yachts are stolen before buying. HIN (Hull Identification Number) verification from Coast Guard, state DNR, and law enforcement databases. $1/month unlimited."
       h1="Check if Boat is Stolen Before Buying"
       itemType="Boat & Watercraft"
       keywords={[
@@ -28,7 +28,7 @@ const CheckBoatPage = () => {
           "Verify cabin cruisers, bowriders, deck boats, ski boats",
           "Check houseboats, trawlers, and liveaboard yachts",
           "Detect HIN tampering and VIN cloning",
-          "Free HIN verification - 2 free boat checks"
+          "Instant HIN verification — $1/month unlimited boat checks"
         ],
         process: [
           "Locate the HIN (Hull Identification Number): Usually on the transom (rear of boat) on the starboard (right) side near the waterline. Also check the hull's interior for duplicate HIN. Federal law requires HINs to be permanently affixed in two locations.",
@@ -53,7 +53,7 @@ const CheckBoatPage = () => {
           },
           {
             question: "Is checking a boat's HIN really free?",
-            answer: "Yes, SafeOrStolen offers 2 free boat HIN checks. You can also manually check: (1) Coast Guard Vessel Documentation database (free but limited), (2) Your state DNR database (some states offer free lookups), but our tool searches ALL databases simultaneously (Coast Guard + 50 state DNRs + law enforcement + insurance) in 3 seconds versus spending hours checking each individually. Additional checks require a paid plan ($9.99/month), but our free tier is designed to protect casual buyers purchasing one or two boats."
+            answer: "SafeOrStolen offers unlimited boat HIN checks for just $1/month. You can also manually check: (1) Coast Guard Vessel Documentation database (limited), (2) Your state DNR database (some states offer lookups), but our tool searches ALL databases simultaneously (Coast Guard + 50 state DNRs + law enforcement + insurance) in 3 seconds versus spending hours checking each individually."
           },
           {
             question: "What should I do if the boat check shows it's stolen?",
