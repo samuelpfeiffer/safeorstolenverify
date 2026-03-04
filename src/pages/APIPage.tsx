@@ -67,7 +67,7 @@ export default function APIPage() {
                   Perfect for marketplace platforms, point-of-sale systems, pawn shops, dealerships, and any business that needs to verify items are not stolen before purchase or accepting them as trade-ins. The API supports verification of phones using IMEI numbers, vehicles using VIN numbers, electronics using serial numbers, bicycles, firearms, and more.
                 </p>
                 <p>
-                  API access is included with Professional plans at twenty-nine dollars and ninety-nine cents per month and Enterprise plans at ninety-nine dollars per month. Enterprise customers receive unlimited API calls, dedicated support, and custom integration assistance from our engineering team.
+                  API access is available for business customers. Contact us for API pricing and integration support.
                 </p>
               </CardContent>
             </Card>
@@ -258,10 +258,9 @@ Authorization: Bearer YOUR_API_KEY
                   API rate limits are based on your subscription tier to ensure fair usage for all customers:
                 </p>
                 <ul>
-                  <li><strong>Free tier:</strong> Ten requests per day through the web interface only, no API access</li>
-                  <li><strong>Starter plan:</strong> One hundred requests per day at four dollars and ninety-nine cents per month</li>
-                  <li><strong>Professional plan:</strong> One thousand requests per day at twenty-nine dollars and ninety-nine cents per month</li>
-                  <li><strong>Enterprise plan:</strong> Unlimited requests at ninety-nine dollars per month</li>
+                  <li><strong>Consumer plan:</strong> $1/month unlimited verifications via web interface</li>
+                  <li><strong>Business API:</strong> Contact us for API access and pricing</li>
+                  <li><strong>Enterprise plan:</strong> Unlimited API requests with dedicated support</li>
                 </ul>
                 <p>
                   Rate limits reset at midnight UTC. If you exceed your limit, the API returns a 429 Too Many Requests status code. Upgrade to Enterprise for unlimited API access with no rate limiting.
@@ -375,7 +374,7 @@ console.log('Confidence:', result.confidence + '%');`}
                   Follow these steps to get started with the SafeOrStolen API:
                 </p>
                 <ol>
-                  <li>Sign up for a Professional plan at twenty-nine dollars and ninety-nine cents per month or Enterprise plan at ninety-nine dollars per month</li>
+                  <li>Contact us for business API access and pricing</li>
                   <li>Navigate to your Dashboard after logging in</li>
                   <li>Click on "API Keys" in the sidebar menu</li>
                   <li>Click "Generate New API Key"</li>
@@ -423,9 +422,9 @@ console.log('Confidence:', result.confidence + '%');`}
                     Get API Access
                   </Button>
                 </Link>
-                <Link to="/auth">
+                <Link to="/pricing">
                   <Button size="lg" variant="outline">
-                    Sign Up Free
+                    Subscribe — $1/mo
                   </Button>
                 </Link>
               </div>

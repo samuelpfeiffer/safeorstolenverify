@@ -22,7 +22,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best for stolen vehicle verification with free searches"
+          "description": "Best for stolen vehicle verification — $1/month unlimited"
         }
       },
       {
@@ -45,8 +45,8 @@ const TopVINCheckServices2025 = () => {
       badge: 'Best for Stolen Checks',
       badgeColor: 'bg-green-500',
       bestFor: 'Verifying if a vehicle is stolen before purchase',
-      price: 'Free (2 checks)',
-      fullReportPrice: 'Premium subscription',
+      price: '$1/month unlimited',
+      fullReportPrice: '$1/month (all features)',
       stolenCheck: true,
       titleCheck: true,
       accidentHistory: false,
@@ -55,7 +55,7 @@ const TopVINCheckServices2025 = () => {
       mobileApp: true,
       multipleItems: true,
       pros: [
-        '2 free VIN checks, no credit card required',
+        '$1/month unlimited VIN checks',
         '50M+ database from law enforcement & insurers',
         'Checks more than cars (phones, bikes, tools)',
         'Mobile app for instant verification',
@@ -64,10 +64,10 @@ const TopVINCheckServices2025 = () => {
       cons: [
         'No detailed service history',
         'No accident damage estimates',
-        'Full reports require subscription'
+        'Requires $1/month subscription'
       ],
-      cta: '/verify',
-      ctaText: 'Check VIN Free'
+      cta: '/pricing',
+      ctaText: 'Subscribe — $1/mo'
     },
     {
       rank: 2,
@@ -187,7 +187,7 @@ const TopVINCheckServices2025 = () => {
       <PageSEO
         title="Top 5 VIN Check Services 2026 - Carfax Alternatives"
         description="Compare the best VIN check services for 2026. Carfax, AutoCheck, NICB VINCheck alternatives ranked for stolen vehicle verification."
-        keywords="best vin check service, vin check comparison, carfax autocheck comparison, free vin check, stolen vehicle check"
+        keywords="best vin check service, vin check comparison, carfax autocheck comparison, vin check, stolen vehicle check"
         canonical="/comparisons/top-vin-check-services-2025"
         structuredData={listSchema}
       />
@@ -210,7 +210,7 @@ const TopVINCheckServices2025 = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="font-semibold">
-                  <Link to="/verify">Try Free VIN Check</Link>
+                  <Link to="/pricing">Subscribe — $1/mo Unlimited</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href="#comparison">See Full Comparison</a>
@@ -234,7 +234,7 @@ const TopVINCheckServices2025 = () => {
                       Need to verify it's not stolen before meeting seller
                     </p>
                     <Badge className="bg-green-500 text-white">SafeOrStolen</Badge>
-                    <p className="text-xs text-muted-foreground mt-2">Free stolen check</p>
+                    <p className="text-xs text-muted-foreground mt-2">$1/mo unlimited</p>
                   </CardContent>
                 </Card>
                 <Card>

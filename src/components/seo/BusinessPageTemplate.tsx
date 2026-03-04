@@ -184,9 +184,9 @@ export const BusinessPageTemplate = ({
                   View Business Plans
                 </Button>
               </Link>
-              <Link to="/verify">
+              <Link to="/pricing">
                 <Button size="lg" variant="outline">
-                  Try Free Check
+                  Subscribe — $1/mo
                 </Button>
               </Link>
             </div>

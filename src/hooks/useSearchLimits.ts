@@ -17,7 +17,7 @@ export const useSearchLimits = () => {
     if (user) {
       checkUserLimits();
     } else {
-      // Guests need to sign up for free checks
+      // Guests need to subscribe
       setRemainingSearches(0);
       setHasReachedLimit(false);
       setIsSubscribed(false);
@@ -59,7 +59,7 @@ export const useSearchLimits = () => {
         return;
       }
 
-      // Free tier: 2 checks
+      // No subscription — no access
       const searchCount = profile?.search_count || 0;
       const remainingFree = Math.max(0, FREE_SEARCH_LIMIT - searchCount);
 

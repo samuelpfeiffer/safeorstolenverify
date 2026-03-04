@@ -113,8 +113,8 @@ export const PaymentFlowTest = () => {
           { key: 'Authentication', label: 'User Authentication Check' },
           { key: 'Webhook Secret', label: 'STRIPE_WEBHOOK_SECRET Configuration' },
           { key: 'Database Tables', label: 'Database Access & Tables' },
-          { key: 'Single Payment', label: 'Single Payment ($0.99) Checkout' },
-          { key: 'Subscription Checkout', label: 'Subscription ($9.99/mo) Checkout' },
+          { key: 'Single Payment', label: 'Single Payment Checkout' },
+          { key: 'Subscription Checkout', label: 'Subscription ($1/mo) Checkout' },
           { key: 'Customer Portal', label: 'Customer Portal Access' },
         ].map(({ key, label }) => (
           <div key={key} className="flex items-start gap-3 p-3 rounded-md bg-muted/50">
@@ -155,7 +155,7 @@ export const PaymentFlowTest = () => {
           variant="outline" 
           onClick={() => runTest('Single Payment', testSinglePayment)}
         >
-          $0.99 Test
+          Payment Test
         </Button>
         <Button 
           variant="outline" 

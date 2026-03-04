@@ -22,9 +22,9 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Shield,
       title: "Start Verifying Items",
-      description: "You get 2 free verifications to check any serial number, IMEI, or VIN. Valid for 14 days.",
-      action: "Try Your First Check",
-      onClick: handleStartVerification
+      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $1/month.",
+      action: "Subscribe Now",
+      onClick: () => navigate('/pricing')
     },
     {
       icon: Zap,
@@ -35,9 +35,9 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     },
     {
       icon: CreditCard,
-      title: "Upgrade Anytime",
-      description: "Need more searches? Upgrade to unlimited verifications for just $4.99/month.",
-      action: "View Subscriptions",
+      title: "Unlimited Access",
+      description: "Get unlimited verifications for just $1/month. All item types included. Cancel anytime.",
+      action: "View Plan",
       onClick: () => navigate('/pricing')
     }
   ];
@@ -94,20 +94,20 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
               </div>
             </div>
 
-            {/* Your Free Benefits */}
+            {/* Subscription Benefits */}
             <div className="bg-sos-lime/10 border border-sos-lime/20 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center gap-2">
                 <Zap className="h-5 w-5 text-sos-lime" />
-                Your Free Account Includes:
+                $1/Month Unlimited Plan Includes:
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  2 free verifications (14-day trial)
+                  Unlimited verifications — all item types
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Access to multiple stolen goods databases
+                  Access to 100+ stolen goods databases
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
@@ -119,7 +119,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
-                  Instant verification results
+                  Instant verification results in 3 seconds
                 </li>
               </ul>
             </div>

@@ -3,8 +3,8 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPhonePage = () => {
   return (
     <ItemLandingPageTemplate
-      title="Check if Phone is Stolen - Free iPhone Android Verify"
-      metaDescription="Check if a phone is stolen before buying. Free IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. Free check."
+      title="Check if Phone is Stolen - iPhone Android Verify"
+      metaDescription="Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. $1/month unlimited."
       h1="Check if Phone is Stolen Before Buying"
       itemType="Phone"
       keywords={[
@@ -28,7 +28,7 @@ const CheckPhonePage = () => {
           "Check iCloud activation lock status on iPhones",
           "Check Google Find My Device lock on Android phones",
           "Instant 3-second verification from multiple databases",
-          "Free phone check - 2 free verifications, no credit card required",
+          "Instant phone check — $1/month unlimited verifications",
           "Works for phones from any country or carrier"
         ],
         process: [
@@ -66,7 +66,7 @@ const CheckPhonePage = () => {
           },
           {
             question: "Is the phone check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free phone checks. This allows you to verify phones before buying without any cost. Additional checks require a paid plan ($9.99/month for unlimited), but our free tier is designed to protect casual buyers purchasing one or two used phones per year."
+            answer: "SafeOrStolen offers unlimited phone checks for just $1/month. All item types included — phones, vehicles, electronics, firearms, bikes, and more. Cancel anytime."
           },
           {
             question: "What should I do if the phone check shows it's stolen?",

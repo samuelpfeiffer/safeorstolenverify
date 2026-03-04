@@ -6,14 +6,14 @@ export const UrgencyBanner = () => {
     <div className="sticky top-[80px] z-40 w-full">
       <Card className="mx-auto max-w-7xl border-sos-lime/30 bg-gradient-to-r from-sos-lime/10 via-card to-primary/10 backdrop-blur-lg">
         <div className="flex flex-wrap items-center justify-center gap-6 py-3 px-4 text-sm">
-          {/* Free Trial */}
+          {/* Pricing */}
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-sos-lime" />
             <span className="font-semibold text-foreground">
-              Free to start
+              $1/month
             </span>
             <span className="text-muted-foreground">
-              2 verifications included
+              Unlimited verifications
             </span>
           </div>
 
