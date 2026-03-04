@@ -3,9 +3,9 @@ import { SEOLandingPageTemplate } from '@/components/landing/SEOLandingPageTempl
 const BicycleSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
-      title="Check if Bicycle is Stolen - Free Serial Number Lookup | SafeOrStolen"
-      metaDescription="Verify any bike isn't stolen before buying. Free bicycle serial number check. Search stolen bike databases for Trek, Specialized, Giant, e-bikes. Instant results."
-      h1="Check if Bicycle is Stolen - Free Serial Number Verification"
+      title="Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen"
+      metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. $1/month unlimited. Instant results."
+      h1="Check if Bicycle is Stolen - Serial Number Verification"
       keywords={[
         'check if bike is stolen',
         'bicycle serial number lookup',
@@ -22,18 +22,18 @@ const BicycleSerialCheck = () => {
       itemType="Bicycle"
       identifierType="Serial Number"
       heroBadge="Bicycle Theft Verification"
-      heroSubtitle="Before buying a used bicycle or e-bike, verify the serial number isn't in stolen bike databases. With 2 million bikes stolen annually in the US, protection is essential. Free instant check."
+      heroSubtitle="Before buying a used bicycle or e-bike, verify the serial number isn't in stolen bike databases. With 2 million bikes stolen annually in the US, protection is essential. $1/month unlimited checks."
       stats={[
         { value: "2M+", label: "Bikes Stolen Annually (US)" },
         { value: "3 sec", label: "Verification Time" },
         { value: "50M+", label: "Records Searched" },
-        { value: "Free", label: "First 2 Checks" }
+        { value: "$1/mo", label: "Unlimited Checks" }
       ]}
       whatIsTitle="What is Bicycle Serial Number Verification?"
       whatIsContent="Every bicycle has a unique serial number stamped by the manufacturer, usually on the bottom bracket (where the pedal cranks meet). When a bike is reported stolen, this serial number is logged in databases like Bike Index, 529 Garage, police records, and insurance claims. Our verification service searches these databases to check if a bicycle has been reported stolen. This is especially critical for expensive bikes - high-end road bikes, mountain bikes, and e-bikes that can cost $2,000-$10,000+."
       howItWorksSteps={[
         "Find the serial number: Usually stamped under the bottom bracket (where the pedals connect), on the head tube, or rear dropout",
-        "Enter the serial number into our free verification tool",
+        "Enter the serial number into our verification tool",
         "Our system searches Bike Index, 529 Garage, police databases, and insurance records instantly",
         "Get results in 3 seconds - see if the bicycle is CLEAR or REPORTED STOLEN"
       ]}

@@ -242,7 +242,7 @@ export const ItemLandingPageTemplate = ({
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">
-                Start Free Check <Search className="w-4 h-4" />
+                Verify Now — $1/mo Unlimited <Search className="w-4 h-4" />
               </Button>
             </Link>
           </div>

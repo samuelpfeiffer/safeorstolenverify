@@ -37,7 +37,7 @@ export const FloatingCTA: React.FC = () => {
           
           <div>
             <p className="font-semibold mb-1">Verify Before Buying</p>
-            <p className="text-sm opacity-90 mb-3">2 free checks. No credit card.</p>
+            <p className="text-sm opacity-90 mb-3">$1/mo unlimited verifications.</p>
             
             <Button asChild size="sm" variant="secondary">
               <Link to="/verify">

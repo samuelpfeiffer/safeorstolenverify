@@ -29,7 +29,7 @@ const CheckCarStolenByVinPage = () => {
           "Check all 50 state DMV databases simultaneously",
           "Detect VIN cloning and VIN tampering",
           "Instant 3-second verification from multiple sources",
-          "Free VIN check - 2 free verifications included",
+          "Unlimited VIN checks — $1/month",
           "Works for vehicles from all manufacturers and years (1981+)"
         ],
         process: [
@@ -70,8 +70,8 @@ const CheckCarStolenByVinPage = () => {
             answer: "If our check shows a vehicle is stolen: (1) Do NOT buy it under any circumstances, (2) Leave immediately without confronting the seller, (3) Note the location and any identifying information about the seller, (4) Report to local police with the VIN and seller details, (5) Report the listing to the platform (Craigslist, Facebook Marketplace, etc.), (6) File a report with NICB at nicb.org. Do not try to negotiate or recover the vehicle yourself."
           },
           {
-            question: "Is the VIN check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free VIN checks per account. This is designed to protect individual buyers purchasing one or two used vehicles per year. Dealers and frequent buyers can subscribe for unlimited checks at $9.99/month. Our free tier covers the same comprehensive databases as paid plans."
+            question: "How much does the VIN check cost?",
+            answer: "SafeOrStolen offers unlimited VIN checks for $1/month. This covers individual buyers and dealers alike. Cancel anytime. 30-day money-back guarantee. Our plan covers the same comprehensive databases including NICB, NMVTIS, and law enforcement records."
           }
         ]
       }}

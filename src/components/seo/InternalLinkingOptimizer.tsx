@@ -22,7 +22,7 @@ export const InternalLinkingOptimizer: React.FC<InternalLinkingOptimizerProps> =
         { url: "/pricing", anchor: "our verification services", priority: "medium" }
       ],
       guide: [
-        { url: "/dashboard", anchor: "free verification tool", priority: "high" },
+        { url: "/dashboard", anchor: "verification tool", priority: "high" },
         { url: "/blog/theft-trends-report-2024", anchor: "latest theft statistics", priority: "high" },
         { url: "/check-phone", anchor: "phone verification", priority: "medium" },
         { url: "/how-it-works", anchor: "verification process", priority: "medium" }

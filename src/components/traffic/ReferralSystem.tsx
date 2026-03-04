@@ -14,7 +14,6 @@ export const ReferralSystem = () => {
   const referralLink = `https://safeorstolen.com?ref=${referralCode}`;
   
   useEffect(() => {
-    // Track referral source on page load
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get('ref');
     if (ref) {
@@ -26,7 +25,7 @@ export const ReferralSystem = () => {
   const copyReferralLink = async () => {
     await navigator.clipboard.writeText(referralLink);
     setCopied(true);
-    toast.success('Referral link copied! Share to earn FREE checks!');
+    toast.success('Referral link copied! Share to earn rewards!');
     setTimeout(() => setCopied(false), 3000);
   };
 
@@ -35,7 +34,7 @@ export const ReferralSystem = () => {
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-lg">
           <Gift className="h-5 w-5 text-primary" />
-          Earn FREE Checks - Refer Friends!
+          Refer Friends & Earn Rewards!
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -47,8 +46,8 @@ export const ReferralSystem = () => {
           </div>
           <div className="p-3 bg-card rounded-lg border">
             <Zap className="h-6 w-6 mx-auto text-yellow-500 mb-1" />
-            <div className="text-2xl font-bold">{referralCount * 2}</div>
-            <div className="text-xs text-muted-foreground">Free Checks</div>
+            <div className="text-2xl font-bold">{referralCount}</div>
+            <div className="text-xs text-muted-foreground">Rewards</div>
           </div>
           <div className="p-3 bg-card rounded-lg border">
             <Trophy className="h-6 w-6 mx-auto text-amber-500 mb-1" />
@@ -70,7 +69,7 @@ export const ReferralSystem = () => {
         </div>
         
         <div className="text-xs text-muted-foreground text-center">
-          🎁 Get 2 FREE checks for every friend who signs up!
+          🎁 Earn $5 for every friend who subscribes!
         </div>
       </CardContent>
     </Card>

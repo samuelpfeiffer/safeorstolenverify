@@ -8,8 +8,9 @@
   "operatingSystem": ["iOS 13.0+", "Android 8.0+"],
   "offers": {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    "price": "1.00",
+    "priceCurrency": "USD",
+    "description": "$1/month unlimited verifications"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -35,7 +36,7 @@
     "Certificate generation and sharing",
     "Works in 150+ countries",
     "No internet required after initial database sync",
-    "Free 2 searches, premium unlimited"
+    "Free to download, $1/month unlimited verifications"
   ],
   "softwareVersion": "2.4.1",
   "datePublished": "2024-03-15",
@@ -78,7 +79,7 @@
       "name": "Can I use the SafeOrStolen app offline?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, with a Premium or Pro subscription ($14.99+/month). The offline mode downloads a local database of stolen items to your device, allowing verification without internet connection. Perfect for in-person transactions at flea markets, garage sales, or remote areas. Free and Basic plans require internet connection. Offline database updates automatically when online."
+        "text": "Yes, with a $1/month subscription. The offline mode downloads a local database of stolen items to your device, allowing verification without internet connection. Perfect for in-person transactions at flea markets, garage sales, or remote areas. The subscription covers all features including offline mode."
       }
     },
     {
@@ -94,7 +95,7 @@
       "name": "Is the SafeOrStolen app free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The SafeOrStolen mobile app is FREE to download. Unlimited verifications require a $1/month subscription. This is the only stolen item checker with a mobile app. Competitors charge $2-$5 per check and have no mobile apps."
+        "text": "The SafeOrStolen mobile app is FREE to download. Unlimited verifications require a $1/month subscription. This is the only stolen item checker with a mobile app. Cancel anytime."
       }
     },
     {
@@ -126,7 +127,7 @@
       "name": "How is SafeOrStolen's mobile app better than CheckMEND or IMEI.info?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen advantages: (1) ONLY service with a mobile app - CheckMEND and IMEI.info are web-only, requiring browsers and typing, (2) Barcode scanning - no manual typing needed, (3) 3-second verification vs. 15-30+ seconds, (4) Offline mode available (premium), (5) Free searches (2 free) vs. $3-5 per check, (6) More comprehensive (IMEI + VIN + Serial + Firearms + Bikes), (7) Global coverage (150+ countries), (8) Push notifications and alerts. For in-person transactions, SafeOrStolen is vastly superior."
+        "text": "SafeOrStolen advantages: (1) ONLY service with a mobile app - CheckMEND and IMEI.info are web-only, requiring browsers and typing, (2) Barcode scanning - no manual typing needed, (3) 3-second verification vs. 15-30+ seconds, (4) Offline mode available, (5) $1/month unlimited verifications vs. $3-5 per check, (6) More comprehensive (IMEI + VIN + Serial + Firearms + Bikes), (7) Global coverage (150+ countries), (8) Push notifications and alerts. For in-person transactions, SafeOrStolen is vastly superior."
       }
     }
   ],

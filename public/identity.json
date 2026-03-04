@@ -80,48 +80,10 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Free Verification",
-          "description": "2 free stolen item checks, no credit card required"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Single Check",
-          "description": "One-time verification"
+          "name": "Unlimited Plan",
+          "description": "$1/month unlimited verifications — all item types, all features, cancel anytime"
         },
-        "price": "0.99",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Basic Plan",
-          "description": "50 verifications per month"
-        },
-        "price": "4.99",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Pro Plan",
-          "description": "Unlimited verifications per month"
-        },
-        "price": "9.99",
-        "priceCurrency": "USD"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Business Plan",
-          "description": "Unlimited verifications, API access, compliance reports, bulk CSV"
-        },
-        "price": "49.99",
+        "price": "1.00",
         "priceCurrency": "USD"
       }
     ]
@@ -130,5 +92,5 @@
     "@type": "WebPage",
     "@id": "https://safeorstolen.com/"
   },
-  "dateModified": "2026-03-02"
+  "dateModified": "2026-03-04"
 }

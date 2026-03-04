@@ -16,7 +16,7 @@ const CTASection = () => {
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
               <Zap className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Start Free Today</span>
+              <span className="text-sm font-semibold text-primary">$1/Month Unlimited</span>
             </div>
             
             <Shield className="h-16 w-16 text-primary mx-auto mb-6 animate-pulse" />
@@ -34,7 +34,7 @@ const CTASection = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle className="h-4 w-4 text-secondary" />
-                2 Free Checks
+                $1/mo Unlimited
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-secondary" />
@@ -47,21 +47,21 @@ const CTASection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/verify">
+              <Link to="/pricing">
                 <Button size="lg" className="font-semibold text-lg px-8 py-6 h-auto">
-                  Start Free Verification
+                  Subscribe — $1/Month
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/pricing">
+              <Link to="/verify">
                 <Button variant="outline" size="lg" className="text-lg px-8 py-6 h-auto">
-                  See All Plans
+                  Verify Now
                 </Button>
               </Link>
             </div>
             
             <p className="text-sm text-muted-foreground mt-6">
-              No credit card required • Cancel anytime • 50+ databases checked
+              Cancel anytime • 30-day guarantee • 100+ databases checked
             </p>
           </div>
         </Card>
