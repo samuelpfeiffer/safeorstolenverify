@@ -28,35 +28,16 @@
   "offers": {
     "@type": "AggregateOffer",
     "priceCurrency": "USD",
-    "lowPrice": "0",
-    "highPrice": "9.99",
-    "offerCount": 4,
+    "lowPrice": "1.00",
+    "highPrice": "1.00",
+    "offerCount": 1,
     "offers": [
       {
         "@type": "Offer",
-        "name": "Free Tier",
-        "price": "0",
+        "name": "Unlimited Plan",
+        "price": "1.00",
         "priceCurrency": "USD",
-        "description": "2 verifications, no credit card required"
-      },
-      {
-        "@type": "Offer",
-        "name": "Basic",
-        "price": "4.99",
-        "priceCurrency": "USD",
-        "description": "50 verifications per month"
-      },
-      {
-        "@type": "Offer",
-        "name": "Pro",
-        "price": "9.99",
-        "priceCurrency": "USD",
-        "description": "Unlimited verifications per month"
-      },
-      {
-        "@type": "Offer",
-        "name": "Business",
-        "description": "Custom API pricing for businesses"
+        "description": "$1/month unlimited verifications — all item types, all features, cancel anytime"
       }
     ]
   },

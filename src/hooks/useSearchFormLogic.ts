@@ -51,8 +51,8 @@ export const useSearchFormLogic = () => {
     if (!isAuthenticated) {
       await savePendingVerification(cleanInput, itemType, 'buyer');
       toast({
-        title: 'Sign up for 2 FREE verifications',
-        description: 'Create your free account to start verifying items.',
+        title: 'Sign up to start verifying',
+        description: 'Create an account and subscribe for $1/month unlimited verifications.',
       });
       navigate('/auth?tab=signup');
       return;

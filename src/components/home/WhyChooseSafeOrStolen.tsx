@@ -42,9 +42,9 @@ export const WhyChooseSafeOrStolen = () => {
     },
     {
       icon: Award,
-      title: 'Free IMEI Checker App - 2 Checks',
-      description: 'CheckMEND charges $3.99 per check. We offer 2 FREE verification checks within 14 days. Better than CheckMEND - a real mobile app, not a slow website.',
-      badge: 'Free Alternative',
+      title: 'Cheapest Verification — $1/mo',
+      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers unlimited verifications for just $1/month. Better than CheckMEND — a real mobile app, not a slow website.',
+      badge: 'Best Value',
       color: 'from-indigo-500 to-purple-500'
     },
     {

@@ -81,9 +81,9 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
         </div>
         <CardTitle className="text-2xl">
           {isOverLimit ? (
-            <span className="text-destructive">🔒 Don't Risk Buying Stolen Goods</span>
+            <span className="text-destructive">🔒 Subscribe to Verify Items</span>
           ) : (
-            <span className="text-orange-600">⚠️ Last Free Check!</span>
+            <span className="text-orange-600">🔓 Unlock Unlimited Verifications</span>
           )}
         </CardTitle>
       </CardHeader>
@@ -92,8 +92,8 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
         <div className="space-y-2">
           <p className="text-base font-medium">
             {isOverLimit 
-              ? "You've used all 2 free verifications. Continue protecting yourself from scams and legal trouble."
-              : "You're about to use your final free verification. What happens when you need to check another item?"
+              ? "Subscribe for just $1/month for unlimited verifications. Protect yourself from scams and legal trouble."
+              : "Get unlimited verifications for just $1/month. Check phones, cars, electronics, firearms & more."
             }
           </p>
           {/* Usage indicator */}

@@ -47,8 +47,8 @@ const IMEICheckerPage = () => {
             answer: "An IMEI (International Mobile Equipment Identity) is a unique 15-digit number assigned to every mobile phone. You can find it by dialing *#06#, checking Settings > About Phone > IMEI, looking at the original box, or checking the SIM card tray on iPhones. Every smartphone has at least one IMEI number (dual-SIM phones have two)."
           },
           {
-            question: "Is the IMEI check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free IMEI checks. This allows you to verify phones before buying without any cost. Additional checks require a paid plan, but our free tier is designed to help casual buyers protect themselves when purchasing used phones."
+            question: "How much does the IMEI check cost?",
+            answer: "SafeOrStolen offers unlimited IMEI checks for just $1/month. This covers all item types — not just phones. Cancel anytime with a 30-day money-back guarantee."
           },
           {
             question: "What databases does SafeOrStolen check?",

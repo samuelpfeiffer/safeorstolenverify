@@ -41,14 +41,14 @@ export const SignupSuccess: React.FC<SignupSuccessProps> = ({ userEmail, onClose
           <div className="flex items-center gap-3 mb-3">
             <Gift className="h-6 w-6 text-sos-orange" />
             <div>
-              <h3 className="font-semibold text-lg">Your Free Gift</h3>
+              <h3 className="font-semibold text-lg">Welcome!</h3>
               <Badge variant="secondary" className="bg-sos-lime/20 text-sos-lime border-sos-lime/30">
-                2 Free Verifications (14-Day Trial)
+                Subscribe for $1/month Unlimited
               </Badge>
             </div>
           </div>
           <p className="text-sm text-muted-foreground">
-            Start verifying items immediately with your 2 free searches (valid for 14 days). Perfect for testing our service!
+            Subscribe for just $1/month to get unlimited verifications across all item types. Cancel anytime.
           </p>
         </div>
 

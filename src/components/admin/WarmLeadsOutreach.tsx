@@ -57,16 +57,16 @@ export const WarmLeadsOutreach = () => {
 
 Hi [NAME],
 
-I noticed you used your 2 free verification checks on SafeOrStolen - thanks for trying us out!
+Thanks for signing up for SafeOrStolen!
 
-I'm curious: did everything work as expected? Is there anything that would make you want to continue using the service?
+I'm curious: have you had a chance to try our verification service? Is there anything that would make you want to subscribe?
 
-As a thank you for your feedback, I'd like to offer you 50% off your first month of any plan. Just reply to this email and I'll send you the discount code.
+Our unlimited plan is just $1/month — verify as many items as you need across all categories. Cancel anytime.
 
 Best,
 The SafeOrStolen Team
 
-P.S. If you have any items you're still wondering about, our Pay-Per-Check option lets you verify individual items for just $2.99 each.`;
+P.S. Reply to this email if you have any questions — we're here to help!`;
 
   if (loading) {
     return <div className="animate-pulse">Loading warm leads...</div>;
