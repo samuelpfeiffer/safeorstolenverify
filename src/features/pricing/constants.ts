@@ -1,31 +1,35 @@
 /**
  * Pricing Module - Constants & Configuration
- * Simplified pricing: Free (2 checks) + Unlimited ($4.99/month)
+ * Simplified pricing: Unlimited ($1/month) — no free tier
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
 /**
- * SIMPLIFIED PRICING MODEL:
+ * SIMPLIFIED PRICING MODEL (March 2026):
  * 
- * Free Tier: 2 free verification checks, no credit card required
- * Unlimited Plan: $4.99/month - unlimited checks with 300/month fair-use cap
+ * Single plan: $1.00/month — unlimited everything
+ * No free tier. No free searches. Subscribe to use.
  * 
- * Stripe Price ID for Unlimited: price_1SHEOxGxnZLw8J7O2zzfPVBK (was Starter at $4.99)
+ * Stripe Price ID: price_1T77b7GxnZLw8J7OYB4jBGRB ($1.00/month recurring)
+ * Product ID: prod_TDfkVL8GE1dRt5
  */
 
-export const FREE_SEARCH_LIMIT = 2;
-export const FAIR_USE_CAP = 300; // Monthly soft limit for Unlimited plan
+export const FREE_SEARCH_LIMIT = 0; // No free searches
+export const FAIR_USE_CAP = 1000; // Monthly soft limit for abuse prevention
+
+export const UNLIMITED_PRICE_ID = 'price_1T77b7GxnZLw8J7OYB4jBGRB';
+export const UNLIMITED_PRODUCT_ID = 'prod_TDfkVL8GE1dRt5';
 
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
   unlimited: {
     name: "Unlimited Plan",
-    price: 499,
-    priceDisplay: "$4.99",
+    price: 100,
+    priceDisplay: "$1.00",
     interval: "month",
     monthlyQuota: 'unlimited',
     fairUseCap: FAIR_USE_CAP,
-    stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
+    stripePriceId: UNLIMITED_PRICE_ID,
     tier: "unlimited",
     popular: true,
     features: [
@@ -56,11 +60,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     overageRate: 0.45,
     stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
     tier: "starter",
-    features: [
-      "15 verifications per month",
-      "Email support",
-      "60-day search history"
-    ],
+    features: ["Legacy plan - 15 verifications per month"],
     receiptsIncluded: true,
     historyRetention: 60,
     trustBadges: true,
@@ -78,10 +78,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 1,
     stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
     tier: "payPerUse",
-    features: [
-      "One verification check",
-      "Instant results"
-    ],
+    features: ["One verification check", "Instant results"],
     receiptsIncluded: true,
     historyRetention: 30,
     trustBadges: false,
@@ -100,10 +97,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     overageRate: 0.40,
     stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
     tier: "personal",
-    features: [
-      "50 verifications per month",
-      "Priority support"
-    ],
+    features: ["Legacy plan - 50 verifications per month"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -121,11 +115,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 'unlimited',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "professional",
-    features: [
-      "Unlimited verifications",
-      "API access",
-      "Priority support"
-    ],
+    features: ["Legacy plan - Unlimited verifications"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -143,11 +133,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 'unlimited',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "enterprise",
-    features: [
-      "Unlimited verifications",
-      "Dedicated support",
-      "Custom integrations"
-    ],
+    features: ["Legacy plan - Enterprise"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,

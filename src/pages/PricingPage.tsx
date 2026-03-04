@@ -2,17 +2,18 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
-import { Shield, Zap, Check, ArrowRight } from 'lucide-react';
+import { Shield, Zap, Check, ArrowRight, Star, Coffee } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { redirectToStripe } from '@/utils/stripeRedirect';
+import { UNLIMITED_PRICE_ID } from '@/features/pricing/constants';
 
 const FAQS = [
   { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your dashboard. Your plan continues until the end of the billing period — no fees.' },
   { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
   { q: 'How accurate are the results?', a: 'We check 100+ sources including FBI NCIC, GSMA, NICB, ATF, and all 50 US state databases. ~99.2% accuracy.' },
-  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund on all plans, no questions asked.' },
+  { q: 'Do you offer a money-back guarantee?', a: 'Yes — 30-day full refund, no questions asked.' },
   { q: 'What payment methods do you accept?', a: 'Visa, Mastercard, AmEx, Discover, Apple Pay, and Google Pay via Stripe. All payments are encrypted and PCI-compliant.' },
-  { q: 'Are you a seller or business?', a: 'We have specialized plans! Sellers can get verified badges from $2.99. Businesses get compliance tools from $49.99/mo. Visit /for-sellers or /for-businesses.' },
+  { q: 'Why only $1/month?', a: 'We believe everyone deserves protection from stolen goods. At $1/month, there\'s no reason not to verify every purchase. We make money through volume, not high prices.' },
 ];
 
 const PricingPage = () => {
@@ -22,15 +23,18 @@ const PricingPage = () => {
     setLoading(true);
     try {
       const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        window.location.href = '/auth?redirect=/pricing';
+        return;
+      }
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
-          planName: 'Personal Plan',
+          priceId: UNLIMITED_PRICE_ID,
+          planName: 'Unlimited Plan',
           isSubscription: true,
           fingerprint: getOrCreateFingerprint(),
           redirectUrl: 'https://safeorstolen.com',
         },
-        headers: user ? undefined : {},
       });
       if (error) throw new Error(error.message);
       if (data?.url) redirectToStripe(data.url);
@@ -44,109 +48,86 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="Pricing — Free Stolen Item Checker | SafeOrStolen"
-        description="Check if phones, cars, guns & electronics are stolen — free. 2 free verifications/month, then unlimited for $9.99/mo. 100+ databases. 3-second results. Cancel anytime."
+        title="$1/Month Unlimited Stolen Item Checker | SafeOrStolen"
+        description="Unlimited IMEI, VIN, serial number, and license plate checks for just $1/month. Verify phones, cars, guns, electronics & more against 100+ databases. 3-second results. Cancel anytime."
         canonical="/pricing"
       />
 
       {/* Hero */}
       <div className="text-center pt-16 pb-10 px-4">
+        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-bold text-sm px-4 py-2 rounded-full mb-6">
+          <Star className="w-4 h-4 fill-current" />
+          NEW: Unlimited for just $1/month
+        </div>
         <h1 className="text-4xl md:text-5xl font-black mb-4">
-          Simple, Honest Pricing
+          Unlimited Protection.<br />One Dollar.
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          Start free. Upgrade when you need unlimited. Cancel anytime.
+          Every verification. Every item type. Every database. <span className="font-bold text-primary">$1/month</span>. Cancel anytime.
         </p>
       </div>
 
-      {/* Two cards */}
-      <div className="max-w-3xl mx-auto px-4 mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          {/* FREE */}
-          <div className="rounded-2xl border-2 border-border bg-card flex flex-col p-6">
-            <div className="flex items-center gap-2 text-muted-foreground mb-4">
-              <Shield className="w-6 h-6" />
-              <span className="font-bold text-lg">Free</span>
-            </div>
-            <div className="mb-1">
-              <span className="text-5xl font-black text-foreground">$0</span>
-              <span className="text-muted-foreground ml-1">/month</span>
-            </div>
-            <p className="text-muted-foreground text-sm mb-6">No credit card required</p>
-
-            <ul className="space-y-3 flex-1 mb-6">
-              {[
-                '2 verifications/month',
-                'All 6 item types',
-                '100+ databases checked',
-                '3-second results',
-                'Basic support',
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
-                  <Check className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              to="/verify"
-              className="w-full py-3.5 rounded-xl font-bold text-sm text-center bg-muted hover:bg-muted/80 text-foreground transition-all block"
-            >
-              Start Free
-            </Link>
+      {/* Single Card */}
+      <div className="max-w-lg mx-auto px-4 mb-12">
+        <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-8">
+          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wide whitespace-nowrap">
+            ⭐ Unlimited Everything
           </div>
 
-          {/* UNLIMITED */}
-          <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-6 scale-[1.02]">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wide whitespace-nowrap">
-              ⭐ Most Popular
-            </div>
-
-            <div className="flex items-center gap-2 text-primary mb-4 mt-2">
-              <Zap className="w-6 h-6" />
-              <span className="font-bold text-lg">Unlimited</span>
-            </div>
-            <div className="mb-1">
-              <span className="text-5xl font-black text-foreground">$9.99</span>
-              <span className="text-muted-foreground ml-1">/month</span>
-            </div>
-            <p className="text-muted-foreground text-sm mb-6">7-day free trial included</p>
-
-            <ul className="space-y-3 flex-1 mb-6">
-              {[
-                'Unlimited verifications',
-                'All 6 item types',
-                '100+ databases checked',
-                '3-second results',
-                'Save check history',
-                'Share verification reports',
-                'Verified seller badges',
-                'Priority support',
-                'Cancel anytime',
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
-                  <Check className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-
-            <button
-              onClick={handleUpgrade}
-              disabled={loading}
-              className="w-full py-3.5 rounded-xl font-bold text-sm bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60"
-            >
-              {loading ? 'Loading...' : 'Try Free for 7 Days'}
-            </button>
+          <div className="flex items-center gap-2 text-primary mb-4 mt-2">
+            <Zap className="w-6 h-6" />
+            <span className="font-bold text-lg">Unlimited Plan</span>
           </div>
-        </div>
+          <div className="mb-1 flex items-baseline gap-3">
+            <span className="text-6xl font-black text-foreground">$1</span>
+            <span className="text-muted-foreground">/month</span>
+          </div>
+          <p className="text-muted-foreground text-sm mb-6 flex items-center gap-1">
+            <Coffee className="w-4 h-4" /> Less than a pack of gum
+          </p>
 
-        {/* Value prop */}
-        <div className="text-center mt-8 text-muted-foreground text-sm">
-          🔒 30-day money-back guarantee · Secured by Stripe · No hidden fees
+          <ul className="space-y-3 flex-1 mb-6">
+            {[
+              'Unlimited verifications — no caps',
+              'All item types: phones, cars, bikes, guns, electronics, tools',
+              'IMEI, VIN, license plate & serial number lookups',
+              '100+ databases: FBI NCIC, GSMA, NICB, ATF & more',
+              '3-second instant results',
+              'PDF verification receipts',
+              'Full verification history',
+              'Priority support',
+              'Cancel anytime — no questions asked',
+            ].map((f) => (
+              <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
+                <Check className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <button
+            onClick={handleUpgrade}
+            disabled={loading}
+            className="w-full py-4 rounded-xl font-bold text-lg bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60"
+          >
+            {loading ? 'Loading...' : 'Get Unlimited — $1/month'}
+          </button>
+          <p className="text-center text-xs text-muted-foreground mt-3">
+            🔒 30-day money-back guarantee · Secured by Stripe · No hidden fees
+          </p>
         </div>
+      </div>
+
+      {/* Why $1 */}
+      <div className="max-w-2xl mx-auto px-4 mb-16 text-center">
+        <h2 className="text-2xl font-black mb-4">Why $1/Month?</h2>
+        <p className="text-muted-foreground mb-4">
+          The average stolen phone costs buyers <span className="font-bold text-destructive">$300–$1,000</span>.
+          A stolen car? <span className="font-bold text-destructive">$5,000–$30,000</span>.
+        </p>
+        <p className="text-primary font-semibold text-lg">
+          For $1/month, you can verify every single purchase. No excuses. No limits.
+        </p>
       </div>
 
       {/* Competitor comparison */}
@@ -165,7 +146,7 @@ const PricingPage = () => {
               </thead>
               <tbody>
                 {[
-                  { name: 'SafeOrStolen', price: 'Free → $9.99/mo', dbs: '100+', types: 'All 6', hl: true },
+                  { name: 'SafeOrStolen', price: '$1/mo unlimited', dbs: '100+', types: 'All 6', hl: true },
                   { name: 'CheckMEND', price: '£7/check', dbs: 'UK only', types: 'Electronics', hl: false },
                   { name: 'Carfax', price: '$44.99/report', dbs: 'Vehicles', types: 'Cars only', hl: false },
                   { name: 'NICB VINCheck', price: 'Free (5/day)', dbs: '1', types: 'Vehicles', hl: false },
@@ -230,14 +211,15 @@ const PricingPage = () => {
 
       {/* Bottom CTA */}
       <div className="text-center pb-20 px-4">
-        <p className="text-muted-foreground mb-4">Not ready to commit? Start with 2 free verifications.</p>
-        <Link
-          to="/verify"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-4 rounded-2xl text-lg transition-all"
+        <p className="text-muted-foreground mb-4">Unlimited verifications. $1/month. No excuses.</p>
+        <button
+          onClick={handleUpgrade}
+          disabled={loading}
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-4 rounded-2xl text-lg transition-all disabled:opacity-60"
         >
           <Shield className="w-5 h-5" />
-          Verify Now — Free
-        </Link>
+          {loading ? 'Loading...' : 'Get Unlimited — $1/month'}
+        </button>
         <p className="text-muted-foreground/50 text-xs mt-3">🔒 Payments secured by Stripe · Cancel anytime</p>
       </div>
 
@@ -248,12 +230,11 @@ const PricingPage = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": "SafeOrStolen Verification",
-            "description": "Check if phones, cars, guns & electronics are stolen. 100+ databases. 3-second results.",
+            "name": "SafeOrStolen Unlimited Verification",
+            "description": "Unlimited stolen item verification — phones, cars, guns, electronics & more. 100+ databases. 3-second results. $1/month.",
             "brand": { "@type": "Brand", "name": "SafeOrStolen" },
             "offers": [
-              { "@type": "Offer", "name": "Free Plan", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
-              { "@type": "Offer", "name": "Unlimited Plan", "price": "9.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
+              { "@type": "Offer", "name": "Unlimited Plan", "price": "1.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
             ]
           })
         }}

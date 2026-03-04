@@ -7,15 +7,15 @@ import { createErrorResponse } from '../_shared/errors.ts';
 // BULLETPROOF: Always use production URLs
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 
-// SIMPLIFIED PRICING MODEL
-// Unlimited Plan: $4.99/month - uses the starter price ID
+// SIMPLIFIED PRICING MODEL — March 2026
+// Single plan: $1/month unlimited
 const STRIPE_PRICES = {
-  // One-time payment
-  singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99
+  // The ONE price — $1/month unlimited
+  unlimited: 'price_1T77b7GxnZLw8J7OYB4jBGRB',       // $1.00/month
 
-  // Subscriptions - Unlimited is the main plan at $4.99/month
-  unlimited: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',       // $4.99/month (was starter)
-  starter: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',         // Legacy alias
+  // Legacy prices kept for existing subscribers
+  singleVerification: 'price_1SSVqkGxnZLw8J7O3GwCyKRn', // $2.99 (legacy)
+  starter: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',         // $4.99/month (legacy)
   personal: 'price_1SHEUQGxnZLw8J7OinyVqNMK',        // $9.99/month (legacy)
   professional: 'price_1SHEiuGxnZLw8J7OszscBBk7',    // $29.99/month (legacy)
   enterprise: 'price_1SHEnFGxnZLw8J7Oq1PM96Eo',      // $99/month (legacy)
