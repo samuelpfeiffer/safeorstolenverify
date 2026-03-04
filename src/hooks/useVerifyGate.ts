@@ -27,10 +27,10 @@ export function useVerifyGate() {
     try {
       const { data: { user } } = await supabase.auth.getUser()
 
+      // user_id is now extracted server-side from the JWT — not sent in body
       const { data, error } = await supabase.functions.invoke('check-gate', {
         body: {
           fingerprint: getOrCreateFingerprint(),
-          user_id: user?.id || null,
         },
       })
 
