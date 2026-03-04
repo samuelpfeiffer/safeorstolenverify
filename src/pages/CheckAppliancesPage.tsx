@@ -48,8 +48,8 @@ const CheckAppliancesPage = () => {
             answer: "Serial number locations vary by appliance type: (1) Washers and dryers - inside door rim (open door and look along edge), on back panel, or inside control panel, (2) Refrigerators - inside fresh food compartment on side wall or ceiling, or behind vegetable crisper drawers, (3) Stoves and ranges - inside oven door frame, on back panel, or under cooktop (lift up), (4) Dishwashers - inside door edge when opened, or on top front edge of door frame, (5) Ovens - inside door frame or on back/side wall when opened. Look for a metal plate or sticker with model number, serial number, and electrical specifications. If you can't find it, check the owner's manual or manufacturer's website. Missing or removed serial number plate = major red flag indicating possible theft."
           },
           {
-            question: "Is the appliance stolen check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free appliance serial number checks. This allows you to verify major appliances before buying without any cost. If you're purchasing a matching washer/dryer set or multiple appliances, you can use both free searches to verify each one. Additional checks require a paid plan ($9.99/month for unlimited), but our free tier is designed to protect casual buyers purchasing one or two used appliances."
+            question: "How much does the appliance stolen check cost?",
+            answer: "SafeOrStolen offers unlimited appliance serial number checks for just $1/month. Verify washers, dryers, refrigerators, stoves, and any major appliance before buying. Cancel anytime."
           },
           {
             question: "What should I do if my appliance check shows it's stolen?",

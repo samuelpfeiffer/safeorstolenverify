@@ -43,10 +43,10 @@ const SafeOrStolenVsIMEIInfo = () => {
   };
 
   const comparisonData = [
-    { feature: 'Free Searches', safeOrStolen: '2 free (no card)', imeiInfo: 'Limited basic info', winner: 'sos' },
+    { feature: 'Pricing', safeOrStolen: '$1/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
     { feature: 'Stolen Database Size', safeOrStolen: '50M+ items', imeiInfo: 'Not disclosed', winner: 'sos' },
     { feature: 'Item Types Supported', safeOrStolen: 'Phones, cars, bikes, tools, etc.', imeiInfo: 'Phones only', winner: 'sos' },
-    { feature: 'Blacklist Check', safeOrStolen: 'Included free', imeiInfo: '$2.99 per check', winner: 'sos' },
+    { feature: 'Blacklist Check', safeOrStolen: 'Included in $1/mo', imeiInfo: '$2.99 per check', winner: 'sos' },
     { feature: 'VIN Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Serial Number Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Carrier Info', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
@@ -378,7 +378,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen really free?</h3>
                     <p className="text-muted-foreground">
-                      Yes! SafeOrStolen offers 2 completely free stolen item checks with no credit card required. 
+                      Yes! SafeOrStolen offers unlimited stolen item checks for just $1/month. 
                       IMEI.info charges $2.99+ for blacklist checks.
                     </p>
                   </CardContent>

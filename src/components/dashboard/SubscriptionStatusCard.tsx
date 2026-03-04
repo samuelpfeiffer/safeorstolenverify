@@ -191,7 +191,7 @@ export const SubscriptionStatusCard = () => {
               className="w-full bg-gradient-to-r from-sos-lime to-sos-orange text-black hover:opacity-90"
             >
               <ArrowUpRight className="w-4 h-4 mr-2" />
-              {subscription.remainingFreeSearches > 0 ? 'Unlock Unlimited – $4.99/mo' : 'Upgrade Now'}
+              Unlock Unlimited — $1/mo
             </Button>
           </>
         )}

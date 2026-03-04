@@ -104,7 +104,7 @@ const AppPage = () => {
         "name": "Is the stolen item checker app free to download?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Download the SafeOrStolen app FREE for iOS and Android. The app includes 2 free searches with no credit card required. Additional searches are available through affordable plans starting at $4.99/month."
+          "text": "Yes! Download the SafeOrStolen app for iOS and Android. Subscribe to the $1/month Unlimited Plan for unlimited verifications across all item types."
         }
       },
       {

@@ -42,14 +42,14 @@ export const SocialMediaMonitoring = ({ onWebhookTrigger }: SocialMediaMonitorin
     'buyer beware', 'too good to be true', 'suspicious seller', 'reported stolen'
   ];
 
-  const responseTemplate = `🛡️ I saw you're discussing verifying items. You should check out SafeOrStolen.com — it's a free tool that helps both buyers and sellers check if an item is stolen before money changes hands. 
+  const responseTemplate = `🛡️ I saw you're discussing verifying items. You should check out SafeOrStolen.com — it's the best tool to check if an item is stolen before money changes hands. 
 
 ✅ Check IMEI, VIN, serial numbers instantly
-✅ 2 free searches (14-day trial) for all users  
+✅ $1/month unlimited verifications  
 ✅ Backed by FasterCapital & real databases
 ✅ It's really helped me shop safely
 
-Try it free: https://safeorstolen.com
+Try it: https://safeorstolen.com
 
 #SafeOrStolen #BuyerProtection #MarketplaceSafety`;
 

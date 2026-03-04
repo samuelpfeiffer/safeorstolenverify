@@ -102,7 +102,7 @@ export default function HowToCheckPhoneStolen() {
           <p><strong>Limitation:</strong> A phone clean on one carrier may still be blacklisted on others or reported stolen to police.</p>
 
           <h3>Method 3: CheckMEND (Paid Service)</h3>
-          <p>CheckMEND charges $2.99 per check and only covers UK databases. Not recommended for US buyers.</p>
+          <p>CheckMEND charges $3.99 per check and only covers UK databases. Not recommended for US buyers. SafeOrStolen offers unlimited checks for $1/month.</p>
 
           <h3>Method 4: IMEI.info (Limited Free Checks)</h3>
           <p>Provides basic info but doesn't check police databases or comprehensive blacklists. Results are incomplete.</p>

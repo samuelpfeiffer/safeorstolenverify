@@ -133,9 +133,9 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
               </tr>
               <tr>
                 <td className="border border-border p-3">Starting Price</td>
-                <td className="border border-border p-3 text-center">$0</td>
-                <td className="border border-border p-3 text-center">$4.99/mo</td>
-                <td className="border border-border p-3 text-center">$9.99/mo</td>
+                <td className="border border-border p-3 text-center">$1/mo</td>
+                <td className="border border-border p-3 text-center">$1/mo</td>
+                <td className="border border-border p-3 text-center">$1/mo</td>
               </tr>
             </tbody>
           </table>

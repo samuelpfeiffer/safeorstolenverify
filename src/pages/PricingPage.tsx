@@ -176,7 +176,7 @@ const PricingPage = () => {
               Get verified badges to prove items aren't stolen. Sell 3x faster and command higher prices.
             </p>
             <span className="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-              Seller plans from $2.99 <ArrowRight className="w-4 h-4" />
+              Seller verification included in $1/mo plan <ArrowRight className="w-4 h-4" />
             </span>
           </Link>
           <Link to="/for-businesses" className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition-all">

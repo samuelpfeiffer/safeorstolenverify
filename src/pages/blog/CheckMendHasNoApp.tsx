@@ -49,11 +49,11 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "What is the best CheckMEND alternative with an app?",
-            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), 2 FREE checks (vs CheckMEND's $3.99), offline mode, and coverage for all item types."
+            answer: "SafeOrStolen is the best CheckMEND alternative with a mobile app. It offers instant barcode scanning, 3-second verification (vs CheckMEND's 30+ seconds), $1/month unlimited (vs CheckMEND's $3.99/check), offline mode, and coverage for all item types."
           },
           {
             question: "Is SafeOrStolen cheaper than CheckMEND?",
-            answer: "Yes, SafeOrStolen is cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers 2 FREE checks, then $2.99 per check - 25% cheaper. Plus you get a mobile app with barcode scanning that CheckMEND doesn't offer."
+            answer: "Yes, SafeOrStolen is significantly cheaper than CheckMEND. CheckMEND charges $3.99 per check. SafeOrStolen offers unlimited verifications for just $1/month. Plus you get a mobile app with barcode scanning that CheckMEND doesn't offer."
           },
           {
             question: "Can I scan barcodes with CheckMEND?",
@@ -256,9 +256,9 @@ const CheckMendHasNoApp = () => {
               SafeOrStolen delivers verified results in <strong>3 seconds</strong>. CheckMEND takes 30+ seconds. When you're standing in a parking lot with cash in hand, every second counts.
             </p>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">3. 2 FREE Checks vs $3.99 Per Check</h3>
+            <h3 className="text-2xl font-bold mt-8 mb-4">3. $1/mo Unlimited vs $3.99 Per Check</h3>
             <p>
-              CheckMEND charges $3.99 for every verification. SafeOrStolen gives you <strong>2 FREE checks</strong> (14-day trial), then offers unlimited monthly plans starting at $4.99/month. For businesses checking 100+ items monthly, SafeOrStolen saves thousands compared to CheckMEND.
+              CheckMEND charges $3.99 for every verification. SafeOrStolen offers <strong>unlimited verifications for just $1/month</strong>. For businesses checking 100+ items monthly, SafeOrStolen saves thousands compared to CheckMEND.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">4. Offline Mode</h3>
@@ -290,13 +290,10 @@ const CheckMendHasNoApp = () => {
                 Tap "Install App" - no App Store/Google Play download required (it's a Progressive Web App)
               </li>
               <li>
-                Create a FREE account and get <strong>2 free verification checks</strong> (no credit card required)
+                Create an account and subscribe to the $1/month Unlimited Plan
               </li>
               <li>
                 Start scanning barcodes instantly - experience 3-second verification
-              </li>
-              <li>
-                Upgrade to unlimited monthly plan ($4.99/month) if you need more checks
               </li>
             </ol>
 

@@ -56,8 +56,8 @@ const StolenVerificationAppGuide = () => {
             answer: "Open the SafeOrStolen app, tap the barcode scanner, point at any barcode or serial number, and get instant verification results in 3 seconds. The app automatically reads IMEI, VINs, product codes, and serial numbers without manual typing."
           },
           {
-            question: "Is the SafeOrStolen app free?",
-            answer: "Yes, the SafeOrStolen app is FREE to download for iOS and Android. You get 2 free verification checks. Paid plans start at $2.99 for additional checks, which is still cheaper than CheckMEND's $3.99 per check."
+            question: "How much does the SafeOrStolen app cost?",
+            answer: "The SafeOrStolen app is free to download for iOS and Android. Unlimited verifications are just $1/month — significantly cheaper than CheckMEND's $3.99 per check."
           },
           {
             question: "Can I use the stolen verification app offline?",

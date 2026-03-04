@@ -15,8 +15,8 @@ export const EnhancedFAQSection = () => {
       icon: Smartphone,
       faqs: [
         {
-          question: "Is SafeOrStolen free? How many checks do I get?",
-          answer: "Yes! We offer 2 FREE verifications with a 14-day trial. No credit card required. After the trial, plans start at $0.50 per check or unlimited subscriptions from $4.99/month. Perfect for casual buyers, frequent sellers, and businesses."
+          question: "How much does SafeOrStolen cost?",
+          answer: "SafeOrStolen offers unlimited verifications for just $1/month. All item types — phones, vehicles, electronics, firearms, and more — all databases, cancel anytime. The best value in stolen item verification."
         },
         {
           question: "What items can I verify with SafeOrStolen?",
@@ -51,8 +51,8 @@ export const EnhancedFAQSection = () => {
       icon: DollarSign,
       faqs: [
         {
-          question: "What happens after my free trial ends?",
-          answer: "After 14 days, you can choose: Pay-as-you-go ($0.50/check), Basic ($4.99/month for 20 checks), Pro ($9.99/month unlimited), or Business ($29.99/month with API access). No auto-charge—you decide when to upgrade."
+          question: "What's included in the $1/month plan?",
+          answer: "The $1/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to 100+ databases. Cancel anytime — no contracts."
         },
         {
           question: "Can I verify in bulk for my business?",

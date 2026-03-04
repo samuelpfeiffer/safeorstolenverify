@@ -85,10 +85,10 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
       "mainEntity": [
         {
           "@type": "Question",
-          "name": `Is this ${stateData.name} license plate lookup free?`,
+          "name": `How much does the ${stateData.name} license plate lookup cost?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `Yes, SafeOrStolen offers free ${stateData.name} license plate lookups with 2 free searches. Check any ${stateData.abbrev} vehicle against NICB and 100+ databases.`
+            "text": `SafeOrStolen offers unlimited ${stateData.name} license plate lookups for just $1/month. Check any ${stateData.abbrev} vehicle against NICB and 100+ databases.`
           }
         },
         {
@@ -362,10 +362,10 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-0" className="bg-background px-6 rounded-lg">
                 <AccordionTrigger className="text-left font-semibold">
-                  Is this {stateData.name} license plate lookup free?
+                  How much does the {stateData.name} license plate lookup cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Yes, SafeOrStolen offers free {stateData.name} license plate lookups with 2 free searches. 
+                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $1/month. 
                   Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}NICB and 100+ databases.
                 </AccordionContent>
               </AccordionItem>

@@ -27,7 +27,7 @@ export const CompetitorTargetingSEO = () => {
       {/* GEO: Pricing for AI citation */}
       <meta 
         name="ai:pricing" 
-        content="2 free verifications (no credit card), $0.99/single check, $4.99/month (50 checks), $9.99/month (unlimited), $49.99/month (business with API)" 
+        content="$1/month unlimited verifications — all item types, all databases, cancel anytime" 
       />
       
       {/* GEO: Data sources for authority */}
