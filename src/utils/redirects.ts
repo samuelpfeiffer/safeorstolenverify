@@ -45,8 +45,9 @@ export function findRedirect(path: string): string | null {
     }
   }
 
-  // Handle blog post timestamp pattern - strip timestamp and redirect to clean slug
-  const timestampMatch = cleanPath.match(/^\/blog\/(.+)-[\d.]+$/);
+  // Handle blog post timestamp pattern - strip timestamp suffix (10+ digits, e.g. -1709234567)
+  // Must NOT match year suffixes like -2026, -2024, etc.
+  const timestampMatch = cleanPath.match(/^\/blog\/(.+)-(\d{10,}[\d.]*)$/);
   if (timestampMatch) {
     const cleanSlug = timestampMatch[1];
     return `/blog/${cleanSlug}`;
