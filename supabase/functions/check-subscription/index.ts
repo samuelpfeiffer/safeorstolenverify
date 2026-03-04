@@ -29,8 +29,11 @@ serve(async (req) => {
       
       console.log(`[CHECK-SUBSCRIPTION] Key type: ${isLiveKey ? 'LIVE' : isTestKey ? 'TEST' : 'UNKNOWN'}`);
       
-      if (!isLiveKey && !isTestKey) {
-        console.log(`[CHECK-SUBSCRIPTION] ERROR: Key is neither live nor test format`);
+      const isRestrictedLive = key.startsWith("rk_live_");
+      const isRestrictedTest = key.startsWith("rk_test_");
+      
+      if (!isLiveKey && !isTestKey && !isRestrictedLive && !isRestrictedTest) {
+        console.log(`[CHECK-SUBSCRIPTION] ERROR: Key is neither live, test, nor restricted format`);
         return null;
       }
       

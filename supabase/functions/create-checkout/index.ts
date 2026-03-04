@@ -108,7 +108,7 @@ serve(async (req) => {
 
     // Get Stripe key
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY")?.trim();
-    if (!stripeKey || (!stripeKey.startsWith("sk_live_") && !stripeKey.startsWith("sk_test_"))) {
+    if (!stripeKey || (!stripeKey.startsWith("sk_live_") && !stripeKey.startsWith("sk_test_") && !stripeKey.startsWith("rk_live_") && !stripeKey.startsWith("rk_test_"))) {
       console.log(`[CREATE-CHECKOUT] Invalid Stripe key`);
       return new Response(
         JSON.stringify({ error: "Payment system configuration error", code: "STRIPE_CONFIG" }),
