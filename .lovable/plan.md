@@ -2,15 +2,21 @@
 
 ## Problem
 
-The `create-checkout` edge function checks for `STRIPE_SECRET_KEY` in the environment (line 110-117 of `supabase/functions/create-checkout/index.ts`). Since Stripe is not connected to the project, this key is missing, causing every checkout attempt to fail with a 500 error.
+Line 111 of `supabase/functions/create-checkout/index.ts` has a strict key prefix check:
+```
+if (!stripeKey || (!stripeKey.startsWith("sk_live_") && !stripeKey.startsWith("sk_test_")))
+```
+
+The Stripe connector provides a **restricted key** (prefix `rk_live_` or `rk_test_`), which this validation rejects, causing the `STRIPE_CONFIG` error on every checkout attempt.
 
 ## Fix
 
-1. **Connect Stripe** -- The Stripe connector must be linked to this project so the `STRIPE_SECRET_KEY` is available as an environment variable to the edge functions. This is a one-click action.
+Update line 111 to also accept restricted keys (`rk_live_`, `rk_test_`). This is a one-line change in the edge function, then redeploy.
 
-2. **No code changes needed** -- The `create-checkout` function already has correct logic. Once the secret key is available, it will work.
+Search all other edge functions for the same pattern and fix them too if present.
 
-## Action Required
+## Files to Change
 
-I need to connect Stripe to your project. Once connected, the checkout flow will work immediately -- no code changes required.
+1. `supabase/functions/create-checkout/index.ts` — line 111: add `rk_live_` and `rk_test_` to the prefix check
+2. Any other edge functions with the same Stripe key validation pattern
 
