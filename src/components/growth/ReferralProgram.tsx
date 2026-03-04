@@ -80,9 +80,9 @@ export const ReferralProgram = () => {
             <Gift className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <h3 className="font-bold text-lg">Invite & Earn Free Checks</h3>
+            <h3 className="font-bold text-lg">Invite & Earn Rewards</h3>
             <p className="text-sm text-muted-foreground">
-              Get 1 free verification for every friend who signs up
+              Share SafeOrStolen with friends
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export const ReferralProgram = () => {
             <div className="mx-auto w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
               3
             </div>
-            <p className="text-xs text-muted-foreground">Both get free check</p>
+            <p className="text-xs text-muted-foreground">Both benefit</p>
           </div>
         </div>
 

@@ -160,7 +160,7 @@ export default function MobilePage() {
             <Smartphone className="h-16 w-16 text-primary mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-4">Download Now</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Available for iOS and Android. Free download, 2 free verifications included.
+              Available for iOS and Android. Free download. Unlimited verifications for just $1/month.
             </p>
             <AppStoreBadges size="lg" />
             <p className="text-sm text-muted-foreground mt-6">

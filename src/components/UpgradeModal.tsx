@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { supabase } from '@/integrations/supabase/client'
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate'
 import { redirectToStripe } from '@/utils/stripeRedirect'
-import { X, Zap, BadgeCheck, Building2 } from 'lucide-react'
+import { X, Zap } from 'lucide-react'
 
 interface UpgradeModalProps {
   isOpen: boolean
@@ -10,51 +10,16 @@ interface UpgradeModalProps {
   onClose: () => void
 }
 
-const PLANS = {
-  buyer: {
-    id: 'pro',
-    icon: <Zap className="w-5 h-5" />,
-    label: 'Unlimited Verifications',
-    price: '$9.99/month',
-    desc: 'Check unlimited items across all 6 categories. Save history, share reports, and verify with confidence.',
-    cta: 'Upgrade to Unlimited — $9.99/mo',
-    priceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
-    planName: 'Personal Plan',
-    isSub: true,
-  },
-  sellerBadge: {
-    id: 'seller-badge',
-    icon: <BadgeCheck className="w-5 h-5" />,
-    label: 'Single Verified Badge',
-    price: '$2.99 one-time',
-    desc: 'Get a shareable "✓ Verified Safe" badge for one listing. Valid 90 days.',
-    cta: 'Get Badge — $2.99',
-    priceId: 'price_1T6fNGGxnZLw8J7OrKLSrnAx',
-    planName: 'Seller Per-Listing',
-    isSub: false,
-  },
-  sellerUnlimited: {
-    id: 'seller-unlimited',
-    icon: <BadgeCheck className="w-5 h-5" />,
-    label: 'Unlimited Badges',
-    price: '$19.99/month',
-    desc: 'Unlimited verifications + badges. Seller profile page. Sell faster, earn more.',
-    cta: 'Start Selling — $19.99/mo',
-    priceId: 'price_1T6fOWGxnZLw8J7O2njgDUgM',
-    planName: 'Verified Seller',
-    isSub: true,
-  },
-  business: {
-    id: 'business',
-    icon: <Building2 className="w-5 h-5" />,
-    label: 'Business Plan',
-    price: '$49.99/month',
-    desc: 'Unlimited checks, embeddable widget, API access, compliance reporting, and 5 staff seats.',
-    cta: 'Start Free Trial — $49.99/mo',
-    priceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
-    planName: 'Professional Plan',
-    isSub: true,
-  },
+const PLAN = {
+  id: 'unlimited',
+  icon: <Zap className="w-5 h-5" />,
+  label: 'Unlimited Plan',
+  price: '$1/month',
+  desc: 'Unlimited verifications across all categories. IMEI, VIN, serial numbers, license plates, firearms & more. Cancel anytime.',
+  cta: 'Subscribe Now — Just $1/mo',
+  priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
+  planName: 'Unlimited Plan',
+  isSub: true,
 }
 
 export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
@@ -62,14 +27,9 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
 
   if (!isOpen) return null
 
-  const headline =
-    reason === 'monthly_limit'
-      ? "You've Hit Your Monthly Limit"
-      : reason === 'single_used'
-      ? 'Your Single Check Has Been Used'
-      : "You've Used Your 2 Free Checks"
+  const headline = "Subscribe to Verify Items"
 
-  async function handleCheckout(plan: typeof PLANS.buyer) {
+  async function handleCheckout(plan: typeof PLAN) {
     setLoading(plan.id)
     try {
       const { data: { user } } = await supabase.auth.getUser()
@@ -91,7 +51,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
     }
   }
 
-  function PlanOption({ plan, highlight = false }: { plan: typeof PLANS.buyer; highlight?: boolean }) {
+  function PlanOption({ plan, highlight = false }: { plan: typeof PLAN; highlight?: boolean }) {
     return (
       <button
         onClick={() => handleCheckout(plan)}
@@ -138,38 +98,16 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
 
         {/* Header */}
         <div className="text-center mb-6">
-          <div className="text-4xl mb-3">🔒</div>
+          <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Choose the plan that fits your needs:
+            Unlimited verifications for just $1/month
           </p>
         </div>
 
-        {/* Smart options */}
+        {/* Single plan */}
         <div className="space-y-3 mb-5">
-          {/* Always show buyer upgrade first (highlighted) */}
-          <PlanOption plan={PLANS.buyer} highlight />
-
-          {/* Seller options */}
-          <div className="relative">
-            <div className="absolute -top-2 left-4 bg-muted text-muted-foreground text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
-              Selling items?
-            </div>
-            <div className="border border-border rounded-xl p-3 pt-4 space-y-2">
-              <PlanOption plan={PLANS.sellerBadge} />
-              <PlanOption plan={PLANS.sellerUnlimited} />
-            </div>
-          </div>
-
-          {/* Business option */}
-          <div className="relative">
-            <div className="absolute -top-2 left-4 bg-muted text-muted-foreground text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
-              Pawn shop or dealer?
-            </div>
-            <div className="border border-border rounded-xl p-3 pt-4">
-              <PlanOption plan={PLANS.business} />
-            </div>
-          </div>
+          <PlanOption plan={PLAN} highlight />
         </div>
 
         {/* Footer */}

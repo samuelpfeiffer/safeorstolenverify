@@ -71,7 +71,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading: externalLoading }
     <div className="max-w-4xl mx-auto pt-8" id="subscriptions">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
-        <p className="text-xl mb-4">Start free, upgrade when you need more</p>
+        <p className="text-xl mb-4">Unlimited verifications — just $1/month</p>
         <div className="flex justify-center items-center gap-6 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -88,34 +88,7 @@ export const ConsumerPricing = ({ onSubscribeClick, isLoading: externalLoading }
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Free Tier */}
-        <div className="bg-secondary/30 backdrop-blur-lg rounded-xl p-8 border border-gray-700 relative overflow-hidden">
-          <div className="absolute -right-6 -top-6 bg-gray-700/30 p-8 rounded-full"></div>
-          <h3 className="text-2xl font-bold mb-2">Free</h3>
-          <div className="text-3xl font-bold mb-2">$0</div>
-          <p className="text-gray-400 mb-6">Try before you buy</p>
-          <ul className="space-y-3 mb-8">
-            <li className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
-              <span>2 free verification checks</span>
-            </li>
-            <li className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
-              <span>No credit card required</span>
-            </li>
-            <li className="flex items-center">
-              <CheckCircle className="h-5 w-5 text-sos-orange mr-2" />
-              <span>Instant results in 3 seconds</span>
-            </li>
-          </ul>
-          <Button 
-            onClick={handleFreeStart}
-            className="w-full bg-secondary hover:bg-secondary/80"
-          >
-            Get Started Free
-          </Button>
-        </div>
+      <div className="max-w-lg mx-auto">
         
         {/* Unlimited Plan */}
         <div className="bg-secondary/50 backdrop-blur-lg rounded-xl p-8 border border-sos-orange relative overflow-hidden transform scale-105 shadow-lg shadow-sos-orange/20">
