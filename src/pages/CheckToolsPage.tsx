@@ -47,8 +47,8 @@ const CheckToolsPage = () => {
             answer: "Serial number locations vary by tool type and manufacturer: (1) DeWalt - usually on motor housing near fan vents, or on battery compartment, (2) Milwaukee - near battery connection point, on tool body, or inside battery compartment, (3) Makita - on tool body near model number, on bottom plate, or battery compartment, (4) Bosch - motor housing, handle area, or base plate, (5) Ryobi/Ridgid - near battery connection or on motor housing, (6) Hilti - on tool body with barcode label. Look for a sticker or stamped plate with serial number, model number, and voltage information. If you can't find it, check: original box, warranty card, or manufacturer's website for location guide. Missing or removed serial number = major red flag indicating theft."
           },
           {
-            question: "Is the tool stolen check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free tool serial number checks. This allows you to verify power tools before buying without any cost. If you're purchasing a combo kit with multiple tools, you can use your free searches to verify the highest-value items (typically drill and impact driver). Additional checks require a paid plan ($9.99/month for unlimited), but our free tier is designed to protect casual buyers purchasing one or two used tools."
+            question: "How much does the tool stolen check cost?",
+            answer: "SafeOrStolen offers unlimited tool serial number checks for just $1/month. Verify power tools, hand tools, and equipment before buying. Subscribe once and check as many items as you need. Cancel anytime."
           },
           {
             question: "What should I do if my tool check shows it's stolen?",

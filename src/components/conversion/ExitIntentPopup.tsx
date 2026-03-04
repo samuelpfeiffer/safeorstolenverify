@@ -72,8 +72,8 @@ export const ExitIntentPopup = () => {
             <div className="flex items-start gap-3">
               <Zap className="w-5 h-5 text-sos-orange flex-shrink-0 mt-0.5" />
               <div>
-                <p className="font-semibold text-sm">Special Offer: Just $2.99</p>
-                <p className="text-xs text-muted-foreground">Verify 1 more item instantly</p>
+                <p className="font-semibold text-sm">Unlimited Verifications — $1/mo</p>
+                <p className="text-xs text-muted-foreground">All items, all databases, cancel anytime</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -91,7 +91,7 @@ export const ExitIntentPopup = () => {
               size="lg"
               className="w-full bg-gradient-to-r from-sos-orange to-sos-lime text-white font-bold"
             >
-              Get Verification for $2.99
+              Subscribe — $1/mo Unlimited
             </Button>
             
             <Button

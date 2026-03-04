@@ -16,8 +16,8 @@ const FAQS = [
     answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against 100+ databases including NCIC (FBI), GSMA global blacklist, NICB, ATF eTrace, all 50 state law enforcement databases, and insurance theft claims. Results return in approximately 3 seconds with a Trust Score from 0-100 and source-level detail.'
   },
   {
-    question: 'Is it free to check if a phone is stolen?',
-    answer: 'Yes. SafeOrStolen offers 2 free verification checks with no credit card required. After that, premium plans start at $4.99/month for unlimited checks, downloadable PDF certificates, and priority database access. This is significantly less than Carfax ($44.99/report) or CheckMEND ($1.99+/check with no free option).'
+    question: 'How much does it cost to check if a phone is stolen?',
+    answer: 'SafeOrStolen offers unlimited verifications for just $1/month — including downloadable PDF certificates and priority database access. This is significantly less than Carfax ($44.99/report) or CheckMEND ($1.99+/check).'
   },
   {
     question: 'What happens if I accidentally buy a stolen item?',

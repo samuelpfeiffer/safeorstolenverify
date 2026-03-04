@@ -119,8 +119,8 @@ const RECENT_VERIFICATIONS = [
 
 const FAQ_ITEMS = [
   {
-    q: 'Is SafeOrStolen really free to start?',
-    a: 'Yes — you get 2 full verifications completely free with no credit card required. After that, plans start at $0.99 for a single check or $4.99/month for 50 checks.',
+    q: 'How much does SafeOrStolen cost?',
+    a: 'SafeOrStolen offers unlimited verifications for just $1/month. All item types, all databases, cancel anytime. The best value in stolen item verification.',
   },
   {
     q: 'What databases does SafeOrStolen check?',

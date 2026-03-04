@@ -66,11 +66,11 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
             </Card>
           )}
 
-          {/* Free Searches Badge */}
+          {/* Subscription Badge */}
           <div className="text-center">
             <Badge variant="secondary" className="bg-sos-orange text-white px-4 py-2 text-lg">
               <Gift className="w-4 h-4 mr-2" />
-              2 Free Searches Included! (14-Day Trial)
+              $1/mo Unlimited Verifications!
             </Badge>
           </div>
 

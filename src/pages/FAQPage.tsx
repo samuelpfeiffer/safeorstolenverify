@@ -129,8 +129,8 @@ const FAQPage = () => {
           answer: "If you believe there's an error, contact our support team immediately. We offer a dispute resolution process and will re-verify items free of charge if documentation proves an error occurred."
         },
         {
-          question: "Is the verification free?",
-          answer: "Yes! New users get 2 free verification checks (valid for 14 days). After that, you can subscribe to unlimited verifications for just $4.99/month."
+          question: "How much does verification cost?",
+          answer: "SafeOrStolen offers unlimited verifications for just $1/month. Subscribe once and verify as many items as you need — phones, vehicles, electronics, firearms, and more."
         }
       ]
     },
@@ -139,16 +139,16 @@ const FAQPage = () => {
       icon: HelpCircle,
       faqs: [
         {
-          question: "How much does verification cost?",
-          answer: "We offer 2 free verification checks for new users, no credit card required. For unlimited verifications, subscribe to our Unlimited Plan at $4.99/month. Cancel anytime."
+          question: "What does the $1/month plan include?",
+          answer: "The $1/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to 100+ databases. Cancel anytime."
         },
         {
           question: "Do you offer discounts for businesses?",
           answer: "Yes, we offer enterprise pricing for businesses, pawn shops, electronics retailers, and law enforcement agencies. Contact our business development team for custom pricing based on volume needs."
         },
         {
-          question: "Is there a free trial available?",
-          answer: "New users receive 2 free verifications (14-day trial) to test our service. No credit card required for the trial verification."
+          question: "How do I get started?",
+          answer: "Sign up at safeorstolen.com and subscribe to the $1/month Unlimited Plan. You'll get instant access to unlimited verifications across all item types."
         },
         {
           question: "How do I download the SafeOrStolen mobile app?",

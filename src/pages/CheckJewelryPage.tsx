@@ -48,8 +48,8 @@ const CheckJewelryPage = () => {
             answer: "Serial number locations vary by item type: (1) Rolex watches - serial number engraved between lugs at 6 o'clock position (remove bracelet to see). Model number at 12 o'clock position between lugs, (2) Other luxury watches - inside case back, engraved on case back, or between lugs, (3) GIA diamonds - laser inscription of GIA report number on diamond girdle (requires 10x magnification and proper lighting), (4) Designer jewelry - inside ring band, on clasp, on back of pendant/charm, or on jewelry tag, (5) Tiffany jewelry - 'Tiffany & Co.' stamp plus metal purity (925, 750), sometimes with serial numbers on modern pieces. If you can't find serial numbers, ask the seller for: original box, papers, certificates (GIA report), purchase receipt, or appraisal. Missing all documentation = major red flag."
           },
           {
-            question: "Is the jewelry stolen check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free jewelry serial number checks. This allows you to verify luxury watches, diamonds, or designer jewelry before buying without any cost. If you're purchasing a diamond engagement ring, you can use one search for the diamond's GIA number and one for the setting/band serial number. Additional checks require a paid plan ($9.99/month for unlimited), but our free tier is designed to protect casual buyers purchasing one or two jewelry pieces."
+            question: "How much does the jewelry stolen check cost?",
+            answer: "SafeOrStolen offers unlimited jewelry serial number checks for just $1/month. Verify luxury watches, diamonds, designer jewelry, and more. Subscribe once and check as many items as you need."
           },
           {
             question: "What should I do if my jewelry check shows it's stolen?",

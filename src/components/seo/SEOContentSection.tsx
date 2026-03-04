@@ -13,9 +13,9 @@ export const SEOContentSection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Looking for a <strong>free alternative to CheckMend</strong> or <strong>IMEIinfo with mobile app</strong>? SafeOrStolen is the ONLY service with 
+              Looking for a <strong>better alternative to CheckMend</strong> or <strong>IMEIinfo with mobile app</strong>? SafeOrStolen is the ONLY service with 
               dedicated iOS & Android apps that verify <strong>phones (IMEI)</strong>, <strong>cars (VIN)</strong>, <strong>electronics</strong>, and <strong>firearms (gun serial numbers)</strong>. 
-              Get 2 FREE searches - no credit card required. Whether you're at a gun show, car lot, or checking Facebook Marketplace listings, 
+              Unlimited verifications for just $1/month. Whether you're at a gun show, car lot, or checking Facebook Marketplace listings, 
               verify items instantly from your phone - something CheckMend, IMEIinfo, and Stolen Register simply cannot offer.
             </p>
 
@@ -24,7 +24,7 @@ export const SEOContentSection = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                   <span><strong>Better than CheckMend:</strong> Get 2 free searches compared to their paid-only service PLUS mobile app with firearms checking (they have neither!)</span>
+                   <span><strong>Better than CheckMend:</strong> $1/mo unlimited verifications compared to their paid-per-check model PLUS mobile app with firearms checking (they have neither!)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />

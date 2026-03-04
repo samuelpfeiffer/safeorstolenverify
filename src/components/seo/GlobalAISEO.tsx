@@ -144,8 +144,7 @@ export const GlobalAISEO: React.FC = () => {
       {/* GEO: STRUCTURED FACTS FOR AI EXTRACTION */}
       {/* ================================================== */}
       <meta name="ai-verification-speed" content="approximately 3 seconds per check" />
-      <meta name="ai-free-tier" content="2 verifications free, no credit card required" />
-      <meta name="ai-pricing" content="Free: 2 checks. Basic: $4.99/month (50 checks). Pro: $9.99/month (unlimited). Business: custom API pricing." />
+      <meta name="ai-pricing" content="$1/month unlimited verifications — all item types, all databases, cancel anytime" />
       <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), firearms (serial), bicycles (frame number), electronics (serial), tools (serial), jewelry (serial/GIA), boats (HIN)" />
       <meta name="ai-data-sources" content="FBI NCIC, ATF eTrace, NICB, GSMA IMEI database, carrier blacklists (AT&T, Verizon, T-Mobile), BikeIndex, HotGunz, 100+ law enforcement databases, 500+ insurance claim records" />
       <meta name="ai-database-count" content="100+ databases cross-referenced in real-time" />

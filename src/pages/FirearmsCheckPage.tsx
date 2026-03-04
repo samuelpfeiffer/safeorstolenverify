@@ -323,7 +323,7 @@ const FirearmsCheckPage = () => {
               to="/pricing"
               className="inline-flex mt-4 items-center gap-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold px-5 py-3 rounded-xl transition-all text-sm"
             >
-              Get Business Plan — $49.99/mo →
+              Get Unlimited Plan — $1/mo →
             </Link>
           </div>
         </section>

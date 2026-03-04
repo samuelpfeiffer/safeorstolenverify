@@ -66,8 +66,8 @@ const ImeiStolenPhoneCheckPage = () => {
             answer: "Our IMEI check queries the GSMA Device Registry, which is the authoritative source used by carriers worldwide. We also check multiple secondary databases including law enforcement records and user-reported thefts. Accuracy is over 99% for phones reported through official channels. The only gap is phones stolen but not yet reported - which is why we recommend also checking activation lock status."
           },
           {
-            question: "Can I check IMEI for free?",
-            answer: "Yes, SafeOrStolen offers 2 free IMEI checks per account. This covers the same comprehensive databases as paid plans including GSMA, carrier blacklists, and law enforcement records. Additional checks require a paid subscription ($9.99/month for unlimited). Many other 'free' IMEI checkers only check partial databases or require payment for full results."
+            question: "How much does the IMEI check cost?",
+            answer: "SafeOrStolen offers unlimited IMEI checks for just $1/month. This covers comprehensive databases including GSMA, carrier blacklists, and law enforcement records. Many other IMEI checkers charge per check or only check partial databases."
           },
           {
             question: "What's the difference between IMEI and serial number?",

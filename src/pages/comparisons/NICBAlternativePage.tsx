@@ -164,7 +164,7 @@ const NICBAlternativePage = () => {
               </table>
             </div>
             <p className="text-sm text-muted-foreground mt-4 text-center">
-              *2 free searches, then unlimited with paid plan ($9.99/month)
+              *Unlimited verifications for just $1/month
             </p>
           </div>
         </section>

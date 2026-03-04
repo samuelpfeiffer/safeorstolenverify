@@ -177,10 +177,10 @@ export const SubscriptionStatus = () => {
 
         {/* Feature comparison */}
         <div className="text-xs text-gray-500 space-y-1 pt-2 border-t border-gray-700">
-          <div className="font-medium">Pay-per-check available:</div>
-          <div>• $0.99 per single check</div>
-          <div>• $0.60 per check (50-pack)</div>
-          <div>• $0.40 per check (250-pack)</div>
+          <div className="font-medium">Subscribe for unlimited access:</div>
+          <div>• $1/month — unlimited verifications</div>
+          <div>• All item types, all databases</div>
+          <div>• Cancel anytime</div>
         </div>
       </CardContent>
     </Card>

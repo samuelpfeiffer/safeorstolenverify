@@ -17,10 +17,10 @@ export const EnhancedCTASection: React.FC = () => {
         variant: "default" as const
       },
       secondaryAction: {
-        text: "Free Trial",
-        href: "/auth?tab=signup"
+        text: "See Pricing",
+        href: "/pricing"
       },
-      highlight: "2 Free Searches (14-Day Trial)"
+      highlight: "$1/mo Unlimited Verifications"
     },
     {
       title: "For Businesses",

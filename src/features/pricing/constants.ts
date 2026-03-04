@@ -51,8 +51,9 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   // Legacy tiers kept for backward compatibility with existing subscribers
+  // All new users should use the 'unlimited' plan at $1/mo
   starter: {
-    name: "Starter Plan",
+    name: "Starter Plan (Legacy)",
     price: 499,
     priceDisplay: "$4.99",
     interval: "month",
@@ -60,7 +61,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     overageRate: 0.45,
     stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
     tier: "starter",
-    features: ["Legacy plan - 15 verifications per month"],
+    features: ["Legacy plan - migrated to $1/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 60,
     trustBadges: true,
@@ -71,14 +72,14 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   payPerUse: {
-    name: "Single Verification",
+    name: "Single Verification (Legacy)",
     price: 99,
     priceDisplay: "$0.99",
     interval: "once",
     monthlyQuota: 1,
     stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
     tier: "payPerUse",
-    features: ["One verification check", "Instant results"],
+    features: ["Legacy - use $1/mo unlimited instead"],
     receiptsIncluded: true,
     historyRetention: 30,
     trustBadges: false,
@@ -89,7 +90,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   personal: {
-    name: "Personal Plan",
+    name: "Personal Plan (Legacy)",
     price: 999,
     priceDisplay: "$9.99",
     interval: "month",
@@ -97,7 +98,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     overageRate: 0.40,
     stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
     tier: "personal",
-    features: ["Legacy plan - 50 verifications per month"],
+    features: ["Legacy plan - migrated to $1/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -108,14 +109,14 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     dedicatedManager: false
   },
   professional: {
-    name: "Professional Plan",
+    name: "Professional Plan (Legacy)",
     price: 2999,
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "professional",
-    features: ["Legacy plan - Unlimited verifications"],
+    features: ["Legacy plan - migrated to $1/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
