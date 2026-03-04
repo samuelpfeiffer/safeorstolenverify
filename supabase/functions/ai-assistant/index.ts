@@ -38,8 +38,8 @@ Key features to mention:
 - IMEI Check: For mobile phones, dial *#06# to find IMEI
 - VIN Check: For vehicles, find on dashboard or door jamb
 - Serial Number: For electronics, check device settings or back of item
-- Free Trial: 2 free searches, 14-day trial
-- Subscription: Starting at $4.99/month
+- Subscription: $1/month unlimited verifications
+- No free tier — subscribe to start verifying
 
 ${context?.currentPage ? `User is currently on: ${context.currentPage}` : ''}
 ${context?.verificationResult ? `Recent verification result: ${JSON.stringify(context.verificationResult)}` : ''}
@@ -53,9 +53,8 @@ Guidelines:
 - If user seems to have bought stolen property, advise them to contact local police
 
 If asked about pricing:
-- Starter: $4.99/month (15 checks)
-- Personal: $9.99/month (50 checks)
-- Professional: $29.99/month (unlimited)`;
+- Unlimited Plan: $1/month — unlimited verifications, all item types, cancel anytime
+- No free tier — $1/month is the only plan`;
 
     const messages = [
       ...conversationHistory.slice(-10),

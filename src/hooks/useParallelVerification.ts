@@ -29,83 +29,39 @@ export const useParallelVerification = () => {
       return null;
     }
 
-    // CRITICAL: Require authentication - no free anonymous searches
+    // CRITICAL: Require authentication
     if (!user?.id) {
       toast({
         title: "Sign Up Required",
-        description: "Create a free account to verify items. Get 2 free searches!",
+        description: "Create an account and subscribe for just $1/month to verify items.",
         variant: "default",
       });
-      // Use navigate instead of window.location to preserve state
       navigate('/auth', { state: { redirect: '/verify', pendingSearch: identifier } });
       return null;
     }
 
-    // Check free search limit for non-subscribed users
+    // Check subscription status - no free searches
     try {
       const { data: profile } = await supabase
         .from('profiles')
-        .select('free_searches_used, trial_started_at, subscription_tier')
+        .select('subscription_tier')
         .eq('id', user.id)
         .single();
 
       const isSubscribed = profile?.subscription_tier && 
-        !['free', 'starter'].includes(profile.subscription_tier);
+        !['free', 'starter', null, ''].includes(profile.subscription_tier);
 
       if (!isSubscribed) {
-        const searchesUsed = profile?.free_searches_used || 0;
-        const trialStarted = profile?.trial_started_at;
-        
-        // Check if trial expired (14 days)
-        if (trialStarted) {
-          const trialStart = new Date(trialStarted);
-          const now = new Date();
-          const daysSinceStart = (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24);
-          
-          if (daysSinceStart > 14) {
-            toast({
-              title: "Trial Expired",
-              description: "Your 14-day trial has ended. Subscribe to continue verifying items.",
-              variant: "destructive",
-            });
-            navigate('/pricing', { state: { reason: 'trial-expired' } });
-            return null;
-          }
-        }
-
-        // Check if used all free searches
-        if (searchesUsed >= 2) {
-          toast({
-            title: "Free Searches Used",
-            description: "You've used your 2 free searches. Subscribe for just $4.99/mo to continue.",
-            variant: "destructive",
-          });
-          navigate('/pricing', { state: { reason: 'limit-reached' } });
-          return null;
-        }
-
-        // Increment free search counter
-        const newCount = searchesUsed + 1;
-        await supabase
-          .from('profiles')
-          .update({ 
-            free_searches_used: newCount,
-            trial_started_at: trialStarted || new Date().toISOString()
-          })
-          .eq('id', user.id);
-
-        // Show warning on last free search
-        if (newCount === 2) {
-          toast({
-            title: "Last Free Search Used",
-            description: "Subscribe now for just $4.99/mo to keep protecting yourself from stolen items.",
-            variant: "default",
-          });
-        }
+        toast({
+          title: "Subscription Required",
+          description: "Subscribe for just $1/month for unlimited verifications.",
+          variant: "destructive",
+        });
+        navigate('/pricing', { state: { reason: 'no-subscription' } });
+        return null;
       }
     } catch (profileError) {
       console.error('[useParallelVerification] Profile check error:', profileError);
-      // Continue with verification even if profile check fails
     }
 
     setIsLoading(true);

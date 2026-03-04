@@ -253,42 +253,16 @@ export const createServiceSchema = () => ({
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Verification Services",
-    "numberOfItems": 3,
+    "numberOfItems": 1,
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Free Consumer Verification",
-          "description": "Basic stolen goods verification protecting innocent consumers with 2 free searches per day"
+          "name": "Unlimited Verification",
+          "description": "Unlimited stolen goods verification — all item types, all databases, IMEI, VIN, serial numbers, license plates, firearms"
         },
-        "price": "0",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
-        "url": `${SITE_CONFIG.url}/pricing`
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Enterprise API",
-          "description": "Real-time verification API for businesses to integrate stolen goods checking into their platforms"
-        },
-        "price": "99.00",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
-        "url": `${SITE_CONFIG.url}/pricing`
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Premium Protection",
-          "description": "Unlimited verifications with detailed reports, priority support, and advanced fraud protection"
-        },
-        "price": "9.99",
+        "price": "1.00",
         "priceCurrency": "USD",
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
@@ -356,7 +330,7 @@ export const createFAQSchema = () => ({
       "name": "How do I check if something is stolen before I buy it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's free checker. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier."
+        "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. Unlimited verifications for $1/month."
       }
     },
     {
@@ -364,7 +338,7 @@ export const createFAQSchema = () => ({
       "name": "Can I check if a phone is stolen for free?",
       "acceptedAnswer": {
         "@type": "Answer", 
-        "text": "Yes! SafeOrStolen offers FREE IMEI checks—4 verifications per day for registered users at no cost. Check if any phone (iPhone, Samsung, Android) is stolen before buying on Facebook Marketplace, OfferUp, or Craigslist. For unlimited checks, premium plans start at $7.99/month."
+        "text": "SafeOrStolen offers unlimited IMEI checks for just $1/month. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from 100+ databases including GSMA and carrier blacklists."
       }
     },
     {
@@ -380,7 +354,7 @@ export const createFAQSchema = () => ({
       "name": "How do I avoid buying stolen goods on Facebook Marketplace?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it FREE on SafeOrStolen.com. 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues. 99.7% accuracy rate trusted by 50,000+ buyers."
+        "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it on SafeOrStolen.com ($1/month unlimited). 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues."
       }
     },
     {

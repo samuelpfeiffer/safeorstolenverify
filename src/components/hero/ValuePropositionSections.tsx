@@ -56,7 +56,7 @@ export const ValuePropositionSections = () => {
                   className="border-sos-lime text-sos-lime hover:bg-sos-lime hover:text-sos-dark"
                   onClick={() => navigate('/verify')}
                 >
-                  Try Free Check
+                  Start Verifying
                 </Button>
               </div>
             </CardContent>
