@@ -31,89 +31,33 @@ export const ConversionOptimizedPricing = ({
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-sos-lime to-sos-orange bg-clip-text text-transparent">
-          Simple, Affordable Protection
+          Unlimited Protection. $1/Month.
         </h1>
         <p className="text-xl text-foreground max-w-3xl mx-auto mb-6">
-          Run 2 free stolen-item checks with no card.<br />
-          Then unlock unlimited checks for just <span className="font-bold text-sos-lime">$4.99/month</span> – less than one cup of coffee to avoid a $300+ mistake.
+          Every verification. Every item type. Every database.<br />
+          Just <span className="font-bold text-sos-lime">$1/month</span> – less than a pack of gum to avoid a $300+ mistake.
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <span className="flex items-center gap-1 text-sos-lime font-semibold">
-            <Zap className="w-4 h-4" /> 2 Free Checks Included
+            <Zap className="w-4 h-4" /> Unlimited Checks
           </span>
           <span className="flex items-center gap-1 text-muted-foreground">
-            <Shield className="w-4 h-4" /> No Credit Card Required
+            <Shield className="w-4 h-4" /> Cancel Anytime
           </span>
         </div>
       </div>
 
       {/* Main Pricing Cards */}
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-        {/* Free Tier */}
-        <Card className="relative p-8 transition-all duration-300 hover:scale-[1.02] border border-border hover:border-sos-lime/50">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold mb-2">Free</h3>
-            <p className="text-muted-foreground text-sm">Try before you buy</p>
-          </div>
-
-          <div className="mb-6">
-            <div className="flex items-baseline">
-              <span className="text-5xl font-black">$0</span>
-              <span className="text-muted-foreground ml-2">forever</span>
-            </div>
-            <p className="text-sm text-sos-lime mt-2 font-semibold">
-              {FREE_SEARCH_LIMIT} free verification checks
-            </p>
-          </div>
-
-          <ul className="space-y-3 mb-8">
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-sos-lime flex-shrink-0 mt-0.5" />
-              <span className="text-sm">{FREE_SEARCH_LIMIT} free stolen-item checks</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-sos-lime flex-shrink-0 mt-0.5" />
-              <span className="text-sm">IMEI, VIN, license plate & serial numbers</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-sos-lime flex-shrink-0 mt-0.5" />
-              <span className="text-sm">No credit card required</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="w-5 h-5 text-sos-lime flex-shrink-0 mt-0.5" />
-              <span className="text-sm">Instant verification results</span>
-            </li>
-          </ul>
-
-          <Button 
-            onClick={() => handleSubscribeClick('Free Trial')} 
-            disabled={loadingTier === 'Free Trial'} 
-            className="w-full text-lg font-bold py-6 bg-primary hover:bg-primary/90" 
-            size="lg"
-          >
-            {loadingTier === 'Free Trial' ? (
-              <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                Processing...
-              </>
-            ) : (
-              <>
-                Get Started Free
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </>
-            )}
-          </Button>
-        </Card>
-
-        {/* Unlimited Tier */}
+      <div className="max-w-lg mx-auto mb-16">
+        {/* Unlimited Tier - Single Card */}
         <Card className="relative p-8 transition-all duration-300 hover:scale-[1.02] border-2 border-sos-lime shadow-2xl shadow-sos-lime/30 bg-gradient-to-b from-card to-sos-lime/5">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sos-lime to-sos-orange text-black px-6 py-2 rounded-full text-sm font-bold flex items-center gap-1">
-            <Star className="w-4 h-4 fill-current" /> BEST VALUE
+            <Star className="w-4 h-4 fill-current" /> UNLIMITED EVERYTHING
           </div>
           
-          <div className="mb-6">
+          <div className="mb-6 mt-4">
             <h3 className="text-2xl font-bold mb-2">Unlimited</h3>
-            <p className="text-muted-foreground text-sm">For active buyers & sellers</p>
+            <p className="text-muted-foreground text-sm">Every verification. Every item type.</p>
           </div>
 
           <div className="mb-6">
@@ -122,7 +66,7 @@ export const ConversionOptimizedPricing = ({
               <span className="text-muted-foreground ml-2">/month</span>
             </div>
             <p className="text-sm text-sos-lime mt-2 font-semibold flex items-center gap-1">
-              <Coffee className="w-4 h-4" /> Less than a cup of coffee
+              <Coffee className="w-4 h-4" /> Less than a pack of gum
             </p>
           </div>
 
@@ -148,27 +92,27 @@ export const ConversionOptimizedPricing = ({
               </>
             ) : (
               <>
-                Unlock Unlimited
+                Get Unlimited — $1/month
                 <ArrowRight className="ml-2 h-5 w-5" />
               </>
             )}
           </Button>
           
           <p className="text-center text-xs text-muted-foreground mt-3">
-            🔒 Secure checkout • Cancel anytime
+            🔒 Secure checkout • Cancel anytime • 30-day money-back guarantee
           </p>
         </Card>
       </div>
 
       {/* Value Proposition */}
       <div className="max-w-2xl mx-auto text-center mb-12 p-6 bg-card rounded-xl border border-border">
-        <h3 className="text-xl font-bold mb-3">Why Pay $4.99/month?</h3>
+        <h3 className="text-xl font-bold mb-3">Why Pay $1/month?</h3>
         <p className="text-muted-foreground mb-4">
           The average stolen phone costs buyers <span className="font-bold text-destructive">$300-$1,000</span> in losses.
           A stolen car? <span className="font-bold text-destructive">$5,000-$30,000</span>.
         </p>
         <p className="text-sos-lime font-semibold">
-          SafeOrStolen Unlimited costs less than one coffee per month to protect every purchase.
+          SafeOrStolen costs $1/month to protect every purchase. No excuses.
         </p>
       </div>
 
@@ -192,9 +136,9 @@ export const ConversionOptimizedPricing = ({
             </p>
           </div>
           <div className="p-4 rounded-lg bg-card border border-border">
-            <h4 className="font-semibold mb-2">Is there really no catch with the free checks?</h4>
+            <h4 className="font-semibold mb-2">Is there a free tier?</h4>
             <p className="text-sm text-muted-foreground">
-              No catch. Sign up, get 2 free verifications, no credit card needed. We want you to try before you buy.
+              We've eliminated the free tier to offer the lowest price possible. At $1/month, every user gets unlimited access to all features.
             </p>
           </div>
           <div className="p-4 rounded-lg bg-card border border-border">

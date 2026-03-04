@@ -78,8 +78,8 @@ export const useSearchLimits = () => {
   const consumeSearch = async (): Promise<boolean> => {
     if (!user) {
       toast({
-        title: "Sign Up Required",
-        description: "Create a free account to get 2 free verifications.",
+        title: "Subscription Required",
+        description: "Subscribe for just $1/month to get unlimited verifications.",
         variant: "destructive",
       });
       return false;
@@ -118,8 +118,8 @@ export const useSearchLimits = () => {
 
     if (hasReachedLimit) {
       toast({
-        title: "Free Checks Used",
-        description: "You've used your 2 free checks. Unlock unlimited for $4.99/month.",
+        title: "Subscription Required",
+        description: "Subscribe for just $1/month for unlimited verifications.",
         variant: "destructive",
       });
       return false;

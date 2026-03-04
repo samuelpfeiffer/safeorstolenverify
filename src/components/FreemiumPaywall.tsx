@@ -133,7 +133,7 @@ export const FreemiumPaywall: React.FC<FreemiumPaywallProps> = ({
           )}
           <div className="flex flex-col items-start">
             <span className="font-bold">Unlock Unlimited Verifications</span>
-            <span className="text-xs opacity-90">$4.99/mo • Unlimited checks • Cancel anytime</span>
+            <span className="text-xs opacity-90">$1/mo • Unlimited checks • Cancel anytime</span>
           </div>
         </Button>
 

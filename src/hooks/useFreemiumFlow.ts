@@ -98,8 +98,8 @@ export const useFreemiumFlow = () => {
   const consumeSearch = async (): Promise<boolean> => {
     if (!user) {
       toast({
-        title: "Sign Up Required",
-        description: "Create a free account to get 2 free verifications.",
+        title: "Subscription Required",
+        description: "Subscribe for just $1/month to get unlimited verifications.",
         variant: "destructive"
       });
       return false;
@@ -144,8 +144,8 @@ export const useFreemiumFlow = () => {
     if (searchCount >= FREE_SEARCH_LIMIT) {
       setShowPaywall(true);
       toast({
-        title: "Free Checks Used",
-        description: "Upgrade to Unlimited for $4.99/month.",
+        title: "Subscription Required",
+        description: "Get unlimited verifications for just $1/month.",
         variant: "destructive"
       });
       return false;
