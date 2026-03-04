@@ -9,7 +9,7 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
-    const { fingerprint, user_id } = await req.json()
+    const { fingerprint } = await req.json()
 
     if (!fingerprint) {
       return new Response(
@@ -22,6 +22,20 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     )
+
+    // Extract user_id from JWT if present — never trust client-supplied user_id
+    let user_id: string | null = null
+    const authHeader = req.headers.get('authorization')
+    if (authHeader) {
+      const token = authHeader.replace('Bearer ', '')
+      const { createClient: createAuthClient } = await import("https://esm.sh/@supabase/supabase-js@2.39.7")
+      const authClient = createAuthClient(
+        Deno.env.get('SUPABASE_URL')!,
+        Deno.env.get('SUPABASE_ANON_KEY')!
+      )
+      const { data: { user } } = await authClient.auth.getUser(token)
+      user_id = user?.id ?? null
+    }
 
     // Check for active subscription (by user_id OR fingerprint)
     let sub = null;
@@ -167,7 +181,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('check-gate error:', error)
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: 'Internal server error' }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
   }
