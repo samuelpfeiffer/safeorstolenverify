@@ -21,14 +21,14 @@ export const OPTIMAL_META_LENGTH = { min: 155, max: 160 };
  */
 export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
   // CORE PAGES (155-160 chars each)
-  '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. 2 free searches. Results in 3 seconds.', // 159 chars
-  '/imei-checker': 'Free IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and law enforcement databases.', // 158 chars
-  '/vin-checker': 'Free VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against NICB and DMV databases. Better than Carfax.', // 157 chars (adjusted)
-  '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Free lookup from DMV and law enforcement databases across all 50 states. Instant verification.', // 159 chars
-  '/check-phone': 'Check if a phone is stolen before buying. Free IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. Free check.', // 158 chars
-  '/check-car': 'Check if a car is stolen before buying. Free VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax for theft.', // 155 chars
-  '/check-bike': 'Check if a bicycle is stolen before buying. Free serial number verification for road bikes, mountain bikes, e-bikes. Search BikeIndex and police data.', // 157 chars
-  '/pricing': 'Simple pricing: 2 free stolen item checks, then unlimited verifications for $4.99/month. Check IMEI, VIN, serial numbers. No hidden fees. Cancel anytime.', // 156 chars
+  '/': 'Check if phones, cars, bikes are stolen before buying. Verify IMEI, VIN, serial numbers against 100+ databases. $1/month unlimited. Results in 3 seconds.',
+  '/imei-checker': 'IMEI checker verifies if phones are stolen, blacklisted, or clean. Check iPhone, Samsung, Android against carrier and law enforcement databases. $1/mo.',
+  '/vin-checker': 'VIN checker verifies vehicle history and theft records. Check cars, trucks, motorcycles against NICB and DMV databases. Better than Carfax. $1/mo unlimited.',
+  '/license-plate-lookup': 'Check if a vehicle is stolen using license plate number. Lookup from DMV and law enforcement databases across all 50 states. Instant verification.',
+  '/check-phone': 'Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. $1/month unlimited.',
+  '/check-car': 'Check if a car is stolen before buying. VIN verification from NICB, DMV, and law enforcement databases. Safer alternative to Carfax. $1/month unlimited.',
+  '/check-bike': 'Check if a bicycle is stolen before buying. Serial number verification for road bikes, mountain bikes, e-bikes. Search BikeIndex and police data. $1/mo.',
+  '/pricing': 'Unlimited stolen item verification for $1/month. Check IMEI, VIN, serial numbers against 100+ databases. All item types. No hidden fees. Cancel anytime.',
   '/verify': 'Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from buying stolen goods on marketplaces.', // 160 chars
   '/blog': 'Expert guides on checking if phones, cars, bikes are stolen. Learn IMEI verification, VIN checks, and how to stay safe on Facebook Marketplace and eBay.', // 159 chars
   '/about': 'SafeOrStolen protects buyers and sellers from stolen goods. Over $15 billion in stolen items sold annually. Our verification service stops theft globally.', // 157 chars
@@ -40,7 +40,7 @@ export const PAGE_META_DESCRIPTIONS: Record<string, string> = {
   '/how-it-works': 'Learn how SafeOrStolen verifies phones, vehicles, electronics in 30 seconds. Check IMEI, VIN, serial numbers across global databases including NICB and GSMA.', // 159 chars
   '/database': 'Access 50+ global stolen goods databases. Real-time checks across NICB, GSMA, CheckMEND, ATF, and police databases worldwide. Most comprehensive coverage.', // 158 chars
   '/for-businesses': 'API solutions for businesses, pawn shops, and resellers. Bulk verification, compliance tools, and enterprise features. Protect your inventory from theft.', // 159 chars
-  '/firearms-check': 'Verify firearm serial numbers against ATF stolen gun database. Instant background check for gun buyers, sellers, and FFL dealers. Free verification.', // 157 chars
+  '/firearms-check': 'Verify firearm serial numbers against ATF stolen gun database. Instant check for gun buyers, sellers, and FFL dealers. $1/month unlimited verification.',
   '/serial-number-checker': 'Check serial numbers for electronics, laptops, power tools, and bikes. Verify if items are stolen before purchasing on Facebook Marketplace or Craigslist.', // 158 chars
   
   // MARKETPLACE PAGES (155-160 chars each)

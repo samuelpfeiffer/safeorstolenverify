@@ -1,7 +1,6 @@
 /**
  * Inline Checkout Component
- * One-click $2.99 payment directly in the verification flow
- * No redirects, no friction - just pay and verify
+ * Subscribe for $1/month unlimited — directly in the verification flow
  */
 
 import React, { useState } from 'react';
@@ -40,7 +39,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
     if (!isAuthenticated || !session) {
       toast({
         title: 'Sign in required',
-        description: 'Please sign in to complete secure checkout.',
+        description: 'Please sign in to subscribe.',
         variant: 'destructive',
       });
       const returnTo = `${location.pathname}${location.search}`;
@@ -52,11 +51,11 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          priceId: STRIPE_CONFIG.prices.singleVerification,
+          priceId: STRIPE_CONFIG.prices.unlimited,
           serialNumber: serialNumber || '',
           itemType: itemType || 'unknown',
-          isSubscription: false,
-          planName: 'Single Verification',
+          isSubscription: true,
+          planName: 'Unlimited Plan',
           redirectUrl: 'https://safeorstolen.com',
         },
         headers: {
@@ -97,7 +96,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
         ) : (
           <>
             <Shield className="w-5 h-5 mr-2" />
-            Unlock Full Report — $2.99
+            Subscribe — $1/month Unlimited
           </>
         )}
       </Button>
@@ -115,13 +114,13 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
                 <Shield className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-bold text-lg">Unlock Full Verification</h3>
-                <p className="text-sm text-muted-foreground">Complete stolen item check</p>
+                <h3 className="font-bold text-lg">Unlimited Verifications</h3>
+                <p className="text-sm text-muted-foreground">All item types, all databases</p>
               </div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold text-primary">$2.99</div>
-              <div className="text-xs text-muted-foreground">one-time</div>
+              <div className="text-2xl font-bold text-primary">$1</div>
+              <div className="text-xs text-muted-foreground">/month</div>
             </div>
           </div>
 
@@ -129,7 +128,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
           <div className="grid grid-cols-2 gap-2 text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-accent" />
-              <span>50+ database check</span>
+              <span>100+ databases</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-accent" />
@@ -137,11 +136,11 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-accent" />
-              <span>PDF report</span>
+              <span>PDF reports</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-accent" />
-              <span>Legal protection</span>
+              <span>Cancel anytime</span>
             </div>
           </div>
 
@@ -169,7 +168,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
             ) : (
               <>
                 <CreditCard className="w-5 h-5 mr-2" />
-                Pay $2.99 & Verify Now
+                Subscribe — $1/mo Unlimited
               </>
             )}
           </Button>

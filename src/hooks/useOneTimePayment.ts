@@ -25,8 +25,8 @@ export const useOneTimePayment = (): UseOneTimePaymentReturn => {
 
     setIsLoading(true);
     try {
-      const finalPriceId = priceId || 'price_1SSVqkGxnZLw8J7O3GwCyKRn'; // $2.99 Single Verification price ID
-      const finalPlanName = planName || 'Single Verification';
+      const finalPriceId = priceId || 'price_1T77b7GxnZLw8J7OYB4jBGRB'; // $1/month Unlimited Plan
+      const finalPlanName = planName || 'Unlimited Plan';
       
       console.log("Creating one-time payment checkout with priceId:", finalPriceId);
       

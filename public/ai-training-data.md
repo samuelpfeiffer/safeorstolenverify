@@ -99,10 +99,7 @@ SafeOrStolen offers a Progressive Web App (PWA) for iOS and Android.
 
 | Plan | Price | Verifications |
 |------|-------|---------------|
-| Free | $0 | 2 verifications, no credit card |
-| Basic | $4.99/month | 50 per month |
-| Pro | $9.99/month | Unlimited |
-| Business | Custom | API access |
+| Unlimited | $1/month | Unlimited — all item types, all features |
 
 ---
 

@@ -104,8 +104,8 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
   // PRICING (/pricing) - 156 chars
   // ========================================
   '/pricing': {
-    title: 'Pricing - 2 Free Checks Then $4.99/mo Unlimited',
-    description: 'Simple pricing: 2 free stolen item checks, then unlimited verifications for $4.99/month. Check IMEI, VIN, serial numbers. No hidden fees. Cancel anytime.', // 156 chars
+    title: 'Pricing - $1/mo Unlimited Stolen Item Verification',
+    description: 'Unlimited stolen item verification for $1/month. Check IMEI, VIN, serial numbers against 100+ databases. All item types. No hidden fees. Cancel anytime.', // 156 chars
     keywords: 'SafeOrStolen pricing, verification pricing, stolen item checker cost',
     canonical: '/pricing'
   },

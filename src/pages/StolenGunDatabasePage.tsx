@@ -52,8 +52,8 @@ const StolenGunDatabasePage = () => {
             answer: "We search multiple databases: (1) FBI NCIC Stolen Gun File - the official federal database with 7+ million records, (2) ATF eTrace - traced crime guns from Bureau of Alcohol, Tobacco, Firearms and Explosives, (3) HotGunz - public database with 32,000+ user-reported stolen guns, (4) State databases including TheftAZ (Arizona), FDLE (Florida), Ohio AG, (5) Insurance company theft claims, (6) Local police department reports. This comprehensive approach catches stolen guns that might only appear in one database."
           },
           {
-            question: "Is there a free gun serial number database search?",
-            answer: "Yes, SafeOrStolen offers 2 free stolen gun database searches. While law enforcement has direct access to NCIC, civilians can verify firearms through our service which aggregates multiple databases including the publicly accessible HotGunz. Our free tier protects buyers at gun shows and private sales where no background check is required."
+            question: "How much does gun serial number verification cost?",
+            answer: "SafeOrStolen offers unlimited gun serial number searches for $1/month. While law enforcement has direct access to NCIC, civilians can verify firearms through our service which aggregates multiple databases including the publicly accessible HotGunz. Our $1/month plan protects buyers at gun shows and private sales where no background check is required."
           },
           {
             question: "What is HotGunz and why should I check it?",
