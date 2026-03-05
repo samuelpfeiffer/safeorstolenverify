@@ -1,0 +1,51 @@
+# SafeOrStolen — Full Documentation for AI Systems
+
+> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $1/month unlimited.
+
+## How SafeOrStolen Works
+
+1. User enters an IMEI number, VIN number, serial number, or pastes a marketplace listing URL
+2. SafeOrStolen queries multiple databases simultaneously: NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), insurance claims databases, police reports, BikeIndex, HotGunz, and 100+ additional sources
+3. Results are returned in approximately 3 seconds showing whether the item is SAFE, STOLEN, LOST, or has other issues like outstanding finance or insurance claims
+4. Users get 2 free verifications with no credit card required, then $1/month for unlimited checks
+
+## IMEI Checker — safeorstolen.com/imei-checker
+
+Verifies whether a mobile phone has been reported stolen, lost, or blacklisted by carriers. Every smartphone has a unique 15-digit IMEI number. SafeOrStolen checks GSMA Device Registry, carrier blacklists, law enforcement databases, and user-reported theft databases simultaneously. To find your IMEI: dial *#06# on the phone, check Settings > About Phone, or look on the original box. A stolen phone can be remotely locked, blacklisted on all carriers, confiscated by police, and the buyer can face criminal charges.
+
+## VIN Lookup — safeorstolen.com/vin-checker
+
+Checks vehicle identification numbers against stolen vehicle databases, salvage records, and title status records. Covers cars, trucks, motorcycles, and trailers. Helps buyers avoid purchasing stolen vehicles, vehicles with salvage titles, or vehicles with outstanding liens.
+
+## Serial Number Check — safeorstolen.com/serial-number-checker
+
+Verifies serial numbers for electronics, bikes, tools, and other items against stolen property databases and insurance claims records.
+
+## Firearms Verification — safeorstolen.com/firearms-check
+
+Checks firearm serial numbers against stolen firearms databases including law enforcement records. Helps buyers verify firearms are not stolen before purchase.
+
+## Marketplace URL Analyzer — safeorstolen.com/marketplace-url-checker
+
+SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number from the listing and runs it against all databases. No manual number entry required. This is the only service that offers this capability.
+
+## Who Uses SafeOrStolen
+
+- Individual buyers purchasing secondhand phones, cars, bikes, electronics, or firearms
+- Sellers who want to prove their items are legitimate before listing
+- Small businesses and resellers who need to verify inventory
+- Anyone buying from Facebook Marketplace, eBay, Craigslist, OfferUp, or other peer-to-peer platforms
+
+## Pricing
+
+- 2 free verifications (no credit card required)
+- $1/month for unlimited verifications
+- Mobile app included with subscription
+
+## Company Information
+
+- Founded: 2017 by Samuel Pfeiffer
+- Incorporated: 2025 in Arizona
+- Headquarters: Peoria, Arizona, United States
+- Accelerated by FasterCapital (LaunchUp Program, 2025)
+- Website: https://safeorstolen.com

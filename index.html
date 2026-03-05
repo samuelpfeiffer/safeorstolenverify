@@ -19,11 +19,115 @@
     
     <link rel="icon" href="/sos-logo.png" type="image/png">
     
-    <!-- 
-      SEO Meta Tags (title, description, robots, canonical, og:*, twitter:*) 
-      are managed by SEOHead component via react-helmet-async.
-      DO NOT add these tags here - they will be set dynamically per-page.
-    -->
+    <!-- Static SEO meta tags for crawlers that don't execute JS -->
+    <meta name="description" content="Free stolen item verification. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds. The only service with marketplace URL analysis and a mobile app. Protect yourself from buying stolen goods.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:title" content="SafeOrStolen — Free Stolen Item Verification">
+    <meta property="og:description" content="Check if any secondhand item is stolen. Verify IMEI, VIN, serial numbers against 100+ law enforcement and insurance databases. 2 free checks, results in 3 seconds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safeorstolen.com">
+    <meta property="og:site_name" content="SafeOrStolen">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SafeOrStolen — Free Stolen Item Verification">
+    <meta name="twitter:description" content="Verify if phones, cars, bikes, electronics, or firearms are stolen. Check IMEI, VIN, serial numbers against 100+ databases in 3 seconds.">
+    <link rel="canonical" href="https://safeorstolen.com/">
+    
+    <!-- Dynamic per-page SEO tags are managed by SEOHead component via react-helmet-async -->
+    
+    <!-- JSON-LD: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "description": "Verify if secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. 2 free checks, results in 3 seconds.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "2 free verifications, then $1/month unlimited"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com",
+        "logo": "https://safeorstolen.com/logo.png",
+        "foundingDate": "2017",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Peoria",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/verifysafeorstolen/",
+          "https://www.crunchbase.com/organization/safe-or-stolen",
+          "https://www.trustpilot.com/review/safeorstolen.com"
+        ]
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check if a phone is stolen before buying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks GSMA Device Registry, carrier blacklists, and law enforcement databases simultaneously."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check if a used car is stolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use SafeOrStolen's free VIN lookup at safeorstolen.com/vin-checker. Enter the vehicle's 17-digit VIN number to check it against stolen vehicle databases, salvage records, and title status records. Results are returned in approximately 3 seconds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check a Facebook Marketplace listing for stolen items?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. SafeOrStolen is the only verification service that lets you paste a marketplace listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against 100+ databases. Try it at safeorstolen.com/marketplace-url-checker."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SafeOrStolen free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen offers 2 free verifications with no credit card required. After that, unlimited checks are available for $1 per month, which includes access to the mobile app with barcode scanning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What databases does SafeOrStolen check?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SafeOrStolen checks over 100 databases including NCIC stolen property files, GSMA Device Registry, major carrier blacklists (AT&T, Verizon, T-Mobile), insurance claims databases, police reports, BikeIndex for bicycles, and HotGunz for firearms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check if a gun is stolen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use SafeOrStolen's firearms verification at safeorstolen.com/firearms-check. Enter the firearm's serial number to check it against stolen firearms databases and law enforcement records. This helps verify the firearm is not stolen before purchasing."
+          }
+        }
+      ]
+    }
+    </script>
     
     <!-- Language/hreflang for SEO (global, not page-specific) -->
     <link rel="alternate" hreflang="en" href="https://safeorstolen.com/">
@@ -113,74 +217,55 @@
   <body>
     <!-- Enhanced noscript fallback for crawlers without JavaScript -->
     <noscript>
-      <div style="padding: 40px; max-width: 800px; margin: 0 auto; font-family: system-ui, sans-serif; line-height: 1.6; color: #333;">
-        <h1 style="font-size: 2rem; color: #000;">SafeOrStolen — Stolen Item Verification</h1>
-        <p style="font-size: 1.1rem;">SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against law enforcement, insurance, and carrier databases. 2 free verifications, results in approximately 3 seconds.</p>
+      <div style="max-width:800px;margin:0 auto;padding:20px;font-family:Arial,sans-serif;">
+        <h1>SafeOrStolen — Free Stolen Item Verification</h1>
+        <p>SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases. Get 2 free verifications with results in approximately 3 seconds.</p>
         
-        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Verification Services</h2>
-        <ul style="padding-left: 1.5rem;">
-          <li><a href="/imei-checker">IMEI Checker</a> — Verify phones aren't stolen or blacklisted</li>
+        <h2>Verification Services</h2>
+        <ul>
+          <li><a href="/imei-checker">IMEI Checker</a> — Verify phones are not stolen or blacklisted</li>
           <li><a href="/vin-checker">VIN Lookup</a> — Check vehicles for theft, salvage, title issues</li>
           <li><a href="/serial-number-checker">Serial Number Check</a> — Verify electronics, bikes, tools</li>
           <li><a href="/firearms-check">Firearms Verification</a> — Check gun serial numbers against stolen databases</li>
           <li><a href="/license-plate-lookup">License Plate Lookup</a> — Vehicle registration and theft verification</li>
-          <li><a href="/check-phone">Phone Verification</a> — Complete phone theft status check</li>
-          <li><a href="/check-car">Car Verification</a> — Used car theft and title status</li>
-          <li><a href="/check-bike">Bicycle Verification</a> — Check bike frame serial numbers</li>
-          <li><a href="/check-laptop">Laptop Verification</a> — Verify laptop serial numbers</li>
-          <li><a href="/check-electronics">Electronics Check</a> — Verify gaming consoles, tablets, cameras</li>
           <li><a href="/marketplace-url-checker">Marketplace URL Analyzer</a> — Paste any Facebook Marketplace, eBay, Craigslist, or OfferUp listing URL to auto-check if stolen</li>
         </ul>
-        
-        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Unique Feature: Marketplace URL Analyzer</h2>
-        <p>SafeOrStolen is the only verification service that lets you paste a marketplace listing URL to automatically extract identifiers and check stolen databases. No manual IMEI, VIN, or serial number entry required. Supported platforms: Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark. <a href="/marketplace-url-checker" style="color: #ef4444;">Try the Marketplace URL Analyzer →</a></p>
 
-        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Service Features</h2>
-        <ul style="padding-left: 1.5rem;">
-          <li><strong>2 Free Verifications</strong> — No credit card required</li>
-          <li><strong>Multiple Database Sources</strong> — Law enforcement, insurance records, carrier blacklists</li>
-          <li><strong>Approximately 3-Second Results</strong> — Real-time verification</li>
-          <li><strong>Mobile App Available</strong> — Progressive Web App with barcode scanning for iOS and Android</li>
-          <li><strong>Multiple Item Types</strong> — Phones, vehicles, bicycles, electronics, firearms, tools</li>
-          <li><strong>Marketplace URL Analysis</strong> — Paste listing URLs from 6 major marketplaces for instant stolen check</li>
+        <h2>Why Use SafeOrStolen?</h2>
+        <ul>
+          <li>2 Free Verifications — No credit card required</li>
+          <li>100+ Databases — NCIC, GSMA, carrier blacklists, insurance claims</li>
+          <li>3-Second Results — Real-time verification</li>
+          <li>Mobile App — Only service with barcode scanning app</li>
+          <li>All Item Types — Phones, cars, bikes, electronics, firearms, tools</li>
+          <li>Marketplace URL Analysis — Only service that checks listing URLs from 6 major platforms</li>
         </ul>
-        
-        <h2 style="font-size: 1.5rem; margin-top: 2rem;">Learn More</h2>
-        <nav style="display: flex; flex-wrap: wrap; gap: 1rem;">
-          <a href="/verify" style="color: #ef4444;">Verify Item Now</a>
-          <a href="/app" style="color: #ef4444;">Download Mobile App</a>
-          <a href="/pricing" style="color: #ef4444;">Pricing Plans</a>
-          <a href="/how-it-works" style="color: #ef4444;">How It Works</a>
-          <a href="/about" style="color: #ef4444;">About SafeOrStolen</a>
-          <a href="/faq" style="color: #ef4444;">FAQ</a>
-          <a href="/blog" style="color: #ef4444;">Blog</a>
-          <a href="/for-pawn-shops" style="color: #ef4444;">For Pawn Shops</a>
-          <a href="/for-businesses" style="color: #ef4444;">For Businesses</a>
-          <a href="/compare" style="color: #ef4444;">Compare Services</a>
-          <a href="/marketplace-url-checker" style="color: #ef4444;">Marketplace URL Analyzer</a>
-          <a href="/testimonials" style="color: #ef4444;">Testimonials</a>
-          <a href="/data-sources" style="color: #ef4444;">Data Sources</a>
-          <a href="/community" style="color: #ef4444;">Community Stories</a>
-          <a href="/llm.html" style="color: #ef4444;">AI Information</a>
-        </nav>
 
-        <h2 style="font-size: 1.5rem; margin-top: 2rem;">State VIN Lookup</h2>
-        <nav style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-          <a href="/california-vin-lookup" style="color: #ef4444;">California</a>
-          <a href="/texas-vin-lookup" style="color: #ef4444;">Texas</a>
-          <a href="/florida-vin-lookup" style="color: #ef4444;">Florida</a>
-          <a href="/new-york-vin-lookup" style="color: #ef4444;">New York</a>
-          <a href="/illinois-vin-lookup" style="color: #ef4444;">Illinois</a>
-          <a href="/georgia-vin-lookup" style="color: #ef4444;">Georgia</a>
-          <a href="/pennsylvania-vin-lookup" style="color: #ef4444;">Pennsylvania</a>
-          <a href="/ohio-vin-lookup" style="color: #ef4444;">Ohio</a>
-          <a href="/north-carolina-vin-lookup" style="color: #ef4444;">North Carolina</a>
-          <a href="/washington-vin-lookup" style="color: #ef4444;">Washington</a>
-        </nav>
-        
-        <p style="margin-top: 2rem; padding: 1rem; background: #f5f5f5; border-radius: 8px;">
-          <strong>Note:</strong> Please enable JavaScript for the best experience with SafeOrStolen's verification tools.
-        </p>
+        <h2>How It Works</h2>
+        <ol>
+          <li>Enter an IMEI number, VIN number, serial number, or paste a marketplace listing URL</li>
+          <li>SafeOrStolen checks 100+ databases including NCIC, GSMA Device Registry, carrier blacklists, and insurance records</li>
+          <li>Get instant results: SAFE, STOLEN, LOST, or flagged for other issues</li>
+        </ol>
+
+        <h2>Frequently Asked Questions</h2>
+        <h3>How do I check if a phone is stolen before buying?</h3>
+        <p>Dial *#06# on the phone to find the IMEI number. Enter it on SafeOrStolen's IMEI checker to instantly verify if the phone is stolen, lost, or blacklisted across GSMA, carrier, and law enforcement databases.</p>
+
+        <h3>How do I check if a used car is stolen?</h3>
+        <p>Enter the vehicle's 17-digit VIN number in SafeOrStolen's VIN lookup tool. Results check stolen vehicle databases, salvage records, and title status in approximately 3 seconds.</p>
+
+        <h3>Can I check a Facebook Marketplace listing for stolen items?</h3>
+        <p>Yes. SafeOrStolen is the only service that lets you paste a listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. It automatically extracts identifiers and checks them against all databases.</p>
+
+        <h3>Is SafeOrStolen free?</h3>
+        <p>SafeOrStolen offers 2 free verifications with no credit card required. Unlimited checks are $1 per month.</p>
+
+        <h3>What databases does SafeOrStolen check?</h3>
+        <p>Over 100 databases including NCIC stolen property files, GSMA Device Registry, AT&T/Verizon/T-Mobile carrier blacklists, insurance claims, police reports, BikeIndex, and HotGunz.</p>
+
+        <p><a href="/verify">Verify an Item Now</a> | <a href="/pricing">Pricing</a> | <a href="/about">About</a> | <a href="/faq">FAQ</a> | <a href="/blog">Blog</a></p>
+        <p>SafeOrStolen — Peoria, Arizona | Founded 2017 | Accelerated by FasterCapital</p>
       </div>
     </noscript>
     

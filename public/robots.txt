@@ -1,209 +1,60 @@
-# Robots.txt for SafeOrStolen.com
-# Optimized for maximum search engine and AI crawler visibility (2026 GEO Standard)
-# Last Updated: 2026-03-02
+# SafeOrStolen robots.txt
+# Allow all search engines and AI crawlers
 
 User-agent: *
 Allow: /
 
-# Important content pages - Explicit allow
-Allow: /verify
-Allow: /pricing
-Allow: /about
-Allow: /faq
-Allow: /app
-Allow: /download
-Allow: /how-it-works
-Allow: /testimonials
-Allow: /blog
-Allow: /imei-checker
-Allow: /vin-checker
-Allow: /serial-number-checker
-Allow: /check-car
-Allow: /check-phone
-Allow: /check-bike
-Allow: /check-laptop
-Allow: /check-firearm
-Allow: /license-plate-lookup
-Allow: /for-pawn-shops
-Allow: /features
-Allow: /community
-Allow: /data-sources
-Allow: /resource-center
-Allow: /youtube
-Allow: /marketplace-url-checker
-
-# AI Discovery Files - Explicit allow (2026 llms.txt v1.1 standard)
-Allow: /llms.txt
-Allow: /llm.html
-Allow: /ai.txt
-Allow: /identity.json
-Allow: /ai-context.json
-Allow: /ai-training-data.md
-Allow: /.well-known/llms.txt
-Allow: /.well-known/ai-plugin.json
-
-# Block duplicate content from query strings
-Disallow: /*?
-Disallow: /*&
-
-# Block API and private areas
-Disallow: /api/
-Disallow: /auth/
-Disallow: /dashboard/
-Disallow: /account/
-Disallow: /admin/
-Disallow: /profile
-Disallow: /search-history
-Disallow: /receipts
-Disallow: /checkout-redirect
-Disallow: /verification-success
-Disallow: /analytics
-
-# Block internal data files from search indexing
-Disallow: /mobile-app-ai-context.json
-
-# ==================================================
-# AI & LLM Crawlers - Full Access (2026 Updated)
-# ==================================================
-
-# OpenAI - GPTBot (training) + OAI-SearchBot (live ChatGPT search)
+# Explicitly allow AI crawlers
 User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic (Claude)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
-User-agent: anthropic-ai
-Allow: /
-
-# Google AI (Gemini / AI Overviews)
 User-agent: Google-Extended
 Allow: /
 
-User-agent: GoogleOther
+User-agent: Googlebot
 Allow: /
 
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-
-# Microsoft Copilot
 User-agent: Bingbot
 Allow: /
 
-# Meta AI (2026 updated user-agent)
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# Apple (Siri, Apple Intelligence)
 User-agent: Applebot
-Allow: /
-Applebot-Extended: Allow: /
-
-# Amazon
-User-agent: Amazonbot
-Allow: /
-
-# Other AI Crawlers (2026)
-User-agent: cohere-ai
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-User-agent: AI2Bot
-Allow: /
-
-User-agent: Diffbot
-Allow: /
-
-User-agent: CCBot
 Allow: /
 
 User-agent: Bytespider
 Allow: /
 
-User-agent: ImagesiftBot
+User-agent: cohere-ai
 Allow: /
 
-User-agent: Timpibot
+User-agent: Diffbot
 Allow: /
 
-# DeepSeek AI (2026)
-User-agent: DeepSeekBot
+User-agent: meta-externalagent
 Allow: /
 
-# Mistral AI (2026)
-User-agent: MistralBot
-Allow: /
+# Disallow admin and internal paths
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
 
-# xAI / Grok (2026)
-User-agent: xAI-Grok
-Allow: /
-
-# Brave Search AI
-User-agent: BraveBot
-Allow: /
-
-# ==================================================
-# Traditional Search Engine Crawlers
-# ==================================================
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Googlebot-Mobile
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-# ==================================================
-# Social Media Bots
-# ==================================================
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: Discordbot
-Allow: /
-
-# Sitemap location
+# Sitemaps
 Sitemap: https://safeorstolen.com/sitemap.xml
+
+# LLM information files
+# llms.txt: https://safeorstolen.com/llms.txt
+# llms-full.txt: https://safeorstolen.com/llms-full.txt
