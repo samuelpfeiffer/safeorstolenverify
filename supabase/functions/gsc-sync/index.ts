@@ -25,7 +25,30 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
-    console.log('[gsc-sync] Starting automated GSC sync');
+    // --- Authentication: require admin user ---
+    const authHeader = req.headers.get('authorization');
+    if (!authHeader?.startsWith('Bearer ')) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const authClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      { global: { headers: { Authorization: authHeader } } }
+    );
+
+    const { data: isAdmin } = await authClient.rpc('is_admin_user');
+    if (!isAdmin) {
+      return new Response(JSON.stringify({ error: 'Forbidden: admin access required' }), {
+        status: 403,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    console.log('[gsc-sync] Starting automated GSC sync (admin authenticated)');
 
     const supabaseAdmin = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
@@ -129,8 +152,9 @@ serve(async (req) => {
 
   } catch (error) {
     console.error('[gsc-sync] Error:', error);
+    console.error('[gsc-sync] Error:', error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: 'Internal server error' }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
     );
   }
