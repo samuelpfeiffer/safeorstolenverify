@@ -90,6 +90,7 @@ const FirearmSerialNumberVerification = () => {
               <span>10 min read</span>
             </div>
           </header>
+          <BlogHeroImage src={blogImages.firearm} alt="Firearm serial number close-up with forensic lighting - gun stolen verification guide" />
 
           {/* Warning Section */}
           <section className="mb-12">

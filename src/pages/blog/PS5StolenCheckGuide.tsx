@@ -115,6 +115,9 @@ const PS5StolenCheckGuide = () => {
               Before buying a used PS5 from Facebook Marketplace, Craigslist, OfferUp, or any private seller, 
               learn how to verify it's not stolen property.
             </p>
+            <div className="mt-8">
+              <BlogHeroImage src={blogImages.ps5} alt="PS5 console serial number being checked with pen pointing - PlayStation 5 stolen check" />
+            </div>
           </div>
         </header>
 

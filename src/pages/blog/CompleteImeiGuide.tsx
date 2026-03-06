@@ -61,6 +61,8 @@ export default function CompleteImeiGuide() {
             </p>
           </div>
 
+          <BlogHeroImage src={blogImages.imeiChecker} alt="iPhone showing IMEI settings with verification shield - complete IMEI guide" />
+
           <div className="prose prose-lg max-w-none">
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <div className="flex items-start gap-3">

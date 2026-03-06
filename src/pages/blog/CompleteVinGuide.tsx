@@ -51,6 +51,8 @@ export default function CompleteVinGuide() {
           </div>
         </header>
 
+        <BlogHeroImage src={blogImages.vinCheck} alt="Person scanning VIN barcode on car dashboard with smartphone - VIN check guide" />
+
         <div className="prose prose-lg max-w-none">
           <h2>Why VIN Checks Are Non-Negotiable in 2026</h2>
           <p>Buying a used car without checking the VIN is like buying a house without an inspection. In 2026, the FBI's NCIC database recorded over 873,000 stolen vehicles—a 12% increase from 2025. Additionally:</p>

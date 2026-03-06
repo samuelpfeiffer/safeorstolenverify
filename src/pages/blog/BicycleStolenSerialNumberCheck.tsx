@@ -90,6 +90,7 @@ const BicycleStolenSerialNumberCheck = () => {
               <span>8 min read</span>
             </div>
           </header>
+          <BlogHeroImage src={blogImages.bicycle} alt="Person checking bicycle serial number with flashlight at golden hour - bike stolen check" />
 
           {/* Stats */}
           <section className="mb-12">
