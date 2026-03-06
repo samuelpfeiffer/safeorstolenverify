@@ -16,20 +16,27 @@ export const SOSFooter: React.FC = () => {
         { label: 'IMEI Checker', to: '/imei-checker' },
         { label: 'VIN Checker', to: '/vin-checker' },
         { label: 'Serial Checker', to: '/serial-number-checker' },
+        { label: 'License Plates', to: '/license-plate-lookup' },
         { label: 'Check Phone', to: '/check-phone' },
         { label: 'Check Car', to: '/check-car' },
         { label: 'Firearms Check', to: '/firearms-check' },
+        { label: 'URL Checker', to: '/marketplace-url-checker' },
         { label: 'Mobile App', to: '/app' },
       ]
     },
     {
       title: 'For Businesses',
       links: [
+        { label: 'All Businesses', to: '/for-businesses' },
         { label: 'Pawn Shops', to: '/for-pawn-shops' },
         { label: 'Dealers', to: '/for-dealers' },
         { label: 'Marketplaces', to: '/for-marketplaces' },
         { label: 'Auction Houses', to: '/for-auction-houses' },
-        { label: 'All Businesses', to: '/for-businesses' },
+        { label: 'For Sellers', to: '/for-sellers' },
+        { label: 'Electronics Resellers', to: '/for-electronics-resellers' },
+        { label: 'Insurance', to: '/for-insurance-companies' },
+        { label: 'Law Enforcement', to: '/for-law-enforcement' },
+        { label: 'API Docs', to: '/api' },
       ]
     },
     {
@@ -39,8 +46,12 @@ export const SOSFooter: React.FC = () => {
         { label: 'How It Works', to: '/how-it-works' },
         { label: 'FAQ', to: '/faq' },
         { label: 'Pricing', to: '/pricing' },
-        { label: 'Compare Plans', to: '/compare' },
+        { label: 'Compare Services', to: '/compare' },
         { label: 'Testimonials', to: '/testimonials' },
+        { label: 'Data Sources', to: '/data-sources' },
+        { label: 'Resource Center', to: '/resource-center' },
+        { label: 'News', to: '/news' },
+        { label: 'Stolen Database', to: '/stolen-database' },
       ]
     },
     {
@@ -48,13 +59,37 @@ export const SOSFooter: React.FC = () => {
       links: [
         { label: 'About Us', to: '/about' },
         { label: 'Press Kit', to: '/press-kit' },
+        { label: 'Press Release', to: '/press-release' },
+        { label: 'YouTube', to: '/youtube' },
+        { label: 'Community', to: '/community' },
         { label: 'Terms', to: '/terms' },
         { label: 'Privacy', to: '/privacy' },
+        { label: 'Sitemap', to: '/sitemap' },
       ]
     },
   ];
 
   const sitemapSections = [
+    {
+      title: 'Item Checks',
+      links: [
+        { label: 'Check iPhone', to: '/check-iphone-stolen' },
+        { label: 'Check Samsung', to: '/check-samsung-stolen' },
+        { label: 'Check Android', to: '/check-android' },
+        { label: 'Check Laptop', to: '/check-laptop' },
+        { label: 'Check Bike', to: '/check-bike' },
+        { label: 'Check E-Bike', to: '/check-ebike' },
+        { label: 'Check Xbox', to: '/check-xbox' },
+        { label: 'Check PS5', to: '/check-ps5' },
+        { label: 'Check Boat', to: '/check-boat' },
+        { label: 'Check Jewelry', to: '/check-jewelry' },
+        { label: 'Check Tools', to: '/check-tools' },
+        { label: 'Check Appliances', to: '/check-appliances' },
+        { label: 'Check Electronics', to: '/check-electronics' },
+        { label: 'Check Camera', to: '/check-camera-stolen' },
+        { label: 'Check Watch', to: '/check-watch-stolen' },
+      ]
+    },
     {
       title: 'State VIN Checks',
       links: [
@@ -71,32 +106,94 @@ export const SOSFooter: React.FC = () => {
       ]
     },
     {
-      title: 'License Plates',
+      title: 'License Plates (Top 11)',
       links: [
         { label: 'California', to: '/california-license-plate-lookup' },
         { label: 'Texas', to: '/texas-license-plate-lookup' },
         { label: 'Florida', to: '/florida-license-plate-lookup' },
         { label: 'New York', to: '/new-york-license-plate-lookup' },
         { label: 'Illinois', to: '/illinois-license-plate-lookup' },
+        { label: 'Georgia', to: '/georgia-license-plate-lookup' },
+        { label: 'Pennsylvania', to: '/pennsylvania-license-plate-lookup' },
+        { label: 'Ohio', to: '/ohio-license-plate-lookup' },
+        { label: 'North Carolina', to: '/north-carolina-license-plate-lookup' },
+        { label: 'Washington', to: '/washington-license-plate-lookup' },
+        { label: 'Arizona', to: '/arizona-license-plate-lookup' },
       ]
     },
     {
-      title: 'Marketplaces',
+      title: 'All Marketplaces',
       links: [
         { label: 'Facebook Marketplace', to: '/facebook-marketplace-stolen-check' },
         { label: 'Craigslist', to: '/craigslist-safety-verification' },
         { label: 'OfferUp', to: '/offerup-verify-not-stolen' },
         { label: 'eBay', to: '/ebay-stolen-item-check' },
+        { label: 'Mercari', to: '/mercari-stolen-check' },
+        { label: 'Poshmark', to: '/poshmark-stolen-check' },
+        { label: 'StockX', to: '/stockx-verification' },
+        { label: 'Letgo', to: '/letgo-stolen-check' },
       ]
     },
     {
-      title: 'Compare',
+      title: 'Compare Services',
       links: [
         { label: 'vs CheckMEND', to: '/vs-checkmend' },
         { label: 'vs IMEI.info', to: '/vs-imeiinfo' },
         { label: 'vs Swappa', to: '/vs-swappa' },
         { label: 'vs Carfax', to: '/vs-carfax' },
         { label: 'vs AutoCheck', to: '/vs-autocheck' },
+        { label: 'vs StolenRegister', to: '/vs-stolenregister' },
+        { label: 'vs BikeIndex', to: '/vs-bikeindex' },
+        { label: 'vs DeviceCheck', to: '/vs-devicecheck-ca' },
+        { label: 'vs FastBound', to: '/vs-fastbound' },
+        { label: 'Carfax Alternative', to: '/carfax-alternative-free' },
+        { label: 'NICB Alternative', to: '/nicb-alternative' },
+        { label: 'HotGunz Alternative', to: '/hotgunz-alternative' },
+        { label: 'Best Checkers 2026', to: '/best-stolen-item-checkers-2026' },
+      ]
+    },
+    {
+      title: 'City Checks',
+      links: [
+        { label: 'Los Angeles', to: '/stolen-check-los-angeles' },
+        { label: 'New York City', to: '/stolen-check-new-york-city' },
+        { label: 'Chicago', to: '/stolen-check-chicago' },
+        { label: 'Houston', to: '/stolen-check-houston' },
+        { label: 'Phoenix', to: '/stolen-check-phoenix' },
+        { label: 'Philadelphia', to: '/stolen-check-philadelphia' },
+        { label: 'San Antonio', to: '/stolen-check-san-antonio' },
+        { label: 'San Diego', to: '/stolen-check-san-diego' },
+        { label: 'Dallas', to: '/stolen-check-dallas' },
+        { label: 'San Jose', to: '/stolen-check-san-jose' },
+        { label: 'Miami', to: '/stolen-check-miami' },
+      ]
+    },
+    {
+      title: 'Hub Pages',
+      links: [
+        { label: 'Firearms Serial Check', to: '/firearms-serial-number-check' },
+        { label: 'Free Vehicle Check', to: '/free-stolen-vehicle-check' },
+        { label: 'Serial Number Check', to: '/serial-number-stolen-check' },
+        { label: 'Stolen Gun Database', to: '/stolen-gun-database' },
+        { label: 'Gun Serial Lookup', to: '/gun-serial-number-lookup' },
+        { label: 'Stolen Phone Checker', to: '/stolen-phone-checker' },
+        { label: 'Phone Blacklist Check', to: '/phone-blacklist-check' },
+        { label: 'Is My Phone Stolen?', to: '/is-my-phone-stolen' },
+        { label: 'Is This Car Stolen?', to: '/is-this-car-stolen' },
+        { label: 'TheftAZ', to: '/theftaz' },
+      ]
+    },
+    {
+      title: 'Guides',
+      links: [
+        { label: 'eBay Buyer Protection', to: '/guides/ebay-buyer-protection' },
+        { label: 'Craigslist Verification', to: '/guides/verify-craigslist-items' },
+        { label: 'OfferUp Scam Protection', to: '/guides/offerup-scam-protection' },
+        { label: 'FB Marketplace Safety', to: '/facebook-marketplace-safety' },
+        { label: 'OfferUp Safety', to: '/offerup-safety' },
+        { label: 'Comprehensive Guide', to: '/comprehensive-guide' },
+        { label: 'How to Check Phone', to: '/how-to-check-if-phone-stolen' },
+        { label: 'How to Check Car', to: '/how-to-check-if-car-stolen' },
       ]
     },
   ];
