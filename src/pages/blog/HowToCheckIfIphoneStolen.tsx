@@ -6,6 +6,8 @@ import { CheckCircle, AlertTriangle, Smartphone, Shield, ArrowRight, Download } 
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const HowToCheckIfIphoneStolen = () => {
   return (
