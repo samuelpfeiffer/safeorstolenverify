@@ -35,7 +35,7 @@ export const AggressiveConversionBanner = () => {
             <Shield className="h-8 w-8" />
             <div>
               <p className="font-bold text-lg">Don't Buy Stolen Goods!</p>
-              <p className="text-sm opacity-90">Try 2 free checks, then just $1/month unlimited. Cancel anytime.</p>
+              <p className="text-sm opacity-90">Unlimited verifications for just $1/month. Cancel anytime.</p>
             </div>
           </div>
           
