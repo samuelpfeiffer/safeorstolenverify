@@ -505,6 +505,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── SHARE & REFERRAL SECTION ─────────────────── */}
+      <ShareVerification />
+
       {/* ── PRESS, TRUST & CREDENTIALS ──────────────────── */}
       <section className="py-16 px-4 bg-muted/30 border-y border-border">
         <div className="max-w-5xl mx-auto">
