@@ -20,6 +20,7 @@ import { ParallelVerificationDisplay } from '@/components/verification/ParallelV
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
+import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';
 import { WhySignUpCard } from '@/components/conversion/WhySignUpCard';
 import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -476,6 +477,14 @@ const VerifyPage = () => {
                   {progress}
                 </div>
               )}
+
+              {/* Free checks remaining display */}
+              <SearchLimitDisplay
+                hasReachedLimit={checksRemaining !== null && checksRemaining <= 0}
+                remainingSearches={checksRemaining ?? remainingSearches}
+                isSubscribed={isSubscribed}
+                isAuthenticated={isAuthenticated}
+              />
             </form>
           </CardContent>
         </Card>
