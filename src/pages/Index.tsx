@@ -122,7 +122,7 @@ const RECENT_VERIFICATIONS = [
 const FAQ_ITEMS = [
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'SafeOrStolen offers unlimited verifications for just $1/month. All item types, all databases, cancel anytime. The best value in stolen item verification.',
+    a: 'SafeOrStolen gives you 2 free verifications — no credit card required. After that, unlimited verifications are just $1/month. All item types, all databases, cancel anytime. 30-day money-back guarantee.',
   },
   {
     q: 'What databases does SafeOrStolen check?',
