@@ -7,6 +7,8 @@ import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { SEOHead } from '@/components/seo/SEOHead';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const PS5StolenCheckGuide = () => {
   const publishDate = "2024-12-23";
