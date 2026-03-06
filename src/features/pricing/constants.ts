@@ -1,6 +1,6 @@
 /**
  * Pricing Module - Constants & Configuration
- * Simplified pricing: Unlimited ($1/month) — no free tier
+ * 2 free checks lead magnet, then $1/month unlimited
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
@@ -8,8 +8,8 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
 /**
  * SIMPLIFIED PRICING MODEL (March 2026):
  * 
- * Single plan: $1.00/month — unlimited everything
- * No free tier. No free searches. Subscribe to use.
+ * 2 free checks as lead magnet (no credit card required)
+ * Then $1.00/month — unlimited everything
  * 
  * Stripe Price ID: price_1T77b7GxnZLw8J7OYB4jBGRB ($1.00/month recurring)
  * Product ID: prod_TDfkVL8GE1dRt5
