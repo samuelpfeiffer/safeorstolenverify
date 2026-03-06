@@ -40,7 +40,7 @@ export const useParallelVerification = () => {
       return null;
     }
 
-    // Check subscription status - no free searches
+    // Check subscription status - 2 free checks, then subscription required
     try {
       const { data: profile } = await supabase
         .from('profiles')
