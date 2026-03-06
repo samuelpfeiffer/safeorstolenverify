@@ -3,6 +3,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Shield, CheckCircle, DollarSign, Clock, ArrowRight, Star, BadgeCheck, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const HowToSellVerifiedItems = () => {
   const structuredData = [
