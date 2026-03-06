@@ -172,8 +172,8 @@ const Index = () => {
 
       {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
       <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold">
-        ⚠️ Over $15 billion in property is stolen annually in the U.S. — check any item FREE before you buy or sell.
-        <Link to="/verify" className="underline font-black ml-2">Verify Now →</Link>
+        ⚠️ Over $15 billion in property is stolen annually in the U.S. — verify any item before you buy.
+        <Link to="/verify" className="underline font-black ml-2">Try 2 Free Checks →</Link>
       </div>
 
       {/* ── HERO WITH SCANNER ──────────────────────────── */}
@@ -194,7 +194,7 @@ const Index = () => {
 
           <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             SafeOrStolen checks any secondhand item against 100+ law enforcement, insurance, and carrier databases — including FBI NCIC, GSMA, NICB, and ATF.
-            <strong className="text-foreground"> Free results in 3 seconds. No credit card.</strong>
+            <strong className="text-foreground"> 2 free checks. Then $1/month unlimited.</strong>
           </p>
 
           {/* Integrated Scanner / Search Bar */}
@@ -206,7 +206,11 @@ const Index = () => {
           </div>
 
           <p className="text-muted-foreground text-sm">
-            2 free checks · No credit card · Results in 3 seconds · Works on iOS & Android
+            🔓 Unlock unlimited verifications — just $1/month →{' '}
+            <Link to="/pricing" className="text-primary underline font-semibold">See Pricing</Link>
+          </p>
+          <p className="text-muted-foreground/60 text-xs mt-1">
+            2 free checks · Results in 3 seconds · Works on iOS & Android
           </p>
         </div>
       </section>
@@ -388,7 +392,7 @@ const Index = () => {
               to="/verify"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
             >
-              Verify Your Item Now — Free →
+              Try 2 Free Checks — Then $1/mo Unlimited →
             </Link>
             <Link
               to="/for-sellers"
