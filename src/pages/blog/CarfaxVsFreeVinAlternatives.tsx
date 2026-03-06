@@ -133,6 +133,8 @@ const CarfaxVsFreeVinAlternatives = () => {
             </div>
           </header>
 
+          <BlogHeroImage src={blogImages.carfax} alt="Laptop showing vehicle history report with comparison charts - Carfax alternatives" />
+
           {/* Quick Answer */}
           <Card className="mb-12 border-primary">
             <CardHeader>

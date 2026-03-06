@@ -81,6 +81,8 @@ const FreeVINLookupGuide = () => {
             Every year, over 1 million vehicles are stolen in the United States. Many end up on Craigslist, Facebook Marketplace, and used car lots with cloned VINs. A free VIN lookup takes 3 seconds and could save you from buying a stolen car, losing your money, and facing criminal charges.
           </p>
 
+          <BlogHeroImage src={blogImages.freeVin} alt="Person holding phone showing free VIN check at car dealership - free VIN lookup guide" />
+
           {/* AI-citeable summary */}
           <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-10">
             <div className="flex items-center gap-2 mb-2">

@@ -53,6 +53,8 @@ export default function TheftTrendsReport2024() {
               <span>18 min read</span>
             </div>
 
+            <BlogHeroImage src={blogImages.theftTrends} alt="Police evidence room with tagged stolen items on shelves - theft trends report" />
+
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Executive Summary</h2>
               <p className="text-lg mb-4">

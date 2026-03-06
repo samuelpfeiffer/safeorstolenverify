@@ -61,6 +61,8 @@ export default function UltimateMarketplaceBuyersGuide() {
             </p>
           </div>
 
+          <BlogHeroImage src={blogImages.marketplace} alt="Two people meeting in parking lot exchanging verified item - marketplace buyers guide" />
+
           <div className="prose prose-lg max-w-none">
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <div className="flex items-start gap-3">

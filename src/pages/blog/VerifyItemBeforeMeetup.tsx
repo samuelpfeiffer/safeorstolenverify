@@ -92,6 +92,8 @@ const VerifyItemBeforeMeetup = () => {
             </div>
           </header>
 
+          <BlogHeroImage src={blogImages.meetup} alt="Two people at safe exchange zone verifying item with phone - marketplace meetup safety" />
+
           {/* Pre-Meetup Checklist */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">

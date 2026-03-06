@@ -125,6 +125,8 @@ export default function ProtectYourselfBuyingUsedElectronics() {
             </p>
           </div>
 
+          <BlogHeroImage src={blogImages.electronics} alt="Used electronics on desk with phone scanning barcodes - electronics verification" />
+
           <div className="prose prose-lg max-w-none">
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <div className="flex items-start gap-3">

@@ -81,6 +81,8 @@ const HowToSellVerifiedItems = () => {
             In 2026, smart buyers check before they buy. If you're selling phones, cars, electronics, or any secondhand item, providing verification proof isn't optional anymore — it's the difference between getting full price and getting lowballed (or ghosted).
           </p>
 
+          <BlogHeroImage src={blogImages.sellVerified} alt="Person listing verified items for sale on laptop and phone - sell verified items guide" />
+
           <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-10">
             <div className="flex items-center gap-2 mb-2">
               <BadgeCheck className="w-5 h-5 text-primary" />

@@ -108,6 +108,8 @@ const AIStolenItemDetection2026 = () => {
             </p>
           </header>
 
+          <BlogHeroImage src={blogImages.aiDetection} alt="AI robot hand shaking human hand with holographic verification data - AI stolen item detection" />
+
           {/* Key Insight Box */}
           <Card className="mb-10 border-2 border-primary/30 bg-primary/5">
             <CardContent className="p-6">

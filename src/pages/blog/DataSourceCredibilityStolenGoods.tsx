@@ -58,6 +58,8 @@ export default function DataSourceCredibilityStolenGoods() {
             </p>
           </div>
 
+          <BlogHeroImage src={blogImages.dataCredibility} alt="Data center with verification databases and holographic displays - data credibility" />
+
           <div className="prose prose-lg max-w-none">
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">
               <div className="flex items-start gap-3">

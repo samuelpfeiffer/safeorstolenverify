@@ -53,6 +53,8 @@ export default function ScammerTacticsExposed() {
               <span>12 min read</span>
             </div>
 
+            <BlogHeroImage src={blogImages.scammer} alt="Hooded scammer with multiple monitors showing fake marketplace listings" />
+
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Understanding the Stolen Goods Marketplace</h2>
               <p className="text-lg mb-4">
