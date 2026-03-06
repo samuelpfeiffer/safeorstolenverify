@@ -232,9 +232,10 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "SafeOrStolen Unlimited Verification",
-            "description": "Unlimited stolen item verification — phones, cars, guns, electronics & more. 100+ databases. 3-second results. $1/month.",
+            "description": "2 free checks, then unlimited stolen item verification for $1/month — phones, cars, guns, electronics & more. 100+ databases. 3-second results.",
             "brand": { "@type": "Brand", "name": "SafeOrStolen" },
             "offers": [
+              { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },
               { "@type": "Offer", "name": "Unlimited Plan", "price": "1.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
             ]
           })
