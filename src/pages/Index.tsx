@@ -3,6 +3,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO';
 import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
+import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
+import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { useState } from 'react';
 
 // Images — unique per card, no duplicates
