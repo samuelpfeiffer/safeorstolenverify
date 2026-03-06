@@ -3,6 +3,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Shield, CheckCircle, AlertTriangle, ArrowRight, Search, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const FreeVINLookupGuide = () => {
   const structuredData = [
