@@ -20,6 +20,7 @@ import { ParallelVerificationDisplay } from '@/components/verification/ParallelV
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { useSearchLimits } from '@/hooks/useSearchLimits';
 import { PostVerificationUpsell } from '@/components/conversion/PostVerificationUpsell';
+import { SearchLimitDisplay } from '@/components/hero/SearchLimitDisplay';
 import { WhySignUpCard } from '@/components/conversion/WhySignUpCard';
 import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 import { useNavigate, useSearchParams } from 'react-router-dom';
