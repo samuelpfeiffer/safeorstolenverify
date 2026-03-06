@@ -192,7 +192,7 @@ export default function CheckFirearmPage() {
         {/* CTA */}
         <section className="py-16 bg-primary/5">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Check Before You Buy</h2>
+            <h2 className="text-3xl font-bold mb-4">Check Before You Buy or Sell</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Verify firearm serial numbers in seconds. Protect yourself from federal charges.
             </p>
