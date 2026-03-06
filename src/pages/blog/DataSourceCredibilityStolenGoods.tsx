@@ -6,6 +6,8 @@ import { Database, Shield, CheckCircle, AlertTriangle } from 'lucide-react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function DataSourceCredibilityStolenGoods() {
   const navigate = useNavigate();
