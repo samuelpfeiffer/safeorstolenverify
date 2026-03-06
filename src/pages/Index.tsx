@@ -206,7 +206,11 @@ const Index = () => {
           </div>
 
           <p className="text-muted-foreground text-sm">
-            2 free checks · No credit card · Results in 3 seconds · Works on iOS & Android
+            🔓 Unlock unlimited verifications — just $1/month →{' '}
+            <Link to="/pricing" className="text-primary underline font-semibold">See Pricing</Link>
+          </p>
+          <p className="text-muted-foreground/60 text-xs mt-1">
+            2 free checks · Results in 3 seconds · Works on iOS & Android
           </p>
         </div>
       </section>
