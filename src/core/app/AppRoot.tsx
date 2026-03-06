@@ -21,7 +21,7 @@ import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
-import { AISafetyAdvisor } from '@/components/ai/AISafetyAdvisor';
+// AISafetyAdvisor removed — replaced by AIFloatingChat
 import { AIFloatingChat } from '@/components/ai/AIFloatingChat';
 
 // Lazy load SEO components - NOT needed for initial render/LCP
