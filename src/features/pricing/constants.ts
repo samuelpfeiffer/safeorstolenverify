@@ -15,7 +15,7 @@ import type { SubscriptionTier, SubscriptionTierKey } from './types';
  * Product ID: prod_TDfkVL8GE1dRt5
  */
 
-export const FREE_SEARCH_LIMIT = 0; // No free searches
+export const FREE_SEARCH_LIMIT = 2; // 2 free verifications as lead magnet
 export const FAIR_USE_CAP = 1000; // Monthly soft limit for abuse prevention
 
 export const UNLIMITED_PRICE_ID = 'price_1T77b7GxnZLw8J7OYB4jBGRB';

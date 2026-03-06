@@ -3,6 +3,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { CompetitorTargetingSEO } from '@/components/seo/CompetitorTargetingSEO';
 import { Shield, Zap, Lock, Star, Building2, Scan } from 'lucide-react';
 import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
+import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
+import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { useState } from 'react';
 
 // Images — unique per card, no duplicates
@@ -120,7 +122,7 @@ const RECENT_VERIFICATIONS = [
 const FAQ_ITEMS = [
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'SafeOrStolen offers unlimited verifications for just $1/month. All item types, all databases, cancel anytime. The best value in stolen item verification.',
+    a: 'SafeOrStolen gives you 2 free verifications — no credit card required. After that, unlimited verifications are just $1/month. All item types, all databases, cancel anytime. 30-day money-back guarantee.',
   },
   {
     q: 'What databases does SafeOrStolen check?',
@@ -317,6 +319,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── SAMPLE RESULT PREVIEW (shows value before signup) ─── */}
+      <SampleResultPreview />
+
       {/* ── HOW IT WORKS ────────────────────────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -427,12 +432,12 @@ const Index = () => {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
+               <Link
                 to="/pricing"
                 className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
               >
                 <Building2 className="w-4 h-4" />
-                Get Business Plan — $49.99/mo
+                Get Unlimited Plan — $1/mo
               </Link>
               <Link
                 to="/for-pawn-shops"
@@ -463,15 +468,15 @@ const Index = () => {
             </ul>
             <div className="border-t border-border pt-5">
               <div>
-                <span className="text-4xl font-black text-foreground">$49.99</span>
+                <span className="text-4xl font-black text-foreground">$1</span>
                 <span className="text-muted-foreground text-sm">/month</span>
               </div>
-              <div className="text-muted-foreground text-xs mt-1">Cancel anytime · No setup fee</div>
+              <div className="text-muted-foreground text-xs mt-1">Cancel anytime · 30-day money-back guarantee</div>
               <Link
                 to="/pricing"
                 className="mt-4 block w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 rounded-xl text-center transition-all text-sm"
               >
-                Start Business Plan
+                Start Unlimited Plan
               </Link>
             </div>
           </div>
@@ -499,6 +504,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* ── SHARE & REFERRAL SECTION ─────────────────── */}
+      <ShareVerification />
 
       {/* ── PRESS, TRUST & CREDENTIALS ──────────────────── */}
       <section className="py-16 px-4 bg-muted/30 border-y border-border">
@@ -708,10 +716,8 @@ const Index = () => {
             "applicationCategory": "SecurityApplication",
             "operatingSystem": ["Web", "iOS", "Android"],
             "offers": [
-              { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
-              { "@type": "Offer", "name": "Basic", "price": "4.99", "priceCurrency": "USD" },
-              { "@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "USD" },
-              { "@type": "Offer", "name": "Business", "price": "49.99", "priceCurrency": "USD" }
+              { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
+              { "@type": "Offer", "name": "Unlimited", "price": "1.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
             ],
             "aggregateRating": {
               "@type": "AggregateRating",
