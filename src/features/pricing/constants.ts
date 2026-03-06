@@ -1,6 +1,6 @@
 /**
  * Pricing Module - Constants & Configuration
- * Simplified pricing: Unlimited ($1/month) — no free tier
+ * 2 free checks lead magnet, then $1/month unlimited
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
