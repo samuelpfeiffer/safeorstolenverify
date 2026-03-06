@@ -27,7 +27,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
 
   if (!isOpen) return null
 
-  const headline = "Subscribe to Verify Items"
+  const headline = "You've Used Your 2 Free Checks"
 
   async function handleCheckout(plan: typeof PLAN) {
     setLoading(plan.id)
