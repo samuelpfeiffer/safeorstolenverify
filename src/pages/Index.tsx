@@ -708,10 +708,8 @@ const Index = () => {
             "applicationCategory": "SecurityApplication",
             "operatingSystem": ["Web", "iOS", "Android"],
             "offers": [
-              { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
-              { "@type": "Offer", "name": "Basic", "price": "4.99", "priceCurrency": "USD" },
-              { "@type": "Offer", "name": "Pro", "price": "9.99", "priceCurrency": "USD" },
-              { "@type": "Offer", "name": "Business", "price": "49.99", "priceCurrency": "USD" }
+              { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications" },
+              { "@type": "Offer", "name": "Unlimited", "price": "1.00", "priceCurrency": "USD", "description": "Unlimited verifications, all item types" }
             ],
             "aggregateRating": {
               "@type": "AggregateRating",
