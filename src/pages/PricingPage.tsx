@@ -57,13 +57,13 @@ const PricingPage = () => {
       <div className="text-center pt-16 pb-10 px-4">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-bold text-sm px-4 py-2 rounded-full mb-6">
           <Star className="w-4 h-4 fill-current" />
-          NEW: Unlimited for just $1/month
+          Start with 2 FREE checks — then $1/month unlimited
         </div>
         <h1 className="text-4xl md:text-5xl font-black mb-4">
-          Unlimited Protection.<br />One Dollar.
+          2 Free Checks.<br />Then Unlimited for $1.
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          Every verification. Every item type. Every database. <span className="font-bold text-primary">$1/month</span>. Cancel anytime.
+          Try SafeOrStolen free — no credit card required. Then upgrade to <span className="font-bold text-primary">$1/month</span> for unlimited verifications. Cancel anytime.
         </p>
       </div>
 
