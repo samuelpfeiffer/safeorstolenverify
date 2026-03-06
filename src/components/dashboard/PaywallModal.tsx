@@ -111,18 +111,17 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed = 0, maxFreeSea
           </Button>
         </div>
 
-        {/* Trust signals */}
         <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-4 border-t">
           <span className="flex items-center gap-1">
-            <Shield className="h-3 w-3 text-green-500" />
+            <Shield className="h-3 w-3 text-primary" />
             30-day money-back guarantee
           </span>
           <span className="flex items-center gap-1">
-            <Check className="h-3 w-3 text-green-500" />
+            <Check className="h-3 w-3 text-primary" />
             Cancel anytime
           </span>
           <span className="flex items-center gap-1">
-            <Check className="h-3 w-3 text-green-500" />
+            <Check className="h-3 w-3 text-primary" />
             Secured by Stripe
           </span>
         </div>
