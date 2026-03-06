@@ -51,6 +51,8 @@ export default function HowToCheckPhoneStolen() {
           </div>
         </header>
 
+        <BlogHeroImage src={blogImages.imeiChecker} alt="iPhone settings showing IMEI number with verification checkmark - phone stolen check guide" />
+
         <div className="prose prose-lg max-w-none">
           <h2>Why Checking a Phone's IMEI is Critical</h2>
           <p>Buying a stolen phone isn't just a bad deal—it's a legal nightmare. In 2026, over 2.1 million phones were reported stolen in the US alone. When you buy a stolen device, you risk:</p>

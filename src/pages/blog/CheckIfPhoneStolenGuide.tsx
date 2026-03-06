@@ -94,6 +94,8 @@ const CheckIfPhoneStolenGuide = () => {
           <span>10 min read</span>
         </div>
 
+        <BlogHeroImage src={blogImages.phoneStolen} alt="Person holding smartphone showing IMEI number with magnifying glass - how to check if a phone is stolen" />
+
         <div className="speakable-summary bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10">
           <p className="text-foreground font-semibold text-lg leading-relaxed">
             Every year, over 3.1 million smartphones are stolen in the United States (Pew Research). When these phones are resold on Facebook Marketplace, OfferUp, or Craigslist, the buyer gets stuck with a blacklisted device and potential criminal charges. Here's exactly how to check if any phone is stolen before you hand over your money — using a free IMEI check that takes 3 seconds.

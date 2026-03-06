@@ -49,6 +49,7 @@ const FacebookMarketplaceScams = () => {
             <p className="text-xl text-muted-foreground mb-8">
               $1 billion lost to social media scams last year. Here's how to protect yourself from stolen items, fake sellers, and fraud on Facebook Marketplace.
             </p>
+            <BlogHeroImage src={blogImages.fbScams} alt="Laptop showing Facebook Marketplace with scam alert warnings - how to avoid marketplace scams" />
           </div>
         </section>
 
