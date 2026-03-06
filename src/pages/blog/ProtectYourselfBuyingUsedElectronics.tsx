@@ -9,6 +9,8 @@ import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function ProtectYourselfBuyingUsedElectronics() {
   const navigate = useNavigate();
@@ -122,6 +124,8 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               Published January 15, 2026 • 8 min read
             </p>
           </div>
+
+          <BlogHeroImage src={blogImages.electronics} alt="Used electronics on desk with phone scanning barcodes - electronics verification" />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">

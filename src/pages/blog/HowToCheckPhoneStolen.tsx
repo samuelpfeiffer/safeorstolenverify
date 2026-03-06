@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function HowToCheckPhoneStolen() {
   const structuredData = {
@@ -48,6 +50,8 @@ export default function HowToCheckPhoneStolen() {
             <span>8 min read</span>
           </div>
         </header>
+
+        <BlogHeroImage src={blogImages.imeiChecker} alt="iPhone settings showing IMEI number with verification checkmark - phone stolen check guide" />
 
         <div className="prose prose-lg max-w-none">
           <h2>Why Checking a Phone's IMEI is Critical</h2>

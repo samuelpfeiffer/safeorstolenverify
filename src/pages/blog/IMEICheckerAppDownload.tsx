@@ -7,6 +7,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const IMEICheckerAppDownload = () => {
   const articleSchema = {
@@ -102,6 +104,10 @@ const IMEICheckerAppDownload = () => {
               </Link>
             </Button>
           </header>
+
+          <div className="max-w-4xl mx-auto px-4 mb-12">
+            <BlogHeroImage src={blogImages.imeiApp} alt="Smartphone showing verification app download screen" />
+          </div>
 
           {/* App Features */}
           <section className="mb-16">

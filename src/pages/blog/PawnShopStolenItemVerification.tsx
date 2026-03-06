@@ -7,6 +7,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const PawnShopStolenItemVerification = () => {
   const articleSchema = {
@@ -89,6 +91,7 @@ const PawnShopStolenItemVerification = () => {
               <span>12 min read</span>
             </div>
           </header>
+          <BlogHeroImage src={blogImages.pawnShop} alt="Pawn shop employee scanning electronics with barcode reader - pawn shop verification" />
 
           {/* Article Content */}
           <div className="prose prose-lg max-w-none">

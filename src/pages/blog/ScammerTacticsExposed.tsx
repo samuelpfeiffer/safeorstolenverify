@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function ScammerTacticsExposed() {
   const structuredData = {
@@ -50,6 +52,8 @@ export default function ScammerTacticsExposed() {
               <span>•</span>
               <span>12 min read</span>
             </div>
+
+            <BlogHeroImage src={blogImages.scammer} alt="Hooded scammer with multiple monitors showing fake marketplace listings" />
 
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Understanding the Stolen Goods Marketplace</h2>

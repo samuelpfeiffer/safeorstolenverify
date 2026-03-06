@@ -7,6 +7,8 @@ import { Bike, Shield, AlertTriangle, CheckCircle, Download, Search } from 'luci
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const BicycleStolenSerialNumberCheck = () => {
   const articleSchema = {
@@ -88,6 +90,7 @@ const BicycleStolenSerialNumberCheck = () => {
               <span>8 min read</span>
             </div>
           </header>
+          <BlogHeroImage src={blogImages.bicycle} alt="Person checking bicycle serial number with flashlight at golden hour - bike stolen check" />
 
           {/* Stats */}
           <section className="mb-12">

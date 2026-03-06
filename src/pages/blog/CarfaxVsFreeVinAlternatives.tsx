@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { SOSFooter } from '@/components/layout/SOSFooter';
 import TopNavigation from '@/components/TopNavigation';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const CarfaxVsFreeVinAlternatives = () => {
   const faqSchema = {
@@ -130,6 +132,8 @@ const CarfaxVsFreeVinAlternatives = () => {
               <span>8 min read</span>
             </div>
           </header>
+
+          <BlogHeroImage src={blogImages.carfax} alt="Laptop showing vehicle history report with comparison charts - Carfax alternatives" />
 
           {/* Quick Answer */}
           <Card className="mb-12 border-primary">

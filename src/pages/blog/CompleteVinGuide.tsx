@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function CompleteVinGuide() {
   const structuredData = {
@@ -48,6 +50,8 @@ export default function CompleteVinGuide() {
             <span>12 min read</span>
           </div>
         </header>
+
+        <BlogHeroImage src={blogImages.vinCheck} alt="Person scanning VIN barcode on car dashboard with smartphone - VIN check guide" />
 
         <div className="prose prose-lg max-w-none">
           <h2>Why VIN Checks Are Non-Negotiable in 2026</h2>

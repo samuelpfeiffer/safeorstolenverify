@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Bot, Brain, Cpu, Database, Shield, Smartphone, Zap, CheckCircle2 } from 'lucide-react';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const AIStolenItemDetection2026 = () => {
   const faqSchema = {
@@ -105,6 +107,8 @@ const AIStolenItemDetection2026 = () => {
               Learn how AI-powered verification catches what humans miss.
             </p>
           </header>
+
+          <BlogHeroImage src={blogImages.aiDetection} alt="AI robot hand shaking human hand with holographic verification data - AI stolen item detection" />
 
           {/* Key Insight Box */}
           <Card className="mb-10 border-2 border-primary/30 bg-primary/5">

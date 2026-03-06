@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function TheftTrendsReport2024() {
   const structuredData = {
@@ -50,6 +52,8 @@ export default function TheftTrendsReport2024() {
               <span>•</span>
               <span>18 min read</span>
             </div>
+
+            <BlogHeroImage src={blogImages.theftTrends} alt="Police evidence room with tagged stolen items on shelves - theft trends report" />
 
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">Executive Summary</h2>

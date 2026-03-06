@@ -9,6 +9,8 @@ import { HowToSchema } from '@/components/seo/schemas/HowToSchema';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 export default function CompleteImeiGuide() {
   const navigate = useNavigate();
@@ -58,6 +60,8 @@ export default function CompleteImeiGuide() {
               Published January 15, 2026 • 9 min read
             </p>
           </div>
+
+          <BlogHeroImage src={blogImages.imeiChecker} alt="iPhone showing IMEI settings with verification shield - complete IMEI guide" />
 
           <div className="prose prose-lg max-w-none">
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-8">

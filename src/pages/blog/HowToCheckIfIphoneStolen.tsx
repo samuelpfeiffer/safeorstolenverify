@@ -6,6 +6,8 @@ import { CheckCircle, AlertTriangle, Smartphone, Shield, ArrowRight, Download } 
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const HowToCheckIfIphoneStolen = () => {
   return (
@@ -66,6 +68,10 @@ const HowToCheckIfIphoneStolen = () => {
             </div>
           </div>
         </section>
+
+        <div className="max-w-4xl mx-auto px-4">
+          <BlogHeroImage src={blogImages.iphoneStolen} alt="iPhone showing About page with IMEI details - check if iPhone is stolen" />
+        </div>
 
         {/* Main Content */}
         <article className="py-12 px-4">

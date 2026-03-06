@@ -3,6 +3,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Shield, CheckCircle, DollarSign, Clock, ArrowRight, Star, BadgeCheck, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const HowToSellVerifiedItems = () => {
   const structuredData = [
@@ -78,6 +80,8 @@ const HowToSellVerifiedItems = () => {
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             In 2026, smart buyers check before they buy. If you're selling phones, cars, electronics, or any secondhand item, providing verification proof isn't optional anymore — it's the difference between getting full price and getting lowballed (or ghosted).
           </p>
+
+          <BlogHeroImage src={blogImages.sellVerified} alt="Person listing verified items for sale on laptop and phone - sell verified items guide" />
 
           <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-10">
             <div className="flex items-center gap-2 mb-2">
