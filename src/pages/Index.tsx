@@ -172,8 +172,8 @@ const Index = () => {
 
       {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
       <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold">
-        ⚠️ Over $15 billion in property is stolen annually in the U.S. — check any item FREE before you buy or sell.
-        <Link to="/verify" className="underline font-black ml-2">Verify Now →</Link>
+        ⚠️ Over $15 billion in property is stolen annually in the U.S. — verify any item before you buy.
+        <Link to="/verify" className="underline font-black ml-2">Try 2 Free Checks →</Link>
       </div>
 
       {/* ── HERO WITH SCANNER ──────────────────────────── */}
