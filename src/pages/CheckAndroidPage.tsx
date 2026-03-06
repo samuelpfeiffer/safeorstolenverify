@@ -179,7 +179,7 @@ export default function CheckAndroidPage() {
         <section className="py-16">
           <div className="container mx-auto px-4 text-center">
             <Shield className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4">Check Before You Buy</h2>
+            <h2 className="text-3xl font-bold mb-4">Check Before You Buy or Sell</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Verify any Android phone IMEI in seconds. Free check, instant results.
             </p>
