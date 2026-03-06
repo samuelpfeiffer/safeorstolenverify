@@ -105,6 +105,10 @@ const IMEICheckerAppDownload = () => {
             </Button>
           </header>
 
+          <div className="max-w-4xl mx-auto px-4 mb-12">
+            <BlogHeroImage src={blogImages.imeiApp} alt="Smartphone showing verification app download screen" />
+          </div>
+
           {/* App Features */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold text-center mb-8">
