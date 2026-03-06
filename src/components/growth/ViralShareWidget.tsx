@@ -11,7 +11,7 @@ interface ViralShareWidgetProps {
 }
 
 export const ViralShareWidget = ({ 
-  title = "Check if it's stolen before you buy!",
+  title = "Check if it's stolen before you buy or sell!",
   message = "I use SafeOrStolen to verify secondhand items aren't stolen. Free IMEI, VIN & serial checks. Protect yourself!",
   url = "https://safeorstolen.com/?ref=share",
   variant = 'inline'

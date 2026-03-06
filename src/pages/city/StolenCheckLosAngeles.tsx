@@ -225,7 +225,7 @@ const StolenCheckLosAngeles = () => {
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Verify Before You Buy in LA
+              Verify Before You Buy or Sell in LA
             </h2>
             <p className="text-lg opacity-90 mb-8">
               Don't become another LA theft statistic. Free verification takes just 3 seconds.
