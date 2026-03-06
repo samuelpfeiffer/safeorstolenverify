@@ -463,15 +463,15 @@ const Index = () => {
             </ul>
             <div className="border-t border-border pt-5">
               <div>
-                <span className="text-4xl font-black text-foreground">$49.99</span>
+                <span className="text-4xl font-black text-foreground">$1</span>
                 <span className="text-muted-foreground text-sm">/month</span>
               </div>
-              <div className="text-muted-foreground text-xs mt-1">Cancel anytime · No setup fee</div>
+              <div className="text-muted-foreground text-xs mt-1">Cancel anytime · 30-day money-back guarantee</div>
               <Link
                 to="/pricing"
                 className="mt-4 block w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 rounded-xl text-center transition-all text-sm"
               >
-                Start Business Plan
+                Start Unlimited Plan
               </Link>
             </div>
           </div>

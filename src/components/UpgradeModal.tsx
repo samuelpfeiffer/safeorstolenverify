@@ -101,7 +101,8 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
           <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Unlimited verifications for just $1/month
+            Upgrade to unlimited verifications for just $1/month.<br />
+            Cancel anytime · 30-day money-back guarantee.
           </p>
         </div>
 
