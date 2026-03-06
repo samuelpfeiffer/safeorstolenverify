@@ -44,7 +44,7 @@ export const ReferralProgram = () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'SafeOrStolen - Check Before You Buy',
+          title: 'SafeOrStolen - Check Before You Buy or Sell',
           text: shareText,
           url: referralLink,
         });
