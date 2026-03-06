@@ -88,6 +88,7 @@ const PricingPage = () => {
 
           <ul className="space-y-3 flex-1 mb-6">
             {[
+              '2 free verifications — no credit card required',
               'Unlimited verifications — no caps',
               'All item types: phones, cars, bikes, guns, electronics, tools',
               'IMEI, VIN, license plate & serial number lookups',
