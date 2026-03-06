@@ -319,6 +319,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── SAMPLE RESULT PREVIEW (shows value before signup) ─── */}
+      <SampleResultPreview />
+
       {/* ── HOW IT WORKS ────────────────────────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
