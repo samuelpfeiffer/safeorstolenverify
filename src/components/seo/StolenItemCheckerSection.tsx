@@ -11,7 +11,7 @@ export const StolenItemCheckerSection = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our stolen item checker is the go-to tool for millions of buyers worldwide. 
-            Instantly verify if any item is stolen before you buy with our comprehensive database searches.
+            Instantly verify if any item is stolen before you buy or sell with our comprehensive database searches.
           </p>
         </div>
 

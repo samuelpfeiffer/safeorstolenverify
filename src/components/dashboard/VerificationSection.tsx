@@ -260,7 +260,7 @@ export const VerificationSection = ({ prePopulatedData }: VerificationSectionPro
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Verify Before You Buy</CardTitle>
+        <CardTitle className="text-2xl">Verify Before You Buy or Sell</CardTitle>
         <CardDescription>
           Check if a second-hand item is safe to purchase
         </CardDescription>

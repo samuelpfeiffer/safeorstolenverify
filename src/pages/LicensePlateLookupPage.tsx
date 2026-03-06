@@ -367,7 +367,7 @@ const LicensePlateLookupPage = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-4">Ready to Verify?</h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Don't risk buying a stolen vehicle. Check the license plate and VIN before you buy.
+              Don't risk buying a stolen vehicle. Check the license plate and VIN before you buy or sell.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
