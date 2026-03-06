@@ -8,6 +8,7 @@ import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID } from '@/features/pricing/constants';
 
 const FAQS = [
+  { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, unlimited checks are just $1/month.' },
   { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your dashboard. Your plan continues until the end of the billing period — no fees.' },
   { q: 'What counts as one verification?', a: 'Each IMEI, VIN, serial number, plate, or firearm serial submitted counts as one check. Viewing the same result again is free.' },
   { q: 'How accurate are the results?', a: 'We check 100+ sources including FBI NCIC, GSMA, NICB, ATF, and all 50 US state databases. ~99.2% accuracy.' },
@@ -48,8 +49,8 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <PageSEO
-        title="$1/Month Unlimited Stolen Item Checker | SafeOrStolen"
-        description="Unlimited IMEI, VIN, serial number, and license plate checks for just $1/month. Verify phones, cars, guns, electronics & more against 100+ databases. 3-second results. Cancel anytime."
+        title="Stolen Item Checker — 2 Free Checks, Then $1/Month | SafeOrStolen"
+        description="Start with 2 free verifications, no credit card required. Then unlimited IMEI, VIN, serial number checks for just $1/month. 100+ databases. 3-second results. Cancel anytime."
         canonical="/pricing"
       />
 
@@ -57,13 +58,13 @@ const PricingPage = () => {
       <div className="text-center pt-16 pb-10 px-4">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-bold text-sm px-4 py-2 rounded-full mb-6">
           <Star className="w-4 h-4 fill-current" />
-          NEW: Unlimited for just $1/month
+          Start with 2 FREE checks — then $1/month unlimited
         </div>
         <h1 className="text-4xl md:text-5xl font-black mb-4">
-          Unlimited Protection.<br />One Dollar.
+          2 Free Checks.<br />Then Unlimited for $1.
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          Every verification. Every item type. Every database. <span className="font-bold text-primary">$1/month</span>. Cancel anytime.
+          Try SafeOrStolen free — no credit card required. Then upgrade to <span className="font-bold text-primary">$1/month</span> for unlimited verifications. Cancel anytime.
         </p>
       </div>
 
@@ -88,6 +89,7 @@ const PricingPage = () => {
 
           <ul className="space-y-3 flex-1 mb-6">
             {[
+              '2 free verifications — no credit card required',
               'Unlimited verifications — no caps',
               'All item types: phones, cars, bikes, guns, electronics, tools',
               'IMEI, VIN, license plate & serial number lookups',
@@ -231,9 +233,10 @@ const PricingPage = () => {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "SafeOrStolen Unlimited Verification",
-            "description": "Unlimited stolen item verification — phones, cars, guns, electronics & more. 100+ databases. 3-second results. $1/month.",
+            "description": "2 free checks, then unlimited stolen item verification for $1/month — phones, cars, guns, electronics & more. 100+ databases. 3-second results.",
             "brand": { "@type": "Brand", "name": "SafeOrStolen" },
             "offers": [
+              { "@type": "Offer", "name": "Free Tier", "price": "0", "priceCurrency": "USD", "description": "2 free verifications, no credit card required" },
               { "@type": "Offer", "name": "Unlimited Plan", "price": "1.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing" },
             ]
           })
