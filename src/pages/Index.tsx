@@ -427,12 +427,12 @@ const Index = () => {
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
+               <Link
                 to="/pricing"
                 className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
               >
                 <Building2 className="w-4 h-4" />
-                Get Business Plan — $49.99/mo
+                Get Unlimited Plan — $1/mo
               </Link>
               <Link
                 to="/for-pawn-shops"
