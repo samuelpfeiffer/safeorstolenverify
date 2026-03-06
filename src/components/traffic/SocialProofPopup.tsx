@@ -21,7 +21,10 @@ export const SocialProofPopup = () => {
         if (data) {
           const timeDiff = Date.now() - new Date(data.created_at).getTime();
           const minutes = Math.floor(timeDiff / 60000);
-          const timeText = minutes < 60 ? `${minutes} min ago` : `${Math.floor(minutes / 60)}h ago`;
+          const timeText = minutes < 1 ? 'just now' 
+            : minutes < 60 ? `${minutes} min ago` 
+            : minutes < 1440 ? `${Math.floor(minutes / 60)}h ago`
+            : `${Math.floor(minutes / 1440)}d ago`;
           
           setActivity({
             type: data.item_type || 'item',

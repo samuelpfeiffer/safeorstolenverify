@@ -392,7 +392,7 @@ const Index = () => {
               to="/verify"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
             >
-              Verify Your Item Now — Free →
+              Try 2 Free Checks — Then $1/mo Unlimited →
             </Link>
             <Link
               to="/for-sellers"

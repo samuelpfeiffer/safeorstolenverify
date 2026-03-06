@@ -145,7 +145,7 @@ const AuthAwareContent: React.FC = () => {
         <PWAInstallManager />
         <AppDownloadBot />
         <MobileNavigation />
-        <AISafetyAdvisor />
+        {/* AISafetyAdvisor removed — replaced by AIFloatingChat */}
         
         {/* AI Floating Chat - replaces old button + modal */}
         <AIFloatingChat />
