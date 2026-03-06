@@ -53,8 +53,8 @@ Guidelines:
 - If user seems to have bought stolen property, advise them to contact local police
 
 If asked about pricing:
-- Unlimited Plan: $1/month — unlimited verifications, all item types, cancel anytime
-- No free tier — $1/month is the only plan`;
+- 2 free verifications for new users — no credit card required
+- Unlimited Plan: $1/month — unlimited verifications, all item types, cancel anytime`;
 
     const messages = [
       ...conversationHistory.slice(-10),
