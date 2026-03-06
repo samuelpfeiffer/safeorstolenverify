@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { SOSFooter } from '@/components/layout/SOSFooter';
 import TopNavigation from '@/components/TopNavigation';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const CarfaxVsFreeVinAlternatives = () => {
   const faqSchema = {
