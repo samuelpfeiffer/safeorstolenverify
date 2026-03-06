@@ -194,7 +194,7 @@ const Index = () => {
 
           <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             SafeOrStolen checks any secondhand item against 100+ law enforcement, insurance, and carrier databases — including FBI NCIC, GSMA, NICB, and ATF.
-            <strong className="text-foreground"> Free results in 3 seconds. No credit card.</strong>
+            <strong className="text-foreground"> 2 free checks. Then $1/month unlimited.</strong>
           </p>
 
           {/* Integrated Scanner / Search Bar */}
