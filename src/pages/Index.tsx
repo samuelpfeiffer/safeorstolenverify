@@ -187,7 +187,7 @@ const Index = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
-            Check Before You Buy.
+            Check Before You Buy or Sell.
             <br />
             <span className="sos-gradient-text">Safe or Stolen?</span>
           </h1>
