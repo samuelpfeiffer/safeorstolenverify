@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Bot, Brain, Cpu, Database, Shield, Smartphone, Zap, CheckCircle2 } from 'lucide-react';
+import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
+import { blogImages } from '@/assets/blog';
 
 const AIStolenItemDetection2026 = () => {
   const faqSchema = {
