@@ -477,6 +477,14 @@ const VerifyPage = () => {
                   {progress}
                 </div>
               )}
+
+              {/* Free checks remaining display */}
+              <SearchLimitDisplay
+                hasReachedLimit={checksRemaining !== null && checksRemaining <= 0}
+                remainingSearches={checksRemaining ?? remainingSearches}
+                isSubscribed={isSubscribed}
+                isAuthenticated={isAuthenticated}
+              />
             </form>
           </CardContent>
         </Card>
