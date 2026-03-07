@@ -2,6 +2,45 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7"
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts'
 
+// In-memory IP rate limiter (per isolate instance)
+const ipChecks = new Map<string, { count: number; windowStart: number }>();
+const IP_FREE_LIMIT = 2;
+const IP_WINDOW_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+    || req.headers.get('x-real-ip')
+    || 'unknown';
+}
+
+function checkIPRateLimit(ip: string): { allowed: boolean; count: number } {
+  const now = Date.now();
+  const entry = ipChecks.get(ip);
+
+  if (!entry || (now - entry.windowStart) > IP_WINDOW_MS) {
+    // New window
+    ipChecks.set(ip, { count: 1, windowStart: now });
+    return { allowed: true, count: 1 };
+  }
+
+  if (entry.count >= IP_FREE_LIMIT) {
+    return { allowed: false, count: entry.count };
+  }
+
+  entry.count++;
+  return { allowed: true, count: entry.count };
+}
+
+// Cleanup old entries periodically (prevent memory leak)
+function cleanupIPMap() {
+  const now = Date.now();
+  for (const [ip, entry] of ipChecks) {
+    if ((now - entry.windowStart) > IP_WINDOW_MS) {
+      ipChecks.delete(ip);
+    }
+  }
+}
+
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
   if (corsPreFlight) return corsPreFlight;
@@ -112,7 +151,6 @@ serve(async (req) => {
         const isActive = hasPaidTier && (!profile.subscription_end || new Date(profile.subscription_end) > new Date());
 
         if (isActive) {
-          // Legacy subscriber — allow
           return new Response(
             JSON.stringify({ allowed: true, plan: profile.subscription_tier, checks_remaining: null }),
             { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -121,9 +159,31 @@ serve(async (req) => {
       }
     }
 
-    // No subscription — check free tier usage
+    // No subscription — check free tier usage with DUAL enforcement:
+    // 1. Server-side IP rate limit (cannot be spoofed by clearing localStorage)
+    // 2. Fingerprint-based DB tracking (original mechanism)
     const FREE_LIMIT = 2
+    const clientIP = getClientIP(req);
 
+    // Periodically clean up old IP entries
+    if (Math.random() < 0.01) cleanupIPMap();
+
+    // IP-based check (defense against fingerprint spoofing)
+    const ipCheck = checkIPRateLimit(clientIP);
+    if (!ipCheck.allowed) {
+      console.log(`[check-gate] IP rate limited: ${clientIP} (${ipCheck.count} checks)`);
+      return new Response(
+        JSON.stringify({
+          allowed: false,
+          reason: 'free_limit',
+          checks_used: ipCheck.count,
+          checks_limit: FREE_LIMIT
+        }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
+    // Fingerprint-based DB check (original mechanism)
     const { data: usage, error: usageError } = await supabase
       .from('usage_tracking')
       .select('*')
@@ -146,7 +206,6 @@ serve(async (req) => {
     }
 
     if (usage && usage.check_count >= FREE_LIMIT) {
-      // BLOCKED — trigger upgrade modal
       return new Response(
         JSON.stringify({
           allowed: false,
