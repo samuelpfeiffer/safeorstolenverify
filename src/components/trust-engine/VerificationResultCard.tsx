@@ -10,6 +10,7 @@ import { AIVerificationAnalysis } from '@/components/ai/AIVerificationAnalysis';
 import { SmartRecommendations } from '@/components/ai/SmartRecommendations';
 import { PredictiveTheftAlerts } from '@/components/ai/PredictiveTheftAlerts';
 import { AISellerReport } from '@/components/ai/AISellerReport';
+import { CleanResultOffers } from './CleanResultOffers';
 import type { VerificationResult } from './UniversalTrustEngine';
 
 interface Props {
@@ -147,6 +148,9 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
           score={result.score}
           identifier={result.serial}
         />
+
+        {/* Affiliate offers for clean results */}
+        <CleanResultOffers result={result} />
 
         {/* AI nudge */}
         <p className="text-[11px] text-muted-foreground text-center pt-2">
