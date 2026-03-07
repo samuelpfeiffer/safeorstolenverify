@@ -14,8 +14,33 @@ serve(async (req: Request): Promise<Response> => {
 
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // --- Authentication: require a valid JWT ---
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader?.startsWith('Bearer ')) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify the JWT and get the user
+    const userClient = createClient(supabaseUrl, supabaseAnonKey, {
+      global: { headers: { Authorization: authHeader } }
+    });
+
+    const token = authHeader.replace('Bearer ', '');
+    const { data: claimsData, error: claimsError } = await userClient.auth.getClaims(token);
+    if (claimsError || !claimsData?.claims) {
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const userId = claimsData.claims.sub;
 
     const { stolenItemId }: GenerateLinkRequest = await req.json();
 
@@ -26,10 +51,13 @@ serve(async (req: Request): Promise<Response> => {
       );
     }
 
-    // Verify the stolen item exists
+    // Use service role for DB operations (RLS bypass needed for shared_reports insert)
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // Verify the stolen item exists AND belongs to the authenticated user
     const { data: stolenItem, error: itemError } = await supabase
       .from("stolen_items")
-      .select("id, serial_number, item_type")
+      .select("id, serial_number, item_type, user_id")
       .eq("id", stolenItemId)
       .single();
 
@@ -38,6 +66,15 @@ serve(async (req: Request): Promise<Response> => {
       return new Response(
         JSON.stringify({ error: "Stolen item not found" }),
         { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Ownership check: only the owner can generate share links
+    if (stolenItem.user_id !== userId) {
+      console.error(`User ${userId} attempted to share item owned by ${stolenItem.user_id}`);
+      return new Response(
+        JSON.stringify({ error: "You can only share your own reports" }),
+        { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
@@ -91,7 +128,7 @@ serve(async (req: Request): Promise<Response> => {
     // Build shareable URL
     const shareUrl = `https://safeorstolen.com/shared/${shareCode}`;
 
-    console.log(`Generated share link for item ${stolenItemId}: ${shareUrl}`);
+    console.log(`User ${userId} generated share link for item ${stolenItemId}: ${shareUrl}`);
 
     return new Response(
       JSON.stringify({
@@ -109,7 +146,7 @@ serve(async (req: Request): Promise<Response> => {
   } catch (error) {
     console.error("Error in generate-report-link:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Failed to generate share link. Please try again." }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
