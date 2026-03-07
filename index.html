@@ -182,6 +182,60 @@
     
     <!-- LovableHTML Prerendering - Status code signal for bot serving -->
     <meta name="prerender-status-code" content="200">
+
+    <!-- JSON-LD: Speakable for voice assistants (2026 AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "SafeOrStolen — Free Stolen Item Verification",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".speakable-summary"]
+      },
+      "url": "https://safeorstolen.com"
+    }
+    </script>
+
+    <!-- JSON-LD: Organization with knowsAbout (2026 AI authority signal) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com",
+      "logo": "https://safeorstolen.com/sos-logo.png",
+      "foundingDate": "2017",
+      "description": "SafeOrStolen verifies whether secondhand items are stolen by checking IMEI numbers, VIN numbers, and serial numbers against 100+ law enforcement, insurance, and carrier databases.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Peoria",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/verifysafeorstolen/",
+        "https://www.crunchbase.com/organization/safe-or-stolen",
+        "https://www.trustpilot.com/review/safeorstolen.com",
+        "https://biz.prlog.org/SafeOrStolen/"
+      ],
+      "knowsAbout": [
+        "IMEI verification",
+        "VIN lookup",
+        "stolen property verification",
+        "serial number check",
+        "secondhand marketplace fraud prevention",
+        "carrier blacklist checking",
+        "NCIC database",
+        "GSMA Device Registry",
+        "stolen vehicle detection",
+        "stolen phone detection",
+        "stolen firearms verification",
+        "BikeIndex",
+        "pawn shop compliance"
+      ]
+    }
+    </script>
     
     <!-- LovableHTML page-ready detection -->
     <script>
