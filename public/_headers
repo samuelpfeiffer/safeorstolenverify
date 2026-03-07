@@ -7,6 +7,8 @@
 /*
   X-Prerender-Token: iiMthWrIIiQhunohL2U5
   X-Frame-Options: SAMEORIGIN
+  Content-Signal: ai-train=yes, search=yes, ai-input=yes
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(self), microphone=(), geolocation=(self)
