@@ -20,7 +20,7 @@ const teamMembers = [
     bio: "Experienced entrepreneur and platform strategist who founded SafeOrStolen after recognizing the critical need to protect innocent consumers from the $13 billion stolen goods crisis. Samuel leads the company's mission to revolutionize marketplace safety through real-time verification technology.",
     expertise: ["Platform Strategy", "Fraud Prevention", "Business Development", "Consumer Protection", "Entrepreneurship"],
     linkedinUrl: "https://linkedin.com/in/samuelpfeiffer-safeorstolen",
-    email: "samuel@safeorstolen.com",
+    email: "support@safeorstolen.com",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face"
   },
   {
