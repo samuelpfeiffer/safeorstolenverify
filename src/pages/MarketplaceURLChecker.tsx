@@ -331,7 +331,7 @@ const MarketplaceURLChecker: React.FC = () => {
                     </tr>
                     <tr>
                       <td className="p-3">Price</td>
-                      <td className="p-3 text-primary font-bold">2 free, $4.99/mo</td>
+                      <td className="p-3 text-primary font-bold">2 free, $1/mo</td>
                       <td className="p-3 text-muted-foreground">£7/check</td>
                       <td className="p-3 text-muted-foreground">Free (limited)</td>
                       <td className="p-3 text-muted-foreground">Free (10/day)</td>
