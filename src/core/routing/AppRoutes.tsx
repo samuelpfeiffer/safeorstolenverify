@@ -690,6 +690,9 @@ export const AppRoutes = () => {
         {/* React Navigate handles prerenderer/SSR path (prevents noindex) */}
         {getRedirectRoutes()}
 
+        {/* AFFILIATE REDIRECT ROUTES */}
+        <Route path="/go/:slug" element={<AffiliateRedirectPage />} />
+
         <Route path="/404" element={<NotFound />} />
 
         {/* 404 for everything else */}
