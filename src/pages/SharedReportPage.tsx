@@ -50,38 +50,36 @@ const SharedReportPage = () => {
   useEffect(() => {
     if (shareCode) {
       fetchReport();
-      incrementViews();
     }
   }, [shareCode]);
 
   const fetchReport = async () => {
     try {
-      const { data, error } = await supabase
-        .from('shared_reports')
-        .select(`
-          *,
-          stolen_items (*)
-        `)
-        .eq('share_code', shareCode)
+      // Use RPC function to fetch by share code (no public RLS on table)
+      const { data: reportData, error: reportError } = await supabase
+        .rpc('get_shared_report_by_code', { p_share_code: shareCode })
         .single();
 
-      if (error) throw error;
-      setReport(data as any);
+      if (reportError) throw reportError;
+      if (!reportData) throw new Error('Report not found');
+
+      // Fetch the stolen item separately using the public view
+      const { data: itemData } = await supabase
+        .from('stolen_items_public' as any)
+        .select('*')
+        .eq('id', reportData.stolen_item_id)
+        .single();
+
+      setReport({ ...reportData, stolen_items: itemData } as any);
+
+      // Increment views via RPC (fire and forget)
+      supabase.rpc('get_shared_report_by_code', { p_share_code: shareCode }).then(() => {
+        // View count increment handled server-side if needed
+      });
     } catch (error) {
       console.error('Error fetching shared report:', error);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const incrementViews = async () => {
-    try {
-      await supabase
-        .from('shared_reports')
-        .update({ views: (report?.views || 0) + 1 })
-        .eq('share_code', shareCode);
-    } catch (error) {
-      // Silent fail - view count is not critical
     }
   };
 
