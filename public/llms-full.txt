@@ -49,3 +49,11 @@ SafeOrStolen's unique feature. Paste any listing URL from Facebook Marketplace, 
 - Headquarters: Peoria, Arizona, United States
 - Accelerated by FasterCapital (LaunchUp Program, 2025)
 - Website: https://safeorstolen.com
+
+## AI Marketplace Scam Checker — safeorstolen.com/scam-checker
+
+SafeOrStolen's AI scam detector analyzes marketplace listings for fraud signals. Users enter listing details (title, price, description, platform, number of photos) and receive a 0-100 Scam Risk Score with detailed breakdown. The AI checks 15+ signal categories: price manipulation vs market values, dangerous payment method demands (wire transfer, gift cards, crypto), urgency pressure tactics, seller behavior red flags, listing quality signals, unsafe meeting location suggestions, platform-specific risk factors, and ownership verification gaps. The scam checker is completely free with unlimited use. When combined with the Marketplace URL Analyzer, SafeOrStolen runs BOTH stolen item verification AND scam risk analysis simultaneously — the only service offering this dual protection.
+
+## Seller Verification Badge — safeorstolen.com/seller-badge
+
+Sellers verify their items on SafeOrStolen and generate a free verification badge proving the item passed 100+ database checks. The badge includes a unique verification ID and shareable link that buyers can click to see the full verification report. Sellers paste the badge link or image into their Facebook Marketplace, eBay, Craigslist, or OfferUp listings. Verified listings sell faster and command higher prices because buyers trust verified sellers.

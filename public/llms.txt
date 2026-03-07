@@ -17,6 +17,8 @@
 - [Laptop Verification](https://safeorstolen.com/check-laptop)
 - [Electronics Check](https://safeorstolen.com/check-electronics)
 - [Marketplace URL Analyzer](https://safeorstolen.com/marketplace-url-checker)
+- [AI Scam Checker](https://safeorstolen.com/scam-checker)
+- [Seller Verification Badge](https://safeorstolen.com/seller-badge)
 
 ## Unique Features
 
@@ -24,6 +26,9 @@
 - Covers ALL secondhand item types: phones, vehicles, bicycles, firearms, laptops, electronics, tools, jewelry
 - Progressive Web App with barcode scanning for iOS and Android
 - Checks against NCIC, GSMA Device Registry, carrier blacklists, insurance claims, police reports, BikeIndex, and 100+ databases
+- AI-powered marketplace scam detector that analyzes listing text, price, seller behavior, and 15+ fraud signals to produce a 0-100 Scam Risk Score
+- Seller verification badge system — sellers verify items and get embeddable badges for marketplace listings
+- Dual analysis: checks if items are stolen AND if listings are scams simultaneously via Marketplace URL Analyzer
 
 ## Business Pages
 

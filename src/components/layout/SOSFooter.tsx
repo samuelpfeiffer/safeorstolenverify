@@ -21,6 +21,8 @@ export const SOSFooter: React.FC = () => {
         { label: 'Check Car', to: '/check-car' },
         { label: 'Firearms Check', to: '/firearms-check' },
         { label: 'URL Checker', to: '/marketplace-url-checker' },
+        { label: 'Scam Checker', to: '/scam-checker' },
+        { label: 'Seller Badge', to: '/seller-badge' },
         { label: 'Mobile App', to: '/app' },
       ]
     },

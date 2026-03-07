@@ -22,6 +22,9 @@ const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const AffiliateRedirectPage = lazy(() => import('@/pages/AffiliateRedirectPage'));
+const ScamCheckerPage = lazy(() => import('@/pages/ScamCheckerPage'));
+const SellerBadgePage = lazy(() => import('@/pages/SellerBadgePage'));
+const VerifiedResultPage = lazy(() => import('@/pages/VerifiedResultPage'));
 const CheckoutRedirectPage = lazy(() => import('@/pages/CheckoutRedirectPage'));
 const VerificationSuccessPage = lazy(() => import('@/pages/VerificationSuccessPage'));
 const PaymentSuccessPage = lazy(() => import('@/pages/PaymentSuccessPage'));
@@ -445,6 +448,11 @@ export const AppRoutes = () => {
         <Route path="/check-firearm-serial" element={<FirearmSerialCheck />} />
         <Route path="/check-jewelry-stolen" element={<JewelryCheck />} />
         
+        {/* SCAM CHECKER & SELLER BADGE */}
+        <Route path="/scam-checker" element={<ScamCheckerPage />} />
+        <Route path="/seller-badge" element={<SellerBadgePage />} />
+        <Route path="/verified/:id" element={<VerifiedResultPage />} />
+
         {/* MARKETPLACE PAGES (All 8 Marketplaces) */}
         <Route path="/marketplace-url-checker" element={<MarketplaceURLChecker />} />
         <Route path="/facebook-marketplace-stolen-check" element={<FacebookMarketplaceStolenCheck />} />
