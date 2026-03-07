@@ -11,8 +11,8 @@ export const ServiceOfferSchema = () => {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "SafeOrStolen Single Verification",
-      "description": "Single stolen item verification check for IMEI, VIN, or serial number. Instant results from 50M+ global database records.",
+      "name": "SafeOrStolen Free Verification",
+      "description": "2 free stolen item verification checks for IMEI, VIN, or serial number. Instant results from 100+ global database records.",
       "provider": {
         "@type": "Organization",
         "name": "SafeOrStolen"
@@ -23,16 +23,17 @@ export const ServiceOfferSchema = () => {
         "@type": "Offer",
         "url": "https://safeorstolen.com/pricing",
         "priceCurrency": "USD",
-        "price": "0.50",
-        "priceValidUntil": "2026-12-31",
+        "price": "0",
+        "priceValidUntil": "2027-12-31",
+        "description": "2 free verifications included",
         "availability": "https://schema.org/InStock"
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "SafeOrStolen Personal Plan",
-      "description": "Monthly subscription with 100 verification searches. Perfect for casual buyers and sellers on marketplaces.",
+      "name": "SafeOrStolen Unlimited Plan",
+      "description": "Unlimited monthly verification searches. All item types: IMEI, VIN, serial numbers, license plates, firearms. Includes mobile app with barcode scanning.",
       "provider": {
         "@type": "Organization",
         "name": "SafeOrStolen"
@@ -43,8 +44,9 @@ export const ServiceOfferSchema = () => {
         "@type": "Offer",
         "url": "https://safeorstolen.com/pricing",
         "priceCurrency": "USD",
-        "price": "9.99",
-        "priceValidUntil": "2026-12-31",
+        "price": "1.00",
+        "priceValidUntil": "2027-12-31",
+        "description": "Unlimited verifications for $1/month",
         "availability": "https://schema.org/InStock"
       }
     }

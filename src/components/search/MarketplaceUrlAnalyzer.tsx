@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useState, useMemo } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useMarketplaceUrlAnalyzer } from '@/hooks/useMarketplaceUrlAnalyzer';
+import { analyzeListingForScams, type ScamAnalysisResult } from '@/lib/scamAnalyzer';
+import { ScamAnalysisResultCard } from '@/components/scam/ScamAnalysisResult';
 
 interface MarketplaceUrlAnalyzerProps {
   onIdentifierFound?: (identifier: string, type: string) => void;
@@ -40,6 +42,37 @@ const MarketplaceUrlAnalyzerComponent = ({
 
   const [showSupported, setShowSupported] = useState(false);
   const detectedPlatform = detectMarketplaceFromUrl(urlInput);
+
+  // Auto-run scam analysis when marketplace analysis completes
+  const scamResult: ScamAnalysisResult | null = useMemo(() => {
+    if (!analysis?.success || !analysis.itemDetails) return null;
+
+    const title = analysis.itemDetails.title || analysis.itemDetails.sourceTitle || '';
+    const description = analysis.itemDetails.description || analysis.itemDetails.sourceDescription || '';
+    const priceStr = analysis.itemDetails.price || '';
+    const priceNum = parseFloat(priceStr.replace(/[^0-9.]/g, '')) || null;
+
+    // Guess item type from identifiers or title
+    const identTypes = (analysis.identifiers || []).map(i => i.type.toLowerCase());
+    let itemType = 'electronics';
+    if (identTypes.some(t => t.includes('imei'))) itemType = 'phone';
+    else if (identTypes.some(t => t.includes('vin'))) itemType = 'vehicle';
+    else if (/bike|bicycle/i.test(title)) itemType = 'bicycle';
+    else if (/gun|firearm|pistol|rifle|glock|ar-?15/i.test(title)) itemType = 'firearm';
+    else if (/laptop|macbook/i.test(title)) itemType = 'laptop';
+    else if (/xbox|playstation|ps5|nintendo|switch|console/i.test(title)) itemType = 'gaming';
+
+    return analyzeListingForScams({
+      title,
+      description,
+      price: priceNum,
+      sellerName: analysis.itemDetails.seller || null,
+      platform: analysis.marketplace?.name || 'Unknown',
+      listingUrl: analysis.url || urlInput,
+      imageCount: 0, // not available from URL analysis
+      itemType,
+    });
+  }, [analysis, urlInput]);
 
   const handleAnalyze = async () => {
     if (!urlInput.trim()) return;
@@ -249,6 +282,9 @@ const MarketplaceUrlAnalyzerComponent = ({
           </div>
         </Card>
       )}
+
+      {/* Scam Analysis Result — auto-generated from listing data */}
+      {scamResult && <ScamAnalysisResultCard result={scamResult} />}
 
       {/* Error State */}
       {analysis && !analysis.success && (
