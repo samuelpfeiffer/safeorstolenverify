@@ -38,7 +38,7 @@ const teamMembers = [
     bio: "Former retail security director with extensive experience in loss prevention and vendor relations across major retail chains. Michael builds strategic partnerships with law enforcement agencies, retailers, and technology partners to expand our global reach in fighting the stolen goods crisis.",
     expertise: ["Retail Security", "Loss Prevention", "Partnership Development", "Business Growth", "Strategic Alliances"],
     linkedinUrl: "https://linkedin.com/in/michaelrodriguez-safeorstolen",
-    email: "michael@safeorstolen.com",
+    email: "support@safeorstolen.com",
     image: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
   }
 ];

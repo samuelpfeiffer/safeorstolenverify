@@ -87,7 +87,7 @@ serve(async (req: Request): Promise<Response> => {
 
         try {
           await resend.emails.send({
-            from: "SafeOrStolen <alerts@safeorstolen.com>",
+            from: "SafeOrStolen <support@safeorstolen.com>",
             to: [profile.email],
             subject: `🚨 Watchlist Alert: Item Reported as Stolen`,
             html: `
