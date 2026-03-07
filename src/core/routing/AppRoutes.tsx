@@ -448,6 +448,11 @@ export const AppRoutes = () => {
         <Route path="/check-firearm-serial" element={<FirearmSerialCheck />} />
         <Route path="/check-jewelry-stolen" element={<JewelryCheck />} />
         
+        {/* SCAM CHECKER & SELLER BADGE */}
+        <Route path="/scam-checker" element={<ScamCheckerPage />} />
+        <Route path="/seller-badge" element={<SellerBadgePage />} />
+        <Route path="/verified/:id" element={<VerifiedResultPage />} />
+
         {/* MARKETPLACE PAGES (All 8 Marketplaces) */}
         <Route path="/marketplace-url-checker" element={<MarketplaceURLChecker />} />
         <Route path="/facebook-marketplace-stolen-check" element={<FacebookMarketplaceStolenCheck />} />
