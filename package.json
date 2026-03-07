@@ -72,7 +72,7 @@
     "framer-motion": "^11.18.2",
     "html5-qrcode": "^2.3.8",
     "input-otp": "^1.2.4",
-    "jspdf": "^3.0.3",
+    "jspdf": "4.2.0",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "prerender-spa-plugin": "^3.4.0",
@@ -94,7 +94,7 @@
     "tsx": "^4.20.6",
     "vaul": "^0.9.3",
     "vite-plugin-prerender": "^1.0.8",
-    "vite-plugin-pwa": "^1.1.0",
+    "vite-plugin-pwa": "0.19.8",
     "web-vitals": "^5.1.0",
     "workbox-window": "^7.3.0",
     "zod": "^3.23.8"
