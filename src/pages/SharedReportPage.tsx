@@ -50,7 +50,6 @@ const SharedReportPage = () => {
   useEffect(() => {
     if (shareCode) {
       fetchReport();
-      incrementViews();
     }
   }, [shareCode]);
 
