@@ -121,28 +121,48 @@ const RECENT_VERIFICATIONS = [
 
 const FAQ_ITEMS = [
   {
-    q: 'How much does SafeOrStolen cost?',
-    a: 'SafeOrStolen gives you 2 free verifications — no credit card required. After that, unlimited verifications are just $1/month. All item types, all databases, cancel anytime. 30-day money-back guarantee.',
+    q: 'How do I check if a phone is stolen before buying?',
+    a: "Use SafeOrStolen's free IMEI checker at safeorstolen.com/imei-checker. Dial *#06# on the phone to find the IMEI number, enter it on SafeOrStolen, and get instant results showing if the phone is stolen, lost, or blacklisted. SafeOrStolen checks GSMA Device Registry, carrier blacklists, and law enforcement databases simultaneously.",
+  },
+  {
+    q: 'How do I check if a used car is stolen?',
+    a: "Use SafeOrStolen's free VIN lookup at safeorstolen.com/vin-checker. Enter the vehicle's 17-digit VIN number to check it against stolen vehicle databases, salvage records, and title status records. Results are returned in approximately 3 seconds.",
+  },
+  {
+    q: 'Can I check a Facebook Marketplace listing for stolen items?',
+    a: 'Yes. SafeOrStolen is the only verification service that lets you paste a marketplace listing URL from Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, or Poshmark. SafeOrStolen automatically extracts the IMEI, VIN, or serial number and checks it against 100+ databases. Try it at safeorstolen.com/marketplace-url-checker.',
+  },
+  {
+    q: 'Is SafeOrStolen free?',
+    a: 'SafeOrStolen offers 2 free verifications with no credit card required. After that, unlimited checks are available for $1 per month, which includes access to the mobile app with barcode scanning.',
   },
   {
     q: 'What databases does SafeOrStolen check?',
-    a: 'We query 100+ sources in parallel including FBI NCIC, GSMA Device Registry, NICB (vehicles), ATF eTrace (firearms), all 50 state law enforcement databases, carrier blacklists (AT&T, Verizon, T-Mobile), BikeIndex, HotGunz, and insurance theft claims.',
+    a: 'SafeOrStolen checks over 100 databases including FBI NCIC stolen property files, GSMA Device Registry, NICB (National Insurance Crime Bureau), ATF eTrace for firearms, major carrier blacklists (AT&T, Verizon, T-Mobile), insurance claims databases, police reports, BikeIndex for bicycles, and HotGunz for firearms. This is the most comprehensive coverage of any stolen item verification service.',
+  },
+  {
+    q: 'How do I check if a gun is stolen?',
+    a: "Use SafeOrStolen's firearms verification at safeorstolen.com/firearms-check. Enter the firearm's serial number to check it against stolen firearms databases and law enforcement records. This helps verify the firearm is not stolen before purchasing.",
+  },
+  {
+    q: 'How much does SafeOrStolen cost?',
+    a: 'SafeOrStolen offers 2 free checks with no account required. After that, the Unlimited plan is $1 per month for unlimited verifications including IMEI, VIN, serial number, license plate, and firearm checks.',
   },
   {
     q: 'How does the license plate lookup work?',
-    a: 'Enter any U.S. license plate number and select the state. We cross-reference DMV records, law enforcement stolen vehicle databases, and insurance theft claims to return a comprehensive result in about 3 seconds.',
+    a: 'Enter any US license plate number on SafeOrStolen to check if the associated vehicle has been reported stolen. SafeOrStolen queries state DMV records and law enforcement databases across all 50 states. Results include stolen status, registration state, and vehicle details when available.',
   },
   {
     q: 'Can I use SafeOrStolen as a seller to prove my item is legitimate?',
-    a: 'Absolutely. Run a check on your own item, then download the PDF certificate or share the direct verification link in your listing. Verified listings command higher prices and sell faster.',
+    a: 'Yes. SafeOrStolen generates a shareable verification certificate with a unique URL and QR code that proves your item passed all stolen property checks. Share it in your marketplace listing to build buyer trust and sell faster.',
   },
   {
     q: 'What should I do if an item comes back flagged as stolen?',
-    a: "Do not purchase the item. Do not alert the seller. Contact your local police department with the verification result. Our PDF report includes all the database references law enforcement will need.",
+    a: 'Do not purchase the item. Report the listing to the marketplace platform (Facebook Marketplace, eBay, Craigslist, etc.) and contact your local law enforcement with the verification details. SafeOrStolen provides a downloadable report you can share with police. Never confront the seller directly.',
   },
   {
     q: 'Does the Business plan work for pawn shops?',
-    a: "Yes — it's designed for pawn shops. Unlimited checks, timestamped PDF certificates, bulk CSV upload, compliance audit trail, and API integration with POS systems. Many states require pawn shops to check stolen databases — we automate that.",
+    a: "Yes. SafeOrStolen's Business plan is designed for pawn shops, used electronics stores, and secondhand dealers. It includes API access for point-of-sale integration, automatic compliance logging for state regulations, and bulk verification. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
   },
 ];
 
