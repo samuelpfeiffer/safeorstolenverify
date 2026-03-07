@@ -21,6 +21,7 @@ import { GA4Provider } from '@/components/seo/GA4Provider';
 import { MasterSEO } from '@/components/seo/MasterSEO';
 import { AppDownloadBot } from '@/components/pwa/AppDownloadBot';
 import { RedirectHandler } from '@/components/routing/RedirectHandler';
+import ScrollRestoration from '@/components/ScrollRestoration';
 // AISafetyAdvisor removed — replaced by AIFloatingChat
 import { AIFloatingChat } from '@/components/ai/AIFloatingChat';
 
@@ -112,6 +113,7 @@ const AuthAwareContent: React.FC = () => {
       <PWAProvider>
         <MasterSEO />
         <RedirectHandler />
+        <ScrollRestoration />
         <CriticalResourceLoader />
         
         {/* Lazy load SEO meta components - not needed for LCP */}
