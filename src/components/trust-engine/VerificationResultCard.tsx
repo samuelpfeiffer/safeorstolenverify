@@ -149,6 +149,9 @@ export const VerificationResultCard: React.FC<Props> = ({ result, onNewCheck }) 
           identifier={result.serial}
         />
 
+        {/* Affiliate offers for clean results */}
+        <CleanResultOffers result={result} />
+
         {/* AI nudge */}
         <p className="text-[11px] text-muted-foreground text-center pt-2">
           Verified by SafeOrStolen AI.{' '}
