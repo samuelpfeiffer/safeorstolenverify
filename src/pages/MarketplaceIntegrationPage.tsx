@@ -38,7 +38,7 @@ export default function MarketplaceIntegrationPage() {
                   <Link to="/pricing">View API Pricing</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="mailto:api@safeorstolen.com">Contact Sales</a>
+                  <a href="mailto:support@safeorstolen.com">Contact Sales</a>
                 </Button>
               </div>
             </div>
