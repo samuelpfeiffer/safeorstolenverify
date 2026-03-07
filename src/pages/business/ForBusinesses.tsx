@@ -652,7 +652,7 @@ export default function ForBusinesses() {
             </div>
             <p className="text-sm text-muted-foreground">
               💯 30-Day Money-Back Guarantee • Questions? Email{' '}
-              <a href="mailto:business@safeorstolen.com" className="text-primary hover:underline">business@safeorstolen.com</a>
+              <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>
             </p>
           </div>
         </section>

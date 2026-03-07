@@ -179,7 +179,7 @@ export default function ForPawnShops() {
                 <Link to="/pricing">View Business Pricing</Link>
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-4">Questions? Call us at (555) 123-4567 or email business@safeorstolen.com</p>
+            <p className="text-sm text-muted-foreground mt-4">Questions? Email support@safeorstolen.com</p>
           </div>
         </section>
 
