@@ -69,7 +69,7 @@ const faqSchema = {
       "name": "Is the Marketplace URL Analyzer free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, unlimited access starts at $4.99/month — significantly cheaper than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check)."
+        "text": "SafeOrStolen offers 2 free verification checks including URL analysis. After that, unlimited access is $1/month — significantly cheaper than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check)."
       }
     },
     {
