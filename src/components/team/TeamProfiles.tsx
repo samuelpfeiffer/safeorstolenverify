@@ -29,7 +29,7 @@ const teamMembers = [
     bio: "Research expert and data analyst specializing in consumer protection and fraud patterns. Kelly conducts comprehensive research on the stolen goods crisis and develops data-driven strategies to combat marketplace fraud. Based in Arizona, she leads our research initiatives and partners with law enforcement agencies.",
     expertise: ["Research & Analysis", "Consumer Protection", "Data Analytics", "Fraud Patterns", "Law Enforcement Relations"],
     linkedinUrl: "https://linkedin.com/in/kellymcevoy-safeorstolen",
-    email: "kelly@safeorstolen.com", 
+    email: "support@safeorstolen.com", 
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face"
   },
   {
