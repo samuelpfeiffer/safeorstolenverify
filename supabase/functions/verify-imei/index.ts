@@ -289,15 +289,14 @@ serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('[IMEI] Error:', error);
+    console.error('[IMEI] Unhandled error:', error);
     return new Response(
       JSON.stringify({
         success: false,
         status: 'error',
         confidence: 0,
         source: 'IMEI_Verification',
-        message: error.message || 'IMEI verification failed',
-        error: error.message
+        message: 'IMEI verification failed. Please try again.'
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
