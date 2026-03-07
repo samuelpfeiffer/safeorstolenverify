@@ -55,7 +55,7 @@ export const EEATSignals = () => {
 
       {/* ─── Real Team ──────────────────────────────── */}
       <meta name="team" content="Samuel Pfeiffer (CEO & Founder), Kelly McEvoy (Co-Founder & YouTube Educator)" />
-      <meta name="organization-contact" content="safeorstolen@outlook.com" />
+      <meta name="organization-contact" content="support@safeorstolen.com" />
       <meta name="organization-address" content="Peoria, Arizona 85345, United States" />
 
       {/* ─── Data Sources — Specific, not vague ─────── */}

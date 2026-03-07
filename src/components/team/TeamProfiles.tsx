@@ -20,7 +20,7 @@ const teamMembers = [
     bio: "Experienced entrepreneur and platform strategist who founded SafeOrStolen after recognizing the critical need to protect innocent consumers from the $13 billion stolen goods crisis. Samuel leads the company's mission to revolutionize marketplace safety through real-time verification technology.",
     expertise: ["Platform Strategy", "Fraud Prevention", "Business Development", "Consumer Protection", "Entrepreneurship"],
     linkedinUrl: "https://linkedin.com/in/samuelpfeiffer-safeorstolen",
-    email: "samuel@safeorstolen.com",
+    email: "support@safeorstolen.com",
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&crop=face"
   },
   {
@@ -29,7 +29,7 @@ const teamMembers = [
     bio: "Research expert and data analyst specializing in consumer protection and fraud patterns. Kelly conducts comprehensive research on the stolen goods crisis and develops data-driven strategies to combat marketplace fraud. Based in Arizona, she leads our research initiatives and partners with law enforcement agencies.",
     expertise: ["Research & Analysis", "Consumer Protection", "Data Analytics", "Fraud Patterns", "Law Enforcement Relations"],
     linkedinUrl: "https://linkedin.com/in/kellymcevoy-safeorstolen",
-    email: "kelly@safeorstolen.com", 
+    email: "support@safeorstolen.com", 
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop&crop=face"
   },
   {
@@ -38,7 +38,7 @@ const teamMembers = [
     bio: "Former retail security director with extensive experience in loss prevention and vendor relations across major retail chains. Michael builds strategic partnerships with law enforcement agencies, retailers, and technology partners to expand our global reach in fighting the stolen goods crisis.",
     expertise: ["Retail Security", "Loss Prevention", "Partnership Development", "Business Growth", "Strategic Alliances"],
     linkedinUrl: "https://linkedin.com/in/michaelrodriguez-safeorstolen",
-    email: "michael@safeorstolen.com",
+    email: "support@safeorstolen.com",
     image: "/lovable-uploads/ec9c0592-2bc2-4148-b85a-82ff5342c0f8.png"
   }
 ];

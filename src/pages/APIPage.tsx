@@ -400,7 +400,7 @@ console.log('Confidence:', result.confidence + '%');`}
                   Need help with API integration? Our dedicated developer support team is here to assist you with any questions or issues:
                 </p>
                 <ul>
-                  <li><strong>Email:</strong> <a href="mailto:api@safeorstolen.com" className="text-primary hover:underline">api@safeorstolen.com</a></li>
+                  <li><strong>Email:</strong> <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a></li>
                   <li><strong>Documentation:</strong> docs.safeorstolen.com</li>
                   <li><strong>Enterprise Support:</strong> Dedicated Slack channel for Enterprise customers</li>
                 </ul>

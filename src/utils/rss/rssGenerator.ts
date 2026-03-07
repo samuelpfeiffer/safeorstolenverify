@@ -135,8 +135,8 @@ export const getMainFeedConfig = (): RSSFeedConfig => ({
   description: 'Latest updates on consumer protection, stolen goods verification, and safe buying practices. Get notified about new tools and security insights.',
   link: 'https://safeorstolen.com',
   language: 'en-US',
-  managingEditor: 'team@safeorstolen.com (SafeOrStolen Team)',
-  webMaster: 'webmaster@safeorstolen.com (SafeOrStolen Webmaster)',
+  managingEditor: 'support@safeorstolen.com (SafeOrStolen Team)',
+  webMaster: 'support@safeorstolen.com (SafeOrStolen Team)',
   category: 'Consumer Protection',
   ttl: 720, // 12 hours
   image: {

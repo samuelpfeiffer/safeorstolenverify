@@ -295,7 +295,7 @@ export const BusinessLandingTemplate = ({
                 <Link to="/pricing">Start Free Trial</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                <a href="mailto:business@safeorstolen.com">
+                <a href="mailto:support@safeorstolen.com">
                   <Mail className="w-4 h-4 mr-2" />
                   Contact Sales
                 </a>

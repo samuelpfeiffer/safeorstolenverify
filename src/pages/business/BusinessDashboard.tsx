@@ -275,7 +275,7 @@ export default function BusinessDashboard() {
                   <h4 className="font-semibold mb-2">Support</h4>
                   <p className="text-sm text-muted-foreground">
                     Need help? Email us at{' '}
-                    <a href="mailto:business@safeorstolen.com" className="text-primary hover:underline">business@safeorstolen.com</a>
+                    <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>
                   </p>
                 </div>
               </CardContent>

@@ -546,7 +546,7 @@ export default function ForBusinesses() {
                     ))}
                   </ul>
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="mailto:business@safeorstolen.com">Contact Sales</a>
+                    <a href="mailto:support@safeorstolen.com">Contact Sales</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -647,12 +647,12 @@ export default function ForBusinesses() {
                 <Link to="/business/signup">Start Free Trial</Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6">
-                <a href="mailto:business@safeorstolen.com">Schedule Demo Call</a>
+                <a href="mailto:support@safeorstolen.com">Schedule Demo Call</a>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground">
               💯 30-Day Money-Back Guarantee • Questions? Email{' '}
-              <a href="mailto:business@safeorstolen.com" className="text-primary hover:underline">business@safeorstolen.com</a>
+              <a href="mailto:support@safeorstolen.com" className="text-primary hover:underline">support@safeorstolen.com</a>
             </p>
           </div>
         </section>

@@ -38,7 +38,7 @@ export default function MarketplaceIntegrationPage() {
                   <Link to="/pricing">View API Pricing</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="mailto:api@safeorstolen.com">Contact Sales</a>
+                  <a href="mailto:support@safeorstolen.com">Contact Sales</a>
                 </Button>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function MarketplaceIntegrationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="mailto:api@safeorstolen.com">
+                <a href="mailto:support@safeorstolen.com">
                   Contact Sales <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
