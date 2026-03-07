@@ -546,7 +546,7 @@ export default function ForBusinesses() {
                     ))}
                   </ul>
                   <Button variant="outline" className="w-full" asChild>
-                    <a href="mailto:business@safeorstolen.com">Contact Sales</a>
+                    <a href="mailto:support@safeorstolen.com">Contact Sales</a>
                   </Button>
                 </CardContent>
               </Card>
