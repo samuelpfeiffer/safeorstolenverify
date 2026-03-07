@@ -113,6 +113,7 @@ const AuthAwareContent: React.FC = () => {
       <PWAProvider>
         <MasterSEO />
         <RedirectHandler />
+        <ScrollRestoration />
         <CriticalResourceLoader />
         
         {/* Lazy load SEO meta components - not needed for LCP */}
