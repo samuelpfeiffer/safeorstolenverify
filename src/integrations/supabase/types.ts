@@ -655,6 +655,13 @@ export type Database = {
             referencedRelation: "stolen_items"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "fraud_analysis_report_id_fkey"
+            columns: ["report_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items_public"
+            referencedColumns: ["id"]
+          },
         ]
       }
       gsc_oauth_tokens: {
@@ -962,6 +969,13 @@ export type Database = {
             referencedRelation: "stolen_items"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "shared_reports_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items_public"
+            referencedColumns: ["id"]
+          },
         ]
       }
       stolen_item_notifications: {
@@ -1022,6 +1036,13 @@ export type Database = {
             columns: ["stolen_item_id"]
             isOneToOne: false
             referencedRelation: "stolen_items"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "stolen_item_notifications_stolen_item_id_fkey"
+            columns: ["stolen_item_id"]
+            isOneToOne: false
+            referencedRelation: "stolen_items_public"
             referencedColumns: ["id"]
           },
         ]
@@ -1352,7 +1373,84 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      community_stories_public: {
+        Row: {
+          created_at: string | null
+          experience_type: string | null
+          id: string | null
+          is_approved: boolean | null
+          item_type: string | null
+          story: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          experience_type?: string | null
+          id?: string | null
+          is_approved?: boolean | null
+          item_type?: string | null
+          story?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          experience_type?: string | null
+          id?: string | null
+          is_approved?: boolean | null
+          item_type?: string | null
+          story?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      stolen_items_public: {
+        Row: {
+          brand: string | null
+          created_at: string | null
+          date_stolen: string | null
+          description: string | null
+          id: string | null
+          imei: string | null
+          item_type: string | null
+          location: string | null
+          model: string | null
+          serial_number: string | null
+          status: string | null
+          updated_at: string | null
+          vin: string | null
+        }
+        Insert: {
+          brand?: string | null
+          created_at?: string | null
+          date_stolen?: string | null
+          description?: string | null
+          id?: string | null
+          imei?: string | null
+          item_type?: string | null
+          location?: string | null
+          model?: string | null
+          serial_number?: string | null
+          status?: string | null
+          updated_at?: string | null
+          vin?: string | null
+        }
+        Update: {
+          brand?: string | null
+          created_at?: string | null
+          date_stolen?: string | null
+          description?: string | null
+          id?: string | null
+          imei?: string | null
+          item_type?: string | null
+          location?: string | null
+          model?: string | null
+          serial_number?: string | null
+          status?: string | null
+          updated_at?: string | null
+          vin?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       check_auth_rate_limit: { Args: never; Returns: boolean }
@@ -1404,6 +1502,22 @@ export type Database = {
           story: string
           updated_at: string
         }[]
+      }
+      get_shared_report_by_code: {
+        Args: { p_share_code: string }
+        Returns: {
+          created_at: string | null
+          id: string
+          share_code: string
+          stolen_item_id: string | null
+          views: number | null
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "shared_reports"
+          isOneToOne: false
+          isSetofReturn: true
+        }
       }
       has_role: {
         Args: {
