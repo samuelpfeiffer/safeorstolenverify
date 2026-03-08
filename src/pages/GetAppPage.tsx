@@ -86,7 +86,8 @@ const GetAppPage = () => {
         structuredData={[faqSchema, appSchema]}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-16">
         {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
           <div className="max-w-6xl mx-auto">
