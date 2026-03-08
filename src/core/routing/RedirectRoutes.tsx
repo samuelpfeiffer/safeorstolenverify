@@ -246,6 +246,18 @@ const REDIRECT_MAP: Record<string, string> = {
   // ===== COMPARISON REDIRECTS (Soft 404 fix) =====
   '/vs-stolenphonechecker': '/compare',
   '/vs-imeipro': '/vs-imeiinfo',
+  '/vs/checkmend': '/vs-checkmend',
+  '/competitor-alternatives': '/compare',
+
+  // ===== GSC 404 FIX 2026-03-08 =====
+  '/minneapolis-stolen-item-check': '/verify',
+  '/louisville-stolen-item-check': '/verify',
+  '/ultimate-guide-not-buying-stolen-goods': '/faq',
+  '/about-problem': '/about',
+  '/blog/imei-checker-app-comparison': '/blog',
+  '/blog/red-flags-buying-used-electronics-1759314016.095080': '/blog',
+  '/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080': '/blog',
+  '/blog/vin-verification-complete-guide-used-cars-1759314016.095080': '/blog',
 
   // ===== STATE/CITY DIRECTORY REDIRECTS =====
   '/state/new-york/stolen-item-checker': '/new-york-vin-lookup',

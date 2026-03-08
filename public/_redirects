@@ -120,7 +120,16 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /stolen-checker-app      /app  301!
 /check-dewalt-tools      /serial-number-checker  301!
 
-# GSC noindex fix 2026-01-31: Legacy app and mobile URLs
+# GSC 404 fix 2026-03-08: 10 true 404 URLs
+/minneapolis-stolen-item-check    /verify  301!
+/louisville-stolen-item-check     /verify  301!
+/ultimate-guide-not-buying-stolen-goods  /faq  301!
+/about-problem                    /about  301!
+/blog/imei-checker-app-comparison /blog  301!
+/blog/red-flags-buying-used-electronics-1759314016.095080  /blog  301!
+/blog/complete-guide-verify-imei-numbers-used-phone-1759314016.095080  /blog  301!
+/blog/vin-verification-complete-guide-used-cars-1759314016.095080  /blog  301!
+
 /ios-app                 /app  301!
 /mobile-verification     /app  301!
 /verification-app        /app  301!
