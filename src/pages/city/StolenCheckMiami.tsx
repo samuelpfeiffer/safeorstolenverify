@@ -68,6 +68,7 @@ const StolenCheckMiami = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Miami Stolen Item Check - Verify Before Buying in Miami FL | SafeOrStolen"
         description="Check if items are stolen in Miami, Florida. Free IMEI, VIN, and serial number verification for Miami buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist."
