@@ -4,6 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { useSearchParams, Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
@@ -158,17 +160,84 @@ const StolenDatabasePage = () => {
     }))
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I search the stolen items database?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Enter a brand name, model, serial number, IMEI, or VIN in the search box. Filter by category (smartphones, laptops, vehicles, etc.) and location. Results show all matching reported stolen items with details including date stolen and location." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report a stolen item?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Visit safeorstolen.com/report-stolen to submit a stolen item report. You'll need the item type, brand/model, serial number or IMEI, date stolen, location, and police report number. All submissions are verified before inclusion in the database." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the stolen items database free to search?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching the stolen items database is completely free. For full verification against 100+ external databases (FBI NCIC, GSMA, NICB, etc.), use SafeOrStolen's verification tool — 2 free checks, then $1/month unlimited." }
+      }
+    ]
+  };
+
   return (
     <>
       <PageSEO
         title="Stolen Items Database - Search Reported Thefts | SafeOrStolen"
-        description="Search our comprehensive database of reported stolen items. Find bikes, electronics, phones, vehicles, jewelry and more. Help recover stolen property."
-        keywords="stolen items database, search stolen goods, reported thefts, stolen bikes, stolen phones, stolen vehicles, stolen property search"
+        description="Search our database of reported stolen items. Find phones, laptops, vehicles, bikes, firearms, jewelry. Help recover stolen property. Free to search."
+        keywords="stolen items database, search stolen goods, reported thefts, stolen bikes, stolen phones, stolen vehicles, stolen property search, recovered stolen items"
         canonical="/stolen-database"
-        structuredData={[itemListSchema]}
+        structuredData={[itemListSchema, faqSchema]}
       />
 
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      {/* Comprehensive noscript for crawlers */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
+          <header>
+            <nav><a href="/">SafeOrStolen</a> &gt; Stolen Items Database</nav>
+          </header>
+          <main>
+            <h1>Stolen Items Database</h1>
+            <p>Search our database of reported stolen items including phones, laptops, vehicles, bicycles, firearms, jewelry, and more. Help protect buyers and recover stolen property.</p>
+            
+            <h2>Search by Category</h2>
+            <ul>
+              <li>Smartphones — IMEI-based stolen phone reports</li>
+              <li>Laptops — Serial number based theft reports</li>
+              <li>Vehicles — VIN-based stolen vehicle reports</li>
+              <li>Bicycles — Frame serial number theft reports</li>
+              <li>Firearms — Serial number theft reports</li>
+              <li>Watches, Cameras, Tablets, Jewelry</li>
+            </ul>
+            
+            <h2>How to Use the Database</h2>
+            <ul>
+              <li>Search by identifier: Enter a serial number, IMEI, or VIN to find exact matches</li>
+              <li>Browse by category: Filter by item type to find specific categories</li>
+              <li>Search by location: Narrow results to your city or state</li>
+              <li>Report a stolen item: Add your stolen property at <a href="/report-stolen">safeorstolen.com/report-stolen</a></li>
+            </ul>
+            
+            <h2>For Full Verification</h2>
+            <p>This database shows community-reported stolen items. For comprehensive verification against 100+ databases including FBI NCIC, GSMA, NICB, and carrier blacklists, use <a href="/verify">SafeOrStolen's verification tool</a> — 2 free checks, then $1/month unlimited.</p>
+            
+            <h2>Related Resources</h2>
+            <ul>
+              <li><a href="/verify">Verify Any Item</a></li>
+              <li><a href="/report-stolen">Report a Stolen Item</a></li>
+              <li><a href="/imei-checker">IMEI Checker</a></li>
+              <li><a href="/vin-checker">VIN Checker</a></li>
+              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+            </ul>
+          </main>
+        </div>
+      </noscript>
+
+      <TopNavigation />
+
+      <div className="container mx-auto px-4 py-8 max-w-7xl pt-24">
         <BreadcrumbNavigation 
           items={[{ name: 'Stolen Database', href: '/stolen-database' }]}
         />
