@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { BookOpen, FileText, HelpCircle, Shield, Phone, Car, ArrowRight, Download, Scale, Building2, Gavel } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const educationalFAQs = [
   {
