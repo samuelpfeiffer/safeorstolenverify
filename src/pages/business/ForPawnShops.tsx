@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Shield, Zap, DollarSign, Scale, Clock, TrendingUp } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/schemas/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 export default function ForPawnShops() {
   const structuredData = {
