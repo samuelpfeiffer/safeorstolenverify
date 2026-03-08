@@ -332,6 +332,7 @@ const StolenItemDetailPage = () => {
           </CardContent>
         </Card>
       </div>
+      <Footer />
     </>
   );
 };
