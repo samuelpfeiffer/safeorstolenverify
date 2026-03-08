@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { callClaude, parseJsonResponse, AnthropicError } from '../_shared/anthropic.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -8,30 +9,11 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
-      return new Response(
-        JSON.stringify({ success: false, error: 'AI service not configured' }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
     const { metrics, userBehavior, conversionData, pageViews } = await req.json();
-
     console.log('[AI Site Optimizer] Analyzing site performance');
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          {
-            role: 'system',
-            content: `You are SafeOrStolen's conversion optimization expert. Analyze site metrics and provide actionable recommendations to improve:
+    const content = await callClaude({
+      system: `You are SafeOrStolen's conversion optimization expert. Analyze site metrics and provide actionable recommendations to improve:
 
 1. User engagement and retention
 2. Free-to-paid conversion rates
@@ -56,15 +38,14 @@ Respond with JSON:
   ],
   "featurePriorities": ["feature1", "feature2"],
   "quickWins": ["win1", "win2", "win3"]
-}`
-          },
-          {
-            role: 'user',
-            content: `Analyze SafeOrStolen's performance and provide optimization recommendations:
+}`,
+      messages: [{
+        role: 'user',
+        content: `Analyze SafeOrStolen's performance:
 
-Site Metrics: ${JSON.stringify(metrics || { visitors: 'unknown', bounceRate: 'unknown' })}
-User Behavior: ${JSON.stringify(userBehavior || { avgSessionDuration: 'unknown' })}
-Conversion Data: ${JSON.stringify(conversionData || { freeToPayRate: '0%', signups: 'unknown' })}
+Site Metrics: ${JSON.stringify(metrics || { visitors: 'unknown' })}
+User Behavior: ${JSON.stringify(userBehavior || {})}
+Conversion Data: ${JSON.stringify(conversionData || { freeToPayRate: '0%' })}
 Top Pages: ${JSON.stringify(pageViews || ['/', '/verify', '/pricing'])}
 
 Current challenges:
@@ -72,55 +53,23 @@ Current challenges:
 - High bounce rate
 - Need more mobile app installs
 - Users not completing verifications`
-          }
-        ],
-        temperature: 0.4,
-        max_tokens: 2000,
-      }),
+      }],
+      temperature: 0.4,
+      maxTokens: 2000,
     });
 
-    if (!response.ok) {
-      if (response.status === 429) {
-        return new Response(
-          JSON.stringify({ success: false, error: 'Rate limit exceeded' }),
-          { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ success: false, error: 'AI service temporarily unavailable' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-      throw new Error(`AI gateway error: ${response.status}`);
-    }
+    const result = parseJsonResponse(content) || { overallHealth: 50, keyInsights: [], quickWins: [] };
+    console.log(`[AI Site Optimizer] Health: ${result.overallHealth}`);
 
-    const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || '{}';
-
-    let result;
-    try {
-      const jsonMatch = content.match(/\{[\s\S]*\}/);
-      result = jsonMatch ? JSON.parse(jsonMatch[0]) : {};
-    } catch {
-      result = { overallHealth: 50, keyInsights: [], quickWins: [] };
-    }
-
-    console.log(`[AI Site Optimizer] Health: ${result.overallHealth}, Quick Wins: ${result.quickWins?.length || 0}`);
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        optimization: result
-      }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify({ success: true, optimization: result }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
 
   } catch (error) {
     console.error('[AI Site Optimizer] Error:', error);
-    return new Response(
-      JSON.stringify({ success: false, error: error.message }),
-      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-    );
+    const status = error instanceof AnthropicError ? error.status : 500;
+    return new Response(JSON.stringify({ success: false, error: error instanceof Error ? error.message : 'Unknown error' }), {
+      status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
   }
 });

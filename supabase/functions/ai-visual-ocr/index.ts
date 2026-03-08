@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { checkRateLimit } from '../_shared/rate-limit.ts';
+import { callClaude, parseJsonResponse, AnthropicError } from '../_shared/anthropic.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -8,7 +9,6 @@ serve(async (req) => {
 
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
-  // Rate limit: 5 requests/min per IP (stricter — large payloads)
   const clientIp = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('cf-connecting-ip');
   const rl = checkRateLimit(clientIp, { maxRequests: 5, windowMs: 60_000 });
   if (!rl.allowed) {
@@ -34,28 +34,27 @@ serve(async (req) => {
       );
     }
 
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
+    const ANTHROPIC_API_KEY = Deno.env.get('ANTHROPIC_API_KEY');
+    if (!ANTHROPIC_API_KEY) {
       return new Response(
         JSON.stringify({ error: 'AI service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+    // Claude supports vision natively via the messages API
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+        'x-api-key': ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          {
-            role: 'system',
-            content: `You are an OCR expert for SafeOrStolen. Extract identifiers from photos of VIN plates, IMEI stickers, serial number labels, phone settings screens, or any item with a visible identifier.
-
-Your job: Find and extract the exact identifier text (IMEI, VIN, serial number, license plate).
+        model: 'claude-sonnet-4-5-20250514',
+        max_tokens: 1500,
+        temperature: 0.1,
+        system: `You are an OCR expert for SafeOrStolen. Extract identifiers from photos of VIN plates, IMEI stickers, serial number labels, phone settings screens, or any item with a visible identifier.
 
 Rules:
 1. Extract the EXACT text — do not guess or fabricate characters
@@ -73,7 +72,7 @@ Respond with JSON only, no markdown:
       "rawText": "exact text as seen in image",
       "extractedValue": "cleaned value (no spaces/dashes)",
       "confidence": 0-100,
-      "location": "where in image (e.g., 'VIN plate on dashboard', 'sticker on back')"
+      "location": "where in image"
     }
   ],
   "deviceInfo": "optional: device brand/model if visible",
@@ -84,68 +83,54 @@ If nothing found:
 {
   "found": false,
   "identifiers": [],
-  "tip": "Suggestion for better photo (e.g., 'Try photographing the VIN plate on the dashboard')"
-}`
-          },
-          {
-            role: 'user',
-            content: [
-              {
-                type: 'text',
-                text: 'Extract any IMEI, VIN, serial number, or license plate from this image.'
-              },
-              {
-                type: 'image_url',
-                image_url: {
-                  url: `data:image/jpeg;base64,${imageBase64}`
-                }
+  "tip": "Suggestion for better photo"
+}`,
+        messages: [{
+          role: 'user',
+          content: [
+            { type: 'text', text: 'Extract any IMEI, VIN, serial number, or license plate from this image.' },
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: 'image/jpeg',
+                data: imageBase64,
               }
-            ]
-          }
-        ],
-        temperature: 0.1,
+            }
+          ]
+        }],
       }),
     });
 
     if (!response.ok) {
-      if (response.status === 429) {
-        return new Response(
-          JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }),
-          { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
-      if (response.status === 402) {
-        return new Response(
-          JSON.stringify({ error: 'AI credits exhausted. Please try again later.' }),
-          { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-        );
-      }
       const errText = await response.text();
-      console.error('[ai-visual-ocr] Gateway error:', response.status, errText);
-      return new Response(
-        JSON.stringify({ error: 'AI service temporarily unavailable' }),
-        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      console.error('[ai-visual-ocr] API error:', response.status, errText);
+      if (response.status === 429) {
+        return new Response(JSON.stringify({ error: 'Rate limit exceeded.' }), {
+          status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      return new Response(JSON.stringify({ error: 'AI service temporarily unavailable' }), {
+        status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     const data = await response.json();
-    const content = data.choices?.[0]?.message?.content || '';
+    const content = data.content?.[0]?.text || '';
 
-    try {
-      const cleaned = content.replace(/```json\n?|\n?```/g, '').trim();
-      const result = JSON.parse(cleaned);
+    const result = parseJsonResponse(content);
+    if (result) {
       console.log(`[ai-visual-ocr] Found ${result.identifiers?.length || 0} identifiers`);
-      return new Response(
-        JSON.stringify(result),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    } catch {
-      console.error('[ai-visual-ocr] Failed to parse AI response:', content);
-      return new Response(
-        JSON.stringify({ found: false, identifiers: [], tip: 'Could not process image. Try a clearer photo.' }),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
+      return new Response(JSON.stringify(result), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
+
+    return new Response(
+      JSON.stringify({ found: false, identifiers: [], tip: 'Could not process image. Try a clearer photo.' }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
+
   } catch (error) {
     console.error('[ai-visual-ocr] Error:', error);
     return new Response(
