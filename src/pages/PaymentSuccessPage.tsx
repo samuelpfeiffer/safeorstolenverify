@@ -65,6 +65,7 @@ const PaymentSuccessPage = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Payment Successful | SafeOrStolen"
         description="Your payment was successful. Continue to your verification."
