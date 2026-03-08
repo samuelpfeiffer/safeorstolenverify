@@ -316,6 +316,7 @@ const CraigslistSafetyVerification = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

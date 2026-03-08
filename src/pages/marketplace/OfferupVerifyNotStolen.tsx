@@ -242,6 +242,7 @@ const OfferupVerifyNotStolen = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

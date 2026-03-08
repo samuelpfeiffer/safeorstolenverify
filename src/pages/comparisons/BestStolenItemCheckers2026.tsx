@@ -113,7 +113,9 @@ const BestStolenItemCheckers2026 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
       <PageSEO
         title="Best Stolen Item Checkers 2026 - Compare Top Verification Tools"
         description="Compare the best stolen item verification tools in 2026. IMEI checkers, VIN lookup, bike registry, firearm database - find the right tool for your needs."
