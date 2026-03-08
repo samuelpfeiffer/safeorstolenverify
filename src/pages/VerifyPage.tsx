@@ -301,8 +301,8 @@ const VerifyPage = () => {
           <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against 50+ databases with results in 3 seconds.</p>
         </div>
       </noscript>
-      
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <StatusCodeHandler statusCode={200} />
+      <div className="container mx-auto px-4 py-8 pt-24 max-w-6xl">
       <div className="space-y-8">
         {/* Breadcrumb Navigation */}
         <BreadcrumbNavigation 
