@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Download, Smartphone, Shield, Camera, Wifi, Star, Check, Zap } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * Get App Page - Real page for /get-app URL
@@ -84,7 +86,8 @@ const GetAppPage = () => {
         structuredData={[faqSchema, appSchema]}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-16">
         {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
           <div className="max-w-6xl mx-auto">
@@ -225,6 +228,7 @@ const GetAppPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

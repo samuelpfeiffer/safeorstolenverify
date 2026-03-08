@@ -6,6 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const faqs = [
   {
@@ -119,7 +121,8 @@ const BarcodeScannerPage = () => {
         </main>
       </noscript>
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-16">
         {/* Hero */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -329,6 +332,7 @@ const BarcodeScannerPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

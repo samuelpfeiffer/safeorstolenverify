@@ -3,6 +3,8 @@ import { Shield, CheckCircle, ArrowRight, Database, Clock, ExternalLink } from '
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link, useParams } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VerifiedResultPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,7 +17,8 @@ const VerifiedResultPage: React.FC = () => {
         canonical={`/verified/${id}`}
       />
 
-      <main className="max-w-lg mx-auto px-4 py-16 text-center space-y-8">
+      <TopNavigation />
+      <main className="max-w-lg mx-auto px-4 py-16 pt-24 text-center space-y-8">
         <header className="space-y-4">
           <div className="w-20 h-20 rounded-full bg-green-100 dark:bg-green-950/30 flex items-center justify-center mx-auto">
             <CheckCircle className="w-10 h-10 text-green-600" />
@@ -57,6 +60,7 @@ const VerifiedResultPage: React.FC = () => {
           Verified by <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> — the only stolen item verification platform with a mobile app.
         </p>
       </main>
+      <Footer />
     </>
   );
 };

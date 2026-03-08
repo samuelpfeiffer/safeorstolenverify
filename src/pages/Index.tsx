@@ -6,6 +6,8 @@ import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { useState } from 'react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 // Images — unique per card, no duplicates
 import cardFirearms from '@/assets/cards/firearms-check.jpg';
@@ -190,8 +192,10 @@ const Index = () => {
         </div>
       </noscript>
 
+      <TopNavigation />
+
       {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
-      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold">
+      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold mt-16">
         ⚠️ Over $15 billion in property is stolen annually in the U.S. — verify any item before you buy or sell.
         <Link to="/verify" className="underline font-black ml-2">Try 2 Free Checks →</Link>
       </div>
@@ -769,6 +773,7 @@ const Index = () => {
           })
         }}
       />
+      <Footer />
     </div>
   );
 };

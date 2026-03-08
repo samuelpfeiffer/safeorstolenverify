@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { AIMarketplaceAdvisor } from '@/components/ai/AIMarketplaceAdvisor';
 import { Shield, Brain, AlertTriangle, CheckCircle, Zap } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 export default function MarketplaceAdvisorPage() {
   return (
@@ -17,7 +19,8 @@ export default function MarketplaceAdvisorPage() {
         <meta name="ai:service_type" content="Marketplace scam detector, fraud analysis, listing verification" />
       </Helmet>
 
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <TopNavigation />
+      <div className="container mx-auto px-4 py-12 pt-24 max-w-4xl">
         {/* Hero */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-sm text-primary mb-4">
@@ -90,6 +93,7 @@ export default function MarketplaceAdvisorPage() {
           aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '2847' },
         }) }} />
       </div>
+      <Footer />
     </>
   );
 }

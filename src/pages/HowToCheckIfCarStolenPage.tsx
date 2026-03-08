@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Car, Shield, CheckCircle, AlertTriangle, Database, Clock, Download, Search, FileText, MapPin, XCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * How to Check if Car is Stolen Page
@@ -103,7 +105,9 @@ const HowToCheckIfCarStolenPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
       <PageSEO
         title="How to Check if a Car is Stolen Before Buying (2026 Guide) | SafeOrStolen"
         description="Complete guide to check if a car is stolen using VIN numbers. Free verification against NICB, police databases, and insurance records. Protect yourself before buying."
@@ -410,6 +414,8 @@ const HowToCheckIfCarStolenPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Shield, AlertTriangle, CheckCircle, XCircle, Smartphone, MapPin, User, Star, MessageSquare, ArrowRight } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * OfferUp Safety Page - Target: "OfferUp scams" (14,800 monthly searches)
@@ -63,7 +65,9 @@ const OfferUpSafetyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
       <PageSEO
         title="OfferUp Scam Check - Free Item Verification"
         description="Avoid OfferUp scams with free IMEI, VIN and serial number verification. Check if items are stolen before meeting sellers. Instant results from 100+ databases."
@@ -310,6 +314,8 @@ const OfferUpSafetyPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

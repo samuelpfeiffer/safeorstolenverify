@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Shield, AlertTriangle, CheckCircle, XCircle, Smartphone, Car, Laptop, ArrowRight, Eye, MessageSquare, CreditCard, MapPin } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * Facebook Marketplace Safety Page - Target: "Facebook Marketplace scams" (22,200 monthly searches)
@@ -67,7 +69,9 @@ const FacebookMarketplaceSafetyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
       <PageSEO
         title="Facebook Marketplace Safety - Avoid Scams | SafeOrStolen"
         description="Protect yourself from Facebook Marketplace scams. Learn to spot stolen items, verify phones with IMEI checks, and avoid fraud."
@@ -318,6 +322,8 @@ const FacebookMarketplaceSafetyPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
