@@ -238,7 +238,8 @@ export default function BlogIndexPage() {
         }}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/10">
+      <TopNavigation />
+      <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/10 pt-20">
         <div className="container mx-auto px-4 py-12 max-w-7xl">
           {/* Hero Section */}
           <div className="text-center mb-16">
