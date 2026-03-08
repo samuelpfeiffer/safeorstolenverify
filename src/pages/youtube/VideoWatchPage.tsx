@@ -24,6 +24,8 @@ import {
 } from '@/config/videoData';
 import { getVideoUniqueContent, hasVideoUniqueContent } from '@/config/youtubeUniqueContent';
 import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VideoWatchPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
