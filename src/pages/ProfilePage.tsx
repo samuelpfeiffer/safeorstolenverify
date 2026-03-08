@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { User, Mail, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const ProfilePage = () => {
   const { user, loading: authLoading, isAuthenticated } = useUnifiedAuth();
