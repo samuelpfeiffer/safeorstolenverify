@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageSquare, Shield, CheckCircle, Clock, Smartphone, AlertTriangle, Zap, ArrowRight } from 'lucide-react';
+import { MessageSquare, Shield, CheckCircle, Clock, Smartphone, AlertTriangle, Zap, ArrowRight, Bell, Mail } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
