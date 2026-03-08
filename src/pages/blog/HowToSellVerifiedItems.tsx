@@ -48,6 +48,7 @@ const HowToSellVerifiedItems = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="How to Sell Verified Items on Marketplace (2026 Guide) | SafeOrStolen"
         description="Verify items before selling to prove they're legitimate. Get Verified Safe badges and shareable certificates. Sell 3x faster and command 15-30% higher prices on any marketplace."
