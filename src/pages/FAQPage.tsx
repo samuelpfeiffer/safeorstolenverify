@@ -297,6 +297,7 @@ const FAQPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

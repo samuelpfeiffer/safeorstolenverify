@@ -364,6 +364,7 @@ const SitemapPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
