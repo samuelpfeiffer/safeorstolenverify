@@ -95,6 +95,7 @@ export const BlogPostTemplate = ({
 
   return (
     <>
+      <TopNavigation />
       <SEOHead
         title={`${title} | Blog`}
         description={metaDescription}
@@ -107,7 +108,7 @@ export const BlogPostTemplate = ({
         schemaJson={schemas}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted pt-20">
         <article className="max-w-4xl mx-auto px-4 py-24">
           {/* Back Button */}
           <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8">
