@@ -41,6 +41,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
   
   return (
     <>
+      <TopNavigation />
       <SEOHead
         title={`${title} | SafeOrStolen - Free Stolen Item Checker`}
         description={description}
@@ -49,7 +50,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
         schemaJson={faqSchema}
       />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
