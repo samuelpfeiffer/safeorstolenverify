@@ -40,6 +40,7 @@ export const VALID_ROUTES = new Set([
   '/check-tools',
   '/check-jewelry',
   '/check-boat',
+  '/check-xbox',
   '/firearms-check',
   '/license-plate-lookup',
   
@@ -379,6 +380,14 @@ export const REDIRECT_URLS = new Set([
   '/dallas-stolen-item-check', '/milwaukee-stolen-item-check',
   '/iowa-stolen-item-check',
   '/mercari-verification', '/stolen-search-console',
+  
+  // GSC noindex fix 2026-03-08
+  '/guides/how-to-check-stolen-items',
+  '/community-watch',
+  '/blog/serial-numbers-101',
+  '/app/resellers',
+  '/check-rv',
+  '/app/new-york',
 ]);
 
 export interface ValidationResult {
