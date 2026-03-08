@@ -63,7 +63,9 @@ const CheckIfPhoneStolenGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-background text-foreground pt-20">
       <SEOHead
         title="How to Check If a Phone Is Stolen (2026 Guide) | SafeOrStolen"
         description="Free IMEI check guide: verify if any phone is stolen before buying. Check iPhone, Samsung, Android against GSMA blacklist and 100+ law enforcement databases in 3 seconds."
