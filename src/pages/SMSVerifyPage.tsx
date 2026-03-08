@@ -437,6 +437,7 @@ const SMSVerifyPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

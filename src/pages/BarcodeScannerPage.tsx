@@ -332,6 +332,7 @@ const BarcodeScannerPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
