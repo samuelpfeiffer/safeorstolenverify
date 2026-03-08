@@ -236,6 +236,7 @@ export default function ResourceCenterPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
