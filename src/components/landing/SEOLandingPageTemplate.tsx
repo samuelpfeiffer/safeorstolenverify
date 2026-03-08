@@ -180,6 +180,7 @@ export const SEOLandingPageTemplate = ({
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title={title}
         description={metaDescription}
