@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
 import { SEOHead } from '@/components/seo/SEOHead';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface StolenCheckLandingProps {
   itemType: string;
