@@ -6,6 +6,8 @@ import { UnifiedSearchBar } from '@/components/unified/UnifiedSearchBar';
 import { SampleResultPreview } from '@/components/homepage/SampleResultPreview';
 import { ShareVerification } from '@/components/homepage/ShareVerification';
 import { useState } from 'react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 // Images — unique per card, no duplicates
 import cardFirearms from '@/assets/cards/firearms-check.jpg';
