@@ -108,6 +108,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-tag-heuer         /serial-number-checker  301!
 /check-breitling         /serial-number-checker  301!
 
+# GSC "Page with redirect" fix 2026-03-08: Additional item checks missing redirects
+/check-generator         /serial-number-checker  301!
+/check-lawn-mower        /serial-number-checker  301!
+/check-luxury-watch      /serial-number-checker  301!
+/app/features/offline-mode /app/features  301!
+
 # GSC noindex fix 2026-01-31: Legacy app and mobile URLs
 /ios-app                 /app  301!
 /mobile-verification     /app  301!
