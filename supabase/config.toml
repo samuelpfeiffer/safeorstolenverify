@@ -159,3 +159,9 @@ verify_jwt = false
 
 [functions.ai-seller-report]
 verify_jwt = true
+
+# =====================================================
+# SMS VERIFICATION BOT - Public Twilio webhook
+# =====================================================
+[functions.sms-verify]
+verify_jwt = false
