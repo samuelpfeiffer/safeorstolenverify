@@ -26,6 +26,8 @@ import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
