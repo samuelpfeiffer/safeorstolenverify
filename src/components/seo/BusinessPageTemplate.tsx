@@ -2,6 +2,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Shield, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEOHead } from '@/components/seo/SEOHead';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface BusinessPageTemplateProps {
   title: string;
@@ -43,6 +51,25 @@ export const BusinessPageTemplate = ({
   };
 
   const fullUrl = `https://safeorstolen.com${location.pathname}`;
+
+  const businessFaqs = [
+    {
+      question: `How does SafeOrStolen help ${businessType.toLowerCase()}?`,
+      answer: `SafeOrStolen provides instant stolen item verification for ${businessType.toLowerCase()}. Check IMEI, VIN, and serial numbers against 100+ databases in 3 seconds. Reduce legal risk, ensure compliance, and protect your business from unknowingly handling stolen property.`
+    },
+    {
+      question: `What does SafeOrStolen cost for ${businessType.toLowerCase()}?`,
+      answer: `SafeOrStolen offers unlimited verifications for $1/month. No per-check fees, no hidden costs. Enterprise plans with API access and compliance reporting are available for high-volume businesses.`
+    },
+    {
+      question: `Is SafeOrStolen compliant with ${businessType.toLowerCase()} regulations?`,
+      answer: `Yes. SafeOrStolen generates audit-trail certificates with timestamps for every verification. These documents serve as proof of due diligence for regulatory compliance, insurance purposes, and law enforcement cooperation.`
+    },
+    {
+      question: `How quickly does SafeOrStolen return results?`,
+      answer: `Results are returned in approximately 3 seconds. SafeOrStolen simultaneously queries 100+ databases including FBI NCIC, NICB, GSMA, carrier blacklists, and state law enforcement records.`
+    }
+  ];
   
   const schema = [
     {
@@ -51,23 +78,39 @@ export const BusinessPageTemplate = ({
       "name": `${businessType} Verification Service`,
       "provider": {
         "@type": "Organization",
-        "name": "SafeOrStolen"
+        "name": "SafeOrStolen",
+        "url": "https://safeorstolen.com"
       },
       "serviceType": "Stolen Property Verification for Businesses",
       "areaServed": "US",
       "description": metaDescription,
-      "dateModified": "2026-02-06",
+      "dateModified": "2026-03-08",
       "offers": {
         "@type": "Offer",
-        "description": content.pricing
+        "description": content.pricing,
+        "price": "1.00",
+        "priceCurrency": "USD"
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": businessFaqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://safeorstolen.com" },
-        { "@type": "ListItem", "position": 2, "name": `For ${businessType}`, "item": fullUrl }
+        { "@type": "ListItem", "position": 2, "name": "For Businesses", "item": "https://safeorstolen.com/for-businesses" },
+        { "@type": "ListItem", "position": 3, "name": `For ${businessType}`, "item": fullUrl }
       ]
     }
   ];
@@ -81,6 +124,68 @@ export const BusinessPageTemplate = ({
         canonical={location.pathname}
         schemaJson={schema}
       />
+
+      {/* Comprehensive noscript for crawlers */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
+          <header>
+            <nav><a href="/">SafeOrStolen</a> &gt; <a href="/for-businesses">For Businesses</a> &gt; For {businessType}</nav>
+          </header>
+          <main>
+            <h1>{h1}</h1>
+            <p>{content.intro}</p>
+            
+            <h2>Common Challenges for {businessType}</h2>
+            <ul>
+              {content.painPoints.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+            
+            <h2>How SafeOrStolen Helps {businessType}</h2>
+            {content.benefits.map((b, i) => (
+              <div key={i}>
+                <h3>{b.title}</h3>
+                <p>{b.description}</p>
+              </div>
+            ))}
+            
+            <h2>Key Features for {businessType}</h2>
+            <ul>
+              {content.features.map((f, i) => (
+                <li key={i}>{f}</li>
+              ))}
+            </ul>
+            
+            <h2>Success Story: {content.caseStudy.business}</h2>
+            <p><strong>Challenge:</strong> {content.caseStudy.problem}</p>
+            <p><strong>Solution:</strong> {content.caseStudy.solution}</p>
+            <p><strong>Results:</strong> {content.caseStudy.results}</p>
+            
+            <h2>Frequently Asked Questions</h2>
+            {businessFaqs.map((faq, i) => (
+              <div key={i}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+            
+            <h2>Related Resources</h2>
+            <ul>
+              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/for-businesses">All Business Solutions</a></li>
+              <li><a href="/for-pawn-shops">For Pawn Shops</a></li>
+              <li><a href="/for-dealers">For Used Car Dealers</a></li>
+              <li><a href="/verify">Verify Any Item</a></li>
+              <li><a href="/data-sources">Our Data Sources</a></li>
+            </ul>
+            
+            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $1/month unlimited verifications.</p>
+          </main>
+        </div>
+      </noscript>
+
+      <TopNavigation />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
@@ -164,10 +269,62 @@ export const BusinessPageTemplate = ({
                   <p className="text-muted-foreground">{content.caseStudy.solution}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-emerald-500 mb-2">Results:</h4>
+                  <h4 className="font-semibold mb-2" style={{ color: 'hsl(var(--primary))' }}>Results:</h4>
                   <p className="text-muted-foreground">{content.caseStudy.results}</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 px-4 bg-card/50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+            <Accordion type="single" collapsible className="space-y-4">
+              {businessFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`faq-${index}`} className="bg-background px-6 rounded-lg">
+                  <AccordionTrigger className="text-left font-semibold">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* Related Business Solutions */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">Related Business Solutions</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/for-pawn-shops" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">For Pawn Shops</h3>
+                <p className="text-sm text-muted-foreground">Compliance verification for every intake</p>
+              </Link>
+              <Link to="/for-dealers" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">For Used Car Dealers</h3>
+                <p className="text-sm text-muted-foreground">VIN verification for your inventory</p>
+              </Link>
+              <Link to="/for-businesses" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">All Business Solutions</h3>
+                <p className="text-sm text-muted-foreground">Enterprise features & API access</p>
+              </Link>
+              <Link to="/data-sources" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">Our Data Sources</h3>
+                <p className="text-sm text-muted-foreground">100+ databases we check</p>
+              </Link>
+              <Link to="/verify" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">Try It Free</h3>
+                <p className="text-sm text-muted-foreground">2 free checks, no credit card</p>
+              </Link>
+              <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">Pricing</h3>
+                <p className="text-sm text-muted-foreground">$1/mo unlimited verifications</p>
+              </Link>
             </div>
           </div>
         </section>
@@ -178,21 +335,23 @@ export const BusinessPageTemplate = ({
             <h2 className="text-3xl font-bold mb-4">Ready to Protect Your Business?</h2>
             <p className="text-lg text-muted-foreground mb-6">{content.pricing}</p>
             <p className="text-xl font-semibold mb-8">{content.cta}</p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/pricing">
                 <Button size="lg" variant="default">
                   View Business Plans
                 </Button>
               </Link>
-              <Link to="/pricing">
+              <Link to="/verify">
                 <Button size="lg" variant="outline">
-                  Subscribe — $1/mo
+                  Try Free — 2 Checks
                 </Button>
               </Link>
             </div>
           </div>
         </section>
       </div>
+
+      <Footer />
     </>
   );
 };

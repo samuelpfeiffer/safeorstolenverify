@@ -113,6 +113,72 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
         structuredData={structuredData}
       />
 
+      {/* Comprehensive noscript for crawlers */}
+      <noscript>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
+          <header>
+            <nav><a href="/">SafeOrStolen</a> &gt; <a href="/license-plate-lookup">License Plate Lookup</a> &gt; {stateData.name}</nav>
+          </header>
+          <main>
+            <h1>Free {stateData.name} License Plate Lookup</h1>
+            <p>Search {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName} and ` : ''}100+ databases instantly. Verify any {stateData.abbrev} vehicle isn't stolen before buying.</p>
+            
+            <h2>What We Search for {stateData.name} Vehicles</h2>
+            <ul>
+              {stateData.hasTheftDatabase && <li>{stateData.theftDatabaseName} ({stateData.name} stolen property database)</li>}
+              <li>NICB (National Insurance Crime Bureau)</li>
+              <li>{stateData.name} DMV records</li>
+              <li>Police databases and NCIC</li>
+              <li>Insurance claims records</li>
+            </ul>
+            
+            <h2>Why Verify Vehicles in {stateData.name}?</h2>
+            <p>{stateData.theftNote} Always verify any used vehicle before purchasing in {stateData.majorCities.slice(0, 3).join(', ')} or anywhere in {stateData.name}.</p>
+            
+            {uniqueContent && (
+              <>
+                <h2>{stateData.name} Vehicle Market Overview</h2>
+                <p>{uniqueContent.vehicleMarketParagraph}</p>
+                <h2>Vehicle Theft Patterns in {stateData.name}</h2>
+                <p>{uniqueContent.theftPatternsParagraph}</p>
+                <h2>{stateData.name} Laws on Stolen Vehicles</h2>
+                <p>{uniqueContent.legalConsequencesParagraph}</p>
+              </>
+            )}
+            
+            <h2>How It Works</h2>
+            <ol>
+              <li>Enter {stateData.name} license plate number</li>
+              <li>We search {stateData.hasTheftDatabase ? stateData.theftDatabaseName + ' + ' : ''}100 databases in 3 seconds</li>
+              <li>Get instant results — Safe or Stolen</li>
+            </ol>
+            
+            <h2>Frequently Asked Questions</h2>
+            <h3>How much does the {stateData.name} license plate lookup cost?</h3>
+            <p>SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $1/month.</p>
+            <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
+            <p>Yes, our {stateData.name} license plate lookup works statewide including {stateData.majorCities.join(', ')} and all {stateData.name} cities.</p>
+            {uniqueContent?.uniqueFaqs.map((faq, i) => (
+              <div key={i}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+            
+            <h2>Related Resources</h2>
+            <ul>
+              <li><a href="/check-car">VIN Lookup</a></li>
+              <li><a href="/imei-checker">IMEI Checker</a></li>
+              <li><a href="/firearms-check">Firearm Check</a></li>
+              <li><a href="/verify">Verify Any Item</a></li>
+              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+            </ul>
+            
+            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $1/month unlimited.</p>
+          </main>
+        </div>
+      </noscript>
+
       <TopNavigation />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
