@@ -181,10 +181,10 @@ export default function ForSellers() {
         canonical="/for-sellers"
         structuredData={structuredData}
       />
-
+      <TopNavigation />
       <div className="min-h-screen bg-background text-foreground">
         {/* Hero */}
-        <section className="pt-24 pb-20 px-4 text-center" style={{ background: 'linear-gradient(180deg, hsl(var(--primary) / 0.08), hsl(var(--background)))' }}>
+        <section className="pt-32 pb-20 px-4 text-center" style={{ background: 'linear-gradient(180deg, hsl(var(--primary) / 0.08), hsl(var(--background)))' }}>
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm mb-6 font-medium">
               <BadgeCheck className="w-4 h-4" />
