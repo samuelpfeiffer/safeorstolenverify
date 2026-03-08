@@ -38,6 +38,7 @@ const StolenCheckHouston = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Houston Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Houston. Free IMEI, VIN, and serial number verification. Houston has 35,000+ vehicle thefts annually."
