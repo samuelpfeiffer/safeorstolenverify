@@ -262,6 +262,7 @@ const SharedReportPage = () => {
           </CardContent>
         </Card>
       </div>
+      <Footer />
     </>
   );
 };
