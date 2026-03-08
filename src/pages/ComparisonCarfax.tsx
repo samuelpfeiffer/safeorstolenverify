@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Check, X, Smartphone, Zap, Shield, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const ComparisonCarfax = () => {
   const comparisonSchema = {
