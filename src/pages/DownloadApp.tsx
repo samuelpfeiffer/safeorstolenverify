@@ -57,7 +57,8 @@ const DownloadApp = () => {
         structuredData={softwareAppSchema}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-16">
         
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10 overflow-hidden">
