@@ -251,6 +251,7 @@ const PressPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

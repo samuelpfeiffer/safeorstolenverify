@@ -403,6 +403,7 @@ const AboutPage = () => {
         {/* Testimonials */}
         <CompactTestimonials />
       </div>
+      <Footer />
     </>
   );
 };

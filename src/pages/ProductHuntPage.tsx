@@ -278,6 +278,7 @@ const ProductHuntPage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

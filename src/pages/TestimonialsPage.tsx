@@ -113,6 +113,7 @@ const TestimonialsPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

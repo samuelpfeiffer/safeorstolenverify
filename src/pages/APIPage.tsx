@@ -436,6 +436,7 @@ console.log('Confidence:', result.confidence + '%');`}
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
