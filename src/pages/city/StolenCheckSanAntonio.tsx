@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download, AlertTriangle, CheckCircle } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 const StolenCheckSanAntonio = () => {
   const faqs = [
     {
@@ -37,6 +38,7 @@ const StolenCheckSanAntonio = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="San Antonio Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in San Antonio. Free IMEI, VIN, and serial number verification. San Antonio has 11,000+ vehicle thefts per year."
@@ -135,6 +137,7 @@ const StolenCheckSanAntonio = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

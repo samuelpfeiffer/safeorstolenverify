@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, AlertTriangle, Phone, Car, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 const StolenCheckMiami = () => {
   const cityStats = {
     name: "Miami",
@@ -67,6 +68,7 @@ const StolenCheckMiami = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Miami Stolen Item Check - Verify Before Buying in Miami FL | SafeOrStolen"
         description="Check if items are stolen in Miami, Florida. Free IMEI, VIN, and serial number verification for Miami buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist."
@@ -219,6 +221,7 @@ const StolenCheckMiami = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

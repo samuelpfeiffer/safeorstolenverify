@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download, Car, AlertTriangle } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 const StolenCheckPhiladelphia = () => {
   const faqs = [
     {
@@ -37,6 +38,7 @@ const StolenCheckPhiladelphia = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Philadelphia Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Philadelphia. Free IMEI, VIN, and serial number verification. Philly has 9,000+ vehicle thefts annually."
@@ -144,6 +146,7 @@ const StolenCheckPhiladelphia = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

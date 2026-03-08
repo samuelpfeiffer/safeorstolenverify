@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download, Car, AlertTriangle } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 const StolenCheckSanDiego = () => {
   const faqs = [
     {
@@ -37,6 +38,7 @@ const StolenCheckSanDiego = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="San Diego Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in San Diego. Free IMEI, VIN, and serial number verification. San Diego's border proximity increases stolen vehicle trafficking risk."
@@ -145,6 +147,7 @@ const StolenCheckSanDiego = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

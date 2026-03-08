@@ -6,6 +6,8 @@ import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * News page detailing SafeOrStolen's recognition by OneValley and participation
@@ -14,6 +16,7 @@ import { Badge } from '@/components/ui/badge';
 const OneValleyRecognitionPage = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="SafeOrStolen Recognized by OneValley & Entrepreneurship World Cup for SaaS Innovation"
         description="Learn why OneValley and the Entrepreneurship World Cup 2020 highlighted SafeOrStolen as an innovative SaaS solution protecting buyers and sellers from stolen goods. Representing the United States."
@@ -234,6 +237,7 @@ const OneValleyRecognitionPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

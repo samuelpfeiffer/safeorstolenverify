@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, Download, Car, Wrench, Phone } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 const StolenCheckHouston = () => {
   const faqs = [
     {
@@ -37,6 +38,7 @@ const StolenCheckHouston = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Houston Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Houston. Free IMEI, VIN, and serial number verification. Houston has 35,000+ vehicle thefts annually."
@@ -149,6 +151,7 @@ const StolenCheckHouston = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

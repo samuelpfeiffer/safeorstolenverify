@@ -3,10 +3,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Car, Shield, Scan, Zap, Download, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VinCheckerApp = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="VIN Checker App FREE | Check if Car is Stolen Before Buying - SafeOrStolen"
         description="FREE VIN checker app. Verify if any vehicle is stolen in 3 seconds. Protects BOTH buyers AND sellers. Works for cars, trucks, motorcycles. Download at SafeOrStolen.com."
@@ -198,6 +201,7 @@ const VinCheckerApp = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, MapPin, AlertTriangle, Phone, Car, Download } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 const StolenCheckLosAngeles = () => {
   const cityStats = {
     name: "Los Angeles",
@@ -63,6 +64,7 @@ const StolenCheckLosAngeles = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Los Angeles Stolen Item Check - Verify Before Buying in LA | SafeOrStolen"
         description="Check if items are stolen in Los Angeles. Free IMEI, VIN, and serial number verification for LA buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist."
@@ -236,6 +238,7 @@ const StolenCheckLosAngeles = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

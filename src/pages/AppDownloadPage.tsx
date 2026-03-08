@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Shield, Zap, Camera, WifiOff, Star } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const APP_FEATURES = [
   {
@@ -38,7 +40,9 @@ const STEPS = [
 
 export default function AppDownloadPage() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gray-950 text-white pt-20">
       <PageSEO
         title="Download SafeOrStolen Mobile App - iOS & Android"
         description="Instantly verify guns, vehicles, phones, and more. Features barcode scanning for on-the-spot verification at gun shows, pawn shops, and marketplaces."
@@ -248,5 +252,7 @@ export default function AppDownloadPage() {
         }}
       />
     </div>
+    <Footer />
+    </>
   );
 }
