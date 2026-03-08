@@ -461,6 +461,7 @@ const MarketplaceURLChecker: React.FC = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

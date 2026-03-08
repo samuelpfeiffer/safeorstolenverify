@@ -336,6 +336,7 @@ const PressKitPage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

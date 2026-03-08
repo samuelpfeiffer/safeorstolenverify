@@ -93,6 +93,7 @@ export default function MarketplaceAdvisorPage() {
           aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '2847' },
         }) }} />
       </div>
+      <Footer />
     </>
   );
 }

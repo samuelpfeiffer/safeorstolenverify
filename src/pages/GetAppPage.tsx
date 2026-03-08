@@ -228,6 +228,7 @@ const GetAppPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
