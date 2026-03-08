@@ -4,6 +4,8 @@ import { Shield, CheckCircle, XCircle, Smartphone, ArrowRight, ExternalLink, Sta
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import {
   Accordion,
   AccordionContent,
