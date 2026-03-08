@@ -147,6 +147,7 @@ const PaymentSuccessPage = () => {
           </CardContent>
         </Card>
       </div>
+      <Footer />
     </>
   );
 };
