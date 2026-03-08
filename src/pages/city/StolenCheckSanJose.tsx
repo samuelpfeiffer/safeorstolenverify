@@ -38,6 +38,7 @@ const StolenCheckSanJose = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="San Jose Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in San Jose. Free IMEI, VIN, and serial number verification. Silicon Valley sees high electronics and laptop theft rates."
