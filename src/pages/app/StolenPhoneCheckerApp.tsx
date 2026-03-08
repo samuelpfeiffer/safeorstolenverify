@@ -3,6 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Smartphone, Shield, Scan, Zap, Download, CheckCircle, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const StolenPhoneCheckerApp = () => {
   return (
