@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
-
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Link } from 'react-router-dom';
 import { Search, Shield, CheckCircle, Database, Zap, AlertTriangle } from 'lucide-react';
@@ -10,6 +9,8 @@ import { HowSafeOrStolenWorksSection } from '@/components/home/HowSafeOrStolenWo
 import { MarketplaceSafetySection } from '@/components/home/MarketplaceSafetySection';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { VerificationStats } from '@/components/trust/VerificationStats';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const HowItWorksPage = () => {
   return (
