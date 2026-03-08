@@ -126,7 +126,8 @@ export const BusinessLandingTemplate = ({
         structuredData={faqSchema ? [organizationSchema, faqSchema] : [organizationSchema]}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-20 px-4 bg-gradient-to-b from-primary/10 to-background">
           <div className="max-w-6xl mx-auto text-center">
