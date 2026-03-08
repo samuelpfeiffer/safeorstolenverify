@@ -124,6 +124,10 @@ const TabletCheck = lazy(() => import('@/pages/items/TabletCheck'));
 const FirearmSerialCheck = lazy(() => import('@/pages/items/FirearmSerialCheck'));
 const JewelryCheck = lazy(() => import('@/pages/items/JewelryCheck'));
 
+// SMS Verify & Barcode Scanner Landing Pages
+const SMSVerifyPage = lazy(() => import('@/pages/SMSVerifyPage'));
+const BarcodeScannerPage = lazy(() => import('@/pages/BarcodeScannerPage'));
+
 // Blog - Listicle Pages
 const BestAILLMs2026 = lazy(() => import('@/pages/blog/BestAILLMs2026'));
 const TopStolenItemCheckers = lazy(() => import('@/pages/blog/TopStolenItemCheckers'));
