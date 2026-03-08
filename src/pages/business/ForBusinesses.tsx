@@ -669,6 +669,7 @@ export default function ForBusinesses() {
           <p>Legal compliance is a key value proposition. States including Florida (F.S. § 539.001), California (Cal. Bus. & Prof. Code § 21628), Texas (Texas Occupations Code Chapter 1956), and New York require pawn shops and secondhand dealers to verify items against stolen property databases. SafeOrStolen generates timestamped compliance certificates with cryptographic hashes as legal proof of due diligence under 18 U.S.C. § 2315.</p>
         </section>
       </div>
+      <Footer />
     </>
   );
 }

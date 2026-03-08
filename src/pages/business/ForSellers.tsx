@@ -481,6 +481,7 @@ export default function ForSellers() {
           </div>
         </noscript>
       </div>
+      <Footer />
     </>
   );
 }
