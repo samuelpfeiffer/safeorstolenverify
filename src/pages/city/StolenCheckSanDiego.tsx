@@ -38,6 +38,7 @@ const StolenCheckSanDiego = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="San Diego Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in San Diego. Free IMEI, VIN, and serial number verification. San Diego's border proximity increases stolen vehicle trafficking risk."
