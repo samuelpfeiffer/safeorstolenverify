@@ -247,6 +247,7 @@ const ScamCheckerPage: React.FC = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

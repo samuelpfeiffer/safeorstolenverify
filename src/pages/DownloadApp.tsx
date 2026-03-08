@@ -520,6 +520,7 @@ const DownloadApp = () => {
         </section>
 
       </div>
+      <Footer />
     </>
   );
 };

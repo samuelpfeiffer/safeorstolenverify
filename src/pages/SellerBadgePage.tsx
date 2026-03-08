@@ -99,6 +99,7 @@ const SellerBadgePage: React.FC = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
