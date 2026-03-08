@@ -8,6 +8,8 @@ import { Shield, CheckCircle2, Building2, User, CreditCard } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
 import { toast } from 'sonner';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 export default function BusinessSignup() {
   const navigate = useNavigate();
