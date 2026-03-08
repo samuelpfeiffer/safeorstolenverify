@@ -190,6 +190,7 @@ export const BlogPostTemplate = ({
           )}
         </article>
       </div>
+      <Footer />
     </>
   );
 };
