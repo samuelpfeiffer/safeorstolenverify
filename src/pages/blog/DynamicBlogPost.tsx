@@ -12,6 +12,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface BlogPost {
   id: string;
@@ -131,7 +133,8 @@ export default function DynamicBlogPost() {
         }}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-background via-background to-sos-dark/5">
+      <TopNavigation />
+      <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/5 pt-20">
         <div className="container mx-auto px-4 py-12 max-w-4xl">
           {/* Back Link */}
           <Link
@@ -203,6 +206,7 @@ export default function DynamicBlogPost() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

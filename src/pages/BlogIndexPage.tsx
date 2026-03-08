@@ -162,10 +162,16 @@ const categories = [
   'Verification'
 ];
 
+// Strip HTML tags from content for clean text display
+function stripHtml(html: string | null): string {
+  if (!html) return '';
+  return html.replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 // Calculate reading time from content length
 function calculateReadTime(content: string | null): string {
   if (!content) return '5 min';
-  const words = content.split(/\s+/).length;
+  const words = stripHtml(content).split(/\s+/).length;
   const minutes = Math.max(3, Math.ceil(words / 200));
   return `${minutes} min`;
 }
@@ -198,7 +204,7 @@ export default function BlogIndexPage() {
     .map(article => ({
       title: article.title,
       slug: article.slug,
-      excerpt: article.excerpt || article.title,
+      excerpt: stripHtml(article.excerpt) || stripHtml(article.content)?.substring(0, 200) || article.title,
       category: 'Latest Articles',
       readTime: article.reading_time ? `${article.reading_time} min` : calculateReadTime(article.content),
       keywords: article.meta_keywords?.split(',').map((k: string) => k.trim()).slice(0, 3) || ['verification', 'safety'],
