@@ -254,6 +254,7 @@ const FreeVINLookupGuide = () => {
           <RelatedPagesSection currentPage="/blog/free-vin-lookup-guide" currentCategory="blog" maxLinks={5} />
         </div>
       </article>
+      <Footer />
     </>
   );
 };

@@ -727,6 +727,7 @@ const TopStolenItemCheckers = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

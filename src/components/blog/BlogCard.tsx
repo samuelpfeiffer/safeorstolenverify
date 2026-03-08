@@ -71,7 +71,7 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
 
       <CardContent>
         <p className="text-muted-foreground leading-relaxed">
-          {post.excerpt || post.content.substring(0, 150) + '...'}
+          {(post.excerpt || post.content.substring(0, 150) + '...').replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim()}
         </p>
       </CardContent>
 

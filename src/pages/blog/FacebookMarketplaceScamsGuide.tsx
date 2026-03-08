@@ -252,6 +252,8 @@ const FacebookMarketplaceScamsGuide = () => {
         </section>
       </article>
     </div>
+    <Footer />
+    </>
   );
 };
 

@@ -711,6 +711,7 @@ const BestAILLMs2026 = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

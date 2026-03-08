@@ -227,6 +227,7 @@ const HowToSellVerifiedItems = () => {
           <RelatedPagesSection currentPage="/blog/how-to-sell-verified-items" currentCategory="blog" maxLinks={5} />
         </div>
       </article>
+      <Footer />
     </>
   );
 };

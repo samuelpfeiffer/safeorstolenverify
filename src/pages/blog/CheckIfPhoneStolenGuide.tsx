@@ -277,6 +277,8 @@ const CheckIfPhoneStolenGuide = () => {
         </section>
       </article>
     </div>
+    <Footer />
+    </>
   );
 };
 
