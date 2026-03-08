@@ -201,7 +201,8 @@ export default function ForBusinesses() {
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} />
       
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4 max-w-6xl">
