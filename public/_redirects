@@ -114,6 +114,12 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check-luxury-watch      /serial-number-checker  301!
 /app/features/offline-mode /app/features  301!
 
+# GSC Soft 404 fix 2026-03-08: URLs missing from both _redirects and RedirectRoutes
+/for-parents             /faq  301!
+/what-happens-if-you-buy-stolen-goods  /faq  301!
+/stolen-checker-app      /app  301!
+/check-dewalt-tools      /serial-number-checker  301!
+
 # GSC noindex fix 2026-01-31: Legacy app and mobile URLs
 /ios-app                 /app  301!
 /mobile-verification     /app  301!

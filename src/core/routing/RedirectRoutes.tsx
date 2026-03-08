@@ -196,9 +196,64 @@ const REDIRECT_MAP: Record<string, string> = {
   '/check-dslr-camera': '/serial-number-checker',
   '/check-violin': '/serial-number-checker',
   '/check-breitling': '/serial-number-checker',
+  '/check-dewalt-tools': '/serial-number-checker',
 
   // ===== EBIKE/SCOOTER REDIRECTS =====
   '/check-scooter': '/check-ebike',
+  '/check-bicycle': '/check-bike',
+
+  // ===== GSC SOFT 404 FIX 2026-03-08 =====
+  // URLs missing from React redirects causing prerenderer to hit NotFound → noindex
+  '/analytics': '/dashboard',
+  '/stolen-phone-database': '/stolen-database',
+  '/stolen-car-database': '/stolen-database',
+  '/offerup-verification': '/verify',
+  '/for-parents': '/faq',
+  '/what-happens-if-you-buy-stolen-goods': '/faq',
+  '/stolen-checker-app': '/app',
+  '/verify-vin-before-purchase': '/vin-checker',
+  '/check-samsung': '/check-phone',
+  '/seller-guide': '/about',
+  '/seo-strategy': '/about',
+  '/our-mission': '/about',
+  '/stolen-property-lookup': '/verify',
+  '/firearm-serial-check': '/firearms-check',
+  '/ebay-verification': '/ebay-stolen-item-check',
+  '/facebook-marketplace-verification': '/facebook-marketplace-stolen-check',
+  '/craigslist-verification': '/craigslist-safety-verification',
+  '/how-to-check-if-phone-is-stolen': '/check-phone',
+  '/how-to-verify-car-not-stolen': '/check-car',
+  '/refunds': '/terms',
+  '/app/serial-number-checker': '/serial-number-checker',
+  '/app/imei-checker': '/imei-checker',
+  '/app/law-enforcement': '/app',
+  '/app/ios': '/app',
+  '/app/features/history': '/app/features',
+  '/app/research-stolen-car': '/app',
+  '/app/research-stolen-phone': '/app',
+  '/app/buyer-protection-research': '/app',
+  '/app/facebook-marketplace-checker': '/app',
+  '/app/pawnshop-verification': '/app',
+  '/app/secondhand-research-app': '/app',
+  '/app/houston': '/app',
+
+  // ===== STATE REDIRECTS (Soft 404 fix) =====
+  '/new-jersey-vin-lookup': '/vin-checker',
+  '/alabama-vin-lookup': '/vin-checker',
+  '/maryland-vin-lookup': '/vin-checker',
+  '/new-york/vin-check': '/new-york-vin-lookup',
+
+  // ===== COMPARISON REDIRECTS (Soft 404 fix) =====
+  '/vs-stolenphonechecker': '/compare',
+  '/vs-imeipro': '/vs-imeiinfo',
+
+  // ===== STATE/CITY DIRECTORY REDIRECTS =====
+  '/state/new-york/stolen-item-checker': '/new-york-vin-lookup',
+  '/state/california/stolen-item-checker': '/california-vin-lookup',
+  '/state/florida/stolen-item-checker': '/florida-vin-lookup',
+  '/city/chicago-il/stolen-item-checker': '/verify',
+  '/chicago/stolen-item-check': '/stolen-check-chicago',
+  '/mesa-stolen-item-check': '/verify',
 
   // ===== BLOG REDIRECTS =====
   '/blog/understanding-imei-blacklists-and-what-they-mean-1759741218983': '/blog/complete-imei-guide-protect-yourself',
