@@ -58,7 +58,8 @@ const EbayStolenItemCheck = () => {
         structuredData={faqSchema}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-blue-500/10 to-background">
           <div className="max-w-6xl mx-auto text-center">
