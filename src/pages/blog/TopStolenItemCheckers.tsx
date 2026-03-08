@@ -144,6 +144,7 @@ const TopStolenItemCheckers = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Top 10 Stolen Item Checkers 2026 - Compare Free Tools"
         description="Compare the 10 best ways to check if items are stolen before buying. Free tools for phones (IMEI), vehicles (VIN), firearms, electronics. Side-by-side comparison."
