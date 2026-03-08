@@ -3,7 +3,9 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { Check, X, Shield, Smartphone, Car, ArrowRight, Zap, Globe, Download, Star, Bike, Home } from 'lucide-react';
+import { Check, X, Shield, Smartphone, Car, ArrowRight, Zap, Globe, Download, Star, Bike } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VsVinCheckInfo = () => {
   const faqSchema = {
