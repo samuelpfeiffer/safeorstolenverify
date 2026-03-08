@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Shield, Zap, Camera, WifiOff, Star } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const APP_FEATURES = [
   {
