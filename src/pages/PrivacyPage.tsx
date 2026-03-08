@@ -30,7 +30,8 @@ const PrivacyPage: React.FC = () => {
         canonical="/privacy"
         structuredData={[webPageSchema]}
       />
-    <div className="min-h-screen bg-sos text-white py-12">
+    <TopNavigation />
+    <div className="min-h-screen bg-sos text-white py-12 pt-24">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 gradient-text">Privacy Policy</h1>
