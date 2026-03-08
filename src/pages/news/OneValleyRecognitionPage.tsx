@@ -16,6 +16,7 @@ import Footer from '@/components/Footer';
 const OneValleyRecognitionPage = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="SafeOrStolen Recognized by OneValley & Entrepreneurship World Cup for SaaS Innovation"
         description="Learn why OneValley and the Entrepreneurship World Cup 2020 highlighted SafeOrStolen as an innovative SaaS solution protecting buyers and sellers from stolen goods. Representing the United States."
