@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Brain, Zap, Code, DollarSign, Globe, Shield, Sparkles, BookOpen, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import {
   Accordion,
   AccordionContent,
