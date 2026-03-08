@@ -456,6 +456,10 @@ export const AppRoutes = () => {
         <Route path="/scam-checker" element={<ScamCheckerPage />} />
         <Route path="/seller-badge" element={<SellerBadgePage />} />
         <Route path="/verified/:id" element={<VerifiedResultPage />} />
+        
+        {/* SMS VERIFY & BARCODE SCANNER */}
+        <Route path="/sms-verify" element={<SMSVerifyPage />} />
+        <Route path="/barcode-scanner" element={<BarcodeScannerPage />} />
 
         {/* MARKETPLACE PAGES (All 8 Marketplaces) */}
         <Route path="/marketplace-url-checker" element={<MarketplaceURLChecker />} />

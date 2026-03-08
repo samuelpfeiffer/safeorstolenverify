@@ -25,6 +25,8 @@ export const prerenderRoutes = [
   '/check-electronics',
   '/firearms-check',
   '/license-plate-lookup',
+  '/sms-verify',
+  '/barcode-scanner',
   
   // Tier 3: Important informational pages
   '/how-it-works',
