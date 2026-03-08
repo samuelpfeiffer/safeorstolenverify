@@ -38,6 +38,7 @@ const StolenCheckPhoenix = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Phoenix Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Phoenix. Free IMEI, VIN, and serial number verification. Phoenix ranks top 10 for vehicle theft."
