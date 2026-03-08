@@ -359,7 +359,7 @@ const BestStolenItemCheckers2026 = () => {
           </div>
         </section>
       </main>
-      
+      </div>
       <Footer />
     </>
   );
