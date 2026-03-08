@@ -328,8 +328,8 @@ const SitemapPage = () => {
         keywords="sitemap, safeorstolen pages, verification tools, VIN lookup, IMEI checker, license plate lookup"
         canonical="/sitemap"
       />
-
-      <div className="min-h-screen bg-background py-12">
+      <TopNavigation />
+      <div className="min-h-screen bg-background py-12 pt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold text-center mb-4">Sitemap</h1>
