@@ -132,52 +132,83 @@ const SMSVerifyPage = () => {
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                <MessageSquare className="h-5 w-5" />
-                <span className="font-semibold">SMS Verification — No App Needed</span>
+              <div className="inline-flex items-center gap-2 bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 px-4 py-2 rounded-full mb-6">
+                <Bell className="h-5 w-5" />
+                <span className="font-semibold">Coming Soon — Join the Waitlist</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
                 Text to Verify — Stolen Item Check via SMS
               </h1>
 
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Text any IMEI, VIN, or serial number to instantly check 100+ databases. 
-                Get results in 3 seconds. No app download. No Wi-Fi. Works on any phone.
+              <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
+                Soon you'll be able to text any IMEI, VIN, or serial number to instantly check 100+ databases. 
+                No app download. No Wi-Fi. Works on any phone.
               </p>
 
-              {/* Demo */}
+              <p className="text-sm text-muted-foreground mb-8 max-w-lg mx-auto">
+                We're setting up our SMS verification number now. Join the waitlist to be the first to know when it launches.
+              </p>
+
+              {/* How it will work preview */}
               <div className="max-w-md mx-auto mb-8">
-                <Card className="border-2 border-primary/20">
+                <Card className="border-2 border-muted">
                   <CardContent className="p-6">
+                    <p className="text-xs text-muted-foreground mb-3 font-semibold uppercase tracking-wide">How it will work:</p>
                     <div className="space-y-3 text-left font-mono text-sm">
                       <div className="bg-muted rounded-lg p-3">
-                        <p className="text-muted-foreground text-xs mb-1">You send:</p>
+                        <p className="text-muted-foreground text-xs mb-1">You'll text:</p>
                         <p className="font-bold text-foreground">353456789012345</p>
                       </div>
                       <div className="bg-primary/10 rounded-lg p-3">
-                        <p className="text-muted-foreground text-xs mb-1">SafeOrStolen replies:</p>
+                        <p className="text-muted-foreground text-xs mb-1">SafeOrStolen will reply:</p>
                         <p className="text-foreground">✅ <strong>CLEAN</strong> — No stolen reports found.</p>
-                        <p className="text-xs text-muted-foreground mt-1">IMEI: 353456789012345</p>
-                        <p className="text-xs text-muted-foreground">Checked: GSMA, NCIC, carrier blacklists</p>
-                        <p className="text-xs text-primary mt-1">Full report: safeorstolen.com/verify</p>
+                        <p className="text-xs text-muted-foreground mt-1">Checked: GSMA, NCIC, carrier blacklists</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
+              {/* Waitlist signup */}
+              <div className="max-w-md mx-auto mb-10">
+                {submitted ? (
+                  <Card className="border-green-200 bg-green-50 dark:bg-green-950/20">
+                    <CardContent className="p-6 text-center">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="font-bold text-foreground">You're on the list!</p>
+                      <p className="text-sm text-muted-foreground">We'll notify you as soon as SMS verification launches.</p>
+                    </CardContent>
+                  </Card>
+                ) : (
+                  <form onSubmit={handleWaitlist} className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="flex-1"
+                    />
+                    <Button type="submit" size="lg">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Notify Me
+                    </Button>
+                  </form>
+                )}
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                 <Button asChild size="lg" className="text-lg h-14 px-8">
                   <Link to="/verify">
                     <Zap className="mr-2 h-5 w-5" />
-                    Try Web Verification Free
+                    Verify Now on Web — Free
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="text-lg h-14 px-8">
-                  <Link to="/app">
+                  <Link to="/barcode-scanner">
                     <Smartphone className="mr-2 h-5 w-5" />
-                    Get the App Instead
+                    Use Barcode Scanner Instead
                   </Link>
                 </Button>
               </div>
@@ -185,7 +216,7 @@ const SMSVerifyPage = () => {
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>100+ Databases Checked</span>
+                  <span>100+ Databases</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="h-5 w-5 text-yellow-500" />
@@ -193,7 +224,7 @@ const SMSVerifyPage = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
-                  <span>2 Free Checks</span>
+                  <span>Launching Soon</span>
                 </div>
               </div>
             </div>
