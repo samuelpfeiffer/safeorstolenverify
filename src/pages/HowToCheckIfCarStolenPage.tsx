@@ -105,7 +105,9 @@ const HowToCheckIfCarStolenPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
       <PageSEO
         title="How to Check if a Car is Stolen Before Buying (2026 Guide) | SafeOrStolen"
         description="Complete guide to check if a car is stolen using VIN numbers. Free verification against NICB, police databases, and insurance records. Protect yourself before buying."
