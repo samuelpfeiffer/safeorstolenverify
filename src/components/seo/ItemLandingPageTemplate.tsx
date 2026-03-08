@@ -12,6 +12,9 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
+
 interface ItemLandingPageProps {
   title: string;
   metaDescription: string;
@@ -41,7 +44,6 @@ export const ItemLandingPageTemplate = ({
   
   const fullUrl = `https://safeorstolen.com${location.pathname}`;
 
-  // Service schema
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -58,15 +60,14 @@ export const ItemLandingPageTemplate = ({
       "name": "Worldwide"
     },
     "description": metaDescription,
-    "dateModified": "2026-02-06"
+    "dateModified": "2026-03-08"
   };
 
-  // HowTo schema - separate root-level with both name and text on steps
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": `How to Check if ${itemType} is Stolen`,
-    "dateModified": "2026-02-06",
+    "dateModified": "2026-03-08",
     "step": content.process.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
@@ -75,7 +76,6 @@ export const ItemLandingPageTemplate = ({
     }))
   };
 
-  // BreadcrumbList schema for navigation
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -85,7 +85,6 @@ export const ItemLandingPageTemplate = ({
     ]
   };
 
-  // FAQPage - separate root-level schema with clean text (no special chars)
   const faqSchema = content.faqs && content.faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -99,7 +98,6 @@ export const ItemLandingPageTemplate = ({
     }))
   } : null;
 
-  // Combine schemas for PageSEO - each as separate root-level schema
   const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
@@ -112,14 +110,63 @@ export const ItemLandingPageTemplate = ({
         structuredData={structuredData}
       />
 
-      {/* Minimal noscript fallback - no H1 to avoid duplicate with visible H1 */}
+      {/* Comprehensive noscript for crawlers */}
       <noscript>
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-          <p><strong>{h1}</strong></p>
-          <p>{content.intro}</p>
-          <p>Visit safeorstolen.com/verify to check any {itemType.toLowerCase()}.</p>
+        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', lineHeight: '1.6' }}>
+          <header>
+            <nav><a href="/">SafeOrStolen</a> &gt; {itemType} Verification</nav>
+          </header>
+          <main>
+            <h1>{h1}</h1>
+            <p>{content.intro}</p>
+            
+            <h2>What is {itemType} Verification?</h2>
+            <p>{content.whatIs}</p>
+            
+            <h2>How to Check if {itemType} is Stolen</h2>
+            <ol>
+              {content.process.map((step, i) => (
+                <li key={i}>{step}</li>
+              ))}
+            </ol>
+            <p>{content.howItWorks}</p>
+            
+            <h2>Why Check Before Buying?</h2>
+            <p>{content.whyCheck}</p>
+            <ul>
+              {content.benefits.map((b, i) => (
+                <li key={i}>{b}</li>
+              ))}
+            </ul>
+            
+            <h2>Databases We Search</h2>
+            <p>SafeOrStolen checks 100+ databases including FBI NCIC, NICB, GSMA, ATF eTrace, and law enforcement records across all 50 US states. Results in 3 seconds.</p>
+            
+            <h2>Frequently Asked Questions</h2>
+            {content.faqs.map((faq, i) => (
+              <div key={i}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+            
+            <h2>Related Verification Tools</h2>
+            <ul>
+              <li><a href="/imei-checker">IMEI Checker</a> - Verify phones</li>
+              <li><a href="/vin-checker">VIN Checker</a> - Verify vehicles</li>
+              <li><a href="/serial-number-checker">Serial Number Checker</a> - Verify electronics</li>
+              <li><a href="/firearms-check">Firearm Check</a> - Verify firearms</li>
+              <li><a href="/license-plate-lookup">License Plate Lookup</a> - Check by plate</li>
+              <li><a href="/verify">Verify Any Item</a></li>
+              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+            </ul>
+            
+            <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $1/month unlimited.</p>
+          </main>
         </div>
       </noscript>
+
+      <TopNavigation />
 
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
         {/* Hero Section */}
@@ -152,17 +199,16 @@ export const ItemLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg">
                 <CheckCircle className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">Accurate</span>
+                <span className="text-sm font-semibold">100+ Databases</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg">
                 <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold">Trusted</span>
+                <span className="text-sm font-semibold">Mobile App</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Credibility Bar */}
         <SitewideCredibilityBar />
 
         {/* What Is Section */}
@@ -230,7 +276,39 @@ export const ItemLandingPageTemplate = ({
           </div>
         </section>
 
-        {/* Authority Signals Before CTA */}
+        {/* Related Verification Tools */}
+        <section className="py-16 px-4 bg-card/50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">Related Verification Tools</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/imei-checker" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">IMEI Checker</h3>
+                <p className="text-sm text-muted-foreground">Verify phones before buying</p>
+              </Link>
+              <Link to="/vin-checker" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">VIN Checker</h3>
+                <p className="text-sm text-muted-foreground">Full vehicle history check</p>
+              </Link>
+              <Link to="/serial-number-checker" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">Serial Number Checker</h3>
+                <p className="text-sm text-muted-foreground">Check electronics & appliances</p>
+              </Link>
+              <Link to="/firearms-check" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">Firearm Check</h3>
+                <p className="text-sm text-muted-foreground">Verify firearm serial numbers</p>
+              </Link>
+              <Link to="/license-plate-lookup" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">License Plate Lookup</h3>
+                <p className="text-sm text-muted-foreground">Check vehicles by plate</p>
+              </Link>
+              <Link to="/app" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
+                <h3 className="font-bold mb-2">Mobile App</h3>
+                <p className="text-sm text-muted-foreground">Scan barcodes on the go</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <AuthoritySignals variant="banner" className="mb-0" />
 
         {/* CTA Section */}
@@ -240,14 +318,23 @@ export const ItemLandingPageTemplate = ({
             <p className="text-lg text-muted-foreground mb-8">
               Get instant verification results in 3 seconds. Protect yourself from stolen goods.
             </p>
-            <Link to="/verify">
-              <Button size="lg" className="gap-2">
-                Verify Now — $1/mo Unlimited <Search className="w-4 h-4" />
-              </Button>
-            </Link>
+            <div className="flex gap-4 justify-center flex-wrap">
+              <Link to="/verify">
+                <Button size="lg" className="gap-2">
+                  Verify Now — Free <Search className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link to="/pricing">
+                <Button size="lg" variant="outline">
+                  $1/mo Unlimited
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
+
+      <Footer />
     </>
   );
 };
