@@ -1,29 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
-
-interface SmartSearchRequest {
-  query: string;
-}
-
-interface ParsedQuery {
-  itemType?: string;
-  brand?: string;
-  model?: string;
-  color?: string;
-  location?: {
-    city?: string;
-    state?: string;
-  };
-  dateRange?: {
-    start?: string;
-    end?: string;
-  };
-  distinguishingFeatures?: string[];
-  searchPriority: string[];
-  fuzzyMatchThreshold: number;
-  suggestedFilters: string[];
-  originalQuery: string;
-}
+import { callClaude, parseJsonResponse, AnthropicError } from '../_shared/anthropic.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -32,19 +9,11 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) {
-      throw new Error('LOVABLE_API_KEY is not configured');
-    }
-
-    const { query }: SmartSearchRequest = await req.json();
+    const { query } = await req.json();
     console.log('[AI Smart Search] Processing query:', query);
 
     if (!query || query.trim().length < 3) {
-      return new Response(JSON.stringify({ 
-        error: 'Query too short',
-        parsedQuery: null 
-      }), {
+      return new Response(JSON.stringify({ error: 'Query too short', parsedQuery: null }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
@@ -70,41 +39,17 @@ Examples:
 - "MacBook Pro 16 inch with scratched lid" → itemType: "laptop", brand: "Apple", model: "MacBook Pro 16", distinguishingFeatures: ["scratched lid"]
 - "Gold necklace with heart pendant" → itemType: "jewelry", color: "gold", distinguishingFeatures: ["heart pendant"]`;
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-2.5-flash',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: `Parse this search: "${query}"` }
-        ],
-      }),
+    const content = await callClaude({
+      system: systemPrompt,
+      messages: [{ role: 'user', content: `Parse this search: "${query}"` }],
+      temperature: 0.1,
+      maxTokens: 1000,
     });
 
-    if (!response.ok) {
-      if (response.status === 429) {
-        return new Response(JSON.stringify({ error: 'Rate limit exceeded' }), {
-          status: 429,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
-      throw new Error(`AI API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-    const content = data.choices?.[0]?.message?.content;
-
-    let parsedQuery: ParsedQuery;
-    try {
-      const cleanedContent = content.replace(/```json\n?|\n?```/g, '').trim();
-      parsedQuery = JSON.parse(cleanedContent);
+    let parsedQuery = parseJsonResponse(content);
+    if (parsedQuery) {
       parsedQuery.originalQuery = query;
-    } catch {
-      // Fallback to basic parsing
+    } else {
       parsedQuery = {
         originalQuery: query,
         searchPriority: ['description', 'brand', 'model'],
@@ -114,18 +59,15 @@ Examples:
     }
 
     console.log('[AI Smart Search] Parsed query:', parsedQuery);
-
     return new Response(JSON.stringify({ parsedQuery }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
 
   } catch (error) {
     console.error('[AI Smart Search] Error:', error);
-    return new Response(JSON.stringify({ 
-      error: error instanceof Error ? error.message : 'Search parsing failed' 
-    }), {
-      status: 500,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    const status = error instanceof AnthropicError ? error.status : 500;
+    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : 'Search parsing failed' }), {
+      status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 });

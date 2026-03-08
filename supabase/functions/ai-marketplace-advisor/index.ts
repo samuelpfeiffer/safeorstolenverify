@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
+import { callClaude, parseJsonResponse, AnthropicError } from '../_shared/anthropic.ts';
 
 serve(async (req) => {
   const corsPreFlight = handleCorsPreFlight(req);
@@ -8,9 +9,6 @@ serve(async (req) => {
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
   try {
-    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
-    if (!LOVABLE_API_KEY) throw new Error('LOVABLE_API_KEY is not configured');
-
     const { listingUrl, listingData, scrapedContent } = await req.json();
 
     if (!listingUrl && !listingData) {
@@ -31,6 +29,8 @@ serve(async (req) => {
         if (jinaResp.ok) {
           const jinaData = await jinaResp.json();
           content = jinaData.data?.content || jinaData.content || '';
+        } else {
+          await jinaResp.text();
         }
       } catch (e) {
         console.log('Jina scrape failed, proceeding with URL only:', e);
@@ -84,49 +84,14 @@ ${content || JSON.stringify(listingData || 'No content available')}
 
 Provide your expert fraud analysis.`;
 
-    const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'google/gemini-3-flash-preview',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-        temperature: 0.2,
-        max_tokens: 3000,
-      }),
+    const aiContent = await callClaude({
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userPrompt }],
+      temperature: 0.2,
+      maxTokens: 3000,
     });
 
-    if (!response.ok) {
-      if (response.status === 429) {
-        return new Response(JSON.stringify({ error: 'Rate limit exceeded. Please try again shortly.' }), {
-          status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
-      if (response.status === 402) {
-        return new Response(JSON.stringify({ error: 'AI credits exhausted.' }), {
-          status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
-      const t = await response.text();
-      console.error('AI gateway error:', response.status, t);
-      throw new Error(`AI gateway error: ${response.status}`);
-    }
-
-    const aiData = await response.json();
-    const aiContent = aiData.choices?.[0]?.message?.content || '';
-
-    let analysis;
-    try {
-      const jsonMatch = aiContent.match(/\{[\s\S]*\}/);
-      analysis = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
-    } catch {
-      analysis = null;
-    }
+    let analysis = parseJsonResponse(aiContent);
 
     if (!analysis) {
       analysis = {
@@ -148,10 +113,11 @@ Provide your expert fraud analysis.`;
 
   } catch (error) {
     console.error('AI marketplace advisor error:', error);
+    const status = error instanceof AnthropicError ? error.status : 500;
     return new Response(JSON.stringify({
       error: error instanceof Error ? error.message : 'Analysis failed',
     }), {
-      status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      status, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 });
