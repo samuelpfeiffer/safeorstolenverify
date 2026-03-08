@@ -64,6 +64,7 @@ const StolenCheckLosAngeles = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Los Angeles Stolen Item Check - Verify Before Buying in LA | SafeOrStolen"
         description="Check if items are stolen in Los Angeles. Free IMEI, VIN, and serial number verification for LA buyers. Verify before meeting sellers on Facebook Marketplace, OfferUp, or Craigslist."
