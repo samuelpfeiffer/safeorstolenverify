@@ -6,6 +6,8 @@ import { Shield, Zap, Check, ArrowRight, Star, Coffee } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID } from '@/features/pricing/constants';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const FAQS = [
   { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, unlimited checks are just $1/month.' },
