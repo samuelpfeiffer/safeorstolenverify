@@ -58,6 +58,7 @@ export default function BusinessSignup() {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Business Sign Up - 30-Day Free Trial | SafeOrStolen"
         description="Sign up for SafeOrStolen business verification. 30-day free trial, unlimited checks, widget integration, compliance reporting. No credit card required."
@@ -66,7 +67,7 @@ export default function BusinessSignup() {
       />
       <BreadcrumbSchema items={breadcrumbs} />
 
-      <div className="min-h-screen bg-gradient-to-b from-muted/30 to-background py-12">
+      <div className="min-h-screen bg-gradient-to-b from-muted/30 to-background pt-20 py-12">
         <div className="container mx-auto px-4 max-w-xl">
           
           {/* Progress Steps */}
