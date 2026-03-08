@@ -313,6 +313,7 @@ const FacebookMarketplaceStolenCheck = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

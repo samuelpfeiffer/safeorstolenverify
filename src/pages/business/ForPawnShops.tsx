@@ -222,6 +222,7 @@ export default function ForPawnShops() {
           <AppStoreBadges size="md" />
         </section>
       </div>
+      <Footer />
     </>
   );
 }

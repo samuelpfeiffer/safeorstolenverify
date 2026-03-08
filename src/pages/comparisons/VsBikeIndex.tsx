@@ -439,6 +439,7 @@ const VsBikeIndex = () => {
 
         <RelatedPagesSection currentPage="/vs-bikeindex" />
       </div>
+      <Footer />
     </>
   );
 };
