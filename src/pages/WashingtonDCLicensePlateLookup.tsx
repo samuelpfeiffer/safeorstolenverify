@@ -88,7 +88,8 @@ const WashingtonDCLicensePlateLookup = () => {
         structuredData={[structuredData, faqSchema]}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background pt-16">
         {/* Hero Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
