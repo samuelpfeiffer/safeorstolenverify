@@ -40,6 +40,7 @@ export const VALID_ROUTES = new Set([
   '/check-tools',
   '/check-jewelry',
   '/check-boat',
+  '/check-xbox',
   '/firearms-check',
   '/license-plate-lookup',
   

@@ -651,6 +651,17 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /for-pawnshops                    /for-pawn-shops  301!
 
 # ============================================
+# GSC NOINDEX FIX - 2026-03-08
+# URLs from latest GSC validation that were still missing redirects
+# ============================================
+/guides/how-to-check-stolen-items  /verify  301!
+/community-watch                   /community  301!
+/blog/serial-numbers-101           /blog  301!
+/app/resellers                     /about  301!
+/check-rv                          /vin-checker  301!
+/app/new-york                      /stolen-check-new-york-city  301!
+
+# ============================================
 # STATISTICS DIRECTORY REDIRECTS
 # ============================================
 /statistics/*                      /about  301!
