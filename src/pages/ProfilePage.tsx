@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { User, Mail, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const ProfilePage = () => {
   const { user, loading: authLoading, isAuthenticated } = useUnifiedAuth();
@@ -68,13 +70,14 @@ const ProfilePage = () => {
 
   return (
     <>
+      <TopNavigation />
       <SEOHead
         title="My Profile"
         description="Manage your SafeOrStolen account profile and settings."
         canonical="/profile"
         noIndex={true}
       />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 pt-24">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-8">Profile</h1>
         
@@ -142,8 +145,9 @@ const ProfilePage = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
     </div>
+    </div>
+    <Footer />
     </>
   );
 };

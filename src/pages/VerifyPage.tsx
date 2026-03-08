@@ -26,6 +26,8 @@ import { SocialProofBanner } from '@/components/conversion/SocialProofBanner';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { StatusCodeHandler } from '@/components/seo/StatusCodeHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
@@ -282,8 +284,8 @@ const VerifyPage = () => {
 
   return (
     <>
+      <TopNavigation />
       {/* SEO Components - Critical for Google indexing */}
-      <StatusCodeHandler statusCode={200} />
       <PageSEO
         title="Free Stolen Item Check - IMEI VIN Serial Verification"
         description="Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from stolen goods."
@@ -299,8 +301,8 @@ const VerifyPage = () => {
           <p>Check if any item is stolen using IMEI, VIN, or serial number. SafeOrStolen verifies against 50+ databases with results in 3 seconds.</p>
         </div>
       </noscript>
-      
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <StatusCodeHandler statusCode={200} />
+      <div className="container mx-auto px-4 py-8 pt-24 max-w-6xl">
       <div className="space-y-8">
         {/* Breadcrumb Navigation */}
         <BreadcrumbNavigation 
@@ -581,6 +583,7 @@ const VerifyPage = () => {
         </div>
       )}
     </div>
+    <Footer />
     </>
   );
 };

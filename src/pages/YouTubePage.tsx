@@ -10,6 +10,8 @@ import {
   BookOpen, Wrench, Star, Clock, Download, Eye
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import {
   YOUTUBE_VIDEOS,
   YOUTUBE_CHANNEL,
@@ -263,7 +265,8 @@ const YouTubePage: React.FC = () => {
         <meta name="article:modified_time" content={`${FRESHNESS_DATE}T00:00:00Z`} />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-16">
 
           {/* ── Breadcrumb ──────────────────────────────────────────────────── */}
@@ -657,6 +660,7 @@ const YouTubePage: React.FC = () => {
 
         </div>
       </div>
+      <Footer />
     </>
   );
 };

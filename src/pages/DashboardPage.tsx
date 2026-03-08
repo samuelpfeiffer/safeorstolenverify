@@ -33,6 +33,8 @@ import { SubscriptionStatusCard } from '@/components/dashboard/SubscriptionStatu
 import { PageSEO } from '@/components/seo/PageSEO';
 import { ReferralProgram, ViralShareWidget } from '@/components/growth';
 import { WatchlistSection } from '@/components/dashboard/WatchlistSection';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const DashboardPage = () => {
   const { user, signOut } = useAuth();
@@ -561,14 +563,14 @@ const DashboardPage = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Dashboard | SafeOrStolen"
         description="Manage your SafeOrStolen account, verification history, and subscriptions."
         noIndex={true}
         structuredData={dashboardSchema}
       />
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted">
-      {/* Header removed to avoid duplication with AppLayout's SOSHeader */}
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted pt-20">
 
       <div className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
@@ -698,6 +700,7 @@ const DashboardPage = () => {
         />
       </div>
     </div>
+    <Footer />
     </>
   );
 };
