@@ -170,8 +170,8 @@ const StolenItemDetailPage = () => {
         structuredData={[productSchema]}
         image="/og-stolen-item.jpg"
       />
-
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <TopNavigation />
+      <div className="container mx-auto px-4 py-8 max-w-4xl pt-24">
         <BreadcrumbNavigation 
           items={[
             { name: 'Stolen Database', href: '/stolen-database' },
