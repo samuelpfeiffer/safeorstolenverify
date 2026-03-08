@@ -237,6 +237,7 @@ const OneValleyRecognitionPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

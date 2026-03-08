@@ -243,6 +243,7 @@ const BarcodeScanner = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

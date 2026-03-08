@@ -201,6 +201,7 @@ const VinCheckerApp = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

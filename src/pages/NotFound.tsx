@@ -141,6 +141,7 @@ const NotFound = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

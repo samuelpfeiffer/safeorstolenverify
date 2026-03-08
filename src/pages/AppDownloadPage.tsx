@@ -250,5 +250,7 @@ export default function AppDownloadPage() {
         }}
       />
     </div>
+    <Footer />
+    </>
   );
 }

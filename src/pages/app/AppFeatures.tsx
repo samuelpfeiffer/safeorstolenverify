@@ -425,6 +425,7 @@ const AppFeatures = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

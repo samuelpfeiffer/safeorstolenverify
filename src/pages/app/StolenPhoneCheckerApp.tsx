@@ -201,6 +201,7 @@ const StolenPhoneCheckerApp = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
