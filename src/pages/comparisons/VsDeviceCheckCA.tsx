@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Check, X, Shield, Smartphone, Car, Bike, Laptop, ArrowRight, Zap, Globe, Star, Home } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VsDeviceCheckCA = () => {
   const faqSchema = {
