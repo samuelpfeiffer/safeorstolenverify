@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Clock, Tag, Loader2 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 // Static articles for SEO (always shown as fallback + featured)
 const staticArticles = [
