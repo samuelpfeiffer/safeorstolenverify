@@ -88,6 +88,7 @@ const AppFeatures = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="SafeOrStolen App Features | Barcode Scanner, Offline Mode, Instant Verification"
         description="Explore SafeOrStolen app features: barcode scanning, offline verification, 3-second checks, buyer AND seller protection. The only stolen item checker with a mobile app. Free download."
