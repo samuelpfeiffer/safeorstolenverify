@@ -251,7 +251,6 @@ const REDIRECT_MAP: Record<string, string> = {
   '/state/new-york/stolen-item-checker': '/new-york-vin-lookup',
   '/state/california/stolen-item-checker': '/california-vin-lookup',
   '/state/florida/stolen-item-checker': '/florida-vin-lookup',
-  '/city/chicago-il/stolen-item-checker': '/verify',
   '/chicago/stolen-item-check': '/stolen-check-chicago',
   '/mesa-stolen-item-check': '/verify',
 
