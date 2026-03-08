@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Shield, Zap, Users, TrendingUp, FileCheck, Clock } from 'lucide-react';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 export default function ForDealers() {
   const structuredData = {
     "@context": "https://schema.org",
