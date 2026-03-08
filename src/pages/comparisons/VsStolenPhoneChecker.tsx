@@ -290,18 +290,7 @@ const VsStolenPhoneChecker = () => {
         </section>
       </main>
       
-      {/* Simple footer */}
-      <footer className="border-t py-8 bg-muted/30">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2026 SafeOrStolen. The only stolen item verification platform with a mobile app.</p>
-          <div className="flex justify-center gap-4 mt-4">
-            <Link to="/" className="hover:text-primary">Home</Link>
-            <Link to="/verify" className="hover:text-primary">Verify</Link>
-            <Link to="/pricing" className="hover:text-primary">Pricing</Link>
-            <Link to="/app" className="hover:text-primary">Mobile App</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
