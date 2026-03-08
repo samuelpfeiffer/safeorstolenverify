@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Code, Key, Shield, Zap, AlertTriangle, CheckCircle, Mail, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * API Documentation Page
