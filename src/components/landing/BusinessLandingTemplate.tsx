@@ -307,6 +307,7 @@ export const BusinessLandingTemplate = ({
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
