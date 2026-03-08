@@ -3,6 +3,8 @@ import { Shield, Search, CheckCircle, Clock, Download, AlertTriangle, Smartphone
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface FAQ {
   question: string;
