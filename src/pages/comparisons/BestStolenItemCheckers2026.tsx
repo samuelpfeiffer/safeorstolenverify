@@ -115,7 +115,7 @@ const BestStolenItemCheckers2026 = () => {
   return (
     <>
       <TopNavigation />
-      <div className="min-h-screen bg-background pt-20">
+      <div className="min-h-screen bg-background">
       <PageSEO
         title="Best Stolen Item Checkers 2026 - Compare Top Verification Tools"
         description="Compare the best stolen item verification tools in 2026. IMEI checkers, VIN lookup, bike registry, firearm database - find the right tool for your needs."
@@ -123,24 +123,6 @@ const BestStolenItemCheckers2026 = () => {
         canonical="/best-stolen-item-checkers-2026"
         structuredData={articleSchema}
       />
-      
-      {/* Simple navigation */}
-      <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-primary font-semibold text-lg">
-            <Home className="h-5 w-5" />
-            SafeOrStolen
-          </Link>
-          <div className="flex items-center gap-4">
-            <Button asChild variant="ghost" size="sm">
-              <Link to="/verify">Verify Item</Link>
-            </Button>
-            <Button asChild size="sm">
-              <Link to="/app">Get App</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
       
       <main className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Hero */}
