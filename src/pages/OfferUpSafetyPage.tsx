@@ -314,6 +314,8 @@ const OfferUpSafetyPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

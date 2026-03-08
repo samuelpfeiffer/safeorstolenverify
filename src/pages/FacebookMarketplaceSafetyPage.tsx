@@ -322,6 +322,8 @@ const FacebookMarketplaceSafetyPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

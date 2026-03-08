@@ -60,6 +60,7 @@ const VerifiedResultPage: React.FC = () => {
           Verified by <Link to="/" className="text-primary hover:underline">SafeOrStolen</Link> — the only stolen item verification platform with a mobile app.
         </p>
       </main>
+      <Footer />
     </>
   );
 };

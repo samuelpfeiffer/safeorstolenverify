@@ -362,6 +362,7 @@ const WashingtonDCLicensePlateLookup = () => {
         {/* Related Pages */}
         <RelatedPagesSection currentPage="/washington-dc-license-plate-lookup" />
       </div>
+      <Footer />
     </>
   );
 };

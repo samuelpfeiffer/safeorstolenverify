@@ -433,6 +433,8 @@ const HowToCheckIfPhoneStolenPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

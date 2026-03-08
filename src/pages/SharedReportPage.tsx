@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { useToast } from '@/hooks/use-toast';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface SharedReport {
   id: string;

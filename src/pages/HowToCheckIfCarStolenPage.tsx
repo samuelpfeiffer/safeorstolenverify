@@ -414,6 +414,8 @@ const HowToCheckIfCarStolenPage = () => {
         </section>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
