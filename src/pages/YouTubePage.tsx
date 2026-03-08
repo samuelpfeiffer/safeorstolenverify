@@ -660,6 +660,7 @@ const YouTubePage: React.FC = () => {
 
         </div>
       </div>
+      <Footer />
     </>
   );
 };

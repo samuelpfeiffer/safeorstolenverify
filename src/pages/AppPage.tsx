@@ -4,6 +4,8 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
 import { Smartphone, Scan, Wifi, Shield, Zap, Download, Apple, Chrome, MapPin, ShoppingCart, Car, Store, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const AppPage = () => {
   // TIER 1 KEYWORDS: stolen verification app, stolen item scanner app, barcode stolen checker

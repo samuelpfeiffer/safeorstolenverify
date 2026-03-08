@@ -145,8 +145,9 @@ const ProfilePage = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
     </div>
+    </div>
+    <Footer />
     </>
   );
 };

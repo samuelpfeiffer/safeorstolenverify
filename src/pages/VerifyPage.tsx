@@ -583,6 +583,7 @@ const VerifyPage = () => {
         </div>
       )}
     </div>
+    <Footer />
     </>
   );
 };

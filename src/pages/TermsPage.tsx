@@ -159,8 +159,9 @@ const TermsPage: React.FC = () => {
             </section>
           </CardContent>
         </Card>
-      </div>
     </div>
+    </div>
+    <Footer />
     </>
   );
 };
