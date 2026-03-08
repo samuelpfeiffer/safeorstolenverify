@@ -233,6 +233,14 @@ const REDIRECT_MAP: Record<string, string> = {
   '/blog/verification-data-privacy': '/blog',
   '/blog/serial-numbers-stolen-goods-101': '/blog',
   '/blog/marketplace-red-flags-protection-guide': '/blog/scammer-tactics-exposed',
+  // GSC Soft 404 fix 2026-03-08: Blog slugs hitting NotFound in prerenderer
+  '/blog/how-to-check-if-phone-is-stolen': '/blog/how-to-check-if-phone-stolen',
+  '/blog/best-stolen-item-checker-apps-2025': '/blog',
+  '/blog/why-verify-serial-numbers': '/blog',
+  '/blog/complete-marketplace-buyers-checklist': '/blog',
+  '/blog/how-to-install-safeorstolen-app': '/app',
+  '/blog/scan-and-verify-using-safeorstolen-camera-feature': '/app',
+  '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles-1': '/blog',
   // REMOVED: These blog posts have REAL routes - they must NOT be redirected
   // /blog/phone-verification-guide, /blog/bicycle-stolen-serial-number-check,
   // /blog/firearm-serial-number-verification, /blog/verify-item-before-meetup,
