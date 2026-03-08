@@ -3,7 +3,9 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { Check, X, Shield, ArrowRight, Zap, Users, Star, Target, FileSearch, Home } from 'lucide-react';
+import { Check, X, Shield, ArrowRight, Zap, Users, Star, Target, FileSearch } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VsFastBound = () => {
   const faqSchema = {
@@ -62,23 +64,7 @@ const VsFastBound = () => {
         structuredData={faqSchema}
       />
       
-      {/* Simple navigation */}
-      <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-primary font-semibold text-lg">
-            <Home className="h-5 w-5" />
-            SafeOrStolen
-          </Link>
-          <div className="flex items-center gap-4">
-            <Button asChild variant="ghost" size="sm">
-              <Link to="/verify">Verify Item</Link>
-            </Button>
-            <Button asChild size="sm">
-              <Link to="/app">Get App</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <TopNavigation />
       
       <main className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Hero */}
@@ -335,18 +321,7 @@ const VsFastBound = () => {
         </section>
       </main>
       
-      {/* Simple footer */}
-      <footer className="border-t py-8 bg-muted/30">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2026 SafeOrStolen. The only stolen item verification platform with a mobile app.</p>
-          <div className="flex justify-center gap-4 mt-4">
-            <Link to="/" className="hover:text-primary">Home</Link>
-            <Link to="/verify" className="hover:text-primary">Verify</Link>
-            <Link to="/firearms-check" className="hover:text-primary">Firearm Check</Link>
-            <Link to="/app" className="hover:text-primary">Mobile App</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

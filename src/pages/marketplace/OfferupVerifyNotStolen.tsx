@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Download, Smartphone, Clock } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const OfferupVerifyNotStolen = () => {
   const faqs = [
@@ -56,7 +58,8 @@ const OfferupVerifyNotStolen = () => {
         structuredData={faqSchema}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 px-4 bg-gradient-to-b from-green-500/10 to-background">
           <div className="max-w-6xl mx-auto text-center">
@@ -239,6 +242,7 @@ const OfferupVerifyNotStolen = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

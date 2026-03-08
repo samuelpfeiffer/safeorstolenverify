@@ -6,6 +6,8 @@ import { Shield, Zap, Check, ArrowRight, Star, Coffee } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID } from '@/features/pricing/constants';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const FAQS = [
   { q: 'Do I get any free checks?', a: 'Yes! Every new user gets 2 free verifications — no credit card required. After that, unlimited checks are just $1/month.' },
@@ -47,7 +49,9 @@ const PricingPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
+      <TopNavigation />
+      <div className="min-h-screen bg-background text-foreground pt-20">
       <PageSEO
         title="Stolen Item Checker — 2 Free Checks, Then $1/Month | SafeOrStolen"
         description="Start with 2 free verifications, no credit card required. Then unlimited IMEI, VIN, serial number checks for just $1/month. 100+ databases. 3-second results. Cancel anytime."
@@ -256,7 +260,9 @@ const PricingPage = () => {
           })
         }}
       />
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

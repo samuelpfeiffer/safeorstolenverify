@@ -10,6 +10,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { toast } from 'sonner';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 export default function ForBusinesses() {
   const [copiedWidget, setCopiedWidget] = useState(false);
@@ -199,7 +201,8 @@ export default function ForBusinesses() {
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} />
       
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4 max-w-6xl">
@@ -666,6 +669,7 @@ export default function ForBusinesses() {
           <p>Legal compliance is a key value proposition. States including Florida (F.S. § 539.001), California (Cal. Bus. & Prof. Code § 21628), Texas (Texas Occupations Code Chapter 1956), and New York require pawn shops and secondhand dealers to verify items against stolen property databases. SafeOrStolen generates timestamped compliance certificates with cryptographic hashes as legal proof of due diligence under 18 U.S.C. § 2315.</p>
         </section>
       </div>
+      <Footer />
     </>
   );
 }

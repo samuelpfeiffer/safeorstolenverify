@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Wrench, Smartphone, Car, Shield, ArrowRight } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const FreeTools = () => {
   return (
@@ -49,7 +51,8 @@ const FreeTools = () => {
         </div>
       </noscript>
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container mx-auto px-4 text-center">
@@ -149,6 +152,7 @@ const FreeTools = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
