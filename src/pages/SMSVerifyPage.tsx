@@ -93,6 +93,14 @@ const breadcrumbSchema = {
 };
 
 const SMSVerifyPage = () => {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleWaitlist = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) setSubmitted(true);
+  };
+
   return (
     <>
       <PageSEO
