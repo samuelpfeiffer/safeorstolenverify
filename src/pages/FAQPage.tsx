@@ -227,7 +227,8 @@ const FAQPage = () => {
         </div>
       </noscript>
       
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 pt-24 pb-4">
           <BreadcrumbNavigation items={[{ name: 'FAQ', href: '/faq' }]} />
         </div>
