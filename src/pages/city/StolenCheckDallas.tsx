@@ -38,6 +38,7 @@ const StolenCheckDallas = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Dallas Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Dallas-Fort Worth. Free IMEI, VIN, and serial number verification. DFW has 30,000+ vehicle thefts annually."
