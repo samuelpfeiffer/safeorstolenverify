@@ -68,7 +68,8 @@ export default function ResourceCenterPage() {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       
-      <main className="min-h-screen bg-background">
+      <TopNavigation />
+      <main className="min-h-screen bg-background pt-20">
         {/* Hero */}
         <section className="py-16 md:py-20 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
