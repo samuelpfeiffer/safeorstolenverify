@@ -162,10 +162,16 @@ const categories = [
   'Verification'
 ];
 
+// Strip HTML tags from content for clean text display
+function stripHtml(html: string | null): string {
+  if (!html) return '';
+  return html.replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 // Calculate reading time from content length
 function calculateReadTime(content: string | null): string {
   if (!content) return '5 min';
-  const words = content.split(/\s+/).length;
+  const words = stripHtml(content).split(/\s+/).length;
   const minutes = Math.max(3, Math.ceil(words / 200));
   return `${minutes} min`;
 }
