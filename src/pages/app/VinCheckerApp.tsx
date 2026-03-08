@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 const VinCheckerApp = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="VIN Checker App FREE | Check if Car is Stolen Before Buying - SafeOrStolen"
         description="FREE VIN checker app. Verify if any vehicle is stolen in 3 seconds. Protects BOTH buyers AND sellers. Works for cars, trucks, motorcycles. Download at SafeOrStolen.com."
