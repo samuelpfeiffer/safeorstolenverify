@@ -19,9 +19,8 @@ export interface RedirectRule {
  * These are only for edge cases where client-side redirect is needed
  */
 export const REDIRECT_RULES: RedirectRule[] = [
-  // These are handled server-side but kept as fallback
-  { from: '/imei-check', to: '/imei-checker', permanent: true },
-  { from: '/vin-check', to: '/vin-checker', permanent: true },
+  // REMOVED /imei-check and /vin-check - they have REAL routes (IMEICheckPage, VINCheckPage)
+  // GSC "Page with redirect" fix 2026-03-08
   { from: '/vin-lookup', to: '/vin-checker', permanent: true },
 ];
 
