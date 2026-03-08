@@ -46,6 +46,7 @@ export default function BusinessDashboard() {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Business Dashboard - SafeOrStolen"
         description="Manage your SafeOrStolen business verification account. View stats, get widget code, manage API keys."
@@ -54,7 +55,7 @@ export default function BusinessDashboard() {
       />
       <BreadcrumbSchema items={breadcrumbs} />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
