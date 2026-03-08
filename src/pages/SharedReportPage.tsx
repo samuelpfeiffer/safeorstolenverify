@@ -151,8 +151,8 @@ const SharedReportPage = () => {
         canonical={`/report/${shareCode}`}
         image="/og-stolen-report.jpg"
       />
-
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <TopNavigation />
+      <div className="container mx-auto px-4 py-8 max-w-4xl pt-24">
         {/* Alert Banner */}
         <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-4 mb-6">
           <div className="flex items-center gap-3">
