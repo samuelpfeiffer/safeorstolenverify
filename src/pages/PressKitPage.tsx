@@ -7,6 +7,8 @@ import {
   Shield, Smartphone, Zap, Globe
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const PressKitPage = () => {
   const companyFacts = [

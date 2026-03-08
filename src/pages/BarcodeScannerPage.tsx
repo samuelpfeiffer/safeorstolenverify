@@ -6,6 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { PageSEO } from '@/components/seo/PageSEO';
 import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
 import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const faqs = [
   {

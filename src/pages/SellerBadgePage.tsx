@@ -3,6 +3,8 @@ import { Shield, CheckCircle, Copy, Link as LinkIcon, ArrowRight, Star, Zap, Awa
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const SellerBadgePage: React.FC = () => {
   return (

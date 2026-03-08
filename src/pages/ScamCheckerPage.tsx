@@ -6,6 +6,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { ScamAnalysisResultCard } from '@/components/scam/ScamAnalysisResult';
 import { analyzeListingForScams, type ListingData, type ScamAnalysisResult } from '@/lib/scamAnalyzer';
 import { Link } from 'react-router-dom';

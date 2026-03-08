@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { AIMarketplaceAdvisor } from '@/components/ai/AIMarketplaceAdvisor';
 import { Shield, Brain, AlertTriangle, CheckCircle, Zap } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 export default function MarketplaceAdvisorPage() {
   return (

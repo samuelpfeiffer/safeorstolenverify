@@ -1,5 +1,7 @@
 import React from 'react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { ArrowRight, Shield, AlertTriangle, CheckCircle2, Link2, Sparkles, ExternalLink, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

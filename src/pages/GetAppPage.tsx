@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Download, Smartphone, Shield, Camera, Wifi, Star, Check, Zap } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * Get App Page - Real page for /get-app URL

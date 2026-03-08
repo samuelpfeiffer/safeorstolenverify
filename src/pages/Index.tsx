@@ -773,6 +773,7 @@ const Index = () => {
           })
         }}
       />
+      <Footer />
     </div>
   );
 };
