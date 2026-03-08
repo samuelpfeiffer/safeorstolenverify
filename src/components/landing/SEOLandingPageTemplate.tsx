@@ -418,6 +418,7 @@ export const SEOLandingPageTemplate = ({
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
