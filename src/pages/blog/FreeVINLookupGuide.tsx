@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
 import { BlogHeroImage } from '@/components/blog/BlogHeroImage';
 import { blogImages } from '@/assets/blog';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const FreeVINLookupGuide = () => {
   const structuredData = [
