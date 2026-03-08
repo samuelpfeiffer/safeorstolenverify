@@ -10,6 +10,8 @@ import {
   BookOpen, Wrench, Star, Clock, Download, Eye
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import {
   YOUTUBE_VIDEOS,
   YOUTUBE_CHANNEL,
