@@ -6,6 +6,8 @@ import {
   CreditCard, Shield, Scale, BookOpen, Globe, Crosshair,
   Gamepad2, Watch, Camera, Zap, Search
 } from 'lucide-react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const SitemapPage = () => {
   const sections = [
