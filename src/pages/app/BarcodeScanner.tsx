@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 const BarcodeScanner = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Barcode Scanner Stolen Checker App | SafeOrStolen"
         description="Free barcode scanner app to check if items are stolen. Scan any IMEI, VIN, or serial number barcode for instant verification."
