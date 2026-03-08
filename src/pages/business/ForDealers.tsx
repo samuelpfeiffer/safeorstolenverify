@@ -32,8 +32,8 @@ export default function ForDealers() {
         keywords="car dealer VIN check, dealership VIN verification, wholesale vehicle verification, dealer title check, automotive inventory verification"
         structuredData={structuredData}
       />
-
-      <div className="container mx-auto px-4 py-12">
+      <TopNavigation />
+      <div className="container mx-auto px-4 py-12 pt-24">
         <section className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">SafeOrStolen for Car Dealers</h1>
           <p className="text-2xl text-muted-foreground mb-8">Verify Every Vehicle in 3 Seconds. Eliminate Wholesale Risk. Build Customer Trust.</p>
