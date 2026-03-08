@@ -298,6 +298,7 @@ const ComparisonCarfax = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

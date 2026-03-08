@@ -183,6 +183,7 @@ const ComparisonIMEIInfo = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

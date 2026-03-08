@@ -272,6 +272,7 @@ const ComparisonCheckmend = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

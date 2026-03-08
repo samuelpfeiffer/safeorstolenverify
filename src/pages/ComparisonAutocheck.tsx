@@ -232,6 +232,7 @@ const ComparisonAutocheck = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
