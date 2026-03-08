@@ -70,6 +70,7 @@ const ProfilePage = () => {
 
   return (
     <>
+      <TopNavigation />
       <SEOHead
         title="My Profile"
         description="Manage your SafeOrStolen account profile and settings."
