@@ -266,6 +266,7 @@ export const MarketplaceLandingTemplate = ({
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

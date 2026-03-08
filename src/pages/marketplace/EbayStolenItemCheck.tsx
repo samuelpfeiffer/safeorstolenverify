@@ -358,6 +358,7 @@ const EbayStolenItemCheck = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
