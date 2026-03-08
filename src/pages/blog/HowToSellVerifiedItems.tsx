@@ -57,7 +57,7 @@ const HowToSellVerifiedItems = () => {
         structuredData={structuredData}
       />
 
-      <article className="min-h-screen bg-background">
+      <article className="min-h-screen bg-background pt-20">
         <div className="max-w-3xl mx-auto px-4 py-16">
           {/* Breadcrumb */}
           <nav className="text-sm text-muted-foreground mb-8">
