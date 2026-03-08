@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, X, Smartphone, Bike, Car, Shield, ArrowRight, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VsBikeIndex = () => {
   const comparisonData = [
