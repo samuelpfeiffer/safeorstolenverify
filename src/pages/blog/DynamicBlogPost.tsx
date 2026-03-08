@@ -12,6 +12,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
 import { format } from 'date-fns';
 import DOMPurify from 'dompurify';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface BlogPost {
   id: string;
