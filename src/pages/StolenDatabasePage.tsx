@@ -4,6 +4,8 @@
  */
 
 import { useState, useEffect } from 'react';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 import { useSearchParams, Link } from 'react-router-dom';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { BreadcrumbNavigation } from '@/components/seo/BreadcrumbNavigation';
