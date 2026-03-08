@@ -69,7 +69,9 @@ const FacebookMarketplaceSafetyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
       <PageSEO
         title="Facebook Marketplace Safety - Avoid Scams | SafeOrStolen"
         description="Protect yourself from Facebook Marketplace scams. Learn to spot stolen items, verify phones with IMEI checks, and avoid fraud."
