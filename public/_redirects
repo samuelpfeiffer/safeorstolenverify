@@ -736,13 +736,38 @@ https://www.safeorstolen.com/* https://safeorstolen.com/:splat 301!
 /check                             /verify  301!
 
 # ============================================
-# GSC "CRAWLED NOT INDEXED" FIX - 2026-02-14 CLEANED
-# Removed all duplicates from above. Only unique entries here.
+# GSC "CRAWLED NOT INDEXED" FIX - 2026-03-08
+# URLs from GSC report missing redirects
 # ============================================
 /blog/device-safety-guide                          /blog/how-to-check-if-phone-stolen  301!
 # NOTE: /blog/like-carfax-for-phones and /blog/real-user-stories have REAL routes - DO NOT redirect
-# NOTE: /blog/data-source-credibility already handled above (line ~404) → DO NOT duplicate
-# NOTE: /blog/what-to-do-if-stolen already handled above (line ~697) → DO NOT duplicate
+
+# Blog posts without real routes
+/blog/safeorstolen-offline-mode-verify-without-internet  /app  301!
+/blog/how-to-check-an-imei-properly                      /imei-checker  301!
+/blog/safer-buyer-flow                                   /blog  301!
+/blog/mobile-app-vs-website-verification                 /app  301!
+/blog/arizona-theftaz-guide                              /blog  301!
+/blog/safeorstolen-app-guide                             /app  301!
+/blog/complete-verification-guide-stolen-goods-check     /blog/complete-verification-guide  301!
+/blog/vin-verification-checklist                         /blog/complete-vin-guide  301!
+/blog/vin-verification-for-used-cars-what-you-need-to-know /blog/complete-vin-guide  301!
+/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide /blog/how-to-check-if-phone-stolen  301!
+/blog/stolen-item-checker-in-new-york-city-complete-2025-guide /stolen-check-new-york-city  301!
+/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles /blog/complete-vin-guide  301!
+
+# Legacy pages without real routes
+/for-college-students                                    /verify  301!
+/check-atv                                               /vin-checker  301!
+/videos                                                  /youtube  301!
+/app/marketplace                                         /app  301!
+/how-to-check-laptop-serial-number                       /check-laptop  301!
+/for-seniors                                             /verify  301!
+/check-airpods                                           /check-electronics  301!
+/how-to-verify-used-electronics                          /check-electronics  301!
+/safeorstolen-vs-autocheck                               /vs-autocheck  301!
+/app/vs-stolen-register                                  /vs-stolenregister  301!
+/marketplace                                             /for-marketplaces  301!
 # NOTE: /blog/marketplace-red-flags-protection-guide already handled above (line ~696) → DO NOT duplicate
 # NOTE: All legacy verification, marketplace, legal URLs already handled above → DO NOT duplicate
 # /our-story already handled above (line ~199) → DO NOT duplicate

@@ -388,6 +388,31 @@ export const REDIRECT_URLS = new Set([
   '/app/resellers',
   '/check-rv',
   '/app/new-york',
+  
+  // GSC crawled-not-indexed fix 2026-03-08
+  '/blog/safeorstolen-offline-mode-verify-without-internet',
+  '/blog/how-to-check-an-imei-properly',
+  '/blog/safer-buyer-flow',
+  '/blog/mobile-app-vs-website-verification',
+  '/blog/arizona-theftaz-guide',
+  '/blog/safeorstolen-app-guide',
+  '/blog/complete-verification-guide-stolen-goods-check',
+  '/blog/vin-verification-checklist',
+  '/blog/vin-verification-for-used-cars-what-you-need-to-know',
+  '/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide',
+  '/blog/stolen-item-checker-in-new-york-city-complete-2025-guide',
+  '/blog/tesla-model-3-vin-verification-avoid-stolen-electric-vehicles',
+  '/for-college-students',
+  '/check-atv',
+  '/videos',
+  '/app/marketplace',
+  '/how-to-check-laptop-serial-number',
+  '/for-seniors',
+  '/check-airpods',
+  '/how-to-verify-used-electronics',
+  '/safeorstolen-vs-autocheck',
+  '/app/vs-stolen-register',
+  '/marketplace',
 ]);
 
 export interface ValidationResult {
