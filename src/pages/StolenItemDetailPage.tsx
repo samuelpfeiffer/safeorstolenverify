@@ -18,6 +18,8 @@ import {
   Link as LinkIcon, ArrowLeft, Shield, Phone, Car, Bike, Monitor
 } from 'lucide-react';
 import { format } from 'date-fns';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface StolenItem {
   id: string;
