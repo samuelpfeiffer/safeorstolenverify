@@ -38,6 +38,7 @@ const StolenCheckChicago = () => {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Chicago Stolen Item Check - Verify Before Buying | SafeOrStolen"
         description="Check if items are stolen in Chicago. Free IMEI, VIN, and serial number verification for Chicago buyers. Verify before buying on Facebook Marketplace or Craigslist."
