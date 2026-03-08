@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Car, Shield, CheckCircle, AlertTriangle, Database, Clock, Download, Search, FileText, MapPin, XCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 /**
  * How to Check if Car is Stolen Page
