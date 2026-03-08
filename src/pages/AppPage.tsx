@@ -1126,6 +1126,7 @@ const AppPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
