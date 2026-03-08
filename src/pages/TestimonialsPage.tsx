@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const TestimonialsPage = () => {
   // Real press mentions and partnerships only
