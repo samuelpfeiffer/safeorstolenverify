@@ -137,6 +137,7 @@ const StolenCheckSanAntonio = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

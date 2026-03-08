@@ -95,6 +95,7 @@ const StolenCheckPhoenix = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

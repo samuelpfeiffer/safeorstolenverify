@@ -192,6 +192,7 @@ const StolenCheckNewYorkCity = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

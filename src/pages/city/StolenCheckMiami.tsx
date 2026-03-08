@@ -221,6 +221,7 @@ const StolenCheckMiami = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

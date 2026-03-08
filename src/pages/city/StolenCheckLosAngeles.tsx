@@ -238,6 +238,7 @@ const StolenCheckLosAngeles = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
