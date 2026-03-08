@@ -7,6 +7,8 @@ import {
   Smartphone, Shield, Zap, Clock, Target, Heart
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const ProductHuntPage = () => {
   const launchDate = new Date('2026-01-06');
