@@ -49,7 +49,9 @@ const PricingPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
+      <TopNavigation />
+      <div className="min-h-screen bg-background text-foreground pt-20">
       <PageSEO
         title="Stolen Item Checker — 2 Free Checks, Then $1/Month | SafeOrStolen"
         description="Start with 2 free verifications, no credit card required. Then unlimited IMEI, VIN, serial number checks for just $1/month. 100+ databases. 3-second results. Cancel anytime."
