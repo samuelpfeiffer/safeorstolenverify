@@ -60,7 +60,9 @@ const FacebookMarketplaceScamsGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-background text-foreground pt-20">
       <SEOHead
         title="Facebook Marketplace Scams: 12 Red Flags (2026 Guide) | SafeOrStolen"
         description="Avoid Facebook Marketplace scams with this 2026 guide. Learn 12 red flags for stolen goods, how to verify IMEI/VIN before buying, and protect yourself from fraud."
