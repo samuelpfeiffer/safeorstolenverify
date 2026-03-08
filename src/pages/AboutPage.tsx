@@ -8,6 +8,8 @@ import { FounderStory } from '@/components/story/FounderStory';
 import { WhyCheckBeforeBuying } from '@/components/home/WhyCheckBeforeBuying';
 import { WhyChooseSafeOrStolen } from '@/components/home/WhyChooseSafeOrStolen';
 import { CompactTestimonials } from '@/components/home/CompactTestimonials';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const AboutPage = () => {
   const dataPartners = [
