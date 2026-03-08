@@ -7,6 +7,8 @@ import {
   Smartphone, Shield, Zap, Clock, Target, Heart
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const ProductHuntPage = () => {
   const launchDate = new Date('2026-01-06');
@@ -62,7 +64,8 @@ const ProductHuntPage = () => {
         canonical="https://safeorstolen.com/product-hunt"
       />
       
-      <main className="min-h-screen bg-background">
+      <TopNavigation />
+      <main className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-orange-500/10">
           <div className="container mx-auto px-4 text-center">
@@ -275,6 +278,7 @@ const ProductHuntPage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

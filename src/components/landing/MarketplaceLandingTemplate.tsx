@@ -3,6 +3,8 @@ import { Shield, Search, CheckCircle, Clock, Download, AlertTriangle, Smartphone
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface FAQ {
   question: string;
@@ -104,7 +106,8 @@ export const MarketplaceLandingTemplate = ({
         structuredData={[webPageSchema, faqSchema]}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
           <div className="max-w-6xl mx-auto text-center">
@@ -263,6 +266,7 @@ export const MarketplaceLandingTemplate = ({
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

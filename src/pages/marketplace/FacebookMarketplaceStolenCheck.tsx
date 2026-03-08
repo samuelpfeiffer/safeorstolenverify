@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Shield, AlertTriangle, CheckCircle, Smartphone, Car, Laptop, Clock, Download, MapPin, Users } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const FacebookMarketplaceStolenCheck = () => {
   const faqs = [
@@ -72,7 +74,8 @@ const FacebookMarketplaceStolenCheck = () => {
         structuredData={[webPageSchema, faqSchema]}
       />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-16 px-4 bg-gradient-to-b from-primary/10 to-background">
           <div className="max-w-6xl mx-auto text-center">
@@ -310,6 +313,7 @@ const FacebookMarketplaceStolenCheck = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

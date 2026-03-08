@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, X, Smartphone, Bike, Car, Shield, ArrowRight, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VsBikeIndex = () => {
   const comparisonData = [
@@ -78,7 +80,8 @@ const VsBikeIndex = () => {
         structuredData={[structuredData, faqSchema]}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
@@ -436,6 +439,7 @@ const VsBikeIndex = () => {
 
         <RelatedPagesSection currentPage="/vs-bikeindex" />
       </div>
+      <Footer />
     </>
   );
 };

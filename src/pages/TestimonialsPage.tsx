@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { FasterCapitalBranding } from '@/components/FasterCapitalBranding';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const TestimonialsPage = () => {
   // Real press mentions and partnerships only
@@ -45,7 +47,8 @@ const TestimonialsPage = () => {
         ]}
       />
       
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 pt-24 pb-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -110,6 +113,7 @@ const TestimonialsPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
