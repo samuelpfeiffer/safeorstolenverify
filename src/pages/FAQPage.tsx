@@ -7,6 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { HelpCircle, Shield, Clock, Database } from 'lucide-react';
 import { ContextualAdPlacement } from '@/components/advertising/ContextualAdPlacement';
 import { createFAQSchema } from '@/utils/seo/structuredData';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const FAQPage = () => {
   const faqCategories = [
