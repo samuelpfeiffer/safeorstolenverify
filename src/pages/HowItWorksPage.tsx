@@ -637,6 +637,7 @@ const HowItWorksPage = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
