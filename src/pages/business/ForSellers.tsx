@@ -7,6 +7,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { toast } from 'sonner';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const PRICING_TIERS = [
   {

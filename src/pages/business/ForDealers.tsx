@@ -277,6 +277,7 @@ export default function ForDealers() {
           <AppStoreBadges size="md" />
         </section>
       </div>
+      <Footer />
     </>
   );
 }
