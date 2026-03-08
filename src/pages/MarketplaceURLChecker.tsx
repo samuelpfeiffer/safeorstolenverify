@@ -148,7 +148,8 @@ const MarketplaceURLChecker: React.FC = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
-      <div className="min-h-screen bg-background">
+      <TopNavigation />
+      <div className="min-h-screen bg-background pt-16">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
