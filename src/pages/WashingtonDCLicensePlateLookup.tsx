@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
 import { RelatedPagesSection } from '@/components/seo/RelatedPagesSection';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const WashingtonDCLicensePlateLookup = () => {
   const navigate = useNavigate();
