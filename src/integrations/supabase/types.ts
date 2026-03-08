@@ -1487,6 +1487,28 @@ export type Database = {
         Args: { input_slug: string; post_id: string }
         Returns: string
       }
+      get_certificate_by_share_token: {
+        Args: { p_share_token: string }
+        Returns: {
+          created_at: string | null
+          fingerprint: string | null
+          id: string
+          identifier: string
+          identifier_type: string
+          pdf_url: string | null
+          share_token: string | null
+          trust_score: number | null
+          user_id: string | null
+          verdict: string
+          verification_id: string | null
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "certificates"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
       get_complete_schema: { Args: never; Returns: Json }
       get_current_user_role: { Args: never; Returns: string }
       get_newsletter_subscriber_count: { Args: never; Returns: number }
