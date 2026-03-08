@@ -125,7 +125,9 @@ const HowToCheckIfPhoneStolenPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <>
+    <TopNavigation />
+    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background pt-16">
       <PageSEO
         title="How to Check if a Phone is Stolen Before Buying (2026 Guide) | SafeOrStolen"
         description="Complete guide to check if a phone is stolen using IMEI numbers. Free verification against 100+ databases. Protect yourself from buying blacklisted or stolen phones."
