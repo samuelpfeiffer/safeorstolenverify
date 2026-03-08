@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 const StolenPhoneCheckerApp = () => {
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Stolen Phone Checker App FREE | Check IMEI Before Buying - SafeOrStolen"
         description="FREE stolen phone checker app. Verify any phone's IMEI in 3 seconds before buying. Protects BOTH buyers AND sellers. Works offline. Download now at SafeOrStolen.com."
