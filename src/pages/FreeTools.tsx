@@ -152,6 +152,7 @@ const FreeTools = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

@@ -296,6 +296,7 @@ const Compare = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
