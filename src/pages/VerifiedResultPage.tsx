@@ -3,6 +3,8 @@ import { Shield, CheckCircle, ArrowRight, Database, Clock, ExternalLink } from '
 import { Button } from '@/components/ui/button';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { Link, useParams } from 'react-router-dom';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VerifiedResultPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
