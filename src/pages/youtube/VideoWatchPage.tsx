@@ -481,6 +481,7 @@ const VideoWatchPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

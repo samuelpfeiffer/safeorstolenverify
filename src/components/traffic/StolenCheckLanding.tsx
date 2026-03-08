@@ -193,6 +193,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
