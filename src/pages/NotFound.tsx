@@ -52,6 +52,7 @@ const NotFound = () => {
 
   return (
     <>
+      <TopNavigation />
       <StatusCodeHandler statusCode={404} noIndex={true} />
       <SEOHead
         title="404 - Page Not Found"
