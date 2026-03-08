@@ -284,8 +284,8 @@ const VerifyPage = () => {
 
   return (
     <>
+      <TopNavigation />
       {/* SEO Components - Critical for Google indexing */}
-      <StatusCodeHandler statusCode={200} />
       <PageSEO
         title="Free Stolen Item Check - IMEI VIN Serial Verification"
         description="Verify if any item is stolen in 3 seconds. Check IMEI, VIN, serial numbers against 100+ databases. Protect yourself from stolen goods."
