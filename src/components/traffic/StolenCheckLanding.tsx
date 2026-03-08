@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { EmailCaptureHero } from '@/components/traffic/EmailCaptureHero';
 import { SEOHead } from '@/components/seo/SEOHead';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 interface StolenCheckLandingProps {
   itemType: string;
@@ -39,6 +41,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
   
   return (
     <>
+      <TopNavigation />
       <SEOHead
         title={`${title} | SafeOrStolen - Free Stolen Item Checker`}
         description={description}
@@ -47,7 +50,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
         schemaJson={faqSchema}
       />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
@@ -190,6 +193,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

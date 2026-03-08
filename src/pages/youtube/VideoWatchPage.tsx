@@ -24,6 +24,8 @@ import {
 } from '@/config/videoData';
 import { getVideoUniqueContent, hasVideoUniqueContent } from '@/config/youtubeUniqueContent';
 import { ThumbnailFactory, hasCustomThumbnail } from '@/components/youtube/thumbnails';
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 
 const VideoWatchPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -133,6 +135,7 @@ const VideoWatchPage: React.FC = () => {
 
   return (
     <>
+      <TopNavigation />
       <SEOHead
         title={`${video.seoTitle} | SafeOrStolen Video Tutorial`}
         description={video.seoDescription}
@@ -143,7 +146,7 @@ const VideoWatchPage: React.FC = () => {
         schemaJson={schemas}
       />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-8">
           {/* Breadcrumb */}
           <nav className="mb-6" aria-label="Breadcrumb">
@@ -480,6 +483,7 @@ const VideoWatchPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

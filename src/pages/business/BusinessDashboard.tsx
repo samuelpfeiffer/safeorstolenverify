@@ -6,7 +6,8 @@ import { Shield, Copy, CheckCircle2, BarChart3, Search, AlertTriangle, Code, Key
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/lib/auth';
 import { BreadcrumbSchema } from '@/components/seo/schemas/BreadcrumbSchema';
-
+import TopNavigation from '@/components/TopNavigation';
+import Footer from '@/components/Footer';
 export default function BusinessDashboard() {
   const { user } = useAuth();
   const [copiedKey, setCopiedKey] = useState(false);
@@ -45,6 +46,7 @@ export default function BusinessDashboard() {
 
   return (
     <>
+      <TopNavigation />
       <PageSEO
         title="Business Dashboard - SafeOrStolen"
         description="Manage your SafeOrStolen business verification account. View stats, get widget code, manage API keys."
@@ -53,7 +55,7 @@ export default function BusinessDashboard() {
       />
       <BreadcrumbSchema items={breadcrumbs} />
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-8 max-w-6xl">
           {/* Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
@@ -283,6 +285,7 @@ export default function BusinessDashboard() {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
