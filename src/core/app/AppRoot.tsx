@@ -33,7 +33,7 @@ const AdvancedSchemaGenerator = React.lazy(() => import('@/components/seo/Advanc
 
 // Lazy load non-critical growth/conversion components for better performance
 // Note: SocialProofBanner, StickyMobileAppCTA, AggressiveConversionBanner removed to fix CLS on mobile
-const ExitIntentPopup = React.lazy(() => import('@/components/growth').then(m => ({ default: m.ExitIntentPopup })));
+
 const LiveActivityToast = React.lazy(() => import('@/components/growth').then(m => ({ default: m.LiveActivityToast })));
 const TrafficBooster = React.lazy(() => import('@/components/traffic/TrafficBooster').then(m => ({ default: m.TrafficBooster })));
 
