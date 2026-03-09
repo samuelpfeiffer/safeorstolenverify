@@ -178,14 +178,15 @@ const HowToSellVerifiedItems = () => {
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Seller Pricing: What Does It Cost?</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              SafeOrStolen offers unlimited verifications for just $1/month — all item types included:
+              SafeOrStolen offers 2 free checks, then flexible pricing:
             </p>
             <ul className="space-y-2 mb-6">
-              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$1/month unlimited</strong> — Verify as many items as you need. Phones, cars, electronics, and more.</span></li>
+              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$0.99/check</strong> — Pay per verification, no account needed.</span></li>
+              <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">$2.99/month unlimited</strong> — Verify as many items as you need. Phones, cars, electronics, and more.</span></li>
               <li className="flex items-start gap-2 text-muted-foreground"><CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" /> <span><strong className="text-foreground">PDF certificates & shareable links</strong> — Download reports and share with buyers.</span></li>
             </ul>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Consider the ROI: if verification helps you sell a single iPhone for $200 more, the $1/month cost pays for itself instantly.
+              Consider the ROI: if verification helps you sell a single iPhone for $200 more, the $2.99/month cost pays for itself instantly.
             </p>
 
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Legal Protection for Sellers</h2>
