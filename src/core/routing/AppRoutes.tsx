@@ -653,6 +653,11 @@ export const AppRoutes = () => {
         <Route path="/blog/ps5-stolen-check-guide" element={<PS5StolenCheckGuide />} />
         <Route path="/blog/facebook-marketplace-scams-guide" element={<FacebookMarketplaceScamsGuide />} />
         <Route path="/blog/check-if-phone-stolen-guide" element={<CheckIfPhoneStolenGuide />} />
+        <Route path="/blog/how-to-check-if-gun-is-stolen" element={<GunSerialNumberCheckGuide />} />
+        <Route path="/blog/atf-gun-serial-number-check" element={<ATFGunSerialNumberCheckGuide />} />
+        <Route path="/blog/hotgunz-database-guide" element={<HotGunzDatabaseGuide />} />
+        <Route path="/blog/state-stolen-gun-database-guide" element={<StateStolenGunDatabaseGuide />} />
+        <Route path="/blog/gun-show-serial-number-check" element={<GunShowSerialNumberCheckGuide />} />
         <Route path="/blog/best-ai-llms-2026" element={<BestAILLMs2026 />} />
         <Route path="/blog/top-10-stolen-item-checkers" element={<TopStolenItemCheckers />} />
         <Route path="/blog/best-stolen-item-checkers-2026" element={<BestStolenItemCheckers2026 />} />
