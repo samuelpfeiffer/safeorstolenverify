@@ -189,7 +189,7 @@ const ComparisonSwappa = () => {
                       ['100+ Databases', 'FBI NCIC, NICB, GSMA, all 50 state law enforcement'],
                       ['Works Offline', 'Verify at garage sales, flea markets, anywhere'],
                       ['3-Second Results', 'Instant verification with trust score'],
-                      ['2 Free Checks', 'Then just $1.00/month unlimited'],
+                      ['2 Free Checks', 'Then $0.99/check or $2.99/month unlimited'],
                       ['Verification Certificate', 'Downloadable PDF proof for your records'],
                     ].map(([title, desc]) => (
                       <li key={title} className="flex items-start gap-2">
