@@ -227,7 +227,7 @@ const FreeVINLookupGuide = () => {
             <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
             <div className="space-y-6 my-8">
               {[
-                { q: 'Is VIN lookup really free?', a: 'SafeOrStolen offers unlimited VIN lookups for $1/month. All vehicle types included. Cancel anytime.' },
+                { q: 'Is VIN lookup really free?', a: 'SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited VIN lookups. All vehicle types included. Cancel anytime.' },
                 { q: 'What databases does a VIN check search?', a: 'SafeOrStolen checks NICB, NHTSA, FBI NCIC, all 50 state DMV records, insurance theft claims, and lien records.' },
                 { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
                 { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN. If they refuse, that\'s a red flag. Enter it on SafeOrStolen.com for instant results.' },
