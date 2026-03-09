@@ -52,7 +52,7 @@ const FreeVINLookupGuide = () => {
       <TopNavigation />
       <PageSEO
         title="Free VIN Lookup 2026 - Check If Car Is Stolen Before Buying | SafeOrStolen"
-        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Instant results in 3 seconds. $1/month unlimited."
+        description="VIN lookup to check if a car, truck, or motorcycle is stolen. Searches NICB, NHTSA, FBI NCIC, and all 50 state DMV databases. Instant results in 3 seconds. $0.99/check or $2.99/month unlimited."
         keywords="free VIN lookup, VIN check free, check if car stolen, VIN number lookup, stolen car check, free vehicle history check, VIN decoder, NICB VIN check, is my car stolen"
         canonical="/blog/free-vin-lookup-guide"
         structuredData={structuredData}
