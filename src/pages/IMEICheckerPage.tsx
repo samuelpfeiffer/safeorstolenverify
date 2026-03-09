@@ -48,7 +48,7 @@ const IMEICheckerPage = () => {
           },
           {
             question: "How much does the IMEI check cost?",
-            answer: "SafeOrStolen offers unlimited IMEI checks for just $1/month. This covers all item types — not just phones. Cancel anytime with a 30-day money-back guarantee."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. Covers all item types — not just phones. Cancel anytime with a 30-day money-back guarantee."
           },
           {
             question: "What databases does SafeOrStolen check?",

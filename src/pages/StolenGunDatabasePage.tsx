@@ -53,7 +53,7 @@ const StolenGunDatabasePage = () => {
           },
           {
             question: "How much does gun serial number verification cost?",
-            answer: "SafeOrStolen offers unlimited gun serial number searches for $1/month. While law enforcement has direct access to NCIC, civilians can verify firearms through our service which aggregates multiple databases including the publicly accessible HotGunz. Our $1/month plan protects buyers at gun shows and private sales where no background check is required."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited gun serial number searches. While law enforcement has direct access to NCIC, civilians can verify firearms through our service which aggregates multiple databases including the publicly accessible HotGunz. Our service protects buyers at gun shows and private sales where no background check is required."
           },
           {
             question: "What is HotGunz and why should I check it?",

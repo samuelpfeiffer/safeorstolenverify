@@ -145,7 +145,7 @@ export const useFreemiumFlow = () => {
       setShowPaywall(true);
       toast({
         title: "Subscription Required",
-        description: "Get unlimited verifications for just $1/month.",
+        description: "Get a single check for $0.99 or subscribe for $2.99/month unlimited.",
         variant: "destructive"
       });
       return false;

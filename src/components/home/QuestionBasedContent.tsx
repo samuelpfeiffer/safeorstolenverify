@@ -51,7 +51,7 @@ export const QuestionBasedContent = () => {
                     </p>
                     <Link to={item.link}>
                       <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
-                        Verify Now — $1/mo Unlimited →
+                        Verify Now — From $0.99 →
                       </Button>
                     </Link>
                   </div>

@@ -133,7 +133,7 @@ export default function VsStolenRegisterPage() {
                       <tr>
                         <td className="p-4 font-medium">Pro Price</td>
                         <td className="text-center p-4 bg-primary/5">
-                          <span className="font-bold text-primary">$1/mo</span>
+                          <span className="font-bold text-primary">$2.99/mo</span>
                         </td>
                         <td className="text-center p-4">
                           <span className="text-muted-foreground">£3.99/mo</span>

@@ -57,7 +57,7 @@ const IllinoisLicensePlateLookupPage = () => {
           },
           {
             question: "How much does Illinois license plate lookup cost?",
-            answer: "SafeOrStolen offers unlimited Illinois license plate lookups for $1/month. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited Illinois license plate lookups. Our tool searches both Illinois Secretary of State registration AND stolen vehicle databases simultaneously. Cancel anytime."
           },
           {
             question: "Why is Chicago a concern for vehicle theft?",

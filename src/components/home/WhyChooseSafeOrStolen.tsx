@@ -42,8 +42,8 @@ export const WhyChooseSafeOrStolen = () => {
     },
     {
       icon: Award,
-      title: 'Cheapest Verification — $1/mo',
-      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers unlimited verifications for just $1/month. Better than CheckMEND — a real mobile app, not a slow website.',
+      title: 'Best Value — From $0.99',
+      description: 'CheckMEND charges $3.99 per check. SafeOrStolen offers $0.99/check or $2.99/month unlimited. Better than CheckMEND — a real mobile app, not a slow website.',
       badge: 'Best Value',
       color: 'from-indigo-500 to-purple-500'
     },
