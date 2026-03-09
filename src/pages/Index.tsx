@@ -9,15 +9,15 @@ import { useState } from 'react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
-// Images — unique per card, no duplicates
-import cardFirearms from '@/assets/cards/firearms-check.jpg';
-import cardVehicle from '@/assets/cards/vehicle-vin.jpg';
-import cardPhone from '@/assets/cards/phone-imei.jpg';
-import cardPlate from '@/assets/cards/license-plate.jpg';
-import cardBicycle from '@/assets/cards/bicycle-serial.jpg';
-import cardLaptop from '@/assets/cards/laptop-electronics.jpg';
-import cardBarcode from '@/assets/cards/scan-barcode.jpg';
-import cardListing from '@/assets/cards/paste-listing.jpg';
+// Card images served from /public for smaller JS bundle (no ES module overhead)
+const cardFirearms = '/images/cards/firearms-check.jpg';
+const cardVehicle = '/images/cards/vehicle-vin.jpg';
+const cardPhone = '/images/cards/phone-imei.jpg';
+const cardPlate = '/images/cards/license-plate.jpg';
+const cardBicycle = '/images/cards/bicycle-serial.jpg';
+const cardLaptop = '/images/cards/laptop-electronics.jpg';
+const cardBarcode = '/images/cards/scan-barcode.jpg';
+const cardListing = '/images/cards/paste-listing.jpg';
 
 // ============================================================
 // DATA
