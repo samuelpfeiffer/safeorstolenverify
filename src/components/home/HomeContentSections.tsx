@@ -36,7 +36,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "How do I check a gun serial number for free?",
-      answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search FBI NCIC, ATF eTrace, all 50 state law enforcement databases, HotGunz (32,000+ user-reported stolen guns), and insurance claims. Unlimited checks for $1/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
+      answer: "Enter the firearm's serial number into SafeOrStolen's verification tool. Serial numbers are typically on the frame (pistols), receiver (rifles), or barrel (shotguns). We search FBI NCIC, ATF eTrace, all 50 state law enforcement databases, HotGunz (32,000+ user-reported stolen guns), and insurance claims. Unlimited checks for $2.99/month. Possessing a stolen firearm is a federal crime with up to 10 years imprisonment — always verify before any private sale."
     },
     {
       question: "What items can SafeOrStolen verify?",
