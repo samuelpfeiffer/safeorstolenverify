@@ -96,7 +96,7 @@ export const InlineCheckout: React.FC<InlineCheckoutProps> = ({
         ) : (
           <>
             <Shield className="w-5 h-5 mr-2" />
-            Subscribe — $1/month Unlimited
+            Subscribe — $2.99/month Unlimited
           </>
         )}
       </Button>
