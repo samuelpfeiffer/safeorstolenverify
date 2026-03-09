@@ -65,7 +65,7 @@ const appSchema = {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD",
-    "description": "2 free scans, then $1.00/month unlimited"
+    "description": "2 free scans, then $0.99/check or $2.99/month unlimited"
   },
   "featureList": "Barcode scanning, QR code reading, IMEI verification, VIN verification, serial number lookup, stolen item check",
   "description": "Scan any barcode or QR code to instantly verify if an item is stolen. Check phones, vehicles, firearms, electronics against 100+ databases.",
