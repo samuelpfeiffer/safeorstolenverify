@@ -145,7 +145,7 @@ const AuthAwareContent: React.FC = () => {
           <SOSFooter />
         </div>
         <PWAInstallManager />
-        {/* AppDownloadBot removed — overlaps with AIFloatingChat. PWA install available via /app page and PWAInstallManager */}
+        <AppDownloadBot />
         <MobileNavigation />
         {/* AISafetyAdvisor removed — replaced by AIFloatingChat */}
         
