@@ -116,7 +116,7 @@ const BarcodeScannerPage = () => {
             <h2>How It Works</h2>
             <p>Open SafeOrStolen on your phone. Tap Scan Barcode. Point your camera at the barcode. The number is automatically extracted and checked against 100+ databases including FBI NCIC, GSMA, NICB, ATF, and all 50 state law enforcement databases. Results in 3 seconds.</p>
             <h2>Perfect for In-Person Shopping</h2>
-            <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then unlimited for $1.00/month.</p>
+            <p>Use at gun shows, car lots, pawn shops, flea markets, garage sales, and marketplace meetups. Scan before you buy. 2 free scans, then $0.99/check or $2.99/month unlimited.</p>
           </article>
         </main>
       </noscript>
