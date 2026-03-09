@@ -7,7 +7,7 @@ export const QuestionBasedContent = () => {
   const questions = [
     {
       question: "How to check if a phone is stolen before buying?",
-      answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier blacklists, police reports, and insurance claims. $1/month unlimited.",
+      answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier blacklists, police reports, and insurance claims. 2 free checks, then $0.99/check or $2.99/month unlimited.",
       icon: Search,
       link: "/verify"
     },
