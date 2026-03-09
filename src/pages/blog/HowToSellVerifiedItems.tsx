@@ -37,7 +37,7 @@ const HowToSellVerifiedItems = () => {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "How much does seller verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers unlimited verifications for $1/month. All item types included. Cancel anytime." } },
+        { "@type": "Question", "name": "How much does seller verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included. Cancel anytime." } },
         { "@type": "Question", "name": "Do verified listings really sell faster?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Verified listings remove buyer doubt, resulting in fewer lowball offers and faster sales. Sellers report 15-30% higher prices and 3x faster sale times." } },
         { "@type": "Question", "name": "What do buyers see when they click my verification link?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers see the verification result (CLEAN or FLAGGED), the Trust Score, which databases were checked, and the verification date. Only the last 4 digits of identifiers are shown for privacy." } },
         { "@type": "Question", "name": "Does this work on all marketplaces?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can share the verification link or PDF on Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform." } },
