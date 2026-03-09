@@ -127,7 +127,7 @@ const ComparisonSwappa = () => {
           <h3>Can Swappa check if a car or bike is stolen?</h3>
           <p>No. Swappa only handles phones and tech devices. SafeOrStolen verifies all item types including vehicles, firearms, bicycles, and more.</p>
           <h3>Is SafeOrStolen free to use?</h3>
-          <p>Yes. SafeOrStolen offers 2 free verification checks. Unlimited checks cost $1.00/month.</p>
+          <p>Yes. SafeOrStolen offers 2 free verification checks. Then $0.99/check or $2.99/month unlimited.</p>
           <h3>How many databases does SafeOrStolen check?</h3>
           <p>SafeOrStolen checks 100+ databases including FBI NCIC, NICB, GSMA blacklists, and all 50 state law enforcement databases.</p>
           <nav>
