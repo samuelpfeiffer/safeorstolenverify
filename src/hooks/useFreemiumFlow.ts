@@ -111,7 +111,7 @@ export const useFreemiumFlow = () => {
         setShowFairUseWarning(true);
         toast({
           title: "Fair Use Limit Reached",
-          description: "You've reached 300 checks this month. Contact support for a business plan.",
+          description: "You've reached the monthly fair-use limit. Contact support for enterprise access.",
           variant: "destructive"
         });
         return false;
