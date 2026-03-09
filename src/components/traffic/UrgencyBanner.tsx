@@ -21,7 +21,7 @@ export const UrgencyBanner = () => {
           <div className="flex items-center gap-2 border-l border-white/30 pl-4 md:pl-6">
             <Smartphone className="h-4 w-4" />
             <Button asChild size="sm" variant="secondary" className="h-6 text-xs px-3">
-              <Link to="/app">Get FREE App</Link>
+              <Link to="/app">Get the App</Link>
             </Button>
           </div>
         </div>
