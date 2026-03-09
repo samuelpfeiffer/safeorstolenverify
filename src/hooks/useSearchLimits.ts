@@ -79,7 +79,7 @@ export const useSearchLimits = () => {
     if (!user) {
       toast({
         title: "Subscription Required",
-        description: "Subscribe for just $1/month to get unlimited verifications.",
+        description: "Get a single check for $0.99 or subscribe for $2.99/month unlimited.",
         variant: "destructive",
       });
       return false;
@@ -97,7 +97,7 @@ export const useSearchLimits = () => {
         if ((profile?.verifications_used_this_month || 0) >= FAIR_USE_CAP) {
           toast({
             title: "Fair Use Limit Reached",
-            description: "You've used 300 checks this month. Contact support for a business plan.",
+            description: "You've reached the monthly fair-use limit. Contact support for enterprise access.",
             variant: "destructive",
           });
           return false;
@@ -119,7 +119,7 @@ export const useSearchLimits = () => {
     if (hasReachedLimit) {
       toast({
         title: "Subscription Required",
-        description: "Subscribe for just $1/month for unlimited verifications.",
+        description: "Get a single check for $0.99 or subscribe for $2.99/month unlimited.",
         variant: "destructive",
       });
       return false;

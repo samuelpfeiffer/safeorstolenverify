@@ -330,7 +330,7 @@ export const createFAQSchema = () => ({
       "name": "How do I check if something is stolen before I buy it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. Unlimited verifications for $1/month."
+        "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. 2 free checks, then $0.99/check or $2.99/month unlimited."
       }
     },
     {
@@ -338,7 +338,7 @@ export const createFAQSchema = () => ({
       "name": "Can I check if a phone is stolen for free?",
       "acceptedAnswer": {
         "@type": "Answer", 
-        "text": "SafeOrStolen offers unlimited IMEI checks for just $1/month. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from 100+ databases including GSMA and carrier blacklists."
+        "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from 100+ databases including GSMA and carrier blacklists."
       }
     },
     {

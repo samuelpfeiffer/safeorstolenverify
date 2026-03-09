@@ -22,7 +22,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Shield,
       title: "Start Verifying Items",
-      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $1/month.",
+      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $2.99/month.",
       action: "Subscribe Now",
       onClick: () => navigate('/pricing')
     },
@@ -36,7 +36,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: CreditCard,
       title: "Unlimited Access",
-      description: "Get unlimited verifications for just $1/month. All item types included. Cancel anytime.",
+      description: "Get unlimited verifications for $2.99/month, or pay $0.99 per check. All item types included. Cancel anytime.",
       action: "View Plan",
       onClick: () => navigate('/pricing')
     }
@@ -98,7 +98,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
             <div className="bg-sos-lime/10 border border-sos-lime/20 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-3 text-foreground flex items-center gap-2">
                 <Zap className="h-5 w-5 text-sos-lime" />
-                $1/Month Unlimited Plan Includes:
+                $2.99/Month Unlimited Plan Includes:
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">

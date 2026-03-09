@@ -16,7 +16,7 @@ export const EnhancedFAQSection = () => {
       faqs: [
         {
           question: "How much does SafeOrStolen cost?",
-          answer: "SafeOrStolen offers unlimited verifications for just $1/month. All item types — phones, vehicles, electronics, firearms, and more — all databases, cancel anytime. The best value in stolen item verification."
+          answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month for unlimited verifications. All item types — phones, vehicles, electronics, firearms, and more — all databases, cancel anytime. The best value in stolen item verification."
         },
         {
           question: "What items can I verify with SafeOrStolen?",
@@ -51,12 +51,12 @@ export const EnhancedFAQSection = () => {
       icon: DollarSign,
       faqs: [
         {
-          question: "What's included in the $1/month plan?",
-          answer: "The $1/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to 100+ databases. Cancel anytime — no contracts."
+          question: "What's included in the $2.99/month plan?",
+          answer: "The $2.99/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI-powered analysis, seller badges, and access to 100+ databases. Cancel anytime — no contracts. Or pay $0.99 per individual check."
         },
         {
           question: "Can I verify in bulk for my business?",
-          answer: "Yes! Business plans ($29.99+/month) include API access, CSV bulk upload, unlimited checks, downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers."
+          answer: "Yes! Our $2.99/month Unlimited plan includes unlimited checks, downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers. Contact us for enterprise API access."
         },
         {
           question: "Do you offer refunds if I'm not satisfied?",

@@ -279,7 +279,7 @@ export const AIMarketplaceAdvisor: React.FC = () => {
               </div>
 
               <p className="text-[10px] text-muted-foreground text-center">
-                Powered by SafeOrStolen AI · <a href="/pricing" className="text-primary hover:underline">Included in Unlimited plan ($1/mo)</a>
+                Powered by SafeOrStolen AI · <a href="/pricing" className="text-primary hover:underline">Powered by SafeOrStolen AI · <a href="/pricing" className="text-primary hover:underline">Included in Unlimited plan ($2.99/mo)</a></a>
               </p>
             </div>
           </motion.div>

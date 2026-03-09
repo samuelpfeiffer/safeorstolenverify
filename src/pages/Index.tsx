@@ -95,21 +95,21 @@ const TESTIMONIALS = [
     role: 'Pawn Shop Owner, Phoenix AZ',
     quote: "SafeOrStolen paid for itself week one. Caught a stolen MacBook worth $1,800. Now I check every single item that comes through the door — it's non-negotiable.",
     stars: 5,
-    plan: 'Business Plan',
+    plan: 'Unlimited Plan',
   },
   {
     name: 'Sarah K.',
     role: 'Used Car Buyer, Houston TX',
     quote: 'Ran the VIN on a Craigslist Honda Civic before I drove 2 hours to look at it. Came back salvage title. Saved me from a $12,000 disaster.',
     stars: 5,
-    plan: 'Pro Plan',
+    plan: 'Unlimited Plan',
   },
   {
     name: 'James R.',
     role: 'Private Firearms Collector',
     quote: "At gun shows you can't be too careful. The ATF cross-check plus HotGunz gives me real peace of mind on every private sale. Worth every penny.",
     stars: 5,
-    plan: 'Pro Plan',
+    plan: 'Unlimited Plan',
   },
 ];
 
@@ -163,8 +163,8 @@ const FAQ_ITEMS = [
     a: 'Do not purchase the item. Report the listing to the marketplace platform (Facebook Marketplace, eBay, Craigslist, etc.) and contact your local law enforcement with the verification details. SafeOrStolen provides a downloadable report you can share with police. Never confront the seller directly.',
   },
   {
-    q: 'Does the Business plan work for pawn shops?',
-    a: "Yes. SafeOrStolen's Business plan is designed for pawn shops, used electronics stores, and secondhand dealers. It includes API access for point-of-sale integration, automatic compliance logging for state regulations, and bulk verification. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
+    q: 'Does the Unlimited plan work for pawn shops?',
+    a: "Yes. SafeOrStolen's Unlimited plan ($2.99/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
   },
 ];
 
@@ -479,7 +479,7 @@ const Index = () => {
           <div className="flex-shrink-0 w-full md:w-72 modern-card p-6">
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="w-5 h-5 text-primary" />
-              <span className="text-foreground font-bold">Business Plan</span>
+              <span className="text-foreground font-bold">Unlimited Plan — $2.99/mo</span>
             </div>
             <ul className="space-y-2 mb-6">
               {[

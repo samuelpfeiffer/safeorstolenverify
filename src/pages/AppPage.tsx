@@ -170,7 +170,7 @@ const AppPage = () => {
         "name": "Can pawn shops use SafeOrStolen for business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely! SafeOrStolen is perfect for pawn shops, secondhand stores, and resellers. Verify every item before purchasing with our fast 3-second verification. Business plans available for high-volume users."
+          "text": "Absolutely! SafeOrStolen is perfect for pawn shops, secondhand stores, and resellers. Verify every item before purchasing with our fast 3-second verification. $2.99/month unlimited plan available."
         }
       },
       {
