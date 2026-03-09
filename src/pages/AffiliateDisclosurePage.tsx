@@ -29,7 +29,7 @@ const AffiliateDisclosurePage: React.FC = () => {
         description="Learn about SafeOrStolen's affiliate partnerships, advertising policies, restricted uses, and how we recommend third-party services on our verification results."
         keywords="affiliate disclosure, advertising policy, partner relationships, SafeOrStolen affiliates"
         canonical="https://safeorstolen.com/affiliate-disclosure"
-        ogType="website"
+        type="website"
         structuredData={webPageSchema}
       />
       <TopNavigation />
