@@ -96,8 +96,9 @@ export const getBusinessTiers = (): SubscriptionTier[] => {
  */
 export const getPersonalTiers = (): SubscriptionTier[] => {
   return [
+    SUBSCRIPTION_TIERS.free,
+    SUBSCRIPTION_TIERS.payPerCheck,
     SUBSCRIPTION_TIERS.unlimited,
-    SUBSCRIPTION_TIERS.payPerUse
   ];
 };
 
