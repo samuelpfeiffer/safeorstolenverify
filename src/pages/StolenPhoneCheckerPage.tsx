@@ -270,7 +270,7 @@ const StolenPhoneCheckerPage = () => {
                 <div className="flex items-start gap-4">
                   <Star className="w-10 h-10 text-primary flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">$1/Month Unlimited</h3>
+                    <h3 className="font-semibold mb-2">$2.99/Month Unlimited</h3>
                     <p className="text-muted-foreground">Unlimited checks for all item types. Cancel anytime.</p>
                   </div>
                 </div>
