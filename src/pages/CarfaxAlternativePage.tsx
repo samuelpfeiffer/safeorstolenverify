@@ -13,7 +13,7 @@ const CarfaxAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen a free Carfax alternative?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, for stolen vehicle detection specifically. Carfax charges $39.99 per report (or $99.99 for 6 reports) and focuses on full vehicle history. SafeOrStolen offers 2 free checks, then $1/month unlimited, and focuses specifically on whether a vehicle is reported stolen. If your goal is theft verification, SafeOrStolen is significantly cheaper and more targeted." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, for stolen vehicle detection specifically. Carfax charges $39.99 per report (or $99.99 for 6 reports) and focuses on full vehicle history. SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited, and focuses specifically on whether a vehicle is reported stolen. If your goal is theft verification, SafeOrStolen is significantly cheaper and more targeted." }
       },
       {
         "@type": "Question",
