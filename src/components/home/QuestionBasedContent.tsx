@@ -19,7 +19,7 @@ export const QuestionBasedContent = () => {
     },
     {
       question: "How do I verify a car isn't stolen?",
-      answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our database search. We verify against NICB stolen vehicle database, police records, and DMV theft reports. Results in 3 seconds. $1/month unlimited.",
+      answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our database search. We verify against NICB stolen vehicle database, police records, and DMV theft reports. Results in 3 seconds. From $0.99/check.",
       icon: Shield,
       link: "/verify"
     },
