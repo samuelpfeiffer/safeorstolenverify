@@ -113,7 +113,7 @@ const StolenPhoneCheckerPage = () => {
         <section className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 text-sm px-4 py-2">
             <Shield className="w-4 h-4 mr-2 inline" />
-            100+ Databases • Instant Results • $1/mo Unlimited
+            100+ Databases • Instant Results • $2.99/mo Unlimited
           </Badge>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
