@@ -64,7 +64,7 @@ const TopVINCheckServices2025 = () => {
       cons: [
         'No detailed service history',
         'No accident damage estimates',
-        'Requires $1/month subscription'
+        'Requires $2.99/month subscription'
       ],
       cta: '/pricing',
       ctaText: 'Subscribe — $1/mo'
