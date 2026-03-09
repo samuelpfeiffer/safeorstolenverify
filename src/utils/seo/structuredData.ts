@@ -330,7 +330,7 @@ export const createFAQSchema = () => ({
       "name": "How do I check if something is stolen before I buy it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. Unlimited verifications for $1/month."
+        "text": "To check if something is stolen: 1) Find the item's IMEI (phones), VIN (vehicles), or serial number. 2) Enter it into SafeOrStolen's verification tool. 3) Get instant results showing if the item is stolen, lost, or safe to buy. Works for phones, cars, electronics, tools—anything with an identifier. 2 free checks, then $0.99/check or $2.99/month unlimited."
       }
     },
     {
