@@ -43,10 +43,10 @@ const SafeOrStolenVsIMEIInfo = () => {
   };
 
   const comparisonData = [
-    { feature: 'Pricing', safeOrStolen: '$1/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
+    { feature: 'Pricing', safeOrStolen: '$2.99/mo unlimited', imeiInfo: 'Limited basic info', winner: 'sos' },
     { feature: 'Stolen Database Size', safeOrStolen: '50M+ items', imeiInfo: 'Not disclosed', winner: 'sos' },
     { feature: 'Item Types Supported', safeOrStolen: 'Phones, cars, bikes, tools, etc.', imeiInfo: 'Phones only', winner: 'sos' },
-    { feature: 'Blacklist Check', safeOrStolen: 'Included in $1/mo', imeiInfo: '$2.99 per check', winner: 'sos' },
+    { feature: 'Blacklist Check', safeOrStolen: 'Included in $2.99/mo', imeiInfo: '$2.99 per check', winner: 'sos' },
     { feature: 'VIN Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Serial Number Check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Carrier Info', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
