@@ -22,6 +22,7 @@ const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const AffiliateRedirectPage = lazy(() => import('@/pages/AffiliateRedirectPage'));
+const AffiliateDisclosurePage = lazy(() => import('@/pages/AffiliateDisclosurePage'));
 const ScamCheckerPage = lazy(() => import('@/pages/ScamCheckerPage'));
 const SellerBadgePage = lazy(() => import('@/pages/SellerBadgePage'));
 const VerifiedResultPage = lazy(() => import('@/pages/VerifiedResultPage'));
