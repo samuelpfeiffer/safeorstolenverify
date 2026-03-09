@@ -287,7 +287,7 @@ const Compare = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">
-                <Link to="/pricing">Subscribe — $1/mo</Link>
+                <Link to="/pricing">Subscribe — $2.99/mo</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/pricing">View Pricing</Link>
