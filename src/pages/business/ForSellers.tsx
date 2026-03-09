@@ -174,7 +174,7 @@ export default function ForSellers() {
     <>
       <PageSEO
         title="For Sellers - Prove Items Are Legitimate, Sell Faster | SafeOrStolen"
-        description="Verify items before listing. Get Verified Safe badges for $1/mo unlimited. Sell 3x faster, command 15-30% higher prices on any marketplace. 100+ databases checked in 3 seconds."
+        description="Verify items before listing. Get Verified Safe badges for $2.99/mo unlimited. Sell 3x faster, command 15-30% higher prices on any marketplace. 100+ databases checked in 3 seconds."
         keywords="seller verification, prove item not stolen, verified listing badge, sell faster marketplace, verified seller certificate"
         canonical="/for-sellers"
         structuredData={structuredData}
