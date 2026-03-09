@@ -15,7 +15,7 @@ export const SEOContentSection = () => {
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               Looking for a <strong>better alternative to CheckMend</strong> or <strong>IMEIinfo with mobile app</strong>? SafeOrStolen is the ONLY service with 
               dedicated iOS & Android apps that verify <strong>phones (IMEI)</strong>, <strong>cars (VIN)</strong>, <strong>electronics</strong>, and <strong>firearms (gun serial numbers)</strong>. 
-              Unlimited verifications for just $1/month. Whether you're at a gun show, car lot, or checking Facebook Marketplace listings, 
+              $0.99/check or $2.99/month unlimited. Whether you're at a gun show, car lot, or checking Facebook Marketplace listings, 
               verify items instantly from your phone - something CheckMend, IMEIinfo, and Stolen Register simply cannot offer.
             </p>
 
