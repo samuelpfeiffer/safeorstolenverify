@@ -179,10 +179,10 @@ export const StateVinPageTemplate = ({
                 <li><a href="/license-plate-lookup">{state} License Plate Lookup</a></li>
                 <li><a href="/imei-checker">IMEI Checker</a></li>
                 <li><a href="/verify">Verify Any Item</a></li>
-                <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+                <li><a href="/pricing">Pricing - From $0.99/check</a></li>
               </ul>
               
-              <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $1/month unlimited.</p>
+              <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {state}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
             </main>
           </div>
         </noscript>
