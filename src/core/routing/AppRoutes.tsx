@@ -22,6 +22,7 @@ const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const ReportStolenPage = lazy(() => import('@/pages/ReportStolenPage'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 const AffiliateRedirectPage = lazy(() => import('@/pages/AffiliateRedirectPage'));
+const AffiliateDisclosurePage = lazy(() => import('@/pages/AffiliateDisclosurePage'));
 const ScamCheckerPage = lazy(() => import('@/pages/ScamCheckerPage'));
 const SellerBadgePage = lazy(() => import('@/pages/SellerBadgePage'));
 const VerifiedResultPage = lazy(() => import('@/pages/VerifiedResultPage'));
@@ -739,7 +740,8 @@ export const AppRoutes = () => {
         {/* React Navigate handles prerenderer/SSR path (prevents noindex) */}
         {getRedirectRoutes()}
 
-        {/* AFFILIATE REDIRECT ROUTES */}
+        {/* AFFILIATE ROUTES */}
+        <Route path="/affiliate-disclosure" element={<AffiliateDisclosurePage />} />
         <Route path="/go/:slug" element={<AffiliateRedirectPage />} />
 
         <Route path="/404" element={<NotFound />} />

@@ -46,12 +46,12 @@ export const MarketplaceSafetySection = () => {
           <Card className="border-2 border-primary/50 bg-primary/5 hover:border-primary transition-all">
             <CardContent className="pt-6">
               <Car className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-xl font-bold mb-3">Free Carfax Alternative</h3>
+              <h3 className="text-xl font-bold mb-3">Carfax Alternative</h3>
               <p className="text-muted-foreground mb-4">
-                Don't pay $39.99 for Carfax. Check VIN numbers and stolen vehicle status 100% FREE. Download our app or verify online.
+                Don't pay $39.99 for Carfax. Check VIN numbers and stolen vehicle status starting at $0.99/check. Download our app or verify online.
               </p>
               <Button onClick={() => navigate('/carfax-alternative')}>
-                Try Free Alternative
+                Try Now
               </Button>
             </CardContent>
           </Card>
@@ -91,7 +91,7 @@ export const MarketplaceSafetySection = () => {
           </div>
           <div>
             <div className="text-3xl font-bold text-primary">$0</div>
-            <div className="text-sm text-muted-foreground">Cost (FREE forever)</div>
+            <div className="text-sm text-muted-foreground">Starting cost per check</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary">6</div>

@@ -16,12 +16,12 @@ interface OfferCard {
 const OFFERS_BY_TYPE: Record<string, OfferCard[]> = {
   phone: [
     { icon: <Shield className="w-5 h-5" />, title: 'Device Insurance', description: 'Protect your verified phone from damage, theft & accidents. Plans from $5/month.', cta: 'Get Protected →', link: '/go/device-insurance' },
-    { icon: <FileText className="w-5 h-5" />, title: 'Full Phone History Report', description: 'Get carrier unlock status, warranty info, previous owners & more.', cta: 'Get Full Report →', link: '/go/phone-report' },
+    { icon: <FileText className="w-5 h-5" />, title: 'Ownership Verification', description: 'Verify seller identity and confirm legitimate ownership before you buy.', cta: 'Verify Seller →', link: '/go/identity-check' },
     { icon: <ShoppingBag className="w-5 h-5" />, title: 'Phone Accessories', description: 'Case, screen protector & charger for your verified device.', cta: 'Shop Now →', link: '/go/phone-accessories' },
   ],
   vehicle: [
-    { icon: <FileText className="w-5 h-5" />, title: 'Full Vehicle History Report', description: 'Accident history, service records, ownership timeline, odometer readings.', cta: 'Get Full Report →', link: '/go/vehicle-report' },
-    { icon: <Shield className="w-5 h-5" />, title: 'Auto Insurance Quote', description: 'Compare rates from top insurers. Average savings of $600/year.', cta: 'Compare Rates →', link: '/go/auto-insurance' },
+    { icon: <FileText className="w-5 h-5" />, title: 'Vehicle History Report', description: 'Accident history, service records, ownership timeline, and odometer readings for your verified vehicle.', cta: 'Get Full Report →', link: '/go/vehicle-report' },
+    { icon: <Shield className="w-5 h-5" />, title: 'Seller Identity Check', description: 'Confirm the seller is who they claim to be. Verify ownership before completing your purchase.', cta: 'Verify Seller →', link: '/go/identity-check' },
     { icon: <Wrench className="w-5 h-5" />, title: 'Extended Warranty', description: 'Protect your verified vehicle with an extended warranty plan.', cta: 'Get Quote →', link: '/go/vehicle-warranty' },
   ],
   bicycle: [
@@ -112,6 +112,7 @@ export const CleanResultOffers: React.FC<CleanResultOffersProps> = ({ result }) 
       <p className="text-[10px] text-muted-foreground text-center">
         SafeOrStolen may earn a commission from partner links at no extra cost to you. US traffic only. 
         Not for employment screening, tenant screening, credit, insurance underwriting, or educational qualification purposes.
+        {' '}<a href="/affiliate-disclosure" className="text-primary hover:underline">Full disclosure →</a>
       </p>
     </div>
   );

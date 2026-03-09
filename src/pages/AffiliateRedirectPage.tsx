@@ -6,7 +6,8 @@ const AFFILIATE_TARGETS: Record<string, string> = {
   'device-insurance': 'https://safeorstolen.com/pricing',
   'phone-report': 'https://safeorstolen.com/pricing',
   'phone-accessories': 'https://safeorstolen.com/pricing',
-  'vehicle-report': 'https://safeorstolen.com/pricing',
+  'vehicle-report': 'https://safeorstolen.com/pricing', // Replace with Bumper.com affiliate link when approved
+  'identity-check': 'https://safeorstolen.com/pricing', // Replace with BeenVerified affiliate link when approved
   'auto-insurance': 'https://safeorstolen.com/pricing',
   'vehicle-warranty': 'https://safeorstolen.com/pricing',
   'bike-register': 'https://bikeindex.org/bikes/new',
