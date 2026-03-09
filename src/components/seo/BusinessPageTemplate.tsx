@@ -180,7 +180,7 @@ export const BusinessPageTemplate = ({
               <li><a href="/data-sources">Our Data Sources</a></li>
             </ul>
             
-            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $1/month unlimited verifications.</p>
+            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect your business from stolen goods. <a href="/pricing">View pricing</a> — $0.99/check or $2.99/month unlimited.</p>
           </main>
         </div>
       </noscript>
