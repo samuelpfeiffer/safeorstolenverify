@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Check, Crown, Zap, ArrowRight, Loader2, Shield } from 'lucide-react';
+import { Check, Crown, Zap, ArrowRight, Loader2, Shield, CreditCard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SUBSCRIPTION_TIERS, formatPrice } from '@/features/pricing';
+import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants';
 import { useUnifiedAuth } from '@/hooks/useUnifiedAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -20,21 +21,22 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed = 0, maxFreeSea
   const unlimited = SUBSCRIPTION_TIERS.unlimited;
   const navigate = useNavigate();
   const { isAuthenticated, session } = useUnifiedAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<string | null>(null);
 
-  const handleSubscribe = async () => {
+  const handleCheckout = async (priceId: string, planName: string, isSubscription: boolean) => {
     if (!isAuthenticated || !session) {
       onClose();
       navigate('/auth?tab=signup&redirect=/pricing');
       return;
     }
 
-    setIsLoading(true);
+    setIsLoading(priceId);
     try {
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: {
-          planName: 'Unlimited Plan',
-          isSubscription: true,
+          priceId,
+          planName,
+          isSubscription,
           redirectUrl: `${window.location.origin}/dashboard?checkout=success`
         },
         headers: {
@@ -49,7 +51,7 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed = 0, maxFreeSea
     } catch (err: any) {
       console.error('Checkout error:', err);
       toast.error(err.message || 'Checkout failed. Please try again.');
-      setIsLoading(false);
+      setIsLoading(null);
     }
   };
 
@@ -65,24 +67,25 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed = 0, maxFreeSea
               You've Used Your {maxFreeSearches} Free Checks
             </DialogTitle>
             <DialogDescription className="text-lg mt-2">
-              Unlock unlimited verifications for just {formatPrice(unlimited.price)}/month
+              Continue for $0.99/check or go unlimited for {formatPrice(unlimited.price)}/month
             </DialogDescription>
           </div>
         </DialogHeader>
 
-        <div className="mt-6 p-6 border-2 border-primary rounded-xl bg-primary/5">
-          <div className="flex items-center gap-2 mb-4">
+        {/* Unlimited option */}
+        <div className="mt-4 p-5 border-2 border-primary rounded-xl bg-primary/5">
+          <div className="flex items-center gap-2 mb-3">
             <Zap className="w-5 h-5 text-primary" />
-            <span className="font-bold text-lg">Unlimited Plan</span>
+            <span className="font-bold text-lg">Unlimited</span>
+            <span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs rounded-full font-semibold">BEST VALUE</span>
           </div>
           
-          <div className="mb-4">
-            <span className="text-4xl font-black">{formatPrice(unlimited.price)}</span>
+          <div className="mb-3">
+            <span className="text-3xl font-black">{formatPrice(unlimited.price)}</span>
             <span className="text-muted-foreground">/month</span>
-            <p className="text-sm text-muted-foreground mt-1">Less than a cup of coffee ☕</p>
           </div>
 
-          <ul className="space-y-2 mb-6">
+          <ul className="space-y-1.5 mb-4">
             {unlimited.features.slice(0, 5).map((feature) => (
               <li key={feature} className="flex items-start">
                 <Check className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
@@ -92,24 +95,45 @@ export const PaywallModal = ({ isOpen, onClose, freeSearchesUsed = 0, maxFreeSea
           </ul>
           
           <Button 
-            onClick={handleSubscribe}
+            onClick={() => handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)}
             className="w-full bg-primary hover:bg-primary/90"
             size="lg"
-            disabled={isLoading}
+            disabled={isLoading === UNLIMITED_PRICE_ID}
           >
-            {isLoading ? (
+            {isLoading === UNLIMITED_PRICE_ID ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                 Processing...
               </>
             ) : (
               <>
-                Subscribe Now — {formatPrice(unlimited.price)}/month
+                Go Unlimited — {formatPrice(unlimited.price)}/month
                 <ArrowRight className="w-4 h-4 ml-2" />
               </>
             )}
           </Button>
         </div>
+
+        {/* Pay per check option */}
+        <Button 
+          onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID, 'Pay Per Check', false)}
+          variant="outline"
+          className="w-full"
+          size="lg"
+          disabled={isLoading === PAY_PER_CHECK_PRICE_ID}
+        >
+          {isLoading === PAY_PER_CHECK_PRICE_ID ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Processing...
+            </>
+          ) : (
+            <>
+              <CreditCard className="mr-2 h-4 w-4" />
+              Just This Check — $0.99
+            </>
+          )}
+        </Button>
 
         <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground pt-4 border-t">
           <span className="flex items-center gap-1">

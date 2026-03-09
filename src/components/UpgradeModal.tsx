@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { supabase } from '@/integrations/supabase/client'
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate'
 import { redirectToStripe } from '@/utils/stripeRedirect'
-import { X, Zap } from 'lucide-react'
+import { X, Zap, CreditCard } from 'lucide-react'
+import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants'
 
 interface UpgradeModalProps {
   isOpen: boolean
@@ -10,17 +11,30 @@ interface UpgradeModalProps {
   onClose: () => void
 }
 
-const PLAN = {
-  id: 'unlimited',
-  icon: <Zap className="w-5 h-5" />,
-  label: 'Unlimited Plan',
-  price: '$1/month',
-  desc: 'Unlimited verifications across all categories. IMEI, VIN, serial numbers, license plates, firearms & more. Cancel anytime.',
-  cta: 'Subscribe Now — Just $1/mo',
-  priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
-  planName: 'Unlimited Plan',
-  isSub: true,
-}
+const PLANS = [
+  {
+    id: 'unlimited',
+    icon: <Zap className="w-5 h-5" />,
+    label: 'Unlimited Plan',
+    price: '$2.99/month',
+    desc: 'Unlimited verifications, seller badges, PDF certs, priority support. Cancel anytime.',
+    cta: 'Go Unlimited — $2.99/mo',
+    priceId: UNLIMITED_PRICE_ID,
+    planName: 'Unlimited',
+    isSub: true,
+  },
+  {
+    id: 'payPerCheck',
+    icon: <CreditCard className="w-5 h-5" />,
+    label: 'Pay Per Check',
+    price: '$0.99',
+    desc: 'One-time payment. No subscription. No account needed.',
+    cta: 'Buy This Check — $0.99',
+    priceId: PAY_PER_CHECK_PRICE_ID,
+    planName: 'Pay Per Check',
+    isSub: false,
+  },
+]
 
 export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
   const [loading, setLoading] = useState<string | null>(null)
@@ -29,7 +43,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
 
   const headline = "You've Used Your 2 Free Checks"
 
-  async function handleCheckout(plan: typeof PLAN) {
+  async function handleCheckout(plan: typeof PLANS[0]) {
     setLoading(plan.id)
     try {
       const { data: { user } } = await supabase.auth.getUser()
@@ -51,7 +65,7 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
     }
   }
 
-  function PlanOption({ plan, highlight = false }: { plan: typeof PLAN; highlight?: boolean }) {
+  function PlanOption({ plan, highlight = false }: { plan: typeof PLANS[0]; highlight?: boolean }) {
     return (
       <button
         onClick={() => handleCheckout(plan)}
@@ -101,14 +115,15 @@ export function UpgradeModal({ isOpen, reason, onClose }: UpgradeModalProps) {
           <div className="text-4xl mb-3">🔓</div>
           <h2 className="text-xl font-black text-foreground">{headline}</h2>
           <p className="text-muted-foreground text-sm mt-1">
-            Upgrade to unlimited verifications for just $1/month.<br />
+            Continue for $0.99/check or go unlimited for $2.99/month.<br />
             Cancel anytime · 30-day money-back guarantee.
           </p>
         </div>
 
-        {/* Single plan */}
+        {/* Plans */}
         <div className="space-y-3 mb-5">
-          <PlanOption plan={PLAN} highlight />
+          <PlanOption plan={PLANS[0]} highlight />
+          <PlanOption plan={PLANS[1]} />
         </div>
 
         {/* Footer */}
