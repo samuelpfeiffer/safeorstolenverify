@@ -41,7 +41,7 @@ const ForConsumersPage = () => {
     },
     {
       question: "How much does SafeOrStolen cost for consumers?",
-      answer: "SafeOrStolen offers 2 free verification checks with no registration required. After that, unlimited verifications are $1/month. No per-check fees, no hidden costs. Cancel anytime."
+      answer: "SafeOrStolen offers 2 free verification checks with no registration required. After that, $0.99 per check or $2.99/month unlimited. No hidden costs. Cancel anytime."
     },
     {
       question: "What items can I verify with SafeOrStolen?",
