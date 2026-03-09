@@ -141,8 +141,8 @@ const FAQPage = () => {
       icon: HelpCircle,
       faqs: [
         {
-          question: "What does the $1/month plan include?",
-          answer: "The $1/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to 100+ databases. Cancel anytime."
+          question: "What does the $2.99/month plan include?",
+          answer: "The $2.99/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to 100+ databases. Cancel anytime. Or pay $0.99 per individual check."
         },
         {
           question: "Do you offer discounts for businesses?",
