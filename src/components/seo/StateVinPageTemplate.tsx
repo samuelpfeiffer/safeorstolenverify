@@ -430,7 +430,7 @@ export const StateVinPageTemplate = ({
                 </Link>
                 <Link to="/pricing" className="p-6 bg-card rounded-lg hover:shadow-lg transition-shadow">
                   <h3 className="font-bold mb-2">Pricing</h3>
-                  <p className="text-sm text-muted-foreground">$1/mo unlimited verifications</p>
+                  <p className="text-sm text-muted-foreground">From $0.99/check or $2.99/mo unlimited</p>
                 </Link>
               </div>
             </div>
