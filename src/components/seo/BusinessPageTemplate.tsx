@@ -172,7 +172,7 @@ export const BusinessPageTemplate = ({
             
             <h2>Related Resources</h2>
             <ul>
-              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - From $0.99/check</a></li>
               <li><a href="/for-businesses">All Business Solutions</a></li>
               <li><a href="/for-pawn-shops">For Pawn Shops</a></li>
               <li><a href="/for-dealers">For Used Car Dealers</a></li>
