@@ -249,7 +249,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/pennsylvania-vin-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/ohio-vin-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/north-carolina-vin-lookup', priority: 0.70, changefreq: 'monthly' },
-  { path: '/washington-vin-lookup', priority: 080, changefreq: 'weeklky' },
+  { path: '/washington-vin-lookup', priority: 0.80, changefreq: 'weekly' },
 
 ];
 
