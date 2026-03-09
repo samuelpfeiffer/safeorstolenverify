@@ -4,7 +4,7 @@ const CheckBoatPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Boat is Stolen - HIN Verification for Watercraft"
-      metaDescription="Check if boats, jet skis, or yachts are stolen before buying. HIN (Hull Identification Number) verification from Coast Guard, state DNR, and law enforcement databases. $1/month unlimited."
+      metaDescription="Check if boats, jet skis, or yachts are stolen before buying. HIN (Hull Identification Number) verification from Coast Guard, state DNR, and law enforcement databases. $0.99/check or $2.99/month unlimited."
       h1="Check if Boat is Stolen Before Buying"
       itemType="Boat & Watercraft"
       keywords={[
