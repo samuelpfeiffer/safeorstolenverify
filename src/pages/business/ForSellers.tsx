@@ -14,7 +14,7 @@ const PRICING_TIERS = [
   {
     id: 'unlimited',
     name: 'Unlimited Plan',
-    price: '$1',
+    price: '$2.99',
     period: 'month',
     description: 'Unlimited verifications for buyers & sellers',
     features: [
@@ -25,16 +25,16 @@ const PRICING_TIERS = [
       'PDF certificate downloads',
       'Cancel anytime',
     ],
-    cta: 'Subscribe — $1/month',
+    cta: 'Subscribe — $2.99/month',
     priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
     planName: 'Unlimited Plan',
     isSub: true,
     highlighted: true,
   },
   {
-    id: 'unlimited',
+    id: 'unlimited2',
     name: 'Unlimited Plan',
-    price: '$1',
+    price: '$2.99',
     period: '/month',
     description: 'Everything included — verify and sell with confidence',
     features: [
@@ -46,7 +46,7 @@ const PRICING_TIERS = [
       'Priority support',
       'Cancel anytime',
     ],
-    cta: 'Subscribe — $1/mo',
+    cta: 'Subscribe — $2.99/mo',
     priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
     planName: 'Unlimited',
     isSub: true,
