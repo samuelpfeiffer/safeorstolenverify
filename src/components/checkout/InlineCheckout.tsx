@@ -1,6 +1,6 @@
 /**
  * Inline Checkout Component
- * Subscribe for $1/month unlimited — directly in the verification flow
+ * Subscribe for $2.99/month unlimited — directly in the verification flow
  */
 
 import React, { useState } from 'react';
