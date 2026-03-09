@@ -119,7 +119,7 @@ const ComparisonSwappa = () => {
             <li><strong>Item Types:</strong> SafeOrStolen verifies phones, cars, guns, bikes, laptops, watches, and more. Swappa only handles phones and tech.</li>
             <li><strong>Databases:</strong> SafeOrStolen checks 100+ databases (FBI NCIC, NICB, GSMA, all 50 state law enforcement). Swappa does a basic ESN check.</li>
             <li><strong>Works Anywhere:</strong> SafeOrStolen works for items from any source. Swappa only verifies items on their marketplace.</li>
-            <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $1/month unlimited. Swappa: free basic check on their listings only.</li>
+            <li><strong>Pricing:</strong> SafeOrStolen: 2 free checks, then $0.99/check or $2.99/month unlimited. Swappa: free basic check on their listings only.</li>
           </ul>
           <h2>Frequently Asked Questions</h2>
           <h3>Does Swappa have a mobile app for verification?</h3>
