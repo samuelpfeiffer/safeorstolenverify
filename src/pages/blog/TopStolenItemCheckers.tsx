@@ -334,7 +334,7 @@ const TopStolenItemCheckers = () => {
                     <li><Yes /> Only service with mobile app + barcode scanning</li>
                     <li><Yes /> All item categories in one platform</li>
                     <li><Yes /> 100+ databases (competitors: 10-20)</li>
-                    <li><Yes /> $1/mo unlimited — cheapest in industry</li>
+                    <li><Yes /> $2.99/mo unlimited — cheapest in industry</li>
                     <li><Yes /> 3-second instant results</li>
                     <li><Yes /> Downloadable verification certificates</li>
                     <li><Yes /> Business API for pawn shops and dealers</li>
