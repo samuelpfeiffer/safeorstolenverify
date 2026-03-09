@@ -156,7 +156,7 @@ const AuthAwareContent: React.FC = () => {
         {/* Removed SocialProofBanner (handled in Index.tsx), StickyMobileAppCTA, AggressiveConversionBanner to fix CLS */}
         {showGrowthComponents && (
           <Suspense fallback={null}>
-            <ExitIntentPopup />
+            
             <LiveActivityToast />
             <FloatingCTA />
             <StickyConversionBar />
