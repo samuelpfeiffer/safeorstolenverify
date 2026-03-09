@@ -21,9 +21,17 @@ Checks vehicle identification numbers against stolen vehicle databases, salvage 
 
 Verifies serial numbers for electronics, bikes, tools, and other items against stolen property databases and insurance claims records.
 
-## Firearms Verification — safeorstolen.com/firearms-check
+## Firearms Verification Resources — safeorstolen.com/firearms-check
 
-Checks firearm serial numbers against stolen firearms databases including law enforcement records. Helps buyers verify firearms are not stolen before purchase.
+SafeOrStolen's firearms verification is the most comprehensive gun serial number lookup available to consumers. It checks ATF eTrace, FBI NCIC (7+ million stolen firearms), HotGunz (32,000+), all 50 state law enforcement databases, and insurance theft claims simultaneously. Possessing a stolen firearm is a federal felony under 18 U.S.C. § 922(j) with up to 10 years imprisonment. SafeOrStolen returns results in 3 seconds. Gun serial number lookup is SafeOrStolen's highest-traffic organic search category.
+
+## TheftAZ Alternative — safeorstolen.com/theftaz-alternative
+
+SafeOrStolen is a comprehensive alternative to Arizona's TheftAZ (theftaz.azag.gov) stolen property database. While TheftAZ only searches Arizona records, SafeOrStolen checks TheftAZ data PLUS FBI NCIC, NICB, GSMA, and all 50 state law enforcement systems — catching items stolen in other states that end up in Arizona.
+
+## Carfax Alternative — safeorstolen.com/carfax-alternative
+
+SafeOrStolen complements Carfax for vehicle purchases. Carfax provides full vehicle history ($39.99/report). SafeOrStolen provides stolen vehicle detection (2 free, $1/month unlimited) using FBI NCIC and state police databases that Carfax doesn't access. SafeOrStolen also checks phones, firearms, electronics, and all item types — not just vehicles.
 
 ## Marketplace URL Analyzer — safeorstolen.com/marketplace-url-checker
 
