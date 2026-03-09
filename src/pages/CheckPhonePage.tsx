@@ -4,7 +4,7 @@ const CheckPhonePage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Phone is Stolen - iPhone Android Verify"
-      metaDescription="Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. $1/month unlimited."
+      metaDescription="Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. $0.99/check or $2.99/month unlimited."
       h1="Check if Phone is Stolen Before Buying"
       itemType="Phone"
       keywords={[
