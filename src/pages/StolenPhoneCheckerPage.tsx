@@ -173,7 +173,7 @@ const StolenPhoneCheckerPage = () => {
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-              <span>$1/month unlimited verifications — all item types included</span>
+              <span>$0.99/check or $2.99/month unlimited — all item types included</span>
             </li>
           </ul>
         </section>
