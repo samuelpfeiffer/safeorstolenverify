@@ -272,4 +272,11 @@
   <!-- ALTERNATIVE/COMPARISON PAGES -->
   <url><loc>https://safeorstolen.com/theftaz-alternative</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://safeorstolen.com/carfax-alternative</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- GUN BLOG POSTS -->
+  <url><loc>https://safeorstolen.com/blog/how-to-check-if-gun-is-stolen</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://safeorstolen.com/blog/atf-gun-serial-number-check</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://safeorstolen.com/blog/hotgunz-database-guide</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://safeorstolen.com/blog/state-stolen-gun-database-guide</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://safeorstolen.com/blog/gun-show-serial-number-check</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
