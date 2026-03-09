@@ -174,7 +174,7 @@ export const STATE_VIN_DATA: Record<string, StateVinData> = {
       localLaws: "Under Ohio Revised Code § 2913.02, theft of a motor vehicle is typically a felony. Receiving stolen property under § 2913.51 carries similar penalties. Unknowing buyers lose the vehicle upon recovery."
     },
     faqs: [
-      { question: "How do I check if an Ohio car is stolen?", answer: "Use SafeOrStolen's VIN checker ($1/mo unlimited). Also verify with Ohio BMV for title status and lien information." },
+      { question: "How do I check if an Ohio car is stolen?", answer: "Use SafeOrStolen's VIN checker (from $0.99/check). Also verify with Ohio BMV for title status and lien information." },
       { question: "What vehicles are commonly stolen in Ohio?", answer: "Honda Civic, Honda Accord, Chevrolet Silverado, and Ford F-150 are commonly stolen in Ohio. Always verify VINs for these models." }
     ]
   },
