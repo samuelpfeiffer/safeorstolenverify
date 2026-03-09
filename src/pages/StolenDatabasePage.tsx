@@ -177,7 +177,7 @@ const StolenDatabasePage = () => {
       {
         "@type": "Question",
         "name": "Is the stolen items database free to search?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching the stolen items database is completely free. For full verification against 100+ external databases (FBI NCIC, GSMA, NICB, etc.), use SafeOrStolen's verification tool — 2 free checks, then $1/month unlimited." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, searching the stolen items database is completely free. For full verification against 100+ external databases (FBI NCIC, GSMA, NICB, etc.), use SafeOrStolen's verification tool — 2 free checks, then $0.99/check or $2.99/month unlimited." }
       }
     ]
   };
