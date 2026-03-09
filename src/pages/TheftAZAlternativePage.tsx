@@ -100,7 +100,7 @@ const TheftAZAlternativePage = () => {
                     ['BikeIndex (700K+ bikes)', false, true],
                     ['Mobile app', false, true],
                     ['Phones (IMEI check)', false, true],
-                    ['Cost', 'Free', '2 free, then $1/mo'],
+                    ['Cost', 'Free', '2 free, then $2.99/mo'],
                   ].map(([feature, theftaz, sos], i) => (
                     <tr key={i} className="border-t border-border">
                       <td className="p-3 text-foreground">{feature as string}</td>
