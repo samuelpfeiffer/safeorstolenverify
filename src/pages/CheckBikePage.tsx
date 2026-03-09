@@ -25,7 +25,7 @@ const CheckBikePage = () => {
           "Search BikeIndex.org, 529 Garage, and police databases",
           "Check high-end bikes (Trek, Specialized, Giant, Cannondale, Santa Cruz)",
           "Verify vintage and custom bikes",
-          "Unlimited serial number checks — $1/month",
+          "Unlimited serial number checks — $0.99/check or $2.99/month",
           "Instant 3-second verification from multiple databases",
           "Contact original owner if bike is reported stolen"
         ],
