@@ -161,7 +161,7 @@ const StolenItemDetailPage = () => {
       "category": item.item_type,
     },
     "datePublished": item.created_at,
-    "dateModified": item.updated_at,
+    "dateModified": item.created_at,
     "publisher": {
       "@type": "Organization",
       "name": "SafeOrStolen",
