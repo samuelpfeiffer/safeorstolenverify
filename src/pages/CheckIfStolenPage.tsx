@@ -34,7 +34,7 @@ const CheckIfStolenPage = () => {
           "Check electronics - gaming consoles, cameras, tablets",
           "Check firearms - serial number verification",
           "Check jewelry - designer watches, luxury items",
-          "Unlimited verifications — $1/month",
+          "Unlimited verifications — $2.99/month",
           "Instant 3-second results"
         ],
         
