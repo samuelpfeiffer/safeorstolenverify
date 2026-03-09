@@ -59,7 +59,7 @@ export const BusinessPageTemplate = ({
     },
     {
       question: `What does SafeOrStolen cost for ${businessType.toLowerCase()}?`,
-      answer: `SafeOrStolen offers unlimited verifications for $1/month. No per-check fees, no hidden costs. Enterprise plans with API access and compliance reporting are available for high-volume businesses.`
+      answer: `SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. No hidden costs. Contact us for enterprise API access and compliance reporting for high-volume businesses.`
     },
     {
       question: `Is SafeOrStolen compliant with ${businessType.toLowerCase()} regulations?`,
