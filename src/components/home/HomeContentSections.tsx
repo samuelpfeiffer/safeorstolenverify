@@ -20,7 +20,7 @@ export const HomeContentSections = () => {
     },
     {
       question: "Is SafeOrStolen really free?",
-      answer: "SafeOrStolen offers unlimited verifications for just $1/month. That's significantly less than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check). Subscribe and verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
+      answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. That's significantly less than competitors like Carfax ($44.99/report) or CheckMEND ($3.50/check). Verify as many items as you need — phones, cars, firearms, electronics, bikes, and more."
     },
     {
       question: "What databases does SafeOrStolen check?",
