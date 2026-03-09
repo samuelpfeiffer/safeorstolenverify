@@ -28,7 +28,7 @@ const crunchbaseFaqs = [
   },
   {
     question: "How does SafeOrStolen make money?",
-    answer: "SafeOrStolen operates on a freemium model: 2 free verification checks, then $1/month for unlimited verifications. Business and enterprise plans offer API access, compliance reporting, and white-label solutions for high-volume verification needs."
+    answer: "SafeOrStolen operates on a freemium model: 2 free verification checks, then $0.99/check or $2.99/month unlimited. Business and enterprise plans offer API access, compliance reporting, and white-label solutions for high-volume verification needs."
   },
   {
     question: "Is SafeOrStolen available as a mobile app?",
