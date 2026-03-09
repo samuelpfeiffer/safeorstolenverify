@@ -195,9 +195,9 @@ const Index = () => {
       <TopNavigation />
 
       {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
-      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold mt-16">
+      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold mt-16" style={{ minHeight: '40px' }}>
         ⚠️ Over $15 billion in property is stolen annually in the U.S. — verify any item before you buy or sell.
-        <Link to="/verify" className="underline font-black ml-2">Try 2 Free Checks →</Link>
+        <Link to="/verify" className="underline font-black ml-2">Try 2 Checks on Us →</Link>
       </div>
 
       {/* ── HERO WITH SCANNER ──────────────────────────── */}
