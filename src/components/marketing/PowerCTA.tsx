@@ -43,7 +43,7 @@ export const PowerCTA: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center gap-2 opacity-90">
               <CheckCircle className="h-5 w-5" />
-              $1/mo unlimited
+              $2.99/mo unlimited
             </div>
             <div className="flex items-center gap-2 opacity-90">
               <Clock className="h-5 w-5" />

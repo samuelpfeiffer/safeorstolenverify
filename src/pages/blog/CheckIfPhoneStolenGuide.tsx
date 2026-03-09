@@ -222,7 +222,7 @@ const CheckIfPhoneStolenGuide = () => {
 
           <h2 className="text-2xl font-black text-foreground mt-12 mb-4">SafeOrStolen: The Best IMEI Checker</h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            While there are several IMEI checkers available online, SafeOrStolen is the most comprehensive option for U.S. buyers. Unlike IMEI.info (which only checks basic device info) or CheckMEND (UK-focused, £1.99+ per check), SafeOrStolen queries 100+ databases simultaneously — including law enforcement records that consumer-grade tools don't access. Unlimited checks for just $1/month, and the results include a downloadable PDF certificate for legal protection.
+            While there are several IMEI checkers available online, SafeOrStolen is the most comprehensive option for U.S. buyers. Unlike IMEI.info (which only checks basic device info) or CheckMEND (UK-focused, £1.99+ per check), SafeOrStolen queries 100+ databases simultaneously — including law enforcement records that consumer-grade tools don't access. $0.99/check or $2.99/month unlimited, and the results include a downloadable PDF certificate for legal protection.
           </p>
 
           <div className="bg-primary/10 border border-primary/30 rounded-2xl p-8 text-center mt-12">

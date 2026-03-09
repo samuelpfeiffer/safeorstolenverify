@@ -465,7 +465,7 @@ const Index = () => {
                 className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
               >
                 <Building2 className="w-4 h-4" />
-                Get Unlimited Plan — $1/mo
+                Get Unlimited Plan — $2.99/mo
               </Link>
               <Link
                 to="/for-pawn-shops"
