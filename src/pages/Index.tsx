@@ -109,7 +109,7 @@ const TESTIMONIALS = [
     role: 'Private Firearms Collector',
     quote: "At gun shows you can't be too careful. The ATF cross-check plus HotGunz gives me real peace of mind on every private sale. Worth every penny.",
     stars: 5,
-    plan: 'Pro Plan',
+    plan: 'Unlimited Plan',
   },
 ];
 
