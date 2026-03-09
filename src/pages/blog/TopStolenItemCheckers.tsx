@@ -346,7 +346,7 @@ const TopStolenItemCheckers = () => {
                 <strong>Best for:</strong> Anyone buying used items from <Link to="/facebook-marketplace-stolen-check" className="text-primary hover:underline">Facebook Marketplace</Link>, OfferUp, Craigslist, eBay, pawn shops, gun shows, or private sellers. The mobile app makes it ideal for in-person meetups where you need to verify on the spot.
               </p>
               <p className="text-muted-foreground text-sm">
-                <strong>Pricing:</strong> $1/month for unlimited verifications across all item types. Cancel anytime. Business API also available.
+                <strong>Pricing:</strong> 2 free checks, then $0.99/check or $2.99/month unlimited across all item types. Cancel anytime. Business API also available.
               </p>
               <div className="mt-4">
                 <Link to="/verify">
