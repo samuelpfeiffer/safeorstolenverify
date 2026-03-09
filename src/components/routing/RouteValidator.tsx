@@ -106,7 +106,7 @@ export const RouteValidator: React.FC = () => {
     if (!currentPath.startsWith('/404')) {
       navigate('/404', { replace: true });
     }
-  }, [location.pathname, navigate]);
+  }, [location?.pathname, navigate]);
 
   return null;
 };
