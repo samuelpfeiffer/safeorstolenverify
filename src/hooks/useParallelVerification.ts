@@ -33,7 +33,7 @@ export const useParallelVerification = () => {
     if (!user?.id) {
       toast({
         title: "Sign Up Required",
-        description: "Create an account and subscribe for just $1/month to verify items.",
+        description: "Create an account to verify items. $0.99/check or $2.99/month unlimited.",
         variant: "default",
       });
       navigate('/auth', { state: { redirect: '/verify', pendingSearch: identifier } });
