@@ -112,6 +112,7 @@ export const CleanResultOffers: React.FC<CleanResultOffersProps> = ({ result }) 
       <p className="text-[10px] text-muted-foreground text-center">
         SafeOrStolen may earn a commission from partner links at no extra cost to you. US traffic only. 
         Not for employment screening, tenant screening, credit, insurance underwriting, or educational qualification purposes.
+        {' '}<a href="/affiliate-disclosure" className="text-primary hover:underline">Full disclosure →</a>
       </p>
     </div>
   );

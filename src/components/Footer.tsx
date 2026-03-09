@@ -42,6 +42,9 @@ const Footer = () => {
   }, {
     label: 'Privacy Policy',
     href: '/privacy'
+  }, {
+    label: 'Affiliate Disclosure',
+    href: '/affiliate-disclosure'
   }];
   const supportLinks = [{
     label: 'Help Center',
