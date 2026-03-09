@@ -22,7 +22,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Shield,
       title: "Start Verifying Items",
-      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $1/month.",
+      description: "Subscribe to unlock unlimited verifications for any serial number, IMEI, or VIN — just $2.99/month.",
       action: "Subscribe Now",
       onClick: () => navigate('/pricing')
     },
