@@ -28,7 +28,7 @@ const TheftAZAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen free for Arizona residents?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks for everyone, including Arizona residents. After that, unlimited searches are $1/month. This covers all item types and all databases, not just Arizona." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks for everyone, including Arizona residents. After that, $0.99/check or $2.99/month unlimited. This covers all item types and all databases, not just Arizona." }
       },
       {
         "@type": "Question",
