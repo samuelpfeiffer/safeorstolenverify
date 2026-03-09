@@ -86,7 +86,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen offers unlimited firearm serial number checks for $1/month — including FBI NCIC, ATF eTrace, all 50 state databases, HotGunz, and insurance records. HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
+      answer: "SafeOrStolen offers unlimited firearm serial number checks for $2.99/month — including FBI NCIC, ATF eTrace, all 50 state databases, HotGunz, and insurance records. HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
