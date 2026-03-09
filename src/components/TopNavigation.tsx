@@ -28,7 +28,7 @@ const TopNavigation = () => {
     { to: '/blog', label: 'Blog' },
     { to: '/youtube', label: 'YouTube', icon: Youtube },
     { to: '/compare', label: 'Compare' },
-    { to: '/app', label: 'App' },
+    { to: '/mobile-app', label: 'App' },
   ];
 
   const resourceLinks = [
