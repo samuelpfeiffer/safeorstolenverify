@@ -224,7 +224,7 @@ const TopStolenItemCheckers = () => {
                       <td className="p-3 font-bold text-primary flex items-center gap-1"><Crown className="w-3 h-3" /> SafeOrStolen</td>
                       <td className="p-3">All (phones, cars, guns, electronics, bikes)</td>
                       <td className="p-3">100+</td>
-                      <td className="p-3">$1/mo unlimited</td>
+                      <td className="p-3">$2.99/mo unlimited</td>
                       <td className="p-3 text-center"><Yes /></td>
                       <td className="p-3">Everything</td>
                     </tr>
