@@ -42,7 +42,7 @@ const CarfaxAlternativePage = () => {
     <>
       <PageSEO
         title="Free Carfax Alternative — Stolen Vehicle Check Without Paying $40 | SafeOrStolen"
-        description="Looking for a free Carfax alternative? SafeOrStolen checks if vehicles are stolen for free. Search NICB, NCIC, DMV, and insurance databases. 2 free checks, then $1/month unlimited — vs Carfax's $39.99/report."
+        description="Looking for a free Carfax alternative? SafeOrStolen checks if vehicles are stolen for free. Search NICB, NCIC, DMV, and insurance databases. 2 free checks, then $0.99/check or $2.99/month unlimited — vs Carfax's $39.99/report."
         canonical="/carfax-alternative"
         structuredData={[faqSchema]}
       />
