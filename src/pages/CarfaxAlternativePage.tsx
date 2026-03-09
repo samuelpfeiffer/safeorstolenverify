@@ -102,7 +102,7 @@ const CarfaxAlternativePage = () => {
                     ['Bicycle check', false, true],
                     ['Mobile app', false, true],
                     ['Marketplace URL analysis', false, true],
-                    ['Price per report', '$39.99', '2 free, $1/mo unlimited'],
+                    ['Price per report', '$39.99', '2 free, $2.99/mo unlimited'],
                   ].map(([feature, carfax, sos], i) => (
                     <tr key={i} className="border-t border-border">
                       <td className="p-3 text-foreground">{feature as string}</td>
