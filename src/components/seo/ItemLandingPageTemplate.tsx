@@ -161,7 +161,7 @@ export const ItemLandingPageTemplate = ({
               <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
             </ul>
             
-            <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $1/month unlimited.</p>
+            <p>SafeOrStolen is the only verification platform with a mobile app. Check phones, cars, electronics, firearms — all in one place. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
           </main>
         </div>
       </noscript>
