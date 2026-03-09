@@ -147,7 +147,7 @@ const CrunchbasePage: React.FC = () => {
             <ul>
               <li><a href="/about">About SafeOrStolen</a></li>
               <li><a href="/verify">Verify Any Item</a></li>
-              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
               <li><a href="/data-sources">Our 100+ Data Sources</a></li>
               <li><a href="/app">Download Mobile App</a></li>
             </ul>
