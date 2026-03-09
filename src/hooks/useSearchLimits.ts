@@ -119,7 +119,7 @@ export const useSearchLimits = () => {
     if (hasReachedLimit) {
       toast({
         title: "Subscription Required",
-        description: "Subscribe for just $1/month for unlimited verifications.",
+        description: "Get a single check for $0.99 or subscribe for $2.99/month unlimited.",
         variant: "destructive",
       });
       return false;

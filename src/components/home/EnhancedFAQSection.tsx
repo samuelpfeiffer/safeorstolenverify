@@ -56,7 +56,7 @@ export const EnhancedFAQSection = () => {
         },
         {
           question: "Can I verify in bulk for my business?",
-          answer: "Yes! Business plans ($29.99+/month) include API access, CSV bulk upload, unlimited checks, downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers."
+          answer: "Yes! Our $2.99/month Unlimited plan includes unlimited checks, downloadable certificates, and priority support. Perfect for pawn shops, resellers, auction houses, and marketplace sellers. Contact us for enterprise API access."
         },
         {
           question: "Do you offer refunds if I'm not satisfied?",

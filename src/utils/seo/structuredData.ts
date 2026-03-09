@@ -338,7 +338,7 @@ export const createFAQSchema = () => ({
       "name": "Can I check if a phone is stolen for free?",
       "acceptedAnswer": {
         "@type": "Answer", 
-        "text": "SafeOrStolen offers unlimited IMEI checks for just $1/month. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from 100+ databases including GSMA and carrier blacklists."
+        "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. Check any phone (iPhone, Samsung, Android) before buying on Facebook Marketplace, OfferUp, or Craigslist. Results in 3 seconds from 100+ databases including GSMA and carrier blacklists."
       }
     },
     {

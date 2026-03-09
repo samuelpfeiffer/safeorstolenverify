@@ -155,7 +155,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
             
             <h2>Frequently Asked Questions</h2>
             <h3>How much does the {stateData.name} license plate lookup cost?</h3>
-            <p>SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $1/month.</p>
+            <p>SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $2.99/month, or $0.99 per check.</p>
             <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
             <p>Yes, our {stateData.name} license plate lookup works statewide including {stateData.majorCities.join(', ')} and all {stateData.name} cities.</p>
             {uniqueContent?.uniqueFaqs.map((faq, i) => (
