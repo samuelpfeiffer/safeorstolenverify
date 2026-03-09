@@ -150,7 +150,7 @@ export const validateAuthConfig = (): AuthHealthIssue[] => {
   
   // Check for common misconfigurations
   const hasSupabaseUrl = !!import.meta.env.VITE_SUPABASE_URL;
-  const hasSupabaseKey = !!import.meta.env.VITE_SUPABASE_ANON_KEY;
+  const hasSupabaseKey = !!import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
   
   if (!hasSupabaseUrl) {
     issues.push({
@@ -165,8 +165,8 @@ export const validateAuthConfig = (): AuthHealthIssue[] => {
     issues.push({
       severity: 'critical',
       component: 'Configuration',
-      message: 'VITE_SUPABASE_ANON_KEY is missing',
-      fix: 'Add Supabase anon key to environment variables'
+      message: 'VITE_SUPABASE_PUBLISHABLE_KEY is missing',
+      fix: 'Add Supabase publishable key to environment variables'
     });
   }
   
