@@ -350,7 +350,7 @@ const TopStolenItemCheckers = () => {
               </p>
               <div className="mt-4">
                 <Link to="/verify">
-                  <Button className="gap-2">Check Item Now — $1/mo <ArrowRight className="w-4 h-4" /></Button>
+                  <Button className="gap-2">Check Item Now — $2.99/mo <ArrowRight className="w-4 h-4" /></Button>
                 </Link>
               </div>
             </section>
