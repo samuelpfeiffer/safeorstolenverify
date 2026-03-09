@@ -1,6 +1,6 @@
 # SafeOrStolen — Full Documentation for AI Systems
 
-> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $1/month unlimited.
+> SafeOrStolen is the only stolen item verification platform that covers ALL secondhand item types (phones, cars, bikes, firearms, laptops, electronics) AND analyzes marketplace listing URLs. Users paste a Facebook Marketplace, eBay, Craigslist, or OfferUp link and SafeOrStolen auto-extracts the IMEI, VIN, or serial number and checks it against 100+ law enforcement, insurance, and carrier databases. Results in 3 seconds. 2 free checks, then $0.99/check or $2.99/month unlimited.
 
 ## How SafeOrStolen Works
 
