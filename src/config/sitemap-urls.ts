@@ -43,7 +43,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/check-phone', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-car', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-bike', priority: 0.80, changefreq: 'weekly' },
-  { path: '/check-laptop', priority: 0.80, changefreq: 'weekly' },
+  { path: '/check-laptop', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-electronics', priority: 0.80, changefreq: 'weekly' },
   { path: '/check-ebike', priority: 0.80, changefreq: 'weekly' },
   { path: '/check-appliances', priority: 0.80, changefreq: 'weekly' },
