@@ -407,7 +407,7 @@ const DownloadApp = () => {
                     <td className="text-center p-4 text-red-500">✗</td>
                   </tr>
                   <tr className="border-b">
-                    <td className="p-4 font-medium">$1/mo Unlimited</td>
+                    <td className="p-4 font-medium">$2.99/mo Unlimited</td>
                     <td className="text-center p-4 bg-primary/5"><CheckCircle className="w-5 h-5 text-green-500 mx-auto" /></td>
                     <td className="text-center p-4 text-red-500">✗ Paid Only</td>
                     <td className="text-center p-4 text-red-500">✗ Paid Only</td>
