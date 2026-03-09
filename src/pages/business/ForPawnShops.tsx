@@ -9,21 +9,37 @@ import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
 export default function ForPawnShops() {
-  const structuredData = {
+  const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Stolen Goods Verification for Pawn Shops",
     "provider": {
       "@type": "Organization",
-      "name": "SafeOrStolen"
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
     },
-    "areaServed": "Worldwide",
+    "areaServed": { "@type": "Country", "name": "United States" },
     "description": "Enterprise stolen goods verification service for pawn shops. Verify IMEI, VIN, serial numbers instantly. Reduce legal risk, ensure compliance, protect your business.",
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "Custom pricing for pawn shops"
+      "price": "2.99",
+      "priceValidUntil": "2026-12-31",
+      "url": "https://safeorstolen.com/pricing"
     }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How fast is pawn shop verification at the counter?", "acceptedAnswer": { "@type": "Answer", "text": "3 seconds average. Scan the barcode or type the serial number, and results display instantly." } },
+      { "@type": "Question", "name": "What if an item doesn't have a serial number?", "acceptedAnswer": { "@type": "Answer", "text": "Photograph the item and customer ID. For high-value items without serials (jewelry), consider requiring additional documentation or declining the transaction." } },
+      { "@type": "Question", "name": "Do you provide compliance reports for pawn shop regulators?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Business plans include automated monthly summaries showing all verifications performed, compliant with state reporting requirements in all 50 US states." } },
+      { "@type": "Question", "name": "What happens if a pawn shop accepts a stolen item despite verification?", "acceptedAnswer": { "@type": "Answer", "text": "Your verification record proves due diligence, significantly reducing legal liability. In most cases, prosecutors won't charge pawn shops that performed proper verification." } },
+      { "@type": "Question", "name": "How much does pawn shop verification cost?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 verifications to try, then unlimited checks for $2.99/month. Business plans with API access and multi-location support are available." } },
+      { "@type": "Question", "name": "Which pawn shop software does SafeOrStolen integrate with?", "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen integrates with Bravo Pawn Systems, PawnMaster, Data Age Cash Register Express, Pawnbroker software, and custom systems via API." } }
+    ]
   };
 
   return (
