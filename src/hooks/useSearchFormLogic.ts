@@ -52,7 +52,7 @@ export const useSearchFormLogic = () => {
       await savePendingVerification(cleanInput, itemType, 'buyer');
       toast({
         title: 'Sign up to start verifying',
-        description: 'Create an account and subscribe for $1/month unlimited verifications.',
+        description: 'Create an account to verify items. 2 free checks, then $0.99/check or $2.99/month unlimited.',
       });
       navigate('/auth?tab=signup');
       return;

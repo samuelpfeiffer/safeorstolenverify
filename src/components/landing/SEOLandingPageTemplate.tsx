@@ -406,7 +406,7 @@ export const SEOLandingPageTemplate = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/verify">
                 <Button size="lg" className="gap-2 w-full sm:w-auto">
-                  Verify Now — $1/mo Unlimited <Search className="w-4 h-4" />
+                  Verify Now — From $0.99 <Search className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/app">

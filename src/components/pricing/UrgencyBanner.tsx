@@ -32,7 +32,7 @@ export const UrgencyBanner = () => {
             size="lg" 
             className="bg-gradient-to-r from-sos-lime to-sos-orange hover:opacity-90 text-black font-bold text-lg px-8 py-6"
           >
-            {isAuthenticated ? 'Subscribe Now' : 'Get Started — $1/Month'}
+            {isAuthenticated ? 'Subscribe Now' : 'Get Started — $2.99/Month'}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 

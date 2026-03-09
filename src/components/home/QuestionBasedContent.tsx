@@ -13,7 +13,7 @@ export const QuestionBasedContent = () => {
     },
     {
       question: "Can I check if something is stolen before buying?",
-      answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. Subscribe for $1/month unlimited verifications.",
+      answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. 2 free checks, then $0.99/check or $2.99/month unlimited.",
       icon: Database,
       link: "/verify"
     },
