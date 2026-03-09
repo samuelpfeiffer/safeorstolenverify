@@ -48,7 +48,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "Is SafeOrStolen's phone checker free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen offers unlimited stolen phone checks for $1/month. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime."
+          "text": "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types included — phones, vehicles, electronics, firearms, bikes. Cancel anytime."
         }
       },
       {
