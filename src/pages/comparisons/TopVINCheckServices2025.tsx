@@ -67,7 +67,7 @@ const TopVINCheckServices2025 = () => {
         'Requires $2.99/month subscription'
       ],
       cta: '/pricing',
-      ctaText: 'Subscribe — $1/mo'
+      ctaText: 'Subscribe — $2.99/mo'
     },
     {
       rank: 2,
