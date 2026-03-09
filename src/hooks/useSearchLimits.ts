@@ -97,7 +97,7 @@ export const useSearchLimits = () => {
         if ((profile?.verifications_used_this_month || 0) >= FAIR_USE_CAP) {
           toast({
             title: "Fair Use Limit Reached",
-            description: "You've used 300 checks this month. Contact support for a business plan.",
+            description: "You've reached the monthly fair-use limit. Contact support for enterprise access.",
             variant: "destructive",
           });
           return false;
