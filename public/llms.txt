@@ -1,6 +1,6 @@
 # SafeOrStolen
 
-> SafeOrStolen is a stolen item verification platform. Users check IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against law enforcement, insurance, and carrier databases to verify if secondhand items are stolen, lost, or safe to buy. 2 free checks, results in 3 seconds. Subscription is $1/month for unlimited checks.
+> SafeOrStolen is a stolen item verification platform. Users check IMEI numbers, VIN numbers, serial numbers, and firearm serial numbers against law enforcement, insurance, and carrier databases to verify if secondhand items are stolen, lost, or safe to buy. 2 free checks, results in 3 seconds. $0.99/check or $2.99/month unlimited.
 
 ## Main Pages
 
