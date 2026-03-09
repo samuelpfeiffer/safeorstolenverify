@@ -40,7 +40,7 @@ const StolenPhoneCheckerPage = () => {
         "name": "What is the best stolen phone checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $1/month for unlimited checks, and works for phones, vehicles, electronics, and firearms in one platform."
+          "text": "SafeOrStolen is the best stolen phone checker because it's the ONLY service with a mobile app, checks 100+ databases, costs just $0.99/check or $2.99/month unlimited, and works for phones, vehicles, electronics, and firearms in one platform."
         }
       },
       {
