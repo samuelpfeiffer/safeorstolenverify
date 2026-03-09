@@ -91,7 +91,7 @@ export const MarketplaceSafetySection = () => {
           </div>
           <div>
             <div className="text-3xl font-bold text-primary">$0</div>
-            <div className="text-sm text-muted-foreground">Cost (FREE forever)</div>
+            <div className="text-sm text-muted-foreground">Starting cost per check</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary">6</div>
