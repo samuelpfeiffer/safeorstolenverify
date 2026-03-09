@@ -171,7 +171,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
               <li><a href="/imei-checker">IMEI Checker</a></li>
               <li><a href="/firearms-check">Firearm Check</a></li>
               <li><a href="/verify">Verify Any Item</a></li>
-              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
             </ul>
             
             <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $1/month unlimited.</p>
