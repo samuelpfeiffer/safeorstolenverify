@@ -179,7 +179,7 @@ const CarfaxAlternativePage = () => {
             <div className="space-y-3">
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen a free Carfax alternative?</summary>
-                <p className="text-muted-foreground mt-2">For stolen vehicle detection, yes. Carfax focuses on full vehicle history ($39.99/report). SafeOrStolen focuses on theft verification (2 free, then $1/month unlimited). Different tools for different purposes.</p>
+                <p className="text-muted-foreground mt-2">For stolen vehicle detection, yes. Carfax focuses on full vehicle history ($39.99/report). SafeOrStolen focuses on theft verification (2 free, then $2.99/month unlimited). Different tools for different purposes.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What does Carfax have that SafeOrStolen doesn't?</summary>
