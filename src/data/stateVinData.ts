@@ -140,7 +140,7 @@ export const STATE_VIN_DATA: Record<string, StateVinData> = {
       localLaws: "Under Illinois Criminal Code 625 ILCS 5/4-103, theft of a motor vehicle is a Class 2 felony. Receiving or possessing a stolen vehicle carries similar penalties. Even unknowing buyers lose the vehicle when recovered."
     },
     faqs: [
-      { question: "How do I check if an Illinois car is stolen?", answer: "Use SafeOrStolen's VIN checker ($1/mo unlimited) to search available databases. Also verify the Illinois title with the Secretary of State." },
+      { question: "How do I check if an Illinois car is stolen?", answer: "Use SafeOrStolen's VIN checker (from $0.99/check) to search available databases. Also verify the Illinois title with the Secretary of State." },
       { question: "What areas in Illinois have the most vehicle theft?", answer: "Chicago and Cook County account for most vehicle theft in Illinois. However, stolen vehicles are sold throughout the state." }
     ]
   },
