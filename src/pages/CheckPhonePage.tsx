@@ -28,7 +28,7 @@ const CheckPhonePage = () => {
           "Check iCloud activation lock status on iPhones",
           "Check Google Find My Device lock on Android phones",
           "Instant 3-second verification from multiple databases",
-          "Instant phone check — $1/month unlimited verifications",
+          "Instant phone check — $0.99/check or $2.99/month unlimited",
           "Works for phones from any country or carrier"
         ],
         process: [
