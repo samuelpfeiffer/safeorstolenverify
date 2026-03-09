@@ -239,7 +239,7 @@ export const SEOLandingPageTemplate = ({
               </div>
               <div className="flex flex-col items-center p-4 bg-card rounded-lg border">
                 <Award className="w-8 h-8 text-primary mb-2" />
-                <span className="text-sm font-semibold text-center">$1/mo Unlimited</span>
+                <span className="text-sm font-semibold text-center">From $0.99/check</span>
               </div>
             </div>
           </div>
