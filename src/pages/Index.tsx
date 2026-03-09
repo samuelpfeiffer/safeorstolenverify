@@ -95,7 +95,7 @@ const TESTIMONIALS = [
     role: 'Pawn Shop Owner, Phoenix AZ',
     quote: "SafeOrStolen paid for itself week one. Caught a stolen MacBook worth $1,800. Now I check every single item that comes through the door — it's non-negotiable.",
     stars: 5,
-    plan: 'Business Plan',
+    plan: 'Unlimited Plan',
   },
   {
     name: 'Sarah K.',
