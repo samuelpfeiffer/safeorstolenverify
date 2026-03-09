@@ -7,7 +7,16 @@
 export type { SubscriptionTier, SubscriptionTierKey, PricingFeature } from './types';
 
 // Constants
-export { SUBSCRIPTION_TIERS, LEGACY_TIER_MAPPING, FREE_SEARCH_LIMIT, FAIR_USE_CAP, UNLIMITED_PRICE_ID, UNLIMITED_PRODUCT_ID } from './constants';
+export {
+  SUBSCRIPTION_TIERS,
+  LEGACY_TIER_MAPPING,
+  FREE_SEARCH_LIMIT,
+  FAIR_USE_CAP,
+  UNLIMITED_PRICE_ID,
+  UNLIMITED_PRODUCT_ID,
+  PAY_PER_CHECK_PRICE_ID,
+  PAY_PER_CHECK_PRODUCT_ID,
+} from './constants';
 
 // Utilities
 export {
