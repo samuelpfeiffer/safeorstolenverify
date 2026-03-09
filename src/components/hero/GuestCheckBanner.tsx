@@ -35,7 +35,7 @@ export const GuestCheckBanner: React.FC = () => {
           onClick={() => navigate('/pricing')}
           className="border-sos-lime/50 hover:bg-sos-lime/10"
         >
-          Subscribe — $1/mo
+          Subscribe — $2.99/mo
         </Button>
       </div>
       <div className="sm:hidden mt-2 space-y-1 text-sm">
