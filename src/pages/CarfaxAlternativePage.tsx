@@ -138,7 +138,7 @@ const CarfaxAlternativePage = () => {
               SafeOrStolen is also the right choice if you're:
             </p>
             <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-              <li>Checking multiple vehicles (unlimited at $1/month vs $39.99 per Carfax report)</li>
+              <li>Checking multiple vehicles (unlimited at $2.99/month vs $39.99 per Carfax report)</li>
               <li>Checking non-vehicle items (phones, firearms, electronics, bikes)</li>
               <li>Screening marketplace listings before meeting sellers</li>
               <li>Operating a pawn shop or dealership that checks inventory regularly</li>
