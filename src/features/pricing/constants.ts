@@ -1,45 +1,97 @@
 /**
  * Pricing Module - Constants & Configuration
- * 2 free checks lead magnet, then $1/month unlimited
+ * 
+ * THREE-TIER MODEL (March 2026):
+ *   Free  — 2 checks, no credit card
+ *   $0.99 — per check, one-time, no account needed
+ *   $2.99/month — unlimited everything + seller badges
  */
 
 import type { SubscriptionTier, SubscriptionTierKey } from './types';
 
-/**
- * SIMPLIFIED PRICING MODEL (March 2026):
- * 
- * 2 free checks as lead magnet (no credit card required)
- * Then $1.00/month — unlimited everything
- * 
- * Stripe Price ID: price_1T77b7GxnZLw8J7OYB4jBGRB ($1.00/month recurring)
- * Product ID: prod_TDfkVL8GE1dRt5
- */
+// ── Stripe IDs ──────────────────────────────────────────────
+export const PAY_PER_CHECK_PRICE_ID  = 'price_1T8uNDGxnZLw8J7OrBKrbePR';
+export const PAY_PER_CHECK_PRODUCT_ID = 'prod_U78eaGwFkIA2Ic';
 
-export const FREE_SEARCH_LIMIT = 2; // 2 free verifications as lead magnet
-export const FAIR_USE_CAP = 1000; // Monthly soft limit for abuse prevention
+export const UNLIMITED_PRICE_ID     = 'price_1T8uToGxnZLw8J7O6GcOuV1w';
+export const UNLIMITED_PRODUCT_ID   = 'prod_U78lRFEHuOd01t';
 
-export const UNLIMITED_PRICE_ID = 'price_1T77b7GxnZLw8J7OYB4jBGRB';
-export const UNLIMITED_PRODUCT_ID = 'prod_TDfkVL8GE1dRt5';
+// ── Limits ──────────────────────────────────────────────────
+export const FREE_SEARCH_LIMIT = 2;   // lead-magnet free checks
+export const FAIR_USE_CAP      = 1000; // monthly soft cap for abuse prevention
 
+// ── Tier Definitions ────────────────────────────────────────
 export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> = {
+  // ─── Active tiers ──────────────────────────────────────
+  free: {
+    name: "Free",
+    price: 0,
+    priceDisplay: "Free",
+    interval: "free",
+    monthlyQuota: FREE_SEARCH_LIMIT,
+    tier: "free",
+    features: [
+      "2 free verification checks",
+      "All item types supported",
+      "No credit card required",
+    ],
+    receiptsIncluded: false,
+    historyRetention: 0,
+    trustBadges: false,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false,
+    sellerBadges: false,
+  },
+
+  payPerCheck: {
+    name: "Pay Per Check",
+    price: 99,
+    priceDisplay: "$0.99",
+    interval: "once",
+    monthlyQuota: 1,
+    stripePriceId: PAY_PER_CHECK_PRICE_ID,
+    stripeProductId: PAY_PER_CHECK_PRODUCT_ID,
+    tier: "payPerCheck",
+    features: [
+      "One-time verification",
+      "No account required",
+      "Instant results",
+      "PDF verification receipt",
+    ],
+    receiptsIncluded: true,
+    historyRetention: 30,
+    trustBadges: false,
+    apiAccess: false,
+    bulkUpload: false,
+    whiteLabel: false,
+    phoneSupport: false,
+    dedicatedManager: false,
+    sellerBadges: false,
+  },
+
   unlimited: {
-    name: "Unlimited Plan",
-    price: 100,
-    priceDisplay: "$1.00",
+    name: "Unlimited",
+    price: 299,
+    priceDisplay: "$2.99",
     interval: "month",
     monthlyQuota: 'unlimited',
     fairUseCap: FAIR_USE_CAP,
     stripePriceId: UNLIMITED_PRICE_ID,
+    stripeProductId: UNLIMITED_PRODUCT_ID,
     tier: "unlimited",
     popular: true,
     features: [
       "Unlimited verification checks",
       "All item types: phones, cars, laptops, tools, bikes & more",
       "IMEI, VIN, license plate & serial number lookups",
+      "Verified seller badges",
       "Priority processing & support",
       "PDF verification receipts",
-      "Verification history",
-      "Cancel anytime"
+      "Full verification history",
+      "Cancel anytime",
     ],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
@@ -48,20 +100,20 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     bulkUpload: false,
     whiteLabel: false,
     phoneSupport: false,
-    dedicatedManager: false
+    dedicatedManager: false,
+    sellerBadges: true,
   },
-  // Legacy tiers kept for backward compatibility with existing subscribers
-  // All new users should use the 'unlimited' plan at $1/mo
+
+  // ─── Legacy tiers (kept for existing subscribers) ──────
   starter: {
-    name: "Starter Plan (Legacy)",
+    name: "Starter (Legacy)",
     price: 499,
     priceDisplay: "$4.99",
     interval: "month",
     monthlyQuota: 15,
-    overageRate: 0.45,
     stripePriceId: 'price_1SHEOxGxnZLw8J7O2zzfPVBK',
     tier: "starter",
-    features: ["Legacy plan - migrated to $1/mo unlimited"],
+    features: ["Legacy plan — migrated to $2.99/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 60,
     trustBadges: true,
@@ -69,7 +121,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     bulkUpload: false,
     whiteLabel: false,
     phoneSupport: false,
-    dedicatedManager: false
+    dedicatedManager: false,
   },
   payPerUse: {
     name: "Single Verification (Legacy)",
@@ -79,7 +131,7 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     monthlyQuota: 1,
     stripePriceId: 'price_1T3nfCGxnZLw8J7OwqSRSPel',
     tier: "payPerUse",
-    features: ["Legacy - use $1/mo unlimited instead"],
+    features: ["Legacy — use new Pay Per Check instead"],
     receiptsIncluded: true,
     historyRetention: 30,
     trustBadges: false,
@@ -87,18 +139,17 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     bulkUpload: false,
     whiteLabel: false,
     phoneSupport: false,
-    dedicatedManager: false
+    dedicatedManager: false,
   },
   personal: {
-    name: "Personal Plan (Legacy)",
+    name: "Personal (Legacy)",
     price: 999,
     priceDisplay: "$9.99",
     interval: "month",
     monthlyQuota: 50,
-    overageRate: 0.40,
     stripePriceId: 'price_1T3nhDGxnZLw8J7OaK2fkVM1',
     tier: "personal",
-    features: ["Legacy plan - migrated to $1/mo unlimited"],
+    features: ["Legacy plan — migrated to $2.99/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -106,17 +157,17 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     bulkUpload: false,
     whiteLabel: false,
     phoneSupport: false,
-    dedicatedManager: false
+    dedicatedManager: false,
   },
   professional: {
-    name: "Professional Plan (Legacy)",
+    name: "Professional (Legacy)",
     price: 2999,
     priceDisplay: "$29.99",
     interval: "month",
     monthlyQuota: 'unlimited',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "professional",
-    features: ["Legacy plan - migrated to $1/mo unlimited"],
+    features: ["Legacy plan — migrated to $2.99/mo unlimited"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -124,17 +175,17 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     bulkUpload: true,
     whiteLabel: true,
     phoneSupport: true,
-    dedicatedManager: false
+    dedicatedManager: false,
   },
   enterprise: {
-    name: "Enterprise Plan",
+    name: "Enterprise (Legacy)",
     price: 9900,
     priceDisplay: "$99",
     interval: "month",
     monthlyQuota: 'unlimited',
     stripePriceId: 'price_1T3niCGxnZLw8J7OO2aGfQ0R',
     tier: "enterprise",
-    features: ["Legacy plan - Enterprise"],
+    features: ["Legacy plan — Enterprise"],
     receiptsIncluded: true,
     historyRetention: 'unlimited',
     trustBadges: true,
@@ -142,19 +193,20 @@ export const SUBSCRIPTION_TIERS: Record<SubscriptionTierKey, SubscriptionTier> =
     bulkUpload: true,
     whiteLabel: true,
     phoneSupport: true,
-    dedicatedManager: true
-  }
+    dedicatedManager: true,
+  },
 };
 
 // Legacy tier name mapping for backward compatibility
 export const LEGACY_TIER_MAPPING: Record<string, SubscriptionTierKey> = {
   'Basic': 'unlimited',
   'Premium': 'unlimited',
-  'Enterprise': 'professional',
-  'business75': 'professional',
-  'business300': 'professional',
+  'Enterprise': 'unlimited',
+  'business75': 'unlimited',
+  'business300': 'unlimited',
   'individual': 'unlimited',
-  'business': 'professional',
+  'business': 'unlimited',
   'starter': 'unlimited',
-  'personal': 'unlimited'
+  'personal': 'unlimited',
+  'professional': 'unlimited',
 };
