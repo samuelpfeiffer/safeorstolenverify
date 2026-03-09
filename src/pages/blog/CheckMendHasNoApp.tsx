@@ -290,7 +290,7 @@ const CheckMendHasNoApp = () => {
                 Tap "Install App" - no App Store/Google Play download required (it's a Progressive Web App)
               </li>
               <li>
-                Create an account and subscribe to the $1/month Unlimited Plan
+                Create an account and subscribe to the $2.99/month Unlimited Plan
               </li>
               <li>
                 Start scanning barcodes instantly - experience 3-second verification
