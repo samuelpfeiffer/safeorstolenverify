@@ -27,9 +27,9 @@ const DownloadApp = () => {
     "description": "Free app to check if items are stolen before buying or selling. Verify IMEI, VIN, serial numbers instantly. Protects both buyers AND sellers from stolen goods.",
     "offers": {
       "@type": "Offer",
-      "price": "1.00",
+      "price": "2.99",
       "priceCurrency": "USD",
-      "description": "$1/month unlimited verifications"
+      "description": "$2.99/month unlimited verifications"
     },
     "featureList": [
       "Instant IMEI verification",
