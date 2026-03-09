@@ -431,7 +431,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
                   How much does the {stateData.name} license plate lookup cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $1/month. 
+                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $2.99/month unlimited. 
                   Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}NICB and 100+ databases.
                 </AccordionContent>
               </AccordionItem>

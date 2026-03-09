@@ -319,7 +319,7 @@ const ForConsumersPage = () => {
               </Link>
               <Link to="/pricing" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
                 <h3 className="font-bold mb-2">Pricing</h3>
-                <p className="text-sm text-muted-foreground">$1/mo unlimited verifications</p>
+                <p className="text-sm text-muted-foreground">$2.99/mo unlimited verifications</p>
               </Link>
               <Link to="/how-it-works" className="p-6 bg-background rounded-lg hover:shadow-lg transition-shadow">
                 <h3 className="font-bold mb-2">How It Works</h3>
