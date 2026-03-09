@@ -16,7 +16,7 @@ export const EnhancedFAQSection = () => {
       faqs: [
         {
           question: "How much does SafeOrStolen cost?",
-          answer: "SafeOrStolen offers unlimited verifications for just $1/month. All item types — phones, vehicles, electronics, firearms, and more — all databases, cancel anytime. The best value in stolen item verification."
+          answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month for unlimited verifications. All item types — phones, vehicles, electronics, firearms, and more — all databases, cancel anytime. The best value in stolen item verification."
         },
         {
           question: "What items can I verify with SafeOrStolen?",
