@@ -171,10 +171,10 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
               <li><a href="/imei-checker">IMEI Checker</a></li>
               <li><a href="/firearms-check">Firearm Check</a></li>
               <li><a href="/verify">Verify Any Item</a></li>
-              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
             </ul>
             
-            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $1/month unlimited.</p>
+            <p>SafeOrStolen checks 100+ databases in 3 seconds. Protect yourself from stolen vehicles in {stateData.name}. <a href="/verify">Verify now</a> — 2 free checks, then $0.99/check or $2.99/month unlimited.</p>
           </main>
         </div>
       </noscript>
@@ -431,7 +431,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
                   How much does the {stateData.name} license plate lookup cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for just $1/month. 
+                  SafeOrStolen offers unlimited {stateData.name} license plate lookups for $0.99/check or $2.99/month unlimited. 
                   Check any {stateData.abbrev} vehicle against {stateData.hasTheftDatabase ? `${stateData.theftDatabaseName}, ` : ''}NICB and 100+ databases.
                 </AccordionContent>
               </AccordionItem>

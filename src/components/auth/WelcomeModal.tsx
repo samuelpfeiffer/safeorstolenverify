@@ -70,7 +70,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({
           <div className="text-center">
             <Badge variant="secondary" className="bg-sos-orange text-white px-4 py-2 text-lg">
               <Gift className="w-4 h-4 mr-2" />
-              $1/mo Unlimited Verifications!
+              $2.99/mo Unlimited Verifications!
             </Badge>
           </div>
 

@@ -51,9 +51,9 @@ export const ValueProposition: React.FC = () => {
     },
     {
       icon: DollarSign,
-      title: '$1/mo Unlimited',
-      description: 'Unlimited verifications for just $1/month. All item types, cancel anytime.',
-      stat: '$1',
+      title: '$2.99/mo Unlimited',
+      description: '$0.99/check or $2.99/month unlimited. All item types, cancel anytime.',
+      stat: '$2.99',
       statLabel: '/month',
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',

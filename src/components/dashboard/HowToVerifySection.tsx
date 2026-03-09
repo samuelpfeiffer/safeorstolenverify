@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     question: 'How much does it cost to check if a phone is stolen?',
-    answer: 'SafeOrStolen offers unlimited verifications for just $1/month — including downloadable PDF certificates and priority database access. This is significantly less than Carfax ($44.99/report) or CheckMEND ($1.99+/check).'
+    answer: 'SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited — including downloadable PDF certificates and priority database access. This is significantly less than Carfax ($44.99/report) or CheckMEND ($1.99+/check).'
   },
   {
     question: 'What happens if I accidentally buy a stolen item?',

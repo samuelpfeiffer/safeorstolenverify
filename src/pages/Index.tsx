@@ -218,7 +218,7 @@ const Index = () => {
 
           <p className="speakable-summary text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             SafeOrStolen checks any secondhand item against 100+ law enforcement, insurance, and carrier databases — including FBI NCIC, GSMA, NICB, and ATF.
-            <strong className="text-foreground"> 2 free checks. Then $1/month unlimited.</strong>
+            <strong className="text-foreground"> 2 free checks. Then $0.99/check or $2.99/month unlimited.</strong>
           </p>
 
           {/* Integrated Scanner / Search Bar */}
@@ -230,7 +230,7 @@ const Index = () => {
           </div>
 
           <p className="text-muted-foreground text-sm">
-            🔓 Unlock unlimited verifications — just $1/month →{' '}
+            🔓 Unlock unlimited verifications — $2.99/month →{' '}
             <Link to="/pricing" className="text-primary underline font-semibold">See Pricing</Link>
           </p>
           <p className="text-muted-foreground/60 text-xs mt-1">
@@ -416,7 +416,7 @@ const Index = () => {
               to="/verify"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl transition-all button-glow"
             >
-              Try 2 Free Checks — Then $1/mo Unlimited →
+              Try 2 Free Checks — Then $2.99/mo Unlimited →
             </Link>
             <Link
               to="/for-sellers"
@@ -465,7 +465,7 @@ const Index = () => {
                 className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-7 py-3.5 rounded-xl transition-all button-glow"
               >
                 <Building2 className="w-4 h-4" />
-                Get Unlimited Plan — $1/mo
+                Get Unlimited Plan — $2.99/mo
               </Link>
               <Link
                 to="/for-pawn-shops"

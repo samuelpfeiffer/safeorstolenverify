@@ -48,7 +48,7 @@ const CheckToolsPage = () => {
           },
           {
             question: "How much does the tool stolen check cost?",
-            answer: "SafeOrStolen offers unlimited tool serial number checks for just $1/month. Verify power tools, hand tools, and equipment before buying. Subscribe once and check as many items as you need. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited. Verify power tools, hand tools, and equipment before buying. Cancel anytime."
           },
           {
             question: "What should I do if my tool check shows it's stolen?",

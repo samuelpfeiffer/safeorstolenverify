@@ -89,7 +89,7 @@ export default function MarketplaceAdvisorPage() {
           description: 'AI-powered marketplace listing analysis tool that detects scams on Facebook Marketplace, Craigslist, OfferUp, and eBay.',
           applicationCategory: 'SecurityApplication',
           operatingSystem: 'Web',
-          offers: { '@type': 'Offer', price: '1.00', priceCurrency: 'USD', description: '$1/month unlimited plan' },
+          offers: { '@type': 'Offer', price: '2.99', priceCurrency: 'USD', description: '$2.99/month unlimited plan' },
           aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '2847' },
         }) }} />
       </div>

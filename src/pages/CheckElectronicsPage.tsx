@@ -4,7 +4,7 @@ const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Electronics Are Stolen - Verification"
-      metaDescription="Check if cameras, tablets, or game consoles are stolen. Serial number verification against law enforcement databases. $1/month unlimited."
+      metaDescription="Check if cameras, tablets, or game consoles are stolen. Serial number verification against law enforcement databases. $0.99/check or $2.99/month unlimited."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[
@@ -26,7 +26,7 @@ const CheckElectronicsPage = () => {
           "Check drones - DJI, Parrot, Autel, Skydio",
           "Verify appliances - washers, dryers, refrigerators, TVs",
           "Search law enforcement and pawn shop databases",
-          "Instant electronics serial number check — $1/month unlimited verifications"
+          "Instant electronics serial number check — $0.99/check or $2.99/month unlimited"
         ],
         process: [
           "Locate the serial number: Usually on the back, bottom, or inside battery compartment. Check product manual for exact location. For cameras: bottom plate. For tablets: back panel or Settings. For game consoles: back or bottom label.",
@@ -47,7 +47,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "Is the electronics serial number check really free?",
-            answer: "SafeOrStolen offers unlimited electronics serial number checks for just $1/month. This allows you to verify any device before buying. All item types are included. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited. All item types are included. Cancel anytime."
           },
           {
             question: "What should I do if the electronics check shows the device is stolen?",

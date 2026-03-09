@@ -14,7 +14,7 @@ const PRICING_TIERS = [
   {
     id: 'unlimited',
     name: 'Unlimited Plan',
-    price: '$1',
+    price: '$2.99',
     period: 'month',
     description: 'Unlimited verifications for buyers & sellers',
     features: [
@@ -25,16 +25,16 @@ const PRICING_TIERS = [
       'PDF certificate downloads',
       'Cancel anytime',
     ],
-    cta: 'Subscribe — $1/month',
+    cta: 'Subscribe — $2.99/month',
     priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
     planName: 'Unlimited Plan',
     isSub: true,
     highlighted: true,
   },
   {
-    id: 'unlimited',
+    id: 'unlimited2',
     name: 'Unlimited Plan',
-    price: '$1',
+    price: '$2.99',
     period: '/month',
     description: 'Everything included — verify and sell with confidence',
     features: [
@@ -46,7 +46,7 @@ const PRICING_TIERS = [
       'Priority support',
       'Cancel anytime',
     ],
-    cta: 'Subscribe — $1/mo',
+    cta: 'Subscribe — $2.99/mo',
     priceId: 'price_1T77b7GxnZLw8J7OYB4jBGRB',
     planName: 'Unlimited',
     isSub: true,
@@ -99,7 +99,7 @@ const MARKETPLACE_PLATFORMS = [
 
 const TESTIMONIALS = [
   { quote: 'Sold my iPhone in 2 days instead of 2 weeks. The verified badge made all the difference.', name: 'Sarah M.', role: 'Marketplace Seller' },
-  { quote: 'Got $150 more because buyers trusted the badge. Best $1/mo I ever spent.', name: 'Mike T.', role: 'Electronics Reseller' },
+  { quote: 'Got $150 more because buyers trusted the badge. Best $2.99/mo I ever spent.', name: 'Mike T.', role: 'Electronics Reseller' },
   { quote: 'No more "is this stolen?" messages. Buyers just buy. Game changer.', name: 'Jessica L.', role: 'OfferUp Seller' },
 ];
 
@@ -112,7 +112,7 @@ const FAQS = [
   { q: 'What if my item comes back as FLAGGED?', a: 'Do not sell the item. Contact your local police with the verification report. If you purchased the item legitimately, file a police report and contact the original seller. Our report provides the evidence law enforcement needs.' },
   { q: 'Where can I use the badge?', a: 'Anywhere you sell: Facebook Marketplace, eBay, Craigslist, OfferUp, Mercari, Poshmark, Swappa, and any other platform. The badge is an image and the report is a URL — works everywhere.' },
   { q: 'What platforms accept verified badges?', a: 'All of them. The badge is a standard image file and the verification report is a URL. Any platform that allows images or links in listings supports SafeOrStolen badges.' },
-  { q: 'What\'s included in the plan?', a: '$1/month gets you unlimited verifications, unlimited badges, seller profile, verification history, PDF certificates, and priority support. Cancel anytime.' },
+  { q: 'What\'s included in the plan?', a: '$2.99/month gets you unlimited verifications, unlimited badges, seller profile, verification history, PDF certificates, and priority support. Cancel anytime.' },
   { q: 'Can I cancel anytime?', a: 'Yes. Cancel from your dashboard anytime. Your subscription continues until the end of the billing period. No cancellation fees.' },
 ];
 
@@ -151,9 +151,7 @@ export default function ForSellers() {
       "areaServed": "United States",
       "description": "Verify items before selling to prove legitimacy, build buyer trust, and command higher prices.",
       "offers": [
-        { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Per-listing badge" },
-        { "@type": "Offer", "price": "19.99", "priceCurrency": "USD", "description": "Verified Seller monthly" },
-        { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "description": "Premium Seller monthly" },
+        { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "description": "Unlimited monthly plan" },
       ],
       "dateModified": "2026-03-02"
     },
@@ -176,7 +174,7 @@ export default function ForSellers() {
     <>
       <PageSEO
         title="For Sellers - Prove Items Are Legitimate, Sell Faster | SafeOrStolen"
-        description="Verify items before listing. Get Verified Safe badges for $1/mo unlimited. Sell 3x faster, command 15-30% higher prices on any marketplace. 100+ databases checked in 3 seconds."
+        description="Verify items before listing. Get Verified Safe badges for $2.99/mo unlimited. Sell 3x faster, command 15-30% higher prices on any marketplace. 100+ databases checked in 3 seconds."
         keywords="seller verification, prove item not stolen, verified listing badge, sell faster marketplace, verified seller certificate"
         canonical="/for-sellers"
         structuredData={structuredData}
@@ -477,7 +475,7 @@ export default function ForSellers() {
           <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
             <h1>SafeOrStolen for Sellers - Prove Items Are Legitimate, Sell Faster</h1>
             <p>Verify your items before listing on any marketplace. SafeOrStolen checks IMEI, VIN, and serial numbers against 100+ law enforcement databases. Get shareable "Verified Safe" certificates that command 15-30% higher prices.</p>
-            <p>Pricing: $1/month unlimited — includes verifications, badges, seller profile, and PDF certificates. Cancel anytime.</p>
+            <p>Pricing: $2.99/month unlimited — includes verifications, badges, seller profile, and PDF certificates. Cancel anytime.</p>
           </div>
         </noscript>
       </div>

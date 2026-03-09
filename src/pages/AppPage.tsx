@@ -106,7 +106,7 @@ const AppPage = () => {
         "name": "Is the stolen item checker app free to download?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Download the SafeOrStolen app for iOS and Android. Subscribe to the $1/month Unlimited Plan for unlimited verifications across all item types."
+          "text": "Yes! Download the SafeOrStolen app for iOS and Android. Subscribe to the $2.99/month Unlimited Plan for unlimited verifications across all item types."
         }
       },
       {

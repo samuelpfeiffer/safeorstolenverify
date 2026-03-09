@@ -28,7 +28,7 @@ const TheftAZAlternativePage = () => {
       {
         "@type": "Question",
         "name": "Is SafeOrStolen free for Arizona residents?",
-        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks for everyone, including Arizona residents. After that, unlimited searches are $1/month. This covers all item types and all databases, not just Arizona." }
+        "acceptedAnswer": { "@type": "Answer", "text": "SafeOrStolen offers 2 free checks for everyone, including Arizona residents. After that, $0.99/check or $2.99/month unlimited. This covers all item types and all databases, not just Arizona." }
       },
       {
         "@type": "Question",
@@ -100,7 +100,7 @@ const TheftAZAlternativePage = () => {
                     ['BikeIndex (700K+ bikes)', false, true],
                     ['Mobile app', false, true],
                     ['Phones (IMEI check)', false, true],
-                    ['Cost', 'Free', '2 free, then $1/mo'],
+                    ['Cost', 'Free', '2 free, then $2.99/mo'],
                   ].map(([feature, theftaz, sos], i) => (
                     <tr key={i} className="border-t border-border">
                       <td className="p-3 text-foreground">{feature as string}</td>
@@ -151,7 +151,7 @@ const TheftAZAlternativePage = () => {
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">Is SafeOrStolen free for Arizona residents?</summary>
-                <p className="text-muted-foreground mt-2">SafeOrStolen offers 2 free checks for everyone. After that, unlimited searches are $1/month covering all item types and all databases.</p>
+                <p className="text-muted-foreground mt-2">SafeOrStolen offers 2 free checks for everyone. After that, $0.99/check or $2.99/month unlimited covering all item types and all databases.</p>
               </details>
               <details className="bg-card/50 border border-border rounded-xl p-4">
                 <summary className="font-semibold text-foreground cursor-pointer">What types of property can I check?</summary>

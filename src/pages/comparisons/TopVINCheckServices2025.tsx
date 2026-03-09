@@ -22,7 +22,7 @@ const TopVINCheckServices2025 = () => {
         "item": {
           "@type": "Product",
           "name": "SafeOrStolen",
-          "description": "Best for stolen vehicle verification — $1/month unlimited"
+          "description": "Best for stolen vehicle verification — $2.99/month unlimited"
         }
       },
       {
@@ -45,8 +45,8 @@ const TopVINCheckServices2025 = () => {
       badge: 'Best for Stolen Checks',
       badgeColor: 'bg-green-500',
       bestFor: 'Verifying if a vehicle is stolen before purchase',
-      price: '$1/month unlimited',
-      fullReportPrice: '$1/month (all features)',
+      price: '$2.99/month unlimited',
+      fullReportPrice: '$2.99/month (all features)',
       stolenCheck: true,
       titleCheck: true,
       accidentHistory: false,
@@ -55,7 +55,7 @@ const TopVINCheckServices2025 = () => {
       mobileApp: true,
       multipleItems: true,
       pros: [
-        '$1/month unlimited VIN checks',
+        '$2.99/month unlimited VIN checks',
         '50M+ database from law enforcement & insurers',
         'Checks more than cars (phones, bikes, tools)',
         'Mobile app for instant verification',

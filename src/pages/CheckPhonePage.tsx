@@ -4,7 +4,7 @@ const CheckPhonePage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Phone is Stolen - iPhone Android Verify"
-      metaDescription="Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. $1/month unlimited."
+      metaDescription="Check if a phone is stolen before buying. IMEI verification for iPhone, Samsung, Google Pixel. Search carrier blacklists in 3 seconds. $0.99/check or $2.99/month unlimited."
       h1="Check if Phone is Stolen Before Buying"
       itemType="Phone"
       keywords={[
@@ -28,7 +28,7 @@ const CheckPhonePage = () => {
           "Check iCloud activation lock status on iPhones",
           "Check Google Find My Device lock on Android phones",
           "Instant 3-second verification from multiple databases",
-          "Instant phone check — $1/month unlimited verifications",
+          "Instant phone check — $0.99/check or $2.99/month unlimited",
           "Works for phones from any country or carrier"
         ],
         process: [
@@ -66,7 +66,7 @@ const CheckPhonePage = () => {
           },
           {
             question: "Is the phone check really free?",
-            answer: "SafeOrStolen offers unlimited phone checks for just $1/month. All item types included — phones, vehicles, electronics, firearms, bikes, and more. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month for unlimited verifications. All item types included — phones, vehicles, electronics, firearms, bikes, and more. Cancel anytime."
           },
           {
             question: "What should I do if the phone check shows it's stolen?",

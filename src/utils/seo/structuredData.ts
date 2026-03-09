@@ -354,7 +354,7 @@ export const createFAQSchema = () => ({
       "name": "How do I avoid buying stolen goods on Facebook Marketplace?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it on SafeOrStolen.com ($1/month unlimited). 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues."
+        "text": "Before meeting a seller: 1) Ask for the IMEI/VIN/serial number. 2) Check it on SafeOrStolen.com ($0.99/check or $2.99/month unlimited). 3) If it shows 'stolen', report the listing and walk away. 4) Only buy items that verify as 'safe'. This protects you from scams, financial loss, and legal issues."
       }
     },
     {
