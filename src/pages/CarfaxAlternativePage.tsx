@@ -166,7 +166,7 @@ const CarfaxAlternativePage = () => {
                 <h3 className="text-primary font-bold mb-2">SafeOrStolen</h3>
                 <ul className="text-muted-foreground text-sm space-y-1">
                   <li>2 free checks (any item type)</li>
-                  <li>$1/month unlimited checks</li>
+                  <li>$0.99/check or $2.99/month unlimited</li>
                   <li>All items: vehicles, phones, guns, electronics</li>
                   <li>Mobile app included</li>
                 </ul>
