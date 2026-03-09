@@ -26,7 +26,7 @@ const CheckElectronicsPage = () => {
           "Check drones - DJI, Parrot, Autel, Skydio",
           "Verify appliances - washers, dryers, refrigerators, TVs",
           "Search law enforcement and pawn shop databases",
-          "Instant electronics serial number check — $1/month unlimited verifications"
+          "Instant electronics serial number check — $0.99/check or $2.99/month unlimited"
         ],
         process: [
           "Locate the serial number: Usually on the back, bottom, or inside battery compartment. Check product manual for exact location. For cameras: bottom plate. For tablets: back panel or Settings. For game consoles: back or bottom label.",
