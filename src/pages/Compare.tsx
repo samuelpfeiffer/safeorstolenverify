@@ -14,7 +14,7 @@ const Compare = () => {
       highlight: true,
       features: {
         mobileApp: true,
-        freeChecks: '$1/mo unlimited',
+        freeChecks: '$2.99/mo unlimited',
         speed: '3 seconds',
         imei: true,
         vin: true,
