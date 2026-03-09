@@ -29,7 +29,7 @@ const CheckCarStolenByVinPage = () => {
           "Check all 50 state DMV databases simultaneously",
           "Detect VIN cloning and VIN tampering",
           "Instant 3-second verification from multiple sources",
-          "Unlimited VIN checks — $1/month",
+          "Unlimited VIN checks — $0.99/check or $2.99/month",
           "Works for vehicles from all manufacturers and years (1981+)"
         ],
         process: [
