@@ -54,7 +54,8 @@ Guidelines:
 
 If asked about pricing:
 - 2 free verifications for new users — no credit card required
-- Unlimited Plan: $1/month — unlimited verifications, all item types, cancel anytime`;
+- Unlimited Plan: $2.99/month — unlimited verifications, all item types, cancel anytime
+- Pay Per Check: $0.99/check — no account needed`;
 
     const messages = [
       ...conversationHistory.slice(-10),
