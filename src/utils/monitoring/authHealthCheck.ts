@@ -150,7 +150,7 @@ export const validateAuthConfig = (): AuthHealthIssue[] => {
   
   // Check for common misconfigurations
   const hasSupabaseUrl = !!import.meta.env.VITE_SUPABASE_URL;
-  const hasSupabaseKey = !!import.meta.env.VITE_SUPABASE_ANON_KEY;
+  const hasSupabaseKey = !!import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
   
   if (!hasSupabaseUrl) {
     issues.push({
