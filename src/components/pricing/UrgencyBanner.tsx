@@ -20,7 +20,7 @@ export const UrgencyBanner = () => {
       <div className="max-w-4xl mx-auto">
         <div className="bg-gradient-to-r from-sos-lime/20 via-sos-orange/10 to-sos-lime/20 rounded-2xl p-8 border-2 border-sos-lime/30 text-center">
           <h2 className="text-3xl md:text-4xl font-black mb-4 text-foreground">
-            Unlimited Verifications — $1/Month
+            Unlimited Verifications — $2.99/Month
           </h2>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Check phones, cars, electronics, bikes, firearms & more. 
@@ -32,7 +32,7 @@ export const UrgencyBanner = () => {
             size="lg" 
             className="bg-gradient-to-r from-sos-lime to-sos-orange hover:opacity-90 text-black font-bold text-lg px-8 py-6"
           >
-            {isAuthenticated ? 'Subscribe Now' : 'Get Started — $1/Month'}
+            {isAuthenticated ? 'Subscribe Now' : 'Get Started — $2.99/Month'}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 

@@ -29,7 +29,7 @@ export const AuthRequiredBanner: React.FC<AuthRequiredBannerProps> = ({
           <Button size="sm" asChild className="bg-amber-600 hover:bg-amber-700 text-white">
             <Link to="/auth?tab=signup">
               <UserPlus className="h-4 w-4 mr-2" />
-              Get Started — $1/mo
+              Get Started — From $0.99
             </Link>
           </Button>
         </div>

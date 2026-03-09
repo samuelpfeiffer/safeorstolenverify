@@ -561,7 +561,7 @@ export default function ForBusinesses() {
                 Individual buyer pricing <ArrowRight className="w-3 h-3" />
               </Link>
               <Link to="/for-sellers" className="text-primary hover:underline flex items-center gap-1">
-                Seller pricing — $1/month unlimited <ArrowRight className="w-3 h-3" />
+                Seller pricing — $2.99/month unlimited <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 

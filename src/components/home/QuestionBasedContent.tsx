@@ -7,25 +7,25 @@ export const QuestionBasedContent = () => {
   const questions = [
     {
       question: "How to check if a phone is stolen before buying?",
-      answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier blacklists, police reports, and insurance claims. $1/month unlimited.",
+      answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone database. Enter the 15-digit IMEI into our checker and get instant results. Our database searches 100+ sources including carrier blacklists, police reports, and insurance claims. 2 free checks, then $0.99/check or $2.99/month unlimited.",
       icon: Search,
       link: "/verify"
     },
     {
       question: "Can I check if something is stolen before buying?",
-      answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. Subscribe for $1/month unlimited verifications.",
+      answer: "Yes! You can verify phones (IMEI), cars (VIN), electronics, and any item with a serial number. Our database checks against law enforcement records, insurance theft claims, and global stolen goods registries. 2 free checks, then $0.99/check or $2.99/month unlimited.",
       icon: Database,
       link: "/verify"
     },
     {
       question: "How do I verify a car isn't stolen?",
-      answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our database search. We verify against NICB stolen vehicle database, police records, and DMV theft reports. Results in 3 seconds. $1/month unlimited.",
+      answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our database search. We verify against NICB stolen vehicle database, police records, and DMV theft reports. Results in 3 seconds. From $0.99/check.",
       icon: Shield,
       link: "/verify"
     },
     {
       question: "Is there a free database to check stolen items?",
-      answer: "Yes! SafeOrStolen offers unlimited database searches for $1/month. We check IMEI numbers, VIN numbers, and serial numbers against 100+ databases including NICB, GSMA, police records, and insurance claims.",
+      answer: "Yes! SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against 100+ databases including NICB, GSMA, police records, and insurance claims.",
       icon: CheckCircle2,
       link: "/verify"
     }
@@ -51,7 +51,7 @@ export const QuestionBasedContent = () => {
                     </p>
                     <Link to={item.link}>
                       <Button variant="link" className="p-0 h-auto text-primary hover:text-primary/80">
-                        Verify Now — $1/mo Unlimited →
+                        Verify Now — From $0.99 →
                       </Button>
                     </Link>
                   </div>

@@ -73,7 +73,7 @@ const BestFreeIMEICheckers2025 = () => {
       badgeColor: 'bg-blue-500',
       description: 'Detailed device specifications, but blacklist check costs extra',
       freeChecks: 'Unlimited (basic info only)',
-      blacklistCheck: '$2.99 per check (vs SafeOrStolen $1/mo unlimited)',
+      blacklistCheck: '$2.99 per check (vs SafeOrStolen $2.99/mo unlimited)',
       database: 'Not disclosed',
       mobileApp: false,
       itemTypes: 'Phones only',
@@ -84,7 +84,7 @@ const BestFreeIMEICheckers2025 = () => {
         'Clean interface'
       ],
       cons: [
-        'Blacklist check costs $2.99+ (SafeOrStolen: $1/mo unlimited)',
+        'Blacklist check costs $2.99+ (SafeOrStolen: $2.99/mo unlimited)',
         'No mobile app',
         'Phones only - no VIN support',
         'Database size unknown'

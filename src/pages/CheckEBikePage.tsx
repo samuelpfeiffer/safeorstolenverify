@@ -49,7 +49,7 @@ const CheckEBikePage = () => {
           },
           {
             question: "Is the eBike stolen check really free?",
-            answer: "Yes, SafeOrStolen offers 2 free eBike serial number checks. This allows you to verify electric bikes before buying without any cost. Since eBikes have multiple serial numbers (frame, motor, battery), we recommend checking all of them within your free searches. Additional checks require a paid plan ($1/month for unlimited), but our free tier is designed to protect casual buyers purchasing one used eBike."
+            answer: "Yes, SafeOrStolen offers 2 free eBike serial number checks. This allows you to verify electric bikes before buying without any cost. Since eBikes have multiple serial numbers (frame, motor, battery), we recommend checking all of them within your free searches. Additional checks are $0.99/check or $2.99/month unlimited, but our free tier is designed to protect casual buyers purchasing one used eBike."
           },
           {
             question: "What should I do if my eBike check shows it's stolen?",

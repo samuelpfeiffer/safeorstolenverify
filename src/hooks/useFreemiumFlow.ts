@@ -99,7 +99,7 @@ export const useFreemiumFlow = () => {
     if (!user) {
       toast({
         title: "Subscription Required",
-        description: "Subscribe for just $1/month to get unlimited verifications.",
+        description: "Get a single check for $0.99 or subscribe for $2.99/month unlimited.",
         variant: "destructive"
       });
       return false;
@@ -111,7 +111,7 @@ export const useFreemiumFlow = () => {
         setShowFairUseWarning(true);
         toast({
           title: "Fair Use Limit Reached",
-          description: "You've reached 300 checks this month. Contact support for a business plan.",
+          description: "You've reached the monthly fair-use limit. Contact support for enterprise access.",
           variant: "destructive"
         });
         return false;
@@ -145,7 +145,7 @@ export const useFreemiumFlow = () => {
       setShowPaywall(true);
       toast({
         title: "Subscription Required",
-        description: "Get unlimited verifications for just $1/month.",
+        description: "Get a single check for $0.99 or subscribe for $2.99/month unlimited.",
         variant: "destructive"
       });
       return false;

@@ -82,11 +82,11 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does Carfax cost compared to SafeOrStolen?",
-      answer: "Carfax charges $44.99 per single vehicle report or $99.99 for 6 reports. SafeOrStolen costs just $1/month for unlimited checks across ALL item types (not just vehicles). If you only need vehicle theft verification (not full vehicle history), SafeOrStolen provides comparable theft data at approximately 98% less cost."
+      answer: "Carfax charges $44.99 per single vehicle report or $99.99 for 6 reports. SafeOrStolen costs $0.99/check or $2.99/month unlimited across ALL item types (not just vehicles). If you only need vehicle theft verification (not full vehicle history), SafeOrStolen provides comparable theft data at a fraction of the cost."
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen offers unlimited firearm serial number checks for $1/month — including FBI NCIC, ATF eTrace, all 50 state databases, HotGunz, and insurance records. HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
+      answer: "SafeOrStolen offers unlimited firearm serial number checks for $2.99/month — including FBI NCIC, ATF eTrace, all 50 state databases, HotGunz, and insurance records. HotGunz is also free but only searches its community-reported database of approximately 32,000 stolen guns — a fraction of the 7+ million records in NCIC."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -94,7 +94,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
-      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $1/month plan searches GSMA global blacklist, police databases, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
+      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info offers free unlimited checks against carrier blacklists. SafeOrStolen's $2.99/month plan searches GSMA global blacklist, police databases, insurance claims, and all major carrier records (AT&T, Verizon, T-Mobile). Both services return results instantly."
     },
     {
       question: "Is it illegal to buy stolen items?",

@@ -132,7 +132,7 @@ const FAQPage = () => {
         },
         {
           question: "How much does verification cost?",
-          answer: "SafeOrStolen offers unlimited verifications for just $1/month. Subscribe once and verify as many items as you need — phones, vehicles, electronics, firearms, and more."
+          answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types — phones, vehicles, electronics, firearms, and more."
         }
       ]
     },
@@ -141,8 +141,8 @@ const FAQPage = () => {
       icon: HelpCircle,
       faqs: [
         {
-          question: "What does the $1/month plan include?",
-          answer: "The $1/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to 100+ databases. Cancel anytime."
+          question: "What does the $2.99/month plan include?",
+          answer: "The $2.99/month Unlimited Plan includes unlimited verifications across all item types, PDF certificates, AI analysis, seller badges, and full access to 100+ databases. Cancel anytime. Or pay $0.99 per individual check."
         },
         {
           question: "Do you offer discounts for businesses?",
@@ -150,7 +150,7 @@ const FAQPage = () => {
         },
         {
           question: "How do I get started?",
-          answer: "Sign up at safeorstolen.com and subscribe to the $1/month Unlimited Plan. You'll get instant access to unlimited verifications across all item types."
+          answer: "Sign up at safeorstolen.com. You get 2 free checks, then $0.99/check or subscribe for $2.99/month unlimited across all item types."
         },
         {
           question: "How do I download the SafeOrStolen mobile app?",
