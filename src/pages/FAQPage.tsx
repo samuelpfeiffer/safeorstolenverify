@@ -132,7 +132,7 @@ const FAQPage = () => {
         },
         {
           question: "How much does verification cost?",
-          answer: "SafeOrStolen offers unlimited verifications for just $1/month. Subscribe once and verify as many items as you need — phones, vehicles, electronics, firearms, and more."
+          answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. All item types — phones, vehicles, electronics, firearms, and more."
         }
       ]
     },
