@@ -34,7 +34,7 @@ const CTASection = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle className="h-4 w-4 text-secondary" />
-                $1/mo Unlimited
+                $2.99/mo Unlimited
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="h-4 w-4 text-secondary" />
