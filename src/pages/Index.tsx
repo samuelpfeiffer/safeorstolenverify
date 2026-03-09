@@ -163,8 +163,8 @@ const FAQ_ITEMS = [
     a: 'Do not purchase the item. Report the listing to the marketplace platform (Facebook Marketplace, eBay, Craigslist, etc.) and contact your local law enforcement with the verification details. SafeOrStolen provides a downloadable report you can share with police. Never confront the seller directly.',
   },
   {
-    q: 'Does the Business plan work for pawn shops?',
-    a: "Yes. SafeOrStolen's Business plan is designed for pawn shops, used electronics stores, and secondhand dealers. It includes API access for point-of-sale integration, automatic compliance logging for state regulations, and bulk verification. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
+    q: 'Does the Unlimited plan work for pawn shops?',
+    a: "Yes. SafeOrStolen's Unlimited plan ($2.99/month) is designed for pawn shops, used electronics stores, and secondhand dealers. It includes unlimited verifications, compliance-ready PDF certificates, and automatic logging for state regulations. Over 500 pawn shops use SafeOrStolen to meet legal requirements for checking items against stolen property databases before purchasing.",
   },
 ];
 
