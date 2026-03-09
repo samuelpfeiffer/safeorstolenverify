@@ -148,16 +148,27 @@ const StolenItemDetailPage = () => {
   const itemTitle = `${item.brand || ''} ${item.model || item.item_type}`.trim();
   const identifier = item.serial_number || item.imei || item.vin;
 
-  // Schema.org structured data
-  const productSchema = {
+  // Schema.org structured data - Use Report type, NOT Product (avoids Google Merchant Listing errors)
+  const reportSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": `Stolen ${itemTitle}`,
-    "description": item.description || `Reported stolen ${item.item_type}`,
-    "identifier": identifier,
-    "brand": item.brand ? { "@type": "Brand", "name": item.brand } : undefined,
-    "model": item.model,
-    "category": item.item_type,
+    "@type": "Report",
+    "name": `Stolen ${itemTitle} - Theft Report`,
+    "description": item.description || `Reported stolen ${item.item_type}. View details and help recover this item.`,
+    "about": {
+      "@type": "Thing",
+      "name": itemTitle,
+      "identifier": identifier,
+      "category": item.item_type,
+    },
+    "datePublished": item.created_at,
+    "dateModified": item.created_at,
+    "publisher": {
+      "@type": "Organization",
+      "name": "SafeOrStolen",
+      "url": "https://safeorstolen.com"
+    },
+    "reportNumber": item.police_report_number || item.id,
+    "spatialCoverage": item.location || "United States"
   };
 
   return (
@@ -167,7 +178,7 @@ const StolenItemDetailPage = () => {
         description={`Reported stolen: ${itemTitle}. ${item.description || 'View details and help recover this stolen item.'} Serial/ID: ${identifier || 'Not provided'}`}
         keywords={`stolen ${item.item_type}, ${item.brand || ''}, ${item.model || ''}, stolen property, theft report`}
         canonical={`/item/${slug}`}
-        structuredData={[productSchema]}
+        structuredData={[reportSchema]}
         image="/og-stolen-item.jpg"
       />
       <TopNavigation />

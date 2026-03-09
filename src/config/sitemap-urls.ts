@@ -43,7 +43,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/check-phone', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-car', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-bike', priority: 0.80, changefreq: 'weekly' },
-  { path: '/check-laptop', priority: 0.80, changefreq: 'weekly' },
+  { path: '/check-laptop', priority: 0.85, changefreq: 'weekly' },
   { path: '/check-electronics', priority: 0.80, changefreq: 'weekly' },
   { path: '/check-ebike', priority: 0.80, changefreq: 'weekly' },
   { path: '/check-appliances', priority: 0.80, changefreq: 'weekly' },
@@ -73,7 +73,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   // BUSINESS PAGES (5)
   // ============================================
   { path: '/for-businesses', priority: 0.80, changefreq: 'monthly' },
-  { path: '/for-pawn-shops', priority: 0.80, changefreq: 'monthly' },
+  { path: '/for-pawn-shops', priority: 0.85, changefreq: 'weekly' as const },
   { path: '/for-dealers', priority: 0.80, changefreq: 'monthly' },
   { path: '/for-marketplaces', priority: 0.75, changefreq: 'monthly' },
   { path: '/for-auction-houses', priority: 0.75, changefreq: 'monthly' },
@@ -249,7 +249,7 @@ export const SITEMAP_URLS: SitemapURL[] = [
   { path: '/pennsylvania-vin-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/ohio-vin-lookup', priority: 0.70, changefreq: 'monthly' },
   { path: '/north-carolina-vin-lookup', priority: 0.70, changefreq: 'monthly' },
-  { path: '/washington-vin-lookup', priority: 0.70, changefreq: 'monthly' },
+  { path: '/washington-vin-lookup', priority: 0.80, changefreq: 'weekly' },
 
 ];
 

@@ -9,15 +9,15 @@ import { useState } from 'react';
 import TopNavigation from '@/components/TopNavigation';
 import Footer from '@/components/Footer';
 
-// Images — unique per card, no duplicates
-import cardFirearms from '@/assets/cards/firearms-check.jpg';
-import cardVehicle from '@/assets/cards/vehicle-vin.jpg';
-import cardPhone from '@/assets/cards/phone-imei.jpg';
-import cardPlate from '@/assets/cards/license-plate.jpg';
-import cardBicycle from '@/assets/cards/bicycle-serial.jpg';
-import cardLaptop from '@/assets/cards/laptop-electronics.jpg';
-import cardBarcode from '@/assets/cards/scan-barcode.jpg';
-import cardListing from '@/assets/cards/paste-listing.jpg';
+// Card images served from /public for smaller JS bundle (no ES module overhead)
+const cardFirearms = '/images/cards/firearms-check.jpg';
+const cardVehicle = '/images/cards/vehicle-vin.jpg';
+const cardPhone = '/images/cards/phone-imei.jpg';
+const cardPlate = '/images/cards/license-plate.jpg';
+const cardBicycle = '/images/cards/bicycle-serial.jpg';
+const cardLaptop = '/images/cards/laptop-electronics.jpg';
+const cardBarcode = '/images/cards/scan-barcode.jpg';
+const cardListing = '/images/cards/paste-listing.jpg';
 
 // ============================================================
 // DATA
@@ -195,9 +195,9 @@ const Index = () => {
       <TopNavigation />
 
       {/* ── STICKY TOP ALERT BANNER ─────────────────────── */}
-      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold mt-16">
+      <div className="bg-primary text-primary-foreground text-center py-2.5 px-4 text-sm font-semibold mt-16" style={{ minHeight: '40px' }}>
         ⚠️ Over $15 billion in property is stolen annually in the U.S. — verify any item before you buy or sell.
-        <Link to="/verify" className="underline font-black ml-2">Try 2 Free Checks →</Link>
+        <Link to="/verify" className="underline font-black ml-2">Try 2 Checks on Us →</Link>
       </div>
 
       {/* ── HERO WITH SCANNER ──────────────────────────── */}
