@@ -4,7 +4,7 @@ const BicycleSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Bicycle is Stolen - Serial Number Lookup | SafeOrStolen"
-      metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. $1/month unlimited. Instant results."
+      metaDescription="Verify any bike isn't stolen before buying. Bicycle serial number check for Trek, Specialized, Giant, e-bikes. $0.99/check or $2.99/month unlimited. Instant results."
       h1="Check if Bicycle is Stolen - Serial Number Verification"
       keywords={[
         'check if bike is stolen',
