@@ -21,10 +21,9 @@ const DYNAMIC_ROUTE_PATTERNS = [
 export const RouteValidator: React.FC = () => {
   const location = useSafeLocation();
   const navigate = useNavigate();
-  
-  if (!location) return null;
 
   useEffect(() => {
+    if (!location) return;
     const currentPath = location.pathname;
     
     // Check if it's a valid static route
@@ -107,7 +106,7 @@ export const RouteValidator: React.FC = () => {
     if (!currentPath.startsWith('/404')) {
       navigate('/404', { replace: true });
     }
-  }, [location.pathname, navigate]);
+  }, [location?.pathname, navigate]);
 
   return null;
 };
