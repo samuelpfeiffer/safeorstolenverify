@@ -99,7 +99,7 @@ const MARKETPLACE_PLATFORMS = [
 
 const TESTIMONIALS = [
   { quote: 'Sold my iPhone in 2 days instead of 2 weeks. The verified badge made all the difference.', name: 'Sarah M.', role: 'Marketplace Seller' },
-  { quote: 'Got $150 more because buyers trusted the badge. Best $1/mo I ever spent.', name: 'Mike T.', role: 'Electronics Reseller' },
+  { quote: 'Got $150 more because buyers trusted the badge. Best $2.99/mo I ever spent.', name: 'Mike T.', role: 'Electronics Reseller' },
   { quote: 'No more "is this stolen?" messages. Buyers just buy. Game changer.', name: 'Jessica L.', role: 'OfferUp Seller' },
 ];
 
