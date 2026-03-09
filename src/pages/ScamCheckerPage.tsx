@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the SafeOrStolen scam checker free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, SafeOrStolen's AI scam checker is completely free with unlimited use. It can also be combined with stolen item verification (2 free checks, then $1/month unlimited) for complete protection." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, SafeOrStolen's AI scam checker is completely free with unlimited use. It can also be combined with stolen item verification (2 free checks, then $0.99/check or $2.99/month unlimited) for complete protection." }
     }
   ]
 };

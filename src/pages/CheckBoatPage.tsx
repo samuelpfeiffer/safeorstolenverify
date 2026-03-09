@@ -53,7 +53,7 @@ const CheckBoatPage = () => {
           },
           {
             question: "Is checking a boat's HIN really free?",
-            answer: "SafeOrStolen offers unlimited boat HIN checks for just $1/month. You can also manually check: (1) Coast Guard Vessel Documentation database (limited), (2) Your state DNR database (some states offer lookups), but our tool searches ALL databases simultaneously (Coast Guard + 50 state DNRs + law enforcement + insurance) in 3 seconds versus spending hours checking each individually."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited. Our tool searches ALL databases simultaneously (Coast Guard + 50 state DNRs + law enforcement + insurance) in 3 seconds versus spending hours checking each individually."
           },
           {
             question: "What should I do if the boat check shows it's stolen?",

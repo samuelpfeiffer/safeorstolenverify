@@ -41,7 +41,7 @@ export const GuestCheckBanner: React.FC = () => {
       <div className="sm:hidden mt-2 space-y-1 text-sm">
         <div className="flex items-center gap-1">
           <Zap className="h-4 w-4 text-sos-orange" />
-          <span className="font-medium">$1/mo unlimited verifications</span>
+          <span className="font-medium">$2.99/mo unlimited verifications</span>
         </div>
         <div className="flex items-center gap-1">
           <Shield className="h-4 w-4 text-muted-foreground" />

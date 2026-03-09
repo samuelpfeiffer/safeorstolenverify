@@ -47,7 +47,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "Is the electronics serial number check really free?",
-            answer: "SafeOrStolen offers unlimited electronics serial number checks for just $1/month. This allows you to verify any device before buying. All item types are included. Cancel anytime."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited. All item types are included. Cancel anytime."
           },
           {
             question: "What should I do if the electronics check shows the device is stolen?",

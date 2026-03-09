@@ -229,7 +229,7 @@ const StolenDatabasePage = () => {
               <li><a href="/report-stolen">Report a Stolen Item</a></li>
               <li><a href="/imei-checker">IMEI Checker</a></li>
               <li><a href="/vin-checker">VIN Checker</a></li>
-              <li><a href="/pricing">Pricing - $1/mo Unlimited</a></li>
+              <li><a href="/pricing">Pricing - $2.99/mo Unlimited</a></li>
             </ul>
           </main>
         </div>

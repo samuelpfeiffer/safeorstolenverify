@@ -54,7 +54,7 @@ export const useParallelVerification = () => {
       if (!isSubscribed) {
         toast({
           title: "Subscription Required",
-          description: "Subscribe for just $1/month for unlimited verifications.",
+          description: "Subscribe for $2.99/month for unlimited verifications, or pay $0.99 per check.",
           variant: "destructive",
         });
         navigate('/pricing', { state: { reason: 'no-subscription' } });

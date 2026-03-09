@@ -57,7 +57,7 @@ const CheckIfStolenPage = () => {
           },
           {
             question: "How much does the stolen item check cost?",
-            answer: "SafeOrStolen offers unlimited verifications for $1/month. This covers all item types — phones, cars, bikes, electronics, firearms, and more. Cancel anytime. 30-day money-back guarantee."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99 per check or $2.99/month unlimited. This covers all item types — phones, cars, bikes, electronics, firearms, and more. Cancel anytime. 30-day money-back guarantee."
           },
           {
             question: "What should I do if an item shows as stolen?",
