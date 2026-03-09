@@ -133,9 +133,9 @@ export const SEOLandingPageTemplate = ({
     "dateModified": "2026-03-02",
     "offers": {
       "@type": "Offer",
-      "price": "1.00",
+      "price": "2.99",
       "priceCurrency": "USD",
-      "description": "$1/month unlimited verifications"
+      "description": "$2.99/month unlimited verifications"
     }
   };
 
