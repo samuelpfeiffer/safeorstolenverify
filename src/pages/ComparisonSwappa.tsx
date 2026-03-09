@@ -410,7 +410,7 @@ const ComparisonSwappa = () => {
                 <h2 className="text-3xl font-bold mb-4">The Better Swappa Alternative for Verification</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
                   SafeOrStolen is the dedicated verification tool with a mobile app. Swappa is a marketplace.
-                  For maximum protection when buying used items, use SafeOrStolen — 2 free checks, then just $1/month.
+                  For maximum protection when buying used items, use SafeOrStolen — 2 free checks, then $0.99/check or $2.99/month.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button size="lg" asChild>

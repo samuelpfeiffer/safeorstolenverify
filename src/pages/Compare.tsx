@@ -283,7 +283,7 @@ const Compare = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Try the Best?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              $1/month unlimited verifications. All item types. Results in 3 seconds.
+              $0.99/check or $2.99/month unlimited. All item types. Results in 3 seconds.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg">

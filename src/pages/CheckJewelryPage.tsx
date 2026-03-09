@@ -49,7 +49,7 @@ const CheckJewelryPage = () => {
           },
           {
             question: "How much does the jewelry stolen check cost?",
-            answer: "SafeOrStolen offers unlimited jewelry serial number checks for just $1/month. Verify luxury watches, diamonds, designer jewelry, and more. Subscribe once and check as many items as you need."
+            answer: "SafeOrStolen offers 2 free checks, then $0.99/check or $2.99/month unlimited. Verify luxury watches, diamonds, designer jewelry, and more."
           },
           {
             question: "What should I do if my jewelry check shows it's stolen?",

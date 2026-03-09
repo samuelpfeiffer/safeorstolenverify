@@ -208,7 +208,7 @@ export const STATE_VIN_DATA: Record<string, StateVinData> = {
       localLaws: "Under RCW 9A.56.065, theft of a motor vehicle is a Class B felony in Washington. Possessing stolen property under RCW 9A.56.140 carries similar penalties. Even unknowing possession results in vehicle confiscation."
     },
     faqs: [
-      { question: "How do I check if a Washington car is stolen?", answer: "Use SafeOrStolen's VIN checker ($1/mo unlimited). Also verify with Washington DOL for title and registration status." },
+      { question: "How do I check if a Washington car is stolen?", answer: "Use SafeOrStolen's VIN checker (from $0.99/check). Also verify with Washington DOL for title and registration status." },
       { question: "Is Seattle a high-theft area?", answer: "Seattle and the greater Puget Sound region account for most vehicle theft in Washington. Catalytic converter theft is also common. Always verify VINs before purchase." }
     ]
   }

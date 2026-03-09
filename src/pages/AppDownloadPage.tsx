@@ -185,7 +185,7 @@ export default function AppDownloadPage() {
                   { f: 'Bike serial check', sos: '✓', cm: '—', nicb: '—', hg: '—' },
                   { f: '100+ databases', sos: '✓', cm: '—', nicb: '—', hg: '—' },
                   { f: 'PDF certificate', sos: '✓', cm: '✓', nicb: '—', hg: '—' },
-                  { f: 'Subscription', sos: '$1/mo unlimited', cm: '$1.99+/check', nicb: 'Free (1 source)', hg: 'Free (1 source)' },
+                  { f: 'Subscription', sos: '$2.99/mo unlimited', cm: '$1.99+/check', nicb: 'Free (1 source)', hg: 'Free (1 source)' },
                 ].map((row, i) => (
                   <tr key={row.f} className={i % 2 === 0 ? 'bg-gray-900' : 'bg-gray-900/50'}>
                     <td className="py-3 px-4 text-gray-300 text-xs">{row.f}</td>

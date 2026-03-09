@@ -150,7 +150,7 @@ const FAQPage = () => {
         },
         {
           question: "How do I get started?",
-          answer: "Sign up at safeorstolen.com and subscribe to the $1/month Unlimited Plan. You'll get instant access to unlimited verifications across all item types."
+          answer: "Sign up at safeorstolen.com. You get 2 free checks, then $0.99/check or subscribe for $2.99/month unlimited across all item types."
         },
         {
           question: "How do I download the SafeOrStolen mobile app?",
